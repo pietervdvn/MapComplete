@@ -1,0 +1,238 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+#leafletDiv {
+    height: 100%;
+}
+
+.star {
+    fill: black;
+    width: 1em;
+    height: 1em;
+}
+
+#profile-pic {
+    float: left;
+    width: 4em;
+    height: 4em;
+    padding:0;
+    margin:0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#usertext a {
+    text-decoration: none;
+    color: black;
+}
+
+#usertext {
+    width: auto;
+    margin:0;
+    
+    padding: 0.9em;
+    padding-left: 4.7em; /* Should be half of profile-pic's width + actual padding (same as padding-right)*/
+    padding-right: 1.5em;
+    border-radius: 2em; /*Half border radius width/height*/
+    height: 2.2em; /*SHould equal profile-pic height - padding*/
+    z-index: 5000;
+    text-align: left;
+    background-color: white;
+    background-size: 100%;
+    display: block;
+    
+    line-height: 0.75em;
+
+
+}
+
+#username {
+    display: block ruby;
+    text-decoration: none;
+    color: black;
+}
+
+.imgWithAttr {
+    max-height: 20em;
+    
+}
+
+
+#userbadge{
+    text-align: center;
+    background-color: white;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    transition: all 500ms linear;
+}
+
+#authbox {
+    position: absolute;
+    margin: 1em;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding:0;
+    z-index: 5000;
+    transition: all 500ms linear;
+    max-width: 25%;
+    overflow: hidden;
+
+}
+
+#pendingchangesbox {
+    position:relative;
+}
+
+#pending-bar {
+    height: 1.2em;
+    margin: 0;
+    z-index: 5005;
+    background-color: white;
+    border-radius:1.2em;
+    padding: 0;
+    transition: all 1s linear;
+    opacity: 0; 
+    
+}
+
+#pending-text {
+    margin: 0;
+    margin-top: -1.2em;
+    z-index: 5000;
+    border-radius:1.2em;
+    height: 1.2em;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+
+
+#zoomin {
+
+}
+
+#messagesbox {
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    z-index: 5000;
+    transition: all 500ms linear;
+    background-color: white;
+    border-radius: 2em;
+}
+
+#logo {
+    position: relative;
+    display: flex;
+    float: right;
+    margin: 1em;
+    margin-top: 0;
+    margin-right: -0.5em;
+    padding: 0;
+    right: 1em;
+    top: 1em;
+}
+
+#centermessage {
+    position: absolute;
+    display: block ruby;
+
+    margin: auto;
+    top: 30%;
+    left: 50%;
+    margin-left: -15%;
+    width: 30%;
+
+    font-size: large;
+
+    padding: 2em;
+    border-radius: 2em;
+    z-index: 5000;
+    pointer-events: none;
+
+    opacity: 1;
+    background-color: white;
+
+    transition: opacity 500ms linear;
+
+
+    text-align: center;
+    horiz-align: center;
+    font-weight: bold;
+}
+
+#bottomRight {
+
+    display: block ruby;
+    position: absolute;
+
+    margin: auto;
+    right: 1%;
+    bottom: 1.5em;
+    height: auto;
+    min-height: 1em;
+    width: auto;
+
+    font-size: large;
+
+    padding: 2em;
+    border-radius: 2em;
+    z-index: 5000;
+
+    opacity: 1;
+    background-color: white;
+
+    transition: all 500ms linear;
+
+    text-align: center;
+    horiz-align: center;
+    font-weight: bold;
+}
+
+.uielement{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+.activate-osm-authentication {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.popupImg {
+    max-height: 150px;
+    max-width: 300px;
+}
+
+.image-slidehow{
+    width: 500px;
+    height: 250px;
+}
+
+.slide {
+}
+
+.slide img{
+    max-height: 200px;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none;
+}
