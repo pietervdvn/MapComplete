@@ -19,7 +19,6 @@ export class ImageSearcher extends UIEventSource<string[]> {
     constructor(tags: UIEventSource<any>) {
         super([]);
 
-        // this.ListenTo(this._embeddedImages);
         this._tags = tags;
 
 
@@ -27,7 +26,8 @@ export class ImageSearcher extends UIEventSource<string[]> {
         this._wdItem.addCallback(() => {
                 // Load the wikidata item, then detect usage on 'commons'
                 let wikidataId = self._wdItem.data;
-                if (wikidataId.startsWith("Q")) {
+                // @ts-ignore
+            if (wikidataId.startsWith("Q")) {
                     wikidataId = wikidataId.substr(1);
                 }
                 Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
@@ -44,14 +44,17 @@ export class ImageSearcher extends UIEventSource<string[]> {
 
         this._commons.addCallback(() => {
             const commons: string = self._commons.data;
+            // @ts-ignore
             if (commons.startsWith("Category:")) {
                 Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
                     for (const image of images.images) {
                         self.AddImage(image.filename);
                     }
                 })
-            } else if (commons.startsWith("File:")) {
-                self.AddImage(commons);
+            } else { // @ts-ignore
+                if (commons.startsWith("File:")) {
+                    self.AddImage(commons);
+                }
             }
         });
 
@@ -79,7 +82,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
     }
 
     private LoadImages(): void {
-        if(!this._activated){
+        if (!this._activated) {
             return;
         }
         const imageTag = this._tags.data.image;
@@ -88,6 +91,18 @@ export class ImageSearcher extends UIEventSource<string[]> {
             for (const bareImage of bareImages) {
                 this.AddImage(bareImage);
             }
+        }
+
+        const image0 = this._tags.data["image:0"];
+        if (image0 !== undefined) {
+            this.AddImage(image0);
+        }
+        let imageIndex = 1;
+        let imagei = this._tags.data["image:" + imageIndex];
+        while (imagei !== undefined) {
+            this.AddImage(imagei);
+            imageIndex++;
+            imagei = this._tags.data["image:" + imageIndex];
         }
 
         const wdItem = this._tags.data.wikidata;

@@ -100,6 +100,8 @@ export class Wikimedia {
             handleWikidata(wd);
         });
     }
+    
+    
 
 }
 

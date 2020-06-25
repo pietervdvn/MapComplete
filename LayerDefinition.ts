@@ -11,6 +11,8 @@ import {Tag, TagsFilter} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {ImageCarousel} from "./UI/Image/ImageCarousel";
 import {FixedUiElement} from "./UI/FixedUiElement";
+import {OsmImageUploadHandler} from "./Logic/OsmImageUploadHandler";
+import {UserDetails} from "./Logic/OsmConnection";
 
 
 export class LayerDefinition {
@@ -31,7 +33,7 @@ export class LayerDefinition {
     removeTouchingElements: boolean = false;
 
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes):
+    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UserDetails):
         FilteredLayer {
         const self = this;
 
@@ -53,9 +55,12 @@ export class LayerDefinition {
 
             }
             infoboxes.push(new ImageCarousel(tagsES));
-            
+
             infoboxes.push(new FixedUiElement("<div style='width:750px'></div>"));
 
+            infoboxes.push(new OsmImageUploadHandler(
+                tagsES, userDetails, changes
+            ).getUI());
 
             const qbox = new QuestionPicker(changes.asQuestions(self.questions), tagsES);
             infoboxes.push(qbox);

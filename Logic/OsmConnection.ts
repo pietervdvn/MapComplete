@@ -69,6 +69,7 @@ export class OsmConnection {
 
             let data = self.userDetails.data;
             data.loggedIn = true;
+            console.log(userInfo);
             data.name = userInfo.getAttribute('display_name');
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
             data.img = userInfo.getElementsByTagName("img")[0].getAttribute("href");

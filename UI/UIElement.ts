@@ -47,6 +47,7 @@ export abstract class UIElement {
         let element = document.getElementById(divId);
         element.innerHTML = this.Render();
         this.Update();
+        return this;
     }
 
     protected abstract InnerRender(): string;

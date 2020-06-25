@@ -13,13 +13,18 @@ import {AddButton} from "./UI/AddButton";
 import {Tag} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
-import {Overpass} from "./Logic/Overpass";
 import {LoginDependendMessage} from "./UI/LoginDependendMessage";
 
+let dryRun = false;
 
-// Set to true if testing and changes should NOT be saved
-const dryRun = false;
-// Overpass.testUrl = "http://127.0.0.1:8080/test.json";
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+
+    // Set to true if testing and changes should NOT be saved
+  //  dryRun = true;
+    // If you have a testfile somewhere, enable this to spoof overpass
+    // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
+  //  Overpass.testUrl = "http://127.0.0.1:8080/test.json";
+}
 
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
@@ -81,7 +86,7 @@ const flayers: FilteredLayer[] = []
 
 for (const layer of questSetToRender.layers) {
 
-    const flayer = layer.asLayer(bm, allElements, changes);
+    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails.data);
 
     const addButton = {
         name: layer.name,

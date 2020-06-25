@@ -1,63 +1,50 @@
-import {UIEventSource} from "./UI/UIEventSource";
-import {WikimediaImage} from "./UI/Image/WikimediaImage";
-import {ImagesInCategory, Wikidata, Wikimedia} from "./Logic/Wikimedia";
-import {UIElement} from "./UI/UIElement";
-import {SlideShow} from "./UI/SlideShow";
-import {ImageSearcher} from "./Logic/ImageSearcher";
-import {KnownSet} from "./Layers/KnownSet";
-import {Park} from "./Layers/Park";
 import {FixedUiElement} from "./UI/FixedUiElement";
+import $ from "jquery"
+import {Imgur} from "./Logic/Imgur";
+import {ImageUploadFlow} from "./UI/ImageUploadFlow";
+import {UserDetails} from "./Logic/OsmConnection";
+import {UIEventSource} from "./UI/UIEventSource";
+import {UIRadioButton} from "./UI/UIRadioButton";
+import {UIElement} from "./UI/UIElement";
 
 
+var tags = {
+    "name": "Astridpark Brugge",
+    "wikidata":"Q1234",
+    "leisure":"park"
+}
 
-let properties = {
-    image: "https://www.designindaba.com/sites/default/files/node/news/21663/buteparkcardiff.jpg",
-    wikimedia_commons: "File:Boekenkast Sint-Lodewijks.jpg",
-    wikidata: "Q2763812"};
-let tagsES = new UIEventSource<any>(properties);
+var userdetails = new UserDetails()
+userdetails.loggedIn = true;
+userdetails.name = "Pietervdvn";
 
 
-let searcher = new ImageSearcher(tagsES);
+new ImageUploadFlow(
+).AttachTo("maindiv") //*/
 
-const uiElements = searcher.map((imageURLS : string[]) => {
-    const uiElements : UIElement[] = [];
-    for (const url of imageURLS) {
-        uiElements.push(ImageSearcher.CreateImageElement(url));
-    }
-    return uiElements;
-});
 
-new SlideShow(
-    new FixedUiElement("<b>Afbeeldingen</b>"),
-    uiElements,
-    new FixedUiElement("Geen afbeeldingen gevonden...")
-
-).AttachTo("maindiv");
-searcher.Activate();
 
 /*
-const imageSource = new UIEventSource<string>("https://commons.wikimedia.org/wiki/Special:FilePath/File:Pastoor van Haeckeplantsoen, Brugge (1).JPG?width=1000");
+$('document').ready(function () {
+    $('input[type=file]').on('change', function () {
+        var $files = $(this).get(0).files;
 
-// new SimpleImageElement(imageSource).AttachTo("maindiv");
-const wikimediaImageSource = new UIEventSource<string>("File:Deelboekenkast_rouppeplein.jpg");
-// new WikimediaImage(wikimediaImageSource).AttachTo("maindiv");
+        if ($files.length) {
+            // Reject big files
+            if ($files[0].size > $(this).data('max-size') * 1024) {
+                console.log('Please select a smaller file');
+                return false;
+            }
 
-const wdItem = 2763812;
-Wikimedia.GetWikiData(wdItem, (wd : Wikidata) => {
+            // Begin file upload
+            console.log('Uploading file to Imgur..');
 
-    const category = wd.commonsWiki;
-    Wikimedia.GetCategoryFiles(category, (images: ImagesInCategory) => {
-
-        const imageElements: UIElement[] = [];
-        for (const image of images.images) {
-            const wikimediaImageSource = new UIEventSource<string>(image.filename);
-            var uielem = new WikimediaImage(wikimediaImageSource);
-            imageElements.push(uielem);
+            const imgur = new Imgur();
+            imgur.uploadImage("KorenBloem", "Een korenbloem, ergens", $files[0],
+                (url) => {
+                    console.log("URL: ", url);
+                })
         }
-        var slides = new UIEventSource<UIElement[]>(imageElements);
-        new SlideShow(slides).AttachTo("maindiv");
-    })
-})
+    });
+});
 */
-
-    

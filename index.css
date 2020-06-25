@@ -236,3 +236,7 @@ body {
 .hidden {
     display: none;
 }
+
+.osmlink{
+    font-size: xx-small;
+}

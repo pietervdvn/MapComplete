@@ -44,5 +44,16 @@ When a map feature is clicked, a popup shows the information, images and questio
 The answers given by the user are sent (after a few seconds) to OpenStreetMap directly - if the user is logged in. If not logged in, the user is prompted to do so. 
 
 
+### Searching images
 
+Images are fetched from:
 
+- The OSM `image`, `image:0`, `image:1`, ... tags
+- The OSM `wikimedia_commons` tags
+- If wikidata is present, the wikidata `P18` (image) claim and, if a commons link is present, the commons images
+
+### Uploading images
+
+Images are uplaoded to imgur, as their API was way easier to handle. The URL is written into the changes
+
+The idea is that one in a while, the images are transfered to wikipedia

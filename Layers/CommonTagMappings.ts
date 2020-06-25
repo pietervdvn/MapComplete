@@ -26,8 +26,8 @@ export class CommonTagMappings {
     public static osmLink = new TagMappingOptions({
         key: "id",
         mapping: {
-            "node/-1": "Over enkele momenten sturen we je punt naar OpenStreetMap"
+            "node/-1": "<span class='osmlink'>Over enkele momenten sturen we je punt naar OpenStreetMap</span>"
         },
-        template: "<a href='https://osm.org/{id}'> Op OSM</a>"
+        template: "<span class='osmlink'><a href='https://osm.org/{id}'> Op OSM</a></span>"
     })
 }

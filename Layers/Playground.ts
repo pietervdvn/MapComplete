@@ -16,7 +16,7 @@ export class Playground extends LayerDefinition {
         this.removeContainedElements = true;
 
         this.minzoom = 13;
-        this.questions = [Quests.nameOf(this.name), Quests.accessNatureReserve];
+        this.questions = [Quests.nameOf(this.name)];
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
             new TagMappingOptions({
