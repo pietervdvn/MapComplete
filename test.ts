@@ -1,50 +1,70 @@
-import {FixedUiElement} from "./UI/FixedUiElement";
-import $ from "jquery"
-import {Imgur} from "./Logic/Imgur";
-import {ImageUploadFlow} from "./UI/ImageUploadFlow";
-import {UserDetails} from "./Logic/OsmConnection";
+// The message that should be shown at the center of the screen
 import {UIEventSource} from "./UI/UIEventSource";
-import {UIRadioButton} from "./UI/UIRadioButton";
 import {UIElement} from "./UI/UIElement";
+import {ElementStorage} from "./Logic/ElementStorage";
+import {OsmConnection} from "./Logic/OsmConnection";
+import {Changes} from "./Logic/Changes";
+import {Basemap} from "./Logic/Basemap";
+import {KnownSet} from "./Layers/KnownSet";
+import {Overpass} from "./Logic/Overpass";
+import {FeatureInfoBox} from "./UI/FeatureInfoBox";
+import {TagMapping, TagMappingOptions} from "./UI/TagMapping";
+import {CommonTagMappings} from "./Layers/CommonTagMappings";
+import {ImageCarousel} from "./UI/Image/ImageCarousel";
+import {WikimediaImage} from "./UI/Image/WikimediaImage";
 
+const centerMessage = new UIEventSource<string>("");
 
-var tags = {
-    "name": "Astridpark Brugge",
-    "wikidata":"Q1234",
-    "leisure":"park"
-}
+const dryRun = true;
+// If you have a testfile somewhere, enable this to spoof overpass
+// This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
+Overpass.testUrl = "http://127.0.0.1:8080/test.json";
+// The countdown: if set to e.g. ten, it'll start counting down. When reaching zero, changes will be saved. NB: this is implemented later, not in the eventSource
+const secondsTillChangesAreSaved = new UIEventSource<number>(0);
 
-var userdetails = new UserDetails()
-userdetails.loggedIn = true;
-userdetails.name = "Pietervdvn";
+const leftMessage = new UIEventSource<() => UIElement>(undefined);
 
+const selectedElement = new UIEventSource<any>(undefined);
 
-new ImageUploadFlow(
-).AttachTo("maindiv") //*/
+const questSetToRender = KnownSet.groen;
 
-
-
-/*
-$('document').ready(function () {
-    $('input[type=file]').on('change', function () {
-        var $files = $(this).get(0).files;
-
-        if ($files.length) {
-            // Reject big files
-            if ($files[0].size > $(this).data('max-size') * 1024) {
-                console.log('Please select a smaller file');
-                return false;
-            }
-
-            // Begin file upload
-            console.log('Uploading file to Imgur..');
-
-            const imgur = new Imgur();
-            imgur.uploadImage("KorenBloem", "Een korenbloem, ergens", $files[0],
-                (url) => {
-                    console.log("URL: ", url);
-                })
-        }
-    });
+const locationControl = new UIEventSource({
+    zoom: questSetToRender.startzoom,
+    lat: questSetToRender.startLat,
+    lon: questSetToRender.startLon
 });
-*/
+
+
+// ----------------- Prepare the important objects -----------------
+
+const saveTimeout = 5000; // After this many milliseconds without changes, saves are sent of to OSM
+const allElements = new ElementStorage();
+const osmConnection = new OsmConnection(dryRun);
+const changes = new Changes(
+    "Beantwoorden van vragen met MapComplete voor vragenset #" + questSetToRender.name,
+    osmConnection, allElements, centerMessage);
+
+
+const layer = questSetToRender.layers[0];
+const tags ={
+    id: "way/123",
+    // access: "yes",
+    barrier: "fence",
+    curator: "Arnout Zwaenepoel",
+    description: "Heide en heischraal landschap met landduin en grote soortenverscheidenheid",
+    dog: "no",
+    email: "arnoutenregine@skynet.be",
+    image: "https://natuurpuntbrugge.be/wp-content/uploads/2017/05/Schobbejakshoogte-schapen-PDG-1024x768.jpg",
+    leisure: "nature_reserve",
+    name: "Schobbejakshoogte",
+    operator: "Natuurpunt Brugge",
+    phone: "+32 50 82 26 97",
+    website: "https://natuurpuntbrugge.be/schobbejakshoogte/",
+    wikidata: "Q4499623",
+    wikipedia: "nl:Schobbejakshoogte"
+};
+const tagsES = allElements.addElement({properties: tags});
+
+new ImageCarousel(tagsES).AttachTo("maindiv").Activate();
+
+// new WikimediaImage(new UIEventSource<string>("File:Brugge_cobblestone_path.jpg")).AttachTo("maindiv");

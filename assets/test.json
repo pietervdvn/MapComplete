@@ -577,7 +577,6 @@
   ],
   "tags": {
     "leisure": "park",
-    "name": "Koning Albert I-park",
     "name:etymology:wikidata": "Q12974",
     "surface": "wood",
     "wikidata": "Q54817470",
@@ -634,7 +633,6 @@
   ],
   "tags": {
     "leisure": "park",
-    "name": "Begijnvest",
     "wikidata": "Q4499623",
     "wikipedia": "nl:Begijnenvest (Brugge)"
   }
@@ -17215,7 +17213,6 @@
   ],
   "tags": {
     "leisure": "park",
-    "name": "Begijnvest",
     "type": "multipolygon",
     "wikidata": "Q4499623",
     "wikipedia": "nl:Begijnenvest (Brugge)"

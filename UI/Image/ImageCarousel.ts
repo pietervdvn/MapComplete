@@ -35,7 +35,7 @@ export class ImageCarousel extends UIElement {
         this.slideshow = new SlideShow(
             new FixedUiElement("<b>Afbeeldingen</b>"),
             uiElements,
-            new FixedUiElement("<i>Geen afbeeldingen gevonden</i>"));
+            new FixedUiElement("")).HideOnEmpty(true);
     }
 
     InnerRender(): string {

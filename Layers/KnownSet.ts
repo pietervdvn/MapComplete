@@ -49,7 +49,7 @@ export class KnownSet {
 
     static groen = new KnownSet("groen",
         "Buurtnatuur",
-        [new NatureReserves(), new Park(), new Bos(), new Playground()],
+        [new NatureReserves(), new Park(), new Bos()],
         14,
         51.2,
         3.2,

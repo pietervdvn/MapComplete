@@ -26,8 +26,7 @@ export class Overpass {
         const query =
             '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;';
         console.log(query);
-        const url = "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query);
-        return url;
+        return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query);
     }
 
 

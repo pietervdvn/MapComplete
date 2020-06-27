@@ -58,9 +58,6 @@ export class Bookcases extends LayerDefinition {
             new TagMappingOptions({key: "ref", template: "Referentienummer {ref}"}),
 
             new TagMappingOptions({key: "description", template: "Extra beschrijving: <br /> <p>{description}</p>"}),
-
-            CommonTagMappings.osmLink
-
         ]
         ;
     }

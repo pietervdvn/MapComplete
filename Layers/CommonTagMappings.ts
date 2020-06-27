@@ -1,4 +1,5 @@
 import {TagMappingOptions} from "../UI/TagMapping";
+import {Img} from "../UI/Img";
 
 
 export class CommonTagMappings {
@@ -28,6 +29,8 @@ export class CommonTagMappings {
         mapping: {
             "node/-1": "<span class='osmlink'>Over enkele momenten sturen we je punt naar OpenStreetMap</span>"
         },
-        template: "<span class='osmlink'><a href='https://osm.org/{id}'> Op OSM</a></span>"
+        template: "<span class='osmlink'><a href='https://osm.org/{id}' target='_blank'>" +
+            Img.osmAbstractLogo +
+            "</a></span>"
     })
 }

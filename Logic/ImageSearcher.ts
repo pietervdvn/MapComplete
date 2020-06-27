@@ -34,7 +34,9 @@ export class ImageSearcher extends UIEventSource<string[]> {
                     self.AddImage(wd.image);
                     Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
                         for (const image of images.images) {
-                            self.AddImage(image.filename);
+                            if (image.startsWith("File:")) {
+                                self.AddImage(image);
+                            }
                         }
                     })
                 })
@@ -48,7 +50,10 @@ export class ImageSearcher extends UIEventSource<string[]> {
             if (commons.startsWith("Category:")) {
                 Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
                     for (const image of images.images) {
-                        self.AddImage(image.filename);
+                        // @ts-ignore
+                        if (image.startsWith("File:")) {
+                            self.AddImage(image);
+                        }
                     }
                 })
             } else { // @ts-ignore
@@ -125,7 +130,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
         const urlSource = new UIEventSource<string>(url);
         // @ts-ignore
         if (url.startsWith("File:")) {
-            return new WikimediaImage(urlSource);
+            return new WikimediaImage(urlSource.data);
         } else {
             return new SimpleImageElement(urlSource);
         }

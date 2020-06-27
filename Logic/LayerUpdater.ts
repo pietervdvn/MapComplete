@@ -57,9 +57,13 @@ export class LayerUpdater {
     }
 
     private handleFail(reason: any) {
-        this.runningQuery.setData(false);
         console.log("QUERY FAILED", reason);
-        // TODO
+        console.log("Retrying in 1s")
+        this.previousBounds = undefined;
+        const self = this;
+        window.setTimeout(
+            function(){self.update()}, 1000
+        )
     }
 
 
@@ -89,7 +93,7 @@ export class LayerUpdater {
 
     }
 
-    buildBboxFor(): string {
+    private buildBboxFor(): string {
         const b = this._map.map.getBounds();
         const latDiff = Math.abs(b.getNorth() - b.getSouth());
         const lonDiff = Math.abs(b.getEast() - b.getWest());
@@ -101,8 +105,7 @@ export class LayerUpdater {
 
         this.previousBounds = {north: n, east: e, south: s, west: w};
 
-        const bbox = "[bbox:" + s + "," + w + "," + n + "," + e + "]";
-        return bbox;
+        return "[bbox:" + s + "," + w + "," + n + "," + e + "]";
     }
 
     private IsInBounds(): boolean {

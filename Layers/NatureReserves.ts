@@ -3,7 +3,7 @@ import {Quests} from "../Quests";
 import {TagMappingOptions} from "../UI/TagMapping";
 import L from "leaflet"
 import {CommonTagMappings} from "./CommonTagMappings";
-import {Tag} from "../Logic/TagsFilter";
+import {Or, Tag} from "../Logic/TagsFilter";
 
 export class NatureReserves extends LayerDefinition {
     
@@ -11,7 +11,8 @@ export class NatureReserves extends LayerDefinition {
         super();
         this.name = "natuurgebied";
         this.icon = "./assets/tree_white_background.svg";
-        this.overpassFilter = new Tag("leisure", "nature_reserve");
+        this.overpassFilter =
+            new Or([new Tag("leisure", "nature_reserve"), new Tag("boundary","protected_area")]);
         this.removeTouchingElements = true;
 
         this.newElementTags = [new Tag("leisure", "nature_reserve"),
@@ -22,12 +23,11 @@ export class NatureReserves extends LayerDefinition {
         this.elementsToShow = [
             new TagMappingOptions({
                 key: "name",
-                template: "<h2>{name}</h2>",
-                missing: "<h2>Naamloos gebied</h2>"
+                template: "{name}",
+                missing: "Naamloos gebied"
             }),
             CommonTagMappings.access,
             CommonTagMappings.operator,
-            CommonTagMappings.osmLink
         ];
     }
 

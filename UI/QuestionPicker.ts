@@ -36,7 +36,7 @@ export class QuestionPicker extends UIElement {
 
 
         if (highestQ === undefined) {
-            return "De vragen zijn op!";
+            return "";
         }
 
         return highestQ.CreateHtml(this.source).Render();

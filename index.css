@@ -12,18 +12,59 @@ body {
     height: 100%;
 }
 
+img {
+    border-radius: 1em;
+}
+
+/**************** GENERIC ****************/
+
+.uielement {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.alert {
+    background-color: #fee4d1;
+    font-weight: bold;
+    border-radius: 1em;
+    padding: 0.3em;
+    margin: 0.25em;
+    text-align: center;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+}
+
+
+.activate-osm-authentication {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+
+/**************** USER BADGE ****************/
+
+
 .star {
     fill: black;
     width: 1em;
     height: 1em;
 }
 
+.envelope {
+    width: 1em;
+    height: 1em;
+}
+
+
 #profile-pic {
     float: left;
     width: 4em;
     height: 4em;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -31,10 +72,11 @@ body {
     transition: opacity 500ms linear;
 }
 
-#usertext a {
+#username {
     text-decoration: none;
     color: black;
 }
+
 
 #usertext {
     width: auto;
@@ -50,81 +92,76 @@ body {
     background-color: white;
     background-size: 100%;
     display: block;
-    
+
     line-height: 0.75em;
-
-
 }
 
-#username {
-    display: block ruby;
+#usertext a {
     text-decoration: none;
     color: black;
 }
 
-.imgWithAttr {
-    max-height: 20em;
-    
-}
-
-
-#userbadge{
+#userbadge {
+    display: inline-block;
     text-align: center;
     background-color: white;
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
     border-radius: 2em;
     transition: all 500ms linear;
+    margin: 1em;
+    margin-left: 0;
+    margin-top: 0;
+    min-width: 20em;
+    pointer-events: all;
+
 }
 
-#authbox {
+
+#userbadge p {
+    margin: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+
+/**************************************/
+
+
+#topleft-tools {
+    display: block;
     position: absolute;
     margin: 1em;
     margin-right: 0;
     margin-bottom: 0;
-    padding:0;
+    padding: 0;
     z-index: 5000;
     transition: all 500ms linear;
-    max-width: 25%;
     overflow: hidden;
-
-}
-
-#pendingchangesbox {
-    position:relative;
-}
-
-#pending-bar {
-    height: 1.2em;
-    margin: 0;
-    z-index: 5005;
-    background-color: white;
-    border-radius:1.2em;
-    padding: 0;
-    transition: all 1s linear;
-    opacity: 0; 
-    
-}
-
-#pending-text {
-    margin: 0;
-    margin-top: -1.2em;
-    z-index: 5000;
-    border-radius:1.2em;
-    height: 1.2em;
-    text-align: center;
-    padding: 0;
-    opacity: 0;
-    transition: opacity 1s linear;
+    pointer-events: none;
 }
 
 
+#welcomeMessage {
+    display: inline-block;
+    width: 30em;
+}
 
-#zoomin {
 
+#messagesboxmobilewrapper {
+    display: none; /*Only shown on small screens*/
+}
+
+#messagesboxmobile {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 0;
+    height: 90%;
 }
 
 #messagesbox {
+    /*Only shown on big screens*/
     padding: 2em;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -132,6 +169,33 @@ body {
     transition: all 500ms linear;
     background-color: white;
     border-radius: 2em;
+    pointer-events: all;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #messagesbox {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #messagesboxmobilewrapper {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        z-index: 5050;
+        transition: all 500ms linear;
+        overflow: hidden;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow-y: auto;
+        background-color: white;
+
+    }
 }
 
 #logo {
@@ -202,41 +266,170 @@ body {
     font-weight: bold;
 }
 
-.uielement{
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
+
+/************ Slideshow *****************/
+
+
+.image-slideshow {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-.activate-osm-authentication {
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
+.slides {
 }
 
-.popupImg {
-    max-height: 150px;
-    max-width: 300px;
+.prev-button {
+    background-color: black;
+    opacity: 30%;
+    width: 3.0em;
+
+    height: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+
+    z-index: 5060;
+
+    content:url(assets/arrow-left-smooth.svg);
+
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
 }
 
-.image-slidehow{
+
+.next-button {
+    background-color: black;
+    opacity: 30%;
+    width: 3.0em;
+    height: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+    
+
+    z-index: 5060;
+
+    content:url(assets/arrow-right-smooth.svg);
+}
+
+
+.slide > span > img {
     width: 500px;
-    height: 250px;
+    max-width: 100%;
+    height: auto;
+    
 }
 
-.slide {
-}
-
-.slide img{
-    max-height: 200px;
-    max-width: 500px;
-}
 
 .hidden {
-    display: none;
+    /* This is used by the slideshow, to hide non-active slides*/
+    display: none !important;
+
 }
 
-.osmlink{
-    font-size: xx-small;
+
+.imgWithAttr {
+    max-height: 20em;
+
+    position: relative;
+    overflow: hidden;
+
+}
+
+.wikimedia-link {
+    width: 1.5em;
+    height: auto;
+}
+
+.attribution {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+
+    position: absolute;
+    bottom: 0;
+    left: 5em; /* Offset for the go left button*/
+    padding: 0.25em;
+    margin-bottom: 0.25em;
+    border-radius: 0.5em;
+
+}
+
+.attribution-author {
+    display: inline-block;
+}
+
+.license {
+    font-size: small;
+    font-weight: lighter;
+}
+
+.attribution a {
+    color: white;
+}
+
+/***************** Info box (box containing features and questions ******************/
+
+.featureinfobox {
+}
+
+.featureinfoboxtitle {
+    position: relative;
+}
+
+.osmlink {
+    position: absolute;
+    right: 0;
+}
+
+
+.osm-logo path {
+    fill: #80cf36;
+}
+
+
+.featureinfoboxtitle span {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.featureinfoboxtitle a {
+    float: right;
+    margin-left: 1em;
+}
+
+
+.infoboxcontents {
+
+}
+
+
+.infboxcontents-left {
+    width: auto;
+    display: inline-block;
+    float: left;
+    padding: 0.1em;
+}
+
+.infboxcontents-right {
+    padding: 0.1em;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.infobox-questions {
+    max-width: 25em;
+    display: inline-block;
 }

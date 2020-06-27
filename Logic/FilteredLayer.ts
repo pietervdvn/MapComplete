@@ -25,8 +25,6 @@ export class FilteredLayer {
     private readonly _removeContainedElements;
     private readonly _removeTouchingElements;
 
-    private readonly _popupContent: ((source: UIEventSource<any>) => UIElement);
-
     private readonly _style: (properties) => any;
 
     private readonly _storage: ElementStorage;
@@ -41,6 +39,7 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
+    private _selectedElement: UIEventSource<any>;
 
     constructor(
         name: string,
@@ -49,8 +48,9 @@ export class FilteredLayer {
         filters: TagsFilter,
         removeContainedElements: boolean,
         removeTouchingElements: boolean,
-        popupContent: ((source: UIEventSource<any>) => UIElement),
-        style: ((properties) => any)) {
+        style: ((properties) => any),
+        selectedElement: UIEventSource<any>) {
+        this._selectedElement = selectedElement;
 
         if (style === undefined) {
             style = function () {
@@ -60,7 +60,6 @@ export class FilteredLayer {
         this.name = name;
         this._map = map;
         this.filters = filters;
-        this._popupContent = popupContent;
         this._style = style;
         this._storage = storage;
         this._removeContainedElements = removeContainedElements;
@@ -167,8 +166,6 @@ export class FilteredLayer {
             },
 
             pointToLayer: function (feature, latLng) {
-
-                const eventSource = self._storage.addOrGetElement(feature);
                 const style = self._style(feature.properties);
                 let marker;
                 if (style.icon === undefined) {
@@ -180,19 +177,6 @@ export class FilteredLayer {
                     });
                 }
 
-                eventSource.addCallback(function () {
-                    self.updateStyle();
-                });
-                const content = self._popupContent(eventSource)
-                marker.bindPopup(
-                    "<div class='popupcontent'>" +
-                    content.Render() +
-                    "</div>"
-                ).on("popupopen", function () {
-                    content.Activate();
-                    content.Update();
-                });
-
                 return marker;
             },
 
@@ -203,14 +187,9 @@ export class FilteredLayer {
                 eventSource.addCallback(function () {
                     self.updateStyle();
                 });
-                const content = self._popupContent(eventSource)
-                layer.bindPopup(
-                    "<div class='popupcontent'>" +
-                    content.Render() +
-                    "</div>"    
-                ).on("popupopen", function () {
-                    content.Activate();
-                    content.Update();
+                layer.on("click", function(){
+                    console.log("Selected ",feature)
+                    self._selectedElement.setData(feature.properties);
                 });
             }
         });

@@ -58,21 +58,36 @@ export class Basemap {
 
 
     constructor(leafletElementId: string, location: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
-        this. map = L.map(leafletElementId, {
+        this.map = L.map(leafletElementId, {
             center: [location.data.lat, location.data.lon],
             zoom: location.data.zoom,
-            layers: [this.osmLayer]
+            layers: [this.osmLayer],
+            attributionControl: false
         });
+
+        L.control.attribution({
+            position: 'bottomleft'
+        }).addTo(this.map);
+
         this.Location = location;
-        L.control.layers(this.baseLayers).addTo(this.map);
+        const layerControl = L.control.layers(this.baseLayers, null,
+            {
+                position: 'bottomleft',
+                hideSingleBase: true
+            })
+        layerControl.addTo(this.map);
+
         this.map.zoomControl.setPosition("bottomleft");
         const self = this;
+
         this.map.on("moveend", function () {
             location.data.zoom = self.map.getZoom();
             location.data.lat = self.map.getCenter().lat;
             location.data.lon = self.map.getCenter().lon;
             location.ping();
-        })
+        });
+
+
     }
 
 

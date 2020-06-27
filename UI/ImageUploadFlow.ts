@@ -4,22 +4,28 @@ import {UIRadioButton} from "./UIRadioButton";
 import {VariableUiElement} from "./VariableUIElement";
 import $ from "jquery"
 import {Imgur} from "../Logic/Imgur";
+import {UserDetails} from "../Logic/OsmConnection";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIRadioButton;
     private _licenseExplanation: UIElement;
     private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
+    private _userdetails: UIEventSource<UserDetails>;
 
-    constructor(uploadOptions: ((license: string) =>
-        {
-            title: string,
-            description: string,
-            handleURL: ((url: string) => void),
-            allDone: (() => void)
-        })
+    constructor(
+        userInfo: UIEventSource<UserDetails>,
+        uploadOptions: ((license: string) =>
+            {
+                title: string,
+                description: string,
+                handleURL: ((url: string) => void),
+                allDone: (() => void)
+            })
     ) {
         super(undefined);
+        this._userdetails = userInfo;
+        this.ListenTo(userInfo);
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
         this._licensePicker = UIRadioButton.FromStrings(
@@ -49,6 +55,10 @@ export class ImageUploadFlow extends UIElement {
 
     protected InnerRender(): string {
 
+        if (!this._userdetails.data.loggedIn) {
+            return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen</div>";
+        }
+
         if (this._isUploading.data > 0) {
             return "<b>Bezig met uploaden, nog " + this._isUploading.data + " foto's te gaan...</b>"
         }
@@ -63,6 +73,13 @@ export class ImageUploadFlow extends UIElement {
 
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
+        const user = this._userdetails.data;
+        if(!user.loggedIn){
+            htmlElement.onclick = function(){
+                user.osmConnection.AttemptLogin();
+            }
+        }
+        
         this._licensePicker.Update();
         const selector = document.getElementById('fileselector-' + this.id);
         const self = this;

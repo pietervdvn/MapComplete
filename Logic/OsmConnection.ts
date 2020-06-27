@@ -9,6 +9,9 @@ export class UserDetails {
     public csCount = 0;
     public img: string;
     public unreadMessages = 0;
+    public totalMessages = 0;
+    public osmConnection : OsmConnection;
+    public dryRun : boolean;
 
 }
 
@@ -26,10 +29,9 @@ export class OsmConnection {
 
     constructor(dryRun: boolean) {
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails());
+        this.userDetails.data.osmConnection = this;
+        this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
-        if(dryRun){
-            alert("Opgelet: testmode actief. Wijzigingen worden NIET opgeslaan")
-        }
 
         if (this.auth.authenticated()) {
             this.AttemptLogin(); // Also updates the user badge
@@ -61,11 +63,13 @@ export class OsmConnection {
                 self.userDetails.ping();
             }
 
-            if(details == null){
+            if (details == null) {
                 return;
             }
             // details is an XML DOM of user details
             let userInfo = details.getElementsByTagName("user")[0];
+
+            // let moreDetails = new DOMParser().parseFromString(userInfo.innerHTML, "text/xml");
 
             let data = self.userDetails.data;
             data.loggedIn = true;
@@ -73,9 +77,27 @@ export class OsmConnection {
             data.name = userInfo.getAttribute('display_name');
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
             data.img = userInfo.getElementsByTagName("img")[0].getAttribute("href");
-            data.unreadMessages = userInfo.getElementsByTagName("received")[0].getAttribute("unread");
+            const messages = userInfo.getElementsByTagName("messages")[0].getElementsByTagName("received")[0];
+            data.unreadMessages = parseInt(messages.getAttribute("unread"));
+            data.totalMessages = parseInt(messages.getAttribute("count"));
             self.userDetails.ping();
         });
+    }
+
+    /**
+     * All elements with class 'activate-osm-authentication' are loaded and get an 'onclick' to authenticate
+     * @param osmConnection
+     */
+    registerActivateOsmAUthenticationClass() {
+
+        const authElements = document.getElementsByClassName("activate-osm-authentication");
+        for (let i = 0; i < authElements.length; i++) {
+            let element = authElements.item(i);
+            // @ts-ignore
+            element.onclick = function () {
+                this.AttemptLogin();
+            }
+        }
     }
 
     private static parseUploadChangesetResponse(response: XMLDocument) {
@@ -102,6 +124,7 @@ export class OsmConnection {
             console.log("NOT UPLOADING as dryrun is true");
             var changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
+            continuation();
             return;
         }
 

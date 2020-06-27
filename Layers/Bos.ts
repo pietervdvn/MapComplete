@@ -32,14 +32,12 @@ export class Bos extends LayerDefinition {
         this.elementsToShow = [
             new TagMappingOptions({
                 key: "name",
-                template: "<h2>{name}</h2>",
-                missing: "<h2>Naamloos bos</h2>"
+                template: "{name}",
+                missing: "Naamloos bos"
             }),
 
             CommonTagMappings.access,
             CommonTagMappings.operator,
-            CommonTagMappings.osmLink
-
         ];
 
     }

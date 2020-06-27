@@ -82,9 +82,6 @@ export class Toilets extends LayerDefinition{
 
                 }
             }),
-
-            CommonTagMappings.osmLink
-            
         ];
     }
     

@@ -16,16 +16,23 @@ export class Changes {
     private readonly login: OsmConnection;
     public readonly _allElements: ElementStorage;
 
-    public _pendingChanges: { elementId: string, key: string, value: string }[] = []; // Gets reset on uploadAll
+    private _pendingChanges: { elementId: string, key: string, value: string }[] = []; // Gets reset on uploadAll
     private newElements: OsmObject[] = []; // Gets reset on uploadAll
 
-    public readonly pendingChangesES = new UIEventSource(this._pendingChanges);
-    private readonly centerMessage: UIEventSource<string>;
+    public readonly pendingChangesES = new UIEventSource<number>(this._pendingChanges.length);
+    public readonly isSaving = new UIEventSource(false);
+    private readonly _changesetComment: string;
+    private readonly _centerMessage: UIEventSource<string>;
 
-    constructor(login: OsmConnection, allElements: ElementStorage, centerMessage: UIEventSource<string>) {
+    constructor(
+        changesetComment: string,
+        login: OsmConnection,
+        allElements: ElementStorage,
+        centerMessage: UIEventSource<string>) {
+        this._changesetComment = changesetComment;
         this.login = login;
         this._allElements = allElements;
-        this.centerMessage = centerMessage;
+        this._centerMessage = centerMessage;
     }
 
     /**
@@ -37,15 +44,15 @@ export class Changes {
     addChange(elementId: string, key: string, value: string) {
 
         if (!this.login.userDetails.data.loggedIn) {
-            this.centerMessage.setData(
+            this._centerMessage.setData(
                 "<p>Bedankt voor je antwoord!</p>" +
-                "<p>Gelieve <span class='activate-osm-authentication'>in te loggen op OpenStreetMap</span> om dit op te slaan.</p>"+
+                "<p>Gelieve <span class='activate-osm-authentication'>in te loggen op OpenStreetMap</span> om dit op te slaan.</p>" +
                 "<p>Nog geen account? <a href=\'https://www.openstreetmap.org/user/new\' target=\'_blank\'>Registreer hier</a></p>"
             );
             const self = this;
             this.login.userDetails.addCallback(() => {
                 if (self.login.userDetails.data.loggedIn) {
-                    self.centerMessage.setData("");
+                    self._centerMessage.setData("");
                 }
             });
             return;
@@ -67,7 +74,7 @@ export class Changes {
         eventSource.ping();
         // We get the id from the event source, as that ID might be rewritten
         this._pendingChanges.push({elementId: eventSource.data.id, key: key, value: value});
-        this.pendingChangesES.ping();
+        this.pendingChangesES.setData(this._pendingChanges.length);
 
 
     }
@@ -114,9 +121,18 @@ export class Changes {
     public uploadAll(optionalContinuation: (() => void)) {
         const self = this;
 
+        this.isSaving.setData(true);
+        const optionalContinuationWrapped = function () {
+            self.isSaving.setData(false);
+            if (optionalContinuation) {
+                optionalContinuation();
+            }
+        }
+
+
         const pending: { elementId: string; key: string; value: string }[] = this._pendingChanges;
         this._pendingChanges = [];
-        this.pendingChangesES.setData(this._pendingChanges);
+        this.pendingChangesES.setData(this._pendingChanges.length);
 
         const newElements = this.newElements;
         this.newElements = [];
@@ -203,7 +219,7 @@ export class Changes {
 
             console.log("Beginning upload...");
             // At last, we build the changeset and upload
-            self.login.UploadChangeset("Updaten van metadata met Mapcomplete",
+            self.login.UploadChangeset(self._changesetComment,
                 function (csId) {
 
                     let modifications = "";
@@ -243,7 +259,7 @@ export class Changes {
                     return changes;
                 },
                 handleMapping,
-                optionalContinuation);
+                optionalContinuationWrapped);
         });
     }
     

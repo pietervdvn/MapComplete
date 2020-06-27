@@ -28,54 +28,21 @@ export class LayerDefinition {
     questions: QuestionDefinition[]; // Questions are shown below elementsToShow in a questionPicker
 
     style: (tags: any) => any;
-    
-    removeContainedElements : boolean = false;
+
+    removeContainedElements: boolean = false;
     removeTouchingElements: boolean = false;
 
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UserDetails):
+    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>):
         FilteredLayer {
         const self = this;
-
-        function generateInfoBox(tagsES: UIEventSource<any>) {
-
-            var infoboxes: UIElement[] = [];
-            for (const uiElement of self.elementsToShow) {
-                if (uiElement instanceof QuestionDefinition) {
-                    const questionDef = uiElement as QuestionDefinition;
-                    const question = new Question(changes, questionDef);
-                    infoboxes.push(question.CreateHtml(tagsES));
-                } else if (uiElement instanceof TagMappingOptions) {
-                    const tagMappingOpt = uiElement as TagMappingOptions;
-                    infoboxes.push(new TagMapping(tagMappingOpt, tagsES))
-                } else {
-                    const ui = uiElement as UIElement;
-                    infoboxes.push(ui);
-                }
-
-            }
-            infoboxes.push(new ImageCarousel(tagsES));
-
-            infoboxes.push(new FixedUiElement("<div style='width:750px'></div>"));
-
-            infoboxes.push(new OsmImageUploadHandler(
-                tagsES, userDetails, changes
-            ).getUI());
-
-            const qbox = new QuestionPicker(changes.asQuestions(self.questions), tagsES);
-            infoboxes.push(qbox);
-
-            return new VerticalCombine(infoboxes);
-
-        }
-
         return new FilteredLayer(
             this.name,
             basemap, allElements, changes,
             this.overpassFilter,
             this.removeContainedElements, this.removeTouchingElements,
-            generateInfoBox,
-            this.style);
+            this.style,
+            selectedElement);
 
     }
 

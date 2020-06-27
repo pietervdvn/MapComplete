@@ -8,7 +8,7 @@ export class UIEventSource<T>{
     }
 
 
-    public addCallback(callback: (() => void)) {
+    public addCallback(callback: ((latestData) => void)) {
         this._callbacks.push(callback);
         return this;
     }
@@ -23,18 +23,19 @@ export class UIEventSource<T>{
 
     public ping(): void {
         for (let i in this._callbacks) {
-            this._callbacks[i]();
+            this._callbacks[i](this.data);
         }
     }
 
     public map<J>(f: ((T) => J)): UIEventSource<J> {
-        const newSource = new UIEventSource<J>(
-            f(this.data)
-        );
         const self = this;
         this.addCallback(function () {
             newSource.setData(f(self.data));
+            newSource.ping();
         });
+        const newSource = new UIEventSource<J>(
+            f(this.data)
+        );
 
         return newSource;
 

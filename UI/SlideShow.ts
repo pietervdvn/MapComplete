@@ -6,7 +6,6 @@ export class SlideShow extends UIElement {
     private readonly _embeddedElements: UIEventSource<UIElement[]>
 
     private readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
-    private readonly _title: UIElement;
     private readonly _noimages: UIElement;
 
     constructor(
@@ -14,7 +13,6 @@ export class SlideShow extends UIElement {
         embeddedElements: UIEventSource<UIElement[]>,
         noImages: UIElement) {
         super(embeddedElements);
-        this._title = title;
         this._embeddedElements = embeddedElements;
         this.ListenTo(this._currentSlide);
         this._noimages = noImages;
@@ -24,30 +22,37 @@ export class SlideShow extends UIElement {
         if (this._embeddedElements.data.length == 0) {
             return this._noimages.Render();
         }
-        const prevBtn = "<input class='prev-button' type='button' onclick='console.log(\"prev\")' value='<' />"
-        const nextBtn = "<input class='next-button' type='button' onclick='console.log(\"nxt\")' value='>' />"
-        let header = this._title.Render();
-        if (this._embeddedElements.data.length > 1) {
-            header = header + prevBtn + (this._currentSlide.data + 1) + "/" + this._embeddedElements.data.length + nextBtn;
+
+        if (this._embeddedElements.data.length == 1) {
+            return "<div class='image-slideshow'>"+this._embeddedElements.data[0].Render()+"</div>";
         }
-        let body = ""
+
+        const prevBtn = "<div class='prev-button' id='prevbtn-"+this.id+"'></div>"
+        const nextBtn = "<div class='next-button' id='nextbtn-"+this.id+"'></div>"
+
+        let slides = ""
         for (let i = 0; i < this._embeddedElements.data.length; i++) {
             let embeddedElement = this._embeddedElements.data[i];
             let state = "hidden"
             if (this._currentSlide.data === i) {
                 state = "active-slide";
             }
-            body += "      <div class=\"slide " + state + "\">" + embeddedElement.Render() + "</div>\n";
+            slides += "      <div class=\"slide " + state + "\">" + embeddedElement.Render() + "</div>\n";
         }
-        return "<span class='image-slideshow'>" + header + body + "</span>";
+        return "<div class='image-slideshow'>"
+            + prevBtn
+            + "<div class='slides'>" + slides + "</div>"
+            + nextBtn
+            + "</div>";
     }
 
     InnerUpdate(htmlElement) {
-        const nextButton = htmlElement.getElementsByClassName('next-button')[0];
-        if(nextButton === undefined){
+        const nextButton = document.getElementById("nextbtn-"+this.id);
+        if(nextButton === undefined || nextButton === null){
             return;
         }
-        const prevButton = htmlElement.getElementsByClassName('prev-button')[0];
+      
+        const prevButton = document.getElementById("prevbtn-"+this.id);
         const self = this;
         nextButton.onclick = () => {
             const current = self._currentSlide.data;

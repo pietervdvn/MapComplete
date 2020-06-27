@@ -81,7 +81,7 @@ export class QuestionUI extends UIElement {
         const embeddedScriptSave = 'questionAnswered(' + this._qid + ', "' + this._tags.data.id + '", false )';
         const embeddedScriptSkip = 'questionAnswered(' + this._qid + ', "' + this._tags.data.id + '", true )';
         const saveButton = "<input class='save-button' type='button' onclick='" + embeddedScriptSave + "' value='Opslaan' />";
-        const skip = "<input class='skip-button' type='button' onclick='" + embeddedScriptSkip + "' value='Ik ben het niet zeker (vraag overslaan)' />";
+        const skip = "<input class='skip-button' type='button' onclick='" + embeddedScriptSkip + "' value='Ik ben niet zeker (vraag overslaan)' />";
         return q.question + "<br/>  " + answers + saveButton + skip;
     }
 

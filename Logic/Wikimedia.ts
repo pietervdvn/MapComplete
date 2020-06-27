@@ -68,8 +68,7 @@ export class Wikimedia {
 
             for (const member of members) {
 
-                imageOverview.images.push(
-                    {filename: member.title, fileid: member.pageid});
+                imageOverview.images.push(member.title);
             }
             if (response.continue === undefined || alreadyLoaded > 30) {
                 handleCategory(imageOverview);
@@ -96,7 +95,10 @@ export class Wikimedia {
             wd.commonsWiki = commons?.title;
 
             // P18 is the claim 'depicted in this image'
-            wd.image = "File:" + entity.claims.P18?.[0]?.mainsnak?.datavalue?.value;
+            const image = entity.claims.P18?.[0]?.mainsnak?.datavalue?.value;
+            if (image) {
+                wd.image = "File:" + image;
+            }
             handleWikidata(wd);
         });
     }
@@ -114,7 +116,7 @@ export class Wikidata {
 
 export class ImagesInCategory {
     // Filenames of relevant images
-    images: { filename: string, fileid: number }[] = [];
+    images: string[] = [];
 }
 
 export class LicenseInfo {

@@ -22,15 +22,12 @@ export class Park extends LayerDefinition {
         this.elementsToShow = [
             new TagMappingOptions({
                 key: "name",
-                template: "<h2>{name}</h2>",
-                missing: "<h2>Naamloos park</h2>"
+                template: "{name}",
+                missing: "Naamloos park"
             }),
 
             CommonTagMappings.access,
             CommonTagMappings.operator,
-            CommonTagMappings.osmLink,
-            
-
         ];
 
     }

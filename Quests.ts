@@ -54,7 +54,8 @@ export class Quests {
     ).addUnrequiredTag("seamark:type", "restricted_area");
 
     static nameOf(name: string) : QuestionDefinition {
-        return QuestionDefinition.noNameOrNameQuestion("Wat is de naam van dit " + name + "?",
+        return QuestionDefinition.noNameOrNameQuestion("<b>Wat is de <i>officiële</i> naam van dit " + name + "?</b><br />" +
+            "Gelieve geen naam uit te vinden",
             "Dit " + name + " heeft geen naam", 20);
     }
 

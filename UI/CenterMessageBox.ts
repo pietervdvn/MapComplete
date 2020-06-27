@@ -62,7 +62,7 @@ export class CenterMessageBox extends UIElement {
         if (this._centermessage.data != "") {
             pstyle.opacity = "1";
             pstyle.pointerEvents = "all";
-            Helpers.registerActivateOsmAUthenticationClass(this._osmConnection);
+            this._osmConnection.registerActivateOsmAUthenticationClass();
             return;
         }
         pstyle.pointerEvents = "none";
