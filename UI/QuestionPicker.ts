@@ -39,7 +39,9 @@ export class QuestionPicker extends UIElement {
             return "";
         }
 
-        return highestQ.CreateHtml(this.source).Render();
+        return "<div class='infobox-questions'>" +
+            highestQ.CreateHtml(this.source).Render() +
+            "</div>";
     }
     InnerUpdate(htmlElement: HTMLElement) {
     }

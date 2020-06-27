@@ -26,7 +26,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     dryRun = true;
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
-    Overpass.testUrl = "http://127.0.0.1:8080/test.json";
+   // Overpass.testUrl = "http://127.0.0.1:8080/test.json";
 }
 
 
@@ -124,7 +124,6 @@ addButton.Update();
  * Show the questions and information for the selected element on the leftMessage
  */
 selectedElement.addCallback((data) => {
-        console.log("Got selection");
         // Which is the applicable set?
         for (const layer of questSetToRender.layers) {
 

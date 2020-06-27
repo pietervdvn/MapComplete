@@ -15,7 +15,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
     private _activated: boolean = false;
-
+    
     constructor(tags: UIEventSource<any>) {
         super([]);
 

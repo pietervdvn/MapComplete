@@ -60,6 +60,8 @@ export class Imgur {
         $.ajax(settings).done(function (response) {
             response = JSON.parse(response);
             handleSuccessfullUpload(response.data.link);
+        }).fail((reason) => {
+            console.log("Uploading to IMGUR failed", reason)
         });
     }
 

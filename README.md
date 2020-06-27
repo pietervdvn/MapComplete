@@ -57,3 +57,13 @@ Images are fetched from:
 Images are uplaoded to imgur, as their API was way easier to handle. The URL is written into the changes
 
 The idea is that one in a while, the images are transfered to wikipedia
+
+
+
+
+# Attributions:
+
+Data from OpenStreetMap
+Images from Wikipedia/Wikimedia
+
+https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg

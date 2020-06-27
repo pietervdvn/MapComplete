@@ -5,16 +5,20 @@ import {UIEventSource} from "../UI/UIEventSource";
 import {ImageUploadFlow} from "../UI/ImageUploadFlow";
 import {Changes} from "./Changes";
 import {UserDetails} from "./OsmConnection";
+import {SlideShow} from "../UI/SlideShow";
 
 export class OsmImageUploadHandler {
     private _tags: UIEventSource<any>;
     private _changeHandler: Changes;
     private _userdetails: UIEventSource<UserDetails>;
+    private _slideShow: SlideShow;
 
     constructor(tags: UIEventSource<any>,
                 userdetails: UIEventSource<UserDetails>,
-                changeHandler: Changes
+                changeHandler: Changes,
+                slideShow : SlideShow
     ) {
+        this._slideShow = slideShow; // To move the slideshow (if any) to the last, just added element
         if (tags === undefined || userdetails === undefined || changeHandler === undefined) {
             throw "Something is undefined"
         }
@@ -25,6 +29,7 @@ export class OsmImageUploadHandler {
 
     private generateOptions(license: string) {
         const tags = this._tags.data;
+        const self = this;
 
         const title = tags.name ?? "Unknown area";
         const description = [
@@ -46,6 +51,7 @@ export class OsmImageUploadHandler {
                 }
                 console.log("Adding image:" + freeIndex, url);
                 changes.addChange(tags.id, "image:" + freeIndex, url);
+                self._slideShow.MoveTo(-1); // set the last (thus newly added) image) to view
             },
             allDone: function () {
                 changes.uploadAll(function () {

@@ -18,7 +18,7 @@ export class ImageCarousel extends UIElement {
      */
     private readonly searcher: ImageSearcher;
 
-    private readonly slideshow: SlideShow;
+    public readonly slideshow: SlideShow;
 
     constructor(tags: UIEventSource<any>) {
         super(tags);
@@ -32,8 +32,8 @@ export class ImageCarousel extends UIElement {
             }
             return uiElements;
         });
+        
         this.slideshow = new SlideShow(
-            new FixedUiElement("<b>Afbeeldingen</b>"),
             uiElements,
             new FixedUiElement("")).HideOnEmpty(true);
     }

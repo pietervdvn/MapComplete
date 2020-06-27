@@ -65,8 +65,8 @@ export class KnownSet {
         "\n" +
         "<p>De data komt van <b>OpenStreetMap</b> en je antwoorden worden daar ook opgeslaan. " +
         "Omdat iedereen aan deze data bijdraagt, kunnen we geen garantie op correctheid bieden en heeft deze data geen juridische waarde</p>\n" +
-        "<p>Je <b>privacy</b> is belangrijk. We tellen wel hoeveel personen de website bezoeken. Om je niet dubbel te tellen wordt er één coockie bijgehouden waar geen persoonlijke informatie in staat. " +
-        "Als je inlogt, komt er een tweede coockie bij met je inloggegevens.</p>\n",
+        "<p>Je <b>privacy</b> is belangrijk. We tellen wel hoeveel personen de website bezoeken. Om je niet dubbel te tellen wordt er één cookie bijgehouden waar geen persoonlijke informatie in staat. " +
+        "Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</p>\n",
         "  <p>Wil je meehelpen? <br/>\n" +
         "            Begin dan met <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">een account\n" +
         "            te maken</a> of\n" +

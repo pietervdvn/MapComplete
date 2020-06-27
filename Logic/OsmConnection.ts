@@ -90,12 +90,13 @@ export class OsmConnection {
      */
     registerActivateOsmAUthenticationClass() {
 
+        const self = this;
         const authElements = document.getElementsByClassName("activate-osm-authentication");
         for (let i = 0; i < authElements.length; i++) {
             let element = authElements.item(i);
             // @ts-ignore
             element.onclick = function () {
-                this.AttemptLogin();
+                self.AttemptLogin();
             }
         }
     }

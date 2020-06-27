@@ -144,20 +144,12 @@ img {
 
 #welcomeMessage {
     display: inline-block;
-    width: 30em;
+    max-width: 30em;
 }
 
 
 #messagesboxmobilewrapper {
     display: none; /*Only shown on small screens*/
-}
-
-#messagesboxmobile {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    padding-top: 1em;
-    padding-bottom: 0;
-    height: 90%;
 }
 
 #messagesbox {
@@ -192,11 +184,39 @@ img {
         width: 100%;
         height: 100%;
         display: block;
-        overflow-y: auto;
         background-color: white;
+    }
 
+    #messagesboxmobile-scroll {
+        display: block;
+        overflow-y: auto;
+        height: calc(100vh - 9em);
+        padding-top: 1em;
+        padding-bottom: 2em;
+        margin-bottom: 0;
+    }
+    #messagesboxmobile {
+        margin: 1em;
+        margin-bottom: 2em;
     }
 }
+
+
+#to-the-map {
+    margin: 0;
+    padding: 1em;
+    padding-right: 2em;
+    color: white;
+    background-color: #7ebc6f;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    width: 100%;
+    height: 4em;
+    cursor: pointer;
+}
+
 
 #logo {
     position: relative;
@@ -279,6 +299,7 @@ img {
 }
 
 .slides {
+    overflow: hidden;
 }
 
 .prev-button {
@@ -380,6 +401,54 @@ img {
     color: white;
 }
 
+
+/**************** Image upload flow ***************/
+
+.imageflow {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+
+}
+
+.imageflow-file-input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    border-radius: 1em;
+    border: 3px solid black;
+}
+
+.imageflow-add-picture {
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 13px;
+}
+
+.imageflow-file-input-wrapper img {
+    width: 36px;
+    height: 36px;
+    padding: 0.1em;
+    margin-top: 5px;
+    border-radius: 0;
+    float: left;
+}
+
+
+.license-picker {
+    background-color: orange;
+    float: left;
+}
+
+.imageflow > input {
+    display: none;
+}
+
+
 /***************** Info box (box containing features and questions ******************/
 
 .featureinfobox {
@@ -394,9 +463,21 @@ img {
     right: 0;
 }
 
-
 .osm-logo path {
-    fill: #80cf36;
+    fill: #7ebc6f;
+}
+
+.wikipedialink {
+    position: absolute;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    padding-right: 12px;
+}
+
+.wikipedialink img {
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -412,24 +493,21 @@ img {
 
 
 .infoboxcontents {
-
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 
-.infboxcontents-left {
-    width: auto;
-    display: inline-block;
-    float: left;
-    padding: 0.1em;
-}
-
-.infboxcontents-right {
-    padding: 0.1em;
-    overflow: hidden;
-    display: inline-block;
+.infobox-information {
+    width: 100%;
+    margin-top: 1em;
 }
 
 .infobox-questions {
-    max-width: 25em;
-    display: inline-block;
+    margin-top: 1em;
+    background-color: #e5f5ff;
+    padding: 1em;
+    border-radius: 1em;
+    margin-right: 1em;
+    
 }

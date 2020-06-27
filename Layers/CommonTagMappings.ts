@@ -27,10 +27,34 @@ export class CommonTagMappings {
     public static osmLink = new TagMappingOptions({
         key: "id",
         mapping: {
-            "node/-1": "<span class='osmlink'>Over enkele momenten sturen we je punt naar OpenStreetMap</span>"
+            "node/-1": ""
         },
         template: "<span class='osmlink'><a href='https://osm.org/{id}' target='_blank'>" +
             Img.osmAbstractLogo +
             "</a></span>"
-    })
+    });
+
+    public static wikipediaLink = new TagMappingOptions({
+        key: "wikipedia",
+        missing: "",
+        freeform: (value: string) => {
+            let link = "";
+            // @ts-ignore
+            if (value.startsWith("https")) {
+                link = value;
+            } else {
+
+                const splitted = value.split(":");
+                const language = splitted[0];
+                splitted.shift();
+                const page = splitted.join(":");
+                link = 'https://' + language + '.wikipedia.org/wiki/' + page;
+
+            }
+            return "<span class='wikipedialink'>" +
+                "<a href='" + link + "' target='_blank'>" +
+                "<img width='64px' src='./assets/wikipedia.svg' alt='wikipedia'" +
+                "</a></span>";
+        }
+    });
 }

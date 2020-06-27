@@ -9,7 +9,6 @@ export class SlideShow extends UIElement {
     private readonly _noimages: UIElement;
 
     constructor(
-        title: UIElement,
         embeddedElements: UIEventSource<UIElement[]>,
         noImages: UIElement) {
         super(embeddedElements);
@@ -24,7 +23,9 @@ export class SlideShow extends UIElement {
         }
 
         if (this._embeddedElements.data.length == 1) {
-            return "<div class='image-slideshow'>"+this._embeddedElements.data[0].Render()+"</div>";
+            return "<div class='image-slideshow'><div class='slides'><div class='slide'>" +
+                this._embeddedElements.data[0].Render() +
+                "</div></div></div>";
         }
 
         const prevBtn = "<div class='prev-button' id='prevbtn-"+this.id+"'></div>"
@@ -46,26 +47,29 @@ export class SlideShow extends UIElement {
             + "</div>";
     }
 
+    public MoveTo(index: number) {
+        if (index < 0) {
+            index = this._embeddedElements.data.length - 1;
+        }
+        index = index % this._embeddedElements.data.length;
+        this._currentSlide.setData(index);
+    }
+
     InnerUpdate(htmlElement) {
-        const nextButton = document.getElementById("nextbtn-"+this.id);
-        if(nextButton === undefined || nextButton === null){
+        const nextButton = document.getElementById("nextbtn-" + this.id);
+        if (nextButton === undefined || nextButton === null) {
             return;
         }
-      
-        const prevButton = document.getElementById("prevbtn-"+this.id);
+
+        const prevButton = document.getElementById("prevbtn-" + this.id);
         const self = this;
         nextButton.onclick = () => {
             const current = self._currentSlide.data;
-            const next = (current + 1) % self._embeddedElements.data.length;
-            self._currentSlide.setData(next);
+            self.MoveTo(current + 1);
         }
         prevButton.onclick = () => {
             const current = self._currentSlide.data;
-            let prev = (current - 1);
-            if (prev < 0) {
-                prev = self._embeddedElements.data.length - 1;
-            }
-            self._currentSlide.setData(prev);
+            self.MoveTo(current - 1);
         }
 
     }

@@ -62,22 +62,21 @@ export class Basemap {
             center: [location.data.lat, location.data.lon],
             zoom: location.data.zoom,
             layers: [this.osmLayer],
-            attributionControl: false
         });
 
-        L.control.attribution({
-            position: 'bottomleft'
-        }).addTo(this.map);
 
         this.Location = location;
         const layerControl = L.control.layers(this.baseLayers, null,
             {
-                position: 'bottomleft',
+                position: 'bottomright',
                 hideSingleBase: true
             })
         layerControl.addTo(this.map);
+        
+        
+        
 
-        this.map.zoomControl.setPosition("bottomleft");
+        this.map.zoomControl.setPosition("bottomright");
         const self = this;
 
         this.map.on("moveend", function () {

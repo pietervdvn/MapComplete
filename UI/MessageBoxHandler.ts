@@ -15,9 +15,9 @@ export class MessageBoxHandler {
         this.listenTo(uielement);
         this.update();
 
-        new VariableUiElement(new UIEventSource<string>("<h2>Naar de kaart > </h2>"),
+        new VariableUiElement(new UIEventSource<string>("<h2>Naar de kaart</h2>"),
             (htmlElement) => {
-                htmlElement.onclick = function () {
+                document.getElementById("to-the-map").onclick = function () {
                     uielement.setData(undefined);
                     onClear();
                 }

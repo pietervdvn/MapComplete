@@ -1,13 +1,14 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
-import {UIRadioButton} from "./UIRadioButton";
 import {VariableUiElement} from "./VariableUIElement";
 import $ from "jquery"
 import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/OsmConnection";
+import {DropDownUI} from "./DropDownUI";
 
 export class ImageUploadFlow extends UIElement {
-    private _licensePicker: UIRadioButton;
+    private _licensePicker: UIElement;
+    private _selectedLicence: UIEventSource<string>;
     private _licenseExplanation: UIElement;
     private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
@@ -28,26 +29,32 @@ export class ImageUploadFlow extends UIElement {
         this.ListenTo(userInfo);
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
-        this._licensePicker = UIRadioButton.FromStrings(
+
+        const licensePicker = new DropDownUI("Jouw foto wordt gepubliceerd ",
+
             [
-                "CC-BY-SA",
-                "CC-BY",
-                "CC0"
+                {value: "CC0", shown: "in het publiek domein"},
+                {value: "CC-BY-SA 4.0", shown: "onder een CC-BY-SA-licentie"},
+                {value: "CC-BY 4.0", shown: "onder een CC-BY-licentie"}
             ]
         );
+        this._licensePicker = licensePicker;
+        this._selectedLicence = licensePicker.selectedElement;
+
+
         const licenseExplanations = {
-            "CC-BY-SA":
+            "CC-BY-SA 4.0":
                 "<b>Creative Commonse met naamsvermelding en gelijk delen</b><br/>" +
                 "Je foto mag door iedereen gratis gebruikt worden, als ze je naam vermelden én ze afgeleide werken met deze licentie en attributie delen.",
-            "CC-BY":
+            "CC-BY 4.0":
                 "<b>Creative Commonse met naamsvermelding</b> <br/>" +
                 "Je foto mag door iedereen gratis gebruikt worden, als ze je naam vermelden",
             "CC0":
                 "<b>Geen copyright</b><br/> Je foto mag door iedereen voor alles gebruikt worden"
         }
         this._licenseExplanation = new VariableUiElement(
-            this._licensePicker.SelectedElementIndex.map((license) => {
-                return licenseExplanations[license?.value]
+            this._selectedLicence.map((license) => {
+                return licenseExplanations[license]
             })
         );
     }
@@ -58,37 +65,57 @@ export class ImageUploadFlow extends UIElement {
         if (!this._userdetails.data.loggedIn) {
             return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen</div>";
         }
-
+        if (this._isUploading.data == 1) {
+            return "<b>Bezig met een foto te uploaden...</b>"
+        }
         if (this._isUploading.data > 0) {
             return "<b>Bezig met uploaden, nog " + this._isUploading.data + " foto's te gaan...</b>"
         }
 
-        return "<b>Foto's toevoegen</b><br/>" +
-            'Kies een licentie:<br/>' +
+        return "" +
+            "<div class='imageflow'>" +
+            
+            "<label for='fileselector-" + this.id + "'>" +
+            
+            "<div class='imageflow-file-input-wrapper'>" +
+            "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
+            "<span class='imageflow-add-picture'>Voeg foto toe</span>" +
+            "<div class='break'></div>"+
+            "</div>" +
             this._licensePicker.Render() +
-            this._licenseExplanation.Render() + "<br/>" +
-            '<input type="file" accept="image/*" name="picField" id="fileselector-' + this.id + '" size="24" multiple="multiple" alt=""/><br/>'
+            
+            "</label>" +
+            
+            "<input id='fileselector-" + this.id + "' " +
+            "type='file' " +
+            "class='imageflow-file-input' " +
+            "accept='image/*' name='picField' size='24' multiple='multiple' alt=''" +
+            "/>" +
+            
+            "</div>"
             ;
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         const user = this._userdetails.data;
-        if(!user.loggedIn){
-            htmlElement.onclick = function(){
+
+        htmlElement.onclick = function () {
+            if (!user.loggedIn) {
                 user.osmConnection.AttemptLogin();
             }
         }
-        
+
+
         this._licensePicker.Update();
         const selector = document.getElementById('fileselector-' + this.id);
         const self = this;
         if (selector != null) {
-            selector.onchange = function (event) {
+            selector.onchange = function () {
                 const files = $(this).get(0).files;
                 self._isUploading.setData(files.length);
 
-                const opts = self._uploadOptions(self._licensePicker.SelectedElementIndex.data.value);
+                const opts = self._uploadOptions(self._selectedLicence.data);
 
                 Imgur.uploadMultiple(opts.title, opts.description, files,
                     function (url) {

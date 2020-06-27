@@ -11,6 +11,7 @@ import {UserDetails} from "../Logic/OsmConnection";
 import {Img} from "./Img";
 import {CommonTagMappings} from "../Layers/CommonTagMappings";
 import {Tag} from "../Logic/TagsFilter";
+import {ImageUploadFlow} from "./ImageUploadFlow";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -27,6 +28,8 @@ export class FeatureInfoBox extends UIElement {
     private _changes: Changes;
     private _userDetails: UIEventSource<UserDetails>;
     private _imageElement: ImageCarousel;
+    private _pictureUploader: UIElement;
+    private _wikipedialink: UIElement;
 
 
     constructor(
@@ -66,27 +69,37 @@ export class FeatureInfoBox extends UIElement {
         this._infoElements = infoboxes;
 
         this._osmLink = new TagMapping(CommonTagMappings.osmLink, this._tagsES);
+        this._wikipedialink = new TagMapping(CommonTagMappings.wikipediaLink, this._tagsES);
+        this._pictureUploader = new OsmImageUploadHandler(tagsES, userDetails, changes, this._imageElement.slideshow).getUI();
 
 
     }
 
     InnerRender(): string {
 
+        let questions = "";
+
+        if (this._userDetails.data.loggedIn) {
+            questions = this._questions.HideOnEmpty(true).Render();
+        }
 
         return "<div class='featureinfobox'>" +
             "<div class='featureinfoboxtitle'>" +
             "<span>" + this._title.Render() + "</span>" +
+            this._wikipedialink.Render() +
             this._osmLink.Render() +
             "</div>" +
-            
+
             "<div class='infoboxcontents'>" +
 
             this._imageElement.Render() +
+            this._pictureUploader.Render() +
 
-            new VerticalCombine(this._infoElements).Render() +
-            "   <span class='infobox-questions'>" +
-            this._questions.Render() +
-            "   </span>" +
+            new VerticalCombine(this._infoElements, 'infobox-information').HideOnEmpty(true).Render() +
+
+            questions +
+
+
             "</div>" +
             "" +
             "</div>";
@@ -95,21 +108,12 @@ export class FeatureInfoBox extends UIElement {
     Activate() {
         super.Activate();
         this._imageElement.Activate();
+        this._pictureUploader.Activate();
     }
 
     Update() {
         super.Update();
         this._imageElement.Update();
-    }
-
-    private generateInfoBox() {
-        var infoboxes: UIElement[] = [];
-
-        infoboxes.push(new OsmImageUploadHandler(
-            this._tagsES, this._userDetails, this._changes
-        ).getUI());
-
-
-        return new VerticalCombine(infoboxes);
+        this._pictureUploader.Update();
     }
 }

@@ -7,17 +7,20 @@ export class TagMappingOptions {
     mapping?: any;// dictionary for specific values, the values are substituted 
     template?: string; // The template, where {key} will be substituted
     missing?: string// What to show when the key is not there
+    freeform?: ((string) => string) // Freeform template function, only applied on the value if nothing matches
 
     constructor(options: {
         key: string,
         mapping?: any,
         template?: string,
         missing?: string
+        freeform?: ((string) => string)
     }) {
         this.key = options.key;
         this.mapping = options.mapping;
         this.template = options.template;
         this.missing = options.missing;
+        this.freeform = options.freeform;
     }
 
 }
@@ -60,12 +63,16 @@ export class TagMapping extends UIElement {
             }
         }
 
-        if (o.template === undefined) {
-            console.log("Warning: no match for " + o.key + "=" + v);
-            return v;
+        if (o.template !== undefined) {
+            return o.template.replace("{" + o.key + "}", v);
         }
 
-        return o.template.replace("{" + o.key + "}", v);
+        if(o.freeform !== undefined){
+            return o.freeform(v);
+        }
+        
+        console.log("Warning: no match for " + o.key + "=" + v);
+        return v;
     }
     InnerUpdate(htmlElement: HTMLElement) {
     }

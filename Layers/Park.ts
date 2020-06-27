@@ -3,7 +3,7 @@ import {Quests} from "../Quests";
 import {TagMappingOptions} from "../UI/TagMapping";
 import L from "leaflet"
 import {CommonTagMappings} from "./CommonTagMappings";
-import {Tag} from "../Logic/TagsFilter";
+import {Or, Tag} from "../Logic/TagsFilter";
 
 export class Park extends LayerDefinition {
 
@@ -11,7 +11,8 @@ export class Park extends LayerDefinition {
         super();
         this.name = "park";
         this.icon = "./assets/tree_white_background.svg";
-        this.overpassFilter = new Tag("leisure","park");
+        this.overpassFilter = 
+            new Or([new Tag("leisure","park"), new Tag("landuse","village_green")]);
         this.newElementTags = [new Tag("leisure", "park"), 
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")];
         this.removeTouchingElements = true;

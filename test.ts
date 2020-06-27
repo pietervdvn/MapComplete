@@ -12,6 +12,8 @@ import {TagMapping, TagMappingOptions} from "./UI/TagMapping";
 import {CommonTagMappings} from "./Layers/CommonTagMappings";
 import {ImageCarousel} from "./UI/Image/ImageCarousel";
 import {WikimediaImage} from "./UI/Image/WikimediaImage";
+import {OsmImageUploadHandler} from "./Logic/OsmImageUploadHandler";
+import {DropDownUI} from "./UI/DropDownUI";
 
 const centerMessage = new UIEventSource<string>("");
 
@@ -60,11 +62,25 @@ const tags ={
     operator: "Natuurpunt Brugge",
     phone: "+32 50 82 26 97",
     website: "https://natuurpuntbrugge.be/schobbejakshoogte/",
-    wikidata: "Q4499623",
-    wikipedia: "nl:Schobbejakshoogte"
+   // wikidata: "Q4499623",
+    wikipedia: "nl:Schobbejakshoogte",
 };
 const tagsES = allElements.addElement({properties: tags});
 
-new ImageCarousel(tagsES).AttachTo("maindiv").Activate();
 
-// new WikimediaImage(new UIEventSource<string>("File:Brugge_cobblestone_path.jpg")).AttachTo("maindiv");
+/*
+new OsmImageUploadHandler(tagsES, osmConnection.userDetails, changes)
+    .getUI().AttachTo("maindiv");
+
+/*/
+
+new FeatureInfoBox(
+    tagsES,
+    layer.elementsToShow,
+    layer.questions,
+    changes,
+    osmConnection.userDetails
+).AttachTo("maindiv").Activate();
+//*/
+
+

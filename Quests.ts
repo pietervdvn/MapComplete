@@ -55,7 +55,7 @@ export class Quests {
 
     static nameOf(name: string) : QuestionDefinition {
         return QuestionDefinition.noNameOrNameQuestion("<b>Wat is de <i>officiële</i> naam van dit " + name + "?</b><br />" +
-            "Gelieve geen naam uit te vinden",
+            "Veel gebieden hebben geen naam. Duid dit dan ook zo aan.",
             "Dit " + name + " heeft geen naam", 20);
     }
 
@@ -66,7 +66,7 @@ export class Quests {
             "operator",
             [{text: "Natuurpunt", value: "Natuurpunt"},
                 {text: "Het Agenschap voor Natuur en Bos", value: "Agentschap Natuur en Bos"},
-                {text: "Een prive-eigenaar beheert dit", value: "private"}
+                {text: "Een prive-eigenaar", value: "private"}
             ]
         ).addUnrequiredTag("access", "private")
             .addUnrequiredTag("access", "no");
