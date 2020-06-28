@@ -59,7 +59,13 @@ Images are uplaoded to imgur, as their API was way easier to handle. The URL is 
 The idea is that one in a while, the images are transfered to wikipedia
 
 
+# Privacy
 
+Privacy is important, we try to leak as little information as possible.
+All major personal information is handled by OSM.
+Geolocation is available on mobile only throught hte device's GPS location (so no geolocation is sent of to google)
+
+TODO: erase cookies of third party websites and API's
 
 # Attributions:
 

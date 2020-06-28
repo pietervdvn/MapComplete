@@ -13,7 +13,7 @@ export class NatureReserves extends LayerDefinition {
         this.icon = "./assets/tree_white_background.svg";
         this.overpassFilter =
             new Or([new Tag("leisure", "nature_reserve"), new Tag("boundary","protected_area")]);
-        this.removeTouchingElements = true;
+        this.maxAllowedOverlapPercentage = 10;
 
         this.newElementTags = [new Tag("leisure", "nature_reserve"),
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]

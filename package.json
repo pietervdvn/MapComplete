@@ -4,7 +4,7 @@
   "description": "A small website to edit OSM easily",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html land.html test.html assets/test.json assets/* UI/* Logic/*",
+    "start": "parcel index.html land.html test.html assets/test.json assets/* UI/* Logic/* vendor/*",
     "build": "parcel build --public-url ./ index.html land.html assets/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,8 @@
     "leaflet": "^1.6.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "turf": "^3.0.14"
   },
   "devDependencies": {
     "typescript": "^3.9.3"

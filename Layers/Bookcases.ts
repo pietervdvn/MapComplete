@@ -1,10 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../Quests";
-import {FixedUiElement} from "../UI/FixedUiElement";
-import {TagMapping, TagMappingOptions} from "../UI/TagMapping";
+import {TagMappingOptions} from "../UI/TagMapping";
 import L from "leaflet";
 import {QuestionDefinition} from "../Logic/Question";
-import {CommonTagMappings} from "./CommonTagMappings";
 import {Tag} from "../Logic/TagsFilter";
 
 export class Bookcases extends LayerDefinition {

@@ -80,7 +80,8 @@ export class FeatureInfoBox extends UIElement {
         let questions = "";
 
         if (this._userDetails.data.loggedIn) {
-            questions = this._questions.HideOnEmpty(true).Render();
+            // Questions is embedded in a span, because it'll hide the parent when the questions dissappear
+            questions = "<span>"+this._questions.HideOnEmpty(true).Render()+"</span>";
         }
 
         return "<div class='featureinfobox'>" +

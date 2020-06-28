@@ -24,7 +24,7 @@ export class Bos extends LayerDefinition {
             new Tag("landuse", "forest"),
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
         ];
-        this.removeContainedElements = true;
+        this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 14;
         this.questions = [Quests.nameOf(this.name), Quests.accessNatureReserve, Quests.operator];

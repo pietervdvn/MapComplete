@@ -13,7 +13,7 @@ export class Playground extends LayerDefinition {
         this.icon = "./assets/tree_white_background.svg";
         this.overpassFilter = new Tag("leisure","playground");
         this.newElementTags = [new Tag("leisure",  "playground"), new Tag( "fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
-        this.removeContainedElements = true;
+        this.maxAllowedOverlapPercentage = 0;
 
         this.minzoom = 13;
         this.questions = [Quests.nameOf(this.name)];

@@ -131,3 +131,4 @@ L.Map.include({
         });
     }
 });
+console.log("Find accurate position script loaded");

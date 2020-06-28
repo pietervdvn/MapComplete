@@ -29,8 +29,10 @@ export class LayerDefinition {
 
     style: (tags: any) => any;
 
-    removeContainedElements: boolean = false;
-    removeTouchingElements: boolean = false;
+    /**
+     * If an object of the next layer is contained for this many percent in this feature, it is eaten and not shown
+     */
+    maxAllowedOverlapPercentage: number = undefined;
 
 
     asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>):
@@ -40,7 +42,7 @@ export class LayerDefinition {
             this.name,
             basemap, allElements, changes,
             this.overpassFilter,
-            this.removeContainedElements, this.removeTouchingElements,
+            this.maxAllowedOverlapPercentage,
             this.style,
             selectedElement);
 

@@ -1,8 +1,15 @@
+import * as turf from 'turf'
+
 export class GeoOperations {
 
+    static surfaceAreaInSqMeters(feature: any) {
+        return turf.area(feature);
+    }
 
-    static featureIsContainedInAny(feature: any, shouldNotContain: any[], noTouching: boolean = false): boolean {
-
+    static featureIsContainedInAny(feature: any,
+                                   shouldNotContain: any[],
+                                   maxOverlapPercentage: number): boolean {
+        // Returns 'false' if no problematic intersection is found
         if (feature.geometry.type === "Point") {
             const coor = feature.geometry.coordinates;
             for (const shouldNotContainElement of shouldNotContain) {
@@ -21,38 +28,55 @@ export class GeoOperations {
         }
 
 
-        if (feature.geometry.type === "Polygon") {
+        if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
 
             const poly = feature;
+            let featureBBox = BBox.get(feature);
+            const featureSurface = GeoOperations.surfaceAreaInSqMeters(poly);
             for (const shouldNotContainElement of shouldNotContain) {
 
-                let shouldNotContainBBox = BBox.get(shouldNotContainElement);
-                let featureBBox = BBox.get(feature);
-                if (!featureBBox.overlapsWith(shouldNotContainBBox)) {
+                const shouldNotContainBBox = BBox.get(shouldNotContainElement);
+                const overlaps = featureBBox.overlapsWith(shouldNotContainBBox)
+                if (!overlaps) {
                     continue;
                 }
 
-                if (noTouching) {
-                    if (GeoOperations.isPolygonTouching(poly, shouldNotContainElement)) {
+                // Calculate the surface area of the intersection
+                // If it is too big, refuse
+                try {
+
+                    const intersection = turf.intersect(poly, shouldNotContainElement);
+                    if (intersection == null) {
+                        continue;
+                    }
+                    const intersectionSize = turf.area(intersection);
+                    const ratio = intersectionSize / featureSurface;
+                    console.log("Intersection ratio", ratio, "intersection:", intersectionSize, "featuresize:", featureSurface, "targetRatio", maxOverlapPercentage / 100);
+
+                    if (ratio * 100 >= maxOverlapPercentage) {
+                        console.log("Refused", poly.id, " due to ", shouldNotContainElement.id, "intersection ratio is ", ratio, "which is bigger then the target ratio of ", (maxOverlapPercentage / 100))
                         return true;
                     }
-                } else {
-                    if (GeoOperations.isPolygonInside(poly, shouldNotContainElement)) {
-                        return true;
-                    }
+                } catch (exception) {
+                    console.log("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
+                    // We assume that this failed due to an intersection
+                    return true;
                 }
+
             }
+            return false; // No problematic intersections found
         }
 
         return false;
     }
+
 
     /**
      * Simple check: that every point of the polygon is inside the container
      * @param polygon
      * @param container
      */
-    static isPolygonInside(polygon, container) {
+    private static isPolygonInside(polygon, container) {
         for (const coor of polygon.geometry.coordinates[0]) {
             if (!GeoOperations.inside(coor, container)) {
                 return false;
@@ -66,7 +90,7 @@ export class GeoOperations {
      * @param polygon
      * @param container
      */
-    static isPolygonTouching(polygon, container) {
+    private static isPolygonTouching(polygon, container) {
         for (const coor of polygon.geometry.coordinates[0]) {
             if (GeoOperations.inside(coor, container)) {
                 return true;
@@ -76,7 +100,7 @@ export class GeoOperations {
     }
 
 
-    static inside(pointCoordinate, feature): boolean {
+    private static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 
@@ -134,10 +158,19 @@ class BBox {
             this.minLon = Math.min(this.minLon, coordinate[0]);
             this.minLat = Math.min(this.minLat, coordinate[1]);
         }
+        this.check();
+    }
+
+    private check() {
+        if (isNaN(this.maxLon) || isNaN(this.maxLat) || isNaN(this.minLon) || isNaN(this.minLat)) {
+            console.log(this);
+            throw  "BBOX has NAN";
+        }
     }
 
     public overlapsWith(other: BBox) {
-
+        this.check();
+        other.check();
         if (this.maxLon < other.minLon) {
             return false;
         }
@@ -155,13 +188,22 @@ class BBox {
 
     static get(feature) {
         if (feature.bbox === undefined) {
-            if (feature.geometry.type === "Polygon") {
+
+            if (feature.geometry.type === "MultiPolygon") {
+                let coordinates = [];
+                for (const coorlist of feature.geometry.coordinates) {
+                    coordinates = coordinates.concat(coorlist[0]);
+                }
+                feature.bbox = new BBox(coordinates);
+            } else if (feature.geometry.type === "Polygon") {
                 feature.bbox = new BBox(feature.geometry.coordinates[0]);
             } else if (feature.geometry.type === "LineString") {
                 feature.bbox = new BBox(feature.geometry.coordinates);
-            } else {
+            } else if (feature.geometry.type === "Point") {
                 // Point
                 feature.bbox = new BBox([feature.geometry.coordinates]);
+            } else {
+                throw "Cannot calculate bbox, unknown type " + feature.geometry.type;
             }
         }
 

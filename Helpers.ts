@@ -5,22 +5,17 @@ import {UIEventSource} from "./UI/UIEventSource";
 export class Helpers {
 
 
-    static SetupAutoSave(changes: Changes, millisTillChangesAreSaved : UIEventSource<number>, saveAfterXMillis : number) {
-
-// This little function triggers the actual upload:
-// Either when more then three answers are selected, or when no new answer has been added for the last 20s
-// @ts-ignore
-        window.decreaseTime = function () {
-            var time = millisTillChangesAreSaved.data;
-            if (time <= 0) {
-                if (changes.pendingChangesES.data > 0) {
-                    changes.uploadAll(undefined);
-                }
-            } else {
-                millisTillChangesAreSaved.setData(time - 1000);
+    static DoEvery(millis: number, f: (() => void)) {
+        window.setTimeout(
+            function () {
+                f();
+                Helpers.DoEvery(millis, f);
             }
-            window.setTimeout('decreaseTime()', 1000);
-        };
+            , millis)
+    }
+
+
+    static SetupAutoSave(changes: Changes, millisTillChangesAreSaved: UIEventSource<number>, saveAfterXMillis: number) {
 
 
         changes.pendingChangesES.addCallback(function () {
@@ -38,19 +33,29 @@ export class Helpers {
 
         });
 
-        // @ts-ignore
-        window.decreaseTime(); // The timer keeps running...
+        millisTillChangesAreSaved.addCallback((time) => {
+                if (time <= 0 && changes.pendingChangesES.data > 0) {
+                    changes.uploadAll(undefined);
+                }
+            }
+        )
+
+        Helpers.DoEvery(
+            1000,
+            () => {
+                millisTillChangesAreSaved
+                    .setData(millisTillChangesAreSaved.data - 1000)
+            });
     }
 
-    
-    
+
     /*
     * Registers an action that:
     * -> Upload everything to OSM
     * -> Asks the user not to close. The 'not to close' dialog should profide enough time to upload
     * -> WHen uploading is done, the window is closed anyway
      */
-    static LastEffortSave(changes : Changes){
+    static LastEffortSave(changes: Changes) {
 
         window.addEventListener("beforeunload", function (e) {
             // Quickly save everyting!

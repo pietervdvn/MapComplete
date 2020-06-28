@@ -24,10 +24,11 @@ img {
     z-index: 999; /*Just below leaflets zoom*/
     background-color: white;
     border-radius: 5px;
-    border: solid 2px rgba(0,0,0,0.2);
+    border: solid 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     width: 43px;
-    height:43px;
+    height: 43px;
+    display: none; /*Hidden by default, only visible on mobile*/
 }
 
 #geolocate-button img{
@@ -189,10 +190,12 @@ img {
     #messagesbox {
         display: none;
     }
-}
+
+    #geolocate-button {
+        display: block;
+    }
 
 
-@media only screen and (max-width: 600px) {
     #messagesboxmobilewrapper {
         position: absolute;
         padding: 0;
@@ -349,7 +352,7 @@ img {
 
 .next-button {
     background-color: black;
-    opacity: 30%;
+    opacity: 0.3;
     width: 3.0em;
     height: 100%;
     padding-left: 0.5em;

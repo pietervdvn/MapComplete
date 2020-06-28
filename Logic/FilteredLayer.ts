@@ -1,7 +1,6 @@
 import {Basemap} from "./Basemap";
 import {TagsFilter, TagUtils} from "./TagsFilter";
 import {UIEventSource} from "../UI/UIEventSource";
-import {UIElement} from "../UI/UIElement";
 import {ElementStorage} from "./ElementStorage";
 import {Changes} from "./Changes";
 import L from "leaflet"
@@ -22,8 +21,7 @@ export class FilteredLayer {
     public readonly filters: TagsFilter;
 
     private readonly _map: Basemap;
-    private readonly _removeContainedElements;
-    private readonly _removeTouchingElements;
+    private readonly _maxAllowedOverlap: number;
 
     private readonly _style: (properties) => any;
 
@@ -46,8 +44,7 @@ export class FilteredLayer {
         map: Basemap, storage: ElementStorage,
         changes: Changes,
         filters: TagsFilter,
-        removeContainedElements: boolean,
-        removeTouchingElements: boolean,
+        maxAllowedOverlap: number,
         style: ((properties) => any),
         selectedElement: UIEventSource<any>) {
         this._selectedElement = selectedElement;
@@ -62,8 +59,7 @@ export class FilteredLayer {
         this.filters = filters;
         this._style = style;
         this._storage = storage;
-        this._removeContainedElements = removeContainedElements;
-        this._removeTouchingElements = removeTouchingElements;
+        this._maxAllowedOverlap = maxAllowedOverlap;
     }
 
 
@@ -92,8 +88,8 @@ export class FilteredLayer {
 
         const notShadowed = [];
         for (const feature of leftoverFeatures) {
-            if (this._removeContainedElements || this._removeTouchingElements) {
-                if (GeoOperations.featureIsContainedInAny(feature, selfFeatures, this._removeTouchingElements)) {
+            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap >= 0) {
+                if (GeoOperations.featureIsContainedInAny(feature, selfFeatures, this._maxAllowedOverlap)) {
                     // This feature is filtered away
                     continue;
                 }

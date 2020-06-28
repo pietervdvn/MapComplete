@@ -2,6 +2,7 @@ import {Basemap} from "./Basemap";
 import {UIEventSource} from "../UI/UIEventSource";
 import {UIElement} from "../UI/UIElement";
 import L from "leaflet";
+import {Helpers} from "../Helpers";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -11,7 +12,7 @@ export class GeoLocationHandler extends UIElement {
     }> = new UIEventSource<{ latlng: number, accuracy: number }>(undefined);
 
     private _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
+    private _permission: UIEventSource<string> = new UIEventSource<string>("");
     private _map: Basemap;
     private _marker: any;
 
@@ -20,6 +21,7 @@ export class GeoLocationHandler extends UIElement {
         this._map = map;
         this.ListenTo(this.currentLocation);
         this.ListenTo(this._isActive);
+        this.ListenTo(this._permission);
 
         const self = this;
 
@@ -27,6 +29,7 @@ export class GeoLocationHandler extends UIElement {
         function onAccuratePositionProgress(e) {
             console.log(e.accuracy);
             console.log(e.latlng);
+            self.currentLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionFound(e) {
@@ -62,8 +65,19 @@ export class GeoLocationHandler extends UIElement {
             self._marker = newMarker;
         });
 
-        navigator.permissions.query({ name: 'geolocation' })
-            .then(function(){self.StartGeolocating()});
+        navigator.permissions.query({name: 'geolocation'})
+            .then(function (status) {
+                console.log("Geolocation is already", status)
+                if (status.state === "granted") {
+                    self.StartGeolocating();
+                }
+                self._permission.setData(status.state);
+                status.onchange = function () {
+                    self._permission.setData(status.state);
+                }
+            });
+
+        this.HideOnEmpty(true);
 
     }
 
@@ -79,20 +93,33 @@ export class GeoLocationHandler extends UIElement {
     }
 
     
-    private StartGeolocating(){
+    private StartGeolocating() {
         const self = this;
+
+        if (self._permission.data === "denied") {
+            return "";
+        }
         if (self.currentLocation.data !== undefined) {
             self._map.map.flyTo(self.currentLocation.data.latlng, 18);
-            return;
         }
 
-        self._isActive.setData(true);
 
         console.log("Searching location using GPS")
         self._map.map.findAccuratePosition({
-            maxWait: 15000, // defaults to 10000
-            desiredAccuracy: 30 // defaults to 20
+            maxWait: 10000, // defaults to 10000
+            desiredAccuracy: 50 // defaults to 20
         });
+        
+        
+        if (!self._isActive.data) {
+            self._isActive.setData(true);
+            Helpers.DoEvery(60000, () => {
+                self._map.map.findAccuratePosition({
+                    maxWait: 10000, // defaults to 10000
+                    desiredAccuracy: 50 // defaults to 20
+                });
+            })
+        }
     }
     
     InnerUpdate(htmlElement: HTMLElement) {

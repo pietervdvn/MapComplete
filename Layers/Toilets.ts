@@ -3,7 +3,6 @@ import {Quests} from "../Quests";
 import {FixedUiElement} from "../UI/FixedUiElement";
 import {TagMappingOptions} from "../UI/TagMapping";
 import L from "leaflet";
-import {CommonTagMappings} from "./CommonTagMappings";
 import {Tag} from "../Logic/TagsFilter";
 
 export class Toilets extends LayerDefinition{

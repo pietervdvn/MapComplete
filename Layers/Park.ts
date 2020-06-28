@@ -15,7 +15,7 @@ export class Park extends LayerDefinition {
             new Or([new Tag("leisure","park"), new Tag("landuse","village_green")]);
         this.newElementTags = [new Tag("leisure", "park"), 
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")];
-        this.removeTouchingElements = true;
+        this.maxAllowedOverlapPercentage = 25;
 
         this.minzoom = 13;
         this.questions = [Quests.nameOf("park")];

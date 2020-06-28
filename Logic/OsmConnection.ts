@@ -76,7 +76,14 @@ export class OsmConnection {
             console.log(userInfo);
             data.name = userInfo.getAttribute('display_name');
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
-            data.img = userInfo.getElementsByTagName("img")[0].getAttribute("href");
+
+            data.img = undefined;
+            const imgEl = userInfo.getElementsByTagName("img");
+            if (imgEl !== undefined && imgEl[0] !== undefined) {
+                data.img = imgEl[0].getAttribute("href");
+            }
+            data.img = data.img ?? "./assets/osm-logo.svg";
+
             const messages = userInfo.getElementsByTagName("messages")[0].getElementsByTagName("received")[0];
             data.unreadMessages = parseInt(messages.getAttribute("unread"));
             data.totalMessages = parseInt(messages.getAttribute("count"));
