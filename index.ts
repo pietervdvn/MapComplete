@@ -17,6 +17,7 @@ import {MessageBoxHandler} from "./UI/MessageBoxHandler";
 import {Overpass} from "./Logic/Overpass";
 import {FixedUiElement} from "./UI/FixedUiElement";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
+import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
 
 let dryRun = false;
 
@@ -186,6 +187,9 @@ Helpers.LastEffortSave(changes);
 
 
 osmConnection.registerActivateOsmAUthenticationClass();
+
+
+new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 
 // --------------- Send a ping to start various action --------

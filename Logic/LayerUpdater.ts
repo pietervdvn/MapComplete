@@ -10,7 +10,7 @@ export class LayerUpdater {
     private _layers: FilteredLayer[];
 
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
+    
     /**
      * The previous bounds for which the query has been run
      */
@@ -95,13 +95,12 @@ export class LayerUpdater {
 
     private buildBboxFor(): string {
         const b = this._map.map.getBounds();
-        const latDiff = Math.abs(b.getNorth() - b.getSouth());
-        const lonDiff = Math.abs(b.getEast() - b.getWest());
-        const extra = 0.5;
-        const n = b.getNorth() + latDiff * extra;
-        const e = b.getEast() + lonDiff * extra;
-        const s = b.getSouth() - latDiff * extra;
-        const w = b.getWest() - lonDiff * extra;
+        const diff =0.07;
+        
+        const n = b.getNorth() + diff;
+        const e = b.getEast() +  diff;
+        const s = b.getSouth() - diff;
+        const w = b.getWest() -  diff;
 
         this.previousBounds = {north: n, east: e, south: s, west: w};
 

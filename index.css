@@ -16,6 +16,26 @@ img {
     border-radius: 1em;
 }
 
+
+#geolocate-button {
+    position: absolute;
+    bottom: 27px;
+    right: 65px;
+    z-index: 999; /*Just below leaflets zoom*/
+    background-color: white;
+    border-radius: 5px;
+    border: solid 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+    width: 43px;
+    height:43px;
+}
+
+#geolocate-button img{
+    width: 31px;
+    height:31px;
+    margin: 6px;
+}
+
 /**************** GENERIC ****************/
 
 .uielement {
@@ -145,8 +165,8 @@ img {
 #welcomeMessage {
     display: inline-block;
     max-width: 30em;
+    padding: 1em;
 }
-
 
 #messagesboxmobilewrapper {
     display: none; /*Only shown on small screens*/
@@ -190,30 +210,33 @@ img {
     #messagesboxmobile-scroll {
         display: block;
         overflow-y: auto;
-        height: calc(100vh - 9em);
-        padding-top: 1em;
-        padding-bottom: 2em;
-        margin-bottom: 0;
+        width: 100vw;
+        padding: 0;
+        margin:0;
+        height: calc(100% - 5em); /*Height of to-the-map is 2em, padding is 2 * 0.5em*/
     }
     #messagesboxmobile {
         margin: 1em;
-        margin-bottom: 2em;
+        padding-bottom: 2em;
     }
 }
 
 
 #to-the-map {
+    
+    height: 4em;
+    padding: 0.5em;
     margin: 0;
-    padding: 1em;
-    padding-right: 2em;
-    color: white;
-    background-color: #7ebc6f;
+    
     position: absolute;
     bottom: 0;
     right: 0;
-    text-align: right;
+    
+    padding-right: 2em;
     width: 100%;
-    height: 4em;
+    text-align: right;
+    color: white;
+    background-color: #7ebc6f;
     cursor: pointer;
 }
 
@@ -228,6 +251,7 @@ img {
     padding: 0;
     right: 1em;
     top: 1em;
+    border-radius: 0;
 }
 
 #centermessage {
@@ -319,8 +343,7 @@ img {
 
     content:url(assets/arrow-left-smooth.svg);
 
-    border-bottom-left-radius: 1em;
-    border-top-left-radius: 1em;
+    border-radius: 1em;
 }
 
 
@@ -335,8 +358,7 @@ img {
     top: 50%;
     right: 0;
     transform: translate(0, -50%);
-    border-bottom-right-radius: 1em;
-    border-top-right-radius: 1em;
+    border-radius: 1em;
     
 
     z-index: 5060;
@@ -345,11 +367,12 @@ img {
 }
 
 
-.slide > span > img {
-    width: 500px;
-    max-width: 100%;
+.slide > span img {
     height: auto;
-    
+    width: auto;
+    max-width: 100%;
+    max-height: 20vh;
+    border-radius: 1em;
 }
 
 
@@ -369,8 +392,8 @@ img {
 }
 
 .wikimedia-link {
-    width: 1.5em;
-    height: auto;
+    /*The actual wikimedia logo*/
+    width: 1.5em !important;
 }
 
 .attribution {
