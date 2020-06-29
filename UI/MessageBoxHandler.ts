@@ -55,10 +55,10 @@ export class MessageBoxHandler {
         }
         location.hash = "#element"
         wrapper.classList.remove("hidden");
-        gen()
+      /*  gen()
             ?.HideOnEmpty(true)
             ?.AttachTo("messagesbox")
-            ?.Activate();
+            ?.Activate();*/
 
         gen()
             ?.HideOnEmpty(true)

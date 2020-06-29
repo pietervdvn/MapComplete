@@ -28,9 +28,14 @@ export class StrayClickHandler {
             if (self._lastMarker !== undefined) {
                 map.removeLayer(self._lastMarker);
             }
-
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon]);
+            const uiElement = uiToShow();
+            const popup = L.popup().setContent(uiElement.Render());
+            uiElement.Activate();
+            uiElement.Update();
             self._lastMarker.addTo(map);
+            self._lastMarker.bindPopup(popup).openPopup();
+
 
             leftMessage.setData(self._uiToShow);
 

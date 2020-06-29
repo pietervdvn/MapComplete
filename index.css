@@ -188,6 +188,10 @@ body {
         display: block;
     }
 
+    .leaflet-popup {
+        /* Popups are hidden on mobile */
+        display:none;
+    }
 
     #messagesboxmobilewrapper {
         position: absolute;
@@ -212,8 +216,10 @@ body {
         height: calc(100% - 5em); /*Height of to-the-map is 2em, padding is 2 * 0.5em*/
     }
     #messagesboxmobile {
-        margin: 1em;
+        padding: 1em;
         padding-bottom: 2em;
+        border-radius:1em;
+        background-color: white;
     }
 }
 
@@ -324,7 +330,7 @@ body {
 
 .prev-button {
     background-color: black;
-    opacity: 30%;
+    opacity: 0.3;
     width: 3.0em;
 
     height: 100%;

@@ -114,7 +114,7 @@ const flayers: FilteredLayer[] = []
 
 for (const layer of questSetToRender.layers) {
 
-    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement);
+    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, leftMessage);
 
     const addButton = {
         name: layer.name,
@@ -144,6 +144,7 @@ new StrayClickHandler(bm, selectedElement, leftMessage, () => {
             changes,
             selectedElement,
             layerUpdater.runningQuery,
+            osmConnection.userDetails,
             addButtons);
     }
 );
@@ -197,6 +198,7 @@ var welcomeMessage = () => {
         });
 }
 leftMessage.setData(welcomeMessage);
+welcomeMessage().AttachTo("messagesbox");
 
 
 var messageBox = new MessageBoxHandler(leftMessage, () => {selectedElement.setData(undefined)});

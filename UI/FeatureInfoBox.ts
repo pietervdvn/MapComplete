@@ -43,6 +43,7 @@ export class FeatureInfoBox extends UIElement {
         this._tagsES = tagsES;
         this._changes = changes;
         this._userDetails = userDetails;
+        this.ListenTo(userDetails);
 
         this._imageElement = new ImageCarousel(this._tagsES);
 

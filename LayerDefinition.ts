@@ -30,7 +30,8 @@ export class LayerDefinition {
     maxAllowedOverlapPercentage: number = undefined;
 
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>):
+    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>, 
+            showOnPopup:UIEventSource<(() => UIElement)>):
         FilteredLayer {
         return new FilteredLayer(
             this.name,
@@ -38,7 +39,8 @@ export class LayerDefinition {
             this.overpassFilter,
             this.maxAllowedOverlapPercentage,
             this.style,
-            selectedElement);
+            selectedElement,
+            showOnPopup);
 
     }
 

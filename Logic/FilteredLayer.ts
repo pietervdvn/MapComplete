@@ -5,6 +5,7 @@ import {ElementStorage} from "./ElementStorage";
 import {Changes} from "./Changes";
 import L from "leaflet"
 import {GeoOperations} from "./GeoOperations";
+import {UIElement} from "../UI/UIElement";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -38,6 +39,7 @@ export class FilteredLayer {
      */
     private _geolayer;
     private _selectedElement: UIEventSource<any>;
+    private _showOnPopup: UIEventSource<(() => UIElement)>;
 
     constructor(
         name: string,
@@ -46,8 +48,11 @@ export class FilteredLayer {
         filters: TagsFilter,
         maxAllowedOverlap: number,
         style: ((properties) => any),
-        selectedElement: UIEventSource<any>) {
+        selectedElement: UIEventSource<any>,
+        showOnPopup: UIEventSource<(() => UIElement)>
+    ) {
         this._selectedElement = selectedElement;
+        this._showOnPopup = showOnPopup;
 
         if (style === undefined) {
             style = function () {
@@ -177,16 +182,21 @@ export class FilteredLayer {
             },
 
             onEachFeature: function (feature, layer) {
-
-
                 let eventSource = self._storage.addOrGetElement(feature);
                 eventSource.addCallback(function () {
                     self.updateStyle();
                 });
-                layer.on("click", function(e){
-                    console.log("Selected ",feature)
+
+
+                layer.on("click", function(e) {
+                    console.log("Selected ", feature)
                     self._selectedElement.setData(feature.properties);
                     L.DomEvent.stop(e); // Marks the event as consumed
+                    const uiElement = self._showOnPopup.data();
+                    layer.bindPopup(uiElement.Render()).openPopup();
+                    uiElement.Update();
+                    uiElement.Activate();
+
                 });
             }
         });

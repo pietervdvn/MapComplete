@@ -40,8 +40,8 @@ export class Bookcases extends LayerDefinition {
 
             new TagMappingOptions({
                     key: "name",
-                    template: "<h2>{name}</h2>",
-                    missing: "<h2>Boekenruilkastje</h2>"
+                    template: "{name}",
+                    missing: "Boekenruilkastje"
                 }
             ),
             new TagMappingOptions({key: "capacity", template: "Plaats voor {capacity} boeken"}),

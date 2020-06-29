@@ -63,7 +63,7 @@ export class ImageUploadFlow extends UIElement {
     protected InnerRender(): string {
 
         if (!this._userdetails.data.loggedIn) {
-            return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen</div>";
+            return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden</div>";
         }
         if (this._isUploading.data == 1) {
             return "<b>Bezig met een foto te uploaden...</b>"

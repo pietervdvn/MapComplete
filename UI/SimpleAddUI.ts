@@ -5,6 +5,7 @@ import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Changes} from "../Logic/Changes";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Button} from "./Base/Button";
+import {UserDetails} from "../Logic/OsmConnection";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -16,12 +17,14 @@ export class SimpleAddUI extends UIElement {
     private _changes: Changes;
     private _selectedElement: UIEventSource<any>;
     private _dataIsLoading: UIEventSource<boolean>;
+    private _userDetails: UIEventSource<UserDetails>;
 
     constructor(zoomlevel: UIEventSource<{ zoom: number }>,
                 lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
                 changes: Changes,
                 selectedElement: UIEventSource<any>,
                 dataIsLoading: UIEventSource<boolean>,
+                userDetails: UIEventSource<UserDetails>,
                 addButtons: { name: string; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
     ) {
         super(zoomlevel);
@@ -30,6 +33,8 @@ export class SimpleAddUI extends UIElement {
         this._changes = changes;
         this._selectedElement = selectedElement;
         this._dataIsLoading = dataIsLoading;
+        this._userDetails = userDetails;
+        this.ListenTo(userDetails);
         this._addButtons = [];
 
         for (const option of addButtons) {
@@ -60,9 +65,13 @@ export class SimpleAddUI extends UIElement {
         if (this._zoomlevel.data.zoom < 19) {
             return header + "Zoom verder in om een element toe te voegen.";
         }
-        
-        if(this._dataIsLoading.data){
+
+        if (this._dataIsLoading.data) {
             return header + "De data is nog aan het laden. Nog even geduld, dan kan je een punt toevoegen";
+        }
+
+        if (!this._userDetails.data.loggedIn) {
+            return header + "<a class='activate-osm-authentication'>Gelieve je aan te melden om een nieuw punt toe te voegen</a>"
         }
 
         var html = "";
@@ -77,6 +86,7 @@ export class SimpleAddUI extends UIElement {
         for (const button of this._addButtons) {
             button.Update();
         }
+        this._userDetails.data.osmConnection.registerActivateOsmAUthenticationClass();
     }
 
 }

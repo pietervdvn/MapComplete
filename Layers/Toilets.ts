@@ -36,9 +36,7 @@ export class Toilets extends LayerDefinition{
         }
         
         this.elementsToShow = [
-
-
-            new FixedUiElement("<h2>Toiletten</h2>"),
+            new FixedUiElement("Toiletten"),
 
             new TagMappingOptions({
                 key: "access",
