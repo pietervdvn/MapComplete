@@ -35,6 +35,7 @@ export class SimpleAddUI extends UIElement {
         this._dataIsLoading = dataIsLoading;
         this._userDetails = userDetails;
         this.ListenTo(userDetails);
+        this.ListenTo(dataIsLoading);
         this._addButtons = [];
 
         for (const option of addButtons) {
