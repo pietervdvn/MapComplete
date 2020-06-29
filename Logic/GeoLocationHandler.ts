@@ -3,6 +3,7 @@ import {UIEventSource} from "../UI/UIEventSource";
 import {UIElement} from "../UI/UIElement";
 import L from "leaflet";
 import {Helpers} from "../Helpers";
+import {UserDetails} from "./OsmConnection";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -78,7 +79,6 @@ export class GeoLocationHandler extends UIElement {
             });
 
         this.HideOnEmpty(true);
-
     }
 
     protected InnerRender(): string {

@@ -51,7 +51,6 @@ export class GeoOperations {
                     }
                     const intersectionSize = turf.area(intersection);
                     const ratio = intersectionSize / featureSurface;
-                    console.log("Intersection ratio", ratio, "intersection:", intersectionSize, "featuresize:", featureSurface, "targetRatio", maxOverlapPercentage / 100);
 
                     if (ratio * 100 >= maxOverlapPercentage) {
                         console.log("Refused", poly.id, " due to ", shouldNotContainElement.id, "intersection ratio is ", ratio, "which is bigger then the target ratio of ", (maxOverlapPercentage / 100))

@@ -10,8 +10,9 @@ export class UserDetails {
     public img: string;
     public unreadMessages = 0;
     public totalMessages = 0;
-    public osmConnection : OsmConnection;
-    public dryRun : boolean;
+    public osmConnection: OsmConnection;
+    public dryRun: boolean;
+    home: { lon: number; lat: number };
 
 }
 
@@ -66,6 +67,8 @@ export class OsmConnection {
             if (details == null) {
                 return;
             }
+            
+            self.UpdatePreferences();
             // details is an XML DOM of user details
             let userInfo = details.getElementsByTagName("user")[0];
 
@@ -83,6 +86,13 @@ export class OsmConnection {
                 data.img = imgEl[0].getAttribute("href");
             }
             data.img = data.img ?? "./assets/osm-logo.svg";
+
+            const homeEl = userInfo.getElementsByTagName("home");
+            if (homeEl !== undefined && homeEl[0] !== undefined) {
+                const lat = parseFloat(homeEl[0].getAttribute("lat"));
+                const lon = parseFloat(homeEl[0].getAttribute("lon"));
+                data.home = {lat: lat, lon: lon};
+            }
 
             const messages = userInfo.getElementsByTagName("messages")[0].getElementsByTagName("received")[0];
             data.unreadMessages = parseInt(messages.getAttribute("unread"));
@@ -106,6 +116,47 @@ export class OsmConnection {
                 self.AttemptLogin();
             }
         }
+    }
+
+    public preferences = new UIEventSource<any>({});
+    private UpdatePreferences() {
+        const self = this;
+        this.auth.xhr({
+            method: 'GET',
+            path: '/api/0.6/user/preferences'
+        }, function (error, value: XMLDocument) {
+            if(error){
+                console.log("Could not load preferences", error);
+                return;
+            }
+            const prefs = value.getElementsByTagName("preference");
+            for (let i = 0; i < prefs.length; i++) {
+                const pref = prefs[i];
+                const k = pref.getAttribute("k");
+                const v = pref.getAttribute("v");
+                self.preferences.data[k] = v;
+            }
+            self.preferences.ping();
+        });
+    }
+    
+    public SetPreference(k:string, v:string){
+        this.preferences.data[k] = v;
+        this.preferences.ping();
+        this.auth.xhr({
+            method: 'PUT',
+            path: '/api/0.6/user/preferences/'+k,
+            options: { header: { 'Content-Type': 'text/plain' } },
+            content: v
+        },function(error, result) {
+            if(error){
+                console.log("Could not set preference", error);
+                return;
+            }
+            
+            console.log("Preference written!", result);
+            
+        });
     }
 
     private static parseUploadChangesetResponse(response: XMLDocument) {

@@ -1,5 +1,5 @@
-import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
+import {UIElement} from "../UIElement";
+import {UIEventSource} from "../UIEventSource";
 import {FixedUiElement} from "./FixedUiElement";
 import $ from "jquery"
 

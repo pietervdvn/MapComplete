@@ -8,16 +8,17 @@ import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
 import {KnownSet} from "./Layers/KnownSet";
-import {Tag, TagsFilter, TagUtils} from "./Logic/TagsFilter";
+import {Tag, TagUtils} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
-import {VariableUiElement} from "./UI/VariableUIElement";
 import {UIElement} from "./UI/UIElement";
 import {MessageBoxHandler} from "./UI/MessageBoxHandler";
 import {Overpass} from "./Logic/Overpass";
-import {FixedUiElement} from "./UI/FixedUiElement";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
+import {StrayClickHandler} from "./Logic/StrayClickHandler";
+import {SimpleAddUI} from "./UI/SimpleAddUI";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
 let dryRun = false;
 
@@ -27,7 +28,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     dryRun = true;
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
-   Overpass.testUrl = "http://127.0.0.1:8080/test.json";
+    Overpass.testUrl = "http://127.0.0.1:8080/test.json";
 }
 
 
@@ -66,7 +67,7 @@ const leftMessage = new UIEventSource<() => UIElement>(undefined);
 const selectedElement = new UIEventSource<any>(undefined);
 
 
-const locationControl = new UIEventSource({
+const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
     zoom: questSetToRender.startzoom,
     lat: questSetToRender.startLat,
     lon: questSetToRender.startLon
@@ -81,7 +82,22 @@ const osmConnection = new OsmConnection(dryRun);
 const changes = new Changes(
     "Beantwoorden van vragen met MapComplete voor vragenset #" + questSetToRender.name,
     osmConnection, allElements, centerMessage);
-const bm = new Basemap("leafletDiv", locationControl);
+const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
+    locationControl.map((location) => {
+        const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
+            " " +
+            "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
+        let editHere = "";
+        if (location !== undefined) {
+            editHere = " | " +
+                "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
+                "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
+                "</a>"
+        }
+        return mapComplete + editHere;
+
+    })
+));
 
 
 // ------------- Setup the layers -------------------------------
@@ -115,42 +131,53 @@ const layerUpdater = new LayerUpdater(bm, questSetToRender.startzoom, flayers);
 
 // ------------------ Setup various UI elements ------------
 
+
 /*
 const addButton = new AddButton(bm, changes, addButtons);
 addButton.AttachTo("bottomRight");
-addButton.Update();
- */
+addButton.Update();*/
+
+
+new StrayClickHandler(bm, selectedElement, leftMessage, () => {
+        return new SimpleAddUI(bm.Location,
+            bm.LastClickLocation,
+            changes,
+            selectedElement,
+            addButtons);
+    }
+);
 
 /**
  * Show the questions and information for the selected element on the leftMessage
  */
 selectedElement.addCallback((data) => {
-        // Which is the applicable set?
-        for (const layer of questSetToRender.layers) {
+    // Which is the applicable set?
+    for (const layer of questSetToRender.layers) {
 
-            const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
-            if (applicable) {
-                // This layer is the layer that gives the questions
-                leftMessage.setData(() =>
-                    new FeatureInfoBox(
-                        allElements.getElement(data.id),
-                        layer.elementsToShow,
-                        layer.questions,
-                        changes,
-                        osmConnection.userDetails
-                    ));
-                break;
-            }
+        const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
+        if (applicable) {
+            // This layer is the layer that gives the questions
+            leftMessage.setData(() =>
+                new FeatureInfoBox(
+                    allElements.getElement(data.id),
+                    layer.elementsToShow,
+                    layer.questions,
+                    changes,
+                    osmConnection.userDetails
+                ));
+            break;
         }
+    }
 
 
     }
 );
 
+
 const pendingChanges = new PendingChanges(
     changes.pendingChangesES, secondsTillChangesAreSaved, changes.isSaving);
 
-new UserBadge(osmConnection.userDetails, pendingChanges)
+new UserBadge(osmConnection.userDetails, pendingChanges, bm)
     .AttachTo('userbadge');
 
 var welcomeMessage = () => {
@@ -164,7 +191,7 @@ var welcomeMessage = () => {
                 questSetToRender.welcomeMessage + login +
                 "</div>";
         }),
-        function (html) {
+        function () {
             osmConnection.registerActivateOsmAUthenticationClass()
         });
 }
@@ -184,7 +211,6 @@ new CenterMessageBox(
 
 Helpers.SetupAutoSave(changes, secondsTillChangesAreSaved, saveTimeout);
 Helpers.LastEffortSave(changes);
-
 
 osmConnection.registerActivateOsmAUthenticationClass();
 

@@ -58,7 +58,7 @@ export class AddButton extends UIElement {
         basemap.map.on("mousemove", function(){
             if (self.state.data === self.PLACING_POI) {
 
-                var icon = "crosshair";
+                let icon = "crosshair";
                 for (const option of self._options) {
                     if (option.name === self.curentAddSelection.data && option.icon !== undefined) {
                         icon = 'url("' + option.icon + '") 32 32 ,crosshair';

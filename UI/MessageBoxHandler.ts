@@ -3,8 +3,7 @@
  */
 import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
-import {FixedUiElement} from "./FixedUiElement";
-import {VariableUiElement} from "./VariableUIElement";
+import {VariableUiElement} from "./Base/VariableUIElement";
 
 export class MessageBoxHandler {
     private _uielement: UIEventSource<() => UIElement>;
@@ -15,14 +14,23 @@ export class MessageBoxHandler {
         this.listenTo(uielement);
         this.update();
 
+        window.onhashchange = function () {
+            if (location.hash === "") {
+                // No more element: back to the map!
+                uielement.setData(undefined);
+                onClear();
+            }
+        }
+
         new VariableUiElement(new UIEventSource<string>("<h2>Naar de kaart</h2>"),
-            (htmlElement) => {
+            () => {
                 document.getElementById("to-the-map").onclick = function () {
                     uielement.setData(undefined);
                     onClear();
                 }
             }
         ).AttachTo("to-the-map");
+
 
     }
 
@@ -33,14 +41,19 @@ export class MessageBoxHandler {
         })
     }
 
+
     update() {
         const wrapper = document.getElementById("messagesboxmobilewrapper");
         const gen = this._uielement.data;
         console.log("Generator: ", gen);
         if (gen === undefined) {
-            wrapper.classList.add("hidden");
+            wrapper.classList.add("hidden")
+            if (location.hash !== "") {
+                location.hash = ""
+            }
             return;
         }
+        location.hash = "#element"
         wrapper.classList.remove("hidden");
         gen()
             ?.HideOnEmpty(true)

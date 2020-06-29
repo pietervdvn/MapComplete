@@ -1,17 +1,12 @@
 import {Basemap} from "./Logic/Basemap";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Changes";
-import {Question, QuestionDefinition} from "./Logic/Question";
-import {TagMapping, TagMappingOptions} from "./UI/TagMapping";
+import {QuestionDefinition} from "./Logic/Question";
+import {TagMappingOptions} from "./UI/TagMapping";
 import {UIEventSource} from "./UI/UIEventSource";
-import {QuestionPicker} from "./UI/QuestionPicker";
-import {VerticalCombine} from "./UI/VerticalCombine";
 import {UIElement} from "./UI/UIElement";
 import {Tag, TagsFilter} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
-import {ImageCarousel} from "./UI/Image/ImageCarousel";
-import {FixedUiElement} from "./UI/FixedUiElement";
-import {OsmImageUploadHandler} from "./Logic/OsmImageUploadHandler";
 import {UserDetails} from "./Logic/OsmConnection";
 
 
@@ -37,7 +32,6 @@ export class LayerDefinition {
 
     asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>):
         FilteredLayer {
-        const self = this;
         return new FilteredLayer(
             this.name,
             basemap, allElements, changes,

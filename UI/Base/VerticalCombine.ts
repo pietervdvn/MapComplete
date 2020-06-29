@@ -1,4 +1,4 @@
-import {UIElement} from "./UIElement";
+import {UIElement} from "../UIElement";
 
 export class VerticalCombine extends UIElement {
     private _elements: UIElement[];

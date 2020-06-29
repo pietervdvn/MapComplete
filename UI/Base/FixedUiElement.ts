@@ -1,4 +1,4 @@
-import {UIElement} from "./UIElement";
+import {UIElement} from "../UIElement";
 
 export class FixedUiElement extends UIElement {
     private _html: string;

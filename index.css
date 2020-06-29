@@ -12,11 +12,6 @@ body {
     height: 100%;
 }
 
-img {
-    border-radius: 1em;
-}
-
-
 #geolocate-button {
     position: absolute;
     bottom: 27px;
@@ -67,18 +62,16 @@ img {
 
 /**************** USER BADGE ****************/
 
-
-.star {
+.small-userbadge-icon {
+    width: 1em;
+    height: 1em;
     fill: black;
-    width: 1em;
-    height: 1em;
+    border-radius: 0;
 }
 
-.envelope {
-    width: 1em;
-    height: 1em;
+#home {
+    cursor: pointer;
 }
-
 
 #profile-pic {
     float: left;

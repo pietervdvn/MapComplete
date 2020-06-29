@@ -183,9 +183,10 @@ export class FilteredLayer {
                 eventSource.addCallback(function () {
                     self.updateStyle();
                 });
-                layer.on("click", function(){
+                layer.on("click", function(e){
                     console.log("Selected ",feature)
                     self._selectedElement.setData(feature.properties);
+                    L.DomEvent.stop(e); // Marks the event as consumed
                 });
             }
         });

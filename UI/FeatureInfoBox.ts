@@ -2,7 +2,6 @@ import {UIElement} from "./UIElement";
 import {TagMapping, TagMappingOptions} from "./TagMapping";
 import {Question, QuestionDefinition} from "../Logic/Question";
 import {UIEventSource} from "./UIEventSource";
-import {VerticalCombine} from "./VerticalCombine";
 import {QuestionPicker} from "./QuestionPicker";
 import {OsmImageUploadHandler} from "../Logic/OsmImageUploadHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
@@ -12,6 +11,7 @@ import {Img} from "./Img";
 import {CommonTagMappings} from "../Layers/CommonTagMappings";
 import {Tag} from "../Logic/TagsFilter";
 import {ImageUploadFlow} from "./ImageUploadFlow";
+import {VerticalCombine} from "./Base/VerticalCombine";
 
 export class FeatureInfoBox extends UIElement {
 
