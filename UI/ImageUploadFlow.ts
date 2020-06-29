@@ -1,10 +1,10 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
-import {VariableUiElement} from "./VariableUIElement";
 import $ from "jquery"
 import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/OsmConnection";
-import {DropDownUI} from "./DropDownUI";
+import {DropDownUI} from "./Base/DropDownUI";
+import {VariableUiElement} from "./Base/VariableUIElement";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;

@@ -2,7 +2,7 @@ import {UIElement} from "../UIElement";
 import {ImageSearcher} from "../../Logic/ImageSearcher";
 import {UIEventSource} from "../UIEventSource";
 import {SlideShow} from "../SlideShow";
-import {FixedUiElement} from "../FixedUiElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class ImageCarousel extends UIElement {
     /**

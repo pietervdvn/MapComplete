@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {FixedUiElement} from "../UI/FixedUiElement";
+import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import L from "leaflet";
 import {CommonTagMappings} from "./CommonTagMappings";
 import {TagMappingOptions} from "../UI/TagMapping";
