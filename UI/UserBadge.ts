@@ -58,7 +58,7 @@ export class UserBadge extends UIElement {
 
         let home = "";
         if (user.home !== undefined) {
-            home = "<img id='home' src='./assets/home.svg' alt='home' class='small-userbadge-icon'>";
+            home = "<img id='home' src='./assets/home.svg' alt='home' class='small-userbadge-icon'> ";
             const icon = L.icon({
                 iconUrl: 'assets/home.svg',
                 iconSize: [20, 20],
@@ -67,7 +67,14 @@ export class UserBadge extends UIElement {
             L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(this._basemap.map);
         }
 
-        return "<img id='profile-pic' src='" + user.img + "' alt='profile-pic'/> " +
+        const settings =
+            "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "/account' target='_blank'>" +
+            "<img class='small-userbadge-icon' src='./assets/gear.svg' alt='settings'>" +
+            "</a> ";
+
+        return "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "' target='_blank'>" +
+            "<img id='profile-pic' src='" + user.img + "' alt='profile-pic'/> " +
+            "</a>" +
             "<div id='usertext'>" +
             "<p id='username'>" +
             "<a href='https://www.openstreetmap.org/user/" + user.name + "' target='_blank'>" + user.name + "</a>" +
@@ -75,6 +82,7 @@ export class UserBadge extends UIElement {
             "</p> " +
             "<p id='userstats'>" +
             home +
+            settings +
             messageSpan +
             "<span id='csCount'> " +
             "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +

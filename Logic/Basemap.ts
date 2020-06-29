@@ -14,14 +14,14 @@ export class Basemap {
     private aivLucht2013Layer = L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
         {
             layers: "OGWRGB13_15VL",
-            attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | Data van OpenStreetMap"
+            attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | "
         });
 
     private aivLuchtLatestLayer = L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&" +
         "LAYER=omwrgbmrvl&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileRow={y}&tileCol={x}",
         {
             // omwrgbmrvl
-            attribution: 'Map Data <a href="https://osm.org">OpenStreetMap</a> | Luchtfoto\'s van © AIV Vlaanderen (Laatste)  © AGIV',
+            attribution: 'Luchtfoto\'s van © AIV Vlaanderen (Laatste)  © AGIV',
             maxZoom: 20,
             minZoom: 1,
             wmts: true
@@ -30,20 +30,20 @@ export class Basemap {
 
     private osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
-            attribution: 'Map Data and background © <a href="https://osm.org">OpenStreetMap</a>',
+            attribution: '',
             maxZoom: 19,
             minZoom: 1
         });
     private osmBeLayer = L.tileLayer("https://tile.osm.be/osmbe/{z}/{x}/{y}.png",
         {
-            attribution: 'Map Data and background © <a href="https://osm.org">OpenStreetMap</a> | <a href="https://geo6.be/">Tiles courtesy of Geo6</a>',
+            attribution: '<a href="https://geo6.be/">Tile hosting courtesy of Geo6</a>',
             maxZoom: 18,
             minZoom: 1
         });
 
     private grbLayer = L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
         {
-            attribution: 'Map Data   <a href="https://osm.org">OpenStreetMap</a> | Background <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
+            attribution: 'Achtergrond <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
             maxZoom: 20,
             minZoom: 1,
             wmts: true
@@ -66,7 +66,8 @@ export class Basemap {
             zoom: location.data.zoom,
             layers: [this.osmLayer],
         });
-        this.map.attributionControl.setPrefix(extraAttribution.Render());
+        this.map.attributionControl.setPrefix(
+            extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
         this.Location = location;
 
         const layerControl = L.control.layers(this.baseLayers, null,
