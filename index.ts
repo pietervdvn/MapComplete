@@ -19,6 +19,7 @@ import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
 import {StrayClickHandler} from "./Logic/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import {SearchAndGo} from "./UI/SearchAndGo";
 
 let dryRun = false;
 
@@ -181,6 +182,8 @@ const pendingChanges = new PendingChanges(
 
 new UserBadge(osmConnection.userDetails, pendingChanges, bm)
     .AttachTo('userbadge');
+
+new SearchAndGo(bm).AttachTo("searchbox");
 
 var welcomeMessage = () => {
     return new VariableUiElement(

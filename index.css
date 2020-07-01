@@ -122,12 +122,60 @@ body {
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
     border-radius: 2em;
+    border-bottom-right-radius: 1.5em;
+    border-top-right-radius: 1.5em;
     transition: all 500ms linear;
-    margin: 1em;
-    margin-left: 0;
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: 0.5em;
+
     min-width: 20em;
     pointer-events: all;
+}
+
+#userbadge-and-search {
+    display: inline-block;
+}
+
+
+#searchbox {
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    transition: all 500ms linear;
+    pointer-events: all;
+    border-radius: 1.3em;
+    margin: 0;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.search {
+    position: relative;
+    float: left;
+    height: 2em;
+    margin-right: 0.5em;
+}
+
+#searchbox .form-text-field {
+    position: relative;
+    float: left;
+    margin-top: 0.2em;
+}
+
+#searchbox input[type="text"] {
+    background: transparent;
+    border: none;
+    font-size: large;
+}
+
+.search-go {
+    position: relative;
+    height: 1.2em;
+    border: 2px solid black;
+    border-radius: 2em;
+    padding: 0.4em;
+    float: left;
+    margin-right: 0.5em;
 
 }
 
@@ -159,7 +207,8 @@ body {
 #welcomeMessage {
     display: inline-block;
     max-width: 30em;
-    padding: 1em;
+    padding: 0;
+    padding-bottom: 1em;
 }
 
 #messagesboxmobilewrapper {

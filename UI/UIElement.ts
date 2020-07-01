@@ -1,4 +1,5 @@
 import {UIEventSource} from "./UIEventSource";
+import {Playground} from "../Layers/Playground";
 
 export abstract class UIElement {
 
@@ -18,7 +19,7 @@ export abstract class UIElement {
 
 
     protected ListenTo(source: UIEventSource<any>) {
-        if(source === undefined){
+        if (source === undefined) {
             return;
         }
         const self = this;
@@ -27,22 +28,39 @@ export abstract class UIElement {
         })
     }
 
+    private _onClick: () => void;
+
+    public onClick(f: (() => void)) {
+        this._onClick = f;
+        this.Update();
+    }
+
     Update(): void {
-        let element  = document.getElementById(this.id);
+        let element = document.getElementById(this.id);
         if (element === null || element === undefined) {
             // The element is not painted
             return;
         }
-        
+
         element.innerHTML = this.InnerRender();
-        if(this._hideIfEmpty){
-            if(element.innerHTML === ""){
+        if (this._hideIfEmpty) {
+            if (element.innerHTML === "") {
                 element.parentElement.style.display = "none";
-            }else{
+            } else {
                 element.parentElement.style.display = undefined;
             }
         }
-        
+
+        if (this._onClick !== undefined) {
+            console.log("Registering")
+            const self = this;
+            element.onclick = () => {
+                console.log("Clicked!")
+                self._onClick();
+            }
+            element.style.cursor = "pointer";
+        }
+
         this.InnerUpdate(element);
     }
     

@@ -191,9 +191,15 @@ export class FilteredLayer {
                 layer.on("click", function(e) {
                     console.log("Selected ", feature)
                     self._selectedElement.setData(feature.properties);
+                    
                     L.DomEvent.stop(e); // Marks the event as consumed
                     const uiElement = self._showOnPopup.data();
-                    layer.bindPopup(uiElement.Render()).openPopup();
+                    const popup = L.popup();
+                    popup.setContent(uiElement.Render());
+                    layer.bindPopup(popup).openPopup();
+                    popup.onclose(() => {
+                        layer.removePopup(popup)
+                    });
                     uiElement.Update();
                     uiElement.Activate();
 

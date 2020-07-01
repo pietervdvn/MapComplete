@@ -24,6 +24,7 @@ export class StrayClickHandler {
         const self = this;
         const map = basemap.map;
         basemap.LastClickLocation.addCallback(function (lastClick) {
+            selectElement.setData(undefined);
 
             if (self._lastMarker !== undefined) {
                 map.removeLayer(self._lastMarker);
@@ -36,8 +37,9 @@ export class StrayClickHandler {
             self._lastMarker.addTo(map);
             self._lastMarker.bindPopup(popup).openPopup();
 
-
-            leftMessage.setData(self._uiToShow);
+            self._lastMarker.on("click", () => {
+                leftMessage.setData(self._uiToShow);
+            });
 
         });
 

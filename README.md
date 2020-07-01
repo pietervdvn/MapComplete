@@ -74,6 +74,9 @@ Images from Wikipedia/Wikimedia
 
 https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg
 Camera Icon, Dave Gandy, CC-BY-SA 3.0
+
+https://commons.wikimedia.org/wiki/File:OOjs_UI_indicator_search-rtl.svg
+Search Icon, MIT
  	
 https://commons.wikimedia.org/wiki/File:Home-icon.svg
 Home icon by Timothy Miller, CC-BY-SA 3.0
