@@ -16,6 +16,7 @@ export class ImageUploadFlow extends UIElement {
 
     constructor(
         userInfo: UIEventSource<UserDetails>,
+        preferedLicense : UIEventSource<string>,
         uploadOptions: ((license: string) =>
             {
                 title: string,
@@ -36,7 +37,8 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC0", shown: "in het publiek domein"},
                 {value: "CC-BY-SA 4.0", shown: "onder een CC-BY-SA-licentie"},
                 {value: "CC-BY 4.0", shown: "onder een CC-BY-licentie"}
-            ]
+            ],
+            preferedLicense
         );
         this._licensePicker = licensePicker;
         this._selectedLicence = licensePicker.selectedElement;

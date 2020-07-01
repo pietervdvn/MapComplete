@@ -7,12 +7,19 @@ export class DropDownUI extends UIElement {
     private _label: string;
     private _values: { value: string; shown: string }[];
 
-    constructor(label: string, values: { value: string, shown: string }[]) {
+    constructor(label: string, values: { value: string, shown: string }[],
+                selectedElement: UIEventSource<string> = undefined) {
         super(undefined);
         this._label = label;
         this._values = values;
-        this.selectedElement = new UIEventSource<string>(values[0].value);
-
+        this.selectedElement = selectedElement ?? new UIEventSource<string>(values[0].value);
+        if(selectedElement.data === undefined){
+            this.selectedElement.setData(values[0].value)
+        }
+        const self = this;
+        this.selectedElement.addCallback(() => {
+            self.InnerUpdate();
+        });
     }
 
 
@@ -31,17 +38,21 @@ export class DropDownUI extends UIElement {
             "</form>";
     }
 
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-
+    InnerUpdate() {
         const self = this;
         const e = document.getElementById("dropdown-" + this.id);
+        // @ts-ignore
+        if (this.selectedElement.data !== e.value) {
+            // @ts-ignore
+            e.value = this.selectedElement.data;
+        }
         e.onchange = function () {
             // @ts-ignore
             const selectedValue = e.options[e.selectedIndex].value;
-
+            console.log("Putting data", selectedValue)
             self.selectedElement.setData(selectedValue);
         }
+        
     }
 
 }

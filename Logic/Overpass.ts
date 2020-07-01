@@ -40,7 +40,6 @@ export class Overpass {
 
         $.getJSON(query,
             function (json, status) {
-                console.log("status:", status)
                 if (status !== "success") {
                     console.log("Query failed")
                     onFail(status);

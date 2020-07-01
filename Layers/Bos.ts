@@ -43,11 +43,6 @@ export class Bos extends LayerDefinition {
     }
 
 
-    private readonly treeIcon = new L.icon({
-        iconUrl: "assets/tree_white_background.svg",
-        iconSize: [40, 40]
-    })
-
     private generateStyleFunction() {
         const self = this;
         return function (properties: any) {
@@ -73,7 +68,7 @@ export class Bos extends LayerDefinition {
 
             return {
                 color: colour,
-                icon: self.treeIcon
+                icon: undefined
             };
         };
     }

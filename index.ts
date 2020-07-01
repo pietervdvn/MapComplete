@@ -67,6 +67,7 @@ const leftMessage = new UIEventSource<() => UIElement>(undefined);
 
 const selectedElement = new UIEventSource<any>(undefined);
 
+const preferedPictureLicense = new UIEventSource<string>(undefined);
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
     zoom: questSetToRender.startzoom,
@@ -101,6 +102,21 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 ));
 
 
+// ------------- Tie together user settings and UI -----------
+
+
+const picturesPrefName = "mapcomplete-pictures-license";
+preferedPictureLicense.addCallback((license) => {
+    osmConnection.SetPreference(picturesPrefName, license);
+});
+
+osmConnection.preferences.addCallback((prefs) => {
+    if (prefs[picturesPrefName] !== undefined) {
+        preferedPictureLicense.setData(prefs[picturesPrefName]);
+    }
+})
+
+
 // ------------- Setup the layers -------------------------------
 
 const addButtons: {
@@ -122,7 +138,8 @@ for (const layer of questSetToRender.layers) {
             layer.elementsToShow,
             layer.questions,
             changes,
-            osmConnection.userDetails
+            osmConnection.userDetails,
+            preferedPictureLicense
         )
     };
 
@@ -143,12 +160,6 @@ const layerUpdater = new LayerUpdater(bm, questSetToRender.startzoom, flayers);
 
 
 // ------------------ Setup various UI elements ------------
-
-
-/*
-const addButton = new AddButton(bm, changes, addButtons);
-addButton.AttachTo("bottomRight");
-addButton.Update();*/
 
 
 new StrayClickHandler(bm, selectedElement, leftMessage, () => {
@@ -178,13 +189,12 @@ selectedElement.addCallback((data) => {
                     layer.elementsToShow,
                     layer.questions,
                     changes,
-                    osmConnection.userDetails
+                    osmConnection.userDetails,
+                    preferedPictureLicense
                 ));
             break;
         }
     }
-
-
     }
 );
 

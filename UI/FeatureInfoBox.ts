@@ -7,10 +7,7 @@ import {OsmImageUploadHandler} from "../Logic/OsmImageUploadHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
 import {Changes} from "../Logic/Changes";
 import {UserDetails} from "../Logic/OsmConnection";
-import {Img} from "./Img";
 import {CommonTagMappings} from "../Layers/CommonTagMappings";
-import {Tag} from "../Logic/TagsFilter";
-import {ImageUploadFlow} from "./ImageUploadFlow";
 import {VerticalCombine} from "./Base/VerticalCombine";
 
 export class FeatureInfoBox extends UIElement {
@@ -38,6 +35,7 @@ export class FeatureInfoBox extends UIElement {
         questions: QuestionDefinition[],
         changes: Changes,
         userDetails: UIEventSource<UserDetails>,
+        preferedPictureLicense : UIEventSource<string>
     ) {
         super(tagsES);
         this._tagsES = tagsES;
@@ -71,7 +69,8 @@ export class FeatureInfoBox extends UIElement {
 
         this._osmLink = new TagMapping(CommonTagMappings.osmLink, this._tagsES);
         this._wikipedialink = new TagMapping(CommonTagMappings.wikipediaLink, this._tagsES);
-        this._pictureUploader = new OsmImageUploadHandler(tagsES, userDetails, changes, this._imageElement.slideshow).getUI();
+        this._pictureUploader = new OsmImageUploadHandler(tagsES, userDetails, preferedPictureLicense,
+            changes, this._imageElement.slideshow).getUI();
 
 
     }

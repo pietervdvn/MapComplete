@@ -12,9 +12,11 @@ export class OsmImageUploadHandler {
     private _changeHandler: Changes;
     private _userdetails: UIEventSource<UserDetails>;
     private _slideShow: SlideShow;
+    private _preferedLicense: UIEventSource<string>;
 
     constructor(tags: UIEventSource<any>,
                 userdetails: UIEventSource<UserDetails>,
+                preferedLicense: UIEventSource<string>,
                 changeHandler: Changes,
                 slideShow : SlideShow
     ) {
@@ -25,6 +27,7 @@ export class OsmImageUploadHandler {
         this._tags = tags;
         this._changeHandler = changeHandler;
         this._userdetails = userdetails;
+        this._preferedLicense = preferedLicense;
     }
 
     private generateOptions(license: string) {
@@ -65,6 +68,7 @@ export class OsmImageUploadHandler {
         const self = this;
         return new ImageUploadFlow(
             this._userdetails,
+            this._preferedLicense,
             function (license) {
                 return self.generateOptions(license)
             }

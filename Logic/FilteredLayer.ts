@@ -24,7 +24,7 @@ export class FilteredLayer {
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => any;
+    private readonly _style: (properties) => { color: string, icon: any };
 
     private readonly _storage: ElementStorage;
 
@@ -170,9 +170,12 @@ export class FilteredLayer {
                 const style = self._style(feature.properties);
                 let marker;
                 if (style.icon === undefined) {
-                    marker = L.marker(latLng);
+                    marker = L.circle(latLng, {
+                        radius: 50,
+                        color: style.color
+                    });
+                    
                 } else {
-
                     marker = L.marker(latLng, {
                         icon: style.icon
                     });

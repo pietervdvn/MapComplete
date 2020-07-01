@@ -22,7 +22,7 @@ export class LayerDefinition {
     elementsToShow: (TagMappingOptions | QuestionDefinition | UIElement)[];
     questions: QuestionDefinition[]; // Questions are shown below elementsToShow in a questionPicker
 
-    style: (tags: any) => any;
+    style: (tags: any) => { color: string, icon: any };
 
     /**
      * If an object of the next layer is contained for this many percent in this feature, it is eaten and not shown

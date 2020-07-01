@@ -33,6 +33,7 @@ export abstract class UIElement {
     public onClick(f: (() => void)) {
         this._onClick = f;
         this.Update();
+        return this;
     }
 
     Update(): void {
@@ -52,10 +53,8 @@ export abstract class UIElement {
         }
 
         if (this._onClick !== undefined) {
-            console.log("Registering")
             const self = this;
             element.onclick = () => {
-                console.log("Clicked!")
                 self._onClick();
             }
             element.style.cursor = "pointer";

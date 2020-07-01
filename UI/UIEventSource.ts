@@ -22,8 +22,8 @@ export class UIEventSource<T>{
     }
 
     public ping(): void {
-        for (let i in this._callbacks) {
-            this._callbacks[i](this.data);
+        for (const callback of this._callbacks) {
+            callback(this.data);
         }
     }
 

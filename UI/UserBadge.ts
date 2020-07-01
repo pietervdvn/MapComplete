@@ -3,6 +3,7 @@ import {UserDetails} from "../Logic/OsmConnection";
 import {UIEventSource} from "./UIEventSource";
 import {Basemap} from "../Logic/Basemap";
 import L from "leaflet";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
  * Handles and updates the user badge
@@ -10,6 +11,7 @@ import L from "leaflet";
 export class UserBadge extends UIElement {
     private _userDetails: UIEventSource<UserDetails>;
     private _pendingChanges: UIElement;
+    private _logout: UIElement;
     private _basemap: Basemap;
 
 
@@ -20,6 +22,9 @@ export class UserBadge extends UIElement {
         this._userDetails = userDetails;
         this._pendingChanges = pendingChanges;
         this._basemap = basemap;
+        
+        this._logout = new FixedUiElement("<img src='assets/logout.svg' alt='logout'>")
+            .onClick(() => {userDetails.data.osmConnection.LogOut();});
 
         userDetails.addCallback(function () {
             const profilePic = document.getElementById("profile-pic");

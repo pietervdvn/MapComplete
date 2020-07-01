@@ -1,7 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {Quests} from "../Quests";
 import {TagMappingOptions} from "../UI/TagMapping";
-import L from "leaflet"
 import {CommonTagMappings} from "./CommonTagMappings";
 import {Or, Tag} from "../Logic/TagsFilter";
 
@@ -34,10 +33,7 @@ export class Park extends LayerDefinition {
     }
 
 
-    private readonly treeIcon = new L.icon({
-        iconUrl: "assets/tree_white_background.svg",
-        iconSize: [40, 40]
-    })
+
 
     private generateStyleFunction() {
         const self = this;
@@ -64,7 +60,7 @@ export class Park extends LayerDefinition {
 
             return {
                 color: colour,
-                icon: self.treeIcon
+                icon: undefined
             };
         };
     }
