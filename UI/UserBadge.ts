@@ -22,15 +22,20 @@ export class UserBadge extends UIElement {
         this._userDetails = userDetails;
         this._pendingChanges = pendingChanges;
         this._basemap = basemap;
-        
-        this._logout = new FixedUiElement("<img src='assets/logout.svg' alt='logout'>")
-            .onClick(() => {userDetails.data.osmConnection.LogOut();});
+
+        this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
+            .onClick(() => {
+                userDetails.data.osmConnection.LogOut();
+            });
 
         userDetails.addCallback(function () {
             const profilePic = document.getElementById("profile-pic");
-            profilePic.onload = function () {
-                profilePic.style.opacity = "1"
-            };
+            if (profilePic) {
+
+                profilePic.onload = function () {
+                    profilePic.style.opacity = "1"
+                };
+            }
         });
 
     }
@@ -92,6 +97,7 @@ export class UserBadge extends UIElement {
             "<span id='csCount'> " +
             "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
             "</a></span> " +
+            this._logout.Render() +
             this._pendingChanges.Render() +
             "</p>" +
        
@@ -112,6 +118,7 @@ export class UserBadge extends UIElement {
 
             }
         }
+        this._logout.Update();
     }
     
     Activate() {

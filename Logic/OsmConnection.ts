@@ -49,6 +49,9 @@ export class OsmConnection {
 
     public LogOut() {
         this.auth.logout();
+        this.userDetails.data.loggedIn = false;
+        this.userDetails.ping();
+        console.log("Logged out")
     }
 
     public AttemptLogin() {
@@ -76,7 +79,7 @@ export class OsmConnection {
 
             let data = self.userDetails.data;
             data.loggedIn = true;
-            console.log(userInfo);
+            console.log("Log incompleted, userinfo is ", userInfo);
             data.name = userInfo.getAttribute('display_name');
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
 
