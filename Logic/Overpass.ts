@@ -44,6 +44,11 @@ export class Overpass {
                     console.log("Query failed")
                     onFail(status);
                 }
+                
+                if(json.elements === [] && json.remarks.indexOf("runtime error") > 0){
+                    console.log("Timeout or other runtime error");
+                    return;
+                }
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
                 continuation(geojson);

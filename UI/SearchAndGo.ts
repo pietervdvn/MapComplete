@@ -1,16 +1,14 @@
 import {UIElement} from "./UIElement";
 import {TextField} from "./Base/TextField";
-import {VariableUiElement} from "./Base/VariableUIElement";
 import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Geocoding} from "../Logic/Geocoding";
 import {Basemap} from "../Logic/Basemap";
-import {VerticalCombine} from "./Base/VerticalCombine";
 
 
 export class SearchAndGo extends UIElement {
 
-    private _placeholder = new UIEventSource("Ga naar een locatie...")
+    private _placeholder = new UIEventSource("Zoek naar een locatie...")
     private _searchField = new TextField(this._placeholder);
 
     private _foundEntries = new UIEventSource([]);
@@ -39,16 +37,24 @@ export class SearchAndGo extends UIElement {
         this._searchField.Clear();
         this._placeholder.setData("Bezig met zoeken...");
         const self = this;
-        Geocoding.Search(searchString, undefined, (result) => {
+        Geocoding.Search(searchString, this._map, (result) => {
 
-            const bb = result[0].boundingbox;
-            const bounds = [
-                [bb[0], bb[2]],
-                [bb[1], bb[3]]
-            ]
-            self._map.map.fitBounds(bounds);
-            this._placeholder.setData("Ga naar locatie...");
-        });
+                if (result.length == 0) {
+                    this._placeholder.setData("Niets gevonden");
+                    return;
+                }
+
+                const bb = result[0].boundingbox;
+                const bounds = [
+                    [bb[0], bb[2]],
+                    [bb[1], bb[3]]
+                ]
+                self._map.map.fitBounds(bounds);
+                this._placeholder.setData("Zoek naar een locatie...");
+            },
+            () => {
+                this._placeholder.setData("Niets gevonden: er ging iets mis");
+            });
 
     }
 

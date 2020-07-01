@@ -79,7 +79,7 @@ export class OsmConnection {
 
             let data = self.userDetails.data;
             data.loggedIn = true;
-            console.log("Log incompleted, userinfo is ", userInfo);
+            console.log("Login completed, userinfo is ", userInfo);
             data.name = userInfo.getAttribute('display_name');
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
 
@@ -143,16 +143,22 @@ export class OsmConnection {
         });
     }
     
-    public SetPreference(k:string, v:string){
+    public SetPreference(k:string, v:string) {
+
+        if (this.preferences.data[k] === v) {
+            return;
+        }
+        console.log("Updating preference", k, " to ", v);
+
         this.preferences.data[k] = v;
         this.preferences.ping();
         this.auth.xhr({
             method: 'PUT',
-            path: '/api/0.6/user/preferences/'+k,
-            options: { header: { 'Content-Type': 'text/plain' } },
+            path: '/api/0.6/user/preferences/' + k,
+            options: {header: {'Content-Type': 'text/plain'}},
             content: v
-        },function(error, result) {
-            if(error){
+        }, function (error, result) {
+            if (error) {
                 console.log("Could not set preference", error);
                 return;
             }

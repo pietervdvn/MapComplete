@@ -171,7 +171,7 @@ export class FilteredLayer {
                 let marker;
                 if (style.icon === undefined) {
                     marker = L.circle(latLng, {
-                        radius: 50,
+                        radius: 25,
                         color: style.color
                     });
                     

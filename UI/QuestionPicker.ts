@@ -36,7 +36,7 @@ export class QuestionPicker extends UIElement {
 
 
         if (highestQ === undefined) {
-            return "";
+            return "Er zijn geen vragen meer!";
         }
 
         return "<div class='infobox-questions'>" +

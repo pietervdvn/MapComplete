@@ -1,17 +1,26 @@
 import * as $ from "jquery"
 import {UIEventSource} from "../UI/UIEventSource";
+import {Basemap} from "./Basemap";
 
 export class Geocoding {
 
     private static readonly host = "https://nominatim.openstreetmap.org/search?";
 
-    static Search(query: string, currentLocation: UIEventSource<{ lat: number, lon: number }>,
-                  handleResult: ((places: { display_name: string, lat: number, lon: number, boundingbox : number[] }[]) => void)) {
+    static Search(query: string,
+                  basemap: Basemap,
+                  handleResult: ((places: { display_name: string, lat: number, lon: number, boundingbox: number[] }[]) => void),
+                  onFail: (() => void)) {
+        const b = basemap.map.getBounds();
+        console.log(b);
         $.getJSON(
-            Geocoding.host + "format=json&accept-language=nl&q=" + query,
+            Geocoding.host + "format=json&limit=1&viewbox=" + 
+            `${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}`+
+            "&accept-language=nl&q=" + query,
             function (data) {
-               handleResult(data);
-            });
+                handleResult(data);
+            }).fail(() => {
+            onFail();
+        });
     }
 
 

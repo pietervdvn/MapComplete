@@ -20,6 +20,7 @@ import {StrayClickHandler} from "./Logic/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
+import {CollapseButton} from "./UI/Base/CollapseButton";
 
 let dryRun = false;
 
@@ -129,6 +130,8 @@ const addButtons: {
 
 const flayers: FilteredLayer[] = []
 
+let minZoom = 0;
+
 for (const layer of questSetToRender.layers) {
 
     const generateInfo = (tagsES) => {
@@ -143,6 +146,8 @@ for (const layer of questSetToRender.layers) {
         )
     };
 
+    minZoom = Math.max(minZoom, layer.minzoom);
+    
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement,
         generateInfo);
 
@@ -156,7 +161,7 @@ for (const layer of questSetToRender.layers) {
     flayers.push(flayer);
 }
 
-const layerUpdater = new LayerUpdater(bm, questSetToRender.startzoom, flayers);
+const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
 
 
 // ------------------ Setup various UI elements ------------
@@ -207,6 +212,8 @@ new UserBadge(osmConnection.userDetails, pendingChanges, bm)
 
 new SearchAndGo(bm).AttachTo("searchbox");
 
+new CollapseButton("messagesbox")
+    .AttachTo("collapseButton");
 var welcomeMessage = () => {
     return new VariableUiElement(
         osmConnection.userDetails.map((userdetails) => {
@@ -215,7 +222,7 @@ var welcomeMessage = () => {
                 login = questSetToRender.welcomeBackMessage;
             }
             return "<div id='welcomeMessage'>" +
-                questSetToRender.welcomeMessage + login +
+                questSetToRender.welcomeMessage + login + questSetToRender.welcomeTail+
                 "</div>";
         }),
         function () {
@@ -229,7 +236,7 @@ welcomeMessage().AttachTo("messagesbox");
 var messageBox = new MessageBoxHandler(leftMessage, () => {selectedElement.setData(undefined)});
 
 new CenterMessageBox(
-    questSetToRender.startzoom,
+    minZoom,
     centerMessage,
     osmConnection,
     locationControl,

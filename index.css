@@ -203,17 +203,39 @@ body {
     pointer-events: none;
 }
 
-
-#welcomeMessage {
-    display: inline-block;
-    max-width: 30em;
-    padding: 0;
-    padding-bottom: 1em;
-}
-
 #messagesboxmobilewrapper {
     display: none; /*Only shown on small screens*/
 }
+
+#welcomeMessage {
+    max-width: 35em;
+    padding: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#collapseButton {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    margin: 1.5em;
+    border: 2px solid black;
+    border-radius: 2em;
+    padding: 0.5em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+#collapseButton img {
+    width: 1em;
+    height: 1em;
+}
+
+
+#messagesbox-wrapper {
+}
+
 
 #messagesbox {
     /*Only shown on big screens*/
@@ -221,7 +243,6 @@ body {
     padding-top: 1em;
     padding-bottom: 1em;
     z-index: 5000;
-    transition: all 500ms linear;
     background-color: white;
     border-radius: 2em;
     pointer-events: all;
@@ -229,6 +250,10 @@ body {
 
 
 @media only screen and (max-width: 600px) {
+    #messagesbox-wrapper {
+        display: none;
+    }
+
     #messagesbox {
         display: none;
     }
@@ -239,7 +264,7 @@ body {
 
     .leaflet-popup {
         /* Popups are hidden on mobile */
-        display:none;
+        display: none;
     }
 
     #messagesboxmobilewrapper {
@@ -524,6 +549,10 @@ body {
 
 
 /***************** Info box (box containing features and questions ******************/
+
+.leaflet-popup-content {
+    width: 25vw !important;
+}
 
 .featureinfobox {
 }

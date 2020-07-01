@@ -26,7 +26,7 @@ export class Bos extends LayerDefinition {
         ];
         this.maxAllowedOverlapPercentage = 10;
 
-        this.minzoom = 14;
+        this.minzoom = 13;
         this.questions = [Quests.nameOf(this.name), Quests.accessNatureReserve, Quests.operator];
         this.style = this.generateStyleFunction();
         this.elementsToShow = [

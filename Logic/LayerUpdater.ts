@@ -71,7 +71,8 @@ export class LayerUpdater {
         if (this.IsInBounds()) {
             return;
         }
-        if (this._map.map.getZoom() < this._minzoom) {
+        console.log("Zoom level: ",this._map.map.getZoom(), "Least needed zoom:", this._minzoom)
+        if (this._map.map.getZoom() < this._minzoom || this._map.Location.data.zoom < this._minzoom) {
             console.log("Not running query: zoom not sufficient");
             return;
         }

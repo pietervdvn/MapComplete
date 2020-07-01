@@ -22,6 +22,7 @@ export class KnownSet {
     public startLat: number;
 
     static allSets : any = {};
+    public welcomeTail: string;
 
     constructor(
         name: string,
@@ -32,7 +33,8 @@ export class KnownSet {
         startLon: number,
         welcomeMessage: string,
         gettingStartedPlzLogin: string,
-        welcomeBackMessage: string
+        welcomeBackMessage: string,
+        welcomeTail: string = ""
     ) {
         this.title = title;
         this.startLon = startLon;
@@ -43,6 +45,7 @@ export class KnownSet {
         this.welcomeMessage = welcomeMessage;
         this.gettingStartedPlzLogin = gettingStartedPlzLogin;
         this.welcomeBackMessage = welcomeBackMessage;
+        this.welcomeTail = welcomeTail;
         KnownSet.allSets[this.name] = this;
     }
 
@@ -50,35 +53,49 @@ export class KnownSet {
     static groen = new KnownSet("groen",
         "Buurtnatuur",
         [new NatureReserves(), new Park(), new Bos()],
-        14,
-        51.2,
-        3.2,
-        "        <img src=\"assets/groen.svg\" alt=\"logo partij groen\" id=\"logo\"/>\n" +
-        "\n" +
-        "        <h3>Buurtnatuur meten</h3>\n" +
-        "\n" +
-        "\n" +
-        "        Met deze tool willen we de natuur in Belgie beter inventariseren. <br/>\n" +
-        "        In welke natuurgebieden kan men terecht?<br/>\n" +
-        "        In welke bossen is het goed vertoeven?<br>\n" +
-        "        <p>Natuur maakt immers gelukkig!</p>\n" +
-        "\n" +
-        "<p>De data komt van <b>OpenStreetMap</b> en je antwoorden worden daar ook opgeslaan. " +
-        "Omdat iedereen aan deze data bijdraagt, kunnen we geen garantie op correctheid bieden en heeft deze data geen juridische waarde</p>\n" +
-        "<p>Je <b>privacy</b> is belangrijk. We tellen wel hoeveel personen de website bezoeken. Om je niet dubbel te tellen wordt er één cookie bijgehouden waar geen persoonlijke informatie in staat. " +
-        "Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</p>\n",
-        "  <p>Wil je meehelpen? <br/>\n" +
-        "            Begin dan met <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">een account\n" +
+        10,
+        50.8435,
+        4.3688,
+"\n" +
+        "<img src='assets/groen.svg' alt='logo-groen' class='logo'> <br />" +
+        "<h3>Breng jouw buurtnatuur in kaart</h3>" +
+        "<b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten. \n" +
+        "<ul>" +
+        "<li>In welke natuurgebieden kan jij terecht? Hoe toegankelijk zijn ze?</li>" +
+        "<li>In welke bossen kan een gezin in jouw gemeente opnieuw op adem komen?</li>" +
+        "<li>Op welke onbekende plekjes is het zalig spelen?</li>" +
+        "</ul>" +
+        "<p>Samen kleuren we heel Vlaanderen en Brussel groen.</p>" +
+        "<p>Blijf op de hoogte van de resultaten van buurtnatuur.be: <a href=\"https://www.groen.be/buurtnatuur\" target='_blank'>meld je aan voor e-mailupdates</a>.</p> \n"
+       ,
+
+        "<b>Begin meteen door <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">een account te maken\n" +
         "            te maken</a> of\n" +
-        "            <span onclick=\"authOsm()\" class=\"activate-osm-authentication\">in te loggen</span>.</p>",
-        "Je bent aangemeld. Klik op een element om vragen te beantwoorden."
+        "            <span onclick=\"authOsm()\" class=\"activate-osm-authentication\">in te loggen</span>.</b>",
+        "",
+        
+        "<h4>Tips</h4>" +
+        
+        "<ul>" +
+        "<li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li>" +
+        "<li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li>" +
+        "<li>Je kan altijd een foto toevoegen</li>" +
+        "<li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li>" +
+        "</ul>" +
+        "<small>" +
+        "<p>" +
+        "De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken." +
+        "</p>" +
+        "Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. " +
+        "Als je inlogt, komt er een tweede cookie bij met je inloggegevens." +
+        "</small>"
     );
 
     static openToiletMap = new KnownSet(
         "toilets",
         "Open Toilet Map",
         [new Toilets()],
-        14,
+        12,
         51.2,
         3.2,
 

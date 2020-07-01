@@ -57,6 +57,7 @@ export abstract class UIElement {
             element.onclick = () => {
                 self._onClick();
             }
+            element.style.pointerEvents = "all";
             element.style.cursor = "pointer";
         }
 
