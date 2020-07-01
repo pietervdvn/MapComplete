@@ -39,7 +39,7 @@ export class FilteredLayer {
      */
     private _geolayer;
     private _selectedElement: UIEventSource<any>;
-    private _showOnPopup: UIEventSource<(() => UIElement)>;
+    private _showOnPopup: (tags: UIEventSource<any>) => UIElement;
 
     constructor(
         name: string,
@@ -49,7 +49,7 @@ export class FilteredLayer {
         maxAllowedOverlap: number,
         style: ((properties) => any),
         selectedElement: UIEventSource<any>,
-        showOnPopup: UIEventSource<(() => UIElement)>
+        showOnPopup: ((tags: UIEventSource<any>) => UIElement)
     ) {
         this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
@@ -177,7 +177,6 @@ export class FilteredLayer {
                         icon: style.icon
                     });
                 }
-
                 return marker;
             },
 
@@ -188,20 +187,16 @@ export class FilteredLayer {
                 });
 
 
-                layer.on("click", function(e) {
+                const uiElement = self._showOnPopup(eventSource);
+                layer.bindPopup(uiElement.Render());
+                layer.on("click", function (e) {
                     console.log("Selected ", feature)
                     self._selectedElement.setData(feature.properties);
-                    
-                    L.DomEvent.stop(e); // Marks the event as consumed
-                    const uiElement = self._showOnPopup.data();
-                    const popup = L.popup();
-                    popup.setContent(uiElement.Render());
-                    layer.bindPopup(popup).openPopup();
-                    popup.onclose(() => {
-                        layer.removePopup(popup)
-                    });
+
                     uiElement.Update();
                     uiElement.Activate();
+
+                    L.DomEvent.stop(e); // Marks the event as consumed
 
                 });
             }
