@@ -29,6 +29,10 @@ export class Regex implements TagsFilter {
         return false;
     }
 
+    substituteValues(tags: any) : TagsFilter{
+        throw "Substituting values is not supported on regex tags"
+    }
+
 }
 
 export class Tag implements TagsFilter {
@@ -42,11 +46,10 @@ export class Tag implements TagsFilter {
 
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
-
             if (tag.k === this.key) {
                 if (tag.v === "") {
                     // This tag has been removed
-                    return false;
+                    return this.value === "";
                 }
                 if (this.value === "*") {
                     // Any is allowed
@@ -56,6 +59,10 @@ export class Tag implements TagsFilter {
                 return this.value === tag.v;
             }
         }
+        if(this.value === ""){
+            return true;
+        }
+        
         return false;
     }
 
@@ -68,6 +75,10 @@ export class Tag implements TagsFilter {
             return ['[!"' + this.key + '"]'];
         }
         return ['["' + this.key + '"="' + this.value + '"]'];
+    }
+
+    substituteValues(tags: any) {
+        return new Tag(this.key, TagUtils.ApplyTemplate(this.value, tags));
     }
 
 }
@@ -102,6 +113,14 @@ export class Or implements TagsFilter {
             }
         }
         return choices;
+    }
+
+    substituteValues(tags: any): TagsFilter {
+        const newChoices = [];
+        for (const c of this.or) {
+            newChoices.push(c.substituteValues(tags));
+        }
+        return new Or(newChoices);
     }
 
 }
@@ -154,12 +173,22 @@ export class And implements TagsFilter {
         }
         return allChoices;
     }
+
+    substituteValues(tags: any): TagsFilter {
+        const newChoices = [];
+        for (const c of this.and) {
+            newChoices.push(c.substituteValues(tags));
+        }
+        return new And(newChoices);
+    }
 }
 
 export interface TagsFilter {
     matches(tags: { k: string, v: string }[]): boolean
 
     asOverpass(): string[]
+    
+    substituteValues(tags: any) : TagsFilter;
 }
 
 export class TagUtils {
@@ -170,6 +199,15 @@ export class TagUtils {
             result.push({k: k, v: properties[k]})
         }
         return result;
+    }
+
+    static ApplyTemplate(template: string, tags: any): string {
+        for (const k in tags) {
+            while (template.indexOf("{" + k + "}") >= 0) {
+                template = template.replace("{" + k + "}", tags[k]);
+            }
+        }
+        return template;
     }
 
 }

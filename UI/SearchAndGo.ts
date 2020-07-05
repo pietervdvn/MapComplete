@@ -60,8 +60,8 @@ export class SearchAndGo extends UIElement {
 
     protected InnerRender(): string {
         // "<img class='search' src='./assets/search.svg' alt='Search'> " +
-        return this._goButton.Render() +
-            this._searchField.Render();
+        return this._searchField.Render() +
+            this._goButton.Render();
 
     }
 

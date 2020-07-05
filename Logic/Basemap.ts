@@ -51,11 +51,10 @@ export class Basemap {
 
 
     private baseLayers = {
-        "OpenStreetMap Be": this.osmBeLayer,
-        "OpenStreetMap": this.osmLayer,
-        "Luchtfoto AIV Vlaanderen (2013-2015)": this.aivLucht2013Layer,
-        "Luchtfoto AIV Vlaanderen (laatste)": this.aivLuchtLatestLayer,
-        "GRB Vlaanderen": this.grbLayer
+        "Luchtfoto Vlaanderen (recentste door AIV)": this.aivLuchtLatestLayer,
+        "Luchtfoto Vlaanderen (2013-2015, door AIV)": this.aivLucht2013Layer,
+        "Kaart van OpenStreetMap": this.osmLayer,
+        "Kaart Grootschalig ReferentieBestand Vlaanderen (GRB) door AIV": this.grbLayer
     };
 
     constructor(leafletElementId: string,

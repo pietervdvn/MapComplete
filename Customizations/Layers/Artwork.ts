@@ -1,10 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import {QuestionDefinition} from "../../Logic/Question";
+import {Tag} from "../../Logic/TagsFilter";
 import L from "leaflet";
-import {CommonTagMappings} from "./CommonTagMappings";
-import {TagMappingOptions} from "../UI/TagMapping";
-import {QuestionDefinition} from "../Logic/Question";
-import {Tag} from "../Logic/TagsFilter";
 
 export class Artwork extends LayerDefinition {
 
@@ -40,7 +37,8 @@ export class Artwork extends LayerDefinition {
                     iconUrl: "assets/statue.svg",
                     iconSize: [40, 40],
                     text: "hi"
-                })
+                }),
+                color: "#0000ff"
             };
 
         }
@@ -80,8 +78,7 @@ export class Artwork extends LayerDefinition {
 
 
 
-            new TagMappingOptions({key: "image", template: "<img class='popupImg' alt='image' src='{image}' />"}),
-            CommonTagMappings.osmLink
+            new TagMappingOptions({key: "image", template: "<img class='popupImg' alt='image' src='{image}' />"})
 
         ];
     }

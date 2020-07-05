@@ -160,6 +160,7 @@ body {
     position: relative;
     float: left;
     margin-top: 0.2em;
+    margin-left: 1em;
 }
 
 #searchbox input[type="text"] {
@@ -170,12 +171,13 @@ body {
 
 .search-go {
     position: relative;
+    float: right;
     height: 1.2em;
     border: 2px solid black;
     border-radius: 2em;
     padding: 0.4em;
-    float: left;
-    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0;
 
 }
 
@@ -216,7 +218,7 @@ body {
 
 #collapseButton {
     position: absolute;
-    right: 0;
+    right: 1em;
     background-color: white;
     margin: 1.5em;
     border: 2px solid black;
@@ -570,6 +572,42 @@ body {
     fill: #7ebc6f;
 }
 
+.featureinfoboxtitle .answer {
+    display: inline;
+    margin-right: 3em;
+}
+
+.featureinfoboxtitle .answer-text {
+    display: inline;
+}
+
+.featureinfoboxtitle .editbutton {
+    float: none;
+    width: 0.8em;
+    height: 0.8em;
+    padding: 0.3em;
+    border-radius: 0.35em;
+    border: solid black 1px;
+    margin-left: 1em;
+    top: 0.2em;
+    position: absolute;
+
+}
+
+
+.editbutton {
+    width: 1.3em;
+    height: 1.3em;
+    padding: 0.5em;
+    border-radius: 0.65em;
+    border: solid black 1px;
+
+    font-size: medium;
+    float: right;
+
+
+}
+
 .wikipedialink {
     position: absolute;
     right: 24px;
@@ -606,11 +644,61 @@ body {
     margin-top: 1em;
 }
 
-.infobox-questions {
+.question {
     margin-top: 1em;
     background-color: #e5f5ff;
     padding: 1em;
     border-radius: 1em;
     margin-right: 1em;
-    
+    font-size: larger;
+
+}
+
+.answer {
+    display: inline-block;
+    margin: 0.1em;
+    width: 100%;
+    font-size: large;
+}
+
+.answer-text {
+    width: 90%;
+    display: inline-block
+}
+
+
+/**** The save button *****/
+
+.save {
+    display: inline-block;
+    border: solid white 2px;
+    background-color: #3a3aeb;
+    color: white;
+    padding: 0.2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 1.5em;
+}
+
+.save-non-active {
+    display: inline-block;
+    border: solid lightgrey 2px;
+    color: grey;
+    padding: 0.2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 1.5em;
+}
+
+.skip-button {
+    display: inline-block;
+    border: solid black 0.5px;
+    padding: 0.2em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    border-radius: 1.5em;
 }

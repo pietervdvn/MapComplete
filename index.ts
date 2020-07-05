@@ -7,7 +7,6 @@ import {Basemap} from "./Logic/Basemap";
 import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
-import {KnownSet} from "./Layers/KnownSet";
 import {Tag, TagUtils} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
@@ -21,6 +20,7 @@ import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 
 let dryRun = false;
 
@@ -34,10 +34,11 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 }
 
 
+
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-let questSetToRender = KnownSet.groen;
+let defaultQuest = "groen"
 if (window.location.search) {
     const params = window.location.search.substr(1).split("&");
     const paramDict: any = {};
@@ -45,13 +46,17 @@ if (window.location.search) {
         var kv = param.split("=");
         paramDict[kv[0]] = kv[1];
     }
-
     if (paramDict.quests) {
-        questSetToRender = KnownSet.allSets[paramDict.quests];
-        console.log("Using quests: ", questSetToRender.name);
+        defaultQuest = paramDict.quests
     }
-
+    if(paramDict.test){
+        dryRun = true;
+    }
 }
+
+const questSetToRender = AllKnownLayouts.allSets[defaultQuest];
+console.log("Using quests: ", questSetToRender.name);
+
 document.title = questSetToRender.title;
 
 
@@ -79,12 +84,12 @@ const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: numb
 
 // ----------------- Prepare the important objects -----------------
 
-const saveTimeout = 5000; // After this many milliseconds without changes, saves are sent of to OSM
+const saveTimeout = 30000; // After this many milliseconds without changes, saves are sent of to OSM
 const allElements = new ElementStorage();
 const osmConnection = new OsmConnection(dryRun);
 const changes = new Changes(
     "Beantwoorden van vragen met MapComplete voor vragenset #" + questSetToRender.name,
-    osmConnection, allElements, centerMessage);
+    osmConnection, allElements);
 const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
     locationControl.map((location) => {
         const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
@@ -138,8 +143,8 @@ for (const layer of questSetToRender.layers) {
 
         return new FeatureInfoBox(
             tagsES,
+            layer.title,
             layer.elementsToShow,
-            layer.questions,
             changes,
             osmConnection.userDetails,
             preferedPictureLicense
@@ -191,8 +196,8 @@ selectedElement.addCallback((data) => {
             leftMessage.setData(() =>
                 new FeatureInfoBox(
                     allElements.getElement(data.id),
+                    layer.title,
                     layer.elementsToShow,
-                    layer.questions,
                     changes,
                     osmConnection.userDetails,
                     preferedPictureLicense
@@ -214,6 +219,7 @@ new SearchAndGo(bm).AttachTo("searchbox");
 
 new CollapseButton("messagesbox")
     .AttachTo("collapseButton");
+
 var welcomeMessage = () => {
     return new VariableUiElement(
         osmConnection.userDetails.map((userdetails) => {

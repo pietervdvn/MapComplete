@@ -106,7 +106,6 @@ export class OsmConnection {
 
     /**
      * All elements with class 'activate-osm-authentication' are loaded and get an 'onclick' to authenticate
-     * @param osmConnection
      */
     registerActivateOsmAUthenticationClass() {
 
@@ -144,6 +143,10 @@ export class OsmConnection {
     }
     
     public SetPreference(k:string, v:string) {
+        if(!this.userDetails.data.loggedIn){
+            console.log("Not saving preference: user not logged in");
+            return;
+        }
 
         if (this.preferences.data[k] === v) {
             return;
@@ -239,7 +242,6 @@ export class OsmConnection {
     private AddChange(changesetId: string,
                       changesetXML: string,
                       continuation: ((changesetId: string, idMapping: any) => void)){
-        const self = this;
         this.auth.xhr({
             method: 'POST',
             options: { header: { 'Content-Type': 'text/xml' } },

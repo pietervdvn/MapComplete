@@ -1,26 +1,21 @@
-import {Geocoding} from "./Logic/Geocoding";
-import {SearchAndGo} from "./UI/SearchAndGo";
-import {TextField} from "./UI/Base/TextField";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {DropDownUI} from "./UI/Base/DropDownUI";
 import {UIEventSource} from "./UI/UIEventSource";
+import {Changes} from "./Logic/Changes";
+import {OsmConnection} from "./Logic/OsmConnection";
+import {ElementStorage} from "./Logic/ElementStorage";
+import {WikipediaLink} from "./Customizations/Questions/WikipediaLink";
+import {OsmLink} from "./Customizations/Questions/OsmLink";
 
-console.log("HI");
+const tags = {name: "Test", 
+    wikipedia: "nl:Pieter",
+    id: "node/-1"};
+const tagsES = new UIEventSource(tags);
+
+const login = new OsmConnection(true);
+
+const allElements = new ElementStorage();
+allElements.addElementById(tags.id, tagsES);
+
+const changes = new Changes("Test", login, allElements)
 
 
-var control = new UIEventSource<string>("b");
-control.addCallback((data) => {
-    console.log("> GOT", control.data)
-})
-
-new DropDownUI("Test",
-    [{value: "a", shown: "a"},
-        {value: "b", shown: "b"},
-        {value: "c", shown: "c"},
-    ], control
-).AttachTo("maindiv");
-
-
-new VariableUiElement(control).AttachTo("extradiv");
-
-window.setTimeout(() => {control.setData("a")}, 1000);
+new OsmLink(tagsES, changes).AttachTo("maindiv");

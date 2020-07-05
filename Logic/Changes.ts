@@ -7,7 +7,7 @@ import {OsmNode, OsmObject} from "./OsmObject";
 import {ElementStorage} from "./ElementStorage";
 import {UIEventSource} from "../UI/UIEventSource";
 import {Question, QuestionDefinition} from "./Question";
-import {Tag} from "./TagsFilter";
+import {And, Tag, TagsFilter} from "./TagsFilter";
 
 export class Changes {
 
@@ -22,19 +22,34 @@ export class Changes {
     public readonly pendingChangesES = new UIEventSource<number>(this._pendingChanges.length);
     public readonly isSaving = new UIEventSource(false);
     private readonly _changesetComment: string;
-    private readonly _centerMessage: UIEventSource<string>;
 
     constructor(
         changesetComment: string,
         login: OsmConnection,
-        allElements: ElementStorage,
-        centerMessage: UIEventSource<string>) {
+        allElements: ElementStorage) {
         this._changesetComment = changesetComment;
         this.login = login;
         this._allElements = allElements;
-        this._centerMessage = centerMessage;
     }
 
+    addTag(elementId: string, tagsFilter : TagsFilter){
+        if(tagsFilter instanceof  Tag){
+            const tag = tagsFilter as Tag;
+            this.addChange(elementId, tag.key, tag.value);
+            return;
+        }
+        
+        if(tagsFilter instanceof And){
+            const and = tagsFilter as And;
+            for (const tag of and.and) {
+                this.addTag(elementId, tag);
+            }
+            return;
+        }
+        console.log("Unsupported tagsfilter element to addTag", tagsFilter);
+        throw "Unsupported tagsFilter element";
+    }
+    
     /**
      * Adds a change to the pending changes
      * @param elementId
@@ -42,23 +57,7 @@ export class Changes {
      * @param value
      */
     addChange(elementId: string, key: string, value: string) {
-
-        if (!this.login.userDetails.data.loggedIn) {
-            this._centerMessage.setData(
-                "<p>Bedankt voor je antwoord!</p>" +
-                "<p>Gelieve <span class='activate-osm-authentication'>in te loggen op OpenStreetMap</span> om dit op te slaan.</p>" +
-                "<p>Nog geen account? <a href=\'https://www.openstreetmap.org/user/new\' target=\'_blank\'>Registreer hier</a></p>"
-            );
-            const self = this;
-            this.login.userDetails.addCallback(() => {
-                if (self.login.userDetails.data.loggedIn) {
-                    self._centerMessage.setData("");
-                }
-            });
-            return;
-        }
-        
-
+console.log("Received change",key, value)
         if (key === undefined || key === null) {
             console.log("Invalid key");
             return;

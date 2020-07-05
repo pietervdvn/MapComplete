@@ -1,30 +1,33 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
-import {FixedUiElement} from "./FixedUiElement";
-import $ from "jquery"
+import {UIInputElement} from "./UIInputElement";
 
-export class UIRadioButton extends UIElement {
+export class UIRadioButton<T> extends UIInputElement<T> {
 
-    public readonly SelectedElementIndex: UIEventSource<{ index: number, value: string }>
-        = new UIEventSource<{ index: number, value: string }>(null);
+    public readonly SelectedElementIndex: UIEventSource<number>
+        = new UIEventSource<number>(null);
 
-    private readonly _elements: UIEventSource<{ element: UIElement, value: string }[]>
+    private readonly _elements: UIEventSource<UIElement[]>
+    private _selectFirstAsDefault: boolean;
+    private _valueMapping: (i: number) => T;
 
-    constructor(elements: UIEventSource<{ element: UIElement, value: string }[]>) {
+    constructor(elements: UIEventSource<UIElement[]>,
+                valueMapping: ((i: number) => T),
+                selectFirstAsDefault = true) {
         super(elements);
         this._elements = elements;
+        this._selectFirstAsDefault = selectFirstAsDefault;
+        const self = this;
+        this._valueMapping = valueMapping;
+        this.SelectedElementIndex.addCallback(() => {
+            self.InnerUpdate(undefined);
+        })
+    }
+    
+    GetValue(): UIEventSource<T> {
+        return this.SelectedElementIndex.map(this._valueMapping);
     }
 
-    static FromStrings(choices: string[]): UIRadioButton {
-        const wrapped = [];
-        for (const choice of choices) {
-            wrapped.push({
-                element: new FixedUiElement(choice),
-                value: choice
-            });
-        }
-        return new UIRadioButton(new UIEventSource<{ element: UIElement, value: string }[]>(wrapped))
-    }
 
     private IdFor(i) {
         return 'radio-' + this.id + '-' + i;
@@ -35,12 +38,9 @@ export class UIRadioButton extends UIElement {
         let body = "";
         let i = 0;
         for (const el of this._elements.data) {
-            const uielement = el.element;
-            const value = el.value;
-
             const htmlElement =
-                '<input type="radio" id="' + this.IdFor(i) + '" name="radiogroup-' + this.id + '" value="' + value + '">' +
-                '<label for="' + this.IdFor(i) + '">' + uielement.Render() + '</label>' +
+                '<input type="radio" id="' + this.IdFor(i) + '" name="radiogroup-' + this.id + '">' +
+                '<label for="' + this.IdFor(i) + '">' + el.Render() + '</label>' +
                 '<br>';
             body += htmlElement;
 
@@ -51,7 +51,6 @@ export class UIRadioButton extends UIElement {
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
         const self = this;
 
         function checkButtons() {
@@ -59,8 +58,7 @@ export class UIRadioButton extends UIElement {
                 const el = document.getElementById(self.IdFor(i));
                 // @ts-ignore
                 if (el.checked) {
-                    var v = {index: i, value: self._elements.data[i].value}
-                    self.SelectedElementIndex.setData(v);
+                    self.SelectedElementIndex.setData(i);
                 }
             }
         }
@@ -74,28 +72,31 @@ export class UIRadioButton extends UIElement {
         );
 
         if (this.SelectedElementIndex.data == null) {
-            const el = document.getElementById(this.IdFor(0));
-            el.checked = true;
-            checkButtons();
+            if (this._selectFirstAsDefault) {
+                const el = document.getElementById(this.IdFor(0));
+                // @ts-ignore
+                el.checked = true;
+                checkButtons();
+            }
         } else {
 
             // We check that what is selected matches the previous rendering
             var checked = -1;
-            var expected = -1
-            for (let i = 0; i < self._elements.data.length; i++) {
-                const el = document.getElementById(self.IdFor(i));
-                // @ts-ignore
-                if (el.checked) {
-                    checked = i;
+            var expected = this.SelectedElementIndex.data;
+            if (expected) {
+
+                for (let i = 0; i < self._elements.data.length; i++) {
+                    const el = document.getElementById(self.IdFor(i));
+                    // @ts-ignore
+                    if (el.checked) {
+                        checked = i;
+                    }
                 }
-                if (el.value === this.SelectedElementIndex.data.value) {
-                    expected = i;
+                if (expected != checked) {
+                    const el = document.getElementById(this.IdFor(expected));
+                    // @ts-ignore
+                    el.checked = true;
                 }
-            }
-            if (expected != checked) {
-                const el = document.getElementById(this.IdFor(expected));
-                // @ts-ignore
-                el.checked = true;
             }
         }
 

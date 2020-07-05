@@ -33,6 +33,19 @@ export abstract class OsmObject {
     abstract SaveExtraData(element);
 
     /**
+     * Replaces all '"' (double quotes) by '&quot;'
+     * Bugfix where names containing '"' were not uploaded, such as '"Het Zwin" nature reserve'
+     * @param string
+     * @constructor
+     */
+    private Escape(string: string) {
+        while (string.indexOf('"') >= 0) {
+            string = string.replace('"', '&quot;');
+        }
+        return string;
+    }
+
+    /**
      * Generates the changeset-XML for tags
      * @constructor
      */
@@ -41,7 +54,7 @@ export abstract class OsmObject {
         for (const key in this.tags) {
             const v = this.tags[key];
             if (v !== "") {
-                tags += '            <tag k="' + key + '" v="' + this.tags[key] + '"/>\n'
+                tags += '        <tag k="' + this.Escape(key) + '" v="' + this.Escape(this.tags[key]) + '"/>\n'
             }
         }
         return tags;

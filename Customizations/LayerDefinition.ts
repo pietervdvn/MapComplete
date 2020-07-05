@@ -1,14 +1,12 @@
-import {Basemap} from "./Logic/Basemap";
-import {ElementStorage} from "./Logic/ElementStorage";
-import {Changes} from "./Logic/Changes";
-import {QuestionDefinition} from "./Logic/Question";
-import {TagMappingOptions} from "./UI/TagMapping";
-import {UIEventSource} from "./UI/UIEventSource";
-import {UIElement} from "./UI/UIElement";
-import {Tag, TagsFilter} from "./Logic/TagsFilter";
-import {FilteredLayer} from "./Logic/FilteredLayer";
-import {UserDetails} from "./Logic/OsmConnection";
-
+import {Tag, TagsFilter} from "../Logic/TagsFilter";
+import {UIElement} from "../UI/UIElement";
+import {Basemap} from "../Logic/Basemap";
+import {ElementStorage} from "../Logic/ElementStorage";
+import {UIEventSource} from "../UI/UIEventSource";
+import {FilteredLayer} from "../Logic/FilteredLayer";
+import {Changes} from "../Logic/Changes";
+import {UserDetails} from "../Logic/OsmConnection";
+import {TagRenderingOptions} from "./TagRendering";
 
 export class LayerDefinition {
 
@@ -19,8 +17,8 @@ export class LayerDefinition {
     minzoom: number;
     overpassFilter: TagsFilter;
 
-    elementsToShow: (TagMappingOptions | QuestionDefinition | UIElement)[];
-    questions: QuestionDefinition[]; // Questions are shown below elementsToShow in a questionPicker
+    title: TagRenderingOptions;
+    elementsToShow: TagRenderingOptions[];
 
     style: (tags: any) => { color: string, icon: any };
 

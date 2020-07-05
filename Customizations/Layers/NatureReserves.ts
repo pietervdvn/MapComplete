@@ -1,8 +1,10 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../Quests";
-import {TagMappingOptions} from "../UI/TagMapping";
-import {CommonTagMappings} from "./CommonTagMappings";
-import {Or, Tag} from "../Logic/TagsFilter";
+import {Or, Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../TagRendering";
+import {AccessTag} from "../Questions/AccessTag";
+import {OperatorTag} from "../Questions/OperatorTag";
+import {NameQuestion} from "../Questions/NameQuestion";
+import {NameInline} from "../Questions/NameInline";
 
 export class NatureReserves extends LayerDefinition {
     
@@ -17,16 +19,12 @@ export class NatureReserves extends LayerDefinition {
         this.newElementTags = [new Tag("leisure", "nature_reserve"),
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
         this.minzoom = 13;
-        this.questions = [Quests.nameOf(this.name), Quests.accessNatureReserve, Quests.operator];
+        this.title =  new NameInline("natuurreservaat");
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
-            new TagMappingOptions({
-                key: "name",
-                template: "{name}",
-                missing: "Naamloos gebied"
-            }),
-            CommonTagMappings.access,
-            CommonTagMappings.operator,
+            new NameQuestion(),
+            new AccessTag(),
+            new OperatorTag(),
         ];
     }
 
@@ -35,9 +33,9 @@ export class NatureReserves extends LayerDefinition {
         const self = this;
         return function (properties: any) {
             let questionSeverity = 0;
-            for (const qd of self.questions) {
-                if (qd.isApplicable(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.severity);
+            for (const qd of self.elementsToShow) {
+                if (qd.IsQuestioning(properties)) {
+                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
                 }
             }
 
@@ -51,7 +49,7 @@ export class NatureReserves extends LayerDefinition {
             let colour = colormapping[questionSeverity];
             while (colour == undefined) {
                 questionSeverity--;
-                colormapping[questionSeverity];
+                colour = colormapping[questionSeverity];
             }
 
             return {

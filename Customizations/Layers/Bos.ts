@@ -1,9 +1,11 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../Quests";
-import {TagMappingOptions} from "../UI/TagMapping";
-import L from "leaflet"
-import {CommonTagMappings} from "./CommonTagMappings";
-import {Or, Tag} from "../Logic/TagsFilter";
+import {Quests} from "../../Quests";
+import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {AccessTag} from "../Questions/AccessTag";
+import {OperatorTag} from "../Questions/OperatorTag";
+import {TagRenderingOptions} from "../TagRendering";
+import {NameQuestion} from "../Questions/NameQuestion";
+import {NameInline} from "../Questions/NameInline";
 
 export class Bos extends LayerDefinition {
 
@@ -27,17 +29,12 @@ export class Bos extends LayerDefinition {
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;
-        this.questions = [Quests.nameOf(this.name), Quests.accessNatureReserve, Quests.operator];
         this.style = this.generateStyleFunction();
+        this.title = new NameInline("bos");
         this.elementsToShow = [
-            new TagMappingOptions({
-                key: "name",
-                template: "{name}",
-                missing: "Naamloos bos"
-            }),
-
-            CommonTagMappings.access,
-            CommonTagMappings.operator,
+            new NameQuestion(),
+            new AccessTag(),
+            new OperatorTag()
         ];
 
     }
@@ -47,9 +44,9 @@ export class Bos extends LayerDefinition {
         const self = this;
         return function (properties: any) {
             let questionSeverity = 0;
-            for (const qd of self.questions) {
-                if (qd.isApplicable(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.severity);
+            for (const qd of self.elementsToShow) {
+                if (qd.IsQuestioning(properties)) {
+                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
                 }
             }
 
@@ -63,7 +60,7 @@ export class Bos extends LayerDefinition {
             let colour = colormapping[questionSeverity];
             while (colour == undefined) {
                 questionSeverity--;
-                colormapping[questionSeverity];
+                colour = colormapping[questionSeverity];
             }
 
             return {

@@ -1,9 +1,8 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../Quests";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import {TagMappingOptions} from "../UI/TagMapping";
+import {Quests} from "../../Quests";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import L from "leaflet";
-import {Tag} from "../Logic/TagsFilter";
+import {Tag} from "../../Logic/TagsFilter";
 
 export class Toilets extends LayerDefinition{
     

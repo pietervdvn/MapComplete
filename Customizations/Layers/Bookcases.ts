@@ -1,8 +1,8 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {TagMappingOptions} from "../UI/TagMapping";
 import L from "leaflet";
-import {QuestionDefinition} from "../Logic/Question";
-import {Tag} from "../Logic/TagsFilter";
+import {Tag} from "../../Logic/TagsFilter";
+import {QuestionDefinition} from "../../Logic/Question";
+import {TagRenderingOptions} from "../TagRendering";
 
 export class Bookcases extends LayerDefinition {
 
@@ -31,13 +31,15 @@ export class Bookcases extends LayerDefinition {
                 icon: new L.icon({
                     iconUrl: "assets/bookcase.svg",
                     iconSize: [40, 40]
-                })
+                }),
+                color: "#0000ff"
             };
         }
 
         this.elementsToShow = [
 
-
+    
+            
             new TagMappingOptions({
                     key: "name",
                     template: "{name}",

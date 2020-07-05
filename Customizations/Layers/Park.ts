@@ -1,8 +1,11 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../Quests";
-import {TagMappingOptions} from "../UI/TagMapping";
-import {CommonTagMappings} from "./CommonTagMappings";
-import {Or, Tag} from "../Logic/TagsFilter";
+import {Quests} from "../../Quests";
+import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {AccessTag} from "../Questions/AccessTag";
+import {OperatorTag} from "../Questions/OperatorTag";
+import {TagRenderingOptions} from "../TagRendering";
+import {NameQuestion} from "../Questions/NameQuestion";
+import {NameInline} from "../Questions/NameInline";
 
 export class Park extends LayerDefinition {
 
@@ -10,25 +13,16 @@ export class Park extends LayerDefinition {
         super();
         this.name = "park";
         this.icon = "./assets/tree_white_background.svg";
-        this.overpassFilter = 
-            new Or([new Tag("leisure","park"), new Tag("landuse","village_green")]);
-        this.newElementTags = [new Tag("leisure", "park"), 
+        this.overpassFilter =
+            new Or([new Tag("leisure", "park"), new Tag("landuse", "village_green")]);
+        this.newElementTags = [new Tag("leisure", "park"),
             new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")];
         this.maxAllowedOverlapPercentage = 25;
 
         this.minzoom = 13;
-        this.questions = [Quests.nameOf("park")];
         this.style = this.generateStyleFunction();
-        this.elementsToShow = [
-            new TagMappingOptions({
-                key: "name",
-                template: "{name}",
-                missing: "Naamloos park"
-            }),
-
-            CommonTagMappings.access,
-            CommonTagMappings.operator,
-        ];
+        this.title = new NameInline("park");
+        this.elementsToShow = [new NameQuestion()];
 
     }
 
@@ -39,9 +33,9 @@ export class Park extends LayerDefinition {
         const self = this;
         return function (properties: any) {
             let questionSeverity = 0;
-            for (const qd of self.questions) {
-                if (qd.isApplicable(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.severity);
+            for (const qd of self.elementsToShow) {
+                if (qd.IsQuestioning(properties)) {
+                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
                 }
             }
 
@@ -55,7 +49,7 @@ export class Park extends LayerDefinition {
             let colour = colormapping[questionSeverity];
             while (colour == undefined) {
                 questionSeverity--;
-                colormapping[questionSeverity];
+                colour = colormapping[questionSeverity];
             }
 
             return {
