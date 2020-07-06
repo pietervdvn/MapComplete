@@ -407,7 +407,7 @@ body {
 .prev-button {
     background-color: black;
     opacity: 0.3;
-    width: 3.0em;
+    width: 4.0em;
 
     height: 100%;
     padding-left: 0.5em;
@@ -419,8 +419,6 @@ body {
 
     z-index: 5060;
 
-    content:url(assets/arrow-left-smooth.svg);
-
     border-radius: 1em;
 }
 
@@ -428,7 +426,7 @@ body {
 .next-button {
     background-color: black;
     opacity: 0.3;
-    width: 3.0em;
+    width: 4.0em;
     height: 100%;
     padding-left: 0.5em;
     padding-right: 0.5em;
@@ -441,8 +439,25 @@ body {
 
     z-index: 5060;
 
-    content:url(assets/arrow-right-smooth.svg);
 }
+
+.vspan {
+    height: calc(50% - 3em);
+}
+
+.prev-button img {
+    margin-left: -1em;
+    width: 6em;
+    text-align: center;
+}
+
+.next-button img {
+    margin-left: -1em;
+    width: 6em;
+    text-align: center;
+}
+
+
 
 
 .slide > span img {

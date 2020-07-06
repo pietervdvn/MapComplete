@@ -66,6 +66,12 @@ export class GrbToFix extends LayerDefinition {
 
                     return newTags;
                 },
+                freeform: {
+                    key: "addr:housenumber",
+                    template: "Het huisnummer is $$$",
+                    renderTemplate: "Het huisnummer is <b>{addr:housenumber}</b>, GRB denkt <i>{grb:housenumber:human}</i>",
+                    extraTags: new Tag("fixme", "")
+                },
                 mappings: [
                     {
                         k: new And([new Tag("addr:housenumber", "{grb:housenumber}"), new Tag("fixme", "")]),

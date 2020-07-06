@@ -1,5 +1,6 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 export class SlideShow extends UIElement {
 
@@ -7,6 +8,8 @@ export class SlideShow extends UIElement {
 
     private readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
     private readonly _noimages: UIElement;
+    private _prev: FixedUiElement;
+    private _next: FixedUiElement;
 
     constructor(
         embeddedElements: UIEventSource<UIElement[]>,
@@ -15,6 +18,25 @@ export class SlideShow extends UIElement {
         this._embeddedElements = embeddedElements;
         this.ListenTo(this._currentSlide);
         this._noimages = noImages;
+
+        const self = this;
+        this._prev = new FixedUiElement("<div class='prev-button'>" +
+            "<div class='vspan'></div>" +
+            "<img src='assets/arrow-left-smooth.svg' alt='Prev'/>" +
+            "</div>")
+            .onClick(() => {
+                const current = self._currentSlide.data;
+                self.MoveTo(current - 1);
+            });
+        this._next = new FixedUiElement("<div class='next-button'>" +
+            "<div class='vspan'></div>" +
+            "<img src='assets/arrow-right-smooth.svg' alt='Next'/>" +
+            "</div>")
+            .onClick(() => {
+                const current = self._currentSlide.data;
+                self.MoveTo(current + 1);
+            });
+
     }
 
     protected InnerRender(): string {
@@ -28,8 +50,6 @@ export class SlideShow extends UIElement {
                 "</div></div></div>";
         }
 
-        const prevBtn = "<div class='prev-button' id='prevbtn-"+this.id+"'></div>"
-        const nextBtn = "<div class='next-button' id='nextbtn-"+this.id+"'></div>"
 
         let slides = ""
         for (let i = 0; i < this._embeddedElements.data.length; i++) {
@@ -41,9 +61,9 @@ export class SlideShow extends UIElement {
             slides += "      <div class=\"slide " + state + "\">" + embeddedElement.Render() + "</div>\n";
         }
         return "<div class='image-slideshow'>"
-            + prevBtn
+            + this._prev.Render()
             + "<div class='slides'>" + slides + "</div>"
-            + nextBtn
+            + this._next.Render()
             + "</div>";
     }
 
@@ -56,22 +76,8 @@ export class SlideShow extends UIElement {
     }
 
     InnerUpdate(htmlElement) {
-        const nextButton = document.getElementById("nextbtn-" + this.id);
-        if (nextButton === undefined || nextButton === null) {
-            return;
-        }
-
-        const prevButton = document.getElementById("prevbtn-" + this.id);
-        const self = this;
-        nextButton.onclick = () => {
-            const current = self._currentSlide.data;
-            self.MoveTo(current + 1);
-        }
-        prevButton.onclick = () => {
-            const current = self._currentSlide.data;
-            self.MoveTo(current - 1);
-        }
-
+        this._next.Update();
+        this._prev.Update();
     }
 
     Activate() {
