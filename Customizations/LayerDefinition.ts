@@ -11,13 +11,22 @@ import {TagRenderingOptions} from "./TagRendering";
 export class LayerDefinition {
 
 
+    /**
+     * This name is shown in the 'add XXX button'
+     */
     name: string;
     newElementTags: Tag[]
     icon: string;
     minzoom: number;
     overpassFilter: TagsFilter;
 
+    /**
+     * This UIElement is rendered as title element in the popup
+     */
     title: TagRenderingOptions;
+    /**
+     * These are the questions/shown attributes in the popup
+     */
     elementsToShow: TagRenderingOptions[];
 
     style: (tags: any) => { color: string, icon: any };

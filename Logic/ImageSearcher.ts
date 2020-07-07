@@ -3,6 +3,7 @@ import {ImagesInCategory, Wikidata, Wikimedia} from "./Wikimedia";
 import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
+import {Changes} from "./Changes";
 
 
 /**
@@ -15,18 +16,20 @@ export class ImageSearcher extends UIEventSource<string[]> {
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
     private _activated: boolean = false;
-    
-    constructor(tags: UIEventSource<any>) {
+    private _changes: Changes;
+
+    constructor(tags: UIEventSource<any>,
+                changes: Changes) {
         super([]);
 
         this._tags = tags;
-
+        this._changes = changes;
 
         const self = this;
         this._wdItem.addCallback(() => {
-                // Load the wikidata item, then detect usage on 'commons'
-                let wikidataId = self._wdItem.data;
-                // @ts-ignore
+            // Load the wikidata item, then detect usage on 'commons'
+            let wikidataId = self._wdItem.data;
+            // @ts-ignore
             if (wikidataId.startsWith("Q")) {
                     wikidataId = wikidataId.substr(1);
                 }
@@ -34,6 +37,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
                     self.AddImage(wd.image);
                     Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
                         for (const image of images.images) {
+                            // @ts-ignore
                             if (image.startsWith("File:")) {
                                 self.AddImage(image);
                             }
@@ -67,17 +71,48 @@ export class ImageSearcher extends UIEventSource<string[]> {
     }
 
     private AddImage(url: string) {
-        if(url === undefined || url === null){
+        if (url === undefined || url === null) {
             return;
         }
-        if (this.data.indexOf(url) < 0) {
-            this.data.push(url);
-            this.ping();
+
+        for (const el of this.data) {
+            if (el === url) {
+                return;
+            }
         }
+
+        this.data.push(url);
+        this.ping();
+    }
+
+    private ImageKey(url: string): string {
+        const tgs = this._tags.data;
+        for (const key in tgs) {
+            if (tgs[key] === url) {
+                return key;
+            }
+        }
+        return undefined;
+    }
+
+    public IsDeletable(url: string): boolean {
+        return this.ImageKey(url) !== undefined;
+    }
+
+    public Delete(url: string): void {
+
+        const key = this.ImageKey(url);
+        if(key === undefined){
+            return;
+        }
+        console.log("Deleting image...");
+        
+        // this._changes.addChange(this._tags.data.id, key, "");
+        
     }
 
     public Activate() {
-        if(this._activated){
+        if (this._activated) {
             return;
         }
         this._activated = true;
