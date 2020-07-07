@@ -23,9 +23,25 @@ export class TagRenderingOptions {
 
 
     constructor(options: {
+
+        /**
+         * What is the priority of the question.
+         * By default, in the popup of a feature, only one question is shown at the same time. If multiple questions are unanswered, the question with the highest priority is asked first
+         */
         priority?: number
 
+        /**
+         * This is the string that is shown in the popup if this tag is missing.
+         *
+         * If 'question' is undefined, then the question is never asked at all
+         * If the question is "" (empty string) then the question is 
+         */
         question?: string,
+
+        /**
+         * Optional:
+         * if defined, this a common piece of tag that is shown in front of every mapping (except freeform)
+         */
         primer?: string,
         tagsPreprocessor?: ((tags: any) => any),
         freeform?: {
@@ -34,6 +50,18 @@ export class TagRenderingOptions {
             placeholder?: string,
             extraTags?: TagsFilter,
         },
+        /**
+         * Mappings convert a well-known tag combination into a user friendly text.
+         * It converts e.g. 'access=yes' into 'this area can be accessed'
+         * 
+         * If there are multiple tags that should be matched, And can be used. All tags in AND will be added when the question is picked (and the corresponding text will only be shown if all tags are present).
+         * If AND is used, it is best practice to make sure every used tag is in every option (with empty string) to erase extra tags.
+         * 
+         * If a 'k' is null, then this one is shown by default. It can be used to force a default value, e.g. to show that the name of a POI is not (yet) known .
+         * A mapping where 'k' is null will not be shown as option in the radio buttons.
+         * 
+         * 
+         */
         mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[]
     }) {
         this.options = options;
