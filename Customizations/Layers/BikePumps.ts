@@ -5,6 +5,8 @@ import {OperatorTag} from "../Questions/OperatorTag";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import * as L from "leaflet";
+import { PumpManual } from "../Questions/PumpManual";
+import FixedName from "../Questions/FixedName";
 
 export class BikePumps extends LayerDefinition {
 
@@ -31,11 +33,12 @@ export class BikePumps extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new NameInline("pomp");
+        this.title = new FixedName("pomp");
         this.elementsToShow = [
             // new NameQuestion(),
             // new AccessTag(),
-            new OperatorTag()
+            new OperatorTag(),
+            new PumpManual()
         ];
 
     }

@@ -2,7 +2,7 @@ import {Layout} from "../Layout";
 import {GrbToFix} from "../Layers/GrbToFix";
 import { BikePumps } from "../Layers/BikePumps";
 
-export class GRB extends Layout {
+export class BikePumpsLayout extends Layout {
     constructor() {
         super(
             "pomp",

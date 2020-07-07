@@ -4,6 +4,7 @@ import {GRB} from "./Layouts/GRB";
 import {Statues} from "./Layouts/Statues";
 import {Bookcases} from "./Layouts/Bookcases";
 import { BikePumps } from "./Layers/BikePumps";
+import { BikePumpsLayout } from "./Layouts/BikePumps";
 
 export class AllKnownLayouts {
     public static allSets: any = AllKnownLayouts.AllLayouts();
@@ -12,7 +13,7 @@ export class AllKnownLayouts {
         const layouts = [
             new Groen(),
             new GRB(),
-            new BikePumps(),
+            new BikePumpsLayout(),
             /*new Toilets(),
             new Statues(),
             new Bookcases()*/
