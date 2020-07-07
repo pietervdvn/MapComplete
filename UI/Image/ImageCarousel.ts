@@ -3,6 +3,9 @@ import {ImageSearcher} from "../../Logic/ImageSearcher";
 import {UIEventSource} from "../UIEventSource";
 import {SlideShow} from "../SlideShow";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {VerticalCombine} from "../Base/VerticalCombine";
+import {Changes} from "../../Logic/Changes";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
 export class ImageCarousel extends UIElement {
     /**
@@ -20,26 +23,54 @@ export class ImageCarousel extends UIElement {
 
     public readonly slideshow: SlideShow;
 
-    constructor(tags: UIEventSource<any>) {
+    private readonly _uiElements: UIEventSource<UIElement[]>;
+
+    private readonly _deleteButtonText = new UIEventSource<string>("");
+    private readonly _deleteButton: UIElement;
+
+    constructor(tags: UIEventSource<any>, changes: Changes) {
         super(tags);
 
-        this.searcher = new ImageSearcher(tags);
+        const self = this;
+        this.searcher = new ImageSearcher(tags, changes);
 
-        let uiElements = this.searcher.map((imageURLS: string[]) => {
+        this._uiElements = this.searcher.map((imageURLS: string[]) => {
             const uiElements: UIElement[] = [];
             for (const url of imageURLS) {
-                uiElements.push(ImageSearcher.CreateImageElement(url));
+                const image = ImageSearcher.CreateImageElement(url);
+                uiElements.push(image);
             }
             return uiElements;
         });
-        
+
         this.slideshow = new SlideShow(
-            uiElements,
+            this._uiElements,
             new FixedUiElement("")).HideOnEmpty(true);
+
+
+        this._deleteButtonText = this.slideshow._currentSlide.map((i) => {
+            if(self.searcher.IsDeletable(self.searcher.data[i])){
+                return "DELETE";
+            }else{
+                return "";
+            }
+        });
+
+        this._deleteButton = new VariableUiElement(this._deleteButtonText)
+            .HideOnEmpty(true)
+            .onClick(() => {
+                self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
+            });
     }
 
     InnerRender(): string {
-        return this.slideshow.Render();
+        return this.slideshow.Render() ;
+            // + this._deleteButton.Render();
+    }
+
+    InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        this._deleteButton.Update();
     }
 
 

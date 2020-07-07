@@ -6,7 +6,7 @@ export class SlideShow extends UIElement {
 
     private readonly _embeddedElements: UIEventSource<UIElement[]>
 
-    private readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
+    public readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
     private readonly _noimages: UIElement;
     private _prev: FixedUiElement;
     private _next: FixedUiElement;
@@ -84,6 +84,8 @@ export class SlideShow extends UIElement {
         for (const embeddedElement of this._embeddedElements.data) {
             embeddedElement.Activate();
         }
+        this._next.Update();
+        this._prev.Update();
     }
 
 }

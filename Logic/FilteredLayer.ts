@@ -190,15 +190,16 @@ export class FilteredLayer {
                 });
 
 
-                const uiElement = self._showOnPopup(eventSource);
-                layer.bindPopup(uiElement.Render());
                 layer.on("click", function (e) {
                     console.log("Selected ", feature)
                     self._selectedElement.setData(feature.properties);
-
+                    const uiElement = self._showOnPopup(eventSource);
+                    const popup = L.popup()
+                        .setContent(uiElement.Render())
+                        .setLatLng(e.latlng)
+                        .openOn(self._map.map);
                     uiElement.Update();
                     uiElement.Activate();
-
                     L.DomEvent.stop(e); // Marks the event as consumed
 
                 });

@@ -457,14 +457,15 @@ body {
     text-align: center;
 }
 
-
-
+.slide > span {
+    max-height: 40vh;
+}
 
 .slide > span img {
     height: auto;
     width: auto;
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 30vh;
     border-radius: 1em;
 }
 
@@ -497,7 +498,7 @@ body {
 
     position: absolute;
     bottom: 0;
-    left: 5em; /* Offset for the go left button*/
+    left: 6em; /* Offset for the go left button*/
     padding: 0.25em;
     margin-bottom: 0.25em;
     border-radius: 0.5em;

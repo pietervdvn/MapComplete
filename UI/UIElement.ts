@@ -1,5 +1,4 @@
 import {UIEventSource} from "./UIEventSource";
-import {Playground} from "../Layers/Playground";
 
 export abstract class UIElement {
 
