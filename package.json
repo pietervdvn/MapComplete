@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html land.html test.html assets/test.json assets/* UI/* Logic/* vendor/*",
-    "build": "parcel build --public-url ./ index.html land.html assets/*",
+    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
