@@ -6,7 +6,7 @@ import {Layout} from "../Layout";
 export class Groen extends Layout {
     
     constructor() {
-        super("groen",
+        super("buurtnatuur",
             "Buurtnatuur",
             [new NatureReserves(), new Park(), new Bos()],
             10,

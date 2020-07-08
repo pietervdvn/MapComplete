@@ -44,7 +44,7 @@ export class FeatureInfoBox extends UIElement {
         this._userDetails = userDetails;
         this.ListenTo(userDetails);
 
-        this._imageElement = new ImageCarousel(this._tagsES);
+        this._imageElement = new ImageCarousel(this._tagsES, changes);
 
         this._infoboxes = [];
         for (const tagRenderingOption of elementsToShow) {

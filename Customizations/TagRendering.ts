@@ -23,9 +23,25 @@ export class TagRenderingOptions {
 
 
     constructor(options: {
+
+        /**
+         * What is the priority of the question.
+         * By default, in the popup of a feature, only one question is shown at the same time. If multiple questions are unanswered, the question with the highest priority is asked first
+         */
         priority?: number
 
+        /**
+         * This is the string that is shown in the popup if this tag is missing.
+         *
+         * If 'question' is undefined, then the question is never asked at all
+         * If the question is "" (empty string) then the question is 
+         */
         question?: string,
+
+        /**
+         * Optional:
+         * if defined, this a common piece of tag that is shown in front of every mapping (except freeform)
+         */
         primer?: string,
         tagsPreprocessor?: ((tags: any) => any),
         freeform?: {
@@ -34,10 +50,21 @@ export class TagRenderingOptions {
             placeholder?: string,
             extraTags?: TagsFilter,
         },
+        /**
+         * Mappings convert a well-known tag combination into a user friendly text.
+         * It converts e.g. 'access=yes' into 'this area can be accessed'
+         * 
+         * If there are multiple tags that should be matched, And can be used. All tags in AND will be added when the question is picked (and the corresponding text will only be shown if all tags are present).
+         * If AND is used, it is best practice to make sure every used tag is in every option (with empty string) to erase extra tags.
+         * 
+         * If a 'k' is null, then this one is shown by default. It can be used to force a default value, e.g. to show that the name of a POI is not (yet) known .
+         * A mapping where 'k' is null will not be shown as option in the radio buttons.
+         * 
+         * 
+         */
         mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[]
     }) {
         this.options = options;
-
     }
 
 
@@ -45,7 +72,7 @@ export class TagRenderingOptions {
         const tagsKV = TagUtils.proprtiesToKV(tags);
 
         for (const oneOnOneElement of this.options.mappings) {
-            if (oneOnOneElement.k.matches(tagsKV)) {
+            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tagsKV)) {
                 return false;
             }
         }
@@ -71,6 +98,8 @@ export class TagRendering extends UIElement {
     private _question: string;
     private _primer: string;
     private _mapping: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[];
+    private _renderMapping: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[];
+
     private _tagsPreprocessor?: ((tags: any) => any);
     private _freeform: {
         key: string, template: string,
@@ -116,13 +145,14 @@ export class TagRendering extends UIElement {
         this._primer = options.primer ?? "";
         this._tagsPreprocessor = options.tagsPreprocessor;
         this._mapping = [];
+        this._renderMapping = [];
         this._freeform = options.freeform;
         this.elementPriority = options.priority ?? 0;
 
         // Prepare the choices for the Radio buttons
-        let i = 0;
         const choices: UIElement[] = [];
-        
+        const usedChoices: string [] = [];
+
         for (const choice of options.mappings ?? []) {
             if (choice.k === null) {
                 this._mapping.push(choice);
@@ -131,18 +161,26 @@ export class TagRendering extends UIElement {
             let choiceSubbed = choice;
             if (choice.substitute) {
                 choiceSubbed = {
-                    k : choice.k.substituteValues(
+                    k: choice.k.substituteValues(
                         options.tagsPreprocessor(this._source.data)),
-                    txt : this.ApplyTemplate(choice.txt),
+                    txt: this.ApplyTemplate(choice.txt),
                     substitute: false,
                     priority: choice.priority
                 }
             }
-            
 
-            choices.push(new FixedUiElement(choiceSubbed.txt));
-            this._mapping.push(choiceSubbed);
-            i++;
+
+            const txt = choiceSubbed.txt
+            // Choices is what is shown in the radio buttons
+            if (usedChoices.indexOf(txt) < 0) {
+
+                choices.push(new FixedUiElement(txt));
+                usedChoices.push(txt);
+                // This is used to convert the radio button index into tags needed to add
+                this._mapping.push(choiceSubbed);
+            } else {
+                this._renderMapping.push(choiceSubbed); // only used while rendering
+            }
         }
 
         // Map radiobutton choice and textfield answer onto tagfilter. That tagfilter will be pushed into the changes later on
@@ -172,6 +210,7 @@ export class TagRendering extends UIElement {
         // Prepare the actual input element -> pick an appropriate implementation
         let inputElement: UIInputElement<TagsFilter>;
 
+        
         if (this._freeform !== undefined && this._mapping !== undefined) {
             // Radio buttons with 'other'
             inputElement = new UIRadioButtonWithOther(
@@ -182,14 +221,15 @@ export class TagRendering extends UIElement {
                 pickString
             );
             this._questionElement = inputElement;
-        } else if (this._mapping !== undefined) {
+        } else if (this._mapping !== [] && this._mapping.length > 0) {
             // This is a classic radio selection element
-            inputElement = new UIRadioButton(new UIEventSource(choices), pickChoice)
+            inputElement = new UIRadioButton(new UIEventSource(choices), pickChoice, false)
             this._questionElement = inputElement;
         } else if (this._freeform !== undefined) {
             this._textField = new TextField(new UIEventSource<string>(this._freeform.placeholder), pickString);
             inputElement = this._textField;
-            this._questionElement = new FixedUiElement(this._freeform.template.replace("$$$", inputElement.Render()))
+            this._questionElement = new FixedUiElement(
+                "<div>" + this._freeform.template.replace("$$$", inputElement.Render()) + "</div>")
         } else {
             throw "Invalid questionRendering, expected at least choices or a freeform"
         }
@@ -206,6 +246,7 @@ export class TagRendering extends UIElement {
         const cancel = () => {
             self._questionSkipped.setData(true);
             self._editMode.setData(false);
+            self._source.ping(); // Send a ping upstream to render the next question
         }
 
         // Setup the save button and it's action
@@ -253,11 +294,12 @@ export class TagRendering extends UIElement {
     IsKnown(): boolean {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
-        for (const oneOnOneElement of this._mapping) {
+        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
             if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
                 return true;
             }
         }
+       
         return this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined;
     }
 
@@ -286,11 +328,10 @@ export class TagRendering extends UIElement {
             freeformScore = 0;
         }
 
-        if (this._mapping !== undefined) {
 
             let highestScore = -100;
             let highestTemplate = undefined;
-            for (const oneOnOneElement of this._mapping) {
+            for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
                 if (oneOnOneElement.k == null ||
                     oneOnOneElement.k.matches(tags)) {
                     // We have found a matching key -> we use the template, but only if it scores better
@@ -311,9 +352,7 @@ export class TagRendering extends UIElement {
                 // we render the found template
                 return this._primer + this.ApplyTemplate(highestTemplate);
             }
-        } else {
-            return freeform;
-        }
+        
 
     }
 
@@ -324,7 +363,7 @@ export class TagRendering extends UIElement {
 
 
             return "<div class='question'>" +
-                this._question +
+                "<span class='question-text'>" + this._question + "</span>" +
                 (this._question !== "" ? "<br/>" : "") +
                 this._questionElement.Render() +
                 this._skipButton.Render() +

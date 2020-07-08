@@ -27,15 +27,23 @@ export class UIEventSource<T>{
         }
     }
 
-    public map<J>(f: ((T) => J)): UIEventSource<J> {
+    public map<J>(f: ((T) => J),
+                  extraSources : UIEventSource<any>[] = []): UIEventSource<J> {
         const self = this;
-        this.addCallback(function () {
+        
+        const update = function () {
             newSource.setData(f(self.data));
             newSource.ping();
-        });
+        }
+        
+        this.addCallback(update);
+        for (const extraSource of extraSources) {
+            extraSource.addCallback(update);
+        }
         const newSource = new UIEventSource<J>(
             f(this.data)
         );
+        
 
         return newSource;
 

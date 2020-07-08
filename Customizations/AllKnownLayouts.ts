@@ -3,8 +3,7 @@ import {Toilets} from "./Layouts/Toilets";
 import {GRB} from "./Layouts/GRB";
 import {Statues} from "./Layouts/Statues";
 import {Bookcases} from "./Layouts/Bookcases";
-import { BikePumps } from "./Layers/BikePumps";
-import { BikePumpsLayout } from "./Layouts/BikePumps";
+import Cyclofix from "./Layouts/Cyclofix";
 
 export class AllKnownLayouts {
     public static allSets: any = AllKnownLayouts.AllLayouts();
@@ -13,10 +12,11 @@ export class AllKnownLayouts {
         const layouts = [
             new Groen(),
             new GRB(),
-            new BikePumpsLayout(),
+            new Cyclofix(),
+            new Bookcases()
             /*new Toilets(),
             new Statues(),
-            new Bookcases()*/
+            */
         ];
         const allSets = {};
         for (const layout of layouts) {

@@ -8,6 +8,10 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+form {
+    display: inline;
+}
+
 #leafletDiv {
     height: 100%;
 }
@@ -457,14 +461,15 @@ body {
     text-align: center;
 }
 
-
-
+.slide > span {
+    max-height: 40vh;
+}
 
 .slide > span img {
     height: auto;
     width: auto;
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 30vh;
     border-radius: 1em;
 }
 
@@ -497,7 +502,7 @@ body {
 
     position: absolute;
     bottom: 0;
-    left: 5em; /* Offset for the go left button*/
+    left: 6em; /* Offset for the go left button*/
     padding: 0.25em;
     margin-bottom: 0.25em;
     border-radius: 0.5em;
@@ -669,6 +674,11 @@ body {
 
 }
 
+.question-text{
+    font-size: larger;
+    font-weight: bold;
+}
+
 .answer {
     display: inline-block;
     margin: 0.1em;
@@ -681,6 +691,103 @@ body {
     display: inline-block
 }
 
+/******* THe remove image buttons ****/
+
+.image-carousel-container {
+    position: relative;
+}
+
+.image-is-removed{
+    display: inline-block;
+    left: 0;
+    top: 2.5em;
+
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    height: 3em;
+    width: 14em;
+    border-radius: 1em;
+    background-color: black;
+
+    color: white;
+    font-weight: bold;
+    height: 1.5em; /* same as .delete-image */
+
+    z-index: 7000;
+}
+
+.image-delete-container {
+    position: absolute;
+    left: 6em;
+    top: 1.5em;
+    display: inline-block;
+    z-index: 7000;
+
+}
+
+.delete-image {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0.5em;
+    border-radius: 3em;
+    background-color: black;
+}
+
+.delete-image-confirm {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 2.5em;
+
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    height: 3em;
+    width: 14em;
+    border-radius: 1em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #ff8c8c;
+
+    color: white;
+    height: 1.5em; /* same as .delete-image */
+
+    z-index: 7000;
+}
+
+.delete-image-confirm span {
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+.delete-image-cancel {
+    display: inline-block;
+    position: absolute;
+
+    left: 0em;
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    border-radius: 1em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    height: 1.5em; /* same as .delete-image */
+    width: 14em; /* Same as delete-image-confirm */
+
+
+    background-color: black;
+    color: white;
+    z-index: 7000;
+}
+
+.delete-image-cancel span {
+    font-size: larger;
+    font-weight: bold;
+
+}
 
 /**** The save button *****/
 
