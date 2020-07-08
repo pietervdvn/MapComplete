@@ -98,6 +98,8 @@ export class TagRendering extends UIElement {
     private _question: string;
     private _primer: string;
     private _mapping: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[];
+    private _renderMapping: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[];
+
     private _tagsPreprocessor?: ((tags: any) => any);
     private _freeform: {
         key: string, template: string,
@@ -143,6 +145,7 @@ export class TagRendering extends UIElement {
         this._primer = options.primer ?? "";
         this._tagsPreprocessor = options.tagsPreprocessor;
         this._mapping = [];
+        this._renderMapping = [];
         this._freeform = options.freeform;
         this.elementPriority = options.priority ?? 0;
 
@@ -175,6 +178,8 @@ export class TagRendering extends UIElement {
                 usedChoices.push(txt);
                 // This is used to convert the radio button index into tags needed to add
                 this._mapping.push(choiceSubbed);
+            } else {
+                this._renderMapping.push(choiceSubbed); // only used while rendering
             }
         }
 
@@ -289,11 +294,12 @@ export class TagRendering extends UIElement {
     IsKnown(): boolean {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
-        for (const oneOnOneElement of this._mapping) {
+        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
             if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
                 return true;
             }
         }
+       
         return this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined;
     }
 
@@ -322,11 +328,10 @@ export class TagRendering extends UIElement {
             freeformScore = 0;
         }
 
-        if (this._mapping !== undefined) {
 
             let highestScore = -100;
             let highestTemplate = undefined;
-            for (const oneOnOneElement of this._mapping) {
+            for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
                 if (oneOnOneElement.k == null ||
                     oneOnOneElement.k.matches(tags)) {
                     // We have found a matching key -> we use the template, but only if it scores better
@@ -347,9 +352,7 @@ export class TagRendering extends UIElement {
                 // we render the found template
                 return this._primer + this.ApplyTemplate(highestTemplate);
             }
-        } else {
-            return freeform;
-        }
+        
 
     }
 
