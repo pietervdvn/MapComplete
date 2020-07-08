@@ -38,7 +38,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-let defaultQuest = "groen"
+let defaultQuest = "buurtnatuur"
 if (window.location.search) {
     const params = window.location.search.substr(1).split("&");
     const paramDict: any = {};
@@ -88,7 +88,7 @@ const saveTimeout = 30000; // After this many milliseconds without changes, save
 const allElements = new ElementStorage();
 const osmConnection = new OsmConnection(dryRun);
 const changes = new Changes(
-    "Beantwoorden van vragen met MapComplete voor vragenset #" + questSetToRender.name,
+    "Beantwoorden van vragen met #MapComplete voor vragenset #" + questSetToRender.name,
     osmConnection, allElements);
 const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
     locationControl.map((location) => {

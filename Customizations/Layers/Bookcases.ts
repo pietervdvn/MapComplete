@@ -3,6 +3,7 @@ import L from "leaflet";
 import {Tag} from "../../Logic/TagsFilter";
 import {QuestionDefinition} from "../../Logic/Question";
 import {TagRenderingOptions} from "../TagRendering";
+import {NameInline} from "../Questions/NameInline";
 
 export class Bookcases extends LayerDefinition {
 
@@ -10,21 +11,38 @@ export class Bookcases extends LayerDefinition {
         super();
 
         this.name = "boekenkast";
-        this.newElementTags = [new Tag( "amenity",  "public_bookcase")];
+        this.newElementTags = [new Tag("amenity", "public_bookcase")];
         this.icon = "./assets/bookcase.svg";
-        this.overpassFilter = new Tag("amenity","public_bookcase");
+        this.overpassFilter = new Tag("amenity", "public_bookcase");
         this.minzoom = 13;
 
+        this.title = new NameInline("ruilboekenkastje");
+        this.elementsToShow = [
 
-        this.questions = [
+            new TagRenderingOptions(
+                {
+                    question: "Hoeveel boeken passen in dit boekenruilkastje?",
+                    freeform: {
+                        renderTemplate: "Er passen {capacity} boeken in dit boekenruilkastje",
+                        template:  "Er passen $$$ boeken in dit boekenruilkastje",
+                        key: "capacity",
+                        placeholder: "aantal"
+                    },
+                    priority: 15
+                }
+            )
+
+        ];
+
+     /*   this.questions = [
             QuestionDefinition.noNameOrNameQuestion("Wat is de naam van dit boekenruilkastje?", "Dit boekenruilkastje heeft niet echt een naam", 20),
-            QuestionDefinition.textQuestion("Hoeveel boeken kunnen er in?", "capacity", 15),
             QuestionDefinition.textQuestion("Heeft dit boekenkastje een peter, meter of voogd?", "operator", 10),
-           // QuestionDefinition.textQuestion("Wie kunnen we (per email) contacteren voor dit boekenruilkastje?", "email", 5),
+            // QuestionDefinition.textQuestion("Wie kunnen we (per email) contacteren voor dit boekenruilkastje?", "email", 5),
 
 
-    ]
+        ]
         ;
+        */
 
         this.style = function (tags) {
             return {
@@ -36,6 +54,7 @@ export class Bookcases extends LayerDefinition {
             };
         }
 
+        /*
         this.elementsToShow = [
 
     
@@ -58,7 +77,7 @@ export class Bookcases extends LayerDefinition {
 
             new TagMappingOptions({key: "description", template: "Extra beschrijving: <br /> <p>{description}</p>"}),
         ]
-        ;
+        ;*/
     }
 
 

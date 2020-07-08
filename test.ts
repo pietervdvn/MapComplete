@@ -7,9 +7,3 @@ import {OsmLink} from "./Customizations/Questions/OsmLink";
 import {ConfirmDialog} from "./UI/ConfirmDialog";
 import {Imgur} from "./Logic/Imgur";
 
-console.log("Hello world")
-
-Imgur.getDescriptionOfImage("https://i.imgur.com/pJfQYsj.jpg",
-    (info) => {
-        console.log(info)
-    })
