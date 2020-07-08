@@ -174,6 +174,9 @@ export class ImageSearcher extends UIEventSource<string[]> {
         // @ts-ignore
         if (url.startsWith("File:")) {
             return new WikimediaImage(url);
+        }else if (url.startsWith("https://commons.wikimedia.org/wiki/")) {
+            const commons = url.substr("https://commons.wikimedia.org/wiki/".length);
+            return new WikimediaImage(commons);
         }else if(url.startsWith("https://i.imgur.com/")){
             return new ImgurImage(url);
         } else {
