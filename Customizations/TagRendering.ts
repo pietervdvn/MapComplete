@@ -73,7 +73,7 @@ export class TagRenderingOptions {
         const tagsKV = TagUtils.proprtiesToKV(tags);
 
         for (const oneOnOneElement of this.options.mappings) {
-            if (oneOnOneElement.k.matches(tagsKV)) {
+            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tagsKV)) {
                 return false;
             }
         }
@@ -148,9 +148,10 @@ export class TagRendering extends UIElement {
         this.elementPriority = options.priority ?? 0;
 
         // Prepare the choices for the Radio buttons
-        let i = 0;
         const choices: UIElement[] = [];
-        
+
+        const usedChoices: string [] = [];
+
         for (const choice of options.mappings ?? []) {
             if (choice.k === null) {
                 this._mapping.push(choice);
@@ -159,18 +160,24 @@ export class TagRendering extends UIElement {
             let choiceSubbed = choice;
             if (choice.substitute) {
                 choiceSubbed = {
-                    k : choice.k.substituteValues(
+                    k: choice.k.substituteValues(
                         options.tagsPreprocessor(this._source.data)),
-                    txt : this.ApplyTemplate(choice.txt),
+                    txt: this.ApplyTemplate(choice.txt),
                     substitute: false,
                     priority: choice.priority
                 }
             }
-            
 
-            choices.push(new FixedUiElement(choiceSubbed.txt));
-            this._mapping.push(choiceSubbed);
-            i++;
+
+            const txt = choiceSubbed.txt
+            // Choices is what is shown in the radio buttons
+            if (usedChoices.indexOf(txt) < 0) {
+
+                choices.push(new FixedUiElement(txt));
+                usedChoices.push(txt);
+                // This is used to convert the radio button index into tags needed to add
+                this._mapping.push(choiceSubbed);
+            }
         }
 
         // Map radiobutton choice and textfield answer onto tagfilter. That tagfilter will be pushed into the changes later on
@@ -200,6 +207,7 @@ export class TagRendering extends UIElement {
         // Prepare the actual input element -> pick an appropriate implementation
         let inputElement: UIInputElement<TagsFilter>;
 
+        
         if (this._freeform !== undefined && this._mapping !== undefined) {
             // Radio buttons with 'other'
             inputElement = new UIRadioButtonWithOther(
@@ -210,14 +218,15 @@ export class TagRendering extends UIElement {
                 pickString
             );
             this._questionElement = inputElement;
-        } else if (this._mapping !== undefined) {
+        } else if (this._mapping !== [] && this._mapping.length > 0) {
             // This is a classic radio selection element
-            inputElement = new UIRadioButton(new UIEventSource(choices), pickChoice)
+            inputElement = new UIRadioButton(new UIEventSource(choices), pickChoice, false)
             this._questionElement = inputElement;
         } else if (this._freeform !== undefined) {
             this._textField = new TextField(new UIEventSource<string>(this._freeform.placeholder), pickString);
             inputElement = this._textField;
-            this._questionElement = new FixedUiElement(this._freeform.template.replace("$$$", inputElement.Render()))
+            this._questionElement = new FixedUiElement(
+                "<div>" + this._freeform.template.replace("$$$", inputElement.Render()) + "</div>")
         } else {
             throw "Invalid questionRendering, expected at least choices or a freeform"
         }
@@ -234,6 +243,7 @@ export class TagRendering extends UIElement {
         const cancel = () => {
             self._questionSkipped.setData(true);
             self._editMode.setData(false);
+            self._source.ping(); // Send a ping upstream to render the next question
         }
 
         // Setup the save button and it's action
@@ -352,7 +362,7 @@ export class TagRendering extends UIElement {
 
 
             return "<div class='question'>" +
-                this._question +
+                "<span class='question-text'>" + this._question + "</span>" +
                 (this._question !== "" ? "<br/>" : "") +
                 this._questionElement.Render() +
                 this._skipButton.Render() +

@@ -14,9 +14,10 @@ export class AllKnownLayouts {
             new Groen(),
             new GRB(),
             new BikePumpsLayout(),
+            new Bookcases()
             /*new Toilets(),
             new Statues(),
-            new Bookcases()*/
+            */
         ];
         const allSets = {};
         for (const layout of layouts) {

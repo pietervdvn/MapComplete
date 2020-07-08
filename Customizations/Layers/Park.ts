@@ -22,7 +22,29 @@ export class Park extends LayerDefinition {
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
         this.title = new NameInline("park");
-        this.elementsToShow = [new NameQuestion()];
+        this.elementsToShow = [new NameQuestion(),
+            new TagRenderingOptions({
+                question: "Is dit park publiek toegankelijk?",
+                mappings: [
+                    {k: new Tag("access", "yes"), txt: "Publiek toegankelijk"},
+                    {k: new Tag("access", ""), txt: "Publiek toegankelijk"},
+                    {k: new Tag("access", "no"), txt: "Niet publiek toegankelijk"},
+                    {k: new Tag("access", "guided"), txt: "Enkel met een gids of tijdens activiteiten"},
+                ]
+            }),
+            new TagRenderingOptions({
+                question: "Wie beheert dit park?",
+                freeform: {
+                    key: "operator",
+                    renderTemplate: "Dit park wordt beheerd door {operator}",
+                    template: "$$$",
+                },
+                mappings: [{
+                    k: null, txt: "De gemeente beheert dit park"
+                }]
+            })
+
+        ];
 
     }
 

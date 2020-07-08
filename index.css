@@ -8,6 +8,10 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+form {
+    display: inline;
+}
+
 #leafletDiv {
     height: 100%;
 }
@@ -668,6 +672,11 @@ body {
     margin-right: 1em;
     font-size: larger;
 
+}
+
+.question-text{
+    font-size: larger;
+    font-weight: bold;
 }
 
 .answer {

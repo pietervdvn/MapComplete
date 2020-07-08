@@ -74,9 +74,11 @@ export class UIRadioButton<T> extends UIInputElement<T> {
         if (this.SelectedElementIndex.data == null) {
             if (this._selectFirstAsDefault) {
                 const el = document.getElementById(this.IdFor(0));
-                // @ts-ignore
-                el.checked = true;
-                checkButtons();
+                if (el) {
+                    // @ts-ignore
+                    el.checked = true;
+                    checkButtons();
+                }
             }
         } else {
 
