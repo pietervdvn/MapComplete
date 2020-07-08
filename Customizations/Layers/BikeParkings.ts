@@ -2,40 +2,34 @@ import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
 import * as L from "leaflet";
-import { PumpManual } from "../Questions/PumpManual";
 import FixedName from "../Questions/FixedName";
+import { BikeParkingType } from "../Questions/BikeParkingType";
 
-export class BikePumps extends LayerDefinition {
+export class BikeParkings extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "pomp";
+        this.name = "bike_parking";
         this.icon = "./assets/bike_pump.svg";
 
         this.overpassFilter = new Or([
             new And([
-                new Tag("amenity", "compressed_air"),
-                new Tag("bicycle", "yes"),
+                new Tag("amenity", "bicycle_parking")
             ])
-            ]
-        );
+        ]);
 
 
         this.newElementTags = [
-            new Tag("amenity", "compressed_air"),
-            new Tag("bicycle", "yes"),
-            // new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
+            new Tag("amenity", "bicycle_parking"),
         ];
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedName("pomp");
+        this.title = new FixedName("fietsparking");
         this.elementsToShow = [
-            // new NameQuestion(),
-            // new AccessTag(),
             new OperatorTag(),
-            new PumpManual()
+            new BikeParkingType()
         ];
 
     }
