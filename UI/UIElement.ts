@@ -17,7 +17,7 @@ export abstract class UIElement {
     }
 
 
-    protected ListenTo(source: UIEventSource<any>) {
+    public ListenTo(source: UIEventSource<any>) {
         if (source === undefined) {
             return;
         }

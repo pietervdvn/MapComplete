@@ -9,17 +9,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
 
 export class ImageCarousel extends UIElement {
-    /**
-     * There are multiple way to fetch images for an object
-     * 1) There is an image tag
-     * 2) There is an image tag, the image tag contains multiple ';'-seperated URLS
-     * 3) there are multiple image tags, e.g. 'image', 'image:0', 'image:1', and 'image_0', 'image_1' - however, these are pretty rare so we are gonna ignore them
-     * 4) There is a wikimedia_commons-tag, which either has a 'File': or a 'category:' containing images
-     * 5) There is a wikidata-tag, and the wikidata item either has an 'image' attribute or has 'a link to a wikimedia commons category'
-     * 6) There is a wikipedia article, from which we can deduct the wikidata item
-     *
-     * For some images, author and license should be shown
-     */
+
     private readonly searcher: ImageSearcher;
 
     public readonly slideshow: SlideShow;
@@ -27,6 +17,7 @@ export class ImageCarousel extends UIElement {
     private readonly _uiElements: UIEventSource<UIElement[]>;
 
     private readonly _deleteButton: UIElement;
+    private readonly _isDeleted: UIElement;
 
     constructor(tags: UIEventSource<any>, changes: Changes) {
         super(tags);
@@ -56,22 +47,47 @@ export class ImageCarousel extends UIElement {
         })
 
 
-        const deleteCurrent = () => self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
+        const deleteCurrent = () => {
+            self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
+        }
+
 
         this._deleteButton = new ConfirmDialog(showDeleteButton,
             "<img src='assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
             "<span>Afbeelding verwijderen</span>",
             "<span>Terug</span>",
             deleteCurrent,
-            () => {},
+            () => {
+            },
             'delete-image-confirm',
             'delete-image-cancel');
+
+
+        const mapping = this.slideshow._currentSlide.map((i) => {
+            if (this.searcher._deletedImages.data.indexOf(
+                this.searcher.data[i]
+            ) >= 0) {
+                return "<div class='image-is-removed'>Deze afbeelding is verwijderd</div>"
+            }
+
+            return "";
+        });
+        this._isDeleted = new VariableUiElement(
+            mapping
+        )
+        // .HideOnEmpty(true);
+
+        this.searcher._deletedImages.addCallback(() => {
+            this.slideshow._currentSlide.ping();
+        })
+
     }
 
     InnerRender(): string {
         return "<span class='image-carousel-container'>" +
             "<div class='image-delete-container'>" +
             this._deleteButton.Render() +
+            this._isDeleted.Render() +
             "</div>" +
             this.slideshow.Render() +
             "</span>";
@@ -80,6 +96,7 @@ export class ImageCarousel extends UIElement {
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         this._deleteButton.Update();
+        this._isDeleted.Update();
     }
 
 

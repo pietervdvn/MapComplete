@@ -5,7 +5,17 @@ import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
 import {Changes} from "./Changes";
 
-
+/**
+ * There are multiple way to fetch images for an object
+ * 1) There is an image tag
+ * 2) There is an image tag, the image tag contains multiple ';'-seperated URLS
+ * 3) there are multiple image tags, e.g. 'image', 'image:0', 'image:1', and 'image_0', 'image_1' - however, these are pretty rare so we are gonna ignore them
+ * 4) There is a wikimedia_commons-tag, which either has a 'File': or a 'category:' containing images
+ * 5) There is a wikidata-tag, and the wikidata item either has an 'image' attribute or has 'a link to a wikimedia commons category'
+ * 6) There is a wikipedia article, from which we can deduct the wikidata item
+ *
+ * For some images, author and license should be shown
+ */
 /**
  * Class which search for all the possible locations for images and which builds a list of UI-elements for it.
  * Note that this list is embedded into an UIEVentSource, ready to put it into a carousel
@@ -17,6 +27,8 @@ export class ImageSearcher extends UIEventSource<string[]> {
     private readonly _commons = new UIEventSource<string>("");
     private _activated: boolean = false;
     private _changes: Changes;
+    public _deletedImages = new UIEventSource<string[]>([]);
+
 
     constructor(tags: UIEventSource<any>,
                 changes: Changes) {
@@ -71,7 +83,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
     }
 
     private AddImage(url: string) {
-        if (url === undefined || url === null) {
+        if (url === undefined || url === null || url === "")  {
             return;
         }
 
@@ -102,12 +114,13 @@ export class ImageSearcher extends UIEventSource<string[]> {
     public Delete(url: string): void {
 
         const key = this.ImageKey(url);
-        if(key === undefined){
+        if (key === undefined) {
             return;
         }
         console.log("Deleting image...", key, " --> ", url);
         this._changes.addChange(this._tags.data.id, key, "");
-        
+        this._deletedImages.data.push(url);
+        this._deletedImages.ping();
     }
 
     public Activate() {
@@ -134,8 +147,9 @@ export class ImageSearcher extends UIEventSource<string[]> {
 
         for (const key in this._tags.data) {
             // @ts-ignore
-            if(key.startsWith("image:")){
-                this.AddImage(this._tags.data[key]);
+            if (key.startsWith("image:")) {
+                const url = this._tags.data[key]
+                this.AddImage(url);
             }
         }
 

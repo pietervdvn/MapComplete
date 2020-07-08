@@ -688,6 +688,26 @@ body {
     position: relative;
 }
 
+.image-is-removed{
+    display: inline-block;
+    left: 0;
+    top: 2.5em;
+
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    height: 3em;
+    width: 14em;
+    border-radius: 1em;
+    background-color: black;
+
+    color: white;
+    font-weight: bold;
+    height: 1.5em; /* same as .delete-image */
+
+    z-index: 7000;
+}
+
 .image-delete-container {
     position: absolute;
     left: 6em;
@@ -714,7 +734,6 @@ body {
     padding: 0.5em;
     padding-left: 0.75em;
 
-    z-index: -1;
     height: 3em;
     width: 14em;
     border-radius: 1em;
