@@ -4,6 +4,7 @@ import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
 import {Changes} from "./Changes";
+import {ImgurImage} from "../UI/Image/ImgurImage";
 
 /**
  * There are multiple way to fetch images for an object
@@ -170,12 +171,13 @@ export class ImageSearcher extends UIEventSource<string[]> {
      * @constructor
      */
     static CreateImageElement(url: string): UIElement {
-        const urlSource = new UIEventSource<string>(url);
         // @ts-ignore
         if (url.startsWith("File:")) {
-            return new WikimediaImage(urlSource.data);
+            return new WikimediaImage(url);
+        }else if(url.startsWith("https://i.imgur.com/")){
+            return new ImgurImage(url);
         } else {
-            return new SimpleImageElement(urlSource);
+            return new SimpleImageElement(new UIEventSource<string>(url));
         }
     }
 

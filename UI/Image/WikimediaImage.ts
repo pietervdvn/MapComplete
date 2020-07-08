@@ -18,14 +18,15 @@ export class WikimediaImage extends UIElement {
         } else {
             this._imageMeta = new UIEventSource<LicenseInfo>(new LicenseInfo());
             WikimediaImage.allLicenseInfos[source] = this._imageMeta;
+            const self = this;
+            Wikimedia.LicenseData(source, (info) => {
+                self._imageMeta.setData(info);
+            })
         }
 
         this.ListenTo(this._imageMeta);
 
-        const self = this;
-        Wikimedia.LicenseData(source, (info) => {
-            self._imageMeta.setData(info);
-        })
+      
     }
 
     protected InnerRender(): string {

@@ -1,4 +1,5 @@
 import $ from "jquery"
+import {LicenseInfo} from "./Wikimedia";
 
 export class Imgur {
 
@@ -27,6 +28,50 @@ export class Imgur {
         );
 
 
+    }
+    static getDescriptionOfImage(url: string,
+                       handleDescription: ((license: LicenseInfo) => void)) {
+
+        const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
+        
+        const apiUrl = 'https://api.imgur.com/3/image/'+hash;
+        const apiKey = '7070e7167f0a25a';
+
+        var settings = {
+            async: true,
+            crossDomain: true,
+            processData: false,
+            contentType: false,
+            type: 'GET',
+            url: apiUrl,
+            headers: {
+                Authorization: 'Client-ID ' + apiKey,
+                Accept: 'application/json',
+            },
+        };
+        $.ajax(settings).done(function (response) {
+            const descr  : string= response.data.description;
+            const data : any = {};
+            for (const tag of descr.split("\n")) {
+                const kv = tag.split(":");
+                const k = kv[0];
+                const v = kv[1].replace("\r", "");
+                data[k] = v;
+            }
+
+            
+            console.log(data);
+            const licenseInfo = new LicenseInfo();
+            
+            licenseInfo.licenseShortName = data.license;
+            licenseInfo.artist = data.author;
+            
+            handleDescription(licenseInfo);
+            
+        }).fail((reason) => {
+            console.log("Getting metadata from to IMGUR failed", reason)
+        });
+    
     }
 
     static uploadImage(title: string, description: string, blob,
