@@ -6,6 +6,7 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {VerticalCombine} from "../Base/VerticalCombine";
 import {Changes} from "../../Logic/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import {ConfirmDialog} from "../ConfirmDialog";
 
 export class ImageCarousel extends UIElement {
     /**
@@ -25,7 +26,6 @@ export class ImageCarousel extends UIElement {
 
     private readonly _uiElements: UIEventSource<UIElement[]>;
 
-    private readonly _deleteButtonText = new UIEventSource<string>("");
     private readonly _deleteButton: UIElement;
 
     constructor(tags: UIEventSource<any>, changes: Changes) {
@@ -48,24 +48,33 @@ export class ImageCarousel extends UIElement {
             new FixedUiElement("")).HideOnEmpty(true);
 
 
-        this._deleteButtonText = this.slideshow._currentSlide.map((i) => {
-            if(self.searcher.IsDeletable(self.searcher.data[i])){
-                return "DELETE";
-            }else{
-                return "";
-            }
-        });
+        const showDeleteButton = this.slideshow._currentSlide.map((i) => {
+            return self.searcher.IsDeletable(self.searcher.data[i]);
+        }, [this.searcher]);
+        this.slideshow._currentSlide.addCallback(() => {
+            showDeleteButton.ping(); // This pings the showDeleteButton, which indicates that it has to hide it's subbuttons
+        })
 
-        this._deleteButton = new VariableUiElement(this._deleteButtonText)
-            .HideOnEmpty(true)
-            .onClick(() => {
-                self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
-            });
+
+        const deleteCurrent = () => self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
+
+        this._deleteButton = new ConfirmDialog(showDeleteButton,
+            "<img src='assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
+            "<span>Afbeelding verwijderen</span>",
+            "<span>Terug</span>",
+            deleteCurrent,
+            () => {},
+            'delete-image-confirm',
+            'delete-image-cancel');
     }
 
     InnerRender(): string {
-        return this.slideshow.Render() ;
-            // + this._deleteButton.Render();
+        return "<span class='image-carousel-container'>" +
+            "<div class='image-delete-container'>" +
+            this._deleteButton.Render() +
+            "</div>" +
+            this.slideshow.Render() +
+            "</span>";
     }
 
     InnerUpdate(htmlElement: HTMLElement) {

@@ -58,6 +58,17 @@ export abstract class UIElement {
             }
             element.style.pointerEvents = "all";
             element.style.cursor = "pointer";
+           /*
+            const childs = element.children;
+            for (let i = 0; i < childs.length; i++) {
+                const ch = childs[i];
+                console.log(ch);
+                ch.style.cursor = "pointer";
+                ch.onclick = () => {
+                    self._onClick();
+                }
+                ch.style.pointerEvents = "all";
+            }*/
         }
 
         this.InnerUpdate(element);

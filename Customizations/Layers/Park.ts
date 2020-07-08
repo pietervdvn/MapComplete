@@ -9,6 +9,18 @@ import {NameInline} from "../Questions/NameInline";
 
 export class Park extends LayerDefinition {
 
+    
+    private accessByDefault = new TagRenderingOptions({
+        question: "Is dit park publiek toegankelijk?",
+        mappings: [
+            {k: new Tag("access","yes"), txt: "Publiek toegankelijk"},
+            {k: new Tag("access",""), txt: "Publiek toegankelijk"},
+            {k: new Tag("access","no"), txt: "Niet-publiek toegankelijk park"},
+            {k: new Tag("access","guided"), txt: "Enkel toegankelijk met een gids of op een activiteit"}
+        ]
+    })
+    
+    
     constructor() {
         super();
         this.name = "park";
@@ -22,7 +34,10 @@ export class Park extends LayerDefinition {
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
         this.title = new NameInline("park");
-        this.elementsToShow = [new NameQuestion()];
+        this.elementsToShow = [new NameQuestion(),
+            this.accessByDefault
+        
+        ];
 
     }
 

@@ -105,9 +105,8 @@ export class ImageSearcher extends UIEventSource<string[]> {
         if(key === undefined){
             return;
         }
-        console.log("Deleting image...");
-        
-        // this._changes.addChange(this._tags.data.id, key, "");
+        console.log("Deleting image...", key, " --> ", url);
+        this._changes.addChange(this._tags.data.id, key, "");
         
     }
 
@@ -133,16 +132,11 @@ export class ImageSearcher extends UIEventSource<string[]> {
             }
         }
 
-        const image0 = this._tags.data["image:0"];
-        if (image0 !== undefined) {
-            this.AddImage(image0);
-        }
-        let imageIndex = 1;
-        let imagei = this._tags.data["image:" + imageIndex];
-        while (imagei !== undefined) {
-            this.AddImage(imagei);
-            imageIndex++;
-            imagei = this._tags.data["image:" + imageIndex];
+        for (const key in this._tags.data) {
+            // @ts-ignore
+            if(key.startsWith("image:")){
+                this.AddImage(this._tags.data[key]);
+            }
         }
 
         const wdItem = this._tags.data.wikidata;

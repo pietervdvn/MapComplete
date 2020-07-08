@@ -682,6 +682,84 @@ body {
     display: inline-block
 }
 
+/******* THe remove image buttons ****/
+
+.image-carousel-container {
+    position: relative;
+}
+
+.image-delete-container {
+    position: absolute;
+    left: 6em;
+    top: 1.5em;
+    display: inline-block;
+    z-index: 7000;
+
+}
+
+.delete-image {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0.5em;
+    border-radius: 3em;
+    background-color: black;
+}
+
+.delete-image-confirm {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 2.5em;
+
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    z-index: -1;
+    height: 3em;
+    width: 14em;
+    border-radius: 1em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #ff8c8c;
+
+    color: white;
+    height: 1.5em; /* same as .delete-image */
+
+    z-index: 7000;
+}
+
+.delete-image-confirm span {
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+.delete-image-cancel {
+    display: inline-block;
+    position: absolute;
+
+    left: 0em;
+    padding: 0.5em;
+    padding-left: 0.75em;
+
+    border-radius: 1em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    height: 1.5em; /* same as .delete-image */
+    width: 14em; /* Same as delete-image-confirm */
+
+
+    background-color: black;
+    color: white;
+    z-index: 7000;
+}
+
+.delete-image-cancel span {
+    font-size: larger;
+    font-weight: bold;
+
+}
 
 /**** The save button *****/
 

@@ -65,7 +65,6 @@ export class TagRenderingOptions {
         mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[]
     }) {
         this.options = options;
-
     }
 
 
@@ -150,6 +149,7 @@ export class TagRendering extends UIElement {
         // Prepare the choices for the Radio buttons
         let i = 0;
         const choices: UIElement[] = [];
+        const alreadyUsedTexts: string[] = [];
         
         for (const choice of options.mappings ?? []) {
             if (choice.k === null) {
@@ -159,16 +159,21 @@ export class TagRendering extends UIElement {
             let choiceSubbed = choice;
             if (choice.substitute) {
                 choiceSubbed = {
-                    k : choice.k.substituteValues(
+                    k: choice.k.substituteValues(
                         options.tagsPreprocessor(this._source.data)),
-                    txt : this.ApplyTemplate(choice.txt),
+                    txt: this.ApplyTemplate(choice.txt),
                     substitute: false,
                     priority: choice.priority
                 }
             }
-            
 
-            choices.push(new FixedUiElement(choiceSubbed.txt));
+            const txt = choiceSubbed.txt;
+            if (alreadyUsedTexts.indexOf(txt) < 0) {
+                choices.push(new FixedUiElement(txt));
+                alreadyUsedTexts.push(txt);
+            }
+
+
             this._mapping.push(choiceSubbed);
             i++;
         }

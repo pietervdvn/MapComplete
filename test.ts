@@ -4,18 +4,20 @@ import {OsmConnection} from "./Logic/OsmConnection";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {WikipediaLink} from "./Customizations/Questions/WikipediaLink";
 import {OsmLink} from "./Customizations/Questions/OsmLink";
-
-const tags = {name: "Test", 
-    wikipedia: "nl:Pieter",
-    id: "node/-1"};
-const tagsES = new UIEventSource(tags);
-
-const login = new OsmConnection(true);
-
-const allElements = new ElementStorage();
-allElements.addElementById(tags.id, tagsES);
-
-const changes = new Changes("Test", login, allElements)
+import {ConfirmDialog} from "./UI/ConfirmDialog";
 
 
-new OsmLink(tagsES, changes).AttachTo("maindiv");
+new ConfirmDialog(new UIEventSource<boolean>(true),
+    "<img src='assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
+    "Deze afbeelding verwijderen",
+    "Terug",
+
+    () => {
+        console.log("Verwijderen");
+    },
+    () => {
+        console.log("terug")
+    },
+    'delete-image-confirm',
+    'delete-image-cancel')
+    .AttachTo("maindiv")
