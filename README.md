@@ -1,6 +1,9 @@
 # MapComplete
 
-MapComplete attempts to be a webversion of StreetComplete.
+> Let a thousand flowers bloom
+
+
+MapComplete attempts to be a webversion of StreetComplete. However, we focus on 'themes', a bit similar as mapcontrib.
 
 The design goals of MapComplete are to be:
 
