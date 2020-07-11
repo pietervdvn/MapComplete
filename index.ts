@@ -22,6 +22,17 @@ import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 
+
+
+
+// --------------------- Read the URL parameters -----------------
+
+if(location.href.startsWith("http://buurtnatuur.be")){
+    // Reload the https version. This is important for the 'locate me' button
+    window.location.replace("https://buurtnatuur.be"); 
+}
+
+
 let dryRun = false;
 
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
@@ -32,7 +43,6 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
     Overpass.testUrl = null; // "http://127.0.0.1:8080/test.json";
 }
-
 
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
