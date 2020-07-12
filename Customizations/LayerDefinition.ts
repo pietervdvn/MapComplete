@@ -7,6 +7,7 @@ import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Changes} from "../Logic/Changes";
 import {UserDetails} from "../Logic/OsmConnection";
 import {TagRenderingOptions} from "./TagRendering";
+import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 
 export class LayerDefinition {
 
@@ -27,7 +28,7 @@ export class LayerDefinition {
     /**
      * These are the questions/shown attributes in the popup
      */
-    elementsToShow: TagRenderingOptions[];
+    elementsToShow: TagDependantUIElementConstructor[];
 
     style: (tags: any) => { color: string, icon: any };
 

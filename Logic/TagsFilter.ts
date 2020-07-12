@@ -22,8 +22,10 @@ export class Regex implements TagsFilter {
                     // Any is allowed
                     return true;
                 }
+                
 
-                return tag.v.match(this._r).length > 0;
+                const matchCount =tag.v.match(this._r)?.length;
+                return (matchCount ?? 0) > 0;
             }
         }
         return false;

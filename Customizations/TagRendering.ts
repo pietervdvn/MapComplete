@@ -9,8 +9,10 @@ import {TextField} from "../UI/Base/TextField";
 import {UIInputElement} from "../UI/Base/UIInputElement";
 import {UIRadioButtonWithOther} from "../UI/Base/UIRadioButtonWithOther";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
+import {OnlyShowIfConstructor} from "./OnlyShowIf";
 
-export class TagRenderingOptions {
+export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
     /**
      * Notes: by not giving a 'question', one disables the question form alltogether
@@ -66,6 +68,10 @@ export class TagRenderingOptions {
     }) {
         this.options = options;
     }
+    
+    OnlyShowIf(tagsFilter: TagsFilter) : TagDependantUIElementConstructor{
+        return new OnlyShowIfConstructor(tagsFilter, this);
+    }
 
 
     IsQuestioning(tags: any): boolean {
@@ -87,13 +93,20 @@ export class TagRenderingOptions {
     }
 
 
+    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
+        return new TagRendering(tags, changes, this.options);
+    }
+
 }
 
-export class TagRendering extends UIElement {
+class TagRendering extends UIElement implements TagDependantUIElement {
 
 
-    public elementPriority: number;
+    private _priority: number;
 
+    Priority(): number {
+        return this._priority;
+    }
 
     private _question: string;
     private _primer: string;
@@ -142,12 +155,12 @@ export class TagRendering extends UIElement {
         this.ListenTo(this._editMode);
 
         this._question = options.question;
+        this._priority = options.priority ?? 0;
         this._primer = options.primer ?? "";
         this._tagsPreprocessor = options.tagsPreprocessor;
         this._mapping = [];
         this._renderMapping = [];
         this._freeform = options.freeform;
-        this.elementPriority = options.priority ?? 0;
 
         // Prepare the choices for the Radio buttons
         const choices: UIElement[] = [];

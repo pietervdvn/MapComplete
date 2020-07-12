@@ -1,6 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import L from "leaflet";
-import {Tag} from "../../Logic/TagsFilter";
+import {And, Regex, Tag} from "../../Logic/TagsFilter";
 import {QuestionDefinition} from "../../Logic/Question";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
@@ -21,7 +21,6 @@ export class Bookcases extends LayerDefinition {
         this.elementsToShow = [
 
             new TagRenderingOptions({
-                priority: 13,
                 question: "Heeft dit boekenruilkastje een naam?",
                 freeform: {
                     key: "name",
@@ -44,66 +43,114 @@ export class Bookcases extends LayerDefinition {
                         key: "capacity",
                         placeholder: "aantal"
                     },
-                    priority: 15
                 }
             ),
             new TagRenderingOptions({
                 question: "Wat voor soort boeken heeft dit boekenruilkastje?",
-                mappings:[
-                    {k: new Tag("books","children"), txt: "Voornamelijk kinderboeken"},
-                    {k: new Tag("books","adults"), txt: "Voornamelijk boeken voor volwassenen"},
-                    {k: new Tag("books","children;adults"), txt: "Zowel kinderboeken als boeken voor volwassenen"}
+                mappings: [
+                    {k: new Tag("books", "children"), txt: "Voornamelijk kinderboeken"},
+                    {k: new Tag("books", "adults"), txt: "Voornamelijk boeken voor volwassenen"},
+                    {k: new Tag("books", "children;adults"), txt: "Zowel kinderboeken als boeken voor volwassenen"}
                 ],
-                priority: 14
             }),
-            
+
             new TagRenderingOptions({
-                question: "",
-                freeform:{
+                question: "Staat dit boekenruilkastje binnen of buiten?",
+                mappings: [
+                    {k: new Tag("indoor", "yes"), txt: "Dit boekenruilkastje staat binnen"},
+                    {k: new Tag("indoor", "no"), txt: "Dit boekenruilkastje staat buiten"},
+                    {k: new Tag("indoor", ""), txt: "Dit boekenruilkastje staat buiten"}
+                ]
+            }),
+
+            new TagRenderingOptions({
+                question: "Is dit boekenruilkastje vrij toegankelijk?",
+                mappings: [
+                    {k: new Tag("access", "yes"), txt: "Ja, vrij toegankelijk"},
+                    {k: new Tag("access", "customers"), txt: "Enkel voor klanten"},
+                ]
+            }).OnlyShowIf(new Tag("indoor", "yes")),
+            new TagRenderingOptions({
+                question: "Wie (welke organisatie) beheert dit boekenruilkastje?",
+                freeform: {
+                    key: "opeartor",
+                    renderTemplate: "Dit boekenruilkastje wordt beheerd door {operator}",
+                    template: "Dit boekenruilkastje wordt beheerd door $$$"
+                }
+            }),
+
+            new TagRenderingOptions({
+                question: "Zijn er openingsuren voor dit boekenruilkastje?",
+                mappings: [
+                    {k: new Tag("opening_hours", "24/7"), txt: "Dag en nacht toegankelijk"},
+                    {k: new Tag("opening_hours", ""), txt: "Dag en nacht toegankelijk"},
+                    {k: new Tag("opening_hours", "sunrise-sunset"), txt: "Van zonsopgang tot zonsondergang"},
+                ],
+                freeform: {
+                    key: "opening_hours",
+                    renderTemplate: "De openingsuren zijn {opening_hours}",
+                    template: "De openingsuren zijn $$$"
+                }
+            }), 
+
+            new TagRenderingOptions({
+                question: "Is dit boekenruilkastje deel van een netwerk?",
+                freeform: {
+                    key: "brand",
+                    renderTemplate: "Deel van het netwerk {brand}",
+                    template: "Deel van het netwerk $$$"
+                },
+                mappings: [{
+                    k: new And([new Tag("brand", "Little Free Library"), new Tag("nobrand", "")]),
+                    txt: "Little Free Library"
+                },
+                    {
+                        k: new And([new Tag("brand", ""), new Tag("nobrand", "yes")]),
+                        txt: "Maakt geen deel uit van een groter netwerk"
+                    }]
+            }).OnlyShowIf(new And(
+                [new Tag("brand", "!(Little Free Library)"),
+                    new Tag("ref", "")])),
+
+            new TagRenderingOptions({
+                question: "Wat is het LFL-referentienummer van dit boekenruilkastje?",
+                freeform: {
+                    key: "ref",
+                    template: "Het refernetienummer is $$$",
+                    renderTemplate: "Gekend als Little Free Library <b>{ref}</b>"
+                }
+            }).OnlyShowIf(new Tag("brand", "Little Free Library")),
+
+            new TagRenderingOptions({
+                question: "Wanneer werd dit boekenruilkastje geinstalleerd?",
+                priority: -1,
+                freeform: {
                     key: "start_date",
                     renderTemplate: "Geplaatst op {start_date}",
                     template: "Geplaatst op $$$"
                 }
             }),
-            
+
             new TagRenderingOptions({
                 question: "Is er een website waar we er meer informatie is over dit boekenruilkastje?",
-                freeform:{
-                    key:"website",
+                freeform: {
+                    key: "website",
                     renderTemplate: "<a href='{website}' target='_blank'>Meer informatie over dit boekenruilkastje</a>",
-                    template:  "$$$",
-                    placeholder:"website"
-
-                },
-                priority: 5
+                    template: "$$$",
+                    placeholder: "website"
+                }
             }),
-            
-            
-            
+            new TagRenderingOptions({
+                freeform: {
+                    key: "description",
+                    renderTemplate: "<b>Beschrijving door de uitbater</b><br>{description}",
+                    template: "$$$",
+                }
+            })
+
 
         ];
 
-        /*
-  this.elementsToShow = [
-
-
-      
-      new TagMappingOptions({key: "operator", template: "Onder de hoede van {operator}"}),
-      new TagMappingOptions({key: "brand", template: "Deel van het netwerk {brand}"}),
-      new TagMappingOptions({key: "ref", template: "Referentienummer {ref}"}),
-
-      new TagMappingOptions({key: "description", template: "Extra beschrijving: <br /> <p>{description}</p>"}),
-  ]
-  ;*/
-        
-     /*   this.questions = [
-            QuestionDefinition.textQuestion("Heeft dit boekenkastje een peter, meter of voogd?", "operator", 10),
-            // QuestionDefinition.textQuestion("Wie kunnen we (per email) contacteren voor dit boekenruilkastje?", "email", 5),
-
-
-        ]
-        ;
-        */
 
         this.style = function (tags) {
             return {

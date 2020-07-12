@@ -1,4 +1,4 @@
-import {TagRendering, TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRendering";
 import {UIEventSource} from "../../UI/UIEventSource";
 import {Changes} from "../../Logic/Changes";
 import {And, Tag} from "../../Logic/TagsFilter";

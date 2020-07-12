@@ -6,10 +6,11 @@ import {ImageCarousel} from "./Image/ImageCarousel";
 import {Changes} from "../Logic/Changes";
 import {UserDetails} from "../Logic/OsmConnection";
 import {VerticalCombine} from "./Base/VerticalCombine";
-import {TagRendering, TagRenderingOptions} from "../Customizations/TagRendering";
+import {TagRenderingOptions} from "../Customizations/TagRendering";
 import {OsmLink} from "../Customizations/Questions/OsmLink";
 import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
 import {And} from "../Logic/TagsFilter";
+import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -27,7 +28,7 @@ export class FeatureInfoBox extends UIElement {
     private _imageElement: ImageCarousel;
     private _pictureUploader: UIElement;
     private _wikipedialink: UIElement;
-    private _infoboxes: TagRendering[];
+    private _infoboxes: TagDependantUIElement[];
 
 
     constructor(
@@ -48,10 +49,8 @@ export class FeatureInfoBox extends UIElement {
 
         this._infoboxes = [];
         for (const tagRenderingOption of elementsToShow) {
-            if (tagRenderingOption.options === undefined) {
-                throw "Tagrendering.options not defined"
-            }
-            this._infoboxes.push(new TagRendering(this._tagsES, this._changes, tagRenderingOption.options))
+            this._infoboxes.push(
+                tagRenderingOption.construct(this._tagsES, this._changes));
         }
 
         title = title ?? new TagRenderingOptions(
@@ -60,10 +59,10 @@ export class FeatureInfoBox extends UIElement {
             }
         )
 
-        this._title = new TagRendering(this._tagsES, this._changes, title.options);
+        this._title = new TagRenderingOptions(title.options).construct(this._tagsES, this._changes);
 
-        this._osmLink = new TagRendering(this._tagsES, this._changes, new OsmLink().options);
-        this._wikipedialink = new TagRendering(this._tagsES, this._changes, new WikipediaLink().options);
+        this._osmLink =new OsmLink().construct(this._tagsES, this._changes);
+        this._wikipedialink = new WikipediaLink().construct(this._tagsES, this._changes);
         this._pictureUploader = new OsmImageUploadHandler(tagsES, userDetails, preferedPictureLicense,
             changes, this._imageElement.slideshow).getUI();
 
@@ -73,7 +72,7 @@ export class FeatureInfoBox extends UIElement {
 
 
         const info = [];
-        const questions = [];
+        const questions : TagDependantUIElement[] = [];
 
         for (const infobox of this._infoboxes) {
             if (infobox.IsKnown()) {
@@ -92,9 +91,9 @@ export class FeatureInfoBox extends UIElement {
             let score = -1000;
             for (const question of questions) {
 
-                if (mostImportantQuestion === undefined || question.priority > score) {
+                if (mostImportantQuestion === undefined || question.Priority() > score) {
                     mostImportantQuestion = question;
-                    score = question.priority;
+                    score = question.Priority();
                 }
             }
 
