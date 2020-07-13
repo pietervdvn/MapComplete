@@ -1,6 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import L from "leaflet";
-import {And, Regex, Tag} from "../../Logic/TagsFilter";
+import {And, Or, Regex, Tag} from "../../Logic/TagsFilter";
 import {QuestionDefinition} from "../../Logic/Question";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
@@ -109,16 +109,19 @@ export class Bookcases extends LayerDefinition {
                         k: new And([new Tag("brand", ""), new Tag("nobrand", "yes")]),
                         txt: "Maakt geen deel uit van een groter netwerk"
                     }]
-            }).OnlyShowIf(new Tag("ref", "")),
+            }).OnlyShowIf(new Or([
+                new Tag("ref", ""),
+                new And([new Tag("ref","*"), new Tag("brand","")])
+            ])),
 
             new TagRenderingOptions({
-                question: "Wat is het LFL-referentienummer van dit boekenruilkastje?",
+                question: "Wat is het referentienummer van dit boekenruilkastje?",
                 freeform: {
                     key: "ref",
-                    template: "Het refernetienummer is $$$",
+                    template: "Het referentienummer is $$$",
                     renderTemplate: "Gekend als {brand} <b>{ref}</b>"
                 }
-            }),
+            }).OnlyShowIf(new Tag("brand","*")),
 
             new TagRenderingOptions({
                 question: "Wanneer werd dit boekenruilkastje geinstalleerd?",
