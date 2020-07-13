@@ -236,7 +236,7 @@ console.log("Received change",key, value)
                     }
 
 
-                    let changes = "<osmChange version='0.6' generator='Mapcomplete 0.0.0'>";
+                    let changes = "<osmChange version='0.6' generator='Mapcomplete 0.0.1'>";
 
                     if (creations.length > 0) {
                         changes +=
