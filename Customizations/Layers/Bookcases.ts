@@ -70,6 +70,7 @@ export class Bookcases extends LayerDefinition {
                     {k: new Tag("access", "customers"), txt: "Enkel voor klanten"},
                 ]
             }).OnlyShowIf(new Tag("indoor", "yes")),
+
             new TagRenderingOptions({
                 question: "Wie (welke organisatie) beheert dit boekenruilkastje?",
                 freeform: {
@@ -108,18 +109,16 @@ export class Bookcases extends LayerDefinition {
                         k: new And([new Tag("brand", ""), new Tag("nobrand", "yes")]),
                         txt: "Maakt geen deel uit van een groter netwerk"
                     }]
-            }).OnlyShowIf(new And(
-                [new Tag("brand", "!(Little Free Library)"),
-                    new Tag("ref", "")])),
+            }).OnlyShowIf(new Tag("ref", "")),
 
             new TagRenderingOptions({
                 question: "Wat is het LFL-referentienummer van dit boekenruilkastje?",
                 freeform: {
                     key: "ref",
                     template: "Het refernetienummer is $$$",
-                    renderTemplate: "Gekend als Little Free Library <b>{ref}</b>"
+                    renderTemplate: "Gekend als {brand} <b>{ref}</b>"
                 }
-            }).OnlyShowIf(new Tag("brand", "Little Free Library")),
+            }),
 
             new TagRenderingOptions({
                 question: "Wanneer werd dit boekenruilkastje geinstalleerd?",
