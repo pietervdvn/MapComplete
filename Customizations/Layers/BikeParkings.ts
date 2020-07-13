@@ -10,15 +10,8 @@ export class BikeParkings extends LayerDefinition {
     constructor() {
         super();
         this.name = "bike_parking";
-        this.icon = "./assets/bike_pump.svg";
-
-        this.overpassFilter = new Or([
-            new And([
-                new Tag("amenity", "bicycle_parking")
-            ])
-        ]);
-
-
+        this.icon = "./assets/parking.svg";
+        this.overpassFilter = new Tag("amenity", "bicycle_parking");
         this.newElementTags = [
             new Tag("amenity", "bicycle_parking"),
         ];
@@ -26,7 +19,7 @@ export class BikeParkings extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedName("fietsparking");
+        this.title = new FixedName("Fietsparking");
         this.elementsToShow = [
             new OperatorTag(),
             new BikeParkingType()
@@ -62,7 +55,7 @@ export class BikeParkings extends LayerDefinition {
                 color: "#00bb00",
                 icon: new L.icon({
                     iconUrl: self.icon,
-                    iconSize: [40, 40]
+                    iconSize: [30, 30]
                 })
             };
         };
