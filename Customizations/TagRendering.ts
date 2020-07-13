@@ -11,6 +11,7 @@ import {UIRadioButtonWithOther} from "../UI/Base/UIRadioButtonWithOther";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
+import {UserDetails} from "../Logic/OsmConnection";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
@@ -111,6 +112,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private _priority: number;
+    private _userDetails: UIEventSource<UserDetails>;
 
     Priority(): number {
         return this._priority;
@@ -162,6 +164,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         this.ListenTo(this._questionSkipped);
         this.ListenTo(this._editMode);
 
+        this._userDetails = changes.login.userDetails;
+        this.ListenTo(this._userDetails);
+        
         this._question = options.question;
         this._priority = options.priority ?? 0;
         this._primer = options.primer ?? "";
@@ -397,8 +402,14 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             if (html == "") {
                 return "";
             }
+            let editButton = "";
+            if(this._userDetails.data.loggedIn){
+                editButton = this._editButton.Render();
+            }
+            
             return "<span class='answer'>" +
-                "<span class='answer-text'>" + html + "</span>" + this._editButton.Render() +
+                "<span class='answer-text'>" + html + "</span>" +
+                editButton +
                 "</span>";
         }
 

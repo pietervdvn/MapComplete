@@ -7,6 +7,7 @@ import {VerticalCombine} from "../Base/VerticalCombine";
 import {Changes} from "../../Logic/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
+import {UserDetails} from "../../Logic/OsmConnection";
 
 export class ImageCarousel extends UIElement {
 
@@ -18,10 +19,13 @@ export class ImageCarousel extends UIElement {
 
     private readonly _deleteButton: UIElement;
     private readonly _isDeleted: UIElement;
+    
+    private readonly _userDetails : UIEventSource<UserDetails>;
 
     constructor(tags: UIEventSource<any>, changes: Changes) {
         super(tags);
-
+        this._userDetails = changes.login.userDetails;
+        
         const self = this;
         this.searcher = new ImageSearcher(tags, changes);
 
@@ -40,8 +44,11 @@ export class ImageCarousel extends UIElement {
 
 
         const showDeleteButton = this.slideshow._currentSlide.map((i) => {
+            if(!self._userDetails.data.loggedIn){
+                return false;
+            }
             return self.searcher.IsDeletable(self.searcher.data[i]);
-        }, [this.searcher]);
+        }, [this.searcher, this._userDetails]);
         this.slideshow._currentSlide.addCallback(() => {
             showDeleteButton.ping(); // This pings the showDeleteButton, which indicates that it has to hide it's subbuttons
         })
@@ -57,8 +64,7 @@ export class ImageCarousel extends UIElement {
             "<span>Afbeelding verwijderen</span>",
             "<span>Terug</span>",
             deleteCurrent,
-            () => {
-            },
+            () => {            },
             'delete-image-confirm',
             'delete-image-cancel');
 
@@ -75,7 +81,6 @@ export class ImageCarousel extends UIElement {
         this._isDeleted = new VariableUiElement(
             mapping
         )
-        // .HideOnEmpty(true);
 
         this.searcher._deletedImages.addCallback(() => {
             this.slideshow._currentSlide.ping();

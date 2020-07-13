@@ -573,7 +573,7 @@ form {
 /***************** Info box (box containing features and questions ******************/
 
 .leaflet-popup-content {
-    width: 25vw !important;
+    width: 40em !important;
 }
 
 .featureinfobox {
@@ -669,7 +669,6 @@ form {
     background-color: #e5f5ff;
     padding: 1em;
     border-radius: 1em;
-    margin-right: 1em;
     font-size: larger;
 
 }

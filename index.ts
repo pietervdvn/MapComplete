@@ -21,6 +21,7 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {All} from "./Customizations/Layouts/All";
 
 
 
@@ -50,6 +51,23 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 
 let defaultQuest = "buurtnatuur"
+
+for (const k in AllKnownLayouts.allSets) {
+    const layout = AllKnownLayouts.allSets[k];
+    const possibleParts = layout.locationContains ?? [];
+    console.log(layout.locationContains)
+    for (const locationMatch of possibleParts) {
+        if(locationMatch === ""){
+            continue
+        }
+        console.log(layout.name," -> ", locationMatch, window.location.href.indexOf(locationMatch))
+        if(window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0){
+            defaultQuest = layout.name;
+            console.log("Detected a default by URL: ", layout.name, "matches", locationMatch)
+        }
+    }
+}
+
 if (window.location.search) {
     const params = window.location.search.substr(1).split("&");
     const paramDict: any = {};

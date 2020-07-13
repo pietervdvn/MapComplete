@@ -16,6 +16,7 @@ export class Layout {
     public startLat: number;
     public welcomeTail: string;
 
+    public locationContains: string[];
     
     constructor(
         name: string,
@@ -41,13 +42,5 @@ export class Layout {
         this.welcomeTail = welcomeTail;
     }
 
-/*
-
-
-    static statues = new Layout(
-    
-    );
-
-*/
 }
 
