@@ -36,8 +36,11 @@ export class NatureReserves extends LayerDefinition {
         return function (properties: any) {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
+                if(qd instanceof DescriptionQuestion){
+                    continue;
+                }
                 if (qd.IsQuestioning(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
+                    questionSeverity = Math.max(questionSeverity, qd.Priority() ?? 0);
                 }
             }
 

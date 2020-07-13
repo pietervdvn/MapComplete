@@ -47,6 +47,10 @@ export class Bos extends LayerDefinition {
         return function (properties: any) {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
+                if(qd instanceof DescriptionQuestion){
+                    continue;
+                }
+                
                 if (qd.IsQuestioning(properties)) {
                     questionSeverity = Math.max(questionSeverity, qd.Priority());
                 }

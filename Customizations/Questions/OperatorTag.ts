@@ -8,7 +8,7 @@ export class OperatorTag extends TagRenderingOptions {
 
 
     private static options = {
-        priority: 5,
+        priority: 15,
         question: "Wie beheert dit gebied?",
         freeform: {
             key: "operator",

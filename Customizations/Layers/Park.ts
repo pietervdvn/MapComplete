@@ -17,8 +17,15 @@ export class Park extends LayerDefinition {
             {k: new Tag("access", "yes"), txt: "Publiek toegankelijk"},
             {k: new Tag("access", ""), txt: "Publiek toegankelijk"},
             {k: new Tag("access", "no"), txt: "Niet publiek toegankelijk"},
-            {k: new Tag("access", "guided"), txt: "Enkel toegankelijk met een gids of op een activiteit"}
-        ]
+            {k: new Tag("access", "private"), txt: "Niet publiek toegankelijk, want privaat"},
+            {k: new Tag("access", "guided"), txt: "Enkel toegankelijk met een gids of op een activiteit"},
+        ],
+        freeform: {
+            key: "access",
+            renderTemplate: "Dit park is niet toegankelijk: {access}",
+            template: "De toegankelijkheid van dit park is: $$$"
+        },
+        priority: 20
     })
 
     private operatorByDefault = new
@@ -32,7 +39,8 @@ export class Park extends LayerDefinition {
         },
         mappings: [{
             k: null, txt: "De gemeente beheert dit park"
-        }]
+        }],
+        priority: 15
     });
 
 
@@ -49,7 +57,8 @@ export class Park extends LayerDefinition {
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
         this.title = new NameInline("park");
-        this.elementsToShow = [new NameQuestion(),
+        this.elementsToShow = [
+            new NameQuestion(),
             this.accessByDefault,
             this.operatorByDefault,
             new DescriptionQuestion("park"),
@@ -66,6 +75,9 @@ export class Park extends LayerDefinition {
         return function (properties: any) {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
+                if (qd instanceof DescriptionQuestion) {
+                    continue;
+                }
                 if (qd.IsQuestioning(properties)) {
                     questionSeverity = Math.max(questionSeverity, qd.Priority() ?? 0);
                 }

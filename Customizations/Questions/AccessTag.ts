@@ -6,7 +6,7 @@ import {And, Tag} from "../../Logic/TagsFilter";
 export class AccessTag extends TagRenderingOptions {
 
     private static options = {
-        priority: 10,
+        priority: 20,
         question: "Is dit gebied toegankelijk?",
         primer: "Dit gebied is ",
         freeform: {

@@ -12,7 +12,8 @@ export class DescriptionQuestion extends TagRenderingOptions{
                 key:"description:0",
                 renderTemplate: "{description:0}",
                 template: "$$$"
-            }
+            },
+            priority: 14
         });
     }
     
