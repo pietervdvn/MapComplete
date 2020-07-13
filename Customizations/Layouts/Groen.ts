@@ -35,6 +35,7 @@ export class Groen extends Layout {
             "<ul>" +
             "<li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li>" +
             "<li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li>" +
+            "<li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li>" +
             "<li>Je kan altijd een foto toevoegen</li>" +
             "<li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li>" +
             "</ul>" +

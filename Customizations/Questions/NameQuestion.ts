@@ -9,8 +9,11 @@ import {Tag} from "../../Logic/TagsFilter";
 export class NameQuestion extends TagRenderingOptions{
     
     static options =  {
-        priority: 20,
-        question: "Wat is de <i>officiële</i> naam van dit gebied?",
+        priority: -1, // Move this last on the priority list, in order to prevent ppl to enter access restrictions and descriptions
+        question: "Wat is de <i>officiële</i> naam van dit gebied?<br><span class='question-subtext'>" +
+            "Zelf een naam bedenken wordt afgeraden.<br/>" +
+            "Een beschrijving van het gebied geven kan in een volgende stap.<br/>" +
+            "</span>",
         freeform: {
             key: "name",
             template: "De naam is $$$",

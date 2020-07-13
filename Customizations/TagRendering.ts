@@ -77,7 +77,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
     IsQuestioning(tags: any): boolean {
         const tagsKV = TagUtils.proprtiesToKV(tags);
 
-        for (const oneOnOneElement of this.options.mappings) {
+        for (const oneOnOneElement of this.options.mappings ?? []) {
             if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tagsKV)) {
                 return false;
             }
@@ -95,6 +95,14 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
     construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
         return new TagRendering(tags, changes, this.options);
+    }
+
+    IsKnown(properties: any): boolean {
+        return !this.IsQuestioning(properties);
+    }
+
+    Priority(): number {
+        return this.options.priority ?? 0;
     }
 
 }
@@ -285,7 +293,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             if (isEditing) {
                 return "<span class='skip-button'>Annuleren</span>";
             } else {
-                return "<span class='skip-button'>Ik weet het niet zeker...</span>";
+                return "<span class='skip-button'>Overslaan (Ik weet het niet zeker...)</span>";
             }
         });
         // And at last, set up the skip button

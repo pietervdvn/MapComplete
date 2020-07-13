@@ -22,7 +22,28 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
             this._embedded.construct(tags, changes),
             this._tagsFilter);
     }
-    
+
+    IsKnown(properties: any): boolean {
+        if(!this.Matches(properties)){
+            return true;
+        }
+        return this._embedded.IsKnown(properties);
+    }
+
+    IsQuestioning(properties: any): boolean {
+        if(!this.Matches(properties)){
+            return false;
+        }
+        return this._embedded.IsQuestioning(properties);
+    }
+
+    Priority(): number {
+        return this._embedded.Priority();
+    }
+      
+    private Matches(properties: any) : boolean{
+        return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties));
+    } 
     
 }
 

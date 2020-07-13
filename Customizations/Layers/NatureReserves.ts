@@ -5,6 +5,7 @@ import {AccessTag} from "../Questions/AccessTag";
 import {OperatorTag} from "../Questions/OperatorTag";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
+import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
 
 export class NatureReserves extends LayerDefinition {
     
@@ -25,6 +26,7 @@ export class NatureReserves extends LayerDefinition {
             new NameQuestion(),
             new AccessTag(),
             new OperatorTag(),
+            new DescriptionQuestion("natuurgebied")
         ];
     }
 

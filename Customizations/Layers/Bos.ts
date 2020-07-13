@@ -6,6 +6,7 @@ import {OperatorTag} from "../Questions/OperatorTag";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
+import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
 
 export class Bos extends LayerDefinition {
 
@@ -34,7 +35,8 @@ export class Bos extends LayerDefinition {
         this.elementsToShow = [
             new NameQuestion(),
             new AccessTag(),
-            new OperatorTag()
+            new OperatorTag(),
+            new DescriptionQuestion("bos")
         ];
 
     }
@@ -46,7 +48,7 @@ export class Bos extends LayerDefinition {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
                 if (qd.IsQuestioning(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
+                    questionSeverity = Math.max(questionSeverity, qd.Priority());
                 }
             }
 

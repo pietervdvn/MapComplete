@@ -6,6 +6,7 @@ import {OperatorTag} from "../Questions/OperatorTag";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
+import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
 
 export class Park extends LayerDefinition {
 
@@ -50,7 +51,8 @@ export class Park extends LayerDefinition {
         this.title = new NameInline("park");
         this.elementsToShow = [new NameQuestion(),
             this.accessByDefault,
-            this.operatorByDefault
+            this.operatorByDefault,
+            new DescriptionQuestion("park"),
 
         ];
 
@@ -65,7 +67,7 @@ export class Park extends LayerDefinition {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
                 if (qd.IsQuestioning(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
+                    questionSeverity = Math.max(questionSeverity, qd.Priority() ?? 0);
                 }
             }
 

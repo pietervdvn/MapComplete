@@ -10,10 +10,9 @@ export class AccessTag extends TagRenderingOptions {
         question: "Is dit gebied toegankelijk?",
         primer: "Dit gebied is ",
         freeform: {
-            key: "access",
-            extraTags: new Tag("fixme", "Freeform access tag used: possibly a wrong value"),
+            key: "access:description",
             template: "Iets anders: $$$",
-            renderTemplate: "De toegangekelijkheid van dit gebied is: {access}",
+            renderTemplate: "De toegankelijkheid van dit gebied is: {access:description}",
             placeholder: "Specifieer"
         },
         mappings: [
