@@ -2,7 +2,7 @@ import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
 import * as L from "leaflet";
-import FixedName from "../Questions/FixedName";
+import FixedText from "../Questions/FixedText";
 import { BikeParkingType } from "../Questions/BikeParkingType";
 
 export class BikeParkings extends LayerDefinition {
@@ -26,7 +26,7 @@ export class BikeParkings extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedName("fietsparking");
+        this.title = new FixedText("fietsparking");
         this.elementsToShow = [
             new OperatorTag(),
             new BikeParkingType()

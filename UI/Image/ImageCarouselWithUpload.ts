@@ -1,0 +1,71 @@
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
+import {ImageCarousel} from "./ImageCarousel";
+import {OsmImageUploadHandler} from "../../Logic/OsmImageUploadHandler";
+import {UIEventSource} from "../UIEventSource";
+import {Changes} from "../../Logic/Changes";
+import {UserDetails} from "../../Logic/OsmConnection";
+import {ImageUploadFlow} from "../ImageUploadFlow";
+
+export class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
+    IsKnown(properties: any): boolean {
+        return true;
+    }
+
+    IsQuestioning(properties: any): boolean {
+        return false;
+    }
+
+    Priority(): number {
+        return 0;
+    }
+
+    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
+        return new ImageCarouselWithUpload(tags, changes);
+    }
+}
+
+class ImageCarouselWithUpload extends TagDependantUIElement {
+    private _imageElement: ImageCarousel;
+    private _pictureUploader: ImageUploadFlow;
+
+    constructor(tags: UIEventSource<any>, changes: Changes) {
+        super(tags);
+        this._imageElement = new ImageCarousel(tags, changes);
+        const userDetails = changes.login.userDetails;
+        const license = changes.login.GetPreference( "mapcomplete-pictures-license");
+        this._pictureUploader = new OsmImageUploadHandler(tags,
+            userDetails, license,
+            changes, this._imageElement.slideshow).getUI();
+
+    }
+
+    protected InnerRender(): string {
+        return this._imageElement.Render() +
+            this._pictureUploader.Render();
+    }
+
+    Activate() {
+        super.Activate();
+        this._imageElement.Activate();
+        this._pictureUploader.Activate();
+    }
+
+    Update() {
+        super.Update();
+        this._imageElement.Update();
+        this._pictureUploader.Update();
+    }
+
+    IsKnown(): boolean {
+        return true;
+    }
+
+    IsQuestioning(): boolean {
+        return false;
+    }
+
+    Priority(): number {
+        return 0;
+    }
+
+}

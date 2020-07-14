@@ -2,13 +2,14 @@ import {Layout} from "../Layout";
 import {GrbToFix} from "../Layers/GrbToFix";
 import { BikePumps } from "../Layers/BikePumps";
 import { BikeParkings } from "../Layers/BikeParkings";
+import {GhostBike} from "../Layers/GhostBike";
 
 export default class Cyclofix extends Layout {
     constructor() {
         super(
             "pomp",
             "Grb import fix tool",
-            [new BikePumps(), new BikeParkings()],
+            [new BikePumps(), new BikeParkings(), new GhostBike()],
             15,
             51.2083,
             3.2279,

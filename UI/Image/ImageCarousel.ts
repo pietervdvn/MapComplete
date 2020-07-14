@@ -8,8 +8,29 @@ import {Changes} from "../../Logic/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
 import {UserDetails} from "../../Logic/OsmConnection";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
 
-export class ImageCarousel extends UIElement {
+export class ImageCarouselConstructor implements TagDependantUIElementConstructor{
+    IsKnown(properties: any): boolean {
+        return true;
+    }
+
+    IsQuestioning(properties: any): boolean {
+        return false;
+    }
+
+    Priority(): number {
+        return 0;
+    }
+
+    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
+        return new ImageCarousel(tags, changes);
+    }
+    
+}
+
+export class ImageCarousel extends TagDependantUIElement {
+
 
     private readonly searcher: ImageSearcher;
 
@@ -96,6 +117,18 @@ export class ImageCarousel extends UIElement {
             "</div>" +
             this.slideshow.Render() +
             "</span>";
+    }
+
+    IsKnown(): boolean {
+        return true;
+    }
+
+    IsQuestioning(): boolean {
+        return false;
+    }
+
+    Priority(): number {
+        return 0;
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
