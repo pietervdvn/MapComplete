@@ -13,24 +13,34 @@ export class BikePumps extends LayerDefinition {
         this.name = "pomp";
         this.icon = "./assets/bike_pump.svg";
 
-        this.overpassFilter = new Or([
+        this.overpassFilter =
             new And([
                 new Tag("amenity", "bicycle_repair_station"),
                 new Tag("service:bicycle:pump", "yes"),
-            ])
-            ]
-        );
+            ]);
 
 
         this.newElementTags = [
             new Tag("amenity", "bicycle_repair_station"),
             new Tag("service:bicycle:pump", "yes"),
-            // new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
         ];
+        
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;
-        this.style = this.generateStyleFunction();
+        const self = this;
+        this.style = (properties: any) => {
+
+            return {
+                color: "#00bb00",
+                icon: new L.icon({
+                    iconUrl: self.icon,
+                    iconSize: [40, 40]
+                })
+            };
+        };
+        
+        
         this.title = new FixedText("Pomp");
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
@@ -43,37 +53,5 @@ export class BikePumps extends LayerDefinition {
     }
 
 
-    private generateStyleFunction() {
-        const self = this;
-        return function (properties: any) {
-            // let questionSeverity = 0;
-            // for (const qd of self.elementsToShow) {
-            //     if (qd.IsQuestioning(properties)) {
-            //         questionSeverity = Math.max(questionSeverity, qd.options.priority ?? 0);
-            //     }
-            // }
-
-            // let colormapping = {
-            //     0: "#00bb00",
-            //     1: "#00ff00",
-            //     10: "#dddd00",
-            //     20: "#ff0000"
-            // };
-
-            // let colour = colormapping[questionSeverity];
-            // while (colour == undefined) {
-            //     questionSeverity--;
-            //     colour = colormapping[questionSeverity];
-            // }
-
-            return {
-                color: "#00bb00",
-                icon: new L.icon({
-                    iconUrl: self.icon,
-                    iconSize: [40, 40]
-                })
-            };
-        };
-    }
 
 }

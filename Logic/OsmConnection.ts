@@ -126,7 +126,7 @@ export class OsmConnection {
         if(this.preferenceSources[key] !== undefined){
             return this.preferenceSources[key];
         }
-        const pref = new UIEventSource<string>(undefined);
+        const pref = new UIEventSource<string>(this.preferences[key]);
         pref.addCallback((v) => {
             this.SetPreference(key, v);
         });
@@ -169,6 +169,7 @@ export class OsmConnection {
         }
 
         if (this.preferences.data[k] === v) {
+            console.log("Not updating preference", k, " to ", v, "not changed");
             return;
         }
         console.log("Updating preference", k, " to ", v);

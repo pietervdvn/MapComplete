@@ -41,6 +41,9 @@ export class DropDownUI extends UIElement {
     InnerUpdate() {
         const self = this;
         const e = document.getElementById("dropdown-" + this.id);
+        if(e === null){
+            return;
+        }
         // @ts-ignore
         if (this.selectedElement.data !== e.value) {
             // @ts-ignore
