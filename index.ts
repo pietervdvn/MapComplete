@@ -1,27 +1,27 @@
-import {OsmConnection} from "./Logic/OsmConnection";
-import {Changes} from "./Logic/Changes";
-import {ElementStorage} from "./Logic/ElementStorage";
-import {UIEventSource} from "./UI/UIEventSource";
-import {UserBadge} from "./UI/UserBadge";
-import {Basemap} from "./Logic/Basemap";
-import {PendingChanges} from "./UI/PendingChanges";
-import {CenterMessageBox} from "./UI/CenterMessageBox";
-import {Helpers} from "./Helpers";
-import {Tag, TagUtils} from "./Logic/TagsFilter";
-import {FilteredLayer} from "./Logic/FilteredLayer";
-import {LayerUpdater} from "./Logic/LayerUpdater";
-import {UIElement} from "./UI/UIElement";
-import {MessageBoxHandler} from "./UI/MessageBoxHandler";
-import {Overpass} from "./Logic/Overpass";
-import {FeatureInfoBox} from "./UI/FeatureInfoBox";
-import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
-import {StrayClickHandler} from "./Logic/StrayClickHandler";
-import {SimpleAddUI} from "./UI/SimpleAddUI";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {SearchAndGo} from "./UI/SearchAndGo";
-import {CollapseButton} from "./UI/Base/CollapseButton";
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {All} from "./Customizations/Layouts/All";
+import { OsmConnection } from "./Logic/OsmConnection";
+import { Changes } from "./Logic/Changes";
+import { ElementStorage } from "./Logic/ElementStorage";
+import { UIEventSource } from "./UI/UIEventSource";
+import { UserBadge } from "./UI/UserBadge";
+import { Basemap } from "./Logic/Basemap";
+import { PendingChanges } from "./UI/PendingChanges";
+import { CenterMessageBox } from "./UI/CenterMessageBox";
+import { Helpers } from "./Helpers";
+import { Tag, TagUtils } from "./Logic/TagsFilter";
+import { FilteredLayer } from "./Logic/FilteredLayer";
+import { LayerUpdater } from "./Logic/LayerUpdater";
+import { UIElement } from "./UI/UIElement";
+import { MessageBoxHandler } from "./UI/MessageBoxHandler";
+import { Overpass } from "./Logic/Overpass";
+import { FeatureInfoBox } from "./UI/FeatureInfoBox";
+import { GeoLocationHandler } from "./Logic/GeoLocationHandler";
+import { StrayClickHandler } from "./Logic/StrayClickHandler";
+import { SimpleAddUI } from "./UI/SimpleAddUI";
+import { VariableUiElement } from "./UI/Base/VariableUIElement";
+import { SearchAndGo } from "./UI/SearchAndGo";
+import { CollapseButton } from "./UI/Base/CollapseButton";
+import { AllKnownLayouts } from "./Customizations/AllKnownLayouts";
+import { All } from "./Customizations/Layouts/All";
 
 
 
@@ -29,9 +29,9 @@ import {All} from "./Customizations/Layouts/All";
 // --------------------- Read the URL parameters -----------------
 
 // @ts-ignore
-if(location.href.startsWith("http://buurtnatuur.be")){
+if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button
-    window.location.replace("https://buurtnatuur.be"); 
+    window.location.replace("https://buurtnatuur.be");
 }
 
 
@@ -40,7 +40,7 @@ let dryRun = false;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
     // Set to true if testing and changes should NOT be saved
-    // dryRun = true;
+    dryRun = true;
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
     Overpass.testUrl = null; // "http://127.0.0.1:8080/test.json";
@@ -57,11 +57,11 @@ for (const k in AllKnownLayouts.allSets) {
     const possibleParts = layout.locationContains ?? [];
     console.log(layout.locationContains)
     for (const locationMatch of possibleParts) {
-        if(locationMatch === ""){
+        if (locationMatch === "") {
             continue
         }
-        console.log(layout.name," -> ", locationMatch, window.location.href.indexOf(locationMatch))
-        if(window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0){
+        console.log(layout.name, " -> ", locationMatch, window.location.href.indexOf(locationMatch))
+        if (window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0) {
             defaultQuest = layout.name;
             console.log("Detected a default by URL: ", layout.name, "matches", locationMatch)
         }
@@ -78,7 +78,7 @@ if (window.location.search) {
     if (paramDict.quests) {
         defaultQuest = paramDict.quests
     }
-    if(paramDict.test){
+    if (paramDict.test) {
         dryRun = true;
     }
 }
@@ -164,7 +164,7 @@ for (const layer of questSetToRender.layers) {
     };
 
     minZoom = Math.max(minZoom, layer.minzoom);
-    
+
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement,
         generateInfo);
 
@@ -185,14 +185,14 @@ const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
 
 
 new StrayClickHandler(bm, selectedElement, leftMessage, () => {
-        return new SimpleAddUI(bm.Location,
-            bm.LastClickLocation,
-            changes,
-            selectedElement,
-            layerUpdater.runningQuery,
-            osmConnection.userDetails,
-            addButtons);
-    }
+    return new SimpleAddUI(bm.Location,
+        bm.LastClickLocation,
+        changes,
+        selectedElement,
+        layerUpdater.runningQuery,
+        osmConnection.userDetails,
+        addButtons);
+}
 );
 
 /**
@@ -216,7 +216,7 @@ selectedElement.addCallback((data) => {
             break;
         }
     }
-    }
+}
 );
 
 
@@ -239,7 +239,7 @@ var welcomeMessage = () => {
                 login = questSetToRender.welcomeBackMessage;
             }
             return "<div id='welcomeMessage'>" +
-                questSetToRender.welcomeMessage + login + questSetToRender.welcomeTail+
+                questSetToRender.welcomeMessage + login + questSetToRender.welcomeTail +
                 "</div>";
         }),
         function () {
@@ -250,7 +250,7 @@ leftMessage.setData(welcomeMessage);
 welcomeMessage().AttachTo("messagesbox");
 
 
-var messageBox = new MessageBoxHandler(leftMessage, () => {selectedElement.setData(undefined)});
+var messageBox = new MessageBoxHandler(leftMessage, () => { selectedElement.setData(undefined) });
 
 new CenterMessageBox(
     minZoom,
