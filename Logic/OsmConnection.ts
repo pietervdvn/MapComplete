@@ -126,7 +126,9 @@ export class OsmConnection {
         if(this.preferenceSources[key] !== undefined){
             return this.preferenceSources[key];
         }
-        const pref = new UIEventSource<string>(this.preferences[key]);
+        this.UpdatePreferences();
+        console.log("Getting preference object", key, "currently upstreamed as ",this.preferences.data[key]  );
+        const pref = new UIEventSource<string>(this.preferences.data[key]);
         pref.addCallback((v) => {
             this.SetPreference(key, v);
         });
@@ -187,7 +189,7 @@ export class OsmConnection {
                 return;
             }
             
-            console.log("Preference written!", result);
+            console.log("Preference written!", result == "" ? "OK" : result);
             
         });
     }
