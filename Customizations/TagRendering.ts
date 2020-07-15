@@ -27,11 +27,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
     constructor(options: {
 
-        /**
-         * What is the priority of the question.
-         * By default, in the popup of a feature, only one question is shown at the same time. If multiple questions are unanswered, the question with the highest priority is asked first
-         */
-        priority?: number
+       
 
         /**
          * This is the string that is shown in the popup if this tag is missing.
@@ -42,17 +38,12 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         question?: string,
 
         /**
-         * Optional:
-         * if defined, this a common piece of tag that is shown in front of every mapping (except freeform)
+         * What is the priority of the question.
+         * By default, in the popup of a feature, only one question is shown at the same time. If multiple questions are unanswered, the question with the highest priority is asked first
          */
-        primer?: string,
-        tagsPreprocessor?: ((tags: any) => any),
-        freeform?: {
-            key: string, template: string,
-            renderTemplate: string
-            placeholder?: string,
-            extraTags?: TagsFilter,
-        },
+        priority?: number,
+
+        
         /**
          * Mappings convert a well-known tag combination into a user friendly text.
          * It converts e.g. 'access=yes' into 'this area can be accessed'
@@ -65,7 +56,33 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          * 
          * 
          */
-        mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[],
+
+
+        /**
+         * If one wants to render a freeform tag (thus no predefined key/values) or if there are a few well-known tags with a freeform object,
+         * use this.
+         * In the question, it'll offer a textfield
+         */
+        freeform?: {
+            key: string, template: string,
+            renderTemplate: string
+            placeholder?: string,
+            extraTags?: TagsFilter,
+        },
+        
+        
+        /**
+         * Optional:
+         * if defined, this a common piece of tag that is shown in front of every mapping (except freeform)
+         */
+        primer?: string,
+
+        /**
+         * In some very rare cases, tags have to be rewritten before displaying
+         * This function adds this
+         */
+        tagsPreprocessor?: ((tags: any) => any)
     }) {
         this.options = options;
     }
