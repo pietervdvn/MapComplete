@@ -137,7 +137,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 
 // ------------- Setup the layers -------------------------------
-
+const controls = {};
 const addButtons: {
     name: string,
     icon: string,
@@ -167,6 +167,8 @@ for (const layer of questSetToRender.layers) {
 
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement,
         generateInfo);
+
+    controls[layer.name] = flayer.isDisplayed;
 
     const addButton = {
         name: layer.name,

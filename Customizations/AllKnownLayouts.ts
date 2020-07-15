@@ -4,7 +4,7 @@ import { GRB } from "./Layouts/GRB";
 import { Statues } from "./Layouts/Statues";
 import { Bookcases } from "./Layouts/Bookcases";
 import Cyclofix from "./Layouts/Cyclofix";
-import { DrinkingWater } from "./Layouts/DrinkingWater";
+import { WalkByBrussels } from "./Layouts/WalkByBrussels";
 import { All } from "./Layouts/All";
 import { Layout } from "./Layout";
 
@@ -18,7 +18,7 @@ export class AllKnownLayouts {
             new GRB(),
             new Cyclofix(),
             new Bookcases(),
-            new DrinkingWater(),
+            new WalkByBrussels(),
             all
             /*new Toilets(),
             new Statues(),
@@ -30,5 +30,14 @@ export class AllKnownLayouts {
             all.layers = all.layers.concat(layout.layers);
         }
         return allSets;
+    }
+
+    public static GetSets(layoutNames): any {
+        const all = new All();
+        for (const name of layoutNames) {
+            all.layers = all.layers.concat(AllKnownLayouts.allSets[name].layers);
+        }
+
+        return all;
     }
 }

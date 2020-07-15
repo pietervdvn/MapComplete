@@ -1,11 +1,14 @@
 import { Layout } from "../Layout";
 import { DrinkingWaterLayer } from "../Layers/DrinkingWater";
+import { NatureReserves } from "../Layers/NatureReserves";
+import { Park } from "../Layers/Park";
+import { BikeParkings } from "../Layers/BikeParkings";
 
-export class DrinkingWater extends Layout {
+export class WalkByBrussels extends Layout {
     constructor() {
-        super("drinkingwater",
+        super("walkbybrussels",
             "Drinking Water Spots",
-            [new DrinkingWaterLayer()],
+            [new DrinkingWaterLayer(), new BikeParkings(), new Park(), new NatureReserves()],
             10,
             50.8435,
             4.3688,
