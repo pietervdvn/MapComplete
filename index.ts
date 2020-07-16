@@ -21,6 +21,7 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {All} from "./Customizations/Layouts/All";
 
 
 
@@ -49,26 +50,47 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-let defaultQuest = "buurtnatuur"
+let defaultLayout = "buurtnatuur"
+
+
+// Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
+for (const k in AllKnownLayouts.allSets) {
+    const layout = AllKnownLayouts.allSets[k];
+    const possibleParts = layout.locationContains ?? [];
+    for (const locationMatch of possibleParts) {
+        if (locationMatch === "") {
+            continue
+        }
+        if (window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0) {
+            defaultLayout = layout.name;
+        }
+    }
+}
+
+// Read the query string to grap settings
+let paramDict: any = {};
 if (window.location.search) {
     const params = window.location.search.substr(1).split("&");
-    const paramDict: any = {};
     for (const param of params) {
         var kv = param.split("=");
         paramDict[kv[0]] = kv[1];
     }
-    if (paramDict.quests) {
-        defaultQuest = paramDict.quests
-    }
-    if(paramDict.test){
-        dryRun = true;
-    }
+
+
 }
 
-const questSetToRender = AllKnownLayouts.allSets[defaultQuest];
-console.log("Using quests: ", questSetToRender.name);
+if (paramDict.layout) {
+    defaultLayout = paramDict.layout
+}
 
-document.title = questSetToRender.title;
+if (paramDict.test) {
+    dryRun = true;
+}
+
+const layoutToUse = AllKnownLayouts.allSets[defaultLayout];
+console.log("Using layout: ", layoutToUse.name);
+
+document.title = layoutToUse.title;
 
 
 // ----------------- Setup a few event sources -------------
@@ -84,12 +106,11 @@ const leftMessage = new UIEventSource<() => UIElement>(undefined);
 
 const selectedElement = new UIEventSource<any>(undefined);
 
-const preferedPictureLicense = new UIEventSource<string>(undefined);
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
-    zoom: questSetToRender.startzoom,
-    lat: questSetToRender.startLat,
-    lon: questSetToRender.startLon
+    zoom: layoutToUse.startzoom,
+    lat: layoutToUse.startLat,
+    lon: layoutToUse.startLon
 });
 
 
@@ -99,7 +120,7 @@ const saveTimeout = 30000; // After this many milliseconds without changes, save
 const allElements = new ElementStorage();
 const osmConnection = new OsmConnection(dryRun);
 const changes = new Changes(
-    "Beantwoorden van vragen met #MapComplete voor vragenset #" + questSetToRender.name,
+    "Beantwoorden van vragen met #MapComplete voor vragenset #" + layoutToUse.name,
     osmConnection, allElements);
 const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
     locationControl.map((location) => {
@@ -119,21 +140,6 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 ));
 
 
-// ------------- Tie together user settings and UI -----------
-
-
-const picturesPrefName = "mapcomplete-pictures-license";
-preferedPictureLicense.addCallback((license) => {
-    osmConnection.SetPreference(picturesPrefName, license);
-});
-
-osmConnection.preferences.addCallback((prefs) => {
-    if (prefs[picturesPrefName] !== undefined) {
-        preferedPictureLicense.setData(prefs[picturesPrefName]);
-    }
-})
-
-
 // ------------- Setup the layers -------------------------------
 
 const addButtons: {
@@ -148,7 +154,7 @@ const flayers: FilteredLayer[] = []
 
 let minZoom = 0;
 
-for (const layer of questSetToRender.layers) {
+for (const layer of layoutToUse.layers) {
 
     const generateInfo = (tagsES) => {
 
@@ -157,15 +163,13 @@ for (const layer of questSetToRender.layers) {
             layer.title,
             layer.elementsToShow,
             changes,
-            osmConnection.userDetails,
-            preferedPictureLicense
+            osmConnection.userDetails
         )
     };
 
     minZoom = Math.max(minZoom, layer.minzoom);
-    
-    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement,
-        generateInfo);
+
+    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
     const addButton = {
         name: layer.name,
@@ -199,7 +203,7 @@ new StrayClickHandler(bm, selectedElement, leftMessage, () => {
  */
 selectedElement.addCallback((data) => {
     // Which is the applicable set?
-    for (const layer of questSetToRender.layers) {
+    for (const layer of layoutToUse.layers) {
 
         const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
         if (applicable) {
@@ -210,8 +214,7 @@ selectedElement.addCallback((data) => {
                     layer.title,
                     layer.elementsToShow,
                     changes,
-                    osmConnection.userDetails,
-                    preferedPictureLicense
+                    osmConnection.userDetails
                 ));
             break;
         }
@@ -234,12 +237,12 @@ new CollapseButton("messagesbox")
 var welcomeMessage = () => {
     return new VariableUiElement(
         osmConnection.userDetails.map((userdetails) => {
-            var login = questSetToRender.gettingStartedPlzLogin;
+            var login = layoutToUse.gettingStartedPlzLogin;
             if (userdetails.loggedIn) {
-                login = questSetToRender.welcomeBackMessage;
+                login = layoutToUse.welcomeBackMessage;
             }
             return "<div id='welcomeMessage'>" +
-                questSetToRender.welcomeMessage + login + questSetToRender.welcomeTail+
+                layoutToUse.welcomeMessage + login + layoutToUse.welcomeTail +
                 "</div>";
         }),
         function () {

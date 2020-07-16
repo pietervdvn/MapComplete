@@ -1,13 +1,15 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Tag} from "../../Logic/TagsFilter";
 import * as L from "leaflet";
-import FixedName from "../Questions/FixedName";
 import BikeStationChain from "../Questions/BikeStationChain";
 import BikeStationPumpTools from "../Questions/BikeStationPumpTools";
 import BikeStationStand from "../Questions/BikeStationStand";
 import PumpManual from "../Questions/PumpManual";
 import BikeStationOperator from "../Questions/BikeStationOperator";
 import BikeStationBrand from "../Questions/BikeStationBrand";
+import FixedText from "../Questions/FixedText";
+import {BikePumpManometer} from "../Questions/BikePumpManometer";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export default class BikeServices extends LayerDefinition {
     constructor() {
@@ -27,12 +29,22 @@ export default class BikeServices extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedName("Bike station");
+        this.title = new FixedText("Bike station");
+
+        const pump = new Tag("service:bicycle:pump", "yes");
+
         this.elementsToShow = [
+
+            new ImageCarouselWithUploadConstructor(),
+
+
             new BikeStationPumpTools(),
             new BikeStationChain().OnlyShowIf(new Tag("service:bicycle:tools", "yes")),
             new BikeStationStand().OnlyShowIf(new Tag("service:bicycle:tools", "yes")),
-            new PumpManual().OnlyShowIf(new Tag("service:bicycle:pump", "yes")),
+
+            new PumpManual().OnlyShowIf(pump),
+            new BikePumpManometer().OnlyShowIf(pump),
+
             new BikeStationOperator(),
             new BikeStationBrand()
         ];

@@ -1,6 +1,6 @@
 import { TagRenderingOptions } from "../TagRendering";
 
-export default class FixedName extends TagRenderingOptions {
+export default class FixedText extends TagRenderingOptions {
     constructor(category: string) {
         super({
             mappings: [

@@ -94,3 +94,6 @@ Trash icon by Dave Gandy, CC-BY-SA
  	
 https://commons.wikimedia.org/wiki/File:Home-icon.svg
 Home icon by Timothy Miller, CC-BY-SA 3.0
+
+https://commons.wikimedia.org/wiki/File:Map_icons_by_Scott_de_Jonge_-_bicycle-store.svg
+Bicycle logo,  	Scott de Jonge

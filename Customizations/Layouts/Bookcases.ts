@@ -23,5 +23,6 @@ export class Bookcases extends Layout{
             "            </a> of door je " +
             "            <span onclick=\"authOsm()\" class=\"activate-osm-authentication\">aan te melden</span>.</p>",
             "Klik op een boekenruilkastje om vragen te beantwoorden");
+        this.locationContains= ["Bookcases.html", "Bookcase.html","bookcase"]
     }
 }

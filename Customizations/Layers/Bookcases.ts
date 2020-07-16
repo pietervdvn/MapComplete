@@ -145,7 +145,7 @@ export class Bookcases extends LayerDefinition {
             new TagRenderingOptions({
                 freeform: {
                     key: "description",
-                    renderTemplate: "<b>Beschrijving door de uitbater</b><br>{description}",
+                    renderTemplate: "<b>Beschrijving door de uitbater:</b><br>{description}",
                     template: "$$$",
                 }
             })

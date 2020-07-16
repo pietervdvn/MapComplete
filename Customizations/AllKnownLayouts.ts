@@ -5,13 +5,14 @@ import {Statues} from "./Layouts/Statues";
 import {Bookcases} from "./Layouts/Bookcases";
 import Cyclofix from "./Layouts/Cyclofix";
 import {All} from "./Layouts/All";
+import {Layout} from "./Layout";
 
 export class AllKnownLayouts {
     public static allSets: any = AllKnownLayouts.AllLayouts();
 
-    private static AllLayouts() {
+    private static AllLayouts() : any{
         const all = new All();
-        const layouts = [
+        const layouts : Layout[] = [
             new Groen(),
             new GRB(),
             new Cyclofix(),

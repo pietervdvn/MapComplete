@@ -7,6 +7,7 @@ import {TagRenderingOptions} from "../TagRendering";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class Bos extends LayerDefinition {
 
@@ -33,6 +34,7 @@ export class Bos extends LayerDefinition {
         this.style = this.generateStyleFunction();
         this.title = new NameInline("bos");
         this.elementsToShow = [
+            new ImageCarouselWithUploadConstructor(),
             new NameQuestion(),
             new AccessTag(),
             new OperatorTag(),

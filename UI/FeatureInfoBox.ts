@@ -15,29 +15,25 @@ import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
 export class FeatureInfoBox extends UIElement {
 
     private _tagsES: UIEventSource<any>;
+    private _changes: Changes;
+    private _userDetails: UIEventSource<UserDetails>;
 
 
     private _title: UIElement;
     private _osmLink: UIElement;
-
-
-    private _questions: QuestionPicker;
-
-    private _changes: Changes;
-    private _userDetails: UIEventSource<UserDetails>;
-    private _imageElement: ImageCarousel;
-    private _pictureUploader: UIElement;
     private _wikipedialink: UIElement;
-    private _infoboxes: TagDependantUIElement[];
 
+
+    
+    private _infoboxes: TagDependantUIElement[];
+    private _questions: QuestionPicker;
 
     constructor(
         tagsES: UIEventSource<any>,
         title: TagRenderingOptions,
         elementsToShow: TagRenderingOptions[],
         changes: Changes,
-        userDetails: UIEventSource<UserDetails>,
-        preferedPictureLicense: UIEventSource<string>
+        userDetails: UIEventSource<UserDetails>
     ) {
         super(tagsES);
         this._tagsES = tagsES;
@@ -45,9 +41,9 @@ export class FeatureInfoBox extends UIElement {
         this._userDetails = userDetails;
         this.ListenTo(userDetails);
 
-        this._imageElement = new ImageCarousel(this._tagsES, changes);
-
+        
         this._infoboxes = [];
+        elementsToShow = elementsToShow ?? []
         for (const tagRenderingOption of elementsToShow) {
             this._infoboxes.push(
                 tagRenderingOption.construct(this._tagsES, this._changes));
@@ -60,11 +56,9 @@ export class FeatureInfoBox extends UIElement {
         )
 
         this._title = new TagRenderingOptions(title.options).construct(this._tagsES, this._changes);
-
         this._osmLink =new OsmLink().construct(this._tagsES, this._changes);
         this._wikipedialink = new WikipediaLink().construct(this._tagsES, this._changes);
-        this._pictureUploader = new OsmImageUploadHandler(tagsES, userDetails, preferedPictureLicense,
-            changes, this._imageElement.slideshow).getUI();
+    
 
     }
 
@@ -110,10 +104,6 @@ export class FeatureInfoBox extends UIElement {
             "</div>" +
 
             "<div class='infoboxcontents'>" +
-
-            this._imageElement.Render() +
-            this._pictureUploader.Render() +
-
             new VerticalCombine(info, "infobox-information ").Render() +
 
             questionsHtml +
@@ -126,8 +116,6 @@ export class FeatureInfoBox extends UIElement {
 
     Activate() {
         super.Activate();
-        this._imageElement.Activate();
-        this._pictureUploader.Activate();
         for (const infobox of this._infoboxes) {
             infobox.Activate();
         }
@@ -135,8 +123,6 @@ export class FeatureInfoBox extends UIElement {
 
     Update() {
         super.Update();
-        this._imageElement.Update();
-        this._pictureUploader.Update();
         this._title.Update();
         for (const infobox of this._infoboxes) {
             infobox.Update();

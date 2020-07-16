@@ -2,13 +2,15 @@ import {Layout} from "../Layout";
 import {GrbToFix} from "../Layers/GrbToFix";
 import { BikeParkings } from "../Layers/BikeParkings";
 import BikeServices from "../Layers/BikeServices";
+import {GhostBike} from "../Layers/GhostBike";
 
 export default class Cyclofix extends Layout {
     constructor() {
         super(
             "pomp",
             "Cyclofix bicycle infrastructure",
-            [new BikeParkings(), new BikeServices()],
+       //     [new BikePumps()],
+            [new GhostBike(), new BikeParkings(), new BikeServices()],
             16,
             50.8465573,
             4.3516970,

@@ -47,5 +47,7 @@ export class Groen extends Layout {
             "Als je inlogt, komt er een tweede cookie bij met je inloggegevens." +
             "</small>"
         );
+        
+        this.locationContains = ["buurtnatuur.be"]
     }
 }

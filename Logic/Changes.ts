@@ -13,7 +13,7 @@ export class Changes {
 
     private static _nextId = -1; // New assined ID's are negative
 
-    private readonly login: OsmConnection;
+    public readonly login: OsmConnection;
     public readonly _allElements: ElementStorage;
 
     private _pendingChanges: { elementId: string, key: string, value: string }[] = []; // Gets reset on uploadAll

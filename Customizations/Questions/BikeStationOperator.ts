@@ -15,6 +15,7 @@ export default class BikeStationOperator extends TagRenderingOptions {
             {k: new Tag("operator", "KU Leuven"), txt: "KU Leuven"},
             {k: new Tag("operator", "Stad Halle"), txt: "Stad Halle"},
             {k: new Tag("operator", "Saint Gilles - Sint Gillis"), txt: "Saint Gilles - Sint Gillis"},
+            {k: new Tag("operator", "Jette"), txt: "Jette"},
             {k: new Tag("operator", "private"), txt: "Beheer door een privépersoon"}
         ]
     }

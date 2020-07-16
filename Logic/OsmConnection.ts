@@ -13,7 +13,6 @@ export class UserDetails {
     public osmConnection: OsmConnection;
     public dryRun: boolean;
     home: { lon: number; lat: number };
-
 }
 
 export class OsmConnection {
@@ -121,6 +120,29 @@ export class OsmConnection {
     }
 
     public preferences = new UIEventSource<any>({});
+    public preferenceSources : any = {}
+    
+    public GetPreference(key: string) : UIEventSource<string>{
+        if(this.preferenceSources[key] !== undefined){
+            return this.preferenceSources[key];
+        }
+        this.UpdatePreferences();
+        console.log("Getting preference object", key, "currently upstreamed as ",this.preferences.data[key]  );
+        const pref = new UIEventSource<string>(this.preferences.data[key]);
+        pref.addCallback((v) => {
+            this.SetPreference(key, v);
+        });
+
+        this.preferences.addCallback((prefs) => {
+            if (prefs[key] !== undefined) {
+                pref.setData(prefs[key]);
+            }
+        });
+        
+        this.preferenceSources[key] = pref;
+        return pref;
+    }
+    
     private UpdatePreferences() {
         const self = this;
         this.auth.xhr({
@@ -142,13 +164,14 @@ export class OsmConnection {
         });
     }
     
-    public SetPreference(k:string, v:string) {
+    private SetPreference(k:string, v:string) {
         if(!this.userDetails.data.loggedIn){
             console.log("Not saving preference: user not logged in");
             return;
         }
 
         if (this.preferences.data[k] === v) {
+            console.log("Not updating preference", k, " to ", v, "not changed");
             return;
         }
         console.log("Updating preference", k, " to ", v);
@@ -166,7 +189,7 @@ export class OsmConnection {
                 return;
             }
             
-            console.log("Preference written!", result);
+            console.log("Preference written!", result == "" ? "OK" : result);
             
         });
     }
