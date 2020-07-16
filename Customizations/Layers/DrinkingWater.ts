@@ -1,11 +1,10 @@
-import { LayerDefinition } from "../LayerDefinition";
-import { And, Or, Tag } from "../../Logic/TagsFilter";
-import { OperatorTag } from "../Questions/OperatorTag";
+import {LayerDefinition} from "../LayerDefinition";
+import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {OperatorTag} from "../Questions/OperatorTag";
 import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
-import { BikeParkingType } from "../Questions/BikeParkingType";
-import { TagRenderingOptions } from "../TagRendering";
-import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
+import {TagRenderingOptions} from "../TagRendering";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class DrinkingWaterLayer extends LayerDefinition {
 
@@ -31,7 +30,6 @@ export class DrinkingWaterLayer extends LayerDefinition {
         this.title = new FixedText("Drinking water");
         this.elementsToShow = [
             new OperatorTag(),
-            new BikeParkingType()
         ];
         this.elementsToShow = [new ImageCarouselWithUploadConstructor(), new TagRenderingOptions({
             question: "How easy is it to fill water bottles?",

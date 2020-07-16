@@ -8,7 +8,7 @@ export class WalkByBrussels extends Layout {
     constructor() {
         super("walkbybrussels",
             "Drinking Water Spots",
-            [new DrinkingWaterLayer(), new BikeParkings(), new Park(), new NatureReserves()],
+            [new DrinkingWaterLayer(), new Park(), new NatureReserves()],
             10,
             50.8435,
             4.3688,
