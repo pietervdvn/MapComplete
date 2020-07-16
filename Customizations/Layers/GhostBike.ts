@@ -58,7 +58,7 @@ export class GhostBike extends LayerDefinition {
             return {
                 color: "#000000",
                 icon: L.icon({
-                    iconUrl: 'assets/ghost_bike.svg',
+                    iconUrl: 'assets/bike/ghost.svg',
                     iconSize: [40, 40],
                     iconAnchor: [20, 20],
                 })
