@@ -1,20 +1,19 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Tag, TagsFilter} from "../../Logic/TagsFilter";
 import * as L from "leaflet";
-import BikeStationChain from "../Questions/BikeStationChain";
-import BikeStationPumpTools from "../Questions/BikeStationPumpTools";
-import BikeStationStand from "../Questions/BikeStationStand";
-import PumpManual from "../Questions/PumpManual";
-import BikeStationOperator from "../Questions/BikeStationOperator";
-import BikeStationBrand from "../Questions/BikeStationBrand";
+import BikeStationChain from "../Questions/bike/StationChain";
+import BikeStationPumpTools from "../Questions/bike/StationPumpTools";
+import BikeStationStand from "../Questions/bike/StationStand";
+import PumpManual from "../Questions/bike/PumpManual";
+import BikeStationOperator from "../Questions/bike/StationOperator";
+import BikeStationBrand from "../Questions/bike/StationBrand";
 import FixedText from "../Questions/FixedText";
-import {BikePumpManometer} from "../Questions/BikePumpManometer";
+import PumpManometer from "../Questions/bike/PumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import {BikePumpOperationalStatus} from "../Questions/BikePumpOperationalStatus";
-
-export default class BikeServices extends LayerDefinition {
+import BikePumpOperationalStatus from "../Questions/bike/PumpOperationalStatus";
 
 
+export default class BikeStations extends LayerDefinition {
     private readonly pump: TagsFilter = new Tag("service:bicycle:pump", "yes");
     private readonly tools: TagsFilter = new Tag("service:bicycle:tools", "yes");
 
@@ -37,24 +36,20 @@ export default class BikeServices extends LayerDefinition {
         this.style = this.generateStyleFunction();
         this.title = new FixedText("Bike station");
 
-
         this.elementsToShow = [
-
             new ImageCarouselWithUploadConstructor(),
-
 
             new BikeStationPumpTools(),
             new BikeStationChain().OnlyShowIf(this.tools),
             new BikeStationStand().OnlyShowIf(this.tools),
 
             new PumpManual().OnlyShowIf(this.pump),
-            new BikePumpManometer().OnlyShowIf(this.pump),
+            new PumpManometer().OnlyShowIf(this.pump),
             new BikePumpOperationalStatus().OnlyShowIf(this.pump),
 
             new BikeStationOperator(),
-            new BikeStationBrand()
+            // new BikeStationBrand()   DISABLED
         ];
-
     }
 
     private generateStyleFunction() {
@@ -65,7 +60,7 @@ export default class BikeServices extends LayerDefinition {
             const iconUrl = onlyPump ? "./assets/pump.svg" : "./assets/wrench.svg"
             return {
                 color: "#00bb00",
-                icon: new L.icon({
+                icon: L.icon({
                     iconUrl: iconUrl,
                     iconSize: [40, 40]
                 })

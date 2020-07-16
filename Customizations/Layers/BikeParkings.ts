@@ -3,7 +3,7 @@ import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
 import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
-import { BikeParkingType } from "../Questions/BikeParkingType";
+import { BikeParkingType } from "../Questions/bike/ParkingType";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class BikeParkings extends LayerDefinition {

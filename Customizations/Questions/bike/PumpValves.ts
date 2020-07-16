@@ -1,7 +1,8 @@
-import {TagRenderingOptions} from "../TagRendering";
-import {Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../../TagRendering";
+import {Tag} from "../../../Logic/TagsFilter";
 
-export class BikePumpValves extends TagRenderingOptions{
+
+export class PumpValves extends TagRenderingOptions{
     constructor() {
         super({
             question: "What valves are supported?",
