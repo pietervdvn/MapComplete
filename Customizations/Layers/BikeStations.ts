@@ -10,7 +10,8 @@ import BikeStationBrand from "../Questions/bike/StationBrand";
 import FixedText from "../Questions/FixedText";
 import PumpManometer from "../Questions/bike/PumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import BikePumpOperationalStatus from "../Questions/bike/PumpOperationalStatus";
+import PumpOperationalStatus from "../Questions/bike/PumpOperationalStatus";
+import PumpValves from "../Questions/bike/PumpValves";
 
 
 export default class BikeStations extends LayerDefinition {
@@ -45,7 +46,8 @@ export default class BikeStations extends LayerDefinition {
 
             new PumpManual().OnlyShowIf(this.pump),
             new PumpManometer().OnlyShowIf(this.pump),
-            new BikePumpOperationalStatus().OnlyShowIf(this.pump),
+            new PumpValves().OnlyShowIf(this.pump),
+            new PumpOperationalStatus().OnlyShowIf(this.pump),
 
             new BikeStationOperator(),
             // new BikeStationBrand()   DISABLED

@@ -2,7 +2,7 @@ import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
 
 
-export class PumpValves extends TagRenderingOptions{
+export default class PumpValves extends TagRenderingOptions{
     constructor() {
         super({
             question: "What valves are supported?",
