@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Tag, TagsFilter} from "../../Logic/TagsFilter";
+import {And, Tag, TagsFilter, Or} from "../../Logic/TagsFilter";
 import * as L from "leaflet";
 import BikeStationChain from "../Questions/bike/StationChain";
 import BikeStationPumpTools from "../Questions/bike/StationPumpTools";
@@ -15,9 +15,10 @@ import PumpValves from "../Questions/bike/PumpValves";
 
 
 export default class BikeStations extends LayerDefinition {
-    private readonly pump: TagsFilter = new Tag("service:bicycle:pump", "yes");
-    private readonly pumpOperational: TagsFilter = new Tag("service:bicycle:pump:operational_status", "yes");
-    private readonly tools: TagsFilter = new Tag("service:bicycle:tools", "yes");
+    private readonly pump = new Tag("service:bicycle:pump", "yes");
+    private readonly pumpOperationalAny = new Tag("service:bicycle:pump:operational_status", "yes");
+    private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok")]);
+    private readonly tools = new Tag("service:bicycle:tools", "yes");
 
     constructor() {
         super();
@@ -59,7 +60,7 @@ export default class BikeStations extends LayerDefinition {
         const self = this;
         return function (properties: any) {
             const hasPump = self.pump.matchesProperties(properties)
-            const isOperational = self.pumpOperational.matchesProperties(properties)
+            const isOperational = !self.pumpOperationalAny.matchesProperties(properties) || self.pumpOperationalOk.matchesProperties(properties)
             const hasTools = self.tools.matchesProperties(properties)
             let iconName = ""
             if (hasPump) {
