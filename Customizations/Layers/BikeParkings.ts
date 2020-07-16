@@ -36,7 +36,7 @@ export default class BikeParkings extends LayerDefinition {
                 color: "#00bb00",
                 icon: L.icon({
                     iconUrl: self.icon,
-                    iconSize: [40, 40]
+                    iconSize: [50, 50]
                 })
             };
         };
