@@ -3,8 +3,6 @@ import {Tag} from "../../Logic/TagsFilter";
 
 
 export class BikeParkingType extends TagRenderingOptions {
-
-
     private static options = {
         priority: 5,
         question: "Van welk type is deze fietsenparking?",
@@ -27,5 +25,4 @@ export class BikeParkingType extends TagRenderingOptions {
     constructor() {
         super(BikeParkingType.options);
     }
-
 }
