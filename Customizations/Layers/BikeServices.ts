@@ -11,6 +11,7 @@ import FixedText from "../Questions/FixedText";
 import {BikePumpManometer} from "../Questions/BikePumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {BikePumpOperationalStatus} from "../Questions/BikePumpOperationalStatus";
+import {BikePumpValves} from "../Questions/BikePumpValves";
 
 export default class BikeServices extends LayerDefinition {
 
@@ -49,6 +50,7 @@ export default class BikeServices extends LayerDefinition {
 
             new PumpManual().OnlyShowIf(this.pump),
             new BikePumpManometer().OnlyShowIf(this.pump),
+            new BikePumpValves().OnlyShowIf(this.pump),
             new BikePumpOperationalStatus().OnlyShowIf(this.pump),
 
             new BikeStationOperator(),
