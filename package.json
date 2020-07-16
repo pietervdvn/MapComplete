@@ -4,8 +4,8 @@
   "description": "A small website to edit OSM easily",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html land.html test.html assets/test.json assets/* UI/* Logic/* vendor/*",
-    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/*",
+    "start": "parcel index.html land.html test.html assets/test.json assets/**/* UI/* Logic/* vendor/*",
+    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/* assets/*/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

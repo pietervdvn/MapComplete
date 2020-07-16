@@ -1,8 +1,8 @@
-import {TagDependantUIElement} from "../UIElementConstructor";
-import {TagRenderingOptions} from "../TagRendering";
-import {Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../../TagRendering";
+import {Tag} from "../../../Logic/TagsFilter";
 
-export class BikePumpOperationalStatus extends TagRenderingOptions{
+
+export default class PumpOperational extends TagRenderingOptions {
     constructor() {
         super({
             question: "Is the bicycle pump still operational?",

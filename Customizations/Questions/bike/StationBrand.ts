@@ -1,6 +1,10 @@
-import {TagRenderingOptions} from "../TagRendering";
-import {Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../../TagRendering";
+import {Tag} from "../../../Logic/TagsFilter";
 
+
+/**
+ * Currently not used in Cyclofix because it's a little vague
+ */
 export default class BikeStationBrand extends TagRenderingOptions {
     private static options = {
         priority: 15,
@@ -17,6 +21,7 @@ export default class BikeStationBrand extends TagRenderingOptions {
     }
 
     constructor() {
+        throw Error('BikeStationBrand disabled')
         super(BikeStationBrand.options);
     }
 }

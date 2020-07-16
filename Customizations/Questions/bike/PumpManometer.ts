@@ -1,8 +1,8 @@
-import {TagRenderingOptions} from "../TagRendering";
-import {Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../../TagRendering";
+import {Tag} from "../../../Logic/TagsFilter";
 
-export class BikePumpManometer extends TagRenderingOptions{
 
+export default class PumpManometer extends TagRenderingOptions {
     constructor() {
         super({
             question: "Does the pump have a pressure indicator or manometer?",
@@ -11,10 +11,6 @@ export class BikePumpManometer extends TagRenderingOptions{
                 {k: new Tag("manometer","broken"), txt: "Yes, but it is broken"},
                 {k: new Tag("manometer", "yes"), txt: "No"}
             ]
-
-        });
-        
+        });   
     }
-
-
 }

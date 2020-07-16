@@ -1,16 +1,15 @@
 import {Layout} from "../Layout";
-import {GrbToFix} from "../Layers/GrbToFix";
-import { BikeParkings } from "../Layers/BikeParkings";
-import BikeServices from "../Layers/BikeServices";
+import BikeParkings from "../Layers/BikeParkings";
+import BikeServices from "../Layers/BikeStations";
 import {GhostBike} from "../Layers/GhostBike";
+
 
 export default class Cyclofix extends Layout {
     constructor() {
         super(
             "pomp",
             "Cyclofix bicycle infrastructure",
-       //     [new BikePumps()],
-            [new GhostBike(), new BikeParkings(), new BikeServices()],
+            [new GhostBike(), new BikeServices(), new BikeParkings()],
             16,
             50.8465573,
             4.3516970,
@@ -18,7 +17,7 @@ export default class Cyclofix extends Layout {
 
             "<h3>Cyclofix bicycle infrastructure</h3>\n" +
             "\n" +
-            "<p><b>EN&gt;</b> On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels." + 
+            "<p><b>EN&gt;</b> On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels." +
             "As a result, cyclists will be able to quickly find the nearest infrastructure for their needs.</p>" +
             "<p><b>NL&gt;</b> Op deze kaart willen we gegevens verzamelen over de locatie van fietspompen en openbare stelplaatsen in Brussel." +
             "Hierdoor kunnen fietsers snel de dichtstbijzijnde infrastructuur vinden die voldoet aan hun behoeften.</p>" +
