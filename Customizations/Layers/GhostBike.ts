@@ -18,6 +18,39 @@ export class GhostBike extends LayerDefinition {
                 " in the form of a white bicycle placed permanently near the accident location."),
             new ImageCarouselWithUploadConstructor(),
 
+            new TagRenderingOptions({
+                question: "Whom is remembered by this ghost bike?" +
+                    "<span class='question-subtext'>" +
+                    "<br/>" +
+                    "Please respect privacy - only fill out the name if it is widely published or marked on the cycle." +
+                    "</span>",
+                mappings: [{k: new Tag("noname", "yes"), txt: "There is no name marked on the bike"},],
+                freeform: {
+                    key: "name",
+                    extraTags: new Tag("noname", ""),
+                    template: "$$$",
+                    renderTemplate: "In the remembrance of <b>{name}</b>",
+                }
+            }),
+            new TagRenderingOptions({
+                question: "When was the ghost bike installed?",
+                freeform: {
+                    key: "start_date",
+                    template: "The ghost bike was placed on $$$", // TODO create a date picker
+                    renderTemplate: "The ghost bike was placed on <b>{start_date}</b>",
+                }
+            }),
+            new TagRenderingOptions({
+                question: "On what URL can more information be found?" +
+                    "<span class='question-subtext'>If available, add a link to a news report about the accident or about the placing of the ghost bike</span>",
+                freeform: {
+                    key: "source",
+                    template: "More information available on $$$",
+                    renderTemplate: "<a href='{source}' target='_blank'>More information</a>",
+                }
+            }),
+
+            
 
         ];
 

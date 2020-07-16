@@ -80,7 +80,7 @@ if (window.location.search) {
 }
 
 if (paramDict.layout) {
-    defaultLayout = paramDict.quests
+    defaultLayout = paramDict.layout
 }
 
 if (paramDict.test) {
