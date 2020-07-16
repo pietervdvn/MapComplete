@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Tag} from "../../Logic/TagsFilter";
+import {And, Tag, TagsFilter} from "../../Logic/TagsFilter";
 import * as L from "leaflet";
 import BikeStationChain from "../Questions/BikeStationChain";
 import BikeStationPumpTools from "../Questions/BikeStationPumpTools";
@@ -10,8 +10,14 @@ import BikeStationBrand from "../Questions/BikeStationBrand";
 import FixedText from "../Questions/FixedText";
 import {BikePumpManometer} from "../Questions/BikePumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import {BikePumpOperationalStatus} from "../Questions/BikePumpOperationalStatus";
 
 export default class BikeServices extends LayerDefinition {
+
+
+    private readonly pump: TagsFilter = new Tag("service:bicycle:pump", "yes");
+    private readonly tools: TagsFilter = new Tag("service:bicycle:tools", "yes");
+
     constructor() {
         super();
         this.name = "bike station or pump";
@@ -31,7 +37,6 @@ export default class BikeServices extends LayerDefinition {
         this.style = this.generateStyleFunction();
         this.title = new FixedText("Bike station");
 
-        const pump = new Tag("service:bicycle:pump", "yes");
 
         this.elementsToShow = [
 
@@ -39,11 +44,12 @@ export default class BikeServices extends LayerDefinition {
 
 
             new BikeStationPumpTools(),
-            new BikeStationChain().OnlyShowIf(new Tag("service:bicycle:tools", "yes")),
-            new BikeStationStand().OnlyShowIf(new Tag("service:bicycle:tools", "yes")),
+            new BikeStationChain().OnlyShowIf(this.tools),
+            new BikeStationStand().OnlyShowIf(this.tools),
 
-            new PumpManual().OnlyShowIf(pump),
-            new BikePumpManometer().OnlyShowIf(pump),
+            new PumpManual().OnlyShowIf(this.pump),
+            new BikePumpManometer().OnlyShowIf(this.pump),
+            new BikePumpOperationalStatus().OnlyShowIf(this.pump),
 
             new BikeStationOperator(),
             new BikeStationBrand()
@@ -54,7 +60,8 @@ export default class BikeServices extends LayerDefinition {
     private generateStyleFunction() {
         const self = this;
         return function (properties: any) {
-            const onlyPump = properties["service:bicycle:tools"] == "no" && properties["service:bicycle:pump"] == "yes";
+            const onlyPump = self.pump.matchesProperties(properties) &&
+                !self.tools.matchesProperties(properties)
             const iconUrl = onlyPump ? "./assets/pump.svg" : "./assets/wrench.svg"
             return {
                 color: "#00bb00",
