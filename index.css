@@ -610,7 +610,7 @@ form {
     border: solid black 1px;
     margin-left: 1em;
     top: 0.2em;
-    position: absolute;
+    vertical-align: middle;
 
 }
 
