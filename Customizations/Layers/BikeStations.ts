@@ -10,12 +10,13 @@ import BikeStationBrand from "../Questions/bike/StationBrand";
 import FixedText from "../Questions/FixedText";
 import PumpManometer from "../Questions/bike/PumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import PumpOperationalStatus from "../Questions/bike/PumpOperationalStatus";
+import PumpOperational from "../Questions/bike/PumpOperational";
 import PumpValves from "../Questions/bike/PumpValves";
 
 
 export default class BikeStations extends LayerDefinition {
     private readonly pump: TagsFilter = new Tag("service:bicycle:pump", "yes");
+    private readonly pumpOperational: TagsFilter = new Tag("service:bicycle:pump:operational_status", "yes");
     private readonly tools: TagsFilter = new Tag("service:bicycle:tools", "yes");
 
     constructor() {
@@ -47,7 +48,7 @@ export default class BikeStations extends LayerDefinition {
             new PumpManual().OnlyShowIf(this.pump),
             new PumpManometer().OnlyShowIf(this.pump),
             new PumpValves().OnlyShowIf(this.pump),
-            new PumpOperationalStatus().OnlyShowIf(this.pump),
+            new PumpOperational().OnlyShowIf(this.pump),
 
             new BikeStationOperator(),
             // new BikeStationBrand()   DISABLED
@@ -57,9 +58,24 @@ export default class BikeStations extends LayerDefinition {
     private generateStyleFunction() {
         const self = this;
         return function (properties: any) {
-            const onlyPump = self.pump.matchesProperties(properties) &&
-                !self.tools.matchesProperties(properties)
-            const iconUrl = onlyPump ? "./assets/pump.svg" : "./assets/wrench.svg"
+            const hasPump = self.pump.matchesProperties(properties)
+            const isOperational = self.pumpOperational.matchesProperties(properties)
+            const hasTools = self.tools.matchesProperties(properties)
+            let iconName = ""
+            if (hasPump) {
+                if (hasTools) {
+                    iconName = "repair_station_pump.svg"
+                } else {
+                    if (isOperational) {
+                        iconName = "pump.svg"
+                    } else {
+                        iconName = "pump_broken.svg"
+                    }
+                }
+            } else {
+                iconName = "repair_station.svg"
+            }
+            const iconUrl = `./assets/bike/${iconName}`
             return {
                 color: "#00bb00",
                 icon: L.icon({

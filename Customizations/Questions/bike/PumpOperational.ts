@@ -2,7 +2,7 @@ import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
 
 
-export default class PumpOperationalStatus extends TagRenderingOptions{
+export default class PumpOperational extends TagRenderingOptions {
     constructor() {
         super({
             question: "Is the bicycle pump still operational?",
