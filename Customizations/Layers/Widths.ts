@@ -63,9 +63,15 @@ export class Widths extends LayerDefinition {
         let onewayBike = properties["oneway:bicycle"] === "yes" ||
             (onewayCar && properties["oneway:bicycle"] === undefined)
 
+        let cyclingAllowed = 
+            !(properties.bicycle === "use_sidepath"
+           || properties.bicycle === "no");
 
         let carWidth = (onewayCar ? 1 : 2) * this.carWidth;
-        let cyclistWidth = (onewayBike ? 1 : 2) * this.cyclistWidth;
+        let cyclistWidth = 0;
+        if (cyclingAllowed) {
+            cyclistWidth = (onewayBike ? 1 : 2) * this.cyclistWidth;
+        }
 
         const width = parseFloat(properties["width:carriageway"]);
 
@@ -83,6 +89,7 @@ export class Widths extends LayerDefinition {
             targetWidth: targetWidth,
             onewayBike: onewayBike,
             pedestrianFlowNeeded: pedestrianFlowNeeded,
+            cyclingAllowed: cyclingAllowed
         }
     }
 
@@ -122,7 +129,7 @@ export class Widths extends LayerDefinition {
             if (props.pedestrianFlowNeeded > 0) {
                 c = "#fa0"
             }
-            if (props.width >= props.targetWidth) {
+            if (props.width >= props.targetWidth || !props.cyclingAllowed) {
                 c = "#0c0";
             }
 
@@ -197,6 +204,14 @@ export class Widths extends LayerDefinition {
 
             new TagRenderingOptions({
                 mappings: [
+                    {
+                        k: new Tag("bicycle", "use_sidepath"),
+                        txt: "Er is een afgescheiden, verplicht te gebruiken fietspad. Fietsen op dit wegsegment hoeft dus niet"
+                    },
+                    {
+                        k: new Tag("bicycle", "no"),
+                        txt: "Fietsen is hier niet toegestaan"
+                    },
                     {
                         k: new Tag("oneway:bicycle", "yes"),
                         txt: "Eenrichtingsverkeer, óók voor fietsers. Dit gebruikt <b>" + r(this.carWidth + this.cyclistWidth) + "m</b>"
