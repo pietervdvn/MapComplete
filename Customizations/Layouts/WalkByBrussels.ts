@@ -1,5 +1,5 @@
 import { Layout } from "../Layout";
-import { DrinkingWaterLayer } from "../Layers/DrinkingWater";
+import { DrinkingWater } from "../Layers/DrinkingWater";
 import { NatureReserves } from "../Layers/NatureReserves";
 import { Park } from "../Layers/Park";
 
@@ -7,7 +7,7 @@ export class WalkByBrussels extends Layout {
     constructor() {
         super("walkbybrussels",
             "Drinking Water Spots",
-            [new DrinkingWaterLayer(), new Park(), new NatureReserves()],
+            [new DrinkingWater(), new Park(), new NatureReserves()],
             10,
             50.8435,
             4.3688,

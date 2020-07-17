@@ -4,6 +4,9 @@ import {TagRenderingOptions} from "../TagRendering";
 export class WikipediaLink extends TagRenderingOptions {
 
     private static FixLink(value: string): string {
+        if (value === undefined) {
+            return undefined;
+        }
         // @ts-ignore
         if (value.startsWith("https")) {
             return value;
@@ -20,6 +23,11 @@ export class WikipediaLink extends TagRenderingOptions {
     static options = {
         priority: 10,
         // question: "Wat is het overeenstemmende wkipedia-artikel?",
+        tagsPreprocessor: (tags) => {
+            if (tags.wikipedia !== undefined) {
+                tags.wikipedia = WikipediaLink.FixLink(tags.wikipedia);
+            }
+        },
         freeform: {
             key: "wikipedia",
             template: "$$$",
@@ -28,19 +36,8 @@ export class WikipediaLink extends TagRenderingOptions {
                 "<a href='{wikipedia}' target='_blank'>" +
                 "<img width='64px' src='./assets/wikipedia.svg' alt='wikipedia'>" +
                 "</a></span>",
-            placeholder: "",
-            tagsPreprocessor: (tags) => {
+            placeholder: ""
 
-                const newTags = {};
-                for (const k in tags) {
-                    if (k === "wikipedia") {
-                        newTags["wikipedia"] = WikipediaLink.FixLink(tags[k]);
-                    } else {
-                        newTags[k] = tags[k];
-                    }
-                }
-                return newTags;
-            }
         },
 
     }

@@ -19,8 +19,8 @@ export class ImageCarouselWithUploadConstructor implements TagDependantUIElement
         return 0;
     }
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new ImageCarouselWithUpload(tags, changes);
+    construct(dependencies): TagDependantUIElement {
+        return new ImageCarouselWithUpload(dependencies);
     }
 }
 

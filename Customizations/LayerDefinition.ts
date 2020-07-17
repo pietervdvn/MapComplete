@@ -56,7 +56,16 @@ export class LayerDefinition {
      */
     elementsToShow: TagDependantUIElementConstructor[];
 
-    style: (tags: any) => { color: string, icon: any };
+    /**
+     * A simple styling for the geojson element
+     * color is the color for areas and ways
+     * icon is the Leaflet icon
+     * Note that this is passed entirely to leaflet, so other leaflet attributes work too
+     */
+    style: (tags: any) => { 
+        color: string, 
+        icon: any ,
+    };
 
     /**
      * If an object of the next layer is contained for this many percent in this feature, it is eaten and not shown

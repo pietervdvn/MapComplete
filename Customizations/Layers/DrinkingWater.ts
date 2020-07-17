@@ -6,7 +6,7 @@ import FixedText from "../Questions/FixedText";
 import {TagRenderingOptions} from "../TagRendering";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
-export class DrinkingWaterLayer extends LayerDefinition {
+export class DrinkingWater extends LayerDefinition {
 
     constructor() {
         super();
@@ -31,7 +31,9 @@ export class DrinkingWaterLayer extends LayerDefinition {
         this.elementsToShow = [
             new OperatorTag(),
         ];
-        this.elementsToShow = [new ImageCarouselWithUploadConstructor(), new TagRenderingOptions({
+        this.elementsToShow = [
+            new ImageCarouselWithUploadConstructor(),
+            new TagRenderingOptions({
             question: "How easy is it to fill water bottles?",
             mappings: [
                 { k: new Tag("bottle", "yes"), txt: "It is easy to refill water bottles" },

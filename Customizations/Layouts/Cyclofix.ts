@@ -2,6 +2,7 @@ import {Layout} from "../Layout";
 import BikeParkings from "../Layers/BikeParkings";
 import BikeServices from "../Layers/BikeStations";
 import {GhostBike} from "../Layers/GhostBike";
+import {DrinkingWater, DrinkingWaterLayer} from "../Layers/DrinkingWater";
 
 
 export default class Cyclofix extends Layout {
@@ -9,7 +10,7 @@ export default class Cyclofix extends Layout {
         super(
             "pomp",
             "Cyclofix bicycle infrastructure",
-            [new GhostBike(), new BikeServices(), new BikeParkings()],
+            [new GhostBike(), new BikeServices(), new BikeParkings(), new DrinkingWater()],
             16,
             50.8465573,
             4.3516970,
