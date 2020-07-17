@@ -41,12 +41,13 @@ export class FeatureInfoBox extends UIElement {
         this._userDetails = userDetails;
         this.ListenTo(userDetails);
 
+        const deps = {tags:this._tagsES , changes:this._changes}
         
         this._infoboxes = [];
         elementsToShow = elementsToShow ?? []
         for (const tagRenderingOption of elementsToShow) {
             this._infoboxes.push(
-                tagRenderingOption.construct(this._tagsES, this._changes));
+                tagRenderingOption.construct(deps));
         }
 
         title = title ?? new TagRenderingOptions(
@@ -55,9 +56,9 @@ export class FeatureInfoBox extends UIElement {
             }
         )
 
-        this._title = new TagRenderingOptions(title.options).construct(this._tagsES, this._changes);
-        this._osmLink =new OsmLink().construct(this._tagsES, this._changes);
-        this._wikipedialink = new WikipediaLink().construct(this._tagsES, this._changes);
+        this._title = new TagRenderingOptions(title.options).construct(deps);
+        this._osmLink =new OsmLink().construct(deps);
+        this._wikipedialink = new WikipediaLink().construct(deps);
     
 
     }

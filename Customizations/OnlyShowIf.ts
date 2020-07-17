@@ -17,9 +17,9 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
         this._embedded = embedded;
     }
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new OnlyShowIf(tags, 
-            this._embedded.construct(tags, changes),
+    construct(dependencies): TagDependantUIElement {
+        return new OnlyShowIf(dependencies.tags, 
+            this._embedded.construct(dependencies),
             this._tagsFilter);
     }
 

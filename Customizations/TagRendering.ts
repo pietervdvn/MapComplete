@@ -86,9 +86,9 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
     }) {
         this.options = options;
     }
-    
-    OnlyShowIf(tagsFilter: TagsFilter) : TagDependantUIElementConstructor{
-        return new OnlyShowIfConstructor(tagsFilter, this);
+
+    OnlyShowIf(dependencies): TagDependantUIElementConstructor {
+        return new OnlyShowIfConstructor(dependencies, this);
     }
 
 
@@ -111,8 +111,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
     }
 
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new TagRendering(tags, changes, this.options);
+    construct(dependencies: { tags: UIEventSource<any>, changes: Changes }): TagDependantUIElement {
+        return new TagRendering(dependencies.tags, dependencies.changes, this.options);
     }
 
     IsKnown(properties: any): boolean {

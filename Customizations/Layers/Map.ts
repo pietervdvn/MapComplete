@@ -83,6 +83,10 @@ export class Map extends LayerDefinition {
                         k: new Tag("map_source:attribution", "no"),
                         txt: "There is no attribution at all"
                     },
+                    {
+                        k: new Tag("map_source:attribution", "none"),
+                        txt: "There is no attribution at all"
+                    }
                 ]
             }).OnlyShowIf(new Tag("map_source", "OpenStreetMap"))
         ]
