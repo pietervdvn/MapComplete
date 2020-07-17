@@ -2,7 +2,6 @@ import { Layout } from "../Layout";
 import { DrinkingWaterLayer } from "../Layers/DrinkingWater";
 import { NatureReserves } from "../Layers/NatureReserves";
 import { Park } from "../Layers/Park";
-import { BikeParkings } from "../Layers/BikeParkings";
 
 export class WalkByBrussels extends Layout {
     constructor() {
