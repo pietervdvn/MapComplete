@@ -9,8 +9,9 @@ export class StreetWidth extends Layout{
         super(    "width",
             "Straatbreedtes in Brugge",
             [new Widths(
-                2.2,
-               1.5
+                2.0,
+               1.5,
+                0.75
                 
             )],
             15,

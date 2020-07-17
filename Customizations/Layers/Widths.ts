@@ -8,6 +8,7 @@ export class Widths extends LayerDefinition {
 
     private cyclistWidth: number;
     private carWidth: number;
+    private pedestrianWidth: number;
 
     private readonly _bothSideParking = new Tag("parking:lane:both", "parallel");
     private readonly _noSideParking = new Tag("parking:lane:both", "no_parking");
@@ -16,6 +17,13 @@ export class Widths extends LayerDefinition {
         new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);
     private readonly _rightSideParking =
         new And([new Tag("parking:lane:right", "parallel"), new Tag("parking:lane:left", "no_parking")]);
+
+
+    private _sidewalkBoth = new Tag("sidewalk", "both");
+    private _sidewalkLeft = new Tag("sidewalk", "left");
+    private _sidewalkRight = new Tag("sidewalk", "right");
+    private _sidewalkNone = new Tag("sidewalk", "none");
+
 
     private readonly _oneSideParking = new Or([this._leftSideParking, this._rightSideParking]);
 
@@ -38,13 +46,25 @@ export class Widths extends LayerDefinition {
         }
 
 
+        let pedestrianFlowNeeded = 0;
+
+        if (this._sidewalkBoth.matchesProperties(properties)) {
+            pedestrianFlowNeeded = 0;
+        } else if (this._sidewalkNone.matchesProperties(properties)) {
+            pedestrianFlowNeeded = 2;
+        } else if (this._sidewalkLeft.matchesProperties(properties) || this._sidewalkRight.matches(properties)) {
+            pedestrianFlowNeeded = 1;
+        } else {
+            pedestrianFlowNeeded = -1;
+        }
+
+
         let onewayCar = properties.oneway === "yes";
         let onewayBike = properties["oneway:bicycle"] === "yes" ||
             (onewayCar && properties["oneway:bicycle"] === undefined)
 
 
         let carWidth = (onewayCar ? 1 : 2) * this.carWidth;
-
         let cyclistWidth = (onewayBike ? 1 : 2) * this.cyclistWidth;
 
         const width = parseFloat(properties["width:carriageway"]);
@@ -53,6 +73,7 @@ export class Widths extends LayerDefinition {
         const targetWidth =
             carWidth +
             cyclistWidth +
+            Math.max(0, pedestrianFlowNeeded) * this.pedestrianWidth +
             parallelParkingCount * this.carWidth;
 
         return {
@@ -60,16 +81,25 @@ export class Widths extends LayerDefinition {
             parkingStateKnown: parkingStateKnown,
             width: width,
             targetWidth: targetWidth,
-            onewayBike: onewayBike
+            onewayBike: onewayBike,
+            pedestrianFlowNeeded: pedestrianFlowNeeded,
         }
     }
 
 
     constructor(carWidth: number,
-                cyclistWidth: number) {
+                cyclistWidth: number,
+                pedestrianWidth: number) {
         super();
         this.carWidth = carWidth;
         this.cyclistWidth = cyclistWidth;
+        this.pedestrianWidth = pedestrianWidth;
+
+        function r(n: number) {
+            const pre = Math.floor(n);
+            const post = Math.floor((n * 10) % 10);
+            return "" + pre + "." + post;
+        }
 
         this.name = "widths";
         this.overpassFilter = new Tag("width:carriageway", "*");
@@ -85,33 +115,35 @@ export class Widths extends LayerDefinition {
         const self = this;
         this.style = (properties) => {
 
-            let c = "#0c0";
+            let c = "#f00";
 
 
             const props = self.calcProps(properties);
-
-            if (props.width < props.targetWidth) {
-                c = "#f00";
+            if (props.pedestrianFlowNeeded > 0) {
+                c = "#fa0"
+            }
+            if (props.width >= props.targetWidth) {
+                c = "#0c0";
             }
 
-            let dashArray = undefined;
-
-            if (!props.parkingStateKnown) {
+            if (!props.parkingStateKnown && properties["note:width:carriageway"] === undefined) {
                 c = "#f0f"
             }
-
+            
             if (this._carfree.matchesProperties(properties)) {
                 c = "#aaa";
             }
 
+
+            // Mark probably wrong data
+            if (props.width > 15) {
+                c = "#f0f"
+            }
+
+            let dashArray = undefined;
             if (props.onewayBike) {
                 dashArray = [20, 8]
             }
-
-            if (props.width > 15) {
-                c = "#ffb72b"
-            }
-
             return {
                 icon: null,
                 color: c,
@@ -122,28 +154,56 @@ export class Widths extends LayerDefinition {
 
         this.elementsToShow = [
             new TagRenderingOptions({
+                question: "Mogen auto's hier parkeren?",
                 mappings: [
                     {
                         k: this._bothSideParking,
-                        txt: "Auto's kunnen langs beide zijden parkeren.<br+>Dit gebruikt <b>" + (this.carWidth * 2) + "m</b><br/>"
+                        txt: "Auto's kunnen langs beide zijden parkeren.<br+>Dit gebruikt <b>" + r(this.carWidth * 2) + "m</b><br/>"
                     },
                     {
                         k: this._oneSideParking,
-                        txt: "Auto's kunnen langs één kant parkeren.<br/>Dit gebruikt <b>" + this.carWidth + "m</b><br/>"
+                        txt: "Auto's kunnen langs één kant parkeren.<br/>Dit gebruikt <b>" + r(this.carWidth) + "m</b><br/>"
                     },
                     {k: this._noSideParking, txt: "Auto's mogen hier niet parkeren"},
-                    {k: null, txt: "Nog geen parkeerinformatie bekend"}
-                ]
+                    // {k: null, txt: "Nog geen parkeerinformatie bekend"}
+                ],
+                freeform: {
+                    key: "note:width:carriageway",
+                    renderTemplate: "{note:width:carriageway}",
+                    template: "$$$",
+                }
             }).OnlyShowIf(this._notCarFree),
+
+
+            new TagRenderingOptions({
+                mappings: [
+                    {
+                        k: this._sidewalkNone,
+                        txt: "Deze straat heeft geen voetpaden. Voetgangers hebben hier <b>" + r(this.pedestrianWidth * 2) + "m</b> nodig"
+                    },
+                    {
+                        k: new Or([this._sidewalkLeft, this._sidewalkRight]),
+                        txt: "Deze straat heeft een voetpad aan één kant. Voetgangers hebben hier <b>" + r(this.pedestrianWidth) + "m</b> nodig"
+                    },
+                    {k: this._sidewalkBoth, txt: "Deze straat heeft voetpad aan beide zijden."},
+                ],
+                freeform: {
+                    key: "note:width:carriageway",
+                    renderTemplate: "{note:width:carriageway}",
+                    template: "$$$",
+                }
+            }).OnlyShowIf(this._notCarFree),
+
+
             new TagRenderingOptions({
                 mappings: [
                     {
                         k: new Tag("oneway:bicycle", "yes"),
-                        txt: "Eenrichtingsverkeer, óók voor fietsers. Dit gebruikt <b>" + (this.carWidth + this.cyclistWidth) + "m</b>"
+                        txt: "Eenrichtingsverkeer, óók voor fietsers. Dit gebruikt <b>" + r(this.carWidth + this.cyclistWidth) + "m</b>"
                     },
                     {
                         k: new And([new Tag("oneway", "yes"), new Tag("oneway:bicycle", "no")]),
-                        txt: "Tweerichtingverkeer voor fietsers, eenrichting voor auto's Dit gebruikt <b>" + (this.carWidth + 2 * this.cyclistWidth) + "m</b>"
+                        txt: "Tweerichtingverkeer voor fietsers, eenrichting voor auto's Dit gebruikt <b>" + r(this.carWidth + 2 * this.cyclistWidth) + "m</b>"
                     },
                     {
                         k: new Tag("oneway", "yes"),
@@ -151,7 +211,7 @@ export class Widths extends LayerDefinition {
                     },
                     {
                         k: null,
-                        txt: "Tweerichtingsverkeer voor iedereen. Dit gebruikt <b>" + (2 * this.carWidth + 2 * this.cyclistWidth) + "m</b>"
+                        txt: "Tweerichtingsverkeer voor iedereen. Dit gebruikt <b>" + r(2 * this.carWidth + 2 * this.cyclistWidth) + "m</b>"
                     }
                 ]
             }).OnlyShowIf(this._notCarFree),
@@ -160,12 +220,16 @@ export class Widths extends LayerDefinition {
                 {
                     tagsPreprocessor: (tags) => {
                         const props = self.calcProps(tags);
-                        tags.targetWidth = props.targetWidth;
-                        console.log("PREP", tags)
+                        tags.targetWidth = r(props.targetWidth);
+                        tags.short = "";
+                        if (props.width < props.targetWidth) {
+                            tags.short = "Er is dus <b class='alert'>" + r(props.targetWidth - props.width) + "m</b> te weinig"
+                        }
                     },
                     freeform: {
                         key: "width:carriageway",
-                        renderTemplate: "De totale nodige ruimte voor vlot en veilig verkeer is dus <b>{targetWidth}m</b>.",
+                        renderTemplate: "De totale nodige ruimte voor vlot en veilig verkeer is dus <b>{targetWidth}m</b><br>" +
+                            "{short}",
                         template: "$$$",
                     }
                 }

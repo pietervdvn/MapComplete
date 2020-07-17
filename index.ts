@@ -41,7 +41,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     dryRun = true;
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
-    Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
+    //Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
 }
 
 
@@ -80,7 +80,7 @@ if (paramDict.layout) {
 }
 
 if (paramDict.test) {
-    dryRun = true;
+    dryRun = paramDict.test === "true";
 }
 
 const layoutToUse = AllKnownLayouts.allSets[defaultLayout];
