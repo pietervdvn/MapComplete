@@ -7,6 +7,7 @@ import Cyclofix from "./Layouts/Cyclofix";
 import { WalkByBrussels } from "./Layouts/WalkByBrussels";
 import { All } from "./Layouts/All";
 import { Layout } from "./Layout";
+import {MetaMap} from "./Layouts/MetaMap";
 
 export class AllKnownLayouts {
     public static allSets: any = AllKnownLayouts.AllLayouts();
@@ -19,6 +20,7 @@ export class AllKnownLayouts {
             new Cyclofix(),
             new Bookcases(),
             new WalkByBrussels(),
+            new MetaMap(),
             all
             /*new Toilets(),
             new Statues(),
