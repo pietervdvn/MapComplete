@@ -39,11 +39,10 @@ export class CenterMessageBox extends UIElement {
         if (this._centermessage.data != "") {
             return this._centermessage.data;
         }
-
-        if (this._zoomInMore.data) {
-            return "Zoom in om de data te zien en te bewerken";
-        } else if (this._queryRunning.data) {
+        if (this._queryRunning.data) {
             return "Data wordt geladen...";
+        } else if (this._zoomInMore.data) {
+            return "Zoom in om de data te zien en te bewerken";
         }
         return "Klaar!";
     }

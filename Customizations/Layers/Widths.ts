@@ -12,6 +12,16 @@ export class Widths extends LayerDefinition {
 
     private readonly _bothSideParking = new Tag("parking:lane:both", "parallel");
     private readonly _noSideParking = new Tag("parking:lane:both", "no_parking");
+    private readonly _otherParkingMode =
+        new Or([
+            new Tag("parking:lane:both", "perpendicular"),
+            new Tag("parking:lane:left", "perpendicular"),
+            new Tag("parking:lane:right", "perpendicular"),
+            new Tag("parking:lane:both", "diagonal"),
+            new Tag("parking:lane:left", "diagonal"),
+            new Tag("parking:lane:right", "diagonal"),
+        ])
+
 
     private readonly _leftSideParking =
         new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);
@@ -39,6 +49,8 @@ export class Widths extends LayerDefinition {
         } else if (this._bothSideParking.matchesProperties(properties)) {
             parallelParkingCount = 2;
         } else if (this._noSideParking.matchesProperties(properties)) {
+            parallelParkingCount = 0;
+        } else if (this._otherParkingMode.matchesProperties(properties)) {
             parallelParkingCount = 0;
         } else {
             parkingStateKnown = false;
@@ -171,6 +183,10 @@ export class Widths extends LayerDefinition {
                     {
                         k: this._oneSideParking,
                         txt: "Auto's kunnen langs één kant parkeren.<br/>Dit gebruikt <b>" + r(this.carWidth) + "m</b><br/>"
+                    },
+                    {
+                        k: this._otherParkingMode,
+                        txt: "Deze straat heeft dwarsparkeren of diagonaalparkeren aan minstens één zijde. Deze parkeerruimte is niet opgenomen in de straatbreedte."
                     },
                     {k: this._noSideParking, txt: "Auto's mogen hier niet parkeren"},
                     // {k: null, txt: "Nog geen parkeerinformatie bekend"}

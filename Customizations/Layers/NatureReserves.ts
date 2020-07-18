@@ -63,7 +63,7 @@ export class NatureReserves extends LayerDefinition {
                     question: "Wat is het email-adres van de beheerder?<br>" +
                         "<span class='question-subtext'>Geef bij voorkeur het emailadres van de Natuurpunt-afdeling; geef enkel een email-adres van de conservator als dit duidelijk is gepubliceerd</span>",
                     freeform: {
-                        renderTemplate: "Bij problemen of vragen, de {conservator} kan bereikt worden via " +
+                        renderTemplate: "Bij problemen of vragen, de conservator kan bereikt worden via " +
                             "<a href='mailto:{email}'>{email}</a>",
                         template: "$$$",
                         key: "email"

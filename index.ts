@@ -222,7 +222,7 @@ selectedElement.addCallback((data) => {
 
 
 const pendingChanges = new PendingChanges(
-    changes.pendingChangesES, secondsTillChangesAreSaved, changes.isSaving);
+    changes, secondsTillChangesAreSaved,);
 
 new UserBadge(osmConnection.userDetails, pendingChanges, bm)
     .AttachTo('userbadge');

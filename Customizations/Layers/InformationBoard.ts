@@ -73,9 +73,14 @@ export class InformationBoard extends LayerDefinition {
                         k: isOsmSource,
                         txt: "This map is based on OpenStreetMap"
                     },
+                    {
+                        k: new And([new Tag("map_source:attribution", ""), new Tag("map_source","")]),
+                        txt: "Unknown"
+                    },
                 ],
                 freeform: {
                     key: "map_source",
+                    extraTags: new Tag("map_source:attribution", ""),
                     renderTemplate: "The map data is based on {map_source}",
                     template: "The map data is based on $$$"
                 }
