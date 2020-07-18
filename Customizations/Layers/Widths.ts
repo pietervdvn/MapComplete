@@ -101,6 +101,7 @@ export class Widths extends LayerDefinition {
         this.carWidth = carWidth;
         this.cyclistWidth = cyclistWidth;
         this.pedestrianWidth = pedestrianWidth;
+        this.minzoom = 12;
 
         function r(n: number) {
             const pre = Math.floor(n);
@@ -254,7 +255,7 @@ export class Widths extends LayerDefinition {
             new TagRenderingOptions({
                 mappings: [
                     {k:new Tag("highway","living_street"),txt: "Dit is een woonerf"},
-                    {k:new Tag("highway","pedestrian"),txt: "Hier mogen enkel voetgangers komen"}
+                    {k:new Tag("highway","pedestrian"),txt: "Deze weg is autovrij"}
                 ]
             }),
             

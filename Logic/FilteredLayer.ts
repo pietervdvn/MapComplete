@@ -104,7 +104,7 @@ export class FilteredLayer {
 
         const notShadowed = [];
         for (const feature of leftoverFeatures) {
-            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap >= 0) {
+            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap > 0) {
                 if (GeoOperations.featureIsContainedInAny(feature, selfFeatures, this._maxAllowedOverlap)) {
                     // This feature is filtered away
                     continue;

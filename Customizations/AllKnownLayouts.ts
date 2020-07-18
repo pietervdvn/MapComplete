@@ -10,6 +10,8 @@ import { Layout } from "./Layout";
 import {MetaMap} from "./Layouts/MetaMap";
 import {Widths} from "./Layers/Widths";
 import {StreetWidth} from "./Layouts/StreetWidth";
+import {NatureReserves} from "./Layers/NatureReserves";
+import {Natuurpunt} from "./Layouts/Natuurpunt";
 
 export class AllKnownLayouts {
     public static allSets: any = AllKnownLayouts.AllLayouts();
@@ -24,6 +26,7 @@ export class AllKnownLayouts {
             new WalkByBrussels(),
             new MetaMap(),
             new StreetWidth(),
+            new Natuurpunt(),
             all
             /*new Toilets(),
             new Statues(),
