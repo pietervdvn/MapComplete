@@ -24,15 +24,53 @@ export default class Translations {
             en: "Click here to login with OpenStreetMap",
             nl: "Klik hier op je aan te melden met OpenStreetMap"
         }),
-        uploadAPicture: new Translation({
-            en: "Add a picture",
-            nl: "Voeg een foto toe"
 
-        })
+        search: {
+            search: new Translation({
+                en: "Search a location",
+                nl: "Zoek naar een locatie"
+            }),
+            searching: new Translation({
+                en: "Searching...",
+                nl: "Aan het zoeken..."
+            }),
+            nothing: new Translation({
+                en: "Nothing found...",
+                nl: "Niet gevonden..."
+            }),
+            error: new Translation({
+                en: "Something went wrong...",
+                nl: "Niet gelukt..."
+            })
+
+        },
+
+        picture: {
+            uploadAPicture: new Translation({
+                en: "Add a picture",
+                nl: "Voeg een foto toe"
+
+            }),
+            licenseIntro: new Translation({
+                en: "Your picture is published",
+                nl: "Je foto wordt gepubliceerd"
+            }),
+            publicDomain: new Translation({
+                en: "in the public domain",
+                nl: "in het publiek domein"
+            }),
+            ccby: new Translation({
+                en: "with a CC-BY license",
+                nl: "met een CC-BY licentie"
+            }),
+            ccbysa: new Translation({
+                en: "with a CC-BY-SA license",
+                nl: "met een CC-BY-SA licentie"
+            })
+        }
     }
 
-    public static W(s: string | UIElement):
-        UIElement {
+    public static W(s: string | UIElement): UIElement {
         if (s instanceof UIElement) {
             return s;
         }

@@ -463,7 +463,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
             return "<div class='question'>" +
                 "<span class='question-text'>" + question + "</span>" +
-                (question !== "" ? "<br/>" : "") +
+                (this._question.IsEmpty() ? "" : "<br/>") +
                 "<div>" + this._questionElement.Render() + "</div>" +
                 this._skipButton.Render() +
                 this._saveButton.Render() +
@@ -471,10 +471,11 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         if (this.IsKnown()) {
-            const html = this.RenderAnwser().Render();
-            if (html == "") {
+            const answer = this.RenderAnwser()
+            if (answer.IsEmpty()) {
                 return "";
             }
+            const html = answer.Render();
             let editButton = "";
             if (this._userDetails.data.loggedIn && this._question !== undefined) {
                 editButton = this._editButton.Render();

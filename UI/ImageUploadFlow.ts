@@ -31,11 +31,12 @@ export class ImageUploadFlow extends UIElement {
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
 
-        const licensePicker = new DropDown("The picture is published ",
+        const licensePicker = new DropDown(
+            Translations.general.picture.licenseIntro,
             [
-                {value: "CC0", shown: "in the public domain"},
-                {value: "CC-BY-SA 4.0", shown: "with a CC-BY-SA license"},
-                {value: "CC-BY 4.0", shown: "with a CC-BY license"}
+                {value: "CC0", shown: Translations.general.picture.publicDomain},
+                {value: "CC-BY-SA 4.0", shown:Translations.general.picture.ccbysa},
+                {value: "CC-BY 4.0", shown:Translations.general.picture.ccby}
             ],
             preferedLicense
         );
@@ -67,7 +68,7 @@ export class ImageUploadFlow extends UIElement {
 
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
-            "<span class='imageflow-add-picture'>"+Translations.general.uploadAPicture.R()+"</span>" +
+            "<span class='imageflow-add-picture'>"+Translations.general.picture.uploadAPicture.R()+"</span>" +
             "<div class='break'></div>" +
             "</div>" +
 

@@ -2,6 +2,7 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
 import {InputElement} from "./InputElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
 
 
 export class TextField<T> extends InputElement<T> {
@@ -35,12 +36,8 @@ export class TextField<T> extends InputElement<T> {
         this.mappedValue.addCallback((t) => this.value.setData(options.toString(t)));
 
 
-        options.placeholder = options.placeholder ?? "";
-        if (options.placeholder instanceof UIElement) {
-            this._placeholder = options.placeholder
-        } else {
-            this._placeholder = new FixedUiElement(options.placeholder);
-        }
+        this._placeholder = Translations.W(options.placeholder ?? "");
+        this.ListenTo(this._placeholder._source);
         this._toString = options.toString ?? ((t) => ("" + t));
 
 

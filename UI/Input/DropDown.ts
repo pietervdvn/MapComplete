@@ -3,27 +3,31 @@ import {UIElement} from "../UIElement";
 import {InputElement} from "./InputElement";
 import instantiate = WebAssembly.instantiate;
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
 
 export class DropDown<T> extends InputElement<T> {
 
-    private readonly _label: string;
+    private readonly _label: UIElement;
     private readonly _values: { value: T; shown: UIElement }[];
 
     private readonly _value;
 
-    constructor(label: string,
+    constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
                 value: UIEventSource<T> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource<T>(undefined);
-        this._label = label;
+        this._label = Translations.W(label);
         this._values = values.map(v => {
                 return {
                     value: v.value,
-                    shown: v.shown instanceof UIElement ? v.shown : new FixedUiElement(v.shown)
+                    shown: Translations.W(v.shown)
                 }
             }
         );
+        for (const v of this._values) {
+            this.ListenTo(v.shown._source);
+        }
         this.ListenTo(this._value)
 
     }
@@ -60,7 +64,7 @@ export class DropDown<T> extends InputElement<T> {
 
         }
         return "<form>" +
-            "<label for='dropdown-" + this.id + "'>" + this._label + "</label>" +
+            "<label for='dropdown-" + this.id + "'>" + this._label.Render() + "</label>" +
             "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
             options +
             "</select>" +
