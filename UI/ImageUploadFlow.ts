@@ -31,12 +31,11 @@ export class ImageUploadFlow extends UIElement {
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
 
-        const licensePicker = new DropDown(
-            Translations.general.picture.licenseIntro,
+        const licensePicker = new DropDown(Translations.t.image.willBePublished,
             [
-                {value: "CC0", shown: Translations.general.picture.publicDomain},
-                {value: "CC-BY-SA 4.0", shown:Translations.general.picture.ccbysa},
-                {value: "CC-BY 4.0", shown:Translations.general.picture.ccby}
+                {value: "CC0", shown: Translations.t.image.cco},
+                {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
+                {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
             preferedLicense
         );
@@ -50,12 +49,12 @@ export class ImageUploadFlow extends UIElement {
     InnerRender(): string {
 
         if (!this._userdetails.data.loggedIn) {
-            return "<div class='activate-osm-authentication'>Please log in to add a picture</div>";
+            return `<div class='activate-osm-authentication'>${Translations.t.image.pleaseLogin.Render()}</div>`;
         }
 
         let uploadingMessage = "";
         if (this._isUploading.data == 1) {
-            uploadingMessage = "<b>Uploading a picture...</b>"
+            return `<b>${Translations.t.image.uploadingPicture.Render()}</b>`
         }
         if (this._isUploading.data > 0) {
             uploadingMessage = "<b>Uploading multiple pictures, " + this._isUploading.data + " left...</b>"
@@ -68,8 +67,8 @@ export class ImageUploadFlow extends UIElement {
 
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
-            "<span class='imageflow-add-picture'>"+Translations.general.picture.uploadAPicture.R()+"</span>" +
-            "<div class='break'></div>" +
+            `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.R()}</span>` +
+            "<div class='break'></div>"+
             "</div>" +
 
             this._licensePicker.Render() + "<br/>" +

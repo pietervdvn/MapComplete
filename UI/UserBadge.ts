@@ -64,7 +64,7 @@ export class UserBadge extends UIElement {
     InnerRender(): string {
         const user = this._userDetails.data;
         if (!user.loggedIn) {
-            return "<div class='activate-osm-authentication'>" + Translations.general.loginWithOpenStreetMap.R()+ "</div>";
+            return "<div class='activate-osm-authentication'>" + Translations.t.general.loginWithOpenStreetMap.R()+ "</div>";
         }
         
         

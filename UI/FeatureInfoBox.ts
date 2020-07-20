@@ -30,7 +30,7 @@ export class FeatureInfoBox extends UIElement {
 
     constructor(
         tagsES: UIEventSource<any>,
-        title: TagRenderingOptions,
+        title: TagRenderingOptions | UIElement,
         elementsToShow: TagDependantUIElementConstructor[],
         changes: Changes,
         userDetails: UIEventSource<UserDetails>
@@ -56,10 +56,14 @@ export class FeatureInfoBox extends UIElement {
             }
         )
 
-        this._title = new TagRenderingOptions(title.options).construct(deps);
-        this._osmLink =new OsmLink().construct(deps);
+        if (title instanceof UIElement) {
+            this._title = title;
+        } else {
+            this._title = new TagRenderingOptions(title.options).construct(deps);
+        }
+        this._osmLink = new OsmLink().construct(deps);
         this._wikipedialink = new WikipediaLink().construct(deps);
-    
+
 
     }
 

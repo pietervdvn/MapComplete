@@ -12,7 +12,7 @@ import Translations from "./i18n/Translations";
 
 export class SearchAndGo extends UIElement {
 
-    private _placeholder = new UIEventSource<Translation>(Translations.general.search.search)
+    private _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
     private _searchField = new TextField<string>({
             placeholder: new VariableUiElement(
                 this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
@@ -46,12 +46,12 @@ export class SearchAndGo extends UIElement {
     private RunSearch() {
         const searchString = this._searchField.GetValue().data;
         this._searchField.Clear();
-        this._placeholder.setData(Translations.general.search.searching);
+        this._placeholder.setData(Translations.t.general.search.searching);
         const self = this;
         Geocoding.Search(searchString, this._map, (result) => {
 
                 if (result.length == 0) {
-                    this._placeholder.setData(Translations.general.search.nothing);
+                    this._placeholder.setData(Translations.t.general.search.nothing);
                     return;
                 }
 
@@ -61,10 +61,10 @@ export class SearchAndGo extends UIElement {
                     [bb[1], bb[3]]
                 ]
                 self._map.map.fitBounds(bounds);
-                this._placeholder.setData(Translations.general.search.search);
+                this._placeholder.setData(Translations.t.general.search.search);
             },
             () => {
-                this._placeholder.setData(Translations.general.search.error);
+                this._placeholder.setData(Translations.t.general.search.error);
             });
 
     }

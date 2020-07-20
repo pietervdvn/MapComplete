@@ -12,6 +12,7 @@ import PumpManometer from "../Questions/bike/PumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import PumpOperational from "../Questions/bike/PumpOperational";
 import PumpValves from "../Questions/bike/PumpValves";
+import Translations from "../../UI/i18n/Translations";
 
 
 export default class BikeStations extends LayerDefinition {
@@ -22,7 +23,7 @@ export default class BikeStations extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "bike station or pump";
+        this.name = Translations.t.cyclofix.station.name.txt;
         this.icon = "./assets/wrench.svg";
 
         this.overpassFilter = new And([
@@ -36,7 +37,7 @@ export default class BikeStations extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText("Bike station");
+        this.title = new FixedText(Translations.t.cyclofix.station.title.txt)
 
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
@@ -50,7 +51,7 @@ export default class BikeStations extends LayerDefinition {
             new PumpValves().OnlyShowIf(this.pump),
             new PumpOperational().OnlyShowIf(this.pump),
 
-            new BikeStationOperator(),
+            // new BikeStationOperator(),
             // new BikeStationBrand()   DISABLED
         ];
     }

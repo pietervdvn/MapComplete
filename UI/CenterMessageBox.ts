@@ -1,6 +1,7 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import {OsmConnection} from "../Logic/OsmConnection";
+import Translations from "./i18n/Translations";
 
 export class CenterMessageBox extends UIElement {
 
@@ -40,11 +41,11 @@ export class CenterMessageBox extends UIElement {
             return this._centermessage.data;
         }
         if (this._queryRunning.data) {
-            return "Data is loading...";
+            return Translations.t.centerMessage.loadingData.txt;
         } else if (this._zoomInMore.data) {
-            return "Zoom in more to see the data";
+            return Translations.t.centerMessage.zoomIn.txt;
         }
-        return "Done!";
+        return Translations.t.centerMessage.ready.txt;
     }
 
 

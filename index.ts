@@ -29,6 +29,7 @@ import {Layout} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
 import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import ParkingType from "./Customizations/Questions/bike/ParkingType";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -314,4 +315,11 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 locationControl.ping();
 messageBox.update();
 
-
+/*
+const eLanguageSelect = document.getElementById('language-select') as HTMLOptionElement
+eLanguageSelect.addEventListener('input', e => {
+    // @ts-ignore
+    const selectedLanguage = e.target.value as string
+    Locale.language.setData(selectedLanguage.toLowerCase())
+})
+*/

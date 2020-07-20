@@ -4,6 +4,19 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 
 
 export default class Translation extends UIElement {
+    get txt(): string {
+        const txt = this.translations[Locale.language.data];
+        if (txt !== undefined) {
+            return txt;
+        }
+        const en = this.translations["en"];
+        console.warn("No translation for language ", Locale.language.data, "for", en);
+        return en;
+    }
+
+    InnerRender(): string {
+        return this.txt
+    }
 
     public readonly translations: object
 
@@ -12,19 +25,11 @@ export default class Translation extends UIElement {
         this.translations = translations
     }
 
+
     public R(): string {
         return new Translation(this.translations).Render();
     }
 
-    InnerRender(): string {
-        const txt = this.translations[Locale.language.data];
-        if (txt !== undefined) {
-            return txt;
-        }
-        const en = this.translations["en"];
-        console.warn("No translation for language ", Locale.language.data, "for",en);
-        return en;
-    }
 
 
 }
