@@ -42,7 +42,7 @@ export class SimpleAddUI extends UIElement {
             // <button type='button'> looks SO retarded
             // the default type of button is 'submit', which performs a POST and page reload
             const button =
-                new Button(new FixedUiElement("Voeg hier een " + option.name + " toe"),
+                new Button(new FixedUiElement("Add a " + option.name + " here"),
                     this.CreatePoint(option));
             this._addButtons.push(button);
         }
