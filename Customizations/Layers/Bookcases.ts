@@ -5,6 +5,7 @@ import {QuestionDefinition} from "../../Logic/Question";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
 import {NameQuestion} from "../Questions/NameQuestion";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class Bookcases extends LayerDefinition {
 
@@ -19,7 +20,7 @@ export class Bookcases extends LayerDefinition {
 
         this.title = new NameInline("ruilboekenkastje");
         this.elementsToShow = [
-
+            new ImageCarouselWithUploadConstructor(),
             new TagRenderingOptions({
                 question: "Heeft dit boekenruilkastje een naam?",
                 freeform: {

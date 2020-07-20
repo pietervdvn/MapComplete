@@ -114,19 +114,5 @@ export class FeatureInfoBox extends UIElement {
             "" +
             "</div>";
     }
-
-    Activate() {
-        super.Activate();
-        for (const infobox of this._infoboxes) {
-            infobox.Activate();
-        }
-    }
-
-    Update() {
-        super.Update();
-        this._title.Update();
-        for (const infobox of this._infoboxes) {
-            infobox.Update();
-        }
-    }
+    
 }
