@@ -4,13 +4,16 @@ import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Geocoding} from "../Logic/Geocoding";
 import {Basemap} from "../Logic/Basemap";
+import {VariableUiElement} from "./Base/VariableUIElement";
 
 
 export class SearchAndGo extends UIElement {
 
     private _placeholder = new UIEventSource("Zoek naar een locatie...")
     private _searchField = new TextField<string>({
-            placeholder: this._placeholder
+            placeholder: new VariableUiElement(this._placeholder),
+            fromString: str => str,
+            toString: str => str
         }
     );
 
@@ -61,7 +64,7 @@ export class SearchAndGo extends UIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         // "<img class='search' src='./assets/search.svg' alt='Search'> " +
         return this._searchField.Render() +
             this._goButton.Render();
