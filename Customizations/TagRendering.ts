@@ -1,17 +1,18 @@
 import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../UI/UIEventSource";
 import {And, Tag, TagsFilter, TagUtils} from "../Logic/TagsFilter";
-import {UIRadioButton} from "../UI/Base/UIRadioButton";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SaveButton} from "../UI/SaveButton";
 import {Changes} from "../Logic/Changes";
-import {TextField} from "../UI/Base/TextField";
-import {UIInputElement} from "../UI/Base/UIInputElement";
-import {UIRadioButtonWithOther} from "../UI/Base/UIRadioButtonWithOther";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
 import {UserDetails} from "../Logic/OsmConnection";
+import {TextField} from "../UI/Input/TextField";
+import {InputElement} from "../UI/Input/InputElement";
+import {InputElementWrapper} from "../UI/Input/InputElementWrapper";
+import {FixedInputElement} from "../UI/Input/FixedInputElement";
+import {RadioButton} from "../UI/Input/RadioButton";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
@@ -129,12 +130,9 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 class TagRendering extends UIElement implements TagDependantUIElement {
 
 
-    private _priority: number;
     private _userDetails: UIEventSource<UserDetails>;
+    private _priority: number;
 
-    Priority(): number {
-        return this._priority;
-    }
 
     private _question: string;
     private _primer: string;
@@ -150,8 +148,8 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         extraTags?: TagsFilter
     };
 
-    private readonly _questionElement: UIElement;
-    private readonly _textField: TextField<TagsFilter>; // Only here to update
+
+    private readonly _questionElement: InputElement<TagsFilter>;
 
     private readonly _saveButton: UIElement;
     private readonly _skipButton: UIElement;
@@ -238,60 +236,12 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             }
         }
 
-        // Map radiobutton choice and textfield answer onto tagfilter. That tagfilter will be pushed into the changes later on
-        const pickChoice = (i => {
-            if (i === undefined || i === null) {
-                return undefined
-            }
-            return self._mapping[i].k
-        });
-        const pickString =
-            (string) => {
-                if (string === "" || string === undefined) {
-                    return undefined;
-                }
-                const tag = new Tag(self._freeform.key, string);
-                if (self._freeform.extraTags === undefined) {
-                    return tag;
-                }
-                return new And([
-                        self._freeform.extraTags,
-                        tag
-                    ]
-                );
-            };
-
 
         // Prepare the actual input element -> pick an appropriate implementation
-        let inputElement: UIInputElement<TagsFilter>;
 
-        
-        if (this._freeform !== undefined && this._mapping !== undefined) {
-            // Radio buttons with 'other'
-            inputElement = new UIRadioButtonWithOther(
-                choices,
-                this._freeform.template,
-                this._freeform.placeholder,
-                pickChoice,
-                pickString
-            );
-            this._questionElement = inputElement;
-        } else if (this._mapping !== [] && this._mapping.length > 0) {
-            // This is a classic radio selection element
-            inputElement = new UIRadioButton(new UIEventSource(choices), pickChoice, false)
-            this._questionElement = inputElement;
-        } else if (this._freeform !== undefined) {
-            this._textField = new TextField(new UIEventSource<string>(this._freeform.placeholder), pickString);
-            inputElement = this._textField;
-            this._questionElement = new FixedUiElement(
-                "<div>" + this._freeform.template.replace("$$$", inputElement.Render()) + "</div>")
-        } else {
-            throw "Invalid questionRendering, expected at least choices or a freeform"
-        }
-
-
+        this._questionElement = this.InputElementFor(options);
         const save = () => {
-            const selection = inputElement.GetValue().data;
+            const selection = self._questionElement.GetValue().data;
             if (selection) {
                 changes.addTag(tags.data.id, selection);
             }
@@ -305,21 +255,16 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         // Setup the save button and it's action
-        this._saveButton = new SaveButton(inputElement.GetValue())
+        this._saveButton = new SaveButton(this._questionElement.GetValue())
             .onClick(save);
 
+        this._editButton = new FixedUiElement("");
         if (this._question !== undefined) {
             this._editButton = new FixedUiElement("<img class='editbutton' src='./assets/pencil.svg' alt='edit'>")
                 .onClick(() => {
-                    console.log("Click", self._editButton);
-                    if (self._textField) {
-                        self._textField.value.setData(self._source.data["name"] ?? "");
-                    }
-
+                    self._questionElement.GetValue().setData(self.CurrentValue());
                     self._editMode.setData(true);
                 });
-        } else {
-            this._editButton = new FixedUiElement("");
         }
 
 
@@ -332,14 +277,94 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         });
         // And at last, set up the skip button
         this._skipButton = new VariableUiElement(cancelContents).onClick(cancel);
+    }
 
+
+    private InputElementFor(options: {
+        freeform?: {
+            key: string, template: string,
+            renderTemplate: string
+            placeholder?: string,
+            extraTags?: TagsFilter,
+        },
+        mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[]
+    }):
+        InputElement<TagsFilter> {
+
+        const elements = [];
+
+        if (options.mappings !== undefined) {
+            for (const mapping of options.mappings) {
+                elements.push(this.InputElementForMapping(mapping));
+            }
+        }
+
+        if (options.freeform !== undefined) {
+            elements.push(this.InputForFreeForm(options.freeform));
+        }
+
+
+        if (elements.length == 0) {
+            throw "NO TAGRENDERINGS!"
+        }
+        if (elements.length == 1) {
+            return elements[0];
+        }
+
+        return new RadioButton(elements, false);
 
     }
 
-    private ApplyTemplate(template: string): string {
-        const tags = this._tagsPreprocessor(this._source.data);
-        return TagUtils.ApplyTemplate(template, tags);
+
+    private InputElementForMapping(mapping: { k: TagsFilter, txt: string }) {
+        return new FixedInputElement(mapping.txt, mapping.k);
     }
+
+
+    private InputForFreeForm(freeform): InputElement<TagsFilter> {
+        if (freeform === undefined) {
+            return undefined;
+        }
+
+
+        const pickString =
+            (string) => {
+                if (string === "" || string === undefined) {
+                    return undefined;
+                }
+                const tag = new Tag(freeform.key, string);
+                if (freeform.extraTags === undefined) {
+                    return tag;
+                }
+                return new And([
+                        freeform.extraTags,
+                        tag
+                    ]
+                );
+            };
+
+        const toString =
+            (tag) => {
+                if (tag instanceof And) {
+                    return toString(tag.and[0])
+                } else if (tag instanceof Tag) {
+                    return tag.value
+                }
+                return undefined;
+            }
+
+
+        let inputElement: InputElement<TagsFilter>;
+        const textField = new TextField({
+            placeholder: this._freeform.placeholder,
+            fromString: pickString,
+            toString: toString
+        });
+
+        const prepost = freeform.template.split("$$$");
+        return new InputElementWrapper(prepost[0], textField, prepost[1]);
+    }
+
 
     IsKnown(): boolean {
         const tags = TagUtils.proprtiesToKV(this._source.data);
@@ -349,9 +374,25 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 return true;
             }
         }
-       
+
         return this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined;
     }
+
+    private CurrentValue(): TagsFilter {
+        const tags = TagUtils.proprtiesToKV(this._source.data);
+
+        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
+            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
+                return oneOnOneElement.k;
+            }
+        }
+        if (this._freeform === undefined) {
+            return undefined;
+        }
+
+        return new Tag(this._freeform.key, this._source.data[this._freeform.key]);
+    }
+
 
     IsQuestioning(): boolean {
         if (this.IsKnown()) {
@@ -430,7 +471,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             if(this._userDetails.data.loggedIn){
                 editButton = this._editButton.Render();
             }
-            
+
             return "<span class='answer'>" +
                 "<span class='answer-text'>" + html + "</span>" +
                 editButton +
@@ -441,13 +482,15 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
     }
 
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        this._questionElement.Update();
-        this._saveButton.Update();
-        this._skipButton.Update();
-        this._textField?.Update();
-        this._editButton.Update();
+
+    Priority(): number {
+        return this._priority;
     }
+
+    private ApplyTemplate(template: string): string {
+        const tags = this._tagsPreprocessor(this._source.data);
+        return TagUtils.ApplyTemplate(template, tags);
+    }
+
 
 }

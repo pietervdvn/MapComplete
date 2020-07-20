@@ -1,5 +1,5 @@
 import {UIElement} from "./UIElement";
-import {TextField} from "./Base/TextField";
+import {TextField} from "./Input/TextField";
 import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Geocoding} from "../Logic/Geocoding";
@@ -9,7 +9,10 @@ import {Basemap} from "../Logic/Basemap";
 export class SearchAndGo extends UIElement {
 
     private _placeholder = new UIEventSource("Zoek naar een locatie...")
-    private _searchField = new TextField(this._placeholder);
+    private _searchField = new TextField<string>({
+            placeholder: this._placeholder
+        }
+    );
 
     private _foundEntries = new UIEventSource([]);
     private _map: Basemap;
@@ -33,7 +36,7 @@ export class SearchAndGo extends UIElement {
 
     // Triggered by 'enter' or onclick
     private RunSearch() {
-        const searchString = this._searchField.value.data;
+        const searchString = this._searchField.GetValue().data;
         this._searchField.Clear();
         this._placeholder.setData("Bezig met zoeken...");
         const self = this;

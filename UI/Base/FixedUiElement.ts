@@ -5,7 +5,7 @@ export class FixedUiElement extends UIElement {
 
     constructor(html: string) {
         super(undefined);
-        this._html = html;
+        this._html = html ?? "";
     }
 
     protected InnerRender(): string {

@@ -1,10 +1,10 @@
-import {UIInputElement} from "./UIInputElement";
+import {InputElement} from "./InputElement";
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
-import {FixedUiElement} from "./FixedUiElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 
-export class FixedInputElement<T> extends UIInputElement<T> {
+export class FixedInputElement<T> extends InputElement<T> {
     private rendering: UIElement;
     private value: UIEventSource<T>;
 
@@ -20,6 +20,10 @@ export class FixedInputElement<T> extends UIInputElement<T> {
 
     protected InnerRender(): string {
         return this.rendering.Render();
+    }
+
+    IsValid(t: T): boolean {
+        return t === this.value.data;
     }
 
 }

@@ -1,9 +1,10 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
-import {UIInputElement} from "./UIInputElement";
+import {InputElement} from "./InputElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 
-export class TextField<T> extends UIInputElement<T> {
+export class TextField<T> extends InputElement<T> {
 
     private value: UIEventSource<string>;
     private mappedValue: UIEventSource<T>;
@@ -11,28 +12,32 @@ export class TextField<T> extends UIInputElement<T> {
      * Pings and has the value data
      */
     public enterPressed = new UIEventSource<string>(undefined);
-    private _placeholder: UIEventSource<string>;
-    private _pretext: string;
-    private _fromString: (string: string) => T;
+    private _placeholder: UIElement;
+    private _fromString?: (string: string) => T;
+    private _toString: (t: T) => string;
 
     constructor(options: {
-        placeholder?: UIEventSource<string>,
-        toString: (t: T) => string,
-        fromString: (string: string) => T,
-        pretext?: string,
+        placeholder?: string | UIElement,
+        toString?: (t: T) => string,
+        fromString?: (string: string) => T,
         value?: UIEventSource<T>
     }) {
-        super(options?.placeholder);
+        super(undefined);
         this.value = new UIEventSource<string>("");
         this.mappedValue = options?.value ?? new UIEventSource<T>(undefined);
 
 
+        // @ts-ignore
+        this._fromString = options.fromString ?? ((str) => (str))
         this.value.addCallback((str) => this.mappedValue.setData(options.fromString(str)));
         this.mappedValue.addCallback((t) => this.value.setData(options.toString(t)));
 
 
-        this._placeholder = options?.placeholder ?? new UIEventSource<string>("");
-        this._pretext = options?.pretext ?? "";
+        this._placeholder = 
+            typeof(options.placeholder) === "string" ? new FixedUiElement(options.placeholder) :
+                (options.placeholder ?? new FixedUiElement(""));
+        this._toString = options.toString ?? ((t) => ("" + t));
+
 
         const self = this;
         this.mappedValue.addCallback((t) => {
@@ -40,9 +45,10 @@ export class TextField<T> extends UIInputElement<T> {
                 return;
             }
             const field = document.getElementById('text-' + this.id);
-            if (field === undefined && field === null) {
+            if (field === undefined || field === null) {
                 return;
             }
+            // @ts-ignore
             field.value = options.toString(t);
         })
     }
@@ -52,13 +58,16 @@ export class TextField<T> extends UIInputElement<T> {
     }
 
     protected InnerRender(): string {
-        return this._pretext + "<form onSubmit='return false' class='form-text-field'>" +
-            "<input type='text' placeholder='" + (this._placeholder.data ?? "") + "' id='text-" + this.id + "'>" +
+        return "<form onSubmit='return false' class='form-text-field'>" +
+            "<input type='text' placeholder='" + this._placeholder.InnerRender() + "' id='text-" + this.id + "'>" +
             "</form>";
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
         const field = document.getElementById('text-' + this.id);
+        if(field === null){
+            return;
+        }
         const self = this;
         field.oninput = () => {
             // @ts-ignore
@@ -73,6 +82,14 @@ export class TextField<T> extends UIInputElement<T> {
         });
 
 
+    }
+
+    IsValid(t: T): boolean {
+        if(t === undefined || t === null){
+            return false;
+        }
+        const result = this._toString(t);
+        return result !== undefined && result !== null;
     }
 
     Clear() {

@@ -115,4 +115,6 @@ export class FeatureInfoBox extends UIElement {
             "</div>";
     }
     
+    
+
 }

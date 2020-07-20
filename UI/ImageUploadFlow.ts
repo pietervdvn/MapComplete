@@ -3,7 +3,7 @@ import {UIEventSource} from "./UIEventSource";
 import $ from "jquery"
 import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/OsmConnection";
-import {DropDownUI} from "./Base/DropDownUI";
+import {DropDown} from "./Input/DropDown";
 import {VariableUiElement} from "./Base/VariableUIElement";
 
 export class ImageUploadFlow extends UIElement {
@@ -31,7 +31,7 @@ export class ImageUploadFlow extends UIElement {
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
 
-        const licensePicker = new DropDownUI("Jouw foto wordt gepubliceerd ",
+        const licensePicker = new DropDown("Jouw foto wordt gepubliceerd ",
 
             [
                 {value: "CC0", shown: "in het publiek domein"},

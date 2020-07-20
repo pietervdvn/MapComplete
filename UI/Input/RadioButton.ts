@@ -1,31 +1,27 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
-import {UIInputElement} from "./UIInputElement";
+import {InputElement} from "./InputElement";
 
-export class UIRadioButton<T> extends UIInputElement<T> {
+export class RadioButton<T> extends InputElement<T> {
 
-    public readonly SelectedElementIndex: UIEventSource<number>
+    private readonly _selectedElementIndex: UIEventSource<number>
         = new UIEventSource<number>(null);
 
     private value: UIEventSource<T>;
-    private readonly _elements: UIInputElement<T>[]
+    private readonly _elements: InputElement<T>[]
     private _selectFirstAsDefault: boolean;
-    private _valueMapping: (i: number) => T;
 
 
-    constructor(elements: UIInputElement<T>[],
+    constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super(undefined);
         this._elements = elements;
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
-        this.SelectedElementIndex.addCallback(() => {
-            self.InnerUpdate(undefined);
-        })
 
 
         this.value =
-            UIEventSource.flatten(this.SelectedElementIndex.map(
+            UIEventSource.flatten(this._selectedElementIndex.map(
                 (selectedIndex) => {
                     if (selectedIndex !== undefined && selectedIndex !== null) {
                         return elements[selectedIndex].GetValue()
@@ -34,16 +30,29 @@ export class UIRadioButton<T> extends UIInputElement<T> {
             ), elements.map(e => e.GetValue()))
         ;
 
+        this.value.addCallback((t) => {
+            self.SetCorrectValue(t);
+        })
 
-        for (let i = 0; i < elements.length; i ++){
-            elements[i].onClick(( ) => {
-                self.SelectedElementIndex.setData(i);
+
+        for (let i = 0; i < elements.length; i++) {
+            // If an element is clicked, the radio button corresponding with it should be selected as well
+            elements[i].onClick(() => {
+                self._selectedElementIndex.setData(i);
             });
         }
 
-
     }
-    
+
+    IsValid(t: T): boolean {
+        for (const inputElement of this._elements) {
+            if (inputElement.IsValid(t)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     GetValue(): UIEventSource<T> {
         return this.value;
     }
@@ -70,6 +79,24 @@ export class UIRadioButton<T> extends UIInputElement<T> {
         return "<form id='" + this.id + "-form'>" + body + "</form>";
     }
 
+    private SetCorrectValue(t: T) {
+        if (t === undefined) {
+            return;
+        }
+        // We check that what is selected matches the previous rendering
+        for (let i = 0; i < this._elements.length; i++) {
+            const e = this._elements[i];
+            if (e.IsValid(t)) {
+                this._selectedElementIndex.setData(i);
+                e.GetValue().setData(t);
+                // @ts-ignore
+                document.getElementById(this.IdFor(i)).checked = true;
+                return;
+            }
+
+        }
+    }
+
     InnerUpdate(htmlElement: HTMLElement) {
         const self = this;
 
@@ -78,7 +105,7 @@ export class UIRadioButton<T> extends UIInputElement<T> {
                 const el = document.getElementById(self.IdFor(i));
                 // @ts-ignore
                 if (el.checked) {
-                    self.SelectedElementIndex.setData(i);
+                    self._selectedElementIndex.setData(i);
                 }
             }
         }
@@ -91,8 +118,9 @@ export class UIRadioButton<T> extends UIInputElement<T> {
             }
         );
 
-        if (this.SelectedElementIndex.data == null) {
-            if (this._selectFirstAsDefault) {
+        if (this._selectFirstAsDefault) {
+            this.SetCorrectValue(this.value.data);
+            if (this._selectedElementIndex.data === null || this._selectedElementIndex.data === undefined) {
                 const el = document.getElementById(this.IdFor(0));
                 if (el) {
                     // @ts-ignore
@@ -100,30 +128,10 @@ export class UIRadioButton<T> extends UIInputElement<T> {
                     checkButtons();
                 }
             }
-        } else {
-
-            // We check that what is selected matches the previous rendering
-            var checked = -1;
-            var expected = this.SelectedElementIndex.data;
-            if (expected) {
-
-                for (let i = 0; i < self._elements.length; i++) {
-                    const el = document.getElementById(self.IdFor(i));
-                    // @ts-ignore
-                    if (el.checked) {
-                        checked = i;
-                    }
-                }
-                if (expected != checked) {
-                    const el = document.getElementById(this.IdFor(expected));
-                    // @ts-ignore
-                    el.checked = true;
-                }
-            }
         }
 
 
-    }
+    };
 
 
 }

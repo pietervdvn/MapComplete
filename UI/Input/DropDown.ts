@@ -1,7 +1,7 @@
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
 
-export class DropDownUI extends UIElement {
+export class DropDown extends UIElement {
 
     selectedElement: UIEventSource<string>
     private _label: string;

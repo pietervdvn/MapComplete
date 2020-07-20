@@ -1,8 +1,7 @@
 import {UIEventSource} from "./UIEventSource";
-import instantiate = WebAssembly.instantiate;
 
 export abstract class UIElement {
-
+    
     private static nextId: number = 0;
 
     public readonly id: string;
@@ -35,7 +34,7 @@ export abstract class UIElement {
         this.Update();
         return this;
     }
-
+    
     Update(): void {
         let element = document.getElementById(this.id);
         if (element === null || element === undefined) {
@@ -121,5 +120,6 @@ export abstract class UIElement {
     public IsEmpty(): boolean {
         return this.InnerRender() === "";
     }
-
 }
+
+
