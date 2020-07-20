@@ -12,16 +12,8 @@ export class VariableUiElement extends UIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         return this._html.data;
     }
     
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        if(this._innerUpdate !== undefined){
-            this._innerUpdate(htmlElement);
-        }
-    }
-
-
 }

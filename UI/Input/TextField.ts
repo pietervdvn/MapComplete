@@ -18,8 +18,8 @@ export class TextField<T> extends InputElement<T> {
 
     constructor(options: {
         placeholder?: string | UIElement,
-        toString?: (t: T) => string,
-        fromString?: (string: string) => T,
+        toString: (t: T) => string,
+        fromString: (string: string) => T,
         value?: UIEventSource<T>
     }) {
         super(undefined);
@@ -33,15 +33,18 @@ export class TextField<T> extends InputElement<T> {
         this.mappedValue.addCallback((t) => this.value.setData(options.toString(t)));
 
 
-        this._placeholder = 
-            typeof(options.placeholder) === "string" ? new FixedUiElement(options.placeholder) :
-                (options.placeholder ?? new FixedUiElement(""));
+        options.placeholder = options.placeholder ?? "";
+        if (options.placeholder instanceof UIElement) {
+            this._placeholder = options.placeholder
+        } else {
+            this._placeholder = new FixedUiElement(options.placeholder);
+        }
         this._toString = options.toString ?? ((t) => ("" + t));
 
 
         const self = this;
         this.mappedValue.addCallback((t) => {
-            if (t === undefined && t === null) {
+            if (t === undefined || t === null) {
                 return;
             }
             const field = document.getElementById('text-' + this.id);
@@ -57,7 +60,7 @@ export class TextField<T> extends InputElement<T> {
         return this.mappedValue;
     }
 
-    protected InnerRender(): string {
+     InnerRender(): string {
         return "<form onSubmit='return false' class='form-text-field'>" +
             "<input type='text' placeholder='" + this._placeholder.InnerRender() + "' id='text-" + this.id + "'>" +
             "</form>";

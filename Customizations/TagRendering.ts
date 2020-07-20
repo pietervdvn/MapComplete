@@ -294,7 +294,19 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         const elements = [];
 
         if (options.mappings !== undefined) {
+            
+            const previousTexts= [];
             for (const mapping of options.mappings) {
+                console.log(mapping);
+                if(mapping.k === null){
+                    continue;
+                }
+                if(previousTexts.indexOf(mapping.txt) >= 0){
+                    continue;
+                }
+                previousTexts.push(mapping.txt);
+                
+                console.log("PUshed")
                 elements.push(this.InputElementForMapping(mapping));
             }
         }
@@ -350,6 +362,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 } else if (tag instanceof Tag) {
                     return tag.value
                 }
+                console.log("Could not decode tag to string", tag)
                 return undefined;
             }
 
@@ -447,7 +460,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
@@ -492,5 +505,10 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         return TagUtils.ApplyTemplate(template, tags);
     }
 
+    
+    InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        this._questionElement.Update(); // Another manual update for them
+    }
 
 }

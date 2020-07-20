@@ -45,7 +45,6 @@ export class MessageBoxHandler {
     update() {
         const wrapper = document.getElementById("messagesboxmobilewrapper");
         const gen = this._uielement.data;
-        console.log("Generator: ", gen);
         if (gen === undefined) {
             wrapper.classList.add("hidden")
             if (location.hash !== "") {
@@ -55,10 +54,6 @@ export class MessageBoxHandler {
         }
         location.hash = "#element"
         wrapper.classList.remove("hidden");
-      /*  gen()
-            ?.HideOnEmpty(true)
-            ?.AttachTo("messagesbox")
-            ?.Activate();*/
 
         gen()
             ?.HideOnEmpty(true)

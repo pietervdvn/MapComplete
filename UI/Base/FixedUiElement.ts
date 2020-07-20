@@ -8,7 +8,7 @@ export class FixedUiElement extends UIElement {
         this._html = html ?? "";
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         return this._html;
     }
 

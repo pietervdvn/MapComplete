@@ -1,10 +1,8 @@
 import {LayerDefinition} from "../LayerDefinition";
 import L from "leaflet";
-import {And, Or, Regex, Tag} from "../../Logic/TagsFilter";
-import {QuestionDefinition} from "../../Logic/Question";
+import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
-import {NameQuestion} from "../Questions/NameQuestion";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class Bookcases extends LayerDefinition {

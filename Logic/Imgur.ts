@@ -60,7 +60,6 @@ export class Imgur {
             }
 
             
-            console.log(data);
             const licenseInfo = new LicenseInfo();
             
             licenseInfo.licenseShortName = data.license;

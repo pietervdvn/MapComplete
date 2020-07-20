@@ -12,7 +12,7 @@ export class SaveButton extends UIElement {
         this._value = value;
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this._value.data === undefined ||
             this._value.data === null
             || this._value.data === ""

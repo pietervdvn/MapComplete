@@ -60,7 +60,7 @@ export class SimpleAddUI extends UIElement {
         }
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         const header = "<h2>Geen selectie</h2>" +
             "Je klikte ergens waar er nog geen gezochte data is.<br/>";
         if (!this._userDetails.data.loggedIn) {
@@ -83,10 +83,6 @@ export class SimpleAddUI extends UIElement {
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        for (const button of this._addButtons) {
-            button.Update();
-        }
         this._userDetails.data.osmConnection.registerActivateOsmAUthenticationClass();
     }
 

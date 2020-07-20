@@ -88,7 +88,6 @@ export class LayerDefinition {
         }
     } = undefined) {
         if (options === undefined) {
-            console.log("No options!")
             return;
         }
         this.name = options.name;
@@ -100,7 +99,6 @@ export class LayerDefinition {
         this.title = options.title;
         this.elementsToShow = options.elementsToShow;
         this.style = options.style;
-        console.log(this)
     }
 
     asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>,

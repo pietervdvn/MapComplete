@@ -100,7 +100,7 @@ export abstract class UIElement {
         return this;
     }
 
-    protected abstract InnerRender(): string;
+    public abstract InnerRender(): string;
 
     public Activate(): void {
         for (const i in this) {

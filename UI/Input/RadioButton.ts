@@ -62,7 +62,7 @@ export class RadioButton<T> extends InputElement<T> {
         return 'radio-' + this.id + '-' + i;
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         let body = "";
         let i = 0;
@@ -83,14 +83,16 @@ export class RadioButton<T> extends InputElement<T> {
         if (t === undefined) {
             return;
         }
+        console.log("Trying to find an option for", t)
         // We check that what is selected matches the previous rendering
         for (let i = 0; i < this._elements.length; i++) {
             const e = this._elements[i];
             if (e.IsValid(t)) {
                 this._selectedElementIndex.setData(i);
                 e.GetValue().setData(t);
+                const radio = document.getElementById(this.IdFor(i));
                 // @ts-ignore
-                document.getElementById(this.IdFor(i)).checked = true;
+                radio?.checked = true;
                 return;
             }
 
