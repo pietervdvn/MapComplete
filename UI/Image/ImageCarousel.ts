@@ -23,10 +23,10 @@ export class ImageCarouselConstructor implements TagDependantUIElementConstructo
         return 0;
     }
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new ImageCarousel(tags, changes);
+    construct(dependencies: { tags: UIEventSource<any>, changes: Changes }): TagDependantUIElement {
+        return new ImageCarousel(dependencies.tags, dependencies.changes);
     }
-    
+
 }
 
 export class ImageCarousel extends TagDependantUIElement {

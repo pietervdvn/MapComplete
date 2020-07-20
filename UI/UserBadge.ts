@@ -60,7 +60,7 @@ export class UserBadge extends UIElement {
     protected InnerRender(): string {
         const user = this._userDetails.data;
         if (!user.loggedIn) {
-            return "<div class='activate-osm-authentication'>Klik hier om aan te melden bij OSM</div>";
+            return "<div class='activate-osm-authentication'>Login with OpenStreetMap</div>";
         }
         
         

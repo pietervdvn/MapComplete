@@ -73,7 +73,11 @@ export default class BikeStations extends LayerDefinition {
                     }
                 }
             } else {
-                iconName = "repair_station.svg"
+                if (!self.pump.matchesProperties(properties)) {
+                    iconName = "repair_station.svg"
+                } else {
+                    iconName = "repair_station.svg"
+                }
             }
             const iconUrl = `./assets/bike/${iconName}`
             return {

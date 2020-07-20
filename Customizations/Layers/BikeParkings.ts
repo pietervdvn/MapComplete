@@ -23,7 +23,7 @@ export default class BikeParkings extends LayerDefinition {
         this.title = new FixedText("Fietsparking");
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-            new OperatorTag(),
+          //  new OperatorTag(),
             new ParkingType()
         ];
 

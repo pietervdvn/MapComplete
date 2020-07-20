@@ -325,9 +325,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         const cancelContents = this._editMode.map((isEditing) => {
             if (isEditing) {
-                return "<span class='skip-button'>Annuleren</span>";
+                return "<span class='skip-button'>Cancel</span>";
             } else {
-                return "<span class='skip-button'>Overslaan (Ik weet het niet zeker...)</span>";
+                return "<span class='skip-button'>Skip this question</span>";
             }
         });
         // And at last, set up the skip button

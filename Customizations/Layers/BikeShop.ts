@@ -55,8 +55,16 @@ export class BikeShop extends LayerDefinition {
             new TagRenderingOptions({
                 question: "Does this shop repair bicycles?",
                 mappings: [
-                    {k: this.sellsBikes, txt: "Bikes can be repaired here"},
-                    {k: new Tag("service:bicycle:retail", "no"), txt: "No bikes can be bought here"},
+                    {k: new Tag("service:bicycle:repair", "yes"), txt: "Bikes are repaired here, by the shop owner (for a fee)"},
+                    {k: new Tag("service:bicycle:repair", "no"), txt: "Bikes are not repaired here"},
+                ]
+            }),
+
+            new TagRenderingOptions({
+                question: "Are there tools here so that one can repair their own bike?",
+                mappings: [
+                    {k: new Tag("service:bicycle:diy", "yes"), txt: "Tools for DIY are available here"},
+                    {k: new Tag("service:bicycle:diy", "no"), txt: "No tools for DIY are available here"},
                 ]
             }),
         ]
