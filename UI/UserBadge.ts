@@ -21,6 +21,7 @@ export class UserBadge extends UIElement {
                 pendingChanges: UIElement,
                 basemap: Basemap) {
         super(userDetails);
+        
         this._userDetails = userDetails;
         this._pendingChanges = pendingChanges;
         this._basemap = basemap;

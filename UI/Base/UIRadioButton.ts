@@ -7,25 +7,45 @@ export class UIRadioButton<T> extends UIInputElement<T> {
     public readonly SelectedElementIndex: UIEventSource<number>
         = new UIEventSource<number>(null);
 
-    private readonly _elements: UIEventSource<UIElement[]>
+    private value: UIEventSource<T>;
+    private readonly _elements: UIInputElement<T>[]
     private _selectFirstAsDefault: boolean;
     private _valueMapping: (i: number) => T;
 
-    constructor(elements: UIEventSource<UIElement[]>,
-                valueMapping: ((i: number) => T),
+
+    constructor(elements: UIInputElement<T>[],
                 selectFirstAsDefault = true) {
-        super(elements);
+        super(undefined);
         this._elements = elements;
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
-        this._valueMapping = valueMapping;
         this.SelectedElementIndex.addCallback(() => {
             self.InnerUpdate(undefined);
         })
+
+
+        this.value =
+            UIEventSource.flatten(this.SelectedElementIndex.map(
+                (selectedIndex) => {
+                    if (selectedIndex !== undefined && selectedIndex !== null) {
+                        return elements[selectedIndex].GetValue()
+                    }
+                }
+            ), elements.map(e => e.GetValue()))
+        ;
+
+
+        for (let i = 0; i < elements.length; i ++){
+            elements[i].onClick(( ) => {
+                self.SelectedElementIndex.setData(i);
+            });
+        }
+
+
     }
     
     GetValue(): UIEventSource<T> {
-        return this.SelectedElementIndex.map(this._valueMapping);
+        return this.value;
     }
 
 
@@ -37,7 +57,7 @@ export class UIRadioButton<T> extends UIInputElement<T> {
 
         let body = "";
         let i = 0;
-        for (const el of this._elements.data) {
+        for (const el of this._elements) {
             const htmlElement =
                 '<input type="radio" id="' + this.IdFor(i) + '" name="radiogroup-' + this.id + '">' +
                 '<label for="' + this.IdFor(i) + '">' + el.Render() + '</label>' +
@@ -54,7 +74,7 @@ export class UIRadioButton<T> extends UIInputElement<T> {
         const self = this;
 
         function checkButtons() {
-            for (let i = 0; i < self._elements.data.length; i++) {
+            for (let i = 0; i < self._elements.length; i++) {
                 const el = document.getElementById(self.IdFor(i));
                 // @ts-ignore
                 if (el.checked) {
@@ -87,7 +107,7 @@ export class UIRadioButton<T> extends UIInputElement<T> {
             var expected = this.SelectedElementIndex.data;
             if (expected) {
 
-                for (let i = 0; i < self._elements.data.length; i++) {
+                for (let i = 0; i < self._elements.length; i++) {
                     const el = document.getElementById(self.IdFor(i));
                     // @ts-ignore
                     if (el.checked) {

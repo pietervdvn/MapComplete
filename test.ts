@@ -7,11 +7,33 @@ import {OsmLink} from "./Customizations/Questions/OsmLink";
 import {ConfirmDialog} from "./UI/ConfirmDialog";
 import {Imgur} from "./Logic/Imgur";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import {UIRadioButton} from "./UI/Base/UIRadioButton";
+import {FixedInputElement} from "./UI/Base/FixedInputElement";
+import {TextField} from "./UI/Base/TextField";
 
 
-const html = new UIEventSource<string>("Some text");
+const buttons = new UIRadioButton<number>(
+    [new FixedInputElement("Five", 5),
+        new FixedInputElement("Ten", 10),
+        new TextField<number>({
+            fromString: (str) => parseInt(str),
+            toString: (i) => ("" + i),
+        })
+    ]
+).AttachTo("maindiv");
 
-const uielement = new VariableUiElement(html);
-uielement.AttachTo("maindiv")
+buttons.GetValue().addCallback(console.log);
+buttons.GetValue().setData(10)
 
-window.setTimeout(() => {html.setData("Different text")}, 1000)
+const value = new TextField<number>({
+    fromString: (str) => parseInt(str),
+    toString: (i) => {
+        if(isNaN(i)){
+            return ""
+        }
+        return ("" + i)
+    },
+}).AttachTo("extradiv").GetValue();
+
+value.setData(42);
+value.addCallback(console.log)
