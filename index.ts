@@ -22,6 +22,10 @@ import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {All} from "./Customizations/Layouts/All";
+import Translations from "./UI/i18n/Translations";
+import Translation from "./UI/i18n/Translation";
+import Locale from "./UI/i18n/Locale";
+import { Layout } from "./Customizations/Layout";
 
 
 
@@ -87,10 +91,13 @@ if (paramDict.test) {
     dryRun = true;
 }
 
-const layoutToUse = AllKnownLayouts.allSets[defaultLayout];
+const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout];
 console.log("Using layout: ", layoutToUse.name);
 
-document.title = layoutToUse.title;
+document.title = layoutToUse.title.Render();
+Locale.language.addCallback(e => {
+    document.title = layoutToUse.title.Render();
+})
 
 
 // ----------------- Setup a few event sources -------------
@@ -242,7 +249,7 @@ var welcomeMessage = () => {
                 login = layoutToUse.welcomeBackMessage;
             }
             return "<div id='welcomeMessage'>" +
-                layoutToUse.welcomeMessage + login + layoutToUse.welcomeTail +
+                layoutToUse.welcomeMessage.Render() + login + layoutToUse.welcomeTail +
                 "</div>";
         }),
         function () {
@@ -277,3 +284,15 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 locationControl.ping();
 messageBox.update();
+
+
+// --- Locale ---
+
+Locale.init()
+
+window.setLanguage = function(language:string) {
+    Locale.language.setData(language)
+}
+
+// const eLanguageSelect = document.getElementById('language-select') as HTMLOptionElement
+// eLanguageSelect.addEventListener('selectionchange')

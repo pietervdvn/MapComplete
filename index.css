@@ -238,6 +238,10 @@ form {
     height: 1em;
 }
 
+#language-select {
+    pointer-events: all;
+    cursor: pointer;
+}
 
 #messagesbox-wrapper {
 }
