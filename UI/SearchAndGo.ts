@@ -9,7 +9,7 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 
 export class SearchAndGo extends UIElement {
 
-    private _placeholder = new UIEventSource("Zoek naar een locatie...")
+    private _placeholder = new UIEventSource("Search a location...")
     private _searchField = new TextField<string>({
             placeholder: new VariableUiElement(this._placeholder),
             fromString: str => str,
@@ -41,7 +41,7 @@ export class SearchAndGo extends UIElement {
     private RunSearch() {
         const searchString = this._searchField.GetValue().data;
         this._searchField.Clear();
-        this._placeholder.setData("Bezig met zoeken...");
+        this._placeholder.setData("Searching...");
         const self = this;
         Geocoding.Search(searchString, this._map, (result) => {
 
@@ -56,10 +56,10 @@ export class SearchAndGo extends UIElement {
                     [bb[1], bb[3]]
                 ]
                 self._map.map.fitBounds(bounds);
-                this._placeholder.setData("Zoek naar een locatie...");
+                this._placeholder.setData("Search a location...");
             },
             () => {
-                this._placeholder.setData("Niets gevonden: er ging iets mis");
+                this._placeholder.setData("Something went wrong. Try again.");
             });
 
     }

@@ -32,15 +32,16 @@ export class StrayClickHandler {
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon]);
             const uiElement = uiToShow();
             const popup = L.popup().setContent(uiElement.Render());
-            uiElement.Activate();
             uiElement.Update();
+            uiElement.Activate();
             self._lastMarker.addTo(map);
             self._lastMarker.bindPopup(popup).openPopup();
 
             self._lastMarker.on("click", () => {
                 leftMessage.setData(self._uiToShow);
             });
-
+            uiElement.Update();
+            uiElement.Activate();
         });
 
         selectElement.addCallback(() => {
