@@ -1,0 +1,12 @@
+#! /bin/bash
+rm *.js
+rm Logic/*.js
+rm Logic/*.js
+rm Logic/*/*.js
+rm Logic/*/*/*.js
+rm UI/*.js
+rm UI/*/*.js
+rm UI/*/*/*.js
+rm Customizations/*.js
+rm Customizations/*/*.js
+rm Customizations/*/*/*.js
