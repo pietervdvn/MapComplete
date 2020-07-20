@@ -5,6 +5,7 @@ import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/OsmConnection";
 import {DropDownUI} from "./Base/DropDownUI";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Translations from "./i18n/Translations";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -31,12 +32,11 @@ export class ImageUploadFlow extends UIElement {
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
 
-        const licensePicker = new DropDownUI("Jouw foto wordt gepubliceerd ",
-
+        const licensePicker = new DropDownUI(Translations.t.image.willBePublished.txt,
             [
-                {value: "CC0", shown: "in het publiek domein"},
-                {value: "CC-BY-SA 4.0", shown: "onder een CC-BY-SA-licentie"},
-                {value: "CC-BY 4.0", shown: "onder een CC-BY-licentie"}
+                {value: "CC0", shown: Translations.t.image.cco.txt},
+                {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs.txt},
+                {value: "CC-BY 4.0", shown: Translations.t.image.ccb.txt}
             ],
             preferedLicense
         );
@@ -65,10 +65,10 @@ export class ImageUploadFlow extends UIElement {
     protected InnerRender(): string {
 
         if (!this._userdetails.data.loggedIn) {
-            return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden</div>";
+            return `<div class='activate-osm-authentication'>${Translations.t.image.pleaseLogin.Render()}</div>`;
         }
         if (this._isUploading.data == 1) {
-            return "<b>Bezig met een foto te uploaden...</b>"
+            return `<b>${Translations.t.image.uploadingPicture.Render()}</b>`
         }
         if (this._isUploading.data > 0) {
             return "<b>Bezig met uploaden, nog " + this._isUploading.data + " foto's te gaan...</b>"
@@ -81,7 +81,7 @@ export class ImageUploadFlow extends UIElement {
             
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
-            "<span class='imageflow-add-picture'>Voeg foto toe</span>" +
+            `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.Render()}</span>` +
             "<div class='break'></div>"+
             "</div>" +
             this._licensePicker.Render() +

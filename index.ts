@@ -26,6 +26,7 @@ import Translations from "./UI/i18n/Translations";
 import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import { Layout } from "./Customizations/Layout";
+import ParkingType from "./Customizations/Questions/bike/ParkingType";
 
 
 
@@ -94,9 +95,10 @@ if (paramDict.test) {
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout];
 console.log("Using layout: ", layoutToUse.name);
 
-document.title = layoutToUse.title.Render();
+const uiElToTxt = el => el instanceof Translation ? el.txt : el.Render()
+document.title = uiElToTxt(layoutToUse.title)
 Locale.language.addCallback(e => {
-    document.title = layoutToUse.title.Render();
+    document.title = uiElToTxt(layoutToUse.title)
 })
 
 
@@ -294,5 +296,9 @@ window.setLanguage = function(language:string) {
     Locale.language.setData(language)
 }
 
-// const eLanguageSelect = document.getElementById('language-select') as HTMLOptionElement
-// eLanguageSelect.addEventListener('selectionchange')
+const eLanguageSelect = document.getElementById('language-select') as HTMLOptionElement
+eLanguageSelect.addEventListener('input', e => {
+    // @ts-ignore
+    const selectedLanguage = e.target.value as string
+    Locale.language.setData(selectedLanguage.toLowerCase())
+})
