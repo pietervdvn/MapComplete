@@ -27,8 +27,7 @@ export class RadioButton<T> extends InputElement<T> {
                         return elements[selectedIndex].GetValue()
                     }
                 }
-            ), elements.map(e => e.GetValue()))
-        ;
+            ), elements.map(e => e.GetValue()));
 
         this.value.addCallback((t) => {
             self.ShowValue(t);

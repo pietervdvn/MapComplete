@@ -83,7 +83,8 @@ export abstract class UIElement {
     }
     
     // Called after the HTML has been replaced. Can be used for css tricks
-    InnerUpdate(htmlElement : HTMLElement){}
+   protected InnerUpdate(htmlElement: HTMLElement) {
+   }
 
     Render(): string {
         return "<span class='uielement' id='" + this.id + "'>" + this.InnerRender() + "</span>"

@@ -1,35 +1,61 @@
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
+import {InputElement} from "./InputElement";
+import instantiate = WebAssembly.instantiate;
+import {FixedUiElement} from "../Base/FixedUiElement";
 
-export class DropDown extends UIElement {
+export class DropDown<T> extends InputElement<T> {
 
-    selectedElement: UIEventSource<string>
-    private _label: string;
-    private _values: { value: string; shown: string }[];
+    private readonly _label: string;
+    private readonly _values: { value: T; shown: UIElement }[];
 
-    constructor(label: string, values: { value: string, shown: string }[],
-                selectedElement: UIEventSource<string> = undefined) {
+    private readonly _value;
+
+    constructor(label: string,
+                values: { value: T, shown: string | UIElement }[],
+                value: UIEventSource<T> = undefined) {
         super(undefined);
+        this._value = value ?? new UIEventSource<T>(undefined);
         this._label = label;
-        this._values = values;
-        this.selectedElement = selectedElement ?? new UIEventSource<string>(values[0].value);
-        if(selectedElement.data === undefined){
-            this.selectedElement.setData(values[0].value)
+        this._values = values.map(v => {
+                return {
+                    value: v.value,
+                    shown: v.shown instanceof UIElement ? v.shown : new FixedUiElement(v.shown)
+                }
+            }
+        );
+        this.ListenTo(this._value)
+
+    }
+
+    GetValue(): UIEventSource<T> {
+        return this._value;
+    }
+
+    ShowValue(t: T): boolean {
+        if (!this.IsValid(t)) {
+            return false;
         }
-        const self = this;
-        this.selectedElement.addCallback(() => {
-            self.InnerUpdate();
-        });
+        this._value.setData(t);
+    }
+
+    IsValid(t: T): boolean {
+        for (const value of this._values) {
+            if (value.value === t) {
+                return true;
+            }
+        }
+        return false
     }
 
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         let options = "";
-        for (const value of this._values) {
-            options += "<option value='" + value.value + "'>" + value.shown + "</option>"
-        }
+        for (let i = 0; i < this._values.length; i++) {
+            options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
 
+        }
         return "<form>" +
             "<label for='dropdown-" + this.id + "'>" + this._label + "</label>" +
             "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
@@ -38,24 +64,26 @@ export class DropDown extends UIElement {
             "</form>";
     }
 
-    InnerUpdate() {
+    protected InnerUpdate(element) {
+
+        var e = document.getElementById("dropdown-" + this.id);
         const self = this;
-        const e = document.getElementById("dropdown-" + this.id);
-        if(e === null){
-            return;
-        }
-        // @ts-ignore
-        if (this.selectedElement.data !== e.value) {
+        e.onchange = (() => {
             // @ts-ignore
-            e.value = this.selectedElement.data;
+            var index = parseInt(e.selectedIndex);
+            self._value.setData(self._values[index].value);
+
+        });
+
+        var t = this._value.data;
+        for (let i = 0; i < this._values.length ; i++) {
+            const value = this._values[i];
+            if (value.value == t) {
+                // @ts-ignore
+                e.selectedIndex = i;
+            }
         }
-        e.onchange = function () {
-            // @ts-ignore
-            const selectedValue = e.options[e.selectedIndex].value;
-            console.log("Putting data", selectedValue)
-            self.selectedElement.setData(selectedValue);
-        }
-        
+
     }
 
 }

@@ -8,6 +8,4 @@ export abstract class InputElement<T> extends UIElement{
     
     abstract IsValid(t: T) : boolean;
     
-    abstract ShowValue(t: T) : boolean;
-
 }

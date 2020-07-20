@@ -10,17 +10,15 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {TextField} from "./UI/Input/TextField";
 import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {RadioButton} from "./UI/Input/RadioButton";
+import {DropDown} from "./UI/Input/DropDown";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-
-const buttons = new RadioButton<number>(
-    [new FixedInputElement("Five", 5),
-        new FixedInputElement("Ten", 10),
-        new TextField<number>({
-            fromString: (str) => parseInt(str),
-            toString: (i) => ("" + i),
-        })
-    ], false
+const dropdown = new RadioButton<string>(
+    [new FixedInputElement("5","5"),
+    new TextField({
+        toString: ((str) => str),
+        fromString: ((str) => str),
+    })]
 ).AttachTo("maindiv");
-
-
-buttons.GetValue().addCallback(console.log);
+const value = dropdown.GetValue();
+value.setData("asldkjvmqlksjdf")

@@ -23,9 +23,11 @@ export class TextField<T> extends InputElement<T> {
         value?: UIEventSource<T>
     }) {
         super(undefined);
+        const self = this;
         this.value = new UIEventSource<string>("");
-        this.mappedValue = options?.value ?? new UIEventSource<T>(undefined);
 
+        this.mappedValue = options?.value ?? new UIEventSource<T>(undefined);
+        this.mappedValue.addCallback(() => self.InnerUpdate());
 
         // @ts-ignore
         this._fromString = options.fromString ?? ((str) => (str))
@@ -42,7 +44,6 @@ export class TextField<T> extends InputElement<T> {
         this._toString = options.toString ?? ((t) => ("" + t));
 
 
-        const self = this;
         this.mappedValue.addCallback((t) => {
             if (t === undefined || t === null) {
                 return;
@@ -73,7 +74,7 @@ export class TextField<T> extends InputElement<T> {
             "</form>";
     }
 
-    InnerUpdate(htmlElement: HTMLElement) {
+    InnerUpdate() {
         const field = document.getElementById('text-' + this.id);
         if (field === null) {
             return;
@@ -92,8 +93,12 @@ export class TextField<T> extends InputElement<T> {
         });
 
         if (this.IsValid(this.mappedValue.data)) {
+            const expected = this._toString(this.mappedValue.data);
             // @ts-ignore
-            field.value = this._toString(this.mappedValue.data);
+            if (field.value !== expected) {
+                // @ts-ignore
+                field.value = expected;
+            }
         }
 
 

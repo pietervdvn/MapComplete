@@ -41,7 +41,7 @@ export class ImageUploadFlow extends UIElement {
             preferedLicense
         );
         this._licensePicker = licensePicker;
-        this._selectedLicence = licensePicker.selectedElement;
+        this._selectedLicence = licensePicker.GetValue();
 
 
         const licenseExplanations = {
@@ -62,7 +62,7 @@ export class ImageUploadFlow extends UIElement {
     }
 
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         if (!this._userdetails.data.loggedIn) {
             return "<div class='activate-osm-authentication'>Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden</div>";

@@ -263,7 +263,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             this._editButton = new FixedUiElement("<img class='editbutton' src='./assets/pencil.svg' alt='edit'>")
                 .onClick(() => {
                     self._editMode.setData(true);
-                    self._questionElement.ShowValue(self.CurrentValue());
+                    self._questionElement.GetValue().setData(self.CurrentValue());
                 });
         }
 
