@@ -21,7 +21,9 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {All} from "./Customizations/Layouts/All";
+import { All } from "./Customizations/Layouts/All";
+import {CheckBox} from "./UI/Base/CheckBox";
+import { DrinkingWater } from "./Customizations/Layers/DrinkingWater";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -48,7 +50,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-let defaultLayout = "buurtnatuur"
+let defaultLayout = "walkbybrussels"
 
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
@@ -177,6 +179,9 @@ for (const layer of layoutToUse.layers) {
     }
     addButtons.push(addButton);
     flayers.push(flayer);
+
+    console.log(flayers);
+    
 }
 
 const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
@@ -277,3 +282,19 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 locationControl.ping();
 messageBox.update();
+
+// --------------- Setting up filter ui --------
+
+for (let i = 0; i < flayers.length; i++) {
+    const listItem = document.createElement(`li`);
+    listItem.setAttribute(`id`,`${flayers[i].name}`)
+    document.querySelector(`#filterui`).appendChild(listItem);
+    const eventSource = new UIEventSource(flayers[i].isDisplayed.data);
+    new CheckBox(eventSource, flayers[i].name)
+        .onClick(() => {
+            eventSource.setData(!eventSource.data);
+            flayers[i].isDisplayed.setData(eventSource.data);
+        })
+        .AttachTo(flayers[i].name);
+}
+        

@@ -254,6 +254,30 @@ form {
     pointer-events: all;
 }
 
+#filterui {
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    z-index: 5000;
+    background-color: white;
+    border-radius: 2em;
+    pointer-events: all;
+    list-style: none;
+}
+
+#filterui li span {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox__label--checked {
+    margin-left: .7rem;
+}
+
+.checkbox__label--unchecked {
+    margin-left: 2.45rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     #messagesbox-wrapper {
