@@ -80,7 +80,9 @@ export default class BikeStations extends LayerDefinition {
                 color: "#00bb00",
                 icon: L.icon({
                     iconUrl: iconUrl,
-                    iconSize: [50, 50]
+                    iconSize: [50, 50],
+                    iconAnchor: [25,50]
+                    
                 })
             };
         };

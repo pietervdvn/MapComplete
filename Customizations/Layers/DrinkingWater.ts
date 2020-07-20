@@ -11,7 +11,7 @@ export class DrinkingWater extends LayerDefinition {
     constructor() {
         super();
         this.name = "drinking_water";
-        this.icon = "./assets/bug.svg";
+        this.icon = "./assets/bike/drinking_water.svg";
 
         this.overpassFilter = new Or([
             new And([
@@ -52,7 +52,8 @@ export class DrinkingWater extends LayerDefinition {
                 color: "#00bb00",
                 icon: new L.icon({
                     iconUrl: self.icon,
-                    iconSize: [40, 40]
+                    iconSize: [50, 50],
+                    iconAnchor: [25,50]
                 })
             };
         };
