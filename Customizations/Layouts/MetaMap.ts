@@ -5,6 +5,7 @@ import {Map} from "../Layers/Map";
 export class MetaMap extends Layout{
     constructor() {
         super(    "metamap",
+            ["en"],
             "Open Map Map",
             [new Map()],
             1,

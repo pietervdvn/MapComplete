@@ -6,9 +6,9 @@ import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 
 export class MessageBoxHandler {
-    private _uielement: UIEventSource<() => UIElement>;
+    private _uielement: UIEventSource<UIElement>;
 
-    constructor(uielement: UIEventSource<() => UIElement>,
+    constructor(uielement: UIEventSource<UIElement>,
                 onClear: (() => void)) {
         this._uielement = uielement;
         this.listenTo(uielement);
@@ -22,14 +22,13 @@ export class MessageBoxHandler {
             }
         }
 
-        new VariableUiElement(new UIEventSource<string>("<h2>Return to the map</h2>"),
-            () => {
-                document.getElementById("to-the-map").onclick = function () {
-                    uielement.setData(undefined);
-                    onClear();
-                }
-            }
-        ).AttachTo("to-the-map");
+        new VariableUiElement(new UIEventSource<string>("<h2>Return to the map</h2>"))
+            .onClick(() => {
+                console.log("Clicked 'return to the map'")
+                uielement.setData(undefined);
+                onClear();
+            })
+            .AttachTo("to-the-map");
 
 
     }
@@ -55,7 +54,7 @@ export class MessageBoxHandler {
         location.hash = "#element"
         wrapper.classList.remove("hidden");
 
-        gen()
+        gen
             ?.HideOnEmpty(true)
             ?.AttachTo("messagesboxmobile")
             ?.Activate();

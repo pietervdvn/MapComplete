@@ -307,23 +307,26 @@ form {
     }
 }
 
-
 #to-the-map {
+    position: relative;
+}
+
+#to-the-map h2{
     
+    position: absolute;
     height: 4em;
+    
     padding: 0.5em;
     margin: 0;
     
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    
     padding-right: 2em;
+    padding-top: 1em;
+    text-align: center;
     width: 100%;
-    text-align: right;
     color: white;
     background-color: #7ebc6f;
     cursor: pointer;
+    
 }
 
 

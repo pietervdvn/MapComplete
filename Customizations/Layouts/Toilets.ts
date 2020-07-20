@@ -4,6 +4,7 @@ import * as Layer from "../Layers/Toilets";
 export class Toilets extends Layout{
     constructor() {
         super(      "toilets",
+            ["en"],
             "Open Toilet Map",
             [new Layer.Toilets()],
             12,

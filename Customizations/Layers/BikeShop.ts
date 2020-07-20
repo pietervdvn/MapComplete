@@ -1,6 +1,6 @@
 import {TagRenderingOptions} from "../TagRendering";
 import {LayerDefinition} from "../LayerDefinition";
-import {Tag} from "../../Logic/TagsFilter";
+import {And, Tag} from "../../Logic/TagsFilter";
 import L from "leaflet";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {NameQuestion} from "../Questions/NameQuestion";
@@ -24,6 +24,16 @@ export class BikeShop extends LayerDefinition {
 
         this.title = new TagRenderingOptions({
             mappings: [
+                {k: new And([new Tag("name", "*"), this.sellsBikes]), txt: "Bicycle shop {name}"},
+                {
+                    k: new And([new Tag("name", "*"), new Tag("service:bicycle:retail", "no")]),
+                    txt: "Bicycle repair {name}",
+                },
+                {
+                    k: new And([new Tag("name", "*"), new Tag("service:bicycle:retail", "")]),
+                    txt: "Bicycle repair {name}"
+                },
+
                 {k: this.sellsBikes, txt: "Bicycle shop"},
                 {k: new Tag("service:bicycle:retail", "no"), txt: "Bicycle repair"},
                 {k: new Tag("service:bicycle:retail", ""), txt: "Bicycle repair/shop"},

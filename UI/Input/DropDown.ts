@@ -50,7 +50,10 @@ export class DropDown<T> extends InputElement<T> {
 
 
     InnerRender(): string {
-
+        if(this._values.length <=1){
+            return "";
+        }
+        
         let options = "";
         for (let i = 0; i < this._values.length; i++) {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
@@ -65,8 +68,12 @@ export class DropDown<T> extends InputElement<T> {
     }
 
     protected InnerUpdate(element) {
+       
 
         var e = document.getElementById("dropdown-" + this.id);
+        if(e === null){
+            return;
+        }
         const self = this;
         e.onchange = (() => {
             // @ts-ignore

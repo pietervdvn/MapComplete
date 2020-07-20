@@ -6,6 +6,7 @@ import { Park } from "../Layers/Park";
 export class WalkByBrussels extends Layout {
     constructor() {
         super("walkbybrussels",
+            ["en","fr","nl"],
             "Drinking Water Spots",
             [new DrinkingWater(), new Park(), new NatureReserves()],
             10,

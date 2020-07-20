@@ -14,6 +14,7 @@ export class Layout {
     public welcomeBackMessage: string;
 
     public startzoom: number;
+    public supportedLanguages: string[];
     public startLon: number;
     public startLat: number;
     public welcomeTail: string;
@@ -35,6 +36,7 @@ export class Layout {
      */
     constructor(
         name: string,
+        supportedLanguages: string[],
         title: UIElement | string,
         layers: LayerDefinition[],
         startzoom: number,
@@ -45,6 +47,7 @@ export class Layout {
         welcomeBackMessage: string = "You are logged in. Welcome back!",
         welcomeTail: string = ""
     ) {
+        this.supportedLanguages = supportedLanguages;
         this.title = typeof(title) === 'string' ? new FixedUiElement(title) : title;
         this.startLon = startLon;
         this.startLat = startLat;

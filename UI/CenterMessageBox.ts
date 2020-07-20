@@ -34,7 +34,7 @@ export class CenterMessageBox extends UIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         if (this._centermessage.data != "") {
             return this._centermessage.data;

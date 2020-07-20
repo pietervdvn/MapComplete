@@ -37,11 +37,10 @@ export abstract class UIElement {
     
     Update(): void {
         let element = document.getElementById(this.id);
-        if (element === null || element === undefined) {
+        if (element === undefined || element === null) {
             // The element is not painted
             return;
         }
-
         element.innerHTML = this.InnerRender();
         if (this._hideIfEmpty) {
             if (element.innerHTML === "") {

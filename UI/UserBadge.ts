@@ -5,6 +5,7 @@ import {Basemap} from "../Logic/Basemap";
 import L from "leaflet";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Translations from "./i18n/Translations";
 
 /**
  * Handles and updates the user badge
@@ -15,13 +16,15 @@ export class UserBadge extends UIElement {
     private _logout: UIElement;
     private _basemap: Basemap;
     private _homeButton: UIElement;
+    private _languagePicker: UIElement;
 
 
     constructor(userDetails: UIEventSource<UserDetails>,
                 pendingChanges: UIElement,
+                languagePicker: UIElement,
                 basemap: Basemap) {
         super(userDetails);
-        
+        this._languagePicker = languagePicker;
         this._userDetails = userDetails;
         this._pendingChanges = pendingChanges;
         this._basemap = basemap;
@@ -61,7 +64,7 @@ export class UserBadge extends UIElement {
     InnerRender(): string {
         const user = this._userDetails.data;
         if (!user.loggedIn) {
-            return "<div class='activate-osm-authentication'>Login with OpenStreetMap</div>";
+            return "<div class='activate-osm-authentication'>" + Translations.general.loginWithOpenStreetMap.R()+ "</div>";
         }
         
         
@@ -114,6 +117,7 @@ export class UserBadge extends UIElement {
             "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
             "</a></span> " +
             this._logout.Render() +
+            this._languagePicker.Render() +
             this._pendingChanges.Render() +
             "</p>" +
        

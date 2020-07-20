@@ -10,16 +10,16 @@ import {UIElement} from "../UI/UIElement";
 export class StrayClickHandler {
     private _basemap: Basemap;
     private _lastMarker;
-    private _leftMessage: UIEventSource<() => UIElement>;
+    private _fullScreenMessage: UIEventSource<UIElement>;
     private _uiToShow: (() => UIElement);
 
     constructor(
         basemap: Basemap,
         selectElement: UIEventSource<any>,
-        leftMessage: UIEventSource<() => UIElement>, 
+        fullScreenMessage: UIEventSource<UIElement>, 
         uiToShow: (() => UIElement)) {
         this._basemap = basemap;
-        this._leftMessage = leftMessage;
+        this._fullScreenMessage = fullScreenMessage;
         this._uiToShow = uiToShow;
         const self = this;
         const map = basemap.map;
@@ -38,7 +38,7 @@ export class StrayClickHandler {
             self._lastMarker.bindPopup(popup).openPopup();
 
             self._lastMarker.on("click", () => {
-                leftMessage.setData(self._uiToShow);
+                fullScreenMessage.setData(self._uiToShow());
             });
             uiElement.Update();
             uiElement.Activate();

@@ -21,7 +21,7 @@ export class PendingChanges extends UIElement {
         })
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this._isSaving.data) {
             return "<span class='alert'>Saving</span>";
         }

@@ -10,7 +10,7 @@ import {TagRenderingOptions} from "../Customizations/TagRendering";
 import {OsmLink} from "../Customizations/Questions/OsmLink";
 import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
 import {And} from "../Logic/TagsFilter";
-import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Customizations/UIElementConstructor";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -31,7 +31,7 @@ export class FeatureInfoBox extends UIElement {
     constructor(
         tagsES: UIEventSource<any>,
         title: TagRenderingOptions,
-        elementsToShow: TagRenderingOptions[],
+        elementsToShow: TagDependantUIElementConstructor[],
         changes: Changes,
         userDetails: UIEventSource<UserDetails>
     ) {

@@ -123,6 +123,7 @@ export class OsmConnection {
     public preferenceSources : any = {}
     
     public GetPreference(key: string) : UIEventSource<string>{
+        key = "mapcomplete-"+key;
         if (this.preferenceSources[key] !== undefined) {
             return this.preferenceSources[key];
         }

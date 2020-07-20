@@ -105,7 +105,6 @@ export class TextField<T> extends InputElement<T> {
     }
 
     IsValid(t: T): boolean {
-        console.log("TXT IS valid?",t,this._toString(t))
         if(t === undefined || t === null){
             return false;
         }

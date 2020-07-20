@@ -5,6 +5,7 @@ import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/OsmConnection";
 import {DropDown} from "./Input/DropDown";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Translations from "./i18n/Translations";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -66,7 +67,7 @@ export class ImageUploadFlow extends UIElement {
 
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
-            "<span class='imageflow-add-picture'>Add a picture</span>" +
+            "<span class='imageflow-add-picture'>"+Translations.general.uploadAPicture.R()+"</span>" +
             "<div class='break'></div>" +
             "</div>" +
 
