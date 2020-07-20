@@ -164,7 +164,6 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 
 // ------------- Setup the layers -------------------------------
-const controls = {};
 const addButtons: {
     name: string,
     icon: string,
@@ -193,8 +192,6 @@ for (const layer of layoutToUse.layers) {
     minZoom = Math.max(minZoom, layer.minzoom);
 
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
-
-    controls[layer.name] = flayer.isDisplayed;
 
     const addButton = {
         name: layer.name,
@@ -272,17 +269,17 @@ new CollapseButton("messagesbox")
 var generateWelcomeMessage = () => {
     return new VariableUiElement(
         osmConnection.userDetails.map((userdetails) => {
-            var login = layoutToUse.gettingStartedPlzLogin;
+            var login = layoutToUse.gettingStartedPlzLogin.Render();
             if (userdetails.loggedIn) {
-                login = layoutToUse.welcomeBackMessage;
+                login = layoutToUse.welcomeBackMessage.Render();
             }
             return "<div id='welcomeMessage'>" +
-                layoutToUse.welcomeMessage.Render() + login + layoutToUse.welcomeTail +
+                layoutToUse.welcomeMessage.Render() + login + layoutToUse.welcomeTail.Render() +
                 "</div>";
         }),
         function () {
             osmConnection.registerActivateOsmAUthenticationClass()
-        });
+        }).ListenTo(Locale.language);
 }
 generateWelcomeMessage().AttachTo("messagesbox");
 fullScreenMessage.setData(generateWelcomeMessage());
@@ -314,12 +311,3 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 locationControl.ping();
 messageBox.update();
-
-/*
-const eLanguageSelect = document.getElementById('language-select') as HTMLOptionElement
-eLanguageSelect.addEventListener('input', e => {
-    // @ts-ignore
-    const selectedLanguage = e.target.value as string
-    Locale.language.setData(selectedLanguage.toLowerCase())
-})
-*/

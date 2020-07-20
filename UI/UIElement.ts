@@ -13,18 +13,23 @@ export abstract class UIElement {
         this.id = "ui-element-" + UIElement.nextId;
         this._source = source;
         UIElement.nextId++;
+        if (UIElement.nextId % 100 == 0) {
+
+            console.log(UIElement.nextId)
+        }
         this.ListenTo(source);
     }
 
 
     public ListenTo(source: UIEventSource<any>) {
         if (source === undefined) {
-            return;
+            return this;
         }
         const self = this;
         source.addCallback(() => {
             self.Update();
         })
+        return this;
     }
 
     private _onClick: () => void;

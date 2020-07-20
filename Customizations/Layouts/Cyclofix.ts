@@ -6,6 +6,7 @@ import {GhostBike} from "../Layers/GhostBike";
 import Translations from "../../UI/i18n/Translations";
 import {DrinkingWater} from "../Layers/DrinkingWater";
 import {BikeShop} from "../Layers/BikeShop"
+import Combine from "../../UI/Base/Combine";
 
 
 export default class Cyclofix extends Layout {
@@ -18,10 +19,13 @@ export default class Cyclofix extends Layout {
             16,
             50.8465573,
             4.3516970,
-            "<h3>" + Translations.t.cyclofix.title.Render() + "</h3>\n" +
-            "\n" +
-            `<p>${Translations.t.cyclofix.description.Render()}</p>`
-            ,
+            new Combine([
+                "<h3>",
+                Translations.t.cyclofix.title,
+                "</h3><br/><p>",
+                Translations.t.cyclofix.description,
+                "</p>"
+            ]),
             "", "");
     }
 }

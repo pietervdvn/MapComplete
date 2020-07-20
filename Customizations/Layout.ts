@@ -1,6 +1,8 @@
 import {LayerDefinition} from "./LayerDefinition";
 import { UIElement } from "../UI/UIElement";
-import { FixedUiElement } from "../UI/Base/FixedUiElement";
+import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import Translation from "../UI/i18n/Translation";
+import Translations from "../UI/i18n/Translations";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -10,14 +12,14 @@ export class Layout {
     public title: UIElement;
     public layers: LayerDefinition[];
     public welcomeMessage: UIElement;
-    public gettingStartedPlzLogin: string;
-    public welcomeBackMessage: string;
+    public gettingStartedPlzLogin: UIElement;
+    public welcomeBackMessage: UIElement;
+    public welcomeTail: UIElement;
 
     public startzoom: number;
     public supportedLanguages: string[];
     public startLon: number;
     public startLat: number;
-    public welcomeTail: string;
 
     public locationContains: string[];
 
@@ -43,21 +45,21 @@ export class Layout {
         startLat: number,
         startLon: number,
         welcomeMessage: UIElement | string,
-        gettingStartedPlzLogin: string = "Please login to get started",
-        welcomeBackMessage: string = "You are logged in. Welcome back!",
-        welcomeTail: string = ""
+        gettingStartedPlzLogin: UIElement | string = "Please login to get started",
+        welcomeBackMessage: UIElement | string = "You are logged in. Welcome back!",
+        welcomeTail: UIElement | string = ""
     ) {
         this.supportedLanguages = supportedLanguages;
-        this.title = typeof(title) === 'string' ? new FixedUiElement(title) : title;
+        this.title = typeof (title) === 'string' ? new FixedUiElement(title) : title;
         this.startLon = startLon;
         this.startLat = startLat;
         this.startzoom = startzoom;
         this.name = name;
         this.layers = layers;
-        this.welcomeMessage = typeof(welcomeMessage) === 'string' ? new FixedUiElement(welcomeMessage) : welcomeMessage;
-        this.gettingStartedPlzLogin = gettingStartedPlzLogin;
-        this.welcomeBackMessage = welcomeBackMessage;
-        this.welcomeTail = welcomeTail;
+        this.welcomeMessage =Translations.W(welcomeMessage)
+        this.gettingStartedPlzLogin = Translations.W(gettingStartedPlzLogin);
+        this.welcomeBackMessage = Translations.W(welcomeBackMessage);
+        this.welcomeTail = Translations.W(welcomeTail);
     }
 
 }
