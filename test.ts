@@ -22,4 +22,5 @@ const buttons = new RadioButton<number>(
     ], false
 ).AttachTo("maindiv");
 
+
 buttons.GetValue().addCallback(console.log);

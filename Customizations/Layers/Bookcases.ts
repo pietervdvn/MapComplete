@@ -119,7 +119,10 @@ export class Bookcases extends LayerDefinition {
                     key: "ref",
                     template: "Het referentienummer is $$$",
                     renderTemplate: "Gekend als {brand} <b>{ref}</b>"
-                }
+                },
+                mappings: [
+                    {k: new And([new  Tag("brand",""), new Tag("nobrand","yes"), new Tag("ref", "")]), txt: "Maakt geen deel uit van een groter netwerk"}
+                ]
             }).OnlyShowIf(new Tag("brand","*")),
 
             new TagRenderingOptions({

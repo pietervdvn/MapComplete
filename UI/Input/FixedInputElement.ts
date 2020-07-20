@@ -17,13 +17,19 @@ export class FixedInputElement<T> extends InputElement<T> {
     GetValue(): UIEventSource<T> {
         return this.value;
     }
+    
+    ShowValue(t: T): boolean {
+        return false;
+    }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         return this.rendering.Render();
     }
 
     IsValid(t: T): boolean {
-        return t === this.value.data;
+        return t == this.value.data;
     }
+    
+    
 
 }

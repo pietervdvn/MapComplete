@@ -7,5 +7,7 @@ export abstract class InputElement<T> extends UIElement{
     abstract GetValue() : UIEventSource<T>;
     
     abstract IsValid(t: T) : boolean;
+    
+    abstract ShowValue(t: T) : boolean;
 
 }

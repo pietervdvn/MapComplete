@@ -1,5 +1,6 @@
 import {TagRenderingOptions} from "../TagRendering";
 import {And, Tag} from "../../Logic/TagsFilter";
+import {UIElement} from "../../UI/UIElement";
 
 
 export class NameInline extends TagRenderingOptions{
@@ -8,7 +9,7 @@ export class NameInline extends TagRenderingOptions{
          return string.charAt(0).toUpperCase() + string.slice(1);
     }
     
-    constructor(category: string) {
+    constructor(category: string ) {
         super({
             question: "",
 

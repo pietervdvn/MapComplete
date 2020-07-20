@@ -31,7 +31,7 @@ export class RadioButton<T> extends InputElement<T> {
         ;
 
         this.value.addCallback((t) => {
-            self.SetCorrectValue(t);
+            self.ShowValue(t);
         })
 
 
@@ -79,11 +79,13 @@ export class RadioButton<T> extends InputElement<T> {
         return "<form id='" + this.id + "-form'>" + body + "</form>";
     }
 
-    private SetCorrectValue(t: T) {
+    public ShowValue(t: T): boolean {
         if (t === undefined) {
-            return;
+            return false;
         }
-        console.log("Trying to find an option for", t)
+        if (!this.IsValid(t)) {
+            return false;
+        }
         // We check that what is selected matches the previous rendering
         for (let i = 0; i < this._elements.length; i++) {
             const e = this._elements[i];
@@ -119,9 +121,15 @@ export class RadioButton<T> extends InputElement<T> {
                 checkButtons();
             }
         );
-
-        if (this._selectFirstAsDefault) {
-            this.SetCorrectValue(this.value.data);
+        if (this._selectedElementIndex.data !== null) {
+            const el = document.getElementById(this.IdFor(this._selectedElementIndex.data));
+            if (el) {
+                // @ts-ignore
+                el.checked = true;
+                checkButtons();
+            }
+        } else if (this._selectFirstAsDefault) {
+            this.ShowValue(this.value.data);
             if (this._selectedElementIndex.data === null || this._selectedElementIndex.data === undefined) {
                 const el = document.getElementById(this.IdFor(0));
                 if (el) {

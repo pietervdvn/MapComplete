@@ -262,8 +262,8 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         if (this._question !== undefined) {
             this._editButton = new FixedUiElement("<img class='editbutton' src='./assets/pencil.svg' alt='edit'>")
                 .onClick(() => {
-                    self._questionElement.GetValue().setData(self.CurrentValue());
                     self._editMode.setData(true);
+                    self._questionElement.ShowValue(self.CurrentValue());
                 });
         }
 
@@ -297,7 +297,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             
             const previousTexts= [];
             for (const mapping of options.mappings) {
-                console.log(mapping);
                 if(mapping.k === null){
                     continue;
                 }
@@ -306,7 +305,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 }
                 previousTexts.push(mapping.txt);
                 
-                console.log("PUshed")
                 elements.push(this.InputElementForMapping(mapping));
             }
         }
@@ -349,8 +347,8 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                     return tag;
                 }
                 return new And([
-                        freeform.extraTags,
-                        tag
+                        tag,
+                        freeform.extraTags
                     ]
                 );
             };
@@ -362,7 +360,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 } else if (tag instanceof Tag) {
                     return tag.value
                 }
-                console.log("Could not decode tag to string", tag)
                 return undefined;
             }
 
@@ -392,10 +389,11 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     private CurrentValue(): TagsFilter {
+        console.log("Creating a current value...")
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
         for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
-            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
+            if (oneOnOneElement.k !== null && oneOnOneElement.k.matches(tags)) {
                 return oneOnOneElement.k;
             }
         }
@@ -403,6 +401,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
+        console.log("Got a freeform tag:", new Tag(this._freeform.key, this._source.data[this._freeform.key]))
         return new Tag(this._freeform.key, this._source.data[this._freeform.key]);
     }
 
@@ -469,7 +468,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             return "<div class='question'>" +
                 "<span class='question-text'>" + this._question + "</span>" +
                 (this._question !== "" ? "<br/>" : "") +
-                this._questionElement.Render() +
+               "<div>"+ this._questionElement.Render() +"</div>"+
                 this._skipButton.Render() +
                 this._saveButton.Render() +
                 "</div>"

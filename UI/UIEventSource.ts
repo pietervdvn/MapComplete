@@ -1,6 +1,6 @@
 export class UIEventSource<T>{
     
-    public data : T;
+    public data: T;
     private _callbacks = [];
 
     constructor(data: T) {

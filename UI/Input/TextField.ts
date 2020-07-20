@@ -60,7 +60,14 @@ export class TextField<T> extends InputElement<T> {
         return this.mappedValue;
     }
 
-     InnerRender(): string {
+    ShowValue(t: T): boolean {
+        if (!this.IsValid(t)) {
+            return false;
+        }
+        this.mappedValue.setData(t);
+    }
+
+    InnerRender(): string {
         return "<form onSubmit='return false' class='form-text-field'>" +
             "<input type='text' placeholder='" + this._placeholder.InnerRender() + "' id='text-" + this.id + "'>" +
             "</form>";
@@ -68,7 +75,7 @@ export class TextField<T> extends InputElement<T> {
 
     InnerUpdate(htmlElement: HTMLElement) {
         const field = document.getElementById('text-' + this.id);
-        if(field === null){
+        if (field === null) {
             return;
         }
         const self = this;
@@ -84,10 +91,16 @@ export class TextField<T> extends InputElement<T> {
             }
         });
 
+        if (this.IsValid(this.mappedValue.data)) {
+            // @ts-ignore
+            field.value = this._toString(this.mappedValue.data);
+        }
+
 
     }
 
     IsValid(t: T): boolean {
+        console.log("TXT IS valid?",t,this._toString(t))
         if(t === undefined || t === null){
             return false;
         }
