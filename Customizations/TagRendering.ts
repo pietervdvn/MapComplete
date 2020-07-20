@@ -36,7 +36,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          * If 'question' is undefined, then the question is never asked at all
          * If the question is "" (empty string) then the question is 
          */
-        question?: string,
+        question?: UIElement | string,
 
         /**
          * What is the priority of the question.
@@ -57,7 +57,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          * 
          * 
          */
-        mappings?: { k: TagsFilter, txt: string, priority?: number, substitute?: boolean }[],
+        mappings?: { k: TagsFilter, txt: UIElement | string, priority?: number, substitute?: boolean }[],
 
 
         /**

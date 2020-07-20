@@ -1,13 +1,15 @@
 import {LayerDefinition} from "./LayerDefinition";
+import { UIElement } from "../UI/UIElement";
+import { FixedUiElement } from "../UI/Base/FixedUiElement";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
  */
 export class Layout {
     public name: string;
-    public title: string;
+    public title: UIElement;
     public layers: LayerDefinition[];
-    public welcomeMessage: string;
+    public welcomeMessage: UIElement;
     public gettingStartedPlzLogin: string;
     public welcomeBackMessage: string;
 
@@ -33,23 +35,23 @@ export class Layout {
      */
     constructor(
         name: string,
-        title: string,
+        title: UIElement | string,
         layers: LayerDefinition[],
         startzoom: number,
         startLat: number,
         startLon: number,
-        welcomeMessage: string,
+        welcomeMessage: UIElement | string,
         gettingStartedPlzLogin: string = "Please login to get started",
         welcomeBackMessage: string = "You are logged in. Welcome back!",
         welcomeTail: string = ""
     ) {
-        this.title = title;
+        this.title = typeof(title) === 'string' ? new FixedUiElement(title) : title;
         this.startLon = startLon;
         this.startLat = startLat;
         this.startzoom = startzoom;
         this.name = name;
         this.layers = layers;
-        this.welcomeMessage = welcomeMessage;
+        this.welcomeMessage = typeof(welcomeMessage) === 'string' ? new FixedUiElement(welcomeMessage) : welcomeMessage;
         this.gettingStartedPlzLogin = gettingStartedPlzLogin;
         this.welcomeBackMessage = welcomeBackMessage;
         this.welcomeTail = welcomeTail;
