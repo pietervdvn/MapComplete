@@ -20,6 +20,7 @@ Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `
 - [Buurtnatuur.be](http://buurntatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also funded the initial development!
 - [Cyclofix](https://pietervdvn.github.io/MapComplete/index.html?quests=pomp), further development on [Open Summer of Code](https://summerofcode.be/) funded by [Brussels Mobility](https://mobilite-mobiliteit.brussels/en)
 - [Bookcases](https://pietervdvn.github.io/MapComplete/index.html?quests=bookcases#element) cause I like to collect them.
+- [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=metamap#element), after a tweet
 
 Have a theme idea? Drop it in the [issues](https://github.com/pietervdvn/MapComplete/issues)
 

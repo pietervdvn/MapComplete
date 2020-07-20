@@ -80,14 +80,15 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
         /**
          * In some very rare cases, tags have to be rewritten before displaying
-         * This function adds this
+         * This function can be used for that.
+         * This function is ran on a _copy_ of the original properties
          */
-        tagsPreprocessor?: ((tags: any) => any)
+        tagsPreprocessor?: ((tags: any) => void)
     }) {
         this.options = options;
     }
-    
-    OnlyShowIf(tagsFilter: TagsFilter) : TagDependantUIElementConstructor{
+
+    OnlyShowIf(tagsFilter: TagsFilter): TagDependantUIElementConstructor {
         return new OnlyShowIfConstructor(tagsFilter, this);
     }
 
@@ -111,8 +112,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
     }
 
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new TagRendering(tags, changes, this.options);
+    construct(dependencies: { tags: UIEventSource<any>, changes: Changes }): TagDependantUIElement {
+        return new TagRendering(dependencies.tags, dependencies.changes, this.options);
     }
 
     IsKnown(properties: any): boolean {
@@ -183,11 +184,22 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         this._userDetails = changes.login.userDetails;
         this.ListenTo(this._userDetails);
-        
+
         this._question = options.question;
         this._priority = options.priority ?? 0;
         this._primer = options.primer ?? "";
-        this._tagsPreprocessor = options.tagsPreprocessor;
+        this._tagsPreprocessor = function (properties) {
+            if (options.tagsPreprocessor === undefined) {
+                return properties;
+            }
+            const newTags = {};
+            for (const k in properties) {
+                newTags[k] = properties[k];
+            }
+            options.tagsPreprocessor(newTags);
+            return newTags;
+        };
+        
         this._mapping = [];
         this._renderMapping = [];
         this._freeform = options.freeform;
@@ -313,9 +325,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         const cancelContents = this._editMode.map((isEditing) => {
             if (isEditing) {
-                return "<span class='skip-button'>Annuleren</span>";
+                return "<span class='skip-button'>Cancel</span>";
             } else {
-                return "<span class='skip-button'>Overslaan (Ik weet het niet zeker...)</span>";
+                return "<span class='skip-button'>Skip this question</span>";
             }
         });
         // And at last, set up the skip button
@@ -325,12 +337,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     private ApplyTemplate(template: string): string {
-        let tags = this._source.data;
-        if (this._tagsPreprocessor !== undefined) {
-            tags = this._tagsPreprocessor(tags);
-        }
-
-        
+        const tags = this._tagsPreprocessor(this._source.data);
         return TagUtils.ApplyTemplate(template, tags);
     }
 

@@ -5,7 +5,7 @@ import {UIElement} from "../UI/UIElement";
 
 export interface TagDependantUIElementConstructor {
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement;
+    construct(dependencies: {tags: UIEventSource<any>, changes: Changes}): TagDependantUIElement;
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
     Priority(): number;

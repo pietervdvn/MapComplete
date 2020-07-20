@@ -123,11 +123,12 @@ export class OsmConnection {
     public preferenceSources : any = {}
     
     public GetPreference(key: string) : UIEventSource<string>{
-        if(this.preferenceSources[key] !== undefined){
+        if (this.preferenceSources[key] !== undefined) {
             return this.preferenceSources[key];
         }
-        this.UpdatePreferences();
-        console.log("Getting preference object", key, "currently upstreamed as ",this.preferences.data[key]  );
+        if (this.userDetails.data.loggedIn) {
+            this.UpdatePreferences();
+        }
         const pref = new UIEventSource<string>(this.preferences.data[key]);
         pref.addCallback((v) => {
             this.SetPreference(key, v);

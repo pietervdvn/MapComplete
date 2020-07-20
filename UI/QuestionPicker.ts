@@ -43,10 +43,5 @@ export class QuestionPicker extends UIElement {
             highestQ.CreateHtml(this.source).Render() +
             "</div>";
     }
-    InnerUpdate(htmlElement: HTMLElement) {
-    }
-    
-    Activate() {
-    }
 
 }

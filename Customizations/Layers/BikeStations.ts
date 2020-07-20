@@ -18,7 +18,7 @@ import Translations from "../../UI/i18n/Translations";
 export default class BikeStations extends LayerDefinition {
     private readonly pump = new Tag("service:bicycle:pump", "yes");
     private readonly pumpOperationalAny = new Tag("service:bicycle:pump:operational_status", "yes");
-    private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok")]);
+    private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok"), new Tag("service:bicycle:pump:operational_status", "")]);
     private readonly tools = new Tag("service:bicycle:tools", "yes");
 
     constructor() {
@@ -32,7 +32,6 @@ export default class BikeStations extends LayerDefinition {
 
         this.newElementTags = [
             new Tag("amenity", "bicycle_repair_station")
-            // new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
         ];
         this.maxAllowedOverlapPercentage = 10;
 
@@ -61,7 +60,7 @@ export default class BikeStations extends LayerDefinition {
         const self = this;
         return function (properties: any) {
             const hasPump = self.pump.matchesProperties(properties)
-            const isOperational = !self.pumpOperationalAny.matchesProperties(properties) || self.pumpOperationalOk.matchesProperties(properties)
+            const isOperational = self.pumpOperationalOk.matchesProperties(properties)
             const hasTools = self.tools.matchesProperties(properties)
             let iconName = ""
             if (hasPump) {
@@ -75,14 +74,19 @@ export default class BikeStations extends LayerDefinition {
                     }
                 }
             } else {
-                iconName = "repair_station.svg"
+                if (!self.pump.matchesProperties(properties)) {
+                    iconName = "repair_station.svg"
+                } else {
+                    iconName = "repair_station.svg"
+                }
             }
             const iconUrl = `./assets/bike/${iconName}`
             return {
                 color: "#00bb00",
                 icon: L.icon({
                     iconUrl: iconUrl,
-                    iconSize: [50, 50]
+                    iconSize: [50, 50],
+                    iconAnchor: [25,50]
                 })
             };
         };

@@ -10,7 +10,6 @@ import Translations from "./i18n/Translations";
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
     private _selectedLicence: UIEventSource<string>;
-    private _licenseExplanation: UIElement;
     private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
     private _userdetails: UIEventSource<UserDetails>;
@@ -44,21 +43,6 @@ export class ImageUploadFlow extends UIElement {
         this._selectedLicence = licensePicker.selectedElement;
 
 
-        const licenseExplanations = {
-            "CC-BY-SA 4.0":
-                "<b>Creative Commonse met naamsvermelding en gelijk delen</b><br/>" +
-                "Je foto mag door iedereen gratis gebruikt worden, als ze je naam vermelden én ze afgeleide werken met deze licentie en attributie delen.",
-            "CC-BY 4.0":
-                "<b>Creative Commonse met naamsvermelding</b> <br/>" +
-                "Je foto mag door iedereen gratis gebruikt worden, als ze je naam vermelden",
-            "CC0":
-                "<b>Geen copyright</b><br/> Je foto mag door iedereen voor alles gebruikt worden"
-        }
-        this._licenseExplanation = new VariableUiElement(
-            this._selectedLicence.map((license) => {
-                return licenseExplanations[license]
-            })
-        );
     }
 
 
@@ -67,25 +51,29 @@ export class ImageUploadFlow extends UIElement {
         if (!this._userdetails.data.loggedIn) {
             return `<div class='activate-osm-authentication'>${Translations.t.image.pleaseLogin.Render()}</div>`;
         }
+
+        let uploadingMessage = "";
         if (this._isUploading.data == 1) {
             return `<b>${Translations.t.image.uploadingPicture.Render()}</b>`
         }
         if (this._isUploading.data > 0) {
-            return "<b>Bezig met uploaden, nog " + this._isUploading.data + " foto's te gaan...</b>"
+            uploadingMessage = "<b>Uploading multiple pictures, " + this._isUploading.data + " left...</b>"
         }
 
         return "" +
             "<div class='imageflow'>" +
-            
+
             "<label for='fileselector-" + this.id + "'>" +
-            
+
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
             `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.Render()}</span>` +
             "<div class='break'></div>"+
             "</div>" +
-            this._licensePicker.Render() +
-            
+
+            this._licensePicker.Render() + "<br/>" +
+            uploadingMessage +
+
             "</label>" +
             
             "<input id='fileselector-" + this.id + "' " +

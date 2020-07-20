@@ -56,13 +56,52 @@ export class LayerDefinition {
      */
     elementsToShow: TagDependantUIElementConstructor[];
 
-    style: (tags: any) => { color: string, icon: any };
+    /**
+     * A simple styling for the geojson element
+     * color is the color for areas and ways
+     * icon is the Leaflet icon
+     * Note that this is passed entirely to leaflet, so other leaflet attributes work too
+     */
+    style: (tags: any) => {
+        color: string,
+        icon: any,
+    };
 
     /**
      * If an object of the next layer is contained for this many percent in this feature, it is eaten and not shown
      */
     maxAllowedOverlapPercentage: number = undefined;
 
+
+    constructor(options: {
+        name: string,
+        newElementTags: Tag[],
+        icon: string,
+        minzoom: number,
+        overpassFilter: TagsFilter,
+        title?: TagRenderingOptions,
+        elementsToShow?: TagDependantUIElementConstructor[],
+        maxAllowedOverlapPercentage?: number,
+        style?: (tags: any) => {
+            color: string,
+            icon: any
+        }
+    } = undefined) {
+        if (options === undefined) {
+            console.log("No options!")
+            return;
+        }
+        this.name = options.name;
+        this.maxAllowedOverlapPercentage = options.maxAllowedOverlapPercentage ?? 0;
+        this.newElementTags = options.newElementTags;
+        this.icon = options.icon;
+        this.minzoom = options.minzoom;
+        this.overpassFilter = options.overpassFilter;
+        this.title = options.title;
+        this.elementsToShow = options.elementsToShow;
+        this.style = options.style;
+        console.log(this)
+    }
 
     asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>,
             showOnPopup: (tags: UIEventSource<(any)>) => UIElement):

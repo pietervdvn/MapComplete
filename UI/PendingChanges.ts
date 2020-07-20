@@ -1,20 +1,24 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
+import {Changes} from "../Logic/Changes";
 
 export class PendingChanges extends UIElement {
     private _pendingChangesCount: UIEventSource<number>;
     private _countdown: UIEventSource<number>;
     private _isSaving: UIEventSource<boolean>;
 
-    constructor(pendingChangesCount: UIEventSource<number>,
-                countdown: UIEventSource<number>,
-                isSaving: UIEventSource<boolean>) {
-        super(pendingChangesCount);
-        this.ListenTo(isSaving);
+    constructor(changes: Changes,
+                countdown: UIEventSource<number>) {
+        super(changes.pendingChangesES);
+        this.ListenTo(changes.isSaving);
         this.ListenTo(countdown);
-        this._pendingChangesCount = pendingChangesCount;
+        this._pendingChangesCount = changes.pendingChangesES;
         this._countdown = countdown;
-        this._isSaving = isSaving;
+        this._isSaving = changes.isSaving;
+
+        this.onClick(() => {
+            changes.uploadAll();
+        })
     }
 
     protected InnerRender(): string {

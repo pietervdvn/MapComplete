@@ -1,11 +1,11 @@
-import {Basemap} from "./Basemap";
-import {TagsFilter, TagUtils} from "./TagsFilter";
-import {UIEventSource} from "../UI/UIEventSource";
-import {ElementStorage} from "./ElementStorage";
-import {Changes} from "./Changes";
+import { Basemap } from "./Basemap";
+import { TagsFilter, TagUtils } from "./TagsFilter";
+import { UIEventSource } from "../UI/UIEventSource";
+import { ElementStorage } from "./ElementStorage";
+import { Changes } from "./Changes";
 import L from "leaflet"
-import {GeoOperations} from "./GeoOperations";
-import {UIElement} from "../UI/UIElement";
+import { GeoOperations } from "./GeoOperations";
+import { UIElement } from "../UI/UIElement";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -20,6 +20,7 @@ export class FilteredLayer {
 
     public readonly name: string;
     public readonly filters: TagsFilter;
+    public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
 
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
@@ -65,6 +66,16 @@ export class FilteredLayer {
         this._style = style;
         this._storage = storage;
         this._maxAllowedOverlap = maxAllowedOverlap;
+        const self = this;
+        this.isDisplayed.addCallback(function (isDisplayed) {
+            if (self._geolayer !== undefined && self._geolayer !== null) {
+                if (isDisplayed) {
+                    self._geolayer.addTo(self._map.map);
+                } else {
+                    self._map.map.removeLayer(self._geolayer);
+                }
+            }
+        })
     }
 
 
@@ -93,7 +104,7 @@ export class FilteredLayer {
 
         const notShadowed = [];
         for (const feature of leftoverFeatures) {
-            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap >= 0) {
+            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap > 0) {
                 if (GeoOperations.featureIsContainedInAny(feature, selfFeatures, this._maxAllowedOverlap)) {
                     // This feature is filtered away
                     continue;
@@ -164,7 +175,7 @@ export class FilteredLayer {
                         radius: 25,
                         color: style.color
                     });
-                    
+
                 } else {
                     marker = L.marker(latLng, {
                         icon: style.icon
@@ -204,7 +215,9 @@ export class FilteredLayer {
             }
         });
 
-        this._geolayer.addTo(this._map.map);
+        if (this.isDisplayed.data) {
+            this._geolayer.addTo(this._map.map);
+        }
     }
 
 

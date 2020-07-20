@@ -19,7 +19,7 @@ export class SaveButton extends UIElement {
         ) {
             return "<span class='save-non-active'>Opslaan</span>"
         }
-        return "<span class='save'>Opslaan</span>";
+        return "<span class='save'>Save</span>";
     }
 
 }

@@ -40,11 +40,10 @@ export class CenterMessageBox extends UIElement {
         if (this._centermessage.data != "") {
             return this._centermessage.data;
         }
-
-        if (this._zoomInMore.data) {
-            return Translations.t.centerMessage.zoomIn.txt;
-        } else if (this._queryRunning.data) {
+        if (this._queryRunning.data) {
             return Translations.t.centerMessage.loadingData.txt;
+        } else if (this._zoomInMore.data) {
+            return Translations.t.centerMessage.zoomIn.txt;
         }
         return Translations.t.centerMessage.ready.txt;
     }
