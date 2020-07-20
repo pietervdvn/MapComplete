@@ -20,7 +20,7 @@ export default class BikeParkings extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText("Fietsparking");
+        this.title = new FixedText("Bicycle parking");
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
           //  new OperatorTag(),
