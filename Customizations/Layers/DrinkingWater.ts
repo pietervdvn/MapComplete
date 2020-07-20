@@ -10,7 +10,7 @@ export class DrinkingWater extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "drinking_water";
+        this.name = "drinking water";
         this.icon = "./assets/bike/drinking_water.svg";
 
         this.overpassFilter = new Or([

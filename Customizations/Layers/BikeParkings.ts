@@ -10,7 +10,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 export default class BikeParkings extends LayerDefinition {
     constructor() {
         super();
-        this.name = "bike_parking";
+        this.name = "bike parking";
         this.icon = "./assets/bike/parking.svg";
         this.overpassFilter = new Tag("amenity", "bicycle_parking");
         this.newElementTags = [

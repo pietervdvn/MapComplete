@@ -82,7 +82,6 @@ export default class BikeStations extends LayerDefinition {
                     iconUrl: iconUrl,
                     iconSize: [50, 50],
                     iconAnchor: [25,50]
-                    
                 })
             };
         };
