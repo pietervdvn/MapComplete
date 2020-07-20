@@ -52,19 +52,13 @@ export class GrbToFix extends LayerDefinition {
 
                 question: "Wat is het huisnummer?",
                 tagsPreprocessor: tags => {
-                    const newTags = {};
-                    newTags["addr:housenumber"] = tags["addr:housenumber"]
-                    newTags["addr:street"] = tags["addr:street"]
-
                     const telltale = "GRB thinks that this has number ";
                     const index = tags.fixme.indexOf(telltale);
                     if (index >= 0) {
                         const housenumber = tags.fixme.slice(index + telltale.length);
-                        newTags["grb:housenumber:human"] = housenumber;
-                        newTags["grb:housenumber"] = housenumber == "no number" ? "" : housenumber;
+                        tags["grb:housenumber:human"] = housenumber;
+                        tags["grb:housenumber"] = housenumber == "no number" ? "" : housenumber;
                     }
-
-                    return newTags;
                 },
                 freeform: {
                     key: "addr:housenumber",

@@ -22,7 +22,7 @@ export class MessageBoxHandler {
             }
         }
 
-        new VariableUiElement(new UIEventSource<string>("<h2>Naar de kaart</h2>"),
+        new VariableUiElement(new UIEventSource<string>("<h2>Return to the map</h2>"),
             () => {
                 document.getElementById("to-the-map").onclick = function () {
                     uielement.setData(undefined);

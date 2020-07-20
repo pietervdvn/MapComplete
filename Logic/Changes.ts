@@ -117,7 +117,7 @@ console.log("Received change",key, value)
         return geojson;
     }
 
-    public uploadAll(optionalContinuation: (() => void)) {
+    public uploadAll(optionalContinuation: (() => void) = undefined) {
         const self = this;
 
         this.isSaving.setData(true);

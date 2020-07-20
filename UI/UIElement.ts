@@ -1,4 +1,5 @@
 import {UIEventSource} from "./UIEventSource";
+import instantiate = WebAssembly.instantiate;
 
 export abstract class UIElement {
 
@@ -58,20 +59,22 @@ export abstract class UIElement {
             }
             element.style.pointerEvents = "all";
             element.style.cursor = "pointer";
-           /*
-            const childs = element.children;
-            for (let i = 0; i < childs.length; i++) {
-                const ch = childs[i];
-                console.log(ch);
-                ch.style.cursor = "pointer";
-                ch.onclick = () => {
-                    self._onClick();
-                }
-                ch.style.pointerEvents = "all";
-            }*/
         }
 
         this.InnerUpdate(element);
+
+        for (const i in this) {
+            const child = this[i];
+            if (child instanceof UIElement) {
+                child.Update();
+            } else if (child instanceof Array) {
+                for (const ch of child) {
+                    if (ch instanceof UIElement) {
+                        ch.Update();
+                    }
+                }
+            }
+        }
     }
     
     HideOnEmpty(hide : boolean){
@@ -89,7 +92,7 @@ export abstract class UIElement {
 
     AttachTo(divId: string) {
         let element = document.getElementById(divId);
-        if(element === null){
+        if (element === null) {
             console.log("SEVERE: could not attach UIElement to ", divId);
             return;
         }
@@ -99,7 +102,21 @@ export abstract class UIElement {
     }
 
     protected abstract InnerRender(): string;
-    public Activate(): void {};
+
+    public Activate(): void {
+        for (const i in this) {
+            const child = this[i];
+            if (child instanceof UIElement) {
+                child.Activate();
+            } else if (child instanceof Array) {
+                for (const ch of child) {
+                    if (ch instanceof UIElement) {
+                        ch.Activate();
+                    }
+                }
+            }
+        }
+    };
 
     public IsEmpty(): boolean {
         return this.InnerRender() === "";

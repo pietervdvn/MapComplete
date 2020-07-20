@@ -19,8 +19,8 @@ export class ImageCarouselWithUploadConstructor implements TagDependantUIElement
         return 0;
     }
 
-    construct(tags: UIEventSource<any>, changes: Changes): TagDependantUIElement {
-        return new ImageCarouselWithUpload(tags, changes);
+    construct(dependencies): TagDependantUIElement {
+        return new ImageCarouselWithUpload(dependencies);
     }
 }
 
@@ -28,8 +28,10 @@ class ImageCarouselWithUpload extends TagDependantUIElement {
     private _imageElement: ImageCarousel;
     private _pictureUploader: ImageUploadFlow;
 
-    constructor(tags: UIEventSource<any>, changes: Changes) {
-        super(tags);
+    constructor(dependencies: {tags: UIEventSource<any>, changes: Changes}) {
+        super(dependencies.tags);
+        const tags = dependencies.tags;
+        const changes = dependencies.changes;
         this._imageElement = new ImageCarousel(tags, changes);
         const userDetails = changes.login.userDetails;
         const license = changes.login.GetPreference( "mapcomplete-pictures-license");

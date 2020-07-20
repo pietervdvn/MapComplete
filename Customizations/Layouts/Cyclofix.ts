@@ -3,6 +3,8 @@ import BikeParkings from "../Layers/BikeParkings";
 import BikeServices from "../Layers/BikeStations";
 import {GhostBike} from "../Layers/GhostBike";
 import Translations from "../../UI/i18n/Translations";
+import {DrinkingWater} from "../Layers/DrinkingWater";
+import {BikeShop} from "../Layers/BikeShop";
 
 
 export default class Cyclofix extends Layout {
@@ -10,7 +12,7 @@ export default class Cyclofix extends Layout {
         super(
             "pomp",
             Translations.t.cylofix.title,
-            [new GhostBike(), new BikeServices(), new BikeParkings()],
+            [new BikeServices(), new BikeShop(), new DrinkingWater(), new BikeParkings()],
             16,
             50.8465573,
             4.3516970,

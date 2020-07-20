@@ -612,9 +612,9 @@ form {
     padding: 0.3em;
     border-radius: 0.35em;
     border: solid black 1px;
-    margin-left: 1em;
+    margin-left: 0.5em;
     top: 0.2em;
-    position: absolute;
+    vertical-align: middle;
 
 }
 

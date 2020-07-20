@@ -25,6 +25,10 @@ export class Regex extends TagsFilter {
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
+        if(!(tags instanceof Array)){
+            throw "You used 'matches' on something that is not a list. Did you mean to use 'matchesProperties'?"
+        }
+        
         for (const tag of tags) {
             if (tag.k === this._k) {
                 if (tag.v === "") {
@@ -199,6 +203,28 @@ export class And extends TagsFilter {
         }
         return new And(newChoices);
     }
+}
+
+export class Not extends TagsFilter{
+    private not: TagsFilter;
+    
+    constructor(not: TagsFilter) {
+        super();
+        this.not = not;
+    }
+    
+    asOverpass(): string[] {
+        throw "Not supported yet"
+    }
+
+    matches(tags: { k: string; v: string }[]): boolean {
+        return !this.not.matches(tags);
+    }
+
+    substituteValues(tags: any): TagsFilter {
+        return new Not(this.not.substituteValues(tags));
+    }
+    
 }
 
 

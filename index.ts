@@ -28,14 +28,12 @@ import Locale from "./UI/i18n/Locale";
 import { Layout } from "./Customizations/Layout";
 
 
-
-
 // --------------------- Read the URL parameters -----------------
 
 // @ts-ignore
-if(location.href.startsWith("http://buurtnatuur.be")){
+if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button
-    window.location.replace("https://buurtnatuur.be"); 
+    window.location.replace("https://buurtnatuur.be");
 }
 
 
@@ -44,10 +42,10 @@ let dryRun = false;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
     // Set to true if testing and changes should NOT be saved
-    // dryRun = true;
+    dryRun = true;
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
-    Overpass.testUrl = null; // "http://127.0.0.1:8080/test.json";
+    //Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
 }
 
 
@@ -79,8 +77,6 @@ if (window.location.search) {
         var kv = param.split("=");
         paramDict[kv[0]] = kv[1];
     }
-
-
 }
 
 if (paramDict.layout) {
@@ -88,7 +84,7 @@ if (paramDict.layout) {
 }
 
 if (paramDict.test) {
-    dryRun = true;
+    dryRun = paramDict.test === "true";
 }
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout];
@@ -148,7 +144,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 
 // ------------- Setup the layers -------------------------------
-
+const controls = {};
 const addButtons: {
     name: string,
     icon: string,
@@ -177,6 +173,8 @@ for (const layer of layoutToUse.layers) {
     minZoom = Math.max(minZoom, layer.minzoom);
 
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
+
+    controls[layer.name] = flayer.isDisplayed;
 
     const addButton = {
         name: layer.name,
@@ -231,7 +229,7 @@ selectedElement.addCallback((data) => {
 
 
 const pendingChanges = new PendingChanges(
-    changes.pendingChangesES, secondsTillChangesAreSaved, changes.isSaving);
+    changes, secondsTillChangesAreSaved,);
 
 new UserBadge(osmConnection.userDetails, pendingChanges, bm)
     .AttachTo('userbadge');
@@ -260,7 +258,9 @@ leftMessage.setData(welcomeMessage);
 welcomeMessage().AttachTo("messagesbox");
 
 
-var messageBox = new MessageBoxHandler(leftMessage, () => {selectedElement.setData(undefined)});
+var messageBox = new MessageBoxHandler(leftMessage, () => {
+    selectedElement.setData(undefined)
+});
 
 new CenterMessageBox(
     minZoom,
