@@ -70,7 +70,7 @@ export default class BikeStations extends LayerDefinition {
                     if (isOperational) {
                         iconName = "pump.svg"
                     } else {
-                        iconName = "pump_broken.svg"
+                        iconName = "broken_pump.svg"
                     }
                 }
             } else {
