@@ -7,10 +7,10 @@ export default class PumpOperational extends TagRenderingOptions {
     constructor() {
         const to = Translations.t.cyclofix.station.operational
         super({
-            question: to.question.Render(),
+            question: to.question,
             mappings: [
-                {k: new Tag("service:bicycle:pump:operational_status","broken"), txt: to.broken.txt},
-                {k: new Tag("service:bicycle:pump:operational_status",""), txt: to.operational.txt}
+                {k: new Tag("service:bicycle:pump:operational_status","broken"), txt: to.broken},
+                {k: new Tag("service:bicycle:pump:operational_status",""), txt: to.operational}
             ]
         });
     }

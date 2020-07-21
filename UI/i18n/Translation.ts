@@ -36,4 +36,8 @@ export default class Translation extends UIElement {
         return new Translation(this.translations).Render();
     }
 
+    public Clone(){
+        return new Translation(this.translations)
+    }
+    
 }

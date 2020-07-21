@@ -372,6 +372,14 @@ export default class Translations {
             skip: new T({
                 en: "Skip this question",
                 nl: "Vraag overslaan"
+            }),
+            oneSkippedQuestion: new T({
+                en: "One question is skipped",
+                nl: "Een vraag is overgeslaan"
+            }),
+            skippedQuestions: new T({
+                en: "Some questions are skipped",
+                nl: "Sommige vragen zijn overgeslaan"
             })
         }   
     }

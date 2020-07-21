@@ -270,7 +270,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             } else {
                 return "<span class='skip-button'>"+Translations.t.general.skip.R()+"</span>";
             }
-        });
+        }, [Locale.language]);
         // And at last, set up the skip button
         this._skipButton = new VariableUiElement(cancelContents).onClick(cancel)    ;
     }

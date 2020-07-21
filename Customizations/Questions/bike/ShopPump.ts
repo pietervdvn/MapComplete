@@ -9,10 +9,10 @@ export default class ShopPump extends TagRenderingOptions {
         const to = Translations.t.cyclofix.shop.pump
         super({
             priority: 5,
-            question: to.question.Render(),
+            question: to.question,
             mappings: [
-                {k: new Tag(key, "yes"), txt: to.yes.Render()},
-                {k: new Tag(key, "no"), txt: to.no.Render()},
+                {k: new Tag(key, "yes"), txt: to.yes},
+                {k: new Tag(key, "no"), txt: to.no},
             ]
         });
     }
