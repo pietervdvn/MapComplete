@@ -90,7 +90,7 @@ export class LayerDefinition {
         title?: TagRenderingOptions,
         elementsToShow?: TagDependantUIElementConstructor[],
         maxAllowedOverlapPercentage?: number,
-        waysToCenterPoints?: boolean,
+        wayHandling?: number,
         style?: (tags: any) => {
             color: string,
             icon: any
@@ -108,11 +108,12 @@ export class LayerDefinition {
         this.title = options.title;
         this.elementsToShow = options.elementsToShow;
         this.style = options.style;
-        this.wayHandling = options.waysToCenterPoints ?? LayerDefinition.WAYHANDLING_DEFAULT;
+        this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>,
-            showOnPopup: (tags: UIEventSource<(any)>) => UIElement):
+    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
+            selectedElement: UIEventSource<{feature: any}>,
+            showOnPopup: (tags: UIEventSource<(any)>, feature: any) => UIElement):
         FilteredLayer {
         return new FilteredLayer(
             this.name,

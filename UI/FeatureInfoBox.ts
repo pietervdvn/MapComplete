@@ -15,6 +15,13 @@ import Translations from "./i18n/Translations";
 
 export class FeatureInfoBox extends UIElement {
 
+    /**
+     * The actual GEOJSON-object, with geometry and stuff
+     */
+    private _feature: any;
+    /**
+     * The tags, wrapped in a global event source
+     */
     private _tagsES: UIEventSource<any>;
     private _changes: Changes;
     private _userDetails: UIEventSource<UserDetails>;
@@ -31,8 +38,8 @@ export class FeatureInfoBox extends UIElement {
     private _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();
     private _someSkipped = Translations.t.general.skippedQuestions.Clone();
 
-
     constructor(
+        feature: any,
         tagsES: UIEventSource<any>,
         title: TagRenderingOptions | UIElement,
         elementsToShow: TagDependantUIElementConstructor[],
@@ -40,6 +47,7 @@ export class FeatureInfoBox extends UIElement {
         userDetails: UIEventSource<UserDetails>
     ) {
         super(tagsES);
+        this._feature = feature;
         this._tagsES = tagsES;
         this._changes = changes;
         this._userDetails = userDetails;

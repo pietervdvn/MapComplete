@@ -15,7 +15,7 @@ export class StrayClickHandler {
 
     constructor(
         basemap: Basemap,
-        selectElement: UIEventSource<any>,
+        selectElement: UIEventSource<{ feature: any }>,
         fullScreenMessage: UIEventSource<UIElement>, 
         uiToShow: (() => UIElement)) {
         this._basemap = basemap;

@@ -41,8 +41,8 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    private _selectedElement: UIEventSource<any>;
-    private _showOnPopup: (tags: UIEventSource<any>) => UIElement;
+    private _selectedElement: UIEventSource<{feature: any}>;
+    private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     constructor(
         name: string | UIElement,
@@ -52,8 +52,8 @@ export class FilteredLayer {
         maxAllowedOverlap: number,
         wayHandling: number,
         style: ((properties) => any),
-        selectedElement: UIEventSource<any>,
-        showOnPopup: ((tags: UIEventSource<any>) => UIElement)
+        selectedElement: UIEventSource<{feature: any}>,
+        showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
     ) {
         this._wayHandling = wayHandling;
         this._selectedElement = selectedElement;
@@ -95,6 +95,7 @@ export class FilteredLayer {
             // feature.properties contains all the properties
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
+                feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
                 if(feature.geometry.type !== "Point"){
                     if(this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY){
                         selfFeatures.push(GeoOperations.centerpoint(feature));
@@ -213,8 +214,8 @@ export class FilteredLayer {
 
                 layer.on("click", function (e) {
                     console.log("Selected ", feature)
-                    self._selectedElement.setData(feature.properties);
-                    const uiElement = self._showOnPopup(eventSource);
+                    self._selectedElement.setData({feature: feature});
+                    const uiElement = self._showOnPopup(eventSource, feature);
                     const popup = L.popup()
                         .setContent(uiElement.Render())
                         .setLatLng(e.latlng)

@@ -15,14 +15,14 @@ export class SimpleAddUI extends UIElement {
     private _addButtons: UIElement[];
     private _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
     private _changes: Changes;
-    private _selectedElement: UIEventSource<any>;
+    private _selectedElement: UIEventSource<{feature: any}>;
     private _dataIsLoading: UIEventSource<boolean>;
     private _userDetails: UIEventSource<UserDetails>;
 
     constructor(zoomlevel: UIEventSource<{ zoom: number }>,
                 lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
                 changes: Changes,
-                selectedElement: UIEventSource<any>,
+                selectedElement: UIEventSource<{feature: any}>,
                 dataIsLoading: UIEventSource<boolean>,
                 userDetails: UIEventSource<UserDetails>,
                 addButtons: { name: UIElement; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
@@ -55,7 +55,7 @@ export class SimpleAddUI extends UIElement {
             const loc = self._lastClickLocation.data;
             let feature = self._changes.createElement(option.tags, loc.lat, loc.lon);
             option.layerToAddTo.AddNewElement(feature);
-            self._selectedElement.setData(feature.properties);
+            self._selectedElement.setData({feature: feature});
         }
     }
 
