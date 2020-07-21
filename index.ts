@@ -300,6 +300,3 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 // --------------- Send a ping to start various action --------
 
 locationControl.ping();
-
-
-window.setTimeout(() => {Locale.language.setData("nl")}, 5000)
