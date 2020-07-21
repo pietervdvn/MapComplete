@@ -2,10 +2,8 @@ import {Layout} from "../Layout";
 import BikeParkings from "../Layers/BikeParkings";
 import BikeServices from "../Layers/BikeStations";
 import BikeShops from "../Layers/BikeShops";
-import {GhostBike} from "../Layers/GhostBike";
 import Translations from "../../UI/i18n/Translations";
 import {DrinkingWater} from "../Layers/DrinkingWater";
-import {BikeShop} from "../Layers/BikeShop"
 import Combine from "../../UI/Base/Combine";
 
 

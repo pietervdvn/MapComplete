@@ -27,6 +27,7 @@ export default class BikeShops extends LayerDefinition {
             new Tag("shop", "bicycle"),
         ]
         this.maxAllowedOverlapPercentage = 10
+        this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();

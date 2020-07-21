@@ -166,7 +166,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 // ------------- Setup the layers -------------------------------
 const addButtons: {
-    name: string,
+    name: UIElement,
     icon: string,
     tags: Tag[],
     layerToAddTo: FilteredLayer
@@ -195,7 +195,7 @@ for (const layer of layoutToUse.layers) {
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
     const addButton = {
-        name: layer.name,
+        name: Translations.W(layer.name),
         icon: layer.icon,
         tags: layer.newElementTags,
         layerToAddTo: flayer

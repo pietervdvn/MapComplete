@@ -6,6 +6,15 @@ export class GeoOperations {
         return turf.area(feature);
     }
 
+    static centerpoint(feature: any) 
+    {
+        const newFeature= turf.center(feature);    
+        newFeature.properties = feature.properties;
+        newFeature.id = feature.id;
+        
+        return newFeature;
+    }
+
     static featureIsContainedInAny(feature: any,
                                    shouldNotContain: any[],
                                    maxOverlapPercentage: number): boolean {

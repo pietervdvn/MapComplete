@@ -29,6 +29,7 @@ export default class BikeParkings extends LayerDefinition {
             //new ParkingOperator(),
             new ParkingType()
         ];
+        this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY;
 
     }
 

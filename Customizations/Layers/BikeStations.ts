@@ -38,6 +38,7 @@ export default class BikeStations extends LayerDefinition {
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
         this.title = new FixedText(Translations.t.cyclofix.station.title)
+        this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),

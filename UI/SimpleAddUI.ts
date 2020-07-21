@@ -25,7 +25,7 @@ export class SimpleAddUI extends UIElement {
                 selectedElement: UIEventSource<any>,
                 dataIsLoading: UIEventSource<boolean>,
                 userDetails: UIEventSource<UserDetails>,
-                addButtons: { name: string; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
+                addButtons: { name: UIElement; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
     ) {
         super(zoomlevel);
         this._zoomlevel = zoomlevel;
@@ -42,17 +42,16 @@ export class SimpleAddUI extends UIElement {
             // <button type='button'> looks SO retarded
             // the default type of button is 'submit', which performs a POST and page reload
             const button =
-                new Button(new FixedUiElement("Add a " + option.name + " here"),
+                new Button(new FixedUiElement("Add a " + option.name.Render() + " here"),
                     this.CreatePoint(option));
             this._addButtons.push(button);
         }
     }
 
-    private CreatePoint(option: { name: string; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }) {
+    private CreatePoint(option: {icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }) {
         const self = this;
         return () => {
 
-            console.log("Creating a new ", option.name, " at last click location");
             const loc = self._lastClickLocation.data;
             let feature = self._changes.createElement(option.tags, loc.lat, loc.lon);
             option.layerToAddTo.AddNewElement(feature);
