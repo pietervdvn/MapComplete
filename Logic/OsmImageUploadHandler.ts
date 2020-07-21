@@ -48,12 +48,18 @@ export class OsmImageUploadHandler {
             title: title,
             description: description,
             handleURL: function (url) {
-                let freeIndex = 0;
-                while (tags["image:" + freeIndex] !== undefined) {
-                    freeIndex++;
+
+                let key = "image";
+                if (tags["image"] !== undefined) {
+
+                    let freeIndex = 0;
+                    while (tags["image:" + freeIndex] !== undefined) {
+                        freeIndex++;
+                    }
+                    key = "image:" + freeIndex;
                 }
-                console.log("Adding image:" + freeIndex, url);
-                changes.addChange(tags.id, "image:" + freeIndex, url);
+                console.log("Adding image:" + key, url);
+                changes.addChange(tags.id, key, url);
                 self._slideShow.MoveTo(-1); // set the last (thus newly added) image) to view
             },
             allDone: function () {
