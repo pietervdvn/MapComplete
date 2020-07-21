@@ -36,13 +36,15 @@ export default class Translations {
                         nl: 'Van welk type is deze fietsenparking?',
                         fr: 'TODO: fr'
                     }),
+                    eg: new T({en: ", for example", nl: ", bijvoorbeeld"}),
                     stands: new T({en: 'Staple racks', nl: 'Nietjes', fr: 'TODO: fr'}),
-                    loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'TODO: fr'}),
-                    handlebar: new T({en: 'Handlebar holder', nl: 'Stuurhouder', fr: 'TODO: fr'}),
+                    wall_loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'TODO: fr'}),
+                    handlebar_holder: new T({en: 'Handlebar holder', nl: 'Stuurhouder', fr: 'TODO: fr'}),
                     shed: new T({en: 'Shed', nl: 'Schuur', fr: 'TODO: fr'}),
                     rack: new T({en: 'Rack', nl: 'Rek', fr: 'TODO: fr'}),
-                    double: new T({en: 'Two-tiered', nl: 'Dubbel (twee verdiepingen)', fr: 'TODO: fr'}),
+                    "two-tier": new T({en: 'Two-tiered', nl: 'Dubbel (twee verdiepingen)', fr: 'TODO: fr'}),
                 },
+
                 operator: {
                     render: new T({
                         en: 'This bike parking is operated by {operator}',
@@ -293,9 +295,15 @@ export default class Translations {
             ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'TODO: fr'}),
         },
         general: {
-            loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap"})
-
-            ,
+            loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap"}),
+            getStarted: new T({
+                en: "<span class='activate-osm-authentication'>Login with OpenStreetMap</span> or <a href='https://www.openstreetmap.org/user/new' target='_blank'>make a free account to get started</a>",
+                nl: "<span class='activate-osm-authentication'>Meld je aan met je OpenStreetMap-account</span> of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak snel en gratis een account om te beginnen/a>",
+            }),
+            welcomeBack: new T({
+                en: "You are logged in, welcome back!",
+                nl: "Je bent aangemeld. Welkom terug!"
+            }),
             search: {
                 search: new Translation({
                     en: "Search a location",
@@ -314,7 +322,23 @@ export default class Translations {
                     nl: "Niet gelukt..."
                 })
 
-            }
+            },
+            returnToTheMap: new T({
+                en: "Return to the map",
+                nl: "Naar de kaart"
+            }),
+            save: new T({
+                en: "Save",
+                nl: "Opslaan"
+            }),
+            cancel: new T({
+                en: "Cancel",
+                nl: "Annuleren"
+            }),
+            skip: new T({
+                en: "Skip this question",
+                nl: "Vraag overslaan"
+            })
         }   
     }
 

@@ -50,7 +50,7 @@ export class LayerDefinition {
     /**
      * This UIElement is rendered as title element in the popup
      */
-    title: TagRenderingOptions | UIElement;
+    title: TagRenderingOptions;
     /**
      * These are the questions/shown attributes in the popup
      */

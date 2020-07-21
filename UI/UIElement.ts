@@ -13,10 +13,6 @@ export abstract class UIElement {
         this.id = "ui-element-" + UIElement.nextId;
         this._source = source;
         UIElement.nextId++;
-        if (UIElement.nextId % 100 == 0) {
-
-            console.log(UIElement.nextId)
-        }
         this.ListenTo(source);
     }
 
@@ -97,8 +93,7 @@ export abstract class UIElement {
     AttachTo(divId: string) {
         let element = document.getElementById(divId);
         if (element === null) {
-            console.log("SEVERE: could not attach UIElement to ", divId);
-            return;
+            throw "SEVERE: could not attach UIElement to " + divId;
         }
         element.innerHTML = this.Render();
         this.Update();

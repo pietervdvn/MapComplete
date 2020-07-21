@@ -11,7 +11,7 @@ import {Tag, TagUtils} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIElement} from "./UI/UIElement";
-import {MessageBoxHandler} from "./UI/MessageBoxHandler";
+import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {Overpass} from "./Logic/Overpass";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
@@ -25,7 +25,7 @@ import {All} from "./Customizations/Layouts/All";
 import Translations from "./UI/i18n/Translations";
 import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
-import {Layout} from "./Customizations/Layout";
+import {Layout, WelcomeMessage} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
 import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
@@ -135,6 +135,7 @@ const osmConnection = new OsmConnection(dryRun);
 
 Locale.language.syncWith(osmConnection.GetPreference("language"));
 
+// @ts-ignore
 window.setLanguage = function (language: string) {
     Locale.language.setData(language)
 }
@@ -265,29 +266,18 @@ new SearchAndGo(bm).AttachTo("searchbox");
 
 new CollapseButton("messagesbox")
     .AttachTo("collapseButton");
-
-var generateWelcomeMessage = () => {
-    return new VariableUiElement(
-        osmConnection.userDetails.map((userdetails) => {
-            var login = layoutToUse.gettingStartedPlzLogin.Render();
-            if (userdetails.loggedIn) {
-                login = layoutToUse.welcomeBackMessage.Render();
-            }
-            return "<div id='welcomeMessage'>" +
-                layoutToUse.welcomeMessage.Render() + login + layoutToUse.welcomeTail.Render() +
-                "</div>";
-        }),
-        function () {
-            osmConnection.registerActivateOsmAUthenticationClass()
-        }).ListenTo(Locale.language);
-}
-generateWelcomeMessage().AttachTo("messagesbox");
-fullScreenMessage.setData(generateWelcomeMessage());
+new WelcomeMessage(layoutToUse, osmConnection).AttachTo("messagesbox");
+fullScreenMessage.setData(
+    new WelcomeMessage(layoutToUse, osmConnection)
+);
 
 
-var messageBox = new MessageBoxHandler(fullScreenMessage, () => {
+new FullScreenMessageBoxHandler(fullScreenMessage, () => {
     selectedElement.setData(undefined)
-});
+}).update();
+
+// fullScreenMessage.setData(generateWelcomeMessage());
+
 
 new CenterMessageBox(
     minZoom,
@@ -310,4 +300,6 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 // --------------- Send a ping to start various action --------
 
 locationControl.ping();
-messageBox.update();
+
+
+window.setTimeout(() => {Locale.language.setData("nl")}, 5000)

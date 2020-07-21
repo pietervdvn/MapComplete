@@ -1,11 +1,13 @@
-/**
- * Keeps 'messagebox' and 'messageboxmobile' in sync, shows a 'close' button on the latter one
- */
 import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Translations from "./i18n/Translations";
 
-export class MessageBoxHandler {
+/**
+ * Handles the full screen popup on mobile
+ */
+export class FullScreenMessageBoxHandler {
+    
     private _uielement: UIEventSource<UIElement>;
 
     constructor(uielement: UIEventSource<UIElement>,
@@ -22,13 +24,13 @@ export class MessageBoxHandler {
             }
         }
 
-        new VariableUiElement(new UIEventSource<string>("<h2>Return to the map</h2>"))
+        Translations.t.general.returnToTheMap
             .onClick(() => {
                 console.log("Clicked 'return to the map'")
                 uielement.setData(undefined);
                 onClear();
             })
-            .AttachTo("to-the-map");
+            .AttachTo("to-the-map-h2");
 
 
     }

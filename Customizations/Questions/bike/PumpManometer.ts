@@ -7,11 +7,11 @@ export default class PumpManometer extends TagRenderingOptions {
     constructor() {
         const to = Translations.t.cyclofix.station.manometer
         super({
-            question: to.question.Render(),
+            question: to.question,
             mappings: [
-                {k: new Tag("manometer", "yes"), txt: to.yes.Render()},
-                {k: new Tag("manometer", "no"), txt: to.no.Render()},
-                {k: new Tag("manometer", "broken"), txt: to.broken.Render()}
+                {k: new Tag("manometer", "yes"), txt: to.yes},
+                {k: new Tag("manometer", "no"), txt: to.no},
+                {k: new Tag("manometer", "broken"), txt: to.broken}
             ]
         });   
     }   

@@ -14,6 +14,7 @@ import {InputElementWrapper} from "../UI/Input/InputElementWrapper";
 import {FixedInputElement} from "../UI/Input/FixedInputElement";
 import {RadioButton} from "../UI/Input/RadioButton";
 import Translations from "../UI/i18n/Translations";
+import Locale from "../UI/i18n/Locale";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
@@ -29,7 +30,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
             tagsPreprocessor?: (tags: any) => any;
             template: string;
             renderTemplate: string;
-            placeholder?: string;
+            placeholder?: string | UIElement;
             extraTags?: TagsFilter
         };
         mappings?: { k: TagsFilter; txt: string | UIElement; priority?: number, substitute?: boolean }[]
@@ -78,7 +79,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         freeform?: {
             key: string, template: string,
             renderTemplate: string
-            placeholder?: string,
+            placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
         
@@ -148,7 +149,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         key: string, template: string,
         renderTemplate: string,
 
-        placeholder?: string,
+        placeholder?: string | UIElement,
         extraTags?: TagsFilter
     };
 
@@ -172,13 +173,14 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         freeform?: {
             key: string, template: string,
             renderTemplate: string
-            placeholder?: string,
+            placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
         tagsPreprocessor?: ((tags: any) => any),
         mappings?: { k: TagsFilter, txt: string | UIElement, priority?: number, substitute?: boolean }[]
     }) {
         super(tags);
+        this.ListenTo(Locale.language);
         const self = this;
         this.ListenTo(this._questionSkipped);
         this.ListenTo(this._editMode);
@@ -264,13 +266,13 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         const cancelContents = this._editMode.map((isEditing) => {
             if (isEditing) {
-                return "<span class='skip-button'>Cancel</span>";
+                return "<span class='skip-button'>"+Translations.t.general.cancel.R()+"</span>";
             } else {
-                return "<span class='skip-button'>Skip this question</span>";
+                return "<span class='skip-button'>"+Translations.t.general.skip.R()+"</span>";
             }
         });
         // And at last, set up the skip button
-        this._skipButton = new VariableUiElement(cancelContents).onClick(cancel);
+        this._skipButton = new VariableUiElement(cancelContents).onClick(cancel)    ;
     }
 
 
@@ -278,7 +280,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         freeform?: {
             key: string, template: string,
             renderTemplate: string
-            placeholder?: string,
+            placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
         mappings?: { k: TagsFilter, txt: string | UIElement, priority?: number, substitute?: boolean }[]

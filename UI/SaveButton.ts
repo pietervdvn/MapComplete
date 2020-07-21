@@ -1,5 +1,6 @@
 import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
+import Translations from "./i18n/Translations";
 
 export class SaveButton extends UIElement {
     private _value: UIEventSource<any>;
@@ -17,9 +18,9 @@ export class SaveButton extends UIElement {
             this._value.data === null
             || this._value.data === ""
         ) {
-            return "<span class='save-non-active'>Opslaan</span>"
+            return "<span class='save-non-active'>"+Translations.t.general.save.Render()+"</span>"
         }
-        return "<span class='save'>Save</span>";
+        return "<span class='save'>"+Translations.t.general.save.Render()+"</span>";
     }
 
 }
