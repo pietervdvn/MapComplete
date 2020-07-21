@@ -1,6 +1,6 @@
 export class UIEventSource<T>{
     
-    public data : T;
+    public data: T;
     private _callbacks = [];
 
     constructor(data: T) {
@@ -27,15 +27,32 @@ export class UIEventSource<T>{
         }
     }
 
-    public map<J>(f: ((T) => J),
-                  extraSources : UIEventSource<any>[] = []): UIEventSource<J> {
-        const self = this;
+    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
+        const sink = new UIEventSource<X>(source.data?.data);
+
+        source.addCallback((latestData) => {
+           sink.setData(latestData?.data);
+        });
+
+        for (const possibleSource of possibleSources) {
+            possibleSource.addCallback(() => {
+                sink.setData(source.data?.data);
+                
+            })
+        }
         
+        return sink;
+    }
+    
+    public map<J>(f: ((T) => J),
+                  extraSources: UIEventSource<any>[] = []): UIEventSource<J> {
+        const self = this;
+
         const update = function () {
             newSource.setData(f(self.data));
             newSource.ping();
         }
-        
+
         this.addCallback(update);
         for (const extraSource of extraSources) {
             extraSource.addCallback(update);
@@ -49,5 +66,16 @@ export class UIEventSource<T>{
 
     }
 
+    
+    public syncWith(otherSource: UIEventSource<T>){
+        this.addCallback((latest) => otherSource.setData(latest));
+        const self = this;
+        otherSource.addCallback((latest) => self.setData(latest));
+        if(this.data === undefined){
+           this.setData(otherSource.data);
+        }else{
+            otherSource.setData(this.data);
+        }
+    }
 
 }

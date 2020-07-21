@@ -1,14 +1,16 @@
 import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
+import Translations from "../../../UI/i18n/Translations";
 
 
 export default class PumpOperational extends TagRenderingOptions {
     constructor() {
+        const to = Translations.t.cyclofix.station.operational
         super({
-            question: "Is the bicycle pump still operational?",
+            question: to.question.Render(),
             mappings: [
-                {k: new Tag("service:bicycle:pump:operational_status","broken"), txt: "This pump is broken"},
-                {k: new Tag("service:bicycle:pump:operational_status",""), txt: "This pump is operational"}
+                {k: new Tag("service:bicycle:pump:operational_status","broken"), txt: to.broken.txt},
+                {k: new Tag("service:bicycle:pump:operational_status",""), txt: to.operational.txt}
             ]
         });
     }

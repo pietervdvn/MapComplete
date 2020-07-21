@@ -1,15 +1,26 @@
 import {UIElement} from "./UIElement";
-import {TextField} from "./Base/TextField";
+import {TextField} from "./Input/TextField";
 import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Geocoding} from "../Logic/Geocoding";
 import {Basemap} from "../Logic/Basemap";
+import {VariableUiElement} from "./Base/VariableUIElement";
+import Translation from "./i18n/Translation";
+import Locale from "./i18n/Locale";
+import Translations from "./i18n/Translations";
 
 
 export class SearchAndGo extends UIElement {
 
-    private _placeholder = new UIEventSource("Zoek naar een locatie...")
-    private _searchField = new TextField(this._placeholder);
+    private _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
+    private _searchField = new TextField<string>({
+            placeholder: new VariableUiElement(
+                this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
+            ),
+            fromString: str => str,
+            toString: str => str
+        }
+    );
 
     private _foundEntries = new UIEventSource([]);
     private _map: Basemap;
@@ -33,14 +44,14 @@ export class SearchAndGo extends UIElement {
 
     // Triggered by 'enter' or onclick
     private RunSearch() {
-        const searchString = this._searchField.value.data;
+        const searchString = this._searchField.GetValue().data;
         this._searchField.Clear();
-        this._placeholder.setData("Bezig met zoeken...");
+        this._placeholder.setData(Translations.t.general.search.searching);
         const self = this;
         Geocoding.Search(searchString, this._map, (result) => {
 
                 if (result.length == 0) {
-                    this._placeholder.setData("Niets gevonden");
+                    this._placeholder.setData(Translations.t.general.search.nothing);
                     return;
                 }
 
@@ -50,16 +61,15 @@ export class SearchAndGo extends UIElement {
                     [bb[1], bb[3]]
                 ]
                 self._map.map.fitBounds(bounds);
-                this._placeholder.setData("Zoek naar een locatie...");
+                this._placeholder.setData(Translations.t.general.search.search);
             },
             () => {
-                this._placeholder.setData("Niets gevonden: er ging iets mis");
+                this._placeholder.setData(Translations.t.general.search.error);
             });
 
     }
 
-    protected InnerRender(): string {
-        // "<img class='search' src='./assets/search.svg' alt='Search'> " +
+    InnerRender(): string {
         return this._searchField.Render() +
             this._goButton.Render();
 

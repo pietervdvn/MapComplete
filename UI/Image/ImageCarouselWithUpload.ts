@@ -34,14 +34,14 @@ class ImageCarouselWithUpload extends TagDependantUIElement {
         const changes = dependencies.changes;
         this._imageElement = new ImageCarousel(tags, changes);
         const userDetails = changes.login.userDetails;
-        const license = changes.login.GetPreference( "mapcomplete-pictures-license");
+        const license = changes.login.GetPreference( "pictures-license");
         this._pictureUploader = new OsmImageUploadHandler(tags,
             userDetails, license,
             changes, this._imageElement.slideshow).getUI();
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         return this._imageElement.Render() +
             this._pictureUploader.Render();
     }

@@ -1,15 +1,17 @@
 import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
+import Translations from "../../../UI/i18n/Translations";
 
 
 export default class StationChain extends TagRenderingOptions {
     constructor() {
+        const to = Translations.t.cyclofix.station.chain
         super({
             priority: 5,
-            question: "Does this bike station have a special tool to repair your bike chain?",
+            question: to.question.Render(),
             mappings: [
-                {k: new Tag("service:bicycle:chain_tool", "yes"), txt: "There is a chain tool."},
-                {k: new Tag("service:bicycle:chain_tool", "no"), txt: "There is no chain tool."},
+                {k: new Tag("service:bicycle:chain_tool", "yes"), txt: to.yes.Render()},
+                {k: new Tag("service:bicycle:chain_tool", "no"), txt: to.no.Render()},
             ]
         });
     }

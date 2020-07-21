@@ -14,9 +14,9 @@ import {NatureReserves} from "./Layers/NatureReserves";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 
 export class AllKnownLayouts {
-    public static allSets: any = AllKnownLayouts.AllLayouts();
+    public static allSets = AllKnownLayouts.AllLayouts();
 
-    private static AllLayouts(): any {
+    private static AllLayouts(): Map<string, Layout> {
         const all = new All();
         const layouts: Layout[] = [
             new Groen(),
@@ -32,7 +32,7 @@ export class AllKnownLayouts {
             new Statues(),
             */
         ];
-        const allSets = {};
+        const allSets: Map<string, Layout> = new Map();
         for (const layout of layouts) {
             allSets[layout.name] = layout;
             all.layers = all.layers.concat(layout.layers);

@@ -7,6 +7,7 @@ export class StreetWidth extends Layout{
     
     constructor() {
         super(    "width",
+            ["nl"],
             "Straatbreedtes in Brugge",
             [new Widths(
                 2,

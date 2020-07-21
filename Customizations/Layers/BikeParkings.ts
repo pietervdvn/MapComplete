@@ -5,12 +5,15 @@ import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
 import ParkingType from "../Questions/bike/ParkingType";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import BikeStationOperator from "../Questions/bike/StationOperator";
+import Translations from "../../UI/i18n/Translations";
+import ParkingOperator from "../Questions/bike/ParkingOperator";
 
 
 export default class BikeParkings extends LayerDefinition {
     constructor() {
         super();
-        this.name = "bike_parking";
+        this.name = Translations.t.cyclofix.parking.name.txt;
         this.icon = "./assets/bike/parking.svg";
         this.overpassFilter = new Tag("amenity", "bicycle_parking");
         this.newElementTags = [
@@ -20,10 +23,10 @@ export default class BikeParkings extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText("Fietsparking");
+        this.title = new FixedText(Translations.t.cyclofix.parking.title)
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-            new OperatorTag(),
+            //new ParkingOperator(),
             new ParkingType()
         ];
 
@@ -36,7 +39,8 @@ export default class BikeParkings extends LayerDefinition {
                 color: "#00bb00",
                 icon: L.icon({
                     iconUrl: self.icon,
-                    iconSize: [50, 50]
+                    iconSize: [50, 50],
+                    iconAnchor: [25,50]
                 })
             };
         };

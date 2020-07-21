@@ -9,9 +9,10 @@
 <rect x="34.3118" y="72.5698" width="28" height="5" fill="white"/>
 <rect x="65.3118" y="60.5698" width="4" height="8" fill="white"/>
 <rect x="68.3118" y="64.5699" width="3" height="4" fill="white"/>
-<rect x="66" y="72.2385" width="21.8167" height="3.68967" transform="rotate(-44.3049 66 72.2385)" fill="#F00D0D"/>
+<rect x="56" y="42" width="5" height="10" fill="#171615"/>
 </g>
-<rect x="68.4303" y="56.8712" width="22.1163" height="3.52552" transform="rotate(43.5782 68.4303 56.8712)" fill="#F00D0D"/>
+<rect x="72.4167" y="53.8615" width="29.0549" height="7.85787" transform="rotate(43.5782 72.4167 53.8615)" fill="#F00D0D"/>
+<path d="M68.2141 73.9097L88.6128 54L94.0003 59.5199L73.6016 79.4295L68.2141 73.9097Z" fill="#F00D0D"/>
 <defs>
 <filter id="filter0_d" x="-3" y="2" width="102.479" height="102.479" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

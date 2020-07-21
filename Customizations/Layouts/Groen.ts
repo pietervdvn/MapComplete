@@ -7,6 +7,7 @@ export class Groen extends Layout {
     
     constructor() {
         super("buurtnatuur",
+            ["nl"],
             "Buurtnatuur",
             [new NatureReserves(), new Park(), new Bos()],
             10,

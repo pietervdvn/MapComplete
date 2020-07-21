@@ -5,6 +5,7 @@ export class Statues extends Layout{
     constructor() {
         super(    "statues",
             "Open Artwork Map",
+            ["en"],
             [new Artwork()],
             10,
             50.8435,

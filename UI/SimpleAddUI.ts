@@ -42,7 +42,7 @@ export class SimpleAddUI extends UIElement {
             // <button type='button'> looks SO retarded
             // the default type of button is 'submit', which performs a POST and page reload
             const button =
-                new Button(new FixedUiElement("Voeg hier een " + option.name + " toe"),
+                new Button(new FixedUiElement("Add a " + option.name + " here"),
                     this.CreatePoint(option));
             this._addButtons.push(button);
         }
@@ -60,19 +60,19 @@ export class SimpleAddUI extends UIElement {
         }
     }
 
-    protected InnerRender(): string {
-        const header = "<h2>Geen selectie</h2>" +
-            "Je klikte ergens waar er nog geen gezochte data is.<br/>";
+    InnerRender(): string {
+        const header = "<h2>No data here</h2>" +
+            "You clicked somewhere where no data is known yet.<br/>";
         if (!this._userDetails.data.loggedIn) {
-            return header + "<a class='activate-osm-authentication'>Gelieve je aan te melden om een nieuw punt toe te voegen</a>"
+            return header + "<a class='activate-osm-authentication'>Please log in to add a new point</a>"
         }
 
         if (this._zoomlevel.data.zoom < 19) {
-            return header + "Zoom verder in om een element toe te voegen.";
+            return header + "Zoom in further to add a point.";
         }
 
         if (this._dataIsLoading.data) {
-            return header + "De data is nog aan het laden. Nog even geduld, dan kan je een punt toevoegen";
+            return header + "The data is still loading. Please wait a bit before you add a new point";
         }
 
         var html = "";
@@ -83,10 +83,6 @@ export class SimpleAddUI extends UIElement {
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        for (const button of this._addButtons) {
-            button.Update();
-        }
         this._userDetails.data.osmConnection.registerActivateOsmAUthenticationClass();
     }
 

@@ -1,6 +1,7 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import {OsmConnection} from "../Logic/OsmConnection";
+import Translations from "./i18n/Translations";
 
 export class CenterMessageBox extends UIElement {
 
@@ -34,17 +35,17 @@ export class CenterMessageBox extends UIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         if (this._centermessage.data != "") {
             return this._centermessage.data;
         }
         if (this._queryRunning.data) {
-            return "Data wordt geladen...";
+            return Translations.t.centerMessage.loadingData.txt;
         } else if (this._zoomInMore.data) {
-            return "Zoom in om de data te zien en te bewerken";
+            return Translations.t.centerMessage.zoomIn.txt;
         }
-        return "Klaar!";
+        return Translations.t.centerMessage.ready.txt;
     }
 
 
