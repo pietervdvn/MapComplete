@@ -11,7 +11,13 @@ export default class Translation extends UIElement {
         }
         const en = this.translations["en"];
         console.warn("No translation for language ", Locale.language.data, "for", en);
-        return en;
+        if (en !== undefined) {
+            return en;
+        }
+        for (const i in this.translations) {
+            return this.translations[i]; // Return a random language
+        }
+        return "Missing translation"
     }
 
     InnerRender(): string {
