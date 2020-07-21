@@ -41,11 +41,11 @@ export class CenterMessageBox extends UIElement {
             return this._centermessage.data;
         }
         if (this._queryRunning.data) {
-            return Translations.t.centerMessage.loadingData.txt;
+            return Translations.t.centerMessage.loadingData.Render();
         } else if (this._zoomInMore.data) {
-            return Translations.t.centerMessage.zoomIn.txt;
+            return Translations.t.centerMessage.zoomIn.Render();
         }
-        return Translations.t.centerMessage.ready.txt;
+        return Translations.t.centerMessage.ready.Render();
     }
 
 

@@ -13,7 +13,7 @@ import ParkingOperator from "../Questions/bike/ParkingOperator";
 export default class BikeParkings extends LayerDefinition {
     constructor() {
         super();
-        this.name = Translations.t.cyclofix.parking.name.txt;
+        this.name = Translations.t.cyclofix.parking.name;
         this.icon = "./assets/bike/parking.svg";
         this.overpassFilter = new Tag("amenity", "bicycle_parking");
         this.newElementTags = [

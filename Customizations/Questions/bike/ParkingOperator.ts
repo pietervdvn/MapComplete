@@ -11,9 +11,9 @@ export default class ParkingOperator extends TagRenderingOptions {
             question: to.question.Render(),
             freeform: {
                 key: "operator",
-                template: to.template.txt,
-                renderTemplate: to.render.txt,
-                placeholder: Translations.t.cyclofix.freeFormPlaceholder.txt
+                template: to.template,
+                renderTemplate: to.render,
+                placeholder: Translations.t.cyclofix.freeFormPlaceholder
             },
             mappings: [
                 {k: new Tag("operator", "KU Leuven"), txt: "KU Leuven"},

@@ -23,7 +23,7 @@ export default class BikeStations extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = Translations.t.cyclofix.station.name.txt;
+        this.name = Translations.t.cyclofix.station.name;
         this.icon = "./assets/wrench.svg";
 
         this.overpassFilter = new And([
@@ -37,7 +37,7 @@ export default class BikeStations extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText(Translations.t.cyclofix.station.title.txt)
+        this.title = new FixedText(Translations.t.cyclofix.station.title)
 
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),

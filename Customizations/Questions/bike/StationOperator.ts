@@ -18,8 +18,8 @@ export default class BikeStationOperator extends TagRenderingOptions {
             ],
             freeform: {
                 key: "operator",
-                template: to.template.txt,
-                renderTemplate: to.render.txt,
+                template: to.template,
+                renderTemplate: to.render,
                 placeholder: "organisatie"
             }
         });

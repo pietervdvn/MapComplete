@@ -15,7 +15,7 @@ export default class Cyclofix extends Layout {
             "pomp",
             ["en", "nl", "fr"],
             Translations.t.cyclofix.title,
-            [new BikeServices(), new BikeShop(), new DrinkingWater(), new BikeParkings()],
+            [new BikeServices(), new BikeShops(), new DrinkingWater(), new BikeParkings()],
             16,
             50.8465573,
             4.3516970,
