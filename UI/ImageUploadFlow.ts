@@ -11,12 +11,13 @@ export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
     private _selectedLicence: UIEventSource<string>;
     private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
+    private _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
     private _userdetails: UIEventSource<UserDetails>;
 
     constructor(
         userInfo: UIEventSource<UserDetails>,
-        preferedLicense : UIEventSource<string>,
+        preferedLicense: UIEventSource<string>,
         uploadOptions: ((license: string) =>
             {
                 title: string,
@@ -30,6 +31,7 @@ export class ImageUploadFlow extends UIElement {
         this.ListenTo(userInfo);
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
+        this.ListenTo(this._didFail);
 
         const licensePicker = new DropDown(Translations.t.image.willBePublished,
             [
@@ -59,6 +61,10 @@ export class ImageUploadFlow extends UIElement {
         if (this._isUploading.data > 0) {
             uploadingMessage = "<b>Uploading multiple pictures, " + this._isUploading.data + " left...</b>"
         }
+        
+        if(this._didFail.data){
+            uploadingMessage += "<b>Some images failed to upload. Imgur migth be down or you might block third-party API's (e.g. by using Brave or UMatrix)</b><br/>"
+        }
 
         return "" +
             "<div class='imageflow'>" +
@@ -68,20 +74,20 @@ export class ImageUploadFlow extends UIElement {
             "<div class='imageflow-file-input-wrapper'>" +
             "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
             `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.R()}</span>` +
-            "<div class='break'></div>"+
+            "<div class='break'></div>" +
             "</div>" +
 
             this._licensePicker.Render() + "<br/>" +
             uploadingMessage +
 
             "</label>" +
-            
+
             "<input id='fileselector-" + this.id + "' " +
             "type='file' " +
             "class='imageflow-file-input' " +
             "accept='image/*' name='picField' size='24' multiple='multiple' alt=''" +
             "/>" +
-            
+
             "</div>"
             ;
     }
@@ -116,11 +122,12 @@ export class ImageUploadFlow extends UIElement {
                     function () {
                         console.log("All uploads completed")
                         opts.allDone();
+                    },
+                    function(failReason) {
+                    
                     }
                 )
             }
         }
     }
-
-
 }

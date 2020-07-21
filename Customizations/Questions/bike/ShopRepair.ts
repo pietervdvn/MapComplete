@@ -9,12 +9,12 @@ export default class ShopRepair extends TagRenderingOptions {
         const to = Translations.t.cyclofix.shop.repair
         super({
             priority: 5,
-            question: to.question.Render(),
+            question: to.question,
             mappings: [
-                {k: new Tag(key, "yes"), txt: to.yes.Render()},
-                {k: new Tag(key, "only_sold"), txt: to.sold.Render()},
-                {k: new Tag(key, "brand"), txt: to.brand.Render()},
-                {k: new Tag(key, "no"), txt: to.no.Render()},
+                {k: new Tag(key, "yes"), txt: to.yes},
+                {k: new Tag(key, "only_sold"), txt: to.sold},
+                {k: new Tag(key, "brand"), txt: to.brand},
+                {k: new Tag(key, "no"), txt: to.no},
             ]
         });
     }

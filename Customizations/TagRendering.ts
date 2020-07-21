@@ -28,8 +28,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         freeform?: {
             key: string;
             tagsPreprocessor?: (tags: any) => any;
-            template: string;
-            renderTemplate: string;
+            template: string | UIElement;
+            renderTemplate: string | UIElement;
             placeholder?: string | UIElement;
             extraTags?: TagsFilter
         };
@@ -77,8 +77,9 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          * In the question, it'll offer a textfield
          */
         freeform?: {
-            key: string, template: string,
-            renderTemplate: string
+            key: string,
+            template: string | UIElement,
+            renderTemplate: string | UIElement
             placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
@@ -141,14 +142,13 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private _question: UIElement;
-    private _mapping: { k: TagsFilter, txt: UIElement, priority?: number }[];
-    private _renderMapping: { k: TagsFilter, txt: UIElement, priority?: number }[];
+    private _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
     private _tagsPreprocessor?: ((tags: any) => any);
     private _freeform: {
-        key: string, template: string,
-        renderTemplate: string,
-
+        key: string, 
+        template: string | UIElement,
+        renderTemplate: string | UIElement,
         placeholder?: string | UIElement,
         extraTags?: TagsFilter
     };
@@ -171,8 +171,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         question?: string | UIElement,
 
         freeform?: {
-            key: string, template: string,
-            renderTemplate: string
+            key: string, 
+            template: string | UIElement,
+            renderTemplate: string | UIElement,
             placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
@@ -205,14 +206,13 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         };
         
         this._mapping = [];
-        this._renderMapping = [];
         this._freeform = options.freeform;
 
 
         for (const choice of options.mappings ?? []) {
             let choiceSubbed = {
                 k: choice.k,
-                txt: this.ApplyTemplate(choice.txt),
+                txt: choice.txt,
                 priority: choice.priority
             };
 
@@ -220,7 +220,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 choiceSubbed = {
                     k: choice.k.substituteValues(
                         options.tagsPreprocessor(this._source.data)),
-                    txt: this.ApplyTemplate(choice.txt),
+                    txt: choice.txt,
                     priority: choice.priority
                 }
             }
@@ -270,7 +270,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             } else {
                 return "<span class='skip-button'>"+Translations.t.general.skip.R()+"</span>";
             }
-        });
+        }, [Locale.language]);
         // And at last, set up the skip button
         this._skipButton = new VariableUiElement(cancelContents).onClick(cancel)    ;
     }
@@ -278,8 +278,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
     private InputElementFor(options: {
         freeform?: {
-            key: string, template: string,
-            renderTemplate: string
+            key: string, 
+            template: string | UIElement,
+            renderTemplate: string | UIElement,
             placeholder?: string | UIElement,
             extraTags?: TagsFilter,
         },
@@ -368,7 +369,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             toString: toString
         });
 
-        const prepost = freeform.template.split("$$$");
+        const prepost = Translations.W(freeform.template).InnerRender().split("$$$");
         return new InputElementWrapper(prepost[0], textField, prepost[1]);
     }
 
@@ -376,7 +377,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     IsKnown(): boolean {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
-        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
+        for (const oneOnOneElement of this._mapping) {
             if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
                 return true;
             }
@@ -386,10 +387,9 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     private CurrentValue(): TagsFilter {
-        console.log("Creating a current value...")
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
-        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
+        for (const oneOnOneElement of this._mapping) {
             if (oneOnOneElement.k !== null && oneOnOneElement.k.matches(tags)) {
                 return oneOnOneElement.k;
             }
@@ -398,7 +398,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
-        console.log("Got a freeform tag:", new Tag(this._freeform.key, this._source.data[this._freeform.key]))
         return new Tag(this._freeform.key, this._source.data[this._freeform.key]);
     }
 
@@ -431,7 +430,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         let highestScore = -100;
         let highestTemplate = undefined;
-        for (const oneOnOneElement of this._mapping.concat(this._renderMapping)) {
+        for (const oneOnOneElement of this._mapping) {
             if (oneOnOneElement.k == null ||
                 oneOnOneElement.k.matches(tags)) {
                 // We have found a matching key -> we use the template, but only if it scores better
@@ -457,7 +456,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     InnerRender(): string {
-
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
 
@@ -499,10 +497,13 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     private ApplyTemplate(template: string | UIElement): UIElement {
-        if (template instanceof UIElement) {
-            return template;
+        if(template === undefined || template === null){
+            throw "Trying to apply a template, but the template is null/undefined"
         }
         const tags = this._tagsPreprocessor(this._source.data);
+        if (template instanceof UIElement) {
+            template = template.Render();
+        }
         return new FixedUiElement(TagUtils.ApplyTemplate(template, tags));
     }
 

@@ -1,6 +1,6 @@
 import { LayerDefinition } from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
-import { Tag } from "../../Logic/TagsFilter";
+import {And, Tag} from "../../Logic/TagsFilter";
 import FixedText from "../Questions/FixedText";
 import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
 import * as L from "leaflet";
@@ -20,33 +20,42 @@ export default class BikeShops extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = Translations.t.cyclofix.shop.name.txt
+        this.name = Translations.t.cyclofix.shop.name
         this.icon = "./assets/bike/repair_shop.svg"
         this.overpassFilter = new Tag("shop", "bicycle");
         this.newElementTags = [
             new Tag("shop", "bicycle"),
         ]
         this.maxAllowedOverlapPercentage = 10
+        this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
         this.title = new TagRenderingOptions({
             mappings: [
-                {k: this.sellsBikes, txt: "Bicycle shop"},
+                {k: new And([new Tag("name", "*"), this.sellsBikes]), txt: Translations.t.cyclofix.shop.titleShopNamed},
+                {
+                    k: new And([new Tag("name", "*"), new Tag("service:bicycle:retail", "")]),
+                    txt: Translations.t.cyclofix.shop.titleShop
+                },
+                {
+                    k: new And([new Tag("name", "*"), new Tag("service:bicycle:retail", "no")]),
+                    txt: Translations.t.cyclofix.shop.titleRepairNamed
+                },
+                {k: this.sellsBikes, txt: Translations.t.cyclofix.shop.titleShop},
+                {k: new Tag("service:bicycle:retail", " "), txt: Translations.t.cyclofix.shop.title},
                 {k: new Tag("service:bicycle:retail", "no"), txt: Translations.t.cyclofix.shop.titleRepair},
-                {k: new Tag("service:bicycle:retail", ""), txt: Translations.t.cyclofix.shop.title},
             ]
         })
         
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-            //new ParkingOperator(),
+            new ShopName(),
             new ShopRetail(),
             new ShopRental(),
             new ShopRepair(),
             new ShopPump(),
             new ShopDiy(),
-            new ShopName(),
             new ShopSecondHand()
         ]
     }

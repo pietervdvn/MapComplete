@@ -5,6 +5,12 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 
 
 export default class Translations {
+
+    constructor() {
+        throw "Translations is static. If you want to intitialize a new translation, use the singular form"
+    }
+
+
     static t = {
         cyclofix: {
             title: new T({
@@ -205,8 +211,17 @@ export default class Translations {
             },
             shop: {
                 name: new T({en: 'bike shop', nl: 'fietswinkel', fr: 'TODO: fr'}),
-                title: new T({en: 'Bike repair/shop', nl: 'Fietswinkel/herstelling', fr: 'TODO: fr'}),
-                titleRepair: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'TODO: fr'}),
+                
+                title: new T({en: 'Bike shop', nl: 'Fietszaak', fr: 'TODO: fr'}),
+                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'TODO: fr'}),
+                titleShop: new T({en: 'Bike repair/shop', nl: 'Fietswinkel', fr: 'TODO: fr'}),
+                
+                titleNamed: new T({en: 'Bike repair/shop', nl: 'Fietszaak {name}', fr: 'TODO: fr'}),
+                titleRepairNamed: new T({en: 'Bike shop', nl: 'Fietsenmaker {name}', fr: 'TODO: fr'}),
+                titleShopNamed: new T({en: 'Bike repair/shop', nl: 'Fietswinkel {name}', fr: 'TODO: fr'}),
+
+
+
                 retail: {
                     question: new T({
                         en: 'Does this shop sell bikes?',
@@ -266,9 +281,9 @@ export default class Translations {
                     })
                 },
                 qName: {
-                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietswinkel?', fr: 'TODO: fr'}),
-                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietswinkel heet {name}', fr: 'TODO: fr'}),
-                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietswinkel heet: $$$', fr: 'TODO: fr'})
+                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietszaak?', fr: 'TODO: fr'}),
+                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietszaak heet <b>{name}</b>', fr: 'TODO: fr'}),
+                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietszaak heet: <b>$$$</b>', fr: 'TODO: fr'})
                 },
                 secondHand: {
                     question: new T({en: 'Does this shop sell second-hand bikes?', nl: 'Verkoopt deze winkel tweedehands fietsen?', fr: 'TODO: fr'}),
@@ -357,6 +372,14 @@ export default class Translations {
             skip: new T({
                 en: "Skip this question",
                 nl: "Vraag overslaan"
+            }),
+            oneSkippedQuestion: new T({
+                en: "One question is skipped",
+                nl: "Een vraag is overgeslaan"
+            }),
+            skippedQuestions: new T({
+                en: "Some questions are skipped",
+                nl: "Sommige vragen zijn overgeslaan"
             })
         }   
     }

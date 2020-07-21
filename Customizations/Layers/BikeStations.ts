@@ -23,7 +23,7 @@ export default class BikeStations extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = Translations.t.cyclofix.station.name.txt;
+        this.name = Translations.t.cyclofix.station.name;
         this.icon = "./assets/wrench.svg";
 
         this.overpassFilter = new And([
@@ -37,7 +37,8 @@ export default class BikeStations extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText(Translations.t.cyclofix.station.title.txt)
+        this.title = new FixedText(Translations.t.cyclofix.station.title)
+        this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
@@ -62,24 +63,19 @@ export default class BikeStations extends LayerDefinition {
             const hasPump = self.pump.matchesProperties(properties)
             const isOperational = self.pumpOperationalOk.matchesProperties(properties)
             const hasTools = self.tools.matchesProperties(properties)
-            let iconName = ""
-            if (hasPump) {
-                if (hasTools) {
-                    iconName = "repair_station_pump.svg"
-                } else {
-                    if (isOperational) {
-                        iconName = "pump.svg"
-                    } else {
-                        iconName = "pump_broken.svg"
-                    }
-                }
-            } else {
-                if (!self.pump.matchesProperties(properties)) {
+            let iconName = "repair_station.svg";
+            if (hasTools && hasPump && isOperational) {
+                iconName = "repair_station_pump.svg"
+            }else if(hasTools){
                     iconName = "repair_station.svg"
+            }else if(hasPump){
+                if (isOperational) {
+                    iconName = "pump.svg"
                 } else {
-                    iconName = "repair_station.svg"
+                    iconName = "broken_pump.svg"
                 }
             }
+
             const iconUrl = `./assets/bike/${iconName}`
             return {
                 color: "#00bb00",

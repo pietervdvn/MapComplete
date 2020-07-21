@@ -118,7 +118,8 @@ const secondsTillChangesAreSaved = new UIEventSource<number>(0);
 // This message is shown full screen on mobile devices
 const fullScreenMessage = new UIEventSource<UIElement>(undefined);
 
-const selectedElement = new UIEventSource<any>(undefined);
+// The latest element that was selected - used to generate the right UI at the right place
+const selectedElement = new UIEventSource<{feature: any}>(undefined);
 
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
@@ -166,7 +167,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 // ------------- Setup the layers -------------------------------
 const addButtons: {
-    name: string,
+    name: UIElement,
     icon: string,
     tags: Tag[],
     layerToAddTo: FilteredLayer
@@ -179,9 +180,10 @@ let minZoom = 0;
 
 for (const layer of layoutToUse.layers) {
 
-    const generateInfo = (tagsES) => {
+    const generateInfo = (tagsES, feature) => {
 
         return new FeatureInfoBox(
+            feature,
             tagsES,
             layer.title,
             layer.elementsToShow,
@@ -195,7 +197,7 @@ for (const layer of layoutToUse.layers) {
     const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
     const addButton = {
-        name: layer.name,
+        name: Translations.W(layer.name),
         icon: layer.icon,
         tags: layer.newElementTags,
         layerToAddTo: flayer
@@ -229,7 +231,8 @@ new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
 /**
  * Show the questions and information for the selected element on the fullScreen
  */
-selectedElement.addCallback((data) => {
+selectedElement.addCallback((feature) => {
+    const data = feature.feature.properties;
     // Which is the applicable set?
     for (const layer of layoutToUse.layers) {
 
@@ -238,6 +241,7 @@ selectedElement.addCallback((data) => {
             // This layer is the layer that gives the questions
 
             const featureBox = new FeatureInfoBox(
+                feature.feature,
                 allElements.getElement(data.id),
                 layer.title,
                 layer.elementsToShow,
@@ -300,6 +304,3 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 // --------------- Send a ping to start various action --------
 
 locationControl.ping();
-
-
-window.setTimeout(() => {Locale.language.setData("nl")}, 5000)

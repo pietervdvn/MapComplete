@@ -8,6 +8,7 @@ export class Imgur {
         title: string, description: string, blobs: FileList,
         handleSuccessfullUpload: ((imageURL: string) => void),
         allDone: (() => void),
+        onFail: ((reason: string) => void),
         offset:number = 0) {
 
         if (blobs.length == offset) {
@@ -24,7 +25,8 @@ export class Imgur {
                     handleSuccessfullUpload,
                     allDone,
                     offset + 1);
-            }
+            },
+            onFail
         );
 
 
@@ -74,7 +76,8 @@ export class Imgur {
     }
 
     static uploadImage(title: string, description: string, blob,
-                       handleSuccessfullUpload: ((imageURL: string) => void)) {
+                       handleSuccessfullUpload: ((imageURL: string) => void),
+                       onFail: (reason:string) => void) {
 
         const apiUrl = 'https://api.imgur.com/3/image';
         const apiKey = '7070e7167f0a25a';
@@ -105,7 +108,8 @@ export class Imgur {
             response = JSON.parse(response);
             handleSuccessfullUpload(response.data.link);
         }).fail((reason) => {
-            console.log("Uploading to IMGUR failed", reason)
+            console.log("Uploading to IMGUR failed", reason);
+            onFail(reason)
         });
     }
 
