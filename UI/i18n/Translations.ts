@@ -88,7 +88,8 @@ export default class Translations {
             },
             shop: {
                 name: new T({en: 'bike shop', nl: 'fietswinkel', fr: 'TODO: fr'}),
-                title: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'TODO: fr'}),
+                title: new T({en: 'Bike repair/shop', nl: 'Fietswinkel/herstelling', fr: 'TODO: fr'}),
+                titleRepair: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'TODO: fr'}),
                 retail: {
                     question: new T({en: 'Does this shop sell bikes?', nl: 'Verkoopt deze winkel fietsen?', fr: 'TODO: fr'}),
                     yes: new T({en: 'This shop sells bikes', nl: 'Deze winkel verkoopt fietsen', fr: 'TODO: fr'}),
@@ -97,6 +98,8 @@ export default class Translations {
                 repair: {
                     question: new T({en: 'Does this shop repair bikes?', nl: 'Verkoopt deze winkel fietsen?', fr: 'TODO: fr'}),
                     yes: new T({en: 'This shop repairs bikes', nl: 'Deze winkel herstelt fietsen', fr: 'TODO: fr'}),
+                    sold: new T({en: 'This shop only repairs bikes bought here', nl: 'Deze winkel herstelt enkel fietsen die hier werden gekocht', fr: 'TODO: fr'}),
+                    brand: new T({en: 'This shop only repairs bikes of a certain brand', nl: 'Deze winkel herstelt enkel fietsen van een bepaald merk', fr: 'TODO: fr'}),
                     no: new T({en: 'This shop doesn\'t repair bikes', nl: 'Deze winkel herstelt geen fietsen', fr: 'TODO: fr'}),
                 },
                 rental: {
@@ -108,6 +111,22 @@ export default class Translations {
                     question: new T({en: 'Does this shop offer a bike pump for use by anyone?', nl: 'Biedt deze winkel een fietspomp aan voor iedereen?', fr: 'TODO: fr'}),
                     yes: new T({en: 'This shop offers a bike pump for anyone', nl: 'Deze winkel biedt geen fietspomp aan voor eender wie', fr: 'TODO: fr'}),
                     no: new T({en: 'This shop doesn\'t offer a bike pump for anyone', nl: 'Deze winkel biedt een fietspomp aan voor iedereen', fr: 'TODO: fr'}),
+                },
+                qName: {
+                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietswinkel?', fr: 'TODO: fr'}),
+                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietswinkel heet {name}', fr: 'TODO: fr'}),
+                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietswinkel heet: $$$', fr: 'TODO: fr'})
+                },
+                secondHand: {
+                    question: new T({en: 'Does this shop sell second-hand bikes?', nl: 'Verkoopt deze winkel tweedehands fietsen?', fr: 'TODO: fr'}),
+                    yes: new T({en: 'This shop sells second-hand bikes', nl: 'Deze winkel verkoopt tweedehands fietsen', fr: 'TODO: fr'}),
+                    no: new T({en: 'This shop doesn\'t sell second-hand bikes', nl: 'Deze winkel verkoopt geen tweedehands fietsen', fr: 'TODO: fr'}),
+                    only: new T({en: 'This shop only sells second-hand bikes', nl: 'Deze winkel verkoopt enkel tweedehands fietsen', fr: 'TODO: fr'}),
+                },
+                diy: {
+                    question: new T({en: 'Are there tools here to repair your own bike?', nl: 'Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?', fr: 'TODO: fr'}),
+                    yes: new T({en: 'This shop offers tools for DIY repair', nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
+                    no: new T({en: 'This shop doesn\'t offer tools for DIY repair', nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
                 }
             }
         },
