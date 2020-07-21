@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#003B8B;}
+	.st1{fill:#72B154;}
+	.st2{fill:#FDC400;}
+	.st3{fill:none;}
+	.st4{fill:#E64335;}
+	.st5{fill:#9C9B9A;}
+	.st6{fill:#020203;}
+	.st7{fill:#0081C1;}
+	.st8{clip-path:url(#SVGID_2_);}
+	.st9{fill:none;stroke:#003B8B;stroke-width:9;stroke-linecap:round;}
+	.st10{clip-path:url(#SVGID_4_);}
+	.st11{clip-path:url(#SVGID_6_);}
+	.st12{fill:#FFFFFF;}
+</style>
+<g>
+	<circle class="st0" cx="50.31" cy="50" r="46.53"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_5_" x="29.75" y="27.28" width="43.28" height="43.28"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st8">
+		<path class="st12" d="M69.01,70.56c-1.04-0.23-1.8-0.86-2.53-1.57c-3.78-3.7-7.57-7.39-11.36-11.09
+			c-0.24-0.24-0.41-0.28-0.72-0.11c-2.8,1.54-5.82,2.22-9.01,2.02c-4.01-0.25-7.5-1.72-10.43-4.43c-2.68-2.48-4.33-5.52-4.95-9.06
+			c-0.54-3.01-0.23-5.97,0.95-8.82c1.69-4.04,4.56-6.97,8.6-8.78c2.25-1.01,4.62-1.5,7.1-1.43c4.22,0.11,7.91,1.55,11.02,4.38
+			c2.27,2.07,3.82,4.58,4.66,7.5c0.7,2.42,0.81,4.87,0.33,7.35c-0.45,2.33-1.37,4.45-2.83,6.56c0.13,0.07,0.31,0.13,0.43,0.25
+			c3.88,3.77,7.75,7.54,11.62,11.31c1.26,1.23,1.49,2.84,0.6,4.31c-0.44,0.73-1.09,1.22-1.93,1.46c-0.15,0.04-0.29,0.11-0.44,0.16
+			C69.76,70.56,69.39,70.56,69.01,70.56z M46.34,33.1c-5.89,0-10.69,4.69-10.68,10.47c0.01,5.79,4.69,10.48,10.71,10.49
+			c5.89,0.01,10.67-4.73,10.67-10.5C57.04,37.8,52.23,33.1,46.34,33.1z"/>
+	</g>
+</g>
+</svg>
