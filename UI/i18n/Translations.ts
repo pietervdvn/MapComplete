@@ -296,6 +296,12 @@ export default class Translations {
                     yes: new T({en: 'This shop offers tools for DIY repair', nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
                     no: new T({en: 'This shop doesn\'t offer tools for DIY repair', nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
                 }
+            },
+            drinking_water: {
+                title: new T({
+                    en: 'Drinking water',
+                    nl: "Drinkbaar water"
+                })
             }
         },
         image: {

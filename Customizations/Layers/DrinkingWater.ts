@@ -5,12 +5,13 @@ import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
 import {TagRenderingOptions} from "../TagRendering";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import Translations from "../../UI/i18n/Translations";
 
 export class DrinkingWater extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "drinking water";
+        this.name = Translations.t.cyclofix.drinking_water.title;
         this.icon = "./assets/bike/drinking_water.svg";
 
         this.overpassFilter = new Or([
