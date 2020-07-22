@@ -50,6 +50,7 @@ export class Basemap {
 
     public Location: UIEventSource<{ zoom: number, lat: number, lon: number }>;
     public LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
+    private _previousLayer : L.tileLayer= undefined;
     public CurrentLayer: UIEventSource<{
         name: string,
         layer: L.tileLayer
@@ -66,6 +67,8 @@ export class Basemap {
             zoom: location.data.zoom,
             layers: [BaseLayers.defaultLayer],
         });
+
+
         this.map.attributionControl.setPrefix(
             extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
         this.Location = location;
@@ -79,6 +82,14 @@ export class Basemap {
             location.data.lat = self.map.getCenter().lat;
             location.data.lon = self.map.getCenter().lng;
             location.ping();
+        });
+        
+        this.CurrentLayer.addCallback((layer:{layer: L.tileLayer}) => {
+            if(self._previousLayer !== undefined){
+                self.map.removeLayer(self._previousLayer);
+            }
+            self._previousLayer = layer.layer;
+            self.map.addLayer(layer.layer);
         });
 
         this.map.on("click", function (e) {
