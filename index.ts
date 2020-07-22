@@ -336,6 +336,10 @@ Object.entries(BaseLayers.baseLayers).forEach(([key, value], i) => {
 });
 
 // popup
-new CheckBox(new Combine([new DropDown(`label`, baseLayerOptions, bm.CurrentLayer), `<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
+if (flayers.length > 1) {
+    new CheckBox(new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers), new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
+} else {
+    new CheckBox(new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
+}
 
 

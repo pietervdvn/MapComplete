@@ -294,18 +294,24 @@ form {
     flex-flow: column;
     width: 100%;
     background-color: #ffffff;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px;
     border: none;
     font-size: 16px;
     transform: translateY(60px);
-    padding: 15px 0 18px 0;
+    padding: 15px 0 60px 0;
 }
 
 #filter__selection label {
-    display: none;
+    font-size: 16px;
+    background-color: #ffffff;
+    padding: 0 15px 12px 15px;
+    margin: 0;
+    color: #003B8B;
+    font-weight: 600;
 }
 
 #filter__selection select {
+    outline: none;
     background-color: #F0EFEF;
     border: none;
     border-radius: 5px;
@@ -317,12 +323,11 @@ form {
 
 #filter__selection ul {
     background-color: #ffffff;
-    border-radius: 0 0 15px 15px;
-    padding: 15px 25px 60px 18px;
+    padding: 10px 25px 18px 18px;
     list-style: none;
     margin: 0;
     font-weight: 600;
-    transform: translateY(60px);
+    transform: translateY(75px);
 }
 
 #filter__selection ul li span > span {
@@ -344,12 +349,13 @@ form {
 
 .filter__label {
     font-size: 16px;
-    transform: translateY(60px);
+    transform: translateY(75px);
     background-color: #ffffff;
-    padding: 0 15px;
+    padding: 10px 15px;
     margin: 0;
     color: #003B8B;
     font-weight: 600;
+    border-radius: 15px 15px 0 0;
 }
 
 #filter__layers {
