@@ -314,7 +314,8 @@ locationControl.ping();
 
 // --------------- Setting up filter ui --------
 
-new LayerSelection(flayers).AttachTo("filter__selection");
+new CheckBox(new LayerSelection(flayers), `Click here`).AttachTo("filter__selection")
+
         
 // --------------- Setting up toggle button for filter ui --------
 

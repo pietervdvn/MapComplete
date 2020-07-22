@@ -12,9 +12,9 @@ export class LayerSelection extends UIElement{
       this._checkboxes = [];
       for (const layer of layers) {
         this._checkboxes.push(new CheckBox(
-          layer.isDisplayed,
-          new Combine([layer.layerDef.name, `<img src="${layer.layerDef.icon}" alt="${layer.layerDef.icon}">`]),
-          layer.layerDef.name));
+          new Combine([layer.layerDef.name, `<img src="${layer.layerDef.icon}" alt="layer.layerDef.icon">`]),
+          layer.layerDef.name,
+          layer.isDisplayed));
       }
     }
 
