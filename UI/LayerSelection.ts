@@ -12,8 +12,18 @@ export class LayerSelection extends UIElement{
       this._checkboxes = [];
       for (const layer of layers) {
         this._checkboxes.push(new CheckBox(
-          new Combine([layer.layerDef.name, `<img src="${layer.layerDef.icon}" alt="layer.layerDef.icon">`]),
-          layer.layerDef.name,
+          new Combine([
+            `<svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7.28571L10.8261 15L23 3" stroke="#003B8B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`,
+            `<img width="20" height="20" src="${layer.layerDef.icon}" alt="layer.layerDef.icon">`,
+            layer.layerDef.name]),
+          new Combine([
+            `<svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7.28571L10.8261 15L23 3" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`,
+            `<img width="20" height="20" src="${layer.layerDef.icon}" alt="layer.layerDef.icon">`,
+            layer.layerDef.name]),
           layer.isDisplayed));
       }
     }

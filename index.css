@@ -264,15 +264,11 @@ form {
 /* filter ui */
 
 .filter__popup {
-    display: none;
     position: absolute;
     bottom: 0;
     z-index: 500;
     padding-left: 10px;
     padding-bottom: 10px;
-    display: flex;
-    flex-flow: column-reverse;
-    align-items: start;
 }
 
 .filter__button {
@@ -284,10 +280,30 @@ form {
     background-color: white;
 }
 
-.filter__content {
+#filter__selection ul {
     background-color: white;
     border-radius: 15px;
-    padding: 0 15px;
+    padding: 15px 25px 15px 18px;
+    list-style: none;
+    margin: 0;
+    font-weight: 600;
+}
+
+#filter__selection ul li span > span {
+    display: flex;
+    align-items: center;
+    /* padding: 10px 0; */
+}
+
+#filter__selection ul svg {
+    padding: 10px 14px 10px 0;
+    border-right: 1px solid #003B8B;
+}
+
+#filter__selection ul img {
+    width: 20px;
+    height: auto;
+    margin: 0 10px 0 18px;
 }
 
 #filter__layers {
