@@ -1,14 +1,9 @@
-import { DropDown } from "./UI/Input/DropDown";
-import { BaseLayers, Basemap } from "./Logic/Basemap";
+import {QueryParameters} from "./Logic/QueryParameters";
 
-let baseLayerOptions = [];
+console.log("Hi");
 
-Object.entries(BaseLayers.baseLayers).forEach(([key, value], i) => {
-// console.log(key, value, i);
-    baseLayerOptions.push({value: i, shown: key});
-});
+const layout = QueryParameters.GetQueryParameter("layout").addCallback(console.log)
 
-console.log(Basemap);
+console.log("Layout is", layout.data)
 
-
-new DropDown(`label`, baseLayerOptions, Basemap.CurrentLayer).AttachTo("maindiv");
+window.setTimeout(() => {layout.setData("XXX"), 2000})

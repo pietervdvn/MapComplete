@@ -29,6 +29,7 @@ import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {LayerSelection} from "./UI/LayerSelection";
 import Combine from "./UI/Base/Combine";
 import {Img} from "./UI/Img";
+import {QueryParameters} from "./Logic/QueryParameters";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -72,23 +73,8 @@ for (const k in AllKnownLayouts.allSets) {
     }
 }
 
-// Read the query string to grap settings
-let paramDict: any = {};
-if (window.location.search) {
-    const params = window.location.search.substr(1).split("&");
-    for (const param of params) {
-        var kv = param.split("=");
-        paramDict[kv[0]] = kv[1];
-    }
-}
-
-if (paramDict.layout) {
-    defaultLayout = paramDict.layout
-}
-
-if (paramDict.test) {
-    dryRun = paramDict.test === "true";
-}
+defaultLayout = QueryParameters.GetQueryParameter("layout").data ?? defaultLayout;
+dryRun = QueryParameters.GetQueryParameter("test").data === "true";
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout];
 console.log("Using layout: ", layoutToUse.name);
@@ -100,10 +86,6 @@ Locale.language.addCallback(e => {
 
 
 // ----------------- Setup a few event sources -------------
-
-
-// const LanguageSelect = document.getElementById('language-select') as HTMLOptionElement
-// eLanguageSelect.addEventListener('selectionchange')
 
 
 // The message that should be shown at the center of the screen
@@ -118,14 +100,36 @@ const secondsTillChangesAreSaved = new UIEventSource<number>(0);
 const fullScreenMessage = new UIEventSource<UIElement>(undefined);
 
 // The latest element that was selected - used to generate the right UI at the right place
-const selectedElement = new UIEventSource<{feature: any}>(undefined);
+const selectedElement = new UIEventSource<{ feature: any }>(undefined);
 
+
+function clean(str) : number{
+    if (str) {
+        const i = parseFloat(str);
+        if (isNaN(i)) {
+            return undefined;
+        }
+        return i;
+    }
+    return undefined;
+}
+
+const zoom = QueryParameters.GetQueryParameter("z");
+const lat = QueryParameters.GetQueryParameter("lat");
+const lon = QueryParameters.GetQueryParameter("lon");
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
-    zoom: layoutToUse.startzoom,
-    lat: layoutToUse.startLat,
-    lon: layoutToUse.startLon
+    zoom: clean(zoom.data) ?? layoutToUse.startzoom,
+    lat: clean(lat.data) ?? layoutToUse.startLat,
+    lon: clean(lon.data) ?? layoutToUse.startLon
 });
+
+locationControl.addCallback((latlonz) => {
+    zoom.setData(latlonz.zoom.toString());
+    
+    lat.setData(latlonz.lat.toString().substr(0,6));
+    lon.setData(latlonz.lon.toString().substr(0,6));
+})
 
 
 // ----------------- Prepare the important objects -----------------
