@@ -1,6 +1,7 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
 import { FilteredLayer } from "../../Logic/FilteredLayer";
+import Translations from "../../UI/i18n/Translations";
 
 
 export class CheckBox extends UIElement{
@@ -24,9 +25,9 @@ export class CheckBox extends UIElement{
 
     InnerRender(): string {
         if (this._data.data) {
-            return this._showEnabled;
+            return Translations.W(this._showEnabled).Render();
         } else {
-            return this._showDisabled;
+            return Translations.W(this._showDisabled).Render();
         }
     }
     

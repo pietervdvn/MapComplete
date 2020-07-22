@@ -32,6 +32,8 @@ import {DropDown} from "./UI/Input/DropDown";
 import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import ParkingType from "./Customizations/Questions/bike/ParkingType";
+import { LayerDefinition } from "./Customizations/LayerDefinition";
+import { LayerSelection } from "./UI/LayerSelection";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -312,13 +314,7 @@ locationControl.ping();
 
 // --------------- Setting up filter ui --------
 
-for (let i = 0; i < flayers.length; i++) {
-    const listItem = document.createElement(`li`);
-    listItem.setAttribute(`id`,`${flayers[i].name}`)
-    document.querySelector(`#filter__layers`).appendChild(listItem);
-    new CheckBox(flayers[i].isDisplayed, flayers[i])
-        .AttachTo(flayers[i].name);
-}
+new LayerSelection(flayers).AttachTo("filter__selection");
         
 // --------------- Setting up toggle button for filter ui --------
 
