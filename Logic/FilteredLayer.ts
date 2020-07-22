@@ -6,6 +6,7 @@ import { Changes } from "./Changes";
 import L from "leaflet"
 import { GeoOperations } from "./GeoOperations";
 import { UIElement } from "../UI/UIElement";
+import {LayerDefinition} from "../Customizations/LayerDefinition";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -18,7 +19,7 @@ import { UIElement } from "../UI/UIElement";
  */
 export class FilteredLayer {
 
-    public readonly name: string;
+    public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
 
@@ -32,6 +33,7 @@ export class FilteredLayer {
     /** The featurecollection from overpass
      */
     private _dataFromOverpass;
+    private _wayHandling: number;
     /** List of new elements, geojson features
      */
     private _newElements = [];
@@ -39,19 +41,21 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    private _selectedElement: UIEventSource<any>;
-    private _showOnPopup: (tags: UIEventSource<any>) => UIElement;
+    private _selectedElement: UIEventSource<{feature: any}>;
+    private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     constructor(
-        name: string,
+        name: string | UIElement,
         map: Basemap, storage: ElementStorage,
         changes: Changes,
         filters: TagsFilter,
         maxAllowedOverlap: number,
+        wayHandling: number,
         style: ((properties) => any),
-        selectedElement: UIEventSource<any>,
-        showOnPopup: ((tags: UIEventSource<any>) => UIElement)
+        selectedElement: UIEventSource<{feature: any}>,
+        showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
     ) {
+        this._wayHandling = wayHandling;
         this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
 
@@ -66,6 +70,7 @@ export class FilteredLayer {
         this._style = style;
         this._storage = storage;
         this._maxAllowedOverlap = maxAllowedOverlap;
+        
         const self = this;
         this.isDisplayed.addCallback(function (isDisplayed) {
             if (self._geolayer !== undefined && self._geolayer !== null) {
@@ -86,10 +91,18 @@ export class FilteredLayer {
     public SetApplicableData(geojson: any): any {
         const leftoverFeatures = [];
         const selfFeatures = [];
-        for (const feature of geojson.features) {
+        for (let feature of geojson.features) {
             // feature.properties contains all the properties
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
+                feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
+                if(feature.geometry.type !== "Point"){
+                    if(this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY){
+                        selfFeatures.push(GeoOperations.centerpoint(feature));
+                    }else if(this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY){
+                        feature = GeoOperations.centerpoint(feature);
+                    }
+                }
                 selfFeatures.push(feature);
             } else {
                 leftoverFeatures.push(feature);
@@ -201,8 +214,8 @@ export class FilteredLayer {
 
                 layer.on("click", function (e) {
                     console.log("Selected ", feature)
-                    self._selectedElement.setData(feature.properties);
-                    const uiElement = self._showOnPopup(eventSource);
+                    self._selectedElement.setData({feature: feature});
+                    const uiElement = self._showOnPopup(eventSource, feature);
                     const popup = L.popup()
                         .setContent(uiElement.Render())
                         .setLatLng(e.latlng)

@@ -4,6 +4,8 @@ import {Tag} from "../../../Logic/TagsFilter";
 
 /**
  * Currently not used in Cyclofix because it's a little vague
+ * 
+ * TODO: Translations
  */
 export default class BikeStationBrand extends TagRenderingOptions {
     private static options = {

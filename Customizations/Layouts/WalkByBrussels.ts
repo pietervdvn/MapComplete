@@ -10,6 +10,7 @@ import { ArtworkWBB } from "../Layers/ArtworkWBB";
 export class WalkByBrussels extends Layout {
     constructor() {
         super("walkbybrussels",
+            ["en","fr","nl"],
             "Drinking Water Spots",
             [new Park(), new NatureReserves(), new Viewpoint(), new Bench(), new DrinkingWater(), new ArtworkWBB()],
             10,

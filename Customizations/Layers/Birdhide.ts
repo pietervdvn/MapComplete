@@ -17,6 +17,7 @@ export class Birdhide extends LayerDefinition {
             elementsToShow: [new FixedText("hi")],
             icon: "assets/nature/birdhide.svg",
             minzoom: 12,
+            wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
             newElementTags: [Birdhide.birdhide],
             style(tags: any): { color: string; icon: any } {
                 return {color: "", icon: undefined};
@@ -65,6 +66,14 @@ export class Birdhide extends LayerDefinition {
                     txt: "Vogelijkhut{name}"
                 },
                 {
+                    k: new Tag("shelter", "yes"),
+                    txt: "Vogelijkhut{name}"
+                },
+                {
+                    k: new Tag("amenity", "shelter"),
+                    txt: "Vogelijkhut{name}"
+                },
+                {
                     k: new Tag("building", "yes"),
                     txt: "Vogelijkhut{name}"
                 },
@@ -103,7 +112,12 @@ export class Birdhide extends LayerDefinition {
                     {
                         k: new And([new Tag("amenity", "shelter"), new Tag("building", "yes"), new Tag("shelter", "yes")]),
                         txt: "Vogelijkhut"
-                    }
+                    },
+                    {
+                        k: new Or([new Tag("amenity", "shelter"), new Tag("building", "yes"), new Tag("shelter", "yes")]),
+                        txt: "Vogelijkhut"
+                    },
+                 
                 ]
             }),
             new TagRenderingOptions({

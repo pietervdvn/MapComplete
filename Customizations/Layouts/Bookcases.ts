@@ -4,6 +4,7 @@ import * as Layer from "../Layers/Bookcases";
 export class Bookcases extends Layout{
     constructor() {
         super(    "bookcases",
+            ["nl"],
             "Open Bookcase Map",
             [new Layer.Bookcases()],
             14,

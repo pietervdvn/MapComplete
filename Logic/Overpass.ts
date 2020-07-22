@@ -32,7 +32,7 @@ export class Overpass {
 
     queryGeoJson(bbox: string, continuation: ((any) => void), onFail: ((reason) => void)): void {
         let query = this.buildQuery(bbox);
-        
+
         if(Overpass.testUrl !== null){
             console.log("Using testing URL")
             query = Overpass.testUrl;
@@ -44,7 +44,7 @@ export class Overpass {
                     console.log("Query failed")
                     onFail(status);
                 }
-                
+
                 if(json.elements === [] && json.remarks.indexOf("runtime error") > 0){
                     console.log("Timeout or other runtime error");
                     return;

@@ -4,6 +4,7 @@ import { FilteredLayer } from "../../Logic/FilteredLayer";
 
 
 export class CheckBox extends UIElement{
+    private data: UIEventSource<boolean>;
 
     constructor(data: UIEventSource<boolean>, name: String) {
         super(data);

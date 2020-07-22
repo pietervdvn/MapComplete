@@ -57,8 +57,7 @@ export class LayerUpdater {
     }
 
     private handleFail(reason: any) {
-        console.log("QUERY FAILED", reason);
-        console.log("Retrying in 1s")
+        console.log("QUERY FAILED (retrying in 1 sec)", reason);
         this.previousBounds = undefined;
         const self = this;
         window.setTimeout(
@@ -73,7 +72,6 @@ export class LayerUpdater {
         }
         console.log("Zoom level: ",this._map.map.getZoom(), "Least needed zoom:", this._minzoom)
         if (this._map.map.getZoom() < this._minzoom || this._map.Location.data.zoom < this._minzoom) {
-            console.log("Not running query: zoom not sufficient");
             return;
         }
 

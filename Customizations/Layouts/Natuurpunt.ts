@@ -7,6 +7,7 @@ export class Natuurpunt extends Layout{
     constructor() {
         super(
             "natuurpunt",
+            ["nl"],
             "De natuur in",
             [new Birdhide(), new InformationBoard(), new NatureReserves(true)],
             12,
