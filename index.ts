@@ -3,7 +3,11 @@ import {Changes} from "./Logic/Changes";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UserBadge} from "./UI/UserBadge";
+<<<<<<< HEAD
 import {Basemap, BaseLayers} from "./Logic/Basemap";
+=======
+import {BaseLayers, Basemap} from "./Logic/Basemap";
+>>>>>>> 084a1d0c499c2d747ac5441aa8a6ce74f49ecf09
 import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
@@ -12,7 +16,6 @@ import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIElement} from "./UI/UIElement";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
-import {Overpass} from "./Logic/Overpass";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
 import {StrayClickHandler} from "./Logic/StrayClickHandler";
@@ -21,19 +24,13 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import { All } from "./Customizations/Layouts/All";
 import {CheckBox} from "./UI/Base/CheckBox";
-import { DrinkingWater } from "./Customizations/Layers/DrinkingWater";
 import Translations from "./UI/i18n/Translations";
-import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import {Layout, WelcomeMessage} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
-import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import ParkingType from "./Customizations/Questions/bike/ParkingType";
-import { LayerDefinition } from "./Customizations/LayerDefinition";
-import { LayerSelection } from "./UI/LayerSelection";
+import {LayerSelection} from "./UI/LayerSelection";
 import Combine from "./UI/Base/Combine";
 
 
@@ -334,6 +331,7 @@ const openFilterButton = `
 
 new CheckBox(new Combine([new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
 
+<<<<<<< HEAD
 // --------------- Setting up basemap dropdown --------
 
 let baseLayerOptions = [];
@@ -347,3 +345,5 @@ console.log(bm.CurrentLayer.data);
 
 
 new DropDown(`label`, baseLayerOptions, bm.CurrentLayer).AttachTo("filter__selection");
+=======
+>>>>>>> 084a1d0c499c2d747ac5441aa8a6ce74f49ecf09
