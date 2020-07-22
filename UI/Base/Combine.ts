@@ -21,7 +21,7 @@ export default class Combine extends UIElement {
         return elements;
     }
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
+    InnerUpdate(htmlElement: HTMLElement) {
         for (const element of this.uiElements) {
             if (element instanceof UIElement) {
                 element.Update();

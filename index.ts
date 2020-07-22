@@ -3,11 +3,7 @@ import {Changes} from "./Logic/Changes";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UserBadge} from "./UI/UserBadge";
-<<<<<<< HEAD
 import {Basemap, BaseLayers} from "./Logic/Basemap";
-=======
-import {BaseLayers, Basemap} from "./Logic/Basemap";
->>>>>>> 084a1d0c499c2d747ac5441aa8a6ce74f49ecf09
 import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
@@ -331,7 +327,6 @@ const openFilterButton = `
 
 new CheckBox(new Combine([new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
 
-<<<<<<< HEAD
 // --------------- Setting up basemap dropdown --------
 
 let baseLayerOptions = [];
@@ -345,5 +340,3 @@ console.log(bm.CurrentLayer.data);
 
 
 new DropDown(`label`, baseLayerOptions, bm.CurrentLayer).AttachTo("filter__selection");
-=======
->>>>>>> 084a1d0c499c2d747ac5441aa8a6ce74f49ecf09
