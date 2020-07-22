@@ -288,13 +288,13 @@ messageBox.update();
 for (let i = 0; i < flayers.length; i++) {
     const listItem = document.createElement(`li`);
     listItem.setAttribute(`id`,`${flayers[i].name}`)
-    document.querySelector(`#filterui`).appendChild(listItem);
-    const eventSource = new UIEventSource(flayers[i].isDisplayed.data);
-    new CheckBox(eventSource, flayers[i].name)
-        .onClick(() => {
-            eventSource.setData(!eventSource.data);
-            flayers[i].isDisplayed.setData(eventSource.data);
-        })
+    document.querySelector(`#filter__layers`).appendChild(listItem);
+    new CheckBox(flayers[i].isDisplayed, flayers[i])
         .AttachTo(flayers[i].name);
 }
         
+// --------------- Setting up toggle button for filter ui --------
+
+document.querySelector(`#filter__button`).addEventListener(`click`, e => {
+    document.querySelector(`#filter__popup`).classList.toggle(`filter__popup--show`)
+});

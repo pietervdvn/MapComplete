@@ -5,14 +5,28 @@ import { FilteredLayer } from "../../Logic/FilteredLayer";
 
 export class CheckBox extends UIElement{
 
-    constructor(data: UIEventSource<boolean>, name: String) {
+    private readonly _data: UIEventSource<boolean>;
+    private readonly _showEnabled: string|UIElement;
+    private readonly _showDisabled: string|UIElement;
+
+    constructor(data: UIEventSource<boolean>, showEnabled: string|UIElement, showDisabled: string|UIElement) {
         super(data);
-        this.data = data;
-        this.name = name
+        this._data = data;
+        this._showEnabled = showEnabled;
+        this._showDisabled = showDisabled;
+        this.onClick(() => {
+            data.setData(!data.data);
+            
+        })
+        
     }
 
     protected InnerRender(): string {
-        return `${this.data.data? `<svg class="checkbox__check" width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 8L11.5 17L25.5 3" stroke="#003B8B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="checkbox__label--checked">${this.name}</p>`: `<p class="checkbox__label--unchecked">${this.name}</p>`}`;
+        if (this._data.data) {
+            return this._showEnabled;
+        } else {
+            return this._showDisabled;
+        }
     }
     
 }

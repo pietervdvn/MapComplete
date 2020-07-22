@@ -6,6 +6,7 @@ import { Changes } from "./Changes";
 import L from "leaflet"
 import { GeoOperations } from "./GeoOperations";
 import { UIElement } from "../UI/UIElement";
+import { LayerDefinition } from "../Customizations/LayerDefinition";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -21,7 +22,7 @@ export class FilteredLayer {
     public readonly name: string;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
-
+    public readonly layerDef: LayerDefinition;
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
@@ -43,29 +44,26 @@ export class FilteredLayer {
     private _showOnPopup: (tags: UIEventSource<any>) => UIElement;
 
     constructor(
-        name: string,
+        layerDef: LayerDefinition,
         map: Basemap, storage: ElementStorage,
         changes: Changes,
-        filters: TagsFilter,
-        maxAllowedOverlap: number,
-        style: ((properties) => any),
         selectedElement: UIEventSource<any>,
         showOnPopup: ((tags: UIEventSource<any>) => UIElement)
     ) {
+        this.layerDef = layerDef;
         this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
-
-        if (style === undefined) {
-            style = function () {
-                return {};
+        this._style = layerDef.style;
+        if (this._style === undefined) {
+            this._style = function () {
+                return {icon: "", color: "#000000"};
             }
         }
         this.name = name;
         this._map = map;
-        this.filters = filters;
-        this._style = style;
+        this.filters = layerDef.overpassFilter;
         this._storage = storage;
-        this._maxAllowedOverlap = maxAllowedOverlap;
+        this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
         const self = this;
         this.isDisplayed.addCallback(function (isDisplayed) {
             if (self._geolayer !== undefined && self._geolayer !== null) {

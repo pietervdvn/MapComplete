@@ -254,18 +254,42 @@ form {
     pointer-events: all;
 }
 
-#filterui {
-    padding: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    z-index: 5000;
-    background-color: white;
-    border-radius: 2em;
-    pointer-events: all;
-    list-style: none;
+/* filter ui */
+
+.filter__popup {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    z-index: 500;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: start;
 }
 
-#filterui li span {
+.filter__button {
+    outline: none;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.filter__content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 0 15px;
+}
+
+#filter__layers {
+    pointer-events: all;
+    list-style: none;
+    padding-left: 0;
+}
+
+#filter__layers li span {
     display: flex;
     align-items: center;
 }
