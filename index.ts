@@ -317,8 +317,3 @@ locationControl.ping();
 new CheckBox(new LayerSelection(flayers), `Click here`).AttachTo("filter__selection")
 
         
-// --------------- Setting up toggle button for filter ui --------
-
-document.querySelector(`#filter__button`).addEventListener(`click`, e => {
-    document.querySelector(`#filter__popup`).classList.toggle(`filter__popup--show`)
-});

@@ -12,14 +12,14 @@ export class CheckBox extends UIElement{
     private readonly _showDisabled: string|UIElement;
 
     constructor(showEnabled: string|UIElement, showDisabled: string|UIElement, data: UIEventSource<boolean> = undefined) {
-        super(data);
-        this._data = data??new UIEventSource(false);
+        super(undefined);
+        this._data = data ?? new UIEventSource<boolean>(false);
+        this.ListenTo(this._data);
         this._showEnabled = showEnabled;
         this._showDisabled = showDisabled;
         const self = this;
         this.onClick(() => {
             self._data.setData(!self._data.data);
-            
         })
         
     }
