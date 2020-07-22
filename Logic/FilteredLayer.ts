@@ -6,7 +6,7 @@ import { Changes } from "./Changes";
 import L from "leaflet"
 import { GeoOperations } from "./GeoOperations";
 import { UIElement } from "../UI/UIElement";
-import {LayerDefinition} from "../Customizations/LayerDefinition";
+import { LayerDefinition } from "../Customizations/LayerDefinition";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -22,7 +22,7 @@ export class FilteredLayer {
     public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
-
+    public readonly layerDef: LayerDefinition;
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
@@ -41,36 +41,32 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    private _selectedElement: UIEventSource<{feature: any}>;
+    private _selectedElement: UIEventSource<{ feature: any }>;
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     constructor(
-        name: string | UIElement,
+        layerDef: LayerDefinition,
         map: Basemap, storage: ElementStorage,
         changes: Changes,
-        filters: TagsFilter,
-        maxAllowedOverlap: number,
-        wayHandling: number,
-        style: ((properties) => any),
-        selectedElement: UIEventSource<{feature: any}>,
-        showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
+        selectedElement: UIEventSource<any>,
+        showOnPopup: ((tags: UIEventSource<any>) => UIElement)
     ) {
-        this._wayHandling = wayHandling;
+        this.layerDef = layerDef;
+
+        this._wayHandling = layerDef.wayHandling;
         this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
-
-        if (style === undefined) {
-            style = function () {
-                return {};
+        this._style = layerDef.style;
+        if (this._style === undefined) {
+            this._style = function () {
+                return {icon: "", color: "#000000"};
             }
         }
         this.name = name;
         this._map = map;
-        this.filters = filters;
-        this._style = style;
+        this.filters = layerDef.overpassFilter;
         this._storage = storage;
-        this._maxAllowedOverlap = maxAllowedOverlap;
-        
+        this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
         const self = this;
         this.isDisplayed.addCallback(function (isDisplayed) {
             if (self._geolayer !== undefined && self._geolayer !== null) {
@@ -96,10 +92,10 @@ export class FilteredLayer {
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
                 feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
-                if(feature.geometry.type !== "Point"){
-                    if(this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY){
+                if (feature.geometry.type !== "Point") {
+                    if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
                         selfFeatures.push(GeoOperations.centerpoint(feature));
-                    }else if(this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY){
+                    } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
                         feature = GeoOperations.centerpoint(feature);
                     }
                 }

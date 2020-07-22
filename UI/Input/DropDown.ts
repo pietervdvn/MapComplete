@@ -28,7 +28,10 @@ export class DropDown<T> extends InputElement<T> {
         for (const v of this._values) {
             this.ListenTo(v.shown._source);
         }
-        this.ListenTo(this._value)
+        this.ListenTo(this._value);
+        
+        this.onClick(() => {}) // by registering a click, the click event is consumed and doesn't bubble furter to other elements, e.g. checkboxes
+        
 
     }
 

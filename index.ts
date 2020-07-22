@@ -3,7 +3,7 @@ import {Changes} from "./Logic/Changes";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UserBadge} from "./UI/UserBadge";
-import {Basemap} from "./Logic/Basemap";
+import {Basemap, BaseLayers} from "./Logic/Basemap";
 import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
@@ -12,7 +12,6 @@ import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIElement} from "./UI/UIElement";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
-import {Overpass} from "./Logic/Overpass";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
 import {StrayClickHandler} from "./Logic/StrayClickHandler";
@@ -21,15 +20,15 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {All} from "./Customizations/Layouts/All";
+import {CheckBox} from "./UI/Base/CheckBox";
 import Translations from "./UI/i18n/Translations";
-import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import {Layout, WelcomeMessage} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
-import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import ParkingType from "./Customizations/Questions/bike/ParkingType";
+import {LayerSelection} from "./UI/LayerSelection";
+import Combine from "./UI/Base/Combine";
+import {Img} from "./UI/Img";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -56,7 +55,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-let defaultLayout = "buurtnatuur"
+let defaultLayout = "walkbybrussels"
 
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
@@ -204,9 +203,36 @@ for (const layer of layoutToUse.layers) {
     }
     addButtons.push(addButton);
     flayers.push(flayer);
+
+    console.log(flayers);
+    
 }
 
 const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
+
+
+// --------------- Setting up filter ui --------
+
+// buttons 
+
+const closedFilterButton = `<button id="filter__button" class="filter__button filter__button--shadow">${Img.closedFilterButton}</button>`;
+
+const openFilterButton = `
+<button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
+
+// basemap dropdown
+
+let baseLayerOptions = [];
+
+for (const key in BaseLayers.baseLayers) {
+    baseLayerOptions.push({value: {name: key, layer: BaseLayers.baseLayers[key]}, shown: key});
+}
+
+if (flayers.length > 1) {
+    new CheckBox(new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers), new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
+} else {
+    new CheckBox(new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
+}
 
 
 // ------------------ Setup various UI elements ------------
@@ -304,3 +330,6 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 // --------------- Send a ping to start various action --------
 
 locationControl.ping();
+
+
+

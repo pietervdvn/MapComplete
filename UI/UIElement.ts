@@ -53,8 +53,12 @@ export abstract class UIElement {
 
         if (this._onClick !== undefined) {
             const self = this;
-            element.onclick = () => {
+            element.onclick = (e) => {
+                if(e.consumed){
+                    return;
+                }
                 self._onClick();
+                e.consumed = true;
             }
             element.style.pointerEvents = "all";
             element.style.cursor = "pointer";
