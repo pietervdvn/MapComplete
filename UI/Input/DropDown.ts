@@ -85,6 +85,8 @@ export class DropDown<T> extends InputElement<T> {
             self._value.setData(self._values[index].value);
 
         });
+        
+        
 
         var t = this._value.data;
         for (let i = 0; i < this._values.length ; i++) {
