@@ -4,12 +4,14 @@ import { NatureReserves } from "../Layers/NatureReserves";
 import { Park } from "../Layers/Park";
 import { Bench } from "../Layers/Bench";
 import { Artwork } from "../Layers/Artwork";
+import { Viewpoint } from "../Layers/Viewpoint";
+import { ArtworkWBB } from "../Layers/ArtworkWBB";
 
 export class WalkByBrussels extends Layout {
     constructor() {
         super("walkbybrussels",
             "Drinking Water Spots",
-            [new DrinkingWater(), new Park(), new NatureReserves(), new Bench()],
+            [new Park(), new NatureReserves(), new Viewpoint(), new Bench(), new DrinkingWater(), new ArtworkWBB()],
             10,
             50.8435,
             4.3688,
