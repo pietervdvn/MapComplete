@@ -308,6 +308,8 @@ locationControl.ping();
 
 // --------------- Setting up filter ui --------
 
+// buttons 
+
 const closedFilterButton = `
     <button id="filter__button" class="filter__button filter__button--shadow">
         <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -325,18 +327,15 @@ const openFilterButton = `
 </svg>        
 </button>`;
 
-new CheckBox(new Combine([new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
-
-// --------------- Setting up basemap dropdown --------
+// basemap dropdown
 
 let baseLayerOptions = [];
 
 Object.entries(BaseLayers.baseLayers).forEach(([key, value], i) => {
-console.log(key, value, i);
     baseLayerOptions.push({value: {name: key, layer: value}, shown: key});
 });
 
-console.log(bm.CurrentLayer.data);
+// popup
+new CheckBox(new Combine([new DropDown(`label`, baseLayerOptions, bm.CurrentLayer), `<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
 
 
-new DropDown(`label`, baseLayerOptions, bm.CurrentLayer).AttachTo("filter__selection");

@@ -289,9 +289,35 @@ form {
     vertical-align: middle;
 }
 
+#filter__selection form {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px 15px 0 0;
+    border: none;
+    font-size: 16px;
+    transform: translateY(60px);
+    padding: 15px 0 18px 0;
+}
+
+#filter__selection label {
+    display: none;
+}
+
+#filter__selection select {
+    background-color: #F0EFEF;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px;
+    margin: 0 15px;
+    max-width: 250px;
+}
+
 #filter__selection ul {
-    background-color: white;
-    border-radius: 15px;
+    background-color: #ffffff;
+    border-radius: 0 0 15px 15px;
     padding: 15px 25px 60px 18px;
     list-style: none;
     margin: 0;
@@ -314,6 +340,16 @@ form {
     width: 20px;
     height: auto;
     margin: 0 10px 0 18px;
+}
+
+.filter__label {
+    font-size: 16px;
+    transform: translateY(60px);
+    background-color: #ffffff;
+    padding: 0 15px;
+    margin: 0;
+    color: #003B8B;
+    font-weight: 600;
 }
 
 #filter__layers {
