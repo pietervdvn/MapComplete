@@ -34,6 +34,7 @@ import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import ParkingType from "./Customizations/Questions/bike/ParkingType";
 import { LayerDefinition } from "./Customizations/LayerDefinition";
 import { LayerSelection } from "./UI/LayerSelection";
+import Combine from "./UI/Base/Combine";
 
 
 // --------------------- Read the URL parameters -----------------
@@ -314,8 +315,8 @@ locationControl.ping();
 
 // --------------- Setting up filter ui --------
 
-const filterButton = `
-    <button id="filter__button" class="filter__button">
+const closedFilterButton = `
+    <button id="filter__button" class="filter__button filter__button--shadow">
         <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M26.5353 8.13481C26.4422 8.35428 26.2683 8.47598 26.0632 8.58537C21.9977 10.7452 17.935 12.9085 13.8758 15.0799C13.6475 15.2016 13.4831 15.1962 13.2568 15.0751C9.19822 12.903 5.13484 10.7404 1.07215 8.5758C0.490599 8.26608 0.448478 7.52562 0.991303 7.13796C1.0803 7.07438 1.17813 7.0231 1.2746 6.97045C5.15862 4.86462 9.04536 2.7629 12.9246 0.648187C13.3805 0.399316 13.7779 0.406837 14.2311 0.65434C18.0954 2.76153 21.9658 4.85779 25.8383 6.94926C26.1569 7.12155 26.411 7.32872 26.5353 7.67604C26.5353 7.82919 26.5353 7.98166 26.5353 8.13481Z" fill="#003B8B"/>
         <path d="M13.318 26.535C12.1576 25.9046 10.9972 25.2736 9.83614 24.6439C6.96644 23.0877 4.09674 21.533 1.22704 19.9762C0.694401 19.6876 0.466129 19.2343 0.669943 18.7722C0.759621 18.5691 0.931505 18.3653 1.11969 18.2512C1.66659 17.9182 2.23727 17.6228 2.80863 17.3329C2.89423 17.2892 3.04981 17.3206 3.14493 17.3712C6.40799 19.1031 9.66969 20.837 12.9239 22.5845C13.3703 22.8238 13.7609 22.83 14.208 22.59C17.4554 20.8472 20.7117 19.1202 23.9605 17.3801C24.1493 17.2789 24.2838 17.283 24.4632 17.3876C24.8926 17.6386 25.3301 17.8772 25.7751 18.1001C26.11 18.2683 26.3838 18.4857 26.5346 18.8385C26.5346 18.9916 26.5346 19.1441 26.5346 19.2972C26.4049 19.6528 26.1399 19.8613 25.8152 20.0363C22.9964 21.5549 20.1831 23.0829 17.3684 24.609C16.1863 25.2496 15.0055 25.893 13.8248 26.535C13.6556 26.535 13.4865 26.535 13.318 26.535Z" fill="#003B8B"/>
@@ -323,6 +324,14 @@ const filterButton = `
         </svg>            
     </button>
 `;
-new CheckBox(new LayerSelection(flayers), filterButton).AttachTo("filter__selection")
+
+const openFilterButton = `
+<button id="filter__button" class="filter__button">
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 2L2 20M20 20L2 2" stroke="#003B8B" stroke-width="4"/>
+</svg>        
+</button>`;
+
+new CheckBox(new Combine([new LayerSelection(flayers), openFilterButton]), closedFilterButton).AttachTo("filter__selection")
 
         

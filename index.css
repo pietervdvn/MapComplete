@@ -274,19 +274,29 @@ form {
 .filter__button {
     outline: none;
     border: none;
-    padding: 1rem;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
     background-color: white;
+    position: relative;
+}
+
+.filter__button--shadow {
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.filter__button svg {
+    vertical-align: middle;
 }
 
 #filter__selection ul {
     background-color: white;
     border-radius: 15px;
-    padding: 15px 25px 15px 18px;
+    padding: 15px 25px 60px 18px;
     list-style: none;
     margin: 0;
     font-weight: 600;
+    transform: translateY(60px);
 }
 
 #filter__selection ul li span > span {
