@@ -1,6 +1,7 @@
 import { UIElement } from "./UIElement";
 import { FilteredLayer } from "../Logic/FilteredLayer";
 import { CheckBox } from "./Base/CheckBox";
+import Combine from "./Base/Combine";
 
 export class LayerSelection extends UIElement{
 
@@ -10,7 +11,10 @@ export class LayerSelection extends UIElement{
       super(undefined);
       this._checkboxes = [];
       for (const layer of layers) {
-        this._checkboxes.push(new CheckBox(layer.isDisplayed, `isEnabled ${layer.layerDef.name}`, `isDisabled ${layer.layerDef.name}`));
+        this._checkboxes.push(new CheckBox(
+          layer.isDisplayed,
+          new Combine([layer.layerDef.name, `<img src="${layer.layerDef.icon}" alt="${layer.layerDef.icon}">`]),
+          layer.layerDef.name));
       }
     }
 
