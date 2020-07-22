@@ -24,7 +24,7 @@ export default class BikeStations extends LayerDefinition {
     constructor() {
         super();
         this.name = Translations.t.cyclofix.station.name;
-        this.icon = "./assets/wrench.svg";
+        this.icon = "./assets/bike/repair_station_pump.svg";
 
         this.overpassFilter = new And([
             new Tag("amenity", "bicycle_repair_station")
