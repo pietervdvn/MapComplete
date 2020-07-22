@@ -12,7 +12,6 @@ import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIElement} from "./UI/UIElement";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
-import {Overpass} from "./Logic/Overpass";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
 import {StrayClickHandler} from "./Logic/StrayClickHandler";
@@ -21,21 +20,12 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-<<<<<<< HEAD
-import { All } from "./Customizations/Layouts/All";
 import {CheckBox} from "./UI/Base/CheckBox";
-import { DrinkingWater } from "./Customizations/Layers/DrinkingWater";
-=======
-import {All} from "./Customizations/Layouts/All";
 import Translations from "./UI/i18n/Translations";
-import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import {Layout, WelcomeMessage} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
-import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import ParkingType from "./Customizations/Questions/bike/ParkingType";
->>>>>>> master
 
 
 // --------------------- Read the URL parameters -----------------
@@ -314,18 +304,4 @@ new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 locationControl.ping();
 
-// --------------- Setting up filter ui --------
 
-for (let i = 0; i < flayers.length; i++) {
-    const listItem = document.createElement(`li`);
-    listItem.setAttribute(`id`,`${flayers[i].name}`)
-    document.querySelector(`#filterui`).appendChild(listItem);
-    const eventSource = new UIEventSource(flayers[i].isDisplayed.data);
-    new CheckBox(eventSource, flayers[i].name)
-        .onClick(() => {
-            eventSource.setData(!eventSource.data);
-            flayers[i].isDisplayed.setData(eventSource.data);
-        })
-        .AttachTo(flayers[i].name);
-}
-        
