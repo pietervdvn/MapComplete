@@ -17,7 +17,6 @@ export class UserDetails {
 
 export class OsmConnection {
 
-
     private auth = new osmAuth({
         oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
         oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
@@ -123,6 +122,7 @@ export class OsmConnection {
     public preferenceSources : any = {}
     
     public GetPreference(key: string) : UIEventSource<string>{
+        key = "mapcomplete-"+key;
         if (this.preferenceSources[key] !== undefined) {
             return this.preferenceSources[key];
         }

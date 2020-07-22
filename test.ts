@@ -1,17 +1,32 @@
+import {DropDown} from "./UI/Input/DropDown";
+import Locale from "./UI/i18n/Locale";
+import Combine from "./UI/Base/Combine";
+import Translations from "./UI/i18n/Translations";
+import {TagRenderingOptions} from "./Customizations/TagRendering";
 import {UIEventSource} from "./UI/UIEventSource";
+import {Tag} from "./Logic/TagsFilter";
 import {Changes} from "./Logic/Changes";
 import {OsmConnection} from "./Logic/OsmConnection";
-import {ElementStorage} from "./Logic/ElementStorage";
-import {WikipediaLink} from "./Customizations/Questions/WikipediaLink";
-import {OsmLink} from "./Customizations/Questions/OsmLink";
-import {ConfirmDialog} from "./UI/ConfirmDialog";
-import {Imgur} from "./Logic/Imgur";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import Translation from "./UI/i18n/Translation";
+
+console.log("Hello world")
+Locale.language.setData("en");
+let languagePicker = new DropDown("", ["en", "nl"].map(lang => {
+        return {value: lang, shown: lang}
+    }
+), Locale.language).AttachTo("maindiv");
 
 
-const html = new UIEventSource<string>("Some text");
+let tags = new UIEventSource({
+    x:"y"
+})
 
-const uielement = new VariableUiElement(html);
-uielement.AttachTo("maindiv")
-
-window.setTimeout(() => {html.setData("Different text")}, 1000)
+new TagRenderingOptions({
+    mappings: [{k: new Tag("x","y"), txt: new Translation({en: "ENG", nl: "NED"})}]
+}).construct({
+    tags: tags,
+    changes: new Changes(
+        "cs",
+        new OsmConnection(true)
+    )
+}).AttachTo("extradiv")

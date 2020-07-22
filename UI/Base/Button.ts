@@ -18,7 +18,7 @@ export class Button extends UIElement {
     }
 
 
-    protected InnerRender(): string {
+    InnerRender(): string {
 
         return "<form>" +
             "<button id='button-"+this.id+"' type='button' "+this._clss+">" + this._text.Render() +  "</button>" +

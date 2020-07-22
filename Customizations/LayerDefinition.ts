@@ -15,7 +15,7 @@ export class LayerDefinition {
     /**
      * This name is shown in the 'add XXX button'
      */
-    name: string;
+    name: string | UIElement;
     /**
      * These tags are added whenever a new point is added by the user on the map.
      * This is the ideal place to add extra info, such as "fixme=added by MapComplete, geometry should be checked"
@@ -72,7 +72,15 @@ export class LayerDefinition {
      */
     maxAllowedOverlapPercentage: number = undefined;
 
-
+    /**
+     * If true, then ways (and polygons) will be converted to a 'point' at the center instead before further processing
+     */
+    wayHandling: number = 0;
+    
+    static WAYHANDLING_DEFAULT = 0;
+    static WAYHANDLING_CENTER_ONLY = 1;
+    static WAYHANDLING_CENTER_AND_WAY = 2;
+    
     constructor(options: {
         name: string,
         newElementTags: Tag[],
@@ -82,13 +90,13 @@ export class LayerDefinition {
         title?: TagRenderingOptions,
         elementsToShow?: TagDependantUIElementConstructor[],
         maxAllowedOverlapPercentage?: number,
+        wayHandling?: number,
         style?: (tags: any) => {
             color: string,
             icon: any
         }
     } = undefined) {
         if (options === undefined) {
-            console.log("No options!")
             return;
         }
         this.name = options.name;
@@ -100,11 +108,12 @@ export class LayerDefinition {
         this.title = options.title;
         this.elementsToShow = options.elementsToShow;
         this.style = options.style;
-        console.log(this)
+        this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>, selectedElement: UIEventSource<any>,
-            showOnPopup: (tags: UIEventSource<(any)>) => UIElement):
+    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
+            selectedElement: UIEventSource<{feature: any}>,
+            showOnPopup: (tags: UIEventSource<(any)>, feature: any) => UIElement):
         FilteredLayer {
         return new FilteredLayer(
             this,

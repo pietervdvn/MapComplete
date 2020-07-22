@@ -4,6 +4,7 @@ import { FilteredLayer } from "../../Logic/FilteredLayer";
 
 
 export class CheckBox extends UIElement{
+    private data: UIEventSource<boolean>;
 
     private readonly _data: UIEventSource<boolean>;
     private readonly _showEnabled: string|UIElement;
@@ -21,7 +22,7 @@ export class CheckBox extends UIElement{
         
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this._data.data) {
             return this._showEnabled;
         } else {

@@ -123,6 +123,7 @@ export class AddButton extends UIElement {
         const self = this;
 
         htmlElement.onclick = function (event) {
+            // @ts-ignore
             if(event.consumed){
                 return;
             }

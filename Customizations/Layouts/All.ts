@@ -4,6 +4,7 @@ export class All extends Layout{
     constructor() {
         super(
             "all",
+            ["en"],
             "All quest layers",
             [],
             15,

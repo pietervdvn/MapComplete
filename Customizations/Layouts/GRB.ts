@@ -4,6 +4,7 @@ import {GrbToFix} from "../Layers/GrbToFix";
 export class GRB extends Layout {
     constructor() {
         super("grb",
+            ["en"],
             "Grb import fix tool",
             [new GrbToFix()],
             15,

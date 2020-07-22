@@ -1,14 +1,16 @@
-/**
- * Keeps 'messagebox' and 'messageboxmobile' in sync, shows a 'close' button on the latter one
- */
 import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Translations from "./i18n/Translations";
 
-export class MessageBoxHandler {
-    private _uielement: UIEventSource<() => UIElement>;
+/**
+ * Handles the full screen popup on mobile
+ */
+export class FullScreenMessageBoxHandler {
+    
+    private _uielement: UIEventSource<UIElement>;
 
-    constructor(uielement: UIEventSource<() => UIElement>,
+    constructor(uielement: UIEventSource<UIElement>,
                 onClear: (() => void)) {
         this._uielement = uielement;
         this.listenTo(uielement);
@@ -22,14 +24,13 @@ export class MessageBoxHandler {
             }
         }
 
-        new VariableUiElement(new UIEventSource<string>("<h2>Naar de kaart</h2>"),
-            () => {
-                document.getElementById("to-the-map").onclick = function () {
-                    uielement.setData(undefined);
-                    onClear();
-                }
-            }
-        ).AttachTo("to-the-map");
+        Translations.t.general.returnToTheMap
+            .onClick(() => {
+                console.log("Clicked 'return to the map'")
+                uielement.setData(undefined);
+                onClear();
+            })
+            .AttachTo("to-the-map-h2");
 
 
     }
@@ -45,7 +46,6 @@ export class MessageBoxHandler {
     update() {
         const wrapper = document.getElementById("messagesboxmobilewrapper");
         const gen = this._uielement.data;
-        console.log("Generator: ", gen);
         if (gen === undefined) {
             wrapper.classList.add("hidden")
             if (location.hash !== "") {
@@ -55,12 +55,8 @@ export class MessageBoxHandler {
         }
         location.hash = "#element"
         wrapper.classList.remove("hidden");
-      /*  gen()
-            ?.HideOnEmpty(true)
-            ?.AttachTo("messagesbox")
-            ?.Activate();*/
 
-        gen()
+        gen
             ?.HideOnEmpty(true)
             ?.AttachTo("messagesboxmobile")
             ?.Activate();

@@ -19,7 +19,7 @@ import { LayerDefinition } from "../Customizations/LayerDefinition";
  */
 export class FilteredLayer {
 
-    public readonly name: string;
+    public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
     public readonly layerDef: LayerDefinition;
@@ -33,6 +33,7 @@ export class FilteredLayer {
     /** The featurecollection from overpass
      */
     private _dataFromOverpass;
+    private _wayHandling: number;
     /** List of new elements, geojson features
      */
     private _newElements = [];
@@ -40,8 +41,8 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    private _selectedElement: UIEventSource<any>;
-    private _showOnPopup: (tags: UIEventSource<any>) => UIElement;
+    private _selectedElement: UIEventSource<{ feature: any }>;
+    private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     constructor(
         layerDef: LayerDefinition,
@@ -51,6 +52,8 @@ export class FilteredLayer {
         showOnPopup: ((tags: UIEventSource<any>) => UIElement)
     ) {
         this.layerDef = layerDef;
+
+        this._wayHandling = layerDef.wayHandling;
         this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
         this._style = layerDef.style;
@@ -84,10 +87,18 @@ export class FilteredLayer {
     public SetApplicableData(geojson: any): any {
         const leftoverFeatures = [];
         const selfFeatures = [];
-        for (const feature of geojson.features) {
+        for (let feature of geojson.features) {
             // feature.properties contains all the properties
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
+                feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
+                if (feature.geometry.type !== "Point") {
+                    if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
+                        selfFeatures.push(GeoOperations.centerpoint(feature));
+                    } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
+                        feature = GeoOperations.centerpoint(feature);
+                    }
+                }
                 selfFeatures.push(feature);
             } else {
                 leftoverFeatures.push(feature);
@@ -199,8 +210,8 @@ export class FilteredLayer {
 
                 layer.on("click", function (e) {
                     console.log("Selected ", feature)
-                    self._selectedElement.setData(feature.properties);
-                    const uiElement = self._showOnPopup(eventSource);
+                    self._selectedElement.setData({feature: feature});
+                    const uiElement = self._showOnPopup(eventSource, feature);
                     const popup = L.popup()
                         .setContent(uiElement.Render())
                         .setLatLng(e.latlng)
