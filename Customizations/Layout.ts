@@ -96,13 +96,11 @@ export class WelcomeMessage extends UIElement {
     }
 
     InnerRender(): string {
-        return "<div id='welcomeMessage'>" +
+        return "<span id='welcomeMessage'>" +
             this.description.Render() +
-            "<br/>"+
             (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render() +
-            "<br/>"+
             this.tail.Render() +
-            "</div>"
+            "</span>"
 
             ;
         /*

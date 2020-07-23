@@ -101,9 +101,9 @@ form {
 
 
 #usertext {
-    width: auto;
-    margin:0;
-    
+    width: max-content;
+    margin: 0;
+
     padding: 0.9em;
     padding-left: 4.7em; /* Should be half of profile-pic's width + actual padding (same as padding-right)*/
     padding-right: 1.5em;
@@ -225,7 +225,7 @@ form {
 
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 300px) {
     /* Landscape */
     #userbadge-and-search {
         display: inline-block;
@@ -267,44 +267,58 @@ form {
     display: none; /*Only shown on small screens*/
 }
 
-#welcomeMessage {
-    max-width: 35em;
-    padding: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-#collapseButton {
+.collapse-button {
     position: absolute;
-    right: 1em;
-    background-color: white;
-    margin: 1.5em;
-    border: 2px solid black;
-    border-radius: 2em;
-    padding: 0.5em;
+    background-color: #e5f5ff;
+    width: 3.5em;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    height:calc(100% - 8em);
 }
 
-#collapseButton img {
-    width: 1em;
-    height: 1em;
+.collapse-button .collapse-button-img{
+    background-color: #e5f5ff;
 }
 
-e
-#messagesbox-wrapper {
+.open-button {
+    width: 2em;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
 }
 
+.collapse-button-img {
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 1em;
+    background-color: white; 
+}
+
+.collapse-button-img img{
+    width: 1.5em;
+    padding: 0.5em;
+    margin: 0;
+    padding: 0;
+}
+
+#welcomeMessage {
+    display: inline-block;
+    background-color: white;
+    padding: 1em;
+    margin-left: 3.5em;
+    padding-left: 1em;
+    padding-bottom: 2em;
+    border-radius: 2em;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    max-width: 25vw;
+}
 
 #messagesbox {
     /*Only shown on big screens*/
-    padding: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    z-index: 5000;
-    background-color: white;
-    border-radius: 2em;
+    padding: 0;
     pointer-events: all;
 }
 
@@ -405,7 +419,7 @@ e
     border-radius: 15px 15px 0 0;
 }
 
-@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+@media only screen and (max-width: 600px), only screen and (max-height: 300px) {
     #messagesbox-wrapper {
         display: none;
     }

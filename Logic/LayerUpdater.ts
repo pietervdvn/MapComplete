@@ -41,6 +41,7 @@ export class LayerUpdater {
         map.Location.addCallback(function () {
             self.update();
         });
+        self.update();
 
     }
 
