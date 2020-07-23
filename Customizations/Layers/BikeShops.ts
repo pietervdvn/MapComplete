@@ -72,7 +72,7 @@ export default class BikeShops extends LayerDefinition {
             return {
                 color: "#00bb00",
                 icon: L.icon({
-                    iconUrl: self.icon,
+                    iconUrl: icon,
                     iconSize: [50, 50],
                     iconAnchor: [25, 50]
                 })
