@@ -17,14 +17,13 @@ export default class Cyclofix extends Layout {
             16,
             50.8465573,
             4.3516970,
-               /* Translations.t.cyclofix.title/*/
             new Combine([
                 "<h3>",
                 Translations.t.cyclofix.title,
                 "</h3><br/><p>",
                 Translations.t.cyclofix.description,
                 "</p>"
-            ])//*/
+            ])
         );
     }
 }

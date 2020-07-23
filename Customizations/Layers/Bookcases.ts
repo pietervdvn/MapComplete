@@ -73,7 +73,7 @@ export class Bookcases extends LayerDefinition {
             new TagRenderingOptions({
                 question: "Wie (welke organisatie) beheert dit boekenruilkastje?",
                 freeform: {
-                    key: "opeartor",
+                    key: "operator",
                     renderTemplate: "Dit boekenruilkastje wordt beheerd door {operator}",
                     template: "Dit boekenruilkastje wordt beheerd door $$$"
                 }
@@ -121,7 +121,8 @@ export class Bookcases extends LayerDefinition {
                     renderTemplate: "Gekend als {brand} <b>{ref}</b>"
                 },
                 mappings: [
-                    {k: new And([new  Tag("brand",""), new Tag("nobrand","yes"), new Tag("ref", "")]), txt: "Maakt geen deel uit van een groter netwerk"}
+                    {k: new And([new  Tag("brand",""), new Tag("nobrand","yes"), new Tag("ref", "")]),
+                        txt: "Maakt geen deel uit van een netwerk"}
                 ]
             }).OnlyShowIf(new Tag("brand","*")),
 
