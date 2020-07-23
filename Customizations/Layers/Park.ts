@@ -48,7 +48,7 @@ export class Park extends LayerDefinition {
     constructor() {
         super();
         this.name = "park";
-        this.icon = "./assets/tree_white_background.svg";
+        this.icon = "";
         this.overpassFilter =
             new Or([new Tag("leisure", "park"), new Tag("landuse", "village_green")]);
         this.newElementTags = [new Tag("leisure", "park"),

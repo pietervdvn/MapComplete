@@ -224,16 +224,18 @@ for (const key in BaseLayers.baseLayers) {
     baseLayerOptions.push({value: {name: key, layer: BaseLayers.baseLayers[key]}, shown: key});
 }
 
+
+const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]);
+const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers)]);
+let layerControl = backgroundMapPicker;
 if (flayers.length > 1) {
-    new CheckBox(new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers), new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
-} else {
-    new CheckBox(new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]), closedFilterButton).AttachTo("filter__selection");
+    layerControl = new Combine([layerSelection, backgroundMapPicker);
 }
+
+new CheckBox(layerControl, closedFilterButton).AttachTo("filter__selection");
 
 
 // ------------------ Setup various UI elements ------------
-
-
 
 
 new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
@@ -303,9 +305,6 @@ fullScreenMessage.setData(
 new FullScreenMessageBoxHandler(fullScreenMessage, () => {
     selectedElement.setData(undefined)
 }).update();
-
-// fullScreenMessage.setData(generateWelcomeMessage());
-
 
 new CenterMessageBox(
     minZoom,

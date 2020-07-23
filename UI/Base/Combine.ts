@@ -3,6 +3,7 @@ import Translations from "../i18n/Translations";
 
 export default class Combine extends UIElement {
     private uiElements: (string | UIElement)[];
+    private clas: string = undefined;
 
     constructor(uiElements: (string | UIElement)[]) {
         super(undefined);

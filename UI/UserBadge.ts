@@ -75,9 +75,7 @@ export class UserBadge extends UIElement {
 
         if (user.unreadMessages > 0) {
             messageSpan = "<span id='messages' class='alert'>" +
-                "     <a href='https://www.openstreetmap.org/messages/inbox' target='_blank'><img class='small-userbadge-icon' src='./assets/envelope.svg' alt='msgs'/>" +
-                " " +
-                "" +
+                "<a href='https://www.openstreetmap.org/messages/inbox' target='_blank'><img class='small-userbadge-icon' src='./assets/envelope.svg' alt='msgs'/>" +
                 user.unreadMessages.toString() +
                 "</a></span>";
         }
