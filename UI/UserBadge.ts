@@ -24,10 +24,10 @@ export class UserBadge extends UIElement {
                 languagePicker: UIElement,
                 basemap: Basemap) {
         super(userDetails);
-        this._languagePicker = languagePicker;
         this._userDetails = userDetails;
         this._pendingChanges = pendingChanges;
         this._basemap = basemap;
+        this._languagePicker = languagePicker;
 
         this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
             .onClick(() => {
@@ -101,27 +101,29 @@ export class UserBadge extends UIElement {
             "<img class='small-userbadge-icon' src='./assets/gear.svg' alt='settings'>" +
             "</a> ";
 
-        return "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "' target='_blank'>" +
-            "<img id='profile-pic' src='" + user.img + "' alt='profile-pic'/> " +
-            "</a>" +
-            "<div id='usertext'>" +
-            "<p id='username'>" +
+        const userIcon = "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "' target='_blank'><img id='profile-pic' src='" + user.img + "' alt='profile-pic'/></a>";
+
+
+        const userName = "<p id='username'>" +
             "<a href='https://www.openstreetmap.org/user/" + user.name + "' target='_blank'>" + user.name + "</a>" +
-            dryrun +
-            "</p> " +
-            "<p id='userstats'>" +
+            dryrun + "</p>";
+
+        const csCount = "<span id='csCount'> " +
+            "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
+            "</a></span> ";
+
+        const userStats = "<div id='userstats'>" +
             this._homeButton.Render() +
             settings +
             messageSpan +
-            "<span id='csCount'> " +
-            "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
-            "</a></span> " +
+            csCount +
             this._logout.Render() +
-            this._languagePicker.Render() +
             this._pendingChanges.Render() +
-            "</p>" +
-       
+            this._languagePicker.Render() +
             "</div>";
+
+        return userIcon + "<div id='usertext'>" + userName + userStats + "</div>";
+
     }
 
 

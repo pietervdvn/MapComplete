@@ -64,8 +64,8 @@ export class DropDown<T> extends InputElement<T> {
         let options = "";
         for (let i = 0; i < this._values.length; i++) {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
-
         }
+        
         return "<form>" +
             "<label for='dropdown-" + this.id + "'>" + this._label.Render() + "</label>" +
             "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
@@ -88,8 +88,6 @@ export class DropDown<T> extends InputElement<T> {
             self._value.setData(self._values[index].value);
 
         });
-        
-        
 
         var t = this._value.data;
         for (let i = 0; i < this._values.length ; i++) {
@@ -99,7 +97,5 @@ export class DropDown<T> extends InputElement<T> {
                 e.selectedIndex = i;
             }
         }
-
     }
-
 }

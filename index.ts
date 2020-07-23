@@ -207,9 +207,6 @@ for (const layer of layoutToUse.layers) {
     }
     addButtons.push(addButton);
     flayers.push(flayer);
-
-    console.log(flayers);
-    
 }
 
 const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
@@ -217,17 +214,12 @@ const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
 
 // --------------- Setting up filter ui --------
 
-// buttons 
-
 const closedFilterButton = `<button id="filter__button" class="filter__button filter__button--shadow">${Img.closedFilterButton}</button>`;
 
 const openFilterButton = `
 <button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
 
-// basemap dropdown
-
 let baseLayerOptions = [];
-
 for (const key in BaseLayers.baseLayers) {
     baseLayerOptions.push({value: {name: key, layer: BaseLayers.baseLayers[key]}, shown: key});
 }
@@ -241,10 +233,7 @@ if (flayers.length > 1) {
 
 // ------------------ Setup various UI elements ------------
 
-let languagePicker = new DropDown(" ", layoutToUse.supportedLanguages.map(lang => {
-        return {value: lang, shown: lang}
-    }
-), Locale.language).AttachTo("language-select");
+
 
 
 new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
@@ -290,9 +279,14 @@ selectedElement.addCallback((feature) => {
 const pendingChanges = new PendingChanges(
     changes, secondsTillChangesAreSaved,);
 
+let languagePicker = new DropDown("", layoutToUse.supportedLanguages.map(lang => {
+        return {value: lang, shown: lang}
+    }
+), Locale.language);
+
 new UserBadge(osmConnection.userDetails,
     pendingChanges,
-    new FixedUiElement(""),
+    languagePicker,
     bm)
     .AttachTo('userbadge');
 
