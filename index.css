@@ -142,6 +142,7 @@ form {
 
 #userbadge-and-search {
     display: inline-block;
+    width: min-content;
 }
 
 
@@ -164,17 +165,24 @@ form {
     margin-right: 0.5em;
 }
 
+#searchbox {
+    width: 100%
+}
+
 #searchbox .form-text-field {
     position: relative;
     float: left;
     margin-top: 0.2em;
     margin-left: 1em;
+    width: calc(100% - 4em)
 }
 
 #searchbox input[type="text"] {
     background: transparent;
     border: none;
     font-size: large;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .search-go {
@@ -189,11 +197,54 @@ form {
 
 }
 
+#userbadge {
+    width: 100%
+}
 
 #userbadge p {
     margin: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Portrait */
+    #userbadge-and-search {
+        display: inline-block;
+        width: auto;
+        max-width: 100vw;
+    }
+
+    #topleft-tools {
+        margin: 0.5em;
+    }
+
+    #userbadge {
+        margin-bottom: 0.3em;
+    }
+
+}
+
+@media only screen and (max-height: 600px) {
+    /* Landscape */
+    #userbadge-and-search {
+        display: inline-block;
+        width: auto;
+        max-width: 50vw;
+    }
+
+    #userbadge {
+        display: none;
+    }
+
+    #topleft-tools {
+        margin: 0.5em;
+    }
+
+    #userbadge {
+        margin-bottom: 0.3em;
+    }
+
 }
 
 
@@ -204,7 +255,6 @@ form {
     display: block;
     position: absolute;
     margin: 1em;
-    margin-right: 0;
     margin-bottom: 0;
     padding: 0;
     z-index: 5000;
@@ -355,11 +405,7 @@ e
     border-radius: 15px 15px 0 0;
 }
 
-.
-
-
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     #messagesbox-wrapper {
         display: none;
     }
@@ -396,16 +442,18 @@ e
         overflow-y: auto;
         width: 100vw;
         padding: 0;
-        margin:0;
+        margin: 0;
         height: calc(100% - 5em); /*Height of to-the-map is 2em, padding is 2 * 0.5em*/
     }
+
     #messagesboxmobile {
         padding: 1em;
         padding-bottom: 2em;
-        border-radius:1em;
+        border-radius: 1em;
         background-color: white;
     }
 }
+
 
 #to-the-map {
     position: relative;
@@ -418,7 +466,7 @@ e
     
     padding: 0.5em;
     margin: 0;
-    
+
     padding-right: 2em;
     padding-top: 1em;
     text-align: center;
@@ -426,9 +474,48 @@ e
     color: white;
     background-color: #7ebc6f;
     cursor: pointer;
-    
+
 }
 
+
+@media only screen and (max-height: 400px) {
+    /* Landscape */
+    #to-the-map {
+        position: relative;
+        height: 100%;
+        width: 100%
+    }
+
+    #to-the-map h2 {
+        width: auto;
+        border-top-left-radius: 1.5em;
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        bottom: 0;
+        height: auto;
+        margin:0;
+        padding: 1em;
+        padding-bottom: 0.75em;
+    }
+
+    #to-the-map h2 span{
+        height: 100%;
+        
+    }
+
+    #messagesboxmobile {
+        padding-bottom: 4em;
+    }
+
+    #messagesboxmobile-scroll {
+        position: absolute;
+        z-index: 2;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+}
 
 #logo {
     position: relative;

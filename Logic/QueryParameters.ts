@@ -40,7 +40,6 @@ export class QueryParameters {
             }
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
-        parts.sort();
         history.replaceState(null, "", "?" + parts.join("&"));
 
     }
