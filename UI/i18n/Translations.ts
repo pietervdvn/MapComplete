@@ -386,6 +386,10 @@ export default class Translations {
             skippedQuestions: new T({
                 en: "Some questions are skipped",
                 nl: "Sommige vragen zijn overgeslaan"
+            }),
+            number: new T({
+                en: "number",
+                nl: "getal"
             })
         }   
     }

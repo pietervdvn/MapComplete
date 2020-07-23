@@ -9,3 +9,4 @@ export abstract class InputElement<T> extends UIElement{
     abstract IsValid(t: T) : boolean;
     
 }
+

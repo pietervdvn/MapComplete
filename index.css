@@ -12,6 +12,10 @@ form {
     display: inline;
 }
 
+.invalid {
+    box-shadow: 0 0 10px #ff5353;
+}
+
 #leafletDiv {
     height: 100%;
 }

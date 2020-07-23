@@ -15,8 +15,18 @@ import {FixedInputElement} from "../UI/Input/FixedInputElement";
 import {RadioButton} from "../UI/Input/RadioButton";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
+import {FloatField, IntField, StringField} from "../UI/Input/PhoneField";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
+
+
+    public static inputValidation = {
+        "$": (str) => true,
+        "string": (str) => true,
+        "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
+        "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
+        "float": (str) => !isNaN(Number(str)),
+    }
 
     /**
      * Notes: by not giving a 'question', one disables the question form alltogether
@@ -334,13 +344,20 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
+        const prepost = Translations.W(freeform.template).InnerRender().split("$");
+        const type = prepost[1];
+        const isValid = TagRenderingOptions.inputValidation[type];
 
         const pickString =
-            (string) => {
+            (string: any) => {
                 if (string === "" || string === undefined) {
                     return undefined;
                 }
+                if (!isValid(string)) {
+                    return undefined;
+                }
                 const tag = new Tag(freeform.key, string);
+                
                 if (freeform.extraTags === undefined) {
                     return tag;
                 }
@@ -369,8 +386,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             toString: toString
         });
 
-        const prepost = Translations.W(freeform.template).InnerRender().split("$$$");
-        return new InputElementWrapper(prepost[0], textField, prepost[1]);
+        return new InputElementWrapper(prepost[0], textField, prepost[2]);
     }
 
 

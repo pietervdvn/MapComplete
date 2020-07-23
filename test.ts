@@ -1,9 +1,5 @@
-import {QueryParameters} from "./Logic/QueryParameters";
+import {IntField} from "./UI/Input/PhoneField";
 
-console.log("Hi");
 
-const layout = QueryParameters.GetQueryParameter("layout").addCallback(console.log)
-
-console.log("Layout is", layout.data)
-
-window.setTimeout(() => {layout.setData("XXX"), 2000})
+const f = new IntField().AttachTo("maindiv")
+f.GetValue().addCallback(console.log)

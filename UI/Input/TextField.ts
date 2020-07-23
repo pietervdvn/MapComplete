@@ -1,7 +1,6 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../UIEventSource";
 import {InputElement} from "./InputElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 
 
@@ -17,9 +16,23 @@ export class TextField<T> extends InputElement<T> {
     private _fromString?: (string: string) => T;
     private _toString: (t: T) => string;
 
+
     constructor(options: {
+        /**
+         * Shown as placeholder
+         */
         placeholder?: string | UIElement,
+
+        /**
+         * Converts the T to a (canonical) string
+         * @param t
+         */
         toString: (t: T) => string,
+        /**
+         * Converts the string to a T
+         * Returns undefined if invalid
+         * @param string
+         */
         fromString: (string: string) => T,
         value?: UIEventSource<T>
     }) {
@@ -66,9 +79,9 @@ export class TextField<T> extends InputElement<T> {
     }
 
     InnerRender(): string {
-        return "<form onSubmit='return false' class='form-text-field'>" +
-            "<input type='text' placeholder='" + this._placeholder.InnerRender() + "' id='text-" + this.id + "'>" +
-            "</form>";
+        return `<form onSubmit='return false' class='form-text-field'>` +
+            `<input type='text' placeholder='${this._placeholder.InnerRender()}' id='text-${this.id}'>` +
+            `</form>`;
     }
 
     InnerUpdate() {
@@ -76,6 +89,11 @@ export class TextField<T> extends InputElement<T> {
         if (field === null) {
             return;
         }
+
+        this.mappedValue.addCallback((data) => {
+            field.className = this.mappedValue.data !== undefined ? "valid" : "invalid";
+        });
+
         const self = this;
         field.oninput = () => {
             // @ts-ignore

@@ -5,11 +5,12 @@ import {UIEventSource} from "../UI/UIEventSource";
 
 export class QueryParameters {
 
-    private static order: string [] = ["layout","test","zoom","lat","lon"];
+    private static order: string [] = ["layout","test","z","lat","lon"];
     private static knownSources = QueryParameters.init();
     
     private static addOrder(key){
         if(this.order.indexOf(key) < 0){
+            console.log("Adding order", key)
             this.order.push(key)
         }
     }

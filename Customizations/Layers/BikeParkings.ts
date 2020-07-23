@@ -8,6 +8,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 import BikeStationOperator from "../Questions/bike/StationOperator";
 import Translations from "../../UI/i18n/Translations";
 import ParkingOperator from "../Questions/bike/ParkingOperator";
+import {TagRenderingOptions} from "../TagRendering";
 
 
 export default class BikeParkings extends LayerDefinition {
@@ -27,7 +28,15 @@ export default class BikeParkings extends LayerDefinition {
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             //new ParkingOperator(),
-            new ParkingType()
+            new ParkingType(),
+            new TagRenderingOptions({
+                question: "How many bicycles fit in this bicycle parking?",
+                freeform: {
+                    key: "capacity",
+                    renderTemplate: "Place for {capacity} bikes",
+                    template: "$nat$ bikes fit in here"
+                }
+            })
         ];
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY;
 
