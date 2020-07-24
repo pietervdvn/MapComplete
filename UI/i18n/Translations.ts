@@ -391,7 +391,31 @@ export default class Translations {
             number: new T({
                 en: "number",
                 nl: "getal"
-            })
+            }),
+
+            add: {
+
+                addNew: new T({
+                    en: "Add a new {category} here",
+                    nl: "Voeg hier een {category} toe"
+                }),
+                header: new T({
+                    en: "<h2>No data</h2>You clicked somewhere where no data is known yet.<br/>",
+                    nl: "<h2>Geen selectie</h2>Je klikte ergens waar er nog geen data is.<br/>"
+                }),
+                pleaseLogin: new T({
+                    en: "<a class='activate-osm-authentication'>Please log in to add a new point</a>",
+                    nl: "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>"
+                }),
+                zoomInFurther: new T({
+                    en: "Zoom in further to add a point.",
+                    nl: "Gelieve verder in te zoomen om een punt toe te voegen"
+                }),
+                stillLoading: new T({
+                    en: "The data is still loading. Please wait a bit before you add a new point",
+                    nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen."
+                })
+            }
         }   
     }
 

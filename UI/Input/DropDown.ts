@@ -89,7 +89,6 @@ export class DropDown<T> extends InputElement<T> {
         var t = this._value.data;
         for (let i = 0; i < this._values.length ; i++) {
             const value = this._values[i].value;
-            console.log("Checking",value," against ",t, ":", t === value)
             if (value === t) {
                 // @ts-ignore
                 e.selectedIndex = i;

@@ -57,12 +57,14 @@ export class LayerUpdater {
         }
     }
 
+    private _failCount = 0;
     private handleFail(reason: any) {
         console.log("QUERY FAILED (retrying in 1 sec)", reason);
         this.previousBounds = undefined;
         const self = this;
+        this._failCount++;
         window.setTimeout(
-            function(){self.update()}, 1000
+            function(){self.update()}, this._failCount * 1000
         )
     }
 

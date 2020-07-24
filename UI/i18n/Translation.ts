@@ -1,11 +1,48 @@
-import { UIElement } from "../UIElement"
+import {UIElement} from "../UIElement"
 import Locale from "./Locale"
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {TagUtils} from "../../Logic/TagsFilter";
+import Combine from "../Base/Combine";
 
 
 export default class Translation extends UIElement {
+
+    private static forcedLanguage = undefined;
+
+    public Subs(text: any /*Map<string, string | UIElement>*/) {
+        const newTranslations = {};
+        for (const lang in this.translations) {
+            let template: string = this.translations[lang];
+            for (const k in text) {
+                const combined = [];
+                const parts = template.split("{" + k + "}");
+                const el: string | UIElement = text[k];
+                let rtext: string = "";
+                console.log(parts)
+                if (typeof (el) === "string") {
+                    rtext = el;
+                } else {
+                    Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
+                    rtext = el.InnerRender();
+                    console.log(rtext)
+                }
+                for (let i = 0; i < parts.length - 1; i++) {
+                    combined.push(parts[i]);
+                    combined.push(rtext)
+                }
+                combined.push(parts[parts.length - 1]);
+                template = new Combine(combined).InnerRender();
+            }
+            newTranslations[lang] = template;
+        }
+        Translation.forcedLanguage = undefined;
+        return new Translation(newTranslations);
+
+    }
+
+
     get txt(): string {
-        const txt = this.translations[Locale.language.data];
+        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
         if (txt !== undefined) {
             return txt;
         }
@@ -36,8 +73,9 @@ export default class Translation extends UIElement {
         return new Translation(this.translations).Render();
     }
 
-    public Clone(){
+    public Clone() {
         return new Translation(this.translations)
     }
-    
+
+ 
 }

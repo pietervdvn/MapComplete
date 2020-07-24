@@ -88,7 +88,8 @@ export class LayerDefinition {
     static WAYHANDLING_CENTER_AND_WAY = 2;
     
     constructor(options: {
-        name: string,
+        name: string | UIElement,
+        description: string | UIElement,
         newElementTags: Tag[],
         icon: string,
         minzoom: number,
@@ -106,6 +107,7 @@ export class LayerDefinition {
             return;
         }
         this.name = options.name;
+        this.description = options.description;
         this.maxAllowedOverlapPercentage = options.maxAllowedOverlapPercentage ?? 0;
         this.newElementTags = options.newElementTags;
         this.icon = options.icon;
@@ -119,7 +121,7 @@ export class LayerDefinition {
 
     asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
             selectedElement: UIEventSource<{feature: any}>,
-            showOnPopup: (tags: UIEventSource<(any)>, feature: any) => UIElement):
+            showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement):
         FilteredLayer {
         return new FilteredLayer(
             this,

@@ -6,6 +6,8 @@ import {Changes} from "../Logic/Changes";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Button} from "./Base/Button";
 import {UserDetails} from "../Logic/OsmConnection";
+import Translations from "./i18n/Translations";
+import Combine from "./Base/Combine";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -42,7 +44,7 @@ export class SimpleAddUI extends UIElement {
             // <button type='button'> looks SO retarded
             // the default type of button is 'submit', which performs a POST and page reload
             const button =
-                new Button(new FixedUiElement("Add a " + option.name.Render() + " here"),
+                new Button(Translations.t.general.add.addNew.Subs({category: option.name}),
                     this.CreatePoint(option));
             this._addButtons.push(button);
         }
@@ -60,25 +62,25 @@ export class SimpleAddUI extends UIElement {
     }
 
     InnerRender(): string {
-        const header = "<h2>No data here</h2>" +
-            "You clicked somewhere where no data is known yet.<br/>";
+        const header = Translations.t.general.add.header;
+            
         if (!this._userDetails.data.loggedIn) {
-            return header + "<a class='activate-osm-authentication'>Please log in to add a new point</a>"
+            return new Combine([header, Translations.t.general.add.pleaseLogin]).Render()
         }
 
         if (this._zoomlevel.data.zoom < 19) {
-            return header + "Zoom in further to add a point.";
+            return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
         }
 
         if (this._dataIsLoading.data) {
-            return header + "The data is still loading. Please wait a bit before you add a new point";
+            return new Combine([header, Translations.t.general.add.stillLoading]).Render()
         }
 
         var html = "";
         for (const button of this._addButtons) {
             html += button.Render();
         }
-        return header + html;
+        return header.Render() + html;
     }
 
     InnerUpdate(htmlElement: HTMLElement) {

@@ -1,4 +1,5 @@
 import {UIElement} from "../UIElement";
+import Locale from "../i18n/Locale";
 
 export class Button extends UIElement {
     private _text: UIElement;
@@ -6,7 +7,7 @@ export class Button extends UIElement {
     private _clss: string;
 
     constructor(text: UIElement, onclick: (() => void), clss: string = "") {
-        super(undefined);
+        super(Locale.language);
         this._text = text;
         this._onclick = onclick;
         if (clss !== "") {
@@ -28,9 +29,7 @@ export class Button extends UIElement {
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         const self = this;
-        console.log("Update for ", htmlElement)
         document.getElementById("button-"+this.id).onclick = function(){
-            console.log("Clicked");
             self._onclick();
         }
     }

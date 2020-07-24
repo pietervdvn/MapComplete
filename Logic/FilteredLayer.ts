@@ -49,7 +49,7 @@ export class FilteredLayer {
         map: Basemap, storage: ElementStorage,
         changes: Changes,
         selectedElement: UIEventSource<any>,
-        showOnPopup: ((tags: UIEventSource<any>) => UIElement)
+        showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
     ) {
         this.layerDef = layerDef;
 

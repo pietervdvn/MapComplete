@@ -252,10 +252,6 @@ form {
         margin: 0.5em;
     }
     
-    .collapse-button {
-        height: calc(100% - 3.5em) !important;
-    }
-
 }
 
 
@@ -285,7 +281,7 @@ form {
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     display: inline-block;
-    height:calc(100% - 8em);
+    height:100%;
 }
 
 .collapse-button .collapse-button-img{
@@ -329,6 +325,7 @@ form {
 
 #messagesbox {
     /*Only shown on big screens*/
+    position: relative;
     padding: 0;
     pointer-events: all;
 }
@@ -429,6 +426,33 @@ form {
     border-radius: 15px 15px 0 0;
 }
 
+
+#centermessage {
+    position: absolute;
+    top: 30%;
+    
+    left: 25%;
+    width: 50%;
+
+    font-size: large;
+
+    padding: 2em;
+    border-radius: 2em;
+    z-index: 4000;
+    pointer-events: none;
+
+    opacity: 1;
+    background-color: white;
+
+    transition: opacity 500ms linear;
+
+
+    text-align: center;
+    horiz-align: center;
+    font-weight: bold;
+}
+
+
 @media only screen and (max-width: 600px), only screen and (max-height: 300px) {
     #messagesbox-wrapper {
         display: none;
@@ -445,6 +469,13 @@ form {
     .leaflet-popup {
         /* Popups are hidden on mobile */
         display: none;
+    }
+    
+    #centermessage {
+        top: 30%;
+        left: 15%;
+        width: 60%;
+
     }
 
     #messagesboxmobilewrapper {
@@ -476,6 +507,19 @@ form {
         border-radius: 1em;
         background-color: white;
     }
+
+    #welcomeMessage {
+        display: inline-block;
+        background-color: white;
+        padding: 1em;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+
 }
 
 
@@ -541,45 +585,11 @@ form {
 
 }
 
-#logo {
-    position: relative;
-    display: flex;
-    float: right;
+.logo {
+    float:right;
     margin: 1em;
-    margin-top: 0;
-    margin-right: -0.5em;
-    padding: 0;
-    right: 1em;
-    top: 1em;
-    border-radius: 0;
-}
-
-#centermessage {
-    position: absolute;
-    display: block ruby;
-
-    margin: auto;
-    top: 30%;
-    left: 50%;
-    margin-left: -15%;
-    width: 30%;
-
-    font-size: large;
-
-    padding: 2em;
-    border-radius: 2em;
-    z-index: 5000;
-    pointer-events: none;
-
-    opacity: 1;
-    background-color: white;
-
-    transition: opacity 500ms linear;
-
-
-    text-align: center;
-    horiz-align: center;
-    font-weight: bold;
+    width: 10em;
+    height: auto;
 }
 
 #bottomRight {

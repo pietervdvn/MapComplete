@@ -274,8 +274,7 @@ new UserBadge(osmConnection.userDetails,
 
 new SearchAndGo(bm).AttachTo("searchbox");
 
-const welcome = new WelcomeMessage(layoutToUse, osmConnection).onClick(() => {
-});
+const welcome = new WelcomeMessage(layoutToUse, osmConnection).onClick(() => {});
 
 const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
 const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
@@ -291,6 +290,8 @@ new CheckBox(
 new FullScreenMessageBoxHandler(fullScreenMessage, () => {
     selectedElement.setData(undefined)
 }).update();
+fullScreenMessage.setData(new WelcomeMessage(layoutToUse, osmConnection))
+
 
 new CenterMessageBox(
     minZoom,
@@ -310,5 +311,5 @@ osmConnection.registerActivateOsmAUthenticationClass();
 new GeoLocationHandler(bm).AttachTo("geolocate-button");
 
 
-
+locationControl.ping()
 
