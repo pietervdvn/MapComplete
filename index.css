@@ -320,7 +320,9 @@ form {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     width: 100%;
-    max-width: 35vw;
+    max-width: calc(max(35vw, 30em));
+    max-height: calc(100vh - 15em);
+    overflow-y: auto;
 }
 
 #messagesbox {
@@ -453,7 +455,7 @@ form {
 }
 
 
-@media only screen and (max-width: 600px), only screen and (max-height: 300px) {
+@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     #messagesbox-wrapper {
         display: none;
     }
@@ -547,7 +549,7 @@ form {
 
 
 @media only screen and (max-height: 400px) {
-    /* Landscape */
+    /* Portait: small 'to the map' */
     #to-the-map {
         position: relative;
         height: 100%;

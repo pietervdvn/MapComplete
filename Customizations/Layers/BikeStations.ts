@@ -82,7 +82,7 @@ export default class BikeStations extends LayerDefinition {
                 icon: L.icon({
                     iconUrl: iconUrl,
                     iconSize: [50, 50],
-                    iconAnchor: [25,50]
+                    iconAnchor: [25, 50]
                 })
             };
         };
