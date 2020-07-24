@@ -29,6 +29,8 @@ export class StreetWidth extends Layout{
             "<li>De binnenstad fietszone maken</li>" +
             "<li>Het aantal woonerven uitbreiden</li>" +
             "<li>Grotere auto's meer belasten - ze nemen immers meer parkeerruimte in.</li>" +
+            "<li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>" +
+            "<li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder dat er een fietspad of een straat geblokkeerd wordt</li>"+
             "</ul>",
             "",
             "");

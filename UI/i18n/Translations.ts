@@ -393,6 +393,11 @@ export default class Translations {
                 nl: "getal"
             }),
 
+            osmLinkTooltip: new T({
+               en: "See this object on OpenStreetMap for history and more editing options",
+                nl: "Bekijk dit object op OpenStreetMap waar geschiedenis en meer aanpasopties zijn"
+            }),
+            
             add: {
 
                 addNew: new T({
