@@ -49,7 +49,7 @@ export class ConfirmDialog extends UIElement {
         
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (!this._source.data) {
             return "";
         }

@@ -216,7 +216,8 @@ form {
     }
 
     #topleft-tools {
-        margin: 0.5em;
+        margin: 0.2em !important;
+        margin-top: 0.3em !important;;
     }
 
     #userbadge {

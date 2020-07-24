@@ -53,7 +53,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "walkbybrussels"
+let defaultLayout = "all"
 
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default

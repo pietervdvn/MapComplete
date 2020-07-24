@@ -126,6 +126,10 @@ export class ImageCarousel extends TagDependantUIElement {
     IsQuestioning(): boolean {
         return false;
     }
+    
+    IsSkipped(): boolean {
+        return false;
+    }
 
     Priority(): number {
         return 0;

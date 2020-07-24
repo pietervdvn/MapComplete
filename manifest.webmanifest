@@ -1,0 +1,25 @@
+{
+  "name": "MapComplete",
+  "short_name": "MapComplete",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Easily edit OpenStreetMap",
+  "icons": [
+    {
+      "src": "assets/logos/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logos/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logos/logo.svg",
+      "sizes": "513x513",
+      "type": "image/svg"
+    }
+  ]
+}

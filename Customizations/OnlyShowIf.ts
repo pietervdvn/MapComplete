@@ -64,7 +64,7 @@ class OnlyShowIf extends UIElement implements TagDependantUIElement {
         return this._filter.matches(TagUtils.proprtiesToKV(this._source.data));
     } 
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this.Matches()) {
             return this._embedded.Render();
         } else {
@@ -81,6 +81,13 @@ class OnlyShowIf extends UIElement implements TagDependantUIElement {
             return false;
         }
         return this._embedded.IsKnown();
+    }
+    
+    IsSkipped(): boolean {
+        if(!this.Matches()){
+            return false;
+        }
+        return this._embedded.IsSkipped();
     }
 
     IsQuestioning(): boolean {

@@ -15,7 +15,6 @@ import {FixedInputElement} from "../UI/Input/FixedInputElement";
 import {RadioButton} from "../UI/Input/RadioButton";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
-import {FloatField, IntField, StringField} from "../UI/Input/PhoneField";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
@@ -400,6 +399,10 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         return this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined;
+    }
+
+    IsSkipped(): boolean {
+        return this._questionSkipped.data;
     }
 
     private CurrentValue(): TagsFilter {

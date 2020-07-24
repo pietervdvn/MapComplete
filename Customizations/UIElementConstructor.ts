@@ -19,4 +19,5 @@ export abstract class TagDependantUIElement extends UIElement {
     
     abstract Priority() : number;
 
+    abstract IsSkipped() : boolean;
 }
