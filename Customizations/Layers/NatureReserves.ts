@@ -25,13 +25,13 @@ export class NatureReserves extends LayerDefinition {
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-            new TagRenderingOptions({
+         /*   new TagRenderingOptions({
                 freeform: {
                     key: "_surface",
                     renderTemplate: "{_surface}m²",
                     template: "$$$"
                 }
-            }),
+            }),*/
             new NameQuestion(),
             new AccessTag(),
             new OperatorTag(),
