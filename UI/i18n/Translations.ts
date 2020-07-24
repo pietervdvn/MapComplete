@@ -184,18 +184,19 @@ export default class Translations {
                         fr: 'TODO: fr'
                     }),
                     pump: new T({
-                        en: 'There is only a pump available',
-                        nl: 'Er is enkel een pomp beschikbaar',
+                        // Note: this previously read: a pump is available. It is not because the pump is present, that it is available (e.g. broken)
+                        en: 'There is only a pump present',
+                        nl: 'Er is enkel een pomp aanwezig',
                         fr: 'TODO: fr'
                     }),
                     tools: new T({
-                        en: 'There are only tools (screwdrivers, pliers...) available',
-                        nl: 'Er is enkel gereedschap beschikbaar (schroevendraaier, tang...)',
+                        en: 'There are only tools (screwdrivers, pliers...) aanwezig',
+                        nl: 'Er is enkel gereedschap aanwezig (schroevendraaier, tang...)',
                         fr: 'TODO: fr'
                     }),
                     both: new T({
-                        en: 'There are both tools and a pump available',
-                        nl: 'Er is zowel een pomp als gereedschap beschikbaar',
+                        en: 'There are both tools and a pump present',
+                        nl: 'Er is zowel een pomp als gereedschap aanwezig',
                         fr: 'TODO: fr'
                     }),
                 },

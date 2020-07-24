@@ -18,7 +18,6 @@ import {StrayClickHandler} from "./Logic/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
-import {CollapseButton} from "./UI/Base/CollapseButton";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {CheckBox} from "./UI/Input/CheckBox";
 import Translations from "./UI/i18n/Translations";
@@ -42,10 +41,9 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 }
 
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-
     // Set to true if testing and changes should NOT be saved
     const testing = QueryParameters.GetQueryParameter("test");
-    testing.setData((testing.data === undefined) + "")
+    testing.setData(testing.data ?? "true")
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
     //Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
