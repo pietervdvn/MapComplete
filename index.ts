@@ -30,6 +30,7 @@ import Combine from "./UI/Base/Combine";
 import {Img} from "./UI/Img";
 import {QueryParameters} from "./Logic/QueryParameters";
 import {Utils} from "./Utils";
+import {LocalStorageSource} from "./Logic/LocalStorageSource";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -92,9 +93,12 @@ const fullScreenMessage = new UIEventSource<UIElement>(undefined);
 // The latest element that was selected - used to generate the right UI at the right place
 const selectedElement = new UIEventSource<{ feature: any }>(undefined);
 
-const zoom = QueryParameters.GetQueryParameter("z");
-const lat = QueryParameters.GetQueryParameter("lat");
-const lon = QueryParameters.GetQueryParameter("lon");
+const zoom = QueryParameters.GetQueryParameter("z")
+    .syncWith(LocalStorageSource.Get("zoom"));
+const lat = QueryParameters.GetQueryParameter("lat")
+    .syncWith(LocalStorageSource.Get("lat"));
+const lon = QueryParameters.GetQueryParameter("lon")
+    .syncWith(LocalStorageSource.Get("lon"));
 
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({

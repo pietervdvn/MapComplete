@@ -67,7 +67,7 @@ export class UIEventSource<T>{
     }
 
     
-    public syncWith(otherSource: UIEventSource<T>){
+    public syncWith(otherSource: UIEventSource<T>) : UIEventSource<T>{
         this.addCallback((latest) => otherSource.setData(latest));
         const self = this;
         otherSource.addCallback((latest) => self.setData(latest));
@@ -76,6 +76,7 @@ export class UIEventSource<T>{
         }else{
             otherSource.setData(this.data);
         }
+        return this;
     }
 
 }
