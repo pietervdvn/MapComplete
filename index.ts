@@ -124,6 +124,14 @@ window.setLanguage = function (language: string) {
     Locale.language.setData(language)
 }
 
+Locale.language.addCallback((currentLanguage) => {
+    console.log("REsetting languate to", layoutToUse.supportedLanguages[0])
+    if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
+        // The current language is not supported -> switch to a supported one
+        Locale.language.setData(layoutToUse.supportedLanguages[0]);
+    }
+}).ping()
+
 
 const saveTimeout = 30000; // After this many milliseconds without changes, saves are sent of to OSM
 const allElements = new ElementStorage();
