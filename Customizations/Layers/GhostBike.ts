@@ -12,10 +12,11 @@ export class GhostBike extends LayerDefinition {
         this.name = "ghost bike";
         this.overpassFilter = new Tag("memorial", "ghost_bike")
         this.title = new FixedText("Ghost bike");
+        this.description = "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident," +
+            " in the form of a white bicycle placed permanently near the accident location.";
 
         this.elementsToShow = [
-            new FixedText("A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident," +
-                " in the form of a white bicycle placed permanently near the accident location."),
+            new FixedText(this.description),
             new ImageCarouselWithUploadConstructor(),
 
             new TagRenderingOptions({

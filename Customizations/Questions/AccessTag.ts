@@ -8,7 +8,6 @@ export class AccessTag extends TagRenderingOptions {
     private static options = {
         priority: 20,
         question: "Is dit gebied toegankelijk?",
-        primer: "Dit gebied is ",
         freeform: {
             key: "access:description",
             template: "Iets anders: $$$",
@@ -16,15 +15,15 @@ export class AccessTag extends TagRenderingOptions {
             placeholder: "Specifieer"
         },
         mappings: [
-            {k: new And([new Tag("access", "yes"), new Tag("fee", "")]), txt: "publiek toegankelijk"},
-            {k: new And([new Tag("access", "no"), new Tag("fee", "")]), txt: "niet toegankelijk"},
-            {k: new And([new Tag("access", "private"), new Tag("fee", "")]), txt: "niet toegankelijk, want privegebied"},
-            {k: new And([new Tag("access", "permissive"), new Tag("fee", "")]), txt: "toegankelijk, maar het is privegebied"},
-            {k: new And([new Tag("access", "guided"), new Tag("fee", "")]), txt: "enkel met gids of op activiteit"},
+            {k: new And([new Tag("access", "yes"), new Tag("fee", "")]), txt: "Publiek toegankelijk"},
+            {k: new And([new Tag("access", "no"), new Tag("fee", "")]), txt: "Niet toegankelijk"},
+            {k: new And([new Tag("access", "private"), new Tag("fee", "")]), txt: "Niet toegankelijk, want privegebied"},
+            {k: new And([new Tag("access", "permissive"), new Tag("fee", "")]), txt: "Toegankelijk, maar het is privegebied"},
+            {k: new And([new Tag("access", "guided"), new Tag("fee", "")]), txt: "Enkel met gids of op activiteit"},
             {
                 k: new And([new Tag("access", "yes"),
                     new Tag("fee", "yes")]),
-                txt: "toegankelijk mits betaling",
+                txt: "Toegankelijk mits betaling",
                 priority: 10
             },
         ]

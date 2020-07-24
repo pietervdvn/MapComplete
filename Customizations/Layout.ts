@@ -89,7 +89,6 @@ export class WelcomeMessage extends UIElement {
         this.userDetails = osmConnection.userDetails;
 
         this.description = layout.welcomeMessage;
-        console.log("   >>>>",this.description, "DESCR ")
         this.plzLogIn = layout.gettingStartedPlzLogin;
         this.welcomeBack = layout.welcomeBackMessage;
         this.tail = layout.welcomeTail;

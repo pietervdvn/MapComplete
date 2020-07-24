@@ -199,12 +199,7 @@ const closedFilterButton = `<button id="filter__button" class="filter__button fi
 const openFilterButton = `
 <button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
 
-let baseLayerOptions = [];
-for (const key in BaseLayers.baseLayers) {
-    baseLayerOptions.push({value: {name: key, layer: BaseLayers.baseLayers[key]}, shown: key});
-}
-
-
+let baseLayerOptions =  BaseLayers.baseLayers.map((layer) => {return {value: layer, shown: layer.name}});
 const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]);
 const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers)]);
 let layerControl = backgroundMapPicker;
@@ -279,16 +274,14 @@ new UserBadge(osmConnection.userDetails,
 
 new SearchAndGo(bm).AttachTo("searchbox");
 
-/*
-new CollapseButton("messagesbox")
-    .AttachTo("collapseButton");*/
 const welcome = new WelcomeMessage(layoutToUse, osmConnection).onClick(() => {
 });
 
-const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='collapse'></div>`);
+const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
+const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
 new CheckBox(
     new Combine([
-        new Combine(["<span class='collapse-button'>", help, "</span>"]),
+        new Combine(["<span class='collapse-button'>", close, "</span>"]),
         welcome]),
     new Combine(["<span class='open-button'>", help, "</span>"])
     , true

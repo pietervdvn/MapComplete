@@ -12,8 +12,8 @@ export class NatureReserves extends LayerDefinition {
     
     constructor(moreQuests: boolean = false) {
         super();
-        this.name = "natuurgebied";
-        this.icon = "./assets/tree_white_background.svg";
+        this.name = "Natuurgebied";
+        this.icon = "";
         this.overpassFilter =
             new Or([new Tag("leisure", "nature_reserve"), new Tag("boundary", "protected_area")]);
         this.maxAllowedOverlapPercentage = 10;

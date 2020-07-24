@@ -39,10 +39,12 @@ export class Groen extends Layout {
             "<li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li>" +
             "<li>Je kan altijd een foto toevoegen</li>" +
             "<li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li>" +
+            "<li>Je kan deze website ook openen op je smartphone, zo kan je ter plaatse gaan om vragen te beantwoorden en foto's te maken</li>" +
             "</ul>" +
             "<small>" +
             "<p>" +
             "De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken." +
+            "Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan geen enkele verantwoordelijkheid nemen over de kaart." +
             "</p>" +
             "Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. " +
             "Als je inlogt, komt er een tweede cookie bij met je inloggegevens." +

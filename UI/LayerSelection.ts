@@ -2,6 +2,7 @@ import { UIElement } from "./UIElement";
 import { FilteredLayer } from "../Logic/FilteredLayer";
 import { CheckBox } from "./Input/CheckBox";
 import Combine from "./Base/Combine";
+import {Utils} from "../Utils";
 
 export class LayerSelection extends UIElement{
 

@@ -1,5 +1,4 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../../Quests";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {AccessTag} from "../Questions/AccessTag";
 import {OperatorTag} from "../Questions/OperatorTag";
@@ -47,8 +46,8 @@ export class Park extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "park";
-        this.icon = "";
+        this.name = "Park";
+        this.icon = undefined;
         this.overpassFilter =
             new Or([new Tag("leisure", "park"), new Tag("landuse", "village_green")]);
         this.newElementTags = [new Tag("leisure", "park"),

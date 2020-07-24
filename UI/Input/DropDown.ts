@@ -10,7 +10,7 @@ export class DropDown<T> extends InputElement<T> {
     private readonly _label: UIElement;
     private readonly _values: { value: T; shown: UIElement }[];
 
-    private readonly _value;
+    private readonly _value : UIEventSource<T>;
 
     constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
@@ -75,8 +75,6 @@ export class DropDown<T> extends InputElement<T> {
     }
 
     protected InnerUpdate(element) {
-       
-
         var e = document.getElementById("dropdown-" + this.id);
         if(e === null){
             return;
@@ -86,13 +84,13 @@ export class DropDown<T> extends InputElement<T> {
             // @ts-ignore
             var index = parseInt(e.selectedIndex);
             self._value.setData(self._values[index].value);
-
         });
 
         var t = this._value.data;
         for (let i = 0; i < this._values.length ; i++) {
-            const value = this._values[i];
-            if (value.value == t) {
+            const value = this._values[i].value;
+            console.log("Checking",value," against ",t, ":", t === value)
+            if (value === t) {
                 // @ts-ignore
                 e.selectedIndex = i;
             }

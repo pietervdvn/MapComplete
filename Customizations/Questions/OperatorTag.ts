@@ -12,8 +12,8 @@ export class OperatorTag extends TagRenderingOptions {
         question: "Wie beheert dit gebied?",
         freeform: {
             key: "operator",
-            template: "Dit gebied wordt beheerd door $$$",
-            renderTemplate: "Dit gebied wordt beheerd door {operator}",
+            template: "Beheer door $$$",
+            renderTemplate: "Beheer door {operator}",
             placeholder: "organisatie"
         },
         mappings: [

@@ -1,9 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Quests} from "../../Quests";
-import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {Or, Tag} from "../../Logic/TagsFilter";
 import {AccessTag} from "../Questions/AccessTag";
 import {OperatorTag} from "../Questions/OperatorTag";
-import {TagRenderingOptions} from "../TagRendering";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
@@ -13,8 +11,8 @@ export class Bos extends LayerDefinition {
 
     constructor() {
         super();
-        this.name = "bos";
-        this.icon = "./assets/tree_white_background.svg";
+        this.name = "Bos";
+        this.icon = "";
 
         this.overpassFilter = new Or([
                 new Tag("natural", "wood"),

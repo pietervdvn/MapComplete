@@ -16,6 +16,12 @@ export class LayerDefinition {
      * This name is shown in the 'add XXX button'
      */
     name: string | UIElement;
+
+    /***
+     * This is shown under the 'add new' button to indicate what kind of feature one is adding.
+     */
+    description: string | UIElement
+
     /**
      * These tags are added whenever a new point is added by the user on the map.
      * This is the ideal place to add extra info, such as "fixme=added by MapComplete, geometry should be checked"

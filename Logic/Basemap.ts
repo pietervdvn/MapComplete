@@ -5,10 +5,19 @@ import {UIElement} from "../UI/UIElement";
 
 export class BaseLayers {
 
-    public static readonly defaultLayerName = "Kaart van OpenStreetMap";
-    public static readonly baseLayers = {
-        ["Luchtfoto Vlaanderen (recentste door AIV)"]:
-            L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&" +
+    public static readonly defaultLayer: { name: string, layer: any } = {
+        name: "Kaart van OpenStreetMap", layer: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                attribution: '',
+                maxZoom: 19,
+                minZoom: 1
+            })
+    };
+    public static readonly baseLayers: { name: string, layer: any } [] = [
+
+        {
+            name: "Luchtfoto Vlaanderen (recentste door AIV)",
+            layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&" +
                 "LAYER=omwrgbmrvl&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileRow={y}&tileCol={x}",
                 {
                     // omwrgbmrvl
@@ -16,28 +25,29 @@ export class BaseLayers {
                     maxZoom: 20,
                     minZoom: 1,
                     wmts: true
-                }),
-        ["Luchtfoto Vlaanderen (2013-2015, door AIV)"]: L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
-            {
-                layers: "OGWRGB13_15VL",
-                attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | "
-            }),
-        [BaseLayers.defaultLayerName]: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            {
-                attribution: '',
-                maxZoom: 19,
-                minZoom: 1
-            }),
-        ["Kaart Grootschalig ReferentieBestand Vlaanderen (GRB) door AIV"]: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
-            {
-                attribution: 'Achtergrond <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
-                maxZoom: 20,
-                minZoom: 1,
-                wmts: true
-            }),
-    };
-
-    public static readonly defaultLayer = BaseLayers.baseLayers[BaseLayers.defaultLayerName];
+                })
+        },
+        BaseLayers.defaultLayer,
+        {
+            name: "Luchtfoto Vlaanderen (2013-2015, door AIV)",
+            layer: L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
+                {
+                    layers: "OGWRGB13_15VL",
+                    attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | "
+                })
+        },
+        {
+            name: "Kaart Grootschalig ReferentieBestand Vlaanderen (GRB) door AIV",
+            layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
+                {
+                    attribution: 'Achtergrond <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
+                    maxZoom: 20,
+                    minZoom: 1,
+                    wmts: true
+                })
+        }
+    ]
+    ;
 
 }
 
@@ -50,13 +60,11 @@ export class Basemap {
 
     public Location: UIEventSource<{ zoom: number, lat: number, lon: number }>;
     public LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
-    private _previousLayer : L.tileLayer= undefined;
+    private _previousLayer: L.tileLayer = undefined;
     public CurrentLayer: UIEventSource<{
         name: string,
         layer: L.tileLayer
-    }> = new UIEventSource<L.tileLayer>(
-        {name: BaseLayers.defaultLayerName, layer: BaseLayers.defaultLayer}
-    );
+    }> = new UIEventSource<L.tileLayer>(BaseLayers.defaultLayer);
 
 
     constructor(leafletElementId: string,
@@ -65,7 +73,7 @@ export class Basemap {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat, location.data.lon],
             zoom: location.data.zoom,
-            layers: [BaseLayers.defaultLayer],
+            layers: [BaseLayers.defaultLayer.layer],
         });
 
 

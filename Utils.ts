@@ -14,4 +14,8 @@ export class Utils {
         }
         return undefined;
     }
+    
+    public static Upper(str : string){
+        return str.substr(0,1).toUpperCase() + str.substr(1);
+    }
 }
