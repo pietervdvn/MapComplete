@@ -33,11 +33,15 @@ export class AllKnownLayouts {
 
 
         const all = new All();
+        const knownKeys = []
         for (const layout of layouts) {
             for (const layer of layout.layers) {
-                if (all.layers.indexOf(layer) >= 0) {
+                const key = layer.overpassFilter.asOverpass().join("");
+                if (knownKeys.indexOf(key) >= 0) {
                     continue;
                 }
+                console.log(key)
+                knownKeys.push(key);
                 all.layers.push(layer);
             }
         }

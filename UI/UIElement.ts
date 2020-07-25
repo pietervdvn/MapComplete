@@ -37,6 +37,9 @@ export abstract class UIElement {
     }
     
     Update(): void {
+        if(document === undefined){
+            return ; // Running from console
+        }
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
             // The element is not painted

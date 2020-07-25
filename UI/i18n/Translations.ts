@@ -420,7 +420,11 @@ export default class Translations {
                     en: "The data is still loading. Please wait a bit before you add a new point",
                     nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen."
                 })
-            }
+            },
+            pickLanguage: new T({
+                en: "Choose a language",
+                nl: "Kies je taal"
+            })
         }   
     }
 

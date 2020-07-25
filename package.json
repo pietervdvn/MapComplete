@@ -4,8 +4,8 @@
   "description": "A small website to edit OSM easily",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html land.html test.html assets/test.json assets/**/* UI/* Logic/** vendor/*",
-    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/* assets/*/*",
+    "start": "parcel index.html land.html test.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
+    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/* assets/*/* vendor/* vendor/*/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,7 +15,6 @@
   "author": "pietervdvn",
   "license": "MIT",
   "dependencies": {
-    "fs": "0.0.1-security",
     "jquery": "latest",
     "leaflet": "^1.6.0",
     "osm-auth": "^1.0.2",
@@ -24,6 +23,10 @@
     "turf": "^3.0.14"
   },
   "devDependencies": {
-    "typescript": "^3.9.3"
+    "fs": "0.0.1-security",
+    "@types/node": "^7.0.5",
+    "read-file": "^0.2.0",
+    "typescript": "^3.9.3",
+    "write-file": "^1.0.0"
   }
 }

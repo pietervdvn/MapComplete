@@ -125,7 +125,7 @@ export class ImageUploadFlow extends UIElement {
                     },
                     function(failReason) {
                     
-                    }
+                    },0
                 )
             }
         }

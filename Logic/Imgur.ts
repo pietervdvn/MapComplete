@@ -9,8 +9,11 @@ export class Imgur {
         handleSuccessfullUpload: ((imageURL: string) => void),
         allDone: (() => void),
         onFail: ((reason: string) => void),
-        offset:number = 0) {
+        offset:number) {
 
+        if(offset === undefined){
+            throw "Offset undefined - not uploading to prevent to much uploads!"
+        }
         if (blobs.length == offset) {
             allDone();
             return;

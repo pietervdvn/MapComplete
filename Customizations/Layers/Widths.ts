@@ -37,7 +37,9 @@ export class Widths extends LayerDefinition {
 
     private readonly _oneSideParking = new Or([this._leftSideParking, this._rightSideParking]);
 
-    private readonly _carfree = new Or([new Tag("highway", "pedestrian"), new Tag("highway", "living_street")])
+    private readonly _carfree = new Or(
+        [new Tag("highway", "pedestrian"), new Tag("highway", "living_street"),
+        new Tag("access","destination"), new Tag("motor_vehicle", "destination")])
     private readonly _notCarFree = new Not(this._carfree);
 
     private calcProps(properties) {

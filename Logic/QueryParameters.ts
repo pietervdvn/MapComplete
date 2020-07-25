@@ -17,6 +17,9 @@ export class QueryParameters {
 
     private static init() {
         const knownSources = {}
+        if(window === undefined){
+            return;
+        }
         if (window.location.search) {
             const params = window.location.search.substr(1).split("&");
             for (const param of params) {

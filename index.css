@@ -16,22 +16,33 @@ form {
     box-shadow: 0 0 10px #ff5353;
 }
 
+.shadow {
+    box-shadow: 0 0 10px #00000066;
+}
+
+
+
+
 #leafletDiv {
     height: 100%;
 }
 
 #geolocate-button {
     position: absolute;
-    bottom: 27px;
-    right: 65px;
+    bottom: 25px;
+    right: 50px;
     z-index: 999; /*Just below leaflets zoom*/
     background-color: white;
     border-radius: 5px;
-    border: solid 2px rgba(0, 0, 0, 0.2);
+    border: solid 2px #0005;
     cursor: pointer;
     width: 43px;
     height: 43px;
     display: none; /*Hidden by default, only visible on mobile*/
+}
+
+#help-button-mobile {
+    display: none;
 }
 
 #geolocate-button img{
@@ -154,7 +165,7 @@ form {
     pointer-events: all;
     border-radius: 1.3em;
     margin: 0;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     width: 100%;
 }
 
@@ -207,31 +218,14 @@ form {
     padding-bottom: 0.2em;
 }
 
-@media only screen and (max-width: 600px) {
-    /* Portrait */
-    #userbadge-and-search {
-        display: inline-block;
-        width: auto;
-        max-width: 100vw;
-    }
 
-    #topleft-tools {
-        margin: 0.2em !important;
-        margin-top: 0.3em !important;;
-    }
-
-    #userbadge {
-        margin-bottom: 0.3em;
-    }
-
-}
-
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 600px)and (not (max-width: 700px))  {
     /* Landscape */
     #topleft-tools {
-        margin: 0.3em !important;
+        padding: 0.1em;
+        padding-left: unset;
     }
-    
+
     #userbadge-and-search {
         position: relative;
         display: inline-block;
@@ -249,10 +243,26 @@ form {
         padding: 0;
     }
 
-    #topleft-tools {
-        margin: 0.5em;
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* Portrait */
+    #userbadge-and-search {
+        display: inline-block;
+        width: auto;
+        max-width: 100vw;
     }
-    
+
+    #topleft-tools {
+        padding: 0.2em !important;
+        padding-top: 0.3em !important;
+    }
+
+    #userbadge {
+        margin-bottom: 0.3em;
+    }
+
 }
 
 
@@ -262,13 +272,14 @@ form {
 #topleft-tools {
     display: block;
     position: absolute;
-    margin: 1em;
-    margin-bottom: 0;
     padding: 0;
+    padding-top: 0.5em;
+    padding-left:0.5em;
     z-index: 5000;
     transition: all 500ms linear;
     overflow: hidden;
     pointer-events: none;
+    padding-right: 10px; /* Shadow offset */
 }
 
 #messagesboxmobilewrapper {
@@ -283,6 +294,7 @@ form {
     border-bottom-left-radius: 2em;
     display: inline-block;
     height:100%;
+    box-shadow: -10px 0 10px -10px #0006;
 }
 
 .collapse-button .collapse-button-img{
@@ -293,6 +305,16 @@ form {
     width: 2em;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
+    margin-bottom: 10px;
+}
+
+.open-button .collapse-button-img {
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 1em;
+    background-color: white; 
+    box-shadow: 0 0 10px #0006;
 }
 
 .collapse-button-img {
@@ -300,7 +322,10 @@ form {
     box-sizing: border-box;
     display: inline-block;
     padding: 1em;
-    background-color: white; 
+    background-color: white;
+    box-shadow: none;
+    margin: 0;
+    
 }
 
 .collapse-button-img img{
@@ -324,6 +349,7 @@ form {
     max-width: calc(max(35vw, 30em));
     max-height: calc(100vh - 15em);
     overflow-y: auto;
+    box-shadow: 0 0 10px #00000066;
 }
 
 #messagesbox {
@@ -382,6 +408,7 @@ form {
     font-weight: 600;
 }
 
+
 #filter__selection select {
     outline: none;
     background-color: #F0EFEF;
@@ -400,6 +427,8 @@ form {
     margin: 0;
     font-weight: 600;
     transform: translateY(75px);
+    max-height: calc(50vh - 10em);
+    overflow-y: auto;
 }
 
 #filter__selection ul li span > span {
@@ -464,6 +493,15 @@ form {
     #messagesbox {
         display: none;
     }
+    
+    #help-button-mobile{
+        display: unset;
+    }
+    
+    #help-button-mobile div {
+        box-shadow: 0 0 10px #0006;
+        margin-bottom: 10px;
+    }
 
     #geolocate-button {
         display: block;
@@ -497,11 +535,11 @@ form {
 
     #messagesboxmobile-scroll {
         display: block;
-        overflow-y: auto;
         width: 100vw;
+        overflow-y: auto;
         padding: 0;
         margin: 0;
-        height: calc(100% - 5em); /*Height of to-the-map is 2em, padding is 2 * 0.5em*/
+        height: calc(100% - 5em); /*Height of to-the-map is 5em*/
     }
 
     #messagesboxmobile {
@@ -519,7 +557,11 @@ form {
         width: 100%;
         max-width: 100%;
         margin: 0;
+        padding: 0;
         box-sizing: border-box;
+        max-height: max-content;
+        box-shadow: unset;
+        overflow-y: unset;
     }
     
 
@@ -530,34 +572,36 @@ form {
     position: relative;
 }
 
-#to-the-map h2{
+#to-the-map > span{
     
     position: absolute;
-    height: 4em;
+    box-sizing: border-box;
+    height: 3em;
     
     padding: 0.5em;
     margin: 0;
 
-    padding-right: 2em;
-    padding-top: 1em;
+    padding-top: 0.75em;
     text-align: center;
     width: 100%;
     color: white;
     background-color: #7ebc6f;
     cursor: pointer;
+    font-size: xx-large;
+    font-weight: bold;
 
 }
 
 
 @media only screen and (max-height: 400px) {
-    /* Portait: small 'to the map' */
+    /* Landscape: small 'to the map' */
     #to-the-map {
         position: relative;
         height: 100%;
         width: 100%
     }
 
-    #to-the-map h2 {
+    #to-the-map span {
         width: auto;
         border-top-left-radius: 1.5em;
         position: absolute;
@@ -568,22 +612,25 @@ form {
         margin:0;
         padding: 1em;
         padding-bottom: 0.75em;
-    }
-
-    #to-the-map h2 span{
-        height: 100%;
-        
+        height: 3em;
+        font-size: x-large;
     }
 
     #messagesboxmobile {
-        padding-bottom: 4em;
+        padding-bottom: 5em;
     }
 
     #messagesboxmobile-scroll {
         position: absolute;
         z-index: 2;
+        width: 100vw;
         height: 100vh;
-        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    
+    #welcomeMessage{
+        box-shadow: unset;
+        max-height: 100vh;
     }
 
 }

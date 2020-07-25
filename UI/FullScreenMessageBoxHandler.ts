@@ -16,21 +16,22 @@ export class FullScreenMessageBoxHandler {
         this.listenTo(uielement);
         this.update();
 
-        window.onhashchange = function () {
-            if (location.hash === "") {
-                // No more element: back to the map!
-                uielement.setData(undefined);
-                onClear();
+        if (window !== undefined) {
+            window.onhashchange = function () {
+                if (location.hash === "") {
+                    // No more element: back to the map!
+                    uielement.setData(undefined);
+                    onClear();
+                }
             }
         }
 
         Translations.t.general.returnToTheMap
             .onClick(() => {
-                console.log("Clicked 'return to the map'")
                 uielement.setData(undefined);
                 onClear();
             })
-            .AttachTo("to-the-map-h2");
+            .AttachTo("to-the-map");
 
 
     }

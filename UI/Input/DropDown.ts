@@ -67,7 +67,7 @@ export class DropDown<T> extends InputElement<T> {
         }
         
         return "<form>" +
-            "<label for='dropdown-" + this.id + "'>" + this._label.Render() + "</label>" +
+            "<label for='dropdown-" + this.id + "'>" + this._label.Render() + " </label>" +
             "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
             options +
             "</select>" +

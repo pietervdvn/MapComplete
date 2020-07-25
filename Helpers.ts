@@ -4,7 +4,6 @@ import {UIEventSource} from "./UI/UIEventSource";
 
 export class Helpers {
 
-
     static DoEvery(millis: number, f: (() => void)) {
         window.setTimeout(
             function () {
@@ -56,7 +55,6 @@ export class Helpers {
     * -> WHen uploading is done, the window is closed anyway
      */
     static LastEffortSave(changes: Changes) {
-
         window.addEventListener("beforeunload", function (e) {
             // Quickly save everyting!
             if (changes.pendingChangesES.data == 0) {

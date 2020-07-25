@@ -1,5 +1,7 @@
 #! /bin/bash
 
+npx ts-node createLayout.ts
+
 npm run build
 rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
 cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/

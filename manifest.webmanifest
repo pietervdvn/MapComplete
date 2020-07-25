@@ -5,6 +5,7 @@
   "display": "standalone",
   "background_color": "#fff",
   "description": "Easily edit OpenStreetMap",
+  "orientation": "portrait-primary, landscape-primary",
   "icons": [
     {
       "src": "assets/logos/logo192.png",

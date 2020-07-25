@@ -25,5 +25,6 @@ export default class Cyclofix extends Layout {
                 "</p>"
             ])
         );
+        this.icon = "./assets/bike/pump.svg"
     }
 }

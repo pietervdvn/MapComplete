@@ -14,6 +14,7 @@ import {UIEventSource} from "../UI/UIEventSource";
 export class Layout {
 
     public name: string;
+    public icon: string = "./assets/add.svg";
     public title: UIElement;
     public layers: LayerDefinition[];
     public welcomeMessage: UIElement;
@@ -55,7 +56,7 @@ export class Layout {
         welcomeTail: UIElement | string = ""
     ) {
         this.supportedLanguages = supportedLanguages;
-        this.title = typeof (title) === 'string' ? new FixedUiElement(title) : title;
+        this.title = Translations.W(title)
         this.startLon = startLon;
         this.startLat = startLat;
         this.startzoom = startzoom;
@@ -73,6 +74,7 @@ export class Layout {
 export class WelcomeMessage extends UIElement {
     private readonly layout: Layout;
     private readonly userDetails: UIEventSource<UserDetails>;
+    private languagePicker: UIElement;
     private osmConnection: OsmConnection;
 
     private readonly description: UIElement;
@@ -81,8 +83,11 @@ export class WelcomeMessage extends UIElement {
     private readonly tail: UIElement;
 
 
-    constructor(layout: Layout, osmConnection: OsmConnection) {
+    constructor(layout: Layout,
+                languagePicker: UIElement,
+                osmConnection: OsmConnection) {
         super(osmConnection.userDetails);
+        this.languagePicker = languagePicker;
         this.ListenTo(Locale.language);
         this.osmConnection = osmConnection;
         this.layout = layout;
@@ -99,6 +104,8 @@ export class WelcomeMessage extends UIElement {
             this.description.Render() +
             (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render() +
             this.tail.Render() +
+            "<br/>" +
+            this.languagePicker.Render() +
             "</span>"
 
             ;

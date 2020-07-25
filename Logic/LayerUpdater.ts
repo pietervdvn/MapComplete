@@ -63,7 +63,7 @@ export class LayerUpdater {
         this.previousBounds = undefined;
         const self = this;
         this._failCount++;
-        window.setTimeout(
+        window?.setTimeout(
             function(){self.update()}, this._failCount * 1000
         )
     }

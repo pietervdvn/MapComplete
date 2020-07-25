@@ -29,7 +29,14 @@ export class StrayClickHandler {
             if (self._lastMarker !== undefined) {
                 map.removeLayer(self._lastMarker);
             }
-            self._lastMarker = L.marker([lastClick.lat, lastClick.lon]);
+            self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
+                icon: L.icon({
+                    iconUrl: "./assets/add.svg",
+                    iconSize: [50,50],
+                    iconAnchor: [25,50],
+                    popupAnchor: [0,-45]
+                })
+            });
             const uiElement = uiToShow();
             const popup = L.popup().setContent(uiElement.Render());
             uiElement.Update();

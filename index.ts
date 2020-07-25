@@ -31,6 +31,7 @@ import {Img} from "./UI/Img";
 import {QueryParameters} from "./Logic/QueryParameters";
 import {Utils} from "./Utils";
 import {LocalStorageSource} from "./Logic/LocalStorageSource";
+import {Button} from "./UI/Base/Button";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -206,7 +207,7 @@ const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
 
 // --------------- Setting up layer selection ui --------
 
-const closedFilterButton = `<button id="filter__button" class="filter__button filter__button--shadow">${Img.closedFilterButton}</button>`;
+const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
 
 const openFilterButton = `
 <button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
@@ -229,10 +230,6 @@ document.title = layoutToUse.title.InnerRender();
 Locale.language.addCallback(e => {
     document.title = layoutToUse.title.InnerRender();
 })
-let languagePicker = new DropDown("", layoutToUse.supportedLanguages.map(lang => {
-        return {value: lang, shown: lang}
-    }
-), Locale.language);
 
 
 new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
@@ -280,13 +277,16 @@ const pendingChanges = new PendingChanges(changes, secondsTillChangesAreSaved,);
 
 new UserBadge(osmConnection.userDetails,
     pendingChanges,
-    languagePicker,
+    Locale.CreateLanguagePicker(layoutToUse),
     bm)
     .AttachTo('userbadge');
 
 new SearchAndGo(bm).AttachTo("searchbox");
 
-const welcome = new WelcomeMessage(layoutToUse, osmConnection).onClick(() => {});
+const welcome = new WelcomeMessage(layoutToUse, 
+    Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage),
+    osmConnection).onClick(() => {
+});
 
 const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
 const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
@@ -296,14 +296,19 @@ new CheckBox(
         welcome]),
     new Combine(["<span class='open-button'>", help, "</span>"])
     , true
-).AttachTo("messagesbox")
+).AttachTo("messagesbox");
 
 
 new FullScreenMessageBoxHandler(fullScreenMessage, () => {
     selectedElement.setData(undefined)
 }).update();
-fullScreenMessage.setData(new WelcomeMessage(layoutToUse, osmConnection))
 
+const welcome2 = new WelcomeMessage(layoutToUse, Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage), osmConnection)
+fullScreenMessage.setData(welcome2)
+new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
+    fullScreenMessage.setData(welcome2)
+})
+    .AttachTo("help-button-mobile")
 
 new CenterMessageBox(
     minZoom,

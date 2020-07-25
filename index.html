@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MapComplete</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""/>
+    <link rel="stylesheet" href="./vendor/leaflet.css"/>
     <link rel="stylesheet" href="./index.css"/>
     <link rel="manifest" href="./manifest.webmanifest">
+
     
-          <!--
+    <!-- $$$OG-META -->
+    
+    <!--
     <meta property="og:image" content="https://buurtnatuur.be/assets/BuurtnatuurFront.jpg">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Buurtnatuur.be - samen natuur in kaart brengen">
     <meta property="og:description"
           content="Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje">
-   -->
-    <meta property="og:image" content="/assets/bike/cyclofix.jpeg"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Cyclofix - a map for and by cyclists"/>
-    <meta property="og:description"
-          content="With this tool, cyclists can contribute to a map of cycling infrastructure"/>
+<meta property="og:image" content="/assets/bike/cyclofix.jpeg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Cyclofix - a map for and by cyclists"/>
+<meta property="og:description"
+    content="With this tool, cyclists can contribute to a map of cycling infrastructure"/>
+-->
 </head>
 <body>
 <div id="messagesboxmobilewrapper">
@@ -30,23 +31,22 @@
         <div id="messagesboxmobile"></div>
     </div>
     <div id="to-the-map">
-        <h2 id="to-the-map-h2">
             Loading... If this message persists, check if javascript is enabled and if no extension (uMatrix) is
             blocking it.
-        </h2>
     </div>
 </div>
 
 <div id="topleft-tools">
     <div id="userbadge-and-search">
-        <div id="userbadge">
+        <div id="userbadge" class="shadow">
             Loading... If this message persists, check if javascript is enabled and if no extension (uMatrix) is
             blocking it.
         </div>
-        <div id="searchbox"></div>
+        <div id="searchbox" class="shadow"></div>
     </div>
-    <br/>
     <div id="messagesbox"></div>
+    <br/>
+    <div id="help-button-mobile"></div>
 </div>
 
 <div id="filter__popup" class="filter__popup">
