@@ -24,6 +24,7 @@ export class Imgur {
                     title, description, blobs,
                     handleSuccessfullUpload,
                     allDone,
+                    onFail,
                     offset + 1);
             },
             onFail
