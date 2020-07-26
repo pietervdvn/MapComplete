@@ -46,15 +46,27 @@ export class LayerUpdater {
     }
 
     private handleData(geojson: any) {
-        this.runningQuery.setData(false);
+        const self = this;
+        function renderLayers(layers: FilteredLayer[]) {
+            if (layers.length === 0) {
+                self.runningQuery.setData(false);
 
-        for (const layer of this._layers) {
-            geojson = layer.SetApplicableData(geojson);
+                if (geojson.features.length > 0) {
+                    console.log("Got some leftovers: ", geojson)
+                }
+                return;
+            }
+            window.setTimeout(() => {
+
+                const layer = layers[0];
+                const rest = layers.slice(1, layers.length);
+                geojson = layer.SetApplicableData(geojson);
+                renderLayers(rest);
+            }, 50)
         }
 
-        if (geojson.features.length > 0) {
-            console.log("Got some leftovers: ", geojson)
-        }
+        renderLayers(this._layers);
+
     }
 
     private _failCount = 0;

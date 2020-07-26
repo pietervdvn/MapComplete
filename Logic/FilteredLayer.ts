@@ -228,13 +228,12 @@ export class FilteredLayer {
                 }
                 let eventSource = self._storage.addOrGetElement(feature);
                 const uiElement = self._showOnPopup(eventSource, feature);
-                const popup = L.popup().setContent(uiElement.Render());
-                uiElement.Update();
-                marker.bindPopup(popup);
-                marker.on("click", () => {
-                    console.log("Popup opened");
-                    uiElement.Activate();
-                }) // TODO FIX
+                const popup = L.popup({}, marker).setContent(uiElement.Render());
+                marker.bindPopup(popup)
+                    .on("popupopen", (popup) => {
+                        uiElement.Activate();   
+                        uiElement.Update();
+                    });
                 return marker;
             },
 
