@@ -27,7 +27,7 @@ export class FilteredLayer {
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, icon: { iconUrl: string } };
+    private readonly _style: (properties) => { color: string, icon: { iconUrl: string, iconSize? : number[], popupAnchor?: number[], iconAnchor?:number[] } };
 
     private readonly _storage: ElementStorage;
 
@@ -214,10 +214,27 @@ export class FilteredLayer {
                     });
 
                 } else {
+                    if(style.icon.iconSize === undefined){
+                        style.icon.iconSize = [50,50]
+                    }if(style.icon.iconAnchor === undefined){
+                        style.icon.iconAnchor = [style.icon.iconSize[0] / 2,style.icon.iconSize[1]]
+                    }
+                    if (style.icon.popupAnchor === undefined) {
+                        style.icon.popupAnchor = [0, 8 - (style.icon.iconSize[1])]
+                    }
                     marker = L.marker(latLng, {
-                        icon: new L.icon(style.icon)
+                        icon: new L.icon(style.icon),
                     });
                 }
+                let eventSource = self._storage.addOrGetElement(feature);
+                const uiElement = self._showOnPopup(eventSource, feature);
+                const popup = L.popup().setContent(uiElement.Render());
+                uiElement.Update();
+                marker.bindPopup(popup);
+                marker.on("click", () => {
+                    console.log("Popup opened");
+                    uiElement.Activate();
+                }) // TODO FIX
                 return marker;
             },
 
@@ -227,22 +244,20 @@ export class FilteredLayer {
                     if (layer.setIcon) {
                         layer.setIcon(L.icon(self._style(feature.properties).icon))
                     } else {
-                        console.log("UPdating", layer);
-
                         self._geolayer.setStyle(function (feature) {
                             return self._style(feature.properties);
                         });
                     }
                 });
 
-
                 layer.on("click", function (e) {
-                    console.log("Selected ", feature)
                     self._selectedElement.setData({feature: feature});
+                    if (feature.geometry.type === "Point") {
+                        return; // Points bind there own popups
+                    }
+
                     const uiElement = self._showOnPopup(eventSource, feature);
-                    
-                    const iconInfo = self._style(feature.properties).icon;
-                    
+
                     const popup = L.popup({
                         autoPan: true,
                     })

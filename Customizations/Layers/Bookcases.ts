@@ -162,7 +162,8 @@ export class Bookcases extends LayerDefinition {
                 icon: {
                     iconUrl: "assets/bookcase.svg",
                     iconSize: [40, 40],
-                    iconAnchor: [20,20]
+                    iconAnchor: [20,20],
+                    popupAnchor: [0, -15]
                 },
                 color: "#0000ff"
             };

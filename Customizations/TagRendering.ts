@@ -335,7 +335,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
 
         if (elements.length == 0) {
-            console.warn("WARNING: no tagrendering with following options:", options);
+            //console.warn("WARNING: no tagrendering with following options:", options);
             return new FixedInputElement("This should not happen: no tag renderings defined", undefined);
         }
         if (elements.length == 1) {
@@ -362,7 +362,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         let isValid = TagRenderingOptions.inputValidation[type];
         if (isValid === undefined) {
-            console.log("Invalid type for field type", type)
             isValid = (str) => true;
         }
         let formatter = TagRenderingOptions.formatting[type] ?? ((str) => str);
