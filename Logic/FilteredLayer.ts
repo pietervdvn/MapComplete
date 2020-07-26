@@ -8,7 +8,7 @@ import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
 import {UserDetails} from "./OsmConnection";
-
+import codegrid from "codegrid-js";
 /***
  * A filtered layer is a layer which offers a 'set-data' function
  * It is initialized with a tagfilter.
@@ -44,6 +44,8 @@ export class FilteredLayer {
     private _geolayer;
     private _selectedElement: UIEventSource<{ feature: any }>;
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
+
+    private static readonly grid = codegrid.CodeGrid();
 
     constructor(
         layerDef: LayerDefinition,
@@ -106,12 +108,23 @@ export class FilteredLayer {
             // feature.properties contains all the properties
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
+                const centerPoint = GeoOperations.centerpoint(feature);
                 feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
+                const lat = centerPoint.geometry.coordinates[1];
+                const lon = centerPoint.geometry.coordinates[0]
+                feature.properties["_lon"] = lat;
+                feature.properties["_lat"] = lon;
+                FilteredLayer.grid.getCode(lat, lon, (error, code) => {
+                    if (error === null) {
+                        feature.properties["_country"] = code;
+                    }
+                })
+
                 if (feature.geometry.type !== "Point") {
                     if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
-                        selfFeatures.push(GeoOperations.centerpoint(feature));
+                        selfFeatures.push(centerPoint);
                     } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
-                        feature = GeoOperations.centerpoint(feature);
+                        feature = centerPoint;
                     }
                 }
                 selfFeatures.push(feature);

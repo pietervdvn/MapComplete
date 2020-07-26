@@ -3,9 +3,19 @@
   "version": "0.0.1",
   "description": "A small website to edit OSM easily",
   "main": "index.js",
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "tiles",
+        "staticOutDir": "tiles/"
+      }
+    ]
+  },
   "scripts": {
     "start": "parcel *.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
+    "generate": "ts-node createLayouts.ts",
     "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/* assets/*/* vendor/* vendor/*/*",
+    "clean": "./clean.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +25,7 @@
   "author": "pietervdvn",
   "license": "MIT",
   "dependencies": {
+    "codegrid-js": "git://github.com/hlaw/codegrid-js.git",
     "email-validator": "^2.0.4",
     "jquery": "latest",
     "leaflet": "^1.6.0",
@@ -29,6 +40,8 @@
     "@babel/polyfill": "^7.10.4",
     "@types/node": "^7.0.5",
     "fs": "0.0.1-security",
+    "marked": "^1.1.1",
+    "parcel-plugin-static-files-copy": "^2.4.3",
     "promise-svg2img": "^0.2.0",
     "read-file": "^0.2.0",
     "typescript": "^3.9.7",
