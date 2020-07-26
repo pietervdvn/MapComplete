@@ -28,10 +28,11 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
         "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
         "float": (str) => !isNaN(Number(str)),
+        "pfloat": (str) => !isNaN(Number(str)) && Number(str) > 0,
         "email": (str) => EmailValidator.validate(str),
         "phone": (str, country) => {
             return parsePhoneNumberFromString(str, country.toUpperCase())?.isValid() ?? false;
-        }
+        },
     }
     
     public static formatting = {
@@ -212,9 +213,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         this._userDetails = changes.login.userDetails;
         this.ListenTo(this._userDetails);
 
-        if (options.question !== undefined) {
-            this._question = Translations.W(options.question);
-        }
+       
         this._priority = options.priority ?? 0;
         this._tagsPreprocessor = function (properties) {
             if (options.tagsPreprocessor === undefined) {
@@ -227,6 +226,10 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             options.tagsPreprocessor(newTags);
             return newTags;
         };
+
+        if (options.question !== undefined) {
+            this._question = this.ApplyTemplate(options.question);
+        }
         
         this._mapping = [];
         this._freeform = options.freeform;
@@ -497,7 +500,8 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
 
-            const question = this._question.Render();
+            const question =
+                this.ApplyTemplate(this._question).Render();
 
             return "<div class='question'>" +
                 "<span class='question-text'>" + question + "</span>" +
@@ -535,20 +539,25 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     private ApplyTemplate(template: string | UIElement): UIElement {
-        if(template === undefined || template === null){
+        if (template === undefined || template === null) {
             throw "Trying to apply a template, but the template is null/undefined"
         }
-        const tags = this._tagsPreprocessor(this._source.data);
-        if (template instanceof UIElement) {
-            template = template.Render();
-        }
-        return new FixedUiElement(TagUtils.ApplyTemplate(template, tags));
+        
+        const contents = Translations.W(template).map(contents => 
+            {
+                let templateStr = "";
+                if (template instanceof UIElement) {
+                    templateStr = template.Render();
+                } else {
+                    templateStr = template;
+                }
+                const tags = this._tagsPreprocessor(this._source.data);
+                return TagUtils.ApplyTemplate(templateStr, tags);
+            }, [this._source]
+        );
+        return new VariableUiElement(contents);
     }
 
 
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        this._questionElement.Update(); // Another manual update for them
-    }
-
+ 
 }

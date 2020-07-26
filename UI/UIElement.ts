@@ -1,7 +1,7 @@
 import {UIEventSource} from "./UIEventSource";
 import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
 
-export abstract class UIElement {
+export abstract class UIElement extends UIEventSource<string>{
     
     private static nextId: number = 0;
 
@@ -14,6 +14,7 @@ export abstract class UIElement {
     public static runningFromConsole = false;
 
     protected constructor(source: UIEventSource<any>) {
+        super("");
         this.id = "ui-element-" + UIElement.nextId;
         this._source = source;
         UIElement.nextId++;
@@ -50,7 +51,8 @@ export abstract class UIElement {
             // The element is not painted
             return;
         }
-        element.innerHTML = this.InnerRender();
+        this.setData(this.InnerRender());
+        element.innerHTML = this.data;
         if (this._hideIfEmpty) {
             if (element.innerHTML === "") {
                 element.parentElement.style.display = "none";

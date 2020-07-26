@@ -4,7 +4,7 @@ import {LicenseInfo} from "../../Logic/Wikimedia";
 import {Imgur} from "../../Logic/Imgur";
 
 
-export class ImgurImage extends UIElement {
+export class    ImgurImage extends UIElement {
 
 
     /***

@@ -327,8 +327,39 @@ export default class Translations {
                 }
             ),
             bookcase: new T({
-                nl: "Boekenruilkastje"
-            })
+                nl: "Boekenruilkastje",
+                en: "Public bookcase"
+            }),
+            questions: {
+                hasName: new T(
+                    {
+                        nl: "Heeft dit boekenruilkastje een naam?",
+                        en: "Does this bookcase have a name?"
+                    }),
+                noname: new T({
+                        nl: "Neen, er is geen naam aangeduid op het boekenruilkastje",
+                        en: "No, there is no clearly visible name on the public bookcase"
+                    },
+                ),
+                capacity: new T({
+                    nl: "Hoeveel boeken passen in dit boekenruilkastje?",
+                    en: "How much books fit into this public bookcase?"
+                }),
+                capacityRender: new T({
+                    nl: "Er passen {capacity} boeken in dit boekenruilkastje",
+                    en: "{capacity} books fit in this bookcase"
+                }),
+                capacityInput: new T({
+                    nl: "Er passen $nat$ boeken in dit boekenruilkastje",
+                    en: "$nat$ books fit into this public bookcase"
+                }),
+                bookkinds: new T({
+                    nl: "Wat voor soort boeken heeft dit boekenruilkastje?",
+                    en: "What kind of books can be found in this public bookcase"
+                })
+            }
+
+
         },
 
         image: {
@@ -469,8 +500,8 @@ export default class Translations {
 
                 }),
                 phoneNumberIs: new T({
-                    en: "The phone number of this {category} is <a href='tel:{phone}'>{phone}</a>",
-                    nl: "Het telefoonnummer van {category} is <a href='tel:{phone}'>{phone}</a>"
+                    en: "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
+                    nl: "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>"
                 })
 
             }
