@@ -8,6 +8,9 @@ export abstract class UIElement {
     public readonly _source: UIEventSource<any>;
     
     private _hideIfEmpty = false;
+    
+    // WOrkaround as document is not defined
+    public static runningFromConsole = false;
 
     protected constructor(source: UIEventSource<any>) {
         this.id = "ui-element-" + UIElement.nextId;
@@ -37,9 +40,10 @@ export abstract class UIElement {
     }
     
     Update(): void {
-        if(document === undefined){
-            return ; // Running from console
+        if(UIElement.runningFromConsole){
+            return;
         }
+        
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
             // The element is not painted

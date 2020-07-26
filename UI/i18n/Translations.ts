@@ -14,14 +14,14 @@ export default class Translations {
     static t = {
         cyclofix: {
             title: new T({
-                en: 'Cyclofix bicycle infrastructure',
-                nl: 'Cyclofix fietsinfrastructuur',
+                en: 'Cyclofix - an open map for cyclists',
+                nl: 'Cyclofix - een open kaart voor fietsers',
                 fr: 'TODO: FRENCH TRANSLATION'
             }),
             description: new T({
-                en: "On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels." +
+                en: "On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels and everywhere else." +
                     "As a result, cyclists will be able to quickly find the nearest infrastructure for their needs.",
-                nl: "Op deze kaart willen we gegevens verzamelen over de locatie van fietspompen en openbare stelplaatsen in Brussel." +
+                nl: "Op deze kaart willen we gegevens verzamelen over de locatie van fietspompen en openbare stelplaatsen in Brussel en overal ter wereld." +
                     "Hierdoor kunnen fietsers snel de dichtstbijzijnde infrastructuur vinden die voldoet aan hun behoeften.",
                 fr: "Sur cette carte, nous voulons collecter des données sur la localisation des pompes à vélo et des supports publics à Bruxelles." +
                     "Les cyclistes pourront ainsi trouver rapidement l'infrastructure la plus proche de leurs besoins."
@@ -293,9 +293,21 @@ export default class Translations {
                     only: new T({en: 'This shop only sells second-hand bikes', nl: 'Deze winkel verkoopt enkel tweedehands fietsen', fr: 'TODO: fr'}),
                 },
                 diy: {
-                    question: new T({en: 'Are there tools here to repair your own bike?', nl: 'Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?', fr: 'TODO: fr'}),
-                    yes: new T({en: 'This shop offers tools for DIY repair', nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
-                    no: new T({en: 'This shop doesn\'t offer tools for DIY repair', nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen', fr: 'TODO: fr'}),
+                    question: new T({
+                        en: 'Are there tools here to repair your own bike?',
+                        nl: 'Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?',
+                        fr: 'TODO: fr'
+                    }),
+                    yes: new T({
+                        en: 'This shop offers tools for DIY repair',
+                        nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen',
+                        fr: 'TODO: fr'
+                    }),
+                    no: new T({
+                        en: 'This shop doesn\'t offer tools for DIY repair',
+                        nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen',
+                        fr: 'TODO: fr'
+                    }),
                 }
             },
             drinking_water: {
@@ -305,6 +317,20 @@ export default class Translations {
                 })
             }
         },
+        bookcases: {
+            title: new T({en: "Open Bookcase Map", nl: "Open Boekenkastjes kaart"}),
+            description: new T({
+                    en: "Search a bookcase near you and add information about them in the biggest shared map of the world.",
+                    nl: "Help mee met het creëeren van een volledige kaart met alle boekenruilkastjes!" +
+                        "Een boekenruilkastje is een vaste plaats in publieke ruimte waar iedereen een boek in kan zetten of uit kan meenemen." +
+                        "Meestal een klein kastje of doosje dat op straat staat, maar ook een oude telefooncellen of een schap in een station valt hieronder."
+                }
+            ),
+            bookcase: new T({
+                nl: "Boekenruilkastje"
+            })
+        },
+
         image: {
             addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'TODO: fr'}),
             uploadingPicture: new T({
@@ -424,8 +450,19 @@ export default class Translations {
             pickLanguage: new T({
                 en: "Choose a language",
                 nl: "Kies je taal"
+            }),
+            about: new T({
+                en: "Easily edit and add OpenStreetMap for a certain theme",
+                nl: "Easily edit and add OpenStreetMap for a certain theme"
+
+            }),
+            nameInlineQuestion: new T({
+              nl:  "De naam van dit {category} is $$$"
+            }),
+            noNameCategory: new T({
+                nl: "{category} zonder naam"
             })
-        }   
+        }
     }
 
     public static W(s: string | UIElement): UIElement {
@@ -433,6 +470,37 @@ export default class Translations {
             return s;
         }
         return new FixedUiElement(s);
+    }
+
+    public static CountTranslations() {
+        const queue: any = [Translations.t];
+        const tr: Translation[] = [];
+        while (queue.length > 0) {
+            const item = queue.pop();
+            if (item instanceof Translation || item.translations !== undefined) {
+                tr.push(item);
+            } else {
+                for (const t in item) {
+                    const x = item[t];
+                    queue.push(x)
+                }
+            }
+        }
+
+        const langaugeCounts = {};
+        for (const translation of tr) {
+            for (const language in translation.translations) {
+                if (langaugeCounts[language] === undefined) {
+                    langaugeCounts[language] = 1
+                } else {
+                    langaugeCounts[language]++;
+                }
+            }
+        }
+        for (const language in langaugeCounts) {
+            console.log("Total translations in ", language, langaugeCounts[language], "/", tr.length)
+        }
+
     }
 
 }

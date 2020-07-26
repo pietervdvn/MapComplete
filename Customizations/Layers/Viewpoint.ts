@@ -1,5 +1,4 @@
 import {LayerDefinition} from "../LayerDefinition";
-import L from "leaflet"
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import FixedText from "../Questions/FixedText";
 import {Tag} from "../../Logic/TagsFilter";
@@ -17,10 +16,10 @@ export class Viewpoint extends LayerDefinition {
             wayHandling: LayerDefinition.WAYHANDLING_CENTER_ONLY,
             style: tags => {
                 return {
-                    color: undefined, icon: new L.icon({
+                    color: undefined, icon:{
                         iconUrl: "assets/viewpoint.svg",
                         iconSize: [20, 20]
-                    })
+                    }
                 }
             },
             maxAllowedOverlapPercentage: 0,

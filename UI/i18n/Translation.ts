@@ -18,13 +18,11 @@ export default class Translation extends UIElement {
                 const parts = template.split("{" + k + "}");
                 const el: string | UIElement = text[k];
                 let rtext: string = "";
-                console.log(parts)
                 if (typeof (el) === "string") {
                     rtext = el;
                 } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.InnerRender();
-                    console.log(rtext)
                 }
                 for (let i = 0; i < parts.length - 1; i++) {
                     combined.push(parts[i]);

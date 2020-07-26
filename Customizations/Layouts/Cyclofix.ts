@@ -10,7 +10,7 @@ import Combine from "../../UI/Base/Combine";
 export default class Cyclofix extends Layout {
     constructor() {
         super(
-            "pomp",
+            "cyclofix",
             ["en", "nl", "fr"],
             Translations.t.cyclofix.title,
             [new BikeServices(), new BikeShops(), new DrinkingWater(), new BikeParkings()],
@@ -25,6 +25,8 @@ export default class Cyclofix extends Layout {
                 "</p>"
             ])
         );
-        this.icon = "./assets/bike/pump.svg"
+        this.icon = "./assets/bike/logo.svg"
+        this.description = "Easily search and contribute bicycle data nearby";
+        this.socialImage = "./assets/bike/cyclofix.jpeg"
     }
 }

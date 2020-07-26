@@ -1,7 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
-import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
 import ParkingType from "../Questions/bike/ParkingType";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
@@ -47,11 +46,11 @@ export default class BikeParkings extends LayerDefinition {
         return function (properties: any) {
             return {
                 color: "#00bb00",
-                icon: L.icon({
+                icon: {
                     iconUrl: self.icon,
                     iconSize: [50, 50],
                     iconAnchor: [25,50]
-                })
+                }
             };
         };
     }

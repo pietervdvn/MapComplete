@@ -39,7 +39,7 @@ export class SlideShow extends UIElement {
 
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this._embeddedElements.data.length == 0) {
             return this._noimages.Render();
         }

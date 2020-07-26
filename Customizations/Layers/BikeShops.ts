@@ -3,7 +3,6 @@ import Translations from "../../UI/i18n/Translations";
 import {And, Tag} from "../../Logic/TagsFilter";
 import FixedText from "../Questions/FixedText";
 import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
-import * as L from "leaflet";
 import ShopRetail from "../Questions/bike/ShopRetail";
 import ShopPump from "../Questions/bike/ShopPump";
 import ShopRental from "../Questions/bike/ShopRental";
@@ -71,11 +70,11 @@ export default class BikeShops extends LayerDefinition {
 
             return {
                 color: "#00bb00",
-                icon: L.icon({
+                icon: {
                     iconUrl: icon,
                     iconSize: [50, 50],
                     iconAnchor: [25, 50]
-                })
+                }
             }
         }
     }

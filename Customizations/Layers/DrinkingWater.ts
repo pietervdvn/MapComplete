@@ -52,11 +52,11 @@ export class DrinkingWater extends LayerDefinition {
 
             return {
                 color: "#00bb00",
-                icon: new L.icon({
+                icon: {
                     iconUrl: self.icon,
                     iconSize: [50, 50],
                     iconAnchor: [25,50]
-                })
+                }
             };
         };
     }

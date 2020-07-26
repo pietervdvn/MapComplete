@@ -29,7 +29,7 @@ export class WikimediaImage extends UIElement {
       
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         let url = Wikimedia.ImageNameToUrl(this._imageLocation, 500, 400);
         url = url.replace(/'/g, '%27');
 

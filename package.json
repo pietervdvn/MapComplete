@@ -4,8 +4,8 @@
   "description": "A small website to edit OSM easily",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html land.html test.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
-    "build": "rm -rf dist/ && parcel build --public-url ./ index.html land.html assets/* assets/*/* vendor/* vendor/*/*",
+    "start": "parcel *.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
+    "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/* assets/*/* vendor/* vendor/*/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,18 +15,23 @@
   "author": "pietervdvn",
   "license": "MIT",
   "dependencies": {
+    "email-validator": "^2.0.4",
     "jquery": "latest",
     "leaflet": "^1.6.0",
+    "libphonenumber": "0.0.10",
+    "libphonenumber-js": "^1.7.55",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
     "parcel": "^1.12.4",
     "turf": "^3.0.14"
   },
   "devDependencies": {
-    "fs": "0.0.1-security",
+    "@babel/polyfill": "^7.10.4",
     "@types/node": "^7.0.5",
+    "fs": "0.0.1-security",
+    "promise-svg2img": "^0.2.0",
     "read-file": "^0.2.0",
-    "typescript": "^3.9.3",
+    "typescript": "^3.9.7",
     "write-file": "^1.0.0"
   }
 }

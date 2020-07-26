@@ -14,8 +14,11 @@ import {UIEventSource} from "../UI/UIEventSource";
 export class Layout {
 
     public name: string;
-    public icon: string = "./assets/add.svg";
+    public icon: string = "./assets/logo.svg";
     public title: UIElement;
+    public description: string | UIElement = Translations.t.general.about;
+    public socialImage: string = ""
+    
     public layers: LayerDefinition[];
     public welcomeMessage: UIElement;
     public gettingStartedPlzLogin: UIElement;

@@ -70,6 +70,21 @@ export class Helpers {
             return confirmationMessage;                            //Webkit, Safari, Chrome
         });
 
+
+        document.addEventListener('visibilitychange',() => {
+            if(document.visibilityState === "visible"){
+                return;
+            }
+            if (changes.pendingChangesES.data == 0) {
+                return;
+            }
+
+            console.log("Upmoading: loss of focus")
+            changes.uploadAll(function () {
+                window.close()
+            });
+        })
+
     }
     
 }

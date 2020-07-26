@@ -26,10 +26,6 @@ export class InputElementWrapper<T> extends InputElement<T>{
         return this.input.GetValue();
     }
     
-    ShowValue(t: T) {
-        return this.input.ShowValue(t);
-    }
-
     InnerRender(): string {
         return this.pre.Render() + this.input.Render() + this.post.Render();
     }

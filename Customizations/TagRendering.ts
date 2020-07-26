@@ -15,7 +15,8 @@ import {FixedInputElement} from "../UI/Input/FixedInputElement";
 import {RadioButton} from "../UI/Input/RadioButton";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
-
+import * as EmailValidator from 'email-validator';
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
 
@@ -25,6 +26,12 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
         "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
         "float": (str) => !isNaN(Number(str)),
+        "email": (str) => EmailValidator.validate(str),
+        "phone": (str) => parsePhoneNumberFromString(str).isValid()
+    }
+    
+    public static formatting = {
+        "phone": (str) => parsePhoneNumberFromString(str).formatInternational()
     }
 
     /**
@@ -345,7 +352,12 @@ class TagRendering extends UIElement implements TagDependantUIElement {
 
         const prepost = Translations.W(freeform.template).InnerRender().split("$");
         const type = prepost[1];
-        const isValid = TagRenderingOptions.inputValidation[type];
+        let isValid = TagRenderingOptions.inputValidation[type];
+        if(isValid === undefined){
+            console.log("Invalid type for field type", type)
+            isValid = (str) => true;
+        }
+        let formatter = TagRenderingOptions.formatting[type] ?? ((str) => str);
 
         const pickString =
             (string: any) => {
@@ -355,7 +367,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
                 if (!isValid(string)) {
                     return undefined;
                 }
-                const tag = new Tag(freeform.key, string);
+                const tag = new Tag(freeform.key, formatter(string));
                 
                 if (freeform.extraTags === undefined) {
                     return tag;

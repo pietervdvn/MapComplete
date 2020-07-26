@@ -40,7 +40,6 @@ export class AllKnownLayouts {
                 if (knownKeys.indexOf(key) >= 0) {
                     continue;
                 }
-                console.log(key)
                 knownKeys.push(key);
                 all.layers.push(layer);
             }

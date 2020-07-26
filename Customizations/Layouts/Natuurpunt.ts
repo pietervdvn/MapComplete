@@ -18,5 +18,6 @@ export class Natuurpunt extends Layout{
             "",
             ""
         );
+        this.icon = "./assets/nature/birdhide.svg"
     }
 }

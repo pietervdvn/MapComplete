@@ -3,12 +3,12 @@ import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRendering";
 import {And, Tag} from "../../Logic/TagsFilter";
-import L from "leaflet";
 
 export class InformationBoard extends LayerDefinition {
     constructor() {
         super({
             name: "Informatiebord",
+            description: "Een informatiebord of kaart",
             minzoom: 12,
             overpassFilter: new Tag("tourism", "information"),
             newElementTags: [new Tag("tourism", "information")],
@@ -44,12 +44,10 @@ export class InformationBoard extends LayerDefinition {
 
             return {
                 color: "#000000",
-                icon: L.icon(
-                    {
-                        iconUrl: icon,
-                        iconSize: [50, 50]
-                    }
-                )
+                icon: {
+                    iconUrl: icon,
+                    iconSize: [50, 50]
+                }
             };
         }
 

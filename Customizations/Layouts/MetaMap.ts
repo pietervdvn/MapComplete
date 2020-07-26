@@ -15,5 +15,6 @@ export class MetaMap extends Layout{
 
             "        <h3>Open Map Map</h3>\n" +
             "This map is a map of physical maps, as known by OpenStreetMap.");
+        this.icon = "assets/osm-logo-buggy-attr.svg"
     }
 }

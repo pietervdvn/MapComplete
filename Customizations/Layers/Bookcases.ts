@@ -1,9 +1,9 @@
 import {LayerDefinition} from "../LayerDefinition";
-import L from "leaflet";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import Translations from "../../UI/i18n/Translations";
 
 export class Bookcases extends LayerDefinition {
 
@@ -16,7 +16,7 @@ export class Bookcases extends LayerDefinition {
         this.overpassFilter = new Tag("amenity", "public_bookcase");
         this.minzoom = 11;
 
-        this.title = new NameInline("ruilboekenkastje");
+        this.title = new NameInline(Translations.t.bookcases.bookcase);
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             new TagRenderingOptions({
@@ -38,7 +38,7 @@ export class Bookcases extends LayerDefinition {
                     question: "Hoeveel boeken passen in dit boekenruilkastje?",
                     freeform: {
                         renderTemplate: "Er passen {capacity} boeken in dit boekenruilkastje",
-                        template:  "Er passen $$$ boeken in dit boekenruilkastje",
+                        template:  "Er passen $nat$ boeken in dit boekenruilkastje",
                         key: "capacity",
                         placeholder: "aantal"
                     },
@@ -159,10 +159,11 @@ export class Bookcases extends LayerDefinition {
 
         this.style = function (tags) {
             return {
-                icon: new L.icon({
+                icon: {
                     iconUrl: "assets/bookcase.svg",
-                    iconSize: [40, 40]
-                }),
+                    iconSize: [40, 40],
+                    iconAnchor: [20,20]
+                },
                 color: "#0000ff"
             };
         }

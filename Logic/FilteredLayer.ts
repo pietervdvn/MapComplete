@@ -1,12 +1,13 @@
-import { Basemap } from "./Basemap";
-import { TagsFilter, TagUtils } from "./TagsFilter";
-import { UIEventSource } from "../UI/UIEventSource";
-import { ElementStorage } from "./ElementStorage";
-import { Changes } from "./Changes";
+import {Basemap} from "./Basemap";
+import {TagsFilter, TagUtils} from "./TagsFilter";
+import {UIEventSource} from "../UI/UIEventSource";
+import {ElementStorage} from "./ElementStorage";
+import {Changes} from "./Changes";
 import L from "leaflet"
-import { GeoOperations } from "./GeoOperations";
-import { UIElement } from "../UI/UIElement";
-import { LayerDefinition } from "../Customizations/LayerDefinition";
+import {GeoOperations} from "./GeoOperations";
+import {UIElement} from "../UI/UIElement";
+import {LayerDefinition} from "../Customizations/LayerDefinition";
+import {UserDetails} from "./OsmConnection";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -26,7 +27,7 @@ export class FilteredLayer {
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, icon: any };
+    private readonly _style: (properties) => { color: string, icon: { iconUrl: string } };
 
     private readonly _storage: ElementStorage;
 
@@ -59,7 +60,7 @@ export class FilteredLayer {
         this._style = layerDef.style;
         if (this._style === undefined) {
             this._style = function () {
-                return {icon: "", color: "#000000"};
+                return {icon: {iconUrl: "./assets/bug.svg"}, color: "#000000"};
             }
         }
         this.name = name;
@@ -77,6 +78,20 @@ export class FilteredLayer {
                 }
             }
         })
+    }
+    
+    static fromDefinition(
+        definition,
+        basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
+                 selectedElement: UIEventSource<{feature: any}>,
+                 showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement):
+        FilteredLayer {
+        return new FilteredLayer(
+            definition,
+            basemap, allElements, changes,
+            selectedElement,
+            showOnPopup);
+
     }
 
 
@@ -187,7 +202,7 @@ export class FilteredLayer {
 
                 } else {
                     marker = L.marker(latLng, {
-                        icon: style.icon
+                        icon: new L.icon(style.icon)
                     });
                 }
                 return marker;
@@ -197,7 +212,7 @@ export class FilteredLayer {
                 let eventSource = self._storage.addOrGetElement(feature);
                 eventSource.addCallback(function () {
                     if (layer.setIcon) {
-                        layer.setIcon(self._style(feature.properties).icon)
+                        layer.setIcon(L.icon(self._style(feature.properties).icon))
                     } else {
                         console.log("UPdating", layer);
 
@@ -212,7 +227,12 @@ export class FilteredLayer {
                     console.log("Selected ", feature)
                     self._selectedElement.setData({feature: feature});
                     const uiElement = self._showOnPopup(eventSource, feature);
-                    const popup = L.popup()
+                    
+                    const iconInfo = self._style(feature.properties).icon;
+                    
+                    const popup = L.popup({
+                        autoPan: true,
+                    })
                         .setContent(uiElement.Render())
                         .setLatLng(e.latlng)
                         .openOn(self._map.map);

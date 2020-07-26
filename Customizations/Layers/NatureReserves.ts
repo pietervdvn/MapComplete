@@ -72,7 +72,7 @@ export class NatureReserves extends LayerDefinition {
                     freeform: {
                         renderTemplate: "Bij problemen of vragen, de conservator kan bereikt worden via " +
                             "<a href='mailto:{email}'>{email}</a>",
-                        template: "$$$",
+                        template: "$email$",
                         key: "email"
                     }
                 }),
@@ -83,7 +83,7 @@ export class NatureReserves extends LayerDefinition {
                     freeform: {
                         renderTemplate: "Bij problemen of vragen, de {conservator} kan bereikt worden via " +
                             "<a href='tel:{phone}'>{phone}</a>",
-                        template: "$$$",
+                        template: "$phone$",
                         key: "phone"
                     }
 

@@ -3,7 +3,6 @@ import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRendering";
 import {And, Tag} from "../../Logic/TagsFilter";
-import L from "leaflet";
 
 export class Map extends LayerDefinition {
     constructor() {
@@ -36,12 +35,10 @@ export class Map extends LayerDefinition {
             
             return {
                 color: "#000000",
-                icon: L.icon(
-                    {
-                        iconUrl: icon,
-                        iconSize: [50, 50]
-                    }
-                )
+                icon: {
+                    iconUrl: icon,
+                    iconSize: [50, 50]
+                }
             };
         }
 

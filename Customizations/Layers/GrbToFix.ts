@@ -1,5 +1,4 @@
 import {LayerDefinition} from "../LayerDefinition";
-import L from "leaflet"
 import {And, Regex, Tag} from "../../Logic/TagsFilter";
 import {TagRenderingOptions} from "../TagRendering";
 
@@ -18,11 +17,10 @@ export class GrbToFix extends LayerDefinition {
 
         this.style = function (tags) {
             return {
-                icon: new L.icon({
+                icon: {
                     iconUrl: "assets/star.svg",
                     iconSize: [40, 40],
-                    text: "hi"
-                }),
+                },
                 color: "#ff0000"
             };
 

@@ -70,7 +70,10 @@ export class LayerDefinition {
      */
     style: (tags: any) => {
         color: string,
-        icon: any,
+        icon: { 
+            iconUrl: string,
+            iconSize: number[],
+        },
     };
 
     /**
@@ -119,16 +122,6 @@ export class LayerDefinition {
         this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
 
-    asLayer(basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
-            selectedElement: UIEventSource<{feature: any}>,
-            showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement):
-        FilteredLayer {
-        return new FilteredLayer(
-            this,
-            basemap, allElements, changes,
-            selectedElement,
-            showOnPopup);
 
-    }
 
 }

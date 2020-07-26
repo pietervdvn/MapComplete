@@ -56,6 +56,11 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 let defaultLayout = "all"
 
+const path = window.location.pathname.split("/").slice(-1)[0];
+if (path !== "index.html") {
+    defaultLayout = path.substr(0, path.length - 5);
+    console.log("Using", defaultLayout)
+}
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
 for (const k in AllKnownLayouts.allSets) {
@@ -75,6 +80,9 @@ defaultLayout = QueryParameters.GetQueryParameter("layout").data ?? defaultLayou
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
 console.log("Using layout: ", layoutToUse.name);
+if(layoutToUse === undefined){
+    console.log("Incorrect layout")
+}
 
 
 // ----------------- Setup a few event sources -------------
@@ -190,7 +198,7 @@ for (const layer of layoutToUse.layers) {
 
     minZoom = Math.max(minZoom, layer.minzoom);
 
-    const flayer = layer.asLayer(bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
+    const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
     const addButton = {
         name: Translations.W(layer.name),

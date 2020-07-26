@@ -4,8 +4,8 @@ import {Artwork} from "../Layers/Artwork";
 export class Statues extends Layout{
     constructor() {
         super(    "statues",
-            "Open Artwork Map",
             ["en"],
+            "Open Artwork Map",
             [new Artwork()],
             10,
             50.8435,

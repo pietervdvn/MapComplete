@@ -3,7 +3,6 @@ import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {TagRenderingOptions} from "../TagRendering";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import L from "leaflet";
 
 export class Birdhide extends LayerDefinition {
 
@@ -13,8 +12,9 @@ export class Birdhide extends LayerDefinition {
     constructor() {
         super({
             name: "vogelkijkplaats",
+            description: "Een plaats om vogels te kijken, zoals een vogelkijkhut of kijkwand",
             overpassFilter: Birdhide.birdhide,
-            elementsToShow: [new FixedText("hi")],
+            elementsToShow: [],
             icon: "assets/nature/birdhide.svg",
             minzoom: 12,
             wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
@@ -90,11 +90,11 @@ export class Birdhide extends LayerDefinition {
 
             return {
                 color: "#0000bb",
-                icon: L.icon({
+                icon: {
                     iconUrl: icon,
                     iconSize: [40,40],
                     iconAnchor: [20,20]
-                })
+                }
             }
         }
 

@@ -855,6 +855,13 @@ form {
 }
 
 .featureinfobox {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.featureinfobox > div {
+    width: calc(100% - 2em);
+    padding-left: 1em;
 }
 
 .featureinfoboxtitle {

@@ -104,6 +104,5 @@ export class Basemap {
             self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
         });
     }
-
-
+    
 }

@@ -8,7 +8,7 @@ export class SimpleImageElement extends UIElement {
         super(source);
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         return "<img src='" + this._source.data + "' alt='img'>";
     }
 

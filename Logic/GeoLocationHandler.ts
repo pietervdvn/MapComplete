@@ -3,7 +3,6 @@ import {UIEventSource} from "../UI/UIEventSource";
 import {UIElement} from "../UI/UIElement";
 import L from "leaflet";
 import {Helpers} from "../Helpers";
-import {UserDetails} from "./OsmConnection";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -81,7 +80,7 @@ export class GeoLocationHandler extends UIElement {
         this.HideOnEmpty(true);
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         if (this.currentLocation.data) {
             return "<img src='./assets/crosshair-blue.svg' alt='locate me'>";
         }
@@ -114,6 +113,12 @@ export class GeoLocationHandler extends UIElement {
         if (!self._isActive.data) {
             self._isActive.setData(true);
             Helpers.DoEvery(60000, () => {
+                
+                if(document.visibilityState !== "visible"){
+                    console.log("Not starting gps: document not visible")
+                    return;
+                }
+                
                 self._map.map.findAccuratePosition({
                     maxWait: 10000, // defaults to 10000
                     desiredAccuracy: 50 // defaults to 20
