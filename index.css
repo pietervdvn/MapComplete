@@ -219,8 +219,9 @@ form {
 }
 
 
-@media only screen and (max-height: 600px)and (not (max-width: 700px))  {
-    /* Landscape */
+@media only screen and (max-height: 600px) and (not (max-width:700px)) {
+
+    /* Landscape and portrait */
     #topleft-tools {
         padding: 0.1em;
         padding-left: unset;
@@ -242,6 +243,7 @@ form {
         margin:0;
         padding: 0;
     }
+
 
 }
 
@@ -345,7 +347,6 @@ form {
     border-radius: 2em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    width: 100%;
     max-width: calc(max(35vw, 30em));
     max-height: calc(100vh - 15em);
     overflow-y: auto;
@@ -854,6 +855,17 @@ form {
     width: 40em !important;
 }
 
+#messagesboxmobile .featureinfobox {
+    max-height: unset;
+    overflow-y: unset;
+}
+
+#messagesboxmobile .featureinfobox > div {
+    width: 100%;
+    max-width: unset;
+    padding-left: unset;
+}
+
 .featureinfobox {
     max-height: 80vh;
     overflow-y: auto;
@@ -863,6 +875,7 @@ form {
     width: calc(100% - 2em);
     padding-left: 1em;
 }
+
 
 .featureinfoboxtitle {
     position: relative;
