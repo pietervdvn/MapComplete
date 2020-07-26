@@ -8,7 +8,6 @@ export default class ShopPump extends TagRenderingOptions {
         const key = 'service:bicycle:diy'
         const to = Translations.t.cyclofix.shop.diy
         super({
-            priority: 5,
             question: to.question,
             mappings: [
                 {k: new Tag(key, "yes"), txt: to.yes},

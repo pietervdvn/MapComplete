@@ -461,7 +461,19 @@ export default class Translations {
             }),
             noNameCategory: new T({
                 nl: "{category} zonder naam"
-            })
+            }),
+            questions: {
+                phoneNumberOf: new T({
+                    en: "What is the phone number of {category}?",
+                    nl: "Wat is het telefoonnummer van {category}?"
+
+                }),
+                phoneNumberIs: new T({
+                    en: "The phone number of this {category} is <a href='tel:{phone}'>{phone}</a>",
+                    nl: "Het telefoonnummer van {category} is <a href='tel:{phone}'>{phone}</a>"
+                })
+
+            }
         }
     }
 

@@ -1,4 +1,5 @@
 import {UIEventSource} from "./UIEventSource";
+import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
 
 export abstract class UIElement {
     

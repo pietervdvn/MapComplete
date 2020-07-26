@@ -6,7 +6,6 @@ export default class ShopPump extends TagRenderingOptions {
     constructor() {
         const to = Translations.t.cyclofix.shop.qName
         super({
-            priority: 5,
             question: to.question,
             freeform: {
                 key: "name",

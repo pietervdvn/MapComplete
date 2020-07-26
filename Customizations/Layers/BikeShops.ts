@@ -11,6 +11,7 @@ import ShopDiy from "../Questions/bike/ShopDiy";
 import ShopName from "../Questions/bike/ShopName";
 import ShopSecondHand from "../Questions/bike/ShopSecondHand";
 import { TagRenderingOptions } from "../TagRendering";
+import {PhoneNumberQuestion} from "../Questions/PhoneNumberQuestion";
 
 
 export default class BikeShops extends LayerDefinition {
@@ -50,6 +51,7 @@ export default class BikeShops extends LayerDefinition {
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             new ShopName(),
+            new PhoneNumberQuestion("{name}"),
             new ShopRetail(),
             new ShopRental(),
             new ShopRepair(),

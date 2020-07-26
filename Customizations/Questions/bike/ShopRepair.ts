@@ -8,7 +8,6 @@ export default class ShopRepair extends TagRenderingOptions {
         const key = 'service:bicycle:repair'
         const to = Translations.t.cyclofix.shop.repair
         super({
-            priority: 5,
             question: to.question,
             mappings: [
                 {k: new Tag(key, "yes"), txt: to.yes},

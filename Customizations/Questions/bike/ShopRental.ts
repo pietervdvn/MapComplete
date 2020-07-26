@@ -8,7 +8,6 @@ export default class ShopRental extends TagRenderingOptions {
         const key = 'service:bicycle:rental'
         const to = Translations.t.cyclofix.shop.rental
         super({
-            priority: 5,
             question: to.question,
             mappings: [
                 {k: new Tag(key, "yes"), txt: to.yes},
