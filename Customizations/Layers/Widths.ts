@@ -90,17 +90,19 @@ export class Widths extends LayerDefinition {
         const width = parseFloat(properties["width:carriageway"]);
 
 
-        const targetWidth =
+        const targetWidthIgnoringPedestrians =
             carWidth +
             cyclistWidth +
-            Math.max(0, pedestrianFlowNeeded) * this.pedestrianWidth +
             parallelParkingCount * this.carWidth;
+
+        const targetWidth = targetWidthIgnoringPedestrians +  Math.max(0, pedestrianFlowNeeded) * this.pedestrianWidth;
 
         return {
             parkingLanes: parallelParkingCount,
             parkingStateKnown: parkingStateKnown,
             width: width,
             targetWidth: targetWidth,
+            targetWidthIgnoringPedestrians: targetWidthIgnoringPedestrians,
             onewayBike: onewayBike,
             pedestrianFlowNeeded: pedestrianFlowNeeded,
             cyclingAllowed: cyclingAllowed
@@ -141,7 +143,7 @@ export class Widths extends LayerDefinition {
 
 
             const props = self.calcProps(properties);
-            if (props.pedestrianFlowNeeded > 0) {
+            if (props.width >= props.targetWidthIgnoringPedestrians) {
                 c = "#fa0"
             }
             if (props.width >= props.targetWidth || !props.cyclingAllowed) {
