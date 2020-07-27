@@ -81,12 +81,13 @@ export class ImageUploadFlow extends UIElement {
             uploadingMessage +
 
             "</label>" +
-
+            "<form id='fileselector-form-" + this.id + "'>" +
             "<input id='fileselector-" + this.id + "' " +
             "type='file' " +
             "class='imageflow-file-input' " +
             "accept='image/*' name='picField' size='24' multiple='multiple' alt=''" +
             "/>" +
+            "</form>" +
 
             "</div>"
             ;
@@ -102,32 +103,43 @@ export class ImageUploadFlow extends UIElement {
             }
         }
 
+        this._licensePicker.Update()
+        const form = document.getElementById('fileselector-form-' + this.id) as HTMLFormElement
+        const selector = document.getElementById('fileselector-' + this.id)
+        const self = this
 
-        this._licensePicker.Update();
-        const selector = document.getElementById('fileselector-' + this.id);
-        const self = this;
-        if (selector != null) {
+        function submitHandler() {
+            const files = $(selector).prop('files');
+            self._isUploading.setData(files.length);
+
+            const opts = self._uploadOptions(self._selectedLicence.data);
+
+            Imgur.uploadMultiple(opts.title, opts.description, files,
+                function (url) {
+                    console.log("File saved at", url);
+                    self._isUploading.setData(self._isUploading.data - 1);
+                    opts.handleURL(url);
+                },
+                function () {
+                    console.log("All uploads completed")
+                    opts.allDone();
+                },
+                function(failReason) {
+                
+                },0
+            )
+        }
+
+        if (selector != null && form != null) {
             selector.onchange = function () {
-                const files = $(this).get(0).files;
-                self._isUploading.setData(files.length);
-
-                const opts = self._uploadOptions(self._selectedLicence.data);
-
-                Imgur.uploadMultiple(opts.title, opts.description, files,
-                    function (url) {
-                        console.log("File saved at", url);
-                        self._isUploading.setData(self._isUploading.data - 1);
-                        opts.handleURL(url);
-                    },
-                    function () {
-                        console.log("All uploads completed")
-                        opts.allDone();
-                    },
-                    function(failReason) {
-                    
-                    },0
-                )
+                submitHandler()
             }
+            form.addEventListener('submit', e => {
+                console.log(e)
+                alert('wait')
+                e.preventDefault()
+                submitHandler()
+            })
         }
     }
 }

@@ -16,39 +16,32 @@ form {
     box-shadow: 0 0 10px #ff5353;
 }
 
-.shadow {
-    box-shadow: 0 0 10px #00000066;
-}
-
-
-
-
 #leafletDiv {
     height: 100%;
 }
 
 #geolocate-button {
     position: absolute;
-    bottom: 25px;
-    right: 50px;
+    bottom: 27px;
+    right: 65px;
     z-index: 999; /*Just below leaflets zoom*/
     background-color: white;
     border-radius: 5px;
-    border: solid 2px #0005;
+    border: solid 2px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     width: 43px;
     height: 43px;
     display: none; /*Hidden by default, only visible on mobile*/
 }
 
-#help-button-mobile {
-    display: none;
-}
-
 #geolocate-button img{
     width: 31px;
     height:31px;
     margin: 6px;
+}
+
+#geolocate-button > .uielement {
+    display: block;
 }
 
 /**************** GENERIC ****************/
@@ -165,7 +158,7 @@ form {
     pointer-events: all;
     border-radius: 1.3em;
     margin: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     width: 100%;
 }
 
@@ -218,15 +211,30 @@ form {
     padding-bottom: 0.2em;
 }
 
-
-@media only screen and (max-height: 600px) and (not (max-width:700px)) {
-
-    /* Landscape and portrait */
-    #topleft-tools {
-        padding: 0.1em;
-        padding-left: unset;
+@media only screen and (max-width: 600px) {
+    /* Portrait */
+    #userbadge-and-search {
+        display: inline-block;
+        width: auto;
+        max-width: 100vw;
     }
 
+    #topleft-tools {
+        margin: 0.5em;
+    }
+
+    #userbadge {
+        margin-bottom: 0.3em;
+    }
+
+}
+
+@media only screen and (max-height: 600px) {
+    /* Landscape */
+    #topleft-tools {
+        margin: 0.3em !important;
+    }
+    
     #userbadge-and-search {
         position: relative;
         display: inline-block;
@@ -244,25 +252,12 @@ form {
         padding: 0;
     }
 
-
-}
-
-
-@media only screen and (max-width: 600px) {
-    /* Portrait */
-    #userbadge-and-search {
-        display: inline-block;
-        width: auto;
-        max-width: 100vw;
-    }
-
     #topleft-tools {
-        padding: 0.2em !important;
-        padding-top: 0.3em !important;
+        margin: 0.5em;
     }
-
-    #userbadge {
-        margin-bottom: 0.3em;
+    
+    .collapse-button {
+        height: calc(100% - 3.5em) !important;
     }
 
 }
@@ -274,14 +269,13 @@ form {
 #topleft-tools {
     display: block;
     position: absolute;
+    margin: 1em;
+    margin-bottom: 0;
     padding: 0;
-    padding-top: 0.5em;
-    padding-left:0.5em;
     z-index: 5000;
     transition: all 500ms linear;
     overflow: hidden;
     pointer-events: none;
-    padding-right: 10px; /* Shadow offset */
 }
 
 #messagesboxmobilewrapper {
@@ -295,8 +289,7 @@ form {
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     display: inline-block;
-    height:100%;
-    box-shadow: -10px 0 10px -10px #0006;
+    height:calc(100% - 8em);
 }
 
 .collapse-button .collapse-button-img{
@@ -307,16 +300,6 @@ form {
     width: 2em;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
-    margin-bottom: 10px;
-}
-
-.open-button .collapse-button-img {
-    border-radius: 50%;
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 1em;
-    background-color: white; 
-    box-shadow: 0 0 10px #0006;
 }
 
 .collapse-button-img {
@@ -324,10 +307,7 @@ form {
     box-sizing: border-box;
     display: inline-block;
     padding: 1em;
-    background-color: white;
-    box-shadow: none;
-    margin: 0;
-    
+    background-color: white; 
 }
 
 .collapse-button-img img{
@@ -347,15 +327,12 @@ form {
     border-radius: 2em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    max-width: calc(max(35vw, 30em));
-    max-height: calc(100vh - 15em);
-    overflow-y: auto;
-    box-shadow: 0 0 10px #00000066;
+    width: 100%;
+    max-width: 35vw;
 }
 
 #messagesbox {
     /*Only shown on big screens*/
-    position: relative;
     padding: 0;
     pointer-events: all;
 }
@@ -409,7 +386,6 @@ form {
     font-weight: 600;
 }
 
-
 #filter__selection select {
     outline: none;
     background-color: #F0EFEF;
@@ -428,8 +404,6 @@ form {
     margin: 0;
     font-weight: 600;
     transform: translateY(75px);
-    max-height: calc(50vh - 10em);
-    overflow-y: auto;
 }
 
 #filter__selection ul li span > span {
@@ -459,49 +433,13 @@ form {
     border-radius: 15px 15px 0 0;
 }
 
-
-#centermessage {
-    position: absolute;
-    top: 30%;
-    
-    left: 25%;
-    width: 50%;
-
-    font-size: large;
-
-    padding: 2em;
-    border-radius: 2em;
-    z-index: 4000;
-    pointer-events: none;
-
-    opacity: 1;
-    background-color: white;
-
-    transition: opacity 500ms linear;
-
-
-    text-align: center;
-    horiz-align: center;
-    font-weight: bold;
-}
-
-
-@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+@media only screen and (max-width: 600px), only screen and (max-height: 300px) {
     #messagesbox-wrapper {
         display: none;
     }
 
     #messagesbox {
         display: none;
-    }
-    
-    #help-button-mobile{
-        display: unset;
-    }
-    
-    #help-button-mobile div {
-        box-shadow: 0 0 10px #0006;
-        margin-bottom: 10px;
     }
 
     #geolocate-button {
@@ -511,13 +449,6 @@ form {
     .leaflet-popup {
         /* Popups are hidden on mobile */
         display: none;
-    }
-    
-    #centermessage {
-        top: 30%;
-        left: 15%;
-        width: 60%;
-
     }
 
     #messagesboxmobilewrapper {
@@ -536,11 +467,11 @@ form {
 
     #messagesboxmobile-scroll {
         display: block;
-        width: 100vw;
         overflow-y: auto;
+        width: 100vw;
         padding: 0;
         margin: 0;
-        height: calc(100% - 5em); /*Height of to-the-map is 5em*/
+        height: calc(100% - 5em); /*Height of to-the-map is 2em, padding is 2 * 0.5em*/
     }
 
     #messagesboxmobile {
@@ -549,23 +480,6 @@ form {
         border-radius: 1em;
         background-color: white;
     }
-
-    #welcomeMessage {
-        display: inline-block;
-        background-color: white;
-        padding: 1em;
-        border-radius: 0;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        max-height: max-content;
-        box-shadow: unset;
-        overflow-y: unset;
-    }
-    
-
 }
 
 
@@ -573,36 +487,34 @@ form {
     position: relative;
 }
 
-#to-the-map > span{
+#to-the-map h2{
     
     position: absolute;
-    box-sizing: border-box;
-    height: 3em;
+    height: 4em;
     
     padding: 0.5em;
     margin: 0;
 
-    padding-top: 0.75em;
+    padding-right: 2em;
+    padding-top: 1em;
     text-align: center;
     width: 100%;
     color: white;
     background-color: #7ebc6f;
     cursor: pointer;
-    font-size: xx-large;
-    font-weight: bold;
 
 }
 
 
 @media only screen and (max-height: 400px) {
-    /* Landscape: small 'to the map' */
+    /* Landscape */
     #to-the-map {
         position: relative;
         height: 100%;
         width: 100%
     }
 
-    #to-the-map span {
+    #to-the-map h2 {
         width: auto;
         border-top-left-radius: 1.5em;
         position: absolute;
@@ -613,34 +525,65 @@ form {
         margin:0;
         padding: 1em;
         padding-bottom: 0.75em;
-        height: 3em;
-        font-size: x-large;
+    }
+
+    #to-the-map h2 span{
+        height: 100%;
+        
     }
 
     #messagesboxmobile {
-        padding-bottom: 5em;
+        padding-bottom: 4em;
     }
 
     #messagesboxmobile-scroll {
         position: absolute;
         z-index: 2;
-        width: 100vw;
         height: 100vh;
-        box-sizing: border-box;
-    }
-    
-    #welcomeMessage{
-        box-shadow: unset;
-        max-height: 100vh;
+        overflow-y: auto;
     }
 
 }
 
-.logo {
-    float:right;
+#logo {
+    position: relative;
+    display: flex;
+    float: right;
     margin: 1em;
-    width: 10em;
-    height: auto;
+    margin-top: 0;
+    margin-right: -0.5em;
+    padding: 0;
+    right: 1em;
+    top: 1em;
+    border-radius: 0;
+}
+
+#centermessage {
+    position: absolute;
+    display: block ruby;
+
+    margin: auto;
+    top: 30%;
+    left: 50%;
+    margin-left: -15%;
+    width: 30%;
+
+    font-size: large;
+
+    padding: 2em;
+    border-radius: 2em;
+    z-index: 5000;
+    pointer-events: none;
+
+    opacity: 1;
+    background-color: white;
+
+    transition: opacity 500ms linear;
+
+
+    text-align: center;
+    horiz-align: center;
+    font-weight: bold;
 }
 
 #bottomRight {
@@ -855,27 +798,8 @@ form {
     width: 40em !important;
 }
 
-#messagesboxmobile .featureinfobox {
-    max-height: unset;
-    overflow-y: unset;
-}
-
-#messagesboxmobile .featureinfobox > div {
-    width: 100%;
-    max-width: unset;
-    padding-left: unset;
-}
-
 .featureinfobox {
-    max-height: 80vh;
-    overflow-y: auto;
 }
-
-.featureinfobox > div {
-    width: calc(100% - 2em);
-    padding-left: 1em;
-}
-
 
 .featureinfoboxtitle {
     position: relative;

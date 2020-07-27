@@ -82,13 +82,13 @@ export class GeoLocationHandler extends UIElement {
 
     InnerRender(): string {
         if (this.currentLocation.data) {
-            return "<img src='./assets/crosshair-blue.svg' alt='locate me'>";
+            return "<img src='assets/crosshair-blue.png' alt='locate me'>";
         }
         if (this._isActive.data) {
-            return "<img src='./assets/crosshair-blue-center.svg' alt='locate me'>";
+            return "<img src='assets/crosshair-blue-center.png' alt='locate me'>";
         }
 
-        return "<img src='./assets/crosshair.svg' alt='locate me'>";
+        return "<img src='assets/crosshair.png' alt='locate me'>";
     }
 
     

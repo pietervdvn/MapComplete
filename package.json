@@ -14,7 +14,7 @@
   "scripts": {
     "start": "parcel *.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
     "generate": "ts-node createLayouts.ts",
-    "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/* assets/*/* vendor/* vendor/*/*",
+    "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/* assets/**/* vendor/* vendor/*/*",
     "clean": "./clean.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
