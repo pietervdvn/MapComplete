@@ -6,16 +6,15 @@ import Combine from "../../../UI/Base/Combine";
 class ParkingTypeHelper {
     static GenerateMappings() {
         const images = {
-            stands: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Bike_racks_at_north-west_of_Westfield_-_geograph.org.uk_-_1041057.jpg/100px-Bike_racks_at_north-west_of_Westfield_-_geograph.org.uk_-_1041057.jpg",
-            wall_loops: "https://wiki.openstreetmap.org/w/images/thumb/c/c2/Bike-parking-wheelbender.jpg/100px-Bike-parking-wheelbender.jpg",
-            handlebar_holder: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bicycle_parking_handlebar_holder.jpg/100px-Bicycle_parking_handlebar_holder.jpg",
-            shed: "https://wiki.openstreetmap.org/w/images/thumb/b/b2/Bike-shelter.jpg/100px-Bike-shelter.jpg",
-            rack: "https://wiki.openstreetmap.org/w/images/thumb/4/41/Triton_Bike_Rack.png/100px-Triton_Bike_Rack.png",
-            "two-tier": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Bicis_a_l%27estaci%C3%B3_de_Leiden.JPG/100px-Bicis_a_l%27estaci%C3%B3_de_Leiden.JPG"
+            stands: "assets/bike/parking_staple.svg",
+            wall_loops: "assets/bike/parking_wall_loops.svg",
+            handlebar_holder: "assets/bike/parking_handlebar_holder.svg",
+            rack: "assets/bike/parking_rack.svg",
+            shed: "assets/bike/parking_shed.svg"
         };
 
 
-        const toImg = (url) => `<img src=${url}>`
+        const toImg = (url) => `<br /><img width="150px" src=${url}>`
         const mappings = [];
         const to = Translations.t.cyclofix.parking.type
 
