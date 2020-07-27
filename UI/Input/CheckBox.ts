@@ -6,8 +6,6 @@ import instantiate = WebAssembly.instantiate;
 
 
 export class CheckBox extends UIElement{
-    private data: UIEventSource<boolean>;
-
     private readonly _data: UIEventSource<boolean>;
     private readonly _showEnabled: string|UIElement;
     private readonly _showDisabled: string|UIElement;

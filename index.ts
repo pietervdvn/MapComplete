@@ -233,10 +233,10 @@ new CheckBox(layerControl, closedFilterButton).AttachTo("filter__selection");
 
 // ------------------ Setup various other UI elements ------------
 
-document.title = layoutToUse.title.InnerRender();
+document.title = Translations.W(layoutToUse.title).InnerRender();
 
 Locale.language.addCallback(e => {
-    document.title = layoutToUse.title.InnerRender();
+    document.title = Translations.W(layoutToUse.title).InnerRender();
 })
 
 
