@@ -76,7 +76,7 @@ export class ImageUploadFlow extends UIElement {
             `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.R()}</span>` +
             "<div class='break'></div>" +
             "</div>" +
-
+            Translations.t.image.respectPrivacy.Render() + "<br/>" +
             this._licensePicker.Render() + "<br/>" +
             uploadingMessage +
 

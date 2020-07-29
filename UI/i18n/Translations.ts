@@ -16,7 +16,7 @@ export default class Translations {
             title: new T({
                 en: 'Cyclofix - an open map for cyclists',
                 nl: 'Cyclofix - een open kaart voor fietsers',
-                fr: 'TODO: FRENCH TRANSLATION'
+                fr: 'Cyclofix - Une carte ouverte pour les cyclistes'
             }),
             description: new T({
                 en: "On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels and everywhere else." +
@@ -24,48 +24,48 @@ export default class Translations {
                 nl: "Op deze kaart willen we gegevens verzamelen over de locatie van fietspompen en openbare stelplaatsen in Brussel en overal ter wereld." +
                     "Hierdoor kunnen fietsers snel de dichtstbijzijnde infrastructuur vinden die voldoet aan hun behoeften.",
                 fr: "Sur cette carte, nous voulons collecter des données sur la localisation des pompes à vélo et des supports publics à Bruxelles." +
-                    "Les cyclistes pourront ainsi trouver rapidement l'infrastructure la plus proche de leurs besoins."
+                    "Les cyclistes pourront ainsi trouver rapidement l'infrastructure la plus proche pour leurs besoins."
             }),
             freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'TODO: fr'}),
             parking: {
-                name: new T({en: 'bike parking', nl: 'fietsparking', fr: 'TODO: fr'}),
-                title: new T({en: 'Bike parking', nl: 'Fietsparking', fr: 'TODO: fr'}),
+                name: new T({en: 'bike parking', nl: 'fietsparking', fr: 'parking à vélo'}),
+                title: new T({en: 'Bike parking', nl: 'Fietsparking', fr: 'Parking à vélo'}),
                 type: {
                     render: new T({
                         en: 'This is a bicycle parking of the type: {bicycle_parking}',
                         nl: 'Dit is een fietsparking van het type: {bicycle_parking}',
-                        fr: 'TODO: fr'
+                        fr: 'Ceci est un parking à vélo de type {bicycle_parking}'
                     }),
-                    template: new T({en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: 'TODO: fr'}),
+                    template: new T({en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: "D'autres types: $$$"}),
                     question: new T({
                         en: 'What is the type of this bicycle parking?',
                         nl: 'Van welk type is deze fietsparking?',
-                        fr: 'TODO: fr'
+                        fr: 'Quelle type de parking s\'agit il? '
                     }),
-                    eg: new T({en: ", for example", nl: ", bijvoorbeeld"}),
-                    stands: new T({en: 'Staple racks', nl: 'Nietjes', fr: 'TODO: fr'}),
-                    wall_loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'TODO: fr'}),
-                    handlebar_holder: new T({en: 'Handlebar holder', nl: 'Stuurhouder', fr: 'TODO: fr'}),
-                    shed: new T({en: 'Shed', nl: 'Schuur', fr: 'TODO: fr'}),
-                    rack: new T({en: 'Rack', nl: 'Rek', fr: 'TODO: fr'}),
-                    "two-tier": new T({en: 'Two-tiered', nl: 'Dubbel (twee verdiepingen)', fr: 'TODO: fr'}),
+                    eg: new T({en: ", for example", nl: ", bijvoorbeeld", fr: ",par example"}),
+                    stands: new T({en: 'Staple racks', nl: 'Nietjes', fr: 'Arceaux'}),
+                    wall_loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'Pinces-roues'}),
+                    handlebar_holder: new T({en: 'Handlebar holder', nl: 'Stuurhouder', fr: 'Support guidon'}),
+                    shed: new T({en: 'Shed', nl: 'Schuur', fr: 'Abri'}),
+                    rack: new T({en: 'Rack', nl: 'Rek', fr: 'Râtelier'}),
+                    "two-tier": new T({en: 'Two-tiered', nl: 'Dubbel (twee verdiepingen)', fr: 'Superposé'}),
                 },
                 operator: {
                     render: new T({
                         en: 'This bike parking is operated by {operator}',
                         nl: 'Deze fietsparking wordt beheerd door {operator}',
-                        fr: 'TODO: fr'
+                        fr: 'Ce parking est opéré par {operator}'
                     }),
                     template: new T({en: 'A different operator: $$$', nl: 'Een andere beheerder: $$$', fr: 'TODO: fr'}),
                     question: new T({
-                        en: 'Who operates this bike parking (name of university, shop, city...)?',
-                        nl: 'Wie beheert deze fietsparking (naam universiteit, winkel, stad...)?',
-                        fr: 'TODO: fr'
+                        en: 'Who operates this bike station (name of university, shop, city...)?',
+                        nl: 'Wie beheert deze fietsenparking (naam universiteit, winkel, stad...)?',
+                        fr: 'Qui opére cette station vélo (nom de l\'université, magasin, vile...)'
                     }),
                     private: new T({
                         en: 'Operated by a private person',
                         nl: 'Wordt beheerd door een privépersoon',
-                        fr: 'TODO: fr'
+                        fr: 'Opéré par un tier privé'
                     }),
                 },
                 covered: {
@@ -146,8 +146,9 @@ export default class Translations {
                 name: new T({
                     en: 'bike station (repair, pump or both)',
                     nl: 'fietspunt (herstel, pomp of allebei)',
-                    fr: 'TODO: fr'
+                    fr: 'station velo (réparation, pompe à vélo)'
                 }),
+                // title: new T({en: 'Bike station', nl: 'Fietsstation', fr: 'Station vélo'}), Old, non-dynamic title
                 titlePump: new T({en: 'Bike pump', nl: 'Fietspomp', fr: 'TODO: fr'}),
                 titleRepair: new T({en: 'Bike repair station', nl: 'Herstelpunt', fr: 'TODO: fr'}),
                 titlePumpAndRepair: new T({en: 'Bike station (pump & repair)', nl: 'Herstelpunt met pomp', fr: 'TODO: fr'}),
@@ -155,230 +156,232 @@ export default class Translations {
                     question: new T({
                         en: 'Does the pump have a pressure indicator or manometer?',
                         nl: 'Heeft deze pomp een luchtdrukmeter?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que la pompe à un manomètre integré?'
                     }),
-                    yes: new T({en: 'There is a manometer', nl: 'Er is een luchtdrukmeter', fr: 'TODO: fr'}),
-                    no: new T({en: 'There is no manometer', nl: 'Er is geen luchtdrukmeter', fr: 'TODO: fr'}),
+                    yes: new T({en: 'There is a manometer', nl: 'Er is een luchtdrukmeter', fr: 'Il y a un manomètre'}),
+                    no: new T({en: 'There is no manometer', nl: 'Er is geen luchtdrukmeter', fr: 'Il n\'y a pas de manomètre'}),
                     broken: new T({
                         en: 'There is manometer but it is broken',
                         nl: 'Er is een luchtdrukmeter maar die is momenteel defect',
-                        fr: 'TODO: fr'
+                        fr: 'Il y a un manomètre mais il est cassé'
                     })
                 },
                 electric: {
                     question: new T({
                         en: 'Is this an electric bike pump?',
                         nl: 'Is dit een electrische fietspomp?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que cette pompe est électrique?'
                     }),
-                    manual: new T({en: 'Manual pump', nl: 'Manuele pomp', fr: 'TODO: fr'}),
-                    electric: new T({en: 'Electrical pump', nl: 'Electrische pomp', fr: 'TODO: fr'})
+                    manual: new T({en: 'Manual pump', nl: 'Manuele pomp', fr: 'Pompe manuelle'}),
+                    electric: new T({en: 'Electrical pump', nl: 'Electrische pomp', fr: 'Pompe électrique'})
                 },
                 operational: {
                     question: new T({
                         en: 'Is the bike pump still operational?',
                         nl: 'Werkt de fietspomp nog?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que cette pompe marche t\'elle toujours?'
                     }),
                     operational: new T({
                         en: 'The bike pump is operational',
                         nl: 'De fietspomp werkt nog',
-                        fr: 'TODO: fr'
+                        fr: 'La pompe est opérationnelle'
                     }),
-                    broken: new T({en: 'The bike pump is broken', nl: 'De fietspomp is kapot', fr: 'TODO: fr'})
+                    broken: new T({en: 'The bike pump is broken', nl: 'De fietspomp is kapot', fr: 'La pompe est cassé'})
                 },
                 valves: {
                     question: new T({
                         en: 'What valves are supported?',
                         nl: 'Welke ventielen werken er met de pomp?',
-                        fr: 'TODO: fr'
+                        fr: 'Quelles valves sont compatibles?'
                     }),
                     default: new T({
                         en: 'There is a default head, so Dunlop, Sclaverand and auto',
                         nl: 'Er is een standaard aansluiting, die dus voor Dunlop, Sclaverand en auto\'s werkt',
-                        fr: 'TODO: fr'
+                        fr: 'Il y a une valve par défaut, fonctionnant sur les valves Dunlop, Sclaverand et les valves de voitures'
                     }),
                     dunlop: new T({en: 'Only Dunlop', nl: 'Enkel Dunlop', fr: 'TODO: fr'}),
                     sclaverand: new T({
                         en: 'Only Sclaverand (also known as Presta)',
                         nl: 'Enkel Sclaverand (ook gekend als Presta)',
-                        fr: 'TODO: fr'
+                        fr: 'Seulement Sclaverand (aussi appelé Presta)'
                     }),
                     auto: new T({en: 'Only for cars', nl: 'Enkel voor auto\'s', fr: 'TODO: fr'}),
                     render: new T({
                         en: 'This pump supports the following valves: {valves}',
                         nl: 'Deze pomp werkt met de volgende ventielen: {valves}',
-                        fr: 'TODO: fr'
+                        fr: 'Cette pompe est compatible avec les valves suivantes: {valves}'
                     }),
                     template: new T({
                         en: 'Some other valve(s): $$$',
                         nl: 'Een ander type ventiel(en): $$$',
-                        fr: 'TODO: fr'
+                        fr: 'Autre(s) type(s) de valve(s): $$$'
                     })
                 },
                 chain: {
                     question: new T({
                         en: 'Does this bike repair station have a special tool to repair your bike chain?',
                         nl: 'Heeft dit herstelpunt een speciale reparatieset voor je ketting?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?'
                     }),
                     yes: new T({
                         en: 'There is a chain tool',
                         nl: 'Er is een reparatieset voor je ketting',
-                        fr: 'TODO: fr'
+                        fr: 'Il y a un outil pour réparer la chaine'
                     }),
                     no: new T({
                         en: 'There is no chain tool',
                         nl: 'Er is geen reparatieset voor je ketting',
-                        fr: 'TODO: fr'
+                        fr: 'Il n\'y a pas d\'outil pour réparer la chaine'
                     }),
                 },
                 operator: {
                     render: new T({
                         en: 'This bike station is operated by {operator}',
                         nl: 'Dit fietspunt wordt beheerd door {operator}',
-                        fr: 'TODO: fr'
+                        fr: 'Cette station vélo est opéré par {operator}'
                     }),
                     template: new T({en: 'A different operator: $$$', nl: 'Een andere beheerder: $$$', fr: 'TODO: fr'}),
                     question: new T({
                         en: 'Who operates this bike station (name of university, shop, city...)?',
                         nl: 'Wie beheert dit fietsstation (naam universiteit, winkel, stad...)?',
-                        fr: 'TODO: fr'
+                        fr: 'Qui opére cette station vélo (nom de l\'université, magasin, ville...)?'
                     }),
                     private: new T({
                         en: 'Operated by a private person',
                         nl: 'Wordt beheerd door een privépersoon',
-                        fr: 'TODO: fr'
+                        fr: 'Operé par un tier privé'
                     }),
                 },
                 services: {
                     question: new T({
                         en: 'Which services are available at this bike station?',
                         nl: 'Welke functies biedt dit fietspunt?',
-                        fr: 'TODO: fr'
+                        fr: 'Quels services sont valables à cette station vélo?'
                     }),
                     pump: new T({
                         // Note: this previously read: a pump is available. It is not because the pump is present, that it is available (e.g. broken)
                         en: 'There is only a pump present',
                         nl: 'Er is enkel een pomp aanwezig',
-                        fr: 'TODO: fr'
+                        fr: 'Il y a seulement une pompe'
                     }),
                     tools: new T({
                         en: 'There are only tools (screwdrivers, pliers...) aanwezig',
                         nl: 'Er is enkel gereedschap aanwezig (schroevendraaier, tang...)',
-                        fr: 'TODO: fr'
+                        fr: 'Il y a seulement des outils (tournevis, pinces...'
                     }),
                     both: new T({
                         en: 'There are both tools and a pump present',
                         nl: 'Er is zowel een pomp als gereedschap aanwezig',
-                        fr: 'TODO: fr'
+                        fr: 'IL y a des outils et une pompe'
                     }),
                 },
                 stand: {
                     question: new T({
                         en: 'Does this bike station have a hook to suspend your bike with or a stand to elevate it?',
                         nl: 'Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l\'élevé?'
                     }),
-                    yes: new T({en: 'There is a hook or stand', nl: 'Er is een haak of standaard', fr: 'TODO: fr'}),
-                    no: new T({en: 'There is no hook or stand', nl: 'Er is geen haak of standaard', fr: 'TODO: fr'}),
+                    yes: new T({en: 'There is a hook or stand', nl: 'Er is een haak of standaard', fr: 'Oui il y a un crochet ou une accroche'}),
+                    no: new T({en: 'There is no hook or stand', nl: 'Er is geen haak of standaard', fr: 'Non il n\'y pas de crochet ou d\'accroche'}),
                 }
             },
             shop: {
-                name: new T({en: 'bike repair/shop', nl: 'fietszaak', fr: 'TODO: fr'}),
+                name: new T({en: 'bike repair/shop', nl: 'fietszaak', fr: 'magasin ou réparateur de vélo'}),
                 
-                title: new T({en: 'Bike repair/shop', nl: 'Fietszaak', fr: 'TODO: fr'}),
-                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'TODO: fr'}),
-                titleShop: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'TODO: fr'}),
+                title: new T({en: 'Bike repair/shop', nl: 'Fietszaak', fr: 'Magasin et réparateur de vélo'}),
+                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'Réparateur de vélo'}),
+                titleShop: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'Magasin de vélo'}),
                 
-                titleNamed: new T({en: 'Bike repair/shop {name}', nl: 'Fietszaak {name}', fr: 'TODO: fr'}),
-                titleRepairNamed: new T({en: 'Bike repair {name}', nl: 'Fietsenmaker {name}', fr: 'TODO: fr'}),
-                titleShopNamed: new T({en: 'Bike shop {name}', nl: 'Fietswinkel {name}', fr: 'TODO: fr'}),
+                titleNamed: new T({en: 'Bike repair/shop {name}', nl: 'Fietszaak {name}', fr: 'Magasin et réparateur de vélo {name}'}),
+                titleRepairNamed: new T({en: 'Bike repair {name}', nl: 'Fietsenmaker {name}', fr: 'Réparateur de vélo {name}'}),
+                titleShopNamed: new T({en: 'Bike shop {name}', nl: 'Fietswinkel {name}', fr: 'Magasin de vélo {name}'}),
+
+
 
                 retail: {
                     question: new T({
                         en: 'Does this shop sell bikes?',
                         nl: 'Verkoopt deze winkel fietsen?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que ce magasin vend des vélos?'
                     }),
-                    yes: new T({en: 'This shop sells bikes', nl: 'Deze winkel verkoopt fietsen', fr: 'TODO: fr'}),
+                    yes: new T({en: 'This shop sells bikes', nl: 'Deze winkel verkoopt fietsen', fr: 'Ce magasin vend des vélos'}),
                     no: new T({
                         en: 'This shop doesn\'t sell bikes',
                         nl: 'Deze winkel verkoopt geen fietsen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin ne vend pas de vélo'
                     }),
                 },
                 repair: {
                     question: new T({
                         en: 'Does this shop repair bikes?',
                         nl: 'Verkoopt deze winkel fietsen?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que ce magasin répare des vélos?'
                     }),
-                    yes: new T({en: 'This shop repairs bikes', nl: 'Deze winkel herstelt fietsen', fr: 'TODO: fr'}),
+                    yes: new T({en: 'This shop repairs bikes', nl: 'Deze winkel herstelt fietsen', fr: 'Ce magasin répare des vélos'}),
                     no: new T({
                         en: 'This shop doesn\'t repair bikes',
                         nl: 'Deze winkel herstelt geen fietsen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin ne répare pas les vélos'
                     }),
-                    sold: new T({en: 'This shop only repairs bikes bought here', nl: 'Deze winkel herstelt enkel fietsen die hier werden gekocht', fr: 'TODO: fr'}),
-                    brand: new T({en: 'This shop only repairs bikes of a certain brand', nl: 'Deze winkel herstelt enkel fietsen van een bepaald merk', fr: 'TODO: fr'}),
+                    sold: new T({en: 'This shop only repairs bikes bought here', nl: 'Deze winkel herstelt enkel fietsen die hier werden gekocht', fr: 'Ce magasin ne répare seulement les vélos achetés là-bas'}),
+                    brand: new T({en: 'This shop only repairs bikes of a certain brand', nl: 'Deze winkel herstelt enkel fietsen van een bepaald merk', fr: 'Ce magasin ne répare seulement des marques spécifiques'}),
                 },
                 rental: {
                     question: new T({
                         en: 'Does this shop rent out bikes?',
                         nl: 'Verhuurt deze winkel fietsen?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce ce magasin loue des vélos?'
                     }),
-                    yes: new T({en: 'This shop rents out bikes', nl: 'Deze winkel verhuurt fietsen', fr: 'TODO: fr'}),
+                    yes: new T({en: 'This shop rents out bikes', nl: 'Deze winkel verhuurt fietsen', fr: 'Ce magasin loue des vélos'}),
                     no: new T({
                         en: 'This shop doesn\'t rent out bikes',
                         nl: 'Deze winkel verhuurt geen fietsen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin ne loue pas de vélos'
                     }),
                 },
                 pump: {
                     question: new T({
                         en: 'Does this shop offer a bike pump for use by anyone?',
                         nl: 'Biedt deze winkel een fietspomp aan voor iedereen?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce que ce magasin offre une pompe en accès libre?'
                     }),
                     yes: new T({
                         en: 'This shop offers a bike pump for anyone',
                         nl: 'Deze winkel biedt geen fietspomp aan voor eender wie',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin offre une pompe en acces libre'
                     }),
                     no: new T({
                         en: 'This shop doesn\'t offer a bike pump for anyone',
                         nl: 'Deze winkel biedt een fietspomp aan voor iedereen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin n\offre pas de pompe en libre accès'
                     })
                 },
                 qName: {
-                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietszaak?', fr: 'TODO: fr'}),
-                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietszaak heet <b>{name}</b>', fr: 'TODO: fr'}),
-                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietszaak heet: <b>$$$</b>', fr: 'TODO: fr'})
+                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietszaak?', fr: 'Quel est le nom du magasin de vélo?'}),
+                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietszaak heet <b>{name}</b>', fr: 'Ce magasin s\appelle <b>{name}</b>'}),
+                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietszaak heet: <b>$$$</b>', fr: 'Ce magasin s\appelle <b>{$$$</b>'})
                 },
                 secondHand: {
-                    question: new T({en: 'Does this shop sell second-hand bikes?', nl: 'Verkoopt deze winkel tweedehands fietsen?', fr: 'TODO: fr'}),
-                    yes: new T({en: 'This shop sells second-hand bikes', nl: 'Deze winkel verkoopt tweedehands fietsen', fr: 'TODO: fr'}),
-                    no: new T({en: 'This shop doesn\'t sell second-hand bikes', nl: 'Deze winkel verkoopt geen tweedehands fietsen', fr: 'TODO: fr'}),
-                    only: new T({en: 'This shop only sells second-hand bikes', nl: 'Deze winkel verkoopt enkel tweedehands fietsen', fr: 'TODO: fr'}),
+                    question: new T({en: 'Does this shop sell second-hand bikes?', nl: 'Verkoopt deze winkel tweedehands fietsen?', fr: 'Est-ce ce magasin vend des vélos d\'occasion'}),
+                    yes: new T({en: 'This shop sells second-hand bikes', nl: 'Deze winkel verkoopt tweedehands fietsen', fr: 'Ce magasin vend des vélos d\'occasion'}),
+                    no: new T({en: 'This shop doesn\'t sell second-hand bikes', nl: 'Deze winkel verkoopt geen tweedehands fietsen', fr: 'Ce magasin ne vend pas de vélos d\'occasion'}),
+                    only: new T({en: 'This shop only sells second-hand bikes', nl: 'Deze winkel verkoopt enkel tweedehands fietsen', fr: 'Ce magasin vend seulement des vélos d\'occasion'}),
                 },
                 diy: {
                     question: new T({
                         en: 'Are there tools here to repair your own bike?',
                         nl: 'Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?',
-                        fr: 'TODO: fr'
+                        fr: 'Est-ce qu\'il y a des outils pour réparer son vélo dans ce magasin?',
                     }),
                     yes: new T({
                         en: 'This shop offers tools for DIY repair',
                         nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin offre des outils pour réparer son vélo soi-même'
                     }),
                     no: new T({
                         en: 'This shop doesn\'t offer tools for DIY repair',
                         nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen',
-                        fr: 'TODO: fr'
+                        fr: 'Ce magasin n\'offre pas des outils pour réparer son vélo soi-même'
                     }),
                 }
             },
@@ -396,12 +399,13 @@ export default class Translations {
             drinking_water: {
                 title: new T({
                     en: 'Drinking water',
-                    nl: "Drinkbaar water"
+                    nl: "Drinkbaar water",
+                    fr: "Eau potable"
                 })
             }
         },
         bookcases: {
-            title: new T({en: "Open Bookcase Map", nl: "Open Boekenkastjes kaart"}),
+            title: new T({en: "Open Bookcase Map", nl: "Open Boekenkastjes kaart"}, ),
             description: new T({
                     en: "Search a bookcase near you and add information about them in the biggest shared map of the world.",
                     nl: "Help mee met het creëeren van een volledige kaart met alle boekenruilkastjes!" +
@@ -450,87 +454,110 @@ export default class Translations {
             uploadingPicture: new T({
                 en: 'Uploading your picture...',
                 nl: 'Bezig met een foto te uploaden...',
-                fr: 'TODO: fr'
+                fr: 'Mettre votre photo en ligne'
             }),
             pleaseLogin: new T({
                 en: 'Please login to add a picure or to answer questions',
                 nl: 'Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden',
-                fr: 'TODO: fr'
+                fr: 'Merci de vous connecter pour mettre une photo en ligne ou répondre aux questions'
             }),
             willBePublished: new T({
                 en: 'Your picture will be published: ',
                 nl: 'Jouw foto wordt gepubliceerd: ',
-                fr: 'TODO: fr'
+                fr: 'Votre photo va être publié'
             }),
-            cco: new T({en: 'in the public domain', nl: 'in het publiek domein', fr: 'TODO: fr'}),
-            ccbs: new T({en: 'under the CC-BY-SA-license', nl: 'onder de CC-BY-SA-licentie', fr: 'TODO: fr'}),
-            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'TODO: fr'})
+            cco: new T({en: 'in the public domain', nl: 'in het publiek domein', fr: 'sur le domaine publique'}),
+            ccbs: new T({en: 'under the CC-BY-SA-license', nl: 'onder de CC-BY-SA-licentie', fr: 'sous la license CC-BY-SA'}),
+            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
+            respectPrivacy: new T({
+                en: "Please respect privacy. Do not photograph people nor license plates",
+                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
+                fr: "TODO: fr"
+            })
         },
         centerMessage: {
-            loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'TODO: fr'}),
+            loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'chargement des données'}),
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
                 nl: 'Zoom in om de data te zien en te bewerken',
-                fr: 'TODO: fr'
+                fr: 'TODO Fr',
             }),
-            ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'TODO: fr'}),
+            ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}),
         },
         general: {
-            loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap"}),
+            loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap", fr:'Se connecter avec OpenStreeMap'}),
             getStarted: new T({
                 en: "<span class='activate-osm-authentication'>Login with OpenStreetMap</span> or <a href='https://www.openstreetmap.org/user/new' target='_blank'>make a free account to get started</a>",
                 nl: "<span class='activate-osm-authentication'>Meld je aan met je OpenStreetMap-account</span> of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak snel en gratis een account om te beginnen</a>",
+                fr: "<span class='activate-osm-authentication'>Se connecter avec OpenStreetMap</span> ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>créer un compte gratuitement pour commencer</a>",
+            
             }),
             welcomeBack: new T({
                 en: "You are logged in, welcome back!",
-                nl: "Je bent aangemeld. Welkom terug!"
+                nl: "Je bent aangemeld. Welkom terug!",
+                fr: "Vous êtes connecté, bienvenue"
             }),
             search: {
                 search: new Translation({
                     en: "Search a location",
-                    nl: "Zoek naar een locatie"
+                    nl: "Zoek naar een locatie",
+                    fr: "Chercher une location"
                 }),
                 searching: new Translation({
                     en: "Searching...",
-                    nl: "Aan het zoeken..."
+                    nl: "Aan het zoeken...",
+                    fr: "Chargement"
+                    
                 }),
                 nothing: new Translation({
                     en: "Nothing found...",
-                    nl: "Niet gevonden..."
+                    nl: "Niet gevonden...",
+                    fr: "Rien n'a été trouvé "
                 }),
                 error: new Translation({
                     en: "Something went wrong...",
-                    nl: "Niet gelukt..."
+                    nl: "Niet gelukt...",
+                    fr: "Quelque chose n\'a pas marché..."
+             
                 })
 
             },
             returnToTheMap: new T({
                 en: "Return to the map",
-                nl: "Naar de kaart"
+                nl: "Naar de kaart",
+                fr: "Retourner sur la carte"
+             
             }),
             save: new T({
                 en: "Save",
-                nl: "Opslaan"
+                nl: "Opslaan",
+                fr: "Sauvegarder"
             }),
             cancel: new T({
                 en: "Cancel",
-                nl: "Annuleren"
+                nl: "Annuleren",
+                fr: "Annuler"
             }),
             skip: new T({
                 en: "Skip this question",
-                nl: "Vraag overslaan"
+                nl: "Vraag overslaan",
+                fr: "Passer la question"
+              
             }),
             oneSkippedQuestion: new T({
                 en: "One question is skipped",
-                nl: "Een vraag is overgeslaan"
+                nl: "Een vraag is overgeslaan",
+                fr: "Une question a été passé"
             }),
             skippedQuestions: new T({
                 en: "Some questions are skipped",
-                nl: "Sommige vragen zijn overgeslaan"
+                nl: "Sommige vragen zijn overgeslaan",
+                fr: "Questions passées"
             }),
             number: new T({
                 en: "number",
-                nl: "getal"
+                nl: "getal",
+                fr: "Nombre"
             }),
 
             osmLinkTooltip: new T({
