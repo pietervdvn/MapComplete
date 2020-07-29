@@ -426,8 +426,8 @@ export default class Translations {
                 }
             },
             cafe: {
-                name: new T({en: "bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
-                title: new T({en: "Bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
+                name: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
+                title: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
                 qName: {
                     question: new T({en: "What is the name of this bike cafe?", nl: "Wat is de naam van dit fietscafé?", fr: "TODO: fr"}),
                     render: new T({en: "This bike cafe is called {name}", nl: "Dit fietscafé heet <b>{name}</b>", fr: "TODO: fr"}),

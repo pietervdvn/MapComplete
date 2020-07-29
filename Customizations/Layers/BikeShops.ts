@@ -27,7 +27,6 @@ export default class BikeShops extends LayerDefinition {
         this.overpassFilter = new Tag("shop", "bicycle");
         this.presets = [{
             title: Translations.t.cyclofix.shop.title,
-            icon: "/assets/bike/repair_shop.svg",
             tags: [
                 new Tag("shop", "bicycle"),
             ]

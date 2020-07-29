@@ -30,7 +30,6 @@ export default class BikeCafes extends LayerDefinition {
         this.presets = [
             {
                 title: Translations.t.cyclofix.cafe.title,
-                icon: "/assets/bike/cafe.svg",
                 tags :  [
                     new Tag("amenity", "pub"),
                     new Tag("pub", "cycling"),

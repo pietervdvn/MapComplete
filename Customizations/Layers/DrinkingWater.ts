@@ -23,7 +23,6 @@ export class DrinkingWater extends LayerDefinition {
 
         this.presets = [{
             title: Translations.t.cyclofix.drinking_water.title,
-            icon: "/assets/bike/drinking_water.svg",
             tags: [new Tag("amenity", "drinking_water")]
         }];
         this.maxAllowedOverlapPercentage = 10;

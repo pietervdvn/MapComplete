@@ -21,7 +21,6 @@ export default class BikeParkings extends LayerDefinition {
         this.overpassFilter = new Tag("amenity", "bicycle_parking");
         this.presets = [{
             title: Translations.t.cyclofix.parking.title,
-            icon: "/assets/bike/parking.svg",
             tags: [
                 new Tag("amenity", "bicycle_parking"),
             ]

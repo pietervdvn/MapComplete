@@ -21,7 +21,6 @@ export class Birdhide extends LayerDefinition {
             presets: [
                 {
                     title: "Vogelkijkplaats",
-                    icon: "/assets/nature/birdhide.svg",
                     tags: [Birdhide.birdhide]
                 }
             ],

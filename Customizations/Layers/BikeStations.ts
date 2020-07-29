@@ -37,19 +37,16 @@ export default class BikeStations extends LayerDefinition {
             {
                 title: tr.titlePump,
                 description: tr.services.pump,
-                icon: "/assets/bike/pump.svg",
                 tags: [this.repairStation, this.pump, this.notools]
             },
             {
                 title: tr.titleRepair,
                 description: tr.services.tools,
-                icon: "/assets/bike/repair_station.svg",
                 tags: [this.repairStation, this.tools, this.nopump]
             },
             {
                 title: tr.titlePumpAndRepair,
                 description: tr.services.both,
-                icon: "/assets/bike/repair_station_pump.svg",
                 tags: [this.repairStation, this.tools, this.nopump]
             },
 
