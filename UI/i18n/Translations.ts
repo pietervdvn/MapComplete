@@ -19,12 +19,21 @@ export default class Translations {
                 fr: 'Cyclofix - Une carte ouverte pour les cyclistes'
             }),
             description: new T({
-                en: "On this map we want to collect data about the whereabouts of bicycle pumps and public racks in Brussels and everywhere else." +
-                    "As a result, cyclists will be able to quickly find the nearest infrastructure for their needs.",
-                nl: "Op deze kaart willen we gegevens verzamelen over de locatie van fietspompen en openbare stelplaatsen in Brussel en overal ter wereld." +
-                    "Hierdoor kunnen fietsers snel de dichtstbijzijnde infrastructuur vinden die voldoet aan hun behoeften.",
-                fr: "Sur cette carte, nous voulons collecter des données sur la localisation des pompes à vélo et des supports publics à Bruxelles." +
-                    "Les cyclistes pourront ainsi trouver rapidement l'infrastructure la plus proche pour leurs besoins."
+                en: "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>" + //this works in spoken language: ; think about the nearest bike repair station for example
+                    "You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. " +
+                    "You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>" +
+                    "All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>" +
+                    "For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+                nl: "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>" + //; denk bijvoorbeeld aan de dichtstbijzijnde fietsherstelplaats.
+                    "U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. " +
+                    "U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>" +
+                    "Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>" +
+                    "Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+                fr: "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>" + //; pensez par exemple à la station de réparation de vélos la plus proche.
+                    "Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. " +
+                    "Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>" +
+                    "Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>" +
+                    "Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
             }),
             freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'TODO: fr'}),
             parking: {
@@ -33,13 +42,13 @@ export default class Translations {
                 type: {
                     render: new T({
                         en: 'This is a bicycle parking of the type: {bicycle_parking}',
-                        nl: 'Dit is een fietsenparking van het type: {bicycle_parking}',
+                        nl: 'Dit is een fietsparking van het type: {bicycle_parking}',
                         fr: 'Ceci est un parking à vélo de type {bicycle_parking}'
                     }),
                     template: new T({en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: "D'autres types: $$$"}),
                     question: new T({
                         en: 'What is the type of this bicycle parking?',
-                        nl: 'Van welk type is deze fietsenparking?',
+                        nl: 'Van welk type is deze fietsparking?',
                         fr: 'Quelle type de parking s\'agit il? '
                     }),
                     eg: new T({en: ", for example", nl: ", bijvoorbeeld", fr: ",par example"}),
@@ -50,11 +59,10 @@ export default class Translations {
                     rack: new T({en: 'Rack', nl: 'Rek', fr: 'Râtelier'}),
                     "two-tier": new T({en: 'Two-tiered', nl: 'Dubbel (twee verdiepingen)', fr: 'Superposé'}),
                 },
-
                 operator: {
                     render: new T({
                         en: 'This bike parking is operated by {operator}',
-                        nl: 'Deze fietsenparking wordt beheerd door {operator}',
+                        nl: 'Deze fietsparking wordt beheerd door {operator}',
                         fr: 'Ce parking est opéré par {operator}'
                     }),
                     template: new T({en: 'A different operator: $$$', nl: 'Een andere beheerder: $$$', fr: 'TODO: fr'}),
@@ -68,15 +76,95 @@ export default class Translations {
                         nl: 'Wordt beheerd door een privépersoon',
                         fr: 'Opéré par un tier privé'
                     }),
+                },
+                covered: {
+                    question: new T({
+                        en: 'Is this parking covered? Also select "covered" for indoor parkings.',
+                        nl: 'Is deze parking overdekt? Selecteer ook "overdekt" voor fietsparkings binnen een gebouw.',
+                        fr: 'TODO: fr'
+                    }),
+                    yes: new T({
+                        en: 'This parking is covered (it has a roof)',
+                        nl: 'Deze parking is overdekt (er is een afdak)',
+                        fr: 'TODO: fr'
+                    }),
+                    no: new T({
+                        en: 'This parking is not covered',
+                        nl: 'Deze parking is niet overdekt',
+                        fr: 'TODO: fr'
+                    })
+                },
+                capacity: {
+                    question: new T({
+                        en: "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
+                        nl: "Voor hoeveel fietsen is er bij deze fietsparking plaats (inclusief potentiëel bakfietsen)?",
+                        fr: "TODO: fr"
+                    }),
+                    template: new T({
+                        en: "This parking fits $nat$ bikes",
+                        nl: "Deze parking heeft plaats voor $nat$ fietsen",
+                        fr: "TODO: fr"
+                    }),
+                    render: new T({
+                        en: "Place for {capacity} bikes (in total)",
+                        nl: "Plaats voor {capacity} fietsen (in totaal)",
+                        fr: "TODO: fr"
+                    }),
+                },
+                capacity_cargo: {
+                    question: new T({
+                        en: "How many cargo bicycles fit in this bicycle parking?",
+                        nl: "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
+                        fr: "TODO: fr"
+                    }),
+                    template: new T({
+                        en: "This parking fits $nat$ cargo bikes",
+                        nl: "Deze parking heeft plaats voor $nat$ fietsen",
+                        fr: "TODO: fr"
+                    }),
+                    render: new T({
+                        en: "Place for {capacity:cargo_bike} cargo bikes",
+                        nl: "Plaats voor {capacity:cargo_bike} bakfietsen",
+                        fr: "TODO: fr"
+                    }),
+                },
+                access_cargo: {
+                    question: new T({
+                        en: "Does this bicycle parking have spots for cargo bikes?",
+                        nl: "Heeft deze fietsparking plaats voor bakfietsen?",
+                        fr: "TODO: fr"
+                    }),
+                    yes: new T({
+                        en: "This parking has room for cargo bikes",
+                        nl: "Deze parking is overdekt (er is een afdak)",
+                        fr: "TODO: fr"
+                    }),
+                    designated: new T({
+                        en: "This parking has designated (official) spots for cargo bikes.",
+                        nl: "Deze parking is overdekt (er is een afdak)",
+                        fr: "TODO: fr"
+                    }),
+                    no: new T({
+                        en: "You're not allowed to park cargo bikes",
+                        nl: "Je mag hier geen bakfietsen parkeren",
+                        fr: "TODO: fr"
+                    })
                 }
             },
             station: {
                 name: new T({
                     en: 'bike station (repair, pump or both)',
-                    nl: 'fietsstation (herstel, pomp of allebei)',
+                    nl: 'fietspunt (herstel, pomp of allebei)',
                     fr: 'station velo (réparation, pompe à vélo)'
                 }),
-                title: new T({en: 'Bike station', nl: 'Fietsstation', fr: 'Station vélo'}),
+                // title: new T({en: 'Bike station', nl: 'Fietsstation', fr: 'Station vélo'}), Old, non-dynamic title
+                titlePump: new T({en: 'Bike pump', nl: 'Fietspomp', fr: 'TODO: fr'}),
+                titleRepair: new T({en: 'Bike repair station', nl: 'Herstelpunt', fr: 'TODO: fr'}),
+                titlePumpAndRepair: new T({
+                    en: 'Bike station (pump & repair)',
+                    nl: 'Herstelpunt met pomp',
+                    fr: 'TODO: fr'
+                }),
                 manometer: {
                     question: new T({
                         en: 'Does the pump have a pressure indicator or manometer?',
@@ -84,7 +172,11 @@ export default class Translations {
                         fr: 'Est-ce que la pompe à un manomètre integré?'
                     }),
                     yes: new T({en: 'There is a manometer', nl: 'Er is een luchtdrukmeter', fr: 'Il y a un manomètre'}),
-                    no: new T({en: 'There is no manometer', nl: 'Er is geen luchtdrukmeter', fr: 'Il n\'y a pas de manomètre'}),
+                    no: new T({
+                        en: 'There is no manometer',
+                        nl: 'Er is geen luchtdrukmeter',
+                        fr: 'Il n\'y a pas de manomètre'
+                    }),
                     broken: new T({
                         en: 'There is manometer but it is broken',
                         nl: 'Er is een luchtdrukmeter maar die is momenteel defect',
@@ -144,8 +236,8 @@ export default class Translations {
                 },
                 chain: {
                     question: new T({
-                        en: 'Does this bike station have a special tool to repair your bike chain?',
-                        nl: 'Heeft dit fietsstation een speciale reparatieset voor je ketting?',
+                        en: 'Does this bike repair station have a special tool to repair your bike chain?',
+                        nl: 'Heeft dit herstelpunt een speciale reparatieset voor je ketting?',
                         fr: 'Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?'
                     }),
                     yes: new T({
@@ -162,7 +254,7 @@ export default class Translations {
                 operator: {
                     render: new T({
                         en: 'This bike station is operated by {operator}',
-                        nl: 'Dit fietsstation wordt beheerd door {operator}',
+                        nl: 'Dit fietspunt wordt beheerd door {operator}',
                         fr: 'Cette station vélo est opéré par {operator}'
                     }),
                     template: new T({en: 'A different operator: $$$', nl: 'Een andere beheerder: $$$', fr: 'TODO: fr'}),
@@ -180,7 +272,7 @@ export default class Translations {
                 services: {
                     question: new T({
                         en: 'Which services are available at this bike station?',
-                        nl: 'Welke functies biedt dit fietsstation?',
+                        nl: 'Welke functies biedt dit fietspunt?',
                         fr: 'Quels services sont valables à cette station vélo?'
                     }),
                     pump: new T({
@@ -203,7 +295,7 @@ export default class Translations {
                 stand: {
                     question: new T({
                         en: 'Does this bike station have a hook to suspend your bike with or a stand to elevate it?',
-                        nl: 'Heeft dit fietsstation een haak of standaard om je fiets op te hangen/zetten?',
+                        nl: 'Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?',
                         fr: 'Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l\'élevé?'
                     }),
                     yes: new T({en: 'There is a hook or stand', nl: 'Er is een haak of standaard', fr: 'Oui il y a un crochet ou une accroche'}),
@@ -211,16 +303,23 @@ export default class Translations {
                 }
             },
             shop: {
-                name: new T({en: 'bike shop', nl: 'fietswinkel', fr: 'magasin de vélo'}),
-                
-                title: new T({en: 'Bike shop', nl: 'Fietszaak', fr: 'Magasin de vélo'}),
-                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'Réparateur de vélo'}),
-                titleShop: new T({en: 'Bike repair/shop', nl: 'Fietswinkel', fr: 'Magasin et réparateur de vélo'}),
-                
-                titleNamed: new T({en: 'Bike repair/shop', nl: 'Fietszaak {name}', fr: 'Magasin de vélo'}),
-                titleRepairNamed: new T({en: 'Bike shop', nl: 'Fietsenmaker {name}', fr: 'Réparateur de vélo'}),
-                titleShopNamed: new T({en: 'Bike repair/shop', nl: 'Fietswinkel {name}', fr: 'Magasin et réparateur de vélo'}),
+                name: new T({en: 'bike repair/shop', nl: 'fietszaak', fr: 'magasin ou réparateur de vélo'}),
 
+                title: new T({en: 'Bike repair/shop', nl: 'Fietszaak', fr: 'Magasin et réparateur de vélo'}),
+                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'Réparateur de vélo'}),
+                titleShop: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'Magasin de vélo'}),
+
+                titleNamed: new T({
+                    en: 'Bike repair/shop {name}',
+                    nl: 'Fietszaak {name}',
+                    fr: 'Magasin et réparateur de vélo {name}'
+                }),
+                titleRepairNamed: new T({
+                    en: 'Bike repair {name}',
+                    nl: 'Fietsenmaker {name}',
+                    fr: 'Réparateur de vélo {name}'
+                }),
+                titleShopNamed: new T({en: 'Bike shop {name}', nl: 'Fietswinkel {name}', fr: 'Magasin de vélo {name}'}),
 
 
                 retail: {
@@ -229,7 +328,11 @@ export default class Translations {
                         nl: 'Verkoopt deze winkel fietsen?',
                         fr: 'Est-ce que ce magasin vend des vélos?'
                     }),
-                    yes: new T({en: 'This shop sells bikes', nl: 'Deze winkel verkoopt fietsen', fr: 'Ce magasin vend des vélos'}),
+                    yes: new T({
+                        en: 'This shop sells bikes',
+                        nl: 'Deze winkel verkoopt fietsen',
+                        fr: 'Ce magasin vend des vélos'
+                    }),
                     no: new T({
                         en: 'This shop doesn\'t sell bikes',
                         nl: 'Deze winkel verkoopt geen fietsen',
@@ -309,6 +412,33 @@ export default class Translations {
                         fr: 'Ce magasin n\'offre pas des outils pour réparer son vélo soi-même'
                     }),
                 }
+            },
+            nonBikeShop: {
+                name: new T({
+                    en: 'shop that sells/repairs bikes',
+                    nl: 'winkel die fietsen verkoopt/herstelt',
+                    fr: 'TODO: fr'
+                }),
+
+                title: new T({
+                    en: 'Shop that sells/repairs bikes',
+                    nl: 'Winkel die fietsen verkoopt/herstelt',
+                    fr: 'TODO: fr'
+                }),
+                titleRepair: new T({en: 'Shop that repairs bikes', nl: 'Winkel die fietsen herstelt', fr: 'TODO: fr'}),
+                titleShop: new T({en: 'Shop that sells bikes', nl: 'Winkel die fietsen verkoopt', fr: 'TODO: fr'}),
+
+                titleNamed: new T({
+                    en: '{name} (sells/repairs bikes)',
+                    nl: '{name} (verkoopt/herstelt fietsen)',
+                    fr: 'TODO: fr'
+                }),
+                titleRepairNamed: new T({
+                    en: '{name} (repairs bikes)',
+                    nl: '{name} (herstelt fietsen)',
+                    fr: 'TODO: fr'
+                }),
+                titleShopNamed: new T({en: '{name} (sells bikes)', nl: '{name} (verkoopt fietsen)', fr: 'TODO: fr'}),
             },
             drinking_water: {
                 title: new T({
@@ -526,6 +656,14 @@ export default class Translations {
                 phoneNumberIs: new T({
                     en: "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     nl: "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>"
+                }),
+                websiteOf: new T({
+                    en: "What is the website of {category}?",
+                    nl: "Wat is de website van {category}?"
+                }),
+                websiteIs: new T({
+                    en: "Website: <a href='{website}' target='_blank'>{website}</a>",
+                    nl: "Website: <a href='{website}' target='_blank'>{website}</a>"
                 })
 
             },
@@ -553,8 +691,6 @@ export default class Translations {
                 embedIntro: new T({
                     en: "<h3>Embed on your website</h3>Please, embed this map into your website. We encourage you to do it - you don't even have to ask permission. It is free, and always will be. The more people using this, the more valuable it becomes."
                 })
-
-
             }
         }
     }

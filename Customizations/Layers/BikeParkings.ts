@@ -1,16 +1,19 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {And, Or, Tag, TagsFilter} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
 import FixedText from "../Questions/FixedText";
 import ParkingType from "../Questions/bike/ParkingType";
+import ParkingCapacity from "../Questions/bike/ParkingCapacity";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import BikeStationOperator from "../Questions/bike/StationOperator";
 import Translations from "../../UI/i18n/Translations";
 import ParkingOperator from "../Questions/bike/ParkingOperator";
-import {TagRenderingOptions} from "../TagRendering";
+import ParkingAccessCargo from "../Questions/bike/ParkingAccessCargo";
+import ParkingCapacityCargo from "../Questions/bike/ParkingCapacityCargo";
 
 
 export default class BikeParkings extends LayerDefinition {
+        private readonly accessCargoDesignated = new Tag("cargo_bike", "designated");
+
     constructor() {
         super();
         this.name = Translations.t.cyclofix.parking.name;
@@ -28,14 +31,9 @@ export default class BikeParkings extends LayerDefinition {
             new ImageCarouselWithUploadConstructor(),
             //new ParkingOperator(),
             new ParkingType(),
-            new TagRenderingOptions({
-                question: "How many bicycles fit in this bicycle parking?",
-                freeform: {
-                    key: "capacity",
-                    renderTemplate: "Place for {capacity} bikes",
-                    template: "$nat$ bikes fit in here"
-                }
-            })
+            new ParkingCapacity(),
+            new ParkingAccessCargo(),
+            new ParkingCapacityCargo().OnlyShowIf(this.accessCargoDesignated)
         ];
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY;
 

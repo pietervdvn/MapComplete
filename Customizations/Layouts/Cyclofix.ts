@@ -5,6 +5,7 @@ import BikeShops from "../Layers/BikeShops";
 import Translations from "../../UI/i18n/Translations";
 import {DrinkingWater} from "../Layers/DrinkingWater";
 import Combine from "../../UI/Base/Combine";
+import BikeOtherShops from "../Layers/BikeOtherShops";
 
 
 export default class Cyclofix extends Layout {
@@ -13,7 +14,7 @@ export default class Cyclofix extends Layout {
             "cyclofix",
             ["en", "nl", "fr"],
             Translations.t.cyclofix.title,
-            [new BikeServices(), new BikeShops(), new DrinkingWater(), new BikeParkings()],
+            [new BikeServices(), new BikeShops(), new DrinkingWater(), new BikeParkings(), new BikeOtherShops()],
             16,
             50.8465573,
             4.3516970,

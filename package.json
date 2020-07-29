@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "start": "parcel *.html UI/** Logic/** assets/**/* vendor/* vendor/*/*",
+    "start": "parcel *.html UI/** Logic/** assets/**/* assets/* vendor/* vendor/*/*",
     "generate": "ts-node createLayouts.ts",
     "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/* assets/**/* vendor/* vendor/*/*",
     "clean": "./clean.sh",

@@ -956,6 +956,10 @@ form {
     font-weight: bold;
 }
 
+.question-text img {
+    max-width: 100%;
+}
+
 .question-subtext{
     font-size: medium;
     font-weight: normal;
