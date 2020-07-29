@@ -42,7 +42,7 @@ export default class Translations {
                         nl: 'Van welk type is deze fietsenparking?',
                         fr: 'Quelle type de parking s\'agit il? '
                     }),
-                    eg: new T({en: ", for example", nl: ", bijvoorbeeld"}, fr: ",par example"}),
+                    eg: new T({en: ", for example", nl: ", bijvoorbeeld", fr: ",par example"}),
                     stands: new T({en: 'Staple racks', nl: 'Nietjes', fr: 'Arceaux'}),
                     wall_loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'Pinces-roues'}),
                     handlebar_holder: new T({en: 'Handlebar holder', nl: 'Stuurhouder', fr: 'Support guidon'}),
@@ -382,14 +382,19 @@ export default class Translations {
             }),
             cco: new T({en: 'in the public domain', nl: 'in het publiek domein', fr: 'sur le domaine publique'}),
             ccbs: new T({en: 'under the CC-BY-SA-license', nl: 'onder de CC-BY-SA-licentie', fr: 'sous la license CC-BY-SA'}),
-            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'})
+            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
+            respectPrivacy: new T({
+                en: "Please respect privacy. Do not photograph people nor license plates",
+                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
+                fr: "TODO: fr"
+            })
         },
         centerMessage: {
             loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'chargement des données'}),
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
                 nl: 'Zoom in om de data te zien en te bewerken',
-                fr: 'Zchargement des données',
+                fr: 'Enlarger pour chargemer des données',
             }),
             ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}),
         },
