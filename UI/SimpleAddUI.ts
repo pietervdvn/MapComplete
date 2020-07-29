@@ -10,6 +10,7 @@ import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import {VerticalCombine} from "./Base/VerticalCombine";
+import Locale from "./i18n/Locale";
 
 interface Preset {
     description: string | UIElement,
@@ -47,6 +48,7 @@ export class SimpleAddUI extends UIElement {
                 addButtons: { description: string | UIElement, name: string | UIElement; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
     ) {
         super(zoomlevel);
+        this.ListenTo(Locale.language);
         this._zoomlevel = zoomlevel;
         this._lastClickLocation = lastClickLocation;
         this._changes = changes;
