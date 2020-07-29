@@ -21,8 +21,6 @@ form {
 }
 
 
-
-
 #leafletDiv {
     height: 100%;
 }
@@ -343,18 +341,14 @@ form {
 
 #welcomeMessage {
     display: inline-block;
-    background-color: white;
-    padding: 1em;
     margin-left: 3.5em;
-    padding-left: 1em;
-    padding-bottom: 2em;
     border-radius: 2em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    max-width: calc(max(35vw, 30em));
+    max-width: 30em;
+    width: 35vw;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
-    box-shadow: 0 0 10px #00000066;
 }
 
 #messagesbox {
@@ -647,32 +641,15 @@ form {
     height: auto;
 }
 
-#bottomRight {
+#top-right {
 
-    display: block ruby;
     position: absolute;
-
-    margin: auto;
-    right: 1%;
-    bottom: 1.5em;
-    height: auto;
-    min-height: 1em;
-    width: auto;
-
-    font-size: large;
-
-    padding: 2em;
-    border-radius: 2em;
+    display: block;
+    right: 0.5em;
+    top: 0.5em;
     z-index: 5000;
 
-    opacity: 1;
-    background-color: white;
 
-    transition: all 500ms linear;
-
-    text-align: center;
-    horiz-align: center;
-    font-weight: bold;
 }
 
 
@@ -844,7 +821,6 @@ form {
 
 
 .license-picker {
-    background-color: orange;
     float: left;
 }
 
@@ -1129,4 +1105,78 @@ form {
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-radius: 1.5em;
+}
+
+
+/******** TabbedElement ****/
+
+.tabs-header-bar {
+    padding-left: 1em;
+    padding-top: 10px; /* For the shadow */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: start;
+    background-color: white;
+}
+
+
+.tab-single-header img {
+    height: 3em;
+    width: 3em;
+    padding: 0.5em;
+}
+
+.tab-content {
+    padding: 1em;
+    z-index: 5002;
+    background-color: white;
+    position: relative;
+
+}
+
+.tab-single-header {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    box-shadow: 0 0 10px black;
+    z-index: 5000;
+    border-bottom: 1px solid white;
+    padding-bottom: 1px;
+}
+
+.tab-active {
+    background-color: white;
+    z-index: 5001;
+}
+
+.tab-non-active {
+    background-color: #e5f5ff;
+    opacity: 0.5;
+    border-bottom: 1px solid lightgray;
+}
+
+
+/****** ShareScreen *****/
+
+.literal-code {
+    display: inline-block;
+    background-color: lightgray;
+    padding: 0.5em;
+}
+
+.iframe-code-block {
+
+}
+
+.iframe-escape {
+    background-color: white;
+    border-radius: 2em;
+    display: block;
+}
+
+.iframe-escape img{
+    padding: 1em;
+    width: 2em;
+    height: 2em;
 }

@@ -103,22 +103,13 @@ export class WelcomeMessage extends UIElement {
     }
 
     InnerRender(): string {
-        return "<span id='welcomeMessage'>" +
+        return "<span>" +
             this.description.Render() +
             (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render() +
             this.tail.Render() +
             "<br/>" +
             this.languagePicker.Render() +
-            "</span>"
-
-            ;
-        /*
-        return new VariableUiElement(
-            this.userDetails.map((userdetails) => {
-            }),
-            function () {
-               
-            }).ListenTo(Locale.language);*/
+            "</span>";
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {

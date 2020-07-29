@@ -136,6 +136,8 @@ export abstract class UIElement extends UIEventSource<string>{
     public IsEmpty(): boolean {
         return this.InnerRender() === "";
     }
+    
 }
+
 
 

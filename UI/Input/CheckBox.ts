@@ -6,26 +6,26 @@ import instantiate = WebAssembly.instantiate;
 
 
 export class CheckBox extends UIElement{
-    private readonly _data: UIEventSource<boolean>;
+    public readonly isEnabled: UIEventSource<boolean>;
     private readonly _showEnabled: string|UIElement;
     private readonly _showDisabled: string|UIElement;
 
     constructor(showEnabled: string | UIElement, showDisabled: string | UIElement, data: UIEventSource<boolean> | boolean = false) {
         super(undefined);
-        this._data =
+        this.isEnabled =
             data instanceof UIEventSource ? data : new UIEventSource(data ?? false);
-        this.ListenTo(this._data);
+        this.ListenTo(this.isEnabled);
         this._showEnabled = showEnabled;
         this._showDisabled = showDisabled;
         const self = this;
         this.onClick(() => {
-            self._data.setData(!self._data.data);
+            self.isEnabled.setData(!self.isEnabled.data);
         })
 
     }
 
     InnerRender(): string {
-        if (this._data.data) {
+        if (this.isEnabled.data) {
             return Translations.W(this._showEnabled).Render();
         } else {
             return Translations.W(this._showDisabled).Render();
