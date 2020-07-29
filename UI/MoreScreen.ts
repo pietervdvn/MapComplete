@@ -13,9 +13,11 @@ import {SubtleButton} from "./Base/SubtleButton";
 
 export class MoreScreen extends UIElement {
     private currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>;
+    private currentLayout: string;
 
-    constructor(currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
+    constructor(currentLayout: string, currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
         super(currentLocation);
+        this.currentLayout = currentLayout;
         this.currentLocation = currentLocation;
     }
 
@@ -27,6 +29,9 @@ export class MoreScreen extends UIElement {
             const layout = AllKnownLayouts.allSets[k]
             if (layout.hideFromOverview) {
                 continue
+            }
+            if (layout.name === this.currentLayout) {
+                continue;
             }
 
             const linkText =

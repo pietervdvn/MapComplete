@@ -39,7 +39,7 @@ export class InitUiElements {
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
             {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen(layoutToUse, bm.Location)},
-            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen(bm.Location)}
+            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen(layoutToUse.name, bm.Location)}
         ])
 
         return fullOptions;
