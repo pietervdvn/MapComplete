@@ -17,7 +17,7 @@ export class SubtleButton extends UIElement{
     InnerRender(): string {
         return new Combine([
             '<span class="subtle-button">',
-            `<img src='${this.imageUrl}'>`,
+            this.imageUrl !== undefined ? `<img src='${this.imageUrl}'>` : "",
             this.message,
             '</span>'
         ]).Render();

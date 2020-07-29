@@ -19,9 +19,14 @@ export default class BikeParkings extends LayerDefinition {
         this.name = Translations.t.cyclofix.parking.name;
         this.icon = "./assets/bike/parking.svg";
         this.overpassFilter = new Tag("amenity", "bicycle_parking");
-        this.newElementTags = [
-            new Tag("amenity", "bicycle_parking"),
-        ];
+        this.presets = [{
+            title: Translations.t.cyclofix.parking.title,
+            icon: "/assets/bike/parking.svg",
+            tags: [
+                new Tag("amenity", "bicycle_parking"),
+            ]
+        }];
+
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;

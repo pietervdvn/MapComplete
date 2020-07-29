@@ -182,7 +182,8 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 // ------------- Setup the layers -------------------------------
 const addButtons: {
-    name: UIElement,
+    name: string | UIElement,
+    description: string | UIElement,
     icon: string,
     tags: Tag[],
     layerToAddTo: FilteredLayer
@@ -211,13 +212,17 @@ for (const layer of layoutToUse.layers) {
 
     const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
-    const addButton = {
-        name: Translations.W(layer.name),
-        icon: layer.icon,
-        tags: layer.newElementTags,
-        layerToAddTo: flayer
+    for (const preset of layer.presets) {
+
+        const addButton = {
+            name: preset.title,
+            description: preset.description,
+            icon: preset.icon,
+            tags: preset.tags,
+            layerToAddTo: flayer
+        }
+        addButtons.push(addButton);
     }
-    addButtons.push(addButton);
     flayers.push(flayer);
 }
 
@@ -240,7 +245,13 @@ if (flayers.length > 1) {
 }
 
 InitUiElements.OnlyIf(featureSwitchLayers, () => {
-    new CheckBox(layerControl, closedFilterButton).AttachTo("filter__selection");
+
+    const checkbox = new CheckBox(layerControl, closedFilterButton);
+    checkbox.AttachTo("filter__selection");
+    bm.Location.addCallback(() => {
+        checkbox.isEnabled.setData(false);
+    });
+    
 });
 
 

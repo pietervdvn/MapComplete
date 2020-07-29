@@ -24,9 +24,13 @@ export default class BikeShops extends LayerDefinition {
         this.name = Translations.t.cyclofix.shop.name
         this.icon = "./assets/bike/repair_shop.svg"
         this.overpassFilter = new Tag("shop", "bicycle");
-        this.newElementTags = [
-            new Tag("shop", "bicycle"),
-        ]
+        this.presets = [{
+            title: Translations.t.cyclofix.shop.title,
+            icon: "/assets/bike/repair_shop.svg",
+            tags: [
+                new Tag("shop", "bicycle"),
+            ]
+        }]
         this.maxAllowedOverlapPercentage = 10
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 

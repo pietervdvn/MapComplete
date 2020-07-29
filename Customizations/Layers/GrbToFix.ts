@@ -8,7 +8,7 @@ export class GrbToFix extends LayerDefinition {
         super();
 
         this.name = "grb";
-        this.newElementTags = undefined;
+        this.presets = [];
         this.icon = "./assets/star.svg";
         this.overpassFilter = new Regex("fixme", "GRB");
         this.minzoom = 13;

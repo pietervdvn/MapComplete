@@ -12,6 +12,7 @@ import {Widths} from "./Layers/Widths";
 import {StreetWidth} from "./Layouts/StreetWidth";
 import {NatureReserves} from "./Layers/NatureReserves";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
+import Translations from "../UI/i18n/Translations";
 
 export class AllKnownLayouts {
     public static allSets = AllKnownLayouts.AllLayouts();
@@ -36,6 +37,7 @@ export class AllKnownLayouts {
         const knownKeys = []
         for (const layout of layouts) {
             for (const layer of layout.layers) {
+                console.log("Adding ", Translations.W(layer.name).InnerRender());
                 const key = layer.overpassFilter.asOverpass().join("");
                 if (knownKeys.indexOf(key) >= 0) {
                     continue;

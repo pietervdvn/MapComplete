@@ -13,7 +13,7 @@ export class LayerDefinition {
 
 
     /**
-     * This name is shown in the 'add XXX button'
+     * This name is used in the 'hide or show this layer'-buttons
      */
     name: string | UIElement;
 
@@ -26,7 +26,12 @@ export class LayerDefinition {
      * These tags are added whenever a new point is added by the user on the map.
      * This is the ideal place to add extra info, such as "fixme=added by MapComplete, geometry should be checked"
      */
-    newElementTags: Tag[]
+    presets: {
+        tags: Tag[],
+        title: string | UIElement,
+        description?: string | UIElement,
+        icon: string
+    }[]
     /**
      * Not really used anymore
      * This is meant to serve as icon in the buttons
@@ -91,9 +96,14 @@ export class LayerDefinition {
     static WAYHANDLING_CENTER_AND_WAY = 2;
     
     constructor(options: {
-        name: string | UIElement,
+        name: string,
         description: string | UIElement,
-        newElementTags: Tag[],
+        presets: {
+            tags: Tag[],
+            title: string | UIElement,
+            description?: string | UIElement,
+            icon: string
+        }[],
         icon: string,
         minzoom: number,
         overpassFilter: TagsFilter,
@@ -112,7 +122,7 @@ export class LayerDefinition {
         this.name = options.name;
         this.description = options.description;
         this.maxAllowedOverlapPercentage = options.maxAllowedOverlapPercentage ?? 0;
-        this.newElementTags = options.newElementTags;
+        this.presets = options.presets;
         this.icon = options.icon;
         this.minzoom = options.minzoom;
         this.overpassFilter = options.overpassFilter;

@@ -18,20 +18,26 @@ export class NatureReserves extends LayerDefinition {
             new Or([new Tag("leisure", "nature_reserve"), new Tag("boundary", "protected_area")]);
         this.maxAllowedOverlapPercentage = 10;
 
-        this.newElementTags = [new Tag("leisure", "nature_reserve"),
-            new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
+        this.presets = [{
+            title: "Natuurreservaat",
+            description: "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
+            icon: undefined,
+            tags: [new Tag("leisure", "nature_reserve"),
+                new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
+        }
+        ];
         this.minzoom = 13;
         this.title = new NameInline("natuurreservaat");
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-         /*   new TagRenderingOptions({
-                freeform: {
-                    key: "_surface",
-                    renderTemplate: "{_surface}m²",
-                    template: "$$$"
-                }
-            }),*/
+            /*   new TagRenderingOptions({
+                   freeform: {
+                       key: "_surface",
+                       renderTemplate: "{_surface}m²",
+                       template: "$$$"
+                   }
+               }),*/
             new NameQuestion(),
             new AccessTag(),
             new OperatorTag(),

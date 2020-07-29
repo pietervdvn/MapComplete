@@ -54,7 +54,7 @@ export class InitUiElements {
 
         const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
         const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
-        new CheckBox(
+        const checkbox = new CheckBox(
             new Combine([
                 "<span class='collapse-button'>", close, "</span>",
                 "<span id='welcomeMessage'>", fullOptions.onClick(() => {
@@ -62,6 +62,14 @@ export class InitUiElements {
             new Combine(["<span class='open-button'>", help, "</span>"])
             , true
         ).AttachTo("messagesbox");
+        let dontCloseYet = true;
+        bm.Location.addCallback(() => {
+            if(dontCloseYet){
+                dontCloseYet = false;
+                return;
+            }
+            checkbox.isEnabled.setData(false);
+        })
 
 
         const fullOptions2 = this.CreateWelcomePane(layoutToUse, osmConnection, bm);

@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Tag, TagsFilter, Or} from "../../Logic/TagsFilter";
+import {And, Tag, TagsFilter, Or, Not} from "../../Logic/TagsFilter";
 import BikeStationChain from "../Questions/bike/StationChain";
 import BikeStationPumpTools from "../Questions/bike/StationPumpTools";
 import BikeStationStand from "../Questions/bike/StationStand";
@@ -16,10 +16,14 @@ import { TagRenderingOptions } from "../TagRendering";
 
 
 export default class BikeStations extends LayerDefinition {
+    private readonly repairStation = new Tag("amenity", "bicycle_repair_station");
     private readonly pump = new Tag("service:bicycle:pump", "yes");
+    private readonly nopump = new Tag("service:bicycle:pump", "no");
     private readonly pumpOperationalAny = new Tag("service:bicycle:pump:operational_status", "yes");
     private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok"), new Tag("service:bicycle:pump:operational_status", "")]);
     private readonly tools = new Tag("service:bicycle:tools", "yes");
+    private readonly notools = new Tag("service:bicycle:tools", "no");
+
     private readonly to = Translations.t.cyclofix.station
 
     constructor() {
@@ -27,13 +31,30 @@ export default class BikeStations extends LayerDefinition {
         this.name = Translations.t.cyclofix.station.name;
         this.icon = "./assets/bike/repair_station_pump.svg";
 
-        this.overpassFilter = new And([
-            new Tag("amenity", "bicycle_repair_station")
-        ]);
+        const tr = Translations.t.cyclofix.station
+        this.overpassFilter = this.repairStation;
+        this.presets = [
+            {
+                title: tr.titlePump,
+                description: tr.services.pump,
+                icon: "/assets/bike/pump.svg",
+                tags: [this.repairStation, this.pump, this.notools]
+            },
+            {
+                title: tr.titleRepair,
+                description: tr.services.tools,
+                icon: "/assets/bike/repair_station.svg",
+                tags: [this.repairStation, this.tools, this.nopump]
+            },
+            {
+                title: tr.titlePumpAndRepair,
+                description: tr.services.both,
+                icon: "/assets/bike/repair_station_pump.svg",
+                tags: [this.repairStation, this.tools, this.nopump]
+            },
 
-        this.newElementTags = [
-            new Tag("amenity", "bicycle_repair_station")
-        ];
+        ]
+
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;

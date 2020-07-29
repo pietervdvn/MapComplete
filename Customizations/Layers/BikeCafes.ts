@@ -35,10 +35,18 @@ export default class BikeCafes extends LayerDefinition {
                 new Tag("pub", "cycling")
             ])
         ]) 
-        this.newElementTags = [
-            new Tag("amenity", "pub"),
-            new Tag("pub", "cycling"),
-        ];
+        
+        this.presets = [
+            {
+                title: Translations.t.cyclofix.cafe.title,
+                icon: "/assets/bike/cafe.svg",
+                tags :  [
+                    new Tag("amenity", "pub"),
+                    new Tag("pub", "cycling"),
+                ]
+            }
+        ]
+        
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;
