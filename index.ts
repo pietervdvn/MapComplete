@@ -212,7 +212,7 @@ for (const layer of layoutToUse.layers) {
 
     const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
 
-    for (const preset of layer.presets) {
+    for (const preset of layer.presets ?? []) {
 
         if (preset.icon === undefined) {
             const tags = {};
