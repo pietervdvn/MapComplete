@@ -31,6 +31,7 @@ export class OsmConnection {
         this.userDetails.data.osmConnection = this;
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
+        
 
         if (this.auth.authenticated()) {
             this.AttemptLogin(); // Also updates the user badge
