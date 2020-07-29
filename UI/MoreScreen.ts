@@ -44,7 +44,7 @@ export class MoreScreen extends UIElement {
                         "</b>",
                         "<br/>",
                         Translations.W(layout.description),
-                    ]), linkText);
+                    ]), {url: linkText, newTab: false});
 
             els.push(link)
         }

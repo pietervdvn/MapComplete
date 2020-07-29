@@ -365,8 +365,6 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             .split("$");
         const type = prepost[1];
         
-        console.log("PrePost:", prepost);
-
         let isValid = TagRenderingOptions.inputValidation[type];
         if (isValid === undefined) {
             isValid = (str) => true;

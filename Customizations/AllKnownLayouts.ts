@@ -37,7 +37,6 @@ export class AllKnownLayouts {
         const knownKeys = []
         for (const layout of layouts) {
             for (const layer of layout.layers) {
-                console.log("Adding ", Translations.W(layer.name).InnerRender());
                 const key = layer.overpassFilter.asOverpass().join("");
                 if (knownKeys.indexOf(key) >= 0) {
                     continue;

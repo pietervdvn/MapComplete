@@ -17,33 +17,54 @@ export class UserDetails {
 
 export class OsmConnection {
 
-    private auth = new osmAuth({
-        oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-        oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-        auto: true // show a login form if the user is not authenticated and
-                   // you try to do a call
-    });
+    public auth;
     public userDetails: UIEventSource<UserDetails>;
     private _dryRun: boolean;
 
-    constructor(dryRun: boolean) {
+    constructor(dryRun: boolean, oauth_token: UIEventSource<string>) {
+
+        this.auth = new osmAuth({
+            oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+            oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+            oauth_token: oauth_token.data,
+            singlepage: true,
+            landing: "./index.html",
+            auto: true // show a login form if the user is not authenticated and
+                       // you try to do a call
+
+        });
+
+
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails());
         this.userDetails.data.osmConnection = this;
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
-        
 
+
+        if(oauth_token.data !== undefined){
+            console.log(oauth_token.data)
+            const self = this;
+            this.auth.bootstrapToken(oauth_token.data, 
+                (x) => {
+                    console.log("Called back: ", x)
+                    self.AttemptLogin();
+                }, this.auth);
+            
+            oauth_token.setData(undefined);
+           
+        }
         if (this.auth.authenticated()) {
             this.AttemptLogin(); // Also updates the user badge
-        }else{
+        } else {
             console.log("Not authenticated");
         }
 
-        
-        if(dryRun){
+
+        if (dryRun) {
             console.log("DRYRUN ENABLED");
         }
 
+       
     }
 
     public LogOut() {

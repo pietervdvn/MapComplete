@@ -36,7 +36,7 @@ export class SimpleAddUI extends UIElement {
     private confirmButton: UIElement = undefined;
     private cancelButton: UIElement;
     private goToInboxButton: UIElement = new SubtleButton("/assets/envelope.svg", 
-        Translations.t.general.goToInbox, "https://www.openstreetmap.org/messages/inbox");
+        Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor(zoomlevel: UIEventSource<{ zoom: number }>,
                 lastClickLocation: UIEventSource<{ lat: number, lon: number }>,

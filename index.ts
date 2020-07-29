@@ -128,15 +128,15 @@ const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: numb
 
 locationControl.addCallback((latlonz) => {
     zoom.setData(latlonz.zoom.toString());
-    lat.setData(latlonz.lat.toString().substr(0,6));
-    lon.setData(latlonz.lon.toString().substr(0,6));
+    lat.setData(latlonz.lat.toString().substr(0, 6));
+    lon.setData(latlonz.lon.toString().substr(0, 6));
 })
 
 
 // ----------------- Prepare the important objects -----------------
-
-const osmConnection = new OsmConnection(
-    QueryParameters.GetQueryParameter("test", "false").data === "true"
+const osmConnection: OsmConnection =  new OsmConnection(
+    QueryParameters.GetQueryParameter("test", "false").data === "true",
+    QueryParameters.GetQueryParameter("oauth_token", undefined)
 );
 
 
@@ -222,7 +222,7 @@ for (const layer of layoutToUse.layers) {
                     tags[k] = tag.value;
                 }
             }
-            preset.icon = layer.style(tags).icon.iconUrl;
+            preset.icon = layer.style(tags)?.icon?.iconUrl;
         }
 
         const addButton = {
