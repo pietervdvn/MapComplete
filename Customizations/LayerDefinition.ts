@@ -30,7 +30,7 @@ export class LayerDefinition {
         tags: Tag[],
         title: string | UIElement,
         description?: string | UIElement,
-        icon: string
+        icon?: string
     }[]
     /**
      * Not really used anymore
@@ -102,7 +102,7 @@ export class LayerDefinition {
             tags: Tag[],
             title: string | UIElement,
             description?: string | UIElement,
-            icon: string
+            icon?: string
         }[],
         icon: string,
         minzoom: number,

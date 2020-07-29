@@ -14,7 +14,6 @@ export class Map extends LayerDefinition {
         this.overpassFilter = new Tag("information", "map");
         this.presets = [{
             title: "Map",
-            icon: "/assets/map.svg",
             tags: [new Tag("tourism", "information"), new Tag("information", "map")]
         }];
 

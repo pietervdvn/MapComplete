@@ -16,7 +16,6 @@ export class Bookcases extends LayerDefinition {
             tags: [new Tag("amenity", "public_bookcase")],
             description: "Add a new bookcase here",
             title: Translations.t.bookcases.bookcase,
-            icon: "/assets/bookcase.svg"
         }];
         this.icon = "./assets/bookcase.svg";
         this.overpassFilter = new Tag("amenity", "public_bookcase");

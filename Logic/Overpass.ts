@@ -16,14 +16,12 @@ export class Overpass {
 
     public buildQuery(bbox: string): string {
         const filters = this._filter.asOverpass()
-        console.log(filters)
         let filter = ""
         for (const filterOr of filters) {
             filter += 'nwr' + filterOr + ';'
         }
         const query =
             '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;'
-        console.log(query)
         return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
     }
 

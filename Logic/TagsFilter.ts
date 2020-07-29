@@ -276,7 +276,8 @@ export class TagUtils {
     static ApplyTemplate(template: string, tags: any): string {
         for (const k in tags) {
             while (template.indexOf("{" + k + "}") >= 0) {
-                template = template.replace("{" + k + "}", tags[k]);
+                const escaped = tags[k].replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                template = template.replace("{" + k + "}", escaped);
             }
         }
         return template;

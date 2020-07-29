@@ -14,7 +14,6 @@ export class Viewpoint extends LayerDefinition {
             presets: [{
                 title: "Bezienswaardigheid (andere)",
                 description: "Wens je een foto toe te voegen dat geen park, bos of (erkend) natuurreservaat is? Dit kan hiermee",
-                icon: "/assets/viewpoint.svg",
                 tags: [new Tag("tourism", "viewpoint"),
                     new Tag("fixme", "Added with mapcomplete. This viewpoint should probably me merged with some existing feature")]
             }],

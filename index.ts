@@ -214,6 +214,17 @@ for (const layer of layoutToUse.layers) {
 
     for (const preset of layer.presets) {
 
+        if (preset.icon === undefined) {
+            const tags = {};
+            for (const tag of preset.tags) {
+                const k = tag.key;
+                if (typeof (k) === "string") {
+                    tags[k] = tag.value;
+                }
+            }
+            preset.icon = layer.style(tags).icon.iconUrl;
+        }
+
         const addButton = {
             name: preset.title,
             description: preset.description,
@@ -283,6 +294,9 @@ InitUiElements.OnlyIf(featureSwitchAddNew, () => {
  * This is given to the div which renders fullscreen on mobile devices
  */
 selectedElement.addCallback((feature) => {
+    if (feature?.feature?.properties === undefined) {
+        return;
+    }
     const data = feature.feature.properties;
     // Which is the applicable set?
     for (const layer of layoutToUse.layers) {

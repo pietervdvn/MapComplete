@@ -54,7 +54,6 @@ export class Park extends LayerDefinition {
             title: "Park",
             description: "Voeg een ontbrekend park toe. Een park is een groene ruimte die openbaar is." +
                 "Typisch vind je er banken, vuilbakken, standbeelden, ... ",
-            icon: undefined,
             tags: [new Tag("leisure", "park"),
                 new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
         }];

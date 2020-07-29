@@ -21,7 +21,6 @@ export class NatureReserves extends LayerDefinition {
         this.presets = [{
             title: "Natuurreservaat",
             description: "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
-            icon: undefined,
             tags: [new Tag("leisure", "nature_reserve"),
                 new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
         }

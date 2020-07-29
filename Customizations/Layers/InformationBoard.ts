@@ -13,12 +13,10 @@ export class InformationBoard extends LayerDefinition {
             overpassFilter: new Tag("tourism", "information"),
             presets: [{
                 title: "Informatiebord",
-                icon: "/assets/nature/info.png",
                 tags: [new Tag("tourism", "information")]
             },
                 {
                     title: "Kaart",
-                    icon: "/assets/map.svg",
                     tags: [new Tag("tourism", "information"), new Tag("information", "map")]
                 }],
             maxAllowedOverlapPercentage: 0,

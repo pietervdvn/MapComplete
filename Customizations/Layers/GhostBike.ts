@@ -20,7 +20,6 @@ export class GhostBike extends LayerDefinition {
             {
                 title: "Ghost bike",
                 description: "Add a missing ghost bike to the map",
-                icon: "/assets/bike/ghost.svg",
                 tags: [new Tag("historic", "memorial"), new Tag("memorial", "ghost_bike")]
             }
         ]
