@@ -16,7 +16,7 @@ export class Layout {
     public name: string;
     public icon: string = "./assets/logo.svg";
     public title: UIElement;
-    public description: string | UIElement = Translations.t.general.about;
+    public description: string | UIElement;
     public socialImage: string = ""
     
     public layers: LayerDefinition[];

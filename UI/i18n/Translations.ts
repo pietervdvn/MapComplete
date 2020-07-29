@@ -668,19 +668,19 @@ export default class Translations {
 
             },
             openStreetMapIntro: new T({
-                en: "<h2>An Open Map</h2>" +
+                en: "<h3>An Open Map</h3>" +
                     "<p></p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit?" +
                     "A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p>" +
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>)." +
                     " On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p>" +
                     "<p>A ton of people and application already use OpenStreetMap:  <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, but also the maps at Facebook, Intsagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap." +
                     "If you change something here, it'll be reflected in those applications too - after their next update!</p>",
-                nl: "<h2>Een open kaart</h2>" +
+                nl: "<h3>Een open kaart</h3>" +
                     "<p>Zou het niet fantastisch zijn als er een open kaart zou zijn, die door iedereen aangepast én gebruikt kon worden? Waar iedereen zijn interesses aan zou kunnen toevoegen?" +
                     "Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p>" +
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href='https://osm.org/copyright' target='_blank'>bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt." +
                     "Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p>" +
-                    "<p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram, ... Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p>" +
+                    "<p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/> Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p>" +
                     "<p></p>Kortom, als je hier een antwoord geeft of een fout aanpast, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>"
             }),
             
@@ -690,6 +690,14 @@ export default class Translations {
                 }),
                 embedIntro: new T({
                     en: "<h3>Embed on your website</h3>Please, embed this map into your website. We encourage you to do it - you don't even have to ask permission. It is free, and always will be. The more people using this, the more valuable it becomes."
+                })
+            },
+            morescreen: {
+                intro:new T({
+                    en:"<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                }),
+                streetcomplete: new T({
+                    en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 })
             }
         }

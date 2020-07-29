@@ -10,6 +10,7 @@ import {OsmConnection} from "./Logic/OsmConnection";
 import {Basemap} from "./Logic/Basemap";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UIElement} from "./UI/UIElement";
+import {MoreScreen} from "./UI/MoreScreen";
 
 export class InitUiElements {
 
@@ -30,18 +31,26 @@ export class InitUiElements {
     }
 
 
-    static InitWelcomeMessage(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap,
-                              fullScreenMessage: UIEventSource<UIElement>) {
+    private static CreateWelcomePane(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap) {
 
-        const welcome = new WelcomeMessage(layoutToUse,
-            Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage),
-            osmConnection);
+        const welcome = new WelcomeMessage(layoutToUse, Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage), osmConnection)
 
         const fullOptions = new TabbedComponent([
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
-            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen(layoutToUse, bm.Location)}
+            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen(layoutToUse, bm.Location)},
+            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen(bm.Location)}
         ])
+
+        return fullOptions;
+
+    }
+
+
+    static InitWelcomeMessage(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap,
+                              fullScreenMessage: UIEventSource<UIElement>) {
+
+        const fullOptions = this.CreateWelcomePane(layoutToUse, osmConnection, bm);
 
         const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
         const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
@@ -55,15 +64,7 @@ export class InitUiElements {
         ).AttachTo("messagesbox");
 
 
-        const welcome2 = new WelcomeMessage(layoutToUse, Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage), osmConnection)
-
-        const fullOptions2 = new TabbedComponent([
-            {header: `<img src='${layoutToUse.icon}'>`, content: welcome2},
-            {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
-            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen(layoutToUse, bm.Location)}
-        ])
-
-
+        const fullOptions2 = this.CreateWelcomePane(layoutToUse, osmConnection, bm);
         fullScreenMessage.setData(fullOptions2)
         new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
             fullScreenMessage.setData(fullOptions2)

@@ -1184,3 +1184,26 @@ form {
     width: 2em;
     height: 2em;
 }
+
+/** Switch layout **/
+
+.switch-layout a{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: large;
+    margin: 0.5em;
+    background-color: #e5f5ff;
+    border-radius: 1em;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+
+}
+
+.switch-layout a img{
+    width: 3em;
+    max-height: 3em;
+    margin-right: 0.5em;
+    padding: 0.5em;
+}
