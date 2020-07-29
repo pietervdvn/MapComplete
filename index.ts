@@ -320,8 +320,9 @@ InitUiElements.OnlyIf(featureSwitchWelcomeMessage, () => {
     InitUiElements.InitWelcomeMessage(layoutToUse, osmConnection, bm, fullScreenMessage)
 });
 
-if (window != window.top || featureSwitchIframe.data !== "false") {
-    new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pencil.svg'></span></a>`).AttachTo("top-right")
+if ((window != window.top && featureSwitchWelcomeMessage.data === "false") || featureSwitchIframe.data !== "false") {
+    console.log("WELCOME? ",featureSwitchWelcomeMessage.data)
+    new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
 }
 
 
