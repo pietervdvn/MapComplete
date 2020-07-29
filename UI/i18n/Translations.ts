@@ -19,21 +19,21 @@ export default class Translations {
                 fr: 'Cyclofix - Une carte ouverte pour les cyclistes'
             }),
             description: new T({
-                en: "Welcome to CycloFix, the open map for cyclists!" +
-                    "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs; think about the nearest bike repair station for example." +
-                    "You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner." +
-                    "You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions."+
-                    "All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
-                nl: "Welkom bij CycloFix, de open kaart voor fietsers!" +
-                    "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften; denk bijvoorbeeld aan de dichtstbijzijnde fietsherstelplaats." +
-                    "U kunt uw exacte locatie volgen (alleen mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn." +
-                    "U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden." +
-                    "Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.",
-                fr: "Bienvenue sur CycloFix, la carte ouverte aux cyclistes!" +
-                    "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins; pensez par exemple à la station de réparation de vélos la plus proche." +
-                    "Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche." +
-                    "Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions." +
-                    "Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres."
+                en: "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>" + //this works in spoken language: ; think about the nearest bike repair station for example
+                    "You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. " +
+                    "You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>" +
+                    "All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>" +
+                    "For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+                nl: "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>" + //; denk bijvoorbeeld aan de dichtstbijzijnde fietsherstelplaats.
+                    "U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. " +
+                    "U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>" +
+                    "Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>" +
+                    "Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+                fr: "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>" + //; pensez par exemple à la station de réparation de vélos la plus proche.
+                    "Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. " +
+                    "Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>" +
+                    "Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>" +
+                    "Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
             }),
             freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'TODO: fr'}),
             parking: {
