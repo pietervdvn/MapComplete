@@ -111,6 +111,14 @@ export class Tag extends TagsFilter {
 }
 
 
+export function anyValueExcept(key: string, exceptValue: string) {
+    return new And([
+        new Tag(key, "*"),
+        new Tag(key, exceptValue, true)
+    ])
+}
+
+
 export class Or extends TagsFilter {
     public or: TagsFilter[]
 

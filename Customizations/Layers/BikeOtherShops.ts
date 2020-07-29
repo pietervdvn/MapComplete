@@ -1,6 +1,6 @@
 import { LayerDefinition } from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
-import {And, Tag, Or} from "../../Logic/TagsFilter";
+import {And, Tag, Or, anyValueExcept} from "../../Logic/TagsFilter";
 import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
 import ShopRetail from "../Questions/bike/ShopRetail";
 import ShopPump from "../Questions/bike/ShopPump";
@@ -13,13 +13,6 @@ import { TagRenderingOptions } from "../TagRendering";
 import { PhoneNumberQuestion } from "../Questions/PhoneNumberQuestion";
 import Website from "../Questions/Website";
 
-
-function anyValueExcept(key: string, exceptValue: string) {
-    return new And([
-        new Tag(key, "*"),
-        new Tag(key, exceptValue, true)
-    ])
-}
 
 export default class BikeOtherShops extends LayerDefinition {
     private readonly sellsBikes = new Tag("service:bicycle:retail", "yes")

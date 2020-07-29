@@ -271,174 +271,246 @@ export default class Translations {
                 },
                 services: {
                     question: new T({
-                        en: 'Which services are available at this bike station?',
-                        nl: 'Welke functies biedt dit fietspunt?',
-                        fr: 'Quels services sont valables à cette station vélo?'
+                        en: "Which services are available at this bike station?",
+                        nl: "Welke functies biedt dit fietspunt?",
+                        fr: "Quels services sont valables à cette station vélo?"
                     }),
                     pump: new T({
                         // Note: this previously read: a pump is available. It is not because the pump is present, that it is available (e.g. broken)
-                        en: 'There is only a pump present',
-                        nl: 'Er is enkel een pomp aanwezig',
-                        fr: 'Il y a seulement une pompe'
+                        en: "There is only a pump present",
+                        nl: "Er is enkel een pomp aanwezig",
+                        fr: "Il y a seulement une pompe"
                     }),
                     tools: new T({
-                        en: 'There are only tools (screwdrivers, pliers...) aanwezig',
-                        nl: 'Er is enkel gereedschap aanwezig (schroevendraaier, tang...)',
-                        fr: 'Il y a seulement des outils (tournevis, pinces...'
+                        en: "There are only tools (screwdrivers, pliers...) aanwezig",
+                        nl: "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
+                        fr: "Il y a seulement des outils (tournevis, pinces..."
                     }),
                     both: new T({
-                        en: 'There are both tools and a pump present',
-                        nl: 'Er is zowel een pomp als gereedschap aanwezig',
-                        fr: 'IL y a des outils et une pompe'
+                        en: "There are both tools and a pump present",
+                        nl: "Er is zowel een pomp als gereedschap aanwezig",
+                        fr: "IL y a des outils et une pompe"
                     }),
                 },
                 stand: {
                     question: new T({
-                        en: 'Does this bike station have a hook to suspend your bike with or a stand to elevate it?',
-                        nl: 'Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?',
-                        fr: 'Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l\'élevé?'
+                        en: "Does this bike station have a hook to suspend your bike with or a stand to elevate it?",
+                        nl: "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
+                        fr: "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?"
                     }),
-                    yes: new T({en: 'There is a hook or stand', nl: 'Er is een haak of standaard', fr: 'Oui il y a un crochet ou une accroche'}),
-                    no: new T({en: 'There is no hook or stand', nl: 'Er is geen haak of standaard', fr: 'Non il n\'y pas de crochet ou d\'accroche'}),
+                    yes: new T({en: "There is a hook or stand", nl: "Er is een haak of standaard", fr: "Oui il y a un crochet ou une accroche"}),
+                    no: new T({en: "There is no hook or stand", nl: "Er is geen haak of standaard", fr: "Non il n'y pas de crochet ou d'accroche"}),
                 }
             },
             shop: {
-                name: new T({en: 'bike repair/shop', nl: 'fietszaak', fr: 'magasin ou réparateur de vélo'}),
-
-                title: new T({en: 'Bike repair/shop', nl: 'Fietszaak', fr: 'Magasin et réparateur de vélo'}),
-                titleRepair: new T({en: 'Bike repair', nl: 'Fietsenmaker', fr: 'Réparateur de vélo'}),
-                titleShop: new T({en: 'Bike shop', nl: 'Fietswinkel', fr: 'Magasin de vélo'}),
+                name: new T({en: "bike repair/shop", nl: "fietszaak", fr: "magasin ou réparateur de vélo"}),
+                
+                title: new T({en: "Bike repair/shop", nl: "Fietszaak", fr: "Magasin et réparateur de vélo"}),
+                titleRepair: new T({en: "Bike repair", nl: "Fietsenmaker", fr: "Réparateur de vélo"}),
+                titleShop: new T({en: "Bike shop", nl: "Fietswinkel", fr: "Magasin de vélo"}),
 
                 titleNamed: new T({
-                    en: 'Bike repair/shop {name}',
-                    nl: 'Fietszaak {name}',
-                    fr: 'Magasin et réparateur de vélo {name}'
+                    en: "Bike repair/shop {name}",
+                    nl: "Fietszaak {name}",
+                    fr: "Magasin et réparateur de vélo {name}"
                 }),
                 titleRepairNamed: new T({
-                    en: 'Bike repair {name}',
-                    nl: 'Fietsenmaker {name}',
-                    fr: 'Réparateur de vélo {name}'
+                    en: "Bike repair {name}",
+                    nl: "Fietsenmaker {name}",
+                    fr: "Réparateur de vélo {name}"
                 }),
-                titleShopNamed: new T({en: 'Bike shop {name}', nl: 'Fietswinkel {name}', fr: 'Magasin de vélo {name}'}),
+                titleShopNamed: new T({
+                    en: "Bike shop {name}",
+                    nl: "Fietswinkel {name}",
+                    fr: "Magasin de vélo {name}"
+                }),
 
 
                 retail: {
                     question: new T({
-                        en: 'Does this shop sell bikes?',
-                        nl: 'Verkoopt deze winkel fietsen?',
-                        fr: 'Est-ce que ce magasin vend des vélos?'
+                        en: "Does this shop sell bikes?",
+                        nl: "Verkoopt deze winkel fietsen?",
+                        fr: "Est-ce que ce magasin vend des vélos?"
                     }),
                     yes: new T({
-                        en: 'This shop sells bikes',
-                        nl: 'Deze winkel verkoopt fietsen',
-                        fr: 'Ce magasin vend des vélos'
+                        en: "This shop sells bikes",
+                        nl: "Deze winkel verkoopt fietsen",
+                        fr:  "Ce magasin vend des vélos"
                     }),
                     no: new T({
-                        en: 'This shop doesn\'t sell bikes',
-                        nl: 'Deze winkel verkoopt geen fietsen',
-                        fr: 'Ce magasin ne vend pas de vélo'
+                        en: "This shop doesn't sell bikes",
+                        nl: "Deze winkel verkoopt geen fietsen",
+                        fr: "Ce magasin ne vend pas de vélo"
                     }),
                 },
                 repair: {
                     question: new T({
-                        en: 'Does this shop repair bikes?',
-                        nl: 'Verkoopt deze winkel fietsen?',
-                        fr: 'Est-ce que ce magasin répare des vélos?'
+                        en: "Does this shop repair bikes?",
+                        nl: "Herstelt deze winkel fietsen?",
+                        fr: "Est-ce que ce magasin répare des vélos?"
                     }),
-                    yes: new T({en: 'This shop repairs bikes', nl: 'Deze winkel herstelt fietsen', fr: 'Ce magasin répare des vélos'}),
+                    yes: new T({en: "This shop repairs bikes", nl: "Deze winkel herstelt fietsen", fr: "Ce magasin répare des vélos"}),
                     no: new T({
-                        en: 'This shop doesn\'t repair bikes',
-                        nl: 'Deze winkel herstelt geen fietsen',
-                        fr: 'Ce magasin ne répare pas les vélos'
+                        en: "This shop doesn;t repair bikes",
+                        nl: "Deze winkel herstelt geen fietsen",
+                        fr: "Ce magasin ne répare pas les vélos"
                     }),
-                    sold: new T({en: 'This shop only repairs bikes bought here', nl: 'Deze winkel herstelt enkel fietsen die hier werden gekocht', fr: 'Ce magasin ne répare seulement les vélos achetés là-bas'}),
-                    brand: new T({en: 'This shop only repairs bikes of a certain brand', nl: 'Deze winkel herstelt enkel fietsen van een bepaald merk', fr: 'Ce magasin ne répare seulement des marques spécifiques'}),
+                    sold: new T({en: "This shop only repairs bikes bought here", nl: "Deze winkel herstelt enkel fietsen die hier werden gekocht", fr: "Ce magasin ne répare seulement les vélos achetés là-bas"}),
+                    brand: new T({en: "This shop only repairs bikes of a certain brand", nl: "Deze winkel herstelt enkel fietsen van een bepaald merk", fr: "Ce magasin ne répare seulement des marques spécifiques"}),
                 },
                 rental: {
                     question: new T({
-                        en: 'Does this shop rent out bikes?',
-                        nl: 'Verhuurt deze winkel fietsen?',
-                        fr: 'Est-ce ce magasin loue des vélos?'
+                        en: "Does this shop rent out bikes?",
+                        nl: "Verhuurt deze winkel fietsen?",
+                        fr: "Est-ce ce magasin loue des vélos?"
                     }),
-                    yes: new T({en: 'This shop rents out bikes', nl: 'Deze winkel verhuurt fietsen', fr: 'Ce magasin loue des vélos'}),
+                    yes: new T({en: "This shop rents out bikes", nl: "Deze winkel verhuurt fietsen", fr: "Ce magasin loue des vélos"}),
                     no: new T({
-                        en: 'This shop doesn\'t rent out bikes',
-                        nl: 'Deze winkel verhuurt geen fietsen',
-                        fr: 'Ce magasin ne loue pas de vélos'
+                        en: "This shop doesn't rent out bikes",
+                        nl: "Deze winkel verhuurt geen fietsen",
+                        fr: "Ce magasin ne loue pas de vélos"
                     }),
                 },
                 pump: {
                     question: new T({
-                        en: 'Does this shop offer a bike pump for use by anyone?',
-                        nl: 'Biedt deze winkel een fietspomp aan voor iedereen?',
-                        fr: 'Est-ce que ce magasin offre une pompe en accès libre?'
+                        en: "Does this shop offer a bike pump for use by anyone?",
+                        nl: "Biedt deze winkel een fietspomp aan voor iedereen?",
+                        fr: "Est-ce que ce magasin offre une pompe en accès libre?"
                     }),
                     yes: new T({
-                        en: 'This shop offers a bike pump for anyone',
-                        nl: 'Deze winkel biedt geen fietspomp aan voor eender wie',
-                        fr: 'Ce magasin offre une pompe en acces libre'
+                        en: "This shop offers a bike pump for anyone",
+                        nl: "Deze winkel biedt geen fietspomp aan voor eender wie",
+                        fr: "Ce magasin offre une pompe en acces libre"
                     }),
                     no: new T({
-                        en: 'This shop doesn\'t offer a bike pump for anyone',
-                        nl: 'Deze winkel biedt een fietspomp aan voor iedereen',
-                        fr: 'Ce magasin n\offre pas de pompe en libre accès'
+                        en: "This shop doesn't offer a bike pump for anyone",
+                        nl: "Deze winkel biedt een fietspomp aan voor iedereen",
+                        fr: "Ce magasin n'offre pas de pompe en libre accès"
                     })
                 },
                 qName: {
-                    question: new T({en: 'What is the name of this bicycle shop?', nl: 'Wat is de naam van deze fietszaak?', fr: 'Quel est le nom du magasin de vélo?'}),
-                    render: new T({en: 'This bicycle shop is called {name}', nl: 'Deze fietszaak heet <b>{name}</b>', fr: 'Ce magasin s\appelle <b>{name}</b>'}),
-                    template: new T({en: 'This bicycle shop is called: $$$', nl: 'Deze fietszaak heet: <b>$$$</b>', fr: 'Ce magasin s\appelle <b>{$$$</b>'})
+                    question: new T({en: "What is the name of this bicycle shop?", nl: "Wat is de naam van deze fietszaak?", fr: "Quel est le nom du magasin de vélo?"}),
+                    render: new T({en: "This bicycle shop is called {name}", nl: "Deze fietszaak heet <b>{name}</b>", fr: "Ce magasin s'appelle <b>{name}</b>"}),
+                    template: new T({en: "This bicycle shop is called: $$$", nl: "Deze fietszaak heet: <b>$$$</b>", fr: "Ce magasin s'appelle <b>$$$</b>"})
                 },
                 secondHand: {
-                    question: new T({en: 'Does this shop sell second-hand bikes?', nl: 'Verkoopt deze winkel tweedehands fietsen?', fr: 'Est-ce ce magasin vend des vélos d\'occasion'}),
-                    yes: new T({en: 'This shop sells second-hand bikes', nl: 'Deze winkel verkoopt tweedehands fietsen', fr: 'Ce magasin vend des vélos d\'occasion'}),
-                    no: new T({en: 'This shop doesn\'t sell second-hand bikes', nl: 'Deze winkel verkoopt geen tweedehands fietsen', fr: 'Ce magasin ne vend pas de vélos d\'occasion'}),
-                    only: new T({en: 'This shop only sells second-hand bikes', nl: 'Deze winkel verkoopt enkel tweedehands fietsen', fr: 'Ce magasin vend seulement des vélos d\'occasion'}),
+                    question: new T({en: "Does this shop sell second-hand bikes?", nl: "Verkoopt deze winkel tweedehands fietsen?", fr: "Est-ce ce magasin vend des vélos d'occasion"}),
+                    yes: new T({en: "This shop sells second-hand bikes", nl: "Deze winkel verkoopt tweedehands fietsen", fr: "Ce magasin vend des vélos d'occasion"}),
+                    no: new T({en: "This shop doesn't sell second-hand bikes", nl: "Deze winkel verkoopt geen tweedehands fietsen", fr: "Ce magasin ne vend pas de vélos d'occasion"}),
+                    only: new T({en: "This shop only sells second-hand bikes", nl: "Deze winkel verkoopt enkel tweedehands fietsen", fr: "Ce magasin vend seulement des vélos d'occasion"}),
                 },
                 diy: {
                     question: new T({
-                        en: 'Are there tools here to repair your own bike?',
-                        nl: 'Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?',
-                        fr: 'Est-ce qu\'il y a des outils pour réparer son vélo dans ce magasin?',
+                        en: "Are there tools here to repair your own bike?",
+                        nl: "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
+                        fr: "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin?",
                     }),
                     yes: new T({
-                        en: 'This shop offers tools for DIY repair',
-                        nl: 'Deze winkel biedt gereedschap aan om je fiets zelf te herstellen',
-                        fr: 'Ce magasin offre des outils pour réparer son vélo soi-même'
+                        en: "This shop offers tools for DIY repair",
+                        nl: "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen",
+                        fr: "Ce magasin offre des outils pour réparer son vélo soi-même"
                     }),
                     no: new T({
-                        en: 'This shop doesn\'t offer tools for DIY repair',
-                        nl: 'Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen',
-                        fr: 'Ce magasin n\'offre pas des outils pour réparer son vélo soi-même'
+                        en: "This shop doesn't offer tools for DIY repair",
+                        nl: "Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen",
+                        fr: "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
                     }),
                 }
             },
-            nonBikeShop: {
+            cafe: {
+                name: new T({en: "bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
+                title: new T({en: "Bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
+                qName: {
+                    question: new T({en: "What is the name of this bike cafe?", nl: "Wat is de naam van dit fietscafé?", fr: "TODO: fr"}),
+                    render: new T({en: "This bike cafe is called {name}", nl: "Dit fietscafé heet <b>{name}</b>", fr: "TODO: fr"}),
+                    template: new T({en: "This bike cafe is called: $$$", nl: "Dit fietscafé heet: <b>$$$</b>", fr: "TODO: fr"})
+                },
+                repair: {
+                    question: new T({
+                        en: "Does this bike cafe repair bikes?",
+                        nl: "Verkoopt dit fietscafé fietsen?",
+                        fr: "TODO: fr?"
+                    }),
+                    yes: new T({en: "This bike cafe repairs bikes", nl: "Dit fietscafé herstelt fietsen", fr: "TODO: fr"}),
+                    no: new T({
+                        en: "This bike cafe doesn;t repair bikes",
+                        nl: "Dit fietscafé herstelt geen fietsen",
+                        fr: "TODO: fr"
+                    })
+                },
+                pump: {
+                    question: new T({
+                        en: "Does this bike cafe offer a bike pump for use by anyone?",
+                        nl: "Biedt dit fietscafé een fietspomp aan voor iedereen?",
+                        fr: "TODO: fr"
+                    }),
+                    yes: new T({
+                        en: "This bike cafe offers a bike pump for anyone",
+                        nl: "Dit fietscafé biedt geen fietspomp aan voor eender wie",
+                        fr: "TODO: fr"
+                    }),
+                    no: new T({
+                        en: "This bike cafe doesn't offer a bike pump for anyone",
+                        nl: "Dit fietscafé biedt een fietspomp aan voor iedereen",
+                        fr: "TODO: fr"
+                    })
+                },
+                diy: {
+                    question: new T({
+                        en: "Are there tools here to repair your own bike?",
+                        nl: "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
+                        fr: "TODO: fr",
+                    }),
+                    yes: new T({
+                        en: "This bike cafe offers tools for DIY repair",
+                        nl: "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
+                        fr: "TODO: fr"
+                    }),
+                    no: new T({
+                        en: "This bike cafe doesn't offer tools for DIY repair",
+                        nl: "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
+                        fr: "TODO: fr"
+                    })
+                }
+            },
+            nonBikeShop: {             
                 name: new T({
-                    en: 'shop that sells/repairs bikes',
-                    nl: 'winkel die fietsen verkoopt/herstelt',
-                    fr: 'TODO: fr'
+                    en: "shop that sells/repairs bikes",
+                    nl: "winkel die fietsen verkoopt/herstelt",
+                    fr: "TODO: fr"
                 }),
 
                 title: new T({
-                    en: 'Shop that sells/repairs bikes',
-                    nl: 'Winkel die fietsen verkoopt/herstelt',
-                    fr: 'TODO: fr'
+                    en: "Shop that sells/repairs bikes",
+                    nl: "Winkel die fietsen verkoopt/herstelt",
+                    fr: "TODO: fr"
                 }),
-                titleRepair: new T({en: 'Shop that repairs bikes', nl: 'Winkel die fietsen herstelt', fr: 'TODO: fr'}),
-                titleShop: new T({en: 'Shop that sells bikes', nl: 'Winkel die fietsen verkoopt', fr: 'TODO: fr'}),
-
+                titleRepair: new T({
+                    en: "Shop that repairs bikes",
+                    nl: "Winkel die fietsen herstelt",
+                    fr: "TODO: fr"
+                }),
+                titleShop: new T({
+                    en: "Shop that sells bikes",
+                    nl: "Winkel die fietsen verkoopt",
+                    fr: "TODO: fr"
+                }),
+                
                 titleNamed: new T({
-                    en: '{name} (sells/repairs bikes)',
-                    nl: '{name} (verkoopt/herstelt fietsen)',
-                    fr: 'TODO: fr'
+                    en: "{name} (sells/repairs bikes)",
+                    nl: "{name} (verkoopt/herstelt fietsen)",
+                    fr: "TODO: fr"
                 }),
                 titleRepairNamed: new T({
-                    en: '{name} (repairs bikes)',
-                    nl: '{name} (herstelt fietsen)',
-                    fr: 'TODO: fr'
+                    en: "{name} (repairs bikes)",
+                    nl: "{name} (herstelt fietsen)",
+                    fr: "TODO: fr"
                 }),
-                titleShopNamed: new T({en: '{name} (sells bikes)', nl: '{name} (verkoopt fietsen)', fr: 'TODO: fr'}),
+                titleShopNamed: new T({
+                    en: "{name} (sells bikes)",
+                    nl: "{name} (verkoopt fietsen)",
+                    fr: "TODO: fr"
+                }),
             },
             drinking_water: {
                 title: new T({

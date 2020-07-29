@@ -3,10 +3,10 @@ import {Tag} from "../../../Logic/TagsFilter";
 import Translations from "../../../UI/i18n/Translations";
 
 
-export default class ShopDiy extends TagRenderingOptions {
+export default class CafeDiy extends TagRenderingOptions {
     constructor() {
         const key = 'service:bicycle:diy'
-        const to = Translations.t.cyclofix.shop.diy
+        const to = Translations.t.cyclofix.cafe.diy
         super({
             question: to.question,
             mappings: [
