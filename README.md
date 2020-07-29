@@ -17,7 +17,7 @@ Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `
 
 ## Examples
 
-- [Buurtnatuur.be](http://buurntatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also funded the initial development!
+- [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also funded the initial development!
 - [Cyclofix](https://pietervdvn.github.io/MapComplete/index.html?layout=cyclofix), further development on [Open Summer of Code](https://summerofcode.be/) funded by [Brussels Mobility](https://mobilite-mobiliteit.brussels/en). Landing page at https://cyclofix.osm.be/
 - [Bookcases](https://pietervdvn.github.io/MapComplete/index.html?quests=bookcases#element) cause I like to collect them.
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=metamap&z=14&lat=50.650&lon=4.2668#element), after a tweet
