@@ -394,7 +394,7 @@ export default class Translations {
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
                 nl: 'Zoom in om de data te zien en te bewerken',
-                fr: 'Enlarger pour chargemer des données',
+                fr: 'TODO Fr',
             }),
             ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}),
         },
