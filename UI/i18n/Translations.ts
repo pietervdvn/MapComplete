@@ -160,7 +160,11 @@ export default class Translations {
                 // title: new T({en: 'Bike station', nl: 'Fietsstation', fr: 'Station vélo'}), Old, non-dynamic title
                 titlePump: new T({en: 'Bike pump', nl: 'Fietspomp', fr: 'TODO: fr'}),
                 titleRepair: new T({en: 'Bike repair station', nl: 'Herstelpunt', fr: 'TODO: fr'}),
-                titlePumpAndRepair: new T({en: 'Bike station (pump & repair)', nl: 'Herstelpunt met pomp', fr: 'TODO: fr'}),
+                titlePumpAndRepair: new T({
+                    en: 'Bike station (pump & repair)',
+                    nl: 'Herstelpunt met pomp',
+                    fr: 'TODO: fr'
+                }),
                 manometer: {
                     question: new T({
                         en: 'Does the pump have a pressure indicator or manometer?',
@@ -168,7 +172,11 @@ export default class Translations {
                         fr: 'Est-ce que la pompe à un manomètre integré?'
                     }),
                     yes: new T({en: 'There is a manometer', nl: 'Er is een luchtdrukmeter', fr: 'Il y a un manomètre'}),
-                    no: new T({en: 'There is no manometer', nl: 'Er is geen luchtdrukmeter', fr: 'Il n\'y a pas de manomètre'}),
+                    no: new T({
+                        en: 'There is no manometer',
+                        nl: 'Er is geen luchtdrukmeter',
+                        fr: 'Il n\'y a pas de manomètre'
+                    }),
                     broken: new T({
                         en: 'There is manometer but it is broken',
                         nl: 'Er is een luchtdrukmeter maar die is momenteel defect',
@@ -300,11 +308,22 @@ export default class Translations {
                 title: new T({en: "Bike repair/shop", nl: "Fietszaak", fr: "Magasin et réparateur de vélo"}),
                 titleRepair: new T({en: "Bike repair", nl: "Fietsenmaker", fr: "Réparateur de vélo"}),
                 titleShop: new T({en: "Bike shop", nl: "Fietswinkel", fr: "Magasin de vélo"}),
-                
-                titleNamed: new T({en: "Bike repair/shop {name}", nl: "Fietszaak {name}", fr: "Magasin et réparateur de vélo {name}"}),
-                titleRepairNamed: new T({en: "Bike repair {name}", nl: "Fietsenmaker {name}", fr: "Réparateur de vélo {name}"}),
-                titleShopNamed: new T({en: "Bike shop {name}", nl: "Fietswinkel {name}", fr: "Magasin de vélo {name}"}),
 
+                titleNamed: new T({
+                    en: "Bike repair/shop {name}",
+                    nl: "Fietszaak {name}",
+                    fr: "Magasin et réparateur de vélo {name}"
+                }),
+                titleRepairNamed: new T({
+                    en: "Bike repair {name}",
+                    nl: "Fietsenmaker {name}",
+                    fr: "Réparateur de vélo {name}"
+                }),
+                titleShopNamed: new T({
+                    en: "Bike shop {name}",
+                    nl: "Fietswinkel {name}",
+                    fr: "Magasin de vélo {name}"
+                }),
 
 
                 retail: {
@@ -313,7 +332,11 @@ export default class Translations {
                         nl: "Verkoopt deze winkel fietsen?",
                         fr: "Est-ce que ce magasin vend des vélos?"
                     }),
-                    yes: new T({en: "This shop sells bikes", nl: "Deze winkel verkoopt fietsen", fr: "Ce magasin vend des vélos"}),
+                    yes: new T({
+                        en: "This shop sells bikes",
+                        nl: "Deze winkel verkoopt fietsen",
+                        fr:  "Ce magasin vend des vélos"
+                    }),
                     no: new T({
                         en: "This shop doesn't sell bikes",
                         nl: "Deze winkel verkoopt geen fietsen",
@@ -451,15 +474,43 @@ export default class Translations {
                 }
             },
             nonBikeShop: {             
-                name: new T({en: "shop that sells/repairs bikes", nl: "winkel die fietsen verkoopt/herstelt", fr: "TODO: fr"}),
+                name: new T({
+                    en: "shop that sells/repairs bikes",
+                    nl: "winkel die fietsen verkoopt/herstelt",
+                    fr: "TODO: fr"
+                }),
 
-                title: new T({en: "Shop that sells/repairs bikes", nl: "Winkel die fietsen verkoopt/herstelt", fr: "TODO: fr"}),
-                titleRepair: new T({en: "Shop that repairs bikes", nl: "Winkel die fietsen herstelt", fr: "TODO: fr"}),
-                titleShop: new T({en: "Shop that sells bikes", nl: "Winkel die fietsen verkoopt", fr: "TODO: fr"}),
+                title: new T({
+                    en: "Shop that sells/repairs bikes",
+                    nl: "Winkel die fietsen verkoopt/herstelt",
+                    fr: "TODO: fr"
+                }),
+                titleRepair: new T({
+                    en: "Shop that repairs bikes",
+                    nl: "Winkel die fietsen herstelt",
+                    fr: "TODO: fr"
+                }),
+                titleShop: new T({
+                    en: "Shop that sells bikes",
+                    nl: "Winkel die fietsen verkoopt",
+                    fr: "TODO: fr"
+                }),
                 
-                titleNamed: new T({en: "{name} (sells/repairs bikes)", nl: "{name} (verkoopt/herstelt fietsen)", fr: "TODO: fr"}),
-                titleRepairNamed: new T({en: "{name} (repairs bikes)", nl: "{name} (herstelt fietsen)", fr: "TODO: fr"}),
-                titleShopNamed: new T({en: "{name} (sells bikes)", nl: "{name} (verkoopt fietsen)", fr: "TODO: fr"}),
+                titleNamed: new T({
+                    en: "{name} (sells/repairs bikes)",
+                    nl: "{name} (verkoopt/herstelt fietsen)",
+                    fr: "TODO: fr"
+                }),
+                titleRepairNamed: new T({
+                    en: "{name} (repairs bikes)",
+                    nl: "{name} (herstelt fietsen)",
+                    fr: "TODO: fr"
+                }),
+                titleShopNamed: new T({
+                    en: "{name} (sells bikes)",
+                    nl: "{name} (verkoopt fietsen)",
+                    fr: "TODO: fr"
+                }),
             },
             drinking_water: {
                 title: new T({
@@ -685,6 +736,43 @@ export default class Translations {
                 websiteIs: new T({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
                     nl: "Website: <a href='{website}' target='_blank'>{website}</a>"
+                })
+
+            },
+            openStreetMapIntro: new T({
+                en: "<h3>An Open Map</h3>" +
+                    "<p></p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit?" +
+                    "A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p>" +
+                    "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>)." +
+                    " On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p>" +
+                    "<p>A ton of people and application already use OpenStreetMap:  <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, but also the maps at Facebook, Intsagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap." +
+                    "If you change something here, it'll be reflected in those applications too - after their next update!</p>",
+                nl: "<h3>Een open kaart</h3>" +
+                    "<p>Zou het niet fantastisch zijn als er een open kaart zou zijn, die door iedereen aangepast én gebruikt kon worden? Waar iedereen zijn interesses aan zou kunnen toevoegen?" +
+                    "Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p>" +
+                    "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href='https://osm.org/copyright' target='_blank'>bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt." +
+                    "Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p>" +
+                    "<p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/> Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p>" +
+                    "<p></p>Kortom, als je hier een antwoord geeft of een fout aanpast, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>"
+            }),
+            
+            sharescreen: {
+                intro: new T({
+                    en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:"
+                }),
+                addToHomeScreen: new T({
+                    en: "<h3>Add to your home screen</h3>You can easily add this website to your home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this."
+                }),
+                embedIntro: new T({
+                    en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes."
+                })
+            },
+            morescreen: {
+                intro:new T({
+                    en:"<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                }),
+                streetcomplete: new T({
+                    en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 })
             }
         }

@@ -7,10 +7,10 @@ export class QueryParameters {
 
     private static order: string [] = ["layout","test","z","lat","lon"];
     private static knownSources = QueryParameters.init();
+    private static defaults = {}
     
     private static addOrder(key){
         if(this.order.indexOf(key) < 0){
-            console.log("Adding order", key)
             this.order.push(key)
         }
     }
@@ -41,18 +41,22 @@ export class QueryParameters {
             if (QueryParameters.knownSources[key] === undefined || QueryParameters.knownSources[key].data === undefined) {
                 continue;
             }
+            if (QueryParameters.knownSources[key].data == QueryParameters.defaults[key]) {
+                continue;
+            }
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
         history.replaceState(null, "", "?" + parts.join("&"));
 
     }
 
-    public static GetQueryParameter(key: string): UIEventSource<string> {
+    public static GetQueryParameter(key: string, deflt: string): UIEventSource<string> {
+        QueryParameters.defaults[key] = deflt;
         if (QueryParameters.knownSources[key] !== undefined) {
             return QueryParameters.knownSources[key];
         }
         QueryParameters.addOrder(key);
-        const source = new UIEventSource<string>(undefined);
+        const source = new UIEventSource<string>(deflt);
         QueryParameters.knownSources[key] = source;
         source.addCallback(() => QueryParameters.Serialize())
         return source;

@@ -32,6 +32,9 @@ import {QueryParameters} from "./Logic/QueryParameters";
 import {Utils} from "./Utils";
 import {LocalStorageSource} from "./Logic/LocalStorageSource";
 import {Button} from "./UI/Base/Button";
+import {TabbedComponent} from "./UI/Base/TabbedComponent";
+import {ShareScreen} from "./UI/ShareScreen";
+import {InitUiElements} from "./InitUiElements";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -44,7 +47,7 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     // Set to true if testing and changes should NOT be saved
-    const testing = QueryParameters.GetQueryParameter("test");
+    const testing = QueryParameters.GetQueryParameter("test", "true");
     testing.setData(testing.data ?? "true")
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
@@ -54,7 +57,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "all"
+let defaultLayout = "bookcases"
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html") {
@@ -76,7 +79,7 @@ for (const k in AllKnownLayouts.allSets) {
     }
 }
 
-defaultLayout = QueryParameters.GetQueryParameter("layout").data ?? defaultLayout;
+defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
 console.log("Using layout: ", layoutToUse.name);
@@ -102,12 +105,20 @@ const fullScreenMessage = new UIEventSource<UIElement>(undefined);
 // The latest element that was selected - used to generate the right UI at the right place
 const selectedElement = new UIEventSource<{ feature: any }>(undefined);
 
-const zoom = QueryParameters.GetQueryParameter("z")
+const zoom = QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
     .syncWith(LocalStorageSource.Get("zoom"));
-const lat = QueryParameters.GetQueryParameter("lat")
+const lat = QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
     .syncWith(LocalStorageSource.Get("lat"));
-const lon = QueryParameters.GetQueryParameter("lon")
+const lon = QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
     .syncWith(LocalStorageSource.Get("lon"));
+
+const featureSwitchUserbadge = QueryParameters.GetQueryParameter("fs-userbadge", "true");
+const featureSwitchSearch = QueryParameters.GetQueryParameter("fs-search", "true");
+const featureSwitchWelcomeMessage = QueryParameters.GetQueryParameter("fs-welcome-message", "true");
+const featureSwitchLayers = QueryParameters.GetQueryParameter("fs-layers", "true");
+const featureSwitchEmbedded = QueryParameters.GetQueryParameter("fs-embedded", "true");
+const featureSwitchAddNew = QueryParameters.GetQueryParameter("fs-add-new", "true");
+const featureSwitchIframe = QueryParameters.GetQueryParameter("fs-iframe", "false");
 
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
@@ -126,7 +137,7 @@ locationControl.addCallback((latlonz) => {
 // ----------------- Prepare the important objects -----------------
 
 const osmConnection = new OsmConnection(
-    QueryParameters.GetQueryParameter("test").data === "true"
+    QueryParameters.GetQueryParameter("test", "false").data === "true"
 );
 
 
@@ -167,6 +178,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
     })
 ));
+
 
 
 // ------------- Setup the layers -------------------------------
@@ -228,7 +240,9 @@ if (flayers.length > 1) {
     layerControl = new Combine([layerSelection, backgroundMapPicker]);
 }
 
-new CheckBox(layerControl, closedFilterButton).AttachTo("filter__selection");
+InitUiElements.OnlyIf(featureSwitchLayers, () => {
+    new CheckBox(layerControl, closedFilterButton).AttachTo("filter__selection");
+});
 
 
 // ------------------ Setup various other UI elements ------------
@@ -240,16 +254,19 @@ Locale.language.addCallback(e => {
 })
 
 
-new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
-    return new SimpleAddUI(bm.Location,
-        bm.LastClickLocation,
-        changes,
-        selectedElement,
-        layerUpdater.runningQuery,
-        osmConnection.userDetails,
-        addButtons);
-    }
-);
+InitUiElements.OnlyIf(featureSwitchAddNew, () => {
+    new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
+            return new SimpleAddUI(bm.Location,
+                bm.LastClickLocation,
+                changes,
+                selectedElement,
+                layerUpdater.runningQuery,
+                osmConnection.userDetails,
+                addButtons);
+        }
+    );
+});
+
 
 /**
  * Show the questions and information for the selected element
@@ -283,40 +300,31 @@ selectedElement.addCallback((feature) => {
 
 const pendingChanges = new PendingChanges(changes, secondsTillChangesAreSaved,);
 
-new UserBadge(osmConnection.userDetails,
-    pendingChanges,
-    Locale.CreateLanguagePicker(layoutToUse),
-    bm)
-    .AttachTo('userbadge');
+InitUiElements.OnlyIf(featureSwitchUserbadge, () => {
 
-new SearchAndGo(bm).AttachTo("searchbox");
-
-const welcome = new WelcomeMessage(layoutToUse, 
-    Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage),
-    osmConnection).onClick(() => {
+    new UserBadge(osmConnection.userDetails,
+        pendingChanges,
+        Locale.CreateLanguagePicker(layoutToUse),
+        bm)
+        .AttachTo('userbadge');
 });
 
-const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
-const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
-new CheckBox(
-    new Combine([
-        new Combine(["<span class='collapse-button'>", close, "</span>"]),
-        welcome]),
-    new Combine(["<span class='open-button'>", help, "</span>"])
-    , true
-).AttachTo("messagesbox");
-
+InitUiElements.OnlyIf((featureSwitchSearch), () => {
+    new SearchAndGo(bm).AttachTo("searchbox");
+});
 
 new FullScreenMessageBoxHandler(fullScreenMessage, () => {
     selectedElement.setData(undefined)
 }).update();
 
-const welcome2 = new WelcomeMessage(layoutToUse, Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage), osmConnection)
-fullScreenMessage.setData(welcome2)
-new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
-    fullScreenMessage.setData(welcome2)
-})
-    .AttachTo("help-button-mobile")
+InitUiElements.OnlyIf(featureSwitchWelcomeMessage, () => {
+    InitUiElements.InitWelcomeMessage(layoutToUse, osmConnection, bm, fullScreenMessage)
+});
+
+if (window != window.top || featureSwitchIframe.data !== "false") {
+    new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pencil.svg'></span></a>`).AttachTo("top-right")
+}
+
 
 new CenterMessageBox(
     minZoom,

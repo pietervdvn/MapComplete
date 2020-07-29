@@ -16,7 +16,7 @@ export class Layout {
     public name: string;
     public icon: string = "./assets/logo.svg";
     public title: UIElement;
-    public description: string | UIElement = Translations.t.general.about;
+    public description: string | UIElement;
     public socialImage: string = ""
     
     public layers: LayerDefinition[];
@@ -103,22 +103,13 @@ export class WelcomeMessage extends UIElement {
     }
 
     InnerRender(): string {
-        return "<span id='welcomeMessage'>" +
+        return "<span>" +
             this.description.Render() +
             (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render() +
             this.tail.Render() +
             "<br/>" +
             this.languagePicker.Render() +
-            "</span>"
-
-            ;
-        /*
-        return new VariableUiElement(
-            this.userDetails.map((userdetails) => {
-            }),
-            function () {
-               
-            }).ListenTo(Locale.language);*/
+            "</span>";
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {

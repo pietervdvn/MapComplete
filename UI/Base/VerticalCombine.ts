@@ -10,7 +10,7 @@ export class VerticalCombine extends UIElement {
         this._className = className;
     }
 
-    protected InnerRender(): string {
+    InnerRender(): string {
         let html = "";
         for (const element of this._elements) {
             if (!element.IsEmpty()) {
