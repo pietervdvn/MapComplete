@@ -69,6 +69,7 @@ export class InitUiElements {
         new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
             fullScreenMessage.setData(fullOptions2)
         }).AttachTo("help-button-mobile");
+        
 
     }
 

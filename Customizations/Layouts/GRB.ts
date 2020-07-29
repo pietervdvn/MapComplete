@@ -18,5 +18,6 @@ export class GRB extends Layout {
 
             ,
             "", "");
+        this.hideFromOverview = true;
     }
 }

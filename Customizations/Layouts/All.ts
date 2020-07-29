@@ -15,5 +15,6 @@ export class All extends Layout{
             "Please log in",
             ""
         );
+        this.hideFromOverview = true;
     }
 }

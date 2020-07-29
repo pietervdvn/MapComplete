@@ -7,6 +7,8 @@ import {Utils} from "../Utils";
 import {link} from "fs";
 import {UIEventSource} from "./UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import Combine from "./Base/Combine";
+import {SubtleButton} from "./Base/SubtleButton";
 
 
 export class MoreScreen extends UIElement {
@@ -22,29 +24,28 @@ export class MoreScreen extends UIElement {
 
         const els: UIElement[] = []
         for (const k in AllKnownLayouts.allSets) {
-            if (k === "all") {
-                continue;
-            }
             const layout = AllKnownLayouts.allSets[k]
+            if (layout.hideFromOverview) {
+                continue
+            }
 
             const linkText =
-                `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${this.currentLocation.data.zoom}&lat=${this.currentLocation.data.lat}&lon=${this.currentLocation.data.lon}
-            `
-            const link = new FixedUiElement(
-                `
-                <span class="switch-layout">
-                 <a href="${linkText}" target="_blank">
-                <img src='${layout.icon}'>
-                 <div><b>${Utils.Upper(layout.name)}</b><br/>
-                  ${Translations.W(layout.description).Render()}</div>
-                </a>
-                </span>
-`
-            );
+                `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${this.currentLocation.data.zoom}&lat=${this.currentLocation.data.lat}&lon=${this.currentLocation.data.lon}`
+            const link =
+                new SubtleButton(layout.icon,
+                    new Combine([
+                        `<a href="${linkText}" target="_blank">`,
+                        "<div>",
+                        "<b>",
+                        Translations.W(layout.title),
+                        "</b>",
+                        "<br/>",
+                        Translations.W(layout.description),
+                        "</div>",
+                        "</a>"
+                    ]));
 
             els.push(link)
-
-
         }
 
 
