@@ -31,6 +31,13 @@ export class Layout {
     public startLat: number;
 
     public locationContains: string[];
+    
+    public enableAdd: boolean = true;
+    public enableUserBadge: boolean = true;
+    public enableSearch: boolean = true;
+    public enableLayers: boolean = true;
+    
+    public hideFromOverview : boolean = false;
 
     /**
      * 

@@ -22,10 +22,8 @@ export class MoreScreen extends UIElement {
 
         const els: UIElement[] = []
         for (const k in AllKnownLayouts.allSets) {
-            if (k === "all") {
-                continue;
-            }
             const layout = AllKnownLayouts.allSets[k]
+            if(layout.hideFromOverview){continue}
 
             const linkText =
                 `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${this.currentLocation.data.zoom}&lat=${this.currentLocation.data.lat}&lon=${this.currentLocation.data.lon}

@@ -87,6 +87,10 @@ export class StreetWidth extends Layout{
             "<li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder dat er een fietspad of een straat geblokkeerd wordt</li>" +
             "</ul>");
         this.icon = "assets/bug.svg";
+        this.enableSearch = false;
+        this.enableUserBadge = false;
+        this.enableAdd = false;
+        this.hideFromOverview = true;
 
     }
 }

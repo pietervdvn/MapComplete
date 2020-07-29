@@ -112,12 +112,11 @@ const lat = QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
 const lon = QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
     .syncWith(LocalStorageSource.Get("lon"));
 
-const featureSwitchUserbadge = QueryParameters.GetQueryParameter("fs-userbadge", "true");
-const featureSwitchSearch = QueryParameters.GetQueryParameter("fs-search", "true");
+const featureSwitchUserbadge = QueryParameters.GetQueryParameter("fs-userbadge", ""+layoutToUse.enableUserBadge);
+const featureSwitchSearch = QueryParameters.GetQueryParameter("fs-search", ""+layoutToUse.enableSearch);
 const featureSwitchWelcomeMessage = QueryParameters.GetQueryParameter("fs-welcome-message", "true");
-const featureSwitchLayers = QueryParameters.GetQueryParameter("fs-layers", "true");
-const featureSwitchEmbedded = QueryParameters.GetQueryParameter("fs-embedded", "true");
-const featureSwitchAddNew = QueryParameters.GetQueryParameter("fs-add-new", "true");
+const featureSwitchLayers = QueryParameters.GetQueryParameter("fs-layers", ""+layoutToUse.enableLayers);
+const featureSwitchAddNew = QueryParameters.GetQueryParameter("fs-add-new", ""+layoutToUse.enableAdd);
 const featureSwitchIframe = QueryParameters.GetQueryParameter("fs-iframe", "false");
 
 
