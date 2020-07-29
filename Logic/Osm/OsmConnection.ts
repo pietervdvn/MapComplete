@@ -1,6 +1,6 @@
 // @ts-ignore
 import osmAuth from "osm-auth";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "../../UI/UIEventSource";
 
 export class UserDetails {
 
@@ -26,7 +26,6 @@ export class OsmConnection {
         this.auth = new osmAuth({
             oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
             oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-            oauth_token: oauth_token.data,
             singlepage: true,
             landing: window.location.href,
             auto: true // show a login form if the user is not authenticated and

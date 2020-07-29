@@ -1,20 +1,14 @@
-import {OsmConnection} from "./Logic/OsmConnection";
-import {Changes} from "./Logic/Changes";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UserBadge} from "./UI/UserBadge";
-import {Basemap, BaseLayers} from "./Logic/Basemap";
 import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {Helpers} from "./Helpers";
-import {Tag, TagUtils} from "./Logic/TagsFilter";
-import {FilteredLayer} from "./Logic/FilteredLayer";
+import {TagUtils} from "./Logic/TagsFilter";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIElement} from "./UI/UIElement";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
-import {GeoLocationHandler} from "./Logic/GeoLocationHandler";
-import {StrayClickHandler} from "./Logic/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
@@ -22,7 +16,7 @@ import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {CheckBox} from "./UI/Input/CheckBox";
 import Translations from "./UI/i18n/Translations";
 import Locale from "./UI/i18n/Locale";
-import {Layout, WelcomeMessage} from "./Customizations/Layout";
+import {Layout} from "./Customizations/Layout";
 import {DropDown} from "./UI/Input/DropDown";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {LayerSelection} from "./UI/LayerSelection";
@@ -31,10 +25,12 @@ import {Img} from "./UI/Img";
 import {QueryParameters} from "./Logic/QueryParameters";
 import {Utils} from "./Utils";
 import {LocalStorageSource} from "./Logic/LocalStorageSource";
-import {Button} from "./UI/Base/Button";
-import {TabbedComponent} from "./UI/Base/TabbedComponent";
-import {ShareScreen} from "./UI/ShareScreen";
 import {InitUiElements} from "./InitUiElements";
+import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
+import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
+import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
+import {OsmConnection} from "./Logic/Osm/OsmConnection";
+import {Changes} from "./Logic/Osm/Changes";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -112,12 +108,18 @@ const lat = QueryParameters.GetQueryParameter("lat", undefined)
 const lon = QueryParameters.GetQueryParameter("lon", undefined)
     .syncWith(LocalStorageSource.Get("lon"));
 
-const featureSwitchUserbadge = QueryParameters.GetQueryParameter("fs-userbadge", ""+layoutToUse.enableUserBadge);
-const featureSwitchSearch = QueryParameters.GetQueryParameter("fs-search", ""+layoutToUse.enableSearch);
-const featureSwitchWelcomeMessage = QueryParameters.GetQueryParameter("fs-welcome-message", "true");
-const featureSwitchLayers = QueryParameters.GetQueryParameter("fs-layers", ""+layoutToUse.enableLayers);
-const featureSwitchAddNew = QueryParameters.GetQueryParameter("fs-add-new", ""+layoutToUse.enableAdd);
-const featureSwitchIframe = QueryParameters.GetQueryParameter("fs-iframe", "false");
+function featSw(key: string, deflt: boolean): UIEventSource<boolean> {
+    return QueryParameters.GetQueryParameter("fs-userbadge", "" + deflt).map((str) => {
+        return str !== "false";
+    });
+}
+
+const featureSwitchUserbadge = featSw("fs-userbadge", layoutToUse.enableUserBadge);
+const featureSwitchSearch = featSw("fs-search", layoutToUse.enableSearch);
+const featureSwitchLayers = featSw("fs-layers", layoutToUse.enableLayers);
+const featureSwitchAddNew = featSw("fs-add-new", layoutToUse.enableAdd);
+const featureSwitchWelcomeMessage = featSw("fs-welcome-message", true);
+const featureSwitchIframe = featSw("fs-iframe", false);
 
 
 const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
@@ -148,8 +150,8 @@ window.setLanguage = function (language: string) {
 }
 
 Locale.language.addCallback((currentLanguage) => {
-    console.log("REsetting languate to", layoutToUse.supportedLanguages[0])
     if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
+        console.log("Resetting languate to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
         // The current language is not supported -> switch to a supported one
         Locale.language.setData(layoutToUse.supportedLanguages[0]);
     }
@@ -181,63 +183,10 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 
 // ------------- Setup the layers -------------------------------
-const addButtons: {
-    name: string | UIElement,
-    description: string | UIElement,
-    icon: string,
-    tags: Tag[],
-    layerToAddTo: FilteredLayer
-}[]
-    = [];
 
-const flayers: FilteredLayer[] = []
+const layerSetup = InitUiElements.InitLayers(layoutToUse, osmConnection, changes, allElements, bm, fullScreenMessage, selectedElement);
 
-let minZoom = 0;
-
-for (const layer of layoutToUse.layers) {
-
-    const generateInfo = (tagsES, feature) => {
-
-        return new FeatureInfoBox(
-            feature,
-            tagsES,
-            layer.title,
-            layer.elementsToShow,
-            changes,
-            osmConnection.userDetails
-        )
-    };
-
-    minZoom = Math.max(minZoom, layer.minzoom);
-
-    const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
-
-    for (const preset of layer.presets ?? []) {
-
-        if (preset.icon === undefined) {
-            const tags = {};
-            for (const tag of preset.tags) {
-                const k = tag.key;
-                if (typeof (k) === "string") {
-                    tags[k] = tag.value;
-                }
-            }
-            preset.icon = layer.style(tags)?.icon?.iconUrl;
-        }
-
-        const addButton = {
-            name: preset.title,
-            description: preset.description,
-            icon: preset.icon,
-            tags: preset.tags,
-            layerToAddTo: flayer
-        }
-        addButtons.push(addButton);
-    }
-    flayers.push(flayer);
-}
-
-const layerUpdater = new LayerUpdater(bm, minZoom, flayers);
+const layerUpdater = new LayerUpdater(bm, layerSetup.minZoom, layerSetup.flayers);
 
 
 // --------------- Setting up layer selection ui --------
@@ -249,9 +198,9 @@ const openFilterButton = `
 
 let baseLayerOptions =  BaseLayers.baseLayers.map((layer) => {return {value: layer, shown: layer.name}});
 const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]);
-const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(flayers)]);
+const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(layerSetup.flayers)]);
 let layerControl = backgroundMapPicker;
-if (flayers.length > 1) {
+if (layerSetup.flayers.length > 1) {
     layerControl = new Combine([layerSelection, backgroundMapPicker]);
 }
 
@@ -283,7 +232,7 @@ InitUiElements.OnlyIf(featureSwitchAddNew, () => {
                 selectedElement,
                 layerUpdater.runningQuery,
                 osmConnection.userDetails,
-                addButtons);
+                layerSetup.presets);
         }
     );
 });
@@ -342,17 +291,17 @@ new FullScreenMessageBoxHandler(fullScreenMessage, () => {
 }).update();
 
 InitUiElements.OnlyIf(featureSwitchWelcomeMessage, () => {
-    InitUiElements.InitWelcomeMessage(layoutToUse, osmConnection, bm, fullScreenMessage)
+    InitUiElements.InitWelcomeMessage(layoutToUse,
+        featureSwitchUserbadge.data ? osmConnection : undefined, bm, fullScreenMessage)
 });
 
-if ((window != window.top && featureSwitchWelcomeMessage.data === "false") || featureSwitchIframe.data !== "false") {
-    console.log("WELCOME? ",featureSwitchWelcomeMessage.data)
+if ((window != window.top && !featureSwitchWelcomeMessage.data) || featureSwitchIframe.data) {
     new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
 }
 
 
 new CenterMessageBox(
-    minZoom,
+    layerSetup.minZoom,
     centerMessage,
     osmConnection,
     locationControl,

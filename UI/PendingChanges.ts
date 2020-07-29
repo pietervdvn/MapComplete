@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
-import {Changes} from "../Logic/Changes";
+import {Changes} from "../Logic/Osm/Changes";
 
 export class PendingChanges extends UIElement {
     private _pendingChangesCount: UIEventSource<number>;

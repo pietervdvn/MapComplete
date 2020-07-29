@@ -55,8 +55,8 @@ export class Regex extends TagsFilter {
 
 
 export class Tag extends TagsFilter {
-    public key: string | RegExp
-    public value: string | RegExp
+    public key: string
+    public value: string 
     public invertValue: boolean
 
     constructor(key: string | RegExp, value: string | RegExp, invertValue = false) {
@@ -69,7 +69,9 @@ export class Tag extends TagsFilter {
         }
 
         super()
+        // @ts-ignore
         this.key = key
+        // @ts-ignore
         this.value = value
         this.invertValue = invertValue
     }
@@ -107,10 +109,14 @@ export class Tag extends TagsFilter {
     }
 
     asOverpass(): string[] {
+        // @ts-ignore
         const keyIsRegex = this.key instanceof RegExp
+        // @ts-ignore
         const key = keyIsRegex ? (this.key as RegExp).source : this.key
 
+        // @ts-ignore
         const valIsRegex = this.value instanceof RegExp
+        // @ts-ignore
         const val = valIsRegex ? (this.value as RegExp).source : this.value
 
         const regexKeyPrefix = keyIsRegex ? '~' : ''

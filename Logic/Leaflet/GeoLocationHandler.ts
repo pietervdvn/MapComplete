@@ -1,8 +1,8 @@
 import {Basemap} from "./Basemap";
-import {UIEventSource} from "../UI/UIEventSource";
-import {UIElement} from "../UI/UIElement";
 import L from "leaflet";
-import {Helpers} from "../Helpers";
+import {UIEventSource} from "../../UI/UIEventSource";
+import {UIElement} from "../../UI/UIElement";
+import {Helpers} from "../../Helpers";
 
 export class GeoLocationHandler extends UIElement {
 

@@ -96,12 +96,12 @@ export class WelcomeMessage extends UIElement {
     constructor(layout: Layout,
                 languagePicker: UIElement,
                 osmConnection: OsmConnection) {
-        super(osmConnection.userDetails);
+        super(osmConnection?.userDetails);
         this.languagePicker = languagePicker;
         this.ListenTo(Locale.language);
         this.osmConnection = osmConnection;
         this.layout = layout;
-        this.userDetails = osmConnection.userDetails;
+        this.userDetails = osmConnection?.userDetails;
 
         this.description = layout.welcomeMessage;
         this.plzLogIn = layout.gettingStartedPlzLogin;
@@ -110,9 +110,15 @@ export class WelcomeMessage extends UIElement {
     }
 
     InnerRender(): string {
+
+        let loginStatus = "";
+        if (this.userDetails !== undefined) {
+            loginStatus = (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render();
+        }
+
         return "<span>" +
             this.description.Render() +
-            (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render() +
+            loginStatus +
             this.tail.Render() +
             "<br/>" +
             this.languagePicker.Render() +

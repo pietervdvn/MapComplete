@@ -1,11 +1,11 @@
-import {TagsFilter} from "./TagsFilter";
-import * as OsmToGeoJson from "osmtogeojson";
-import * as $ from "jquery";
-
-
 /**
  * Interfaces overpass to get all the latest data
  */
+import {Bounds} from "../Bounds";
+import {TagsFilter} from "../TagsFilter";
+import $ from "jquery"
+import * as OsmToGeoJson from "osmtogeojson";
+
 export class Overpass {
     private _filter: TagsFilter
     public static testUrl: string = null
@@ -14,7 +14,8 @@ export class Overpass {
         this._filter = filter
     }
 
-    public buildQuery(bbox: string): string {
+    
+    private buildQuery(bbox: string): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {
@@ -24,9 +25,10 @@ export class Overpass {
             '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;'
         return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
     }
-
-    queryGeoJson(bbox: string, continuation: ((any) => void), onFail: ((reason) => void)): void {
-        let query = this.buildQuery(bbox)
+    
+    queryGeoJson(bounds: Bounds, continuation: ((any) => void), onFail: ((reason) => void)): void {
+        
+        let query = this.buildQuery( "[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
         if(Overpass.testUrl !== null){
             console.log("Using testing URL")

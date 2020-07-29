@@ -1,11 +1,11 @@
 /**
  * Helps in uplaoding, by generating the rigth title, decription and by adding the tag to the changeset
  */
-import {UIEventSource} from "../UI/UIEventSource";
-import {ImageUploadFlow} from "../UI/ImageUploadFlow";
 import {Changes} from "./Changes";
+import {UIEventSource} from "../../UI/UIEventSource";
+import {ImageUploadFlow} from "../../UI/ImageUploadFlow";
 import {UserDetails} from "./OsmConnection";
-import {SlideShow} from "../UI/SlideShow";
+import {SlideShow} from "../../UI/SlideShow";
 
 export class OsmImageUploadHandler {
     private _tags: UIEventSource<any>;

@@ -2,17 +2,17 @@ import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import {Tag} from "../Logic/TagsFilter";
 import {FilteredLayer} from "../Logic/FilteredLayer";
-import {Changes} from "../Logic/Changes";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {Button} from "./Base/Button";
-import {UserDetails} from "../Logic/OsmConnection";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import Locale from "./i18n/Locale";
+import {Changes} from "../Logic/Osm/Changes";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
 
-interface Preset {
+export interface Preset {
     description: string | UIElement,
     name: string | UIElement,
     icon: string,
@@ -133,6 +133,11 @@ export class SimpleAddUI extends UIElement {
 
         let header: UIElement = Translations.t.general.add.header;
 
+        
+        if(this._userDetails === undefined){
+            return header.Render();
+        }
+        
         if (!this._userDetails.data.loggedIn) {
             return new Combine([header, Translations.t.general.add.pleaseLogin]).Render()
         }

@@ -6,25 +6,30 @@ import {ShareScreen} from "./UI/ShareScreen";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {CheckBox} from "./UI/Input/CheckBox";
 import Combine from "./UI/Base/Combine";
-import {OsmConnection} from "./Logic/OsmConnection";
-import {Basemap} from "./Logic/Basemap";
 import {UIEventSource} from "./UI/UIEventSource";
 import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
+import {Tag} from "./Logic/TagsFilter";
+import {FilteredLayer} from "./Logic/FilteredLayer";
+import {FeatureInfoBox} from "./UI/FeatureInfoBox";
+import {ElementStorage} from "./Logic/ElementStorage";
+import {Preset} from "./UI/SimpleAddUI";
+import {Changes} from "./Logic/Osm/Changes";
+import {OsmConnection} from "./Logic/Osm/OsmConnection";
+import {Basemap} from "./Logic/Leaflet/Basemap";
 
 export class InitUiElements {
 
 
-    static OnlyIf(featureSwitch: UIEventSource<string>, callback: () => void) {
+    static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
         featureSwitch.addCallback(() => {
 
-            if (featureSwitch.data === "false") {
-                return;
+            if (featureSwitch.data) {
+                callback();
             }
-            callback();
         });
 
-        if (featureSwitch.data !== "false") {
+        if (featureSwitch.data) {
             callback();
         }
 
@@ -33,7 +38,9 @@ export class InitUiElements {
 
     private static CreateWelcomePane(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap) {
 
-        const welcome = new WelcomeMessage(layoutToUse, Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage), osmConnection)
+        const welcome = new WelcomeMessage(layoutToUse,
+            Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage),
+            osmConnection)
 
         const fullOptions = new TabbedComponent([
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
@@ -77,8 +84,78 @@ export class InitUiElements {
         new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
             fullScreenMessage.setData(fullOptions2)
         }).AttachTo("help-button-mobile");
-        
 
+
+    }
+
+
+    static InitLayers(layoutToUse: Layout, osmConnection: OsmConnection,
+                      changes: Changes,
+                      allElements: ElementStorage,
+                      bm: Basemap,
+                      fullScreenMessage: UIEventSource<UIElement>,
+                      selectedElement: UIEventSource<any>): {
+        minZoom: number
+        flayers: FilteredLayer[],
+        presets: Preset[]
+    } {
+        const addButtons:Preset[]
+            = [];
+
+        const flayers: FilteredLayer[] = []
+
+        let minZoom = 0;
+
+        for (const layer of layoutToUse.layers) {
+
+            const generateInfo = (tagsES, feature) => {
+
+                return new FeatureInfoBox(
+                    feature,
+                    tagsES,
+                    layer.title,
+                    layer.elementsToShow,
+                    changes,
+                    osmConnection.userDetails
+                )
+            };
+
+            minZoom = Math.max(minZoom, layer.minzoom);
+
+            const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
+
+            for (const preset of layer.presets ?? []) {
+
+                if (preset.icon === undefined) {
+                    const tags = {};
+                    for (const tag of preset.tags) {
+                        const k = tag.key;
+                        if (typeof (k) === "string") {
+                            tags[k] = tag.value;
+                        }
+                    }
+                    preset.icon = layer.style(tags)?.icon?.iconUrl;
+                }
+
+                const addButton = {
+                    name: preset.title,
+                    description: preset.description,
+                    icon: preset.icon,
+                    tags: preset.tags,
+                    layerToAddTo: flayer
+                }
+                addButtons.push(addButton);
+            }
+            flayers.push(flayer);
+        }
+
+        
+        
+        return {
+            minZoom: minZoom,
+            flayers: flayers,
+            presets: addButtons
+        }
     }
 
 }

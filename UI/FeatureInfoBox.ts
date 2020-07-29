@@ -1,10 +1,6 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
-import {QuestionPicker} from "./QuestionPicker";
-import {OsmImageUploadHandler} from "../Logic/OsmImageUploadHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
-import {Changes} from "../Logic/Changes";
-import {UserDetails} from "../Logic/OsmConnection";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import {TagRenderingOptions} from "../Customizations/TagRendering";
 import {OsmLink} from "../Customizations/Questions/OsmLink";
@@ -12,6 +8,8 @@ import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
 import {And} from "../Logic/TagsFilter";
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Customizations/UIElementConstructor";
 import Translations from "./i18n/Translations";
+import {Changes} from "../Logic/Osm/Changes";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -33,7 +31,6 @@ export class FeatureInfoBox extends UIElement {
 
 
     private _infoboxes: TagDependantUIElement[];
-    private _questions: QuestionPicker;
 
     private _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();
     private _someSkipped = Translations.t.general.skippedQuestions.Clone();

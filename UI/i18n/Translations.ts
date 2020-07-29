@@ -136,12 +136,12 @@ export default class Translations {
                     }),
                     yes: new T({
                         en: "This parking has room for cargo bikes",
-                        nl: "Deze parking is overdekt (er is een afdak)",
+                        nl: "Deze parking heeft plaats voor bakfietsen",
                         fr: "TODO: fr"
                     }),
                     designated: new T({
                         en: "This parking has designated (official) spots for cargo bikes.",
-                        nl: "Deze parking is overdekt (er is een afdak)",
+                        nl: "Er zijn speciale plaatsen voorzien voor bakfietsen",
                         fr: "TODO: fr"
                     }),
                     no: new T({
