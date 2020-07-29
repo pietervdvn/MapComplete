@@ -34,16 +34,12 @@ export class MoreScreen extends UIElement {
             const link =
                 new SubtleButton(layout.icon,
                     new Combine([
-                        `<a href="${linkText}" target="_blank">`,
-                        "<div>",
                         "<b>",
                         Translations.W(layout.title),
                         "</b>",
                         "<br/>",
                         Translations.W(layout.description),
-                        "</div>",
-                        "</a>"
-                    ]));
+                    ]), linkText);
 
             els.push(link)
         }

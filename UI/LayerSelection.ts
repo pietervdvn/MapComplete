@@ -26,7 +26,7 @@ export class LayerSelection extends UIElement{
           this._checkboxes.push(new CheckBox(
               new Combine([checkbox, icon, name]),
               new Combine([
-                  Img.checkmark,
+                  Img.no_checkmark,
                   icon,
                   layer.layerDef.name]),
               layer.isDisplayed));

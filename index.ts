@@ -105,11 +105,11 @@ const fullScreenMessage = new UIEventSource<UIElement>(undefined);
 // The latest element that was selected - used to generate the right UI at the right place
 const selectedElement = new UIEventSource<{ feature: any }>(undefined);
 
-const zoom = QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
+const zoom = QueryParameters.GetQueryParameter("z", undefined)
     .syncWith(LocalStorageSource.Get("zoom"));
-const lat = QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
+const lat = QueryParameters.GetQueryParameter("lat", undefined)
     .syncWith(LocalStorageSource.Get("lat"));
-const lon = QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
+const lon = QueryParameters.GetQueryParameter("lon", undefined)
     .syncWith(LocalStorageSource.Get("lon"));
 
 const featureSwitchUserbadge = QueryParameters.GetQueryParameter("fs-userbadge", ""+layoutToUse.enableUserBadge);

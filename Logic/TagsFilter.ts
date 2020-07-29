@@ -55,24 +55,37 @@ export class Regex extends TagsFilter {
 
 
 export class Tag extends TagsFilter {
-    public key: string
-    public value: string
+    public key: string | RegExp
+    public value: string | RegExp
     public invertValue: boolean
 
-    constructor(key: string, value: string, invertValue = false) {
+    constructor(key: string | RegExp, value: string | RegExp, invertValue = false) {
+        if (value === "*" && invertValue) {
+            throw new Error("Invalid combination: invertValue && value == *")
+        }
+
+        if (value instanceof RegExp && invertValue) {
+            throw new Error("Unsupported combination: RegExp value and inverted value (use regex to invert the match)")
+        }
+
         super()
         this.key = key
         this.value = value
         this.invertValue = invertValue
+    }
 
-        if (value === "*" && invertValue) {
-            throw new Error("Invalid combination: invertValue && value == *")
+    private static regexOrStrMatches(regexOrStr: string | RegExp, testStr: string) {
+        if (typeof regexOrStr === 'string') {
+            return regexOrStr === testStr
+        } else if (regexOrStr instanceof RegExp) {
+            return (regexOrStr as RegExp).test(testStr)
         }
+        throw new Error("<regexOrStr> must be of type RegExp or string")
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
-            if (tag.k === this.key) {
+            if (Tag.regexOrStrMatches(this.key, tag.k)) {
                 if (tag.v === "") {
                     // This tag has been removed
                     return this.value === ""
@@ -82,7 +95,7 @@ export class Tag extends TagsFilter {
                     return true;
                 }
 
-                return this.value === tag.v !== this.invertValue
+                return Tag.regexOrStrMatches(this.value, tag.v) !== this.invertValue
             }
         }
 
@@ -94,19 +107,33 @@ export class Tag extends TagsFilter {
     }
 
     asOverpass(): string[] {
-        if (this.value === "*") {
-            return ['["' + this.key + '"]'];
+        const keyIsRegex = this.key instanceof RegExp
+        const key = keyIsRegex ? (this.key as RegExp).source : this.key
+
+        const valIsRegex = this.value instanceof RegExp
+        const val = valIsRegex ? (this.value as RegExp).source : this.value
+
+        const regexKeyPrefix = keyIsRegex ? '~' : ''
+        const anyVal = this.value === "*"
+
+        if (anyVal && !keyIsRegex) {
+            return [`[${regexKeyPrefix}"${key}"]`];
         }
         if (this.value === "") {
             // NOT having this key
-            return ['[!"' + this.key + '"]'];
+            return ['[!"' + key + '"]'];
         }
-        const compareOperator = this.invertValue ? '!=' : '='
-        return ['["' + this.key + '"' + compareOperator + '"' + this.value + '"]'];
+
+        const compareOperator = (valIsRegex || keyIsRegex) ? '~' : (this.invertValue ? '!=' : '=')
+        return [`[${regexKeyPrefix}"${key}"${compareOperator}"${keyIsRegex && anyVal ? '.' : val}"]`];
     }
 
     substituteValues(tags: any) {
-        return new Tag(this.key, TagUtils.ApplyTemplate(this.value, tags));
+        if (typeof this.value !== 'string') {
+            throw new Error("substituteValues() only possible with tag value of type string")
+        }
+
+        return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 }
 

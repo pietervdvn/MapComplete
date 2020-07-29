@@ -748,7 +748,16 @@ export default class Translations {
                 websiteIs: new T({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
                     nl: "Website: <a href='{website}' target='_blank'>{website}</a>"
-                })
+                }),
+                emailOf: new T({
+                        en: "What is the email address of {category}?",
+                        nl: "Wat is het email-adres van {category}?"
+                    }
+                ),
+                emailIs: new T({
+                    en: "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+                    nl: "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
+                }),
 
             },
             openStreetMapIntro: new T({
@@ -794,6 +803,10 @@ export default class Translations {
             fewChangesBefore: new T({
                 en: "Please, answer a few questions of existing points before adding a new point.",
                 nl: "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen."
+            }),
+            goToInbox: new T({
+                en: "Open inbox",
+                nl: "Ga naar de berichten"
             })
         }
     }

@@ -4,10 +4,6 @@ html, body {
     padding: 0;
 }
 
-a {
-    text-decoration: unset;
-    color:unset;
-}
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -1205,6 +1201,13 @@ form {
     color: black;
 
 }
+
+.subtle-button a {
+    text-decoration: unset !important;
+    color:unset !important;
+    display: block ruby;
+}
+
 
 .subtle-button img{
     width: 3em;

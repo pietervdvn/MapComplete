@@ -35,6 +35,8 @@ export class SimpleAddUI extends UIElement {
         = new UIEventSource<Preset>(undefined);
     private confirmButton: UIElement = undefined;
     private cancelButton: UIElement;
+    private goToInboxButton: UIElement = new SubtleButton("/assets/envelope.svg", 
+        Translations.t.general.goToInbox, "https://www.openstreetmap.org/messages/inbox");
 
     constructor(zoomlevel: UIEventSource<{ zoom: number }>,
                 lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
@@ -132,7 +134,9 @@ export class SimpleAddUI extends UIElement {
         if (this._userDetails.data.unreadMessages > 0) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.readYourMessages,
-                "</span>"]).Render();
+                "</span>",
+                this.goToInboxButton
+            ]).Render();
         }
 
         if (this._userDetails.data.dryRun) {
