@@ -47,7 +47,7 @@ export default class BikeStations extends LayerDefinition {
             {
                 title: tr.titlePumpAndRepair,
                 description: tr.services.both,
-                tags: [this.repairStation, this.tools, this.nopump]
+                tags: [this.repairStation, this.tools, this.pump]
             },
 
         ]
