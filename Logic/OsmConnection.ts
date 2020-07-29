@@ -28,7 +28,7 @@ export class OsmConnection {
             oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
             oauth_token: oauth_token.data,
             singlepage: true,
-            landing: "./index.html",
+            landing: window.location.href,
             auto: true // show a login form if the user is not authenticated and
                        // you try to do a call
 

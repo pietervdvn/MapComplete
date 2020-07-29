@@ -35,7 +35,7 @@ export class SimpleAddUI extends UIElement {
         = new UIEventSource<Preset>(undefined);
     private confirmButton: UIElement = undefined;
     private cancelButton: UIElement;
-    private goToInboxButton: UIElement = new SubtleButton("/assets/envelope.svg", 
+    private goToInboxButton: UIElement = new SubtleButton("./assets/envelope.svg", 
         Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor(zoomlevel: UIEventSource<{ zoom: number }>,
@@ -89,7 +89,7 @@ export class SimpleAddUI extends UIElement {
         }
         
         this.cancelButton = new SubtleButton(
-            "/assets/close.svg",
+            "./assets/close.svg",
             Translations.t.general.cancel
         ).onClick(() => {
             self._confirmPreset.setData(undefined);
@@ -112,6 +112,10 @@ export class SimpleAddUI extends UIElement {
 
         if (this._confirmPreset.data !== undefined) {
 
+            if(this._userDetails.data.dryRun){
+                this.CreatePoint(this._confirmPreset.data)();
+                return;
+            }
 
             return new Combine([
                 Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
