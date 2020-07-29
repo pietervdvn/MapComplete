@@ -16,19 +16,6 @@ import Website from "../Questions/Website";
 
 export default class BikeOtherShops extends LayerDefinition {
     private readonly sellsBikes = new Tag("service:bicycle:retail", "yes")
-    private readonly repairsBikes = anyValueExcept("service:bicycle:repair", "no")
-    private readonly rentsBikes = new Tag("service:bicycle:rental", "yes")
-    private readonly hasPump = new Tag("service:bicycle:pump", "yes")
-    private readonly hasDiy = new Tag("service:bicycle:diy", "yes")
-    private readonly sellsSecondHand = anyValueExcept("service:bicycle:repair", "no")
-    private readonly hasBikeServices = new Or([
-        this.sellsBikes,
-        this.repairsBikes,
-        // this.rentsBikes,
-        // this.hasPump,
-        // this.hasDiy,
-        // this.sellsSecondHand
-    ])
 
     private readonly to = Translations.t.cyclofix.nonBikeShop
 
@@ -38,7 +25,7 @@ export default class BikeOtherShops extends LayerDefinition {
         this.icon = "./assets/bike/non_bike_repair_shop.svg"
         this.overpassFilter = new And([
             anyValueExcept("shop", "bicycle"),
-            this.hasBikeServices
+            new Tag(/^service:bicycle:/, "*"),
         ])
         this.newElementTags = undefined
         this.maxAllowedOverlapPercentage = 10
