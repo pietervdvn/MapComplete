@@ -150,6 +150,7 @@ export class ShareScreen extends UIElement {
             tr.intro,
             this._link,
             this._linkStatus,
+            tr.addToHomeScreen,
             tr.embedIntro,
             this._options,
             this._iframeCode

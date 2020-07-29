@@ -685,11 +685,14 @@ export default class Translations {
             }),
             
             sharescreen: {
-                intro:new T({
+                intro: new T({
                     en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:"
                 }),
+                addToHomeScreen: new T({
+                    en: "<h3>Add to your home screen</h3>You can easily add this website to your home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this."
+                }),
                 embedIntro: new T({
-                    en: "<h3>Embed on your website</h3>Please, embed this map into your website. We encourage you to do it - you don't even have to ask permission. It is free, and always will be. The more people using this, the more valuable it becomes."
+                    en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes."
                 })
             },
             morescreen: {

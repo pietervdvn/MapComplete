@@ -345,8 +345,8 @@ form {
     border-radius: 2em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    max-width: 30em;
-    width: 35vw;
+    max-width: 40em;
+    width: 45vw;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
 }
