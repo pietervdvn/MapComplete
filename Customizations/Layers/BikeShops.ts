@@ -1,6 +1,6 @@
 import { LayerDefinition } from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
-import {And, Tag} from "../../Logic/TagsFilter";
+import {And, Tag, Or} from "../../Logic/TagsFilter";
 import FixedText from "../Questions/FixedText";
 import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
 import ShopRetail from "../Questions/bike/ShopRetail";
@@ -12,6 +12,7 @@ import ShopName from "../Questions/bike/ShopName";
 import ShopSecondHand from "../Questions/bike/ShopSecondHand";
 import { TagRenderingOptions } from "../TagRendering";
 import {PhoneNumberQuestion} from "../Questions/PhoneNumberQuestion";
+import Website from "../Questions/Website";
 
 
 export default class BikeShops extends LayerDefinition {
@@ -52,6 +53,7 @@ export default class BikeShops extends LayerDefinition {
             new ImageCarouselWithUploadConstructor(),
             new ShopName(),
             new PhoneNumberQuestion("{name}"),
+            new Website("{name}"),
             new ShopRetail(),
             new ShopRental(),
             new ShopRepair(),

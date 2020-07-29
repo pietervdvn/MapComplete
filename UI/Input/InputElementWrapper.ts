@@ -2,6 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
 
 
 export class InputElementWrapper<T> extends InputElement<T>{
@@ -16,9 +17,11 @@ export class InputElementWrapper<T> extends InputElement<T>{
         
     ) {
         super(undefined);
-        this.pre = typeof(pre) === 'string' ?  new FixedUiElement(pre) : pre
+        // this.pre = typeof(pre) === 'string' ?  new FixedUiElement(pre) : pre
+        this.pre = Translations.W(pre)
         this.input = input;
-        this.post =typeof(post) === 'string' ?  new FixedUiElement(post) : post
+        // this.post =typeof(post) === 'string' ?  new FixedUiElement(post) : post
+        this.post = Translations.W(post)
     }
     
     

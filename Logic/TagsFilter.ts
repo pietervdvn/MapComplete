@@ -51,17 +51,23 @@ export class Regex extends TagsFilter {
     substituteValues(tags: any) : TagsFilter{
         throw "Substituting values is not supported on regex tags"
     }
-
 }
 
-export class Tag extends TagsFilter {
-    public key: string;
-    public value: string;
 
-    constructor(key: string, value: string) {
+export class Tag extends TagsFilter {
+    public key: string
+    public value: string
+    public invertValue: boolean
+
+    constructor(key: string, value: string, invertValue = false) {
         super()
-        this.key = key;
-        this.value = value;
+        this.key = key
+        this.value = value
+        this.invertValue = invertValue
+
+        if (value === "*" && invertValue) {
+            throw new Error("Invalid combination: invertValue && value == *")
+        }
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
@@ -69,21 +75,22 @@ export class Tag extends TagsFilter {
             if (tag.k === this.key) {
                 if (tag.v === "") {
                     // This tag has been removed
-                    return this.value === "";
+                    return this.value === ""
                 }
                 if (this.value === "*") {
                     // Any is allowed
                     return true;
                 }
 
-                return this.value === tag.v;
+                return this.value === tag.v !== this.invertValue
             }
         }
-        if(this.value === ""){
-            return true;
+
+        if (this.value === "") {
+            return true
         }
         
-        return false;
+        return this.invertValue
     }
 
     asOverpass(): string[] {
@@ -94,17 +101,17 @@ export class Tag extends TagsFilter {
             // NOT having this key
             return ['[!"' + this.key + '"]'];
         }
-        return ['["' + this.key + '"="' + this.value + '"]'];
+        const compareOperator = this.invertValue ? '!=' : '='
+        return ['["' + this.key + '"' + compareOperator + '"' + this.value + '"]'];
     }
 
     substituteValues(tags: any) {
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value, tags));
     }
-
 }
 
-export class Or extends TagsFilter {
 
+export class Or extends TagsFilter {
     public or: TagsFilter[]
 
     constructor(or: TagsFilter[]) {
@@ -112,9 +119,7 @@ export class Or extends TagsFilter {
         this.or = or;
     }
 
-
     matches(tags: { k: string; v: string }[]): boolean {
-
         for (const tagsFilter of this.or) {
             if (tagsFilter.matches(tags)) {
                 return true;
@@ -125,7 +130,6 @@ export class Or extends TagsFilter {
     }
 
     asOverpass(): string[] {
-
         const choices = [];
         for (const tagsFilter of this.or) {
             const subChoices = tagsFilter.asOverpass();
@@ -143,11 +147,10 @@ export class Or extends TagsFilter {
         }
         return new Or(newChoices);
     }
-
 }
 
-export class And extends TagsFilter {
 
+export class And extends TagsFilter {
     public and: TagsFilter[]
 
     constructor(and: TagsFilter[]) {
@@ -156,7 +159,6 @@ export class And extends TagsFilter {
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
-
         for (const tagsFilter of this.and) {
             if (!tagsFilter.matches(tags)) {
                 return false;
@@ -175,8 +177,7 @@ export class And extends TagsFilter {
     }
 
     asOverpass(): string[] {
-
-        var allChoices = null;
+        var allChoices: string[] = null;
 
         for (const andElement of this.and) {
             var andElementFilter = andElement.asOverpass();
@@ -185,10 +186,10 @@ export class And extends TagsFilter {
                 continue;
             }
 
-            var newChoices = []
+            var newChoices: string[] = []
             for (var choice of allChoices) {
                 newChoices.push(
-                    this.combine(choice, andElementFilter)
+                    ...this.combine(choice, andElementFilter)
                 )
             }
             allChoices = newChoices;
@@ -204,6 +205,7 @@ export class And extends TagsFilter {
         return new And(newChoices);
     }
 }
+
 
 export class Not extends TagsFilter{
     private not: TagsFilter;
@@ -224,12 +226,10 @@ export class Not extends TagsFilter{
     substituteValues(tags: any): TagsFilter {
         return new Not(this.not.substituteValues(tags));
     }
-    
 }
 
 
 export class TagUtils {
-
     static proprtiesToKV(properties: any): { k: string, v: string }[] {
         const result = [];
         for (const k in properties) {
@@ -246,5 +246,4 @@ export class TagUtils {
         }
         return template;
     }
-
 }

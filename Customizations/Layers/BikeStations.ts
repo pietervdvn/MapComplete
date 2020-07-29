@@ -12,6 +12,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 import PumpOperational from "../Questions/bike/PumpOperational";
 import PumpValves from "../Questions/bike/PumpValves";
 import Translations from "../../UI/i18n/Translations";
+import { TagRenderingOptions } from "../TagRendering";
 
 
 export default class BikeStations extends LayerDefinition {
@@ -19,6 +20,7 @@ export default class BikeStations extends LayerDefinition {
     private readonly pumpOperationalAny = new Tag("service:bicycle:pump:operational_status", "yes");
     private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok"), new Tag("service:bicycle:pump:operational_status", "")]);
     private readonly tools = new Tag("service:bicycle:tools", "yes");
+    private readonly to = Translations.t.cyclofix.station
 
     constructor() {
         super();
@@ -36,7 +38,19 @@ export default class BikeStations extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new FixedText(Translations.t.cyclofix.station.title)
+        this.title = new TagRenderingOptions({
+            mappings: [
+                {
+                    k: new And([this.pump, this.tools]),
+                    txt: this.to.titlePumpAndRepair
+                },
+                {
+                    k: new And([this.pump]),
+                    txt: this.to.titlePump
+                },
+                {k: null, txt: this.to.titleRepair},
+            ]
+        })
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.elementsToShow = [
@@ -65,9 +79,9 @@ export default class BikeStations extends LayerDefinition {
             let iconName = "repair_station.svg";
             if (hasTools && hasPump && isOperational) {
                 iconName = "repair_station_pump.svg"
-            }else if(hasTools){
+            } else if(hasTools) {
                     iconName = "repair_station.svg"
-            }else if(hasPump){
+            } else if(hasPump) {
                 if (isOperational) {
                     iconName = "pump.svg"
                 } else {
