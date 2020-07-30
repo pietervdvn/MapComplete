@@ -3,7 +3,7 @@ import {ImagesInCategory, Wikidata, Wikimedia} from "./Wikimedia";
 import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
-import {Changes} from "./Changes";
+import {Changes} from "./Osm/Changes";
 import {ImgurImage} from "../UI/Image/ImgurImage";
 
 /**

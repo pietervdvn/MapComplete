@@ -5,7 +5,7 @@ import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIEleme
 import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
 import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../UI/UIEventSource";
-import {Changes} from "../Logic/Changes";
+import {Changes} from "../Logic/Osm/Changes";
 
 
 export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{

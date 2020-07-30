@@ -77,7 +77,6 @@ export class Artwork extends LayerDefinition {
                 icon: {
                     iconUrl: "./assets/statue.svg",
                     iconSize: [40, 40],
-                    text: "hi"
                 },
                 color: "#0000ff"
             };

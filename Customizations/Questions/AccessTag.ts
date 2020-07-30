@@ -1,6 +1,6 @@
 import {TagRenderingOptions} from "../TagRendering";
 import {UIEventSource} from "../../UI/UIEventSource";
-import {Changes} from "../../Logic/Changes";
+import {Changes} from "../../Logic/Osm/Changes";
 import {And, Tag} from "../../Logic/TagsFilter";
 
 export class AccessTag extends TagRenderingOptions {

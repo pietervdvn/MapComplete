@@ -1,6 +1,6 @@
 import {TagRenderingOptions} from "../TagRendering";
 import {UIEventSource} from "../../UI/UIEventSource";
-import {Changes} from "../../Logic/Changes";
+import {Changes} from "../../Logic/Osm/Changes";
 import {Tag} from "../../Logic/TagsFilter";
 
 
