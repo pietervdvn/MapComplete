@@ -12,6 +12,55 @@ export default class Translations {
 
 
     static t = {
+        climbingTrees: {
+            layer: {
+
+                title: new T({
+                    nl: "Klimbomen"
+                }),
+                description: new T({
+                    nl: "Een klimboom is een mooie boom waar men in kan klimmen, al dan niet officieel"
+                })
+            },
+            layout: {
+                title: new T({nl: "Open Klimbomenkaart"}),
+                welcome: new T({nl: "Markeer je favoriete klimboom"})
+            }
+
+        },
+
+        artwork: {
+            name: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
+            title: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
+            type: {
+                render: new T({
+                    en: 'This is artwork of the type: {artwork_type}',
+                    nl: 'Dit is een kunstwerk van het type: {artwork_type}',
+                    fr: "Ceci est un travail d'art de type: {artwork_type}"
+                }),
+                template: new T({ en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: 'Un autre type: $$$' }),
+                question: new T({
+                    en: 'What is the type of this artwork?',
+                    nl: 'Wat voor type kunstwerk is dit?',
+                    fr: "Quel est le type de cette oeuvre d'art?"
+                }),
+                architecture: new T({ en: "architecture", nl: "architectuur", fr: "architecture" }),
+                mural: new T({ en: "mural", nl: "muurschildering", fr: "mural" }),
+                painting: new T({ en: "painting", nl: "schilderij", fr: "peinture" }),
+                sculpture: new T({ en: "sculpture", nl: "beeldhouwwerk", fr: "sculpture" }),
+                statue: new T({ en: "statue", nl: "standbeeld", fr: "statue" }),
+                bust: new T({ en: "bust", nl: "buste", fr: "buste" }),
+                stone: new T({ en: "stone", nl: "steen", fr: "rocher" }),
+                installation: new T({ en: "installation", nl: "installatie", fr: "installation" }),
+                graffiti: new T({ en: "graffiti", nl: "graffiti", fr: "graffiti" }),
+                relief: new T({ en: "relief", nl: "verlichting", fr: "relief" }),
+                azulejo: new T({ en: "azulejo", nl: "azulejo", fr: "azulejo" }),
+                tilework: new T({ en: "tilework", nl: "tegelwerk", fr: "carrelage" })
+            }, artist: {
+                question: new T({en:"Which artist created this artwork?"})
+            }
+
+        },
         cyclofix: {
             title: new T({
                 en: 'Cyclofix - an open map for cyclists',
@@ -397,9 +446,21 @@ export default class Translations {
                     })
                 },
                 qName: {
-                    question: new T({en: "What is the name of this bicycle shop?", nl: "Wat is de naam van deze fietszaak?", fr: "Quel est le nom du magasin de vélo?"}),
-                    render: new T({en: "This bicycle shop is called {name}", nl: "Deze fietszaak heet <b>{name}</b>", fr: "Ce magasin s'appelle <b>{name}</b>"}),
-                    template: new T({en: "This bicycle shop is called: $$$", nl: "Deze fietszaak heet: $$$", fr: "Ce magasin s'appelle $$$"})
+                    question: new T({
+                        en: "What is the name of this bicycle shop?",
+                        nl: "Wat is de naam van deze fietszaak?",
+                        fr: "Quel est le nom du magasin de vélo?"
+                    }),
+                    render: new T({
+                        en: "This bicycle shop is called {name}",
+                        nl: "Deze fietszaak heet {name}",
+                        fr: "Ce magasin s'appelle {name}"
+                    }),
+                    template: new T({
+                        en: "This bicycle shop is called: $$$",
+                        nl: "Deze fietszaak heet: <b>$$$</b>",
+                        fr: "Ce magasin s'appelle $$$"
+                    })
                 },
                 secondHand: {
                     question: new T({en: "Does this shop sell second-hand bikes?", nl: "Verkoopt deze winkel tweedehands fietsen?", fr: "Est-ce ce magasin vend des vélos d'occasion"}),
@@ -426,58 +487,74 @@ export default class Translations {
                 }
             },
             cafe: {
-                name: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
-                title: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
+                name: new T({en: "Bike cafe", nl: "Fietscafé", fr: "Café vélo"}),
+                title: new T({en: "Bike cafe", nl: "Fietscafé", fr: "Café Vélo"}),
                 qName: {
-                    question: new T({en: "What is the name of this bike cafe?", nl: "Wat is de naam van dit fietscafé?", fr: "TODO: fr"}),
-                    render: new T({en: "This bike cafe is called {name}", nl: "Dit fietscafé heet <b>{name}</b>", fr: "TODO: fr"}),
-                    template: new T({en: "This bike cafe is called: $$$", nl: "Dit fietscafé heet: $$$", fr: "TODO: fr"})
+                    question: new T({
+                        en: "What is the name of this bike cafe?",
+                        nl: "Wat is de naam van dit fietscafé?",
+                        fr: "Quel est le nom de ce Café vélo"
+                    }),
+                    render: new T({
+                        en: "This bike cafe is called {name}",
+                        nl: "Dit fietscafé heet {name}",
+                        fr: "Ce Café vélo s'appelle {name}"
+                    }),
+                    template: new T({
+                        en: "This bike cafe is called: $$$",
+                        nl: "Dit fietscafé heet: <b>$$$</b>",
+                        fr: "Ce Café vélo s'appelle $$$"
+                    })
                 },
                 repair: {
                     question: new T({
                         en: "Does this bike cafe repair bikes?",
                         nl: "Verkoopt dit fietscafé fietsen?",
-                        fr: "TODO: fr?"
+                        fr: "Est-ce que ce Café vélo répare les vélos?"
                     }),
-                    yes: new T({en: "This bike cafe repairs bikes", nl: "Dit fietscafé herstelt fietsen", fr: "TODO: fr"}),
+                    yes: new T({
+                        en: "This bike cafe repairs bikes",
+                        nl: "Dit fietscafé herstelt fietsen",
+                        fr: "Ce Café vélo répare les vélos"
+                    }),
                     no: new T({
                         en: "This bike cafe doesn;t repair bikes",
                         nl: "Dit fietscafé herstelt geen fietsen",
-                        fr: "TODO: fr"
+                        fr: "Ce Café vélo ne répare pas les vélos"
                     })
                 },
                 pump: {
                     question: new T({
                         en: "Does this bike cafe offer a bike pump for use by anyone?",
                         nl: "Biedt dit fietscafé een fietspomp aan voor iedereen?",
-                        fr: "TODO: fr"
+                        fr: "Est-ce que ce Café vélo propose une pompe en libre accès"
                     }),
                     yes: new T({
                         en: "This bike cafe offers a bike pump for anyone",
                         nl: "Dit fietscafé biedt geen fietspomp aan voor eender wie",
-                        fr: "TODO: fr"
+                        fr: "Ce Café vélo offre une pompe en libre accès"
                     }),
                     no: new T({
                         en: "This bike cafe doesn't offer a bike pump for anyone",
                         nl: "Dit fietscafé biedt een fietspomp aan voor iedereen",
-                        fr: "TODO: fr"
+                        fr: "Ce Café vélo n'offre pas de pompe en libre accès"
                     })
                 },
                 diy: {
                     question: new T({
                         en: "Are there tools here to repair your own bike?",
                         nl: "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
-                        fr: "TODO: fr",
+                        fr: "Est-ce qu'il y a des outils pour réparer soi-même son vélo?",
                     }),
                     yes: new T({
                         en: "This bike cafe offers tools for DIY repair",
                         nl: "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
-                        fr: "TODO: fr"
+                        fr: "Ce Café vélo propose des outils pour réparer son vélo soi-même"
                     }),
                     no: new T({
                         en: "This bike cafe doesn't offer tools for DIY repair",
                         nl: "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
-                        fr: "TODO: fr"
+                        fr: "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même"
                     })
                 }
             },
@@ -485,39 +562,39 @@ export default class Translations {
                 name: new T({
                     en: "shop that sells/repairs bikes",
                     nl: "winkel die fietsen verkoopt/herstelt",
-                    fr: "TODO: fr"
+                    fr: "magasin qui repare/vend des vélos"
                 }),
 
                 title: new T({
                     en: "Shop that sells/repairs bikes",
                     nl: "Winkel die fietsen verkoopt/herstelt",
-                    fr: "TODO: fr"
+                    fr: "Magasin qui répare/vend des vélos"
                 }),
                 titleRepair: new T({
                     en: "Shop that repairs bikes",
                     nl: "Winkel die fietsen herstelt",
-                    fr: "TODO: fr"
+                    fr: "Magasin qui répare les vélos"
                 }),
                 titleShop: new T({
                     en: "Shop that sells bikes",
                     nl: "Winkel die fietsen verkoopt",
-                    fr: "TODO: fr"
+                    fr: "Magasin qui vend des vélos"
                 }),
                 
                 titleNamed: new T({
                     en: "{name} (sells/repairs bikes)",
                     nl: "{name} (verkoopt/herstelt fietsen)",
-                    fr: "TODO: fr"
+                    fr: "vend/repare les vélos"
                 }),
                 titleRepairNamed: new T({
                     en: "{name} (repairs bikes)",
                     nl: "{name} (herstelt fietsen)",
-                    fr: "TODO: fr"
+                    fr: "{name} (répare les vélos)"
                 }),
                 titleShopNamed: new T({
                     en: "{name} (sells bikes)",
                     nl: "{name} (verkoopt fietsen)",
-                    fr: "TODO: fr"
+                    fr: "{name} (vend des vélos)"
                 }),
             },
             drinking_water: {
@@ -572,55 +649,6 @@ export default class Translations {
 
 
         },
-        climbingTrees: {
-            layer: {
-
-                title: new T({
-                    nl: "Klimbomen"
-                }),
-                description: new T({
-                    nl: "Een klimboom is een mooie boom waar men in kan klimmen, al dan niet officieel"
-                })
-            },
-            layout: {
-                title: new T({nl: "Open Klimbomenkaart"}),
-                welcome: new T({nl: "Markeer je favoriete klimboom"})
-            }
-
-        },
-
-        artwork: {
-            name: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
-            title: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
-            type: {
-                render: new T({
-                    en: 'This is artwork of the type: {artwork_type}',
-                    nl: 'Dit is een kunstwerk van het type: {artwork_type}',
-                    fr: "Ceci est un travail d'art de type: {artwork_type}"
-                }),
-                template: new T({ en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: 'Un autre type: $$$' }),
-                question: new T({
-                    en: 'What is the type of this artwork?',
-                    nl: 'Wat voor type kunstwerk is dit?',
-                    fr: "Quel est le type de cette oeuvre d'art?"
-                }),
-                architecture: new T({ en: "architecture", nl: "architectuur", fr: "architecture" }),
-                mural: new T({ en: "mural", nl: "muurschildering", fr: "mural" }),
-                painting: new T({ en: "painting", nl: "schilderij", fr: "peinture" }),
-                sculpture: new T({ en: "sculpture", nl: "beeldhouwwerk", fr: "sculpture" }),
-                statue: new T({ en: "statue", nl: "standbeeld", fr: "statue" }),
-                bust: new T({ en: "bust", nl: "buste", fr: "buste" }),
-                stone: new T({ en: "stone", nl: "steen", fr: "rocher" }),
-                installation: new T({ en: "installation", nl: "installatie", fr: "installation" }),
-                graffiti: new T({ en: "graffiti", nl: "graffiti", fr: "graffiti" }),
-                relief: new T({ en: "relief", nl: "verlichting", fr: "relief" }),
-                azulejo: new T({ en: "azulejo", nl: "azulejo", fr: "azulejo" }),
-                tilework: new T({ en: "tilework", nl: "tegelwerk", fr: "carrelage" })
-            }, artist: {
-                question: new T({en:"Which artist created this artwork?"})
-            }
-
-        },
 
         image: {
             addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'TODO: fr'}),
@@ -645,16 +673,20 @@ export default class Translations {
                 fr: 'Votre photo va être publié'
             }),
             cco: new T({en: 'in the public domain', nl: 'in het publiek domein', fr: 'sur le domaine publique'}),
-            ccbs: new T({en: 'under the CC-BY-SA-license', nl: 'onder de CC-BY-SA-licentie', fr: 'sous la license CC-BY-SA'}),
-            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
-            respectPrivacy: new T({
-                en: "Please respect privacy. Do not photograph people nor license plates",
-                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
-                fr: "TODO: fr"
+            ccbs: new T({
+                en: 'under the CC-BY-SA-license',
+                nl: 'onder de CC-BY-SA-licentie',
+                fr: 'sous la license CC-BY-SA'
             }),
+            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
             uploadFailed: new T({
                 en: "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them.",
                 nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten."
+            }),
+            respectPrivacy: new T({
+                en: "Please respect privacy. Do not photograph people nor license plates",
+                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
+                fr: "Merci de respecter la vie privée. Ne publiez pas les plaques d\'immatriculation"
             }),
             uploadDone: new T({
                 en: "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
@@ -666,7 +698,7 @@ export default class Translations {
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
                 nl: 'Zoom in om de data te zien en te bewerken',
-                fr: 'TODO Fr',
+                fr: 'Rapprochez vous sur la carte pour voir ou éditer les données',
             }),
             ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}),
         },
@@ -747,78 +779,100 @@ export default class Translations {
             }),
 
             osmLinkTooltip: new T({
-               en: "See this object on OpenStreetMap for history and more editing options",
-                nl: "Bekijk dit object op OpenStreetMap waar geschiedenis en meer aanpasopties zijn"
+                en: "See this object on OpenStreetMap for history and more editing options",
+                nl: "Bekijk dit object op OpenStreetMap waar geschiedenis en meer aanpasopties zijn",
+                fr: "Voir l'historique de cet objet sur OpenStreetMap et plus d'options d'édition"
+
             }),
             
             add: {
-
                 addNew: new T({
                     en: "Add a new {category} here",
-                    nl: "Voeg hier een {category} toe"
+                    nl: "Voeg hier een {category} toe",
+                    fr: "Ajouter un/une {category} ici"
+
                 }),
                 header: new T({
                     en: "<h2>No data</h2>You clicked somewhere where no data is known yet.<br/>",
-                    nl: "<h2>Geen selectie</h2>Je klikte ergens waar er nog geen data is.<br/>"
+                    nl: "<h2>Geen selectie</h2>Je klikte ergens waar er nog geen data is.<br/>",
+                    fr: "<h2>Pas de données</h2> vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>"
+
                 }),
                 pleaseLogin: new T({
                     en: "<a class='activate-osm-authentication'>Please log in to add a new point</a>",
-                    nl: "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>"
+                    nl: "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>",
+                    fr: "<a class='activate-osm-authentication'>Vous devez vous connecter pour ajouter un point</a>"
                 }),
                 zoomInFurther: new T({
                     en: "Zoom in further to add a point.",
-                    nl: "Gelieve verder in te zoomen om een punt toe te voegen"
+                    nl: "Gelieve verder in te zoomen om een punt toe te voegen",
+                    fr: "Rapprochez vous pour ajouter un point."
                 }),
                 stillLoading: new T({
                     en: "The data is still loading. Please wait a bit before you add a new point",
-                    nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen."
+                    nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
+                    fr: "Chargement des donnés. Patientez un instant avant d'ajouter un nouveau point"
                 }),
                 confirmIntro: new T({
                     en: "<h3>Add a {title} here?</h3>The point you create here will be visible for everyone. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
-                    nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is zichtbaar voor iedereen. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan."
+                    nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is zichtbaar voor iedereen. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
+                    fr: "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouter sera visible par tout le monde. Merci d'etre sûr que ce point existe réellement. Beaucoup d'autres applications reposent sur ces données.",
+
                 })
             },
             pickLanguage: new T({
                 en: "Choose a language",
-                nl: "Kies je taal"
+                nl: "Kies je taal",
+                fr: "Choisir la langue"
             }),
             about: new T({
                 en: "Easily edit and add OpenStreetMap for a certain theme",
-                nl: "Easily edit and add OpenStreetMap for a certain theme"
+                nl: "Easily edit and add OpenStreetMap for a certain theme",
+                fr: "Édition facile et ajouter OpenStreetMap pour un certain thème"
+
 
             }),
             nameInlineQuestion: new T({
-              nl:  "De naam van dit {category} is $$$"
+                en: "The name of this {category} is $$$",
+                nl: "De naam van dit {category} is $$$",
+                fr: "Le nom de cet/cette {category} est $$$",
             }),
             noNameCategory: new T({
-                nl: "{category} zonder naam"
+                en: "{catehory} without a name",
+                nl: "{category} zonder naam",
+                fr: "{category} sans nom"
             }),
             questions: {
                 phoneNumberOf: new T({
                     en: "What is the phone number of {category}?",
-                    nl: "Wat is het telefoonnummer van {category}?"
-
+                    nl: "Wat is het telefoonnummer van {category}?",
+                    fr: "Quel est le nom de {category}?"
                 }),
                 phoneNumberIs: new T({
                     en: "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-                    nl: "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>"
+                    nl: "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
+                    fr: "Le numéro de téléphone de {category} est <a href='tel:{phone}' target='_blank'>{phone}</a>",
                 }),
                 websiteOf: new T({
                     en: "What is the website of {category}?",
-                    nl: "Wat is de website van {category}?"
+                    nl: "Wat is de website van {category}?",
+                    fr: "Quel est le site internet de {category}?"
                 }),
                 websiteIs: new T({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
-                    nl: "Website: <a href='{website}' target='_blank'>{website}</a>"
+                    nl: "Website: <a href='{website}' target='_blank'>{website}</a>",
+                    fr: "Website: <a href='{website}' target='_blank'>{website}</a>"
                 }),
                 emailOf: new T({
                         en: "What is the email address of {category}?",
-                        nl: "Wat is het email-adres van {category}?"
+                        nl: "Wat is het email-adres van {category}?",
+                        fr: "Quel est l'adresse email de {category}?"
                     }
                 ),
                 emailIs: new T({
                     en: "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
-                    nl: "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
+                    nl: "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+                    fr: "L'adresse email de {category} est <a href='mailto:{email}' target='_blank'>{email}</a>"
                 }),
 
             },
@@ -836,39 +890,61 @@ export default class Translations {
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href='https://osm.org/copyright' target='_blank'>bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt." +
                     "Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p>" +
                     "<p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/> Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p>" +
-                    "<p></p>Kortom, als je hier een antwoord geeft of een fout aanpast, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>"
+                    "<p></p>Kortom, als je hier een antwoord geeft of een fout aanpast, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>",
+                fr: "<h3>Une carte ouverte</h3>" +
+                    "<p></p>How incroyable se serait d'avoir sur une carte que tout le monde pourrait éditer ouvertement?" +
+                    "Une seule et unique plateforme regroupant toutes les informations geographiques? Ainsi nous n'aurons plus besoin de toutes ces petites et incompatibles cartes (souvent non mises à jour).</p>" +
+                    "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> est la carte qu'il vous faut!. Toutes les donnees de cette carte peuvent être utilisé gratuitement (avec <a href='https://osm.org/copyright' target='_blank'> d\'attribution et de publication des changements de données</a>)." +
+                    " De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site internet utilise également OpenStreetMap. Toutes les données y proviennent et tous les ajouts et modifications y seront également ajoutés.</p>" +
+                    "<p>De nombreux individus et d'applications utilisent déjà OpenStreetMap:  <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, mais aussi les cartes de Facebook, Intsagram, Apple-maps et Bing-maps sont(en partie) supporté par OpenStreetMap." +
+                    "Si vous modifié quelque chose ici, ces changement seront retranscris sur ces applications aussi - des lors de leur mise à jour! </p>"
             }),
             
             sharescreen: {
                 intro: new T({
-                    en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:"
+                    en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
+                    fr: "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyer le à vos amis:",
+                    nl: "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
+
                 }),
                 addToHomeScreen: new T({
-                    en: "<h3>Add to your home screen</h3>You can easily add this website to your home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this."
+                    en: "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
+                    fr: "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le boutton 'ajouter à l'evran d'accueil' dans la barre d'URL pour éffecteur cette tâche",
+                    nl: "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel"
                 }),
                 embedIntro: new T({
-                    en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes."
+                    en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes.",
+                    fr: "<h3>Incorporer à votre website</h3>AJouter la carte à votre website. <br/>On vous en encourage - pas besoin de permission. <br/>  C'est gratuit et pour toujours. Le plus de personnes l'utilisent, le mieux ce sera.",
+                    nl: "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller"
                 })
             },
             morescreen: {
                 intro: new T({
                     en: "<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                    fr: "<h3>Plus de thème </h3>Vous aimez collecter des données? <br/>Il y a plus de thèmes disponible.",
+                    nl: "<h3>Meer thema's</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer opties."
                 }),
                 streetcomplete: new T({
-                    en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
+                    en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
+                    fr: "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
+                    nl: "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 })
             },
             readYourMessages: new T({
                 en: "Please, read all your OpenStreetMap-messages before adding a new point.",
-                nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen."
+                nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
+                fr: "Merci de lire tout vos messages d'OpenStreetMap avant d'ajouter un nouveau point.",
             }),
             fewChangesBefore: new T({
                 en: "Please, answer a few questions of existing points before adding a new point.",
-                nl: "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen."
+                nl: "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
+                fr: "Merci de répondre à quelques questions à propos de point déjà existant avant d'ajouter de nouveaux points"
+
             }),
             goToInbox: new T({
                 en: "Open inbox",
-                nl: "Ga naar de berichten"
+                nl: "Ga naar de berichten",
+                fr: "Ouvrir les messages"
             })
         }
     }
