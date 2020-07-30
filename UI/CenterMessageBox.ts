@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
-import {OsmConnection} from "../Logic/OsmConnection";
+import {OsmConnection} from "../Logic/Osm/OsmConnection";
 import Translations from "./i18n/Translations";
 
 export class CenterMessageBox extends UIElement {

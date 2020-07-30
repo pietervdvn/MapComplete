@@ -10,6 +10,7 @@ import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Custom
 import Translations from "./i18n/Translations";
 import {Changes} from "../Logic/Osm/Changes";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -38,7 +39,7 @@ export class FeatureInfoBox extends UIElement {
     constructor(
         feature: any,
         tagsES: UIEventSource<any>,
-        title: TagRenderingOptions | UIElement,
+        title: TagRenderingOptions | UIElement | string,
         elementsToShow: TagDependantUIElementConstructor[],
         changes: Changes,
         userDetails: UIEventSource<UserDetails>
@@ -78,8 +79,9 @@ export class FeatureInfoBox extends UIElement {
                 mappings: [{k: new And([]), txt: ""}]
             }
         )
-
-        if (title instanceof UIElement) {
+        if (typeof (title) == "string") {
+            this._title = new FixedUiElement(title);
+        } else if (title instanceof UIElement) {
             this._title = title;
         } else {
             this._title = new TagRenderingOptions(title.options).construct(deps);

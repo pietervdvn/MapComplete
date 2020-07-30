@@ -1,18 +1,15 @@
-import { Groen } from "./Layouts/Groen";
-import { Toilets } from "./Layouts/Toilets";
-import { GRB } from "./Layouts/GRB";
-import { Statues } from "./Layouts/Statues";
-import { Bookcases } from "./Layouts/Bookcases";
+import {Groen} from "./Layouts/Groen";
+import {GRB} from "./Layouts/GRB";
+import {Artworks} from "./Layouts/Artworks";
+import {Bookcases} from "./Layouts/Bookcases";
 import Cyclofix from "./Layouts/Cyclofix";
-import { WalkByBrussels } from "./Layouts/WalkByBrussels";
-import { All } from "./Layouts/All";
-import { Layout } from "./Layout";
+import {WalkByBrussels} from "./Layouts/WalkByBrussels";
+import {All} from "./Layouts/All";
+import {Layout} from "./Layout";
 import {MetaMap} from "./Layouts/MetaMap";
-import {Widths} from "./Layers/Widths";
 import {StreetWidth} from "./Layouts/StreetWidth";
-import {NatureReserves} from "./Layers/NatureReserves";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
-import Translations from "../UI/i18n/Translations";
+import {ClimbingTrees} from "./Layouts/ClimbingTrees";
 
 export class AllKnownLayouts {
     public static allSets = AllKnownLayouts.AllLayouts();
@@ -27,6 +24,8 @@ export class AllKnownLayouts {
             new MetaMap(),
             new StreetWidth(),
             new Natuurpunt(),
+            new ClimbingTrees(),
+            new Artworks()
             /*new Toilets(),
             new Statues(),
             */

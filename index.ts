@@ -109,7 +109,7 @@ const lon = QueryParameters.GetQueryParameter("lon", undefined)
     .syncWith(LocalStorageSource.Get("lon"));
 
 function featSw(key: string, deflt: boolean): UIEventSource<boolean> {
-    return QueryParameters.GetQueryParameter("fs-userbadge", "" + deflt).map((str) => {
+    return QueryParameters.GetQueryParameter(key, "" + deflt).map((str) => {
         return str !== "false";
     });
 }

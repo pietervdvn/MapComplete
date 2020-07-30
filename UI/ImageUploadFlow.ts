@@ -2,7 +2,7 @@ import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import $ from "jquery"
 import {Imgur} from "../Logic/Imgur";
-import {UserDetails} from "../Logic/OsmConnection";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {DropDown} from "./Input/DropDown";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";

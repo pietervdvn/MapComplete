@@ -5,8 +5,8 @@ import Translation from "../UI/i18n/Translation";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import {OsmConnection, UserDetails} from "../Logic/OsmConnection";
 import {UIEventSource} from "../UI/UIEventSource";
+import {OsmConnection, UserDetails} from "../Logic/Osm/OsmConnection";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -114,10 +114,12 @@ export class WelcomeMessage extends UIElement {
         let loginStatus = "";
         if (this.userDetails !== undefined) {
             loginStatus = (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render();
+            loginStatus = loginStatus + "<br/>"
         }
 
         return "<span>" +
             this.description.Render() +
+            "<br/>" +
             loginStatus +
             this.tail.Render() +
             "<br/>" +

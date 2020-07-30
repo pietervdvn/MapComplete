@@ -1144,20 +1144,27 @@ form {
 .tab-single-header {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
-    box-shadow: 0 0 10px black;
     z-index: 5000;
-    border-bottom: 1px solid white;
-    padding-bottom: 1px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .tab-active {
     background-color: white;
     z-index: 5001;
+    box-shadow: 0 0 10px black;
+    border-bottom: 1px solid white;
+    border-left: 1px solid black;
+    border-right:1px solid black;
+    border-top: 1px solid black;
 }
 
 .tab-non-active {
     background-color: #e5f5ff;
     opacity: 0.5;
+    border-left: 1px solid gray;
+    border-right:1px solid gray;
+    border-top:  1px solid gray;
     border-bottom: 1px solid lightgray;
 }
 

@@ -9,7 +9,7 @@ export default class Website extends TagRenderingOptions {
             question: Translations.t.general.questions.websiteOf.Subs({category: category}),
             freeform: {
                 renderTemplate: Translations.t.general.questions.websiteIs,
-                template: "website",
+                template: "$$$",
                 key: "website"
             }
         });

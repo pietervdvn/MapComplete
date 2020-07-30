@@ -1,11 +1,5 @@
 import {Tag, TagsFilter} from "../Logic/TagsFilter";
 import {UIElement} from "../UI/UIElement";
-import {Basemap} from "../Logic/Basemap";
-import {ElementStorage} from "../Logic/ElementStorage";
-import {UIEventSource} from "../UI/UIEventSource";
-import {FilteredLayer} from "../Logic/FilteredLayer";
-import {Changes} from "../Logic/Changes";
-import {UserDetails} from "../Logic/OsmConnection";
 import {TagRenderingOptions} from "./TagRendering";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 
@@ -61,7 +55,7 @@ export class LayerDefinition {
     /**
      * This UIElement is rendered as title element in the popup
      */
-    title: TagRenderingOptions;
+    title: TagRenderingOptions | UIElement | string;
     /**
      * These are the questions/shown attributes in the popup
      */

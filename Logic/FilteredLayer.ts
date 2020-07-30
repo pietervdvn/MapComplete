@@ -1,14 +1,15 @@
-import {Basemap} from "./Basemap";
 import {TagsFilter, TagUtils} from "./TagsFilter";
 import {UIEventSource} from "../UI/UIEventSource";
 import {ElementStorage} from "./ElementStorage";
-import {Changes} from "./Changes";
 import L from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
-import {UserDetails} from "./OsmConnection";
 import codegrid from "codegrid-js";
+import {Changes} from "./Osm/Changes";
+import {UserDetails} from "./Osm/OsmConnection";
+import {Basemap} from "./Leaflet/Basemap";
+
 /***
  * A filtered layer is a layer which offers a 'set-data' function
  * It is initialized with a tagfilter.
