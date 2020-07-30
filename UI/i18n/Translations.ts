@@ -399,7 +399,7 @@ export default class Translations {
                 qName: {
                     question: new T({en: "What is the name of this bicycle shop?", nl: "Wat is de naam van deze fietszaak?", fr: "Quel est le nom du magasin de vélo?"}),
                     render: new T({en: "This bicycle shop is called {name}", nl: "Deze fietszaak heet <b>{name}</b>", fr: "Ce magasin s'appelle <b>{name}</b>"}),
-                    template: new T({en: "This bicycle shop is called: $$$", nl: "Deze fietszaak heet: <b>$$$</b>", fr: "Ce magasin s'appelle $$$"})
+                    template: new T({en: "This bicycle shop is called: $$$", nl: "Deze fietszaak heet: $$$", fr: "Ce magasin s'appelle $$$"})
                 },
                 secondHand: {
                     question: new T({en: "Does this shop sell second-hand bikes?", nl: "Verkoopt deze winkel tweedehands fietsen?", fr: "Est-ce ce magasin vend des vélos d'occasion"}),
@@ -431,7 +431,7 @@ export default class Translations {
                 qName: {
                     question: new T({en: "What is the name of this bike cafe?", nl: "Wat is de naam van dit fietscafé?", fr: "TODO: fr"}),
                     render: new T({en: "This bike cafe is called {name}", nl: "Dit fietscafé heet <b>{name}</b>", fr: "TODO: fr"}),
-                    template: new T({en: "This bike cafe is called: $$$", nl: "Dit fietscafé heet: <b>$$$</b>", fr: "TODO: fr"})
+                    template: new T({en: "This bike cafe is called: $$$", nl: "Dit fietscafé heet: $$$", fr: "TODO: fr"})
                 },
                 repair: {
                     question: new T({
