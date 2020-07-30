@@ -10,8 +10,8 @@ export class LayerUpdater {
     private _layers: FilteredLayer[];
 
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    
-    /**
+    public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
+     /**
      * The previous bounds for which the query has been run
      */
     private previousBounds: Bounds;
@@ -69,15 +69,16 @@ export class LayerUpdater {
 
     }
 
-    private _failCount = 0;
     private handleFail(reason: any) {
-        console.log("QUERY FAILED (retrying in 5 sec)", reason);
+        console.log(`QUERY FAILED (retrying in ${5 * this.retries.data} sec)`, reason);
         this.previousBounds = undefined;
+        this.retries.data ++;
+        this.retries.ping();
         const self = this;
-        this._failCount++;
         window?.setTimeout(
-            function(){self.update()}, this._failCount * 5000
+            function(){self.update()}, this.retries.data * 5000
         )
+        
     }
 
 

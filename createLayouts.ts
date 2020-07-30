@@ -17,7 +17,7 @@ import Translations from "./UI/i18n/Translations";
 import {UIElement} from "./UI/UIElement";
 import {LayerDefinition} from "./Customizations/LayerDefinition";
 
-console.log("Building routers")
+console.log("Building the layouts")
 
 UIElement.runningFromConsole = true;
 
@@ -55,7 +55,7 @@ function validate(layout: Layout) {
             const txt = translation.translations[ln];
             const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
             if (isMissing) {
-                console.log("Missing or suspicious translation for '", translation.txt, "'in", ln, ":", txt)
+                console.log(`Missing or suspicious ${ln}-translation for '`, translation.txt, ":", txt)
                 missing[ln]++
             } else {
                 present[ln]++;

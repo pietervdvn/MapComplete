@@ -74,6 +74,17 @@ form {
     padding-bottom: 0.15em;
 }
 
+.thanks {
+    background-color: #43d904;
+    font-weight: bold;
+    border-radius: 1em;
+    padding: 0.3em;
+    margin: 0.25em;
+    text-align: center;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+}
+
 
 .activate-osm-authentication {
     cursor: pointer;

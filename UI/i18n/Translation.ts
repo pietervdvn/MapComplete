@@ -45,7 +45,6 @@ export default class Translation extends UIElement {
             return txt;
         }
         const en = this.translations["en"];
-        console.warn("No translation for language ", Locale.language.data, "for", en);
         if (en !== undefined) {
             return en;
         }

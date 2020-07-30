@@ -629,6 +629,11 @@ export default class Translations {
                 nl: 'Bezig met een foto te uploaden...',
                 fr: 'Mettre votre photo en ligne'
             }),
+            uploadingMultiple: new T({
+                en: 'Uploading {count} of your picture...',
+                nl: 'Bezig met {count} foto\'s te uploaden...',
+                fr: 'Mettre votre {count} photos en ligne'
+            }),
             pleaseLogin: new T({
                 en: 'Please login to add a picure or to answer questions',
                 nl: 'Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden',
@@ -646,6 +651,14 @@ export default class Translations {
                 en: "Please respect privacy. Do not photograph people nor license plates",
                 nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
                 fr: "TODO: fr"
+            }),
+            uploadFailed: new T({
+                en: "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them.",
+                nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten."
+            }),
+            uploadDone: new T({
+                en: "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
+                nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>"
             })
         },
         centerMessage: {

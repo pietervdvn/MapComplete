@@ -6,12 +6,16 @@ import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {DropDown} from "./Input/DropDown";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
+import {fail} from "assert";
+import Combine from "./Base/Combine";
+import {VerticalCombine} from "./Base/VerticalCombine";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
     private _selectedLicence: UIEventSource<string>;
     private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
     private _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
     private _userdetails: UIEventSource<UserDetails>;
 
@@ -32,6 +36,7 @@ export class ImageUploadFlow extends UIElement {
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
         this.ListenTo(this._didFail);
+        this.ListenTo(this._allDone);
 
         const licensePicker = new DropDown(Translations.t.image.willBePublished,
             [
@@ -50,20 +55,28 @@ export class ImageUploadFlow extends UIElement {
 
     InnerRender(): string {
 
-        if (!this._userdetails.data.loggedIn) {
-            return `<div class='activate-osm-authentication'>${Translations.t.image.pleaseLogin.Render()}</div>`;
+        const t = Translations.t.image;
+        if (this._userdetails === undefined) {
+            return ""; // No user details -> logging in is probably disabled or smthing
         }
 
-        let uploadingMessage = "";
+        if (!this._userdetails.data.loggedIn) {
+            return `<div class='activate-osm-authentication'>${t.pleaseLogin.Render()}</div>`;
+        }
+
+        let currentState: UIElement[] = [];
         if (this._isUploading.data == 1) {
-            return `<b>${Translations.t.image.uploadingPicture.Render()}</b>`
+            currentState.push(t.uploadingPicture);
+        } else if (this._isUploading.data > 0) {
+            currentState.push(t.uploadingMultiple.Subs({count: this._isUploading.data}));
         }
-        if (this._isUploading.data > 0) {
-            uploadingMessage = "<b>Uploading multiple pictures, " + this._isUploading.data + " left...</b>"
+
+        if (this._didFail.data) {
+            currentState.push(t.uploadFailed);
         }
-        
-        if(this._didFail.data){
-            uploadingMessage += "<b>Some images failed to upload. Imgur migth be down or you might block third-party API's (e.g. by using Brave or UMatrix)</b><br/>"
+
+        if (this._allDone.data) {
+            currentState.push(t.uploadDone)
         }
 
         return "" +
@@ -78,8 +91,7 @@ export class ImageUploadFlow extends UIElement {
             "</div>" +
             Translations.t.image.respectPrivacy.Render() + "<br/>" +
             this._licensePicker.Render() + "<br/>" +
-            uploadingMessage +
-
+            new VerticalCombine(currentState).Render() +
             "</label>" +
             "<form id='fileselector-form-" + this.id + "'>" +
             "<input id='fileselector-" + this.id + "' " +
@@ -88,7 +100,6 @@ export class ImageUploadFlow extends UIElement {
             "accept='image/*' name='picField' size='24' multiple='multiple' alt=''" +
             "/>" +
             "</form>" +
-
             "</div>"
             ;
     }
@@ -111,6 +122,7 @@ export class ImageUploadFlow extends UIElement {
         function submitHandler() {
             const files = $(selector).prop('files');
             self._isUploading.setData(files.length);
+            self._allDone.setData(false);
 
             const opts = self._uploadOptions(self._selectedLicence.data);
 
@@ -121,11 +133,16 @@ export class ImageUploadFlow extends UIElement {
                     opts.handleURL(url);
                 },
                 function () {
-                    console.log("All uploads completed")
+                    console.log("All uploads completed");
+                    self._allDone.setData(true);
                     opts.allDone();
                 },
                 function(failReason) {
-                
+                    console.log("Upload failed due to ", failReason)
+                    // No need to call something from the options -> we handle this here
+                    self._didFail.setData(true);
+                    self._isUploading.data--;
+                    self._isUploading.ping();
                 },0
             )
         }

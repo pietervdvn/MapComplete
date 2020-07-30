@@ -113,7 +113,7 @@ export class Imgur {
             handleSuccessfullUpload(response.data.link);
         }).fail((reason) => {
             console.log("Uploading to IMGUR failed", reason);
-            onFail(reason)
+            onFail(reason);
         });
     }
 
