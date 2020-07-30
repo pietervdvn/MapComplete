@@ -15,6 +15,15 @@ export class GhostBike extends LayerDefinition {
         this.description = "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident," +
             " in the form of a white bicycle placed permanently near the accident location.";
 
+
+        this.presets = [
+            {
+                title: "Ghost bike",
+                description: "Add a missing ghost bike to the map",
+                tags: [new Tag("historic", "memorial"), new Tag("memorial", "ghost_bike")]
+            }
+        ]
+
         this.elementsToShow = [
             new FixedText(this.description),
             new ImageCarouselWithUploadConstructor(),

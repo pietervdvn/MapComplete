@@ -22,10 +22,15 @@ export class Bos extends LayerDefinition {
         );
 
 
-        this.newElementTags = [
-            new Tag("landuse", "forest"),
-            new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
-        ];
+        this.presets = [{
+            title: "Bos",
+            description: "Voeg een ontbrekend bos toe aan de kaart",
+            icon: undefined,
+            tags: [
+                new Tag("landuse", "forest"),
+                new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")
+            ]
+        }];
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13;

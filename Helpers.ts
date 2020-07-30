@@ -1,6 +1,5 @@
-import {OsmConnection} from "./Logic/OsmConnection";
-import {Changes} from "./Logic/Changes";
 import {UIEventSource} from "./UI/UIEventSource";
+import {Changes} from "./Logic/Osm/Changes";
 
 export class Helpers {
 

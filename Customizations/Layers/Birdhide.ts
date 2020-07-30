@@ -18,7 +18,12 @@ export class Birdhide extends LayerDefinition {
             icon: "assets/nature/birdhide.svg",
             minzoom: 12,
             wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
-            newElementTags: [Birdhide.birdhide],
+            presets: [
+                {
+                    title: "Vogelkijkplaats",
+                    tags: [Birdhide.birdhide]
+                }
+            ],
             style(tags: any): { color: string; icon: any } {
                 return {color: "", icon: undefined};
             },

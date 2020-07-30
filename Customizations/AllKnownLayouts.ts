@@ -12,6 +12,7 @@ import {Widths} from "./Layers/Widths";
 import {StreetWidth} from "./Layouts/StreetWidth";
 import {NatureReserves} from "./Layers/NatureReserves";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
+import Translations from "../UI/i18n/Translations";
 
 export class AllKnownLayouts {
     public static allSets = AllKnownLayouts.AllLayouts();

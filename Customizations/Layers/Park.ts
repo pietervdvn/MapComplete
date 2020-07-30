@@ -50,8 +50,13 @@ export class Park extends LayerDefinition {
         this.icon = undefined;
         this.overpassFilter =
             new Or([new Tag("leisure", "park"), new Tag("landuse", "village_green")]);
-        this.newElementTags = [new Tag("leisure", "park"),
-            new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")];
+        this.presets = [{
+            title: "Park",
+            description: "Voeg een ontbrekend park toe. Een park is een groene ruimte die openbaar is." +
+                "Typisch vind je er banken, vuilbakken, standbeelden, ... ",
+            tags: [new Tag("leisure", "park"),
+                new Tag("fixme", "Toegevoegd met MapComplete, geometry nog uit te tekenen")]
+        }];
         this.maxAllowedOverlapPercentage = 25;
 
         this.minzoom = 13;

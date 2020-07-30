@@ -12,7 +12,11 @@ export class Bookcases extends LayerDefinition {
         super();
 
         this.name = "boekenkast";
-        this.newElementTags = [new Tag("amenity", "public_bookcase")];
+        this.presets = [{
+            tags: [new Tag("amenity", "public_bookcase")],
+            description: "Add a new bookcase here",
+            title: Translations.t.bookcases.bookcase,
+        }];
         this.icon = "./assets/bookcase.svg";
         this.overpassFilter = new Tag("amenity", "public_bookcase");
         this.minzoom = 11;

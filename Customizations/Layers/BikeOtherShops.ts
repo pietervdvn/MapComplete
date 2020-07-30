@@ -27,7 +27,7 @@ export default class BikeOtherShops extends LayerDefinition {
             anyValueExcept("shop", "bicycle"),
             new Tag(/^service:bicycle:/, "*"),
         ])
-        this.newElementTags = undefined
+        this.presets = []
         this.maxAllowedOverlapPercentage = 10
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 

@@ -136,12 +136,12 @@ export default class Translations {
                     }),
                     yes: new T({
                         en: "This parking has room for cargo bikes",
-                        nl: "Deze parking is overdekt (er is een afdak)",
+                        nl: "Deze parking heeft plaats voor bakfietsen",
                         fr: "TODO: fr"
                     }),
                     designated: new T({
                         en: "This parking has designated (official) spots for cargo bikes.",
-                        nl: "Deze parking is overdekt (er is een afdak)",
+                        nl: "Er zijn speciale plaatsen voorzien voor bakfietsen",
                         fr: "TODO: fr"
                     }),
                     no: new T({
@@ -282,9 +282,9 @@ export default class Translations {
                         fr: "Il y a seulement une pompe"
                     }),
                     tools: new T({
-                        en: "There are only tools (screwdrivers, pliers...) aanwezig",
+                        en: "There are only tools (screwdrivers, pliers...) present",
                         nl: "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
-                        fr: "Il y a seulement des outils (tournevis, pinces..."
+                        fr: "Il y a seulement des outils (tournevis, pinces...)"
                     }),
                     both: new T({
                         en: "There are both tools and a pump present",
@@ -298,9 +298,17 @@ export default class Translations {
                         nl: "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
                         fr: "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?"
                     }),
-                    yes: new T({en: "There is a hook or stand", nl: "Er is een haak of standaard", fr: "Oui il y a un crochet ou une accroche"}),
-                    no: new T({en: "There is no hook or stand", nl: "Er is geen haak of standaard", fr: "Non il n'y pas de crochet ou d'accroche"}),
-                }
+                    yes: new T({
+                        en: "There is a hook or stand",
+                        nl: "Er is een haak of standaard",
+                        fr: "Oui il y a un crochet ou une accroche"
+                    }),
+                    no: new T({
+                        en: "There is no hook or stand",
+                        nl: "Er is geen haak of standaard",
+                        fr: "Non il n'y pas de crochet ou d'accroche"
+                    }),
+                },
             },
             shop: {
                 name: new T({en: "bike repair/shop", nl: "fietszaak", fr: "magasin ou réparateur de vélo"}),
@@ -418,8 +426,8 @@ export default class Translations {
                 }
             },
             cafe: {
-                name: new T({en: "bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
-                title: new T({en: "Bike cafe", nl: "fietscafé", fr: "TODO: fr"}),
+                name: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
+                title: new T({en: "Bike cafe", nl: "Fietscafé", fr: "TODO: fr"}),
                 qName: {
                     question: new T({en: "What is the name of this bike cafe?", nl: "Wat is de naam van dit fietscafé?", fr: "TODO: fr"}),
                     render: new T({en: "This bike cafe is called {name}", nl: "Dit fietscafé heet <b>{name}</b>", fr: "TODO: fr"}),
@@ -702,6 +710,10 @@ export default class Translations {
                 stillLoading: new T({
                     en: "The data is still loading. Please wait a bit before you add a new point",
                     nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen."
+                }),
+                confirmIntro: new T({
+                    en: "<h3>Add a {title} here?</h3>The point you create here will be visible for everyone. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+                    nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is zichtbaar voor iedereen. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan."
                 })
             },
             pickLanguage: new T({
@@ -736,7 +748,16 @@ export default class Translations {
                 websiteIs: new T({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
                     nl: "Website: <a href='{website}' target='_blank'>{website}</a>"
-                })
+                }),
+                emailOf: new T({
+                        en: "What is the email address of {category}?",
+                        nl: "Wat is het email-adres van {category}?"
+                    }
+                ),
+                emailIs: new T({
+                    en: "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+                    nl: "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
+                }),
 
             },
             openStreetMapIntro: new T({
@@ -768,13 +789,25 @@ export default class Translations {
                 })
             },
             morescreen: {
-                intro:new T({
-                    en:"<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                intro: new T({
+                    en: "<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
                 }),
                 streetcomplete: new T({
                     en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 })
-            }
+            },
+            readYourMessages: new T({
+                en: "Please, read all your OpenStreetMap-messages before adding a new point.",
+                nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen."
+            }),
+            fewChangesBefore: new T({
+                en: "Please, answer a few questions of existing points before adding a new point.",
+                nl: "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen."
+            }),
+            goToInbox: new T({
+                en: "Open inbox",
+                nl: "Ga naar de berichten"
+            })
         }
     }
 

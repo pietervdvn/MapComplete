@@ -13,9 +13,11 @@ import {SubtleButton} from "./Base/SubtleButton";
 
 export class MoreScreen extends UIElement {
     private currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>;
+    private currentLayout: string;
 
-    constructor(currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
+    constructor(currentLayout: string, currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
         super(currentLocation);
+        this.currentLayout = currentLayout;
         this.currentLocation = currentLocation;
     }
 
@@ -28,22 +30,21 @@ export class MoreScreen extends UIElement {
             if (layout.hideFromOverview) {
                 continue
             }
+            if (layout.name === this.currentLayout) {
+                continue;
+            }
 
             const linkText =
                 `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${this.currentLocation.data.zoom}&lat=${this.currentLocation.data.lat}&lon=${this.currentLocation.data.lon}`
             const link =
                 new SubtleButton(layout.icon,
                     new Combine([
-                        `<a href="${linkText}" target="_blank">`,
-                        "<div>",
                         "<b>",
                         Translations.W(layout.title),
                         "</b>",
                         "<br/>",
                         Translations.W(layout.description),
-                        "</div>",
-                        "</a>"
-                    ]));
+                    ]), {url: linkText, newTab: false});
 
             els.push(link)
         }

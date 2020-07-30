@@ -360,9 +360,11 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
-        const prepost = Translations.W(freeform.template).InnerRender().split("$");
+        const prepost = Translations.W(freeform.template).InnerRender()
+            .replace("$$$","$string$")
+            .split("$");
         const type = prepost[1];
-
+        
         let isValid = TagRenderingOptions.inputValidation[type];
         if (isValid === undefined) {
             isValid = (str) => true;

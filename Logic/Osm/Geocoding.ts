@@ -1,7 +1,5 @@
-import * as $ from "jquery"
-import {UIEventSource} from "../UI/UIEventSource";
-import {Basemap} from "./Basemap";
-
+import {Basemap} from "../Leaflet/Basemap";
+import $ from "jquery"
 export class Geocoding {
 
     private static readonly host = "https://nominatim.openstreetmap.org/search?";

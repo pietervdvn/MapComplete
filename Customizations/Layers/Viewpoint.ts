@@ -11,12 +11,17 @@ export class Viewpoint extends LayerDefinition {
         super({
             name: "Bezienswaardigheid",
             description: "Wil je een foto toevoegen van iets dat geen park, bos of natuurgebied is? Dit kan hiermee",
-            newElementTags: [new Tag("tourism", "viewpoint"), new Tag("fixme", "Added with mapcomplete. This viewpoint should probably me merged with some existing feature")],
+            presets: [{
+                title: "Bezienswaardigheid (andere)",
+                description: "Wens je een foto toe te voegen dat geen park, bos of (erkend) natuurreservaat is? Dit kan hiermee",
+                tags: [new Tag("tourism", "viewpoint"),
+                    new Tag("fixme", "Added with mapcomplete. This viewpoint should probably me merged with some existing feature")]
+            }],
             icon: "assets/viewpoint.svg",
             wayHandling: LayerDefinition.WAYHANDLING_CENTER_ONLY,
             style: tags => {
                 return {
-                    color: undefined, icon:{
+                    color: undefined, icon: {
                         iconUrl: "assets/viewpoint.svg",
                         iconSize: [20, 20]
                     }

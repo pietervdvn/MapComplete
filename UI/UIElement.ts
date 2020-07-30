@@ -7,6 +7,7 @@ export abstract class UIElement extends UIEventSource<string>{
 
     public readonly id: string;
     public readonly _source: UIEventSource<any>;
+    public clss : string = ""
     
     private _hideIfEmpty = false;
     
@@ -103,7 +104,7 @@ export abstract class UIElement extends UIEventSource<string>{
    }
 
     Render(): string {
-        return "<span class='uielement' id='" + this.id + "'>" + this.InnerRender() + "</span>"
+        return `<span class='uielement ${this.clss}' id='${this.id}'>${this.InnerRender()}</span>`
     }
 
     AttachTo(divId: string) {

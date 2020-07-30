@@ -1,11 +1,11 @@
 import {UIElement} from "./UIElement";
-import {UserDetails} from "../Logic/OsmConnection";
 import {UIEventSource} from "./UIEventSource";
-import {Basemap} from "../Logic/Basemap";
 import L from "leaflet";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
+import {Basemap} from "../Logic/Leaflet/Basemap";
 
 /**
  * Handles and updates the user badge

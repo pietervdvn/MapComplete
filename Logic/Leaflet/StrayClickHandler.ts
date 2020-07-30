@@ -1,7 +1,7 @@
 import {Basemap} from "./Basemap";
 import L from "leaflet";
-import {UIEventSource} from "../UI/UIEventSource";
-import {UIElement} from "../UI/UIElement";
+import {UIEventSource} from "../../UI/UIEventSource";
+import {UIElement} from "../../UI/UIElement";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.

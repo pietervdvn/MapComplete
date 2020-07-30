@@ -12,16 +12,18 @@ export class Map extends LayerDefinition {
         this.minzoom = 12;
 
         this.overpassFilter = new Tag("information", "map");
-        this.newElementTags = [new Tag("tourism", "information"), new Tag("information", "map")];
+        this.presets = [{
+            title: "Map",
+            tags: [new Tag("tourism", "information"), new Tag("information", "map")]
+        }];
 
-        
+
         const isOsmSource = new Tag("map_source", "OpenStreetMap");
-        
-        
-        
+
+
         this.style = (properties) => {
             let icon = "assets/map.svg";
-            if(isOsmSource.matchesProperties(properties)){
+            if (isOsmSource.matchesProperties(properties)) {
                 icon = "assets/osm-logo-white-bg.svg";
                 
                 const attr = properties["map_source:attribution"];

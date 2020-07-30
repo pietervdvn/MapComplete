@@ -4,11 +4,11 @@ import {UIEventSource} from "../UIEventSource";
 import {SlideShow} from "../SlideShow";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {VerticalCombine} from "../Base/VerticalCombine";
-import {Changes} from "../../Logic/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
-import {UserDetails} from "../../Logic/OsmConnection";
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
+import {Changes} from "../../Logic/Osm/Changes";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
 
 export class ImageCarouselConstructor implements TagDependantUIElementConstructor{
     IsKnown(properties: any): boolean {

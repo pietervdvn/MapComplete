@@ -2,11 +2,11 @@
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
+import {UIEventSource} from "../../UI/UIEventSource";
 import {OsmConnection} from "./OsmConnection";
 import {OsmNode, OsmObject} from "./OsmObject";
-import {ElementStorage} from "./ElementStorage";
-import {UIEventSource} from "../UI/UIEventSource";
-import {And, Tag, TagsFilter} from "./TagsFilter";
+import {And, Tag, TagsFilter} from "../TagsFilter";
+import {ElementStorage} from "../ElementStorage";
 
 export class Changes {
 
@@ -261,11 +261,4 @@ console.log("Received change",key, value)
         });
     }
     
-    public asQuestions(qs : QuestionDefinition[]){
-        let ls = [];
-        for (var i in qs){
-            ls.push(new Question(this, qs[i]));
-        } 
-        return ls;
-    }
 }

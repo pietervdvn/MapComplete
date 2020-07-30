@@ -1,10 +1,9 @@
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
 import {ImageCarousel} from "./ImageCarousel";
-import {OsmImageUploadHandler} from "../../Logic/OsmImageUploadHandler";
 import {UIEventSource} from "../UIEventSource";
-import {Changes} from "../../Logic/Changes";
-import {UserDetails} from "../../Logic/OsmConnection";
 import {ImageUploadFlow} from "../ImageUploadFlow";
+import {Changes} from "../../Logic/Osm/Changes";
+import {OsmImageUploadHandler} from "../../Logic/Osm/OsmImageUploadHandler";
 
 export class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
     IsKnown(properties: any): boolean {

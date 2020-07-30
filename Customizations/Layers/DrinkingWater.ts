@@ -21,9 +21,10 @@ export class DrinkingWater extends LayerDefinition {
         ]);
 
 
-        this.newElementTags = [
-            new Tag("amenity", "drinking_water"),
-        ];
+        this.presets = [{
+            title: Translations.t.cyclofix.drinking_water.title,
+            tags: [new Tag("amenity", "drinking_water")]
+        }];
         this.maxAllowedOverlapPercentage = 10;
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 

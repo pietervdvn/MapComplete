@@ -1,6 +1,6 @@
 import L from "leaflet"
-import {UIEventSource} from "../UI/UIEventSource";
-import {UIElement} from "../UI/UIElement";
+import {UIEventSource} from "../../UI/UIEventSource";
+import {UIElement} from "../../UI/UIElement";
 
 
 export class BaseLayers {

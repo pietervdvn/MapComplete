@@ -11,7 +11,14 @@ export class InformationBoard extends LayerDefinition {
             description: "Een informatiebord of kaart",
             minzoom: 12,
             overpassFilter: new Tag("tourism", "information"),
-            newElementTags: [new Tag("tourism", "information")],
+            presets: [{
+                title: "Informatiebord",
+                tags: [new Tag("tourism", "information")]
+            },
+                {
+                    title: "Kaart",
+                    tags: [new Tag("tourism", "information"), new Tag("information", "map")]
+                }],
             maxAllowedOverlapPercentage: 0,
             icon: "assets/nature/info.png",
         });

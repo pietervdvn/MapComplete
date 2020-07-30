@@ -1,9 +1,9 @@
-import {Basemap} from "./Basemap";
-import {Overpass} from "./Overpass";
 import {Or, TagsFilter} from "./TagsFilter";
 import {UIEventSource} from "../UI/UIEventSource";
 import {FilteredLayer} from "./FilteredLayer";
-
+import {Bounds} from "./Bounds";
+import {Overpass} from "./Osm/Overpass";
+import {Basemap} from "./Leaflet/Basemap";
 
 export class LayerUpdater {
     private _map: Basemap;
@@ -14,7 +14,7 @@ export class LayerUpdater {
     /**
      * The previous bounds for which the query has been run
      */
-    private previousBounds: { north: number, east: number, south: number, west: number };
+    private previousBounds: Bounds;
 
     private _overpass: Overpass;
     private _minzoom: number;
@@ -93,10 +93,21 @@ export class LayerUpdater {
         if (this.runningQuery.data) {
             console.log("Still running a query, skip");
         }
-        var bbox = this.buildBboxFor();
+        
+        const bounds = this._map.map.getBounds();
+
+        const diff =0.07;
+
+        const n = bounds.getNorth() + diff;
+        const e = bounds.getEast() +  diff;
+        const s = bounds.getSouth() - diff;
+        const w = bounds.getWest() -  diff;
+
+        this.previousBounds = {north: n, east: e, south: s, west: w};
+        
         this.runningQuery.setData(true);
         const self = this;
-        this._overpass.queryGeoJson(bbox,
+        this._overpass.queryGeoJson(this.previousBounds,
             function (data) {
                 self.handleData(data)
             },
@@ -107,19 +118,7 @@ export class LayerUpdater {
 
     }
 
-    private buildBboxFor(): string {
-        const b = this._map.map.getBounds();
-        const diff =0.07;
-        
-        const n = b.getNorth() + diff;
-        const e = b.getEast() +  diff;
-        const s = b.getSouth() - diff;
-        const w = b.getWest() -  diff;
-
-        this.previousBounds = {north: n, east: e, south: s, west: w};
-
-        return "[bbox:" + s + "," + w + "," + n + "," + e + "]";
-    }
+   
 
     private IsInBounds(): boolean {
 

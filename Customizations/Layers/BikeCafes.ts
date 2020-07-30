@@ -9,6 +9,7 @@ import Website from "../Questions/Website";
 import CafeRepair from "../Questions/bike/CafeRepair";
 import CafeDiy from "../Questions/bike/CafeDiy";
 import CafePump from "../Questions/bike/CafePump";
+import {EmailQuestion} from "../Questions/EmailQuestion";
 
 
 export default class BikeCafes extends LayerDefinition {
@@ -25,11 +26,18 @@ export default class BikeCafes extends LayerDefinition {
                 new Tag("pub", "cycling")
             ])
         ]) 
-        this.newElementTags = [
-            new Tag("amenity", "pub"),
-            new Tag("pub", "cycling"),
+        
+        this.presets = [
+            {
+                title: Translations.t.cyclofix.cafe.title,
+                tags :  [
+                    new Tag("amenity", "pub"),
+                    new Tag("pub", "cycling"),
+                ]
+            }
         ]
-        this.maxAllowedOverlapPercentage = 10
+        
+        this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13
         this.style = this.generateStyleFunction()
@@ -37,8 +45,9 @@ export default class BikeCafes extends LayerDefinition {
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             new CafeName(),
-            new PhoneNumberQuestion("{name}"),
             new Website("{name}"),
+            new PhoneNumberQuestion("{name}"),
+            new EmailQuestion("{name}"),
             new CafeRepair(),
             new CafeDiy(),
             new CafePump()
