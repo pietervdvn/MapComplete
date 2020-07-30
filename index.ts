@@ -186,7 +186,7 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 const layerSetup = InitUiElements.InitLayers(layoutToUse, osmConnection, changes, allElements, bm, fullScreenMessage, selectedElement);
 
-const layerUpdater = new LayerUpdater(bm, layerSetup.minZoom, layerSetup.flayers);
+const layerUpdater = new LayerUpdater(bm, layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
 
 
 // --------------- Setting up layer selection ui --------

@@ -171,7 +171,7 @@ export class Widths extends LayerDefinition {
             return {
                 icon: null,
                 color: c,
-                weight: 7,
+                weight: 10,
                 dashArray: dashArray
             }
         }

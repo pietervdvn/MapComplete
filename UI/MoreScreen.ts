@@ -52,6 +52,7 @@ export class MoreScreen extends UIElement {
 
         return new VerticalCombine([
             tr.intro,
+            tr.requestATheme,
             new VerticalCombine(els),
             tr.streetcomplete
         ]).Render();

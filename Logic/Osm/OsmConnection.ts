@@ -91,6 +91,8 @@ export class OsmConnection {
             }
             
             self.UpdatePreferences();
+            self.CheckForMessagesContinuously();
+            
             // details is an XML DOM of user details
             let userInfo = details.getElementsByTagName("user")[0];
 
@@ -120,7 +122,19 @@ export class OsmConnection {
             data.unreadMessages = parseInt(messages.getAttribute("unread"));
             data.totalMessages = parseInt(messages.getAttribute("count"));
             self.userDetails.ping();
+          
         });
+    }
+
+
+    private CheckForMessagesContinuously() {
+        const self = this;
+        window.setTimeout(() => {
+            if (self.userDetails.data.loggedIn) {
+                console.log("Checking for messages")
+                this.AttemptLogin();
+            }
+        },  5 * 60 * 1000);
     }
 
     /**

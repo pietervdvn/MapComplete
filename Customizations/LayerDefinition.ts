@@ -69,6 +69,7 @@ export class LayerDefinition {
      */
     style: (tags: any) => {
         color: string,
+        weight?: number,
         icon: { 
             iconUrl: string,
             iconSize: number[],

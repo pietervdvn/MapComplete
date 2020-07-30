@@ -28,7 +28,7 @@ export class FilteredLayer {
     private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, icon: { iconUrl: string, iconSize? : number[], popupAnchor?: number[], iconAnchor?:number[] } };
+    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize? : number[], popupAnchor?: number[], iconAnchor?:number[] } };
 
     private readonly _storage: ElementStorage;
 
@@ -239,19 +239,37 @@ export class FilteredLayer {
             },
 
             onEachFeature: function (feature, layer) {
-                let eventSource = self._storage.addOrGetElement(feature);
-                eventSource.addCallback(function () {
+
+                feature.updateStyle = () => {
                     if (layer.setIcon) {
                         layer.setIcon(L.icon(self._style(feature.properties).icon))
                     } else {
                         self._geolayer.setStyle(function (feature) {
-                            return self._style(feature.properties);
+                            const style = self._style(feature.properties);
+                            if (self._selectedElement.data?.feature === feature) {
+                                if (style.weight !== undefined) {
+                                    style.weight = style.weight * 2;
+                                }else{
+                                    style.weight = 20;
+                                }
+                            }
+                            return style;
                         });
                     }
-                });
+                }
+
+                let eventSource = self._storage.addOrGetElement(feature);
+
+
+                eventSource.addCallback(feature.updateStyle);
 
                 layer.on("click", function (e) {
+                    const previousFeature = self._selectedElement.data?.feature;
                     self._selectedElement.setData({feature: feature});
+                    feature.updateStyle();
+                    previousFeature?.updateStyle();
+
+
                     if (feature.geometry.type === "Point") {
                         return; // Points bind there own popups
                     }
@@ -267,7 +285,6 @@ export class FilteredLayer {
                     uiElement.Update();
                     uiElement.Activate();
                     L.DomEvent.stop(e); // Marks the event as consumed
-
                 });
             }
         });

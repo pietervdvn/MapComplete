@@ -8,6 +8,7 @@ import {Basemap} from "./Leaflet/Basemap";
 export class LayerUpdater {
     private _map: Basemap;
     private _layers: FilteredLayer[];
+    private widenFactor: number;
 
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
@@ -27,7 +28,9 @@ export class LayerUpdater {
      */
     constructor(map: Basemap,
                 minzoom: number,
+                widenFactor: number,
                 layers: FilteredLayer[]) {
+        this.widenFactor = widenFactor;
         this._map = map;
         this._layers = layers;
         this._minzoom = minzoom;
@@ -97,7 +100,7 @@ export class LayerUpdater {
         
         const bounds = this._map.map.getBounds();
 
-        const diff =0.07;
+        const diff = this.widenFactor;
 
         const n = bounds.getNorth() + diff;
         const e = bounds.getEast() +  diff;

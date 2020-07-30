@@ -10,6 +10,7 @@ import {MetaMap} from "./Layouts/MetaMap";
 import {StreetWidth} from "./Layouts/StreetWidth";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {ClimbingTrees} from "./Layouts/ClimbingTrees";
+import {Smoothness} from "./Layouts/Smoothness";
 
 export class AllKnownLayouts {
     public static allSets = AllKnownLayouts.AllLayouts();
@@ -25,9 +26,9 @@ export class AllKnownLayouts {
             new StreetWidth(),
             new Natuurpunt(),
             new ClimbingTrees(),
-            new Artworks()
+            new Artworks(),
+            new Smoothness()
             /*new Toilets(),
-            new Statues(),
             */
         ];
 

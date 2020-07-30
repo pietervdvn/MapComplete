@@ -40,6 +40,12 @@ export class Layout {
     public hideFromOverview : boolean = false;
 
     /**
+     * The BBOX of the currently visible map are widened by this factor, in order to make some panning possible.
+     * This number influences this
+     */
+    public widenFactor : number = 0.07;
+
+    /**
      * 
      * @param name: The name used in the query string. If in the query "quests=<name>" is defined, it will select this layout
      * @param title: Will be used in the <title> of the page
@@ -128,7 +134,7 @@ export class WelcomeMessage extends UIElement {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        this.osmConnection.registerActivateOsmAUthenticationClass()
+        this.osmConnection?.registerActivateOsmAUthenticationClass()
     }
 
 }

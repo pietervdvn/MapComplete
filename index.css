@@ -54,6 +54,10 @@ form {
     display: block;
 }
 
+.selected-element {
+    fill: black
+}
+
 /**************** GENERIC ****************/
 
 .uielement {
