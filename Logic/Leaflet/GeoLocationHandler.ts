@@ -1,25 +1,20 @@
-import {Basemap} from "./Basemap";
 import L from "leaflet";
 import {UIEventSource} from "../../UI/UIEventSource";
 import {UIElement} from "../../UI/UIElement";
 import {Helpers} from "../../Helpers";
+import {State} from "../../State";
 
 export class GeoLocationHandler extends UIElement {
 
-    currentLocation: UIEventSource<{
-        latlng: number,
-        accuracy: number
-    }> = new UIEventSource<{ latlng: number, accuracy: number }>(undefined);
-
     private _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _permission: UIEventSource<string> = new UIEventSource<string>("");
-    private _map: Basemap;
     private _marker: any;
+    private _hasLocation: UIEventSource<boolean>;
 
-    constructor(map: Basemap) {
+    constructor() {
         super(undefined);
-        this._map = map;
-        this.ListenTo(this.currentLocation);
+        this._hasLocation = State.state.currentGPSLocation.map((location) => location !== undefined);
+        this.ListenTo(this._hasLocation);
         this.ListenTo(this._isActive);
         this.ListenTo(this._permission);
 
@@ -29,23 +24,24 @@ export class GeoLocationHandler extends UIElement {
         function onAccuratePositionProgress(e) {
             console.log(e.accuracy);
             console.log(e.latlng);
-            self.currentLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
+            State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionFound(e) {
             console.log(e.accuracy);
             console.log(e.latlng);
-            self.currentLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
+            State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionError(e) {
             console.log("onerror", e.message);
-           
+
         }
 
-        map.map.on('accuratepositionprogress', onAccuratePositionProgress);
-        map.map.on('accuratepositionfound', onAccuratePositionFound);
-        map.map.on('accuratepositionerror', onAccuratePositionError);
+        const map = State.state.bm.map;
+        map.on('accuratepositionprogress', onAccuratePositionProgress);
+        map.on('accuratepositionfound', onAccuratePositionFound);
+        map.on('accuratepositionerror', onAccuratePositionError);
 
 
         const icon = L.icon(
@@ -55,12 +51,12 @@ export class GeoLocationHandler extends UIElement {
                 iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
             })
 
-        this.currentLocation.addCallback((location) => {
+        State.state.currentGPSLocation.addCallback((location) => {
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map.map);
 
             if (self._marker !== undefined) {
-                map.map.removeLayer(self._marker);
+                map.removeLayer(self._marker);
             }
             self._marker = newMarker;
         });
@@ -81,7 +77,7 @@ export class GeoLocationHandler extends UIElement {
     }
 
     InnerRender(): string {
-        if (this.currentLocation.data) {
+        if (this._hasLocation.data) {
             return "<img src='assets/crosshair-blue.png' alt='locate me'>";
         }
         if (this._isActive.data) {
@@ -94,17 +90,17 @@ export class GeoLocationHandler extends UIElement {
     
     private StartGeolocating() {
         const self = this;
-
+        const map = State.state.bm.map;
         if (self._permission.data === "denied") {
             return "";
         }
-        if (self.currentLocation.data !== undefined) {
-            self._map.map.flyTo(self.currentLocation.data.latlng, 18);
+        if (State.state.currentGPSLocation.data !== undefined) {
+            map.flyTo(State.state.currentGPSLocation.data.latlng, 18);
         }
 
 
         console.log("Searching location using GPS")
-        self._map.map.findAccuratePosition({
+        map.findAccuratePosition({
             maxWait: 10000, // defaults to 10000
             desiredAccuracy: 50 // defaults to 20
         });
@@ -113,13 +109,13 @@ export class GeoLocationHandler extends UIElement {
         if (!self._isActive.data) {
             self._isActive.setData(true);
             Helpers.DoEvery(60000, () => {
-                
-                if(document.visibilityState !== "visible"){
+
+                if (document.visibilityState !== "visible") {
                     console.log("Not starting gps: document not visible")
                     return;
                 }
-                
-                self._map.map.findAccuratePosition({
+
+                map.findAccuratePosition({
                     maxWait: 10000, // defaults to 10000
                     desiredAccuracy: 50 // defaults to 20
                 });

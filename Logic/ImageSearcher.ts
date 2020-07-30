@@ -5,6 +5,7 @@ import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
 import {Changes} from "./Osm/Changes";
 import {ImgurImage} from "../UI/Image/ImgurImage";
+import {State} from "../State";
 
 /**
  * There are multiple way to fetch images for an object
@@ -27,16 +28,13 @@ export class ImageSearcher extends UIEventSource<string[]> {
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
     private _activated: boolean = false;
-    private _changes: Changes;
     public _deletedImages = new UIEventSource<string[]>([]);
 
 
-    constructor(tags: UIEventSource<any>,
-                changes: Changes) {
+    constructor(tags: UIEventSource<any>) {
         super([]);
 
         this._tags = tags;
-        this._changes = changes;
 
         const self = this;
         this._wdItem.addCallback(() => {
@@ -119,7 +117,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
             return;
         }
         console.log("Deleting image...", key, " --> ", url);
-        this._changes.addChange(this._tags.data.id, key, "");
+        State.state.changes.addChange(this._tags.data.id, key, "");
         this._deletedImages.data.push(url);
         this._deletedImages.ping();
     }

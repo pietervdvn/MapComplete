@@ -11,6 +11,7 @@ import {VerticalCombine} from "./Base/VerticalCombine";
 import Locale from "./i18n/Locale";
 import {Changes} from "../Logic/Osm/Changes";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
+import {State} from "../State";
 
 export interface Preset {
     description: string | UIElement,
@@ -24,13 +25,9 @@ export interface Preset {
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
 export class SimpleAddUI extends UIElement {
-    private _zoomlevel: UIEventSource<{ zoom: number }>;
     private _addButtons: UIElement[];
-    private _lastClickLocation: UIEventSource<{ lat: number; lon: number }>;
-    private _changes: Changes;
-    private _selectedElement: UIEventSource<{ feature: any }>;
+    
     private _dataIsLoading: UIEventSource<boolean>;
-    private _userDetails: UIEventSource<UserDetails>;
 
     private _confirmPreset: UIEventSource<Preset>
         = new UIEventSource<Preset>(undefined);
@@ -39,24 +36,17 @@ export class SimpleAddUI extends UIElement {
     private goToInboxButton: UIElement = new SubtleButton("./assets/envelope.svg", 
         Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
-    constructor(zoomlevel: UIEventSource<{ zoom: number }>,
-                lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                changes: Changes,
-                selectedElement: UIEventSource<{ feature: any }>,
+    constructor(
                 dataIsLoading: UIEventSource<boolean>,
-                userDetails: UIEventSource<UserDetails>,
                 addButtons: { description: string | UIElement, name: string | UIElement; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
     ) {
-        super(zoomlevel);
+        super(State.state.locationControl);
         this.ListenTo(Locale.language);
-        this._zoomlevel = zoomlevel;
-        this._lastClickLocation = lastClickLocation;
-        this._changes = changes;
-        this._selectedElement = selectedElement;
+        this.ListenTo(State.state.osmConnection.userDetails);
+        
         this._dataIsLoading = dataIsLoading;
-        this._userDetails = userDetails;
-        this.ListenTo(userDetails);
         this.ListenTo(dataIsLoading);
+        
         this._addButtons = [];
         this.ListenTo(this._confirmPreset);
         this.clss = "add-ui"
@@ -102,26 +92,27 @@ export class SimpleAddUI extends UIElement {
         const self = this;
         return () => {
 
-            const loc = self._lastClickLocation.data;
-            let feature = self._changes.createElement(option.tags, loc.lat, loc.lon);
+            const loc = State.state.bm.lastClickLocation.data;
+            let feature = State.state.changes.createElement(option.tags, loc.lat, loc.lon);
             option.layerToAddTo.AddNewElement(feature);
-            self._selectedElement.setData({feature: feature});
+            State.state.selectedElement.setData({feature: feature});
         }
     }
 
     InnerRender(): string {
 
+        const userDetails = State.state.osmConnection.userDetails;
 
         if (this._confirmPreset.data !== undefined) {
 
-            if(this._userDetails.data.dryRun){
+            if(userDetails.data.dryRun){
                 this.CreatePoint(this._confirmPreset.data)();
                 return;
             }
 
             return new Combine([
                 Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
-                this._userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>":"",
+                userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>":"",
                 this.confirmButton,
                 this.cancelButton
 
@@ -134,15 +125,15 @@ export class SimpleAddUI extends UIElement {
         let header: UIElement = Translations.t.general.add.header;
 
         
-        if(this._userDetails === undefined){
+        if(userDetails === undefined){
             return header.Render();
         }
         
-        if (!this._userDetails.data.loggedIn) {
+        if (!userDetails.data.loggedIn) {
             return new Combine([header, Translations.t.general.add.pleaseLogin]).Render()
         }
 
-        if (this._userDetails.data.unreadMessages > 0) {
+        if (userDetails.data.unreadMessages > 0) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.readYourMessages,
                 "</span>",
@@ -150,7 +141,7 @@ export class SimpleAddUI extends UIElement {
             ]).Render();
         }
 
-        if (this._userDetails.data.dryRun) {
+        if (userDetails.data.dryRun) {
             header = new Combine([header,
                 "<span class='alert'>",
                 "Test mode - changes won't be saved",
@@ -158,13 +149,13 @@ export class SimpleAddUI extends UIElement {
             ]);
         }
 
-        if (this._userDetails.data.csCount < 5) {
+        if (userDetails.data.csCount < 5) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.fewChangesBefore,
                 "</span>"]).Render();
         }
 
-        if (this._zoomlevel.data.zoom < 19) {
+        if (State.state.locationControl.data.zoom < 19) {
             return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
         }
 
@@ -183,7 +174,7 @@ export class SimpleAddUI extends UIElement {
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
-        this._userDetails.data.osmConnection.registerActivateOsmAUthenticationClass();
+       State.state.osmConnection.registerActivateOsmAUthenticationClass();
     }
 
 }

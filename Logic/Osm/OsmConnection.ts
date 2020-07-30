@@ -10,7 +10,6 @@ export class UserDetails {
     public img: string;
     public unreadMessages = 0;
     public totalMessages = 0;
-    public osmConnection: OsmConnection;
     public dryRun: boolean;
     home: { lon: number; lat: number };
 }
@@ -23,24 +22,43 @@ export class OsmConnection {
 
     constructor(dryRun: boolean, oauth_token: UIEventSource<string>) {
 
-        this.auth = new osmAuth({
-            oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-            oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-            singlepage: true,
-            landing: window.location.href,
-            auto: true // show a login form if the user is not authenticated and
-                       // you try to do a call
+        let pwaStandAloneMode = false;
+        try {
 
-        });
+            if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
+                pwaStandAloneMode = true;
+            }
+        } catch (e) {
+            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
+        }
+
+
+        if (pwaStandAloneMode) {
+            // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
+            this.auth = new osmAuth({
+                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+                singlepage: false,
+                auto: true
+            });
+        } else {
+
+            this.auth = new osmAuth({
+                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+                singlepage: true,
+                landing: window.location.href,
+                auto: true
+            });
+        }
 
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails());
-        this.userDetails.data.osmConnection = this;
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
 
 
-        if(oauth_token.data !== undefined){
+        if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
             const self = this;
             this.auth.bootstrapToken(oauth_token.data, 

@@ -9,6 +9,7 @@ import {CheckBox} from "./Input/CheckBox";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import {QueryParameters} from "../Logic/QueryParameters";
 import {Img} from "./Img";
+import {State} from "../State";
 
 export class ShareScreen extends UIElement {
 
@@ -19,7 +20,7 @@ export class ShareScreen extends UIElement {
     private _link: UIElement;
     private _linkStatus: UIElement;
 
-    constructor(layout: Layout, currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
+    constructor() {
         super(undefined)
         const tr = Translations.t.general.sharescreen;
 
@@ -32,6 +33,10 @@ export class ShareScreen extends UIElement {
             true
         )
         optionCheckboxes.push(includeLocation);
+        
+        const currentLocation = State.state.locationControl;
+        const layout = State.state.layoutToUse.data;
+        
         optionParts.push(includeLocation.isEnabled.map((includeL) => {
             if (includeL) {
                 return `z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`

@@ -7,13 +7,11 @@ import {OsmConnection} from "./OsmConnection";
 import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../TagsFilter";
 import {ElementStorage} from "../ElementStorage";
+import {State} from "../../State";
 
 export class Changes {
 
     private static _nextId = -1; // New assined ID's are negative
-
-    public readonly login: OsmConnection;
-    public readonly _allElements: ElementStorage;
 
     private _pendingChanges: { elementId: string, key: string, value: string }[] = []; // Gets reset on uploadAll
     private newElements: OsmObject[] = []; // Gets reset on uploadAll
@@ -27,8 +25,6 @@ export class Changes {
         login: OsmConnection,
         allElements: ElementStorage) {
         this._changesetComment = changesetComment;
-        this.login = login;
-        this._allElements = allElements;
     }
 
     addTag(elementId: string, tagsFilter : TagsFilter){
@@ -66,7 +62,7 @@ console.log("Received change",key, value)
             return;
         }
 
-        const eventSource = this._allElements.getElement(elementId);
+        const eventSource = State.state.allElements.getElement(elementId);
 
         eventSource.data[key] = value;
         eventSource.ping();
@@ -104,7 +100,7 @@ console.log("Received change",key, value)
                 ]
             }
         }
-        this._allElements.addOrGetElement(geojson);
+        State.state.allElements.addOrGetElement(geojson);
 
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a 
@@ -208,16 +204,16 @@ console.log("Received change",key, value)
                 for (const oldId in idMapping) {
                     const newId = idMapping[oldId];
 
-                    const element = self._allElements.getElement(oldId);
+                    const element = State.state.allElements.getElement(oldId);
                     element.data.id = newId;
-                    self._allElements.addElementById(newId, element);
+                    State.state.allElements.addElementById(newId, element);
                     element.ping();
                 }
             }
 
             console.log("Beginning upload...");
             // At last, we build the changeset and upload
-            self.login.UploadChangeset(self._changesetComment,
+            State.state.osmConnection.UploadChangeset(self._changesetComment,
                 function (csId) {
 
                     let modifications = "";

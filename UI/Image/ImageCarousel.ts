@@ -3,12 +3,15 @@ import {ImageSearcher} from "../../Logic/ImageSearcher";
 import {UIEventSource} from "../UIEventSource";
 import {SlideShow} from "../SlideShow";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {VerticalCombine} from "../Base/VerticalCombine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
-import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
+import {
+    Dependencies,
+    TagDependantUIElement,
+    TagDependantUIElementConstructor
+} from "../../Customizations/UIElementConstructor";
 import {Changes} from "../../Logic/Osm/Changes";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import {State} from "../../State";
 
 export class ImageCarouselConstructor implements TagDependantUIElementConstructor{
     IsKnown(properties: any): boolean {
@@ -23,8 +26,8 @@ export class ImageCarouselConstructor implements TagDependantUIElementConstructo
         return 0;
     }
 
-    construct(dependencies: { tags: UIEventSource<any>, changes: Changes }): TagDependantUIElement {
-        return new ImageCarousel(dependencies.tags, dependencies.changes);
+    construct(dependencies: Dependencies): TagDependantUIElement {
+        return new ImageCarousel(dependencies.tags);
     }
 
 }
@@ -41,14 +44,11 @@ export class ImageCarousel extends TagDependantUIElement {
     private readonly _deleteButton: UIElement;
     private readonly _isDeleted: UIElement;
     
-    private readonly _userDetails : UIEventSource<UserDetails>;
-
-    constructor(tags: UIEventSource<any>, changes: Changes) {
+    constructor(tags: UIEventSource<any>) {
         super(tags);
-        this._userDetails = changes.login.userDetails;
         
         const self = this;
-        this.searcher = new ImageSearcher(tags, changes);
+        this.searcher = new ImageSearcher(tags);
 
         this._uiElements = this.searcher.map((imageURLS: string[]) => {
             const uiElements: UIElement[] = [];
@@ -65,11 +65,11 @@ export class ImageCarousel extends TagDependantUIElement {
 
 
         const showDeleteButton = this.slideshow._currentSlide.map((i) => {
-            if(!self._userDetails.data.loggedIn){
+            if(!State.state.osmConnection.userDetails.data.loggedIn){
                 return false;
             }
             return self.searcher.IsDeletable(self.searcher.data[i]);
-        }, [this.searcher, this._userDetails]);
+        }, [this.searcher, State.state.osmConnection.userDetails]);
         this.slideshow._currentSlide.addCallback(() => {
             showDeleteButton.ping(); // This pings the showDeleteButton, which indicates that it has to hide it's subbuttons
         })

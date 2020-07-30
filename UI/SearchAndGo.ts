@@ -8,6 +8,7 @@ import {TextField} from "./Input/TextField";
 import {Geocoding} from "../Logic/Osm/Geocoding";
 import Translations from "./i18n/Translations";
 import {Basemap} from "../Logic/Leaflet/Basemap";
+import {State} from "../State";
 
 
 export class SearchAndGo extends UIElement {
@@ -23,12 +24,10 @@ export class SearchAndGo extends UIElement {
     );
 
     private _foundEntries = new UIEventSource([]);
-    private _map: Basemap;
     private _goButton = new FixedUiElement("<img class='search-go' src='./assets/search.svg' alt='GO'>");
 
-    constructor(map: Basemap) {
+    constructor() {
         super(undefined);
-        this._map = map;
         this.ListenTo(this._foundEntries);
 
         const self = this;
@@ -48,7 +47,7 @@ export class SearchAndGo extends UIElement {
         this._searchField.Clear();
         this._placeholder.setData(Translations.t.general.search.searching);
         const self = this;
-        Geocoding.Search(searchString, this._map, (result) => {
+        Geocoding.Search(searchString,  (result) => {
 
                 if (result.length == 0) {
                     this._placeholder.setData(Translations.t.general.search.nothing);
@@ -60,7 +59,7 @@ export class SearchAndGo extends UIElement {
                     [bb[0], bb[2]],
                     [bb[1], bb[3]]
                 ]
-                self._map.map.fitBounds(bounds);
+                State.state.bm.map.fitBounds(bounds);
                 this._placeholder.setData(Translations.t.general.search.search);
             },
             () => {

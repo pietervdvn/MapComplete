@@ -1,23 +1,21 @@
 import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import {Changes} from "../Logic/Osm/Changes";
+import {State} from "../State";
 
 export class PendingChanges extends UIElement {
     private _pendingChangesCount: UIEventSource<number>;
-    private _countdown: UIEventSource<number>;
     private _isSaving: UIEventSource<boolean>;
 
-    constructor(changes: Changes,
-                countdown: UIEventSource<number>) {
-        super(changes.pendingChangesES);
-        this.ListenTo(changes.isSaving);
-        this.ListenTo(countdown);
-        this._pendingChangesCount = changes.pendingChangesES;
-        this._countdown = countdown;
-        this._isSaving = changes.isSaving;
+    constructor() {
+        super(State.state.changes.pendingChangesES);
+        this.ListenTo(State.state.changes.isSaving);
+        this.ListenTo(State.state.secondsTillChangesAreSaved);
+        this._pendingChangesCount = State.state.changes.pendingChangesES;
+        this._isSaving = State.state.changes.isSaving;
 
         this.onClick(() => {
-            changes.uploadAll();
+            State.state.changes.uploadAll();
         })
     }
 
@@ -29,7 +27,7 @@ export class PendingChanges extends UIElement {
             return "";
         }
 
-        var restingSeconds = this._countdown.data / 1000;
+        var restingSeconds =State.state.secondsTillChangesAreSaved.data / 1000;
         var dots = "";
         while (restingSeconds > 0) {
             dots += ".";

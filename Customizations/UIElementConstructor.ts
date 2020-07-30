@@ -3,9 +3,13 @@ import {Changes} from "../Logic/Osm/Changes";
 import {UIElement} from "../UI/UIElement";
 
 
+export interface Dependencies {
+    tags: UIEventSource<any>
+}
+
 export interface TagDependantUIElementConstructor {
 
-    construct(dependencies: {tags: UIEventSource<any>, changes: Changes}): TagDependantUIElement;
+    construct(dependencies: Dependencies): TagDependantUIElement;
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
     Priority(): number;

@@ -11,6 +11,7 @@ import Translations from "./i18n/Translations";
 import {Changes} from "../Logic/Osm/Changes";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "./Base/FixedUiElement";
+import {State} from "../State";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -23,13 +24,10 @@ export class FeatureInfoBox extends UIElement {
      */
     private _tagsES: UIEventSource<any>;
     private _changes: Changes;
-    private _userDetails: UIEventSource<UserDetails>;
-
 
     private _title: UIElement;
     private _osmLink: UIElement;
     private _wikipedialink: UIElement;
-
 
     private _infoboxes: TagDependantUIElement[];
 
@@ -41,15 +39,11 @@ export class FeatureInfoBox extends UIElement {
         tagsES: UIEventSource<any>,
         title: TagRenderingOptions | UIElement | string,
         elementsToShow: TagDependantUIElementConstructor[],
-        changes: Changes,
-        userDetails: UIEventSource<UserDetails>
     ) {
         super(tagsES);
         this._feature = feature;
         this._tagsES = tagsES;
-        this._changes = changes;
-        this._userDetails = userDetails;
-        this.ListenTo(userDetails);
+        this.ListenTo(State.state.osmConnection.userDetails);
 
         const deps = {tags: this._tagsES, changes: this._changes}
 
@@ -112,7 +106,7 @@ export class FeatureInfoBox extends UIElement {
 
         let questionsHtml = "";
 
-        if (this._userDetails.data.loggedIn && questions.length > 0) {
+        if (State.state.osmConnection.userDetails.data.loggedIn && questions.length > 0) {
             // We select the most important question and render that one
             let mostImportantQuestion;
             let score = -1000;

@@ -1,12 +1,6 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {UIElement} from "../UI/UIElement";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import Translation from "../UI/i18n/Translation";
 import Translations from "../UI/i18n/Translations";
-import Locale from "../UI/i18n/Locale";
-import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import {UIEventSource} from "../UI/UIEventSource";
-import {OsmConnection, UserDetails} from "../Logic/Osm/OsmConnection";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -83,59 +77,5 @@ export class Layout {
         this.welcomeBackMessage = Translations.W(welcomeBackMessage);
         this.welcomeTail = Translations.W(welcomeTail);
     }
-
-
-}
-
-export class WelcomeMessage extends UIElement {
-    private readonly layout: Layout;
-    private readonly userDetails: UIEventSource<UserDetails>;
-    private languagePicker: UIElement;
-    private osmConnection: OsmConnection;
-
-    private readonly description: UIElement;
-    private readonly plzLogIn: UIElement;
-    private readonly welcomeBack: UIElement;
-    private readonly tail: UIElement;
-
-
-    constructor(layout: Layout,
-                languagePicker: UIElement,
-                osmConnection: OsmConnection) {
-        super(osmConnection?.userDetails);
-        this.languagePicker = languagePicker;
-        this.ListenTo(Locale.language);
-        this.osmConnection = osmConnection;
-        this.layout = layout;
-        this.userDetails = osmConnection?.userDetails;
-
-        this.description = layout.welcomeMessage;
-        this.plzLogIn = layout.gettingStartedPlzLogin;
-        this.welcomeBack = layout.welcomeBackMessage;
-        this.tail = layout.welcomeTail;
-    }
-
-    InnerRender(): string {
-
-        let loginStatus = "";
-        if (this.userDetails !== undefined) {
-            loginStatus = (this.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render();
-            loginStatus = loginStatus + "<br/>"
-        }
-
-        return "<span>" +
-            this.description.Render() +
-            "<br/>" +
-            loginStatus +
-            this.tail.Render() +
-            "<br/>" +
-            this.languagePicker.Render() +
-            "</span>";
-    }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        this.osmConnection?.registerActivateOsmAUthenticationClass()
-    }
-
 }
 

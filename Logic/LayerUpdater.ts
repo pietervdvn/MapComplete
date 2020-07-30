@@ -4,9 +4,9 @@ import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
 import {Basemap} from "./Leaflet/Basemap";
+import {State} from "../State";
 
 export class LayerUpdater {
-    private _map: Basemap;
     private _layers: FilteredLayer[];
     private widenFactor: number;
 
@@ -26,12 +26,10 @@ export class LayerUpdater {
      * @param minzoom
      * @param layers
      */
-    constructor(map: Basemap,
-                minzoom: number,
+    constructor(minzoom: number,
                 widenFactor: number,
                 layers: FilteredLayer[]) {
         this.widenFactor = widenFactor;
-        this._map = map;
         this._layers = layers;
         this._minzoom = minzoom;
         var filters: TagsFilter[] = [];
@@ -41,7 +39,7 @@ export class LayerUpdater {
         this._overpass = new Overpass(new Or(filters));
 
         const self = this;
-        map.Location.addCallback(function () {
+        State.state.locationControl.addCallback(function () {
             self.update();
         });
         self.update();
@@ -67,9 +65,7 @@ export class LayerUpdater {
                 renderLayers(rest);
             }, 50)
         }
-
         renderLayers(this._layers);
-
     }
 
     private handleFail(reason: any) {
@@ -89,8 +85,8 @@ export class LayerUpdater {
         if (this.IsInBounds()) {
             return;
         }
-        console.log("Zoom level: ",this._map.map.getZoom(), "Least needed zoom:", this._minzoom)
-        if (this._map.map.getZoom() < this._minzoom || this._map.Location.data.zoom < this._minzoom) {
+        console.log("Zoom level: ",State.state.bm.map.getZoom(), "Least needed zoom:", this._minzoom)
+        if (State.state.bm.map.getZoom() < this._minzoom || State.state.bm.Location.data.zoom < this._minzoom) {
             return;
         }
 
@@ -98,7 +94,7 @@ export class LayerUpdater {
             console.log("Still running a query, skip");
         }
         
-        const bounds = this._map.map.getBounds();
+        const bounds = State.state.bm.map.getBounds();
 
         const diff = this.widenFactor;
 
@@ -131,7 +127,7 @@ export class LayerUpdater {
         }
 
 
-        const b = this._map.map.getBounds();
+        const b = State.state.bm.map.getBounds();
         if (b.getSouth() < this.previousBounds.south) {
             return false;
         }

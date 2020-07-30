@@ -1,5 +1,6 @@
 import {UIEventSource} from "./UI/UIEventSource";
 import {Changes} from "./Logic/Osm/Changes";
+import {State} from "./State";
 
 export class Helpers {
 
@@ -13,9 +14,11 @@ export class Helpers {
     }
 
 
-    static SetupAutoSave(changes: Changes, millisTillChangesAreSaved: UIEventSource<number>, saveAfterXMillis: number) {
+    static SetupAutoSave() {
 
-
+        const changes = State.state.changes;
+        const millisTillChangesAreSaved = State.state.secondsTillChangesAreSaved;
+        const saveAfterXMillis = State.state.secondsTillChangesAreSaved.data * 1000;
         changes.pendingChangesES.addCallback(function () {
 
             var c = changes.pendingChangesES.data;
@@ -53,7 +56,8 @@ export class Helpers {
     * -> Asks the user not to close. The 'not to close' dialog should profide enough time to upload
     * -> WHen uploading is done, the window is closed anyway
      */
-    static LastEffortSave(changes: Changes) {
+    static LastEffortSave() {
+        const changes = State.state.changes;
         window.addEventListener("beforeunload", function (e) {
             // Quickly save everyting!
             if (changes.pendingChangesES.data == 0) {

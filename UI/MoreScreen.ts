@@ -9,16 +9,13 @@ import {UIEventSource} from "./UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
+import {State} from "../State";
 
 
 export class MoreScreen extends UIElement {
-    private currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>;
-    private currentLayout: string;
 
-    constructor(currentLayout: string, currentLocation: UIEventSource<{ zoom: number, lat: number, lon: number }>) {
-        super(currentLocation);
-        this.currentLayout = currentLayout;
-        this.currentLocation = currentLocation;
+    constructor() {
+        super(State.state.locationControl);
     }
 
     InnerRender(): string {
@@ -30,12 +27,13 @@ export class MoreScreen extends UIElement {
             if (layout.hideFromOverview) {
                 continue
             }
-            if (layout.name === this.currentLayout) {
+            if (layout.name === State.state.layoutToUse.data.name) {
                 continue;
             }
 
+            const currentLocation = State.state.locationControl.data;
             const linkText =
-                `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${this.currentLocation.data.zoom}&lat=${this.currentLocation.data.lat}&lon=${this.currentLocation.data.lon}`
+                `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
             const link =
                 new SubtleButton(layout.icon,
                     new Combine([

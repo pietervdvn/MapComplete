@@ -3,14 +3,15 @@ import {LocalStorageSource} from "../../Logic/LocalStorageSource";
 import {DropDown} from "../Input/DropDown";
 import {Layout} from "../../Customizations/Layout";
 import {UIElement} from "../UIElement";
+import {State} from "../../State";
 
 
 export default class Locale {
     public static language: UIEventSource<string> = LocalStorageSource.Get('language', "en");
 
-    public static CreateLanguagePicker(layoutToUse: Layout, label: string | UIElement = "") {
+    public static CreateLanguagePicker(label: string | UIElement = "") {
 
-        return new DropDown(label, layoutToUse.supportedLanguages.map(lang => {
+        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
                 return {value: lang, shown: lang}
             }
         ), Locale.language);

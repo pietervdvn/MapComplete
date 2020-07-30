@@ -9,6 +9,7 @@ import Translations from "./i18n/Translations";
 import {fail} from "assert";
 import Combine from "./Base/Combine";
 import {VerticalCombine} from "./Base/VerticalCombine";
+import {State} from "../State";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -17,10 +18,8 @@ export class ImageUploadFlow extends UIElement {
     private _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
-    private _userdetails: UIEventSource<UserDetails>;
 
     constructor(
-        userInfo: UIEventSource<UserDetails>,
         preferedLicense: UIEventSource<string>,
         uploadOptions: ((license: string) =>
             {
@@ -30,9 +29,7 @@ export class ImageUploadFlow extends UIElement {
                 allDone: (() => void)
             })
     ) {
-        super(undefined);
-        this._userdetails = userInfo;
-        this.ListenTo(userInfo);
+        super(State.state.osmConnection.userDetails);
         this._uploadOptions = uploadOptions;
         this.ListenTo(this._isUploading);
         this.ListenTo(this._didFail);
@@ -56,11 +53,11 @@ export class ImageUploadFlow extends UIElement {
     InnerRender(): string {
 
         const t = Translations.t.image;
-        if (this._userdetails === undefined) {
+        if (State.state.osmConnection.userDetails === undefined) {
             return ""; // No user details -> logging in is probably disabled or smthing
         }
 
-        if (!this._userdetails.data.loggedIn) {
+        if (!State.state.osmConnection.userDetails.data.loggedIn) {
             return `<div class='activate-osm-authentication'>${t.pleaseLogin.Render()}</div>`;
         }
 
@@ -79,6 +76,16 @@ export class ImageUploadFlow extends UIElement {
             currentState.push(t.uploadDone)
         }
 
+        let currentStateHtml = "";
+        if (currentState.length > 0) {
+            currentStateHtml = new VerticalCombine(currentState).Render();
+            if (!this._allDone.data) {
+                currentStateHtml = "<span class='alert'>" +
+                    currentStateHtml +
+                    "</span>";
+            }
+        }
+
         return "" +
             "<div class='imageflow'>" +
 
@@ -89,9 +96,9 @@ export class ImageUploadFlow extends UIElement {
             `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.R()}</span>` +
             "<div class='break'></div>" +
             "</div>" +
+            currentStateHtml +
             Translations.t.image.respectPrivacy.Render() + "<br/>" +
             this._licensePicker.Render() + "<br/>" +
-            new VerticalCombine(currentState).Render() +
             "</label>" +
             "<form id='fileselector-form-" + this.id + "'>" +
             "<input id='fileselector-" + this.id + "' " +
@@ -106,11 +113,11 @@ export class ImageUploadFlow extends UIElement {
 
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
-        const user = this._userdetails.data;
+        const user = State.state.osmConnection.userDetails.data;
 
         htmlElement.onclick = function () {
             if (!user.loggedIn) {
-                user.osmConnection.AttemptLogin();
+                State.state.osmConnection.AttemptLogin();
             }
         }
 

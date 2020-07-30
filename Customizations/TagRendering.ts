@@ -5,7 +5,7 @@ import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SaveButton} from "../UI/SaveButton";
 import {Changes} from "../Logic/Osm/Changes";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
+import {Dependencies, TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {TextField} from "../UI/Input/TextField";
@@ -17,6 +17,7 @@ import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
 import * as EmailValidator from 'email-validator';
 import {parsePhoneNumberFromString} from 'libphonenumber-js'
+import {State} from "../State";
 
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
@@ -144,8 +145,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
     }
 
 
-    construct(dependencies: { tags: UIEventSource<any>, changes: Changes }): TagDependantUIElement {
-        return new TagRendering(dependencies.tags, dependencies.changes, this.options);
+    construct(dependencies: Dependencies): TagDependantUIElement {
+        return new TagRendering(dependencies.tags,  this.options);
     }
 
     IsKnown(properties: any): boolean {
@@ -161,7 +162,6 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 class TagRendering extends UIElement implements TagDependantUIElement {
 
 
-    private _userDetails: UIEventSource<UserDetails>;
     private _priority: number;
 
 
@@ -189,7 +189,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _editMode: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
 
-    constructor(tags: UIEventSource<any>, changes: Changes, options: {
+    constructor(tags: UIEventSource<any>, options: {
         priority?: number
 
         question?: string | UIElement,
@@ -206,13 +206,12 @@ class TagRendering extends UIElement implements TagDependantUIElement {
     }) {
         super(tags);
         this.ListenTo(Locale.language);
-        const self = this;
         this.ListenTo(this._questionSkipped);
         this.ListenTo(this._editMode);
+        this.ListenTo(State.state.osmConnection.userDetails);
 
-        this._userDetails = changes.login.userDetails;
-        this.ListenTo(this._userDetails);
 
+        const self = this;
        
         this._priority = options.priority ?? 0;
         this._tagsPreprocessor = function (properties) {
@@ -265,7 +264,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
         const save = () => {
             const selection = self._questionElement.GetValue().data;
             if (selection) {
-                changes.addTag(tags.data.id, selection);
+                State.state.changes.addTag(tags.data.id, selection);
             }
             self._editMode.setData(false);
         }
@@ -521,7 +520,7 @@ class TagRendering extends UIElement implements TagDependantUIElement {
             }
             const html = answer.Render();
             let editButton = "";
-            if (this._userDetails.data.loggedIn && this._question !== undefined) {
+            if (State.state.osmConnection.userDetails.data.loggedIn && this._question !== undefined) {
                 editButton = this._editButton.Render();
             }
 

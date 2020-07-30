@@ -6,27 +6,19 @@ import {UIEventSource} from "../../UI/UIEventSource";
 import {ImageUploadFlow} from "../../UI/ImageUploadFlow";
 import {UserDetails} from "./OsmConnection";
 import {SlideShow} from "../../UI/SlideShow";
+import {State} from "../../State";
 
 export class OsmImageUploadHandler {
     private _tags: UIEventSource<any>;
-    private _changeHandler: Changes;
-    private _userdetails: UIEventSource<UserDetails>;
     private _slideShow: SlideShow;
     private _preferedLicense: UIEventSource<string>;
 
     constructor(tags: UIEventSource<any>,
-                userdetails: UIEventSource<UserDetails>,
                 preferedLicense: UIEventSource<string>,
-                changeHandler: Changes,
                 slideShow : SlideShow
     ) {
         this._slideShow = slideShow; // To move the slideshow (if any) to the last, just added element
-        if (tags === undefined || userdetails === undefined || changeHandler === undefined) {
-            throw "Something is undefined"
-        }
         this._tags = tags;
-        this._changeHandler = changeHandler;
-        this._userdetails = userdetails;
         this._preferedLicense = preferedLicense;
     }
 
@@ -36,14 +28,14 @@ export class OsmImageUploadHandler {
 
         const title = tags.name ?? "Unknown area";
         const description = [
-            "author:" + this._userdetails.data.name,
+            "author:" + State.state.osmConnection.userDetails.data.name,
             "license:" + license,
             "wikidata:" + tags.wikidata,
             "osmid:" + tags.id,
             "name:" + tags.name
         ].join("\n");
 
-        const changes = this._changeHandler;
+        const changes = State.state.changes;
         return {
             title: title,
             description: description,
@@ -73,7 +65,6 @@ export class OsmImageUploadHandler {
     getUI(): ImageUploadFlow {
         const self = this;
         return new ImageUploadFlow(
-            this._userdetails,
             this._preferedLicense,
             function (license) {
                 return self.generateOptions(license)

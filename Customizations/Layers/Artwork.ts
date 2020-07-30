@@ -57,9 +57,9 @@ export class Artwork extends LayerDefinition {
         const artistQuestion = new TagRenderingOptions({
             question: t.artist.question,
             freeform: {
-                key: "artist",
+                key: "artist_name",
                 template: "$$$",
-                renderTemplate: "{artist}"
+                renderTemplate: "{artist_name}"
             }
         });
 

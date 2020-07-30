@@ -1,4 +1,4 @@
-import {Layout, WelcomeMessage} from "./Customizations/Layout";
+import {Layout} from "./Customizations/Layout";
 import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
 import {TabbedComponent} from "./UI/Base/TabbedComponent";
@@ -17,6 +17,8 @@ import {Preset} from "./UI/SimpleAddUI";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import {Basemap} from "./Logic/Leaflet/Basemap";
+import {State} from "./State";
+import {WelcomeMessage} from "./UI/WelcomeMessage";
 
 export class InitUiElements {
 
@@ -36,17 +38,16 @@ export class InitUiElements {
     }
 
 
-    private static CreateWelcomePane(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap) {
+    private static CreateWelcomePane() {
 
-        const welcome = new WelcomeMessage(layoutToUse,
-            Locale.CreateLanguagePicker(layoutToUse, Translations.t.general.pickLanguage),
-            osmConnection)
+        const welcome = new WelcomeMessage()
 
+        const layoutToUse = State.state.layoutToUse.data;
         const fullOptions = new TabbedComponent([
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
-            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen(layoutToUse, bm.Location)},
-            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen(layoutToUse.name, bm.Location)}
+            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()},
+            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()}
         ])
 
         return fullOptions;
@@ -54,10 +55,9 @@ export class InitUiElements {
     }
 
 
-    static InitWelcomeMessage(layoutToUse: Layout, osmConnection: OsmConnection, bm: Basemap,
-                              fullScreenMessage: UIEventSource<UIElement>) {
+    static InitWelcomeMessage() {
 
-        const fullOptions = this.CreateWelcomePane(layoutToUse, osmConnection, bm);
+        const fullOptions = this.CreateWelcomePane();
 
         const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
         const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
@@ -70,43 +70,39 @@ export class InitUiElements {
             , true
         ).AttachTo("messagesbox");
         let dontCloseYet = true;
-        bm.Location.addCallback(() => {
-            if(dontCloseYet){
-                dontCloseYet = false;
+        const openedTime = new Date().getTime();
+        State.state.locationControl.addCallback(() => {
+            if (new Date().getTime() - openedTime < 15 * 1000) {
+                // Don't autoclose the first 15 secs
                 return;
             }
             checkbox.isEnabled.setData(false);
         })
 
 
-        const fullOptions2 = this.CreateWelcomePane(layoutToUse, osmConnection, bm);
-        fullScreenMessage.setData(fullOptions2)
+        const fullOptions2 = this.CreateWelcomePane();
+        State.state.fullScreenMessage.setData(fullOptions2)
         new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
-            fullScreenMessage.setData(fullOptions2)
+            State.state.fullScreenMessage.setData(fullOptions2)
         }).AttachTo("help-button-mobile");
 
 
     }
 
 
-    static InitLayers(layoutToUse: Layout, osmConnection: OsmConnection,
-                      changes: Changes,
-                      allElements: ElementStorage,
-                      bm: Basemap,
-                      fullScreenMessage: UIEventSource<UIElement>,
-                      selectedElement: UIEventSource<any>): {
+    static InitLayers(): {
         minZoom: number
         flayers: FilteredLayer[],
         presets: Preset[]
     } {
-        const addButtons:Preset[]
+        const addButtons: Preset[]
             = [];
 
         const flayers: FilteredLayer[] = []
 
         let minZoom = 0;
-
-        for (const layer of layoutToUse.layers) {
+        const state = State.state;
+        for (const layer of state.layoutToUse.data.layers) {
 
             const generateInfo = (tagsES, feature) => {
 
@@ -115,14 +111,12 @@ export class InitUiElements {
                     tagsES,
                     layer.title,
                     layer.elementsToShow,
-                    changes,
-                    osmConnection.userDetails
                 )
             };
 
             minZoom = Math.max(minZoom, layer.minzoom);
 
-            const flayer = FilteredLayer.fromDefinition(layer, bm, allElements, changes, osmConnection.userDetails, selectedElement, generateInfo);
+            const flayer = FilteredLayer.fromDefinition(layer, generateInfo);
 
             for (const preset of layer.presets ?? []) {
 

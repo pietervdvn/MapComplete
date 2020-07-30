@@ -31,6 +31,7 @@ import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import {Changes} from "./Logic/Osm/Changes";
+import {State} from "./State";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -79,70 +80,23 @@ defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
 console.log("Using layout: ", layoutToUse.name);
-if(layoutToUse === undefined){
+if (layoutToUse === undefined) {
     console.log("Incorrect layout")
 }
 
-
-// ----------------- Setup a few event sources -------------
-
-
-// The message that should be shown at the center of the screen
-const centerMessage = new UIEventSource<string>("");
-
-// The countdown: if set to e.g. ten, it'll start counting down. When reaching zero, changes will be saved. NB: this is implemented later, not in the eventSource
-const secondsTillChangesAreSaved = new UIEventSource<number>(0);
-
-// const leftMessage = new UIEventSource<() => UIElement>(undefined);
-
-// This message is shown full screen on mobile devices
-const fullScreenMessage = new UIEventSource<UIElement>(undefined);
-
-// The latest element that was selected - used to generate the right UI at the right place
-const selectedElement = new UIEventSource<{ feature: any }>(undefined);
-
-const zoom = QueryParameters.GetQueryParameter("z", undefined)
-    .syncWith(LocalStorageSource.Get("zoom"));
-const lat = QueryParameters.GetQueryParameter("lat", undefined)
-    .syncWith(LocalStorageSource.Get("lat"));
-const lon = QueryParameters.GetQueryParameter("lon", undefined)
-    .syncWith(LocalStorageSource.Get("lon"));
-
-function featSw(key: string, deflt: boolean): UIEventSource<boolean> {
-    return QueryParameters.GetQueryParameter(key, "" + deflt).map((str) => {
-        return str !== "false";
-    });
-}
-
-const featureSwitchUserbadge = featSw("fs-userbadge", layoutToUse.enableUserBadge);
-const featureSwitchSearch = featSw("fs-search", layoutToUse.enableSearch);
-const featureSwitchLayers = featSw("fs-layers", layoutToUse.enableLayers);
-const featureSwitchAddNew = featSw("fs-add-new", layoutToUse.enableAdd);
-const featureSwitchWelcomeMessage = featSw("fs-welcome-message", true);
-const featureSwitchIframe = featSw("fs-iframe", false);
-
-
-const locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
-    zoom: Utils.asFloat(zoom.data) ?? layoutToUse.startzoom,
-    lat: Utils.asFloat(lat.data) ?? layoutToUse.startLat,
-    lon: Utils.asFloat(lon.data) ?? layoutToUse.startLon
-});
-
-locationControl.addCallback((latlonz) => {
-    zoom.setData(latlonz.zoom.toString());
-    lat.setData(latlonz.lat.toString().substr(0, 6));
-    lon.setData(latlonz.lon.toString().substr(0, 6));
-})
+// Setup the global state
+State.state = new State(layoutToUse);
+const state = State.state;
 
 
 // ----------------- Prepare the important objects -----------------
-const osmConnection: OsmConnection =  new OsmConnection(
+state.osmConnection = new OsmConnection(
     QueryParameters.GetQueryParameter("test", "false").data === "true",
     QueryParameters.GetQueryParameter("oauth_token", undefined)
 );
 
 
-Locale.language.syncWith(osmConnection.GetPreference("language"));
+Locale.language.syncWith(state.osmConnection.GetPreference("language"));
 
 // @ts-ignore
 window.setLanguage = function (language: string) {
@@ -158,13 +112,12 @@ Locale.language.addCallback((currentLanguage) => {
 }).ping()
 
 
-const saveTimeout = 30000; // After this many milliseconds without changes, saves are sent of to OSM
-const allElements = new ElementStorage();
-const changes = new Changes(
-    "Beantwoorden van vragen met #MapComplete voor vragenset #" + layoutToUse.name,
-    osmConnection, allElements);
-const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
-    locationControl.map((location) => {
+state.allElements = new ElementStorage();
+state.changes = new Changes(
+    "Beantwoorden van vragen met #MapComplete voor vragenset #" + state.layoutToUse.data.name,
+    state.osmConnection, state.allElements);
+state.bm = new Basemap("leafletDiv", state.locationControl, new VariableUiElement(
+    state.locationControl.map((location) => {
         const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
             " " +
             "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
@@ -184,9 +137,9 @@ const bm = new Basemap("leafletDiv", locationControl, new VariableUiElement(
 
 // ------------- Setup the layers -------------------------------
 
-const layerSetup = InitUiElements.InitLayers(layoutToUse, osmConnection, changes, allElements, bm, fullScreenMessage, selectedElement);
+const layerSetup = InitUiElements.InitLayers();
 
-const layerUpdater = new LayerUpdater(bm, layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
+const layerUpdater = new LayerUpdater(layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
 
 
 // --------------- Setting up layer selection ui --------
@@ -196,22 +149,24 @@ const closedFilterButton = `<button id="filter__button" class="filter__button sh
 const openFilterButton = `
 <button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
 
-let baseLayerOptions =  BaseLayers.baseLayers.map((layer) => {return {value: layer, shown: layer.name}});
-const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, bm.CurrentLayer), openFilterButton]);
+let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
+    return {value: layer, shown: layer.name}
+});
+const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, State.state.bm.CurrentLayer), openFilterButton]);
 const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(layerSetup.flayers)]);
 let layerControl = backgroundMapPicker;
 if (layerSetup.flayers.length > 1) {
     layerControl = new Combine([layerSelection, backgroundMapPicker]);
 }
 
-InitUiElements.OnlyIf(featureSwitchLayers, () => {
+InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
     const checkbox = new CheckBox(layerControl, closedFilterButton);
     checkbox.AttachTo("filter__selection");
-    bm.Location.addCallback(() => {
+    State.state.bm.Location.addCallback(() => {
         checkbox.isEnabled.setData(false);
     });
-    
+
 });
 
 
@@ -224,14 +179,10 @@ Locale.language.addCallback(e => {
 })
 
 
-InitUiElements.OnlyIf(featureSwitchAddNew, () => {
-    new StrayClickHandler(bm, selectedElement, fullScreenMessage, () => {
-            return new SimpleAddUI(bm.Location,
-                bm.LastClickLocation,
-                changes,
-                selectedElement,
+InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+    new StrayClickHandler(() => {
+            return new SimpleAddUI(
                 layerUpdater.runningQuery,
-                osmConnection.userDetails,
                 layerSetup.presets);
         }
     );
@@ -242,7 +193,7 @@ InitUiElements.OnlyIf(featureSwitchAddNew, () => {
  * Show the questions and information for the selected element
  * This is given to the div which renders fullscreen on mobile devices
  */
-selectedElement.addCallback((feature) => {
+State.state.selectedElement.addCallback((feature) => {
     if (feature?.feature?.properties === undefined) {
         return;
     }
@@ -256,67 +207,54 @@ selectedElement.addCallback((feature) => {
 
             const featureBox = new FeatureInfoBox(
                 feature.feature,
-                allElements.getElement(data.id),
+                State.state.allElements.getElement(data.id),
                 layer.title,
                 layer.elementsToShow,
-                changes,
-                osmConnection.userDetails
             );
 
-            fullScreenMessage.setData(featureBox);
+            State.state.fullScreenMessage.setData(featureBox);
             break;
         }
     }
     }
 );
 
-
-const pendingChanges = new PendingChanges(changes, secondsTillChangesAreSaved,);
-
-InitUiElements.OnlyIf(featureSwitchUserbadge, () => {
-
-    new UserBadge(osmConnection.userDetails,
-        pendingChanges,
-        Locale.CreateLanguagePicker(layoutToUse),
-        bm)
-        .AttachTo('userbadge');
+console.log("Enable new:",State.state.featureSwitchAddNew.data,"deafult", layoutToUse.enableAdd)
+InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
+    new UserBadge().AttachTo('userbadge');
 });
 
-InitUiElements.OnlyIf((featureSwitchSearch), () => {
-    new SearchAndGo(bm).AttachTo("searchbox");
+InitUiElements.OnlyIf((State.state.featureSwitchSearch), () => {
+    new SearchAndGo().AttachTo("searchbox");
 });
 
-new FullScreenMessageBoxHandler(fullScreenMessage, () => {
-    selectedElement.setData(undefined)
+new FullScreenMessageBoxHandler(() => {
+    State.state.selectedElement.setData(undefined)
 }).update();
 
-InitUiElements.OnlyIf(featureSwitchWelcomeMessage, () => {
-    InitUiElements.InitWelcomeMessage(layoutToUse,
-        featureSwitchUserbadge.data ? osmConnection : undefined, bm, fullScreenMessage)
+InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
+    InitUiElements.InitWelcomeMessage()
 });
 
-if ((window != window.top && !featureSwitchWelcomeMessage.data) || featureSwitchIframe.data) {
+if ((window != window.top && !State.state.featureSwitchWelcomeMessage) || State.state.featureSwitchIframe.data) {
     new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
 }
 
 
 new CenterMessageBox(
     layerSetup.minZoom,
-    centerMessage,
-    osmConnection,
-    locationControl,
     layerUpdater.runningQuery)
     .AttachTo("centermessage");
 
 
-Helpers.SetupAutoSave(changes, secondsTillChangesAreSaved, saveTimeout);
-Helpers.LastEffortSave(changes);
-
-osmConnection.registerActivateOsmAUthenticationClass();
+Helpers.SetupAutoSave();
+Helpers.LastEffortSave();
 
 
-new GeoLocationHandler(bm).AttachTo("geolocate-button");
+
+new GeoLocationHandler().AttachTo("geolocate-button");
 
 
-locationControl.ping()
+State.state.osmConnection.registerActivateOsmAUthenticationClass();
+State.state.locationControl.ping()
 

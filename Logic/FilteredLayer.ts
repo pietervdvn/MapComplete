@@ -9,6 +9,7 @@ import codegrid from "codegrid-js";
 import {Changes} from "./Osm/Changes";
 import {UserDetails} from "./Osm/OsmConnection";
 import {Basemap} from "./Leaflet/Basemap";
+import {State} from "../State";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -25,12 +26,10 @@ export class FilteredLayer {
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
     public readonly layerDef: LayerDefinition;
-    private readonly _map: Basemap;
     private readonly _maxAllowedOverlap: number;
 
     private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize? : number[], popupAnchor?: number[], iconAnchor?:number[] } };
 
-    private readonly _storage: ElementStorage;
 
     /** The featurecollection from overpass
      */
@@ -43,22 +42,17 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    private _selectedElement: UIEventSource<{ feature: any }>;
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     private static readonly grid = codegrid.CodeGrid();
 
     constructor(
         layerDef: LayerDefinition,
-        map: Basemap, storage: ElementStorage,
-        changes: Changes,
-        selectedElement: UIEventSource<any>,
         showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
     ) {
         this.layerDef = layerDef;
 
         this._wayHandling = layerDef.wayHandling;
-        this._selectedElement = selectedElement;
         this._showOnPopup = showOnPopup;
         this._style = layerDef.style;
         if (this._style === undefined) {
@@ -67,33 +61,27 @@ export class FilteredLayer {
             }
         }
         this.name = name;
-        this._map = map;
         this.filters = layerDef.overpassFilter;
-        this._storage = storage;
         this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
         const self = this;
         this.isDisplayed.addCallback(function (isDisplayed) {
+            const map = State.state.bm.map;
             if (self._geolayer !== undefined && self._geolayer !== null) {
                 if (isDisplayed) {
-                    self._geolayer.addTo(self._map.map);
+                    self._geolayer.addTo(map);
                 } else {
-                    self._map.map.removeLayer(self._geolayer);
+                    map.removeLayer(self._geolayer);
                 }
             }
         })
     }
     
     static fromDefinition(
-        definition,
-        basemap: Basemap, allElements: ElementStorage, changes: Changes, userDetails: UIEventSource<UserDetails>,
-                 selectedElement: UIEventSource<{feature: any}>,
+        definition, 
                  showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement):
         FilteredLayer {
         return new FilteredLayer(
-            definition,
-            basemap, allElements, changes,
-            selectedElement,
-            showOnPopup);
+            definition, showOnPopup);
 
     }
 
@@ -170,7 +158,7 @@ export class FilteredLayer {
         let self = this;
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
-            this._map.map.removeLayer(this._geolayer);
+            State.state.bm.map.removeLayer(this._geolayer);
         }
         this._dataFromOverpass = data;
         const fusedFeatures = [];
@@ -227,7 +215,7 @@ export class FilteredLayer {
                         icon: new L.icon(style.icon),
                     });
                 }
-                let eventSource = self._storage.addOrGetElement(feature);
+                let eventSource = State.state.allElements.addOrGetElement(feature);
                 const uiElement = self._showOnPopup(eventSource, feature);
                 const popup = L.popup({}, marker).setContent(uiElement.Render());
                 marker.bindPopup(popup)
@@ -246,7 +234,7 @@ export class FilteredLayer {
                     } else {
                         self._geolayer.setStyle(function (feature) {
                             const style = self._style(feature.properties);
-                            if (self._selectedElement.data?.feature === feature) {
+                            if (State.state.selectedElement.data?.feature === feature) {
                                 if (style.weight !== undefined) {
                                     style.weight = style.weight * 2;
                                 }else{
@@ -258,14 +246,14 @@ export class FilteredLayer {
                     }
                 }
 
-                let eventSource = self._storage.addOrGetElement(feature);
+                let eventSource = State.state.allElements.addOrGetElement(feature);
 
 
                 eventSource.addCallback(feature.updateStyle);
 
                 layer.on("click", function (e) {
-                    const previousFeature = self._selectedElement.data?.feature;
-                    self._selectedElement.setData({feature: feature});
+                    const previousFeature =State.state.selectedElement.data?.feature;
+                    State.state.selectedElement.setData({feature: feature});
                     feature.updateStyle();
                     previousFeature?.updateStyle();
 
@@ -281,7 +269,7 @@ export class FilteredLayer {
                     })
                         .setContent(uiElement.Render())
                         .setLatLng(e.latlng)
-                        .openOn(self._map.map);
+                        .openOn(State.state.bm.map);
                     uiElement.Update();
                     uiElement.Activate();
                     L.DomEvent.stop(e); // Marks the event as consumed
@@ -290,7 +278,7 @@ export class FilteredLayer {
         });
 
         if (this.isDisplayed.data) {
-            this._geolayer.addTo(this._map.map);
+            this._geolayer.addTo(State.state.bm.map);
         }
     }
 

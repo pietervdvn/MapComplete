@@ -11,6 +11,7 @@ export class SmoothnessLayer extends LayerDefinition {
         this.name = "smoothness";
         this.minzoom = 17;
         this.overpassFilter = new Or([
+            new Tag("highway","unclassified"),
             new Tag("highway", "residential"),
             new Tag("highway", "cycleway"),
             new Tag("highway", "footway"),

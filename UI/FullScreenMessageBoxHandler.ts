@@ -2,25 +2,29 @@ import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
+import {State} from "../State";
 
 /**
  * Handles the full screen popup on mobile
  */
 export class FullScreenMessageBoxHandler {
-    
+
     private _uielement: UIEventSource<UIElement>;
 
-    constructor(uielement: UIEventSource<UIElement>,
-                onClear: (() => void)) {
-        this._uielement = uielement;
-        this.listenTo(uielement);
+    constructor(onClear: (() => void)) {
+        this._uielement = State.state.fullScreenMessage;
+        const self = this;
+        this._uielement.addCallback(function () {
+            self.update();
+        });
+        
         this.update();
 
         if (window !== undefined) {
             window.onhashchange = function () {
                 if (location.hash === "") {
                     // No more element: back to the map!
-                    uielement.setData(undefined);
+                    self._uielement.setData(undefined);
                     onClear();
                 }
             }
@@ -28,19 +32,12 @@ export class FullScreenMessageBoxHandler {
 
         Translations.t.general.returnToTheMap
             .onClick(() => {
-                uielement.setData(undefined);
+                self._uielement.setData(undefined);
                 onClear();
             })
             .AttachTo("to-the-map");
 
 
-    }
-
-    listenTo(uiEventSource: UIEventSource<any>) {
-        const self = this;
-        uiEventSource.addCallback(function () {
-            self.update();
-        })
     }
 
 

@@ -6,6 +6,9 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {Basemap} from "../Logic/Leaflet/Basemap";
+import {State} from "../State";
+import {PendingChanges} from "./PendingChanges";
+import Locale from "./i18n/Locale";
 
 /**
  * Handles and updates the user badge
@@ -14,27 +17,22 @@ export class UserBadge extends UIElement {
     private _userDetails: UIEventSource<UserDetails>;
     private _pendingChanges: UIElement;
     private _logout: UIElement;
-    private _basemap: Basemap;
     private _homeButton: UIElement;
     private _languagePicker: UIElement;
 
 
-    constructor(userDetails: UIEventSource<UserDetails>,
-                pendingChanges: UIElement,
-                languagePicker: UIElement,
-                basemap: Basemap) {
-        super(userDetails);
-        this._userDetails = userDetails;
-        this._pendingChanges = pendingChanges;
-        this._basemap = basemap;
-        this._languagePicker = languagePicker;
+    constructor() {
+        super(State.state.osmConnection.userDetails);
+        this._userDetails = State.state.osmConnection.userDetails;
+        this._pendingChanges = new PendingChanges();
+        this._languagePicker = Locale.CreateLanguagePicker();
 
         this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
             .onClick(() => {
-                userDetails.data.osmConnection.LogOut();
+                State.state.osmConnection.LogOut();
             });
 
-        userDetails.addCallback(function () {
+        this._userDetails.addCallback(function () {
             const profilePic = document.getElementById("profile-pic");
             if (profilePic) {
 
@@ -45,18 +43,18 @@ export class UserBadge extends UIElement {
         });
 
         this._homeButton = new VariableUiElement(
-            userDetails.map((userinfo) => {
+            this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
                     return "<img id='home' src='./assets/home.svg' alt='home' class='small-userbadge-icon'> ";
                 }
                 return "";
             })
         ).onClick(() => {
-            const home = userDetails.data?.home;
+            const home = State.state.osmConnection.userDetails.data?.home;
             if (home === undefined) {
                 return;
             }
-            basemap.map.flyTo([home.lat, home.lon], 18);
+            State.state.bm.map.flyTo([home.lat, home.lon], 18);
         });
 
     }
@@ -91,7 +89,7 @@ export class UserBadge extends UIElement {
                 iconSize: [20, 20],
                 iconAnchor: [10, 10]
             });
-            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(this._basemap.map);
+            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(State.state.bm.map);
         }
 
         const settings =

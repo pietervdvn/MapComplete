@@ -171,7 +171,7 @@ export class Widths extends LayerDefinition {
             return {
                 icon: null,
                 color: c,
-                weight: 10,
+                weight: 9,
                 dashArray: dashArray
             }
         }
@@ -259,15 +259,14 @@ export class Widths extends LayerDefinition {
                         tags.targetWidth = r(props.targetWidth);
                         tags.short = "";
                         if (props.width < props.targetWidth) {
-                            tags.short = "Er is dus <b class='alert'>" + r(props.targetWidth - props.width) + "m</b> te weinig"
+                            tags.short = r(props.targetWidth - props.width)
                         }
                     },
-                    freeform: {
-                        key: "width:carriageway",
-                        renderTemplate: "De totale nodige ruimte voor vlot en veilig verkeer is dus <b>{targetWidth}m</b><br>" +
-                            "{short}",
-                        template: "$$$",
-                    }
+                    mappings:[
+                        {k: new Tag("short","*"), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <b>{targetWidth}m</b><br>" +
+                                "Er is dus <span class='alert'>{short}m</span> te weinig", substitute: true},
+                        {k: new Tag("short",""), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <span class='thanks'>{targetWidth}m</span>"}
+                    ]
                 }
             ).OnlyShowIf(this._notCarFree),
             
