@@ -8,11 +8,11 @@ import {StreetWidth} from "./Layouts/StreetWidth";
 import {GRB} from "./Layouts/GRB";
 import {Artworks} from "./Layouts/Artworks";
 import {ClimbingTrees} from "./Layouts/ClimbingTrees";
-import {WalkByBrussels} from "./Layouts/WalkByBrussels";
 import {Smoothness} from "./Layouts/Smoothness";
 import {MetaMap} from "./Layouts/MetaMap";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {Bookcases} from "./Layouts/Bookcases";
+import {GhostBikes} from "./Layouts/GhostBikes";
 
 export class AllKnownLayouts {
 
@@ -23,8 +23,8 @@ export class AllKnownLayouts {
         new Groen(),
         new GRB(),
         new Cyclofix(),
+        new GhostBikes(),
         new Bookcases(),
-        new WalkByBrussels(),
         new MetaMap(),
         new StreetWidth(),
         new Natuurpunt(),

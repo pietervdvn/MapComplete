@@ -1,28 +1,14 @@
+
 import {UIElement} from "./UI/UIElement";
 UIElement.runningFromConsole = true;
-
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
+import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
-import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
 
-import {All} from "./Customizations/Layouts/All";
-import {StreetWidth} from "./Customizations/Layouts/StreetWidth";
-import {LayerDefinition}  from"./Customizations/LayerDefinition";
-import {ClimbingTrees} from "./Customizations/Layouts/ClimbingTrees";
-import {Smoothness} from "./Customizations/Layouts/Smoothness";
-import {Natuurpunt} from "./Customizations/Layouts/Natuurpunt";
-import {Groen} from "./Customizations/Layouts/Groen";
-import Cyclofix from "./Customizations/Layouts/Cyclofix";
-import {CustomLayout} from "./Logic/CustomLayers";
-import {GRB} from "./Customizations/Layouts/GRB";
-import {Artworks} from "./Customizations/Layouts/Artworks";
-import {WalkByBrussels} from "./Customizations/Layouts/WalkByBrussels";
-import {MetaMap} from "./Customizations/Layouts/MetaMap";
-import {Bookcases} from "./Customizations/Layouts/Bookcases";
 
 console.log("Building the layouts")
 

@@ -1,20 +1,19 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {Tag} from "../../Logic/TagsFilter";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import L from "leaflet";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class GhostBike extends LayerDefinition {
     constructor() {
         super("ghost bike");
-        this.name = "ghost bike";
+        this.name = "Ghost bike";
         this.overpassFilter = new Tag("memorial", "ghost_bike")
         this.title = new FixedText("Ghost bike");
         this.description = "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident," +
             " in the form of a white bicycle placed permanently near the accident location.";
 
+        this.minzoom = 1;
 
         this.presets = [
             {
@@ -67,11 +66,11 @@ export class GhostBike extends LayerDefinition {
         this.style =  (tags: any) => {
             return {
                 color: "#000000",
-                icon: L.icon({
+                icon: {
                     iconUrl: 'assets/bike/ghost.svg',
                     iconSize: [40, 40],
                     iconAnchor: [20, 20],
-                })
+                }
             }
         };
 
