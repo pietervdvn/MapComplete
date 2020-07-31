@@ -25,6 +25,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
 
+    public static runningFromConsole: boolean = false; 
 
     /**
      THe layout to use
@@ -176,6 +177,10 @@ export class State {
             "Beantwoorden van vragen met #MapComplete voor vragenset #" + this.layoutToUse.data.name,
            this);
 
+        if(State.runningFromConsole){
+            console.warn("running from console - not initializing map. Assuming test.html");
+            return;
+        }
 
 
         if (document.getElementById("leafletDiv") === null) {

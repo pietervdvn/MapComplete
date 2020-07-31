@@ -2,11 +2,13 @@
  * Wraps the query parameters into UIEventSources
  */
 import {UIEventSource} from "../UI/UIEventSource";
+import {UIElement} from "../UI/UIElement";
 
 export class QueryParameters {
 
     private static order: string [] = ["layout","test","z","lat","lon"];
-    private static knownSources = QueryParameters.init();
+    private static knownSources = {};
+    private static initialized = false;
     private static defaults = {}
     
     private static addOrder(key){
@@ -16,11 +18,13 @@ export class QueryParameters {
     }
 
     private static init() {
-        const knownSources = {}
-        if(window === undefined){
+        
+        if(this.initialized){
             return;
         }
-        if (window.location.search) {
+        this.initialized = true;
+       
+        if (window?.location?.search) {
             const params = window.location.search.substr(1).split("&");
             for (const param of params) {
                 const kv = param.split("=");
@@ -29,10 +33,9 @@ export class QueryParameters {
                 const v = kv[1];
                 const source = new UIEventSource<string>(v);
                 source.addCallback(() => QueryParameters.Serialize())
-                knownSources[key] = source;
+                QueryParameters.knownSources[key] = source;
             }
         }
-        return knownSources;
     }
 
     private static Serialize() {
@@ -51,6 +54,9 @@ export class QueryParameters {
     }
 
     public static GetQueryParameter(key: string, deflt: string): UIEventSource<string> {
+        if(!this.initialized){
+            this.init();
+        }
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt;
         }

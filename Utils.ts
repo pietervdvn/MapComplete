@@ -25,6 +25,9 @@ export class Utils {
     }
 
     static DoEvery(millis: number, f: (() => void)) {
+        if(State.runningFromConsole){
+            return;
+        }
         window.setTimeout(
             function () {
                 f();

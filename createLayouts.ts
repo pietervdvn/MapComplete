@@ -1,25 +1,15 @@
-import {Groen} from "./Customizations/Layouts/Groen";
-import {Bookcases} from "./Customizations/Layouts/Bookcases";
-import {GRB} from "./Customizations/Layouts/GRB";
-import Cyclofix from "./Customizations/Layouts/Cyclofix";
-import {WalkByBrussels} from "./Customizations/Layouts/WalkByBrussels";
-import {MetaMap} from "./Customizations/Layouts/MetaMap";
-import {StreetWidth} from "./Customizations/Layouts/StreetWidth";
-import {Natuurpunt} from "./Customizations/Layouts/Natuurpunt";
+import {UIElement} from "./UI/UIElement";
+UIElement.runningFromConsole = true;
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
-import {Utils} from "./Utils";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
-import {UIElement} from "./UI/UIElement";
 import {LayerDefinition} from "./Customizations/LayerDefinition";
-
 console.log("Building the layouts")
 
-UIElement.runningFromConsole = true;
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
@@ -73,7 +63,6 @@ function validate(layout: Layout) {
 
 }
 
-
 const alreadyWritten = []
 
 function createIcon(iconPath: string, size: number) {
@@ -110,7 +99,7 @@ function createIcon(iconPath: string, size: number) {
 }
 
 function createManifest(layout: Layout, relativePath: string) {
-    const name = Utils.Upper(layout.name);
+    const name = layout.name; 
 
     const icons = [];
 
@@ -151,7 +140,6 @@ function createManifest(layout: Layout, relativePath: string) {
 }
 
 const template = readFileSync("index.html", "utf8");
-
 function createLandingPage(layout: Layout) {
 
     Locale.language.setData(layout.supportedLanguages[0]);
@@ -172,9 +160,9 @@ function createLandingPage(layout: Layout) {
             `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`)
 }
 
-
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
 const all = AllKnownLayouts.allSets;
+/*
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
@@ -197,3 +185,5 @@ for (const layoutName in all) {
 }
 
 Translations.CountTranslations();
+
+ */
