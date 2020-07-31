@@ -39,7 +39,8 @@ export class CustomLayersPanel extends UIElement {
             if(layout.name === CustomLayout.NAME){
                 continue;
             }
-            if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
+            if (layout.hideFromOverview && 
+                State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
                 continue
             }
             

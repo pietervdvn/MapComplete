@@ -36,7 +36,7 @@ export class OsmConnection {
         const iframeMode = window !== window.top;
 
 
-        if (pwaStandAloneMode || iframeMode) {
+        if ( iframeMode) {
             // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
             // Same for an iframe...
             this.auth = new osmAuth({
