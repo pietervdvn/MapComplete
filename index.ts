@@ -65,7 +65,7 @@ defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
 if (layoutToUse === undefined) {
     console.log("Incorrect layout")
-    new FixedUiElement("Error: incorrect layout " + defaultLayout + "<a href='https://pietervdvn.github.io/MapComplete/index.html'>Go to MapComplete</a>").AttachTo("centermessage").onClick(() => {
+    new FixedUiElement("Error: incorrect layout <i>" + defaultLayout + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
     });
     throw "Incorrect layout"
 }
