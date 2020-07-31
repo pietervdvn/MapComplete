@@ -1,6 +1,6 @@
-import {TagRenderingOptions} from "../TagRendering";
 import {Img} from "../../UI/Img";
 import {Tag} from "../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export class OsmLink extends TagRenderingOptions {

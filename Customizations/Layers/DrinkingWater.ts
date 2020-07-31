@@ -3,9 +3,9 @@ import {And, Or, Tag} from "../../Logic/TagsFilter";
 import {OperatorTag} from "../Questions/OperatorTag";
 import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
-import {TagRenderingOptions} from "../TagRendering";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class DrinkingWater extends LayerDefinition {
 

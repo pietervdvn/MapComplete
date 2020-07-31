@@ -1,10 +1,10 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
 import {NameInline} from "../Questions/NameInline";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
 import T from "../../UI/i18n/Translation";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Bookcases extends LayerDefinition {
 

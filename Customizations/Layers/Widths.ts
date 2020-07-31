@@ -1,8 +1,8 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Not, Or, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
 import {UIEventSource} from "../../UI/UIEventSource";
 import {Park} from "./Park";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Widths extends LayerDefinition {
 

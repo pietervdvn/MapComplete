@@ -1,5 +1,5 @@
-import { TagRenderingOptions } from "../TagRendering";
 import {UIElement} from "../../UI/UIElement";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export default class FixedText extends TagRenderingOptions {
     constructor(category: string | UIElement) {

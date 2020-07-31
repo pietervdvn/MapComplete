@@ -9,9 +9,9 @@ import ShopRepair from "../Questions/bike/ShopRepair";
 import ShopDiy from "../Questions/bike/ShopDiy";
 import ShopName from "../Questions/bike/ShopName";
 import ShopSecondHand from "../Questions/bike/ShopSecondHand";
-import { TagRenderingOptions } from "../TagRendering";
 import { PhoneNumberQuestion } from "../Questions/PhoneNumberQuestion";
 import Website from "../Questions/Website";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export default class BikeOtherShops extends LayerDefinition {

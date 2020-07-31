@@ -956,7 +956,7 @@ export default class Translations {
             })
         },
         favourite: {
-            title: "Custom",
+            title: new T({en: "Custom"}),
             description: new T({
                 en: "<h3>Your custom theme</h3>In your custom theme, you can add some favourite layers from other themes to create a custom theme."
             }),
@@ -982,6 +982,8 @@ export default class Translations {
             const item = queue.pop();
             if (item instanceof Translation || item.translations !== undefined) {
                 tr.push(item);
+            } else if (typeof (item) === "string") {
+                console.warn("Got single string in translationgs file: ", item);
             } else {
                 for (const t in item) {
                     const x = item[t];

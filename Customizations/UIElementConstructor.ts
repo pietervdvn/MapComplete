@@ -1,5 +1,4 @@
 import {UIEventSource} from "../UI/UIEventSource";
-import {Changes} from "../Logic/Osm/Changes";
 import {UIElement} from "../UI/UIElement";
 
 

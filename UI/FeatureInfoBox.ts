@@ -2,7 +2,6 @@ import {UIElement} from "./UIElement";
 import {UIEventSource} from "./UIEventSource";
 import {ImageCarousel} from "./Image/ImageCarousel";
 import {VerticalCombine} from "./Base/VerticalCombine";
-import {TagRenderingOptions} from "../Customizations/TagRendering";
 import {OsmLink} from "../Customizations/Questions/OsmLink";
 import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
 import {And} from "../Logic/TagsFilter";
@@ -12,6 +11,7 @@ import {Changes} from "../Logic/Osm/Changes";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {State} from "../State";
+import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 
 export class FeatureInfoBox extends UIElement {
 

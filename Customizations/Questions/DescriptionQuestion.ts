@@ -1,4 +1,4 @@
-import {TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export class DescriptionQuestion extends TagRenderingOptions{

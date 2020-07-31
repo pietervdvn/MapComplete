@@ -24,6 +24,8 @@ import {LayerSelection} from "./UI/LayerSelection";
 import {CustomLayersPanel} from "./Logic/CustomLayersPanel";
 import {CustomLayout} from "./Logic/CustomLayers";
 import {Preset} from "./Customizations/LayerDefinition";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import {LayerUpdater} from "./Logic/LayerUpdater";
 
 export class InitUiElements {
 
@@ -122,6 +124,26 @@ export class InitUiElements {
             });
 
         });
+    }
+    
+    static InitBaseMap(){
+        State.state.bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
+            State.state.locationControl.map((location) => {
+                const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
+                    " " +
+                    "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
+                let editHere = "";
+                if (location !== undefined) {
+                    editHere = " | " +
+                        "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
+                        "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
+                        "</a>"
+                }
+                return mapComplete + editHere;
+
+            })
+        ));
+        State.state.layerUpdater = new LayerUpdater(State.state);
     }
 
 

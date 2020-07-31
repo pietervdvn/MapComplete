@@ -3,9 +3,9 @@ import {Tag} from "../../Logic/TagsFilter";
 import L from "leaflet";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
-import {TagRenderingOptions} from "../TagRendering";
 import Website from "../Questions/Website";
 import FixedText from "../Questions/FixedText";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Artwork extends LayerDefinition {
 

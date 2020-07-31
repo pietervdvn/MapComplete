@@ -1,7 +1,7 @@
-import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
 import Translations from "../../../UI/i18n/Translations";
 import Combine from "../../../UI/Base/Combine";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 class ParkingTypeHelper {
     static GenerateMappings() {

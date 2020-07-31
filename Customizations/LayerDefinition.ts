@@ -1,7 +1,7 @@
 import {Tag, TagsFilter} from "../Logic/TagsFilter";
 import {UIElement} from "../UI/UIElement";
-import {TagRenderingOptions} from "./TagRendering";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
+import {TagRenderingOptions} from "./TagRenderingOptions";
 
 export interface Preset {
     tags: Tag[],

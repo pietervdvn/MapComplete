@@ -12,7 +12,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 import PumpOperational from "../Questions/bike/PumpOperational";
 import PumpValves from "../Questions/bike/PumpValves";
 import Translations from "../../UI/i18n/Translations";
-import { TagRenderingOptions } from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export default class BikeStations extends LayerDefinition {

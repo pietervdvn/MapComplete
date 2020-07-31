@@ -1,17 +1,17 @@
-import {All} from "./Layouts/All";
-import {StreetWidth} from "./Layouts/StreetWidth";
 import {LayerDefinition} from "./LayerDefinition";
-import {ClimbingTrees} from "./Layouts/ClimbingTrees";
-import {Smoothness} from "./Layouts/Smoothness";
-import {Natuurpunt} from "./Layouts/Natuurpunt";
+import {Layout} from "./Layout";
+import {All} from "./Layouts/All";
+import {CustomLayout} from "../Logic/CustomLayers";
 import {Groen} from "./Layouts/Groen";
 import Cyclofix from "./Layouts/Cyclofix";
-import {Layout} from "./Layout";
-import {CustomLayout} from "../Logic/CustomLayers";
+import {StreetWidth} from "./Layouts/StreetWidth";
 import {GRB} from "./Layouts/GRB";
 import {Artworks} from "./Layouts/Artworks";
+import {ClimbingTrees} from "./Layouts/ClimbingTrees";
 import {WalkByBrussels} from "./Layouts/WalkByBrussels";
+import {Smoothness} from "./Layouts/Smoothness";
 import {MetaMap} from "./Layouts/MetaMap";
+import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {Bookcases} from "./Layouts/Bookcases";
 
 export class AllKnownLayouts {
@@ -31,7 +31,8 @@ export class AllKnownLayouts {
         new ClimbingTrees(),
         new Artworks(),
         new Smoothness(),
-        /*new Toilets(),
+        /*
+        new Toilets(),
         */
     ];
 

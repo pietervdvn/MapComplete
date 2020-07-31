@@ -1,8 +1,8 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Birdhide extends LayerDefinition {
 

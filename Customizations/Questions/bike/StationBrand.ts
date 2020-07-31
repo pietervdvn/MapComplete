@@ -1,5 +1,5 @@
-import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
 /**

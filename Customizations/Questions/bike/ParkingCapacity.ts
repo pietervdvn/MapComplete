@@ -1,5 +1,5 @@
 import Translations from "../../../UI/i18n/Translations";
-import { TagRenderingOptions } from "../../TagRendering";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
 export default class ParkingCapacity extends TagRenderingOptions {

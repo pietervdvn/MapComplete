@@ -1,15 +1,15 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {Or, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
 import {AccessTag} from "../Questions/AccessTag";
 import {OperatorTag} from "../Questions/OperatorTag";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class NatureReserves extends LayerDefinition {
-    
+
     constructor(moreQuests: boolean = false) {
         super("natureReserve");
         this.name = "Natuurgebied";
@@ -30,13 +30,6 @@ export class NatureReserves extends LayerDefinition {
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
-            /*   new TagRenderingOptions({
-                   freeform: {
-                       key: "_surface",
-                       renderTemplate: "{_surface}m²",
-                       template: "$$$"
-                   }
-               }),*/
             new NameQuestion(),
             new AccessTag(),
             new OperatorTag(),
@@ -111,9 +104,9 @@ export class NatureReserves extends LayerDefinition {
         return function (properties: any) {
             let questionSeverity = 0;
             for (const qd of self.elementsToShow) {
-                if(qd instanceof DescriptionQuestion){
-                    continue;
-                }
+                //if(qd instanceof DescriptionQuestion){
+                //    continue;
+                //}
                 if (qd.IsQuestioning(properties)) {
                     questionSeverity = Math.max(questionSeverity, qd.Priority() ?? 0);
                 }

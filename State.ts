@@ -7,7 +7,6 @@ import {Utils} from "./Utils";
 import {LayerDefinition, Preset} from "./Customizations/LayerDefinition";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
-import {Basemap} from "./Logic/Leaflet/Basemap";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -43,7 +42,7 @@ export class State {
     /**
      THe basemap with leaflet instance
      */
-    public bm: Basemap;
+    public bm;
     /**
      The user crednetials
      */
@@ -188,23 +187,7 @@ export class State {
             return;
         }
 
-        this.bm = new Basemap("leafletDiv", this.locationControl, new VariableUiElement(
-            this.locationControl.map((location) => {
-                const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
-                    " " +
-                    "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
-                let editHere = "";
-                if (location !== undefined) {
-                    editHere = " | " +
-                        "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
-                        "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
-                        "</a>"
-                }
-                return mapComplete + editHere;
-
-            })
-        ));
-        this.layerUpdater = new LayerUpdater(this);
+       
 
     }
     

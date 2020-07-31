@@ -3,7 +3,7 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import FixedText from "../Questions/FixedText";
 import {Tag} from "../../Logic/TagsFilter";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import {TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Viewpoint extends LayerDefinition {
 

@@ -1,4 +1,4 @@
-import {TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export class WikipediaLink extends TagRenderingOptions {

@@ -1,5 +1,6 @@
 import {UIElement} from "./UI/UIElement";
 UIElement.runningFromConsole = true;
+
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
@@ -7,7 +8,22 @@ import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
-import {LayerDefinition} from "./Customizations/LayerDefinition";
+
+import {All} from "./Customizations/Layouts/All";
+import {StreetWidth} from "./Customizations/Layouts/StreetWidth";
+import {LayerDefinition}  from"./Customizations/LayerDefinition";
+import {ClimbingTrees} from "./Customizations/Layouts/ClimbingTrees";
+import {Smoothness} from "./Customizations/Layouts/Smoothness";
+import {Natuurpunt} from "./Customizations/Layouts/Natuurpunt";
+import {Groen} from "./Customizations/Layouts/Groen";
+import Cyclofix from "./Customizations/Layouts/Cyclofix";
+import {CustomLayout} from "./Logic/CustomLayers";
+import {GRB} from "./Customizations/Layouts/GRB";
+import {Artworks} from "./Customizations/Layouts/Artworks";
+import {WalkByBrussels} from "./Customizations/Layouts/WalkByBrussels";
+import {MetaMap} from "./Customizations/Layouts/MetaMap";
+import {Bookcases} from "./Customizations/Layouts/Bookcases";
+
 console.log("Building the layouts")
 
 
@@ -16,7 +32,7 @@ function enc(str: string): string {
 }
 
 function validate(layout: Layout) {
-
+    console.log("Validationg ", layout.name)
     const translations: Translation[] = [];
     const queue: any[] = [layout]
 
@@ -162,7 +178,6 @@ function createLandingPage(layout: Layout) {
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
 const all = AllKnownLayouts.allSets;
-/*
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
@@ -175,15 +190,17 @@ for (const layoutName in all) {
     };
     const layout = all[layoutName];
     validate(layout)
+    console.log("Generating manifest")
     const manif = JSON.stringify(createManifest(layout, "/MapComplete"));
 
     const manifestLocation = encodeURIComponent(layout.name.toLowerCase()) + ".webmanifest";
     writeFile(manifestLocation, manif, err);
 
     const landing = createLandingPage(layout);
+    console.log("Generating html-file for ",layout.name)
     writeFile(enc(layout.name) + ".html", landing, err)
+    console.log("done")
 }
-
+console.log("COunting all translations")
 Translations.CountTranslations();
-
- */
+console.log("All done!")

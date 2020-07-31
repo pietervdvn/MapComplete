@@ -1,13 +1,13 @@
 import {Layout} from "../Layout";
 import {LayerDefinition} from "../LayerDefinition";
 import {Or, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export class SmoothnessLayer extends LayerDefinition {
 
     constructor() {
-        super();
+        super("smoothness");
         this.name = "smoothness";
         this.minzoom = 17;
         this.overpassFilter = new Or([

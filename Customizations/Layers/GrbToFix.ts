@@ -1,6 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Regex, Tag} from "../../Logic/TagsFilter";
-import {TagRenderingOptions} from "../TagRendering";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class GrbToFix extends LayerDefinition {
 

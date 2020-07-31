@@ -1,10 +1,10 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {Tag} from "../../Logic/TagsFilter";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
-import {TagRenderingOptions} from "../TagRendering";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import L from "leaflet";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class GhostBike extends LayerDefinition {
     constructor() {

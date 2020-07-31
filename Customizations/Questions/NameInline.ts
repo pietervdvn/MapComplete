@@ -1,7 +1,7 @@
-import {TagRenderingOptions} from "../TagRendering";
 import {And, Tag} from "../../Logic/TagsFilter";
 import {UIElement} from "../../UI/UIElement";
 import Translations from "../../UI/i18n/Translations";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export class NameInline extends TagRenderingOptions{

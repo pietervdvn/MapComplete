@@ -1,6 +1,6 @@
-import {TagRenderingOptions} from "../../TagRendering";
 import {Tag, And} from "../../../Logic/TagsFilter";
 import Translations from "../../../UI/i18n/Translations";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
 export default class ParkingOperator extends TagRenderingOptions {

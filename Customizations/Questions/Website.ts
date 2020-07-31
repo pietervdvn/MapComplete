@@ -1,6 +1,6 @@
-import {TagRenderingOptions} from "../TagRendering";
 import {UIElement} from "../../UI/UIElement";
 import Translations from "../../UI/i18n/Translations";
+import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
 export default class Website extends TagRenderingOptions {

@@ -71,6 +71,7 @@ if (layoutToUse === undefined) {
 console.log("Using layout: ", layoutToUse.name);
 
 State.state = new State(layoutToUse);
+InitUiElements.InitBaseMap();
 
 function setupAllLayerElements() {
 

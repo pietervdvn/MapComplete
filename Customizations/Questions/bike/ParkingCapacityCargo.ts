@@ -1,6 +1,6 @@
 import Translations from "../../../UI/i18n/Translations";
-import { TagRenderingOptions } from "../../TagRendering";
 import Combine from "../../../UI/Base/Combine";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
 export default class ParkingCapacityCargo extends TagRenderingOptions {

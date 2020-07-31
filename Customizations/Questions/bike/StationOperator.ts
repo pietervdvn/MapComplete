@@ -1,6 +1,6 @@
-import {TagRenderingOptions} from "../../TagRendering";
 import {Tag} from "../../../Logic/TagsFilter";
 import Translations from "../../../UI/i18n/Translations";
+import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
 export default class BikeStationOperator extends TagRenderingOptions {
