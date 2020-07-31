@@ -14,6 +14,8 @@ import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {State} from "./State";
 import {CustomLayout} from "./Logic/CustomLayers";
+import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
+import {TagRendering} from "./Customizations/TagRendering";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -69,6 +71,7 @@ if (layoutToUse === undefined) {
 }
 
 console.log("Using layout: ", layoutToUse.name);
+TagRendering.injectFunction();
 
 State.state = new State(layoutToUse);
 InitUiElements.InitBaseMap();
