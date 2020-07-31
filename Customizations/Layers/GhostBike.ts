@@ -14,7 +14,7 @@ export class GhostBike extends LayerDefinition {
             " in the form of a white bicycle placed permanently near the accident location.";
 
         this.minzoom = 1;
-        this.icon = "./assets/bike.svg"
+        this.icon = "./assets/bike/ghost.svg"
         this.presets = [
             {
                 title: "Ghost bike",
