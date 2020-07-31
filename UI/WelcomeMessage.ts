@@ -31,7 +31,7 @@ export class WelcomeMessage extends UIElement {
         }
 
         this.description = fromLayout((layout) => layout.welcomeMessage);
-        this.plzLogIn = fromLayout((layout) => layout.gettingStartedPlzLogin);
+        this.plzLogIn = fromLayout((layout) => layout.gettingStartedPlzLogin.onClick(()=> State.state.osmConnection.AttemptLogin()));
         this.welcomeBack = fromLayout((layout) => layout.welcomeBackMessage);
         this.tail = fromLayout((layout) => layout.welcomeTail);
     }
@@ -54,8 +54,5 @@ export class WelcomeMessage extends UIElement {
             "</span>";
     }
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        this.osmConnection?.registerActivateOsmAUthenticationClass()
-    }
 
 }

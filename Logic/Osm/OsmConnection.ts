@@ -32,10 +32,13 @@ export class OsmConnection {
         } catch (e) {
             console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
         }
+        
+        const iframeMode = window !== window.top;
 
 
-        if (pwaStandAloneMode) {
+        if (pwaStandAloneMode || iframeMode) {
             // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
+            // Same for an iframe...
             this.auth = new osmAuth({
                 oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
                 oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
@@ -154,22 +157,6 @@ export class OsmConnection {
                 this.AttemptLogin();
             }
         },  5 * 60 * 1000);
-    }
-
-    /**
-     * All elements with class 'activate-osm-authentication' are loaded and get an 'onclick' to authenticate
-     */
-    registerActivateOsmAUthenticationClass() {
-
-        const self = this;
-        const authElements = document.getElementsByClassName("activate-osm-authentication");
-        for (let i = 0; i < authElements.length; i++) {
-            let element = authElements.item(i);
-            // @ts-ignore
-            element.onclick = function () {
-                self.AttemptLogin();
-            }
-        }
     }
 
     public preferences = new UIEventSource<any>({});

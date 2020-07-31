@@ -171,6 +171,5 @@ if ((window != window.top && !State.state.featureSwitchWelcomeMessage) || State.
 new GeoLocationHandler().AttachTo("geolocate-button");
 
 
-State.state.osmConnection.registerActivateOsmAUthenticationClass();
 State.state.locationControl.ping()
 

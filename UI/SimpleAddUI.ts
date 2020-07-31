@@ -20,6 +20,8 @@ import {State} from "../State";
 export class SimpleAddUI extends UIElement {
     private _addButtons: UIElement[];
     
+    private _loginButton : UIElement;
+    
     private _confirmPreset: UIEventSource<{
         description: string | UIElement,
         name: string | UIElement,
@@ -37,13 +39,16 @@ export class SimpleAddUI extends UIElement {
         super(State.state.locationControl);
         this.ListenTo(Locale.language);
         this.ListenTo(State.state.osmConnection.userDetails);
-
         this.ListenTo(State.state.layerUpdater.runningQuery);
-
-        this._addButtons = [];
         this.ListenTo(this._confirmPreset);
+
+        
+        this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
+        
+        this._addButtons = [];
         this.clss = "add-ui"
 
+        
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
             for (const preset of layer.layerDef.presets) {
@@ -134,7 +139,7 @@ export class SimpleAddUI extends UIElement {
         }
         
         if (!userDetails.data.loggedIn) {
-            return new Combine([header, Translations.t.general.add.pleaseLogin]).Render()
+            return new Combine([header, this._loginButton]).Render()
         }
 
         if (userDetails.data.unreadMessages > 0) {
@@ -177,8 +182,5 @@ export class SimpleAddUI extends UIElement {
         return header.Render() + html;
     }
 
-    InnerUpdate(htmlElement: HTMLElement) {
-       State.state.osmConnection.registerActivateOsmAUthenticationClass();
-    }
 
 }

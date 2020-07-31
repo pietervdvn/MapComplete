@@ -21,13 +21,14 @@ export class UserBadge extends UIElement {
     private _homeButton: UIElement;
     private _languagePicker: UIElement;
 
+    private _loginButton : UIElement;
 
     constructor() {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
         this._pendingChanges = new PendingChanges();
         this._languagePicker = Utils.CreateLanguagePicker();
-
+        this._loginButton = Translations.t.general.loginWithOpenStreetMap.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
         this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
             .onClick(() => {
                 State.state.osmConnection.LogOut();
@@ -63,7 +64,7 @@ export class UserBadge extends UIElement {
     InnerRender(): string {
         const user = this._userDetails.data;
         if (!user.loggedIn) {
-            return "<div class='activate-osm-authentication'>" + Translations.t.general.loginWithOpenStreetMap.R()+ "</div>";
+            return this._loginButton.Render();
         }
         
         
@@ -121,10 +122,6 @@ export class UserBadge extends UIElement {
 
         return userIcon + "<div id='usertext'>" + userName + userStats + "</div>";
 
-    }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        State.state.osmConnection.registerActivateOsmAUthenticationClass();
     }
 
 
