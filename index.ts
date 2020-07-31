@@ -16,6 +16,8 @@ import {State} from "./State";
 import {CustomLayout} from "./Logic/CustomLayers";
 import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
 import {TagRendering} from "./Customizations/TagRendering";
+import {Img} from "./UI/Img";
+import Combine from "./UI/Base/Combine";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -76,15 +78,17 @@ TagRendering.injectFunction();
 State.state = new State(layoutToUse);
 InitUiElements.InitBaseMap();
 
+new FixedUiElement("").AttachTo("decoration"); // Remove the decoration
+
 function setupAllLayerElements() {
 
-// ------------- Setup the layers -------------------------------
+    // ------------- Setup the layers -------------------------------
 
     InitUiElements.InitLayers();
     InitUiElements.InitLayerSelection();
 
 
-// ------------------ Setup various other UI elements ------------
+    // ------------------ Setup various other UI elements ------------
 
 
     InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
@@ -171,5 +175,5 @@ if ((window != window.top && !State.state.featureSwitchWelcomeMessage) || State.
 new GeoLocationHandler().AttachTo("geolocate-button");
 
 
-State.state.locationControl.ping()
+// State.state.locationControl.ping()
 

@@ -31,7 +31,8 @@ export class WelcomeMessage extends UIElement {
         }
 
         this.description = fromLayout((layout) => layout.welcomeMessage);
-        this.plzLogIn = fromLayout((layout) => layout.gettingStartedPlzLogin.onClick(()=> State.state.osmConnection.AttemptLogin()));
+        this.plzLogIn = fromLayout((layout) => layout.gettingStartedPlzLogin);
+        this.plzLogIn.onClick(()=> State.state.osmConnection.AttemptLogin());
         this.welcomeBack = fromLayout((layout) => layout.welcomeBackMessage);
         this.tail = fromLayout((layout) => layout.welcomeTail);
     }
