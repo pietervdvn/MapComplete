@@ -3,6 +3,13 @@ import {UIElement} from "../UI/UIElement";
 import {TagRenderingOptions} from "./TagRendering";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 
+export interface Preset {
+    tags: Tag[],
+    title: string | UIElement,
+    description?: string | UIElement,
+    icon?: string
+}
+
 export class LayerDefinition {
 
 
@@ -20,12 +27,7 @@ export class LayerDefinition {
      * These tags are added whenever a new point is added by the user on the map.
      * This is the ideal place to add extra info, such as "fixme=added by MapComplete, geometry should be checked"
      */
-    presets: {
-        tags: Tag[],
-        title: string | UIElement,
-        description?: string | UIElement,
-        icon?: string
-    }[]
+    presets: Preset[]
     /**
      * Not really used anymore
      * This is meant to serve as icon in the buttons

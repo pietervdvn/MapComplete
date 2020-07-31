@@ -9,7 +9,7 @@ export default class Translation extends UIElement {
 
     private static forcedLanguage = undefined;
 
-    public Subs(text: any /*Map<string, string | UIElement>*/) {
+    public Subs(text: any) {
         const newTranslations = {};
         for (const lang in this.translations) {
             let template: string = this.translations[lang];

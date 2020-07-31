@@ -700,7 +700,9 @@ export default class Translations {
                 nl: 'Zoom in om de data te zien en te bewerken',
                 fr: 'Rapprochez vous sur la carte pour voir ou éditer les données',
             }),
-            ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}),
+            ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}), 
+            retrying: new T({en: "Loading data failed. Trying again... ({count})"})
+
         },
         general: {
             loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap", fr:'Se connecter avec OpenStreeMap'}),
@@ -959,9 +961,10 @@ export default class Translations {
                 en: "<h3>Your custom theme</h3>In your custom theme, you can add some favourite layers from other themes to create a custom theme."
             }),
             panelIntro: new T({
-                en:"<h3>Your custom theme</h3>Create your own theme here by picking your favourite layers"
-            })
-
+                en: "<h3>Your custom theme</h3>Create your own theme here by picking your favourite layers"
+            }),
+            loginNeeded: new T({en: "<h3>Log in</h3>A custom layout is only available for OpenStreetMap users"}),
+            reload: new T({en: "Reload the data"})
         }
     }
 

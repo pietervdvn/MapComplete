@@ -303,12 +303,13 @@ export class Changes {
 
         const millisTillChangesAreSaved = state.secondsTillChangesAreSaved;
         const saveAfterXMillis = state.secondsTillChangesAreSaved.data * 1000;
+        const self= this;
         this.pendingChangesES.addCallback(function () {
 
-            var c = this.pendingChangesES.data;
+            var c = self.pendingChangesES.data;
             if (c > 10) {
                 millisTillChangesAreSaved.setData(0);
-                this.uploadAll(undefined);
+                self.uploadAll(undefined);
                 return;
             }
 
@@ -319,8 +320,8 @@ export class Changes {
         });
 
         millisTillChangesAreSaved.addCallback((time) => {
-                if (time <= 0 && this.pendingChangesES.data > 0) {
-                    this.uploadAll(undefined);
+                if (time <= 0 && self.pendingChangesES.data > 0) {
+                    self.uploadAll(undefined);
                 }
             }
         )

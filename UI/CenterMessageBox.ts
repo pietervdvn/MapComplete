@@ -6,31 +6,30 @@ import {State} from "../State";
 
 export class CenterMessageBox extends UIElement {
 
-    private readonly _queryRunning: UIEventSource<boolean>;
-    private startZoom: number;
-
     constructor(
-        startZoom: number,
-        queryRunning: UIEventSource<boolean>
     ) {
         super(State.state.centerMessage);
-        this.startZoom = startZoom;
 
         this.ListenTo(State.state.locationControl);
-        this.ListenTo(queryRunning);
-
-        this._queryRunning = queryRunning;
-
-
+        this.ListenTo(State.state.layerUpdater.retries);
+        this.ListenTo(State.state.layerUpdater.runningQuery);
+        this.ListenTo(State.state.layerUpdater.sufficentlyZoomed);
     }
 
     private prep(): { innerHtml: string, done: boolean } {
         if (State.state.centerMessage.data != "") {
             return {innerHtml: State.state.centerMessage.data, done: false};
         }
-        if (this._queryRunning.data) {
+        const lu = State.state.layerUpdater;
+        if(lu.retries.data > 0) {
+            return {innerHtml: Translations.t.centerMessage.retrying.Subs({count: ""+ lu.retries.data}).Render(), done: false};
+        }
+        
+        if (lu.runningQuery.data) {
             return {innerHtml: Translations.t.centerMessage.loadingData.Render(), done: false};
-        } else if (State.state.locationControl.data.zoom < this.startZoom) {
+            
+        } 
+        if (!lu.sufficentlyZoomed.data) {
             return {innerHtml: Translations.t.centerMessage.zoomIn.Render(), done: false};
         } else {
             return {innerHtml: Translations.t.centerMessage.ready.Render(), done: true};

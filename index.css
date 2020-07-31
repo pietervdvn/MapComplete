@@ -1168,10 +1168,7 @@ form {
     background-color: white;
     z-index: 5001;
     box-shadow: 0 0 10px black;
-    border-bottom: 1px solid white;
-    border-left: 1px solid black;
-    border-right:1px solid black;
-    border-top: 1px solid black;
+    border: 1px solid white;
 }
 
 .tab-non-active {
@@ -1270,23 +1267,23 @@ form {
 }
 
 .custom-layer-panel-header-img {
-    width: 4em;
+    min-width: 4em;
     height: 4em;
 
 }
 
 .custom-layer-checkbox {
     font-size: larger;
-    height: 2em;
+    min-height: 2em;
     background-color: #e5f5ff;
     margin:0.3em;
-    margin-left: 2em;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
     text-decoration: none;
     padding: 0.5em;
     border-radius: 1em;
+    width: unset;
 }
 .custom-layer-checkbox img {
     max-width: 1.5em;

@@ -10,12 +10,14 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import {State} from "../State";
+import {CustomLayout} from "../Logic/CustomLayers";
 
 
 export class MoreScreen extends UIElement {
 
     constructor() {
         super(State.state.locationControl);
+        this.ListenTo(State.state.osmConnection.userDetails);
     }
 
     InnerRender(): string {
@@ -24,11 +26,19 @@ export class MoreScreen extends UIElement {
         const els: UIElement[] = []
         for (const k in AllKnownLayouts.allSets) {
             const layout = AllKnownLayouts.allSets[k]
-            if (layout.hideFromOverview) {
+            if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
                 continue
             }
             if (layout.name === State.state.layoutToUse.data.name) {
                 continue;
+            }
+            if (layout.name === CustomLayout.NAME) {
+                if (!State.state.osmConnection.userDetails.data.loggedIn) {
+                    continue;
+                }
+                if (State.state.osmConnection.userDetails.data.csCount < 100) {
+                    continue;
+                }
             }
 
             const currentLocation = State.state.locationControl.data;

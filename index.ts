@@ -1,7 +1,6 @@
 import {UserBadge} from "./UI/UserBadge";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {TagUtils} from "./Logic/TagsFilter";
-import {LayerUpdater} from "./Logic/LayerUpdater";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
@@ -14,8 +13,7 @@ import {InitUiElements} from "./InitUiElements";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {State} from "./State";
-import {All} from "./Customizations/Layouts/All";
-import {CustomLayers} from "./Logic/CustomLayers";
+import {CustomLayout} from "./Logic/CustomLayers";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -78,10 +76,8 @@ function setupAllLayerElements() {
 
 // ------------- Setup the layers -------------------------------
 
-    const layerSetup = InitUiElements.InitLayers();
-
-    const layerUpdater = new LayerUpdater(layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
-    InitUiElements.InitLayerSelection(layerSetup)
+    InitUiElements.InitLayers();
+    InitUiElements.InitLayerSelection();
 
 
 // ------------------ Setup various other UI elements ------------
@@ -89,31 +85,29 @@ function setupAllLayerElements() {
 
     InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
         new StrayClickHandler(() => {
-                return new SimpleAddUI(
-                    layerUpdater.runningQuery,
-                    layerSetup.presets);
+                return new SimpleAddUI();
             }
         );
     });
 
-    new CenterMessageBox(
-        layerSetup.minZoom,
-        layerUpdater.runningQuery)
-        .AttachTo("centermessage");
+    new CenterMessageBox()        .AttachTo("centermessage");
 
 }
 
 setupAllLayerElements();
 
-if (layoutToUse === AllKnownLayouts.allSets[CustomLayers.NAME]) {
+if (layoutToUse === AllKnownLayouts.allSets[CustomLayout.NAME]) {
     State.state.favourteLayers.addCallback((favs) => {
+        layoutToUse.layers = [];
         for (const fav of favs) {
             const layer = AllKnownLayouts.allLayers[fav];
             if (!!layer) {
                 layoutToUse.layers.push(layer);
             }
             setupAllLayerElements();
-        }
+        };
+        State.state.locationControl.ping();
+        
     })
 }
 

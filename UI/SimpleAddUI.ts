@@ -13,13 +13,6 @@ import {Changes} from "../Logic/Osm/Changes";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {State} from "../State";
 
-export interface Preset {
-    description: string | UIElement,
-    name: string | UIElement,
-    icon: string,
-    tags: Tag[],
-    layerToAddTo: FilteredLayer
-}
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -27,57 +20,68 @@ export interface Preset {
 export class SimpleAddUI extends UIElement {
     private _addButtons: UIElement[];
     
-    private _dataIsLoading: UIEventSource<boolean>;
-
-    private _confirmPreset: UIEventSource<Preset>
-        = new UIEventSource<Preset>(undefined);
+    private _confirmPreset: UIEventSource<{
+        description: string | UIElement,
+        name: string | UIElement,
+        icon: string,
+        tags: Tag[],
+        layerToAddTo: FilteredLayer
+    }>
+        = new UIEventSource(undefined);
     private confirmButton: UIElement = undefined;
     private cancelButton: UIElement;
     private goToInboxButton: UIElement = new SubtleButton("./assets/envelope.svg", 
         Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
-    constructor(
-                dataIsLoading: UIEventSource<boolean>,
-                addButtons: { description: string | UIElement, name: string | UIElement; icon: string; tags: Tag[]; layerToAddTo: FilteredLayer }[],
-    ) {
+    constructor() {
         super(State.state.locationControl);
         this.ListenTo(Locale.language);
         this.ListenTo(State.state.osmConnection.userDetails);
-        
-        this._dataIsLoading = dataIsLoading;
-        this.ListenTo(dataIsLoading);
-        
+
+        this.ListenTo(State.state.layerUpdater.runningQuery);
+
         this._addButtons = [];
         this.ListenTo(this._confirmPreset);
         this.clss = "add-ui"
 
         const self = this;
-        for (const option of addButtons) {
-            // <button type='button'> looks SO retarded
-            // the default type of button is 'submit', which performs a POST and page reload
-            const button =
-                new SubtleButton(
-                    option.icon,
-                    new Combine([
-                        "<b>",
-                        option.name,
-                        "</b><br/>",
-                        option.description !== undefined ? option.description : ""])
-                ).onClick(
-                    () => {
-                        self.confirmButton = new SubtleButton(option.icon,
-                            new Combine([
-                                "<b>",
-                                option.name,
-                                "</b><br/>",
-                                option.description !== undefined ? option.description : ""]));
-                        self.confirmButton.onClick(self.CreatePoint(option));
-                        self._confirmPreset.setData(option);
-                    }
+        for (const layer of State.state.filteredLayers.data) {
+            for (const preset of layer.layerDef.presets) {
+
+
+                // <button type='button'> looks SO retarded
+                // the default type of button is 'submit', which performs a POST and page reload
+                const button =
+                    new SubtleButton(
+                        preset.icon,
+                        new Combine([
+                            "<b>",
+                            preset.title,
+                            "</b><br/>",
+                            preset.description !== undefined ? preset.description : ""])
+                    ).onClick(
+                        () => {
+                            self.confirmButton = new SubtleButton(preset.icon,
+                                new Combine([
+                                    "Add a ",
+                                    "<b>",
+                                    preset.title,
+                                    "</b> here<br/>",
+                                    preset.description !== undefined ? preset.description : ""]));
+                            self.confirmButton.onClick(self.CreatePoint(preset.tags, layer));
+                            self._confirmPreset.setData({
+                                tags: preset.tags,
+                                layerToAddTo: layer,
+                                name: preset.title,
+                                description: preset.description,
+                                icon: preset.icon
+                            });
+                        }
                 )
 
 
             this._addButtons.push(button);
+            }
         }
         
         this.cancelButton = new SubtleButton(
@@ -88,13 +92,13 @@ export class SimpleAddUI extends UIElement {
         })
     }
 
-    private CreatePoint(option: { tags: Tag[]; layerToAddTo: FilteredLayer }) {
+    private CreatePoint(tags: Tag[], layerToAddTo: FilteredLayer) {
         const self = this;
         return () => {
 
             const loc = State.state.bm.LastClickLocation.data;
-            let feature = State.state.changes.createElement(option.tags, loc.lat, loc.lon);
-            option.layerToAddTo.AddNewElement(feature);
+            let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
+            layerToAddTo.AddNewElement(feature);
             State.state.selectedElement.setData({feature: feature});
         }
     }
@@ -106,7 +110,7 @@ export class SimpleAddUI extends UIElement {
         if (this._confirmPreset.data !== undefined) {
 
             if(userDetails.data.dryRun){
-                this.CreatePoint(this._confirmPreset.data)();
+                this.CreatePoint(this._confirmPreset.data.tags, this._confirmPreset.data.layerToAddTo)();
                 return "";
             }
 
@@ -159,7 +163,7 @@ export class SimpleAddUI extends UIElement {
             return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
         }
 
-        if (this._dataIsLoading.data) {
+        if (State.state.layerUpdater.runningQuery.data) {
             return new Combine([header, Translations.t.general.add.stillLoading]).Render()
         }
 

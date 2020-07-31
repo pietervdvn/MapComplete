@@ -12,13 +12,14 @@ import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {ClimbingTrees} from "./Layouts/ClimbingTrees";
 import {Smoothness} from "./Layouts/Smoothness";
 import {LayerDefinition} from "./LayerDefinition";
-import {CustomLayers} from "../Logic/CustomLayers";
+import {CustomLayout} from "../Logic/CustomLayers";
 
 export class AllKnownLayouts {
 
     public static allLayers: Map<string, LayerDefinition> = undefined;
     
     public static layoutsList: Layout[] = [
+        new CustomLayout(),
         new Groen(),
         new GRB(),
         new Cyclofix(),
@@ -30,7 +31,6 @@ export class AllKnownLayouts {
         new ClimbingTrees(),
         new Artworks(),
         new Smoothness(),
-        new CustomLayers()
         /*new Toilets(),
         */
     ];

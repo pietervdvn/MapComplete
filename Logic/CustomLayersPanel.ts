@@ -9,22 +9,40 @@ import {CheckBox} from "../UI/Input/CheckBox";
 import {CustomLayersState} from "./CustomLayersState";
 import {VerticalCombine} from "../UI/Base/VerticalCombine";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import {CustomLayout} from "./CustomLayers";
+import {SubtleButton} from "../UI/Base/SubtleButton";
 
 export class CustomLayersPanel extends UIElement {
-    private checkboxes: UIElement[];
+    private checkboxes: UIElement[] = [];
+    
+    private updateButton : UIElement;
 
     constructor() {
         super(State.state.favourteLayers);
+
         this.ListenTo(State.state.osmConnection.userDetails);
 
 
         const t = Translations.t.favourite;
-
-        this.checkboxes = [];
-        const controls = new Map<string, UIEventSource<boolean>>();
         const favs = State.state.favourteLayers.data;
+        
+        this.updateButton = new SubtleButton("./assets/reload.svg", t.reload)
+            .onClick(() => {
+                State.state.layerUpdater.ForceRefresh();
+                CustomLayersState.InitFavouriteLayers(State.state);
+                State.state.layoutToUse.ping();
+            })
+
+        const controls = new Map<string, UIEventSource<boolean>>();
         for (const layout of AllKnownLayouts.layoutsList) {
 
+            if(layout.name === CustomLayout.NAME){
+                continue;
+            }
+            if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
+                continue
+            }
+            
             const header =
                 new Combine([
                     `<div class="custom-layer-panel-header-img"><img src='${layout.icon}'></div>`,
@@ -38,14 +56,23 @@ export class CustomLayersPanel extends UIElement {
 
             for (const layer of layout.layers) {
                 const image = (layer.icon ? `<img src='${layer.icon}'>` : Img.checkmark);
+                const noimage = (layer.icon ? `<img src='${layer.icon}'>` : Img.no_checkmark);
+
+                const content = new Combine([
+                    "<span>",
+                    "<b>", layer.name ?? "", "</b> ",
+                    layer.description !== undefined ? new Combine(["<br/>", layer.description]) : "",
+                    "</span>"])
                 const cb = new CheckBox(
                     new Combine([
-                        image,
-                        "<b>", layer.name ?? "", "</b> ", layer.description ?? ""
+                        image, content
                     ]),
                     new Combine([
-                        "<span style='opacity: 0'>",
-                        image, "</span>", "<b>", layer.name ?? "", "</b> ", layer.description ?? ""
+                        "<span style='opacity: 0.1'>",
+                        noimage, "</span>", 
+                        "<del>",
+                        content,
+                        "</del>"
                     ]),
                     controls[layer.id] ?? (favs.indexOf(layer.id) >= 0)
                 );
@@ -64,30 +91,25 @@ export class CustomLayersPanel extends UIElement {
 
             }
 
+            State.state.favourteLayers.addCallback((layers) => {
+                for (const layerId of layers) {
+                    controls[layerId]?.setData(true);
+                }
+            })
+
         }
-
-        State.state.favourteLayers.addCallback((layers) => {
-            for (const layerId of layers) {
-                controls[layerId].setData(true);
-            }
-        })
-
     }
 
     InnerRender(): string {
         const t = Translations.t.favourite;
         const userDetails = State.state.osmConnection.userDetails.data;
         if(!userDetails.loggedIn){
-            return "";
+            return t.loginNeeded.Render();
         }
-        
-        if(userDetails.csCount <= 100){
-            return "";
-        }
-        
-        return new VerticalCombine([
+
+        return new Combine([
             t.panelIntro,
-           new FixedUiElement("<a href='./index.html?layout=personal'>GO</a>"),
+            this.updateButton,
             ...this.checkboxes
         ], "custom-layer-panel").Render();
     }

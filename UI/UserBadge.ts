@@ -123,5 +123,9 @@ export class UserBadge extends UIElement {
 
     }
 
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        State.state.osmConnection.registerActivateOsmAUthenticationClass();
+    }
+
 
 }

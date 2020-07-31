@@ -13,7 +13,6 @@ import {Tag} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {ElementStorage} from "./Logic/ElementStorage";
-import {Preset} from "./UI/SimpleAddUI";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
@@ -23,6 +22,8 @@ import {Img} from "./UI/Img";
 import {DropDown} from "./UI/Input/DropDown";
 import {LayerSelection} from "./UI/LayerSelection";
 import {CustomLayersPanel} from "./Logic/CustomLayersPanel";
+import {CustomLayout} from "./Logic/CustomLayers";
+import {Preset} from "./Customizations/LayerDefinition";
 
 export class InitUiElements {
 
@@ -44,15 +45,18 @@ export class InitUiElements {
 
     private static CreateWelcomePane() {
 
-        const welcome = new WelcomeMessage()
-
         const layoutToUse = State.state.layoutToUse.data;
+        let welcome: UIElement = new WelcomeMessage();
+        if (layoutToUse.name === CustomLayout.NAME) {
+            welcome = new CustomLayersPanel();
+        }
+
+
         const fullOptions = new TabbedComponent([
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
             {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()},
             {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()},
-            {header: `<img src='${'./assets/star.svg'}'>`, content: new CustomLayersPanel()},
         ])
 
         return fullOptions;
@@ -94,7 +98,7 @@ export class InitUiElements {
 
     }
 
-    static InitLayerSelection(layerSetup) {
+    static InitLayerSelection() {
         const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
 
         const openFilterButton = `<button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
@@ -103,9 +107,9 @@ export class InitUiElements {
             return {value: layer, shown: layer.name}
         });
         const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, State.state.bm.CurrentLayer), openFilterButton]);
-        const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(layerSetup.flayers)]);
+        const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection()]);
         let layerControl = backgroundMapPicker;
-        if (layerSetup.flayers.length > 1) {
+        if (State.state.filteredLayers.data.length > 1) {
             layerControl = new Combine([layerSelection, backgroundMapPicker]);
         }
 
@@ -120,14 +124,11 @@ export class InitUiElements {
         });
     }
 
-    static InitLayers(): {
-        minZoom: number
-        flayers: FilteredLayer[],
-        presets: Preset[]
-    } {
-        const addButtons: Preset[] = [];
+
+    static InitLayers() {
 
         const flayers: FilteredLayer[] = []
+        const presets: Preset[] = [];
 
         let minZoom = 0;
         const state = State.state;
@@ -145,7 +146,6 @@ export class InitUiElements {
 
             minZoom = Math.max(minZoom, layer.minzoom);
 
-            const flayer = FilteredLayer.fromDefinition(layer, generateInfo);
 
             for (const preset of layer.presets ?? []) {
 
@@ -160,25 +160,17 @@ export class InitUiElements {
                     preset.icon = layer.style(tags)?.icon?.iconUrl;
                 }
 
-                const addButton = {
-                    name: preset.title,
-                    description: preset.description,
-                    icon: preset.icon,
-                    tags: preset.tags,
-                    layerToAddTo: flayer
-                }
-                addButtons.push(addButton);
+                presets.push(preset);
             }
+
+            const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
             flayers.push(flayer);
+            flayer.isDisplayed.setData(true)
         }
 
-        
-        
-        return {
-            minZoom: minZoom,
-            flayers: flayers,
-            presets: addButtons
-        }
+        State.state.filteredLayers.setData(flayers);
+        State.state.presets.setData(presets);
+
     }
 
 }

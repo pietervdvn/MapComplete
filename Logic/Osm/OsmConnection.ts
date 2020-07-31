@@ -216,7 +216,6 @@ export class OsmConnection {
                 self.preferences.data[k] = v;
             }
             self.preferences.ping();
-            CustomLayersState.InitFavouriteLayer();
         });
     }
     
@@ -234,6 +233,24 @@ export class OsmConnection {
 
         this.preferences.data[k] = v;
         this.preferences.ping();
+        
+        if(v === ""){
+            this.auth.xhr({
+                method: 'DELETE',
+                path: '/api/0.6/user/preferences/' + k,
+                options: {header: {'Content-Type': 'text/plain'}},
+            }, function (error, result) {
+                if (error) {
+                    console.log("Could not remove preference", error);
+                    return;
+                }
+
+                console.log("Preference removed!", result == "" ? "OK" : result);
+
+            });
+        }
+        
+        
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/user/preferences/' + k,

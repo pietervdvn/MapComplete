@@ -4,7 +4,7 @@ import {QueryParameters} from "./Logic/QueryParameters";
 import {LocalStorageSource} from "./Logic/LocalStorageSource";
 import {Layout} from "./Customizations/Layout";
 import {Utils} from "./Utils";
-import {LayerDefinition} from "./Customizations/LayerDefinition";
+import {LayerDefinition, Preset} from "./Customizations/LayerDefinition";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
 import {Basemap} from "./Logic/Leaflet/Basemap";
@@ -13,6 +13,8 @@ import Locale from "./UI/i18n/Locale";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import Translations from "./UI/i18n/Translations";
 import {CustomLayersState} from "./Logic/CustomLayersState";
+import {FilteredLayer} from "./Logic/FilteredLayer";
+import {LayerUpdater} from "./Logic/LayerUpdater";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -45,7 +47,13 @@ export class State {
      The user crednetials
      */
     public osmConnection: OsmConnection;
-
+    
+    public layerUpdater : LayerUpdater;
+    
+    
+    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
+    public presets: UIEventSource<Preset[]> = new UIEventSource<Preset[]>([])
+    
     /**
      *  The message that should be shown at the center of the screen
      */
@@ -144,6 +152,7 @@ export class State {
             QueryParameters.GetQueryParameter("oauth_token", undefined)
         );
         
+        CustomLayersState.InitFavouriteLayers(this);
        
         Locale.language.syncWith(this.osmConnection.GetPreference("language"));
 
@@ -190,6 +199,17 @@ export class State {
 
             })
         ));
+        this.layerUpdater = new LayerUpdater(this);
 
+    }
+    
+    public GetFilteredLayerFor(id: string) : FilteredLayer{
+        for (const flayer of this.filteredLayers.data) {
+            console.log(flayer.layerDef.id, id)
+            if(flayer.layerDef.id === id){
+                return flayer;
+            }
+        }
+        return undefined;
     }
 }
