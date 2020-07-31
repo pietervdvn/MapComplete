@@ -45,7 +45,7 @@ export class Park extends LayerDefinition {
 
 
     constructor() {
-        super();
+        super("park");
         this.name = "Park";
         this.icon = undefined;
         this.overpassFilter =

@@ -9,7 +9,7 @@ import T from "../../UI/i18n/Translation";
 export class Bookcases extends LayerDefinition {
 
     constructor() {
-        super();
+        super("bookcases");
 
         this.name = "boekenkast";
         this.presets = [{

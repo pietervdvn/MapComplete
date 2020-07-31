@@ -1,3 +1,8 @@
+import {UIElement} from "./UI/UIElement";
+import {DropDown} from "./UI/Input/DropDown";
+import {State} from "./State";
+import Locale from "./UI/i18n/Locale";
+
 export class Utils {
 
     /**
@@ -18,4 +23,22 @@ export class Utils {
     public static Upper(str : string){
         return str.substr(0,1).toUpperCase() + str.substr(1);
     }
+
+    static DoEvery(millis: number, f: (() => void)) {
+        window.setTimeout(
+            function () {
+                f();
+                Utils.DoEvery(millis, f);
+            }
+            , millis)
+    }
+
+    public static CreateLanguagePicker(label: string | UIElement = "") {
+
+        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
+                return {value: lang, shown: lang}
+            }
+        ), Locale.language);
+    }
+
 }

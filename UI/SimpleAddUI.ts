@@ -92,7 +92,7 @@ export class SimpleAddUI extends UIElement {
         const self = this;
         return () => {
 
-            const loc = State.state.bm.lastClickLocation.data;
+            const loc = State.state.bm.LastClickLocation.data;
             let feature = State.state.changes.createElement(option.tags, loc.lat, loc.lon);
             option.layerToAddTo.AddNewElement(feature);
             State.state.selectedElement.setData({feature: feature});
@@ -107,7 +107,7 @@ export class SimpleAddUI extends UIElement {
 
             if(userDetails.data.dryRun){
                 this.CreatePoint(this._confirmPreset.data)();
-                return;
+                return "";
             }
 
             return new Combine([

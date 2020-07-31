@@ -8,6 +8,7 @@ import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../TagsFilter";
 import {ElementStorage} from "../ElementStorage";
 import {State} from "../../State";
+import {Utils} from "../../Utils";
 
 export class Changes {
 
@@ -22,9 +23,11 @@ export class Changes {
 
     constructor(
         changesetComment: string,
-        login: OsmConnection,
-        allElements: ElementStorage) {
+        state: State) {
         this._changesetComment = changesetComment;
+
+        this.SetupAutoSave(state);
+        this.LastEffortSave();
     }
 
     addTag(elementId: string, tagsFilter : TagsFilter){
@@ -52,7 +55,6 @@ export class Changes {
      * @param value
      */
     addChange(elementId: string, key: string, value: string) {
-console.log("Received change",key, value)
         if (key === undefined || key === null) {
             console.log("Invalid key");
             return;
@@ -256,5 +258,78 @@ console.log("Received change",key, value)
                 optionalContinuationWrapped);
         });
     }
-    
+
+    /*
+        * Registers an action that:
+        * -> Upload everything to OSM
+        * -> Asks the user not to close. The 'not to close' dialog should profide enough time to upload
+        * -> WHen uploading is done, the window is closed anyway
+         */
+    private LastEffortSave() {
+        const self = this;
+        window.addEventListener("beforeunload", function (e) {
+            // Quickly save everyting!
+            if (self.pendingChangesES.data == 0) {
+                return "";
+            }
+
+            self.uploadAll(function () {
+                window.close()
+            });
+            var confirmationMessage = "Nog even geduld - je laatset wijzigingen worden opgeslaan!";
+
+            (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+            return confirmationMessage;                            //Webkit, Safari, Chrome
+        });
+
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === "visible") {
+                return;
+            }
+            if (this.pendingChangesES.data == 0) {
+                return;
+            }
+
+            console.log("Upmoading: loss of focus")
+            this.uploadAll(function () {
+                window.close()
+            });
+        })
+
+    }
+
+    private SetupAutoSave(state: State) {
+
+        const millisTillChangesAreSaved = state.secondsTillChangesAreSaved;
+        const saveAfterXMillis = state.secondsTillChangesAreSaved.data * 1000;
+        this.pendingChangesES.addCallback(function () {
+
+            var c = this.pendingChangesES.data;
+            if (c > 10) {
+                millisTillChangesAreSaved.setData(0);
+                this.uploadAll(undefined);
+                return;
+            }
+
+            if (c > 0) {
+                millisTillChangesAreSaved.setData(saveAfterXMillis);
+            }
+
+        });
+
+        millisTillChangesAreSaved.addCallback((time) => {
+                if (time <= 0 && this.pendingChangesES.data > 0) {
+                    this.uploadAll(undefined);
+                }
+            }
+        )
+
+        Utils.DoEvery(
+            1000,
+            () => {
+                millisTillChangesAreSaved
+                    .setData(millisTillChangesAreSaved.data - 1000)
+            });
+    }
 }

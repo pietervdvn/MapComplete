@@ -21,7 +21,7 @@ export default class BikeShops extends LayerDefinition {
     private readonly repairsBikes = new Tag("service:bicycle:repair", "yes")
 
     constructor() {
-        super();
+        super("bikeshop");
         this.name = Translations.t.cyclofix.shop.name
         this.icon = "./assets/bike/repair_shop.svg"
         this.overpassFilter = new Tag("shop", "bicycle");

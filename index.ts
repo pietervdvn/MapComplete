@@ -1,37 +1,21 @@
-import {ElementStorage} from "./Logic/ElementStorage";
-import {UIEventSource} from "./UI/UIEventSource";
 import {UserBadge} from "./UI/UserBadge";
-import {PendingChanges} from "./UI/PendingChanges";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
-import {Helpers} from "./Helpers";
 import {TagUtils} from "./Logic/TagsFilter";
 import {LayerUpdater} from "./Logic/LayerUpdater";
-import {UIElement} from "./UI/UIElement";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {CheckBox} from "./UI/Input/CheckBox";
-import Translations from "./UI/i18n/Translations";
-import Locale from "./UI/i18n/Locale";
 import {Layout} from "./Customizations/Layout";
-import {DropDown} from "./UI/Input/DropDown";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {LayerSelection} from "./UI/LayerSelection";
-import Combine from "./UI/Base/Combine";
-import {Img} from "./UI/Img";
 import {QueryParameters} from "./Logic/QueryParameters";
-import {Utils} from "./Utils";
-import {LocalStorageSource} from "./Logic/LocalStorageSource";
 import {InitUiElements} from "./InitUiElements";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
-import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
-import {OsmConnection} from "./Logic/Osm/OsmConnection";
-import {Changes} from "./Logic/Osm/Changes";
 import {State} from "./State";
+import {All} from "./Customizations/Layouts/All";
+import {CustomLayers} from "./Logic/CustomLayers";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -79,114 +63,59 @@ for (const k in AllKnownLayouts.allSets) {
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
 const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
-console.log("Using layout: ", layoutToUse.name);
 if (layoutToUse === undefined) {
     console.log("Incorrect layout")
+    new FixedUiElement("Error: incorrect layout " + defaultLayout + "<a href='https://pietervdvn.github.io/MapComplete/index.html'>Go to MapComplete</a>").AttachTo("centermessage").onClick(() => {
+    });
+    throw "Incorrect layout"
 }
 
-// Setup the global state
+console.log("Using layout: ", layoutToUse.name);
+
 State.state = new State(layoutToUse);
-const state = State.state;
 
-
-// ----------------- Prepare the important objects -----------------
-state.osmConnection = new OsmConnection(
-    QueryParameters.GetQueryParameter("test", "false").data === "true",
-    QueryParameters.GetQueryParameter("oauth_token", undefined)
-);
-
-
-Locale.language.syncWith(state.osmConnection.GetPreference("language"));
-
-// @ts-ignore
-window.setLanguage = function (language: string) {
-    Locale.language.setData(language)
-}
-
-Locale.language.addCallback((currentLanguage) => {
-    if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
-        console.log("Resetting languate to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
-        // The current language is not supported -> switch to a supported one
-        Locale.language.setData(layoutToUse.supportedLanguages[0]);
-    }
-}).ping()
-
-
-state.allElements = new ElementStorage();
-state.changes = new Changes(
-    "Beantwoorden van vragen met #MapComplete voor vragenset #" + state.layoutToUse.data.name,
-    state.osmConnection, state.allElements);
-state.bm = new Basemap("leafletDiv", state.locationControl, new VariableUiElement(
-    state.locationControl.map((location) => {
-        const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
-            " " +
-            "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
-        let editHere = "";
-        if (location !== undefined) {
-            editHere = " | " +
-                "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
-                "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
-                "</a>"
-        }
-        return mapComplete + editHere;
-
-    })
-));
-
-
+function setupAllLayerElements() {
 
 // ------------- Setup the layers -------------------------------
 
-const layerSetup = InitUiElements.InitLayers();
+    const layerSetup = InitUiElements.InitLayers();
 
-const layerUpdater = new LayerUpdater(layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
-
-
-// --------------- Setting up layer selection ui --------
-
-const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
-
-const openFilterButton = `
-<button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
-
-let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
-    return {value: layer, shown: layer.name}
-});
-const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, State.state.bm.CurrentLayer), openFilterButton]);
-const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(layerSetup.flayers)]);
-let layerControl = backgroundMapPicker;
-if (layerSetup.flayers.length > 1) {
-    layerControl = new Combine([layerSelection, backgroundMapPicker]);
-}
-
-InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
-
-    const checkbox = new CheckBox(layerControl, closedFilterButton);
-    checkbox.AttachTo("filter__selection");
-    State.state.bm.Location.addCallback(() => {
-        checkbox.isEnabled.setData(false);
-    });
-
-});
+    const layerUpdater = new LayerUpdater(layerSetup.minZoom, layoutToUse.widenFactor, layerSetup.flayers);
+    InitUiElements.InitLayerSelection(layerSetup)
 
 
 // ------------------ Setup various other UI elements ------------
 
-document.title = Translations.W(layoutToUse.title).InnerRender();
 
-Locale.language.addCallback(e => {
-    document.title = Translations.W(layoutToUse.title).InnerRender();
-})
+    InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+        new StrayClickHandler(() => {
+                return new SimpleAddUI(
+                    layerUpdater.runningQuery,
+                    layerSetup.presets);
+            }
+        );
+    });
 
+    new CenterMessageBox(
+        layerSetup.minZoom,
+        layerUpdater.runningQuery)
+        .AttachTo("centermessage");
 
-InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
-    new StrayClickHandler(() => {
-            return new SimpleAddUI(
-                layerUpdater.runningQuery,
-                layerSetup.presets);
+}
+
+setupAllLayerElements();
+
+if (layoutToUse === AllKnownLayouts.allSets[CustomLayers.NAME]) {
+    State.state.favourteLayers.addCallback((favs) => {
+        for (const fav of favs) {
+            const layer = AllKnownLayouts.allLayers[fav];
+            if (!!layer) {
+                layoutToUse.layers.push(layer);
+            }
+            setupAllLayerElements();
         }
-    );
-});
+    })
+}
 
 
 /**
@@ -219,7 +148,6 @@ State.state.selectedElement.addCallback((feature) => {
     }
 );
 
-console.log("Enable new:",State.state.featureSwitchAddNew.data,"deafult", layoutToUse.enableAdd)
 InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
     new UserBadge().AttachTo('userbadge');
 });
@@ -239,16 +167,6 @@ InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
 if ((window != window.top && !State.state.featureSwitchWelcomeMessage) || State.state.featureSwitchIframe.data) {
     new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
 }
-
-
-new CenterMessageBox(
-    layerSetup.minZoom,
-    layerUpdater.runningQuery)
-    .AttachTo("centermessage");
-
-
-Helpers.SetupAutoSave();
-Helpers.LastEffortSave();
 
 
 

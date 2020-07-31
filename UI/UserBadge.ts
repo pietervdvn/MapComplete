@@ -9,6 +9,7 @@ import {Basemap} from "../Logic/Leaflet/Basemap";
 import {State} from "../State";
 import {PendingChanges} from "./PendingChanges";
 import Locale from "./i18n/Locale";
+import {Utils} from "../Utils";
 
 /**
  * Handles and updates the user badge
@@ -25,7 +26,7 @@ export class UserBadge extends UIElement {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
         this._pendingChanges = new PendingChanges();
-        this._languagePicker = Locale.CreateLanguagePicker();
+        this._languagePicker = Utils.CreateLanguagePicker();
 
         this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
             .onClick(() => {

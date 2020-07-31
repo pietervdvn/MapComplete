@@ -16,7 +16,7 @@ export default class BikeCafes extends LayerDefinition {
     private readonly to = Translations.t.cyclofix.cafe
 
     constructor() {
-        super()
+        super("bikecafe")
         this.name = this.to.name
         this.icon = "./assets/bike/cafe.svg"
         this.overpassFilter = new And([

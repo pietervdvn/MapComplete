@@ -8,7 +8,7 @@ import L from "leaflet";
 
 export class GhostBike extends LayerDefinition {
     constructor() {
-        super();
+        super("ghost bike");
         this.name = "ghost bike";
         this.overpassFilter = new Tag("memorial", "ghost_bike")
         this.title = new FixedText("Ghost bike");

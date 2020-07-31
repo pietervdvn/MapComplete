@@ -1,8 +1,8 @@
 import L from "leaflet";
 import {UIEventSource} from "../../UI/UIEventSource";
 import {UIElement} from "../../UI/UIElement";
-import {Helpers} from "../../Helpers";
 import {State} from "../../State";
+import {Utils} from "../../Utils";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -108,7 +108,7 @@ export class GeoLocationHandler extends UIElement {
         
         if (!self._isActive.data) {
             self._isActive.setData(true);
-            Helpers.DoEvery(60000, () => {
+            Utils.DoEvery(60000, () => {
 
                 if (document.visibilityState !== "visible") {
                     console.log("Not starting gps: document not visible")

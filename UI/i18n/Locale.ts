@@ -7,15 +7,17 @@ import {State} from "../../State";
 
 
 export default class Locale {
-    public static language: UIEventSource<string> = LocalStorageSource.Get('language', "en");
 
-    public static CreateLanguagePicker(label: string | UIElement = "") {
-
-        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
-                return {value: lang, shown: lang}
-            }
-        ), Locale.language);
+    public static language: UIEventSource<string> = Locale.setup();
+    private static setup() {
+       const source = LocalStorageSource.Get('language', "en");
+        // @ts-ignore
+        window.setLanguage = function (language: string) {
+           source.setData(language)
+        }
+        return source;
     }
+
 }
 
 

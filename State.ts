@@ -9,6 +9,10 @@ import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
 import {Basemap} from "./Logic/Leaflet/Basemap";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
+import Locale from "./UI/i18n/Locale";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import Translations from "./UI/i18n/Translations";
+import {CustomLayersState} from "./Logic/CustomLayersState";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -95,6 +99,11 @@ export class State {
     // After this many milliseconds without changes, saves are sent of to OSM
     public readonly saveTimeout = new UIEventSource<number>(30 * 1000);
 
+    /**
+     * Layers can be marked as favourites, they show up in a custom layout
+     */
+    public favourteLayers: UIEventSource<string[]> = new UIEventSource<string[]>([])
+
 
     constructor(layoutToUse: Layout) {
         this.layoutToUse = new UIEventSource<Layout>(layoutToUse);
@@ -129,6 +138,58 @@ export class State {
         this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true);
         this.featureSwitchIframe = featSw("fs-iframe", () => false);
 
+
+        this.osmConnection = new OsmConnection(
+            QueryParameters.GetQueryParameter("test", "false").data === "true",
+            QueryParameters.GetQueryParameter("oauth_token", undefined)
+        );
+        
+       
+        Locale.language.syncWith(this.osmConnection.GetPreference("language"));
+
+
+        Locale.language.addCallback((currentLanguage) => {
+            if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
+                console.log("Resetting languate to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
+                // The current language is not supported -> switch to a supported one
+                Locale.language.setData(layoutToUse.supportedLanguages[0]);
+            }
+        }).ping()
+
+        document.title = Translations.W(layoutToUse.title).InnerRender();
+        Locale.language.addCallback(e => {
+            document.title = Translations.W(layoutToUse.title).InnerRender();
+        })
+
+
+        this.allElements = new ElementStorage();
+        this.changes = new Changes(
+            "Beantwoorden van vragen met #MapComplete voor vragenset #" + this.layoutToUse.data.name,
+           this);
+
+
+
+        if (document.getElementById("leafletDiv") === null) {
+            console.warn("leafletDiv not found - not initializing map. Assuming test.html");
+            return;
+        }
+
+        this.bm = new Basemap("leafletDiv", this.locationControl, new VariableUiElement(
+            this.locationControl.map((location) => {
+                const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
+                    " " +
+                    "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
+                let editHere = "";
+                if (location !== undefined) {
+                    editHere = " | " +
+                        "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
+                        "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
+                        "</a>"
+                }
+                return mapComplete + editHere;
+
+            })
+        ));
 
     }
 }

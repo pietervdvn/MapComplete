@@ -1,6 +1,7 @@
 // @ts-ignore
 import osmAuth from "osm-auth";
 import {UIEventSource} from "../../UI/UIEventSource";
+import {CustomLayersState} from "../CustomLayersState";
 
 export class UserDetails {
 
@@ -215,6 +216,7 @@ export class OsmConnection {
                 self.preferences.data[k] = v;
             }
             self.preferences.ping();
+            CustomLayersState.InitFavouriteLayer();
         });
     }
     

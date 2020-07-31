@@ -6,7 +6,7 @@ import {And, Tag} from "../../Logic/TagsFilter";
 
 export class Map extends LayerDefinition {
     constructor() {
-        super();
+        super("map");
         this.name = "Map";
         this.title = new FixedText("Map");
         this.minzoom = 12;

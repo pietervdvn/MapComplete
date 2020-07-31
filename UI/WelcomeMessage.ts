@@ -6,6 +6,7 @@ import {State} from "../State";
 import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import {Utils} from "../Utils";
 
 export class WelcomeMessage extends UIElement {
     private readonly layout: Layout;
@@ -20,7 +21,7 @@ export class WelcomeMessage extends UIElement {
 
     constructor() {
         super(State.state.osmConnection.userDetails);
-        this.languagePicker = Locale.CreateLanguagePicker(Translations.t.general.pickLanguage);
+        this.languagePicker = Utils.CreateLanguagePicker(Translations.t.general.pickLanguage);
         this.ListenTo(Locale.language);
 
         function fromLayout(f: (layout: Layout) => (string | UIElement)): UIElement {

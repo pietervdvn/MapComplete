@@ -3,10 +3,12 @@ import Translations from "../i18n/Translations";
 
 export default class Combine extends UIElement {
     private uiElements: (string | UIElement)[];
+    private className: string = undefined;
     private clas: string = undefined;
 
-    constructor(uiElements: (string | UIElement)[]) {
+    constructor(uiElements: (string | UIElement)[], className: string = undefined) {
         super(undefined);
+        this.className = className;
         this.uiElements = uiElements;
     }
 
@@ -19,6 +21,10 @@ export default class Combine extends UIElement {
                 elements += element;
             }
         }
+        if(this.className !== undefined){
+            elements = `<span class='${this.className}'>${elements}</span>`;
+        }
+        
         return elements;
     }
 

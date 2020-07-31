@@ -10,7 +10,7 @@ import Translations from "../../UI/i18n/Translations";
 export class DrinkingWater extends LayerDefinition {
 
     constructor() {
-        super();
+        super("drinkingwater");
         this.name = Translations.t.cyclofix.drinking_water.title;
         this.icon = "./assets/bike/drinking_water.svg";
 

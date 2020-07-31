@@ -8,7 +8,7 @@ import {TagRenderingOptions} from "../TagRendering";
 export class Viewpoint extends LayerDefinition {
 
     constructor() {
-        super({
+        super("viewpoint",{
             name: "Bezienswaardigheid",
             description: "Wil je een foto toevoegen van iets dat geen park, bos of natuurgebied is? Dit kan hiermee",
             presets: [{

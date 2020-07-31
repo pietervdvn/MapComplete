@@ -16,9 +16,13 @@ import {ElementStorage} from "./Logic/ElementStorage";
 import {Preset} from "./UI/SimpleAddUI";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
-import {Basemap} from "./Logic/Leaflet/Basemap";
+import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
 import {State} from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
+import {Img} from "./UI/Img";
+import {DropDown} from "./UI/Input/DropDown";
+import {LayerSelection} from "./UI/LayerSelection";
+import {CustomLayersPanel} from "./Logic/CustomLayersPanel";
 
 export class InitUiElements {
 
@@ -47,7 +51,8 @@ export class InitUiElements {
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
             {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()},
-            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()}
+            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()},
+            {header: `<img src='${'./assets/star.svg'}'>`, content: new CustomLayersPanel()},
         ])
 
         return fullOptions;
@@ -89,14 +94,38 @@ export class InitUiElements {
 
     }
 
+    static InitLayerSelection(layerSetup) {
+        const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
+
+        const openFilterButton = `<button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
+
+        let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
+            return {value: layer, shown: layer.name}
+        });
+        const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, State.state.bm.CurrentLayer), openFilterButton]);
+        const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection(layerSetup.flayers)]);
+        let layerControl = backgroundMapPicker;
+        if (layerSetup.flayers.length > 1) {
+            layerControl = new Combine([layerSelection, backgroundMapPicker]);
+        }
+
+        InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
+
+            const checkbox = new CheckBox(layerControl, closedFilterButton);
+            checkbox.AttachTo("filter__selection");
+            State.state.bm.Location.addCallback(() => {
+                checkbox.isEnabled.setData(false);
+            });
+
+        });
+    }
 
     static InitLayers(): {
         minZoom: number
         flayers: FilteredLayer[],
         presets: Preset[]
     } {
-        const addButtons: Preset[]
-            = [];
+        const addButtons: Preset[] = [];
 
         const flayers: FilteredLayer[] = []
 

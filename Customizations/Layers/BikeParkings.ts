@@ -15,7 +15,7 @@ export default class BikeParkings extends LayerDefinition {
         private readonly accessCargoDesignated = new Tag("cargo_bike", "designated");
 
     constructor() {
-        super();
+        super("bikeparking");
         this.name = Translations.t.cyclofix.parking.name;
         this.icon = "./assets/bike/parking.svg";
         this.overpassFilter = new Tag("amenity", "bicycle_parking");

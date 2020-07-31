@@ -51,6 +51,7 @@ export class LayerDefinition {
      *  ])
      */
     overpassFilter: TagsFilter;
+    public readonly id: string;
 
     /**
      * This UIElement is rendered as title element in the popup
@@ -90,7 +91,7 @@ export class LayerDefinition {
     static WAYHANDLING_CENTER_ONLY = 1;
     static WAYHANDLING_CENTER_AND_WAY = 2;
     
-    constructor(options: {
+    constructor(id: string, options: {
         name: string,
         description: string | UIElement,
         presets: {
@@ -111,6 +112,7 @@ export class LayerDefinition {
             icon: any
         }
     } = undefined) {
+        this.id = id;
         if (options === undefined) {
             return;
         }
@@ -126,7 +128,5 @@ export class LayerDefinition {
         this.style = options.style;
         this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
-
-
 
 }

@@ -1242,3 +1242,64 @@ form {
 .add-ui {
     font-size: large;
 }
+
+
+.custom-layer-panel {
+
+}
+
+
+.custom-layer-panel-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: large;
+    margin: 0.5em;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.custom-layer-panel-header-img img {
+    max-width: 3em;
+    width: 100%;
+    max-height: 3em;
+    padding: 0.5em;
+}
+
+.custom-layer-panel-header-img {
+    width: 4em;
+    height: 4em;
+
+}
+
+.custom-layer-checkbox {
+    font-size: larger;
+    height: 2em;
+    background-color: #e5f5ff;
+    margin:0.3em;
+    margin-left: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+.custom-layer-checkbox img {
+    max-width: 1.5em;
+    max-height: 1.5em;
+    width: 100%;
+    height: 100%;
+    padding: 0.2em;
+    padding-right: 0.5em;
+}
+
+.custom-layer-checkbox svg {
+    max-width: 1.5em;
+    max-height: 1.5em;
+    padding: 0.2em;
+    padding-right: 0.5em;
+}

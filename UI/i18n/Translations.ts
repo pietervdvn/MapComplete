@@ -793,8 +793,8 @@ export default class Translations {
 
                 }),
                 header: new T({
-                    en: "<h2>No data</h2>You clicked somewhere where no data is known yet.<br/>",
-                    nl: "<h2>Geen selectie</h2>Je klikte ergens waar er nog geen data is.<br/>",
+                    en: "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
+                    nl: "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is.<br/>",
                     fr: "<h2>Pas de données</h2> vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>"
 
                 }),
@@ -814,8 +814,8 @@ export default class Translations {
                     fr: "Chargement des donnés. Patientez un instant avant d'ajouter un nouveau point"
                 }),
                 confirmIntro: new T({
-                    en: "<h3>Add a {title} here?</h3>The point you create here will be visible for everyone. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
-                    nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is zichtbaar voor iedereen. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
+                    en: "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+                    nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
                     fr: "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouter sera visible par tout le monde. Merci d'etre sûr que ce point existe réellement. Beaucoup d'autres applications reposent sur ces données.",
 
                 })
@@ -952,6 +952,16 @@ export default class Translations {
                 nl: "Ga naar de berichten",
                 fr: "Ouvrir les messages"
             })
+        },
+        favourite: {
+            title: "Custom",
+            description: new T({
+                en: "<h3>Your custom theme</h3>In your custom theme, you can add some favourite layers from other themes to create a custom theme."
+            }),
+            panelIntro: new T({
+                en:"<h3>Your custom theme</h3>Create your own theme here by picking your favourite layers"
+            })
+
         }
     }
 

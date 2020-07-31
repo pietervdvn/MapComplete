@@ -10,7 +10,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 export class Bos extends LayerDefinition {
 
     constructor() {
-        super();
+        super("bos");
         this.name = "Bos";
         this.icon = "";
 

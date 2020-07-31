@@ -20,7 +20,7 @@ export default class BikeOtherShops extends LayerDefinition {
     private readonly to = Translations.t.cyclofix.nonBikeShop
 
     constructor() {
-        super();
+        super("bikeOtherShop");
         this.name = this.to.name
         this.icon = "./assets/bike/non_bike_repair_shop.svg"
         this.overpassFilter = new And([

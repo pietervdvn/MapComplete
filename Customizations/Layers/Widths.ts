@@ -113,7 +113,7 @@ export class Widths extends LayerDefinition {
     constructor(carWidth: number,
                 cyclistWidth: number,
                 pedestrianWidth: number) {
-        super();
+        super("width");
         this.carWidth = carWidth;
         this.cyclistWidth = cyclistWidth;
         this.pedestrianWidth = pedestrianWidth;

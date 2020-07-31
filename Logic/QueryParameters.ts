@@ -52,7 +52,6 @@ export class QueryParameters {
 
     public static GetQueryParameter(key: string, deflt: string): UIEventSource<string> {
         if (deflt !== undefined) {
-            console.log(key, "-->", deflt)
             QueryParameters.defaults[key] = deflt;
         }
         if (QueryParameters.knownSources[key] !== undefined) {

@@ -27,7 +27,7 @@ export default class BikeStations extends LayerDefinition {
     private readonly to = Translations.t.cyclofix.station
 
     constructor() {
-        super();
+        super("bikestation");
         this.name = Translations.t.cyclofix.station.name;
         this.icon = "./assets/bike/repair_station_pump.svg";
 

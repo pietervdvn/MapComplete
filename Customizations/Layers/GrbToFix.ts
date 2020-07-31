@@ -5,7 +5,7 @@ import {TagRenderingOptions} from "../TagRendering";
 export class GrbToFix extends LayerDefinition {
 
     constructor() {
-        super();
+        super("grb");
 
         this.name = "grb";
         this.presets = [];

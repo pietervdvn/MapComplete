@@ -10,7 +10,7 @@ import FixedText from "../Questions/FixedText";
 export class Artwork extends LayerDefinition {
 
     constructor() {
-        super();
+        super("artwork");
         this.name = "artwork";
         const t = Translations.t.artwork;
         this.title = t.title;

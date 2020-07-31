@@ -10,7 +10,7 @@ export class Birdhide extends LayerDefinition {
 
 
     constructor() {
-        super({
+        super("birdhide",{
             name: "vogelkijkplaats",
             description: "Een plaats om vogels te kijken, zoals een vogelkijkhut of kijkwand",
             overpassFilter: Birdhide.birdhide,

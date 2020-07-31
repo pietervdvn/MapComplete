@@ -11,7 +11,7 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 export class NatureReserves extends LayerDefinition {
     
     constructor(moreQuests: boolean = false) {
-        super();
+        super("natureReserve");
         this.name = "Natuurgebied";
         this.icon = "";
         this.overpassFilter =

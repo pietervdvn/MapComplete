@@ -6,7 +6,7 @@ import {And, Tag} from "../../Logic/TagsFilter";
 
 export class InformationBoard extends LayerDefinition {
     constructor() {
-        super({
+        super("informationBoard",{
             name: "Informatiebord",
             description: "Een informatiebord of kaart",
             minzoom: 12,

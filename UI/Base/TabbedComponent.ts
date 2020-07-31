@@ -27,8 +27,10 @@ export class TabbedComponent extends UIElement {
         for (let i = 0; i < this.headers.length; i++) {
             let header = this.headers[i];
 
-            headerBar += `<div class=\'tab-single-header ${i == this._source.data ? 'tab-active' : 'tab-non-active'}\'>` +
-                header.Render() + "</div>"
+            if (!this.content[i].IsEmpty()) {
+                headerBar += `<div class=\'tab-single-header ${i == this._source.data ? 'tab-active' : 'tab-non-active'}\'>` +
+                    header.Render() + "</div>"
+            }
         }
 
 
