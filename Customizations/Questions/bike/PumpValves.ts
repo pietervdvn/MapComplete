@@ -3,14 +3,15 @@ import Translations from "../../../UI/i18n/Translations";
 import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 
-export default class PumpValves extends TagRenderingOptions{
+export default class 
+PumpValves extends TagRenderingOptions{
     constructor() {
         const to = Translations.t.cyclofix.station.valves
         super({
             question: to.question,
             mappings: [
                 {
-                    k: new Tag("valves", " sclaverand;schrader;dunlop"),
+                    k: new Tag("valves", "sclaverand;schrader;dunlop"),
                     txt: to.default
                 },
                 {k: new Tag("valves", "dunlop"), txt: to.dunlop},

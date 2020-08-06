@@ -63,6 +63,13 @@ export class Changes {
             console.log("Invalid value for ",key);
             return;
         }
+        
+        if(key.startsWith(" ") || value.startsWith(" ") || value.endsWith(" ") || key.endsWith(" ")){
+            console.warn("Tag starts with or ends with a space - trimming anyway")
+        }
+        
+        key = key.trim();
+        value = value.trim();
 
         const eventSource = State.state.allElements.getElement(elementId);
 
