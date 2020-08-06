@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.1";
+    public static vNumber = "0.0.2";
 
     public static runningFromConsole: boolean = false; 
 
@@ -91,6 +91,8 @@ export class State {
     public readonly featureSwitchAddNew: UIEventSource<boolean>;
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>;
     public readonly featureSwitchIframe: UIEventSource<boolean>;
+    public readonly featureSwitchMoreQuests: UIEventSource<boolean>;
+    public readonly featureSwitchShareScreen: UIEventSource<boolean>;
 
 
     /**
@@ -148,7 +150,8 @@ export class State {
         this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAdd);
         this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true);
         this.featureSwitchIframe = featSw("fs-iframe", () => false);
-
+        this.featureSwitchMoreQuests = featSw("fs-more-quests", () => layoutToUse?.enableMoreQuests);
+        this.featureSwitchShareScreen = featSw("fs-share-screen", () => layoutToUse?.enableShareScreen);
 
         this.osmConnection = new OsmConnection(
             QueryParameters.GetQueryParameter("test", "false").data === "true",

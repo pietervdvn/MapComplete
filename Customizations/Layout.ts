@@ -25,19 +25,21 @@ export class Layout {
     public startLat: number;
 
     public locationContains: string[];
-    
+
     public enableAdd: boolean = true;
     public enableUserBadge: boolean = true;
     public enableSearch: boolean = true;
     public enableLayers: boolean = true;
-    
-    public hideFromOverview : boolean = false;
+    public enableMoreQuests: boolean = true;
+    public enableShareScreen: boolean = true;
+
+    public hideFromOverview: boolean = false;
 
     /**
      * The BBOX of the currently visible map are widened by this factor, in order to make some panning possible.
      * This number influences this
      */
-    public widenFactor : number = 0.07;
+    public widenFactor: number = 0.07;
 
     /**
      * 

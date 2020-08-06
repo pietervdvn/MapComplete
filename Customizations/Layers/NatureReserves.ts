@@ -114,7 +114,6 @@ export class NatureReserves extends LayerDefinition {
 
             let colormapping = {
                 0: "#00bb00",
-                1: "#00ff00",
                 10: "#dddd00",
                 20: "#ff0000"
             };

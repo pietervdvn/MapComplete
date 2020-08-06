@@ -236,9 +236,8 @@ export class FilteredLayer {
                             const style = self._style(feature.properties);
                             if (State.state.selectedElement.data?.feature === feature) {
                                 if (style.weight !== undefined) {
-                                    style.weight = style.weight * 2;
+                                    style.weight = style.weight * 1.8;
                                 }else{
-                                    style.weight = 20;
                                 }
                             }
                             return style;

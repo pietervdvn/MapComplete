@@ -53,13 +53,22 @@ export class InitUiElements {
             welcome = new CustomLayersPanel();
         }
 
-
-        const fullOptions = new TabbedComponent([
+        const tabs = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
-            {header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()},
-            {header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()},
-        ])
+
+        ]
+
+        if (State.state.featureSwitchShareScreen.data) {
+            tabs.push({header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()});
+        }
+
+        if (State.state.featureSwitchMoreQuests.data) {
+            tabs.push({header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()});
+        }
+
+
+        const fullOptions = new TabbedComponent(tabs);
 
         return fullOptions;
 
@@ -129,9 +138,7 @@ export class InitUiElements {
     static InitBaseMap(){
         State.state.bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
             State.state.locationControl.map((location) => {
-                const mapComplete = "<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple</a> " +
-                    " " +
-                    "<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>";
+                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple ${State.vNumber}</a>  <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>`;
                 let editHere = "";
                 if (location !== undefined) {
                     editHere = " | " +

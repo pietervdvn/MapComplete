@@ -241,7 +241,7 @@ export class Changes {
                     }
 
 
-                    let changes = "<osmChange version='0.6' generator='Mapcomplete 0.0.1'>";
+                    let changes = `<osmChange version='0.6' generator='Mapcomplete ${State.vNumber}'>`;
 
                     if (creations.length > 0) {
                         changes +=

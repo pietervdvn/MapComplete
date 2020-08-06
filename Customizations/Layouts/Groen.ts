@@ -56,5 +56,7 @@ export class Groen extends Layout {
         this.locationContains = ["buurtnatuur.be"]
         this.socialImage = "assets/BuurtnatuurFront.jpg"
         this.description = "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje"
+        this.enableMoreQuests = false;
+        this.enableShareScreen = false
     }
 }
