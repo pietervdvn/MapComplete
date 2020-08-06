@@ -21,7 +21,7 @@ export class ElementStorage {
         return eventSource;
     }
 
-    addOrGetElement(element: any) {
+    addOrGetElement(element: any) : UIEventSource<any>{
         const elementId = element.properties.id;
         if (elementId in this._elements) {
             const es = this._elements[elementId];

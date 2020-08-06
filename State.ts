@@ -104,7 +104,8 @@ export class State {
         accuracy: number
     }> = new UIEventSource<{ latlng: number, accuracy: number }>(undefined);
 
-    // After this many milliseconds without changes, saves are sent of to OSM
+    /** After this many milliseconds without changes, saves are sent of to OSM
+     */
     public readonly saveTimeout = new UIEventSource<number>(30 * 1000);
 
     /**

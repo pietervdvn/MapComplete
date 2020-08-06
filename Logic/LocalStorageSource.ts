@@ -12,7 +12,7 @@ export class LocalStorageSource {
 
             source.addCallback((data) => {
                 localStorage.setItem(key, data);
-                console.log("Wriging ", key, data)
+                console.log("Writing to local storage", key, data)
             });
             return source;
         } catch (e) {

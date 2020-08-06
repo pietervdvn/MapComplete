@@ -64,7 +64,7 @@ export class CustomLayersState {
         const favs = state.favourteLayers.data;
         let changed = false;
         count.addCallback((countStr) => {
-            console.log("UPdating favourites")
+            console.log("Updating favourites")
             if (countStr === undefined) {
                 return;
             }

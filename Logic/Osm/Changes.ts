@@ -79,7 +79,6 @@ export class Changes {
         this._pendingChanges.push({elementId: eventSource.data.id, key: key, value: value});
         this.pendingChangesES.setData(this._pendingChanges.length);
 
-
     }
 
     /**
@@ -88,6 +87,7 @@ export class Changes {
      * Note that the geojson version shares the tags (properties) by pointer, but has _no_ id in properties
      */
     createElement(basicTags:Tag[], lat: number, lon: number) {
+        console.log("Creating a new element with ", basicTags)
         const osmNode = new OsmNode(Changes._nextId);
         this.newElements.push(osmNode);
         Changes._nextId--;
@@ -109,14 +109,15 @@ export class Changes {
                 ]
             }
         }
-        State.state.allElements.addOrGetElement(geojson);
 
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a 
         for (const kv of basicTags) {
-            this.addChange(id, kv.key, kv.value); // We use the call, to trigger all the other machinery (including updating the geojson itsel
             properties[kv.key] = kv.value;
+            this._pendingChanges.push({elementId: id, key: kv.key, value: kv.value});
         }
+        this.pendingChangesES.setData(this._pendingChanges.length);
+        State.state.allElements.addOrGetElement(geojson).ping();
 
         return geojson;
     }
@@ -281,6 +282,7 @@ export class Changes {
             }
 
             self.uploadAll(function () {
+                console.log("Uploaded changes during a last-effort save")
                 window.close()
             });
             var confirmationMessage = "Nog even geduld - je laatset wijzigingen worden opgeslaan!";
@@ -298,8 +300,9 @@ export class Changes {
                 return;
             }
 
-            console.log("Upmoading: loss of focus")
+            console.log("Uploading: loss of focus")
             this.uploadAll(function () {
+                console.log("Uploaded changes during a last-effort save (loss of focus)")
                 window.close()
             });
         })
@@ -309,14 +312,16 @@ export class Changes {
     private SetupAutoSave(state: State) {
 
         const millisTillChangesAreSaved = state.secondsTillChangesAreSaved;
-        const saveAfterXMillis = state.secondsTillChangesAreSaved.data * 1000;
-        const self= this;
+        const saveAfterXMillis = state.saveTimeout.data;
+        const self = this;
         this.pendingChangesES.addCallback(function () {
 
             var c = self.pendingChangesES.data;
             if (c > 10) {
                 millisTillChangesAreSaved.setData(0);
-                self.uploadAll(undefined);
+                self.uploadAll(() => {
+                    console.log("Uplaoded changes: more then 10 pending changes")
+                });
                 return;
             }
 
@@ -328,7 +333,9 @@ export class Changes {
 
         millisTillChangesAreSaved.addCallback((time) => {
                 if (time <= 0 && self.pendingChangesES.data > 0) {
-                    self.uploadAll(undefined);
+                    self.uploadAll(() => {
+                        console.log("Saving changes: timer elapsed")
+                    });
                 }
             }
         )
