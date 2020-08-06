@@ -336,7 +336,7 @@ export class OsmConnection {
                 return;
             }
             const mapping = OsmConnection.parseUploadChangesetResponse(response);
-            console.log("Uplaoded changeset ", changesetId);
+            console.log("Uploaded changeset ", changesetId);
             continuation(changesetId, mapping);
         });
     }

@@ -820,6 +820,11 @@ export default class Translations {
                     nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
                     fr: "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouter sera visible par tout le monde. Merci d'etre sûr que ce point existe réellement. Beaucoup d'autres applications reposent sur ces données.",
 
+                }),
+                confirmButton: new T({
+                    en: "Add a {category} here",
+                    nl: "Voeg hier een {category} toe",
+                    fr: "Ajouter un/une {category} ici"
                 })
             },
             pickLanguage: new T({

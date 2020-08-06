@@ -68,10 +68,7 @@ export class SimpleAddUI extends UIElement {
                         () => {
                             self.confirmButton = new SubtleButton(preset.icon,
                                 new Combine([
-                                    "Add a ",
-                                    "<b>",
-                                    preset.title,
-                                    "</b> here<br/>",
+                                    Translations.t.general.add.confirmButton.Subs({category: preset.title}),
                                     preset.description !== undefined ? preset.description : ""]));
                             self.confirmButton.onClick(self.CreatePoint(preset.tags, layer));
                             self._confirmPreset.setData({

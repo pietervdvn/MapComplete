@@ -320,7 +320,7 @@ export class Changes {
             if (c > 10) {
                 millisTillChangesAreSaved.setData(0);
                 self.uploadAll(() => {
-                    console.log("Uplaoded changes: more then 10 pending changes")
+                    console.log("Uploaded changes: more then 10 pending changes")
                 });
                 return;
             }
