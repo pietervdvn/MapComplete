@@ -36,7 +36,7 @@ export class MoreScreen extends UIElement {
                 if (!State.state.osmConnection.userDetails.data.loggedIn) {
                     continue;
                 }
-                if (State.state.osmConnection.userDetails.data.csCount < 100) {
+                if (State.state.osmConnection.userDetails.data.csCount < 50) {
                     continue;
                 }
             }
