@@ -20,17 +20,17 @@ export class AllKnownLayouts {
     
     public static layoutsList: Layout[] = [
         new CustomLayout(),
-        new Groen(),
+        new Natuurpunt(),
         new GRB(),
         new Cyclofix(),
         new GhostBikes(),
         new Bookcases(),
         new MetaMap(),
         new StreetWidth(),
-        new Natuurpunt(),
         new ClimbingTrees(),
         new Artworks(),
         new Smoothness(),
+        new Groen(),
         /*
         new Toilets(),
         */

@@ -1240,6 +1240,11 @@ form {
     font-size: large;
 }
 
+.add-popup-all-buttons{
+    max-height: 50vh;
+    display: inline-block;
+    overflow-y: auto;
+}
 
 .custom-layer-panel {
 

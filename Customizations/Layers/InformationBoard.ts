@@ -95,11 +95,11 @@ export class InformationBoard extends LayerDefinition {
                 mappings: [
                     {
                         k: new Tag("map_source:attribution", "yes"),
-                        txt: "OpenStreetMap is clearly attribute, including the ODBL-license"
+                        txt: "OpenStreetMap is clearly attributed, including the ODBL-license"
                     },
                     {
                         k: new Tag("map_source:attribution", "incomplete"),
-                        txt: "OpenStreetMap is clearly attribute, but the license is not mentioned"
+                        txt: "OpenStreetMap is clearly attributed, but the license is not mentioned"
                     },
                     {
                         k: new Tag("map_source:attribution", "sticker"),

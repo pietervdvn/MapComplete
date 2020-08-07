@@ -14,7 +14,7 @@ export class Natuurpunt extends Layout{
             12,
             51.20875,
             3.22435,
-            "<h3>Natuurpuntstuff</h3>",
+            "<h3>Natuurstuff</h3>Geef meer gegevens over natuurgebieden en hun infoborden",
             "",
             ""
         );

@@ -178,7 +178,7 @@ export class SimpleAddUI extends UIElement {
         }
 
 
-        return header.Render() + html;
+        return header.Render() + new Combine([html], "add-popup-all-buttons").Render();
     }
 
 

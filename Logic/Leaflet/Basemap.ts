@@ -5,7 +5,8 @@ import {UIElement} from "../../UI/UIElement";
 
 export class BaseLayers {
 
-    public static readonly defaultLayer: { name: string, layer: any } = {
+    public static readonly defaultLayer: { name: string, layer: any, id: string } = {
+        id: "osm",
         name: "Kaart van OpenStreetMap", layer: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
             {
                 attribution: '',
@@ -13,9 +14,10 @@ export class BaseLayers {
                 minZoom: 1
             })
     };
-    public static readonly baseLayers: { name: string, layer: any } [] = [
+    public static readonly baseLayers: { name: string, layer: any, id: string } [] = [
 
         {
+            id: "aiv-latest",
             name: "Luchtfoto Vlaanderen (recentste door AIV)",
             layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&" +
                 "LAYER=omwrgbmrvl&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileRow={y}&tileCol={x}",
@@ -29,6 +31,7 @@ export class BaseLayers {
         },
         BaseLayers.defaultLayer,
         {
+            id: "aiv-13-15",
             name: "Luchtfoto Vlaanderen (2013-2015, door AIV)",
             layer: L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
                 {
@@ -37,6 +40,7 @@ export class BaseLayers {
                 })
         },
         {
+            id:"grb",
             name: "Kaart Grootschalig ReferentieBestand Vlaanderen (GRB) door AIV",
             layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
                 {
@@ -62,6 +66,7 @@ export class Basemap {
     public LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
     private _previousLayer: L.tileLayer = undefined;
     public CurrentLayer: UIEventSource<{
+        id: string,
         name: string,
         layer: L.tileLayer
     }> = new UIEventSource<L.tileLayer>(BaseLayers.defaultLayer);

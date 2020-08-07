@@ -165,7 +165,7 @@ export class State {
 
         Locale.language.addCallback((currentLanguage) => {
             if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
-                console.log("Resetting languate to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
+                console.log("Resetting language to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
                 // The current language is not supported -> switch to a supported one
                 Locale.language.setData(layoutToUse.supportedLanguages[0]);
             }
@@ -199,7 +199,6 @@ export class State {
     
     public GetFilteredLayerFor(id: string) : FilteredLayer{
         for (const flayer of this.filteredLayers.data) {
-            console.log(flayer.layerDef.id, id)
             if(flayer.layerDef.id === id){
                 return flayer;
             }
