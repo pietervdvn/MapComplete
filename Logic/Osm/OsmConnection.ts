@@ -162,12 +162,12 @@ export class OsmConnection {
     public preferences = new UIEventSource<any>({});
     public preferenceSources : any = {}
     
-    public GetPreference(key: string) : UIEventSource<string>{
-        key = "mapcomplete-"+key;
+    public GetPreference(key: string, prefix : string = "mapcomplete-") : UIEventSource<string>{
+        key = prefix+key;
         if (this.preferenceSources[key] !== undefined) {
             return this.preferenceSources[key];
         }
-        if (this.userDetails.data.loggedIn) {
+        if (this.userDetails.data.loggedIn && this.preferences.data[key] === undefined) {
             this.UpdatePreferences();
         }
         const pref = new UIEventSource<string>(this.preferences.data[key]);

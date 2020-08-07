@@ -1,14 +1,10 @@
 import {TagsFilter, TagUtils} from "./TagsFilter";
 import {UIEventSource} from "../UI/UIEventSource";
-import {ElementStorage} from "./ElementStorage";
 import L from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
 import codegrid from "codegrid-js";
-import {Changes} from "./Osm/Changes";
-import {UserDetails} from "./Osm/OsmConnection";
-import {Basemap} from "./Leaflet/Basemap";
 import {State} from "../State";
 
 /***
@@ -228,17 +224,17 @@ export class FilteredLayer {
 
             onEachFeature: function (feature, layer) {
 
+                // We monky-patch the feature element with an update-style
                 feature.updateStyle = () => {
                     if (layer.setIcon) {
                         layer.setIcon(L.icon(self._style(feature.properties).icon))
                     } else {
-                        self._geolayer.setStyle(function (feature) {
-                            const style = self._style(feature.properties);
-                            if (State.state.selectedElement.data?.feature === feature) {
-                                if (style.weight !== undefined) {
-                                    style.weight = style.weight * 1.8;
-                                }else{
-                                }
+                        self._geolayer.setStyle(function (featureX) {
+                            const style = self._style(featureX.properties);
+                            if (featureX === feature) {
+                                console.log("Selected element is", featureX.properties.id)
+                                //      style.weight = style.weight * 2;
+                                // console.log(style)
                             }
                             return style;
                         });
@@ -251,12 +247,9 @@ export class FilteredLayer {
                 eventSource.addCallback(feature.updateStyle);
 
                 layer.on("click", function (e) {
-                    const previousFeature =State.state.selectedElement.data?.feature;
+                    const prevSelectedElement = State.state.selectedElement.data?.feature.updateStyle();
                     State.state.selectedElement.setData({feature: feature});
-                    feature.updateStyle();
-                    previousFeature?.updateStyle();
-
-
+                    feature.updateStyle()
                     if (feature.geometry.type === "Point") {
                         return; // Points bind there own popups
                     }

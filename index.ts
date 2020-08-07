@@ -40,7 +40,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "bookcases"
+let defaultLayout = "buurtnatuur"
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html") {
