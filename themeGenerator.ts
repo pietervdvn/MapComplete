@@ -43,7 +43,12 @@ export class Preview extends UIElement {
 
     InnerRender(): string {
         const url = this.url.data;
-        return JSON.stringify(this.config.data, null, 2)
+        return new Combine([
+            `<iframe width="100%" height="50%" src="${this.url.data}"></iframe>`,
+            `<br/><br><h2>Save this link below:</h2><a target='_blank' href='${this.url.data}'>${this.url.data}</a>`,
+            JSON.stringify(this.config.data, null, 2).replace(/\n/g, "<br/>").replace(/ /g, "&nbsp;"),
+
+        ]).Render();
     }
 
 }

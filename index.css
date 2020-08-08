@@ -1195,6 +1195,7 @@ form {
     display: inline-block;
     background-color: lightgray;
     padding: 0.5em;
+    word-break: break-all;
 }
 
 .iframe-code-block {
