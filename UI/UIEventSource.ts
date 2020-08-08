@@ -45,9 +45,14 @@ export class UIEventSource<T>{
     }
     
     public map<J>(f: ((T) => J),
-                  extraSources: UIEventSource<any>[] = []): UIEventSource<J> {
+                  extraSources: UIEventSource<any>[] = [],
+                  g: ((J) => T) = undefined ): UIEventSource<J> {
         const self = this;
-
+        
+        const newSource = new UIEventSource<J>(
+            f(this.data)
+        );
+        
         const update = function () {
             newSource.setData(f(self.data));
             newSource.ping();
@@ -57,9 +62,12 @@ export class UIEventSource<T>{
         for (const extraSource of extraSources) {
             extraSource.addCallback(update);
         }
-        const newSource = new UIEventSource<J>(
-            f(this.data)
-        );
+      
+        if(g !== undefined) {
+            newSource.addCallback((latest) => {
+                self.setData((g(latest)));
+            })
+        }
         
 
         return newSource;

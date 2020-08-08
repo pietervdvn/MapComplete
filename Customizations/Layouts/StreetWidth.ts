@@ -91,6 +91,8 @@ export class StreetWidth extends Layout{
         this.enableUserBadge = false;
         this.enableAdd = false;
         this.hideFromOverview = true;
+        this.enableMoreQuests = false;
+        this.enableShareScreen = false;
 
     }
 }

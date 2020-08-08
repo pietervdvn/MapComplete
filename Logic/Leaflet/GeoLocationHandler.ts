@@ -3,6 +3,7 @@ import {UIEventSource} from "../../UI/UIEventSource";
 import {UIElement} from "../../UI/UIElement";
 import {State} from "../../State";
 import {Utils} from "../../Utils";
+import {Basemap} from "./Basemap";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -38,7 +39,8 @@ export class GeoLocationHandler extends UIElement {
 
         }
 
-        const map = State.state.bm.map;
+        const bm : Basemap = State.state.bm;
+        const map = bm.map;
         map.on('accuratepositionprogress', onAccuratePositionProgress);
         map.on('accuratepositionfound', onAccuratePositionFound);
         map.on('accuratepositionerror', onAccuratePositionError);
@@ -53,7 +55,7 @@ export class GeoLocationHandler extends UIElement {
 
         State.state.currentGPSLocation.addCallback((location) => {
             const newMarker = L.marker(location.latlng, {icon: icon});
-            newMarker.addTo(map.map);
+            newMarker.addTo(map);
 
             if (self._marker !== undefined) {
                 map.removeLayer(self._marker);

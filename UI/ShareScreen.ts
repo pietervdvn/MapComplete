@@ -10,6 +10,9 @@ import {VerticalCombine} from "./Base/VerticalCombine";
 import {QueryParameters} from "../Logic/QueryParameters";
 import {Img} from "./Img";
 import {State} from "../State";
+import {Basemap} from "../Logic/Leaflet/Basemap";
+import {FilteredLayer} from "../Logic/FilteredLayer";
+import {Utils} from "../Utils";
 
 export class ShareScreen extends UIElement {
 
@@ -36,7 +39,7 @@ export class ShareScreen extends UIElement {
         
         const currentLocation = State.state.locationControl;
         const layout = State.state.layoutToUse.data;
-        
+
         optionParts.push(includeLocation.isEnabled.map((includeL) => {
             if (includeL) {
                 return `z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`
@@ -44,6 +47,50 @@ export class ShareScreen extends UIElement {
                 return null;
             }
         }, [currentLocation]));
+
+
+        const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = (State.state.bm as Basemap).CurrentLayer;
+        const currentBackground = new VariableUiElement(
+            currentLayer.map(
+                (layer) => `Include the current background choice <b>${layer.name}</b>`
+            )
+        );
+        const includeCurrentBackground = new CheckBox(
+            new Combine([Img.checkmark, currentBackground]),
+            new Combine([Img.no_checkmark, currentBackground]),
+            true
+        )
+        optionCheckboxes.push(includeCurrentBackground);
+        optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
+            if (includeBG) {
+                return "background=" + currentLayer.data.id
+            } else {
+                return null
+            }
+        }, [currentLayer]));
+
+
+        const includeLayerChoices = new CheckBox(
+            new Combine([Img.checkmark, "Include the current layer choices"]),
+            new Combine([Img.no_checkmark, "Include the current layer choices"]),
+            true
+        )
+        optionCheckboxes.push(includeLayerChoices);
+
+        function fLayerToParam(flayer: FilteredLayer){
+            if(flayer.isDisplayed.data){
+                return null; // Being displayed is the default
+            }
+            return "layer-"+flayer.layerDef.id+"="+flayer.isDisplayed.data
+        }
+        
+        optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
+            if (includeLayerSelection) {
+                return Utils.NoNull(State.state.filteredLayers.data.map(fLayerToParam)).join("&")
+            } else {
+                return null
+            }
+        }, State.state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
 
 
         const switches = [{urlName: "fs-userbadge", human: "Enable the login-button"},
@@ -79,13 +126,7 @@ export class ShareScreen extends UIElement {
 
             let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.name + ".html"
 
-            const parts = [];
-            for (const part of optionParts) {
-                if (part.data === null) {
-                    continue;
-                }
-                parts.push(part.data);
-            }
+            const parts = Utils.NoNull(optionParts.map((eventSource) => eventSource.data));
 
             if (parts.length === 0) {
                 return literalText;

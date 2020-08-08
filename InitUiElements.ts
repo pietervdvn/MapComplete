@@ -26,6 +26,7 @@ import {CustomLayout} from "./Logic/CustomLayers";
 import {Preset} from "./Customizations/LayerDefinition";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {LayerUpdater} from "./Logic/LayerUpdater";
+import {QueryParameters} from "./Logic/QueryParameters";
 
 export class InitUiElements {
 
@@ -136,7 +137,7 @@ export class InitUiElements {
     }
     
     static InitBaseMap(){
-        State.state.bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
+        const bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
             State.state.locationControl.map((location) => {
                 const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple ${State.vNumber}</a>  <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>`;
                 let editHere = "";
@@ -150,7 +151,23 @@ export class InitUiElements {
 
             })
         ));
+        State.state.bm = bm;
         State.state.layerUpdater = new LayerUpdater(State.state);
+        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
+        const queryParamMapped: UIEventSource<{ id: string, name: string, layer: any }> =
+            queryParam.map<{ id: string, name: string, layer: any }>((id) => {
+                for (const layer of BaseLayers.baseLayers) {
+                    if (layer.id === id) {
+                        return layer;
+                    }
+                }
+                return undefined;
+            }, [], (layerInfo) => {
+                return layerInfo.id
+            });
+
+        queryParamMapped.syncWith(bm.CurrentLayer);
+
     }
 
 
@@ -194,7 +211,12 @@ export class InitUiElements {
 
             const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
             flayers.push(flayer);
-            flayer.isDisplayed.setData(true)
+
+            QueryParameters.GetQueryParameter("layer-" + layer.id, "true")
+                .map<boolean>((str) => str !== "false", [], (b) => b.toString())
+                .syncWith(
+                    flayer.isDisplayed
+                )
         }
 
         State.state.filteredLayers.setData(flayers);

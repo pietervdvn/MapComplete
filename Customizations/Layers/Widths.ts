@@ -178,7 +178,6 @@ export class Widths extends LayerDefinition {
 
         this.elementsToShow = [
             new TagRenderingOptions({
-                question: "Mogen auto's hier parkeren?",
                 mappings: [
                     {
                         k: this._bothSideParking,

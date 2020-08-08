@@ -40,6 +40,7 @@ export class Layout {
      * This number influences this
      */
     public widenFactor: number = 0.07;
+    public defaultBackground: string = "osm";
 
     /**
      * 

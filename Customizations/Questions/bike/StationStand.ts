@@ -5,13 +5,13 @@ import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 export default class BikeStationStand extends TagRenderingOptions {
     constructor() {
-        const to = Translations
+        const to = Translations.t.cyclofix.station.stand;
         super({
             priority: 10,
-            question: "Does this bike station have a hook to suspend your bike with or a stand to elevate it?",
+            question: to.question,
             mappings: [
-                {k: new Tag("service:bicycle:stand", "yes"), txt: "There is a hook or stand"},
-                {k: new Tag("service:bicycle:stand", "no"), txt: "There is no hook or stand"},
+                {k: new Tag("service:bicycle:stand", "yes"), txt: to.yes},
+                {k: new Tag("service:bicycle:stand", "no"), txt: to.no},
             ]
         });
     }

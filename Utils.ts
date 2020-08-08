@@ -25,7 +25,7 @@ export class Utils {
     }
 
     static DoEvery(millis: number, f: (() => void)) {
-        if(State.runningFromConsole){
+        if (State.runningFromConsole) {
             return;
         }
         window.setTimeout(
@@ -34,6 +34,17 @@ export class Utils {
                 Utils.DoEvery(millis, f);
             }
             , millis)
+    }
+
+    public static NoNull<T>(array: T[]): T[] {
+        const ls: T[] = [];
+        for (const t of array) {
+            if (t === undefined || t === null) {
+                continue;
+            }
+            ls.push(t);
+        }
+        return ls;
     }
 
     public static CreateLanguagePicker(label: string | UIElement = "") {
