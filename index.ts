@@ -167,7 +167,10 @@ InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
 });
 
 if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
-    new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
+    const currentLocation = State.state.locationControl;
+    const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`;
+    
+    new FixedUiElement(`<a href='${url}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("messagesbox")
 }
 
 

@@ -1197,6 +1197,7 @@ form {
     background-color: white;
     border-radius: 2em;
     display: block;
+    width: min-content;
 }
 
 .iframe-escape img{
