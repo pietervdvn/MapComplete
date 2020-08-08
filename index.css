@@ -462,6 +462,12 @@ form {
     margin: 0 10px 0 18px;
 }
 
+#filter__selection ul svg {
+    width: 20px;
+    height: auto;
+    margin: 0 10px 0 18px;
+}
+
 .filter__label {
     font-size: 16px;
     transform: translateY(75px);
@@ -1148,6 +1154,7 @@ form {
     width: 3em;
     padding: 0.5em;
 }
+
 
 .tab-content {
     padding: 1em;

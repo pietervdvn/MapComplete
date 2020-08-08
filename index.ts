@@ -18,6 +18,7 @@ import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
 import {TagRendering} from "./Customizations/TagRendering";
 import {Img} from "./UI/Img";
 import Combine from "./UI/Base/Combine";
+import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -41,6 +42,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 let defaultLayout = "bookcases"
+let hash = window.location.hash;
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html") {
@@ -64,7 +66,15 @@ for (const k in AllKnownLayouts.allSets) {
 
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
-const layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
+let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
+
+
+const layoutFromBase64 = QueryParameters.GetQueryParameter("userlayout", "false").data;
+if(layoutFromBase64 === "true"){
+    layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
+}
+
+
 if (layoutToUse === undefined) {
     console.log("Incorrect layout")
     new FixedUiElement("Error: incorrect layout <i>" + defaultLayout + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
@@ -73,8 +83,8 @@ if (layoutToUse === undefined) {
 }
 
 console.log("Using layout: ", layoutToUse.name);
-TagRendering.injectFunction();
 
+TagRendering.injectFunction();
 State.state = new State(layoutToUse);
 InitUiElements.InitBaseMap();
 

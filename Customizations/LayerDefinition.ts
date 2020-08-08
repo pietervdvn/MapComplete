@@ -94,14 +94,9 @@ export class LayerDefinition {
     static WAYHANDLING_CENTER_AND_WAY = 2;
     
     constructor(id: string, options: {
-        name: string,
+        name: string | UIElement,
         description: string | UIElement,
-        presets: {
-            tags: Tag[],
-            title: string | UIElement,
-            description?: string | UIElement,
-            icon?: string
-        }[],
+        presets: Preset[],
         icon: string,
         minzoom: number,
         overpassFilter: TagsFilter,
