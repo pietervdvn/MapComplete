@@ -360,7 +360,7 @@ export class ThemeGenerator extends UIElement {
         const jsonObjectRoot = this.themeObject.data;
 
         const base64 = this.themeObject.map(JSON.stringify).map(btoa);
-        this.url = base64.map((data) => `${window.location.origin}/index.html?userlayout=true#` + data);
+        this.url = base64.map((data) => `https://pietervdvn.github.io/MapComplete/index.html?userlayout=true#` + data);
         const self = this;
         this.allQuestionFields = [
             this.JsonField(this.themeObject, "Name of this theme", "name", jsonObjectRoot),
