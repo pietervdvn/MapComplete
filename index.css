@@ -511,6 +511,7 @@ form {
     
     #help-button-mobile{
         display: unset;
+        pointer-events: all;
     }
     
     #help-button-mobile div {
