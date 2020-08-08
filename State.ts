@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.3";
+    public static vNumber = "0.0.4";
 
     public static runningFromConsole: boolean = false; 
 
@@ -32,6 +32,7 @@ export class State {
      THe layout to use
      */
     public readonly layoutToUse = new UIEventSource<Layout>(undefined);
+    public layoutDefinition : string;
 
     /**
      The mapping from id -> UIEventSource<properties>

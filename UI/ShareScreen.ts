@@ -22,6 +22,7 @@ export class ShareScreen extends UIElement {
     private _iframeCode: UIElement;
     private _link: UIElement;
     private _linkStatus: UIElement;
+    private _editLayout: UIElement;
 
     constructor() {
         super(undefined)
@@ -129,11 +130,16 @@ export class ShareScreen extends UIElement {
 
             const parts = Utils.NoNull(optionParts.map((eventSource) => eventSource.data));
 
-            if (parts.length === 0) {
-                return literalText;
+            let hash = "";
+            if (State.state.layoutDefinition !== undefined) {
+                hash = ("#" + State.state.layoutDefinition)
             }
 
-            return literalText + "?" + parts.join("&");
+            if (parts.length === 0) {
+                return literalText + hash;
+            }
+
+            return literalText + "?" + parts.join("&") + hash;
         }, optionParts);
         this._iframeCode = new VariableUiElement(
             url.map((url) => {
@@ -150,6 +156,13 @@ export class ShareScreen extends UIElement {
             })
         );
 
+        this._editLayout = new FixedUiElement("");
+        if(State.state.layoutDefinition !== undefined){
+            this._editLayout = 
+                new FixedUiElement(`<h3>Edit this theme</h3>`+
+                    `<a target='_blank' https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`)
+            
+        }
 
         const status = new UIEventSource(" ");
         this._linkStatus = new VariableUiElement(status);
@@ -200,7 +213,8 @@ export class ShareScreen extends UIElement {
             tr.addToHomeScreen,
             tr.embedIntro,
             this._options,
-            this._iframeCode
+            this._iframeCode,
+            this._editLayout
         ]).Render()
     }
 

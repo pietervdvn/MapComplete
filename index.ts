@@ -70,7 +70,7 @@ let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayo
 
 
 const layoutFromBase64 = QueryParameters.GetQueryParameter("userlayout", "false").data;
-if(layoutFromBase64 === "true"){
+if(layoutFromBase64 !== "false"){
     layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
 }
 
@@ -86,6 +86,9 @@ console.log("Using layout: ", layoutToUse.name);
 
 TagRendering.injectFunction();
 State.state = new State(layoutToUse);
+if(layoutFromBase64 !== "false"){
+    State.state.layoutDefinition = hash.substr(1);
+}
 InitUiElements.InitBaseMap();
 
 new FixedUiElement("").AttachTo("decoration"); // Remove the decoration

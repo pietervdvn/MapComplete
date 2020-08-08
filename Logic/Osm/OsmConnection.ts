@@ -21,11 +21,10 @@ export class OsmConnection {
     public userDetails: UIEventSource<UserDetails>;
     private _dryRun: boolean;
 
-    constructor(dryRun: boolean, oauth_token: UIEventSource<string>) {
+    constructor(dryRun: boolean, oauth_token: UIEventSource<string>, singlePage: boolean = true) {
 
         let pwaStandAloneMode = false;
         try {
-
             if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
                 pwaStandAloneMode = true;
             }
@@ -36,7 +35,7 @@ export class OsmConnection {
         const iframeMode = window !== window.top;
 
 
-        if ( iframeMode) {
+        if ( iframeMode || !singlePage) {
             // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
             // Same for an iframe...
             this.auth = new osmAuth({

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="index.css" rel="stylesheet"/>
+    <title>Custom Theme Generator for Mapcomplete</title>
+
+    <style type="text/css">
+        #maindiv {
+            position: absolute;
+            width: 50vw;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        #preview {
+            position: absolute;
+            width: 50vw;
+            height: 100vh;
+            right: 0;
+            top: 0;
+        }
+        
+        .bordered {
+            border: 1px solid black;
+            display:block;
+            padding: 0.5em;
+            border-radius: 0.5em;
+        }
+        
+        body {
+            height: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+<div id="maindiv">
+    <h1>Custom theme generator</h1>
+
+    Welcome to the custom theme creator.<br/>
+
+    In order to use this theme generator, you need at least 500 changesets.<br/>
+
+    As the spirit of mapcomplete is to not have <b>any</b> kind of hosted backend, the custom themes are encoded in the
+    URL:
+    the full configuration is saved in a JSON, which is base64-encoded and appended to the hash of the URL.<br/>
+
+    This means that <b>closing this page removes your theme</b>.</br>
+
+    <div id="loggedIn">'loggedIn' not attached</div>
+    <div id="layoutCreator"></div>
+</div>
+<div id="preview">'preview' not attached</div>
+<script src="./customGenerator.ts"></script>
+</body>
+</html>
