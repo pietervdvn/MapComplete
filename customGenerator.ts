@@ -17,4 +17,4 @@ new VariableUiElement(connection.userDetails.map<string>((userdetails : UserDeta
 const themeGenerator = new ThemeGenerator(connection, window.location.hash?.substr(1));
 themeGenerator.AttachTo("layoutCreator")
 
-new Preview(themeGenerator.url).AttachTo("preview");
+new Preview(themeGenerator.url, themeGenerator.themeObject).AttachTo("preview");

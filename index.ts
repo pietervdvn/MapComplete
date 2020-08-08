@@ -88,6 +88,7 @@ TagRendering.injectFunction();
 State.state = new State(layoutToUse);
 if(layoutFromBase64 !== "false"){
     State.state.layoutDefinition = hash.substr(1);
+    console.log(State.state.layoutDefinition)
 }
 InitUiElements.InitBaseMap();
 

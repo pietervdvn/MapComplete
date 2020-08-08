@@ -33,15 +33,17 @@ function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
 
 export class Preview extends UIElement {
     private url: UIEventSource<string>;
+    private config: UIEventSource<LayoutConfigJson>;
 
-    constructor(url: UIEventSource<string>) {
+    constructor(url: UIEventSource<string>, config: UIEventSource<LayoutConfigJson>) {
         super(url);
+        this.config = config;
         this.url = url;
     }
 
     InnerRender(): string {
         const url = this.url.data;
-        return ""; // `<iframe src="${url}" width="100%" height="100%" title="Test"></iframe>`
+        return JSON.stringify(this.config.data, null, 2)
     }
 
 }
@@ -66,7 +68,6 @@ class MappingGenerator extends UIElement {
         {
             const self = this;
             this.elements = [
-                new FixedUiElement("<h5>Mapping</h5>"),
                 generateField(fullConfig, "If these tags apply", "if", mapping),
                 generateField(fullConfig, "Then: show this text", "then", mapping),
                 new Button("Remove this mapping", () => {
@@ -123,6 +124,9 @@ class TagRenderingGenerator
                     generateField)
             }),
             new Button("Add mapping", () => {
+                if(tagRendering.mappings === undefined){
+                    tagRendering.mappings = []
+                }
                 tagRendering.mappings.push({if: "", then: ""});
                 self.CreateElements(fullConfig, layerConfig, tagRendering, generateField, isTitle);
                 self.Update();
@@ -213,8 +217,7 @@ class LayerGenerator extends UIElement {
     private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement) {
         const self = this;
         this.uielements = [
-            generateField(fullConfig, "id", "id", layerConfig),
-            generateField(fullConfig, "The title of this layer", "title", layerConfig),
+            generateField(fullConfig, "The name of this layer", "id", layerConfig),
             generateField(fullConfig, "A description of objects for this layer", "description", layerConfig),
             generateField(fullConfig, "The icon of this layer, either a URL or a base64-encoded svg", "icon", layerConfig),
             generateField(fullConfig, "The default stroke color", "color", layerConfig),
@@ -231,7 +234,14 @@ class LayerGenerator extends UIElement {
                 self.CreateElements(fullConfig, layerConfig, generateField);
                 self.Update();
             }),
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title, generateField, true),
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
+                key: "",
+                addExtraTags: "",
+                mappings: [],
+                question: "",
+                render: "Title",
+                type: "text"
+            }, generateField, true),
             ...layerConfig.tagRenderings.map(tr => new TagRenderingGenerator(fullConfig, layerConfig, tr, generateField)),
             new Button("Add a tag rendering", () => {
                 layerConfig.tagRenderings.push({
@@ -327,7 +337,7 @@ export class ThemeGenerator extends UIElement {
 
     private readonly userDetails: UIEventSource<UserDetails>;
 
-    private readonly themeObject: UIEventSource<LayoutConfigJson>;
+    public readonly themeObject: UIEventSource<LayoutConfigJson>;
     private readonly allQuestionFields: UIElement[];
     public url: UIEventSource<string>;
 

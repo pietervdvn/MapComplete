@@ -126,6 +126,7 @@ export class ShareScreen extends UIElement {
         this._options = new VerticalCombine(optionCheckboxes)
         const url = currentLocation.map(() => {
 
+            
             let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.name + ".html"
 
             const parts = Utils.NoNull(optionParts.map((eventSource) => eventSource.data));
@@ -133,6 +134,8 @@ export class ShareScreen extends UIElement {
             let hash = "";
             if (State.state.layoutDefinition !== undefined) {
                 hash = ("#" + State.state.layoutDefinition)
+                literalText = "https://pietervdvn.github.io/MapComplete/index.html"
+                parts.push("userlayout=true");
             }
 
             if (parts.length === 0) {
@@ -160,7 +163,7 @@ export class ShareScreen extends UIElement {
         if(State.state.layoutDefinition !== undefined){
             this._editLayout = 
                 new FixedUiElement(`<h3>Edit this theme</h3>`+
-                    `<a target='_blank' https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`)
+                    `<a target='_blank' href='https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`)
             
         }
 

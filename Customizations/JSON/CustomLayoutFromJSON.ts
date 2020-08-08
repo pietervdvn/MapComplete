@@ -234,7 +234,7 @@ export class CustomLayoutFromJSON {
                 name: t(json.title),
                 icon: json.icon,
                 minzoom: json.minzoom,
-                title: tr(json.title),
+                title: tr(json.title) ,
                 presets: json.presets.map((preset) => {
                     return CustomLayoutFromJSON.PresetFromJson(json, preset)
                 }),
