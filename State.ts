@@ -93,6 +93,7 @@ export class State {
     public readonly featureSwitchIframe: UIEventSource<boolean>;
     public readonly featureSwitchMoreQuests: UIEventSource<boolean>;
     public readonly featureSwitchShareScreen: UIEventSource<boolean>;
+    public readonly featureSwitchGeolocation: UIEventSource<boolean>;
 
 
     /**
@@ -152,6 +153,7 @@ export class State {
         this.featureSwitchIframe = featSw("fs-iframe", () => false);
         this.featureSwitchMoreQuests = featSw("fs-more-quests", () => layoutToUse?.enableMoreQuests);
         this.featureSwitchShareScreen = featSw("fs-share-screen", () => layoutToUse?.enableShareScreen);
+        this.featureSwitchGeolocation = featSw("fs-geolocation", () => layoutToUse?.enableGeolocation);
 
         this.osmConnection = new OsmConnection(
             QueryParameters.GetQueryParameter("test", "false").data === "true",

@@ -41,6 +41,7 @@ export class Layout {
      */
     public widenFactor: number = 0.07;
     public defaultBackground: string = "osm";
+    public enableGeolocation: boolean = true;
 
     /**
      * 

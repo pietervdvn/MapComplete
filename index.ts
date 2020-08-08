@@ -166,7 +166,7 @@ InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
     InitUiElements.InitWelcomeMessage()
 });
 
-if ((window != window.top && !State.state.featureSwitchWelcomeMessage) || State.state.featureSwitchIframe.data) {
+if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
     new FixedUiElement(`<a href='${window.location}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`).AttachTo("top-right")
 }
 

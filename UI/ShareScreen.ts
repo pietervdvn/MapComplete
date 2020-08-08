@@ -97,7 +97,8 @@ export class ShareScreen extends UIElement {
             {urlName: "fs-search", human: "Enable search bar"},
             {urlName: "fs-welcome-message", human: "Enable the welcome message"},
             {urlName: "fs-layers", human: "Enable layer control"},
-            {urlName: "fs-add-new", human: "Enable the 'add new POI' button"}
+            {urlName: "fs-add-new", human: "Enable the 'add new POI' button"},
+            {urlName: "fs-geolocation", human: "Enable the 'geolocate-me' button"}
         ]
 
 
@@ -137,7 +138,7 @@ export class ShareScreen extends UIElement {
         this._iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                        &lt;iframe src="${url}" style="width:100%;height:100%" title="${layout.name} with MapComplete"&gt;&lt;/iframe&gt 
+                        &lt;iframe src="${url}" width="100%" height="100%" title="${layout.name} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );
