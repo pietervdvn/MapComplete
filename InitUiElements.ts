@@ -139,7 +139,7 @@ export class InitUiElements {
     static InitBaseMap(){
         const bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
             State.state.locationControl.map((location) => {
-                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomple ${State.vNumber}</a>  <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>`;
+                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomplete ${State.vNumber}</a>  <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>`;
                 let editHere = "";
                 if (location !== undefined) {
                     editHere = " | " +
