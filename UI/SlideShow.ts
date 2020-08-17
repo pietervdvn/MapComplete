@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class SlideShow extends UIElement {
 

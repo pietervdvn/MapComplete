@@ -1,5 +1,5 @@
-import {UIEventSource} from "../UI/UIEventSource";
 import {UIElement} from "../UI/UIElement";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 
 export interface Dependencies {

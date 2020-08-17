@@ -1,16 +1,19 @@
-import {UIElement} from "./UI/UIElement";
-import {OsmConnection, UserDetails} from "./Logic/Osm/OsmConnection";
-import {UIEventSource} from "./UI/UIEventSource";
-import Combine from "./UI/Base/Combine";
-import {TextField} from "./UI/Input/TextField";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {VerticalCombine} from "./UI/Base/VerticalCombine";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {TabbedComponent} from "./UI/Base/TabbedComponent";
-import {LayerConfigJson, LayoutConfigJson, TagRenderingConfigJson} from "./Customizations/JSON/CustomLayoutFromJSON";
-import {Button} from "./UI/Base/Button";
-import {type} from "os";
-import {Tag} from "./Logic/TagsFilter";
+import {UIElement} from "../UIElement";
+import {VerticalCombine} from "../Base/VerticalCombine";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Combine from "../Base/Combine";
+import {
+    LayerConfigJson,
+    LayoutConfigJson,
+    TagRenderingConfigJson
+} from "../../Customizations/JSON/CustomLayoutFromJSON";
+import {TabbedComponent} from "../Base/TabbedComponent";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {OsmConnection, UserDetails} from "../../Logic/Osm/OsmConnection";
+import {Button} from "../Base/Button";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {TextField} from "../Input/TextField";
+
 
 function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
     if (tags === undefined) {
@@ -31,27 +34,9 @@ function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
     return newTags.join(",");
 }
 
-export class Preview extends UIElement {
-    private url: UIEventSource<string>;
-    private config: UIEventSource<LayoutConfigJson>;
 
-    constructor(url: UIEventSource<string>, config: UIEventSource<LayoutConfigJson>) {
-        super(url);
-        this.config = config;
-        this.url = url;
-    }
+let createFieldUI: (label: string, key: string, root: any, options?: { deflt?: string }) => UIElement;
 
-    InnerRender(): string {
-        const url = this.url.data;
-        return new Combine([
-            `<iframe width="100%" height="50%" src="${this.url.data}"></iframe>`,
-            `<br/><br><h2>Save this link below:</h2><a target='_blank' href='${this.url.data}'>${this.url.data}</a>`,
-            JSON.stringify(this.config.data, null, 2).replace(/\n/g, "<br/>").replace(/ /g, "&nbsp;"),
-
-        ]).Render();
-    }
-
-}
 
 class MappingGenerator extends UIElement {
 
@@ -60,21 +45,19 @@ class MappingGenerator extends UIElement {
     constructor(fullConfig: UIEventSource<LayoutConfigJson>,
                 layerConfig: LayerConfigJson,
                 tagRendering: TagRenderingConfigJson,
-                mapping: { if: string | string[] | { k: string, v: string }[] },
-                generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement) {
+                mapping: { if: string | string[] | { k: string, v: string }[] }) {
         super(undefined);
-        this.CreateElements(fullConfig, layerConfig, tagRendering, mapping, generateField)
+        this.CreateElements(fullConfig, layerConfig, tagRendering, mapping)
     }
 
     private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson,
                            tagRendering: TagRenderingConfigJson,
-                           mapping,
-                           generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement) {
+                           mapping) {
         {
             const self = this;
             this.elements = [
-                generateField(fullConfig, "If these tags apply", "if", mapping),
-                generateField(fullConfig, "Then: show this text", "then", mapping),
+                createFieldUI("If these tags apply", "if", mapping),
+                createFieldUI("Then: show this text", "then", mapping),
                 new Button("Remove this mapping", () => {
                     for (let i = 0; i < tagRendering.mappings.length; i++) {
                         if (tagRendering.mappings[i] === mapping) {
@@ -106,34 +89,32 @@ class TagRenderingGenerator
     constructor(fullConfig: UIEventSource<LayoutConfigJson>,
                 layerConfig: LayerConfigJson,
                 tagRendering: TagRenderingConfigJson,
-                generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement,
                 isTitle: boolean = false) {
         super(undefined);
-        this.CreateElements(fullConfig, layerConfig, tagRendering, generateField, isTitle)
+        this.CreateElements(fullConfig, layerConfig, tagRendering, isTitle)
     }
 
-    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, tagRendering: TagRenderingConfigJson, generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement, isTitle: boolean) {
+    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, tagRendering: TagRenderingConfigJson, isTitle: boolean) {
 
 
         const self = this;
         this.elements = [
             new FixedUiElement(isTitle ? "<h3>Popup title</h3>" : "<h3>TagRendering/TagQuestion</h3>"),
-            generateField(fullConfig, "Key", "key", tagRendering),
-            generateField(fullConfig, "Rendering", "render", tagRendering),
-            generateField(fullConfig, "Type", "type", tagRendering),
-            generateField(fullConfig, "Question", "question", tagRendering),
-            generateField(fullConfig, "Extra tags", "addExtraTags", tagRendering),
+            createFieldUI("Key", "key", tagRendering),
+            createFieldUI("Rendering", "render", tagRendering),
+            createFieldUI("Type", "type", tagRendering),
+            createFieldUI("Question", "question", tagRendering),
+            createFieldUI("Extra tags", "addExtraTags", tagRendering),
 
             ...(tagRendering.mappings ?? []).map((mapping) => {
-                return new MappingGenerator(fullConfig, layerConfig, tagRendering, mapping,
-                    generateField)
+                return new MappingGenerator(fullConfig, layerConfig, tagRendering, mapping)
             }),
             new Button("Add mapping", () => {
-                if(tagRendering.mappings === undefined){
+                if (tagRendering.mappings === undefined) {
                     tagRendering.mappings = []
                 }
                 tagRendering.mappings.push({if: "", then: ""});
-                self.CreateElements(fullConfig, layerConfig, tagRendering, generateField, isTitle);
+                self.CreateElements(fullConfig, layerConfig, tagRendering, isTitle);
                 self.Update();
             })
 
@@ -169,16 +150,15 @@ class PresetGenerator extends UIElement {
     private elements: UIElement[];
 
     constructor(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson,
-                preset0: { title?: string, description?: string, icon?: string, tags?: string | string[] | { k: string, v: string }[] },
-                generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement) {
+                preset0: { title?: string, description?: string, icon?: string, tags?: string | string[] | { k: string, v: string }[] }) {
         super(undefined);
         const self = this;
         this.elements = [
             new FixedUiElement("<h3>Preset</h3>"),
-            generateField(fullConfig, "Title", "title", preset0),
-            generateField(fullConfig, "Description", "description", preset0, layerConfig.description),
-            generateField(fullConfig, "icon", "icon", preset0, layerConfig.icon),
-            generateField(fullConfig, "tags", "tags", preset0, TagsToString(layerConfig.overpassTags)),
+            createFieldUI("Title", "title", preset0),
+            createFieldUI("Description", "description", preset0, {deflt: layerConfig.description}),
+            createFieldUI("icon", "icon", preset0, {deflt: layerConfig.icon}),
+            createFieldUI("tags", "tags", preset0, {deflt: TagsToString(layerConfig.overpassTags)}),
             new Button("Remove this preset", () => {
                 for (let i = 0; i < layerConfig.presets.length; i++) {
                     if (layerConfig.presets[i] === preset0) {
@@ -210,25 +190,24 @@ class LayerGenerator extends UIElement {
     private uielements: UIElement[];
 
     constructor(fullConfig: UIEventSource<LayoutConfigJson>,
-                layerConfig: LayerConfigJson,
-                generateField: ((src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement)) {
+                layerConfig: LayerConfigJson) {
         super(undefined);
         this.layerConfig = new UIEventSource<LayerConfigJson>(layerConfig);
         this.fullConfig = fullConfig;
-        this.CreateElements(fullConfig, layerConfig, generateField)
+        this.CreateElements(fullConfig, layerConfig)
 
     }
 
-    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, generateField: (src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement) {
+    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson) {
         const self = this;
         this.uielements = [
-            generateField(fullConfig, "The name of this layer", "id", layerConfig),
-            generateField(fullConfig, "A description of objects for this layer", "description", layerConfig),
-            generateField(fullConfig, "The icon of this layer, either a URL or a base64-encoded svg", "icon", layerConfig),
-            generateField(fullConfig, "The default stroke color", "color", layerConfig),
-            generateField(fullConfig, "The minimal needed zoom to start loading", "minzoom", layerConfig),
-            generateField(fullConfig, "The tags to load from overpass", "overpassTags", layerConfig),
-            ...layerConfig.presets.map(preset => new PresetGenerator(fullConfig, layerConfig, preset, generateField)),
+            createFieldUI("The name of this layer", "id", layerConfig),
+            createFieldUI("A description of objects for this layer", "description", layerConfig),
+            createFieldUI("The icon of this layer, either a URL or a base64-encoded svg", "icon", layerConfig),
+            createFieldUI("The default stroke color", "color", layerConfig),
+            createFieldUI("The minimal needed zoom to start loading", "minzoom", layerConfig),
+            createFieldUI("The tags to load from overpass", "overpassTags", layerConfig),
+            ...layerConfig.presets.map(preset => new PresetGenerator(fullConfig, layerConfig, preset)),
             new Button("Add a preset", () => {
                 layerConfig.presets.push({
                     icon: undefined,
@@ -236,7 +215,7 @@ class LayerGenerator extends UIElement {
                     description: "",
                     tags: TagsToString(layerConfig.overpassTags)
                 });
-                self.CreateElements(fullConfig, layerConfig, generateField);
+                self.CreateElements(fullConfig, layerConfig);
                 self.Update();
             }),
             new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
@@ -246,8 +225,8 @@ class LayerGenerator extends UIElement {
                 question: "",
                 render: "Title",
                 type: "text"
-            }, generateField, true),
-            ...layerConfig.tagRenderings.map(tr => new TagRenderingGenerator(fullConfig, layerConfig, tr, generateField)),
+            }, true),
+            ...layerConfig.tagRenderings.map(tr => new TagRenderingGenerator(fullConfig, layerConfig, tr)),
             new Button("Add a tag rendering", () => {
                 layerConfig.tagRenderings.push({
                     key: "",
@@ -257,7 +236,7 @@ class LayerGenerator extends UIElement {
                     render: "",
                     type: "text"
                 });
-                self.CreateElements(fullConfig, layerConfig, generateField);
+                self.CreateElements(fullConfig, layerConfig);
                 self.Update();
             }),
 
@@ -274,11 +253,9 @@ class AllLayerComponent extends UIElement {
 
     private tabs: TabbedComponent;
     private config: UIEventSource<LayoutConfigJson>;
-    private generateField: ((src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement);
 
-    constructor(config: UIEventSource<LayoutConfigJson>, generateField: ((src: UIEventSource<any>, label: string, key: string, root: any, deflt?: string) => UIElement)) {
+    constructor(config: UIEventSource<LayoutConfigJson>) {
         super(undefined);
-        this.generateField = generateField;
         this.config = config;
         const self = this;
         let previousLayerAmount = config.data.layers.length;
@@ -302,7 +279,7 @@ class AllLayerComponent extends UIElement {
             });
             layerPanes.push({
                 header: new VariableUiElement(header),
-                content: new LayerGenerator(config, layer, this.generateField)
+                content: new LayerGenerator(config, layer)
             })
         }
 
@@ -360,53 +337,54 @@ export class ThemeGenerator extends UIElement {
         const jsonObjectRoot = this.themeObject.data;
 
         const base64 = this.themeObject.map(JSON.stringify).map(btoa);
-        this.url = base64.map((data) => `https://pietervdvn.github.io/MapComplete/index.html?userlayout=true#` + data);
+        this.url = base64.map((data) => `https://pietervdvn.github.io/MapComplete/index.html?test=true&userlayout=true#` + data);
         const self = this;
-        this.allQuestionFields = [
-            this.JsonField(this.themeObject, "Name of this theme", "name", jsonObjectRoot),
-            this.JsonField(this.themeObject, "Title (shown in the window and in the welcome message)", "title", jsonObjectRoot),
-            this.JsonField(this.themeObject, "Description (shown in the welcome message and various other places)", "description", jsonObjectRoot),
-            this.JsonField(this.themeObject, "The supported language", "language", jsonObjectRoot),
-            this.JsonField(this.themeObject, "startLat", "startLat", jsonObjectRoot),
-            this.JsonField(this.themeObject, "startLon", "startLon", jsonObjectRoot),
-            this.JsonField(this.themeObject, "startzoom", "startZoom", jsonObjectRoot),
-            this.JsonField(this.themeObject, "icon: either a URL to an image file, a relative url to a MapComplete asset ('./asset/help.svg') or a base64-encoded value (including 'data:image/svg+xml;base64,'", "icon", jsonObjectRoot, "./assets/bug.svg"),
 
-            new AllLayerComponent(this.themeObject, self.JsonField)
+        createFieldUI = (label, key, root, options) => {
+
+            const value = new UIEventSource<string>(TagsToString(root[key]) ?? options?.deflt);
+            value.addCallback((v) => {
+                root[key] = v;
+                self.themeObject.ping(); // We assume the root is a part of the themeObject
+            })
+            return new Combine([
+                label,
+                new TextField<string>({
+                    fromString: (str) => str,
+                    toString: (str) => str,
+                    value: value
+                })]);
+        }
+
+        this.allQuestionFields = [
+            createFieldUI("Name of this theme", "name", jsonObjectRoot),
+            createFieldUI("Title (shown in the window and in the welcome message)", "title", jsonObjectRoot),
+            createFieldUI("Description (shown in the welcome message and various other places)", "description", jsonObjectRoot),
+            createFieldUI("The supported language", "language", jsonObjectRoot),
+            createFieldUI("startLat", "startLat", jsonObjectRoot),
+            createFieldUI("startLon", "startLon", jsonObjectRoot),
+            createFieldUI("startzoom", "startZoom", jsonObjectRoot),
+            createFieldUI("icon: either a URL to an image file, a relative url to a MapComplete asset ('./asset/help.svg') or a base64-encoded value (including 'data:image/svg+xml;base64,'", "icon", jsonObjectRoot, {deflt: "./assets/bug.svg"}),
+
+            new AllLayerComponent(this.themeObject)
         ]
 
 
     }
 
-
-    private JsonField(themeObject: UIEventSource<LayoutConfigJson>, label: string, key: string, root: any, deflt: string = "") {
-        const value = new UIEventSource<string>(TagsToString(root[key]) ?? deflt);
-        value.addCallback((v) => {
-            root[key] = v;
-            themeObject.ping(); // We assume the root is a part of the themeObject
-        })
-        return new Combine([
-            label,
-            new TextField<string>({
-                fromString: (str) => str,
-                toString: (str) => str,
-                value: value
-            })]);
-    }
-
     InnerRender(): string {
 
         if (!this.userDetails.data.loggedIn) {
-            return "Not logged in"
+            return "Not logged in. You need to be logged in to create a theme."
         }
         if (this.userDetails.data.csCount < 500) {
-            return "You need at least 500 changesets to create your own theme";
+            return "You need at least 500 changesets to create your own theme.";
         }
 
 
         return new VerticalCombine([
             // new VariableUiElement(this.themeObject.map(JSON.stringify)),
-            new VariableUiElement(this.url.map((url) => `Current URL: <a href="${url}" target="_blank">Click here to open</a>`)),
+            //  new VariableUiElement(this.url.map((url) => `Current URL: <a href="${url}" target="_blank">Click here to open</a>`)),
             ...this.allQuestionFields,
         ]).Render();
     }

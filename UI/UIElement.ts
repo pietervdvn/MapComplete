@@ -1,5 +1,4 @@
-import {UIEventSource} from "./UIEventSource";
-import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export abstract class UIElement extends UIEventSource<string>{
     
@@ -11,7 +10,11 @@ export abstract class UIElement extends UIEventSource<string>{
     
     private _hideIfEmpty = false;
     
-    // WOrkaround as document is not defined
+    /**
+     * In the 'deploy'-step, some code needs to be run by ts-node.
+     * However, ts-node crashes when it sees 'document'. When running from console, we flag this and disable all code where document is needed.
+     * This is a workaround and yet another hack
+     */
     public static runningFromConsole = false;
 
     protected constructor(source: UIEventSource<any>) {

@@ -1,7 +1,4 @@
-import {UIEventSource} from "./UI/UIEventSource";
 import {UIElement} from "./UI/UIElement";
-import {QueryParameters} from "./Logic/QueryParameters";
-import {LocalStorageSource} from "./Logic/LocalStorageSource";
 import {Layout} from "./Customizations/Layout";
 import {Utils} from "./Utils";
 import {LayerDefinition, Preset} from "./Customizations/LayerDefinition";
@@ -14,6 +11,9 @@ import Translations from "./UI/i18n/Translations";
 import {CustomLayersState} from "./Logic/CustomLayersState";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
 
 /**
  * Contains the global state: a bunch of UI-event sources

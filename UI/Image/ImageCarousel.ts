@@ -1,16 +1,15 @@
 import {UIElement} from "../UIElement";
 import {ImageSearcher} from "../../Logic/ImageSearcher";
-import {UIEventSource} from "../UIEventSource";
 import {SlideShow} from "../SlideShow";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {ConfirmDialog} from "../ConfirmDialog";
+import {UIEventSource} from "../../Logic/UIEventSource";
 import {
     Dependencies,
     TagDependantUIElement,
     TagDependantUIElementConstructor
 } from "../../Customizations/UIElementConstructor";
-import {Changes} from "../../Logic/Osm/Changes";
 import {State} from "../../State";
 
 export class ImageCarouselConstructor implements TagDependantUIElementConstructor{

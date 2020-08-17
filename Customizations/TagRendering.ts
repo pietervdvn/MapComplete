@@ -1,5 +1,5 @@
 import {UIElement} from "../UI/UIElement";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "../Logic/UIEventSource";
 import {And, Tag, TagsFilter, TagUtils} from "../Logic/TagsFilter";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SaveButton} from "../UI/SaveButton";

@@ -1,5 +1,4 @@
 import {UIElement} from "../UI/UIElement";
-import {UIEventSource} from "../UI/UIEventSource";
 import {OsmConnection, UserDetails} from "../Logic/Osm/OsmConnection";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
@@ -7,6 +6,8 @@ import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {Utils} from "../Utils";
+import {UIEventSource} from "../Logic/UIEventSource";
+
 
 export class WelcomeMessage extends UIElement {
     private readonly layout: Layout;

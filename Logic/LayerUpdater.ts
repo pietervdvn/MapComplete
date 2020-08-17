@@ -1,5 +1,5 @@
 import {Or, TagsFilter} from "./TagsFilter";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "./UIEventSource";
 import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";

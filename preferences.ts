@@ -1,7 +1,6 @@
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import {VerticalCombine} from "./UI/Base/VerticalCombine";
 import Combine from "./UI/Base/Combine";
-import {UIEventSource} from "./UI/UIEventSource";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import {Button} from "./UI/Base/Button";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -9,6 +8,7 @@ import {All} from "./Customizations/Layouts/All";
 import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {UIElement} from "./UI/UIElement";
+import {UIEventSource} from "./Logic/UIEventSource";
 
 
 const connection = new OsmConnection(false, new UIEventSource<string>(undefined));

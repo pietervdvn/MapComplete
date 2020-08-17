@@ -1,0 +1,67 @@
+{
+  "layers": [
+    {
+      "id": "bookcases",
+      "title": {
+        "render": "Bookcase"
+      },
+      "icon": "./assets/themes/bookcases/bookcase.svg",
+      "color": "#000000",
+      "description": "A public bookcase",
+      "minzoom": "12",
+      "overpassTags": "amenity=public_bookcase",
+      "presets": [
+        {
+          "title": "Bookcase",
+          "description": "A bookcase is a small cabinet where everyone can take or leave a book",
+          "icon": "./assets/bookcase.svg",
+          "tags": "amenity=public_bookcase"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "key": "brand",
+          "addExtraTags": "",
+          "mappings": [
+            {
+              "if": "brand=Little Free Library",
+              "then": "Part of the network Little Free Library"
+            }
+          ],
+          "question": "Is this bookcase part of a network?",
+          "render": "Part of {brand}",
+          "type": "text"
+        },
+        {
+          "key": "",
+          "addExtraTags": "",
+          "mappings": [
+            {
+              "if": "books=children",
+              "then": "Mainly books for kids"
+            },
+            {
+              "if": "books=adult",
+              "then": "Mainly books for adults"
+            },
+            {
+              "if": "books=adult;children",
+              "then": "Books for both adults and children"
+            }
+          ],
+          "question": "Which books can be found here?",
+          "render": "",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "icon": "./assets/bookcase.svg",
+  "name": "bookcases",
+  "title": "Bookcases",
+  "description": "Welcome to open Bookcase Map",
+  "language": "en",
+  "startLat": "0",
+  "startLon": "0",
+  "startZoom": "12"
+}

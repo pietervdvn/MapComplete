@@ -1,7 +1,7 @@
-import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
-import {LicenseInfo} from "../../Logic/Wikimedia";
-import {Imgur} from "../../Logic/Imgur";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {LicenseInfo} from "../../Logic/Web/Wikimedia";
+import {Imgur} from "../../Logic/Web/Imgur";
 
 
 export class    ImgurImage extends UIElement {

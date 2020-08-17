@@ -4,7 +4,7 @@ import {parsePhoneNumberFromString} from "libphonenumber-js";
 import {UIElement} from "../UI/UIElement";
 import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 

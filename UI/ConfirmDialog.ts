@@ -1,7 +1,7 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 
 export class ConfirmDialog extends UIElement {

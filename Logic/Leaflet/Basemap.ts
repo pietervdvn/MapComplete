@@ -1,5 +1,5 @@
 import L from "leaflet"
-import {UIEventSource} from "../../UI/UIEventSource";
+import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
 
 

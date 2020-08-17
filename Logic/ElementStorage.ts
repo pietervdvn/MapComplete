@@ -1,7 +1,7 @@
 /**
  * Keeps track of a dictionary 'elementID' -> element
  */
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "./UIEventSource";
 
 export class ElementStorage {
 

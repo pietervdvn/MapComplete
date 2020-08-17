@@ -1,5 +1,4 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import {ImageCarousel} from "./Image/ImageCarousel";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import {OsmLink} from "../Customizations/Questions/OsmLink";

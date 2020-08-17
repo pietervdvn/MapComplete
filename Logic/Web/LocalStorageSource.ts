@@ -1,4 +1,4 @@
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "../UIEventSource";
 
 export class LocalStorageSource {
 

@@ -2,7 +2,7 @@
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
-import {UIEventSource} from "../../UI/UIEventSource";
+import {UIEventSource} from "../UIEventSource";
 import {OsmConnection} from "./OsmConnection";
 import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../TagsFilter";

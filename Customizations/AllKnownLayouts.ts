@@ -13,6 +13,8 @@ import {MetaMap} from "./Layouts/MetaMap";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {Bookcases} from "./Layouts/Bookcases";
 import {GhostBikes} from "./Layouts/GhostBikes";
+import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
+import {CustomLayoutFromJSON} from "./JSON/CustomLayoutFromJSON";
 
 export class AllKnownLayouts {
 
@@ -24,21 +26,25 @@ export class AllKnownLayouts {
         new GRB(),
         new Cyclofix(),
         new GhostBikes(),
-        new Bookcases(),
+       // new Bookcases(),
+        CustomLayoutFromJSON.LayoutFromJSON(bookcases),
         new MetaMap(),
         new StreetWidth(),
         new ClimbingTrees(),
         new Artworks(),
         new Smoothness(),
         new Groen(),
+        
         /*
         new Toilets(),
         */
     ];
+    
 
     public static allSets: Map<string, Layout> = AllKnownLayouts.AllLayouts();
 
     private static AllLayouts(): Map<string, Layout> {
+
 
         const all = new All();
         this.allLayers = new Map<string, LayerDefinition>();

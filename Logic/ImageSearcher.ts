@@ -1,11 +1,11 @@
-import {UIEventSource} from "../UI/UIEventSource";
-import {ImagesInCategory, Wikidata, Wikimedia} from "./Wikimedia";
 import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
 import {Changes} from "./Osm/Changes";
 import {ImgurImage} from "../UI/Image/ImgurImage";
 import {State} from "../State";
+import {ImagesInCategory, Wikidata, Wikimedia} from "./Web/Wikimedia";
+import {UIEventSource} from "./UIEventSource";
 
 /**
  * There are multiple way to fetch images for an object

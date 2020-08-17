@@ -1,8 +1,8 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import {OsmConnection} from "../Logic/Osm/OsmConnection";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class CenterMessageBox extends UIElement {
 
@@ -46,7 +46,6 @@ export class CenterMessageBox extends UIElement {
         if (State.state.centerMessage.data != "") {
             pstyle.opacity = "1";
             pstyle.pointerEvents = "all";
-            State.state.osmConnection.registerActivateOsmAUthenticationClass();
             return;
         }
         pstyle.pointerEvents = "none";

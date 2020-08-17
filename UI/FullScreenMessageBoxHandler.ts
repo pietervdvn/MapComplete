@@ -1,8 +1,8 @@
-import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 /**
  * Handles the full screen popup on mobile

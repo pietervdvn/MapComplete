@@ -3,17 +3,19 @@
 > Let a thousand flowers bloom
 
 
-MapComplete attempts to be a webversion of StreetComplete. However, we focus on 'themes', a bit similar as mapcontrib.
+MapComplete attempts to be a webversion crossover of StreetComplete and MapContrib. It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
 
 The design goals of MapComplete are to be:
 
-- Easy to use
-- Easy to deploy
+- Easy to use, both on web and on mobile
+- Easy to deploy (by not having a backand)
 - Easy to modify
 
-The basic functionality is to download some map features with overpass and then ask certain questions. An answer is sent back to OpenStreetMap.
+The basic functionality is to download some map features from Overpass and then ask certain questions. An answer is sent back to directly to OpenStreetMap.
 
-Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `wikimedia_commons`-tag is present, it follows those to get these images too
+Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `wikimedia_commons`-tag is present, it follows those to get these images too.
+
+An explicit non-goal of MapComplete is to modify geometries of ways. Although adding a point to a way or splitting a way in two parts might be added one day.
 
 ## Examples
 

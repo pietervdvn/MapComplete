@@ -1,4 +1,3 @@
-import {UIEventSource} from "../../UI/UIEventSource";
 import {Changes} from "../../Logic/Osm/Changes";
 import {And, Tag} from "../../Logic/TagsFilter";
 import {TagRenderingOptions} from "../TagRenderingOptions";

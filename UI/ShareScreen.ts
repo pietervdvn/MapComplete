@@ -1,18 +1,16 @@
 import {UIElement} from "./UIElement";
-import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Combine from "./Base/Combine";
 import {VariableUiElement} from "./Base/VariableUIElement";
-import {UIEventSource} from "./UIEventSource";
 import {CheckBox} from "./Input/CheckBox";
 import {VerticalCombine} from "./Base/VerticalCombine";
-import {QueryParameters} from "../Logic/QueryParameters";
 import {Img} from "./Img";
 import {State} from "../State";
 import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class ShareScreen extends UIElement {
 
@@ -147,7 +145,7 @@ export class ShareScreen extends UIElement {
         this._iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                        &lt;iframe src="${url}" width="100%" height="100%" title="${layout.name} with MapComplete"&gt;&lt;/iframe&gt 
+                        &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title.InnerRender()} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );

@@ -1,18 +1,13 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import {Tag} from "../Logic/TagsFilter";
 import {FilteredLayer} from "../Logic/FilteredLayer";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {Button} from "./Base/Button";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
-import {VerticalCombine} from "./Base/VerticalCombine";
 import Locale from "./i18n/Locale";
-import {Changes} from "../Logic/Osm/Changes";
-import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {State} from "../State";
 
+import {UIEventSource} from "../Logic/UIEventSource";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient

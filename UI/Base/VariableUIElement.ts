@@ -1,5 +1,5 @@
 import {UIElement} from "../UIElement";
-import {UIEventSource} from "../UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class VariableUiElement extends UIElement {
     private _html: UIEventSource<string>;

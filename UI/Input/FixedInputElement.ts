@@ -1,8 +1,7 @@
 import {InputElement} from "./InputElement";
-import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
-
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class FixedInputElement<T> extends InputElement<T> {
     private rendering: UIElement;

@@ -1,6 +1,6 @@
-import {UIEventSource} from "../UIEventSource";
-import {LocalStorageSource} from "../../Logic/LocalStorageSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
+import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 
 
 export default class Locale {

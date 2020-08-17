@@ -4,7 +4,7 @@
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
 import {UIElement} from "../UI/UIElement";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "../Logic/UIEventSource";
 import {Changes} from "../Logic/Osm/Changes";
 
 

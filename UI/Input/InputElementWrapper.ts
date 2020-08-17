@@ -1,9 +1,8 @@
 import {InputElement} from "./InputElement";
-import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
-
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class InputElementWrapper<T> extends InputElement<T>{
     private pre: UIElement ;

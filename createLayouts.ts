@@ -1,5 +1,5 @@
-
 import {UIElement} from "./UI/UIElement";
+// We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";

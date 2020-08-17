@@ -6,7 +6,6 @@ import {ShareScreen} from "./UI/ShareScreen";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {CheckBox} from "./UI/Input/CheckBox";
 import Combine from "./UI/Base/Combine";
-import {UIEventSource} from "./UI/UIEventSource";
 import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
 import {Tag} from "./Logic/TagsFilter";
@@ -26,7 +25,8 @@ import {CustomLayout} from "./Logic/CustomLayers";
 import {Preset} from "./Customizations/LayerDefinition";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {LayerUpdater} from "./Logic/LayerUpdater";
-import {QueryParameters} from "./Logic/QueryParameters";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
 
 export class InitUiElements {
 

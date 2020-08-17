@@ -1,5 +1,5 @@
 import {TagsFilter, TagUtils} from "./TagsFilter";
-import {UIEventSource} from "../UI/UIEventSource";
+import {UIEventSource} from "./UIEventSource";
 import L from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";

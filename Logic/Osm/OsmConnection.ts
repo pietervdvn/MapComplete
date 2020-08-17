@@ -1,6 +1,6 @@
 // @ts-ignore
 import osmAuth from "osm-auth";
-import {UIEventSource} from "../../UI/UIEventSource";
+import {UIEventSource} from "../UIEventSource";
 import {CustomLayersState} from "../CustomLayersState";
 
 export class UserDetails {

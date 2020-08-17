@@ -1,7 +1,5 @@
 import {UIElement} from "./UIElement";
-import {UIEventSource} from "./UIEventSource";
 import $ from "jquery"
-import {Imgur} from "../Logic/Imgur";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {DropDown} from "./Input/DropDown";
 import {VariableUiElement} from "./Base/VariableUIElement";
@@ -10,6 +8,8 @@ import {fail} from "assert";
 import Combine from "./Base/Combine";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import {State} from "../State";
+import {UIEventSource} from "../Logic/UIEventSource";
+import {Imgur} from "../Logic/Web/Imgur";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;

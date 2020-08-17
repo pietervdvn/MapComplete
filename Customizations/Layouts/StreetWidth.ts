@@ -1,7 +1,6 @@
 import {Layout} from "../Layout";
 import * as Layer from "../Layers/Bookcases";
 import {Widths} from "../Layers/Widths";
-import {UIEventSource} from "../../UI/UIEventSource";
 
 export class StreetWidth extends Layout{
     

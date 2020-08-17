@@ -1,8 +1,7 @@
 /**
  * Wraps the query parameters into UIEventSources
  */
-import {UIEventSource} from "../UI/UIEventSource";
-import {UIElement} from "../UI/UIElement";
+import {UIEventSource} from "../UIEventSource";
 
 export class QueryParameters {
 

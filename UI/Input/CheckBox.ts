@@ -1,9 +1,7 @@
 import {UIElement} from "../UIElement";
-import {UIEventSource} from "../UIEventSource";
 import { FilteredLayer } from "../../Logic/FilteredLayer";
 import Translations from "../../UI/i18n/Translations";
-import instantiate = WebAssembly.instantiate;
-
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class CheckBox extends UIElement{
     public readonly isEnabled: UIEventSource<boolean>;

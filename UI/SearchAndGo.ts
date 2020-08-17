@@ -1,5 +1,4 @@
 import Locale from "./i18n/Locale";
-import {UIEventSource} from "./UIEventSource";
 import {UIElement} from "./UIElement";
 import Translation from "./i18n/Translation";
 import {VariableUiElement} from "./Base/VariableUIElement";
@@ -7,9 +6,9 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import {TextField} from "./Input/TextField";
 import {Geocoding} from "../Logic/Osm/Geocoding";
 import Translations from "./i18n/Translations";
-import {Basemap} from "../Logic/Leaflet/Basemap";
 import {State} from "../State";
 
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class SearchAndGo extends UIElement {
 

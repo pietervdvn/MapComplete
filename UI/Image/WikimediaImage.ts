@@ -1,6 +1,6 @@
-import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
-import {LicenseInfo, Wikimedia} from "../../Logic/Wikimedia";
+import {LicenseInfo, Wikimedia} from "../../Logic/Web/Wikimedia";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 
 export class WikimediaImage extends UIElement {

@@ -1,6 +1,5 @@
-import {UIElement} from "../UIElement";
-import {UIEventSource} from "../UIEventSource";
 import {InputElement} from "./InputElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class RadioButton<T> extends InputElement<T> {
 

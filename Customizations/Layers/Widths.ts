@@ -1,6 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Not, Or, Tag} from "../../Logic/TagsFilter";
-import {UIEventSource} from "../../UI/UIEventSource";
 import {Park} from "./Park";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 

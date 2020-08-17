@@ -1,9 +1,7 @@
-import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../UIElement";
 import {InputElement} from "./InputElement";
-import instantiate = WebAssembly.instantiate;
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class DropDown<T> extends InputElement<T> {
 

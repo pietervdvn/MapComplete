@@ -1,7 +1,6 @@
 import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 import Combine from "./Combine";
-import {link} from "fs";
 
 
 export class SubtleButton extends UIElement{

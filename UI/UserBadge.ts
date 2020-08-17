@@ -5,11 +5,11 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
-import {Basemap} from "../Logic/Leaflet/Basemap";
 import {State} from "../State";
 import {PendingChanges} from "./PendingChanges";
-import Locale from "./i18n/Locale";
 import {Utils} from "../Utils";
+// @ts-ignore
+import {UIEventSource} from "../Logic/UIEventSource";
 
 /**
  * Handles and updates the user badge

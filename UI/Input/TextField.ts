@@ -1,8 +1,7 @@
 import {UIElement} from "../UIElement";
-import {UIEventSource} from "../UIEventSource";
 import {InputElement} from "./InputElement";
 import Translations from "../i18n/Translations";
-
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class TextField<T> extends InputElement<T> {
 

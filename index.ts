@@ -8,7 +8,6 @@ import {SearchAndGo} from "./UI/SearchAndGo";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {QueryParameters} from "./Logic/QueryParameters";
 import {InitUiElements} from "./InitUiElements";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
@@ -19,6 +18,7 @@ import {TagRendering} from "./Customizations/TagRendering";
 import {Img} from "./UI/Img";
 import Combine from "./UI/Base/Combine";
 import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
 
 
 // --------------------- Special actions based on the parameters -----------------

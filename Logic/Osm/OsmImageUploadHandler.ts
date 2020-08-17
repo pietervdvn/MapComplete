@@ -2,7 +2,7 @@
  * Helps in uplaoding, by generating the rigth title, decription and by adding the tag to the changeset
  */
 import {Changes} from "./Changes";
-import {UIEventSource} from "../../UI/UIEventSource";
+import {UIEventSource} from "../UIEventSource";
 import {ImageUploadFlow} from "../../UI/ImageUploadFlow";
 import {UserDetails} from "./OsmConnection";
 import {SlideShow} from "../../UI/SlideShow";
