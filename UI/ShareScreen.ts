@@ -93,12 +93,12 @@ export class ShareScreen extends UIElement {
 
 
         const switches = [{urlName: "fs-userbadge", human: "Enable the login-button"},
-            {urlName: "fs-search", human: "Enable search bar"},
+            {urlName: "fs-search", human: "Enable the search bar"},
             {urlName: "fs-welcome-message", human: "Enable the welcome message"},
-            {urlName: "fs-layers", human: "Enable layer control"},
+            {urlName: "fs-layers", human: "Enable thelayer control"},
+            {urlName: "layer-control-toggle", human: "Start with the layer control expanded", reverse:true},
             {urlName: "fs-add-new", human: "Enable the 'add new POI' button"},
             {urlName: "fs-geolocation", human: "Enable the 'geolocate-me' button"},
-            {urlName: "layer-control-toggle", human: "Start with the layer control expanded", reverse:true}
         ]
 
 

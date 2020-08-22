@@ -1155,8 +1155,10 @@ form {
 
 .tab-single-header img {
     height: 3em;
-    width: 3em;
+    max-width: 3em;
     padding: 0.5em;
+    display:block;
+    margin:auto;
 }
 
 
@@ -1181,6 +1183,7 @@ form {
     z-index: 5001;
     box-shadow: 0 0 10px black;
     border: 1px solid white;
+    min-width: 4em;
 }
 
 .tab-non-active {

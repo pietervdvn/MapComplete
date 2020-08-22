@@ -59,9 +59,14 @@ export class CustomLayersPanel extends UIElement {
                 const image = (layer.icon ? `<img src='${layer.icon}'>` : Img.checkmark);
                 const noimage = (layer.icon ? `<img src='${layer.icon}'>` : Img.no_checkmark);
 
+                let name = layer.name;
+                if(typeof (name) !== "string"){
+                    name = name.InnerRender();
+                }
+                
                 const content = new Combine([
                     "<span>",
-                    "<b>", layer.name ?? "", "</b> ",
+                    "<b>", name ?? "", "</b> ",
                     layer.description !== undefined ? new Combine(["<br/>", layer.description]) : "",
                     "</span>"])
                 const cb = new CheckBox(

@@ -17,6 +17,7 @@ import {TextField, ValidatedTextField} from "../Input/TextField";
 import {Tag} from "../../Logic/TagsFilter";
 import {DropDown} from "../Input/DropDown";
 import {TagRendering} from "../../Customizations/TagRendering";
+import {LayerDefinition} from "../../Customizations/LayerDefinition";
 
 
 TagRendering.injectFunction();
@@ -267,9 +268,13 @@ class LayerGenerator extends UIElement {
             }),
             createFieldUI("The tags to load from overpass", "overpassTags", layerConfig, {
                 type: "tags",
-                description: "Tags to load from overpass. The format is <span class='literal-code'>key=value&key0=value0&key1=value1</span>, e.g. <span class='literal-code'>amenity=public_bookcase</span> or <span class='literal-code'>amenity=compressed_air&bicycle=yes</span>. Note that a wildcard is supported, e.g. <span class='literal-code'>key=*</span>"
+                description: "Tags to load from overpass. The format is <span class='literal-code'>key=value&key0=value0&key1=value1</span>, e.g. <span class='literal-code'>amenity=public_bookcase</span> or <span class='literal-code'>amenity=compressed_air&bicycle=yes</span>. Note that a wildcard is supported, e.g. <span class='literal-code'>key=*</span> to have everything. An missing tag can be expressed as <span class='literal-code'>key=</span>, not as <span class='literal-code'>key!=value</span>. E.g. something that is indoor and not private and has no name tag can be queried as <span class='literal-code'>indoor=yes&name=&access!=private</span>"
             }),
 
+            createFieldUI("Wayhandling","wayHandling", layerConfig, {
+                type:"wayhandling",
+                description: "Specifies how ways (lines and areas) are handled: either the way is shown, a center point is shown or both"
+            }),
 
             new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
                 key: "",
@@ -415,6 +420,7 @@ class AllLayerComponent extends UIElement {
                     description: "",
                     minzoom: 12,
                     overpassTags: "",
+                    wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
                     presets: [{}],
                     tagRenderings: []
                 });
@@ -490,6 +496,22 @@ export class ThemeGenerator extends UIElement {
                 textField = new DropDown<string>("",
                     options,
                     value)
+            } else if (options.type === "wayhandling") {
+                const options: { value: string, shown: string | UIElement }[] =
+                    [{value: "" + LayerDefinition.WAYHANDLING_DEFAULT, shown: "Show a line/area as line/area"},
+                        {
+                            value: "" + LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
+                            shown: "Show a line/area as line/area AND show an icon at the center"
+                        },
+                        {
+                            value: "" + LayerDefinition.WAYHANDLING_CENTER_ONLY,
+                            shown: "Only show the centerpoint of a way"
+                        }];
+
+                textField = new DropDown<string>("",
+                    options,
+                    value)
+
             } else if (options.type === "tags") {
                 textField = ValidatedTextField.TagTextField(value.map(CustomLayoutFromJSON.TagsFromJson, [], tags => {
                     if (tags === undefined) {

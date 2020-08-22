@@ -1,0 +1,32 @@
+{
+  "layers": [
+    {
+      "id": "Fietsstraat",
+      "title": {
+        "render": "{name}",
+        "key": "name"
+      },
+      "icon": {
+        "key": ""
+      },
+      "color": {
+        "key": "",
+        "render": "#0000ff"
+      },
+      "description": "Een fietsstraat is een straat",
+      "minzoom": "13",
+      "presets": [],
+      "tagRenderings": [],
+      "overpassTags": "cyclestreet=yes"
+    }
+  ],
+  "language": "nl",
+  "startLat": "51.2095",
+  "startZoom": "14",
+  "maintainer": "Not logged in",
+  "name": "Fietsstraten",
+  "title": "Fietsstraten",
+  "startLon": "3.2228",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Belgian_road_sign_F111.svg/400px-Belgian_road_sign_F111.svg.png",
+  "description": "Een fietsstraat is een straat waar automobilisten geen fietsers mogen inhalen en waar een maximumsnelheid van 30km/h geldt. "
+}

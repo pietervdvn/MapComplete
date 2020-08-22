@@ -58,7 +58,7 @@ export class ImageUploadFlow extends UIElement {
         }
 
         if (!State.state.osmConnection.userDetails.data.loggedIn) {
-            return `<div class='activate-osm-authentication'>${t.pleaseLogin.Render()}</div>`;
+            return t.pleaseLogin.Render();
         }
 
         let currentState: UIElement[] = [];
@@ -78,7 +78,7 @@ export class ImageUploadFlow extends UIElement {
 
         let currentStateHtml = "";
         if (currentState.length > 0) {
-            currentStateHtml = new VerticalCombine(currentState).Render();
+            currentStateHtml = new Combine(currentState).Render();
             if (!this._allDone.data) {
                 currentStateHtml = "<span class='alert'>" +
                     currentStateHtml +

@@ -313,11 +313,12 @@ export class OsmConnection {
                 `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
                 `<tag k="comment" v="Adding data with #MapComplete"/>`,
                 `<tag k="theme" v="${layout.name}"/>`,
-                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}">` : "",
+                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}"/>` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);
+                alert("Could not upload change (opening failed). Please file a bug report")
                 return;
             } else {
                 continuation(response);

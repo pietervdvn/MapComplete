@@ -39,6 +39,7 @@ export interface LayerConfigJson {
     minzoom: number,
     color: TagRenderingConfigJson;
     overpassTags: string | string[] | { k: string, v: string }[];
+    wayHandling: number,
     presets: [
         {
             // icon: optional. Uses the layer icon by default
@@ -231,7 +232,7 @@ export class CustomLayoutFromJSON {
             json.id,
             {
                 description: t(json.description),
-                name: t(json.title),
+                name: t(json.title.render),
                 icon: icon,
                 minzoom: json.minzoom,
                 title: tr(json.title),
@@ -241,7 +242,7 @@ export class CustomLayoutFromJSON {
                 elementsToShow:
                     [new ImageCarouselWithUploadConstructor()].concat(json.tagRenderings.map(tr)),
                 overpassFilter: new And(tags),
-                wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
+                wayHandling: parseInt(json.wayHandling) ?? LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
                 maxAllowedOverlapPercentage: 0,
                 style: CustomLayoutFromJSON.StyleFromJson(json, json.style)
             }
