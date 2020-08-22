@@ -79,7 +79,7 @@ form {
 }
 
 .subtle {
-    color: #cccccc;
+    color: #999;
 }
 
 .thanks {
@@ -959,8 +959,9 @@ form {
 
 
 .infoboxcontents {
+    margin: 0.5em;
     margin-top: 1em;
-    margin-bottom: 0.5em;
+    
 }
 
 

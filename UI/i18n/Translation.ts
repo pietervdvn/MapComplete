@@ -65,8 +65,12 @@ export default class Translation extends UIElement {
         this.translations = translations
     }
 
-    public replace(a, b) {
-        return this.Subs({a: b});
+    public replace(a: string, b: string) {
+        if(a.startsWith("{") && a.endsWith("}")){
+            a = a.substr(1, a.length - 2);
+        }
+        const result= this.Subs({[a]: b});
+        return result;
     }
 
     public R(): string {

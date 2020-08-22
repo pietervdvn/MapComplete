@@ -7,6 +7,8 @@ export abstract class TagsFilter {
     matchesProperties(properties: any) : boolean{
         return this.matches(TagUtils.proprtiesToKV(properties));
     }
+
+    abstract asHumanString();
 }
 
 
@@ -50,6 +52,10 @@ export class Regex extends TagsFilter {
 
     substituteValues(tags: any) : TagsFilter{
         throw "Substituting values is not supported on regex tags"
+    }
+    
+    asHumanString() {
+        return this._k+"~="+this._r;
     }
 }
 
@@ -143,6 +149,10 @@ export class Tag extends TagsFilter {
 
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
+
+    asHumanString() {
+        return this.key+"="+this.value;
+    }
 }
 
 
@@ -189,6 +199,10 @@ export class Or extends TagsFilter {
             newChoices.push(c.substituteValues(tags));
         }
         return new Or(newChoices);
+    }
+    
+    asHumanString() {
+        return this.or.map(t => t.asHumanString()).join("|");
     }
 }
 
@@ -247,6 +261,10 @@ export class And extends TagsFilter {
         }
         return new And(newChoices);
     }
+
+    asHumanString() {
+        return this.and.map(t => t.asHumanString()).join("&");
+    }
 }
 
 
@@ -268,6 +286,10 @@ export class Not extends TagsFilter{
 
     substituteValues(tags: any): TagsFilter {
         return new Not(this.not.substituteValues(tags));
+    }
+
+    asHumanString() {
+        return "!"+this.not.asHumanString();
     }
 }
 

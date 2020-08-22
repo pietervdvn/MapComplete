@@ -23,15 +23,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private _priority: number;
 
 
-    private _question: Translation;
-    private _mapping: { k: TagsFilter, txt: string | Translation, priority?: number }[];
+    private _question: string | Translation;
+    private _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
     private _tagsPreprocessor?: ((tags: any) => any);
     private _freeform: {
         key: string,
-        template: string | Translation,
+        template: string | UIElement,
         renderTemplate: string | Translation,
-        placeholder?: string | Translation,
+        placeholder?: string | UIElement,
         extraTags?: TagsFilter
     };
 
@@ -42,12 +42,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _skipButton: UIElement;
     private readonly _editButton: UIElement;
 
+    private readonly _appliedTags: UIElement;
+
     private readonly _questionSkipped: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _editMode: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
 
-    private static injected = TagRendering.injectFunction(); 
+    private static injected = TagRendering.injectFunction();
+
     static injectFunction() {
         // This is a workaround as not to import tagrendering into TagREnderingOptions
         TagRenderingOptions.tagRendering = (tags, options) => new TagRendering(tags, options);
@@ -91,7 +94,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         };
 
         if (options.question !== undefined) {
-            this._question = this.ApplyTemplate(options.question);
+            this._question = options.question;
         }
         
         this._mapping = [];
@@ -109,7 +112,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 const newTags = this._tagsPreprocessor(this._source.data);
                 choiceSubbed = {
                     k: choice.k.substituteValues(newTags),
-                    txt: this.ApplyTemplate(choice.txt),
+                    txt: choice.txt,
                     priority: choice.priority
                 }
             }
@@ -132,6 +135,21 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
             self._editMode.setData(false);
         }
+
+        this._appliedTags = new VariableUiElement(
+            self._questionElement.GetValue().map(
+                (tags: TagsFilter) => {
+                    if (tags === undefined) {
+                        return "";
+                    }
+                    if ((State.state?.osmConnection?.userDetails?.data?.csCount ?? 0) < 200) {
+                        return "";
+                    }
+                    return tags.asHumanString()
+                }
+            )
+        );
+        this._appliedTags.clss = "subtle";
 
         const cancel = () => {
             self._questionSkipped.setData(true);
@@ -201,7 +219,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
         if (elements.length == 0) {
-            console.warn("WARNING: no tagrendering with following options:", options);
             return new FixedInputElement("This should not happen: no tag renderings defined", undefined);
         }
         if (elements.length == 1) {
@@ -213,8 +230,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
 
-    private InputElementForMapping(mapping: { k: TagsFilter, txt: string | UIElement }) {
-        return new FixedInputElement(mapping.txt, mapping.k);
+    private InputElementForMapping(mapping: { k: TagsFilter, txt: string | Translation }) {
+        return new FixedInputElement(this.ApplyTemplate(mapping.txt), mapping.k);
     }
 
 
@@ -372,10 +389,11 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
             return "<div class='question'>" +
                 "<span class='question-text'>" + question + "</span>" +
-                (this._question.IsEmpty() ? "" : "<br/>") +
+                (question !== "" ? "" : "<br/>") +
                 "<div>" + this._questionElement.Render() + "</div>" +
                 this._skipButton.Render() +
                 this._saveButton.Render() +
+                this._appliedTags.Render() +
                 "</div>"
         }
 
@@ -406,18 +424,20 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         return this._priority;
     }
 
-    private ApplyTemplate(template: string | Translation): Translation {
+    private ApplyTemplate(template: string | Translation): UIElement {
         if (template === undefined || template === null) {
             throw "Trying to apply a template, but the template is null/undefined"
         }
-
+        const self = this;
+        const tags = this._source.map(tags => self._tagsPreprocessor(self._source.data));
+        let transl : Translation;
         if (typeof (template) === "string") {
-            const tags = this._tagsPreprocessor(this._source.data);
-            return new Translation ({en:TagUtils.ApplyTemplate(template, tags)});
+            transl = new Translation({en: TagUtils.ApplyTemplate(template, tags)});
+        }else{
+            transl = template;
         }
-        const tags = this._tagsPreprocessor(this._source.data);
-
-        return template.Subs(tags);
+        
+        return new VariableUiElement(tags.map(tags => transl.Subs(tags).InnerRender()));
     }
 
 

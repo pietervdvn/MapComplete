@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.5c";
+    public static vNumber = "0.0.5d";
 
     public static runningFromConsole: boolean = false; 
 

@@ -38,6 +38,7 @@ export interface LayerConfigJson {
     description: string;
     minzoom: number,
     color: TagRenderingConfigJson;
+    width: TagRenderingConfigJson;
     overpassTags: string | string[] | { k: string, v: string }[];
     wayHandling: number,
     presets: [
@@ -80,6 +81,10 @@ export class CustomLayoutFromJSON {
 
     public static TagRenderingFromJson(json: any): TagDependantUIElementConstructor {
 
+        if(json === undefined){
+            return undefined;
+        }
+        
         if (typeof (json) === "string") {
             return new FixedText(json);
         }
@@ -89,7 +94,6 @@ export class CustomLayoutFromJSON {
             const type = json.type ?? "text";
             let renderTemplate =  CustomLayoutFromJSON.MaybeTranslation(json.render);;
             const template = renderTemplate.replace("{" + json.key + "}", "$" + type + "$");
-
             if(type === "url"){
                 renderTemplate = json.render.replace("{" + json.key + "}", 
                     `<a href='{${json.key}}' target='_blank'>{${json.key}}</a>`
@@ -152,13 +156,19 @@ export class CustomLayoutFromJSON {
     }) {
         const iconRendering: TagDependantUIElementConstructor = CustomLayoutFromJSON.TagRenderingFromJson(layout.icon);
         const colourRendering = CustomLayoutFromJSON.TagRenderingFromJson(layout.color);
+        let thickness = CustomLayoutFromJSON.TagRenderingFromJson(layout.width);
+
 
         return (tags) => {
             const iconUrl = iconRendering.GetContent(tags);
             const stroke = colourRendering.GetContent(tags);
+            let weight = parseInt(thickness?.GetContent(tags)) ?? 10;
+            if(isNaN(weight)){
+                weight = 10;
+            }
             return {
                 color: stroke,
-                weight: 10,
+                weight: weight,
                 icon: {
                     iconUrl: iconUrl,
                     iconSize: [40, 40],

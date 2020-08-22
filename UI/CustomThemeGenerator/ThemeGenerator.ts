@@ -296,7 +296,7 @@ class LayerGenerator extends UIElement {
                 addExtraTags: "",
                 mappings: [],
                 question: "",
-                render: "Title",
+                render: "./assets/bug.svg",
                 type: "text"
             }, {
                 header: "Icon",
@@ -304,17 +304,32 @@ class LayerGenerator extends UIElement {
                 removable: false,
                 hideQuestion: true
             }),
+            
 
             new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.color ?? {
                 key: "*",
                 addExtraTags: "",
                 mappings: [],
                 question: "",
-                render: "Title",
+                render: "#0000ff",
                 type: "text"
             }, {
                 header: "Colour",
                 description: "This decides which color is used to represent a way on the map. Note that if an icon is defined as well, the icon will be showed too",
+                removable: false,
+                hideQuestion: true
+            }),
+
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.width ?? {
+                key: "*",
+                addExtraTags: "",
+                mappings: [],
+                question: "",
+                render: "10",
+                type: "nat"
+            }, {
+                header: "Line thickness",
+                description: "This decides the line thickness of ways (in pixels)",
                 removable: false,
                 hideQuestion: true
             }),
@@ -406,16 +421,20 @@ class AllLayerComponent extends UIElement {
                 config.data.layers.push({
                     id: "",
                     title: {
-                        key: "",
-                        render: "title"
+                        key: "*",
+                        render: "Title"
                     },
                     icon: {
-                        key: "",
+                        key: "*",
                         render: "./assets/bug.svg"
                     },
                     color: {
-                        key: "",
+                        key: "*",
                         render: "#0000ff"
+                    },
+                    width: {
+                        key:"*",
+                        render: "10"
                     },
                     description: "",
                     minzoom: 12,
