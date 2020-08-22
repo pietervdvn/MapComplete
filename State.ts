@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.5b";
+    public static vNumber = "0.0.5c";
 
     public static runningFromConsole: boolean = false; 
 
@@ -47,7 +47,7 @@ export class State {
      */
     public bm;
     /**
-     The user crednetials
+     The user credentials
      */
     public osmConnection: OsmConnection;
     

@@ -44,14 +44,17 @@ export class MoreScreen extends UIElement {
             const currentLocation = State.state.locationControl.data;
             const linkText =
                 `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            let description = Translations.W(layout.description);
+            if(description !== undefined){
+                description = new Combine(["<br/>", description]);
+            }
             const link =
                 new SubtleButton(layout.icon,
                     new Combine([
                         "<b>",
                         Translations.W(layout.title),
                         "</b>",
-                        "<br/>",
-                        Translations.W(layout.description),
+                        description ?? "",
                     ]), {url: linkText, newTab: false});
 
             els.push(link)

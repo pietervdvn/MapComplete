@@ -15,6 +15,7 @@ import {GhostBikes} from "./Layouts/GhostBikes";
 import {CustomLayoutFromJSON} from "./JSON/CustomLayoutFromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
+import * as toilets from "../assets/themes/toilets/toilets.json";
 
 export class AllKnownLayouts {
 
@@ -28,6 +29,7 @@ export class AllKnownLayouts {
         new GhostBikes(),
         CustomLayoutFromJSON.LayoutFromJSON(bookcases),
         CustomLayoutFromJSON.LayoutFromJSON(aed),
+        CustomLayoutFromJSON.LayoutFromJSON(toilets),
 
         new MetaMap(),
         new StreetWidth(),

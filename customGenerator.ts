@@ -7,6 +7,8 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {createHash} from "crypto";
 import Combine from "./UI/Base/Combine";
 import {Button} from "./UI/Base/Button";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
+import {State} from "./State";
 
 const connection = new OsmConnection(true, new UIEventSource<string>(undefined), false);
 connection.AttemptLogin();
@@ -16,7 +18,7 @@ const localStorage = LocalStorageSource.Get("last-custom-save");
 console.log("hash", hash)
 console.log("Saved: ", localStorage.data)
 
-if (hash === undefined || hash === "") {
+if (hash === undefined || hash === "" && localStorage.data !== undefined) {
     const previous = localStorage.data.split("#");
     hash = previous[1];
     console.log("Using previously saved data ", hash)
@@ -41,4 +43,9 @@ new Combine([
         themeGenerator.themeObject.data.maintainer = connection.userDetails.data.name;
         themeGenerator.themeObject.data.layers = [];
         themeGenerator.themeObject.ping();
-    })]).AttachTo("preview");
+    }),
+    "<br/>",
+    "Version: ",
+    State.vNumber
+
+]).AttachTo("preview");
