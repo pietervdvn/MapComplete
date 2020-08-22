@@ -97,7 +97,8 @@ export class ShareScreen extends UIElement {
             {urlName: "fs-welcome-message", human: "Enable the welcome message"},
             {urlName: "fs-layers", human: "Enable layer control"},
             {urlName: "fs-add-new", human: "Enable the 'add new POI' button"},
-            {urlName: "fs-geolocation", human: "Enable the 'geolocate-me' button"}
+            {urlName: "fs-geolocation", human: "Enable the 'geolocate-me' button"},
+            {urlName: "layer-control-toggle", human: "Start with the layer control expanded", reverse:true}
         ]
 
 
@@ -106,13 +107,19 @@ export class ShareScreen extends UIElement {
             const checkbox = new CheckBox(
                 new Combine([Img.checkmark, swtch.human]),
                 new Combine([Img.no_checkmark, swtch.human]),
-                true
+                swtch.reverse ? false : true
             );
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
                 if (isEn) {
+                    if(swtch.reverse){
+                       return `${swtch.urlName}=true`
+                    }
                     return null;
                 } else {
+                    if(swtch.reverse){
+                        return null;
+                    }
                     return `${swtch.urlName}=false`
                 }
             }))
@@ -127,7 +134,8 @@ export class ShareScreen extends UIElement {
             
             let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.name + ".html"
 
-            const parts = Utils.NoNull(optionParts.map((eventSource) => eventSource.data));
+            const parts = 
+                Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
             let hash = "";
             if (State.state.layoutDefinition !== undefined) {
@@ -135,6 +143,7 @@ export class ShareScreen extends UIElement {
                 literalText = "https://pietervdvn.github.io/MapComplete/index.html"
                 parts.push("userlayout=true");
             }
+            
 
             if (parts.length === 0) {
                 return literalText + hash;

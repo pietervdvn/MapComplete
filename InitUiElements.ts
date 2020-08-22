@@ -127,7 +127,10 @@ export class InitUiElements {
 
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const checkbox = new CheckBox(layerControl, closedFilterButton);
+            const checkbox = new CheckBox(layerControl, closedFilterButton,
+                QueryParameters.GetQueryParameter("layer-control-toggle", "false")
+                    .map((str) => str !== "false", [], b => "" + b)
+            );
             checkbox.AttachTo("filter__selection");
             State.state.bm.Location.addCallback(() => {
                 checkbox.isEnabled.setData(false);

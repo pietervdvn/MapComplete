@@ -441,10 +441,14 @@ export class ThemeGenerator extends UIElement {
     private readonly allQuestionFields: UIElement[];
     public url: UIEventSource<string>;
 
+    private loginButton: Button
 
     constructor(connection: OsmConnection, windowHash) {
         super(connection.userDetails);
         this.userDetails = connection.userDetails;
+        this.loginButton = new Button("Log in with OSM", () => {
+            connection.AttemptLogin()
+        })
 
         const defaultTheme = {layers: [], icon: "./assets/bug.svg"};
         let loadedTheme = undefined;
@@ -573,7 +577,7 @@ export class ThemeGenerator extends UIElement {
     InnerRender(): string {
 
         if (!this.userDetails.data.loggedIn) {
-            return "Not logged in. You need to be logged in to create a theme."
+            return new Combine(["Not logged in. You need to be logged in to create a theme.", this.loginButton]).Render();
         }
         if (this.userDetails.data.csCount < 500) {
             return "You need at least 500 changesets to create your own theme.";

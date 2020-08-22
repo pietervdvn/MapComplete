@@ -46,6 +46,17 @@ export class Utils {
         }
         return ls;
     }
+    
+    public static NoEmpty(array: string[]): string[]{
+        const ls: string[] = [];
+        for (const t of array) {
+            if (t === "") {
+                continue;
+            }
+            ls.push(t);
+        }
+        return ls;
+    }
 
     public static CreateLanguagePicker(label: string | UIElement = "") {
 
