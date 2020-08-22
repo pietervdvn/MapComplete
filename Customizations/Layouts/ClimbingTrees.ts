@@ -15,7 +15,7 @@ export class ClimbingTrees extends Layout {
             4.3688,
             Translations.t.climbingTrees.layout.welcome
         );
-        this.icon = "./assets/walkbybrussels/tree.svg"
+        this.icon = "./assets/themes/nature/tree.svg"
         this.hideFromOverview = true;
     }
 }

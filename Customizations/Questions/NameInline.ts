@@ -2,11 +2,12 @@ import {And, Tag} from "../../Logic/TagsFilter";
 import {UIElement} from "../../UI/UIElement";
 import Translations from "../../UI/i18n/Translations";
 import {TagRenderingOptions} from "../TagRenderingOptions";
+import Translation from "../../UI/i18n/Translation";
 
 
 export class NameInline extends TagRenderingOptions{
     
-    constructor(category: string | UIElement ) {
+    constructor(category: string | Translation ) {
         super({
             question: "",
 

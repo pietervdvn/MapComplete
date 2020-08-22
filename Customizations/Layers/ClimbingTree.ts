@@ -11,7 +11,7 @@ export class ClimbingTree extends LayerDefinition {
         super("climbingtree");
         const t = Translations.t.climbingTrees.layer;
         this.title = new FixedText(t.title);
-        const icon = "assets/walkbybrussels/tree.svg";
+        const icon = "./assets/themes/nature/tree.svg";
         this.icon = icon;
         this.description = t.description;
         this.style = (tags) => {

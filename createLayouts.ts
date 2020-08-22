@@ -1,6 +1,11 @@
 import {UIElement} from "./UI/UIElement";
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
+
+import {TagRendering} from "./Customizations/TagRendering";
+
+TagRendering.injectFunction();
+
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
@@ -8,6 +13,7 @@ import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Translations from "./UI/i18n/Translations";
+import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
 
 
 console.log("Building the layouts")
@@ -88,6 +94,8 @@ function createIcon(iconPath: string, size: number) {
 
     }
 
+    console.log("Creating icon ", name, newname)
+
     svg2img(iconPath,
         // @ts-ignore
         {width: size, height: size, preserveAspectRatio: true})
@@ -95,21 +103,23 @@ function createIcon(iconPath: string, size: number) {
             console.log("Writing icon", newname)
             writeFileSync(newname, buffer);
         }).catch((error) => {
-            console.log("ERROR", error)
+        console.log("ERROR while writing" + iconPath, error)
     });
     return newname;
 }
 
 function createManifest(layout: Layout, relativePath: string) {
-    const name = layout.name; 
+    const name = layout.name;
 
     const icons = [];
 
-    if (layout.icon.endsWith(".svg")) {
+    let icon = layout.icon;
+    console.log(icon)
+    if (icon.endsWith(".svg")) {
         // This is an svg. Lets create the needed pngs!
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
-            const name = createIcon(layout.icon, size);
+            const name = createIcon(icon, size);
             icons.push({
                 src: name,
                 sizes: size + "x" + size,
@@ -117,7 +127,7 @@ function createManifest(layout: Layout, relativePath: string) {
             })
         }
         icons.push({
-            src: layout.icon,
+            src: icon,
             sizes: "513x513",
             type: "image/svg"
         })
@@ -126,7 +136,7 @@ function createManifest(layout: Layout, relativePath: string) {
         throw "Icon is not an svg for " + layout.name
     }
     const ogTitle = Translations.W(layout.title).InnerRender();
-    const ogDescr = Translations.W(layout.description).InnerRender();
+    const ogDescr = Translations.W(layout.description ?? "").InnerRender();
 
     const manif = {
         name: name,
@@ -147,7 +157,7 @@ function createLandingPage(layout: Layout) {
     Locale.language.setData(layout.supportedLanguages[0]);
 
     const ogTitle = Translations.W(layout.title).InnerRender();
-    const ogDescr = Translations.W(layout.description).InnerRender();
+    const ogDescr = Translations.W(layout.description ?? "").InnerRender();
     const ogImage = layout.socialImage;
 
     const og = `
@@ -183,10 +193,11 @@ for (const layoutName in all) {
     writeFile(manifestLocation, manif, err);
 
     const landing = createLandingPage(layout);
-    console.log("Generating html-file for ",layout.name)
+    console.log("Generating html-file for ", layout.name)
     writeFile(enc(layout.name) + ".html", landing, err)
     console.log("done")
 }
-console.log("COunting all translations")
+
+console.log("Counting all translations")
 Translations.CountTranslations();
 console.log("All done!")

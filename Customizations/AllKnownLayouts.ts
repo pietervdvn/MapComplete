@@ -35,7 +35,7 @@ export class AllKnownLayouts {
         new Artworks(),
         new Smoothness(),
         new Groen(),
-        
+
         /*
         new Toilets(),
         */

@@ -1,5 +1,4 @@
 import {Layout} from "../Layout";
-import * as Layer from "../Layers/Bookcases";
 import {Map} from "../Layers/Map";
 
 export class MetaMap extends Layout{
@@ -15,6 +14,6 @@ export class MetaMap extends Layout{
 
             "        <h3>Open Map Map</h3>\n" +
             "This map is a map of physical maps, as known by OpenStreetMap.");
-        this.icon = "assets/osm-logo-buggy-attr.svg"
+        this.icon = "./assets/osm-logo-buggy-attr.svg"
     }
 }

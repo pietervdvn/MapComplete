@@ -52,7 +52,7 @@ export class Groen extends Layout {
             "</small>"
         );
         
-        this.icon = "assets/groen.svg"
+        this.icon = "./assets/groen.svg"
         this.locationContains = ["buurtnatuur.be"]
         this.socialImage = "assets/BuurtnatuurFront.jpg"
         this.description = "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje"

@@ -1,8 +1,9 @@
 import {UIElement} from "../../UI/UIElement";
 import {TagRenderingOptions} from "../TagRenderingOptions";
+import Translation from "../../UI/i18n/Translation";
 
 export default class FixedText extends TagRenderingOptions {
-    constructor(category: string | UIElement) {
+    constructor(category: string | Translation) {
         super({
             mappings: [
                 {

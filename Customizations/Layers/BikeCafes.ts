@@ -61,7 +61,7 @@ export default class BikeCafes extends LayerDefinition {
             return {
                 color: "#00bb00",
                 icon: {
-                    iconUrl: self.icon,
+                    iconUrl:  "./assets/bike/cafe.svg",
                     iconSize: [50, 50],
                     iconAnchor: [25,50]
                 }

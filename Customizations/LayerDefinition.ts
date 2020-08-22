@@ -2,6 +2,7 @@ import {Tag, TagsFilter} from "../Logic/TagsFilter";
 import {UIElement} from "../UI/UIElement";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagRenderingOptions} from "./TagRenderingOptions";
+import Translation from "../UI/i18n/Translation";
 
 export interface Preset {
     tags: Tag[],
@@ -21,7 +22,7 @@ export class LayerDefinition {
     /***
      * This is shown under the 'add new' button to indicate what kind of feature one is adding.
      */
-    description: string | UIElement
+    description: string | Translation
 
     /**
      * These tags are added whenever a new point is added by the user on the map.
@@ -94,8 +95,8 @@ export class LayerDefinition {
     static WAYHANDLING_CENTER_AND_WAY = 2;
     
     constructor(id: string, options: {
-        name: string | UIElement,
-        description: string | UIElement,
+        name: string | Translation,
+        description: string | Translation,
         presets: Preset[],
         icon: string,
         minzoom: number,

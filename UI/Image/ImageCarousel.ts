@@ -29,6 +29,10 @@ export class ImageCarouselConstructor implements TagDependantUIElementConstructo
         return new ImageCarousel(dependencies.tags);
     }
 
+    GetContent(tags: any): string {
+        return undefined;
+    }
+
 }
 
 export class ImageCarousel extends TagDependantUIElement {

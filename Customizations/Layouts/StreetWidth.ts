@@ -1,5 +1,4 @@
 import {Layout} from "../Layout";
-import * as Layer from "../Layers/Bookcases";
 import {Widths} from "../Layers/Widths";
 
 export class StreetWidth extends Layout{
@@ -85,7 +84,7 @@ export class StreetWidth extends Layout{
             "<li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>" +
             "<li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder dat er een fietspad of een straat geblokkeerd wordt</li>" +
             "</ul>");
-        this.icon = "assets/bug.svg";
+        this.icon = "./assets/bug.svg";
         this.enableSearch = false;
         this.enableUserBadge = false;
         this.enableAdd = false;
