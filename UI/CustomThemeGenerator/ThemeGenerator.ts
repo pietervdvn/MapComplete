@@ -18,6 +18,7 @@ import {Tag} from "../../Logic/TagsFilter";
 import {DropDown} from "../Input/DropDown";
 import {TagRendering} from "../../Customizations/TagRendering";
 import {LayerDefinition} from "../../Customizations/LayerDefinition";
+import {State} from "../../State";
 
 
 TagRendering.injectFunction();
@@ -620,8 +621,8 @@ export class ThemeGenerator extends UIElement {
         if (!this.userDetails.data.loggedIn) {
             return new Combine(["Not logged in. You need to be logged in to create a theme.", this.loginButton]).Render();
         }
-        if (this.userDetails.data.csCount < 500) {
-            return "You need at least 500 changesets to create your own theme.";
+        if (this.userDetails.data.csCount < State.userJourney.themeGeneratorUnlock        ) {
+            return `You need at least ${State.userJourney.themeGeneratorUnlock} changesets to create your own theme.`;
         }
 
 

@@ -15,6 +15,7 @@ import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
+import {SubtleButton} from "../UI/Base/SubtleButton";
 
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
@@ -39,6 +40,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _questionElement: InputElement<TagsFilter>;
 
     private readonly _saveButton: UIElement;
+    private readonly _friendlyLogin: UIElement;
+
     private readonly _skipButton: UIElement;
     private readonly _editButton: UIElement;
 
@@ -142,14 +145,17 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                     if (tags === undefined) {
                         return "";
                     }
-                    if ((State.state?.osmConnection?.userDetails?.data?.csCount ?? 0) < 200) {
+                    const csCount = State.state.osmConnection.userDetails.data.csCount;
+                    if (csCount < State.userJourney.tagsVisibleAt) {
                         return "";
                     }
-                    return tags.asHumanString()
+                    if (csCount < State.userJourney.tagsVisibleAndWikiLinked) {
+                        return new FixedUiElement(tags.asHumanString(false)).SetClass("subtle").Render();
+                    }
+                    return tags.asHumanString(true);
                 }
             )
         );
-        this._appliedTags.clss = "subtle";
 
         const cancel = () => {
             self._questionSkipped.setData(true);
@@ -160,6 +166,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         // Setup the save button and it's action
         this._saveButton = new SaveButton(this._questionElement.GetValue())
             .onClick(save);
+
+        this._friendlyLogin = Translations.t.general.loginToStart
+            .onClick(() => State.state.osmConnection.AttemptLogin())
 
         this._editButton = new FixedUiElement("");
         if (this._question !== undefined) {
@@ -381,6 +390,17 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     InnerRender(): string {
+
+        if (this.IsQuestioning() && !State.state.osmConnection.userDetails.data.loggedIn) {
+            const question =
+                this.ApplyTemplate(this._question).Render();
+            return "<div class='question'>" +
+                "<span class='question-text'>" + question + "</span>" +
+                "<br/>" +
+                "<span class='login-button-friendly'>" + this._friendlyLogin.Render() + "</span>" +
+                "</div>"
+        }
+
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
 
@@ -430,14 +450,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
         const self = this;
         const tags = this._source.map(tags => self._tagsPreprocessor(self._source.data));
-        let transl : Translation;
-        if (typeof (template) === "string") {
-            transl = new Translation({en: TagUtils.ApplyTemplate(template, tags)});
-        }else{
-            transl = template;
-        }
-        
-        return new VariableUiElement(tags.map(tags => transl.Subs(tags).InnerRender()));
+        return new VariableUiElement(tags.map(tags => {
+            const tr = Translations.WT(template);
+            if (tr.Subs === undefined) {
+                // This is a weird edge case
+                return tr.InnerRender();
+            }
+            return tr.Subs(tags).InnerRender()
+        }));
     }
 
 

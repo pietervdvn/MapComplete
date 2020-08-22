@@ -98,7 +98,7 @@ export class FeatureInfoBox extends UIElement {
                 info.push(infobox);
             } else if (infobox.IsQuestioning()) {
                 questions.push(infobox);
-            } else if(infobox.IsSkipped()){
+            } else if (infobox.IsSkipped()) {
                 // This question is neither known nor questioning -> it was skipped
                 skippedQuestions++;
             }
@@ -107,7 +107,19 @@ export class FeatureInfoBox extends UIElement {
 
         let questionsHtml = "";
 
-        if (State.state.osmConnection.userDetails.data.loggedIn && questions.length > 0) {
+        if (!State.state.osmConnection.userDetails.data.loggedIn) {
+            let mostImportantQuestion;
+            let score = -1000;
+            for (const question of questions) {
+
+                if (mostImportantQuestion === undefined || question.Priority() > score) {
+                    mostImportantQuestion = question;
+                    score = question.Priority();
+                }
+            }
+
+            questionsHtml = mostImportantQuestion.Render();
+        } else if (questions.length > 0) {
             // We select the most important question and render that one
             let mostImportantQuestion;
             let score = -1000;

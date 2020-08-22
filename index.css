@@ -1111,11 +1111,26 @@ form {
     background-color: #3a3aeb;
     color: white;
     padding: 0.2em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
     font-size: x-large;
     font-weight: bold;
     border-radius: 1.5em;
+}
+
+.login-button-friendly {
+    display: inline-block;
+    border: solid white 2px;
+    background-color: #3a3aeb;
+    color: white;
+    padding: 0.2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 1.5em;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .save-non-active {

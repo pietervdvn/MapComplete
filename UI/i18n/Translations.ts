@@ -673,6 +673,10 @@ export default class Translations {
                 nl: "Je bent aangemeld. Welkom terug!",
                 fr: "Vous êtes connecté, bienvenue"
             }),
+            loginToStart: new T({
+                en: "Login to answer this question",
+                nl: "Meld je aan om deze vraag te beantwoorden"
+            }),
             search: {
                 search: new Translation({
                     en: "Search a location",

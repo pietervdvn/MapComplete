@@ -24,7 +24,17 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.5d";
+    public static vNumber = "0.0.5e";
+    
+    // The user journey states thresholds when a new feature gets unlocked
+    public static userJourney = {
+        customLayoutUnlock: 50,
+        themeGeneratorUnlock: 500,
+        tagsVisibleAt: 200,
+        tagsVisibleAndWikiLinked: 250
+
+
+    };
 
     public static runningFromConsole: boolean = false; 
 

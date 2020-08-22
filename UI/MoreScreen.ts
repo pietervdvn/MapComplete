@@ -2,11 +2,6 @@ import {UIElement} from "./UIElement";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import Translations from "./i18n/Translations";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {Utils} from "../Utils";
-import {link} from "fs";
-import {UIEventSource} from "./UIEventSource";
-import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import {State} from "../State";
@@ -21,6 +16,7 @@ export class MoreScreen extends UIElement {
     }
 
     InnerRender(): string {
+        
         const tr = Translations.t.general.morescreen;
 
         const els: UIElement[] = []
@@ -36,7 +32,8 @@ export class MoreScreen extends UIElement {
                 if (!State.state.osmConnection.userDetails.data.loggedIn) {
                     continue;
                 }
-                if (State.state.osmConnection.userDetails.data.csCount < 50) {
+                if (State.state.osmConnection.userDetails.data.csCount < 
+                    State.userJourney.customLayoutUnlock) {
                     continue;
                 }
             }

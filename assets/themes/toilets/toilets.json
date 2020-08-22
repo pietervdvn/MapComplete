@@ -28,6 +28,11 @@
           "title": "Toilet",
           "tags": "amenity=toilets",
           "description": "Only add public toilets"
+        },
+        {
+          "title": "Toilets with wheelchair accessible toilet",
+          "tags": "amenity=toilets&wheelchair=yes",
+          "description": "A restroom which has at least one wheelchair-accessible toilet"
         }
       ],
       "tagRenderings": [

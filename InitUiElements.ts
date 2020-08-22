@@ -64,8 +64,10 @@ export class InitUiElements {
             tabs.push({header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()});
         }
 
-        if (State.state.featureSwitchMoreQuests.data) {
-            tabs.push({header: `<img src='${'./assets/add.svg'}'>`, content: new MoreScreen()});
+        if (State.state.featureSwitchMoreQuests.data){
+            
+            tabs.push({header:                   `<img src='${'./assets/add.svg'}'>`
+                , content: new MoreScreen()});
         }
 
 

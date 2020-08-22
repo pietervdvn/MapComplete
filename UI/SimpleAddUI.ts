@@ -9,6 +9,7 @@ import {State} from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -58,18 +59,26 @@ export class SimpleAddUI extends UIElement {
                     } else {
                         icon = preset.icon;
                     }
-                }else{
-                    console.warn("No icon defined for preset ", preset, "in layer ",layer.layerDef.id)
+                } else {
+                    console.warn("No icon defined for preset ", preset, "in layer ", layer.layerDef.id)
                 }
 
-                const button =
+                const csCount = State.state.osmConnection.userDetails.data.csCount;
+                let tagInfo = "";
+                if (csCount > State.userJourney.tagsVisibleAt) {
+                    tagInfo = preset.tags.map(t => t.asHumanString(false)).join("&");
+                    tagInfo = `<br/><span class='subtle'>${tagInfo}</span>`
+                }
+                const button: UIElement =
                     new SubtleButton(
                         icon,
                         new Combine([
                             "<b>",
                             preset.title,
-                            "</b><br/>",
-                            preset.description !== undefined ? preset.description : ""])
+                            "</b>",
+                            preset.description !== undefined ? new Combine(["<br/>", preset.description]) : "",
+                            tagInfo
+                        ])
                     ).onClick(
                         () => {
                             self.confirmButton = new SubtleButton(icon,
@@ -87,10 +96,12 @@ export class SimpleAddUI extends UIElement {
                                 icon: icon
                             });
                         }
-                )
+                    )
+
+                
 
 
-            this._addButtons.push(button);
+                this._addButtons.push(button);
             }
         }
         
@@ -120,15 +131,23 @@ export class SimpleAddUI extends UIElement {
         if (this._confirmPreset.data !== undefined) {
 
             if(userDetails.data.dryRun){
-                this.CreatePoint(this._confirmPreset.data.tags, this._confirmPreset.data.layerToAddTo)();
-                return "";
+              //  this.CreatePoint(this._confirmPreset.data.tags, this._confirmPreset.data.layerToAddTo)();
+              //  return "";
             }
 
+            let tagInfo = "";
+            const csCount = State.state.osmConnection.userDetails.data.csCount;
+            if (csCount > State.userJourney.tagsVisibleAt) {
+                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > State.userJourney.tagsVisibleAndWikiLinked)).join("&");
+                tagInfo = `<br/>More information about the preset: ${tagInfo}`
+            }
+            
             return new Combine([
                 Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
                 userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>":"",
                 this.confirmButton,
-                this.cancelButton
+                this.cancelButton,
+                tagInfo
 
             ]).Render();
 

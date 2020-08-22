@@ -9,7 +9,8 @@ The design goals of MapComplete are to be:
 
 - Easy to use, both on web and on mobile
 - Easy to deploy (by not having a backand)
-- Easy to modify
+- Easy to set up a custom theme
+- Easy to fall down the rabbit hole of OSM
 
 The basic functionality is to download some map features from Overpass and then ask certain questions. An answer is sent back to directly to OpenStreetMap.
 
@@ -25,6 +26,31 @@ An explicit non-goal of MapComplete is to modify geometries of ways. Although ad
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=metamap&z=14&lat=50.650&lon=4.2668#element), after a tweet
 
 Have a theme idea? Drop it in the [issues](https://github.com/pietervdvn/MapComplete/issues)
+
+## User journey
+
+MapComplete is set up to lure people into OpenStreetMap and to teach them while they are on the go, step by step.
+
+A typical user journey would be:
+
+0) Oh, this is a cool map of _my specific interest_! There is a lot of data already...
+0a) The user might discover the explanation about OSM in the dedicated tab page
+0b) The user might discover the other themes in the other tab
+0c) The user might share the map and/or embed it
+
+1) The user clicks that big tempting button 'login' in order to answer questions. The user makes an account - a big step.
+
+2) The user answers a question! Hooray!
+    When at least one question is answered (aka: having one changeset on OSM), adding a new point is unlocked
+    
+3) The user adds a new POI somewhere 
+3a) Note that _all messages_ must be read before being able to add a point. In other words, sending a message to a misbehaving MapComplete user acts as having a zero-minutes-block. This is added deliberately to avoid new users fucking up too much
+
+4) At 50 changesets, the custom layout becomes available
+5) At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This is to give more control to power users and to teach new users the tagging scheme
+5) At 250 changesets, the tags get linked to the wiki
+6) At 500 changesets, I expect users to be power users and to be comfortable with tagging scheme and such. The custom theme generator is unlocked.
+
 
 ## License
 
@@ -87,6 +113,11 @@ TODO: erase cookies of third party websites and API's
 # Translating MapComplete
 
 Help to translate mapcomplete. Fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add your language and send a pull request.
+
+# Creating your own theme
+
+You can create [your own theme too](https://pietervdvn.github.io/MapComplete/customGenerator.html)
+
 
 # Attributions:
 

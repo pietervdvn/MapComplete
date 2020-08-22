@@ -15,5 +15,5 @@ export class VariableUiElement extends UIElement {
     InnerRender(): string {
         return this._html.data;
     }
-    
+
 }

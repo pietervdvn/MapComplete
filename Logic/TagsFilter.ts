@@ -8,7 +8,7 @@ export abstract class TagsFilter {
         return this.matches(TagUtils.proprtiesToKV(properties));
     }
 
-    abstract asHumanString();
+    abstract asHumanString(linkToWiki: boolean);
 }
 
 
@@ -150,8 +150,13 @@ export class Tag extends TagsFilter {
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 
-    asHumanString() {
-        return this.key+"="+this.value;
+    asHumanString(linkToWiki: boolean) {
+        if (linkToWiki) {
+            return `<a href='https://wiki.openstreetmap.org/wiki/Key:${this.key}' target='_blank'>${this.key}</a>` +
+                `=` +
+                `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${this.value}</a>`
+        }
+        return this.key + "=" + this.value;
     }
 }
 
@@ -200,9 +205,9 @@ export class Or extends TagsFilter {
         }
         return new Or(newChoices);
     }
-    
-    asHumanString() {
-        return this.or.map(t => t.asHumanString()).join("|");
+
+    asHumanString(linkToWiki: boolean) {
+        return this.or.map(t => t.asHumanString(linkToWiki)).join("|");
     }
 }
 
@@ -262,8 +267,8 @@ export class And extends TagsFilter {
         return new And(newChoices);
     }
 
-    asHumanString() {
-        return this.and.map(t => t.asHumanString()).join("&");
+    asHumanString(linkToWiki: boolean) {
+        return this.and.map(t => t.asHumanString(linkToWiki)).join("&");
     }
 }
 
@@ -288,8 +293,8 @@ export class Not extends TagsFilter{
         return new Not(this.not.substituteValues(tags));
     }
 
-    asHumanString() {
-        return "!"+this.not.asHumanString();
+    asHumanString(linkToWiki: boolean) {
+        return "!" + this.not.asHumanString(linkToWiki);
     }
 }
 
