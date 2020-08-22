@@ -40,7 +40,14 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
     Priority(): number {
         return this._embedded.Priority();
     }
-      
+    
+    GetContent(tags: any): string {
+        if(!this.IsKnown(tags)){
+            return undefined;
+        }
+        return this._embedded.GetContent(tags);
+    }
+
     private Matches(properties: any) : boolean{
         return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties));
     } 

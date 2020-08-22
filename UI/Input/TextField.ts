@@ -2,8 +2,96 @@ import {UIElement} from "../UIElement";
 import {InputElement} from "./InputElement";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import * as EmailValidator from "email-validator";
+import {parsePhoneNumberFromString} from "libphonenumber-js";
+import {TagRenderingOptions} from "../../Customizations/TagRenderingOptions";
+import {CustomLayoutFromJSON} from "../../Customizations/JSON/CustomLayoutFromJSON";
+import {Tag} from "../../Logic/TagsFilter";
+
+export class ValidatedTextField {
+    public static inputValidation = {
+        "$": (str) => true,
+        "string": (str) => true,
+        "date": (str) => true, // TODO validate and add a date picker
+        "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
+        "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
+        "float": (str) => !isNaN(Number(str)),
+        "pfloat": (str) => !isNaN(Number(str)) && Number(str) > 0,
+        "email": (str) => EmailValidator.validate(str),
+        "url": (str) => str,
+        "phone": (str, country) => {
+            return parsePhoneNumberFromString(str, country.toUpperCase())?.isValid() ?? false;
+        }
+    }
+
+    public static formatting = {
+        "phone": (str, country) => {
+            console.log("country formatting", country)
+            return parsePhoneNumberFromString(str, country.toUpperCase()).formatInternational()
+        }
+    }
+
+    public static TagTextField(value: UIEventSource<Tag[]> = undefined, allowEmpty: boolean) {
+        allowEmpty = allowEmpty ?? false;
+        return new TextField<Tag[]>({
+                placeholder: "Tags",
+                fromString: str => {
+                    const tags = CustomLayoutFromJSON.TagsFromJson(str);
+                    if (tags === []) {
+                        if (allowEmpty) {
+                            return []
+                        } else {
+                            return undefined;
+                        }
+                    }
+                    return tags;
+                }
+                ,
+                toString: (tags: Tag[]) => {
+                    if (tags === undefined) {
+                        return undefined;
+                    }
+                    if (tags === []) {
+                        if (allowEmpty) {
+                            return "";
+                        } else {
+                            return undefined;
+                        }
+                    }
+                    return tags.map(tag => 
+                        tag.invertValue ? tag.key + "!=" + tag.value : 
+                        tag.key + "=" + tag.value).join("&")
+                },
+                value: value,
+                startValidated: true
+            }
+        )
+    }
+
+    public static
+
+    ValidatedTextField(type: string, options: { value?: UIEventSource<string>, country?: string })
+        : TextField<string> {
+        let isValid = ValidatedTextField.inputValidation[type];
+        if (isValid === undefined
+        ) {
+            throw "Invalid type for textfield: " + type
+        }
+        let formatter = ValidatedTextField.formatting[type] ?? ((str) => str);
+        return new TextField<string>({
+            placeholder: type,
+            toString: str => str,
+            fromString: str => isValid(str, options?.country) ? formatter(str, options.country) : undefined,
+            value: options.value,
+            startValidated: true
+        })
+
+    }
+
+}
 
 export class TextField<T> extends InputElement<T> {
+
 
     private value: UIEventSource<string>;
     private mappedValue: UIEventSource<T>;
@@ -14,6 +102,7 @@ export class TextField<T> extends InputElement<T> {
     private _placeholder: UIElement;
     private _fromString?: (string: string) => T;
     private _toString: (t: T) => string;
+    private startValidated: boolean;
 
 
     constructor(options: {
@@ -33,7 +122,8 @@ export class TextField<T> extends InputElement<T> {
          * @param string
          */
         fromString: (string: string) => T,
-        value?: UIEventSource<T>
+        value?: UIEventSource<T>,
+        startValidated?: boolean,
     }) {
         super(undefined);
         const self = this;
@@ -63,7 +153,8 @@ export class TextField<T> extends InputElement<T> {
             }
             // @ts-ignore
             field.value = options.toString(t);
-        })
+        });
+        this.startValidated = options.startValidated ?? false;
     }
 
     GetValue(): UIEventSource<T> {
@@ -92,6 +183,8 @@ export class TextField<T> extends InputElement<T> {
         this.mappedValue.addCallback((data) => {
             field.className = this.mappedValue.data !== undefined ? "valid" : "invalid";
         });
+        
+        field.className = this.mappedValue.data !== undefined ? "valid" : "invalid";
 
         const self = this;
         field.oninput = () => {

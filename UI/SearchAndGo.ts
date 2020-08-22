@@ -18,7 +18,8 @@ export class SearchAndGo extends UIElement {
                 this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
             ),
             fromString: str => str,
-            toString: str => str
+            toString: str => str,
+        value: new UIEventSource<string>("")
         }
     );
 

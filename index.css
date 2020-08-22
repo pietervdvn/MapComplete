@@ -78,6 +78,10 @@ form {
     padding-bottom: 0.15em;
 }
 
+.subtle {
+    color: #cccccc;
+}
+
 .thanks {
     background-color: #43d904;
     font-weight: bold;
@@ -1196,6 +1200,7 @@ form {
     background-color: lightgray;
     padding: 0.5em;
     word-break: break-all;
+    color: black;
 }
 
 .iframe-code-block {

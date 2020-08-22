@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.4";
+    public static vNumber = "0.0.5";
 
     public static runningFromConsole: boolean = false; 
 
@@ -181,9 +181,7 @@ export class State {
 
 
         this.allElements = new ElementStorage();
-        this.changes = new Changes(
-            "Beantwoorden van vragen met #MapComplete voor vragenset #" + this.layoutToUse.data.name,
-           this);
+        this.changes = new Changes(this);
 
         if(State.runningFromConsole){
             console.warn("running from console - not initializing map. Assuming test.html");

@@ -5,29 +5,12 @@ import {UIElement} from "../UI/UIElement";
 import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
 import {UIEventSource} from "../Logic/UIEventSource";
+import Translation from "../UI/i18n/Translation";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
 
-    public static inputValidation = {
-        "$": (str) => true,
-        "string": (str) => true,
-        "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
-        "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
-        "float": (str) => !isNaN(Number(str)),
-        "pfloat": (str) => !isNaN(Number(str)) && Number(str) > 0,
-        "email": (str) => EmailValidator.validate(str),
-        "phone": (str, country) => {
-            return parsePhoneNumberFromString(str, country.toUpperCase())?.isValid() ?? false;
-        },
-    }
 
-    public static formatting = {
-        "phone": (str, country) => {
-            console.log("country formatting", country)
-            return parsePhoneNumberFromString(str, country.toUpperCase()).formatInternational()
-        }
-    }
 
     /**
      * Notes: by not giving a 'question', one disables the question form alltogether
@@ -35,16 +18,16 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
     public options: {
         priority?: number;
-        question?: string | UIElement;
+        question?: string | Translation;
         freeform?: {
             key: string;
             tagsPreprocessor?: (tags: any) => any;
-            template: string | UIElement;
-            renderTemplate: string | UIElement;
-            placeholder?: string | UIElement;
+            template: string | Translation;
+            renderTemplate: string | Translation;
+            placeholder?: string | Translation;
             extraTags?: TagsFilter
         };
-        mappings?: { k: TagsFilter; txt: string | UIElement; priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter; txt: string | Translation; priority?: number, substitute?: boolean }[]
     };
 
 
@@ -57,7 +40,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          * If 'question' is undefined, then the question is never asked at all
          * If the question is "" (empty string) then the question is
          */
-        question?: UIElement | string,
+        question?: Translation | string,
 
         /**
          * What is the priority of the question.
@@ -78,7 +61,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          *
          *
          */
-        mappings?: { k: TagsFilter, txt: UIElement | string, priority?: number, substitute?: boolean }[],
+        mappings?: { k: TagsFilter, txt: Translation | string, priority?: number, substitute?: boolean }[],
 
 
         /**
@@ -88,9 +71,9 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          */
         freeform?: {
             key: string,
-            template: string | UIElement,
-            renderTemplate: string | UIElement
-            placeholder?: string | UIElement,
+            template: string | Translation,
+            renderTemplate: string | Translation
+            placeholder?: string | Translation,
             extraTags?: TagsFilter,
         },
 
@@ -129,8 +112,33 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         return true;
     }
 
+    GetContent(tags: any): string {
+        const tagsKV = TagUtils.proprtiesToKV(tags);
 
-    public static tagRendering : (tags: UIEventSource<any>, options: { priority?: number; question?: string | UIElement; freeform?: { key: string; tagsPreprocessor?: (tags: any) => any; template: string | UIElement; renderTemplate: string | UIElement; placeholder?: string | UIElement; extraTags?: TagsFilter }; mappings?: { k: TagsFilter; txt: string | UIElement; priority?: number; substitute?: boolean }[] }) => TagDependantUIElement;
+        for (const oneOnOneElement of this.options.mappings ?? []) {
+            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tagsKV)) {
+                const mapping = oneOnOneElement.txt;
+                if (typeof (mapping) === "string") {
+                    return mapping;
+                } else {
+                    return mapping.InnerRender();
+                }
+            }
+        }
+        if (this.options.freeform !== undefined) {
+            let template = this.options.freeform.renderTemplate;
+            if (typeof (template) !== "string") {
+                template = template.InnerRender();
+            }
+            return TagUtils.ApplyTemplate(template, tags);
+        }
+
+        return undefined;
+    }
+
+
+    public static tagRendering: (tags: UIEventSource<any>, options: { priority?: number; question?: string | Translation; freeform?: { key: string; tagsPreprocessor?: (tags: any) => any; template: string | Translation; renderTemplate: string | Translation; placeholder?: string | Translation; extraTags?: TagsFilter }; mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean }[] }) => TagDependantUIElement;
+
     construct(dependencies: Dependencies): TagDependantUIElement {
         return TagRenderingOptions.tagRendering(dependencies.tags, this.options);
     }

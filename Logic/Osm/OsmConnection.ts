@@ -2,6 +2,7 @@
 import osmAuth from "osm-auth";
 import {UIEventSource} from "../UIEventSource";
 import {CustomLayersState} from "../CustomLayersState";
+import {State} from "../../State";
 
 export class UserDetails {
 
@@ -262,16 +263,16 @@ export class OsmConnection {
             const newId = parseInt(node.attributes.new_id.value);
             if (oldId !== undefined && newId !== undefined &&
                 !isNaN(oldId) && !isNaN(newId)) {
-                mapping["node/"+oldId] = "node/"+newId;
+                mapping["node/" + oldId] = "node/" + newId;
             }
         }
         return mapping;
     }
 
 
-    public UploadChangeset(comment: string, generateChangeXML: ((csid: string) => string),
-                           handleMapping: ((idMapping: any) => void),
-                           continuation: (() => void)) {
+    public UploadChangeset(generateChangeXML: (csid: string) => string,
+                           handleMapping: (idMapping: any) => void,
+                           continuation: () => void) {
 
         if (this._dryRun) {
             console.log("NOT UPLOADING as dryrun is true");
@@ -282,7 +283,7 @@ export class OsmConnection {
         }
 
         const self = this;
-        this.OpenChangeset(comment,
+        this.OpenChangeset(
             function (csId) {
                 var changesetXML = generateChangeXML(csId);
                 self.AddChange(csId, changesetXML,
@@ -300,17 +301,20 @@ export class OsmConnection {
     }
 
 
-    private OpenChangeset(comment: string, continuation: ((changesetId: string) => void)) {
+    private OpenChangeset(continuation: (changesetId: string) => void) {
 
+        const layout = State.state.layoutToUse.data;
 
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/create',
-            options: { header: { 'Content-Type': 'text/xml' } },
-            content: '<osm><changeset>' +
-                '<tag k="created_by" v="MapComplete 0.0.0" />' +
-                '<tag k="comment" v="' + comment + '"/>' +
-                '</changeset></osm>'
+            options: {header: {'Content-Type': 'text/xml'}},
+            content: [`<osm><changeset>`,
+                `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
+                `<tag k="comment" v="Adding data with #MapComplete"/>`,
+                `<tag k="theme" v="${layout.name}">`,
+                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}">` : "",
+                `</changeset></osm>`].join("")
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);

@@ -23,7 +23,7 @@ export default class Translation extends UIElement {
                 } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.InnerRender();
-                }
+                }   
                 for (let i = 0; i < parts.length - 1; i++) {
                     combined.push(parts[i]);
                     combined.push(rtext)
@@ -65,6 +65,9 @@ export default class Translation extends UIElement {
         this.translations = translations
     }
 
+    public replace(a, b) {
+        return this.Subs({a: b});
+    }
 
     public R(): string {
         return new Translation(this.translations).Render();
@@ -74,5 +77,5 @@ export default class Translation extends UIElement {
         return new Translation(this.translations)
     }
 
- 
+
 }

@@ -60,9 +60,6 @@ export class Tag extends TagsFilter {
     public invertValue: boolean
 
     constructor(key: string | RegExp, value: string | RegExp, invertValue = false) {
-        if (value === "*" && invertValue) {
-            throw new Error("Invalid combination: invertValue && value == *")
-        }
 
         if (value instanceof RegExp && invertValue) {
             throw new Error("Unsupported combination: RegExp value and inverted value (use regex to invert the match)")
@@ -88,12 +85,17 @@ export class Tag extends TagsFilter {
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
             if (Tag.regexOrStrMatches(this.key, tag.k)) {
+
                 if (tag.v === "") {
-                    // This tag has been removed
-                    return this.value === ""
+                    // This tag has been removed -> always matches false
+                    return false;
                 }
                 if (this.value === "*") {
-                    // Any is allowed
+                    // Any is allowed (as long as the tag is not empty)
+                    return true;
+                }
+                
+                if(this.value === tag.v){
                     return true;
                 }
 
@@ -287,5 +289,13 @@ export class TagUtils {
             }
         }
         return template;
+    }
+
+    static KVtoProperties(tags: Tag[]): any {
+        const properties = {};
+        for (const tag of tags) {
+            properties[tag.key] = tag.value
+        }
+        return properties;
     }
 }

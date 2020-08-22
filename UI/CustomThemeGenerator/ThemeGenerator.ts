@@ -3,6 +3,7 @@ import {VerticalCombine} from "../Base/VerticalCombine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Combine from "../Base/Combine";
 import {
+    CustomLayoutFromJSON,
     LayerConfigJson,
     LayoutConfigJson,
     TagRenderingConfigJson
@@ -12,8 +13,13 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {OsmConnection, UserDetails} from "../../Logic/Osm/OsmConnection";
 import {Button} from "../Base/Button";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {TextField} from "../Input/TextField";
+import {TextField, ValidatedTextField} from "../Input/TextField";
+import {Tag} from "../../Logic/TagsFilter";
+import {DropDown} from "../Input/DropDown";
+import {TagRendering} from "../../Customizations/TagRendering";
 
+
+TagRendering.injectFunction();
 
 function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
     if (tags === undefined) {
@@ -34,30 +40,31 @@ function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
     return newTags.join(",");
 }
 
-
-let createFieldUI: (label: string, key: string, root: any, options?: { deflt?: string }) => UIElement;
+// Defined below, as it needs some context/closure
+let createFieldUI: (label: string, key: string, root: any, options: { deflt?: string, type?: string, description: string, emptyAllowed?: boolean }) => UIElement;
 
 
 class MappingGenerator extends UIElement {
 
     private elements: UIElement[];
 
-    constructor(fullConfig: UIEventSource<LayoutConfigJson>,
-                layerConfig: LayerConfigJson,
-                tagRendering: TagRenderingConfigJson,
+    constructor(tagRendering: TagRenderingConfigJson,
                 mapping: { if: string | string[] | { k: string, v: string }[] }) {
         super(undefined);
-        this.CreateElements(fullConfig, layerConfig, tagRendering, mapping)
+        this.CreateElements(tagRendering, mapping)
     }
 
-    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson,
-                           tagRendering: TagRenderingConfigJson,
+    private CreateElements(tagRendering: TagRenderingConfigJson,
                            mapping) {
         {
             const self = this;
             this.elements = [
-                createFieldUI("If these tags apply", "if", mapping),
-                createFieldUI("Then: show this text", "then", mapping),
+                new FixedUiElement("A mapping shows a specific piece of text if a specific tag is present. If no mapping is known and no key matches (and the question is defined), then the mappings show up as radio buttons to answer the question and to update OSM"),
+                createFieldUI("If these tags apply", "if", mapping, {
+                    type: "tags",
+                    description: "The tags that have to be present. Use <span class='literal-code'>key=</span> to indicate an implicit assumption. 'key=' can be used to indicate: 'if this key is missing'"
+                }),
+                createFieldUI("Then: show this text", "then", mapping, {description: "The text that is shown"}),
                 new Button("Remove this mapping", () => {
                     for (let i = 0; i < tagRendering.mappings.length; i++) {
                         if (tagRendering.mappings[i] === mapping) {
@@ -89,39 +96,75 @@ class TagRenderingGenerator
     constructor(fullConfig: UIEventSource<LayoutConfigJson>,
                 layerConfig: LayerConfigJson,
                 tagRendering: TagRenderingConfigJson,
-                isTitle: boolean = false) {
+                options: { header: string, description: string, removable: boolean, hideQuestion: boolean }) {
         super(undefined);
-        this.CreateElements(fullConfig, layerConfig, tagRendering, isTitle)
+        this.CreateElements(fullConfig, layerConfig, tagRendering, options)
     }
 
-    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, tagRendering: TagRenderingConfigJson, isTitle: boolean) {
+    private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson, tagRendering: TagRenderingConfigJson,
+                           options: { header: string, description: string, removable: boolean, hideQuestion: boolean }) {
 
 
         const self = this;
         this.elements = [
-            new FixedUiElement(isTitle ? "<h3>Popup title</h3>" : "<h3>TagRendering/TagQuestion</h3>"),
-            createFieldUI("Key", "key", tagRendering),
-            createFieldUI("Rendering", "render", tagRendering),
-            createFieldUI("Type", "type", tagRendering),
-            createFieldUI("Question", "question", tagRendering),
-            createFieldUI("Extra tags", "addExtraTags", tagRendering),
+            new FixedUiElement(`<h3>${options.header}</h3>`),
+            new FixedUiElement(options.description),
+            createFieldUI("Key", "key", tagRendering, {
+                deflt: "name",
+                description: "Optional. If the object contains a tag with the specified key, the rendering below will be shown. Use '*' if you always want to show the rendering."
+            }),
+            createFieldUI("Rendering", "render", tagRendering, {
+                deflt: "The name of this object is {name}",
+                description: "Optional. If the above key is present, this rendering will be used. Note that <span class='literal-code'>{key}</span> will be replaced by the value - if that key is present. This is _not_ limited to the given key above, it is allowed to use multiple subsitutions." +
+                    "If the above key is _not_ present, the question will be shown and the rendering will be used as answer with {key} as textfield"
+            }),
+            options.hideQuestion ? new FixedUiElement("") : createFieldUI("Type", "type", tagRendering, {
+                deflt: "string",
+                description: "Input validation of this type",
+                type: "typeSelector",
+
+            }),
+            options.hideQuestion ? new FixedUiElement("") :
+                createFieldUI("Question", "question", tagRendering, {
+                    deflt: "",
+                    description: "Optional. If 'key' is not present (or not given) and none of the mappings below match, then this will be shown as question. Users are then able to answer this question and save the data to OSM. If no question is given, values can still be shown but not answered",
+                    type: "string"
+                }),
+            options.hideQuestion ? new FixedUiElement("") :
+                createFieldUI("Extra tags", "addExtraTags", tagRendering,
+                    {
+                        deflt: "",
+                        type: "tags",
+                        emptyAllowed: true,
+                        description: "Optional. If the freeform text field is used to fill out the tag, these tags are applied as well. The main use case is to flag the object for review. (A prime example is access. A few predefined values are given and the option to fill out something. Here, one can add e.g. <span class='literal-code'>fixme=access was filled out by user, value might not be correct</span>"
+                    }),
+
+            createFieldUI(
+                "Only show if", "condition", tagRendering,
+                {
+                    deflt: "",
+                    type: "tags",
+                    emptyAllowed: true,
+                    description: "Only show this question/rendering if the object also has the specified tag. This can be useful to ask a follow up question only if the prerequisite is met"
+                }
+            ),
 
             ...(tagRendering.mappings ?? []).map((mapping) => {
-                return new MappingGenerator(fullConfig, layerConfig, tagRendering, mapping)
+                return new MappingGenerator(tagRendering, mapping)
             }),
             new Button("Add mapping", () => {
                 if (tagRendering.mappings === undefined) {
                     tagRendering.mappings = []
                 }
                 tagRendering.mappings.push({if: "", then: ""});
-                self.CreateElements(fullConfig, layerConfig, tagRendering, isTitle);
+                self.CreateElements(fullConfig, layerConfig, tagRendering, options);
                 self.Update();
             })
 
         ]
 
-        if (!isTitle) {
-            const b = new Button("Remove this preset", () => {
+        if (!!options.removable) {
+            const b = new Button("Remove this tag rendering", () => {
                 for (let i = 0; i < layerConfig.tagRenderings.length; i++) {
                     if (layerConfig.tagRenderings[i] === tagRendering) {
                         layerConfig.tagRenderings.splice(i, 1);
@@ -155,10 +198,21 @@ class PresetGenerator extends UIElement {
         const self = this;
         this.elements = [
             new FixedUiElement("<h3>Preset</h3>"),
-            createFieldUI("Title", "title", preset0),
-            createFieldUI("Description", "description", preset0, {deflt: layerConfig.description}),
-            createFieldUI("icon", "icon", preset0, {deflt: layerConfig.icon}),
-            createFieldUI("tags", "tags", preset0, {deflt: TagsToString(layerConfig.overpassTags)}),
+            new FixedUiElement("A preset allows the user to add a new point at a location that was clicked. Note that one layer can have zero, one or multiple presets"),
+            createFieldUI("Title", "title", preset0, {
+                description: "The title of this preset, shown in the 'add new {Title} here'-dialog"
+            }),
+            createFieldUI("Description", "description", preset0,
+                {
+                    deflt: layerConfig.description,
+                    type: "string",
+                    description: "A description shown alongside the 'add new'-button"
+                }),
+            createFieldUI("tags", "tags", preset0,
+                {
+                    deflt: TagsToString(layerConfig.overpassTags), type: "tags",
+                    description: "The tags that are added to the newly created point"
+                }),
             new Button("Remove this preset", () => {
                 for (let i = 0; i < layerConfig.presets.length; i++) {
                     if (layerConfig.presets[i] === preset0) {
@@ -201,12 +255,86 @@ class LayerGenerator extends UIElement {
     private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson) {
         const self = this;
         this.uielements = [
-            createFieldUI("The name of this layer", "id", layerConfig),
-            createFieldUI("A description of objects for this layer", "description", layerConfig),
-            createFieldUI("The icon of this layer, either a URL or a base64-encoded svg", "icon", layerConfig),
-            createFieldUI("The default stroke color", "color", layerConfig),
-            createFieldUI("The minimal needed zoom to start loading", "minzoom", layerConfig),
-            createFieldUI("The tags to load from overpass", "overpassTags", layerConfig),
+
+            new FixedUiElement("<p>A layer is a collection of related objects which have the same or very similar tags renderings. In general, all objects of one layer have the same icon (or at least very similar icons)</p>"),
+
+            createFieldUI("Name", "id", layerConfig, {description: "The name of this layer"}),
+            createFieldUI("A description of objects for this layer", "description", layerConfig, {description: "The description of this layer"}),
+            createFieldUI("Minimum zoom level", "minzoom", layerConfig, {
+                type: "nat",
+                deflt: "12",
+                description: "The minimum zoom level to start loading data. This is mainly limited by the expected number of objects: if there are a lot of objects, then pick something higher. A generous bounding box is put around the map, so some scrolling should be possible"
+            }),
+            createFieldUI("The tags to load from overpass", "overpassTags", layerConfig, {
+                type: "tags",
+                description: "Tags to load from overpass. The format is <span class='literal-code'>key=value&key0=value0&key1=value1</span>, e.g. <span class='literal-code'>amenity=public_bookcase</span> or <span class='literal-code'>amenity=compressed_air&bicycle=yes</span>. Note that a wildcard is supported, e.g. <span class='literal-code'>key=*</span>"
+            }),
+
+
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
+                key: "",
+                addExtraTags: "",
+                mappings: [],
+                question: "",
+                render: "Title",
+                type: "string"
+            }, {
+                header: "Title element",
+                description: "This element is shown in the title of the popup in a header-tag",
+                removable: false,
+                hideQuestion: true
+            }),
+
+
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.icon ?? {
+                key: "*",
+                addExtraTags: "",
+                mappings: [],
+                question: "",
+                render: "Title",
+                type: "text"
+            }, {
+                header: "Icon",
+                description: "This decides which icon is used to represent an element on the map. Leave blank if you don't want icons to pop up",
+                removable: false,
+                hideQuestion: true
+            }),
+
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.color ?? {
+                key: "*",
+                addExtraTags: "",
+                mappings: [],
+                question: "",
+                render: "Title",
+                type: "text"
+            }, {
+                header: "Colour",
+                description: "This decides which color is used to represent a way on the map. Note that if an icon is defined as well, the icon will be showed too",
+                removable: false,
+                hideQuestion: true
+            }),
+
+
+            ...layerConfig.tagRenderings.map(tr => new TagRenderingGenerator(fullConfig, layerConfig, tr, {
+                header: "Tag rendering",
+                description: "A single tag rendering",
+                removable: true,
+                hideQuestion: false
+            })),
+            new Button("Add a tag rendering", () => {
+                layerConfig.tagRenderings.push({
+                    key: undefined,
+                    addExtraTags: undefined,
+                    mappings: [],
+                    question: undefined,
+                    render: undefined,
+                    type: "text"
+                });
+                self.CreateElements(fullConfig, layerConfig);
+                self.Update();
+            }),
+
+
             ...layerConfig.presets.map(preset => new PresetGenerator(fullConfig, layerConfig, preset)),
             new Button("Add a preset", () => {
                 layerConfig.presets.push({
@@ -217,28 +345,7 @@ class LayerGenerator extends UIElement {
                 });
                 self.CreateElements(fullConfig, layerConfig);
                 self.Update();
-            }),
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
-                key: "",
-                addExtraTags: "",
-                mappings: [],
-                question: "",
-                render: "Title",
-                type: "text"
-            }, true),
-            ...layerConfig.tagRenderings.map(tr => new TagRenderingGenerator(fullConfig, layerConfig, tr)),
-            new Button("Add a tag rendering", () => {
-                layerConfig.tagRenderings.push({
-                    key: "",
-                    addExtraTags: "",
-                    mappings: [],
-                    question: "",
-                    render: "",
-                    type: "text"
-                });
-                self.CreateElements(fullConfig, layerConfig);
-                self.Update();
-            }),
+            })
 
         ]
     }
@@ -274,8 +381,12 @@ class AllLayerComponent extends UIElement {
         const layerPanes: { header: UIElement | string, content: UIElement | string }[] = [];
         const config = this.config;
         for (const layer of this.config.data.layers) {
+
+            const iconUrl = CustomLayoutFromJSON.TagRenderingFromJson(layer?.icon)
+                .GetContent({id: "node/-1"});
             const header = this.config.map(() => {
-                return `<img src="${layer?.icon ?? "./assets/help.svg"}">`
+
+                return `<img src="${iconUrl ?? "./assets/help.svg"}">`
             });
             layerPanes.push({
                 header: new VariableUiElement(header),
@@ -290,10 +401,17 @@ class AllLayerComponent extends UIElement {
                 config.data.layers.push({
                     id: "",
                     title: {
-                        render: "Title"
+                        key: "",
+                        render: "title"
                     },
-                    icon: "./assets/bug.svg",
-                    color: "",
+                    icon: {
+                        key: "",
+                        render: "./assets/bug.svg"
+                    },
+                    color: {
+                        key: "",
+                        render: "#0000ff"
+                    },
                     description: "",
                     minzoom: 12,
                     overpassTags: "",
@@ -333,38 +451,118 @@ export class ThemeGenerator extends UIElement {
         if (windowHash !== undefined && windowHash.length > 4) {
             loadedTheme = JSON.parse(atob(windowHash));
         }
+
         this.themeObject = new UIEventSource<LayoutConfigJson>(loadedTheme ?? defaultTheme);
         const jsonObjectRoot = this.themeObject.data;
+        connection.userDetails.addCallback((userDetails) => {
+            jsonObjectRoot.maintainer = userDetails.name;
+        });
+        jsonObjectRoot.maintainer = connection.userDetails.data.name;
+
 
         const base64 = this.themeObject.map(JSON.stringify).map(btoa);
-        this.url = base64.map((data) => `https://pietervdvn.github.io/MapComplete/index.html?test=true&userlayout=true#` + data);
+        let baseUrl = "https://pietervdvn.github.io/MapComplete";
+        if (window.location.hostname === "127.0.0.1") {
+            baseUrl = "http://127.0.0.1:1234";
+        }
+        this.url = base64.map((data) => baseUrl + `/index.html?test=true&userlayout=true#` + data);
         const self = this;
 
         createFieldUI = (label, key, root, options) => {
 
+            options = options ?? {description: "?"};
+            options.type = options.type ?? "string";
+
             const value = new UIEventSource<string>(TagsToString(root[key]) ?? options?.deflt);
-            value.addCallback((v) => {
-                root[key] = v;
-                self.themeObject.ping(); // We assume the root is a part of the themeObject
-            })
-            return new Combine([
-                label,
-                new TextField<string>({
+            let textField: UIElement;
+            if (options.type === "typeSelector") {
+                const options: { value: string, shown: string | UIElement }[] = [];
+                for (const possibleType in ValidatedTextField.inputValidation) {
+                    if (possibleType !== "$") {
+                        options.push({value: possibleType, shown: possibleType});
+                    }
+                }
+
+                textField = new DropDown<string>("",
+                    options,
+                    value)
+            } else if (options.type === "tags") {
+                textField = ValidatedTextField.TagTextField(value.map(CustomLayoutFromJSON.TagsFromJson, [], tags => {
+                    if (tags === undefined) {
+                        return undefined;
+                    }
+                    return tags.map((tag: Tag) => tag.key + "=" + tag.value).join("&");
+                }), options?.emptyAllowed ?? false);
+            } else if (options.type === "img" || options.type === "colour") {
+                textField = new TextField<string>({
+                    placeholder: options.type,
                     fromString: (str) => str,
                     toString: (str) => str,
-                    value: value
-                })]);
+                    value: value,
+                    startValidated: true
+                });
+            } else if (options.type) {
+                textField = ValidatedTextField.ValidatedTextField(options.type, {value: value});
+            } else {
+                textField = new TextField<string>({
+                    placeholder: options.type,
+                    fromString: (str) => str,
+                    toString: (str) => str,
+                    value: value,
+                    startValidated: true
+                });
+            }
+
+            value.addCallback((v) => {
+                if (v === undefined || v === "") {
+                    delete root[key];
+                } else {
+                    root[key] = v;
+                }
+                self.themeObject.ping(); // We assume the root is a part of the themeObject
+            });
+            return new Combine([
+                label,
+                textField,
+                "<br>",
+                "<span class='subtle'>" + options.description + "</span>"
+            ]);
         }
 
         this.allQuestionFields = [
-            createFieldUI("Name of this theme", "name", jsonObjectRoot),
-            createFieldUI("Title (shown in the window and in the welcome message)", "title", jsonObjectRoot),
-            createFieldUI("Description (shown in the welcome message and various other places)", "description", jsonObjectRoot),
-            createFieldUI("The supported language", "language", jsonObjectRoot),
-            createFieldUI("startLat", "startLat", jsonObjectRoot),
-            createFieldUI("startLon", "startLon", jsonObjectRoot),
-            createFieldUI("startzoom", "startZoom", jsonObjectRoot),
-            createFieldUI("icon: either a URL to an image file, a relative url to a MapComplete asset ('./asset/help.svg') or a base64-encoded value (including 'data:image/svg+xml;base64,'", "icon", jsonObjectRoot, {deflt: "./assets/bug.svg"}),
+            createFieldUI("Name of this theme", "name", jsonObjectRoot, {description: "An identifier for this theme"}),
+            createFieldUI("Title", "title", jsonObjectRoot, {
+                deflt: "Title",
+                description: "The title of this theme, as shown in the welcome message and in the title bar of the browser"
+            }),
+            createFieldUI("Description", "description", jsonObjectRoot, {
+                description: "Shown in the welcome message",
+                deflt: "Description"
+            }),
+            createFieldUI("The supported language", "language", jsonObjectRoot, {
+                description: "The language of this mapcomplete instance. MapComplete can be translated, see <a href='https://github.com/pietervdvn/MapComplete#translating-mapcomplete' target='_blank'> here for more information</a>",
+                deflt: "en"
+            }),
+            createFieldUI("startLat", "startLat", jsonObjectRoot, {
+                type: "float",
+                deflt: "0",
+                description: "The latitude where this theme should start. Note that this is only for completely fresh users, as the last location is saved"
+            }),
+            createFieldUI("startLon", "startLon", jsonObjectRoot, {
+                type: "float",
+                deflt: "0",
+                description: "The longitude where this theme should start. Note that this is only for completely fresh users, as the last location is saved"
+            }),
+            createFieldUI("startzoom", "startZoom", jsonObjectRoot, {
+                type: "nat",
+                deflt: "12",
+                description: "The initial zoom level where the map is located"
+            }),
+            createFieldUI("icon", "icon", jsonObjectRoot, {
+                deflt: "./assets/bug.svg",
+                type: "img",
+                description: "The icon representing this MapComplete instance. It is shown in the welcome message and -if adopted as official theme- used as favicon and to browse themes"
+            }),
 
             new AllLayerComponent(this.themeObject)
         ]
@@ -383,8 +581,6 @@ export class ThemeGenerator extends UIElement {
 
 
         return new VerticalCombine([
-            // new VariableUiElement(this.themeObject.map(JSON.stringify)),
-            //  new VariableUiElement(this.url.map((url) => `Current URL: <a href="${url}" target="_blank">Click here to open</a>`)),
             ...this.allQuestionFields,
         ]).Render();
     }

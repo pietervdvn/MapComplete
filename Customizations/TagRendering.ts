@@ -5,7 +5,7 @@ import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SaveButton} from "../UI/SaveButton";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
 import {TagDependantUIElement} from "./UIElementConstructor";
-import {TextField} from "../UI/Input/TextField";
+import {TextField, ValidatedTextField} from "../UI/Input/TextField";
 import {InputElement} from "../UI/Input/InputElement";
 import {InputElementWrapper} from "../UI/Input/InputElementWrapper";
 import {FixedInputElement} from "../UI/Input/FixedInputElement";
@@ -14,6 +14,7 @@ import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
 import {TagRenderingOptions} from "./TagRenderingOptions";
+import Translation from "../UI/i18n/Translation";
 
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
@@ -22,15 +23,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private _priority: number;
 
 
-    private _question: UIElement;
-    private _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
+    private _question: Translation;
+    private _mapping: { k: TagsFilter, txt: string | Translation, priority?: number }[];
 
     private _tagsPreprocessor?: ((tags: any) => any);
     private _freeform: {
-        key: string, 
-        template: string | UIElement,
-        renderTemplate: string | UIElement,
-        placeholder?: string | UIElement,
+        key: string,
+        template: string | Translation,
+        renderTemplate: string | Translation,
+        placeholder?: string | Translation,
         extraTags?: TagsFilter
     };
 
@@ -56,24 +57,25 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     constructor(tags: UIEventSource<any>, options: {
         priority?: number
 
-        question?: string | UIElement,
+        question?: string | Translation,
 
         freeform?: {
             key: string,
-            template: string | UIElement,
-            renderTemplate: string | UIElement,
-            placeholder?: string | UIElement,
+            template: string | Translation,
+            renderTemplate: string | Translation,
+            placeholder?: string | Translation,
             extraTags?: TagsFilter,
         },
         tagsPreprocessor?: ((tags: any) => any),
-        mappings?: { k: TagsFilter, txt: string | UIElement, priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean }[]
     }) {
         super(tags);
         this.ListenTo(Locale.language);
         this.ListenTo(this._questionSkipped);
         this.ListenTo(this._editMode);
-        this.ListenTo(State.state.osmConnection.userDetails);
+        this.ListenTo(State.state?.osmConnection?.userDetails);
 
+        console.log("Creating tagRendering with", options)
 
         const self = this;
        
@@ -106,10 +108,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             };
 
             if (choice.substitute) {
+                const newTags = this._tagsPreprocessor(this._source.data);
                 choiceSubbed = {
-                    k: choice.k.substituteValues(
-                        options.tagsPreprocessor(this._source.data)),
-                    txt: choice.txt,
+                    k: choice.k.substituteValues(newTags),
+                    txt: this.ApplyTemplate(choice.txt),
                     priority: choice.priority
                 }
             }
@@ -168,12 +170,12 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private InputElementFor(options: {
         freeform?: {
             key: string, 
-            template: string | UIElement,
-            renderTemplate: string | UIElement,
-            placeholder?: string | UIElement,
+            template: string | Translation,
+            renderTemplate: string | Translation,
+            placeholder?: string | Translation,
             extraTags?: TagsFilter,
         },
-        mappings?: { k: TagsFilter, txt: string | UIElement, priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean }[]
     }):
         InputElement<TagsFilter> {
 
@@ -189,7 +191,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 if(previousTexts.indexOf(mapping.txt) >= 0){
                     continue;
                 }
-                previousTexts.push(mapping.txt);
+                previousTexts.push(this.ApplyTemplate(mapping.txt));
                 
                 elements.push(this.InputElementForMapping(mapping));
             }
@@ -201,7 +203,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
         if (elements.length == 0) {
-            //console.warn("WARNING: no tagrendering with following options:", options);
+            console.warn("WARNING: no tagrendering with following options:", options);
             return new FixedInputElement("This should not happen: no tag renderings defined", undefined);
         }
         if (elements.length == 1) {
@@ -224,15 +226,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         const prepost = Translations.W(freeform.template).InnerRender()
-            .replace("$$$","$string$")
+            .replace("$$$", "$string$")
             .split("$");
         const type = prepost[1];
-        
-        let isValid = TagRenderingOptions.inputValidation[type];
+
+        let isValid = ValidatedTextField.inputValidation[type];
         if (isValid === undefined) {
             isValid = (str) => true;
         }
-        let formatter = TagRenderingOptions.formatting[type] ?? ((str) => str);
+        let formatter = ValidatedTextField.formatting[type] ?? ((str) => str);
 
         const pickString =
             (string: any) => {
@@ -272,7 +274,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             toString: toString
         });
 
-        return new InputElementWrapper(prepost[0], textField, prepost[2]);
+        const pre = prepost[0] !== undefined ? this.ApplyTemplate(prepost[0]) : "";
+        const post = prepost[2] !== undefined ? this.ApplyTemplate(prepost[2]) : "";
+
+        return new InputElementWrapper(pre, textField, post);
     }
 
 
@@ -323,7 +328,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         return true;
     }
 
-    private RenderAnwser(): UIElement {
+    private RenderAnswer(): UIElement {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
         let freeform: UIElement = new FixedUiElement("");
@@ -357,9 +362,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             // we render the found template
             return this.ApplyTemplate(highestTemplate);
         }
-
-
     }
+
 
     InnerRender(): string {
         if (this.IsQuestioning() || this._editMode.data) {
@@ -378,13 +382,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         if (this.IsKnown()) {
-            const answer = this.RenderAnwser()
-            if (answer.IsEmpty()) {
+            const html = this.RenderAnswer().Render();
+            if (html === "") {
                 return "";
             }
-            const html = answer.Render();
+
+
             let editButton = "";
-            if (State.state.osmConnection.userDetails.data.loggedIn && this._question !== undefined) {
+            if (State.state?.osmConnection?.userDetails?.data?.loggedIn && this._question !== undefined) {
                 editButton = this._editButton.Render();
             }
 
@@ -403,24 +408,18 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         return this._priority;
     }
 
-    private ApplyTemplate(template: string | UIElement): UIElement {
+    private ApplyTemplate(template: string | Translation): Translation {
         if (template === undefined || template === null) {
             throw "Trying to apply a template, but the template is null/undefined"
         }
-        
-        const contents = Translations.W(template).map(contents => 
-            {
-                let templateStr = "";
-                if (template instanceof UIElement) {
-                    templateStr = template.Render();
-                } else {
-                    templateStr = template;
-                }
-                const tags = this._tagsPreprocessor(this._source.data);
-                return TagUtils.ApplyTemplate(templateStr, tags);
-            }, [this._source]
-        );
-        return new VariableUiElement(contents);
+
+        if (typeof (template) === "string") {
+            const tags = this._tagsPreprocessor(this._source.data);
+            return new Translation ({en:TagUtils.ApplyTemplate(template, tags)});
+        }
+        const tags = this._tagsPreprocessor(this._source.data);
+
+        return template.Subs(tags);
     }
 
 

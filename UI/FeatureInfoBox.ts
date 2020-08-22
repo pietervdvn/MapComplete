@@ -11,6 +11,8 @@ import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {State} from "../State";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
+import {UIEventSource} from "../Logic/UIEventSource";
+import Combine from "./Base/Combine";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -36,7 +38,7 @@ export class FeatureInfoBox extends UIElement {
     constructor(
         feature: any,
         tagsES: UIEventSource<any>,
-        title: TagRenderingOptions | UIElement | string,
+        title: TagDependantUIElementConstructor | UIElement | string,
         elementsToShow: TagDependantUIElementConstructor[],
     ) {
         super(tagsES);
@@ -77,7 +79,7 @@ export class FeatureInfoBox extends UIElement {
         } else if (title instanceof UIElement) {
             this._title = title;
         } else {
-            this._title = new TagRenderingOptions(title.options).construct(deps);
+            this._title = title.construct(deps);
         }
         this._osmLink = new OsmLink().construct(deps);
         this._wikipedialink = new WikipediaLink().construct(deps);
@@ -124,24 +126,18 @@ export class FeatureInfoBox extends UIElement {
             questionsHtml = this._someSkipped.Render();
         }
 
+        const title = new Combine([
+            this._title,
+            this._wikipedialink,
+            this._osmLink]);
+
+        const infoboxcontents = new Combine(
+            [ new VerticalCombine(info, "infobox-information "), questionsHtml]);
+
         return "<div class='featureinfobox'>" +
-            "<div class='featureinfoboxtitle'>" +
-            "<span>" +
-            this._title.Render() +
-            "</span>" +
-            this._wikipedialink.Render() +
-            this._osmLink.Render() +
-            "</div>" +
-
-            "<div class='infoboxcontents'>" +
-            new VerticalCombine(info, "infobox-information ").Render() +
-
-            questionsHtml +
-
-
-            "</div>" +
-            "" +
-            "</div>";
+            new Combine([
+                "<div class='featureinfoboxtitle'>" + title.Render() + "</div>",
+                "<div class='infoboxcontents'>" + infoboxcontents.Render() + "</div>"]).Render() + "</div>";
     }
     
     

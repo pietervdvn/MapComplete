@@ -1,5 +1,5 @@
 import {UIElement} from "./UIElement";
-import {Tag} from "../Logic/TagsFilter";
+import {Tag, TagUtils} from "../Logic/TagsFilter";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
@@ -48,12 +48,18 @@ export class SimpleAddUI extends UIElement {
         for (const layer of State.state.filteredLayers.data) {
             for (const preset of layer.layerDef.presets) {
 
+                let icon: string = "./assets/bug.svg";
+                if (typeof (preset.icon) !== "string") {
+                    console.log("Preset icon is:", preset.icon);
+                    icon = preset.icon.GetContent(TagUtils.KVtoProperties(preset.tags));
+                } else {
+                    icon = preset.icon;
+                }
+                console.log("Preset icon:", icon)
 
-                // <button type='button'> looks SO retarded
-                // the default type of button is 'submit', which performs a POST and page reload
                 const button =
                     new SubtleButton(
-                        preset.icon,
+                        icon,
                         new Combine([
                             "<b>",
                             preset.title,
@@ -61,7 +67,7 @@ export class SimpleAddUI extends UIElement {
                             preset.description !== undefined ? preset.description : ""])
                     ).onClick(
                         () => {
-                            self.confirmButton = new SubtleButton(preset.icon,
+                            self.confirmButton = new SubtleButton(icon,
                                 new Combine([
                                     "<b>",
                                     Translations.t.general.add.confirmButton.Subs({category: preset.title}),
@@ -73,7 +79,7 @@ export class SimpleAddUI extends UIElement {
                                 layerToAddTo: layer,
                                 name: preset.title,
                                 description: preset.description,
-                                icon: preset.icon
+                                icon: icon
                             });
                         }
                 )

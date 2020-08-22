@@ -643,7 +643,7 @@ export default class Translations {
                 }),
                 bookkinds: new T({
                     nl: "Wat voor soort boeken heeft dit boekenruilkastje?",
-                    en: "What kind of books can be found in this public bookcase"
+                    en: "What kind of books can be found in this public bookcase?"
                 })
             }
 
@@ -974,10 +974,17 @@ export default class Translations {
     }
 
     public static W(s: string | UIElement): UIElement {
-        if (s instanceof UIElement) {
-            return s;
+        if (typeof (s) === "string") {
+            return new FixedUiElement(s);
         }
-        return new FixedUiElement(s);
+        return s;
+    }
+
+    public static WT(s: string | Translation): Translation {
+        if (typeof (s) === "string") {
+            return new Translation({en: s});
+        }
+        return s;
     }
 
     public static CountTranslations() {

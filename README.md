@@ -84,6 +84,10 @@ Geolocation is available on mobile only throught hte device's GPS location (so n
 
 TODO: erase cookies of third party websites and API's
 
+# Translating MapComplete
+
+Help to translate mapcomplete. Fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add your language and send a pull request.
+
 # Attributions:
 
 Data from OpenStreetMap

@@ -1,0 +1,41 @@
+{
+  "language": [
+    "en"
+  ],
+  "startLat": "0",
+  "startLon": "0",
+  "startZoom": "12",
+  "maintainer": "Not logged in",
+  "layers": [
+    {
+      "id": "Defibrillator",
+      "title": {
+        "key": "*",
+        "render": "Defibrillator"
+      },
+      "icon": {
+        "key": "*",
+        "render": "./assets/themes/aed/aed.svg"
+      },
+      "color": {
+        "render": "#0000ff",
+        "key": "*"
+      },
+      "description": "A defibrillator",
+      "minzoom": "12",
+      "presets": [
+        {
+          "title": "Defibrillator",
+          "tags": "emergency=defibrillator",
+          "description": "A defibrillator"
+        }
+      ],
+      "tagRenderings": [],
+      "overpassTags": "emergency=defibrillator"
+    }
+  ],
+  "title": "Open AED Map",
+  "icon": "./assets/themes/aed/aed.svg",
+  "name": "aed",
+  "description": "On this map, one can find and mark nearby defibrillators"
+}

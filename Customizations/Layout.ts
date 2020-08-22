@@ -10,8 +10,9 @@ export class Layout {
     public name: string;
     public icon: string = "./assets/logo.svg";
     public title: UIElement;
+    public maintainer: string;
     public description: string | UIElement;
-    public socialImage: string = ""
+    public socialImage: string = "";
     
     public layers: LayerDefinition[];
     public welcomeMessage: UIElement;

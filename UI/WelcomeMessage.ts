@@ -26,9 +26,7 @@ export class WelcomeMessage extends UIElement {
         this.ListenTo(Locale.language);
 
         function fromLayout(f: (layout: Layout) => (string | UIElement)): UIElement {
-            return new VariableUiElement(
-                State.state.layoutToUse.map((layout) => Translations.W(f(layout)).Render())
-            )
+            return Translations.W(f(State.state.layoutToUse.data))
         }
 
         this.description = fromLayout((layout) => layout.welcomeMessage);

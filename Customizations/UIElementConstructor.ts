@@ -12,6 +12,8 @@ export interface TagDependantUIElementConstructor {
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
     Priority(): number;
+    GetContent(tags: any): string;
+
 }
 
 export abstract class TagDependantUIElement extends UIElement {

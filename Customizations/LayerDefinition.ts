@@ -7,7 +7,7 @@ export interface Preset {
     tags: Tag[],
     title: string | UIElement,
     description?: string | UIElement,
-    icon?: string
+    icon?: string | TagRenderingOptions
 }
 
 export class LayerDefinition {
@@ -32,7 +32,7 @@ export class LayerDefinition {
      * Not really used anymore
      * This is meant to serve as icon in the buttons
      */
-    icon: string;
+    icon: string | TagRenderingOptions;
     /**
      * Only show this layer starting at this zoom level
      */
@@ -58,7 +58,7 @@ export class LayerDefinition {
     /**
      * This UIElement is rendered as title element in the popup
      */
-    title: TagRenderingOptions | UIElement | string;
+    title: TagDependantUIElementConstructor | UIElement | string;
     /**
      * These are the questions/shown attributes in the popup
      */
@@ -100,7 +100,7 @@ export class LayerDefinition {
         icon: string,
         minzoom: number,
         overpassFilter: TagsFilter,
-        title?: TagRenderingOptions,
+        title?: TagDependantUIElementConstructor,
         elementsToShow?: TagDependantUIElementConstructor[],
         maxAllowedOverlapPercentage?: number,
         wayHandling?: number,

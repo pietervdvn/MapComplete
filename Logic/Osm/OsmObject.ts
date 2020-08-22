@@ -83,6 +83,9 @@ export abstract class OsmObject {
             console.log("WARNING: overwriting ",oldV, " with ", v," for key ",k)
         }
         this.tags[k] = v;
+        if(v === undefined || v === ""){
+            delete this.tags[k];
+        }
         this.changed = true;
     }
 

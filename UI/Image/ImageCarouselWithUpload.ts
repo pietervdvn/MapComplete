@@ -24,6 +24,10 @@ export class ImageCarouselWithUploadConstructor implements TagDependantUIElement
     construct(dependencies): TagDependantUIElement {
         return new ImageCarouselWithUpload(dependencies);
     }
+    
+    GetContent(tags: any): string {
+        return undefined;
+    }
 }
 
 class ImageCarouselWithUpload extends TagDependantUIElement {

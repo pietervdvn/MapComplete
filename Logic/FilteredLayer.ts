@@ -53,7 +53,7 @@ export class FilteredLayer {
         this._style = layerDef.style;
         if (this._style === undefined) {
             this._style = function () {
-                return {icon: {iconUrl: "./assets/bug.svg"}, color: "#000000"};
+                return {icon: {iconUrl: "./assets/bug.svg"}, color: "#000"};
             }
         }
         this.name = name;
@@ -94,9 +94,9 @@ export class FilteredLayer {
             var tags = TagUtils.proprtiesToKV(feature.properties);
             if (this.filters.matches(tags)) {
                 const centerPoint = GeoOperations.centerpoint(feature);
-                feature.properties["_surface"] = GeoOperations.surfaceAreaInSqMeters(feature);
-                const lat = centerPoint.geometry.coordinates[1];
-                const lon = centerPoint.geometry.coordinates[0]
+                feature.properties["_surface"] = ""+GeoOperations.surfaceAreaInSqMeters(feature);
+                const lat = ""+centerPoint.geometry.coordinates[1];
+                const lon = ""+centerPoint.geometry.coordinates[0]
                 feature.properties["_lon"] = lat;
                 feature.properties["_lat"] = lon;
                 FilteredLayer.grid.getCode(lat, lon, (error, code) => {
@@ -233,8 +233,6 @@ export class FilteredLayer {
                             const style = self._style(featureX.properties);
                             if (featureX === feature) {
                                 console.log("Selected element is", featureX.properties.id)
-                                //      style.weight = style.weight * 2;
-                                // console.log(style)
                             }
                             return style;
                         });

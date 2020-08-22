@@ -11,10 +11,10 @@ import {ClimbingTrees} from "./Layouts/ClimbingTrees";
 import {Smoothness} from "./Layouts/Smoothness";
 import {MetaMap} from "./Layouts/MetaMap";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
-import {Bookcases} from "./Layouts/Bookcases";
 import {GhostBikes} from "./Layouts/GhostBikes";
-import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import {CustomLayoutFromJSON} from "./JSON/CustomLayoutFromJSON";
+import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
+import * as aed from "../assets/themes/aed/aed.json";
 
 export class AllKnownLayouts {
 
@@ -26,8 +26,9 @@ export class AllKnownLayouts {
         new GRB(),
         new Cyclofix(),
         new GhostBikes(),
-       // new Bookcases(),
         CustomLayoutFromJSON.LayoutFromJSON(bookcases),
+        CustomLayoutFromJSON.LayoutFromJSON(aed),
+
         new MetaMap(),
         new StreetWidth(),
         new ClimbingTrees(),

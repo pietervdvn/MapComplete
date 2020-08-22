@@ -1,3 +1,4 @@
+import {TagRendering} from "./Customizations/TagRendering";
 import {UserBadge} from "./UI/UserBadge";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {TagUtils} from "./Logic/TagsFilter";
@@ -13,12 +14,10 @@ import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {State} from "./State";
 import {CustomLayout} from "./Logic/CustomLayers";
-import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
-import {TagRendering} from "./Customizations/TagRendering";
-import {Img} from "./UI/Img";
-import Combine from "./UI/Base/Combine";
 import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+
+TagRendering.injectFunction();
 
 
 // --------------------- Special actions based on the parameters -----------------
@@ -70,8 +69,14 @@ let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayo
 
 
 const layoutFromBase64 = QueryParameters.GetQueryParameter("userlayout", "false").data;
-if(layoutFromBase64 !== "false"){
-    layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
+if (layoutFromBase64 !== "false") {
+    try {
+
+        layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
+    } catch (e) {
+        new FixedUiElement("Error: could not parse the custom layout:<br/> "+e).AttachTo("centermessage");
+        throw e;
+    }
 }
 
 
@@ -84,9 +89,8 @@ if (layoutToUse === undefined) {
 
 console.log("Using layout: ", layoutToUse.name);
 
-TagRendering.injectFunction();
 State.state = new State(layoutToUse);
-if(layoutFromBase64 !== "false"){
+if (layoutFromBase64 !== "false") {
     State.state.layoutDefinition = hash.substr(1);
     console.log(State.state.layoutDefinition)
 }
@@ -106,13 +110,26 @@ function setupAllLayerElements() {
 
 
     InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+
+        let presetCount = 0;
+        for (const layer of State.state.filteredLayers.data) {
+            for (const preset of layer.layerDef.presets) {
+                presetCount++;
+            }
+        }
+        if (presetCount == 0) {
+            console.log("No presets defined - not creating the StrayClickHandler");
+            return;
+        }
+
+
         new StrayClickHandler(() => {
                 return new SimpleAddUI();
             }
         );
     });
 
-    new CenterMessageBox()        .AttachTo("centermessage");
+    new CenterMessageBox().AttachTo("centermessage");
 
 }
 
