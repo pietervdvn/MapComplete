@@ -170,25 +170,26 @@ export class CustomLayoutFromJSON {
         if (json === undefined) {
             return undefined;
         }
-        if (typeof (json) === "string") {
-            let kv: string[] = undefined;
-            let invert = false;
-            if (json.indexOf("!=") >= 0) {
-                kv = json.split("!=");
-                invert = true;
-            } else {
-                kv = json.split("=");
-            }
-
-            if (kv.length !== 2) {
-                return undefined;
-            }
-            if (kv[0].trim() === "") {
-                return undefined;
-            }
-            return new Tag(kv[0].trim(), kv[1].trim(), invert);
+        if (typeof (json) !== "string") {
+            return new Tag(json.k.trim(), json.v.trim())
         }
-        return new Tag(json.k.trim(), json.v.trim())
+
+        let kv: string[] = undefined;
+        let invert = false;
+        if (json.indexOf("!=") >= 0) {
+            kv = json.split("!=");
+            invert = true;
+        } else {
+            kv = json.split("=");
+        }
+
+        if (kv.length !== 2) {
+            return undefined;
+        }
+        if (kv[0].trim() === "") {
+            return undefined;
+        }
+        return new Tag(kv[0].trim(), kv[1].trim(), invert);
     }
 
     public static TagsFromJson(json: string | { k: string, v: string }[]): Tag[] {

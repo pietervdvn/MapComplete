@@ -96,7 +96,7 @@ export class Tag extends TagsFilter {
                 }
                 
                 if(this.value === tag.v){
-                    return true;
+                    return !this.invertValue;
                 }
 
                 return Tag.regexOrStrMatches(this.value, tag.v) !== this.invertValue

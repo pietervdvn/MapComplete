@@ -312,7 +312,7 @@ export class OsmConnection {
             content: [`<osm><changeset>`,
                 `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
                 `<tag k="comment" v="Adding data with #MapComplete"/>`,
-                `<tag k="theme" v="${layout.name}">`,
+                `<tag k="theme" v="${layout.name}"/>`,
                 layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}">` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {

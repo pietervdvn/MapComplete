@@ -5,7 +5,7 @@
   "startLat": "0",
   "startLon": "0",
   "startZoom": "12",
-  "maintainer": "Not logged in",
+  "maintainer": "Pieter Vander Vennet",
   "layers": [
     {
       "id": "Defibrillator",
@@ -30,7 +30,57 @@
           "description": "A defibrillator"
         }
       ],
-      "tagRenderings": [],
+      "tagRenderings": [
+        {
+          "mappings": [
+            {
+              "then": "This defibrillator is located indoors",
+              "if": "indoor=yes"
+            },
+            {
+              "then": "This defibrillator is located outdoors",
+              "if": "indoor=no"
+            }
+          ],
+          "question": "Is this defibrillator located indoors?",
+          "type": "text"
+        },
+        {
+          "mappings": [
+            {
+              "then": "Publicly accessible",
+              "if": "access=yes"
+            },
+            {
+              "then": "Only accessible to customers",
+              "if": "access=customers"
+            },
+            {
+              "if": "access=private",
+              "then": "Not accessible to the general public (e.g. only accesible to staff, the owners, ...)"
+            }
+          ],
+          "question": "Is this defibrillator freely accessible",
+          "type": "text",
+          "key": "access",
+          "condition": "indoor=yes"
+        },
+        {
+          "key": "level",
+          "mappings": [],
+          "question": "On which floor is this defibrillator located?",
+          "type": "int",
+          "render": "This defibrallator is on floor {level}",
+          "condition": "indoor=yes&access!=private"
+        },
+        {
+          "key": "defibrillator:location",
+          "mappings": [],
+          "question": "Please give some explanation on where the defibrillator can be found",
+          "type": "text",
+          "render": "{defibrillator:location}"
+        }
+      ],
       "overpassTags": "emergency=defibrillator"
     }
   ],

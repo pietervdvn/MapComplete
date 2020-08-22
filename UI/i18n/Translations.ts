@@ -605,50 +605,6 @@ export default class Translations {
                 })
             }
         },
-        bookcases: {
-            title: new T({en: "Open Bookcase Map", nl: "Open Boekenkastjes kaart"}, ),
-            description: new T({
-                    en: "Search a bookcase near you and add information about them in the biggest shared map of the world.",
-                    nl: "Help mee met het creëeren van een volledige kaart met alle boekenruilkastjes!" +
-                        "Een boekenruilkastje is een vaste plaats in publieke ruimte waar iedereen een boek in kan zetten of uit kan meenemen." +
-                        "Meestal een klein kastje of doosje dat op straat staat, maar ook een oude telefooncellen of een schap in een station valt hieronder."
-                }
-            ),
-            bookcase: new T({
-                nl: "Boekenruilkastje",
-                en: "Public bookcase"
-            }),
-            questions: {
-                hasName: new T(
-                    {
-                        nl: "Heeft dit boekenruilkastje een naam?",
-                        en: "Does this bookcase have a name?"
-                    }),
-                noname: new T({
-                        nl: "Neen, er is geen naam aangeduid op het boekenruilkastje",
-                        en: "No, there is no clearly visible name on the public bookcase"
-                    },
-                ),
-                capacity: new T({
-                    nl: "Hoeveel boeken passen in dit boekenruilkastje?",
-                    en: "How much books fit into this public bookcase?"
-                }),
-                capacityRender: new T({
-                    nl: "Er passen {capacity} boeken in dit boekenruilkastje",
-                    en: "{capacity} books fit in this bookcase"
-                }),
-                capacityInput: new T({
-                    nl: "Er passen $nat$ boeken in dit boekenruilkastje",
-                    en: "$nat$ books fit into this public bookcase"
-                }),
-                bookkinds: new T({
-                    nl: "Wat voor soort boeken heeft dit boekenruilkastje?",
-                    en: "What kind of books can be found in this public bookcase?"
-                })
-            }
-
-
-        },
 
         image: {
             addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'TODO: fr'}),

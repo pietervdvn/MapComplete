@@ -8,6 +8,7 @@ import Locale from "./i18n/Locale";
 import {State} from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -49,13 +50,17 @@ export class SimpleAddUI extends UIElement {
             for (const preset of layer.layerDef.presets) {
 
                 let icon: string = "./assets/bug.svg";
-                if (typeof (preset.icon) !== "string") {
-                    console.log("Preset icon is:", preset.icon);
-                    icon = preset.icon.GetContent(TagUtils.KVtoProperties(preset.tags));
-                } else {
-                    icon = preset.icon;
+                if (preset.icon !== undefined) {
+
+                    if (typeof (preset.icon) !== "string") {
+                        console.log("Preset icon is:", preset.icon);
+                        icon = preset.icon.GetContent(TagUtils.KVtoProperties(preset.tags));
+                    } else {
+                        icon = preset.icon;
+                    }
+                }else{
+                    console.warn("No icon defined for preset ", preset, "in layer ",layer.layerDef.id)
                 }
-                console.log("Preset icon:", icon)
 
                 const button =
                     new SubtleButton(

@@ -75,8 +75,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         this.ListenTo(this._editMode);
         this.ListenTo(State.state?.osmConnection?.userDetails);
 
-        console.log("Creating tagRendering with", options)
-
         const self = this;
        
         this._priority = options.priority ?? 0;
