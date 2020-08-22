@@ -391,7 +391,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
     InnerRender(): string {
 
-        if (this.IsQuestioning() && !State.state.osmConnection.userDetails.data.loggedIn) {
+        if (this.IsQuestioning() && !State.state?.osmConnection?.userDetails?.data?.loggedIn) {
             const question =
                 this.ApplyTemplate(this._question).Render();
             return "<div class='question'>" +

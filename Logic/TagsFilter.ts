@@ -62,7 +62,7 @@ export class Regex extends TagsFilter {
 
 export class Tag extends TagsFilter {
     public key: string
-    public value: string 
+    public value: string  | RegExp
     public invertValue: boolean
 
     constructor(key: string | RegExp, value: string | RegExp, invertValue = false) {
@@ -156,7 +156,15 @@ export class Tag extends TagsFilter {
                 `=` +
                 `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${this.value}</a>`
         }
-        return this.key + "=" + this.value;
+
+        console.log("Humanizing", this)
+        if (typeof (this.value) === "string") {
+            return this.key + (this.invertValue ? "!=": "=") + this.value;
+        }else{
+            // value is a regex
+            return this.key + "~=" + this.value.source;
+        }
+
     }
 }
 

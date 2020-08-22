@@ -11,6 +11,7 @@ import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
+import {UserDetails} from "../Logic/Osm/OsmConnection";
 
 export class ShareScreen extends UIElement {
 
@@ -167,11 +168,20 @@ export class ShareScreen extends UIElement {
         );
 
         this._editLayout = new FixedUiElement("");
-        if(State.state.layoutDefinition !== undefined){
-            this._editLayout = 
-                new FixedUiElement(`<h3>Edit this theme</h3>`+
-                    `<a target='_blank' href='https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`)
-            
+        if ((State.state.layoutDefinition !== undefined)) {
+            this._editLayout =
+                new VariableUiElement(
+                    State.state.osmConnection.userDetails.map(
+                        userDetails => {
+                            if (userDetails.csCount <= State.userJourney.themeGeneratorUnlock) {
+                                return "";
+                            }
+                            return `<h3>Edit this theme</h3>` +
+                                `<a target='_blank' href='https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`
+
+                        }
+                    ));
+
         }
 
         const status = new UIEventSource(" ");
@@ -220,11 +230,11 @@ export class ShareScreen extends UIElement {
             tr.intro,
             this._link,
             this._linkStatus,
+            this._editLayout,
             tr.addToHomeScreen,
             tr.embedIntro,
             this._options,
             this._iframeCode,
-            this._editLayout
         ]).Render()
     }
 

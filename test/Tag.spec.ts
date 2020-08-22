@@ -11,11 +11,17 @@ import T from "./TestHelper";
 new T([
     ["Parse and match advanced tagging", () => {
         const tags = CustomLayoutFromJSON.TagsFromJson("indoor=yes&access!=private");
-        console.log(tags);
         const m0 = new And(tags).matches([{k: "indoor", v: "yes"}, {k: "access", v: "yes"}]);
         equal(m0, true);
         const m1 = new And(tags).matches([{k: "indoor", v: "yes"}, {k: "access", v: "private"}]);
         equal(m1, false);
+    }
+    ],
+    ["Parse tagging with regex", () => {
+        const tags = CustomLayoutFromJSON.TagsFromJson("highway~=residential|tertiary");
+        equal(""+tags[0].value, ""+/residential|tertiary/);
+        console.log(tags[0].asOverpass());
+        
     }
     ],
     ["Tag replacement works in translation", () => {

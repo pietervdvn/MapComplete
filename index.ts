@@ -16,6 +16,7 @@ import {State} from "./State";
 import {CustomLayout} from "./Logic/CustomLayers";
 import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 
 TagRendering.injectFunction();
 
@@ -71,7 +72,13 @@ let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayo
 const layoutFromBase64 = QueryParameters.GetQueryParameter("userlayout", "false").data;
 if (layoutFromBase64 !== "false") {
     try {
-
+        const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout");
+        if(hash.length < 10){
+            hash = hashFromLocalStorage.data;
+        }else{
+            console.log("Saving hash to local storage")
+            hashFromLocalStorage.setData(hash);
+        }
         layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
     } catch (e) {
         new FixedUiElement("Error: could not parse the custom layout:<br/> "+e).AttachTo("centermessage");

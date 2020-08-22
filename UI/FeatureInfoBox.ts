@@ -118,7 +118,7 @@ export class FeatureInfoBox extends UIElement {
                 }
             }
 
-            questionsHtml = mostImportantQuestion.Render();
+            questionsHtml = mostImportantQuestion?.Render() ?? "";
         } else if (questions.length > 0) {
             // We select the most important question and render that one
             let mostImportantQuestion;
@@ -131,7 +131,7 @@ export class FeatureInfoBox extends UIElement {
                 }
             }
 
-            questionsHtml = mostImportantQuestion.Render();
+            questionsHtml = mostImportantQuestion?.Render() ?? "";
         } else if (skippedQuestions == 1) {
             questionsHtml = this._oneSkipped.Render();
         } else if (skippedQuestions > 0) {

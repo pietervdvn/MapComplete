@@ -57,6 +57,7 @@ export interface LayerConfigJson {
 }
 
 export interface LayoutConfigJson {
+    widenFactor: number;
     name: string;
     title: string;
     description: string;
@@ -161,7 +162,7 @@ export class CustomLayoutFromJSON {
 
         return (tags) => {
             const iconUrl = iconRendering.GetContent(tags);
-            const stroke = colourRendering.GetContent(tags);
+            const stroke = colourRendering.GetContent(tags) ?? "#00f";
             let weight = parseInt(thickness?.GetContent(tags)) ?? 10;
             if(isNaN(weight)){
                 weight = 10;
@@ -187,9 +188,13 @@ export class CustomLayoutFromJSON {
 
         let kv: string[] = undefined;
         let invert = false;
+        let regex = false;
         if (json.indexOf("!=") >= 0) {
             kv = json.split("!=");
             invert = true;
+        } else if (json.indexOf("~=") >= 0) {
+            kv = json.split("~=");
+            regex = true;
         } else {
             kv = json.split("=");
         }
@@ -200,7 +205,12 @@ export class CustomLayoutFromJSON {
         if (kv[0].trim() === "") {
             return undefined;
         }
-        return new Tag(kv[0].trim(), kv[1].trim(), invert);
+        let v = kv[1].trim();
+        if(v.startsWith("/") && v.endsWith("/")){
+            v = v.substr(1, v.length - 2);
+            regex = true;
+        }
+        return new Tag(kv[0].trim(), regex ? new RegExp(v): v, invert);
     }
 
     public static TagsFromJson(json: string | { k: string, v: string }[]): Tag[] {
@@ -229,12 +239,8 @@ export class CustomLayoutFromJSON {
         const tr = CustomLayoutFromJSON.TagRenderingFromJson;
         const tags = CustomLayoutFromJSON.TagsFromJson(json.overpassTags);
         // We run the icon rendering with the bare minimum of tags (the overpass tags) to get the actual icon
-        const properties = {};
-        for (const tag of tags) {
-            tags[tag.key] = tag.value;
-        }
         const icon = CustomLayoutFromJSON.TagRenderingFromJson(json.icon).construct({
-            tags: new UIEventSource<any>(properties)
+            tags: new UIEventSource<any>({})
         }).InnerRender();
 
 
@@ -287,6 +293,10 @@ export class CustomLayoutFromJSON {
         );
         layout.icon = json.icon;
         layout.maintainer = json.maintainer;
+        layout.widenFactor = parseFloat(json.widenFactor) ?? 0.03;
+        if (layout.widenFactor > 0.1) {
+            layout.widenFactor = 0.1;
+        }
         return layout;
     }
 

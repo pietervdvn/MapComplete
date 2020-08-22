@@ -30,6 +30,9 @@ export class Changes {
     addTag(elementId: string, tagsFilter : TagsFilter){
         if(tagsFilter instanceof  Tag){
             const tag = tagsFilter as Tag;
+            if(typeof tag.value !== "string"){
+                throw "Invalid value"
+            }
             this.addChange(elementId, tag.key, tag.value);
             return;
         }
@@ -114,6 +117,9 @@ export class Changes {
         // The tags are not yet written into the OsmObject, but this is applied onto a 
         for (const kv of basicTags) {
             properties[kv.key] = kv.value;
+            if(typeof kv.value !== "string"){
+                throw "Invalid value"
+            }
             this._pendingChanges.push({elementId: id, key: kv.key, value: kv.value});
         }
         this.pendingChangesES.setData(this._pendingChanges.length);

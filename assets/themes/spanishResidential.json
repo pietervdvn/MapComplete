@@ -1,0 +1,120 @@
+{
+  "layers": [
+    {
+      "id": "Superficie",
+      "title": {
+        "render": "Calle sin nombre",
+        "key": "*",
+        "type": "text",
+        "question": "¿Cómo se llama esta calle?",
+        "mappings": [
+          {
+            "if": "name=*",
+            "then": "Nombre de la calle: {name}"
+          }
+        ]
+      },
+      "description": "Completar datos de superficie",
+      "minzoom": "16",
+      "overpassTags": "highway=/residential|tertiary|pedestrian|unclassified|secondary|primary/",
+      "presets": [],
+      "tagRenderings": [
+        {
+          "key": "surface",
+          "addExtraTags": "",
+          "mappings": [
+            {
+              "if": "surface=asphalt",
+              "then": "asfalto"
+            },
+            {
+              "then": "cemento",
+              "if": "surface=concrete"
+            },
+            {
+              "then": "pavimentado",
+              "if": "surface=paved"
+            },
+            {
+              "then": "sin pavimentar",
+              "if": "surface=unpaved"
+            }
+          ],
+          "question": "Qué superficie tiene?",
+          "render": "Surface: {surface}",
+          "type": "text"
+        }
+      ],
+      "wayHandling": "0",
+      "icon": {
+        "key": "*",
+        "addExtraTags": "",
+        "mappings": [
+          {
+            "then": "https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_P26.png",
+            "if": "surface=asphalt"
+          }
+        ],
+        "question": "",
+        "render": "https://github.com/yopaseopor/beta_preset_josm/raw/master/ES/traffic_signs/ES/ES_P25.png",
+        "type": "text"
+      },
+      "color": {
+        "key": "*",
+        "addExtraTags": "",
+        "mappings": [
+          {
+            "then": "#000",
+            "if": "surface=asphalt"
+          },
+          {
+            "then": "#ccc",
+            "if": "surface=concrete"
+          },
+          {
+            "then": "#f3f",
+            "if": "surface=paving_stones"
+          },
+          {
+            "then": "#b5721b",
+            "if": "surface=sett"
+          }
+        ],
+        "question": "",
+        "render": "#00f",
+        "type": "text"
+      },
+      "width": {
+        "key": "*",
+        "addExtraTags": "",
+        "mappings": [
+          {
+            "then": "12",
+            "if": "highway=tertiary"
+          },
+          {
+            "then": "15",
+            "if": "highway=secondary"
+          },
+          {
+            "then": "18",
+            "if": "highway=primary"
+          }
+        ],
+        "question": "",
+        "render": "6",
+        "type": "nat"
+      }
+    }
+  ],
+  "startLat": "41.39767",
+  "startLon": "2.17614",
+  "startZoom": "16",
+  "maintainer": "Pieter Vander Vennet",
+  "language": "es",
+  "icon": "https://github.com/yopaseopor/beta_preset_josm/raw/master/ES/traffic_signs/ES/ES_P28.png",
+  "name": "Superficie",
+  "title": "Test completar superficie",
+  "description": "Completar datos de superficie",
+  "widenFactor": "0.01"
+}

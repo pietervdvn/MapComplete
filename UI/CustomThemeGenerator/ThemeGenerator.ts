@@ -44,7 +44,7 @@ function TagsToString(tags: string | string [] | { k: string, v: string }[]) {
 
 // Defined below, as it needs some context/closure
 let createFieldUI: (label: string, key: string, root: any, options: { deflt?: string, type?: string, description: string, emptyAllowed?: boolean }) => UIElement;
-
+let pingThemeObject: () => void;
 
 class MappingGenerator extends UIElement {
 
@@ -75,6 +75,7 @@ class MappingGenerator extends UIElement {
                                 new FixedUiElement("Tag mapping removed")
                             ]
                             self.Update();
+                            pingThemeObject();
                             break;
                         }
                     }
@@ -111,9 +112,10 @@ class TagRenderingGenerator
         this.elements = [
             new FixedUiElement(`<h3>${options.header}</h3>`),
             new FixedUiElement(options.description),
-            createFieldUI("Key", "key", tagRendering, {
+            options.hideQuestion ? new FixedUiElement("") : createFieldUI("Key", "key", tagRendering, {
                 deflt: "name",
-                description: "Optional. If the object contains a tag with the specified key, the rendering below will be shown. Use '*' if you always want to show the rendering."
+                type: "key",
+                description: "Optional. A single key, such as <span class='literal-code'>name</span> &npbs, &npbs <span class='literal-code'>surface</span>.  If the object contains a tag with the specified key, the rendering below will be shown. Use <span class='literal-code'>*</span> if you want to show the rendering by default. Note that a mapping overrides this"
             }),
             createFieldUI("Rendering", "render", tagRendering, {
                 deflt: "The name of this object is {name}",
@@ -141,7 +143,7 @@ class TagRenderingGenerator
                         description: "Optional. If the freeform text field is used to fill out the tag, these tags are applied as well. The main use case is to flag the object for review. (A prime example is access. A few predefined values are given and the option to fill out something. Here, one can add e.g. <span class='literal-code'>fixme=access was filled out by user, value might not be correct</span>"
                     }),
 
-            createFieldUI(
+             options.hideQuestion ? new FixedUiElement("") : createFieldUI(
                 "Only show if", "condition", tagRendering,
                 {
                     deflt: "",
@@ -223,6 +225,7 @@ class PresetGenerator extends UIElement {
                             new FixedUiElement("Preset removed")
                         ]
                         self.Update();
+                        pingThemeObject();
                         break;
                     }
                 }
@@ -255,6 +258,51 @@ class LayerGenerator extends UIElement {
     }
 
     private CreateElements(fullConfig: UIEventSource<LayoutConfigJson>, layerConfig: LayerConfigJson) {
+
+
+        // Init some defaults
+        layerConfig.title = layerConfig.title ?? {
+            key: "*",
+            addExtraTags: "",
+            mappings: [],
+            question: "",
+            render: "Title",
+            type: "text"
+        };
+        layerConfig.title.key = "*";
+
+        layerConfig.icon = layerConfig.icon ?? {
+            key: "*",
+            addExtraTags: "",
+            mappings: [],
+            question: "",
+            render: "./assets/bug.svg",
+            type: "text"
+        };
+        layerConfig.icon.key = "*";
+
+
+        layerConfig.color = layerConfig.color ?? {
+            key: "*",
+            addExtraTags: "",
+            mappings: [],
+            question: "",
+            render: "#00f",
+            type: "text"
+        };
+        layerConfig.color.key = "*";
+        
+        layerConfig.width = layerConfig.width?? {
+            key: "*",
+            addExtraTags: "",
+            mappings: [],
+            question: "",
+            render: "10",
+            type: "nat"
+        };
+        layerConfig.width.key = "*"
+        
+        
         const self = this;
         this.uielements = [
 
@@ -269,7 +317,16 @@ class LayerGenerator extends UIElement {
             }),
             createFieldUI("The tags to load from overpass", "overpassTags", layerConfig, {
                 type: "tags",
-                description: "Tags to load from overpass. The format is <span class='literal-code'>key=value&key0=value0&key1=value1</span>, e.g. <span class='literal-code'>amenity=public_bookcase</span> or <span class='literal-code'>amenity=compressed_air&bicycle=yes</span>. Note that a wildcard is supported, e.g. <span class='literal-code'>key=*</span> to have everything. An missing tag can be expressed as <span class='literal-code'>key=</span>, not as <span class='literal-code'>key!=value</span>. E.g. something that is indoor and not private and has no name tag can be queried as <span class='literal-code'>indoor=yes&name=&access!=private</span>"
+                description: "Tags to load from overpass. " +
+                    "The format is <span class='literal-code'>key=value&key0=value0&key1=value1</span>, e.g. <span class='literal-code'>amenity=public_bookcase</span> or <span class='literal-code'>amenity=compressed_air&bicycle=yes</span>." +
+                    "Special values are:" +
+                    "<ul>" +
+                    "<li> <span class='literal-code'>key=*</span> to indicate that this key can be anything</li>. " +
+                    "<li><span class='literal-code'>key=</span> means 'key is NOT present'</li>" +
+                    "<li><span class='literal-code'>key!=value</span> means 'key does NOT have this value'</li>" +
+                    "<li><span class='literal-code'>key~=regex</span> indicates a regex, e.g. <b>highway~=residential|tertiary</b></li>"+
+                    "</ul>"+
+                    ". E.g. something that is indoor, not private and has no name tag can be queried as <span class='literal-code'>indoor=yes&name=&access!=private</span>"
             }),
 
             createFieldUI("Wayhandling","wayHandling", layerConfig, {
@@ -277,14 +334,7 @@ class LayerGenerator extends UIElement {
                 description: "Specifies how ways (lines and areas) are handled: either the way is shown, a center point is shown or both"
             }),
 
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title ?? {
-                key: "",
-                addExtraTags: "",
-                mappings: [],
-                question: "",
-                render: "Title",
-                type: "string"
-            }, {
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.title, {
                 header: "Title element",
                 description: "This element is shown in the title of the popup in a header-tag",
                 removable: false,
@@ -292,14 +342,7 @@ class LayerGenerator extends UIElement {
             }),
 
 
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.icon ?? {
-                key: "*",
-                addExtraTags: "",
-                mappings: [],
-                question: "",
-                render: "./assets/bug.svg",
-                type: "text"
-            }, {
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.icon , {
                 header: "Icon",
                 description: "This decides which icon is used to represent an element on the map. Leave blank if you don't want icons to pop up",
                 removable: false,
@@ -307,28 +350,14 @@ class LayerGenerator extends UIElement {
             }),
             
 
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.color ?? {
-                key: "*",
-                addExtraTags: "",
-                mappings: [],
-                question: "",
-                render: "#0000ff",
-                type: "text"
-            }, {
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.color, {
                 header: "Colour",
                 description: "This decides which color is used to represent a way on the map. Note that if an icon is defined as well, the icon will be showed too",
                 removable: false,
                 hideQuestion: true
             }),
 
-            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.width ?? {
-                key: "*",
-                addExtraTags: "",
-                mappings: [],
-                question: "",
-                render: "10",
-                type: "nat"
-            }, {
+            new TagRenderingGenerator(fullConfig, layerConfig, layerConfig.width , {
                 header: "Line thickness",
                 description: "This decides the line thickness of ways (in pixels)",
                 removable: false,
@@ -402,9 +431,8 @@ class AllLayerComponent extends UIElement {
         const layerPanes: { header: UIElement | string, content: UIElement | string }[] = [];
         const config = this.config;
         for (const layer of this.config.data.layers) {
-
             const iconUrl = CustomLayoutFromJSON.TagRenderingFromJson(layer?.icon)
-                .GetContent({id: "node/-1"});
+                ?.GetContent({id: "node/-1"});
             const header = this.config.map(() => {
 
                 return `<img src="${iconUrl ?? "./assets/help.svg"}">`
@@ -498,12 +526,14 @@ export class ThemeGenerator extends UIElement {
         this.url = base64.map((data) => baseUrl + `/index.html?test=true&userlayout=true#` + data);
         const self = this;
 
+        pingThemeObject = () => {self.themeObject.ping()};
         createFieldUI = (label, key, root, options) => {
 
             options = options ?? {description: "?"};
             options.type = options.type ?? "string";
 
             const value = new UIEventSource<string>(TagsToString(root[key]) ?? options?.deflt);
+
             let textField: UIElement;
             if (options.type === "typeSelector") {
                 const options: { value: string, shown: string | UIElement }[] = [];
@@ -531,6 +561,24 @@ export class ThemeGenerator extends UIElement {
                 textField = new DropDown<string>("",
                     options,
                     value)
+
+            } else if (options.type === "key") {
+                textField = new TextField<string>({
+                    placeholder: "single key",
+                    startValidated: false,
+                    value: new UIEventSource<string>(""),
+                    toString: str => str,
+                    fromString: str => {
+                        if (str === "*") {
+                            return str;
+                        }
+                        str = str.trim();
+                        if (str.match("^_*[a-zA-Z]*[a-zA-Z0-9:]*$") == null) {
+                            return undefined;
+                        }
+                        return str.trim();
+                    }
+                })
 
             } else if (options.type === "tags") {
                 textField = ValidatedTextField.TagTextField(value.map(CustomLayoutFromJSON.TagsFromJson, [], tags => {
@@ -567,6 +615,11 @@ export class ThemeGenerator extends UIElement {
                 }
                 self.themeObject.ping(); // We assume the root is a part of the themeObject
             });
+
+            self.themeObject.addCallback(() => {
+                value.setData(root[key]);
+            })
+
             return new Combine([
                 label,
                 textField,
@@ -580,6 +633,11 @@ export class ThemeGenerator extends UIElement {
             createFieldUI("Title", "title", jsonObjectRoot, {
                 deflt: "Title",
                 description: "The title of this theme, as shown in the welcome message and in the title bar of the browser"
+            }),
+            createFieldUI("icon", "icon", jsonObjectRoot, {
+                deflt: "./assets/bug.svg",
+                type: "img",
+                description: "The icon representing this MapComplete instance. It is shown in the welcome message and -if adopted as official theme- used as favicon and to browse themes"
             }),
             createFieldUI("Description", "description", jsonObjectRoot, {
                 description: "Shown in the welcome message",
@@ -604,11 +662,12 @@ export class ThemeGenerator extends UIElement {
                 deflt: "12",
                 description: "The initial zoom level where the map is located"
             }),
-            createFieldUI("icon", "icon", jsonObjectRoot, {
-                deflt: "./assets/bug.svg",
-                type: "img",
-                description: "The icon representing this MapComplete instance. It is shown in the welcome message and -if adopted as official theme- used as favicon and to browse themes"
+            createFieldUI("Query widening factor", "widenFactor", jsonObjectRoot, {
+                type: "pfloat",
+                deflt: "0.05",
+                description: "When a query is run, the current map view is taken and a margin with a certain factor is added to allow panning and zooming. If you are running heavy queries (e.g. highway=residential), to much data is returned. In that case, lower the widenfactor, e.g. to 0.01-0.02"
             }),
+            
 
             new AllLayerComponent(this.themeObject)
         ]

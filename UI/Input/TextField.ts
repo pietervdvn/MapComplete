@@ -6,15 +6,15 @@ import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
 import {TagRenderingOptions} from "../../Customizations/TagRenderingOptions";
 import {CustomLayoutFromJSON} from "../../Customizations/JSON/CustomLayoutFromJSON";
-import {Tag} from "../../Logic/TagsFilter";
+import {And, Tag} from "../../Logic/TagsFilter";
 
 export class ValidatedTextField {
     public static inputValidation = {
         "$": (str) => true,
         "string": (str) => true,
         "date": (str) => true, // TODO validate and add a date picker
-        "int": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)),
-        "nat": (str) => str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0,
+        "int": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))},
+        "nat": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0},
         "float": (str) => !isNaN(Number(str)),
         "pfloat": (str) => !isNaN(Number(str)) && Number(str) > 0,
         "email": (str) => EmailValidator.validate(str),
@@ -37,6 +37,7 @@ export class ValidatedTextField {
                 placeholder: "Tags",
                 fromString: str => {
                     const tags = CustomLayoutFromJSON.TagsFromJson(str);
+                    console.log("Parsed",str," --> ",tags)
                     if (tags === []) {
                         if (allowEmpty) {
                             return []
@@ -48,19 +49,14 @@ export class ValidatedTextField {
                 }
                 ,
                 toString: (tags: Tag[]) => {
-                    if (tags === undefined) {
-                        return undefined;
-                    }
-                    if (tags === []) {
+                    if (tags === undefined || tags === []) {
                         if (allowEmpty) {
                             return "";
                         } else {
                             return undefined;
                         }
                     }
-                    return tags.map(tag => 
-                        tag.invertValue ? tag.key + "!=" + tag.value : 
-                        tag.key + "=" + tag.value).join("&")
+                    return new And(tags).asHumanString(false);
                 },
                 value: value,
                 startValidated: true

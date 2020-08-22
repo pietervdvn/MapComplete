@@ -9,6 +9,7 @@ import Combine from "./UI/Base/Combine";
 import {Button} from "./UI/Base/Button";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {State} from "./State";
+import {TextField} from "./UI/Input/TextField";
 
 const connection = new OsmConnection(true, new UIEventSource<string>(undefined), false);
 connection.AttemptLogin();
@@ -28,22 +29,52 @@ const themeGenerator = new ThemeGenerator(connection, hash);
 themeGenerator.AttachTo("layoutCreator");
 themeGenerator.url.syncWith(localStorage);
 
+
+
+function setDefault() {
+    themeGenerator.themeObject.data.title = undefined;
+    themeGenerator.themeObject.data.description = undefined;
+    themeGenerator.themeObject.data.icon = undefined;
+    themeGenerator.themeObject.data.language = ["en"];
+    themeGenerator.themeObject.data.name = undefined;
+    themeGenerator.themeObject.data.startLat = 0;
+    themeGenerator.themeObject.data.startLon = 0;
+    themeGenerator.themeObject.data.startZoom = 12;
+    themeGenerator.themeObject.data.maintainer = connection.userDetails.data.name;
+    themeGenerator.themeObject.data.layers = [];
+    themeGenerator.themeObject.data.widenFactor = 0.07;
+    themeGenerator.themeObject.ping();
+}
+
+
+var loadFrom = new TextField<string>(
+    {
+        placeholder: "Load from a previous JSON (paste the value here)",
+        toString: str => str,
+        fromString: str => str,
+    }
+);
+loadFrom.GetValue().setData("");
+
+const loadFromTextField = new Button("Load", () => {
+    const parsed = JSON.parse(loadFrom.GetValue().data);
+    setDefault();
+    for (const parsedKey in parsed) {
+        themeGenerator.themeObject.data[parsedKey] = parsed[parsedKey];
+    }
+    themeGenerator.themeObject.ping();
+    loadFrom.GetValue().setData("");
+});
+
 new Combine([
     new Preview(themeGenerator.url, themeGenerator.themeObject),
     "<h2>Danger zone</h2>",
-    new Button("Clear theme", () => {
-        themeGenerator.themeObject.data.title = undefined;
-        themeGenerator.themeObject.data.description = undefined;
-        themeGenerator.themeObject.data.icon = undefined;
-        themeGenerator.themeObject.data.language = ["en"];
-        themeGenerator.themeObject.data.name = undefined;
-        themeGenerator.themeObject.data.startLat = 0;
-        themeGenerator.themeObject.data.startLon = 0;
-        themeGenerator.themeObject.data.startZoom = 12;
-        themeGenerator.themeObject.data.maintainer = connection.userDetails.data.name;
-        themeGenerator.themeObject.data.layers = [];
-        themeGenerator.themeObject.ping();
-    }),
+    loadFrom,
+    loadFromTextField,
+    "<span class='alert'>Loading from the text field will erase the current theme</span>",
+   
+    "<br/>",
+    new Button("Clear theme", setDefault),
     "<br/>",
     "Version: ",
     State.vNumber
