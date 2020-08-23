@@ -3,7 +3,7 @@ import {UIElement} from "../UI/UIElement";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
-import {LayerConfigJson} from "./JSON/CustomLayoutFromJSON";
+import {LayerConfigJson, TagRenderingConfigJson} from "./JSON/CustomLayoutFromJSON";
 
 export interface Preset {
     tags: Tag[],
@@ -128,7 +128,7 @@ export class LayerDefinition {
         this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
 
-
+/*
     ToJson() {
 
         function t(translation: string | Translation | UIElement) {
@@ -144,8 +144,16 @@ export class LayerDefinition {
             return translation.InnerRender();
         }
 
+        function tr(tagRendering : TagRenderingOptions) : TagRenderingConfigJson{
+            const o = tagRendering.options;
+            return {
+                key: o.freeform.key,
+                render: o.freeform.renderTemplate,
+                type: o.freeform.template.
+            }
+        }
         
-        const layerConfig /* : LayerConfigJson */= {
+        const layerConfig  : LayerConfigJson = {
             name: t(this.name),
             description: t(this.description),
             maxAllowedOverlapPercentage: this.maxAllowedOverlapPercentage,
@@ -161,5 +169,5 @@ export class LayerDefinition {
         };
         
         return JSON.stringify(layerConfig)
-    }
+    }*/
 }

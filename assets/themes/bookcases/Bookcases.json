@@ -54,7 +54,8 @@
           "title": {
             "en": "Bookcase",
             "nl": "Boekenruilkast"
-          }
+          },
+          "tags": "amenity=public_bookcase"
         }
       ],
       "tagRenderings": [

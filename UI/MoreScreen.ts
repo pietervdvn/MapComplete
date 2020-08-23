@@ -6,6 +6,7 @@ import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import {State} from "../State";
 import {CustomLayout} from "../Logic/CustomLayers";
+import {VariableUiElement} from "./Base/VariableUIElement";
 
 
 export class MoreScreen extends UIElement {
@@ -16,10 +17,23 @@ export class MoreScreen extends UIElement {
     }
 
     InnerRender(): string {
-        
+
         const tr = Translations.t.general.morescreen;
 
         const els: UIElement[] = []
+
+        els.push(new VariableUiElement(
+            State.state.osmConnection.userDetails.map(userDetails => {
+                if (userDetails.csCount < State.userJourney.themeGeneratorUnlock) {
+                    return tr.requestATheme.Render();
+                }
+                return new SubtleButton("./assets/pencil.svg", tr.createYourOwnTheme, {
+                    url: "https://pietervdvn.github.io/MapComplete/customGenerator.html",
+                    newTab: false
+                }).Render();
+            })
+        ));
+
         for (const k in AllKnownLayouts.allSets) {
             const layout = AllKnownLayouts.allSets[k]
             if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
@@ -28,6 +42,7 @@ export class MoreScreen extends UIElement {
             if (layout.name === State.state.layoutToUse.data.name) {
                 continue;
             }
+
             if (layout.name === CustomLayout.NAME) {
                 if (!State.state.osmConnection.userDetails.data.loggedIn) {
                     continue;
@@ -60,7 +75,6 @@ export class MoreScreen extends UIElement {
 
         return new VerticalCombine([
             tr.intro,
-            tr.requestATheme,
             new VerticalCombine(els),
             tr.streetcomplete
         ]).Render();

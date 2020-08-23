@@ -9,17 +9,18 @@ import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWi
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagDependantUIElementConstructor} from "../UIElementConstructor";
 import {Map} from "../Layers/Map";
+import {UIElement} from "../../UI/UIElement";
 
 
 export interface TagRenderingConfigJson {   
     // If this key is present, then...
     key?: string,
     // Use this string to render
-    render: string,
+    render?: string | any,
     // One of string, int, nat, float, pfloat, email, phone. Default: string
     type?: string,
     // If it is not known (and no mapping below matches), this question is asked; a textfield is inserted in the rendering above
-    question?: string,
+    question?: string | any,
     // If a value is added with the textfield, this extra tag is addded. Optional field
     addExtraTags?: string | { k: string, v: string }[];
     // Extra tags: rendering is only shown/asked if these tags are present
@@ -29,7 +30,7 @@ export interface TagRenderingConfigJson {
     mappings?:
         {
             if: string,
-            then: string
+            then: string | any
         }[]
 }
 
@@ -43,23 +44,27 @@ export interface LayerConfigJson {
     color?: TagRenderingConfigJson;
     width?: TagRenderingConfigJson;
     overpassTags: string | { k: string, v: string }[];
-    wayHandling: number,
-    presets: Preset[]
-    ,
+    wayHandling?: number,
+    presets: {
+        tags: string,
+        title: string | any,
+        description?: string | any,
+        icon?: string
+    }[],
     tagRenderings: TagRenderingConfigJson []
 }
 
 export interface LayoutConfigJson {
-    widenFactor: number;
+    widenFactor?: number;
     name: string;
-    title: string;
-    description: string;
+    title: string | any;
+    description: string | any;
     maintainer: string;
-    language: string[];
+    language: string | string[];
     layers: LayerConfigJson[],
-    startZoom: number;
-    startLat: number;
-    startLon: number;
+    startZoom: string | number;
+    startLat: string | number;
+    startLon: string | number;
     /**
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64,'
      */
@@ -271,17 +276,19 @@ export class CustomLayoutFromJSON {
 
     public static LayoutFromJSON(json: LayoutConfigJson) {
         const t = CustomLayoutFromJSON.MaybeTranslation;
-        let languages = json.language;
+        let languages : string[] ;
         if(typeof (json.language) === "string"){
             languages = [json.language];
+        }else{
+            languages = json.language
         }
         const layout = new Layout(json.name,
             languages,
             t(json.title),
             json.layers.map(CustomLayoutFromJSON.LayerFromJson),
-            json.startZoom,
-            json.startLat,
-            json.startLon,
+            parseInt(""+json.startZoom),
+            parseFloat(""+json.startLat),
+            parseFloat(""+json.startLon),
             new Combine(['<h3>', t(json.title), '</h3><br/>', t(json.description)])
         );
         layout.icon = json.icon;

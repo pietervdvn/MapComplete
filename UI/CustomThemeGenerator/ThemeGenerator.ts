@@ -395,6 +395,18 @@ class LayerGenerator extends UIElement {
                 });
                 self.CreateElements(fullConfig, layerConfig);
                 self.Update();
+            }),
+            
+            new Button("Remove this layer", () => {
+                const layers = fullConfig.data.layers;
+                for (let i = 0; i < layers.length; i++) {
+                    if(layers[i] === layerConfig){
+                        layers.splice(i, 1);
+                        break;
+                    }
+                }
+                self.Update();
+                pingThemeObject();
             })
 
         ]
@@ -469,7 +481,7 @@ class AllLayerComponent extends UIElement {
                     minzoom: 12,
                     overpassTags: "",
                     wayHandling: LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
-                    presets: [{}],
+                    presets: [],
                     tagRenderings: []
                 });
 

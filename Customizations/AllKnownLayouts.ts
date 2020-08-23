@@ -38,9 +38,6 @@ export class AllKnownLayouts {
         new Smoothness(),
         new Groen(),
 
-        /*
-        new Toilets(),
-        */
     ];
     
 
