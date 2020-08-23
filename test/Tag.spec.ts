@@ -6,6 +6,7 @@ import {CustomLayoutFromJSON} from "../Customizations/JSON/CustomLayoutFromJSON"
 import {And} from "../Logic/TagsFilter";
 import Translation from "../UI/i18n/Translation";
 import T from "./TestHelper";
+import {Artwork} from "../Customizations/Layers/Artwork";
 
 
 new T([
@@ -21,7 +22,7 @@ new T([
         const tags = CustomLayoutFromJSON.TagsFromJson("highway~=residential|tertiary");
         equal(""+tags[0].value, ""+/residential|tertiary/);
         console.log(tags[0].asOverpass());
-        
+
     }
     ],
     ["Tag replacement works in translation", () => {
@@ -30,5 +31,9 @@ new T([
         }).replace("{key}", "value");
         equal(tr.txt, "Test value abc");
 
+    }],
+    ["JSONify artwork layer", () => {
+        const a = new Artwork();
+        console.log(a.ToJson())
     }]
 ]);

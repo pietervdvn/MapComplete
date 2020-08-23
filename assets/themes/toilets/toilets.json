@@ -167,8 +167,9 @@
   "maintainer": "Pieter Vander Vennet",
   "title": "Open Toilet Map",
   "startLon": "3.2222",
+  "widenFactor": 0.05,
   "icon": "./assets/themes/toilets/toilets.svg",
   "description": "A map of public toilets",
-  "language": "en",
+  "language": ["en"],
   "name": "toilets"
 }

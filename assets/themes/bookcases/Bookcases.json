@@ -10,6 +10,10 @@
     "en": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
     "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
   },
+  "widenFactor": 0.05,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 10,
   "language": [
     "en",
     "nl"

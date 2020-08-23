@@ -3,6 +3,7 @@ import {UIElement} from "../UI/UIElement";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
+import {LayerConfigJson} from "./JSON/CustomLayoutFromJSON";
 
 export interface Preset {
     tags: Tag[],
@@ -127,4 +128,38 @@ export class LayerDefinition {
         this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
 
+
+    ToJson() {
+
+        function t(translation: string | Translation | UIElement) {
+            if (translation === undefined) {
+                return undefined;
+            }
+            if (typeof (translation) === "string") {
+                return translation;
+            }
+            if (translation instanceof Translation && translation.translations !== undefined) {
+                return translation.translations;
+            }
+            return translation.InnerRender();
+        }
+
+        
+        const layerConfig /* : LayerConfigJson */= {
+            name: t(this.name),
+            description: t(this.description),
+            maxAllowedOverlapPercentage: this.maxAllowedOverlapPercentage,
+            presets: this.presets,
+            icon: this.icon,
+            minzoom: this.minzoom,
+            overpassFilter: this.overpassFilter,
+            title: this.title,
+            elementsToShow: this.elementsToShow,
+            style: this.style,
+            wayHandling: this.wayHandling,
+
+        };
+        
+        return JSON.stringify(layerConfig)
+    }
 }

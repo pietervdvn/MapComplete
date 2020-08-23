@@ -8,6 +8,7 @@ import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagDependantUIElementConstructor} from "../UIElementConstructor";
+import {Map} from "../Layers/Map";
 
 
 export interface TagRenderingConfigJson {   
@@ -20,7 +21,9 @@ export interface TagRenderingConfigJson {
     // If it is not known (and no mapping below matches), this question is asked; a textfield is inserted in the rendering above
     question?: string,
     // If a value is added with the textfield, this extra tag is addded. Optional field
-    addExtraTags?: string | string[] | { k: string, v: string }[];
+    addExtraTags?: string | { k: string, v: string }[];
+    // Extra tags: rendering is only shown/asked if these tags are present
+    condition?: string;
     // Alternatively, these tags are shown if they match - even if the key above is not there
     // If unknown, these become a radio button
     mappings?:
@@ -33,26 +36,16 @@ export interface TagRenderingConfigJson {
 export interface LayerConfigJson {
 
     id: string;
-    icon: TagRenderingConfigJson;
-    title: TagRenderingConfigJson;
-    description: string;
-    minzoom: number,
-    color: TagRenderingConfigJson;
-    width: TagRenderingConfigJson;
-    overpassTags: string | string[] | { k: string, v: string }[];
+    title: string | any | TagRenderingConfigJson;
+    description: string | any;
+    minzoom: number | string,
+    icon?: TagRenderingConfigJson;
+    color?: TagRenderingConfigJson;
+    width?: TagRenderingConfigJson;
+    overpassTags: string | { k: string, v: string }[];
     wayHandling: number,
-    presets: [
-        {
-            // icon: optional. Uses the layer icon by default
-            icon?: string;
-            // title: optional. Uses the layer title by default
-            title?: string;
-            // description: optional. Uses the layer description by default
-            description?: string;
-            // tags: optional list {k:string, v:string}[]
-            tags?: string | string[] | { k: string, v: string }[]
-        }
-    ],
+    presets: Preset[]
+    ,
     tagRenderings: TagRenderingConfigJson []
 }
 
@@ -80,7 +73,7 @@ export class CustomLayoutFromJSON {
         return CustomLayoutFromJSON.LayoutFromJSON(JSON.parse(atob(layoutFromBase64)));
     }
 
-    public static TagRenderingFromJson(json: any): TagDependantUIElementConstructor {
+    public static TagRenderingFromJson(json: TagRenderingConfigJson): TagDependantUIElementConstructor {
 
         if(json === undefined){
             return undefined;
@@ -147,7 +140,7 @@ export class CustomLayoutFromJSON {
         }
     }
 
-    private static StyleFromJson(layout: any, styleJson: any): ((tags: any) => {
+    private static StyleFromJson(layout: LayerConfigJson): ((tags: any) => {
         color: string,
         weight?: number,
         icon: {
@@ -224,7 +217,7 @@ export class CustomLayoutFromJSON {
         if (typeof (json) === "string") {
             tags = json.split("&").map(CustomLayoutFromJSON.TagFromJson);
         } else {
-            tags = json.map(CustomLayoutFromJSON.TagFromJson);
+            tags = json.map(x => {CustomLayoutFromJSON.TagFromJson(x)});
         }
         for (const tag of tags) {
             if (tag === undefined) {
@@ -234,7 +227,7 @@ export class CustomLayoutFromJSON {
         return tags;
     }
 
-    private static LayerFromJson(json: any): LayerDefinition {
+    private static LayerFromJson(json: LayerConfigJson): LayerDefinition {
         const t = CustomLayoutFromJSON.MaybeTranslation;
         const tr = CustomLayoutFromJSON.TagRenderingFromJson;
         const tags = CustomLayoutFromJSON.TagsFromJson(json.overpassTags);
@@ -250,7 +243,7 @@ export class CustomLayoutFromJSON {
                 description: t(json.description),
                 name: t(json.title.render),
                 icon: icon,
-                minzoom: json.minzoom,
+                minzoom: parseInt(""+json.minzoom),
                 title: tr(json.title),
                 presets: json.presets.map((preset) => {
                     return CustomLayoutFromJSON.PresetFromJson(json, preset)
@@ -258,9 +251,9 @@ export class CustomLayoutFromJSON {
                 elementsToShow:
                     [new ImageCarouselWithUploadConstructor()].concat(json.tagRenderings.map(tr)),
                 overpassFilter: new And(tags),
-                wayHandling: parseInt(json.wayHandling) ?? LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
+                wayHandling: parseInt(""+json.wayHandling) ?? LayerDefinition.WAYHANDLING_CENTER_AND_WAY,
                 maxAllowedOverlapPercentage: 0,
-                style: CustomLayoutFromJSON.StyleFromJson(json, json.style)
+                style: CustomLayoutFromJSON.StyleFromJson(json)
             }
         )
     }
@@ -276,7 +269,7 @@ export class CustomLayoutFromJSON {
         return new Translation(json);
     }
 
-    public static LayoutFromJSON(json: any) {
+    public static LayoutFromJSON(json: LayoutConfigJson) {
         const t = CustomLayoutFromJSON.MaybeTranslation;
         let languages = json.language;
         if(typeof (json.language) === "string"){
@@ -293,7 +286,10 @@ export class CustomLayoutFromJSON {
         );
         layout.icon = json.icon;
         layout.maintainer = json.maintainer;
-        layout.widenFactor = parseFloat(json.widenFactor) ?? 0.03;
+        layout.widenFactor = parseFloat(""+json.widenFactor) ?? 0.03;
+        if(isNaN(layout.widenFactor)){
+            layout.widenFactor = 0.03;
+        }
         if (layout.widenFactor > 0.1) {
             layout.widenFactor = 0.1;
         }
