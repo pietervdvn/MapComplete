@@ -637,7 +637,8 @@ export default class Translations {
             ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
             uploadFailed: new T({
                 en: "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them.",
-                nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten."
+                nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
+                fr: "L'ajout de la photo a échoué. Êtes-vous connecté à Internet?"
             }),
             respectPrivacy: new T({
                 en: "Please respect privacy. Do not photograph people nor license plates",
@@ -646,11 +647,12 @@ export default class Translations {
             }),
             uploadDone: new T({
                 en: "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
-                nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>"
+                nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>",
+                fr: "<span class='thanks'>Votre photo est ajouté. Merci beaucoup!</span>"
             })
         },
         centerMessage: {
-            loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'chargement des données'}),
+            loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'Chargement des données'}),
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
                 nl: 'Zoom in om de data te zien en te bewerken',

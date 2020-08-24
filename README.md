@@ -65,12 +65,14 @@ To develop:
 1. Install `npm`.
 2. Run `npm install` to install the dependencies
 3. Run `npm run start` to build and host a local testversion
+4. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
 
 To deploy:
 
 0. `rm -rf dist/` to remove the local build
-1. `npm run build`
-2. copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
+1. `ts-node createLayouts.ts` to generate the custom htmls, (such as `aed.html`, `bookcases.html`)
+2. `npm run build`
+3. copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
 
 ## Architecture
 
@@ -112,7 +114,16 @@ TODO: erase cookies of third party websites and API's
 
 # Translating MapComplete
 
-Help to translate mapcomplete. Fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add your language and send a pull request.
+Help to translate mapcomplete.
+
+A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
+
+1. Modify `"language"` to contain the new language, e.g. `"language":"nl"` becomes `"language": ["nl", "en"]`
+2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description":"Welcome to Open Bookcase Map"` to `"description": {"en":"Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to antoher supported language.
+3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
+4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
+
+
 
 # Creating your own theme
 
