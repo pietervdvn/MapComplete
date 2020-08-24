@@ -46,7 +46,7 @@ export class WelcomeMessage extends UIElement {
 
         return "<span>" +
             this.description.Render() +
-            "<br/>" +
+            "<br/></br>" +
             loginStatus +
             this.tail.Render() +
             "<br/>" +

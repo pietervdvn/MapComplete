@@ -619,9 +619,9 @@ export default class Translations {
                 fr: 'Mettre votre {count} photos en ligne'
             }),
             pleaseLogin: new T({
-                en: 'Please login to add a picure or to answer questions',
-                nl: 'Gelieve je aan te melden om een foto toe te voegen of vragen te beantwoorden',
-                fr: 'Merci de vous connecter pour mettre une photo en ligne ou répondre aux questions'
+                en: 'Please login to add a picure',
+                nl: 'Gelieve je aan te melden om een foto toe te voegen',
+                fr: 'Connectez vous pour mettre une photo en ligne'
             }),
             willBePublished: new T({
                 en: 'Your picture will be published: ',
@@ -664,12 +664,6 @@ export default class Translations {
         },
         general: {
             loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap", fr:'Se connecter avec OpenStreeMap'}),
-            getStarted: new T({
-                en: "<span class='activate-osm-authentication'>Login with OpenStreetMap</span> or <a href='https://www.openstreetmap.org/user/new' target='_blank'>make a free account to get started</a>",
-                nl: "<span class='activate-osm-authentication'>Meld je aan met je OpenStreetMap-account</span> of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak snel en gratis een account om te beginnen</a>",
-                fr: "<span class='activate-osm-authentication'>Se connecter avec OpenStreetMap</span> ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>créer un compte gratuitement pour commencer</a>",
-            
-            }),
             welcomeBack: new T({
                 en: "You are logged in, welcome back!",
                 nl: "Je bent aangemeld. Welkom terug!",
@@ -677,7 +671,8 @@ export default class Translations {
             }),
             loginToStart: new T({
                 en: "Login to answer this question",
-                nl: "Meld je aan om deze vraag te beantwoorden"
+                nl: "Meld je aan om deze vraag te beantwoorden",
+                fr: "Connectez vous pour répondre à cette question"
             }),
             search: {
                 search: new Translation({
@@ -926,7 +921,17 @@ export default class Translations {
                 en: "Open inbox",
                 nl: "Ga naar de berichten",
                 fr: "Ouvrir les messages"
-            })
+            }),
+            getStartedLogin: new T({
+                en: "Login with OpenStreetMap to get started",
+                nl: "Login met OpenStreetMap om te beginnen",
+                fr: "Connectez vous avec OpenStreetMap pour commencer"
+            }),
+            getStartedNewAccount: new T({
+                en: " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
+                nl: " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a> ",
+                fr: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>registrez vous</a>"
+            }),
         },
         favourite: {
             title: new T({en: "Personal theme"}),

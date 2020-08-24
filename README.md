@@ -40,23 +40,19 @@ MapComplete is set up to lure people into OpenStreetMap and to teach them while 
 
 A typical user journey would be:
 
-0) Oh, this is a cool map of _my specific interest_! There is a lot of data already...
-0a) The user might discover the explanation about OSM in the dedicated tab page
-0b) The user might discover the other themes in the other tab
-0c) The user might share the map and/or embed it
-
+0. Oh, this is a cool map of _my specific interest_! There is a lot of data already...
+    a. The user might discover the explanation about OSM in the dedicated tab page
+    b. The user might discover the other themes in the other tab
+    c. The user might share the map and/or embed it
 1) The user clicks that big tempting button 'login' in order to answer questions. The user makes an account - a big step.
-
-2) The user answers a question! Hooray!
+2. The user answers a question! Hooray!
     When at least one question is answered (aka: having one changeset on OSM), adding a new point is unlocked
-    
-3) The user adds a new POI somewhere 
-3a) Note that _all messages_ must be read before being able to add a point. In other words, sending a message to a misbehaving MapComplete user acts as having a zero-minutes-block. This is added deliberately to avoid new users fucking up too much
-
-4) At 50 changesets, the custom layout becomes available
-5) At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This is to give more control to power users and to teach new users the tagging scheme
-5) At 250 changesets, the tags get linked to the wiki
-6) At 500 changesets, I expect users to be power users and to be comfortable with tagging scheme and such. The custom theme generator is unlocked.
+3. The user adds a new POI somewhere 
+    a. Note that _all messages_ must be read before being able to add a point. In other words, sending a message to a misbehaving MapComplete user acts as having a zero-minutes-block. This is added deliberately to avoid new users fucking up too much
+4. At 50 changesets, the custom layout becomes available
+5. At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This is to give more control to power users and to teach new users the tagging scheme
+6. At 250 changesets, the tags get linked to the wiki
+7. At 500 changesets, I expect contributors to be power users and to be comfortable with tagging scheme and such. The custom theme generator is unlocked.
 
 
 ## License
@@ -133,7 +129,7 @@ Geolocation is available on mobile only throught hte device's GPS location (so n
 TODO: erase cookies of third party websites and API's
 
 
-# Attributions:
+# Attributions
 
 Data from OpenStreetMap
 Images from Wikipedia/Wikimedia

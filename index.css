@@ -78,6 +78,18 @@ form {
     padding-bottom: 0.15em;
 }
 
+.soft {
+    background-color: #e5f5ff;
+    font-weight: bold;
+    border-radius: 1em;
+    padding: 0.3em;
+    margin: 0.25em;
+    text-align: center;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+}
+
+
 .subtle {
     color: #999;
 }

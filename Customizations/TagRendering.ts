@@ -16,6 +16,7 @@ import {State} from "../State";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
 import {SubtleButton} from "../UI/Base/SubtleButton";
+import Combine from "../UI/Base/Combine";
 
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
@@ -393,12 +394,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         if (this.IsQuestioning() && !State.state?.osmConnection?.userDetails?.data?.loggedIn) {
             const question =
-                this.ApplyTemplate(this._question).Render();
+                this.ApplyTemplate(this._question).SetClass('question-text');
             return "<div class='question'>" +
-                "<span class='question-text'>" + question + "</span>" +
-                "<br/>" +
-                "<span class='login-button-friendly'>" + this._friendlyLogin.Render() + "</span>" +
-                "</div>"
+                new Combine([
+                    question,
+                    "<br/>",
+                    this._questionElement.Render(),
+                    "<span class='login-button-friendly'>" + this._friendlyLogin.Render() + "</span>",
+                ]).Render() + "</div>";
         }
 
         if (this.IsQuestioning() || this._editMode.data) {

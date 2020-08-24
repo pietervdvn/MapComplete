@@ -10,6 +10,7 @@ import {VerticalCombine} from "./Base/VerticalCombine";
 import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Imgur} from "../Logic/Web/Imgur";
+import {SubtleButton} from "./Base/SubtleButton";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -18,7 +19,8 @@ export class ImageUploadFlow extends UIElement {
     private _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
-
+    private _connectButton : UIElement;
+    
     constructor(
         preferedLicense: UIEventSource<string>,
         uploadOptions: ((license: string) =>
@@ -42,10 +44,13 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
             preferedLicense
-        );
+        ); const t = Translations.t.image;
+       
         this._licensePicker = licensePicker;
         this._selectedLicence = licensePicker.GetValue();
-
+        this._connectButton = new Combine([ t.pleaseLogin])
+            .onClick(() => State.state.osmConnection.AttemptLogin())
+            .SetClass("login-button-friendly");    
 
     }
 
@@ -58,7 +63,7 @@ export class ImageUploadFlow extends UIElement {
         }
 
         if (!State.state.osmConnection.userDetails.data.loggedIn) {
-            return t.pleaseLogin.Render();
+            return this._connectButton.Render();
         }
 
         let currentState: UIElement[] = [];
@@ -114,12 +119,6 @@ export class ImageUploadFlow extends UIElement {
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         const user = State.state.osmConnection.userDetails.data;
-
-        htmlElement.onclick = function () {
-            if (!user.loggedIn) {
-                State.state.osmConnection.AttemptLogin();
-            }
-        }
 
         this._licensePicker.Update()
         const form = document.getElementById('fileselector-form-' + this.id) as HTMLFormElement
