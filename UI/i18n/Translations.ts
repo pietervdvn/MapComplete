@@ -924,9 +924,9 @@ export default class Translations {
             })
         },
         favourite: {
-            title: new T({en: "Custom"}),
+            title: new T({en: "Personal theme"}),
             description: new T({
-                en: "<h3>Your custom theme</h3>In your custom theme, you can add some favourite layers from other themes to create a custom theme."
+                en: "Add favourite layers from other themes to create a custom theme."
             }),
             panelIntro: new T({
                 en: "<h3>Your custom theme</h3>Create your own theme here by picking your favourite layers"

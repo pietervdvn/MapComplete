@@ -34,6 +34,24 @@ export class MoreScreen extends UIElement {
             })
         ));
 
+        els.push(new VariableUiElement(
+            State.state.osmConnection.userDetails.map(userDetails => {
+                if (userDetails.csCount < State.userJourney.customLayoutUnlock) {
+                    return "";
+                }
+                return new SubtleButton("./assets/star.svg",
+                    new Combine([
+                        "<b>",
+                        Translations.t.favourite.title,
+                        "</b>",
+                        "<br>", Translations.t.favourite.description]), {
+                        url: "https://pietervdvn.github.io/MapComplete/personal.html",
+                        newTab: false
+                    }).Render();
+            })
+        ));
+
+
         for (const k in AllKnownLayouts.allSets) {
             const layout = AllKnownLayouts.allSets[k]
             if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
@@ -44,13 +62,7 @@ export class MoreScreen extends UIElement {
             }
 
             if (layout.name === CustomLayout.NAME) {
-                if (!State.state.osmConnection.userDetails.data.loggedIn) {
                     continue;
-                }
-                if (State.state.osmConnection.userDetails.data.csCount < 
-                    State.userJourney.customLayoutUnlock) {
-                    continue;
-                }
             }
 
             const currentLocation = State.state.locationControl.data;
