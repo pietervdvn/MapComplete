@@ -32,7 +32,7 @@ You can create [your own theme too](https://pietervdvn.github.io/MapComplete/cus
 - [Bookcases](https://pietervdvn.github.io/MapComplete/index.html?quests=bookcases#element) cause I like to collect them.
 - [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=metamap&z=14&lat=50.650&lon=4.2668#element), after a tweet
 
-Have a theme idea? Drop it in the [issues](https://github.com/pietervdvn/MapComplete/issues)
+There are plenty more. Discover them in the app.
 
 ## User journey
 
