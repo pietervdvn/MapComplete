@@ -84,7 +84,7 @@ export default class Translations {
                     "Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>" +
                     "Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
             }),
-            freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'TODO: fr'}),
+            freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'Specifiéz'}),
             parking: {
                 name: new T({en: 'bike parking', nl: 'fietsparking', fr: 'parking à vélo'}),
                 title: new T({en: 'Bike parking', nl: 'Fietsparking', fr: 'Parking à vélo'}),
@@ -607,7 +607,7 @@ export default class Translations {
         },
 
         image: {
-            addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'TODO: fr'}),
+            addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'Ajoutez une photo'}),
             uploadingPicture: new T({
                 en: 'Uploading your picture...',
                 nl: 'Bezig met een foto te uploaden...',
@@ -894,7 +894,8 @@ export default class Translations {
                 
                 requestATheme: new T({
                     en: "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>here</a>",
-                    nl: "Wil je een eigen kaartthema, vraag dit <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>hier aan</a>"
+                    nl: "Wil je een eigen kaartthema, vraag dit <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>hier aan</a>",
+                    fr: "Si vous voulez une autre carte thématique, demandez <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>ici</a>"
                 }),
 
                 streetcomplete: new T({
@@ -903,7 +904,9 @@ export default class Translations {
                     nl: "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 }),
                 createYourOwnTheme: new T({
-                    en: "Create your own MapComplete theme from scratch"
+                    en: "Create your own MapComplete theme from scratch",
+                    nl: "Maak je eigen MapComplete-kaart",
+                    fr: "Créez votre propre MapComplete carte"
                 })
             },
             readYourMessages: new T({
