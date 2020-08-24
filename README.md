@@ -18,6 +18,13 @@ Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `
 
 An explicit non-goal of MapComplete is to modify geometries of ways. Although adding a point to a way or splitting a way in two parts might be added one day.
 
+
+# Creating your own theme
+
+You can create [your own theme too](https://pietervdvn.github.io/MapComplete/customGenerator.html)
+
+
+
 ## Examples
 
 - [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also funded the initial development!
@@ -74,6 +81,19 @@ To deploy:
 2. `npm run build`
 3. copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
 
+## Translating MapComplete
+
+Help to translate mapcomplete.
+
+A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
+
+1. Modify `"language"` to contain the new language, e.g. `"language":"nl"` becomes `"language": ["nl", "en"]`
+2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description":"Welcome to Open Bookcase Map"` to `"description": {"en":"Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to antoher supported language.
+3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
+4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
+
+
+
 ## Architecture
 
 ### High-level overview
@@ -111,23 +131,6 @@ All major personal information is handled by OSM.
 Geolocation is available on mobile only throught hte device's GPS location (so no geolocation is sent of to google)
 
 TODO: erase cookies of third party websites and API's
-
-# Translating MapComplete
-
-Help to translate mapcomplete.
-
-A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
-
-1. Modify `"language"` to contain the new language, e.g. `"language":"nl"` becomes `"language": ["nl", "en"]`
-2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description":"Welcome to Open Bookcase Map"` to `"description": {"en":"Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to antoher supported language.
-3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
-4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
-
-
-
-# Creating your own theme
-
-You can create [your own theme too](https://pietervdvn.github.io/MapComplete/customGenerator.html)
 
 
 # Attributions:
