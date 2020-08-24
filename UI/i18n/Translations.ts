@@ -936,12 +936,12 @@ export default class Translations {
         favourite: {
             title: new T({en: "Personal theme"}),
             description: new T({
-                en: "Add favourite layers from other themes to create a custom theme."
+                en: "Create a personal theme based on all the available layers of all themes"
             }),
             panelIntro: new T({
-                en: "<h3>Your custom theme</h3>Create your own theme here by picking your favourite layers"
+                en: "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes"
             }),
-            loginNeeded: new T({en: "<h3>Log in</h3>A custom layout is only available for OpenStreetMap users"}),
+            loginNeeded: new T({en: "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users"}),
             reload: new T({en: "Reload the data"})
         }
     }

@@ -66,8 +66,10 @@ export class InitUiElements {
 
         if (State.state.featureSwitchMoreQuests.data){
             
-            tabs.push({header:                   `<img src='${'./assets/add.svg'}'>`
-                , content: new MoreScreen()});
+            tabs.push({
+                header: `<img src='${'./assets/add.svg'}'>`
+                , content: new MoreScreen()
+            });
         }
 
 
