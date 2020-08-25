@@ -62,14 +62,19 @@ export class MoreScreen extends UIElement {
             }
 
             if (layout.name === CustomLayout.NAME) {
-                    continue;
+                continue;
             }
 
             const currentLocation = State.state.locationControl.data;
-            const linkText =
-                `https://pietervdvn.github.io/MapComplete/${layout.name}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            let linkText =
+                `./${layout.name}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+
+            if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+                linkText = `./index.html?layout=${layout.name}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            }
+
             let description = Translations.W(layout.description);
-            if(description !== undefined){
+            if (description !== undefined) {
                 description = new Combine(["<br/>", description]);
             }
             const link =

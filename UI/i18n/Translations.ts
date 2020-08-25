@@ -29,38 +29,7 @@ export default class Translations {
 
         },
 
-        artwork: {
-            name: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
-            title: new T({ en: 'Artwork', nl: 'Kunstwerk', fr: "Oeuvre d'art" }),
-            type: {
-                render: new T({
-                    en: 'This is artwork of the type: {artwork_type}',
-                    nl: 'Dit is een kunstwerk van het type: {artwork_type}',
-                    fr: "Ceci est un travail d'art de type: {artwork_type}"
-                }),
-                template: new T({ en: 'Some other type: $$$', nl: 'Een ander type: $$$', fr: 'Un autre type: $$$' }),
-                question: new T({
-                    en: 'What is the type of this artwork?',
-                    nl: 'Wat voor type kunstwerk is dit?',
-                    fr: "Quel est le type de cette oeuvre d'art?"
-                }),
-                architecture: new T({ en: "architecture", nl: "architectuur", fr: "architecture" }),
-                mural: new T({ en: "mural", nl: "muurschildering", fr: "mural" }),
-                painting: new T({ en: "painting", nl: "schilderij", fr: "peinture" }),
-                sculpture: new T({ en: "sculpture", nl: "beeldhouwwerk", fr: "sculpture" }),
-                statue: new T({ en: "statue", nl: "standbeeld", fr: "statue" }),
-                bust: new T({ en: "bust", nl: "buste", fr: "buste" }),
-                stone: new T({ en: "stone", nl: "steen", fr: "rocher" }),
-                installation: new T({ en: "installation", nl: "installatie", fr: "installation" }),
-                graffiti: new T({ en: "graffiti", nl: "graffiti", fr: "graffiti" }),
-                relief: new T({ en: "relief", nl: "verlichting", fr: "relief" }),
-                azulejo: new T({ en: "azulejo", nl: "azulejo", fr: "azulejo" }),
-                tilework: new T({ en: "tilework", nl: "tegelwerk", fr: "carrelage" })
-            }, artist: {
-                question: new T({en:"Which artist created this artwork?"})
-            }
-
-        },
+       
         cyclofix: {
             title: new T({
                 en: 'Cyclofix - an open map for cyclists',
@@ -754,7 +723,7 @@ export default class Translations {
                 header: new T({
                     en: "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
                     nl: "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is.<br/>",
-                    fr: "<h2>Pas de données</h2> vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>"
+                    fr: "<h2>Pas de données</h2>Vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>"
 
                 }),
                 pleaseLogin: new T({

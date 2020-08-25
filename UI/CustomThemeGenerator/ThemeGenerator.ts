@@ -578,17 +578,20 @@ export class ThemeGenerator extends UIElement {
                 textField = new TextField<string>({
                     placeholder: "single key",
                     startValidated: false,
-                    value: new UIEventSource<string>(""),
+                    value:value,
                     toString: str => str,
                     fromString: str => {
+                        if(str === undefined){
+                            return "";
+                        }
                         if (str === "*") {
                             return str;
                         }
                         str = str.trim();
-                        if (str.match("^_*[a-zA-Z]*[a-zA-Z0-9:]*$") == null) {
+                        if (str.match("^_*[a-zA-Z]*[a-zA-Z0-9:_]*$") == null) {
                             return undefined;
                         }
-                        return str.trim();
+                        return str;
                     }
                 })
 
@@ -619,13 +622,18 @@ export class ThemeGenerator extends UIElement {
                 });
             }
 
+            let sendingPing = false;
             value.addCallback((v) => {
                 if (v === undefined || v === "") {
                     delete root[key];
                 } else {
                     root[key] = v;
                 }
-                self.themeObject.ping(); // We assume the root is a part of the themeObject
+                if(!sendingPing){
+                    sendingPing = true;
+                    self.themeObject.ping(); // We assume the root is a part of the themeObject
+                    sendingPing = false;
+                }
             });
 
             self.themeObject.addCallback(() => {

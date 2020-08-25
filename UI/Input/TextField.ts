@@ -13,6 +13,7 @@ export class ValidatedTextField {
         "$": (str) => true,
         "string": (str) => true,
         "date": (str) => true, // TODO validate and add a date picker
+        "wikidata": (str) => true, // TODO validate wikidata IDS
         "int": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))},
         "nat": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0},
         "float": (str) => !isNaN(Number(str)),

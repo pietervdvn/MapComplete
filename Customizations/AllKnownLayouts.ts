@@ -6,7 +6,6 @@ import {Groen} from "./Layouts/Groen";
 import Cyclofix from "./Layouts/Cyclofix";
 import {StreetWidth} from "./Layouts/StreetWidth";
 import {GRB} from "./Layouts/GRB";
-import {Artworks} from "./Layouts/Artworks";
 import {ClimbingTrees} from "./Layouts/ClimbingTrees";
 import {Smoothness} from "./Layouts/Smoothness";
 import {MetaMap} from "./Layouts/MetaMap";
@@ -16,6 +15,7 @@ import {CustomLayoutFromJSON} from "./JSON/CustomLayoutFromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
+import * as artworks from "../assets/themes/artwork/artwork.json";
 
 export class AllKnownLayouts {
 
@@ -30,11 +30,11 @@ export class AllKnownLayouts {
         CustomLayoutFromJSON.LayoutFromJSON(bookcases),
         CustomLayoutFromJSON.LayoutFromJSON(aed),
         CustomLayoutFromJSON.LayoutFromJSON(toilets),
+        CustomLayoutFromJSON.LayoutFromJSON(artworks),
 
         new MetaMap(),
         new StreetWidth(),
         new ClimbingTrees(),
-        new Artworks(),
         new Smoothness(),
         new Groen(),
 
