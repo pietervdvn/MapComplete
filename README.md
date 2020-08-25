@@ -76,7 +76,9 @@ I love it to see where the project ends up. You are free to reuse the software (
 
 To develop:
 
-1. Install `npm`.
+
+0. Make a fork and clone the repository.
+1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), windows: install nodeJS:  https://nodejs.org/en/download/
 2. Run `npm install` to install the dependencies
 3. Run `npm run start` to build and host a local testversion
 4. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
