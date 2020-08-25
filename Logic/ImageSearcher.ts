@@ -38,15 +38,35 @@ export class ImageSearcher extends UIEventSource<string[]> {
 
         const self = this;
         this._wdItem.addCallback(() => {
-            // Load the wikidata item, then detect usage on 'commons'
-            let wikidataId = self._wdItem.data;
-            // @ts-ignore
-            if (wikidataId.startsWith("Q")) {
-                    wikidataId = wikidataId.substr(1);
+                // Load the wikidata item, then detect usage on 'commons'
+                let allWikidataId = self._wdItem.data.split(";");
+                for (let wikidataId of allWikidataId) {
+                    // @ts-ignore
+                    if (wikidataId.startsWith("Q")) {
+                        wikidataId = wikidataId.substr(1);
+                    }
+                    Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
+                        self.AddImage(wd.image);
+                        Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
+                            for (const image of images.images) {
+                                // @ts-ignore
+                                if (image.startsWith("File:")) {
+                                    self.AddImage(image);
+                                }
+                            }
+                        })
+                    })
                 }
-                Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
-                    self.AddImage(wd.image);
-                    Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
+            }
+        );
+
+
+        this._commons.addCallback(() => {
+            const allCommons: string[] = self._commons.data.split(";");
+            for (const commons of allCommons) {
+                // @ts-ignore
+                if (commons.startsWith("Category:")) {
+                    Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
                         for (const image of images.images) {
                             // @ts-ignore
                             if (image.startsWith("File:")) {
@@ -54,26 +74,10 @@ export class ImageSearcher extends UIEventSource<string[]> {
                             }
                         }
                     })
-                })
-            }
-        );
-
-
-        this._commons.addCallback(() => {
-            const commons: string = self._commons.data;
-            // @ts-ignore
-            if (commons.startsWith("Category:")) {
-                Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
-                    for (const image of images.images) {
-                        // @ts-ignore
-                        if (image.startsWith("File:")) {
-                            self.AddImage(image);
-                        }
+                } else { // @ts-ignore
+                    if (commons.startsWith("File:")) {
+                        self.AddImage(commons);
                     }
-                })
-            } else { // @ts-ignore
-                if (commons.startsWith("File:")) {
-                    self.AddImage(commons);
                 }
             }
         });

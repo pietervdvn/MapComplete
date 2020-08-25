@@ -42,14 +42,15 @@ A typical user journey would be:
 
 0. Oh, this is a cool map of _my specific interest_! There is a lot of data already...
 
-    * The user might discover the explanation about OSM in the dedicated tab page
-    * The user might discover the other themes in the other tab
-    * The user might share the map and/or embed it
+    * The user might discover the explanation about OSM in the second tab
+    * The user might share the map and/or embed it in the third tab
+    * The user might discover the other themes in the last tab
     
-1. The user clicks that big tempting button 'login' in order to answer questions. The user makes an account - a big step.
+1. The user clicks that big tempting button 'login' in order to answer questions - there's enough of these login buttons... The user creates an account.
 
-2. The user answers a question! Hooray!
-    When at least one question is answered (aka: having one changeset on OSM), adding a new point is unlocked
+2. The user answers a question! Hooray! The user transformed into a __contributor__ now.
+    
+    * When at least one question is answered (aka: having one changeset on OSM), adding a new point is unlocked
     
 3. The user adds a new POI somewhere
 
