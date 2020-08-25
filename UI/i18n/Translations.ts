@@ -571,12 +571,12 @@ export default class Translations {
                     en: 'Drinking water',
                     nl: "Drinkbaar water",
                     fr: "Eau potable"
-                })
+					                })
             }
         },
 
         image: {
-            addPicture: new T({en: 'Add picture', nl: 'Voeg foto toe', fr: 'Ajoutez une photo'}),
+            addPicture: new T({en: 'Add picture', es: 'Añadir foto' , nl: 'Voeg foto toe', fr: 'Ajoutez une photo'}),
             uploadingPicture: new T({
                 en: 'Uploading your picture...',
                 nl: 'Bezig met een foto te uploaden...',
