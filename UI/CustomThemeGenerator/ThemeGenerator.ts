@@ -535,7 +535,7 @@ export class ThemeGenerator extends UIElement {
         if (window.location.hostname === "127.0.0.1") {
             baseUrl = "http://127.0.0.1:1234";
         }
-        this.url = base64.map((data) => baseUrl + `/index.html?test=true&userlayout=true#` + data);
+        this.url = base64.map((data) => `${baseUrl}/index.html?test=true&userlayout=${this.themeObject.data.name}#${data}`);
         const self = this;
 
         pingThemeObject = () => {self.themeObject.ping()};

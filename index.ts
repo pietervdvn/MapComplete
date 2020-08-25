@@ -69,17 +69,28 @@ defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
 
 
-const layoutFromBase64 = QueryParameters.GetQueryParameter("userlayout", "false").data;
+const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
+const layoutFromBase64 = userLayoutParam.data;
 if (layoutFromBase64 !== "false") {
     try {
+        // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
+
+        const dedicatedHashFromLocalStorage = LocalStorageSource.Get("user-layout-" + layoutFromBase64.replace(" ", "_"));
+
+        if(dedicatedHashFromLocalStorage.data?.length < 10){
+            dedicatedHashFromLocalStorage.setData(undefined);
+        }
+        
         const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout");
-        if(hash.length < 10){
-            hash = hashFromLocalStorage.data;
-        }else{
+        if (hash.length < 10) {
+            hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data;
+        } else {
             console.log("Saving hash to local storage")
             hashFromLocalStorage.setData(hash);
+            dedicatedHashFromLocalStorage.setData(hash);
         }
         layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
+        userLayoutParam.setData(layoutToUse.name);
     } catch (e) {
         new FixedUiElement("Error: could not parse the custom layout:<br/> "+e).AttachTo("centermessage");
         throw e;
