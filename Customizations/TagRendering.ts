@@ -144,14 +144,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             self._questionElement.GetValue().map(
                 (tags: TagsFilter) => {
                     if (tags === undefined) {
-                        return "";
+                        return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
                     const csCount = State.state.osmConnection.userDetails.data.csCount;
                     if (csCount < State.userJourney.tagsVisibleAt) {
                         return "";
                     }
                     if (csCount < State.userJourney.tagsVisibleAndWikiLinked) {
-                        return new FixedUiElement(tags.asHumanString(false)).SetClass("subtle").Render();
+                        const tagsStr = tags.asHumanString(false);
+                        return new FixedUiElement(tagsStr).SetClass("subtle").Render();
                     }
                     return tags.asHumanString(true);
                 }
@@ -407,16 +408,18 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
 
-            const question =
-                this.ApplyTemplate(this._question).Render();
-
             return "<div class='question'>" +
-                "<span class='question-text'>" + question + "</span>" +
-                (question !== "" ? "" : "<br/>") +
-                "<div>" + this._questionElement.Render() + "</div>" +
-                this._skipButton.Render() +
-                this._saveButton.Render() +
-                this._appliedTags.Render() +
+                new Combine([
+                    "<span class='question-text'>",
+                    this.ApplyTemplate(this._question), 
+                    "</span>",
+                    "<br/>",
+                    "<div>", this._questionElement , "</div>",
+                    this._skipButton,
+                    this._saveButton,
+                    "<br/>",
+                    this._appliedTags
+                ]).Render() +
                 "</div>"
         }
 

@@ -76,7 +76,6 @@ if (layoutFromBase64 !== "false") {
         // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
 
         const dedicatedHashFromLocalStorage = LocalStorageSource.Get("user-layout-" + layoutFromBase64.replace(" ", "_"));
-
         if(dedicatedHashFromLocalStorage.data?.length < 10){
             dedicatedHashFromLocalStorage.setData(undefined);
         }

@@ -65,5 +65,12 @@ export class Utils {
             }
         ), Locale.language);
     }
+    
+    public static EllipsesAfter(str : string, l : number = 100){
+        if(str.length <= l){
+            return str;
+        }
+        return str.substr(0, l - 3)+"...";
+    }
 
 }

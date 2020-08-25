@@ -1,3 +1,4 @@
+import {Utils} from "../Utils";
 
 export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
@@ -151,15 +152,23 @@ export class Tag extends TagsFilter {
     }
 
     asHumanString(linkToWiki: boolean) {
+        let v = ""
+        if (typeof (this.value) === "string") {
+           v = this.value;
+        }else{
+            // value is a regex
+            v = this.value.source;
+        }
+        v = Utils.EllipsesAfter(v, 25);
         if (linkToWiki) {
             return `<a href='https://wiki.openstreetmap.org/wiki/Key:${this.key}' target='_blank'>${this.key}</a>` +
                 `=` +
-                `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${this.value}</a>`
+                `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${v}</a>`
         }
 
         console.log("Humanizing", this)
         if (typeof (this.value) === "string") {
-            return this.key + (this.invertValue ? "!=": "=") + this.value;
+            return this.key + (this.invertValue ? "!=": "=") + v;
         }else{
             // value is a regex
             return this.key + "~=" + this.value.source;
