@@ -20,13 +20,13 @@ import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {Img} from "./UI/Img";
 import {DropDown} from "./UI/Input/DropDown";
 import {LayerSelection} from "./UI/LayerSelection";
-import {CustomLayersPanel} from "./Logic/CustomLayersPanel";
-import {CustomLayout} from "./Logic/CustomLayers";
 import {Preset} from "./Customizations/LayerDefinition";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+import {PersonalLayout} from "./Logic/PersonalLayout";
+import {PersonalLayersPanel} from "./Logic/PersonalLayersPanel";
 
 export class InitUiElements {
 
@@ -50,8 +50,8 @@ export class InitUiElements {
 
         const layoutToUse = State.state.layoutToUse.data;
         let welcome: UIElement = new WelcomeMessage();
-        if (layoutToUse.name === CustomLayout.NAME) {
-            welcome = new CustomLayersPanel();
+        if (layoutToUse.name === PersonalLayout.NAME) {
+            welcome = new PersonalLayersPanel();
         }
 
         const tabs = [

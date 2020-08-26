@@ -901,7 +901,8 @@ export default class Translations {
                 nl: " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a> ",
                 fr: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>registrez vous</a>"
             }),
-            noTagsSelected: new T({en: "No tags selected"})
+            noTagsSelected: new T({en: "No tags selected"}),
+            customThemeIntro: new T({en:"<h3>Custom themes</h3>These are previously visited user-generated themes."})
 
         },
         favourite: {

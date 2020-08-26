@@ -1,7 +1,6 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
 import {All} from "./Layouts/All";
-import {CustomLayout} from "../Logic/CustomLayers";
 import {Groen} from "./Layouts/Groen";
 import Cyclofix from "./Layouts/Cyclofix";
 import {StreetWidth} from "./Layouts/StreetWidth";
@@ -16,13 +15,14 @@ import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
 import * as artworks from "../assets/themes/artwork/artwork.json";
+import {PersonalLayout} from "../Logic/PersonalLayout";
 
 export class AllKnownLayouts {
 
     public static allLayers: Map<string, LayerDefinition> = undefined;
     
     public static layoutsList: Layout[] = [
-        new CustomLayout(),
+        new PersonalLayout(),
         new Natuurpunt(),
         new GRB(),
         new Cyclofix(),

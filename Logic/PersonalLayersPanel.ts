@@ -6,40 +6,38 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Combine from "../UI/Base/Combine";
 import {Img} from "../UI/Img";
 import {CheckBox} from "../UI/Input/CheckBox";
-import {CustomLayersState} from "./CustomLayersState";
 import {VerticalCombine} from "../UI/Base/VerticalCombine";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import {CustomLayout} from "./CustomLayers";
 import {SubtleButton} from "../UI/Base/SubtleButton";
+import {PersonalLayout} from "./PersonalLayout";
 
-export class CustomLayersPanel extends UIElement {
+export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
-    
-    private updateButton : UIElement;
+
+    private updateButton: UIElement;
 
     constructor() {
-        super(State.state.favourteLayers);
+        super(State.state.favouriteLayers);
 
         this.ListenTo(State.state.osmConnection.userDetails);
 
 
         const t = Translations.t.favourite;
-        const favs = State.state.favourteLayers.data;
+        const favs = State.state.favouriteLayers.data ?? [];
         
         this.updateButton = new SubtleButton("./assets/reload.svg", t.reload)
             .onClick(() => {
                 State.state.layerUpdater.ForceRefresh();
-                CustomLayersState.InitFavouriteLayers(State.state);
                 State.state.layoutToUse.ping();
             })
 
         const controls = new Map<string, UIEventSource<boolean>>();
         for (const layout of AllKnownLayouts.layoutsList) {
 
-            if(layout.name === CustomLayout.NAME){
+            if (layout.name === PersonalLayout.NAME) {
                 continue;
             }
-            if (layout.hideFromOverview && 
+            if (layout.hideFromOverview &&
                 State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
                 continue
             }
@@ -86,18 +84,20 @@ export class CustomLayersPanel extends UIElement {
                 controls[layer.id] = cb.isEnabled;
 
                 cb.isEnabled.addCallback((isEnabled) => {
+                    const favs = State.state.favouriteLayers;
                     if (isEnabled) {
-                        CustomLayersState.AddFavouriteLayer(layer.id)
+                        favs.data.push(layer.id);
                     } else {
-                        CustomLayersState.RemoveFavouriteLayer(layer.id);
+                        favs.data.splice(favs.data.indexOf(layer.id), 1);
                     }
+                    favs.ping();
                 })
 
                 this.checkboxes.push(cb);
 
             }
 
-            State.state.favourteLayers.addCallback((layers) => {
+            State.state.favouriteLayers.addCallback((layers) => {
                 for (const layerId of layers) {
                     controls[layerId]?.setData(true);
                 }

@@ -1,13 +1,13 @@
 import {Layout} from "../Customizations/Layout";
 import Translations from "../UI/i18n/Translations";
 
-export class CustomLayout extends Layout {
+export class PersonalLayout extends Layout {
 
     public static NAME: string = "personal";
 
     constructor() {
         super(
-            CustomLayout.NAME,
+            PersonalLayout.NAME,
             ["en"],
             Translations.t.favourite.title,
             [],
@@ -21,6 +21,3 @@ export class CustomLayout extends Layout {
     }
 
 }
-
-
-    

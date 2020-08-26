@@ -39,6 +39,7 @@
     "@babel/polyfill": "^7.10.4",
     "@types/node": "^7.0.5",
     "assert": "^2.0.0",
+    "canvas": "^2.6.1",
     "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "marked": "^1.1.1",

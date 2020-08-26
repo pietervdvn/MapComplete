@@ -14,6 +14,7 @@ export class Layout {
     public icon: string = "./assets/logo.svg";
     public title: UIElement;
     public maintainer: string;
+    public version: string;
     public description: string | UIElement;
     public socialImage: string = "";
     

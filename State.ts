@@ -8,7 +8,6 @@ import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import Translations from "./UI/i18n/Translations";
-import {CustomLayersState} from "./Logic/CustomLayersState";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
@@ -24,7 +23,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.6c";
+    public static vNumber = "0.0.6d";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -38,11 +37,7 @@ export class State {
 
     public static runningFromConsole: boolean = false; 
 
-    /**
-     THe layout to use
-     */
     public readonly layoutToUse = new UIEventSource<Layout>(undefined);
-    public layoutDefinition : string;
 
     /**
      The mapping from id -> UIEventSource<properties>
@@ -60,13 +55,15 @@ export class State {
      The user credentials
      */
     public osmConnection: OsmConnection;
-    
-    public layerUpdater : LayerUpdater;
-    
-    
+
+    public favouriteLayers: UIEventSource<string[]>;
+
+    public layerUpdater: LayerUpdater;
+
+
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
     public presets: UIEventSource<Preset[]> = new UIEventSource<Preset[]>([])
-    
+
     /**
      *  The message that should be shown at the center of the screen
      */
@@ -123,77 +120,96 @@ export class State {
     /** After this many milliseconds without changes, saves are sent of to OSM
      */
     public readonly saveTimeout = new UIEventSource<number>(30 * 1000);
-
-    /**
-     * Layers can be marked as favourites, they show up in a custom layout
-     */
-    public favourteLayers: UIEventSource<string[]> = new UIEventSource<string[]>([])
+    public layoutDefinition: string;
 
 
     constructor(layoutToUse: Layout) {
-        this.layoutToUse = new UIEventSource<Layout>(layoutToUse);
+        const self = this;
+        this.layoutToUse.setData(layoutToUse)
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
-            zoom: Utils.asFloat(this.zoom.data) ?? layoutToUse.startzoom,
-            lat: Utils.asFloat(this.lat.data) ?? layoutToUse.startLat,
-            lon: Utils.asFloat(this.lon.data) ?? layoutToUse.startLon
+            zoom: Utils.asFloat(this.zoom.data),
+            lat: Utils.asFloat(this.lat.data),
+            lon: Utils.asFloat(this.lon.data),
         }).addCallback((latlonz) => {
             this.zoom.setData(latlonz.zoom.toString());
             this.lat.setData(latlonz.lat.toString().substr(0, 6));
             this.lon.setData(latlonz.lon.toString().substr(0, 6));
-        })
+        });
 
+        this.layoutToUse.addCallback(layoutToUse => {
+            const lcd = self.locationControl.data;
+            lcd.zoom = lcd.zoom ?? layoutToUse?.startzoom;
+            lcd.lat = lcd.lat ?? layoutToUse?.startLat;
+            lcd.lon = lcd.lon ?? layoutToUse?.startLon;
+            self.locationControl.ping();
+        });
 
-        const self = this;
 
         function featSw(key: string, deflt: (layout: Layout) => boolean): UIEventSource<boolean> {
             const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined);
             // I'm so sorry about someone trying to decipher this
-            
+
             // It takes the current layout, extracts the default value for this query paramter. A query parameter event source is then retreived and flattened
             return UIEventSource.flatten(
-                self.layoutToUse.map((layout) =>
-                    QueryParameters.GetQueryParameter(key, "" + deflt(layout)).map((str) => str === undefined ? deflt(layout) : str !== "false")), [queryParameterSource]);
+                self.layoutToUse.map((layout) => {
+                    const defaultValue = deflt(layout);
+                    const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue)
+                    return queryParam.map((str) => str === undefined ? defaultValue : (str !== "false"));
+                }), [queryParameterSource]);
         }
 
 
-        this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge);
-        this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch);
-        this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers);
-        this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAdd);
+        this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true);
+        this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true);
+        this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true);
+        this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAdd ?? true);
         this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true);
         this.featureSwitchIframe = featSw("fs-iframe", () => false);
-        this.featureSwitchMoreQuests = featSw("fs-more-quests", () => layoutToUse?.enableMoreQuests);
-        this.featureSwitchShareScreen = featSw("fs-share-screen", () => layoutToUse?.enableShareScreen);
-        this.featureSwitchGeolocation = featSw("fs-geolocation", () => layoutToUse?.enableGeolocation);
+        this.featureSwitchMoreQuests = featSw("fs-more-quests", (layoutToUse) => layoutToUse?.enableMoreQuests ?? true);
+        this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true);
+        this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true);
 
         this.osmConnection = new OsmConnection(
             QueryParameters.GetQueryParameter("test", "false").data === "true",
             QueryParameters.GetQueryParameter("oauth_token", undefined)
         );
-        
-        CustomLayersState.InitFavouriteLayers(this);
-       
+
+
+        this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
+            str => Utils.Dedup(str?.split(";")) ?? [],
+            [], layers => Utils.Dedup(layers)?.join(";")
+        );
+
         Locale.language.syncWith(this.osmConnection.GetPreference("language"));
 
 
         Locale.language.addCallback((currentLanguage) => {
-            if (layoutToUse.supportedLanguages.indexOf(currentLanguage) < 0) {
+            const layoutToUse = self.layoutToUse.data;
+            if (layoutToUse === undefined) {
+                return;
+            }
+            if (this.layoutToUse.data.supportedLanguages.indexOf(currentLanguage) < 0) {
                 console.log("Resetting language to", layoutToUse.supportedLanguages[0], "as", currentLanguage, " is unsupported")
                 // The current language is not supported -> switch to a supported one
                 Locale.language.setData(layoutToUse.supportedLanguages[0]);
             }
         }).ping()
 
-        document.title = Translations.W(layoutToUse.title).InnerRender();
-        Locale.language.addCallback(e => {
-            document.title = Translations.W(layoutToUse.title).InnerRender();
-        })
+        this.layoutToUse.map((layoutToUse) => {
+                if (layoutToUse === undefined) {
+                    return "MapComplete";
+                }
+                return Translations.W(layoutToUse.title).InnerRender()
+            }, [Locale.language]
+        ).addCallback((title) => {
+            document.title = title
+        });
 
 
         this.allElements = new ElementStorage();
         this.changes = new Changes(this);
 
-        if(State.runningFromConsole){
+        if (State.runningFromConsole) {
             console.warn("running from console - not initializing map. Assuming test.html");
             return;
         }

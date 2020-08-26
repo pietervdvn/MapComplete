@@ -13,10 +13,11 @@ import {InitUiElements} from "./InitUiElements";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {State} from "./State";
-import {CustomLayout} from "./Logic/CustomLayers";
 import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {PersonalLayout} from "./Logic/PersonalLayout";
+import {OsmConnection} from "./Logic/Osm/OsmConnection";
 
 TagRendering.injectFunction();
 
@@ -109,7 +110,9 @@ console.log("Using layout: ", layoutToUse.name);
 State.state = new State(layoutToUse);
 if (layoutFromBase64 !== "false") {
     State.state.layoutDefinition = hash.substr(1);
-    console.log(State.state.layoutDefinition)
+    State.state.osmConnection.OnLoggedIn(() => {
+        State.state.osmConnection.GetLongPreference("installed-theme-"+layoutToUse.name).setData(State.state.layoutDefinition);
+    })
 }
 InitUiElements.InitBaseMap();
 
@@ -152,8 +155,8 @@ function setupAllLayerElements() {
 
 setupAllLayerElements();
 
-if (layoutToUse === AllKnownLayouts.allSets[CustomLayout.NAME]) {
-    State.state.favourteLayers.addCallback((favs) => {
+if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {
+    State.state.favouriteLayers.addCallback((favs: string[]) => {
         layoutToUse.layers = [];
         for (const fav of favs) {
             const layer = AllKnownLayouts.allLayers[fav];
@@ -161,9 +164,10 @@ if (layoutToUse === AllKnownLayouts.allSets[CustomLayout.NAME]) {
                 layoutToUse.layers.push(layer);
             }
             setupAllLayerElements();
-        };
+        }
+        ;
         State.state.locationControl.ping();
-        
+
     })
 }
 

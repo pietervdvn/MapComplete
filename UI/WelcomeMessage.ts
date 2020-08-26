@@ -22,11 +22,11 @@ export class WelcomeMessage extends UIElement {
 
     constructor() {
         super(State.state.osmConnection.userDetails);
-        this.languagePicker = Utils.CreateLanguagePicker(Translations.t.general.pickLanguage);
         this.ListenTo(Locale.language);
+        this.languagePicker = Utils.CreateLanguagePicker(Translations.t.general.pickLanguage);
 
         function fromLayout(f: (layout: Layout) => (string | UIElement)): UIElement {
-            return Translations.W(f(State.state.layoutToUse.data))
+            return Translations.W(f(State.state.layoutToUse.data));
         }
 
         this.description = fromLayout((layout) => layout.welcomeMessage);

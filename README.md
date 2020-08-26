@@ -68,9 +68,9 @@ A typical user journey would be:
 
 ## License
 
-GPL + pingback.
+GPLv3.0 + recommended pingback.
 
-I love it to see where the project ends up. You are free to reuse the software (under GPL) but, when you have made your own change and are using it, I would like to know about it. Drop me a line, give a pingback in the issues, ...
+I love it to see where the project ends up. You are free to reuse the software (under GPL) but, when you have made your own change and are using it, I would like to know about it. Drop me a line, give a pingback in the issues,...  
 
 ## Dev
 

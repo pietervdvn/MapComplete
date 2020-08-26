@@ -10,6 +10,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {TagDependantUIElementConstructor} from "../UIElementConstructor";
 import {Map} from "../Layers/Map";
 import {UIElement} from "../../UI/UIElement";
+import Translations from "../../UI/i18n/Translations";
 
 
 export interface TagRenderingConfigJson {   
@@ -246,7 +247,7 @@ export class CustomLayoutFromJSON {
             json.id,
             {
                 description: t(json.description),
-                name: t(json.title.render),
+                name: Translations.WT(t(json.title.render)).txt.replace(/[^a-zA-Z0-9-_]/g, ''),
                 icon: icon,
                 minzoom: parseInt(""+json.minzoom),
                 title: tr(json.title),

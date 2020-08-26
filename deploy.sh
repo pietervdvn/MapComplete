@@ -1,6 +1,8 @@
 #! /bin/bash
 
+mkdir assets/generated
 ts-node createLayouts.ts
+find -name '*.png' | parallel optipng '{}'
 npm run build
 rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
 cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/

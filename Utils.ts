@@ -72,5 +72,18 @@ export class Utils {
         }
         return str.substr(0, l - 3)+"...";
     }
+    
+    public static Dedup(arr: string[]):string[]{
+        if(arr === undefined){
+            return undefined;
+        }
+        const newArr = [];
+        for (const string of arr) {
+            if(newArr.indexOf(string) < 0){
+                newArr.push(string);
+            }
+        }
+        return newArr;
+    }
 
 }

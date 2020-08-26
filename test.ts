@@ -1,10 +1,15 @@
-import {TextField, ValidatedTextField} from "./UI/Input/TextField";
-import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
-import {And} from "./Logic/TagsFilter";
+import {OsmConnection} from "./Logic/Osm/OsmConnection";
+import {UIEventSource} from "./Logic/UIEventSource";
 
-const tags = CustomLayoutFromJSON.TagsFromJson("indoor=yes&access!=private");
-console.log(tags);
-const m0 = new And(tags).matches([{k:"indoor",v:"yes"}, {k:"access",v: "yes"}]);
-console.log("Matches 0", m0)
-const m1 = new And(tags).matches([{k:"indoor",v:"yes"}, {k:"access",v: "private"}]);
-console.log("Matches 1", m1)
+const conn = new OsmConnection(true, new UIEventSource<string>(undefined));
+conn.AttemptLogin();
+
+conn.userDetails.addCallback(userDetails => {
+    if (!userDetails.loggedIn) {
+        return;
+    }
+    const str = "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789";
+    console.log(str.length);
+    conn.GetLongPreference("test").setData(str);
+// console.log(got.length)
+});

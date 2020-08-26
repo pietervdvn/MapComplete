@@ -13,7 +13,7 @@ export class VerticalCombine extends UIElement {
     InnerRender(): string {
         let html = "";
         for (const element of this._elements) {
-            if (!element.IsEmpty()) {
+            if (element!== undefined && !element.IsEmpty()) {
                 html += "<div>" + element.Render() + "</div>";
             }
         }
