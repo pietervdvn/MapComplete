@@ -1017,7 +1017,7 @@ export default class Translations {
                 streetcomplete: new T({
                     en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     ca: "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
-                    es: "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
+                    es: "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     fr: "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     nl: "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 }),
@@ -1032,7 +1032,7 @@ export default class Translations {
             readYourMessages: new T({
                 en: "Please, read all your OpenStreetMap-messages before adding a new point.",
                 ca: "Llegeix tots els teus missatges d\'OpenStreetMap abans d\'afegir nous punts.",
-                ca: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
+                es: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
                 nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
                 fr: "Merci de lire tout vos messages d'OpenStreetMap avant d'ajouter un nouveau point.",
             }),
