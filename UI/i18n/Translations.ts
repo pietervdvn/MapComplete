@@ -995,6 +995,51 @@ export default class Translations {
                     es: "<h3>Inclúyelo en tu página web</h3>Incluye este mapa en tu página web. <br/> Te animamos a que lo hagas, no hace falta que pidas permiso. <br/> Es gratis, y siempre lo será. A más gente que lo use más valioso será.",
                     fr: "<h3>Incorporer à votre website</h3>AJouter la carte à votre website. <br/>On vous en encourage - pas besoin de permission. <br/>  C'est gratuit et pour toujours. Le plus de personnes l'utilisent, le mieux ce sera.",
                     nl: "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller"
+                }),
+                copiedToClipboard: new T({
+                    en: "Link copied to clipboard",
+                    nl: "Link gekopieerd naar klembord"
+                }),
+                thanksForSharing: new T({
+                    en: "Thanks for sharing!",
+                    nl: "Bedankt om te delen!"
+                }),
+                editThisTheme: new T({
+                    en: "Edit this theme",
+                    nl: "Pas dit thema aan"
+                }),
+                editThemeDescription: new T({
+                    en: "Add or change questions to this map theme",
+                    nl: "Pas vragen aan of voeg vragen toe aan dit kaartthema",
+                }),
+                fsUserbadge: new T({
+                    en: "Enable the login-button",
+                    nl: "Activeer de login-knop"
+                }),
+                fsSearch: new T({
+                    en: "Enable the search bar",
+                    nl: "Activeer de zoekbalk"
+                }),
+                fsWelcomeMessage: new T({
+                    en: "Show the welcome message popup and associated tabs",
+                    nl: "Toon het welkomstbericht en de bijhorende tabbladen "
+                }),
+                fsLayers: new T({
+                    en: "Enable thelayer control",
+                    nl: "Toon de knop voor laagbediening"
+                }),
+
+                fsLayerControlToggle: new T({
+                    en: "Start with the layer control expanded",
+                    nl: "Toon de laagbediening meteen volledig"
+                }),
+                fsAddNew: new T({
+                    en: "Enable the 'add new POI' button",
+                    nl: "Activeer het toevoegen van nieuwe POI"
+                }),
+                fsGeolocation: new T({
+                    en:  "Enable the 'geolocate-me' button (mobile only)",
+                    nl: "Toon het knopje voor geolocalisatie (enkel op mobiel)"
                 })
             },
             morescreen: {
@@ -1070,7 +1115,11 @@ export default class Translations {
                 es: "No se han seleccionado etiquetas",
                 ca: "No s\'han seleccionat etiquetes"
             }),
-            customThemeIntro: new T({en: "<h3>Custom themes</h3>These are previously visited user-generated themes."})
+            customThemeIntro: new T({
+                en: "<h3>Custom themes</h3>These are previously visited user-generated themes.",
+                nl: "<h3>Onofficiële themea's</h3>Je bezocht deze thema's gemaakt door andere OpenStreetMappers eerder"
+            }),
+
         },
         favourite: {
 

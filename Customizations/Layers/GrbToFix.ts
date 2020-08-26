@@ -51,7 +51,7 @@ export class GrbToFix extends LayerDefinition {
                     },
                     question: "Wat is het huisnummer?"
                 }
-            ).OnlyShowIf(new Tag("fixme","*","")),
+            ),
 
             new TagRenderingOptions({
 

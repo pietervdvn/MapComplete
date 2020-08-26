@@ -94,6 +94,10 @@ form {
     color: #999;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .thanks {
     background-color: #43d904;
     font-weight: bold;

@@ -12,6 +12,8 @@ import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
+import Translation from "./i18n/Translation";
+import {SubtleButton} from "./Base/SubtleButton";
 
 export class ShareScreen extends UIElement {
 
@@ -20,7 +22,7 @@ export class ShareScreen extends UIElement {
     private _options: UIElement;
     private _iframeCode: UIElement;
     private _link: UIElement;
-    private _linkStatus: UIElement;
+    private _linkStatus: UIEventSource<string | UIElement>;
     private _editLayout: UIElement;
 
     constructor() {
@@ -83,7 +85,7 @@ export class ShareScreen extends UIElement {
             }
             return "layer-"+flayer.layerDef.id+"="+flayer.isDisplayed.data
         }
-        
+
         optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
             if (includeLayerSelection) {
                 return Utils.NoNull(State.state.filteredLayers.data.map(fLayerToParam)).join("&")
@@ -93,21 +95,22 @@ export class ShareScreen extends UIElement {
         }, State.state.filteredLayers.data.map((flayer) => flayer.isDisplayed)));
 
 
-        const switches = [{urlName: "fs-userbadge", human: "Enable the login-button"},
-            {urlName: "fs-search", human: "Enable the search bar"},
-            {urlName: "fs-welcome-message", human: "Enable the welcome message"},
-            {urlName: "fs-layers", human: "Enable thelayer control"},
-            {urlName: "layer-control-toggle", human: "Start with the layer control expanded", reverse:true},
-            {urlName: "fs-add-new", human: "Enable the 'add new POI' button"},
-            {urlName: "fs-geolocation", human: "Enable the 'geolocate-me' button"},
+        const switches = [
+            {urlName: "fs-userbadge", human:  tr.fsUserbadge},
+            {urlName: "fs-search", human:  tr.fsSearch},
+            {urlName: "fs-welcome-message", human:  tr.fsWelcomeMessage}, 
+            {urlName: "fs-layers", human:  tr.fsLayers},
+            {urlName: "layer-control-toggle", human:  tr.fsLayerControlToggle, reverse: true}, 
+            {urlName: "fs-addXXXnew", human:  tr.fsAddNew},
+            {urlName: "fs-geolocation", human:  tr.fsGeolocation}, 
         ]
 
 
         for (const swtch of switches) {
 
             const checkbox = new CheckBox(
-                new Combine([Img.checkmark, swtch.human]),
-                new Combine([Img.no_checkmark, swtch.human]),
+                new Combine([Img.checkmark, Translations.W(swtch.human)]),
+                new Combine([Img.no_checkmark, Translations.W(swtch.human)]),
                 swtch.reverse ? false : true
             );
             optionCheckboxes.push(checkbox);
@@ -171,16 +174,19 @@ export class ShareScreen extends UIElement {
                             if (userDetails.csCount <= State.userJourney.themeGeneratorUnlock) {
                                 return "";
                             }
-                            return `<h3>Edit this theme</h3>` +
-                                `<a target='_blank' href='./customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`
+
+                            return new SubtleButton("./assets/pencil.svg",
+                                new Combine([tr.editThisTheme.SetClass("bold"), "<br/>",
+                                    tr.editThemeDescription]),
+                                {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true}).Render();
 
                         }
                     ));
 
         }
 
-        const status = new UIEventSource(" ");
-        this._linkStatus = new VariableUiElement(status);
+        this._linkStatus = new UIEventSource<string | Translation>("");
+        this.ListenTo(this._linkStatus);
         const self = this;
         this._link = new VariableUiElement(
             url.map((url) => {
@@ -195,7 +201,6 @@ export class ShareScreen extends UIElement {
             }
 
             function rejected() {
-                status.setData("Copying to clipboard...")
                 var copyText = document.getElementById("code-link--copyable");
 
                 // @ts-ignore
@@ -204,13 +209,17 @@ export class ShareScreen extends UIElement {
                 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
                 document.execCommand("copy");
-                status.setData("Copied to clipboard")
+                const copied = tr.copiedToClipboard;
+                copied.SetClass("thanks")
+                self._linkStatus.setData(copied);
             }
 
             try {
                 navigator.share(shareData)
                     .then(() => {
-                        status.setData("Thanks for sharing!")
+                        const thx = tr.thanksForSharing;
+                        thx.SetClass("thanks");
+                        this._linkStatus.setData(thx);
                     }, rejected)
                     .catch(rejected)
             } catch (err) {
@@ -226,10 +235,10 @@ export class ShareScreen extends UIElement {
         const tr = Translations.t.general.sharescreen;
 
         return new VerticalCombine([
+            this._editLayout,
             tr.intro,
             this._link,
-            this._linkStatus,
-            this._editLayout,
+            Translations.W(this._linkStatus.data),
             tr.addToHomeScreen,
             tr.embedIntro,
             this._options,
