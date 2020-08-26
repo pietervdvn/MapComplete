@@ -576,190 +576,300 @@ export default class Translations {
         },
 
         image: {
-            addPicture: new T({en: 'Add picture', es: 'Añadir foto' , nl: 'Voeg foto toe', fr: 'Ajoutez une photo'}),
+            addPicture: new T({
+                en: 'Add picture',
+                es: 'Añadir foto',
+                ca: 'Afegir foto',
+                nl: 'Voeg foto toe',
+                fr: 'Ajoutez une photo'
+            }),
+
             uploadingPicture: new T({
                 en: 'Uploading your picture...',
                 nl: 'Bezig met een foto te uploaden...',
+                es: 'Subiendo tu imagen ...',
+                ca: 'Pujant la teva imatge ...',
                 fr: 'Mettre votre photo en ligne'
             }),
+
             uploadingMultiple: new T({
                 en: 'Uploading {count} of your picture...',
                 nl: 'Bezig met {count} foto\'s te uploaden...',
+                ca: 'Pujant {count} de la teva imatge...',
+                es: 'Subiendo {count} de tus fotos...',
                 fr: 'Mettre votre {count} photos en ligne'
             }),
+
             pleaseLogin: new T({
                 en: 'Please login to add a picure',
                 nl: 'Gelieve je aan te melden om een foto toe te voegen',
+                es: 'Entra para subir una foto',
+                ca: 'Entra per pujar una foto',
                 fr: 'Connectez vous pour mettre une photo en ligne'
             }),
+
             willBePublished: new T({
                 en: 'Your picture will be published: ',
+                es: 'Tu foto será publicada: ',
+                ca: 'La teva foto serà publicada: ',
                 nl: 'Jouw foto wordt gepubliceerd: ',
                 fr: 'Votre photo va être publié'
             }),
-            cco: new T({en: 'in the public domain', nl: 'in het publiek domein', fr: 'sur le domaine publique'}),
+
+            cco: new T({
+                en: 'in the public domain',
+                ca: 'en domini públic',
+                es: 'en dominio público',
+                nl: 'in het publiek domein',
+                fr: 'sur le domaine publique'
+            }),
+
             ccbs: new T({
                 en: 'under the CC-BY-SA-license',
                 nl: 'onder de CC-BY-SA-licentie',
+                ca: 'sota llicència CC-BY-SA',
+                es: 'bajo licencia CC-BY-SA',
                 fr: 'sous la license CC-BY-SA'
             }),
-            ccb: new T({en: 'under the CC-BY-license', nl: 'onder de CC-BY-licentie', fr: 'sous la license CC-BY'}),
+            ccb: new T({
+                en: 'under the CC-BY-license',
+                ca: 'sota la llicència CC-BY',
+                es: 'bajo licencia CC-BY',
+                nl: 'onder de CC-BY-licentie',
+                fr: 'sous la license CC-BY'
+            }),
+
             uploadFailed: new T({
                 en: "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them.",
                 nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
+                ca: "No s\'ha pogut carregar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
+                es: "No se pudo cargar la imagen. ¿Tienes Internet y se permiten API de terceros? El navegador Brave o UMatrix podría bloquearlas.",
                 fr: "L'ajout de la photo a échoué. Êtes-vous connecté à Internet?"
             }),
+
             respectPrivacy: new T({
                 en: "Please respect privacy. Do not photograph people nor license plates",
+                ca: "Respecta la privacitat. No fotografiïs gent o matrícules",
+                es: "Respeta la privacidad. No fotografíes gente o matrículas",
                 nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
                 fr: "Merci de respecter la vie privée. Ne publiez pas les plaques d\'immatriculation"
             }),
             uploadDone: new T({
                 en: "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
+                ca: "<span class='thanks'>La teva imatge ha estat afegida. Gràcies per ajudar.</span>",
+                es: "<span class='thanks'>Tu imagen ha sido añadida. Gracies por ayudar.</span>",
                 nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>",
                 fr: "<span class='thanks'>Votre photo est ajouté. Merci beaucoup!</span>"
             })
         },
         centerMessage: {
-            loadingData: new T({en: 'Loading data...', nl: 'Data wordt geladen...', fr: 'Chargement des données'}),
+            loadingData: new T({
+                en: 'Loading data...',
+                ca: 'Carregant dades...',
+                es: 'Cargando datos...',
+                nl: 'Data wordt geladen...',
+                fr: 'Chargement des données'
+            }),
             zoomIn: new T({
                 en: 'Zoom in to view or edit the data',
+                ca: 'Amplia per veure o editar les dades',
+                es: 'Amplía para ver o editar los datos',
                 nl: 'Zoom in om de data te zien en te bewerken',
                 fr: 'Rapprochez vous sur la carte pour voir ou éditer les données',
             }),
-            ready: new T({en: 'Done!', nl: 'Klaar!', fr: 'Finis!'}), 
-            retrying: new T({en: "Loading data failed. Trying again... ({count})"})
+            ready: new T({
+                en: 'Done!',
+                ca: 'Fet.',
+                es: 'Hecho.',
+                nl: 'Klaar!',
+                fr: 'Finis!'
+            }),
+
+            retrying: new T({
+                en: "Loading data failed. Trying again... ({count})",
+                ca: "La càrrega de dades ha fallat.Tornant-ho a intentar... ({count})",
+                es: "La carga de datos ha fallado.Volviéndolo a probar... ({count})"
+            })
 
         },
         general: {
-            loginWithOpenStreetMap: new T({en: "Login with OpenStreetMap", nl: "Aanmelden met OpenStreetMap", fr:'Se connecter avec OpenStreeMap'}),
+            loginWithOpenStreetMap: new T({
+                en: "Login with OpenStreetMap",
+                ca: "Entra a OpenStreetMap",
+                es: "Entra en OpenStreetMap",
+                nl: "Aanmelden met OpenStreetMap",
+                fr: 'Se connecter avec OpenStreeMap'
+            }),
+
             welcomeBack: new T({
                 en: "You are logged in, welcome back!",
+                ca: "Has entrat, benvingut.",
+                es: "Has entrado, bienvenido.",
                 nl: "Je bent aangemeld. Welkom terug!",
                 fr: "Vous êtes connecté, bienvenue"
             }),
             loginToStart: new T({
                 en: "Login to answer this question",
+                ca: "Entra per contestar aquesta pregunta",
+                es: "Entra para contestar esta pregunta",
                 nl: "Meld je aan om deze vraag te beantwoorden",
                 fr: "Connectez vous pour répondre à cette question"
             }),
             search: {
                 search: new Translation({
                     en: "Search a location",
+                    ca: "Cerca una ubicació",
+                    es: "Busca una ubicación",
                     nl: "Zoek naar een locatie",
                     fr: "Chercher une location"
                 }),
                 searching: new Translation({
                     en: "Searching...",
+                    ca: "Cercant...",
+                    es: "Buscando...",
                     nl: "Aan het zoeken...",
                     fr: "Chargement"
-                    
+
                 }),
                 nothing: new Translation({
                     en: "Nothing found...",
+                    ca: "Res trobat.",
+                    es: "Nada encontrado.",
                     nl: "Niet gevonden...",
                     fr: "Rien n'a été trouvé "
                 }),
                 error: new Translation({
                     en: "Something went wrong...",
+                    ca: "Alguna cosa no ha sortit bé...",
+                    es: "Alguna cosa no ha ido bien...",
                     nl: "Niet gelukt...",
                     fr: "Quelque chose n\'a pas marché..."
-             
+
                 })
 
             },
             returnToTheMap: new T({
                 en: "Return to the map",
+                ca: "Tornar al mapa",
+                es: "Volver al mapa",
                 nl: "Naar de kaart",
                 fr: "Retourner sur la carte"
-             
+
             }),
             save: new T({
                 en: "Save",
+                ca: "Desar",
+                es: "Guardar",
                 nl: "Opslaan",
                 fr: "Sauvegarder"
             }),
             cancel: new T({
                 en: "Cancel",
+                ca: "Cancel·lar",
+                es: "Cancelar",
                 nl: "Annuleren",
                 fr: "Annuler"
             }),
             skip: new T({
                 en: "Skip this question",
+                ca: "Saltar aquesta pregunta",
+                es: "Saltar esta pregunta",
                 nl: "Vraag overslaan",
                 fr: "Passer la question"
-              
+
             }),
             oneSkippedQuestion: new T({
                 en: "One question is skipped",
+                ca: "Has ignorat una pregunta",
+                es: "Has ignorado una pregunta",
                 nl: "Een vraag is overgeslaan",
                 fr: "Une question a été passé"
             }),
             skippedQuestions: new T({
                 en: "Some questions are skipped",
+                ca: "Has ignorat algunes preguntes",
+                es: "Has ignorado algunas preguntas",
                 nl: "Sommige vragen zijn overgeslaan",
                 fr: "Questions passées"
             }),
             number: new T({
                 en: "number",
+                ca: "nombre",
+                es: "número",
                 nl: "getal",
                 fr: "Nombre"
             }),
 
             osmLinkTooltip: new T({
                 en: "See this object on OpenStreetMap for history and more editing options",
+                ca: "Mira aquest objecte a OpenStreetMap per veure historial i altres opcions d\'edició",
+                es: "Mira este objeto en OpenStreetMap para ver historial y otras opciones de edición",
                 nl: "Bekijk dit object op OpenStreetMap waar geschiedenis en meer aanpasopties zijn",
                 fr: "Voir l'historique de cet objet sur OpenStreetMap et plus d'options d'édition"
-
             }),
-            
             add: {
                 addNew: new T({
                     en: "Add a new {category} here",
+                    ca: "Afegir {category} aquí",
+                    es: "Añadir {category} aquí",
                     nl: "Voeg hier een {category} toe",
                     fr: "Ajouter un/une {category} ici"
-
                 }),
                 header: new T({
                     en: "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
+                    ca: "<h2>Vols afegir un punt?</h2>Has marcat un lloc on no coneixem les dades.<br/>",
+                    es: "<h2>Quieres añadir un punto?</h2>Has marcado un lugar del que no conocemos los datos.<br/>",
                     nl: "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is.<br/>",
                     fr: "<h2>Pas de données</h2>Vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>"
-
                 }),
                 pleaseLogin: new T({
                     en: "<a class='activate-osm-authentication'>Please log in to add a new point</a>",
+                    ca: "<a class='activate-osm-authentication'>Entra per afegir un nou punt</a>",
+                    es: "<a class='activate-osm-authentication'>Entra para añadir un nuevo punto</a>",
                     nl: "<a class='activate-osm-authentication'>Gelieve je aan te melden om een punt to te voegen</a>",
                     fr: "<a class='activate-osm-authentication'>Vous devez vous connecter pour ajouter un point</a>"
                 }),
                 zoomInFurther: new T({
                     en: "Zoom in further to add a point.",
+                    ca: "Apropa per afegir un punt.",
+                    es: "Acerca para añadir un punto.",
                     nl: "Gelieve verder in te zoomen om een punt toe te voegen",
                     fr: "Rapprochez vous pour ajouter un point."
                 }),
                 stillLoading: new T({
                     en: "The data is still loading. Please wait a bit before you add a new point",
+                    ca: "Les dades es segueixen carregant. Espera una mica abans d\'afegir cap punt.",
+                    es: "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
                     nl: "De data wordt nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
                     fr: "Chargement des donnés. Patientez un instant avant d'ajouter un nouveau point"
                 }),
                 confirmIntro: new T({
                     en: "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+                    ca: "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
+                    es: "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
                     nl: "<h3>Voeg hier een {title} toe?</h3>Het punt dat je hier toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
                     fr: "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouter sera visible par tout le monde. Merci d'etre sûr que ce point existe réellement. Beaucoup d'autres applications reposent sur ces données.",
 
                 }),
                 confirmButton: new T({
                     en: "Add a {category} here",
+                    ca: "Afegir {category} aquí",
+                    es: "Añadir {category} aquí",
                     nl: "Voeg hier een {category} toe",
                     fr: "Ajouter un/une {category} ici"
                 })
             },
             pickLanguage: new T({
                 en: "Choose a language",
+                ca: "Tria idioma",
+                es: "Escoge idioma",
                 nl: "Kies je taal",
                 fr: "Choisir la langue"
             }),
             about: new T({
                 en: "Easily edit and add OpenStreetMap for a certain theme",
+                ca: "Edita facilment i afegeix punts a OpenStreetMap d\'una temàtica determinada",
+                es: "Edita facilmente y añade puntos en OpenStreetMap de un tema concreto",
                 nl: "Easily edit and add OpenStreetMap for a certain theme",
                 fr: "Édition facile et ajouter OpenStreetMap pour un certain thème"
 
@@ -767,43 +877,59 @@ export default class Translations {
             }),
             nameInlineQuestion: new T({
                 en: "The name of this {category} is $$$",
+                ca: "{category}: El seu nom és $$$",
+                es: "{category}: Su nombre es $$$",
                 nl: "De naam van dit {category} is $$$",
                 fr: "Le nom de cet/cette {category} est $$$",
             }),
             noNameCategory: new T({
-                en: "{catehory} without a name",
+                en: "{category} without a name",
+                ca: "{category} sense nom",
+                es: "{category} sin nombre",
                 nl: "{category} zonder naam",
                 fr: "{category} sans nom"
             }),
             questions: {
                 phoneNumberOf: new T({
                     en: "What is the phone number of {category}?",
+                    ca: "Quin és el telèfon de {category}?",
+                    es: "Qué teléfono tiene {category}?",
                     nl: "Wat is het telefoonnummer van {category}?",
                     fr: "Quel est le nom de {category}?"
                 }),
                 phoneNumberIs: new T({
                     en: "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
+                    ca: "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
+                    es: "El número de teléfono de {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     nl: "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     fr: "Le numéro de téléphone de {category} est <a href='tel:{phone}' target='_blank'>{phone}</a>",
                 }),
                 websiteOf: new T({
                     en: "What is the website of {category}?",
+                    ca: "Quina és la pàgina web de {category}?",
+                    es: "Cual es la página web de {category}?",
                     nl: "Wat is de website van {category}?",
                     fr: "Quel est le site internet de {category}?"
                 }),
                 websiteIs: new T({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
+                    ca: "Pàgina web: <a href='{website}' target='_blank'>{website}</a>",
+                    es: "Página web: <a href='{website}' target='_blank'>{website}</a>",
                     nl: "Website: <a href='{website}' target='_blank'>{website}</a>",
                     fr: "Website: <a href='{website}' target='_blank'>{website}</a>"
                 }),
                 emailOf: new T({
                         en: "What is the email address of {category}?",
+                        ca: "Quina és l\'adreça de correu-e de {category}?",
+                        es: "¿Qué dirección de correu tiene {category}?",
                         nl: "Wat is het email-adres van {category}?",
                         fr: "Quel est l'adresse email de {category}?"
                     }
                 ),
                 emailIs: new T({
                     en: "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+                    ca: "L\'adreça de correu de {category} és <a href='mailto:{email}' target='_blank'>{email}</a>",
+                    es: "La dirección de correo de {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
                     nl: "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
                     fr: "L'adresse email de {category} est <a href='mailto:{email}' target='_blank'>{email}</a>"
                 }),
@@ -815,8 +941,22 @@ export default class Translations {
                     "A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p>" +
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>)." +
                     " On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p>" +
-                    "<p>A ton of people and application already use OpenStreetMap:  <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' traget='_blank'>OsmAnd</a>, but also the maps at Facebook, Intsagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap." +
+                    "<p>A ton of people and application already use OpenStreetMap:  <a href='https://maps.me/' traget='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Intsagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap." +
                     "If you change something here, it'll be reflected in those applications too - after their next update!</p>",
+                es: "<h3>Un mapa abierto</h3>" +
+                    "<p></p>¿No sería genial si hubiera un solo mapa, que todos pudieran usar y editar libremente?" +
+                    "¿Un solo lugar para almacenar toda la información geográfica? Entonces, todos esos sitios web con mapas diferentes, pequeños e incompatibles (que siempre están desactualizados) ya no serían necesarios.</p>" +
+                    "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> es ese mapa. Los datos del mapa se pueden utilizar de forma gratuita (con <a href='https://osm.org/copyright' target='_blank'> atribución y publicación de cambios en esos datos</a>)." +
+                    "Además de eso, todos pueden agregar libremente nuevos datos y corregir errores. Este sitio web también usa OpenStreetMap. Todos los datos provienen de allí, y tus respuestas y correcciones también se añadirán allí.</p>" +
+                    "<p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple y Bing son (en parte) impulsados ​​por OpenStreetMap ." +
+                    "Si cambias algo aquí, también se reflejará en esas aplicaciones, en su próxima actualización</p>",
+                ca: "<h3>Un mapa obert</h3>" +
+                    "<p></p>No seria genial si hagués un únic mapa, que tothom pogués utilitzar i editar lliurement?" +
+                    "Un sol lloc on emmagatzemar tota la informació geogràfica? Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactulitzats) ja no serien necessaris.</p>" +
+                    "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> és aquest mapa. Les dades del mapa es poden utilitzar de franc (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>)." +
+                    "A més a més, tothom pot agregar lliurement noves dades i corregir errors. De fet, aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d\'allà i les teves respostes i correccions també s\'afegiran allà.</p>" +
+                    "<p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats ​​per OpenStreetMap." +
+                    "Si canvies alguna cosa aquí també es reflectirà en aquestes aplicacions en la seva propera actualització.</p>",
                 nl: "<h3>Een open kaart</h3>" +
                     "<p>Zou het niet fantastisch zijn als er een open kaart zou zijn, die door iedereen aangepast én gebruikt kon worden? Waar iedereen zijn interesses aan zou kunnen toevoegen?" +
                     "Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p>" +
@@ -836,17 +976,23 @@ export default class Translations {
             sharescreen: {
                 intro: new T({
                     en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
+                    ca: "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l\'enllaç de sota i enviant-lo a amics i família:",
+                    es: "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
                     fr: "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyer le à vos amis:",
                     nl: "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
 
                 }),
                 addToHomeScreen: new T({
                     en: "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
+                    ca: "<h3>Afegir-lo a la pantalla d\'inici</h3>Pots afegir aquesta web a la pantalla d\'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'afegir a l\'inici' a la barra d\'adreces URL per fer-ho.",
+                    es: "<h3>Añadir a la pantalla de inicio</h3>Puedes añadir esta web en la pantalla de inicio de tu smartphone para que se vea más nativo. Aprieta el botón 'añadir a inicio' en la barra de direcciones URL para hacerlo.",
                     fr: "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le boutton 'ajouter à l'evran d'accueil' dans la barre d'URL pour éffecteur cette tâche",
                     nl: "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel"
                 }),
                 embedIntro: new T({
                     en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes.",
+                    ca: "<h3>Inclou-ho a la teva pàgina web</h3>Inclou aquest mapa dins de la teva pàgina web. <br/> T\'animem a que ho facis, no cal que demanis permís. <br/>  És de franc, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
+                    es: "<h3>Inclúyelo en tu página web</h3>Incluye este mapa en tu página web. <br/> Te animamos a que lo hagas, no hace falta que pidas permiso. <br/> Es gratis, y siempre lo será. A más gente que lo use más valioso será.",
                     fr: "<h3>Incorporer à votre website</h3>AJouter la carte à votre website. <br/>On vous en encourage - pas besoin de permission. <br/>  C'est gratuit et pour toujours. Le plus de personnes l'utilisent, le mieux ce sera.",
                     nl: "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller"
                 })
@@ -854,67 +1000,108 @@ export default class Translations {
             morescreen: {
                 intro: new T({
                     en: "<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                    ca: "<h3>Més peticions</h3>T\'agrada captar dades? <br/>Hi ha més capes disponibles.",
+                    es: "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
                     fr: "<h3>Plus de thème </h3>Vous aimez collecter des données? <br/>Il y a plus de thèmes disponible.",
                     nl: "<h3>Meer thema's</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer opties."
                 }),
                 
                 requestATheme: new T({
                     en: "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>here</a>",
+                    ca: "Si vols que et fem una petició pròpia , demana-la <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>aquí</a>",
+                    es: "Si quieres que te hagamos una petición propia , pídela <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>aquí</a>",
                     nl: "Wil je een eigen kaartthema, vraag dit <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>hier aan</a>",
                     fr: "Si vous voulez une autre carte thématique, demandez <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>ici</a>"
                 }),
 
                 streetcomplete: new T({
                     en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
+                    ca: "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
+                    es: "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     fr: "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     nl: "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>"
                 }),
                 createYourOwnTheme: new T({
                     en: "Create your own MapComplete theme from scratch",
+                    ca: "Crea la teva pròpia petició completa de MapComplete des de zero.",
+                    es: "Crea tu propia petición completa de MapComplete desde cero.",
                     nl: "Maak je eigen MapComplete-kaart",
                     fr: "Créez votre propre MapComplete carte"
                 })
             },
             readYourMessages: new T({
                 en: "Please, read all your OpenStreetMap-messages before adding a new point.",
+                ca: "Llegeix tots els teus missatges d\'OpenStreetMap abans d\'afegir nous punts.",
+                ca: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
                 nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
                 fr: "Merci de lire tout vos messages d'OpenStreetMap avant d'ajouter un nouveau point.",
             }),
             fewChangesBefore: new T({
                 en: "Please, answer a few questions of existing points before adding a new point.",
+                ca: "Contesta unes quantes preguntes sobre punts existents abans d\'afegir-ne un de nou.",
+                es: "Contesta unas cuantas preguntas sobre puntos existentes antes de añadir nuevos.",
                 nl: "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
                 fr: "Merci de répondre à quelques questions à propos de point déjà existant avant d'ajouter de nouveaux points"
 
             }),
             goToInbox: new T({
                 en: "Open inbox",
+                es: "Abrir mensajes",
+                ca: "Obrir missatges",
                 nl: "Ga naar de berichten",
                 fr: "Ouvrir les messages"
             }),
             getStartedLogin: new T({
                 en: "Login with OpenStreetMap to get started",
+                es: "Entra en OpenStreetMap para empezar",
+                ca: "Entra a OpenStreetMap per començar",
                 nl: "Login met OpenStreetMap om te beginnen",
                 fr: "Connectez vous avec OpenStreetMap pour commencer"
             }),
             getStartedNewAccount: new T({
                 en: " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
                 nl: " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a> ",
-                fr: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>registrez vous</a>"
+                fr: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>registrez vous</a>",
+                es: " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea una nueva cuenta</a>",
+                ca: " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea un nou compte</a>",
             }),
-            noTagsSelected: new T({en: "No tags selected"}),
-            customThemeIntro: new T({en:"<h3>Custom themes</h3>These are previously visited user-generated themes."})
-
+            noTagsSelected: new T({
+                en: "No tags selected",
+                es: "No se han seleccionado etiquetas",
+                ca: "No s\'han seleccionat etiquetes"
+            }),
+            customThemeIntro: new T({en: "<h3>Custom themes</h3>These are previously visited user-generated themes."})
         },
         favourite: {
-            title: new T({en: "Personal theme"}),
+
+            title: new T({
+                en: "Personal theme",
+                nl: "Persoonlijk thema",
+                es: "Interficie personal",
+                ca: "Interfície personal"
+            }),
             description: new T({
-                en: "Create a personal theme based on all the available layers of all themes"
+                en: "Create a personal theme based on all the available layers of all themes",
+                es: "Crea una interficie basada en todas las capas disponibles de todas las interficies",
+                ca: "Crea una interfície basada en totes les capes disponibles de totes les interfícies"
             }),
+
+
             panelIntro: new T({
-                en: "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes"
+                en: "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
+                ca: "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
+                es: "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales"
             }),
-            loginNeeded: new T({en: "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users"}),
-            reload: new T({en: "Reload the data"})
+            loginNeeded: new T({
+                en: "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
+                es: "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenstreetMap",
+                ca: "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d\' OpenstreetMap"
+            }),
+            reload: new T({
+                en: "Reload the data",
+                es: "Recarga los datos",
+                ca: "Recarrega les dades"
+            })
         }
     }
 
