@@ -8,7 +8,7 @@ MapComplete attempts to be a webversion crossover of StreetComplete and MapContr
 The design goals of MapComplete are to be:
 
 - Easy to use, both on web and on mobile
-- Easy to deploy (by not having a backand)
+- Easy to deploy (by not having a backend)
 - Easy to set up a custom theme
 - Easy to fall down the rabbit hole of OSM
 
