@@ -1037,7 +1037,7 @@ export default class Translations {
             readYourMessages: new T({
                 en: "Please, read all your OpenStreetMap-messages before adding a new point.",
 				ca: "Llegeix tots els teus missatges d\'OpenStreetMap abans d\'afegir nous punts.",
-				ca: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
+				es: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
                 nl: "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
                 fr: "Merci de lire tout vos messages d'OpenStreetMap avant d'ajouter un nouveau point.",
             }),
