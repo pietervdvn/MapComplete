@@ -308,7 +308,7 @@ class LayerGenerator extends UIElement {
 
             new FixedUiElement("<p>A layer is a collection of related objects which have the same or very similar tags renderings. In general, all objects of one layer have the same icon (or at least very similar icons)</p>"),
 
-            createFieldUI("Name", "id", layerConfig, {description: "The name of this layer"}),
+            createFieldUI("Name", "name", layerConfig, {description: "The name of this layer"}),
             createFieldUI("A description of objects for this layer", "description", layerConfig, {description: "The description of this layer"}),
             createFieldUI("Minimum zoom level", "minzoom", layerConfig, {
                 type: "nat",

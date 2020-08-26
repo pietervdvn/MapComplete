@@ -18,7 +18,7 @@ export class MoreScreen extends UIElement {
     constructor() {
         super(State.state.locationControl);
         this.ListenTo(State.state.osmConnection.userDetails);
-        this.ListenTo(State.state.osmConnection._preferencesHandler.preferences);
+        this.ListenTo(State.state.installedThemes);
 
     }
 
@@ -27,10 +27,6 @@ export class MoreScreen extends UIElement {
             return undefined;
         }
         if (layout.name === State.state.layoutToUse.data.name) {
-            return undefined;
-        }
-
-        if (layout.name === PersonalLayout.NAME) {
             return undefined;
         }
 
@@ -80,63 +76,28 @@ export class MoreScreen extends UIElement {
             })
         ));
 
-        els.push(new VariableUiElement(
-            State.state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < State.userJourney.customLayoutUnlock) {
-                    return "";
-                }
-                return new SubtleButton("./assets/star.svg",
-                    new Combine([
-                        "<b>",
-                        Translations.t.favourite.title,
-                        "</b>",
-                        "<br>", Translations.t.favourite.description]), {
-                        url: "https://pietervdvn.github.io/MapComplete/personal.html",
-                        newTab: false
-                    }).Render();
-            })
-        ));
-
 
         for (const k in AllKnownLayouts.allSets) {
+
+
+            if (k === PersonalLayout.NAME) {
+                if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.customLayoutUnlock) {
+                    continue;
+                }
+            }
+
+
             els.push(this.createLinkButton(AllKnownLayouts.allSets[k]));
         }
 
-        const installedThemes = State.state.osmConnection._preferencesHandler.preferences.map(allPreferences => {
-            const installedThemes = [];
-            if(allPreferences === undefined){
-                return installedThemes;
-            }
 
-            for (const allPreferencesKey in allPreferences) {
-                "mapcomplete-installed-theme-Superficie-combined-length"
-                const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
-                if(themename){
-                    installedThemes.push(themename[1]);
-                }
-            }
-            
-            return installedThemes;
-            
-        })
-        const customThemesNames = installedThemes.data ?? [];
+        const customThemesNames = State.state.installedThemes.data ?? [];
         if (customThemesNames !== []) {
             els.push(Translations.t.general.customThemeIntro)
         }
 
-        console.log(customThemesNames);
-        for (const installedThemeName of customThemesNames) {
-            if(installedThemeName === ""){
-                continue;
-            }
-            const customThemeDefinition = State.state.osmConnection.GetLongPreference("installed-theme-" + installedThemeName);
-            try {
-                const layout = CustomLayoutFromJSON.FromQueryParam(customThemeDefinition.data);
-                els.push(this.createLinkButton(layout, customThemeDefinition.data));
-            } catch (e) {
-                console.log(customThemeDefinition.data);
-                console.warn("Could not parse custom layout from preferences: ", installedThemeName, e);
-            }
+        for (const installed of State.state.installedThemes.data) {
+            els.push(this.createLinkButton(installed.layout, installed.definition));
         }
 
 

@@ -10,29 +10,35 @@ import {VerticalCombine} from "../UI/Base/VerticalCombine";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SubtleButton} from "../UI/Base/SubtleButton";
 import {PersonalLayout} from "./PersonalLayout";
+import {All} from "../Customizations/Layouts/All";
+import {Layout} from "../Customizations/Layout";
+import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
+import {TagRendering} from "../Customizations/TagRendering";
 
 export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
-
-    private updateButton: UIElement;
 
     constructor() {
         super(State.state.favouriteLayers);
 
         this.ListenTo(State.state.osmConnection.userDetails);
-
-
         const t = Translations.t.favourite;
-        const favs = State.state.favouriteLayers.data ?? [];
-        
-        this.updateButton = new SubtleButton("./assets/reload.svg", t.reload)
-            .onClick(() => {
-                State.state.layerUpdater.ForceRefresh();
-                State.state.layoutToUse.ping();
-            })
 
+        this.UpdateView([]);
+        const self = this;
+        State.state.installedThemes.addCallback(extraThemes => {
+            self.UpdateView(extraThemes.map(layout => layout.layout));
+            self.Update();
+        })
+    }
+
+
+    private UpdateView(extraThemes: Layout[]) {
+        this.checkboxes = [];
+        const favs = State.state.favouriteLayers.data ?? [];
         const controls = new Map<string, UIEventSource<boolean>>();
-        for (const layout of AllKnownLayouts.layoutsList) {
+        const allLayouts = AllKnownLayouts.layoutsList.concat(extraThemes);
+        for (const layout of allLayouts) {
 
             if (layout.name === PersonalLayout.NAME) {
                 continue;
@@ -41,7 +47,7 @@ export class PersonalLayersPanel extends UIElement {
                 State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
                 continue
             }
-            
+
             const header =
                 new Combine([
                     `<div class="custom-layer-panel-header-img"><img src='${layout.icon}'></div>`,
@@ -54,14 +60,22 @@ export class PersonalLayersPanel extends UIElement {
             this.checkboxes.push(header);
 
             for (const layer of layout.layers) {
+
+                let icon = layer.icon;
+                if (icon !== undefined && typeof (icon) !== "string") {
+                    icon = icon.GetContent({"id": "node/-1"}) ?? "./assets/bug.svg";
+                }
                 const image = (layer.icon ? `<img src='${layer.icon}'>` : Img.checkmark);
                 const noimage = (layer.icon ? `<img src='${layer.icon}'>` : Img.no_checkmark);
 
-                let name = layer.name;
-                if(typeof (name) !== "string"){
+                let name = layer.name ?? layer.id;
+                if (name === undefined) {
+                    continue;
+                }
+                if (typeof (name) !== "string") {
                     name = name.InnerRender();
                 }
-                
+
                 const content = new Combine([
                     "<span>",
                     "<b>", name ?? "", "</b> ",
@@ -73,7 +87,7 @@ export class PersonalLayersPanel extends UIElement {
                     ]),
                     new Combine([
                         "<span style='opacity: 0.1'>",
-                        noimage, "</span>", 
+                        noimage, "</span>",
                         "<del>",
                         content,
                         "</del>"
@@ -115,7 +129,6 @@ export class PersonalLayersPanel extends UIElement {
 
         return new Combine([
             t.panelIntro,
-            this.updateButton,
             ...this.checkboxes
         ], "custom-layer-panel").Render();
     }

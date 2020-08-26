@@ -36,8 +36,7 @@ export interface TagRenderingConfigJson {
 }
 
 export interface LayerConfigJson {
-
-    id: string;
+    name: string;
     title: string | any | TagRenderingConfigJson;
     description: string | any;
     minzoom: number | string,
@@ -238,16 +237,15 @@ export class CustomLayoutFromJSON {
         const tr = CustomLayoutFromJSON.TagRenderingFromJson;
         const tags = CustomLayoutFromJSON.TagsFromJson(json.overpassTags);
         // We run the icon rendering with the bare minimum of tags (the overpass tags) to get the actual icon
-        const icon = CustomLayoutFromJSON.TagRenderingFromJson(json.icon).construct({
-            tags: new UIEventSource<any>({})
-        }).InnerRender();
+        const icon = CustomLayoutFromJSON.TagRenderingFromJson(json.icon).GetContent({id:"node/-1"});
 
-
+        // @ts-ignore
+        const id = json.name?.replace(/[^a-zA-Z0-9_-]/g,'') ?? json.id;
         return new LayerDefinition(
-            json.id,
+            id,
             {
                 description: t(json.description),
-                name: Translations.WT(t(json.title.render)).txt.replace(/[^a-zA-Z0-9-_]/g, ''),
+                name: Translations.WT(t(json.name)),
                 icon: icon,
                 minzoom: parseInt(""+json.minzoom),
                 title: tr(json.title),

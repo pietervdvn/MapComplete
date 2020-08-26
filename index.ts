@@ -138,7 +138,6 @@ function setupAllLayerElements() {
             }
         }
         if (presetCount == 0) {
-            console.log("No presets defined - not creating the StrayClickHandler");
             return;
         }
 
@@ -155,20 +154,35 @@ function setupAllLayerElements() {
 
 setupAllLayerElements();
 
-if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {
-    State.state.favouriteLayers.addCallback((favs: string[]) => {
-        layoutToUse.layers = [];
-        for (const fav of favs) {
-            const layer = AllKnownLayouts.allLayers[fav];
-            if (!!layer) {
-                layoutToUse.layers.push(layer);
-            }
-            setupAllLayerElements();
-        }
-        ;
-        State.state.locationControl.ping();
 
-    })
+function updateFavs() {
+    const favs = State.state.favouriteLayers.data ?? [];
+
+    layoutToUse.layers = [];
+    for (const fav of favs) {
+        const layer = AllKnownLayouts.allLayers[fav];
+        if (!!layer) {
+            layoutToUse.layers.push(layer);
+        }
+
+        for (const layouts of State.state.installedThemes.data) {
+            for (const layer of layouts.layout.layers) {
+                if (layer.id === fav) {
+                    layoutToUse.layers.push(layer);
+                }
+            }
+        }
+    }
+
+    setupAllLayerElements();
+    State.state.layerUpdater.ForceRefresh();
+    State.state.locationControl.ping();
+}
+
+if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {
+
+    State.state.favouriteLayers.addCallback(updateFavs);
+    State.state.installedThemes.addCallback(updateFavs);
 }
 
 
@@ -229,3 +243,4 @@ if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || S
 
 
 new GeoLocationHandler().AttachTo("geolocate-button");
+State.state.locationControl.ping();

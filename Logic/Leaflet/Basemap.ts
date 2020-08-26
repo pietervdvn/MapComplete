@@ -76,8 +76,8 @@ export class Basemap {
                 location: UIEventSource<{ zoom: number, lat: number, lon: number }>,
                 extraAttribution: UIElement) {
         this.map = L.map(leafletElementId, {
-            center: [location.data.lat, location.data.lon],
-            zoom: location.data.zoom,
+            center: [location.data.lat ?? 0, location.data.lon ?? 0],
+            zoom: location.data.zoom ?? 2,
             layers: [BaseLayers.defaultLayer.layer],
         });
 

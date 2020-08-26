@@ -20,7 +20,7 @@
   },
   "layers": [
     {
-      "id": "Artwork",
+      "name": "Artwork",
       "title": {
         "key": "*",
         "render": {

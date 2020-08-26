@@ -32,7 +32,7 @@ export class LayerUpdater {
         state.layoutToUse.addCallback(() => {
             self.update(state)
         });
-       
+
         self.update(state);
     }
 
@@ -41,11 +41,13 @@ export class LayerUpdater {
         state = state ?? State.state;
         for (const layer of state.layoutToUse.data.layers) {
             if (state.locationControl.data.zoom < layer.minzoom) {
-                return undefined;
+                console.log("Not loading layer ", layer.id, " as it needs at least ",layer.minzoom, "zoom")
+                continue;
             }
             filters.push(layer.overpassFilter);
         }
         if (filters.length === 0) {
+            console.log("No layers loaded at all")
             return undefined;
         }
         return new Or(filters);
@@ -103,7 +105,6 @@ export class LayerUpdater {
 
         this.sufficentlyZoomed.setData(filter !== undefined);
         if (filter === undefined) {
-            console.log("Zoom insufficient to run query")
             return;
         }
 
@@ -116,10 +117,10 @@ export class LayerUpdater {
 
         const diff = state.layoutToUse.data.widenFactor;
 
-        const n = bounds.getNorth() + diff;
-        const e = bounds.getEast() + diff;
-        const s = bounds.getSouth() - diff;
-        const w = bounds.getWest() - diff;
+        const n = Math.min(90, bounds.getNorth() + diff);
+        const e = Math.min( 180,bounds.getEast() + diff);
+        const s = Math.max(-90, bounds.getSouth() - diff);
+        const w = Math.max(-180, bounds.getWest() - diff);
 
         this.previousBounds = {north: n, east: e, south: s, west: w};
 

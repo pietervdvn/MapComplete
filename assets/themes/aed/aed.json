@@ -9,7 +9,7 @@
   "maintainer": "Pieter Vander Vennet",
   "layers": [
     {
-      "id": "Defibrillator",
+      "name": "Defibrillator",
       "title": {
         "key": "*",
         "render": {

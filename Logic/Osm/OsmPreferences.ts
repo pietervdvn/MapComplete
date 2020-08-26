@@ -18,6 +18,8 @@ export class OsmPreferences {
         osmConnection.OnLoggedIn(() => self.UpdatePreferences());
     }
 
+    private longPreferences = {};
+
     /**
      * OSM preferences can be at most 255 chars
      * @param key
@@ -25,7 +27,15 @@ export class OsmPreferences {
      * @constructor
      */
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
+
+        if (this.longPreferences[prefix + key] !== undefined) {
+            return this.longPreferences[prefix + key];
+        }
+
         const source = new UIEventSource<string>(undefined);
+        this.longPreferences[prefix + key] = source;
+
+        console.log("Loading long pref", prefix + key);
 
         const allStartWith = prefix + key + "-combined";
         // Gives the number of combined preferences
@@ -34,22 +44,23 @@ export class OsmPreferences {
         console.log("Getting long pref " + prefix + key);
         const self = this;
         source.addCallback(str => {
-            if (str === undefined) {
-                for (const prefKey in self.preferenceSources) {
-                    if (prefKey.startsWith(allStartWith)) {
-                        self.GetPreference(prefKey, "").setData(undefined);
-                    }
-                }
-                return;
+            if (str === undefined || str === "") {
+               return
             }
 
             let i = 0;
             while (str !== "") {
+                if (str === undefined || str === "undefined") {
+                    throw "Long pref became undefined?"
+                }
+                if (i > 100) {
+                    throw "This long preference is getting very long... "
+                }
                 self.GetPreference(allStartWith + "-" + i, "").setData(str.substr(0, 255));
                 str = str.substr(255);
                 i++;
             }
-            length.setData("" + i);
+            length.setData("" + i); // We use I, the number of preference fields used
         });
 
 
@@ -58,11 +69,17 @@ export class OsmPreferences {
                 source.setData(undefined);
                 return;
             }
-            const length = Number(l);
+            if (l > 25) {
+                throw "Length to long";
+                source.setData(undefined);
+                return;
+            }
+            const prefsCount = Number(l);
             let str = "";
-            for (let i = 0; i < length; i++) {
+            for (let i = 0; i < prefsCount; i++) {
                 str += self.GetPreference(allStartWith + "-" + i, "").data;
             }
+
             source.setData(str);
             source.ping();
             console.log("Long preference ", key, " has ", str.length, " chars");
@@ -135,10 +152,7 @@ export class OsmPreferences {
         }
         console.log("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15));
 
-        this.preferences.data[k] = v;
-        this.preferences.ping();
-
-        if (v === "") {
+        if (v === undefined || v === "") {
             this.auth.xhr({
                 method: 'DELETE',
                 path: '/api/0.6/user/preferences/' + k,

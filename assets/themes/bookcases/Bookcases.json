@@ -20,7 +20,7 @@
   ],
   "layers": [
     {
-      "id": "Bookcases",
+      "name": "Bookcases",
       "title": {
         "key": "*",
         "render": {

@@ -135,8 +135,7 @@ export class ShareScreen extends UIElement {
             
             let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.name + ".html"
 
-            const parts = 
-                Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
+            const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
             let hash = "";
             if (State.state.layoutDefinition !== undefined) {
@@ -161,11 +160,7 @@ export class ShareScreen extends UIElement {
         );
 
 
-        this._link = new VariableUiElement(
-            url.map((url) => {
-                return `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%"readonly>`
-            })
-        );
+     
 
         this._editLayout = new FixedUiElement("");
         if ((State.state.layoutDefinition !== undefined)) {
@@ -177,7 +172,7 @@ export class ShareScreen extends UIElement {
                                 return "";
                             }
                             return `<h3>Edit this theme</h3>` +
-                                `<a target='_blank' href='https://pietervdvn.github.io/MapComplete/customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`
+                                `<a target='_blank' href='./customGenerator.html#${State.state.layoutDefinition}'>Click here to edit</a>`
 
                         }
                     ));
@@ -187,11 +182,15 @@ export class ShareScreen extends UIElement {
         const status = new UIEventSource(" ");
         this._linkStatus = new VariableUiElement(status);
         const self = this;
-        this._link.onClick(async () => {
+        this._link = new VariableUiElement(
+            url.map((url) => {
+                return `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%"readonly>`
+            })
+        ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.name).InnerRender(),
-                text: Translations.W(layout.description).InnerRender(),
+                title: Translations.W(layout.name)?.InnerRender() ?? "",
+                text: Translations.W(layout.description)?.InnerRender() ?? "",
                 url: self._link.data,
             }
 

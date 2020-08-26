@@ -13,6 +13,7 @@ import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -23,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.6d";
+    public static vNumber = "0.0.6f";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -121,6 +122,7 @@ export class State {
      */
     public readonly saveTimeout = new UIEventSource<number>(30 * 1000);
     public layoutDefinition: string;
+    public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
 
     constructor(layoutToUse: Layout) {
@@ -179,6 +181,34 @@ export class State {
             str => Utils.Dedup(str?.split(";")) ?? [],
             [], layers => Utils.Dedup(layers)?.join(";")
         );
+
+        this.installedThemes = this.osmConnection._preferencesHandler.preferences.map<{ layout: Layout, definition: string }[]>(allPreferences => {
+            const installedThemes: { layout: Layout, definition: string }[] = [];
+            if (allPreferences === undefined) {
+                return installedThemes;
+            }
+            for (const allPreferencesKey in allPreferences) {
+                const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
+                if (themename && themename[1] !== "") {
+                    const customLayout = State.state.osmConnection.GetLongPreference("installed-theme-" + themename[1]);
+                    if(customLayout.data === undefined){
+                        console.log("No data defined for ", themename[1]);
+                        continue;
+                    }
+                    try {
+                        installedThemes.push({
+                            layout: CustomLayoutFromJSON.FromQueryParam(customLayout.data),
+                            definition: customLayout.data
+                        });
+                    } catch (e) {
+                        console.warn("Could not parse custom layout from preferences: ", allPreferencesKey, e, customLayout.data);
+                    }
+                }
+            }
+
+            return installedThemes;
+
+        });
 
         Locale.language.syncWith(this.osmConnection.GetPreference("language"));
 

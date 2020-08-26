@@ -166,7 +166,6 @@ export class Tag extends TagsFilter {
                 `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${v}</a>`
         }
 
-        console.log("Humanizing", this)
         if (typeof (this.value) === "string") {
             return this.key + (this.invertValue ? "!=": "=") + v;
         }else{

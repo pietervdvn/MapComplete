@@ -1,7 +1,7 @@
 {
   "layers": [
     {
-      "id": "Toilet",
+      "name": "Toilet",
       "title": {
         "key": "*",
         "render": "Toilet"
