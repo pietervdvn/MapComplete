@@ -147,7 +147,6 @@ export class Tag extends TagsFilter {
         if (typeof this.value !== 'string') {
             throw new Error("substituteValues() only possible with tag value of type string")
         }
-
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 

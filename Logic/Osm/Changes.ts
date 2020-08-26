@@ -74,9 +74,7 @@ export class Changes {
         const eventSource = State.state.allElements.getElement(elementId);
 
         eventSource.data[key] = value;
-        if(value === undefined || value === ""){
-            delete eventSource.data[key];
-        }
+       
         eventSource.ping();
         // We get the id from the event source, as that ID might be rewritten
         this._pendingChanges.push({elementId: eventSource.data.id, key: key, value: value});

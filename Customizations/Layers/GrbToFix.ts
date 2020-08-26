@@ -28,10 +28,16 @@ export class GrbToFix extends LayerDefinition {
 
         this.title = new TagRenderingOptions({
             freeform: {
-                key: "fixme",
-                renderTemplate: "{fixme}",
+                key: "addr:street",
+                renderTemplate: "{addr:street} <b>{addr:housenumber}</b>",
                 template: "Fixme $$$"
-            }
+            },
+            mappings: [
+                {
+                    k: new Tag("fixme","*"),
+                    txt: "{fixme}"
+                }
+            ]
         })
 
         this.elementsToShow = [
@@ -39,12 +45,13 @@ export class GrbToFix extends LayerDefinition {
             new TagRenderingOptions(
                 {
                     freeform: {
-                        key: "addr:street",
+                        key: "addr:housenumber",
                         renderTemplate: "Het adres is {addr:street} <b>{addr:housenumber}</b>",
-                        template: "Straat? $$$"
-                    }
+                        template: "Straat? $$$",
+                    },
+                    question: "Wat is het huisnummer?"
                 }
-            ),
+            ).OnlyShowIf(new Tag("fixme","*","")),
 
             new TagRenderingOptions({
 
@@ -61,22 +68,37 @@ export class GrbToFix extends LayerDefinition {
                 freeform: {
                     key: "addr:housenumber",
                     template: "Het huisnummer is $$$",
-                    renderTemplate: "Het huisnummer is <b>{addr:housenumber}</b>, GRB denkt <i>{grb:housenumber:human}</i>",
-                    extraTags: new Tag("fixme", "")
+                    renderTemplate: "Het adres is {addr:street} <b>{addr:housenumber}</b>, GRB denkt <i>{grb:housenumber:human}</i>",
+                    extraTags: new And([new Tag("fixme", ""), new Tag("not:addr:housenumber", "")])
                 },
                 mappings: [
                     {
-                        k: new And([new Tag("addr:housenumber", "{grb:housenumber}"), new Tag("fixme", "")]),
+                        k: new And([new Tag("addr:housenumber", "{grb:housenumber}"), new Tag("fixme", ""), new Tag("not:addr:housenumber", "")]),
                         txt: "Volg GRB: <b>{grb:housenumber:human}</b>",
                         substitute: true
                     },
                     {
-                        k: new And([new Tag("addr:housenumber", "{addr:housenumber}"), new Tag("fixme", "")]),
+                        k: new And([new Tag("addr:housenumber", "{addr:housenumber}"), new Tag("fixme", ""), new Tag("not:addr:housenumber", "")]),
                         txt: "Volg OSM: <b>{addr:housenumber}</b>",
                         substitute: true
-                    }
+                    },
+                    {
+                        k: new And([new Tag("building", "garage"),
+                            new Tag("not:addr:housenumber", "yes"),
+                            new Tag("addr:housenumber", ""), new Tag("fixme", "")]),
+                        txt: "Dit is een garage(poort) zonder nummer",
+                        substitute: true
+                    },
+                    {
+                        k: new And([
+                            new Tag("not:addr:housenumber", "yes"),
+                            new Tag("addr:housenumber", ""), new Tag("fixme", "")]),
+                        txt: "Gewoon een huis zonder nummer",
+                        substitute: true
+                    },
+
                 ]
-            })
+            }).OnlyShowIf(new Tag("fixme", "*"))
 
 
         ];

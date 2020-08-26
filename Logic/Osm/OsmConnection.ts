@@ -24,8 +24,8 @@ export class OsmConnection {
     public userDetails: UIEventSource<UserDetails>;
     private _dryRun: boolean;
 
-    public _preferencesHandler: OsmPreferences;
-    private _changesetHandler: ChangesetHandler;
+    public preferencesHandler: OsmPreferences;
+    public changesetHandler: ChangesetHandler;
     
     private _onLoggedIn : ((userDetails: UserDetails) => void)[] = [];
 
@@ -68,9 +68,9 @@ export class OsmConnection {
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
 
-        this._preferencesHandler = new OsmPreferences(this.auth, this);
+        this.preferencesHandler = new OsmPreferences(this.auth, this);
         
-        this._changesetHandler = new ChangesetHandler(dryRun, this.userDetails, this.auth);
+        this.changesetHandler = new ChangesetHandler(dryRun, this.userDetails, this.auth);
         if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
             const self = this;
@@ -94,15 +94,15 @@ export class OsmConnection {
     public UploadChangeset(generateChangeXML: (csid: string) => string,
                            handleMapping: (idMapping: any) => void,
                            continuation: () => void) {
-        this._changesetHandler.UploadChangeset(generateChangeXML, handleMapping, continuation);
+        this.changesetHandler.UploadChangeset(generateChangeXML, handleMapping, continuation);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this._preferencesHandler.GetPreference(key, prefix);
+        return this.preferencesHandler.GetPreference(key, prefix);
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this._preferencesHandler.GetLongPreference(key, prefix);
+        return this.preferencesHandler.GetLongPreference(key, prefix);
     }
 
     public OnLoggedIn(action: (userDetails: UserDetails) => void){

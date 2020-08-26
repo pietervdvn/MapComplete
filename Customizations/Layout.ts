@@ -16,6 +16,7 @@ export class Layout {
     public maintainer: string;
     public version: string;
     public description: string | UIElement;
+    public changesetMessage: string;
     public socialImage: string = "";
     
     public layers: LayerDefinition[];

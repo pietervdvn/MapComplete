@@ -28,7 +28,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private _question: string | Translation;
     private _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
-    private _tagsPreprocessor?: ((tags: any) => any);
+    private currentTags : UIEventSource<any> ;
+    
+    
     private _freeform: {
         key: string,
         template: string | UIElement,
@@ -85,17 +87,23 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         const self = this;
        
         this._priority = options.priority ?? 0;
-        this._tagsPreprocessor = function (properties) {
-            if (options.tagsPreprocessor === undefined) {
-                return properties;
+        
+        this.currentTags = this._source.map(tags => 
+            {
+
+                if (options.tagsPreprocessor === undefined) {
+                    return tags;
+                }
+                // we clone the tags...
+                let newTags = {};
+                for (const k in tags) {
+                    newTags[k] = tags[k];
+                }
+                // ... in order to safely edit them here
+                options.tagsPreprocessor(newTags); 
+                return newTags;
             }
-            const newTags = {};
-            for (const k in properties) {
-                newTags[k] = properties[k];
-            }
-            options.tagsPreprocessor(newTags);
-            return newTags;
-        };
+        );
 
         if (options.question !== undefined) {
             this._question = options.question;
@@ -106,19 +114,12 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
         for (const choice of options.mappings ?? []) {
+
+
             let choiceSubbed = {
-                k: choice.k,
+                k: choice.k.substituteValues(this.currentTags.data),
                 txt: choice.txt,
                 priority: choice.priority
-            };
-
-            if (choice.substitute) {
-                const newTags = this._tagsPreprocessor(this._source.data);
-                choiceSubbed = {
-                    k: choice.k.substituteValues(newTags),
-                    txt: choice.txt,
-                    priority: choice.priority
-                }
             }
 
 
@@ -242,7 +243,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private InputElementForMapping(mapping: { k: TagsFilter, txt: string | Translation }) {
-        return new FixedInputElement(this.ApplyTemplate(mapping.txt), mapping.k);
+        return new FixedInputElement(this.ApplyTemplate(mapping.txt),
+            mapping.k.substituteValues(this.currentTags.data)
+        );
     }
 
 
@@ -455,8 +458,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             throw "Trying to apply a template, but the template is null/undefined"
         }
         const self = this;
-        const tags = this._source.map(tags => self._tagsPreprocessor(self._source.data));
-        return new VariableUiElement(tags.map(tags => {
+        return new VariableUiElement(this.currentTags.map(tags => {
             const tr = Translations.WT(template);
             if (tr.Subs === undefined) {
                 // This is a weird edge case

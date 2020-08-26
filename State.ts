@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.6f";
+    public static vNumber = "0.0.7";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -182,7 +182,7 @@ export class State {
             [], layers => Utils.Dedup(layers)?.join(";")
         );
 
-        this.installedThemes = this.osmConnection._preferencesHandler.preferences.map<{ layout: Layout, definition: string }[]>(allPreferences => {
+        this.installedThemes = this.osmConnection.preferencesHandler.preferences.map<{ layout: Layout, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: Layout, definition: string }[] = [];
             if (allPreferences === undefined) {
                 return installedThemes;

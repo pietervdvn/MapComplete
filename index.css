@@ -1291,6 +1291,7 @@ form {
     max-height: 50vh;
     display: inline-block;
     overflow-y: auto;
+    width: 100%;
 }
 
 .custom-layer-panel {

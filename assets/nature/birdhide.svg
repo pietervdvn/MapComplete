@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 14 14"
+   viewBox="0 0 500 500"
    version="1.1"
    id="svg3800"
-   height="14"
-   width="14"
+   height="500"
+   width="500"
    sodipodi:docname="birdhide.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    inkscape:export-filename="/home/pietervdvn/git/pietervdvn.github.io/Quickmaps/Natuurgebieden/resources/birdhide.png"
    inkscape:export-xdpi="3900"
    inkscape:export-ydpi="3900">
@@ -27,14 +27,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1053"
+     inkscape:window-height="1001"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="33.714286"
-     inkscape:cx="4.9428996"
-     inkscape:cy="9.0125471"
+     inkscape:zoom="0.74498751"
+     inkscape:cx="-248.78385"
+     inkscape:cy="85.700327"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="1050"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3800" />
   <defs
@@ -47,19 +47,19 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <circle
-     style="fill:#ffffff;fill-opacity:1"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:37.46650696"
      id="path7"
-     cx="7.0296612"
-     cy="6.9703388"
-     r="6.6440678" />
+     cx="249.3156"
+     cy="250.6844"
+     r="248.93001" />
   <path
      id="rect239-1"
-     d="M 4.4407552,2.5108724 V 3.7529742 H 6.1739363 V 2.5108724 Z m 3.3934716,0 V 3.7529742 H 9.5701063 V 2.5108724 Z m 0,1.6309338 v 3.4292811 c 0,0.1645196 0.1324726,0.2970271 0.2969603,0.2970271 h 0.021593 0.2753652 v 3.3239706 c 0,0.15899 0.1299047,0.288924 0.2888645,0.288924 h 2.5484772 c 0.158956,0 0.288865,-0.129931 0.288865,-0.288924 V 9.123717 l 0.0053,-0.3024259 -1.104162,-4.6794849 z m -4.2870589,0.00541 -1.10686,4.6794836 0.00541,0.3051254 v 2.0683688 c 4.9e-6,0.158994 0.1299127,0.288929 0.2888686,0.288929 h 2.5484784 c 0.1617203,0 0.2915631,-0.129932 0.2915631,-0.288924 V 7.8789218 h 0.2726602 0.021597 c 0.1644843,0 0.2969623,-0.1352088 0.2969623,-0.2997246 V 4.1472067 Z m 3.002021,0 V 7.3361653 H 7.4481742 V 4.1472067 Z"
-     style="fill:#94bb28;fill-opacity:1;stroke-width:1.38236964"
+     d="M 152.31834,83.603749 V 130.1409 h 64.93624 V 83.603749 Z m 127.14153,0 V 130.1409 h 65.03734 V 83.603749 Z m 0,61.105621 v 128.48315 c 0,6.16398 4.96328,11.1283 11.12606,11.1283 h 0.80901 10.31698 v 124.53792 c 0,5.95642 4.86707,10.82482 10.82274,10.82482 h 95.48254 c 5.95552,0 10.82276,-4.86802 10.82276,-10.82482 v -77.4946 l 0.19857,-11.331 -41.36909,-175.32377 z m -160.62113,0.18734 -41.470173,175.32376 0.202694,11.43216 v 77.49422 c 1.84e-4,5.95718 4.867375,10.8252 10.822897,10.8252 h 95.482582 c 6.0591,0 10.92385,-4.86802 10.92385,-10.82482 V 284.71047 h 10.21563 0.80916 c 6.16265,0 11.12614,-5.06585 11.12614,-11.22946 V 144.89633 Z m 112.47524,0 v 119.47881 h 33.68184 V 144.89633 Z"
+     style="fill:#94bb28;fill-opacity:1;stroke-width:51.79256058"
      inkscape:connector-curvature="0" />
 </svg>

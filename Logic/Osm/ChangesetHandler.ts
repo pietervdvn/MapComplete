@@ -53,14 +53,14 @@ export class ChangesetHandler {
     private OpenChangeset(continuation: (changesetId: string) => void) {
 
         const layout = State.state.layoutToUse.data;
-
+        const commentExtra = layout.changesetMessage !== undefined? " - "+layout.changesetMessage : "";
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/create',
             options: {header: {'Content-Type': 'text/xml'}},
             content: [`<osm><changeset>`,
                 `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
-                `<tag k="comment" v="Adding data with #MapComplete"/>`,
+                `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.name}${commentExtra}"/>`,
                 `<tag k="theme" v="${layout.name}"/>`,
                 layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}"/>` : "",
                 `</changeset></osm>`].join("")
@@ -94,7 +94,7 @@ export class ChangesetHandler {
         });
     }
 
-    private CloseChangeset(changesetId: string, continuation: (() => void)) {
+    public CloseChangeset(changesetId: string, continuation: (() => void)) {
         console.log("closing");
         this.auth.xhr({
             method: 'PUT',
@@ -112,7 +112,7 @@ export class ChangesetHandler {
         });
     }
 
-    private static parseUploadChangesetResponse(response: XMLDocument) {
+    public static parseUploadChangesetResponse(response: XMLDocument) {
         const nodes = response.getElementsByTagName("node");
         const mapping = {};
         // @ts-ignore

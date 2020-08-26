@@ -48,6 +48,8 @@ export class Preview extends UIElement {
         return new Combine([
             new VariableUiElement(this.currentPreview),
             this.reloadButton,
+            "<h2>Statistics</h2>",
+            "We track statistics with goatcounter. <a href='https://pietervdvn.goatcounter.com' target='_blank'>The statistics can be seen by anyone, so if you want to see where your theme ends up, click here</a>",
             this.otherPreviews
         ]).Render();
     }

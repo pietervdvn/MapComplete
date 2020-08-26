@@ -85,5 +85,16 @@ export class Utils {
         }
         return newArr;
     }
+    
+    public static MergeTags(a :any, b: any){
+        const t = {};
+        for (const k in a) {
+            t[k] = a[k];
+        }
+        for (const k in b) {
+            t[k] = b[k];
+        }
+        return t;
+    }
 
 }

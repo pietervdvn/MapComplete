@@ -10,6 +10,7 @@ import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "./Base/FixedUiElement";
+import {Utils} from "../Utils";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -54,8 +55,8 @@ export class SimpleAddUI extends UIElement {
                 if (preset.icon !== undefined) {
 
                     if (typeof (preset.icon) !== "string") {
-                        console.log("Preset icon is:", preset.icon);
-                        icon = preset.icon.GetContent(TagUtils.KVtoProperties(preset.tags));
+                        icon = preset.icon.GetContent(Utils.MergeTags(preset.tags, {id:"node/-1"}));
+                        console.log("Preset icon is:", preset.icon, "--> ",icon);
                     } else {
                         icon = preset.icon;
                     }

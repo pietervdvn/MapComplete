@@ -68,11 +68,10 @@ const loadFromTextField = new Button("Load", () => {
 
 new Combine([
     new Preview(themeGenerator.url, themeGenerator.themeObject),
-    "<h2>Danger zone</h2>",
     loadFrom,
     loadFromTextField,
     "<span class='alert'>Loading from the text field will erase the current theme</span>",
-   
+    "<h2>Danger zone</h2>",
     "<br/>",
     new Button("Clear theme", setDefault),
     "<br/>",
