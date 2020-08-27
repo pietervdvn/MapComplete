@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7a ¿hablas español?";
+    public static vNumber = "0.0.7b Less changesets";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -125,7 +125,7 @@ export class State {
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
 
-    constructor(layoutToUse: Layout) {
+    constructor(layoutToUse: Layout, useDevServer = false) {
         const self = this;
         this.layoutToUse.setData(layoutToUse)
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
@@ -171,9 +171,12 @@ export class State {
         this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true);
         this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true);
 
+        const testParam = QueryParameters.GetQueryParameter("test", "false").data;
         this.osmConnection = new OsmConnection(
-            QueryParameters.GetQueryParameter("test", "false").data === "true",
-            QueryParameters.GetQueryParameter("oauth_token", undefined)
+            testParam === "true",
+            QueryParameters.GetQueryParameter("oauth_token", undefined),
+            true,
+            testParam === "dev"
         );
 
 
@@ -237,7 +240,7 @@ export class State {
 
 
         this.allElements = new ElementStorage();
-        this.changes = new Changes(this);
+        this.changes = new Changes();
 
         if (State.runningFromConsole) {
             console.warn("running from console - not initializing map. Assuming test.html");

@@ -39,7 +39,7 @@ export class OsmImageUploadHandler {
         return {
             title: title,
             description: description,
-            handleURL: function (url) {
+            handleURL: (url) => {
 
                 let key = "image";
                 if (tags["image"] !== undefined) {
@@ -54,10 +54,7 @@ export class OsmImageUploadHandler {
                 changes.addChange(tags.id, key, url);
                 self._slideShow.MoveTo(-1); // set the last (thus newly added) image) to view
             },
-            allDone: function () {
-                changes.uploadAll(function () {
-                    console.log("Writing changes...")
-                });
+            allDone: () => {
             }
         }
     }

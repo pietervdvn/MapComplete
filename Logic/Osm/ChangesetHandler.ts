@@ -1,5 +1,5 @@
 import {State} from "../../State";
-import {UserDetails} from "./OsmConnection";
+import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 
 export class ChangesetHandler {
@@ -8,10 +8,13 @@ export class ChangesetHandler {
     private userDetails: UIEventSource<UserDetails>;
     private auth: any;
 
-    constructor(dryRun: boolean, userDetails: UIEventSource<UserDetails>, auth) {
+    public currentChangeset: UIEventSource<string>;
+
+    constructor(dryRun: boolean, osmConnection: OsmConnection, auth) {
         this._dryRun = dryRun;
-        this.userDetails = userDetails;
+        this.userDetails = osmConnection.userDetails;
         this.auth = auth;
+        this.currentChangeset = osmConnection.GetPreference("current-open-changeset");
 
         if (dryRun) {
             console.log("DRYRUN ENABLED");
@@ -20,7 +23,6 @@ export class ChangesetHandler {
 
 
     public UploadChangeset(generateChangeXML: (csid: string) => string,
-                           handleMapping: (idMapping: any) => void,
                            continuation: () => void) {
 
         if (this._dryRun) {
@@ -32,18 +34,53 @@ export class ChangesetHandler {
         }
 
         const self = this;
-        this.OpenChangeset(
-            function (csId) {
-                var changesetXML = generateChangeXML(csId);
-                self.AddChange(csId, changesetXML,
-                    function (csId, mapping) {
-                        self.CloseChangeset(csId, continuation);
-                        handleMapping(mapping);
-                    }
-                );
 
-            }
-        );
+
+        if (this.currentChangeset.data === undefined || this.currentChangeset.data === "") {
+            // We have to open a new changeset
+            this.OpenChangeset((csId) => {
+                this.currentChangeset.setData(csId);
+                self.AddChange(csId, generateChangeXML(csId),
+                    () => {
+                    },
+                    (e) => {
+                        console.error("UPLOADING FAILED!", e)
+                    }
+                )
+            })
+        } else {
+            // There still exists an open changeset (or at least we hope so)
+            const csId = this.currentChangeset.data;
+            self.AddChange(
+                csId,
+                generateChangeXML(csId),
+                () => {
+                },
+                (e) => {
+                    console.warn("Could not upload, changeset is probably closed: ", e);
+                    // Mark the CS as closed...
+                    this.currentChangeset.setData("");
+                    // ... and try again. As the cs is closed, no recursive loop can exist  
+                    self.UploadChangeset(generateChangeXML, continuation);
+
+                }
+            )
+
+        }
+
+        /*
+                this.OpenChangeset(
+                    function (csId) {
+                        var changesetXML = generateChangeXML(csId);
+                        self.AddChange(csId, changesetXML,
+                            function (csId, mapping) {
+                                self.CloseChangeset(csId, continuation);
+                                handleMapping(mapping);
+                            }
+                        );
+        
+                    }
+                );*/
 
         this.userDetails.data.csCount++;
         this.userDetails.ping();
@@ -77,7 +114,8 @@ export class ChangesetHandler {
 
     private AddChange(changesetId: string,
                       changesetXML: string,
-                      continuation: ((changesetId: string, idMapping: any) => void)) {
+                      continuation: ((changesetId: string, idMapping: any) => void),
+                      onFail: ((changesetId: string) => void) = undefined) {
         this.auth.xhr({
             method: 'POST',
             options: {header: {'Content-Type': 'text/xml'}},
@@ -86,6 +124,9 @@ export class ChangesetHandler {
         }, function (err, response) {
             if (response == null) {
                 console.log("err", err);
+                if (onFail) {
+                    onFail(changesetId);
+                }
                 return;
             }
             const mapping = ChangesetHandler.parseUploadChangesetResponse(response);
@@ -94,8 +135,16 @@ export class ChangesetHandler {
         });
     }
 
-    public CloseChangeset(changesetId: string, continuation: (() => void)) {
-        console.log("closing");
+    public CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
+    }) {
+        if (changesetId === undefined) {
+            changesetId = this.currentChangeset.data;
+        }
+        if (changesetId === undefined) {
+            return;
+        }
+        console.log("closing changeset", changesetId);
+        this.currentChangeset.setData("");
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/' + changesetId + '/close',
@@ -104,7 +153,7 @@ export class ChangesetHandler {
 
                 console.log("err", err);
             }
-            console.log("Closed changeset ", changesetId);
+            console.log("Closed changeset ", changesetId)
 
             if (continuation !== undefined) {
                 continuation();
@@ -114,17 +163,23 @@ export class ChangesetHandler {
 
     public static parseUploadChangesetResponse(response: XMLDocument) {
         const nodes = response.getElementsByTagName("node");
-        const mapping = {};
         // @ts-ignore
         for (const node of nodes) {
             const oldId = parseInt(node.attributes.old_id.value);
             const newId = parseInt(node.attributes.new_id.value);
             if (oldId !== undefined && newId !== undefined &&
                 !isNaN(oldId) && !isNaN(newId)) {
-                mapping["node/" + oldId] = "node/" + newId;
+                if(oldId == newId){
+                    continue;
+                }
+                console.log("Rewriting id: ", oldId, "-->", newId);
+                const element = State.state.allElements.getElement("node/" + oldId);
+                element.data.id = "node/" + newId;
+                State.state.allElements.addElementById("node/" + newId, element);
+                element.ping();
+
             }
         }
-        return mapping;
     }
 
 

@@ -29,7 +29,7 @@ export class OsmConnection {
     
     private _onLoggedIn : ((userDetails: UserDetails) => void)[] = [];
 
-    constructor(dryRun: boolean, oauth_token: UIEventSource<string>, singlePage: boolean = true) {
+    constructor(dryRun: boolean, oauth_token: UIEventSource<string>, singlePage: boolean = true, useDevServer:boolean = false) {
 
         let pwaStandAloneMode = false;
         try {
@@ -50,7 +50,8 @@ export class OsmConnection {
                 oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
                 oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
                 singlepage: false,
-                auto: true
+                auto: true,
+                url: useDevServer ? "https://master.apis.dev.openstreetmap.org" : undefined
             });
         } else {
 
@@ -59,7 +60,8 @@ export class OsmConnection {
                 oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
                 singlepage: true,
                 landing: window.location.href,
-                auto: true
+                auto: true,
+                url: useDevServer ? "https://master.apis.dev.openstreetmap.org" : undefined
             });
         }
 
@@ -70,7 +72,7 @@ export class OsmConnection {
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
         
-        this.changesetHandler = new ChangesetHandler(dryRun, this.userDetails, this.auth);
+        this.changesetHandler = new ChangesetHandler(dryRun, this, this.auth);
         if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
             const self = this;
@@ -92,9 +94,8 @@ export class OsmConnection {
 
 
     public UploadChangeset(generateChangeXML: (csid: string) => string,
-                           handleMapping: (idMapping: any) => void,
                            continuation: () => void) {
-        this.changesetHandler.UploadChangeset(generateChangeXML, handleMapping, continuation);
+        this.changesetHandler.UploadChangeset(generateChangeXML, continuation);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

@@ -14,19 +14,6 @@ export class Changes {
 
     private static _nextId = -1; // New assined ID's are negative
 
-    private _pendingChanges: { elementId: string, key: string, value: string }[] = []; // Gets reset on uploadAll
-    private newElements: OsmObject[] = []; // Gets reset on uploadAll
-
-    public readonly pendingChangesES = new UIEventSource<number>(this._pendingChanges.length);
-    public readonly isSaving = new UIEventSource(false);
-
-    constructor(
-        state: State) {
-
-        this.SetupAutoSave(state);
-        this.LastEffortSave();
-    }
-
     addTag(elementId: string, tagsFilter : TagsFilter){
         if(tagsFilter instanceof  Tag){
             const tag = tagsFilter as Tag;
@@ -67,18 +54,15 @@ export class Changes {
         if(key.startsWith(" ") || value.startsWith(" ") || value.endsWith(" ") || key.endsWith(" ")){
             console.warn("Tag starts with or ends with a space - trimming anyway")
         }
-        
+
         key = key.trim();
         value = value.trim();
 
         const eventSource = State.state.allElements.getElement(elementId);
-
         eventSource.data[key] = value;
-       
         eventSource.ping();
-        // We get the id from the event source, as that ID might be rewritten
-        this._pendingChanges.push({elementId: eventSource.data.id, key: key, value: value});
-        this.pendingChangesES.setData(this._pendingChanges.length);
+
+        this.uploadAll([], [{elementId: eventSource.data.id, key: key, value: value}]);
 
     }
 
@@ -90,7 +74,6 @@ export class Changes {
     createElement(basicTags:Tag[], lat: number, lon: number) {
         console.log("Creating a new element with ", basicTags)
         const osmNode = new OsmNode(Changes._nextId);
-        this.newElements.push(osmNode);
         Changes._nextId--;
 
         const id = "node/" + osmNode.id;
@@ -113,38 +96,24 @@ export class Changes {
 
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a 
+        const changes = [];
         for (const kv of basicTags) {
             properties[kv.key] = kv.value;
-            if(typeof kv.value !== "string"){
-                throw "Invalid value"
+            if (typeof kv.value !== "string") {
+                throw "Invalid value: don't use a regex in a preset"
             }
-            this._pendingChanges.push({elementId: id, key: kv.key, value: kv.value});
+            changes.push({elementId: id, key: kv.key, value: kv.value})
         }
-        this.pendingChangesES.setData(this._pendingChanges.length);
         State.state.allElements.addOrGetElement(geojson).ping();
-
+        this.uploadAll([osmNode], changes);
         return geojson;
     }
 
-    public uploadAll(optionalContinuation: (() => void) = undefined) {
+    private uploadAll(
+        newElements: OsmObject[],
+        pending: { elementId: string; key: string; value: string }[]
+    ) {
         const self = this;
-
-        this.isSaving.setData(true);
-        const optionalContinuationWrapped = function () {
-            self.isSaving.setData(false);
-            if (optionalContinuation) {
-                optionalContinuation();
-            }
-        }
-
-
-        const pending: { elementId: string; key: string; value: string }[] = this._pendingChanges;
-        this._pendingChanges = [];
-        this.pendingChangesES.setData(this._pendingChanges.length);
-
-        const newElements = this.newElements;
-        this.newElements = [];
-
 
         const knownElements = {}; // maps string --> OsmObject
         function DownloadAndContinue(neededIds, continuation: (() => void)) {
@@ -174,7 +143,7 @@ export class Changes {
         for (const change of pending) {
             const id = change.elementId;
             if (parseFloat(id.split("/")[1]) < 0) {
-                console.log("Detected a new element! Exciting!")
+                // New element - we don't have to download this
             } else {
                 neededIds.push(id);
             }
@@ -194,9 +163,7 @@ export class Changes {
                     }
 
                 } else {
-                    console.log(knownElements, change.elementId);
                     knownElements[change.elementId].addTag(change.key, change.value);
-                    // note: addTag will flag changes with 'element.changed' internally
                 }
             }
 
@@ -211,18 +178,6 @@ export class Changes {
             if (changedElements.length == 0 && newElements.length == 0) {
                 console.log("No changes in any object");
                 return;
-            }
-
-
-            const handleMapping = function (idMapping) {
-                for (const oldId in idMapping) {
-                    const newId = idMapping[oldId];
-
-                    const element = State.state.allElements.getElement(oldId);
-                    element.data.id = newId;
-                    State.state.allElements.addElementById(newId, element);
-                    element.ping();
-                }
             }
 
             console.log("Beginning upload...");
@@ -266,89 +221,9 @@ export class Changes {
 
                     return changes;
                 },
-                handleMapping,
-                optionalContinuationWrapped);
-        });
-    }
-
-    /*
-        * Registers an action that:
-        * -> Upload everything to OSM
-        * -> Asks the user not to close. The 'not to close' dialog should profide enough time to upload
-        * -> WHen uploading is done, the window is closed anyway
-         */
-    private LastEffortSave() {
-        const self = this;
-        window.addEventListener("beforeunload", function (e) {
-            // Quickly save everyting!
-            if (self.pendingChangesES.data == 0) {
-                return "";
-            }
-
-            self.uploadAll(function () {
-                console.log("Uploaded changes during a last-effort save")
-                window.close()
-            });
-            var confirmationMessage = "Nog even geduld - je laatset wijzigingen worden opgeslaan!";
-
-            (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-            return confirmationMessage;                            //Webkit, Safari, Chrome
-        });
-
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === "visible") {
-                return;
-            }
-            if (this.pendingChangesES.data == 0) {
-                return;
-            }
-
-            console.log("Uploading: loss of focus")
-            this.uploadAll(function () {
-                console.log("Uploaded changes during a last-effort save (loss of focus)")
-                window.close()
-            });
-        })
-
-    }
-
-    private SetupAutoSave(state: State) {
-
-        const millisTillChangesAreSaved = state.secondsTillChangesAreSaved;
-        const saveAfterXMillis = state.saveTimeout.data;
-        const self = this;
-        this.pendingChangesES.addCallback(function () {
-
-            var c = self.pendingChangesES.data;
-            if (c > 10) {
-                millisTillChangesAreSaved.setData(0);
-                self.uploadAll(() => {
-                    console.log("Uploaded changes: more then 10 pending changes")
+                () => {
                 });
-                return;
-            }
-
-            if (c > 0) {
-                millisTillChangesAreSaved.setData(saveAfterXMillis);
-            }
-
         });
-
-        millisTillChangesAreSaved.addCallback((time) => {
-                if (time <= 0 && self.pendingChangesES.data > 0) {
-                    self.uploadAll(() => {
-                        console.log("Saving changes: timer elapsed")
-                    });
-                }
-            }
-        )
-
-        Utils.DoEvery(
-            1000,
-            () => {
-                millisTillChangesAreSaved
-                    .setData(millisTillChangesAreSaved.data - 1000)
-            });
     }
+
 }

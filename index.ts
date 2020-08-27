@@ -23,7 +23,6 @@ TagRendering.injectFunction();
 
 
 // --------------------- Special actions based on the parameters -----------------
-
 // @ts-ignore
 if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button

@@ -6,7 +6,6 @@ import {CustomLayoutFromJSON} from "../Customizations/JSON/CustomLayoutFromJSON"
 import {And} from "../Logic/TagsFilter";
 import Translation from "../UI/i18n/Translation";
 import T from "./TestHelper";
-import {Artwork} from "../Customizations/Layers/Artwork";
 
 
 new T([
@@ -32,8 +31,6 @@ new T([
         equal(tr.txt, "Test value abc");
 
     }],
-    ["JSONify artwork layer", () => {
-        const a = new Artwork();
-        console.log(a.ToJson())
+    ["Preset renders icon correctly", () => {
     }]
 ]);

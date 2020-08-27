@@ -117,7 +117,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
             let choiceSubbed = {
-                k: choice.k.substituteValues(this.currentTags.data),
+                k: choice.k?.substituteValues(this.currentTags.data),
                 txt: choice.txt,
                 priority: choice.priority
             }
@@ -314,7 +314,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
         for (const oneOnOneElement of this._mapping) {
-            if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tags)) {
+            if (oneOnOneElement.k === null || oneOnOneElement.k === undefined || oneOnOneElement.k.matches(tags)) {
                 return true;
             }
         }

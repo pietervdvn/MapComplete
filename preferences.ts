@@ -57,5 +57,5 @@ function createTable(preferences: any) {
     el.AttachTo("maindiv");
 }
 
-connection._preferencesHandler.preferences.addCallback((prefs) => createTable(prefs))
+connection.preferencesHandler.preferences.addCallback((prefs) => createTable(prefs))
 

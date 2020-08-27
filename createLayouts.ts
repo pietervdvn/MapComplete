@@ -165,11 +165,21 @@ function createLandingPage(layout: Layout) {
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
-    return template
+    let output = template
         .replace(`./manifest.manifest`, `./${enc(layout.name)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(`<link rel="icon" href="assets/add.svg" sizes="any" type="image/svg+xml">`,
-            `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`)
+            `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`);
+
+    try {
+        output = output
+            .replace(/<!-- DECORATION 0 START -->.*<!-- DECORATION 0 END -->/s, `<img src='${layout.icon}' width="100%" height="100%">`)
+            .replace(/<!-- DECORATION 1 START -->.*<!-- DECORATION 1 END -->/s, `<img src='${layout.icon}' width="100%" height="100%">`);
+    } catch (e) {
+        console.warn("Error while applying logo: ", e)
+    }
+
+    return output;
 }
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]

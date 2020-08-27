@@ -35,13 +35,10 @@ export class OsmPreferences {
         const source = new UIEventSource<string>(undefined);
         this.longPreferences[prefix + key] = source;
 
-        console.log("Loading long pref", prefix + key);
-
         const allStartWith = prefix + key + "-combined";
         // Gives the number of combined preferences
         const length = this.GetPreference(allStartWith + "-length", "");
 
-        console.log("Getting long pref " + prefix + key);
         const self = this;
         source.addCallback(str => {
             if (str === undefined || str === "") {
@@ -82,7 +79,7 @@ export class OsmPreferences {
 
             source.setData(str);
             source.ping();
-            console.log("Long preference ", key, " has ", str.length, " chars");
+            console.log("Long preference", key, "has", str.length, "chars");
         }
 
         length.addCallback(l => {
@@ -142,7 +139,7 @@ export class OsmPreferences {
 
     private SetPreference(k: string, v: string) {
         if (!this.userDetails.data.loggedIn) {
-            console.log("Not saving preference: user not logged in");
+            console.log(`Not saving preference ${k}: user not logged in`);
             return;
         }
 
@@ -163,7 +160,7 @@ export class OsmPreferences {
                     return;
                 }
 
-                console.log("Preference removed!", result == "" ? "OK" : result);
+                console.log("Preference ",k,"removed!");
 
             });
             return;
@@ -177,12 +174,10 @@ export class OsmPreferences {
             content: v
         }, function (error, result) {
             if (error) {
-                console.log("Could not set preference", error);
+                console.log(`Could not set preference "${k}"'`, error);
                 return;
             }
-
-            console.log("Preference written!", result == "" ? "OK" : result);
-
+            console.log(`Preference ${k} written!`);
         });
     }
 
