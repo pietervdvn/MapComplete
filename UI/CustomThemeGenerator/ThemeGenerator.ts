@@ -85,8 +85,7 @@ class MappingGenerator extends UIElement {
     }
 
     InnerRender(): string {
-        const combine = new VerticalCombine(this.elements);
-        combine.clss = "bordered";
+        const combine = new VerticalCombine(this.elements).SetClass("bordered");
         return combine.Render();
     }
 }
@@ -186,8 +185,7 @@ class TagRenderingGenerator
     }
 
     InnerRender(): string {
-        const combine = new VerticalCombine(this.elements);
-        combine.clss = "bordered";
+        const combine = new VerticalCombine(this.elements).SetClass("bordered");
         return combine.Render();
     }
 }
@@ -235,8 +233,7 @@ class PresetGenerator extends UIElement {
     }
 
     InnerRender(): string {
-        const combine = new VerticalCombine(this.elements);
-        combine.clss = "bordered";
+        const combine = new VerticalCombine(this.elements).SetClass("bordered");
         return combine.Render();
     }
 
@@ -460,7 +457,7 @@ class AllLayerComponent extends UIElement {
             header: "<img src='./assets/add.svg'>",
             content: new Button("Add a new layer", () => {
                 config.data.layers.push({
-                    id: "",
+                    name: "",
                     title: {
                         key: "*",
                         render: "Title"
@@ -506,6 +503,7 @@ export class ThemeGenerator extends UIElement {
     public readonly themeObject: UIEventSource<LayoutConfigJson>;
     private readonly allQuestionFields: UIElement[];
     public url: UIEventSource<string>;
+    public testurl: UIEventSource<string>;
 
     private loginButton: Button
 
@@ -535,7 +533,9 @@ export class ThemeGenerator extends UIElement {
         if (window.location.hostname === "127.0.0.1") {
             baseUrl = "http://127.0.0.1:1234";
         }
-        this.url = base64.map((data) => `${baseUrl}/index.html?test=true&userlayout=${this.themeObject.data.name}#${data}`);
+        this.url = base64.map((data) => `${baseUrl}/index.html?userlayout=${this.themeObject.data.name}#${data}`);
+        this.testurl = base64.map((data) => `${baseUrl}/index.html?test=true&userlayout=${this.themeObject.data.name}#${data}`);
+
         const self = this;
 
         pingThemeObject = () => {self.themeObject.ping()};

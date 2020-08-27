@@ -9,7 +9,7 @@ export abstract class TagsFilter {
         return this.matches(TagUtils.proprtiesToKV(properties));
     }
 
-    abstract asHumanString(linkToWiki: boolean);
+    abstract asHumanString(linkToWiki: boolean, shorten: boolean);
 }
 
 
@@ -90,7 +90,12 @@ export class Tag extends TagsFilter {
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
+        if (this.value === "") {
+            return true
+        }
+        
         for (const tag of tags) {
+            
             if (Tag.regexOrStrMatches(this.key, tag.k)) {
 
                 if (tag.v === "") {
@@ -108,10 +113,6 @@ export class Tag extends TagsFilter {
 
                 return Tag.regexOrStrMatches(this.value, tag.v) !== this.invertValue
             }
-        }
-
-        if (this.value === "") {
-            return true
         }
         
         return this.invertValue
@@ -150,15 +151,17 @@ export class Tag extends TagsFilter {
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 
-    asHumanString(linkToWiki: boolean) {
+    asHumanString(linkToWiki: boolean, shorten: boolean) {
         let v = ""
         if (typeof (this.value) === "string") {
-           v = this.value;
-        }else{
+            v = this.value;
+        } else {
             // value is a regex
             v = this.value.source;
         }
-        v = Utils.EllipsesAfter(v, 25);
+        if (shorten) {
+            v = Utils.EllipsesAfter(v, 25);
+        }
         if (linkToWiki) {
             return `<a href='https://wiki.openstreetmap.org/wiki/Key:${this.key}' target='_blank'>${this.key}</a>` +
                 `=` +
@@ -221,8 +224,8 @@ export class Or extends TagsFilter {
         return new Or(newChoices);
     }
 
-    asHumanString(linkToWiki: boolean) {
-        return this.or.map(t => t.asHumanString(linkToWiki)).join("|");
+    asHumanString(linkToWiki: boolean, shorten: boolean) {
+        return this.or.map(t => t.asHumanString(linkToWiki, shorten)).join("|");
     }
 }
 
@@ -282,8 +285,8 @@ export class And extends TagsFilter {
         return new And(newChoices);
     }
 
-    asHumanString(linkToWiki: boolean) {
-        return this.and.map(t => t.asHumanString(linkToWiki)).join("&");
+    asHumanString(linkToWiki: boolean, shorten: boolean) {
+        return this.and.map(t => t.asHumanString(linkToWiki, shorten)).join("&");
     }
 }
 
@@ -308,8 +311,8 @@ export class Not extends TagsFilter{
         return new Not(this.not.substituteValues(tags));
     }
 
-    asHumanString(linkToWiki: boolean) {
-        return "!" + this.not.asHumanString(linkToWiki);
+    asHumanString(linkToWiki: boolean, shorten: boolean) {
+        return "!" + this.not.asHumanString(linkToWiki, shorten);
     }
 }
 

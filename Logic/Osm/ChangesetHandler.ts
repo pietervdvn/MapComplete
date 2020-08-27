@@ -10,11 +10,11 @@ export class ChangesetHandler {
 
     public currentChangeset: UIEventSource<string>;
 
-    constructor(dryRun: boolean, osmConnection: OsmConnection, auth) {
+    constructor(layoutName: string, dryRun: boolean, osmConnection: OsmConnection, auth) {
         this._dryRun = dryRun;
         this.userDetails = osmConnection.userDetails;
         this.auth = auth;
-        this.currentChangeset = osmConnection.GetPreference("current-open-changeset");
+        this.currentChangeset = osmConnection.GetPreference("current-open-changeset-" + layoutName);
 
         if (dryRun) {
             console.log("DRYRUN ENABLED");
@@ -26,7 +26,6 @@ export class ChangesetHandler {
                            continuation: () => void) {
 
         if (this._dryRun) {
-            console.log("NOT UPLOADING as dryrun is true");
             var changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
             continuation();
@@ -40,7 +39,9 @@ export class ChangesetHandler {
             // We have to open a new changeset
             this.OpenChangeset((csId) => {
                 this.currentChangeset.setData(csId);
-                self.AddChange(csId, generateChangeXML(csId),
+                const changeset = generateChangeXML(csId);
+                console.log(changeset);
+                self.AddChange(csId, changeset,
                     () => {
                     },
                     (e) => {
@@ -67,23 +68,6 @@ export class ChangesetHandler {
             )
 
         }
-
-        /*
-                this.OpenChangeset(
-                    function (csId) {
-                        var changesetXML = generateChangeXML(csId);
-                        self.AddChange(csId, changesetXML,
-                            function (csId, mapping) {
-                                self.CloseChangeset(csId, continuation);
-                                handleMapping(mapping);
-                            }
-                        );
-        
-                    }
-                );*/
-
-        this.userDetails.data.csCount++;
-        this.userDetails.ping();
     }
 
 

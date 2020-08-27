@@ -109,6 +109,10 @@ form {
     padding-bottom: 0.15em;
 }
 
+.clickable {
+    pointer-events: all;
+}
+
 
 .activate-osm-authentication {
     cursor: pointer;
@@ -125,6 +129,8 @@ form {
     fill: black;
     border-radius: 0;
 }
+
+
 
 #home {
     cursor: pointer;
@@ -181,9 +187,27 @@ form {
     border-radius: 2em;
     border-bottom-right-radius: 1.5em;
     border-top-right-radius: 1.5em;
-    transition: all 500ms linear;
     margin: 0;
     margin-bottom: 0.5em;
+
+    min-width: 20em;
+    pointer-events: all;
+}
+
+.userbadge-login {
+    font-weight: bold;
+    font-size: large;
+    background-color: #e5f5ff !important;
+    height:3em;
+
+    display: inline-block;
+    text-align: center;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    border-bottom-right-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    margin: 0;
 
     min-width: 20em;
     pointer-events: all;

@@ -7,6 +7,7 @@ import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {State} from "../State";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
+import {SubtleButton} from "./Base/SubtleButton";
 
 /**
  * Handles and updates the user badge
@@ -23,7 +24,10 @@ export class UserBadge extends UIElement {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
         this._languagePicker = Utils.CreateLanguagePicker();
-        this._loginButton = Translations.t.general.loginWithOpenStreetMap.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
+        this._loginButton = Translations.t.general.loginWithOpenStreetMap
+            .Clone()
+            .SetClass("userbadge-login")
+            .onClick(() => State.state.osmConnection.AttemptLogin());
         this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
             .onClick(() => {
                 State.state.osmConnection.LogOut();

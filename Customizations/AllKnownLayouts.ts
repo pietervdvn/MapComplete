@@ -15,6 +15,7 @@ import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
 import * as artworks from "../assets/themes/artwork/artwork.json";
+import * as cyclestreets from "../assets/themes/cyclestreets/cyclestreets.json";
 import {PersonalLayout} from "../Logic/PersonalLayout";
 
 export class AllKnownLayouts {
@@ -31,6 +32,7 @@ export class AllKnownLayouts {
         CustomLayoutFromJSON.LayoutFromJSON(aed),
         CustomLayoutFromJSON.LayoutFromJSON(toilets),
         CustomLayoutFromJSON.LayoutFromJSON(artworks),
+        CustomLayoutFromJSON.LayoutFromJSON(cyclestreets),
 
         new MetaMap(),
         new StreetWidth(),

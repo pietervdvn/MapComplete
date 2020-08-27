@@ -14,56 +14,75 @@ export class Changes {
 
     private static _nextId = -1; // New assined ID's are negative
 
-    addTag(elementId: string, tagsFilter : TagsFilter){
-        if(tagsFilter instanceof  Tag){
-            const tag = tagsFilter as Tag;
-            if(typeof tag.value !== "string"){
-                throw "Invalid value"
-            }
-            this.addChange(elementId, tag.key, tag.value);
+    addTag(elementId: string, tagsFilter: TagsFilter) {
+        const changes = this.tagToChange(tagsFilter);
+
+        if (changes.length == 0) {
             return;
         }
-        
-        if(tagsFilter instanceof And){
+        const eventSource = State.state.allElements.getElement(elementId);
+        const elementTags = eventSource.data;
+        const pending : {elementId:string, key: string, value: string}[] = [];
+        for (const change of changes) {
+            if (elementTags[change.k] !== change.v) {
+                elementTags[change.k] = change.v;
+                pending.push({elementId: elementTags.id, key: change.k, value: change.v});
+            }
+        }
+        if(pending.length === 0){
+            return;
+        }
+        eventSource.ping();
+        this.uploadAll([], pending);
+    }
+
+
+    private tagToChange(tagsFilter: TagsFilter) {
+        let changes: { k: string, v: string }[] = [];
+
+        if (tagsFilter instanceof Tag) {
+            const tag = tagsFilter as Tag;
+            if (typeof tag.value !== "string") {
+                throw "Invalid value"
+            }
+            return [this.checkChange(tag.key, tag.value)];
+        }
+
+        if (tagsFilter instanceof And) {
             const and = tagsFilter as And;
             for (const tag of and.and) {
-                this.addTag(elementId, tag);
+                changes = changes.concat(this.tagToChange(tag));
             }
-            return;
+            return changes;
         }
         console.log("Unsupported tagsfilter element to addTag", tagsFilter);
         throw "Unsupported tagsFilter element";
     }
-    
+
     /**
      * Adds a change to the pending changes
      * @param elementId
      * @param key
      * @param value
      */
-    addChange(elementId: string, key: string, value: string) {
+    private checkChange(key: string, value: string): { k: string, v: string } {
         if (key === undefined || key === null) {
             console.log("Invalid key");
-            return;
+            return undefined;
         }
         if (value === undefined || value === null) {
-            console.log("Invalid value for ",key);
-            return;
+            console.log("Invalid value for ", key);
+            return undefined;
         }
-        
-        if(key.startsWith(" ") || value.startsWith(" ") || value.endsWith(" ") || key.endsWith(" ")){
+
+        if (key.startsWith(" ") || value.startsWith(" ") || value.endsWith(" ") || key.endsWith(" ")) {
             console.warn("Tag starts with or ends with a space - trimming anyway")
         }
 
         key = key.trim();
         value = value.trim();
 
-        const eventSource = State.state.allElements.getElement(elementId);
-        eventSource.data[key] = value;
-        eventSource.ping();
-
-        this.uploadAll([], [{elementId: eventSource.data.id, key: key, value: value}]);
-
+        return {k: key, v: value};
     }
 
     /**
@@ -109,37 +128,90 @@ export class Changes {
         return geojson;
     }
 
+
+    private uploadChangesWithLatestVersions(
+        knownElements, newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
+        // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements', which maps the ids onto the elements
+        // We apply the changes on them
+        for (const change of pending) {
+            if (parseInt(change.elementId.split("/")[1]) < 0) {
+                // This is a new element - we should apply this on one of the new elements
+                for (const newElement of newElements) {
+                    if (newElement.type + "/" + newElement.id === change.elementId) {
+                        newElement.addTag(change.key, change.value);
+                    }
+                }
+
+            } else {
+                knownElements[change.elementId].addTag(change.key, change.value);
+            }
+        }
+
+        // Small sanity check for duplicate information
+        let changedElements = [];
+        for (const elementId in knownElements) {
+            const element = knownElements[elementId];
+            if (element.changed) {
+                changedElements.push(element);
+            }
+        }
+        if (changedElements.length == 0 && newElements.length == 0) {
+            console.log("No changes in any object");
+            return;
+        }
+
+        console.log("Beginning upload...");
+        // At last, we build the changeset and upload
+        State.state.osmConnection.UploadChangeset(
+            function (csId) {
+
+                let modifications = "";
+                for (const element of changedElements) {
+                    if (!element.changed) {
+                        continue;
+                    }
+                    modifications += element.ChangesetXML(csId) + "\n";
+                }
+
+
+                let creations = "";
+                for (const newElement of newElements) {
+                    creations += newElement.ChangesetXML(csId);
+                }
+
+
+                let changes = `<osmChange version='0.6' generator='Mapcomplete ${State.vNumber}'>`;
+
+                if (creations.length > 0) {
+                    changes +=
+                        "<create>" +
+                        creations +
+                        "</create>";
+                }
+
+                if (modifications.length > 0) {
+
+                    changes +=
+                        "<modify>" +
+                        modifications +
+                        "</modify>";
+                }
+
+                changes += "</osmChange>";
+
+                return changes;
+            });
+    };
+
+
     private uploadAll(
         newElements: OsmObject[],
         pending: { elementId: string; key: string; value: string }[]
     ) {
         const self = this;
 
-        const knownElements = {}; // maps string --> OsmObject
-        function DownloadAndContinue(neededIds, continuation: (() => void)) {
-            // local function which downloads all the objects one by one
-            // this is one big loop, running one download, then rerunning the entire function
-            if (neededIds.length == 0) {
-                continuation();
-                return;
-            }
-            const neededId = neededIds.pop();
 
-            if (neededId in knownElements) {
-                DownloadAndContinue(neededIds, continuation);
-                return;
-            }
-
-            console.log("Downloading ", neededId);
-            OsmObject.DownloadObject(neededId,
-                function (element) {
-                    knownElements[neededId] = element; // assign the element for later, continue downloading the next element
-                    DownloadAndContinue(neededIds, continuation);
-                }
-            );
-        }
-
-        const neededIds = [];
+        let neededIds: string[] = [];
         for (const change of pending) {
             const id = change.elementId;
             if (parseFloat(id.split("/")[1]) < 0) {
@@ -149,80 +221,9 @@ export class Changes {
             }
         }
 
-
-        DownloadAndContinue(neededIds, function () {
-            // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements'
-            // We apply the changes on them
-            for (const change of pending) {
-                if (parseInt(change.elementId.split("/")[1]) < 0) {
-                    // This is a new element - we should apply this on one of the new elements
-                    for (const newElement of newElements) {
-                        if (newElement.type + "/" + newElement.id === change.elementId) {
-                            newElement.addTag(change.key, change.value);
-                        }
-                    }
-
-                } else {
-                    knownElements[change.elementId].addTag(change.key, change.value);
-                }
-            }
-
-            // Small sanity check for duplicate information
-            let changedElements = [];
-            for (const elementId in knownElements) {
-                const element = knownElements[elementId];
-                if (element.changed) {
-                    changedElements.push(element);
-                }
-            }
-            if (changedElements.length == 0 && newElements.length == 0) {
-                console.log("No changes in any object");
-                return;
-            }
-
-            console.log("Beginning upload...");
-            // At last, we build the changeset and upload
-            State.state.osmConnection.UploadChangeset(
-                function (csId) {
-
-                    let modifications = "";
-                    for (const element of changedElements) {
-                        if (!element.changed) {
-                            continue;
-                        }
-                        modifications += element.ChangesetXML(csId) + "\n";
-                    }
-
-
-                    let creations = "";
-                    for (const newElement of newElements) {
-                        creations += newElement.ChangesetXML(csId);
-                    }
-
-
-                    let changes = `<osmChange version='0.6' generator='Mapcomplete ${State.vNumber}'>`;
-
-                    if (creations.length > 0) {
-                        changes +=
-                            "<create>" +
-                            creations +
-                            "</create>";
-                    }
-
-                    if (modifications.length > 0) {
-
-                        changes +=
-                            "<modify>" +
-                            modifications +
-                            "</modify>";
-                    }
-
-                    changes += "</osmChange>";
-
-                    return changes;
-                },
-                () => {
-                });
+        neededIds = Utils.Dedup(neededIds);
+        OsmObject.DownloadAll(neededIds, {}, (knownElements) => {
+            self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
         });
     }
 

@@ -4,6 +4,12 @@
     "target": "es5",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "lib": [
+      "dom",
+      "es5",
+      "scripthost",
+      "es2015.collection"
+    ]
   },
   "exclude": [
     "node_modules"

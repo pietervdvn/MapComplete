@@ -13,7 +13,7 @@ export class Preview extends UIElement {
     private reloadButton: Button;
     private otherPreviews: VariableUiElement;
 
-    constructor(url: UIEventSource<string>, config: UIEventSource<LayoutConfigJson>) {
+    constructor(url: UIEventSource<string>, testurl: UIEventSource<string>, config: UIEventSource<LayoutConfigJson>) {
         super(undefined);
         this.config = config;
         this.url = url;

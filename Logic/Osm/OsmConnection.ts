@@ -29,7 +29,11 @@ export class OsmConnection {
     
     private _onLoggedIn : ((userDetails: UserDetails) => void)[] = [];
 
-    constructor(dryRun: boolean, oauth_token: UIEventSource<string>, singlePage: boolean = true, useDevServer:boolean = false) {
+    constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
+                // Used to keep multiple changesets open and to write to the correct changeset
+                layoutName: string,
+                singlePage: boolean = true, 
+                useDevServer:boolean = false) {
 
         let pwaStandAloneMode = false;
         try {
@@ -72,7 +76,7 @@ export class OsmConnection {
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
         
-        this.changesetHandler = new ChangesetHandler(dryRun, this, this.auth);
+        this.changesetHandler = new ChangesetHandler(layoutName, dryRun, this, this.auth);
         if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
             const self = this;
@@ -94,7 +98,7 @@ export class OsmConnection {
 
 
     public UploadChangeset(generateChangeXML: (csid: string) => string,
-                           continuation: () => void) {
+                           continuation: () => void = () => {}) {
         this.changesetHandler.UploadChangeset(generateChangeXML, continuation);
     }
 
@@ -119,6 +123,7 @@ export class OsmConnection {
 
     public AttemptLogin() {
         const self = this;
+        console.log("Trying to log in...");
         this.auth.xhr({
             method: 'GET',
             path: '/api/0.6/user/details'

@@ -135,6 +135,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         this._questionElement = this.InputElementFor(options);
         const save = () => {
             const selection = self._questionElement.GetValue().data;
+            console.log("Tagrendering: saving tags ", selection);
             if (selection) {
                 State.state.changes.addTag(tags.data.id, selection);
             }
@@ -152,10 +153,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                         return "";
                     }
                     if (csCount < State.userJourney.tagsVisibleAndWikiLinked) {
-                        const tagsStr = tags.asHumanString(false);
+                        const tagsStr = tags.asHumanString(false, true);
                         return new FixedUiElement(tagsStr).SetClass("subtle").Render();
                     }
-                    return tags.asHumanString(true);
+                    return tags.asHumanString(true, true);
                 }
             )
         );
@@ -318,7 +319,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 return true;
             }
         }
-
         return this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined;
     }
 

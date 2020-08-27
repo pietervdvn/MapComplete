@@ -11,11 +11,10 @@ export class LayerUpdater {
     public readonly sufficentlyZoomed: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
-     /**
+    /**
      * The previous bounds for which the query has been run
      */
     private previousBounds: Bounds;
-
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions

@@ -7,6 +7,7 @@ import Translations from "./i18n/Translations";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
+import Combine from "./Base/Combine";
 
 
 export class WelcomeMessage extends UIElement {
@@ -30,28 +31,37 @@ export class WelcomeMessage extends UIElement {
         }
 
         this.description = fromLayout((layout) => layout.welcomeMessage);
-        this.plzLogIn = fromLayout((layout) => layout.gettingStartedPlzLogin);
-        this.plzLogIn.onClick(()=> State.state.osmConnection.AttemptLogin());
+        this.plzLogIn = 
+            fromLayout((layout) => layout.gettingStartedPlzLogin
+                .onClick(() => {State.state.osmConnection.AttemptLogin()})
+            );
         this.welcomeBack = fromLayout((layout) => layout.welcomeBackMessage);
         this.tail = fromLayout((layout) => layout.welcomeTail);
     }
 
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        console.log("Innerupdating welcome message")
+        this.plzLogIn.Update();
+    }
+    
+
     InnerRender(): string {
 
-        let loginStatus = "";
+        let loginStatus = undefined;
         if (State.state.featureSwitchUserbadge.data) {
-            loginStatus = (State.state.osmConnection.userDetails.data.loggedIn ? this.welcomeBack : this.plzLogIn).Render();
-            loginStatus = loginStatus + "<br/>"
+            loginStatus = (State.state.osmConnection.userDetails.data.loggedIn ? this.welcomeBack : 
+                this.plzLogIn);
         }
 
-        return "<span>" +
-            this.description.Render() +
-            "<br/></br>" +
-            loginStatus +
-            this.tail.Render() +
-            "<br/>" +
-            this.languagePicker.Render() +
-            "</span>";
+        return new Combine([
+            this.description,
+            "<br/></br>",
+           // TODO this button is broken - figure out why loginStatus,
+            this.tail,
+            "<br/>",
+            this.languagePicker
+        ]).Render()
     }
 
 

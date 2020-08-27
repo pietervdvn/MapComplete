@@ -60,6 +60,7 @@ export abstract class OsmObject {
         return tags;
     }
 
+
     Download(continuation: ((element: OsmObject) => void)) {
         const self = this;
         $.getJSON("https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id,
@@ -96,6 +97,31 @@ export abstract class OsmObject {
         return 'version="'+this.version+'"';
     }
     abstract ChangesetXML(changesetId: string): string;
+
+
+
+    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects : any) => void)) {
+        // local function which downloads all the objects one by one
+        // this is one big loop, running one download, then rerunning the entire function
+        if (neededIds.length == 0) {
+            continuation(knownElements);
+            return;
+        }
+        const neededId = neededIds.pop();
+
+        if (neededId in knownElements) {
+            OsmObject.DownloadAll(neededIds, knownElements, continuation);
+            return;
+        }
+
+        console.log("Downloading ", neededId);
+        OsmObject.DownloadObject(neededId,
+            function (element) {
+                knownElements[neededId] = element; // assign the element for later, continue downloading the next element
+                OsmObject.DownloadAll(neededIds,knownElements, continuation);
+            }
+        );
+    }
 }
 
 

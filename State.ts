@@ -175,6 +175,7 @@ export class State {
         this.osmConnection = new OsmConnection(
             testParam === "true",
             QueryParameters.GetQueryParameter("oauth_token", undefined),
+            layoutToUse.name,
             true,
             testParam === "dev"
         );

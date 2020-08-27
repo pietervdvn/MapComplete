@@ -107,7 +107,7 @@ A theme has translations into the preset.json (`assets/themes/themename/themenam
 
 ### High-level overview
 
-The website is purely static. This means that there is no database here, nor one is needed as all the data is kept in OpenStreetMap or Wikimedia (for images).
+The website is purely static. This means that there is no database here, nor one is needed as all the data is kept in OpenStreetMap, Wikimedia (for images), IMGUR. Settings are saved in the preferences-space of the OSM-website, amended by some local-storage if the user is not logged-in.
 
 When viewing, the data is loaded from overpass. The data is then converted (in the browser) to geojson, which is rendered by Leaflet. 
 
@@ -130,7 +130,13 @@ Images are fetched from:
 
 Images are uplaoded to imgur, as their API was way easier to handle. The URL is written into the changes
 
-The idea is that one in a while, the images are transfered to wikipedia
+The idea is that once in a while, the images are transfered to wikipedia or that we hook up wikimedia directly (but I need some help in getting their API working).
+
+### Uploading changes
+
+In order to avoid lots of small changesets, a changeset is opened and kept open. The changeset number is saved into the users preferences on OSM.
+
+Whenever a change is made -even adding a single tag- the change is uploaded into this changeset. If that fails, the changeset is probably closed and we open a new changeset.
 
 
 # Privacy

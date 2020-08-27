@@ -11,7 +11,7 @@ import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {State} from "./State";
 import {TextField} from "./UI/Input/TextField";
 
-const connection = new OsmConnection(true, new UIEventSource<string>(undefined), false);
+const connection = new OsmConnection(true, new UIEventSource<string>(undefined), "customThemeGenerator", false);
 connection.AttemptLogin();
 
 let hash = window.location.hash?.substr(1);
@@ -67,7 +67,7 @@ const loadFromTextField = new Button("Load", () => {
 });
 
 new Combine([
-    new Preview(themeGenerator.url, themeGenerator.themeObject),
+    new Preview(themeGenerator.url, themeGenerator.testurl, themeGenerator.themeObject),
     loadFrom,
     loadFromTextField,
     "<span class='alert'>Loading from the text field will erase the current theme</span>",

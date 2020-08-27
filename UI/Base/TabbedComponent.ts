@@ -35,9 +35,13 @@ export class TabbedComponent extends UIElement {
 
         headerBar = "<div class='tabs-header-bar'>" + headerBar + "</div>"
 
-        const content = this.content[this._source.data].Render();
+        const content = this.content[this._source.data];
+        return headerBar + "<div class='tab-content'>" + content.Render() + "</div>";
+    }
 
-        return headerBar + "<div class='tab-content'>" + content + "</div>";
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        this.content[this._source.data].Update();
     }
 
 }

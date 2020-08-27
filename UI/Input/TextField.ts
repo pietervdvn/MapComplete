@@ -57,7 +57,7 @@ export class ValidatedTextField {
                             return undefined;
                         }
                     }
-                    return new And(tags).asHumanString(false);
+                    return new And(tags).asHumanString(false, false);
                 },
                 value: value,
                 startValidated: true

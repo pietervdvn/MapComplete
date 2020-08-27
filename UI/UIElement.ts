@@ -6,7 +6,7 @@ export abstract class UIElement extends UIEventSource<string>{
 
     public readonly id: string;
     public readonly _source: UIEventSource<any>;
-    public clss : string = ""
+    private clss: string[] = []
     
     private _hideIfEmpty = false;
     
@@ -41,6 +41,7 @@ export abstract class UIElement extends UIEventSource<string>{
 
     public onClick(f: (() => void)) {
         this._onClick = f;
+        this.SetClass("clickable")
         this.Update();
         return this;
     }
@@ -107,7 +108,7 @@ export abstract class UIElement extends UIEventSource<string>{
    }
 
     Render(): string {
-        return `<span class='uielement ${this.clss}' id='${this.id}'>${this.InnerRender()}</span>`
+        return `<span class='uielement ${this.clss.join(" ")}' id='${this.id}'>${this.InnerRender()}</span>`
     }
 
     AttachTo(divId: string) {
@@ -142,7 +143,9 @@ export abstract class UIElement extends UIEventSource<string>{
     }
 
     public SetClass(clss: string): UIElement {
-        this.clss = clss;
+        if (this.clss.indexOf(clss) < 0) {
+            this.clss.push(clss);
+        }
         return this;
     }
 

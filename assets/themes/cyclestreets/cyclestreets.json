@@ -4,20 +4,135 @@
       "id": "Fietsstraat",
       "title": {
         "render": "{name}",
-        "key": "name"
+        "key": "*"
       },
       "icon": {
-        "key": ""
+        "key": "*",
+        "render": "./assets/themes/cyclestreets/F111.svg"
       },
       "color": {
-        "key": "",
+        "key": "*",
         "render": "#0000ff"
       },
-      "description": "Een fietsstraat is een straat",
-      "minzoom": "13",
+      "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
+      "minzoom": "16",
       "presets": [],
       "tagRenderings": [],
-      "overpassTags": "cyclestreet=yes"
+      "overpassTags": "cyclestreet=yes",
+      "width": {
+        "key": "*",
+        "addExtraTags": "",
+        "mappings": [],
+        "question": "",
+        "render": "10",
+        "type": "nat"
+      },
+      "name": "Fietsstraat"
+    },
+    {
+      "id": "",
+      "title": {
+        "key": "*",
+        "render": "Toekomstige fietsstraat",
+        "mappings": [
+          {
+            "then": "{name} wordt fietsstraat",
+            "if": "name=*"
+          }
+        ]
+      },
+      "icon": {
+        "key": "*",
+        "render": "https://upload.wikimedia.org/wikipedia/commons/6/65/Belgian_road_sign_F113.svg"
+      },
+      "color": {
+        "key": "*",
+        "render": "#09f9dd"
+      },
+      "width": {
+        "key": "*",
+        "render": "5"
+      },
+      "description": "Deze straat wordt binnenkort een fietsstraat",
+      "minzoom": "16",
+      "wayHandling": 0,
+      "presets": [],
+      "tagRenderings": [{
+        "key": "cyclestreet:start_date",
+        "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+        "type": "date",
+        "question": "Wanneer wordt deze straat een fietsstraat?"
+      }],
+      "name": "Toekomstige fietsstraat",
+      "overpassTags": "proposed:cyclestreet=yes"
+    },
+    
+    {
+      "name": "Alle straten",
+      "title": {
+        "key": "*",
+        "render": "Straat",
+        "mappings": [
+          {
+            "then": "{name}",
+            "if": "name=*"
+          }
+        ]
+      },
+      "icon": {
+        "key": "*",
+        "render": "./assets/pencil.svg"
+      },
+      "color": {
+        "key": "*",
+        "render": "#aaaaaa",
+        "mappings": [
+          {
+            "then": "#0000ff",
+            "if": "cyclestreet=yes"
+          },
+          {
+            "then": "#09f9dd",
+            "if": "proposed:cyclestreet=yes"
+          }
+        ]
+      },
+      "width": {
+        "key": "*",
+        "render": "5"
+      },
+      "description": "Laag waar je een straat als fietsstraat kan markeren",
+      "wayHandling": 0,
+      "presets": [],
+      "tagRenderings": [
+        {
+          "mappings": [
+            {
+              "then": "Deze straat is een fietsstraat",
+              "if": "cyclestreet=yes&proposed:cyclestreet="
+            },
+            {
+              "then": "Deze straat wordt binnenkort een fietsstraat",
+              "if": "proposed:cyclestreet=yes&cyclestreet="
+            },
+            {
+              "if": "cyclestreet=&proposed:cyclestreet=",
+              "then": "Deze straat is geen fietsstraat"
+            }
+          ],
+          "type": "text",
+          "question": "Is deze straat een fietsstraat?",
+        },
+        {
+          "key": "cyclestreet:start_date",
+          "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+          "type": "date",
+          "question": "Wanneer wordt deze straat een fietsstraat?",
+          "condition": "proposed:cyclestreet=yes"
+        }
+      ],
+      "overpassTags": "highway~=residential|tertiary|unclassified",
+      "minzoom": "13"
     }
   ],
   "language": "nl",
@@ -27,6 +142,7 @@
   "name": "Fietsstraten",
   "title": "Fietsstraten",
   "startLon": "3.2228",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Belgian_road_sign_F111.svg/400px-Belgian_road_sign_F111.svg.png",
-  "description": "Een fietsstraat is een straat waar automobilisten geen fietsers mogen inhalen en waar een maximumsnelheid van 30km/h geldt. "
+  "icon": "./assets/themes/cyclestreets/F111.svg",
+  "description": "Een fietsstraat is een straat waar automobilisten geen fietsers mogen inhalen en waar een maximumsnelheid van 30km/h geldt.<br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden.",
+  "widenFactor": 0.03
 }

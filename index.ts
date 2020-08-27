@@ -107,10 +107,15 @@ if (layoutToUse === undefined) {
 console.log("Using layout: ", layoutToUse.name);
 
 State.state = new State(layoutToUse);
+
+if (layoutToUse.hideFromOverview) {
+    State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.name + "-enabled").setData("true");
+}
+
 if (layoutFromBase64 !== "false") {
     State.state.layoutDefinition = hash.substr(1);
     State.state.osmConnection.OnLoggedIn(() => {
-        State.state.osmConnection.GetLongPreference("installed-theme-"+layoutToUse.name).setData(State.state.layoutDefinition);
+        State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.name).setData(State.state.layoutDefinition);
     })
 }
 InitUiElements.InitBaseMap();

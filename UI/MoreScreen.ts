@@ -23,8 +23,10 @@ export class MoreScreen extends UIElement {
     }
 
     private createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
-        if (layout.hideFromOverview && State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
-            return undefined;
+        if (layout.hideFromOverview) {
+            if (State.state.osmConnection.GetPreference("hidden-theme-" + layout.name + "-enabled").data !== "true") {
+                return undefined;
+            }
         }
         if (layout.name === State.state.layoutToUse.data.name) {
             return undefined;
