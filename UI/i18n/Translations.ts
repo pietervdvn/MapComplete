@@ -377,7 +377,7 @@ export default class Translations {
                     }),
                     yes: new T({en: "This shop repairs bikes", nl: "Deze winkel herstelt fietsen", fr: "Ce magasin répare des vélos"}),
                     no: new T({
-                        en: "This shop doesn;t repair bikes",
+                        en: "This shop doesn't repair bikes",
                         nl: "Deze winkel herstelt geen fietsen",
                         fr: "Ce magasin ne répare pas les vélos"
                     }),
@@ -487,7 +487,7 @@ export default class Translations {
                         fr: "Ce Café vélo répare les vélos"
                     }),
                     no: new T({
-                        en: "This bike cafe doesn;t repair bikes",
+                        en: "This bike cafe doesn't repair bikes",
                         nl: "Dit fietscafé herstelt geen fietsen",
                         fr: "Ce Café vélo ne répare pas les vélos"
                     })
