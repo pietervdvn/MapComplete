@@ -29,7 +29,7 @@ export class FilteredLayer {
 
     /** The featurecollection from overpass
      */
-    private _dataFromOverpass;
+    private _dataFromOverpass : any[];
     private _wayHandling: number;
     /** List of new elements, geojson features
      */
@@ -146,7 +146,7 @@ export class FilteredLayer {
     public AddNewElement(element) {
         this._newElements.push(element);
         console.log("Element added");
-        this.RenderLayer(this._dataFromOverpass); // Update the layer
+        this.RenderLayer({features:this._dataFromOverpass}); // Update the layer
 
     }
 
@@ -154,23 +154,39 @@ export class FilteredLayer {
         let self = this;
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
+            // Remove the old geojson layer from the map - we'll reshow all the elements later on anyway
             State.state.bm.map.removeLayer(this._geolayer);
         }
-        this._dataFromOverpass = data;
+
+        const oldData = this._dataFromOverpass ?? [];
+
+        // We keep track of all the ids that are freshly loaded in order to avoid adding duplicates
+        const idsFromOverpass: Set<number> = new Set<number>();
+        // A list of all the features to show
         const fusedFeatures = [];
-        const idsFromOverpass = [];
+        // First, we add all the fresh data:
         for (const feature of data.features) {
-            idsFromOverpass.push(feature.properties.id);
+            idsFromOverpass.add(feature.properties.id);
+            fusedFeatures.push(feature);
+        }
+        // Now we add all the stale data
+        for (const feature of oldData) {
+            if (idsFromOverpass.has(feature.properties.id)) {
+                continue; // Feature already loaded and a fresher version is available
+            }
+            idsFromOverpass.add(feature.properties.id);
             fusedFeatures.push(feature);
         }
 
         for (const feature of this._newElements) {
-            if (idsFromOverpass.indexOf(feature.properties.id) < 0) {
+            if (idsFromOverpass.has(feature.properties.id)) {
                 // This element is not yet uploaded or not yet visible in overpass
                 // We include it in the layer
                 fusedFeatures.push(feature);
             }
         }
+        
+        this._dataFromOverpass = fusedFeatures;
 
         // We use a new, fused dataset
         data = {

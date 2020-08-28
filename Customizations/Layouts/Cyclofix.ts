@@ -13,7 +13,7 @@ export default class Cyclofix extends Layout {
     constructor() {
         super(
             "cyclofix",
-            ["en", "nl", "fr"],
+            ["en", "nl", "fr","gl"],
             Translations.t.cyclofix.title,
             [new BikeServices(), new BikeShops(), new DrinkingWater(), new BikeParkings(), new BikeOtherShops(), new BikeCafes()],
             16,

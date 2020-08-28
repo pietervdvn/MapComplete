@@ -47,13 +47,13 @@ let hash = window.location.hash;
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html") {
     defaultLayout = path.substr(0, path.length - 5);
-    console.log("Using", defaultLayout)
+    console.log("Using layout", defaultLayout)
 }
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
 for (const k in AllKnownLayouts.allSets) {
     const layout = AllKnownLayouts.allSets[k];
-    const possibleParts = layout.locationContains ?? [];
+    const possibleParts = (layout.locationContains ?? []);
     for (const locationMatch of possibleParts) {
         if (locationMatch === "") {
             continue
@@ -66,7 +66,7 @@ for (const k in AllKnownLayouts.allSets) {
 
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
-let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout] ?? AllKnownLayouts["all"];
+let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
 
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");

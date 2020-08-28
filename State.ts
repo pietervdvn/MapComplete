@@ -24,7 +24,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7b Less changesets";
+    public static vNumber = "0.0.7c mutlizoom";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -133,9 +133,9 @@ export class State {
             lat: Utils.asFloat(this.lat.data),
             lon: Utils.asFloat(this.lon.data),
         }).addCallback((latlonz) => {
-            this.zoom.setData(latlonz.zoom.toString());
-            this.lat.setData(latlonz.lat.toString().substr(0, 6));
-            this.lon.setData(latlonz.lon.toString().substr(0, 6));
+            this.zoom.setData(latlonz.zoom?.toString());
+            this.lat.setData(latlonz.lat?.toString()?.substr(0, 6));
+            this.lon.setData(latlonz.lon?.toString()?.substr(0, 6));
         });
 
         this.layoutToUse.addCallback(layoutToUse => {

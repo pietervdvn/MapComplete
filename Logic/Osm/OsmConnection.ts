@@ -130,9 +130,7 @@ export class OsmConnection {
         }, function (err, details) {
             if(err != null){
                 console.log(err);
-                self.auth.logout();
-                self.userDetails.data.loggedIn = false;
-                self.userDetails.ping();
+                return;
             }
 
             if (details == null) {

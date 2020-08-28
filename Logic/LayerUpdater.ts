@@ -8,13 +8,17 @@ import {State} from "../State";
 
 export class LayerUpdater {
 
-    public readonly sufficentlyZoomed: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    public readonly sufficentlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
-     * The previous bounds for which the query has been run
+     * The previous bounds for which the query has been run at the given zoom level
+     *
+     * Note that some layers only activate on a certain zoom level.
+     * If the map location changes, we check for each layer if it is loaded:
+     * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
      */
-    private previousBounds: Bounds;
+    private previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions
@@ -25,6 +29,13 @@ export class LayerUpdater {
     constructor(state: State) {
 
         const self = this;
+
+        let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom));
+        this.sufficentlyZoomed = State.state.locationControl.map(location => location.zoom >= minzoom);
+        for (let i = 0; i < 25; i++) {
+            // This update removes all data on all layers -> erase the map on lower levels too
+            this.previousBounds.set(i, []);
+        }
         state.locationControl.addCallback(() => {
             self.update(state)
         });
@@ -40,13 +51,30 @@ export class LayerUpdater {
         state = state ?? State.state;
         for (const layer of state.layoutToUse.data.layers) {
             if (state.locationControl.data.zoom < layer.minzoom) {
-                console.log("Not loading layer ", layer.id, " as it needs at least ",layer.minzoom, "zoom")
+                console.log("Not loading layer ", layer.id, " as it needs at least ", layer.minzoom, "zoom")
+                continue;
+            }
+
+            // Check if data for this layer has already been loaded
+            let previouslyLoaded = false;
+            for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
+                const previousLoadedBounds = this.previousBounds.get(z);
+                if (previousLoadedBounds == undefined) {
+                    continue;
+                }
+                for (const previousLoadedBound of previousLoadedBounds) {
+                    previouslyLoaded = previouslyLoaded || this.IsInBounds(state, previousLoadedBound);
+                    if(previouslyLoaded){
+                        break;
+                    }
+                }
+            }
+            if (previouslyLoaded) {
                 continue;
             }
             filters.push(layer.overpassFilter);
         }
         if (filters.length === 0) {
-            console.log("No layers loaded at all")
             return undefined;
         }
         return new Or(filters);
@@ -66,8 +94,8 @@ export class LayerUpdater {
                 }
                 return;
             }
+            // We use window.setTimeout to give JS some time to update everything and make the interface not too laggy
             window.setTimeout(() => {
-
                 const layer = layers[0];
                 const rest = layers.slice(1, layers.length);
                 geojson = layer.SetApplicableData(geojson);
@@ -94,15 +122,7 @@ export class LayerUpdater {
 
 
     private update(state: State): void {
-        if (this.IsInBounds(state)) {
-            return;
-        }
-
-
         const filter = this.GetFilter(state);
-
-
-        this.sufficentlyZoomed.setData(filter !== undefined);
         if (filter === undefined) {
             return;
         }
@@ -117,16 +137,19 @@ export class LayerUpdater {
         const diff = state.layoutToUse.data.widenFactor;
 
         const n = Math.min(90, bounds.getNorth() + diff);
-        const e = Math.min( 180,bounds.getEast() + diff);
+        const e = Math.min(180, bounds.getEast() + diff);
         const s = Math.max(-90, bounds.getSouth() - diff);
         const w = Math.max(-180, bounds.getWest() - diff);
+        const queryBounds = {north: n, east: e, south: s, west: w};
 
-        this.previousBounds = {north: n, east: e, south: s, west: w};
+        const z = state.locationControl.data.zoom;
+        
+        this.previousBounds.get(z).push(queryBounds);
 
         this.runningQuery.setData(true);
         const self = this;
         const overpass = new Overpass(filter);
-        overpass.queryGeoJson(this.previousBounds,
+        overpass.queryGeoJson(queryBounds,
             function (data) {
                 self.handleData(data)
             },
@@ -138,7 +161,7 @@ export class LayerUpdater {
     }
 
 
-    private IsInBounds(state: State): boolean {
+    private IsInBounds(state: State, bounds: Bounds): boolean {
 
         if (this.previousBounds === undefined) {
             return false;
@@ -146,18 +169,18 @@ export class LayerUpdater {
 
 
         const b = state.bm.map.getBounds();
-        if (b.getSouth() < this.previousBounds.south) {
+        if (b.getSouth() < bounds.south) {
             return false;
         }
 
-        if (b.getNorth() > this.previousBounds.north) {
+        if (b.getNorth() > bounds.north) {
             return false;
         }
 
-        if (b.getEast() > this.previousBounds.east) {
+        if (b.getEast() > bounds.east) {
             return false;
         }
-        if (b.getWest() < this.previousBounds.west) {
+        if (b.getWest() < bounds.west) {
             return false;
         }
 

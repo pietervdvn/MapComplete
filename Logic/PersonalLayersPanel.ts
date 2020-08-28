@@ -94,7 +94,7 @@ export class PersonalLayersPanel extends UIElement {
                     ]),
                     controls[layer.id] ?? (favs.indexOf(layer.id) >= 0)
                 );
-                cb.clss = "custom-layer-checkbox"
+                cb.SetClass("custom-layer-checkbox");
                 controls[layer.id] = cb.isEnabled;
 
                 cb.isEnabled.addCallback((isEnabled) => {

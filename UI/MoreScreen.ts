@@ -34,7 +34,7 @@ export class MoreScreen extends UIElement {
 
         const currentLocation = State.state.locationControl.data;
         let linkText =
-            `./${layout.name}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            `./${layout.name.toLowerCase()}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
 
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
             linkText = `./index.html?layout=${layout.name}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
@@ -80,16 +80,16 @@ export class MoreScreen extends UIElement {
 
 
         for (const k in AllKnownLayouts.allSets) {
-
-
+            const layout : Layout = AllKnownLayouts.allSets[k];
             if (k === PersonalLayout.NAME) {
                 if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.customLayoutUnlock) {
                     continue;
                 }
             }
-
-
-            els.push(this.createLinkButton(AllKnownLayouts.allSets[k]));
+            if(layout.name !== k){
+                continue; // This layout was added multiple time due to an uppercase
+            }
+            els.push(this.createLinkButton(layout));
         }
 
 

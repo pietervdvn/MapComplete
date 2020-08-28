@@ -106,6 +106,7 @@ export class LayerDefinition {
         elementsToShow?: TagDependantUIElementConstructor[],
         maxAllowedOverlapPercentage?: number,
         wayHandling?: number,
+        widenFactor?: number,
         style?: (tags: any) => {
             color: string,
             icon: any

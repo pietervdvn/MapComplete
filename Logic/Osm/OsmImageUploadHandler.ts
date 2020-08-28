@@ -7,6 +7,7 @@ import {ImageUploadFlow} from "../../UI/ImageUploadFlow";
 import {UserDetails} from "./OsmConnection";
 import {SlideShow} from "../../UI/SlideShow";
 import {State} from "../../State";
+import {Tag} from "../TagsFilter";
 
 export class OsmImageUploadHandler {
     private _tags: UIEventSource<any>;
@@ -51,7 +52,7 @@ export class OsmImageUploadHandler {
                     key = "image:" + freeIndex;
                 }
                 console.log("Adding image:" + key, url);
-                changes.addChange(tags.id, key, url);
+                changes.addTag(tags.id, new Tag(key, url));
                 self._slideShow.MoveTo(-1); // set the last (thus newly added) image) to view
             },
             allDone: () => {

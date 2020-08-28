@@ -6,6 +6,7 @@ import {ImgurImage} from "../UI/Image/ImgurImage";
 import {State} from "../State";
 import {ImagesInCategory, Wikidata, Wikimedia} from "./Web/Wikimedia";
 import {UIEventSource} from "./UIEventSource";
+import {Tag} from "./TagsFilter";
 
 /**
  * There are multiple way to fetch images for an object
@@ -121,7 +122,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
             return;
         }
         console.log("Deleting image...", key, " --> ", url);
-        State.state.changes.addChange(this._tags.data.id, key, "");
+        State.state.changes.addTag(this._tags.data.id, new Tag(key, ""));
         this._deletedImages.data.push(url);
         this._deletedImages.ping();
     }

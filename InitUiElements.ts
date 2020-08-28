@@ -183,7 +183,6 @@ export class InitUiElements {
         const flayers: FilteredLayer[] = []
         const presets: Preset[] = [];
 
-        let minZoom = 0;
         const state = State.state;
         for (const layer of state.layoutToUse.data.layers) {
 
@@ -196,9 +195,6 @@ export class InitUiElements {
                     layer.elementsToShow,
                 )
             };
-
-            minZoom = Math.max(minZoom, layer.minzoom);
-
 
             for (const preset of layer.presets ?? []) {
 

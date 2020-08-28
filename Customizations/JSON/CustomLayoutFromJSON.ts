@@ -45,6 +45,7 @@ export interface LayerConfigJson {
     width?: TagRenderingConfigJson;
     overpassTags: string | { k: string, v: string }[];
     wayHandling?: number,
+    widenFactor?: number,
     presets: {
         tags: string,
         title: string | any,

@@ -239,7 +239,12 @@ export default class Translations {
                         fr: 'Est-ce que la pompe à un manomètre integré?',
                         gl: 'Ten a bomba de ar un indicador de presión ou un manómetro?'
                     }),
-                    yes: new T({en: 'There is a manometer', nl: 'Er is een luchtdrukmeter', fr: 'Il y a un manomètre'}),
+                    yes: new T({
+                        en: 'There is a manometer',
+                        nl: 'Er is een luchtdrukmeter',
+                        fr: 'Il y a un manomètre',
+                        gl: 'Hai manómetro'
+                    }),
                     no: new T({
                         en: 'There is no manometer',
                         nl: 'Er is geen luchtdrukmeter',

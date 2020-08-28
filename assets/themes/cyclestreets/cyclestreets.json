@@ -15,7 +15,7 @@
         "render": "#0000ff"
       },
       "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
-      "minzoom": "16",
+      "minzoom": 9,
       "presets": [],
       "tagRenderings": [],
       "overpassTags": "cyclestreet=yes",
@@ -54,7 +54,7 @@
         "render": "5"
       },
       "description": "Deze straat wordt binnenkort een fietsstraat",
-      "minzoom": "16",
+      "minzoom": "9",
       "wayHandling": 0,
       "presets": [],
       "tagRenderings": [{
@@ -121,7 +121,7 @@
             }
           ],
           "type": "text",
-          "question": "Is deze straat een fietsstraat?",
+          "question": "Is deze straat een fietsstraat?"
         },
         {
           "key": "cyclestreet:start_date",
@@ -132,7 +132,7 @@
         }
       ],
       "overpassTags": "highway~=residential|tertiary|unclassified",
-      "minzoom": "13"
+      "minzoom": "18"
     }
   ],
   "language": "nl",
@@ -143,6 +143,6 @@
   "title": "Fietsstraten",
   "startLon": "3.2228",
   "icon": "./assets/themes/cyclestreets/F111.svg",
-  "description": "Een fietsstraat is een straat waar automobilisten geen fietsers mogen inhalen en waar een maximumsnelheid van 30km/h geldt.<br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden.",
-  "widenFactor": 0.03
+  "description": "Een fietsstraat is een straat waar <b>automobilisten geen fietsers mogen inhalen</b> en waar een maximumsnelheid van <b>30km/u</b> geldt.<br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
+  "widenfactor": 0.05
 }

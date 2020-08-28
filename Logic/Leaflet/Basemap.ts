@@ -82,6 +82,12 @@ export class Basemap {
         });
 
 
+        // Users are not allowed to zoom to the 'copies' on the left and the right, stuff goes wrong then
+        // We give a bit of leeway for people on the edges
+        // Also see: https://www.reddit.com/r/openstreetmap/comments/ih4zzc/mapcomplete_a_new_easytouse_editor/g31ubyv/
+        this.map.setMaxBounds(
+            [[-100,-200],[100,200]]
+        );
         this.map.attributionControl.setPrefix(
             extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
         this.Location = location;

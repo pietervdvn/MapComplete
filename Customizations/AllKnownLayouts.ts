@@ -57,6 +57,7 @@ export class AllKnownLayouts {
                     continue;
                 }
                 this.allLayers[layer.id] = layer;
+                this.allLayers[layer.id.toLowerCase()] = layer;
                 all.layers.push(layer);
             }
         }
@@ -64,6 +65,7 @@ export class AllKnownLayouts {
         const allSets: Map<string, Layout> = new Map();
         for (const layout of this.layoutsList) {
             allSets[layout.name] = layout;
+            allSets[layout.name.toLowerCase()] = layout;
         }
         allSets[all.name] = all;
         return allSets;
