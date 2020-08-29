@@ -77,37 +77,6 @@ export class GeoOperations {
 
         return false;
     }
-
-
-    /**
-     * Simple check: that every point of the polygon is inside the container
-     * @param polygon
-     * @param container
-     */
-    private static isPolygonInside(polygon, container) {
-        for (const coor of polygon.geometry.coordinates[0]) {
-            if (!GeoOperations.inside(coor, container)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Simple check: one point of the polygon is inside the container
-     * @param polygon
-     * @param container
-     */
-    private static isPolygonTouching(polygon, container) {
-        for (const coor of polygon.geometry.coordinates[0]) {
-            if (GeoOperations.inside(coor, container)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
     private static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -124,7 +93,7 @@ export class GeoOperations {
         let poly = feature.geometry.coordinates[0];
 
         var inside = false;
-        for (var i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+        for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
             const coori = poly[i];
             const coorj = poly[j];
 
@@ -133,7 +102,7 @@ export class GeoOperations {
             const xj = coorj[0];
             const yj = coorj[1];
 
-            var intersect = ((yi > y) != (yj > y))
+            const intersect = ((yi > y) != (yj > y))
                 && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
             if (intersect) {
                 inside = !inside;
@@ -146,7 +115,7 @@ export class GeoOperations {
 }
 
 
-class BBox {
+class BBox{
 
     readonly maxLat: number;
     readonly maxLon: number;
@@ -188,10 +157,8 @@ class BBox {
         if (this.minLon > other.maxLon) {
             return false;
         }
-        if (this.minLat > other.maxLat) {
-            return false;
-        }
-        return true;
+        return this.minLat <= other.maxLat;
+        
     }
 
     static get(feature) {

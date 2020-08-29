@@ -1,99 +1,122 @@
 {
-  "name": "bookcases",
-  "title": {
-    "en": "Open Bookcase Map",
-    "nl": "Open Boekenruilkastenkaart"
-  },
-  "maintainer": "Pieter Vander Vennet",
-  "icon": "./assets/themes/bookcases/bookcase.svg",
-  "description": {
-    "en": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
-    "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
-  },
-  "widenFactor": 0.05,
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 10,
+  "id": "bookcases",
+  "maintainer": "MapComplete",
+  "version": "2020-08-29",
   "language": [
     "en",
     "nl"
   ],
+  "title": {
+    "en": "Open Bookcase Map",
+    "nl": "Open Boekenruilkastenkaart"
+  },
+  "description": {
+    "en": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
+    "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
+  },
+  "icon": "./assets/themes/bookcases/bookcase.svg",
+  "socialImage": null,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 10,
+  "widenFactor": 0.05,
+  "roamingRenderings": [],
   "layers": [
     {
-      "name": "Bookcases",
+      "id": "bookcases",
+      "name": {
+        "en": "Bookcases",
+        "nl": "Boekenruilkastjes"
+      },
+      "description": {
+        "en": "A streetside cabinet with books, accessible to anyone",
+        "nl": "Een straatkastje met boeken voor iedereen"
+      },
+      "overpassTags": "amenity=public_bookcase",
+      "minzoom": 12,
       "title": {
-        "key": "*",
         "render": {
           "en": "Bookcase",
           "nl": "Boekenruilkast"
         },
         "mappings": [
           {
-            "if": "name=*",
-            "then": "{name}"
+            "if": "name~*",
+            "then": {
+              "en": "Public bookcase <i>{name}</i>",
+              "nl": "Boekenruilkast <i>{name}</i>"
+            }
           }
         ]
       },
       "icon": {
-        "key": "*",
-        "render": "./assets/themes/bookcases/bookcase.svg",
-        "mappings": []
+        "render": "./assets/themes/bookcases/bookcase.svg"
       },
       "color": {
-        "key": "*",
         "render": "#0000ff"
       },
-      "description": {
-        "en": "A streetside cabinet with books, accessible to anyone",
-        "nl": "Een straatkastje met boeken voor iedereen"
+      "width": {
+        "render": "8"
       },
-      "minzoom": "12",
-      "overpassTags": "amenity=public_bookcase",
       "presets": [
         {
           "title": {
             "en": "Bookcase",
             "nl": "Boekenruilkast"
           },
-          "tags": "amenity=public_bookcase"
+          "tags": [
+            "amenity=public_bookcase"
+          ]
         }
       ],
       "tagRenderings": [
+        "images",
         {
-          "key": "name",
-          "mappings": [
-            {
-              "then": {
-                "en": "This bookcase doesn't have a name",
-                "nl": "Dit boekenruilkastje heeft geen naam"
-              },
-              "if": "noname=yes&name="
-            }
-          ],
-          "question": {
-            "en": "What is the name of this public bookcase?",
-            "nl": "Wat is de naam van dit boekenuilkastje?"
-          },
           "render": {
             "en": "The name of this bookcase is {name}",
             "nl": "De naam van dit boekenruilkastje is {name}"
           },
-          "type": "text"
+          "question": {
+            "en": "What is the name of this public bookcase?",
+            "nl": "Wat is de naam van dit boekenuilkastje?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "noname=yes",
+                  "name="
+                ]
+              },
+              "then": {
+                "en": "This bookcase doesn't have a name",
+                "nl": "Dit boekenruilkastje heeft geen naam"
+              }
+            }
+          ]
         },
         {
-          "key": "capacity",
-          "mappings": [],
-          "question": {
-            "en": "How many books fit into this public bookcase?",
-            "nl": "Hoeveel boeken passen er in dit boekenruilkastje?"
-          },
           "render": {
             "en": "{capacity} books fit in this bookcase",
             "nl": "Er passen {capacity} boeken"
           },
-          "type": "nat"
+          "question": {
+            "en": "How many books fit into this public bookcase?",
+            "nl": "Hoeveel boeken passen er in dit boekenruilkastje?"
+          },
+          "freeform": {
+            "key": "capacity",
+            "type": "nat"
+          }
         },
         {
+          "question": {
+            "en": "What kind of books can be found in this public bookcase?",
+            "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?"
+          },
           "mappings": [
             {
               "if": "books=children",
@@ -116,15 +139,13 @@
                 "nl": "Boeken voor zowel kinderen als volwassenen"
               }
             }
-          ],
-          "question": {
-            "en": "What kind of books can be found in this public bookcase?",
-            "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?"
-          },
-          "type": "text"
+          ]
         },
         {
-          "addExtraTags": "",
+          "question": {
+            "en": "Is this bookcase located outdoors?",
+            "nl": "Staat dit boekenruilkastje binnen of buiten?"
+          },
           "mappings": [
             {
               "then": {
@@ -145,16 +166,17 @@
                 "en": "This bookcase is located outdoors",
                 "nl": "Dit boekenruilkastje staat buiten"
               },
-              "if": "indoor="
+              "if": "indoor=",
+              "hideInAnswers": true
             }
-          ],
-          "question": {
-            "en": "Is this bookcase located outdoors?",
-            "nl": "Staat dit boekenruilkastje binnen of buiten?"
-          },
-          "type": "text"
+          ]
         },
         {
+          "question": {
+            "en": "Is this public bookcase freely accessible?",
+            "nl": "Is dit boekenruilkastje publiek toegankelijk?"
+          },
+          "condition": "indoor=yes",
           "mappings": [
             {
               "then": {
@@ -170,29 +192,35 @@
               },
               "if": "access=customers"
             }
-          ],
-          "question": {
-            "en": "Is this public bookcase freely accessible?",
-            "nl": "Is dit boekenruilkastje publiek toegankelijk?"
-          },
-          "type": "text",
-          "condition": "indoor=yes"
+          ]
         },
         {
-          "key": "operator",
-          "mappings": [],
           "question": {
             "en": "Who maintains this public bookcase?",
             "nl": "Wie is verantwoordelijk voor dit boekenruilkastje?"
           },
-          "type": "text",
           "render": {
             "en": "Operated by {operator}",
             "nl": "Onderhouden door {operator}"
+          },
+          "freeform": {
+            "type": "text",
+            "key": "operator"
           }
         },
         {
-          "key": "brand",
+          "question": {
+            "en": "Is this public bookcase part of a bigger network?",
+            "nl": "Is dit boekenruilkastje deel van een netwerk?"
+          },
+          "render": {
+            "en": "This public bookcase is part of {brand}",
+            "nl": "Dit boekenruilkastje is deel van het netwerk {brand}"
+          },
+          "condition": "ref=",
+          "freeform": {
+            "key": "brand"
+          },
           "mappings": [
             {
               "then": {
@@ -202,68 +230,72 @@
               "if": "brand=Little Free Library"
             },
             {
+              "if": {
+                "and": [
+                  "nobrand=yes",
+                  "brand="
+                ]
+              },
               "then": {
                 "en": "This public bookcase is not part of a bigger network",
                 "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk"
-              },
-              "if": "nobrand=yes&brand="
+              }
             }
-          ],
-          "question": {
-            "en": "Is this public bookcase part of a bigger network?",
-            "nl": "Is dit boekenruilkastje deel van een netwerk?"
-          },
-          "render": {
-            "en": "This public bookcase is part of {brand}",
-            "nl": "Dit boekenruilkastje is deel van het netwerk {brand}"
-          },
-          "type": "text",
-          "condition": "ref="
+          ]
         },
         {
-          "key": "ref",
+          "render": {
+            "en": "The reference number of this public bookcase within {brand} is {ref}",
+            "nl": "Het referentienummer binnen {brand} is {ref}"
+          },
+          "question": {
+            "en": "What is the reference number of this public bookcase?",
+            "nl": "Wat is het referentienummer van dit boekenruilkastje?"
+          },
+          "condition": "brand=*",
+          "freeform": {
+            "key": "ref"
+          },
           "mappings": [
             {
               "then": {
                 "en": "This bookcase is not part of a bigger network",
                 "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk"
               },
-              "if": "nobrand=yes&brand=&ref="
+              "if": {
+                "and": [
+                  "nobrand=yes",
+                  "brand=",
+                  "ref="
+                ]
+              }
             }
-          ],
-          "question": {
-            "en": "What is the reference number of this public bookcase?",
-            "nl": "Wat is het referentienummer van dit boekenruilkastje?"
-          },
-          "type": "text",
-          "render": {
-            "en": "The reference number of this public bookcase within {brand} is {ref}",
-            "nl": "Het referentienummer binnen {brand} is {ref}"
-          },
-          "condition": "brand=*"
+          ]
         },
         {
-          "key": "start_date",
-          "mappings": [],
           "question": {
             "en": "When was this public bookcase installed?",
             "nl": "Op welke dag werd dit boekenruilkastje geinstalleerd?"
           },
-          "type": "date",
           "render": {
             "en": "Installed on {start_date}",
             "nl": "Geplaatst op {start_date}"
+          },
+          "freeform": {
+            "key": "start_date",
+            "type": "date"
           }
         },
         {
-          "key": "website",
-          "mappings": [],
-          "type": "url",
+          "render": "Meer info op <a href='{website}' target='_blank'>de website</a>",
           "question": {
             "en": "Is there a website with more information about this public bookcase?",
             "nl": "Is er een website over dit boekenruilkastje?"
           },
-          "render": "{website}"
+          "freeform": {
+            "key": "website",
+            "type": "url"
+          }
         }
       ]
     }

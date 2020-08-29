@@ -5,7 +5,7 @@ export abstract class TagsFilter {
     abstract asOverpass(): string[]
     abstract substituteValues(tags: any) : TagsFilter;
 
-    matchesProperties(properties: any) : boolean{
+    matchesProperties(properties: Map<string, string>): boolean {
         return this.matches(TagUtils.proprtiesToKV(properties));
     }
 
@@ -13,80 +13,60 @@ export abstract class TagsFilter {
 }
 
 
-export class Regex extends TagsFilter {
-    private _k: string;
-    private _r: string;
+export class RegexTag extends TagsFilter {
+    private readonly key: RegExp;
+    private readonly value: RegExp;
+    private readonly invert: boolean;
 
-    constructor(k: string, r: string) {
+    constructor(key: RegExp, value: RegExp, invert: boolean = false) {
         super();
-        this._k = k;
-        this._r = r;
+        this.key = key;
+        this.value = value;
+        this.invert = invert;
     }
 
     asOverpass(): string[] {
-        return ["['" + this._k + "'~'" + this._r + "']"];
+        
+        return [`['${this.key.source}'${this.invert ? "!" : ""}~'${this.value.source}']`];
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
-        if(!(tags instanceof Array)){
-            throw "You used 'matches' on something that is not a list. Did you mean to use 'matchesProperties'?"
-        }
-        
         for (const tag of tags) {
-            if (tag.k === this._k) {
-                if (tag.v === "") {
-                    // This tag has been removed
-                    return false;
-                }
-                if (this._r === "*") {
-                    // Any is allowed
-                    return true;
-                }
-                
-
-                const matchCount =tag.v.match(this._r)?.length;
-                return (matchCount ?? 0) > 0;
+            if (tag.k.match(this.key)) {
+                return tag.v.match(this.value) !== null;
             }
         }
         return false;
     }
 
     substituteValues(tags: any) : TagsFilter{
-        throw "Substituting values is not supported on regex tags"
+        console.warn("Not substituting values on regex tags");
+        return this;
     }
     
     asHumanString() {
-        return this._k+"~="+this._r;
+        return `${this.key}${this.invert ? "!" : ""}~${this.value}`;
     }
 }
 
 
 export class Tag extends TagsFilter {
     public key: string
-    public value: string  | RegExp
-    public invertValue: boolean
+    public value: string
 
-    constructor(key: string | RegExp, value: string | RegExp, invertValue = false) {
-
-        if (value instanceof RegExp && invertValue) {
-            throw new Error("Unsupported combination: RegExp value and inverted value (use regex to invert the match)")
-        }
-
+    constructor(key: string, value: string) {
         super()
-        // @ts-ignore
         this.key = key
-        // @ts-ignore
         this.value = value
-        this.invertValue = invertValue
-    }
-
-    private static regexOrStrMatches(regexOrStr: string | RegExp, testStr: string) {
-        if (typeof regexOrStr === 'string') {
-            return regexOrStr === testStr
-        } else if (regexOrStr instanceof RegExp) {
-            return (regexOrStr as RegExp).test(testStr)
+        if(key === undefined || key === ""){
+            throw "Invalid key";
         }
-        throw new Error("<regexOrStr> must be of type RegExp or string")
+        if(value === undefined){
+            throw "Invalid value";
+        }
+        if(value === undefined || value === "*"){
+         console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}!~*`)
+        }
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
@@ -95,70 +75,36 @@ export class Tag extends TagsFilter {
         }
         
         for (const tag of tags) {
-            
-            if (Tag.regexOrStrMatches(this.key, tag.k)) {
+            if (this.key == tag.k) {
 
                 if (tag.v === "") {
                     // This tag has been removed -> always matches false
                     return false;
                 }
-                if (this.value === "*") {
-                    // Any is allowed (as long as the tag is not empty)
+
+                if (this.value === tag.v) {
                     return true;
                 }
-                
-                if(this.value === tag.v){
-                    return !this.invertValue;
-                }
-
-                return Tag.regexOrStrMatches(this.value, tag.v) !== this.invertValue
             }
         }
-        
-        return this.invertValue
+
+        return false;
     }
 
     asOverpass(): string[] {
-        // @ts-ignore
-        const keyIsRegex = this.key instanceof RegExp
-        // @ts-ignore
-        const key = keyIsRegex ? (this.key as RegExp).source : this.key
-
-        // @ts-ignore
-        const valIsRegex = this.value instanceof RegExp
-        // @ts-ignore
-        const val = valIsRegex ? (this.value as RegExp).source : this.value
-
-        const regexKeyPrefix = keyIsRegex ? '~' : ''
-        const anyVal = this.value === "*"
-
-        if (anyVal && !keyIsRegex) {
-            return [`[${regexKeyPrefix}"${key}"]`];
-        }
         if (this.value === "") {
             // NOT having this key
-            return ['[!"' + key + '"]'];
+            return ['[!"' + this.key + '"]'];
         }
-
-        const compareOperator = (valIsRegex || keyIsRegex) ? '~' : (this.invertValue ? '!=' : '=')
-        return [`[${regexKeyPrefix}"${key}"${compareOperator}"${keyIsRegex && anyVal ? '.' : val}"]`];
+        return [`["${this.key}"="${this.value}"]`];
     }
 
     substituteValues(tags: any) {
-        if (typeof this.value !== 'string') {
-            throw new Error("substituteValues() only possible with tag value of type string")
-        }
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean) {
-        let v = ""
-        if (typeof (this.value) === "string") {
-            v = this.value;
-        } else {
-            // value is a regex
-            v = this.value.source;
-        }
+        let v = this.value;
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);
         }
@@ -167,23 +113,8 @@ export class Tag extends TagsFilter {
                 `=` +
                 `<a href='https://wiki.openstreetmap.org/wiki/Tag:${this.key}%3D${this.value}' target='_blank'>${v}</a>`
         }
-
-        if (typeof (this.value) === "string") {
-            return this.key + (this.invertValue ? "!=": "=") + v;
-        }else{
-            // value is a regex
-            return this.key + "~=" + this.value.source;
-        }
-
+        return this.key + "=" + v;
     }
-}
-
-
-export function anyValueExcept(key: string, exceptValue: string) {
-    return new And([
-        new Tag(key, "*"),
-        new Tag(key, exceptValue, true)
-    ])
 }
 
 
@@ -248,8 +179,8 @@ export class And extends TagsFilter {
         return true;
     }
 
-    private combine(filter: string, choices: string[]): string[] {
-        var values = []
+    private static combine(filter: string, choices: string[]): string[] {
+        const values = [];
         for (const or of choices) {
             values.push(filter + or);
         }
@@ -257,19 +188,18 @@ export class And extends TagsFilter {
     }
 
     asOverpass(): string[] {
-        var allChoices: string[] = null;
-
+        let allChoices: string[] = null;
         for (const andElement of this.and) {
-            var andElementFilter = andElement.asOverpass();
+            const andElementFilter = andElement.asOverpass();
             if (allChoices === null) {
                 allChoices = andElementFilter;
                 continue;
             }
 
-            var newChoices: string[] = []
-            for (var choice of allChoices) {
+            const newChoices: string[] = [];
+            for (const choice of allChoices) {
                 newChoices.push(
-                    ...this.combine(choice, andElementFilter)
+                    ...And.combine(choice, andElementFilter)
                 )
             }
             allChoices = newChoices;
@@ -290,31 +220,6 @@ export class And extends TagsFilter {
     }
 }
 
-
-export class Not extends TagsFilter{
-    private not: TagsFilter;
-    
-    constructor(not: TagsFilter) {
-        super();
-        this.not = not;
-    }
-    
-    asOverpass(): string[] {
-        throw "Not supported yet"
-    }
-
-    matches(tags: { k: string; v: string }[]): boolean {
-        return !this.not.matches(tags);
-    }
-
-    substituteValues(tags: any): TagsFilter {
-        return new Not(this.not.substituteValues(tags));
-    }
-
-    asHumanString(linkToWiki: boolean, shorten: boolean) {
-        return "!" + this.not.asHumanString(linkToWiki, shorten);
-    }
-}
 
 
 export class TagUtils {

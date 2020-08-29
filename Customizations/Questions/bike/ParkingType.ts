@@ -1,4 +1,4 @@
-import {Tag} from "../../../Logic/TagsFilter";
+import {Tag} from "../../../Logic/Tags";
 import Translations from "../../../UI/i18n/Translations";
 import Combine from "../../../UI/Base/Combine";
 import {TagRenderingOptions} from "../../TagRenderingOptions";

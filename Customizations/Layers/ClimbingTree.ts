@@ -1,7 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
 import FixedText from "../Questions/FixedText";
-import {And, Tag} from "../../Logic/TagsFilter";
+import {And, Tag} from "../../Logic/Tags";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 
 export class ClimbingTree extends LayerDefinition {

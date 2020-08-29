@@ -1,12 +1,10 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag, TagsFilter} from "../../Logic/TagsFilter";
-import {OperatorTag} from "../Questions/OperatorTag";
+import {Tag} from "../../Logic/Tags";
 import FixedText from "../Questions/FixedText";
 import ParkingType from "../Questions/bike/ParkingType";
 import ParkingCapacity from "../Questions/bike/ParkingCapacity";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
-import ParkingOperator from "../Questions/bike/ParkingOperator";
 import ParkingAccessCargo from "../Questions/bike/ParkingAccessCargo";
 import ParkingCapacityCargo from "../Questions/bike/ParkingCapacityCargo";
 
@@ -28,8 +26,17 @@ export default class BikeParkings extends LayerDefinition {
 
         this.maxAllowedOverlapPercentage = 10;
 
-        this.minzoom = 13;
-        this.style = this.generateStyleFunction();
+        this.minzoom = 17;
+        this.style = function () {
+            return {
+                color: "#00bb00",
+                icon: {
+                    iconUrl: "./assets/bike/parking.svg",
+                    iconSize: [50, 50],
+                    iconAnchor: [25, 50]
+                }
+            };
+        };
         this.title = new FixedText(Translations.t.cyclofix.parking.title)
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
@@ -41,19 +48,5 @@ export default class BikeParkings extends LayerDefinition {
         ];
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY;
 
-    }
-
-    private generateStyleFunction() {
-        const self = this;
-        return function (properties: any) {
-            return {
-                color: "#00bb00",
-                icon: {
-                    iconUrl: "./assets/bike/parking.svg",
-                    iconSize: [50, 50],
-                    iconAnchor: [25,50]
-                }
-            };
-        };
     }
 }

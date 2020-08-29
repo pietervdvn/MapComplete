@@ -1,6 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag} from "../../Logic/TagsFilter";
-import FixedText from "../Questions/FixedText";
+import {And, Or, Tag} from "../../Logic/Tags";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
@@ -24,7 +23,7 @@ export class Birdhide extends LayerDefinition {
                     tags: [Birdhide.birdhide]
                 }
             ],
-            style(tags: any): { color: string; icon: any } {
+            style(): { color: string; icon: any } {
                 return {color: "", icon: undefined};
             },
         });

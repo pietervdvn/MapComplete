@@ -7,6 +7,7 @@ import {ImageCarousel} from "./ImageCarousel";
 import {ImageUploadFlow} from "../ImageUploadFlow";
 import {OsmImageUploadHandler} from "../../Logic/Osm/OsmImageUploadHandler";
 import {State} from "../../State";
+import Translation from "../i18n/Translation";
 
 export class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
     IsKnown(properties: any): boolean {
@@ -25,8 +26,8 @@ export class ImageCarouselWithUploadConstructor implements TagDependantUIElement
         return new ImageCarouselWithUpload(dependencies);
     }
     
-    GetContent(tags: any): string {
-        return undefined;
+    GetContent(tags: any): Translation {
+        return new Translation({"en":"Image carousel with uploader"});
     }
 }
 
@@ -38,7 +39,6 @@ class ImageCarouselWithUpload extends TagDependantUIElement {
         super(dependencies.tags);
         const tags = dependencies.tags;
         this._imageElement = new ImageCarousel(tags);
-        const userDetails = State.state.osmConnection.userDetails;
         const license = State.state.osmConnection.GetPreference( "pictures-license");
         this._pictureUploader = new OsmImageUploadHandler(tags, license, this._imageElement.slideshow).getUI();
 

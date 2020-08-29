@@ -1,9 +1,8 @@
-import {Tag, TagsFilter} from "../Logic/TagsFilter";
+import {Tag, TagsFilter} from "../Logic/Tags";
 import {UIElement} from "../UI/UIElement";
 import {TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
-import {LayerConfigJson, TagRenderingConfigJson} from "./JSON/CustomLayoutFromJSON";
 
 export interface Preset {
     tags: Tag[],
@@ -75,9 +74,8 @@ export class LayerDefinition {
     style: (tags: any) => {
         color: string,
         weight?: number,
-        icon: { 
-            iconUrl: string,
-            iconSize: number[],
+        icon: {
+            iconUrl: string, iconSize?: number[], popupAnchor?: number[], iconAnchor?: number[]
         },
     };
 

@@ -1,7 +1,7 @@
 import {TagRendering} from "./Customizations/TagRendering";
 import {UserBadge} from "./UI/UserBadge";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
-import {TagUtils} from "./Logic/TagsFilter";
+import {TagUtils} from "./Logic/Tags";
 import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
@@ -13,11 +13,10 @@ import {InitUiElements} from "./InitUiElements";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {State} from "./State";
-import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {PersonalLayout} from "./Logic/PersonalLayout";
-import {OsmConnection} from "./Logic/Osm/OsmConnection";
+import {FromJSON} from "./Customizations/JSON/FromJSON";
 
 TagRendering.injectFunction();
 
@@ -88,8 +87,8 @@ if (layoutFromBase64 !== "false") {
             hashFromLocalStorage.setData(hash);
             dedicatedHashFromLocalStorage.setData(hash);
         }
-        layoutToUse = CustomLayoutFromJSON.FromQueryParam(hash.substr(1));
-        userLayoutParam.setData(layoutToUse.name);
+        layoutToUse = FromJSON.FromBase64(hash.substr(1));
+        userLayoutParam.setData(layoutToUse.id);
     } catch (e) {
         new FixedUiElement("Error: could not parse the custom layout:<br/> "+e).AttachTo("centermessage");
         throw e;
@@ -104,18 +103,18 @@ if (layoutToUse === undefined) {
     throw "Incorrect layout"
 }
 
-console.log("Using layout: ", layoutToUse.name);
+console.log("Using layout: ", layoutToUse.id);
 
 State.state = new State(layoutToUse);
 
 if (layoutToUse.hideFromOverview) {
-    State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.name + "-enabled").setData("true");
+    State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.id + "-enabled").setData("true");
 }
 
 if (layoutFromBase64 !== "false") {
     State.state.layoutDefinition = hash.substr(1);
     State.state.osmConnection.OnLoggedIn(() => {
-        State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.name).setData(State.state.layoutDefinition);
+        State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
     })
 }
 InitUiElements.InitBaseMap();

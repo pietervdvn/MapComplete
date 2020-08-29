@@ -1,7 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag} from "../../Logic/TagsFilter";
+import {And, Or, Tag} from "../../Logic/Tags";
 import {OperatorTag} from "../Questions/OperatorTag";
-import * as L from "leaflet";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
@@ -29,7 +28,7 @@ export class DrinkingWater extends LayerDefinition {
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
 
         this.minzoom = 13;
-        this.style = this.generateStyleFunction();
+        this.style = DrinkingWater.generateStyleFunction();
         this.title = new FixedText("Drinking water");
         this.elementsToShow = [
             new OperatorTag(),
@@ -47,10 +46,8 @@ export class DrinkingWater extends LayerDefinition {
     }
 
 
-    private generateStyleFunction() {
-        const self = this;
-        return function (properties: any) {
-
+    private static generateStyleFunction() {
+        return function () {
             return {
                 color: "#00bb00",
                 icon: {

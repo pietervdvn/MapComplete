@@ -6,14 +6,8 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Combine from "../UI/Base/Combine";
 import {Img} from "../UI/Img";
 import {CheckBox} from "../UI/Input/CheckBox";
-import {VerticalCombine} from "../UI/Base/VerticalCombine";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import {SubtleButton} from "../UI/Base/SubtleButton";
 import {PersonalLayout} from "./PersonalLayout";
-import {All} from "../Customizations/Layouts/All";
 import {Layout} from "../Customizations/Layout";
-import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
-import {TagRendering} from "../Customizations/TagRendering";
 
 export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
@@ -22,7 +16,6 @@ export class PersonalLayersPanel extends UIElement {
         super(State.state.favouriteLayers);
 
         this.ListenTo(State.state.osmConnection.userDetails);
-        const t = Translations.t.favourite;
 
         this.UpdateView([]);
         const self = this;
@@ -38,9 +31,9 @@ export class PersonalLayersPanel extends UIElement {
         const favs = State.state.favouriteLayers.data ?? [];
         const controls = new Map<string, UIEventSource<boolean>>();
         const allLayouts = AllKnownLayouts.layoutsList.concat(extraThemes);
+            console.log("ALL LAYOUTS", allLayouts)
         for (const layout of allLayouts) {
-
-            if (layout.name === PersonalLayout.NAME) {
+            if (layout.id === PersonalLayout.NAME) {
                 continue;
             }
             if (layout.hideFromOverview &&
@@ -60,10 +53,9 @@ export class PersonalLayersPanel extends UIElement {
             this.checkboxes.push(header);
 
             for (const layer of layout.layers) {
-
                 let icon = layer.icon;
                 if (icon !== undefined && typeof (icon) !== "string") {
-                    icon = icon.GetContent({"id": "node/-1"}) ?? "./assets/bug.svg";
+                    icon = icon.GetContent({"id": "node/-1"}).txt ?? "./assets/bug.svg";
                 }
                 const image = (layer.icon ? `<img src='${layer.icon}'>` : Img.checkmark);
                 const noimage = (layer.icon ? `<img src='${layer.icon}'>` : Img.no_checkmark);

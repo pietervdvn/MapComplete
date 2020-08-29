@@ -1,10 +1,10 @@
 // @ts-ignore
 import osmAuth from "osm-auth";
 import {UIEventSource} from "../UIEventSource";
-import {State} from "../../State";
-import {All} from "../../Customizations/Layouts/All";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
+import {Layout} from "../../Customizations/Layout";
+import {ElementStorage} from "../ElementStorage";
 
 export class UserDetails {
 
@@ -32,8 +32,7 @@ export class OsmConnection {
     constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
-                singlePage: boolean = true, 
-                useDevServer:boolean = false) {
+                singlePage: boolean = true) {
 
         let pwaStandAloneMode = false;
         try {
@@ -55,7 +54,6 @@ export class OsmConnection {
                 oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
                 singlepage: false,
                 auto: true,
-                url: useDevServer ? "https://master.apis.dev.openstreetmap.org" : undefined
             });
         } else {
 
@@ -65,7 +63,6 @@ export class OsmConnection {
                 singlepage: true,
                 landing: window.location.href,
                 auto: true,
-                url: useDevServer ? "https://master.apis.dev.openstreetmap.org" : undefined
             });
         }
 
@@ -97,9 +94,12 @@ export class OsmConnection {
     }
 
 
-    public UploadChangeset(generateChangeXML: (csid: string) => string,
+    public UploadChangeset(
+        layout: Layout,
+        allElements: ElementStorage,
+        generateChangeXML: (csid: string) => string,
                            continuation: () => void = () => {}) {
-        this.changesetHandler.UploadChangeset(generateChangeXML, continuation);
+        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, continuation);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
@@ -168,11 +168,12 @@ export class OsmConnection {
             data.unreadMessages = parseInt(messages.getAttribute("unread"));
             data.totalMessages = parseInt(messages.getAttribute("count"));
 
+            self.userDetails.ping();
             for (const action of self._onLoggedIn) {
                 action(self.userDetails.data);
             }
+            self._onLoggedIn = [];
           
-            self.userDetails.ping();
         });
     }
 

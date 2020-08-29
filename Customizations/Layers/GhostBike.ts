@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {Tag} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tags";
 import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRenderingOptions";

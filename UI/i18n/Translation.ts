@@ -1,7 +1,5 @@
 import {UIElement} from "../UIElement"
 import Locale from "./Locale"
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {TagUtils} from "../../Logic/TagsFilter";
 import Combine from "../Base/Combine";
 
 
@@ -17,6 +15,9 @@ export default class Translation extends UIElement {
                 const combined = [];
                 const parts = template.split("{" + k + "}");
                 const el: string | UIElement = text[k];
+                if(el === undefined){
+                    continue;
+                }
                 let rtext: string = "";
                 if (typeof (el) === "string") {
                     rtext = el;
@@ -51,6 +52,7 @@ export default class Translation extends UIElement {
         for (const i in this.translations) {
             return this.translations[i]; // Return a random language
         }
+        console.log("Missing language ",Locale.language.data,"for",this.translations)
         return "Missing translation"
     }
 
@@ -62,6 +64,10 @@ export default class Translation extends UIElement {
 
     constructor(translations: object) {
         super(Locale.language)
+        let count = 0;
+        for (const translationsKey in translations) {
+            count++;
+        }
         this.translations = translations
     }
 

@@ -1,9 +1,8 @@
-import {Or, TagsFilter} from "./TagsFilter";
+import {Or, TagsFilter} from "./Tags";
 import {UIEventSource} from "./UIEventSource";
 import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
-import {Basemap} from "./Leaflet/Basemap";
 import {State} from "../State";
 
 export class LayerUpdater {
@@ -18,20 +17,20 @@ export class LayerUpdater {
      * If the map location changes, we check for each layer if it is loaded:
      * we start checking the bounds at the first zoom level the layer might operate. If in bounds - no reload needed, otherwise we continue walking down
      */
-    private previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
+    private readonly previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
 
     /**
      * The most important layer should go first, as that one gets first pick for the questions
-     * @param map
-     * @param minzoom
-     * @param layers
      */
     constructor(state: State) {
 
         const self = this;
 
-        let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom));
-        this.sufficentlyZoomed = State.state.locationControl.map(location => location.zoom >= minzoom);
+        this.sufficentlyZoomed = State.state.locationControl.map(location => {
+                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
+                return location.zoom >= minzoom;
+            }, [state.layoutToUse]
+        );
         for (let i = 0; i < 25; i++) {
             // This update removes all data on all layers -> erase the map on lower levels too
             this.previousBounds.set(i, []);
@@ -47,7 +46,7 @@ export class LayerUpdater {
     }
 
     private GetFilter(state: State) {
-        var filters: TagsFilter[] = [];
+        const filters: TagsFilter[] = [];
         state = state ?? State.state;
         for (const layer of state.layoutToUse.data.layers) {
             if (state.locationControl.data.zoom < layer.minzoom) {
@@ -142,15 +141,14 @@ export class LayerUpdater {
         const w = Math.max(-180, bounds.getWest() - diff);
         const queryBounds = {north: n, east: e, south: s, west: w};
 
-        const z = state.locationControl.data.zoom;
-        
-        this.previousBounds.get(z).push(queryBounds);
+        const z = Math.floor(state.locationControl.data.zoom);
 
         this.runningQuery.setData(true);
         const self = this;
         const overpass = new Overpass(filter);
         overpass.queryGeoJson(queryBounds,
             function (data) {
+                self.previousBounds.get(z).push(queryBounds);
                 self.handleData(data)
             },
             function (reason) {
@@ -162,33 +160,21 @@ export class LayerUpdater {
 
 
     private IsInBounds(state: State, bounds: Bounds): boolean {
-
         if (this.previousBounds === undefined) {
             return false;
         }
 
-
         const b = state.bm.map.getBounds();
-        if (b.getSouth() < bounds.south) {
-            return false;
-        }
-
-        if (b.getNorth() > bounds.north) {
-            return false;
-        }
-
-        if (b.getEast() > bounds.east) {
-            return false;
-        }
-        if (b.getWest() < bounds.west) {
-            return false;
-        }
-
-        return true;
+        return b.getSouth() >= bounds.south &&
+            b.getNorth() <= bounds.north &&
+            b.getEast() <= bounds.east &&
+            b.getWest() >= bounds.west;
     }
     
-    public ForceRefresh(){
-        this.previousBounds = undefined;
+    public ForceRefresh() {
+        for (let i = 0; i < 25; i++) {
+            this.previousBounds.set(i, []);
+        }
     }
 
 }

@@ -1,4 +1,3 @@
-import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
 import {Layout} from "../Layout";
 import {ClimbingTree} from "../Layers/ClimbingTree";

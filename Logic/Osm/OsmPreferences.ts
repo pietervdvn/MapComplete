@@ -1,6 +1,5 @@
 import {UIEventSource} from "../UIEventSource";
 import {OsmConnection, UserDetails} from "./OsmConnection";
-import {All} from "../../Customizations/Layouts/All";
 import {Utils} from "../../Utils";
 
 export class OsmPreferences {
@@ -68,8 +67,6 @@ export class OsmPreferences {
             }
             if (l > 25) {
                 throw "Length to long";
-                source.setData(undefined);
-                return;
             }
             const prefsCount = Number(l);
             let str = "";
@@ -154,7 +151,7 @@ export class OsmPreferences {
                 method: 'DELETE',
                 path: '/api/0.6/user/preferences/' + k,
                 options: {header: {'Content-Type': 'text/plain'}},
-            }, function (error, result) {
+            }, function (error) {
                 if (error) {
                     console.log("Could not remove preference", error);
                     return;
@@ -172,7 +169,7 @@ export class OsmPreferences {
             path: '/api/0.6/user/preferences/' + k,
             options: {header: {'Content-Type': 'text/plain'}},
             content: v
-        }, function (error, result) {
+        }, function (error) {
             if (error) {
                 console.log(`Could not set preference "${k}"'`, error);
                 return;

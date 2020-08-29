@@ -1,5 +1,4 @@
 import Translations from "../../../UI/i18n/Translations";
-import Combine from "../../../UI/Base/Combine";
 import {TagRenderingOptions} from "../../TagRenderingOptions";
 
 

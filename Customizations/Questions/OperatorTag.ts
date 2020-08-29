@@ -1,5 +1,4 @@
-import {Changes} from "../../Logic/Osm/Changes";
-import {Tag} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 

@@ -1,21 +1,15 @@
 import {Dependencies, TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
-import * as EmailValidator from "email-validator";
-import {parsePhoneNumberFromString} from "libphonenumber-js";
-import {UIElement} from "../UI/UIElement";
-import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
+import {TagsFilter, TagUtils} from "../Logic/Tags";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Translation from "../UI/i18n/Translation";
+import Translations from "../UI/i18n/Translations";
 
 export class TagRenderingOptions implements TagDependantUIElementConstructor {
-
-
-
 
     /**
      * Notes: by not giving a 'question', one disables the question form alltogether
      */
-
     public options: {
         priority?: number;
         question?: string | Translation;
@@ -27,9 +21,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
             placeholder?: string | Translation;
             extraTags?: TagsFilter
         };
-        mappings?: { k: TagsFilter; txt: string | Translation; priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter; txt: string | Translation; priority?: number, substitute?: boolean, hideInAnwser?: boolean }[]
     };
-
 
     constructor(options: {
 
@@ -61,7 +54,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          *
          *
          */
-        mappings?: { k: TagsFilter, txt: Translation | string, priority?: number, substitute?: boolean }[],
+        mappings?: { k: TagsFilter, txt: Translation | string, priority?: number, substitute?: boolean , hideInAnswer?:boolean}[],
 
 
         /**
@@ -85,12 +78,11 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          */
         tagsPreprocessor?: ((tags: any) => void)
     }) {
-
         this.options = options;
     }
 
-    OnlyShowIf(tagsFilter: TagsFilter): TagDependantUIElementConstructor {
-        return new OnlyShowIfConstructor(tagsFilter, this);
+    OnlyShowIf(tagsFilter: TagsFilter, invert: boolean = false): TagDependantUIElementConstructor {
+        return new OnlyShowIfConstructor(tagsFilter, this, invert);
     }
 
 
@@ -105,39 +97,28 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         if (this.options.freeform !== undefined && tags[this.options.freeform.key] !== undefined) {
             return false;
         }
-        if (this.options.question === undefined) {
-            return false;
-        }
-
-        return true;
+        return this.options.question !== undefined;
     }
 
-    GetContent(tags: any): string {
+    GetContent(tags: any): Translation {
         const tagsKV = TagUtils.proprtiesToKV(tags);
 
         for (const oneOnOneElement of this.options.mappings ?? []) {
             if (oneOnOneElement.k === null || oneOnOneElement.k.matches(tagsKV)) {
-                const mapping = oneOnOneElement.txt;
-                if (typeof (mapping) === "string") {
-                    return mapping;
-                } else {
-                    return mapping.InnerRender();
-                }
+                return Translations.WT(oneOnOneElement.txt);
             }
         }
         if (this.options.freeform !== undefined) {
-            let template = this.options.freeform.renderTemplate;
-            if (typeof (template) !== "string") {
-                template = template.InnerRender();
-            }
-            return TagUtils.ApplyTemplate(template, tags);
+            let template = Translations.WT(this.options.freeform.renderTemplate);
+            return template.Subs(tags);
         }
 
+        console.warn("No content defined for",tags," with mapping",this);
         return undefined;
     }
 
 
-    public static tagRendering: (tags: UIEventSource<any>, options: { priority?: number; question?: string | Translation; freeform?: { key: string; tagsPreprocessor?: (tags: any) => any; template: string | Translation; renderTemplate: string | Translation; placeholder?: string | Translation; extraTags?: TagsFilter }; mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean }[] }) => TagDependantUIElement;
+    public static tagRendering: (tags: UIEventSource<any>, options: { priority?: number; question?: string | Translation; freeform?: { key: string; tagsPreprocessor?: (tags: any) => any; template: string | Translation; renderTemplate: string | Translation; placeholder?: string | Translation; extraTags?: TagsFilter }; mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean, hideInAnswer?: boolean }[] }) => TagDependantUIElement;
 
     construct(dependencies: Dependencies): TagDependantUIElement {
         return TagRenderingOptions.tagRendering(dependencies.tags, this.options);

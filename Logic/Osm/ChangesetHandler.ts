@@ -1,6 +1,8 @@
-import {State} from "../../State";
 import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
+import {ElementStorage} from "../ElementStorage";
+import {Layout} from "../../Customizations/Layout";
+import {State} from "../../State";
 
 export class ChangesetHandler {
 
@@ -22,11 +24,14 @@ export class ChangesetHandler {
     }
 
 
-    public UploadChangeset(generateChangeXML: (csid: string) => string,
-                           continuation: () => void) {
+    public UploadChangeset(
+        layout: Layout,
+        allElements: ElementStorage,
+        generateChangeXML: (csid: string) => string,
+         continuation: () => void) {
 
         if (this._dryRun) {
-            var changesetXML = generateChangeXML("123456");
+            const changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
             continuation();
             return;
@@ -34,14 +39,14 @@ export class ChangesetHandler {
 
         const self = this;
 
-
         if (this.currentChangeset.data === undefined || this.currentChangeset.data === "") {
             // We have to open a new changeset
-            this.OpenChangeset((csId) => {
+            this.OpenChangeset(layout,(csId) => {
                 this.currentChangeset.setData(csId);
                 const changeset = generateChangeXML(csId);
                 console.log(changeset);
                 self.AddChange(csId, changeset,
+                    allElements,
                     () => {
                     },
                     (e) => {
@@ -55,6 +60,7 @@ export class ChangesetHandler {
             self.AddChange(
                 csId,
                 generateChangeXML(csId),
+                allElements,
                 () => {
                 },
                 (e) => {
@@ -62,7 +68,7 @@ export class ChangesetHandler {
                     // Mark the CS as closed...
                     this.currentChangeset.setData("");
                     // ... and try again. As the cs is closed, no recursive loop can exist  
-                    self.UploadChangeset(generateChangeXML, continuation);
+                    self.UploadChangeset(layout, allElements, generateChangeXML, continuation);
 
                 }
             )
@@ -71,9 +77,10 @@ export class ChangesetHandler {
     }
 
 
-    private OpenChangeset(continuation: (changesetId: string) => void) {
+    private OpenChangeset(
+        layout : Layout,
+        continuation: (changesetId: string) => void) {
 
-        const layout = State.state.layoutToUse.data;
         const commentExtra = layout.changesetMessage !== undefined? " - "+layout.changesetMessage : "";
         this.auth.xhr({
             method: 'PUT',
@@ -81,8 +88,8 @@ export class ChangesetHandler {
             options: {header: {'Content-Type': 'text/xml'}},
             content: [`<osm><changeset>`,
                 `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
-                `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.name}${commentExtra}"/>`,
-                `<tag k="theme" v="${layout.name}"/>`,
+                `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.id}${commentExtra}"/>`,
+                `<tag k="theme" v="${layout.id}"/>`,
                 layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}"/>` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {
@@ -98,6 +105,7 @@ export class ChangesetHandler {
 
     private AddChange(changesetId: string,
                       changesetXML: string,
+                      allElements: ElementStorage,
                       continuation: ((changesetId: string, idMapping: any) => void),
                       onFail: ((changesetId: string) => void) = undefined) {
         this.auth.xhr({
@@ -113,7 +121,7 @@ export class ChangesetHandler {
                 }
                 return;
             }
-            const mapping = ChangesetHandler.parseUploadChangesetResponse(response);
+            const mapping = ChangesetHandler.parseUploadChangesetResponse(response, allElements);
             console.log("Uploaded changeset ", changesetId);
             continuation(changesetId, mapping);
         });
@@ -145,7 +153,7 @@ export class ChangesetHandler {
         });
     }
 
-    public static parseUploadChangesetResponse(response: XMLDocument) {
+    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) {
         const nodes = response.getElementsByTagName("node");
         // @ts-ignore
         for (const node of nodes) {
@@ -157,9 +165,9 @@ export class ChangesetHandler {
                     continue;
                 }
                 console.log("Rewriting id: ", oldId, "-->", newId);
-                const element = State.state.allElements.getElement("node/" + oldId);
+                const element = allElements.getElement("node/" + oldId);
                 element.data.id = "node/" + newId;
-                State.state.allElements.addElementById("node/" + newId, element);
+                allElements.addElementById("node/" + newId, element);
                 element.ping();
 
             }

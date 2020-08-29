@@ -128,19 +128,16 @@ export default class Translations {
                     question: new T({
                         en: 'Is this parking covered? Also select "covered" for indoor parkings.',
                         nl: 'Is deze parking overdekt? Selecteer ook "overdekt" voor fietsparkings binnen een gebouw.',
-                        fr: 'TODO: fr',
                         gl: 'Este aparcadoiro está cuberto? Tamén escolle "cuberto" para aparcadoiros interiores.'
                     }),
                     yes: new T({
                         en: 'This parking is covered (it has a roof)',
                         nl: 'Deze parking is overdekt (er is een afdak)',
-                        fr: 'TODO: fr',
                         gl: 'Este aparcadoiro está cuberto (ten un teito)'
                     }),
                     no: new T({
                         en: 'This parking is not covered',
                         nl: 'Deze parking is niet overdekt',
-                        fr: 'TODO: fr',
                         gl: 'Este aparcadoiro non está cuberto'
                     })
                 },
@@ -148,19 +145,16 @@ export default class Translations {
                     question: new T({
                         en: "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
                         nl: "Voor hoeveel fietsen is er bij deze fietsparking plaats (inclusief potentiëel bakfietsen)?",
-                        fr: "TODO: fr",
                         gl: "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?"
                     }),
                     template: new T({
                         en: "This parking fits $nat$ bikes",
                         nl: "Deze parking heeft plaats voor $nat$ fietsen",
-                        fr: "TODO: fr",
                         gl: "Neste aparcadoiro caben $nat$ bicicletas"
                     }),
                     render: new T({
                         en: "Place for {capacity} bikes (in total)",
                         nl: "Plaats voor {capacity} fietsen (in totaal)",
-                        fr: "TODO: fr",
                         gl: "Lugar para {capacity} bicicletas (en total)"
                     }),
                 },
@@ -1308,6 +1302,18 @@ export default class Translations {
                     en: "Enable the 'geolocate-me' button (mobile only)",
                     gl: "Activar o botón de 'xeolocalizarme' (só móbil)",
                     nl: "Toon het knopje voor geolocalisatie (enkel op mobiel)"
+                }),
+                fsIncludeCurrentBackgroundMap: new T({
+                    en: "Include the current background choice <b>{name}</b>",
+                    nl: "Gebruik de huidige achtergrond <b>{name}</b>"
+                }),
+                fsIncludeCurrentLayers: new T({
+                    en: "Include the current layer choices",
+                    nl: "Toon enkel de huidig getoonde lagen"
+                }),
+                fsIncludeCurrentLocation: new T({
+                    en: "Include current location",
+                    nl: "Start op de huidige locatie"
                 })
             },
             morescreen: {

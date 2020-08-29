@@ -1,12 +1,9 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Tag, TagsFilter, Or, Not} from "../../Logic/TagsFilter";
+import {And, Or, Tag} from "../../Logic/Tags";
 import BikeStationChain from "../Questions/bike/StationChain";
 import BikeStationPumpTools from "../Questions/bike/StationPumpTools";
 import BikeStationStand from "../Questions/bike/StationStand";
 import PumpManual from "../Questions/bike/PumpManual";
-import BikeStationOperator from "../Questions/bike/StationOperator";
-import BikeStationBrand from "../Questions/bike/StationBrand";
-import FixedText from "../Questions/FixedText";
 import PumpManometer from "../Questions/bike/PumpManometer";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import PumpOperational from "../Questions/bike/PumpOperational";
@@ -19,7 +16,6 @@ export default class BikeStations extends LayerDefinition {
     private readonly repairStation = new Tag("amenity", "bicycle_repair_station");
     private readonly pump = new Tag("service:bicycle:pump", "yes");
     private readonly nopump = new Tag("service:bicycle:pump", "no");
-    private readonly pumpOperationalAny = new Tag("service:bicycle:pump:operational_status", "yes");
     private readonly pumpOperationalOk = new Or([new Tag("service:bicycle:pump:operational_status", "yes"), new Tag("service:bicycle:pump:operational_status", "operational"), new Tag("service:bicycle:pump:operational_status", "ok"), new Tag("service:bicycle:pump:operational_status", "")]);
     private readonly tools = new Tag("service:bicycle:tools", "yes");
     private readonly notools = new Tag("service:bicycle:tools", "no");

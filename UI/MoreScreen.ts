@@ -7,10 +7,7 @@ import {SubtleButton} from "./Base/SubtleButton";
 import {State} from "../State";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {PersonalLayout} from "../Logic/PersonalLayout";
-import {FixedUiElement} from "./Base/FixedUiElement";
 import {Layout} from "../Customizations/Layout";
-import {CustomLayoutFromJSON} from "../Customizations/JSON/CustomLayoutFromJSON";
-import {All} from "../Customizations/Layouts/All";
 
 
 export class MoreScreen extends UIElement {
@@ -22,26 +19,29 @@ export class MoreScreen extends UIElement {
 
     }
 
-    private createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
+    private static createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
+        if (layout === undefined) {
+            return undefined;
+        }
         if (layout.hideFromOverview) {
-            if (State.state.osmConnection.GetPreference("hidden-theme-" + layout.name + "-enabled").data !== "true") {
+            if (State.state.osmConnection.GetPreference("hidden-theme-" + layout.id + "-enabled").data !== "true") {
                 return undefined;
             }
         }
-        if (layout.name === State.state.layoutToUse.data.name) {
+        if (layout.id === State.state.layoutToUse.data.id) {
             return undefined;
         }
 
         const currentLocation = State.state.locationControl.data;
         let linkText =
-            `./${layout.name.toLowerCase()}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            `./${layout.id.toLowerCase()}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
 
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-            linkText = `./index.html?layout=${layout.name}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            linkText = `./index.html?layout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
         }
 
         if (customThemeDefinition) {
-            linkText = `./index.html?userlayout=${layout.name}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}#${customThemeDefinition}`
+            linkText = `./index.html?userlayout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}#${customThemeDefinition}`
 
         }
 
@@ -86,20 +86,21 @@ export class MoreScreen extends UIElement {
                     continue;
                 }
             }
-            if(layout.name !== k){
+            if (layout.id !== k) {
                 continue; // This layout was added multiple time due to an uppercase
             }
-            els.push(this.createLinkButton(layout));
+            els.push(MoreScreen.createLinkButton(layout));
         }
 
 
         const customThemesNames = State.state.installedThemes.data ?? [];
-        if (customThemesNames !== []) {
+        if (customThemesNames.length > 0) {
+            console.log(customThemesNames)
             els.push(Translations.t.general.customThemeIntro)
-        }
 
-        for (const installed of State.state.installedThemes.data) {
-            els.push(this.createLinkButton(installed.layout, installed.definition));
+            for (const installed of State.state.installedThemes.data) {
+                els.push(MoreScreen.createLinkButton(installed.layout, installed.definition));
+            }
         }
 
 

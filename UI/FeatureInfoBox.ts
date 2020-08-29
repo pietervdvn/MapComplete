@@ -1,13 +1,11 @@
 import {UIElement} from "./UIElement";
-import {ImageCarousel} from "./Image/ImageCarousel";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import {OsmLink} from "../Customizations/Questions/OsmLink";
 import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
-import {And} from "../Logic/TagsFilter";
+import {And} from "../Logic/Tags";
 import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Customizations/UIElementConstructor";
 import Translations from "./i18n/Translations";
 import {Changes} from "../Logic/Osm/Changes";
-import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {State} from "../State";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
@@ -23,13 +21,11 @@ export class FeatureInfoBox extends UIElement {
     /**
      * The tags, wrapped in a global event source
      */
-    private _tagsES: UIEventSource<any>;
-    private _changes: Changes;
-
-    private _title: UIElement;
-    private _osmLink: UIElement;
-    private _wikipedialink: UIElement;
-
+    private readonly _tagsES: UIEventSource<any>;
+    private readonly _changes: Changes;
+    private readonly _title: UIElement;
+    private readonly _osmLink: UIElement;
+    private readonly _wikipedialink: UIElement;
     private _infoboxes: TagDependantUIElement[];
 
     private _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();

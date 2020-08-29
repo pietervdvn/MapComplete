@@ -1,7 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import FixedText from "../Questions/FixedText";
-import {Tag} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tags";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
@@ -19,7 +18,7 @@ export class Viewpoint extends LayerDefinition {
             }],
             icon: "assets/viewpoint.svg",
             wayHandling: LayerDefinition.WAYHANDLING_CENTER_ONLY,
-            style: tags => {
+            style: _ => {
                 return {
                     color: undefined, icon: {
                         iconUrl: "assets/viewpoint.svg",

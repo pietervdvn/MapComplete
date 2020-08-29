@@ -1,6 +1,5 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
-import {All} from "./Layouts/All";
 import {Groen} from "./Layouts/Groen";
 import Cyclofix from "./Layouts/Cyclofix";
 import {StreetWidth} from "./Layouts/StreetWidth";
@@ -10,12 +9,14 @@ import {Smoothness} from "./Layouts/Smoothness";
 import {MetaMap} from "./Layouts/MetaMap";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {GhostBikes} from "./Layouts/GhostBikes";
-import {CustomLayoutFromJSON} from "./JSON/CustomLayoutFromJSON";
+import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
 import * as artworks from "../assets/themes/artwork/artwork.json";
 import * as cyclestreets from "../assets/themes/cyclestreets/cyclestreets.json";
+
+
 import {PersonalLayout} from "../Logic/PersonalLayout";
 
 export class AllKnownLayouts {
@@ -28,11 +29,11 @@ export class AllKnownLayouts {
         new GRB(),
         new Cyclofix(),
         new GhostBikes(),
-        CustomLayoutFromJSON.LayoutFromJSON(bookcases),
-        CustomLayoutFromJSON.LayoutFromJSON(aed),
-        CustomLayoutFromJSON.LayoutFromJSON(toilets),
-        CustomLayoutFromJSON.LayoutFromJSON(artworks),
-        CustomLayoutFromJSON.LayoutFromJSON(cyclestreets),
+        FromJSON.LayoutFromJSON(bookcases),
+       // FromJSON.LayoutFromJSON(aed),
+       // FromJSON.LayoutFromJSON(toilets),
+       // FromJSON.LayoutFromJSON(artworks),
+       // FromJSON.LayoutFromJSON(cyclestreets),
 
         new MetaMap(),
         new StreetWidth(),
@@ -48,26 +49,22 @@ export class AllKnownLayouts {
     private static AllLayouts(): Map<string, Layout> {
 
 
-        const all = new All();
         this.allLayers = new Map<string, LayerDefinition>();
         for (const layout of this.layoutsList) {
             for (const layer of layout.layers) {
-                const key = layer.id;
                 if (this.allLayers[layer.id] !== undefined) {
                     continue;
                 }
                 this.allLayers[layer.id] = layer;
                 this.allLayers[layer.id.toLowerCase()] = layer;
-                all.layers.push(layer);
             }
         }
 
         const allSets: Map<string, Layout> = new Map();
         for (const layout of this.layoutsList) {
-            allSets[layout.name] = layout;
-            allSets[layout.name.toLowerCase()] = layout;
+            allSets[layout.id] = layout;
+            allSets[layout.id.toLowerCase()] = layout;
         }
-        allSets[all.name] = all;
         return allSets;
     }
 

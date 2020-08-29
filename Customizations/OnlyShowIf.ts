@@ -1,26 +1,28 @@
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
+import {TagsFilter, TagUtils} from "../Logic/Tags";
+import {UIElement} from "../UI/UIElement";
+import {UIEventSource} from "../Logic/UIEventSource";
+import Translation from "../UI/i18n/Translation";
+
 /**
  * Wrapper around another TagDependandElement, which only shows if the filters match
  */
-import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
-import {TagsFilter, TagUtils} from "../Logic/TagsFilter";
-import {UIElement} from "../UI/UIElement";
-import {UIEventSource} from "../Logic/UIEventSource";
-import {Changes} from "../Logic/Osm/Changes";
-
-
 export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
-    private _tagsFilter: TagsFilter;
-    private _embedded: TagDependantUIElementConstructor;
-    
-    constructor(tagsFilter : TagsFilter, embedded: TagDependantUIElementConstructor) {
+    private readonly _tagsFilter: TagsFilter;
+    private readonly _embedded: TagDependantUIElementConstructor;
+    private readonly _invert: boolean;
+
+    constructor(tagsFilter: TagsFilter, embedded: TagDependantUIElementConstructor, invert: boolean = false) {
         this._tagsFilter = tagsFilter;
         this._embedded = embedded;
+        this._invert = invert;
     }
 
     construct(dependencies): TagDependantUIElement {
         return new OnlyShowIf(dependencies.tags, 
             this._embedded.construct(dependencies),
-            this._tagsFilter);
+            this._tagsFilter,
+            this._invert);
     }
 
     IsKnown(properties: any): boolean {
@@ -41,34 +43,38 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
         return this._embedded.Priority();
     }
     
-    GetContent(tags: any): string {
-        if(!this.IsKnown(tags)){
+    GetContent(tags: any): Translation {
+        if(this.IsKnown(tags)){
             return undefined;
         }
         return this._embedded.GetContent(tags);
     }
 
     private Matches(properties: any) : boolean{
-        return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties));
+        return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties)) != this._invert;
     } 
     
 }
 
 class OnlyShowIf extends UIElement implements TagDependantUIElement {
-    private _embedded: TagDependantUIElement;
-    private _filter: TagsFilter;
+    private readonly _embedded: TagDependantUIElement;
+    private readonly _filter: TagsFilter;
+    private readonly _invert: boolean;
 
     constructor(
         tags: UIEventSource<any>,
-        embedded: TagDependantUIElement, filter: TagsFilter) {
+        embedded: TagDependantUIElement, 
+        filter: TagsFilter,
+        invert: boolean) {
         super(tags);
         this._filter = filter;
         this._embedded = embedded;
+        this._invert = invert;
 
     }
     
     private Matches() : boolean{
-        return this._filter.matches(TagUtils.proprtiesToKV(this._source.data));
+        return this._filter.matches(TagUtils.proprtiesToKV(this._source.data)) != this._invert;
     } 
 
     InnerRender(): string {

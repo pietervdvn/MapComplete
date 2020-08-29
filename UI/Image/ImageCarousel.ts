@@ -11,6 +11,7 @@ import {
     TagDependantUIElementConstructor
 } from "../../Customizations/UIElementConstructor";
 import {State} from "../../State";
+import Translation from "../i18n/Translation";
 
 export class ImageCarouselConstructor implements TagDependantUIElementConstructor{
     IsKnown(properties: any): boolean {
@@ -29,8 +30,8 @@ export class ImageCarouselConstructor implements TagDependantUIElementConstructo
         return new ImageCarousel(dependencies.tags);
     }
 
-    GetContent(tags: any): string {
-        return undefined;
+    GetContent(tags: any): Translation {
+        return new Translation({"en":"Images without upload"});
     }
 
 }

@@ -1,4 +1,4 @@
-import {Tag, And} from "../../../Logic/TagsFilter";
+import {Tag, And} from "../../../Logic/Tags";
 import Translations from "../../../UI/i18n/Translations";
 import {TagRenderingOptions} from "../../TagRenderingOptions";
 

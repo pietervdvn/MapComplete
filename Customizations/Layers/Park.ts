@@ -1,7 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag} from "../../Logic/TagsFilter";
-import {AccessTag} from "../Questions/AccessTag";
-import {OperatorTag} from "../Questions/OperatorTag";
+import {Or, Tag} from "../../Logic/Tags";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import {DescriptionQuestion} from "../Questions/DescriptionQuestion";

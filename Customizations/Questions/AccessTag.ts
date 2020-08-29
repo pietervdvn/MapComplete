@@ -1,5 +1,4 @@
-import {Changes} from "../../Logic/Osm/Changes";
-import {And, Tag} from "../../Logic/TagsFilter";
+import {And, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class AccessTag extends TagRenderingOptions {

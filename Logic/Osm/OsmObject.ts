@@ -18,13 +18,21 @@ export abstract class OsmObject {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
+        
+        const newContinuation = (element: OsmObject) => {
+            
+            console.log("Received: ",element);
+            
+            continuation(element);
+        }
+        
         switch (type) {
             case("node"):
-                return new OsmNode(idN).Download(continuation);
+                return new OsmNode(idN).Download(newContinuation);
             case("way"):
-                return new OsmWay(idN).Download(continuation);
+                return new OsmWay(idN).Download(newContinuation);
             case("relation"):
-                return new OsmRelation(idN).Download(continuation);
+                return new OsmRelation(idN).Download(newContinuation);
 
         }
     }
@@ -38,11 +46,9 @@ export abstract class OsmObject {
      * @param string
      * @constructor
      */
-    private Escape(string: string) {
-        while (string.indexOf('"') >= 0) {
-            string = string.replace('"', '&quot;');
-        }
-        return string;
+    private static Escape(string: string) {
+            return string.replace(/"/g, '&quot;')
+                .replace(/&/g, "&amp;");
     }
 
     /**
@@ -54,7 +60,7 @@ export abstract class OsmObject {
         for (const key in this.tags) {
             const v = this.tags[key];
             if (v !== "") {
-                tags += '        <tag k="' + this.Escape(key) + '" v="' + this.Escape(this.tags[key]) + '"/>\n'
+                tags += '        <tag k="' + OsmObject.Escape(key) + '" v="' + OsmObject.Escape(this.tags[key]) + '"/>\n'
             }
         }
         return tags;

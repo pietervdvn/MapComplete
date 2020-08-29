@@ -1,7 +1,6 @@
 import {Layout} from "../Layout";
 import {GhostBike} from "../Layers/GhostBike";
 import Combine from "../../UI/Base/Combine";
-import Translations from "../../UI/i18n/Translations";
 
 export class GhostBikes extends Layout {
     constructor() {

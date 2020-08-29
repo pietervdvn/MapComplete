@@ -7,10 +7,10 @@ import {Basemap} from "./Basemap";
 
 export class GeoLocationHandler extends UIElement {
 
-    private _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private _permission: UIEventSource<string> = new UIEventSource<string>("");
+    private readonly _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _permission: UIEventSource<string> = new UIEventSource<string>("");
     private _marker: any;
-    private _hasLocation: UIEventSource<boolean>;
+    private readonly _hasLocation: UIEventSource<boolean>;
 
     constructor() {
         super(undefined);
@@ -84,13 +84,13 @@ export class GeoLocationHandler extends UIElement {
         }
         
         if (this._hasLocation.data) {
-            return "<img src='assets/crosshair-blue.svg' alt='locate me'>";
+            return "<img src='./assets/crosshair-blue.svg' alt='locate me'>";
         }
         if (this._isActive.data) {
-            return "<img src='assets/crosshair-blue-center.svg' alt='locate me'>";
+            return "<img src='./assets/crosshair-blue-center.svg' alt='locate me'>";
         }
 
-        return "<img src='assets/crosshair.svg' alt='locate me'>";
+        return "<img src='./assets/crosshair.svg' alt='locate me'>";
     }
 
     

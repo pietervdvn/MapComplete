@@ -60,12 +60,12 @@ export class Basemap {
 
 
     // @ts-ignore
-    public map: Map;
+    public readonly map: Map;
 
-    public Location: UIEventSource<{ zoom: number, lat: number, lon: number }>;
-    public LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
-    private _previousLayer: L.tileLayer = undefined;
-    public CurrentLayer: UIEventSource<{
+    public readonly Location: UIEventSource<{ zoom: number, lat: number, lon: number }>;
+    public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
+    private  _previousLayer: L.tileLayer = undefined;
+    public readonly CurrentLayer: UIEventSource<{
         id: string,
         name: string,
         layer: L.tileLayer

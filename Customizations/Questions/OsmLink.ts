@@ -1,5 +1,5 @@
 import {Img} from "../../UI/Img";
-import {Tag} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 

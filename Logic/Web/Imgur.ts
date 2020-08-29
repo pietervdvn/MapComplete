@@ -43,7 +43,7 @@ export class Imgur {
         const apiUrl = 'https://api.imgur.com/3/image/'+hash;
         const apiKey = '7070e7167f0a25a';
 
-        var settings = {
+        const settings = {
             async: true,
             crossDomain: true,
             processData: false,
@@ -86,7 +86,7 @@ export class Imgur {
         const apiUrl = 'https://api.imgur.com/3/image';
         const apiKey = '7070e7167f0a25a';
 
-        var settings = {
+        const settings = {
             async: true,
             crossDomain: true,
             processData: false,
@@ -99,7 +99,7 @@ export class Imgur {
             },
             mimeType: 'multipart/form-data',
         };
-        var formData = new FormData();
+        const formData = new FormData();
         formData.append('image', blob);
         formData.append("title", title);
         formData.append("description", description)

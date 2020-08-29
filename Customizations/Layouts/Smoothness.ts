@@ -1,6 +1,6 @@
 import {Layout} from "../Layout";
 import {LayerDefinition} from "../LayerDefinition";
-import {Or, Tag} from "../../Logic/TagsFilter";
+import {Or, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 

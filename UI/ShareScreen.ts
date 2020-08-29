@@ -11,19 +11,15 @@ import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {UserDetails} from "../Logic/Osm/OsmConnection";
 import Translation from "./i18n/Translation";
 import {SubtleButton} from "./Base/SubtleButton";
 
 export class ShareScreen extends UIElement {
-
-    private _shareButton: UIElement;
-
-    private _options: UIElement;
-    private _iframeCode: UIElement;
-    private _link: UIElement;
-    private _linkStatus: UIEventSource<string | UIElement>;
-    private _editLayout: UIElement;
+    private  readonly _options: UIElement;
+    private  readonly _iframeCode: UIElement;
+    private  readonly _link: UIElement;
+    private  readonly _linkStatus: UIEventSource<string | UIElement>;
+    private  readonly _editLayout: UIElement;
 
     constructor() {
         super(undefined)
@@ -33,8 +29,8 @@ export class ShareScreen extends UIElement {
         const optionParts: (UIEventSource<string>)[] = [];
 
         const includeLocation = new CheckBox(
-            new Combine([Img.checkmark, "Include current location"]),
-            new Combine([Img.no_checkmark, "Include current location"]),
+            new Combine([Img.checkmark, tr.fsIncludeCurrentLocation]),
+            new Combine([Img.no_checkmark, tr.fsIncludeCurrentLocation]),
             true
         )
         optionCheckboxes.push(includeLocation);
@@ -52,11 +48,7 @@ export class ShareScreen extends UIElement {
 
 
         const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = (State.state.bm as Basemap).CurrentLayer;
-        const currentBackground = new VariableUiElement(
-            currentLayer.map(
-                (layer) => `Include the current background choice <b>${layer.name}</b>`
-            )
-        );
+        const currentBackground = tr.fsIncludeCurrentBackgroundMap.Subs({name: layout.id});
         const includeCurrentBackground = new CheckBox(
             new Combine([Img.checkmark, currentBackground]),
             new Combine([Img.no_checkmark, currentBackground]),
@@ -73,8 +65,8 @@ export class ShareScreen extends UIElement {
 
 
         const includeLayerChoices = new CheckBox(
-            new Combine([Img.checkmark, "Include the current layer choices"]),
-            new Combine([Img.no_checkmark, "Include the current layer choices"]),
+            new Combine([Img.checkmark, tr.fsIncludeCurrentLayers]),
+            new Combine([Img.no_checkmark, tr.fsIncludeCurrentLayers]),
             true
         )
         optionCheckboxes.push(includeLayerChoices);
@@ -110,8 +102,7 @@ export class ShareScreen extends UIElement {
 
             const checkbox = new CheckBox(
                 new Combine([Img.checkmark, Translations.W(swtch.human)]),
-                new Combine([Img.no_checkmark, Translations.W(swtch.human)]),
-                swtch.reverse ? false : true
+                new Combine([Img.no_checkmark, Translations.W(swtch.human)]), !swtch.reverse
             );
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
@@ -135,8 +126,8 @@ export class ShareScreen extends UIElement {
         this._options = new VerticalCombine(optionCheckboxes)
         const url = currentLocation.map(() => {
 
-            
-            let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.name + ".html"
+
+            let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.id.toLowerCase() + ".html"
 
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
@@ -190,18 +181,18 @@ export class ShareScreen extends UIElement {
         const self = this;
         this._link = new VariableUiElement(
             url.map((url) => {
-                return `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%"readonly>`
+                return `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%">`
             })
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.name)?.InnerRender() ?? "",
+                title: Translations.W(layout.id)?.InnerRender() ?? "",
                 text: Translations.W(layout.description)?.InnerRender() ?? "",
                 url: self._link.data,
             }
 
             function rejected() {
-                var copyText = document.getElementById("code-link--copyable");
+                const copyText = document.getElementById("code-link--copyable");
 
                 // @ts-ignore
                 copyText.select();

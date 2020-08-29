@@ -1,5 +1,4 @@
-import {And, Tag} from "../../Logic/TagsFilter";
-import {UIElement} from "../../UI/UIElement";
+import {Tag} from "../../Logic/Tags";
 import Translations from "../../UI/i18n/Translations";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 import Translation from "../../UI/i18n/Translation";

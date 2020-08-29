@@ -3,7 +3,7 @@
  * One is a big 'name-question', the other is the 'edit name' in the title.
  * THis one is the big question
  */
-import {Tag} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class NameQuestion extends TagRenderingOptions{

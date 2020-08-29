@@ -1,5 +1,6 @@
 import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
+import Translation from "../UI/i18n/Translation";
 
 
 export interface Dependencies {
@@ -12,7 +13,7 @@ export interface TagDependantUIElementConstructor {
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
     Priority(): number;
-    GetContent(tags: any): string;
+    GetContent(tags: any): Translation;
 
 }
 

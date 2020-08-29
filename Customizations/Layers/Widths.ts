@@ -1,13 +1,12 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Not, Or, Tag} from "../../Logic/TagsFilter";
-import {Park} from "./Park";
+import {And, Or, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class Widths extends LayerDefinition {
 
-    private cyclistWidth: number;
-    private carWidth: number;
-    private pedestrianWidth: number;
+    private readonly cyclistWidth: number;
+    private readonly carWidth: number;
+    private readonly pedestrianWidth: number;
 
     private readonly _bothSideParking = new Tag("parking:lane:both", "parallel");
     private readonly _noSideParking = new Tag("parking:lane:both", "no_parking");
@@ -36,10 +35,9 @@ export class Widths extends LayerDefinition {
 
     private readonly _oneSideParking = new Or([this._leftSideParking, this._rightSideParking]);
 
-    private readonly _carfree = new Or(
+    private readonly _carfree = new And(
         [new Tag("highway", "pedestrian"), new Tag("highway", "living_street"),
         new Tag("access","destination"), new Tag("motor_vehicle", "destination")])
-    private readonly _notCarFree = new Not(this._carfree);
 
     private calcProps(properties) {
         let parkingStateKnown = true;
@@ -59,8 +57,7 @@ export class Widths extends LayerDefinition {
         }
 
 
-        let pedestrianFlowNeeded = 0;
-
+        let pedestrianFlowNeeded;
         if (this._sidewalkBoth.matchesProperties(properties)) {
             pedestrianFlowNeeded = 0;
         } else if (this._sidewalkNone.matchesProperties(properties)) {
@@ -198,7 +195,7 @@ export class Widths extends LayerDefinition {
                     renderTemplate: "{note:width:carriageway}",
                     template: "$$$",
                 }
-            }).OnlyShowIf(this._notCarFree),
+            }).OnlyShowIf(this._carfree, true),
 
 
             new TagRenderingOptions({
@@ -218,7 +215,7 @@ export class Widths extends LayerDefinition {
                     renderTemplate: "{note:width:carriageway}",
                     template: "$$$",
                 }
-            }).OnlyShowIf(this._notCarFree),
+            }).OnlyShowIf(this._carfree, true),
 
 
             new TagRenderingOptions({
@@ -248,7 +245,7 @@ export class Widths extends LayerDefinition {
                         txt: "Tweerichtingsverkeer voor iedereen. Dit gebruikt <b>" + r(2 * this.carWidth + 2 * this.cyclistWidth) + "m</b>"
                     }
                 ]
-            }).OnlyShowIf(this._notCarFree),
+            }).OnlyShowIf(this._carfree, true),
 
             new TagRenderingOptions(
                 {
@@ -266,7 +263,7 @@ export class Widths extends LayerDefinition {
                         {k: new Tag("short",""), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <span class='thanks'>{targetWidth}m</span>"}
                     ]
                 }
-            ).OnlyShowIf(this._notCarFree),
+            ).OnlyShowIf(this._carfree, true),
             
             
             new TagRenderingOptions({

@@ -1,19 +1,18 @@
 import {UIElement} from "./UI/UIElement";
 import {Layout} from "./Customizations/Layout";
 import {Utils} from "./Utils";
-import {LayerDefinition, Preset} from "./Customizations/LayerDefinition";
+import {Preset} from "./Customizations/LayerDefinition";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import Translations from "./UI/i18n/Translations";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {CustomLayoutFromJSON} from "./Customizations/JSON/CustomLayoutFromJSON";
+import {FromJSON} from "./Customizations/JSON/FromJSON";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -24,7 +23,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7c mutlizoom";
+    public static vNumber = "0.0.7d Refactored";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -124,6 +123,9 @@ export class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
+    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab","0").map<number>(
+        str => isNaN(Number(str)) ? 0 : Number(str),[],n => ""+n
+    );
 
     constructor(layoutToUse: Layout, useDevServer = false) {
         const self = this;
@@ -175,9 +177,8 @@ export class State {
         this.osmConnection = new OsmConnection(
             testParam === "true",
             QueryParameters.GetQueryParameter("oauth_token", undefined),
-            layoutToUse.name,
-            true,
-            testParam === "dev"
+            layoutToUse.id,
+            true
         );
 
 
@@ -201,7 +202,7 @@ export class State {
                     }
                     try {
                         installedThemes.push({
-                            layout: CustomLayoutFromJSON.FromQueryParam(customLayout.data),
+                            layout: FromJSON.FromBase64(customLayout.data),
                             definition: customLayout.data
                         });
                     } catch (e) {

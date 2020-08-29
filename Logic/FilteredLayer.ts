@@ -1,4 +1,4 @@
-import {TagsFilter, TagUtils} from "./TagsFilter";
+import {TagsFilter, TagUtils} from "./Tags";
 import {UIEventSource} from "./UIEventSource";
 import L from "leaflet"
 import {GeoOperations} from "./GeoOperations";
@@ -21,6 +21,7 @@ export class FilteredLayer {
     public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
+    private readonly combinedIsDisplayed : UIEventSource<boolean>;
     public readonly layerDef: LayerDefinition;
     private readonly _maxAllowedOverlap: number;
 
@@ -29,8 +30,8 @@ export class FilteredLayer {
 
     /** The featurecollection from overpass
      */
-    private _dataFromOverpass : any[];
-    private _wayHandling: number;
+    private _dataFromOverpass: any[];
+    private readonly _wayHandling: number;
     /** List of new elements, geojson features
      */
     private _newElements = [];
@@ -60,7 +61,12 @@ export class FilteredLayer {
         this.filters = layerDef.overpassFilter;
         this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
         const self = this;
-        this.isDisplayed.addCallback(function (isDisplayed) {
+        this.combinedIsDisplayed = this.isDisplayed.map<boolean>(isDisplayed => {
+                return isDisplayed && State.state.locationControl.data.zoom >= self.layerDef.minzoom
+            },
+            [State.state.locationControl]
+        );
+        this.combinedIsDisplayed.addCallback(function (isDisplayed) {
             const map = State.state.bm.map;
             if (self._geolayer !== undefined && self._geolayer !== null) {
                 if (isDisplayed) {
@@ -91,7 +97,8 @@ export class FilteredLayer {
         const selfFeatures = [];
         for (let feature of geojson.features) {
             // feature.properties contains all the properties
-            var tags = TagUtils.proprtiesToKV(feature.properties);
+            const tags = TagUtils.proprtiesToKV(feature.properties);
+            
             if (this.filters.matches(tags)) {
                 const centerPoint = GeoOperations.centerpoint(feature);
                 feature.properties["_surface"] = ""+GeoOperations.surfaceAreaInSqMeters(feature);
@@ -204,7 +211,6 @@ export class FilteredLayer {
             style: function (feature) {
                 return self._style(feature.properties);
             },
-
             pointToLayer: function (feature, latLng) {
                 const style = self._style(feature.properties);
                 let marker;
@@ -231,7 +237,7 @@ export class FilteredLayer {
                 const uiElement = self._showOnPopup(eventSource, feature);
                 const popup = L.popup({}, marker).setContent(uiElement.Render());
                 marker.bindPopup(popup)
-                    .on("popupopen", (popup) => {
+                    .on("popupopen", () => {
                         uiElement.Activate();   
                         uiElement.Update();
                     });
@@ -264,7 +270,7 @@ export class FilteredLayer {
                 eventSource.addCallback(feature.updateStyle);
 
                 layer.on("click", function (e) {
-                    const prevSelectedElement = State.state.selectedElement.data?.feature.updateStyle();
+                    State.state.selectedElement.data?.feature.updateStyle();
                     State.state.selectedElement.setData({feature: feature});
                     feature.updateStyle()
                     if (feature.geometry.type === "Point") {
@@ -272,13 +278,13 @@ export class FilteredLayer {
                     }
 
                     const uiElement = self._showOnPopup(eventSource, feature);
-
-                    const popup = L.popup({
+                   
+                    L.popup({
                         autoPan: true,
-                    })
-                        .setContent(uiElement.Render())
+                    }).setContent(uiElement.Render())
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
+                    
                     uiElement.Update();
                     uiElement.Activate();
                     L.DomEvent.stop(e); // Marks the event as consumed
@@ -286,7 +292,7 @@ export class FilteredLayer {
             }
         });
 
-        if (this.isDisplayed.data) {
+        if (this.combinedIsDisplayed.data) {
             this._geolayer.addTo(State.state.bm.map);
         }
     }

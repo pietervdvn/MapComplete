@@ -1,12 +1,11 @@
 import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
-import {Changes} from "./Osm/Changes";
 import {ImgurImage} from "../UI/Image/ImgurImage";
 import {State} from "../State";
 import {ImagesInCategory, Wikidata, Wikimedia} from "./Web/Wikimedia";
 import {UIEventSource} from "./UIEventSource";
-import {Tag} from "./TagsFilter";
+import {Tag} from "./Tags";
 
 /**
  * There are multiple way to fetch images for an object
@@ -150,7 +149,6 @@ export class ImageSearcher extends UIEventSource<string[]> {
         }
 
         for (const key in this._tags.data) {
-            // @ts-ignore
             if (key.startsWith("image:")) {
                 const url = this._tags.data[key]
                 this.AddImage(url);

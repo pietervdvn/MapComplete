@@ -1,67 +1,84 @@
 {
+  "id": "toilets",
+  "title": "Open Toilet Map",
+  "description": "A map of public toilets",
+  "maintainer": "MapComplete",
+  "version": "2020-08-29",
+  "language": [
+    "en"
+  ],
+  "startZoom": 12,
+  "startLat": 51.2095,
+  "startLon": 3.2222,
+  "widenFactor": 0.05,
+  "icon": "./assets/themes/toilets/toilets.svg",
   "layers": [
     {
-      "name": "Toilet",
-      "title": {
-        "key": "*",
-        "render": "Toilet"
-      },
+      "id": "Toilet",
+      "name": "Toilets",
+      "overpassTags": "amenity=toilets",
+      "title": "Toilet",
       "icon": {
-        "key": "*",
         "render": "./assets/themes/toilets/toilets.svg",
         "mappings": [
           {
-            "then": "./assets/themes/toilets/wheelchair.svg",
-            "if": "wheelchair=yes"
+            "if": "wheelchair=yes",
+            "then": "./assets/themes/toilets/wheelchair.svg"
           }
         ]
       },
       "color": {
-        "key": "*",
         "render": "#0000ff"
       },
-      "description": "A toilet",
-      "minzoom": "14",
+      "minzoom": 12,
       "wayHandling": 2,
       "presets": [
         {
           "title": "Toilet",
-          "tags": "amenity=toilets",
-          "description": "Only add public toilets"
+          "tags": [
+            "amenity=toilets"
+          ],
+          "description": "A publicly accessible toilet or restroom"
         },
         {
           "title": "Toilets with wheelchair accessible toilet",
-          "tags": "amenity=toilets&wheelchair=yes",
+          "tags": [
+            "amenity=toilets",
+            "wheelchair=yes"
+          ],
           "description": "A restroom which has at least one wheelchair-accessible toilet"
         }
       ],
       "tagRenderings": [
+        "pictures",
         {
-          "key": "access",
+          "question": "Are these toilets publicly accessible?",
+          "render": "Access is {access}",
+          "freeform": {
+            "key": "access",
+            "addExtraTags": "fixme=the tag access was filled out by the user and might need refinement"
+          },
           "mappings": [
             {
-              "then": "Public access",
-              "if": "access=yes"
+              "if": "access=yes",
+              "then": "Public access"
             },
             {
-              "then": "Only access to customers",
-              "if": "access=customers"
+              "if": "access=customers",
+              "then": "Only access to customers"
             },
             {
               "if": "access=no",
               "then": "Not accessible"
             },
             {
-              "then": "Accessible, but one has to ask a key to enter",
-              "if": "access=key"
+              "if": "access=key",
+              "then": "Accessible, but one has to ask a key to enter"
             }
-          ],
-          "question": "Are these toilets publicly accessible?",
-          "type": "text",
-          "addExtraTags": "fixme=the tag access was filled out by the user and might need refinement",
-          "render": "Access is {access}"
+          ]
         },
         {
+          "question": "Are these toilets free to use?",
           "mappings": [
             {
               "then": "These are paid toilets",
@@ -71,19 +88,19 @@
               "if": "fee=no",
               "then": "Free to use"
             }
-          ],
-          "type": "text",
-          "question": "Are these toilets free to use?"
+          ]
         },
         {
-          "key": "charge",
-          "mappings": [],
           "question": "How much does one have to pay for these toilets?",
-          "type": "string",
           "render": "The fee is {charge}",
-          "condition": "fee=yes"
+          "condition": "fee=yes",
+          "freeform": {
+            "key": "charge",
+            "type": "string"
+          }
         },
         {
+          "question": "Is there a dedicated toilet for wheelchair users",
           "mappings": [
             {
               "then": "There is a dedicated toilet for wheelchair users",
@@ -93,11 +110,10 @@
               "if": "wheelchair=no",
               "then": "No wheelchair access"
             }
-          ],
-          "type": "text",
-          "question": "Is there a dedicated toilet for wheelchair users"
+          ]
         },
         {
+          "question": "Which kind of toilets are this?",
           "mappings": [
             {
               "if": "toilets:position=seated",
@@ -115,11 +131,10 @@
               "if": "toilets:position=seated;urinals",
               "then": "Both seated toilets and urinals are available here"
             }
-          ],
-          "question": "Which kind of toilets are this?",
-          "type": "text"
+          ]
         },
         {
+          "question": "Is a changing table (to change diapers) available?",
           "mappings": [
             {
               "then": "A changing table is available",
@@ -129,12 +144,15 @@
               "if": "changing_table=no",
               "then": "No changing table is available"
             }
-          ],
-          "question": "Is a changing table (to change diapers) available?",
-          "type": "text"
+          ]
         },
         {
-          "key": "changing_table:location",
+          "question": "Where is the changing table located?",
+          "render": "The changing table is located at {changing_table:location}",
+          "condition": "changing_table=yes",
+          "freeform": {
+            "key": "changing_table:location"
+          },
           "mappings": [
             {
               "then": "The changing table is in the toilet for women. ",
@@ -152,24 +170,9 @@
               "if": "changing_table:location=dedicated_room",
               "then": "The changing table is in a dedicated room. "
             }
-          ],
-          "type": "text",
-          "question": "Where is the changing table located?",
-          "condition": "changing_table=yes",
-          "render": "The changing table is located at {changing_table:location}"
+          ]
         }
-      ],
-      "overpassTags": "amenity=toilets"
+      ]
     }
-  ],
-  "startLat": "51.2095",
-  "startZoom": "12",
-  "maintainer": "Pieter Vander Vennet",
-  "title": "Open Toilet Map",
-  "startLon": "3.2222",
-  "widenFactor": 0.05,
-  "icon": "./assets/themes/toilets/toilets.svg",
-  "description": "A map of public toilets",
-  "language": ["en"],
-  "name": "toilets"
+  ]
 }

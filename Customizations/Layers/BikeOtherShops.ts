@@ -1,7 +1,7 @@
-import { LayerDefinition } from "../LayerDefinition";
+import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
-import {And, Tag, Or, anyValueExcept} from "../../Logic/TagsFilter";
-import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
+import {And, RegexTag, Tag} from "../../Logic/Tags";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import ShopRetail from "../Questions/bike/ShopRetail";
 import ShopPump from "../Questions/bike/ShopPump";
 import ShopRental from "../Questions/bike/ShopRental";
@@ -9,7 +9,7 @@ import ShopRepair from "../Questions/bike/ShopRepair";
 import ShopDiy from "../Questions/bike/ShopDiy";
 import ShopName from "../Questions/bike/ShopName";
 import ShopSecondHand from "../Questions/bike/ShopSecondHand";
-import { PhoneNumberQuestion } from "../Questions/PhoneNumberQuestion";
+import {PhoneNumberQuestion} from "../Questions/PhoneNumberQuestion";
 import Website from "../Questions/Website";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
@@ -24,8 +24,8 @@ export default class BikeOtherShops extends LayerDefinition {
         this.name = this.to.name
         this.icon = "./assets/bike/non_bike_repair_shop.svg"
         this.overpassFilter = new And([
-            anyValueExcept("shop", "bicycle"),
-            new Tag(/^service:bicycle:/, "*"),
+            new RegexTag(/^shop$/, /^bicycle$/, true),
+            new RegexTag(/^service:bicycle:/, /.*/),
         ])
         this.presets = []
         this.maxAllowedOverlapPercentage = 10

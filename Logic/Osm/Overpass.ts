@@ -1,11 +1,11 @@
-/**
- * Interfaces overpass to get all the latest data
- */
 import {Bounds} from "../Bounds";
-import {TagsFilter} from "../TagsFilter";
+import {TagsFilter} from "../Tags";
 import $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
 
+/**
+ * Interfaces overpass to get all the latest data
+ */
 export class Overpass {
     private _filter: TagsFilter
     public static testUrl: string = null

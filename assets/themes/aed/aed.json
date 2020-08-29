@@ -1,134 +1,171 @@
 {
+  "id": "aed",
+  "title": {
+    "en": "Open AED Map",
+    "fr": "Carte AED",
+    "nl": "Open AED-kaart"
+  },
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/aed/aed.svg",
+  "description": {
+    "en": "On this map, one can find and mark nearby defibrillators",
+    "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
+    "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren"
+  },
   "language": [
     "en",
-    "fr"
+    "fr",
+    "nl"
   ],
-  "startLat": "0",
-  "startLon": "0",
-  "startZoom": "12",
-  "maintainer": "Pieter Vander Vennet",
+  "version": "2020-08-29",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 12,
   "layers": [
     {
-      "name": "Defibrillator",
+      "id": "Defibrillator",
+      "name": {
+        "en": "Defibrillators",
+        "fr": "Défibrillateurs",
+        "nl": "Defibrillatoren"
+      },
+      "overpassTags": "emergency=defibrillator",
+      "minzoom": 12,
       "title": {
-        "key": "*",
         "render": {
           "en": "Defibrillator",
-          "fr": "Défibrillateur"
+          "fr": "Défibrillateur",
+          "nl": "Defibrillator"
         }
       },
-      "icon": {
-        "key": "*",
-        "render": "./assets/themes/aed/aed.svg"
-      },
-      "color": {
-        "render": "#0000ff",
-        "key": "*"
-      },
-      "description": {
-        "en": "A defibrillator",
-        "fr": "Un défibrillateur"
-      },
-      "minzoom": "12",
+      "icon": "./assets/themes/aed/aed.svg",
+      "color": "#0000ff",
       "presets": [
         {
           "title": {
             "en": "Defibrillator",
-            "fr": "Défibrillateur"
+            "fr": "Défibrillateur",
+            "nl": "Defibrillator"
           },
-          "tags": "emergency=defibrillator",
-          "description": "A defibrillator"
+          "tags": [
+            "emergency=defibrillator"
+          ]
         }
       ],
       "tagRenderings": [
+        "pictures",
         {
           "mappings": [
             {
+              "question": {
+                "en": "Is this defibrillator located indoors?",
+                "fr": "Ce défibrillateur est-il disposé en intérieur ?",
+                "nl": "Hangt deze defibrillator binnen of buiten?"
+              },
+              "if": "indoor=yes",
               "then": {
                 "en": "This defibrillator is located indoors",
-                "fr": "Ce défibrillateur est en intérieur (dans un batiment)"
-              },
-              "if": "indoor=yes"
+                "fr": "Ce défibrillateur est en intérieur (dans un batiment)",
+                "nl": "Deze defibrillator bevindt zich in een gebouw"
+              }
             },
             {
+              "if": "indoor=no",
               "then": {
                 "en": "This defibrillator is located outdoors",
-                "fr": "Ce défibrillateur est situé en extérieur"
-              },
-              "if": "indoor=no"
+                "fr": "Ce défibrillateur est situé en extérieur",
+                "nl": "Deze defibrillator hangt buiten"
+              }
             }
-          ],
-          "question": {
-            "en": "Is this defibrillator located indoors?",
-            "fr": "Ce défibrillateur est-il disposé en intérieur ?"
-          },
-          "type": "text"
+          ]
         },
         {
+          "question": {
+            "en": "Is this defibrillator freely accessible?",
+            "fr": "Ce défibrillateur est-il librement accessible?",
+            "nl": "Is deze defibrillator vrij toegankelijk?"
+          },
+          "render": {
+            "en": "Access is {access}",
+            "nl": "Toegankelijkheid is {access}",
+            "fr": "{access} accessible"
+          },
+          "condition": "indoor=yes",
+          "freeform": {
+            "key": "access",
+            "addExtraTags": "fixme=Freeform field used for access - doublecheck the value"
+          },
           "mappings": [
             {
+              "if": "access=yes",
               "then": {
                 "en": "Publicly accessible",
-                "fr": "Librement accessible"
-              },
-              "if": "access=yes"
+                "fr": "Librement accessible",
+                "nl": "Publiek toegankelijk"
+              }
             },
             {
+              "if": "access=public",
+              "then": {
+                "en": "Publicly accessible",
+                "fr": "Librement accessible",
+                "nl": "Publiek toegankelijk"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "access=customers",
               "then": {
                 "en": "Only accessible to customers",
-                "fr": "Réservé aux clients du lieu"
-              },
-              "if": "access=customers"
+                "fr": "Réservé aux clients du lieu",
+                "nl": "Enkel toegankeleijk voor klanten"
+              }
             },
             {
               "if": "access=private",
               "then": {
                 "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, ...)",
-                "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)"
+                "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)",
+                "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personneel, de eigenaar, ...)"
               }
             }
-          ],
-          "question": {
-            "en": "Is this defibrillator freely accessible?",
-            "fr": "Ce défibrillateur est-il librement accessible ?"
-          },
-          "type": "text",
-          "key": "access",
-          "condition": "indoor=yes"
+          ]
         },
         {
-          "key": "level",
-          "mappings": [],
           "question": {
             "en": "On which floor is this defibrillator located?",
-            "fr": "À quel étage est situé ce défibrillateur ?"
+            "fr": "À quel étage est situé ce défibrillateur?",
+            "nl": "Op welke verdieping bevindt deze defibrillator zich?"
           },
-          "type": "int",
+          "condition": {
+            "and": [
+              "indoor=yes",
+              "access!~private"
+            ]
+          },
+          "freeform": {
+            "key": "level",
+            "type": "int"
+          },
           "render": {
             "en": "This defibrallator is on floor {level}",
-            "fr": "Ce défibrillateur est à l'étage {level}"
-          },
-          "condition": "indoor=yes&access!=private"
+            "fr": "Ce défibrillateur est à l'étage {level}",
+            "nl": "De defibrillator bevindt zicht op verdieping {level}"
+          }
         },
         {
-          "key": "defibrillator:location",
-          "mappings": [],
+          "render": "{defibrillator:location}",
           "question": {
             "en": "Please give some explanation on where the defibrillator can be found",
-            "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur"
+            "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur",
+            "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator"
           },
-          "type": "text",
-          "render": "{defibrillator:location}"
+          "freeform": {
+            "type": "text",
+            "key": "defibrillator:location"
+          }
         }
-      ],
-      "overpassTags": "emergency=defibrillator"
+      ]
     }
-  ],
-  "title": "Open AED Map",
-  "icon": "./assets/themes/aed/aed.svg",
-  "name": "aed",
-  "description": {
-    "en": "On this map, one can find and mark nearby defibrillators",
-    "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs"
-  }
+  ]
 }

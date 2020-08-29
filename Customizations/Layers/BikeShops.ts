@@ -1,8 +1,7 @@
-import { LayerDefinition } from "../LayerDefinition";
+import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
-import {And, Tag, Or} from "../../Logic/TagsFilter";
-import FixedText from "../Questions/FixedText";
-import { ImageCarouselWithUploadConstructor } from "../../UI/Image/ImageCarouselWithUpload";
+import {And, Tag} from "../../Logic/Tags";
+import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import ShopRetail from "../Questions/bike/ShopRetail";
 import ShopPump from "../Questions/bike/ShopPump";
 import ShopRental from "../Questions/bike/ShopRental";
@@ -18,7 +17,6 @@ import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export default class BikeShops extends LayerDefinition {
     private readonly sellsBikes = new Tag("service:bicycle:retail", "yes")
-    private readonly repairsBikes = new Tag("service:bicycle:repair", "yes")
 
     constructor() {
         super("bikeshop");

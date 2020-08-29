@@ -1,6 +1,6 @@
 import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {And, Tag, TagsFilter, TagUtils} from "../Logic/TagsFilter";
+import {And, Tag, TagsFilter, TagUtils} from "../Logic/Tags";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {SaveButton} from "../UI/SaveButton";
 import {VariableUiElement} from "../UI/Base/VariableUIElement";
@@ -15,23 +15,21 @@ import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
 import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
-import {SubtleButton} from "../UI/Base/SubtleButton";
 import Combine from "../UI/Base/Combine";
 
 
-export class TagRendering extends UIElement implements TagDependantUIElement {
+export class 
+TagRendering extends UIElement implements TagDependantUIElement {
 
 
-    private _priority: number;
-
-
-    private _question: string | Translation;
-    private _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
+    private readonly _priority: number;
+    private readonly _question: string | Translation;
+    private readonly _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
     private currentTags : UIEventSource<any> ;
     
     
-    private _freeform: {
+    private readonly _freeform: {
         key: string,
         template: string | UIElement,
         renderTemplate: string | Translation,
@@ -53,10 +51,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _questionSkipped: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _editMode: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
-
-    private static injected = TagRendering.injectFunction();
-
+    
     static injectFunction() {
         // This is a workaround as not to import tagrendering into TagREnderingOptions
         TagRenderingOptions.tagRendering = (tags, options) => new TagRendering(tags, options);
@@ -76,7 +71,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             extraTags?: TagsFilter,
         },
         tagsPreprocessor?: ((tags: any) => any),
-        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
     }) {
         super(tags);
         this.ListenTo(Locale.language);
@@ -204,7 +199,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             placeholder?: string | Translation,
             extraTags?: TagsFilter,
         },
-        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
     }):
         InputElement<TagsFilter> {
 
@@ -217,7 +212,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 if(mapping.k === null){
                     continue;
                 }
-                if(previousTexts.indexOf(mapping.txt) >= 0){
+                if(mapping.hideInAnswer){
                     continue;
                 }
                 previousTexts.push(this.ApplyTemplate(mapping.txt));
@@ -262,7 +257,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         let isValid = ValidatedTextField.inputValidation[type];
         if (isValid === undefined) {
-            isValid = (str) => true;
+            isValid = () => true;
         }
         let formatter = ValidatedTextField.formatting[type] ?? ((str) => str);
 
@@ -297,7 +292,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
 
 
-        let inputElement: InputElement<TagsFilter>;
         const textField = new TextField({
             placeholder: this._freeform.placeholder,
             fromString: pickString,
@@ -455,9 +449,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
     private ApplyTemplate(template: string | Translation): UIElement {
         if (template === undefined || template === null) {
-            throw "Trying to apply a template, but the template is null/undefined"
+            console.warn("Applying template which is undefined by ",this); // TODO THis error msg can probably be removed
+            return undefined;
         }
-        const self = this;
         return new VariableUiElement(this.currentTags.map(tags => {
             const tr = Translations.WT(template);
             if (tr.Subs === undefined) {

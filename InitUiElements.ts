@@ -1,5 +1,3 @@
-import {Layout} from "./Customizations/Layout";
-import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
 import {TabbedComponent} from "./UI/Base/TabbedComponent";
 import {ShareScreen} from "./UI/ShareScreen";
@@ -8,12 +6,8 @@ import {CheckBox} from "./UI/Input/CheckBox";
 import Combine from "./UI/Base/Combine";
 import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
-import {Tag} from "./Logic/TagsFilter";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
-import {ElementStorage} from "./Logic/ElementStorage";
-import {Changes} from "./Logic/Osm/Changes";
-import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
 import {State} from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
@@ -50,30 +44,30 @@ export class InitUiElements {
 
         const layoutToUse = State.state.layoutToUse.data;
         let welcome: UIElement = new WelcomeMessage();
-        if (layoutToUse.name === PersonalLayout.NAME) {
+        if (layoutToUse.id === PersonalLayout.NAME) {
             welcome = new PersonalLayersPanel();
         }
 
         const tabs = [
             {header: Img.AsImageElement(layoutToUse.icon), content: welcome},
-            {header: `<img src='${'./assets/osm-logo.svg'}'>`, content: Translations.t.general.openStreetMapIntro},
+            {header: `<img src='./assets/osm-logo.svg'>`, content: Translations.t.general.openStreetMapIntro},
 
         ]
 
         if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: `<img src='${'./assets/share.svg'}'>`, content: new ShareScreen()});
+            tabs.push({header: `<img src='./assets/share.svg'>`, content: new ShareScreen()});
         }
 
         if (State.state.featureSwitchMoreQuests.data){
             
             tabs.push({
-                header: `<img src='${'./assets/add.svg'}'>`
+                header: `<img src='./assets/add.svg'>`
                 , content: new MoreScreen()
             });
         }
 
 
-        const fullOptions = new TabbedComponent(tabs);
+        const fullOptions = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab);
 
         return fullOptions;
 
@@ -94,7 +88,6 @@ export class InitUiElements {
             new Combine(["<span class='open-button'>", help, "</span>"])
             , true
         ).AttachTo("messagesbox");
-        let dontCloseYet = true;
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
@@ -107,7 +100,7 @@ export class InitUiElements {
 
         const fullOptions2 = this.CreateWelcomePane();
         State.state.fullScreenMessage.setData(fullOptions2)
-        new FixedUiElement(`<div class='collapse-button-img' class="shadow"><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
+        new FixedUiElement(`<div class='collapse-button-img shadow'><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
             State.state.fullScreenMessage.setData(fullOptions2)
         }).AttachTo("help-button-mobile");
 

@@ -23,7 +23,7 @@ export class Wikimedia {
             "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
             "titles=" + filename +
             "&format=json&origin=*";
-        $.getJSON(url, function (data, status) {
+        $.getJSON(url, function (data) {
             const licenseInfo = new LicenseInfo();
             const license = data.query.pages[-1].imageinfo[0].extmetadata;
 

@@ -2,7 +2,6 @@ import {LayerDefinition} from "./LayerDefinition";
 import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {State} from "../State";
 
 /**
@@ -10,7 +9,7 @@ import {State} from "../State";
  */
 export class Layout {
 
-    public name: string;
+    public id: string;
     public icon: string = "./assets/logo.svg";
     public title: UIElement;
     public maintainer: string;
@@ -25,12 +24,11 @@ export class Layout {
     public welcomeBackMessage: UIElement;
     public welcomeTail: UIElement;
 
-    public startzoom: number;
     public supportedLanguages: string[];
+    
+    public startzoom: number;
     public startLon: number;
     public startLat: number;
-
-    public locationContains: string[];
 
     public enableAdd: boolean = true;
     public enableUserBadge: boolean = true;
@@ -38,7 +36,7 @@ export class Layout {
     public enableLayers: boolean = true;
     public enableMoreQuests: boolean = true;
     public enableShareScreen: boolean = true;
-
+    public enableGeolocation: boolean = true;
     public hideFromOverview: boolean = false;
 
     /**
@@ -47,11 +45,10 @@ export class Layout {
      */
     public widenFactor: number = 0.07;
     public defaultBackground: string = "osm";
-    public enableGeolocation: boolean = true;
 
     /**
      * 
-     * @param name: The name used in the query string. If in the query "quests=<name>" is defined, it will select this layout
+     * @param id: The name used in the query string. If in the query "quests=<name>" is defined, it will select this layout
      * @param title: Will be used in the <title> of the page
      * @param layers: The layers to show, a list of LayerDefinitions
      * @param startzoom: The initial starting zoom of the map
@@ -63,7 +60,7 @@ export class Layout {
      * @param welcomeTail: This text is shown below the login message. It is ideal for extra help
      */
     constructor(
-        name: string,
+        id: string,
         supportedLanguages: string[],
         title: UIElement | string,
         layers: LayerDefinition[],
@@ -85,7 +82,7 @@ export class Layout {
         this.startLon = startLon;
         this.startLat = startLat;
         this.startzoom = startzoom;
-        this.name = name;
+        this.id = id;
         this.layers = layers;
         this.welcomeMessage = Translations.W(welcomeMessage)
         this.gettingStartedPlzLogin = Translations.W(gettingStartedPlzLogin);

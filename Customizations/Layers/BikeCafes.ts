@@ -3,8 +3,8 @@ import FixedText from "../Questions/FixedText";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
 import CafeName from "../Questions/bike/CafeName";
-import { Or, And, Tag, anyValueExcept, Regex } from "../../Logic/TagsFilter";
-import { PhoneNumberQuestion } from "../Questions/PhoneNumberQuestion";
+import {And, Or, RegexTag, Tag} from "../../Logic/Tags";
+import {PhoneNumberQuestion} from "../Questions/PhoneNumberQuestion";
 import Website from "../Questions/Website";
 import CafeRepair from "../Questions/bike/CafeRepair";
 import CafeDiy from "../Questions/bike/CafeDiy";
@@ -20,10 +20,11 @@ export default class BikeCafes extends LayerDefinition {
         this.name = this.to.name
         this.icon = "./assets/bike/cafe.svg"
         this.overpassFilter = new And([
-            new Tag("amenity", /^pub|bar|cafe$/),
+            new RegexTag(/^amenity$/, /^pub|bar|cafe$/),
             new Or([
-                new Tag(/^service:bicycle:/, "*"),
-                new Tag("pub", "cycling")
+                new RegexTag(/^service:bicycle:/, /.*/),
+                new RegexTag(/^pub$/,   /^cycling|bicycle$/),
+                new RegexTag(/^theme$/, /^cycling|bicycle$/),
             ])
         ]) 
         
@@ -40,7 +41,14 @@ export default class BikeCafes extends LayerDefinition {
         this.maxAllowedOverlapPercentage = 10;
 
         this.minzoom = 13
-        this.style = this.generateStyleFunction()
+        this.style = () => ({
+            color: "#00bb00",
+            icon: {
+                iconUrl: "./assets/bike/cafe.svg",
+                iconSize: [50, 50],
+                iconAnchor: [25, 50]
+            }
+        });
         this.title = new FixedText(this.to.title)
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
@@ -53,19 +61,5 @@ export default class BikeCafes extends LayerDefinition {
             new CafePump()
         ]
         this.wayHandling = LayerDefinition.WAYHANDLING_CENTER_AND_WAY
-    }
-
-    private generateStyleFunction() {
-        const self = this
-        return function (properties: any) {
-            return {
-                color: "#00bb00",
-                icon: {
-                    iconUrl:  "./assets/bike/cafe.svg",
-                    iconSize: [50, 50],
-                    iconAnchor: [25,50]
-                }
-            }
-        }
     }
 }

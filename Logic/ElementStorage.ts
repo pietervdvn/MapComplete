@@ -48,9 +48,4 @@ export class ElementStorage {
         }
         console.log("Can not find eventsource with id ", elementId);
     }
-
-
-    removeId(oldId: string) {
-        delete this._elements[oldId];
-    }
 }

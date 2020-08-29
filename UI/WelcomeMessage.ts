@@ -1,19 +1,14 @@
 import {UIElement} from "../UI/UIElement";
-import {OsmConnection, UserDetails} from "../Logic/Osm/OsmConnection";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
 import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
-import {VariableUiElement} from "./Base/VariableUIElement";
 import {Utils} from "../Utils";
-import {UIEventSource} from "../Logic/UIEventSource";
 import Combine from "./Base/Combine";
 
 
 export class WelcomeMessage extends UIElement {
-    private readonly layout: Layout;
     private languagePicker: UIElement;
-    private osmConnection: OsmConnection;
 
     private readonly description: UIElement;
     private readonly plzLogIn: UIElement;

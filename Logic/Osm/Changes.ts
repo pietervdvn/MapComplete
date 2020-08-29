@@ -2,11 +2,8 @@
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
-import {UIEventSource} from "../UIEventSource";
-import {OsmConnection} from "./OsmConnection";
 import {OsmNode, OsmObject} from "./OsmObject";
-import {And, Tag, TagsFilter} from "../TagsFilter";
-import {ElementStorage} from "../ElementStorage";
+import {And, Tag, TagsFilter} from "../Tags";
 import {State} from "../../State";
 import {Utils} from "../../Utils";
 
@@ -163,6 +160,8 @@ export class Changes {
         console.log("Beginning upload...");
         // At last, we build the changeset and upload
         State.state.osmConnection.UploadChangeset(
+            State.state.layoutToUse.data,
+            State.state.allElements,
             function (csId) {
 
                 let modifications = "";
@@ -190,11 +189,10 @@ export class Changes {
                 }
 
                 if (modifications.length > 0) {
-
                     changes +=
-                        "<modify>" +
+                        "<modify>\n" +
                         modifications +
-                        "</modify>";
+                        "\n</modify>";
                 }
 
                 changes += "</osmChange>";

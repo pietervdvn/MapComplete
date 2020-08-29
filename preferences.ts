@@ -11,7 +11,7 @@ import {UIElement} from "./UI/UIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
 
 
-const connection = new OsmConnection(false, new UIEventSource<string>(undefined));
+const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "");
 
 let rendered = false;
 

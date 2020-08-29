@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Regex, Tag} from "../../Logic/TagsFilter";
+import {And, RegexTag, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class GrbToFix extends LayerDefinition {
@@ -10,12 +10,12 @@ export class GrbToFix extends LayerDefinition {
         this.name = "grb";
         this.presets = [];
         this.icon = "./assets/star.svg";
-        this.overpassFilter = new Regex("fixme", "GRB");
+        this.overpassFilter = new RegexTag(/fixme/, /.*GRB.*/);
         this.minzoom = 13;
 
 
 
-        this.style = function (tags) {
+        this.style = function () {
             return {
                 icon: {
                     iconUrl: "assets/star.svg",
