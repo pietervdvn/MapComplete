@@ -13,21 +13,12 @@ export default class SharePanel extends UIElement {
         super(undefined);
         this._config = config;
 
-        const json = new VariableUiElement(config.map(config => {
-            return JSON.stringify(config, null, 2)
-                .replace(/\n/g, "<br/>")
-                .replace(/ /g, "&nbsp;");
-        }));
 
 
         this._panel = new Combine([
             "<h2>share</h2>",
             "Share the following link with friends:<br/>",
             new VariableUiElement(liveUrl.map(url => `<a href='${url}' target="_blank">${url}</a>`)),
-            "<h3>Json</h3>",
-            "The json configuration is included for debugging purposes",
-            "<div class='literal-code json'>",
-            json,
             "</div>"
         ]);
     }

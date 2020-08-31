@@ -7,6 +7,8 @@ import GeneralSettings from "./UI/CustomGenerator/GeneralSettings";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import {TabbedComponent} from "./UI/Base/TabbedComponent";
 import AllLayersPanel from "./UI/CustomGenerator/AllLayersPanel";
+import {ShareScreen} from "./UI/ShareScreen";
+import {FromJSON} from "./Customizations/JSON/FromJSON";
 import SharePanel from "./UI/CustomGenerator/SharePanel";
 
 
@@ -46,6 +48,7 @@ const es = new UIEventSource(test);
 const encoded = es.map(config => btoa(JSON.stringify(config)));
 const testUrl = encoded.map(encoded => `./index.html?userlayout=${es.data.id}&test=true#${encoded}`)
 const liveUrl = encoded.map(encoded => `./index.html?userlayout=${es.data.id}#${encoded}`)
+const iframe = liveUrl.map(url => `<iframe src='${url}' width='100%' height='99%' style="box-sizing: border-box" title='Theme Preview'></iframe>`);
 
 
 const currentSetting = new UIEventSource<SingleSetting<any>>(undefined)
@@ -63,7 +66,12 @@ new TabbedComponent([
     },
     {
         header: "<img src='./assets/floppy.svg'>",
-        content: "Save"
+        content: new VariableUiElement(es.map(config => {
+            return JSON.stringify(config, null, 2)
+                .replace(/\n/g, "<br/>")
+                .replace(/ /g, "&nbsp;");
+        }))
+
     },
     {
         header: "<img src='./assets/share.svg'>",
@@ -103,7 +111,7 @@ new Combine([helpText,
 
 // The preview
 new Combine([
-    new VariableUiElement(testUrl.map(testUrl => `<iframe src='${testUrl}' width='100%' height='99%' style="box-sizing: border-box" title='Theme Preview'></iframe>`))
+    new VariableUiElement(iframe)
 ]).AttachTo("bottomright");
 
 

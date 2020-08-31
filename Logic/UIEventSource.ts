@@ -60,7 +60,7 @@ export class UIEventSource<T>{
 
         this.addCallback(update);
         for (const extraSource of extraSources) {
-            extraSource.addCallback(update);
+            extraSource?.addCallback(update);
         }
       
         if(g !== undefined) {
