@@ -8,15 +8,13 @@ import Locale from "./i18n/Locale";
 import {State} from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
-import {UserDetails} from "../Logic/Osm/OsmConnection";
-import {FixedUiElement} from "./Base/FixedUiElement";
 import {Utils} from "../Utils";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
 export class SimpleAddUI extends UIElement {
-    private _addButtons: UIElement[];
+    private readonly _addButtons: UIElement[];
     
     private _loginButton : UIElement;
     
@@ -44,7 +42,7 @@ export class SimpleAddUI extends UIElement {
         this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
         
         this._addButtons = [];
-        this.clss = "add-ui"
+        this.SetClass("add-ui");
 
         
         const self = this;
@@ -67,7 +65,7 @@ export class SimpleAddUI extends UIElement {
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";
                 if (csCount > State.userJourney.tagsVisibleAt) {
-                    tagInfo = preset.tags.map(t => t.asHumanString(false)).join("&");
+                    tagInfo = preset.tags.map(t => t.asHumanString(false, true)).join("&");
                     tagInfo = `<br/><span class='subtle'>${tagInfo}</span>`
                 }
                 const button: UIElement =
@@ -115,7 +113,6 @@ export class SimpleAddUI extends UIElement {
     }
 
     private CreatePoint(tags: Tag[], layerToAddTo: FilteredLayer) {
-        const self = this;
         return () => {
 
             const loc = State.state.bm.LastClickLocation.data;
@@ -139,7 +136,7 @@ export class SimpleAddUI extends UIElement {
             let tagInfo = "";
             const csCount = State.state.osmConnection.userDetails.data.csCount;
             if (csCount > State.userJourney.tagsVisibleAt) {
-                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > State.userJourney.tagsVisibleAndWikiLinked)).join("&");
+                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > State.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
                 tagInfo = `<br/>More information about the preset: ${tagInfo}`
             }
             
@@ -198,7 +195,7 @@ export class SimpleAddUI extends UIElement {
         }
 
 
-        var html = "";
+        let html = "";
         for (const button of this._addButtons) {
             html += button.Render();
         }
