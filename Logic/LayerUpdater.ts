@@ -53,12 +53,11 @@ export class LayerUpdater {
                 console.log("Not loading layer ", layer.id, " as it needs at least ", layer.minzoom, "zoom")
                 continue;
             }
-
             // Check if data for this layer has already been loaded
             let previouslyLoaded = false;
             for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
                 const previousLoadedBounds = this.previousBounds.get(z);
-                if (previousLoadedBounds == undefined) {
+                if (previousLoadedBounds === undefined) {
                     continue;
                 }
                 for (const previousLoadedBound of previousLoadedBounds) {
@@ -89,7 +88,7 @@ export class LayerUpdater {
                 self.runningQuery.setData(false);
 
                 if (geojson.features.length > 0) {
-                    console.log("Got some leftovers: ", geojson)
+                    console.warn("Got some leftovers: ", geojson)
                 }
                 return;
             }

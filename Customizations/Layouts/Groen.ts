@@ -2,7 +2,6 @@ import {NatureReserves} from "../Layers/NatureReserves";
 import {Park} from "../Layers/Park";
 import {Bos} from "../Layers/Bos";
 import {Layout} from "../Layout";
-import {Viewpoint} from "../Layers/Viewpoint";
 
 export class Groen extends Layout {
     
@@ -10,12 +9,12 @@ export class Groen extends Layout {
         super("buurtnatuur",
             ["nl"],
             "Buurtnatuur.be",
-            [new NatureReserves(), new Park(), new Bos(), new Viewpoint()],
+            [new NatureReserves(), new Park(), new Bos(), "viewpoint"],
             10,
             50.8435,
             4.3688,
             "\n" +
-            "<img src='assets/groen.svg' alt='logo-groen' class='logo'> <br />" +
+            "<img src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo'> <br />" +
             "<h3>Breng jouw buurtnatuur in kaart</h3>" +
             "<b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten. \n" +
             "<ul>" +
@@ -52,9 +51,8 @@ export class Groen extends Layout {
             "</small>"
         );
         
-        this.icon = "./assets/groen.svg"
-        this.locationContains = ["buurtnatuur.be"]
-        this.socialImage = "assets/BuurtnatuurFront.jpg"
+        this.icon = "./assets/themes/buurtnatuur/groen_logo.svg"
+        this.socialImage = "assets/themes/buurtnatuur/social_image.jpg"
         this.description = "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje"
         this.enableMoreQuests = false;
         this.enableShareScreen = false

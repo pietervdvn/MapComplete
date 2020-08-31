@@ -17,7 +17,7 @@ export abstract class UIElement extends UIEventSource<string>{
      */
     public static runningFromConsole = false;
 
-    protected constructor(source: UIEventSource<any>) {
+    protected constructor(source: UIEventSource<any> = undefined) {
         super("");
         this.id = "ui-element-" + UIElement.nextId;
         this._source = source;
@@ -146,6 +146,15 @@ export abstract class UIElement extends UIEventSource<string>{
         if (this.clss.indexOf(clss) < 0) {
             this.clss.push(clss);
         }
+        this.Update();
+        return this;
+    }
+
+    public RemoveClass(clss: string): UIElement {
+        if (this.clss.indexOf(clss) >= 0) {
+            this.clss = this.clss.splice(this.clss.indexOf(clss), 1);
+        }
+        this.Update();
         return this;
     }
 

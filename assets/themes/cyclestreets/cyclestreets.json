@@ -11,19 +11,35 @@
   "maintainer": "MapComlete",
   "widenfactor": 0.05,
   "roamingRenderings": [
+    "pictures",
     {
       "question": "Is deze straat een fietsstraat?",
       "mappings": [
         {
-          "then": "Deze straat is een fietsstraat",
-          "if": "cyclestreet=yes&proposed:cyclestreet!~*"
+          "if": {
+            "and": [
+              "cyclestreet=yes",
+              "proposed:cyclestreet="
+            ]
+          },
+          "then": "Deze straat is een fietsstraat"
         },
         {
-          "then": "Deze straat wordt binnenkort een fietsstraat",
-          "if": "proposed:cyclestreet=yes&cyclestreet!~*"
+          "if": {
+            "and": [
+              "cyclestreet=",
+              "proposed:cyclestreet=yes"
+            ]
+          },
+          "then": "Deze straat wordt binnenkort een fietsstraat"
         },
         {
-          "if": "cyclestreet!~*&proposed:cyclestreet!~*",
+          "if": {
+            "and": [
+              "cyclestreet=",
+              "proposed:cyclestreet="
+            ]
+          },
           "then": "Deze straat is geen fietsstraat"
         }
       ]
@@ -31,6 +47,7 @@
     {
       "question": "Wanneer wordt deze straat een fietsstraat?",
       "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+      "condition": "proposed:cyclestreet=yes",
       "freeform": {
         "type": "date",
         "key": "cyclestreet:start_date"
@@ -42,7 +59,12 @@
       "id": "fietsstraat",
       "name": "Fietsstraten",
       "minzoom": 9,
-      "overpassTags": "cyclestreet=yes",
+      "overpassTags": {
+        "and": [
+          "cyclestreet=yes",
+          "traffic_sign="
+        ]
+      },
       "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
       "title": "{name}",
       "icon": "./assets/themes/cyclestreets/F111.svg",
@@ -74,14 +96,14 @@
       "name": "Alle straten",
       "description": "Laag waar je een straat als fietsstraat kan markeren",
       "overpassTags": "highway~residential|tertiary|unclassified",
-      "minzoom": "18",
+      "minzoom": 18,
       "wayHandling": 0,
       "title": {
         "render": "Straat",
         "mappings": [
           {
-            "then": "{name}",
-            "if": "name~*"
+            "if": "name~*",
+            "then": "{name}"
           }
         ]
       },

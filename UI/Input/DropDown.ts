@@ -8,7 +8,9 @@ export class DropDown<T> extends InputElement<T> {
     private readonly _label: UIElement;
     private readonly _values: { value: T; shown: UIElement }[];
 
-    private readonly _value : UIEventSource<T>;
+    private readonly _value: UIEventSource<T>;
+
+    public IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
@@ -17,8 +19,8 @@ export class DropDown<T> extends InputElement<T> {
         this._value = value ?? new UIEventSource<T>(undefined);
         this._label = Translations.W(label);
         this._values = values.map(v => {
-                return {
-                    value: v.value,
+            return {
+                value: v.value,
                     shown: Translations.W(v.shown)
                 }
             }
@@ -36,14 +38,6 @@ export class DropDown<T> extends InputElement<T> {
     GetValue(): UIEventSource<T> {
         return this._value;
     }
-
-    ShowValue(t: T): boolean {
-        if (!this.IsValid(t)) {
-            return false;
-        }
-        this._value.setData(t);
-    }
-
     IsValid(t: T): boolean {
         for (const value of this._values) {
             if (value.value === t) {

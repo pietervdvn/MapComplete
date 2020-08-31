@@ -21,6 +21,7 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayout} from "./Logic/PersonalLayout";
 import {PersonalLayersPanel} from "./Logic/PersonalLayersPanel";
+import Locale from "./UI/i18n/Locale";
 
 export class InitUiElements {
 
@@ -106,6 +107,14 @@ export class InitUiElements {
 
 
     }
+    
+    static CreateLanguagePicker(label: string | UIElement = "") {
+
+        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
+                return {value: lang, shown: lang}
+            }
+        ), Locale.language);
+    }
 
     static InitLayerSelection() {
         const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
@@ -178,6 +187,10 @@ export class InitUiElements {
 
         const state = State.state;
         for (const layer of state.layoutToUse.data.layers) {
+            
+            if(typeof (layer) === "string"){
+                throw "Layer "+layer+" was not substituted";
+            }
 
             const generateInfo = (tagsES, feature) => {
 

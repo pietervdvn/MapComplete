@@ -10,19 +10,16 @@ import Translation from "../UI/i18n/Translation";
 export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
     private readonly _tagsFilter: TagsFilter;
     private readonly _embedded: TagDependantUIElementConstructor;
-    private readonly _invert: boolean;
 
-    constructor(tagsFilter: TagsFilter, embedded: TagDependantUIElementConstructor, invert: boolean = false) {
+    constructor(tagsFilter: TagsFilter, embedded: TagDependantUIElementConstructor) {
         this._tagsFilter = tagsFilter;
         this._embedded = embedded;
-        this._invert = invert;
     }
 
     construct(dependencies): TagDependantUIElement {
         return new OnlyShowIf(dependencies.tags, 
             this._embedded.construct(dependencies),
-            this._tagsFilter,
-            this._invert);
+            this._tagsFilter);
     }
 
     IsKnown(properties: any): boolean {
@@ -51,7 +48,7 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
     }
 
     private Matches(properties: any) : boolean{
-        return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties)) != this._invert;
+        return this._tagsFilter.matches(TagUtils.proprtiesToKV(properties));
     } 
     
 }
@@ -59,22 +56,18 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
 class OnlyShowIf extends UIElement implements TagDependantUIElement {
     private readonly _embedded: TagDependantUIElement;
     private readonly _filter: TagsFilter;
-    private readonly _invert: boolean;
 
     constructor(
         tags: UIEventSource<any>,
         embedded: TagDependantUIElement, 
-        filter: TagsFilter,
-        invert: boolean) {
+        filter: TagsFilter) {
         super(tags);
         this._filter = filter;
         this._embedded = embedded;
-        this._invert = invert;
-
     }
     
     private Matches() : boolean{
-        return this._filter.matches(TagUtils.proprtiesToKV(this._source.data)) != this._invert;
+        return this._filter.matches(TagUtils.proprtiesToKV(this._source.data));
     } 
 
     InnerRender(): string {

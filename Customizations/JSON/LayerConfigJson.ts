@@ -46,6 +46,13 @@ export interface LayerConfigJson {
      * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
      */
     icon?: string | TagRenderingConfigJson;
+
+    /**
+     * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ... 
+     * Default is '40,40,center'
+     */
+    iconSize?: string | TagRenderingConfigJson;
+    
     /**
      * The color for way-elements
      */
@@ -67,8 +74,8 @@ export interface LayerConfigJson {
      * Presets for this layer
      */
     presets?: {
-        tags: string[],
         title: string | any,
+        tags: string[],
         description?: string | any,
     }[],
 

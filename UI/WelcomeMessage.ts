@@ -1,10 +1,10 @@
-import {UIElement} from "../UI/UIElement";
+import {UIElement} from "./UIElement";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
 import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
-import {Utils} from "../Utils";
 import Combine from "./Base/Combine";
+import {InitUiElements} from "../InitUiElements";
 
 
 export class WelcomeMessage extends UIElement {
@@ -19,7 +19,7 @@ export class WelcomeMessage extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this.ListenTo(Locale.language);
-        this.languagePicker = Utils.CreateLanguagePicker(Translations.t.general.pickLanguage);
+        this.languagePicker = InitUiElements.CreateLanguagePicker(Translations.t.general.pickLanguage);
 
         function fromLayout(f: (layout: Layout) => (string | UIElement)): UIElement {
             return Translations.W(f(State.state.layoutToUse.data));

@@ -1,6 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {And, Or, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
+import {FromJSON} from "../JSON/FromJSON";
 
 export class Widths extends LayerDefinition {
 
@@ -38,6 +39,13 @@ export class Widths extends LayerDefinition {
     private readonly _carfree = new And(
         [new Tag("highway", "pedestrian"), new Tag("highway", "living_street"),
         new Tag("access","destination"), new Tag("motor_vehicle", "destination")])
+
+    private readonly _notCarfree =
+        FromJSON.Tag({"and":[
+            "highway!~pedestrian|living_street",
+                "access!~destination",
+                "motor_vehicle!~destination|no"
+            ]});
 
     private calcProps(properties) {
         let parkingStateKnown = true;
@@ -195,7 +203,7 @@ export class Widths extends LayerDefinition {
                     renderTemplate: "{note:width:carriageway}",
                     template: "$$$",
                 }
-            }).OnlyShowIf(this._carfree, true),
+            }).OnlyShowIf(this._notCarfree),
 
 
             new TagRenderingOptions({
@@ -215,7 +223,7 @@ export class Widths extends LayerDefinition {
                     renderTemplate: "{note:width:carriageway}",
                     template: "$$$",
                 }
-            }).OnlyShowIf(this._carfree, true),
+            }).OnlyShowIf(this._notCarfree),
 
 
             new TagRenderingOptions({
@@ -245,7 +253,7 @@ export class Widths extends LayerDefinition {
                         txt: "Tweerichtingsverkeer voor iedereen. Dit gebruikt <b>" + r(2 * this.carWidth + 2 * this.cyclistWidth) + "m</b>"
                     }
                 ]
-            }).OnlyShowIf(this._carfree, true),
+            }).OnlyShowIf(this._notCarfree),
 
             new TagRenderingOptions(
                 {
@@ -263,7 +271,7 @@ export class Widths extends LayerDefinition {
                         {k: new Tag("short",""), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <span class='thanks'>{targetWidth}m</span>"}
                     ]
                 }
-            ).OnlyShowIf(this._carfree, true),
+            ).OnlyShowIf(this._notCarfree),
             
             
             new TagRenderingOptions({

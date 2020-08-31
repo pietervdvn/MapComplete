@@ -14,7 +14,7 @@ export class ValidatedTextField {
         "int": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))},
         "nat": (str) => {str = ""+str; return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0},
         "float": (str) => !isNaN(Number(str)),
-        "pfloat": (str) => !isNaN(Number(str)) && Number(str) > 0,
+        "pfloat": (str) => !isNaN(Number(str)) && Number(str) >= 0,
         "email": (str) => EmailValidator.validate(str),
         "url": (str) => str,
         "phone": (str, country) => {
@@ -32,6 +32,33 @@ export class ValidatedTextField {
 
 export class TextField<T> extends InputElement<T> {
 
+    public static StringInput(textArea: boolean = false): TextField<string> {
+        return new TextField<string>({
+            toString: str => str,
+            fromString: str => str,
+            textArea: textArea
+        });
+    }
+    
+    public static NumberInput(type: string = "int", extraValidation: (number: Number) => boolean = undefined) : TextField<number>{
+        const isValid = ValidatedTextField.inputValidation[type];
+        extraValidation = extraValidation ?? (() => true)
+        return new TextField({
+            fromString: str => {
+                if(!isValid(str)){
+                    return undefined;
+                }
+                const n = Number(str);
+                if(!extraValidation(n)){
+                    return undefined;
+                }
+                return n;
+            },
+            toString: num => ""+num,
+            placeholder: type
+        });
+    }
+
 
     private readonly value: UIEventSource<string>;
     private readonly mappedValue: UIEventSource<T>;
@@ -40,7 +67,8 @@ export class TextField<T> extends InputElement<T> {
     private readonly _fromString?: (string: string) => T;
     private readonly _toString: (t: T) => string;
     private readonly startValidated: boolean;
-
+    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _isArea: boolean;
 
     constructor(options: {
         /**
@@ -61,11 +89,12 @@ export class TextField<T> extends InputElement<T> {
         fromString: (string: string) => T,
         value?: UIEventSource<T>,
         startValidated?: boolean,
+        textArea?: boolean
     }) {
         super(undefined);
         const self = this;
         this.value = new UIEventSource<string>("");
-
+        this._isArea = options.textArea ?? false;
         this.mappedValue = options?.value ?? new UIEventSource<T>(undefined);
         this.mappedValue.addCallback(() => self.InnerUpdate());
 
@@ -98,6 +127,11 @@ export class TextField<T> extends InputElement<T> {
         return this.mappedValue;
     }
     InnerRender(): string {
+        
+        if(this._isArea){
+            return `<textarea id="text-${this.id}" class="form-text-field" rows="4" cols="50" style="max-width: 100%;box-sizing: border-box"></textarea>`
+        }
+        
         return `<form onSubmit='return false' class='form-text-field'>` +
             `<input type='text' placeholder='${this._placeholder.InnerRender()}' id='text-${this.id}'>` +
             `</form>`;
@@ -112,7 +146,7 @@ export class TextField<T> extends InputElement<T> {
         this.mappedValue.addCallback((data) => {
             field.className = data !== undefined ? "valid" : "invalid";
         });
-        
+
         field.className = this.mappedValue.data !== undefined ? "valid" : "invalid";
 
         const self = this;
@@ -120,6 +154,9 @@ export class TextField<T> extends InputElement<T> {
             // @ts-ignore
             self.value.setData(field.value);
         };
+
+        field.addEventListener("focusin", () => self.IsSelected.setData(true));
+        field.addEventListener("focusout", () => self.IsSelected.setData(false));
 
         field.addEventListener("keyup", function (event) {
             if (event.key === "Enter") {

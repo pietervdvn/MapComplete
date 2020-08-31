@@ -81,8 +81,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
         this.options = options;
     }
 
-    OnlyShowIf(tagsFilter: TagsFilter, invert: boolean = false): TagDependantUIElementConstructor {
-        return new OnlyShowIfConstructor(tagsFilter, this, invert);
+        OnlyShowIf(tagsFilter: TagsFilter): TagDependantUIElementConstructor {
+        return new OnlyShowIfConstructor(tagsFilter, this);
     }
 
 

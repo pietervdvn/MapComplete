@@ -46,14 +46,13 @@ new T([
             freeform: {
                 key: "name",
             },
-            fixedInputField: {
-                mappings: [
-                    {
-                        if: "noname=yes",
-                        "then": "Has no name"
-                    }
-                ]
-            },
+
+            mappings: [
+                {
+                    if: "noname=yes",
+                    "then": "Has no name"
+                }
+            ],
             condition: "x="
         });
 

@@ -2,7 +2,6 @@ import {Layout} from "../Layout";
 import {Birdhide} from "../Layers/Birdhide";
 import {InformationBoard} from "../Layers/InformationBoard";
 import {NatureReserves} from "../Layers/NatureReserves";
-import {DrinkingWater} from "../Layers/DrinkingWater";
 
 export class Natuurpunt extends Layout{
     constructor() {
@@ -10,7 +9,7 @@ export class Natuurpunt extends Layout{
             "natuurpunt",
             ["nl"],
             "De natuur in",
-            [new Birdhide(), new InformationBoard(), new NatureReserves(true), new DrinkingWater()],
+            [new Birdhide(), new InformationBoard(), new NatureReserves(true), "drinking_water"],
             12,
             51.20875,
             3.22435,

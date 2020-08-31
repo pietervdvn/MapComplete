@@ -223,12 +223,8 @@ export class FilteredLayer {
                 } else {
                     if(style.icon.iconSize === undefined){
                         style.icon.iconSize = [50,50]
-                    }if(style.icon.iconAnchor === undefined){
-                        style.icon.iconAnchor = [style.icon.iconSize[0] / 2,style.icon.iconSize[1]]
                     }
-                    if (style.icon.popupAnchor === undefined) {
-                        style.icon.popupAnchor = [0, 8 - (style.icon.iconSize[1])]
-                    }
+                    
                     marker = L.marker(latLng, {
                         icon: new L.icon(style.icon),
                     });

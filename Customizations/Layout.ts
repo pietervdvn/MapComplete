@@ -18,7 +18,7 @@ export class Layout {
     public changesetMessage: string;
     public socialImage: string = "";
     
-    public layers: LayerDefinition[];
+    public layers: (LayerDefinition | string)[];
     public welcomeMessage: UIElement;
     public gettingStartedPlzLogin: UIElement;
     public welcomeBackMessage: UIElement;
@@ -63,7 +63,7 @@ export class Layout {
         id: string,
         supportedLanguages: string[],
         title: UIElement | string,
-        layers: LayerDefinition[],
+        layers: (LayerDefinition | string)[],
         startzoom: number,
         startLat: number,
         startLon: number,

@@ -8,6 +8,7 @@ import {State} from "../State";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {SubtleButton} from "./Base/SubtleButton";
+import {InitUiElements} from "../InitUiElements";
 
 /**
  * Handles and updates the user badge
@@ -23,7 +24,7 @@ export class UserBadge extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
-        this._languagePicker = Utils.CreateLanguagePicker();
+        this._languagePicker = InitUiElements.CreateLanguagePicker();
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
             .SetClass("userbadge-login")

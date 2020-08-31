@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link href="index.css" rel="stylesheet"/>
     <title>Custom Theme Generator for Mapcomplete</title>
 
     <style type="text/css">
-        #maindiv {
+        #left {
             position: absolute;
             width: 50vw;
             height: 100vh;
@@ -14,14 +14,37 @@
             overflow-y: auto;
         }
 
-        #preview {
+        #right {
             position: absolute;
             width: 50vw;
-            height: 100vh;
+            height: 35vh;
             right: 0;
             top: 0;
-            word-break: break-all;
             overflow-y: auto;
+        }
+        
+        #bottomright {
+            position: absolute;
+            width: 50vw;
+            height: 65vh;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+        
+        .icon-preview {
+            max-width: 2em;
+            max-height: 2em ;
+        }
+        
+        .image-large-preview {
+            max-width: 100%;
+            max-height: 30vh;
+        }
+        
+        .json{
+            width:100%;
+            box-sizing: border-box;
         }
         
         .bordered {
@@ -29,6 +52,12 @@
             display:block;
             padding: 0.5em;
             border-radius: 0.5em;
+        }
+        
+        .tag-input-row {
+            display: block ruby;
+            box-sizing: border-box;
+            margin-right: 2em;
         }
         
         body {
@@ -39,11 +68,11 @@
 
 </head>
 <body>
-<div id="maindiv">
-    <h1>Create your own theme</h1>
-    <div id="layoutCreator"></div>
+<div id="left">
+    'left' not attached
 </div>
-<div id="preview">'preview' not attached</div>
+<div id="right">'right' not attached</div>
+<div id="bottomright">'bottomright' not attached</div>
 <script src="./customGenerator.ts"></script>
 </body>
 </html>

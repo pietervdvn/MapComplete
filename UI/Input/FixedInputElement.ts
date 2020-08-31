@@ -4,8 +4,9 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class FixedInputElement<T> extends InputElement<T> {
-    private rendering: UIElement;
-    private value: UIEventSource<T>;
+    private readonly rendering: UIElement;
+    private readonly value: UIEventSource<T>;
+    public readonly IsSelected : UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     constructor(rendering: UIElement | string, value: T) {
         super(undefined);
@@ -16,11 +17,6 @@ export class FixedInputElement<T> extends InputElement<T> {
     GetValue(): UIEventSource<T> {
         return this.value;
     }
-    
-    ShowValue(t: T): boolean {
-        return false;
-    }
-
     InnerRender(): string {
         return this.rendering.Render();
     }
@@ -28,7 +24,14 @@ export class FixedInputElement<T> extends InputElement<T> {
     IsValid(t: T): boolean {
         return t == this.value.data;
     }
-    
-    
+
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        const self = this;
+        htmlElement.addEventListener("mouseenter", () => self.IsSelected.setData(true));
+        htmlElement.addEventListener("mouseout", () => self.IsSelected.setData(false))
+
+    }
+
 
 }

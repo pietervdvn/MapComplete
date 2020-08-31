@@ -201,8 +201,15 @@ export class State {
                         continue;
                     }
                     try {
+                        const layout = FromJSON.FromBase64(customLayout.data);
+                        if(layout.id === undefined){
+                            // This is an old style theme
+                            // We remove it
+                            customLayout.setData(undefined);
+                            continue;
+                        }
                         installedThemes.push({
-                            layout: FromJSON.FromBase64(customLayout.data),
+                            layout: layout,
                             definition: customLayout.data
                         });
                     } catch (e) {

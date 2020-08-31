@@ -17,6 +17,10 @@ export class SubtleButton extends UIElement{
     }
 
     InnerRender(): string {
+        
+        if(this.message.IsEmpty()){
+            return "";
+        }
 
         if(this.linkTo != undefined){
             return new Combine([

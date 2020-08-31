@@ -23,6 +23,10 @@ export class MoreScreen extends UIElement {
         if (layout === undefined) {
             return undefined;
         }
+        if(layout.id === undefined){
+            console.error("ID is undefined for layout",layout);
+            return undefined;
+        }
         if (layout.hideFromOverview) {
             if (State.state.osmConnection.GetPreference("hidden-theme-" + layout.id + "-enabled").data !== "true") {
                 return undefined;

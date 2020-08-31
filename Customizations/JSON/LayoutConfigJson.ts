@@ -83,12 +83,12 @@ export interface LayoutConfigJson {
      * In order to prevent them to do too much damage, all the overpass-tags of the layers are taken and combined as OR.
      * These tag renderings will only show up if the object matches this filter.
      */
-    roamingRenderings?: TagRenderingConfigJson[],
+    roamingRenderings?: (TagRenderingConfigJson | string)[],
     
     /**
      * The layers to display
      */
-    layers: LayerConfigJson[],
+    layers: (LayerConfigJson | string)[],
 
  
 

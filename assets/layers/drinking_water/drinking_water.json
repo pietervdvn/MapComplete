@@ -1,0 +1,58 @@
+{
+  "id": "drinking_water",
+  "name": {
+    "en": "Drinking water",
+    "nl": "Drinkbaar water",
+    "fr": "Eau potable",
+    "gl": "Auga potábel"
+  },
+  "title": {
+    "en": "Drinking water",
+    "nl": "Drinkbaar water",
+    "fr": "Eau potable",
+    "gl": "Auga potábel"
+  },
+  "icon": "./assets/layers/drinking_water/drinking_water.svg",
+  "iconSize": "40,40,bottom",
+  "overpassTags": "amenity=drinking_water",
+  "minzoom": 13,
+  "wayHandling": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "Drinking water",
+        "nl": "Drinkbaar water",
+        "fr": "Eau potable",
+        "gl": "Auga potábel"
+      },
+      "tags": ["amenity=drinking_water"]
+    }
+  ],
+  "color": "#00bb00",
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "How easy is it to fill water bottles?",
+        "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?"
+      },
+      "mappings": [
+        {
+          "if": "bottle=yes",
+          "then": {
+            "en": "It is easy to refill water bottles",
+            "nl": "Een drinkbus bijvullen gaat makkelijk"
+          }
+        },
+        {
+          "if": "bottle=no",
+          "then": {
+            "en": "Water bottles may not fit",
+            "nl": "Een drinkbus past moeilijk"
+          }
+        }
+      ]
+    }
+  ]
+}
+

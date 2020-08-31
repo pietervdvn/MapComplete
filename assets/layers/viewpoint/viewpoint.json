@@ -1,0 +1,46 @@
+{
+  "id": "viewpoint",
+  "name": {
+    "en": "Viewpoint",
+    "nl": "Uitzicht"
+  },
+  "description": {
+    "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
+    "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past"
+  },
+  "overpassTags": "tourism=viewpoint",
+  "minzoom": 14,
+  "icon": "./assets/layers/viewpoint/viewpoint.svg",
+  "iconSize": "20,20,center",
+  "color": "#ffffff",
+  "width": "5",
+  "wayhandling": 2,
+  "presets": [
+    {
+      "title": {
+        "en": "Viewpoint",
+        "nl": "Uitzicht"
+      },
+      "tags": [
+        "tourism=viewpoint"
+      ]
+    }
+  ],
+  "title": {
+    "en": "Viewpoint",
+    "nl": "Uitzicht"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
+        "en": "Do you want to add a description?"
+      },
+      "render": "{description}",
+      "freeform": {
+        "key": "description"
+      }
+    }
+  ]
+}

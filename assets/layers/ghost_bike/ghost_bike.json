@@ -1,0 +1,83 @@
+{
+  "id": "ghost_bike",
+  "name": {
+    "en": "Ghost bikes",
+    "nl": "Witte Fietsen"
+  },
+  "overpassTags": "memorial=ghost_bike",
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "en": "Ghost bike",
+      "nl": "Witte Fiets"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Ghost bike in the remembrance of {name}",
+          "nl": "Witte fiets ter nagedachtenis van {name}"
+        }
+      }
+    ]
+  },
+  "icon": "./assets/layers/ghost_bike/ghost_bike.svg",
+  "iconSize": "40,40,bottom",
+  "width": "5",
+  "color": "#000",
+  "wayHandling": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "Ghost bike",
+        "nl": "Witte fiets"
+      },
+      "tags": [
+        "historic=memorial",
+        "memorial=ghost_bike"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "render": {
+        "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
+        "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval."
+      }
+    },
+    "images",
+    {
+      "question": {
+        "en": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+        "nl": "Aan wie is deze witte fiets een eerbetoon??<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>"
+      },
+      "render": {
+        "en": "In remembrance of {name}",
+        "nl": "Ter nagedachtenis van {name}"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "No name is marked on the bike",
+            "nl": "De naam is niet aangeduid op de fiets"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "On what webpage can one find more information about the Ghost bike or the accident?",
+        "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?"
+      },
+      "render": {
+        "en": "<a href='{source}' target='_blank'>More information is available</a>",
+        "nl": "<a href='{source}' target='_blank'>Meer informatie</a>"
+      },
+      "freeform": {
+        "type": "url",
+        "key": "source"
+      }
+    }
+  ]
+}

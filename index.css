@@ -1,78 +1,78 @@
     html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
 
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
 
-form {
-    display: inline;
-}
+    form {
+        display: inline;
+    }
 
-.invalid {
-    box-shadow: 0 0 10px #ff5353;
-}
+    .invalid {
+        box-shadow: 0 0 10px #ff5353;
+    }
 
-.shadow {
-    box-shadow: 0 0 10px #00000066;
-}
+    .shadow {
+        box-shadow: 0 0 10px #00000066;
+    }
 
 
-#leafletDiv {
-    height: 100%;
-}
+    #leafletDiv {
+        height: 100%;
+    }
 
-#geolocate-button {
-    position: absolute;
-    bottom: 25px;
-    right: 50px;
-    z-index: 999; /*Just below leaflets zoom*/
-    background-color: white;
-    border-radius: 5px;
-    border: solid 2px #0005;
-    cursor: pointer;
-    width: 43px;
-    height: 43px;
-    display: none; /*Hidden by default, only visible on mobile*/
-}
+    #geolocate-button {
+        position: absolute;
+        bottom: 25px;
+        right: 50px;
+        z-index: 999; /*Just below leaflets zoom*/
+        background-color: white;
+        border-radius: 5px;
+        border: solid 2px #0005;
+        cursor: pointer;
+        width: 43px;
+        height: 43px;
+        display: none; /*Hidden by default, only visible on mobile*/
+    }
 
-#help-button-mobile {
-    display: none;
-}
+    #help-button-mobile {
+        display: none;
+    }
 
-#geolocate-button img{
-    width: 31px;
-    height:31px;
-    margin: 6px;
-}
+    #geolocate-button img {
+        width: 31px;
+        height: 31px;
+        margin: 6px;
+    }
 
-#geolocate-button > .uielement {
-    display: block;
-}
+    #geolocate-button > .uielement {
+        display: block;
+    }
 
-.selected-element {
-    fill: black
-}
+    .selected-element {
+        fill: black
+    }
 
-/**************** GENERIC ****************/
+    /**************** GENERIC ****************/
 
-.uielement {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+    .uielement {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-.alert {
-    background-color: #fee4d1;
-    font-weight: bold;
-    border-radius: 1em;
-    padding: 0.3em;
-    margin: 0.25em;
+    .alert {
+        background-color: #fee4d1;
+        font-weight: bold;
+        border-radius: 1em;
+        padding: 0.3em;
+        margin: 0.25em;
     text-align: center;
     padding-top: 0.15em;
     padding-bottom: 0.15em;
@@ -1298,62 +1298,78 @@ form {
     align-items: center;
     text-decoration: none;
     color: black;
-
 }
+    
+    
+    .subtle-button a {
+        text-decoration: unset !important;
+        color: unset !important;
+        display: block ruby;
+    }
 
-.subtle-button a {
-    text-decoration: unset !important;
-    color:unset !important;
-    display: block ruby;
-}
+    .round-button .subtle-button {
+        width: 2em;
+        height: 2em;
+        border-radius: 1em;
+        display: block !important;
+        margin: 0;
+        padding: 0.5em;
+    }
+
+    .small-button .subtle-button {
+        height: 2em;
+    }
+
+    .small-button .subtle-button img {
+        max-height: 1.8em;
+    }
+
+    .subtle-button img {
+        max-width: 3em;
+        max-height: 3em;
+        margin-right: 0.5em;
+        padding: 0.5em;
+    }
 
 
-.subtle-button img{
-    max-width: 3em;
-    max-height: 3em;
-    margin-right: 0.5em;
-    padding: 0.5em;
-}
+    .add-ui {
+        font-size: large;
+    }
+
+    .add-popup-all-buttons {
+        max-height: 50vh;
+        display: inline-block;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    .custom-layer-panel {
+
+    }
 
 
-.add-ui {
-    font-size: large;
-}
+    .custom-layer-panel-header {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        font-size: large;
+        margin: 0.5em;
+        background-color: white;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
 
-.add-popup-all-buttons{
-    max-height: 50vh;
-    display: inline-block;
-    overflow-y: auto;
-    width: 100%;
-}
+    .custom-layer-panel-header-img img {
+        max-width: 3em;
+        max-height: 3em;
+        padding: 0.5em;
+    }
 
-.custom-layer-panel {
-
-}
-
-
-.custom-layer-panel-header {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    font-size: large;
-    margin: 0.5em;
-    background-color: white;
-    justify-content: flex-start;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
-
-.custom-layer-panel-header-img img {
-    max-width: 3em;
-    max-height: 3em;
-    padding: 0.5em;
-}
-
-.custom-layer-panel-header-img {
-    min-width: 4em;
-    height: 4em;
+    .custom-layer-panel-header-img {
+        min-width: 4em;
+        height: 4em;
 
 }
 

@@ -8,17 +8,18 @@ export class UIEventSource<T>{
     }
 
 
-    public addCallback(callback: ((latestData : T) => void)) {
+    public addCallback(callback: ((latestData : T) => void)) : UIEventSource<T>{
         this._callbacks.push(callback);
         return this;
     }
 
-    public setData(t: T): void {
+    public setData(t: T): UIEventSource<T> {
         if (this.data === t) {
             return;
         }
         this.data = t;
         this.ping();
+        return this;
     }
 
     public ping(): void {
@@ -55,7 +56,6 @@ export class UIEventSource<T>{
         
         const update = function () {
             newSource.setData(f(self.data));
-            newSource.ping();
         }
 
         this.addCallback(update);

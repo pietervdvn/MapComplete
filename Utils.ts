@@ -1,7 +1,4 @@
 import {UIElement} from "./UI/UIElement";
-import {DropDown} from "./UI/Input/DropDown";
-import {State} from "./State";
-import Locale from "./UI/i18n/Locale";
 
 export class Utils {
 
@@ -25,7 +22,7 @@ export class Utils {
     }
 
     static DoEvery(millis: number, f: (() => void)) {
-        if (State.runningFromConsole) {
+        if (UIElement.runningFromConsole) {
             return;
         }
         window.setTimeout(
@@ -58,14 +55,6 @@ export class Utils {
         return ls;
     }
 
-    public static CreateLanguagePicker(label: string | UIElement = "") {
-
-        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
-                return {value: lang, shown: lang}
-            }
-        ), Locale.language);
-    }
-    
     public static EllipsesAfter(str : string, l : number = 100){
         if(str.length <= l){
             return str;
@@ -95,6 +84,14 @@ export class Utils {
             t[k] = b[k];
         }
         return t;
+    }
+    
+    public static SplitFirst(a: string, sep: string):string[]{
+        const index = a.indexOf(sep);
+        if(index < 0){
+            return [a];
+        }
+        return [a.substr(0, index), a.substr(index+sep.length)];
     }
 
 }

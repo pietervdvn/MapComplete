@@ -760,14 +760,6 @@ export default class Translations {
                     fr: "{name} (vend des vélos)",
                     gl: "{name} (vende bicicletas)"
                 }),
-            },
-            drinking_water: {
-                title: new T({
-                    en: 'Drinking water',
-                    nl: "Drinkbaar water",
-                    fr: "Eau potable",
-                    gl: "Auga potábel"
-                })
             }
         },
 

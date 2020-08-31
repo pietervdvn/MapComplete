@@ -15,13 +15,9 @@ export class TabbedComponent extends UIElement {
             this.headers.push(Translations.W(element.header).onClick(() => self._source.setData(i)));
             this.content.push(Translations.W(element.content));
         }
-
-
     }
 
     InnerRender(): string {
-        let html = "";
-
         let headerBar = "";
         for (let i = 0; i < this.headers.length; i++) {
             let header = this.headers[i];
@@ -36,10 +32,11 @@ export class TabbedComponent extends UIElement {
         headerBar = "<div class='tabs-header-bar'>" + headerBar + "</div>"
 
         const content = this.content[this._source.data];
-        return headerBar + "<div class='tab-content'>" + content.Render() + "</div>";
+        return headerBar + "<div class='tab-content'>" + (content?.Render() ?? "") + "</div>";
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
+        
         super.InnerUpdate(htmlElement);
         this.content[this._source.data].Update();
     }

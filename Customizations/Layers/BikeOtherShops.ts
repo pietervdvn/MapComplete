@@ -24,7 +24,7 @@ export default class BikeOtherShops extends LayerDefinition {
         this.name = this.to.name
         this.icon = "./assets/bike/non_bike_repair_shop.svg"
         this.overpassFilter = new And([
-            new RegexTag(/^shop$/, /^bicycle$/, true),
+            new RegexTag("shop", /^bicycle$/, true),
             new RegexTag(/^service:bicycle:/, /.*/),
         ])
         this.presets = []

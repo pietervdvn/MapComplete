@@ -18,15 +18,14 @@ export class RegexTag extends TagsFilter {
     private readonly value: RegExp;
     private readonly invert: boolean;
 
-    constructor(key: RegExp, value: RegExp, invert: boolean = false) {
+    constructor(key: string | RegExp, value: RegExp, invert: boolean = false) {
         super();
-        this.key = key;
+        this.key = typeof (key) === "string" ? new RegExp(key) : key;
         this.value = value;
         this.invert = invert;
     }
 
     asOverpass(): string[] {
-        
         return [`['${this.key.source}'${this.invert ? "!" : ""}~'${this.value.source}']`];
     }
 
@@ -45,7 +44,7 @@ export class RegexTag extends TagsFilter {
     }
     
     asHumanString() {
-        return `${this.key}${this.invert ? "!" : ""}~${this.value}`;
+        return `${this.key.source}${this.invert ? "!" : ""}~${this.value.source}`;
     }
 }
 
@@ -64,7 +63,7 @@ export class Tag extends TagsFilter {
         if(value === undefined){
             throw "Invalid value";
         }
-        if(value === undefined || value === "*"){
+        if(value === "*"){
          console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}!~*`)
         }
     }
