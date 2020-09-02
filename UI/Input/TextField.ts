@@ -65,13 +65,17 @@ export class TextField<T> extends InputElement<T> {
         });
     }
     
-    public static KeyInput(): TextField<string>{
+    public static KeyInput(allowEmpty : boolean = false): TextField<string>{
         return new TextField<string>({
             placeholder: "key",
             fromString: str => {
                 if (str?.match(/^[a-zA-Z][a-zA-Z0-9:_-]*$/)) {
                     return str;
                 }
+                if(str === "" && allowEmpty){
+                    return "";
+                }
+                
                 return undefined
             },
             toString: str => str

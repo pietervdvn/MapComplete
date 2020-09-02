@@ -29,7 +29,6 @@ export class FromJSON {
             FromJSON.Layer(drinkingWater),
             FromJSON.Layer(ghostbikes),
             FromJSON.Layer(viewpoint),
-
         ];
 
         for (const layer of sharedLayersList) {
@@ -44,7 +43,6 @@ export class FromJSON {
     }
 
     public static LayoutFromJSON(json: LayoutConfigJson): Layout {
-        console.log("Parsing ", json.id)
         const tr = FromJSON.Translation;
 
         const layers = json.layers.map(FromJSON.Layer);
@@ -99,7 +97,7 @@ export class FromJSON {
     public static TagRenderingWithDefault(json: TagRenderingConfigJson | string, propertyName, defaultValue: string): TagDependantUIElementConstructor {
         if (json === undefined) {
             if(defaultValue !== undefined){
-                console.warn(`Using default value ${defaultValue} for  ${propertyName}`)
+                console.log(`Using default value ${defaultValue} for  ${propertyName}`)
                 return FromJSON.TagRendering(defaultValue);
             }
             throw `Tagrendering ${propertyName} is undefined...`
@@ -138,7 +136,7 @@ export class FromJSON {
         let template = FromJSON.Translation(json.render);
 
         let freeform = undefined;
-        if (json.freeform?.key) {
+        if (json.freeform?.key && json.freeform.key !== "") {
             // Setup the freeform
             if (template === undefined) {
                 console.error("Freeform.key is defined, but render is not. This is not allowed.", json)
@@ -171,6 +169,7 @@ export class FromJSON {
         );
         
         if(template === undefined && (mappings === undefined || mappings.length === 0)){
+            console.error("Empty tagrendering detected: no mappings nor template given", json)
             throw "Empty tagrendering detected: no mappings nor template given"
         }
 
@@ -182,7 +181,6 @@ export class FromJSON {
         });
 
         if (json.condition) {
-            console.log("Applying confition ", json.condition)
             return rendering.OnlyShowIf(FromJSON.Tag(json.condition));
         }
 
@@ -205,7 +203,6 @@ export class FromJSON {
                 if (split[1] === "*") {
                     split[1] = ".*"
                 }
-                console.log(split)
                 return new RegexTag(
                     split[0],
                     new RegExp("^" + split[1] + "$"),
@@ -244,16 +241,6 @@ export class FromJSON {
         }
     }
 
-    private static Title(json: string | Map<string, string> | TagRenderingConfigJson): TagDependantUIElementConstructor {
-        if ((json as TagRenderingConfigJson).render !== undefined) {
-            return FromJSON.TagRendering((json as TagRenderingConfigJson));
-        } else if (typeof (json) === "string") {
-            return new FixedText(Translations.WT(json));
-        } else {
-            return new FixedText(FromJSON.Translation(json as Map<string, string>));
-        }
-    }
-
     public static Layer(json: LayerConfigJson | string): LayerDefinition {
 
         if (typeof (json) === "string") {
@@ -265,8 +252,7 @@ export class FromJSON {
             throw "Layer not yet loaded..."
         }
 
-
-        console.log("Parsing ", json.name);
+        console.log("Parsing layer", json)
         const tr = FromJSON.Translation;
         const overpassTags = FromJSON.Tag(json.overpassTags);
         const icon = FromJSON.TagRenderingWithDefault(json.icon, "layericon", "./assets/bug.svg");
@@ -328,7 +314,7 @@ export class FromJSON {
                 icon: icon.GetContent(renderTags).txt,
                 overpassFilter: overpassTags,
 
-                title: FromJSON.Title(json.title),
+                title: FromJSON.TagRendering(json.title),
                 minzoom: json.minzoom,
                 presets: presets,
                 elementsToShow: json.tagRenderings?.map(FromJSON.TagRendering) ?? [],

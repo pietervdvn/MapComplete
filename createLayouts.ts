@@ -3,9 +3,6 @@ import {UIElement} from "./UI/UIElement";
 UIElement.runningFromConsole = true;
 
 import {TagRendering} from "./Customizations/TagRendering";
-
-TagRendering.injectFunction();
-
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
@@ -13,7 +10,8 @@ import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Translations from "./UI/i18n/Translations";
-import {TagRenderingOptions} from "./Customizations/TagRenderingOptions";
+
+TagRendering.injectFunction();
 
 
 console.log("Building the layouts")
@@ -24,7 +22,7 @@ function enc(str: string): string {
 }
 
 function validate(layout: Layout) {
-    console.log("Validationg ", layout.name)
+    console.log("Validationg ", layout.id)
     const translations: Translation[] = [];
     const queue: any[] = [layout]
 
@@ -61,7 +59,7 @@ function validate(layout: Layout) {
         }
     }
 
-    console.log("Translation completenes for", layout.name);
+    console.log("Translation completenes for", layout.id);
     for (const ln of layout.supportedLanguages) {
         const amiss = missing[ln];
         const ok = present[ln];
@@ -109,7 +107,7 @@ function createIcon(iconPath: string, size: number) {
 }
 
 function createManifest(layout: Layout, relativePath: string) {
-    const name = layout.name;
+    const name = layout.id;
 
     const icons = [];
 
@@ -133,7 +131,7 @@ function createManifest(layout: Layout, relativePath: string) {
         })
     } else {
 
-        throw "Icon is not an svg for " + layout.name
+        throw "Icon is not an svg for " + layout.id
     }
     const ogTitle = Translations.W(layout.title).InnerRender();
     const ogDescr = Translations.W(layout.description ?? "").InnerRender();
@@ -141,7 +139,7 @@ function createManifest(layout: Layout, relativePath: string) {
     const manif = {
         name: name,
         short_name: ogTitle,
-        start_url: `${relativePath}/${layout.name.toLowerCase()}.html`,
+        start_url: `${relativePath}/${layout.id.toLowerCase()}.html`,
         display: "standalone",
         background_color: "#fff",
         description: ogDescr,
@@ -156,17 +154,17 @@ function createLandingPage(layout: Layout) {
 
     Locale.language.setData(layout.supportedLanguages[0]);
 
-    const ogTitle = Translations.W(layout.title).InnerRender();
-    const ogDescr = Translations.W(layout.description ?? "").InnerRender();
+    const ogTitle = Translations.W(layout.title)?.InnerRender();
+    const ogDescr = Translations.W(layout.description ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
     const ogImage = layout.socialImage;
 
     const og = `
-     <meta property="og:image" content="${ogImage}">
+    <meta property="og:image" content="${ogImage ?? './assets/add.svg'}">
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
     let output = template
-        .replace(`./manifest.manifest`, `./${enc(layout.name)}.webmanifest`)
+        .replace(`./manifest.manifest`, `./${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(`<link rel="icon" href="assets/add.svg" sizes="any" type="image/svg+xml">`,
             `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`);
@@ -199,12 +197,12 @@ for (const layoutName in all) {
     console.log("Generating manifest")
     const manif = JSON.stringify(createManifest(layout, "/MapComplete"));
 
-    const manifestLocation = encodeURIComponent(layout.name.toLowerCase()) + ".webmanifest";
+    const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
     writeFile(manifestLocation, manif, err);
 
     const landing = createLandingPage(layout);
-    console.log("Generating html-file for ", layout.name)
-    writeFile(enc(layout.name) + ".html", landing, err)
+    console.log("Generating html-file for ", layout.id)
+    writeFile(enc(layout.id) + ".html", landing, err)
     console.log("done")
 }
 

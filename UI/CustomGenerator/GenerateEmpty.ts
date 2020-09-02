@@ -11,6 +11,7 @@ export class GenerateEmpty {
             overpassTags: {and: [""]},
             title: undefined,
             description: {},
+            tagRenderings: []
         }
     }
 
@@ -47,10 +48,10 @@ export class GenerateEmpty {
             socialImage: "",
             layers: [{
                 id: "testlayer",
-                name: "Testing layer",
+                name: {en:"Testing layer"},
                 minzoom: 15,
                 overpassTags: {and: ["highway=residential"]},
-                title: "Some Title",
+                title: {},
                 description: {"en": "Some Description"},
                 icon: {render: {en: "./assets/pencil.svg"}},
                 width: {render: {en: "5"}},

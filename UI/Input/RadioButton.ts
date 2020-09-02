@@ -1,5 +1,6 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import {Utils} from "../../Utils";
 
 export class RadioButton<T> extends InputElement<T> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
@@ -15,7 +16,7 @@ export class RadioButton<T> extends InputElement<T> {
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super(undefined);
-        this._elements = elements;
+        this._elements = Utils.NoNull(elements);
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
 

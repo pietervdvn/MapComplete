@@ -56,7 +56,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
                 "Only show this tag rendering if these tags matches. Optional field.<br/>Note that the Overpass-tags are already always included in this object"),
 
             "<h3>Freeform key</h3>",
-            setting(TextField.KeyInput(), ["freeform", "key"], "Freeform key<br/>",
+            setting(TextField.KeyInput(true), ["freeform", "key"], "Freeform key<br/>",
                 "If specified, the rendering will search if this key is present." +
                 "If it is, the rendering above will be used to display the element.<br/>" +
                 "The rendering will go into question mode if <ul><li>this key is not present</li><li>No single mapping matches</li><li>A question is given</li>"),

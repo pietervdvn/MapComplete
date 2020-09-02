@@ -23,6 +23,7 @@ export default class HelpText extends UIElement {
                 )
             ))
             .ListenTo(currentSetting)
+            .SetClass("small-button")
             .onClick(() => currentSetting.setData(undefined));
 
 

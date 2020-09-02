@@ -6,12 +6,12 @@
     "fr": "Eau potable",
     "gl": "Auga potábel"
   },
-  "title": {
+  "title":{"render": {
     "en": "Drinking water",
     "nl": "Drinkbaar water",
     "fr": "Eau potable",
     "gl": "Auga potábel"
-  },
+  }},
   "icon": "./assets/layers/drinking_water/drinking_water.svg",
   "iconSize": "40,40,bottom",
   "overpassTags": "amenity=drinking_water",

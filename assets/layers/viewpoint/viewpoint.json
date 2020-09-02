@@ -27,8 +27,10 @@
     }
   ],
   "title": {
-    "en": "Viewpoint",
-    "nl": "Uitzicht"
+    "render": {
+      "en": "Viewpoint",
+      "nl": "Uitzicht"
+    }
   },
   "tagRenderings": [
     "images",

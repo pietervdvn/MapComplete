@@ -11,11 +11,9 @@ import MultiLingualTextFields from "../Input/MultiLingualTextFields";
 import {CheckBox} from "../Input/CheckBox";
 import {AndOrTagInput} from "../Input/AndOrTagInput";
 import TagRenderingPanel from "./TagRenderingPanel";
-import {GenerateEmpty} from "./GenerateEmpty";
 import {DropDown} from "../Input/DropDown";
 import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
 import {MultiInput} from "../Input/MultiInput";
-import {Tag} from "../../Logic/Tags";
 import {LayerConfigJson} from "../../Customizations/JSON/LayerConfigJson";
 
 /**
@@ -25,9 +23,11 @@ export default class LayerPanel extends UIElement {
     private readonly _config: UIEventSource<LayoutConfigJson>;
 
     private readonly settingsTable: UIElement;
-    private readonly renderingOptions: UIElement;
+    private readonly mapRendering: UIElement;
 
     private readonly deleteButton: UIElement;
+
+    public readonly titleRendering: UIElement;
 
     public readonly selectedTagRendering: UIEventSource<TagRenderingPanel>
         = new UIEventSource<TagRenderingPanel>(undefined);
@@ -39,7 +39,7 @@ export default class LayerPanel extends UIElement {
                 currentlySelected: UIEventSource<SingleSetting<any>>) {
         super();
         this._config = config;
-        this.renderingOptions = this.setupRenderOptions(config, languages, index, currentlySelected);
+        this.mapRendering = this.setupRenderOptions(config, languages, index, currentlySelected);
 
         const actualDeleteButton = new SubtleButton(
             "./assets/delete.svg",
@@ -81,7 +81,7 @@ export default class LayerPanel extends UIElement {
 
         this.settingsTable = new SettingsTable([
                 setting(TextField.StringInput(), "id", "Id", "An identifier for this layer<br/>This should be a simple, lowercase, human readable string that is used to identify the layer."),
-                setting(new MultiLingualTextFields(languages), "title", "Title", "The human-readable name of this layer<br/>Used in the layer control panel and the 'Personal theme'"),
+                setting(new MultiLingualTextFields(languages), "name", "Name", "The human-readable name of this layer<br/>Used in the layer control panel and the 'Personal theme'"),
                 setting(new MultiLingualTextFields(languages, true), "description", "Description", "A description for this layer.<br/>Shown in the layer selections and in the personal theme"),
                 setting(TextField.NumberInput("nat", n => n < 23), "minzoom", "Minimal zoom",
                     "The minimum zoomlevel needed to load and show this layer."),
@@ -98,6 +98,16 @@ export default class LayerPanel extends UIElement {
             currentlySelected);
         const self = this;
 
+        const popupTitleRendering = new TagRenderingPanel(languages, currentlySelected, {
+            title: "Popup title",
+            description: "This is the rendering shown as title in the popup for this element",
+            disableQuestions: true
+        });
+        
+        new SingleSetting(config, popupTitleRendering, ["layers", index, "title"], "Popup title", "This is the rendering shown as title in the popup");
+        this.titleRendering = popupTitleRendering;
+        this.registerTagRendering(popupTitleRendering);
+        
         const tagRenderings = new MultiInput<TagRenderingConfigJson>("Add a tag rendering/question",
             () => ({}),
             () => {
@@ -192,10 +202,11 @@ export default class LayerPanel extends UIElement {
         return new Combine([
             "<h2>General layer settings</h2>",
             this.settingsTable,
-            "<h2>Map rendering options</h2>",
-            this.renderingOptions,
-            "<h2>Tag rendering and questions</h2>",
+            "<h2>Popup contents</h2>",
+            this.titleRendering,
             this.tagRenderings,
+            "<h2>Map rendering options</h2>",
+            this.mapRendering,
             "<h2>Layer delete</h2>",
             this.deleteButton
         ]).Render();

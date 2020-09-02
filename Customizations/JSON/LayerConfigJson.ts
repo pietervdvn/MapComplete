@@ -39,7 +39,7 @@ export interface LayerConfigJson {
     /**
      * The title shown in a popup for elements of this layer
      */
-    title: string | any | TagRenderingConfigJson;
+    title: string | TagRenderingConfigJson;
 
     /**
      * The icon for an element.

@@ -348,6 +348,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
             return false;
         }
         if (this._question === undefined ||
+            this._question === "" ||
             (this._freeform?.template === undefined && (this._mapping?.length ?? 0) == 0)) {
             // We don't ask this question in the first place
             return false;
@@ -395,7 +396,6 @@ TagRendering extends UIElement implements TagDependantUIElement {
         }
     }
 
-
     InnerRender(): string {
 
         if (this.IsQuestioning() 
@@ -408,7 +408,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 new Combine([
                     question.Render(),
                     "<br/>",
-                    this._questionElement.Render(),
+                    this._questionElement,
                     "<span class='login-button-friendly'>",
                     this._friendlyLogin,
                     "</span>",
@@ -434,28 +434,29 @@ TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         if (this.IsKnown()) {
-            const html = this.RenderAnswer().Render();
-            if (html === "") {
+
+            const answer = this.RenderAnswer();
+            if(answer.IsEmpty()){
                 return "";
             }
-
-
-            let editButton = "";
+            let editButton;
             if (State.state === undefined || // state undefined -> we are custom testing
                 State.state?.osmConnection?.userDetails?.data?.loggedIn && this._question !== undefined) {
-                editButton = this._editButton.Render();
+                editButton = this._editButton;
             }
 
-            return "<span class='answer'>" +
-                "<span class='answer-text'>" + html + "</span>" +
-                editButton +
-                "</span>";
+            return new Combine([
+                "<span class='answer'>",
+                "<span class='answer-text'>",
+                answer,
+                "</span>",
+                editButton ?? "",
+                "</span>"]).Render();
         }
 
         console.log("No rendering for",this)
         
         return "";
-
     }
 
 

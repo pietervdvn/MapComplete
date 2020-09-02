@@ -1,6 +1,5 @@
 import {InputElement} from "./InputElement";
 import {UIElement} from "../UIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
@@ -8,6 +7,9 @@ export class InputElementWrapper<T> extends InputElement<T>{
     private pre: UIElement ;
     private input: InputElement<T>;
     private post: UIElement ;
+    
+    IsSelected: UIEventSource<boolean>
+    
     
     constructor(
         pre: UIElement | string,
@@ -21,6 +23,7 @@ export class InputElementWrapper<T> extends InputElement<T>{
         this.input = input;
         // this.post =typeof(post) === 'string' ?  new FixedUiElement(post) : post
         this.post = Translations.W(post)
+        this.IsSelected = input.IsSelected;
     }
     
     

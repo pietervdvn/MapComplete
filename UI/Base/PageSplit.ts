@@ -14,7 +14,7 @@ export default class PageSplit extends UIElement{
     }
     
     InnerRender(): string {
-        return `<span class="page-split" style="height: min-content"><span style="width:${this._leftPercentage}%">${this._left.Render()}</span><span style="width:${100-this._leftPercentage}">${this._right.Render()}</span></span>`;
+        return `<span class="page-split" style="height: min-content"><span style="flex:0 0 ${this._leftPercentage}%">${this._left.Render()}</span><span style="flex: 0 0 ${100-this._leftPercentage}%">${this._right.Render()}</span></span>`;
     }
     
 }

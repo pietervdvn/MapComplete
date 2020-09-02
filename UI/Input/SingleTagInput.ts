@@ -23,7 +23,7 @@ export default class SingleTagInput extends InputElement<string> {
         this.value = new TextField<string>({
                 placeholder: "value - if blank, matches if key is NOT present",
                 fromString: str => str,
-                toString: str => str
+                toString: str => str,
             }
         );
         this.operator = new DropDown<string>("", [

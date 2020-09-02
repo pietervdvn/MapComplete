@@ -1,15 +1,67 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingPanel from "./TagRenderingPanel";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
+import {FromJSON} from "../../Customizations/JSON/FromJSON";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Combine from "../Base/Combine";
 
-export default class TagRenderingPreview extends UIElement{
-    
-    constructor(selectedTagRendering: UIEventSource<TagRenderingPanel>) {
+export default class TagRenderingPreview extends UIElement {
+
+    private readonly previewTagValue: UIEventSource<any>;
+    private selectedTagRendering: UIEventSource<TagRenderingPanel>;
+    private panel: UIElement;
+
+    constructor(selectedTagRendering: UIEventSource<TagRenderingPanel>,
+                previewTagValue: UIEventSource<any>) {
         super(selectedTagRendering);
+        this.selectedTagRendering = selectedTagRendering;
+        this.previewTagValue = previewTagValue;
+        this.panel = this.GetPanel(undefined);
+        const self = this;
+        this.selectedTagRendering.addCallback(trp => {
+            self.panel = self.GetPanel(trp);
+            self.Update();
+        })
+
     }
-    
+
+    private GetPanel(tagRenderingPanel: TagRenderingPanel): UIElement {
+        if (tagRenderingPanel === undefined) {
+            return new FixedUiElement("No tag rendering selected at the moment. Hover over a tag rendering to see what it looks like");
+        }
+
+        let es = tagRenderingPanel.GetValue();
+        let tagRenderingConfig: TagRenderingConfigJson = es.data;
+
+        let rendering: UIElement;
+        try {
+            rendering =
+                new VariableUiElement(es.map(tagRenderingConfig => {
+                        const tr = FromJSON.TagRendering(tagRenderingConfig)
+                            .construct({tags: this.previewTagValue});
+                        return tr.Render();
+                    }
+                ));
+
+        } catch (e) {
+            console.error("User defined tag rendering incorrect:", e);
+            rendering = new FixedUiElement(e).SetClass("alert");
+        }
+
+        return new Combine([
+            "<h3>",
+            tagRenderingPanel.options.title ?? "Extra tag rendering",
+            "</h3>",
+            tagRenderingPanel.options.description ?? "This tag rendering will appear in the popup",
+            "<br/><br/>",
+            rendering]);
+
+    }
+
     InnerRender(): string {
-        return "";
+        return this.panel.Render();
     }
-    
+
 }
