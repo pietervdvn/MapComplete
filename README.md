@@ -138,6 +138,7 @@ In order to avoid lots of small changesets, a changeset is opened and kept open.
 
 Whenever a change is made -even adding a single tag- the change is uploaded into this changeset. If that fails, the changeset is probably closed and we open a new changeset.
 
+Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing them. 
 
 # Privacy
 

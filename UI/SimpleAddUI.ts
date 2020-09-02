@@ -14,7 +14,7 @@ import {Utils} from "../Utils";
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
 export class SimpleAddUI extends UIElement {
-    private _addButtons: UIElement[];
+    private readonly _addButtons: UIElement[];
     
     private _loginButton : UIElement;
     
