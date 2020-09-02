@@ -2,6 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
 export class RadioButton<T> extends InputElement<T> {
+    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _selectedElementIndex: UIEventSource<number>
         = new UIEventSource<number>(null);
@@ -26,16 +27,16 @@ export class RadioButton<T> extends InputElement<T> {
                         return elements[selectedIndex].GetValue()
                     }
                 }
-            ), elements.map(e => e.GetValue()));
+            ), elements.map(e => e?.GetValue()));
 
         this.value.addCallback((t) => {
-            self.ShowValue(t);
+            self?.ShowValue(t);
         })
 
 
         for (let i = 0; i < elements.length; i++) {
             // If an element is clicked, the radio button corresponding with it should be selected as well
-            elements[i].onClick(() => {
+            elements[i]?.onClick(() => {
                 self._selectedElementIndex.setData(i);
             });
         }

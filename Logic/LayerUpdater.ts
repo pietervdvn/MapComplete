@@ -4,6 +4,7 @@ import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
 import {State} from "../State";
+import {LayerDefinition} from "../Customizations/LayerDefinition";
 
 export class LayerUpdater {
 
@@ -27,7 +28,7 @@ export class LayerUpdater {
         const self = this;
 
         this.sufficentlyZoomed = State.state.locationControl.map(location => {
-                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
+                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => (layer as LayerDefinition).minzoom ?? 18));
                 return location.zoom >= minzoom;
             }, [state.layoutToUse]
         );
@@ -49,6 +50,9 @@ export class LayerUpdater {
         const filters: TagsFilter[] = [];
         state = state ?? State.state;
         for (const layer of state.layoutToUse.data.layers) {
+            if(typeof(layer) === "string"){
+                continue;
+            }
             if (state.locationControl.data.zoom < layer.minzoom) {
                 console.log("Not loading layer ", layer.id, " as it needs at least ", layer.minzoom, "zoom")
                 continue;

@@ -2,14 +2,17 @@ import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 
 export default class Combine extends UIElement {
-    private uiElements: (string | UIElement)[];
-    private className: string = undefined;
-    private clas: string = undefined;
+    private readonly uiElements: (string | UIElement)[];
+    private readonly className: string = undefined;
 
     constructor(uiElements: (string | UIElement)[], className: string = undefined) {
         super(undefined);
+        this.dumbMode = false;
         this.className = className;
         this.uiElements = uiElements;
+        if (className) {
+            console.error("Deprecated used of className")
+        }
     }
 
     InnerRender(): string {

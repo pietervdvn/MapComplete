@@ -56,7 +56,9 @@
           "render": "Access is {access}",
           "freeform": {
             "key": "access",
-            "addExtraTags": "fixme=the tag access was filled out by the user and might need refinement"
+            "addExtraTags": [
+              "fixme=the tag access was filled out by the user and might need refinement"
+            ]
           },
           "mappings": [
             {

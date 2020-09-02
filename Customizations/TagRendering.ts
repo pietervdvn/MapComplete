@@ -127,12 +127,13 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
         // Prepare the actual input element -> pick an appropriate implementation
 
-        this._questionElement = this.InputElementFor(options);
+        this._questionElement = this.InputElementFor(options) ??
+            new FixedInputElement<TagsFilter>("<span class='alert'>No input possible</span>", new Tag("a","b"));
         const save = () => {
             const selection = self._questionElement.GetValue().data;
             console.log("Tagrendering: saving tags ", selection);
             if (selection) {
-                State.state.changes.addTag(tags.data.id, selection);
+                State.state?.changes?.addTag(tags.data.id, selection);
             }
             self._editMode.setData(false);
         }
@@ -143,7 +144,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
                     if (tags === undefined) {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
-                    const csCount = State.state.osmConnection.userDetails.data.csCount;
+                    const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
                     if (csCount < State.userJourney.tagsVisibleAt) {
                         return "";
                     }
@@ -154,7 +155,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
                     return tags.asHumanString(true, true);
                 }
             )
-        );
+        ).ListenTo(self._questionElement);
 
         const cancel = () => {
             self._questionSkipped.setData(true);
@@ -246,7 +247,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private InputForFreeForm(freeform): InputElement<TagsFilter> {
-        if (freeform === undefined) {
+        if (freeform?.template === undefined) {
             return undefined;
         }
 
@@ -269,8 +270,14 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 if (!isValid(string, this._source.data._country)) {
                     return undefined;
                 }
+
+
                 const tag = new Tag(freeform.key, formatter(string, this._source.data._country));
-                
+
+                if (tag.value.length > 255) {
+                    return undefined; // Toolong
+                }
+
                 if (freeform.extraTags === undefined) {
                     return tag;
                 }
@@ -340,7 +347,8 @@ TagRendering extends UIElement implements TagDependantUIElement {
         if (this.IsKnown()) {
             return false;
         }
-        if (this._question === undefined) {
+        if (this._question === undefined ||
+            (this._freeform?.template === undefined && (this._mapping?.length ?? 0) == 0)) {
             // We don't ask this question in the first place
             return false;
         }
@@ -390,15 +398,20 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
     InnerRender(): string {
 
-        if (this.IsQuestioning() && !State.state?.osmConnection?.userDetails?.data?.loggedIn) {
+        if (this.IsQuestioning() 
+            && (State.state !== undefined) // If State.state is undefined, we are testing/custom theme building -> show regular save
+            && !State.state.osmConnection.userDetails.data.loggedIn) {
+            
             const question =
                 this.ApplyTemplate(this._question).SetClass('question-text');
             return "<div class='question'>" +
                 new Combine([
-                    question,
+                    question.Render(),
                     "<br/>",
                     this._questionElement.Render(),
-                    "<span class='login-button-friendly'>" + this._friendlyLogin.Render() + "</span>",
+                    "<span class='login-button-friendly'>",
+                    this._friendlyLogin,
+                    "</span>",
                 ]).Render() + "</div>";
         }
 
@@ -428,7 +441,8 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
 
             let editButton = "";
-            if (State.state?.osmConnection?.userDetails?.data?.loggedIn && this._question !== undefined) {
+            if (State.state === undefined || // state undefined -> we are custom testing
+                State.state?.osmConnection?.userDetails?.data?.loggedIn && this._question !== undefined) {
                 editButton = this._editButton.Render();
             }
 
@@ -438,6 +452,8 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 "</span>";
         }
 
+        console.log("No rendering for",this)
+        
         return "";
 
     }

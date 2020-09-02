@@ -18,16 +18,7 @@ export default class SingleTagInput extends InputElement<string> {
         super(undefined);
         this._value = value ?? new UIEventSource<string>(undefined);
        
-        this.key = new TextField({
-            placeholder: "key",
-            fromString: str => {
-                if (str?.match(/^[a-zA-Z][a-zA-Z0-9:]*$/)) {
-                    return str;
-                }
-                return undefined
-            },
-            toString: str => str
-        });
+        this.key = TextField.KeyInput();
 
         this.value = new TextField<string>({
                 placeholder: "value - if blank, matches if key is NOT present",
@@ -95,7 +86,8 @@ export default class SingleTagInput extends InputElement<string> {
     InnerRender(): string {
         return new Combine([
             this.key, this.operator, this.value
-        ]).Render();
+        ]).SetStyle("display:flex")
+            .Render();
     }
 
 

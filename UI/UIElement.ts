@@ -1,15 +1,19 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 
-export abstract class UIElement extends UIEventSource<string>{
-    
+export abstract class UIElement extends UIEventSource<string> {
+
     private static nextId: number = 0;
 
     public readonly id: string;
     public readonly _source: UIEventSource<any>;
     private clss: string[] = []
-    
+
+    private style: string;
+
     private _hideIfEmpty = false;
-    
+
+    public dumbMode = false;
+
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.
      * However, ts-node crashes when it sees 'document'. When running from console, we flag this and disable all code where document is needed.
@@ -30,6 +34,7 @@ export abstract class UIElement extends UIEventSource<string>{
         if (source === undefined) {
             return this;
         }
+        this.dumbMode = false;
         const self = this;
         source.addCallback(() => {
             self.Update();
@@ -40,24 +45,56 @@ export abstract class UIElement extends UIEventSource<string>{
     private _onClick: () => void;
 
     public onClick(f: (() => void)) {
+        this.dumbMode = false;
         this._onClick = f;
         this.SetClass("clickable")
         this.Update();
         return this;
     }
-    
+
+    private _onHover: UIEventSource<boolean>;
+
+    public IsHovered(): UIEventSource<boolean> {
+        this.dumbMode = false;
+        if (this._onHover !== undefined) {
+            return this._onHover;
+        }
+        // Note: we just save it. 'Update' will register that an eventsource exist and install the necessary hooks
+        this._onHover = new UIEventSource<boolean>(false);
+        return this._onHover;
+    }
+
     Update(): void {
-        if(UIElement.runningFromConsole){
+        if (UIElement.runningFromConsole) {
             return;
         }
-        
+
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
             // The element is not painted
+
+            if (this.dumbMode) {
+                // We update all the children anyway
+                for (const i in this) {
+                    const child = this[i];
+                    if (child instanceof UIElement) {
+                        child.Update();
+                    } else if (child instanceof Array) {
+                        for (const ch of child) {
+                            if (ch instanceof UIElement) {
+                                ch.Update();
+                            }
+                        }
+                    }
+                }
+            }
+
+
             return;
         }
         this.setData(this.InnerRender());
         element.innerHTML = this.data;
+
         if (this._hideIfEmpty) {
             if (element.innerHTML === "") {
                 element.parentElement.style.display = "none";
@@ -70,7 +107,7 @@ export abstract class UIElement extends UIEventSource<string>{
             const self = this;
             element.onclick = (e) => {
                 // @ts-ignore
-                if(e.consumed){
+                if (e.consumed) {
                     return;
                 }
                 self._onClick();
@@ -79,6 +116,12 @@ export abstract class UIElement extends UIEventSource<string>{
             }
             element.style.pointerEvents = "all";
             element.style.cursor = "pointer";
+        }
+
+        if (this._onHover !== undefined) {
+            const self = this;
+            element.addEventListener('mouseover', () => self._onHover.setData(true));
+            element.addEventListener('mouseout', () => self._onHover.setData(false));
         }
 
         this.InnerUpdate(element);
@@ -108,10 +151,18 @@ export abstract class UIElement extends UIEventSource<string>{
    }
 
     Render(): string {
-        return `<span class='uielement ${this.clss.join(" ")}' id='${this.id}'>${this.InnerRender()}</span>`
+        if (this.dumbMode) {
+            return this.InnerRender();
+        }
+        let style = "";
+        if (this.style !== undefined && this.style !== "") {
+            style = `style="${this.style}"`;
+        }
+        return `<span class='uielement ${this.clss.join(" ")}' ${style} id='${this.id}'>${this.InnerRender()}</span>`
     }
 
     AttachTo(divId: string) {
+        this.dumbMode = false;
         let element = document.getElementById(divId);
         if (element === null) {
             throw "SEVERE: could not attach UIElement to " + divId;
@@ -143,6 +194,7 @@ export abstract class UIElement extends UIEventSource<string>{
     }
 
     public SetClass(clss: string): UIElement {
+        this.dumbMode = false;
         if (this.clss.indexOf(clss) < 0) {
             this.clss.push(clss);
         }
@@ -150,14 +202,13 @@ export abstract class UIElement extends UIEventSource<string>{
         return this;
     }
 
-    public RemoveClass(clss: string): UIElement {
-        if (this.clss.indexOf(clss) >= 0) {
-            this.clss = this.clss.splice(this.clss.indexOf(clss), 1);
-        }
+
+    public SetStyle(style: string): UIElement {
+        this.dumbMode = false;
+        this.style = style;
         this.Update();
         return this;
     }
-
 }
 
 

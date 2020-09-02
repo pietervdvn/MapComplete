@@ -36,9 +36,8 @@ export class UIEventSource<T>{
         });
 
         for (const possibleSource of possibleSources) {
-            possibleSource.addCallback(() => {
+            possibleSource?.addCallback(() => {
                 sink.setData(source.data?.data);
-                
             })
         }
         
@@ -85,6 +84,26 @@ export class UIEventSource<T>{
             otherSource.setData(this.data);
         }
         return this;
+    }
+    
+    public stabilized(millisToStabilize) : UIEventSource<T>{
+        
+        const newSource = new UIEventSource<T>(this.data);
+        
+        let currentCallback = 0;
+        this.addCallback(latestData => {
+            currentCallback++;
+            const thisCallback = currentCallback;
+            window.setTimeout(() => {
+                if(thisCallback === currentCallback){
+                    newSource.setData(latestData);
+                }
+            }, millisToStabilize)
+        });
+        
+        return newSource;
+        
+        
     }
 
 }

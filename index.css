@@ -109,16 +109,21 @@
     padding-bottom: 0.15em;
 }
 
-.clickable {
-    pointer-events: all;
-}
+    .clickable {
+        pointer-events: all;
+    }
+
+    .page-split {
+        display: flex;
+        height: 100%;
+    }
 
 
-.activate-osm-authentication {
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
-}
+    .activate-osm-authentication {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+    }
 
 
 /**************** USER BADGE ****************/
@@ -1224,11 +1229,10 @@
 
 
 .tab-content {
-    padding: 1em;
     z-index: 5002;
     background-color: white;
     position: relative;
-
+    padding: 1em;
 }
 
 .tab-single-header {

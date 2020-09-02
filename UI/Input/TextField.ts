@@ -4,8 +4,33 @@ import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
+import {DropDown} from "./DropDown";
 
 export class ValidatedTextField {
+    
+    public static explanations = {
+        "string": "A basic, 255-char string",
+        "date": "A date",
+        "wikidata": "A wikidata identifier, e.g. Q42",
+        "int": "A number",
+        "nat": "A positive number",
+        "float": "A decimal",
+        "pfloat": "A positive decimal",
+        "email": "An email adress",
+        "url": "A url",
+        "phone": "A phone number"
+    }
+    
+    public static TypeDropdown() : DropDown<string>{
+        const values : {value: string, shown: string}[] = [];
+        const expl = ValidatedTextField.explanations;
+        for(const key in expl){
+            values.push({value: key, shown: `${key} - ${expl[key]}`})
+        }
+        return new DropDown<string>("", values)
+    }
+    
+    
     public static inputValidation = {
         "$": () => true,
         "string": () => true,
@@ -37,6 +62,19 @@ export class TextField<T> extends InputElement<T> {
             toString: str => str,
             fromString: str => str,
             textArea: textArea
+        });
+    }
+    
+    public static KeyInput(): TextField<string>{
+        return new TextField<string>({
+            placeholder: "key",
+            fromString: str => {
+                if (str?.match(/^[a-zA-Z][a-zA-Z0-9:_-]*$/)) {
+                    return str;
+                }
+                return undefined
+            },
+            toString: str => str
         });
     }
     

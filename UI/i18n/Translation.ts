@@ -52,8 +52,8 @@ export default class Translation extends UIElement {
         for (const i in this.translations) {
             return this.translations[i]; // Return a random language
         }
-        console.log("Missing language ",Locale.language.data,"for",this.translations)
-        return "Missing translation"
+        console.error("Missing language ",Locale.language.data,"for",this.translations)
+        return undefined;
     }
 
     InnerRender(): string {

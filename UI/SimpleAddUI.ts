@@ -53,7 +53,7 @@ export class SimpleAddUI extends UIElement {
 
                     if (typeof (preset.icon) !== "string") {
                         const tags = Utils.MergeTags(TagUtils.KVtoProperties(preset.tags), {id:"node/-1"});
-                        icon = preset.icon.GetContent(tags);
+                        icon = preset.icon.GetContent(tags).txt;
                     } else {
                         icon = preset.icon;
                     }
@@ -193,7 +193,7 @@ export class SimpleAddUI extends UIElement {
             return new Combine([header, Translations.t.general.add.stillLoading]).Render()
         }
 
-        return header.Render() + new Combine(this._addButtons, "add-popup-all-buttons").Render();
+        return header.Render() + new Combine(this._addButtons).SetClass("add-popup-all-buttons").Render();
     }
 
 

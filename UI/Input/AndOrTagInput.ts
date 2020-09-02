@@ -3,88 +3,162 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
-import TagInput from "./TagInput";
-import {FixedUiElement} from "../Base/FixedUiElement";
+import {CheckBox} from "./CheckBox";
+import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
+import {MultiTagInput} from "./MultiTagInput";
+import {FormatNumberOptions} from "libphonenumber-js";
 
-export class AndOrTagInput extends InputElement<(string | AndOrTagInput)[]> {
+class AndOrConfig implements AndOrTagConfigJson {
+    public and: (string | AndOrTagConfigJson)[] = undefined;
+    public or: (string | AndOrTagConfigJson)[] = undefined;
+}
 
 
-    private readonly _value: UIEventSource<string[]>;
+export class AndOrTagInput extends InputElement<AndOrTagConfigJson> {
+
+    private readonly _rawTags = new MultiTagInput();
+    private readonly _subAndOrs: AndOrTagInput[] = [];
+    private readonly _isAnd: UIEventSource<boolean> = new UIEventSource<boolean>(true);
+    private readonly _isAndButton;
+    private readonly _addBlock: UIElement;
+    private readonly _value: UIEventSource<AndOrConfig> = new UIEventSource<AndOrConfig>(undefined);
+
+    public bottomLeftButton: UIElement;
+
     IsSelected: UIEventSource<boolean>;
-    private elements: UIElement[] = [];
-    private inputELements: (InputElement<string> | InputElement<AndOrTagInput>)[] = [];
-    private addTag: UIElement;
 
-    constructor(value: UIEventSource<string[]> = new UIEventSource<string[]>([])) {
-        super(undefined);
-        this._value = value;
-
-        this.addTag = new SubtleButton("./assets/addSmall.svg", "Add a tag")
-            .SetClass("small-button")
-            .onClick(() => {
-                this.IsSelected.setData(true);
-                value.data.push("");
-                value.ping();
-            });
+    constructor() {
+        super();
         const self = this;
-        value.map<number>((tags: string[]) => tags.length).addCallback(() => self.createElements());
-        this.createElements();
+        this._isAndButton = new CheckBox(
+            new SubtleButton("./assets/ampersand.svg", null).SetClass("small-button"),
+            new SubtleButton("./assets/or.svg", null).SetClass("small-button"),
+            this._isAnd);
 
 
-        this._value.addCallback(tags => self.load(tags));
-        this.IsSelected = new UIEventSource<boolean>(false);
-    }
+        this._addBlock =
+            new SubtleButton("./assets/addSmall.svg", "Add an and/or-expression")
+                .SetClass("small-button")
+                .onClick(() => {self.createNewBlock()});
 
-    private load(tags: string[]) {
-        if (tags === undefined) {
-            return;
-        }
-        for (let i = 0; i < tags.length; i++) {
-            console.log("Setting tag ", i)
-            this.inputELements[i].GetValue().setData(tags[i]);
-        }
+
+        this._isAnd.addCallback(() => self.UpdateValue());
+        this._rawTags.GetValue().addCallback(() => {
+            self.UpdateValue()
+        });
+
+        this.IsSelected = this._rawTags.IsSelected;
+
+        this._value.addCallback(tags => self.loadFromValue(tags));
+
     }
     
-    private UpdateIsSelected(){
-        this.IsSelected.setData(this.inputELements.map(input => input.IsSelected.data).reduce((a,b) => a && b))
-    }
-
-    private createElements() {
-        this.inputELements = [];
-        this.elements = [];
-        for (let i = 0; i < this._value.data.length; i++) {
-            let tag = this._value.data[i];
-            const input = new TagInput(new UIEventSource<string>(tag));
-            input.GetValue().addCallback(tag => {
-                    console.log("Writing ", tag)
-                    this._value.data[i] = tag;
-                    this._value.ping();
-                }
-            );
-            this.inputELements.push(input);
-            input.IsSelected.addCallback(() => this.UpdateIsSelected());
-            const deleteBtn = new FixedUiElement("<img src='./assets/delete.svg' style='max-width: 1.5em; margin-left: 5px;'>")
-                .onClick(() => {
-                    this._value.data.splice(i, 1);
-                    this._value.ping();
-                });
-            this.elements.push(new Combine([input, deleteBtn, "<br/>"]).SetClass("tag-input-row"))
-        }
-        
+    private createNewBlock(){
+        const inputEl = new AndOrTagInput();
+        inputEl.GetValue().addCallback(() => this.UpdateValue());
+        const deleteButton = this.createDeleteButton(inputEl.id);
+        inputEl.bottomLeftButton = deleteButton;
+        this._subAndOrs.push(inputEl);
         this.Update();
     }
 
-    InnerRender(): string {
-        return new Combine([...this.elements, this.addTag]).SetClass("bordered").Render();
+    private createDeleteButton(elementId: string): UIElement {
+        const self = this;
+        return new SubtleButton("./assets/delete.svg", null).SetClass("small-button")
+            .onClick(() => {
+                for (let i = 0; i < self._subAndOrs.length; i++) {
+                    if (self._subAndOrs[i].id === elementId) {
+                        self._subAndOrs.splice(i, 1);
+                        self.Update();
+                        self.UpdateValue();
+                        return;
+                    }
+                }
+            });
+
     }
 
+    private loadFromValue(value: AndOrTagConfigJson) {
+        this._isAnd.setData(value.and !== undefined);
+        const tags = value.and ?? value.or;
+        const rawTags: string[] = [];
+        const subTags: AndOrTagConfigJson[] = [];
+        for (const tag of tags) {
 
-    IsValid(t: string[]): boolean {
-        return false;
+            if (typeof (tag) === "string") {
+                rawTags.push(tag);
+            } else {
+                subTags.push(tag);
+            }
+        }
+
+        for (let i = 0; i < rawTags.length; i++) {
+            if (this._rawTags.GetValue().data[i] !== rawTags[i]) {
+                // For some reason, 'setData' isn't stable as the comparison between the lists fails
+                // Probably because we generate a new list object every timee
+                // So we compare again here and update only if we find a difference
+                this._rawTags.GetValue().setData(rawTags);
+                break;
+            }
+        }
+        
+        while(this._subAndOrs.length < subTags.length){
+            this.createNewBlock();
+        }
+
+        for (let i = 0; i < subTags.length; i++){
+            let subTag = subTags[i];
+            this._subAndOrs[i].GetValue().setData(subTag);
+            
+        }
+
     }
 
-    GetValue(): UIEventSource<string[]> {
+    private UpdateValue() {
+        const tags: (string | AndOrTagConfigJson)[] = [];
+        tags.push(...this._rawTags.GetValue().data);
+
+        for (const subAndOr of this._subAndOrs) {
+            const subAndOrData = subAndOr._value.data;
+            if (subAndOrData === undefined) {
+                continue;
+            }
+            console.log(subAndOrData);
+            tags.push(subAndOrData);
+        }
+
+        const tagConfig = new AndOrConfig();
+
+        if (this._isAnd.data) {
+            tagConfig.and = tags;
+        } else {
+            tagConfig.or = tags;
+        }
+        this._value.setData(tagConfig);
+    }
+
+    GetValue(): UIEventSource<AndOrTagConfigJson> {
         return this._value;
     }
+
+    InnerRender(): string {
+        const leftColumn = new Combine([
+            this._isAndButton,
+            "<br/>",
+            this.bottomLeftButton ?? ""
+        ]);
+        const tags = new Combine([
+            this._rawTags,
+            ...this._subAndOrs,
+            this._addBlock
+        ]).Render();
+        return `<span class="bordered"><table><tr><td>${leftColumn.Render()}</td><td>${tags}</td></tr></table></span>`;
+    }
+
+
+    IsValid(t: AndOrTagConfigJson): boolean {
+        return true;
+    }
+
 
 }

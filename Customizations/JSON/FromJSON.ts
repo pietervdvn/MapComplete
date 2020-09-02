@@ -1,7 +1,7 @@
 import {Layout} from "../Layout";
 import {LayoutConfigJson} from "./LayoutConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
-import {And, RegexTag, Tag, TagsFilter} from "../../Logic/Tags";
+import {And, Or, RegexTag, Tag, TagsFilter} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 import Translation from "../../UI/i18n/Translation";
@@ -81,8 +81,13 @@ export class FromJSON {
             return json;
         }
         const tr = {};
+        let keyCount = 0;
         for (let key in json) {
+            keyCount ++;
             tr[key] = json[key]; // I'm doing this wrong, I know
+        }
+        if(keyCount == 0){
+            return undefined;
         }
         return new Translation(tr);
     }
@@ -92,14 +97,14 @@ export class FromJSON {
     }
 
     public static TagRenderingWithDefault(json: TagRenderingConfigJson | string, propertyName, defaultValue: string): TagDependantUIElementConstructor {
-            if (json === undefined) {
+        if (json === undefined) {
             if(defaultValue !== undefined){
                 console.warn(`Using default value ${defaultValue} for  ${propertyName}`)
                 return FromJSON.TagRendering(defaultValue);
             }
             throw `Tagrendering ${propertyName} is undefined...`
         }
-
+        
         if (typeof json === "string") {
 
             switch (json) {
@@ -133,26 +138,27 @@ export class FromJSON {
         let template = FromJSON.Translation(json.render);
 
         let freeform = undefined;
-        if (json.freeform) {
-
-            if(json.render === undefined){
-                console.error("Freeform is defined, but render is not. This is not allowed.", json)
+        if (json.freeform?.key) {
+            // Setup the freeform
+            if (template === undefined) {
+                console.error("Freeform.key is defined, but render is not. This is not allowed.", json)
                 throw "Freeform is defined, but render is not. This is not allowed."
             }
-            
+
             freeform = {
                 template: `$${json.freeform.type ?? "string"}$`,
                 renderTemplate: template,
                 key: json.freeform.key
             };
             if (json.freeform.addExtraTags) {
-                freeform["extraTags"] = FromJSON.Tag(json.freeform.addExtraTags);
+                freeform.extraTags = new And(json.freeform.addExtraTags.map(FromJSON.SimpleTag))
             }
         } else if (json.render) {
+            // Template (aka rendering) is defined, but freeform.key is not. We allow an input as string
             freeform = {
-                template: `$string$`,
+                template: undefined, // Template to ask is undefined -> we block asking for this key
                 renderTemplate: template,
-                key: "id"
+                key: "id" // every object always has an id
             }
         }
 
@@ -163,6 +169,10 @@ export class FromJSON {
                 hideInAnswer: mapping.hideInAnswer
             })
         );
+        
+        if(template === undefined && (mappings === undefined || mappings.length === 0)){
+            throw "Empty tagrendering detected: no mappings nor template given"
+        }
 
 
         let rendering = new TagRenderingOptions({
@@ -185,6 +195,9 @@ export class FromJSON {
     }
 
     public static Tag(json: AndOrTagConfigJson | string): TagsFilter {
+        if(json === undefined){
+            throw "Error while parsing a tag: nothing defined. Make sure all the tags are defined and at least one tag is present in a complex expression"
+        }
         if (typeof (json) == "string") {
             const tag = json as string;
             if (tag.indexOf("!~") >= 0) {
@@ -227,7 +240,7 @@ export class FromJSON {
             return new And(json.and.map(FromJSON.Tag));
         }
         if (json.or !== undefined) {
-            return new And(json.or.map(FromJSON.Tag));
+            return new Or(json.or.map(FromJSON.Tag));
         }
     }
 
@@ -270,7 +283,8 @@ export class FromJSON {
         }) ?? [];
 
         function style(tags) {
-            const iconSizeStr = iconSize.GetContent(tags).txt.split(",");
+            const iconSizeStr =
+                iconSize.GetContent(tags).txt.split(",");
             const iconwidth = Number(iconSizeStr[0]);
             const iconheight = Number(iconSizeStr[1]);
             const iconmode = iconSizeStr[2];

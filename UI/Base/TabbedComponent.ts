@@ -7,8 +7,8 @@ export class TabbedComponent extends UIElement {
     private headers: UIElement[] = [];
     private content: UIElement[] = [];
 
-    constructor(elements: { header: UIElement | string, content: UIElement | string }[], openedTab : UIEventSource<number> = new UIEventSource<number>(0)) {
-        super(openedTab);
+    constructor(elements: { header: UIElement | string, content: UIElement | string }[], openedTab: (UIEventSource<number> | number) = 0) {
+        super(typeof (openedTab) === "number" ? new UIEventSource(openedTab) : (openedTab ?? new UIEventSource<number>(0)));
         const self = this;
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];

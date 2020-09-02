@@ -1,4 +1,3 @@
-import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {InputElement} from "../Input/InputElement";
 import {UIElement} from "../UIElement";
@@ -12,7 +11,7 @@ export default class SingleSetting<T> {
     public _description: UIElement;
     public _options: { showIconPreview?: boolean };
 
-    constructor(config: UIEventSource<LayoutConfigJson>,
+    constructor(config: UIEventSource<any>,
                 value: InputElement<T>,
                 path: string | (string | number)[],
                 name: string,
@@ -47,11 +46,17 @@ export default class SingleSetting<T> {
             // We have to rewalk every time as parts might be new
             let configPart = config.data;
             for (const pathPart of path) {
-                configPart = configPart[pathPart];
-                if (configPart === undefined) {
-                    console.warn("Lost the way for path ", path)
-                    return;
+                let newConfigPart = configPart[pathPart];
+                if (newConfigPart === undefined) {
+                    console.warn("Lost the way for path ", path, " - creating entry")
+                    if (typeof (pathPart) === "string") {
+                        configPart[pathPart] = {};
+                    } else {
+                        configPart[pathPart] = [];
+                    }
+                    newConfigPart = configPart[pathPart];
                 }
+                configPart = newConfigPart;
             }
             configPart[lastPart] = value;
             config.ping();
@@ -66,7 +71,6 @@ export default class SingleSetting<T> {
                 }
             }
             const loadedValue = configPart[lastPart];
-
             if (loadedValue !== undefined) {
                 value.GetValue().setData(loadedValue);
             }
@@ -79,6 +83,8 @@ export default class SingleSetting<T> {
         
 
     }
+    
+    
 
 
 }

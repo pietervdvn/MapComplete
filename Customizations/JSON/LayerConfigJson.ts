@@ -66,7 +66,7 @@ export interface LayerConfigJson {
      * Wayhandling: should a way/area be displayed as:
      * 0) The way itself
      * 1) The centerpoint and the way
-     * 2) Only the centerpoint?
+     * 2) Only the centerpoint
      */
     wayHandling?: number;
 

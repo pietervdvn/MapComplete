@@ -4,9 +4,9 @@ import Combine from "./Combine";
 
 
 export class SubtleButton extends UIElement{
-    private imageUrl: string;
-    private message: UIElement;
-    private linkTo: { url: string, newTab?: boolean } = undefined;
+    private readonly imageUrl: string;
+    private readonly message: UIElement;
+    private readonly linkTo: { url: string, newTab?: boolean } = undefined;
 
     constructor(imageUrl: string, message: string | UIElement, linkTo: { url: string, newTab?: boolean } = undefined) {
         super(undefined);
@@ -18,7 +18,7 @@ export class SubtleButton extends UIElement{
 
     InnerRender(): string {
         
-        if(this.message.IsEmpty()){
+        if(this.message !== null && this.message.IsEmpty()){
             return "";
         }
 
@@ -26,7 +26,7 @@ export class SubtleButton extends UIElement{
             return new Combine([
                 `<a class="subtle-button" href="${this.linkTo.url}" ${this.linkTo.newTab ? 'target="_blank"' : ""}>`,
                 this.imageUrl !== undefined ? `<img src='${this.imageUrl}'>` : "",
-                this.message,
+                this.message ?? "",
                 '</a>'
             ]).Render();
         }
@@ -34,7 +34,7 @@ export class SubtleButton extends UIElement{
         return new Combine([
             '<span class="subtle-button">',
             this.imageUrl !== undefined ? `<img src='${this.imageUrl}'>` : "",
-            this.message,
+            this.message ?? "",
             '</span>'
         ]).Render();
     }

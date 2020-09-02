@@ -184,16 +184,18 @@ export class FilteredLayer {
             idsFromOverpass.add(feature.properties.id);
             fusedFeatures.push(feature);
         }
+        this._dataFromOverpass = fusedFeatures;
 
+        console.log("New elements are ", this._newElements)
         for (const feature of this._newElements) {
-            if (idsFromOverpass.has(feature.properties.id)) {
+            if (!idsFromOverpass.has(feature.properties.id)) {
                 // This element is not yet uploaded or not yet visible in overpass
                 // We include it in the layer
                 fusedFeatures.push(feature);
+                console.log("Adding ", feature," to fusedFeatures")
             }
         }
         
-        this._dataFromOverpass = fusedFeatures;
 
         // We use a new, fused dataset
         data = {

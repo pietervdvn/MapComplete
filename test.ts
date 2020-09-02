@@ -1,9 +1,19 @@
-import TagInput from "./UI/Input/TagInput";
+import TagRenderingPanel from "./UI/CustomGenerator/TagRenderingPanel";
 import {UIEventSource} from "./Logic/UIEventSource";
+import {TextField} from "./UI/Input/TextField";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {MultiTagInput} from "./UI/Input/MultiTagInput";
+import SettingsTable from "./UI/CustomGenerator/SettingsTable";
+import SingleSetting from "./UI/CustomGenerator/SingleSetting";
+import {MultiInput} from "./UI/Input/MultiInput";
 
-const input = new MultiTagInput(new UIEventSource<string[]>(["key~value|0"]));
-input.GetValue().addCallback(console.log);
-input.AttachTo("maindiv");
-new VariableUiElement(input.GetValue().map(tags => tags.join(" & "))).AttachTo("extradiv")
+
+const config = new UIEventSource({})
+const languages = new UIEventSource(["en","nl"]);
+new MultiInput(
+    () => "Add a tag rendering",
+    () => new TagRenderingPanel(
+        
+    )
+    
+    
+)

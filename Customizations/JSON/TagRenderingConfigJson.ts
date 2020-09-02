@@ -37,7 +37,7 @@ export interface TagRenderingConfigJson {
          * If a value is added with the textfield, these extra tag is addded.
          * Usefull to add a 'fixme=freeform textfield used - to be checked'
          **/
-        addExtraTags?: AndOrTagConfigJson | string;
+        addExtraTags?: string[];
     }
 
     /**

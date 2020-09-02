@@ -5,33 +5,7 @@
     <title>Custom Theme Generator for Mapcomplete</title>
 
     <style type="text/css">
-        #left {
-            position: absolute;
-            width: 50vw;
-            height: 100vh;
-            left: 0;
-            top: 0;
-            overflow-y: auto;
-        }
 
-        #right {
-            position: absolute;
-            width: 50vw;
-            height: 35vh;
-            right: 0;
-            top: 0;
-            overflow-y: auto;
-        }
-        
-        #bottomright {
-            position: absolute;
-            width: 50vw;
-            height: 65vh;
-            right: 0;
-            bottom: 0;
-            overflow-y: auto;
-        }
-        
         .icon-preview {
             max-width: 2em;
             max-height: 2em ;
@@ -52,27 +26,72 @@
             display:block;
             padding: 0.5em;
             border-radius: 0.5em;
+            box-sizing: border-box;
         }
-        
+
         .tag-input-row {
             display: block ruby;
             box-sizing: border-box;
             margin-right: 2em;
+            width: calc(100% - 3em);
+            padding-right: 0.5em;
+            height: min-content;
+        }
+        
+        .min-height {
+            display: block;
+            height: min-content;
+        }
+
+        .main-tabs{
+            height: 100vh;
+        }
+        
+        .tab-content {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            margin-left: 0.5em;
+        }
+        
+        .main-tabs > .tabs-header-bar {
+            background: #eee;
+        }
+
+
+        .scrollable {
+            display: block;
+            overflow-y: scroll;
+            height: calc(100vh - 9em - 10px);
+        }
+
+        .main-tabs > .tab-content {
+            display: block;
+            height: 100%;
+            padding-bottom: 0 ;
+            padding-right: 0;
+        }
+
+        .main-tabs > .tab-content  > span{
+            display: block;
+            height: 100%;
         }
         
         body {
             height: 100%;
+        }
+        
+        #maindiv {
+            height: calc(100% - 6em);
         }
     </style>
 
 
 </head>
 <body>
-<div id="left">
-    'left' not attached
+<div id="maindiv">
+    'maindiv' not attached
 </div>
-<div id="right">'right' not attached</div>
-<div id="bottomright">'bottomright' not attached</div>
 <script src="./customGenerator.ts"></script>
 </body>
 </html>
