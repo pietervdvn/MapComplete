@@ -47,7 +47,7 @@ export class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return "<img id='home' src='./assets/home.svg' alt='home' class='small-userbadge-icon'> ";
+                    return "<img src='./assets/home.svg' alt='home' class='small-userbadge-icon'> ";
                 }
                 return "";
             })

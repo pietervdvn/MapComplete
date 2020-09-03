@@ -86,6 +86,7 @@ export class SlideShow extends UIElement {
         }
         this._next.Update();
         this._prev.Update();
+        return this;
     }
 
 }

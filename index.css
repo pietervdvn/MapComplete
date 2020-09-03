@@ -4,21 +4,8 @@
         padding: 0;
     }
 
-
     body {
         font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-    form {
-        display: inline;
-    }
-
-    .invalid {
-        box-shadow: 0 0 10px #ff5353;
-    }
-
-    .shadow {
-        box-shadow: 0 0 10px #00000066;
     }
 
 
@@ -40,10 +27,6 @@
         display: none; /*Hidden by default, only visible on mobile*/
     }
 
-    #help-button-mobile {
-        display: none;
-    }
-
     #geolocate-button img {
         width: 31px;
         height: 31px;
@@ -54,8 +37,9 @@
         display: block;
     }
 
-    .selected-element {
-        fill: black
+
+    #help-button-mobile {
+        display: none;
     }
 
     /**************** GENERIC ****************/
@@ -77,6 +61,18 @@
     padding-top: 0.15em;
     padding-bottom: 0.15em;
 }
+
+    form {
+        display: inline;
+    }
+
+    .invalid {
+        box-shadow: 0 0 10px #ff5353;
+    }
+
+    .shadow {
+        box-shadow: 0 0 10px #00000066;
+    }
 
 .soft {
     background-color: #e5f5ff;
@@ -125,103 +121,6 @@
         text-decoration: underline;
     }
 
-
-/**************** USER BADGE ****************/
-
-.small-userbadge-icon {
-    width: 1em;
-    height: 1em;
-    fill: black;
-    border-radius: 0;
-}
-
-
-
-#home {
-    cursor: pointer;
-}
-
-#profile-pic {
-    float: left;
-    width: 4em;
-    height: 4em;
-    padding: 0;
-    margin: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 500ms linear;
-}
-
-#username {
-    text-decoration: none;
-    color: black;
-}
-
-
-#usertext {
-    width: max-content;
-    margin: 0;
-
-    padding: 0.9em;
-    padding-left: 4.7em; /* Should be half of profile-pic's width + actual padding (same as padding-right)*/
-    padding-right: 1.5em;
-    border-radius: 2em; /*Half border radius width/height*/
-    height: 2.2em; /*SHould equal profile-pic height - padding*/
-    z-index: 5000;
-    text-align: left;
-    background-color: white;
-    background-size: 100%;
-    display: block;
-
-    line-height: 0.75em;
-}
-
-#usertext a {
-    text-decoration: none;
-    color: black;
-}
-
-#userbadge {
-    display: inline-block;
-    text-align: center;
-    background-color: white;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-    border-bottom-right-radius: 1.5em;
-    border-top-right-radius: 1.5em;
-    margin: 0;
-    margin-bottom: 0.5em;
-
-    min-width: 20em;
-    pointer-events: all;
-}
-
-.userbadge-login {
-    font-weight: bold;
-    font-size: large;
-    background-color: #e5f5ff !important;
-    height:3em;
-
-    display: inline-block;
-    text-align: center;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-    border-bottom-right-radius: 1.5em;
-    border-top-right-radius: 1.5em;
-    margin: 0;
-
-    min-width: 20em;
-    pointer-events: all;
-}
-
-#userbadge-and-search {
-    display: inline-block;
-    width: min-content;
-}
 
 
 #searchbox {
@@ -614,7 +513,6 @@
     #welcomeMessage {
         display: inline-block;
         background-color: white;
-        padding: 1em;
         border-radius: 0;
         width: 100%;
         max-width: 100%;
@@ -718,90 +616,6 @@
 
 /************ Slideshow *****************/
 
-
-.image-slideshow {
-    position: relative;
-    text-align: center;
-    max-width: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.slides {
-    overflow: hidden;
-}
-
-.prev-button {
-    background-color: black;
-    opacity: 0.3;
-    width: 4.0em;
-
-    height: 100%;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-
-    z-index: 5060;
-
-    border-radius: 1em;
-}
-
-
-.next-button {
-    background-color: black;
-    opacity: 0.3;
-    width: 4.0em;
-    height: 100%;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-    border-radius: 1em;
-    
-
-    z-index: 5060;
-
-}
-
-.vspan {
-    height: calc(50% - 3em);
-}
-
-.prev-button img {
-    margin-left: -1em;
-    width: 6em;
-    text-align: center;
-}
-
-.next-button img {
-    margin-left: -1em;
-    width: 6em;
-    text-align: center;
-}
-
-.slide > span {
-    max-height: 40vh;
-}
-
-.slide > span img {
-    height: auto;
-    width: auto;
-    max-width: 100%;
-    max-height: 30vh;
-    border-radius: 1em;
-}
-
-
-.hidden {
-    /* This is used by the slideshow, to hide non-active slides*/
-    display: none !important;
-
-}
 
 
 .imgWithAttr {
@@ -1101,7 +915,6 @@
     padding: 0.5em;
     padding-left: 0.75em;
 
-    height: 3em;
     width: 14em;
     border-radius: 1em;
     border-top-left-radius: 0;

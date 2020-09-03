@@ -85,7 +85,7 @@ export class ImageCarousel extends TagDependantUIElement {
 
 
         this._deleteButton = new ConfirmDialog(showDeleteButton,
-            "<img src='assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
+            "<img src='./assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
             "<span>Afbeelding verwijderen</span>",
             "<span>Terug</span>",
             deleteCurrent,
@@ -149,6 +149,7 @@ export class ImageCarousel extends TagDependantUIElement {
     Activate() {
         super.Activate();
         this.searcher.Activate();
+        return this;
     }
 
 }

@@ -12,6 +12,7 @@ if (window.location.hash.length > 10) {
 } else {
     const hash = LocalStorageSource.Get("last-custom-theme").data
     if (hash !== undefined) {
+        console.log("Using theme from local storage")
         layout = JSON.parse(atob(hash)) as LayoutConfigJson;
     }
 }

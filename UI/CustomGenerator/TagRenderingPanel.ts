@@ -41,7 +41,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         this.options = options ?? {};
         const questionsNotUnlocked = userDetails.csCount < State.userJourney.themeGeneratorFullUnlock;
         this.options.disableQuestions = 
-            (this.options.disableQuestions ?? false) && 
+            (this.options.disableQuestions ?? false) ||
             questionsNotUnlocked; 
 
         this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>", options?.description ?? ""])

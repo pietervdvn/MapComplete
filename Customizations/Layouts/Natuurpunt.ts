@@ -1,5 +1,4 @@
 import {Layout} from "../Layout";
-import {Birdhide} from "../Layers/Birdhide";
 import {InformationBoard} from "../Layers/InformationBoard";
 import {NatureReserves} from "../Layers/NatureReserves";
 
@@ -9,7 +8,7 @@ export class Natuurpunt extends Layout{
             "natuurpunt",
             ["nl"],
             "De natuur in",
-            [new Birdhide(), new InformationBoard(), new NatureReserves(true), "drinking_water"],
+            ["birdhides", new InformationBoard(), new NatureReserves(true), "drinking_water"],
             12,
             51.20875,
             3.22435,
@@ -17,6 +16,6 @@ export class Natuurpunt extends Layout{
             "",
             ""
         );
-        this.icon = "./assets/nature/birdhide.svg"
+        this.icon = "./assets/layers/bird_hide/birdhide.svg"
     }
 }

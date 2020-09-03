@@ -53,6 +53,7 @@ class ImageCarouselWithUpload extends TagDependantUIElement {
         super.Activate();
         this._imageElement.Activate();
         this._pictureUploader.Activate();
+        return this;
     }
 
     Update() {

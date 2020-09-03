@@ -11,7 +11,7 @@ export class GenerateEmpty {
             overpassTags: {and: [""]},
             title: undefined,
             description: {},
-            tagRenderings: []
+            tagRenderings: [],
         }
     }
 

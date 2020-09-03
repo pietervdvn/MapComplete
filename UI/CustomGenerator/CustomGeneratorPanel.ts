@@ -22,7 +22,7 @@ export default class CustomGeneratorPanel extends UIElement {
     private mainPanel: UIElement;
     private loginButton: UIElement;
 
-    private connection: OsmConnection;
+    private readonly connection: OsmConnection;
 
     constructor(connection: OsmConnection, layout: LayoutConfigJson) {
         super(connection.userDetails);
@@ -40,7 +40,7 @@ export default class CustomGeneratorPanel extends UIElement {
     private InitMainPanel(layout: LayoutConfigJson, userDetails: UserDetails, connection: OsmConnection) {
         const es = new UIEventSource(layout);
         const encoded = es.map(config => btoa(JSON.stringify(config)));
-        encoded.addCallback(encoded => LocalStorageSource.Get("\"last-custom-theme\""))
+        encoded.addCallback(encoded => LocalStorageSource.Get("last-custom-theme"))
         const liveUrl = encoded.map(encoded => `./index.html?userlayout=${es.data.id}#${encoded}`)
         const iframe = liveUrl.map(url => `<iframe src='${url}' width='100%' height='99%' style="box-sizing: border-box" title='Theme Preview'></iframe>`);
         const currentSetting = new UIEventSource<SingleSetting<any>>(undefined)

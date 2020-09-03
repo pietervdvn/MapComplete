@@ -46,7 +46,7 @@ export class RegexTag extends TagsFilter {
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
             if (RegexTag.doesMatch(tag.k, this.key)){
-                return RegexTag.doesMatch(tag.v, this.value);
+                return RegexTag.doesMatch(tag.v, this.value) != this.invert;
             }
         }
         return false;

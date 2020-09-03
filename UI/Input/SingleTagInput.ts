@@ -16,7 +16,7 @@ export default class SingleTagInput extends InputElement<string> {
 
     constructor(value: UIEventSource<string> = undefined) {
         super(undefined);
-        this._value = value ?? new UIEventSource<string>(undefined);
+        this._value = value ?? new UIEventSource<string>("");
        
         this.key = TextField.KeyInput();
 

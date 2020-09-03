@@ -1,0 +1,89 @@
+
+.small-userbadge-icon {
+    width: 1em;
+    height: 1em;
+    fill: black;
+    border-radius: 0;
+}
+
+#profile-pic {
+    float: left;
+    width: 4em;
+    height: 4em;
+    padding: 0;
+    margin: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+#username {
+    text-decoration: none;
+    color: black;
+}
+
+
+#usertext {
+    width: max-content;
+    margin: 0;
+
+    padding: 0.9em;
+    padding-left: 4.7em; /* Should be half of profile-pic's width + actual padding (same as padding-right)*/
+    padding-right: 1.5em;
+    border-radius: 2em; /*Half border radius width/height*/
+    height: 2.2em; /*SHould equal profile-pic height - padding*/
+    z-index: 5000;
+    text-align: left;
+    background-color: white;
+    background-size: 100%;
+    display: block;
+
+    line-height: 0.75em;
+}
+
+#usertext a {
+    text-decoration: none;
+    color: black;
+}
+
+#userbadge {
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    border-bottom-right-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    margin: 0;
+    margin-bottom: 0.5em;
+
+    min-width: 20em;
+    pointer-events: all;
+}
+
+.userbadge-login {
+    font-weight: bold;
+    font-size: large;
+    background-color: #e5f5ff !important;
+    height:3em;
+
+    display: inline-block;
+    text-align: center;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    border-bottom-right-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    margin: 0;
+
+    min-width: 20em;
+    pointer-events: all;
+}
+
+#userbadge-and-search {
+    display: inline-block;
+    width: min-content;
+}
