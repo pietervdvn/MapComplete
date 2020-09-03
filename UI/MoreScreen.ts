@@ -72,7 +72,7 @@ export class MoreScreen extends UIElement {
 
         els.push(new VariableUiElement(
             State.state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < State.userJourney.themeGeneratorUnlock) {
+                if (userDetails.csCount < State.userJourney.themeGeneratorReadOnlyUnlock) {
                     return tr.requestATheme.Render();
                 }
                 return new SubtleButton("./assets/pencil.svg", tr.createYourOwnTheme, {
@@ -86,7 +86,7 @@ export class MoreScreen extends UIElement {
         for (const k in AllKnownLayouts.allSets) {
             const layout : Layout = AllKnownLayouts.allSets[k];
             if (k === PersonalLayout.NAME) {
-                if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.customLayoutUnlock) {
+                if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.personalLayoutUnlock) {
                     continue;
                 }
             }
@@ -99,7 +99,6 @@ export class MoreScreen extends UIElement {
 
         const customThemesNames = State.state.installedThemes.data ?? [];
         if (customThemesNames.length > 0) {
-            console.log(customThemesNames)
             els.push(Translations.t.general.customThemeIntro)
 
             for (const installed of State.state.installedThemes.data) {

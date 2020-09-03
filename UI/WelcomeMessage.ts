@@ -1,7 +1,6 @@
 import {UIElement} from "./UIElement";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
-import {Layout} from "../Customizations/Layout";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {InitUiElements} from "../InitUiElements";
@@ -20,26 +19,17 @@ export class WelcomeMessage extends UIElement {
         super(State.state.osmConnection.userDetails);
         this.ListenTo(Locale.language);
         this.languagePicker = InitUiElements.CreateLanguagePicker(Translations.t.general.pickLanguage);
+        const layout = State.state.layoutToUse.data;
 
-        function fromLayout(f: (layout: Layout) => (string | UIElement)): UIElement {
-            return Translations.W(f(State.state.layoutToUse.data));
-        }
-
-        this.description = fromLayout((layout) => layout.welcomeMessage);
-        this.plzLogIn = 
-            fromLayout((layout) => layout.gettingStartedPlzLogin
-                .onClick(() => {State.state.osmConnection.AttemptLogin()})
-            );
-        this.welcomeBack = fromLayout((layout) => layout.welcomeBackMessage);
-        this.tail = fromLayout((layout) => layout.welcomeTail);
+        this.description =Translations.W(layout.welcomeMessage);
+        this.plzLogIn =
+            Translations.W(layout.gettingStartedPlzLogin)
+                .onClick(() => {
+                    State.state.osmConnection.AttemptLogin()
+                });
+        this.welcomeBack = Translations.W(layout.welcomeBackMessage);
+        this.tail = Translations.W(layout.welcomeTail);
     }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        console.log("Innerupdating welcome message")
-        this.plzLogIn.Update();
-    }
-    
 
     InnerRender(): string {
 
@@ -52,7 +42,8 @@ export class WelcomeMessage extends UIElement {
         return new Combine([
             this.description,
             "<br/></br>",
-           // TODO this button is broken - figure out why loginStatus,
+            // TODO this button is broken - figure out why loginStatus,
+            loginStatus,
             this.tail,
             "<br/>",
             this.languagePicker

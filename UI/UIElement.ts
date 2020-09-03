@@ -68,7 +68,7 @@ export abstract class UIElement extends UIEventSource<string> {
         if (UIElement.runningFromConsole) {
             return;
         }
-
+        
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
             // The element is not painted
@@ -99,7 +99,7 @@ export abstract class UIElement extends UIEventSource<string> {
             if (element.innerHTML === "") {
                 element.parentElement.style.display = "none";
             } else {
-                element.parentElement.style.display = undefined;
+                element.parentElement.style.display = "block";
             }
         }
 
@@ -174,7 +174,7 @@ export abstract class UIElement extends UIEventSource<string> {
 
     public abstract InnerRender(): string;
 
-    public Activate(): void {
+    public Activate(): UIElement {
         for (const i in this) {
             const child = this[i];
             if (child instanceof UIElement) {
@@ -187,6 +187,7 @@ export abstract class UIElement extends UIEventSource<string> {
                 }
             }
         }
+        return this;
     };
 
     public IsEmpty(): boolean {

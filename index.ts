@@ -2,7 +2,6 @@ import {TagRendering} from "./Customizations/TagRendering";
 import {UserBadge} from "./UI/UserBadge";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {TagUtils} from "./Logic/Tags";
-import {FullScreenMessageBoxHandler} from "./UI/FullScreenMessageBoxHandler";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {SearchAndGo} from "./UI/SearchAndGo";
@@ -17,6 +16,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {PersonalLayout} from "./Logic/PersonalLayout";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
+import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
 
 TagRendering.injectFunction();
 
@@ -28,9 +28,9 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     window.location.replace("https://buurtnatuur.be");
 }
 
+    const testing = QueryParameters.GetQueryParameter("test", "true");
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     // Set to true if testing and changes should NOT be saved
-    const testing = QueryParameters.GetQueryParameter("test", "true");
     testing.setData(testing.data ?? "true")
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
@@ -113,13 +113,17 @@ if (layoutToUse.hideFromOverview) {
 
 if (layoutFromBase64 !== "false") {
     State.state.layoutDefinition = hash.substr(1);
-    State.state.osmConnection.OnLoggedIn(() => {
-        State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
-    })
+    if (!testing) {
+        State.state.osmConnection.OnLoggedIn(() => {
+            State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
+        })
+    }else{
+        console.warn("NOT saving custom layout to OSM as we are tesing -> probably in an iFrame")
+    }
 }
 InitUiElements.InitBaseMap();
 
-new FixedUiElement("").AttachTo("decoration"); // Remove the decoration
+new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
 
 function setupAllLayerElements() {
 
@@ -232,9 +236,12 @@ InitUiElements.OnlyIf((State.state.featureSwitchSearch), () => {
     new SearchAndGo().AttachTo("searchbox");
 });
 
-new FullScreenMessageBoxHandler(() => {
+
+new FullScreenMessageBox(() => {
     State.state.selectedElement.setData(undefined)
-}).update();
+}).AttachTo("messagesboxmobile");
+
+
 
 InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
     InitUiElements.InitWelcomeMessage()

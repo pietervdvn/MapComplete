@@ -259,8 +259,14 @@ export class FromJSON {
         const iconSize = FromJSON.TagRenderingWithDefault(json.iconSize, "iconSize", "40,40,center");
         const color = FromJSON.TagRenderingWithDefault(json.color, "layercolor", "#0000ff");
         const width = FromJSON.TagRenderingWithDefault(json.width, "layerwidth", "10");
-        const tagRenderings =  json.tagRenderings?.map(FromJSON.TagRendering) ?? [];
-        
+
+        let tagRenderingDefs = json.tagRenderings ?? [];
+        if (tagRenderingDefs.indexOf("images") < 0) {
+            tagRenderingDefs = ["images", ...tagRenderingDefs];
+        }
+        let tagRenderings = tagRenderingDefs.map(FromJSON.TagRendering);
+
+
         const renderTags = {"id": "node/-1"}
         const presets: Preset[] = json?.presets?.map(preset => {
             return ({
@@ -294,7 +300,7 @@ export class FromJSON {
 
             // the anchor is always set from the center of the point
             // x, y with x going right and y going down if the values are bigger
-            const popupAnchor = [0, -iconAnchor[1]+3];
+            const popupAnchor = [0, 3 - iconAnchor[1]];
 
             return {
                 color: color.GetContent(tags).txt,

@@ -105,7 +105,16 @@ export class UIEventSource<T>{
         });
         
         return newSource;
-        
+    }
+    
+    public static Chronic(millis: number):UIEventSource<Date>{
+        const source = new UIEventSource<Date>(undefined);
+        function run() {
+            source.setData(new Date());
+            window.setTimeout(run, millis);
+        }
+        run();
+        return source;
         
     }
 

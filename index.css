@@ -284,6 +284,9 @@
     padding-top: 0.2em;
     padding-bottom: 0.2em;
 }
+    #hidden-on-mobile {
+        display: none; /*Only shown on small screens*/
+    }
 
 
 @media only screen and (max-height: 600px) and (not (max-width:700px)) {
@@ -351,9 +354,6 @@
     padding-right: 10px; /* Shadow offset */
 }
 
-#messagesboxmobilewrapper {
-    display: none; /*Only shown on small screens*/
-}
 
 .collapse-button {
     position: absolute;
@@ -556,6 +556,10 @@
 
 
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+    #hidden-on-mobile {
+        display: block;
+    }
+  
     #messagesbox-wrapper {
         display: none;
     }
@@ -590,33 +594,20 @@
 
     }
 
-    #messagesboxmobilewrapper {
-        position: absolute;
-        padding: 0;
-        margin: 0;
-        z-index: 5050;
-        transition: all 500ms linear;
-        overflow: hidden;
-        border-radius: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-color: white;
-    }
-
-    #messagesboxmobile-scroll {
+    .messagesboxmobile-scroll {
         display: block;
         width: 100vw;
-        overflow-y: auto;
-        padding: 0;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        padding: 1em;
         margin: 0;
-        height: calc(100% - 5em); /*Height of to-the-map is 5em*/
+        height: calc(100vh - 5em); /*Height of to-the-map is 5em*/
     }
 
     #messagesboxmobile {
-        padding: 1em;
-        padding-bottom: 2em;
-        border-radius: 1em;
+        display: block;
+        position: absolute;
+        z-index: 10000;
         background-color: white;
     }
 
@@ -634,77 +625,77 @@
         box-shadow: unset;
         overflow-y: unset;
     }
-    
+
 
 }
 
 
-#to-the-map {
-    position: relative;
-}
-
-#to-the-map > span{
-    
-    position: absolute;
-    box-sizing: border-box;
-    height: 3em;
-    
-    padding: 0.5em;
-    margin: 0;
-
-    padding-top: 0.75em;
-    text-align: center;
-    width: 100%;
-    color: white;
-    background-color: #7ebc6f;
-    cursor: pointer;
-    font-size: xx-large;
-    font-weight: bold;
-
-}
-
-
-@media only screen and (max-height: 400px) {
-    /* Landscape: small 'to the map' */
-    #to-the-map {
-        position: relative;
-        height: 100%;
-        width: 100%
-    }
-
-    #to-the-map span {
-        width: auto;
-        border-top-left-radius: 1.5em;
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        bottom: 0;
-        height: auto;
-        margin:0;
-        padding: 1em;
-        padding-bottom: 0.75em;
-        height: 3em;
-        font-size: x-large;
-    }
-
-    #messagesboxmobile {
-        padding-bottom: 5em;
-    }
-
-    #messagesboxmobile-scroll {
-        position: absolute;
-        z-index: 2;
-        width: 100vw;
-        height: 100vh;
+    .to-the-map {
+        display: block;
         box-sizing: border-box;
-    }
-    
-    #welcomeMessage{
-        box-shadow: unset;
-        max-height: 100vh;
+        height: 2.5em;
+        margin: 0;
+        padding: 0.5em;
+        padding-top: 0.75em;
+        text-align: center;
+        color: white;
+        background-color: #7ebc6f;
+        cursor: pointer;
+        font-size: xx-large;
+        font-weight: bold;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
     }
 
-}
+
+    @media only screen and (max-height: 400px) {
+        /* Landscape: small 'to the map' */
+        #hidden-on-mobile {
+            display: unset;
+        }
+
+        .to-the-map {
+            position: relative;
+            height: 100%;
+            width: 100%
+        }
+
+        .to-the-map span {
+            width: auto;
+            border-top-left-radius: 1.5em;
+            position: absolute;
+            z-index: 5;
+            right: 0;
+            bottom: 0;
+            height: auto;
+            margin: 0;
+            padding: 1em;
+            padding-bottom: 0.75em;
+            height: 3em;
+            font-size: x-large;
+        }
+
+        #messagesboxmobile {
+            position: absolute;
+            display: block;
+            z-index: 10000;
+            padding-bottom: 5em;
+        }
+
+        .messagesboxmobile-scroll {
+            display: block;
+            width: 100vw;
+            height: calc(100vh - 5em);
+            box-sizing: border-box;
+            overflow-y: scroll;
+        }
+
+        #welcomeMessage {
+            box-shadow: unset;
+            max-height: 100vh;
+        }
+
+    }
 
 .logo {
     float:right;
@@ -841,170 +832,173 @@
 
 }
 
-.attribution-author {
-    display: inline-block;
-}
+    .attribution-author {
+        display: inline-block;
+    }
 
-.license {
-    font-size: small;
-    font-weight: lighter;
-}
+    .license {
+        font-size: small;
+        font-weight: lighter;
+    }
 
-.attribution a {
-    color: white;
-}
-
-
-/**************** Image upload flow ***************/
-
-.imageflow {
-    margin-top: 1em;
-    margin-bottom: 2em;
-    text-align: center;
-
-}
-
-.imageflow-file-input-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.5em;
-    border-radius: 1em;
-    border: 3px solid black;
-}
-
-.imageflow-add-picture {
-    font-size: 28px;
-    font-weight: bold;
-    float: left;
-    margin-top: 4px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 13px;
-}
-
-.imageflow-file-input-wrapper img {
-    width: 36px;
-    height: 36px;
-    padding: 0.1em;
-    margin-top: 5px;
-    border-radius: 0;
-    float: left;
-}
+    .attribution a {
+        color: white;
+    }
 
 
-.license-picker {
-    float: left;
-}
+    /**************** Image upload flow ***************/
 
-.imageflow > input {
-    display: none;
-}
+    .imageflow {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        text-align: center;
 
+    }
 
-/***************** Info box (box containing features and questions ******************/
+    .imageflow-file-input-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.5em;
+        border-radius: 1em;
+        border: 3px solid black;
+    }
 
-.leaflet-popup-content {
-    width: 40em !important;
-}
+    .imageflow-add-picture {
+        font-size: 28px;
+        font-weight: bold;
+        float: left;
+        margin-top: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 13px;
+    }
 
-#messagesboxmobile .featureinfobox {
-    max-height: unset;
-    overflow-y: unset;
-}
-
-#messagesboxmobile .featureinfobox > div {
-    width: 100%;
-    max-width: unset;
-    padding-left: unset;
-}
-
-.featureinfobox {
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.featureinfobox > div {
-    width: calc(100% - 2em);
-    padding-left: 1em;
-}
-
-
-.featureinfoboxtitle {
-    position: relative;
-}
-
-.question .form-text-field > input{
-    width: 100%;
-    box-sizing: border-box;
-} 
-
-.osmlink {
-    position: absolute;
-    right: 0;
-}
-
-.osm-logo path {
-    fill: #7ebc6f;
-}
-
-.featureinfoboxtitle .answer {
-    display: inline;
-    margin-right: 3em;
-}
-
-.featureinfoboxtitle .answer-text {
-    display: inline;
-}
-
-.featureinfoboxtitle .editbutton {
-    float: none;
-    width: 0.8em;
-    height: 0.8em;
-    padding: 0.3em;
-    border-radius: 0.35em;
-    border: solid black 1px;
-    margin-left: 0.5em;
-    top: 0.2em;
-    vertical-align: middle;
-
-}
+    .imageflow-file-input-wrapper img {
+        width: 36px;
+        height: 36px;
+        padding: 0.1em;
+        margin-top: 5px;
+        border-radius: 0;
+        float: left;
+    }
 
 
-.editbutton {
-    width: 1.3em;
-    height: 1.3em;
-    padding: 0.5em;
-    border-radius: 0.65em;
-    border: solid black 1px;
+    .license-picker {
+        float: left;
+    }
 
-    font-size: medium;
-    float: right;
+    .imageflow > input {
+        display: none;
+    }
 
 
-}
+    /***************** Info box (box containing features and questions ******************/
 
-.wikipedialink {
-    position: absolute;
-    right: 24px;
-    width: 24px;
-    height: 24px;
-    padding-right: 12px;
-}
-
-.wikipedialink img {
-    width: 24px;
-    height: 24px;
-}
+    .leaflet-popup-content {
+        width: 40em !important;
+    }
 
 
-.featureinfoboxtitle span {
-    font-weight: bold;
-    font-size: x-large;
-}
+  
 
-.featureinfoboxtitle a {
-    float: right;
-    margin-left: 1em;
+    #messagesboxmobile .featureinfobox {
+        max-height: unset;
+        overflow-y: unset;
+    }
+
+    #messagesboxmobile .featureinfobox > div {
+        width: 100%;
+        max-width: unset;
+        padding-left: unset;
+    }
+
+    .featureinfobox {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .featureinfobox > div {
+        width: calc(100% - 2em);
+        padding-left: 1em;
+    }
+
+
+    .featureinfoboxtitle {
+        position: relative;
+    }
+
+    .question .form-text-field > input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .osmlink {
+        position: absolute;
+        right: 0;
+    }
+
+    .osm-logo path {
+        fill: #7ebc6f;
+    }
+
+    .featureinfoboxtitle .answer {
+        display: inline;
+        margin-right: 3em;
+    }
+
+    .featureinfoboxtitle .answer-text {
+        display: inline;
+    }
+
+    .featureinfoboxtitle .editbutton {
+        float: none;
+        width: 0.8em;
+        height: 0.8em;
+        padding: 0.3em;
+        border-radius: 0.35em;
+        border: solid black 1px;
+        margin-left: 0.5em;
+        top: 0.2em;
+        vertical-align: middle;
+
+    }
+
+
+    .editbutton {
+        width: 1.3em;
+        height: 1.3em;
+        padding: 0.5em;
+        border-radius: 0.65em;
+        border: solid black 1px;
+
+        font-size: medium;
+        float: right;
+
+
+    }
+
+    .wikipedialink {
+        position: absolute;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        padding-right: 12px;
+    }
+
+    .wikipedialink img {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .featureinfoboxtitle span {
+        font-weight: bold;
+        font-size: x-large;
+    }
+
+    .featureinfoboxtitle a {
+        float: right;
+        margin-left: 1em;
 }
 
 
@@ -1273,6 +1267,7 @@
     padding: 0.5em;
     word-break: break-all;
     color: black;
+    box-sizing: border-box;
 }
 
 .iframe-code-block {

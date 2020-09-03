@@ -1,24 +1,36 @@
 import {UIElement} from "./UIElement";
-import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
-import {UIEventSource} from "../Logic/UIEventSource";
+import Combine from "./Base/Combine";
 
 /**
  * Handles the full screen popup on mobile
  */
-export class FullScreenMessageBoxHandler {
+export class FullScreenMessageBox extends UIElement {
 
-    private _uielement: UIEventSource<UIElement>;
+    private _uielement: UIElement;
+    private returnToTheMap: UIElement;
 
     constructor(onClear: (() => void)) {
-        this._uielement = State.state.fullScreenMessage;
+        super(undefined);
+
         const self = this;
-        this._uielement.addCallback(function () {
-            self.update();
+
+        State.state.fullScreenMessage.addCallback(uielement => {
+            return self._uielement = uielement?.SetClass("messagesboxmobile-scroll")?.Activate();
         });
-        
-        this.update();
+        this._uielement = State.state.fullScreenMessage.data;
+        this.ListenTo(State.state.fullScreenMessage);
+        this.HideOnEmpty(true);
+
+        State.state.fullScreenMessage.addCallback(latestData => {
+            if (latestData === undefined) {
+                location.hash = "";
+            } else {
+                location.hash = "#element";
+            }
+            this.Update();
+        })
 
         if (window !== undefined) {
             window.onhashchange = function () {
@@ -30,36 +42,24 @@ export class FullScreenMessageBoxHandler {
             }
         }
 
-        Translations.t.general.returnToTheMap
+        this.returnToTheMap = Translations.t.general.returnToTheMap.Clone()
+            .SetClass("to-the-map")
             .onClick(() => {
-                self._uielement.setData(undefined);
+                console.log("Returning...")
+                State.state.fullScreenMessage.setData(undefined);
                 onClear();
-            })
-            .AttachTo("to-the-map");
-
+                self.Update();
+            });
 
     }
 
 
-    update() {
-        const wrapper = document.getElementById("messagesboxmobilewrapper");
-        const gen = this._uielement.data;
-        if (gen === undefined) {
-            wrapper.classList.add("hidden")
-            if (location.hash !== "") {
-                location.hash = ""
-            }
-            return;
+    InnerRender(): string {
+        if (this._uielement === undefined) {
+            return "";
         }
-        location.hash = "#element"
-        wrapper.classList.remove("hidden");
-
-        gen
-            ?.HideOnEmpty(true)
-            ?.AttachTo("messagesboxmobile")
-            ?.Activate();
-
-
+        return new Combine([this._uielement, this.returnToTheMap]).SetStyle("").Render();
     }
+
 
 }

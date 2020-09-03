@@ -16,6 +16,9 @@ import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConf
 import {MultiInput} from "../Input/MultiInput";
 import {LayerConfigJson} from "../../Customizations/JSON/LayerConfigJson";
 import PresetInputPanel from "./PresetInputPanel";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import {State} from "../../State";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 /**
  * Shows the configuration for a single layer
@@ -38,10 +41,11 @@ export default class LayerPanel extends UIElement {
     constructor(config: UIEventSource<LayoutConfigJson>,
                 languages: UIEventSource<string[]>,
                 index: number,
-                currentlySelected: UIEventSource<SingleSetting<any>>) {
+                currentlySelected: UIEventSource<SingleSetting<any>>,
+                userDetails: UserDetails) {
         super();
         this._config = config;
-        this.mapRendering = this.setupRenderOptions(config, languages, index, currentlySelected);
+        this.mapRendering = this.setupRenderOptions(config, languages, index, currentlySelected, userDetails);
 
         const actualDeleteButton = new SubtleButton(
             "./assets/delete.svg",
@@ -100,7 +104,7 @@ export default class LayerPanel extends UIElement {
             currentlySelected);
         const self = this;
 
-        const popupTitleRendering = new TagRenderingPanel(languages, currentlySelected, {
+        const popupTitleRendering = new TagRenderingPanel(languages, currentlySelected, userDetails, {
             title: "Popup title",
             description: "This is the rendering shown as title in the popup for this element",
             disableQuestions: true
@@ -113,7 +117,7 @@ export default class LayerPanel extends UIElement {
         const tagRenderings = new MultiInput<TagRenderingConfigJson>("Add a tag rendering/question",
             () => ({}),
             () => {
-                const tagPanel = new TagRenderingPanel(languages, currentlySelected)
+                const tagPanel = new TagRenderingPanel(languages, currentlySelected, userDetails)
                 self.registerTagRendering(tagPanel);
                 return tagPanel;
             });
@@ -124,11 +128,16 @@ export default class LayerPanel extends UIElement {
             }
         )
 
-        const presetPanel = new MultiInput("Add a preset",
-            () => ({tags: [], title: {}}),
-            () => new PresetInputPanel(currentlySelected, languages));
-        this.presetsPanel = presetPanel;
-        new SingleSetting(config, presetPanel, ["layers", index, "presets"], "Presets", "")
+        if (userDetails.csCount >= State.userJourney.themeGeneratorFullUnlock) {
+
+            const presetPanel = new MultiInput("Add a preset",
+                () => ({tags: [], title: {}}),
+                () => new PresetInputPanel(currentlySelected, languages));
+            new SingleSetting(config, presetPanel, ["layers", index, "presets"], "Presets", "")
+            this.presetsPanel = presetPanel;
+        } else {
+            this.presetsPanel = new FixedUiElement(`Creating a custom theme which also edits OSM is only unlocked after ${State.userJourney.themeGeneratorFullUnlock} changesets`).SetClass("alert");
+        }
 
         function loadTagRenderings() {
             const values = (config.data.layers[index] as LayerConfigJson).tagRenderings;
@@ -152,27 +161,29 @@ export default class LayerPanel extends UIElement {
     private setupRenderOptions(config: UIEventSource<LayoutConfigJson>,
                                languages: UIEventSource<string[]>,
                                index: number,
-                               currentlySelected: UIEventSource<SingleSetting<any>>): UIElement {
+                               currentlySelected: UIEventSource<SingleSetting<any>>,
+                               userDetails: UserDetails
+    ): UIElement {
         const iconSelect = new TagRenderingPanel(
-            languages, currentlySelected,
+            languages, currentlySelected, userDetails,
             {
                 title: "Icon",
                 description: "A visual representation for this layer and for the points on the map.",
                 disableQuestions: true
             });
-        const size = new TagRenderingPanel(languages, currentlySelected,
+        const size = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Icon Size",
                 description: "The size of the icons on the map in pixels. Can vary based on the tagging",
                 disableQuestions: true
             });
-        const color = new TagRenderingPanel(languages, currentlySelected,
+        const color = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Way and area color",
                 description: "The color or a shown way or area. Can vary based on the tagging",
                 disableQuestions: true
             });
-        const stroke = new TagRenderingPanel(languages, currentlySelected,
+        const stroke = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Stroke width",
                 description: "The width of lines representing ways and the outline of areas. Can vary based on the tags",

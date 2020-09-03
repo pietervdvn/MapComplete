@@ -12,7 +12,11 @@
       "amenity=bicycle_parking"
     ]
   },
-  "icon": "./assets/layers/bike_parking/parking.svg",
+  "icon": {
+    "render": {
+      "en": "./assets/layers/bike_parking/parking.svg"
+    }
+  },
   "size": {
     "render": {
       "en": "50,50,bottom"

@@ -26,10 +26,10 @@ export class FeatureInfoBox extends UIElement {
     private readonly _title: UIElement;
     private readonly _osmLink: UIElement;
     private readonly _wikipedialink: UIElement;
-    private _infoboxes: TagDependantUIElement[];
+    private readonly _infoboxes: TagDependantUIElement[];
 
-    private _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();
-    private _someSkipped = Translations.t.general.skippedQuestions.Clone();
+    private readonly _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();
+    private readonly _someSkipped = Translations.t.general.skippedQuestions.Clone();
 
     constructor(
         feature: any,
@@ -53,7 +53,7 @@ export class FeatureInfoBox extends UIElement {
                 tagRenderingOption.construct(deps));
         }
         function initTags() {
-            self._infoboxes = []
+            self._infoboxes.splice(0, self._infoboxes.length);
             for (const tagRenderingOption of elementsToShow) {
                 self._infoboxes.push(
                     tagRenderingOption.construct(deps));
@@ -101,10 +101,10 @@ export class FeatureInfoBox extends UIElement {
 
         }
 
-        let questionsHtml = "";
+        let questionElement: UIElement;
 
         if (!State.state.osmConnection.userDetails.data.loggedIn) {
-            let mostImportantQuestion;
+            let mostImportantQuestion ;
             let score = -1000;
             for (const question of questions) {
 
@@ -114,7 +114,7 @@ export class FeatureInfoBox extends UIElement {
                 }
             }
 
-            questionsHtml = mostImportantQuestion?.Render() ?? "";
+            questionElement = mostImportantQuestion;
         } else if (questions.length > 0) {
             // We select the most important question and render that one
             let mostImportantQuestion;
@@ -127,11 +127,11 @@ export class FeatureInfoBox extends UIElement {
                 }
             }
 
-            questionsHtml = mostImportantQuestion?.Render() ?? "";
+            questionElement = mostImportantQuestion;
         } else if (skippedQuestions == 1) {
-            questionsHtml = this._oneSkipped.Render();
+            questionElement = this._oneSkipped;
         } else if (skippedQuestions > 0) {
-            questionsHtml = this._someSkipped.Render();
+            questionElement = this._someSkipped;
         }
 
         const title = new Combine([
@@ -140,12 +140,16 @@ export class FeatureInfoBox extends UIElement {
             this._osmLink]);
 
         const infoboxcontents = new Combine(
-            [ new VerticalCombine(info, "infobox-information "), questionsHtml]);
+            [ new VerticalCombine(info, "infobox-information "), questionElement ?? ""]);
 
         return "<div class='featureinfobox'>" +
             new Combine([
-                "<div class='featureinfoboxtitle'>" + title.Render() + "</div>",
-                "<div class='infoboxcontents'>" + infoboxcontents.Render() + "</div>"]).Render() + "</div>";
+                "<div class='featureinfoboxtitle'>",
+                title, 
+                "</div>",
+                "<div class='infoboxcontents'>",
+                infoboxcontents,
+                "</div>"]).Render() + "</div>";
     }
     
     

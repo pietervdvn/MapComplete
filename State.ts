@@ -23,16 +23,15 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7d Refactored";
+    public static vNumber = "0.0.7e Fixing all the bugs";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
-        customLayoutUnlock: 50,
-        themeGeneratorUnlock: 500,
-        tagsVisibleAt: 200,
-        tagsVisibleAndWikiLinked: 250
-
-
+        personalLayoutUnlock: 20,
+        tagsVisibleAt: 100,
+        tagsVisibleAndWikiLinked: 150,
+        themeGeneratorReadOnlyUnlock: 200,
+        themeGeneratorFullUnlock: 500,
     };
 
     public static runningFromConsole: boolean = false; 
@@ -68,13 +67,6 @@ export class State {
      *  The message that should be shown at the center of the screen
      */
     public readonly centerMessage = new UIEventSource<string>("");
-
-    /**
-     * The countdown: if set to e.g. ten, it'll start counting down. When reaching zero, changes will be saved. NB: this is implemented later, not in the eventSource
-     */
-    public readonly secondsTillChangesAreSaved = new UIEventSource<number>(0);
-
-
     /**
      This message is shown full screen on mobile devices
      */
@@ -116,10 +108,6 @@ export class State {
         latlng: number,
         accuracy: number
     }> = new UIEventSource<{ latlng: number, accuracy: number }>(undefined);
-
-    /** After this many milliseconds without changes, saves are sent of to OSM
-     */
-    public readonly saveTimeout = new UIEventSource<number>(30 * 1000);
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
@@ -259,16 +247,5 @@ export class State {
             return;
         }
 
-       
-
-    }
-    
-    public GetFilteredLayerFor(id: string) : FilteredLayer{
-        for (const flayer of this.filteredLayers.data) {
-            if(flayer.layerDef.id === id){
-                return flayer;
-            }
-        }
-        return undefined;
     }
 }

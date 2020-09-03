@@ -14,7 +14,7 @@
     <!-- $$$OG-META -->
 
     <style>
-        .decoration-desktop img {
+        #decoration-desktop img {
             width: 100%;
             height: 100%;
         }
@@ -23,33 +23,16 @@
 </head>
 <body>
 
-<div style="position: absolute; left: 1em; top: 1em; width:35vh; height:35vh;" class="decoration-desktop">
+<div style="position: absolute; left: 1em; bottom: 1em; width:35vh; height:35vh;"
+     id="decoration-desktop">
     <!-- A nice decoration while loading or on errors -->
     <!-- DECORATION 0 START -->
     <img src="./assets/add.svg"/>
     <!-- DECORATION 0 END -->
 </div>
 
-<div id="messagesboxmobilewrapper">
-    <div id="decoration" style="position: absolute; left: 1em; top: 1em; z-index: 1; width: 15em; height: 15em">
-        <!-- A nice decoration while loading or on errors -->
-        <!-- DECORATION 1 START -->
-        <img src="./assets/add.svg"/>
-        <!-- DECORATION 1 END -->
-    </div>
-    <div id="messagesboxmobile-scroll">
-        <div id="messagesboxmobile">
-            <div style="position: absolute; top: 50vh; left: 25vw; width:50vw; box-sizing: border-box;font-size: x-large">
-                Loading MapComplete
-            </div>
-        </div>
-    </div>
-    <div id="to-the-map">
-        If this message persists:
-        <ul style="margin:0">
-            <li>Is javascript enabled?</li>
-            <li>Is a scriptblocker (such as UMatrix or Brave) active?</li>
-        </ul>
+<div id="hidden-on-mobile">
+    <div id="messagesboxmobile">
     </div>
 </div>
 

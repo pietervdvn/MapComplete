@@ -6,6 +6,7 @@ import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import Combine from "../Base/Combine";
 import {GenerateEmpty} from "./GenerateEmpty";
 import LayerPanelWithPreview from "./LayerPanelWithPreview";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
 
 export default class AllLayersPanel extends UIElement {
 
@@ -15,28 +16,29 @@ export default class AllLayersPanel extends UIElement {
     private readonly languages: UIEventSource<string[]>;
 
     constructor(config: UIEventSource<LayoutConfigJson>,
-                languages: UIEventSource<any>) {
+                languages: UIEventSource<any>, userDetails: UserDetails) {
         super(undefined);
         this._config = config;
         this.languages = languages;
 
-        this.createPanels();
+        this.createPanels(userDetails);
         const self = this;
-        config.map<number>(config => config.layers.length).addCallback(() => self.createPanels());
+        config.map<number>(config => config.layers.length).addCallback(() => self.createPanels(userDetails));
 
     }
 
 
-    private createPanels() {
+    private createPanels(userDetails: UserDetails) {
         const self = this;
         const tabs = [];
 
         const layers = this._config.data.layers;
         for (let i = 0; i < layers.length; i++) {
-  
+
             tabs.push({
                 header: "<img src='./assets/bug.svg'>",
-                content: new LayerPanelWithPreview(this._config, this.languages, i)});
+                content: new LayerPanelWithPreview(this._config, this.languages, i, userDetails)
+            });
         }
         tabs.push({
             header: "<img src='./assets/layersAdd.svg'>",

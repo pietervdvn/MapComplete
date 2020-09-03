@@ -8,16 +8,17 @@ import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import Combine from "../Base/Combine";
 import PageSplit from "../Base/PageSplit";
 import TagRenderingPreview from "./TagRenderingPreview";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
 
 
 export default class LayerPanelWithPreview extends UIElement{
     private panel: UIElement;
     
-    constructor(config: UIEventSource<any>, languages: UIEventSource<string[]>, index: number) {
+    constructor(config: UIEventSource<any>, languages: UIEventSource<string[]>, index: number, userDetails: UserDetails) {
         super();
 
         const currentlySelected = new UIEventSource<(SingleSetting<any>)>(undefined);
-        const layer = new LayerPanel(config, languages, index, currentlySelected);
+        const layer = new LayerPanel(config, languages, index, currentlySelected, userDetails);
         const helpText = new HelpText(currentlySelected);
 
         const previewTagInput = new MultiTagInput();

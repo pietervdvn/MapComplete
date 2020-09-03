@@ -12,6 +12,8 @@ import {MultiInput} from "../Input/MultiInput";
 import MappingInput from "./MappingInput";
 import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import {State} from "../../State";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -24,6 +26,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
     constructor(languages: UIEventSource<string[]>,
                 currentlySelected: UIEventSource<SingleSetting<any>>,
+                userDetails: UserDetails,
                 options?: {
                     title?: string,
                     description?: string,
@@ -36,6 +39,10 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         this.SetClass("min-height");
 
         this.options = options ?? {};
+        const questionsNotUnlocked = userDetails.csCount < State.userJourney.themeGeneratorFullUnlock;
+        this.options.disableQuestions = 
+            (this.options.disableQuestions ?? false) && 
+            questionsNotUnlocked; 
 
         this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>", options?.description ?? ""])
         this.IsImage = options?.isImage ?? false;
@@ -47,9 +54,9 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
             return new SingleSetting<any>(value, input, id, name, description);
         }
 
-
         const questionSettings = [
 
+            
             setting(new MultiLingualTextFields(languages), "question", "Question", "If the key or mapping doesn't match, this question is asked"),
 
             setting(new AndOrTagInput(), "condition", "Condition",
@@ -70,6 +77,8 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
         const settings: (string | SingleSetting<any>)[] = [
             setting(new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
+            
+            questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data`: "",
             ...(options?.disableQuestions ? [] : questionSettings),
 
             "<h3>Mappings</h3>",
