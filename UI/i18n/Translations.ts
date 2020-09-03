@@ -42,34 +42,7 @@ export default class Translations {
                     "Todas as modificacións que fagas serán gardadas de xeito automático na base de datos global do OpenStreetMap e outros poderán reutilizalos libremente.<br><br>" +
                     "Para máis información sobre o proxecto cyclofix, vai a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
             }),
-            parking: {
-
-                type: {
-                    "two-tier": new T(),
-                },
-                operator: {
-                    render: new T({
-                        en: 'This bike parking is operated by {operator}',
-                        nl: 'Deze fietsparking wordt beheerd door {operator}',
-                        fr: 'Ce parking est opéré par {operator}',
-                        gl: 'Este aparcadoiro de bicicletas está operado por {operator}'
-                    }),
-                    template: new T({en: 'A different operator: $$$', nl: 'Een andere beheerder: $$$', fr: 'TODO: fr'}),
-                    question: new T({
-                        en: 'Who operates this bike station (name of university, shop, city...)?',
-                        nl: 'Wie beheert deze fietsenparking (naam universiteit, winkel, stad...)?',
-                        fr: 'Qui opére cette station vélo (nom de l\'université, magasin, vile...)',
-                        gl: 'Quen opera este aparcadoiro de bicicletas (nome da universidade, tenda, concello...)?'
-                    }),
-                    private: new T({
-                        en: 'Operated by a private person',
-                        nl: 'Wordt beheerd door een privépersoon',
-                        fr: 'Opéré par un tier privé',
-                        gl: 'Operado por unha persoa privada'
-                    }),
-                },
-              
-            },
+           
             station: {
                 name: new T({
                     en: 'bike station (repair, pump or both)',

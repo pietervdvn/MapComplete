@@ -14,11 +14,21 @@
   },
   "icon": "./assets/layers/bike_parking/parking.svg",
   "size": {
-    "render": "50,50,bottom"
+    "render": {
+      "en": "50,50,bottom"
+    }
   },
-  "color": "#00f",
-  "stroke": "4",
-  "wayHandling": 1,
+  "color": {
+    "render": {
+      "en": "#00f"
+    }
+  },
+  "width": {
+    "render": {
+      "en": "1"
+    }
+  },
+  "wayHandling": 2,
   "presets": [
     {
       "title": {

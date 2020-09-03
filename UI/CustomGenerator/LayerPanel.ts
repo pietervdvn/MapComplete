@@ -87,8 +87,8 @@ export default class LayerPanel extends UIElement {
                     "The minimum zoomlevel needed to load and show this layer."),
                 setting(new DropDown("", [
                         {value: 0, shown: "Show ways and areas as ways and lines"},
-                        {value: 1, shown: "Show both the ways/areas and the centerpoints"},
-                        {value: 2, shown: "Show everything as centerpoint"}]), "wayHandling", "Way handling",
+                        {value: 2, shown: "Show both the ways/areas and the centerpoints"},
+                        {value: 1, shown: "Show everything as centerpoint"}]), "wayHandling", "Way handling",
                     "Describes how ways and areas are represented on the map: areas can be represented as the area itself, or it can be converted into the centerpoint"),
 
                 setting(new AndOrTagInput(), "overpassTags", "Overpass query",

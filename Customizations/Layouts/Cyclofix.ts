@@ -1,5 +1,4 @@
 import {Layout} from "../Layout";
-import BikeParkings from "../Layers/BikeParkings";
 import BikeServices from "../Layers/BikeStations";
 import BikeShops from "../Layers/BikeShops";
 import Translations from "../../UI/i18n/Translations";
