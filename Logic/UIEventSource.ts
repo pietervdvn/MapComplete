@@ -8,9 +8,14 @@ export class UIEventSource<T>{
     }
 
 
-    public addCallback(callback: ((latestData : T) => void)) : UIEventSource<T>{
+    public addCallback(callback: ((latestData: T) => void)): UIEventSource<T> {
         this._callbacks.push(callback);
         return this;
+    }
+
+    public addCallbackAndRun(callback: ((latestData: T) => void)): UIEventSource<T> {
+        callback(this.data);
+        return this.addCallback(callback);
     }
 
     public setData(t: T): UIEventSource<T> {
@@ -68,9 +73,7 @@ export class UIEventSource<T>{
             })
         }
         
-
         return newSource;
-
     }
 
     

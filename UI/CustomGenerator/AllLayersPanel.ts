@@ -44,7 +44,7 @@ export default class AllLayersPanel extends UIElement {
                 "<h2>Layer editor</h2>",
                 "In this tab page, you can add and edit the layers of the theme. Click the layers above or add a new layer to get started.",
                 new SubtleButton(
-                    "./assets/add.svg",
+                    "./assets/layersAdd.svg",
                     "Add a new layer"
                 ).onClick(() => {
                     self._config.data.layers.push(GenerateEmpty.createEmptyLayer())

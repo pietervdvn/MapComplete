@@ -170,6 +170,9 @@ function updateFavs() {
 
         for (const layouts of State.state.installedThemes.data) {
             for (const layer of layouts.layout.layers) {
+                if (typeof layer === "string") {
+                    continue;
+                }
                 if (layer.id === fav) {
                     layoutToUse.layers.push(layer);
                 }
@@ -200,7 +203,9 @@ State.state.selectedElement.addCallback((feature) => {
     const data = feature.feature.properties;
     // Which is the applicable set?
     for (const layer of layoutToUse.layers) {
-
+        if (typeof layer === "string") {
+            continue;
+        }
         const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
         if (applicable) {
             // This layer is the layer that gives the questions

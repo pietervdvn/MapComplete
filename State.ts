@@ -238,12 +238,9 @@ export class State {
         }).ping()
 
         this.layoutToUse.map((layoutToUse) => {
-                if (layoutToUse === undefined) {
-                    return "MapComplete";
-                }
-                return Translations.W(layoutToUse.title).InnerRender()
+                return Translations.WT(layoutToUse?.title)?.txt ?? "MapComplete"
             }, [Locale.language]
-        ).addCallback((title) => {
+        ).addCallbackAndRun((title) => {
             document.title = title
         });
 

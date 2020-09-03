@@ -93,6 +93,7 @@ export class SimpleAddUI extends UIElement {
                                 description: preset.description,
                                 icon: icon
                             });
+                            self.Update();
                         }
                     )
 
@@ -126,11 +127,6 @@ export class SimpleAddUI extends UIElement {
         const userDetails = State.state.osmConnection.userDetails;
 
         if (this._confirmPreset.data !== undefined) {
-
-            if(userDetails.data.dryRun){
-              //  this.CreatePoint(this._confirmPreset.data.tags, this._confirmPreset.data.layerToAddTo)();
-              //  return "";
-            }
 
             let tagInfo = "";
             const csCount = State.state.osmConnection.userDetails.data.csCount;

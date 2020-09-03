@@ -15,6 +15,7 @@ import {DropDown} from "../Input/DropDown";
 import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
 import {MultiInput} from "../Input/MultiInput";
 import {LayerConfigJson} from "../../Customizations/JSON/LayerConfigJson";
+import PresetInputPanel from "./PresetInputPanel";
 
 /**
  * Shows the configuration for a single layer
@@ -32,6 +33,7 @@ export default class LayerPanel extends UIElement {
     public readonly selectedTagRendering: UIEventSource<TagRenderingPanel>
         = new UIEventSource<TagRenderingPanel>(undefined);
     private tagRenderings: UIElement;
+    private presetsPanel: UIElement;
 
     constructor(config: UIEventSource<LayoutConfigJson>,
                 languages: UIEventSource<string[]>,
@@ -122,6 +124,12 @@ export default class LayerPanel extends UIElement {
             }
         )
 
+        const presetPanel = new MultiInput("Add a preset",
+            () => ({tags: [], title: {}}),
+            () => new PresetInputPanel(currentlySelected, languages));
+        this.presetsPanel = presetPanel;
+        new SingleSetting(config, presetPanel, ["layers", index, "presets"], "Presets", "")
+
         function loadTagRenderings() {
             const values = (config.data.layers[index] as LayerConfigJson).tagRenderings;
             const renderings: TagRenderingConfigJson[] = [];
@@ -205,6 +213,9 @@ export default class LayerPanel extends UIElement {
             "<h2>Popup contents</h2>",
             this.titleRendering,
             this.tagRenderings,
+            "<h2>Presets</h2>",
+            "Does this theme support adding a new point?<br/>If this should be the case, add a preset. Make sure that the preset tags do match the overpass-tags, otherwise it might seem like the newly added points dissapear ",
+            this.presetsPanel,
             "<h2>Map rendering options</h2>",
             this.mapRendering,
             "<h2>Layer delete</h2>",
