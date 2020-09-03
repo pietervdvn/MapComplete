@@ -10,11 +10,10 @@ import {GenerateEmpty} from "./UI/CustomGenerator/GenerateEmpty";
 import PageSplit from "./UI/Base/PageSplit";
 import HelpText from "./Customizations/HelpText";
 import {TagRendering} from "./Customizations/TagRendering";
-import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 
 
-let layout = GenerateEmpty.createTestLayout();
+let layout = GenerateEmpty.createEmptyLayout();
 if(window.location.hash.length > 10){
     layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
 }
@@ -66,6 +65,6 @@ new TabbedComponent([
         header: "<img src='./assets/share.svg'>",
         content: new SharePanel(es, liveUrl)
     }
-], 1).SetClass("main-tabs")
+]).SetClass("main-tabs")
     .AttachTo("maindiv");
 

@@ -12,23 +12,6 @@ export default class Translations {
 
 
     static t = {
-        climbingTrees: {
-            layer: {
-
-                title: new T({
-                    nl: "Klimbomen"
-                }),
-                description: new T({
-                    nl: "Een klimboom is een mooie boom waar men in kan klimmen, al dan niet officieel"
-                })
-            },
-            layout: {
-                title: new T({nl: "Open Klimbomenkaart"}),
-                welcome: new T({nl: "Markeer je favoriete klimboom"})
-            }
-
-        },
-
        
         cyclofix: {
             title: new T({
@@ -59,49 +42,10 @@ export default class Translations {
                     "Todas as modificacións que fagas serán gardadas de xeito automático na base de datos global do OpenStreetMap e outros poderán reutilizalos libremente.<br><br>" +
                     "Para máis información sobre o proxecto cyclofix, vai a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
             }),
-            freeFormPlaceholder: new T({en: 'specify', nl: 'specifieer', fr: 'Specifiéz', gl: 'especificar'}),
             parking: {
-                name: new T({en: 'bike parking', nl: 'fietsparking', fr: 'parking à vélo'}),
-                title: new T({
-                    en: 'Bike parking', nl: 'Fietsparking', fr: 'Parking à vélo',
-                    gl: 'Aparcadoiro de bicicletas'
-                }),
+
                 type: {
-                    render: new T({
-                        en: 'This is a bicycle parking of the type: {bicycle_parking}',
-                        nl: 'Dit is een fietsparking van het type: {bicycle_parking}',
-                        fr: 'Ceci est un parking à vélo de type {bicycle_parking}',
-                        gl: 'Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}'
-                    }),
-                    template: new T({
-                        en: 'Some other type: $$$',
-                        nl: 'Een ander type: $$$',
-                        fr: "D'autres types: $$$",
-                        gl: "Algún outro tipo:: $$$"
-                    }),
-                    question: new T({
-                        en: 'What is the type of this bicycle parking?',
-                        nl: 'Van welk type is deze fietsparking?',
-                        fr: 'Quelle type de parking s\'agit il? ',
-                        gl: 'Que tipo de aparcadoiro de bicicletas é?'
-                    }),
-                    eg: new T({en: ", for example", nl: ", bijvoorbeeld", fr: ",par example", gl: ", por exemplo"}),
-                    stands: new T({en: 'Staple racks', nl: 'Nietjes', fr: 'Arceaux', gl: 'De roda (Stands)'}),
-                    wall_loops: new T({en: 'Wheel rack/loops', nl: 'Wielrek/lussen', fr: 'Pinces-roues', gl: 'Aros'}),
-                    handlebar_holder: new T({
-                        en: 'Handlebar holder',
-                        nl: 'Stuurhouder',
-                        fr: 'Support guidon',
-                        gl: 'Cadeado para guiador'
-                    }),
-                    shed: new T({en: 'Shed', nl: 'Schuur', fr: 'Abri', gl: 'Abeiro'}),
-                    rack: new T({en: 'Rack', nl: 'Rek', fr: 'Râtelier', gl: 'Cremalleira'}),
-                    "two-tier": new T({
-                        en: 'Two-tiered',
-                        nl: 'Dubbel (twee verdiepingen)',
-                        fr: 'Superposé',
-                        gl: 'Dobre cremalleira'
-                    }),
+                    "two-tier": new T(),
                 },
                 operator: {
                     render: new T({
@@ -124,86 +68,7 @@ export default class Translations {
                         gl: 'Operado por unha persoa privada'
                     }),
                 },
-                covered: {
-                    question: new T({
-                        en: 'Is this parking covered? Also select "covered" for indoor parkings.',
-                        nl: 'Is deze parking overdekt? Selecteer ook "overdekt" voor fietsparkings binnen een gebouw.',
-                        gl: 'Este aparcadoiro está cuberto? Tamén escolle "cuberto" para aparcadoiros interiores.'
-                    }),
-                    yes: new T({
-                        en: 'This parking is covered (it has a roof)',
-                        nl: 'Deze parking is overdekt (er is een afdak)',
-                        gl: 'Este aparcadoiro está cuberto (ten un teito)'
-                    }),
-                    no: new T({
-                        en: 'This parking is not covered',
-                        nl: 'Deze parking is niet overdekt',
-                        gl: 'Este aparcadoiro non está cuberto'
-                    })
-                },
-                capacity: {
-                    question: new T({
-                        en: "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
-                        nl: "Voor hoeveel fietsen is er bij deze fietsparking plaats (inclusief potentiëel bakfietsen)?",
-                        gl: "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?"
-                    }),
-                    template: new T({
-                        en: "This parking fits $nat$ bikes",
-                        nl: "Deze parking heeft plaats voor $nat$ fietsen",
-                        gl: "Neste aparcadoiro caben $nat$ bicicletas"
-                    }),
-                    render: new T({
-                        en: "Place for {capacity} bikes (in total)",
-                        nl: "Plaats voor {capacity} fietsen (in totaal)",
-                        gl: "Lugar para {capacity} bicicletas (en total)"
-                    }),
-                },
-                capacity_cargo: {
-                    question: new T({
-                        en: "How many cargo bicycles fit in this bicycle parking?",
-                        nl: "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
-                        fr: "TODO: fr",
-                        gl: "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?"
-                    }),
-                    template: new T({
-                        en: "This parking fits $nat$ cargo bikes",
-                        nl: "Deze parking heeft plaats voor $nat$ fietsen",
-                        fr: "TODO: fr",
-                        gl: "Neste aparcadoiro caben $nat$ bicicletas de carga"
-                    }),
-                    render: new T({
-                        en: "Place for {capacity:cargo_bike} cargo bikes",
-                        nl: "Plaats voor {capacity:cargo_bike} bakfietsen",
-                        fr: "TODO: fr",
-                        gl: "Lugar para {capacity:cargo_bike} bicicletas de carga"
-                    }),
-                },
-                access_cargo: {
-                    question: new T({
-                        en: "Does this bicycle parking have spots for cargo bikes?",
-                        nl: "Heeft deze fietsparking plaats voor bakfietsen?",
-                        fr: "TODO: fr",
-                        gl: "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?"
-                    }),
-                    yes: new T({
-                        en: "This parking has room for cargo bikes",
-                        nl: "Deze parking heeft plaats voor bakfietsen",
-                        fr: "TODO: fr",
-                        gl: "Este aparcadoiro ten espazo para bicicletas de carga."
-                    }),
-                    designated: new T({
-                        en: "This parking has designated (official) spots for cargo bikes.",
-                        nl: "Er zijn speciale plaatsen voorzien voor bakfietsen",
-                        fr: "TODO: fr",
-                        gl: "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."
-                    }),
-                    no: new T({
-                        en: "You're not allowed to park cargo bikes",
-                        nl: "Je mag hier geen bakfietsen parkeren",
-                        fr: "TODO: fr",
-                        gl: "Non está permitido aparcar bicicletas de carga"
-                    })
-                }
+              
             },
             station: {
                 name: new T({

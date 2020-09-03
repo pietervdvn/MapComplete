@@ -27,7 +27,9 @@ export class GenerateEmpty {
             startLat: 0,
             startLon: 0,
             startZoom: 1,
+            widenFactor: 0.05,
             socialImage: "",
+            
             layers: []
         }
     }

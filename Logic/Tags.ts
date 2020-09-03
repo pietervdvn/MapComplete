@@ -14,37 +14,50 @@ export abstract class TagsFilter {
 
 
 export class RegexTag extends TagsFilter {
-    private readonly key: RegExp;
-    private readonly value: RegExp;
+    private readonly key: RegExp | string;
+    private readonly value: RegExp | string;
     private readonly invert: boolean;
 
-    constructor(key: string | RegExp, value: RegExp, invert: boolean = false) {
+    constructor(key: string | RegExp, value: RegExp | string, invert: boolean = false) {
         super();
-        this.key = typeof (key) === "string" ? new RegExp(key) : key;
+        this.key = key;
         this.value = value;
         this.invert = invert;
     }
 
     asOverpass(): string[] {
-        return [`['${this.key.source}'${this.invert ? "!" : ""}~'${this.value.source}']`];
+        return [`['${RegexTag.source(this.key)}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+    }
+
+    private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
+        if(typeof possibleRegex === "string"){
+            return fromTag === possibleRegex;
+        }
+        return fromTag.match(possibleRegex) !== null;
+    }
+
+    private static source(r: string | RegExp) {
+        if (typeof (r) === "string") {
+            return r;
+        }
+        return r.source;
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
-            if (tag.k.match(this.key)) {
-                return tag.v.match(this.value) !== null;
+            if (RegexTag.doesMatch(tag.k, this.key)){
+                return RegexTag.doesMatch(tag.v, this.value);
             }
         }
         return false;
     }
 
     substituteValues(tags: any) : TagsFilter{
-        console.warn("Not substituting values on regex tags");
         return this;
     }
     
     asHumanString() {
-        return `${this.key.source}${this.invert ? "!" : ""}~${this.value.source}`;
+        return `${RegexTag.source(this.key)}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
     }
 }
 

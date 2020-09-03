@@ -14,7 +14,7 @@ export default class Cyclofix extends Layout {
             "cyclofix",
             ["en", "nl", "fr","gl"],
             Translations.t.cyclofix.title,
-            [new BikeServices(), new BikeShops(), "drinking_water", new BikeParkings(), new BikeOtherShops(), new BikeCafes()],
+            [new BikeServices(), new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(), new BikeCafes()],
             16,
             50.8465573,
             4.3516970,

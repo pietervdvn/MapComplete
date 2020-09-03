@@ -8,14 +8,13 @@ import Translation from "../../UI/i18n/Translation";
 import {LayerConfigJson} from "./LayerConfigJson";
 import {LayerDefinition, Preset} from "../LayerDefinition";
 import {TagDependantUIElementConstructor} from "../UIElementConstructor";
-import FixedText from "../Questions/FixedText";
-import Translations from "../../UI/i18n/Translations";
 import Combine from "../../UI/Base/Combine";
 import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
 import * as drinkingWater from "../../assets/layers/drinking_water/drinking_water.json";
 import * as ghostbikes from "../../assets/layers/ghost_bike/ghost_bike.json"
 import * as viewpoint from "../../assets/layers/viewpoint/viewpoint.json"
+import * as bike_parking from "../../assets/layers/bike_parking/bike_parking.json"
 import {Utils} from "../../Utils";
 
 export class FromJSON {
@@ -29,6 +28,7 @@ export class FromJSON {
             FromJSON.Layer(drinkingWater),
             FromJSON.Layer(ghostbikes),
             FromJSON.Layer(viewpoint),
+            FromJSON.Layer(bike_parking),
         ];
 
         for (const layer of sharedLayersList) {
@@ -201,7 +201,7 @@ export class FromJSON {
             if (tag.indexOf("!~") >= 0) {
                 const split = Utils.SplitFirst(tag, "!~");
                 if (split[1] === "*") {
-                    split[1] = ".*"
+                    split[1] = "..*"
                 }
                 return new RegexTag(
                     split[0],
@@ -212,7 +212,7 @@ export class FromJSON {
             if (tag.indexOf("!=") >= 0) {
                 const split = Utils.SplitFirst(tag, "!=");
                 if (split[1] === "*") {
-                    split[1] = ".*"
+                    split[1] = "..*"
                 }
                 return new RegexTag(
                     split[0],
@@ -223,7 +223,7 @@ export class FromJSON {
             if (tag.indexOf("~") >= 0) {
                 const split = Utils.SplitFirst(tag, "~");
                 if (split[1] === "*") {
-                    split[1] = ".*"
+                    split[1] = "..*"
                 }
                 return new RegexTag(
                     split[0],
@@ -259,6 +259,8 @@ export class FromJSON {
         const iconSize = FromJSON.TagRenderingWithDefault(json.iconSize, "iconSize", "40,40,center");
         const color = FromJSON.TagRenderingWithDefault(json.color, "layercolor", "#0000ff");
         const width = FromJSON.TagRenderingWithDefault(json.width, "layerwidth", "10");
+        const tagRenderings =  json.tagRenderings?.map(FromJSON.TagRendering) ?? [];
+        
         const renderTags = {"id": "node/-1"}
         const presets: Preset[] = json?.presets?.map(preset => {
             return ({
@@ -317,12 +319,13 @@ export class FromJSON {
                 title: FromJSON.TagRendering(json.title),
                 minzoom: json.minzoom,
                 presets: presets,
-                elementsToShow: json.tagRenderings?.map(FromJSON.TagRendering) ?? [],
+                elementsToShow: tagRenderings,
                 style: style,
                 wayHandling: json.wayHandling
 
             }
         );
+        console.log("Parsed layer is ", layer);
         return layer;
 
     }

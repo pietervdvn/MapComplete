@@ -205,7 +205,13 @@ TagRendering extends UIElement implements TagDependantUIElement {
         InputElement<TagsFilter> {
 
         const elements = [];
+        
+        let freeformElement = undefined;
 
+        if (options.freeform !== undefined) {
+            freeformElement = this.InputForFreeForm(options.freeform);
+        }
+        
         if (options.mappings !== undefined) {
             
             const previousTexts= [];
@@ -221,10 +227,11 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 elements.push(this.InputElementForMapping(mapping));
             }
         }
-
-        if (options.freeform !== undefined) {
-            elements.push(this.InputForFreeForm(options.freeform));
+        
+        if(freeformElement !== undefined) {
+            elements.push(freeformElement);
         }
+      
 
 
         if (elements.length == 0) {
@@ -239,7 +246,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
     }
 
 
-    private InputElementForMapping(mapping: { k: TagsFilter, txt: string | Translation }) {
+    private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }) {
         return new FixedInputElement(this.ApplyTemplate(mapping.txt),
             mapping.k.substituteValues(this.currentTags.data)
         );
@@ -454,8 +461,6 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 "</span>"]).Render();
         }
 
-        console.log("No rendering for",this)
-        
         return "";
     }
 
@@ -466,7 +471,6 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
     private ApplyTemplate(template: string | Translation): UIElement {
         if (template === undefined || template === null) {
-            console.warn("Applying template which is undefined by ",this); // TODO THis error msg can probably be removed
             return undefined;
         }
         return new VariableUiElement(this.currentTags.map(tags => {

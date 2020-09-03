@@ -33,7 +33,17 @@
           "en": "Artwork",
           "nl": "Kunstwerk",
           "fr": "Oeuvre d'art"
-        }
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": {
+              "en": "Artwork <i>{name}</i>",
+              "nl": "Kunstwerk <i>{name}</i>",
+              "fr": "Oeuvre d'art <i>{name}</i>"
+            }
+          }
+        ]
       },
       "icon": {
         "render": "./assets/themes/artwork/artwork.svg"
@@ -179,22 +189,6 @@
         },
         {
           "question": {
-            "en": "Which wikidata-entry corresponds with <b>this artwork</b>?",
-            "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
-            "nl": "Welk wikidata-item beschrijft dit kunstwerk?"
-          },
-          "render": {
-            "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-            "nl": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-            "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
-          },
-          "freeform": {
-            "key": "wikidata",
-            "type": "wikidata"
-          }
-        },
-        {
-          "question": {
             "en": "Which artist created this?",
             "nl": "Welke artist creëerde dit kunstwerk?",
             "fr": "Quel artiste a créé cela?"
@@ -222,6 +216,22 @@
           "freeform": {
             "key": "website",
             "type": "url"
+          }
+        },
+        {
+          "question": {
+            "en": "Which wikidata-entry corresponds with <b>this artwork</b>?",
+            "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
+            "nl": "Welk wikidata-item beschrijft dit kunstwerk?"
+          },
+          "render": {
+            "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+            "nl": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+            "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+          },
+          "freeform": {
+            "key": "wikidata",
+            "type": "wikidata"
           }
         }
       ]
