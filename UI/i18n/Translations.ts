@@ -1148,11 +1148,11 @@ export default class Translations {
             },
             morescreen: {
                 intro: new T({
-                    en: "<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more layers available.",
+                    en: "<h3>More quests</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
                     ca: "<h3>Més peticions</h3>T\'agrada captar dades? <br/>Hi ha més capes disponibles.",
                     es: "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
                     fr: "<h3>Plus de thème </h3>Vous aimez collecter des données? <br/>Il y a plus de thèmes disponible.",
-                    nl: "<h3>Meer thema's</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer opties.",
+                    nl: "<h3>Meer thema's</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer kaartthemas.",
                     gl: "<h3>Máis tarefas</h3>Góstache captar datos? <br/>Hai máis capas dispoñíbeis."
                 }),
                 
@@ -1232,7 +1232,40 @@ export default class Translations {
                 en: "<h3>Custom themes</h3>These are previously visited user-generated themes.",
                 nl: "<h3>Onofficiële themea's</h3>Je bezocht deze thema's gemaakt door andere OpenStreetMappers eerder",
                 gl: "<h3>Temas personalizados</h3>Estes son temas xerados por usuarios previamente visitados."
-            }),
+            }), aboutMapcomplete: new T({
+                en:"<h3>About MapComplete</h3>" +
+                    "<p>MapComplete is an OpenStreetMap editor that is meant to help everyone to easily add information on a <b>single theme.</b></p>" +
+                    "<p>Only features relevant to a single theme are shown with a few predefined questions, in order to keep things <b>simple and extremly user-friendly</b>." +
+                    "The theme maintainer can also choose a language for the interface, choose to disable elements or even to embed it into a different website without any UI-element at all.</p>" + 
+                  
+                    "<p>However, another important part of MapComplete is to always <b>offer the next step</b> to learn more about OpenStreetMap:" +
+                    "<ul>" +
+                    "<li>An iframe without UI-elements will link to a full-screen version</li>" +
+                    "<li>The fullscreen version offers information about OpenStreetMap</li>" +
+                    "<li>If you're not logged in, you're asked to log in</li>" +
+                    "<li>If you answered a single question, you are allowed to add points</li>" +
+                    "<li>At a certain point, the actual added tags appear which later get linked to the wiki...</li>" +
+                    "</ul></p>" +
+                    "<p>Do you notice an issue with MapComplete? Do you have a feature request? Do you want to help translating? " +
+                    "Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a></p>",
+                nl:"<h3>Over MapComplete</h3>" +
+                    "<p>MapComplete is een OpenStreetMap-editor om eenvoudig informatie toe te voegen over <b>één enkel onderwerp</b>.</p>" +
+                    "<p>Om de editor zo <b>simpel en gebruiksvriendelijk mogelijk</b> te houden, worden enkel objecten relevant voor het thema getoond." +
+                    "Voor deze objecten kunnen dan vragen beantwoord worden, of men kan een nieuw punt van dit thema toevoegen." +
+                    "De maker van het thema kan er ook voor opteren om een aantal elementen van de gebruikersinterface uit te schakelen of de taal ervan in te stellen.</p>" +
+
+                    "<p>Een ander belangrijk aspect is om bezoekers stap voor stap meer te leren over OpenStreetMap:" +
+                    "<ul>" +
+                    "<li>Een iframe zonder verdere uitleg linkt naar de volledige versie van MapComplete</li>" +
+                    "<li>De volledige versie heeft uitleg over OpenStreetMap</li>" +
+                    "<li>Als je niet aangemeld bent, wordt er je gevraagd dit te doen</li>" +
+                    "<li>Als je minstens één vraag hebt beantwoord, kan je punten gaan toevoegen.</li>" +
+                    "<li>Heb je genoeg changesets, dan verschijnen de tags die wat later doorlinken naar de wiki</li>" +
+                    "</ul></p>" +
+                    "<p>Merk je een bug of wil je een extra feature? Wil je helpen vertalen? Bezoek dan de <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>broncode</a> en <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker</a></p>",
+
+            })
+
 
         },
         favourite: {

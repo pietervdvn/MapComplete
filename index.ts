@@ -28,7 +28,7 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     window.location.replace("https://buurtnatuur.be");
 }
 
-    const testing = QueryParameters.GetQueryParameter("test", "true");
+let testing = QueryParameters.GetQueryParameter("test", "false");
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     // Set to true if testing and changes should NOT be saved
     testing.setData(testing.data ?? "true")

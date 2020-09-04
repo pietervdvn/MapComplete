@@ -23,15 +23,19 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7e Fixing all the bugs";
+    public static vNumber = "0.0.7f";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
+        moreScreenUnlock: 5,
         personalLayoutUnlock: 20,
         tagsVisibleAt: 100,
+        mapCompleteHelpUnlock: 200,
         tagsVisibleAndWikiLinked: 150,
         themeGeneratorReadOnlyUnlock: 200,
-        themeGeneratorFullUnlock: 500,
+        themeGeneratorFullUnlock: 500, 
+
+
     };
 
     public static runningFromConsole: boolean = false; 

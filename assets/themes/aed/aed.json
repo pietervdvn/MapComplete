@@ -55,13 +55,13 @@
       "tagRenderings": [
         "pictures",
         {
+          "question": {
+            "en": "Is this defibrillator located indoors?",
+            "fr": "Ce défibrillateur est-il disposé en intérieur ?",
+            "nl": "Hangt deze defibrillator binnen of buiten?"
+          },  
           "mappings": [
             {
-              "question": {
-                "en": "Is this defibrillator located indoors?",
-                "fr": "Ce défibrillateur est-il disposé en intérieur ?",
-                "nl": "Hangt deze defibrillator binnen of buiten?"
-              },
               "if": "indoor=yes",
               "then": {
                 "en": "This defibrillator is located indoors",

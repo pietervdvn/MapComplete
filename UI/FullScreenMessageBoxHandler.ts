@@ -36,7 +36,7 @@ export class FullScreenMessageBox extends UIElement {
             window.onhashchange = function () {
                 if (location.hash === "") {
                     // No more element: back to the map!
-                    self._uielement.setData(undefined);
+                    self._uielement?.setData(undefined);
                     onClear();
                 }
             }
@@ -58,7 +58,7 @@ export class FullScreenMessageBox extends UIElement {
         if (this._uielement === undefined) {
             return "";
         }
-        return new Combine([this._uielement, this.returnToTheMap]).SetStyle("").Render();
+        return new Combine([this._uielement, this.returnToTheMap]).Render();
     }
 
 

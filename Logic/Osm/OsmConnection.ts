@@ -117,6 +117,8 @@ export class OsmConnection {
     public LogOut() {
         this.auth.logout();
         this.userDetails.data.loggedIn = false;
+        this.userDetails.data.csCount = 0;
+        this.userDetails.data.name = "";
         this.userDetails.ping();
         console.log("Logged out")
     }

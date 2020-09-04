@@ -14,7 +14,8 @@ export class Groen extends Layout {
             50.8435,
             4.3688,
             "\n" +
-            "<img src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo'> <br />" +
+            
+            "<img style='float:right;margin: 1em;width: 10em;height: auto;' src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo'> <br />" +
             "<h3>Breng jouw buurtnatuur in kaart</h3>" +
             "<b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten. \n" +
             "<ul>" +

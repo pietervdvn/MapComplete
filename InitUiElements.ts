@@ -59,17 +59,34 @@ export class InitUiElements {
             tabs.push({header: `<img src='./assets/share.svg'>`, content: new ShareScreen()});
         }
 
-        if (State.state.featureSwitchMoreQuests.data){
-            
+        if (State.state.featureSwitchMoreQuests.data) {
+
             tabs.push({
-                header: `<img src='./assets/add.svg'>`
-                , content: new MoreScreen()
+                header: `<img src='./assets/add.svg'>`,
+                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
+                    if(userdetails.csCount < State.userJourney.moreScreenUnlock){
+                        return "";
+                    }
+                    return new MoreScreen().Render()
+                }, [Locale.language]))
             });
         }
 
 
-        const fullOptions = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab);
+        tabs.push({
+                header: `<img src='./assets/help.svg'>`,
+                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
+                    if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
+                        return ""
+                    }
+                    return Translations.t.general.aboutMapcomplete.Render();
+                }, [Locale.language]))
+            }
+        );
 
+
+        const fullOptions = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab);
+        fullOptions.ListenTo(State.state.osmConnection.userDetails);
         return fullOptions;
 
     }

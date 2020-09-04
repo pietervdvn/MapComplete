@@ -211,12 +211,12 @@
   "color": {
     "render": {
       "nl": "#94bb28"
-    },
+    }
   },
   "stroke": {
     "render": {
       "nl": "3"
-    },
+    }
   },
   "presets": [
     {

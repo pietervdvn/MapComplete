@@ -264,7 +264,18 @@ export class FromJSON {
         const width = FromJSON.TagRenderingWithDefault(json.width, "layerwidth", "10");
 
         let tagRenderingDefs = json.tagRenderings ?? [];
-        if (tagRenderingDefs.indexOf("images") < 0) {
+        let hasImageElement = false;
+        for (const tagRenderingDef of tagRenderingDefs) {
+            if (typeof tagRenderingDef !== "string") {
+                continue;
+            }
+            let str = tagRenderingDef as string;
+            if(tagRenderingDef.indexOf("images") >= 0 || str.indexOf("pictures") >= 0){
+                hasImageElement = true;
+                break;
+            }
+        }
+        if (!hasImageElement) {
             tagRenderingDefs = ["images", ...tagRenderingDefs];
         }
         let tagRenderings = tagRenderingDefs.map(FromJSON.TagRendering);

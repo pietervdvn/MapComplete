@@ -172,23 +172,24 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
         this._editButton = new FixedUiElement("");
         if (this._question !== undefined) {
-            this._editButton = new FixedUiElement("<img class='editbutton' src='./assets/pencil.svg' alt='edit'>")
+            this._editButton = new FixedUiElement(
+                "<img style='width: 1.3em;height: 1.3em;padding: 0.5em;border-radius: 0.65em;border: solid black 1px;font-size: medium;float: right;' " +
+                "src='./assets/pencil.svg' alt='edit'>")
                 .onClick(() => {
                     self._editMode.setData(true);
                     self._questionElement.GetValue().setData(self.CurrentValue());
                 });
         }
 
-
         const cancelContents = this._editMode.map((isEditing) => {
             if (isEditing) {
-                return "<span class='skip-button'>"+Translations.t.general.cancel.R()+"</span>";
+                return "<span class='skip-button'>" + Translations.t.general.cancel.R() + "</span>";
             } else {
-                return "<span class='skip-button'>"+Translations.t.general.skip.R()+"</span>";
+                return "<span class='skip-button'>" + Translations.t.general.skip.R() + "</span>";
             }
         }, [Locale.language]);
         // And at last, set up the skip button
-        this._skipButton = new VariableUiElement(cancelContents).onClick(cancel)    ;
+        this._skipButton = new VariableUiElement(cancelContents).onClick(cancel);
     }
 
 
