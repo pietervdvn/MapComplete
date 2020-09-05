@@ -89,7 +89,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
             setting(new MultiInput<{ if: AndOrTagConfigJson, then: (string | any), hideInAnswer?: boolean }>("Add a mapping",
                 () => ({if: undefined, then: undefined}),
                 () => new MappingInput(languages, options?.disableQuestions ?? false)), "mappings",
-                "If a tag matches, then show the respective text", "")
+                "If a tag matches, then show the first respective text", "")
 
         ];
 
