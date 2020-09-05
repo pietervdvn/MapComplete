@@ -19,7 +19,7 @@ export class MoreScreen extends UIElement {
 
     }
 
-    private static createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
+    private createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
         if (layout === undefined) {
             return undefined;
         }
@@ -28,7 +28,9 @@ export class MoreScreen extends UIElement {
             return undefined;
         }
         if (layout.hideFromOverview) {
-            if (State.state.osmConnection.GetPreference("hidden-theme-" + layout.id + "-enabled").data !== "true") {
+            const pref = State.state.osmConnection.GetPreference("hidden-theme-" + layout.id + "-enabled");
+            this.ListenTo(pref);
+            if (pref.data !== "true") {
                 return undefined;
             }
         }
@@ -93,7 +95,7 @@ export class MoreScreen extends UIElement {
             if (layout.id !== k) {
                 continue; // This layout was added multiple time due to an uppercase
             }
-            els.push(MoreScreen.createLinkButton(layout));
+            els.push(this.createLinkButton(layout));
         }
 
 
@@ -102,7 +104,7 @@ export class MoreScreen extends UIElement {
             els.push(Translations.t.general.customThemeIntro)
 
             for (const installed of State.state.installedThemes.data) {
-                els.push(MoreScreen.createLinkButton(installed.layout, installed.definition));
+                els.push(this.createLinkButton(installed.layout, installed.definition));
             }
         }
 
