@@ -34,7 +34,7 @@ export class StrayClickHandler {
             uiElement.Update();
             uiElement.Activate();
             self._lastMarker.addTo(map);
-            self._lastMarker.bindPopup(popup).openPopup();
+            self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
                 State.state.fullScreenMessage.setData(self._uiToShow());

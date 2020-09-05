@@ -127,6 +127,10 @@ export class InitUiElements {
     
     static CreateLanguagePicker(label: string | UIElement = "") {
 
+        if (State.state.layoutToUse.data.supportedLanguages.length <= 1) {
+            return undefined;
+        }
+
         return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
                 return {value: lang, shown: lang}
             }
@@ -203,10 +207,11 @@ export class InitUiElements {
         const presets: Preset[] = [];
 
         const state = State.state;
+
         for (const layer of state.layoutToUse.data.layers) {
-            
-            if(typeof (layer) === "string"){
-                throw "Layer "+layer+" was not substituted";
+
+            if (typeof (layer) === "string") {
+                throw "Layer " + layer + " was not substituted";
             }
 
             const generateInfo = (tagsES, feature) => {

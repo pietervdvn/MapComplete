@@ -1,0 +1,63 @@
+{
+  "id": "bike_repair_station",
+  "name": {
+    "en": "Bike stations (repair, pump or both)",
+    "nl": "Fietspunten (herstel, pomp of allebei)",
+    "fr": "Station velo (réparation, pompe à vélo)",
+    "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "and": [
+      "amenity=bicycle_repair_station"
+    ]
+  },
+  "icon": {
+    "render": {
+      "en": "./assets/layers/bike_repair_station/repair_station.svg"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": "service:bicycle:pump:operational_status=broken"
+        },
+        "then": "./assets/layers/bike_repair_station/broken_pump_2.svg"
+      }
+    ]
+  },
+  "size": {
+    "render": {
+      "en": "50,50,bottom"
+    }
+  },
+  "color": {
+    "render": {
+      "en": "#00f"
+    }
+  },
+  "width": {
+    "render": {
+      "en": "1"
+    }
+  },
+  "wayHandling": 2,
+  "presets": [
+    {
+      "title": {
+        "en": "Bike parking",
+        "nl": "Fietsparking",
+        "fr": "Parking à vélo",
+        "gl": "Aparcadoiro de bicicletas"
+      },
+      "tags": [
+        "amenity=bicycle_parking"
+      ]
+    }
+  ],
+  "title": {
+    "render": {
+    }
+  },
+  "tagRenderings": [
+  ]
+}

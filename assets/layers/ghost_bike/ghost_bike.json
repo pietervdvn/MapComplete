@@ -55,6 +55,9 @@
         "en": "In remembrance of {name}",
         "nl": "Ter nagedachtenis van {name}"
       },
+      "freeform": {
+        "key": "name"
+      },
       "mappings": [
         {
           "if": "noname=yes",
@@ -77,6 +80,19 @@
       "freeform": {
         "type": "url",
         "key": "source"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the inscription on this Ghost bike?",
+        "nl": "Wat is het opschrift op deze witte fiets?"
+      },
+      "render": {
+        "en": "<i>{inscription}</i>",
+        "nl": "<i>{inscription}</i>"
+      },
+      "freeform": {
+        "key": "inscription"
       }
     }
   ]

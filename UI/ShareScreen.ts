@@ -176,7 +176,7 @@ export class ShareScreen extends UIElement {
                 new VariableUiElement(
                     State.state.osmConnection.userDetails.map(
                         userDetails => {
-                            if (userDetails.csCount <= State.userJourney.themeGeneratorUnlock) {
+                            if (userDetails.csCount <= State.userJourney.themeGeneratorReadOnlyUnlock) {
                                 return "";
                             }
 

@@ -874,7 +874,7 @@ export default class Translations {
                     en: "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
                     ca: "<h2>Vols afegir un punt?</h2>Has marcat un lloc on no coneixem les dades.<br/>",
                     es: "<h2>Quieres añadir un punto?</h2>Has marcado un lugar del que no conocemos los datos.<br/>",
-                    nl: "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is.<br/>",
+                    nl: "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
                     fr: "<h2>Pas de données</h2>Vous avez cliqué sur un endroit ou il n'y a pas encore de données. <br/>",
                     gl: "<h2>Queres engadir un punto?</h2>Marcaches un lugar onde non coñecemos os datos.<br/>"
                 }),

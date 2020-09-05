@@ -1,5 +1,5 @@
 import {LayerDefinition} from "../LayerDefinition";
-import {And, Or, Tag} from "../../Logic/Tags";
+import {And, Or, RegexTag, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 import {FromJSON} from "../JSON/FromJSON";
 
@@ -35,10 +35,6 @@ export class Widths extends LayerDefinition {
 
 
     private readonly _oneSideParking = new Or([this._leftSideParking, this._rightSideParking]);
-
-    private readonly _carfree = new And(
-        [new Tag("highway", "pedestrian"), new Tag("highway", "living_street"),
-        new Tag("access","destination"), new Tag("motor_vehicle", "destination")])
 
     private readonly _notCarfree =
         FromJSON.Tag({"and":[
@@ -130,7 +126,7 @@ export class Widths extends LayerDefinition {
         }
 
         this.name = "widths";
-        this.overpassFilter = new Tag("width:carriageway", "*");
+        this.overpassFilter = new RegexTag("width:carriageway", /.*/);
 
         this.title = new TagRenderingOptions({
             freeform: {
@@ -140,6 +136,8 @@ export class Widths extends LayerDefinition {
             }
         })
 
+        console.log("Not car free: ", this._notCarfree)
+        
         const self = this;
         this.style = (properties) => {
 
@@ -158,7 +156,7 @@ export class Widths extends LayerDefinition {
                 c = "#f0f"
             }
             
-            if (this._carfree.matchesProperties(properties)) {
+            if (!this._notCarfree.matchesProperties(properties)) {
                 c = "#aaa";
             }
 
@@ -196,7 +194,6 @@ export class Widths extends LayerDefinition {
                         txt: "Deze straat heeft dwarsparkeren of diagonaalparkeren aan minstens één zijde. Deze parkeerruimte is niet opgenomen in de straatbreedte."
                     },
                     {k: this._noSideParking, txt: "Auto's mogen hier niet parkeren"},
-                    // {k: null, txt: "Nog geen parkeerinformatie bekend"}
                 ],
                 freeform: {
                     key: "note:width:carriageway",

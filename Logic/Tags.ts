@@ -49,7 +49,8 @@ export class RegexTag extends TagsFilter {
                 return RegexTag.doesMatch(tag.v, this.value) != this.invert;
             }
         }
-        return false;
+        // The matching key was not found
+        return this.invert;
     }
 
     substituteValues(tags: any) : TagsFilter{

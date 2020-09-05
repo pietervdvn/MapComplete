@@ -120,7 +120,7 @@ export default class LayerPanel extends UIElement {
                 const tagPanel = new TagRenderingPanel(languages, currentlySelected, userDetails)
                 self.registerTagRendering(tagPanel);
                 return tagPanel;
-            });
+            }, undefined, {allowMovement:true});
         tagRenderings.GetValue().addCallback(
             tagRenderings => {
                 (config.data.layers[index] as LayerConfigJson).tagRenderings = tagRenderings;
@@ -132,7 +132,8 @@ export default class LayerPanel extends UIElement {
 
             const presetPanel = new MultiInput("Add a preset",
                 () => ({tags: [], title: {}}),
-                () => new PresetInputPanel(currentlySelected, languages));
+                () => new PresetInputPanel(currentlySelected, languages),
+                undefined, {allowMovement: true});
             new SingleSetting(config, presetPanel, ["layers", index, "presets"], "Presets", "")
             this.presetsPanel = presetPanel;
         } else {

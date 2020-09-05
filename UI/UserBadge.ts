@@ -9,6 +9,7 @@ import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {SubtleButton} from "./Base/SubtleButton";
 import {InitUiElements} from "../InitUiElements";
+import Combine from "./Base/Combine";
 
 /**
  * Handles and updates the user badge
@@ -110,14 +111,14 @@ export class UserBadge extends UIElement {
             "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
             "</a></span> ";
 
-        const userStats = "<div id='userstats'>" +
-            this._homeButton.Render() +
-            settings +
-            messageSpan +
-            csCount +
-            this._logout.Render() +
-            this._languagePicker.Render() +
-            "</div>";
+        const userStats = new Combine(["<div id='userstats'>",
+            this._homeButton,
+            settings,
+            messageSpan,
+            csCount,
+            this._logout,
+            this._languagePicker,
+            "</div>"]).Render();
 
         return userIcon + "<div id='usertext'>" + userName + userStats + "</div>";
 

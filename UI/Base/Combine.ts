@@ -18,6 +18,10 @@ export default class Combine extends UIElement {
     InnerRender(): string {
         let elements = "";
         for (const element of this.uiElements) {
+            if(element === undefined){
+                continue;
+            }
+            
             if (element instanceof UIElement) {
                 elements += element.Render();
             } else {

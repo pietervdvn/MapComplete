@@ -12,14 +12,20 @@ export class MultiInput<T> extends InputElement<T[]> {
     private elements: UIElement[] = [];
     private inputELements: InputElement<T>[] = [];
     private addTag: UIElement;
+    private _options: { allowMovement?: boolean };
 
     constructor(
         addAElement: string,
         newElement: (() => T),
         createInput: (() => InputElement<T>),
-        value: UIEventSource<T[]> = new UIEventSource<T[]>([])) {
+        value: UIEventSource<T[]> = undefined,
+        options?: {
+            allowMovement?: boolean
+        }) {
         super(undefined);
-        this._value = value;
+        this._value = value ?? new UIEventSource<T[]>([]);
+        value = this._value;
+        this._options = options ?? {};
 
         this.addTag = new SubtleButton("./assets/addSmall.svg", addAElement)
             .SetClass("small-button")
@@ -54,7 +60,6 @@ export class MultiInput<T> extends InputElement<T[]> {
         this.elements = [];
         const self = this;
         for (let i = 0; i < this._value.data.length; i++) {
-            let tag = this._value.data[i];
             const input = createInput();
             input.GetValue().addCallback(tag => {
                     self._value.data[i] = tag;
@@ -63,12 +68,40 @@ export class MultiInput<T> extends InputElement<T[]> {
             );
             this.inputELements.push(input);
             input.IsSelected.addCallback(() => this.UpdateIsSelected());
-            const deleteBtn = new FixedUiElement("<img src='./assets/delete.svg' style='max-width: 1.5em; margin-left: 5px;'>")
+
+            const moveUpBtn = new FixedUiElement("<img src='./assets/up.svg' style='max-width: 1.5em; margin-left: 5px;'>")
+                .onClick(() => {
+                    const v = self._value.data[i];
+                    self._value.data[i] = self._value.data[i - 1];
+                    self._value.data[i - 1] = v;
+                    self._value.ping();
+                });
+
+            const moveDownBtn = new FixedUiElement("<img src='./assets/down.svg' style='max-width: 1.5em; margin-left: 5px;'>")
+                .onClick(() => {
+                    const v = self._value.data[i];
+                    self._value.data[i] = self._value.data[i + 1];
+                    self._value.data[i + 1] = v;
+                    self._value.ping();
+                });
+
+            const controls = [];
+            if (i > 0 && this._options.allowMovement) {
+                controls.push(moveUpBtn);
+            }
+
+            if (i + 1 < this._value.data.length && this._options.allowMovement) {
+                controls.push(moveDownBtn);
+            }
+
+
+            const deleteBtn = new FixedUiElement("<img src='./assets/delete.svg' style='max-width: 1.5em;width:1.5em; margin-left: 5px;'>")
                 .onClick(() => {
                     self._value.data.splice(i, 1);
                     self._value.ping();
                 });
-            this.elements.push(new Combine([input, deleteBtn, "<br/>"]).SetClass("tag-input-row"))
+            controls.push(deleteBtn);
+            this.elements.push(new Combine([input.SetStyle("width: calc(100% - 2em - 5px)"), new Combine(controls).SetStyle("display:flex;flex-direction:column;width:min-content;")]).SetClass("tag-input-row"))
         }
         
         this.Update();

@@ -41,8 +41,7 @@ export class WelcomeMessage extends UIElement {
 
         return new Combine([
             this.description,
-            "<br/></br>",
-            // TODO this button is broken - figure out why loginStatus,
+            "<br/><br/>",
             loginStatus,
             this.tail,
             "<br/>",

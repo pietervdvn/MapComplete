@@ -7,6 +7,9 @@ import Combine from "../Base/Combine";
 import {GenerateEmpty} from "./GenerateEmpty";
 import LayerPanelWithPreview from "./LayerPanelWithPreview";
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import {MultiInput} from "../Input/MultiInput";
+import TagRenderingPanel from "./TagRenderingPanel";
+import SingleSetting from "./SingleSetting";
 
 export default class AllLayersPanel extends UIElement {
 
@@ -14,10 +17,13 @@ export default class AllLayersPanel extends UIElement {
     private panel: UIElement;
     private readonly _config: UIEventSource<LayoutConfigJson>;
     private readonly languages: UIEventSource<string[]>;
+    private readonly userDetails: UserDetails;
+    private readonly currentlySelected: UIEventSource<SingleSetting<any>>;
 
     constructor(config: UIEventSource<LayoutConfigJson>,
                 languages: UIEventSource<any>, userDetails: UserDetails) {
         super(undefined);
+        this.userDetails = userDetails;
         this._config = config;
         this.languages = languages;
 
@@ -32,6 +38,15 @@ export default class AllLayersPanel extends UIElement {
         const self = this;
         const tabs = [];
 
+
+        const roamingTags = new MultiInput("Add a tagrendering",
+            () => GenerateEmpty.createEmptyTagRendering(),
+            () => {
+                return new TagRenderingPanel(self.languages, self.currentlySelected, self.userDetails)
+
+            }, undefined, {allowMovement: true});
+        new SingleSetting(this._config, roamingTags, "roamingRenderings", "Roaming Renderings", "These tagrenderings are shown everywhere");
+
         const layers = this._config.data.layers;
         for (let i = 0; i < layers.length; i++) {
 
@@ -43,15 +58,20 @@ export default class AllLayersPanel extends UIElement {
         tabs.push({
             header: "<img src='./assets/layersAdd.svg'>",
             content: new Combine([
-                "<h2>Layer editor</h2>",
-                "In this tab page, you can add and edit the layers of the theme. Click the layers above or add a new layer to get started.",
-                new SubtleButton(
-                    "./assets/layersAdd.svg",
-                    "Add a new layer"
-                ).onClick(() => {
-                    self._config.data.layers.push(GenerateEmpty.createEmptyLayer())
-                    self._config.ping();
-                })])
+                    "<h2>Layer editor</h2>",
+                    "In this tab page, you can add and edit the layers of the theme. Click the layers above or add a new layer to get started.",
+                    new SubtleButton(
+                        "./assets/layersAdd.svg",
+                        "Add a new layer"
+                    ).onClick(() => {
+                        self._config.data.layers.push(GenerateEmpty.createEmptyLayer())
+                        self._config.ping();
+                    }),
+                    "<h2>TagRenderings for every layer</h2>",
+                    "Define tag renderings and questions here that should be shown on every layer of the theme.",
+                    roamingTags
+                ]
+            ),
         })
 
         this.panel = new TabbedComponent(tabs, new UIEventSource<number>(Math.max(0, layers.length - 1)));

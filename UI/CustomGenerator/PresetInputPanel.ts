@@ -33,7 +33,7 @@ export default class PresetInputPanel extends InputElement<{
             s(new MultiTagInput(), "tags","Preset tags","These tags will be applied on the newly created point"),
             s(new MultiLingualTextFields(languages), "title","Preset title","This little text is shown in bold on the 'create new point'-button" ),
             s(new MultiLingualTextFields(languages), "description","Description", "This text is shown in the button as description when creating a new point")
-        ], currentlySelected);
+        ], currentlySelected).SetStyle("display: block; border: 1px solid black; border-radius: 1em;padding: 1em;");
     }
 
 

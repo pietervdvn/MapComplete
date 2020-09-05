@@ -57,7 +57,7 @@ export class FromJSON {
         const layout = new Layout(
             json.id,
             typeof (json.language) === "string" ? [json.language] : json.language,
-            tr(json.title),
+            tr(json.title ?? "Title not defined"),
             layers,
             json.startZoom,
             json.startLat,
