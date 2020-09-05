@@ -114,6 +114,12 @@ export class Basemap {
         this.map.on("click", function (e) {
             self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
         });
+
+        this.map.on("contextmenu", function (e) {
+            self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            console.log("Right click")
+            e.preventDefault();
+        });
     }
     
 }
