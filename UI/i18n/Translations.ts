@@ -51,7 +51,9 @@ export default class Translations {
                     gl: 'estación de bicicletas (arranxo, bomba de ar ou ambos)'
                 }),
                 // title: new T({en: 'Bike station', nl: 'Fietsstation', fr: 'Station vélo', gl: 'Estación de bicicletas'}), Old, non-dynamic title
-                titlePump: new T({en: 'Bike pump', nl: 'Fietspomp', fr: 'TODO: fr', gl: 'Bomba de ar'}),
+                titlePump: new T({
+                  
+                }),
                 titleRepair: new T({
                     en: 'Bike repair station',
                     nl: 'Herstelpunt',
@@ -64,203 +66,22 @@ export default class Translations {
                     fr: 'Point station velo avec pompe',
                     gl: 'Estación de bicicletas (arranxo e bomba de ar)'
                 }),
-                manometer: {
-                    question: new T({
-                        en: 'Does the pump have a pressure indicator or manometer?',
-                        nl: 'Heeft deze pomp een luchtdrukmeter?',
-                        fr: 'Est-ce que la pompe à un manomètre integré?',
-                        gl: 'Ten a bomba de ar un indicador de presión ou un manómetro?'
-                    }),
-                    yes: new T({
-                        en: 'There is a manometer',
-                        nl: 'Er is een luchtdrukmeter',
-                        fr: 'Il y a un manomètre',
-                        gl: 'Hai manómetro'
-                    }),
-                    no: new T({
-                        en: 'There is no manometer',
-                        nl: 'Er is geen luchtdrukmeter',
-                        fr: 'Il n\'y a pas de manomètre',
-                        gl: 'Non hai manómetro'
-                    }),
-                    broken: new T({
-                        en: 'There is manometer but it is broken',
-                        nl: 'Er is een luchtdrukmeter maar die is momenteel defect',
-                        fr: 'Il y a un manomètre mais il est cassé',
-                        gl: 'Hai manómetro pero está estragado'
-                    })
-                },
-                electric: {
-                    question: new T({
-                        en: 'Is this an electric bike pump?',
-                        nl: 'Is dit een electrische fietspomp?',
-                        fr: 'Est-ce que cette pompe est électrique?',
-                        gl: 'Esta é unha bomba de ar eléctrica?'
-                    }),
-                    manual: new T({
-                        en: 'Manual pump',
-                        nl: 'Manuele pomp',
-                        fr: 'Pompe manuelle',
-                        gl: 'Bomba de ar manual'
-                    }),
-                    electric: new T({
-                        en: 'Electrical pump',
-                        nl: 'Electrische pomp',
-                        fr: 'Pompe électrique',
-                        gl: 'Bomba de ar eléctrica'
-                    })
-                },
-                operational: {
-                    question: new T({
-                        en: 'Is the bike pump still operational?',
-                        nl: 'Werkt de fietspomp nog?',
-                        fr: 'Est-ce que cette pompe marche t\'elle toujours?',
-                        gl: 'Segue a funcionar a bomba de ar?'
-                    }),
-                    operational: new T({
-                        en: 'The bike pump is operational',
-                        nl: 'De fietspomp werkt nog',
-                        fr: 'La pompe est opérationnelle',
-                        gl: 'A bomba de ar está operativa'
-                    }),
-                    broken: new T({
-                        en: 'The bike pump is broken',
-                        nl: 'De fietspomp is kapot',
-                        fr: 'La pompe est cassé',
-                        gl: 'A bomba de ar está estragada'
-                    })
-                },
+                
                 valves: {
-                    question: new T({
-                        en: 'What valves are supported?',
-                        nl: 'Welke ventielen werken er met de pomp?',
-                        fr: 'Quelles valves sont compatibles?',
-                        gl: 'Que válvulas son compatíbeis?'
-                    }),
+                   
                     default: new T({
-                        en: 'There is a default head, so Dunlop, Sclaverand and auto',
-                        nl: 'Er is een standaard aansluiting, die dus voor Dunlop, Sclaverand en auto\'s werkt',
-                        fr: 'Il y a une valve par défaut, fonctionnant sur les valves Dunlop, Sclaverand et les valves de voitures',
-                        gl: 'Hai un cabezal predeterminado que é compatíbel con Dunlop, Sclaverand e automóbil'
-                    }),
-                    dunlop: new T({en: 'Only Dunlop', nl: 'Enkel Dunlop', fr: 'TODO: fr', gl: 'Só Dunlop'}),
+                         }),
+                    dunlop: new T({}),
                     sclaverand: new T({
-                        en: 'Only Sclaverand (also known as Presta)',
-                        nl: 'Enkel Sclaverand (ook gekend als Presta)',
-                        fr: 'Seulement Sclaverand (aussi appelé Presta)',
-                        gl: 'Só Sclaverand (tamén coñecido como Presta)'
+                      
                     }),
-                    auto: new T({
-                        en: 'Only for cars',
-                        nl: 'Enkel voor auto\'s',
-                        fr: 'TODO: fr',
-                        gl: 'Só para automóbiles'
-                    }),
-                    render: new T({
-                        en: 'This pump supports the following valves: {valves}',
-                        nl: 'Deze pomp werkt met de volgende ventielen: {valves}',
-                        fr: 'Cette pompe est compatible avec les valves suivantes: {valves}',
-                        gl: 'Esta bomba de ar admite as seguintes válvulas: {valves}'
-                    }),
+                  
                     template: new T({
                         en: 'Some other valve(s): $$$',
                         nl: 'Een ander type ventiel(en): $$$',
                         fr: 'Autre(s) type(s) de valve(s): $$$',
                         gl: 'Algunha outra válvula: $$$'
                     })
-                },
-                chain: {
-                    question: new T({
-                        en: 'Does this bike repair station have a special tool to repair your bike chain?',
-                        nl: 'Heeft dit herstelpunt een speciale reparatieset voor je ketting?',
-                        fr: 'Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?',
-                        gl: 'Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?'
-                    }),
-                    yes: new T({
-                        en: 'There is a chain tool',
-                        nl: 'Er is een reparatieset voor je ketting',
-                        fr: 'Il y a un outil pour réparer la chaine',
-                        gl: 'Hai unha ferramenta para a cadea'
-                    }),
-                    no: new T({
-                        en: 'There is no chain tool',
-                        nl: 'Er is geen reparatieset voor je ketting',
-                        fr: 'Il n\'y a pas d\'outil pour réparer la chaine',
-                        gl: 'Non hai unha ferramenta para a cadea'
-                    }),
-                },
-                operator: {
-                    render: new T({
-                        en: 'This bike station is operated by {operator}',
-                        nl: 'Dit fietspunt wordt beheerd door {operator}',
-                        fr: 'Cette station vélo est opéré par {operator}',
-                        gl: 'Esta estación de bicicletas es operada por {operator}'
-                    }),
-                    template: new T({
-                        en: 'A different operator: $$$',
-                        nl: 'Een andere beheerder: $$$',
-                        fr: 'TODO: fr',
-                        gl: 'Un operador diferente: $$$'
-                    }),
-                    question: new T({
-                        en: 'Who operates this bike station (name of university, shop, city...)?',
-                        nl: 'Wie beheert dit fietsstation (naam universiteit, winkel, stad...)?',
-                        fr: 'Qui opére cette station vélo (nom de l\'université, magasin, ville...)?',
-                        gl: 'Quen opera esta estación de bicicletas (nome da universidade, tenda, concello...)?'
-                    }),
-                    private: new T({
-                        en: 'Operated by a private person',
-                        nl: 'Wordt beheerd door een privépersoon',
-                        fr: 'Operé par un tier privé',
-                        gl: 'Operado por unha persoa privada'
-                    }),
-                },
-                services: {
-                    question: new T({
-                        en: "Which services are available at this bike station?",
-                        nl: "Welke functies biedt dit fietspunt?",
-                        fr: "Quels services sont valables à cette station vélo?",
-                        gl: "Que servizos están dispoñíbeis nesta estación de bicicletas?"
-                    }),
-                    pump: new T({
-                        // Note: this previously read: a pump is available. It is not because the pump is present, that it is available (e.g. broken)
-                        en: "There is only a pump present",
-                        nl: "Er is enkel een pomp aanwezig",
-                        fr: "Il y a seulement une pompe",
-                        gl: "Só hai unha bomba de ar presente"
-                    }),
-                    tools: new T({
-                        en: "There are only tools (screwdrivers, pliers...) present",
-                        nl: "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
-                        fr: "Il y a seulement des outils (tournevis, pinces...)",
-                        gl: "Só hai ferramentas (desaparafusadores, alicates...) presentes"
-                    }),
-                    both: new T({
-                        en: "There are both tools and a pump present",
-                        nl: "Er is zowel een pomp als gereedschap aanwezig",
-                        fr: "IL y a des outils et une pompe",
-                        gl: "Hai ferramentas e unha bomba de ar presentes"
-                    }),
-                },
-                stand: {
-                    question: new T({
-                        en: "Does this bike station have a hook to suspend your bike with or a stand to elevate it?",
-                        nl: "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
-                        fr: "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?",
-                        gl: "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?"
-                    }),
-                    yes: new T({
-                        en: "There is a hook or stand",
-                        nl: "Er is een haak of standaard",
-                        fr: "Oui il y a un crochet ou une accroche",
-                        gl: "Hai un guindastre ou soporte"
-                    }),
-                    no: new T({
-                        en: "There is no hook or stand",
-                        nl: "Er is geen haak of standaard",
-                        fr: "Non il n'y pas de crochet ou d'accroche",
-                        gl: "Non hai un guindastre ou soporte"
-                    }),
                 },
             },
             shop: {

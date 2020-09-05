@@ -37,7 +37,7 @@ export class SimpleAddUI extends UIElement {
         this.ListenTo(State.state.osmConnection.userDetails);
         this.ListenTo(State.state.layerUpdater.runningQuery);
         this.ListenTo(this._confirmPreset);
-
+        this.ListenTo(State.state.locationControl);
         
         this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
         

@@ -5,19 +5,31 @@ import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConf
 export class GenerateEmpty {
     public static createEmptyLayer(): LayerConfigJson {
         return {
-            id: undefined,
-            name: undefined,
-            minzoom: 0,
+            id: "yourlayer",
+            name: "Layer",
+            minzoom: 12,
             overpassTags: {and: [""]},
-            title: undefined,
+            title: "Layer",
             description: {},
             tagRenderings: [],
+            icon: {
+                render: "./assets/bug.svg"
+            },
+            width: {
+                render: "8"
+            },
+            iconSize:{
+                render: "40,40,center"
+            },
+            color:{
+                render: "#00f"
+            }
         }
     }
 
     public static createEmptyLayout(): LayoutConfigJson {
         return {
-            id: "",
+            id: "id",
             title: {},
             description: {},
             language: [],

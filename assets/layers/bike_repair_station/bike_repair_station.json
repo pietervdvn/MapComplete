@@ -6,12 +6,345 @@
     "fr": "Station velo (réparation, pompe à vélo)",
     "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)"
   },
-  "minzoom": 12,
+  "minzoom": 13,
   "overpassTags": {
     "and": [
       "amenity=bicycle_repair_station"
     ]
   },
+  "title": {
+    "render": {
+      "en": "Bike station (pump & repair)",
+      "nl": "Herstelpunt met pomp",
+      "fr": "Point station velo avec pompe",
+      "gl": "Estación de bicicletas (arranxo e bomba de ar)"
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "service:bicycle:pump=no",
+            "service:bicycle:pump:operational_status=broken"
+          ]
+        },
+        "then": {
+          "en": "Bike repair station",
+          "nl": "Herstelpunt",
+          "fr": "Point de réparation velo",
+          "gl": "Estación de arranxo de bicicletas"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=yes"
+          ]
+        },
+        "then": {
+          "en": "Bike repair station",
+          "nl": "Herstelpunt",
+          "fr": "Point de réparation",
+          "gl": "Estación de arranxo de bicicletas"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump:operational_status=broken",
+            "service:bicycle:tools=no"
+          ]
+        },
+        "then": {
+          "en": "Broken pump",
+          "nl": "Kapotte fietspomp",
+          "fr": "Pompe cassée",
+          "gl": "Bomba de ar estragada"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no"
+          ]
+        },
+        "then": {
+          "en": "Bicycle pump",
+          "nl": "Fietspomp",
+          "fr": "Pompe de vélo",
+          "gl": "Bomba de ar"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "Which services are available at this bike station?",
+        "nl": "Welke functies biedt dit fietspunt?",
+        "fr": "Quels services sont valables à cette station vélo?",
+        "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=no",
+              "service:bicycle:pump=yes"
+            ]
+          },
+          "then": {
+            "en": "There is only a pump present",
+            "nl": "Er is enkel een pomp aanwezig",
+            "fr": "Il y a seulement une pompe",
+            "gl": "Só hai unha bomba de ar presente"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=yes",
+              "service:bicycle:pump=no"
+            ]
+          },
+          "then": {
+            "en": "There are only tools (screwdrivers, pliers...) present",
+            "nl": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
+            "fr": "Il y a seulement des outils (tournevis, pinces...)",
+            "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "service:bicycle:tools=yes",
+              "service:bicycle:pump=yes"
+            ]
+          },
+          "then": {
+            "en": "There are both tools and a pump present",
+            "nl": "Er is zowel een pomp als gereedschap aanwezig",
+            "fr": "IL y a des outils et une pompe",
+            "gl": "Hai ferramentas e unha bomba de ar presentes"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this bike repair station have a special tool to repair your bike chain?",
+        "nl": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
+        "fr": "Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?",
+        "gl": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?"
+      },
+      "condition": "service:bicycle:tools=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:chain_tool=yes",
+          "then": {
+            "en": "There is a chain tool",
+            "nl": "Er is een reparatieset voor je ketting",
+            "fr": "Il y a un outil pour réparer la chaine",
+            "gl": "Hai unha ferramenta para a cadea"
+          }
+        },
+        {
+          "if": "service:bicycle:chain_tool=no",
+          "then": {
+            "en": "There is no chain tool",
+            "nl": "Er is geen reparatieset voor je ketting",
+            "fr": "Il n'y a pas d'outil pour réparer la chaine",
+            "gl": "Non hai unha ferramenta para a cadea"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this bike station have a hook to suspend your bike with or a stand to elevate it?",
+        "nl": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
+        "fr": "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?",
+        "gl": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?"
+      },
+      "condition": "service:bicycle:tools=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:stand=yes",
+          "then": {
+            "en": "There is a hook or stand",
+            "nl": "Er is een haak of standaard",
+            "fr": "Il y a un crochet ou une accroche",
+            "gl": "Hai un guindastre ou soporte"
+          }
+        },
+        {
+          "if": "service:bicycle:stand=no",
+          "then": {
+            "en": "There is no hook or stand",
+            "nl": "Er is geen haak of standaard",
+            "fr": "Il n'y pas de crochet ou d'accroche",
+            "gl": "Non hai un guindastre ou soporte"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Is the bike pump still operational?",
+        "nl": "Werkt de fietspomp nog?",
+        "fr": "Est-ce que cette pompe marche t'elle toujours?",
+        "gl": "Segue a funcionar a bomba de ar?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "service:bicycle:pump:operational_status=broken",
+          "then": {
+            "en": "The bike pump is broken",
+            "nl": "De fietspomp is kapot",
+            "fr": "La pompe est cassé",
+            "gl": "A bomba de ar está estragada"
+          }
+        },
+        {
+          "if": "service:bicycle:pump:operational_status=",
+          "then": {
+            "en": "The bike pump is operational",
+            "nl": "De fietspomp werkt nog",
+            "fr": "La pompe est opérationnelle",
+            "gl": "A bomba de ar está operativa"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "What valves are supported?",
+        "nl": "Welke ventielen werken er met de pomp?",
+        "fr": "Quelles valves sont compatibles?",
+        "gl": "Que válvulas son compatíbeis?"
+      },
+      "render": {
+        "en": "This pump supports the following valves: {valves}",
+        "nl": "Deze pomp werkt met de volgende ventielen: {valves}",
+        "fr": "Cette pompe est compatible avec les valves suivantes: {valves}",
+        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}"
+      },
+      "freeform": {
+        "addExtraTags": [
+          "fixme=Freeform 'valves'-tag used: possibly a wrong value"
+        ],
+        "key": "valves"
+      },
+      "mappings": [
+        {
+          "if": "valves=sclaverand;schrader;dunlop",
+          "then": {
+            "en": "There is a default head, so Dunlop, Sclaverand and auto",
+            "nl": "Er is een standaard aansluiting, die dus voor Dunlop, Sclaverand en auto's",
+            "fr": "Il y a une valve par défaut, fonctionnant sur les valves Dunlop, Sclaverand et les valves de voitures",
+            "gl": "Hai un cabezal predeterminado que é compatíbel con Dunlop, Sclaverand e automóbil"
+          }
+        },
+        {
+          "if": "valves=sclaverand",
+          "then": {
+            "en": "Only Sclaverand (also known as Presta)",
+            "nl": "Enkel Sclaverand (ook gekend als Presta)",
+            "fr": "Seulement Sclaverand (aussi appelé Presta)",
+            "gl": "Só Sclaverand (tamén coñecido como Presta)"
+          }
+        },
+        {
+          "if": "valves=dunlop",
+          "then": {
+            "en": "Only Dunlop",
+            "nl": "Enkel Dunlop",
+            "fr": "Seulement Dunlop",
+            "gl": "Só Dunlop"
+          }
+        },
+        {
+          "if": "valves=schrader",
+          "then": {
+            "en": "Only for cars",
+            "nl": "Enkel voor auto's",
+            "fr": "Seuelement les valves de voitures",
+            "gl": "Só para automóbiles"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Is this an electric bike pump?",
+        "nl": "Is dit een electrische fietspomp?",
+        "fr": "Est-ce que cette pompe est électrique?",
+        "gl": "Esta é unha bomba de ar eléctrica?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "manual=yes",
+          "then": {
+            "en": "Manual pump",
+            "nl": "Manuele pomp",
+            "fr": "Pompe manuelle",
+            "gl": "Bomba de ar manual"
+          }
+        },
+        {
+          "if": "manual=no",
+          "then": {
+            "en": "Electrical pump",
+            "nl": "Electrische pomp",
+            "fr": "Pompe électrique",
+            "gl": "Bomba de ar eléctrica"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does the pump have a pressure indicator or manometer?",
+        "nl": "Heeft deze pomp een luchtdrukmeter?",
+        "fr": "Est-ce que la pompe à un manomètre integré?",
+        "gl": "Ten a bomba de ar un indicador de presión ou un manómetro?"
+      },
+      "condition": "service:bicycle:pump=yes",
+      "mappings": [
+        {
+          "if": "manometer=yes",
+          "then": {
+            "en": "There is a manometer",
+            "nl": "Er is een luchtdrukmeter",
+            "fr": "Il y a un manomètre",
+            "gl": "Hai manómetro"
+          }
+        },
+        {
+          "if": "manometer=no",
+          "then": {
+            "en": "There is no manometer",
+            "nl": "Er is geen luchtdrukmeter",
+            "fr": "Il n'y a pas de manomètre",
+            "gl": "Non hai manómetro"
+          }
+        },
+        {
+          "if": "manometer=broken",
+          "then": {
+            "en": "There is manometer but it is broken",
+            "nl": "Er is een luchtdrukmeter maar die is momenteel defect",
+            "fr": "Il y a un manomètre mais il est cassé",
+            "gl": "Hai manómetro pero está estragado"
+          }
+        }
+      ]
+    }
+  ],
   "icon": {
     "render": {
       "en": "./assets/layers/bike_repair_station/repair_station.svg"
@@ -19,13 +352,43 @@
     "mappings": [
       {
         "if": {
-          "and": "service:bicycle:pump:operational_status=broken"
+          "and": [
+            "service:bicycle:pump=no",
+            "service:bicycle:pump:operational_status=broken"
+          ]
+        },
+        "then": "./assets/layers/bike_repair_station/repair_station.svg"
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=yes"
+          ]
+        },
+        "then": "./assets/layers/bike_repair_station/repair_station_pump.svg"
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump:operational_status=broken",
+            "service:bicycle:tools=no"
+          ]
         },
         "then": "./assets/layers/bike_repair_station/broken_pump_2.svg"
+      },
+      {
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no"
+          ]
+        },
+        "then": "./assets/layers/bike_repair_station/pump.svg"
       }
     ]
   },
-  "size": {
+  "iconSize": {
     "render": {
       "en": "50,50,bottom"
     }
@@ -44,20 +407,42 @@
   "presets": [
     {
       "title": {
-        "en": "Bike parking",
-        "nl": "Fietsparking",
-        "fr": "Parking à vélo",
-        "gl": "Aparcadoiro de bicicletas"
+        "en": "Bike pump",
+        "nl": "Fietspomp",
+        "fr": "Pompe à vélo",
+        "gl": "Bomba de ar"
       },
       "tags": [
-        "amenity=bicycle_parking"
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=no",
+        "service:bicycle:pump=yes"
+      ]
+    },
+    {
+      "title": {
+        "en": "Bike repair station and pump",
+        "nl": "Herstelpunt en pomp",
+        "fr": "Point de réparation vélo avec pompe",
+        "gl": "Estación de arranxo de bicicletas con bomba de ar"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=yes"
+      ]
+    },
+    {
+      "title": {
+        "en": "Bike repair station without pump",
+        "nl": "Herstelpunt zonder pomp",
+        "fr": "Point de réparation vélo sans pompe",
+        "gl": "Estación de arranxo de bicicletas sin bomba de ar"
+      },
+      "tags": [
+        "amenity=bicycle_repair_station",
+        "service:bicycle:tools=yes",
+        "service:bicycle:pump=no"
       ]
     }
-  ],
-  "title": {
-    "render": {
-    }
-  },
-  "tagRenderings": [
   ]
 }

@@ -15,6 +15,7 @@ import * as drinkingWater from "../../assets/layers/drinking_water/drinking_wate
 import * as ghostbikes from "../../assets/layers/ghost_bike/ghost_bike.json"
 import * as viewpoint from "../../assets/layers/viewpoint/viewpoint.json"
 import * as bike_parking from "../../assets/layers/bike_parking/bike_parking.json"
+import * as bike_repair_station from "../../assets/layers/bike_repair_station/bike_repair_station.json"
 import * as birdhides from "../../assets/layers/bird_hide/birdhides.json"
 
 import {Utils} from "../../Utils";
@@ -31,6 +32,7 @@ export class FromJSON {
             FromJSON.Layer(ghostbikes),
             FromJSON.Layer(viewpoint),
             FromJSON.Layer(bike_parking),
+            FromJSON.Layer(bike_repair_station),
             FromJSON.Layer(birdhides),
         ];
 

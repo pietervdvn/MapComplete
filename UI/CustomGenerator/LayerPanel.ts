@@ -170,25 +170,29 @@ export default class LayerPanel extends UIElement {
             {
                 title: "Icon",
                 description: "A visual representation for this layer and for the points on the map.",
-                disableQuestions: true
+                disableQuestions: true,
+                noLanguage: true
             });
         const size = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Icon Size",
                 description: "The size of the icons on the map in pixels. Can vary based on the tagging",
-                disableQuestions: true
+                disableQuestions: true,
+                noLanguage: true
             });
         const color = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Way and area color",
                 description: "The color or a shown way or area. Can vary based on the tagging",
-                disableQuestions: true
+                disableQuestions: true,
+                noLanguage: true
             });
         const stroke = new TagRenderingPanel(languages, currentlySelected, userDetails,
             {
                 title: "Stroke width",
                 description: "The width of lines representing ways and the outline of areas. Can vary based on the tags",
-                disableQuestions: true
+                disableQuestions: true,
+                noLanguage: true
             });
         this.registerTagRendering(iconSelect);
         this.registerTagRendering(size);
@@ -201,9 +205,9 @@ export default class LayerPanel extends UIElement {
 
         return new SettingsTable([
             setting(iconSelect, "icon"),
-            setting(size, "size"),
+            setting(size, "iconSize"),
             setting(color, "color"),
-            setting(stroke, "stroke")
+            setting(stroke, "width")
         ], currentlySelected);
     }
 

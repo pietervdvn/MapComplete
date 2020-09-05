@@ -31,7 +31,8 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
                     title?: string,
                     description?: string,
                     disableQuestions?: boolean,
-                    isImage?: boolean
+                    isImage?: boolean,
+                    noLanguage?: boolean
                 }) {
         super();
 
@@ -56,8 +57,9 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
         const questionSettings = [
 
-            
-            setting(new MultiLingualTextFields(languages), "question", "Question", "If the key or mapping doesn't match, this question is asked"),
+
+            setting(options?.noLanguage ? TextField.StringInput() : new MultiLingualTextFields(languages)
+                , "question", "Question", "If the key or mapping doesn't match, this question is asked"),
 
             setting(new AndOrTagInput(), "condition", "Condition",
                 "Only show this tag rendering if these tags matches. Optional field.<br/>Note that the Overpass-tags are already always included in this object"),
@@ -76,7 +78,9 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         ];
 
         const settings: (string | SingleSetting<any>)[] = [
-            setting(new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
+            setting(
+                options?.noLanguage ? TextField.StringInput() :
+                new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
             
             questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data`: "",
             ...(options?.disableQuestions ? [] : questionSettings),
@@ -85,7 +89,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
             setting(new MultiInput<{ if: AndOrTagConfigJson, then: (string | any), hideInAnswer?: boolean }>("Add a mapping",
                 () => ({if: undefined, then: undefined}),
                 () => new MappingInput(languages, options?.disableQuestions ?? false)), "mappings",
-                "Mappings", "")
+                "If a tag matches, then show the respective text", "")
 
         ];
 

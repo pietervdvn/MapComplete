@@ -17,6 +17,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {PersonalLayout} from "./Logic/PersonalLayout";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
+import {UIEventSource} from "./Logic/UIEventSource";
 
 TagRendering.injectFunction();
 
@@ -28,13 +29,16 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     window.location.replace("https://buurtnatuur.be");
 }
 
-let testing = QueryParameters.GetQueryParameter("test", "false");
+let testing: UIEventSource<string>;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    testing = QueryParameters.GetQueryParameter("test", "true");
     // Set to true if testing and changes should NOT be saved
     testing.setData(testing.data ?? "true")
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
     //Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
+} else {
+    testing = QueryParameters.GetQueryParameter("test", "false");
 }
 
 
