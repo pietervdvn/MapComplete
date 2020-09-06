@@ -264,7 +264,12 @@ export class FromJSON {
         const iconSize = FromJSON.TagRenderingWithDefault(json.iconSize, "iconSize", "40,40,center");
         const color = FromJSON.TagRenderingWithDefault(json.color, "layercolor", "#0000ff");
         const width = FromJSON.TagRenderingWithDefault(json.width, "layerwidth", "10");
-
+        if(json.title === "Layer"){
+            json.title = {};
+        }
+        let title=  FromJSON.TagRendering(json.title);
+        
+        
         let tagRenderingDefs = json.tagRenderings ?? [];
         let hasImageElement = false;
         for (const tagRenderingDef of tagRenderingDefs) {
@@ -338,7 +343,7 @@ export class FromJSON {
                 icon: icon.GetContent(renderTags).txt,
                 overpassFilter: overpassTags,
 
-                title: FromJSON.TagRendering(json.title),
+                title: title,
                 minzoom: json.minzoom,
                 presets: presets,
                 elementsToShow: tagRenderings,

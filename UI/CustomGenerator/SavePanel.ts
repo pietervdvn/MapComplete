@@ -5,10 +5,14 @@ import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import Combine from "../Base/Combine";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {TextField} from "../Input/TextField";
+import {SubtleButton} from "../Base/SubtleButton";
+import {FromJSON} from "../../Customizations/JSON/FromJSON";
 
 export default class SavePanel extends UIElement {
     private json: UIElement;
     private lastSaveEl: UIElement;
+    private loadFromJson: UIElement;
 
     constructor(
         connection: OsmConnection,
@@ -16,7 +20,6 @@ export default class SavePanel extends UIElement {
         chronic: UIEventSource<Date>) {
         super();
 
-     
 
         this.lastSaveEl = new VariableUiElement(chronic
             .map(date => {
@@ -26,12 +29,25 @@ export default class SavePanel extends UIElement {
                 return "Your theme was last saved at " + date.toISOString()
             })).onClick(() => chronic.setData(new Date()));
 
-        this.json = new VariableUiElement(config.map(config => {
-            return JSON.stringify(config, null, 2)
-                .replace(/\n/g, "<br/>")
-                .replace(/ /g, "&nbsp;");
-        }))
-            .SetClass("literal-code");
+        const jsonStr = config.map(config =>
+            JSON.stringify(config, null, 2));
+
+
+       const jsonTextField = new TextField({
+            placeholder: "JSON Config",
+            fromString: str => str,
+            toString: str => str,
+            value: jsonStr,
+            startValidated: false,
+            textArea: true,
+            textAreaRows: 20
+        });
+        this.json = jsonTextField;
+        this.loadFromJson = new SubtleButton("./assets/reload.svg", "<b>Load the JSON file below</b>")
+            .onClick(() => {
+                const json = jsonTextField.GetValue().data;
+                config.setData(JSON.parse(json));
+            });
     }
 
     InnerRender(): string {
@@ -41,6 +57,8 @@ export default class SavePanel extends UIElement {
             "<h3>JSON configuration</h3>",
             "The url hash is actually no more then a BASE64-encoding of the below JSON. This json contains the full configuration of the theme.<br/>" +
             "This configuration is mainly useful for debugging",
+            "<br/>",
+            this.loadFromJson,
             this.json
         ]).SetClass("scrollable")
             .Render();

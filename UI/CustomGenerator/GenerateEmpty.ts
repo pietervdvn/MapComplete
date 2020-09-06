@@ -9,7 +9,7 @@ export class GenerateEmpty {
             name: "Layer",
             minzoom: 12,
             overpassTags: {and: [""]},
-            title: "Layer",
+            title: {},
             description: {},
             tagRenderings: [],
             icon: {
@@ -18,7 +18,7 @@ export class GenerateEmpty {
             width: {
                 render: "8"
             },
-            iconSize:{
+            iconSize: {
                 render: "40,40,center"
             },
             color:{

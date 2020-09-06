@@ -56,7 +56,7 @@ export class ValidatedTextField {
 }
 
 export class TextField<T> extends InputElement<T> {
-
+   
     public static StringInput(textArea: boolean = false): TextField<string> {
         return new TextField<string>({
             toString: str => str,
@@ -111,6 +111,7 @@ export class TextField<T> extends InputElement<T> {
     private readonly startValidated: boolean;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _isArea: boolean;
+    private _textAreaRows: number;
 
     constructor(options: {
         /**
@@ -131,7 +132,8 @@ export class TextField<T> extends InputElement<T> {
         fromString: (string: string) => T,
         value?: UIEventSource<T>,
         startValidated?: boolean,
-        textArea?: boolean
+        textArea?: boolean,
+        textAreaRows?: number
     }) {
         super(undefined);
         const self = this;
@@ -144,7 +146,7 @@ export class TextField<T> extends InputElement<T> {
         this._fromString = options.fromString ?? ((str) => (str))
         this.value.addCallback((str) => this.mappedValue.setData(options.fromString(str)));
         this.mappedValue.addCallback((t) => this.value.setData(options.toString(t)));
-
+        this._textAreaRows = options.textAreaRows;
 
         this._placeholder = Translations.W(options.placeholder ?? "");
         this.ListenTo(this._placeholder._source);
@@ -171,7 +173,7 @@ export class TextField<T> extends InputElement<T> {
     InnerRender(): string {
         
         if(this._isArea){
-            return `<textarea id="text-${this.id}" class="form-text-field" rows="4" cols="50" style="max-width: 100%;box-sizing: border-box"></textarea>`
+            return `<textarea id="text-${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea>`
         }
         
         return `<form onSubmit='return false' class='form-text-field'>` +

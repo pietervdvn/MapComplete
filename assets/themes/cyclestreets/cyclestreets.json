@@ -2,7 +2,8 @@
   "id": "fietsstraten",
   "version": "2020-08-30",
   "title": "Fietsstraten",
-  "description": "Een fietsstraat is een straat waar <b>automobilisten geen fietsers mogen inhalen</b> en waar een maximumsnelheid van <b>30km/u</b> geldt.<br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
+  "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
+  
   "icon": "./assets/themes/cyclestreets/F111.svg",
   "language": "nl",
   "startLat": 51.2095,
