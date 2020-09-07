@@ -86,7 +86,7 @@ export default class CustomGeneratorPanel extends UIElement {
             },
             {
                 header: "<img src='./assets/share.svg'>",
-                content: new SharePanel(es, liveUrl)
+                content: new SharePanel(es, liveUrl, userDetails)
             }
         ])
     }

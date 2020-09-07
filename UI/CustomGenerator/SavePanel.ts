@@ -7,7 +7,6 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {TextField} from "../Input/TextField";
 import {SubtleButton} from "../Base/SubtleButton";
-import {FromJSON} from "../../Customizations/JSON/FromJSON";
 
 export default class SavePanel extends UIElement {
     private json: UIElement;

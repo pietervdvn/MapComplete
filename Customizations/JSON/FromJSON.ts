@@ -51,7 +51,7 @@ export class FromJSON {
         const tr = FromJSON.Translation;
 
         const layers = json.layers.map(FromJSON.Layer);
-        const roaming: TagDependantUIElementConstructor[] = json.roamingRenderings?.map(FromJSON.TagRendering) ?? [];
+        const roaming: TagDependantUIElementConstructor[] = json.roamingRenderings?.map((tr, i) => FromJSON.TagRendering(tr, "Roaming rendering "+i)) ?? [];
         for (const layer of layers) {
             layer.elementsToShow.push(...roaming);
         }
@@ -95,15 +95,15 @@ export class FromJSON {
         return new Translation(tr);
     }
 
-    public static TagRendering(json: TagRenderingConfigJson | string): TagDependantUIElementConstructor {
-        return FromJSON.TagRenderingWithDefault(json, "", undefined);
+    public static TagRendering(json: TagRenderingConfigJson | string, propertyeName: string): TagDependantUIElementConstructor {
+        return FromJSON.TagRenderingWithDefault(json, propertyeName, undefined);
     }
 
     public static TagRenderingWithDefault(json: TagRenderingConfigJson | string, propertyName, defaultValue: string): TagDependantUIElementConstructor {
         if (json === undefined) {
             if(defaultValue !== undefined){
                 console.log(`Using default value ${defaultValue} for  ${propertyName}`)
-                return FromJSON.TagRendering(defaultValue);
+                return FromJSON.TagRendering(defaultValue, propertyName);
             }
             throw `Tagrendering ${propertyName} is undefined...`
         }
@@ -145,7 +145,7 @@ export class FromJSON {
             // Setup the freeform
             if (template === undefined) {
                 console.error("Freeform.key is defined, but render is not. This is not allowed.", json)
-                throw "Freeform is defined, but render is not. This is not allowed."
+                throw `Freeform is defined in tagrendering ${propertyName}, but render is not. This is not allowed.`
             }
 
             freeform = {
@@ -175,7 +175,7 @@ export class FromJSON {
         
         if(template === undefined && (mappings === undefined || mappings.length === 0)){
             console.error("Empty tagrendering detected: no mappings nor template given", json)
-            throw "Empty tagrendering detected: no mappings nor template given"
+            throw `Empty tagrendering ${propertyName} detected: no mappings nor template given`
         }
 
 
@@ -247,29 +247,35 @@ export class FromJSON {
     }
 
     public static Layer(json: LayerConfigJson | string): LayerDefinition {
-
         if (typeof (json) === "string") {
             const cached = FromJSON.sharedLayers.get(json);
             if (cached) {
                 return cached;
             }
-
-            throw "Layer not yet loaded..."
+            throw `Layer ${json} not yet loaded...`
         }
+        try {
+            return FromJSON.LayerUncaught(json);
+        } catch (e) {
+            throw `While parsing layer ${json.id}: ${e}`
+        }
+    }
+
+    private static LayerUncaught(json: LayerConfigJson): LayerDefinition {
 
         console.log("Parsing layer", json)
         const tr = FromJSON.Translation;
         const overpassTags = FromJSON.Tag(json.overpassTags);
-        const icon = FromJSON.TagRenderingWithDefault(json.icon, "layericon", "./assets/bug.svg");
+        const icon = FromJSON.TagRenderingWithDefault(json.icon, "icon", "./assets/bug.svg");
         const iconSize = FromJSON.TagRenderingWithDefault(json.iconSize, "iconSize", "40,40,center");
-        const color = FromJSON.TagRenderingWithDefault(json.color, "layercolor", "#0000ff");
-        const width = FromJSON.TagRenderingWithDefault(json.width, "layerwidth", "10");
-        if(json.title === "Layer"){
+        const color = FromJSON.TagRenderingWithDefault(json.color, "color", "#0000ff");
+        const width = FromJSON.TagRenderingWithDefault(json.width, "width", "10");
+        if (json.title === "Layer") {
             json.title = {};
         }
-        let title=  FromJSON.TagRendering(json.title);
-        
-        
+        let title = FromJSON.TagRendering(json.title, "Popup title");
+
+
         let tagRenderingDefs = json.tagRenderings ?? [];
         let hasImageElement = false;
         for (const tagRenderingDef of tagRenderingDefs) {
@@ -277,7 +283,7 @@ export class FromJSON {
                 continue;
             }
             let str = tagRenderingDef as string;
-            if(tagRenderingDef.indexOf("images") >= 0 || str.indexOf("pictures") >= 0){
+            if (tagRenderingDef.indexOf("images") >= 0 || str.indexOf("pictures") >= 0) {
                 hasImageElement = true;
                 break;
             }
@@ -285,7 +291,7 @@ export class FromJSON {
         if (!hasImageElement) {
             tagRenderingDefs = ["images", ...tagRenderingDefs];
         }
-        let tagRenderings = tagRenderingDefs.map(FromJSON.TagRendering);
+        let tagRenderings = tagRenderingDefs.map((tr, i) => FromJSON.TagRendering(tr, "Tagrendering #"+i));
 
 
         const renderTags = {"id": "node/-1"}
@@ -352,10 +358,7 @@ export class FromJSON {
 
             }
         );
-        console.log("Parsed layer is ", layer);
         return layer;
-
     }
-
 
 }

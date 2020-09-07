@@ -22,9 +22,213 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayout} from "./Logic/PersonalLayout";
 import {PersonalLayersPanel} from "./Logic/PersonalLayersPanel";
 import Locale from "./UI/i18n/Locale";
+import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
+import {SimpleAddUI} from "./UI/SimpleAddUI";
+import {CenterMessageBox} from "./UI/CenterMessageBox";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {TagUtils} from "./Logic/Tags";
+import {UserBadge} from "./UI/UserBadge";
+import {SearchAndGo} from "./UI/SearchAndGo";
+import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
+import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
+import {Layout} from "./Customizations/Layout";
+import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {FromJSON} from "./Customizations/JSON/FromJSON";
 
 export class InitUiElements {
 
+
+    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, defaultLayout1: string ) {
+        if (layoutToUse === undefined) {
+            console.log("Incorrect layout")
+            new FixedUiElement("Error: incorrect layout <i>" + defaultLayout1 + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
+            });
+            throw "Incorrect layout"
+        }
+
+        console.log("Using layout: ", layoutToUse.id);
+        State.state = new State(layoutToUse);
+
+        if (layoutToUse.hideFromOverview) {
+            State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.id + "-enabled").setData("true");
+        }
+
+        if (layoutFromBase64 !== "false") {
+            State.state.layoutDefinition = location.hash.substr(1);
+            if (testing.data !== "true") {
+                State.state.osmConnection.OnLoggedIn(() => {
+                    State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
+                })
+            } else {
+                console.warn("NOT saving custom layout to OSM as we are tesing -> probably in an iFrame")
+            }
+        }
+        InitUiElements.InitBaseMap();
+
+        new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
+
+        function setupAllLayerElements() {
+
+            // ------------- Setup the layers -------------------------------
+
+            InitUiElements.InitLayers();
+            InitUiElements.InitLayerSelection();
+
+
+            // ------------------ Setup various other UI elements ------------
+
+
+            InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+
+                let presetCount = 0;
+                for (const layer of State.state.filteredLayers.data) {
+                    for (const preset of layer.layerDef.presets) {
+                        presetCount++;
+                    }
+                }
+                if (presetCount == 0) {
+                    return;
+                }
+
+
+                new StrayClickHandler(() => {
+                        return new SimpleAddUI();
+                    }
+                );
+            });
+
+            new CenterMessageBox().AttachTo("centermessage");
+
+        }
+
+        setupAllLayerElements();
+
+
+        function updateFavs() {
+            const favs = State.state.favouriteLayers.data ?? [];
+
+            layoutToUse.layers = [];
+            for (const fav of favs) {
+                const layer = AllKnownLayouts.allLayers[fav];
+                if (!!layer) {
+                    layoutToUse.layers.push(layer);
+                }
+
+                for (const layouts of State.state.installedThemes.data) {
+                    for (const layer of layouts.layout.layers) {
+                        if (typeof layer === "string") {
+                            continue;
+                        }
+                        if (layer.id === fav) {
+                            layoutToUse.layers.push(layer);
+                        }
+                    }
+                }
+            }
+
+            setupAllLayerElements();
+            State.state.layerUpdater.ForceRefresh();
+            State.state.locationControl.ping();
+        }
+
+        if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {
+
+            State.state.favouriteLayers.addCallback(updateFavs);
+            State.state.installedThemes.addCallback(updateFavs);
+        }
+
+
+        /**
+         * Show the questions and information for the selected element
+         * This is given to the div which renders fullscreen on mobile devices
+         */
+        State.state.selectedElement.addCallback((feature) => {
+                if (feature?.feature?.properties === undefined) {
+                    return;
+                }
+                const data = feature.feature.properties;
+                // Which is the applicable set?
+                for (const layer of layoutToUse.layers) {
+                    if (typeof layer === "string") {
+                        continue;
+                    }
+                    const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
+                    if (applicable) {
+                        // This layer is the layer that gives the questions
+
+                        const featureBox = new FeatureInfoBox(
+                            feature.feature,
+                            State.state.allElements.getElement(data.id),
+                            layer.title,
+                            layer.elementsToShow,
+                        );
+
+                        State.state.fullScreenMessage.setData(featureBox);
+                        break;
+                    }
+                }
+            }
+        );
+
+        InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
+            new UserBadge().AttachTo('userbadge');
+        });
+
+        InitUiElements.OnlyIf((State.state.featureSwitchSearch), () => {
+            new SearchAndGo().AttachTo("searchbox");
+        });
+
+
+        new FullScreenMessageBox(() => {
+            State.state.selectedElement.setData(undefined)
+        }).AttachTo("messagesboxmobile");
+
+
+        InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
+            InitUiElements.InitWelcomeMessage()
+        });
+
+        if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
+            const currentLocation = State.state.locationControl;
+            const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`;
+            const content = `<a href='${url}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`;
+            new FixedUiElement(content).AttachTo("messagesbox");
+            new FixedUiElement(content).AttachTo("help-button-mobile")
+        }
+
+
+        new GeoLocationHandler().AttachTo("geolocate-button");
+        State.state.locationControl.ping();
+    }
+
+
+    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
+        try {
+            let hash = location.hash.substr(1);
+            const layoutFromBase64 = userLayoutParam.data;
+            // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
+
+            const dedicatedHashFromLocalStorage = LocalStorageSource.Get("user-layout-" + layoutFromBase64.replace(" ", "_"));
+            if (dedicatedHashFromLocalStorage.data?.length < 10) {
+                dedicatedHashFromLocalStorage.setData(undefined);
+            }
+
+            const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout");
+            if (hash.length < 10) {
+                hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data;
+            } else {
+                console.log("Saving hash to local storage")
+                hashFromLocalStorage.setData(hash);
+                dedicatedHashFromLocalStorage.setData(hash);
+            }
+            const layoutToUse = FromJSON.FromBase64(hash.substr(1));
+            userLayoutParam.setData(layoutToUse.id);
+            return layoutToUse;
+        } catch (e) {
+            new FixedUiElement("Error: could not parse the custom layout:<br/> " + e).AttachTo("centermessage");
+            throw e;
+        }
+    }
 
     static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
         featureSwitch.addCallback(() => {
