@@ -34,6 +34,10 @@ You can create [your own theme too](https://pietervdvn.github.io/MapComplete/cus
 
 There are plenty more. Discover them in the app.
 
+### Statistics
+
+To see statistics, consult [OsmCha](https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23mapcomplete%22%2C%22value%22%3A%22%23mapcomplete%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%7D) or the [analytics page](https://pietervdvn.goatcounter.com/)
+
 ## User journey
 
 MapComplete is set up to lure people into OpenStreetMap and to teach them while they are on the go, step by step.

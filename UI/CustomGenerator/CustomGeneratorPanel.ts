@@ -61,7 +61,7 @@ export default class CustomGeneratorPanel extends UIElement {
             });
 
         const preview = new Combine([
-            new VariableUiElement(iframe.stabilized(2500))
+            new VariableUiElement(iframe)
         ]).SetClass("preview")
         this.mainPanel = new TabbedComponent([
             {
