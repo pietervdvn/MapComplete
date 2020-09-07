@@ -4,6 +4,7 @@ export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
     abstract asOverpass(): string[]
     abstract substituteValues(tags: any) : TagsFilter;
+    abstract isUsableAsAnswer() : boolean;
 
     matchesProperties(properties: Map<string, string>): boolean {
         return this.matches(TagUtils.proprtiesToKV(properties));
@@ -42,6 +43,10 @@ export class RegexTag extends TagsFilter {
         }
         return r.source;
     }
+    
+    isUsableAsAnswer(): boolean {
+        return false;
+    }
 
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
@@ -58,7 +63,10 @@ export class RegexTag extends TagsFilter {
     }
     
     asHumanString() {
-        return `${RegexTag.source(this.key)}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
+        if (typeof this.key === "string") {
+            return `${this.key}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
+        }
+        return `~${this.key.source}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`
     }
 }
 
@@ -78,7 +86,7 @@ export class Tag extends TagsFilter {
             throw "Invalid value";
         }
         if(value === "*"){
-         console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}!~*`)
+         console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)
         }
     }
 
@@ -128,6 +136,10 @@ export class Tag extends TagsFilter {
         }
         return this.key + "=" + v;
     }
+    
+    isUsableAsAnswer(): boolean {
+        return true;
+    }
 }
 
 
@@ -170,6 +182,10 @@ export class Or extends TagsFilter {
 
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.or.map(t => t.asHumanString(linkToWiki, shorten)).join("|");
+    }
+    
+    isUsableAsAnswer(): boolean {
+        return false;
     }
 }
 
@@ -231,6 +247,15 @@ export class And extends TagsFilter {
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.and.map(t => t.asHumanString(linkToWiki, shorten)).join("&");
     }
+    
+    isUsableAsAnswer(): boolean {
+        for (const t of this.and) {
+            if(!t.isUsableAsAnswer()){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 
@@ -261,4 +286,5 @@ export class TagUtils {
         }
         return properties;
     }
+    
 }

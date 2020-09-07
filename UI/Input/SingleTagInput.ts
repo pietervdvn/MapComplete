@@ -4,6 +4,9 @@ import {DropDown} from "./DropDown";
 import {TextField} from "./TextField";
 import Combine from "../Base/Combine";
 import {Utils} from "../../Utils";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {FromJSON} from "../../Customizations/JSON/FromJSON";
 
 export default class SingleTagInput extends InputElement<string> {
 
@@ -13,17 +16,29 @@ export default class SingleTagInput extends InputElement<string> {
     private key: InputElement<string>;
     private value: InputElement<string>;
     private operator: DropDown<string>
+    private readonly helpMesage: UIElement;
 
     constructor(value: UIEventSource<string> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource<string>("");
-       
+
+        this.helpMesage = new VariableUiElement(this._value.map(tagDef => {
+                try {
+                    FromJSON.Tag(tagDef, "");
+                    return "";
+                } catch (e) {
+                    return `<br/><span class='alert'>${e}</span>`
+                }
+            }
+        ));
+
         this.key = TextField.KeyInput();
 
         this.value = new TextField<string>({
                 placeholder: "value - if blank, matches if key is NOT present",
                 fromString: str => str,
                 toString: str => str,
+                value: new UIEventSource<string>("")
             }
         );
         this.operator = new DropDown<string>("", [
@@ -85,9 +100,9 @@ export default class SingleTagInput extends InputElement<string> {
 
     InnerRender(): string {
         return new Combine([
-            this.key, this.operator, this.value
-        ]).SetStyle("display:flex")
-            .Render();
+            this.key, this.operator, this.value,
+            this.helpMesage
+        ]).Render();
     }
 
 

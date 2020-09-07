@@ -19,7 +19,7 @@ export default class SharePanel extends UIElement {
         const proposedNameEnc = encodeURIComponent(`wiki:User:${userDetails.name}/${config.data.id}`)
 
         this._panel = new Combine([
-            "<h2>share</h2>",
+            "<h2>Share</h2>",
             "Share the following link with friends:<br/>",
             new VariableUiElement(liveUrl.map(url => `<a href='${url}' target="_blank">${url}</a>`)),
             "<h2>Publish on OSM Wiki</h2>",

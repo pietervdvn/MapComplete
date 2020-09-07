@@ -107,6 +107,7 @@ export class FromJSON {
             }
             throw `Tagrendering ${propertyName} is undefined...`
         }
+
         
         if (typeof json === "string") {
 
@@ -137,6 +138,8 @@ export class FromJSON {
                 }
             });
         }
+        // It's the question that drives us, neo
+        const question =  FromJSON.Translation(json.question);
 
         let template = FromJSON.Translation(json.render);
 
@@ -165,28 +168,35 @@ export class FromJSON {
             }
         }
 
-        const mappings = json.mappings?.map(mapping => (
-            {
-                k: FromJSON.Tag(mapping.if),
-                txt: FromJSON.Translation(mapping.then),
-                hideInAnswer: mapping.hideInAnswer
-            })
+        const mappings = json.mappings?.map((mapping, i) => {
+                const k = FromJSON.Tag(mapping.if, `IN mapping #${i} of tagrendering ${propertyName}`)
+
+                if (question !== undefined && !mapping.hideInAnswer && !k.isUsableAsAnswer()) {
+                    throw `Invalid mapping in ${propertyName}: the tags use an OR-expression or regex expression but are also assignable as answer.`
+                }
+
+                return {
+                    k: k,
+                    txt: FromJSON.Translation(mapping.then),
+                    hideInAnswer: mapping.hideInAnswer
+                };
+            }
         );
-        
-        if(template === undefined && (mappings === undefined || mappings.length === 0)){
-            console.error("Empty tagrendering detected: no mappings nor template given", json)
+
+        if (template === undefined && (mappings === undefined || mappings.length === 0)) {
+            console.error(`Empty tagrendering detected in ${propertyName}: no mappings nor template given`, json)
             throw `Empty tagrendering ${propertyName} detected: no mappings nor template given`
         }
 
 
         let rendering = new TagRenderingOptions({
-            question: FromJSON.Translation(json.question),
+            question: question,
             freeform: freeform,
             mappings: mappings
         });
 
         if (json.condition) {
-            return rendering.OnlyShowIf(FromJSON.Tag(json.condition));
+            return rendering.OnlyShowIf(FromJSON.Tag(json.condition, `In tagrendering ${propertyName}.condition`));
         }
 
         return rendering;
@@ -197,7 +207,7 @@ export class FromJSON {
         return new Tag(tag[0], tag[1]);
     }
 
-    public static Tag(json: AndOrTagConfigJson | string): TagsFilter {
+    public static Tag(json: AndOrTagConfigJson | string, context: string): TagsFilter {
         if(json === undefined){
             throw "Error while parsing a tag: nothing defined. Make sure all the tags are defined and at least one tag is present in a complex expression"
         }
@@ -206,12 +216,22 @@ export class FromJSON {
             if (tag.indexOf("!~") >= 0) {
                 const split = Utils.SplitFirst(tag, "!~");
                 if (split[1] === "*") {
-                    split[1] = "..*"
+                    throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
                 }
                 return new RegexTag(
                     split[0],
                     new RegExp("^" + split[1] + "$"),
                     true
+                );
+            }
+            if (tag.indexOf("~~") >= 0) {
+                const split = Utils.SplitFirst(tag, "~~");
+                if (split[1] === "*") {
+                    split[1] = "..*"
+                }
+                return new RegexTag(
+                        new RegExp("^" + split[0] + "$"),
+                    new RegExp("^" + split[1] + "$")
                 );
             }
             if (tag.indexOf("!=") >= 0) {
@@ -236,13 +256,16 @@ export class FromJSON {
                 );
             }
             const split = Utils.SplitFirst(tag, "=");
+            if(split[1] == "*"){
+                throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
+            }
             return new Tag(split[0], split[1])
         }
         if (json.and !== undefined) {
-            return new And(json.and.map(FromJSON.Tag));
+            return new And(json.and.map(t => FromJSON.Tag(t, context)));
         }
         if (json.or !== undefined) {
-            return new Or(json.or.map(FromJSON.Tag));
+            return new Or(json.or.map(t => FromJSON.Tag(t, context)));
         }
     }
 
@@ -265,7 +288,7 @@ export class FromJSON {
 
         console.log("Parsing layer", json)
         const tr = FromJSON.Translation;
-        const overpassTags = FromJSON.Tag(json.overpassTags);
+        const overpassTags = FromJSON.Tag(json.overpassTags, "overpasstags for layer "+json.id);
         const icon = FromJSON.TagRenderingWithDefault(json.icon, "icon", "./assets/bug.svg");
         const iconSize = FromJSON.TagRenderingWithDefault(json.iconSize, "iconSize", "40,40,center");
         const color = FromJSON.TagRenderingWithDefault(json.color, "color", "#0000ff");

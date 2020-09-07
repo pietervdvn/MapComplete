@@ -7,14 +7,23 @@ import BikeCafes from "../Layers/BikeCafes";
 
 
 export default class Cyclofix extends Layout {
+
+    private static RememberTheDead(): boolean {
+        const now = new Date();
+        const m = now.getMonth() + 1;
+        const day = new Date().getDay() + 1;
+        const date = day + "/" + m;
+        return (date === "31/10" || date === "1/11" || date === "2/11");
+    }
+
     constructor() {
         super(
             "cyclofix",
-            ["en", "nl", "fr","gl"],
+            ["en", "nl", "fr", "gl"],
             Translations.t.cyclofix.title,
             ["bike_repair_station", new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(), new BikeCafes(),
                 // The first of november, we remember our dead
-                ...(new Date().getMonth() + 1 == 11 && new Date().getDay() + 1 == 1 ? ["ghost_bike"] : [])],
+                ...(Cyclofix.RememberTheDead() ? ["ghost_bike"] : [])],
             16,
             50.8465573,
             4.3516970,

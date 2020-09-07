@@ -252,7 +252,7 @@
             "en": "What is the reference number of this public bookcase?",
             "nl": "Wat is het referentienummer van dit boekenruilkastje?"
           },
-          "condition": "brand=*",
+          "condition": "brand~*",
           "freeform": {
             "key": "ref"
           },

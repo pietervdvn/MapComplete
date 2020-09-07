@@ -14,6 +14,8 @@ import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import {State} from "../../State";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {FromJSON} from "../../Customizations/JSON/FromJSON";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -24,6 +26,8 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
     private readonly _value: UIEventSource<TagRenderingConfigJson>;
     public options: { title?: string; description?: string; disableQuestions?: boolean; isImage?: boolean; };
 
+    public readonly validText : UIElement;
+    
     constructor(languages: UIEventSource<string[]>,
                 currentlySelected: UIEventSource<SingleSetting<any>>,
                 userDetails: UserDetails,
@@ -95,12 +99,24 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         ];
 
         this.settingsTable = new SettingsTable(settings, currentlySelected);
+    
+        
+        this.validText = new VariableUiElement(value.map((json: TagRenderingConfigJson) => {
+            try{
+                FromJSON.TagRendering(json, options?.title ?? "");
+                return "";
+            }catch(e){
+                return "<span class='alert'>"+e+"</span>"
+            }
+        }));
+    
     }
 
     InnerRender(): string {
         return new Combine([
             this.intro,
-            this.settingsTable]).Render();
+            this.settingsTable,
+            this.validText]).Render();
     }
 
     GetValue(): UIEventSource<TagRenderingConfigJson> {

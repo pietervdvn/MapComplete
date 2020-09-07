@@ -12,7 +12,6 @@
   "maintainer": "MapComlete",
   "widenfactor": 0.05,
   "roamingRenderings": [
-    "pictures",
     {
       "question": "Is deze straat een fietsstraat?",
       "mappings": [
