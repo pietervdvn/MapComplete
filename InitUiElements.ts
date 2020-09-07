@@ -221,7 +221,7 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = FromJSON.FromBase64(hash.substr(1));
+            const layoutToUse = FromJSON.FromBase64(hash);
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
