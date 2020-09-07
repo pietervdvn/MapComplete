@@ -27,7 +27,7 @@
     "codegrid-js": "git://github.com/hlaw/codegrid-js.git",
     "email-validator": "^2.0.4",
     "jquery": "latest",
-    "leaflet": "^1.6.0",
+    "leaflet": "^1.7.1",
     "libphonenumber": "0.0.10",
     "libphonenumber-js": "^1.7.55",
     "osm-auth": "^1.0.2",
