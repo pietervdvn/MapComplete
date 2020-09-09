@@ -1,0 +1,252 @@
+{
+  "id": "nature_reserve_simple",
+  "name": "Layer",
+  "minzoom": 10,
+  "overpassTags": {
+    "or": [
+      "leisure=nature_reserve",
+      "boundary=protected_area"
+    ]
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Natuurgebied <i>{name}</i>"
+        }
+      }
+    ],
+    "render": {
+      "nl": "Natuurgebied"
+    }
+  },
+  "description": {
+    "nl": "Een natuurreservaat is een gebied dat wordt beheerd door Natuurpunt, ANB of een privépersoon zodat deze biodiversiteit bevordert. "
+  },
+  "tagRenderings": [
+    {
+      "question": {
+        "nl": "Is dit gebied vrij toegankelijk?"
+      },
+      "freeform": {
+        "key": "access:description",
+        "addExtraTags": []
+      },
+      "render": {
+        "nl": "De toegankelijkheid van dit gebied is {access:description}"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Publiek toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=no",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet publiek toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=guided",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Enkel met gids of op activiteit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=private",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet toegankelijk privégebied"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=permissive",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk, maar het is privégebied"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee=yes"
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk mits betaling"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "nl": "Beheer door {operator}"
+      },
+      "question": {
+        "nl": "Wie beheert dit natuurgebied?"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Natuurpunt"
+            ]
+          },
+          "then": {
+            "nl": "Beheer door Natuurpunt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator=Agenstchap Natuur en Bos"
+            ]
+          },
+          "then": {
+            "nl": "Beheer door het Agentschap Natuur en Bos (ANB)"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "<b>Wat is de <i>officiële</i> naam van dit natuurgebied?</b><br/><span class='subtle'>Sommige gebieden hebben geen naam</span>"
+      },
+      "freeform": {
+        "key": "name",
+        "addExtraTags": [
+          "noname="
+        ]
+      },
+      "render": {
+        "nl": "Dit gebied heet <i>{name}</i>"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "nl": "Dit gebied heeft geen naam"
+          }
+        }
+      ],
+      "condition": {
+        "and": [
+          "name:nl="
+        ]
+      }
+    },
+    {
+      "render": {
+        "nl": "De naam van dit gebied is {name:nl}"
+      },
+      "freeform": {
+        "key": "name:nl"
+      },
+      "question": {
+        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
+      },
+      "condition": {
+        "and": [
+          "name:nl~*"
+        ]
+      }
+    },
+    {
+      "render": {
+        "nl": "Meer uitleg:<br/><i>{description:0}</i>"
+      },
+      "question": {
+        "nl": "Zijn er nog opmerkingen of vermeldenswaardigheden?"
+      },
+      "freeform": {
+        "key": "description:0"
+      }
+    }
+  ],
+  "icon": {
+    "render": "$circle"
+  },
+  "width": {
+    "render": "3"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#c90014",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "operator~*",
+            "access~*"
+          ]
+        },
+        "then": "#37c65b"
+      },
+      {
+        "if": {
+          "and": [
+            "name~*",
+            "access~*"
+          ]
+        },
+        "then": "#c98d00"
+      }
+    ]
+  },
+  "presets": [
+    {
+      "tags": [
+        "leisure=nature_reserve"
+      ],
+      "title": {
+        "nl": "Natuurreservaat"
+      },
+      "description": {
+        "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 10
+}

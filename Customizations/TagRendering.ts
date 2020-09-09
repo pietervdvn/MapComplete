@@ -18,17 +18,16 @@ import Translation from "../UI/i18n/Translation";
 import Combine from "../UI/Base/Combine";
 
 
-export class 
-TagRendering extends UIElement implements TagDependantUIElement {
+export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private readonly _priority: number;
     private readonly _question: string | Translation;
     private readonly _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
-    private currentTags : UIEventSource<any> ;
-    
-    
+    private currentTags: UIEventSource<any>;
+
+
     private readonly _freeform: {
         key: string,
         template: string | UIElement,
@@ -109,7 +108,6 @@ TagRendering extends UIElement implements TagDependantUIElement {
 
 
         for (const choice of options.mappings ?? []) {
-
 
             let choiceSubbed = {
                 k: choice.k?.substituteValues(this.currentTags.data),
@@ -225,7 +223,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 }
                 previousTexts.push(this.ApplyTemplate(mapping.txt));
                 
-                elements.push(this.InputElementForMapping(mapping));
+                elements.push(this.InputElementForMapping(mapping, mapping.substitute));
             }
         }
         
@@ -247,14 +245,26 @@ TagRendering extends UIElement implements TagDependantUIElement {
     }
 
 
-    private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }) {
-        return new FixedInputElement(this.ApplyTemplate(mapping.txt),
-            mapping.k.substituteValues(this.currentTags.data)
-        );
+    private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }, substituteValues: boolean) {
+        if (substituteValues) {
+
+            return new FixedInputElement(this.ApplyTemplate(mapping.txt),
+                mapping.k.substituteValues(this.currentTags.data),
+                (t0, t1) => t0.isEquivalent(t1)
+            );
+        }
+        return new FixedInputElement(this.ApplyTemplate(mapping.txt),mapping.k,
+            (t0, t1) => t0.isEquivalent(t1));
     }
 
 
-    private InputForFreeForm(freeform): InputElement<TagsFilter> {
+    private InputForFreeForm(freeform :  {
+        key: string,
+        template: string | Translation,
+        renderTemplate: string | Translation,
+        placeholder?: string | Translation,
+        extraTags?: TagsFilter,
+    }): InputElement<TagsFilter> {
         if (freeform?.template === undefined) {
             return undefined;
         }
@@ -283,7 +293,7 @@ TagRendering extends UIElement implements TagDependantUIElement {
                 const tag = new Tag(freeform.key, formatter(string, this._source.data._country));
 
                 if (tag.value.length > 255) {
-                    return undefined; // Toolong
+                    return undefined; // Too long
                 }
 
                 if (freeform.extraTags === undefined) {
@@ -299,7 +309,13 @@ TagRendering extends UIElement implements TagDependantUIElement {
         const toString =
             (tag) => {
                 if (tag instanceof And) {
-                    return toString(tag.and[0])
+                    for (const subtag of tag.and) {
+                        if(subtag instanceof Tag && subtag.key === freeform.key){
+                            return subtag.value;
+                        }
+                    }
+                    
+                    return undefined;
                 } else if (tag instanceof Tag) {
                     return tag.value
                 }

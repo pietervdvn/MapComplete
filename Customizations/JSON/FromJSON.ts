@@ -17,6 +17,7 @@ import * as viewpoint from "../../assets/layers/viewpoint/viewpoint.json"
 import * as bike_parking from "../../assets/layers/bike_parking/bike_parking.json"
 import * as bike_repair_station from "../../assets/layers/bike_repair_station/bike_repair_station.json"
 import * as birdhides from "../../assets/layers/bird_hide/birdhides.json"
+import * as nature_reserve from "../../assets/layers/nature_reserve/nature_reserve.json"
 
 import {Utils} from "../../Utils";
 
@@ -34,6 +35,7 @@ export class FromJSON {
             FromJSON.Layer(bike_parking),
             FromJSON.Layer(bike_repair_station),
             FromJSON.Layer(birdhides),
+            FromJSON.Layer(nature_reserve),
         ];
 
         for (const layer of sharedLayersList) {
@@ -102,7 +104,6 @@ export class FromJSON {
     public static TagRenderingWithDefault(json: TagRenderingConfigJson | string, propertyName, defaultValue: string): TagDependantUIElementConstructor {
         if (json === undefined) {
             if(defaultValue !== undefined){
-                console.log(`Using default value ${defaultValue} for  ${propertyName}`)
                 return FromJSON.TagRendering(defaultValue, propertyName);
             }
             throw `Tagrendering ${propertyName} is undefined...`
@@ -207,7 +208,7 @@ export class FromJSON {
         return new Tag(tag[0], tag[1]);
     }
 
-    public static Tag(json: AndOrTagConfigJson | string, context: string): TagsFilter {
+    public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         if(json === undefined){
             throw "Error while parsing a tag: nothing defined. Make sure all the tags are defined and at least one tag is present in a complex expression"
         }
@@ -286,7 +287,6 @@ export class FromJSON {
 
     private static LayerUncaught(json: LayerConfigJson): LayerDefinition {
 
-        console.log("Parsing layer", json)
         const tr = FromJSON.Translation;
         const overpassTags = FromJSON.Tag(json.overpassTags, "overpasstags for layer "+json.id);
         const icon = FromJSON.TagRenderingWithDefault(json.icon, "icon", "./assets/bug.svg");
@@ -381,6 +381,7 @@ export class FromJSON {
 
             }
         );
+        layer.maxAllowedOverlapPercentage = json.hideUnderlayingFeaturesMinPercentage;
         return layer;
     }
 

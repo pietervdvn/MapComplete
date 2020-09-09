@@ -13,7 +13,6 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 
 export default class LayerPanelWithPreview extends UIElement{
     private panel: UIElement;
-    
     constructor(config: UIEventSource<any>, languages: UIEventSource<string[]>, index: number, userDetails: UserDetails) {
         super();
 

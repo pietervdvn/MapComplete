@@ -12,6 +12,7 @@ export class GenerateEmpty {
             title: {},
             description: {},
             tagRenderings: [],
+            hideUnderlayingFeaturesMinPercentage: 0,
             icon: {
                 render: "./assets/bug.svg"
             },

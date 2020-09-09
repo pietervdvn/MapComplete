@@ -13,6 +13,8 @@ export abstract class UIElement extends UIEventSource<string> {
     private _hideIfEmpty = false;
 
     public dumbMode = false;
+    
+    private lastInnerRender: string;
 
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.
@@ -37,6 +39,7 @@ export abstract class UIElement extends UIEventSource<string> {
         this.dumbMode = false;
         const self = this;
         source.addCallback(() => {
+            self.lastInnerRender = undefined;
             self.Update();
         })
         return this;
@@ -92,7 +95,7 @@ export abstract class UIElement extends UIEventSource<string> {
 
             return;
         }
-        this.setData(this.InnerRender());
+        this.setData(this.lastInnerRender ?? this.InnerRender());
         element.innerHTML = this.data;
 
         if (this._hideIfEmpty) {
@@ -151,14 +154,15 @@ export abstract class UIElement extends UIEventSource<string> {
    }
 
     Render(): string {
+        this.lastInnerRender = this.lastInnerRender ?? this.InnerRender();
         if (this.dumbMode) {
-            return this.InnerRender();
+            return this.lastInnerRender;
         }
         let style = "";
         if (this.style !== undefined && this.style !== "") {
             style = `style="${this.style}"`;
         }
-        return `<span class='uielement ${this.clss.join(" ")}' ${style} id='${this.id}'>${this.InnerRender()}</span>`
+        return `<span class='uielement ${this.clss.join(" ")}' ${style} id='${this.id}'>${this.lastInnerRender}</span>`
     }
 
     AttachTo(divId: string) {

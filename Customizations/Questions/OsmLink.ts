@@ -1,5 +1,5 @@
 import {Img} from "../../UI/Img";
-import {Tag} from "../../Logic/Tags";
+import {RegexTag, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
@@ -18,7 +18,7 @@ export class OsmLink extends TagRenderingOptions {
             placeholder: "",
         },
         mappings: [
-            {k: new Tag("id", "node/-1"), txt: "<span class='alert'>Uploading</span>"}
+            {k: new RegexTag("id", /node\/-.+/), txt: "<span class='alert'>Uploading</span>"}
         ]
 
     }

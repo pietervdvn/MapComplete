@@ -54,14 +54,22 @@ new T([
                 }
             ],
             condition: "x="
-        });
+        }, "");
 
         equal(true, tr.IsKnown({"noname": "yes"}));
         equal(true, tr.IsKnown({"name": "ABC"}));
         equal(false, tr.IsKnown({"foo": "bar"}));
-        equal("Has no name", tr.GetContent({"noname": "yes"}));
-        equal("Ook een xyz", tr.GetContent({"name": "xyz"}));
-        equal("Ook een {name}", tr.GetContent({"foo": "bar"}));
+        equal("Has no name", tr.GetContent({"noname": "yes"})?.txt);
+        equal("Ook een xyz", tr.GetContent({"name": "xyz"})?.txt);
+        equal(undefined, tr.GetContent({"foo": "bar"}));
 
-    })]
+    })],
+    [
+        "Select right value test",
+        () => {
+    
+        }
+    ]
+    
+    
 ]);

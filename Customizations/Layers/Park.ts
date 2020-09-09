@@ -13,7 +13,7 @@ export class Park extends LayerDefinition {
         question: "Is dit park publiek toegankelijk?",
         mappings: [
             {k: new Tag("access", "yes"), txt: "Publiek toegankelijk"},
-            {k: new Tag("access", ""), txt: "Publiek toegankelijk"},
+            {k: new Tag("access", ""), txt: "Publiek toegankelijk", hideInAnswer: true},
             {k: new Tag("access", "no"), txt: "Niet publiek toegankelijk"},
             {k: new Tag("access", "private"), txt: "Niet publiek toegankelijk, want privaat"},
             {k: new Tag("access", "guided"), txt: "Enkel toegankelijk met een gids of op een activiteit"},
@@ -59,7 +59,7 @@ export class Park extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new NameInline("park");
+        this.title = new NameInline("Park");
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             new NameQuestion(),

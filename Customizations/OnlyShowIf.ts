@@ -41,7 +41,7 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
     }
     
     GetContent(tags: any): Translation {
-        if(this.IsKnown(tags)){
+        if(!this.IsKnown(tags)){
             return undefined;
         }
         return this._embedded.GetContent(tags);

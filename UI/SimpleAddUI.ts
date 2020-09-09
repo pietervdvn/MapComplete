@@ -54,6 +54,9 @@ export class SimpleAddUI extends UIElement {
                     if (typeof (preset.icon) !== "string") {
                         const tags = Utils.MergeTags(TagUtils.KVtoProperties(preset.tags), {id:"node/-1"});
                         icon = preset.icon.GetContent(tags).txt;
+                        if(icon.startsWith("$")){
+                            icon = undefined;
+                        }
                     } else {
                         icon = preset.icon;
                     }

@@ -26,7 +26,7 @@ export class NatureReserves extends LayerDefinition {
         }
         ];
         this.minzoom = 13;
-        this.title = new NameInline("natuurreservaat");
+        this.title = new NameInline("Natuurreservaat");
         this.style = this.generateStyleFunction();
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),

@@ -96,7 +96,10 @@ export default class LayerPanel extends UIElement {
                         {value: 2, shown: "Show both the ways/areas and the centerpoints"},
                         {value: 1, shown: "Show everything as centerpoint"}]), "wayHandling", "Way handling",
                     "Describes how ways and areas are represented on the map: areas can be represented as the area itself, or it can be converted into the centerpoint"),
-
+                setting(TextField.NumberInput("nat", n => n <= 100), "hideUnderlayingFeaturesMinPercentage", "Max allowed overlap percentage",
+                    "Consider that we want to show 'Nature Reserves' and 'Forests'. Now, ofter, there are pieces of forest mapped _in_ the nature reserve.<br/>" +
+                    "Now, showing those pieces of forest overlapping with the nature reserve truly clutters the map and is very user-unfriendly.<br/>" +
+                    "The features are placed layer by layer. If a feature below a feature on this layer overlaps for more then 'x'-percent, the underlying feature is hidden."),
                 setting(new AndOrTagInput(), "overpassTags", "Overpass query",
                     "The tags of the objects to load from overpass"),
 

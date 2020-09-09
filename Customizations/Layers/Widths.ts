@@ -168,12 +168,12 @@ export class Widths extends LayerDefinition {
 
             let dashArray = undefined;
             if (props.onewayBike) {
-                dashArray = [20, 8]
+                dashArray = [5, 6]
             }
             return {
                 icon: null,
                 color: c,
-                weight: 9,
+                weight: 5,
                 dashArray: dashArray
             }
         }

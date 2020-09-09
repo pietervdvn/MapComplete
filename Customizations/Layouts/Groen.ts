@@ -1,7 +1,7 @@
-import {NatureReserves} from "../Layers/NatureReserves";
 import {Park} from "../Layers/Park";
 import {Bos} from "../Layers/Bos";
 import {Layout} from "../Layout";
+import {NatureReserves} from "../Layers/NatureReserves";
 
 export class Groen extends Layout {
     

@@ -4,7 +4,9 @@ export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
     abstract asOverpass(): string[]
     abstract substituteValues(tags: any) : TagsFilter;
-    abstract isUsableAsAnswer() : boolean;
+    abstract isUsableAsAnswer(): boolean;
+
+    abstract isEquivalent(other: TagsFilter): boolean;
 
     matchesProperties(properties: Map<string, string>): boolean {
         return this.matches(TagUtils.proprtiesToKV(properties));
@@ -58,15 +60,25 @@ export class RegexTag extends TagsFilter {
         return this.invert;
     }
 
-    substituteValues(tags: any) : TagsFilter{
+    substituteValues(tags: any): TagsFilter {
         return this;
     }
-    
+
     asHumanString() {
         if (typeof this.key === "string") {
             return `${this.key}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
         }
         return `~${this.key.source}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`
+    }
+
+    isEquivalent(other: TagsFilter): boolean {
+        if (other instanceof RegexTag) {
+            return other.asHumanString() == this.asHumanString();
+        }
+        if(other instanceof Tag){
+            return RegexTag.doesMatch(other.key, this.key) && RegexTag.doesMatch(other.value, this.value);
+        }
+        return false;
     }
 }
 
@@ -140,6 +152,16 @@ export class Tag extends TagsFilter {
     isUsableAsAnswer(): boolean {
         return true;
     }
+    
+    isEquivalent(other: TagsFilter): boolean {
+        if(other instanceof Tag){
+            return this.key === other.key && this.value === other.value;
+        }
+        if(other instanceof RegexTag){
+            other.isEquivalent(this);
+        }
+        return false;
+    }
 }
 
 
@@ -185,6 +207,24 @@ export class Or extends TagsFilter {
     }
     
     isUsableAsAnswer(): boolean {
+        return false;
+    }
+    
+    isEquivalent(other: TagsFilter): boolean {
+        if(other instanceof Or){
+
+            for (const selfTag of this.or) {
+                let matchFound = false;
+                for (let i = 0; i < other.or.length && !matchFound; i++){
+                    let otherTag = other.or[i];
+                    matchFound = selfTag.isEquivalent(otherTag);
+                }
+                if(!matchFound){
+                    return false;
+                }
+            }
+            return true;
+        }
         return false;
     }
 }
@@ -255,6 +295,24 @@ export class And extends TagsFilter {
             }
         }
         return true;
+    }
+    
+    isEquivalent(other: TagsFilter): boolean {
+        if(other instanceof And){
+
+            for (const selfTag of this.and) {
+                let matchFound = false;
+                for (let i = 0; i < other.and.length && !matchFound; i++){
+                    let otherTag = other.and[i];
+                    matchFound = selfTag.isEquivalent(otherTag);
+                }
+                if(!matchFound){
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }
 

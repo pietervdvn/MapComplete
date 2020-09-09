@@ -129,47 +129,5 @@ export class LayerDefinition {
         this.style = options.style;
         this.wayHandling = options.wayHandling ?? LayerDefinition.WAYHANDLING_DEFAULT;
     }
-
-/*
-    ToJson() {
-
-        function t(translation: string | Translation | UIElement) {
-            if (translation === undefined) {
-                return undefined;
-            }
-            if (typeof (translation) === "string") {
-                return translation;
-            }
-            if (translation instanceof Translation && translation.translations !== undefined) {
-                return translation.translations;
-            }
-            return translation.InnerRender();
-        }
-
-        function tr(tagRendering : TagRenderingOptions) : TagRenderingConfigJson{
-            const o = tagRendering.options;
-            return {
-                key: o.freeform.key,
-                render: o.freeform.renderTemplate,
-                type: o.freeform.template.
-            }
-        }
-        
-        const layerConfig  : LayerConfigJson = {
-            name: t(this.name),
-            description: t(this.description),
-            maxAllowedOverlapPercentage: this.maxAllowedOverlapPercentage,
-            presets: this.presets,
-            icon: this.icon,
-            minzoom: this.minzoom,
-            overpassFilter: this.overpassFilter,
-            title: this.title,
-            elementsToShow: this.elementsToShow,
-            style: this.style,
-            wayHandling: this.wayHandling,
-
-        };
-        
-        return JSON.stringify(layerConfig)
-    }*/
+    
 }

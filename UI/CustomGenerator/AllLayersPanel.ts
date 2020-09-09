@@ -10,6 +10,8 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import {MultiInput} from "../Input/MultiInput";
 import TagRenderingPanel from "./TagRenderingPanel";
 import SingleSetting from "./SingleSetting";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {FromJSON} from "../../Customizations/JSON/FromJSON";
 
 export default class AllLayersPanel extends UIElement {
 
@@ -49,9 +51,22 @@ export default class AllLayersPanel extends UIElement {
 
         const layers = this._config.data.layers;
         for (let i = 0; i < layers.length; i++) {
-
             tabs.push({
-                header: "<img src='./assets/bug.svg'>",
+                header: new VariableUiElement(this._config.map((config: LayoutConfigJson) => {
+                    const layer = config.layers[i];
+                    if (typeof layer !== "string") {
+                        try {
+                            const iconTagRendering = FromJSON.TagRendering(layer.icon, "icon");
+                            const icon = iconTagRendering.GetContent({"id": "node/-1"}).txt;
+                            return `<img src='${icon}'>`
+                        } catch (e) {
+                            return "<img src='./assets/bug.svg'>"
+                            // Nothing to do here
+                        }
+                    }
+                    return "<img src='./assets/help.svg'>"
+
+                })),
                 content: new LayerPanelWithPreview(this._config, this.languages, i, userDetails)
             });
         }

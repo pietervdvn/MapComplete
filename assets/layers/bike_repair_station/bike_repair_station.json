@@ -52,7 +52,12 @@
         "if": {
           "and": [
             "service:bicycle:pump:operational_status=broken",
-            "service:bicycle:tools=no"
+            {
+              "or": [
+                "service:bicycle:tools=no",
+                "service:bicycle:tools="
+              ]
+            }
           ]
         },
         "then": {
@@ -381,7 +386,12 @@
         "if": {
           "and": [
             "service:bicycle:pump=yes",
-            "service:bicycle:tools=no"
+            {
+              "or": [
+                "service:bicycle:tools=no",
+                "service:bicycle:tools="
+              ]
+            }
           ]
         },
         "then": "./assets/layers/bike_repair_station/pump.svg"

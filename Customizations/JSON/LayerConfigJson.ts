@@ -71,6 +71,14 @@ export interface LayerConfigJson {
     wayHandling?: number;
 
     /**
+     * Consider that we want to show 'Nature Reserves' and 'Forests'. Now, ofter, there are pieces of forest mapped _in_ the nature reserve.
+     * Now, showing those pieces of forest overlapping with the nature reserve truly clutters the map and is very user-unfriendly.
+     * 
+     * The features are placed layer by layer. If a feature below a feature on this layer overlaps for more then 'x'-percent, the underlying feature is hidden.
+     */
+    hideUnderlayingFeaturesMinPercentage?:number;
+
+    /**
      * Presets for this layer
      */
     presets?: {

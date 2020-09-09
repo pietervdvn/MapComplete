@@ -216,21 +216,26 @@ export class FilteredLayer {
             pointToLayer: function (feature, latLng) {
                 const style = self._style(feature.properties);
                 let marker;
-                if (style.icon === undefined) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
+               if (style.icon === undefined) {
+                   marker = L.circle(latLng, {
+                       radius: 25,
+                       color: style.color
+                   });
 
-                } else {
-                    if(style.icon.iconSize === undefined){
-                        style.icon.iconSize = [50,50]
-                    }
-                    
-                    marker = L.marker(latLng, {
-                        icon: new L.icon(style.icon),
-                    });
-                }
+               } else if (style.icon.iconUrl.startsWith("$circle  ")) {
+                   marker = L.circle(latLng, {
+                       radius: 25,
+                       color: style.color
+                   });
+               } else {
+                   if (style.icon.iconSize === undefined) {
+                       style.icon.iconSize = [50, 50]
+                   }
+
+                   marker = L.marker(latLng, {
+                       icon: new L.icon(style.icon),
+                   });
+               }
                 let eventSource = State.state.allElements.addOrGetElement(feature);
                 const uiElement = self._showOnPopup(eventSource, feature);
                 const popup = L.popup({}, marker).setContent(uiElement.Render());
@@ -253,11 +258,7 @@ export class FilteredLayer {
                         }
                     } else {
                         self._geolayer.setStyle(function (featureX) {
-                            const style = self._style(featureX.properties);
-                            if (featureX === feature) {
-                                console.log("Selected element is", featureX.properties.id)
-                            }
-                            return style;
+                            return self._style(featureX.properties);
                         });
                     }
                 }

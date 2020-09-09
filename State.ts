@@ -23,7 +23,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7j";
+    public static vNumber = "0.0.7k";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

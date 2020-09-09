@@ -35,7 +35,7 @@ export class Bos extends LayerDefinition {
 
         this.minzoom = 13;
         this.style = this.generateStyleFunction();
-        this.title = new NameInline("bos");
+        this.title = new NameInline("Bos");
         this.elementsToShow = [
             new ImageCarouselWithUploadConstructor(),
             new NameQuestion(),

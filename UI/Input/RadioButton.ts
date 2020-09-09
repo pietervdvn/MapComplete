@@ -8,14 +8,15 @@ export class RadioButton<T> extends InputElement<T> {
     private readonly _selectedElementIndex: UIEventSource<number>
         = new UIEventSource<number>(null);
 
-    private value: UIEventSource<T>;
+    private readonly value: UIEventSource<T>;
     private readonly _elements: InputElement<T>[]
-    private _selectFirstAsDefault: boolean;
+    private readonly _selectFirstAsDefault: boolean;
 
 
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super(undefined);
+        console.log("Created new radiobutton with values ", elements)
         this._elements = Utils.NoNull(elements);
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
