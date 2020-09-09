@@ -167,7 +167,7 @@
                 "nl": "Dit boekenruilkastje staat buiten"
               },
               "if": "indoor=",
-              "hideInAnswers": true
+              "hideInAnswer": true
             }
           ]
         },

@@ -136,8 +136,6 @@ export class Widths extends LayerDefinition {
             }
         })
 
-        console.log("Not car free: ", this._notCarfree)
-        
         const self = this;
         this.style = (properties) => {
 
