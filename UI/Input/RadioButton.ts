@@ -16,7 +16,6 @@ export class RadioButton<T> extends InputElement<T> {
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super(undefined);
-        console.log("Created new radiobutton with values ", elements)
         this._elements = Utils.NoNull(elements);
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
@@ -66,15 +65,14 @@ export class RadioButton<T> extends InputElement<T> {
     InnerRender(): string {
 
         let body = "";
-        let i = 0;
-        for (const el of this._elements) {
+        for (let i = 0; i < this._elements.length; i++){
+            const el = this._elements[i];
             const htmlElement =
                 '<input type="radio" id="' + this.IdFor(i) + '" name="radiogroup-' + this.id + '">' +
                 '<label for="' + this.IdFor(i) + '">' + el.Render() + '</label>' +
                 '<br>';
             body += htmlElement;
 
-            i++;
         }
 
         return "<form id='" + this.id + "-form'>" + body + "</form>";
