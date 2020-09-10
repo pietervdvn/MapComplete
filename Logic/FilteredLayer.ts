@@ -186,13 +186,11 @@ export class FilteredLayer {
         }
         this._dataFromOverpass = fusedFeatures;
 
-        console.log("New elements are ", this._newElements)
         for (const feature of this._newElements) {
             if (!idsFromOverpass.has(feature.properties.id)) {
                 // This element is not yet uploaded or not yet visible in overpass
                 // We include it in the layer
                 fusedFeatures.push(feature);
-                console.log("Adding ", feature," to fusedFeatures")
             }
         }
         
@@ -237,11 +235,19 @@ export class FilteredLayer {
                    });
                }
                 let eventSource = State.state.allElements.addOrGetElement(feature);
-                const uiElement = self._showOnPopup(eventSource, feature);
-                const popup = L.popup({}, marker).setContent(uiElement.Render());
+                const popup = L.popup({}, marker);
+                let uiElement: UIElement;
+                let content = undefined;
                 marker.bindPopup(popup)
                     .on("popupopen", () => {
-                        uiElement.Activate();   
+
+                        if (content === undefined) {
+                            uiElement = self._showOnPopup(eventSource, feature);
+                            // Lazily create the content
+                            content = uiElement.Render();
+                        }
+                        popup.setContent(content);
+                        uiElement.Activate();
                         uiElement.Update();
                     });
                 return marker;
