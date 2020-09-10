@@ -344,5 +344,133 @@ export class TagUtils {
         }
         return properties;
     }
-    
+
+    /**
+     * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
+     * E.g:
+     *
+     * FlattenMultiAnswer([and: [ "x=a", "y=0;1"], and: ["x=b", "y=2"], and: ["x=", "y=3"]])
+     * will result in
+     * ["x=a;b", "y=0;1;2;3"]
+     *
+     * @param tagsFilters
+     * @constructor
+     */
+    static FlattenMultiAnswer(tagsFilters: TagsFilter[]): And {
+        if (tagsFilters === undefined) {
+            return new And([]);
+        }
+        const keyValues = {} // Map string -> string[]
+        tagsFilters = [...tagsFilters]
+        while (tagsFilters.length > 0) {
+            const tagsFilter = tagsFilters.pop();
+
+            if (tagsFilter === undefined) {
+                continue;
+            }
+
+            if (tagsFilter instanceof And) {
+                tagsFilters.push(...tagsFilter.and);
+                continue;
+            }
+
+            if (tagsFilter instanceof Tag) {
+                if (keyValues[tagsFilter.key] === undefined) {
+                    keyValues[tagsFilter.key] = [];
+                }
+                keyValues[tagsFilter.key].push(...tagsFilter.value.split(";"));
+                continue;
+            }
+
+            console.error("Invalid type to flatten the multiAnswer", tagsFilter);
+            throw "Invalid type to FlattenMultiAnswer"
+        }
+
+        const and: TagsFilter[] = []
+        for (const key in keyValues) {
+            and.push(new Tag(key, Utils.Dedup(keyValues[key]).join(";")));
+        }
+
+        return new And(and);
+
+    }
+
+    /**
+     * Splits the actualTags onto a list of which the values are the same as the tagsFilters.
+     * Leftovers are returned in the list too if there is an 'undefined' value
+     */
+    static SplitMultiAnswer(actualTags: TagsFilter, possibleTags: TagsFilter[], freeformKey: string, freeformExtraTags: TagsFilter): TagsFilter[] {
+
+        const queue: TagsFilter[] = [actualTags]
+
+        const keyValues = {} // key ==> value[]
+
+        while (queue.length > 0) {
+            const tf = queue.pop();
+            if (tf instanceof And) {
+                queue.push(...tf.and);
+                continue;
+            }
+            if (tf instanceof Tag) {
+                if (keyValues[tf.key] === undefined) {
+                    keyValues[tf.key] = []
+                }
+                keyValues[tf.key].push(...tf.value.split(";"));
+                continue;
+            }
+
+            if (tf === undefined) {
+                continue;
+            }
+
+            throw "Invalid tagfilter: " + JSON.stringify(tf)
+        }
+
+        const foundValues = [];
+        for (const possibleTag of possibleTags) {
+            if (possibleTag === undefined) {
+                continue;
+            }
+            if (possibleTag instanceof Tag) {
+                const key = possibleTag.key;
+                const actualValues: string[] = keyValues[key] ?? [];
+                const possibleValues = possibleTag.value.split(";");
+
+                let allPossibleValuesFound = true;
+                for (const possibleValue of possibleValues) {
+                    if (actualValues.indexOf(possibleValue) < 0) {
+                        allPossibleValuesFound = false;
+                    }
+                }
+                if (!allPossibleValuesFound) {
+                    continue;
+                }
+
+                // At this point, we know that 'possibleTag' is completely present in the tagset
+                // we add the possibleTag to the found values
+                foundValues.push(possibleTag);
+
+                for (const possibleValue of possibleValues) {
+                    actualValues.splice(actualValues.indexOf(possibleValue), 1);
+                }
+
+                continue;
+            }
+            throw "Unsupported possibletag: " + JSON.stringify(possibleTag);
+        }
+
+        let leftoverTag = undefined;
+        if (keyValues[freeformKey] !== undefined && keyValues[freeformKey].length !== 0) {
+            leftoverTag = new Tag(freeformKey, keyValues[freeformKey].join(";"));
+            if (freeformExtraTags !== undefined) {
+                leftoverTag = new And([
+                    leftoverTag,
+                    freeformExtraTags
+                ])
+            }
+            foundValues.push(leftoverTag);
+        }
+
+        return foundValues;
+    }
 }

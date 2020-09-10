@@ -5,7 +5,7 @@ import {OperatorTag} from "../Questions/OperatorTag";
 import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
 import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 
 export class Bos extends LayerDefinition {
 

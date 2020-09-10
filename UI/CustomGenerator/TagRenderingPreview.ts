@@ -39,7 +39,7 @@ export default class TagRenderingPreview extends UIElement {
         try {
             rendering =
                 new VariableUiElement(es.map(tagRenderingConfig => {
-                        const tr = FromJSON.TagRendering(tagRenderingConfig)
+                        const tr = FromJSON.TagRendering(tagRenderingConfig, "preview")
                             .construct({tags: this.previewTagValue});
                         return tr.Render();
                     }

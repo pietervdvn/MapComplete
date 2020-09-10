@@ -1,8 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
-import FixedText from "../Questions/FixedText";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
 import {And, Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 
 export class InformationBoard extends LayerDefinition {
     constructor() {

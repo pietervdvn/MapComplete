@@ -11,8 +11,8 @@ export class    ImgurImage extends UIElement {
      * Dictionary from url to alreayd known license info
      */
     static allLicenseInfos: any = {};
-    private _imageMeta: UIEventSource<LicenseInfo>;
-    private _imageLocation: string;
+    private readonly _imageMeta: UIEventSource<LicenseInfo>;
+    private readonly _imageLocation: string;
 
     constructor(source: string) {
         super(undefined)

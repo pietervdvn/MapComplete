@@ -38,7 +38,12 @@ export interface TagRenderingConfigJson {
          * Usefull to add a 'fixme=freeform textfield used - to be checked'
          **/
         addExtraTags?: string[];
-    }
+    },
+
+    /**
+     * If true, use checkboxes instead of radio buttons when asking the question
+     */
+    multiAnswer?: boolean,
 
     /**
      * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes

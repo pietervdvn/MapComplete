@@ -16,6 +16,7 @@ export class PersonalLayersPanel extends UIElement {
         super(State.state.favouriteLayers);
 
         this.ListenTo(State.state.osmConnection.userDetails);
+        this.ListenTo(State.state.favouriteLayers);
 
         this.UpdateView([]);
         const self = this;
@@ -53,6 +54,9 @@ export class PersonalLayersPanel extends UIElement {
             this.checkboxes.push(header);
 
             for (const layer of layout.layers) {
+                if(typeof layer === "string"){
+                    continue;
+                }
                 let icon = layer.icon;
                 if (icon !== undefined && typeof (icon) !== "string") {
                     icon = icon.GetContent({"id": "node/-1"}).txt ?? "./assets/bug.svg";

@@ -1,6 +1,6 @@
 import {UIEventSource} from "./Logic/UIEventSource";
 import {GenerateEmpty} from "./UI/CustomGenerator/GenerateEmpty";
-import {TagRendering} from "./Customizations/TagRendering";
+import {TagRendering} from "./UI/TagRendering";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import CustomGeneratorPanel from "./UI/CustomGenerator/CustomGeneratorPanel";

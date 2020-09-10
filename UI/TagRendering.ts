@@ -1,22 +1,23 @@
-import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {And, Tag, TagsFilter, TagUtils} from "../Logic/Tags";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import {SaveButton} from "../UI/SaveButton";
-import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import {TagDependantUIElement} from "./UIElementConstructor";
-import {TextField, ValidatedTextField} from "../UI/Input/TextField";
-import {InputElement} from "../UI/Input/InputElement";
-import {InputElementWrapper} from "../UI/Input/InputElementWrapper";
-import {FixedInputElement} from "../UI/Input/FixedInputElement";
-import {RadioButton} from "../UI/Input/RadioButton";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
 import {State} from "../State";
-import {TagRenderingOptions} from "./TagRenderingOptions";
 import Translation from "../UI/i18n/Translation";
 import Combine from "../UI/Base/Combine";
-
+import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
+import {UIElement} from "./UIElement";
+import {VariableUiElement} from "./Base/VariableUIElement";
+import InputElementMap from "./Input/InputElementMap";
+import {CheckBoxes} from "./Input/Checkboxes";
+import {InputElement} from "./Input/InputElement";
+import {SaveButton} from "./SaveButton";
+import {RadioButton} from "./Input/RadioButton";
+import {InputElementWrapper} from "./Input/InputElementWrapper";
+import {FixedInputElement} from "./Input/FixedInputElement";
+import {TextField, ValidatedTextField} from "./Input/TextField";
+import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
@@ -61,7 +62,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         priority?: number
 
         question?: string | Translation,
-
         freeform?: {
             key: string,
             template: string | Translation,
@@ -70,6 +70,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             extraTags?: TagsFilter,
         },
         tagsPreprocessor?: ((tags: any) => any),
+        multiAnswer?: boolean,
         mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
     }) {
         super(tags);
@@ -122,11 +123,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             });
         }
 
-
         // Prepare the actual input element -> pick an appropriate implementation
 
         this._questionElement = this.InputElementFor(options) ??
-            new FixedInputElement<TagsFilter>("<span class='alert'>No input possible</span>", new Tag("a","b"));
+            new FixedInputElement<TagsFilter>("<span class='alert'>No input possible</span>", new Tag("a", "b"));
         const save = () => {
             const selection = self._questionElement.GetValue().data;
             console.log("Tagrendering: saving tags ", selection);
@@ -193,59 +193,93 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
     private InputElementFor(options: {
         freeform?: {
-            key: string, 
+            key: string,
             template: string | Translation,
             renderTemplate: string | Translation,
             placeholder?: string | Translation,
             extraTags?: TagsFilter,
         },
+        multiAnswer?: boolean,
         mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
     }):
         InputElement<TagsFilter> {
 
-        const elements = [];
-        
-        let freeformElement = undefined;
 
+        let freeformElement = undefined;
         if (options.freeform !== undefined) {
             freeformElement = this.InputForFreeForm(options.freeform);
         }
-        
-        if (options.mappings !== undefined) {
-            
-            const previousTexts= [];
-            for (const mapping of options.mappings) {
-                if(mapping.k === null){
-                    continue;
-                }
-                if(mapping.hideInAnswer){
-                    continue;
-                }
-                previousTexts.push(this.ApplyTemplate(mapping.txt));
-                
-                elements.push(this.InputElementForMapping(mapping, mapping.substitute));
-            }
+
+        if (options.mappings === undefined || options.mappings.length === 0) {
+            return freeformElement;
         }
-        
-        if(freeformElement !== undefined) {
+
+
+        const elements: InputElement<TagsFilter>[] = [];
+
+        for (const mapping of options.mappings) {
+            if (mapping.k === null) {
+                continue;
+            }
+            if (mapping.hideInAnswer) {
+                continue;
+            }
+            elements.push(this.InputElementForMapping(mapping, mapping.substitute));
+        }
+
+        if (freeformElement !== undefined) {
             elements.push(freeformElement);
         }
-      
 
+        if (options.multiAnswer) {
+            const possibleTags = elements.map(el => el.GetValue().data);
+            const checkBoxes = new CheckBoxes(elements);
 
-        if (elements.length == 0) {
-            return new FixedInputElement("This should not happen: no tag renderings defined", undefined);
+            // In order to let this work, we are cheating a lot here
+            // First of all, it is very tricky to let the mapping stabilize
+            // The selection gets added as list and needs to be flattened into a new 'and'
+            // This new and causes the mapping to have a 'set value', which is unpacked to update the UI
+            // AFter which the UI reupdates and reapplies the value
+            // So, instead we opt to _always return the 'value' below which is statefully updated
+            // But, then we still have to figure out when to update...
+            // For this, we use the original inputElement
+            // This is very dirty code, I know
+            const value = new And([]);
+            const inputElement = new InputElementMap(checkBoxes,
+                (t0: And, t1: And) => {
+                    return t0?.isEquivalent(t1) ?? t0 === t1
+                },
+                (fromUI) => {
+                    if (fromUI === undefined) {
+                        value.and = [];
+                        return value;
+                    }
+                    const flattened = TagUtils.FlattenMultiAnswer(fromUI);
+                    value.and = flattened.and;
+                    return value;
+                },
+                (fromTags) => {
+                    return TagUtils.SplitMultiAnswer(fromTags, possibleTags, this._freeform?.key, this._freeform?.extraTags);
+                }
+            );
+
+            let previousSelectionCount = -1;
+            checkBoxes.GetValue().addCallback(selected => {
+                const newSelectionCount = selected.length;
+                if (newSelectionCount != previousSelectionCount) {
+                    previousSelectionCount = newSelectionCount;
+                    inputElement.GetValue().ping();
+                }
+            });
+
+            return inputElement;
+
         }
-        if (elements.length == 1) {
-            return elements[0];
-        }
-
         return new RadioButton(elements, false);
-
     }
 
 
-    private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }, substituteValues: boolean) {
+    private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }, substituteValues: boolean): FixedInputElement<TagsFilter> {
         if (substituteValues) {
 
             return new FixedInputElement(this.ApplyTemplate(mapping.txt),
@@ -253,7 +287,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 (t0, t1) => t0.isEquivalent(t1)
             );
         }
-        return new FixedInputElement(this.ApplyTemplate(mapping.txt),mapping.k,
+        return new FixedInputElement(this.ApplyTemplate(mapping.txt), mapping.k,
             (t0, t1) => t0.isEquivalent(t1));
     }
 
@@ -308,6 +342,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         const toString =
             (tag) => {
+            console.log("Decoding ", tag, "in freeform text element")
                 if (tag instanceof And) {
                     for (const subtag of tag.and) {
                         if(subtag instanceof Tag && subtag.key === freeform.key){
@@ -497,7 +532,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 return tr.InnerRender();
             }
             return tr.Subs(tags).InnerRender()
-        }));
+        })).ListenTo(Locale.language);
     }
 
 

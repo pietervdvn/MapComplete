@@ -13,17 +13,16 @@ export class CheckBoxes<T> extends InputElement<T[]> {
 
     private readonly value: UIEventSource<T[]>;
     private readonly _elements: InputElement<T>[]
-    private readonly _selectFirstAsDefault: boolean;
 
 
-    constructor(elements: InputElement<T>[],
-                selectFirstAsDefault = true) {
+    constructor(elements: InputElement<T>[]) {
         super(undefined);
         this._elements = Utils.NoNull(elements);
-        this._selectFirstAsDefault = selectFirstAsDefault;
+        this.dumbMode = false;
 
         this.value = new UIEventSource<T[]>([])
         this.ListenTo(this.value);
+        this.value.addCallback(latest => console.log("Latest is ", latest))
 
     }
 
@@ -35,6 +34,7 @@ export class CheckBoxes<T> extends InputElement<T[]> {
             let matchFound = false;
             for (const element of this._elements) {
                 if (element.IsValid(t)) {
+                    element.GetValue().setData(t);
                     matchFound = true;
                     break
                 }
@@ -56,7 +56,6 @@ export class CheckBoxes<T> extends InputElement<T[]> {
     }
 
     InnerRender(): string {
-
         let body = "";
         for (let i = 0; i < this._elements.length; i++) {
             let el = this._elements[i];
@@ -66,26 +65,29 @@ export class CheckBoxes<T> extends InputElement<T[]> {
 
         }
 
-        return `<form id='${this.id}-form'>${body}</form>`;
+        return `<form id='${this.id}'>${body}</form>`;
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         const self = this;
 
+
         for (let i = 0; i < this._elements.length; i++) {
             const el = document.getElementById(this.IdFor(i));
             const inputEl = this._elements[i];
-            {
 
-                const v = inputEl.GetValue().data;
-                const index = self.value.data.indexOf(v);
-                if(index >= 0){
-                    // @ts-ignore
-                    el.checked = true;
+            for (const t of this.value.data ?? []) {
+                if(t === undefined){
+                    continue;
+                }
+                let isValid = inputEl.IsValid(t);
+                // @ts-ignore
+                el.checked = isValid;
+                if(isValid){
+                    break;
                 }
             }
-
 
             el.onchange = e => {
                 const v = inputEl.GetValue().data;

@@ -1,6 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import FixedText from "../Questions/FixedText";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import {Tag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 

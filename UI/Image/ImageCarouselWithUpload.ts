@@ -9,7 +9,8 @@ import {OsmImageUploadHandler} from "../../Logic/Osm/OsmImageUploadHandler";
 import {State} from "../../State";
 import Translation from "../i18n/Translation";
 
-export class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
+export default class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
+    
     IsKnown(properties: any): boolean {
         return true;
     }

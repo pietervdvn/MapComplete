@@ -21,6 +21,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
             placeholder?: string | Translation;
             extraTags?: TagsFilter
         };
+        multiAnswer?: boolean,
         mappings?: { k: TagsFilter; txt: string | Translation; priority?: number, substitute?: boolean, hideInAnwser?: boolean }[]
     };
 
@@ -54,8 +55,12 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
          *
          *
          */
-        mappings?: { k: TagsFilter, txt: Translation | string, priority?: number, substitute?: boolean , hideInAnswer?:boolean}[],
+        mappings?: { k: TagsFilter, txt: Translation | string, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[],
 
+        /**
+         * If true, use checkboxes to answer instead of radiobuttons
+         */
+        multiAnswer?: boolean,
 
         /**
          * If one wants to render a freeform tag (thus no predefined key/values) or if there are a few well-known tags with a freeform object,
@@ -113,12 +118,25 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
             return template.Subs(tags);
         }
 
-        console.warn("No content defined for",tags," with mapping",this);
+        console.warn("No content defined for", tags, " with mapping", this);
         return undefined;
     }
 
 
-    public static tagRendering: (tags: UIEventSource<any>, options: { priority?: number; question?: string | Translation; freeform?: { key: string; tagsPreprocessor?: (tags: any) => any; template: string | Translation; renderTemplate: string | Translation; placeholder?: string | Translation; extraTags?: TagsFilter }; mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean, hideInAnswer?: boolean }[] }) => TagDependantUIElement;
+    public static tagRendering: (tags: UIEventSource<any>,
+                                 options: {
+                                     priority?: number;
+                                     question?: string | Translation;
+                                     freeform?: {
+                                         key: string;
+                                         tagsPreprocessor?: (tags: any) => any;
+                                         template: string | Translation;
+                                         renderTemplate: string | Translation;
+                                         placeholder?: string | Translation; extraTags?: TagsFilter
+                                        },
+                                     multiAnswer?: boolean,
+                                     mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean, hideInAnswer?: boolean }[]
+                                 }) => TagDependantUIElement;
 
     construct(dependencies: Dependencies): TagDependantUIElement {
         return TagRenderingOptions.tagRendering(dependencies.tags, this.options);

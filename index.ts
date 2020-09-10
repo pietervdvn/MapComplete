@@ -1,4 +1,3 @@
-import {TagRendering} from "./Customizations/TagRendering";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
@@ -7,6 +6,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
+import {TagRendering} from "./UI/TagRendering";
 
 TagRendering.injectFunction();
 
@@ -63,7 +63,6 @@ let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
 const layoutFromBase64 = decodeURIComponent(userLayoutParam.data);
-console.log(layoutFromBase64);
 if (layoutFromBase64.startsWith("wiki:")) {
     console.log("Downloading map theme from the wiki");
     const themeName = layoutFromBase64.substr("wiki:".length);

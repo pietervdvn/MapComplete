@@ -1,6 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import FixedText from "../Questions/FixedText";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import Translations from "../../UI/i18n/Translations";
 import CafeName from "../Questions/bike/CafeName";
 import {And, Or, RegexTag, Tag} from "../../Logic/Tags";

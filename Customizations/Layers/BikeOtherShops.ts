@@ -1,7 +1,7 @@
 import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
 import {And, RegexTag, Tag} from "../../Logic/Tags";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import ShopRetail from "../Questions/bike/ShopRetail";
 import ShopPump from "../Questions/bike/ShopPump";
 import ShopRental from "../Questions/bike/ShopRental";

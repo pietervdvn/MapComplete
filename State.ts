@@ -193,7 +193,7 @@ export class State {
                         continue;
                     }
                     try {
-                        const layout = FromJSON.FromBase64(customLayout.data);
+                        const layout = State.FromBase64(customLayout.data);
                         if(layout.id === undefined){
                             // This is an old style theme
                             // We remove it
@@ -252,4 +252,6 @@ export class State {
         }
 
     }
+
+    public static FromBase64 : (data: string) => Layout = undefined;
 }

@@ -2,14 +2,15 @@ import {UIElement} from "./UI/UIElement";
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
 
-import {TagRendering} from "./Customizations/TagRendering";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Translations from "./UI/i18n/Translations";
+import {TagRendering} from "./UI/TagRendering";
 
 TagRendering.injectFunction();
 

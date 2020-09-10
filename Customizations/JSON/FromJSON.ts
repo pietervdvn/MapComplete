@@ -9,8 +9,6 @@ import {LayerConfigJson} from "./LayerConfigJson";
 import {LayerDefinition, Preset} from "../LayerDefinition";
 import {TagDependantUIElementConstructor} from "../UIElementConstructor";
 import Combine from "../../UI/Base/Combine";
-import {ImageCarouselWithUploadConstructor} from "../../UI/Image/ImageCarouselWithUpload";
-import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
 import * as drinkingWater from "../../assets/layers/drinking_water/drinking_water.json";
 import * as ghostbikes from "../../assets/layers/ghost_bike/ghost_bike.json"
 import * as viewpoint from "../../assets/layers/viewpoint/viewpoint.json"
@@ -20,12 +18,19 @@ import * as birdhides from "../../assets/layers/bird_hide/birdhides.json"
 import * as nature_reserve from "../../assets/layers/nature_reserve/nature_reserve.json"
 
 import {Utils} from "../../Utils";
+import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
+import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
+import {State} from "../../State";
 
 export class FromJSON {
 
     public static sharedLayers: Map<string, LayerDefinition> = FromJSON.getSharedLayers();
 
     private static getSharedLayers() {
+        
+        // We inject a function into state while we are busy
+        State.FromBase64 = FromJSON.FromBase64;
+        
         const sharedLayers = new Map<string, LayerDefinition>();
 
         const sharedLayersList = [
@@ -50,6 +55,7 @@ export class FromJSON {
     }
 
     public static LayoutFromJSON(json: LayoutConfigJson): Layout {
+        console.log(json)
         const tr = FromJSON.Translation;
 
         const layers = json.layers.map(FromJSON.Layer);
@@ -111,7 +117,6 @@ export class FromJSON {
 
         
         if (typeof json === "string") {
-
             switch (json) {
                 case "picture": {
                     return new ImageCarouselWithUploadConstructor()
@@ -123,7 +128,7 @@ export class FromJSON {
                     return new ImageCarouselWithUploadConstructor()
                 }
                 case "images": {
-                    return new ImageCarouselWithUploadConstructor()
+                   return new ImageCarouselWithUploadConstructor()
                 }
                 case "picturesNoUpload": {
                     return new ImageCarouselConstructor()
@@ -193,11 +198,13 @@ export class FromJSON {
         let rendering = new TagRenderingOptions({
             question: question,
             freeform: freeform,
-            mappings: mappings
+            mappings: mappings,
+            multiAnswer: json.multiAnswer
         });
-
+        
         if (json.condition) {
-            return rendering.OnlyShowIf(FromJSON.Tag(json.condition, `In tagrendering ${propertyName}.condition`));
+            const condition = FromJSON.Tag(json.condition, `In tagrendering ${propertyName}.condition`);
+            return rendering.OnlyShowIf(condition);
         }
 
         return rendering;

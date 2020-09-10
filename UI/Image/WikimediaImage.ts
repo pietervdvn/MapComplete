@@ -7,8 +7,8 @@ export class WikimediaImage extends UIElement {
 
 
     static allLicenseInfos: any = {};
-    private _imageMeta: UIEventSource<LicenseInfo>;
-    private _imageLocation : string;
+    private readonly _imageMeta: UIEventSource<LicenseInfo>;
+    private readonly _imageLocation : string;
 
     constructor(source: string) {
         super(undefined)

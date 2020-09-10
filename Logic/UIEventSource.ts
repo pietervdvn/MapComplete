@@ -69,7 +69,7 @@ export class UIEventSource<T>{
       
         if(g !== undefined) {
             newSource.addCallback((latest) => {
-                self.setData((g(latest)));
+                self.setData(g(latest));
             })
         }
         

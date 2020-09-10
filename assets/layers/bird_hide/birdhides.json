@@ -159,21 +159,13 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "operator=Natuurpunt"
-            ]
-          },
+          "if": "operator=Natuurpunt",
           "then": {
             "nl": "Beheer door Natuurpunt"
           }
         },
         {
-          "if": {
-            "and": [
-              "operator=Agentschap Natuur en Bos"
-            ]
-          },
+          "if": "operator=Agentschap Natuur en Bos",
           "then": {
             "nl": "Beheer door het Agentschap Natuur en Bos "
           }

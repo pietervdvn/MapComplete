@@ -238,46 +238,38 @@
         "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}"
       },
       "freeform": {
-        "addExtraTags": [
+        "#addExtraTags": [
           "fixme=Freeform 'valves'-tag used: possibly a wrong value"
         ],
         "key": "valves"
       },
+      "multiAnswer": true,
       "mappings": [
-        {
-          "if": "valves=sclaverand;schrader;dunlop",
-          "then": {
-            "en": "There is a default head, so Dunlop, Sclaverand and auto",
-            "nl": "Er is een standaard aansluiting, die dus voor Dunlop, Sclaverand en auto's",
-            "fr": "Il y a une valve par défaut, fonctionnant sur les valves Dunlop, Sclaverand et les valves de voitures",
-            "gl": "Hai un cabezal predeterminado que é compatíbel con Dunlop, Sclaverand e automóbil"
-          }
-        },
         {
           "if": "valves=sclaverand",
           "then": {
-            "en": "Only Sclaverand (also known as Presta)",
-            "nl": "Enkel Sclaverand (ook gekend als Presta)",
-            "fr": "Seulement Sclaverand (aussi appelé Presta)",
-            "gl": "Só Sclaverand (tamén coñecido como Presta)"
+            "en": "Sclaverand (also known as Presta)",
+            "nl": "Sclaverand (ook gekend als Presta)",
+            "fr": "Sclaverand (aussi appelé Presta)",
+            "gl": "Sclaverand (tamén coñecido como Presta)"
           }
         },
         {
           "if": "valves=dunlop",
           "then": {
-            "en": "Only Dunlop",
-            "nl": "Enkel Dunlop",
-            "fr": "Seulement Dunlop",
-            "gl": "Só Dunlop"
+            "en": "Dunlop",
+            "nl": "Dunlop",
+            "fr": "Dunlop",
+            "gl": "Dunlop"
           }
         },
         {
           "if": "valves=schrader",
           "then": {
-            "en": "Only for cars",
-            "nl": "Enkel voor auto's",
-            "fr": "Seuelement les valves de voitures",
-            "gl": "Só para automóbiles"
+            "en": "Schrader (cars)",
+            "nl": "Schrader (auto's)",
+            "fr": "Schrader (les valves de voitures)",
+            "gl": "Schrader (para automóbiles)"
           }
         }
       ]
