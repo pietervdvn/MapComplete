@@ -152,7 +152,9 @@ export class TextField<T> extends InputElement<T> {
         this.ListenTo(this._placeholder._source);
         this._toString = options.toString ?? ((t) => ("" + t));
 
-
+        this.onClick(() => {
+            self.IsSelected.setData(true)
+        });
         this.mappedValue.addCallback((t) => {
             if (t === undefined || t === null) {
                 return;
@@ -201,6 +203,7 @@ export class TextField<T> extends InputElement<T> {
 
         field.addEventListener("focusin", () => self.IsSelected.setData(true));
         field.addEventListener("focusout", () => self.IsSelected.setData(false));
+
 
         field.addEventListener("keyup", function (event) {
             if (event.key === "Enter") {

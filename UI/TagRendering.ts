@@ -205,7 +205,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         InputElement<TagsFilter> {
 
 
-        let freeformElement = undefined;
+        let freeformElement: InputElement<TagsFilter> = undefined;
         if (options.freeform !== undefined) {
             freeformElement = this.InputForFreeForm(options.freeform);
         }
@@ -235,45 +235,61 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             const possibleTags = elements.map(el => el.GetValue().data);
             const checkBoxes = new CheckBoxes(elements);
 
-            // In order to let this work, we are cheating a lot here
-            // First of all, it is very tricky to let the mapping stabilize
-            // The selection gets added as list and needs to be flattened into a new 'and'
-            // This new and causes the mapping to have a 'set value', which is unpacked to update the UI
-            // AFter which the UI reupdates and reapplies the value
-            // So, instead we opt to _always return the 'value' below which is statefully updated
-            // But, then we still have to figure out when to update...
-            // For this, we use the original inputElement
-            // This is very dirty code, I know
-            const value = new And([]);
-            const inputElement = new InputElementMap(checkBoxes,
-                (t0: And, t1: And) => {
-                    return t0?.isEquivalent(t1) ?? t0 === t1
+
+            const inputEl = new InputElementMap<number[], TagsFilter>(checkBoxes,
+                (t0, t1) => {
+                    return t0?.isEquivalent(t1) ?? false
                 },
-                (fromUI) => {
-                    if (fromUI === undefined) {
-                        value.and = [];
-                        return value;
+                (indices) => {
+                    if (indices.length === 0) {
+                        return undefined;
                     }
-                    const flattened = TagUtils.FlattenMultiAnswer(fromUI);
-                    value.and = flattened.and;
-                    return value;
+                    let tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
+                    return TagUtils.FlattenMultiAnswer(tags);
                 },
-                (fromTags) => {
-                    return TagUtils.SplitMultiAnswer(fromTags, possibleTags, this._freeform?.key, this._freeform?.extraTags);
+                (tags: TagsFilter) => {
+                    const splitUpValues = TagUtils.SplitMultiAnswer(tags, possibleTags, this._freeform?.key, this._freeform?.extraTags);
+                    const indices: number[] = []
+
+                    for (let i = 0; i < splitUpValues.length; i++) {
+                        let splitUpValue = splitUpValues[i];
+
+                        for (let j = 0; j < elements.length; j++) {
+                            let inputElement = elements[j];
+                            if (inputElement.IsValid(splitUpValue)) {
+                                indices.push(j);
+                                inputElement.GetValue().setData(splitUpValue);
+                                break;
+                            }
+                        }
+                    }
+                    return indices;
                 }
             );
 
-            let previousSelectionCount = -1;
-            checkBoxes.GetValue().addCallback(selected => {
-                const newSelectionCount = selected.length;
-                if (newSelectionCount != previousSelectionCount) {
-                    previousSelectionCount = newSelectionCount;
-                    inputElement.GetValue().ping();
+            freeformElement?.IsSelected.addCallback((isSelected) => {
+                console.log("SELECTED FF", isSelected)
+                if (isSelected) {
+                    const es = checkBoxes.GetValue();
+                    const i = elements.length - 1
+                    if (es.data.indexOf(i) >= 0) {
+                        return;
+                    }
+                    es.data.push(i);
+                    es.ping();
                 }
             });
 
-            return inputElement;
+            freeformElement?.GetValue()?.addCallback(() => {
+                const es = checkBoxes.GetValue();
+                const i = elements.length - 1
+                if (es.data.indexOf(i) < 0) {
+                    es.data.push(i);
+                    es.ping();
+                }
+            });
 
+            return inputEl;
         }
         return new RadioButton(elements, false);
     }
@@ -340,22 +356,20 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 );
             };
 
-        const toString =
-            (tag) => {
-            console.log("Decoding ", tag, "in freeform text element")
-                if (tag instanceof And) {
-                    for (const subtag of tag.and) {
-                        if(subtag instanceof Tag && subtag.key === freeform.key){
-                            return subtag.value;
-                        }
+        const toString = (tag) => {
+            if (tag instanceof And) {
+                for (const subtag of tag.and) {
+                    if (subtag instanceof Tag && subtag.key === freeform.key) {
+                        return subtag.value;
                     }
-                    
-                    return undefined;
-                } else if (tag instanceof Tag) {
-                    return tag.value
                 }
+
                 return undefined;
+            } else if (tag instanceof Tag) {
+                return tag.value
             }
+            return undefined;
+        }
 
 
         const textField = new TextField({

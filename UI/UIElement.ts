@@ -95,8 +95,12 @@ export abstract class UIElement extends UIEventSource<string> {
 
             return;
         }
-        this.setData(this.lastInnerRender ?? this.InnerRender());
-        element.innerHTML = this.data;
+        const newRender = this.InnerRender();
+        if (newRender !== this.lastInnerRender) {
+            this.setData(this.InnerRender());
+            element.innerHTML = this.data;
+            this.lastInnerRender = newRender;
+        }
 
         if (this._hideIfEmpty) {
             if (element.innerHTML === "") {

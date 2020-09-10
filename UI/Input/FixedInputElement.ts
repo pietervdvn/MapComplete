@@ -26,8 +26,6 @@ export class FixedInputElement<T> extends InputElement<T> {
     }
 
     IsValid(t: T): boolean {
-        
-        console.log("Comparing ",t, "with", this.value.data);
         return this._comparator(t, this.value.data);
     }
 
