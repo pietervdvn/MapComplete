@@ -224,8 +224,22 @@ export class TextField<T> extends InputElement<T> {
 
     }
 
+    public SetCursorPosition(i: number) {
+        const field = document.getElementById('text-' + this.id);
+        if(field === undefined || field === null){
+            return;
+        }
+        if(i === -1){
+            // @ts-ignore
+            i = field.value.length;
+        }
+        field.focus();
+        // @ts-ignore
+        field.setSelectionRange(i, i);
+    }
+
     IsValid(t: T): boolean {
-        if(t === undefined || t === null){
+        if (t === undefined || t === null) {
             return false;
         }
         const result = this._toString(t);

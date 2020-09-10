@@ -13,7 +13,6 @@ import {CheckBoxes} from "./Input/Checkboxes";
 import {InputElement} from "./Input/InputElement";
 import {SaveButton} from "./SaveButton";
 import {RadioButton} from "./Input/RadioButton";
-import {InputElementWrapper} from "./Input/InputElementWrapper";
 import {FixedInputElement} from "./Input/FixedInputElement";
 import {TextField, ValidatedTextField} from "./Input/TextField";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
@@ -205,7 +204,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         InputElement<TagsFilter> {
 
 
-        let freeformElement: InputElement<TagsFilter> = undefined;
+        let freeformElement: TextField<TagsFilter> = undefined;
         if (options.freeform !== undefined) {
             freeformElement = this.InputForFreeForm(options.freeform);
         }
@@ -264,29 +263,24 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                         }
                     }
                     return indices;
-                }
+                },
+                [freeformElement?.GetValue()]
             );
-
-            freeformElement?.IsSelected.addCallback((isSelected) => {
-                console.log("SELECTED FF", isSelected)
-                if (isSelected) {
-                    const es = checkBoxes.GetValue();
-                    const i = elements.length - 1
-                    if (es.data.indexOf(i) >= 0) {
-                        return;
-                    }
-                    es.data.push(i);
-                    es.ping();
-                }
-            });
-
-            freeformElement?.GetValue()?.addCallback(() => {
+            
+            freeformElement?.GetValue()?.addCallbackAndRun(value => {
                 const es = checkBoxes.GetValue();
-                const i = elements.length - 1
-                if (es.data.indexOf(i) < 0) {
+                const i = elements.length - 1;
+                const index = es.data.indexOf(i);
+                if (value === undefined) {
+                    if (index >= 0) {
+                        es.data.splice(index, 1);
+                        es.ping();
+                    }
+                } else if (index < 0) {
                     es.data.push(i);
                     es.ping();
                 }
+                freeformElement.SetCursorPosition(-1);
             });
 
             return inputEl;
@@ -314,7 +308,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         renderTemplate: string | Translation,
         placeholder?: string | Translation,
         extraTags?: TagsFilter,
-    }): InputElement<TagsFilter> {
+    }): TextField<TagsFilter> {
         if (freeform?.template === undefined) {
             return undefined;
         }
@@ -372,16 +366,11 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
 
-        const textField = new TextField({
+        return new TextField({
             placeholder: this._freeform.placeholder,
             fromString: pickString,
             toString: toString
         });
-
-        const pre = prepost[0] !== undefined ? this.ApplyTemplate(prepost[0]) : "";
-        const post = prepost[2] !== undefined ? this.ApplyTemplate(prepost[2]) : "";
-
-        return new InputElementWrapper(pre, textField, post);
     }
 
 

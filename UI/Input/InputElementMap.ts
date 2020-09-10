@@ -13,7 +13,8 @@ export default class InputElementMap<T, X> extends InputElement<X> {
     constructor(inputElement: InputElement<T>,
                 isSame: (x0: X, x1: X) => boolean,
                 toX: (t: T) => X,
-                fromX: (x: X) => T
+                fromX: (x: X) => T,
+                extraSources: UIEventSource<any>[] = []
     ) {
         super();
         this.isSame = isSame;
@@ -30,7 +31,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
                     return currentX;
                 }
                 return newX;
-            }), [], x => {
+            }), extraSources, x => {
                 const newT = fromX(x);
                 return newT;
             });
