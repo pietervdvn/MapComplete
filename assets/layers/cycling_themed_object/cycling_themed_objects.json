@@ -1,0 +1,68 @@
+{
+  "id": "bike_cafes",
+  "name": {
+    "en": "Bike related object",
+    "nl": "Fietsgerelateerd object",
+    "fr": "Objet cycliste"
+  },
+  "minzoom": 12,
+  "overpassTags": "theme~cycling|bicycle",
+  "title": {
+    "render": {
+      "en": "Bike related object",
+      "nl": "Fietsgerelateerd object",
+      "fr": "Objet cycliste"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "<i>{name}</i>",
+          "nl": "<i>{name}</i>",
+          "fr": "<i>{name}</i>",
+          "gl": "<i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "description": {},
+  "tagRenderings": [
+    {
+      "render": "<a href='{website}' target='_blank'>{website}</a>"
+    },
+    {
+      "render": "<a href='tel:{phone}'>{phone}</a>"
+    },
+    {
+      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/bike_cafe/bike_cafe.svg"
+  },
+  "width": {
+    "render": "2"
+  },
+  "iconSize": {
+    "render": "50,50,bottom"
+  },
+  "color": {
+    "render": "#694E2D"
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "Bike cafe",
+        "nl": "Fietscafé",
+        "fr": "Café Vélo",
+        "gl": "Café de ciclistas"
+      },
+      "tags": [
+        "amenity=pub",
+        "pub=cycling"
+      ]
+    }
+  ],
+  "wayHandling": 2
+}
