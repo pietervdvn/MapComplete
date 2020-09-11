@@ -1,0 +1,213 @@
+{
+  "id": "bike_cafes",
+  "name": {
+    "en": "Bike cafe",
+    "nl": "Fietscafé",
+    "fr": "Café vélo",
+    "gl": "Café de ciclistas"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "and": [
+      "amenity~pub|bar|cafe",
+      {
+        "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
+        "or": [
+          "pub~cycling|bicycle",
+          "theme~cycling|bicycle",
+          "service:bicycle:.*~~*"
+        ]
+      }
+    ]
+  },
+  "title": {
+    "render": {
+      "en": "Bike cafe",
+      "nl": "Fietscafé",
+      "fr": "Café Vélo",
+      "gl": "Café de ciclistas"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bike cafe <i>{name}</i>",
+          "nl": "Fietscafé <i>{name}</i>",
+          "fr": "Café Vélo <i>{name}</i>",
+          "gl": "Café de ciclistas <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "description": {},
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What is the name of this bike cafe?",
+        "nl": "Wat is de naam van dit fietscafé?",
+        "fr": "Quel est le nom de ce Café vélo",
+        "gl": "Cal é o nome deste café de ciclistas?"
+      },
+      "render": {
+        "en": "This bike cafe is called {name}",
+        "nl": "Dit fietscafé heet {name}",
+        "fr": "Ce Café vélo s'appelle {name}",
+        "gl": "Este café de ciclistas chámase {name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    {
+      "question": {
+        "en": "Does this bike cafe offer a bike pump for use by anyone?",
+        "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
+        "fr": "Est-ce que ce Café vélo propose une pompe en libre accès",
+        "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": {
+            "en": "This bike cafe offers a bike pump for anyone",
+            "nl": "Dit fietscafé biedt een fietspomp aan voor eender wie",
+            "fr": "Ce Café vélo offre une pompe en libre accès",
+            "gl": "Este café de ciclistas ofrece unha bomba de ar"
+          }
+        },
+        {
+          "if": "service:bicycle:pump=no",
+          "then": {
+            "en": "This bike cafe doesn't offer a bike pump for anyone",
+            "nl": "Dit fietscafé biedt geen fietspomp aan voor iedereen",
+            "fr": "Ce Café vélo n'offre pas de pompe en libre accès",
+            "gl": "Este café de ciclistas non ofrece unha bomba de ar"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Are there tools here to repair your own bike?",
+        "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
+        "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo?",
+        "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:diy=yes",
+          "then": {
+            "en": "This bike cafe offers tools for DIY repair",
+            "nl": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce Café vélo propose des outils pour réparer son vélo soi-même",
+            "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
+          }
+        },
+        {
+          "if": "service:bicycle:diy=no",
+          "then": {
+            "en": "This bike cafe doesn't offer tools for DIY repair",
+            "nl": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
+            "fr": "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même",
+            "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this bike cafe repair bikes?",
+        "nl": "Herstelt dit fietscafé fietsen?",
+        "fr": "Est-ce que ce Café vélo répare les vélos?",
+        "gl": "Este café de ciclistas arranxa bicicletas?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:repair=yes",
+          "then": {
+            "en": "This bike cafe repairs bikes",
+            "nl": "Dit fietscafé herstelt fietsen",
+            "fr": "Ce Café vélo répare les vélos",
+            "gl": "Este café de ciclistas arranxa bicicletas"
+          }
+        },
+        {
+          "if": "service:bicycle:repair=no",
+          "then": {
+            "en": "This bike cafe doesn't repair bikes",
+            "nl": "Dit fietscafé herstelt geen fietsen",
+            "fr": "Ce Café vélo ne répare pas les vélos",
+            "gl": "Este café de ciclistas non arranxa bicicletas"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "What is the website of {name}?",
+        "nl": "Wat is de website van {name}?",
+        "fr": "Quel est le site internet de {name}?",
+        "gl": "Cal é a páxina web de {name}?"
+      },
+      "render": {
+        "en": "<a href='{website}' target='_blank'>{website}</a>",
+        "nl": "<a href='{website}' target='_blank'>{website}</a>",
+        "fr": "<a href='{website}' target='_blank'>{website}</a>",
+        "gl": "<a href='{website}' target='_blank'>{website}</a>"
+      },
+      "freeform": {
+        "key": "website"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the phone number of {name}?",
+        "nl": "Wat is het telefoonnummer van {name}?",
+        "fr": "Quel est le nom de {name}?",
+        "gl": "Cal é o número de teléfono de {name}?"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>",
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the email address of {name}?",
+        "nl": "Wat is het email-adres van {name}?",
+        "fr": "Quel est l'adresse email de {name}?",
+        "gl": "Cal é o enderezo de correo electrónico de {name}?"
+      },
+      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/bike_cafe/bike_cafe.svg"
+  },
+  "width": {
+    "render": "2"
+  },
+  "iconSize": {
+    "render": "50,50,bottom"
+  },
+  "color": {
+    "render": "#694E2D"
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "Bike cafe",
+        "nl": "Fietscafé",
+        "fr": "Café Vélo",
+        "gl": "Café de ciclistas"
+      },
+      "tags": [
+        "amenity=pub",
+        "pub=cycling"
+      ]
+    }
+  ],
+  "wayHandling": 2
+}

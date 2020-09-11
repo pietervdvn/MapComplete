@@ -29,7 +29,10 @@ export class RegexTag extends TagsFilter {
     }
 
     asOverpass(): string[] {
-        return [`['${RegexTag.source(this.key)}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+        if (typeof this.key === "string") {
+            return [`['${this.key}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+        }
+        return [`[~'${this.key.source}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
     }
 
     private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
@@ -68,7 +71,7 @@ export class RegexTag extends TagsFilter {
         if (typeof this.key === "string") {
             return `${this.key}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
         }
-        return `~${this.key.source}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`
+        return `${this.key.source}${this.invert ? "!" : ""}~~${RegexTag.source(this.value)}`
     }
 
     isEquivalent(other: TagsFilter): boolean {

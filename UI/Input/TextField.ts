@@ -43,14 +43,14 @@ export class ValidatedTextField {
         "email": (str) => EmailValidator.validate(str),
         "url": (str) => str,
         "phone": (str, country) => {
-            return parsePhoneNumberFromString(str, country.toUpperCase())?.isValid() ?? false;
+            return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false;
         }
     }
 
     public static formatting = {
         "phone": (str, country) => {
             console.log("country formatting", country)
-            return parsePhoneNumberFromString(str, country.toUpperCase()).formatInternational()
+            return parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
         }
     }
 }

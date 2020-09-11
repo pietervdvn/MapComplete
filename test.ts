@@ -1,4 +1,3 @@
-import BikeCafes from "./Customizations/Layers/BikeCafes";
 import {CheckBoxes} from "./UI/Input/Checkboxes";
 import {FixedInputElement} from "./UI/Input/FixedInputElement";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";

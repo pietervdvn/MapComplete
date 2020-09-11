@@ -3,7 +3,6 @@ import BikeShops from "../Layers/BikeShops";
 import Translations from "../../UI/i18n/Translations";
 import Combine from "../../UI/Base/Combine";
 import BikeOtherShops from "../Layers/BikeOtherShops";
-import BikeCafes from "../Layers/BikeCafes";
 
 
 export default class Cyclofix extends Layout {
@@ -21,8 +20,8 @@ export default class Cyclofix extends Layout {
             "cyclofix",
             ["en", "nl", "fr", "gl"],
             Translations.t.cyclofix.title,
-            ["bike_repair_station", new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(), new BikeCafes(),
-                // The first of november, we remember our dead
+            ["bike_repair_station", "bike_cafes", new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(),
+                // The first of november, halloween and the second of november, we remember our dead
                 ...(Cyclofix.RememberTheDead() ? ["ghost_bike"] : [])],
             16,
             50.8465573,

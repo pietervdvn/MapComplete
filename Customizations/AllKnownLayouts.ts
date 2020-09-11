@@ -47,6 +47,10 @@ export class AllKnownLayouts {
                 let layer = layout.layers[i];
                 if (typeof (layer) === "string") {
                     layer = layout.layers[i] = FromJSON.sharedLayers.get(layer);
+                    if(layer === undefined){
+                        console.log("Defined layers are ", FromJSON.sharedLayers.keys())
+                        throw `Layer ${layer} was not found or defined - probably a type was made`
+                    }
                 }
 
 

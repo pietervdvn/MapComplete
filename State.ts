@@ -12,7 +12,6 @@ import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {FromJSON} from "./Customizations/JSON/FromJSON";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -23,7 +22,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.7k";
+    public static vNumber = "0.0.7l";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
