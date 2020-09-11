@@ -20,7 +20,7 @@ export default class Cyclofix extends Layout {
             "cyclofix",
             ["en", "nl", "fr", "gl"],
             Translations.t.cyclofix.title,
-            ["bike_repair_station", "bike_cafes", new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(),
+            ["bike_repair_station", "bike_cafes", new BikeShops(), "drinking_water", "bike_parking", new BikeOtherShops(),"bike_themed_object",
                 // The first of november, halloween and the second of november, we remember our dead
                 ...(Cyclofix.RememberTheDead() ? ["ghost_bike"] : [])],
             16,

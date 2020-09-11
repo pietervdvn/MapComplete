@@ -6,10 +6,10 @@
     "fr": "Café vélo",
     "gl": "Café de ciclistas"
   },
-  "minzoom": 12,
+  "minzoom": 14,
   "overpassTags": {
     "and": [
-      "amenity~pub|bar|cafe",
+      "amenity~pub|bar|cafe|restaurant",
       {
         "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
         "or": [
@@ -149,12 +149,7 @@
         "fr": "Quel est le site internet de {name}?",
         "gl": "Cal é a páxina web de {name}?"
       },
-      "render": {
-        "en": "<a href='{website}' target='_blank'>{website}</a>",
-        "nl": "<a href='{website}' target='_blank'>{website}</a>",
-        "fr": "<a href='{website}' target='_blank'>{website}</a>",
-        "gl": "<a href='{website}' target='_blank'>{website}</a>"
-      },
+      "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
         "key": "website"
       }
