@@ -19,7 +19,7 @@ export class UserDetails {
 }
 
 export class OsmConnection {
-
+    
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     private _dryRun: boolean;

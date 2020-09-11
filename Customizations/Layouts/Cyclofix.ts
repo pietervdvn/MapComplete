@@ -37,6 +37,6 @@ export default class Cyclofix extends Layout {
         this.icon = "./assets/bike/logo.svg"
         this.description = "Easily search and contribute bicycle data nearby";
         this.socialImage = "./assets/bike/cyclofix.jpeg";
-        this.widenFactor = 0.5;
+        this.widenFactor = 0.05;
     }
 }

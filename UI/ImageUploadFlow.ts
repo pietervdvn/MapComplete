@@ -44,13 +44,17 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
             preferedLicense
-        ); const t = Translations.t.image;
-       
+        );
+        licensePicker.SetStyle("float:left");
+
+        const t = Translations.t.image;
+
         this._licensePicker = licensePicker;
         this._selectedLicence = licensePicker.GetValue();
-        this._connectButton = new Combine([ t.pleaseLogin])
+
+        this._connectButton = new Combine([t.pleaseLogin])
             .onClick(() => State.state.osmConnection.AttemptLogin())
-            .SetClass("login-button-friendly");    
+            .SetClass("login-button-friendly");
 
     }
 
@@ -91,29 +95,37 @@ export class ImageUploadFlow extends UIElement {
             }
         }
 
-        return "" +
-            "<div class='imageflow'>" +
+        const extraInfo = new Combine([
+            Translations.t.image.respectPrivacy,
+            "<br/>",
+            this._licensePicker,
+            "<br/>",
+            currentStateHtml,
+            "<br/>"
+        ]);
 
-            "<label for='fileselector-" + this.id + "'>" +
+        const label = new Combine([
+            "<img style='width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;'  src='./assets/camera-plus.svg'/> ",
+            Translations.t.image.addPicture
+                .SetStyle("width:max-content;font-size: 28px;font-weight: bold;float: left;margin-top: 4px;padding-top: 4px;padding-bottom: 4px;padding-left: 13px;"),
 
-            "<div class='imageflow-file-input-wrapper'>" +
-            "<img src='./assets/camera-plus.svg' alt='upload image'/> " +
-            `<span class='imageflow-add-picture'>${Translations.t.image.addPicture.R()}</span>` +
-            "<div class='break'></div>" +
-            "</div>" +
-            currentStateHtml +
-            Translations.t.image.respectPrivacy.Render() + "<br/>" +
-            this._licensePicker.Render() + "<br/>" +
+        ]).SetStyle(" display: flex;cursor:pointer;padding: 0.5em;border-radius: 1em;border: 3px solid black;box-sizing:border-box;")
+
+        const actualInputElement =
+            `<input style='display: none' id='fileselector-${this.id}' type='file' accept='image/*' name='picField' multiple='multiple' alt=''/>`;
+        
+        const form = "<form id='fileselector-form-" + this.id + "'>" +
+            `<label for='fileselector-${this.id}'>` +
+            label.Render() +
             "</label>" +
-            "<form id='fileselector-form-" + this.id + "'>" +
-            "<input id='fileselector-" + this.id + "' " +
-            "type='file' " +
-            "class='imageflow-file-input' " +
-            "accept='image/*' name='picField' size='24' multiple='multiple' alt=''" +
-            "/>" +
-            "</form>" +
-            "</div>"
-            ;
+            actualInputElement+
+            "</form>";
+        
+        return new Combine([
+            form,
+            extraInfo
+        ]).SetStyle("margin-top: 1em;margin-bottom: 2em;text-align: center;")
+            .Render();
     }
 
     InnerUpdate(htmlElement: HTMLElement) {

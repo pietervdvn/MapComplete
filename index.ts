@@ -37,9 +37,9 @@ let defaultLayout = "bookcases"
 let hash = window.location.hash;
 
 const path = window.location.pathname.split("/").slice(-1)[0];
-if (path !== "index.html") {
+if (path !== "index.html" && path !== "") {
     defaultLayout = path.substr(0, path.length - 5);
-    console.log("Using layout", defaultLayout)
+    console.log("Using layout", defaultLayout);
 }
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default

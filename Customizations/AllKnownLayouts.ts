@@ -3,7 +3,6 @@ import {Layout} from "./Layout";
 import {Groen} from "./Layouts/Groen";
 import Cyclofix from "./Layouts/Cyclofix";
 import {StreetWidth} from "./Layouts/StreetWidth";
-import {GRB} from "./Layouts/GRB";
 import {MetaMap} from "./Layouts/MetaMap";
 import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {FromJSON} from "./JSON/FromJSON";
@@ -22,7 +21,6 @@ export class AllKnownLayouts {
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
         new Natuurpunt(),
-        new GRB(),
         new Cyclofix(),
         FromJSON.LayoutFromJSON(bookcases),
         FromJSON.LayoutFromJSON(aed),

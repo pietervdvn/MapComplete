@@ -547,10 +547,7 @@
         box-shadow: unset;
         overflow-y: unset;
     }
-
-
 }
-
 
     .to-the-map {
         display: block;
@@ -619,9 +616,6 @@
     }
 
 
-
-
-
 .imgWithAttr {
     max-height: 20em;
 
@@ -664,60 +658,11 @@
     }
 
 
-    /**************** Image upload flow ***************/
-
-    .imageflow {
-        margin-top: 1em;
-        margin-bottom: 2em;
-        text-align: center;
-
-    }
-
-    .imageflow-file-input-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0.5em;
-        border-radius: 1em;
-        border: 3px solid black;
-    }
-
-    .imageflow-add-picture {
-        font-size: 28px;
-        font-weight: bold;
-        float: left;
-        margin-top: 4px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        padding-left: 13px;
-    }
-
-    .imageflow-file-input-wrapper img {
-        width: 36px;
-        height: 36px;
-        padding: 0.1em;
-        margin-top: 5px;
-        border-radius: 0;
-        float: left;
-    }
-
-
-    .license-picker {
-        float: left;
-    }
-
-    .imageflow > input {
-        display: none;
-    }
-
-
     /***************** Info box (box containing features and questions ******************/
 
     .leaflet-popup-content {
         width: 40em !important;
     }
-
-
-  
 
     #messagesboxmobile .featureinfobox {
         max-height: unset;
@@ -842,103 +787,6 @@
     display: inline-block
 }
 
-/******* THe remove image buttons ****/
-
-.image-carousel-container {
-    position: relative;
-}
-
-.image-is-removed{
-    display: inline-block;
-    left: 0;
-    top: 2.5em;
-
-    padding: 0.5em;
-    padding-left: 0.75em;
-
-    height: 3em;
-    width: 14em;
-    border-radius: 1em;
-    background-color: black;
-
-    color: white;
-    font-weight: bold;
-    height: 1.5em; /* same as .delete-image */
-
-    z-index: 7000;
-}
-
-.image-delete-container {
-    position: absolute;
-    left: 6em;
-    top: 1.5em;
-    display: inline-block;
-    z-index: 7000;
-
-}
-
-.delete-image {
-    width: 1.5em;
-    height: 1.5em;
-    padding: 0.5em;
-    border-radius: 3em;
-    background-color: black;
-}
-
-.delete-image-confirm {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    top: 2.5em;
-
-    padding: 0.5em;
-    padding-left: 0.75em;
-
-    width: 14em;
-    border-radius: 1em;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #ff8c8c;
-
-    color: white;
-    height: 1.5em; /* same as .delete-image */
-
-    z-index: 7000;
-}
-
-.delete-image-confirm span {
-    font-size: larger;
-    font-weight: bold;
-}
-
-
-.delete-image-cancel {
-    display: inline-block;
-    position: absolute;
-
-    left: 0em;
-    padding: 0.5em;
-    padding-left: 0.75em;
-
-    border-radius: 1em;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-
-    height: 1.5em; /* same as .delete-image */
-    width: 14em; /* Same as delete-image-confirm */
-
-
-    background-color: black;
-    color: white;
-    z-index: 7000;
-}
-
-.delete-image-cancel span {
-    font-size: larger;
-    font-weight: bold;
-
-}
-
 /**** The save button *****/
 
 .save {
@@ -946,9 +794,7 @@
     border: solid white 2px;
     background-color: #3a3aeb;
     color: white;
-    padding: 0.2em;
-    padding-left: 0.6em;
-    padding-right: 0.6em;
+    padding: 0.2em 0.6em;
     font-size: x-large;
     font-weight: bold;
     border-radius: 1.5em;
@@ -988,66 +834,6 @@
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-radius: 1.5em;
-}
-
-
-/******** TabbedElement ****/
-
-.tabs-header-bar {
-    padding-left: 1em;
-    padding-top: 10px; /* For the shadow */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: start;
-    background-color: white;
-}
-
-
-.tab-single-header img {
-    height: 3em;
-    max-width: 3em;
-    padding: 0.5em;
-    display:block;
-    margin:auto;
-}
-
-
-.tab-content {
-    z-index: 5002;
-    background-color: white;
-    position: relative;
-    padding: 1em;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.tab-single-header {
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-    z-index: 5000;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-.tab-active {
-    background-color: white;
-    z-index: 5001;
-    box-shadow: 0 0 10px black;
-    border: 1px solid white;
-    min-width: 4em;
-}
-
-.tab-non-active {
-    background-color: #e5f5ff;
-    opacity: 0.5;
-    border-left: 1px solid gray;
-    border-right:1px solid gray;
-    border-top:  1px solid gray;
-    border-bottom: 1px solid lightgray;
-    min-width: 4em;
 }
 
 
@@ -1126,12 +912,6 @@
     .add-ui {
         font-size: large;
     }
-
-
-    .custom-layer-panel {
-
-    }
-
 
     .custom-layer-panel-header {
         display: flex;

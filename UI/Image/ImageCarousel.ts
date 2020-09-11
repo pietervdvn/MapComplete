@@ -3,7 +3,6 @@ import {ImageSearcher} from "../../Logic/ImageSearcher";
 import {SlideShow} from "../SlideShow";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {ConfirmDialog} from "../ConfirmDialog";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {
     Dependencies,
@@ -12,8 +11,12 @@ import {
 } from "../../Customizations/UIElementConstructor";
 import {State} from "../../State";
 import Translation from "../i18n/Translation";
+import {CheckBox} from "../Input/CheckBox";
+import Combine from "../Base/Combine";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import Translations from "../i18n/Translations";
 
-export class ImageCarouselConstructor implements TagDependantUIElementConstructor{
+export class ImageCarouselConstructor implements TagDependantUIElementConstructor {
     IsKnown(properties: any): boolean {
         return true;
     }
@@ -46,12 +49,12 @@ export class ImageCarousel extends TagDependantUIElement {
     private readonly _uiElements: UIEventSource<UIElement[]>;
 
     private readonly _deleteButton: UIElement;
-    private readonly _isDeleted: UIElement;
-    
-    constructor(tags: UIEventSource<any>) {
+
+    constructor(tags: UIEventSource<any>, osmConnection: OsmConnection = undefined) {
         super(tags);
-        
+
         const self = this;
+        osmConnection = osmConnection ?? State.state?.osmConnection;
         this.searcher = new ImageSearcher(tags);
 
         this._uiElements = this.searcher.map((imageURLS: string[]) => {
@@ -68,12 +71,17 @@ export class ImageCarousel extends TagDependantUIElement {
             new FixedUiElement("")).HideOnEmpty(true);
 
 
-        const showDeleteButton = this.slideshow._currentSlide.map((i) => {
-            if(!State.state.osmConnection.userDetails.data.loggedIn){
+        const showDeleteButton = this.slideshow._currentSlide.map((i: number) => {
+            if (!osmConnection?.userDetails?.data?.loggedIn) {
                 return false;
             }
             return self.searcher.IsDeletable(self.searcher.data[i]);
-        }, [this.searcher, State.state.osmConnection.userDetails]);
+        }, [this.searcher, osmConnection?.userDetails]);
+
+        const isDeleted: UIEventSource<boolean> = this.slideshow._currentSlide.map((i: number) => {
+            return self.searcher._deletedImages.data.indexOf(self.searcher.data[i]) >= 0;
+        }, [this.searcher, this.searcher._deletedImages]);
+
         this.slideshow._currentSlide.addCallback(() => {
             showDeleteButton.ping(); // This pings the showDeleteButton, which indicates that it has to hide it's subbuttons
         })
@@ -84,43 +92,66 @@ export class ImageCarousel extends TagDependantUIElement {
         }
 
 
-        this._deleteButton = new ConfirmDialog(showDeleteButton,
-            "<img src='./assets/delete.svg' alt='Afbeelding verwijderen' class='delete-image'>",
-            "<span>Afbeelding verwijderen</span>",
-            "<span>Terug</span>",
-            deleteCurrent,
-            () => {            },
-            'delete-image-confirm',
-            'delete-image-cancel');
+        const style = ";padding:0.4em;height:2em;padding: 0.4em; font-weight:bold;";
+        const backButton = Translations.t.image.dontDelete
+            .SetStyle("background:black;border-radius:0.4em 0.4em 0 0" + style)
 
+        const deleteButton = Translations.t.image.doDelete
+            .SetStyle("background:#ff8c8c;border-radius:0 0 0.4em 0.4em" + style)
+            .onClick(deleteCurrent);
 
-        const mapping = this.slideshow._currentSlide.map((i) => {
-            if (this.searcher._deletedImages.data.indexOf(
-                this.searcher.data[i]
-            ) >= 0) {
-                return "<div class='image-is-removed'>Deze afbeelding is verwijderd</div>"
-            }
+        const deleteButtonCheckbox = new CheckBox(
+            new Combine([
+                backButton,
+                deleteButton]
+            ).SetStyle("display:flex;" +
+                "flex-direction:column;" +
+                "background:black;" +
+                "color:white;" +
+                "border-radius:0.5em;" +
+                "width:max-content;" +
+                "height:min-content;"),
+            new VariableUiElement(
+                showDeleteButton.map(showDelete => {
 
-            return "";
-        });
-        this._isDeleted = new VariableUiElement(
-            mapping
+                        if (isDeleted.data) {
+                            return Translations.t.image.isDeleted
+                                .SetStyle("display:block;" +
+                                    "background-color: black;color:white;padding:0.4em;border-radius:0.4em").Render()
+                        }
+                        if (!showDelete) {
+                            return "";
+                        }
+                        return new FixedUiElement("<img style='width:1.5em'  src='./assets/delete.svg'>")
+                            .SetStyle("display:block;" +
+                                "width: 1.5em;" +
+                                "height: 1.5em;" +
+                                "padding: 0.5em;" +
+                                "border-radius: 3em;" +
+                                "background-color: black;").Render();
+                    }, [this.searcher._deletedImages, isDeleted]
+                )));
+
+        this._deleteButton = deleteButtonCheckbox;
+        this._deleteButton.SetStyle(
+            "position:absolute;display:block;top:1em;left:5em;z-index: 7000;width:min-content;height:min-content;"
         )
+        this.slideshow._currentSlide.addCallback(() => {
+            deleteButtonCheckbox.isEnabled.setData(false)
+        })
 
         this.searcher._deletedImages.addCallback(() => {
             this.slideshow._currentSlide.ping();
         })
 
+
     }
 
     InnerRender(): string {
-        return "<span class='image-carousel-container'>" +
-            "<div class='image-delete-container'>" +
-            this._deleteButton.Render() +
-            this._isDeleted.Render() +
-            "</div>" +
-            this.slideshow.Render() +
-            "</span>";
+        return new Combine([
+            this._deleteButton,
+            this.slideshow
+        ]).SetStyle("position:relative").Render();
     }
 
     IsKnown(): boolean {
@@ -137,12 +168,6 @@ export class ImageCarousel extends TagDependantUIElement {
 
     Priority(): number {
         return 0;
-    }
-
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        this._deleteButton.Update();
-        this._isDeleted.Update();
     }
 
 

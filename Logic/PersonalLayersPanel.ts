@@ -37,10 +37,6 @@ export class PersonalLayersPanel extends UIElement {
             if (layout.id === PersonalLayout.NAME) {
                 continue;
             }
-            if (layout.hideFromOverview &&
-                State.state.osmConnection.userDetails.data.name !== "Pieter Vander Vennet") {
-                continue
-            }
 
             const header =
                 new Combine([

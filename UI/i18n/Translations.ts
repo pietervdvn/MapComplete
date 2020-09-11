@@ -434,6 +434,18 @@ export default class Translations {
                 nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>",
                 fr: "<span class='thanks'>Votre photo est ajouté. Merci beaucoup!</span>",
                 gl: "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>"
+            }),
+            dontDelete: new T({
+                "nl":"Terug",
+                "en":"Cancel"
+            }),
+            doDelete: new T({
+                "nl":"Verwijder afbeelding",
+                "en":"Remove image"
+            }),
+            isDeleted: new T({
+                "nl":"Verwijderd",
+                "en":"Deleted"
             })
         },
         centerMessage: {

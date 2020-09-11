@@ -392,7 +392,7 @@ export class FromJSON {
 
             }
         );
-        layer.maxAllowedOverlapPercentage = json.hideUnderlayingFeaturesMinPercentage;
+        layer.maxAllowedOverlapPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
         return layer;
     }
 
