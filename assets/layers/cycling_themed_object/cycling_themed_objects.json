@@ -5,7 +5,7 @@
     "nl": "Fietsgerelateerd object",
     "fr": "Objet cycliste"
   },
-  "minzoom": 16,
+  "minzoom": 14,
   "overpassTags": "theme~cycling|bicycle",
   "title": {
     "render": {
@@ -57,7 +57,7 @@
     "render": "50,50,bottom"
   },
   "color": {
-    "render": "#00f"
+    "render": "#AB76D5"
   },
   "presets": [],
   "wayHandling": 2

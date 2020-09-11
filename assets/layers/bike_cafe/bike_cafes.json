@@ -6,7 +6,7 @@
     "fr": "Café vélo",
     "gl": "Café de ciclistas"
   },
-  "minzoom": 14,
+  "minzoom": 13,
   "overpassTags": {
     "and": [
       "amenity~pub|bar|cafe|restaurant",

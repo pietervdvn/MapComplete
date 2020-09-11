@@ -17,21 +17,9 @@
       "en": "./assets/layers/bike_parking/parking.svg"
     }
   },
-  "size": {
-    "render": {
-      "en": "50,50,bottom"
-    }
-  },
-  "color": {
-    "render": {
-      "en": "#00f"
-    }
-  },
-  "width": {
-    "render": {
-      "en": "1"
-    }
-  },
+  "iconSize": "40,40,bottom",
+  "color": "#00f",
+  "width": "1",
   "wayHandling": 2,
   "presets": [
     {
