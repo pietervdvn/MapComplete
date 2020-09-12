@@ -169,6 +169,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         this._editButton = new FixedUiElement("");
         if (this._question !== undefined) {
+            // 2.3em total width
             this._editButton = new FixedUiElement(
                 "<img style='width: 1.3em;height: 1.3em;padding: 0.5em;border-radius: 0.65em;border: solid black 1px;font-size: medium;float: right;' " +
                 "src='./assets/pencil.svg' alt='edit'>")
@@ -498,22 +499,27 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         if (this.IsKnown()) {
 
             const answer = this.RenderAnswer();
-            if(answer.IsEmpty()){
+            if (answer.IsEmpty()) {
                 return "";
             }
-            let editButton;
+
+
+            const answerStyle = "    display: inline-block;" +
+                "    margin: 0.1em;" +
+                "    width: 100%;" +
+                "    font-size: large;"
+
             if (State.state === undefined || // state undefined -> we are custom testing
                 State.state?.osmConnection?.userDetails?.data?.loggedIn && this._question !== undefined) {
-                editButton = this._editButton;
+                answer.SetStyle("display:inline-block;width:calc(100% - 2.3em);")
+                return new Combine([
+                    answer,
+                    this._editButton])
+                    .SetStyle(answerStyle)
+                    .Render();
             }
 
-            return new Combine([
-                "<span class='answer'>",
-                "<span class='answer-text'>",
-                answer,
-                "</span>",
-                editButton ?? "",
-                "</span>"]).Render();
+            return answer.SetStyle(answerStyle).Render();
         }
 
         return "";

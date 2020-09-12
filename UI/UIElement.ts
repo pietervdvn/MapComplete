@@ -158,9 +158,9 @@ export abstract class UIElement extends UIEventSource<string> {
         if (this.style !== undefined && this.style !== "") {
             style = `style="${this.style}" `;
         }
-        const clss = "";
+        let clss = "";
         if (this.clss.length > 0) {
-            `class='${this.clss.join(" ")}' `;
+            clss = `class='${this.clss.join(" ")}' `;
         }
         return `<span ${clss}${style}id='${this.id}'>${this.lastInnerRender}</span>`
     }
@@ -184,14 +184,14 @@ export abstract class UIElement extends UIEventSource<string> {
 
     public SetClass(clss: string): UIElement {
         this.dumbMode = false;
-        if(clss === "" && this.clss.length > 0){
+        if (clss === "" && this.clss.length > 0) {
             this.clss = [];
             this.Update();
-        }
-        if (this.clss.indexOf(clss) < 0) {
+        } else if (this.clss.indexOf(clss) < 0) {
             this.clss.push(clss);
             this.Update();
         }
+        console.log(this.clss)
         return this;
     }
 

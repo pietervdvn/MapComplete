@@ -7,17 +7,14 @@ export class SlideShow extends UIElement {
     private readonly _embeddedElements: UIEventSource<UIElement[]>
 
     public readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
-    private readonly _noimages: UIElement;
     private _prev: UIElement;
     private _next: UIElement;
 
     constructor(
-        embeddedElements: UIEventSource<UIElement[]>,
-        noImages: UIElement) {
+        embeddedElements: UIEventSource<UIElement[]>) {
         super(embeddedElements);
         this._embeddedElements = embeddedElements;
         this.ListenTo(this._currentSlide);
-        this._noimages = noImages;
 
         const self = this;
         this._prev = new FixedUiElement("<div class='prev-button'>" +
@@ -41,7 +38,7 @@ export class SlideShow extends UIElement {
 
     InnerRender(): string {
         if (this._embeddedElements.data.length == 0) {
-            return this._noimages.Render();
+            return "";
         }
 
         if (this._embeddedElements.data.length == 1) {

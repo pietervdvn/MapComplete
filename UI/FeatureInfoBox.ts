@@ -24,8 +24,6 @@ export class FeatureInfoBox extends UIElement {
     private readonly _tagsES: UIEventSource<any>;
     private readonly _changes: Changes;
     private readonly _title: UIElement;
-    private readonly _osmLink: UIElement;
-    private readonly _wikipedialink: UIElement;
     private readonly _infoboxes: TagDependantUIElement[];
 
     private readonly _oneSkipped = Translations.t.general.oneSkippedQuestion.Clone();
@@ -65,22 +63,36 @@ export class FeatureInfoBox extends UIElement {
         this._oneSkipped.onClick(initTags)
 
 
+        let renderedTitle: UIElement;
         title = title ?? new TagRenderingOptions(
             {
                 mappings: [{k: new And([]), txt: ""}]
             }
         )
         if (typeof (title) == "string") {
-            this._title = new FixedUiElement(title);
+            renderedTitle = new FixedUiElement(title);
         } else if (title instanceof UIElement) {
-            this._title = title;
+            renderedTitle = title;
         } else {
-            this._title = title.construct(deps);
+            renderedTitle = title.construct(deps);
         }
-        this._osmLink = new OsmLink().construct(deps);
-        this._wikipedialink = new WikipediaLink().construct(deps);
 
+        
+        renderedTitle
+            .SetStyle("width: calc(100% - 50px - 0.2em);")
+            .SetClass("title-font")
 
+        const osmLink = new OsmLink()
+            .construct(deps)
+            .SetStyle("width: 24px; display:block;")
+        const wikipedialink = new WikipediaLink()
+            .construct(deps)
+            .SetStyle("width: 24px; display:block;")
+
+        this._title = new Combine([
+            renderedTitle,
+            wikipedialink,
+            osmLink]).SetStyle("display:flex;");
     }
 
     InnerRender(): string {
@@ -134,22 +146,15 @@ export class FeatureInfoBox extends UIElement {
             questionElement = this._someSkipped;
         }
 
-        const title = new Combine([
-            this._title,
-            this._wikipedialink,
-            this._osmLink]);
-
         const infoboxcontents = new Combine(
-            [ new VerticalCombine(info, "infobox-information "), questionElement ?? ""]);
+            [new VerticalCombine(info, "infobox-information "), questionElement ?? ""]);
 
-        return "<div class='featureinfobox'>" +
-            new Combine([
-                "<div class='featureinfoboxtitle'>",
-                title, 
-                "</div>",
-                "<div class='infoboxcontents'>",
-                infoboxcontents,
-                "</div>"]).Render() + "</div>";
+        return new Combine([
+            this._title,
+            "<div class='infoboxcontents'>",
+            infoboxcontents,
+            "</div>"]).SetClass("featureinfobox")
+            .Render();
     }
     
     

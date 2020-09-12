@@ -32,11 +32,9 @@ export class WikipediaLink extends TagRenderingOptions {
             key: "wikipedia",
             template: "$$$",
             renderTemplate:
-                "<span style='position: absolute;right: 24px;width: 24px;height: 24px;padding-right: 12px;'>" +
                 "<a href='{wikipedia}' target='_blank'>" +
                 "<img style='width: 24px;height: 24px;' src='./assets/wikipedia.svg' alt='wikipedia'>" +
-                "</a></span>",
-
+                "</a>",
 
             placeholder: ""
 
