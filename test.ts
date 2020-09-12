@@ -11,4 +11,3 @@ const imageCarousel = new ImageCarousel(new UIEventSource<any>({
 }), connection);
 
 imageCarousel.AttachTo("maindiv")
-imageCarousel.Activate();

@@ -41,6 +41,9 @@ export default class Translation extends UIElement {
 
 
     get txt(): string {
+        if(this.translations["*"]){
+            return this.translations["*"];
+        }
         const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
         if (txt !== undefined) {
             return txt;
@@ -77,10 +80,6 @@ export default class Translation extends UIElement {
         }
         const result= this.Subs({[a]: b});
         return result;
-    }
-
-    public R(): string {
-        return new Translation(this.translations).Render();
     }
 
     public Clone() {

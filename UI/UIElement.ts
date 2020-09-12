@@ -28,6 +28,7 @@ export abstract class UIElement extends UIEventSource<string> {
         this.id = "ui-element-" + UIElement.nextId;
         this._source = source;
         UIElement.nextId++;
+        this.dumbMode = true;
         this.ListenTo(source);
     }
 
@@ -74,32 +75,18 @@ export abstract class UIElement extends UIEventSource<string> {
         
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
-            // The element is not painted
-
+            // The element is not painted or, in the case of 'dumbmode' this UI-element is not explicitely present
             if (this.dumbMode) {
                 // We update all the children anyway
-                for (const i in this) {
-                    const child = this[i];
-                    if (child instanceof UIElement) {
-                        child.Update();
-                    } else if (child instanceof Array) {
-                        for (const ch of child) {
-                            if (ch instanceof UIElement) {
-                                ch.Update();
-                            }
-                        }
-                    }
-                }
+                this.UpdateAllChildren();
             }
-
-
             return;
         }
         const newRender = this.InnerRender();
         if (newRender !== this.lastInnerRender) {
+            this.lastInnerRender = newRender;
             this.setData(this.InnerRender());
             element.innerHTML = this.data;
-            this.lastInnerRender = newRender;
         }
 
         if (this._hideIfEmpty) {
@@ -132,7 +119,11 @@ export abstract class UIElement extends UIEventSource<string> {
         }
 
         this.InnerUpdate(element);
+        this.UpdateAllChildren();
 
+    }
+
+    private UpdateAllChildren() {
         for (const i in this) {
             const child = this[i];
             if (child instanceof UIElement) {
@@ -146,27 +137,32 @@ export abstract class UIElement extends UIEventSource<string> {
             }
         }
     }
-    
-    HideOnEmpty(hide : boolean){
+
+    HideOnEmpty(hide: boolean) {
         this._hideIfEmpty = hide;
         this.Update();
         return this;
     }
-    
+
     // Called after the HTML has been replaced. Can be used for css tricks
-   protected InnerUpdate(htmlElement: HTMLElement) {
-   }
+    protected InnerUpdate(htmlElement: HTMLElement) {
+    }
 
     Render(): string {
-        this.lastInnerRender = this.lastInnerRender ?? this.InnerRender();
+        this.lastInnerRender = this.InnerRender();
         if (this.dumbMode) {
             return this.lastInnerRender;
         }
+
         let style = "";
         if (this.style !== undefined && this.style !== "") {
-            style = `style="${this.style}"`;
+            style = `style="${this.style}" `;
         }
-        return `<span class='uielement ${this.clss.join(" ")}' ${style} id='${this.id}'>${this.lastInnerRender}</span>`
+        const clss = "";
+        if (this.clss.length > 0) {
+            `class='${this.clss.join(" ")}' `;
+        }
+        return `<span ${clss}${style}id='${this.id}'>${this.lastInnerRender}</span>`
     }
 
     AttachTo(divId: string) {
@@ -182,32 +178,20 @@ export abstract class UIElement extends UIEventSource<string> {
 
     public abstract InnerRender(): string;
 
-    public Activate(): UIElement {
-        for (const i in this) {
-            const child = this[i];
-            if (child instanceof UIElement) {
-                child.Activate();
-            } else if (child instanceof Array) {
-                for (const ch of child) {
-                    if (ch instanceof UIElement) {
-                        ch.Activate();
-                    }
-                }
-            }
-        }
-        return this;
-    };
-
     public IsEmpty(): boolean {
         return this.InnerRender() === "";
     }
 
     public SetClass(clss: string): UIElement {
         this.dumbMode = false;
+        if(clss === "" && this.clss.length > 0){
+            this.clss = [];
+            this.Update();
+        }
         if (this.clss.indexOf(clss) < 0) {
             this.clss.push(clss);
+            this.Update();
         }
-        this.Update();
         return this;
     }
 

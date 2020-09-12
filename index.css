@@ -44,12 +44,6 @@
 
     /**************** GENERIC ****************/
 
-    .uielement {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
 
     .alert {
         background-color: #fee4d1;
@@ -514,18 +508,7 @@
         width: 100%;
     }
 
-    .messagesboxmobile-scroll {
-        display: block;
-        width: 100vw;
-        box-sizing: border-box;
-        overflow-y: auto;
-        padding-left: 1em;
-        padding-right: 1em;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin: 0;
-        height: calc(100vh - 5em); /*Height of to-the-map is 5em*/
-    }
+
 
     #messagesboxmobile {
         display: block;
@@ -549,48 +532,10 @@
     }
 }
 
-    .to-the-map {
-        display: block;
-        box-sizing: border-box;
-        height: 2.5em;
-        margin: 0;
-        padding: 0.5em;
-        padding-top: 0.75em;
-        text-align: center;
-        color: white;
-        background-color: #7ebc6f;
-        cursor: pointer;
-        font-size: xx-large;
-        font-weight: bold;
-        border-top-left-radius: 0.5em;
-        border-top-right-radius: 0.5em;
-    }
-
-
     @media only screen and (max-height: 400px) {
         /* Landscape: small 'to the map' */
         #hidden-on-mobile {
             display: unset;
-        }
-
-        .to-the-map {
-            position: relative;
-            height: 100%;
-            width: 100%
-        }
-
-        .to-the-map span {
-            width: auto;
-            border-top-left-radius: 1.5em;
-            position: absolute;
-            z-index: 5;
-            right: 0;
-            bottom: 0;
-            margin: 0;
-            padding: 1em;
-            padding-bottom: 0.75em;
-            height: 3em;
-            font-size: x-large;
         }
 
         #messagesboxmobile {
@@ -600,13 +545,6 @@
             padding-bottom: 5em;
         }
 
-        .messagesboxmobile-scroll {
-            display: block;
-            width: 100vw;
-            height: calc(100vh - 5em);
-            box-sizing: border-box;
-            overflow-y: scroll;
-        }
 
         #welcomeMessage {
             box-shadow: unset;
@@ -670,7 +608,6 @@
     }
 
     #messagesboxmobile .featureinfobox > div {
-        width: 100%;
         max-width: unset;
         padding-left: unset;
     }
@@ -679,12 +616,6 @@
         max-height: 80vh;
         overflow-y: auto;
     }
-
-    .featureinfobox > div {
-        width: calc(100% - 2em);
-        padding-left: 1em;
-    }
-
 
     .featureinfoboxtitle {
         position: relative;
@@ -819,20 +750,9 @@
     display: inline-block;
     border: solid lightgrey 2px;
     color: grey;
-    padding: 0.2em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    padding: 0.2em 0.3em;
     font-size: x-large;
     font-weight: bold;
-    border-radius: 1.5em;
-}
-
-.skip-button {
-    display: inline-block;
-    border: solid black 0.5px;
-    padding: 0.2em;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
     border-radius: 1.5em;
 }
 

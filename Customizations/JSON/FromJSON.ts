@@ -88,23 +88,25 @@ export class FromJSON {
         return layout;
     }
 
-    public static Translation(json: string | any): string | Translation {
+    public static Translation(json: string | any): Translation {
         if (json === undefined) {
             return undefined;
         }
         if (typeof (json) === "string") {
-            return json;
+            return new Translation({"*": json});
         }
         const tr = {};
         let keyCount = 0;
         for (let key in json) {
-            keyCount ++;
+            keyCount++;
             tr[key] = json[key]; // I'm doing this wrong, I know
         }
         if(keyCount == 0){
             return undefined;
         }
-        return new Translation(tr);
+        const transl = new Translation(tr);
+        transl.addCallback(latest => console.log("tr callback changed to", latest));
+        return transl;
     }
 
     public static TagRendering(json: TagRenderingConfigJson | string, propertyeName: string): TagDependantUIElementConstructor {

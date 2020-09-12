@@ -27,7 +27,6 @@ export class ImageSearcher extends UIEventSource<string[]> {
     private readonly _tags: UIEventSource<any>;
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
-    private _activated: boolean = false;
     public _deletedImages = new UIEventSource<string[]>([]);
 
 
@@ -81,7 +80,7 @@ export class ImageSearcher extends UIEventSource<string[]> {
                 }
             }
         });
-
+        this._tags.addCallbackAndRun(() => self.LoadImages());
 
     }
 
@@ -121,25 +120,14 @@ export class ImageSearcher extends UIEventSource<string[]> {
             return;
         }
         console.log("Deleting image...", key, " --> ", url);
-        State.state.changes.addTag(this._tags.data.id, new Tag(key, ""));
         this._deletedImages.data.push(url);
         this._deletedImages.ping();
+        this.ping();
+        State.state?.changes?.addTag(this._tags.data.id, new Tag(key, ""));
     }
 
-    public Activate() {
-        if (this._activated) {
-            return;
-        }
-        this._activated = true;
-        this.LoadImages();
-        const self = this;
-        this._tags.addCallback(() => self.LoadImages());
-    }
 
     private LoadImages(): void {
-        if (!this._activated) {
-            return;
-        }
         const imageTag = this._tags.data.image;
         if (imageTag !== undefined) {
             const bareImages = imageTag.split(";");

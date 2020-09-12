@@ -465,7 +465,6 @@ export class TagUtils {
         let leftoverTag = undefined;
         if (keyValues[freeformKey] !== undefined && keyValues[freeformKey].length !== 0) {
             leftoverTag = new Tag(freeformKey, keyValues[freeformKey].join(";"));
-            console.log("Leftovers are ", leftoverTag)
             if (freeformExtraTags !== undefined) {
                 leftoverTag = new And([
                     leftoverTag,

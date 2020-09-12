@@ -8,8 +8,8 @@ export class SlideShow extends UIElement {
 
     public readonly _currentSlide: UIEventSource<number> = new UIEventSource<number>(0);
     private readonly _noimages: UIElement;
-    private _prev: FixedUiElement;
-    private _next: FixedUiElement;
+    private _prev: UIElement;
+    private _next: UIElement;
 
     constructor(
         embeddedElements: UIEventSource<UIElement[]>,
@@ -75,18 +75,4 @@ export class SlideShow extends UIElement {
         this._currentSlide.setData(index);
     }
 
-    InnerUpdate(htmlElement) {
-        this._next.Update();
-        this._prev.Update();
-    }
-
-    Activate() {
-        for (const embeddedElement of this._embeddedElements.data) {
-            embeddedElement.Activate();
-        }
-        this._next.Update();
-        this._prev.Update();
-        return this;
-    }
-
-}
+ }

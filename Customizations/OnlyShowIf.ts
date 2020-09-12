@@ -103,12 +103,4 @@ class OnlyShowIf extends UIElement implements TagDependantUIElement {
         return this._embedded.IsQuestioning();
     }
 
-    Activate(): UIElement {
-        this._embedded.Activate();
-        return this;
-    }
-
-    Update(): void {
-        this._embedded.Update();
-    }
 }

@@ -1,16 +1,11 @@
 import {UIElement} from "./UIElement";
 import $ from "jquery"
-import {UserDetails} from "../Logic/Osm/OsmConnection";
 import {DropDown} from "./Input/DropDown";
-import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
-import {fail} from "assert";
 import Combine from "./Base/Combine";
-import {VerticalCombine} from "./Base/VerticalCombine";
 import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Imgur} from "../Logic/Web/Imgur";
-import {SubtleButton} from "./Base/SubtleButton";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -107,9 +102,20 @@ export class ImageUploadFlow extends UIElement {
         const label = new Combine([
             "<img style='width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;'  src='./assets/camera-plus.svg'/> ",
             Translations.t.image.addPicture
-                .SetStyle("width:max-content;font-size: 28px;font-weight: bold;float: left;margin-top: 4px;padding-top: 4px;padding-bottom: 4px;padding-left: 13px;"),
+                .SetStyle("width:max-content;font-size: 28px;" +
+                    "font-weight: bold;" +
+                    "float: left;" +
+                    "margin-top: 4px;" +
+                    "padding-top: 4px;" +
+                    "padding-bottom: 4px;" +
+                    "padding-left: 13px;"),
 
-        ]).SetStyle(" display: flex;cursor:pointer;padding: 0.5em;border-radius: 1em;border: 3px solid black;box-sizing:border-box;")
+        ]).SetStyle(" display: flex;" +
+            "cursor:pointer;" +
+            "padding: 0.5em;" +
+            "border-radius: 1em;" +
+            "border: 3px solid black;" +
+            "box-sizing:border-box;")
 
         const actualInputElement =
             `<input style='display: none' id='fileselector-${this.id}' type='file' accept='image/*' name='picField' multiple='multiple' alt=''/>`;

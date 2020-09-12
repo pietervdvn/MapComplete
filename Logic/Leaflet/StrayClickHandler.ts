@@ -31,16 +31,12 @@ export class StrayClickHandler {
             });
             const uiElement = uiToShow();
             const popup = L.popup().setContent(uiElement.Render());
-            uiElement.Update();
-            uiElement.Activate();
             self._lastMarker.addTo(map);
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
                 State.state.fullScreenMessage.setData(self._uiToShow());
             });
-            uiElement.Update();
-            uiElement.Activate();
         });
 
         State.state.selectedElement.addCallback(() => {

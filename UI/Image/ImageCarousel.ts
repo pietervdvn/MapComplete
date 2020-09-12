@@ -49,6 +49,7 @@ export class ImageCarousel extends TagDependantUIElement {
     private readonly _uiElements: UIEventSource<UIElement[]>;
 
     private readonly _deleteButton: UIElement;
+    private readonly _confirmation: UIElement;
 
     constructor(tags: UIEventSource<any>, osmConnection: OsmConnection = undefined) {
         super(tags);
@@ -76,74 +77,78 @@ export class ImageCarousel extends TagDependantUIElement {
                 return false;
             }
             return self.searcher.IsDeletable(self.searcher.data[i]);
-        }, [this.searcher, osmConnection?.userDetails]);
+        }, [this.searcher, osmConnection?.userDetails, this.slideshow._currentSlide]);
 
         const isDeleted: UIEventSource<boolean> = this.slideshow._currentSlide.map((i: number) => {
-            return self.searcher._deletedImages.data.indexOf(self.searcher.data[i]) >= 0;
-        }, [this.searcher, this.searcher._deletedImages]);
-
-        this.slideshow._currentSlide.addCallback(() => {
-            showDeleteButton.ping(); // This pings the showDeleteButton, which indicates that it has to hide it's subbuttons
-        })
-
-
-        const deleteCurrent = () => {
-            self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
-        }
-
+            const isDeleted = self.searcher._deletedImages.data.indexOf(self.searcher.data[i]) >= 0;
+            console.log("Now deleted: ", i, isDeleted);
+            return isDeleted;
+        }, [this.searcher, this.searcher._deletedImages, this.slideshow._currentSlide]);
 
         const style = ";padding:0.4em;height:2em;padding: 0.4em; font-weight:bold;";
         const backButton = Translations.t.image.dontDelete
             .SetStyle("background:black;border-radius:0.4em 0.4em 0 0" + style)
 
-        const deleteButton = Translations.t.image.doDelete
-            .SetStyle("background:#ff8c8c;border-radius:0 0 0.4em 0.4em" + style)
-            .onClick(deleteCurrent);
+        const deleteButton =
+            Translations.t.image.doDelete
+                .SetStyle("background:#ff8c8c;border-radius:0 0 0.4em 0.4em" + style);
+        this._confirmation = deleteButton;
+
+        const isDeletedBadge = Translations.t.image.isDeleted
+            .SetStyle("display:block;" +
+                "background-color: black;color:white;padding:0.4em;border-radius:0.4em");
+
+        const confirmDialog = new Combine([
+            backButton,
+            deleteButton]
+        ).SetStyle("display:flex;" +
+            "flex-direction:column;" +
+            "background:black;" +
+            "color:white;" +
+            "border-radius:0.5em;" +
+            "width:max-content;" +
+            "height:min-content;");
+
+        const smallDeleteButton = new FixedUiElement("<img style='width:1.5em'  src='./assets/delete.svg'>")
+            .SetStyle("display:block;" +
+                "width: 1.5em;" +
+                "height: 1.5em;" +
+                "padding: 0.5em;" +
+                "border-radius: 3em;" +
+                "background-color: black;")
 
         const deleteButtonCheckbox = new CheckBox(
-            new Combine([
-                backButton,
-                deleteButton]
-            ).SetStyle("display:flex;" +
-                "flex-direction:column;" +
-                "background:black;" +
-                "color:white;" +
-                "border-radius:0.5em;" +
-                "width:max-content;" +
-                "height:min-content;"),
+            confirmDialog,
             new VariableUiElement(
                 showDeleteButton.map(showDelete => {
 
                         if (isDeleted.data) {
-                            return Translations.t.image.isDeleted
-                                .SetStyle("display:block;" +
-                                    "background-color: black;color:white;padding:0.4em;border-radius:0.4em").Render()
+                            return isDeletedBadge.Render()
                         }
                         if (!showDelete) {
                             return "";
                         }
-                        return new FixedUiElement("<img style='width:1.5em'  src='./assets/delete.svg'>")
-                            .SetStyle("display:block;" +
-                                "width: 1.5em;" +
-                                "height: 1.5em;" +
-                                "padding: 0.5em;" +
-                                "border-radius: 3em;" +
-                                "background-color: black;").Render();
+                        return smallDeleteButton.Render();
                     }, [this.searcher._deletedImages, isDeleted]
                 )));
+
+        deleteButton.onClick(() => {
+            console.log("Deleting image...");
+            deleteButtonCheckbox.isEnabled.setData(false);
+            deleteButtonCheckbox.Update();
+            self.searcher.Delete(self.searcher.data[self.slideshow._currentSlide.data]);
+        });
+        
+        isDeleted.addCallback(isD => {
+            if(isD){
+                deleteButtonCheckbox.isEnabled.setData(false);
+            }
+        })
 
         this._deleteButton = deleteButtonCheckbox;
         this._deleteButton.SetStyle(
             "position:absolute;display:block;top:1em;left:5em;z-index: 7000;width:min-content;height:min-content;"
         )
-        this.slideshow._currentSlide.addCallback(() => {
-            deleteButtonCheckbox.isEnabled.setData(false)
-        })
-
-        this.searcher._deletedImages.addCallback(() => {
-            this.slideshow._currentSlide.ping();
-        })
-
 
     }
 
@@ -171,10 +176,5 @@ export class ImageCarousel extends TagDependantUIElement {
     }
 
 
-    Activate() {
-        super.Activate();
-        this.searcher.Activate();
-        return this;
-    }
 
 }

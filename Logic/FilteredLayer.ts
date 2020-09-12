@@ -240,14 +240,12 @@ export class FilteredLayer {
                 let content = undefined;
                 marker.bindPopup(popup)
                     .on("popupopen", () => {
-
                         if (content === undefined) {
                             uiElement = self._showOnPopup(eventSource, feature);
                             // Lazily create the content
                             content = uiElement.Render();
                         }
                         popup.setContent(content);
-                        uiElement.Activate();
                         uiElement.Update();
                     });
                 return marker;
@@ -290,8 +288,6 @@ export class FilteredLayer {
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
                     
-                    uiElement.Update();
-                    uiElement.Activate();
                     L.DomEvent.stop(e); // Marks the event as consumed
                 });
             }

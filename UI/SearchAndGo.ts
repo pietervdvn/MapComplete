@@ -44,13 +44,13 @@ export class SearchAndGo extends UIElement {
     // Triggered by 'enter' or onclick
     private RunSearch() {
         const searchString = this._searchField.GetValue().data;
-        this._searchField.Clear();
+        this._searchField.GetValue().setData("");
         this._placeholder.setData(Translations.t.general.search.searching);
         const self = this;
         Geocoding.Search(searchString,  (result) => {
 
                 if (result.length == 0) {
-                    this._placeholder.setData(Translations.t.general.search.nothing);
+                    self._placeholder.setData(Translations.t.general.search.nothing);
                     return;
                 }
 
@@ -60,10 +60,11 @@ export class SearchAndGo extends UIElement {
                     [bb[1], bb[3]]
                 ]
                 State.state.bm.map.fitBounds(bounds);
-                this._placeholder.setData(Translations.t.general.search.search);
+                self._placeholder.setData(Translations.t.general.search.search);
             },
             () => {
-                this._placeholder.setData(Translations.t.general.search.error);
+                self._searchField.GetValue().setData("");
+                self._placeholder.setData(Translations.t.general.search.error);
             });
 
     }
@@ -74,15 +75,5 @@ export class SearchAndGo extends UIElement {
 
     }
 
-    Update() {
-        super.Update();
-        this._searchField.Update();
-        this._goButton.Update();
-    }
 
-    Activate() {
-        super.Activate();
-        this._searchField.Activate();
-        this._goButton.Activate();
-    }
 }

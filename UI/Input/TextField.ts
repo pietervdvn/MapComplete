@@ -178,8 +178,10 @@ export class TextField<T> extends InputElement<T> {
             return `<textarea id="text-${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea>`
         }
         
+        const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
+        
         return `<form onSubmit='return false' class='form-text-field'>` +
-            `<input type='text' placeholder='${this._placeholder.InnerRender()}' id='text-${this.id}'>` +
+            `<input type='text' placeholder='${placeholder}' id='text-${this.id}'>` +
             `</form>`;
     }
 
@@ -246,11 +248,5 @@ export class TextField<T> extends InputElement<T> {
         return result !== undefined && result !== null;
     }
 
-    Clear() {
-        const field = document.getElementById('text-' + this.id);
-        if (field !== undefined) {
-            // @ts-ignore
-            field.value = "";
-        }
-    }
 }
+                

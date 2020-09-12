@@ -179,11 +179,11 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         const cancelContents = this._editMode.map((isEditing) => {
-            if (isEditing) {
-                return "<span class='skip-button'>" + Translations.t.general.cancel.R() + "</span>";
-            } else {
-                return "<span class='skip-button'>" + Translations.t.general.skip.R() + "</span>";
-            }
+            const tr = Translations.t.general;
+            const text = isEditing ? tr.cancel : tr.skip;
+            return text
+                .SetStyle("display: inline-block;border: solid black 0.5px;padding: 0.2em 0.3em;border-radius: 1.5em;")
+                .Render();
         }, [Locale.language]);
         // And at last, set up the skip button
         this._skipButton = new VariableUiElement(cancelContents).onClick(cancel);

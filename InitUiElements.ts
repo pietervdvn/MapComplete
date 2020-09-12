@@ -199,6 +199,10 @@ export class InitUiElements {
 
         new GeoLocationHandler().AttachTo("geolocate-button");
         State.state.locationControl.ping();
+        
+        // This 'leaks' the global state via the window object, useful for debugging
+        // @ts-ignore
+        window.mapcomplete_state = State.state;
     }
 
 
@@ -255,7 +259,8 @@ export class InitUiElements {
 
         const tabs = [
             {header: Img.AsImageElement(layoutToUse.icon), content: welcome},
-            {header: `<img src='./assets/osm-logo.svg'>`, content: Translations.t.general.openStreetMapIntro},
+            {header: `<img src='./assets/osm-logo.svg'>`, content: 
+                Translations.t.general.openStreetMapIntro},
 
         ]
 
@@ -289,9 +294,8 @@ export class InitUiElements {
         );
 
 
-        const fullOptions = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab);
-        fullOptions.ListenTo(State.state.osmConnection.userDetails);
-        return fullOptions;
+        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
+            .ListenTo(State.state.osmConnection.userDetails);
 
     }
 
@@ -313,7 +317,7 @@ export class InitUiElements {
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
-                // Don't autoclose the first 15 secs
+                // Don't autoclose the first 15 secs when the map is moving
                 return;
             }
             checkbox.isEnabled.setData(false);

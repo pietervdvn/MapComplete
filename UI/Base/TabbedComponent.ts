@@ -13,7 +13,9 @@ export class TabbedComponent extends UIElement {
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
             this.headers.push(Translations.W(element.header).onClick(() => self._source.setData(i)));
-            this.content.push(Translations.W(element.content));
+            const content = Translations.W(element.content)
+            this.ListenTo(content)
+            this.content.push(content);
         }
     }
 
@@ -33,12 +35,6 @@ export class TabbedComponent extends UIElement {
 
         const content = this.content[this._source.data];
         return headerBar + "<div class='tab-content'>" + (content?.Render() ?? "") + "</div>";
-    }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        
-        super.InnerUpdate(htmlElement);
-        this.content[this._source.data].Update();
     }
 
 }
