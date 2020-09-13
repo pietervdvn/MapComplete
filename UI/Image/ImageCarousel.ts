@@ -8,6 +8,8 @@ import {
     TagDependantUIElementConstructor
 } from "../../Customizations/UIElementConstructor";
 import Translation from "../i18n/Translation";
+import Combine from "../Base/Combine";
+import DeleteImage from "./DeleteImage";
 
 export class ImageCarouselConstructor implements TagDependantUIElementConstructor {
     IsKnown(properties: any): boolean {
@@ -34,16 +36,21 @@ export class ImageCarouselConstructor implements TagDependantUIElementConstructo
 
 export class ImageCarousel extends TagDependantUIElement {
 
-    public readonly searcher: ImageSearcher;
     public readonly slideshow: SlideShow;
 
     constructor(tags: UIEventSource<any>) {
         super(tags);
-        this.searcher = new ImageSearcher(tags);
-        const uiElements = this.searcher.map((imageURLS: string[]) => {
+        const searcher : UIEventSource<{url:string}[]> = new ImageSearcher(tags);
+        const uiElements = searcher.map((imageURLS: {key: string, url:string}[]) => {
             const uiElements: UIElement[] = [];
             for (const url of imageURLS) {
-                const image = ImageSearcher.CreateImageElement(url);
+                let image = ImageSearcher.CreateImageElement(url.url);
+                if(url.key !== undefined){
+                    image = new Combine([
+                        image,
+                        new DeleteImage(url.key, tags)
+                    ]);
+                }
                 uiElements.push(image);
             }
             return uiElements;

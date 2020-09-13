@@ -2,10 +2,8 @@ import {WikimediaImage} from "../UI/Image/WikimediaImage";
 import {SimpleImageElement} from "../UI/Image/SimpleImageElement";
 import {UIElement} from "../UI/UIElement";
 import {ImgurImage} from "../UI/Image/ImgurImage";
-import {State} from "../State";
 import {ImagesInCategory, Wikidata, Wikimedia} from "./Web/Wikimedia";
 import {UIEventSource} from "./UIEventSource";
-import {Tag} from "./Tags";
 
 /**
  * There are multiple way to fetch images for an object
@@ -22,12 +20,11 @@ import {Tag} from "./Tags";
  * Class which search for all the possible locations for images and which builds a list of UI-elements for it.
  * Note that this list is embedded into an UIEVentSource, ready to put it into a carousel
  */
-export class ImageSearcher extends UIEventSource<string[]> {
+export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
 
     private readonly _tags: UIEventSource<any>;
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
-    public _deletedImages = new UIEventSource<string[]>([]);
 
 
     constructor(tags: UIEventSource<any>) {
@@ -45,12 +42,12 @@ export class ImageSearcher extends UIEventSource<string[]> {
                         wikidataId = wikidataId.substr(1);
                     }
                     Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
-                        self.AddImage(wd.image);
+                        self.AddImage(undefined, wd.image);
                         Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
                             for (const image of images.images) {
                                 // @ts-ignore
                                 if (image.startsWith("File:")) {
-                                    self.AddImage(image);
+                                    self.AddImage(undefined, image);
                                 }
                             }
                         })
@@ -69,13 +66,13 @@ export class ImageSearcher extends UIEventSource<string[]> {
                         for (const image of images.images) {
                             // @ts-ignore
                             if (image.startsWith("File:")) {
-                                self.AddImage(image);
+                                self.AddImage(undefined, image);
                             }
                         }
                     })
                 } else { // @ts-ignore
                     if (commons.startsWith("File:")) {
-                        self.AddImage(commons);
+                        self.AddImage(undefined, commons);
                     }
                 }
             }
@@ -84,62 +81,34 @@ export class ImageSearcher extends UIEventSource<string[]> {
 
     }
 
-    private AddImage(url: string) {
+    private AddImage(key: string, url: string) {
         if (url === undefined || url === null || url === "")  {
             return;
         }
 
         for (const el of this.data) {
-            if (el === url) {
+            if (el.url === url) {
                 return;
             }
         }
 
-        this.data.push(url);
+        this.data.push({key:key, url:url});
         this.ping();
     }
-
-    private ImageKey(url: string): string {
-        const tgs = this._tags.data;
-        for (const key in tgs) {
-            if (tgs[key] === url) {
-                return key;
-            }
-        }
-        return undefined;
-    }
-
-    public IsDeletable(url: string): boolean {
-        return this.ImageKey(url) !== undefined;
-    }
-
-    public Delete(url: string): void {
-
-        const key = this.ImageKey(url);
-        if (key === undefined) {
-            return;
-        }
-        console.log("Deleting image...", key, " --> ", url);
-        this._deletedImages.data.push(url);
-        this._deletedImages.ping();
-        this.ping();
-        State.state?.changes?.addTag(this._tags.data.id, new Tag(key, ""));
-    }
-
-
+    
     private LoadImages(): void {
         const imageTag = this._tags.data.image;
         if (imageTag !== undefined) {
             const bareImages = imageTag.split(";");
             for (const bareImage of bareImages) {
-                this.AddImage(bareImage);
+                this.AddImage("image", bareImage);
             }
         }
 
         for (const key in this._tags.data) {
             if (key.startsWith("image:")) {
                 const url = this._tags.data[key]
-                this.AddImage(url);
+                this.AddImage(key, url);
             }
         }
 

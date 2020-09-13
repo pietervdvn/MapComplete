@@ -71,5 +71,12 @@ export class SlideShow extends UIElement {
         index = index % this._embeddedElements.data.length;
         this._currentSlide.setData(index);
     }
+    
+    Update() {
+        super.Update();
+        for (const uiElement of this._embeddedElements.data) {
+            uiElement.Update();
+        }
+    }
 
- }
+}

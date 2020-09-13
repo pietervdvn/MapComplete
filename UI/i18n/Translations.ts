@@ -1015,6 +1015,10 @@ export default class Translations {
                     "</ul></p>" +
                     "<p>Merk je een bug of wil je een extra feature? Wil je helpen vertalen? Bezoek dan de <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>broncode</a> en <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker</a></p>",
 
+            }),
+            backgroundMap: new T({
+                "en":"Background map",
+                "nl":"Achtergrondkaart"
             })
 
 

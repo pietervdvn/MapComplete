@@ -1,10 +1,9 @@
-import { UIElement } from "./UIElement";
-import { FilteredLayer } from "../Logic/FilteredLayer";
-import { CheckBox } from "./Input/CheckBox";
+import {UIElement} from "./UIElement";
+import {CheckBox} from "./Input/CheckBox";
 import Combine from "./Base/Combine";
-import {Utils} from "../Utils";
 import {Img} from "./Img";
 import {State} from "../State";
+import Translations from "./i18n/Translations";
 
 export class LayerSelection extends UIElement {
 
@@ -15,37 +14,27 @@ export class LayerSelection extends UIElement {
         this._checkboxes = [];
 
         for (const layer of State.state.filteredLayers.data) {
-            const checkbox = `<svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7.28571L10.8261 15L23 3" stroke="#003B8B" stroke-width="4" stroke-linejoin="round"/>
-            </svg>`;
-            let icon = "<img >";
+            const checkbox = Img.checkmark;
+            let icon = "";
             if (layer.layerDef.icon && layer.layerDef.icon !== "") {
-                icon = `<img width="20" height="20" src="${layer.layerDef.icon}" alt="">`
+                icon = `<img width="20" height="20" src="${layer.layerDef.icon}">`
             }
-            const name = layer.layerDef.name;
+            const name = Translations.WT(layer.layerDef.name).Clone()
+                .SetStyle("font-size:large;");
 
             this._checkboxes.push(new CheckBox(
-              new Combine([checkbox, icon, name]),
-              new Combine([
-                  Img.no_checkmark,
-                  icon,
-                  layer.layerDef.name]),
-              layer.isDisplayed));
-      }
+                new Combine([checkbox, icon, name]),
+                new Combine([Img.no_checkmark, icon, name]),
+                layer.isDisplayed)
+                .SetStyle("margin:0.3em;")
+            );
+        }
     }
 
-  InnerRender(): string {
-    let html = ``;
-
-    for (const checkBox of this._checkboxes) {
-      const checkBoxHTML = checkBox.Render();
-      const checkBoxListItem = `<li>${checkBoxHTML}</li>`;
-
-      html = html + checkBoxListItem;
+    InnerRender(): string {
+        return new Combine(this._checkboxes)
+            .SetStyle("display:flex;flex-direction:column;")
+            .Render();
     }
 
-
-    return `<ul>${html}</ul>`;
-    }
-    
 }

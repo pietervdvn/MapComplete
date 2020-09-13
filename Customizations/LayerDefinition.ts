@@ -17,7 +17,7 @@ export class LayerDefinition {
     /**
      * This name is used in the 'hide or show this layer'-buttons
      */
-    name: string | UIElement;
+    name: string | Translation;
 
     /***
      * This is shown under the 'add new' button to indicate what kind of feature one is adding.

@@ -345,31 +345,56 @@ export class InitUiElements {
         ), Locale.language);
     }
 
-    static InitLayerSelection() {
-        const closedFilterButton = `<button id="filter__button" class="filter__button shadow">${Img.closedFilterButton}</button>`;
-
-        const openFilterButton = `<button id="filter__button" class="filter__button">${Img.openFilterButton}</button>`;
-
+    private static GenerateLayerControlPanel() {
         let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
             return {value: layer, shown: layer.name}
         });
-        const backgroundMapPicker = new Combine([new DropDown(`Background map`, baseLayerOptions, State.state.bm.CurrentLayer), openFilterButton]);
-        const layerSelection = new Combine([`<p class="filter__label">Maplayers</p>`, new LayerSelection()]);
-        let layerControl = backgroundMapPicker;
+        let layerControlPanel = new Combine([new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
+        layerControlPanel.SetStyle("margin:1em");
         if (State.state.filteredLayers.data.length > 1) {
-            layerControl = new Combine([layerSelection, backgroundMapPicker]);
+            const layerSelection = new LayerSelection();
+            layerControlPanel = new Combine([layerSelection, layerControlPanel]);
         }
+        return layerControlPanel;
+    }
 
+    static InitLayerSelection() {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const checkbox = new CheckBox(layerControl, closedFilterButton,
+            const layerControlPanel = this.GenerateLayerControlPanel()
+                .SetStyle("display:block;padding:1em;border-radius:1em;");
+            const closeButton = new Combine([Img.openFilterButton])
+                .SetStyle("display:block; width: min-content; background: #e5f5ff;padding:1em; border-radius:1em;");
+            const checkbox = new CheckBox(
+                new Combine([
+                    closeButton,
+                    layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
+                ,
+                new Combine([Img.closedFilterButton])
+                    .SetStyle("display:block;border-radius:50%;background:white;padding:1em;"),
                 QueryParameters.GetQueryParameter("layer-control-toggle", "false")
                     .map((str) => str !== "false", [], b => "" + b)
             );
-            checkbox.AttachTo("filter__selection");
+            checkbox
+                .AttachTo("layer-selection");
+
+
             State.state.bm.Location.addCallback(() => {
+                // Close the layer selection when the map is moved
                 checkbox.isEnabled.setData(false);
             });
+
+            const fullScreen = this.GenerateLayerControlPanel();
+            checkbox.isEnabled.addCallback(isEnabled => {
+                if (isEnabled) {
+                    State.state.fullScreenMessage.setData(fullScreen);
+                }
+            })
+            State.state.fullScreenMessage.addCallbackAndRun(latest => {
+                if (latest === undefined) {
+                    checkbox.isEnabled.setData(false);
+                }
+            })
 
         });
     }

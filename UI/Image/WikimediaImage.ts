@@ -35,7 +35,7 @@ export class WikimediaImage extends UIElement {
 
         const wikimediaLink =
             "<a href='https://commons.wikimedia.org/wiki/" + this._imageLocation + "' target='_blank'>" +
-            "<img class='wikimedia-link' src='./assets/wikimedia-commons-white.svg' alt='Wikimedia Commons Logo'/>" +
+            "<img style='width:2em;height: 2em' class='wikimedia-link' src='./assets/wikimedia-commons-white.svg' alt='Wikimedia Commons Logo'/>" +
             "</a> ";
 
         const attribution =
