@@ -19,10 +19,21 @@
           "if": {
             "and": [
               "cyclestreet=yes",
+              "maxspeed=30",
               "proposed:cyclestreet="
             ]
           },
-          "then": "Deze straat is een fietsstraat"
+          "then": "Deze straat is een fietsstraat (en dus zone 30)"
+        },
+        {
+          "if": {
+            "and": [
+              "cyclestreet=yes",
+              "proposed:cyclestreet="
+            ]
+          },
+          "then": "Deze straat is een fietsstraat",
+          "hideInAnswer": true
         },
         {
           "if": {

@@ -184,7 +184,7 @@ export class FromJSON {
                 const k = FromJSON.Tag(mapping.if, `IN mapping #${i} of tagrendering ${propertyName}`)
 
                 if (question !== undefined && !mapping.hideInAnswer && !k.isUsableAsAnswer()) {
-                    throw `Invalid mapping in ${propertyName}: the tags use an OR-expression or regex expression but are also assignable as answer.`
+                    throw `Invalid mapping in ${propertyName}.${i}: this mapping uses a regex tag or an OR, but is also answerable. Either mark 'Not an answer option' or only use '=' to map key/values.`
                 }
 
                 return {

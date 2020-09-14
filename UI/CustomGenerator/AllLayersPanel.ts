@@ -31,6 +31,7 @@ export default class AllLayersPanel extends UIElement {
 
         this.createPanels(userDetails);
         const self = this;
+        this.dumbMode = false;
         config.map<number>(config => config.layers.length).addCallback(() => self.createPanels(userDetails));
 
     }

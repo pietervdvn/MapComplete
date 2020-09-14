@@ -65,9 +65,6 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
             setting(options?.noLanguage ? TextField.StringInput() : new MultiLingualTextFields(languages)
                 , "question", "Question", "If the key or mapping doesn't match, this question is asked"),
 
-            setting(new AndOrTagInput(), "condition", "Condition",
-                "Only show this tag rendering if these tags matches. Optional field.<br/>Note that the Overpass-tags are already always included in this object"),
-
             "<h3>Freeform key</h3>",
             setting(TextField.KeyInput(true), ["freeform", "key"], "Freeform key<br/>",
                 "If specified, the rendering will search if this key is present." +
@@ -84,9 +81,9 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         const settings: (string | SingleSetting<any>)[] = [
             setting(
                 options?.noLanguage ? TextField.StringInput() :
-                new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
-            
-            questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data`: "",
+                    new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
+
+            questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",
             ...(options?.disableQuestions ? [] : questionSettings),
 
             "<h3>Mappings</h3>",
@@ -94,7 +91,12 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
                 () => ({if: {and: []}, then: {}}),
                 () => new MappingInput(languages, options?.disableQuestions ?? false),
                 undefined, {allowMovement: true}), "mappings",
-                "If a tag matches, then show the first respective text", "")
+                "If a tag matches, then show the first respective text", ""),
+
+            "<h3>Condition</h3>",
+            setting(new AndOrTagInput(), "condition", "Only show this tagrendering if the following condition applies",
+                "Only show this tag rendering if these tags matches. Optional field.<br/>Note that the Overpass-tags are already always included in this object"),
+
 
         ];
 

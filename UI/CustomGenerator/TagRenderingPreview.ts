@@ -2,7 +2,6 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingPanel from "./TagRenderingPanel";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Combine from "../Base/Combine";
@@ -33,7 +32,6 @@ export default class TagRenderingPreview extends UIElement {
         }
 
         let es = tagRenderingPanel.GetValue();
-        let tagRenderingConfig: TagRenderingConfigJson = es.data;
 
         let rendering: UIElement;
         try {

@@ -292,14 +292,13 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
     private InputElementForMapping(mapping: { k: TagsFilter, txt: (string | Translation) }, substituteValues: boolean): FixedInputElement<TagsFilter> {
         if (substituteValues) {
-
             return new FixedInputElement(this.ApplyTemplate(mapping.txt),
                 mapping.k.substituteValues(this.currentTags.data),
                 (t0, t1) => t0.isEquivalent(t1)
             );
         }
         return new FixedInputElement(this.ApplyTemplate(mapping.txt), mapping.k,
-            (t0, t1) => t0.isEquivalent(t1));
+            (t0, t1) => t1.isEquivalent(t0));
     }
 
 

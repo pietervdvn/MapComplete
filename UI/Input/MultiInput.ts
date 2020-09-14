@@ -25,6 +25,7 @@ export class MultiInput<T> extends InputElement<T[]> {
         super(undefined);
         this._value = value ?? new UIEventSource<T[]>([]);
         value = this._value;
+        this.ListenTo(value.map((latest : T[]) => latest.length));
         this._options = options ?? {};
 
         this.addTag = new SubtleButton("./assets/addSmall.svg", addAElement)

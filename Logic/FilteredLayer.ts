@@ -39,6 +39,7 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
+    
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
     private static readonly grid = codegrid.CodeGrid();
@@ -287,7 +288,7 @@ export class FilteredLayer {
                     }).setContent(uiElement.Render())
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
-                    
+                    uiElement.Update();
                     L.DomEvent.stop(e); // Marks the event as consumed
                 });
             }

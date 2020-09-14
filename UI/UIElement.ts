@@ -191,7 +191,6 @@ export abstract class UIElement extends UIEventSource<string> {
             this.clss.push(clss);
             this.Update();
         }
-        console.log(this.clss)
         return this;
     }
 

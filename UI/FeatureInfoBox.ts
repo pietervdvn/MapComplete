@@ -39,7 +39,7 @@ export class FeatureInfoBox extends UIElement {
         this._feature = feature;
         this._tagsES = tagsES;
         this.ListenTo(State.state.osmConnection.userDetails);
-
+        this.SetClass("featureinfobox");
         const deps = {tags: this._tagsES, changes: this._changes}
 
         this._infoboxes = [];
@@ -153,7 +153,7 @@ export class FeatureInfoBox extends UIElement {
             this._title,
             "<div class='infoboxcontents'>",
             infoboxcontents,
-            "</div>"]).SetClass("featureinfobox")
+            "</div>"])
             .Render();
     }
     

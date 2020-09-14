@@ -42,7 +42,7 @@ export class SimpleAddUI extends UIElement {
         this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
         
         this._addButtons = [];
-        this.SetClass("add-ui");
+        this.SetStyle("font-size:large");
         
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
@@ -137,10 +137,10 @@ export class SimpleAddUI extends UIElement {
                 tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > State.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
                 tagInfo = `<br/>More information about the preset: ${tagInfo}`
             }
-            
+
             return new Combine([
                 Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
-                userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>":"",
+                userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
                 this.confirmButton,
                 this.cancelButton,
                 tagInfo
