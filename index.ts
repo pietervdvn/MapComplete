@@ -34,7 +34,6 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 let defaultLayout = "bookcases"
-let hash = window.location.hash;
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {
@@ -68,7 +67,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
     const themeName = layoutFromBase64.substr("wiki:".length);
     new FixedUiElement(`Downloading ${themeName} from the wiki...`)
         .AttachTo("centermessage");
-    const  cleanUrl = `https://wiki.openstreetmap.org/wiki/${themeName}`;
+    const cleanUrl = `https://wiki.openstreetmap.org/wiki/${themeName}`;
     const url = `https://cors-anywhere.herokuapp.com/` + cleanUrl; // VERY SAFE AND HACKER-PROOF!
 
     $.ajax({
@@ -82,6 +81,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
             try {
                 console.log("DOWNLOADED:",layoutJson);
                 const layout = FromJSON.LayoutFromJSON(JSON.parse(layoutJson));
+                layout.id = layoutFromBase64;
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64);
             } catch (e) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
@@ -96,9 +96,9 @@ if (layoutFromBase64.startsWith("wiki:")) {
             .AttachTo("centermessage");
     });
 
+} else if (layoutFromBase64 !== "false") {
+    layoutToUse = InitUiElements.LoadLayoutFromHash(userLayoutParam);
+    InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
-    if (layoutFromBase64 !== "false") {
-        layoutToUse = InitUiElements.LoadLayoutFromHash(userLayoutParam);
-    }
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 }

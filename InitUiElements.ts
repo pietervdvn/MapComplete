@@ -34,27 +34,34 @@ import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {Layout} from "./Customizations/Layout";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
+import {Utils} from "./Utils";
 
 export class InitUiElements {
 
 
-    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, defaultLayout1: string ) {
+    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string ) {
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
-            new FixedUiElement("Error: incorrect layout <i>" + defaultLayout1 + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
+            new FixedUiElement("Error: incorrect layout <i>" + layoutName + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
             });
             throw "Incorrect layout"
         }
 
-        console.log("Using layout: ", layoutToUse.id);
+        const hash = location.hash.substr(1);
+        console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
         State.state = new State(layoutToUse);
+        
+        // This 'leaks' the global state via the window object, useful for debugging
+        // @ts-ignore
+        window.mapcomplete_state = State.state;
 
         if (layoutToUse.hideFromOverview) {
             State.state.osmConnection.GetPreference("hidden-theme-" + layoutToUse.id + "-enabled").setData("true");
         }
 
         if (layoutFromBase64 !== "false") {
-            State.state.layoutDefinition = location.hash.substr(1);
+            State.state.layoutDefinition = hash;
+            console.log("Layout definition:",Utils.EllipsesAfter(State.state.layoutDefinition, 100))
             if (testing.data !== "true") {
                 State.state.osmConnection.OnLoggedIn(() => {
                     State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
@@ -200,9 +207,7 @@ export class InitUiElements {
         new GeoLocationHandler().AttachTo("geolocate-button");
         State.state.locationControl.ping();
         
-        // This 'leaks' the global state via the window object, useful for debugging
-        // @ts-ignore
-        window.mapcomplete_state = State.state;
+       
     }
 
 
