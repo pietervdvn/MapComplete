@@ -36,6 +36,7 @@ export class StrayClickHandler {
 
             self._lastMarker.on("click", () => {
                 State.state.fullScreenMessage.setData(self._uiToShow());
+                uiElement.Update();
             });
         });
 

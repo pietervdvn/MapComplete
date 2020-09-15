@@ -173,10 +173,6 @@ export class State {
         );
 
 
-        this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
-            str => Utils.Dedup(str?.split(";")) ?? [],
-            [], layers => Utils.Dedup(layers)?.join(";")
-        );
 
         this.installedThemes = this.osmConnection.preferencesHandler.preferences.map<{ layout: Layout, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: Layout, definition: string }[] = [];
@@ -212,6 +208,13 @@ export class State {
             return installedThemes;
 
         });
+
+
+        // IMportant: the favourite layers are initiliazed _after_ the installed themes, as these might contain an installedTheme
+        this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
+            str => Utils.Dedup(str?.split(";")) ?? [],
+            [], layers => Utils.Dedup(layers)?.join(";")
+        );
 
         Locale.language.syncWith(this.osmConnection.GetPreference("language"));
 
