@@ -47,8 +47,6 @@ export default class Translations {
                     "Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>" +
                     "Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>" +
                     "Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
-
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
             }),
            
             station: {
@@ -284,7 +282,7 @@ export default class Translations {
                         en: "Does this shop sell second-hand bikes?",
                         nl: "Verkoopt deze winkel tweedehands fietsen?",
                         fr: "Est-ce ce magasin vend des vélos d'occasion",
-                        gl: "Esta tenda vende bicicletas de segunda man?".
+                        gl: "Esta tenda vende bicicletas de segunda man?",
                         de: "Verkauft dieses Geschäft gebrauchte Fahrräder?"
                     }),
                     yes: new T({
@@ -494,7 +492,7 @@ export default class Translations {
                 nl: "<span class='thanks'>Je afbeelding is toegevoegd. Bedankt om te helpen!</span>",
                 fr: "<span class='thanks'>Votre photo est ajouté. Merci beaucoup!</span>",
                 gl: "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>",
-                en: "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
+                de: "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
             }),
             dontDelete: new T({
                 "nl":"Terug",
@@ -532,13 +530,13 @@ export default class Translations {
                 de: 'Vergrößern, um die Daten anzuzeigen oder zu bearbeiten'
             }),
             ready: new T({
-                en: 'Done!',
-                ca: 'Fet.',
-                es: 'Hecho.',
-                nl: 'Klaar!',
-                fr: 'Finis!',
-                gl: 'Feito!',
-                de: 'Erledigt!
+                en: "Done!",
+                ca: "Fet.",
+                es: "Hecho.",
+                nl: "Klaar!",
+                fr: "Finis!",
+                gl: "Feito!",
+                de: "Erledigt!"
             }),
 
             retrying: new T({
@@ -596,7 +594,7 @@ export default class Translations {
                     nl: "Aan het zoeken...",
                     fr: "Chargement",
                     gl: "Procurando...",
-                    en: "Auf der Suche..."
+                    de: "Auf der Suche..."
 
                 }),
                 nothing: new Translation({
@@ -924,7 +922,7 @@ export default class Translations {
                     es: "<h3>Añadir a la pantalla de inicio</h3>Puedes añadir esta web en la pantalla de inicio de tu smartphone para que se vea más nativo. Aprieta el botón 'añadir a inicio' en la barra de direcciones URL para hacerlo.",
                     fr: "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le boutton 'ajouter à l'evran d'accueil' dans la barre d'URL pour éffecteur cette tâche",
                     gl: "<h3>Engadir á pantalla de inicio</h3>Podes engadir esta web na pantalla de inicio do teu smartphone para que se vexa máis nativo. Preme o botón 'engadir ó inicio' na barra de enderezos URL para facelo.",
-                    nl: "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel"
+                    nl: "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
                     de: "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
                 }),
                 embedIntro: new T({
