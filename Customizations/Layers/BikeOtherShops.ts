@@ -1,16 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import Translations from "../../UI/i18n/Translations";
 import {And, RegexTag, Tag} from "../../Logic/Tags";
-import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
-import ShopRetail from "../Questions/bike/ShopRetail";
-import ShopPump from "../Questions/bike/ShopPump";
-import ShopRental from "../Questions/bike/ShopRental";
-import ShopRepair from "../Questions/bike/ShopRepair";
-import ShopDiy from "../Questions/bike/ShopDiy";
-import ShopName from "../Questions/bike/ShopName";
-import ShopSecondHand from "../Questions/bike/ShopSecondHand";
-import {PhoneNumberQuestion} from "../Questions/PhoneNumberQuestion";
-import Website from "../Questions/Website";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 
@@ -59,16 +49,15 @@ export default class BikeOtherShops extends LayerDefinition {
         })
         
         this.elementsToShow = [
-            new ImageCarouselWithUploadConstructor(),
-            new ShopName(),
-            new PhoneNumberQuestion("{name}"),
-            new Website("{name}"),
-            new ShopRetail(),
-            new ShopRental(),
-            new ShopRepair(),
-            new ShopPump(),
-            new ShopDiy(),
-            new ShopSecondHand()
+            // new ImageCarouselWithUploadConstructor(),
+            // new PhoneNumberQuestion("{name}"),
+            // new Website("{name}"),
+            // ShopRetail
+            // new ShopRental(),
+            // new ShopRepair(),
+            // new ShopPump(),
+            // new ShopDiy(),
+            // new ShopSecondHand()
         ]
     }
 

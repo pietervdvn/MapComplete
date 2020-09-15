@@ -4,7 +4,8 @@
     "en": "Bike stations (repair, pump or both)",
     "nl": "Fietspunten (herstel, pomp of allebei)",
     "fr": "Station velo (réparation, pompe à vélo)",
-    "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)"
+    "gl": "Estación de bicicletas (arranxo, bomba de ar ou ambos)",
+    "de": "Fahrradstation (Reparatur, Pumpe oder beides)"
   },
   "minzoom": 13,
   "overpassTags": {
@@ -17,7 +18,8 @@
       "en": "Bike station (pump & repair)",
       "nl": "Herstelpunt met pomp",
       "fr": "Point station velo avec pompe",
-      "gl": "Estación de bicicletas (arranxo e bomba de ar)"
+      "gl": "Estación de bicicletas (arranxo e bomba de ar)",
+      "de": "Fahrradstation (Pumpe & Reparatur)"
     },
     "mappings": [
       {
@@ -31,7 +33,8 @@
           "en": "Bike repair station",
           "nl": "Herstelpunt",
           "fr": "Point de réparation velo",
-          "gl": "Estación de arranxo de bicicletas"
+          "gl": "Estación de arranxo de bicicletas",
+          "de": "Fahrradwerkstatt"
         }
       },
       {
@@ -235,7 +238,7 @@
         "en": "This pump supports the following valves: {valves}",
         "nl": "Deze pomp werkt met de volgende ventielen: {valves}",
         "fr": "Cette pompe est compatible avec les valves suivantes: {valves}",
-        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}"
+        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}",
       },
       "freeform": {
         "#addExtraTags": [

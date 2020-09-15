@@ -33,8 +33,6 @@ export class State {
         tagsVisibleAndWikiLinked: 150,
         themeGeneratorReadOnlyUnlock: 200,
         themeGeneratorFullUnlock: 500, 
-
-
     };
 
     public static runningFromConsole: boolean = false; 
@@ -118,7 +116,7 @@ export class State {
         str => isNaN(Number(str)) ? 0 : Number(str),[],n => ""+n
     );
 
-    constructor(layoutToUse: Layout, useDevServer = false) {
+    constructor(layoutToUse: Layout) {
         const self = this;
         this.layoutToUse.setData(layoutToUse)
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({

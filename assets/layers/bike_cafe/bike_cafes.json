@@ -174,7 +174,11 @@
         "fr": "Quel est l'adresse email de {name}?",
         "gl": "Cal é o enderezo de correo electrónico de {name}?"
       },
-      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,

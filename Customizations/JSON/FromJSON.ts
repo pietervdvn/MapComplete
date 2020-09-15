@@ -18,7 +18,7 @@ import * as birdhides from "../../assets/layers/bird_hide/birdhides.json"
 import * as nature_reserve from "../../assets/layers/nature_reserve/nature_reserve.json"
 import * as bike_cafes from "../../assets/layers/bike_cafe/bike_cafes.json"
 import * as cycling_themed_objects from "../../assets/layers/cycling_themed_object/cycling_themed_objects.json"
-
+import * as bike_shops from "../../assets/layers/bike_shop/bike_shop.json"
 import {Utils} from "../../Utils";
 import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
@@ -44,7 +44,8 @@ export class FromJSON {
             FromJSON.Layer(birdhides),
             FromJSON.Layer(nature_reserve),
             FromJSON.Layer(bike_cafes),
-            FromJSON.Layer(cycling_themed_objects)
+            FromJSON.Layer(cycling_themed_objects),
+            FromJSON.Layer(bike_shops)
         ];
 
         for (const layer of sharedLayersList) {
