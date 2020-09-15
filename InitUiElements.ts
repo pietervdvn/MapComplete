@@ -39,7 +39,42 @@ import {Utils} from "./Utils";
 export class InitUiElements {
 
 
-    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string ) {
+    private static setupAllLayerElements() {
+
+        // ------------- Setup the layers -------------------------------
+
+        InitUiElements.InitLayers();
+        InitUiElements.InitLayerSelection();
+
+
+        // ------------------ Setup various other UI elements ------------
+
+
+        InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+
+            let presetCount = 0;
+            for (const layer of State.state.filteredLayers.data) {
+                for (const preset of layer.layerDef.presets) {
+                    presetCount++;
+                }
+            }
+            if (presetCount == 0) {
+                return;
+            }
+
+
+            new StrayClickHandler(() => {
+                    return new SimpleAddUI();
+                }
+            );
+        });
+
+        new CenterMessageBox().AttachTo("centermessage");
+
+    }
+
+    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
+                   layoutDefinition: string = "") {
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
             new FixedUiElement("Error: incorrect layout <i>" + layoutName + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
@@ -47,7 +82,6 @@ export class InitUiElements {
             throw "Incorrect layout"
         }
 
-        const hash = location.hash.substr(1);
         console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
         State.state = new State(layoutToUse);
         
@@ -60,8 +94,8 @@ export class InitUiElements {
         }
 
         if (layoutFromBase64 !== "false") {
-            State.state.layoutDefinition = hash;
-            console.log("Layout definition:",Utils.EllipsesAfter(State.state.layoutDefinition, 100))
+            State.state.layoutDefinition = layoutDefinition;
+            console.log("Layout definition:", Utils.EllipsesAfter(State.state.layoutDefinition, 100))
             if (testing.data !== "true") {
                 State.state.osmConnection.OnLoggedIn(() => {
                     State.state.osmConnection.GetLongPreference("installed-theme-" + layoutToUse.id).setData(State.state.layoutDefinition);
@@ -74,41 +108,7 @@ export class InitUiElements {
 
         new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
 
-        function setupAllLayerElements() {
-
-            // ------------- Setup the layers -------------------------------
-
-            InitUiElements.InitLayers();
-            InitUiElements.InitLayerSelection();
-
-
-            // ------------------ Setup various other UI elements ------------
-
-
-            InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
-
-                let presetCount = 0;
-                for (const layer of State.state.filteredLayers.data) {
-                    for (const preset of layer.layerDef.presets) {
-                        presetCount++;
-                    }
-                }
-                if (presetCount == 0) {
-                    return;
-                }
-
-
-                new StrayClickHandler(() => {
-                        return new SimpleAddUI();
-                    }
-                );
-            });
-
-            new CenterMessageBox().AttachTo("centermessage");
-
-        }
-
-        setupAllLayerElements();
+        InitUiElements.setupAllLayerElements();
 
 
         function updateFavs() {
@@ -133,9 +133,10 @@ export class InitUiElements {
                 }
             }
 
-            setupAllLayerElements();
+            InitUiElements.setupAllLayerElements();
             State.state.layerUpdater.ForceRefresh();
-            State.state.locationControl.ping();
+            State.state.layoutToUse.ping();
+
         }
 
         if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {

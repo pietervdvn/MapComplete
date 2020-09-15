@@ -20,11 +20,13 @@ export class LayerUpdater {
      */
     private readonly previousBounds: Map<number, Bounds[]> = new Map<number, Bounds[]>();
 
+    private readonly state: State;
+    
     /**
      * The most important layer should go first, as that one gets first pick for the questions
      */
     constructor(state: State) {
-
+        this.state = state;
         const self = this;
 
         this.sufficentlyZoomed = State.state.locationControl.map(location => {
@@ -178,6 +180,7 @@ export class LayerUpdater {
         for (let i = 0; i < 25; i++) {
             this.previousBounds.set(i, []);
         }
+        this.update(this.state);
     }
 
 }

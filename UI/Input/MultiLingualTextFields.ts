@@ -12,15 +12,23 @@ export default class MultiLingualTextFields extends InputElement<any> {
                 value: UIEventSource<Map<string, UIEventSource<string>>> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource({});
-        const self = this;
         
+        this._value.addCallbackAndRun(latestData =>  {
+            if(typeof(latestData) === "string"){
+                console.warn("Refusing string for multilingual input",latestData);
+                self._value.setData({});
+            }
+        })
+        
+        const self = this;
+
         function setup(languages: string[]) {
-            if(languages === undefined){
+            if (languages === undefined) {
                 return;
             }
             const newFields = new Map<string, TextField<string>>();
             for (const language of languages) {
-                if(language.length != 2){
+                if (language.length != 2) {
                     continue;
                 }
                 

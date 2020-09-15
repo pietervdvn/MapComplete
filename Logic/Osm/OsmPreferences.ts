@@ -65,17 +65,16 @@ export class OsmPreferences {
                 source.setData(undefined);
                 return;
             }
-            if (l > 25) {
+            const prefsCount = Number(l);
+            if (prefsCount > 100) {
                 throw "Length to long";
             }
-            const prefsCount = Number(l);
             let str = "";
             for (let i = 0; i < prefsCount; i++) {
                 str += self.GetPreference(allStartWith + "-" + i, "").data;
             }
 
             source.setData(str);
-            source.ping();
             console.log("Long preference", key, "has", str.length, "chars");
         }
 

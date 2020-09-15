@@ -6,11 +6,11 @@ import {State} from "../../State";
 
 export class ChangesetHandler {
 
-    private _dryRun: boolean;
-    private userDetails: UIEventSource<UserDetails>;
-    private auth: any;
+    private readonly _dryRun: boolean;
+    private readonly userDetails: UIEventSource<UserDetails>;
+    private readonly auth: any;
 
-    public currentChangeset: UIEventSource<string>;
+    public readonly currentChangeset: UIEventSource<string>;
 
     constructor(layoutName: string, dryRun: boolean, osmConnection: OsmConnection, auth) {
         this._dryRun = dryRun;
@@ -29,6 +29,12 @@ export class ChangesetHandler {
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
          continuation: () => void) {
+        
+        if(this.userDetails.data.csCount == 0){
+            // The user became a contributor!
+            this.userDetails.data.csCount = 1;
+            this.userDetails.ping();
+        }
 
         if (this._dryRun) {
             const changesetXML = generateChangeXML("123456");

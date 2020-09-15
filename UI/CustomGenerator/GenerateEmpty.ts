@@ -6,7 +6,7 @@ export class GenerateEmpty {
     public static createEmptyLayer(): LayerConfigJson {
         return {
             id: "yourlayer",
-            name: "Layer",
+            name: {},
             minzoom: 12,
             overpassTags: {and: [""]},
             title: {},

@@ -82,7 +82,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 console.log("DOWNLOADED:",layoutJson);
                 const layout = FromJSON.LayoutFromJSON(JSON.parse(layoutJson));
                 layout.id = layoutFromBase64;
-                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64);
+                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(layoutJson));
             } catch (e) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
                     .SetClass("clickable")
@@ -98,7 +98,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
 
 } else if (layoutFromBase64 !== "false") {
     layoutToUse = InitUiElements.LoadLayoutFromHash(userLayoutParam);
-    InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
+    InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout, location.hash.substr(1));
 } else {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 }
