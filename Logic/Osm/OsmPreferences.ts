@@ -140,7 +140,6 @@ export class OsmPreferences {
         }
 
         if (this.preferences.data[k] === v) {
-            console.log("Not updating preference", k, " to ", v, "not changed");
             return;
         }
         console.log("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15));
@@ -155,7 +154,6 @@ export class OsmPreferences {
                     console.log("Could not remove preference", error);
                     return;
                 }
-
                 console.log("Preference ",k,"removed!");
 
             });

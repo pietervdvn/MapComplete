@@ -9,8 +9,32 @@
   },
   "minzoom": 13,
   "overpassTags": {
-    "and": [
-      "shop=bicycle"
+    "#": "We select all bicycle shops, sport shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
+    "or": [
+      "shop=bicycle",
+      {
+        "#": "if sport is defined and is not bicycle, it is retrackted; if bicycle retail/repair is marked as 'no', it is retracted too.",
+        "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
+        "and": [
+          "shop=sports",
+          "service:bicycle:retail!=no",
+          "service:bicycle:repair!=no",
+          {
+            "or": [
+              "sport=bicycle",
+              "sport=cycling",
+              "sport="
+            ]
+          }
+        ]
+      },
+      {
+        "#": "Any shop with any bicycle service",
+        "and": [
+          "shop~*",
+          "service:bicycle:.*~~.*"
+        ]
+      }
     ]
   },
   "title": {
@@ -25,8 +49,34 @@
       {
         "if": {
           "and": [
+            "shop=sports",
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Sport gear shop <i>{name}</i>",
+          "nl": "Sportwinkel <i>{name}</i>",
+          "fr": "Magasin de sport <i>{name}</i>"
+        }
+      },
+      {
+        "if": "shop=sports",
+        "then": {
+          "en": "Sport gear shop",
+          "nl": "Sportwinkel",
+          "fr": "Magasin de sport"
+        }
+      },
+      {
+        "if": "shop!~bicycle",
+        "then": "Other shop"
+      },
+      {
+        "if": {
+          "and": [
             "name~*",
-            "service:bicycle:retail!~yes"
+            "service:bicycle:retail!~yes",
+            "service:bicycle:repair!~no"
           ]
         },
         "then": {
@@ -38,7 +88,12 @@
         }
       },
       {
-        "if": "service:bicycle:retail!~yes",
+        "if": {
+          "and": [
+            "service:bicycle:retail!~yes",
+            "service:bicycle:repair!~no"
+          ]
+        },
         "then": {
           "en": "Bike repair",
           "nl": "Fietsenmaker",
@@ -90,6 +145,18 @@
   },
   "tagRenderings": [
     "images",
+    {
+      "condition": {
+        "and": [
+          "shop!~bicycle",
+          "shop!~sports"
+        ]
+      },
+      "render": {
+        "en": "This shop is specialized in selling {shop} and does bicycle related activities",
+        "nl": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten."
+      }
+    },
     {
       "question": {
         "en": "What is the name of this bicycle shop?",
