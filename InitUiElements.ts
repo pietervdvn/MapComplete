@@ -414,7 +414,6 @@ export class InitUiElements {
                
                 const layoutId = State.state.layoutToUse.data.id;
                 const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
-                console.log("OsmCha link is",osmChaLink);
                 const stats = `<a href='${osmChaLink}' target='_blank'><img src='./assets/statistics.svg' class='small-userbadge-icon'></a>`;
                 let editHere = "";
                 if (location !== undefined) {
