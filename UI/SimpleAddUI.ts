@@ -46,6 +46,9 @@ export class SimpleAddUI extends UIElement {
         
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
+            
+            this.ListenTo(layer.isDisplayed);
+            
             for (const preset of layer.layerDef.presets) {
 
                 let icon: string = "./assets/bug.svg";
@@ -130,6 +133,15 @@ export class SimpleAddUI extends UIElement {
         const userDetails = State.state.osmConnection.userDetails;
 
         if (this._confirmPreset.data !== undefined) {
+            
+            if(!this._confirmPreset.data.layerToAddTo.isDisplayed.data){
+                return new Combine([
+                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
+                        .SetClass("alert"),
+                    
+                    this.cancelButton
+                ]).Render();
+            }
 
             let tagInfo = "";
             const csCount = State.state.osmConnection.userDetails.data.csCount;

@@ -379,6 +379,10 @@ export default class Translations {
                     fr: "Ajouter un/une {category} ici",
                     gl: "Engadir {category} aquí",
                     de: "Hier eine {category} hinzufügen"
+                }),
+                layerNotEnabled: new T({
+                    "en":"The layer {layer} is not enabled. Enable this layer to add a point",
+                    "nl":"De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegn"
                 })
             },
             pickLanguage: new T({
