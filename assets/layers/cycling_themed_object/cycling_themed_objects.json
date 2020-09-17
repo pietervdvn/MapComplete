@@ -3,7 +3,8 @@
   "name": {
     "en": "Bike related object",
     "nl": "Fietsgerelateerd object",
-    "fr": "Objet cycliste"
+    "fr": "Objet cycliste",
+    "de": "Mit Fahrrad zusammenhängendes Objekt"
   },
   "minzoom": 14,
   "overpassTags": "theme~cycling|bicycle",
@@ -11,7 +12,8 @@
     "render": {
       "en": "Bike related object",
       "nl": "Fietsgerelateerd object",
-      "fr": "Objet cycliste"
+      "fr": "Objet cycliste",
+      "de": "Mit Fahrrad zusammenhängendes Objekt"
     },
     "mappings": [
       {
@@ -20,7 +22,8 @@
           "en": "<i>{name}</i>",
           "nl": "<i>{name}</i>",
           "fr": "<i>{name}</i>",
-          "gl": "<i>{name}</i>"
+          "gl": "<i>{name}</i>",
+          "de": "<i>{name}</i>"
         }
       }
     ]
