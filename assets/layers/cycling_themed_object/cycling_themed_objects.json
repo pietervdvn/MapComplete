@@ -5,7 +5,7 @@
     "nl": "Fietsgerelateerd object",
     "fr": "Objet cycliste"
   },
-  "minzoom": 14,
+  "minzoom": 13,
   "overpassTags": "theme~cycling|bicycle",
   "title": {
     "render": {
