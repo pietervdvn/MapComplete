@@ -67,6 +67,7 @@ body {
     form {
         display: inline-block;
         max-width: 90vw;
+        width: 100%;
     }
 
     .invalid {
