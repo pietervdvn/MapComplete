@@ -21,7 +21,6 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
-    private readonly _priority: number;
     private readonly _question: string | Translation;
     private readonly _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
 
@@ -58,8 +57,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
     constructor(tags: UIEventSource<any>, options: {
-        priority?: number
-
         question?: string | Translation,
         freeform?: {
             key: string,
@@ -80,8 +77,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         const self = this;
        
-        this._priority = options.priority ?? 0;
-        
         this.currentTags = this._source.map(tags => 
             {
 
@@ -524,10 +519,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         return "";
     }
 
-
-    Priority(): number {
-        return this._priority;
-    }
 
     private ApplyTemplate(template: string | Translation): UIElement {
         if (template === undefined || template === null) {

@@ -7,6 +7,7 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {TagRendering} from "./UI/TagRendering";
+import {State} from "./State";
 
 TagRendering.injectFunction();
 
@@ -17,6 +18,8 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button
     window.location.replace("https://buurtnatuur.be");
 }
+
+
 
 let testing: UIEventSource<string>;
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {

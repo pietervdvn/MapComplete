@@ -36,10 +36,6 @@ export class OnlyShowIfConstructor implements TagDependantUIElementConstructor{
         return this._embedded.IsQuestioning(properties);
     }
 
-    Priority(): number {
-        return this._embedded.Priority();
-    }
-    
     GetContent(tags: any): Translation {
         if(!this.IsKnown(tags)){
             return undefined;
@@ -76,10 +72,6 @@ class OnlyShowIf extends UIElement implements TagDependantUIElement {
         } else {
             return "";
         }
-    }
-
-    Priority(): number {
-        return this._embedded.Priority();
     }
 
     IsKnown(): boolean {

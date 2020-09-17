@@ -12,97 +12,6 @@ export default class Translations {
 
 
     static t = {
-       
-        cyclofix: {
-            title: new T({
-                en: 'Cyclofix - an open map for cyclists',
-                nl: 'Cyclofix - een open kaart voor fietsers',
-                fr: 'Cyclofix - Une carte ouverte pour les cyclistes',
-                gl: 'Cyclofix - Un mapa aberto para os ciclistas',
-                de: 'Cyclofix - eine offene Karte für Radfahrer' 
-            }),
-            description: new T({
-                en: "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>" + //this works in spoken language: ; think about the nearest bike repair station for example
-                    "You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. " +
-                    "You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>" +
-                    "All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>" +
-                    "For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-                nl: "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>" + //; denk bijvoorbeeld aan de dichtstbijzijnde fietsherstelplaats.
-                    "U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. " +
-                    "U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>" +
-                    "Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>" +
-                    "Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-                fr: "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>" + //; pensez par exemple à la station de réparation de vélos la plus proche.
-                    "Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. " +
-                    "Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>" +
-                    "Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>" +
-                    "Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-                gl: "O obxectivo deste mapa é amosar ós ciclistas unha solución doada de empregar para atopar a infraestrutura axeitada para as súas necesidades.<br><br>" + //isto funciona na lingua falada: ; pensa na estación de arranxo de bicicletas máis preta, por exemplo.
-                    "Podes obter a túa localización precisa (só para dispositivos móbiles) e escoller as capas que sexan relevantes para ti na esquina inferior esquerda. " +
-                    "Tamén podes empregar esta ferramenta para engadir ou editar puntos de interese ó mapa e fornecer máis datos respondendo as cuestións.<br><br>" +
-                    "Todas as modificacións que fagas serán gardadas de xeito automático na base de datos global do OpenStreetMap e outros poderán reutilizalos libremente.<br><br>" +
-                    "Para máis información sobre o proxecto cyclofix, vai a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-                de: "Das Ziel dieser Karte ist es, den Radfahrern eine einfach zu benutzende Lösung zu präsentieren, um die geeignete Infrastruktur für ihre Bedürfnisse zu finden.<br><br>" + //dies funktioniert in gesprochener Sprache: ; denken Sie zum Beispiel an die nächste Fahrradreparaturstation
-                    "Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. " +
-                    "Sie können dieses Tool auch verwenden, um Pins (Points of Interest/Interessante Orte) zur Karte hinzuzufügen oder zu bearbeiten und mehr Daten durch Beantwortung der Fragen bereitstellen.<br><br>" +
-                    "Alle Änderungen, die Sie vornehmen, werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei wiederverwendet werden.<br><br>" +
-                    "Weitere Informationen über das Projekt Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
-            }),
-            nonBikeShop: {             
-                name: new T({
-                    en: "shop that sells/repairs bikes",
-                    nl: "winkel die fietsen verkoopt/herstelt",
-                    fr: "magasin qui repare/vend des vélos",
-                    gl: "tenda que vende/arranxa bicicletas",
-                    de: "geschäft, das Fahrräder verkauft/repariert"
-                }),
-
-                title: new T({
-                    en: "Shop that sells/repairs bikes",
-                    nl: "Winkel die fietsen verkoopt/herstelt",
-                    fr: "Magasin qui répare/vend des vélos",
-                    gl: "Tenda que vende/arranxa bicicletas",
-                    de: "Geschäft, das Fahrräder verkauft/repariert"
-                }),
-                titleRepair: new T({
-                    en: "Shop that repairs bikes",
-                    nl: "Winkel die fietsen herstelt",
-                    fr: "Magasin qui répare les vélos",
-                    gl: "Tenda que arranxa bicicletas",
-                    de: "Geschäft, das Fahrräder repariert"
-                }),
-                titleShop: new T({
-                    en: "Shop that sells bikes",
-                    nl: "Winkel die fietsen verkoopt",
-                    fr: "Magasin qui vend des vélos",
-                    gl: "Tenda que vende bicicletas",
-                    de: "Geschäft, das Fahrräder verkauft"
-                }),
-                
-                titleNamed: new T({
-                    en: "{name} (sells/repairs bikes)",
-                    nl: "{name} (verkoopt/herstelt fietsen)",
-                    fr: "vend/repare les vélos",
-                    gl: "{name} (vende/arranxa bicicletas)",
-                    de: "{name} (verkauft/repariert Fahrräder)"
-                }),
-                titleRepairNamed: new T({
-                    en: "{name} (repairs bikes)",
-                    nl: "{name} (herstelt fietsen)",
-                    fr: "{name} (répare les vélos)",
-                    gl: "{name} (arranxa bicicletas)",
-                    de: "{name} (repariert Fahrräder)"
-                }),
-                titleShopNamed: new T({
-                    en: "{name} (sells bikes)",
-                    nl: "{name} (verkoopt fietsen)",
-                    fr: "{name} (vend des vélos)",
-                    gl: "{name} (vende bicicletas)",
-                    de: "{name} (verkauft Fahrräder)"
-                }),
-            }
-        },
-
         image: {
             addPicture: new T({
                 en: 'Add picture',
@@ -568,7 +477,7 @@ export default class Translations {
             },
             openStreetMapIntro: new T({
                 en: "<h3>An Open Map</h3>" +
-                    "<p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit?" +
+                    "<p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? " +
                     "A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p>" +
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>)." +
                     " On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p>" +

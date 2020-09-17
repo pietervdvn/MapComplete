@@ -85,6 +85,7 @@ export class FromJSON {
         layout.maintainer = json.maintainer;
         layout.version = json.version;
         layout.socialImage = json.socialImage;
+        layout.description = tr(json.shortDescription) ?? tr(json.description)?.FirstSentence();
         layout.changesetMessage = json.changesetmessage;
         return layout;
     }

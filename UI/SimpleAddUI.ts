@@ -153,21 +153,22 @@ export class SimpleAddUI extends UIElement {
 
         let header: UIElement = Translations.t.general.add.header;
 
-        
-        if(userDetails === undefined){
+
+        if (userDetails === undefined) {
             return header.Render();
         }
-        
+
         if (!userDetails.data.loggedIn) {
             return new Combine([header, this._loginButton]).Render()
         }
 
-        if (userDetails.data.unreadMessages > 0) {
+        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < State.userJourney.addNewPointWithUnreadMessagesUnlock) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.readYourMessages,
                 "</span>",
                 this.goToInboxButton
             ]).Render();
+
         }
 
         if (userDetails.data.dryRun) {
@@ -178,7 +179,7 @@ export class SimpleAddUI extends UIElement {
             ]);
         }
 
-        if (userDetails.data.csCount < 5) {
+        if (userDetails.data.csCount < State.userJourney.addNewPointsUnlock) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.fewChangesBefore,
                 "</span>"]).Render();

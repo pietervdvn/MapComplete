@@ -115,30 +115,16 @@ export class FeatureInfoBox extends UIElement {
 
         let questionElement: UIElement;
 
-        if (!State.state.osmConnection.userDetails.data.loggedIn) {
-            let mostImportantQuestion ;
-            let score = -1000;
-            for (const question of questions) {
-
-                if (mostImportantQuestion === undefined || question.Priority() > score) {
-                    mostImportantQuestion = question;
-                    score = question.Priority();
-                }
-            }
-
-            questionElement = mostImportantQuestion;
-        } else if (questions.length > 0) {
+        if (questions.length > 0) {
             // We select the most important question and render that one
             let mostImportantQuestion;
-            let score = -1000;
             for (const question of questions) {
 
-                if (mostImportantQuestion === undefined || question.Priority() > score) {
+                if (mostImportantQuestion === undefined) {
                     mostImportantQuestion = question;
-                    score = question.Priority();
+                    break;
                 }
             }
-
             questionElement = mostImportantQuestion;
         } else if (skippedQuestions == 1) {
             questionElement = this._oneSkipped;

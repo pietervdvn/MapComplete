@@ -238,7 +238,7 @@
         "en": "This pump supports the following valves: {valves}",
         "nl": "Deze pomp werkt met de volgende ventielen: {valves}",
         "fr": "Cette pompe est compatible avec les valves suivantes: {valves}",
-        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}",
+        "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}"
       },
       "freeform": {
         "#addExtraTags": [

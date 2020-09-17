@@ -221,7 +221,7 @@ export class FilteredLayer {
                        color: style.color
                    });
 
-               } else if (style.icon.iconUrl.startsWith("$circle  ")) {
+               } else if (style.icon.iconUrl.startsWith("$circle")) {
                    marker = L.circle(latLng, {
                        radius: 25,
                        color: style.color

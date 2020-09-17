@@ -106,22 +106,17 @@ export class Tag extends TagsFilter {
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
-        if (this.value === "") {
-            return true
-        }
         
         for (const tag of tags) {
             if (this.key == tag.k) {
-
-                if (tag.v === "") {
-                    // This tag has been removed -> always matches false
-                    return false;
-                }
-
-                if (this.value === tag.v) {
-                    return true;
-                }
+                return this.value === tag.v;
             }
+        }
+        
+        // The tag was not found
+        if(this.value === ""){
+            // and it shouldn't be found!
+            return true;
         }
 
         return false;

@@ -172,3 +172,10 @@ Home icon by Timothy Miller, CC-BY-SA 3.0
 
 https://commons.wikimedia.org/wiki/File:Map_icons_by_Scott_de_Jonge_-_bicycle-store.svg
 Bicycle logo,  	Scott de Jonge
+
+Nature Reserve icon via http://www.onlinewebfonts.com/icon/389579, CC BY 3.0 (@ Эдуард Черных)
+
+
+Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
+
+Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY

@@ -32,6 +32,7 @@ export class GenerateEmpty {
         return {
             id: "id",
             title: {},
+            shortDescription: {},
             description: {},
             language: [],
             maintainer: "",
@@ -51,6 +52,7 @@ export class GenerateEmpty {
         return {
             id: "test",
             title: {"en": "Test layout"},
+            shortDescription: {},
             description: {"en": "A layout for testing"},
             language: ["en"],
             maintainer: "Pieter Vander Vennet",

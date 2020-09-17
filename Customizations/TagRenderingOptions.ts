@@ -11,7 +11,6 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
      * Notes: by not giving a 'question', one disables the question form alltogether
      */
     public options: {
-        priority?: number;
         question?: string | Translation;
         freeform?: {
             key: string;
@@ -22,7 +21,7 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
             extraTags?: TagsFilter
         };
         multiAnswer?: boolean,
-        mappings?: { k: TagsFilter; txt: string | Translation; priority?: number, substitute?: boolean, hideInAnwser?: boolean }[]
+        mappings?: { k: TagsFilter; txt: string | Translation; substitute?: boolean, hideInAnwser?: boolean }[]
     };
 
     constructor(options: {
@@ -144,10 +143,6 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
 
     IsKnown(properties: any): boolean {
         return !this.IsQuestioning(properties);
-    }
-
-    Priority(): number {
-        return this.options.priority ?? 0;
     }
 
 }
