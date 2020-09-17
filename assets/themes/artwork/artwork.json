@@ -3,16 +3,19 @@
   "version": "2020-08-30",
   "title": {
     "en": "Open Artwork Map",
-    "nl": "Kunstwerkenkaart"
+    "nl": "Kunstwerkenkaart",
+    "de": "Freie Kunstwerk-Karte"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis, ... all over the world",
-    "nl": "Welkom op de Open Kunstwerken Kaart"
+    "nl": "Welkom op de Open Kunstwerken Kaart",
+    "de": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt"
   },
   "language": [
     "en",
     "nl",
-    "fr"
+    "fr",
+    "de"
   ],
   "icon": "./assets/themes/artwork/artwork.svg",
   "maintainer": "MapComplete",
@@ -25,14 +28,16 @@
       "name": {
         "en": "Artworks",
         "nl": "Kunstwerken",
-        "fr": "Oeuvres d'art"
+        "fr": "Oeuvres d'art",
+        "de": "Kunstwerke"
       },
       "overpassTags": "tourism=artwork",
       "title": {
         "render": {
           "en": "Artwork",
           "nl": "Kunstwerk",
-          "fr": "Oeuvre d'art"
+          "fr": "Oeuvre d'art",
+          "de": "Kunstwerk"
         },
         "mappings": [
           {
@@ -40,7 +45,8 @@
             "then": {
               "en": "Artwork <i>{name}</i>",
               "nl": "Kunstwerk <i>{name}</i>",
-              "fr": "Oeuvre d'art <i>{name}</i>"
+              "fr": "Oeuvre d'art <i>{name}</i>",
+              "de": "Kunstwerk <i>{name}</i>"
             }
           }
         ]
@@ -56,7 +62,8 @@
       },
       "description": {
         "en": "Diverse pieces of artwork",
-        "nl": "Verschillende soorten kunstwerken"
+        "nl": "Verschillende soorten kunstwerken",
+        "de": "Verschiedene Kunstwerke"
       },
       "minzoom": 12,
       "wayHandling": 2,
@@ -67,7 +74,9 @@
           ],
           "title": {
             "en": "Artwork",
-            "nl": "Kunstwerk"
+            "nl": "Kunstwerk",
+            "fr": "Oeuvre d'art",
+            "de": "Kunstwerk"
           }
         }
       ],
@@ -77,16 +86,20 @@
           "render": {
             "en": "This is a {artwork_type}",
             "nl": "Dit is een {artwork_type}",
-            "fr": "{artwork_type}"
+            "fr": "{artwork_type}",
+            "de": "Dies ist ein {artwork_type}"
           },
           "question": {
             "en": "What is the type of this artwork?",
             "nl": "Wat voor soort kunstwerk is dit?",
-            "fr": "Quel est le type de cette oeuvre d'art?"
+            "fr": "Quel est le type de cette oeuvre d'art?",
+            "de": "Was ist die Art dieses Kunstwerks?"
           },
           "freeform": {
             "key": "artwork_type",
-            "addExtraTags": ["fixme=Artowrk type was added with the freeform, might need another check"]
+            "addExtraTags": [
+              "fixme=Artowrk type was added with the freeform, might need another check"
+            ]
           },
           "mappings": [
             {
@@ -94,7 +107,8 @@
               "then": {
                 "en": "Architecture",
                 "nl": "Architectuur",
-                "fr": "Architecture"
+                "fr": "Architecture",
+                "de": "Architektur"
               }
             },
             {
@@ -102,7 +116,8 @@
               "then": {
                 "en": "Mural",
                 "nl": "Muurschildering",
-                "fr": "Mural"
+                "fr": "Mural",
+                "de": "Wandbild"
               }
             },
             {
@@ -110,7 +125,8 @@
               "then": {
                 "en": "Painting",
                 "nl": "Schilderij",
-                "fr": "Peinture"
+                "fr": "Peinture",
+                "de": "Malerei"
               }
             },
             {
@@ -118,7 +134,8 @@
               "then": {
                 "en": "Sculpture",
                 "nl": "Beeldhouwwerk",
-                "fr": "Sculpture"
+                "fr": "Sculpture",
+                "de": "Skulptur"
               }
             },
             {
@@ -126,7 +143,8 @@
               "then": {
                 "en": "Statue",
                 "nl": "Standbeeld",
-                "fr": "Statue"
+                "fr": "Statue",
+                "de": "Statue"
               }
             },
             {
@@ -134,7 +152,8 @@
               "then": {
                 "en": "Bust",
                 "nl": "Buste",
-                "fr": "Buste"
+                "fr": "Buste",
+                "de": "Büste"
               }
             },
             {
@@ -142,7 +161,8 @@
               "then": {
                 "en": "Stone",
                 "nl": "Steen",
-                "fr": "Rocher"
+                "fr": "Rocher",
+                "de": "Stein"
               }
             },
             {
@@ -150,7 +170,8 @@
               "then": {
                 "en": "Installation",
                 "nl": "Installatie",
-                "fr": "Installation"
+                "fr": "Installation",
+                "de": "Installation"
               }
             },
             {
@@ -158,7 +179,8 @@
               "then": {
                 "en": "Graffiti",
                 "nl": "Graffiti",
-                "fr": "Graffiti"
+                "fr": "Graffiti",
+                "de": "Graffiti"
               }
             },
             {
@@ -166,7 +188,8 @@
               "then": {
                 "en": "Relief",
                 "nl": "Reliëf",
-                "fr": "Relief"
+                "fr": "Relief",
+                "de": "Relief"
               }
             },
             {
@@ -174,7 +197,8 @@
               "then": {
                 "en": "Azulejo (Spanish decorative tilework)",
                 "nl": "Azulejo (Spaanse siertegels)",
-                "fr": "Azulejo"
+                "fr": "Azulejo",
+                "de": "Azulejo (spanische dekorative Fliesenarbeit)"
               }
             },
             {
@@ -182,7 +206,8 @@
               "then": {
                 "en": "Tilework",
                 "nl": "Tegelwerk",
-                "fr": "Carrelage"
+                "fr": "Carrelage",
+                "de": "Fliesenarbeit"
               }
             }
           ]
@@ -191,12 +216,14 @@
           "question": {
             "en": "Which artist created this?",
             "nl": "Welke artist creëerde dit kunstwerk?",
-            "fr": "Quel artiste a créé cela?"
+            "fr": "Quel artiste a créé cela?",
+            "de": "Welcher Künstler hat das geschaffen?"
           },
           "render": {
             "en": "Created by {artist_name}",
             "nl": "Gecreëerd door {artist_name}",
-            "fr": "Créé par {artist_name}"
+            "fr": "Créé par {artist_name}",
+            "de": "Erstellt von {artist_name}"
           },
           "freeform": {
             "key": "artist_name"
@@ -206,12 +233,14 @@
           "question": {
             "en": "On which website is more information about this artwork?",
             "nl": "Op welke website kan men meer informatie vinden over dit kunstwerk?",
-            "fr": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?"
+            "fr": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
+            "de": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?"
           },
           "render": {
             "en": "More information on <a href='{website}' target='_blank'>this website</a>",
             "nl": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>",
-            "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+            "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>",
+            "de": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
           },
           "freeform": {
             "key": "website",
@@ -222,12 +251,14 @@
           "question": {
             "en": "Which wikidata-entry corresponds with <b>this artwork</b>?",
             "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
-            "nl": "Welk wikidata-item beschrijft dit kunstwerk?"
+            "nl": "Welk wikidata-item beschrijft dit kunstwerk?",
+            "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?"
           },
           "render": {
             "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "nl": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-            "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+            "de": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
           },
           "freeform": {
             "key": "wikidata",
