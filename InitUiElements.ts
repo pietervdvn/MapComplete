@@ -355,11 +355,12 @@ export class InitUiElements {
         let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
             return {value: layer, shown: layer.name}
         });
-        let layerControlPanel = new Combine([new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
+        let layerControlPanel = new Combine(
+            [new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
         layerControlPanel.SetStyle("margin:1em");
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
-            layerControlPanel = new Combine([layerSelection, layerControlPanel]);
+            layerControlPanel = new Combine([layerSelection, "<br/>",layerControlPanel]);
         }
         return layerControlPanel;
     }
@@ -375,6 +376,7 @@ export class InitUiElements {
                 new Combine([
                     closeButton,
                     layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
+                    .SetClass("hidden-on-mobile")
                 ,
                 new Combine([Img.closedFilterButton])
                     .SetStyle("display:block;border-radius:50%;background:white;padding:1em;"),

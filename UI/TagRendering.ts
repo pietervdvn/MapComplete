@@ -159,7 +159,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         this._saveButton = new SaveButton(this._questionElement.GetValue())
             .onClick(save);
 
-        this._friendlyLogin = Translations.t.general.loginToStart
+        this._friendlyLogin = Translations.t.general.loginToStart.Clone()
+            .SetClass("login-button-friendly")
             .onClick(() => State.state.osmConnection.AttemptLogin())
 
         this._editButton = new FixedUiElement("");
@@ -463,12 +464,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 this.ApplyTemplate(this._question).SetClass('question-text');
             return "<div class='question'>" +
                 new Combine([
-                    question.Render(),
+                    question,
                     "<br/>",
                     this._questionElement,
-                    "<span class='login-button-friendly'>",
                     this._friendlyLogin,
-                    "</span>",
                 ]).Render() + "</div>";
         }
 

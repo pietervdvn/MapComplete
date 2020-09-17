@@ -44,6 +44,7 @@ export class Overpass {
 
                 if(json.elements === [] && json.remarks.indexOf("runtime error") > 0){
                     console.log("Timeout or other runtime error");
+                    onFail("Runtime error (timeout)")
                     return;
                 }
                 // @ts-ignore

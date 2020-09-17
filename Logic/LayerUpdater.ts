@@ -30,6 +30,9 @@ export class LayerUpdater {
         const self = this;
 
         this.sufficentlyZoomed = State.state.locationControl.map(location => {
+                if(location?.zoom === undefined){
+                    return false;
+                }
                 let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => (layer as LayerDefinition).minzoom ?? 18));
                 return location.zoom >= minzoom;
             }, [state.layoutToUse]

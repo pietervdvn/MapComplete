@@ -80,12 +80,9 @@ export class State {
      */
     public readonly selectedElement = new UIEventSource<{ feature: any }>(undefined);
 
-    public readonly zoom = QueryParameters.GetQueryParameter("z", undefined)
-        .syncWith(LocalStorageSource.Get("zoom"));
-    public readonly lat = QueryParameters.GetQueryParameter("lat", undefined)
-        .syncWith(LocalStorageSource.Get("lat"));
-    public readonly lon = QueryParameters.GetQueryParameter("lon", undefined)
-        .syncWith(LocalStorageSource.Get("lon"));
+    public readonly zoom: UIEventSource<number>;
+    public readonly lat: UIEventSource<number>;
+    public readonly lon: UIEventSource<number>;
 
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
@@ -123,15 +120,36 @@ export class State {
 
     constructor(layoutToUse: Layout) {
         const self = this;
-        this.layoutToUse.setData(layoutToUse)
+        this.layoutToUse.setData(layoutToUse);
+
+        function asFloat(source: UIEventSource<string>): UIEventSource<number> {
+            return source.map(str => {
+                let parsed = parseFloat(str);
+                return isNaN(parsed) ? undefined : parsed;
+            }, [], fl => {
+                if (fl === undefined || isNaN(fl)) {
+                    return undefined;
+                }
+                return ("" + fl).substr(0, 6);
+            })
+        }
+
+        this.zoom = asFloat(QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
+            .syncWith(LocalStorageSource.Get("zoom")));
+        this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
+            .syncWith(LocalStorageSource.Get("lat")));
+        this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
+            .syncWith(LocalStorageSource.Get("lon")));
+
+
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
             zoom: Utils.asFloat(this.zoom.data),
             lat: Utils.asFloat(this.lat.data),
             lon: Utils.asFloat(this.lon.data),
         }).addCallback((latlonz) => {
-            this.zoom.setData(latlonz.zoom?.toString());
-            this.lat.setData(latlonz.lat?.toString()?.substr(0, 6));
-            this.lon.setData(latlonz.lon?.toString()?.substr(0, 6));
+            this.zoom.setData(latlonz.zoom);
+            this.lat.setData(latlonz.lat);
+            this.lon.setData(latlonz.lon);
         });
 
         this.layoutToUse.addCallback(layoutToUse => {

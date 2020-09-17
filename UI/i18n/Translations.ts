@@ -384,6 +384,11 @@ export default class Translations {
                     "en": "Open the layer control box",
                     "nl": "Open de laag-instellingen"
                 })
+                ,
+                layerNotEnabled: new T({
+                    "en": "The layer {layer} is not enabled. Enable this layer to add a point",
+                    "nl": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegn"
+                })
             },
             pickLanguage: new T({
                 en: "Choose a language",
