@@ -179,3 +179,5 @@ Nature Reserve icon via http://www.onlinewebfonts.com/icon/389579, CC BY 3.0 (@ 
 Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
 
 Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
+
+Statistics icon via https://www.onlinewebfonts.com/icon/197818

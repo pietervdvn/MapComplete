@@ -48,6 +48,10 @@ export interface LayoutConfigJson {
      */
     description: string | any;
 
+    /**
+     * A part of the description, shown under the login-button.
+     */
+    descriptionTail?: string | any;
 
     /**
      * The icon representing this theme.

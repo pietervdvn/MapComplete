@@ -78,6 +78,10 @@ export class FromJSON {
             json.startLat,
             json.startLon,
             new Combine(["<h3>", tr(json.title), "</h3>", tr(json.description)]),
+            undefined,
+            undefined,
+            tr(json.descriptionTail)
+            
         );
 
         layout.widenFactor = json.widenFactor ?? 0.07;
