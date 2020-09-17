@@ -2,11 +2,13 @@
   "id": "viewpoint",
   "name": {
     "en": "Viewpoint",
-    "nl": "Uitzicht"
+    "nl": "Uitzicht",
+    "de": "Aussichtspunkt"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
-    "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past"
+    "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
+    "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt"
   },
   "overpassTags": "tourism=viewpoint",
   "minzoom": 14,
@@ -19,7 +21,8 @@
     {
       "title": {
         "en": "Viewpoint",
-        "nl": "Uitzicht"
+        "nl": "Uitzicht",
+        "de": "Aussichtspunkt"
       },
       "tags": [
         "tourism=viewpoint"
@@ -29,15 +32,17 @@
   "title": {
     "render": {
       "en": "Viewpoint",
-      "nl": "Uitzicht"
+      "nl": "Uitzicht",
+      "de": "Aussichtspunkt"
     }
   },
   "tagRenderings": [
     "images",
     {
       "question": {
+        "en": "Do you want to add a description?",
         "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
-        "en": "Do you want to add a description?"
+        "de": "Möchten Sie eine Beschreibung hinzufügen?"
       },
       "render": "{description}",
       "freeform": {

@@ -4,7 +4,8 @@
     "en": "Bike parking",
     "nl": "Fietsparking",
     "fr": "Parking à vélo",
-    "gl": "Aparcadoiro de bicicletas"
+    "gl": "Aparcadoiro de bicicletas",
+    "de": "Fahrrad-Parkplätze"
   },
   "minzoom": 17,
   "overpassTags": {
@@ -27,7 +28,8 @@
         "en": "Bike parking",
         "nl": "Fietsparking",
         "fr": "Parking à vélo",
-        "gl": "Aparcadoiro de bicicletas"
+        "gl": "Aparcadoiro de bicicletas",
+        "de": "Fahrrad-Parkplätze"
       },
       "tags": [
         "amenity=bicycle_parking"
@@ -39,7 +41,8 @@
       "en": "Bike parking",
       "nl": "Fietsparking",
       "fr": "Parking à vélo",
-      "gl": "Aparcadoiro de bicicletas"
+      "gl": "Aparcadoiro de bicicletas",
+      "de": "Fahrrad-Parkplätze"
     }
   },
   "tagRenderings": [
@@ -49,13 +52,15 @@
         "en": "What is the type of this bicycle parking?",
         "nl": "Van welk type is deze fietsparking?",
         "fr": "Quelle type de parking s'agit il?",
-        "gl": "Que tipo de aparcadoiro de bicicletas é?"
+        "gl": "Que tipo de aparcadoiro de bicicletas é?",
+        "de": "Was ist die Art dieses Fahrrad-Parkplatzes?"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
         "nl": "Dit is een fietsparking van het type: {bicycle_parking}",
         "fr": "Ceci est un parking à vélo de type {bicycle_parking}",
-        "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}"
+        "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}",
+        "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}"
       },
       "freeform": {
         "key": "bicycle_parking",
@@ -70,7 +75,8 @@
             "en": "Staple racks <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
             "nl": "Nietjes <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
             "fr": "Arceaux <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
-            "gl": "De roda (Stands) <img width='150px' src='./assets/layers/bike_parking/staple.svg'>"
+            "gl": "De roda (Stands) <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
+            "de": "Fahrradbügel <img width='150px' src='./assets/layers/bike_parking/staple.svg'>"
           }
         },
         {
@@ -79,7 +85,8 @@
             "en": "Wheel rack/loops <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "nl": "Wielrek/lussen <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "fr": "Pinces-roues <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "gl": "Aros <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>"
+            "gl": "Aros <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "de": "Metallgestänge <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>"
           }
         },
         {
@@ -88,7 +95,8 @@
             "en": "Handlebar holder <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
             "nl": "Stuurhouder <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
             "fr": "Support guidon <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "gl": "Cadeado para guiador <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+            "gl": "Cadeado para guiador <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "de": "Halter für Fahrradlenker <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
           }
         },
         {
@@ -97,7 +105,8 @@
             "en": "Rack <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
             "nl": "Rek <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
             "fr": "Râtelier <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
-            "gl": "Cremalleira <img width='150px' src='./assets/layers/bike_parking/rack.svg'>"
+            "gl": "Cremalleira <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
+            "de": "Gestell <img width='150px' src='./assets/layers/bike_parking/rack.svg'>"
           }
         },
         {
@@ -106,7 +115,8 @@
             "en": "Two-tiered <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
             "nl": "Dubbel (twee verdiepingen) <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
             "fr": "Superposé <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "gl": "Dobre cremalleira <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "gl": "Dobre cremalleira <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "de": "Zweistufig <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>"
           }
         },
         {
@@ -115,7 +125,8 @@
             "en": "Shed <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
             "nl": "Schuur <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
             "fr": "Abri <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
-            "gl": "Abeiro <img width='150px' src='./assets/layers/bike_parking/shed.svg'>"
+            "gl": "Abeiro <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
+            "de": "Schuppen <img width='150px' src='./assets/layers/bike_parking/shed.svg'>"
           }
         }
       ]
@@ -124,7 +135,8 @@
       "question": {
         "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
         "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
-        "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores."
+        "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
+        "de": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze."
       },
       "condition": "bicycle_parking!=shed",
       "mappings": [
@@ -133,7 +145,8 @@
           "then": {
             "en": "This parking is covered (it has a roof)",
             "nl": "Deze parking is overdekt (er is een afdak)",
-            "gl": "Este aparcadoiro está cuberto (ten un teito)"
+            "gl": "Este aparcadoiro está cuberto (ten un teito)",
+            "de": "Dieser Parkplatz ist überdacht (er hat ein Dach)"
           }
         },
         {
@@ -141,7 +154,8 @@
           "then": {
             "en": "This parking is not covered",
             "nl": "Deze parking is niet overdekt",
-            "gl": "Este aparcadoiro non está cuberto"
+            "gl": "Este aparcadoiro non está cuberto",
+            "de": "Dieser Parkplatz ist nicht überdacht."
           }
         }
       ]
@@ -151,13 +165,15 @@
         "en": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
         "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
         "nl": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
-        "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?"
+        "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
+        "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?"
       },
       "render": {
         "en": "Place for {capacity} bikes",
         "fr": "Place pour {capacity} vélos",
         "nl": "Plaats voor {capacity} fietsen",
-        "gl": "Lugar para {capacity} bicicletas"
+        "gl": "Lugar para {capacity} bicicletas",
+        "de": "Platz für {capacity} Fahrräder"
       },
       "freeform": {
         "key": "capacity",
@@ -169,7 +185,8 @@
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
         "fr": "TODO: fr",
-        "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?"
+        "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?",
+        "de": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?"
       },
       "mappings": [
         {
@@ -178,7 +195,8 @@
             "en": "This parking has room for cargo bikes",
             "nl": "Deze parking heeft plaats voor bakfietsen",
             "fr": "TODO: fr",
-            "gl": "Este aparcadoiro ten espazo para bicicletas de carga."
+            "gl": "Este aparcadoiro ten espazo para bicicletas de carga.",
+            "de": "Dieser Parkplatz bietet Platz für Lastenfahrräder"
           }
         },
         {
@@ -187,7 +205,8 @@
             "en": "This parking has designated (official) spots for cargo bikes.",
             "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen",
             "fr": "TODO: fr",
-            "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."
+            "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
+            "de": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder."
           }
         },
         {
@@ -196,7 +215,8 @@
             "en": "You're not allowed to park cargo bikes",
             "nl": "Je mag hier geen bakfietsen parkeren",
             "fr": "TODO: fr",
-            "gl": "Non está permitido aparcar bicicletas de carga"
+            "gl": "Non está permitido aparcar bicicletas de carga",
+            "de": "Es ist nicht erlaubt, Lastenfahrräder zu parken"
           }
         }
       ]
@@ -206,13 +226,15 @@
         "en": "How many cargo bicycles fit in this bicycle parking?",
         "nl": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
         "fr": "Combien de vélos de transport entrent dans ce parking à vélos ?",
-        "gl": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?"
+        "gl": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?",
+        "de": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?"
       },
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
         "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
         "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport.",
-        "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga"
+        "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
+        "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
       },
       "condition": "cargo_bike~designated|yes",
       "freeform": {
