@@ -4,7 +4,8 @@
     "en": "Bike cafe",
     "nl": "Fietscafé",
     "fr": "Café vélo",
-    "gl": "Café de ciclistas"
+    "gl": "Café de ciclistas",
+    "de": "Fahrrad-Café"
   },
   "minzoom": 13,
   "overpassTags": {
@@ -25,7 +26,8 @@
       "en": "Bike cafe",
       "nl": "Fietscafé",
       "fr": "Café Vélo",
-      "gl": "Café de ciclistas"
+      "gl": "Café de ciclistas",
+      "de": "Fahrrad-Café"
     },
     "mappings": [
       {
@@ -34,7 +36,8 @@
           "en": "Bike cafe <i>{name}</i>",
           "nl": "Fietscafé <i>{name}</i>",
           "fr": "Café Vélo <i>{name}</i>",
-          "gl": "Café de ciclistas <i>{name}</i>"
+          "gl": "Café de ciclistas <i>{name}</i>",
+          "de": "Fahrrad-Café <i>{name}</i>"
         }
       }
     ]
@@ -46,13 +49,15 @@
         "en": "What is the name of this bike cafe?",
         "nl": "Wat is de naam van dit fietscafé?",
         "fr": "Quel est le nom de ce Café vélo",
-        "gl": "Cal é o nome deste café de ciclistas?"
+        "gl": "Cal é o nome deste café de ciclistas?",
+        "de": "Wie heißt dieses Fahrrad-Café?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
         "nl": "Dit fietscafé heet {name}",
         "fr": "Ce Café vélo s'appelle {name}",
-        "gl": "Este café de ciclistas chámase {name}"
+        "gl": "Este café de ciclistas chámase {name}",
+        "de": "Dieses Fahrrad-Café heißt {name}"
       },
       "freeform": {
         "key": "name"
@@ -63,7 +68,8 @@
         "en": "Does this bike cafe offer a bike pump for use by anyone?",
         "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
         "fr": "Est-ce que ce Café vélo propose une pompe en libre accès",
-        "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?"
+        "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
+        "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?"
       },
       "mappings": [
         {
@@ -72,7 +78,8 @@
             "en": "This bike cafe offers a bike pump for anyone",
             "nl": "Dit fietscafé biedt een fietspomp aan voor eender wie",
             "fr": "Ce Café vélo offre une pompe en libre accès",
-            "gl": "Este café de ciclistas ofrece unha bomba de ar"
+            "gl": "Este café de ciclistas ofrece unha bomba de ar",
+            "de": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann"
           }
         },
         {
@@ -81,7 +88,8 @@
             "en": "This bike cafe doesn't offer a bike pump for anyone",
             "nl": "Dit fietscafé biedt geen fietspomp aan voor iedereen",
             "fr": "Ce Café vélo n'offre pas de pompe en libre accès",
-            "gl": "Este café de ciclistas non ofrece unha bomba de ar"
+            "gl": "Este café de ciclistas non ofrece unha bomba de ar",
+            "de": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann"
           }
         }
       ]
@@ -91,7 +99,8 @@
         "en": "Are there tools here to repair your own bike?",
         "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
         "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo?",
-        "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
+        "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
+        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
       },
       "mappings": [
         {
@@ -100,7 +109,8 @@
             "en": "This bike cafe offers tools for DIY repair",
             "nl": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo propose des outils pour réparer son vélo soi-même",
-            "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta"
+            "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an."
           }
         },
         {
@@ -109,7 +119,8 @@
             "en": "This bike cafe doesn't offer tools for DIY repair",
             "nl": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même",
-            "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta"
+            "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
+            "de": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an."
           }
         }
       ]
@@ -119,7 +130,8 @@
         "en": "Does this bike cafe repair bikes?",
         "nl": "Herstelt dit fietscafé fietsen?",
         "fr": "Est-ce que ce Café vélo répare les vélos?",
-        "gl": "Este café de ciclistas arranxa bicicletas?"
+        "gl": "Este café de ciclistas arranxa bicicletas?",
+        "de": "Repariert dieses Fahrrad-Café Fahrräder?"
       },
       "mappings": [
         {
@@ -128,7 +140,8 @@
             "en": "This bike cafe repairs bikes",
             "nl": "Dit fietscafé herstelt fietsen",
             "fr": "Ce Café vélo répare les vélos",
-            "gl": "Este café de ciclistas arranxa bicicletas"
+            "gl": "Este café de ciclistas arranxa bicicletas",
+            "de": "Dieses Fahrrad-Café repariert Fahrräder"
           }
         },
         {
@@ -137,7 +150,8 @@
             "en": "This bike cafe doesn't repair bikes",
             "nl": "Dit fietscafé herstelt geen fietsen",
             "fr": "Ce Café vélo ne répare pas les vélos",
-            "gl": "Este café de ciclistas non arranxa bicicletas"
+            "gl": "Este café de ciclistas non arranxa bicicletas",
+            "de": "Dieses Fahrrad-Café repariert keine Fahrräder"
           }
         }
       ]
@@ -147,7 +161,8 @@
         "en": "What is the website of {name}?",
         "nl": "Wat is de website van {name}?",
         "fr": "Quel est le site internet de {name}?",
-        "gl": "Cal é a páxina web de {name}?"
+        "gl": "Cal é a páxina web de {name}?",
+        "de": "Was ist die Webseite von {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -159,7 +174,8 @@
         "en": "What is the phone number of {name}?",
         "nl": "Wat is het telefoonnummer van {name}?",
         "fr": "Quel est le nom de {name}?",
-        "gl": "Cal é o número de teléfono de {name}?"
+        "gl": "Cal é o número de teléfono de {name}?",
+        "de": "Wie lautet die Telefonnummer von {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -172,7 +188,8 @@
         "en": "What is the email address of {name}?",
         "nl": "Wat is het email-adres van {name}?",
         "fr": "Quel est l'adresse email de {name}?",
-        "gl": "Cal é o enderezo de correo electrónico de {name}?"
+        "gl": "Cal é o enderezo de correo electrónico de {name}?",
+        "de": "Wie lautet die E-Mail-Adresse von {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
     }
@@ -196,7 +213,8 @@
         "en": "Bike cafe",
         "nl": "Fietscafé",
         "fr": "Café Vélo",
-        "gl": "Café de ciclistas"
+        "gl": "Café de ciclistas",
+        "de": "Fahrrad-Café"
       },
       "tags": [
         "amenity=pub",
