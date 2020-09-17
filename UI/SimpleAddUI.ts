@@ -46,6 +46,9 @@ export class SimpleAddUI extends UIElement {
         
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
+            
+            this.ListenTo(layer.isDisplayed);
+            
             for (const preset of layer.layerDef.presets) {
 
                 let icon: string = "./assets/bug.svg";
@@ -130,6 +133,15 @@ export class SimpleAddUI extends UIElement {
         const userDetails = State.state.osmConnection.userDetails;
 
         if (this._confirmPreset.data !== undefined) {
+            
+            if(!this._confirmPreset.data.layerToAddTo.isDisplayed.data){
+                return new Combine([
+                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
+                        .SetClass("alert"),
+                    
+                    this.cancelButton
+                ]).Render();
+            }
 
             let tagInfo = "";
             const csCount = State.state.osmConnection.userDetails.data.csCount;
@@ -153,21 +165,22 @@ export class SimpleAddUI extends UIElement {
 
         let header: UIElement = Translations.t.general.add.header;
 
-        
-        if(userDetails === undefined){
+
+        if (userDetails === undefined) {
             return header.Render();
         }
-        
+
         if (!userDetails.data.loggedIn) {
             return new Combine([header, this._loginButton]).Render()
         }
 
-        if (userDetails.data.unreadMessages > 0) {
+        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < State.userJourney.addNewPointWithUnreadMessagesUnlock) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.readYourMessages,
                 "</span>",
                 this.goToInboxButton
             ]).Render();
+
         }
 
         if (userDetails.data.dryRun) {
@@ -178,7 +191,7 @@ export class SimpleAddUI extends UIElement {
             ]);
         }
 
-        if (userDetails.data.csCount < 5) {
+        if (userDetails.data.csCount < State.userJourney.addNewPointsUnlock) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.fewChangesBefore,
                 "</span>"]).Render();

@@ -6,7 +6,7 @@
     "fr": "Objet cycliste",
     "de": "Mit Fahrrad zusammenhängendes Objekt"
   },
-  "minzoom": 14,
+  "minzoom": 13,
   "overpassTags": "theme~cycling|bicycle",
   "title": {
     "render": {

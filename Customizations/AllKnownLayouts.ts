@@ -1,10 +1,7 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
-import {Groen} from "./Layouts/Groen";
-import Cyclofix from "./Layouts/Cyclofix";
 import {StreetWidth} from "./Layouts/StreetWidth";
 import {MetaMap} from "./Layouts/MetaMap";
-import {Natuurpunt} from "./Layouts/Natuurpunt";
 import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
@@ -12,29 +9,55 @@ import * as toilets from "../assets/themes/toilets/toilets.json";
 import * as artworks from "../assets/themes/artwork/artwork.json";
 import * as cyclestreets from "../assets/themes/cyclestreets/cyclestreets.json";
 import * as ghostbikes from "../assets/themes/ghostbikes/ghostbikes.json"
+import * as cyclofix from "../assets/themes/cyclofix/cyclofix.json"
+import * as buurtnatuur from "../assets/themes/buurtnatuur/buurtnatuur.json"
+
 import {PersonalLayout} from "../Logic/PersonalLayout";
 
 export class AllKnownLayouts {
 
     public static allLayers: Map<string, LayerDefinition> = undefined;
 
+    private static GenerateCycloFix(): Layout {
+        const layout = FromJSON.LayoutFromJSON(cyclofix)
+        const now = new Date();
+        const m = now.getMonth() + 1;
+        const day = new Date().getDay() + 1;
+        const date = day + "/" + m;
+        if (date === "31/10" || date === "1/11" || date === "2/11") {
+            // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
+            layout.layers.push(
+                FromJSON.sharedLayers.get("ghost_bike")
+            );
+
+        }
+        return layout;
+
+    }
+
+    private static GenerateBuurtNatuur(): Layout {
+        const layout = FromJSON.LayoutFromJSON(buurtnatuur);
+        layout.enableMoreQuests = false;
+        layout.enableShareScreen = false;
+        return layout;
+    }
+
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
-        new Natuurpunt(),
-        new Cyclofix(),
+        //    new Natuurpunt(),
+        AllKnownLayouts.GenerateBuurtNatuur(),
         FromJSON.LayoutFromJSON(bookcases),
         FromJSON.LayoutFromJSON(aed),
         FromJSON.LayoutFromJSON(toilets),
         FromJSON.LayoutFromJSON(artworks),
         FromJSON.LayoutFromJSON(cyclestreets),
         FromJSON.LayoutFromJSON(ghostbikes),
-        
+        AllKnownLayouts.GenerateCycloFix(),
+
         new MetaMap(),
         new StreetWidth(),
-        new Groen(),
-
     ];
-    
+
 
     public static allSets: Map<string, Layout> = AllKnownLayouts.AllLayouts();
 
@@ -50,7 +73,6 @@ export class AllKnownLayouts {
                         throw `Layer ${layer} was not found or defined - probably a type was made`
                     }
                 }
-
 
                 if (this.allLayers[layer.id] !== undefined) {
                     continue;

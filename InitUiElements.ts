@@ -355,11 +355,12 @@ export class InitUiElements {
         let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
             return {value: layer, shown: layer.name}
         });
-        let layerControlPanel = new Combine([new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
+        let layerControlPanel = new Combine(
+            [new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
         layerControlPanel.SetStyle("margin:1em");
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
-            layerControlPanel = new Combine([layerSelection, layerControlPanel]);
+            layerControlPanel = new Combine([layerSelection, "<br/>",layerControlPanel]);
         }
         return layerControlPanel;
     }
@@ -375,6 +376,7 @@ export class InitUiElements {
                 new Combine([
                     closeButton,
                     layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
+                    .SetClass("hidden-on-mobile")
                 ,
                 new Combine([Img.closedFilterButton])
                     .SetStyle("display:block;border-radius:50%;background:white;padding:1em;"),
@@ -408,15 +410,21 @@ export class InitUiElements {
     static InitBaseMap(){
         const bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
             State.state.locationControl.map((location) => {
-                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomplete ${State.vNumber}</a>  <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' alt='Report bug'  class='small-userbadge-icon'></a>`;
+                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomplete ${State.vNumber}</a>`
+                const reportBug = `<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' class='small-userbadge-icon'></a>`;
+               
+                const layoutId = State.state.layoutToUse.data.id;
+                const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
+                console.log("OsmCha link is",osmChaLink);
+                const stats = `<a href='${osmChaLink}' target='_blank'><img src='./assets/statistics.svg' class='small-userbadge-icon'></a>`;
                 let editHere = "";
                 if (location !== undefined) {
-                    editHere = " | " +
+                    editHere =
                         "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
                         "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
                         "</a>"
                 }
-                return mapComplete + editHere;
+                return new Combine([mapComplete, reportBug, " | ", stats,  " | ",editHere]).Render();
 
             })
         ));

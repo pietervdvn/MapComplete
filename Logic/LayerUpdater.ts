@@ -56,7 +56,6 @@ export class LayerUpdater {
                 continue;
             }
             if (state.locationControl.data.zoom < layer.minzoom) {
-                console.log("Not loading layer ", layer.id, " as it needs at least ", layer.minzoom, "zoom")
                 continue;
             }
             // Check if data for this layer has already been loaded

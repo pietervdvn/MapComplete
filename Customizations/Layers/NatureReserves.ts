@@ -1,11 +1,6 @@
 import {LayerDefinition} from "../LayerDefinition";
 import {Or, Tag} from "../../Logic/Tags";
-import {AccessTag} from "../Questions/AccessTag";
-import {OperatorTag} from "../Questions/OperatorTag";
-import {NameQuestion} from "../Questions/NameQuestion";
 import {NameInline} from "../Questions/NameInline";
-import {DescriptionQuestion} from "../Questions/DescriptionQuestion";
-import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import {TagRenderingOptions} from "../TagRenderingOptions";
 
 export class NatureReserves extends LayerDefinition {
@@ -27,13 +22,13 @@ export class NatureReserves extends LayerDefinition {
         ];
         this.minzoom = 13;
         this.title = new NameInline("Natuurreservaat");
-        this.style = this.generateStyleFunction();
+        this.style = function () {
+            return {
+                color: "#00bb00",
+                icon: undefined
+            };
+        };
         this.elementsToShow = [
-            new ImageCarouselWithUploadConstructor(),
-            new NameQuestion(),
-            new AccessTag(),
-            new OperatorTag(),
-            new DescriptionQuestion("natuurgebied")
         ];
 
 
@@ -97,38 +92,4 @@ export class NatureReserves extends LayerDefinition {
 
 
     }
-
-
-    private generateStyleFunction() {
-        const self = this;
-        return function (properties: any) {
-            let questionSeverity = 0;
-            for (const qd of self.elementsToShow) {
-                //if(qd instanceof DescriptionQuestion){
-                //    continue;
-                //}
-                if (qd.IsQuestioning(properties)) {
-                    questionSeverity = Math.max(questionSeverity, qd.Priority() ?? 0);
-                }
-            }
-
-            let colormapping = {
-                0: "#00bb00",
-                10: "#dddd00",
-                20: "#ff0000"
-            };
-
-            let colour = colormapping[questionSeverity];
-            while (colour == undefined) {
-                questionSeverity--;
-                colour = colormapping[questionSeverity];
-            }
-
-            return {
-                color: colour,
-                icon: undefined
-            };
-        };
-    }
-    
 }

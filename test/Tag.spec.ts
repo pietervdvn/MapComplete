@@ -9,6 +9,9 @@ import {FromJSON} from "../Customizations/JSON/FromJSON";
 import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
+import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
+import {UIEventSource} from "../Logic/UIEventSource";
+import {TagRendering} from "../UI/TagRendering";
 
 
 new T([
@@ -64,10 +67,58 @@ new T([
         equal(undefined, tr.GetContent({"foo": "bar"}));
 
     })],
-    [
-        "Select right value test",
-        () => {
     
+    [
+        "Empty match test",
+        () => {
+            const t = new Tag("key","");
+            equal(false, t.matches([{k: "key", v:"somevalue"}]))
+        }
+    ],
+    [
+        "Tagrendering test",
+        () => {
+
+            const def = {
+                "render": {
+                    "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+                },
+                "question": {
+                    "nl": "Is dit gebied toegankelijk?"
+                },
+                "freeform": {
+                    "key": "access:description"
+                },
+                "mappings": [
+                    {
+                        "if": {
+                            "and": [
+                                "access:description=",
+                                "access=",
+                                "leisure=park"
+                            ]
+                        },
+                        "then": {
+                            "nl": "Dit gebied is vrij toegankelijk"
+                        },
+                        "hideInAnswer": true
+                    },
+                    {
+                        "if":"access=no",
+                        "then":"Niet toegankelijk"
+                    }
+                ]
+            };
+
+            const constr = FromJSON.TagRendering(def, "test");
+            TagRendering.injectFunction();
+            const uiEl = constr.construct({
+                tags: new UIEventSource<any>(
+                    {leisure: "park", "access": "no"})
+            });
+            const rendered = uiEl.InnerRender();
+            equal(true, rendered.indexOf("Niet toegankelijk") > 0)
+
         }
     ]
     

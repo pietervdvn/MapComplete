@@ -22,10 +22,11 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.8";
+    public static vNumber = "0.0.8a";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
+        addNewPointsUnlock: 1,
         moreScreenUnlock: 5,
         personalLayoutUnlock: 20,
         tagsVisibleAt: 100,
@@ -33,8 +34,7 @@ export class State {
         tagsVisibleAndWikiLinked: 150,
         themeGeneratorReadOnlyUnlock: 200,
         themeGeneratorFullUnlock: 500, 
-
-
+        addNewPointWithUnreadMessagesUnlock: 500
     };
 
     public static runningFromConsole: boolean = false; 
@@ -118,7 +118,7 @@ export class State {
         str => isNaN(Number(str)) ? 0 : Number(str),[],n => ""+n
     );
 
-    constructor(layoutToUse: Layout, useDevServer = false) {
+    constructor(layoutToUse: Layout) {
         const self = this;
         this.layoutToUse.setData(layoutToUse)
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({

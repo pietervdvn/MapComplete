@@ -191,7 +191,11 @@
         "gl": "Cal é o enderezo de correo electrónico de {name}?",
         "de": "Wie lautet die E-Mail-Adresse von {name}?"
       },
-      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,

@@ -43,8 +43,10 @@ export default class GeneralSettingsPanel extends UIElement {
                     "Supported languages", "Which languages do you want to support in this theme? Type the two letter code representing your language, seperated by <span class='literal-code'>;</span>. For example:<span class='literal-code'>en;nl</span> "),
                 new SingleSetting(configuration, new MultiLingualTextFields(this.languages), "title",
                     "Title", "The title as shown in the welcome message, in the browser title bar, in the more screen, ..."),
+               new SingleSetting(configuration, new MultiLingualTextFields(this.languages), "shortDescription","Short description",
+                   "The short description is shown as subtext in the social preview and on the 'more screen'-buttons. It should be at most one sentence of around ~25words"),
                 new SingleSetting(configuration, new MultiLingualTextFields(this.languages, true),
-                    "description", "Description", "The description is shown in the welcomemessage. It is a small text welcoming users"),
+                    "description", "Description", "The description is shown in the welcome-message when opening MapComplete. It is a small text welcoming users"),
                 new SingleSetting(configuration, TextField.StringInput(), "icon",
                     "Icon", "A visual representation for your theme; used as logo in the welcomeMessage. If your theme is official, used as favicon and webapp logo",
                     {

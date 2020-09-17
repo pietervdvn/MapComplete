@@ -7,7 +7,6 @@ import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {TabbedComponent} from "../Base/TabbedComponent";
 import PageSplit from "../Base/PageSplit";
-import HelpText from "../../Customizations/HelpText";
 import AllLayersPanel from "./AllLayersPanel";
 import SharePanel from "./SharePanel";
 import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
@@ -16,6 +15,7 @@ import {State} from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
+import HelpText from "./HelpText";
 
 
 export default class CustomGeneratorPanel extends UIElement {
@@ -42,7 +42,8 @@ export default class CustomGeneratorPanel extends UIElement {
         const encoded = es.map(config => btoa(JSON.stringify(config)));
         encoded.addCallback(encoded => LocalStorageSource.Get("last-custom-theme"))
         const liveUrl = encoded.map(encoded => `./index.html?userlayout=${es.data.id}#${encoded}`)
-        const iframe = liveUrl.map(url => `<iframe src='${url}' width='100%' height='99%' style="box-sizing: border-box" title='Theme Preview'></iframe>`);
+        const testUrl = encoded.map(encoded => `./index.html?test=true&userlayout=${es.data.id}#${encoded}`)
+        const iframe = testUrl.map(url => `<iframe src='${url}' width='100%' height='99%' style="box-sizing: border-box" title='Theme Preview'></iframe>`);
         const currentSetting = new UIEventSource<SingleSetting<any>>(undefined)
         const generalSettings = new GeneralSettings(es, currentSetting);
         const languages = generalSettings.languages;

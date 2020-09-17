@@ -1,9 +1,9 @@
-import {UIElement} from "../UI/UIElement";
-import {SubtleButton} from "../UI/Base/SubtleButton";
-import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import SingleSetting from "../UI/CustomGenerator/SingleSetting";
-import Combine from "../UI/Base/Combine";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {SubtleButton} from "../Base/SubtleButton";
+import Combine from "../Base/Combine";
+import SingleSetting from "./SingleSetting";
 
 export default class HelpText extends UIElement {
 
@@ -32,7 +32,7 @@ export default class HelpText extends UIElement {
                 return "<h1>Welcome to the Custom Theme Builder</h1>" +
                     "Here, one can make their own custom mapcomplete themes.<br/>" +
                     "Fill out the fields to get a working mapcomplete theme. More information on the selected field will appear here when you click it.<br/>" +
-                    "Want to see how the quests are doing in number of visits? All the stats are open on <a href='pietervdvn.goatcounter.com' target='_blank'>goatcounter</a>";
+                    "Want to see how the quests are doing in number of visits? All the stats are open on <a href='https://pietervdvn.goatcounter.com' target='_blank'>goatcounter</a>";
             }
 
             return new Combine(["<h1>", setting._name, "</h1>", setting._description.Render()]).Render();

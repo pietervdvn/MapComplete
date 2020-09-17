@@ -19,7 +19,7 @@ export class SubtleButton extends UIElement{
         if ((imageUrl ?? "") === "") {
             this.image = new FixedUiElement("");
         } else if (typeof (imageUrl) === "string") {
-            this.image = new FixedUiElement(`<img src="${imageUrl}">`);
+            this.image = new FixedUiElement(`<img style="height:3em" src="${imageUrl}">`);
         } else {
             this.image = imageUrl;
         }

@@ -65,7 +65,8 @@ body {
 }
 
     form {
-        display: inline;
+        display: inline-block;
+        max-width: 90vw;
     }
 
     .invalid {
@@ -187,8 +188,10 @@ body {
     }
 
     #hidden-on-mobile {
-        display: none; /*Only shown on small screens*/
+        display: none; /*Only shown on small screens - this is probably named wrongly*/
     }
+    
+    
 
     .add-popup-all-buttons {
         max-height: 50vh;
@@ -197,21 +200,20 @@ body {
         width: 100%;
     }
 
-    @media only screen and (max-height: 600px) and (not (max-width:
+@media only screen and (max-height: 600px) and (not (max-width:700px)) {
 
-    700px
+    /* Landscape and portrait */
+    #topleft-tools {
+        padding: 0.1em 0.1em 0.1em unset;
+    }
 
-    )) {
+    .hidden-on-mobile {
+        display: none !important;
+    }
 
-        /* Landscape and portrait */
-        #topleft-tools {
-            padding: 0.1em 0.1em 0.1em unset;
-        }
-
-
-        #userbadge-and-search {
-            position: relative;
-            display: inline-block;
+    #userbadge-and-search {
+        position: relative;
+        display: inline-block;
             width: auto;
             max-width: 50vw;
             margin: 0;
@@ -237,8 +239,11 @@ body {
             width: auto;
             max-width: 100vw;
         }
-        
 
+
+        .hidden-on-mobile {
+            display: none !important;
+        }
 
         #topleft-tools {
             padding: 0.2em !important;
@@ -363,6 +368,11 @@ body {
     #hidden-on-mobile {
         display: block;
     }
+
+
+    .hidden-on-mobile {
+        display: none !important;
+    }
   
     #messagesbox-wrapper {
         display: none;
@@ -433,6 +443,11 @@ body {
         /* Landscape: small 'to the map' */
         #hidden-on-mobile {
             display: unset;
+        }
+
+
+        .hidden-on-mobile {
+            display: none !important;
         }
 
         #messagesboxmobile {

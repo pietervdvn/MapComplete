@@ -1,0 +1,202 @@
+
+
+{{Software
+|name           = personal
+|author         = MapComplete builtin
+|web            = https://pietervdvn.github.io/MapComplete/personal.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: The personal theme allows to select one or more layers from all the layouts, creating a truly personal editor
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = buurtnatuur
+|author         = 
+|web            = https://pietervdvn.github.io/MapComplete/buurtnatuur.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = bookcases
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/bookcases.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = aed
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/aed.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;fr;nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: On this map, one can find and mark nearby defibrillators
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = toilets
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/toilets.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: A map of public toilets
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = artworks
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/artworks.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;nl;fr
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: Welcome to Open Artwork Map, a map of statues, busts, grafittis, 
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = fietsstraten
+|author         = MapComlete
+|web            = https://pietervdvn.github.io/MapComplete/fietsstraten.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: Een kaart met alle gekende fietsstraten
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = ghostbikes
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/ghostbikes.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = cyclofix
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/cyclofix.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;nl;fr;gl;de
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = metamap
+|author         = MapComplete builtin
+|web            = https://pietervdvn.github.io/MapComplete/metamap.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: 
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+

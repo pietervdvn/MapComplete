@@ -37,11 +37,21 @@ export interface LayoutConfigJson {
      * The title, as shown in the welcome message and the more-screen
      */
     title: string | any;
+
+    /**
+     * A short description, showed as social description and in the 'more theme'-buttons
+     */
+    shortDescription?: string | any;
+    
     /**
      * The description, as shown in the welcome message and the more-screen
      */
     description: string | any;
 
+    /**
+     * A part of the description, shown under the login-button.
+     */
+    descriptionTail?: string | any;
 
     /**
      * The icon representing this theme.

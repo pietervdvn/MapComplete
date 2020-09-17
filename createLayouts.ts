@@ -70,6 +70,41 @@ function validate(layout: Layout) {
 
 }
 
+function generateWikiEntry(layout: Layout){
+    if(layout.hideFromOverview){
+        return "";
+    }
+    let image = "MapComplete_Screenshot.png";
+    if(layout.socialImage){
+    //    image = layout.socialImage;
+    }
+    
+    
+    if(!image.startsWith("http")){
+   //     image = "https://pietervdvn.github.io/MapComplete/"+image
+    }
+    
+   return `{{Software
+|name           = ${layout.id}
+|author         = ${layout.maintainer ?? "MapComplete builtin"}
+|web            = https://pietervdvn.github.io/MapComplete/${layout.id}.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = ${layout.supportedLanguages.join(";")}
+|genre          = display;editor
+|screenshot     = ${image}
+|description    = A MapComplete theme: ${Translations.W(layout.description)?.InnerRender() ?? ""}
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}`
+}
+
 const alreadyWritten = []
 
 function createIcon(iconPath: string, size: number) {
@@ -183,6 +218,9 @@ function createLandingPage(layout: Layout) {
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
 const all = AllKnownLayouts.allSets;
+
+let wikiPage = "";
+
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
@@ -205,8 +243,10 @@ for (const layoutName in all) {
     console.log("Generating html-file for ", layout.id)
     writeFile(enc(layout.id) + ".html", landing, err)
     console.log("done")
+    
+    wikiPage += "\n\n"+generateWikiEntry(layout);
 }
-
+writeFile("wikiIndex", wikiPage, (err) => {err ?? console.log("Could not save wikiindex", err)});
 console.log("Counting all translations")
 Translations.CountTranslations();
-console.log("All done!")
+console.log("All done!");

@@ -1,6 +1,7 @@
 import {UIElement} from "../UIElement"
 import Locale from "./Locale"
 import Combine from "../Base/Combine";
+import {Utils} from "../../Utils";
 
 
 export default class Translation extends UIElement {
@@ -87,4 +88,16 @@ export default class Translation extends UIElement {
     }
 
 
+    FirstSentence() {
+        
+        const tr = {};
+        for (const lng in this.translations) {
+            let txt = this.translations[lng];
+            txt = txt.replace(/\..*/, "");
+            txt = Utils.EllipsesAfter(txt, 255);
+            tr[lng] = txt;
+        }
+        
+        return new Translation(tr);
+    }
 }

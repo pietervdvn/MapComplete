@@ -44,11 +44,15 @@ export class SearchAndGo extends UIElement {
     // Triggered by 'enter' or onclick
     private RunSearch() {
         const searchString = this._searchField.GetValue().data;
+        if(searchString === undefined || searchString === ""){
+            return;
+        }
         this._searchField.GetValue().setData("");
         this._placeholder.setData(Translations.t.general.search.searching);
         const self = this;
         Geocoding.Search(searchString,  (result) => {
 
+            console.log("Search result", result)
                 if (result.length == 0) {
                     self._placeholder.setData(Translations.t.general.search.nothing);
                     return;

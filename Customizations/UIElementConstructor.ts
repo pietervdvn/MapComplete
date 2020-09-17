@@ -12,7 +12,6 @@ export interface TagDependantUIElementConstructor {
     construct(dependencies: Dependencies): TagDependantUIElement;
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
-    Priority(): number;
     GetContent(tags: any): Translation;
 
 }
@@ -23,7 +22,5 @@ export abstract class TagDependantUIElement extends UIElement {
 
     abstract IsQuestioning(): boolean;
     
-    abstract Priority() : number;
-
     abstract IsSkipped() : boolean;
 }

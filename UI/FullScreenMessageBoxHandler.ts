@@ -23,11 +23,13 @@ export class FullScreenMessageBox extends UIElement {
             this._uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
                 "display:block;"+
                 "padding: 1em;"+
-                "padding-bottom:5em;"+
+                "padding-bottom:6em;"+
                 `margin-bottom:${FullScreenMessageBox._toTheMap_height};`+
                 "box-sizing:border-box;"+
                 `height:calc(100vh - ${FullScreenMessageBox._toTheMap_height});`+
                 "overflow-y: auto;" +
+                "max-width:100vw;" +
+                "overflow-x:hidden;" +
                 "background:white;"
 
             );
