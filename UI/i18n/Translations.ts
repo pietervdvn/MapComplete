@@ -379,6 +379,10 @@ export default class Translations {
                     fr: "Ajouter un/une {category} ici",
                     gl: "Engadir {category} aquí",
                     de: "Hier eine {category} hinzufügen"
+                }),
+                openLayerControl: new T({
+                    "en": "Open the layer control box",
+                    "nl": "Open de laag-instellingen"
                 })
             },
             pickLanguage: new T({

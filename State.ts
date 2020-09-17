@@ -22,7 +22,7 @@ export class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = "0.0.8a";
+    public static vNumber = "0.0.8b";
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -114,8 +114,11 @@ export class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
-    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab","0").map<number>(
-        str => isNaN(Number(str)) ? 0 : Number(str),[],n => ""+n
+    public layerControlIsOpened: UIEventSource<boolean> = QueryParameters.GetQueryParameter("layer-control-toggle", "false")
+        .map<boolean>((str) => str !== "false", [], b => "" + b)
+
+    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0").map<number>(
+        str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
     );
 
     constructor(layoutToUse: Layout) {

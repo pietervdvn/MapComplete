@@ -378,8 +378,7 @@ export class InitUiElements {
                 ,
                 new Combine([Img.closedFilterButton])
                     .SetStyle("display:block;border-radius:50%;background:white;padding:1em;"),
-                QueryParameters.GetQueryParameter("layer-control-toggle", "false")
-                    .map((str) => str !== "false", [], b => "" + b)
+                State.state.layerControlIsOpened
             );
             checkbox
                 .AttachTo("layer-selection");

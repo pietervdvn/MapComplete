@@ -15,6 +15,16 @@ export class StrayClickHandler {
         this._uiToShow = uiToShow;
         const self = this;
         const map = State.state.bm.map;
+        State.state.filteredLayers.data.forEach((filteredLayer) => {
+            filteredLayer.isDisplayed.addCallback(isEnabled => {
+                if(isEnabled){
+                    // When a layer is activated, we remove the 'last click location' in order to force the user to reclick
+                    // This reclick might be at a location where a feature now appeared...
+                     map.removeLayer(self._lastMarker);
+                }
+            })
+        })
+        
         State.state.bm.LastClickLocation.addCallback(function (lastClick) {
             State.state.selectedElement.setData(undefined);
 
