@@ -7,7 +7,6 @@ import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {TabbedComponent} from "../Base/TabbedComponent";
 import PageSplit from "../Base/PageSplit";
-import HelpText from "../../Customizations/HelpText";
 import AllLayersPanel from "./AllLayersPanel";
 import SharePanel from "./SharePanel";
 import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
@@ -16,6 +15,7 @@ import {State} from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
+import HelpText from "./HelpText";
 
 
 export default class CustomGeneratorPanel extends UIElement {

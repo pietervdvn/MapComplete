@@ -1,9 +1,9 @@
-import {UIElement} from "../UI/UIElement";
-import {SubtleButton} from "../UI/Base/SubtleButton";
-import {VariableUiElement} from "../UI/Base/VariableUIElement";
-import SingleSetting from "../UI/CustomGenerator/SingleSetting";
-import Combine from "../UI/Base/Combine";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {SubtleButton} from "../Base/SubtleButton";
+import Combine from "../Base/Combine";
+import SingleSetting from "./SingleSetting";
 
 export default class HelpText extends UIElement {
 

@@ -2,7 +2,7 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import SingleSetting from "./SingleSetting";
 import LayerPanel from "./LayerPanel";
-import HelpText from "../../Customizations/HelpText";
+import HelpText from "./HelpText";
 import {MultiTagInput} from "../Input/MultiTagInput";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import Combine from "../Base/Combine";
