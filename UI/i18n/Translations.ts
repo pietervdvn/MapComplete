@@ -498,7 +498,7 @@ export default class Translations {
                     "<p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats ​​per OpenStreetMap." +
                     "Si canvies alguna cosa aquí també es reflectirà en aquestes aplicacions en la seva propera actualització.</p>",
                 nl: "<h3>Een open kaart</h3>" +
-                    "<p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart iedereen zijn interesses aan zou kunnen toevoegen? " +
+                    "<p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? " +
                     "Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p>" +
                     "<p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href='https://osm.org/copyright' target='_blank'>bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. " +
                     "Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p>" +
@@ -791,6 +791,10 @@ export default class Translations {
                 "en": "Background map",
                 "nl": "Achtergrondkaart",
                 "de": "Hintergrundkarte"
+            }),
+            zoomInToSeeThisLayer: new T({
+                "nl":"Vergroot de kaart om deze laag te zien",
+                "en":"Zoom in to see this layer"
             })
         },
         favourite: {
