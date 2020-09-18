@@ -382,12 +382,14 @@ export default class Translations {
                 }),
                 openLayerControl: new T({
                     "en": "Open the layer control box",
-                    "nl": "Open de laag-instellingen"
+                    "nl": "Open de laag-instellingen",
+                    "de": "Das Ebenen-Kontrollkästchen öffnen"
                 })
                 ,
                 layerNotEnabled: new T({
                     "en": "The layer {layer} is not enabled. Enable this layer to add a point",
-                    "nl": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegn"
+                    "nl": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegn",
+                    "de": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
                 })
             },
             pickLanguage: new T({
@@ -539,7 +541,7 @@ export default class Translations {
                     "</p>" +
                     "<p>Wenn Sie hier einen Punkt hinzufügen oder eine Frage beantworten, wird er nach einer Weile in all diesen Anwendungen sichtbar sein.</p>"
             }),
-            
+
             sharescreen: {
                 intro: new T({
                     en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
@@ -662,7 +664,7 @@ export default class Translations {
                     gl: "<h3>Máis tarefas</h3>Góstache captar datos? <br/>Hai máis capas dispoñíbeis.",
                     de: "<h3>Weitere Quests</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar."
                 }),
-                
+
                 requestATheme: new T({
                     en: "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>here</a>",
                     ca: "Si vols que et fem una petició pròpia , demana-la <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>aquí</a>",
@@ -748,13 +750,13 @@ export default class Translations {
                 nl: "<h3>Onofficiële themea's</h3>Je bezocht deze thema's gemaakt door andere OpenStreetMappers eerder",
                 gl: "<h3>Temas personalizados</h3>Estes son temas xerados por usuarios previamente visitados.",
                 de: "<h3>Kundenspezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen"
-            }), 
+            }),
             aboutMapcomplete: new T({
                 en: "<h3>About MapComplete</h3>" +
                     "<p>MapComplete is an OpenStreetMap editor that is meant to help everyone to easily add information on a <b>single theme.</b></p>" +
                     "<p>Only features relevant to a single theme are shown with a few predefined questions, in order to keep things <b>simple and extremly user-friendly</b>." +
-                    "The theme maintainer can also choose a language for the interface, choose to disable elements or even to embed it into a different website without any UI-element at all.</p>" + 
-                  
+                    "The theme maintainer can also choose a language for the interface, choose to disable elements or even to embed it into a different website without any UI-element at all.</p>" +
+
                     "<p>However, another important part of MapComplete is to always <b>offer the next step</b> to learn more about OpenStreetMap:" +
                     "<ul>" +
                     "<li>An iframe without UI-elements will link to a full-screen version</li>" +
@@ -783,8 +785,8 @@ export default class Translations {
                 de: "<h3>Über MapComplete</h3>" +
                     "<p>MapComplete ist ein OpenStreetMap-Editor, der jedem helfen soll, auf einfache Weise Informationen zu einem <b>Einzelthema hinzuzufügen.</b></p>" +
                     "<p>Nur Merkmale, die für ein einzelnes Thema relevant sind, werden mit einigen vordefinierten Fragen gezeigt, um die Dinge <b>einfach und extrem benutzerfreundlich</b> zu halten." +
-                    "Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p>" + 
-                  
+                    "Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p>" +
+
                     "<p>Ein weiterer wichtiger Teil von MapComplete ist jedoch, immer <b>den nächsten Schritt anzubieten</b>um mehr über OpenStreetMap zu erfahren:" +
                     "<ul>" +
                     "<li>Ein iframe ohne UI-Elemente verlinkt zu einer Vollbildversion</li>" +
@@ -802,8 +804,9 @@ export default class Translations {
                 "de": "Hintergrundkarte"
             }),
             zoomInToSeeThisLayer: new T({
-                "nl":"Vergroot de kaart om deze laag te zien",
-                "en":"Zoom in to see this layer"
+                "en": "Zoom in to see this layer",
+                "nl": "Vergroot de kaart om deze laag te zien",
+                "de": "Vergrößern, um diese Ebene zu sehen"
             })
         },
         favourite: {
