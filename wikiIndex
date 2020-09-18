@@ -47,7 +47,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;nl
+|languages      = en;nl;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored
@@ -87,7 +87,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en
+|languages      = en;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A map of public toilets
