@@ -1,12 +1,19 @@
 {
   "id": "fietsstraten",
   "version": "2020-08-30",
-  "title": "Fietsstraten",
-  "shortDescription": "Een kaart met alle gekende fietsstraten",
-  "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
-  
+  "title": {
+    "nl": "Fietsstraten"
+  },
+  "shortDescription": {
+    "nl": "Een kaart met alle gekende fietsstraten"
+  },
+  "description": {
+    "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau."
+  },
   "icon": "./assets/themes/cyclestreets/F111.svg",
-  "language": "nl",
+  "language": [
+    "nl"
+  ],
   "startLat": 51.2095,
   "startZoom": 14,
   "startLon": 3.2228,
@@ -14,7 +21,9 @@
   "widenfactor": 0.05,
   "roamingRenderings": [
     {
-      "question": "Is deze straat een fietsstraat?",
+      "question": {
+        "nl": "Is deze straat een fietsstraat?"
+      },
       "mappings": [
         {
           "if": {
@@ -24,7 +33,9 @@
               "proposed:cyclestreet="
             ]
           },
-          "then": "Deze straat is een fietsstraat (en dus zone 30)"
+          "then": {
+            "nl": "Deze straat is een fietsstraat (en dus zone 30)"
+          }
         },
         {
           "if": {
@@ -33,7 +44,9 @@
               "proposed:cyclestreet="
             ]
           },
-          "then": "Deze straat is een fietsstraat",
+          "then": {
+            "nl": "Deze straat is een fietsstraat"
+          },
           "hideInAnswer": true
         },
         {
@@ -43,7 +56,9 @@
               "proposed:cyclestreet=yes"
             ]
           },
-          "then": "Deze straat wordt binnenkort een fietsstraat"
+          "then": {
+            "nl": "Deze straat wordt binnenkort een fietsstraat"
+          }
         },
         {
           "if": {
@@ -52,13 +67,19 @@
               "proposed:cyclestreet="
             ]
           },
-          "then": "Deze straat is geen fietsstraat"
+          "then": {
+            "nl": "Deze straat is geen fietsstraat"
+          }
         }
       ]
     },
     {
-      "question": "Wanneer wordt deze straat een fietsstraat?",
-      "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
+      "question": {
+        "nl": "Wanneer wordt deze straat een fietsstraat?"
+      },
+      "render": {
+        "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+      },
       "condition": "proposed:cyclestreet=yes",
       "freeform": {
         "type": "date",
@@ -69,7 +90,9 @@
   "layers": [
     {
       "id": "fietsstraat",
-      "name": "Fietsstraten",
+      "name": {
+        "nl": "Fietsstraten"
+      },
       "minzoom": 9,
       "overpassTags": {
         "and": [
@@ -77,7 +100,9 @@
           "traffic_sign="
         ]
       },
-      "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
+      "description": {
+        "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen."
+      },
       "title": "{name}",
       "icon": "./assets/themes/cyclestreets/F111.svg",
       "color": "#0000ff",
@@ -85,16 +110,24 @@
     },
     {
       "id": "toekomstige_fietsstraat",
-      "name": "Toekomstige fietsstraat",
-      "description": "Deze straat wordt binnenkort een fietsstraat",
+      "name": {
+        "nl": "Toekomstige fietsstraat"
+      },
+      "description": {
+        "nl": "Deze straat wordt binnenkort een fietsstraat"
+      },
       "minzoom": 9,
       "wayHandling": 0,
       "overpassTags": "proposed:cyclestreet=yes",
       "title": {
-        "render": "Toekomstige fietsstraat",
+        "render": {
+          "nl": "Toekomstige fietsstraat"
+        },
         "mappings": [
           {
-            "then": "{name} wordt fietsstraat",
+            "then": {
+              "nl": "{name} wordt fietsstraat"
+            },
             "if": "name~*"
           }
         ]
@@ -105,13 +138,19 @@
     },
     {
       "id": "all_streets",
-      "name": "Alle straten",
-      "description": "Laag waar je een straat als fietsstraat kan markeren",
+      "name": {
+        "nl": "Alle straten"
+      },
+      "description": {
+        "nl": "Laag waar je een straat als fietsstraat kan markeren"
+      },
       "overpassTags": "highway~residential|tertiary|unclassified",
       "minzoom": 18,
       "wayHandling": 0,
       "title": {
-        "render": "Straat",
+        "render": {
+          "nl": "Straat"
+        },
         "mappings": [
           {
             "if": "name~*",
