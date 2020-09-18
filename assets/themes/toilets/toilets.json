@@ -23,13 +23,17 @@
     {
       "id": "Toilet",
       "name": {
-        "en": "Toilets",
-        "de": "Toiletten"
+        "render": {
+          "en": "Toilets",
+          "de": "Toiletten"
+        }
       },
       "overpassTags": "amenity=toilets",
       "title": {
-        "en": "Toilet",
-        "de": "Toilette"
+        "render": {
+          "en": "Toilet",
+          "de": "Toilette"
+        }
       },
       "icon": {
         "render": "./assets/themes/toilets/toilets.svg",
