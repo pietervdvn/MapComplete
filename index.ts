@@ -7,16 +7,24 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {TagRendering} from "./UI/TagRendering";
-import {State} from "./State";
 
 TagRendering.injectFunction();
 
-
+let defaultLayout = "buurtnatuur"
 // --------------------- Special actions based on the parameters -----------------
 // @ts-ignore
 if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button
     window.location.replace("https://buurtnatuur.be");
+}
+
+
+if (location.href.indexOf("buurtnatuur.be") >= 0) {
+    defaultLayout = "buurtnatuur"
+}
+
+if(location.href.indexOf("pietervdvn.github.io") >= 0){
+    defaultLayout = "bookcases"
 }
 
 
@@ -36,7 +44,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "buurtnatuur"
+
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {

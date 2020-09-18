@@ -664,9 +664,10 @@ body {
 
 .subtle-button img {
     max-width: 3em;
-    max-height: 3em;
+    height: 3em;
     margin-right: 0.5em;
-    padding: 0.5em;
+    padding: 0;
+    padding-bottom:0.2em;
 }
 
 

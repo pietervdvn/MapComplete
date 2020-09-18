@@ -59,8 +59,10 @@
             "amenity=toilets"
           ],
           "description": {
-            "en": "A publicly accessible toilet or restroom",
-            "de": "Eine öffentlich zugängliche Toilette"
+            "render": {
+              "en": "A publicly accessible toilet or restroom",
+              "de": "Eine öffentlich zugängliche Toilette"
+            }
           }
         },
         {

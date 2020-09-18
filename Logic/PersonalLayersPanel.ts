@@ -51,8 +51,10 @@ export class PersonalLayersPanel extends UIElement {
                     continue;
                 }
                 let icon = layer.icon ?? "./assets/checkmark.svg";
-                if (typeof (icon) !== "string") {
-                    icon = icon.GetContent({"id": "node/-1"}).txt ?? "./assets/checkmark.svg";
+                let iconUnset = layer.icon ?? "";
+                if (layer.icon !== undefined && typeof (layer.icon) !== "string") {
+                    icon = layer.icon.GetContent({"id": "node/-123456"}).txt ?? "./assets/checkmark.svg";
+                    iconUnset = icon;
                 }
 
                 let name = layer.name ?? layer.id;
@@ -65,10 +67,16 @@ export class PersonalLayersPanel extends UIElement {
                     "</b> ",
                     layer.description !== undefined ? new Combine(["<br/>", layer.description]) : "",
                 ])
+                
+                const iconImage = `<img src="${icon}">`;
+                const iconUnsetImage = `<img src="${iconUnset}">`
+                
                 const cb = new CheckBox(
-                    new SubtleButton(icon ?? "./assets/checkmark.svg", content),
                     new SubtleButton(
-                        new FixedUiElement(`<img src="${icon}">`).SetStyle("opacity:0.1"),
+                        new FixedUiElement(iconImage).SetStyle(""), 
+                        content),
+                    new SubtleButton(
+                        new FixedUiElement(iconUnsetImage).SetStyle("opacity:0.1;"),
                         new Combine(["<del>",
                             content,
                             "</del>"
