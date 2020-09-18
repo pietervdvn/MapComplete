@@ -257,9 +257,14 @@ export class FilteredLayer {
                 // We monky-patch the feature element with an update-style
                 feature.updateStyle = () => {
                     if (layer.setIcon) {
-                        const icon = self._style(feature.properties).icon;
+                        const style = self._style(feature.properties);
+                        const icon = style.icon;
                         if (icon.iconUrl) {
-                            layer.setIcon(L.icon(icon))
+                            if (icon.iconUrl.startsWith("$circle")) {
+                                // pass
+                            } else {
+                                layer.setIcon(L.icon(icon))
+                            }
                         }
                     } else {
                         self._geolayer.setStyle(function (featureX) {

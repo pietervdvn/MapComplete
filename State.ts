@@ -134,12 +134,13 @@ export class State {
             })
         }
 
-        this.zoom = asFloat(QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
-            .syncWith(LocalStorageSource.Get("zoom")));
+        this.zoom = asFloat(
+            QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
+            .syncWith(LocalStorageSource.Get("zoom"), true));
         this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
-            .syncWith(LocalStorageSource.Get("lat")));
+            .syncWith(LocalStorageSource.Get("lat"), true));
         this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
-            .syncWith(LocalStorageSource.Get("lon")));
+            .syncWith(LocalStorageSource.Get("lon"), true));
 
 
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
