@@ -77,13 +77,15 @@ export class UIEventSource<T>{
     }
 
     
-    public syncWith(otherSource: UIEventSource<T>) : UIEventSource<T>{
+    public syncWith(otherSource: UIEventSource<T>, reverseOverride = false): UIEventSource<T> {
         this.addCallback((latest) => otherSource.setData(latest));
         const self = this;
         otherSource.addCallback((latest) => self.setData(latest));
-        if(this.data === undefined){
-           this.setData(otherSource.data);
-        }else{
+        if (reverseOverride && otherSource.data !== undefined) {
+            this.setData(otherSource.data);
+        } else if (this.data === undefined) {
+            this.setData(otherSource.data);
+        } else {
             otherSource.setData(this.data);
         }
         return this;

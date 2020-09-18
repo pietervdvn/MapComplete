@@ -47,7 +47,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;nl
+|languages      = en;nl;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored
@@ -67,7 +67,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;fr;nl
+|languages      = en;fr;nl;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: On this map, one can find and mark nearby defibrillators
@@ -87,7 +87,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en
+|languages      = en;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A map of public toilets
@@ -107,7 +107,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;nl;fr
+|languages      = en;nl;fr;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: Welcome to Open Artwork Map, a map of statues, busts, grafittis, 
@@ -147,7 +147,7 @@
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;nl
+|languages      = en;nl;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location

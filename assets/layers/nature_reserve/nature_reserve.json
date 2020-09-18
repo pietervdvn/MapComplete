@@ -1,6 +1,8 @@
 {
   "id": "nature_reserve_simple",
-  "name": "Layer",
+  "name": {
+    "nl": "Layer"
+  },
   "minzoom": 10,
   "overpassTags": {
     "or": [
