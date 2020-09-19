@@ -93,7 +93,6 @@ export default class Translation extends UIElement {
         const tr = {};
         for (const lng in this.translations) {
             let txt = this.translations[lng];
-            console.log(txt)
             txt = txt.replace(/\..*/, "");
             txt = Utils.EllipsesAfter(txt, 255);
             tr[lng] = txt;

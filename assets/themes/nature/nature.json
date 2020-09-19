@@ -1,0 +1,30 @@
+{
+  "id": "nature",
+  "title": {
+    "nl": "De Natuur in"
+  },
+  "shortDescription": {
+    "nl": "Deze kaart bevat informatie voor natuurliefhebbers"
+  },
+  "description": {
+    "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/nature/logo.svg",
+  "version": "0",
+  "startLat": 51.20875,
+  "startLon": 3.22435,
+  "startZoom": 12,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "drinking_water",
+    "birdhides",
+    "maps",
+    "nature_reserves"
+  ],
+  "roamingRenderings": []
+}

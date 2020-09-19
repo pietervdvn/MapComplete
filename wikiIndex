@@ -21,6 +21,26 @@
 }}
 
 {{Software
+|name           = cyclofix
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/cyclofix.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = en;nl;fr;gl;de
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
 |name           = buurtnatuur
 |author         = Pieter Vander Vennet
 |web            = https://pietervdvn.github.io/MapComplete/buurtnatuur.html
@@ -161,16 +181,16 @@
 }}
 
 {{Software
-|name           = cyclofix
-|author         = MapComplete
-|web            = https://pietervdvn.github.io/MapComplete/cyclofix.html
+|name           = nature
+|author         = 
+|web            = https://pietervdvn.github.io/MapComplete/nature.html
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en;nl;fr;gl;de
+|languages      = nl
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs
+|description    = A MapComplete theme: Deze kaart bevat informatie voor natuurliefhebbers
 |map        = yes
 |findLocation            = yes
 |findNearbyPOI           = yes
@@ -181,16 +201,16 @@
 }}
 
 {{Software
-|name           = metamap
-|author         = MapComplete builtin
-|web            = https://pietervdvn.github.io/MapComplete/metamap.html
+|name           = maps
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/maps.html
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = en
+|languages      = en;nl
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: 
+|description    = A MapComplete theme: A map of maps and information boards
 |map        = yes
 |findLocation            = yes
 |findNearbyPOI           = yes

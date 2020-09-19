@@ -1,0 +1,31 @@
+{
+  "id": "maps",
+  "title": {
+    "en": "Information boards",
+    "nl": "Informatieborden en kaarten"
+  },
+  "shortDescription": {
+    "en": "A map of maps and information boards",
+    "nl": "Een kaart met kaarten en informatieborden"
+  },
+  "description": {
+    "en": "On this map you can find all maps OpenStreetMap knows.<br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
+    "nl": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen."
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/maps/logo.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+   "maps"
+  ],
+  "roamingRenderings": []
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg3800"
+   height="500"
+   width="500"
+   sodipodi:docname="birdhide.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="/home/pietervdvn/git/pietervdvn.github.io/Quickmaps/Natuurgebieden/resources/birdhide.png"
+   inkscape:export-xdpi="3900"
+   inkscape:export-ydpi="3900">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.74498751"
+     inkscape:cx="-248.78385"
+     inkscape:cy="85.700327"
+     inkscape:window-x="0"
+     inkscape:window-y="1050"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3800" />
+  <defs
+     id="defs3802" />
+  <metadata
+     id="metadata3805">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <circle
+     style="fill:#ffffff;fill-opacity:1;stroke-width:37.46650696"
+     id="path7"
+     cx="249.3156"
+     cy="250.6844"
+     r="248.93001" />
+  <path
+     id="rect239-1"
+     d="M 152.31834,83.603749 V 130.1409 h 64.93624 V 83.603749 Z m 127.14153,0 V 130.1409 h 65.03734 V 83.603749 Z m 0,61.105621 v 128.48315 c 0,6.16398 4.96328,11.1283 11.12606,11.1283 h 0.80901 10.31698 v 124.53792 c 0,5.95642 4.86707,10.82482 10.82274,10.82482 h 95.48254 c 5.95552,0 10.82276,-4.86802 10.82276,-10.82482 v -77.4946 l 0.19857,-11.331 -41.36909,-175.32377 z m -160.62113,0.18734 -41.470173,175.32376 0.202694,11.43216 v 77.49422 c 1.84e-4,5.95718 4.867375,10.8252 10.822897,10.8252 h 95.482582 c 6.0591,0 10.92385,-4.86802 10.92385,-10.82482 V 284.71047 h 10.21563 0.80916 c 6.16265,0 11.12614,-5.06585 11.12614,-11.22946 V 144.89633 Z m 112.47524,0 v 119.47881 h 33.68184 V 144.89633 Z"
+     style="fill:#94bb28;fill-opacity:1;stroke-width:51.79256058"
+     inkscape:connector-curvature="0" />
+</svg>

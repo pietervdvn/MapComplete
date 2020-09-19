@@ -1,7 +1,6 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
 import {StreetWidth} from "./Layouts/StreetWidth";
-import {MetaMap} from "./Layouts/MetaMap";
 import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
@@ -11,7 +10,8 @@ import * as cyclestreets from "../assets/themes/cyclestreets/cyclestreets.json";
 import * as ghostbikes from "../assets/themes/ghostbikes/ghostbikes.json"
 import * as cyclofix from "../assets/themes/cyclofix/cyclofix.json"
 import * as buurtnatuur from "../assets/themes/buurtnatuur/buurtnatuur.json"
-
+import * as nature from "../assets/themes/nature/nature.json"
+import * as maps from "../assets/themes/maps/maps.json"
 import {PersonalLayout} from "../Logic/PersonalLayout";
 
 export class AllKnownLayouts {
@@ -45,6 +45,7 @@ export class AllKnownLayouts {
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
         //    new Natuurpunt(),
+        AllKnownLayouts.GenerateCycloFix(),
         AllKnownLayouts.GenerateBuurtNatuur(),
         FromJSON.LayoutFromJSON(bookcases),
         FromJSON.LayoutFromJSON(aed),
@@ -52,9 +53,9 @@ export class AllKnownLayouts {
         FromJSON.LayoutFromJSON(artworks),
         FromJSON.LayoutFromJSON(cyclestreets),
         FromJSON.LayoutFromJSON(ghostbikes),
-        AllKnownLayouts.GenerateCycloFix(),
+        FromJSON.LayoutFromJSON(nature),
+        FromJSON.LayoutFromJSON(maps),
 
-        new MetaMap(),
         new StreetWidth(),
     ];
 

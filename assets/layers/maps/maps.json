@@ -1,0 +1,181 @@
+{
+  "id": "maps",
+  "name": {
+    "en": "Maps",
+    "nl": "Kaarten"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "or": [
+      "tourism=map",
+      "information=map"
+    ]
+  },
+  "title": {
+    "render": {
+      "en": "Map",
+      "nl": "Kaart"
+    }
+  },
+  "description": {
+    "en": "",
+    "nl": ""
+  },
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "On which data is this map based?",
+        "nl": "Op welke data is deze kaart gebaseerd?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "map_source=OpenStreetMap",
+              "not:map_source="
+            ]
+          },
+          "then": {
+            "en": "This map is based on OpenStreetMap",
+            "nl": "Deze kaart is gebaseerd op OpenStreetMap"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "map_source"
+      },
+      "render": {
+        "en": "This map is based on {map_source}",
+        "nl": "Deze kaart is gebaseerd op {map_source}"
+      }
+    },
+    {
+      "question": {
+        "en": "Is the OpenStreetMap-attribution given?",
+        "nl": "Is de attributie voor OpenStreetMap aanwezig?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=yes"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
+            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" "
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=incomplete"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap is clearly attributed, but the license is not mentioned",
+            "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=sticker"
+            ]
+          },
+          "then": {
+            "en": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it",
+            "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=none"
+            ]
+          },
+          "then": {
+            "en": "There is no attribution at all",
+            "nl": "Er is geen attributie"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "map_source:attribution=no"
+            ]
+          },
+          "then": {
+            "nl": "Er is geen attributie",
+            "en": "There is no attribution at all"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": {
+        "or": [
+          "map_source~(O|)pen(S|s)treet(M|m)ap",
+          "map_source=osm",
+          "map_source=OSM"
+        ]
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/maps/map.svg",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "map_source=OpenStreetMap",
+            "map_source:attribution=sticker"
+          ]
+        },
+        "then": "./assets/layers/maps/map-stickered.svg"
+      },
+      {
+        "if": {
+          "and": [
+            "map_source=OpenStreetMap",
+            "map_source:attribution=yes"
+          ]
+        },
+        "then": "./assets/layers/maps/osm-logo-white-bg.svg"
+      },
+      {
+        "if": {
+          "and": [
+            "map_source=OpenStreetMap"
+          ]
+        },
+        "then": "./assets/layers/maps/osm-logo-buggy-attr.svg"
+      }
+    ]
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "50,50,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "tourism=map"
+      ],
+      "title": {
+        "en": "Map",
+        "nl": "Kaart"
+      },
+      "description": {
+        "en": "Add a missing map",
+        "nl": "Voeg een ontbrekende kaart toe"
+      }
+    }
+  ],
+  "wayHandling": 2
+}
