@@ -8,6 +8,12 @@ npm run build
 if [[ $1 == "production" ]]
 then
     echo "DEPLOYING TO PRODUCTION!"
+    rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
+    cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
+    cd /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
+elif [[ $1 == "groen" ]]
+then
+    echo "DEPLOYING TO BUURTNATUUR"
     mv /home/pietervdvn/git/buurtnatuur.github.io/CNAME /home/pietervdvn/git/
     mv /home/pietervdvn/git/buurtnatuur.github.io/.git /home/pietervdvn/git/
     rm -rf /home/pietervdvn/git/buurtnatuur.github.io/*
@@ -15,12 +21,6 @@ then
     mv /home/pietervdvn/git/CNAME /home/pietervdvn/git/buurtnatuur.github.io/
     mv /home/pietervdvn/git/.git /home/pietervdvn/git/buurtnatuur.github.io/
     cd /home/pietervdvn/git/buurtnatuur.github.io/
-elif [[ $1 == "groen" ]]
-then
-    echo "DEPLOYING TO BUURTNATUUR"
-    rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
-    cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
-    cd /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
 else
     echo "Testversion deploy"
     rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/*
