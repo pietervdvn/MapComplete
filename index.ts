@@ -101,7 +101,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 throw e;
             }
         },
-    }).fail(e => {
+    }).fail(() => {
         new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?`)
             .SetClass("clickable")
             .AttachTo("centermessage");

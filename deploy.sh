@@ -1,19 +1,13 @@
 #! /bin/bash
 
 mkdir -p assets/generated
-ts-node createLayouts.ts
+ts-node createLayouts.ts || { echo 'Creating layouts failed' ; exit 1; }
 find -name '*.png' | parallel optipng '{}'
-npm run build
+npm run build || { echo 'Npm build failed' ; exit 1; }
 
-if [[ $1 == "production" ]]
+if [[ $1 == "groen" ]]
 then
-    echo "DEPLOYING TO PRODUCTION!"
-    rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
-    cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
-    cd /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
-elif [[ $1 == "groen" ]]
-then
-    echo "DEPLOYING TO BUURTNATUUR"
+    echo "DEPLOYING TO BUURTNATUUR!"
     mv /home/pietervdvn/git/buurtnatuur.github.io/CNAME /home/pietervdvn/git/
     mv /home/pietervdvn/git/buurtnatuur.github.io/.git /home/pietervdvn/git/
     rm -rf /home/pietervdvn/git/buurtnatuur.github.io/*
@@ -21,6 +15,12 @@ then
     mv /home/pietervdvn/git/CNAME /home/pietervdvn/git/buurtnatuur.github.io/
     mv /home/pietervdvn/git/.git /home/pietervdvn/git/buurtnatuur.github.io/
     cd /home/pietervdvn/git/buurtnatuur.github.io/
+elif [[ $1 == "production" ]]
+then
+    echo "DEPLOYING TO MAPCOMPLETE"
+    rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/*
+    cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
+    cd /home/pietervdvn/git/pietervdvn.github.io/MapComplete/
 else
     echo "Testversion deploy"
     rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/*
