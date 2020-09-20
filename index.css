@@ -64,7 +64,7 @@ body {
     padding: 0.15em 0.3em;
 }
 
-    form {
+    .question form {
         display: inline-block;
         max-width: 90vw;
         width: 100%;

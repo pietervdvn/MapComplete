@@ -16,13 +16,13 @@ export default class SingleTagInput extends InputElement<string> {
     private key: InputElement<string>;
     private value: InputElement<string>;
     private operator: DropDown<string>
-    private readonly helpMesage: UIElement;
+    private readonly helpMessage: UIElement;
 
     constructor(value: UIEventSource<string> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource<string>("");
 
-        this.helpMesage = new VariableUiElement(this._value.map(tagDef => {
+        this.helpMessage = new VariableUiElement(this._value.map(tagDef => {
                 try {
                     FromJSON.Tag(tagDef, "");
                     return "";
@@ -41,6 +41,7 @@ export default class SingleTagInput extends InputElement<string> {
                 value: new UIEventSource<string>("")
             }
         );
+        
         this.operator = new DropDown<string>("", [
             {value: "=", shown: "="},
             {value: "~", shown: "~"},
@@ -101,7 +102,7 @@ export default class SingleTagInput extends InputElement<string> {
     InnerRender(): string {
         return new Combine([
             this.key, this.operator, this.value,
-            this.helpMesage
+            this.helpMessage
         ]).Render();
     }
 
