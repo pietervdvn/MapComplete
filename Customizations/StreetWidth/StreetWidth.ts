@@ -1,5 +1,5 @@
 import {Layout} from "../Layout";
-import {Widths} from "../Layers/Widths";
+import {Widths} from "./Widths";
 
 export class StreetWidth extends Layout{
     

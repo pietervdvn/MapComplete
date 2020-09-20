@@ -1,12 +1,12 @@
 {
   "id": "maps",
   "title": {
-    "en": "Information boards",
-    "nl": "Informatieborden en kaarten"
+    "en": "A map of maps",
+    "nl": "Een kaart met Kaarten"
   },
   "shortDescription": {
-    "en": "A map of maps and information boards",
-    "nl": "Een kaart met kaarten en informatieborden"
+    "en": "On this map, all the maps known by OpenStreetMap are shown",
+    "nl": "Een kaart met alle kaarten die OpenStreetMap kent"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows.<br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",

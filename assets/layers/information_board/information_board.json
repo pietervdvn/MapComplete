@@ -1,0 +1,46 @@
+{
+  "id": "information_boards",
+  "name": {
+    "nl": "Informatieborden",
+    "en": "Information boards"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "and": [
+      "information=board"
+    ]
+  },
+  "title": {
+    "render": {
+      "nl": "Informatiebord",
+      "en": "Information board"
+    }
+  },
+  "description": {},
+  "tagRenderings": [],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/information_board/board.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=board"
+      ],
+      "title": {
+        "nl": "Informatiebord",
+        "en": "Information board"
+      }
+    }
+  ]
+}

@@ -1,6 +1,5 @@
 import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
-import {StreetWidth} from "./Layouts/StreetWidth";
 import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
@@ -13,6 +12,7 @@ import * as buurtnatuur from "../assets/themes/buurtnatuur/buurtnatuur.json"
 import * as nature from "../assets/themes/nature/nature.json"
 import * as maps from "../assets/themes/maps/maps.json"
 import {PersonalLayout} from "../Logic/PersonalLayout";
+import {StreetWidth} from "./StreetWidth/StreetWidth";
 
 export class AllKnownLayouts {
 
@@ -39,24 +39,25 @@ export class AllKnownLayouts {
         const layout = FromJSON.LayoutFromJSON(buurtnatuur);
         layout.enableMoreQuests = false;
         layout.enableShareScreen = false;
+        layout.hideFromOverview = true;
         return layout;
     }
 
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
-        //    new Natuurpunt(),
-        AllKnownLayouts.GenerateCycloFix(),
+        
         FromJSON.LayoutFromJSON(bookcases),
         FromJSON.LayoutFromJSON(aed),
         FromJSON.LayoutFromJSON(toilets),
         FromJSON.LayoutFromJSON(artworks),
-        FromJSON.LayoutFromJSON(cyclestreets),
+        AllKnownLayouts.GenerateCycloFix(),
         FromJSON.LayoutFromJSON(ghostbikes),
-        AllKnownLayouts.GenerateBuurtNatuur(),
         FromJSON.LayoutFromJSON(nature),
+        FromJSON.LayoutFromJSON(cyclestreets),
         FromJSON.LayoutFromJSON(maps),
+        AllKnownLayouts.GenerateBuurtNatuur(),
 
-        new StreetWidth(),
+        new StreetWidth(), // The ugly duckling
     ];
 
 

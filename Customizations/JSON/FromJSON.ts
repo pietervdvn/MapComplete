@@ -20,6 +20,7 @@ import * as bike_cafes from "../../assets/layers/bike_cafe/bike_cafes.json"
 import * as cycling_themed_objects from "../../assets/layers/cycling_themed_object/cycling_themed_objects.json"
 import * as bike_shops from "../../assets/layers/bike_shop/bike_shop.json"
 import * as maps from "../../assets/layers/maps/maps.json"
+import * as information_boards from "../../assets/layers/information_board/information_board.json"
 import {Utils} from "../../Utils";
 import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
@@ -47,7 +48,8 @@ export class FromJSON {
             FromJSON.Layer(bike_cafes),
             FromJSON.Layer(cycling_themed_objects),
             FromJSON.Layer(bike_shops),
-            FromJSON.Layer(maps)
+            FromJSON.Layer(maps),
+            FromJSON.Layer(information_boards)
         ];
 
         for (const layer of sharedLayersList) {
