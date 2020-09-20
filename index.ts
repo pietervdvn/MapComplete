@@ -10,7 +10,7 @@ import {TagRendering} from "./UI/TagRendering";
 
 TagRendering.injectFunction();
 
-let defaultLayout = "buurtnatuur"
+let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
 // @ts-ignore
 if (location.href.startsWith("http://buurtnatuur.be")) {
@@ -113,3 +113,4 @@ if (layoutFromBase64.startsWith("wiki:")) {
 } else {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 }
+
