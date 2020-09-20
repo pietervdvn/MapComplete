@@ -39,6 +39,44 @@
   "tagRenderings": [
     "images",
     {
+      "#": "Still in use?",
+      "question": {
+        "en": "Is this drinking water spot still operational?",
+        "nl": "Is deze drinkwaterkraan nog steeds werkende?"
+      },
+      "render": {
+        "en": "The operational status is <i>{operational_status</i>"
+      },
+      "freeform": {
+        "key": "operational_status"
+      },
+      "mappings": [
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This drinking water works",
+            "nl": "Deze drinkwaterfonteint werkt"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This drinking water is broken",
+            "nl": "Deze drinkwaterfonteint is kapot"
+          }
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This drinking water is closed",
+            "nl": "Deze drinkwaterfonteint is afgesloten"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Bottle refill",
       "question": {
         "en": "How easy is it to fill water bottles?",
         "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
