@@ -125,11 +125,13 @@ function createIcon(iconPath: string, size: number) {
         readFileSync(newname);
         return newname; // File already exists - nothing to do
     } catch (e) {
-
+        // Errors are normal here if this file exists
     }
 
     console.log("Creating icon ", name, newname)
 
+    try{
+        
     svg2img(iconPath,
         // @ts-ignore
         {width: size, height: size, preserveAspectRatio: true})
@@ -139,6 +141,11 @@ function createIcon(iconPath: string, size: number) {
         }).catch((error) => {
         console.log("ERROR while writing" + iconPath, error)
     });
+    
+    }catch(e){
+        console.error("Could not read icon",iconPath,"due to",e)
+    }
+    
     return newname;
 }
 

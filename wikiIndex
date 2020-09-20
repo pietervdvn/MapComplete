@@ -41,26 +41,6 @@
 }}
 
 {{Software
-|name           = buurtnatuur
-|author         = Pieter Vander Vennet
-|web            = https://pietervdvn.github.io/MapComplete/buurtnatuur.html
-|repo           = https://github.com/pietervdvn/MapComplete
-|platform       = web
-|code           = Typescript;HTML;CSS
-|languages      = nl
-|genre          = display;editor
-|screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje
-|map        = yes
-|findLocation            = yes
-|findNearbyPOI           = yes
-|addPOI          = yes
-|editPOI         = yes
-|editTags        = yes
-|
-}}
-
-{{Software
 |name           = bookcases
 |author         = MapComplete
 |web            = https://pietervdvn.github.io/MapComplete/bookcases.html
@@ -171,6 +151,26 @@
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
 |description    = A MapComplete theme: A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
+|name           = buurtnatuur
+|author         = Pieter Vander Vennet
+|web            = https://pietervdvn.github.io/MapComplete/buurtnatuur.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje
 |map        = yes
 |findLocation            = yes
 |findNearbyPOI           = yes
