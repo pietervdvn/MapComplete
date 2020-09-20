@@ -1,6 +1,7 @@
 {
   "name": "mapcomplete",
   "version": "0.0.5",
+  "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "main": "index.js",
   "disabled:staticFiles": {

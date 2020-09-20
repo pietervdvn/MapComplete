@@ -21,26 +21,6 @@
 }}
 
 {{Software
-|name           = cyclofix
-|author         = MapComplete
-|web            = https://pietervdvn.github.io/MapComplete/cyclofix.html
-|repo           = https://github.com/pietervdvn/MapComplete
-|platform       = web
-|code           = Typescript;HTML;CSS
-|languages      = en;nl;fr;gl;de
-|genre          = display;editor
-|screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs
-|map        = yes
-|findLocation            = yes
-|findNearbyPOI           = yes
-|addPOI          = yes
-|editPOI         = yes
-|editTags        = yes
-|
-}}
-
-{{Software
 |name           = bookcases
 |author         = MapComplete
 |web            = https://pietervdvn.github.io/MapComplete/bookcases.html
@@ -121,16 +101,16 @@
 }}
 
 {{Software
-|name           = fietsstraten
-|author         = MapComlete
-|web            = https://pietervdvn.github.io/MapComplete/fietsstraten.html
+|name           = cyclofix
+|author         = MapComplete
+|web            = https://pietervdvn.github.io/MapComplete/cyclofix.html
 |repo           = https://github.com/pietervdvn/MapComplete
 |platform       = web
 |code           = Typescript;HTML;CSS
-|languages      = nl
+|languages      = en;nl;fr;gl;de
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: Een kaart met alle gekende fietsstraten
+|description    = A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs
 |map        = yes
 |findLocation            = yes
 |findNearbyPOI           = yes
@@ -161,26 +141,6 @@
 }}
 
 {{Software
-|name           = buurtnatuur
-|author         = Pieter Vander Vennet
-|web            = https://pietervdvn.github.io/MapComplete/buurtnatuur.html
-|repo           = https://github.com/pietervdvn/MapComplete
-|platform       = web
-|code           = Typescript;HTML;CSS
-|languages      = nl
-|genre          = display;editor
-|screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje
-|map        = yes
-|findLocation            = yes
-|findNearbyPOI           = yes
-|addPOI          = yes
-|editPOI         = yes
-|editTags        = yes
-|
-}}
-
-{{Software
 |name           = nature
 |author         = 
 |web            = https://pietervdvn.github.io/MapComplete/nature.html
@@ -201,6 +161,26 @@
 }}
 
 {{Software
+|name           = fietsstraten
+|author         = MapComlete
+|web            = https://pietervdvn.github.io/MapComplete/fietsstraten.html
+|repo           = https://github.com/pietervdvn/MapComplete
+|platform       = web
+|code           = Typescript;HTML;CSS
+|languages      = nl
+|genre          = display;editor
+|screenshot     = MapComplete_Screenshot.png
+|description    = A MapComplete theme: Een kaart met alle gekende fietsstraten
+|map        = yes
+|findLocation            = yes
+|findNearbyPOI           = yes
+|addPOI          = yes
+|editPOI         = yes
+|editTags        = yes
+|
+}}
+
+{{Software
 |name           = maps
 |author         = MapComplete
 |web            = https://pietervdvn.github.io/MapComplete/maps.html
@@ -210,7 +190,7 @@
 |languages      = en;nl
 |genre          = display;editor
 |screenshot     = MapComplete_Screenshot.png
-|description    = A MapComplete theme: A map of maps and information boards
+|description    = A MapComplete theme: On this map, all the maps known by OpenStreetMap are shown
 |map        = yes
 |findLocation            = yes
 |findNearbyPOI           = yes
@@ -219,4 +199,6 @@
 |editTags        = yes
 |
 }}
+
+
 
