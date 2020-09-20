@@ -18,6 +18,12 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     window.location.replace("https://buurtnatuur.be");
 }
 
+let defaultLayout = "bookcases"
+if (location.href.indexOf("buurtnatuur.be") >= 0) {
+    // Reload the https version. This is important for the 'locate me' button
+    defaultLayout = "buurtnatuur"
+}
+
 
 
 let testing: UIEventSource<string>;
@@ -35,7 +41,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "bookcases"
+
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {
