@@ -7,7 +7,6 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {TagRendering} from "./UI/TagRendering";
-import {State} from "./State";
 
 TagRendering.injectFunction();
 
@@ -36,7 +35,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
-let defaultLayout = "buurtnatuur"
+let defaultLayout = "bookcases"
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {
@@ -93,7 +92,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 throw e;
             }
         },
-    }).fail(e => {
+    }).fail(() => {
         new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?`)
             .SetClass("clickable")
             .AttachTo("centermessage");
