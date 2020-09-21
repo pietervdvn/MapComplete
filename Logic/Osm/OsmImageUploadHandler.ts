@@ -24,7 +24,7 @@ export class OsmImageUploadHandler {
     private generateOptions(license: string) {
         const tags = this._tags.data;
         const self = this;
-
+        license = license ?? "CC0"
         const title = tags.name ?? "Unknown area";
         const description = [
             "author:" + State.state.osmConnection.userDetails.data.name,

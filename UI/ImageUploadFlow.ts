@@ -148,6 +148,10 @@ export class ImageUploadFlow extends UIElement {
             self._isUploading.setData(files.length);
             self._allDone.setData(false);
 
+            if(self._selectedLicence.data === undefined){
+                self._selectedLicence.setData("CC0");
+            }
+            
             const opts = self._uploadOptions(self._selectedLicence.data);
 
             Imgur.uploadMultiple(opts.title, opts.description, files,

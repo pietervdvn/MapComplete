@@ -19,10 +19,6 @@ export default class ImageCarouselWithUploadConstructor implements TagDependantU
         return false;
     }
 
-    Priority(): number {
-        return 0;
-    }
-
     construct(dependencies): TagDependantUIElement {
         return new ImageCarouselWithUpload(dependencies);
     }
@@ -60,10 +56,6 @@ class ImageCarouselWithUpload extends TagDependantUIElement {
     
     IsSkipped(): boolean {
         return false;
-    }
-
-    Priority(): number {
-        return 0;
     }
 
 }
