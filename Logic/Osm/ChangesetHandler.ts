@@ -3,6 +3,7 @@ import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
 import {Layout} from "../../Customizations/Layout";
 import {State} from "../../State";
+import Locale from "../../UI/i18n/Locale";
 
 export class ChangesetHandler {
 
@@ -88,6 +89,12 @@ export class ChangesetHandler {
         continuation: (changesetId: string) => void) {
 
         const commentExtra = layout.changesetMessage !== undefined? " - "+layout.changesetMessage : "";
+        
+        let surveySource = "";
+        if(State.state.currentGPSLocation.data !== undefined){
+            surveySource = '<tag k="source" v="survey"/>'
+        }
+        
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/create',
@@ -96,6 +103,8 @@ export class ChangesetHandler {
                 `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
                 `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.id}${commentExtra}"/>`,
                 `<tag k="theme" v="${layout.id}"/>`,
+                `<tag k="language" v="${Locale.language.data}"/>`,
+                surveySource,
                 layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}"/>` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {
