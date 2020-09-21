@@ -23,7 +23,9 @@ export class UserBadge extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
-        this._languagePicker = InitUiElements.CreateLanguagePicker() ?? new FixedUiElement("");
+        this._languagePicker = (InitUiElements.CreateLanguagePicker() ?? new FixedUiElement(""))
+            .SetStyle("display:inline-block;width:min-content;");
+        
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
             .SetClass("userbadge-login")
