@@ -340,7 +340,8 @@
         "nl": "Is dit gebied toegankelijk?"
       },
       "freeform": {
-        "key": "access:description"
+        "key": "access:description",
+        "addExtraTags": ["access="]
       },
       "mappings": [
         {
@@ -359,6 +360,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=yes",
               "fee="
             ]
@@ -370,6 +372,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=no",
               "fee="
             ]
@@ -381,6 +384,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=private",
               "fee="
             ]
@@ -392,6 +396,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=permissive",
               "fee="
             ]
@@ -403,6 +408,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=guided",
               "fee="
             ]
@@ -414,6 +420,7 @@
         {
           "if": {
             "and": [
+              "access:description=",
               "access=yes",
               "fee=yes"
             ]
@@ -485,6 +492,25 @@
         ]
       }
     },
+   {
+      "#": "Non-editable description {description}",
+      "render": {
+        "nl": "Extra info: <i>{description}</i>"
+      },
+      "freeform": {
+        "key": "description"
+      }
+    },
+    {
+      "#": "Editable description {description:0}",
+      "question": "Is er extra info die je kwijt wil?<br/><span class='subtle'>De <i>naam</i> van het gebied wordt in de volgende vraag gesteld</span>",
+      "render": {
+        "nl": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
+      },
+      "freeform": {
+        "key": "description:0"
+      }
+    },
     {
       "#": "Name:nl-tag",
       "render": {
@@ -536,25 +562,6 @@
           }
         }
       ]
-    },
-    {
-      "#": "Non-editable description {description}",
-      "render": {
-        "nl": "Extra info: <i>{description}</i>"
-      },
-      "freeform": {
-        "key": "description"
-      }
-    },
-    {
-      "#": "Editable description {description:0}",
-      "question": "Is er extra info die je kwijt wil?",
-      "render": {
-        "nl": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-      },
-      "freeform": {
-        "key": "description:0"
-      }
     }
   ]
 }
