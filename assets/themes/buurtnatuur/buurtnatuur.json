@@ -444,7 +444,8 @@
               "operator="
             ]
           },
-          "then": "Beheer door de gemeente"
+          "then": "Beheer door de gemeente",
+          "hideInAnswer": true
         },
         {
           "if": {

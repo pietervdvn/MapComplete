@@ -18,6 +18,12 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     window.location.replace("https://buurtnatuur.be");
 }
 
+let defaultLayout = "bookcases"
+if (location.href.indexOf("buurtnatuur.be") >= 0) {
+    // Reload the https version. This is important for the 'locate me' button
+    defaultLayout = "buurtnatuur"
+}
+
 
 if (location.href.indexOf("buurtnatuur.be") >= 0) {
     defaultLayout = "buurtnatuur"
