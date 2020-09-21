@@ -427,14 +427,14 @@ export class InitUiElements {
                     State.state.osmConnection !== undefined &&
                     State.state.bm !== undefined &&
                     State.state.osmConnection.userDetails.data.csCount >= State.userJourney.tagsVisibleAndWikiLinked){
-                    const latLng = ( State.state.bm as Basemap).map.getBounds();
-                    const top = Math.max(latLng[0][0], latLng[0][1]);
-                    const bottom = Math.min(latLng[0][0], latLng[0][1]);
-                    const left  = Math.min(latLng[1][0], latLng[1][1]);
-                    const right = Math.max(latLng[1][0], latLng[1][1]);
+                    const bounds = (State.state.bm as Basemap).map.getBounds();
+                    const top = bounds.getNorth();
+                    const bottom = bounds.getSouth();
+                    const right = bounds.getEast();
+                    const left = bounds.getWest();
 
-                    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}top=${top}&bottom=${bottom}`
-                    editHere =
+                    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
+                    editWithJosm =
                         `<a href='${josmLink}' target='_blank'><img src='./assets/josm_logo.svg' alt='edit here' class='small-userbadge-icon'></a>`
                 }
                 return new Combine([mapComplete, reportBug, " | ", stats,  " | ",editHere, editWithJosm]).Render();
