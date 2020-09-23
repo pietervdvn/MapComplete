@@ -24,7 +24,7 @@ export class BaseLayers {
                 {
                     // omwrgbmrvl
                     attribution: 'Luchtfoto\'s van © AIV Vlaanderen (Laatste)  © AGIV',
-                    maxZoom: 20,
+                    maxZoom: 22,
                     minZoom: 1,
                     wmts: true
                 })

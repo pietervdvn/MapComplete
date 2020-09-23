@@ -1,0 +1,93 @@
+/*
+Contains tweaks for small screens
+*/
+
+.only-on-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+
+    .only-on-mobile {
+        display: unset;
+    }
+    
+    .hidden-on-mobile {
+        display: none !important;
+    }
+
+    #messagesbox {
+        display: none;
+    }
+
+    #help-button-mobile{
+        display: unset;
+        pointer-events: all;
+    }
+
+    #help-button-mobile div {
+        box-shadow: 0 0 10px #0006;
+        margin-bottom: 10px;
+    }
+
+    #geolocate-button {
+        display: block;
+    }
+
+    .leaflet-popup {
+        /* Popups are hidden on mobile */
+        display: none;
+    }
+
+    #centermessage {
+        top: 30%;
+        left: 15%;
+        width: 60%;
+
+    }
+    
+    .add-popup-all-buttons {
+        /* Buttons in the 'add new point' have a default of 50vh maxheight which is ugly in the new context*/
+        max-height: unset !important;
+    }
+
+    #messagesboxmobile {
+        display: block;
+        position: absolute;
+        z-index: 10000;
+        background-color: white;
+        width: 100vw;
+    }
+
+    #welcomeMessage {
+        display: inline-block;
+        background-color: white;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        max-height: max-content;
+        box-shadow: unset;
+        overflow-y: unset;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Portrait */
+    #userbadge-and-search {
+        display: inline-block;
+        width: auto;
+        max-width: 100vw;
+    }
+
+    #topleft-tools {
+        padding: 0.2em !important;
+        padding-top: 0.3em !important;
+    }
+
+    #userbadge {
+        margin-bottom: 0.3em;
+    }
+}

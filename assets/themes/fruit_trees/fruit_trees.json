@@ -1,0 +1,169 @@
+{
+  "id": "boomgaarden",
+  "title": {
+    "nl": "Open Boomgaardenkaart"
+  },
+  "shortDescription": {
+    "nl": "Boomgaarden en fruitbomen"
+  },
+  "description": {
+    "nl": "Op deze kaart vindt je boomgaarden en fruitbomen"
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Low_Hanging_Fruit_-_The_Noun_Project.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.001,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "orchards",
+      "name": {
+        "nl": "Boomgaarden"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "landuse=orchard"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Boomgaard"
+        }
+      },
+      "description": {},
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/buurtnatuur/forest.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "landuse=orchard",
+            "fixme=Added with mapcomplete - geometry still to draw"
+          ],
+          "title": {
+            "nl": "Boomgaard"
+          },
+          "description": {
+            "nl": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fruitboom",
+      "name": {
+        "nl": "Boom"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "natural=tree"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Boom"
+        }
+      },
+      "description": {
+        "nl": "Een boom"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "De soort is {species:nl}"
+          },
+          "question": {
+            "nl": "Wat is de soort van deze boom (in het Nederlands)?"
+          },
+          "freeform": {
+            "key": "species:nl"
+          }
+        },
+        {
+          "render": {
+            "nl": "Het ras (taxon) van deze boom is <b>{taxon}</b>"
+          },
+          "question": {
+            "nl": "Wat is het taxon (ras) van deze boom?"
+          },
+          "freeform": {
+            "key": "taxon"
+          },
+          "condition": {
+            "and": [
+              "species:nl~*"
+            ]
+          }
+        },
+        {
+          "render": {
+            "nl": "Beschrijving: <i>{description}</i>"
+          },
+          "question": {
+            "nl": "Welke beschrijving past bij deze boom?"
+          },
+          "freeform": {
+            "key": "description"
+          }
+        },
+        {
+          "render": {
+            "nl": "Referentienummer: <b>{ref}</b>"
+          },
+          "question": {
+            "nl": "Is er een refernetienummer?"
+          },
+          "freeform": {
+            "key": "ref"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Low_Hanging_Fruit_-_The_Noun_Project.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "natural=tree"
+          ],
+          "title": {
+            "nl": "Boom"
+          },
+          "description": {
+            "nl": "Voeg hier een boom toe"
+          }
+        }
+      ]
+    }
+  ],
+  "roamingRenderings": []
+}
