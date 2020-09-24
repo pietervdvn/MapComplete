@@ -133,12 +133,13 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         this._appliedTags = new VariableUiElement(
             self._questionElement.GetValue().map(
                 (tags: TagsFilter) => {
-                    if (tags === undefined) {
-                        return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
-                    }
                     const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
                     if (csCount < State.userJourney.tagsVisibleAt) {
                         return "";
+                    }
+                    
+                    if (tags === undefined) {
+                        return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
                     if (csCount < State.userJourney.tagsVisibleAndWikiLinked) {
                         const tagsStr = tags.asHumanString(false, true);
@@ -360,12 +361,11 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
             return undefined;
         }
-
-
+        
         return new TextField({
             placeholder: this._freeform.placeholder,
             fromString: pickString,
-            toString: toString
+            toString: toString,
         });
     }
 

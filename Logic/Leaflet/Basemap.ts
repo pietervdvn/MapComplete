@@ -35,6 +35,7 @@ export class BaseLayers {
             name: "Luchtfoto Vlaanderen (2013-2015, door AIV)",
             layer: L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
                 {
+                    maxZoom: 22,
                     layers: "OGWRGB13_15VL",
                     attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | "
                 })
@@ -45,7 +46,7 @@ export class BaseLayers {
             layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
                 {
                     attribution: 'Achtergrond <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
-                    maxZoom: 20,
+                    maxZoom: 22,
                     minZoom: 1,
                     wmts: true
                 })

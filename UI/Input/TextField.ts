@@ -111,7 +111,7 @@ export class TextField<T> extends InputElement<T> {
     private readonly startValidated: boolean;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _isArea: boolean;
-    private _textAreaRows: number;
+    private readonly _textAreaRows: number;
 
     constructor(options: {
         /**
@@ -133,12 +133,14 @@ export class TextField<T> extends InputElement<T> {
         value?: UIEventSource<T>,
         startValidated?: boolean,
         textArea?: boolean,
-        textAreaRows?: number
+        textAreaRows?: number,
     }) {
         super(undefined);
         const self = this;
         this.value = new UIEventSource<string>("");
+        
         this._isArea = options.textArea ?? false;
+        this.startValidated = options.startValidated ?? false;
         this.mappedValue = options?.value ?? new UIEventSource<T>(undefined);
         this.mappedValue.addCallback(() => self.InnerUpdate());
 
@@ -166,8 +168,7 @@ export class TextField<T> extends InputElement<T> {
             // @ts-ignore
             field.value = options.toString(t);
         });
-        this.startValidated = options.startValidated ?? false;
-    }
+     }
 
     GetValue(): UIEventSource<T> {
         return this.mappedValue;

@@ -6,7 +6,6 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {CheckBox} from "./CheckBox";
 import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {MultiTagInput} from "./MultiTagInput";
-import {FormatNumberOptions} from "libphonenumber-js";
 
 class AndOrConfig implements AndOrTagConfigJson {
     public and: (string | AndOrTagConfigJson)[] = undefined;
