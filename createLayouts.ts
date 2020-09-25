@@ -255,7 +255,7 @@ for (const layoutName in all) {
     
     wikiPage += "\n\n"+generateWikiEntry(layout);
 }
-writeFile("wikiIndex", wikiPage, (err) => {
+writeFile("./assets/generated/wikiIndex", wikiPage, (err) => {
     if (err !== null) {
         console.log("Could not save wikiindex", err);
     }

@@ -298,7 +298,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
 
-    private InputForFreeForm(freeform :  {
+    private InputForFreeForm(freeform: {
         key: string,
         template: string | Translation,
         renderTemplate: string | Translation,
@@ -313,7 +313,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             .replace("$$$", "$string$")
             .split("$");
         let type = prepost[1];
-        
+
         let isTextArea = false;
         if(type === "text"){
             isTextArea = true;
@@ -371,9 +371,12 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
             return undefined;
         }
-        return ValidatedTextField.Mapped(
-            pickString, toString, {placeholder: this._freeform.placeholder, isValid: isValid, textArea: isTextArea}
-        )
+
+        return ValidatedTextField.Mapped(pickString, toString, {
+            placeholder: this._freeform.placeholder,
+            isValid: isValid,
+            textArea: isTextArea
+        })
     }
 
 

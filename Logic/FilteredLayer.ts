@@ -42,7 +42,7 @@ export class FilteredLayer {
     
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
-    private static readonly grid = codegrid.CodeGrid();
+    private static readonly grid = codegrid.CodeGrid("./tiles/");
 
     constructor(
         layerDef: LayerDefinition,
