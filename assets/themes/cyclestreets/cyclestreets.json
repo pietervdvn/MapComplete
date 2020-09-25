@@ -30,6 +30,7 @@
             "and": [
               "cyclestreet=yes",
               "maxspeed=30",
+              "overtaking:motor_vehicle=no",
               "proposed:cyclestreet="
             ]
           },
@@ -64,7 +65,8 @@
           "if": {
             "and": [
               "cyclestreet=",
-              "proposed:cyclestreet="
+              "proposed:cyclestreet=",
+              "overtaking:motor_vehicle="
             ]
           },
           "then": {
