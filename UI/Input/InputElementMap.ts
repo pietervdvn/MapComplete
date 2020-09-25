@@ -9,6 +9,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
     private readonly fromX: (x: X) => T;
     private readonly toX: (t: T) => X;
     private readonly _value: UIEventSource<X>;
+    public readonly  IsSelected: UIEventSource<boolean>;
 
     constructor(inputElement: InputElement<T>,
                 isSame: (x0: X, x1: X) => boolean,
@@ -32,8 +33,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
                 }
                 return newX;
             }), extraSources, x => {
-                const newT = fromX(x);
-                return newT;
+                return fromX(x);
             });
     }
 
@@ -45,10 +45,15 @@ export default class InputElementMap<T, X> extends InputElement<X> {
         return this._inputElement.InnerRender();
     }
 
-    IsSelected: UIEventSource<boolean>;
-
     IsValid(x: X): boolean {
-        return this._inputElement.IsValid(this.fromX(x));
+        if(x === undefined){
+            return false;
+        }
+        const t = this.fromX(x);
+        if(t === undefined){
+            return false;
+        }
+        return this._inputElement.IsValid(t);
     }
-
+    
 }

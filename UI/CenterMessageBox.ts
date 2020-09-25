@@ -1,8 +1,6 @@
 import {UIElement} from "./UIElement";
-import {OsmConnection} from "../Logic/Osm/OsmConnection";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
-import {UIEventSource} from "../Logic/UIEventSource";
 
 export class CenterMessageBox extends UIElement {
 
@@ -16,7 +14,7 @@ export class CenterMessageBox extends UIElement {
         this.ListenTo(State.state.layerUpdater.sufficentlyZoomed);
     }
 
-    private prep(): { innerHtml: string, done: boolean } {
+    private static prep(): { innerHtml: string, done: boolean } {
         if (State.state.centerMessage.data != "") {
             return {innerHtml: State.state.centerMessage.data, done: false};
         }
@@ -37,7 +35,7 @@ export class CenterMessageBox extends UIElement {
     }
 
     InnerRender(): string {
-        return this.prep().innerHtml;
+        return CenterMessageBox.prep().innerHtml;
     }
 
 
@@ -50,7 +48,7 @@ export class CenterMessageBox extends UIElement {
         }
         pstyle.pointerEvents = "none";
 
-        if (this.prep().done) {
+        if (CenterMessageBox.prep().done) {
             pstyle.opacity = "0";
         } else {
             pstyle.opacity = "0.5";

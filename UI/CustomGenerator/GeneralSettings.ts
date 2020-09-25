@@ -6,6 +6,7 @@ import SettingsTable from "./SettingsTable";
 import SingleSetting from "./SingleSetting";
 import {TextField} from "../Input/TextField";
 import MultiLingualTextFields from "../Input/MultiLingualTextFields";
+import ValidatedTextField from "../Input/ValidatedTextField";
 
 
 export default class GeneralSettingsPanel extends UIElement {
@@ -17,15 +18,13 @@ export default class GeneralSettingsPanel extends UIElement {
         super(undefined);
 
 
-        const languagesField = new TextField<string[]>(
-            {
-                fromString: str => str?.split(";")?.map(str => str.trim().toLowerCase()),
-                toString: languages => languages.join(";"),
-            }
-        );
+        const languagesField =
+            ValidatedTextField.Mapped(
+                str => str?.split(";")?.map(str => str.trim().toLowerCase()),
+                languages => languages.join(";"));
         this.languages = languagesField.GetValue();
 
-        const version = TextField.StringInput();
+        const version = new TextField();
         const current_datetime = new Date();
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
         version.GetValue().setData(formatted_date);
@@ -35,7 +34,7 @@ export default class GeneralSettingsPanel extends UIElement {
 
         const settingsTable = new SettingsTable(
             [
-                new SingleSetting(configuration, TextField.StringInput(), "id",
+                new SingleSetting(configuration, new TextField({placeholder:"id"}), "id",
                     "Identifier", "The identifier of this theme. This should be a lowercase, unique string"),
                 new SingleSetting(configuration, version, "version", "Version",
                     "A version to indicate the theme version. Ideal is the date you created or updated the theme"),
@@ -47,26 +46,26 @@ export default class GeneralSettingsPanel extends UIElement {
                    "The short description is shown as subtext in the social preview and on the 'more screen'-buttons. It should be at most one sentence of around ~25words"),
                 new SingleSetting(configuration, new MultiLingualTextFields(this.languages, true),
                     "description", "Description", "The description is shown in the welcome-message when opening MapComplete. It is a small text welcoming users"),
-                new SingleSetting(configuration, TextField.StringInput(), "icon",
+                new SingleSetting(configuration, new TextField({placeholder: "URL to icon"}), "icon",
                     "Icon", "A visual representation for your theme; used as logo in the welcomeMessage. If your theme is official, used as favicon and webapp logo",
                     {
                         showIconPreview: true
                     }),
                 
-                new SingleSetting(configuration, TextField.NumberInput("nat", n => n < 23), "startZoom","Initial zoom level",
+                new SingleSetting(configuration, ValidatedTextField.NumberInput("nat", n => n < 23), "startZoom","Initial zoom level",
                     "When a user first loads MapComplete, this zoomlevel is shown."+locationRemark),
-                new SingleSetting(configuration, TextField.NumberInput("float", n => (n < 90 && n > -90)), "startLat","Initial latitude",
+                new SingleSetting(configuration, ValidatedTextField.NumberInput("float", n => (n < 90 && n > -90)), "startLat","Initial latitude",
                     "When a user first loads MapComplete, this latitude is shown as location."+locationRemark),
-                new SingleSetting(configuration, TextField.NumberInput("float", n => (n < 180 && n > -180)), "startLon","Initial longitude",
+                new SingleSetting(configuration, ValidatedTextField.NumberInput("float", n => (n < 180 && n > -180)), "startLon","Initial longitude",
                     "When a user first loads MapComplete, this longitude is shown as location."+locationRemark),
             
-                new SingleSetting(configuration, TextField.NumberInput("pfloat", n => (n < 0.5 )), "widenFactor","Query widening",
+                new SingleSetting(configuration, ValidatedTextField.NumberInput("pfloat", n => (n < 0.5 )), "widenFactor","Query widening",
                     "When a query is run, the data within bounds of the visible map is loaded.\n" +
                     "However, users tend to pan and zoom a lot. It is pretty annoying if every single pan means a reloading of the data.\n" +
                     "For this, the bounds are widened in order to make a small pan still within bounds of the loaded data.\n" +
                     "IF widenfactor is 0, this feature is disabled. A recommended value is between 0.5 and 0.01 (the latter for very dense queries)"),
 
-                new SingleSetting(configuration, TextField.StringInput(), "socialImage",
+                new SingleSetting(configuration, new TextField({placeholder: "URL to social image"}), "socialImage",
                 "og:image (aka Social Image)", "<span class='alert'>Only works on incorporated themes</span>" +
                     "The Social Image is set as og:image for the HTML-site and helps social networks to show a preview", {showIconPreview: true})
             ], currentSetting);

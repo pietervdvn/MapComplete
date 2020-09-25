@@ -1,4 +1,8 @@
-import {UIEventSource} from "./Logic/UIEventSource";
-import DeleteImage from "./UI/Image/DeleteImage";
+import ValidatedTextField from "./UI/Input/ValidatedTextField";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-new DeleteImage("image", new UIEventSource<any>({"image":"url"})).AttachTo("maindiv");
+
+const vtf= ValidatedTextField.KeyInput(true);
+vtf.AttachTo('maindiv')
+vtf.GetValue().addCallback(console.log)
+new VariableUiElement(vtf.GetValue().map(n => ""+n)).AttachTo("extradiv")

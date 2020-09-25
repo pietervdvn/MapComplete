@@ -230,7 +230,7 @@
             "de": "Betrieben von {operator}"
           },
           "freeform": {
-            "type": "text",
+            "type": "string",
             "key": "operator"
           }
         },

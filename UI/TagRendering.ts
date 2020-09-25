@@ -14,9 +14,9 @@ import {InputElement} from "./Input/InputElement";
 import {SaveButton} from "./SaveButton";
 import {RadioButton} from "./Input/RadioButton";
 import {FixedInputElement} from "./Input/FixedInputElement";
-import {TextField, ValidatedTextField} from "./Input/TextField";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {FixedUiElement} from "./Base/FixedUiElement";
+import ValidatedTextField from "./Input/ValidatedTextField";
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
@@ -202,7 +202,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         InputElement<TagsFilter> {
 
 
-        let freeformElement: TextField<TagsFilter> = undefined;
+        let freeformElement: InputElement<TagsFilter> = undefined;
         if (options.freeform !== undefined) {
             freeformElement = this.InputForFreeForm(options.freeform);
         }
@@ -278,7 +278,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                     es.data.push(i);
                     es.ping();
                 }
-                freeformElement.SetCursorPosition(-1);
             });
 
             return inputEl;
@@ -305,7 +304,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         renderTemplate: string | Translation,
         placeholder?: string | Translation,
         extraTags?: TagsFilter,
-    }): TextField<TagsFilter> {
+    }): InputElement<TagsFilter> {
         if (freeform?.template === undefined) {
             return undefined;
         }
@@ -313,13 +312,24 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         const prepost = Translations.W(freeform.template).InnerRender()
             .replace("$$$", "$string$")
             .split("$");
-        const type = prepost[1];
+        let type = prepost[1];
+        
+        let isTextArea = false;
+        if(type === "text"){
+            isTextArea = true;
+            type = "string";
+        }
+        
+        if(ValidatedTextField.AllTypes[type] === undefined){
+            console.error("Type:",type, ValidatedTextField.AllTypes)
+            throw "Unkown type: "+type;
+        }
 
-        let isValid = ValidatedTextField.inputValidation[type];
+        let isValid = ValidatedTextField.AllTypes[type].isValid;
         if (isValid === undefined) {
             isValid = () => true;
         }
-        let formatter = ValidatedTextField.formatting[type] ?? ((str) => str);
+        let formatter = ValidatedTextField.AllTypes[type].reformat ?? ((str) => str);
 
         const pickString =
             (string: any) => {
@@ -361,12 +371,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
             return undefined;
         }
-        
-        return new TextField({
-            placeholder: this._freeform.placeholder,
-            fromString: pickString,
-            toString: toString,
-        });
+        return ValidatedTextField.Mapped(
+            pickString, toString, {placeholder: this._freeform.placeholder, isValid: isValid, textArea: isTextArea}
+        )
     }
 
 

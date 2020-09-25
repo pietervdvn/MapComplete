@@ -19,6 +19,7 @@ import PresetInputPanel from "./PresetInputPanel";
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import {State} from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import ValidatedTextField from "../Input/ValidatedTextField";
 
 /**
  * Shows the configuration for a single layer
@@ -86,17 +87,17 @@ export default class LayerPanel extends UIElement {
 
 
         this.settingsTable = new SettingsTable([
-                setting(TextField.StringInput(), "id", "Id", "An identifier for this layer<br/>This should be a simple, lowercase, human readable string that is used to identify the layer."),
+                setting(new TextField({placeholder:"Layer id"}), "id", "Id", "An identifier for this layer<br/>This should be a simple, lowercase, human readable string that is used to identify the layer."),
                 setting(new MultiLingualTextFields(languages), "name", "Name", "The human-readable name of this layer<br/>Used in the layer control panel and the 'Personal theme'"),
                 setting(new MultiLingualTextFields(languages, true), "description", "Description", "A description for this layer.<br/>Shown in the layer selections and in the personal theme"),
-                setting(TextField.NumberInput("nat", n => n < 23), "minzoom", "Minimal zoom",
+                setting(ValidatedTextField.NumberInput("nat", n => n < 23), "minzoom", "Minimal zoom",
                     "The minimum zoomlevel needed to load and show this layer."),
                 setting(new DropDown("", [
                         {value: 0, shown: "Show ways and areas as ways and lines"},
                         {value: 2, shown: "Show both the ways/areas and the centerpoints"},
                         {value: 1, shown: "Show everything as centerpoint"}]), "wayHandling", "Way handling",
                     "Describes how ways and areas are represented on the map: areas can be represented as the area itself, or it can be converted into the centerpoint"),
-                setting(TextField.NumberInput("int", n => n <= 100), "hideUnderlayingFeaturesMinPercentage", "Max allowed overlap percentage",
+                setting(ValidatedTextField.NumberInput("int", n => n <= 100), "hideUnderlayingFeaturesMinPercentage", "Max allowed overlap percentage",
                     "Consider that we want to show 'Nature Reserves' and 'Forests'. Now, ofter, there are pieces of forest mapped _in_ the nature reserve.<br/>" +
                     "Now, showing those pieces of forest overlapping with the nature reserve truly clutters the map and is very user-unfriendly.<br/>" +
                     "The features are placed layer by layer. If a feature below a feature on this layer overlaps for more then 'x'-percent, the underlying feature is hidden."),
