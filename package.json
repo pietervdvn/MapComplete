@@ -4,10 +4,10 @@
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "main": "index.js",
-  "disabled:staticFiles": {
+  "staticFiles": {
     "staticPath": [
       {
-        "staticPath": "static-assets/tiles",
+        "staticPath": "tiles/",
         "staticOutDir": "./tiles/"
       }
     ]

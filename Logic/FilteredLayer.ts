@@ -110,14 +110,17 @@ export class FilteredLayer {
             
             if (this.filters.matches(tags)) {
                 const centerPoint = GeoOperations.centerpoint(feature);
-                feature.properties["_surface"] = ""+GeoOperations.surfaceAreaInSqMeters(feature);
-                const lat = ""+centerPoint.geometry.coordinates[1];
-                const lon = ""+centerPoint.geometry.coordinates[0]
-                feature.properties["_lon"] = lat;
-                feature.properties["_lat"] = lon;
+                feature.properties["_surface"] = "" + GeoOperations.surfaceAreaInSqMeters(feature);
+                const lat = centerPoint.geometry.coordinates[1];
+                const lon = centerPoint.geometry.coordinates[0]
+                feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
+                feature.properties["_lat"] = "" + lon;
+                // But the codegrid SHOULD be a number!
                 FilteredLayer.grid.getCode(lat, lon, (error, code) => {
                     if (error === null) {
                         feature.properties["_country"] = code;
+                    } else {
+                        console.warn("Could not determine country for", feature.properties.id, error);
                     }
                 })
 

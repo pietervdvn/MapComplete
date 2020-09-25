@@ -87,11 +87,13 @@ export default class ValidatedTextField {
             "phone",
             "A phone number",
             (str, country: any) => {
+                if (str === undefined) {
+                    return false;
+                }
                 return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
             },
             (str, country: any) => {
-                console.log("reformatting phone nuber",str, "for locale", country)
-                return parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
+                return  parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
             }
         )
     ]
