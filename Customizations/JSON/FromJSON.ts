@@ -64,7 +64,6 @@ export class FromJSON {
     }
 
     public static LayoutFromJSON(json: LayoutConfigJson): Layout {
-        console.log(json)
         const tr = FromJSON.Translation;
 
         const layers = json.layers.map(FromJSON.Layer);
@@ -115,7 +114,6 @@ export class FromJSON {
             return undefined;
         }
         const transl = new Translation(tr);
-        transl.addCallback(latest => console.log("tr callback changed to", latest));
         return transl;
     }
 
