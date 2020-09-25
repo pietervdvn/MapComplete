@@ -73,12 +73,10 @@ export class TextField extends InputElement<string> {
     }
     
     Update() {
-        console.log("Updating TF")
         super.Update();
     }
 
     InnerUpdate() {
-        console.log("Inner Updating TF")
         const field = document.getElementById("txt-" + this.id);
         const self = this;
         field.oninput = () => {

@@ -8,7 +8,7 @@ import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
 import {FilteredLayer} from "./Logic/FilteredLayer";
 import {FeatureInfoBox} from "./UI/FeatureInfoBox";
-import {BaseLayers, Basemap} from "./Logic/Leaflet/Basemap";
+import {Basemap} from "./Logic/Leaflet/Basemap";
 import {State} from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {Img} from "./UI/Img";
@@ -35,6 +35,7 @@ import {Layout} from "./Customizations/Layout";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Utils} from "./Utils";
+import BackgroundSelector from "./UI/BackgroundSelector";
 
 export class InitUiElements {
 
@@ -352,14 +353,12 @@ export class InitUiElements {
     }
 
     private static GenerateLayerControlPanel() {
-        let baseLayerOptions = BaseLayers.baseLayers.map((layer) => {
-            return {value: layer, shown: layer.name}
-        });
-        let layerControlPanel = new Combine(
-            [new DropDown(Translations.t.general.backgroundMap, baseLayerOptions, State.state.bm.CurrentLayer)]);
+        let layerControlPanel: UIElement = new BackgroundSelector(State.state);
         layerControlPanel.SetStyle("margin:1em");
+        layerControlPanel.onClick(() => {});
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
+            layerSelection.onClick(() => {});
             layerControlPanel = new Combine([layerSelection, "<br/>",layerControlPanel]);
         }
         return layerControlPanel;
@@ -444,8 +443,8 @@ export class InitUiElements {
         );
         State.state.bm = bm;
         State.state.layerUpdater = new LayerUpdater(State.state);
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
-        const queryParamMapped: UIEventSource<{ id: string, name: string, layer: any }> =
+        /*  const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
+      const queryParamMapped: UIEventSource<{ id: string, name: string, layer: any }> =
             queryParam.map<{ id: string, name: string, layer: any }>((id) => {
                 for (const layer of BaseLayers.baseLayers) {
                     if (layer.id === id) {
@@ -457,7 +456,7 @@ export class InitUiElements {
                 return layerInfo.id
             });
 
-        queryParamMapped.syncWith(bm.CurrentLayer);
+        queryParamMapped.syncWith(bm.CurrentLayer);*/
 
     }
 

@@ -65,7 +65,7 @@ export class State {
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
     public presets: UIEventSource<Preset[]> = new UIEventSource<Preset[]>([])
-
+    
     /**
      *  The message that should be shown at the center of the screen
      */

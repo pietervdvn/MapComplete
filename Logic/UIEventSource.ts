@@ -62,7 +62,7 @@ export class UIEventSource<T>{
             newSource.setData(f(self.data));
         }
 
-        this.addCallback(update);
+        this.addCallbackAndRun(update);
         for (const extraSource of extraSources) {
             extraSource?.addCallback(update);
         }

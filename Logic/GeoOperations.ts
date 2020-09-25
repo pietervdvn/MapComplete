@@ -36,7 +36,6 @@ export class GeoOperations {
             return false;
         }
 
-
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
 
             const poly = feature;
@@ -77,7 +76,7 @@ export class GeoOperations {
 
         return false;
     }
-    private static inside(pointCoordinate, feature): boolean {
+    public static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 

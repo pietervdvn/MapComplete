@@ -1,7 +1,6 @@
 import {UIElement} from "./UIElement";
 import {CheckBox} from "./Input/CheckBox";
 import Combine from "./Base/Combine";
-import {Img} from "./Img";
 import {State} from "../State";
 import Translations from "./i18n/Translations";
 import {FixedUiElement} from "./Base/FixedUiElement";
