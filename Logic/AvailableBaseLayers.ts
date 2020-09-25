@@ -9,8 +9,17 @@ import {Basemap} from "./Leaflet/Basemap";
  */
 export default class AvailableBaseLayers {
 
+    public static osmCarto =
+        {
+            id: "osm", url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            max_zoom: 19, license_url: "https://openStreetMap.org/copyright",
+            name: "OpenStreetMap", geometry: null,
+            leafletLayer: Basemap.CreateBackgroundLayer("osm", "OpenStreetMap",
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", 19, false, false)
+        }
+
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex();
-    public availableEditorLayers: UIEventSource<{ id: string, url: string, max_zoom: number, license_url: number, name: string, geometry: any, leafletLayer: any }[]>;
+    public availableEditorLayers: UIEventSource<{ id: string, url: string, max_zoom: number, license_url: string, name: string, geometry: any, leafletLayer: any }[]>;
 
     constructor(state: State) {
         const self = this;
@@ -37,8 +46,9 @@ export default class AvailableBaseLayers {
 
     }
 
-    public static AvailableLayersAt(lon: number, lat: number): { url: string, max_zoom: number, license_url: number, name: string, geometry: any }[] {
-        const availableLayers = []
+    public static AvailableLayersAt(lon: number, lat: number):
+        { url: string, max_zoom: number, license_url: string, name: string, geometry: any }[] {
+        const availableLayers = [AvailableBaseLayers.osmCarto as any]
         const globalLayers = [];
         for (const i in AvailableBaseLayers.layerOverview) {
             const layer = AvailableBaseLayers.layerOverview[i];
@@ -59,8 +69,8 @@ export default class AvailableBaseLayers {
         return availableLayers.concat(globalLayers);
     }
 
-    private static LoadRasterIndex(): { id: string, url: string, max_zoom: number, license_url: number, name: string, feature: any }[] {
-        const layers: { id: string, url: string, max_zoom: number, license_url: number, name: string, feature: any, leafletLayer: any }[] = []
+    private static LoadRasterIndex(): { id: string, url: string, max_zoom: number, license_url: string, name: string, feature: any }[] {
+        const layers: { id: string, url: string, max_zoom: number, license_url: string, name: string, feature: any, leafletLayer: any }[] = []
         // @ts-ignore
         const features = editorlayerindex.features;
         for (const i in features) {
@@ -86,6 +96,11 @@ export default class AvailableBaseLayers {
 
             if (props.url.toLowerCase().indexOf("{bbox}") > 0) {
                 continue;
+            }
+            
+            if(props.name === undefined){
+                console.log("Editor layer index: name not defined on ", props)
+                continue
             }
 
             const leafletLayer = Basemap.CreateBackgroundLayer(

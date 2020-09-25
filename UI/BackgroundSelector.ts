@@ -4,6 +4,7 @@ import {DropDown} from "./Input/DropDown";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
+import Combine from "./Base/Combine";
 
 export default class BackgroundSelector extends UIElement {
 
@@ -22,24 +23,19 @@ export default class BackgroundSelector extends UIElement {
 
     private CreateDropDown(available) {
         if(available.length === 0){
-            console.warn("NO AVAILABLE LAYERS")
+            console.warn("NO LAYERS FOUND!")
+            return;
         }
-        
-        console.log("ALL LAYERS", available)
         
         const baseLayers: { value: any, shown: string }[] = [];
         for (const i in available) {
             const layer: { url: string, max_zoom: number, license_url: number, name: string, geometry: any, leafletLayer: any } = available[i];
-
-            if (layer.name === undefined) {
-                continue;
-            }
-
             baseLayers.push({value: layer.leafletLayer, shown: layer.name});
 
         }
 
         const dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.bm.CurrentLayer)
+        console.log("Installed dropdown with ",baseLayers);
         this._dropdown = dropdown;
     }
 
