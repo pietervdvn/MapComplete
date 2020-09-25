@@ -5,6 +5,8 @@ ts-node createLayouts.ts || { echo 'Creating layouts failed' ; exit 1; }
 find -name '*.png' | parallel optipng '{}'
 npm run build || { echo 'Npm build failed' ; exit 1; }
 
+rm -rf .cache
+
 if [[ $1 == "groen" ]]
 then
     echo "DEPLOYING TO BUURTNATUUR!"
