@@ -157,7 +157,7 @@ export class ShareScreen extends UIElement {
         }, optionParts);
 
 
-        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout.title.InnerRender()} with MapComplete"&gt;&lt;/iframe&gt`);
+        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender()??""} with MapComplete"&gt;&lt;/iframe&gt`);
         
         this._iframeCode = new VariableUiElement(
             url.map((url) => {

@@ -51,6 +51,8 @@ export class TextField extends InputElement<string> {
             // @ts-ignore
             field.value = t;
         });
+        this.dumbMode = false;
+        this.SetClass("deadbeef")
     }
 
     GetValue(): UIEventSource<string> {
@@ -60,17 +62,24 @@ export class TextField extends InputElement<string> {
     InnerRender(): string {
 
         if (this._isArea) {
-            return `<textarea id="${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea>`
+            return `<span id="${this.id}"><textarea id="txt-${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea></span>`
         }
 
         const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
 
-        return `<form onSubmit='return false' class='form-text-field'>` +
-            `<input type='text' placeholder='${placeholder}' id='${this.id}'>` +
-            `</form>`;
+        return `<span id="${this.id}"><form onSubmit='return false' class='form-text-field'>` +
+            `<input type='text' placeholder='${placeholder}' id='txt-${this.id}'>` +
+            `</form></span>`;
+    }
+    
+    Update() {
+        console.log("Updating TF")
+        super.Update();
     }
 
-    InnerUpdate(field) {
+    InnerUpdate() {
+        console.log("Inner Updating TF")
+        const field = document.getElementById("txt-" + this.id);
         const self = this;
         field.oninput = () => {
             // @ts-ignore

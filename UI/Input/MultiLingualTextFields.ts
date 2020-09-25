@@ -3,19 +3,19 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {TextField} from "./TextField";
 
 export default class MultiLingualTextFields extends InputElement<any> {
-    private _fields: Map<string, TextField<string>> = new Map<string, TextField<string>>();
-    private _value: UIEventSource<any>;
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private _fields: Map<string, TextField> = new Map<string, TextField>();
+    private readonly _value: UIEventSource<any>;
+    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
-    constructor(languages: UIEventSource<string[]>, 
+    constructor(languages: UIEventSource<string[]>,
                 textArea: boolean = false,
                 value: UIEventSource<Map<string, UIEventSource<string>>> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource({});
-        
-        this._value.addCallbackAndRun(latestData =>  {
-            if(typeof(latestData) === "string"){
-                console.warn("Refusing string for multilingual input",latestData);
+
+        this._value.addCallbackAndRun(latestData => {
+            if (typeof (latestData) === "string") {
+                console.warn("Refusing string for multilingual input", latestData);
                 self._value.setData({});
             }
         })
@@ -26,7 +26,7 @@ export default class MultiLingualTextFields extends InputElement<any> {
             if (languages === undefined) {
                 return;
             }
-            const newFields = new Map<string, TextField<string>>();
+            const newFields = new Map<string, TextField>();
             for (const language of languages) {
                 if (language.length != 2) {
                     continue;
@@ -34,7 +34,7 @@ export default class MultiLingualTextFields extends InputElement<any> {
                 
                 let oldField = self._fields.get(language);
                 if (oldField === undefined) {
-                    oldField = TextField.StringInput(textArea);
+                    oldField = new TextField({textArea: textArea});
                     oldField.GetValue().addCallback(str => {
                         self._value.data[language] = str;
                         self._value.ping();

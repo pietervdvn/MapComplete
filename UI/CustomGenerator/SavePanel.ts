@@ -7,7 +7,6 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {TextField} from "../Input/TextField";
 import {SubtleButton} from "../Base/SubtleButton";
-import {LayerConfigJson} from "../../Customizations/JSON/LayerConfigJson";
 
 export default class SavePanel extends UIElement {
     private json: UIElement;
@@ -35,10 +34,7 @@ export default class SavePanel extends UIElement {
 
        const jsonTextField = new TextField({
             placeholder: "JSON Config",
-            fromString: str => str,
-            toString: str => str,
             value: jsonStr,
-            startValidated: false,
             textArea: true,
             textAreaRows: 20
         });

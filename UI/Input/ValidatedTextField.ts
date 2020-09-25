@@ -186,7 +186,6 @@ export default class ValidatedTextField {
         isValid?: ((string: string) => boolean)
     }): InputElement<T> {
         const textField = new TextField(options);
-
         return new InputElementMap(
             textField, (a, b) => a === b,
             fromString, toString

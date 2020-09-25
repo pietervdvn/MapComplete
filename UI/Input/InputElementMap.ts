@@ -35,7 +35,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
             }), extraSources, x => {
                 return fromX(x);
             });
-    }
+    }w
 
     GetValue(): UIEventSource<X> {
         return this._value;

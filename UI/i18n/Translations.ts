@@ -34,13 +34,13 @@ export default class Translations {
             }),
 
             uploadingMultiple: new T({
-                en: 'Uploading {count} of your picture...',
-                nl: 'Bezig met {count} foto\'s te uploaden...',
-                ca: 'Pujant {count} de la teva imatge...',
-                es: 'Subiendo {count} de tus fotos...',
-                fr: 'Mettre votre {count} photos en ligne',
-                gl: 'Subindo {count} das túas imaxes...',
-                de: '{count} Ihrer Bilder hochgeladen...'
+                en: "Uploading {count} of your picture...",
+                nl: "Bezig met {count} foto's te uploaden...",
+                ca: "Pujant {count} de la teva imatge...",
+                es: "Subiendo {count} de tus fotos...",
+                fr: "Mettre votre {count} photos en ligne",
+                gl: "Subindo {count} das túas imaxes...",
+                de: "{count} Ihrer Bilder hochgeladen..."
             }),
 
             pleaseLogin: new T({

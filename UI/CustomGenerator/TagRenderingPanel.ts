@@ -3,7 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {InputElement} from "../Input/InputElement";
 import SingleSetting from "./SingleSetting";
 import SettingsTable from "./SettingsTable";
-import {TextField, ValidatedTextField} from "../Input/TextField";
+import {TextField} from "../Input/TextField";
 import Combine from "../Base/Combine";
 import MultiLingualTextFields from "../Input/MultiLingualTextFields";
 import {AndOrTagInput} from "../Input/AndOrTagInput";
@@ -16,6 +16,7 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import {State} from "../../State";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
+import ValidatedTextField from "../Input/ValidatedTextField";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -62,11 +63,11 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         const questionSettings = [
 
 
-            setting(options?.noLanguage ? TextField.StringInput() : new MultiLingualTextFields(languages)
+            setting(options?.noLanguage ? new TextField({placeholder:"question"}) : new MultiLingualTextFields(languages)
                 , "question", "Question", "If the key or mapping doesn't match, this question is asked"),
 
             "<h3>Freeform key</h3>",
-            setting(TextField.KeyInput(true), ["freeform", "key"], "Freeform key<br/>",
+            setting(ValidatedTextField.KeyInput(true), ["freeform", "key"], "Freeform key<br/>",
                 "If specified, the rendering will search if this key is present." +
                 "If it is, the rendering above will be used to display the element.<br/>" +
                 "The rendering will go into question mode if <ul><li>this key is not present</li><li>No single mapping matches</li><li>A question is given</li>"),
@@ -80,7 +81,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
         const settings: (string | SingleSetting<any>)[] = [
             setting(
-                options?.noLanguage ? TextField.StringInput() :
+                options?.noLanguage ? new TextField({placeholder:"Rendering"}) :
                     new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
 
             questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",

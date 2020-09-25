@@ -6,6 +6,7 @@ import Combine from "./Base/Combine";
 import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Imgur} from "../Logic/Web/Imgur";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 export class ImageUploadFlow extends UIElement {
     private _licensePicker: UIElement;
@@ -69,7 +70,7 @@ export class ImageUploadFlow extends UIElement {
         if (this._isUploading.data == 1) {
             currentState.push(t.uploadingPicture);
         } else if (this._isUploading.data > 0) {
-            currentState.push(t.uploadingMultiple.Subs({count: this._isUploading.data}));
+            currentState.push(t.uploadingMultiple.Subs({count: ""+this._isUploading.data}));
         }
 
         if (this._didFail.data) {
@@ -80,14 +81,15 @@ export class ImageUploadFlow extends UIElement {
             currentState.push(t.uploadDone)
         }
 
-        let currentStateHtml = "";
+        let currentStateHtml : UIElement = new FixedUiElement("");
         if (currentState.length > 0) {
-            currentStateHtml = new Combine(currentState).Render();
+            currentStateHtml = new Combine(currentState);
             if (!this._allDone.data) {
-                currentStateHtml = "<span class='alert'>" +
-                    currentStateHtml +
-                    "</span>";
+                currentStateHtml.SetClass("alert");
+            }else{
+                currentStateHtml.SetClass("thanks");
             }
+            currentStateHtml.SetStyle("display:block ruby")
         }
 
         const extraInfo = new Combine([

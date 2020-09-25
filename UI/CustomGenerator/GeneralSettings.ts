@@ -20,7 +20,10 @@ export default class GeneralSettingsPanel extends UIElement {
 
         const languagesField =
             ValidatedTextField.Mapped(
-                str => str?.split(";")?.map(str => str.trim().toLowerCase()),
+                str => {
+                    console.log("Language from str", str);
+                    return str?.split(";")?.map(str => str.trim().toLowerCase());
+                },
                 languages => languages.join(";"));
         this.languages = languagesField.GetValue();
 

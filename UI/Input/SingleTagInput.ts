@@ -7,6 +7,7 @@ import {Utils} from "../../Utils";
 import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
+import ValidatedTextField from "./ValidatedTextField";
 
 export default class SingleTagInput extends InputElement<string> {
 
@@ -32,12 +33,10 @@ export default class SingleTagInput extends InputElement<string> {
             }
         ));
 
-        this.key = TextField.KeyInput();
+        this.key = ValidatedTextField.KeyInput();
 
-        this.value = new TextField<string>({
+        this.value = new TextField({
                 placeholder: "value - if blank, matches if key is NOT present",
-                fromString: str => str,
-                toString: str => str,
                 value: new UIEventSource<string>("")
             }
         );
