@@ -45,9 +45,13 @@ function validate(layout: Layout) {
         missing[ln] = 0;
         present[ln] = 0;
         for (const translation of translations) {
+            if (translation.translations["*"] !== undefined) {
+                continue;
+            }
             const txt = translation.translations[ln];
             const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
             if (isMissing) {
+                console.log(`   ${layout.id}: No translation for`, ln, "in", translation.translations, "got:", txt)
                 missing[ln]++
             } else {
                 present[ln]++;
@@ -55,12 +59,21 @@ function validate(layout: Layout) {
         }
     }
 
-    console.log("Translation completenes for theme", layout.id);
+    let message = `Translation completenes for theme ${layout.id}`
+    let isComplete = true;
     for (const ln of layout.supportedLanguages) {
         const amiss = missing[ln];
         const ok = present[ln];
         const total = amiss + ok;
-        console.log(`${ln}: ${ok}/${total}`)
+        message += `\n${ln}: ${ok}/${total}`
+        if (ok !== total) {
+            isComplete = false;
+        }
+    }
+    if (isComplete) {
+        console.log(`${layout.id} is fully translated!`)
+    } else {
+        console.log(message)
     }
 
 }
@@ -242,7 +255,11 @@ for (const layoutName in all) {
     
     wikiPage += "\n\n"+generateWikiEntry(layout);
 }
-writeFile("wikiIndex", wikiPage, (err) => {err ?? console.log("Could not save wikiindex", err)});
+writeFile("wikiIndex", wikiPage, (err) => {
+    if (err !== null) {
+        console.log("Could not save wikiindex", err);
+    }
+});
 console.log("Counting all translations")
 Translations.CountTranslations();
 console.log("All done!");

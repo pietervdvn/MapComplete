@@ -104,6 +104,10 @@ export class FromJSON {
         if (typeof (json) === "string") {
             return new Translation({"*": json});
         }
+        if(json.render !== undefined){
+            console.error("Using a 'render' where a translation is expected. Content is", json.render);
+            throw "ERROR: using a 'render' where none is expected"
+        }
         const tr = {};
         let keyCount = 0;
         for (let key in json) {
