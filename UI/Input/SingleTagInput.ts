@@ -22,7 +22,6 @@ export default class SingleTagInput extends InputElement<string> {
     constructor(value: UIEventSource<string> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource<string>("");
-
         this.helpMessage = new VariableUiElement(this._value.map(tagDef => {
                 try {
                     FromJSON.Tag(tagDef, "");

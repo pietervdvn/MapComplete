@@ -6,13 +6,11 @@ export default class MultiLingualTextFields extends InputElement<any> {
     private _fields: Map<string, TextField> = new Map<string, TextField>();
     private readonly _value: UIEventSource<any>;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
     constructor(languages: UIEventSource<string[]>,
                 textArea: boolean = false,
                 value: UIEventSource<Map<string, UIEventSource<string>>> = undefined) {
         super(undefined);
         this._value = value ?? new UIEventSource({});
-
         this._value.addCallbackAndRun(latestData => {
             if (typeof (latestData) === "string") {
                 console.warn("Refusing string for multilingual input", latestData);

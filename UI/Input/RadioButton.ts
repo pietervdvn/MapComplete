@@ -11,15 +11,13 @@ export class RadioButton<T> extends InputElement<T> {
     private readonly value: UIEventSource<T>;
     private readonly _elements: InputElement<T>[]
     private readonly _selectFirstAsDefault: boolean;
-
-
+    
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super(undefined);
         this._elements = Utils.NoNull(elements);
         this._selectFirstAsDefault = selectFirstAsDefault;
         const self = this;
-
 
         this.value =
             UIEventSource.flatten(this._selectedElementIndex.map(

@@ -90,7 +90,7 @@ export default class ValidatedTextField {
                 return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
             },
             (str, country: any) => {
-                console.log("country formatting", country)
+                console.log("reformatting phone nuber",str, "for locale", country)
                 return parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
             }
         )

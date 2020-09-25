@@ -10,7 +10,7 @@ export class TextField extends InputElement<string> {
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _isArea: boolean;
     private readonly _textAreaRows: number;
-
+    
     constructor(options?: {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
@@ -52,7 +52,6 @@ export class TextField extends InputElement<string> {
             field.value = t;
         });
         this.dumbMode = false;
-        this.SetClass("deadbeef")
     }
 
     GetValue(): UIEventSource<string> {
@@ -72,18 +71,18 @@ export class TextField extends InputElement<string> {
             `</form></span>`;
     }
     
-    Update() {
-        console.log("Updating TF")
-        super.Update();
-    }
 
     InnerUpdate() {
-        console.log("Inner Updating TF")
         const field = document.getElementById("txt-" + this.id);
         const self = this;
         field.oninput = () => {
             // @ts-ignore
+            var endDistance = field.value.length - field.selectionEnd;
+            // @ts-ignore
             self.value.setData(field.value);
+            // Setting the value might cause the value to be set again. We keep the distance _to the end_ stable, as phone number formatting might cause the start to change
+            // See https://github.com/pietervdvn/MapComplete/issues/103
+            self.SetCursorPosition(field.value.length - endDistance);
         };
 
         if (this.value.data !== undefined && this.value.data !== null) {
@@ -105,7 +104,7 @@ export class TextField extends InputElement<string> {
     }
 
     public SetCursorPosition(i: number) {
-        const field = document.getElementById('text-' + this.id);
+        const field = document.getElementById('txt-' + this.id);
         if(field === undefined || field === null){
             return;
         }
@@ -116,6 +115,7 @@ export class TextField extends InputElement<string> {
         field.focus();
         // @ts-ignore
         field.setSelectionRange(i, i);
+
     }
 
     IsValid(t: string): boolean {
