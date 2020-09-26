@@ -140,9 +140,7 @@ export default class ValidatedTextField {
                 }
                 return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
             },
-            (str, country: any) => {
-                return  parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
-            }
+            (str, country: any) => parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
         )
     ]
     
@@ -170,21 +168,38 @@ export default class ValidatedTextField {
         value?: UIEventSource<string>,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((s: string) => boolean)
+        isValid?: ((s: string, country: string) => boolean),
+        country?: string
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
         const tp: TextFieldDef = ValidatedTextField.AllTypes[type]
-        let isValid = tp.isValid;
+        const isValidTp = tp.isValid;
+        let isValid;
         if (options.isValid) {
             const optValid = options.isValid;
             isValid = (str, country) => {
-                return ValidatedTextField.AllTypes[type](str, country) && optValid(str);
+                if(str === undefined){
+                    return false;
+                }
+                return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
             }
+        }else{
+            isValid = isValidTp;
         }
         options.isValid = isValid;
 
         let input: InputElement<string> = new TextField(options);
+        if (tp.reformat) {
+            input.GetValue().addCallbackAndRun(str => {
+                if (!options.isValid(str, options.country)) {
+                    return;
+                }
+                const formatted = tp.reformat(str, options.country);
+                input.GetValue().setData(formatted);
+            })
+        }
+
         if (tp.inputHelper) {
             input = new CombinedInputElement(input, tp.inputHelper(input.GetValue()));
         }
@@ -252,11 +267,12 @@ export default class ValidatedTextField {
         startValidated?: boolean,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((string: string) => boolean)
+        isValid?: ((string: string) => boolean),
+        country?: string
     }): InputElement<T> {
         let textField: InputElement<string>;
         if (options.type) {
-            textField = ValidatedTextField.InputForType(options.type);
+            textField = ValidatedTextField.InputForType(options.type, options);
         } else {
             textField = new TextField(options);
         }

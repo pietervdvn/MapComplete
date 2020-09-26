@@ -11,14 +11,14 @@ export class TextField extends InputElement<string> {
     private readonly _isArea: boolean;
     private readonly _textAreaRows: number;
 
-    private readonly _isValid: (string) => boolean;
+    private readonly _isValid: (string, country) => boolean;
 
     constructor(options?: {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((s: string) => boolean)
+        isValid?: ((s: string, country?: string) => boolean)
     }) {
         super(undefined);
         const self = this;
@@ -28,7 +28,7 @@ export class TextField extends InputElement<string> {
         this.value = options?.value ?? new UIEventSource<string>(undefined);
 
         this._textAreaRows = options.textAreaRows;
-        this._isValid = options.isValid ?? ((str) => true);
+        this._isValid = options.isValid ?? ((str, country) => true);
 
         this._placeholder = Translations.W(options.placeholder ?? "");
         this.ListenTo(this._placeholder._source);
@@ -37,6 +37,7 @@ export class TextField extends InputElement<string> {
             self.IsSelected.setData(true)
         });
         this.value.addCallback((t) => {
+            console.log("Setting actual value to", t);
             const field = document.getElementById("txt-"+this.id);
             if (field === undefined || field === null) {
                 return;
@@ -74,10 +75,12 @@ export class TextField extends InputElement<string> {
         const field = document.getElementById("txt-" + this.id);
         const self = this;
         field.oninput = () => {
+            
+            // How much characters are on the right, not including spaces?
             // @ts-ignore
-            const endDistance = field.value.length - field.selectionEnd;
+            const endDistance = field.value.substring(field.selectionEnd).replace(/ /g,'').length;
             // @ts-ignore
-            const val: string = field.value;
+            let val: string = field.value;
             if (!self.IsValid(val)) {
                 self.value.setData(undefined);
             } else {
@@ -86,8 +89,21 @@ export class TextField extends InputElement<string> {
             // Setting the value might cause the value to be set again. We keep the distance _to the end_ stable, as phone number formatting might cause the start to change
             // See https://github.com/pietervdvn/MapComplete/issues/103
             // We reread the field value - it might have changed!
+            
             // @ts-ignore
-            self.SetCursorPosition(field.value.length - endDistance);
+            val = field.value;
+            let newCursorPos = endDistance;
+            while(newCursorPos >= 0 && 
+                // We count the number of _actual_ characters (non-space characters) on the right of the new value
+                // This count should become bigger then the end distance
+                val.substr(newCursorPos).replace(/ /g, '').length <= endDistance
+                ){
+                newCursorPos --;
+            }
+            newCursorPos++;
+            
+            // @ts-ignore
+            self.SetCursorPosition(newCursorPos);
         };
 
         if (this.value.data !== undefined && this.value.data !== null) {
@@ -127,7 +143,7 @@ export class TextField extends InputElement<string> {
         if (t === undefined || t === null) {
             return false
         }
-        return this._isValid(t);
+        return this._isValid(t, undefined);
     }
 
 }

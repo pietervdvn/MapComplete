@@ -326,15 +326,13 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         
-        let formatter = ValidatedTextField.AllTypes[type].reformat ?? ((str) => str);
-
         const pickString =
             (string: any) => {
                 if (string === "" || string === undefined) {
                     return undefined;
                 }
 
-                const tag = new Tag(freeform.key, formatter(string, this._source.data._country));
+                const tag = new Tag(freeform.key, string);
 
                 if (freeform.extraTags === undefined) {
                     return tag;
@@ -361,11 +359,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
+        console.log("Creating a freeform input element for ", this._source.data._country);
+
         return ValidatedTextField.Mapped(pickString, toString, {
             placeholder: this._freeform.placeholder,
             type: type,
             isValid: (str) => (str.length <= 255),
-            textArea: isTextArea
+            textArea: isTextArea,
+            country: this._source.data._country
         })
     }
 
