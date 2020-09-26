@@ -64,7 +64,9 @@ export class ShareScreen extends UIElement {
         if (State.state !== undefined) {
 
             const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = (State.state.bm as Basemap).CurrentLayer;
-            const currentBackground = tr.fsIncludeCurrentBackgroundMap.Subs({name: layout.id});
+            const currentBackground = new VariableUiElement(currentLayer.map(layer => {
+                return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
+            }));
             const includeCurrentBackground = new CheckBox(
                 new Combine([Img.checkmark, currentBackground]),
                 new Combine([Img.no_checkmark, currentBackground]),
@@ -143,9 +145,13 @@ export class ShareScreen extends UIElement {
 
             let hash = "";
             if (layoutDefinition !== undefined) {
-                hash = ("#" + layoutDefinition)
                 literalText = "https://pietervdvn.github.io/MapComplete/index.html"
-                parts.push("userlayout=true");
+                if (layout.id.startsWith("wiki:")) {
+                    parts.push("userlayout=" + encodeURIComponent(layout.id))
+                } else {
+                    hash = ("#" + layoutDefinition)
+                    parts.push("userlayout=true");
+                }
             }
 
 
@@ -157,12 +163,12 @@ export class ShareScreen extends UIElement {
         }, optionParts);
 
 
-        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender()??""} with MapComplete"&gt;&lt;/iframe&gt`);
+        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender()??"MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
         
         this._iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                         &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title.InnerRender()} with MapComplete"&gt;&lt;/iframe&gt 
+                         &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender() ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );

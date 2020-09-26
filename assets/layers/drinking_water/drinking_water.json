@@ -45,7 +45,8 @@
         "nl": "Is deze drinkwaterkraan nog steeds werkende?"
       },
       "render": {
-        "en": "The operational status is <i>{operational_status</i>"
+        "en": "The operational status is <i>{operational_status</i>",
+        "nl": "Deze waterkraan-status is <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"

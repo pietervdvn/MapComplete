@@ -6,6 +6,16 @@ import {InputElement} from "./InputElement";
 import {TextField} from "./TextField";
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import CombinedInputElement from "./CombinedInputElement";
+import SimpleDatePicker from "./SimpleDatePicker";
+
+interface TextFieldDef {
+    name: string,
+    explanation: string,
+    isValid: ((s: string, country?: string) => boolean),
+    reformat?: ((s: string, country?: string) => string),
+    inputHelper?: (value:UIEventSource<string>) => InputElement<string>
+}
 
 export default class ValidatedTextField {
 
@@ -13,12 +23,8 @@ export default class ValidatedTextField {
     private static tp(name: string,
                       explanation: string,
                       isValid?: ((s: string, country?: string) => boolean),
-                      reformat?: ((s: string, country?: string) => string)): {
-        name: string,
-        explanation: string,
-        isValid: ((s: string, country?: string) => boolean),
-        reformat?: ((s: string, country?: string) => string)
-    } {
+                      reformat?: ((s: string, country?: string) => string),
+                      inputHelper?: (value: UIEventSource<string>) => InputElement<string>): TextFieldDef {
 
         if (isValid === undefined) {
             isValid = () => true;
@@ -33,17 +39,36 @@ export default class ValidatedTextField {
             name: name,
             explanation: explanation,
             isValid: isValid,
-            reformat: reformat
+            reformat: reformat,
+            inputHelper: inputHelper
         }
     }
 
-    public static tpList = [
+    public static tpList: TextFieldDef[] = [
         ValidatedTextField.tp(
             "string",
             "A basic string"),
         ValidatedTextField.tp(
             "date",
-            "A date"),
+            "A date",
+            (str) => {
+                const time = Date.parse(str);
+                return !isNaN(time);
+            },
+            (str) => {
+                const d = new Date(str);
+                let month = '' + (d.getMonth() + 1);
+                let day = '' + d.getDate();
+                const year = d.getFullYear();
+
+                if (month.length < 2)
+                    month = '0' + month;
+                if (day.length < 2)
+                    day = '0' + day;
+
+                return [year, month, day].join('-');
+            },
+            (value) => new SimpleDatePicker(value)),
         ValidatedTextField.tp(
             "wikidata",
             "A wikidata identifier, e.g. Q42"),
@@ -82,17 +107,40 @@ export default class ValidatedTextField {
             (str) => EmailValidator.validate(str)),
         ValidatedTextField.tp(
             "url",
-            "A url"),
+            "A url",
+            (str) => {
+                try {
+                    new URL(str);
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }, (str) => {
+                try {
+                    const url = new URL(str);
+                    const blacklistedTrackingParams = [
+                        "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
+                        "gclid",
+                        "cmpid", "agid", "utm", "utm_source"]
+                    for (const dontLike of blacklistedTrackingParams) {
+                        url.searchParams.delete(dontLike)
+                    }
+                    return url.toString();
+                } catch (e) {
+                    console.error(e)
+                    return undefined;
+                }
+            }),
         ValidatedTextField.tp(
             "phone",
             "A phone number",
             (str, country: any) => {
+                if (str === undefined) {
+                    return false;
+                }
                 return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
             },
-            (str, country: any) => {
-                console.log("country formatting", country)
-                return parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
-            }
+            (str, country: any) => parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
         )
     ]
     
@@ -112,15 +160,50 @@ export default class ValidatedTextField {
         }
         return new DropDown<string>("", values)
     }
-    
+
     public static AllTypes = ValidatedTextField.allTypesDict();
 
-    public static InputForType(type: string): TextField {
-        
-        return new TextField({
-            placeholder: type,
-            isValid: ValidatedTextField.AllTypes[type]
-        })
+    public static InputForType(type: string, options?: {
+        placeholder?: string | UIElement,
+        value?: UIEventSource<string>,
+        textArea?: boolean,
+        textAreaRows?: number,
+        isValid?: ((s: string, country: string) => boolean),
+        country?: string
+    }): InputElement<string> {
+        options = options ?? {};
+        options.placeholder = options.placeholder ?? type;
+        const tp: TextFieldDef = ValidatedTextField.AllTypes[type]
+        const isValidTp = tp.isValid;
+        let isValid;
+        if (options.isValid) {
+            const optValid = options.isValid;
+            isValid = (str, country) => {
+                if(str === undefined){
+                    return false;
+                }
+                return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
+            }
+        }else{
+            isValid = isValidTp;
+        }
+        options.isValid = isValid;
+
+        let input: InputElement<string> = new TextField(options);
+        if (tp.reformat) {
+            input.GetValue().addCallbackAndRun(str => {
+                if (!options.isValid(str, options.country)) {
+                    return;
+                }
+                const formatted = tp.reformat(str, options.country);
+                input.GetValue().setData(formatted);
+            })
+        }
+
+        if (tp.inputHelper) {
+            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue()));
+        }
+        return input;
     }
 
     public static NumberInput(type: string = "int", extraValidation: (number: Number) => boolean = undefined): InputElement<number> {
@@ -179,13 +262,20 @@ export default class ValidatedTextField {
 
     static Mapped<T>(fromString: (str) => T, toString: (T) => string, options?: {
         placeholder?: string | UIElement,
+        type?: string,
         value?: UIEventSource<string>,
         startValidated?: boolean,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((string: string) => boolean)
+        isValid?: ((string: string) => boolean),
+        country?: string
     }): InputElement<T> {
-        const textField = new TextField(options);
+        let textField: InputElement<string>;
+        if (options.type) {
+            textField = ValidatedTextField.InputForType(options.type, options);
+        } else {
+            textField = new TextField(options);
+        }
         return new InputElementMap(
             textField, (a, b) => a === b,
             fromString, toString

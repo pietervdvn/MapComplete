@@ -42,7 +42,7 @@ export class FilteredLayer {
     
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
-    private static readonly grid = codegrid.CodeGrid();
+    private static readonly grid = codegrid.CodeGrid("./tiles/");
 
     constructor(
         layerDef: LayerDefinition,
@@ -52,12 +52,20 @@ export class FilteredLayer {
 
         this._wayHandling = layerDef.wayHandling;
         this._showOnPopup = showOnPopup;
-        this._style = layerDef.style;
-        if (this._style === undefined) {
-            this._style = function () {
+        this._style = (tags) => {
+            if(layerDef.style === undefined){
                 return {icon: {iconUrl: "./assets/bug.svg"}, color: "#000"};
             }
-        }
+            
+            const obj = layerDef.style(tags);
+            if(obj.weight && typeof (obj.weight) === "string"){
+                obj.weight = Number(obj.weight);// Weight MUST be a number, otherwise leaflet does weird things. see https://github.com/Leaflet/Leaflet/issues/6075
+                if(isNaN(obj.weight)){
+                    obj.weight = undefined;
+                }
+            }
+            return obj;
+        };
         this.name = name;
         this.filters = layerDef.overpassFilter;
         this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
@@ -102,14 +110,17 @@ export class FilteredLayer {
             
             if (this.filters.matches(tags)) {
                 const centerPoint = GeoOperations.centerpoint(feature);
-                feature.properties["_surface"] = ""+GeoOperations.surfaceAreaInSqMeters(feature);
-                const lat = ""+centerPoint.geometry.coordinates[1];
-                const lon = ""+centerPoint.geometry.coordinates[0]
-                feature.properties["_lon"] = lat;
-                feature.properties["_lat"] = lon;
+                feature.properties["_surface"] = "" + GeoOperations.surfaceAreaInSqMeters(feature);
+                const lat = centerPoint.geometry.coordinates[1];
+                const lon = centerPoint.geometry.coordinates[0]
+                feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
+                feature.properties["_lat"] = "" + lon;
+                // But the codegrid SHOULD be a number!
                 FilteredLayer.grid.getCode(lat, lon, (error, code) => {
                     if (error === null) {
                         feature.properties["_country"] = code;
+                    } else {
+                        console.warn("Could not determine country for", feature.properties.id, error);
                     }
                 })
 
@@ -215,26 +226,26 @@ export class FilteredLayer {
             pointToLayer: function (feature, latLng) {
                 const style = self._style(feature.properties);
                 let marker;
-               if (style.icon === undefined) {
-                   marker = L.circle(latLng, {
-                       radius: 25,
-                       color: style.color
-                   });
+                if (style.icon === undefined) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
+                    });
 
-               } else if (style.icon.iconUrl.startsWith("$circle")) {
-                   marker = L.circle(latLng, {
-                       radius: 25,
-                       color: style.color
-                   });
-               } else {
-                   if (style.icon.iconSize === undefined) {
-                       style.icon.iconSize = [50, 50]
-                   }
+                } else if (style.icon.iconUrl.startsWith("$circle")) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
+                    });
+                } else {
+                    if (style.icon.iconSize === undefined) {
+                        style.icon.iconSize = [50, 50]
+                    }
 
-                   marker = L.marker(latLng, {
-                       icon: new L.icon(style.icon),
-                   });
-               }
+                    marker = L.marker(latLng, {
+                        icon: new L.icon(style.icon),
+                    });
+                }
                 let eventSource = State.state.allElements.addOrGetElement(feature);
                 const popup = L.popup({}, marker);
                 let uiElement: UIElement;

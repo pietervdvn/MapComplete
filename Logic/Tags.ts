@@ -95,10 +95,10 @@ export class Tag extends TagsFilter {
         this.key = key
         this.value = value
         if(key === undefined || key === ""){
-            throw "Invalid key";
+            throw "Invalid key: undefined or empty";
         }
         if(value === undefined){
-            throw "Invalid value";
+            throw "Invalid value: value is undefined";
         }
         if(value === "*"){
          console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)

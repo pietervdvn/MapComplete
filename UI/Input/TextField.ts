@@ -11,12 +11,14 @@ export class TextField extends InputElement<string> {
     private readonly _isArea: boolean;
     private readonly _textAreaRows: number;
 
+    private readonly _isValid: (string, country) => boolean;
+
     constructor(options?: {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((s: string) => boolean)
+        isValid?: ((s: string, country?: string) => boolean)
     }) {
         super(undefined);
         const self = this;
@@ -25,9 +27,8 @@ export class TextField extends InputElement<string> {
         this._isArea = options.textArea ?? false;
         this.value = options?.value ?? new UIEventSource<string>(undefined);
 
-        // @ts-ignore
-        this._fromString = options.fromString ?? ((str) => (str))
         this._textAreaRows = options.textAreaRows;
+        this._isValid = options.isValid ?? ((str, country) => true);
 
         this._placeholder = Translations.W(options.placeholder ?? "");
         this.ListenTo(this._placeholder._source);
@@ -36,23 +37,20 @@ export class TextField extends InputElement<string> {
             self.IsSelected.setData(true)
         });
         this.value.addCallback((t) => {
-            const field = document.getElementById(this.id);
+            console.log("Setting actual value to", t);
+            const field = document.getElementById("txt-"+this.id);
             if (field === undefined || field === null) {
                 return;
             }
-            if (options.isValid) {
-                field.className = options.isValid(t) ? "" : "invalid";
-            }
+            field.className = self.IsValid(t) ? "" : "invalid";
 
             if (t === undefined || t === null) {
-                // @ts-ignore
                 return;
             }
             // @ts-ignore
             field.value = t;
         });
         this.dumbMode = false;
-        this.SetClass("deadbeef")
     }
 
     GetValue(): UIEventSource<string> {
@@ -72,16 +70,37 @@ export class TextField extends InputElement<string> {
             `</form></span>`;
     }
     
-    Update() {
-        super.Update();
-    }
-
     InnerUpdate() {
         const field = document.getElementById("txt-" + this.id);
         const self = this;
         field.oninput = () => {
+            
+            // How much characters are on the right, not including spaces?
             // @ts-ignore
-            self.value.setData(field.value);
+            const endDistance = field.value.substring(field.selectionEnd).replace(/ /g,'').length;
+            // @ts-ignore
+            let val: string = field.value;
+            if (!self.IsValid(val)) {
+                self.value.setData(undefined);
+            } else {
+                self.value.setData(val);
+            }
+            // Setting the value might cause the value to be set again. We keep the distance _to the end_ stable, as phone number formatting might cause the start to change
+            // See https://github.com/pietervdvn/MapComplete/issues/103
+            // We reread the field value - it might have changed!
+            
+            // @ts-ignore
+            val = field.value;
+            let newCursorPos = val.length - endDistance;
+            while(newCursorPos >= 0 && 
+                // We count the number of _actual_ characters (non-space characters) on the right of the new value
+                // This count should become bigger then the end distance
+                val.substr(newCursorPos).replace(/ /g, '').length < endDistance
+                ){
+                newCursorPos --;
+            }
+            // @ts-ignore
+            self.SetCursorPosition(newCursorPos);
         };
 
         if (this.value.data !== undefined && this.value.data !== null) {
@@ -103,7 +122,7 @@ export class TextField extends InputElement<string> {
     }
 
     public SetCursorPosition(i: number) {
-        const field = document.getElementById('text-' + this.id);
+        const field = document.getElementById('txt-' + this.id);
         if(field === undefined || field === null){
             return;
         }
@@ -114,11 +133,14 @@ export class TextField extends InputElement<string> {
         field.focus();
         // @ts-ignore
         field.setSelectionRange(i, i);
+
     }
 
     IsValid(t: string): boolean {
-        return !(t === undefined || t === null);
+        if (t === undefined || t === null) {
+            return false
+        }
+        return this._isValid(t, undefined);
     }
 
 }
-                

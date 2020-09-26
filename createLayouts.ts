@@ -13,17 +13,13 @@ import Translations from "./UI/i18n/Translations";
 import {TagRendering} from "./UI/TagRendering";
 
 TagRendering.injectFunction();
-
-
 console.log("Building the layouts")
-
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }
 
 function validate(layout: Layout) {
-    console.log("Validationg ", layout.id)
     const translations: Translation[] = [];
     const queue: any[] = [layout]
 
@@ -49,10 +45,13 @@ function validate(layout: Layout) {
         missing[ln] = 0;
         present[ln] = 0;
         for (const translation of translations) {
+            if (translation.translations["*"] !== undefined) {
+                continue;
+            }
             const txt = translation.translations[ln];
             const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
             if (isMissing) {
-                console.log(`Missing or suspicious ${ln}-translation for '`, translation.txt, ":", txt)
+                console.log(`   ${layout.id}: No translation for`, ln, "in", translation.translations, "got:", txt)
                 missing[ln]++
             } else {
                 present[ln]++;
@@ -60,12 +59,21 @@ function validate(layout: Layout) {
         }
     }
 
-    console.log("Translation completenes for", layout.id);
+    let message = `Translation completenes for theme ${layout.id}`
+    let isComplete = true;
     for (const ln of layout.supportedLanguages) {
         const amiss = missing[ln];
         const ok = present[ln];
         const total = amiss + ok;
-        console.log(`${ln}: ${ok}/${total}`)
+        message += `\n${ln}: ${ok}/${total}`
+        if (ok !== total) {
+            isComplete = false;
+        }
+    }
+    if (isComplete) {
+        console.log(`${layout.id} is fully translated!`)
+    } else {
+        console.log(message)
     }
 
 }
@@ -129,23 +137,21 @@ function createIcon(iconPath: string, size: number) {
     }
 
     console.log("Creating icon ", name, newname)
+    try {
+        svg2img(iconPath,
+            // @ts-ignore
+            {width: size, height: size, preserveAspectRatio: true})
+            .then((buffer) => {
+                console.log("Writing icon", newname)
+                writeFileSync(newname, buffer);
+            }).catch((error) => {
+            console.log("ERROR while writing" + iconPath, error)
+        });
 
-    try{
-        
-    svg2img(iconPath,
-        // @ts-ignore
-        {width: size, height: size, preserveAspectRatio: true})
-        .then((buffer) => {
-            console.log("Writing icon", newname)
-            writeFileSync(newname, buffer);
-        }).catch((error) => {
-        console.log("ERROR while writing" + iconPath, error)
-    });
-    
-    }catch(e){
-        console.error("Could not read icon",iconPath,"due to",e)
+    } catch (e) {
+        console.error("Could not read icon", iconPath, "due to", e)
     }
-    
+
     return newname;
 }
 
@@ -155,7 +161,6 @@ function createManifest(layout: Layout, relativePath: string) {
     const icons = [];
 
     let icon = layout.icon;
-    console.log(icon)
     if (icon.endsWith(".svg")) {
         // This is an svg. Lets create the needed pngs!
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
@@ -240,20 +245,21 @@ for (const layoutName in all) {
     };
     const layout = all[layoutName];
     validate(layout)
-    console.log("Generating manifest")
     const manif = JSON.stringify(createManifest(layout, "/MapComplete"));
 
     const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
     writeFile(manifestLocation, manif, err);
 
     const landing = createLandingPage(layout);
-    console.log("Generating html-file for ", layout.id)
     writeFile(enc(layout.id) + ".html", landing, err)
-    console.log("done")
     
     wikiPage += "\n\n"+generateWikiEntry(layout);
 }
-writeFile("wikiIndex", wikiPage, (err) => {err ?? console.log("Could not save wikiindex", err)});
+writeFile("./assets/generated/wikiIndex", wikiPage, (err) => {
+    if (err !== null) {
+        console.log("Could not save wikiindex", err);
+    }
+});
 console.log("Counting all translations")
 Translations.CountTranslations();
 console.log("All done!");

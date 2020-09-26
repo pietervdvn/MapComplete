@@ -298,7 +298,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     }
 
 
-    private InputForFreeForm(freeform :  {
+    private InputForFreeForm(freeform: {
         key: string,
         template: string | Translation,
         renderTemplate: string | Translation,
@@ -313,7 +313,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             .replace("$$$", "$string$")
             .split("$");
         let type = prepost[1];
-        
+
         let isTextArea = false;
         if(type === "text"){
             isTextArea = true;
@@ -325,27 +325,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             throw "Unkown type: "+type;
         }
 
-        let isValid = ValidatedTextField.AllTypes[type].isValid;
-        if (isValid === undefined) {
-            isValid = () => true;
-        }
-        let formatter = ValidatedTextField.AllTypes[type].reformat ?? ((str) => str);
-
+        
         const pickString =
             (string: any) => {
                 if (string === "" || string === undefined) {
                     return undefined;
                 }
-                if (!isValid(string, this._source.data._country)) {
-                    return undefined;
-                }
 
-
-                const tag = new Tag(freeform.key, formatter(string, this._source.data._country));
-
-                if (tag.value.length > 255) {
-                    return undefined; // Too long
-                }
+                const tag = new Tag(freeform.key, string);
 
                 if (freeform.extraTags === undefined) {
                     return tag;
@@ -371,9 +358,16 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             }
             return undefined;
         }
-        return ValidatedTextField.Mapped(
-            pickString, toString, {placeholder: this._freeform.placeholder, isValid: isValid, textArea: isTextArea}
-        )
+
+        console.log("Creating a freeform input element for ", this._source.data._country);
+
+        return ValidatedTextField.Mapped(pickString, toString, {
+            placeholder: this._freeform.placeholder,
+            type: type,
+            isValid: (str) => (str.length <= 255),
+            textArea: isTextArea,
+            country: this._source.data._country
+        })
     }
 
 

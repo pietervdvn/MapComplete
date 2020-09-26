@@ -64,7 +64,6 @@ export class FromJSON {
     }
 
     public static LayoutFromJSON(json: LayoutConfigJson): Layout {
-        console.log(json)
         const tr = FromJSON.Translation;
 
         const layers = json.layers.map(FromJSON.Layer);
@@ -105,6 +104,10 @@ export class FromJSON {
         if (typeof (json) === "string") {
             return new Translation({"*": json});
         }
+        if(json.render !== undefined){
+            console.error("Using a 'render' where a translation is expected. Content is", json.render);
+            throw "ERROR: using a 'render' where none is expected"
+        }
         const tr = {};
         let keyCount = 0;
         for (let key in json) {
@@ -115,7 +118,6 @@ export class FromJSON {
             return undefined;
         }
         const transl = new Translation(tr);
-        transl.addCallback(latest => console.log("tr callback changed to", latest));
         return transl;
     }
 
