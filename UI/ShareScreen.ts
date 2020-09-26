@@ -64,7 +64,9 @@ export class ShareScreen extends UIElement {
         if (State.state !== undefined) {
 
             const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = (State.state.bm as Basemap).CurrentLayer;
-            const currentBackground = tr.fsIncludeCurrentBackgroundMap.Subs({name: layout.id});
+            const currentBackground = new VariableUiElement(currentLayer.map(layer => {
+                return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.id ?? ""}).Render();
+            }));
             const includeCurrentBackground = new CheckBox(
                 new Combine([Img.checkmark, currentBackground]),
                 new Combine([Img.no_checkmark, currentBackground]),
@@ -143,9 +145,13 @@ export class ShareScreen extends UIElement {
 
             let hash = "";
             if (layoutDefinition !== undefined) {
-                hash = ("#" + layoutDefinition)
                 literalText = "https://pietervdvn.github.io/MapComplete/index.html"
-                parts.push("userlayout=true");
+                if (layout.id.startsWith("wiki:")) {
+                    parts.push("userlayout=" + encodeURIComponent(layout.id))
+                } else {
+                    hash = ("#" + layoutDefinition)
+                    parts.push("userlayout=true");
+                }
             }
 
 
