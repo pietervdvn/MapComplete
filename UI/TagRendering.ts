@@ -325,10 +325,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             throw "Unkown type: "+type;
         }
 
-        let isValid = ValidatedTextField.AllTypes[type].isValid;
-        if (isValid === undefined) {
-            isValid = () => true;
-        }
+        
         let formatter = ValidatedTextField.AllTypes[type].reformat ?? ((str) => str);
 
         const pickString =
@@ -336,16 +333,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 if (string === "" || string === undefined) {
                     return undefined;
                 }
-                if (!isValid(string, this._source.data._country)) {
-                    return undefined;
-                }
-
 
                 const tag = new Tag(freeform.key, formatter(string, this._source.data._country));
-
-                if (tag.value.length > 255) {
-                    return undefined; // Too long
-                }
 
                 if (freeform.extraTags === undefined) {
                     return tag;
@@ -374,7 +363,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         return ValidatedTextField.Mapped(pickString, toString, {
             placeholder: this._freeform.placeholder,
-            isValid: isValid,
+            type: type,
+            isValid: (str) => (str.length <= 255),
             textArea: isTextArea
         })
     }

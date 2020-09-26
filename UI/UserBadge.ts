@@ -83,7 +83,7 @@ export class UserBadge extends UIElement {
 
         let dryrun = "";
         if (user.dryRun) {
-            dryrun = " <span class='alert'>TESTING</span>";
+            dryrun = new FixedUiElement("TESTING").SetClass("alert").Render();
         }
 
         if (user.home !== undefined) {
@@ -98,7 +98,7 @@ export class UserBadge extends UIElement {
         const settings =
             "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "/account' target='_blank'>" +
             "<img class='small-userbadge-icon' src='./assets/gear.svg' alt='settings'>" +
-            "</a> ";
+            "</a>";
 
         const userIcon = "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "' target='_blank'><img id='profile-pic' src='" + user.img + "' alt='profile-pic'/></a>";
 
