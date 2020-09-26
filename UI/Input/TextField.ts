@@ -92,16 +92,14 @@ export class TextField extends InputElement<string> {
             
             // @ts-ignore
             val = field.value;
-            let newCursorPos = endDistance;
+            let newCursorPos = val.length - endDistance;
             while(newCursorPos >= 0 && 
                 // We count the number of _actual_ characters (non-space characters) on the right of the new value
                 // This count should become bigger then the end distance
-                val.substr(newCursorPos).replace(/ /g, '').length <= endDistance
+                val.substr(newCursorPos).replace(/ /g, '').length < endDistance
                 ){
                 newCursorPos --;
             }
-            newCursorPos++;
-            
             // @ts-ignore
             self.SetCursorPosition(newCursorPos);
         };
@@ -147,4 +145,3 @@ export class TextField extends InputElement<string> {
     }
 
 }
-                
