@@ -1,10 +1,9 @@
 import {UIElement} from "./UIElement";
-import AvailableBaseLayers from "../Logic/AvailableBaseLayers";
+import AvailableBaseLayers, {BaseLayer} from "../Logic/AvailableBaseLayers";
 import {DropDown} from "./Input/DropDown";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
-import Combine from "./Base/Combine";
 
 export default class BackgroundSelector extends UIElement {
 
@@ -23,20 +22,16 @@ export default class BackgroundSelector extends UIElement {
 
     private CreateDropDown(available) {
         if(available.length === 0){
-            console.warn("NO LAYERS FOUND!")
             return;
         }
         
-        const baseLayers: { value: any, shown: string }[] = [];
+        const baseLayers: { value: BaseLayer, shown: string }[] = [];
         for (const i in available) {
-            const layer: { url: string, max_zoom: number, license_url: number, name: string, geometry: any, leafletLayer: any } = available[i];
-            baseLayers.push({value: layer.leafletLayer, shown: layer.name});
-
+            const layer: BaseLayer = available[i];
+            baseLayers.push({value: layer.layer, shown: layer.name ?? "id:" + layer.id});
         }
 
-        const dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.bm.CurrentLayer)
-        console.log("Installed dropdown with ",baseLayers);
-        this._dropdown = dropdown;
+        this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.bm.CurrentLayer);
     }
 
     InnerRender(): string {

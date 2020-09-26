@@ -24,3 +24,5 @@ for f in ./*.html; do
         rm $f
     fi
 done
+
+rm -rf .cache

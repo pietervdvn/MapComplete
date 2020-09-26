@@ -436,27 +436,14 @@ export class InitUiElements {
                     editWithJosm =
                         `<a href='${josmLink}' target='_blank'><img src='./assets/josm_logo.svg' alt='edit here' class='small-userbadge-icon'></a>`
                 }
-                return new Combine([mapComplete, reportBug, " | ", stats,  " | ",editHere, editWithJosm]).Render();
+                return new Combine([mapComplete, reportBug, " | ", stats, " | ", editHere, editWithJosm]).Render();
 
             }, [State.state.osmConnection.userDetails])
-        )
+            )
         );
         State.state.bm = bm;
         State.state.layerUpdater = new LayerUpdater(State.state);
-        /*  const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
-      const queryParamMapped: UIEventSource<{ id: string, name: string, layer: any }> =
-            queryParam.map<{ id: string, name: string, layer: any }>((id) => {
-                for (const layer of BaseLayers.baseLayers) {
-                    if (layer.id === id) {
-                        return layer;
-                    }
-                }
-                return undefined;
-            }, [], (layerInfo) => {
-                return layerInfo.id
-            });
-
-        queryParamMapped.syncWith(bm.CurrentLayer);*/
+        
 
     }
 

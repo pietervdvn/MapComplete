@@ -124,10 +124,18 @@ export class Basemap {
                                         maxZoom: number, isWms: boolean, isWMTS?: boolean) {
 
         url = url.replace("{zoom}", "{z}")
-            .replace("{switch:", "{")
             .replace("{proj}", "EPSG:3857")
             .replace("{width}", "256")
             .replace("{height}", "256")
+
+        const subdomainsMatch = url.match(/{switch:[^}]*}/)
+        let domains  : string[] = [];
+        if (subdomainsMatch !== null) {
+            let domainsStr = subdomainsMatch[0].substr("{switch:".length);
+            domainsStr = domainsStr.substr(0, domainsStr.length-1);
+            domains = domainsStr.split(",");
+            url = url.replace(/{switch:[^}]*}/, "{s}")
+        }
 
         //geoservices.informatievlaanderen.be/raadpleegdiensten/dhmv/wms?FORMAT=image/jpeg&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&LAYERS=DHMV_II_SVF_25cm&STYLES=&SRS=EPSG:3857&WIDTH=256&HEIGHT=256
         if (isWms) {
@@ -137,7 +145,8 @@ export class Basemap {
                 layer: L.tileLayer.wms(url,
                     {
                         maxZoom: maxZoom ?? 19,
-                        attribution: attribution + " | "
+                        attribution: attribution + " | ",
+                        subdomains: domains
                     })
             }
         }
@@ -150,7 +159,8 @@ export class Basemap {
                     attribution: attribution,
                     maxZoom: maxZoom,
                     minZoom: 1,
-                    wmts: isWMTS ?? false
+                    wmts: isWMTS ?? false,
+                    subdomains: domains
                 })
         }
     }
