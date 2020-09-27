@@ -271,7 +271,7 @@ export default class ValidatedTextField {
         country?: string
     }): InputElement<T> {
         let textField: InputElement<string>;
-        if (options.type) {
+        if (options?.type) {
             textField = ValidatedTextField.InputForType(options.type, options);
         } else {
             textField = new TextField(options);

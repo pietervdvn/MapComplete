@@ -48,7 +48,6 @@ export default class SingleSetting<T> {
             for (const pathPart of path) {
                 let newConfigPart = configPart[pathPart];
                 if (newConfigPart === undefined) {
-                    console.warn("Lost the way for path ", path, " - creating entry")
                     if (typeof (pathPart) === "string") {
                         configPart[pathPart] = {};
                     } else {

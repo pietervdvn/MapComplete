@@ -37,7 +37,6 @@ export class TextField extends InputElement<string> {
             self.IsSelected.setData(true)
         });
         this.value.addCallback((t) => {
-            console.log("Setting actual value to", t);
             const field = document.getElementById("txt-"+this.id);
             if (field === undefined || field === null) {
                 return;

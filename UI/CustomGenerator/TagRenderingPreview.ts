@@ -34,12 +34,17 @@ export default class TagRenderingPreview extends UIElement {
         let es = tagRenderingPanel.GetValue();
 
         let rendering: UIElement;
+        const self = this;
         try {
             rendering =
                 new VariableUiElement(es.map(tagRenderingConfig => {
-                        const tr = FromJSON.TagRendering(tagRenderingConfig, "preview")
-                            .construct({tags: this.previewTagValue});
-                        return tr.Render();
+                        try {
+                            const tr = FromJSON.TagRendering(tagRenderingConfig, "preview")
+                                .construct({tags: self.previewTagValue});
+                            return tr.Render();
+                        } catch (e) {
+                            return new Combine(["Could not show this tagrendering:", e.message]).Render();
+                        }
                     }
                 ));
 

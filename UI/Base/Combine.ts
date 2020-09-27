@@ -17,7 +17,16 @@ export default class Combine extends UIElement {
     }
 
     InnerRender(): string {
-        return this.uiElements.map(ui => ui.Render()).join("");
+        return this.uiElements.map(ui => {
+            if(ui === undefined || ui === null){
+                return "";
+            }
+            if(ui.Render === undefined){
+                console.error("Not a UI-element", ui);
+                return "";
+            }
+            return ui.Render();
+        }).join("");
     }
 
 }

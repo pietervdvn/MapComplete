@@ -493,6 +493,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         if (this.IsKnown()) {
 
             const answer = this.RenderAnswer();
+            
             if (answer.IsEmpty()) {
                 return "";
             }
