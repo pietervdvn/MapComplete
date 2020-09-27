@@ -121,7 +121,7 @@ export default class ValidatedTextField {
                     const blacklistedTrackingParams = [
                         "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
                         "gclid",
-                        "cmpid", "agid", "utm", "utm_source"]
+                        "cmpid", "agid", "utm", "utm_source","utm_medium"]
                     for (const dontLike of blacklistedTrackingParams) {
                         url.searchParams.delete(dontLike)
                     }

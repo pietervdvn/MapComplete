@@ -80,12 +80,12 @@
       "question": {
         "en": "On what webpage can one find more information about the Ghost bike or the accident?",
         "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
-        "de": ""
+        "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?"
       },
       "render": {
         "en": "<a href='{source}' target='_blank'>More information is available</a>",
         "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
-        "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?"
+        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>"
       },
       "freeform": {
         "type": "url",
@@ -105,6 +105,20 @@
       },
       "freeform": {
         "key": "inscription"
+      }
+    },
+    {
+      "question": {
+        "nl": "Wanneer werd deze witte fiets geplaatst?",
+        "en": "When was this Ghost bike installed?"
+      },
+      "render": {
+        "nl": "Geplaatst op {start_date}",
+        "en": "Placed on {start_date}"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date"
       }
     }
   ]

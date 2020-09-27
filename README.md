@@ -156,6 +156,9 @@ TODO: erase cookies of third party websites and API's
 # Attributions
 
 Data from OpenStreetMap
+
+Background layer selection: curated by https://github.com/osmlab/editor-layer-index
+
 Images from Wikipedia/Wikimedia
 
 https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg

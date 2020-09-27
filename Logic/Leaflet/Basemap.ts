@@ -3,58 +3,13 @@ import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
 
 
-export class BaseLayers {
-
-
-    /*public static readonly baseLayers: { name: string, layer: any, id: string } [] = [
- 
-         {
-             id: "aiv-latest",
-             name: "Luchtfoto Vlaanderen (recentste door AIV)",
-             layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&" +
-                 "LAYER=omwrgbmrvl&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileRow={y}&tileCol={x}",
-                 {
-                     // omwrgbmrvl
-                     attribution: 'Luchtfoto\'s van © AIV Vlaanderen (Laatste)  © AGIV',
-                     maxZoom: 22,
-                     minZoom: 1,
-                     wmts: true
-                 })
-         },
-         BaseLayers.defaultLayer,
-         {
-             id: "aiv-13-15",
-             name: "Luchtfoto Vlaanderen (2013-2015, door AIV)",
-             layer: L.tileLayer.wms('https://geoservices.informatievlaanderen.be/raadpleegdiensten/OGW/wms?s',
-                 {
-                     maxZoom: 22,
-                     layers: "OGWRGB13_15VL",
-                     attribution: "Luchtfoto's van © AIV Vlaanderen (2013-2015) | "
-                 })
-         },
-         {
-             id:"grb",
-             name: "Kaart Grootschalig ReferentieBestand Vlaanderen (GRB) door AIV",
-             layer: L.tileLayer("https://tile.informatievlaanderen.be/ws/raadpleegdiensten/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=grb_bsk&STYLE=&FORMAT=image/png&tileMatrixSet=GoogleMapsVL&tileMatrix={z}&tileCol={x}&tileRow={y}",
-                 {
-                     attribution: 'Achtergrond <i>Grootschalig ReferentieBestand</i>(GRB) © AGIV',
-                     maxZoom: 22,
-                     minZoom: 1,
-                     wmts: true
-                 })
-         }
-     ]
-     ;*/
-
-}
-
 // Contains all setup and baselayers for Leaflet stuff
 export class Basemap {
 
 
     public static readonly defaultLayer: { name: string, layer: any, id: string } =
         Basemap.CreateBackgroundLayer("osm", "OpenStreetMap", "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            "<a href='https://openstreetmap.org/copyright' target='_blank'>OpenStreetMap (ODBL)</a>",
+            "OpenStreetMap (ODBL)", 'https://openstreetmap.org/copyright',
             22, false);
 
     // @ts-ignore
@@ -120,35 +75,62 @@ export class Basemap {
         });
     }
 
-    public static CreateBackgroundLayer(id: string, name: string, url: string, attribution: string,
+    public static CreateBackgroundLayer(id: string, name: string, url: string, attribution: string, attributionUrl: string,
                                         maxZoom: number, isWms: boolean, isWMTS?: boolean) {
 
         url = url.replace("{zoom}", "{z}")
-            .replace("{proj}", "EPSG:3857")
-            .replace("{width}", "256")
-            .replace("{height}", "256")
+            .replace("&BBOX={bbox}", "")
+            .replace("&bbox={bbox}", "");
 
         const subdomainsMatch = url.match(/{switch:[^}]*}/)
-        let domains  : string[] = [];
+        let domains: string[] = [];
         if (subdomainsMatch !== null) {
             let domainsStr = subdomainsMatch[0].substr("{switch:".length);
-            domainsStr = domainsStr.substr(0, domainsStr.length-1);
+            domainsStr = domainsStr.substr(0, domainsStr.length - 1);
             domains = domainsStr.split(",");
             url = url.replace(/{switch:[^}]*}/, "{s}")
         }
 
-        //geoservices.informatievlaanderen.be/raadpleegdiensten/dhmv/wms?FORMAT=image/jpeg&VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&LAYERS=DHMV_II_SVF_25cm&STYLES=&SRS=EPSG:3857&WIDTH=256&HEIGHT=256
+
         if (isWms) {
+            url = url.replace("&SRS={proj}","");
+            url = url.replace("&srs={proj}","");
+            const paramaters = ["format", "layers", "version", "service", "request", "styles", "transparent", "version"];
+            const urlObj = new URL(url);
+
+            const isUpper = urlObj.searchParams["LAYERS"] !== null;
+            const options = {
+                maxZoom: maxZoom ?? 19,
+                attribution: attribution + " | ",
+                subdomains: domains,
+                uppercase: isUpper,
+                transparent: false
+            };
+
+            for (const paramater of paramaters) {
+                let p = paramater;
+                if (isUpper) {
+                    p = paramater.toUpperCase();
+                }
+                options[paramater] = urlObj.searchParams.get(p);
+            }
+            
+            if(options.transparent === null){
+                options.transparent = false;
+            }
+
+
             return {
                 id: id,
                 name: name,
-                layer: L.tileLayer.wms(url,
-                    {
-                        maxZoom: maxZoom ?? 19,
-                        attribution: attribution + " | ",
-                        subdomains: domains
-                    })
+                layer: L.tileLayer.wms(urlObj.protocol+"//"+urlObj.host+urlObj.pathname,
+                    options
+                )
             }
+        }
+
+        if (attributionUrl) {
+            attribution = `<a href='${attributionUrl}' target='_blank'>${attribution}</a>`;
         }
 
         return {

@@ -12,6 +12,7 @@ import Translations from "../UI/i18n/Translations";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {TagRendering} from "../UI/TagRendering";
+import {Basemap} from "../Logic/Leaflet/Basemap";
 
 
 new T([
@@ -120,7 +121,5 @@ new T([
             equal(true, rendered.indexOf("Niet toegankelijk") > 0)
 
         }
-    ]
-    
-    
+    ],
 ]);

@@ -27,7 +27,9 @@ export default class AvailableBaseLayers {
             attribution_url: "https://openStreetMap.org/copyright",
             name: "OpenStreetMap",
             layer: Basemap.CreateBackgroundLayer("osm", "OpenStreetMap",
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", 19, false, false),
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap",  "https://openStreetMap.org/copyright",
+                19, 
+                false, false),
             feature: null,
             max_zoom: 19,
             min_zoom: 0
@@ -138,26 +140,25 @@ export default class AvailableBaseLayers {
                 continue;
             }
 
-            if (props.id === "carto") {
+            if (props.id === "MAPNIK") {
                 // Already added by default
                 continue;
             }
 
             if (props.overlay) {
-                console.log("Refusing overlay layer ", props.name)
-
                 continue;
             }
 
             if (props.url.toLowerCase().indexOf("apikey") > 0) {
                 continue;
             }
-
-            if (props.url.toLowerCase().indexOf("{bbox}") > 0) {
-                console.warn("Editor layer index: needs bbox ", props)
+            
+            if(props.max_zoom < 19){
+                // We want users to zoom to level 19 when adding a point
+                // If they are on a layer which hasn't enough precision, they can not zoom far enough. This is confusing, so we don't use this layer
                 continue;
             }
-            
+
             if(props.name === undefined){
                 console.warn("Editor layer index: name not defined on ", props)
                 continue
@@ -168,6 +169,7 @@ export default class AvailableBaseLayers {
                 props.name,
                 props.url,
                 props.name,
+                props.license_url,
                 props.max_zoom,
                 props.type.toLowerCase() === "wms",
                 props.type.toLowerCase() === "wmts"
