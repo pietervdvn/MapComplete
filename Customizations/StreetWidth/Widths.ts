@@ -257,13 +257,15 @@ export class Widths extends LayerDefinition {
                         tags.targetWidth = r(props.targetWidth);
                         tags.short = "";
                         if (props.width < props.targetWidth) {
-                            tags.short = r(props.targetWidth - props.width)
+                            tags.short = `<span class='alert'>Dit is ${r(props.targetWidth - props.width)}m te weinig</span>`
                         }
+                        console.log("SHORT", tags.short)
                     },
-                    mappings:[
-                        {k: new Tag("short","*"), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <b>{targetWidth}m</b><br>" +
-                                "Er is dus <span class='alert'>{short}m</span> te weinig", substitute: true},
-                        {k: new Tag("short",""), txt:  "De totale nodige ruimte voor vlot en veilig verkeer is dus <span class='thanks'>{targetWidth}m</span>"}
+                    mappings: [
+                        {
+                            k: null,
+                            txt: "De totale nodige ruimte voor vlot en veilig verkeer is dus <span class='thanks'>{targetWidth}m</span><br/>{short}"
+                        }
                     ]
                 }
             ).OnlyShowIf(this._notCarfree),

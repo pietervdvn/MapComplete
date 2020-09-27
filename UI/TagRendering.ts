@@ -359,8 +359,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             return undefined;
         }
 
-        console.log("Creating a freeform input element for ", this._source.data._country);
-
         return ValidatedTextField.Mapped(pickString, toString, {
             placeholder: this._freeform.placeholder,
             type: type,
