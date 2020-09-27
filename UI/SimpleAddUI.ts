@@ -204,7 +204,7 @@ export class SimpleAddUI extends UIElement {
                 "</span>"]).Render();
         }
 
-        if (State.state.locationControl.data.zoom < 19) {
+        if (State.state.locationControl.data.zoom < State.userJourney.minZoomLevelToAddNewPoints) {
             return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
         }
 

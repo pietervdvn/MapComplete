@@ -34,7 +34,8 @@ export class State {
         tagsVisibleAndWikiLinked: 150,
         themeGeneratorReadOnlyUnlock: 200,
         themeGeneratorFullUnlock: 500, 
-        addNewPointWithUnreadMessagesUnlock: 500
+        addNewPointWithUnreadMessagesUnlock: 500,
+        minZoomLevelToAddNewPoints: (Utils.isRetina() ? 18 : 19)
     };
 
     public static runningFromConsole: boolean = false; 
