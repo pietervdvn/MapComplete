@@ -131,7 +131,7 @@ export class State {
                 if (fl === undefined || isNaN(fl)) {
                     return undefined;
                 }
-                return ("" + fl).substr(0, 6);
+                return ("" + fl).substr(0, 8);
             })
         }
 

@@ -4,38 +4,16 @@ import {GeoOperations} from "./GeoOperations";
 import {State} from "../State";
 import {Basemap} from "./Leaflet/Basemap";
 import {QueryParameters} from "./Web/QueryParameters";
-
-export interface BaseLayer {
-    id: string,
-    name: string,
-    attribution_url: string,
-    layer: any,
-    max_zoom: number,
-    min_zoom: number;
-    feature: any
-}
+import {BaseLayer} from "./BaseLayer";
 
 /**
  * Calculates which layers are available at the current location
  */
 export default class AvailableBaseLayers {
 
-    public static osmCarto: BaseLayer =
-        {
-            id: "osm",
-            //max_zoom: 19, 
-            attribution_url: "https://openStreetMap.org/copyright",
-            name: "OpenStreetMap",
-            layer: Basemap.CreateBackgroundLayer("osm", "OpenStreetMap",
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap",  "https://openStreetMap.org/copyright",
-                19, 
-                false, false),
-            feature: null,
-            max_zoom: 19,
-            min_zoom: 0
-        }
+    
 
-    public static layerOverview = AvailableBaseLayers.LoadRasterIndex();
+    public static layerOverview = AvailableBaseLayers.LoadRasterIndex()//.concat(AvailableBaseLayers.LoadStamenIndex());
     public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
     constructor(state: State) {
@@ -82,19 +60,19 @@ export default class AvailableBaseLayers {
             }
             // Oops, we panned out of range for this layer!
             console.log("AvailableBaseLayers-actor: detected that the current bounds aren't sufficient anymore - reverting to OSM standard")
-            layerControl.setData(AvailableBaseLayers.osmCarto.layer);
+            layerControl.setData(Basemap.osmCarto);
 
         });
 
 
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
 
-        queryParam.addCallbackAndRun(selectedId => {
+        queryParam.addCallbackAndRun((selectedId:string) => {
             console.log("Selected layer is ", selectedId)
             const available = self.availableEditorLayers.data;
             for (const layer of available) {
                 if (layer.id === selectedId) {
-                    state.bm.CurrentLayer.setData(layer.layer);
+                    state.bm.CurrentLayer.setData(layer);
                 }
             }
         })
@@ -106,7 +84,7 @@ export default class AvailableBaseLayers {
     }
 
     public static AvailableLayersAt(lon: number, lat: number): BaseLayer[] {
-        const availableLayers = [AvailableBaseLayers.osmCarto as any]
+        const availableLayers = [Basemap.osmCarto]
         const globalLayers = [];
         for (const i in AvailableBaseLayers.layerOverview) {
             const layer = AvailableBaseLayers.layerOverview[i];
@@ -187,6 +165,22 @@ export default class AvailableBaseLayers {
             });
         }
         return layers;
+    }
+    
+    private static LoadStamenIndex(): BaseLayer[]{
+        
+        return [
+            {
+                attribution: "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://www.openstreetmap.org/copyright\">ODbL</a>.",
+                attribution_url: undefined, // already in the attribution string
+                feature: null,
+                id: "toner",
+                layer:Basemap.ProvidedLayer("toner"),
+                max_zoom: 20,
+                min_zoom:1,
+                name: "Toner"
+            }
+        ]
 
     }
 

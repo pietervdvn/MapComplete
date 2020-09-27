@@ -1,34 +1,41 @@
-import L from "leaflet"
+import * as L from "leaflet"
+import {TileLayer} from "leaflet"
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
-
+import {BaseLayer} from "../BaseLayer";
 
 // Contains all setup and baselayers for Leaflet stuff
 export class Basemap {
 
 
-    public static readonly defaultLayer: { name: string, layer: any, id: string } =
-        Basemap.CreateBackgroundLayer("osm", "OpenStreetMap", "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            "OpenStreetMap (ODBL)", 'https://openstreetmap.org/copyright',
-            22, false);
+    public static osmCarto: BaseLayer =
+        {
+            id: "osm",
+            //max_zoom: 19, 
+            attribution_url: "https://openStreetMap.org/copyright",
+            name: "OpenStreetMap",
+            layer: Basemap.CreateBackgroundLayer("osm", "OpenStreetMap",
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
+                19,
+                false, false),
+            feature: null,
+            max_zoom: 19,
+            min_zoom: 0
+        }
 
     // @ts-ignore
     public readonly map: Map;
 
     public readonly Location: UIEventSource<{ zoom: number, lat: number, lon: number }>;
     public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
-    private _previousLayer: L.tileLayer = undefined;
-    public readonly CurrentLayer: UIEventSource<{
-        id: string,
-        name: string,
-        layer: L.tileLayer
-    }> = new UIEventSource<L.tileLayer>(Basemap.defaultLayer);
+    private _previousLayer: TileLayer = undefined;
+    public readonly CurrentLayer: UIEventSource<BaseLayer> = new UIEventSource(Basemap.osmCarto);
 
 
     constructor(leafletElementId: string,
                 location: UIEventSource<{ zoom: number, lat: number, lon: number }>,
                 extraAttribution: UIElement) {
-        this._previousLayer = Basemap.defaultLayer.layer;
+        this._previousLayer = Basemap.osmCarto.layer;
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
@@ -56,9 +63,9 @@ export class Basemap {
             location.data.lon = self.map.getCenter().lng;
             location.ping();
         });
-        
-        this.CurrentLayer.addCallback((layer:{layer: L.tileLayer}) => {
-            if(self._previousLayer !== undefined){
+
+        this.CurrentLayer.addCallback((layer: BaseLayer) => {
+            if (self._previousLayer !== undefined) {
                 self.map.removeLayer(self._previousLayer);
             }
             self._previousLayer = layer.layer;
@@ -76,7 +83,7 @@ export class Basemap {
     }
 
     public static CreateBackgroundLayer(id: string, name: string, url: string, attribution: string, attributionUrl: string,
-                                        maxZoom: number, isWms: boolean, isWMTS?: boolean) {
+                                        maxZoom: number, isWms: boolean, isWMTS?: boolean): TileLayer {
 
         url = url.replace("{zoom}", "{z}")
             .replace("&BBOX={bbox}", "")
@@ -120,31 +127,26 @@ export class Basemap {
             }
 
 
-            return {
-                id: id,
-                name: name,
-                layer: L.tileLayer.wms(urlObj.protocol+"//"+urlObj.host+urlObj.pathname,
-                    options
-                )
-            }
+            return L.tileLayer.wms(urlObj.protocol + "//" + urlObj.host + urlObj.pathname, options);
         }
 
         if (attributionUrl) {
             attribution = `<a href='${attributionUrl}' target='_blank'>${attribution}</a>`;
         }
 
-        return {
-            id: id,
-            name: name,
-            layer: L.tileLayer(url,
-                {
-                    attribution: attribution,
-                    maxZoom: maxZoom,
-                    minZoom: 1,
-                    wmts: isWMTS ?? false,
-                    subdomains: domains
-                })
-        }
+        return L.tileLayer(url,
+            {
+                attribution: attribution,
+                maxZoom: maxZoom,
+                minZoom: 1,
+                // @ts-ignore
+                wmts: isWMTS ?? false,
+                subdomains: domains
+            });
     }
 
+    public static ProvidedLayer(name: string, options?: any): any {
+        // return new L.tileLayer.provider(name, options);
+        return undefined;
+    }
 }
