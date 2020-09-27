@@ -34,6 +34,7 @@ export class Layout {
     public enableUserBadge: boolean = true;
     public enableSearch: boolean = true;
     public enableLayers: boolean = true;
+    public enableBackgroundLayers: boolean = true;
     public enableMoreQuests: boolean = true;
     public enableShareScreen: boolean = true;
     public enableGeolocation: boolean = true;
@@ -46,19 +47,6 @@ export class Layout {
     public widenFactor: number = 0.07;
     public defaultBackground: string = "osm";
 
-    /**
-     * 
-     * @param id: The name used in the query string. If in the query "quests=<name>" is defined, it will select this layout
-     * @param title: Will be used in the <title> of the page
-     * @param layers: The layers to show, a list of LayerDefinitions
-     * @param startzoom: The initial starting zoom of the map
-     * @param startLat:The initial starting latitude of the map
-     * @param startLon: the initial starting longitude of the map
-     * @param welcomeMessage: This message is shown in the collapsable box on the left
-     * @param gettingStartedPlzLogin: This is shown below the welcomemessage and wrapped in a login link.
-     * @param welcomeBackMessage: This is shown when the user is logged in
-     * @param welcomeTail: This text is shown below the login message. It is ideal for extra help
-     */
     constructor(
         id: string,
         supportedLanguages: string[],
@@ -75,7 +63,7 @@ export class Layout {
             Translations.t.general.getStartedNewAccount
         ]),
         welcomeBackMessage: UIElement | string = Translations.t.general.welcomeBack,
-        welcomeTail: UIElement | string = ""
+        welcomeTail: UIElement | string = "",
     ) {
         this.supportedLanguages = supportedLanguages;
         this.title = Translations.W(title)

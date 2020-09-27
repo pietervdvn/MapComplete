@@ -18,5 +18,6 @@
   "startLat": 0,
   "startLon": 0,
   "widenFactor": 0.1,
-  "layers": ["ghost_bike"]
+  "layers": ["ghost_bike"],
+  "defaultBackgroundId": "CartoDB.Positron"
 }

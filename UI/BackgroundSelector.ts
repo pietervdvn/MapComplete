@@ -29,7 +29,7 @@ export default class BackgroundSelector extends UIElement {
         const baseLayers: { value: BaseLayer, shown: string }[] = [];
         for (const i in available) {
             const layer: BaseLayer = available[i];
-            baseLayers.push({value: layer.layer, shown: layer.name ?? "id:" + layer.id});
+            baseLayers.push({value: layer, shown: layer.name ?? "id:" + layer.id});
         }
 
         this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.bm.CurrentLayer);

@@ -13,7 +13,7 @@ export default class AvailableBaseLayers {
 
     
 
-    public static layerOverview = AvailableBaseLayers.LoadRasterIndex()//.concat(AvailableBaseLayers.LoadStamenIndex());
+    public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
     public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
     constructor(state: State) {
@@ -88,7 +88,7 @@ export default class AvailableBaseLayers {
         const globalLayers = [];
         for (const i in AvailableBaseLayers.layerOverview) {
             const layer = AvailableBaseLayers.layerOverview[i];
-            if (layer.feature.geometry === null) {
+            if (layer.feature?.geometry === undefined || layer.feature?.geometry === null) {
                 globalLayers.push(layer);
                 continue;
             }
@@ -158,7 +158,6 @@ export default class AvailableBaseLayers {
                 id: props.id,
                 max_zoom: props.max_zoom ?? 25,
                 min_zoom: props.min_zoom ?? 1,
-                attribution_url: props.license_url,
                 name: props.name,
                 layer: leafletLayer,
                 feature: layer
@@ -166,21 +165,34 @@ export default class AvailableBaseLayers {
         }
         return layers;
     }
-    
-    private static LoadStamenIndex(): BaseLayer[]{
+
+    private static LoadProviderIndex(): BaseLayer[] {
+
+        function l(id: string, name: string){
+            const layer = Basemap.ProvidedLayer(id);
+            return {
+                feature: null,
+                id: id,
+                name: name,
+                layer: layer,
+                min_zoom: layer.minzoom,
+                max_zoom: layer.maxzoom
+            }
+        }
         
         return [
-            {
-                attribution: "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://www.openstreetmap.org/copyright\">ODbL</a>.",
-                attribution_url: undefined, // already in the attribution string
-                feature: null,
-                id: "toner",
-                layer:Basemap.ProvidedLayer("toner"),
-                max_zoom: 20,
-                min_zoom:1,
-                name: "Toner"
-            }
-        ]
+            l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
+            l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
+            l("Stamen.Watercolor", "Watercolor (by Stamen)"),
+            l("Stadia.AlidadeSmooth", "Alidade Smooth (by Stadia)"),
+            l("Stadia.AlidadeSmoothDark", "Alidade Smooth Dark (by Stadia)"),
+            l("Stadia.OSMBright", "Osm Bright (by Stadia)"),
+            l("CartoDB.Positron", "Positron (by CartoDB)"),
+            l("CartoDB.PositronNoLabels", "Positron  - no labels (by CartoDB)"),
+            l("CartoDB.Voyager", "Voyager (by CartoDB)"),
+            l("CartoDB.VoyagerNoLabels", "Voyager  - no labels (by CartoDB)"),
+
+        ];
 
     }
 

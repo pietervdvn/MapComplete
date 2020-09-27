@@ -353,13 +353,21 @@ export class InitUiElements {
     }
 
     private static GenerateLayerControlPanel() {
-        let layerControlPanel: UIElement = new BackgroundSelector(State.state);
-        layerControlPanel.SetStyle("margin:1em");
-        layerControlPanel.onClick(() => {});
+
+
+        let layerControlPanel: UIElement = undefined;
+        if (State.state.layoutToUse.data.enableBackgroundLayers) {
+            layerControlPanel = new BackgroundSelector(State.state);
+            layerControlPanel.SetStyle("margin:1em");
+            layerControlPanel.onClick(() => {            });
+        }
+
+
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
-            layerSelection.onClick(() => {});
-            layerControlPanel = new Combine([layerSelection, "<br/>",layerControlPanel]);
+            layerSelection.onClick(() => {
+            });
+            layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
         }
         return layerControlPanel;
     }

@@ -1,4 +1,5 @@
 import * as L from "leaflet"
+import * as X from "leaflet-providers"
 import {TileLayer} from "leaflet"
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
@@ -12,7 +13,6 @@ export class Basemap {
         {
             id: "osm",
             //max_zoom: 19, 
-            attribution_url: "https://openStreetMap.org/copyright",
             name: "OpenStreetMap",
             layer: Basemap.CreateBackgroundLayer("osm", "OpenStreetMap",
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
@@ -146,7 +146,8 @@ export class Basemap {
     }
 
     public static ProvidedLayer(name: string, options?: any): any {
-        // return new L.tileLayer.provider(name, options);
-        return undefined;
+        X // We simply 'call' the namespace X here to force the import to run and not to be optimized away
+        // @ts-ignore
+        return L.tileLayer.provider(name, options);
     }
 }

@@ -94,6 +94,12 @@ export interface LayoutConfigJson {
      * These tag renderings will only show up if the object matches this filter.
      */
     roamingRenderings?: (TagRenderingConfigJson | string)[],
+
+    /**
+     * The id of the default background. BY default: vanilla OSM
+     */
+    defaultBackgroundId?: string;
+    
     
     /**
      * The layers to display

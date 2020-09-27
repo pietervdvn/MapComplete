@@ -87,6 +87,7 @@ export class FromJSON {
             
         );
 
+        layout.defaultBackground = json.defaultBackgroundId ?? "osm";
         layout.widenFactor = json.widenFactor ?? 0.07;
         layout.icon = json.icon;
         layout.maintainer = json.maintainer;
