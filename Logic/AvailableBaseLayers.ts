@@ -65,21 +65,6 @@ export default class AvailableBaseLayers {
         });
 
 
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
-
-        queryParam.addCallbackAndRun((selectedId:string) => {
-            console.log("Selected layer is ", selectedId)
-            const available = self.availableEditorLayers.data;
-            for (const layer of available) {
-                if (layer.id === selectedId) {
-                    state.bm.CurrentLayer.setData(layer);
-                }
-            }
-        })
-
-        state.bm.CurrentLayer.addCallbackAndRun(currentLayer => {
-            queryParam.setData(currentLayer.id);
-        });
 
     }
 

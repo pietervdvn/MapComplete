@@ -74,6 +74,16 @@ export class StreetWidth extends Layout{
             "<p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte.</p>" +
             "" +
             "<p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p>" +
+            "<h3>Legende</h3>" +
+            "<span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/>"+
+            "<span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/>"+
+            "<span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/>"+
+            "<span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Woonerf, autoluw, autoloos of enkel plaatselijk verkeer<br/>" +
+            "<br/>" +
+            "<br/>" +
+            "Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/>" +
+            "Klik op een straat om meer informatie te zien."+
+            "<h3>Hoe gaan we verder?</h3>" +
             "Verschillende ingrepen kunnen de stad teruggeven aan de inwoners en de stad leefbaarder en levendiger maken.<br/>" +
             "Denk aan:" +
             "<ul>" +
@@ -82,7 +92,7 @@ export class StreetWidth extends Layout{
             "<li>Het aantal woonerven uitbreiden</li>" +
             "<li>Grotere auto's meer belasten - ze nemen immers meer parkeerruimte in.</li>" +
             "<li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>" +
-            "<li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder dat er een fietspad of een straat geblokkeerd wordt</li>" +
+            "<li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder op het voetpad en fietspad te parkeren</li>" +
             "</ul>");
         this.icon = "./assets/bug.svg";
         this.enableSearch = false;
@@ -91,6 +101,7 @@ export class StreetWidth extends Layout{
         this.hideFromOverview = true;
         this.enableMoreQuests = false;
         this.enableShareScreen = false;
-
+        this.defaultBackground = "Stadia.AlidadeSmoothDark"
+        this.enableBackgroundLayers = false;
     }
 }

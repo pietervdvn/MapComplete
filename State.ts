@@ -12,6 +12,7 @@ import {LayerUpdater} from "./Logic/LayerUpdater";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+import {BaseLayer} from "./Logic/BaseLayer";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -54,6 +55,10 @@ export class State {
      THe basemap with leaflet instance
      */
     public bm;
+    /**
+     * Background layer id
+     */
+    public availableBackgroundLayers: UIEventSource<BaseLayer[]>;
     /**
      The user credentials
      */

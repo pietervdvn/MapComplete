@@ -1,5 +1,4 @@
 import {UIElement} from "./UIElement";
-import AvailableBaseLayers from "../Logic/AvailableBaseLayers";
 import {DropDown} from "./Input/DropDown";
 import Translations from "./i18n/Translations";
 import {State} from "../State";
@@ -9,15 +8,12 @@ import {BaseLayer} from "../Logic/BaseLayer";
 export default class BackgroundSelector extends UIElement {
 
     private _dropdown: UIElement;
-    private readonly state: State;
-    private readonly _availableLayers: UIEventSource<any>;
+    private readonly _availableLayers: UIEventSource<BaseLayer[]>;
 
-    constructor(state: State) {
+    constructor() {
         super();
-        this.state = state;
-
-        this._availableLayers = new AvailableBaseLayers(state).availableEditorLayers;
         const self = this;
+        this._availableLayers = State.state.availableBackgroundLayers;
         this._availableLayers.addCallbackAndRun(available => self.CreateDropDown(available));
     }
 

@@ -36,6 +36,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
+import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
 
 export class InitUiElements {
 
@@ -357,11 +358,10 @@ export class InitUiElements {
 
         let layerControlPanel: UIElement = undefined;
         if (State.state.layoutToUse.data.enableBackgroundLayers) {
-            layerControlPanel = new BackgroundSelector(State.state);
+            layerControlPanel = new BackgroundSelector();
             layerControlPanel.SetStyle("margin:1em");
             layerControlPanel.onClick(() => {            });
         }
-
 
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
@@ -375,8 +375,12 @@ export class InitUiElements {
     static InitLayerSelection() {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const layerControlPanel = this.GenerateLayerControlPanel()
-                .SetStyle("display:block;padding:1em;border-radius:1em;");
+            const layerControlPanel = this.GenerateLayerControlPanel();
+            if (layerControlPanel === undefined) {
+                return;
+            }
+
+            layerControlPanel.SetStyle("display:block;padding:1em;border-radius:1em;");
             const closeButton = new Combine([Img.openFilterButton])
                 .SetStyle("display:block; width: min-content; background: #e5f5ff;padding:1em; border-radius:1em;");
             const checkbox = new CheckBox(
@@ -451,7 +455,23 @@ export class InitUiElements {
         );
         State.state.bm = bm;
         State.state.layerUpdater = new LayerUpdater(State.state);
-        
+
+        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
+        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
+
+        queryParam.addCallbackAndRun((selectedId:string) => {
+            console.log("Selected layer is ", selectedId)
+            const available = State.state.availableBackgroundLayers.data;
+            for (const layer of available) {
+                if (layer.id === selectedId) {
+                    State.state.bm.CurrentLayer.setData(layer);
+                }
+            }
+        })
+
+        State.state.bm.CurrentLayer.addCallbackAndRun(currentLayer => {
+            queryParam.setData(currentLayer.id);
+        });
 
     }
 
