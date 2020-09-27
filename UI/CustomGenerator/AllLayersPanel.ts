@@ -12,6 +12,8 @@ import TagRenderingPanel from "./TagRenderingPanel";
 import SingleSetting from "./SingleSetting";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
+import AvailableBaseLayers from "../../Logic/AvailableBaseLayers";
+import {DropDown} from "../Input/DropDown";
 
 export default class AllLayersPanel extends UIElement {
 
@@ -50,6 +52,14 @@ export default class AllLayersPanel extends UIElement {
             }, undefined, {allowMovement: true});
         new SingleSetting(this._config, roamingTags, "roamingRenderings", "Roaming Renderings", "These tagrenderings are shown everywhere");
 
+        
+        const backgroundLayers = AvailableBaseLayers.layerOverview.map(baselayer => ({shown: 
+            baselayer.name, value: baselayer.id}));
+        const dropDown = new DropDown("Choose the default background layer",
+            [{value: "osm",shown:"OpenStreetMap <b>(default)</b>"}, ...backgroundLayers])
+        new SingleSetting(self._config, dropDown, "defaultBackgroundId", "Default background layer", 
+            "Selects the background layer that is used by default. If this layer is not available at the given point, OSM-Carto will be ued");
+
         const layers = this._config.data.layers;
         for (let i = 0; i < layers.length; i++) {
             tabs.push({
@@ -83,6 +93,8 @@ export default class AllLayersPanel extends UIElement {
                         self._config.data.layers.push(GenerateEmpty.createEmptyLayer())
                         self._config.ping();
                     }),
+                    "<h2>Default background layer</h2>",
+                    dropDown,
                     "<h2>TagRenderings for every layer</h2>",
                     "Define tag renderings and questions here that should be shown on every layer of the theme.",
                     roamingTags
