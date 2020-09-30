@@ -166,6 +166,7 @@ export default class AvailableBaseLayers {
         }
         
         return [
+            l("CyclOSM", "CyclOSM - A bicycle oriented map"),
             l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
