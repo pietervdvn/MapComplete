@@ -129,6 +129,20 @@
             "gl": "Abeiro <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
             "de": "Schuppen <img width='150px' src='./assets/layers/bike_parking/shed.svg'>"
           }
+        },
+        {
+          "if": "bicycle_parking=bollard",
+          "then": {
+            "en": "Bollard <img width='150px' src='./assets/layers/bike_parking/bollard.svg'>",
+            "nl": "Paal met ring <img width='150px' src='./assets/layers/bike_parking/bollard.svg'>"
+          }
+        },
+        {
+          "if": "bicycle_parking=floor",
+          "then": {
+            "en": "An area on the floor which is  marked for bicycle parking",
+            "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+          }
         }
       ]
     },
