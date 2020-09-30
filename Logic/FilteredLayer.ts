@@ -165,12 +165,11 @@ export class FilteredLayer {
 
     public AddNewElement(element) {
         this._newElements.push(element);
-        console.log("Element added");
-        this.RenderLayer({features:this._dataFromOverpass}); // Update the layer
+        this.RenderLayer({features: this._dataFromOverpass}, element); // Update the layer
 
     }
 
-    private RenderLayer(data) {
+    private RenderLayer(data, openPopupOf = undefined) {
         let self = this;
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
@@ -219,6 +218,7 @@ export class FilteredLayer {
         // The points get a special treatment in order to render them properly
         // Note that some features might get a point representation as well
 
+        const runWhenAdded: (() => void)[] = []
 
         this._geolayer = L.geoJSON(data, {
             style: function (feature) {
@@ -252,7 +252,7 @@ export class FilteredLayer {
                 const popup = L.popup({}, marker);
                 let uiElement: UIElement;
                 let content = undefined;
-                marker.bindPopup(popup)
+               let p = marker.bindPopup(popup)
                     .on("popupopen", () => {
                         if (content === undefined) {
                             uiElement = self._showOnPopup(eventSource, feature);
@@ -262,6 +262,12 @@ export class FilteredLayer {
                         popup.setContent(content);
                         uiElement.Update();
                     });
+
+                if (feature === openPopupOf) {
+                    runWhenAdded.push(() => {
+                        p.openPopup();
+                    })
+                }
 
                 return marker;
             },
@@ -321,6 +327,9 @@ export class FilteredLayer {
 
         if (this.combinedIsDisplayed.data) {
             this._geolayer.addTo(State.state.bm.map);
+            for (const f of runWhenAdded) {
+                f();
+            }
         }
     }
 
