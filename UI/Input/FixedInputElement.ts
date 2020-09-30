@@ -13,9 +13,13 @@ export class FixedInputElement<T> extends InputElement<T> {
                 value: T,
                 comparator: ((t0: T, t1: T) => boolean ) = undefined) {
         super(undefined);
-        this._comparator = comparator ?? ((t0, t1) => t0 == t1); 
+        this._comparator = comparator ?? ((t0, t1) => t0 == t1);
         this.value = new UIEventSource<T>(value);
         this.rendering = typeof (rendering) === 'string' ? new FixedUiElement(rendering) : rendering;
+        const self = this;
+        this.onClick(() => {
+            self.IsSelected.setData(true)
+        })
     }
 
     GetValue(): UIEventSource<T> {
@@ -32,7 +36,6 @@ export class FixedInputElement<T> extends InputElement<T> {
     protected InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
         const self = this;
-        htmlElement.addEventListener("mouseenter", () => self.IsSelected.setData(true));
         htmlElement.addEventListener("mouseout", () => self.IsSelected.setData(false))
 
     }
