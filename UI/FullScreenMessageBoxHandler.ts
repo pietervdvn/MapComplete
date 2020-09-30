@@ -14,11 +14,8 @@ export class FullScreenMessageBox extends UIElement {
     private readonly returnToTheMap: UIElement;
 
     constructor(onClear: (() => void)) {
-        super(undefined);
-
+        super();
         const self = this;
-
-        
         State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
             this._uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
                 "display:block;"+

@@ -294,8 +294,15 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 (t0, t1) => t0.isEquivalent(t1)
             );
         }
-        return new FixedInputElement(this.ApplyTemplate(mapping.txt), mapping.k,
+        
+        let txt = this.ApplyTemplate(mapping.txt);
+        if(txt.Render().indexOf("<img") >= 0){
+            txt.SetClass("question-option-with-border");
+        }
+        const inputEl = new FixedInputElement(txt, mapping.k,
             (t0, t1) => t1.isEquivalent(t0));
+        
+        return inputEl;
     }
 
 

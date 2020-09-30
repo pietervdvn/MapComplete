@@ -185,10 +185,17 @@ export abstract class UIElement extends UIEventSource<string> {
     public SetClass(clss: string): UIElement {
         this.dumbMode = false;
         if (clss === "" && this.clss.length > 0) {
-            this.clss = [];
-            this.Update();
+            throw "Use RemoveClass instead";
         } else if (this.clss.indexOf(clss) < 0) {
             this.clss.push(clss);
+            this.Update();
+        }
+        return this;
+    }
+    public RemoveClass(clss: string): UIElement {
+        const i = this.clss.indexOf(clss);
+        if (i >= 0) {
+            this.clss.splice(i, 1);
             this.Update();
         }
         return this;
