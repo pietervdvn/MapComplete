@@ -35,7 +35,9 @@ export default class InputElementMap<T, X> extends InputElement<X> {
             }), extraSources, x => {
                 return fromX(x);
             });
-    }w
+        this._value.addCallback(console.log)
+        this.IsSelected.addCallback(s => console.log("Is selected?", s))
+    }
 
     GetValue(): UIEventSource<X> {
         return this._value;

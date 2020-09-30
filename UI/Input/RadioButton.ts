@@ -38,6 +38,11 @@ export class RadioButton<T> extends InputElement<T> {
             elements[i]?.onClick(() => {
                 self._selectedElementIndex.setData(i);
             });
+            elements[i].IsSelected.addCallback(isSelected => {
+                if (isSelected) {
+                    self._selectedElementIndex.setData(i);
+                }
+            })
         }
 
     }

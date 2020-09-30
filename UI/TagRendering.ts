@@ -228,7 +228,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             elements.push(freeformElement);
         }
 
-        if (options.multiAnswer) {
+        if (!options.multiAnswer) {
+            return new RadioButton(elements, false);
+        } else {
             const possibleTags = elements.map(el => el.GetValue().data);
             const checkBoxes = new CheckBoxes(elements);
 
@@ -264,7 +266,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 },
                 [freeformElement?.GetValue()]
             );
-            
+
             freeformElement?.GetValue()?.addCallbackAndRun(value => {
                 const es = checkBoxes.GetValue();
                 const i = elements.length - 1;
@@ -282,7 +284,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
             return inputEl;
         }
-        return new RadioButton(elements, false);
     }
 
 
@@ -360,7 +361,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }
 
         return ValidatedTextField.Mapped(pickString, toString, {
-            placeholder: this._freeform.placeholder,
+            placeholder: freeform.placeholder,
             type: type,
             isValid: (str) => (str.length <= 255),
             textArea: isTextArea,
