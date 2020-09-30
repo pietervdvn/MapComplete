@@ -71,7 +71,6 @@ body {
 
     .invalid {
         box-shadow: 0 0 10px #ff5353;
-        display: block;
         height: min-content;
     }
 

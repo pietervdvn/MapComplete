@@ -88,13 +88,13 @@ export class ChangesetHandler {
         layout : Layout,
         continuation: (changesetId: string) => void) {
 
-        const commentExtra = layout.changesetMessage !== undefined? " - "+layout.changesetMessage : "";
-        
+        const commentExtra = layout.changesetMessage !== undefined ? " - " + layout.changesetMessage : "";
+
         let surveySource = "";
-        if(State.state.currentGPSLocation.data !== undefined){
+        if (State.state.currentGPSLocation.data !== undefined) {
             surveySource = '<tag k="source" v="survey"/>'
         }
-        
+
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/create',

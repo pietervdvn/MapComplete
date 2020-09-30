@@ -1,4 +1,5 @@
 import * as $ from "jquery"
+import {Utils} from "../../Utils";
 
 
 export abstract class OsmObject {
@@ -40,16 +41,6 @@ export abstract class OsmObject {
 
     abstract SaveExtraData(element);
 
-    /**
-     * Replaces all '"' (double quotes) by '&quot;'
-     * Bugfix where names containing '"' were not uploaded, such as '"Het Zwin" nature reserve'
-     * @param string
-     * @constructor
-     */
-    private static Escape(string: string) {
-            return string.replace(/"/g, '&quot;')
-                .replace(/&/g, "&amp;");
-    }
 
     /**
      * Generates the changeset-XML for tags
@@ -60,7 +51,7 @@ export abstract class OsmObject {
         for (const key in this.tags) {
             const v = this.tags[key];
             if (v !== "") {
-                tags += '        <tag k="' + OsmObject.Escape(key) + '" v="' + OsmObject.Escape(this.tags[key]) + '"/>\n'
+                tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
             }
         }
         return tags;

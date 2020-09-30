@@ -2,6 +2,15 @@ import {UIElement} from "./UI/UIElement";
 
 export class Utils {
 
+
+    static EncodeXmlValue(str) {
+        return str.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;')
+    }
+
     /**
      * Gives a clean float, or undefined if parsing fails
      * @param str
@@ -16,9 +25,17 @@ export class Utils {
         }
         return undefined;
     }
-    
-    public static Upper(str : string){
-        return str.substr(0,1).toUpperCase() + str.substr(1);
+
+    public static Upper(str: string) {
+        return str.substr(0, 1).toUpperCase() + str.substr(1);
+    }
+
+    public static Times(str: string, count: number): string {
+        let res = "";
+        for (let i = 0; i < count; i++) {
+            res += str;
+        }
+        return res;
     }
 
     static DoEvery(millis: number, f: (() => void)) {

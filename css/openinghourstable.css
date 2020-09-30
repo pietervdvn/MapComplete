@@ -1,0 +1,43 @@
+
+.oh-table {
+    width: 15em;
+    border-collapse: collapse;
+}
+
+
+.oh-table td {
+    vertical-align: top;
+}
+
+.oh-timecell:hover {
+    background-color: lightsalmon !important;
+}
+
+.oh-timecell {
+    background-color: white;
+}
+
+.oh-timecell-selected {
+    background-color: red;
+}
+
+.oh-timecell-half {
+    border-top: 0.5px solid #eee
+}
+
+.oh-timecell-half.oh-timecell-selected {
+    border-top: 0.5px solid lightsalmon;
+}
+
+.oh-timecell-full {
+    border-top: 1px solid #aaa
+}
+
+.oh-timecell-full.oh-timecell-selected {
+    border-top: 1px solid lightsalmon;
+}
+
+.oh-left-col {
+    /*border-top: 1px solid #aaa;*/
+}
+
