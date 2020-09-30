@@ -54,7 +54,7 @@
     {
       "question": {
         "en": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
-        "nl": "Aan wie is deze witte fiets een eerbetoon??<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
+        "nl": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
         "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>"
       },
       "render": {
