@@ -48,6 +48,7 @@
   "tagRenderings": [
     "images",
     {
+      "#": "Bicycle parking type",
       "question": {
         "en": "What is the type of this bicycle parking?",
         "nl": "Van welk type is deze fietsparking?",
@@ -132,6 +133,7 @@
       ]
     },
     {
+      "#": "Is covered?",
       "question": {
         "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
         "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
@@ -161,6 +163,7 @@
       ]
     },
     {
+      "#": "Capacity",
       "question": {
         "en": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
         "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
@@ -181,6 +184,46 @@
       }
     },
     {
+      "#": "Access",
+      "question": {
+        "en": "Who can use this bicycle?",
+        "nl": "Wie mag er deze fietsenstalling gebruiken?"
+      },
+      "render": {
+        "en": "{access}"
+      },
+      "freeform": {
+        "key": "access",
+        "extraTags": [
+          "fixme=Freeform used on 'access'-tag: possibly a wrong value"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Public - Everyone has legal right of access, such as city provided bike parking in right of way",
+            "nl": "Publiek toegankelijke fietsenstalling"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "Private - Access is primarily limited to member of a school, company or organisation",
+            "nl": "Private fietsenstalling (fietsenstalling van een school, een bedrijf, ...)"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Customers - Access is primarily for visitors to a business",
+            "nl": "Klanten van de zaak of winkel die deze fietsenstalling plaatste"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Cargo bike spaces?",
       "question": {
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
@@ -222,6 +265,7 @@
       ]
     },
     {
+      "#": "Cargo bike capacity?",
       "question": {
         "en": "How many cargo bicycles fit in this bicycle parking?",
         "nl": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
