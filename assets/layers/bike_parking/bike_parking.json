@@ -202,22 +202,22 @@
         {
           "if": "access=yes",
           "then": {
-            "en": "Public - Everyone has legal right of access, such as city provided bike parking in right of way",
+            "en": "Publicly accessible",
             "nl": "Publiek toegankelijke fietsenstalling"
-          }
-        },
-        {
-          "if": "access=private",
-          "then": {
-            "en": "Private - Access is primarily limited to member of a school, company or organisation",
-            "nl": "Private fietsenstalling (fietsenstalling van een school, een bedrijf, ...)"
           }
         },
         {
           "if": "access=customers",
           "then": {
-            "en": "Customers - Access is primarily for visitors to a business",
-            "nl": "Klanten van de zaak of winkel die deze fietsenstalling plaatste"
+            "en": "Access is primarily for visitors to a business",
+            "nl": "Klanten van de zaak of winkel"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "Access is limited to members of a school, company or organisation",
+            "nl": "Private fietsenstalling van een school, een bedrijf, ..."
           }
         }
       ]
