@@ -76,9 +76,9 @@ export class LayerDefinition {
         weight?: number,
         icon: {
             iconUrl: string, 
-            iconSize?: number[], 
-            popupAnchor?: number[], 
-            iconAnchor?: number[]
+            iconSize?: [number, number], 
+            popupAnchor?: [number,number], 
+            iconAnchor?: [number,number]
         },
     };
 

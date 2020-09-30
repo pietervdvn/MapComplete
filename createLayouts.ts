@@ -1,9 +1,7 @@
 import {UIElement} from "./UI/UIElement";
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
-
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
@@ -136,8 +134,10 @@ function createIcon(iconPath: string, size: number) {
         // Errors are normal here if this file exists
     }
 
-    console.log("Creating icon ", name, newname)
     try {
+        console.log("Creating icon ", name, newname)
+        // We already read to file, in order to crash here if the file is not found
+        readFileSync(iconPath); 
         svg2img(iconPath,
             // @ts-ignore
             {width: size, height: size, preserveAspectRatio: true})

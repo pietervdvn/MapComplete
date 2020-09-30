@@ -1,6 +1,7 @@
 import {TagsFilter, TagUtils} from "./Tags";
 import {UIEventSource} from "./UIEventSource";
-import L from "leaflet"
+import * as L from "leaflet"
+import {Layer} from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
@@ -25,7 +26,7 @@ export class FilteredLayer {
     public readonly layerDef: LayerDefinition;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize? : number[], popupAnchor?: number[], iconAnchor?:number[] } };
+    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize?: [number, number], popupAnchor?:  [number,number], iconAnchor?: [number,number] } };
 
 
     /** The featurecollection from overpass
@@ -242,8 +243,9 @@ export class FilteredLayer {
                         style.icon.iconSize = [50, 50]
                     }
 
+                    // @ts-ignore
                     marker = L.marker(latLng, {
-                        icon: new L.icon(style.icon),
+                        icon: L.icon(style.icon),
                     });
                 }
                 let eventSource = State.state.allElements.addOrGetElement(feature);
@@ -260,13 +262,15 @@ export class FilteredLayer {
                         popup.setContent(content);
                         uiElement.Update();
                     });
+
                 return marker;
             },
 
-            onEachFeature: function (feature, layer) {
+            onEachFeature: function (feature, layer:Layer) {
 
                 // We monky-patch the feature element with an update-style
-                feature.updateStyle = () => {
+                function updateStyle () {
+                    // @ts-ignore
                     if (layer.setIcon) {
                         const style = self._style(feature.properties);
                         const icon = style.icon;
@@ -274,6 +278,7 @@ export class FilteredLayer {
                             if (icon.iconUrl.startsWith("$circle")) {
                                 // pass
                             } else {
+                                // @ts-ignore
                                 layer.setIcon(L.icon(icon))
                             }
                         }
@@ -287,26 +292,30 @@ export class FilteredLayer {
                 let eventSource = State.state.allElements.addOrGetElement(feature);
 
 
-                eventSource.addCallback(feature.updateStyle);
+                eventSource.addCallback(updateStyle);
 
-                layer.on("click", function (e) {
+                function openPopup(e) {
                     State.state.selectedElement.data?.feature.updateStyle();
                     State.state.selectedElement.setData({feature: feature});
-                    feature.updateStyle()
+                    updateStyle()
                     if (feature.geometry.type === "Point") {
                         return; // Points bind there own popups
                     }
 
                     const uiElement = self._showOnPopup(eventSource, feature);
-                   
+
                     L.popup({
                         autoPan: true,
                     }).setContent(uiElement.Render())
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
                     uiElement.Update();
-                    L.DomEvent.stop(e); // Marks the event as consumed
-                });
+                    if (e) {
+                        L.DomEvent.stop(e); // Marks the event as consumed
+                    }
+                }
+
+                layer.on("click", openPopup);
             }
         });
 
