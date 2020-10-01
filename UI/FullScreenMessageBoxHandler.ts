@@ -14,7 +14,7 @@ export class FullScreenMessageBox extends UIElement {
     private readonly returnToTheMap: UIElement;
 
     constructor(onClear: (() => void)) {
-        super();
+        super(State.state.fullScreenMessage);
         const self = this;
         State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
             this._uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
@@ -32,7 +32,6 @@ export class FullScreenMessageBox extends UIElement {
             );
         });
         
-        this.ListenTo(State.state.fullScreenMessage);
         
         this.HideOnEmpty(true);
 
@@ -50,7 +49,8 @@ export class FullScreenMessageBox extends UIElement {
             window.onhashchange = function () {
                 if (location.hash === "") {
                     // No more element: back to the map!
-                    self._uielement?.setData(undefined);
+                    console.log("Clearing full screen message");
+                    State.state.fullScreenMessage.setData(undefined);
                     onClear();
                 }
             }
