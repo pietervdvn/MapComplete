@@ -1,27 +1,24 @@
-import {InputElement} from "./InputElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {Utils} from "../../Utils";
+/**
+ * This is the base-table which is selectable by hovering over it.
+ * It will genarate the currently selected opening hour.
+ */
+import {UIEventSource} from "../../../Logic/UIEventSource";
+import {Utils} from "../../../Utils";
+import {OpeningHour} from "../../../Logic/OpeningHours";
+import {InputElement} from "../InputElement";
 
-export interface OpeningHour {
-    weekdayStart: number, // 0 is monday, 1 is tuesday, ...
-    weekdayEnd: number,
-    startHour: number,
-    startMinutes: number,
-    endHour: number,
-    endMinutes: number
-}
-
-export default class OpeningHours extends InputElement<OpeningHour[]> {
+export default class OpeningHoursPicker extends InputElement<OpeningHour> {
     public readonly IsSelected: UIEventSource<boolean>;
 
-    public static readonly days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    public static readonly days = ["Maan", "Din", "Woe", "Don", "Vrij", "Zat", "Zon"];
 
-    private readonly source: UIEventSource<OpeningHour[]>;
+    private readonly source: UIEventSource<OpeningHour>;
 
-    constructor(source: UIEventSource<OpeningHour[]> = undefined) {
+    constructor(source: UIEventSource<OpeningHour> = undefined) {
         super();
-        this.source = source ?? new UIEventSource<OpeningHour[]>([]);
+        this.source = source ?? new UIEventSource<OpeningHour>(undefined);
         this.IsSelected = new UIEventSource<boolean>(false);
+        this.SetStyle("width:100%;height:100%;display:block;")
     }
 
     InnerRender(): string {
@@ -31,24 +28,17 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
             if (hs.length == 1) {
                 hs = "0" + hs;
             }
-            for (let m = 0; m < 60; m += 60) {
-                let min = "" + m;
-                const style = "width:0.5em;font-size:small;";
-                if (m === 0) {
-                    min = "00";
-                }
-                rows += `<tr><td class="oh-left-col" rowspan="4" style="${style}">${hs}:${min}</td>` +
-                    Utils.Times('<td class="oh-timecell oh-timecell-full"></td>', 7) +
-                    '</tr><tr>' +
-                    Utils.Times('<td class="oh-timecell"></td>', 7) +
-                    '</tr><tr>' +
-                    Utils.Times('<td class="oh-timecell oh-timecell-half"></td>', 7) +
-                    '</tr><tr>' +
-                    Utils.Times('<td class="oh-timecell"></td>', 7) +
-                    '</tr>';
-            }
+            rows += `<tr><td rowspan="2" class="oh-left-col oh-timecell-full">${hs}:00</td>` +
+                Utils.Times('<td class="oh-timecell oh-timecell-full"></td>', 7) +
+                '</tr><tr>' +
+                // Utils.Times('<td class="oh-timecell"></td>', 7) +
+                // '</tr><tr>' +
+                Utils.Times('<td class="oh-timecell oh-timecell-half"></td>', 7) +
+                //  '</tr><tr>' +
+                //  Utils.Times('<td class="oh-timecell"></td>', 7) +
+                '</tr>';
         }
-        let days = OpeningHours.days.join("</th><th>");
+        let days = OpeningHoursPicker.days.join("</th><th>");
         return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th>${days}</tr>${rows}</table>`;
     }
 
@@ -68,13 +58,8 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
         }
 
         function m(timeSegment: number) {
-            return (timeSegment % 4) * 15;
+            return (timeSegment % 2) * 30;
         }
-
-        function hhmm(timeSegment: number) {
-            return h(timeSegment) + ":" + m(timeSegment)
-        }
-
 
         function startSelection(i: number, j: number, cell: HTMLElement) {
             mouseIsDown = true;
@@ -92,9 +77,6 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
             const dEnd = Math.max(selectionStart[1], selectionEnd[1]);
             const timeStart = Math.min(selectionStart[0], selectionEnd[0]) - 1;
             const timeEnd = Math.max(selectionStart[0], selectionEnd[0]) - 1;
-            console.log("Selected from day", OpeningHours.days[dStart], "at",
-                hhmm(timeStart), "till", OpeningHours.days[dEnd], "at", hhmm(timeEnd + 1)
-            )
             const oh: OpeningHour = {
                 weekdayStart: dStart,
                 weekdayEnd: dEnd,
@@ -103,8 +85,7 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
                 endHour: h(timeEnd + 1),
                 endMinutes: m(timeEnd + 1)
             }
-            self.source.data.push(oh);
-            self.source.ping();
+            self.source.setData(oh);
         }
 
         table.onmouseup = () => {
@@ -134,7 +115,7 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
                 for (let j = 0; j < row.cells.length; j++) {
                     let cell = row.cells[j]
                     let offset = 0;
-                    if (i % 4 == 1) {
+                    if (i % 2 == 1) {
                         if (j == 0) {
                             continue;
                         }
@@ -157,7 +138,7 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
             for (let j = 0; j < row.cells.length; j++) {
                 let cell = row.cells[j]
                 let offset = 0;
-                if (i % 4 == 1) {
+                if (i % 2 == 1) {
                     if (j == 0) {
                         continue;
                     }
@@ -168,10 +149,12 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
                 cell.onmousedown = (ev) => {
                     ev.preventDefault();
                     startSelection(i, j + offset, cell)
+                    selectAllBetween(i, j + offset);
                 }
                 cell.ontouchstart = (ev) => {
                     ev.preventDefault();
-                    startSelection(i, j + offset, cell)
+                    startSelection(i, j + offset, cell);
+                    selectAllBetween(i, j + offset);
                 }
                 cell.onmouseenter = () => {
                     if (mouseIsDown) {
@@ -180,16 +163,39 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
                     }
                 }
 
-                cell.ontouchmove = (ev) => {
+
+                cell.ontouchmove = (ev: TouchEvent) => {
+
                     ev.preventDefault();
-                    selectionEnd = [i, j + offset];
-                    selectAllBetween(i, j + offset)
+                    for (const k in ev.targetTouches) {
+                        const touch = ev.targetTouches[k];
+                        const elUnderTouch = document.elementFromPoint(
+                            touch.screenX,
+                            touch.screenY
+                        );
+                        // @ts-ignore
+                        const f = elUnderTouch.onmouseenter;
+                        if (f) {
+                            f();
+                        }
+                    }
+
                 }
 
                 cell.ontouchend = (ev) => {
                     ev.preventDefault();
-                    selectionEnd = [i, j + offset];
-                    selectAllBetween(i, j + offset)
+                    for (const k in ev.targetTouches) {
+                        const touch = ev.targetTouches[k];
+                        const elUnderTouch = document.elementFromPoint(
+                            touch.pageX,
+                            touch.pageY
+                        );
+                        // @ts-ignore
+                        const f = elUnderTouch.onmouseup;
+                        if (f) {
+                            f();
+                        }
+                    }
                 }
             }
 
@@ -198,11 +204,11 @@ export default class OpeningHours extends InputElement<OpeningHour[]> {
 
     }
 
-    IsValid(t: OpeningHour[]): boolean {
+    IsValid(t: OpeningHour): boolean {
         return true;
     }
 
-    GetValue(): UIEventSource<OpeningHour[]> {
+    GetValue(): UIEventSource<OpeningHour> {
         return this.source;
     }
 

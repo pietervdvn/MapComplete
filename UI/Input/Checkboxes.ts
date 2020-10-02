@@ -6,7 +6,7 @@ import {UIElement} from "../UIElement";
 /**
  * Supports multi-input
  */
-export class CheckBoxes extends InputElement<number[]> {
+export default class CheckBoxes extends InputElement<number[]> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly value: UIEventSource<number[]>;

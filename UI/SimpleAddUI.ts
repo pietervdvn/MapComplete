@@ -5,7 +5,7 @@ import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import Locale from "./i18n/Locale";
-import {State} from "../State";
+import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Utils} from "../Utils";

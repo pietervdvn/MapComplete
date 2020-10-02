@@ -2,7 +2,7 @@ import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
 import {Layout} from "../../Customizations/Layout";
-import {State} from "../../State";
+import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
 
 export class ChangesetHandler {

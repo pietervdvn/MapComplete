@@ -2,7 +2,7 @@ import {UIElement} from "../UIElement";
 import Translations from "../../UI/i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
-export class CheckBox extends UIElement{
+export default class CheckBox extends UIElement{
     public readonly isEnabled: UIEventSource<boolean>;
     private readonly _showEnabled:  UIElement;
     private readonly _showDisabled: UIElement;

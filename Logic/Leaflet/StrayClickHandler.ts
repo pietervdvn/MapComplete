@@ -1,6 +1,6 @@
-import L from "leaflet";
+import * as L from "leaflet";
 import {UIElement} from "../../UI/UIElement";
-import {State} from "../../State";
+import State from "../../State";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.

@@ -156,7 +156,7 @@ export default class ValidatedTextField {
         const values: { value: string, shown: string }[] = [];
         const expl = ValidatedTextField.tpList;
         for (const key in expl) {
-            values.push({value: key, shown: `${key} - ${expl[key]}`})
+            values.push({value: key, shown: `${expl[key].name} - ${expl[key].explanation}`})
         }
         return new DropDown<string>("", values)
     }

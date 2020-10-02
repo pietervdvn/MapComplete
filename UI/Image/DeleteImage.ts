@@ -1,9 +1,9 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
-import {CheckBox} from "../Input/CheckBox";
+import CheckBox from "../Input/CheckBox";
 import Combine from "../Base/Combine";
-import {State} from "../../State";
+import State from "../../State";
 import {Tag} from "../../Logic/Tags";
 
 

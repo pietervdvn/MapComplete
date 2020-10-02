@@ -4,7 +4,7 @@ import Translations from "./i18n/Translations";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
-import {State} from "../State";
+import State from "../State";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import {Layout} from "../Customizations/Layout";

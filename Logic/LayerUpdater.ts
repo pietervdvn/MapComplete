@@ -3,7 +3,7 @@ import {UIEventSource} from "./UIEventSource";
 import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
-import {State} from "../State";
+import State from "../State";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
 
 export class LayerUpdater {

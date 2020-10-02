@@ -3,7 +3,7 @@ import $ from "jquery"
 import {DropDown} from "./Input/DropDown";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
-import {State} from "../State";
+import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Imgur} from "../Logic/Web/Imgur";
 import {FixedUiElement} from "./Base/FixedUiElement";

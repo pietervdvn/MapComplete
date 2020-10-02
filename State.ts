@@ -18,7 +18,7 @@ import {BaseLayer} from "./Logic/BaseLayer";
  * Contains the global state: a bunch of UI-event sources
  */
 
-export class State {
+export default class State {
 
     // The singleton of the global state
     public static state: State;

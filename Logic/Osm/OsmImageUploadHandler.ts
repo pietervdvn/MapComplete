@@ -4,7 +4,7 @@
 import {UIEventSource} from "../UIEventSource";
 import {ImageUploadFlow} from "../../UI/ImageUploadFlow";
 import {SlideShow} from "../../UI/SlideShow";
-import {State} from "../../State";
+import State from "../../State";
 import {Tag} from "../Tags";
 
 export class OsmImageUploadHandler {

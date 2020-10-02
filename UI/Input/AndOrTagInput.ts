@@ -3,7 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
-import {CheckBox} from "./CheckBox";
+import CheckBox from "./CheckBox";
 import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {MultiTagInput} from "./MultiTagInput";
 
@@ -13,7 +13,7 @@ class AndOrConfig implements AndOrTagConfigJson {
 }
 
 
-export class AndOrTagInput extends InputElement<AndOrTagConfigJson> {
+export default class AndOrTagInput extends InputElement<AndOrTagConfigJson> {
 
     private readonly _rawTags = new MultiTagInput();
     private readonly _subAndOrs: AndOrTagInput[] = [];

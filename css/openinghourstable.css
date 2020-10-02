@@ -1,9 +1,15 @@
 
 .oh-table {
-    width: 15em;
     border-collapse: collapse;
+    width: 100%;
+    height: 100%;
 }
 
+.oh-table th {
+    font-weight: bold;
+    font-size: medium;
+    background-color: #ddd;
+}
 
 .oh-table td {
     vertical-align: top;
@@ -15,6 +21,8 @@
 
 .oh-timecell {
     background-color: white;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
 }
 
 .oh-timecell-selected {
@@ -38,6 +46,12 @@
 }
 
 .oh-left-col {
-    /*border-top: 1px solid #aaa;*/
+    border-top: 1px solid #aaa;
+    width: 0.5em;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    padding-right: 0.2em;
+    background: #ddd;
 }
 

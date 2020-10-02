@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
 import Translations from "./i18n/Translations";
-import {State} from "../State";
+import State from "../State";
 
 export class CenterMessageBox extends UIElement {
 

@@ -6,7 +6,7 @@ import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
 import codegrid from "codegrid-js";
-import {State} from "../State";
+import State from "../State";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -301,7 +301,6 @@ export class FilteredLayer {
                 eventSource.addCallback(updateStyle);
 
                 function openPopup(e) {
-                    State.state.selectedElement.data?.feature.updateStyle();
                     State.state.selectedElement.setData({feature: feature});
                     updateStyle()
                     if (feature.geometry.type === "Point") {

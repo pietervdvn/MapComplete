@@ -11,7 +11,7 @@ import AllLayersPanel from "./AllLayersPanel";
 import SharePanel from "./SharePanel";
 import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import {SubtleButton} from "../Base/SubtleButton";
-import {State} from "../../State";
+import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";

@@ -1,12 +1,9 @@
 import {Img} from "../../UI/Img";
-import {RegexTag, Tag} from "../../Logic/Tags";
+import {RegexTag} from "../../Logic/Tags";
 import {TagRenderingOptions} from "../TagRenderingOptions";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 
 export class OsmLink extends TagRenderingOptions {
-
-  
 
     static options = {
         freeform: {

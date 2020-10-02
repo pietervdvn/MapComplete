@@ -6,14 +6,14 @@ import SettingsTable from "./SettingsTable";
 import {TextField} from "../Input/TextField";
 import Combine from "../Base/Combine";
 import MultiLingualTextFields from "../Input/MultiLingualTextFields";
-import {AndOrTagInput} from "../Input/AndOrTagInput";
+import AndOrTagInput from "../Input/AndOrTagInput";
 import {MultiTagInput} from "../Input/MultiTagInput";
 import {MultiInput} from "../Input/MultiInput";
 import MappingInput from "./MappingInput";
 import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConfigJson";
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
-import {State} from "../../State";
+import State from "../../State";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import ValidatedTextField from "../Input/ValidatedTextField";
@@ -50,7 +50,8 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
             (this.options.disableQuestions ?? false) ||
             questionsNotUnlocked; 
 
-        this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>", options?.description ?? ""])
+        this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>", 
+            options?.description ?? "A tagrendering converts OSM-tags into a value on screen. Fill out the field 'render' with the text that should appear. Note that `{key}` will be replaced with the corresponding `value`, if present.<br/>For specific known tags (e.g. if `foo=bar`, make a mapping).  "])
         this.IsImage = options?.isImage ?? false;
 
         const value = new UIEventSource<TagRenderingConfigJson>({});

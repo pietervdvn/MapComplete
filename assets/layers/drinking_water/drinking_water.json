@@ -18,7 +18,13 @@
   },
   "icon": "./assets/layers/drinking_water/drinking_water.svg",
   "iconSize": "40,40,bottom",
-  "overpassTags": "amenity=drinking_water",
+  "overpassTags": {
+    "and": [
+      "amenity=drinking_water",
+      "access!=permissive",
+      "access!=private"
+    ]
+  },
   "minzoom": 13,
   "wayHandling": 1,
   "presets": [

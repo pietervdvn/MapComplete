@@ -24,7 +24,7 @@ import * as information_boards from "../../assets/layers/information_board/infor
 import {Utils} from "../../Utils";
 import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
 import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
-import {State} from "../../State";
+import State from "../../State";
 
 export class FromJSON {
 

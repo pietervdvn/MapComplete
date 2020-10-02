@@ -4,7 +4,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import SettingsTable from "./SettingsTable";
 import SingleSetting from "./SingleSetting";
-import {AndOrTagInput} from "../Input/AndOrTagInput";
+import AndOrTagInput from "../Input/AndOrTagInput";
 import MultiLingualTextFields from "../Input/MultiLingualTextFields";
 import {DropDown} from "../Input/DropDown";
 

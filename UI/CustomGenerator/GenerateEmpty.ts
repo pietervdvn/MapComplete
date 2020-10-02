@@ -44,7 +44,9 @@ export class GenerateEmpty {
             widenFactor: 0.05,
             socialImage: "",
             
-            layers: []
+            layers: [
+                GenerateEmpty.createEmptyLayer()
+            ]
         }
     }
 

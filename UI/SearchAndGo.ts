@@ -6,7 +6,7 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import {TextField} from "./Input/TextField";
 import {Geocoding} from "../Logic/Osm/Geocoding";
 import Translations from "./i18n/Translations";
-import {State} from "../State";
+import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
 

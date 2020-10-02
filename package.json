@@ -28,11 +28,13 @@
     "@types/leaflet-providers": "^1.2.0",
     "codegrid-js": "git://github.com/hlaw/codegrid-js.git",
     "email-validator": "^2.0.4",
+    "i18next-client": "^1.11.4",
     "jquery": "latest",
     "leaflet": "^1.7.1",
     "leaflet-providers": "^1.10.2",
     "libphonenumber": "0.0.10",
     "libphonenumber-js": "^1.7.55",
+    "opening_hours": "^3.5.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
     "parcel": "^1.12.4",
@@ -50,6 +52,7 @@
     "promise-svg2img": "^0.2.0",
     "read-file": "^0.2.0",
     "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^3.9.7",
     "write-file": "^1.0.0"
   }

@@ -7,7 +7,7 @@ import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Custom
 import Translations from "./i18n/Translations";
 import {Changes} from "../Logic/Osm/Changes";
 import {FixedUiElement} from "./Base/FixedUiElement";
-import {State} from "../State";
+import State from "../State";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Combine from "./Base/Combine";
@@ -133,7 +133,8 @@ export class FeatureInfoBox extends UIElement {
         }
 
         const infoboxcontents = new Combine(
-            [new VerticalCombine(info, "infobox-information "), questionElement ?? ""]);
+            [new VerticalCombine(info).SetClass("infobox-information")
+                , questionElement ?? ""]);
 
         return new Combine([
             this._title,

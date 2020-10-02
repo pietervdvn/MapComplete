@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
 import Translations from "./i18n/Translations";
-import {State} from "../State";
+import State from "../State";
 import Combine from "./Base/Combine";
 
 /**

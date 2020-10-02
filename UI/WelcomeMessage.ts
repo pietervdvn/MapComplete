@@ -1,6 +1,6 @@
 import {UIElement} from "./UIElement";
 import Locale from "../UI/i18n/Locale";
-import {State} from "../State";
+import State from "../State";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {InitUiElements} from "../InitUiElements";

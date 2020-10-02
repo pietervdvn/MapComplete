@@ -2,7 +2,7 @@ import {LayerDefinition} from "./LayerDefinition";
 import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
-import {State} from "../State";
+import State from "../State";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).

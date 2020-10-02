@@ -1,6 +1,6 @@
 import {Basemap} from "../Leaflet/Basemap";
 import $ from "jquery"
-import {State} from "../../State";
+import State from "../../State";
 export class Geocoding {
 
     private static readonly host = "https://nominatim.openstreetmap.org/search?";

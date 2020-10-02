@@ -1,10 +1,6 @@
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
-import {VerticalCombine} from "./UI/Base/VerticalCombine";
 import Combine from "./UI/Base/Combine";
-import {SubtleButton} from "./UI/Base/SubtleButton";
 import {Button} from "./UI/Base/Button";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {All} from "./Customizations/Layouts/All";
 import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {UIElement} from "./UI/UIElement";
@@ -29,9 +25,7 @@ function createTable(preferences: any) {
         let value: UIElement = new FixedUiElement(pref.data);
         if (connection.userDetails.data.csCount > 500 &&
             (key.startsWith("mapcomplete") || connection.userDetails.data.csCount > 2500)) {
-            value = new TextField<string>({
-                toString: (str) => str,
-                fromString: (str) => str,
+            value = new TextField({
                 value: pref
             });
         }

@@ -6,7 +6,7 @@ import {
 import {ImageCarousel} from "./ImageCarousel";
 import {ImageUploadFlow} from "../ImageUploadFlow";
 import {OsmImageUploadHandler} from "../../Logic/Osm/OsmImageUploadHandler";
-import {State} from "../../State";
+import State from "../../State";
 import Translation from "../i18n/Translation";
 
 export default class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{

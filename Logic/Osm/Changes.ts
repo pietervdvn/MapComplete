@@ -4,7 +4,7 @@
  */
 import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../Tags";
-import {State} from "../../State";
+import State from "../../State";
 import {Utils} from "../../Utils";
 
 export class Changes {

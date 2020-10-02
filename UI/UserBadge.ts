@@ -1,10 +1,10 @@
 import {UIElement} from "./UIElement";
-import L from "leaflet";
+import * as L from "leaflet";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
-import {State} from "../State";
+import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {InitUiElements} from "../InitUiElements";
 import Combine from "./Base/Combine";

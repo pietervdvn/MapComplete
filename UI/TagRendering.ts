@@ -2,14 +2,12 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import {And, Tag, TagsFilter, TagUtils} from "../Logic/Tags";
 import Translations from "../UI/i18n/Translations";
 import Locale from "../UI/i18n/Locale";
-import {State} from "../State";
 import Translation from "../UI/i18n/Translation";
 import Combine from "../UI/Base/Combine";
 import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
 import {UIElement} from "./UIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import InputElementMap from "./Input/InputElementMap";
-import {CheckBoxes} from "./Input/Checkboxes";
 import {InputElement} from "./Input/InputElement";
 import {SaveButton} from "./SaveButton";
 import {RadioButton} from "./Input/RadioButton";
@@ -17,6 +15,8 @@ import {FixedInputElement} from "./Input/FixedInputElement";
 import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import ValidatedTextField from "./Input/ValidatedTextField";
+import CheckBoxes from "./Input/Checkboxes";
+import State from "../State";
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
