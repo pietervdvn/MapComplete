@@ -8,7 +8,7 @@ export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
     private readonly _placeholder: UIElement;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private readonly _isArea: boolean;
+    private readonly _htmlType: string;
     private readonly _textAreaRows: number;
 
     private readonly _isValid: (string, country) => boolean;
@@ -17,6 +17,7 @@ export class TextField extends InputElement<string> {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
         textArea?: boolean,
+        htmlType?: string,
         textAreaRows?: number,
         isValid?: ((s: string, country?: string) => boolean)
     }) {
@@ -24,7 +25,7 @@ export class TextField extends InputElement<string> {
         const self = this;
         this.value = new UIEventSource<string>("");
         options = options ?? {};
-        this._isArea = options.textArea ?? false;
+        this._htmlType = options.textArea ? "area" : (options.htmlType ?? "text");
         this.value = options?.value ?? new UIEventSource<string>(undefined);
 
         this._textAreaRows = options.textAreaRows;
@@ -58,15 +59,15 @@ export class TextField extends InputElement<string> {
 
     InnerRender(): string {
 
-        if (this._isArea) {
+        if (this._htmlType === "area") {
             return `<span id="${this.id}"><textarea id="txt-${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea></span>`
         }
 
         const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
 
-        return `<span id="${this.id}"><form onSubmit='return false' class='form-text-field'>` +
-            `<input type='text' placeholder='${placeholder}' id='txt-${this.id}'>` +
-            `</form></span>`;
+        return `<div id="${this.id}"><form onSubmit='return false' class='form-text-field'>` +
+            `<input type='${this._htmlType}' placeholder='${placeholder}' id='txt-${this.id}'/>` +
+            `</form></div>`;
     }
     
     InnerUpdate() {
@@ -121,6 +122,9 @@ export class TextField extends InputElement<string> {
     }
 
     public SetCursorPosition(i: number) {
+        if(this._htmlType !== "text" && this._htmlType !== "area"){
+            return;
+        }
         const field = document.getElementById('txt-' + this.id);
         if(field === undefined || field === null){
             return;

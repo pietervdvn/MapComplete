@@ -14,7 +14,7 @@ interface TextFieldDef {
     explanation: string,
     isValid: ((s: string, country?: string) => boolean),
     reformat?: ((s: string, country?: string) => string),
-    inputHelper?: (value:UIEventSource<string>) => InputElement<string>
+    inputHelper?: (value:UIEventSource<string>) => InputElement<string>,
 }
 
 export default class ValidatedTextField {

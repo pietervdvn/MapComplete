@@ -13,6 +13,7 @@ import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {TagRendering} from "../UI/TagRendering";
 import {Basemap} from "../Logic/Leaflet/Basemap";
+import {OpeningHour, OpeningHourUtils} from "../Logic/OpeningHours";
 
 
 new T([
@@ -121,5 +122,55 @@ new T([
             equal(true, rendered.indexOf("Niet toegankelijk") > 0)
 
         }
-    ],
+    ], [
+        "Merge touching opening hours",
+        () => {
+            const oh1: OpeningHour = {
+                weekday: 0,
+                startHour: 10,
+                startMinutes: 0,
+                endHour: 11,
+                endMinutes: 0
+            };
+            const oh0: OpeningHour = {
+                weekday: 0,
+                startHour: 11,
+                startMinutes: 0,
+                endHour: 12,
+                endMinutes: 0
+            };
+            
+            const merged = OpeningHourUtils.MergeTimes([oh0, oh1]);
+            const r = merged[0];
+            equal( merged.length, 1);
+            equal(r.startHour,10 );
+            equal(r.endHour, 12)
+
+        }
+    ], [
+        "Merge overlapping opening hours",
+        () => {
+            const oh1: OpeningHour = {
+                weekday: 0,
+                startHour: 10,
+                startMinutes: 0,
+                endHour: 11,
+                endMinutes: 0
+            };
+            const oh0: OpeningHour = {
+                weekday: 0,
+                startHour: 10,
+                startMinutes: 30,
+                endHour: 12,
+                endMinutes: 0
+            };
+
+            const merged = OpeningHourUtils.MergeTimes([oh0, oh1]);
+            const r = merged[0];
+            equal( merged.length, 1);
+            equal(r.startHour,10 );
+            equal(r.endHour, 12)
+
+        }
+    ]
 ]);

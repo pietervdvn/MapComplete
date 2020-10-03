@@ -15,33 +15,35 @@
     vertical-align: top;
 }
 
-.oh-timecell:hover {
-    background-color: lightsalmon !important;
+.oh-timecell-inner:hover {
+    background-color: #ffd1be;
 }
 
 .oh-timecell {
     background-color: white;
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .oh-timecell-selected {
-    background-color: red;
+    background-color: orange;
 }
 
-.oh-timecell-half {
+.oh-timecell-half  .oh-timecell-inner{
     border-top: 0.5px solid #eee
 }
 
-.oh-timecell-half.oh-timecell-selected {
+.oh-timecell-half.oh-timecell-selected  .oh-timecell-inner {
     border-top: 0.5px solid lightsalmon;
 }
 
-.oh-timecell-full {
-    border-top: 1px solid #aaa
+.oh-timecell-full  .oh-timecell-inner{
+    border-top: 1px solid #ccc
 }
 
-.oh-timecell-full.oh-timecell-selected {
+.oh-timecell-full.oh-timecell-selected .oh-timecell-inner {
     border-top: 1px solid lightsalmon;
 }
 
@@ -55,3 +57,70 @@
     background: #ddd;
 }
 
+.oh-draggable-header {
+    background-color: blue;
+    height: 0.5em;
+}
+
+.oh-timecell-inner {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+.oh-timerange {
+    border-radius: 0.5em;
+    margin: 2px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: orange;
+    z-index: 1;
+    box-sizing: border-box
+}
+
+.oh-timerange-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.oh-timerange-inner input {
+     width: calc(100% - 2em);
+     box-sizing: border-box;
+     margin-left: 1em;
+     margin-right:1em;
+ }
+
+.oh-timerange-inner-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width:100%;
+}
+
+.oh-timerange-inner-small input {
+    width: min-content;
+    box-sizing: border-box;
+    margin-left: 1em;
+    margin-right:1em;
+}
+
+.oh-delete-range{
+    width: 1.5em;
+    height: 1.5em;
+    background:black;
+    border-radius:0.75em;
+}
+
+.oh-delete-range img {
+    height: 100%;
+    max-width: 2em;
+}

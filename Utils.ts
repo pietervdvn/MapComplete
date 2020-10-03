@@ -32,10 +32,17 @@ export class Utils {
         return str.substr(0, 1).toUpperCase() + str.substr(1);
     }
 
-    public static Times(str: string, count: number): string {
+    public static TwoDigits(i: number) {
+        if (i < 10) {
+            return "0" + i;
+        }
+        return "" + i;
+    }
+
+    public static Times(f: ((i: number) => string), count: number): string {
         let res = "";
         for (let i = 0; i < count; i++) {
-            res += str;
+            res += f(i);
         }
         return res;
     }
@@ -194,4 +201,5 @@ This is around ${secsPerCS} seconds/changeset.<br/> The next million (still ${st
             }
         );
     }
+
 }
