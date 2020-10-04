@@ -215,6 +215,14 @@
       }
     },
     {
+      "render": "Shop is open {opening_hours}",
+      "question": "When is this shop opened?",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      }
+    },
+    {
       "question": {
         "en": "Does this shop sell bikes?",
         "nl": "Verkoopt deze fietszaak fietsen?",

@@ -14,7 +14,7 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
 
     private readonly _weekdays: UIEventSource<UIElement[]> = new UIEventSource<UIElement[]>([]);
 
-    constructor(ohs: UIEventSource<OpeningHour[]>) {
+    constructor(ohs: UIEventSource<OpeningHour[]> = new UIEventSource<OpeningHour[]>([])) {
         super();
         this._ohs = ohs;
         this._backgroundTable = new OpeningHoursPickerTable(this._weekdays);

@@ -92,10 +92,8 @@
 }
 
 .oh-timerange-inner input {
-     width: calc(100% - 2em);
+     width: 100%;
      box-sizing: border-box;
-     margin-left: 1em;
-     margin-right:1em;
  }
 
 .oh-timerange-inner-small {
@@ -109,8 +107,6 @@
 .oh-timerange-inner-small input {
     width: min-content;
     box-sizing: border-box;
-    margin-left: 1em;
-    margin-right:1em;
 }
 
 .oh-delete-range{

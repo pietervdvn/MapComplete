@@ -48,8 +48,8 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
                 Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half"><div class="oh-timecell-inner"></div></td>`, 7) +
                 '</tr>';
         }
-        let days = OpeningHoursPickerTable.days.join("</th><th>");
-        return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th>${days}</tr>${rows}</table>`;
+        let days = OpeningHoursPickerTable.days.join("</th><th width='14%'>");
+        return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th width='14%'>${days}</th></tr>${rows}</table>`;
     }
 
     protected InnerUpdate() {

@@ -8,13 +8,15 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
+import OpeningHoursPicker from "./OpeningHours/OpeningHoursPicker";
+import {OpeningHour, OpeningHourUtils} from "../../Logic/OpeningHours";
 
 interface TextFieldDef {
     name: string,
     explanation: string,
     isValid: ((s: string, country?: string) => boolean),
     reformat?: ((s: string, country?: string) => string),
-    inputHelper?: (value:UIEventSource<string>) => InputElement<string>,
+    inputHelper?: (value: UIEventSource<string>) => InputElement<string>,
 }
 
 export default class ValidatedTextField {
@@ -141,6 +143,24 @@ export default class ValidatedTextField {
                 return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
             },
             (str, country: any) => parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
+        ),
+        ValidatedTextField.tp(
+            "opening_hours",
+            "Has extra elements to easily input when a POI is opened",
+            (s, country) => true, // TODO
+            str => str, // TODO reformat with opening_hours.js
+            (value) => {
+                const input = new InputElementMap<OpeningHour[], string>(new OpeningHoursPicker(),
+                    (a, b) => a === b,
+                    ohs => OpeningHourUtils.ToString(ohs),
+                    str => OpeningHourUtils.Parse(str)
+                )
+                input.GetValue().addCallback(latest => {
+                    console.log(latest);
+                    value.setData(latest);
+                })
+                return input;
+            }
         )
     ]
     

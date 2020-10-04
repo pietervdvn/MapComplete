@@ -1,3 +1,5 @@
+import {Utils} from "../Utils";
+
 export interface OpeningHour {
     weekday: number, // 0 is monday, 1 is tuesday, ...
     startHour: number,
@@ -7,6 +9,35 @@ export interface OpeningHour {
 }
 
 export class OpeningHourUtils {
+
+
+    private static readonly days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+    private static readonly daysIndexed = {
+        mo: 0,
+        tu: 1,
+        we: 2,
+        th: 3,
+        fr: 4,
+        sa: 5,
+        su: 6
+    }
+
+    public static ToString(ohs: OpeningHour[]) {
+        const parts = [];
+
+        function hhmm(h, m) {
+            return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
+        }
+
+        for (const oh of ohs) {
+            parts.push(
+                OpeningHourUtils.days[oh.weekday] + " " + hhmm(oh.startHour, oh.startMinutes) + "-" + hhmm(oh.endHour, oh.endMinutes)
+            )
+        }
+
+        return parts.join("; ")+";"
+    }
+
     /**
      * Merge duplicate opening-hour element in place.
      * Returns true if something changed
@@ -18,12 +49,12 @@ export class OpeningHourUtils {
         const newList = [];
         while (queue.length > 0) {
             let maybeAdd = queue.pop();
-            
+
             let doAddEntry = true;
             if(maybeAdd.weekday == undefined){
                 doAddEntry = false;
             }
-            
+
             for (let i = newList.length - 1; i >= 0 && doAddEntry; i--) {
                 let guard = newList[i];
                 if (maybeAdd.weekday != guard.weekday) {
@@ -60,7 +91,7 @@ export class OpeningHourUtils {
                         endHour = maybeAdd.endHour;
                         endMinutes = maybeAdd.endMinutes;
                     }
-                    
+
                     queue.push({
                         startHour: startHour,
                         startMinutes: startMinutes,
@@ -106,6 +137,48 @@ export class OpeningHourUtils {
     public static endTimeLiesInRange(checked: OpeningHour, mightLieIn: OpeningHour) {
         return OpeningHourUtils.startTime(mightLieIn) <= OpeningHourUtils.endTime(checked) &&
             OpeningHourUtils.endTime(checked) <= OpeningHourUtils.endTime(mightLieIn)
+    }
+
+    static Parse(str: string) {
+        if (str === undefined || str === "") {
+            return []
+        }
+
+        const parts = str.toLowerCase().split(";");
+        const ohs = []
+
+        function parseTime(hhmm) {
+            const spl = hhmm.trim().split(":");
+            return [Number(spl[0].trim()), Number(spl[1].trim())]
+        }
+
+        for (const part of parts) {
+            if(part === ""){
+                continue;
+            }
+            try {
+
+                const partSplit = part.trim().split(" ");
+                const weekday = OpeningHourUtils.daysIndexed[partSplit[0]]
+                const timings = partSplit[1].split("-");
+                const start = parseTime(timings[0])
+                const end = parseTime(timings[1]);
+
+                const oh: OpeningHour = {
+                    weekday: weekday,
+                    startHour: start[0],
+                    startMinutes: start[1],
+                    endHour: end[0],
+                    endMinutes: end[1],
+                }
+                ohs.push(oh);
+
+            } catch (e) {
+                console.error("Could not parse opening hours part", part, ", skipping it due to ", e)
+            }
+        }
+
+        return ohs;
     }
 }
 
