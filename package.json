@@ -27,6 +27,7 @@
   "dependencies": {
     "@types/leaflet-providers": "^1.2.0",
     "codegrid-js": "git://github.com/hlaw/codegrid-js.git",
+    "country-language": "^0.1.7",
     "email-validator": "^2.0.4",
     "i18next-client": "^1.11.4",
     "jquery": "latest",
@@ -34,6 +35,7 @@
     "leaflet-providers": "^1.10.2",
     "libphonenumber": "0.0.10",
     "libphonenumber-js": "^1.7.55",
+    "moment": "^2.29.0",
     "opening_hours": "^3.5.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
@@ -45,7 +47,6 @@
     "@types/node": "^7.0.5",
     "assert": "^2.0.0",
     "canvas": "^2.6.1",
-    "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "marked": "^1.1.1",
     "parcel-plugin-static-files-copy": "^2.4.3",
