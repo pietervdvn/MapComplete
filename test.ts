@@ -1,23 +1,9 @@
 //*
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import OpeningHoursRange from "./UI/Input/OpeningHours/OpeningHoursRange";
-import {UIEventSource} from "./Logic/UIEventSource";
-import OpeningHoursPicker from "./UI/Input/OpeningHours/OpeningHoursPicker";
-import {OpeningHour} from "./Logic/OpeningHours";
 
-let oh = new OpeningHoursPicker(new UIEventSource<OpeningHour[]>([]));
-oh.SetStyle("height:100vh;display:block;").AttachTo('maindiv');
+import opening_hours from "opening_hours";
 
-oh.GetValue().addCallback(data => console.log(data))
-
-new VariableUiElement(oh.GetValue().map(oh => {
-    if(oh === undefined){
-        return "<no value selected>";
-    }
-    return oh.weekdayStart + " " + oh.startHour + ":" + oh.startMinutes + " --> " +
-        oh.weekdayEnd + " " + oh.endHour + ":" + oh.endMinutes
-})).AttachTo("extradiv");
-
+const oh =new  opening_hours("mo 09:00-17:00;Tu 09:00-17:00;We 09:00-17:00");
+console.log(oh)
 
  /*/
 

@@ -202,9 +202,12 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
                     ev.preventDefault();
                     for (const k in ev.targetTouches) {
                         const touch = ev.targetTouches[k];
+                        if(touch.clientX === undefined || touch.clientY === undefined){
+                            continue;
+                        }
                         const elUnderTouch = document.elementFromPoint(
-                            touch.screenX,
-                            touch.screenY
+                            touch.clientX,
+                            touch.clientY
                         );
                         // @ts-ignore
                         const f = elUnderTouch.onmouseenter;
@@ -217,18 +220,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
 
                 cell.ontouchend = (ev) => {
                     ev.preventDefault();
-                    for (const k in ev.targetTouches) {
-                        const touch = ev.targetTouches[k];
-                        const elUnderTouch = document.elementFromPoint(
-                            touch.pageX,
-                            touch.pageY
-                        );
-                        // @ts-ignore
-                        const f = elUnderTouch.onmouseup;
-                        if (f) {
-                            f();
-                        }
-                    }
+                    endSelection();
                 }
             }
 

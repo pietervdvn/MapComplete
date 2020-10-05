@@ -103,10 +103,10 @@ export default class Translations {
             }),
 
             respectPrivacy: new T({
-                en: "Please respect privacy. Do not photograph people nor license plates",
+                en: "Please respect privacy. Do not photograph people nor license plates.<br/>Respect copyright. Only upload images you made yourself. Do not upload Google Streetview Images - these will be removed.",
                 ca: "Respecta la privacitat. No fotografiïs gent o matrícules",
                 es: "Respeta la privacidad. No fotografíes gente o matrículas",
-                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten",
+                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten.<br/>Repecteer auteursrechten. Voeg enkel foto's toe die je zelf maakte. Screenshots van andere services (zoals Google Streetview) worden verwijderd",
                 fr: "Merci de respecter la vie privée. Ne publiez pas les plaques d\'immatriculation",
                 gl: "Respecta a privacidade. Non fotografes xente ou matrículas",
                 de: "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder"
