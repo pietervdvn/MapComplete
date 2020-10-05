@@ -9,6 +9,10 @@ export class UIEventSource<T>{
 
 
     public addCallback(callback: ((latestData: T) => void)): UIEventSource<T> {
+        if(callback === console.log){
+            // This ^^^ actually works!
+            throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
+        }
         this._callbacks.push(callback);
         return this;
     }

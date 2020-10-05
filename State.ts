@@ -111,9 +111,9 @@ export default class State {
      * The location as delivered by the GPS
      */
     public currentGPSLocation: UIEventSource<{
-        latlng: number,
+        latlng: {lat:number, lon:number},
         accuracy: number
-    }> = new UIEventSource<{ latlng: number, accuracy: number }>(undefined);
+    }> = new UIEventSource<{ latlng: {lat:number, lon:number}, accuracy: number }>(undefined);
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 
@@ -139,7 +139,6 @@ export default class State {
                 return ("" + fl).substr(0, 8);
             })
         }
-
         this.zoom = asFloat(
             QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
             .syncWith(LocalStorageSource.Get("zoom"), true));

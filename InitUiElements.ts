@@ -207,10 +207,12 @@ export class InitUiElements {
         }
 
 
-        new GeoLocationHandler().AttachTo("geolocate-button");
+        new GeoLocationHandler()
+            .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
+            .AttachTo("geolocate-button");
         State.state.locationControl.ping();
-        
-       
+
+
     }
 
 

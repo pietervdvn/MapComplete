@@ -8,7 +8,7 @@ export interface OpeningHour {
     endMinutes: number
 }
 
-export class OpeningHourUtils {
+export class OH {
 
 
     private static readonly days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
@@ -23,19 +23,53 @@ export class OpeningHourUtils {
     }
 
     public static ToString(ohs: OpeningHour[]) {
-        const parts = [];
+        if (ohs.length == 0) {
+            return "";
+        }
+        const partsPerWeekday: string [][] = [[], [], [], [], [], [], []];
 
         function hhmm(h, m) {
             return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
         }
 
         for (const oh of ohs) {
-            parts.push(
-                OpeningHourUtils.days[oh.weekday] + " " + hhmm(oh.startHour, oh.startMinutes) + "-" + hhmm(oh.endHour, oh.endMinutes)
-            )
+            partsPerWeekday[oh.weekday].push(hhmm(oh.startHour, oh.startMinutes) + "-" + hhmm(oh.endHour, oh.endMinutes));
         }
 
-        return parts.join("; ")+";"
+        const stringPerWeekday = partsPerWeekday.map(parts => parts.sort().join(", "));
+
+        const rules = [];
+
+        let rangeStart = 0;
+        let rangeEnd = 0;
+        
+        function pushRule(){
+            const rule = stringPerWeekday[rangeStart];
+            if(rule === ""){
+                return;
+            }
+            if (rangeStart == (rangeEnd - 1)) {
+                rules.push(
+                    `${OH.days[rangeStart]} ${rule}`
+                );
+            } else {
+                rules.push(
+                    `${OH.days[rangeStart]}-${OH.days[rangeEnd-1]} ${rule}`
+                );
+            }
+        }
+        
+        for (; rangeEnd < 7; rangeEnd++) {
+
+            if (stringPerWeekday[rangeStart] != stringPerWeekday[rangeEnd]) {
+                pushRule();
+                rangeStart = rangeEnd
+            }
+
+        }
+        pushRule();
+
+        return rules.join("; ") + ";"
     }
 
     /**
@@ -62,32 +96,32 @@ export class OpeningHourUtils {
                     continue
                 }
 
-                if (OpeningHourUtils.startTimeLiesInRange(maybeAdd, guard) && OpeningHourUtils.endTimeLiesInRange(maybeAdd, guard)) {
+                if (OH.startTimeLiesInRange(maybeAdd, guard) && OH.endTimeLiesInRange(maybeAdd, guard)) {
                     // Guard fully covers 'maybeAdd': we can safely ignore maybeAdd
                     doAddEntry = false;
                     break;
                 }
 
-                if (OpeningHourUtils.startTimeLiesInRange(guard, maybeAdd) && OpeningHourUtils.endTimeLiesInRange(guard, maybeAdd)) {
+                if (OH.startTimeLiesInRange(guard, maybeAdd) && OH.endTimeLiesInRange(guard, maybeAdd)) {
                     // 'maybeAdd'  fully covers Guard - the guard is killed
                     newList.splice(i, 1);
                     break;
                 }
 
-                if (OpeningHourUtils.startTimeLiesInRange(maybeAdd, guard) || OpeningHourUtils.endTimeLiesInRange(maybeAdd, guard)
-                    || OpeningHourUtils.startTimeLiesInRange(guard, maybeAdd) || OpeningHourUtils.endTimeLiesInRange(guard, maybeAdd)) {
+                if (OH.startTimeLiesInRange(maybeAdd, guard) || OH.endTimeLiesInRange(maybeAdd, guard)
+                    || OH.startTimeLiesInRange(guard, maybeAdd) || OH.endTimeLiesInRange(guard, maybeAdd)) {
                     // At this point, the maybeAdd overlaps the guard: we should extend the guard and retest it
                     newList.splice(i, 1);
                     let startHour = guard.startHour;
                     let startMinutes = guard.startMinutes;
-                    if(OpeningHourUtils.startTime(maybeAdd)<OpeningHourUtils.startTime(guard)){
+                    if (OH.startTime(maybeAdd) < OH.startTime(guard)) {
                         startHour = maybeAdd.startHour;
                         startMinutes = maybeAdd.startMinutes;
                     }
 
                     let endHour = guard.endHour;
                     let endMinutes = guard.endMinutes;
-                    if(OpeningHourUtils.endTime(maybeAdd)>OpeningHourUtils.endTime(guard)){
+                    if (OH.endTime(maybeAdd) > OH.endTime(guard)) {
                         endHour = maybeAdd.endHour;
                         endMinutes = maybeAdd.endMinutes;
                     }
@@ -130,51 +164,128 @@ export class OpeningHourUtils {
     }
 
     public static startTimeLiesInRange(checked: OpeningHour, mightLieIn: OpeningHour) {
-        return OpeningHourUtils.startTime(mightLieIn) <= OpeningHourUtils.startTime(checked) &&
-            OpeningHourUtils.startTime(checked) <= OpeningHourUtils.endTime(mightLieIn)
+        return OH.startTime(mightLieIn) <= OH.startTime(checked) &&
+            OH.startTime(checked) <= OH.endTime(mightLieIn)
     }
 
     public static endTimeLiesInRange(checked: OpeningHour, mightLieIn: OpeningHour) {
-        return OpeningHourUtils.startTime(mightLieIn) <= OpeningHourUtils.endTime(checked) &&
-            OpeningHourUtils.endTime(checked) <= OpeningHourUtils.endTime(mightLieIn)
+        return OH.startTime(mightLieIn) <= OH.endTime(checked) &&
+            OH.endTime(checked) <= OH.endTime(mightLieIn)
     }
 
-    static Parse(str: string) {
-        if (str === undefined || str === "") {
+    private static parseHHMM(hhmm: string): { hours: number, minutes: number } {
+        const spl = hhmm.trim().split(":");
+        return {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
+    }
+
+    private static parseHHMMRange(hhmmhhmm: string): {
+        startHour: number,
+        startMinutes: number,
+        endHour: number,
+        endMinutes: number
+    } {
+        const timings = hhmmhhmm.split("-");
+        const start = OH.parseHHMM(timings[0])
+        const end = OH.parseHHMM(timings[1]);
+        return {
+            startHour: start.hours,
+            startMinutes: start.minutes,
+            endHour: end.hours,
+            endMinutes: end.minutes
+        }
+    }
+
+    private static ParseHhmmRanges(hhmms: string): {
+        startHour: number,
+        startMinutes: number,
+        endHour: number,
+        endMinutes: number
+    }[] {
+        return hhmms.split(",")
+            .map(s => s.trim())
+            .filter(str => str !== "")
+            .map(OH.parseHHMMRange)
+    }
+
+    private static ParseWeekday(weekday: string): number {
+        return OH.daysIndexed[weekday.trim().toLowerCase()];
+    }
+
+    private static ParseWeekdayRange(weekdays: string): number[] {
+        const split = weekdays.split("-");
+        if (split.length == 1) {
+            return [OH.ParseWeekday(weekdays)];
+        } else if (split.length == 2) {
+            let start = OH.ParseWeekday(split[0]);
+            let end = OH.ParseWeekday(split[1]);
+            let range = [];
+            for (let i = start; i <= end; i++) {
+                range.push(i);
+            }
+            return range;
+        } else {
+            throw "Invalid format: " + weekdays + " is not a weekdays range"
+        }
+    }
+
+    private static ParseWeekdayRanges(weekdays: string): number[] {
+        let ranges = [];
+        let split = weekdays.split(",");
+        for (const weekday of split) {
+            ranges.push(...OH.ParseWeekdayRange(weekday));
+        }
+        return ranges;
+    }
+
+    private static multiply(weekdays: number[], timeranges: { startHour: number, startMinutes: number, endHour: number, endMinutes: number }[]) {
+        const ohs: OpeningHour[] = []
+        for (const timerange of timeranges) {
+            for (const weekday of weekdays) {
+                ohs.push({
+                    weekday: weekday,
+                    startHour: timerange.startHour, startMinutes: timerange.startMinutes,
+                    endHour: timerange.endHour, endMinutes: timerange.endMinutes,
+                });
+            }
+        }
+        return ohs;
+    }
+
+    public static ParseRule(rule: string): OpeningHour[] {
+        const split = rule.trim().replace(/, */g, ",").split(" ");
+        if (split.length == 1) {
+            // First, try to parse this rule as a rule without weekdays
+            let timeranges = OH.ParseHhmmRanges(rule);
+            let weekdays = [0, 1, 2, 3, 4, 5, 6];
+            return OH.multiply(weekdays, timeranges);
+        }
+
+        if (split.length == 2) {
+            const weekdays = OH.ParseWeekdayRanges(split[0]);
+            const timeranges = OH.ParseHhmmRanges(split[1]);
+            return OH.multiply(weekdays, timeranges);
+        }
+        throw `Could not parse rule: ${rule} has ${split.length} parts (expected one or two)`;
+    }
+
+
+    static Parse(rules: string) {
+        if (rules === undefined || rules === "") {
             return []
         }
 
-        const parts = str.toLowerCase().split(";");
         const ohs = []
 
-        function parseTime(hhmm) {
-            const spl = hhmm.trim().split(":");
-            return [Number(spl[0].trim()), Number(spl[1].trim())]
-        }
+        const split = rules.split(";");
 
-        for (const part of parts) {
-            if(part === ""){
+        for (const rule of split) {
+            if(rule === ""){
                 continue;
             }
             try {
-
-                const partSplit = part.trim().split(" ");
-                const weekday = OpeningHourUtils.daysIndexed[partSplit[0]]
-                const timings = partSplit[1].split("-");
-                const start = parseTime(timings[0])
-                const end = parseTime(timings[1]);
-
-                const oh: OpeningHour = {
-                    weekday: weekday,
-                    startHour: start[0],
-                    startMinutes: start[1],
-                    endHour: end[0],
-                    endMinutes: end[1],
-                }
-                ohs.push(oh);
-
+                ohs.push(...OH.ParseRule(rule));
             } catch (e) {
-                console.error("Could not parse opening hours part", part, ", skipping it due to ", e)
+                console.error("Could not parse ", rule, ": ", e)
             }
         }
 

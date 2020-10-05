@@ -13,7 +13,7 @@ export default class T {
         if (failures.length == 0) {
             console.log("All tests done!")
         } else {
-            console.warn(failures.length, "tests failedd :(")
+            console.warn(failures.length, "tests failed :(")
             console.log("Failed tests: ", failures.join(","))
         }
     }

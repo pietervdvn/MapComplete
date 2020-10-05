@@ -8,19 +8,19 @@ import {UIElement} from "../../UIElement";
  * This is the base-table which is selectable by hovering over it.
  * It will genarate the currently selected opening hour.
  */
-export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
+export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]> {
     public readonly IsSelected: UIEventSource<boolean>;
     private readonly weekdays: UIEventSource<UIElement[]>;
 
     public static readonly days = ["Maan", "Din", "Woe", "Don", "Vrij", "Zat", "Zon"];
 
-    private readonly source: UIEventSource<OpeningHour>;
+    private readonly source: UIEventSource<OpeningHour[]>;
 
 
-    constructor(weekdays: UIEventSource<UIElement[]>, source?: UIEventSource<OpeningHour>) {
+    constructor(weekdays: UIEventSource<UIElement[]>, source?: UIEventSource<OpeningHour[]>) {
         super(weekdays);
         this.weekdays = weekdays;
-        this.source = source ?? new UIEventSource<OpeningHour>(undefined);
+        this.source = source ?? new UIEventSource<OpeningHour[]>([]);
         this.IsSelected = new UIEventSource<boolean>(false);
         this.SetStyle("width:100%;height:100%;display:block;");
 
@@ -105,8 +105,9 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
                     oh.endHour = 24;
                     oh.endMinutes = 0;
                 }
-                self.source.setData(oh);
+                self.source.data.push(oh);
             }
+            self.source.ping();
 
             // Clear the highlighting
             for (let i = 1; i < table.rows.length; i++) {
@@ -229,11 +230,11 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour> {
 
     }
 
-    IsValid(t: OpeningHour): boolean {
+    IsValid(t: OpeningHour[]): boolean {
         return true;
     }
 
-    GetValue(): UIEventSource<OpeningHour> {
+    GetValue(): UIEventSource<OpeningHour[]> {
         return this.source;
     }
 

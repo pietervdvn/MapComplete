@@ -17,13 +17,6 @@ body {
     position: absolute;
     bottom: 25px;
     right: 50px;
-    z-index: 999; /*Just below leaflets zoom*/
-    background-color: white;
-    border-radius: 5px;
-    border: solid 2px #0005;
-    cursor: pointer;
-    width: 43px;
-    height: 43px;
 }
 
 #geolocate-button img {

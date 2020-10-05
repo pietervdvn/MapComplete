@@ -26,7 +26,6 @@ export default class OpeningHoursRange extends UIElement {
             self.InnerUpdate(el);
         })
 
-
         this._deleteRange = new FixedUiElement("<img src='./assets/delete.svg'>")
             .SetClass("oh-delete-range")
             .onClick(() => {

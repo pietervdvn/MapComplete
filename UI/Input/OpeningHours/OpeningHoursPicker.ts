@@ -1,6 +1,6 @@
 import {UIElement} from "../../UIElement";
 import {InputElement} from "../InputElement";
-import {OpeningHour, OpeningHourUtils} from "../../../Logic/OpeningHours";
+import {OpeningHour, OH} from "../../../Logic/OpeningHours";
 import {UIEventSource} from "../../../Logic/UIEventSource";
 import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
 import OpeningHoursRange from "./OpeningHoursRange";
@@ -17,23 +17,16 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
     constructor(ohs: UIEventSource<OpeningHour[]> = new UIEventSource<OpeningHour[]>([])) {
         super();
         this._ohs = ohs;
-        this._backgroundTable = new OpeningHoursPickerTable(this._weekdays);
+        this._backgroundTable = new OpeningHoursPickerTable(this._weekdays, this._ohs);
         const self = this;
         
-        this._backgroundTable.GetValue().addCallback(oh => {
-            if (oh) {
-                ohs.data.push(oh);
-                ohs.ping();
-            }
-        });
         
         this._ohs.addCallback(ohs => {
-            self._ohs.setData(OpeningHourUtils.MergeTimes(ohs));
+            self._ohs.setData(OH.MergeTimes(ohs));
         })
 
-        ohs.addCallback(ohs => {
+        ohs.addCallbackAndRun(ohs => {
             const perWeekday: UIElement[][] = [];
-
             for (let i = 0; i < 7; i++) {
                 perWeekday[i] = [];
             }
@@ -41,7 +34,7 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
             for (const oh of ohs) {
                 const source = new UIEventSource<OpeningHour>(oh)
                 source.addCallback(_ => {
-                    self._ohs.setData(OpeningHourUtils.MergeTimes(self._ohs.data))
+                    self._ohs.setData(OH.MergeTimes(self._ohs.data))
                 })
                 const r = new OpeningHoursRange(source);
                 perWeekday[oh.weekday].push(r);
@@ -51,7 +44,6 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
                 self._weekdays.data[i] = new Combine(perWeekday[i]);
             }
             self._weekdays.ping();
-
 
         });
 

@@ -1,7 +1,5 @@
 import {UIElement} from "../UI/UIElement";
-
 UIElement.runningFromConsole = true;
-
 import {equal} from "assert";
 import Translation from "../UI/i18n/Translation";
 import T from "./TestHelper";
@@ -9,11 +7,10 @@ import {FromJSON} from "../Customizations/JSON/FromJSON";
 import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
-import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {TagRendering} from "../UI/TagRendering";
-import {Basemap} from "../Logic/Leaflet/Basemap";
-import {OpeningHour, OpeningHourUtils} from "../Logic/OpeningHours";
+import {OH, OpeningHour} from "../Logic/OpeningHours";
+
 
 
 new T([
@@ -140,7 +137,7 @@ new T([
                 endMinutes: 0
             };
             
-            const merged = OpeningHourUtils.MergeTimes([oh0, oh1]);
+            const merged = OH.MergeTimes([oh0, oh1]);
             const r = merged[0];
             equal( merged.length, 1);
             equal(r.startHour,10 );
@@ -165,12 +162,122 @@ new T([
                 endMinutes: 0
             };
 
-            const merged = OpeningHourUtils.MergeTimes([oh0, oh1]);
+            const merged = OH.MergeTimes([oh0, oh1]);
             const r = merged[0];
             equal( merged.length, 1);
             equal(r.startHour,10 );
             equal(r.endHour, 12)
 
         }
-    ]
+    ],
+    ["Parse OH 1",() => {
+        const rules = OH.ParseRule("11:00-19:00");
+        equal(rules.length, 7);
+        equal(rules[0].weekday, 0);
+        equal(rules[0].startHour, 11);
+        equal(rules[3].endHour, 19);
+
+    }],
+    ["Parse OH 2",() => {
+        const rules = OH.ParseRule("Mo-Th 11:00-19:00");
+        equal(rules.length, 4);
+        equal(rules[0].weekday, 0);
+        equal(rules[0].startHour, 11);
+        equal(rules[3].endHour, 19);
+    }],
+    ["JOIN OH 1",() => {
+        const rules = OH.ToString([
+            {
+                weekday: 0,
+                endHour: 12,
+                endMinutes: 0,
+                startHour: 10,
+                startMinutes: 0
+            },
+            {
+                weekday: 0,
+                endHour: 17,
+                endMinutes: 0,
+                startHour: 13,
+                startMinutes: 0
+            },
+
+
+            {
+                weekday: 1,
+                endHour: 17,
+                endMinutes: 0,
+                startHour: 13,
+                startMinutes: 0
+            },{
+                weekday: 1,
+                endHour: 12,
+                endMinutes: 0,
+                startHour: 10,
+                startMinutes: 0
+            },
+
+        ]);
+        equal(rules, "Mo-Tu 10:00-12:00, 13:00-17:00;");
+    }],
+    ["JOIN OH 2",() => {
+        const rules = OH.ToString([
+
+            {
+                weekday: 1,
+                endHour: 17,
+                endMinutes: 0,
+                startHour: 13,
+                startMinutes: 0
+            },{
+                weekday: 1,
+                endHour: 12,
+                endMinutes: 0,
+                startHour: 10,
+                startMinutes: 0
+            },
+
+        ]);
+        equal(rules, "Tu 10:00-12:00, 13:00-17:00;");
+    }],
+    ["JOIN OH 3",() => {
+        const rules = OH.ToString([
+
+            {
+                weekday: 3,
+                endHour: 17,
+                endMinutes: 0,
+                startHour: 13,
+                startMinutes: 0
+            },{
+                weekday: 1,
+                endHour: 12,
+                endMinutes: 0,
+                startHour: 10,
+                startMinutes: 0
+            },
+
+        ]);
+        equal(rules, "Tu 10:00-12:00; Th 13:00-17:00;");
+    }],
+    ["JOIN OH 3",() => {
+        const rules = OH.ToString([
+
+            {
+                weekday: 6,
+                endHour: 17,
+                endMinutes: 0,
+                startHour: 13,
+                startMinutes: 0
+            },{
+                weekday: 1,
+                endHour: 12,
+                endMinutes: 0,
+                startHour: 10,
+                startMinutes: 0
+            },
+
+        ]);
+        equal(rules, "Tu 10:00-12:00; Sucons 13:00-17:00;");
+    }]
 ]);

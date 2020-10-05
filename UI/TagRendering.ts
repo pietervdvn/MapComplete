@@ -71,8 +71,8 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     }) {
         super(tags);
         this.ListenTo(Locale.language);
-        this.ListenTo(this._questionSkipped);
         this.ListenTo(this._editMode);
+        this.ListenTo(this._questionSkipped);
         this.ListenTo(State.state?.osmConnection?.userDetails);
 
         const self = this;
