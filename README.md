@@ -30,7 +30,7 @@ You can create [your own theme too](https://pietervdvn.github.io/MapComplete/cus
 - [Buurtnatuur.be](http://buurtnatuur.be), developed for the Belgian [Green party](https://www.groen.be/). They also funded the initial development!
 - [Cyclofix](https://pietervdvn.github.io/MapComplete/index.html?layout=cyclofix), further development on [Open Summer of Code](https://summerofcode.be/) funded by [Brussels Mobility](https://mobilite-mobiliteit.brussels/en). Landing page at https://cyclofix.osm.be/
 - [Bookcases](https://pietervdvn.github.io/MapComplete/index.html?quests=bookcases#element) cause I like to collect them.
-- [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=metamap&z=14&lat=50.650&lon=4.2668#element), after a tweet
+- [Map of Maps](https://pietervdvn.github.io/MapComplete/index.html?layout=maps&z=14&lat=50.650&lon=4.2668#element), after a tweet
 
 There are plenty more. Discover them in the app.
 
