@@ -3,6 +3,7 @@ import {OpeningHour} from "../../../Logic/OpeningHours";
 import {UIEventSource} from "../../../Logic/UIEventSource";
 import {Utils} from "../../../Utils";
 import {UIElement} from "../../UIElement";
+import Translations from "../../i18n/Translations";
 
 /**
  * This is the base-table which is selectable by hovering over it.
@@ -12,7 +13,17 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     public readonly IsSelected: UIEventSource<boolean>;
     private readonly weekdays: UIEventSource<UIElement[]>;
 
-    public static readonly days = ["Maan", "Din", "Woe", "Don", "Vrij", "Zat", "Zon"];
+    public static readonly days: UIElement[] =
+        [
+            Translations.t.general.weekdays.abbreviations.monday,
+            Translations.t.general.weekdays.abbreviations.tuesday,
+            Translations.t.general.weekdays.abbreviations.wednesday,
+            Translations.t.general.weekdays.abbreviations.thursday,
+            Translations.t.general.weekdays.abbreviations.friday,
+            Translations.t.general.weekdays.abbreviations.saturday,
+            Translations.t.general.weekdays.abbreviations.sunday
+        ]
+
 
     private readonly source: UIEventSource<OpeningHour[]>;
 
@@ -48,7 +59,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half"><div class="oh-timecell-inner"></div></td>`, 7) +
                 '</tr>';
         }
-        let days = OpeningHoursPickerTable.days.join("</th><th width='14%'>");
+        let days = OpeningHoursPickerTable.days.map(day => day.Render()).join("</th><th width='14%'>");
         return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th width='14%'>${days}</th></tr>${rows}</table>`;
     }
 

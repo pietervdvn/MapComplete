@@ -807,7 +807,81 @@ export default class Translations {
                 "en": "Zoom in to see this layer",
                 "nl": "Vergroot de kaart om deze laag te zien",
                 "de": "Vergrößern, um diese Ebene zu sehen"
-            })
+            }),
+            weekdays: {
+                abbreviations:{
+                    monday: new T({
+                        "en": "Mon",
+                        "nl": "Maan",
+                        "fr": "Lun",
+                    }),
+                    tuesday: new T({
+                        "en": "Tue",
+                        "nl": "Din",
+                        "fr": "Mar",
+                    }),
+                    wednesday: new T({
+                        "en": "Wed",
+                        "nl": "Woe",
+                        "fr": "Mercr",
+                    }),
+                    thursday: new T({
+                        "en": "Thu",
+                        "nl": "Don",
+                        "fr": "Jeudi",
+                    }),
+                    friday: new T({
+                        "en": "Fri",
+                        "nl": "Vrij",
+                        "fr": "Vendr",
+                    }),
+                    saturday: new T({
+                        "en": "Sat",
+                        "nl": "Zat",
+                        "fr": "Sam",
+                    }),
+                    sunday: new T({
+                        "en": "Sun",
+                        "nl": "Zon",
+                        "fr": "Dim",
+                    })
+                },
+                monday: new T({
+                    "en": "Monday",
+                    "nl": "Maandag",
+                    "fr": "Lundi",
+                }),
+                tuesday: new T({
+                    "en": "Tuesdday",
+                    "nl": "Dinsdag",
+                    "fr": "Mardi",
+                }),
+                wednesday: new T({
+                    "en": "Wednesday",
+                    "nl": "Woensdag",
+                    "fr": "Mercredi",
+                }),
+                thursday: new T({
+                    "en": "Thursday",
+                    "nl": "Donderdag",
+                    "fr": "Jeudi",
+                }),
+                friday: new T({
+                    "en": "Friday",
+                    "nl": "Vrijdag",
+                    "fr": "Vendredi",
+                }),
+                saturday: new T({
+                    "en": "Saturday",
+                    "nl": "Zaterdag",
+                    "fr": "Samedi",
+                }),
+                sunday: new T({
+                    "en": "Sunday",
+                    "nl": "Zondag",
+                    "fr": "Dimance",
+                })
+            }
         },
         favourite: {
             title: new T({

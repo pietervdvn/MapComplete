@@ -278,6 +278,13 @@ new T([
             },
 
         ]);
-        equal(rules, "Tu 10:00-12:00; Sucons 13:00-17:00;");
+        equal(rules, "Tu 10:00-12:00; Su 13:00-17:00;");
+    }],
+    ["OH 24/7",() => {
+        const rules = OH.Parse("24/7");
+        equal(rules.length, 7);
+        equal(rules[0].startHour, 0);
+        const asStr = OH.ToString(rules);
+        equal(asStr, "24/7");
     }]
 ]);

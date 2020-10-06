@@ -29,6 +29,9 @@ export class OH {
         const partsPerWeekday: string [][] = [[], [], [], [], [], [], []];
 
         function hhmm(h, m) {
+            if (h == 24) {
+                return "00:00";
+            }
             return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
         }
 
@@ -58,7 +61,7 @@ export class OH {
                 );
             }
         }
-        
+
         for (; rangeEnd < 7; rangeEnd++) {
 
             if (stringPerWeekday[rangeStart] != stringPerWeekday[rangeEnd]) {
@@ -69,7 +72,11 @@ export class OH {
         }
         pushRule();
 
-        return rules.join("; ") + ";"
+        const oh = rules.join("; ") + ";"
+        if (oh === "Mo-Su 00:00-00:00;") {
+            return "24/7"
+        }
+        return oh;
     }
 
     /**
@@ -184,6 +191,10 @@ export class OH {
         endHour: number,
         endMinutes: number
     } {
+        if(hhmmhhmm == "off"){
+            return null;
+        }
+        
         const timings = hhmmhhmm.split("-");
         const start = OH.parseHHMM(timings[0])
         const end = OH.parseHHMM(timings[1]);
@@ -205,6 +216,7 @@ export class OH {
             .map(s => s.trim())
             .filter(str => str !== "")
             .map(OH.parseHHMMRange)
+            .filter(v => v != null)
     }
 
     private static ParseWeekday(weekday: string): number {
@@ -252,6 +264,10 @@ export class OH {
     }
 
     public static ParseRule(rule: string): OpeningHour[] {
+        if (rule.trim() == "24/7") {
+            return OH.multiply([0, 1, 2, 3, 4, 5, 6], [{startHour: 0, startMinutes: 0, endHour: 24, endMinutes: 0}]);
+        }
+
         const split = rule.trim().replace(/, */g, ",").split(" ");
         if (split.length == 1) {
             // First, try to parse this rule as a rule without weekdays
