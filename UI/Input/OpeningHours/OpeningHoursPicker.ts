@@ -7,7 +7,7 @@ import OpeningHoursRange from "./OpeningHoursRange";
 import Combine from "../../Base/Combine";
 
 export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
-    private readonly _ohs: UIEventSource<OpeningHour[]>;
+    private readonly _ohs: UIEventSource<OpeningHour[]>;    
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _backgroundTable: OpeningHoursPickerTable;
@@ -36,8 +36,8 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
                 source.addCallback(_ => {
                     self._ohs.setData(OH.MergeTimes(self._ohs.data))
                 })
-                const r = new OpeningHoursRange(source);
-                perWeekday[oh.weekday].push(r);
+                const r = new OpeningHoursRange(source, `oh-table-${this._backgroundTable.id}`);
+                perWeekday[oh.weekday].push(r); 
             }
 
             for (let i = 0; i < 7; i++) {

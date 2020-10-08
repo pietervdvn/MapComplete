@@ -2,6 +2,7 @@ import {UIElement} from "../UIElement";
 import {InputElement} from "./InputElement";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import Combine from "../Base/Combine";
 
 export class TextField extends InputElement<string> {
     private readonly value: UIEventSource<string>;
@@ -12,12 +13,14 @@ export class TextField extends InputElement<string> {
     private readonly _textAreaRows: number;
 
     private readonly _isValid: (string, country) => boolean;
+    private _label: UIElement;
 
     constructor(options?: {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
         textArea?: boolean,
         htmlType?: string,
+        label?: UIElement,
         textAreaRows?: number,
         isValid?: ((s: string, country?: string) => boolean)
     }) {
@@ -28,6 +31,7 @@ export class TextField extends InputElement<string> {
         this._htmlType = options.textArea ? "area" : (options.htmlType ?? "text");
         this.value = options?.value ?? new UIEventSource<string>(undefined);
 
+        this._label = options.label;
         this._textAreaRows = options.textAreaRows;
         this._isValid = options.isValid ?? ((str, country) => true);
 
@@ -64,10 +68,18 @@ export class TextField extends InputElement<string> {
         }
 
         const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
-
-        return `<div id="${this.id}"><form onSubmit='return false' class='form-text-field'>` +
-            `<input type='${this._htmlType}' placeholder='${placeholder}' id='txt-${this.id}'/>` +
-            `</form></div>`;
+        let label = "";
+        if (this._label != undefined) {
+            label = this._label.Render();
+        }
+        return new Combine([
+            `<div id="${this.id}">`,
+            `<form onSubmit='return false' class='form-text-field'>`,
+            label,
+            `<input type='${this._htmlType}' placeholder='${placeholder}' id='txt-${this.id}'/>`,
+            `</form>`,
+            `</div>`
+        ]).Render();
     }
     
     InnerUpdate() {

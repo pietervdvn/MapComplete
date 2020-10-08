@@ -881,6 +881,24 @@ export default class Translations {
                     "nl": "Zondag",
                     "fr": "Dimance",
                 })
+            },
+            opening_hours: {
+                open_during_ph: new T({
+                    "nl": "Op een feestdag is deze zaak",
+                    "en":"During a public holiday, this amenity is"
+                }),
+                opensAt: new T({
+                    "en":"from",
+                    "nl":"vanaf"
+                }),openTill: new T({
+                    "en":"till",
+                    "nl":"tot"
+                }),
+                not_all_rules_parsed: new T({
+                    "en":"The openin hours of this shop are complicated. The following rules are ignored in the input element:"
+                })
+
+
             }
         },
         favourite: {

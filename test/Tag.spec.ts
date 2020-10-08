@@ -10,6 +10,7 @@ import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {TagRendering} from "../UI/TagRendering";
 import {OH, OpeningHour} from "../Logic/OpeningHours";
+import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
 
 
 
@@ -218,7 +219,7 @@ new T([
             },
 
         ]);
-        equal(rules, "Mo-Tu 10:00-12:00, 13:00-17:00;");
+        equal(rules, "Mo-Tu 10:00-12:00, 13:00-17:00");
     }],
     ["JOIN OH 2",() => {
         const rules = OH.ToString([
@@ -238,7 +239,7 @@ new T([
             },
 
         ]);
-        equal(rules, "Tu 10:00-12:00, 13:00-17:00;");
+        equal(rules, "Tu 10:00-12:00, 13:00-17:00");
     }],
     ["JOIN OH 3",() => {
         const rules = OH.ToString([
@@ -258,7 +259,7 @@ new T([
             },
 
         ]);
-        equal(rules, "Tu 10:00-12:00; Th 13:00-17:00;");
+        equal(rules, "Tu 10:00-12:00; Th 13:00-17:00");
     }],
     ["JOIN OH 3",() => {
         const rules = OH.ToString([
@@ -278,7 +279,7 @@ new T([
             },
 
         ]);
-        equal(rules, "Tu 10:00-12:00; Su 13:00-17:00;");
+        equal(rules, "Tu 10:00-12:00; Su 13:00-17:00");
     }],
     ["OH 24/7",() => {
         const rules = OH.Parse("24/7");
@@ -286,5 +287,17 @@ new T([
         equal(rules[0].startHour, 0);
         const asStr = OH.ToString(rules);
         equal(asStr, "24/7");
+    }],
+    ["OH Th[-1] off",() => {
+        const rules = OH.ParseRule("Th[-1] off");
+        equal(rules, null);
+    }],
+    ["OHNo parsePH 12:00-17:00",() => {
+        const rules = OH.ParseRule("PH 12:00-17:00");
+        equal(rules, null);
+    }],
+    ["OH Parse PH 12:00-17:00",() => {
+        const rules = PublicHolidayInput.LoadValue("PH 12:00-17:00");
+        equal(rules.mode, " ");
     }]
 ]);

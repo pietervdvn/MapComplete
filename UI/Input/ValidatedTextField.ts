@@ -8,8 +8,7 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
-import OpeningHoursPicker from "./OpeningHours/OpeningHoursPicker";
-import {OpeningHour, OH} from "../../Logic/OpeningHours";
+import OpeningHoursInput from "./OpeningHours/OpeningHoursInput";
 
 interface TextFieldDef {
     name: string,
@@ -150,18 +149,7 @@ export default class ValidatedTextField {
             (s, country) => true, // TODO
             str => str, 
             (value) => {
-                
-                const sourceMapped = value.map(OH.Parse, [], OH.ToString);
-                
-                const input = new InputElementMap<OpeningHour[], string>(new OpeningHoursPicker(sourceMapped),
-                    (a, b) => a === b,
-                    ohs =>  OH.ToString(ohs),
-                    str => OH.Parse(str)
-                )
-                input.GetValue().addCallback(latest => {
-                    value.setData(latest);
-                })
-                return input;
+                return new OpeningHoursInput(value);
             }
         )
     ]

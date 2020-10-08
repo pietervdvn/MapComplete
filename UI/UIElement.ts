@@ -101,7 +101,7 @@ export abstract class UIElement extends UIEventSource<string> {
             const self = this;
             element.onclick = (e) => {
                 // @ts-ignore
-                if (e.consumed) {
+                if(e.consumed){
                     return;
                 }
                 self._onClick();

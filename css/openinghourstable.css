@@ -15,14 +15,14 @@
     vertical-align: top;
 }
 
-.oh-timecell-inner:hover {
-    background-color: #ffd1be;
+.oh-timecell:hover {
+    background-color: #ffd1be !important;
 }
 
 .oh-timecell {
     background-color: white;
     border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border-right: 1px solid #ccc;
     position: relative;
     box-sizing: border-box;
 }
@@ -31,27 +31,19 @@
     background-color: orange;
 }
 
-.oh-timecell-half  .oh-timecell-inner{
-    border-top: 0.5px solid #eee
+.oh-timecell-half{
+    background-color: aliceblue;
 }
 
-.oh-timecell-half.oh-timecell-selected  .oh-timecell-inner {
-    border-top: 0.5px solid lightsalmon;
-}
-
-.oh-timecell-full  .oh-timecell-inner{
-    border-top: 1px solid #ccc
-}
-
-.oh-timecell-full.oh-timecell-selected .oh-timecell-inner {
-    border-top: 1px solid lightsalmon;
+.oh-timecell-half.oh-timecell-selected {
+   background-color:  lightsalmon;
 }
 
 .oh-left-col {
-    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    margin: 0;
     width: 0.5em;
     font-size: large;
-    margin: 0;
     padding: 0;
     padding-right: 0.2em;
     background: #ddd;
@@ -60,14 +52,6 @@
 .oh-draggable-header {
     background-color: blue;
     height: 0.5em;
-}
-
-.oh-timecell-inner {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: absolute;
 }
 
 .oh-timerange {
@@ -119,4 +103,8 @@
 .oh-delete-range img {
     height: 100%;
     max-width: 2em;
+}
+
+.oh-timerange-label{
+    color: white;
 }

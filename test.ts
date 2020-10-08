@@ -1,23 +1,17 @@
 //*
-import OpeningHoursPicker from "./UI/Input/OpeningHours/OpeningHoursPicker";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {OH} from "./Logic/OpeningHours";
 
-const picker = new OpeningHoursPicker();
-new VariableUiElement(picker.GetValue().map(OH.ToString)).AttachTo("extradiv");
-picker.AttachTo("maindiv");
+import OpeningHoursVisualization from "./UI/OhVisualization";
+import {UIEventSource} from "./Logic/UIEventSource";
+
+new OpeningHoursVisualization(new UIEventSource<any>({
+        opening_hours: "mo-fr 09:00-17:00; Sa 09:00-17:00 'by appointment'; PH off; Th[1] off;",
+        _country: "be",
+        _lat: "51.2",
+        _lon: "3.2"
+    }
+)).AttachTo("maindiv")
 
 
-window.setTimeout(() => {
-picker.GetValue().setData([{
-    weekday: 1,
-    startHour: 11,
-    startMinutes: 0,
-    endHour: 17,
-    endMinutes: 0
-}]);
-    
-}, 1000)
 /*/
 
 

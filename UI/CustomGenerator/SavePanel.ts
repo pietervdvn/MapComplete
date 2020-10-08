@@ -49,7 +49,7 @@ export default class SavePanel extends UIElement {
 
     InnerRender(): string {
         return new Combine([
-            "<h3>Saving</h3>",
+            "<h3>Save your theme</h3>",
             this.lastSaveEl,
             "<h3>JSON configuration</h3>",
             "The url hash is actually no more then a BASE64-encoding of the below JSON. This json contains the full configuration of the theme.<br/>" +

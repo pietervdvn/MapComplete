@@ -48,18 +48,15 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
 
             rows += `<tr><td rowspan="2" class="oh-left-col oh-timecell-full">${hs}:00</td>` +
-                Utils.Times(weekday => {
-                    let innerContent = "";
-                    if (h == 0) {
-                        innerContent =  self.weekdays.data[weekday]?.Render() ?? "";
-                    }
-                    return `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full"><div class="oh-timecell-inner"></div>${innerContent}</td>`;
-                }, 7) +
-                '</tr><tr>' +
-                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half"><div class="oh-timecell-inner"></div></td>`, 7) +
+                Utils.Times(weekday =>  `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full"></td>`, 7) +
+                '</tr><tr>' +   
+                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half"></td>`, 7) +
                 '</tr>';
         }
-        let days = OpeningHoursPickerTable.days.map(day => day.Render()).join("</th><th width='14%'>");
+        let days = OpeningHoursPickerTable.days.map((day, i) => {
+            const innerContent  =  self.weekdays.data[i]?.Render() ?? "";
+            return day.Render() + "<span style='width:100%; display:block; position: relative;'>"+innerContent+"</span>";
+        }).join("</th><th width='14%'>");
         return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th width='14%'>${days}</th></tr>${rows}</table>`;
     }
 
@@ -181,7 +178,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
         for (let i = 1; i < table.rows.length; i++) {
             let row = table.rows[i]
             for (let j = 0; j < row.cells.length; j++) {
-                let cell = row.cells[j].getElementsByClassName("oh-timecell-inner")[0] as HTMLElement
+                let cell = row.cells[j]
                 let offset = 0;
                 if (i % 2 == 1) {
                     if (j == 0) {
