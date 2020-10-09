@@ -160,7 +160,6 @@ export default class OpeningHoursVisualization extends UIElement {
 
         // ranges[0] are all ranges for monday
         const ranges = OpeningHoursVisualization.GetRanges(oh, lastMonday, nextSunday);
-        console.log(ranges)
         if (ranges.map(r => r.length).reduce((a, b) => a + b, 0) == 0) {
             // Closed!
             const opensAtDate = oh.getNextChange();
