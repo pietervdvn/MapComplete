@@ -27,9 +27,9 @@ export default class OpeningHoursInput extends InputElement<string> {
     constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
         super();
 
-        const rulesFromOhPicker = value.map(OH.Parse);
-
+      
         const leftoverRules = value.map<string[]>(str => {
+            console.log("Leftovers?",str)
             if (str === undefined) {
                 return []
             }
@@ -46,8 +46,11 @@ export default class OpeningHoursInput extends InputElement<string> {
             }
             return leftOvers;
         })
+        // NOte: MUST be bound AFTER the leftover rules!
+        const rulesFromOhPicker = value.map(OH.Parse);
 
         const ph = value.map<string>(str => {
+            console.log("PH RULE?", ph)
             if (str === undefined) {
                 return ""
             }
@@ -62,6 +65,7 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._phSelector = new PublicHolidayInput(ph);
 
         function update() {
+            console.log("UPdating")
             let rules = OH.ToString(rulesFromOhPicker.data);
             if (leftoverRules.data.length != 0) {
                 rules += ";" + leftoverRules.data.join(";")
@@ -83,7 +87,7 @@ export default class OpeningHoursInput extends InputElement<string> {
             }
             return new Combine([
                 Translations.t.general.opening_hours.not_all_rules_parsed,
-                    new FixedUiElement(leftovers.map(r => `${r}<br/>`).join("")                    ).SetClass("subtle")
+                    new FixedUiElement(leftovers.map(r => `${r}<br/>`).join("")).SetClass("subtle")
             ]).Render();
 
         }))

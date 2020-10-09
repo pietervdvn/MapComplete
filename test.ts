@@ -1,15 +1,15 @@
 //*
 
-import OpeningHoursVisualization from "./UI/OhVisualization";
-import {UIEventSource} from "./Logic/UIEventSource";
 
-new OpeningHoursVisualization( new UIEventSource<any>({
-        opening_hours: "2000 Dec 21 10:00-12:00;",
-        _country: "be",
-        _lat: "51.2",
-        _lon: "3.2"
-    }
-),  'opening_hours').AttachTo("maindiv")
+import {UIEventSource} from "./Logic/UIEventSource";
+import OpeningHoursInput from "./UI/Input/OpeningHours/OpeningHoursInput";
+
+const oh = "Sep 1-Feb 28 Mo-Th 08:00-12:00, 13:30-17:30; Mar 1-Aug 31 Mo-Fr 07:00-12:00, 13:30-17:30; PH off"
+
+const source = new UIEventSource<string>("")
+new OpeningHoursInput(source).AttachTo('maindiv')
+console.log("SEtting ",oh)
+source.setData(oh)
 
 
 /*/

@@ -47,6 +47,12 @@
       "freeform": {
         "key": "email"
       }
+    },
+    {
+      "render": "{opening_hours_table(opening_hours)}",
+      "freeform": {
+        "key": "opening_hours"
+      }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
