@@ -907,8 +907,8 @@ export default class Translations {
                     "nl": "Gesloten"
                 }),
                 ph_not_known: new T({
-                    "en": "unknown",
-                    "nl": "niet gekend"
+                    "en": " ",
+                    "nl": " "
                 }),
                 ph_closed: new T({
                     "en": "closed",
