@@ -888,14 +888,34 @@ export default class Translations {
                     "en":"During a public holiday, this amenity is"
                 }),
                 opensAt: new T({
-                    "en":"from",
-                    "nl":"vanaf"
-                }),openTill: new T({
-                    "en":"till",
-                    "nl":"tot"
+                    "en": "from",
+                    "nl": "vanaf"
+                }), openTill: new T({
+                    "en": "till",
+                    "nl": "tot"
                 }),
                 not_all_rules_parsed: new T({
-                    "en":"The openin hours of this shop are complicated. The following rules are ignored in the input element:"
+                    "en": "The openin hours of this shop are complicated. The following rules are ignored in the input element:"
+                }),
+                closed_until: new T({
+                    "en": "Closed until {date}",
+                    "nl": "Gesloten - open op {date}"
+                }),
+
+                closed_permanently: new T({
+                    "en": "Closed - no opening day known",
+                    "nl": "Gesloten"
+                }),
+                ph_not_known: new T({
+                    "en": "unknown",
+                    "nl": "niet gekend"
+                }),
+                ph_closed: new T({
+                    "en": "closed",
+                    "nl": "gesloten"
+                }), ph_open: new T({
+                    "en": "opened",
+                    "nl": "open"
                 })
 
 
@@ -952,7 +972,10 @@ export default class Translations {
         if (typeof (s) === "string") {
             return new Translation({en: s});
         }
-        return s;
+        if (s instanceof Translation) {
+            return s;
+        }
+        throw "??? Not a valid translation"
     }
 
     public static CountTranslations() {

@@ -8,7 +8,7 @@ export default class Translation extends UIElement {
 
     private static forcedLanguage = undefined;
 
-    public Subs(text: any) {
+    public Subs(text: any): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
             let template: string = this.translations[lang];
@@ -16,7 +16,7 @@ export default class Translation extends UIElement {
                 const combined = [];
                 const parts = template.split("{" + k + "}");
                 const el: string | UIElement = text[k];
-                if(el === undefined){
+                if (el === undefined) {
                     continue;
                 }
                 let rtext: string = "";
@@ -40,9 +40,35 @@ export default class Translation extends UIElement {
 
     }
 
+    public EvaluateSpecialComponents(knownSpecials: { funcName: string, constr: ((call: string) => UIElement) }[]): UIElement {
+        const newTranslations = {};
+        for (const lang in this.translations) {
+            let template: string = this.translations[lang];
+
+            for (const knownSpecial of knownSpecials) {
+
+
+                const combined = [];
+                const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*)\\)}(.*)`);
+                if (matched === null) {
+                    continue;
+                }
+                const partBefore = matched[1];
+                const argument = matched[2];
+                const partAfter = matched[3];
+
+                const element = knownSpecial.constr(argument).Render();
+
+                template = partBefore + element + partAfter;
+            }
+            newTranslations[lang] = template;
+        }
+        return new Translation(newTranslations);
+    }
+
 
     get txt(): string {
-        if(this.translations["*"]){
+        if (this.translations["*"]) {
             return this.translations["*"];
         }
         const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
@@ -59,6 +85,7 @@ export default class Translation extends UIElement {
         console.error("Missing language ",Locale.language.data,"for",this.translations)
         return undefined;
     }
+
 
     InnerRender(): string {
         return this.txt

@@ -23,9 +23,9 @@ export default class PublicHolidayInput extends InputElement<string> {
         const dropdown = new DropDown(
             Translations.t.general.opening_hours.open_during_ph,
             [
-                {shown: "unknown", value: ""},
-                {shown: "closed", value: "off"},
-                {shown: "opened", value: " "}
+                {shown: Translations.t.general.opening_hours.ph_not_known, value: ""},
+                {shown: Translations.t.general.opening_hours.ph_closed, value: "off"},
+                {shown:Translations.t.general.opening_hours.ph_open, value: " "}
             ]
         );
         this._dropdown = dropdown.SetStyle("display:inline-block;");

@@ -185,7 +185,8 @@
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
-        "key": "website"
+        "key": "website",
+        "type": "url"
       }
     },
     {
@@ -215,7 +216,7 @@
       }
     },
     {
-      "render": "Shop is open {opening_hours}",
+      "render": "{opening_hours_table(opening_hours)}",
       "question": "When is this shop opened?",
       "freeform": {
         "key": "opening_hours",

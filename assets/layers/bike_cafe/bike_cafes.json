@@ -196,6 +196,17 @@
         "key": "email",
         "type": "email"
       }
+    },
+    {
+      "question": {
+        "en": "When it this bike café opened?",
+        "nl": "Wanneer is dit fietscafé geopend?"
+      },
+      "render": "{opening_hours_table(opening_hours)}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,

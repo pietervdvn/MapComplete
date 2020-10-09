@@ -105,6 +105,119 @@
     max-width: 2em;
 }
 
-.oh-timerange-label{
+.oh-timerange-label {
     color: white;
+}
+
+
+/**** Opening hours visualization table ****/
+
+.ohviz-table {
+
+}
+
+.ohviz-range {
+    display: block;
+    background: #99e7ff;
+    position: absolute;
+    left: 0;
+    top: 5%;
+    height: 85%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: smaller;
+}
+
+.ohviz-today .ohviz-range {
+    border: 1.5px solid black;
+
+}
+
+.ohviz-day-off {
+    display: block;
+    background: repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 10px,
+            rgba(216, 235, 255, 0.5) 10px,
+            rgba(216, 235, 255, 0.5) 20px
+    );
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.ohviz-now {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    border: 1px solid black;
+    box-sizing: border-box
+}
+
+.ohviz-line {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    border-left: 1px solid #ccc;
+    box-sizing: border-box
+}
+
+
+.ohviz-time-indication > div {
+    position: relative;
+    background-color: white;
+    left: -50%;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    font-size: smaller;
+    border-radius: 0.3em;
+    border: 1px solid #ccc;
+
+}
+
+.ohviz-time-indication {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.ohviz-today {
+    background-color: #e5f5ff;
+}
+
+.ohviz-weekday {
+    padding-left: 0.5em;
+}
+
+
+.ohviz {
+    border-collapse: collapse;
+}
+
+.ohviz-container {
+    border: 0.5em solid #e5f5ff;
+    border-radius: 1em;
+    display: block;
+}
+
+.ohviz-closed {
+    padding: 1em;
+    background-color: #eee;
+    border-radius: 1em;
+    display: block;
 }

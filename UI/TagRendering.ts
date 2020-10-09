@@ -17,12 +17,13 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import ValidatedTextField from "./Input/ValidatedTextField";
 import CheckBoxes from "./Input/Checkboxes";
 import State from "../State";
+import SpecialVisualizations from "./SpecialVisualizations";
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private readonly _question: string | Translation;
-    private readonly _mapping: { k: TagsFilter, txt: string | UIElement, priority?: number }[];
+    private readonly _mapping: { k: TagsFilter, txt: string | Translation, priority?: number }[];
 
     private currentTags: UIEventSource<any>;
 
@@ -428,37 +429,19 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private RenderAnswer(): UIElement {
         const tags = TagUtils.proprtiesToKV(this._source.data);
 
-        let freeform: UIElement = new FixedUiElement("");
-        let freeformScore = -10;
-        if (this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined) {
-            freeform = this.ApplyTemplate(this._freeform.renderTemplate);
-            freeformScore = 0;
-        }
 
-
-        let highestScore = -100;
-        let highestTemplate = undefined;
         for (const oneOnOneElement of this._mapping) {
-            if (oneOnOneElement.k == null ||
-                oneOnOneElement.k.matches(tags)) {
-                // We have found a matching key -> we use the template, but only if it scores better
-                let score = oneOnOneElement.priority ??
-                    (oneOnOneElement.k === null ? -1 : 0);
-                if (score > highestScore) {
-                    highestScore = score;
-                    highestTemplate = oneOnOneElement.txt
-                }
+            if (oneOnOneElement.k.matches(tags)) {
+                // We have found a matching key -> we use this template
+                return this.ApplyTemplate(oneOnOneElement.txt);
             }
         }
 
-        if (freeformScore > highestScore) {
-            return freeform;
+        if (this._freeform !== undefined && this._source.data[this._freeform.key] !== undefined) {
+            return this.ApplyTemplate(this._freeform.renderTemplate);
         }
 
-        if (highestTemplate !== undefined) {
-            // we render the found template
-            return this.ApplyTemplate(highestTemplate);
-        }
+        return new FixedUiElement("");
     }
 
     InnerRender(): string {
@@ -531,13 +514,19 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         if (template === undefined || template === null) {
             return undefined;
         }
+        
+        const knownSpecials : {funcName: string, constr: ((arg: string) => UIElement)}[]= SpecialVisualizations.specialVisualizations.map(
+            special => ({
+                funcName: special.funcName,
+                constr: arg => special.constr(this.currentTags, arg)
+            })
+        )
+        
         return new VariableUiElement(this.currentTags.map(tags => {
-            const tr = Translations.WT(template);
-            if (tr.Subs === undefined) {
-                // This is a weird edge case
-                return tr.InnerRender();
-            }
-            return tr.Subs(tags).InnerRender()
+            return Translations.WT(template)
+                .Subs(tags)
+                .EvaluateSpecialComponents(knownSpecials)
+                .InnerRender()
         })).ListenTo(Locale.language);
     }
 
