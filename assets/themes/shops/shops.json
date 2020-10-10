@@ -1,0 +1,228 @@
+{
+  "id": "shops",
+  "title": {
+    "en": "Open Shop Map"
+  },
+  "shortDescription": {
+    "en": "An editable map with basic shop information"
+  },
+  "description": {
+    "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/shops/shop.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "shops",
+      "name": {
+        "en": "Shop"
+      },
+      "minzoom": 14,
+      "overpassTags": {
+        "and": [
+          "shop~*"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Shop"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": "{name}"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "shop!~yes"
+              ]
+            },
+            "then": {
+              "en": "{shop}"
+            }
+          }
+        ]
+      },
+      "description": {
+        "en": "A shop"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "This shop sellse {shop}"
+          },
+          "question": {
+            "en": "What does this shop sell?"
+          },
+          "freeform": {
+            "key": "shop"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "shop=convenience"
+                ]
+              },
+              "then": {
+                "en": "Convenience store"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=supermarket"
+                ]
+              },
+              "then": {
+                "en": "Supermarket"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=clothes"
+                ]
+              },
+              "then": {
+                "en": "Clothing store"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=hairdresser"
+                ]
+              },
+              "then": {
+                "en": "Hairdresser"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=bakery"
+                ]
+              },
+              "then": {
+                "en": "Bakery"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=car_repair"
+                ]
+              },
+              "then": {
+                "en": "Car repair (garage)"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "shop=car"
+                ]
+              },
+              "then": {
+                "en": "Car dealer"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "question": {
+            "en": "What is the phone number?"
+          },
+          "freeform": {
+            "key": "phone",
+            "type": "phone"
+          }
+        },
+        {
+          "render": {
+            "en": "<a href='{website}'>{website}</a>"
+          },
+          "question": {
+            "en": "What is the website of this shop?"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url"
+          }
+        },
+        {
+          "render": {
+            "en": "<a href='mailto:{email}'>{email}</a>"
+          },
+          "question": {
+            "en": "What is the email address of this shop?"
+          },
+          "freeform": {
+            "key": "email",
+            "type": "email"
+          }
+        },
+        {
+          "render": {
+            "en": "{opening_hours_table(opening_hours)}"
+          },
+          "question": {
+            "en": "What are the opening hours of this shop?"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/shops/shop.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "shop=yes"
+          ],
+          "title": {
+            "en": "Shop"
+          },
+          "description": {
+            "en": "Add a new shop"
+          }
+        }
+      ],
+      "wayHandling": 2
+    }
+  ],
+  "roamingRenderings": []
+}

@@ -11,6 +11,7 @@ import * as cyclofix from "../assets/themes/cyclofix/cyclofix.json"
 import * as buurtnatuur from "../assets/themes/buurtnatuur/buurtnatuur.json"
 import * as nature from "../assets/themes/nature/nature.json"
 import * as maps from "../assets/themes/maps/maps.json"
+import * as shops from "../assets/themes/shops/shops.json"
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import {StreetWidth} from "./StreetWidth/StreetWidth";
 
@@ -46,6 +47,7 @@ export class AllKnownLayouts {
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
         
+        FromJSON.LayoutFromJSON(shops),
         FromJSON.LayoutFromJSON(bookcases),
         FromJSON.LayoutFromJSON(aed),
         FromJSON.LayoutFromJSON(toilets),
