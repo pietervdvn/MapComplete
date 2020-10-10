@@ -975,6 +975,7 @@ export default class Translations {
         if (s instanceof Translation) {
             return s;
         }
+        console.error("Trying to Translation.WT, but got ",s)
         throw "??? Not a valid translation"
     }
 

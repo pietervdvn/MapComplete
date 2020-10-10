@@ -65,7 +65,7 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "This shop sellse {shop}"
+            "en": "This shop sells {shop}"
           },
           "question": {
             "en": "What does this shop sell?"

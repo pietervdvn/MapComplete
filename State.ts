@@ -200,7 +200,6 @@ export default class State {
         );
 
 
-
         this.installedThemes = this.osmConnection.preferencesHandler.preferences.map<{ layout: Layout, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: Layout, definition: string }[] = [];
             if (allPreferences === undefined) {
@@ -209,7 +208,7 @@ export default class State {
             for (const allPreferencesKey in allPreferences) {
                 const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
                 if (themename && themename[1] !== "") {
-                    const customLayout = State.state.osmConnection.GetLongPreference("installed-theme-" + themename[1]);
+                    const customLayout = self.osmConnection.GetLongPreference("installed-theme-" + themename[1]);
                     if(customLayout.data === undefined){
                         console.log("No data defined for ", themename[1]);
                         continue;

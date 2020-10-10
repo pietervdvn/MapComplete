@@ -48,7 +48,6 @@ export default class Translation extends UIElement {
             for (const knownSpecial of knownSpecials) {
 
 
-                const combined = [];
                 const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*)\\)}(.*)`);
                 if (matched === null) {
                     continue;

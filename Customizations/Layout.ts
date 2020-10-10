@@ -3,6 +3,7 @@ import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
 import State from "../State";
+import Translation from "../UI/i18n/Translation";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -50,12 +51,12 @@ export class Layout {
     constructor(
         id: string,
         supportedLanguages: string[],
-        title: UIElement | string,
+        title: Translation | string,
         layers: (LayerDefinition | string)[],
         startzoom: number,
         startLat: number,
         startLon: number,
-        welcomeMessage: UIElement | string,
+        welcomeMessage: Translation | string,
         gettingStartedPlzLogin: UIElement | string = new Combine([
             Translations.t.general.getStartedLogin
                 .SetClass("soft")
@@ -66,7 +67,7 @@ export class Layout {
         welcomeTail: UIElement | string = "",
     ) {
         this.supportedLanguages = supportedLanguages;
-        this.title = Translations.W(title)
+        this.title = Translations.WT(title)
         this.startLon = startLon;
         this.startLat = startLat;
         this.startzoom = startzoom;
