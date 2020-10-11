@@ -1,0 +1,58 @@
+{
+  "id": "bike_monitoring_station",
+  "name": {
+    "en": "Monitoring stations"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "and": [
+      "man_made=monitoring_station",
+      "monitoring:bicycle=yes"
+    ]
+  },
+  "title": {
+    "render": {
+      "nl": "Fietstelstation",
+      "en": "Bicycle counting station"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bicycle counting station {name}",
+          "nl": "Fietstelstation {name}"
+        }
+      },
+      {
+        "if": "ref~*",
+        "then": {
+          "en": "Bicycle counting station {ref}",
+          "nl": "Fietstelstation {ref}"
+        }
+      }
+    ]
+  },
+  "description": {},
+  "tagRenderings": [
+    {
+      "render": "<b>{live({url},{url:format},hour)}</b> cyclists last hour<br/><b>{live({url},{url:format},day)}</b> cyclists today<br/><b>{live({url},{url:format},year)}</b> cyclists this year<br/>",
+      "condition": {
+        "and": ["url~*","url:format~*"]
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/bike_monitoring_station/monitoring_station.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": []
+}

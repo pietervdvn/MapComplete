@@ -91,6 +91,14 @@ export class LayerUpdater {
 
         self.retries.setData(0);
         
+        let newIds = 1;
+        for (const feature of geojson.features) {
+            if(feature.properties.id === undefined){
+                feature.properties.id = "ext/"+newIds;
+                newIds++;
+            }
+        }
+        
         function renderLayers(layers: FilteredLayer[]) {
             if (layers.length === 0) {
                 self.runningQuery.setData(false);

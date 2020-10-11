@@ -17,6 +17,7 @@ import * as bike_repair_station from "../../assets/layers/bike_repair_station/bi
 import * as birdhides from "../../assets/layers/bird_hide/birdhides.json"
 import * as nature_reserve from "../../assets/layers/nature_reserve/nature_reserve.json"
 import * as bike_cafes from "../../assets/layers/bike_cafe/bike_cafes.json"
+import * as bike_monitoring_station from "../../assets/layers/bike_monitoring_station/bike_monitoring_station.json"
 import * as cycling_themed_objects from "../../assets/layers/cycling_themed_object/cycling_themed_objects.json"
 import * as bike_shops from "../../assets/layers/bike_shop/bike_shop.json"
 import * as maps from "../../assets/layers/maps/maps.json"
@@ -43,6 +44,7 @@ export class FromJSON {
             FromJSON.Layer(viewpoint),
             FromJSON.Layer(bike_parking),
             FromJSON.Layer(bike_repair_station),
+            FromJSON.Layer(bike_monitoring_station),
             FromJSON.Layer(birdhides),
             FromJSON.Layer(nature_reserve),
             FromJSON.Layer(bike_cafes),

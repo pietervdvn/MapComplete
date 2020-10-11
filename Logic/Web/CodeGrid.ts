@@ -1,7 +1,12 @@
 import codegrid from "codegrid-js";
 
 export default class CodeGrid {
-    public static readonly grid = CodeGrid.InitGrid();
+    private static readonly grid = CodeGrid.InitGrid();
+    
+
+    public static getCode(lat: any, lon: any, handle: (error, code) => void) {
+        CodeGrid.grid.getCode(lat, lon, handle);
+    }
 
     private static InitGrid(): any {
         const grid = codegrid.CodeGrid("./tiles/");
@@ -15,4 +20,6 @@ export default class CodeGrid {
         });
         return grid;
     }
+
+
 }

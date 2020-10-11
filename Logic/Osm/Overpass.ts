@@ -1,6 +1,6 @@
 import {Bounds} from "../Bounds";
 import {TagsFilter} from "../Tags";
-import $ from "jquery"
+import * as $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
 
 /**
@@ -27,14 +27,13 @@ export class Overpass {
     }
     
     queryGeoJson(bounds: Bounds, continuation: ((any) => void), onFail: ((reason) => void)): void {
-        
-        let query = this.buildQuery( "[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
-        if(Overpass.testUrl !== null){
+        let query = this.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
+
+        if (Overpass.testUrl !== null) {
             console.log("Using testing URL")
             query = Overpass.testUrl;
         }
-
         $.getJSON(query,
             function (json, status) {
                 if (status !== "success") {
@@ -42,7 +41,7 @@ export class Overpass {
                     onFail(status);
                 }
 
-                if(json.elements === [] && json.remarks.indexOf("runtime error") > 0){
+                if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
                     console.log("Timeout or other runtime error");
                     onFail("Runtime error (timeout)")
                     return;

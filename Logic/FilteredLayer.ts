@@ -117,7 +117,7 @@ export class FilteredLayer {
                 feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
                 feature.properties["_lat"] = "" + lon;
                 // But the codegrid SHOULD be a number!
-                CodeGrid.grid.getCode(lat, lon, (error, code) => {
+                CodeGrid.getCode(lat, lon, (error, code) => {
                     if (error === null) {
                         feature.properties["_country"] = code;
                     } else {

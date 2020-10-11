@@ -47,23 +47,27 @@ export default class Translation extends UIElement {
 
             for (const knownSpecial of knownSpecials) {
 
+                do {
+                    const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*)\\)}(.*)`);
+                    if (matched === null) {
+                        break;
+                    }
+                    const partBefore = matched[1];
+                    const argument = matched[2];
+                    const partAfter = matched[3];
 
-                const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*)\\)}(.*)`);
-                if (matched === null) {
-                    continue;
-                }
-                const partBefore = matched[1];
-                const argument = matched[2];
-                const partAfter = matched[3];
+                    try {
 
-                try {
+                        const element = knownSpecial.constr(argument).Render();
+                        template = partBefore + element + partAfter;
+                    } catch (e) {
+                        console.error(e);
+                        template = partBefore + partAfter;
+                    }
 
-                    const element = knownSpecial.constr(argument).Render();
-                    template = partBefore + element + partAfter;
-                } catch (e) {
-                    console.error(e);
-                    template = partBefore + partAfter;
-                }
+                } while (true);
+
+
             }
             newTranslations[lang] = template;
         }

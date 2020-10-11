@@ -1,15 +1,16 @@
 //*
 
 
-import {UIEventSource} from "./Logic/UIEventSource";
-import OpeningHoursVisualization from "./UI/OhVisualization";
+import LiveQueryHandler from "./Logic/Web/LiveQueryHandler";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-const oh = "Tu-Fr 09:00-17:00 'as usual'; mo off 'yyy'; su off 'xxx'"
-const tags = new UIEventSource<any>({opening_hours:oh});
-new OpeningHoursVisualization(tags, 'opening_hours').AttachTo('maindiv')
+const source = LiveQueryHandler.FetchLiveData("https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CJM90",
+    "hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt".split(";"))
+source.addCallback((data) => {console.log(data)})
+new VariableUiElement(source.map(data => {
+    return ["Data is:", data.hour, "last hour;", data.day, "last day; ", data.year, "last year;"].join(" ")
+})).AttachTo('maindiv')
 
-
-window.setTimeout(() => {tags.data._country = "be"; }, 5000)
 /*/
 
 

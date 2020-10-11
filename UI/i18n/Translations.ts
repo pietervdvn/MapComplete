@@ -103,10 +103,10 @@ export default class Translations {
             }),
 
             respectPrivacy: new T({
-                en: "Please respect privacy. Do not photograph people nor license plates.<br/>Respect copyright. Only upload images you made yourself. Do not upload Google Streetview Images - these will be removed.",
+                en: "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
                 ca: "Respecta la privacitat. No fotografiïs gent o matrícules",
                 es: "Respeta la privacidad. No fotografíes gente o matrículas",
-                nl: "Respecteer privacy. Fotografeer geen mensen of nummerplaten.<br/>Repecteer auteursrechten. Voeg enkel foto's toe die je zelf maakte. Screenshots van andere services (zoals Google Streetview) worden verwijderd",
+                nl: "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
                 fr: "Merci de respecter la vie privée. Ne publiez pas les plaques d\'immatriculation",
                 gl: "Respecta a privacidade. Non fotografes xente ou matrículas",
                 de: "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder"
@@ -969,6 +969,9 @@ export default class Translations {
     }
 
     public static WT(s: string | Translation): Translation {
+        if(s === undefined){
+            return undefined;
+        }
         if (typeof (s) === "string") {
             return new Translation({en: s});
         }

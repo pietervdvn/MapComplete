@@ -184,3 +184,6 @@ Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofra
 Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
 
 Statistics icon via https://www.onlinewebfonts.com/icon/197818
+
+Chronometer (on monitoring_station.svg): ANTU chronometer
+https://commons.wikimedia.org/w/index.php?title=Antu_chronometer&action=edit&redlink=1
