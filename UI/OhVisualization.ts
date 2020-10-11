@@ -13,7 +13,13 @@ export default class OpeningHoursVisualization extends UIElement {
         super(tags);
         this._key = key;
         this.ListenTo(UIEventSource.Chronic(60*1000)); // Automatically reload every minute
+        this.ListenTo(UIEventSource.Chronic(500, () => {
+            return tags.data._country === undefined;
+        }));
+        
+        
     }
+    
 
 
     private static GetRanges(oh: any, from: Date, to: Date): ({
@@ -144,6 +150,9 @@ export default class OpeningHoursVisualization extends UIElement {
         nextSunday.setDate(nextSunday.getDate() + 7);
 
         const tags = this._source.data;
+        if(tags._country === undefined){
+            return "Loading...";
+        }
         const oh = new opening_hours(tags[this._key], {
             lat: tags._lat,
             lon: tags._lon,
