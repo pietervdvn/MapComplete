@@ -56,7 +56,7 @@ export class Layout {
         startzoom: number,
         startLat: number,
         startLon: number,
-        welcomeMessage: Translation | string,
+        welcomeMessage: UIElement | string,
         gettingStartedPlzLogin: UIElement | string = new Combine([
             Translations.t.general.getStartedLogin
                 .SetClass("soft")
