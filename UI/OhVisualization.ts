@@ -12,6 +12,7 @@ export default class OpeningHoursVisualization extends UIElement {
     constructor(tags: UIEventSource<any>, key: string) {
         super(tags);
         this._key = key;
+        this.ListenTo(UIEventSource.Chronic(60*1000)); // Automatically reload every minute
     }
 
 
