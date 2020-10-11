@@ -56,9 +56,14 @@ export default class Translation extends UIElement {
                 const argument = matched[2];
                 const partAfter = matched[3];
 
-                const element = knownSpecial.constr(argument).Render();
+                try {
 
-                template = partBefore + element + partAfter;
+                    const element = knownSpecial.constr(argument).Render();
+                    template = partBefore + element + partAfter;
+                } catch (e) {
+                    console.error(e);
+                    template = partBefore + partAfter;
+                }
             }
             newTranslations[lang] = template;
         }

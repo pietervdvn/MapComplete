@@ -5,8 +5,9 @@ import {Layer} from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
-import codegrid from "codegrid-js";
+
 import State from "../State";
+import CodeGrid from "./Web/CodeGrid";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -43,8 +44,6 @@ export class FilteredLayer {
     
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
-    
-    private static readonly grid = codegrid.CodeGrid("./tiles/");
     
     constructor(
         layerDef: LayerDefinition,
@@ -118,7 +117,7 @@ export class FilteredLayer {
                 feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
                 feature.properties["_lat"] = "" + lon;
                 // But the codegrid SHOULD be a number!
-                FilteredLayer.grid.getCode(lat, lon, (error, code) => {
+                CodeGrid.grid.getCode(lat, lon, (error, code) => {
                     if (error === null) {
                         feature.properties["_country"] = code;
                     } else {
