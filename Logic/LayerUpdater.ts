@@ -49,7 +49,8 @@ export class LayerUpdater {
         });
 
         self.update(state);
-    }
+        
+    }q
 
     private GetFilter(state: State) {
         const filters: TagsFilter[] = [];
@@ -170,6 +171,9 @@ export class LayerUpdater {
                 self.handleFail(state, reason)
             }
         );
+        
+        
+        
 
     }
 
