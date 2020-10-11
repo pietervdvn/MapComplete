@@ -518,7 +518,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         const knownSpecials : {funcName: string, constr: ((arg: string) => UIElement)}[]= SpecialVisualizations.specialVisualizations.map(
             special => ({
                 funcName: special.funcName,
-                constr: arg => special.constr(this.currentTags, arg)
+                constr: arg => special.constr(this.currentTags, arg.split(","))
             })
         )
         

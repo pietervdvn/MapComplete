@@ -2,14 +2,11 @@
 
 
 import {UIEventSource} from "./Logic/UIEventSource";
-import OpeningHoursInput from "./UI/Input/OpeningHours/OpeningHoursInput";
+import OpeningHoursVisualization from "./UI/OhVisualization";
 
-const oh = "Sep 1-Feb 28 Mo-Th 08:00-12:00, 13:30-17:30; Mar 1-Aug 31 Mo-Fr 07:00-12:00, 13:30-17:30; PH off"
+const oh = "Tu-Fr 09:00-17:00 'as usual'; mo off 'yyy'; su off 'xxx'"
 
-const source = new UIEventSource<string>("")
-new OpeningHoursInput(source).AttachTo('maindiv')
-console.log("SEtting ",oh)
-source.setData(oh)
+new OpeningHoursVisualization(new UIEventSource<any>({opening_hours:oh}), 'opening_hours').AttachTo('maindiv')
 
 
 /*/

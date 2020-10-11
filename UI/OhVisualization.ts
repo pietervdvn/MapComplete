@@ -27,7 +27,11 @@ export default class OpeningHoursVisualization extends UIElement {
 
         const values = [[], [], [], [], [], [], []];
 
-        const iterator = oh.getIterator(from);
+       const start  = new Date(from);
+        // We go one day more into the past, in order to force rendering of holidays in the start of the period
+        start.setDate(from.getDate() - 1);
+        
+        const iterator = oh.getIterator(start);
 
         let prevValue = undefined;
         while (iterator.advance(to)) {
@@ -49,6 +53,10 @@ export default class OpeningHoursVisualization extends UIElement {
 
             if (value.comment === undefined && !value.isOpen && !value.isSpecial) {
                 // simply closed, nothing special here
+                continue;
+            }
+            
+            if(value.startDate < from){
                 continue;
             }
             // Get day: sunday is 0, monday is 1. We move everything so that monday == 0
@@ -233,11 +241,13 @@ export default class OpeningHoursVisualization extends UIElement {
 
             let innerContent: string[] = [];
 
+            // Add the lines
             for (const changeMoment of changeHours) {
                 const offset = 100 * (changeMoment - earliestOpen) / availableArea;
                 innerContent.push(new FixedUiElement("").SetStyle(`left:${offset}%;`).SetClass("ohviz-line").Render())
             }
 
+            // Add the actual ranges
             for (const range of dayRanges) {
                 if (!range.isOpen && !range.isSpecial) {
                     innerContent.push(
@@ -256,6 +266,7 @@ export default class OpeningHoursVisualization extends UIElement {
                     new FixedUiElement(range.comment).SetStyle(`left:${startPercentage}%; width:${width}%`).SetClass("ohviz-range").Render())
             }
 
+            // Add line for 'now'
             if (now >= 0 && now <= 100) {
                 innerContent.push(new FixedUiElement("").SetStyle(`left:${now}%;`).SetClass("ohviz-now").Render())
             }
