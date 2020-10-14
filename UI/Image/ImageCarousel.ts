@@ -1,38 +1,11 @@
 import {UIElement} from "../UIElement";
 import {ImageSearcher} from "../../Logic/ImageSearcher";
-import {SlideShow} from "../SlideShow";
+import {SlideShow} from "./SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {
-    Dependencies,
-    TagDependantUIElement,
-    TagDependantUIElementConstructor
-} from "../../Customizations/UIElementConstructor";
-import Translation from "../i18n/Translation";
+import {TagDependantUIElement} from "../../Customizations/UIElementConstructor";
 import Combine from "../Base/Combine";
 import DeleteImage from "./DeleteImage";
 
-export class ImageCarouselConstructor implements TagDependantUIElementConstructor {
-    IsKnown(properties: any): boolean {
-        return true;
-    }
-
-    IsQuestioning(properties: any): boolean {
-        return false;
-    }
-
-    Priority(): number {
-        return 0;
-    }
-
-    construct(dependencies: Dependencies): TagDependantUIElement {
-        return new ImageCarousel(dependencies.tags);
-    }
-
-    GetContent(tags: any): Translation {
-        return new Translation({"en":"Images without upload"});
-    }
-
-}
 
 export class ImageCarousel extends TagDependantUIElement {
 

@@ -1,4 +1,4 @@
-import {Dependencies, TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "./UIElementConstructor";
 import {TagsFilter, TagUtils} from "../Logic/Tags";
 import {OnlyShowIfConstructor} from "./OnlyShowIf";
 import {UIEventSource} from "../Logic/UIEventSource";
@@ -137,8 +137,8 @@ export class TagRenderingOptions implements TagDependantUIElementConstructor {
                                      mappings?: { k: TagsFilter; txt: string | Translation; priority?: number; substitute?: boolean, hideInAnswer?: boolean }[]
                                  }) => TagDependantUIElement;
 
-    construct(dependencies: Dependencies): TagDependantUIElement {
-        return TagRenderingOptions.tagRendering(dependencies.tags, this.options);
+    construct(tags: UIEventSource<any>): TagDependantUIElement {
+        return TagRenderingOptions.tagRendering(tags, this.options);
     }
 
     IsKnown(properties: any): boolean {

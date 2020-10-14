@@ -7,7 +7,6 @@ import Combine from "./UI/Base/Combine";
 import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
 import {FilteredLayer} from "./Logic/FilteredLayer";
-import {FeatureInfoBox} from "./UI/FeatureInfoBox";
 import {Basemap} from "./Logic/Leaflet/Basemap";
 import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
@@ -37,6 +36,7 @@ import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
 import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
+import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
 
 export class InitUiElements {
 

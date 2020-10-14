@@ -40,39 +40,7 @@ export default class Translation extends UIElement {
 
     }
 
-    public EvaluateSpecialComponents(knownSpecials: { funcName: string, constr: ((call: string) => UIElement) }[]): UIElement {
-        const newTranslations = {};
-        for (const lang in this.translations) {
-            let template: string = this.translations[lang];
-
-            for (const knownSpecial of knownSpecials) {
-
-                do {
-                    const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*)\\)}(.*)`);
-                    if (matched === null) {
-                        break;
-                    }
-                    const partBefore = matched[1];
-                    const argument = matched[2];
-                    const partAfter = matched[3];
-
-                    try {
-
-                        const element = knownSpecial.constr(argument).Render();
-                        template = partBefore + element + partAfter;
-                    } catch (e) {
-                        console.error(e);
-                        template = partBefore + partAfter;
-                    }
-
-                } while (true);
-
-
-            }
-            newTranslations[lang] = template;
-        }
-        return new Translation(newTranslations);
-    }
+ 
 
 
     get txt(): string {

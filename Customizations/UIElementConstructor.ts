@@ -2,14 +2,9 @@ import {UIElement} from "../UI/UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Translation from "../UI/i18n/Translation";
 
-
-export interface Dependencies {
-    tags: UIEventSource<any>
-}
-
 export interface TagDependantUIElementConstructor {
 
-    construct(dependencies: Dependencies): TagDependantUIElement;
+    construct(tags: UIEventSource<any>): TagDependantUIElement;
     IsKnown(properties: any): boolean;
     IsQuestioning(properties: any): boolean;
     GetContent(tags: any): Translation;

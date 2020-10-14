@@ -1,34 +1,27 @@
-import {UIElement} from "./UIElement";
 import $ from "jquery"
-import {DropDown} from "./Input/DropDown";
-import Translations from "./i18n/Translations";
-import Combine from "./Base/Combine";
-import State from "../State";
-import {UIEventSource} from "../Logic/UIEventSource";
-import {Imgur} from "../Logic/Web/Imgur";
-import {FixedUiElement} from "./Base/FixedUiElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {Imgur} from "../../Logic/Web/Imgur";
+import {DropDown} from "../Input/DropDown";
+import {Tag} from "../../Logic/Tags";
+import Translations from "../i18n/Translations";
 
 export class ImageUploadFlow extends UIElement {
-    private _licensePicker: UIElement;
-    private _selectedLicence: UIEventSource<string>;
-    private _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
-    private _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private _uploadOptions: (license: string) => { title: string; description: string; handleURL: (url: string) => void; allDone: (() => void) };
-    private _connectButton : UIElement;
-    
-    constructor(
-        preferedLicense: UIEventSource<string>,
-        uploadOptions: ((license: string) =>
-            {
-                title: string,
-                description: string,
-                handleURL: ((url: string) => void),
-                allDone: (() => void)
-            })
-    ) {
+    private readonly _licensePicker: UIElement;
+    private readonly _tags: UIEventSource<any>;
+    private readonly _selectedLicence: UIEventSource<string>;
+    private readonly _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
+    private readonly _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _connectButton: UIElement;
+
+    constructor(tags: UIEventSource<any>) {
         super(State.state.osmConnection.userDetails);
-        this._uploadOptions = uploadOptions;
+        this._tags = tags;
+
         this.ListenTo(this._isUploading);
         this.ListenTo(this._didFail);
         this.ListenTo(this._allDone);
@@ -39,7 +32,7 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
-            preferedLicense
+            State.state.osmConnection.GetPreference("pictures-license")
         );
         licensePicker.SetStyle("float:left");
 
@@ -53,7 +46,6 @@ export class ImageUploadFlow extends UIElement {
             .SetClass("login-button-friendly");
 
     }
-
 
     InnerRender(): string {
 
@@ -126,14 +118,73 @@ export class ImageUploadFlow extends UIElement {
             `<label for='fileselector-${this.id}'>` +
             label.Render() +
             "</label>" +
-            actualInputElement+
+            actualInputElement +
             "</form>";
-        
+
         return new Combine([
             form,
             extraInfo
         ]).SetStyle("margin-top: 1em;margin-bottom: 2em;text-align: center;")
             .Render();
+    }
+
+
+    private handleSuccessfulUpload(url) {
+        const tags = this._tags.data;
+        let key = "image";
+        if (tags["image"] !== undefined) {
+
+            let freeIndex = 0;
+            while (tags["image:" + freeIndex] !== undefined) {
+                freeIndex++;
+            }
+            key = "image:" + freeIndex;
+        }
+        console.log("Adding image:" + key, url);
+        State.state.changes.addTag(tags.id, new Tag(key, url));
+    }
+
+    private handleFiles(files) {
+        this._isUploading.setData(files.length);
+        this._allDone.setData(false);
+
+        if (this._selectedLicence.data === undefined) {
+            this._selectedLicence.setData("CC0");
+        }
+
+
+        const tags = this._tags.data;
+        const title = tags.name ?? "Unknown area";
+        const description = [
+            "author:" + State.state.osmConnection.userDetails.data.name,
+            "license:" + (this._selectedLicence.data ?? "CC0"),
+            "wikidata:" + tags.wikidata,
+            "osmid:" + tags.id,
+            "name:" + tags.name
+        ].join("\n");
+
+        const self = this;
+
+        Imgur.uploadMultiple(title,
+            description,
+            files,
+            function (url) {
+                console.log("File saved at", url);
+                self._isUploading.setData(self._isUploading.data - 1);
+                self.handleSuccessfulUpload(url);
+            },
+            function () {
+                console.log("All uploads completed");
+                self._allDone.setData(true);
+            },
+            function (failReason) {
+                console.log("Upload failed due to ", failReason)
+                // No need to call something from the options -> we handle this here
+                self._didFail.setData(true);
+                self._isUploading.data--;
+                self._isUploading.ping();
+            }, 0
+        )
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
@@ -147,34 +198,7 @@ export class ImageUploadFlow extends UIElement {
 
         function submitHandler() {
             const files = $(selector).prop('files');
-            self._isUploading.setData(files.length);
-            self._allDone.setData(false);
-
-            if(self._selectedLicence.data === undefined){
-                self._selectedLicence.setData("CC0");
-            }
-            
-            const opts = self._uploadOptions(self._selectedLicence.data);
-
-            Imgur.uploadMultiple(opts.title, opts.description, files,
-                function (url) {
-                    console.log("File saved at", url);
-                    self._isUploading.setData(self._isUploading.data - 1);
-                    opts.handleURL(url);
-                },
-                function () {
-                    console.log("All uploads completed");
-                    self._allDone.setData(true);
-                    opts.allDone();
-                },
-                function(failReason) {
-                    console.log("Upload failed due to ", failReason)
-                    // No need to call something from the options -> we handle this here
-                    self._didFail.setData(true);
-                    self._isUploading.data--;
-                    self._isUploading.ping();
-                },0
-            )
+            self.handleFiles(files)
         }
 
         if (selector != null && form != null) {

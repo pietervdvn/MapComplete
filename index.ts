@@ -6,7 +6,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
-import {TagRendering} from "./UI/TagRendering";
+import {TagRendering} from "./UI/Popup/TagRendering";
 
 TagRendering.injectFunction();
 

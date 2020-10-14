@@ -1,16 +1,15 @@
-import {UIElement} from "./UIElement";
-import {VerticalCombine} from "./Base/VerticalCombine";
-import {OsmLink} from "../Customizations/Questions/OsmLink";
-import {WikipediaLink} from "../Customizations/Questions/WikipediaLink";
-import {And} from "../Logic/Tags";
-import {TagDependantUIElement, TagDependantUIElementConstructor} from "../Customizations/UIElementConstructor";
-import Translations from "./i18n/Translations";
-import {Changes} from "../Logic/Osm/Changes";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import State from "../State";
-import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
-import {UIEventSource} from "../Logic/UIEventSource";
-import Combine from "./Base/Combine";
+import {VerticalCombine} from "../Base/VerticalCombine";
+import {UIElement} from "../UIElement";
+import Combine from "../Base/Combine";
+import {WikipediaLink} from "../../Customizations/Questions/WikipediaLink";
+import {OsmLink} from "../../Customizations/Questions/OsmLink";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {TagRenderingOptions} from "../../Customizations/TagRenderingOptions";
+import State from "../../State";
+import {And} from "../../Logic/Tags";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
 
 export class FeatureInfoBox extends UIElement {
 
@@ -22,7 +21,6 @@ export class FeatureInfoBox extends UIElement {
      * The tags, wrapped in a global event source
      */
     private readonly _tagsES: UIEventSource<any>;
-    private readonly _changes: Changes;
     private readonly _title: UIElement;
     private readonly _infoboxes: TagDependantUIElement[];
 
@@ -37,10 +35,13 @@ export class FeatureInfoBox extends UIElement {
     ) {
         super(tagsES);
         this._feature = feature;
-        this._tagsES = tagsES;
+        this._tagsES = tagsES
+        if(tagsES === undefined){
+            throw "No Tags event source given"
+        }
         this.ListenTo(State.state.osmConnection.userDetails);
         this.SetClass("featureinfobox");
-        const deps = {tags: this._tagsES, changes: this._changes}
+        const tags = this._tagsES;
 
         this._infoboxes = [];
         elementsToShow = elementsToShow ?? []
@@ -48,13 +49,13 @@ export class FeatureInfoBox extends UIElement {
         const self = this;
         for (const tagRenderingOption of elementsToShow) {
             self._infoboxes.push(
-                tagRenderingOption.construct(deps));
+                tagRenderingOption.construct(tags));
         }
         function initTags() {
             self._infoboxes.splice(0, self._infoboxes.length);
             for (const tagRenderingOption of elementsToShow) {
                 self._infoboxes.push(
-                    tagRenderingOption.construct(deps));
+                    tagRenderingOption.construct(tags));
             }
             self.Update();
         }
@@ -74,7 +75,7 @@ export class FeatureInfoBox extends UIElement {
         } else if (title instanceof UIElement) {
             renderedTitle = title;
         } else {
-            renderedTitle = title.construct(deps);
+            renderedTitle = title.construct(tags);
         }
 
         
@@ -83,10 +84,10 @@ export class FeatureInfoBox extends UIElement {
             .SetClass("title-font")
 
         const osmLink = new OsmLink()
-            .construct(deps)
+            .construct(tags)
             .SetStyle("width: 24px; display:block;")
         const wikipedialink = new WikipediaLink()
-            .construct(deps)
+            .construct(tags)
             .SetStyle("width: 24px; display:block;")
 
         this._title = new Combine([

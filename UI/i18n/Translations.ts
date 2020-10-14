@@ -968,12 +968,18 @@ export default class Translations {
         return s;
     }
 
+    private static wtcache = {}
     public static WT(s: string | Translation): Translation {
         if(s === undefined){
             return undefined;
         }
         if (typeof (s) === "string") {
-            return new Translation({en: s});
+            if(Translations.wtcache[s]){
+                return Translations.wtcache[s];
+            }
+            const tr = new Translation({en: s});
+            Translations.wtcache[s]=  tr;
+            return tr;
         }
         if (s instanceof Translation) {
             return s;

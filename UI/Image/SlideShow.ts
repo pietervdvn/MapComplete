@@ -1,6 +1,6 @@
-import {UIElement} from "./UIElement";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class SlideShow extends UIElement {
 
@@ -15,6 +15,12 @@ export class SlideShow extends UIElement {
         super(embeddedElements);
         this._embeddedElements = embeddedElements;
         this.ListenTo(this._currentSlide);
+        this._embeddedElements
+            .stabilized(1000)
+            .addCallback(embedded => {
+                // Always move to the last image - but at most once per second
+                this._currentSlide.setData(this._embeddedElements.data.length - 1);
+            });
 
         const self = this;
         this._prev = new FixedUiElement("<div class='prev-button'>" +

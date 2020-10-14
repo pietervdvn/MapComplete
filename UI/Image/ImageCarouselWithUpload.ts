@@ -1,13 +1,8 @@
-import {
-    Dependencies,
-    TagDependantUIElement,
-    TagDependantUIElementConstructor
-} from "../../Customizations/UIElementConstructor";
+import {TagDependantUIElement, TagDependantUIElementConstructor} from "../../Customizations/UIElementConstructor";
 import {ImageCarousel} from "./ImageCarousel";
-import {ImageUploadFlow} from "../ImageUploadFlow";
-import {OsmImageUploadHandler} from "../../Logic/Osm/OsmImageUploadHandler";
-import State from "../../State";
+import {ImageUploadFlow} from "./ImageUploadFlow";
 import Translation from "../i18n/Translation";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export default class ImageCarouselWithUploadConstructor implements TagDependantUIElementConstructor{
     
@@ -24,20 +19,25 @@ export default class ImageCarouselWithUploadConstructor implements TagDependantU
     }
     
     GetContent(tags: any): Translation {
-        return new Translation({"en":"Image carousel with uploader"});
+        return new Translation({"*": "Image carousel with uploader"});
     }
+}
+
+class OsmImageUploadHandler {
+    constructor(tags: UIEventSource<any>) {
+        
+    }
+
 }
 
 class ImageCarouselWithUpload extends TagDependantUIElement {
     private _imageElement: ImageCarousel;
     private _pictureUploader: ImageUploadFlow;
 
-    constructor(dependencies: Dependencies) {
-        super(dependencies.tags);
-        const tags = dependencies.tags;
+    constructor(tags: UIEventSource<any>) {
+        super(tags);
         this._imageElement = new ImageCarousel(tags);
-        const license = State.state.osmConnection.GetPreference( "pictures-license");
-        this._pictureUploader = new OsmImageUploadHandler(tags, license, this._imageElement.slideshow).getUI();
+        this._pictureUploader = new OsmImageUploadHandler(tags).getUI();
 
     }
 

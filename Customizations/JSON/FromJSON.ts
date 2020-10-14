@@ -23,8 +23,6 @@ import * as bike_shops from "../../assets/layers/bike_shop/bike_shop.json"
 import * as maps from "../../assets/layers/maps/maps.json"
 import * as information_boards from "../../assets/layers/information_board/information_board.json"
 import {Utils} from "../../Utils";
-import ImageCarouselWithUploadConstructor from "../../UI/Image/ImageCarouselWithUpload";
-import {ImageCarouselConstructor} from "../../UI/Image/ImageCarousel";
 import State from "../../State";
 
 export class FromJSON {
@@ -139,23 +137,15 @@ export class FromJSON {
         
         if (typeof json === "string") {
             switch (json) {
-                case "picture": {
-                    return new ImageCarouselWithUploadConstructor()
-                }
                 case "pictures": {
-                    return new ImageCarouselWithUploadConstructor()
-                }
-                case "image": {
-                    return new ImageCarouselWithUploadConstructor()
+                    json = "{image_carousel()}{image_upload()}";
+                    break;
                 }
                 case "images": {
-                   return new ImageCarouselWithUploadConstructor()
-                }
-                case "picturesNoUpload": {
-                    return new ImageCarouselConstructor()
+                    json = "{image_carousel()}{image_upload()}";
                 }
             }
-
+            console.warn("Possible literal rendering:", json)
 
             return new TagRenderingOptions({
                 freeform: {

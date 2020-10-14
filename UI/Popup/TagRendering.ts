@@ -1,23 +1,23 @@
-import {UIEventSource} from "../Logic/UIEventSource";
-import {And, Tag, TagsFilter, TagUtils} from "../Logic/Tags";
-import Translations from "../UI/i18n/Translations";
-import Locale from "../UI/i18n/Locale";
-import Translation from "../UI/i18n/Translation";
-import Combine from "../UI/Base/Combine";
-import {TagDependantUIElement} from "../Customizations/UIElementConstructor";
-import {UIElement} from "./UIElement";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import InputElementMap from "./Input/InputElementMap";
-import {InputElement} from "./Input/InputElement";
+import {UIElement} from "../UIElement";
+import Translation from "../i18n/Translation";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import InputElementMap from "../Input/InputElementMap";
+import CheckBoxes from "../Input/Checkboxes";
+import Combine from "../Base/Combine";
+import {And, Tag, TagsFilter, TagUtils} from "../../Logic/Tags";
+import {InputElement} from "../Input/InputElement";
 import {SaveButton} from "./SaveButton";
-import {RadioButton} from "./Input/RadioButton";
-import {FixedInputElement} from "./Input/FixedInputElement";
-import {TagRenderingOptions} from "../Customizations/TagRenderingOptions";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import ValidatedTextField from "./Input/ValidatedTextField";
-import CheckBoxes from "./Input/Checkboxes";
-import State from "../State";
-import SpecialVisualizations from "./SpecialVisualizations";
+import {RadioButton} from "../Input/RadioButton";
+import {FixedInputElement} from "../Input/FixedInputElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import ValidatedTextField from "../Input/ValidatedTextField";
+import {TagRenderingOptions} from "../../Customizations/TagRenderingOptions";
+import State from "../../State";
+import {SubstitutedTranslation} from "../SpecialVisualizations";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import {TagDependantUIElement} from "../../Customizations/UIElementConstructor";
+import Locale from "../i18n/Locale";
 
 export class TagRendering extends UIElement implements TagDependantUIElement {
 
@@ -25,7 +25,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _question: string | Translation;
     private readonly _mapping: { k: TagsFilter, txt: string | Translation, priority?: number }[];
 
-    private currentTags: UIEventSource<any>;
+    private readonly currentTags: UIEventSource<any>;
 
 
     private readonly _freeform: {
@@ -50,7 +50,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
     private readonly _questionSkipped: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _editMode: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    
+
     static injectFunction() {
         // This is a workaround as not to import tagrendering into TagREnderingOptions
         TagRenderingOptions.tagRendering = (tags, options) => new TagRendering(tags, options);
@@ -71,15 +71,17 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
     }) {
         super(tags);
+        if (tags === undefined) {
+            throw "No tags given for a tagrendering..."
+        }
         this.ListenTo(Locale.language);
         this.ListenTo(this._editMode);
         this.ListenTo(this._questionSkipped);
         this.ListenTo(State.state?.osmConnection?.userDetails);
 
         const self = this;
-       
-        this.currentTags = this._source.map(tags => 
-            {
+
+        this.currentTags = this._source.map(tags => {
 
                 if (options.tagsPreprocessor === undefined) {
                     return tags;
@@ -90,7 +92,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                     newTags[k] = tags[k];
                 }
                 // ... in order to safely edit them here
-                options.tagsPreprocessor(newTags); 
+                options.tagsPreprocessor(newTags);
                 return newTags;
             }
         );
@@ -98,7 +100,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         if (options.question !== undefined) {
             this._question = options.question;
         }
-        
+
         this._mapping = [];
         this._freeform = options.freeform;
 
@@ -138,7 +140,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                     if (csCount < State.userJourney.tagsVisibleAt) {
                         return "";
                     }
-                    
+
                     if (tags === undefined) {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
@@ -186,6 +188,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         }, [Locale.language]);
         // And at last, set up the skip button
         this._skipButton = new VariableUiElement(cancelContents).onClick(cancel);
+
     }
 
 
@@ -295,14 +298,14 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 (t0, t1) => t0.isEquivalent(t1)
             );
         }
-        
+
         let txt = this.ApplyTemplate(mapping.txt);
-        if(txt.Render().indexOf("<img") >= 0){
+        if (txt.Render().indexOf("<img") >= 0) {
             txt.SetClass("question-option-with-border");
         }
         const inputEl = new FixedInputElement(txt, mapping.k,
             (t0, t1) => t1.isEquivalent(t0));
-        
+
         return inputEl;
     }
 
@@ -324,17 +327,17 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         let type = prepost[1];
 
         let isTextArea = false;
-        if(type === "text"){
+        if (type === "text") {
             isTextArea = true;
             type = "string";
         }
-        
-        if(ValidatedTextField.AllTypes[type] === undefined){
-            console.error("Type:",type, ValidatedTextField.AllTypes)
-            throw "Unkown type: "+type;
+
+        if (ValidatedTextField.AllTypes[type] === undefined) {
+            console.error("Type:", type, ValidatedTextField.AllTypes)
+            throw "Unkown type: " + type;
         }
 
-        
+
         const pickString =
             (string: any) => {
                 if (string === "" || string === undefined) {
@@ -444,47 +447,43 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         return new FixedUiElement("");
     }
 
-    InnerRender(): string {
 
-        if (this.IsQuestioning() 
+    private CreateComponent(): UIElement {
+
+
+        if (this.IsQuestioning()
             && (State.state !== undefined) // If State.state is undefined, we are testing/custom theme building -> show regular save
             && !State.state.osmConnection.userDetails.data.loggedIn) {
-            
+
             const question =
                 this.ApplyTemplate(this._question).SetClass('question-text');
-            return "<div class='question'>" +
-                new Combine([
-                    question,
-                    "<br/>",
-                    this._questionElement,
-                    this._friendlyLogin,
-                ]).Render() + "</div>";
+            return new Combine(["<div class='question'>",
+                question,
+                "<br/>",
+                this._questionElement,
+                this._friendlyLogin, "</div>"
+            ]);
         }
 
         if (this.IsQuestioning() || this._editMode.data) {
             // Not yet known or questioning, we have to ask a question
-
-            return "<div class='question'>" +
-                new Combine([
-                    "<span class='question-text'>",
-                    this.ApplyTemplate(this._question), 
-                    "</span>",
-                    "<br/>",
-                    "<div>", this._questionElement , "</div>",
-                    this._skipButton,
-                    this._saveButton,
-                    "<br/>",
-                    this._appliedTags
-                ]).Render() +
-                "</div>"
+            return new Combine([
+                this.ApplyTemplate(this._question).SetStyle('question-text'),
+                "<br/>",
+                "<div>", this._questionElement, "</div>",
+                this._skipButton,
+                this._saveButton,
+                "<br/>",
+                this._appliedTags
+            ]).SetClass('question');
         }
 
         if (this.IsKnown()) {
 
             const answer = this.RenderAnswer();
-            
+
             if (answer.IsEmpty()) {
-                return "";
+                return new FixedUiElement("");
             }
 
 
@@ -499,37 +498,35 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 return new Combine([
                     answer,
                     this._editButton])
-                    .SetStyle(answerStyle)
-                    .Render();
+                    .SetStyle(answerStyle);
             }
 
-            return answer.SetStyle(answerStyle).Render();
+            return answer.SetStyle(answerStyle);
         }
 
-        return "";
+        return new FixedUiElement("");
     }
 
+    InnerRender(): string {
+        return this.CreateComponent().Render();
+    }
+
+
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        this._editButton.Update();
+    }
+
+    private answerCache = {}
 
     private ApplyTemplate(template: string | Translation): UIElement {
-        if (template === undefined || template === null) {
-            return undefined;
+        const tr = Translations.WT(template);
+        if (this.answerCache[tr.id]) {
+            return this.answerCache[tr.id];
         }
-        
-        const knownSpecials : {funcName: string, constr: ((arg: string) => UIElement)}[]= SpecialVisualizations.specialVisualizations.map(
-            special => ({
-                funcName: special.funcName,
-                constr: arg => special.constr(this.currentTags, arg.split(","))
-            })
-        )
-        
-        return new VariableUiElement(this.currentTags.map(tags => {
-            return Translations.WT(template)
-                .Subs(tags)
-                .EvaluateSpecialComponents(knownSpecials)
-                .InnerRender()
-        })).ListenTo(Locale.language);
+        // We have to cache these elemnts, otherwise it is to slow
+        const el = new SubstitutedTranslation(tr, this.currentTags);
+        this.answerCache[tr.id] = el;
+        return el;
     }
 
-
- 
 }

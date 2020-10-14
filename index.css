@@ -367,6 +367,7 @@ body {
 }
 
 .question {
+    display: block;
     margin-top: 1em;
     background-color: #e5f5ff;
     padding: 1em;

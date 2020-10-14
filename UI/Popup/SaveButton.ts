@@ -1,6 +1,6 @@
-import {UIElement} from "./UIElement";
-import Translations from "./i18n/Translations";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import Translations from "../i18n/Translations";
 
 export class SaveButton extends UIElement {
     private _value: UIEventSource<any>;
