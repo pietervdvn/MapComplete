@@ -27,7 +27,7 @@ export default class State {
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
-        addNewPointsUnlock: 1,
+        addNewPointsUnlock: 0,
         moreScreenUnlock: 5,
         personalLayoutUnlock: 20,
         tagsVisibleAt: 100,
