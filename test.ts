@@ -1,15 +1,10 @@
 //*
 
 
-import {UIEventSource} from "./Logic/UIEventSource";
-import OpeningHoursVisualization from "./UI/OhVisualization";
+import {MapillaryImage} from "./UI/Image/MapillaryImage";
 
-const oh = "Tu-Fr 09:00-17:00 'as usual'; mo off 'yyy'; su off 'xxx'"
-const tags = new UIEventSource<any>({opening_hours:oh});
-new OpeningHoursVisualization(tags, 'opening_hours').AttachTo('maindiv')
+new MapillaryImage("JVUQ9Lxtfef-Yj6-GYdGwQ").AttachTo("maindiv")
 
-
-window.setTimeout(() => {tags.data._country = "be"; }, 5000)
 /*/
 
 
