@@ -4,6 +4,7 @@ import {UIElement} from "../UI/UIElement";
 import {ImgurImage} from "../UI/Image/ImgurImage";
 import {ImagesInCategory, Wikidata, Wikimedia} from "./Web/Wikimedia";
 import {UIEventSource} from "./UIEventSource";
+import {MapillaryImage} from "../UI/Image/MapillaryImage";
 
 /**
  * There are multiple way to fetch images for an object
@@ -33,50 +34,12 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
         this._tags = tags;
 
         const self = this;
-        this._wdItem.addCallback(() => {
-                // Load the wikidata item, then detect usage on 'commons'
-                let allWikidataId = self._wdItem.data.split(";");
-                for (let wikidataId of allWikidataId) {
-                    // @ts-ignore
-                    if (wikidataId.startsWith("Q")) {
-                        wikidataId = wikidataId.substr(1);
-                    }
-                    Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
-                        self.AddImage(undefined, wd.image);
-                        Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
-                            for (const image of images.images) {
-                                // @ts-ignore
-                                if (image.startsWith("File:")) {
-                                    self.AddImage(undefined, image);
-                                }
-                            }
-                        })
-                    })
-                }
-            }
-        );
+
+        // By wrapping this in a UIEventSource, we prevent multiple queries of loadWikiData
+        this._wdItem.addCallback(() => self.loadWikidata());
+        this._commons.addCallback(() => self.LoadCommons());
 
 
-        this._commons.addCallback(() => {
-            const allCommons: string[] = self._commons.data.split(";");
-            for (const commons of allCommons) {
-                // @ts-ignore
-                if (commons.startsWith("Category:")) {
-                    Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
-                        for (const image of images.images) {
-                            // @ts-ignore
-                            if (image.startsWith("File:")) {
-                                self.AddImage(undefined, image);
-                            }
-                        }
-                    })
-                } else { // @ts-ignore
-                    if (commons.startsWith("File:")) {
-                        self.AddImage(undefined, commons);
-                    }
-                }
-            }
-        });
         this._tags.addCallbackAndRun(() => self.LoadImages());
 
     }
@@ -92,11 +55,54 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
             }
         }
 
-        this.data.push({key:key, url:url});
+        this.data.push({key: key, url: url});
         this.ping();
     }
-    
-    private LoadImages(): void {
+
+    private loadWikidata() {
+        // Load the wikidata item, then detect usage on 'commons'
+        let allWikidataId = this._wdItem.data.split(";");
+        for (let wikidataId of allWikidataId) {
+            // @ts-ignore
+            if (wikidataId.startsWith("Q")) {
+                wikidataId = wikidataId.substr(1);
+            }
+            Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
+                this.AddImage(undefined, wd.image);
+                Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
+                    for (const image of images.images) {
+                        // @ts-ignore
+                        if (image.startsWith("File:")) {
+                            this.AddImage(undefined, image);
+                        }
+                    }
+                })
+            })
+        }
+    }
+
+    private LoadCommons() {
+        const allCommons: string[] = this._commons.data.split(";");
+        for (const commons of allCommons) {
+            // @ts-ignore
+            if (commons.startsWith("Category:")) {
+                Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
+                    for (const image of images.images) {
+                        // @ts-ignore
+                        if (image.startsWith("File:")) {
+                            this.AddImage(undefined, image);
+                        }
+                    }
+                })
+            } else { // @ts-ignore
+                if (commons.startsWith("File:")) {
+                    this.AddImage(undefined, commons);
+                }
+            }
+        }
+    }
+
+    private LoadImages(imagePrefix: string = "image", loadAdditional = true): void {
         const imageTag = this._tags.data.image;
         if (imageTag !== undefined) {
             const bareImages = imageTag.split(";");
@@ -112,13 +118,21 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
             }
         }
 
-        const wdItem = this._tags.data.wikidata;
-        if (wdItem !== undefined) {
-            this._wdItem.setData(wdItem);
-        }
-        const commons = this._tags.data.wikimedia_commons;
-        if (commons !== undefined) {
-            this._commons.setData(commons);
+        if (loadAdditional) {
+
+            const wdItem = this._tags.data.wikidata;
+            if (wdItem !== undefined) {
+                this._wdItem.setData(wdItem);
+            }
+            const commons = this._tags.data.wikimedia_commons;
+            if (commons !== undefined) {
+                this._commons.setData(commons);
+            }
+
+            if (this._tags.data.mapillary) {
+                this.AddImage("mapillary", "https://www.mapillary.com/map/im/" + this._tags.data.mapillary)
+            }
+
         }
     }
 
@@ -132,11 +146,13 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
         // @ts-ignore
         if (url.startsWith("File:")) {
             return new WikimediaImage(url);
-        }else if (url.startsWith("https://commons.wikimedia.org/wiki/")) {
+        } else if (url.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
             const commons = url.substr("https://commons.wikimedia.org/wiki/".length);
             return new WikimediaImage(commons);
-        }else if(url.startsWith("https://i.imgur.com/")){
+        } else if (url.toLowerCase().startsWith("https://i.imgur.com/")) {
             return new ImgurImage(url);
+        } else if (url.toLowerCase().startsWith("https://www.mapillary.com/map/im/")) {
+            return new MapillaryImage(url);
         } else {
             return new SimpleImageElement(new UIEventSource<string>(url));
         }

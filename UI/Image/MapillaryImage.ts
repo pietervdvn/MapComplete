@@ -2,10 +2,12 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/Web/Wikimedia";
 import {Imgur} from "../../Logic/Web/Imgur";
+import {Mapillary} from "../../Logic/Web/Mapillary";
+import {Img} from "../Img";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 
-export class ImgurImage extends UIElement {
-
+export class MapillaryImage extends UIElement {
 
     /***
      * Dictionary from url to alreayd known license info
@@ -15,27 +17,33 @@ export class ImgurImage extends UIElement {
     private readonly _imageLocation: string;
 
     constructor(source: string) {
-        super(undefined)
+        super()
+        
+        if(source.toLowerCase().startsWith("https://www.mapillary.com/map/im/")){
+            source = source.substring("https://www.mapillary.com/map/im/".length);
+        }
+        
         this._imageLocation = source;
-        if (ImgurImage.allLicenseInfos[source] !== undefined) {
-            this._imageMeta = ImgurImage.allLicenseInfos[source];
+        if (MapillaryImage.allLicenseInfos[source] !== undefined) {
+            this._imageMeta = MapillaryImage.allLicenseInfos[source];
         } else {
             this._imageMeta = new UIEventSource<LicenseInfo>(null);
-            ImgurImage.allLicenseInfos[source] = this._imageMeta;
+            MapillaryImage.allLicenseInfos[source] = this._imageMeta;
             const self = this;
-            Imgur.getDescriptionOfImage(source, (license) => {
+            Mapillary.getDescriptionOfImage(source, (license) => {
                 self._imageMeta.setData(license)
             })
         }
-        
+
         this.ListenTo(this._imageMeta);
-      
+
     }
 
     InnerRender(): string {
-        const image = `<img src='${this._imageLocation}' alt='' >`;
-        
-        if(this._imageMeta.data === null){
+        const url = `https://images.mapillary.com/${this._imageLocation}/thumb-640.jpg?client_id=TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2`;
+        const image = `<img src='${url}'>`;
+
+        if (this._imageMeta === undefined || this._imageMeta.data === null) {
             return image;
         }
 
@@ -45,6 +53,8 @@ export class ImgurImage extends UIElement {
         return "<div class='imgWithAttr'>" +
             image +
             "<div class='attribution'>" +
+
+            new FixedUiElement(Img.mapillaryLogo).SetStyle("height: 1.5em").Render() +
             attribution +
             "</div>" +
             "</div>";

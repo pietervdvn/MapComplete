@@ -27,7 +27,7 @@ export default class State {
     
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
-        addNewPointsUnlock: 1,
+        addNewPointsUnlock: 0,
         moreScreenUnlock: 5,
         personalLayoutUnlock: 20,
         tagsVisibleAt: 100,
@@ -141,11 +141,11 @@ export default class State {
         }
         this.zoom = asFloat(
             QueryParameters.GetQueryParameter("z", "" + layoutToUse.startzoom)
-            .syncWith(LocalStorageSource.Get("zoom"), true));
+            .syncWith(LocalStorageSource.Get("zoom")));
         this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
-            .syncWith(LocalStorageSource.Get("lat"), true));
+            .syncWith(LocalStorageSource.Get("lat")));
         this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
-            .syncWith(LocalStorageSource.Get("lon"), true));
+            .syncWith(LocalStorageSource.Get("lon")));
 
 
         this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
