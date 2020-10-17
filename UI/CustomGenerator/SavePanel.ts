@@ -41,9 +41,13 @@ export default class SavePanel extends UIElement {
         this.json = jsonTextField;
         this.loadFromJson = new SubtleButton("./assets/reload.svg", "<b>Load the JSON file below</b>")
             .onClick(() => {
-                const json = jsonTextField.GetValue().data;
-                const parsed : LayoutConfigJson = JSON.parse(json);
-                config.setData(parsed);
+                try{
+                    const json = jsonTextField.GetValue().data;
+                    const parsed : LayoutConfigJson = JSON.parse(json);
+                    config.setData(parsed);
+                }catch(e){
+                    alert("Invalid JSON: "+e)
+                }
             });
     }
 

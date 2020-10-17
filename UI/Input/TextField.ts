@@ -73,12 +73,12 @@ export class TextField extends InputElement<string> {
             label = this._label.Render();
         }
         return new Combine([
-            `<div id="${this.id}">`,
+            `<span id="${this.id}">`,
             `<form onSubmit='return false' class='form-text-field'>`,
             label,
             `<input type='${this._htmlType}' placeholder='${placeholder}' id='txt-${this.id}'/>`,
             `</form>`,
-            `</div>`
+            `</span>`
         ]).Render();
     }
     
