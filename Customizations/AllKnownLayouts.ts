@@ -12,6 +12,7 @@ import * as buurtnatuur from "../assets/themes/buurtnatuur/buurtnatuur.json"
 import * as nature from "../assets/themes/nature/nature.json"
 import * as maps from "../assets/themes/maps/maps.json"
 import * as shops from "../assets/themes/shops/shops.json"
+import * as bike_monitoring_stations from "../assets/themes/bike_monitoring_station/bike_monitoring_stations.json"
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import {StreetWidth} from "./StreetWidth/StreetWidth";
 
@@ -44,6 +45,14 @@ export class AllKnownLayouts {
         return layout;
     }
 
+    private static GenerateBikeMonitoringStations(): Layout {
+        const layout = FromJSON.LayoutFromJSON(bike_monitoring_stations);
+        layout.hideFromOverview = true;
+        return layout;
+    }
+    
+    
+
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
         
@@ -58,6 +67,7 @@ export class AllKnownLayouts {
         FromJSON.LayoutFromJSON(cyclestreets),
         FromJSON.LayoutFromJSON(maps),
         AllKnownLayouts.GenerateBuurtNatuur(),
+        AllKnownLayouts.GenerateBikeMonitoringStations(),
 
         new StreetWidth(), // The ugly duckling
     ];

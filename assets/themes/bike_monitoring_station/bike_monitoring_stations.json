@@ -1,0 +1,28 @@
+{
+  "id": "bike_monitoring_stations",
+  "title": {
+    "en": "Bike Monitoring stations"
+  },
+  "shortDescription": {
+    "en": "Bike monitoring stations with live data from Brussels Mobility"
+  },
+  "description": {
+    "en": "This theme shows bike monitoring stations with live data"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/bike_monitoring_station/monitoring_station.svg",
+  "version": "0",
+  "startLat": 50.8435,
+  "startLon": 4.3688,
+  "startZoom": 14,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "bike_monitoring_station"
+  ],
+  "roamingRenderings": [],
+  "defaultBackgroundId": "Stadia.AlidadeSmoothDark"
+}
