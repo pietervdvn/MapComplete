@@ -20,6 +20,8 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
+import {TagRendering} from "../Popup/TagRendering";
+import {Utils} from "../../Utils";
 
 /**
  * Shows the configuration for a single layer
@@ -113,18 +115,27 @@ export default class LayerPanel extends UIElement {
             description: "This is the rendering shown as title in the popup for this element",
             disableQuestions: true
         });
-        
+
         new SingleSetting(config, popupTitleRendering, ["layers", index, "title"], "Popup title", "This is the rendering shown as title in the popup");
         this.titleRendering = popupTitleRendering;
         this.registerTagRendering(popupTitleRendering);
-        
+
+
+        const renderings = config.map(config => {
+            const layer = config.layers[index] as LayerConfigJson;
+            // @ts-ignore
+            const renderings : TagRenderingConfigJson[] = layer.tagRenderings ;
+            return renderings;
+        });
         const tagRenderings = new MultiInput<TagRenderingConfigJson>("Add a tag rendering/question",
             () => ({}),
             () => {
                 const tagPanel = new TagRenderingPanel(languages, currentlySelected, userDetails)
                 self.registerTagRendering(tagPanel);
                 return tagPanel;
-            }, undefined, {allowMovement:true});
+            }, renderings,
+            {allowMovement: true});
+
         tagRenderings.GetValue().addCallback(
             tagRenderings => {
                 (config.data.layers[index] as LayerConfigJson).tagRenderings = tagRenderings;

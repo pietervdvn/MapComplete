@@ -29,7 +29,6 @@ export default class OpeningHoursInput extends InputElement<string> {
 
       
         const leftoverRules = value.map<string[]>(str => {
-            console.log("Leftovers?",str)
             if (str === undefined) {
                 return []
             }
@@ -50,7 +49,6 @@ export default class OpeningHoursInput extends InputElement<string> {
         const rulesFromOhPicker = value.map(OH.Parse);
 
         const ph = value.map<string>(str => {
-            console.log("PH RULE?", ph)
             if (str === undefined) {
                 return ""
             }
@@ -65,7 +63,6 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._phSelector = new PublicHolidayInput(ph);
 
         function update() {
-            console.log("UPdating")
             let rules = OH.ToString(rulesFromOhPicker.data);
             if (leftoverRules.data.length != 0) {
                 rules += ";" + leftoverRules.data.join(";")
