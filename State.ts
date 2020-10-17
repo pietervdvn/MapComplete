@@ -205,6 +205,7 @@ export default class State {
             if (allPreferences === undefined) {
                 return installedThemes;
             }
+            const invalidThemes = []
             for (const allPreferencesKey in allPreferences) {
                 const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
                 if (themename && themename[1] !== "") {
@@ -226,9 +227,17 @@ export default class State {
                             definition: customLayout.data
                         });
                     } catch (e) {
-                        console.warn("Could not parse custom layout from preferences: ", allPreferencesKey, e, customLayout.data);
+                        console.warn("Could not parse custom layout from preferences - deleting: ", allPreferencesKey, e, customLayout.data);
+                        invalidThemes.push(themename[1])
                     }
                 }
+            }
+
+            for (const invalid of invalidThemes) {
+                console.error("Attempting to remove ", invalid)
+                this.osmConnection.GetLongPreference(
+                    "installed-theme-" + invalid
+                ).setData(null);
             }
 
             return installedThemes;

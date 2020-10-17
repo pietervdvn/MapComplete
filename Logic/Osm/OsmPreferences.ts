@@ -41,7 +41,19 @@ export class OsmPreferences {
         const self = this;
         source.addCallback(str => {
             if (str === undefined || str === "") {
-               return
+                return;
+            }
+            if(str === null){
+                console.error("Deleting "+allStartWith);
+                let count = parseInt(length.data);
+                for (let i = 0; i < count; i++) {
+                    // Delete all the preferences
+                    self.GetPreference(allStartWith + "-" + i, "")
+                        .setData("");
+                }
+                self.GetPreference(allStartWith + "-length", "")
+                    .setData("");
+                return
             }
 
             let i = 0;
@@ -75,7 +87,6 @@ export class OsmPreferences {
             }
 
             source.setData(str);
-            console.log("Long preference", key, "has", str.length, "chars");
         }
 
         length.addCallback(l => {

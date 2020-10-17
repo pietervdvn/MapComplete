@@ -282,12 +282,7 @@ export class InitUiElements {
 
             tabs.push({
                 header: `<img src='./assets/add.svg'>`,
-                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
-                    if(userdetails.csCount < State.userJourney.moreScreenUnlock){
-                        return "";
-                    }
-                    return new MoreScreen().Render()
-                }, [Locale.language]))
+                content: new MoreScreen()
             });
         }
 

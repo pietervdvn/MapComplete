@@ -14,7 +14,6 @@ export class TabbedComponent extends UIElement {
             let element = elements[i];
             this.headers.push(Translations.W(element.header).onClick(() => self._source.setData(i)));
             const content = Translations.W(element.content)
-            this.ListenTo(content)
             this.content.push(content);
         }
     }
@@ -34,6 +33,7 @@ export class TabbedComponent extends UIElement {
         headerBar = "<div class='tabs-header-bar'>" + headerBar + "</div>"
 
         const content = this.content[this._source.data];
+        console.log("Rendering tab", this._source.data);
         return headerBar + "<div class='tab-content'>" + (content?.Render() ?? "") + "</div>";
     }
 
