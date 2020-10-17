@@ -27,9 +27,9 @@ export class QueryParameters {
             const params = window.location.search.substr(1).split("&");
             for (const param of params) {
                 const kv = param.split("=");
-                const key = kv[0];
+                const key = decodeURIComponent(kv[0]);
                 QueryParameters.addOrder(key)
-                const v = kv[1];
+                const v = decodeURIComponent(kv[1]);
                 const source = new UIEventSource<string>(v);
                 source.addCallback(() => QueryParameters.Serialize())
                 QueryParameters.knownSources[key] = source;
