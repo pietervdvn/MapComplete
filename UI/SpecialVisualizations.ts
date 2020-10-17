@@ -13,7 +13,7 @@ import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
     private readonly translation: Translation;
-    private content: UIElement;
+    private content: UIElement[];
 
     constructor(
         translation: Translation,
@@ -25,18 +25,19 @@ export class SubstitutedTranslation extends UIElement {
         Locale.language.addCallbackAndRun(() => {
             self.content = self.CreateContent();
             self.Update();
-        })
+        });
+        this.dumbMode = false;
     }
 
     InnerRender(): string {
-        return this.content.Render();
+        return new Combine(this.content).Render();
     }
 
 
-    CreateContent(): UIElement {
+    private CreateContent(): UIElement[] {
         let txt = this.translation?.txt;
         if (txt === undefined) {
-            return new FixedUiElement("")
+            return []
         }
         const tags = this.tags.data;
         for (const key in tags) {
@@ -44,11 +45,10 @@ export class SubstitutedTranslation extends UIElement {
             txt = txt.split("{" + key + "}").join(tags[key]);
         }
 
-
-        return new Combine(this.EvaluateSpecialComponents(txt));
+        return this.EvaluateSpecialComponents(txt);
     }
 
-    public EvaluateSpecialComponents(template: string): UIElement[] {
+    private EvaluateSpecialComponents(template: string): UIElement[] {
 
         for (const knownSpecial of SpecialVisualizations.specialVisualizations) {
 
@@ -58,10 +58,22 @@ export class SubstitutedTranslation extends UIElement {
 
                 // We found a special component that should be brought to live
                 const partBefore = this.EvaluateSpecialComponents(matched[1]);
-                const argument = matched[2];
+                const argument = matched[2].trim();
                 const partAfter = this.EvaluateSpecialComponents(matched[3]);
                 try {
-                    const args = argument.trim().split(",").map(str => str.trim());
+                    const args = knownSpecial.args.map(arg => arg.defaultValue ?? "");
+                    if (argument.length > 0) {
+                        const realArgs = argument.split(",").map(str => str.trim());
+                        for (let i = 0; i < realArgs.length; i++) {
+                            if (args.length <= i) {
+                                args.push(realArgs[i]);
+                            } else {
+                                args[i] = realArgs[i];
+                            }
+                        }
+                    }
+
+
                     const element = knownSpecial.constr(this.tags, args);
                     return [...partBefore, element, ...partAfter]
                 } catch (e) {
@@ -83,6 +95,7 @@ export default class SpecialVisualizations {
         funcName: string,
         constr: ((tagSource: UIEventSource<any>, argument: string[]) => UIElement),
         docs: string,
+        example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
     }[] =
 
@@ -91,16 +104,17 @@ export default class SpecialVisualizations {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
                 args: [{
-                    name: "image tag(s)",
-                    defaultValue: "image,image:*,wikidata,wikipedia,wikimedia_commons",
-                    doc: "Image tag(s) where images are searched"
-                }],
+                    name: "image key/prefix",
+                    defaultValue: "image",
+                    doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... "
+                },
+                    {
+                        name: "smart search",
+                        defaultValue: "true",
+                        doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
+                    }],
                 constr: (tags, args) => {
-                    if (args.length > 0) {
-                        console.error("TODO HANDLE THESE ARGS") // TODO FIXME
-
-                    }
-                    return new ImageCarousel(tags);
+                    return new ImageCarousel(tags, args[0], args[1].toLowerCase() === "true");
                 }
             },
 
@@ -108,15 +122,12 @@ export default class SpecialVisualizations {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
                 args: [{
+                    name: "image-key",
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                    defaultValue: "image", name: "image-key"
+                    defaultValue: "image"
                 }],
                 constr: (tags, args) => {
-                    if (args.length > 0) {
-                        console.error("TODO HANDLE THESE ARGS") // TODO FIXME
-
-                    }
-                    return new ImageUploadFlow(tags)
+                    return new ImageUploadFlow(tags, args[0])
                 }
             },
             {
@@ -125,7 +136,7 @@ export default class SpecialVisualizations {
                 args: [{
                     name: "key",
                     defaultValue: "opening_hours",
-                    doc: "The tag from which the table is constructed"
+                    doc: "The tagkey from which the table is constructed."
                 }],
                 constr: (tagSource: UIEventSource<any>, args) => {
                     let keyname = args[0];
@@ -139,6 +150,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "live",
                 docs: "Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)}",
+                example: "{live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}",
                 args: [{
                     name: "Url", doc: "The URL to load"
                 }, {
@@ -157,5 +169,38 @@ export default class SpecialVisualizations {
             }
 
         ]
+    static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();
 
+    private static GenHelpMessage() {
+
+        const helpTexts =
+            SpecialVisualizations.specialVisualizations.map(viz => new Combine(
+                [
+                    `<h3>${viz.funcName}</h3>`,
+                    viz.docs,
+                    "<ol>",
+                    ...viz.args.map(arg => new Combine([
+                        "<li>",
+                        "<b>" + arg.name + "</b>: ",
+                        arg.doc,
+                        arg.defaultValue === undefined ? "" : (" Default: <span class='literal-code'>" + arg.defaultValue + "</span>"),
+                        "</li>"
+                    ])),
+                    "</ol>",
+                    "<b>Example usage: </b>",
+                    new FixedUiElement(
+                        viz.example ?? "{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}"
+                    ).SetClass("literal-code"),
+
+                ]
+            ));
+
+
+        return new Combine([
+                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                ...helpTexts
+
+            ]
+        );
+    }
 }

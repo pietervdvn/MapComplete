@@ -2,7 +2,7 @@
 
 import SpecialVisualizations from "./UI/SpecialVisualizations";
 
-SpecialVisualizations.HelpMessage.AttachTo("maindivgi")
+SpecialVisualizations.HelpMessage.AttachTo("maindiv")
 
 
 /*/

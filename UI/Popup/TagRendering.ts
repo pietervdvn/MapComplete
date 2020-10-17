@@ -81,7 +81,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         const self = this;
 
-        this.currentTags = this._source.map(tags => {
+        this.currentTags = tags.map(tags => {
 
                 if (options.tagsPreprocessor === undefined) {
                     return tags;
@@ -96,6 +96,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
                 return newTags;
             }
         );
+        tags.addCallback(() => self.currentTags.ping());
 
         if (options.question !== undefined) {
             this._question = options.question;
@@ -516,7 +517,10 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         this._editButton.Update();
     }
 
-    private answerCache = {}
+    private readonly answerCache = {}
+    // Makes sure that the elements receive updates
+    // noinspection JSMismatchedCollectionQueryUpdate
+    private readonly substitutedElements : UIElement[]= [];
 
     private ApplyTemplate(template: string | Translation): UIElement {
         const tr = Translations.WT(template);
@@ -526,6 +530,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         // We have to cache these elemnts, otherwise it is to slow
         const el = new SubstitutedTranslation(tr, this.currentTags);
         this.answerCache[tr.id] = el;
+        this.substitutedElements.push(el);
         return el;
     }
 

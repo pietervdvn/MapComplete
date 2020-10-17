@@ -17,6 +17,7 @@ import State from "../../State";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import ValidatedTextField from "../Input/ValidatedTextField";
+import SpecialVisualizations from "../SpecialVisualizations";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -83,7 +84,10 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         const settings: (string | SingleSetting<any>)[] = [
             setting(
                 options?.noLanguage ? new TextField({placeholder:"Rendering"}) :
-                    new MultiLingualTextFields(languages), "render", "Value to show", " Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value."),
+                    new MultiLingualTextFields(languages), "render", "Value to show", 
+                "Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value." +
+                "<br/><br/>" +
+                "Furhtermore, some special functions are supported:"+SpecialVisualizations.HelpMessage.Render()),
 
             questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",
             ...(options?.disableQuestions ? [] : questionSettings),

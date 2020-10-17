@@ -145,7 +145,6 @@ export class FromJSON {
                     json = "{image_carousel()}{image_upload()}";
                 }
             }
-            console.warn("Possible literal rendering:", json)
 
             return new TagRenderingOptions({
                 freeform: {

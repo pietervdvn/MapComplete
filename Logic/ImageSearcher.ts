@@ -28,7 +28,7 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
     private readonly _commons = new UIEventSource<string>("");
 
 
-    constructor(tags: UIEventSource<any>) {
+    constructor(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true) {
         super([]);
 
         this._tags = tags;
@@ -40,17 +40,17 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
         this._commons.addCallback(() => self.LoadCommons());
 
 
-        this._tags.addCallbackAndRun(() => self.LoadImages());
+        this._tags.addCallbackAndRun(() => self.LoadImages(imagePrefix, loadSpecial));
 
     }
 
     private AddImage(key: string, url: string) {
-        if (url === undefined || url === null || url === "")  {
+        if (url === undefined || url === null || url === "") {
             return;
         }
-
         for (const el of this.data) {
             if (el.url === url) {
+                // This url is already seen -> don't add it
                 return;
             }
         }
@@ -102,17 +102,18 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
         }
     }
 
-    private LoadImages(imagePrefix: string = "image", loadAdditional = true): void {
-        const imageTag = this._tags.data.image;
+    private LoadImages(imagePrefix: string, loadAdditional: boolean): void {
+        console.log("Loading images from",this._tags)
+        const imageTag = this._tags.data[imagePrefix];
         if (imageTag !== undefined) {
             const bareImages = imageTag.split(";");
             for (const bareImage of bareImages) {
-                this.AddImage("image", bareImage);
+                this.AddImage(imagePrefix, bareImage);
             }
         }
 
         for (const key in this._tags.data) {
-            if (key.startsWith("image:")) {
+            if (key.startsWith(imagePrefix+":")) {
                 const url = this._tags.data[key]
                 this.AddImage(key, url);
             }
@@ -130,7 +131,7 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
             }
 
             if (this._tags.data.mapillary) {
-                this.AddImage("mapillary", "https://www.mapillary.com/map/im/" + this._tags.data.mapillary)
+                this.AddImage(undefined,"https://www.mapillary.com/map/im/" + this._tags.data.mapillary)
             }
 
         }

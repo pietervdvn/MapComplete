@@ -29,6 +29,7 @@ export class Changes {
         if(pending.length === 0){
             return;
         }
+        console.log("Sending ping",eventSource)
         eventSource.ping();
         this.uploadAll([], pending);
     }

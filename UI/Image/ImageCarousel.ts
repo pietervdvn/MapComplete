@@ -11,9 +11,9 @@ export class ImageCarousel extends TagDependantUIElement {
 
     public readonly slideshow: SlideShow;
 
-    constructor(tags: UIEventSource<any>) {
+    constructor(tags: UIEventSource<any>, imagePrefix: string = "image", loadSpecial: boolean =true) {
         super(tags);
-        const searcher : UIEventSource<{url:string}[]> = new ImageSearcher(tags);
+        const searcher : UIEventSource<{url:string}[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
         const uiElements = searcher.map((imageURLS: {key: string, url:string}[]) => {
             const uiElements: UIElement[] = [];
             for (const url of imageURLS) {

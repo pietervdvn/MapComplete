@@ -17,10 +17,12 @@ export class ImageUploadFlow extends UIElement {
     private readonly _didFail: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _allDone: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _connectButton: UIElement;
+    private readonly _imagePrefix: string;
 
-    constructor(tags: UIEventSource<any>) {
+    constructor(tags: UIEventSource<any>, imagePrefix: string = "image") {
         super(State.state.osmConnection.userDetails);
         this._tags = tags;
+        this._imagePrefix = imagePrefix;
 
         this.ListenTo(this._isUploading);
         this.ListenTo(this._didFail);
@@ -131,20 +133,21 @@ export class ImageUploadFlow extends UIElement {
 
     private handleSuccessfulUpload(url) {
         const tags = this._tags.data;
-        let key = "image";
-        if (tags["image"] !== undefined) {
+        let key = this._imagePrefix;
+        if (tags[this._imagePrefix] !== undefined) {
 
             let freeIndex = 0;
-            while (tags["image:" + freeIndex] !== undefined) {
+            while (tags[this._imagePrefix + ":" + freeIndex] !== undefined) {
                 freeIndex++;
             }
-            key = "image:" + freeIndex;
+            key = this._imagePrefix + ":" + freeIndex;
         }
         console.log("Adding image:" + key, url);
         State.state.changes.addTag(tags.id, new Tag(key, url));
     }
 
     private handleFiles(files) {
+        console.log("Received images from the user, starting upload")
         this._isUploading.setData(files.length);
         this._allDone.setData(false);
 
@@ -189,7 +192,6 @@ export class ImageUploadFlow extends UIElement {
 
     InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
-        const user = State.state.osmConnection.userDetails.data;
 
         this._licensePicker.Update()
         const form = document.getElementById('fileselector-form-' + this.id) as HTMLFormElement
@@ -197,8 +199,7 @@ export class ImageUploadFlow extends UIElement {
         const self = this
 
         function submitHandler() {
-            const files = $(selector).prop('files');
-            self.handleFiles(files)
+            self.handleFiles($(selector).prop('files'))
         }
 
         if (selector != null && form != null) {
@@ -206,8 +207,6 @@ export class ImageUploadFlow extends UIElement {
                 submitHandler()
             }
             form.addEventListener('submit', e => {
-                console.log(e)
-                alert('wait')
                 e.preventDefault()
                 submitHandler()
             })

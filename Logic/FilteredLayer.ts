@@ -111,7 +111,10 @@ export class FilteredLayer {
             
             if (this.filters.matches(tags)) {
                 const centerPoint = GeoOperations.centerpoint(feature);
-                feature.properties["_surface"] = "" + GeoOperations.surfaceAreaInSqMeters(feature);
+                const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
+                feature.properties["_surface"] = "" + sqMeters;
+                feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000)/10;
+
                 const lat = centerPoint.geometry.coordinates[1];
                 const lon = centerPoint.geometry.coordinates[0]
                 feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
@@ -252,7 +255,7 @@ export class FilteredLayer {
                 const popup = L.popup({}, marker);
                 let uiElement: UIElement;
                 let content = undefined;
-               let p = marker.bindPopup(popup)
+                let p = marker.bindPopup(popup)
                     .on("popupopen", () => {
                         if (content === undefined) {
                             uiElement = self._showOnPopup(eventSource, feature);
