@@ -100,10 +100,12 @@ export default class MetaTagging {
                                 tags["_isOpen:description"] = comment;
                             }
                             const nextChange = oh.getNextChange() as Date;
-                            window.setTimeout(
-                                updateTags,
-                                (nextChange.getTime() - (new Date()).getTime())
-                            )
+                            if (nextChange !== undefined) {
+                                window.setTimeout(
+                                    updateTags,
+                                    (nextChange.getTime() - (new Date()).getTime())
+                                )
+                            }
                         }
                         updateTags();
                     }
