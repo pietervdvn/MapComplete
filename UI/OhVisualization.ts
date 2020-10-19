@@ -33,7 +33,7 @@ export default class OpeningHoursVisualization extends UIElement {
 
         const values = [[], [], [], [], [], [], []];
 
-       const start  = new Date(from);
+        const start = new Date(from);
         // We go one day more into the past, in order to force rendering of holidays in the start of the period
         start.setDate(from.getDate() - 1);
         

@@ -1,0 +1,239 @@
+{
+  "id": "id",
+  "title": {
+    "nl": "Friturenkaart",
+    "fr": "Carte des fritures"
+  },
+  "description": {
+    "nl": "Op deze kaart vind je je favoriete frituur!"
+  },
+  "language": [
+    "nl",
+    "fr"
+  ],
+  "maintainer": "",
+  "icon": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "fritures",
+      "name": {
+        "nl": "Frituren",
+        "fr": "Fritures"
+      },
+      "minzoom": 8,
+      "overpassTags": {
+        "and": [
+          "cuisine~.*friture.*"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Frituur",
+          "fr": "Friture"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name~*"
+              ]
+            },
+            "then": {
+              "nl": " <i>{name}</i>",
+              "fr": " <i>{name}</i>"
+            }
+          }
+        ]
+      },
+      "description": {},
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "<a href='tel:{phone}'>{phone}</a>",
+            "fr": "<a href='tel:{phone}'>{phone}</a>"
+          },
+          "question": {
+            "en": "What is the phone number?",
+            "nl": "Wat is het telefoonnummer van deze frituur?",
+            "fr": "Quel est le numéro de téléphone de cette friture?"
+          },
+          "freeform": {
+            "key": "phone",
+            "type": "phone"
+          }
+        },
+        {
+          "render": {
+            "en": "<a href='{website}'>{website}</a>"
+          },
+          "question": {
+            "en": "What is the website of this shop?",
+            "nl": "Wat is de website van deze frituur?",
+            "fr": "Quel est le site web de cette  friture?"
+          },
+          "freeform": {
+            "key": "website",
+            "type": "url"
+          }
+        },
+        {
+          "render": {
+            "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires</h3>{opening_hours_table(opening_hours)}"
+          },
+          "question": {
+            "nl": "Wat zijn de openinguren van deze frituur?",
+            "fr": "Quand est ce-que ce friture ouvert?"
+          },
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          }
+        },
+        {
+          "render": {
+            "nl": ""
+          },
+          "question": {
+            "nl": "Heeft deze frituur vegetarische snacks?",
+            "fr": "Cette friture est-elle équipée de snacks végétariens ?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "diet:vegetarian=yes"
+                ]
+              },
+              "then": {
+                "nl": "Er zijn vegetarische snacks aanwezig",
+                "fr": "Des collations végétariennes sont disponibles"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "diet:vegetarian=limited"
+                ]
+              },
+              "then": {
+                "nl": "Slechts enkele vegetarische snacks",
+                "fr": "Quelques snacks végétariens seulement"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "diet:vegetarian=no"
+                ]
+              },
+              "then": {
+                "nl": "Geen vegetarische snacks beschikbaar",
+                "fr": "Pas d'en-cas végétariens disponibles"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": ""
+          },
+          "question": {
+            "nl": "Heeft deze frituur veganistische snacks?",
+            "fr": "Cette friture est-elle équipée de snacks végétaliens ?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "diet:vegan=yes"
+                ]
+              },
+              "then": {
+                "nl": "Er zijn veganistische snacks aanwezig",
+                "fr": "Des collations végétaliens sont disponibles"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "diet:vegan=limited"
+                ]
+              },
+              "then": {
+                "nl": "Slechts enkele veganistische snacks",
+                "fr": "Quelques snacks végétaliens seulement"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "diet:vegetarian=no"
+                ]
+              },
+              "then": {
+                "nl": "Geen veganistische snacks beschikbaar",
+                "fr": "Pas d'en-cas végétaliens disponibles"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "nl": "Bakt deze frituur in dierlijk  vetof plantaardig olie?",
+            "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "friture:oil=vegetable"
+                ]
+              },
+              "then": {
+                "nl": "Plantaardige olie",
+                "fr": "Huile végétale"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "friture:oil=animal"
+                ]
+              },
+              "then": {
+                "nl": "Dierlijk vet",
+                "fr": "Graisse animale"
+              }
+            }
+          ],
+          "freeform": {
+            "key": ""
+          }
+        }
+      ],
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [],
+      "wayHandling": 1
+    }
+  ],
+  "roamingRenderings": [],
+  "shortDescription": {}
+}

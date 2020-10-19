@@ -87,7 +87,7 @@ export class ImageUploadFlow extends UIElement {
         }
 
         const extraInfo = new Combine([
-            Translations.t.image.respectPrivacy,
+            Translations.t.image.respectPrivacy.SetStyle("font-size:small;"),
             "<br/>",
             this._licensePicker,
             "<br/>",

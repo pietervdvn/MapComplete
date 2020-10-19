@@ -8,6 +8,7 @@ export default class CodeGrid {
         CodeGrid.grid.getCode(lat, lon, handle);
     }
 
+
     private static InitGrid(): any {
         const grid = codegrid.CodeGrid("./tiles/");
 

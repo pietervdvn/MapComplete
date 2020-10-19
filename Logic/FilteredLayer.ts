@@ -110,31 +110,6 @@ export class FilteredLayer {
             const tags = TagUtils.proprtiesToKV(feature.properties);
             
             if (this.filters.matches(tags)) {
-                const centerPoint = GeoOperations.centerpoint(feature);
-                const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
-                feature.properties["_surface"] = "" + sqMeters;
-                feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000)/10;
-
-                const lat = centerPoint.geometry.coordinates[1];
-                const lon = centerPoint.geometry.coordinates[0]
-                feature.properties["_lon"] = "" + lat; // We expect a string here for lat/lon
-                feature.properties["_lat"] = "" + lon;
-                // But the codegrid SHOULD be a number!
-                CodeGrid.getCode(lat, lon, (error, code) => {
-                    if (error === null) {
-                        feature.properties["_country"] = code;
-                    } else {
-                        console.warn("Could not determine country for", feature.properties.id, error);
-                    }
-                })
-
-                if (feature.geometry.type !== "Point") {
-                    if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
-                        selfFeatures.push(centerPoint);
-                    } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
-                        feature = centerPoint;
-                    }
-                }
                 selfFeatures.push(feature);
             } else {
                 leftoverFeatures.push(feature);

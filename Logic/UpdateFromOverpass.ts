@@ -5,8 +5,9 @@ import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
 import State from "../State";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
+import MetaTagging from "./MetaTagging";
 
-export class LayerUpdater {
+export class UpdateFromOverpass {
 
     public readonly sufficentlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
@@ -99,6 +100,8 @@ export class LayerUpdater {
                 newIds++;
             }
         }
+        
+        MetaTagging.addMetatags(geojson.features);
         
         function renderLayers(layers: FilteredLayer[]) {
             if (layers.length === 0) {

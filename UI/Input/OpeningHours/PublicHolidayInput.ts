@@ -114,6 +114,12 @@ export default class PublicHolidayInput extends InputElement<string> {
                 mode: "off"
             }
         }
+        
+        if(str === "PH open"){
+            return {
+                mode: "open"
+            }
+        }
 
         if (!str.startsWith("PH ")) {
             return null;

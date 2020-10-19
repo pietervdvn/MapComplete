@@ -327,6 +327,15 @@
       "freeform": {
         "key": "description:0"
       }
+    },
+    {"#": "Surface are",
+    "render": {
+      "en": "Surface area: {_surface:ha}Ha",
+      "mappings": {
+        "if": "_surface:ha=0",
+        "then": ""
+      }
+    }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 10,

@@ -8,7 +8,7 @@ import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
 import {FilteredLayer} from "./Logic/FilteredLayer";
-import {LayerUpdater} from "./Logic/LayerUpdater";
+import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
@@ -66,7 +66,7 @@ export default class State {
 
     public favouriteLayers: UIEventSource<string[]>;
 
-    public layerUpdater: LayerUpdater;
+    public layerUpdater: UpdateFromOverpass;
 
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])

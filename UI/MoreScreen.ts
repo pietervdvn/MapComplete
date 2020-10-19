@@ -17,10 +17,6 @@ export class MoreScreen extends UIElement {
         super(State.state.locationControl);
         this.ListenTo(State.state.osmConnection.userDetails);
         this.ListenTo(State.state.installedThemes);
-        
-        State.state.installedThemes.addCallback(themes => {
-            console.log("INSTALLED THEMES COUNT:", themes.length)
-        })
     }
 
     private createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
@@ -72,7 +68,6 @@ export class MoreScreen extends UIElement {
 
     InnerRender(): string {
 
-        console.log("Inner rendering MORE")
         const tr = Translations.t.general.morescreen;
 
         const els: UIElement[] = []

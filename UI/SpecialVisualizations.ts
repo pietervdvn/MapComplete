@@ -166,6 +166,21 @@ export default class SpecialVisualizations {
                     const source = LiveQueryHandler.FetchLiveData(url, shorthands.split(";"));
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
+            },
+            
+            {
+                funcName: "all_tags",
+                docs: "Prints all key-value pairs of the object - used for debugging",
+                args:[],
+                constr: ((tags: UIEventSource<any>) => {
+                    return new VariableUiElement(tags.map(tags => {
+                        const parts = [];
+                        for (const key in tags) {
+                            parts.push(key+"="+tags[key]);
+                        }
+                        return parts.join("<br/>")
+                    })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
+                })
             }
 
         ]

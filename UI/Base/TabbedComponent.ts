@@ -33,7 +33,6 @@ export class TabbedComponent extends UIElement {
         headerBar = "<div class='tabs-header-bar'>" + headerBar + "</div>"
 
         const content = this.content[this._source.data];
-        console.log("Rendering tab", this._source.data);
         return headerBar + "<div class='tab-content'>" + (content?.Render() ?? "") + "</div>";
     }
 

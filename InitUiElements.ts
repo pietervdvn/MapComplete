@@ -15,7 +15,7 @@ import {DropDown} from "./UI/Input/DropDown";
 import {LayerSelection} from "./UI/LayerSelection";
 import {Preset} from "./Customizations/LayerDefinition";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {LayerUpdater} from "./Logic/LayerUpdater";
+import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayout} from "./Logic/PersonalLayout";
@@ -451,7 +451,7 @@ export class InitUiElements {
             )
         );
         State.state.bm = bm;
-        State.state.layerUpdater = new LayerUpdater(State.state);
+        State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
