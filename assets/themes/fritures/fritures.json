@@ -55,6 +55,20 @@
       "tagRenderings": [
         {
           "render": {
+            "nl": "{name}",
+            "fr": "{name}"
+          },
+          "question": {
+            "en": "What is the name of this friture?",
+            "nl": "Wat is de naam van deze frituur?",
+            "fr": "Quel est le nom de cette friture?"
+          },
+          "feeform": {
+            "key": "name"
+          }
+        },
+        {
+          "render": {
             "nl": "<a href='tel:{phone}'>{phone}</a>",
             "fr": "<a href='tel:{phone}'>{phone}</a>"
           },
@@ -97,9 +111,6 @@
           }
         },
         {
-          "render": {
-            "nl": ""
-          },
           "question": {
             "nl": "Heeft deze frituur vegetarische snacks?",
             "fr": "Cette friture est-elle équipée de snacks végétariens ?"
@@ -141,9 +152,6 @@
           ]
         },
         {
-          "render": {
-            "nl": ""
-          },
           "question": {
             "nl": "Heeft deze frituur veganistische snacks?",
             "fr": "Cette friture est-elle équipée de snacks végétaliens ?"
@@ -212,10 +220,7 @@
                 "fr": "Graisse animale"
               }
             }
-          ],
-          "freeform": {
-            "key": ""
-          }
+          ]
         }
       ],
       "icon": {
@@ -230,7 +235,18 @@
       "color": {
         "render": "#00f"
       },
-      "presets": [],
+      "presets": [
+        {
+          "title": {
+            "nl": "Frituur",
+            "fr": "Friture"
+          },
+          "tags": [
+            "amenity=fast_food",
+            "cuisine=friture"
+          ]
+        }
+      ],
       "wayHandling": 1
     }
   ],
