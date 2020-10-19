@@ -107,8 +107,16 @@ export class FilteredLayer {
         const selfFeatures = [];
         for (let feature of geojson.features) {
             // feature.properties contains all the properties
-            const tags = TagUtils.proprtiesToKV(feature.properties);
             
+            const tags = TagUtils.proprtiesToKV(feature.properties);
+            const centerPoint = GeoOperations.centerpoint(feature);
+            if (feature.geometry.type !== "Point") {
+                if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
+                    selfFeatures.push(centerPoint);
+                } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
+                    feature = centerPoint;
+                }
+            }
             if (this.filters.matches(tags)) {
                 selfFeatures.push(feature);
             } else {
