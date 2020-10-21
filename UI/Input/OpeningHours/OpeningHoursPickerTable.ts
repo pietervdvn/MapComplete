@@ -122,7 +122,8 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 let row = table.rows[i]
                 for (let j = 0; j < row.cells.length; j++) {
                     let cell = row.cells[j]
-                    cell?.classList?.remove("oh-timecell-selected")
+                    cell?.classList?.remove("oh-timecell-selected");
+                    row.classList?.remove("oh-timerow-selected");
                 }
             }
         }
@@ -163,12 +164,17 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                         }
                         offset = -1;
                     }
+                    
+                    row.classList?.add("oh-timerow-selected");
+                    
                     if (iStart <= i && i <= iEnd &&
                         jStart <= j + offset && j + offset <= jEnd) {
                         cell?.classList?.add("oh-timecell-selected")
                     } else {
-                        cell?.classList?.remove("oh-timecell-selected")
+                        cell?.classList?.remove("oh-timecell-selected")          
+                        row.classList?.remove("oh-timerow-selected")
                     }
+                    
 
                 }
 

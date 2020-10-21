@@ -5,6 +5,14 @@
     height: 100%;
 }
 
+.oh-timecell {
+    background-color: white;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000000;
+    position: relative;
+    box-sizing: border-box;
+}
+
 .oh-table th {
     font-weight: bold;
     font-size: medium;
@@ -16,37 +24,40 @@
 }
 
 .oh-timecell:hover {
-    background-color: #ffd1be !important;
+    background-color: #92b1ff !important;
 }
 
-.oh-timecell {
-    background-color: white;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #ccc;
-    position: relative;
-    box-sizing: border-box;
-}
+
 
 .oh-timecell-selected {
-    background-color: orange;
+    background-color: #0048ff;
+}
+.oh-timerow-selected {
+    border-left: 10px solid black;
+    margin-left: 0px;
 }
 
-.oh-timecell-half{
+
+.oh-timecell-half {
     background-color: aliceblue;
 }
 
 .oh-timecell-half.oh-timecell-selected {
-   background-color:  lightsalmon;
+    background-color: #0048ff;
+}
+
+.oh-table tr {
+    background: #ddd;
 }
 
 .oh-left-col {
     border-bottom: 1px solid #aaa;
     margin: 0;
+    margin-left: 10px;
     width: 0.5em;
     font-size: large;
     padding: 0;
     padding-right: 0.2em;
-    background: #ddd;
 }
 
 .oh-draggable-header {
@@ -62,17 +73,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: orange;
+    background: #0048ff;
     z-index: 1;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .oh-timerange-inner {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     justify-content: space-between;
     align-content: center;
     height: 100%;
+    overflow-y: hidden;
 }
 
 .oh-timerange-inner input {
