@@ -435,7 +435,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
         for (const oneOnOneElement of this._mapping) {
-            if (oneOnOneElement.k.matches(tags)) {
+            if (oneOnOneElement.k === undefined  || oneOnOneElement.k.matches(tags)) {
                 // We have found a matching key -> we use this template
                 return this.ApplyTemplate(oneOnOneElement.txt);
             }
