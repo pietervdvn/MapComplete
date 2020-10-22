@@ -5,12 +5,12 @@ import opening_hours from "opening_hours";
 
 
 class SimpleMetaTagger {
-    private _f: (feature: any) => void;
+    private _f: (feature: any, index: number) => void;
     public readonly keys: string[];
     public readonly doc: string;
 
 
-    constructor(keys: string[], doc: string, f: ((feature: any) => void)) {
+    constructor(keys: string[], doc: string, f: ((feature: any, index: number) => void)) {
         this.keys = keys;
         this.doc = doc;
         this._f = f;
@@ -22,8 +22,9 @@ class SimpleMetaTagger {
     }
 
     addMetaTags(features: any[]) {
-        for (const feature of features) {
-            this._f(feature);
+        for (let i = 0; i < features.length; i++) {
+            let feature = features[i];
+            this._f(feature, i);
         }
     }
 
@@ -62,7 +63,7 @@ export default class MetaTagging {
 
         new SimpleMetaTagger(
             ["_country"], "The country code of the point",
-            (feature => {
+            ((feature, index) => {
                 const centerPoint = GeoOperations.centerpoint(feature);
                 const lat = centerPoint.geometry.coordinates[1];
                 const lon = centerPoint.geometry.coordinates[0]
@@ -70,7 +71,11 @@ export default class MetaTagging {
                 CodeGrid.getCode(lat, lon, (error, code) => {
                     if (error === null) {
                         feature.properties["_country"] = code;
-                        State.state.allElements.addOrGetElement(feature).ping();
+
+                        // There is a huge performance issue: if there are ~1000 features receiving a ping at the same time, 
+                        // The application hangs big time
+                        // So we disable pinging all together
+
                     } else {
                         console.warn("Could not determine country for", feature.properties.id, error);
                     }
@@ -84,6 +89,11 @@ export default class MetaTagging {
                 tagsSource.addCallback(tags => {
 
                     if (tags["opening_hours"] !== undefined && tags["_country"] !== undefined) {
+
+                        if (tags._isOpen !== undefined) {
+                            // Already defined
+                            return;
+                        }
 
                         const oh = new opening_hours(tags["opening_hours"], {
                             lat: tags._lat,
