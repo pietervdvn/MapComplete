@@ -1,14 +1,23 @@
 
 .oh-table {
-    border-collapse: collapse;
     width: 100%;
     height: 100%;
+    text-align: center;
+}
+
+.oh-table th {
+    padding: 0;
+    margin: 0;
+}
+
+.oh-table, .oh-table td {
+    border-collapse: collapse;
+    background-clip: padding-box;
+    border-right: 1px solid #ccc;
 }
 
 .oh-timecell {
     background-color: white;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000000;
     position: relative;
     box-sizing: border-box;
 }
@@ -28,17 +37,13 @@
 }
 
 
-
 .oh-timecell-selected {
     background-color: #0048ff;
-}
-.oh-timerow-selected {
-    border-left: 10px solid black;
-    margin-left: 0px;
 }
 
 
 .oh-timecell-half {
+    border-bottom: 1px solid #ddd;
     background-color: aliceblue;
 }
 
@@ -60,6 +65,44 @@
     padding-right: 0.2em;
 }
 
+.oh-timecell-0 {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+}
+
+.oh-timecell-6 {
+    border-right: 10px solid rgba(0, 0, 0, 0);
+}
+
+.oh-timecol-selected {
+    border-right: #0048ff;
+}
+
+.oh-timecol-selected > span {
+    background-color: #0048ff;
+    color: white;
+    width: 100%;
+    display: block;
+}
+
+.oh-timecol-selected-round-left > span {
+    border-top-left-radius: 5em;
+    border-bottom-left-radius: 5em;
+}
+
+.oh-timecol-selected-round-right > span {
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+}
+
+.oh-timerow-selected .oh-timecell-0 {
+    border-left: 10px solid #0048ff !important;
+}
+
+.oh-timerow-selected .oh-timecell-6 {
+    border-right: 10px solid #0048ff !important;
+}
+
+
 .oh-draggable-header {
     background-color: blue;
     height: 0.5em;
@@ -67,12 +110,12 @@
 
 .oh-timerange {
     border-radius: 0.5em;
-    margin: 2px;
+    margin-left: 2px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - 4px);
     background: #0048ff;
     z-index: 1;
     box-sizing: border-box;

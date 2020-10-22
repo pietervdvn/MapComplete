@@ -1,8 +1,14 @@
 //*
 
-import SpecialVisualizations from "./UI/SpecialVisualizations";
 
-SpecialVisualizations.HelpMessage.AttachTo("maindiv")
+
+import OpeningHoursPickerTable from "./UI/Input/OpeningHours/OpeningHoursPickerTable";
+import {UIElement} from "./UI/UIElement";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {OpeningHour} from "./Logic/OpeningHours";
+
+new OpeningHoursPickerTable(new UIEventSource<UIElement[]>([]), new UIEventSource<OpeningHour[]>([]))
+    .AttachTo("maindiv")
 
 
 /*/

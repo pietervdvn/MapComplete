@@ -1,7 +1,6 @@
 #! /bin/bash
 
-cd assets/
-wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json
+cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json
 cd ..
 
 mkdir -p assets/generated
