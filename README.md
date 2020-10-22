@@ -23,6 +23,7 @@ An explicit non-goal of MapComplete is to modify geometries of ways. Although ad
 
 You can create [your own theme too](https://pietervdvn.github.io/MapComplete/customGenerator.html)
 
+If you have created a new theme and tested it, you can ask to have it included in the main repository. See [Dev](#Dev) for how to do this.
 
 
 ## Examples
@@ -105,7 +106,27 @@ A theme has translations into the preset.json (`assets/themes/themename/themenam
 3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
 4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
 
+### Adding your theme to the repository
 
+Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main application, which makes it more discoverable.
+
+In order to include your theme:
+
+0) Make sure the theme has an english version. This makes it easier for me to understand what is going on. The more other languages, the better of course!
+1) Fork this repository
+2) Go to `assets/themes` and create a new directory `yourtheme`
+3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in the customThemeBuilder (the tab with the Floppy)
+4) Copy all the images in this new directory: external assets can suddenly break and leak privacy
+   - Make sure the license is suitable, preferable a Creative Commons license. Attribution can be added at the bottom of this document
+   - If an SVG-version is available, use the SVG-version
+   - Make sure all the links in `yourtheme.json` are updated. You can use `"./assets/themes/yourtheme/yourimage.svg" instead of the HTML link
+ 5) Add your theme to the code base:
+    - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
+    - Add an import statatement, e.g. `import * as fritures from "../assets/themes/yourtheme/yourthemes.json"
+    - Add your theme to the `LayoutList`, by adding a line `FromJSON.LayoutFromJSON(maps)`
+ 6) Test your theme: run the project as described above
+ 7) Happy with your theme? Time to open a Pull Request!
+ 8) Thanks a lot for improving MapComplete!
 
 ## Architecture
 
