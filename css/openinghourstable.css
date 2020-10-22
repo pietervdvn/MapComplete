@@ -1,8 +1,25 @@
 
 .oh-table {
-    border-collapse: collapse;
     width: 100%;
     height: 100%;
+    text-align: center;
+}
+
+.oh-table th {
+    padding: 0;
+    margin: 0;
+}
+
+.oh-table, .oh-table td {
+    border-collapse: collapse;
+    background-clip: padding-box;
+    border-right: 1px solid #ccc;
+}
+
+.oh-timecell {
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .oh-table th {
@@ -16,38 +33,75 @@
 }
 
 .oh-timecell:hover {
-    background-color: #ffd1be !important;
+    background-color: #92b1ff !important;
 }
 
-.oh-timecell {
-    background-color: white;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #ccc;
-    position: relative;
-    box-sizing: border-box;
-}
 
 .oh-timecell-selected {
-    background-color: orange;
+    background-color: #0048ff;
 }
 
-.oh-timecell-half{
+
+.oh-timecell-half {
+    border-bottom: 1px solid #ddd;
     background-color: aliceblue;
 }
 
 .oh-timecell-half.oh-timecell-selected {
-   background-color:  lightsalmon;
+    background-color: #0048ff;
+}
+
+.oh-table tr {
+    background: #ddd;
 }
 
 .oh-left-col {
     border-bottom: 1px solid #aaa;
     margin: 0;
+    margin-left: 10px;
     width: 0.5em;
     font-size: large;
     padding: 0;
     padding-right: 0.2em;
-    background: #ddd;
 }
+
+.oh-timecell-0 {
+    border-left: 10px solid rgba(0, 0, 0, 0);
+}
+
+.oh-timecell-6 {
+    border-right: 10px solid rgba(0, 0, 0, 0);
+}
+
+.oh-timecol-selected {
+    border-right: #0048ff;
+}
+
+.oh-timecol-selected > span {
+    background-color: #0048ff;
+    color: white;
+    width: 100%;
+    display: block;
+}
+
+.oh-timecol-selected-round-left > span {
+    border-top-left-radius: 5em;
+    border-bottom-left-radius: 5em;
+}
+
+.oh-timecol-selected-round-right > span {
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+}
+
+.oh-timerow-selected .oh-timecell-0 {
+    border-left: 10px solid #0048ff !important;
+}
+
+.oh-timerow-selected .oh-timecell-6 {
+    border-right: 10px solid #0048ff !important;
+}
+
 
 .oh-draggable-header {
     background-color: blue;
@@ -56,23 +110,25 @@
 
 .oh-timerange {
     border-radius: 0.5em;
-    margin: 2px;
+    margin-left: 2px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    background: orange;
+    width: calc(100% - 4px);
+    background: #0048ff;
     z-index: 1;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .oh-timerange-inner {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     justify-content: space-between;
     align-content: center;
     height: 100%;
+    overflow-y: hidden;
 }
 
 .oh-timerange-inner input {

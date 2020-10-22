@@ -4,6 +4,7 @@ import {UIEventSource} from "../../../Logic/UIEventSource";
 import {Utils} from "../../../Utils";
 import {UIElement} from "../../UIElement";
 import Translations from "../../i18n/Translations";
+import {Browser} from "leaflet";
 
 /**
  * This is the base-table which is selectable by hovering over it.
@@ -48,9 +49,9 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
 
             rows += `<tr><td rowspan="2" class="oh-left-col oh-timecell-full">${hs}:00</td>` +
-                Utils.Times(weekday =>  `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full"></td>`, 7) +
-                '</tr><tr>' +   
-                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half"></td>`, 7) +
+                Utils.Times(weekday => `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full oh-timecell-${weekday}"></td>`, 7) +
+                '</tr><tr>' +
+                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half oh-timecell-${id}"></td>`, 7) +
                 '</tr>';
         }
         let days = OpeningHoursPickerTable.days.map((day, i) => {
@@ -63,6 +64,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     protected InnerUpdate() {
         const self = this;
         const table = (document.getElementById(`oh-table-${this.id}`) as HTMLTableElement);
+        console.log("Inner update!")
         if (table === undefined || table === null) {
             return;
         }
@@ -109,7 +111,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                     endHour: h(timeEnd + 1),
                     endMinutes: m(timeEnd + 1)
                 }
-                if(oh.endHour > 23){
+                if (oh.endHour > 23) {
                     oh.endHour = 24;
                     oh.endMinutes = 0;
                 }
@@ -118,11 +120,16 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             self.source.ping();
 
             // Clear the highlighting
+            let header = table.rows[0];
+            for (let j = 1; j < header.cells.length; j++) {
+                header.cells[j].classList?.remove("oh-timecol-selected")
+            }
             for (let i = 1; i < table.rows.length; i++) {
                 let row = table.rows[i]
                 for (let j = 0; j < row.cells.length; j++) {
                     let cell = row.cells[j]
-                    cell?.classList?.remove("oh-timecell-selected")
+                    cell?.classList?.remove("oh-timecell-selected");
+                    row.classList?.remove("oh-timerow-selected");
                 }
             }
         }
@@ -134,7 +141,15 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             endSelection();
         };
 
+        let lastSelectionIend, lastSelectionJEnd;
         function selectAllBetween(iEnd, jEnd) {
+
+            if (lastSelectionIend === iEnd && lastSelectionJEnd === jEnd) {
+                return; // We already did this
+            }
+            lastSelectionIend = iEnd;
+            lastSelectionJEnd = jEnd;
+
             let iStart = selectionStart[0];
             let jStart = selectionStart[1];
 
@@ -149,8 +164,34 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 jEnd = h;
             }
 
+            let header = table.rows[0];
+            for (let j = 1; j < header.cells.length; j++) {
+                let cell = header.cells[j]
+                cell.classList?.remove("oh-timecol-selected-round-left");
+                cell.classList?.remove("oh-timecol-selected-round-right");
+
+                if (jStart + 1 <= j && j <= jEnd + 1) {
+                    cell.classList?.add("oh-timecol-selected")
+                    if (jStart + 1 == j) {
+                        cell.classList?.add("oh-timecol-selected-round-left");
+                    }
+                    if (jEnd + 1 == j) {
+                        cell.classList?.add("oh-timecol-selected-round-right");
+                    }
+
+                } else {
+                    cell.classList?.remove("oh-timecol-selected")
+                }
+            }
+
+
             for (let i = 1; i < table.rows.length; i++) {
-                let row = table.rows[i]
+                let row = table.rows[i];
+                if (iStart <= i && i <= iEnd) {
+                    row.classList?.add("oh-timerow-selected")
+                } else {
+                    row.classList?.remove("oh-timerow-selected")
+                }
                 for (let j = 0; j < row.cells.length; j++) {
                     let cell = row.cells[j]
                     if (cell === undefined) {
@@ -159,16 +200,20 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                     let offset = 0;
                     if (i % 2 == 1) {
                         if (j == 0) {
+                            // This is the first column of a full hour -> This is the time indication (skip)
                             continue;
                         }
                         offset = -1;
                     }
+
+
                     if (iStart <= i && i <= iEnd &&
                         jStart <= j + offset && j + offset <= jEnd) {
                         cell?.classList?.add("oh-timecell-selected")
                     } else {
-                        cell?.classList?.remove("oh-timecell-selected")
+                        cell?.classList?.remove("oh-timecell-selected")          
                     }
+                    
 
                 }
 

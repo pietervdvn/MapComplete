@@ -18,7 +18,7 @@ export class PersonalLayout extends Layout {
         );
 
         this.description = "The personal theme allows to select one or more layers from all the layouts, creating a truly personal editor"
-        this.icon = "./assets/star.svg"
+        this.icon = "./assets/add.svg"
     }
 
 }

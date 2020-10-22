@@ -150,16 +150,23 @@ export default class OpeningHoursVisualization extends UIElement {
         nextSunday.setDate(nextSunday.getDate() + 7);
 
         const tags = this._source.data;
-        if(tags._country === undefined){
+        if (tags._country === undefined) {
             return "Loading...";
         }
-        const oh = new opening_hours(tags[this._key], {
-            lat: tags._lat,
-            lon: tags._lon,
-            address: {
-                country_code: tags._country
-            }
-        }, {tag_key: this._key});
+        let oh = null;
+
+        try {
+            oh = new opening_hours(tags[this._key], {
+                lat: tags._lat,
+                lon: tags._lon,
+                address: {
+                    country_code: tags._country
+                }
+            }, {tag_key: this._key});
+        } catch (e) {
+            console.log(e);
+            return "Error: could not visualize these opening hours"
+        }
 
         if (!oh.getState() && !oh.getUnknown()) {
             // POI is currently closed
