@@ -171,16 +171,90 @@
         },
         {
           "render": {
-            "en": "Color: {colour}",
+            "en": "Colour: {colour}",
             "de": "Farbe: {colour}"
           },
           "question": {
-            "en": "Which color does this bench have?",
+            "en": "Which colour does this bench have?",
             "de": "Welche Farbe hat diese Sitzbank?"
           },
           "freeform": {
             "key": "colour"
-          }
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": ["colour=brown"]
+              },
+              "then": {
+                "en": "Colour: brown",
+                "de": "Farbe: braun"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=green"]
+              },
+              "then": {
+                "en": "Colour: green",
+                "de": "Farbe: grün"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=gray"]
+              },
+              "then": {
+                "en": "Colour: gray",
+                "de": "Farbe: grau"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=white"]
+              },
+              "then": {
+                "en": "Colour: white",
+                "de": "Farbe: weiß"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=red"]
+              },
+              "then": {
+                "en": "Colour: red",
+                "de": "Farbe: rot"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=black"]
+              },
+              "then": {
+                "en": "Colour: black",
+                "de": "Farbe: schwarz"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=blue"]
+              },
+              "then": {
+                "en": "Colour: blue",
+                "de": "Farbe: blau"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=yellow"]
+              },
+              "then": {
+                "en": "Colour: yellow",
+                "de": "Farbe: gelb"
+              }
+            }
+          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
