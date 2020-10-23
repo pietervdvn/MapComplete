@@ -1,6 +1,7 @@
 import {UIElement} from "./UI/UIElement";
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
+
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
@@ -206,6 +207,11 @@ function createLandingPage(layout: Layout) {
     const ogDescr = Translations.W(layout.description ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
     const ogImage = layout.socialImage;
 
+    let customCss = "";
+    if (layout.customCss !== undefined && layout.customCss !== "") {
+        customCss = `<link rel='stylesheet" href=${layout.customCss}"/>`
+    }
+
     const og = `
     <meta property="og:image" content="${ogImage ?? './assets/add.svg'}">
     <meta property="og:title" content="${ogTitle}">
@@ -214,6 +220,9 @@ function createLandingPage(layout: Layout) {
     let output = template
         .replace(`./manifest.manifest`, `./${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
+        .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
+        .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
+        .replace("<!-- $$$CUSTOM-CSS -->", customCss)
         .replace(`<link rel="icon" href="assets/add.svg" sizes="any" type="image/svg+xml">`,
             `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`);
 

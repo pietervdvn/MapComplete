@@ -30,7 +30,7 @@ export default class PublicHolidayInput extends InputElement<string> {
         );
         this._dropdown = dropdown.SetStyle("display:inline-block;");
         this._mode = dropdown.GetValue();
-        this.ListenTo(dropdown.GetValue());
+        this.ListenTo(this._mode);
 
         const start = new TextField({
             placeholder: "starthour",
@@ -117,7 +117,7 @@ export default class PublicHolidayInput extends InputElement<string> {
         
         if(str === "PH open"){
             return {
-                mode: "open"
+                mode: " "
             }
         }
 

@@ -209,4 +209,7 @@ Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
 Statistics icon via https://www.onlinewebfonts.com/icon/197818
 
 Chronometer (on monitoring_station.svg): ANTU chronometer
-https://commons.wikimedia.org/w/index.php?title=Antu_chronometer&action=edit&redlink=1
+https://commons.wikimedia.org/w/index.php?title=Antu_chronometer
+
+Fries icon:
+https://commons.wikimedia.org/wiki/File:French_fries_juliane_kr_r.svg

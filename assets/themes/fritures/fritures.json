@@ -12,7 +12,7 @@
     "fr"
   ],
   "maintainer": "",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg",
+  "icon": "./assets/themes/fritures/fries.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -69,17 +69,16 @@
         },
         {
           "render": {
-            "nl": "<a href='tel:{phone}'>{phone}</a>",
-            "fr": "<a href='tel:{phone}'>{phone}</a>"
+            "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
+            "fr": "<h3>Horaires</h3>{opening_hours_table(opening_hours)}"
           },
           "question": {
-            "en": "What is the phone number?",
-            "nl": "Wat is het telefoonnummer van deze frituur?",
-            "fr": "Quel est le numéro de téléphone de cette friture?"
+            "nl": "Wat zijn de openinguren van deze frituur?",
+            "fr": "Quand est ce-que ce friture ouvert?"
           },
           "freeform": {
-            "key": "phone",
-            "type": "phone"
+            "key": "opening_hours",
+            "type": "opening_hours"
           }
         },
         {
@@ -98,16 +97,17 @@
         },
         {
           "render": {
-            "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
-            "fr": "<h3>Horaires</h3>{opening_hours_table(opening_hours)}"
+            "nl": "<a href='tel:{phone}'>{phone}</a>",
+            "fr": "<a href='tel:{phone}'>{phone}</a>"
           },
           "question": {
-            "nl": "Wat zijn de openinguren van deze frituur?",
-            "fr": "Quand est ce-que ce friture ouvert?"
+            "en": "What is the phone number?",
+            "nl": "Wat is het telefoonnummer van deze frituur?",
+            "fr": "Quel est le numéro de téléphone de cette friture?"
           },
           "freeform": {
-            "key": "opening_hours",
-            "type": "opening_hours"
+            "key": "phone",
+            "type": "phone"
           }
         },
         {
@@ -224,7 +224,7 @@
         }
       ],
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg"
+        "render": "./assets/themes/fritures/fries.svg"
       },
       "width": {
         "render": "8"
