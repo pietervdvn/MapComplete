@@ -108,6 +108,62 @@
             "key": "material",
             "addExtraTags": []
           },
+          "mappings": [
+            {
+              "if": {
+                "and": ["material=wood"]
+              },
+              "then": {
+                "en": "Material: wood",
+                "de": "Material: Holz"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=metal"]
+              },
+              "then": {
+                "en": "Material: metal",
+                "de": "Material: Metall"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=stone"]
+              },
+              "then": {
+                "en": "Material: stone",
+                "de": "Material: Stein"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=concrete"]
+              },
+              "then": {
+                "en": "Material: concrete",
+                "de": "Material: Beton"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=plastic"]
+              },
+              "then": {
+                "en": "Material: plastic",
+                "de": "Material: Kunststoff"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=steel"]
+              },
+              "then": {
+                "en": "Material: steel",
+                "de": "Material: Stahl"
+              }
+            }
+          ],
           "question": {
             "en": "What is the bench (seating) made from?",
             "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?"
