@@ -2,7 +2,7 @@
   "id": "fritures",
   "title": {
     "nl": "Friturenkaart",
-    "fr": "Carte des fritures"
+    "fr": "Carte des friteries"
   },
   "description": {
     "nl": "Op deze kaart vind je je favoriete frituur!"
@@ -24,7 +24,7 @@
       "id": "fritures",
       "name": {
         "nl": "Frituren",
-        "fr": "Fritures"
+        "fr": "Friteries"
       },
       "minzoom": 8,
       "overpassTags": {
@@ -35,7 +35,7 @@
       "title": {
         "render": {
           "nl": "Frituur",
-          "fr": "Friture"
+          "fr": "Friterie"
         },
         "mappings": [
           {
@@ -61,7 +61,7 @@
           "question": {
             "en": "What is the name of this friture?",
             "nl": "Wat is de naam van deze frituur?",
-            "fr": "Quel est le nom de cette friture?"
+            "fr": "Quel est le nom de cette friterie?"
           },
           "feeform": {
             "key": "name"
@@ -74,7 +74,7 @@
           },
           "question": {
             "nl": "Wat zijn de openinguren van deze frituur?",
-            "fr": "Quand est ce-que ce friture ouvert?"
+            "fr": "Quand est ce-que ce friterie ouvert?"
           },
           "freeform": {
             "key": "opening_hours",
@@ -88,7 +88,7 @@
           "question": {
             "en": "What is the website of this shop?",
             "nl": "Wat is de website van deze frituur?",
-            "fr": "Quel est le site web de cette  friture?"
+            "fr": "Quel est le site web de cette  friterie?"
           },
           "freeform": {
             "key": "website",
@@ -103,7 +103,7 @@
           "question": {
             "en": "What is the phone number?",
             "nl": "Wat is het telefoonnummer van deze frituur?",
-            "fr": "Quel est le numéro de téléphone de cette friture?"
+            "fr": "Quel est le numéro de téléphone de cette friterie?"
           },
           "freeform": {
             "key": "phone",
@@ -113,7 +113,7 @@
         {
           "question": {
             "nl": "Heeft deze frituur vegetarische snacks?",
-            "fr": "Cette friture est-elle équipée de snacks végétariens ?"
+            "fr": "Cette friterie est-elle équipée de snacks végétariens ?"
           },
           "mappings": [
             {
@@ -154,7 +154,7 @@
         {
           "question": {
             "nl": "Heeft deze frituur veganistische snacks?",
-            "fr": "Cette friture est-elle équipée de snacks végétaliens ?"
+            "fr": "Cette friterie est-elle équipée de snacks végétaliens ?"
           },
           "mappings": [
             {
@@ -239,7 +239,7 @@
         {
           "title": {
             "nl": "Frituur",
-            "fr": "Friture"
+            "fr": "Friturie"
           },
           "tags": [
             "amenity=fast_food",
