@@ -199,7 +199,6 @@ Bicycle logo,  	Scott de Jonge
 
 Nature Reserve icon via http://www.onlinewebfonts.com/icon/389579, CC BY 3.0 (@ Эдуард Черных)
 
-
 Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
 
 Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
@@ -208,3 +207,5 @@ Statistics icon via https://www.onlinewebfonts.com/icon/197818
 
 Chronometer (on monitoring_station.svg): ANTU chronometer
 https://commons.wikimedia.org/w/index.php?title=Antu_chronometer&action=edit&redlink=1
+
+Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons, GPLv3.0
