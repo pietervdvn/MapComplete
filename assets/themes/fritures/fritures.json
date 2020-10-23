@@ -12,7 +12,7 @@
     "fr"
   ],
   "maintainer": "",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg",
+  "icon": "./assets/themes/fritures/fries.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -224,7 +224,7 @@
         }
       ],
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/5/55/French_fries_juliane_kr_r.svg"
+        "render": "./assets/themes/fritures/fries.svg"
       },
       "width": {
         "render": "8"

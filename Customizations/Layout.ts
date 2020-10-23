@@ -18,6 +18,10 @@ export class Layout {
     public description: string | UIElement;
     public changesetMessage: string;
     public socialImage: string = "";
+    /**
+     * Custom CSS link
+     */
+    public customCss: string = undefined;
     
     public layers: (LayerDefinition | string)[];
     public welcomeMessage: UIElement;
