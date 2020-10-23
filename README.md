@@ -62,7 +62,7 @@ A typical user journey would be:
     * Note that _all messages_ must be read before being able to add a point.
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is added deliberately to make sure new users _have_ to read feedback from the community.
     
-4. At 50 changesets, the [personal  layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The personal theme is a theme where contributors can pick layers from all the offical themes. Note that the personal theme is always available.
+4. At 50 changesets, the [personal layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The personal theme is a theme where contributors can pick layers from all the offical themes. Note that the personal theme is always available.
 
 5. At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This is to give more control to power users and to teach new users the tagging scheme
 
@@ -83,9 +83,9 @@ To develop:
 
 
 0. Make a fork and clone the repository.
-1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), windows: install nodeJS:  https://nodejs.org/en/download/
+1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
 2. Run `npm install` to install the dependencies
-3. Run `npm run start` to build and host a local testversion
+3. Run `npm run start` to build and host a local testversion at http://localhost:1234/index.html
 4. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
 
 To deploy:
@@ -101,8 +101,8 @@ Help to translate mapcomplete.
 
 A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
 
-1. Modify `"language"` to contain the new language, e.g. `"language":"nl"` becomes `"language": ["nl", "en"]`
-2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description":"Welcome to Open Bookcase Map"` to `"description": {"en":"Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to antoher supported language.
+1. Modify `"language"` to contain the new language, e.g. `"language": "nl"` becomes `"language": ["nl", "en"]`
+2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description": "Welcome to Open Bookcase Map"` to `"description": {"en": "Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to another supported language.
 3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
 4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
 
@@ -112,19 +112,19 @@ Did you make an awesome theme that you want to share with the OpenStreetMap comm
 
 In order to include your theme:
 
-0) Make sure the theme has an english version. This makes it easier for me to understand what is going on. The more other languages, the better of course!
+0) Make sure the theme has an English version. This makes it easier for me to understand what is going on. The more other languages, the better of course!
 1) Fork this repository
 2) Go to `assets/themes` and create a new directory `yourtheme`
-3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in the customThemeBuilder (the tab with the Floppy)
-4) Copy all the images in this new directory: external assets can suddenly break and leak privacy
+3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in the customThemeBuilder (the tab with the *Floppy disk* icon)
+4) Copy all the images into this new directory: external assets can suddenly break and leak privacy
    - Make sure the license is suitable, preferable a Creative Commons license. Attribution can be added at the bottom of this document
-   - If an SVG-version is available, use the SVG-version
-   - Make sure all the links in `yourtheme.json` are updated. You can use `"./assets/themes/yourtheme/yourimage.svg" instead of the HTML link
+   - If an SVG version is available, use the SVG version
+   - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
  5) Add your theme to the code base:
     - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
-    - Add an import statatement, e.g. `import * as fritures from "../assets/themes/yourtheme/yourthemes.json"
-    - Add your theme to the `LayoutList`, by adding a line `FromJSON.LayoutFromJSON(maps)`
- 6) Test your theme: run the project as described above
+    - Add an import statatement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
+    - Add your theme to the `LayoutList`, by adding a line `FromJSON.LayoutFromJSON(yourtheme)`
+ 6) Test your theme: run the project as described [above](#Dev)
  7) Happy with your theme? Time to open a Pull Request!
  8) Thanks a lot for improving MapComplete!
 
@@ -199,7 +199,6 @@ Bicycle logo,  	Scott de Jonge
 
 Nature Reserve icon via http://www.onlinewebfonts.com/icon/389579, CC BY 3.0 (@ Эдуард Черных)
 
-
 Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
 
 Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
@@ -208,3 +207,5 @@ Statistics icon via https://www.onlinewebfonts.com/icon/197818
 
 Chronometer (on monitoring_station.svg): ANTU chronometer
 https://commons.wikimedia.org/w/index.php?title=Antu_chronometer&action=edit&redlink=1
+
+Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons, GPLv3.0
