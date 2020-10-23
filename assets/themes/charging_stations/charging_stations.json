@@ -56,6 +56,16 @@
             {
               "if": {
                 "and": [
+                  "no:network=yes"
+                ]
+              },
+              "then": {
+                "en": "Not part of a bigger network"
+              }
+            },
+            {
+              "if": {
+                "and": [
                   "network=AeroVironment"
                 ]
               },
