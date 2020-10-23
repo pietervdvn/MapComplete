@@ -14,7 +14,8 @@
  # rm Customizations/*/*/*.js
 
 rm *.webmanifest
-rm assets/generated/*
+
+# rm assets/generated/*
 
 for f in ./*.html; do
     if [[ "$f" == "./index.html" ]] || [[ "$f" == "./land.html" ]] || [[ "$f" == "./test.html" ]] || [[ "$f" == "./preferences.html" ]] || [[ "$f" == "./customGenerator.html" ]]

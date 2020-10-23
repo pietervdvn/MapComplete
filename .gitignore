@@ -4,3 +4,4 @@ node_modules
 .idea/*
 scratch
 assets/editor-layer-index.json
+assets/generated/*
