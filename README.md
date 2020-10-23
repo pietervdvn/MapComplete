@@ -212,4 +212,4 @@ Chronometer (on monitoring_station.svg): ANTU chronometer
 https://commons.wikimedia.org/w/index.php?title=Antu_chronometer
 
 Fries icon:
-https://commons.wikimedia.org/wiki/File:French_fries_juliane_kr_r.svg
+https://www.flaticon.com/free-icon/french-fries_1144288
