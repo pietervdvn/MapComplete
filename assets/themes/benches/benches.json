@@ -1,0 +1,248 @@
+{
+  "id": "benches",
+  "title": {
+    "en": "Benches",
+    "de": "Sitzbänke"
+  },
+  "shortDescription": {
+    "en": "A map of benches",
+    "de": "Eine Karte aller Sitzbänke"
+  },
+  "description": {
+    "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
+    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
+  },
+  "language": [
+    "en",
+    "de"
+  ],
+  "maintainer": "Florian Edelmann",
+  "icon": "./assets/themes/benches/bench_poi.svg",
+  "version": "2020-10-23",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 12,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "amenity=bench",
+      "name": {
+        "en": "Benches",
+        "de": "Sitzbänke"
+      },
+      "minzoom": 14,
+      "overpassTags": {
+        "and": [
+          "amenity=bench"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Bench",
+          "de": "Sitzbank"
+        },
+        "mappings": []
+      },
+      "description": {},
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "Backrest",
+            "de": "Rückenlehne"
+          },
+          "freeform": {
+            "key": "backrest",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "backrest=yes"
+                ]
+              },
+              "then": {
+                "en": "Backrest: Yes",
+                "de": "Rückenlehne: Ja"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "backrest=no"
+                ]
+              },
+              "then": {
+                "en": "Backrest: No",
+                "de": "Rückenlehne: Nein"
+              }
+            }
+          ],
+          "question": {
+            "en": "Does this bench have a backrest?",
+            "de": "Hat diese Bank eine Rückenlehne?"
+          }
+        },
+        {
+          "render": {
+            "en": "{seats} seats",
+            "de": "{seats} Sitzplätze"
+          },
+          "freeform": {
+            "key": "seats",
+            "type": "nat"
+          },
+          "mappings": [],
+          "question": {
+            "en": "How many seats does this bench have?",
+            "de": "Wie viele Sitzplätze hat diese Bank?"
+          }
+        },
+        {
+          "render": {
+            "en": "Material: {material}",
+            "de": "Material: {material}"
+          },
+          "freeform": {
+            "key": "material",
+            "addExtraTags": []
+          },
+          "question": {
+            "en": "What is the bench (seating) made from?",
+            "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?"
+          }
+        },
+        {
+          "render": {
+            "en": "Color: {colour}",
+            "de": "Farbe: {colour}"
+          },
+          "question": {
+            "en": "Which color does this bench have?",
+            "de": "Welche Farbe hat diese Sitzbank?"
+          },
+          "freeform": {
+            "key": "colour"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/benches/bench_poi.svg",
+        "mappings": []
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=bench"
+          ],
+          "title": {
+            "en": "Bench",
+            "de": "Sitzbank"
+          },
+          "description": {
+            "en": "Add a new bench",
+            "de": "Neue Sitzbank eintragen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bench=yes",
+      "name": {
+        "en": "Benches at public transport stops",
+        "de": "Sitzbänke bei Haltestellen"
+      },
+      "minzoom": 14,
+      "overpassTags": {
+        "or": [
+          "bench=yes",
+          "bench=stand_up_bench"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Bench",
+          "de": "Sitzbank"
+        },
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "public_transport=platform",
+                "railway=platform",
+                "highway=bus_stop"
+              ]
+            },
+            "then": {
+              "en": "Bench at public transport stop",
+              "de": "Sitzbank bei Haltestelle"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "amenity=shelter"
+              ]
+            },
+            "then": {
+              "en": "Bench in shelter",
+              "de": "Sitzbank in Unterstand"
+            }
+          }
+        ]
+      },
+      "description": {},
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "{name}",
+            "de": "{name}"
+          },
+          "freeform": {
+            "key": "name"
+          }
+        },
+        {
+          "render": {
+            "en": "Stand up bench",
+            "de": "Stehbank"
+          },
+          "freeform": {
+            "key": "bench",
+            "addExtraTags": []
+          },
+          "condition": {
+            "and": [
+              "bench=stand_up_bench"
+            ]
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/benches/bench_public_transport.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      }
+    }
+  ],
+  "roamingRenderings": []
+}
