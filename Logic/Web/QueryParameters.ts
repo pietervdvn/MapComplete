@@ -24,6 +24,7 @@ export class QueryParameters {
         this.initialized = true;
        
         if (window?.location?.search) {
+            console.log("Window.location.search is",window.location.search)
             const params = window.location.search.substr(1).split("&");
             for (const param of params) {
                 const kv = param.split("=");

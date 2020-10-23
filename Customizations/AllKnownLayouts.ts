@@ -15,6 +15,8 @@ import * as shops from "../assets/themes/shops/shops.json"
 import * as bike_monitoring_stations from "../assets/themes/bike_monitoring_station/bike_monitoring_stations.json"
 import * as fritures from "../assets/themes/fritures/fritures.json"
 import * as benches from "../assets/themes/benches/benches.json";
+import * as charging_stations from "../assets/themes/charging_stations/charging_stations.json"
+
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import {StreetWidth} from "./StreetWidth/StreetWidth";
 
@@ -70,6 +72,7 @@ export class AllKnownLayouts {
         FromJSON.LayoutFromJSON(maps),
         FromJSON.LayoutFromJSON(fritures),
         FromJSON.LayoutFromJSON(benches),
+        FromJSON.LayoutFromJSON(charging_stations),
         AllKnownLayouts.GenerateBuurtNatuur(),
         AllKnownLayouts.GenerateBikeMonitoringStations(),
 

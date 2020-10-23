@@ -1,0 +1,124 @@
+{
+  "id": "charging_stations",
+  "title": {
+    "en": "Charging stations"
+  },
+  "shortDescription": {
+    "en": "A worldwide map of charging stations"
+  },
+  "description": {
+    "en": "On this open map, one can find and mark information about charging stations"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/charging_stations/charging_station.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "charging_stations",
+      "name": {
+        "en": "Charging stations"
+      },
+      "minzoom": 10,
+      "overpassTags": {
+        "and": [
+          "amenity=charging_station"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Charging station"
+        }
+      },
+      "description": {
+        "en": "A charging station"
+      },
+      "tagRenderings": [
+        {
+          "#": "Network",
+          "render": {
+            "en": "{network}"
+          },
+          "question": {
+            "en": "Which is the network of this charging stationg?"
+          },
+          "freeform": {
+            "key": "network"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "network=AeroVironment"
+                ]
+              },
+              "then": {
+                "en": "AeroVironment"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "network=Blink"
+                ]
+              },
+              "then": {
+                "en": "Blink"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "network=eVgo"
+                ]
+              },
+              "then": {
+                "en": "eVgo"
+              }
+            }
+          ]
+        },
+        {
+          "#": "OH",
+          "render": "{opening_hours_table(opening_hours)}",
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "question": {
+            "en": "When is this charging station opened?"
+          },
+          "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "then": "24/7 opened (including holidays)"
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/charging_stations/charging_station.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [],
+      "wayHandling": 1
+    }
+  ],
+  "roamingRenderings": []
+}

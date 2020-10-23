@@ -524,6 +524,9 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
     private ApplyTemplate(template: string | Translation): UIElement {
         const tr = Translations.WT(template);
+        if(tr === undefined){
+            return undefined;
+        }
         if (this.answerCache[tr.id]) {
             return this.answerCache[tr.id];
         }
