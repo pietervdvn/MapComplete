@@ -42,6 +42,96 @@
       },
       "tagRenderings": [
         {
+          "#": "Type",
+          "mappings": [
+            {
+              "if": "bicycle=yes",
+              "then": "This is a charging station for <b>bicycles</b>"
+            },
+            {
+              "if": "motorcar=yes",
+              "then": "This is a charging station for <b>electric vehicles</b>"
+            }
+          ]
+        },
+        {
+          "#": "capacity",
+          "render": "{capacity} vehicles can be charged here",
+          "freeform": {
+            "key": "capacity",
+            "type": "pnat"
+          }
+        },
+        {
+          "#": "Authentication",
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "authentication:membership_card=yes",
+              "then": "Authentication by a membership card"
+            },
+            {
+              "if": "authentication:app=yes",
+              "then": "Authentication by an app"
+            },
+            {
+              "if": "authentication:phone_call=yes",
+              "then": "Authentication via phone call is available"
+            },
+            {
+              "if": "authentication:short_message=yes",
+              "then": "Authentication via phone call is available"
+            },
+            {
+              "if": "authentication:nfc=yes",
+              "then": "Authentication via NFC is available"
+            },
+            {
+              "if": "authentication:money_card=yes",
+              "then": "Authentication via Money Card is available"
+            },
+            {
+              "if": "authentication:debig=yes",
+              "then": "Authentication via debit card is available"
+            },
+            {
+              "if": "authentication:none=yes",
+              "then": "No authentication is needed"
+            }
+          ]
+        },
+        {
+          "#": "Auth phone",
+          "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+          "freeform": {
+            "key": "authentication:phone_call:number",
+            "type": "phone"
+          },
+          "condition": {
+            "or": [
+              "authentication:phone_call=yes",
+              "authentication:short_message=yes"
+            ]
+          }
+        },
+        {
+          "#": "OH",
+          "render": "{opening_hours_table(opening_hours)}",
+          "freeform": {
+            "key": "opening_hours",
+            "type": "opening_hours"
+          },
+          "question": {
+            "en": "When is this charging station opened?"
+          },
+          "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "then": "24/7 opened (including holidays)"
+            }
+          ]
+        },
+        {
           "#": "Network",
           "render": {
             "en": "{network}"
@@ -94,23 +184,6 @@
               }
             }
           ]
-        },
-        {
-          "#": "OH",
-          "render": "{opening_hours_table(opening_hours)}",
-          "freeform": {
-            "key": "opening_hours",
-            "type": "opening_hours"
-          },
-          "question": {
-            "en": "When is this charging station opened?"
-          },
-          "mappings": [
-            {
-              "if": "opening_hours=24/7",
-              "then": "24/7 opened (including holidays)"
-            }
-          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
@@ -126,7 +199,14 @@
       "color": {
         "render": "#00f"
       },
-      "presets": [],
+      "presets": [
+        {
+          "tags": [
+            "amenity=charging_station"
+          ],
+          "title": "Charging station"
+        }
+      ],
       "wayHandling": 1
     }
   ],

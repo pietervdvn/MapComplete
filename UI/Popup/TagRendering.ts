@@ -504,7 +504,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
             return answer.SetStyle(answerStyle);
         }
-
+        console.error("Invalid tagrendering: fallthrough",this)
         return new FixedUiElement("");
     }
 
