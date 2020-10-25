@@ -21,7 +21,7 @@
   "version": "2020-10-23",
   "startLat": 0,
   "startLon": 0,
-  "startZoom": 12,
+  "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
@@ -108,6 +108,62 @@
             "key": "material",
             "addExtraTags": []
           },
+          "mappings": [
+            {
+              "if": {
+                "and": ["material=wood"]
+              },
+              "then": {
+                "en": "Material: wood",
+                "de": "Material: Holz"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=metal"]
+              },
+              "then": {
+                "en": "Material: metal",
+                "de": "Material: Metall"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=stone"]
+              },
+              "then": {
+                "en": "Material: stone",
+                "de": "Material: Stein"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=concrete"]
+              },
+              "then": {
+                "en": "Material: concrete",
+                "de": "Material: Beton"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=plastic"]
+              },
+              "then": {
+                "en": "Material: plastic",
+                "de": "Material: Kunststoff"
+              }
+            },
+            {
+              "if": {
+                "and": ["material=steel"]
+              },
+              "then": {
+                "en": "Material: steel",
+                "de": "Material: Stahl"
+              }
+            }
+          ],
           "question": {
             "en": "What is the bench (seating) made from?",
             "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?"
@@ -115,16 +171,90 @@
         },
         {
           "render": {
-            "en": "Color: {colour}",
+            "en": "Colour: {colour}",
             "de": "Farbe: {colour}"
           },
           "question": {
-            "en": "Which color does this bench have?",
+            "en": "Which colour does this bench have?",
             "de": "Welche Farbe hat diese Sitzbank?"
           },
           "freeform": {
             "key": "colour"
-          }
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": ["colour=brown"]
+              },
+              "then": {
+                "en": "Colour: brown",
+                "de": "Farbe: braun"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=green"]
+              },
+              "then": {
+                "en": "Colour: green",
+                "de": "Farbe: grün"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=gray"]
+              },
+              "then": {
+                "en": "Colour: gray",
+                "de": "Farbe: grau"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=white"]
+              },
+              "then": {
+                "en": "Colour: white",
+                "de": "Farbe: weiß"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=red"]
+              },
+              "then": {
+                "en": "Colour: red",
+                "de": "Farbe: rot"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=black"]
+              },
+              "then": {
+                "en": "Colour: black",
+                "de": "Farbe: schwarz"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=blue"]
+              },
+              "then": {
+                "en": "Colour: blue",
+                "de": "Farbe: blau"
+              }
+            },
+            {
+              "if": {
+                "and": ["colour=yellow"]
+              },
+              "then": {
+                "en": "Colour: yellow",
+                "de": "Farbe: gelb"
+              }
+            }
+          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,

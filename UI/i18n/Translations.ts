@@ -123,16 +123,22 @@ export default class Translations {
             dontDelete: new T({
                 "nl":"Terug",
                 "en":"Cancel",
+				"ca":"Cancel·lar",
+				"es":"Cancelar",
                 "de": "Abbrechen"
             }),
             doDelete: new T({
                 "nl":"Verwijder afbeelding",
                 "en":"Remove image",
+				"ca":"Esborrar imatge",
+				"es":"Borrar imagen",
                 "de": "Bild entfernen"
             }),
             isDeleted: new T({
                 "nl":"Verwijderd",
                 "en":"Deleted",
+				"ca":"Esborrada",
+				"es":"Borrada",
                 "de": "Gelöscht"
             })
         },
@@ -382,12 +388,16 @@ export default class Translations {
                 }),
                 openLayerControl: new T({
                     "en": "Open the layer control box",
+					"ca": "Obrir el control de capes",
+					"es": "Abrir el control de capas",
                     "nl": "Open de laag-instellingen",
                     "de": "Das Ebenen-Kontrollkästchen öffnen"
                 })
                 ,
                 layerNotEnabled: new T({
                     "en": "The layer {layer} is not enabled. Enable this layer to add a point",
+					"ca": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
+					"es": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
                     "nl": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegn",
                     "de": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
                 })
@@ -573,48 +583,64 @@ export default class Translations {
                 }),
                 copiedToClipboard: new T({
                     en: "Link copied to clipboard",
+					ca: "Enllaç copiat al portapapers",
+					es: "Enlace copiado en el portapapeles",
                     gl: "Ligazón copiada ó portapapeis",
                     nl: "Link gekopieerd naar klembord",
                     de: "Link in die Zwischenablage kopiert"
                 }),
                 thanksForSharing: new T({
                     en: "Thanks for sharing!",
+					ca: "Gràcies per compartir",
+					es: "Gracias por compartir",
                     gl: "Grazas por compartir!",
                     nl: "Bedankt om te delen!",
                     de: "Danke für das Teilen!"
                 }),
                 editThisTheme: new T({
                     en: "Edit this theme",
+					ca: "Editar aquest repte",
+					es: "Editar este reto",
                     gl: "Editar este tema",
                     nl: "Pas dit thema aan",
                     de: "Dieses Thema bearbeiten"
                 }),
                 editThemeDescription: new T({
                     en: "Add or change questions to this map theme",
+					ca: "Afegir o canviar preguntes d'aquest repte",
+					es: "Añadir o cambiar preguntas de este reto",
                     gl: "Engadir ou mudar preguntas a este tema do mapa",
                     nl: "Pas vragen aan of voeg vragen toe aan dit kaartthema",
                     de: "Fragen zu diesem Kartenthema hinzufügen oder ändern"
                 }),
                 fsUserbadge: new T({
                     en: "Enable the login-button",
+					ca: "Activar el botó d'entrada",
+					es: "Activar el botón de entrada",
                     gl: "Activar botón de inicio de sesión",
                     nl: "Activeer de login-knop",
                     de:" Anmelde-Knopf aktivieren"
                 }),
                 fsSearch: new T({
                     en: "Enable the search bar",
+					ca: "Activar la barra de cerca",
+					es: "Activar la barra de búsqueda",
                     gl: "Activar a barra de procura",
                     nl: "Activeer de zoekbalk",
                     de: " Suchleiste aktivieren"
                 }),
                 fsWelcomeMessage: new T({
                     en: "Show the welcome message popup and associated tabs",
+					ca: "Mostra el missatge emergent de benvinguda i pestanyes associades",
+					es: "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
                     gl: "Amosar a xanela emerxente da mensaxe de benvida e as lapelas asociadas",
                     nl: "Toon het welkomstbericht en de bijhorende tabbladen",
                     de: "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen"
                 }),
                 fsLayers: new T({
                     en: "Enable thelayer control",
+					ca: "Activar el control de capes",
+					es: "Activar el control de capas",
                     gl: "Activar o control de capas",
                     nl: "Toon de knop voor laagbediening",
                     de: "Aktivieren der Layersteuerung"
@@ -623,33 +649,45 @@ export default class Translations {
                 fsLayerControlToggle: new T({
                     en: "Start with the layer control expanded",
                     gl: "Comenza co control de capas expandido",
+					ca: "Iniciar el control de capes avançat",
+					es: "Iniciar el control de capas avanzado",
                     nl: "Toon de laagbediening meteen volledig",
                     de: "Mit der erweiterten Ebenenkontrolle beginnen"
                 }),
                 fsAddNew: new T({
                     en: "Enable the 'add new POI' button",
+					ca: "Activar el botó d'afegir nou PDI'",
+					es: "Activar el botón de añadir nuevo PDI'",
                     nl: "Activeer het toevoegen van nieuwe POI",
                     gl: "Activar o botón de 'engadir novo PDI'",
                     de: "Schaltfläche 'neuen POI hinzufügen' aktivieren",
                 }),
                 fsGeolocation: new T({
                     en: "Enable the 'geolocate-me' button (mobile only)",
+					ca: "Activar el botó de 'geolocalitza'm' (només mòbil)",
+					es: "Activar el botón de 'geolocalízame' (només mòbil)",
                     gl: "Activar o botón de 'xeolocalizarme' (só móbil)",
                     nl: "Toon het knopje voor geolocalisatie (enkel op mobiel)",
                     de: "Die Schaltfläche 'Mich geolokalisieren' aktivieren (nur für Mobil)",
                 }),
                 fsIncludeCurrentBackgroundMap: new T({
                     en: "Include the current background choice <b>{name}</b>",
+					ca: "Incloure l'opció de fons actual <b>{name}</b>",
+					es: "Incluir la opción de fondo actual <b>{name}</b>",
                     nl: "Gebruik de huidige achtergrond <b>{name}</b>",
                     de: "Die aktuelle Hintergrundwahl einschließen <b>{name}</b>",
                 }),
                 fsIncludeCurrentLayers: new T({
                     en: "Include the current layer choices",
+					ca: "Incloure les opcions de capa actual",
+					es: "Incluir las opciones de capa actual",
                     nl: "Toon enkel de huidig getoonde lagen",
                     de: "Die aktuelle Ebenenauswahl einbeziehen"
                 }),
                 fsIncludeCurrentLocation: new T({
                     en: "Include current location",
+					es: "Incluir localización actual",
+					ca: "Incloure localització actual",
                     nl: "Start op de huidige locatie",
                     de: "Aktuelle Position einbeziehen"
                 })
@@ -800,11 +838,15 @@ export default class Translations {
             }),
             backgroundMap: new T({
                 "en": "Background map",
+				"ca": "Mapa de fons",
+				"es": "Mapa de fondo",
                 "nl": "Achtergrondkaart",
                 "de": "Hintergrundkarte"
             }),
             zoomInToSeeThisLayer: new T({
                 "en": "Zoom in to see this layer",
+				"ca": "Amplia per veure aquesta capa",
+				"es": "Amplía para ver esta capa",
                 "nl": "Vergroot de kaart om deze laag te zien",
                 "de": "Vergrößern, um diese Ebene zu sehen"
             }),
@@ -812,72 +854,100 @@ export default class Translations {
                 abbreviations:{
                     monday: new T({
                         "en": "Mon",
+						"ca": "Dil",
+						"es": "Lun",
                         "nl": "Maan",
                         "fr": "Lun",
                     }),
                     tuesday: new T({
                         "en": "Tue",
+						"ca": "Dim",
+						"es": "Mar",
                         "nl": "Din",
                         "fr": "Mar",
                     }),
                     wednesday: new T({
                         "en": "Wed",
+						"ca": "Dic",
+						"es": "Mie",
                         "nl": "Woe",
                         "fr": "Mercr",
                     }),
                     thursday: new T({
                         "en": "Thu",
+						"ca": "Dij",
+						"es": "Jue",
                         "nl": "Don",
                         "fr": "Jeudi",
                     }),
                     friday: new T({
                         "en": "Fri",
+						"ca": "Div",
+						"es": "Vie",
                         "nl": "Vrij",
                         "fr": "Vendr",
                     }),
                     saturday: new T({
                         "en": "Sat",
+						"ca": "Dis",
+						"es": "Sab",
                         "nl": "Zat",
                         "fr": "Sam",
                     }),
                     sunday: new T({
                         "en": "Sun",
+						"ca": "Diu",
+						"es": "Dom",
                         "nl": "Zon",
                         "fr": "Dim",
                     })
                 },
                 monday: new T({
                     "en": "Monday",
+					"ca": "Dilluns",
+					"es": "Lunes",
                     "nl": "Maandag",
                     "fr": "Lundi",
                 }),
                 tuesday: new T({
-                    "en": "Tuesdday",
+                    "en": "Tuesday",
+					"ca": "Dimarts",
+					"es": "Martes",
                     "nl": "Dinsdag",
                     "fr": "Mardi",
                 }),
                 wednesday: new T({
                     "en": "Wednesday",
+					"ca": "Dimecres",
+					"es": "Miércoles",
                     "nl": "Woensdag",
                     "fr": "Mercredi",
                 }),
                 thursday: new T({
                     "en": "Thursday",
+					"ca": "Dijous",
+					"es": "Jueves",
                     "nl": "Donderdag",
                     "fr": "Jeudi",
                 }),
                 friday: new T({
                     "en": "Friday",
+					"ca": "Divendres",
+					"es": "Viernes",
                     "nl": "Vrijdag",
                     "fr": "Vendredi",
                 }),
                 saturday: new T({
                     "en": "Saturday",
+					"ca": "Dissabte",
+					"es": "Sábado",
                     "nl": "Zaterdag",
                     "fr": "Samedi",
                 }),
                 sunday: new T({
                     "en": "Sunday",
+					"ca": "Diumenge",
+					"es": "Domingo",
                     "nl": "Zondag",
                     "fr": "Dimance",
                 })
@@ -885,36 +955,54 @@ export default class Translations {
             opening_hours: {
                 open_during_ph: new T({
                     "nl": "Op een feestdag is deze zaak",
+					"ca": "Durant festes aquest servei és",
+					"es": "Durante fiestas este servicio está",
                     "en":"During a public holiday, this amenity is"
                 }),
                 opensAt: new T({
                     "en": "from",
+					"ca": "des de",
+					"es": "desde",
                     "nl": "vanaf"
                 }), openTill: new T({
                     "en": "till",
+					"ca": "fins",
+					"es": " hasta",
                     "nl": "tot"
                 }),
                 not_all_rules_parsed: new T({
-                    "en": "The openin hours of this shop are complicated. The following rules are ignored in the input element:"
+                    "en": "The opening hours of this shop are complicated. The following rules are ignored in the input element:",
+					"ca": "L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:",
+					"es": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:"
                 }),
                 closed_until: new T({
                     "en": "Closed until {date}",
+					"ca": "Tancat fins {date}",
+					"es": "Cerrado hasta {date}",
                     "nl": "Gesloten - open op {date}"
                 }),
 
                 closed_permanently: new T({
                     "en": "Closed - no opening day known",
+					"ca": "Tancat - sense dia d'obertura conegut",
+					"es": "Cerrado - sin día de apertura conocido",
                     "nl": "Gesloten"
                 }),
                 ph_not_known: new T({
                     "en": " ",
+					"ca": " ",
+					"es": " ",
                     "nl": " "
                 }),
                 ph_closed: new T({
                     "en": "closed",
+					"ca": "tancat",
+					"es": "cerrado",
                     "nl": "gesloten"
                 }), ph_open: new T({
                     "en": "opened",
+					"ca": "tancat",
+					"es": "abierto",
                     "nl": "open"
                 })
 
@@ -953,8 +1041,8 @@ export default class Translations {
             }),
             reload: new T({
                 en: "Reload the data",
-                es: "Recarga los datos",
-                ca: "Recarrega les dades",
+                es: "Recargar datos",
+                ca: "Recarregar dades",
                 gl: "Recargar os datos",
                 de: "Daten neu laden"
             })
