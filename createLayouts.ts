@@ -81,34 +81,19 @@ function generateWikiEntry(layout: Layout){
     if(layout.hideFromOverview){
         return "";
     }
-    let image = "MapComplete_Screenshot.png";
-    if(layout.socialImage){
-    //    image = layout.socialImage;
+    const languages = layout.supportedLanguages.map(ln => `{{#language:${ln}|en}}`).join(", ")
+    let auth = "Yes";
+    if(layout.maintainer !== "" && layout.maintainer !== "MapComplete"){
+        auth=`Yes, by ${layout.maintainer};`
     }
-    
-    
-    if(!image.startsWith("http")){
-   //     image = "https://pietervdvn.github.io/MapComplete/"+image
-    }
-    
-   return `{{Software
-|name           = ${layout.id}
-|author         = ${layout.maintainer ?? "MapComplete builtin"}
-|web            = https://pietervdvn.github.io/MapComplete/${layout.id}.html
-|repo           = https://github.com/pietervdvn/MapComplete
-|platform       = web
-|code           = Typescript;HTML;CSS
-|languages      = ${layout.supportedLanguages.join(";")}
-|genre          = display;editor
-|screenshot     = ${image}
-|description    = A MapComplete theme: ${Translations.W(layout.description)?.InnerRender() ?? ""}
-|map        = yes
-|findLocation            = yes
-|findNearbyPOI           = yes
-|addPOI          = yes
-|editPOI         = yes
-|editTags        = yes
-|
+   return `{{service_item
+|name= [https://pietervdvn.github.io/MapComplete/${layout.id}.html ${layout.id}]
+|region= Worldwide
+|lang= ${languages}
+|descr= A MapComplete theme: ${Translations.W(layout.description).InnerRender()}
+|material= {{yes|[https://github.com/pietervdvn/MapComplete ${auth}]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, ${layout.id}
 }}`
 }
 
@@ -240,7 +225,9 @@ function createLandingPage(layout: Layout) {
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
 const all = AllKnownLayouts.allSets;
 
-let wikiPage = "";
+let wikiPage = "{|class=\"wikitable sortable\"\n" +
+    "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
+    "|-";
 
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
@@ -262,8 +249,11 @@ for (const layoutName in all) {
     const landing = createLandingPage(layout);
     writeFile(enc(layout.id) + ".html", landing, err)
     
-    wikiPage += "\n\n"+generateWikiEntry(layout);
+    wikiPage += "\n"+generateWikiEntry(layout);
 }
+
+wikiPage += "|}"
+
 writeFile("./assets/generated/wikiIndex", wikiPage, (err) => {
     if (err !== null) {
         console.log("Could not save wikiindex", err);

@@ -16,7 +16,7 @@ export class PersonalLayout extends Layout {
             0,
             Translations.t.favourite.description,
         );
-
+        this.maintainer = "MapComplete"
         this.description = "The personal theme allows to select one or more layers from all the layouts, creating a truly personal editor"
         this.icon = "./assets/add.svg"
     }
