@@ -23,7 +23,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
 
     private readonly _question: string | Translation;
-    private readonly _mapping: { k: TagsFilter, txt: string | Translation, priority?: number }[];
+    private readonly _mapping: { k: TagsFilter, txt: string | Translation }[];
 
     private readonly currentTags: UIEventSource<any>;
 
@@ -68,11 +68,16 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
         },
         tagsPreprocessor?: ((tags: any) => any),
         multiAnswer?: boolean,
-        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, substitute?: boolean, hideInAnswer?: boolean }[]
     }) {
         super(tags);
         if (tags === undefined) {
             throw "No tags given for a tagrendering..."
+        }
+        if (options.question !== undefined) {
+            if ((options.mappings?.length ?? 0) === 0 && options.freeform.key === undefined) {
+                throw "Error: question without mappings or key"
+            }
         }
         this.ListenTo(Locale.language);
         this.ListenTo(this._editMode);
@@ -83,7 +88,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
 
         this.currentTags = tags.map(tags => {
 
-                if (options.tagsPreprocessor === undefined) {
+            if (options.tagsPreprocessor === undefined) {
                     return tags;
                 }
                 // we clone the tags...
@@ -111,7 +116,6 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             let choiceSubbed = {
                 k: choice.k?.substituteValues(this.currentTags.data),
                 txt: choice.txt,
-                priority: choice.priority
             }
 
 
@@ -202,7 +206,7 @@ export class TagRendering extends UIElement implements TagDependantUIElement {
             extraTags?: TagsFilter,
         },
         multiAnswer?: boolean,
-        mappings?: { k: TagsFilter, txt: string | Translation, priority?: number, substitute?: boolean, hideInAnswer?: boolean }[]
+        mappings?: { k: TagsFilter, txt: string | Translation, substitute?: boolean, hideInAnswer?: boolean }[]
     }):
         InputElement<TagsFilter> {
 
