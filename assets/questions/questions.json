@@ -1,0 +1,32 @@
+{
+  "images": {
+    "render": "{image_carousel()}{image_upload()}"
+  },
+  
+  "osmlink": {
+    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/osm-logo-us.svg' alt='OSM'/></a>",
+    "mappings":[{
+      "if": "id~=-",
+      "then": "<span class='alert'>Uploading...</alert>"
+    }]
+  },
+
+  "wikipedialink": {
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
+    "condition":  "wikipedia~*"
+  },
+  
+  "website": {
+    "question": {
+      "en": "What is the website of {name}?",
+      "nl": "Wat is de website van {name}?",
+      "fr": "Quel est le site internet de {name}?",
+      "gl": "Cal é a páxina web de {name}?"
+    },
+    "render": "<a href='{website}' target='_blank'>{website}</a>",
+    "freeform": {
+      "key": "website",
+      "type": "url"
+    }
+  }
+}

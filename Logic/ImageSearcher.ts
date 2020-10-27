@@ -103,7 +103,6 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
     }
 
     private LoadImages(imagePrefix: string, loadAdditional: boolean): void {
-        console.log("Loading images from",this._tags)
         const imageTag = this._tags.data[imagePrefix];
         if (imageTag !== undefined) {
             const bareImages = imageTag.split(";");

@@ -9,9 +9,8 @@ import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translation from "./UI/i18n/Translation";
 import Translations from "./UI/i18n/Translations";
-import {TagRendering} from "./UI/Popup/TagRendering";
 
-TagRendering.injectFunction();
+
 console.log("Building the layouts")
 
 function enc(str: string): string {

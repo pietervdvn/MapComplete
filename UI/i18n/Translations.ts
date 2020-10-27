@@ -1056,6 +1056,22 @@ export default class Translations {
         return s;
     }
 
+
+    static T(t: string | any): Translation {
+        if(t === undefined){
+            return undefined;
+        }
+        if(typeof t === "string"){
+            return new Translation({"*":t});
+        }
+        if(t.render !== undefined){
+            const msg = "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
+            console.error(msg, t);
+            throw msg
+        }
+        return new Translation(t);
+    }
+
     private static wtcache = {}
     public static WT(s: string | Translation): Translation {
         if(s === undefined){

@@ -1,0 +1,109 @@
+.featureinfobox-title {
+    background-color: deeppink;
+}
+.featureinfobox-icons img{
+    max-height: 1.5em;
+}
+.featureinfobox-icons {
+    background-color: red;
+}
+
+.featureinfobox-titlebar{
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer {
+    display: flex;
+    width: 100%;
+    font-size: large;
+    justify-content: space-between;
+    word-break: break-word;
+}
+
+.question .form-text-field > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.question {
+    display: block;
+    margin-top: 1em;
+    background-color: #e5f5ff;
+    padding: 1em;
+    border-radius: 1em;
+    font-size: larger;
+
+}
+
+.question-text {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.question-text img {
+    max-width: 100%;
+}
+
+.question-subtext {
+    font-size: medium;
+    font-weight: normal;
+}
+
+.question-option-with-border {
+    border: 2px solid lightgray;
+    border-radius: 0.5em;
+    display: inline-block;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+input:checked + label .question-option-with-border {
+    border: 2px solid black;
+}
+
+
+.save {
+    display: inline-block;
+    border: solid white 2px;
+    background-color: #3a3aeb;
+    color: white;
+    padding: 0.2em 0.6em;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 1.5em;
+}
+
+.cancel {
+    display: inline-block;
+    border: solid black 0.5px;
+    padding: 0.2em 0.3em;
+    border-radius: 1.5em;
+}
+
+.login-button-friendly {
+    display: inline-block;
+    border: solid white 2px;
+    background-color: #3a3aeb;
+    color: white;
+    padding: 0.2em 0.6em;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 1.5em;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.save-non-active {
+    display: inline-block;
+    border: solid lightgrey 2px;
+    color: grey;
+    padding: 0.2em 0.3em;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 1.5em;
+}

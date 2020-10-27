@@ -1,9 +1,12 @@
-import {LayerDefinition} from "./LayerDefinition";
 import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
 import State from "../State";
 import Translation from "../UI/i18n/Translation";
+import LayerConfig from "./JSON/LayerConfig";
+import {LayoutConfigJson} from "./JSON/LayoutConfigJson";
+import TagRenderingConfig from "./JSON/TagRenderingConfig";
+import {FromJSON} from "./JSON/FromJSON";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -23,7 +26,7 @@ export class Layout {
      */
     public customCss: string = undefined;
     
-    public layers: (LayerDefinition | string)[];
+    public layers: LayerConfig[];
     public welcomeMessage: UIElement;
     public gettingStartedPlzLogin: UIElement;
     public welcomeBackMessage: UIElement;
@@ -52,11 +55,51 @@ export class Layout {
     public widenFactor: number = 0.07;
     public defaultBackground: string = "osm";
 
+    public static LayoutFromJSON(json: LayoutConfigJson, sharedLayers): Layout {
+        const tr = FromJSON.Translation;
+        const layers = json.layers.map(jsonLayer => {
+            if(typeof jsonLayer === "string"){
+                return sharedLayers[jsonLayer];
+            }
+            return new LayerConfig(jsonLayer, "theme."+json.id);
+        });
+        const roaming: TagRenderingConfig[] = json.roamingRenderings?.map((tr, i) =>
+            new TagRenderingConfig(tr, `theme.${json.id}.roamingRendering[${i}]`)) ?? [];
+        for (const layer of layers) {
+            layer.tagRenderings.push(...roaming);
+        }
+
+        const layout = new Layout(
+            json.id,
+            typeof (json.language) === "string" ? [json.language] : json.language,
+            tr(json.title ?? "Title not defined"),
+            layers,
+            json.startZoom,
+            json.startLat,
+            json.startLon,
+            new Combine(["<h3>", tr(json.title), "</h3>", tr(json.description)]),
+            undefined,
+            undefined,
+            tr(json.descriptionTail)
+
+        );
+
+        layout.defaultBackground = json.defaultBackgroundId ?? "osm";
+        layout.widenFactor = json.widenFactor ?? 0.07;
+        layout.icon = json.icon;
+        layout.maintainer = json.maintainer;
+        layout.version = json.version;
+        layout.socialImage = json.socialImage;
+        layout.description = tr(json.shortDescription) ?? tr(json.description)?.FirstSentence();
+        layout.changesetMessage = json.changesetmessage;
+        return layout;
+    }
+    
     constructor(
         id: string,
         supportedLanguages: string[],
         title: Translation | string,
-        layers: (LayerDefinition | string)[],
+        layers: LayerConfig[],
         startzoom: number,
         startLat: number,
         startLon: number,

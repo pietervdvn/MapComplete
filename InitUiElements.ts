@@ -11,9 +11,7 @@ import {Basemap} from "./Logic/Leaflet/Basemap";
 import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {Img} from "./UI/Img";
-import {DropDown} from "./UI/Input/DropDown";
 import {LayerSelection} from "./UI/LayerSelection";
-import {Preset} from "./Customizations/LayerDefinition";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
@@ -37,6 +35,7 @@ import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
 import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
 import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
+import SharedLayers from "./Customizations/SharedLayers";
 
 export class InitUiElements {
 
@@ -162,15 +161,14 @@ export class InitUiElements {
                     if (typeof layer === "string") {
                         continue;
                     }
-                    const applicable = layer.overpassFilter.matches(TagUtils.proprtiesToKV(data));
+                    const applicable = layer.overpassTags.matches(TagUtils.proprtiesToKV(data));
                     if (applicable) {
                         // This layer is the layer that gives the questions
 
                         const featureBox = new FeatureInfoBox(
                             feature.feature,
                             State.state.allElements.getElement(data.id),
-                            layer.title,
-                            layer.elementsToShow,
+                            layer
                         );
 
                         State.state.fullScreenMessage.setData(featureBox);
@@ -215,6 +213,10 @@ export class InitUiElements {
 
     }
 
+    public static FromBase64(layoutFromBase64: string): Layout {
+        return Layout.LayoutFromJSON(JSON.parse(atob(layoutFromBase64)), SharedLayers.sharedLayers);
+    }
+
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
         try {
@@ -235,7 +237,7 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = FromJSON.FromBase64(hash);
+            const layoutToUse = InitUiElements.FromBase64(hash);
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
@@ -338,18 +340,6 @@ export class InitUiElements {
 
     }
     
-    static CreateLanguagePicker(label: string | UIElement = "") {
-
-        if (State.state.layoutToUse.data.supportedLanguages.length <= 1) {
-            return undefined;
-        }
-
-        return new DropDown(label, State.state.layoutToUse.data.supportedLanguages.map(lang => {
-                return {value: lang, shown: lang}
-            }
-        ), Locale.language);
-    }
-
     private static GenerateLayerControlPanel() {
 
 
@@ -476,7 +466,6 @@ export class InitUiElements {
     static InitLayers() {
 
         const flayers: FilteredLayer[] = []
-        const presets: Preset[] = [];
 
         const state = State.state;
 
@@ -491,26 +480,9 @@ export class InitUiElements {
                 return new FeatureInfoBox(
                     feature,
                     tagsES,
-                    layer.title,
-                    layer.elementsToShow,
+                    layer,
                 )
             };
-
-            for (const preset of layer.presets ?? []) {
-
-                if (preset.icon === undefined) {
-                    const tags = {};
-                    for (const tag of preset.tags) {
-                        const k = tag.key;
-                        if (typeof (k) === "string") {
-                            tags[k] = tag.value;
-                        }
-                    }
-                    preset.icon = layer.style(tags)?.icon?.iconUrl;
-                }
-
-                presets.push(preset);
-            }
 
             const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
             flayers.push(flayer);
@@ -523,8 +495,6 @@ export class InitUiElements {
         }
 
         State.state.filteredLayers.setData(flayers);
-        State.state.presets.setData(presets);
-
     }
 
 }

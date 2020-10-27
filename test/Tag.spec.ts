@@ -1,5 +1,4 @@
 import {UIElement} from "../UI/UIElement";
-UIElement.runningFromConsole = true;
 import {equal} from "assert";
 import Translation from "../UI/i18n/Translation";
 import T from "./TestHelper";
@@ -8,10 +7,11 @@ import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {TagRendering} from "../UI/TagRendering";
 import {OH, OpeningHour} from "../Logic/OpeningHours";
 import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
+import {TagRendering} from "../UI/Popup/TagRendering";
 
+UIElement.runningFromConsole = true;
 
 
 new T([
@@ -104,18 +104,17 @@ new T([
                         "hideInAnswer": true
                     },
                     {
-                        "if":"access=no",
-                        "then":"Niet toegankelijk"
+                        "if": "access=no",
+                        "then": "Niet toegankelijk"
                     }
                 ]
             };
 
             const constr = FromJSON.TagRendering(def, "test");
             TagRendering.injectFunction();
-            const uiEl = constr.construct({
-                tags: new UIEventSource<any>(
-                    {leisure: "park", "access": "no"})
-            });
+            const uiEl = constr.construct(new UIEventSource<any>(
+                {leisure: "park", "access": "no"})
+            );
             const rendered = uiEl.InnerRender();
             equal(true, rendered.indexOf("Niet toegankelijk") > 0)
 
@@ -292,11 +291,11 @@ new T([
         const rules = OH.ParseRule("Th[-1] off");
         equal(rules, null);
     }],
-    ["OHNo parsePH 12:00-17:00",() => {
+    ["OHNo parsePH 12:00-17:00", () => {
         const rules = OH.ParseRule("PH 12:00-17:00");
         equal(rules, null);
     }],
-    ["OH Parse PH 12:00-17:00",() => {
+    ["OH Parse PH 12:00-17:00", () => {
         const rules = PublicHolidayInput.LoadValue("PH 12:00-17:00");
         equal(rules.mode, " ");
     }]

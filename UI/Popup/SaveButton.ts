@@ -1,9 +1,12 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
+import State from "../../State";
 
 export class SaveButton extends UIElement {
+
     private _value: UIEventSource<any>;
+    private _friendlyLogin: UIElement;
 
     constructor(value: UIEventSource<any>) {
         super(value);
@@ -11,16 +14,22 @@ export class SaveButton extends UIElement {
             throw "No event source for savebutton, something is wrong"
         }
         this._value = value;
+
+        this._friendlyLogin = Translations.t.general.loginToStart.Clone()
+            .SetClass("login-button-friendly")
+            .onClick(() => State.state.osmConnection.AttemptLogin())
     }
 
     InnerRender(): string {
-        if (this._value.data === undefined ||
-            this._value.data === null
-            || this._value.data === ""
-        ) {
-            return "<span class='save-non-active'>"+Translations.t.general.save.Render()+"</span>"
+        let clss = "save";
+
+        if(State.state !== undefined && !State.state.osmConnection.userDetails.data.loggedIn){
+            return this._friendlyLogin.Render();
         }
-        return "<span class='save'>"+Translations.t.general.save.Render()+"</span>";
+        if ((this._value.data ?? "") === "") {
+            clss = "save-non-active";
+        }
+        return Translations.t.general.save.Clone().SetClass(clss).Render();
     }
 
 }

@@ -1,4 +1,3 @@
-import {LayerDefinition} from "./LayerDefinition";
 import {Layout} from "./Layout";
 import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
@@ -18,14 +17,15 @@ import * as benches from "../assets/themes/benches/benches.json";
 import * as charging_stations from "../assets/themes/charging_stations/charging_stations.json"
 
 import {PersonalLayout} from "../Logic/PersonalLayout";
-import {StreetWidth} from "./StreetWidth/StreetWidth";
+import LayerConfig from "./JSON/LayerConfig";
+import SharedLayers from "./SharedLayers";
 
 export class AllKnownLayouts {
 
-    public static allLayers: Map<string, LayerDefinition> = undefined;
+    public static allLayers: Map<string, LayerConfig> = undefined;
 
     private static GenerateCycloFix(): Layout {
-        const layout = FromJSON.LayoutFromJSON(cyclofix)
+        const layout = Layout.LayoutFromJSON(cyclofix, SharedLayers.sharedLayers)
         const now = new Date();
         const m = now.getMonth() + 1;
         const day = new Date().getDay() + 1;
@@ -33,7 +33,7 @@ export class AllKnownLayouts {
         if (date === "31/10" || date === "1/11" || date === "2/11") {
             // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
             layout.layers.push(
-                FromJSON.sharedLayers.get("ghost_bike")
+                SharedLayers.sharedLayers.get("ghost_bike")
             );
 
         }
@@ -42,7 +42,7 @@ export class AllKnownLayouts {
     }
 
     private static GenerateBuurtNatuur(): Layout {
-        const layout = FromJSON.LayoutFromJSON(buurtnatuur);
+        const layout = Layout.LayoutFromJSON(buurtnatuur, SharedLayers.sharedLayers);
         layout.enableMoreQuests = false;
         layout.enableShareScreen = false;
         layout.hideFromOverview = true;
@@ -50,7 +50,7 @@ export class AllKnownLayouts {
     }
 
     private static GenerateBikeMonitoringStations(): Layout {
-        const layout = FromJSON.LayoutFromJSON(bike_monitoring_stations);
+        const layout = Layout.LayoutFromJSON(bike_monitoring_stations, SharedLayers.sharedLayers);
         layout.hideFromOverview = true;
         return layout;
     }
@@ -60,37 +60,36 @@ export class AllKnownLayouts {
     public static layoutsList: Layout[] = [
         new PersonalLayout(),
         
-        FromJSON.LayoutFromJSON(shops),
-        FromJSON.LayoutFromJSON(bookcases),
-        FromJSON.LayoutFromJSON(aed),
-        FromJSON.LayoutFromJSON(toilets),
-        FromJSON.LayoutFromJSON(artworks),
+        Layout.LayoutFromJSON(shops, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(bookcases, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(aed, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(toilets, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(artworks, SharedLayers.sharedLayers),
         AllKnownLayouts.GenerateCycloFix(),
-        FromJSON.LayoutFromJSON(ghostbikes),
-        FromJSON.LayoutFromJSON(nature),
-        FromJSON.LayoutFromJSON(cyclestreets),
-        FromJSON.LayoutFromJSON(maps),
-        FromJSON.LayoutFromJSON(fritures),
-        FromJSON.LayoutFromJSON(benches),
-        FromJSON.LayoutFromJSON(charging_stations),
+        Layout.LayoutFromJSON(ghostbikes, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(nature, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(cyclestreets, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(maps, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(fritures, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(benches, SharedLayers.sharedLayers),
+        Layout.LayoutFromJSON(charging_stations, SharedLayers.sharedLayers),
         AllKnownLayouts.GenerateBuurtNatuur(),
         AllKnownLayouts.GenerateBikeMonitoringStations(),
 
-        new StreetWidth(), // The ugly duckling
     ];
 
 
     public static allSets: Map<string, Layout> = AllKnownLayouts.AllLayouts();
 
     private static AllLayouts(): Map<string, Layout> {
-        this.allLayers = new Map<string, LayerDefinition>();
+        this.allLayers = new Map<string, LayerConfig>();
         for (const layout of this.layoutsList) {
             for (let i = 0; i < layout.layers.length; i++) {
                 let layer = layout.layers[i];
                 if (typeof (layer) === "string") {
-                    layer = layout.layers[i] = FromJSON.sharedLayers.get(layer);
+                    layer = layout.layers[i] = SharedLayers.sharedLayers.get(layer);
                     if(layer === undefined){
-                        console.log("Defined layers are ", FromJSON.sharedLayers.keys())
+                        console.log("Defined layers are ", SharedLayers.sharedLayers.keys())
                         throw `Layer ${layer} was not found or defined - probably a type was made`
                     }
                 }

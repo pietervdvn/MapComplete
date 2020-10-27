@@ -81,7 +81,7 @@
         }
       ],
       "tagRenderings": [
-        "pictures",
+        "images",
         {
           "render": {
             "en": "This is a {artwork_type}",

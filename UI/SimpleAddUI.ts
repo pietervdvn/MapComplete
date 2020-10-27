@@ -8,7 +8,6 @@ import Locale from "./i18n/Locale";
 import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
-import {Utils} from "../Utils";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -52,21 +51,9 @@ export class SimpleAddUI extends UIElement {
             
             for (const preset of layer.layerDef.presets) {
 
-                let icon: string = "./assets/bug.svg";
-                if (preset.icon !== undefined) {
-
-                    if (typeof (preset.icon) !== "string") {
-                        const tags = Utils.MergeTags(TagUtils.KVtoProperties(preset.tags), {id:"node/-1"});
-                        icon = preset.icon.GetContent(tags).txt;
-                        if(icon.startsWith("$")){
-                            icon = undefined;
-                        }
-                    } else {
-                        icon = preset.icon;
-                    }
-                } else {
-                    console.warn("No icon defined for preset ", preset, "in layer ", layer.layerDef.id)
-                }
+                let icon: string = layer.layerDef.icon.GetRenderValue(
+                    TagUtils.KVtoProperties(preset.tags ?? [])).txt ??
+                    "./assets/bug.svg";
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";

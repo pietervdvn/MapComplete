@@ -4,10 +4,9 @@ import * as L from "leaflet"
 import {Layer} from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
-import {LayerDefinition} from "../Customizations/LayerDefinition";
 
 import State from "../State";
-import CodeGrid from "./Web/CodeGrid";
+import LayerConfig from "../Customizations/JSON/LayerConfig";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -23,11 +22,11 @@ export class FilteredLayer {
     public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
-    private readonly combinedIsDisplayed : UIEventSource<boolean>;
-    public readonly layerDef: LayerDefinition;
+    private readonly combinedIsDisplayed: UIEventSource<boolean>;
+    public readonly layerDef: LayerConfig;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize?: [number, number], popupAnchor?:  [number,number], iconAnchor?: [number,number] } };
+    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize?: [number, number], popupAnchor?: [number, number], iconAnchor?: [number, number] } };
 
 
     /** The featurecollection from overpass
@@ -46,7 +45,7 @@ export class FilteredLayer {
 
     
     constructor(
-        layerDef: LayerDefinition,
+        layerDef: LayerConfig,
         showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
     ) {
         this.layerDef = layerDef;
@@ -54,22 +53,56 @@ export class FilteredLayer {
         this._wayHandling = layerDef.wayHandling;
         this._showOnPopup = showOnPopup;
         this._style = (tags) => {
-            if(layerDef.style === undefined){
-                return {icon: {iconUrl: "./assets/bug.svg"}, color: "#000"};
-            }
-            
-            const obj = layerDef.style(tags);
-            if(obj.weight && typeof (obj.weight) === "string"){
-                obj.weight = Number(obj.weight);// Weight MUST be a number, otherwise leaflet does weird things. see https://github.com/Leaflet/Leaflet/issues/6075
-                if(isNaN(obj.weight)){
-                    obj.weight = undefined;
+
+            const iconUrl = layerDef.icon?.GetRenderValue(tags)?.txt ?? "./assets/bug.svg";
+            const iconSize = (layerDef.iconSize?.GetRenderValue(tags)?.txt ?? "40,40,center").split(",");
+
+            function num(str, deflt = 40) {
+                const n = Number(str);
+                if (isNaN(n)) {
+                    return deflt;
                 }
+                return n;
             }
-            return obj;
+
+            const iconW = num(iconSize[0]);
+            const iconH = num(iconSize[1]);
+            const mode = iconSize[2] ?? "center"
+
+            let anchorW = iconW / 2;
+            let anchorH = iconH / 2;
+            if (mode === "left") {
+                anchorW = 0;
+            }
+            if (mode === "right") {
+                anchorW = iconW;
+            }
+
+            if (mode === "top") {
+                anchorH = 0;
+            }
+            if (mode === "bottom") {
+                anchorH = iconH;
+            }
+
+
+            const color = layerDef.color?.GetRenderValue(tags)?.txt ?? "#00f";
+            let weight = num(layerDef.width?.GetRenderValue(tags)?.txt, 5);
+            return {
+                icon:
+                    {
+                        iconUrl: iconUrl,
+                        iconSize: [iconW, iconH],
+                        iconAnchor: [anchorW, anchorH],
+                        popupAnchor: [0, 3 - anchorH]
+                    },
+                color: color,
+                weight: weight
+            };
         };
         this.name = name;
-        this.filters = layerDef.overpassFilter;
-        this._maxAllowedOverlap = layerDef.maxAllowedOverlapPercentage;
+        this.filters = layerDef.overpassTags;
+        this._maxAllowedOverlap = layerDef.hideUnderlayingFeaturesMinPercentage;
         const self = this;
         this.combinedIsDisplayed = this.isDisplayed.map<boolean>(isDisplayed => {
                 return isDisplayed && State.state.locationControl.data.zoom >= self.layerDef.minzoom
@@ -111,9 +144,9 @@ export class FilteredLayer {
             const tags = TagUtils.proprtiesToKV(feature.properties);
             const centerPoint = GeoOperations.centerpoint(feature);
             if (feature.geometry.type !== "Point") {
-                if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
+                if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
                     selfFeatures.push(centerPoint);
-                } else if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_ONLY) {
+                } else if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_ONLY) {
                     feature = centerPoint;
                 }
             }

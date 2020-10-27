@@ -1,7 +1,6 @@
 import {UIElement} from "./UI/UIElement";
 import {Layout} from "./Customizations/Layout";
 import {Utils} from "./Utils";
-import {Preset} from "./Customizations/LayerDefinition";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
@@ -70,7 +69,6 @@ export default class State {
 
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
-    public presets: UIEventSource<Preset[]> = new UIEventSource<Preset[]>([])
     
     /**
      *  The message that should be shown at the center of the screen

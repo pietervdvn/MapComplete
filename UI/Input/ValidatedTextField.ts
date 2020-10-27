@@ -50,6 +50,9 @@ export default class ValidatedTextField {
             "string",
             "A basic string"),
         ValidatedTextField.tp(
+            "text",
+            "A string, but allows input of longer strings more comfortably (a text area)"),
+        ValidatedTextField.tp(
             "date",
             "A date",
             (str) => {
@@ -171,6 +174,9 @@ export default class ValidatedTextField {
         return new DropDown<string>("", values)
     }
 
+    /**
+     * {string (typename) --> TextFieldDef}
+     */
     public static AllTypes = ValidatedTextField.allTypesDict();
 
     public static InputForType(type: string, options?: {
@@ -186,6 +192,7 @@ export default class ValidatedTextField {
         const tp: TextFieldDef = ValidatedTextField.AllTypes[type]
         const isValidTp = tp.isValid;
         let isValid;
+        options.textArea = options.textArea ?? type === "text";
         if (options.isValid) {
             const optValid = options.isValid;
             isValid = (str, country) => {

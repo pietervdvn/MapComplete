@@ -6,18 +6,19 @@ import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../Tags";
 import State from "../../State";
 import {Utils} from "../../Utils";
+import {UIEventSource} from "../UIEventSource";
 
 export class Changes {
 
     private static _nextId = -1; // New assined ID's are negative
 
-    addTag(elementId: string, tagsFilter: TagsFilter) {
+    addTag(elementId: string, tagsFilter: TagsFilter,
+           tags?: UIEventSource<any>) {
         const changes = this.tagToChange(tagsFilter);
-
         if (changes.length == 0) {
             return;
         }
-        const eventSource = State.state.allElements.getElement(elementId);
+        const eventSource = tags ?? State.state?.allElements.getElement(elementId);
         const elementTags = eventSource.data;
         const pending : {elementId:string, key: string, value: string}[] = [];
         for (const change of changes) {

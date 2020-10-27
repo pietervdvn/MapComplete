@@ -359,9 +359,10 @@ export class TagUtils {
             return new And([]);
         }
         const keyValues = {} // Map string -> string[]
-        tagsFilters = [...tagsFilters]
+        tagsFilters = [...tagsFilters] // copy all
         while (tagsFilters.length > 0) {
-            const tagsFilter = tagsFilters.pop();
+            // Queue
+            const tagsFilter = tagsFilters.shift();
 
             if (tagsFilter === undefined) {
                 continue;
@@ -388,7 +389,6 @@ export class TagUtils {
         for (const key in keyValues) {
             and.push(new Tag(key, Utils.Dedup(keyValues[key]).join(";")));
         }
-
         return new And(and);
 
     }

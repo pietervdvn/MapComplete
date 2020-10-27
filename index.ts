@@ -6,9 +6,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import {FromJSON} from "./Customizations/JSON/FromJSON";
-import {TagRendering} from "./UI/Popup/TagRendering";
-
-TagRendering.injectFunction();
+import SharedLayers from "./Customizations/SharedLayers";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -96,7 +94,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 .firstChild.textContent;
             try {
                 console.log("DOWNLOADED:",layoutJson);
-                const layout = FromJSON.LayoutFromJSON(JSON.parse(layoutJson));
+                const layout = Layout.LayoutFromJSON(JSON.parse(layoutJson), SharedLayers.sharedLayers);
                 layout.id = layoutFromBase64;
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(layoutJson));
             } catch (e) {

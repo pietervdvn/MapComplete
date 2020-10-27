@@ -2,12 +2,11 @@ import {UIElement} from "../UIElement";
 import {ImageSearcher} from "../../Logic/ImageSearcher";
 import {SlideShow} from "./SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {TagDependantUIElement} from "../../Customizations/UIElementConstructor";
 import Combine from "../Base/Combine";
 import DeleteImage from "./DeleteImage";
 
 
-export class ImageCarousel extends TagDependantUIElement {
+export class ImageCarousel extends UIElement{
 
     public readonly slideshow: SlideShow;
 
@@ -40,19 +39,4 @@ export class ImageCarousel extends TagDependantUIElement {
     IsKnown(): boolean {
         return true;
     }
-
-    IsQuestioning(): boolean {
-        return false;
-    }
-    
-    IsSkipped(): boolean {
-        return false;
-    }
-
-    Priority(): number {
-        return 0;
-    }
-
-
-
 }

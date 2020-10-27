@@ -63,7 +63,7 @@
             "nl": "Wat is de naam van deze frituur?",
             "fr": "Quel est le nom de cette friterie?"
           },
-          "feeform": {
+          "freeform": {
             "key": "name"
           }
         },

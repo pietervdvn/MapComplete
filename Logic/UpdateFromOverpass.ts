@@ -4,7 +4,6 @@ import {FilteredLayer} from "./FilteredLayer";
 import {Bounds} from "./Bounds";
 import {Overpass} from "./Osm/Overpass";
 import State from "../State";
-import {LayerDefinition} from "../Customizations/LayerDefinition";
 import MetaTagging from "./MetaTagging";
 
 export class UpdateFromOverpass {
@@ -34,7 +33,7 @@ export class UpdateFromOverpass {
                 if(location?.zoom === undefined){
                     return false;
                 }
-                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => (layer as LayerDefinition).minzoom ?? 18));
+                let minzoom = Math.min(...state.layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
                 return location.zoom >= minzoom;
             }, [state.layoutToUse]
         );
@@ -80,7 +79,7 @@ export class UpdateFromOverpass {
             if (previouslyLoaded) {
                 continue;
             }
-            filters.push(layer.overpassFilter);
+            filters.push(layer.overpassTags);
         }
         if (filters.length === 0) {
             return undefined;

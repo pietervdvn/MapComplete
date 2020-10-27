@@ -6,8 +6,8 @@ import Translations from "./i18n/Translations";
 import {UserDetails} from "../Logic/Osm/OsmConnection";
 import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {InitUiElements} from "../InitUiElements";
 import Combine from "./Base/Combine";
+import Locale from "./i18n/Locale";
 
 /**
  * Handles and updates the user badge
@@ -23,7 +23,7 @@ export class UserBadge extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
-        this._languagePicker = (InitUiElements.CreateLanguagePicker() ?? new FixedUiElement(""))
+        this._languagePicker = (Locale.CreateLanguagePicker(State.state.layoutToUse.data.supportedLanguages) ?? new FixedUiElement(""))
             .SetStyle("display:inline-block;width:min-content;");
         
         this._loginButton = Translations.t.general.loginWithOpenStreetMap

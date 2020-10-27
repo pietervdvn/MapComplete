@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    word-break: normal;
 }
 
 .oh-table th {
@@ -169,7 +170,7 @@
 /**** Opening hours visualization table ****/
 
 .ohviz-table {
-
+    word-break: normal;
 }
 
 .ohviz-range {
@@ -279,6 +280,7 @@
 
 .ohviz-weekday {
     padding-left: 0.5em;
+    word-break: normal;
 }
 
 

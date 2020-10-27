@@ -4,7 +4,6 @@ import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import CustomGeneratorPanel from "./UI/CustomGenerator/CustomGeneratorPanel";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
-import {TagRendering} from "./UI/Popup/TagRendering";
 
 let layout = GenerateEmpty.createEmptyLayout();
 if (window.location.hash.length > 10) {
@@ -16,8 +15,6 @@ if (window.location.hash.length > 10) {
         layout = JSON.parse(atob(hash)) as LayoutConfigJson;
     }
 }
-
-TagRendering.injectFunction();
 
 const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "customGenerator", false);
 
