@@ -25,6 +25,6 @@
   "startZoom": 16,
   "widenFactor": 0.05,
   "socialImage": "./assets/themes/cyclofix/logo.svg",
-  "layers": ["bike_repair_station", "bike_cafes", "bike_shops", "drinking_water", "bike_parking","bike_themed_object"],
+  "layers": ["bike_cafes", "bike_shops", "bike_repair_station", "drinking_water", "bike_themed_object"],
   "roamingRenderings": []
 }
