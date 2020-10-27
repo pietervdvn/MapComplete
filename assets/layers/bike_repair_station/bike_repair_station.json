@@ -149,6 +149,25 @@
     },
     {
       "question": {
+        "en": "Who maintains this cycle pump?",
+        "nl": "Wie beheert deze fietspomp?"
+      },
+      "render": {
+        "nl": "Beheer door {operator}",
+        "en": "Maintained by {operator}"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": "operator=De Fietsambassade Gent",
+          "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>"
+        }
+      ]
+    },
+    {
+      "question": {
         "en": "Does this bike repair station have a special tool to repair your bike chain?",
         "nl": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
         "fr": "Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?",
