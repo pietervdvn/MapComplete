@@ -16,10 +16,8 @@ export class LayerSelection extends UIElement {
 
         for (const layer of State.state.filteredLayers.data) {
             let iconUrl = "./asets/checkbox.svg";
-            let iconUrlBlank = "";
-            if (layer.layerDef.icon && layer.layerDef.icon !== "") {
-                iconUrl = layer.layerDef.icon as string;
-                iconUrlBlank = layer.layerDef.icon as string;
+            if (layer.layerDef.icon ) {
+                iconUrl = layer.layerDef.icon.GetRenderValue({id:"node/-1"}).txt;
             }
             const icon = new FixedUiElement(`<img style="height:2em;max-width: 2em;" src="${iconUrl}">`);
 

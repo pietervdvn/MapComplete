@@ -21,10 +21,10 @@ export default class LayerConfig {
 
     titleIcons: TagRenderingConfig[];
 
-    icon?: TagRenderingConfig;
-    iconSize?: TagRenderingConfig;
-    color?: TagRenderingConfig;
-    width?: TagRenderingConfig;
+    icon: TagRenderingConfig;
+    iconSize: TagRenderingConfig;
+    color: TagRenderingConfig;
+    width: TagRenderingConfig;
 
 
     wayHandling: number;

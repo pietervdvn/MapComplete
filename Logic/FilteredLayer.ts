@@ -140,21 +140,24 @@ export class FilteredLayer {
         const selfFeatures = [];
         for (let feature of geojson.features) {
             // feature.properties contains all the properties
-            
+
             const tags = TagUtils.proprtiesToKV(feature.properties);
-            const centerPoint = GeoOperations.centerpoint(feature);
+
+            if (!this.filters.matches(tags)) {
+                leftoverFeatures.push(feature);
+                continue;
+            }
+
             if (feature.geometry.type !== "Point") {
+                const centerPoint = GeoOperations.centerpoint(feature);
                 if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
                     selfFeatures.push(centerPoint);
                 } else if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_ONLY) {
                     feature = centerPoint;
                 }
             }
-            if (this.filters.matches(tags)) {
-                selfFeatures.push(feature);
-            } else {
-                leftoverFeatures.push(feature);
-            }
+            selfFeatures.push(feature);
+
         }
 
 
