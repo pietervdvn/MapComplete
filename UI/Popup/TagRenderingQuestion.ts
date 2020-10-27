@@ -18,6 +18,8 @@ import {Changes} from "../../Logic/Osm/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {Util} from "leaflet";
+import indexOf = Util.indexOf;
 
 /**
  * Shows the question element.
@@ -112,6 +114,10 @@ export default class TagRenderingQuestion extends UIElement {
 
     }
 
+    private SplitMultiAnswer(tags: TagsFilter) {
+
+    }
+
     private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>): InputElement<TagsFilter> {
         const possibleTags = elements.map(el => el.GetValue().data);
         const checkBoxes = new CheckBoxes(elements);
@@ -128,22 +134,50 @@ export default class TagRenderingQuestion extends UIElement {
                 return TagUtils.FlattenMultiAnswer(tags);
             },
             (tags: TagsFilter) => {
-                const splitUpValues = TagUtils.SplitMultiAnswer(tags, possibleTags, this._configuration.freeform?.key, new And(this._configuration.freeform?.addExtraTags));
+                // {key --> values[]}
+                const presentTags = TagUtils.SplitKeys([tags]);
                 const indices: number[] = []
+                // We also collect the values that have to be added to the freeform field
+                let freeformExtras: string[] = []
+                if (this._configuration.freeform?.key) {
+                    freeformExtras = [...(presentTags[this._configuration.freeform.key] ?? [])]
+                }
 
-                for (let i = 0; i < splitUpValues.length; i++) {
-                    let splitUpValue = splitUpValues[i];
+                for (let j = 0; j < elements.length; j++) {
+                    const inputElement = elements[j];
+                    if (inputElement === freeformField) {
+                        continue;
+                    }
+                    const val = inputElement.GetValue();
+                    const neededTags = TagUtils.SplitKeys([val.data]);
 
-                    for (let j = 0; j < elements.length; j++) {
-                        let inputElement = elements[j];
-                        if (inputElement.IsValid(splitUpValue)) {
-                            indices.push(j);
-                            inputElement.GetValue().setData(splitUpValue);
-                            break;
+                    // if every 'neededKeys'-value is present in presentKeys, we have a match and enable the index
+                    if (TagUtils.AllKeysAreContained(presentTags, neededTags)) {
+                        indices.push(j);
+                        if (freeformExtras.length > 0) {
+                            const freeformsToRemove: string[] = (neededTags[this._configuration.freeform.key] ?? []);
+                            for (const toRm of freeformsToRemove) {
+                                const i = freeformExtras.indexOf(toRm);
+                                if (i >= 0) {
+                                    freeformExtras.splice(i, 1);
+                                }
+                            }
                         }
                     }
+
                 }
-                console.log(indices)
+                console.log(indices, freeformExtras);
+
+                if (freeformField) {
+                    if (freeformExtras.length > 0) {
+                        freeformField.GetValue().setData(new Tag(this._configuration.freeform.key, freeformExtras.join(";")));
+                        indices.push(indexOf(elements, freeformField))
+                    } else {
+                        freeformField.GetValue().setData(undefined);
+                    }
+                }
+
+
                 return indices;
             },
             elements.map(el => el.GetValue())

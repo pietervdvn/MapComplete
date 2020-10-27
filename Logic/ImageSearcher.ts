@@ -130,7 +130,12 @@ export class ImageSearcher extends UIEventSource<{key: string, url: string}[]> {
             }
 
             if (this._tags.data.mapillary) {
-                this.AddImage(undefined,"https://www.mapillary.com/map/im/" + this._tags.data.mapillary)
+                let mapillary =  this._tags.data.mapillary;
+                const prefix = "https://www.mapillary.com/map/im/";
+                if(mapillary.indexOf(prefix) < 0){
+                    mapillary = prefix + mapillary;
+                }
+                this.AddImage(undefined, mapillary)
             }
 
         }

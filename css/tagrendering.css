@@ -1,11 +1,10 @@
 .featureinfobox-title {
-    background-color: deeppink;
+    font-size: xx-large;    
 }
 .featureinfobox-icons img{
     max-height: 1.5em;
 }
 .featureinfobox-icons {
-    background-color: red;
 }
 
 .featureinfobox-titlebar{
