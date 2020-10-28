@@ -27,7 +27,6 @@ export default class QuestionBox extends UIElement {
             .map((tagRendering, i) => new TagRenderingQuestion(this._tags, tagRendering,
                 () => {
                     // We save
-                    self._skippedQuestions.data.push(i)
                     self._skippedQuestions.ping();
                 },
                 Translations.t.general.skip.Clone()

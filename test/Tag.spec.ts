@@ -1,17 +1,19 @@
 import {UIElement} from "../UI/UIElement";
+UIElement.runningFromConsole = true;
+
 import {equal} from "assert";
-import Translation from "../UI/i18n/Translation";
 import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
 import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
-import Translations from "../UI/i18n/Translations";
+import Translations, {Translation} from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {OH, OpeningHour} from "../Logic/OpeningHours";
 import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
-import {TagRendering} from "../UI/Popup/TagRendering";
+import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
+import EditableTagRendering from "../UI/Popup/EditableTagRendering";
+import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
 
-UIElement.runningFromConsole = true;
 
 
 new T([
@@ -32,10 +34,34 @@ new T([
         equal((and.and[1] as Tag).value, "y");
 
     })],
+    ["Is equivalent test", (() => {
+
+        const t0 = new And([
+            new Tag("valves:special","A"),
+            new Tag("valves","A")
+        ])
+        const t1 = new And([
+            new Tag("valves","A")
+        ])
+        const t2 = new And([
+            new Tag("valves","B")
+        ])
+        equal(true, t0.isEquivalent(t0))
+        equal(true, t1.isEquivalent(t1))
+        equal(true, t2.isEquivalent(t2))
+
+        equal(false, t0.isEquivalent(t1))
+        equal(false, t0.isEquivalent(t2))
+        equal(false, t1.isEquivalent(t0))
+        
+        equal(false, t1.isEquivalent(t2))
+        equal(false, t2.isEquivalent(t0))
+        equal(false, t2.isEquivalent(t1))
+    })],
     ["Parse translation map", (() => {
 
         const json: any = {"en": "English", "nl": "Nederlands"};
-        const translation = Translations.WT(FromJSON.Translation(json));
+        const translation = Translations.WT(new Translation(json));
         Locale.language.setData("en");
         equal(translation.txt, "English");
         Locale.language.setData("nl");
@@ -43,7 +69,7 @@ new T([
     })],
     ["Parse tag rendering", (() => {
         Locale.language.setData("nl");
-        const tr = FromJSON.TagRendering({
+        const tr = new TagRenderingConfig({
             render: ({"en":"Name is {name}", "nl":"Ook een {name}"} as any),
             question: "Wat is de naam van dit object?",
             freeform: {
@@ -59,12 +85,12 @@ new T([
             condition: "x="
         }, "");
 
-        equal(true, tr.IsKnown({"noname": "yes"}));
-        equal(true, tr.IsKnown({"name": "ABC"}));
-        equal(false, tr.IsKnown({"foo": "bar"}));
-        equal("Has no name", tr.GetContent({"noname": "yes"})?.txt);
-        equal("Ook een xyz", tr.GetContent({"name": "xyz"})?.txt);
-        equal(undefined, tr.GetContent({"foo": "bar"}));
+        equal(undefined, tr.GetRenderValue({"foo": "bar"}));
+        equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
+        equal("Ook een {name}", tr.GetRenderValue({"name": "xyz"})?.txt);
+        equal("Ook een xyz", new SubstitutedTranslation( tr.GetRenderValue({"name": "xyz"}),
+            new UIEventSource<any>({"name":"xyz"})).InnerRender());
+        equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 
     })],
     
@@ -110,10 +136,9 @@ new T([
                 ]
             };
 
-            const constr = FromJSON.TagRendering(def, "test");
-            TagRendering.injectFunction();
-            const uiEl = constr.construct(new UIEventSource<any>(
-                {leisure: "park", "access": "no"})
+            const constr = new TagRenderingConfig(def, "test");
+            const uiEl = new EditableTagRendering(new UIEventSource<any>(
+                {leisure: "park", "access": "no"}), constr
             );
             const rendered = uiEl.InnerRender();
             equal(true, rendered.indexOf("Niet toegankelijk") > 0)

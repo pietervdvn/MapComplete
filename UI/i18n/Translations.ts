@@ -1,8 +1,110 @@
-import Translation from "./Translation";
-import T from "./Translation";
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Combine from "../Base/Combine";
+import Locale from "./Locale";
+import {Utils} from "../../Utils";
 
+
+export class Translation extends UIElement {
+
+    private static forcedLanguage = undefined;
+
+    public Subs(text: any): Translation {
+        const newTranslations = {};
+        for (const lang in this.translations) {
+            let template: string = this.translations[lang];
+            for (const k in text) {
+                const combined = [];
+                const parts = template.split("{" + k + "}");
+                const el: string | UIElement = text[k];
+                if (el === undefined) {
+                    continue;
+                }
+                let rtext: string = "";
+                if (typeof (el) === "string") {
+                    rtext = el;
+                } else {
+                    Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
+                    rtext = el.InnerRender();
+                }
+                for (let i = 0; i < parts.length - 1; i++) {
+                    combined.push(parts[i]);
+                    combined.push(rtext)
+                }
+                combined.push(parts[parts.length - 1]);
+                template = new Combine(combined).InnerRender();
+            }
+            newTranslations[lang] = template;
+        }
+        Translation.forcedLanguage = undefined;
+        return new Translation(newTranslations);
+
+    }
+
+
+
+
+    get txt(): string {
+        if (this.translations["*"]) {
+            return this.translations["*"];
+        }
+        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
+        if (txt !== undefined) {
+            return txt;
+        }
+        const en = this.translations["en"];
+        if (en !== undefined) {
+            return en;
+        }
+        for (const i in this.translations) {
+            return this.translations[i]; // Return a random language
+        }
+        console.error("Missing language ",Locale.language.data,"for",this.translations)
+        return undefined;
+    }
+
+
+    InnerRender(): string {
+        return this.txt
+    }
+
+    public readonly translations: object
+
+    constructor(translations: object) {
+        super(Locale.language)
+        let count = 0;
+        for (const translationsKey in translations) {
+            count++;
+        }
+        this.translations = translations
+    }
+
+    public replace(a: string, b: string) {
+        if(a.startsWith("{") && a.endsWith("}")){
+            a = a.substr(1, a.length - 2);
+        }
+        const result= this.Subs({[a]: b});
+        return result;
+    }
+
+    public Clone() {
+        return new Translation(this.translations)
+    }
+
+
+    FirstSentence() {
+
+        const tr = {};
+        for (const lng in this.translations) {
+            let txt = this.translations[lng];
+            txt = txt.replace(/\..*/, "");
+            txt = Utils.EllipsesAfter(txt, 255);
+            tr[lng] = txt;
+        }
+
+        return new Translation(tr);
+    }
+}
 
 export default class Translations {
 
@@ -13,7 +115,7 @@ export default class Translations {
 
     static t = {
         image: {
-            addPicture: new T({
+            addPicture: new Translation({
                 en: 'Add picture',
                 es: 'Añadir foto',
                 ca: 'Afegir foto',
@@ -23,7 +125,7 @@ export default class Translations {
                 de: "Bild hinzufügen"
             }),
 
-            uploadingPicture: new T({
+            uploadingPicture: new Translation({
                 en: 'Uploading your picture...',
                 nl: 'Bezig met een foto te uploaden...',
                 es: 'Subiendo tu imagen ...',
@@ -33,7 +135,7 @@ export default class Translations {
                 de: 'Ihr Bild hochladen...'
             }),
 
-            uploadingMultiple: new T({
+            uploadingMultiple: new Translation({
                 en: "Uploading {count} of your picture...",
                 nl: "Bezig met {count} foto's te uploaden...",
                 ca: "Pujant {count} de la teva imatge...",
@@ -43,7 +145,7 @@ export default class Translations {
                 de: "{count} Ihrer Bilder hochgeladen..."
             }),
 
-            pleaseLogin: new T({
+            pleaseLogin: new Translation({
                 en: 'Please login to add a picure',
                 nl: 'Gelieve je aan te melden om een foto toe te voegen',
                 es: 'Entra para subir una foto',
@@ -53,7 +155,7 @@ export default class Translations {
                 de: 'Bitte einloggen, um ein Bild hinzuzufügen'
             }),
 
-            willBePublished: new T({
+            willBePublished: new Translation({
                 en: 'Your picture will be published: ',
                 es: 'Tu foto será publicada: ',
                 ca: 'La teva foto serà publicada: ',
@@ -63,7 +165,7 @@ export default class Translations {
                 de: 'Ihr Bild wird veröffentlicht: '
             }),
 
-            cco: new T({
+            cco: new Translation({
                 en: 'in the public domain',
                 ca: 'en domini públic',
                 es: 'en dominio público',
@@ -73,7 +175,7 @@ export default class Translations {
                 de: 'in die Public Domain'
             }),
 
-            ccbs: new T({
+            ccbs: new Translation({
                 en: 'under the CC-BY-SA-license',
                 nl: 'onder de CC-BY-SA-licentie',
                 ca: 'sota llicència CC-BY-SA',
@@ -82,7 +184,7 @@ export default class Translations {
                 gl: 'baixo a licenza CC-BY-SA',
                 de: 'unter der CC-BY-SA-Lizenz'
             }),
-            ccb: new T({
+            ccb: new Translation({
                 en: 'under the CC-BY-license',
                 ca: 'sota la llicència CC-BY',
                 es: 'bajo licencia CC-BY',
@@ -92,7 +194,7 @@ export default class Translations {
                 de: 'unter der CC-BY-Lizenz'
             }),
 
-            uploadFailed: new T({
+            uploadFailed: new Translation({
                 en: "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them.",
                 nl: "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
                 ca: "No s\'ha pogut carregar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
@@ -102,7 +204,7 @@ export default class Translations {
                 de: "Wir konnten Ihr Bild nicht hochladen. Haben Sie Internet und sind API's von Dritten erlaubt? Brave Browser oder UMatrix blockieren evtl..",
             }),
 
-            respectPrivacy: new T({
+            respectPrivacy: new Translation({
                 en: "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
                 ca: "Respecta la privacitat. No fotografiïs gent o matrícules",
                 es: "Respeta la privacidad. No fotografíes gente o matrículas",
@@ -111,7 +213,7 @@ export default class Translations {
                 gl: "Respecta a privacidade. Non fotografes xente ou matrículas",
                 de: "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder"
             }),
-            uploadDone: new T({
+            uploadDone: new Translation({
                 en: "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>",
                 ca: "<span class='thanks'>La teva imatge ha estat afegida. Gràcies per ajudar.</span>",
                 es: "<span class='thanks'>Tu imagen ha sido añadida. Gracias por ayudar.</span>",
@@ -120,21 +222,21 @@ export default class Translations {
                 gl: "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>",
                 de: "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
             }),
-            dontDelete: new T({
+            dontDelete: new Translation({
                 "nl":"Terug",
                 "en":"Cancel",
 				"ca":"Cancel·lar",
 				"es":"Cancelar",
                 "de": "Abbrechen"
             }),
-            doDelete: new T({
+            doDelete: new Translation({
                 "nl":"Verwijder afbeelding",
                 "en":"Remove image",
 				"ca":"Esborrar imatge",
 				"es":"Borrar imagen",
                 "de": "Bild entfernen"
             }),
-            isDeleted: new T({
+            isDeleted: new Translation({
                 "nl":"Verwijderd",
                 "en":"Deleted",
 				"ca":"Esborrada",
@@ -143,7 +245,7 @@ export default class Translations {
             })
         },
         centerMessage: {
-            loadingData: new T({
+            loadingData: new Translation({
                 en: 'Loading data...',
                 ca: 'Carregant dades...',
                 es: 'Cargando datos...',
@@ -152,7 +254,7 @@ export default class Translations {
                 gl: 'Cargando os datos...',
                 de: 'Daten werden geladen...'
             }),
-            zoomIn: new T({
+            zoomIn: new Translation({
                 en: 'Zoom in to view or edit the data',
                 ca: 'Amplia per veure o editar les dades',
                 es: 'Amplía para ver o editar los datos',
@@ -161,7 +263,7 @@ export default class Translations {
                 gl: 'Achégate para ollar ou editar os datos',
                 de: 'Vergrößern, um die Daten anzuzeigen oder zu bearbeiten'
             }),
-            ready: new T({
+            ready: new Translation({
                 en: "Done!",
                 ca: "Fet.",
                 es: "Hecho.",
@@ -171,7 +273,7 @@ export default class Translations {
                 de: "Erledigt!"
             }),
 
-            retrying: new T({
+            retrying: new Translation({
                 en: "Loading data failed. Trying again... ({count})",
                 ca: "La càrrega de dades ha fallat.Tornant-ho a intentar... ({count})",
                 es: "La carga de datos ha fallado.Volviéndolo a probar... ({count})",
@@ -181,7 +283,7 @@ export default class Translations {
 
         },
         general: {
-            loginWithOpenStreetMap: new T({
+            loginWithOpenStreetMap: new Translation({
                 en: "Login with OpenStreetMap",
                 ca: "Entra a OpenStreetMap",
                 es: "Entra en OpenStreetMap",
@@ -191,7 +293,7 @@ export default class Translations {
                 de: "Anmeldung mit OpenStreetMap"
             }),
 
-            welcomeBack: new T({
+            welcomeBack: new Translation({
                 en: "You are logged in, welcome back!",
                 ca: "Has entrat, benvingut.",
                 es: "Has entrado, bienvenido.",
@@ -200,7 +302,7 @@ export default class Translations {
                 gl: "Iniciaches a sesión, benvido.",
                 de: "Sie sind eingeloggt, willkommen zurück!"
             }),
-            loginToStart: new T({
+            loginToStart: new Translation({
                 en: "Login to answer this question",
                 ca: "Entra per contestar aquesta pregunta",
                 es: "Entra para contestar esta pregunta",
@@ -249,7 +351,7 @@ export default class Translations {
                 })
 
             },
-            returnToTheMap: new T({
+            returnToTheMap: new Translation({
                 en: "Return to the map",
                 ca: "Tornar al mapa",
                 es: "Volver al mapa",
@@ -258,7 +360,7 @@ export default class Translations {
                 gl: "Voltar ó mapa",
                 de: "Zurück zur Karte"
             }),
-            save: new T({
+            save: new Translation({
                 en: "Save",
                 ca: "Desar",
                 es: "Guardar",
@@ -267,7 +369,7 @@ export default class Translations {
                 gl: "Gardar",
                 de: "Speichern"
             }),
-            cancel: new T({
+            cancel: new Translation({
                 en: "Cancel",
                 ca: "Cancel·lar",
                 es: "Cancelar",
@@ -276,7 +378,7 @@ export default class Translations {
                 gl: "Desbotar",
                 de: "Abbrechen"
             }),
-            skip: new T({
+            skip: new Translation({
                 en: "Skip this question",
                 ca: "Saltar aquesta pregunta",
                 es: "Saltar esta pregunta",
@@ -285,7 +387,7 @@ export default class Translations {
                 gl: "Ignorar esta pregunta",
                 de: "Diese Frage überspringen"
             }),
-            oneSkippedQuestion: new T({
+            oneSkippedQuestion: new Translation({
                 en: "One question is skipped",
                 ca: "Has ignorat una pregunta",
                 es: "Has ignorado una pregunta",
@@ -294,7 +396,7 @@ export default class Translations {
                 gl: "Ignoraches unha pregunta",
                 de: "Eine Frage wurde übersprungen"
             }),
-            skippedQuestions: new T({
+            skippedQuestions: new Translation({
                 en: "Some questions are skipped",
                 ca: "Has ignorat algunes preguntes",
                 es: "Has ignorado algunas preguntas",
@@ -303,7 +405,7 @@ export default class Translations {
                 gl: "Ignoraches algunhas preguntas",
                 de: "Einige Fragen wurden übersprungen"
             }),
-            number: new T({
+            number: new Translation({
                 en: "number",
                 ca: "nombre",
                 es: "número",
@@ -313,7 +415,7 @@ export default class Translations {
                 de: "Zahl"
             }),
 
-            osmLinkTooltip: new T({
+            osmLinkTooltip: new Translation({
                 en: "See this object on OpenStreetMap for history and more editing options",
                 ca: "Mira aquest objecte a OpenStreetMap per veure historial i altres opcions d\'edició",
                 es: "Mira este objeto en OpenStreetMap para ver historial y otras opciones de edición",
@@ -323,7 +425,7 @@ export default class Translations {
                 de: "Dieses Objekt auf OpenStreetMap anschauen für die Geschichte und weitere Bearbeitungsmöglichkeiten"
             }),
             add: {
-                addNew: new T({
+                addNew: new Translation({
                     en: "Add a new {category} here",
                     ca: "Afegir {category} aquí",
                     es: "Añadir {category} aquí",
@@ -332,7 +434,7 @@ export default class Translations {
                     gl: "Engadir {category} aquí",
                     de: "Hier eine neue {category} hinzufügen"
                 }),
-                header: new T({
+                header: new Translation({
                     en: "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
                     ca: "<h2>Vols afegir un punt?</h2>Has marcat un lloc on no coneixem les dades.<br/>",
                     es: "<h2>Quieres añadir un punto?</h2>Has marcado un lugar del que no conocemos los datos.<br/>",
@@ -341,7 +443,7 @@ export default class Translations {
                     gl: "<h2>Queres engadir un punto?</h2>Marcaches un lugar onde non coñecemos os datos.<br/>",
                     de: "<h2>Punkt hinzufügen?</h2>Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br/>"
                 }),
-                pleaseLogin: new T({
+                pleaseLogin: new Translation({
                     en: "<a class='activate-osm-authentication'>Please log in to add a new point</a>",
                     ca: "<a class='activate-osm-authentication'>Entra per afegir un nou punt</a>",
                     es: "<a class='activate-osm-authentication'>Entra para añadir un nuevo punto</a>",
@@ -350,7 +452,7 @@ export default class Translations {
                     gl: "<a class='activate-osm-authentication'>Inicia a sesión para engadir un novo punto</a>",
                     de: "<a class='activate-osm-authentication'>Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen</a>"
                 }),
-                zoomInFurther: new T({
+                zoomInFurther: new Translation({
                     en: "Zoom in further to add a point.",
                     ca: "Apropa per afegir un punt.",
                     es: "Acerca para añadir un punto.",
@@ -359,7 +461,7 @@ export default class Translations {
                     gl: "Achégate para engadir un punto.",
                     de: "Weiter einzoomen, um einen Punkt hinzuzufügen."
                 }),
-                stillLoading: new T({
+                stillLoading: new Translation({
                     en: "The data is still loading. Please wait a bit before you add a new point.",
                     ca: "Les dades es segueixen carregant. Espera una mica abans d\'afegir cap punt.",
                     es: "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
@@ -368,7 +470,7 @@ export default class Translations {
                     gl: "Os datos seguen a cargarse. Agarda un intre antes de engadir ningún punto.",
                     de: "Die Daten werden noch geladen. Bitte warten Sie etwas, bevor Sie einen neuen Punkt hinzufügen."
                 }),
-                confirmIntro: new T({
+                confirmIntro: new Translation({
                     en: "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
                     ca: "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
                     es: "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
@@ -377,7 +479,7 @@ export default class Translations {
                     gl: "<h3>Engadir {title} aquí?</h3>O punto que estás a crear <b>será ollado por todo o mundo</b>. Só engade cousas que realmente existan. Moitas aplicacións empregan estes datos.",
                     de: "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
                 }),
-                confirmButton: new T({
+                confirmButton: new Translation({
                     en: "Add a {category} here",
                     ca: "Afegir {category} aquí",
                     es: "Añadir {category} aquí",
@@ -386,7 +488,7 @@ export default class Translations {
                     gl: "Engadir {category} aquí",
                     de: "Hier eine {category} hinzufügen"
                 }),
-                openLayerControl: new T({
+                openLayerControl: new Translation({
                     "en": "Open the layer control box",
 					"ca": "Obrir el control de capes",
 					"es": "Abrir el control de capas",
@@ -394,7 +496,7 @@ export default class Translations {
                     "de": "Das Ebenen-Kontrollkästchen öffnen"
                 })
                 ,
-                layerNotEnabled: new T({
+                layerNotEnabled: new Translation({
                     "en": "The layer {layer} is not enabled. Enable this layer to add a point",
 					"ca": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
 					"es": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
@@ -402,7 +504,7 @@ export default class Translations {
                     "de": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
                 })
             },
-            pickLanguage: new T({
+            pickLanguage: new Translation({
                 en: "Choose a language",
                 ca: "Tria idioma",
                 es: "Escoge idioma",
@@ -411,7 +513,7 @@ export default class Translations {
                 gl: "Escoller lingua",
                 de: "Wählen Sie eine Sprache"
             }),
-            about: new T({
+            about: new Translation({
                 en: "Easily edit and add OpenStreetMap for a certain theme",
                 ca: "Edita facilment i afegeix punts a OpenStreetMap d\'una temàtica determinada",
                 es: "Edita facilmente y añade puntos en OpenStreetMap de un tema concreto",
@@ -420,7 +522,7 @@ export default class Translations {
                 gl: "Editar doadamente e engadir puntos no OpenStreetMap dun eido en concreto",
                 de: "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen"
             }),
-            nameInlineQuestion: new T({
+            nameInlineQuestion: new Translation({
                 en: "The name of this {category} is $$$",
                 ca: "{category}: El seu nom és $$$",
                 es: "{category}: Su nombre es $$$",
@@ -429,7 +531,7 @@ export default class Translations {
                 gl: "{category}: O teu nome é $$$",
                 de: "Der Name dieser {category} ist $$$"
             }),
-            noNameCategory: new T({
+            noNameCategory: new Translation({
                 en: "{category} without a name",
                 ca: "{category} sense nom",
                 es: "{category} sin nombre",
@@ -439,7 +541,7 @@ export default class Translations {
                 de: "{category} ohne Namen",
             }),
             questions: {
-                phoneNumberOf: new T({
+                phoneNumberOf: new Translation({
                     en: "What is the phone number of {category}?",
                     ca: "Quin és el telèfon de {category}?",
                     es: "Qué teléfono tiene {category}?",
@@ -448,7 +550,7 @@ export default class Translations {
                     gl: "Cal é o número de teléfono de {category}?",
                     de: "Wie lautet die Telefonnummer der {category}?"
                 }),
-                phoneNumberIs: new T({
+                phoneNumberIs: new Translation({
                     en: "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     ca: "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     es: "El número de teléfono de {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
@@ -457,7 +559,7 @@ export default class Translations {
                     gl: "O número de teléfono de {category} é <a href='tel:{phone}' target='_blank'>{phone}</a>",
                     de: "Die Telefonnummer der {category} lautet <a href='tel:{phone}' target='_blank'>{phone}</a>"
                 }),
-                websiteOf: new T({
+                websiteOf: new Translation({
                     en: "What is the website of {category}?",
                     ca: "Quina és la pàgina web de {category}?",
                     es: "Cual es la página web de {category}?",
@@ -466,7 +568,7 @@ export default class Translations {
                     gl: "Cal é a páxina web de {category}?",
                     de: "Was ist die Website der {category}?"
                 }),
-                websiteIs: new T({
+                websiteIs: new Translation({
                     en: "Website: <a href='{website}' target='_blank'>{website}</a>",
                     ca: "Pàgina web: <a href='{website}' target='_blank'>{website}</a>",
                     es: "Página web: <a href='{website}' target='_blank'>{website}</a>",
@@ -475,7 +577,7 @@ export default class Translations {
                     gl: "Páxina web: <a href='{website}' target='_blank'>{website}</a>",
                     de: "Webseite: <a href='{website}' target='_blank'>{website}</a>",
                 }),
-                emailOf: new T({
+                emailOf: new Translation({
                         en: "What is the email address of {category}?",
                         ca: "Quina és l\'adreça de correu-e de {category}?",
                         es: "¿Qué dirección de correu tiene {category}?",
@@ -485,7 +587,7 @@ export default class Translations {
                         de: "Wie lautet die E-Mail-Adresse der {category}?"
                     }
                 ),
-                emailIs: new T({
+                emailIs: new Translation({
                     en: "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
                     ca: "L\'adreça de correu de {category} és <a href='mailto:{email}' target='_blank'>{email}</a>",
                     es: "La dirección de correo de {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -496,7 +598,7 @@ export default class Translations {
                 }),
 
             },
-            openStreetMapIntro: new T({
+            openStreetMapIntro: new Translation({
                 en: "<h3>An Open Map</h3>" +
                     "<p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? " +
                     "A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p>" +
@@ -553,7 +655,7 @@ export default class Translations {
             }),
 
             sharescreen: {
-                intro: new T({
+                intro: new Translation({
                     en: "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
                     ca: "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l\'enllaç de sota i enviant-lo a amics i família:",
                     es: "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
@@ -563,7 +665,7 @@ export default class Translations {
                     de: "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schicken:",
 
                 }),
-                addToHomeScreen: new T({
+                addToHomeScreen: new Translation({
                     en: "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
                     ca: "<h3>Afegir-lo a la pantalla d\'inici</h3>Pots afegir aquesta web a la pantalla d\'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'afegir a l\'inici' a la barra d\'adreces URL per fer-ho.",
                     es: "<h3>Añadir a la pantalla de inicio</h3>Puedes añadir esta web en la pantalla de inicio de tu smartphone para que se vea más nativo. Aprieta el botón 'añadir a inicio' en la barra de direcciones URL para hacerlo.",
@@ -572,7 +674,7 @@ export default class Translations {
                     nl: "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
                     de: "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
                 }),
-                embedIntro: new T({
+                embedIntro: new Translation({
                     en: "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/>  It is free, and always will be. The more people using this, the more valuable it becomes.",
                     ca: "<h3>Inclou-ho a la teva pàgina web</h3>Inclou aquest mapa dins de la teva pàgina web. <br/> T\'animem a que ho facis, no cal que demanis permís. <br/>  És de franc, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
                     es: "<h3>Inclúyelo en tu página web</h3>Incluye este mapa en tu página web. <br/> Te animamos a que lo hagas, no hace falta que pidas permiso. <br/> Es gratis, y siempre lo será. A más gente que lo use más valioso será.",
@@ -581,7 +683,7 @@ export default class Translations {
                     nl: "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
                     de: "<h3>Auf Ihrer Website einbetten</h3>Bitte, betten Sie diese Karte in Ihre Website ein. <br/>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br/> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie."
                 }),
-                copiedToClipboard: new T({
+                copiedToClipboard: new Translation({
                     en: "Link copied to clipboard",
 					ca: "Enllaç copiat al portapapers",
 					es: "Enlace copiado en el portapapeles",
@@ -589,7 +691,7 @@ export default class Translations {
                     nl: "Link gekopieerd naar klembord",
                     de: "Link in die Zwischenablage kopiert"
                 }),
-                thanksForSharing: new T({
+                thanksForSharing: new Translation({
                     en: "Thanks for sharing!",
 					ca: "Gràcies per compartir",
 					es: "Gracias por compartir",
@@ -597,7 +699,7 @@ export default class Translations {
                     nl: "Bedankt om te delen!",
                     de: "Danke für das Teilen!"
                 }),
-                editThisTheme: new T({
+                editThisTheme: new Translation({
                     en: "Edit this theme",
 					ca: "Editar aquest repte",
 					es: "Editar este reto",
@@ -605,7 +707,7 @@ export default class Translations {
                     nl: "Pas dit thema aan",
                     de: "Dieses Thema bearbeiten"
                 }),
-                editThemeDescription: new T({
+                editThemeDescription: new Translation({
                     en: "Add or change questions to this map theme",
 					ca: "Afegir o canviar preguntes d'aquest repte",
 					es: "Añadir o cambiar preguntas de este reto",
@@ -613,7 +715,7 @@ export default class Translations {
                     nl: "Pas vragen aan of voeg vragen toe aan dit kaartthema",
                     de: "Fragen zu diesem Kartenthema hinzufügen oder ändern"
                 }),
-                fsUserbadge: new T({
+                fsUserbadge: new Translation({
                     en: "Enable the login-button",
 					ca: "Activar el botó d'entrada",
 					es: "Activar el botón de entrada",
@@ -621,7 +723,7 @@ export default class Translations {
                     nl: "Activeer de login-knop",
                     de:" Anmelde-Knopf aktivieren"
                 }),
-                fsSearch: new T({
+                fsSearch: new Translation({
                     en: "Enable the search bar",
 					ca: "Activar la barra de cerca",
 					es: "Activar la barra de búsqueda",
@@ -629,7 +731,7 @@ export default class Translations {
                     nl: "Activeer de zoekbalk",
                     de: " Suchleiste aktivieren"
                 }),
-                fsWelcomeMessage: new T({
+                fsWelcomeMessage: new Translation({
                     en: "Show the welcome message popup and associated tabs",
 					ca: "Mostra el missatge emergent de benvinguda i pestanyes associades",
 					es: "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
@@ -637,7 +739,7 @@ export default class Translations {
                     nl: "Toon het welkomstbericht en de bijhorende tabbladen",
                     de: "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen"
                 }),
-                fsLayers: new T({
+                fsLayers: new Translation({
                     en: "Enable thelayer control",
 					ca: "Activar el control de capes",
 					es: "Activar el control de capas",
@@ -646,7 +748,7 @@ export default class Translations {
                     de: "Aktivieren der Layersteuerung"
                 }),
 
-                fsLayerControlToggle: new T({
+                fsLayerControlToggle: new Translation({
                     en: "Start with the layer control expanded",
                     gl: "Comenza co control de capas expandido",
 					ca: "Iniciar el control de capes avançat",
@@ -654,7 +756,7 @@ export default class Translations {
                     nl: "Toon de laagbediening meteen volledig",
                     de: "Mit der erweiterten Ebenenkontrolle beginnen"
                 }),
-                fsAddNew: new T({
+                fsAddNew: new Translation({
                     en: "Enable the 'add new POI' button",
 					ca: "Activar el botó d'afegir nou PDI'",
 					es: "Activar el botón de añadir nuevo PDI'",
@@ -662,7 +764,7 @@ export default class Translations {
                     gl: "Activar o botón de 'engadir novo PDI'",
                     de: "Schaltfläche 'neuen POI hinzufügen' aktivieren",
                 }),
-                fsGeolocation: new T({
+                fsGeolocation: new Translation({
                     en: "Enable the 'geolocate-me' button (mobile only)",
 					ca: "Activar el botó de 'geolocalitza'm' (només mòbil)",
 					es: "Activar el botón de 'geolocalízame' (només mòbil)",
@@ -670,21 +772,21 @@ export default class Translations {
                     nl: "Toon het knopje voor geolocalisatie (enkel op mobiel)",
                     de: "Die Schaltfläche 'Mich geolokalisieren' aktivieren (nur für Mobil)",
                 }),
-                fsIncludeCurrentBackgroundMap: new T({
+                fsIncludeCurrentBackgroundMap: new Translation({
                     en: "Include the current background choice <b>{name}</b>",
 					ca: "Incloure l'opció de fons actual <b>{name}</b>",
 					es: "Incluir la opción de fondo actual <b>{name}</b>",
                     nl: "Gebruik de huidige achtergrond <b>{name}</b>",
                     de: "Die aktuelle Hintergrundwahl einschließen <b>{name}</b>",
                 }),
-                fsIncludeCurrentLayers: new T({
+                fsIncludeCurrentLayers: new Translation({
                     en: "Include the current layer choices",
 					ca: "Incloure les opcions de capa actual",
 					es: "Incluir las opciones de capa actual",
                     nl: "Toon enkel de huidig getoonde lagen",
                     de: "Die aktuelle Ebenenauswahl einbeziehen"
                 }),
-                fsIncludeCurrentLocation: new T({
+                fsIncludeCurrentLocation: new Translation({
                     en: "Include current location",
 					es: "Incluir localización actual",
 					ca: "Incloure localització actual",
@@ -693,7 +795,7 @@ export default class Translations {
                 })
             },
             morescreen: {
-                intro: new T({
+                intro: new Translation({
                     en: "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
                     ca: "<h3>Més peticions</h3>T\'agrada captar dades? <br/>Hi ha més capes disponibles.",
                     es: "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
@@ -703,7 +805,7 @@ export default class Translations {
                     de: "<h3>Weitere Quests</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar."
                 }),
 
-                requestATheme: new T({
+                requestATheme: new Translation({
                     en: "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>here</a>",
                     ca: "Si vols que et fem una petició pròpia , demana-la <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>aquí</a>",
                     es: "Si quieres que te hagamos una petición propia , pídela <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>aquí</a>",
@@ -713,7 +815,7 @@ export default class Translations {
                     de: "Wenn Sie einen speziell angefertigte Quest wünschen, können Sie diesen <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>hier</a> anfragen",
                 }),
 
-                streetcomplete: new T({
+                streetcomplete: new Translation({
                     en: "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     ca: "Una altra aplicació similar és <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     es: "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
@@ -722,7 +824,7 @@ export default class Translations {
                     gl: "Outra aplicación semellante é <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                     de: "Eine andere, ähnliche Anwendung ist <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' target='_blank'>StreetComplete</a>",
                 }),
-                createYourOwnTheme: new T({
+                createYourOwnTheme: new Translation({
                     en: "Create your own MapComplete theme from scratch",
                     ca: "Crea la teva pròpia petició completa de MapComplete des de zero.",
                     es: "Crea tu propia petición completa de MapComplete desde cero.",
@@ -732,7 +834,7 @@ export default class Translations {
                     de: "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu",
                 })
             },
-            readYourMessages: new T({
+            readYourMessages: new Translation({
                 en: "Please, read all your OpenStreetMap-messages before adding a new point.",
                 ca: "Llegeix tots els teus missatges d\'OpenStreetMap abans d\'afegir nous punts.",
                 es: "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos puntos.",
@@ -741,7 +843,7 @@ export default class Translations {
                 gl: "Le todos a túas mensaxes do OpenStreetMap antes de engadir novos puntos.",
                 de: "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen"
             }),
-            fewChangesBefore: new T({
+            fewChangesBefore: new Translation({
                 en: "Please, answer a few questions of existing points before adding a new point.",
                 ca: "Contesta unes quantes preguntes sobre punts existents abans d\'afegir-ne un de nou.",
                 es: "Contesta unas cuantas preguntas sobre puntos existentes antes de añadir nuevos.",
@@ -750,7 +852,7 @@ export default class Translations {
                 gl: "Responde unhas cantas preguntas sobre puntos existentes antes de engadir novos.",
                 de: "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen."
             }),
-            goToInbox: new T({
+            goToInbox: new Translation({
                 en: "Open inbox",
                 es: "Abrir mensajes",
                 ca: "Obrir missatges",
@@ -759,7 +861,7 @@ export default class Translations {
                 gl: "Abrir mensaxes",
                 de: "Posteingang öffnen"
             }),
-            getStartedLogin: new T({
+            getStartedLogin: new Translation({
                 en: "Login with OpenStreetMap to get started",
                 es: "Entra en OpenStreetMap para empezar",
                 ca: "Entra a OpenStreetMap per començar",
@@ -767,7 +869,7 @@ export default class Translations {
                 fr: "Connectez vous avec OpenStreetMap pour commencer",
                 de: "Mit OpenStreetMap einloggen und loslegen"
             }),
-            getStartedNewAccount: new T({
+            getStartedNewAccount: new Translation({
                 en: " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
                 nl: " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a> ",
                 fr: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>registrez vous</a>",
@@ -776,20 +878,20 @@ export default class Translations {
                 gl: " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea unha nova conta</a>",
                 de: " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
             }),
-            noTagsSelected: new T({
+            noTagsSelected: new Translation({
                 en: "No tags selected",
                 es: "No se han seleccionado etiquetas",
                 ca: "No s\'han seleccionat etiquetes",
                 gl: "Non se seleccionaron etiquetas",
                 de: "Keine Tags ausgewählt"
             }),
-            customThemeIntro: new T({
+            customThemeIntro: new Translation({
                 en: "<h3>Custom themes</h3>These are previously visited user-generated themes.",
                 nl: "<h3>Onofficiële themea's</h3>Je bezocht deze thema's gemaakt door andere OpenStreetMappers eerder",
                 gl: "<h3>Temas personalizados</h3>Estes son temas xerados por usuarios previamente visitados.",
                 de: "<h3>Kundenspezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen"
             }),
-            aboutMapcomplete: new T({
+            aboutMapcomplete: new Translation({
                 en: "<h3>About MapComplete</h3>" +
                     "<p>MapComplete is an OpenStreetMap editor that is meant to help everyone to easily add information on a <b>single theme.</b></p>" +
                     "<p>Only features relevant to a single theme are shown with a few predefined questions, in order to keep things <b>simple and extremly user-friendly</b>." +
@@ -836,14 +938,14 @@ export default class Translations {
                     "<p>Fällt Ihnen ein Problem mit MapComplete auf? Haben Sie einen Feature-Wunsch? Wollen Sie beim Übersetzen helfen? " +
                     "Gehen Sie <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zum Quellcode</a> oder <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>zur Problemverfolgung</a>.</p>",
             }),
-            backgroundMap: new T({
+            backgroundMap: new Translation({
                 "en": "Background map",
 				"ca": "Mapa de fons",
 				"es": "Mapa de fondo",
                 "nl": "Achtergrondkaart",
                 "de": "Hintergrundkarte"
             }),
-            zoomInToSeeThisLayer: new T({
+            zoomInToSeeThisLayer: new Translation({
                 "en": "Zoom in to see this layer",
 				"ca": "Amplia per veure aquesta capa",
 				"es": "Amplía para ver esta capa",
@@ -852,49 +954,49 @@ export default class Translations {
             }),
             weekdays: {
                 abbreviations:{
-                    monday: new T({
+                    monday: new Translation({
                         "en": "Mon",
 						"ca": "Dil",
 						"es": "Lun",
                         "nl": "Maan",
                         "fr": "Lun",
                     }),
-                    tuesday: new T({
+                    tuesday: new Translation({
                         "en": "Tue",
 						"ca": "Dim",
 						"es": "Mar",
                         "nl": "Din",
                         "fr": "Mar",
                     }),
-                    wednesday: new T({
+                    wednesday: new Translation({
                         "en": "Wed",
 						"ca": "Dic",
 						"es": "Mie",
                         "nl": "Woe",
                         "fr": "Mercr",
                     }),
-                    thursday: new T({
+                    thursday: new Translation({
                         "en": "Thu",
 						"ca": "Dij",
 						"es": "Jue",
                         "nl": "Don",
                         "fr": "Jeudi",
                     }),
-                    friday: new T({
+                    friday: new Translation({
                         "en": "Fri",
 						"ca": "Div",
 						"es": "Vie",
                         "nl": "Vrij",
                         "fr": "Vendr",
                     }),
-                    saturday: new T({
+                    saturday: new Translation({
                         "en": "Sat",
 						"ca": "Dis",
 						"es": "Sab",
                         "nl": "Zat",
                         "fr": "Sam",
                     }),
-                    sunday: new T({
+                    sunday: new Translation({
                         "en": "Sun",
 						"ca": "Diu",
 						"es": "Dom",
@@ -902,49 +1004,49 @@ export default class Translations {
                         "fr": "Dim",
                     })
                 },
-                monday: new T({
+                monday: new Translation({
                     "en": "Monday",
 					"ca": "Dilluns",
 					"es": "Lunes",
                     "nl": "Maandag",
                     "fr": "Lundi",
                 }),
-                tuesday: new T({
+                tuesday: new Translation({
                     "en": "Tuesday",
 					"ca": "Dimarts",
 					"es": "Martes",
                     "nl": "Dinsdag",
                     "fr": "Mardi",
                 }),
-                wednesday: new T({
+                wednesday: new Translation({
                     "en": "Wednesday",
 					"ca": "Dimecres",
 					"es": "Miércoles",
                     "nl": "Woensdag",
                     "fr": "Mercredi",
                 }),
-                thursday: new T({
+                thursday: new Translation({
                     "en": "Thursday",
 					"ca": "Dijous",
 					"es": "Jueves",
                     "nl": "Donderdag",
                     "fr": "Jeudi",
                 }),
-                friday: new T({
+                friday: new Translation({
                     "en": "Friday",
 					"ca": "Divendres",
 					"es": "Viernes",
                     "nl": "Vrijdag",
                     "fr": "Vendredi",
                 }),
-                saturday: new T({
+                saturday: new Translation({
                     "en": "Saturday",
 					"ca": "Dissabte",
 					"es": "Sábado",
                     "nl": "Zaterdag",
                     "fr": "Samedi",
                 }),
-                sunday: new T({
+                sunday: new Translation({
                     "en": "Sunday",
 					"ca": "Diumenge",
 					"es": "Domingo",
@@ -953,53 +1055,53 @@ export default class Translations {
                 })
             },
             opening_hours: {
-                open_during_ph: new T({
+                open_during_ph: new Translation({
                     "nl": "Op een feestdag is deze zaak",
 					"ca": "Durant festes aquest servei és",
 					"es": "Durante fiestas este servicio está",
                     "en":"During a public holiday, this amenity is"
                 }),
-                opensAt: new T({
+                opensAt: new Translation({
                     "en": "from",
 					"ca": "des de",
 					"es": "desde",
                     "nl": "vanaf"
-                }), openTill: new T({
+                }), openTill: new Translation({
                     "en": "till",
 					"ca": "fins",
 					"es": " hasta",
                     "nl": "tot"
                 }),
-                not_all_rules_parsed: new T({
+                not_all_rules_parsed: new Translation({
                     "en": "The opening hours of this shop are complicated. The following rules are ignored in the input element:",
 					"ca": "L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:",
 					"es": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:"
                 }),
-                closed_until: new T({
+                closed_until: new Translation({
                     "en": "Closed until {date}",
 					"ca": "Tancat fins {date}",
 					"es": "Cerrado hasta {date}",
                     "nl": "Gesloten - open op {date}"
                 }),
 
-                closed_permanently: new T({
+                closed_permanently: new Translation({
                     "en": "Closed - no opening day known",
 					"ca": "Tancat - sense dia d'obertura conegut",
 					"es": "Cerrado - sin día de apertura conocido",
                     "nl": "Gesloten"
                 }),
-                ph_not_known: new T({
+                ph_not_known: new Translation({
                     "en": " ",
 					"ca": " ",
 					"es": " ",
                     "nl": " "
                 }),
-                ph_closed: new T({
+                ph_closed: new Translation({
                     "en": "closed",
 					"ca": "tancat",
 					"es": "cerrado",
                     "nl": "gesloten"
-                }), ph_open: new T({
+                }), ph_open: new Translation({
                     "en": "opened",
 					"ca": "tancat",
 					"es": "abierto",
@@ -1010,7 +1112,7 @@ export default class Translations {
             }
         },
         favourite: {
-            title: new T({
+            title: new Translation({
                 en: "Personal theme",
                 nl: "Persoonlijk thema",
                 es: "Interficie personal",
@@ -1018,28 +1120,28 @@ export default class Translations {
                 gl: "Tema personalizado",
                 de: "Persönliches Thema"
             }),
-            description: new T({
+            description: new Translation({
                 en: "Create a personal theme based on all the available layers of all themes",
                 es: "Crea una interficie basada en todas las capas disponibles de todas las interficies",
                 ca: "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
                 gl: "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
                 de: "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
             }),
-            panelIntro: new T({
+            panelIntro: new Translation({
                 en: "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
                 ca: "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
                 es: "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales",
                 gl: "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
                 de: "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen"
             }),
-            loginNeeded: new T({
+            loginNeeded: new Translation({
                 en: "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
                 es: "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenstreetMap",
                 ca: "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d\' OpenstreetMap",
                 gl: "<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap",
                 de: "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar",
             }),
-            reload: new T({
+            reload: new Translation({
                 en: "Reload the data",
                 es: "Recargar datos",
                 ca: "Recarregar dades",

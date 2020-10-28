@@ -1,6 +1,4 @@
 import {Utils} from "../Utils";
-import {Util} from "leaflet";
-import indexOf = Util.indexOf;
 
 export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
@@ -298,21 +296,49 @@ export class And extends TagsFilter {
     }
     
     isEquivalent(other: TagsFilter): boolean {
-        if(other instanceof And){
+        if (!(other instanceof And)) {
+            return false;
+        }
 
-            for (const selfTag of this.and) {
-                let matchFound = false;
-                for (let i = 0; i < other.and.length && !matchFound; i++){
-                    let otherTag = other.and[i];
-                    matchFound = selfTag.isEquivalent(otherTag);
-                }
-                if(!matchFound){
-                    return false;
+        for (const selfTag of this.and) {
+            let matchFound = false;
+            for (let i = 0; i < other.and.length && !matchFound; i++) {
+                let otherTag = other.and[i];
+                matchFound = selfTag.isEquivalent(otherTag);
+            }
+            if (!matchFound) {
+                return false;
+            }
+        }
+
+        for (const selfTag of this.and) {
+            let matchFound = false;
+            for (const otherTag of other.and) {
+                matchFound = selfTag.isEquivalent(otherTag);
+                if (matchFound) {
+                    break;
                 }
             }
-            return true;
+            if (!matchFound) {
+                return false;
+            }
         }
-        return false;
+
+        for (const otherTag of other.and) {
+            let matchFound = false;
+            for (const selfTag of this.and) {
+                matchFound = selfTag.isEquivalent(otherTag);
+                if (matchFound) {
+                    break;
+                }
+            }
+            if (!matchFound) {
+                return false;
+            }
+        }
+
+
+        return true;
     }
 }
 
@@ -356,7 +382,7 @@ export class TagUtils {
             }
             const neededValues : string[] = neededTags[neededKey];
             for (const neededValue of neededValues) {
-                if(indexOf(availableValues, neededValue) < 0){
+                if (availableValues.indexOf(neededValue) < 0) {
                     return false;
                 }
             }

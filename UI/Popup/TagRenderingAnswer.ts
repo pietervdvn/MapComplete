@@ -18,6 +18,11 @@ export default class TagRenderingAnswer extends UIElement {
     }
 
     InnerRender(): string {
+        if(this._configuration.condition !== undefined){
+            if(!this._configuration.condition.matchesProperties(this._tags.data)){
+                return "";
+            }
+        }
         const tr = this._configuration.GetRenderValue(this._tags.data);
         if(tr === undefined){
             return "";

@@ -4,7 +4,7 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
-import Translation from "./i18n/Translation";
+import {Translation} from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import Locale from "../UI/i18n/Locale";

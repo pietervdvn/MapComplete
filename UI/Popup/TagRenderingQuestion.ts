@@ -5,7 +5,7 @@ import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {InputElement} from "../Input/InputElement";
 import {And, Tag, TagsFilter, TagUtils} from "../../Logic/Tags";
 import ValidatedTextField from "../Input/ValidatedTextField";
-import Translation from "../i18n/Translation";
+import {Translation} from "../i18n/Translations";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {SubstitutedTranslation} from "../SpecialVisualizations";
 import {RadioButton} from "../Input/RadioButton";
@@ -18,8 +18,6 @@ import {Changes} from "../../Logic/Osm/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Util} from "leaflet";
-import indexOf = Util.indexOf;
 
 /**
  * Shows the question element.
@@ -114,16 +112,13 @@ export default class TagRenderingQuestion extends UIElement {
 
     }
 
-    private SplitMultiAnswer(tags: TagsFilter) {
-
-    }
-
     private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>): InputElement<TagsFilter> {
         const possibleTags = elements.map(el => el.GetValue().data);
         const checkBoxes = new CheckBoxes(elements);
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
+                console.log("IsEquiv?",t0, t1, t0?.isEquivalent(t1))
                 return t0?.isEquivalent(t1) ?? false
             },
             (indices) => {
@@ -131,7 +126,8 @@ export default class TagRenderingQuestion extends UIElement {
                     return undefined;
                 }
                 const tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
-                return TagUtils.FlattenMultiAnswer(tags);
+                const multi = TagUtils.FlattenMultiAnswer(tags);
+                return multi;
             },
             (tags: TagsFilter) => {
                 // {key --> values[]}
@@ -171,7 +167,7 @@ export default class TagRenderingQuestion extends UIElement {
                 if (freeformField) {
                     if (freeformExtras.length > 0) {
                         freeformField.GetValue().setData(new Tag(this._configuration.freeform.key, freeformExtras.join(";")));
-                        indices.push(indexOf(elements, freeformField))
+                        indices.push(elements.indexOf(freeformField))
                     } else {
                         freeformField.GetValue().setData(undefined);
                     }

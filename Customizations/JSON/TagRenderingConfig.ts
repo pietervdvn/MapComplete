@@ -1,4 +1,4 @@
-import Translation from "../../UI/i18n/Translation";
+import {Translation} from "../../UI/i18n/Translations";
 import {TagsFilter} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
