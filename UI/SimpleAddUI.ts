@@ -46,10 +46,12 @@ export class SimpleAddUI extends UIElement {
         
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
-            
+
             this.ListenTo(layer.isDisplayed);
-            
-            for (const preset of layer.layerDef.presets) {
+
+            const presets = layer.layerDef.presets;
+            for (const preset of presets) {
+                console.log("Preset:", preset)
 
                 let icon: string = layer.layerDef.icon.GetRenderValue(
                     TagUtils.KVtoProperties(preset.tags ?? [])).txt ??

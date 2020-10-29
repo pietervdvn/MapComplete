@@ -13,6 +13,7 @@ import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
+import {Utils} from "../Utils";
 
 
 
@@ -323,5 +324,19 @@ new T([
     ["OH Parse PH 12:00-17:00", () => {
         const rules = PublicHolidayInput.LoadValue("PH 12:00-17:00");
         equal(rules.mode, " ");
+    }],
+    ["Round", () => {
+        equal(Utils.Round(15),  "15.0")
+        equal(Utils.Round(1),  "1.0")
+        equal(Utils.Round(1.5),  "1.5")
+        equal(Utils.Round(0.5),  "0.5")
+        equal(Utils.Round(1.6),  "1.6")
+
+        equal(Utils.Round(-15),  "-15.0")
+        equal(Utils.Round(-1),  "-1.0")
+        equal(Utils.Round(-1.5),  "-1.5")
+        equal(Utils.Round(-0.5),  "-0.5")
+        equal(Utils.Round(-1.6),  "-1.6")
+
     }]
 ]);

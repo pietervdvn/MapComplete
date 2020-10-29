@@ -65,6 +65,13 @@ export interface LayerConfigJson {
     width?: string | TagRenderingConfigJson;
 
     /**
+     * A dasharray, e.g. "5 6"
+     * The dasharray defines 'pixels of line, pixels of gap, pixels of line, pixels of gap',
+     * Default value: "" (empty string == full line)
+     */
+    dashArray?: string | TagRenderingConfigJson
+
+    /**
      * Wayhandling: should a way/area be displayed as:
      * 0) The way itself
      * 1) The centerpoint and the way

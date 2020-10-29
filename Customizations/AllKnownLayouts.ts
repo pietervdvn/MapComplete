@@ -1,5 +1,4 @@
 import {Layout} from "./Layout";
-import {FromJSON} from "./JSON/FromJSON";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
@@ -15,6 +14,7 @@ import * as bike_monitoring_stations from "../assets/themes/bike_monitoring_stat
 import * as fritures from "../assets/themes/fritures/fritures.json"
 import * as benches from "../assets/themes/benches/benches.json";
 import * as charging_stations from "../assets/themes/charging_stations/charging_stations.json"
+import * as widths from "../assets/themes/widths/width.json"
 
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import LayerConfig from "./JSON/LayerConfig";
@@ -41,11 +41,20 @@ export class AllKnownLayouts {
 
     }
 
+    private static GenerateWidths(): Layout {
+        const layout = Layout.LayoutFromJSON(widths, SharedLayers.sharedLayers);
+
+        layout.enableUserBadge = false;
+        
+        return layout;
+    }
+
     private static GenerateBuurtNatuur(): Layout {
         const layout = Layout.LayoutFromJSON(buurtnatuur, SharedLayers.sharedLayers);
         layout.enableMoreQuests = false;
         layout.enableShareScreen = false;
         layout.hideFromOverview = true;
+        console.log("Buurtnatuur:",layout)
         return layout;
     }
 
@@ -73,6 +82,7 @@ export class AllKnownLayouts {
         Layout.LayoutFromJSON(fritures, SharedLayers.sharedLayers),
         Layout.LayoutFromJSON(benches, SharedLayers.sharedLayers),
         Layout.LayoutFromJSON(charging_stations, SharedLayers.sharedLayers),
+        AllKnownLayouts.GenerateWidths(),
         AllKnownLayouts.GenerateBuurtNatuur(),
         AllKnownLayouts.GenerateBikeMonitoringStations(),
 

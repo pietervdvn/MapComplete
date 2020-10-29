@@ -39,6 +39,17 @@ export class Utils {
         return "" + i;
     }
 
+    public static Round(i: number) {
+        if(i < 0){
+            return "-" + Utils.Round(-i);
+        }
+        const j = "" + Math.floor(i * 10);
+        if (j.length == 1) {
+            return "0." + j;
+        }
+        return j.substr(0, j.length - 1) + "." + j.substr(j.length - 1, j.length);
+    }
+
     public static Times(f: ((i: number) => string), count: number): string {
         let res = "";
         for (let i = 0; i < count; i++) {

@@ -2,9 +2,10 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingPanel from "./TagRenderingPanel";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Combine from "../Base/Combine";
+import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
+import EditableTagRendering from "../Popup/EditableTagRendering";
 
 export default class TagRenderingPreview extends UIElement {
 
@@ -39,8 +40,7 @@ export default class TagRenderingPreview extends UIElement {
             rendering =
                 new VariableUiElement(es.map(tagRenderingConfig => {
                         try {
-                            const tr = FromJSON.TagRendering(tagRenderingConfig, "preview")
-                                .construct(self.previewTagValue);
+                            const tr = new EditableTagRendering(self.previewTagValue, new TagRenderingConfig(tagRenderingConfig, "preview"));
                             return tr.Render();
                         } catch (e) {
                             return new Combine(["Could not show this tagrendering:", e.message]).Render();

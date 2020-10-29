@@ -56,6 +56,9 @@ export class FilteredLayer {
 
             const iconUrl = layerDef.icon?.GetRenderValue(tags)?.txt ?? "./assets/bug.svg";
             const iconSize = (layerDef.iconSize?.GetRenderValue(tags)?.txt ?? "40,40,center").split(",");
+            
+            
+            const dashArray = layerDef.dashArray.GetRenderValue(tags)?.txt.split(" ").map(Number);
 
             function num(str, deflt = 40) {
                 const n = Number(str);
@@ -97,7 +100,8 @@ export class FilteredLayer {
                         popupAnchor: [0, 3 - anchorH]
                     },
                 color: color,
-                weight: weight
+                weight: weight,
+                dashArray: dashArray
             };
         };
         this.name = name;

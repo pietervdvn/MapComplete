@@ -1,8 +1,7 @@
-import Translation from "../../UI/i18n/Translation";
+import Translations, {Translation} from "../../UI/i18n/Translations";
 import TagRenderingConfig from "./TagRenderingConfig";
 import {Tag, TagsFilter} from "../../Logic/Tags";
 import {LayerConfigJson} from "./LayerConfigJson";
-import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
@@ -25,6 +24,7 @@ export default class LayerConfig {
     iconSize: TagRenderingConfig;
     color: TagRenderingConfig;
     width: TagRenderingConfig;
+    dashArray: TagRenderingConfig;
 
 
     wayHandling: number;
@@ -54,11 +54,12 @@ export default class LayerConfig {
         this.wayHandling = json.wayHandling ?? 0;
         this.hideUnderlayingFeaturesMinPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
         this.title = new TagRenderingConfig(json.title);
-        this.presets = (json.presets ?? []).map(pr   => ({
-            title: Translations.T(pr.title),
-            tags: pr.tags.map(t => FromJSON.SimpleTag(t)),
-            description: Translations.T(pr.description)
-        }))
+        this.presets = (json.presets ?? []).map(pr =>
+            ({
+                title: Translations.T(pr.title),
+                tags: pr.tags.map(t => FromJSON.SimpleTag(t)),
+                description: Translations.T(pr.description)
+            }))
 
 
         /**
@@ -108,6 +109,7 @@ export default class LayerConfig {
         this.iconSize = tr("iconSize", "40,40,center");
         this.color = tr("color", "#0000ff");
         this.width = tr("width", "7");
+        this.dashArray = tr("dashArray", "");
 
 
     }

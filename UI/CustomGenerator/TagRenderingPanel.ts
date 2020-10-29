@@ -15,9 +15,9 @@ import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConf
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import State from "../../State";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import SpecialVisualizations from "../SpecialVisualizations";
+import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -111,7 +111,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         
         this.validText = new VariableUiElement(value.map((json: TagRenderingConfigJson) => {
             try{
-                FromJSON.TagRendering(json, options?.title ?? "");
+                new TagRenderingConfig(json, options?.title ?? "");
                 return "";
             }catch(e){
                 return "<span class='alert'>"+e+"</span>"
