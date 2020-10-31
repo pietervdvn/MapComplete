@@ -1,16 +1,20 @@
 {
   "id": "shops",
   "title": {
-    "en": "Open Shop Map"
+    "en": "Open Shop Map",
+    "fr": "Carte des magasins"
   },
   "shortDescription": {
-    "en": "An editable map with basic shop information"
+    "en": "An editable map with basic shop information",
+    "fr": "Carte modifiable affichant les informations de base des magasins"
   },
   "description": {
-    "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers"
+    "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
+    "fr": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone"
   },
   "language": [
-    "en"
+    "en",
+    "fr"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",
@@ -24,7 +28,8 @@
     {
       "id": "shops",
       "name": {
-        "en": "Shop"
+        "en": "Shop",
+        "fr": "Magasin"
       },
       "minzoom": 14,
       "overpassTags": {
@@ -34,7 +39,8 @@
       },
       "title": {
         "render": {
-          "en": "Shop"
+          "en": "Shop",
+          "fr": "Magasin"
         },
         "mappings": [
           {
@@ -44,7 +50,8 @@
               ]
             },
             "then": {
-              "en": "{name}"
+              "en": "{name}",
+              "fr": "{name}"
             }
           },
           {
@@ -54,21 +61,25 @@
               ]
             },
             "then": {
-              "en": "{shop}"
+              "en": "{shop}",
+              "fr": "{shop}"
             }
           }
         ]
       },
       "description": {
-        "en": "A shop"
+        "en": "A shop",
+        "fr": "Un magasin"
       },
       "tagRenderings": [
         {
           "render": {
-            "en": "This shop sells {shop}"
+            "en": "This shop sells {shop}",
+            "fr": "Ce magasin vends {shop}"
           },
           "question": {
-            "en": "What does this shop sell?"
+            "en": "What does this shop sell?",
+            "fr": "Que vends ce magasin ?"
           },
           "freeform": {
             "key": "shop"
@@ -81,7 +92,8 @@
                 ]
               },
               "then": {
-                "en": "Convenience store"
+                "en": "Convenience store",
+                "fr": "Épicerie/superette"
               }
             },
             {
@@ -91,7 +103,8 @@
                 ]
               },
               "then": {
-                "en": "Supermarket"
+                "en": "Supermarket",
+                "fr": "Supermarché"
               }
             },
             {
@@ -101,7 +114,8 @@
                 ]
               },
               "then": {
-                "en": "Clothing store"
+                "en": "Clothing store",
+                "fr": "Magasin de vêtements"
               }
             },
             {
@@ -111,7 +125,8 @@
                 ]
               },
               "then": {
-                "en": "Hairdresser"
+                "en": "Hairdresser",
+                "fr": "Coiffeur"
               }
             },
             {
@@ -121,7 +136,8 @@
                 ]
               },
               "then": {
-                "en": "Bakery"
+                "en": "Bakery",
+                "fr": "Boulangerie"
               }
             },
             {
@@ -131,7 +147,8 @@
                 ]
               },
               "then": {
-                "en": "Car repair (garage)"
+                "en": "Car repair (garage)",
+                "fr": "Garagiste"
               }
             },
             {
@@ -141,17 +158,20 @@
                 ]
               },
               "then": {
-                "en": "Car dealer"
+                "en": "Car dealer",
+                "fr": "Concessionnaire"
               }
             }
           ]
         },
         {
           "render": {
-            "en": "<a href='tel:{phone}'>{phone}</a>"
+            "en": "<a href='tel:{phone}'>{phone}</a>",
+            "fr": "<a href='tel:{phone}'>{phone}</a>"
           },
           "question": {
-            "en": "What is the phone number?"
+            "en": "What is the phone number?",
+            "fr": "Quel est le numéro de téléphone ?"
           },
           "freeform": {
             "key": "phone",
@@ -160,10 +180,12 @@
         },
         {
           "render": {
-            "en": "<a href='{website}'>{website}</a>"
+            "en": "<a href='{website}'>{website}</a>",
+            "fr": "<a href='{website}'>{website}</a>"
           },
           "question": {
-            "en": "What is the website of this shop?"
+            "en": "What is the website of this shop?",
+            "fr": "Quel est le site internet de ce magasin ?"
           },
           "freeform": {
             "key": "website",
@@ -172,10 +194,12 @@
         },
         {
           "render": {
-            "en": "<a href='mailto:{email}'>{email}</a>"
+            "en": "<a href='mailto:{email}'>{email}</a>",
+            "fr": "<a href='mailto:{email}'>{email}</a>"
           },
           "question": {
-            "en": "What is the email address of this shop?"
+            "en": "What is the email address of this shop?",
+            "fr": "Quel est l'adresse mail de ce magasin ?"
           },
           "freeform": {
             "key": "email",
@@ -184,10 +208,12 @@
         },
         {
           "render": {
-            "en": "{opening_hours_table(opening_hours)}"
+            "en": "{opening_hours_table(opening_hours)}",
+            "fr": "{opening_hours_table(opening_hours)}"
           },
           "question": {
-            "en": "What are the opening hours of this shop?"
+            "en": "What are the opening hours of this shop?",
+            "fr": "Quels sont les horaires d'ouverture de ce magasin ?"
           },
           "freeform": {
             "key": "opening_hours",
@@ -214,10 +240,12 @@
             "shop=yes"
           ],
           "title": {
-            "en": "Shop"
+            "en": "Shop",
+            "fr": "Magasin"
           },
           "description": {
-            "en": "Add a new shop"
+            "en": "Add a new shop",
+            "fr": "Ajouter un nouveau magasin"
           }
         }
       ],
