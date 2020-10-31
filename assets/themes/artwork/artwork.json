@@ -4,11 +4,13 @@
   "title": {
     "en": "Open Artwork Map",
     "nl": "Kunstwerkenkaart",
+    "fr": "Carte ouverte des œuvres d'art",
     "de": "Freie Kunstwerk-Karte"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis, ... all over the world",
     "nl": "Welkom op de Open Kunstwerken Kaart",
+    "fr": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
     "de": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt"
   },
   "language": [
@@ -28,7 +30,7 @@
       "name": {
         "en": "Artworks",
         "nl": "Kunstwerken",
-        "fr": "Oeuvres d'art",
+        "fr": "Œuvres d'art",
         "de": "Kunstwerke"
       },
       "overpassTags": "tourism=artwork",
@@ -36,7 +38,7 @@
         "render": {
           "en": "Artwork",
           "nl": "Kunstwerk",
-          "fr": "Oeuvre d'art",
+          "fr": "Œuvre d'art",
           "de": "Kunstwerk"
         },
         "mappings": [
@@ -45,7 +47,7 @@
             "then": {
               "en": "Artwork <i>{name}</i>",
               "nl": "Kunstwerk <i>{name}</i>",
-              "fr": "Oeuvre d'art <i>{name}</i>",
+              "fr": "Œuvre d'art <i>{name}</i>",
               "de": "Kunstwerk <i>{name}</i>"
             }
           }
@@ -63,6 +65,7 @@
       "description": {
         "en": "Diverse pieces of artwork",
         "nl": "Verschillende soorten kunstwerken",
+        "fr": "Diverses œuvres d'art",
         "de": "Verschiedene Kunstwerke"
       },
       "minzoom": 12,
@@ -75,7 +78,7 @@
           "title": {
             "en": "Artwork",
             "nl": "Kunstwerk",
-            "fr": "Oeuvre d'art",
+            "fr": "Œuvre d'art",
             "de": "Kunstwerk"
           }
         }
@@ -86,13 +89,13 @@
           "render": {
             "en": "This is a {artwork_type}",
             "nl": "Dit is een {artwork_type}",
-            "fr": "{artwork_type}",
+            "fr": "Type d'œuvre : {artwork_type}",
             "de": "Dies ist ein {artwork_type}"
           },
           "question": {
             "en": "What is the type of this artwork?",
             "nl": "Wat voor soort kunstwerk is dit?",
-            "fr": "Quel est le type de cette oeuvre d'art?",
+            "fr": "Quel est le type de cette œuvre d'art?",
             "de": "Was ist die Art dieses Kunstwerks?"
           },
           "freeform": {
@@ -116,7 +119,7 @@
               "then": {
                 "en": "Mural",
                 "nl": "Muurschildering",
-                "fr": "Mural",
+                "fr": "Peinture murale",
                 "de": "Wandbild"
               }
             },
@@ -197,7 +200,7 @@
               "then": {
                 "en": "Azulejo (Spanish decorative tilework)",
                 "nl": "Azulejo (Spaanse siertegels)",
-                "fr": "Azulejo",
+                "fr": "Azulejo (faïence latine)",
                 "de": "Azulejo (spanische dekorative Fliesenarbeit)"
               }
             },
@@ -216,7 +219,7 @@
           "question": {
             "en": "Which artist created this?",
             "nl": "Welke artist creëerde dit kunstwerk?",
-            "fr": "Quel artiste a créé cela?",
+            "fr": "Quel artiste a créé cette œuvre ?",
             "de": "Welcher Künstler hat das geschaffen?"
           },
           "render": {
@@ -250,8 +253,8 @@
         {
           "question": {
             "en": "Which wikidata-entry corresponds with <b>this artwork</b>?",
-            "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
             "nl": "Welk wikidata-item beschrijft dit kunstwerk?",
+            "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
             "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?"
           },
           "render": {
