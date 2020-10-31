@@ -2,9 +2,9 @@
   "id": "aed",
   "title": {
     "en": "Open AED Map",
-	"ca": "Mapa obert de desfibril·ladors (DEA)",
-	"es": "Mapa abierto de desfibriladores (DEA)",
-    "fr": "Carte AED",
+    "ca": "Mapa obert de desfibril·ladors (DEA)",
+    "es": "Mapa abierto de desfibriladores (DEA)",
+    "fr": "Carte des défibrillateurs (DAE)",
     "nl": "Open AED-kaart",
     "de": "AED-Karte öffnen"
   },
@@ -12,16 +12,16 @@
   "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
-	"ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
-	"en": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
+    "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
+    "es": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
     "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
     "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
     "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
   },
   "language": [
     "en",
-	"ca",
-	"es",
+    "ca",
+    "es",
     "fr",
     "nl",
     "de"
@@ -35,8 +35,8 @@
       "id": "Defibrillator",
       "name": {
         "en": "Defibrillators",
-		"ca": "Desfibril·ladors",
-		"es": "Desfibriladores",
+        "ca": "Desfibril·ladors",
+        "es": "Desfibriladores",
         "fr": "Défibrillateurs",
         "nl": "Defibrillatoren",
         "de": "Defibrillatoren"
@@ -46,8 +46,8 @@
       "title": {
         "render": {
           "en": "Defibrillator",
-		  "ca": "Desfibril·lador",
-		  "es": "Desfibrilador",
+          "ca": "Desfibril·lador",
+          "es": "Desfibrilador",
           "fr": "Défibrillateur",
           "nl": "Defibrillator",
           "de": "Defibrillator"
@@ -59,8 +59,8 @@
         {
           "title": {
             "en": "Defibrillator",
-			"ca": "Desfibril·lador",
-		    "es": "Desfibrilador",
+            "ca": "Desfibril·lador",
+            "es": "Desfibrilador",
             "fr": "Défibrillateur",
             "nl": "Defibrillator",
             "de": "Defibrillator"
@@ -75,8 +75,8 @@
         {
           "question": {
             "en": "Is this defibrillator located indoors?",
-			"ca": "Està el desfibril·lador a l'interior?",
-			"en": "¿Esté el desfibrilador en interior?",
+            "ca": "Està el desfibril·lador a l'interior?",
+            "es": "¿Esté el desfibrilador en interior?",
             "fr": "Ce défibrillateur est-il disposé en intérieur ?",
             "nl": "Hangt deze defibrillator binnen of buiten?",
             "de": "Befindet sich dieser Defibrillator im Gebäude?"
@@ -86,8 +86,8 @@
               "if": "indoor=yes",
               "then": {
                 "en": "This defibrillator is located indoors",
-				"ca": "Aquest desfibril·lador està a l'interior",
-				"es": "Este desfibrilador está en interior",
+                "ca": "Aquest desfibril·lador està a l'interior",
+                "es": "Este desfibrilador está en interior",
                 "fr": "Ce défibrillateur est en intérieur (dans un batiment)",
                 "nl": "Deze defibrillator bevindt zich in een gebouw",
                 "de": "Dieser Defibrillator befindet sich im Gebäude"
@@ -97,8 +97,8 @@
               "if": "indoor=no",
               "then": {
                 "en": "This defibrillator is located outdoors",
-				"ca": "Aquest desfibril·lador està a l'exterior",
-				"es": "Este desfibrilador está en exterior",
+                "ca": "Aquest desfibril·lador està a l'exterior",
+                "es": "Este desfibrilador está en exterior",
                 "fr": "Ce défibrillateur est situé en extérieur",
                 "nl": "Deze defibrillator hangt buiten",
                 "de": "Dieser Defibrillator befindet sich im Freien"
@@ -109,16 +109,16 @@
         {
           "question": {
             "en": "Is this defibrillator freely accessible?",
-			"ca": "Està el desfibril·lador accessible lliurement?",
-			"es": "¿Está el desfibrilador accesible libremente?",
-            "fr": "Ce défibrillateur est-il librement accessible?",
+            "ca": "Està el desfibril·lador accessible lliurement?",
+            "es": "¿Está el desfibrilador accesible libremente?",
+            "fr": "Ce défibrillateur est-il librement accessible ?",
             "nl": "Is deze defibrillator vrij toegankelijk?",
             "de": "Ist dieser Defibrillator frei zugänglich?"
           },
           "render": {
             "en": "Access is {access}",
-			"ca": "L'accés és {access}",
-			"es": "El acceso es {access}",
+            "ca": "L'accés és {access}",
+            "es": "El acceso es {access}",
             "fr": "{access} accessible",
             "nl": "Toegankelijkheid is {access}",
             "de": "Zugang ist {access}"
@@ -135,8 +135,8 @@
               "if": "access=yes",
               "then": {
                 "en": "Publicly accessible",
-				"ca": "Accés lliure",
-				"es": "Acceso libre",
+                "ca": "Accés lliure",
+                "es": "Acceso libre",
                 "fr": "Librement accessible",
                 "nl": "Publiek toegankelijk",
                 "de": "Öffentlich zugänglich"
@@ -146,11 +146,11 @@
               "if": "access=public",
               "then": {
                 "en": "Publicly accessible",
-				"ca": "Publicament accessible",
-				"es": "Publicament accesible",
+                "ca": "Publicament accessible",
+                "es": "Publicament accesible",
                 "fr": "Librement accessible",
                 "nl": "Publiek toegankelijk",
-                "de":  "Öffentlich zugänglich"
+                "de": "Öffentlich zugänglich"
               },
               "hideInAnswer": true
             },
@@ -158,8 +158,8 @@
               "if": "access=customers",
               "then": {
                 "en": "Only accessible to customers",
-				"ca": "Només accessible a clients",
-				"es": "Sólo accesible a clientes",
+                "ca": "Només accessible a clients",
+                "es": "Sólo accesible a clientes",
                 "fr": "Réservé aux clients du lieu",
                 "nl": "Enkel toegankeleijk voor klanten",
                 "de": "Nur für Kunden zugänglich"
@@ -169,8 +169,8 @@
               "if": "access=private",
               "then": {
                 "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, ...)",
-				"ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
-				"es": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)",
+                "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
+                "es": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)",
                 "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)",
                 "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personneel, de eigenaar, ...)",
                 "de": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, ...)"
@@ -181,9 +181,9 @@
         {
           "question": {
             "en": "On which floor is this defibrillator located?",
-			"ca": "A quina planta està el desfibril·lador localitzat?",
-			"es": "¿En qué planta se encuentra el defibrilador localizado?",
-            "fr": "À quel étage est situé ce défibrillateur?",
+            "ca": "A quina planta està el desfibril·lador localitzat?",
+            "es": "¿En qué planta se encuentra el defibrilador localizado?",
+            "fr": "À quel étage est situé ce défibrillateur ?",
             "nl": "Op welke verdieping bevindt deze defibrillator zich?",
             "de": "In welchem Stockwerk befindet sich dieser Defibrillator?"
           },
@@ -199,8 +199,8 @@
           },
           "render": {
             "en": "This defibrallator is on floor {level}",
-			"ca": "Aquest desfibril·lador és a la planta {level}",
-			"es": "El desfibrilador se encuentra en la planta {level}",
+            "ca": "Aquest desfibril·lador és a la planta {level}",
+            "es": "El desfibrilador se encuentra en la planta {level}",
             "fr": "Ce défibrillateur est à l'étage {level}",
             "nl": "De defibrillator bevindt zicht op verdieping {level}",
             "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk"
@@ -210,8 +210,8 @@
           "render": "{defibrillator:location}",
           "question": {
             "en": "Please give some explanation on where the defibrillator can be found",
-			"ca": "Dóna detalls d'on es pot trobar el desfibril·lador",
-			"es": "Da detalles de dónde se puede encontrar el desfibrilador",
+            "ca": "Dóna detalls d'on es pot trobar el desfibril·lador",
+            "es": "Da detalles de dónde se puede encontrar el desfibrilador",
             "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur",
             "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator",
             "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist"
