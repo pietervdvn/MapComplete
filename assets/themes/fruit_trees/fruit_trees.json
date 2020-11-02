@@ -38,7 +38,7 @@
         }
       },
       "description": {},
-      "tagRenderings": [],
+      "tagRenderings": ["images"],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/buurtnatuur/forest.svg"

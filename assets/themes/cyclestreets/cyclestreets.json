@@ -108,7 +108,10 @@
       "title": "{name}",
       "icon": "./assets/themes/cyclestreets/F111.svg",
       "color": "#0000ff",
-      "width": "10"
+      "width": "10",
+      "tagRenderings": [
+        "images"
+      ]
     },
     {
       "id": "toekomstige_fietsstraat",
@@ -136,7 +139,10 @@
       },
       "icon": "./assets/themes/cyclestreets/F113.svg",
       "color": "#09f9dd",
-      "width": "5"
+      "width": "5",
+      "tagRenderings": [
+        "images"
+      ]
     },
     {
       "id": "all_streets",
@@ -174,7 +180,10 @@
             "if": "proposed:cyclestreet=yes"
           }
         ]
-      }
+      },
+      "tagRenderings": [
+        "images"
+      ]
     }
   ]
 }

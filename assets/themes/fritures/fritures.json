@@ -53,6 +53,7 @@
       },
       "description": {},
       "tagRenderings": [
+        "images",
         {
           "render": {
             "nl": "{name}",

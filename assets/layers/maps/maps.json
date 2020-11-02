@@ -22,6 +22,7 @@
     "nl": "Een permantent geinstalleerde kaart"
   },
   "tagRenderings": [
+    "images",
     {
       "question": {
         "en": "On which data is this map based?",

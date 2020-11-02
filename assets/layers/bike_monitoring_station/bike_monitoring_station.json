@@ -1,4 +1,4 @@
-{
+ {
   "id": "bike_monitoring_station",
   "name": {
     "en": "Monitoring stations"
@@ -33,7 +33,8 @@
     ]
   },
   "description": {},
-  "tagRenderings": [
+  "tagRenderings": [ "images",
+
     {
       "render": "<b>{live({url},{url:format},hour)}</b> cyclists last hour<br/><b>{live({url},{url:format},day)}</b> cyclists today<br/><b>{live({url},{url:format},year)}</b> cyclists this year<br/>",
       "condition": {

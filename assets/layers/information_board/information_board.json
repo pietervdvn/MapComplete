@@ -17,7 +17,7 @@
     }
   },
   "description": {},
-  "tagRenderings": [],
+  "tagRenderings": [ "images"],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/information_board/board.svg"

@@ -67,7 +67,9 @@
       "description": {
         "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        "images"
+      ],
       "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
         "render": "./assets/themes/buurtnatuur/nature_reserve.svg",
@@ -169,7 +171,9 @@
       "description": {
         "nl": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ..."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        "images"
+      ],
       "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
         "render": "./assets/themes/buurtnatuur/park.svg",
@@ -259,7 +263,9 @@
       "description": {
         "nl": "Een bos is een verzameling bomen, al dan niet als productiehout."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        "images"
+      ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/buurtnatuur/forest.svg",
@@ -484,6 +490,24 @@
           "then": {
             "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
           }
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private"
+            ]
+          },
+          "then": "Beheer door een privépersoon",
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "operator:type=private",
+              "operator="
+            ]
+          },
+          "then": "Beheer door een privépersoon"
         }
       ],
       "condition": {

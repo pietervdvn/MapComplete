@@ -52,6 +52,7 @@
       },
       "description": {},
       "tagRenderings": [
+        "images",
         {
           "render": {
             "en": "Backrest",
@@ -370,6 +371,7 @@
       },
       "description": {},
       "tagRenderings": [
+        "images",
         {
           "render": {
             "en": "{name}",

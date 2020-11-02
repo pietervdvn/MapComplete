@@ -29,7 +29,8 @@
     ]
   },
   "description": {},
-  "tagRenderings": [
+  "tagRenderings": [ "images",
+
     {
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
