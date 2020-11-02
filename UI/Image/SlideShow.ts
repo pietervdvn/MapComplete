@@ -45,7 +45,6 @@ export class SlideShow extends UIElement {
     }
 
     InnerRender(): string {
-        console.log("Inner rendering")
         if (this._embeddedElements.data.length == 0) {
             return "";
         }
