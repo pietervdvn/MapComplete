@@ -7,7 +7,6 @@ import {UIElement} from "../UI/UIElement";
 import {LayerDefinition} from "../Customizations/LayerDefinition";
 
 import State from "../State";
-import CodeGrid from "./Web/CodeGrid";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -107,8 +106,15 @@ export class FilteredLayer {
         const selfFeatures = [];
         for (let feature of geojson.features) {
             // feature.properties contains all the properties
-            
+
             const tags = TagUtils.proprtiesToKV(feature.properties);
+
+            if (!this.filters.matches(tags)) {
+                leftoverFeatures.push(feature);
+                continue;
+            }
+
+
             const centerPoint = GeoOperations.centerpoint(feature);
             if (feature.geometry.type !== "Point") {
                 if (this._wayHandling === LayerDefinition.WAYHANDLING_CENTER_AND_WAY) {
@@ -117,11 +123,8 @@ export class FilteredLayer {
                     feature = centerPoint;
                 }
             }
-            if (this.filters.matches(tags)) {
-                selfFeatures.push(feature);
-            } else {
-                leftoverFeatures.push(feature);
-            }
+            selfFeatures.push(feature);
+
         }
 
 
