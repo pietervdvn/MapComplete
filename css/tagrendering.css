@@ -56,23 +56,12 @@
     border: 2px solid lightgray;
     border-radius: 0.5em;
     display: inline-block;
-    width: 95%;
+    width: 100%;
     margin:0;
-    margin-left: -1em;
+    margin-left: -2em;
     box-sizing: border-box;
     padding: 0.5em;
-}
-
-.question input[type=radio]{
-    margin  : 0;
-    padding : 0;
-    opacity : 0;
-}
-
-.question input[type=checkbox]{
-    margin  : 0;
-    padding : 0;
-    opacity : 0;
+    padding-left: 2em;
 }
 
 input:checked + label .question-option-with-border {
