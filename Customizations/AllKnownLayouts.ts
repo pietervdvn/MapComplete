@@ -45,7 +45,12 @@ export class AllKnownLayouts {
         const layout = Layout.LayoutFromJSON(widths, SharedLayers.sharedLayers);
 
         layout.enableUserBadge = false;
-        
+        layout.enableShareScreen = false;
+        layout.enableMoreQuests = false;
+        layout.enableLayers = false;
+        layout.hideFromOverview = true;
+        layout.enableSearch = false;
+        layout.enableGeolocation = false;
         return layout;
     }
 
