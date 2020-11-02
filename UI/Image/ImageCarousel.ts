@@ -31,12 +31,8 @@ export class ImageCarousel extends UIElement{
         this.slideshow = new SlideShow(uiElements).HideOnEmpty(true);
 
     }
-
+    
     InnerRender(): string {
         return this.slideshow.Render();
-    }
-
-    IsKnown(): boolean {
-        return true;
     }
 }

@@ -22,18 +22,18 @@ export class SubstitutedTranslation extends UIElement {
         this.translation = translation;
         this.tags = tags;
         const self = this;
+        this.dumbMode = false;
         Locale.language.addCallbackAndRun(() => {
             self.content = self.CreateContent();
             self.Update();
         });
-        this.dumbMode = false;
+        
     }
 
     InnerRender(): string {
         return new Combine(this.content).Render();
     }
-
-
+    
     private CreateContent(): UIElement[] {
         let txt = this.translation?.txt;
         if (txt === undefined) {

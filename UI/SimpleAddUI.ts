@@ -51,8 +51,6 @@ export class SimpleAddUI extends UIElement {
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
-                console.log("Preset:", preset)
-
                 let icon: string = layer.layerDef.icon.GetRenderValue(
                     TagUtils.KVtoProperties(preset.tags ?? [])).txt ??
                     "./assets/bug.svg";

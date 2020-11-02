@@ -447,7 +447,6 @@ export class InitUiElements {
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
 
         queryParam.addCallbackAndRun((selectedId:string) => {
-            console.log("Selected layer is ", selectedId)
             const available = State.state.availableBackgroundLayers.data;
             for (const layer of available) {
                 if (layer.id === selectedId) {

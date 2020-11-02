@@ -125,14 +125,18 @@ export default class MetaTagging {
 
     public static carriageWayWidth = new SimpleMetaTagger(
         ["_width:needed","_width:needed:no_pedestrians", "_width:difference"],
-        "Legacy for a specific project calculating the needed width for safe traffic on a road",
+        "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present",
         (feature: any, index: number) => {
 
+            const properties = feature.properties;
+            if(properties["width:carriageway"] === undefined){
+                return;
+            }
+            
             const carWidth = 2;
             const cyclistWidth = 1.5;
             const pedestrianWidth = 0.75;
 
-            const properties = feature.properties;
 
             const _leftSideParking =
                 new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);

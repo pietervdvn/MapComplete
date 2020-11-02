@@ -10,9 +10,6 @@ import svg2img from 'promise-svg2img';
 import {Translation} from "./UI/i18n/Translations";
 import Translations from "./UI/i18n/Translations";
 
-
-console.log("Building the layouts")
-
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }
