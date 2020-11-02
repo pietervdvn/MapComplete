@@ -5,17 +5,20 @@
   "language": [
     "en",
     "nl",
-    "de"
+    "de",
+    "fr"
   ],
   "title": {
     "en": "Open Bookcase Map",
     "nl": "Open Boekenruilkastenkaart",
-    "de": "Öffentliche Bücherschränke Karte"
+    "de": "Öffentliche Bücherschränke Karte",
+    "fr": "Carte des microbibliothèques"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
     "nl": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
-    "de": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen."
+    "de": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen.",
+    "fr": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
   "socialImage": null,
@@ -30,12 +33,14 @@
       "name": {
         "en": "Bookcases",
         "nl": "Boekenruilkastjes",
-        "de": "Bücherschränke"
+        "de": "Bücherschränke",
+        "fr": "Microbibliothèque"
       },
       "description": {
         "en": "A streetside cabinet with books, accessible to anyone",
         "nl": "Een straatkastje met boeken voor iedereen",
-        "de": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich"
+        "de": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
+        "fr": "Une armoire ou une boite contenant des livres en libre accès"
       },
       "overpassTags": "amenity=public_bookcase",
       "minzoom": 12,
@@ -43,7 +48,8 @@
         "render": {
           "en": "Bookcase",
           "nl": "Boekenruilkast",
-          "de": "Bücherschrank"
+          "de": "Bücherschrank",
+          "fr": "Microbibliothèque"
         },
         "mappings": [
           {
@@ -51,7 +57,8 @@
             "then": {
               "en": "Public bookcase <i>{name}</i>",
               "nl": "Boekenruilkast <i>{name}</i>",
-              "de": "Öffentlicher Bücherschrank <i>{name}</i>"
+              "de": "Öffentlicher Bücherschrank <i>{name}</i>",
+              "fr": "Microbibliothèque <i>{name}</i>"
             }
           }
         ]
@@ -70,7 +77,8 @@
           "title": {
             "en": "Bookcase",
             "nl": "Boekenruilkast",
-            "de": "Bücherschrank"
+            "de": "Bücherschrank",
+            "fr": "Microbibliothèque"
           },
           "tags": [
             "amenity=public_bookcase"
@@ -83,12 +91,14 @@
           "render": {
             "en": "The name of this bookcase is {name}",
             "nl": "De naam van dit boekenruilkastje is {name}",
-            "de": "Der Name dieses Bücherschrank lautet {name}"
+            "de": "Der Name dieses Bücherschrank lautet {name}",
+            "fr": "Le nom de cette microbibliothèque est {name}"
           },
           "question": {
             "en": "What is the name of this public bookcase?",
             "nl": "Wat is de naam van dit boekenuilkastje?",
-            "de": "Wie heißt dieser öffentliche Bücherschrank?"
+            "de": "Wie heißt dieser öffentliche Bücherschrank?",
+            "fr": "Quel est le nom de cette microbibliothèque ?"
           },
           "freeform": {
             "key": "name"
@@ -104,7 +114,8 @@
               "then": {
                 "en": "This bookcase doesn't have a name",
                 "nl": "Dit boekenruilkastje heeft geen naam",
-                "de": "Dieser Bücherschrank hat keinen Namen"
+                "de": "Dieser Bücherschrank hat keinen Namen",
+                "fr": "Cette microbibliothèque n'a pas de nom"
               }
             }
           ]
@@ -113,12 +124,14 @@
           "render": {
             "en": "{capacity} books fit in this bookcase",
             "nl": "Er passen {capacity} boeken",
-            "de": "{capacity} Bücher passen in diesen Bücherschrank"
+            "de": "{capacity} Bücher passen in diesen Bücherschrank",
+            "fr": "{capacity} livres rentrent dans cette microbibliothèque"
           },
           "question": {
             "en": "How many books fit into this public bookcase?",
             "nl": "Hoeveel boeken passen er in dit boekenruilkastje?",
-            "de": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?"
+            "de": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?",
+            "fr": "Combien de livre rentrent dans cette microbibliothèque ?"
           },
           "freeform": {
             "key": "capacity",
@@ -129,7 +142,8 @@
           "question": {
             "en": "What kind of books can be found in this public bookcase?",
             "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
-            "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?"
+            "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
+            "fr": "Quel type de livres peuvent être trouvés dans cette microbibliothèque ?"
           },
           "mappings": [
             {
@@ -137,7 +151,8 @@
               "then": {
                 "en": "Mostly children books",
                 "nl": "Voornamelijk kinderboeken",
-                "de": "Vorwiegend Kinderbücher"
+                "de": "Vorwiegend Kinderbücher",
+                "fr": "Livres pour enfants"
               }
             },
             {
@@ -145,7 +160,8 @@
               "then": {
                 "en": "Mostly books for adults",
                 "nl": "Voornamelijk boeken voor volwassenen",
-                "de": "Vorwiegend Bücher für Erwachsene"
+                "de": "Vorwiegend Bücher für Erwachsene",
+                "fr": "Livres pour les adultes"
               }
             },
             {
@@ -153,7 +169,8 @@
               "then": {
                 "en": "Both books for kids and adults",
                 "nl": "Boeken voor zowel kinderen als volwassenen",
-                "de": "Sowohl Bücher für Kinder als auch für Erwachsene"
+                "de": "Sowohl Bücher für Kinder als auch für Erwachsene",
+                "fr": "Livres pour enfants et adultes également"
               }
             }
           ]
@@ -162,14 +179,16 @@
           "question": {
             "en": "Is this bookcase located outdoors?",
             "nl": "Staat dit boekenruilkastje binnen of buiten?",
-            "de": "Befindet sich dieser Bücherschrank im Freien?"
+            "de": "Befindet sich dieser Bücherschrank im Freien?",
+            "fr": "Cette microbiliothèque est-elle en extérieur ?"
           },
           "mappings": [
             {
               "then": {
                 "en": "This bookcase is located indoors",
                 "nl": "Dit boekenruilkastje staat binnen",
-                "de": "Dieser Bücherschrank befindet sich im Innenbereich"
+                "de": "Dieser Bücherschrank befindet sich im Innenbereich",
+                "fr": "Cette microbibliothèque est en intérieur"
               },
               "if": "indoor=yes"
             },
@@ -177,7 +196,8 @@
               "then": {
                 "en": "This bookcase is located outdoors",
                 "nl": "Dit boekenruilkastje staat buiten",
-                "de": "Dieser Bücherschrank befindet sich im Freien"
+                "de": "Dieser Bücherschrank befindet sich im Freien",
+                "fr": "Cette microbibliothèque est en extérieur"
               },
               "if": "indoor=no"
             },
@@ -185,7 +205,8 @@
               "then": {
                 "en": "This bookcase is located outdoors",
                 "nl": "Dit boekenruilkastje staat buiten",
-                "de": "Dieser Bücherschrank befindet sich im Freien"
+                "de": "Dieser Bücherschrank befindet sich im Freien",
+                "fr": "Cette microbibliothèque est en extérieur"
               },
               "if": "indoor=",
               "hideInAnswer": true
@@ -196,7 +217,8 @@
           "question": {
             "en": "Is this public bookcase freely accessible?",
             "nl": "Is dit boekenruilkastje publiek toegankelijk?",
-            "de": "Ist dieser öffentliche Bücherschrank frei zugänglich?"
+            "de": "Ist dieser öffentliche Bücherschrank frei zugänglich?",
+            "fr": "Cette microbibliothèque est-elle librement accèssible ?"
           },
           "condition": "indoor=yes",
           "mappings": [
@@ -204,7 +226,8 @@
               "then": {
                 "en": "Publicly accessible",
                 "nl": "Publiek toegankelijk",
-                "de": "Öffentlich zugänglich"
+                "de": "Öffentlich zugänglich",
+                "fr": "Accèssible au public"
               },
               "if": "access=yes"
             },
@@ -212,7 +235,8 @@
               "then": {
                 "en": "Only accessible to customers",
                 "nl": "Enkel toegankelijk voor klanten",
-                "de": "Nur für Kunden zugänglich"
+                "de": "Nur für Kunden zugänglich",
+                "fr": "Accèssible aux clients"
               },
               "if": "access=customers"
             }
@@ -222,12 +246,14 @@
           "question": {
             "en": "Who maintains this public bookcase?",
             "nl": "Wie is verantwoordelijk voor dit boekenruilkastje?",
-            "de": "Wer unterhält diesen öffentlichen Bücherschrank?"
+            "de": "Wer unterhält diesen öffentlichen Bücherschrank?",
+            "fr": "Qui entretien cette microbibliothèque"
           },
           "render": {
             "en": "Operated by {operator}",
             "nl": "Onderhouden door {operator}",
-            "de": "Betrieben von {operator}"
+            "de": "Betrieben von {operator}",
+            "fr": "Entretenue par {operator}"
           },
           "freeform": {
             "type": "string",
@@ -238,12 +264,14 @@
           "question": {
             "en": "Is this public bookcase part of a bigger network?",
             "nl": "Is dit boekenruilkastje deel van een netwerk?",
-            "de": "Ist dieser öffentliche Bücherschrank Teil eines größeren Netzwerks?"
+            "de": "Ist dieser öffentliche Bücherschrank Teil eines größeren Netzwerks?",
+            "fr": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?"
           },
           "render": {
             "en": "This public bookcase is part of {brand}",
             "nl": "Dit boekenruilkastje is deel van het netwerk {brand}",
-            "de": "Dieser Bücherschrank ist Teil von {brand}"
+            "de": "Dieser Bücherschrank ist Teil von {brand}",
+            "fr": "Cette microbibliothèque fait partie du groupe {brand}"
           },
           "condition": "ref=",
           "freeform": {
@@ -254,7 +282,8 @@
               "then": {
                 "en": "Part of the network 'Little Free Library'",
                 "nl": "Deel van het netwerk 'Little Free Library'",
-                "de": "Teil des Netzwerks 'Little Free Library'"
+                "de": "Teil des Netzwerks 'Little Free Library'",
+                "fr": "Fait partie du réseau 'Little Free Library'"
               },
               "if": "brand=Little Free Library"
             },
@@ -268,7 +297,8 @@
               "then": {
                 "en": "This public bookcase is not part of a bigger network",
                 "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
-                "de": "Dieser öffentliche Bücherschrank ist nicht Teil eines größeren Netzwerks"
+                "de": "Dieser öffentliche Bücherschrank ist nicht Teil eines größeren Netzwerks",
+                "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
               }
             }
           ]
@@ -277,12 +307,14 @@
           "render": {
             "en": "The reference number of this public bookcase within {brand} is {ref}",
             "nl": "Het referentienummer binnen {brand} is {ref}",
-            "de": "Die Referenznummer dieses öffentlichen Bücherschranks innerhalb {brand} lautet {ref}"
+            "de": "Die Referenznummer dieses öffentlichen Bücherschranks innerhalb {brand} lautet {ref}",
+            "fr": "Cette microbibliothèque du réseau {brand} possède le numéro {ref}"
           },
           "question": {
             "en": "What is the reference number of this public bookcase?",
             "nl": "Wat is het referentienummer van dit boekenruilkastje?",
-            "de": "Wie lautet die Referenznummer dieses öffentlichen Bücherschranks?"
+            "de": "Wie lautet die Referenznummer dieses öffentlichen Bücherschranks?",
+            "fr": "Quelle est le numéro de référence de cette microbibliothèque ?"
           },
           "condition": "brand~*",
           "freeform": {
@@ -293,7 +325,8 @@
               "then": {
                 "en": "This bookcase is not part of a bigger network",
                 "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
-                "de": "Dieser Bücherschrank ist nicht Teil eines größeren Netzwerks"
+                "de": "Dieser Bücherschrank ist nicht Teil eines größeren Netzwerks",
+                "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
               },
               "if": {
                 "and": [
@@ -309,12 +342,14 @@
           "question": {
             "en": "When was this public bookcase installed?",
             "nl": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
-            "de": "Wann wurde dieser öffentliche Bücherschrank installiert?"
+            "de": "Wann wurde dieser öffentliche Bücherschrank installiert?",
+            "fr": "Quand a été installée cette microbibliothèque ?"
           },
           "render": {
             "en": "Installed on {start_date}",
             "nl": "Geplaatst op {start_date}",
-            "de": "Installiert am {start_date}"
+            "de": "Installiert am {start_date}",
+            "fr": "Installée le {start_date}"
           },
           "freeform": {
             "key": "start_date",
@@ -325,12 +360,14 @@
           "render": {
             "en": "More info on <a href='{website}' target='_blank'>the website</a>",
             "nl": "Meer info op <a href='{website}' target='_blank'>de website</a>",
-            "de": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>"
+            "de": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
+            "fr": "Plus d'info sur <a href='{website} target='_blank'>le site web</a>"
           },
           "question": {
             "en": "Is there a website with more information about this public bookcase?",
             "nl": "Is er een website over dit boekenruilkastje?",
-            "de": "Gibt es eine Webseite mit weiteren Informationen über diesen öffentlichen Bücherschrank?"
+            "de": "Gibt es eine Webseite mit weiteren Informationen über diesen öffentlichen Bücherschrank?",
+            "fr": "Existe-t-il un site web avec plus d'information sur cette microbibliothèque ?"
           },
           "freeform": {
             "key": "website",

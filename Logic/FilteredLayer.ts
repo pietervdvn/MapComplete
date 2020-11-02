@@ -4,7 +4,6 @@ import * as L from "leaflet"
 import {Layer} from "leaflet"
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
-
 import State from "../State";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 

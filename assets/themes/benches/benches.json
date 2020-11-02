@@ -2,19 +2,23 @@
   "id": "benches",
   "title": {
     "en": "Benches",
-    "de": "Sitzbänke"
+    "de": "Sitzbänke",
+    "fr": "Bancs"
   },
   "shortDescription": {
     "en": "A map of benches",
-    "de": "Eine Karte aller Sitzbänke"
+    "de": "Eine Karte aller Sitzbänke",
+    "fr": "Carte des bancs"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
-    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
+    "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
+    "fr": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants."
   },
   "language": [
     "en",
-    "de"
+    "de",
+    "fr"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",
@@ -29,7 +33,8 @@
       "id": "amenity=bench",
       "name": {
         "en": "Benches",
-        "de": "Sitzbänke"
+        "de": "Sitzbänke",
+        "fr": "Bancs"
       },
       "minzoom": 14,
       "overpassTags": {
@@ -40,7 +45,8 @@
       "title": {
         "render": {
           "en": "Bench",
-          "de": "Sitzbank"
+          "de": "Sitzbank",
+          "fr": "Banc"
         },
         "mappings": []
       },
@@ -49,7 +55,8 @@
         {
           "render": {
             "en": "Backrest",
-            "de": "Rückenlehne"
+            "de": "Rückenlehne",
+            "fr": "Dossier"
           },
           "freeform": {
             "key": "backrest",
@@ -64,7 +71,8 @@
               },
               "then": {
                 "en": "Backrest: Yes",
-                "de": "Rückenlehne: Ja"
+                "de": "Rückenlehne: Ja",
+                "fr": "Dossier: Oui"
               }
             },
             {
@@ -75,19 +83,22 @@
               },
               "then": {
                 "en": "Backrest: No",
-                "de": "Rückenlehne: Nein"
+                "de": "Rückenlehne: Nein",
+                "fr": "Dossier: Non"
               }
             }
           ],
           "question": {
             "en": "Does this bench have a backrest?",
-            "de": "Hat diese Bank eine Rückenlehne?"
+            "de": "Hat diese Bank eine Rückenlehne?",
+            "fr": "Ce banc dispose-t-il d'un dossier ?"
           }
         },
         {
           "render": {
             "en": "{seats} seats",
-            "de": "{seats} Sitzplätze"
+            "de": "{seats} Sitzplätze",
+            "fr": "{seats} places"
           },
           "freeform": {
             "key": "seats",
@@ -96,13 +107,15 @@
           "mappings": [],
           "question": {
             "en": "How many seats does this bench have?",
-            "de": "Wie viele Sitzplätze hat diese Bank?"
+            "de": "Wie viele Sitzplätze hat diese Bank?",
+            "fr": "De combien de places dispose ce banc ?"
           }
         },
         {
           "render": {
             "en": "Material: {material}",
-            "de": "Material: {material}"
+            "de": "Material: {material}",
+            "fr": "Matériau : {material}"
           },
           "freeform": {
             "key": "material",
@@ -115,7 +128,8 @@
               },
               "then": {
                 "en": "Material: wood",
-                "de": "Material: Holz"
+                "de": "Material: Holz",
+                "fr": "Matériau : bois"
               }
             },
             {
@@ -124,7 +138,8 @@
               },
               "then": {
                 "en": "Material: metal",
-                "de": "Material: Metall"
+                "de": "Material: Metall",
+                "fr": "Matériau : métal"
               }
             },
             {
@@ -133,7 +148,8 @@
               },
               "then": {
                 "en": "Material: stone",
-                "de": "Material: Stein"
+                "de": "Material: Stein",
+                "fr": "Matériau: pierre"
               }
             },
             {
@@ -142,7 +158,8 @@
               },
               "then": {
                 "en": "Material: concrete",
-                "de": "Material: Beton"
+                "de": "Material: Beton",
+                "fr": "Matériau : béton"
               }
             },
             {
@@ -151,7 +168,8 @@
               },
               "then": {
                 "en": "Material: plastic",
-                "de": "Material: Kunststoff"
+                "de": "Material: Kunststoff",
+                "fr": "Matériau : plastique"
               }
             },
             {
@@ -160,23 +178,27 @@
               },
               "then": {
                 "en": "Material: steel",
-                "de": "Material: Stahl"
+                "de": "Material: Stahl",
+                "fr": "Matériau : acier"
               }
             }
           ],
           "question": {
             "en": "What is the bench (seating) made from?",
-            "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?"
+            "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?",
+            "fr": "De quel matériau ce banc est-il fait ?"
           }
         },
         {
           "render": {
             "en": "Colour: {colour}",
-            "de": "Farbe: {colour}"
+            "de": "Farbe: {colour}",
+            "fr": "Couleur : {colour}"
           },
           "question": {
             "en": "Which colour does this bench have?",
-            "de": "Welche Farbe hat diese Sitzbank?"
+            "de": "Welche Farbe hat diese Sitzbank?",
+            "fr": "Quelle est la couleur de ce banc ?"
           },
           "freeform": {
             "key": "colour"
@@ -188,7 +210,8 @@
               },
               "then": {
                 "en": "Colour: brown",
-                "de": "Farbe: braun"
+                "de": "Farbe: braun",
+                "fr": "Couleur : marron"
               }
             },
             {
@@ -197,7 +220,8 @@
               },
               "then": {
                 "en": "Colour: green",
-                "de": "Farbe: grün"
+                "de": "Farbe: grün",
+                "fr": "Couleur : verte"
               }
             },
             {
@@ -206,7 +230,8 @@
               },
               "then": {
                 "en": "Colour: gray",
-                "de": "Farbe: grau"
+                "de": "Farbe: grau",
+                "fr": "Couleur : gris"
               }
             },
             {
@@ -215,7 +240,8 @@
               },
               "then": {
                 "en": "Colour: white",
-                "de": "Farbe: weiß"
+                "de": "Farbe: weiß",
+                "fr": "Couleur : blanc"
               }
             },
             {
@@ -224,7 +250,8 @@
               },
               "then": {
                 "en": "Colour: red",
-                "de": "Farbe: rot"
+                "de": "Farbe: rot",
+                "fr": "Couleur : rouge"
               }
             },
             {
@@ -233,7 +260,8 @@
               },
               "then": {
                 "en": "Colour: black",
-                "de": "Farbe: schwarz"
+                "de": "Farbe: schwarz",
+                "fr": "Couleur : noire"
               }
             },
             {
@@ -242,7 +270,8 @@
               },
               "then": {
                 "en": "Colour: blue",
-                "de": "Farbe: blau"
+                "de": "Farbe: blau",
+                "fr": "Couleur : bleu"
               }
             },
             {
@@ -251,7 +280,8 @@
               },
               "then": {
                 "en": "Colour: yellow",
-                "de": "Farbe: gelb"
+                "de": "Farbe: gelb",
+                "fr": "Couleur : jaune"
               }
             }
           ]
@@ -278,11 +308,13 @@
           ],
           "title": {
             "en": "Bench",
-            "de": "Sitzbank"
+            "de": "Sitzbank",
+            "fr": "Banc"
           },
           "description": {
             "en": "Add a new bench",
-            "de": "Neue Sitzbank eintragen"
+            "de": "Neue Sitzbank eintragen",
+            "fr": "Ajouter un nouveau banc"
           }
         }
       ]
@@ -291,7 +323,8 @@
       "id": "bench=yes",
       "name": {
         "en": "Benches at public transport stops",
-        "de": "Sitzbänke bei Haltestellen"
+        "de": "Sitzbänke bei Haltestellen",
+        "fr": "Bancs des arrêts de transport en commun"
       },
       "minzoom": 14,
       "overpassTags": {
@@ -303,7 +336,8 @@
       "title": {
         "render": {
           "en": "Bench",
-          "de": "Sitzbank"
+          "de": "Sitzbank",
+          "fr": "Banc"
         },
         "mappings": [
           {
@@ -316,7 +350,8 @@
             },
             "then": {
               "en": "Bench at public transport stop",
-              "de": "Sitzbank bei Haltestelle"
+              "de": "Sitzbank bei Haltestelle",
+              "fr": "Banc d'un arrêt de transport en commun"
             }
           },
           {
@@ -327,7 +362,8 @@
             },
             "then": {
               "en": "Bench in shelter",
-              "de": "Sitzbank in Unterstand"
+              "de": "Sitzbank in Unterstand",
+              "fr": "Banc dans un abri"
             }
           }
         ]
@@ -337,7 +373,8 @@
         {
           "render": {
             "en": "{name}",
-            "de": "{name}"
+            "de": "{name}",
+            "fr": "{name}"
           },
           "freeform": {
             "key": "name"
@@ -346,7 +383,8 @@
         {
           "render": {
             "en": "Stand up bench",
-            "de": "Stehbank"
+            "de": "Stehbank",
+            "fr": "Banc assis debout"
           },
           "freeform": {
             "key": "bench",
