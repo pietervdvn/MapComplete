@@ -44,9 +44,15 @@ export class QueryParameters {
             if (QueryParameters.knownSources[key] === undefined || QueryParameters.knownSources[key].data === undefined) {
                 continue;
             }
+            
+            if (QueryParameters.knownSources[key].data === undefined) {
+                continue;
+            }
+            
             if (QueryParameters.knownSources[key].data == QueryParameters.defaults[key]) {
                 continue;
             }
+
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
         history.replaceState(null, "", "?" + parts.join("&"));
