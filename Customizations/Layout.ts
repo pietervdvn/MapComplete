@@ -2,7 +2,7 @@ import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
 import State from "../State";
-import Translation from "../UI/i18n/Translation";
+import {Translation} from "../UI/i18n/Translations";
 import LayerConfig from "./JSON/LayerConfig";
 import {LayoutConfigJson} from "./JSON/LayoutConfigJson";
 import TagRenderingConfig from "./JSON/TagRenderingConfig";

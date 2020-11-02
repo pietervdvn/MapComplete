@@ -7,7 +7,7 @@ import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
-import Translation from "./UI/i18n/Translation";
+import {Translation} from "./UI/i18n/Translations";
 import Translations from "./UI/i18n/Translations";
 
 
