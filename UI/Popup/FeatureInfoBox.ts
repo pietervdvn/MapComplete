@@ -16,11 +16,13 @@ export class FeatureInfoBox extends UIElement {
     private _questionBox : UIElement;
 
     constructor(
-        feature: any,
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
     ) {
         super();
+        if(layerConfig === undefined){
+            throw "Undefined layerconfig"
+        }
         this._tags = tags;
         this._layerConfig = layerConfig;
 

@@ -30,7 +30,6 @@ import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {Layout} from "./Customizations/Layout";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
-import {FromJSON} from "./Customizations/JSON/FromJSON";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
 import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
@@ -166,7 +165,6 @@ export class InitUiElements {
                         // This layer is the layer that gives the questions
 
                         const featureBox = new FeatureInfoBox(
-                            feature.feature,
                             State.state.allElements.getElement(data.id),
                             layer
                         );
@@ -477,7 +475,6 @@ export class InitUiElements {
             const generateInfo = (tagsES, feature) => {
 
                 return new FeatureInfoBox(
-                    feature,
                     tagsES,
                     layer,
                 )

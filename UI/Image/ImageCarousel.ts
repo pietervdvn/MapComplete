@@ -8,7 +8,7 @@ import DeleteImage from "./DeleteImage";
 
 export class ImageCarousel extends UIElement{
 
-    public readonly slideshow: SlideShow;
+    public readonly slideshow: UIElement;
 
     constructor(tags: UIEventSource<any>, imagePrefix: string = "image", loadSpecial: boolean =true) {
         super(tags);
@@ -29,7 +29,7 @@ export class ImageCarousel extends UIElement{
         });
 
         this.slideshow = new SlideShow(uiElements).HideOnEmpty(true);
-
+        
     }
     
     InnerRender(): string {

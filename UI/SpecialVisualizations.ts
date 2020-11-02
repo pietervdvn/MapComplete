@@ -22,7 +22,6 @@ export class SubstitutedTranslation extends UIElement {
         this.translation = translation;
         this.tags = tags;
         const self = this;
-        this.dumbMode = false;
         Locale.language.addCallbackAndRun(() => {
             self.content = self.CreateContent();
             self.Update();
@@ -33,7 +32,7 @@ export class SubstitutedTranslation extends UIElement {
     InnerRender(): string {
         return new Combine(this.content).Render();
     }
-    
+
     private CreateContent(): UIElement[] {
         let txt = this.translation?.txt;
         if (txt === undefined) {
@@ -78,7 +77,7 @@ export class SubstitutedTranslation extends UIElement {
                     return [...partBefore, element, ...partAfter]
                 } catch (e) {
                     console.error(e);
-                    return [...partBefore, ...partAfter]
+                    return [...partBefore,new FixedUiElement(`Failed loading ${knownSpecial.funcName}(${matched[2]}): ${e}`) ,  ...partAfter]
                 }
             }
         }

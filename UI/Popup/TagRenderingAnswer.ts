@@ -9,25 +9,37 @@ import {SubstitutedTranslation} from "../SpecialVisualizations";
 export default class TagRenderingAnswer extends UIElement {
     private _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
+    private _content: UIElement;
 
-    constructor(tags: UIEventSource<any>,
-                configuration: TagRenderingConfig) {
+    constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig) {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
+        const self = this;
+        tags.addCallbackAndRun(tags => {
+            if (tags === undefined) {
+                self._content = undefined
+                return;
+            }
+            const tr = this._configuration.GetRenderValue(tags);
+            if (tr === undefined) {
+                self._content = undefined
+                return
+            }
+            self._content = new SubstitutedTranslation(tr, self._tags)
+        })
     }
 
     InnerRender(): string {
-        if(this._configuration.condition !== undefined){
-            if(!this._configuration.condition.matchesProperties(this._tags.data)){
+        if (this._configuration.condition !== undefined) {
+            if (!this._configuration.condition.matchesProperties(this._tags.data)) {
                 return "";
             }
         }
-        const tr = this._configuration.GetRenderValue(this._tags.data);
-        if(tr === undefined){
+        if(this._content === undefined){
             return "";
         }
-        return new SubstitutedTranslation(tr, this._tags).Render();
+        return this._content.Render();
     }
 
 }

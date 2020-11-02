@@ -1,6 +1,7 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Combine from "../Base/Combine";
 
 export class SlideShow extends UIElement {
 
@@ -22,6 +23,7 @@ export class SlideShow extends UIElement {
                 this._currentSlide.setData(this._embeddedElements.data.length - 1);
             });
 
+        this.dumbMode = false;
         const self = this;
         this._prev = new FixedUiElement("<div class='prev-button'>" +
             "<div class='vspan'></div>" +
@@ -43,6 +45,7 @@ export class SlideShow extends UIElement {
     }
 
     InnerRender(): string {
+        console.log("Inner rendering")
         if (this._embeddedElements.data.length == 0) {
             return "";
         }
@@ -63,11 +66,11 @@ export class SlideShow extends UIElement {
             }
             slides += "      <div class=\"slide " + state + "\">" + embeddedElement.Render() + "</div>\n";
         }
-        return "<div class='image-slideshow'>"
-            + this._prev.Render()
-            + "<div class='slides'>" + slides + "</div>"
-            + this._next.Render()
-            + "</div>";
+        return new Combine(["<div class='image-slideshow'>"
+            , this._prev
+            , "<div class='slides'>", slides, "</div>"
+            , this._next
+            , "</div>"]).Render();
     }
 
     public MoveTo(index: number) {
