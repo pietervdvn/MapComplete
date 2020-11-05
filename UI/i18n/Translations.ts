@@ -131,7 +131,7 @@ export default class Translations {
             for (const subKey in tr) {
                 if (Translations.isTranslation(tr[subKey])) {
                     copy[subKey] = new Translation(tr[subKey]);
-                } else if(tr[subKey].translations === undefined /**should not be a translation alreay*/){
+                } else if(tr[subKey].translations === undefined /**should not be a translation already*/){
                     queue.push(tr[subKey]);
                 }
             }
