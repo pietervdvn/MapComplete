@@ -5,7 +5,7 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "lib": [
-      "dom",
+      "DOM",
       "es5",
       "scripthost",
       "es2015.collection"

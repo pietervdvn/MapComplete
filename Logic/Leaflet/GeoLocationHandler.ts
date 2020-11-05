@@ -4,6 +4,9 @@ import {UIElement} from "../../UI/UIElement";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {Basemap} from "./Basemap";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
+import Svg from "../../Svg";
+import {Img} from "../../UI/Img";
 
 export class GeoLocationHandler extends UIElement {
 
@@ -45,10 +48,10 @@ export class GeoLocationHandler extends UIElement {
         map.on('accuratepositionfound', onAccuratePositionFound);
         map.on('accuratepositionerror', onAccuratePositionError);
 
-
+FixedUiElement
         const icon = L.icon(
             {
-                iconUrl: './assets/crosshair-blue.svg',
+                iconUrl: Img.AsData(Svg.crosshair_blue),
                 iconSize: [40, 40], // size of the icon
                 iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
             })
@@ -84,13 +87,13 @@ export class GeoLocationHandler extends UIElement {
         }
         
         if (this._hasLocation.data) {
-            return "<img src='./assets/crosshair-blue.svg' alt='locate me'>";
+            return Svg.crosshair_blue_img;
         }
         if (this._isActive.data) {
-            return "<img src='./assets/crosshair-blue-center.svg' alt='locate me'>";
+            return Svg.crosshair_blue_center_img;
         }
 
-        return "<img src='./assets/crosshair.svg' alt='locate me'>";
+        return Svg.crosshair_img;
     }
 
     

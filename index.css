@@ -170,15 +170,6 @@ body {
 
 }
 
-#userbadge {
-    width: 100%
-}
-
-#userbadge p {
-    margin: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-}
 
 .add-popup-all-buttons {
     max-height: 50vh;

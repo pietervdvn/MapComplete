@@ -15,7 +15,7 @@
   "scripts": {
     "start": "parcel *.html UI/** Logic/** assets/** vendor/* vendor/*/*",
     "generate": "ts-node createLayouts.ts",
-    "build": "rm -rf dist/ && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "build": "rm -rf dist/ && ts-node generateIncludedImages.ts && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "test": "ts-node test/*"
   },
   "keywords": [

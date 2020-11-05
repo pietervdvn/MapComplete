@@ -1,6 +1,53 @@
+#userbadge {
+    display: inline-block;
+    background-color: white;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    border-bottom-right-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    margin: 0;
+    margin-bottom: 0.5em;
+    width: 100%;
+    min-width: 20em;
+    pointer-events: all;
+}
+
+#userbadge a {
+    text-decoration: none;
+    color: black;
+}
+
 
 #userbadge form {
     width: unset !important;
+}
+
+.userstats {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.userstats a {
+    display: block ruby;
+    padding-right: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.userstats span {
+    display: block ruby;
+    padding-right: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.userstats img {
+    width: 1em;
+    height: 1em;
+    fill: black;
+    border-radius: 0;
+    display: block;
 }
 
 .small-userbadge-icon {
@@ -23,13 +70,8 @@
     transition: opacity 500ms linear;
 }
 
-#username {
-    text-decoration: none;
-    color: black;
-}
-
-
-#usertext {
+.usertext {
+    display: block;
     width: max-content;
     margin: 0;
 
@@ -42,31 +84,12 @@
     text-align: left;
     background-color: white;
     background-size: 100%;
-    display: block;
 
     line-height: 0.75em;
 }
 
-#usertext a {
-    text-decoration: none;
-    color: black;
-}
 
-#userbadge {
-    display: inline-block;
-    text-align: center;
-    background-color: white;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-    border-bottom-right-radius: 1.5em;
-    border-top-right-radius: 1.5em;
-    margin: 0;
-    margin-bottom: 0.5em;
 
-    min-width: 20em;
-    pointer-events: all;
-}
 
 .userbadge-login {
     font-weight: bold;

@@ -8,6 +8,9 @@ import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Combine from "./Base/Combine";
 import Locale from "./i18n/Locale";
+import Svg from "../Svg";
+import Link from "./Base/Link";
+import {Img} from "./Img";
 
 /**
  * Handles and updates the user badge
@@ -25,15 +28,16 @@ export class UserBadge extends UIElement {
         this._userDetails = State.state.osmConnection.userDetails;
         this._languagePicker = (Locale.CreateLanguagePicker(State.state.layoutToUse.data.supportedLanguages) ?? new FixedUiElement(""))
             .SetStyle("display:inline-block;width:min-content;");
-        
+
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
             .SetClass("userbadge-login")
             .onClick(() => State.state.osmConnection.AttemptLogin());
-        this._logout = new FixedUiElement("<img src='assets/logout.svg' class='small-userbadge-icon' alt='logout'>")
-            .onClick(() => {
-                State.state.osmConnection.LogOut();
-            });
+        this._logout =
+            Svg.logout_ui()
+                .onClick(() => {
+                    State.state.osmConnection.LogOut();
+                });
 
         this._userDetails.addCallback(function () {
             const profilePic = document.getElementById("profile-pic");
@@ -48,7 +52,7 @@ export class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return "<img src='./assets/home.svg' alt='home' class='small-userbadge-icon'> ";
+                    return Svg.home_img;
                 }
                 return "";
             })
@@ -67,28 +71,32 @@ export class UserBadge extends UIElement {
         if (!user.loggedIn) {
             return this._loginButton.Render();
         }
-        
-        
-        let messageSpan = "<span id='messages'>" +
-            "     <a href='https://www.openstreetmap.org/messages/inbox' target='_blank'><img class='small-userbadge-icon' src='./assets/envelope.svg' alt='msgs'>" +
-            user.totalMessages +
-            "</a></span>";
+
+
+        let messageSpan: UIElement =
+            new Link(
+                new Combine([Svg.envelope_img, "" + user.totalMessages]),
+                'https://www.openstreetmap.org/messages/inbox',
+                true
+            )
+
 
         if (user.unreadMessages > 0) {
-            messageSpan = "<span id='messages' class='alert'>" +
-                "<a href='https://www.openstreetmap.org/messages/inbox' target='_blank'><img class='small-userbadge-icon' src='./assets/envelope.svg' alt='msgs'/>" +
-                user.unreadMessages.toString() +
-                "</a></span>";
+            messageSpan = new Link(
+                new Combine([Svg.envelope_img, "" + user.unreadMessages]),
+                'https://www.openstreetmap.org/messages/inbox',
+                true
+            ).SetClass("alert")
         }
 
-        let dryrun = "";
+        let dryrun: UIElement = new FixedUiElement("");
         if (user.dryRun) {
-            dryrun = new FixedUiElement("TESTING").SetClass("alert").Render();
+            dryrun = new FixedUiElement("TESTING").SetClass("alert");
         }
 
         if (user.home !== undefined) {
             const icon = L.icon({
-                iconUrl: 'assets/home.svg',
+                iconUrl: Img.AsData(Svg.home),
                 iconSize: [20, 20],
                 iconAnchor: [10, 10]
             });
@@ -96,31 +104,50 @@ export class UserBadge extends UIElement {
         }
 
         const settings =
-            "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "/account' target='_blank'>" +
-            "<img class='small-userbadge-icon' src='./assets/gear.svg' alt='settings'>" +
-            "</a>";
-
-        const userIcon = "<a href='https://www.openstreetmap.org/user/" + encodeURIComponent(user.name) + "' target='_blank'><img id='profile-pic' src='" + user.img + "' alt='profile-pic'/></a>";
+            new Link(Svg.gear_ui(),
+                `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`, 
+                true)
 
 
-        const userName = "<p id='username'>" +
-            "<a href='https://www.openstreetmap.org/user/" + user.name + "' target='_blank'>" + user.name + "</a>" +
-            dryrun + "</p>";
+        const userIcon = new Link(
+            new FixedUiElement(`<img id='profile-pic' src='${user.img}' alt='profile-pic'/>`),
+            `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}`,
+            true
+        );
 
-        const csCount = "<span id='csCount'> " +
-            "   <a href='https://www.openstreetmap.org/user/" + user.name + "/history' target='_blank'><img class='small-userbadge-icon' src='./assets/star.svg' alt='star'/> " + user.csCount +
-            "</a></span> ";
 
-        const userStats = new Combine(["<div id='userstats'>",
+        const userName = new Link(
+            new FixedUiElement(user.name),
+            `https://www.openstreetmap.org/user/${user.name}'`,
+            true);
+
+
+        const csCount =
+            new Link(
+                new Combine([Svg.star_img, "" + user.csCount]),
+                `https://www.openstreetmap.org/user/${user.name}/history`,
+                true);
+
+
+        const userStats = new Combine([
             this._homeButton,
             settings,
             messageSpan,
             csCount,
             this._logout,
-            this._languagePicker,
-            "</div>"]).Render();
+            this._languagePicker])
+            .SetClass("userstats")
 
-        return userIcon + "<div id='usertext'>" + userName + userStats + "</div>";
+        const usertext = new Combine([
+            userName,
+            dryrun,
+            userStats
+        ]).SetClass("usertext")
+
+        return new Combine([
+            userIcon,
+            usertext,
+        ]).Render()
 
     }
 

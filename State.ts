@@ -109,9 +109,9 @@ export default class State {
      * The location as delivered by the GPS
      */
     public currentGPSLocation: UIEventSource<{
-        latlng: {lat:number, lon:number},
+        latlng: {lat:number, lng:number},
         accuracy: number
-    }> = new UIEventSource<{ latlng: {lat:number, lon:number}, accuracy: number }>(undefined);
+    }> = new UIEventSource<{ latlng: {lat:number, lng:number}, accuracy: number }>(undefined);
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: Layout; definition: string }[]>;
 

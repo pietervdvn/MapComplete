@@ -268,7 +268,7 @@ export class InitUiElements {
         }
 
         const tabs = [
-            {header: Img.AsImageElement(layoutToUse.icon), content: welcome},
+            {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {header: `<img src='./assets/osm-logo.svg'>`, content: 
                 Translations.t.general.openStreetMapIntro},
 
