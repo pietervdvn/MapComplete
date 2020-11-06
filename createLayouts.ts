@@ -1,7 +1,9 @@
+import {Img} from "./UI/Img"
+
+Img.runningFromConsole = true;
 import {UIElement} from "./UI/UIElement";
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
-
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
@@ -82,7 +84,7 @@ function generateWikiEntry(layout: Layout){
     if(layout.maintainer !== "" && layout.maintainer !== "MapComplete"){
         auth=`Yes, by ${layout.maintainer};`
     }
-   return `{{service_item
+    return `{{service_item
 |name= [https://pietervdvn.github.io/MapComplete/${layout.id}.html ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
@@ -95,15 +97,14 @@ function generateWikiEntry(layout: Layout){
 
 const alreadyWritten = []
 
-function createIcon(iconPath: string, size: number) {
-
+function createIcon(iconPath: string, size: number, layout: Layout) {
     let name = iconPath.split(".").slice(0, -1).join(".");
-    if(name.startsWith("./")){
+    if (name.startsWith("./")) {
         name = name.substr(2)
     }
     const newname = `${name}${size}.png`
-        .replace(/\//g,"_")
-        .replace("assets_","assets/generated/");
+        .replace(/\//g, "_")
+        .replace("assets_", "assets/generated/");
 
     if (alreadyWritten.indexOf(newname) >= 0) {
         return newname;
@@ -119,7 +120,7 @@ function createIcon(iconPath: string, size: number) {
     try {
         console.log("Creating icon ", name, newname)
         // We already read to file, in order to crash here if the file is not found
-        readFileSync(iconPath); 
+        readFileSync(iconPath);
         svg2img(iconPath,
             // @ts-ignore
             {width: size, height: size, preserveAspectRatio: true})
@@ -143,11 +144,21 @@ function createManifest(layout: Layout, relativePath: string) {
     const icons = [];
 
     let icon = layout.icon;
-    if (icon.endsWith(".svg")) {
+    if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
         // This is an svg. Lets create the needed pngs!
+        
+        let path = layout.icon;
+        if (layout.icon.startsWith("<")) {
+            // THis is already the svg
+            path = "./assets/generated/" + layout.id + "_logo.svg"
+            writeFileSync(path, layout.icon)
+        }
+        
+        
+        
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
-            const name = createIcon(icon, size);
+            const name = createIcon(path, size, layout);
             icons.push({
                 src: name,
                 sizes: size + "x" + size,
@@ -155,12 +166,12 @@ function createManifest(layout: Layout, relativePath: string) {
             })
         }
         icons.push({
-            src: icon,
+            src: path,
             sizes: "513x513",
             type: "image/svg"
         })
     } else {
-
+        console.log(icon)
         throw "Icon is not an svg for " + layout.id
     }
     const ogTitle = Translations.W(layout.title).InnerRender();
@@ -198,6 +209,13 @@ function createLandingPage(layout: Layout) {
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
+    let icon = layout.icon;
+    if (icon.startsWith("<?xml") || icon.startsWith("<svg")) {
+        // This already is an svg
+        icon = `./assets/generated/${layout.id}_icon.svg`
+        writeFileSync(icon, layout.icon);
+    }
+
     let output = template
         .replace(`./manifest.manifest`, `./${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
@@ -205,12 +223,12 @@ function createLandingPage(layout: Layout) {
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
         .replace("<!-- $$$CUSTOM-CSS -->", customCss)
         .replace(`<link rel="icon" href="assets/add.svg" sizes="any" type="image/svg+xml">`,
-            `<link rel="icon" href="${layout.icon}" sizes="any" type="image/svg+xml">`);
+            `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`);
 
     try {
         output = output
-            .replace(/<!-- DECORATION 0 START -->.*<!-- DECORATION 0 END -->/s, `<img src='${layout.icon}' width="100%" height="100%">`)
-            .replace(/<!-- DECORATION 1 START -->.*<!-- DECORATION 1 END -->/s, `<img src='${layout.icon}' width="100%" height="100%">`);
+            .replace(/<!-- DECORATION 0 START -->.*<!-- DECORATION 0 END -->/s, `<img src='${icon}' width="100%" height="100%">`)
+            .replace(/<!-- DECORATION 1 START -->.*<!-- DECORATION 1 END -->/s, `<img src='${icon}' width="100%" height="100%">`);
     } catch (e) {
         console.warn("Error while applying logo: ", e)
     }
@@ -244,7 +262,7 @@ for (const layoutName in all) {
 
     const landing = createLandingPage(layout);
     writeFile(enc(layout.id) + ".html", landing, err)
-    
+
     wikiPage += "\n"+generateWikiEntry(layout);
 }
 

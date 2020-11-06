@@ -12,6 +12,7 @@
 }
 
 .prev-button {
+    display: block;
     background-color: black;
     opacity: 0.3;
     width: 4.0em;
@@ -31,6 +32,7 @@
 
 
 .next-button {
+    display: block;
     background-color: black;
     opacity: 0.3;
     width: 4.0em;

@@ -5,6 +5,7 @@ import Combine from "../../Base/Combine";
 import {Utils} from "../../../Utils";
 import {FixedUiElement} from "../../Base/FixedUiElement";
 import {VariableUiElement} from "../../Base/VariableUIElement";
+import Svg from "../../../Svg";
 
 /**
  * A single opening hours range, shown on top of the OH-picker table
@@ -28,7 +29,8 @@ export default class OpeningHoursRange extends UIElement {
             self.InnerUpdate(el);
         })
 
-        this._deleteRange = new FixedUiElement("<img src='./assets/delete.svg'>")
+        this._deleteRange = 
+            Svg.delete_icon_ui()
             .SetClass("oh-delete-range")
             .onClick(() => {
                 oh.data.weekday = undefined;

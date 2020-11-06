@@ -80,7 +80,8 @@ export class MultiInput<T> extends InputElement<T[]> {
                     self._value.ping();
                 });
 
-            const moveDownBtn = new FixedUiElement("<img src='./assets/down.svg' style='max-width: 1.5em; margin-left: 5px;'>")
+            const moveDownBtn = 
+                Svg.down_ui().SetStyle('max-width: 1.5em; margin-left: 5px;display:block;')
                 .onClick(() => {
                     const v = self._value.data[i];
                     self._value.data[i] = self._value.data[i + 1];
@@ -98,7 +99,8 @@ export class MultiInput<T> extends InputElement<T[]> {
             }
 
 
-            const deleteBtn = new FixedUiElement("<img src='./assets/delete.svg' style='max-width: 1.5em;width:1.5em; margin-left: 5px;'>")
+            const deleteBtn =
+                Svg.delete_icon_ui().SetStyle('max-width: 1.5em;width:1.5em; margin-left: 5px;')
                 .onClick(() => {
                     self._value.data.splice(i, 1);
                     self._value.ping();

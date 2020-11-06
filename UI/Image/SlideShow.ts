@@ -1,7 +1,7 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Combine from "../Base/Combine";
+import Svg from "../../Svg";
 
 export class SlideShow extends UIElement {
 
@@ -25,18 +25,17 @@ export class SlideShow extends UIElement {
 
         this.dumbMode = false;
         const self = this;
-        this._prev = new FixedUiElement("<div class='prev-button'>" +
-            "<div class='vspan'></div>" +
-            "<img src='assets/arrow-left-smooth.svg' alt='Prev'/>" +
-            "</div>")
+        this._prev = new Combine([
+            "<div class='vspan'></div>",
+            Svg.arrow_left_smooth_img]).SetStyle("prev-button")
             .onClick(() => {
                 const current = self._currentSlide.data;
                 self.MoveTo(current - 1);
             });
-        this._next = new FixedUiElement("<div class='next-button'>" +
-            "<div class='vspan'></div>" +
-            "<img src='assets/arrow-right-smooth.svg' alt='Next'/>" +
-            "</div>")
+        this._next = new Combine([
+            "<div class='vspan'></div>",
+            Svg.arrow_right_smooth_img])
+            .SetClass("next-button")
             .onClick(() => {
                 const current = self._currentSlide.data;
                 self.MoveTo(current + 1);
