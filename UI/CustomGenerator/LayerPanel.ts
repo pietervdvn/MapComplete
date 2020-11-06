@@ -20,8 +20,7 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
-import {TagRendering} from "../Popup/TagRendering";
-import {Utils} from "../../Utils";
+import Svg from "../../Svg";
 
 /**
  * Shows the configuration for a single layer
@@ -51,7 +50,7 @@ export default class LayerPanel extends UIElement {
         this.mapRendering = this.setupRenderOptions(config, languages, index, currentlySelected, userDetails);
 
         const actualDeleteButton = new SubtleButton(
-            "./assets/delete.svg",
+            Svg.delete_icon_ui(),
             "Yes, delete this layer"
         ).onClick(() => {
             config.data.layers.splice(index, 1);
@@ -63,7 +62,7 @@ export default class LayerPanel extends UIElement {
                 [
                     "<h3>Confirm layer deletion</h3>",
                     new SubtleButton(
-                        "./assets/close.svg",
+                        Svg.close_ui(),
                         "No, don't delete"
                     ),
                     "<span class='alert'>Deleting a layer can not be undone!</span>",
@@ -71,7 +70,7 @@ export default class LayerPanel extends UIElement {
                 ]
             ),
             new SubtleButton(
-                "./assets/delete.svg",
+                Svg.delete_icon_ui(),
                 "Remove this layer"
             )
         )

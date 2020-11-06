@@ -1,6 +1,8 @@
 import * as L from "leaflet";
 import {UIElement} from "../../UI/UIElement";
 import State from "../../State";
+import {Img} from "../../UI/Img";
+import Svg from "../../Svg";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -33,7 +35,7 @@ export class StrayClickHandler {
             }
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
                 icon: L.icon({
-                    iconUrl: "./assets/add.svg",
+                    iconUrl: Img.AsData(Svg.add),
                     iconSize: [50, 50],
                     iconAnchor: [25, 50],
                     popupAnchor: [0, -45]

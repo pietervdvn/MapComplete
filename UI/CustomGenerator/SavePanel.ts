@@ -7,6 +7,7 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {TextField} from "../Input/TextField";
 import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
 
 export default class SavePanel extends UIElement {
     private json: UIElement;
@@ -39,7 +40,7 @@ export default class SavePanel extends UIElement {
             textAreaRows: 20
         });
         this.json = jsonTextField;
-        this.loadFromJson = new SubtleButton("./assets/reload.svg", "<b>Load the JSON file below</b>")
+        this.loadFromJson = new SubtleButton(Svg.reload_ui(), "<b>Load the JSON file below</b>")
             .onClick(() => {
                 try{
                     const json = jsonTextField.GetValue().data;

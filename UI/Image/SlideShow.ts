@@ -27,7 +27,8 @@ export class SlideShow extends UIElement {
         const self = this;
         this._prev = new Combine([
             "<div class='vspan'></div>",
-            Svg.arrow_left_smooth_img]).SetStyle("prev-button")
+            Svg.arrow_left_smooth_img])
+            .SetClass("prev-button")
             .onClick(() => {
                 const current = self._currentSlide.data;
                 self.MoveTo(current - 1);
@@ -64,11 +65,12 @@ export class SlideShow extends UIElement {
             }
             slides += "      <div class=\"slide " + state + "\">" + embeddedElement.Render() + "</div>\n";
         }
-        return new Combine(["<div class='image-slideshow'>"
-            , this._prev
+        return new Combine([
+             this._prev
             , "<div class='slides'>", slides, "</div>"
-            , this._next
-            , "</div>"]).Render();
+            , this._next])
+            .SetClass('image-slideshow')
+            .Render();
     }
 
     public MoveTo(index: number) {

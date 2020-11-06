@@ -5,6 +5,7 @@ import CheckBox from "../Input/CheckBox";
 import Combine from "../Base/Combine";
 import State from "../../State";
 import {Tag} from "../../Logic/Tags";
+import Svg from "../../Svg";
 
 
 export default class DeleteImage extends UIElement {
@@ -35,7 +36,7 @@ export default class DeleteImage extends UIElement {
                 cancelButton
                 
             ]).SetStyle("display:flex;flex-direction:column;"),
-            "<img src='./assets/delete.svg' style='width:1.5em;'>"
+            Svg.delete_icon_ui().SetStyle('width:1.5em;display:block;padding-left: calc(50% - 0.75em);')
         )
 
     }

@@ -34,8 +34,8 @@ export class ShareScreen extends UIElement {
         const optionParts: (UIEventSource<string>)[] = [];
 
         const includeLocation = new CheckBox(
-            new Combine([Img.checkmark, tr.fsIncludeCurrentLocation]),
-            new Combine([Img.no_checkmark, tr.fsIncludeCurrentLocation]),
+            new Combine([Svg.checkmark, tr.fsIncludeCurrentLocation]),
+            new Combine([Svg.no_checkmark, tr.fsIncludeCurrentLocation]),
             true
         )
         optionCheckboxes.push(includeLocation);
@@ -69,8 +69,8 @@ export class ShareScreen extends UIElement {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
             }));
             const includeCurrentBackground = new CheckBox(
-                new Combine([Img.checkmark, currentBackground]),
-                new Combine([Img.no_checkmark, currentBackground]),
+                new Combine([Svg.checkmark, currentBackground]),
+                new Combine([Svg.no_checkmark, currentBackground]),
                 true
             )
             optionCheckboxes.push(includeCurrentBackground);
@@ -84,8 +84,8 @@ export class ShareScreen extends UIElement {
 
 
             const includeLayerChoices = new CheckBox(
-                new Combine([Img.checkmark, tr.fsIncludeCurrentLayers]),
-                new Combine([Img.no_checkmark, tr.fsIncludeCurrentLayers]),
+                new Combine([Svg.checkmark, tr.fsIncludeCurrentLayers]),
+                new Combine([Svg.no_checkmark, tr.fsIncludeCurrentLayers]),
                 true
             )
             optionCheckboxes.push(includeLayerChoices);
@@ -114,8 +114,8 @@ export class ShareScreen extends UIElement {
         for (const swtch of switches) {
 
             const checkbox = new CheckBox(
-                new Combine([Img.checkmark, Translations.W(swtch.human)]),
-                new Combine([Img.no_checkmark, Translations.W(swtch.human)]), !swtch.reverse
+                new Combine([Svg.checkmark, Translations.W(swtch.human)]),
+                new Combine([Svg.no_checkmark, Translations.W(swtch.human)]), !swtch.reverse
             );
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
@@ -187,7 +187,7 @@ export class ShareScreen extends UIElement {
                                 return "";
                             }
 
-                            return new SubtleButton(Img.AsData(Svg.pencil),
+                            return new SubtleButton(Svg.pencil_ui(),
                                 new Combine([tr.editThisTheme.SetClass("bold"), "<br/>",
                                     tr.editThemeDescription]),
                                 {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true}).Render();

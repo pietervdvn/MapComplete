@@ -8,6 +8,7 @@ import {Imgur} from "../../Logic/Web/Imgur";
 import {DropDown} from "../Input/DropDown";
 import {Tag} from "../../Logic/Tags";
 import Translations from "../i18n/Translations";
+import Svg from "../../Svg";
 
 export class ImageUploadFlow extends UIElement {
     private readonly _licensePicker: UIElement;
@@ -96,7 +97,7 @@ export class ImageUploadFlow extends UIElement {
         ]);
 
         const label = new Combine([
-            "<img style='width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;'  src='./assets/camera-plus.svg'/> ",
+            Svg.camera_plus_ui().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
             Translations.t.image.addPicture
                 .SetStyle("width:max-content;font-size: 28px;" +
                     "font-weight: bold;" +

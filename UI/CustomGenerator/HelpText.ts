@@ -4,6 +4,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {SubtleButton} from "../Base/SubtleButton";
 import Combine from "../Base/Combine";
 import SingleSetting from "./SingleSetting";
+import Svg from "../../Svg";
 
 export default class HelpText extends UIElement {
 
@@ -12,7 +13,7 @@ export default class HelpText extends UIElement {
 
     constructor(currentSetting: UIEventSource<SingleSetting<any>>) {
         super();
-        this.returnButton = new SubtleButton("./assets/close.svg",
+        this.returnButton = new SubtleButton(Svg.close_ui(),
             new VariableUiElement(
                 currentSetting.map(currentSetting => {
                         if (currentSetting === undefined) {

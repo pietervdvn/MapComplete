@@ -5,6 +5,8 @@ import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {Layout} from "../../Customizations/Layout";
 import {ElementStorage} from "../ElementStorage";
+import {Img} from "../../UI/Img";
+import Svg from "../../Svg";
 
 export class UserDetails {
 
@@ -157,7 +159,7 @@ export class OsmConnection {
             if (imgEl !== undefined && imgEl[0] !== undefined) {
                 data.img = imgEl[0].getAttribute("href");
             }
-            data.img = data.img ?? "./assets/osm-logo.svg";
+            data.img = data.img ?? Img.AsData(Svg.osm_logo);
 
             const homeEl = userInfo.getElementsByTagName("home");
             if (homeEl !== undefined && homeEl[0] !== undefined) {

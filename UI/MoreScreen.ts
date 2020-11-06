@@ -79,8 +79,7 @@ export class MoreScreen extends UIElement {
                 if (userDetails.csCount < State.userJourney.themeGeneratorReadOnlyUnlock) {
                     return tr.requestATheme.Render();
                 }
-                return new SubtleButton(
-                    Img.AsData(Svg.pencil), tr.createYourOwnTheme, {
+                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
                     url: "./customGenerator.html",
                     newTab: false
                 }).Render();

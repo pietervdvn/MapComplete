@@ -30,7 +30,7 @@ export class SimpleAddUI extends UIElement {
     private confirmButton: UIElement = undefined;
     private openLayerControl: UIElement;
     private cancelButton: UIElement;
-    private goToInboxButton: UIElement = new SubtleButton(Img.AsData(Svg.envelope), 
+    private goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(), 
         Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor() {
@@ -97,15 +97,13 @@ export class SimpleAddUI extends UIElement {
             }
         }
 
-        this.cancelButton = new SubtleButton(
-            Img.AsData(Svg.close),
+        this.cancelButton = new SubtleButton(Svg.close_ui(),
             Translations.t.general.cancel
         ).onClick(() => {
             self._confirmPreset.setData(undefined);
         })
 
-        this.openLayerControl = new SubtleButton(
-            Img.AsData(Svg.layers),
+        this.openLayerControl = new SubtleButton(Svg.layers_ui(),
             Translations.t.general.add.openLayerControl
         ).onClick(() => {
             State.state.layerControlIsOpened.setData(true);

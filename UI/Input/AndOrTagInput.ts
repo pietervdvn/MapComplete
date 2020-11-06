@@ -7,7 +7,6 @@ import CheckBox from "./CheckBox";
 import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import {MultiTagInput} from "./MultiTagInput";
 import Svg from "../../Svg";
-import {Img} from "../Img";
 
 class AndOrConfig implements AndOrTagConfigJson {
     public and: (string | AndOrTagConfigJson)[] = undefined;
@@ -32,13 +31,13 @@ export default class AndOrTagInput extends InputElement<AndOrTagConfigJson> {
         super();
         const self = this;
         this._isAndButton = new CheckBox(
-            new SubtleButton(Img.AsData(Svg.ampersand), null).SetClass("small-button"),
-            new SubtleButton(Img.AsData(Svg.or), null).SetClass("small-button"),
+            new SubtleButton(Svg.ampersand_ui(), null).SetClass("small-button"),
+            new SubtleButton(Svg.or_ui(), null).SetClass("small-button"),
             this._isAnd);
 
 
         this._addBlock =
-            new SubtleButton(Img.AsData(Svg.addSmall), "Add an and/or-expression")
+            new SubtleButton(Svg.addSmall_ui(), "Add an and/or-expression")
                 .SetClass("small-button")
                 .onClick(() => {self.createNewBlock()});
 
@@ -65,7 +64,7 @@ export default class AndOrTagInput extends InputElement<AndOrTagConfigJson> {
 
     private createDeleteButton(elementId: string): UIElement {
         const self = this;
-        return new SubtleButton(Img.AsData(Svg.delete_icon), null).SetClass("small-button")
+        return new SubtleButton(Svg.delete_icon_ui(), null).SetClass("small-button")
             .onClick(() => {
                 for (let i = 0; i < self._subAndOrs.length; i++) {
                     if (self._subAndOrs[i].id === elementId) {

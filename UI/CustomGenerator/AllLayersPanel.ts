@@ -11,9 +11,10 @@ import {MultiInput} from "../Input/MultiInput";
 import TagRenderingPanel from "./TagRenderingPanel";
 import SingleSetting from "./SingleSetting";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import AvailableBaseLayers from "../../Logic/AvailableBaseLayers";
 import {DropDown} from "../Input/DropDown";
+import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
+import Svg from "../../Svg";
 
 export default class AllLayersPanel extends UIElement {
 
@@ -67,27 +68,26 @@ export default class AllLayersPanel extends UIElement {
                     const layer = config.layers[i];
                     if (typeof layer !== "string") {
                         try {
-                            const iconTagRendering = FromJSON.TagRendering(layer.icon, "icon");
-                            const icon = iconTagRendering.GetContent({"id": "node/-1"}).txt;
+                            const iconTagRendering = new TagRenderingConfig(layer.icon, "icon")
+                            const icon = iconTagRendering.GetRenderValue({"id": "node/-1"}).txt;
                             return `<img src='${icon}'>`
                         } catch (e) {
-                            return "<img src='./assets/bug.svg'>"
+                            return Svg.bug_img
                             // Nothing to do here
                         }
                     }
-                    return "<img src='./assets/help.svg'>"
-
+                    return Svg.help_img;
                 })),
                 content: new LayerPanelWithPreview(this._config, this.languages, i, userDetails)
             });
         }
         tabs.push({
-            header: "<img src='./assets/layersAdd.svg'>",
+            header: Svg.layersAdd_img,
             content: new Combine([
                     "<h2>Layer editor</h2>",
                     "In this tab page, you can add and edit the layers of the theme. Click the layers above or add a new layer to get started.",
                     new SubtleButton(
-                        "./assets/layersAdd.svg",
+                        Svg.layersAdd_ui(),
                         "Add a new layer"
                     ).onClick(() => {
                         self._config.data.layers.push(GenerateEmpty.createEmptyLayer())

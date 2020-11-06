@@ -16,6 +16,7 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import HelpText from "./HelpText";
+import Svg from "../../Svg";
 
 
 export default class CustomGeneratorPanel extends UIElement {
@@ -66,7 +67,7 @@ export default class CustomGeneratorPanel extends UIElement {
         ]).SetClass("preview")
         this.mainPanel = new TabbedComponent([
             {
-                header: "<img src='./assets/gear.svg'>",
+                header: Svg.gear_img,
                 content:
                     new PageSplit(
                         generalSettings.SetStyle("width: 50vw;"),
@@ -77,16 +78,16 @@ export default class CustomGeneratorPanel extends UIElement {
                     )
             },
             {
-                header: "<img src='./assets/layers.svg'>",
+                header: Svg.layers_img,
                 content: new AllLayersPanel(es, languages, userDetails)
             },
             {
-                header: "<img src='./assets/floppy.svg'>",
+                header: Svg.floppy_img,
                 content: new SavePanel(this.connection, es, chronic)
 
             },
             {
-                header: "<img src='./assets/share.svg'>",
+                header:Svg.share_img,
                 content: new SharePanel(es, liveUrl, userDetails)
             }
         ])

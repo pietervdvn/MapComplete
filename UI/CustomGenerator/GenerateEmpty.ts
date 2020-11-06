@@ -14,7 +14,7 @@ export class GenerateEmpty {
             tagRenderings: [],
             hideUnderlayingFeaturesMinPercentage: 0,
             icon: {
-                render: "./assets/bug.svg"
+                render: "./assets/svg/bug.svg"
             },
             width: {
                 render: "8"
@@ -36,7 +36,7 @@ export class GenerateEmpty {
             description: {},
             language: [],
             maintainer: "",
-            icon: "./assets/bug.svg",
+            icon: "./assets/svg/bug.svg",
             version: "0",
             startLat: 0,
             startLon: 0,
@@ -58,7 +58,7 @@ export class GenerateEmpty {
             description: {"en": "A layout for testing"},
             language: ["en"],
             maintainer: "Pieter Vander Vennet",
-            icon: "./assets/bug.svg",
+            icon: "./assets/svg/bug.svg",
             version: "0",
             startLat: 0,
             startLon: 0,
@@ -72,7 +72,7 @@ export class GenerateEmpty {
                 overpassTags: {and: ["highway=residential"]},
                 title: {},
                 description: {"en": "Some Description"},
-                icon: {render: {en: "./assets/pencil.svg"}},
+                icon: {render: {en: "./assets/svg/pencil.svg"}},
                 width: {render: {en: "5"}},
                 tagRenderings: [{
                     render: {"en":"Test Rendering"}

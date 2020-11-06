@@ -6,6 +6,8 @@ import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
+import {Img} from "../../UI/Img";
+import Svg from "../../Svg";
 
 export default class LayerConfig {
     id: string;
@@ -106,7 +108,7 @@ export default class LayerConfig {
 
 
         this.title = tr("title", "");
-        this.icon = tr("icon", "./assets/bug.svg");
+        this.icon = tr("icon", Img.AsData(Svg.bug));
         this.iconSize = tr("iconSize", "40,40,center");
         this.color = tr("color", "#0000ff");
         this.width = tr("width", "7");

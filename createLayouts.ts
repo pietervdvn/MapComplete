@@ -222,7 +222,7 @@ function createLandingPage(layout: Layout) {
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
         .replace("<!-- $$$CUSTOM-CSS -->", customCss)
-        .replace(`<link rel="icon" href="assets/add.svg" sizes="any" type="image/svg+xml">`,
+        .replace(`<link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">`,
             `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`);
 
     try {
