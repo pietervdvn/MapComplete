@@ -205,7 +205,7 @@ function createLandingPage(layout: Layout) {
     }
 
     const og = `
-    <meta property="og:image" content="${ogImage ?? './assets/add.svg'}">
+    <meta property="og:image" content="${ogImage ?? './assets/svg/add.svg'}">
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
