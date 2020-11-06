@@ -1,8 +1,8 @@
 import {AndOrTagConfigJson} from "./TagConfigJson";
 import {And, Or, RegexTag, Tag, TagsFilter} from "../../Logic/Tags";
-import {Translation} from "../../UI/i18n/Translations";
 
 import {Utils} from "../../Utils";
+import {Translation} from "../../UI/i18n/Translation";
 
 export class FromJSON {
 

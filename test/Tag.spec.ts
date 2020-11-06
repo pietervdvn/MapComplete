@@ -6,7 +6,7 @@ import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
 import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
-import Translations, {Translation} from "../UI/i18n/Translations";
+import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {OH, OpeningHour} from "../Logic/OpeningHours";
 import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
@@ -14,6 +14,7 @@ import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
 import {Utils} from "../Utils";
+import {Translation} from "../UI/i18n/Translation";
 
 
 

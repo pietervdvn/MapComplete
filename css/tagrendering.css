@@ -109,3 +109,13 @@ input:checked + label .question-option-with-border {
     font-weight: bold;
     border-radius: 1.5em;
 }
+
+.edit-button img {
+    width: 1.3em;
+    height: 1.3em;
+    padding: 0.5em;
+    border-radius: 0.65em;
+    border: solid black 1px;
+    font-size: medium;
+    float: right;
+}

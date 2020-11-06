@@ -2,11 +2,13 @@ import {UIElement} from "../UI/UIElement";
 import Translations from "../UI/i18n/Translations";
 import Combine from "../UI/Base/Combine";
 import State from "../State";
-import {Translation} from "../UI/i18n/Translations";
 import LayerConfig from "./JSON/LayerConfig";
 import {LayoutConfigJson} from "./JSON/LayoutConfigJson";
 import TagRenderingConfig from "./JSON/TagRenderingConfig";
 import {FromJSON} from "./JSON/FromJSON";
+import {Translation} from "../UI/i18n/Translation";
+import Svg from "../Svg";
+import {Img} from "../UI/Img";
 
 /**
  * A layout is a collection of settings of the global view (thus: welcome text, title, selection of layers).
@@ -14,7 +16,7 @@ import {FromJSON} from "./JSON/FromJSON";
 export class Layout {
 
     public id: string;
-    public icon: string = "./assets/logo.svg";
+    public icon: string = Img.AsData(Svg.bug);
     public title: UIElement;
     public maintainer: string;
     public version: string;

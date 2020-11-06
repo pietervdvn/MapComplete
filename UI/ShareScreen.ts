@@ -11,9 +11,10 @@ import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
-import Translation from "./i18n/Translation";
 import {SubtleButton} from "./Base/SubtleButton";
 import {Layout} from "../Customizations/Layout";
+import Svg from "../Svg";
+import {Translation} from "./i18n/Translation";
 
 export class ShareScreen extends UIElement {
     private readonly _options: UIElement;
@@ -186,7 +187,7 @@ export class ShareScreen extends UIElement {
                                 return "";
                             }
 
-                            return new SubtleButton("./assets/pencil.svg",
+                            return new SubtleButton(Img.AsData(Svg.pencil),
                                 new Combine([tr.editThisTheme.SetClass("bold"), "<br/>",
                                     tr.editThemeDescription]),
                                 {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true}).Render();

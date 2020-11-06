@@ -3,6 +3,7 @@ import Locale from "../UI/i18n/Locale";
 import State from "../State";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
+import LanguagePicker from "./LanguagePicker";
 
 
 export class WelcomeMessage extends UIElement {
@@ -17,7 +18,7 @@ export class WelcomeMessage extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this.ListenTo(Locale.language);
-        this.languagePicker = Locale.CreateLanguagePicker(State.state.layoutToUse.data.supportedLanguages, Translations.t.general.pickLanguage);
+        this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.supportedLanguages, Translations.t.general.pickLanguage);
         const layout = State.state.layoutToUse.data;
 
         this.description =Translations.W(layout.welcomeMessage);

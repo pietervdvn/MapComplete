@@ -42,7 +42,7 @@ export class FeatureInfoBox extends UIElement {
             new Combine([this._title, this._titleIcons])
                 .SetClass("featureinfobox-titlebar"),
             ...this._renderings,
-            this._questionBox
+            this._questionBox,
         ]).Render();
     }
 

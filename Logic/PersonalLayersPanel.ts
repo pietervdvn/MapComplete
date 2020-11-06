@@ -9,6 +9,8 @@ import {PersonalLayout} from "./PersonalLayout";
 import {Layout} from "../Customizations/Layout";
 import {SubtleButton} from "../UI/Base/SubtleButton";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
+import {Img} from "../UI/Img";
+import Svg from "../Svg";
 
 export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
@@ -50,10 +52,10 @@ export class PersonalLayersPanel extends UIElement {
                 if (typeof layer === "string") {
                     continue;
                 }
-                let icon = layer.icon ?? "./assets/checkmark.svg";
+                let icon = layer.icon ?? Img.AsData(Svg.checkmark);
                 let iconUnset = layer.icon ?? "";
                 if (layer.icon !== undefined && typeof (layer.icon) !== "string") {
-                    icon = layer.icon.GetContent({"id": "node/-123456"}).txt ?? "./assets/checkmark.svg";
+                    icon = layer.icon.GetRenderValue({"id": "node/-123456"}).txt ?? Img.AsData(Svg.checkmark)
                     iconUnset = icon;
                 }
 

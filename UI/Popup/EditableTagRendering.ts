@@ -1,12 +1,12 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
+import Svg from "../../Svg";
 
 export default class EditableTagRendering extends UIElement {
     private _tags: UIEventSource<any>;
@@ -35,9 +35,8 @@ export default class EditableTagRendering extends UIElement {
 
         if (this._configuration.question !== undefined) {
             // 2.3em total width
-            this._editButton = new FixedUiElement(
-                "<img style='width: 1.3em;height: 1.3em;padding: 0.5em;border-radius: 0.65em;border: solid black 1px;font-size: medium;float: right;' " +
-                "src='./assets/pencil.svg' alt='edit'>")
+            this._editButton = 
+                Svg.pencil_ui().SetClass("edit-button")
                 .onClick(() => {
                     self._editMode.setData(true);
                 });

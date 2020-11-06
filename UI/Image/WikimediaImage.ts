@@ -1,6 +1,10 @@
 import {UIElement} from "../UIElement";
 import {LicenseInfo, Wikimedia} from "../../Logic/Web/Wikimedia";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import Svg from "../../Svg";
+import Link from "../Base/Link";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Combine from "../Base/Combine";
 
 
 export class WikimediaImage extends UIElement {
@@ -8,7 +12,7 @@ export class WikimediaImage extends UIElement {
 
     static allLicenseInfos: any = {};
     private readonly _imageMeta: UIEventSource<LicenseInfo>;
-    private readonly _imageLocation : string;
+    private readonly _imageLocation: string;
 
     constructor(source: string) {
         super(undefined)
@@ -33,21 +37,17 @@ export class WikimediaImage extends UIElement {
         let url = Wikimedia.ImageNameToUrl(this._imageLocation, 500, 400);
         url = url.replace(/'/g, '%27');
 
-        const wikimediaLink =
-            "<a href='https://commons.wikimedia.org/wiki/" + this._imageLocation + "' target='_blank'>" +
-            "<img style='width:2em;height: 2em' class='wikimedia-link' src='./assets/wikimedia-commons-white.svg' alt='Wikimedia Commons Logo'/>" +
-            "</a> ";
+        const wikimediaLink = new Link(Svg.wikimedia_commons_white_img,
+            `https://commons.wikimedia.org/wiki/${this._imageLocation}`, true)
+            .SetStyle("width:2em;height: 2em");
 
-        const attribution =
-            "<span class='attribution-author'>" + (this._imageMeta.data.artist ?? "") + "</span>" + " <span class='license'>" + (this._imageMeta.data.licenseShortName ?? "") + "</span>";
+        const attribution = new FixedUiElement(this._imageMeta.data.artist ?? "").SetClass("attribution-author");
+        const license = new FixedUiElement(this._imageMeta.data.licenseShortName ?? "").SetClass("license");
         const image = "<img src='" + url + "' " + "alt='" + this._imageMeta.data.description + "' >";
 
         return "<div class='imgWithAttr'>" +
             image +
-            "<div class='attribution'>" +
-            wikimediaLink +
-            attribution +
-            "</div>" +
+            new Combine([wikimediaLink, attribution]).SetClass("attribution").Render() +
             "</div>";
     }
 

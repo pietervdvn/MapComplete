@@ -5,7 +5,6 @@ import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {InputElement} from "../Input/InputElement";
 import {And, Tag, TagsFilter, TagUtils} from "../../Logic/Tags";
 import ValidatedTextField from "../Input/ValidatedTextField";
-import {Translation} from "../i18n/Translations";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {SubstitutedTranslation} from "../SpecialVisualizations";
 import {RadioButton} from "../Input/RadioButton";
@@ -18,6 +17,7 @@ import {Changes} from "../../Logic/Osm/Changes";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {Translation} from "../i18n/Translation";
 
 /**
  * Shows the question element.

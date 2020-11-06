@@ -10,7 +10,6 @@ import {FilteredLayer} from "./Logic/FilteredLayer";
 import {Basemap} from "./Logic/Leaflet/Basemap";
 import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
-import {Img} from "./UI/Img";
 import {LayerSelection} from "./UI/LayerSelection";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
@@ -35,6 +34,8 @@ import BackgroundSelector from "./UI/BackgroundSelector";
 import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
 import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
 import SharedLayers from "./Customizations/SharedLayers";
+import Svg from "./Svg";
+import Link from "./UI/Base/Link";
 
 export class InitUiElements {
 
@@ -197,9 +198,9 @@ export class InitUiElements {
         if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
             const currentLocation = State.state.locationControl;
             const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`;
-            const content = `<a href='${url}' target='_blank'><span class='iframe-escape'><img src='assets/pop-out.svg'></span></a>`;
-            new FixedUiElement(content).AttachTo("messagesbox");
-            new FixedUiElement(content).AttachTo("help-button-mobile")
+            const content = new Link(Svg.pop_out_ui().SetClass("iframe-escape"), url, true);
+            new FixedUiElement(content.Render()).AttachTo("help-button-mobile")
+            content.AttachTo("messagesbox");
         }
 
 
@@ -269,26 +270,28 @@ export class InitUiElements {
 
         const tabs = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
-            {header: `<img src='./assets/osm-logo.svg'>`, content: 
-                Translations.t.general.openStreetMapIntro},
+            {
+                header: Svg.osm_logo_img,
+                content: Translations.t.general.openStreetMapIntro as UIElement
+            },
 
         ]
 
         if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: `<img src='./assets/share.svg'>`, content: new ShareScreen()});
+            tabs.push({header: Svg.share_img, content: new ShareScreen()});
         }
 
         if (State.state.featureSwitchMoreQuests.data) {
 
             tabs.push({
-                header: `<img src='./assets/add.svg'>`,
+                header: Svg.add_img,
                 content: new MoreScreen()
             });
         }
 
 
         tabs.push({
-                header: `<img src='./assets/help.svg'>`,
+                header: Svg.help_img,
                 content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
                     if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
                         return ""
@@ -309,14 +312,16 @@ export class InitUiElements {
 
         const fullOptions = this.CreateWelcomePane();
 
-        const help = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/help.svg'  alt='help'></div>`);
-        const close = new FixedUiElement(`<div class='collapse-button-img'><img src='assets/close.svg'  alt='close'></div>`);
+        const help = Svg.help_ui().SetClass("open-welcome-button");
+        const close = Svg.close_ui().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
-                "<span class='collapse-button'>", close, "</span>",
-                "<span id='welcomeMessage'>", fullOptions.onClick(() => {
-                }), "</span>"]),
-            new Combine(["<span class='open-button'>", help, "</span>"])
+                close,
+                fullOptions
+                    .SetClass("welcomeMessage")
+                    .onClick(() => {/*Catch the click*/
+                    })]),
+            help
             , true
         ).AttachTo("messagesbox");
         const openedTime = new Date().getTime();
@@ -331,9 +336,13 @@ export class InitUiElements {
 
         const fullOptions2 = this.CreateWelcomePane();
         State.state.fullScreenMessage.setData(fullOptions2)
-        new FixedUiElement(`<div class='collapse-button-img shadow'><img src='assets/help.svg'  alt='help'></div>`).onClick(() => {
-            State.state.fullScreenMessage.setData(fullOptions2)
-        }).AttachTo("help-button-mobile");
+
+        Svg.help_ui()
+            .SetClass("open-welcome-button")
+            .SetClass("shadow")
+            .onClick(() => {
+                State.state.fullScreenMessage.setData(fullOptions2)
+            }).AttachTo("help-button-mobile");
 
 
     }
@@ -366,20 +375,18 @@ export class InitUiElements {
             }
 
             layerControlPanel.SetStyle("display:block;padding:1em;border-radius:1em;");
-            const closeButton = new Combine([Img.openFilterButton])
-                .SetStyle("display:block; width: min-content; background: #e5f5ff;padding:1em; border-radius:1em;");
+            const closeButton = Svg.close_ui().SetClass("layer-selection-toggle").SetStyle("  background: #e5f5ff;")
             const checkbox = new CheckBox(
                 new Combine([
                     closeButton,
                     layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
                     .SetClass("hidden-on-mobile")
                 ,
-                new Combine([Img.closedFilterButton])
-                    .SetStyle("display:block;border-radius:50%;background:white;padding:1em;"),
+                Svg.layers_ui().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
             );
-            checkbox
-                .AttachTo("layer-selection");
+
+            checkbox.AttachTo("layer-selection");
 
 
             State.state.bm.Location.addCallback(() => {
@@ -401,28 +408,27 @@ export class InitUiElements {
 
         });
     }
-    
-    static InitBaseMap(){
-        const bm = new Basemap("leafletDiv", State.state.locationControl, new VariableUiElement(
+
+
+    static CreateAttribution() {
+        return new VariableUiElement(
             State.state.locationControl.map((location) => {
-                const mapComplete = `<a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Mapcomplete ${State.vNumber}</a>`
-                const reportBug = `<a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'><img src='./assets/bug.svg' class='small-userbadge-icon'></a>`;
-               
+                const mapComplete = new Link(`Mapcomplete ${State.vNumber}`, 'https://github.com/pietervdvn/MapComplete', true);
+                const reportBug = new Link(Svg.bug_img, "https://github.com/pietervdvn/MapComplete/issues", true);
+
                 const layoutId = State.state.layoutToUse.data.id;
                 const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
-                const stats = `<a href='${osmChaLink}' target='_blank'><img src='./assets/statistics.svg' class='small-userbadge-icon'></a>`;
-                let editHere = "";
+                const stats = new Link(Svg.statistics_img, osmChaLink, true)
+                let editHere: (UIElement | string) = "";
                 if (location !== undefined) {
-                    editHere =
-                        "<a href='https://www.openstreetmap.org/edit?editor=id#map=" + location.zoom + "/" + location.lat + "/" + location.lon + "' target='_blank'>" +
-                        "<img src='./assets/pencil.svg' alt='edit here' class='small-userbadge-icon'>" +
-                        "</a>"
+                    const idLink = `https://www.openstreetmap.org/edit?editor=id#map=${location.zoom}/${location.lat}/${location.lon}`
+                    editHere = new Link(Svg.pencil_img, idLink, true);
                 }
-                let editWithJosm = ""
-                if(location !== undefined &&
+                let editWithJosm: (UIElement | string) = ""
+                if (location !== undefined &&
                     State.state.osmConnection !== undefined &&
                     State.state.bm !== undefined &&
-                    State.state.osmConnection.userDetails.data.csCount >= State.userJourney.tagsVisibleAndWikiLinked){
+                    State.state.osmConnection.userDetails.data.csCount >= State.userJourney.tagsVisibleAndWikiLinked) {
                     const bounds = (State.state.bm as Basemap).map.getBounds();
                     const top = bounds.getNorth();
                     const bottom = bounds.getSouth();
@@ -430,21 +436,24 @@ export class InitUiElements {
                     const left = bounds.getWest();
 
                     const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
-                    editWithJosm =
-                        `<a href='${josmLink}' target='_blank'><img src='./assets/josm_logo.svg' alt='edit here' class='small-userbadge-icon'></a>`
+                    editWithJosm = new Link(Svg.josm_logo_img, josmLink, true);
                 }
                 return new Combine([mapComplete, reportBug, " | ", stats, " | ", editHere, editWithJosm]).Render();
 
             }, [State.state.osmConnection.userDetails])
-            )
-        );
+                
+        ).SetClass("map-attribution")
+    }
+
+    static InitBaseMap() {
+        const bm = new Basemap("leafletDiv", State.state.locationControl, this.CreateAttribution());
         State.state.bm = bm;
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
 
-        queryParam.addCallbackAndRun((selectedId:string) => {
+        queryParam.addCallbackAndRun((selectedId: string) => {
             const available = State.state.availableBackgroundLayers.data;
             for (const layer of available) {
                 if (layer.id === selectedId) {

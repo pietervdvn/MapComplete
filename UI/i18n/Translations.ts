@@ -1,110 +1,7 @@
 import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import Combine from "../Base/Combine";
-import Locale from "./Locale";
-import {Utils} from "../../Utils";
-import * as TranslationsJson from "../../assets/translations.json"
-
-export class Translation extends UIElement {
-
-    private static forcedLanguage = undefined;
-
-    public Subs(text: any): Translation {
-        const newTranslations = {};
-        for (const lang in this.translations) {
-            let template: string = this.translations[lang];
-            for (const k in text) {
-                const combined = [];
-                const parts = template.split("{" + k + "}");
-                const el: string | UIElement = text[k];
-                if (el === undefined) {
-                    continue;
-                }
-                let rtext: string = "";
-                if (typeof (el) === "string") {
-                    rtext = el;
-                } else {
-                    Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
-                    rtext = el.InnerRender();
-                }
-                for (let i = 0; i < parts.length - 1; i++) {
-                    combined.push(parts[i]);
-                    combined.push(rtext)
-                }
-                combined.push(parts[parts.length - 1]);
-                template = new Combine(combined).InnerRender();
-            }
-            newTranslations[lang] = template;
-        }
-        Translation.forcedLanguage = undefined;
-        return new Translation(newTranslations);
-
-    }
-
-
-
-
-    get txt(): string {
-        if (this.translations["*"]) {
-            return this.translations["*"];
-        }
-        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
-        if (txt !== undefined) {
-            return txt;
-        }
-        const en = this.translations["en"];
-        if (en !== undefined) {
-            return en;
-        }
-        for (const i in this.translations) {
-            return this.translations[i]; // Return a random language
-        }
-        console.error("Missing language ",Locale.language.data,"for",this.translations)
-        return undefined;
-    }
-
-
-    InnerRender(): string {
-        return this.txt
-    }
-
-    public readonly translations: object
-
-    constructor(translations: object) {
-        super(Locale.language)
-        let count = 0;
-        for (const translationsKey in translations) {
-            count++;
-        }
-        this.translations = translations
-    }
-
-    public replace(a: string, b: string) {
-        if(a.startsWith("{") && a.endsWith("}")){
-            a = a.substr(1, a.length - 2);
-        }
-        const result= this.Subs({[a]: b});
-        return result;
-    }
-
-    public Clone() {
-        return new Translation(this.translations)
-    }
-
-
-    FirstSentence() {
-
-        const tr = {};
-        for (const lng in this.translations) {
-            let txt = this.translations[lng];
-            txt = txt.replace(/\..*/, "");
-            txt = Utils.EllipsesAfter(txt, 255);
-            tr[lng] = txt;
-        }
-
-        return new Translation(tr);
-    }
-}
+import AllTranslationAssets from "../../AllTranslationAssets";
+import {Translation} from "./Translation";
 
 export default class Translations {
 
@@ -112,7 +9,7 @@ export default class Translations {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
-    static t = TranslationsJson;
+    static t = AllTranslationAssets.t;
 
     private static isTranslation(tr: any): boolean {
         for (const key in tr) {
@@ -122,27 +19,6 @@ export default class Translations {
         }
         return true;
     }
-
-    private static InitT(): boolean {
-        const queue = [Translations.t]
-        while (queue.length > 0) {
-            const tr = queue.pop();
-            const copy = {}
-            for (const subKey in tr) {
-                if (Translations.isTranslation(tr[subKey])) {
-                    copy[subKey] = new Translation(tr[subKey]);
-                } else if(tr[subKey].translations === undefined /**should not be a translation already*/){
-                    queue.push(tr[subKey]);
-                }
-            }
-            for (const subKey in copy) {
-                tr[subKey] = copy[subKey]
-            }
-        }
-        return true;
-    }
-
-    private static isInited = Translations.InitT();
 
 
     public static W(s: string | UIElement): UIElement {

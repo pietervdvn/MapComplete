@@ -1,4 +1,5 @@
 import {UIElement} from "../UIElement";
+import Translations from "../i18n/Translations";
 
 
 export default class Link extends UIElement {
@@ -6,9 +7,9 @@ export default class Link extends UIElement {
     private readonly _target: string;
     private readonly _newTab: string;
 
-    constructor(embeddedShow: UIElement, target: string, newTab: boolean = false) {
+    constructor(embeddedShow: UIElement | string, target: string, newTab: boolean = false) {
         super();
-        this._embeddedShow = embeddedShow;
+        this._embeddedShow = Translations.W(embeddedShow);
         this._target = target;
         this._newTab = "";
         if (newTab) {

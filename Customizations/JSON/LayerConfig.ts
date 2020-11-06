@@ -1,10 +1,11 @@
-import Translations, {Translation} from "../../UI/i18n/Translations";
+import Translations from "../../UI/i18n/Translations";
 import TagRenderingConfig from "./TagRenderingConfig";
 import {Tag, TagsFilter} from "../../Logic/Tags";
 import {LayerConfigJson} from "./LayerConfigJson";
 import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
+import {Translation} from "../../UI/i18n/Translation";
 
 export default class LayerConfig {
     id: string;

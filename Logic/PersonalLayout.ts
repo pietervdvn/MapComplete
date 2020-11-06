@@ -1,5 +1,7 @@
 import {Layout} from "../Customizations/Layout";
 import Translations from "../UI/i18n/Translations";
+import {Img} from "../UI/Img";
+import Svg from "../Svg";
 
 export class PersonalLayout extends Layout {
 
@@ -18,7 +20,7 @@ export class PersonalLayout extends Layout {
         );
         this.maintainer = "MapComplete"
         this.description = "The personal theme allows to select one or more layers from all the layouts, creating a truly personal editor"
-        this.icon = "./assets/add.svg"
+        this.icon = Img.AsData(Svg.add)
     }
 
 }

@@ -53,7 +53,7 @@ export class FilteredLayer {
         this._showOnPopup = showOnPopup;
         this._style = (tags) => {
 
-            const iconUrl = layerDef.icon?.GetRenderValue(tags)?.txt ?? "./assets/bug.svg";
+            const iconUrl = layerDef.icon?.GetRenderValue(tags)?.txt;
             const iconSize = (layerDef.iconSize?.GetRenderValue(tags)?.txt ?? "40,40,center").split(",");
             
             

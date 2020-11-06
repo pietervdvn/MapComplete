@@ -1,30 +1,28 @@
 import Locale from "./i18n/Locale";
 import {UIElement} from "./UIElement";
-import Translation from "./i18n/Translation";
 import {VariableUiElement} from "./Base/VariableUIElement";
-import {FixedUiElement} from "./Base/FixedUiElement";
 import {TextField} from "./Input/TextField";
 import {Geocoding} from "../Logic/Osm/Geocoding";
 import Translations from "./i18n/Translations";
 import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
+import Svg from "../Svg";
+import {Translation} from "./i18n/Translation";
 
 export class SearchAndGo extends UIElement {
 
     private _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
-    private _searchField = new TextField<string>({
+    private _searchField = new TextField({
             placeholder: new VariableUiElement(
                 this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
             ),
-            fromString: str => str,
-            toString: str => str,
         value: new UIEventSource<string>("")
         }
     );
 
     private _foundEntries = new UIEventSource([]);
-    private _goButton = new FixedUiElement("<img class='search-go' src='./assets/search.svg' alt='GO'>");
+    private _goButton = Svg.search_ui().SetClass('search-go');
 
     constructor() {
         super(undefined);

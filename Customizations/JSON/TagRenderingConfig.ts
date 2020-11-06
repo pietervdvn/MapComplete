@@ -1,9 +1,9 @@
-import {Translation} from "../../UI/i18n/Translations";
 import {TagsFilter} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
+import {Translation} from "../../UI/i18n/Translation";
 
 /***
  * The parsed version of TagRenderingConfigJSON

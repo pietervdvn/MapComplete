@@ -8,6 +8,8 @@ import State from "../State";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {PersonalLayout} from "../Logic/PersonalLayout";
 import {Layout} from "../Customizations/Layout";
+import Svg from "../Svg";
+import {Img} from "./Img";
 
 
 export class MoreScreen extends UIElement {
@@ -77,7 +79,8 @@ export class MoreScreen extends UIElement {
                 if (userDetails.csCount < State.userJourney.themeGeneratorReadOnlyUnlock) {
                     return tr.requestATheme.Render();
                 }
-                return new SubtleButton("./assets/pencil.svg", tr.createYourOwnTheme, {
+                return new SubtleButton(
+                    Img.AsData(Svg.pencil), tr.createYourOwnTheme, {
                     url: "./customGenerator.html",
                     newTab: false
                 }).Render();

@@ -42,6 +42,20 @@ body {
     background-color: white;
     border-radius: 1em;
     cursor: pointer;
+    box-shadow: 0 0 10px #00000066;
+}
+
+.layer-selection-toggle {
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.layer-selection-toggle img {
+    display: block;
+    width: 2em;
+    padding: 1em;
 }
 
 /**************** GENERIC ****************/
@@ -158,7 +172,7 @@ body {
     box-sizing: border-box;
 }
 
-.search-go {
+.search-go img {
     position: relative;
     float: right;
     height: 1.2em;
@@ -167,7 +181,6 @@ body {
     padding: 0.4em;
     margin-left: 0.5em;
     margin-right: 0;
-
 }
 
 
@@ -187,69 +200,51 @@ body {
     position: absolute;
     z-index: 5000;
     transition: all 500ms linear;
-    overflow: hidden;
+    overflow-x: hidden;
     pointer-events: none;
     /* Shadow offset */
     padding: 0.5em 10px 0 0.5em;
 }
 
-
-.collapse-button {
-    position: absolute;
-    background-color: #e5f5ff;
-    width: 3.5em;
-    border-top-left-radius: 2em;
-    border-bottom-left-radius: 2em;
-    display: inline-block;
-    height: 100%;
-    box-shadow: -10px 0 10px -10px #0006;
-}
-
-.collapse-button .collapse-button-img {
-    background-color: #e5f5ff;
-}
-
-.open-button {
-    width: 2em;
-    border-top-left-radius: 2em;
-    border-bottom-left-radius: 2em;
-    margin-bottom: 10px;
-}
-
-.open-button .collapse-button-img {
-    border-radius: 50%;
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 1em;
-    background-color: white;
-    box-shadow: 0 0 10px #0006;
-}
-
-.collapse-button-img {
-    border-radius: 50%;
-    box-sizing: border-box;
-    display: inline-block;
-    padding: 1em;
-    background-color: white;
-    box-shadow: none;
-    margin: 0;
-
-}
-
-.collapse-button-img img {
-    width: 1.5em;
-    margin: 0;
-    padding: 0;
-}
-
-#welcomeMessage {
-    display: inline-block;
-    margin-left: 3.5em;
-    border-radius: 0 2em 2em 0;
-    max-width: 40em;
-    width: 45vw;
+.welcomeMessage {
+    display: block;
+    margin-left: 4em;
+    max-width: calc(100vw - 5em);
+    width: 40em;
     max-height: calc(100vh - 15em);
     overflow-y: auto;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.close-welcome-button {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    background-color: #e5f5ff;
+    box-sizing: border-box;
+    width: 4em;
+    padding: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.close-welcome-button img {
+    width: 2em;
+}
+
+.open-welcome-button {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    height: 4em;
+    width: 4em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.open-welcome-button img {
+    width: 2em;
 }
 
 #messagesbox {
@@ -257,6 +252,9 @@ body {
     position: relative;
     padding: 0;
     pointer-events: all;
+    box-shadow: 0 0 10px #00000066;
+    border-radius: 1em;
+    width: min-content
 }
 
 
@@ -309,6 +307,13 @@ body {
 
 }
 
+.attribution img {
+    height: 1.2em !important;
+    padding-right: 0.5em;
+    padding-left: 0.2em;
+
+}
+
 .attribution-author {
     display: inline-block;
 }
@@ -324,6 +329,14 @@ body {
 
 
 /***************** Info box (box containing features and questions ******************/
+
+
+.map-attribution img {
+    width: 1em;
+    height: 1em;
+    fill: black;
+    border-radius: 0;
+}
 
 .leaflet-popup-content {
     width: 40em !important;

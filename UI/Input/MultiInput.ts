@@ -4,6 +4,8 @@ import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Svg from "../../Svg";
+import {Img} from "../Img";
 
 export class MultiInput<T> extends InputElement<T[]> {
 
@@ -28,7 +30,7 @@ export class MultiInput<T> extends InputElement<T[]> {
         this.ListenTo(value.map((latest : T[]) => latest.length));
         this._options = options ?? {};
 
-        this.addTag = new SubtleButton("./assets/addSmall.svg", addAElement)
+        this.addTag = new SubtleButton(Img.AsData(Svg.addSmall), addAElement)
             .SetClass("small-button")
             .onClick(() => {
                 this.IsSelected.setData(true);
@@ -70,7 +72,7 @@ export class MultiInput<T> extends InputElement<T[]> {
             this.inputELements.push(input);
             input.IsSelected.addCallback(() => this.UpdateIsSelected());
 
-            const moveUpBtn = new FixedUiElement("<img src='./assets/up.svg' style='max-width: 1.5em; margin-left: 5px;'>")
+            const moveUpBtn = new FixedUiElement(Img.AsData(Svg.up))
                 .onClick(() => {
                     const v = self._value.data[i];
                     self._value.data[i] = self._value.data[i - 1];

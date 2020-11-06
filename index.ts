@@ -5,7 +5,6 @@ import {InitUiElements} from "./InitUiElements";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
-import {FromJSON} from "./Customizations/JSON/FromJSON";
 import SharedLayers from "./Customizations/SharedLayers";
 
 let defaultLayout = "bookcases"
@@ -15,6 +14,7 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
     // Reload the https version. This is important for the 'locate me' button
     window.location.replace("https://buurtnatuur.be");
 }
+
 
 if (location.href.indexOf("buurtnatuur.be") >= 0) {
     // Reload the https version. This is important for the 'locate me' button

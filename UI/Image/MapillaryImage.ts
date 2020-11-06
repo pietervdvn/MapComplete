@@ -5,6 +5,7 @@ import {Imgur} from "../../Logic/Web/Imgur";
 import {Mapillary} from "../../Logic/Web/Mapillary";
 import {Img} from "../Img";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import Svg from "../../Svg";
 
 
 export class MapillaryImage extends UIElement {
@@ -53,8 +54,7 @@ export class MapillaryImage extends UIElement {
         return "<div class='imgWithAttr'>" +
             image +
             "<div class='attribution'>" +
-
-            new FixedUiElement(Img.mapillaryLogo).SetStyle("height: 1.5em").Render() +
+            Svg.mapillary_ui().Render() +
             attribution +
             "</div>" +
             "</div>";

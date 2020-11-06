@@ -50,12 +50,6 @@
     display: block;
 }
 
-.small-userbadge-icon {
-    width: 1em;
-    height: 1em;
-    fill: black;
-    border-radius: 0;
-}
 
 #profile-pic {
     float: left;

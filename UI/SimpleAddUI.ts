@@ -8,6 +8,8 @@ import Locale from "./i18n/Locale";
 import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
+import {Img} from "./Img";
+import Svg from "../Svg";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -28,7 +30,7 @@ export class SimpleAddUI extends UIElement {
     private confirmButton: UIElement = undefined;
     private openLayerControl: UIElement;
     private cancelButton: UIElement;
-    private goToInboxButton: UIElement = new SubtleButton("./assets/envelope.svg", 
+    private goToInboxButton: UIElement = new SubtleButton(Img.AsData(Svg.envelope), 
         Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor() {
@@ -52,8 +54,7 @@ export class SimpleAddUI extends UIElement {
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
                 let icon: string = layer.layerDef.icon.GetRenderValue(
-                    TagUtils.KVtoProperties(preset.tags ?? [])).txt ??
-                    "./assets/bug.svg";
+                    TagUtils.KVtoProperties(preset.tags ?? [])).txt
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";
@@ -97,14 +98,14 @@ export class SimpleAddUI extends UIElement {
         }
 
         this.cancelButton = new SubtleButton(
-            "./assets/close.svg",
+            Img.AsData(Svg.close),
             Translations.t.general.cancel
         ).onClick(() => {
             self._confirmPreset.setData(undefined);
         })
 
         this.openLayerControl = new SubtleButton(
-            "./assets/layers.svg",
+            Img.AsData(Svg.layers),
             Translations.t.general.add.openLayerControl
         ).onClick(() => {
             State.state.layerControlIsOpened.setData(true);
@@ -169,9 +170,8 @@ export class SimpleAddUI extends UIElement {
         }
 
         if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < State.userJourney.addNewPointWithUnreadMessagesUnlock) {
-            return new Combine([header, "<span class='alert'>",
-                Translations.t.general.readYourMessages,
-                "</span>",
+            return new Combine([header,
+                Translations.t.general.readYourMessages.Clone().SetClass("alert"),
                 this.goToInboxButton
             ]).Render();
 
