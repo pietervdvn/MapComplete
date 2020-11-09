@@ -28,9 +28,10 @@ export class AllKnownLayouts {
         const layout = Layout.LayoutFromJSON(cyclofix, SharedLayers.sharedLayers)
         const now = new Date();
         const m = now.getMonth() + 1;
-        const day = new Date().getDay() + 1;
+        const day = new Date().getDate() + 1;
         const date = day + "/" + m;
         if (date === "31/10" || date === "1/11" || date === "2/11") {
+            console.log("The current date is ",date,", which means we remember our dead")
             // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
             layout.layers.push(
                 SharedLayers.sharedLayers.get("ghost_bike")

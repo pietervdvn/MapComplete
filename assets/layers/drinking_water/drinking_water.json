@@ -16,7 +16,16 @@
       "de": "Trinkwasser"
     }
   },
-  "icon": "./assets/layers/drinking_water/drinking_water.svg",
+  "icon": {
+    "render":     "./assets/layers/drinking_water/drinking_water.svg",
+    "mappings": [
+      {
+        "if": {"or": ["operational_status=broken", "operational_status=closed"]},
+        
+        "then":  "./assets/layers/drinking_water/drinking_water_broken.svg"
+      }
+    ]
+  },
   "iconSize": "40,40,bottom",
   "overpassTags": {
     "and": [
@@ -41,7 +50,7 @@
       ]
     }
   ],
-  "color": "#00bb00",
+  "color": "#6bc4f7",
   "tagRenderings": [
     "images",
     {
@@ -63,8 +72,7 @@
           "then": {
             "en": "This drinking water works",
             "nl": "Deze drinkwaterfonteint werkt"
-          },
-          "hideInAnswer": true
+          }
         },
         {
           "if": "operational_status=broken",

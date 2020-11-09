@@ -10,6 +10,7 @@ import * as bike_cafes from "../assets/layers/bike_cafe/bike_cafes.json"
 import * as bike_monitoring_station from "../assets/layers/bike_monitoring_station/bike_monitoring_station.json"
 import * as cycling_themed_objects from "../assets/layers/cycling_themed_object/cycling_themed_objects.json"
 import * as bike_shops from "../assets/layers/bike_shop/bike_shop.json"
+import * as bike_cleaning from "../assets/layers/bike_cleaning/bike_cleaning.json"
 import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
 import LayerConfig from "./JSON/LayerConfig";
@@ -34,6 +35,7 @@ export default class SharedLayers {
             new LayerConfig(bike_cafes, "shared_layers"),
             new LayerConfig(cycling_themed_objects, "shared_layers"),
             new LayerConfig(bike_shops, "shared_layers"),
+            new LayerConfig(bike_cleaning, "shared_layers"),
             new LayerConfig(maps, "shared_layers"),
             new LayerConfig(information_boards, "shared_layers") 
         ];
