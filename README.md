@@ -211,4 +211,7 @@ https://commons.wikimedia.org/w/index.php?title=Antu_chronometer
 Fries icon:
 https://www.flaticon.com/free-icon/french-fries_1144288
 
+Shower icon (used in 'bike_cleaning.svg'):
+https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
+
 Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons, GPLv3.0

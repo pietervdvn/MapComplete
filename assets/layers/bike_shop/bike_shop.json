@@ -139,6 +139,40 @@
       }
     ]
   },
+  "titleIcons": [
+    {
+      "mappings": [
+        {
+          "if": "service:bicycle:pump=yes",
+          "then": "<img src='./assets/layers/bike_shop/pump.svg'>"
+        }
+      ]
+    },
+    {
+      "mappings": [
+        {
+          "if": "service:bicycle:diy=yes",
+          "then": "<img src='./assets/layers/bike_shop/tools.svg'>"
+        }
+      ]
+    },
+    {
+      "mappings": [
+        {
+          "if": {
+            "or": [
+              "service:bicycle:cleaning=yes",
+              "service:bicycle:cleaning=diy"
+            ]
+          },
+          "then": "<img src='./assets/layers/bike_shop/bike_cleaning.svg'>"
+        }
+      ]
+    },
+    "wikipedialink",
+    "osmlink"
+   
+  ],
   "description": {
     "en": "A shop specifically selling bicycles or related items",
     "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt"
@@ -435,6 +469,35 @@
             "fr": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même",
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
             "de": "Dieses Geschäft bietet keine Werkzeuge für Heimwerkerreparaturen an"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Are bicycles washed here?",
+        "nl": "Biedt deze winkel een fietsschoonmaak aan?"
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:cleaning=yes",
+          "then": {
+            "en": "This shop cleans bicycles",
+            "nl": "Deze winkel biedt fietsschoonmaak aan"
+          }
+        },
+        {
+          "if": "service:bicycle:cleaning=diy",
+          "then": {
+            "en": "This shop has an installation where one can clean bicycles themselves",
+            "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken"
+          }
+        },
+        {
+          "if": "service:bicycle:cleaning=no",
+          "then": {
+            "en": "This shop doesn't offer bicycle cleaning",
+            "nl": "Deze winkel biedt geen fietsschoonmaak aan"
           }
         }
       ]
