@@ -1,0 +1,50 @@
+{
+  "id": "bike_cleaning",
+  "name": {
+    "en": "Bike cleaning service",
+    "nl": "Fietsschoonmaakpunt"
+  },
+  "title": {
+    "render": {
+      "en": "Bike cleaning service",
+      "nl": "Fietsschoonmaakpunt"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Bike cleaning service <i>{name}</i>",
+          "nl": "Fietsschoonmaakpunt <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "icon": {
+    "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
+  },
+  "iconSize": "50,50,bottom",
+  "overpassTags": {
+    "or": [
+      "service:bicycle:cleaning=yes",
+      "amenity=bicycle_wash"
+    ]
+  },
+  "minzoom": 13,
+  "wayHandling": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "Bike cleaning service",
+        "nl": "Fietsschoonmaakpunt"
+      },
+      "tags": [
+        "amenity=bicycle_wash",
+        "service:bicycle:cleaning=yes"
+      ]
+    }
+  ],
+  "color": "#6bc4f7",
+  "tagRenderings": [
+    "images"
+  ]
+}
