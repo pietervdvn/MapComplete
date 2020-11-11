@@ -6,11 +6,9 @@ import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
 import State from "../State";
 import {VariableUiElement} from "./Base/VariableUIElement";
-import {PersonalLayout} from "../Logic/PersonalLayout";
-import {Layout} from "../Customizations/Layout";
 import Svg from "../Svg";
-import {Img} from "./Img";
-
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import * as personal from "../assets/themes/personalLayout/personalLayout.json"
 
 export class MoreScreen extends UIElement {
 
@@ -21,7 +19,7 @@ export class MoreScreen extends UIElement {
         this.ListenTo(State.state.installedThemes);
     }
 
-    private createLinkButton(layout: Layout, customThemeDefinition: string = undefined) {
+    private createLinkButton(layout: LayoutConfig, customThemeDefinition: string = undefined) {
         if (layout === undefined) {
             return undefined;
         }
@@ -53,7 +51,7 @@ export class MoreScreen extends UIElement {
 
         }
 
-        let description = Translations.W(layout.description);
+        let description = Translations.W(layout.shortDescription);
         if (description !== undefined) {
             description = new Combine(["<br/>", description]);
         }
@@ -88,8 +86,8 @@ export class MoreScreen extends UIElement {
 
 
         for (const k in AllKnownLayouts.allSets) {
-            const layout : Layout = AllKnownLayouts.allSets[k];
-            if (k === PersonalLayout.NAME) {
+            const layout : LayoutConfig = AllKnownLayouts.allSets[k];
+            if (k === personal.id) {
                 if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.personalLayoutUnlock) {
                     continue;
                 }

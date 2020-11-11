@@ -120,10 +120,27 @@ export default class AllTranslationAssets {
       ph_open: new Translation( {"en":"opened","ca":"tancat","es":"abierto","nl":"open"} ),
 },
 },
-  favourite: {    title: new Translation( {"en":"Personal theme","nl":"Persoonlijk thema","es":"Interficie personal","ca":"Interfície personal","gl":"Tema personalizado","de":"Persönliches Thema"} ),
-    description: new Translation( {"en":"Create a personal theme based on all the available layers of all themes","es":"Crea una interficie basada en todas las capas disponibles de todas las interficies","ca":"Crea una interfície basada en totes les capes disponibles de totes les interfícies","gl":"Crea un tema baseado en todas as capas dispoñíbeis de todos os temas","de":"Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"} ),
-    panelIntro: new Translation( {"en":"<h3>Your personal theme</h3>Activate your favourite layers from all the official themes","ca":"<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials","es":"<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales","gl":"<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais","de":"<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen"} ),
-    loginNeeded: new Translation( {"en":"<h3>Log in</h3>A personal layout is only available for OpenStreetMap users","es":"<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenstreetMap","ca":"<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap","gl":"<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap","de":"<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar"} ),
-    reload: new Translation( {"en":"Reload the data","es":"Recargar datos","ca":"Recarregar dades","gl":"Recargar os datos","de":"Daten neu laden"} ),
-},
+  favourite: {
+      panelIntro: new Translation({
+          "en": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
+          "ca": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
+          "es": "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales",
+          "gl": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
+          "de": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen"
+      }),
+      loginNeeded: new Translation({
+          "en": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
+          "es": "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenstreetMap",
+          "ca": "<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap",
+          "gl": "<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap",
+          "de": "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar"
+      }),
+      reload: new Translation({
+          "en": "Reload the data",
+          "es": "Recargar datos",
+          "ca": "Recarregar dades",
+          "gl": "Recargar os datos",
+          "de": "Daten neu laden"
+      }),
+  },
 }}

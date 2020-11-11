@@ -15,7 +15,6 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {PersonalLayout} from "./Logic/PersonalLayout";
 import {PersonalLayersPanel} from "./Logic/PersonalLayersPanel";
 import Locale from "./UI/i18n/Locale";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
@@ -27,15 +26,15 @@ import {UserBadge} from "./UI/UserBadge";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
 import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
-import {Layout} from "./Customizations/Layout";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
 import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
 import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
-import SharedLayers from "./Customizations/SharedLayers";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
+import * as personal from "./assets/themes/personalLayout/personalLayout.json"
+import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 
 export class InitUiElements {
 
@@ -74,7 +73,7 @@ export class InitUiElements {
 
     }
 
-    static InitAll(layoutToUse: Layout, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
+    static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
                    layoutDefinition: string = "") {
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
@@ -115,7 +114,7 @@ export class InitUiElements {
         function updateFavs() {
             const favs = State.state.favouriteLayers.data ?? [];
 
-            layoutToUse.layers = [];
+            layoutToUse.layers.splice(0, layoutToUse.layers.length);
             for (const fav of favs) {
                 const layer = AllKnownLayouts.allLayers[fav];
                 if (!!layer) {
@@ -140,8 +139,7 @@ export class InitUiElements {
 
         }
 
-        if (layoutToUse === AllKnownLayouts.allSets[PersonalLayout.NAME]) {
-
+        if (layoutToUse.id === personal.id) {
             State.state.favouriteLayers.addCallback(updateFavs);
             State.state.installedThemes.addCallback(updateFavs);
         }
@@ -208,15 +206,8 @@ export class InitUiElements {
             .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
             .AttachTo("geolocate-button");
         State.state.locationControl.ping();
-
-
     }
-
-    public static FromBase64(layoutFromBase64: string): Layout {
-        return Layout.LayoutFromJSON(JSON.parse(atob(layoutFromBase64)), SharedLayers.sharedLayers);
-    }
-
-
+    
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
         try {
             let hash = location.hash.substr(1);
@@ -236,7 +227,7 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = InitUiElements.FromBase64(hash);
+            const layoutToUse = new LayoutConfig(JSON.parse(atob(hash)));
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
@@ -264,7 +255,7 @@ export class InitUiElements {
 
         const layoutToUse = State.state.layoutToUse.data;
         let welcome: UIElement = new WelcomeMessage();
-        if (layoutToUse.id === PersonalLayout.NAME) {
+        if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
         }
 
@@ -351,7 +342,7 @@ export class InitUiElements {
 
 
         let layerControlPanel: UIElement = undefined;
-        if (State.state.layoutToUse.data.enableBackgroundLayers) {
+        if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
             layerControlPanel = new BackgroundSelector();
             layerControlPanel.SetStyle("margin:1em");
             layerControlPanel.onClick(() => {            });
@@ -451,7 +442,7 @@ export class InitUiElements {
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackground);
+        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId);
 
         queryParam.addCallbackAndRun((selectedId: string) => {
             const available = State.state.availableBackgroundLayers.data;

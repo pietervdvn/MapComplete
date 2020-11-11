@@ -18,17 +18,24 @@ export class WelcomeMessage extends UIElement {
     constructor() {
         super(State.state.osmConnection.userDetails);
         this.ListenTo(Locale.language);
-        this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.supportedLanguages, Translations.t.general.pickLanguage);
+        this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language, Translations.t.general.pickLanguage);
         const layout = State.state.layoutToUse.data;
 
-        this.description =Translations.W(layout.welcomeMessage);
+        this.description = new Combine([
+            "<h3>", layout.title, "</h3>",
+            layout.description
+
+        ])
+        layout.descriptionTail
+
+
         this.plzLogIn =
-            Translations.W(layout.gettingStartedPlzLogin)
+            Translations.t.general.loginWithOpenStreetMap
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
                 });
-        this.welcomeBack = Translations.W(layout.welcomeBackMessage);
-        this.tail = Translations.W(layout.welcomeTail);
+        this.welcomeBack = Translations.t.general.welcomeBack;
+        this.tail = layout.descriptionTail;
     }
 
     InnerRender(): string {

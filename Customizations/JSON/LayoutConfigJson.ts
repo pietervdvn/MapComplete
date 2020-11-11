@@ -106,9 +106,21 @@ export interface LayoutConfigJson {
      */
     layers: (LayerConfigJson | string)[],
 
- 
+    /**
+     * The URL of a custom CSS stylesheet to modify the layout
+     */
+    customCss?: string;
+    /**
+     * If set to true, this layout will not be shown in the overview with more themes
+     */
+    hideFromOverview?: boolean;
 
-   
-
-
+    enableUserBadge?: boolean;
+    enableShareScreen?: boolean;
+    enableMoreQuests?: boolean;
+    enableLayers?: boolean;
+    enableSearch?: boolean;
+    enableAddNewPoints?: boolean;
+    enableGeolocation?: boolean;
+    enableBackgroundLayerSelection?: boolean;
 }

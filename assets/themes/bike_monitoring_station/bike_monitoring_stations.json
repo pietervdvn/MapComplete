@@ -12,6 +12,7 @@
   "language": [
     "en"
   ],
+  "hideFromOverview": true,
   "maintainer": "",
   "icon": "./assets/layers/bike_monitoring_station/monitoring_station.svg",
   "version": "0",

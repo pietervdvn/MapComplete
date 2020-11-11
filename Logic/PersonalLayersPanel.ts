@@ -5,12 +5,12 @@ import {UIEventSource} from "./UIEventSource";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Combine from "../UI/Base/Combine";
 import CheckBox from "../UI/Input/CheckBox";
-import {PersonalLayout} from "./PersonalLayout";
-import {Layout} from "../Customizations/Layout";
+import * as personal from "../assets/themes/personalLayout/personalLayout.json";
 import {SubtleButton} from "../UI/Base/SubtleButton";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import {Img} from "../UI/Img";
 import Svg from "../Svg";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 
 export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
@@ -22,19 +22,19 @@ export class PersonalLayersPanel extends UIElement {
         this.UpdateView([]);
         const self = this;
         State.state.installedThemes.addCallback(extraThemes => {
-            self.UpdateView(extraThemes.map(layout => layout.layout));
+            self.UpdateView(extraThemes.map(layout => layout.layout.layoutConfig));
             self.Update();
         })
     }
 
 
-    private UpdateView(extraThemes: Layout[]) {
+    private UpdateView(extraThemes: LayoutConfig[]) {
         this.checkboxes = [];
         const favs = State.state.favouriteLayers.data ?? [];
         const controls = new Map<string, UIEventSource<boolean>>();
         const allLayouts = AllKnownLayouts.layoutsList.concat(extraThemes);
         for (const layout of allLayouts) {
-            if (layout.id === PersonalLayout.NAME) {
+            if (layout.id === personal.id) {
                 continue;
             }
 
@@ -44,11 +44,15 @@ export class PersonalLayersPanel extends UIElement {
                     "<b>",
                     layout.title,
                     "</b><br/>",
-                    layout.description ?? ""
+                    layout.shortDescription ?? ""
                 ]).SetStyle("background: #eee; display: block; padding: 0.5em; border-radius:0.5em; overflow:auto;")
             this.checkboxes.push(header);
 
             for (const layer of layout.layers) {
+                if(layer === undefined){
+                    console.warn("Undefined layer for ",layout.id)
+                    continue;
+                }
                 if (typeof layer === "string") {
                     continue;
                 }

@@ -1,22 +1,22 @@
 import {Img} from "./UI/Img"
-
-Img.runningFromConsole = true;
 import {UIElement} from "./UI/UIElement";
-// We HAVE to mark this while importing
-UIElement.runningFromConsole = true;
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {Layout} from "./Customizations/Layout";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translations from "./UI/i18n/Translations";
 import {Translation} from "./UI/i18n/Translation";
+import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+
+Img.runningFromConsole = true;
+// We HAVE to mark this while importing
+UIElement.runningFromConsole = true;
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }
 
-function validate(layout: Layout) {
+function validate(layout: LayoutConfig) {
     const translations: Translation[] = [];
     const queue: any[] = [layout]
 
@@ -38,7 +38,7 @@ function validate(layout: Layout) {
 
     const missing = {}
     const present = {}
-    for (const ln of layout.supportedLanguages) {
+    for (const ln of layout.language) {
         missing[ln] = 0;
         present[ln] = 0;
         for (const translation of translations) {
@@ -58,7 +58,7 @@ function validate(layout: Layout) {
 
     let message = `Translation completenes for theme ${layout.id}`
     let isComplete = true;
-    for (const ln of layout.supportedLanguages) {
+    for (const ln of layout.language) {
         const amiss = missing[ln];
         const ok = present[ln];
         const total = amiss + ok;
@@ -75,11 +75,11 @@ function validate(layout: Layout) {
 
 }
 
-function generateWikiEntry(layout: Layout){
+function generateWikiEntry(layout: LayoutConfig){
     if(layout.hideFromOverview){
         return "";
     }
-    const languages = layout.supportedLanguages.map(ln => `{{#language:${ln}|en}}`).join(", ")
+    const languages = layout.language.map(ln => `{{#language:${ln}|en}}`).join(", ")
     let auth = "Yes";
     if(layout.maintainer !== "" && layout.maintainer !== "MapComplete"){
         auth=`Yes, by ${layout.maintainer};`
@@ -97,7 +97,7 @@ function generateWikiEntry(layout: Layout){
 
 const alreadyWritten = []
 
-function createIcon(iconPath: string, size: number, layout: Layout) {
+function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
         name = name.substr(2)
@@ -138,7 +138,7 @@ function createIcon(iconPath: string, size: number, layout: Layout) {
     return newname;
 }
 
-function createManifest(layout: Layout, relativePath: string) {
+function createManifest(layout: LayoutConfig, relativePath: string) {
     const name = layout.id;
 
     const icons = [];
@@ -191,9 +191,9 @@ function createManifest(layout: Layout, relativePath: string) {
 }
 
 const template = readFileSync("index.html", "utf8");
-function createLandingPage(layout: Layout) {
+function createLandingPage(layout: LayoutConfig) {
 
-    Locale.language.setData(layout.supportedLanguages[0]);
+    Locale.language.setData(layout.language[0]);
 
     const ogTitle = Translations.W(layout.title)?.InnerRender();
     const ogDescr = Translations.W(layout.description ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();

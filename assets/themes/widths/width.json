@@ -12,6 +12,15 @@
   "language": [
     "nl"
   ],
+  "hideFromOverview": true,
+
+  "enableUserBadge": false,
+  "enableShareScreen":false,
+  "enableMoreQuests": false,
+  "enableLayers":false,
+  "enableSearch": false,
+  "enableGeolocation":false,
+  
   "maintainer": "",
   "icon": "./assets/themes/widths/icon.svg",
   "version": "0",

@@ -1,9 +1,9 @@
 import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
-import {Layout} from "../../Customizations/Layout";
 import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 
 export class ChangesetHandler {
 
@@ -26,7 +26,7 @@ export class ChangesetHandler {
 
 
     public UploadChangeset(
-        layout: Layout,
+        layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
          continuation: () => void) {
@@ -85,10 +85,10 @@ export class ChangesetHandler {
 
 
     private OpenChangeset(
-        layout : Layout,
+        layout : LayoutConfig,
         continuation: (changesetId: string) => void) {
 
-        const commentExtra = layout.changesetMessage !== undefined ? " - " + layout.changesetMessage : "";
+        const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
 
         let surveySource = "";
         if (State.state.currentGPSLocation.data !== undefined) {

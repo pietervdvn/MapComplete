@@ -886,21 +886,6 @@
     }
   },
   "favourite": {
-    "title": {
-      "en": "Personal theme",
-      "nl": "Persoonlijk thema",
-      "es": "Interficie personal",
-      "ca": "Interfície personal",
-      "gl": "Tema personalizado",
-      "de": "Persönliches Thema"
-    },
-    "description": {
-      "en": "Create a personal theme based on all the available layers of all themes",
-      "es": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
-      "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
-      "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
-      "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
-    },
     "panelIntro": {
       "en": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
       "ca": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",

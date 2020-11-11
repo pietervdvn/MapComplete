@@ -246,7 +246,12 @@ export default class MetaTagging {
     static addMetatags(features: any[]) {
 
         for (const metatag of MetaTagging.metatags) {
-            metatag.addMetaTags(features);
+            try {
+                metatag.addMetaTags(features);
+            } catch (e) {
+                console.error("Could not calculate metatag ", metatag.keys.join(","), ":", e)
+
+            }
         }
 
     }

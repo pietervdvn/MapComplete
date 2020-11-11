@@ -1,0 +1,22 @@
+{
+  "id": "drinking_water",
+  "title": {
+    "en": "Drinking Water",
+    "nl": "Drinkwaterpunten"
+  },
+  "description": {
+    "en": "On this map, publicly accessible drinkging water spots are shown and can be easily added",
+    "nl": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
+  },
+  "language": ["en", "nl"],
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/drinking_water/logo.svg",
+  "version": "0",
+  "startLat": 50.8465573,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon":  4.3516970,
+  "startZoom": 16,
+  "widenFactor": 0.05,
+  "layers": ["drinking_water"],
+  "roamingRenderings": []
+}

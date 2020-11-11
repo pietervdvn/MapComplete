@@ -5,16 +5,15 @@ import Combine from "./Base/Combine";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import CheckBox from "./Input/CheckBox";
 import {VerticalCombine} from "./Base/VerticalCombine";
-import {Img} from "./Img";
 import State from "../State";
 import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {SubtleButton} from "./Base/SubtleButton";
-import {Layout} from "../Customizations/Layout";
 import Svg from "../Svg";
 import {Translation} from "./i18n/Translation";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 
 export class ShareScreen extends UIElement {
     private readonly _options: UIElement;
@@ -24,7 +23,7 @@ export class ShareScreen extends UIElement {
     private readonly _linkStatus: UIEventSource<string | UIElement>;
     private readonly _editLayout: UIElement;
 
-    constructor(layout: Layout = undefined, layoutDefinition: string = undefined) {
+    constructor(layout: LayoutConfig = undefined, layoutDefinition: string = undefined) {
         super(undefined)
         layout = layout ?? State.state?.layoutToUse?.data;
         layoutDefinition = layoutDefinition ?? State.state?.layoutDefinition;
@@ -164,12 +163,12 @@ export class ShareScreen extends UIElement {
         }, optionParts);
 
 
-        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender()??"MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
+        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout?.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
         
         this._iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                         &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.InnerRender() ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
+                         &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );

@@ -3,10 +3,10 @@ import osmAuth from "osm-auth";
 import {UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
-import {Layout} from "../../Customizations/Layout";
 import {ElementStorage} from "../ElementStorage";
 import {Img} from "../../UI/Img";
 import Svg from "../../Svg";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 
 export class UserDetails {
 
@@ -97,7 +97,7 @@ export class OsmConnection {
 
 
     public UploadChangeset(
-        layout: Layout,
+        layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
                            continuation: () => void = () => {}) {

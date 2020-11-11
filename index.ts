@@ -1,11 +1,11 @@
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {Layout} from "./Customizations/Layout";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {InitUiElements} from "./InitUiElements";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import SharedLayers from "./Customizations/SharedLayers";
+import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -57,7 +57,7 @@ if (path !== "index.html" && path !== "") {
 
 // Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
 for (const k in AllKnownLayouts.allSets) {
-    const layout = AllKnownLayouts.allSets[k];
+    const layout : LayoutConfig= AllKnownLayouts.allSets[k];
     const possibleParts = (layout.locationContains ?? []);
     for (const locationMatch of possibleParts) {
         if (locationMatch === "") {
@@ -71,7 +71,7 @@ for (const k in AllKnownLayouts.allSets) {
 
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
 
-let layoutToUse: Layout = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
+let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
 
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
@@ -94,8 +94,9 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 .firstChild.textContent;
             try {
                 console.log("DOWNLOADED:",layoutJson);
-                const layout = Layout.LayoutFromJSON(JSON.parse(layoutJson), SharedLayers.sharedLayers);
-                layout.id = layoutFromBase64;
+                const parsed = JSON.parse(layoutJson);
+                parsed["id"] = layoutFromBase64
+                const layout =new LayoutConfig(parsed);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(layoutJson));
             } catch (e) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)

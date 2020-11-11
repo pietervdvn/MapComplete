@@ -7,6 +7,24 @@ export class Translation extends UIElement {
 
     private static forcedLanguage = undefined;
 
+    public readonly translations: object
+
+    constructor(translations: object, context?: string) {
+        super(Locale.language)
+        if(translations === undefined){
+            throw `Translation without content (${context})`
+        }
+        let count = 0;
+        for (const translationsKey in translations) {
+            count++;
+        }
+        this.translations = translations;
+        if(count === 0){
+            throw `No translations given in the object (${context})`
+        }
+    }
+
+
     public Subs(text: any): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
@@ -56,23 +74,12 @@ export class Translation extends UIElement {
             return this.translations[i]; // Return a random language
         }
         console.error("Missing language ", Locale.language.data, "for", this.translations)
-        return undefined;
+        return "";
     }
 
 
     InnerRender(): string {
         return this.txt
-    }
-
-    public readonly translations: object
-
-    constructor(translations: object) {
-        super(Locale.language)
-        let count = 0;
-        for (const translationsKey in translations) {
-            count++;
-        }
-        this.translations = translations
     }
 
     public replace(a: string, b: string) {

@@ -2,34 +2,8 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
 import {And, Or, RegexTag, Tag, TagsFilter} from "../../Logic/Tags";
 
 import {Utils} from "../../Utils";
-import {Translation} from "../../UI/i18n/Translation";
 
 export class FromJSON {
-
-
-    public static Translation(json: string | any): Translation {
-        if (json === undefined) {
-            return undefined;
-        }
-        if (typeof (json) === "string") {
-            return new Translation({"*": json});
-        }
-        if(json.render !== undefined){
-            console.error("Using a 'render' where a translation is expected. Content is", json.render);
-            throw "ERROR: using a 'render' where none is expected"
-        }
-        const tr = {};
-        let keyCount = 0;
-        for (let key in json) {
-            keyCount++;
-            tr[key] = json[key]; // I'm doing this wrong, I know
-        }
-        if(keyCount == 0){
-            return undefined;
-        }
-        const transl = new Translation(tr);
-        return transl;
-    }
 
     public static SimpleTag(json: string): Tag {
         const tag = Utils.SplitFirst(json, "=");

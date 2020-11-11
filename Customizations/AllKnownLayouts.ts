@@ -1,4 +1,3 @@
-import {Layout} from "./Layout";
 import * as bookcases from "../assets/themes/bookcases/Bookcases.json";
 import * as aed from "../assets/themes/aed/aed.json";
 import * as toilets from "../assets/themes/toilets/toilets.json";
@@ -15,17 +14,18 @@ import * as fritures from "../assets/themes/fritures/fritures.json"
 import * as benches from "../assets/themes/benches/benches.json";
 import * as charging_stations from "../assets/themes/charging_stations/charging_stations.json"
 import * as widths from "../assets/themes/widths/width.json"
-
-import {PersonalLayout} from "../Logic/PersonalLayout";
+import * as drinking_water from "../assets/themes/drinking_water/drinking_water.json"
 import LayerConfig from "./JSON/LayerConfig";
 import SharedLayers from "./SharedLayers";
+import * as personal from "../assets/themes/personalLayout/personalLayout.json"
+import LayoutConfig from "./JSON/LayoutConfig";
 
 export class AllKnownLayouts {
 
     public static allLayers: Map<string, LayerConfig> = undefined;
 
-    private static GenerateCycloFix(): Layout {
-        const layout = Layout.LayoutFromJSON(cyclofix, SharedLayers.sharedLayers)
+    private static GenerateCycloFix(): LayoutConfig {
+        const layout = new LayoutConfig(cyclofix)
         const now = new Date();
         const m = now.getMonth() + 1;
         const day = new Date().getDate() + 1;
@@ -41,63 +41,31 @@ export class AllKnownLayouts {
         return layout;
 
     }
-
-    private static GenerateWidths(): Layout {
-        const layout = Layout.LayoutFromJSON(widths, SharedLayers.sharedLayers);
-
-        layout.enableUserBadge = false;
-        layout.enableShareScreen = false;
-        layout.enableMoreQuests = false;
-        layout.enableLayers = false;
-        layout.hideFromOverview = true;
-        layout.enableSearch = false;
-        layout.enableGeolocation = false;
-        return layout;
-    }
-
-    private static GenerateBuurtNatuur(): Layout {
-        const layout = Layout.LayoutFromJSON(buurtnatuur, SharedLayers.sharedLayers);
-        layout.enableMoreQuests = false;
-        layout.enableShareScreen = false;
-        layout.hideFromOverview = true;
-        console.log("Buurtnatuur:",layout)
-        return layout;
-    }
-
-    private static GenerateBikeMonitoringStations(): Layout {
-        const layout = Layout.LayoutFromJSON(bike_monitoring_stations, SharedLayers.sharedLayers);
-        layout.hideFromOverview = true;
-        return layout;
-    }
-    
-    
-
-    public static layoutsList: Layout[] = [
-        new PersonalLayout(),
-        
-        Layout.LayoutFromJSON(shops, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(bookcases, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(aed, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(toilets, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(artworks, SharedLayers.sharedLayers),
+    public static layoutsList: LayoutConfig[] = [
+        new LayoutConfig(personal),
         AllKnownLayouts.GenerateCycloFix(),
-        Layout.LayoutFromJSON(ghostbikes, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(nature, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(cyclestreets, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(maps, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(fritures, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(benches, SharedLayers.sharedLayers),
-        Layout.LayoutFromJSON(charging_stations, SharedLayers.sharedLayers),
-        AllKnownLayouts.GenerateWidths(),
-        AllKnownLayouts.GenerateBuurtNatuur(),
-        AllKnownLayouts.GenerateBikeMonitoringStations(),
-
+        new LayoutConfig(aed),
+        new LayoutConfig(bookcases),
+        new LayoutConfig(toilets),
+        new LayoutConfig(artworks),
+        new LayoutConfig(ghostbikes),
+        new LayoutConfig(shops),
+        new LayoutConfig(drinking_water),
+        new LayoutConfig(nature),
+        new LayoutConfig(cyclestreets),
+        new LayoutConfig(maps),
+        new LayoutConfig(fritures),
+        new LayoutConfig(benches),
+        new LayoutConfig(charging_stations),
+        new LayoutConfig(widths),
+        new LayoutConfig(buurtnatuur),
+        new LayoutConfig(bike_monitoring_stations),
     ];
 
 
-    public static allSets: Map<string, Layout> = AllKnownLayouts.AllLayouts();
+    public static allSets: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
 
-    private static AllLayouts(): Map<string, Layout> {
+    private static AllLayouts(): Map<string, LayoutConfig> {
         this.allLayers = new Map<string, LayerConfig>();
         for (const layout of this.layoutsList) {
             for (let i = 0; i < layout.layers.length; i++) {
@@ -118,7 +86,7 @@ export class AllKnownLayouts {
             }
         }
 
-        const allSets: Map<string, Layout> = new Map();
+        const allSets: Map<string, LayoutConfig> = new Map();
         for (const layout of this.layoutsList) {
             allSets[layout.id] = layout;
             allSets[layout.id.toLowerCase()] = layout;

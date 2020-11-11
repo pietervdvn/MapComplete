@@ -10,17 +10,6 @@ export default class Translations {
     }
 
     static t = AllTranslationAssets.t;
-
-    private static isTranslation(tr: any): boolean {
-        for (const key in tr) {
-            if (typeof tr[key] !== "string") {
-                return false;
-            }
-        }
-        return true;
-    }
-
-
     public static W(s: string | UIElement): UIElement {
         if (typeof (s) === "string") {
             return new FixedUiElement(s);

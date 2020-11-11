@@ -1,0 +1,37 @@
+{
+  "id": "personal",
+  "title": {
+    "en": "Personal theme",
+    "nl": "Persoonlijk thema",
+    "es": "Interficie personal",
+    "ca": "Interfície personal",
+    "gl": "Tema personalizado",
+    "de": "Persönliches Thema"
+  },
+  "description": {
+    "en": "Create a personal theme based on all the available layers of all themes",
+    "es": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
+    "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
+    "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
+    "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
+  },
+  "language": [
+    "en",
+    "nl",
+    "es",
+    "ca",
+    "gl",
+    "de"
+  ],
+  "maintainer": "MapComplete",
+  "icon": "./assets/svg/addSmall.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 16,
+  "widenFactor": 0.05,
+  "layers": [
+    "drinking_water"
+  ],
+  "roamingRenderings": []
+}
