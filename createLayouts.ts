@@ -1,5 +1,9 @@
 import {Img} from "./UI/Img"
 import {UIElement} from "./UI/UIElement";
+Img.runningFromConsole = true;
+// We HAVE to mark this while importing
+UIElement.runningFromConsole = true;
+
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
@@ -8,9 +12,6 @@ import Translations from "./UI/i18n/Translations";
 import {Translation} from "./UI/i18n/Translation";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 
-Img.runningFromConsole = true;
-// We HAVE to mark this while importing
-UIElement.runningFromConsole = true;
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
