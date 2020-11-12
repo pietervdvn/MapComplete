@@ -5,6 +5,7 @@ import EditableTagRendering from "./EditableTagRendering";
 import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
+import State from "../../State";
 
 export class FeatureInfoBox extends UIElement {
     private _tags: UIEventSource<any>;
@@ -33,8 +34,6 @@ export class FeatureInfoBox extends UIElement {
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
         this._renderings = layerConfig.tagRenderings.map(tr => new EditableTagRendering(tags, tr));
-        this._questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
-
     }
 
     InnerRender(): string {

@@ -165,7 +165,7 @@ export default class State {
         });
 
 
-        function featSw(key: string, deflt: (layout: LayoutConfig) => boolean): UIEventSource<boolean> {
+        function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation?: string): UIEventSource<boolean> {
             const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined);
             // I'm so sorry about someone trying to decipher this
 
@@ -173,13 +173,14 @@ export default class State {
             return UIEventSource.flatten(
                 self.layoutToUse.map((layout) => {
                     const defaultValue = deflt(layout);
-                    const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue)
+                    const queryParam = QueryParameters.GetQueryParameter(key, "" + defaultValue, documentation)
                     return queryParam.map((str) => str === undefined ? defaultValue : (str !== "false"));
                 }), [queryParameterSource]);
         }
 
 
-        this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true);
+        this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true,
+            "Disables the userbadge (and thus disables login capabilities)");
         this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true);
         this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true);
         this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true);
@@ -213,8 +214,10 @@ export default class State {
                         continue;
                     }
                     try {
+                        const json = btoa(customLayout.data);
+                        console.log(json);
                         const layout = new LayoutConfig(
-                            JSON.parse(btoa(customLayout.data)));
+                            JSON.parse(json));
                         installedThemes.push({
                             layout: layout,
                             definition: customLayout.data

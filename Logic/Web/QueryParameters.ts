@@ -59,7 +59,7 @@ export class QueryParameters {
 
     }
 
-    public static GetQueryParameter(key: string, deflt: string): UIEventSource<string> {
+    public static GetQueryParameter(key: string, deflt: string, documentation?: string): UIEventSource<string> {
         if(!this.initialized){
             this.init();
         }
