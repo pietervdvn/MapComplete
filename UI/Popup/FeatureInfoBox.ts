@@ -34,6 +34,9 @@ export class FeatureInfoBox extends UIElement {
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
         this._renderings = layerConfig.tagRenderings.map(tr => new EditableTagRendering(tags, tr));
+        if (State.state.featureSwitchUserbadge.data) {
+            this._questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
+        }
     }
 
     InnerRender(): string {
