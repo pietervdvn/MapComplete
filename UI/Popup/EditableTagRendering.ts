@@ -35,11 +35,14 @@ export default class EditableTagRendering extends UIElement {
 
         if (this._configuration.question !== undefined) {
             // 2.3em total width
+            if(State.state.featureSwitchUserbadge.data){
+                
             this._editButton = 
                 Svg.pencil_ui().SetClass("edit-button")
                 .onClick(() => {
                     self._editMode.setData(true);
                 });
+            }
 
 
             // And at last, set up the skip button
