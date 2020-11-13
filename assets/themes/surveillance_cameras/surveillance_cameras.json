@@ -156,8 +156,8 @@
             "key": "surveillance:type"
           },
           "render": {
-            "en": " Surveills a {surveillance:type}",
-            "nl": "Bewaakt een {surveillance:type}"
+            "en": " Surveills a {surveillance:zone}",
+            "nl": "Bewaakt een {surveillance:zone}"
           },
           "mappings": [
             {
@@ -191,6 +191,28 @@
               "then": {
                 "en": "Surveills an entrance",
                 "nl": "Bewaakt een ingang"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=corridor"
+                ]
+              },
+              "then": {
+                "en": "Surveills a corridor",
+                "nl": "Bewaakt een gang"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "surveillance:zone=public_transport_platform"
+                ]
+              },
+              "then": {
+                "en": "Surveills a public tranport platform",
+                "nl": "Bewaakt een perron of bushalte"
               }
             },
             {

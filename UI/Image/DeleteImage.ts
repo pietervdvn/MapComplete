@@ -42,6 +42,9 @@ export default class DeleteImage extends UIElement {
     }
 
     InnerRender(): string {
+        if(!State.state.featureSwitchUserbadge.data){
+            return "";
+        }
 
         const value = this.tags.data[this.key];
         if (value === undefined || value === "") {

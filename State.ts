@@ -115,10 +115,10 @@ export default class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
-    public layerControlIsOpened: UIEventSource<boolean> = QueryParameters.GetQueryParameter("layer-control-toggle", "false")
+    public layerControlIsOpened: UIEventSource<boolean> = QueryParameters.GetQueryParameter("layer-control-toggle", "false", "Wether or not the layer control is shown")
         .map<boolean>((str) => str !== "false", [], b => "" + b)
 
-    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0").map<number>(
+    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${State.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
         str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
     );
 
@@ -138,11 +138,11 @@ export default class State {
             })
         }
         this.zoom = asFloat(
-            QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom)
+            QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom, "The initial/current zoom level")
             .syncWith(LocalStorageSource.Get("zoom")));
-        this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat)
+        this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
-        this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon)
+        this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
             .syncWith(LocalStorageSource.Get("lon")));
 
 
@@ -165,8 +165,8 @@ export default class State {
         });
 
 
-        function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation?: string): UIEventSource<boolean> {
-            const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined);
+        function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {
+            const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined, documentation);
             // I'm so sorry about someone trying to decipher this
 
             // It takes the current layout, extracts the default value for this query paramter. A query parameter event source is then retreived and flattened
@@ -180,20 +180,30 @@ export default class State {
 
 
         this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true,
-            "Disables the userbadge (and thus disables login capabilities)");
-        this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true);
-        this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true);
-        this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true);
-        this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true);
-        this.featureSwitchIframe = featSw("fs-iframe", () => false);
-        this.featureSwitchMoreQuests = featSw("fs-more-quests", (layoutToUse) => layoutToUse?.enableMoreQuests ?? true);
-        this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true);
-        this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true);
+            "Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.");
+        this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true,
+            "Disables/Enables the search bar");
+        this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true,
+            "Disables/Enables the layer control");
+        this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
+            "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
+        this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true, 
+            "Disables/enables the help menu or welcome message");
+        this.featureSwitchIframe = featSw("fs-iframe", () => false,
+            "Disables/Enables the iframe-popup");
+        this.featureSwitchMoreQuests = featSw("fs-more-quests", (layoutToUse) => layoutToUse?.enableMoreQuests ?? true,
+            "Disables/Enables the 'More Quests'-tab in the welcome message");
+        this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true,
+            "Disables/Enables the 'Share-screen'-tab in the welcome message");
+        this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true,
+            "Disables/Enables the geolocation button");
 
-        const testParam = QueryParameters.GetQueryParameter("test", "false").data;
+        const testParam = QueryParameters.GetQueryParameter("test", "false",
+            "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org").data;
         this.osmConnection = new OsmConnection(
             testParam === "true",
-            QueryParameters.GetQueryParameter("oauth_token", undefined),
+            QueryParameters.GetQueryParameter("oauth_token", undefined,
+                "Used to complete the login"),
             layoutToUse.id,
             true
         );

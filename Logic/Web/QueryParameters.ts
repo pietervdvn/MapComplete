@@ -5,20 +5,22 @@ import {UIEventSource} from "../UIEventSource";
 
 export class QueryParameters {
 
-    private static order: string [] = ["layout","test","z","lat","lon"];
+    private static order: string [] = ["layout", "test", "z", "lat", "lon"];
     private static knownSources = {};
     private static initialized = false;
     private static defaults = {}
-    
-    private static addOrder(key){
-        if(this.order.indexOf(key) < 0){
+
+    private static documentation = {}
+
+    private static addOrder(key) {
+        if (this.order.indexOf(key) < 0) {
             this.order.push(key)
         }
     }
 
     private static init() {
-        
-        if(this.initialized){
+
+        if (this.initialized) {
             return;
         }
         this.initialized = true;
@@ -63,6 +65,7 @@ export class QueryParameters {
         if(!this.initialized){
             this.init();
         }
+        QueryParameters.documentation[key] = documentation;
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt;
         }
@@ -74,6 +77,14 @@ export class QueryParameters {
         QueryParameters.knownSources[key] = source;
         source.addCallback(() => QueryParameters.Serialize())
         return source;
+    }
+
+    public static GenerateQueryParameterDocs(): string {
+        const docs = [];
+        for (const key in QueryParameters.documentation) {
+            docs.push("**" + key + "**: " + QueryParameters.documentation[key] + " (default value: _" + QueryParameters.defaults[key] + "_)")
+        }
+        return docs.join("\n\n");
     }
 
 }

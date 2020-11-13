@@ -442,7 +442,7 @@ export class InitUiElements {
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId);
+        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId, "The id of the background layer to start with");
 
         queryParam.addCallbackAndRun((selectedId: string) => {
             const available = State.state.availableBackgroundLayers.data;
@@ -483,7 +483,7 @@ export class InitUiElements {
             const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
             flayers.push(flayer);
 
-            QueryParameters.GetQueryParameter("layer-" + layer.id, "true")
+            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wehter or not layer "+layer.id+" is shown")
                 .map<boolean>((str) => str !== "false", [], (b) => b.toString())
                 .syncWith(
                     flayer.isDisplayed

@@ -4,7 +4,6 @@ import {InitUiElements} from "./InitUiElements";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
-import SharedLayers from "./Customizations/SharedLayers";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 
 let defaultLayout = "bookcases"
@@ -54,23 +53,7 @@ if (path !== "index.html" && path !== "") {
     defaultLayout = path.substr(0, path.length - 5);
     console.log("Using layout", defaultLayout);
 }
-
-// Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
-for (const k in AllKnownLayouts.allSets) {
-    const layout : LayoutConfig= AllKnownLayouts.allSets[k];
-    const possibleParts = (layout.locationContains ?? []);
-    for (const locationMatch of possibleParts) {
-        if (locationMatch === "") {
-            continue
-        }
-        if (window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0) {
-            defaultLayout = layout.name;
-        }
-    }
-}
-
-defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
-
+defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout,"The layout to load into MapComplete").data;
 let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
 
 
@@ -118,3 +101,4 @@ if (layoutFromBase64.startsWith("wiki:")) {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 }
 
+// console.log(QueryParameters.GenerateQueryParameterDocs())

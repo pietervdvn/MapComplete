@@ -51,6 +51,10 @@ export class ImageUploadFlow extends UIElement {
     }
 
     InnerRender(): string {
+        
+        if(!State.state.featureSwitchUserbadge.data){
+            return "";
+        }
 
         const t = Translations.t.image;
         if (State.state.osmConnection.userDetails === undefined) {

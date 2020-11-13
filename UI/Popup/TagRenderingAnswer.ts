@@ -9,25 +9,11 @@ import {SubstitutedTranslation} from "../SpecialVisualizations";
 export default class TagRenderingAnswer extends UIElement {
     private _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
-    private _content: UIElement;
 
     constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig) {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
-        const self = this;
-        tags.addCallbackAndRun(tags => {
-            if (tags === undefined) {
-                self._content = undefined
-                return;
-            }
-            const tr = this._configuration.GetRenderValue(tags);
-            if (tr === undefined) {
-                self._content = undefined
-                return
-            }
-            self._content = new SubstitutedTranslation(tr, self._tags)
-        })
     }
 
     InnerRender(): string {
@@ -36,10 +22,16 @@ export default class TagRenderingAnswer extends UIElement {
                 return "";
             }
         }
-        if(this._content === undefined){
+
+        const tags = this._tags.data;
+        if (tags === undefined) {
             return "";
         }
-        return this._content.Render();
+        const tr = this._configuration.GetRenderValue(tags);
+        if (tr === undefined) {
+            return "";
+        }
+        return new SubstitutedTranslation(tr, this._tags).Render();
     }
 
 }

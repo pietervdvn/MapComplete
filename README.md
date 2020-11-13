@@ -103,7 +103,7 @@ A theme has translations into the preset.json (`assets/themes/themename/themenam
 
 1. Modify `"language"` to contain the new language, e.g. `"language": "nl"` becomes `"language": ["nl", "en"]`
 2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description": "Welcome to Open Bookcase Map"` to `"description": {"en": "Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to another supported language.
-3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/UI/i18n/Translations.ts), add add a language string there
+3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/assets/translations.json), add add a language string there
 4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
 
 ### Adding your theme to the repository
@@ -164,6 +164,50 @@ In order to avoid lots of small changesets, a changeset is opened and kept open.
 Whenever a change is made -even adding a single tag- the change is uploaded into this changeset. If that fails, the changeset is probably closed and we open a new changeset.
 
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing them. 
+
+### Query parameters
+
+By adding extra query parameters, more options are available to influence:
+
+**test**: If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org (default value: _false_)
+
+**layout**: The layout to load into MapComplete (default value: _bookcases_)
+
+**userlayout**: undefined (default value: _false_)
+
+**layer-control-toggle**: Wether or not the layer control is shown (default value: _false_)
+
+**tab**: The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >200 changesets) (default value: _0_)
+
+**z**: The initial/current zoom level (default value: _1_)
+
+**lat**: The initial/current latitude (default value: _0_)
+
+**lon**: The initial/current longitude of the app (default value: _0_)
+
+**fs-userbadge**: Disables/Enables the userbadge (and thus disables login capabilities) (default value: _true_)
+
+**fs-search**: Disables/Enables the search bar (default value: _true_)
+
+**fs-layers**: Disables/Enables the layer control (default value: _true_)
+
+**fs-add-new**: Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place) (default value: _true_)
+
+**fs-welcome-message**: undefined (default value: _true_)
+
+**fs-iframe**: Disables/Enables the iframe-popup (default value: _false_)
+
+**fs-more-quests**: Disables/Enables the 'More Quests'-tab in the welcome message (default value: _true_)
+
+**fs-share-screen**: Disables/Enables the 'Share-screen'-tab in the welcome message (default value: _true_)
+
+**fs-geolocation**: Disables/Enables the geolocation button (default value: _true_)
+
+**oauth_token**: Used to complete the login (default value: _undefined_)
+
+**background**: The id of the background layer to start with (default value: _undefined_)
+
+**layer-bookcases**: Wehter or not layer bookcases is shown (default value: _true_) index.ts:104:8
 
 # Privacy
 
