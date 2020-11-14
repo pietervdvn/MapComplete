@@ -30,7 +30,7 @@
 .question {
     display: block;
     margin-top: 1em;
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
     padding: 1em;
     border-radius: 1em;
     font-size: larger;
@@ -72,7 +72,7 @@ input:checked + label .question-option-with-border {
 .save {
     display: inline-block;
     border: solid white 2px;
-    background-color: #3a3aeb;
+    background-color: var(--catch-detail-color);
     color: white;
     padding: 0.2em 0.6em;
     font-size: x-large;
@@ -90,8 +90,8 @@ input:checked + label .question-option-with-border {
 .login-button-friendly {
     display: inline-block;
     border: solid white 2px;
-    background-color: #3a3aeb;
-    color: white;
+    background-color:var(--catch-detail-color);
+    color: var(--catch-detail-color-contrast);
     padding: 0.2em 0.6em;
     font-size: large;
     font-weight: bold;
@@ -115,7 +115,24 @@ input:checked + label .question-option-with-border {
     height: 1.3em;
     padding: 0.5em;
     border-radius: 0.65em;
-    border: solid black 1px;
+    border: solid var(--popup-border) 1px;
     font-size: medium;
     float: right;
+}
+
+.edit-button svg {
+    width: 1.3em;
+    height: 1.3em;
+    padding: 0.5em;
+    border-radius: 0.65em;
+    border: solid var(--popup-border) 1px;
+    stroke: var(--popup-border) !important;
+    fill: var(--popup-border) !important;
+    font-size: medium;
+    float: right;
+}
+
+.edit-button svg path{
+    stroke: var(--popup-border) !important;
+    fill: var(--popup-border) !important;
 }

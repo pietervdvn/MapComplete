@@ -1,6 +1,7 @@
 #userbadge {
     display: inline-block;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
     -webkit-border-radius: 2em;
     -moz-border-radius: 2em;
     border-radius: 2em;
@@ -15,7 +16,7 @@
 
 #userbadge a {
     text-decoration: none;
-    color: black;
+    color: var(--foreground-color);
 }
 
 
@@ -42,14 +43,19 @@
     margin-bottom: 0.2em;
 }
 
-.userstats img {
+.userstats svg {
     width: 1em;
     height: 1em;
-    fill: black;
-    border-radius: 0;
+     border-radius: 0;
     display: block;
 }
 
+.userstats img {
+    width: 1em;
+    height: 1em;
+    border-radius: 0;
+    display: block;
+}
 
 #profile-pic {
     float: left;
@@ -76,7 +82,8 @@
     height: 2.2em; /*SHould equal profile-pic height - padding*/
     z-index: 5000;
     text-align: left;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
     background-size: 100%;
 
     line-height: 0.75em;
@@ -88,7 +95,8 @@
 .userbadge-login {
     font-weight: bold;
     font-size: large;
-    background-color: #e5f5ff !important;
+    background-color: var(--subtle-detail-color) !important;
+    color: var(--subtle-detail-color-contrast);
     height:3em;
 
     display: inline-block;

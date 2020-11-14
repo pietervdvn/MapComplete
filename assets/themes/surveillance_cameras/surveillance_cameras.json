@@ -24,6 +24,8 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
+  "customCss": "./assets/themes/surveillance_cameras/custom_theme.css",
+  "defaultBackgroundId": "Stadia.AlidadeSmoothDark",
   "layers": [
     {
       "id": "cameras",
@@ -52,6 +54,7 @@
       },
       "description": {},
       "tagRenderings": [
+        "images",
         {
           "question": {
             "en": "What kind of camera is this?",

@@ -1,0 +1,12 @@
+html {
+    --subtle-detail-color: #9d9d9d !important;
+    --subtle-detail-color-contrast: #00ff00 !important;
+    --popup-border: #00ff00 !important;
+    --catch-detail-color: #00ff00 !important;
+    --catch-detail-color-contrast: black !important;
+    --alert-color: #eb00ff !important;
+    --background-color: black !important;
+    --foreground-color: white !important;
+    --shadow-color: white !important;
+}
+

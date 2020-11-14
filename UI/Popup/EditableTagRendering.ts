@@ -38,7 +38,7 @@ export default class EditableTagRendering extends UIElement {
             if(State.state.featureSwitchUserbadge.data){
                 
             this._editButton = 
-                Svg.pencil_ui().SetClass("edit-button")
+                Svg.pencil_svg().SetClass("edit-button")
                 .onClick(() => {
                     self._editMode.setData(true);
                 });

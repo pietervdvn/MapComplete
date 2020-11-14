@@ -44,7 +44,7 @@ export class ImageUploadFlow extends UIElement {
         this._licensePicker = licensePicker;
         this._selectedLicence = licensePicker.GetValue();
 
-        this._connectButton = new Combine([t.pleaseLogin])
+        this._connectButton = t.pleaseLogin.Clone()
             .onClick(() => State.state.osmConnection.AttemptLogin())
             .SetClass("login-button-friendly");
 
@@ -101,7 +101,7 @@ export class ImageUploadFlow extends UIElement {
         ]);
 
         const label = new Combine([
-            Svg.camera_plus_ui().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
+            Svg.camera_plus_svg().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
             Translations.t.image.addPicture
                 .SetStyle("width:max-content;font-size: 28px;" +
                     "font-weight: bold;" +
@@ -115,7 +115,7 @@ export class ImageUploadFlow extends UIElement {
             "cursor:pointer;" +
             "padding: 0.5em;" +
             "border-radius: 1em;" +
-            "border: 3px solid black;" +
+            "border: 3px solid var(--popup-border);" +
             "box-sizing:border-box;")
 
         const actualInputElement =

@@ -73,25 +73,25 @@
      id="layer1"
      transform="translate(0,-270.54165)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:2.43863511;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke-width:2.43863511;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 19.212364,278.17517 -11.9689358,5.52059 11.9388628,5.50669"
        id="path819"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
     <circle
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
+       style="fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
        id="path820"
        cx="7.2434282"
        cy="283.69574"
        r="3.9119694" />
     <circle
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
+       style="fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
        id="path820-3"
        cx="19.48818"
        cy="289.22873"
        r="3.9119689" />
     <circle
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
+       style="fill-opacity:1;stroke:none;stroke-width:0.53329796;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97014926"
        id="path820-3-6"
        cx="19.48818"
        cy="277.56281"

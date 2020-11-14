@@ -1,20 +1,11 @@
-/*
+//*
 
 
-import {UIEventSource} from "./Logic/UIEventSource";
-import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
-import SharedLayers from "./Customizations/SharedLayers";
+import Direction from "./UI/Input/Direction";
 
-const tags = {
-    mapillary: "wweALGY5g8_T8UjGkcWCfw",
-    wikimedia_commons: "File:Boekenkast Sint-Lodewijks.jpg"
-}
-const src = new UIEventSource(tags);
+new Direction().AttachTo("maindiv")
 
-new FeatureInfoBox(src, SharedLayers.sharedLayers["ghost_bike"]).AttachTo('maindiv');
 
-//const subs = new SubstitutedTranslation(new Translation({"nl":"NL {image_carousel()} {image_upload()}"}), src)
-//subs.AttachTo("maindiv")
 /*/
 
 

@@ -27,7 +27,8 @@ export class FullScreenMessageBox extends UIElement {
                 "overflow-y: auto;" +
                 "max-width:100vw;" +
                 "overflow-x:hidden;" +
-                "background:white;"
+                "background:var(--background-color);" +
+                "color: var(--foreground-color);"
 
             );
         });

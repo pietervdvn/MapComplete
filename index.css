@@ -1,16 +1,49 @@
+:root {
+    --subtle-detail-color: #e5f5ff;
+    --subtle-detail-color-contrast: black;
+    --catch-detail-color: #3a3aeb;
+    --catch-detail-color-contrast: white;
+    --alert-color: #fee4d1;
+    --background-color: white;
+    --foreground-color: black;
+    --popup-border: white;
+    --shadow-color: #00000066
+}
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+
+svg {
+    fill: var(--foreground-color) !important;
+    stroke: var(--foreground-color) !important;
+}
+
+svg path {
+    fill: var(--foreground-color) !important;
+    stroke: var(--foreground-color) !important;
 }
 
 
 #leafletDiv {
     height: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
+    border: 2px solid var(--popup-border)
+}
+
+.leaflet-container {
+    background-color: var(--background-color) !important;
 }
 
 #geolocate-button {
@@ -39,22 +72,25 @@ body {
     bottom: 1em;
     left: 1em;
     z-index: 9000;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
     border-radius: 1em;
     cursor: pointer;
-    box-shadow: 0 0 10px #00000066;
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .layer-selection-toggle {
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+    border-radius: 1em;
     display: flex;
     flex-direction: column-reverse;
+    background: var(--subtle-detail-color);
 }
 
-.layer-selection-toggle img {
+.layer-selection-toggle svg {
     display: block;
     width: 2em;
+    height: 2em;
     padding: 1em;
 }
 
@@ -62,7 +98,7 @@ body {
 
 
 .alert {
-    background-color: #fee4d1;
+    background-color: var(--alert-color);
     font-weight: bold;
     border-radius: 1em;
     margin: 0.25em;
@@ -82,7 +118,7 @@ body {
 }
 
 .shadow {
-    box-shadow: 0 0 10px #00000066;
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .title-font span {
@@ -91,7 +127,8 @@ body {
 }
 
 .soft {
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
     font-weight: bold;
     border-radius: 1em;
     margin: 0.25em;
@@ -137,7 +174,9 @@ body {
 #searchbox {
     display: inline-block;
     text-align: left;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
     transition: all 500ms linear;
     pointer-events: all;
     border-radius: 1.3em;
@@ -170,6 +209,7 @@ body {
     font-size: large;
     width: 100%;
     box-sizing: border-box;
+    color: var(--foreground-color);
 }
 
 .search-go img {
@@ -215,13 +255,16 @@ body {
     overflow-y: auto;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
 }
 
 .close-welcome-button {
     position: absolute;
     display: inline-block;
     height: 100%;
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
     box-sizing: border-box;
     width: 4em;
     padding: 1em;
@@ -229,22 +272,26 @@ body {
     border-bottom-left-radius: 1em;
 }
 
-.close-welcome-button img {
+.close-welcome-button svg {
     width: 2em;
+    height: 2em;
 }
 
 .open-welcome-button {
     display: inline-block;
     box-sizing: border-box;
-    background-color: white;
+    background: var(--subtle-detail-color);
+    color: var(--foreground-color);
+
     height: 4em;
     width: 4em;
     padding: 1em;
     border-radius: 1em;
 }
 
-.open-welcome-button img {
+.open-welcome-button svg {
     width: 2em;
+    height: 2em;
 }
 
 #messagesbox {
@@ -252,9 +299,11 @@ body {
     position: relative;
     padding: 0;
     pointer-events: all;
-    box-shadow: 0 0 10px #00000066;
+    box-shadow: 0 0 10px var(--shadow-color);
     border-radius: 1em;
-    width: min-content
+    width: min-content;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
 }
 
 
@@ -273,7 +322,9 @@ body {
     pointer-events: none;
 
     opacity: 1;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
 
     transition: opacity 500ms linear;
 
@@ -357,7 +408,9 @@ body {
 
 
 .iframe-escape {
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
     border-radius: 2em;
     display: block;
     width: min-content;
@@ -376,11 +429,11 @@ body {
     flex-direction: row;
     font-size: large;
     margin: 0.5em;
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
     border-radius: 1em;
     align-items: center;
     text-decoration: none;
-    color: black;
 }
 
 

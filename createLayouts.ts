@@ -202,7 +202,13 @@ function createLandingPage(layout: LayoutConfig) {
 
     let customCss = "";
     if (layout.customCss !== undefined && layout.customCss !== "") {
-        customCss = `<link rel='stylesheet" href=${layout.customCss}"/>`
+
+        try {
+            const cssContent = readFileSync(layout.customCss);
+            customCss = "<style>" + cssContent + "</style>";
+        } catch (e) {
+            customCss = `<link rel='stylesheet' href="${layout.customCss}"/>`
+        }
     }
 
     const og = `

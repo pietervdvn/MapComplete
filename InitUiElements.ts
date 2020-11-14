@@ -110,6 +110,16 @@ export class InitUiElements {
 
         InitUiElements.setupAllLayerElements();
 
+        if (layoutToUse.customCss !== undefined) {
+            var head = document.getElementsByTagName('head')[0];
+            var link = document.createElement('link');
+            link.id = "customCss";
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = layoutToUse.customCss;
+            link.media = 'all';
+            head.appendChild(link);
+        }
 
         function updateFavs() {
             const favs = State.state.favouriteLayers.data ?? [];
@@ -269,7 +279,7 @@ export class InitUiElements {
         ]
 
         if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
+            tabs.push({header: Svg.share, content: new ShareScreen()});
         }
 
         if (State.state.featureSwitchMoreQuests.data) {
@@ -282,7 +292,7 @@ export class InitUiElements {
 
 
         tabs.push({
-                header: Svg.help_img,
+                header: Svg.help    ,
                 content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
                     if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
                         return ""
@@ -303,8 +313,8 @@ export class InitUiElements {
 
         const fullOptions = this.CreateWelcomePane();
 
-        const help = Svg.help_ui().SetClass("open-welcome-button");
-        const close = Svg.close_ui().SetClass("close-welcome-button");
+        const help = Svg.help_svg().SetClass("open-welcome-button");
+        const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
                 close,
@@ -328,7 +338,7 @@ export class InitUiElements {
         const fullOptions2 = this.CreateWelcomePane();
         State.state.fullScreenMessage.setData(fullOptions2)
 
-        Svg.help_ui()
+        Svg.help_svg()
             .SetClass("open-welcome-button")
             .SetClass("shadow")
             .onClick(() => {
@@ -366,14 +376,14 @@ export class InitUiElements {
             }
 
             layerControlPanel.SetStyle("display:block;padding:1em;border-radius:1em;");
-            const closeButton = Svg.close_ui().SetClass("layer-selection-toggle").SetStyle("  background: #e5f5ff;")
+            const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
                 new Combine([
                     closeButton,
                     layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
                     .SetClass("hidden-on-mobile")
                 ,
-                Svg.layers_ui().SetClass("layer-selection-toggle"),
+                Svg.layers_svg().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
             );
 

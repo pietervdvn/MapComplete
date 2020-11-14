@@ -4,6 +4,8 @@ Contains tweaks for small screens
 
 .only-on-mobile {
     display: none;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
 }
 
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
@@ -14,6 +16,8 @@ Contains tweaks for small screens
     
     .only-on-mobile {
         display: unset;
+        background-color: var(--background-color);
+        color: var(--foreground-color);
     }
     
     .hidden-on-mobile {
@@ -22,6 +26,8 @@ Contains tweaks for small screens
 
     #messagesbox {
         display: none;
+        background-color: var(--background-color);
+        color: var(--foreground-color);
     }
 
     #help-button-mobile{
@@ -57,15 +63,15 @@ Contains tweaks for small screens
 
     #messagesboxmobile {
         display: block;
+    
         position: absolute;
         z-index: 10000;
-        background-color: white;
         width: 100vw;
     }
 
     #welcomeMessage {
         display: inline-block;
-        background-color: white;
+        background-color: var(--background-color);
         border-radius: 0;
         width: 100%;
         max-width: 100%;
