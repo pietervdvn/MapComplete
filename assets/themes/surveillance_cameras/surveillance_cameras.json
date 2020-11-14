@@ -156,7 +156,7 @@
             "nl": "Wat wordt hier precies bewaakt?"
           },
           "freeform": {
-            "key": "surveillance:type"
+            "key": "surveillance:zone"
           },
           "render": {
             "en": " Surveills a {surveillance:zone}",

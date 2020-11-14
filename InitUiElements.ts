@@ -111,14 +111,7 @@ export class InitUiElements {
         InitUiElements.setupAllLayerElements();
 
         if (layoutToUse.customCss !== undefined) {
-            var head = document.getElementsByTagName('head')[0];
-            var link = document.createElement('link');
-            link.id = "customCss";
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = layoutToUse.customCss;
-            link.media = 'all';
-            head.appendChild(link);
+           Utils.LoadCustomCss(layoutToUse.customCss);
         }
 
         function updateFavs() {

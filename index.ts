@@ -5,6 +5,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import {Utils} from "./Utils";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -29,6 +30,10 @@ if(location.href.indexOf("pietervdvn.github.io") >= 0){
     defaultLayout = "bookcases"
 }
 
+const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
+if(customCssQP.data !== undefined && customCssQP.data !== ""){
+    Utils.LoadCustomCss(customCssQP.data);
+}
 
 
 let testing: UIEventSource<string>;

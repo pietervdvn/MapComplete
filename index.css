@@ -39,7 +39,8 @@ svg path {
     background-color: var(--background-color);
     color: var(--foreground-color);
 
-    border: 2px solid var(--popup-border)
+    border: 2px solid var(--popup-border);
+    box-shadow: 0 3px 14px var(--shadow-color) !important;
 }
 
 .leaflet-container {
