@@ -111,7 +111,7 @@
         },
         {
           "question": {
-            "en": "What k ind of surveillance is this camera",
+            "en": "What kind of surveillance is this camera",
             "nl": "Wat soort bewaking wordt hier uitgevoerd?"
           },
           "mappings": [
@@ -245,7 +245,12 @@
       "color": {
         "render": "#00f"
       },
-      "presets": [],
+      "presets": [
+        {
+          "tags": ["man_made=surveillance","surveillance:type=camera"],
+          "title": "Surveillance camera"
+        }
+      ],
       "wayHandling": 2
     }
   ],

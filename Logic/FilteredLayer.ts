@@ -123,13 +123,9 @@ export class FilteredLayer {
             }
         })
     }
-    
-    static fromDefinition(
-        definition, 
-                 showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement):
-        FilteredLayer {
-        return new FilteredLayer(
-            definition, showOnPopup);
+
+    static fromDefinition(definition, showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement): FilteredLayer {
+        return new FilteredLayer(definition, showOnPopup);
 
     }
 
@@ -239,7 +235,7 @@ export class FilteredLayer {
         }
 
 
-        // The data is split in two parts: the poinst and the rest
+        // The data is split in two parts: the point and the rest
         // The points get a special treatment in order to render them properly
         // Note that some features might get a point representation as well
 
@@ -326,20 +322,23 @@ export class FilteredLayer {
                 eventSource.addCallback(updateStyle);
 
                 function openPopup(e) {
-                    State.state.selectedElement.setData({feature: feature});
                     updateStyle()
+
+
                     if (feature.geometry.type === "Point") {
+                        State.state.selectedElement.setData({feature: feature});
                         return; // Points bind there own popups
                     }
 
                     const uiElement = self._showOnPopup(eventSource, feature);
-
                     L.popup({
                         autoPan: true,
                     }).setContent(uiElement.Render())
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
                     uiElement.Update();
+                    State.state.selectedElement.setData({feature: feature});
+
                     if (e) {
                         L.DomEvent.stop(e); // Marks the event as consumed
                     }

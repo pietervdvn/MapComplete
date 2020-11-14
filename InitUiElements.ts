@@ -475,7 +475,7 @@ export class InitUiElements {
                 throw "Layer " + layer + " was not substituted";
             }
 
-            const generateInfo = (tagsES, feature) => {
+            const generateInfo = (tagsES) => {
 
                 return new FeatureInfoBox(
                     tagsES,

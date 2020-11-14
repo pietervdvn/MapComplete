@@ -164,6 +164,7 @@ export class Utils {
         link.href = location;
         link.media = 'all';
         head.appendChild(link);
+        console.log("Added custom layout ",location)
     }
 
 }

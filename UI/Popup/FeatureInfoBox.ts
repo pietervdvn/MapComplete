@@ -40,6 +40,7 @@ export class FeatureInfoBox extends UIElement {
     }
 
     InnerRender(): string {
+        console.error("Inner rendering infobox for ", this._tags.data.id, this.id)
         return new Combine([
             new Combine([this._title, this._titleIcons])
                 .SetClass("featureinfobox-titlebar"),

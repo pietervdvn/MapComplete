@@ -10,41 +10,19 @@ export class FullScreenMessageBox extends UIElement {
 
     private static readonly _toTheMap_height : string = "5em";
     
-    private _uielement: UIElement;
     private readonly returnToTheMap: UIElement;
 
     constructor(onClear: (() => void)) {
         super(State.state.fullScreenMessage);
-        const self = this;
-        State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
-            this._uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
-                "display:block;"+
-                "padding: 1em;"+
-                "padding-bottom:6em;"+
-                `margin-bottom:${FullScreenMessageBox._toTheMap_height};`+
-                "box-sizing:border-box;"+
-                `height:calc(100vh - ${FullScreenMessageBox._toTheMap_height});`+
-                "overflow-y: auto;" +
-                "max-width:100vw;" +
-                "overflow-x:hidden;" +
-                "background:var(--background-color);" +
-                "color: var(--foreground-color);"
-
-            );
-        });
-        
-        
         this.HideOnEmpty(true);
-
-        State.state.fullScreenMessage.addCallback(latestData => {
-            if (latestData === undefined) {
+        State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
+            if (uiElement === undefined) {
                 location.hash = "";
             } else {
                 // The 'hash' makes sure a new piece of history is added. This makes the 'back-button' on android remove the popup
                 location.hash = "#element";
             }
-            this.Update();
-        })
+        });
 
         if (window !== undefined) {
             window.onhashchange = function () {
@@ -57,14 +35,15 @@ export class FullScreenMessageBox extends UIElement {
             }
         }
 
+        const self = this;
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
-            .SetStyle("background:#7ebc6f;" +
-                "position: fixed;" +
-                "z-index: 10000;" +
-                "bottom: 0;" +
-                "left: 0;" +
-                `height: ${FullScreenMessageBox._toTheMap_height};` +
+                .SetStyle("background:#7ebc6f;" +
+                    "position: fixed;" +
+                    "z-index: 10000;" +
+                    "bottom: 0;" +
+                    "left: 0;" +
+                    `height: ${FullScreenMessageBox._toTheMap_height};` +
                 "width: 100vw;" +
                 "color: white;" +
                 "font-weight: bold;" +
@@ -88,7 +67,24 @@ export class FullScreenMessageBox extends UIElement {
         if (State.state.fullScreenMessage.data === undefined) {
             return "";
         }
-        return new Combine([this._uielement, this.returnToTheMap])
+        
+        const el = document.getElementById(this.id);
+        console.warn(el, el.style.display);
+
+        const uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
+            "display:block;" +
+            "padding: 1em;" +
+            "padding-bottom:6em;" +
+            `margin-bottom:${FullScreenMessageBox._toTheMap_height};` +
+            "box-sizing:border-box;" +
+            `height:calc(100vh - ${FullScreenMessageBox._toTheMap_height});` +
+            "overflow-y: auto;" +
+            "max-width:100vw;" +
+            "overflow-x:hidden;" +
+            "background:var(--background-color);" +
+            "color: var(--foreground-color);"
+        );
+        return new Combine([uielement, this.returnToTheMap])
             .Render();
     }
 
