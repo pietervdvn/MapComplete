@@ -105,10 +105,9 @@ export default class CustomGeneratorPanel extends UIElement {
         }
         if (ud.csCount <= State.userJourney.themeGeneratorReadOnlyUnlock) {
             return new Combine([
-                "<h3>Too little experience/h3>",
-                `Creating your own (readonly) themes can only be done if you have more then <b>${State.userJourney.themeGeneratorReadOnlyUnlock}</b> changesets made`,
-                `Making a theme including survey options can be done at <b>${State.userJourney.themeGeneratorFullUnlock}</b> changesets`,
-                this.loginButton
+                "<h3>Too little experience</h3>",
+                `<p>Creating your own (readonly) themes can only be done if you have more then <b>${State.userJourney.themeGeneratorReadOnlyUnlock}</b> changesets made</p>`,
+                `<p>Making a theme including survey options can be done at <b>${State.userJourney.themeGeneratorFullUnlock}</b> changesets</p>`
             ]).Render();
         }
         return this.mainPanel.Render()
