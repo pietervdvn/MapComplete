@@ -100,7 +100,7 @@ export default class ValidatedTextField {
             }),
         ValidatedTextField.tp(
             "direction",
-            "A geographical direction, in degrees. 0° is north, 90° is east",
+            "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
             (str) => {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0 && Number(str) <= 360

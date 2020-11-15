@@ -290,7 +290,7 @@ export class InitUiElements {
                     if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
-                    return Translations.t.general.aboutMapcomplete.Render();
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version "+State.vNumber]).Render();
                 }, [Locale.language]))
             }
         );
