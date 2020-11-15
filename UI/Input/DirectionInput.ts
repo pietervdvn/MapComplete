@@ -37,7 +37,7 @@ export default class DirectionInput extends InputElement<string> {
         console.log("Inner render direction")
         return new Combine([
             Svg.direction_svg().SetStyle(
-                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;rotategs:${this.value.data}deg;`)
+                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;rotate:${this.value.data}deg;`)
                 .SetClass("direction-svg"),
             Svg.compass_svg().SetStyle(
                 "position: absolute;top: 0;left: 0;width: 100%;height: 100%;")

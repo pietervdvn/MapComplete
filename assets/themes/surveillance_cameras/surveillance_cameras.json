@@ -17,7 +17,7 @@
     "nl"
   ],
   "maintainer": "",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Video_surveillance_logo.svg",
+  "icon": "./assets/themes/surveillance_cameras/logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -277,7 +277,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Video_surveillance_logo.svg"
+        "render": "./assets/themes/surveillance_cameras/logo.svg"
       },
       "width": {
         "render": "8"
