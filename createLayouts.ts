@@ -247,7 +247,7 @@ let wikiPage = "{|class=\"wikitable sortable\"\n" +
 
 const generatedDir = "./assets/generated";
 if (! existsSync(generatedDir)) {
-    mkdirSync("./assets/generated")
+    mkdirSync(generatedDir)
 }
 
 for (const layoutName in all) {
@@ -275,7 +275,7 @@ for (const layoutName in all) {
 
 wikiPage += "|}"
 
-writeFile("./assets/generated/wikiIndex", wikiPage, (err) => {
+writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     if (err !== null) {
         console.log("Could not save wikiindex", err);
     }
