@@ -11,6 +11,7 @@ export class FullScreenMessageBox extends UIElement {
     private static readonly _toTheMap_height : string = "5em";
     
     private readonly returnToTheMap: UIElement;
+    private _content: UIElement;
 
     constructor(onClear: (() => void)) {
         super();
@@ -67,10 +68,8 @@ export class FullScreenMessageBox extends UIElement {
         if (State.state.fullScreenMessage.data === undefined) {
             return "";
         }
-        
-        const el = document.getElementById(this.id);
-
-        const uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
+        this._content = State.state.fullScreenMessage.data;
+        const uielement = new Combine([this._content]).SetStyle(
             "display:block;" +
             "padding: 1em;" +
             "padding-bottom:6em;" +
