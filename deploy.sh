@@ -1,8 +1,5 @@
 #! /bin/bash
 
-cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json
-cd ..
-
 mkdir -p assets/generated
 ts-node createLayouts.ts || { echo 'Creating layouts failed' ; exit 1; }
 find -name '*.png' | parallel optipng '{}'

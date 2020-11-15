@@ -13,9 +13,12 @@
     ]
   },
   "scripts": {
-    "start": "parcel *.html UI/** Logic/** assets/** vendor/* vendor/*/*",
-    "generate": "ts-node createLayouts.ts",
-    "build": "rm -rf dist/ && ts-node generateIncludedImages.ts && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "start": "parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "generate:editor-layer-index": "cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json",
+    "generate:included-images": "ts-node generateIncludedImages.ts",
+    "generate:layouts": "ts-node createLayouts.ts",
+    "generate": "npm run generate:included-images && npm run generate:layouts && npm run generate:editor-layer-index",
+    "build": "rm -rf dist/ npm run generate && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "test": "ts-node test/*"
   },
   "keywords": [
