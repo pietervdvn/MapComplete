@@ -368,7 +368,7 @@ export class InitUiElements {
                 return;
             }
 
-            layerControlPanel.SetStyle("display:block;padding:1em;border-radius:1em;");
+            layerControlPanel.SetStyle("display:block;padding:0.75em;border-radius:1em;");
             const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
                 new Combine([
