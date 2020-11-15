@@ -101,6 +101,7 @@ Help to translate mapcomplete.
 
 A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
 
+0. Fork this repository
 1. Modify `"language"` to contain the new language, e.g. `"language": "nl"` becomes `"language": ["nl", "en"]`
 2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description": "Welcome to Open Bookcase Map"` to `"description": {"en": "Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to another supported language.
 3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/assets/translations.json), add add a language string there
