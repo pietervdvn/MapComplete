@@ -102,6 +102,7 @@
             "nl": "Naar welke geografische richting filmt deze camera?"
           },
           "render": "Films to {camera:direction}",
+          "condition": "camera:type!=dome",
           "freeform": {
             "key": "camera:direction",
             "type": "direction"
@@ -277,13 +278,19 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/surveillance_cameras/logo.svg"
+        "render": "./assets/themes/surveillance_cameras/cam.svg",
+        "mappings": [
+          {
+            "if": "camera:type=dome",
+            "then": "./assets/themes/surveillance_cameras/dome.svg"
+          }
+        ]
       },
       "width": {
         "render": "8"
       },
       "iconSize": {
-        "render": "30,30,center"
+        "render": "50,50,center"
       },
       "color": {
         "render": "#00f"

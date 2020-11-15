@@ -62,7 +62,11 @@ export default class DirectionInput extends InputElement<string> {
 
 
         htmlElement.ontouchmove = (ev: TouchEvent) => {
-            console.log("Getting a touch", ev.touches[0].clientX, ev.touches[0].clientY)
+            onPosChange(ev.touches[0].clientX, ev.touches[0].clientY);
+            ev.preventDefault();
+        }
+
+        htmlElement.ontouchstart = (ev: TouchEvent) => {
             onPosChange(ev.touches[0].clientX, ev.touches[0].clientY);
             ev.preventDefault();
         }

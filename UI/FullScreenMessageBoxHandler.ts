@@ -39,14 +39,14 @@ export class FullScreenMessageBox extends UIElement {
 
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
-                .SetStyle("background:#7ebc6f;" +
+                .SetStyle("background:var(--catch-detail-color);" +
                     "position: fixed;" +
                     "z-index: 10000;" +
                     "bottom: 0;" +
                     "left: 0;" +
                     `height: ${FullScreenMessageBox._toTheMap_height};` +
                 "width: 100vw;" +
-                "color: white;" +
+                "color: var(--catch-detail-color-contrast);" +
                 "font-weight: bold;" +
                 "pointer-events: all;" +
                 "cursor: pointer;" +
