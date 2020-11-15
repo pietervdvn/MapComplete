@@ -230,6 +230,38 @@
               }
             }
           ]
+        },
+        {
+          "question": {
+            "en": "How is this camera placed?",
+            "nl": "Hoe is deze camera geplaatst?"
+          },
+          "freeform": {
+            "key": "camera:mount"
+          },
+          "mappings": [
+            {
+              "if": "camera:mount=wall",
+              "then": {
+                "en": "This camera is placed against a wall",
+                "nl": "Deze camera hangt aan een muur"
+              }
+            },
+            {
+              "if": "camera:mount=pole",
+              "then": {
+                "en": "This camera is placed one a pole",
+                "nl": "Deze camera staat op een paal"
+              }
+            },
+            {
+              "if": "camera:mount=pole",
+              "then": {
+                "en": "This camera is placed one a pole",
+                "nl": "Deze camera staat op een paal"
+              }
+            }
+          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,

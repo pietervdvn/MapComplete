@@ -115,7 +115,7 @@ export class ImageUploadFlow extends UIElement {
             "cursor:pointer;" +
             "padding: 0.5em;" +
             "border-radius: 1em;" +
-            "border: 3px solid var(--popup-border);" +
+            "border: 3px solid var(--foreground-color);" +
             "box-sizing:border-box;")
 
         const actualInputElement =

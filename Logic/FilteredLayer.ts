@@ -322,14 +322,9 @@ export class FilteredLayer {
                 eventSource.addCallback(updateStyle);
 
                 function openPopup(e) {
-                    updateStyle()
-
-
                     if (feature.geometry.type === "Point") {
-                        State.state.selectedElement.setData({feature: feature});
-                        return; // Points bind there own popups
+                        return; // Points bind their own popups
                     }
-
                     const uiElement = self._showOnPopup(eventSource, feature);
                     L.popup({
                         autoPan: true,
@@ -337,14 +332,17 @@ export class FilteredLayer {
                         .setLatLng(e.latlng)
                         .openOn(State.state.bm.map);
                     uiElement.Update();
-                    State.state.selectedElement.setData({feature: feature});
-
                     if (e) {
                         L.DomEvent.stop(e); // Marks the event as consumed
                     }
                 }
 
-                layer.on("click", openPopup);
+                layer.on("click", (e) => {
+                    updateStyle();
+                    openPopup(e);
+                    State.state.selectedElement.setData(feature);
+                    
+                });
             }
         });
 

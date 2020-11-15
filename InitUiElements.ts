@@ -153,10 +153,10 @@ export class InitUiElements {
          * This is given to the div which renders fullscreen on mobile devices
          */
         State.state.selectedElement.addCallback((feature) => {
-                if (feature?.feature?.properties === undefined) {
+                if (feature?.properties === undefined) {
                     return;
                 }
-                const data = feature.feature.properties;
+                const data = feature.properties;
                 // Which is the applicable set?
                 for (const layer of layoutToUse.layers) {
                     if (typeof layer === "string") {

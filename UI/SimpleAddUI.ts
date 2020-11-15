@@ -116,7 +116,7 @@ export class SimpleAddUI extends UIElement {
             const loc = State.state.bm.LastClickLocation.data;
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             layerToAddTo.AddNewElement(feature);
-            State.state.selectedElement.setData({feature: feature});
+            State.state.selectedElement.setData(feature);
         }
     }
 

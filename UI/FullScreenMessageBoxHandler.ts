@@ -13,9 +13,11 @@ export class FullScreenMessageBox extends UIElement {
     private readonly returnToTheMap: UIElement;
 
     constructor(onClear: (() => void)) {
-        super(State.state.fullScreenMessage);
+        super();
         this.HideOnEmpty(true);
+        const self = this;
         State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
+            self.Update();
             if (uiElement === undefined) {
                 location.hash = "";
             } else {
@@ -28,14 +30,12 @@ export class FullScreenMessageBox extends UIElement {
             window.onhashchange = function () {
                 if (location.hash === "") {
                     // No more element: back to the map!
-                    console.log("Clearing full screen message");
                     State.state.fullScreenMessage.setData(undefined);
                     onClear();
                 }
             }
         }
 
-        const self = this;
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
                 .SetStyle("background:#7ebc6f;" +
@@ -69,7 +69,6 @@ export class FullScreenMessageBox extends UIElement {
         }
         
         const el = document.getElementById(this.id);
-        console.warn(el, el.style.display);
 
         const uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
             "display:block;" +

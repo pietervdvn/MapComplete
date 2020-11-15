@@ -82,7 +82,7 @@ export default class State {
     /**
      The latest element that was selected - used to generate the right UI at the right place
      */
-    public readonly selectedElement = new UIEventSource<{ feature: any }>(undefined);
+    public readonly selectedElement = new UIEventSource<any>(undefined);
 
     public readonly zoom: UIEventSource<number>;
     public readonly lat: UIEventSource<number>;

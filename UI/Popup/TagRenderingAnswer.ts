@@ -9,6 +9,7 @@ import {SubstitutedTranslation} from "../SpecialVisualizations";
 export default class TagRenderingAnswer extends UIElement {
     private _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
+    private _content: UIElement;
 
     constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig) {
         super(tags);
@@ -31,7 +32,9 @@ export default class TagRenderingAnswer extends UIElement {
         if (tr === undefined) {
             return "";
         }
-        return new SubstitutedTranslation(tr, this._tags).Render();
+        // Bit of a hack; remember that the fields are updated
+        this._content = new SubstitutedTranslation(tr, this._tags);
+        return this._content.Render();
     }
 
 }
