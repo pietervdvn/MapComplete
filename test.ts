@@ -5,9 +5,15 @@ import Direction from "./UI/Input/DirectionInput";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-const d = new UIEventSource(90);
+const d = new UIEventSource("90");
 new Direction(d).AttachTo("maindiv")
-new VariableUiElement(d.map(d => ""+d+"°")).AttachTo("extradiv")
+new VariableUiElement(d.map(d => "" + d + "°")).AttachTo("extradiv")
+
+UIEventSource.Chronic(25, () => {
+    const degr = (Number(d.data) + 1) % 360;
+    d.setData(""+ degr);
+    return true;
+})
 
 /*/
 
