@@ -1,10 +1,13 @@
 //*
 
 
-import Direction from "./UI/Input/Direction";
+import Direction from "./UI/Input/DirectionInput";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-new Direction().AttachTo("maindiv")
-
+const d = new UIEventSource(90);
+new Direction(d).AttachTo("maindiv")
+new VariableUiElement(d.map(d => ""+d+"°")).AttachTo("extradiv")
 
 /*/
 

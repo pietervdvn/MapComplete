@@ -9,6 +9,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
 import OpeningHoursInput from "./OpeningHours/OpeningHoursInput";
+import DirectionInput from "./DirectionInput";
 
 interface TextFieldDef {
     name: string,
@@ -97,6 +98,17 @@ export default class ValidatedTextField {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
             }),
+        ValidatedTextField.tp(
+            "direction",
+            "A geographical direction, in degrees. 0° is north, 90° is east",
+            (str) => {
+                str = "" + str;
+                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0 && Number(str) <= 360
+            },str => str,
+            (value) => {
+              return new DirectionInput(value);
+            }
+        ),
         ValidatedTextField.tp(
             "float",
             "A decimal",

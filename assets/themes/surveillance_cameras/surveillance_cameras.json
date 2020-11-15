@@ -97,6 +97,17 @@
           ]
         },
         {
+          "question": {
+            "en": "In which geographical direction does this camera film?",
+            "nl": "Naar welke geografische richting filmt deze camera?"
+          },
+          "render": "Films to {camera:direction}",
+          "freeform": {
+            "key": "camera:direction",
+            "type": "direction"
+          }
+        },
+        {
           "freeform": {
             "key": "operator"
           },

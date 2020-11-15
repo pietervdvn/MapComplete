@@ -26,11 +26,17 @@ a {
 svg {
     fill: var(--foreground-color) !important;
     stroke: var(--foreground-color) !important;
+    width: 100%;
+    height: 100%;
 }
 
 svg path {
     fill: var(--foreground-color) !important;
     stroke: var(--foreground-color) !important;
+}
+
+.direction-svg svg path{
+     fill: var(--catch-detail-color) !important;
 }
 
 
