@@ -84,16 +84,16 @@ To develop:
 
 0. Make a fork and clone the repository.
 1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
-2. Run `npm install` to install the dependencies
-3. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-4. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
+2. Run `npm install` to install the package dependencies
+3. Run `npm run generate` to generate some additional dependencies
+4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+5. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
 
 To deploy:
 
 0. `rm -rf dist/` to remove the local build
-1. `ts-node createLayouts.ts` to generate the custom htmls, (such as `aed.html`, `bookcases.html`)
-2. `npm run build`
-3. copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
+1. `npm run build`
+2. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
 
 ## Translating MapComplete
 

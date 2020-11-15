@@ -96,11 +96,11 @@ export class UserBadge extends UIElement {
 
         if (user.home !== undefined) {
             const icon = L.icon({
-                iconUrl: Img.AsData(Svg.home),
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
+                iconUrl: Img.AsData(Svg.home_white_bg),
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
             });
-            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(State.state.bm.map);
+            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(State.state.bm.map)
         }
 
         const settings =

@@ -5,7 +5,7 @@ Img.runningFromConsole = true;
 UIElement.runningFromConsole = true;
 
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {readFileSync, writeFile, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "./UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translations from "./UI/i18n/Translations";
@@ -250,6 +250,12 @@ let wikiPage = "{|class=\"wikitable sortable\"\n" +
     "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
     "|-";
 
+
+const generatedDir = "./assets/generated";
+if (! existsSync(generatedDir)) {
+    mkdirSync(generatedDir)
+}
+
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
@@ -275,7 +281,7 @@ for (const layoutName in all) {
 
 wikiPage += "|}"
 
-writeFile("./assets/generated/wikiIndex", wikiPage, (err) => {
+writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     if (err !== null) {
         console.log("Could not save wikiindex", err);
     }

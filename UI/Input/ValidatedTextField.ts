@@ -103,7 +103,7 @@ export default class ValidatedTextField {
             "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
             (str) => {
                 str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0 && Number(str) <= 360
+                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
             },str => str,
             (value) => {
               return new DirectionInput(value);
