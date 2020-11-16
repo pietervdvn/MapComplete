@@ -128,52 +128,45 @@ export class FilteredLayer {
         let self = this;
         console.log(data);
         this._geolayer = L.geoJSON(data, {
-           /* style: feature => {
-                self.layerDef.GenerateLeafletStyle(feature.properties);
-                return {
-                    color: "#f00",
-                    weight: 4
-                }
-            },*/
-            /*
-            pointToLayer: function (feature, latLng) {
-                // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
-                // Click handling is done in the next step
+                style: feature =>
+                    self.layerDef.GenerateLeafletStyle(feature.properties),
+                pointToLayer: function (feature, latLng) {
+                    // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
+                    // Click handling is done in the next step
 
-                const style = self.layerDef.GenerateLeafletStyle(feature.properties);
-                let marker;
-                if (style.icon === undefined) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
-                } else if (style.icon.iconUrl.startsWith("$circle")) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
-                } else {
-                    if (style.icon.iconSize === undefined) {
-                        style.icon.iconSize = [50, 50]
+                    const style = self.layerDef.GenerateLeafletStyle(feature.properties);
+                    let marker;
+                    if (style.icon === undefined) {
+                        marker = L.circle(latLng, {
+                            radius: 25,
+                            color: style.color
+                        });
+                    } else if (style.icon.iconUrl.startsWith("$circle")) {
+                        marker = L.circle(latLng, {
+                            radius: 25,
+                            color: style.color
+                        });
+                    } else {
+                        if (style.icon.iconSize === undefined) {
+                            style.icon.iconSize = [50, 50]
+                        }
+
+                        marker = L.marker(latLng, {
+                            icon: L.icon(style.icon)
+                        });
                     }
+                    return marker;
+                },
+                onEachFeature: function (feature, layer: Layer) {
 
-                    marker = L.marker(latLng, {
-                        icon: L.icon(style.icon)
-                    });
-                }
-                return marker;
-            },*/
-/*
-            onEachFeature: function (feature, layer:Layer) {
-
-                layer.on("click", (e) => {
-                    if (layer.getPopup() === undefined
-                        && (window.screen.availHeight > 600 || window.screen.availWidth > 600) // We DON'T trigger this code on small screens! No need to create a popup
-                    ) {
-                        const popup = L.popup({
-                            autoPan: true,
-                            closeOnEscapeKey: true,
-                        }, layer);
+                    layer.on("click", (e) => {
+                        if (layer.getPopup() === undefined
+                            && (window.screen.availHeight > 600 || window.screen.availWidth > 600) // We DON'T trigger this code on small screens! No need to create a popup
+                        ) {
+                            const popup = L.popup({
+                                autoPan: true,
+                                closeOnEscapeKey: true,
+                            }, layer);
 
                         // @ts-ignore
                         popup.setLatLng(e.latlng)
@@ -196,7 +189,6 @@ export class FilteredLayer {
                     L.DomEvent.stop(e);
                 });
             }
-        */
         }
         )
         ;

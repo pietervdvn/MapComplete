@@ -1,0 +1,23 @@
+.image-upload-flow-button span {
+    width: max-content;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 13px;
+}
+
+.image-upload-flow-button {
+    display: flex;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 1em;
+    border: 3px solid var(--foreground-color);
+    box-sizing: border-box;
+}
+
+.image-upload-flow svg {
+    fill: var(--foreground-color);
+    stroke: var(--foreground-color);
+}
