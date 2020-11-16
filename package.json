@@ -25,7 +25,7 @@
     "deploy:staging": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/Staging/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:production": "npm run prepare-deploy && npm run optimize-images && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
 
-    "clean": "rm *.webmanifest && find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\).html\" | xargs rm"
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\).html\" | xargs rm) && (find *.webmanifest | xargs rm)"
     
   },
   "keywords": [

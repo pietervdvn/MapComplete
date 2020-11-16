@@ -25,13 +25,9 @@ export class FilteredLayer {
     public readonly layerDef: LayerConfig;
     private readonly _maxAllowedOverlap: number;
 
-    private readonly _style: (properties) => { color: string, weight?: number, icon: { iconUrl: string, iconSize?: [number, number], popupAnchor?: [number, number], iconAnchor?: [number, number] } };
-
-
     /** The featurecollection from overpass
      */
     private _dataFromOverpass: any[];
-    private readonly _wayHandling: number;
     /** List of new elements, geojson features
      */
     private _newElements = [];
@@ -49,60 +45,7 @@ export class FilteredLayer {
     ) {
         this.layerDef = layerDef;
 
-        this._wayHandling = layerDef.wayHandling;
         this._showOnPopup = showOnPopup;
-        this._style = (tags) => {
-
-            const iconUrl = layerDef.icon?.GetRenderValue(tags)?.txt;
-            const iconSize = (layerDef.iconSize?.GetRenderValue(tags)?.txt ?? "40,40,center").split(",");
-            
-            
-            const dashArray = layerDef.dashArray.GetRenderValue(tags)?.txt.split(" ").map(Number);
-
-            function num(str, deflt = 40) {
-                const n = Number(str);
-                if (isNaN(n)) {
-                    return deflt;
-                }
-                return n;
-            }
-
-            const iconW = num(iconSize[0]);
-            const iconH = num(iconSize[1]);
-            const mode = iconSize[2] ?? "center"
-
-            let anchorW = iconW / 2;
-            let anchorH = iconH / 2;
-            if (mode === "left") {
-                anchorW = 0;
-            }
-            if (mode === "right") {
-                anchorW = iconW;
-            }
-
-            if (mode === "top") {
-                anchorH = 0;
-            }
-            if (mode === "bottom") {
-                anchorH = iconH;
-            }
-
-
-            const color = layerDef.color?.GetRenderValue(tags)?.txt ?? "#00f";
-            let weight = num(layerDef.width?.GetRenderValue(tags)?.txt, 5);
-            return {
-                icon:
-                    {
-                        iconUrl: iconUrl,
-                        iconSize: [iconW, iconH],
-                        iconAnchor: [anchorW, anchorH],
-                        popupAnchor: [0, 3 - anchorH]
-                    },
-                color: color,
-                weight: weight,
-                dashArray: dashArray
-            };
-        };
         this.name = name;
         this.filters = layerDef.overpassTags;
         this._maxAllowedOverlap = layerDef.hideUnderlayingFeaturesMinPercentage;
@@ -123,13 +66,6 @@ export class FilteredLayer {
             }
         })
     }
-
-    static fromDefinition(definition, showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement): FilteredLayer {
-        return new FilteredLayer(definition, showOnPopup);
-
-    }
-
-
     /**
      * The main function to load data into this layer.
      * The data that is NOT used by this layer, is returned as a geojson object; the other data is rendered
@@ -138,32 +74,15 @@ export class FilteredLayer {
         const leftoverFeatures = [];
         const selfFeatures = [];
         for (let feature of geojson.features) {
-            // feature.properties contains all the properties
-
             const tags = TagUtils.proprtiesToKV(feature.properties);
-
             if (!this.filters.matches(tags)) {
                 leftoverFeatures.push(feature);
                 continue;
             }
-
-            if (feature.geometry.type !== "Point") {
-                const centerPoint = GeoOperations.centerpoint(feature);
-                if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
-                    selfFeatures.push(centerPoint);
-                } else if (this._wayHandling === LayerConfig.WAYHANDLING_CENTER_ONLY) {
-                    feature = centerPoint;
-                }
-            }
             selfFeatures.push(feature);
-
         }
 
-
-        this.RenderLayer({
-            type: "FeatureCollection",
-            features: selfFeatures
-        })
+       this.RenderLayer(selfFeatures)
 
         const notShadowed = [];
         for (const feature of leftoverFeatures) {
@@ -186,18 +105,140 @@ export class FilteredLayer {
 
     public AddNewElement(element) {
         this._newElements.push(element);
-        this.RenderLayer({features: this._dataFromOverpass}, element); // Update the layer
-
+        this.RenderLayer( this._dataFromOverpass); // Update the layer
     }
 
-    private RenderLayer(data, openPopupOf = undefined) {
-        let self = this;
+    private RenderLayer(features) {
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
             // Remove the old geojson layer from the map - we'll reshow all the elements later on anyway
             State.state.bm.map.removeLayer(this._geolayer);
         }
 
+        // We fetch all the data we have to show:
+        let fusedFeatures = this.ApplyWayHandling(this.FuseData(features));
+        console.log("Fused:",fusedFeatures)
+
+        // And we copy some features as points - if needed
+        const data = {
+            type: "FeatureCollection",
+            features: fusedFeatures
+        }
+
+        let self = this;
+        console.log(data);
+        this._geolayer = L.geoJSON(data, {
+           /* style: feature => {
+                self.layerDef.GenerateLeafletStyle(feature.properties);
+                return {
+                    color: "#f00",
+                    weight: 4
+                }
+            },*/
+            /*
+            pointToLayer: function (feature, latLng) {
+                // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
+                // Click handling is done in the next step
+
+                const style = self.layerDef.GenerateLeafletStyle(feature.properties);
+                let marker;
+                if (style.icon === undefined) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
+                    });
+                } else if (style.icon.iconUrl.startsWith("$circle")) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
+                    });
+                } else {
+                    if (style.icon.iconSize === undefined) {
+                        style.icon.iconSize = [50, 50]
+                    }
+
+                    marker = L.marker(latLng, {
+                        icon: L.icon(style.icon)
+                    });
+                }
+                return marker;
+            },*/
+/*
+            onEachFeature: function (feature, layer:Layer) {
+
+                layer.on("click", (e) => {
+                    if (layer.getPopup() === undefined
+                        && (window.screen.availHeight > 600 || window.screen.availWidth > 600) // We DON'T trigger this code on small screens! No need to create a popup
+                    ) {
+                        const popup = L.popup({
+                            autoPan: true,
+                            closeOnEscapeKey: true,
+                        }, layer);
+
+                        // @ts-ignore
+                        popup.setLatLng(e.latlng)
+
+                        layer.bindPopup(popup);
+                        const eventSource = State.state.allElements.addOrGetElement(feature);
+                        const uiElement = self._showOnPopup(eventSource, feature);
+                        // We first render the UIelement (which'll still need an update later on...)
+                        // But at least it'll be visible already
+                        popup.setContent(uiElement.Render());
+                        popup.openOn(State.state.bm.map);
+                        // popup.openOn(State.state.bm.map);
+                        // ANd we perform the pending update
+                        uiElement.Update();
+                    }
+                    // We set the element as selected...
+                    State.state.selectedElement.setData(feature);
+
+                    // We mark the event as consumed
+                    L.DomEvent.stop(e);
+                });
+            }
+        */
+        }
+        )
+        ;
+
+        if (this.combinedIsDisplayed.data) {
+            this._geolayer.addTo(State.state.bm.map);
+        }
+
+    }
+
+    private ApplyWayHandling(fusedFeatures: any[]) {
+        if (this.layerDef.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
+            // We don't have to do anything special
+            return fusedFeatures;
+        }
+
+
+        // We have to convert all the ways into centerpoints
+        const existingPoints = [];
+        const newPoints = [];
+        const existingWays = [];
+
+        for (const feature of fusedFeatures) {
+            if (feature.geometry.type === "Point") {
+                existingPoints.push(feature);
+                continue;
+            }
+
+            existingWays.push(feature);
+            const centerPoint = GeoOperations.centerpoint(feature);
+            newPoints.push(centerPoint);
+        }
+
+        fusedFeatures = existingPoints.concat(newPoints);
+        if (this.layerDef.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
+            fusedFeatures = fusedFeatures.concat(existingWays)
+        }
+        return fusedFeatures;
+    }
+
+    //*Fuses the old and the new datasets*/
+    private FuseData(data: any[]) {
         const oldData = this._dataFromOverpass ?? [];
 
         // We keep track of all the ids that are freshly loaded in order to avoid adding duplicates
@@ -205,7 +246,7 @@ export class FilteredLayer {
         // A list of all the features to show
         const fusedFeatures = [];
         // First, we add all the fresh data:
-        for (const feature of data.features) {
+        for (const feature of data) {
             idsFromOverpass.add(feature.properties.id);
             fusedFeatures.push(feature);
         }
@@ -226,133 +267,6 @@ export class FilteredLayer {
                 fusedFeatures.push(feature);
             }
         }
-        
-
-        // We use a new, fused dataset
-        data = {
-            type: "FeatureCollection",
-            features: fusedFeatures
-        }
-
-
-        // The data is split in two parts: the point and the rest
-        // The points get a special treatment in order to render them properly
-        // Note that some features might get a point representation as well
-
-        const runWhenAdded: (() => void)[] = []
-
-        this._geolayer = L.geoJSON(data, {
-            style: function (feature) {
-                return self._style(feature.properties);
-            },
-            pointToLayer: function (feature, latLng) {
-                const style = self._style(feature.properties);
-                let marker;
-                if (style.icon === undefined) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
-
-                } else if (style.icon.iconUrl.startsWith("$circle")) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
-                } else {
-                    if (style.icon.iconSize === undefined) {
-                        style.icon.iconSize = [50, 50]
-                    }
-
-                    // @ts-ignore
-                    marker = L.marker(latLng, {
-                        icon: L.icon(style.icon),
-                    });
-                }
-                let eventSource = State.state.allElements.addOrGetElement(feature);
-                const popup = L.popup({}, marker);
-                let uiElement: UIElement;
-                let content = undefined;
-                let p = marker.bindPopup(popup)
-                    .on("popupopen", () => {
-                        if (content === undefined) {
-                            uiElement = self._showOnPopup(eventSource, feature);
-                            // Lazily create the content
-                            content = uiElement.Render();
-                        }
-                        popup.setContent(content);
-                        uiElement.Update();
-                    });
-
-                if (feature === openPopupOf) {
-                    runWhenAdded.push(() => {
-                        p.openPopup();
-                    })
-                }
-
-                return marker;
-            },
-
-            onEachFeature: function (feature, layer:Layer) {
-
-                // We monky-patch the feature element with an update-style
-                function updateStyle () {
-                    // @ts-ignore
-                    if (layer.setIcon) {
-                        const style = self._style(feature.properties);
-                        const icon = style.icon;
-                        if (icon.iconUrl) {
-                            if (icon.iconUrl.startsWith("$circle")) {
-                                // pass
-                            } else {
-                                // @ts-ignore
-                                layer.setIcon(L.icon(icon))
-                            }
-                        }
-                    } else {
-                        self._geolayer.setStyle(function (featureX) {
-                            return self._style(featureX.properties);
-                        });
-                    }
-                }
-
-                let eventSource = State.state.allElements.addOrGetElement(feature);
-
-
-                eventSource.addCallback(updateStyle);
-
-                function openPopup(e) {
-                    if (feature.geometry.type === "Point") {
-                        return; // Points bind their own popups
-                    }
-                    const uiElement = self._showOnPopup(eventSource, feature);
-                    L.popup({
-                        autoPan: true,
-                    }).setContent(uiElement.Render())
-                        .setLatLng(e.latlng)
-                        .openOn(State.state.bm.map);
-                    uiElement.Update();
-                    if (e) {
-                        L.DomEvent.stop(e); // Marks the event as consumed
-                    }
-                }
-
-                layer.on("click", (e) => {
-                    updateStyle();
-                    openPopup(e);
-                    State.state.selectedElement.setData(feature);
-                    
-                });
-            }
-        });
-
-        if (this.combinedIsDisplayed.data) {
-            this._geolayer.addTo(State.state.bm.map);
-            for (const f of runWhenAdded) {
-                f();
-            }
-        }
+        return fusedFeatures;
     }
-
-
 }

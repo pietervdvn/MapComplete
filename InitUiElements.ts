@@ -475,18 +475,16 @@ export class InitUiElements {
                 throw "Layer " + layer + " was not substituted";
             }
 
-            const generateInfo = (tagsES) => {
-
-                return new FeatureInfoBox(
-                    tagsES,
-                    layer,
-                )
-            };
-
-            const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
+            const flayer: FilteredLayer = new FilteredLayer(layer,
+                (tagsES) => {
+                    return new FeatureInfoBox(
+                        tagsES,
+                        layer,
+                    )
+                });
             flayers.push(flayer);
 
-            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wehter or not layer "+layer.id+" is shown")
+            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wehter or not layer " + layer.id + " is shown")
                 .map<boolean>((str) => str !== "false", [], (b) => b.toString())
                 .syncWith(
                     flayer.isDisplayed

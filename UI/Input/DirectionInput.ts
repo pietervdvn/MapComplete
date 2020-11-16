@@ -68,7 +68,6 @@ export default class DirectionInput extends InputElement<string> {
 
         htmlElement.ontouchstart = (ev: TouchEvent) => {
             onPosChange(ev.touches[0].clientX, ev.touches[0].clientY);
-            ev.preventDefault();
         }
 
         let isDown = false;

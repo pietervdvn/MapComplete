@@ -8,7 +8,6 @@ import Locale from "./i18n/Locale";
 import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
-import {Img} from "./Img";
 import Svg from "../Svg";
 
 /**
@@ -115,8 +114,8 @@ export class SimpleAddUI extends UIElement {
 
             const loc = State.state.bm.LastClickLocation.data;
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
-            layerToAddTo.AddNewElement(feature);
             State.state.selectedElement.setData(feature);
+            layerToAddTo.AddNewElement(feature);
         }
     }
 

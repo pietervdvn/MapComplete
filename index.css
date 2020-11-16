@@ -7,7 +7,9 @@
     --background-color: white;
     --foreground-color: black;
     --popup-border: white;
-    --shadow-color: #00000066
+    --shadow-color: #00000066;
+    
+    --return-to-the-map-height: 5em;
 }
 
 html, body {

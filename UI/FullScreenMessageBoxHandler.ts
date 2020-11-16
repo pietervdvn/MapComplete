@@ -8,34 +8,13 @@ import Combine from "./Base/Combine";
  */
 export class FullScreenMessageBox extends UIElement {
 
-    private static readonly _toTheMap_height : string = "5em";
-    
     private readonly returnToTheMap: UIElement;
     private _content: UIElement;
 
     constructor(onClear: (() => void)) {
-        super();
+        super(State.state.fullScreenMessage);
         this.HideOnEmpty(true);
         const self = this;
-        State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
-            self.Update();
-            if (uiElement === undefined) {
-                location.hash = "";
-            } else {
-                // The 'hash' makes sure a new piece of history is added. This makes the 'back-button' on android remove the popup
-                location.hash = "#element";
-            }
-        });
-
-        if (window !== undefined) {
-            window.onhashchange = function () {
-                if (location.hash === "") {
-                    // No more element: back to the map!
-                    State.state.fullScreenMessage.setData(undefined);
-                    onClear();
-                }
-            }
-        }
 
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
@@ -44,7 +23,7 @@ export class FullScreenMessageBox extends UIElement {
                     "z-index: 10000;" +
                     "bottom: 0;" +
                     "left: 0;" +
-                    `height: ${FullScreenMessageBox._toTheMap_height};` +
+                    `height: var(--return-to-the-map-height);` +
                 "width: 100vw;" +
                 "color: var(--catch-detail-color-contrast);" +
                 "font-weight: bold;" +
@@ -55,10 +34,8 @@ export class FullScreenMessageBox extends UIElement {
                 "padding-bottom: 1.2em;" +
                 "box-sizing:border-box")
             .onClick(() => {
-                console.log("Returning...")
                 State.state.fullScreenMessage.setData(undefined);
                 onClear();
-                self.Update();
             });
 
     }
@@ -73,9 +50,9 @@ export class FullScreenMessageBox extends UIElement {
             "display:block;" +
             "padding: 1em;" +
             "padding-bottom:6em;" +
-            `margin-bottom:${FullScreenMessageBox._toTheMap_height};` +
+            `margin-bottom: var(--return-to-the-map-height);` +
             "box-sizing:border-box;" +
-            `height:calc(100vh - ${FullScreenMessageBox._toTheMap_height});` +
+            `height:calc(100vh - var(--return-to-the-map-height));` +
             "overflow-y: auto;" +
             "max-width:100vw;" +
             "overflow-x:hidden;" +

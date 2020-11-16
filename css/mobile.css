@@ -43,10 +43,15 @@ Contains tweaks for small screens
     #geolocate-button {
         display: block;
     }
-
+    
     .leaflet-popup {
-        /* Popups are hidden on mobile */
+        transform: unset !important;
+    }
+
+    .leaflet-popup-content {
+        /* On mobile, the popups are shown as a full-screen element */
         display: none;
+        visibility: hidden;
     }
 
     #centermessage {

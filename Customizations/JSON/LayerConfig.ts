@@ -116,4 +116,63 @@ export default class LayerConfig {
 
 
     }
+
+
+    public GenerateLeafletStyle(tags: any):
+        {
+            color: string;
+            icon: { popupAnchor: [number, number]; iconAnchor: [number, number]; iconSize: [number, number]; iconUrl: string }; weight: number; dashArray: number[]
+        } {
+        const iconUrl = this.icon?.GetRenderValue(tags)?.txt;
+        const iconSize = (this.iconSize?.GetRenderValue(tags)?.txt ?? "40,40,center").split(",");
+
+
+        const dashArray = this.dashArray.GetRenderValue(tags)?.txt.split(" ").map(Number);
+
+        function num(str, deflt = 40) {
+            const n = Number(str);
+            if (isNaN(n)) {
+                return deflt;
+            }
+            return n;
+        }
+
+        const iconW = num(iconSize[0]);
+        const iconH = num(iconSize[1]);
+        const mode = iconSize[2] ?? "center"
+
+        let anchorW = iconW / 2;
+        let anchorH = iconH / 2;
+        if (mode === "left") {
+            anchorW = 0;
+        }
+        if (mode === "right") {
+            anchorW = iconW;
+        }
+
+        if (mode === "top") {
+            anchorH = 0;
+        }
+        if (mode === "bottom") {
+            anchorH = iconH;
+        }
+
+
+        const color = this.color?.GetRenderValue(tags)?.txt ?? "#00f";
+        let weight = num(this.width?.GetRenderValue(tags)?.txt, 5);
+        return {
+            icon:
+                {
+                    iconUrl: iconUrl,
+                    iconSize: [iconW, iconH],
+                    iconAnchor: [anchorW, anchorH],
+                    popupAnchor: [0, 3 - anchorH]
+                },
+            color: color,
+            weight: weight,
+            dashArray: dashArray
+        };
+    }
+
+
 }

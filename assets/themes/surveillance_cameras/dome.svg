@@ -40,27 +40,27 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="1.5733334"
-     inkscape:cx="84.526201"
+     inkscape:cx="-20.982269"
      inkscape:cy="188.2981"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
-     d="M 34.759205,76.188657 H 262.93718 c 37.50409,0.111509 38.67272,47.104633 0,46.615173 H 34.759205 c -33.95631907,0.10039 -33.5365026,-46.998068 0,-46.615173 z"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 34.759205,66.019166 H 262.93718 c 37.50409,0.111509 38.67272,47.104634 0,46.615174 H 34.759205 c -33.95631907,0.10039 -33.5365026,-46.998069 0,-46.615174 z"
      id="path818"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
   <path
      style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 49.750453,132.33688 249.19481,132.00969 C 248.9489,264.76342 49.140118,261.25015 49.750453,132.33688 Z"
+     d="M 49.750453,122.23061 249.19481,121.8402 C 248.9489,280.24546 49.140118,276.05333 49.750453,122.23061 Z"
      id="path823"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccc" />
   <g
      id="g848"
-     transform="matrix(1.4204816,0,0,1.4204816,-61.951413,-43.532931)"
+     transform="matrix(1.4204816,0,0,1.4204816,-61.951413,-40.990558)"
      style="stroke-width:0.70398653">
     <ellipse
        ry="23.81991"
