@@ -1,0 +1,273 @@
+{
+  "id": "climbing",
+  "title": {
+    "nl": "Open Klimkaart",
+    "de": "Offene Kletterkarte",
+    "en": "Open Climbing Map"
+  },
+  "description": {
+    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
+    "de": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
+    "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature."
+  },
+  "language": [
+    "nl",
+    "de",
+    "en"
+  ],
+  "maintainer": "Christian Neumann <christian@utopicode.de>",
+  "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/45246-200.png",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "climbing",
+      "name": {
+        "nl": "Klimgelegenheiden",
+        "de": "Klettergelegenheiten",
+        "en": "Climbing opportunities"
+      },
+      "minzoom": 10,
+      "overpassTags": {
+        "and": [
+          "sport=climbing",
+          "climbing!~route"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Klimgelegenheid",
+          "de": "Klettergelegenheit",
+          "en": "Climbing opportunity"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "leisure=sports_centre"
+              ]
+            },
+            "then": {
+              "nl": "Klimzaal",
+              "de": "Kletterhalle",
+              "en": "Climbing gym"
+            }
+          }
+        ]
+      },
+      "description": {
+        "nl": "Een klimgelegenheid",
+        "de": "Eine Klettergelegenheit",
+        "en": "A climbing opportunity"
+      },
+      "tagRenderings": [
+        {
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "climbing:boulder=yes"
+                ]
+              },
+              "then": {
+                "nl": "Bolderen kan hier",
+                "de": "Hier kann gebouldert werden",
+                "en": "Bouldering is possible here"
+              }
+            }
+          ]
+        },
+        {
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "climbing:toprope=yes"
+                ]
+              },
+              "then": {
+                "nl": "Toprope klimmen kan hier",
+                "de": "Toprope ist hier möglich",
+                "en": "Toprope is possible here"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://d30y9cdsu7xlg0.cloudfront.net/png/45246-200.png"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [],
+      "wayHandling": 2
+    },
+    {
+      "id": "routes",
+      "name": {
+        "en": "",
+        "nl": "",
+        "de": ""
+      },
+      "minzoom": 18,
+      "overpassTags": {
+        "and": [
+          "sport=climbing",
+          "climbing=route"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Klimroute",
+          "de": "Kletterroute",
+          "en": "Climbing route"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name~*"
+              ]
+            },
+            "then": {
+              "nl": "Klimroute <i>{name}</i>",
+              "de": "Kletterroute <i>{name}</i>",
+              "en": "Climbing route <i>{name}</i>"
+            }
+          }
+        ]
+      },
+      "description": {
+        "nl": "Individuele klimroutes",
+        "de": "Kletterrouten",
+        "en": "Climbing routes"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "Moeilijkheidsgraad <b>{climbing:grade:french}</b>",
+            "en": "Difficulty level <b>{climbing:grade:french}</b>",
+            "de": "Schwierigkeitsgrad <b>{climbing:grade:french}</b>"
+          },
+          "question": {
+            "nl": "Wat is de moelijkheidsgraad van dit parcour?",
+            "en": "What is the difficulty of this route?",
+            "de": "Was ist die Schwierigkeit dieser Route?"
+          },
+          "freeform": {
+            "key": "climbing:grade:french"
+          }
+        },
+        {
+          "render": {
+            "de": "",
+            "en": "",
+            "nl": "Lengte <b>{climbing:length}</b>"
+          },
+          "question": {
+            "de": "",
+            "en": "",
+            "nl": "Wat is de lengte in meter (van de grond tot het katrol?)"
+          },
+          "freeform": {
+            "key": "climbing:length",
+            "type": "nat"
+          }
+        },
+        {
+          "freeform": {
+            "key": "climbing:bolted",
+            "type": "nat"
+          },
+          "render": {
+            "de": "",
+            "en": "",
+            "nl": "Aantal tussenhaken <b>{climbing:bolted}</b>"
+          },
+          "question": {
+            "de": "",
+            "en": "",
+            "nl": "Hoeveel tussenhaken zijn er hier?"
+          }
+        },
+        {
+          "render": {
+            "de": "",
+            "en": "",
+            "nl": "Deze route heet <b>{name}</b>"
+          },
+          "question": {
+            "de": "",
+            "en": "",
+            "nl": "Wat is de naam van deze route?"
+          },
+          "freeform": {
+            "key": "name",
+            "addExtraTags": [
+              "noname="
+            ]
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "noname=yes",
+                  "name="
+                ]
+              },
+              "then": {
+                "de": "",
+                "en": "",
+                "nl": "Deze route heeft geen naam"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 1,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/5/50/Green_Arrow_Up.svg"
+      },
+      "width": {
+        "render": "4"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#0f0"
+      },
+      "presets": [
+        {
+          "tags": [
+            "sport=climbing",
+            "climbing=route"
+          ],
+          "title": {
+            "de": "",
+            "en": "",
+            "nl": "Klimroute"
+          },
+          "description": {
+            "de": "",
+            "en": "",
+            "nl": "Een klimroute op rots"
+          }
+        }
+      ]
+    }
+  ],
+  "roamingRenderings": []
+}

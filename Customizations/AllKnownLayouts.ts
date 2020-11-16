@@ -15,6 +15,7 @@ import * as benches from "../assets/themes/benches/benches.json";
 import * as charging_stations from "../assets/themes/charging_stations/charging_stations.json"
 import * as widths from "../assets/themes/widths/width.json"
 import * as drinking_water from "../assets/themes/drinking_water/drinking_water.json"
+import * as climbing from "../assets/themes/climbing/climbing.json"
 import LayerConfig from "./JSON/LayerConfig";
 import SharedLayers from "./SharedLayers";
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
@@ -60,6 +61,7 @@ export class AllKnownLayouts {
         new LayoutConfig(widths),
         new LayoutConfig(buurtnatuur),
         new LayoutConfig(bike_monitoring_stations),
+        new LayoutConfig(climbing),
     ];
 
 
