@@ -102,7 +102,19 @@ export interface LayoutConfigJson {
     
     
     /**
-     * The layers to display
+     * The layers to display.
+     * 
+     * Every layer contains a description of which feature to display - the overpassTags which are queried.
+     * Instead of running one query for every layer, the query is fused.
+     * 
+     * Afterwards, every layer is given the list of features.
+     * Every layer takes away the features that match with them*, and give the leftovers to the next layers.
+     * 
+     * This implies that the _order_ of the layers is important in the case of features with the same tags;
+     * as the later layers might never receive their feature.
+     * 
+     * *layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself
+     * 
      */
     layers: (LayerConfigJson | string)[],
 

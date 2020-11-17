@@ -10,3 +10,17 @@ html {
     --shadow-color: #0f0 !important;
 }
 
+#innercolor {
+    stop-color:#ff0000
+}
+.leaflet-div-icon svg {
+    width: calc(100% - 3px);
+    height: calc(100% + 3px);
+}
+/*
+.leaflet-div-icon svg path {
+    fill: none !important;
+    stroke-width: 1px !important;
+    stroke: #0f0 !important;
+}
+*/

@@ -1,0 +1,32 @@
+{
+  "id": "direction",
+  "name": {
+    "en": "Direction visualization"
+  },
+  "minzoom": 16,
+  "overpassTags": {
+    "or": ["camera:direction~*","direction~*"]
+  },
+  "doNotDownload": true,
+  "passAllFeatures": true,
+  "title": null,
+  "description": {
+    "en": "This layer visualizes directions"
+  },
+  "tagRenderings": [],
+  "icon":  "./assets/svg/direction_gradient.svg",
+  "rotation": {
+    "render": "{camera:direction}",
+    "mappings": [
+      {
+        "if": "direction~*",
+        "then": "{direction}"
+      }
+    ]
+  },
+  "iconSize":  "200,200,center",
+  "color": "--catch-detail-color",
+  "stroke": "0",
+  "presets": [],
+  "wayHandling": 2
+}

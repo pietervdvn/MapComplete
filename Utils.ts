@@ -3,6 +3,7 @@ import * as $ from "jquery"
 
 export class Utils {
 
+    public static readonly assets_path = "./assets/svg/";
 
     static EncodeXmlValue(str) {
         return str.replace(/&/g, '&amp;')
@@ -166,5 +167,7 @@ export class Utils {
         head.appendChild(link);
         console.log("Added custom layout ",location)
     }
+
+
 
 }

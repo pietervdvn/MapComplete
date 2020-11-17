@@ -2,6 +2,10 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
+import * as L from "leaflet"
+import * as X from "leaflet-providers"
+import {Basemap} from "../../Logic/Leaflet/Basemap";
+import State from "../../State";
 
 /**
  * Selects a direction in degrees
@@ -34,8 +38,8 @@ export default class DirectionInput extends InputElement<string> {
     }
 
     InnerRender(): string {
-        console.log("Inner render direction")
         return new Combine([
+            `<div id="direction-leaflet-div-${this.id}" style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
             Svg.direction_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;rotate:${this.value.data}deg;`)
                 .SetClass("direction-svg"),
@@ -47,8 +51,7 @@ export default class DirectionInput extends InputElement<string> {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-         console.log("Inner update direction")
-       super.InnerUpdate(htmlElement);
+        super.InnerUpdate(htmlElement);
         const self = this;
 
         function onPosChange(x: number, y: number) {
@@ -57,7 +60,7 @@ export default class DirectionInput extends InputElement<string> {
             const dy = (rect.top + rect.bottom) / 2 - y;
             const angle = 180 * Math.atan2(dy, dx) / Math.PI;
             const angleGeo = Math.floor((450 - angle) % 360);
-            self.value.setData(""+angleGeo)
+            self.value.setData("" + angleGeo)
         }
 
 

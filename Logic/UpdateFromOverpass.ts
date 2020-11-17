@@ -62,6 +62,11 @@ export class UpdateFromOverpass {
             if (state.locationControl.data.zoom < layer.minzoom) {
                 continue;
             }
+            if(layer.doNotDownload){
+                continue;
+            }
+                
+                
             // Check if data for this layer has already been loaded
             let previouslyLoaded = false;
             for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {

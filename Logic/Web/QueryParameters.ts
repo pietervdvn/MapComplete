@@ -2,6 +2,7 @@
  * Wraps the query parameters into UIEventSources
  */
 import {UIEventSource} from "../UIEventSource";
+import Hash from "./Hash";
 
 export class QueryParameters {
 
@@ -57,7 +58,7 @@ export class QueryParameters {
 
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
-        history.replaceState(null, "", "?" + parts.join("&"));
+        history.replaceState(null, "", "?" + parts.join("&") + "#" + Hash.Get().data);
 
     }
 

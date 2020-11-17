@@ -39,12 +39,16 @@ export class SubstitutedTranslation extends UIElement {
             return []
         }
         const tags = this.tags.data;
+        txt = SubstitutedTranslation.SubstituteKeys(txt, tags);
+        return this.EvaluateSpecialComponents(txt);
+    }
+
+    public static SubstituteKeys(txt: string, tags: any) {
         for (const key in tags) {
             // Poor mans replace all
             txt = txt.split("{" + key + "}").join(tags[key]);
         }
-
-        return this.EvaluateSpecialComponents(txt);
+        return txt;
     }
 
     private EvaluateSpecialComponents(template: string): UIElement[] {

@@ -45,10 +45,6 @@ Contains tweaks for small screens
     }
     
     .leaflet-popup {
-        transform: unset !important;
-    }
-
-    .leaflet-popup-content {
         /* On mobile, the popups are shown as a full-screen element */
         display: none;
         visibility: hidden;

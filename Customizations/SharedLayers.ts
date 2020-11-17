@@ -13,6 +13,7 @@ import * as bike_shops from "../assets/layers/bike_shop/bike_shop.json"
 import * as bike_cleaning from "../assets/layers/bike_cleaning/bike_cleaning.json"
 import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
+import * as direction from "../assets/layers/direction/direction.json"
 import LayerConfig from "./JSON/LayerConfig";
 
 export default class SharedLayers {
@@ -37,6 +38,7 @@ export default class SharedLayers {
             new LayerConfig(bike_shops, "shared_layers"),
             new LayerConfig(bike_cleaning, "shared_layers"),
             new LayerConfig(maps, "shared_layers"),
+            new LayerConfig(direction, "shared_layers"),
             new LayerConfig(information_boards, "shared_layers") 
         ];
 

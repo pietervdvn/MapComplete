@@ -6,6 +6,7 @@ import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import State from "../State";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
+import Hash from "./Web/Hash";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -75,11 +76,13 @@ export class FilteredLayer {
         const selfFeatures = [];
         for (let feature of geojson.features) {
             const tags = TagUtils.proprtiesToKV(feature.properties);
-            if (!this.filters.matches(tags)) {
-                leftoverFeatures.push(feature);
-                continue;
+            const matches = this.filters.matches(tags);
+            if (matches) {
+                selfFeatures.push(feature);
             }
-            selfFeatures.push(feature);
+            if (!matches || this.layerDef.passAllFeatures) {
+                leftoverFeatures.push(feature);
+            }
         }
 
        this.RenderLayer(selfFeatures)
@@ -117,7 +120,6 @@ export class FilteredLayer {
 
         // We fetch all the data we have to show:
         let fusedFeatures = this.ApplyWayHandling(this.FuseData(features));
-        console.log("Fused:",fusedFeatures)
 
         // And we copy some features as points - if needed
         const data = {
@@ -126,7 +128,6 @@ export class FilteredLayer {
         }
 
         let self = this;
-        console.log(data);
         this._geolayer = L.geoJSON(data, {
                 style: feature =>
                     self.layerDef.GenerateLeafletStyle(feature.properties),
@@ -147,19 +148,21 @@ export class FilteredLayer {
                             color: style.color
                         });
                     } else {
-                        if (style.icon.iconSize === undefined) {
-                            style.icon.iconSize = [50, 50]
-                        }
-
                         marker = L.marker(latLng, {
-                            icon: L.icon(style.icon)
+                            icon: L.divIcon(style.icon)
                         });
                     }
                     return marker;
                 },
                 onEachFeature: function (feature, layer: Layer) {
 
-                    layer.on("click", (e) => {
+                    if (self._showOnPopup === undefined) {
+                        // No popup contents defined -> don't do anything
+                        return;
+                    }
+
+
+                    function openPopup(latlng: any) {
                         if (layer.getPopup() === undefined
                             && (window.screen.availHeight > 600 || window.screen.availWidth > 600) // We DON'T trigger this code on small screens! No need to create a popup
                         ) {
@@ -168,30 +171,47 @@ export class FilteredLayer {
                                 closeOnEscapeKey: true,
                             }, layer);
 
-                        // @ts-ignore
-                        popup.setLatLng(e.latlng)
+                            popup.setLatLng(latlng)
 
-                        layer.bindPopup(popup);
-                        const eventSource = State.state.allElements.addOrGetElement(feature);
-                        const uiElement = self._showOnPopup(eventSource, feature);
-                        // We first render the UIelement (which'll still need an update later on...)
-                        // But at least it'll be visible already
-                        popup.setContent(uiElement.Render());
-                        popup.openOn(State.state.bm.map);
-                        // popup.openOn(State.state.bm.map);
-                        // ANd we perform the pending update
-                        uiElement.Update();
+                            layer.bindPopup(popup);
+                            const eventSource = State.state.allElements.addOrGetElement(feature);
+                            const uiElement = self._showOnPopup(eventSource, feature);
+                            // We first render the UIelement (which'll still need an update later on...)
+                            // But at least it'll be visible already
+                            popup.setContent(uiElement.Render());
+                            popup.openOn(State.state.bm.map);
+                            // popup.openOn(State.state.bm.map);
+                            // ANd we perform the pending update
+                            uiElement.Update();
+                            // @ts-ignore
+                            popup.Update = () => {
+                                uiElement.Update();
+                            }
+                        } else {
+                            // @ts-ignore
+                            layer.getPopup().Update();
+                        }
+
+
+                        // We set the element as selected...
+                        State.state.selectedElement.setData(feature);
+
                     }
-                    // We set the element as selected...
-                    State.state.selectedElement.setData(feature);
 
-                    // We mark the event as consumed
-                    L.DomEvent.stop(e);
-                });
-            }
-        }
-        )
-        ;
+                    layer.on("click", (e) => {
+                        // @ts-ignore
+                        openPopup(e.latlng);
+                        // We mark the event as consumed
+                        L.DomEvent.stop(e);
+                    });
+
+                    if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
+                        const center = GeoOperations.centerpoint(feature).geometry.coordinates;
+                        openPopup({lat: center[1], lng: center[0]})
+                    }
+
+                }
+        });
 
         if (this.combinedIsDisplayed.data) {
             this._geolayer.addTo(State.state.bm.map);

@@ -255,7 +255,6 @@ a {
     position: absolute;
     z-index: 5000;
     transition: all 500ms linear;
-    overflow-x: hidden;
     pointer-events: none;
     /* Shadow offset */
     padding: 0.5em 10px 0 0.5em;
@@ -410,6 +409,12 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.leaflet-div-icon {
+    background-color: unset !important;
+    border: unset !important;
+}
+
 /****** ShareScreen *****/
 
 .literal-code {

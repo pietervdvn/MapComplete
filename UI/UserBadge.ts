@@ -94,15 +94,6 @@ export class UserBadge extends UIElement {
             dryrun = new FixedUiElement("TESTING").SetClass("alert");
         }
 
-        if (user.home !== undefined) {
-            const icon = L.icon({
-                iconUrl: Img.AsData(Svg.home_white_bg),
-                iconSize: [30, 30],
-                iconAnchor: [15, 15]
-            });
-            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(State.state.bm.map)
-        }
-
         const settings =
             new Link(Svg.gear_svg(),
                 `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`, 

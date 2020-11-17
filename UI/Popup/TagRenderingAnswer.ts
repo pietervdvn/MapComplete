@@ -15,6 +15,9 @@ export default class TagRenderingAnswer extends UIElement {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
+        if(configuration === undefined){
+            throw "Trying to generate a tagRenderingAnswer without configuration..."
+        }
     }
 
     InnerRender(): string {

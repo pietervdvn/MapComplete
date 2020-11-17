@@ -16,7 +16,9 @@ interface TextFieldDef {
     explanation: string,
     isValid: ((s: string, country?: string) => boolean),
     reformat?: ((s: string, country?: string) => string),
-    inputHelper?: (value: UIEventSource<string>) => InputElement<string>,
+    inputHelper?: (value: UIEventSource<string>, options?: {
+        location: [number, number]
+    }) => InputElement<string>,
 }
 
 export default class ValidatedTextField {
@@ -26,7 +28,9 @@ export default class ValidatedTextField {
                       explanation: string,
                       isValid?: ((s: string, country?: string) => boolean),
                       reformat?: ((s: string, country?: string) => string),
-                      inputHelper?: (value: UIEventSource<string>) => InputElement<string>): TextFieldDef {
+                      inputHelper?: (value: UIEventSource<string>, options?:{
+                          location: [number, number]
+                      }) => InputElement<string>): TextFieldDef {
 
         if (isValid === undefined) {
             isValid = () => true;
@@ -197,7 +201,8 @@ export default class ValidatedTextField {
         textArea?: boolean,
         textAreaRows?: number,
         isValid?: ((s: string, country: string) => boolean),
-        country?: string
+        country?: string,
+        location?: [number /*lat*/, number /*lon*/]
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
@@ -230,7 +235,9 @@ export default class ValidatedTextField {
         }
 
         if (tp.inputHelper) {
-            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue()));
+            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(),{
+                location: options.location
+            }));
         }
         return input;
     }

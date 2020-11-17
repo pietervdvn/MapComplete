@@ -1,16 +1,16 @@
-import {Img} from "./UI/Img"
-import {UIElement} from "./UI/UIElement";
+import {Img} from "../UI/Img"
+import {UIElement} from "../UI/UIElement";
 Img.runningFromConsole = true;
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
 
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
-import Locale from "./UI/i18n/Locale";
+import Locale from "../UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
-import Translations from "./UI/i18n/Translations";
-import {Translation} from "./UI/i18n/Translation";
-import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import Translations from "../UI/i18n/Translations";
+import {Translation} from "../UI/i18n/Translation";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 
 
 function enc(str: string): string {
@@ -100,7 +100,7 @@ const alreadyWritten = []
 
 function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
     let name = iconPath.split(".").slice(0, -1).join(".");
-    if (name.startsWith("./")) {
+    if (name.startsWith("../")) {
         name = name.substr(2)
     }
     const newname = `${name}${size}.png`
@@ -151,7 +151,7 @@ function createManifest(layout: LayoutConfig, relativePath: string) {
         let path = layout.icon;
         if (layout.icon.startsWith("<")) {
             // THis is already the svg
-            path = "./assets/generated/" + layout.id + "_logo.svg"
+            path = "../assets/generated/" + layout.id + "_logo.svg"
             writeFileSync(path, layout.icon)
         }
         
@@ -212,19 +212,19 @@ function createLandingPage(layout: LayoutConfig) {
     }
 
     const og = `
-    <meta property="og:image" content="${ogImage ?? './assets/svg/add.svg'}">
+    <meta property="og:image" content="${ogImage ?? '../assets/svg/add.svg'}">
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
     let icon = layout.icon;
     if (icon.startsWith("<?xml") || icon.startsWith("<svg")) {
         // This already is an svg
-        icon = `./assets/generated/${layout.id}_icon.svg`
+        icon = `../assets/generated/${layout.id}_icon.svg`
         writeFileSync(icon, layout.icon);
     }
 
     let output = template
-        .replace(`./manifest.manifest`, `./${enc(layout.id)}.webmanifest`)
+        .replace(`../manifest.manifest`, `../${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
@@ -251,7 +251,7 @@ let wikiPage = "{|class=\"wikitable sortable\"\n" +
     "|-";
 
 
-const generatedDir = "./assets/generated";
+const generatedDir = "../assets/generated";
 if (! existsSync(generatedDir)) {
     mkdirSync(generatedDir)
 }

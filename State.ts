@@ -12,6 +12,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {BaseLayer} from "./Logic/BaseLayer";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import Hash from "./Logic/Web/Hash";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -21,9 +22,9 @@ export default class State {
 
     // The singleton of the global state
     public static state: State;
-    
-    public static vNumber = "0.1.3-rc2+g";
-    
+
+    public static vNumber = "0.1.3-rc4";
+
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         addNewPointsUnlock: 0,
@@ -207,6 +208,22 @@ export default class State {
             layoutToUse.id,
             true
         );
+
+
+        const h = Hash.Get();
+        this.selectedElement.addCallback(selected => {
+                if (selected === undefined) {
+                    h.setData("");
+                } else {
+                    h.setData(selected.id)
+                }
+            }
+        )
+        h.addCallbackAndRun(hash => {
+            if(hash === undefined || hash === ""){
+               self.selectedElement.setData(undefined);
+            }
+        })
 
 
         this.installedThemes = this.osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {

@@ -251,7 +251,8 @@ export default class TagRenderingQuestion extends UIElement {
 
         const textField = ValidatedTextField.InputForType(this._configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
-            country: this._tags.data._country
+            country: this._tags.data._country,
+            location: [this._tags.data._lat, this._tags.data._lon]
         });
 
         textField.GetValue().setData(this._tags.data[this._configuration.freeform.key]);

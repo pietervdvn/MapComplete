@@ -38,6 +38,11 @@
 
 }
 
+.question svg {
+    width: 100%;
+    height: 100%;
+}
+
 .question-text {
     font-size: larger;
     font-weight: bold;

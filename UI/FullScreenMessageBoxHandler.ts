@@ -14,7 +14,6 @@ export class FullScreenMessageBox extends UIElement {
     constructor(onClear: (() => void)) {
         super(State.state.fullScreenMessage);
         this.HideOnEmpty(true);
-        const self = this;
 
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
