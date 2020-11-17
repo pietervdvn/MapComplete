@@ -136,6 +136,7 @@ export class UpdateFromOverpass {
         const self = this;
         window?.setTimeout(
             function () {
+                self.runningQuery.setData(false)
                 self.update(state)
             }, this.retries.data * 5000
         )

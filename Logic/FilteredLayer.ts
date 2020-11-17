@@ -129,88 +129,65 @@ export class FilteredLayer {
 
         let self = this;
         this._geolayer = L.geoJSON(data, {
-                style: feature =>
-                    self.layerDef.GenerateLeafletStyle(feature.properties),
-                pointToLayer: function (feature, latLng) {
-                    // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
-                    // Click handling is done in the next step
+            style: feature =>
+                self.layerDef.GenerateLeafletStyle(feature.properties, self._showOnPopup !== undefined),
+            pointToLayer: function (feature, latLng) {
+                // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
+                // Click handling is done in the next step
 
-                    const style = self.layerDef.GenerateLeafletStyle(feature.properties);
-                    let marker;
-                    if (style.icon === undefined) {
-                        marker = L.circle(latLng, {
-                            radius: 25,
-                            color: style.color
-                        });
-                    } else if (style.icon.iconUrl.startsWith("$circle")) {
-                        marker = L.circle(latLng, {
-                            radius: 25,
-                            color: style.color
-                        });
-                    } else {
-                        marker = L.marker(latLng, {
-                            icon: L.divIcon(style.icon)
-                        });
-                    }
-                    return marker;
-                },
-                onEachFeature: function (feature, layer: Layer) {
-
-                    if (self._showOnPopup === undefined) {
-                        // No popup contents defined -> don't do anything
-                        return;
-                    }
-
-
-                    function openPopup(latlng: any) {
-                        if (layer.getPopup() === undefined
-                            && (window.screen.availHeight > 600 || window.screen.availWidth > 600) // We DON'T trigger this code on small screens! No need to create a popup
-                        ) {
-                            const popup = L.popup({
-                                autoPan: true,
-                                closeOnEscapeKey: true,
-                            }, layer);
-
-                            popup.setLatLng(latlng)
-
-                            layer.bindPopup(popup);
-                            const eventSource = State.state.allElements.addOrGetElement(feature);
-                            const uiElement = self._showOnPopup(eventSource, feature);
-                            // We first render the UIelement (which'll still need an update later on...)
-                            // But at least it'll be visible already
-                            popup.setContent(uiElement.Render());
-                            popup.openOn(State.state.bm.map);
-                            // popup.openOn(State.state.bm.map);
-                            // ANd we perform the pending update
-                            uiElement.Update();
-                            // @ts-ignore
-                            popup.Update = () => {
-                                uiElement.Update();
-                            }
-                        } else {
-                            // @ts-ignore
-                            layer.getPopup().Update();
-                        }
-
-
-                        // We set the element as selected...
-                        State.state.selectedElement.setData(feature);
-
-                    }
-
-                    layer.on("click", (e) => {
-                        // @ts-ignore
-                        openPopup(e.latlng);
-                        // We mark the event as consumed
-                        L.DomEvent.stop(e);
+                const style = self.layerDef.GenerateLeafletStyle(feature.properties, self._showOnPopup !== undefined);
+                let marker;
+                if (style.icon === undefined) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
                     });
-
-                    if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
-                        const center = GeoOperations.centerpoint(feature).geometry.coordinates;
-                        openPopup({lat: center[1], lng: center[0]})
-                    }
-
+                } else if (style.icon.iconUrl.startsWith("$circle")) {
+                    marker = L.circle(latLng, {
+                        radius: 25,
+                        color: style.color
+                    });
+                } else {
+                    marker = L.marker(latLng, {
+                        icon: L.divIcon(style.icon)
+                    });
                 }
+                return marker;
+            },
+            onEachFeature: function (feature, layer: Layer) {
+
+                if (self._showOnPopup === undefined) {
+                    // No popup contents defined -> don't do anything
+                    return;
+                }
+                const popup = L.popup({
+                    autoPan: true,
+                    closeOnEscapeKey: true,
+                }, layer);
+
+                let uiElement: UIElement;
+
+                const eventSource = State.state.allElements.addOrGetElement(feature);
+                uiElement = self._showOnPopup(eventSource, feature);
+                popup.setContent(uiElement.Render());
+                layer.bindPopup(popup);
+                // We first render the UIelement (which'll still need an update later on...)
+                // But at least it'll be visible already
+
+
+                layer.on("click", (e) => {
+                    // We set the element as selected...
+                    State.state.selectedElement.setData(feature);
+                    uiElement.Update();
+                });
+
+                if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
+                    const center = GeoOperations.centerpoint(feature).geometry.coordinates;
+                    popup.setLatLng({lat: center[1], lng: center[0]});
+                    popup.openOn(State.state.bm.map)
+                }
+
+            }
         });
 
         if (this.combinedIsDisplayed.data) {

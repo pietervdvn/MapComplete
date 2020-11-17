@@ -173,6 +173,10 @@ a {
     pointer-events: all;
 }
 
+.unclickable {
+    pointer-events: none !important;
+}
+
 .page-split {
     display: flex;
     height: 100%;
@@ -414,6 +418,7 @@ a {
     background-color: unset !important;
     border: unset !important;
 }
+
 
 /****** ShareScreen *****/
 

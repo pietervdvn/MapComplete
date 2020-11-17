@@ -11,7 +11,7 @@ import Svg from "../../Svg";
 import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
-import {Browser} from "leaflet";
+import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class LayerConfig {
 
@@ -56,7 +56,8 @@ export default class LayerConfig {
 
     tagRenderings: TagRenderingConfig [];
 
-    constructor(json: LayerConfigJson, context?: string) {
+    constructor(json: LayerConfigJson, roamingRenderings: TagRenderingConfig[],
+                context?: string) {
         context = context + "." + json.id;
 
         this.id = json.id;
@@ -140,7 +141,7 @@ export default class LayerConfig {
     }
 
 
-    public GenerateLeafletStyle(tags: any):
+    public GenerateLeafletStyle(tags: any, clickable: boolean):
         {
             color: string;
             icon: {
@@ -149,7 +150,8 @@ export default class LayerConfig {
                 iconAnchor: [number, number];
                 iconSize: [number, number];
                 html: string;
-                rotation: number;
+                rotation: string;
+                className?: string;
             };
             weight: number; dashArray: number[]
         } {
@@ -186,7 +188,7 @@ export default class LayerConfig {
         }
 
         const weight = rendernum(this.width, 5);
-        const rotation = rendernum(this.rotation, 0);
+        const rotation = render(this.rotation, "0deg");
 
 
         const iconW = num(iconSize[0]);
@@ -209,12 +211,14 @@ export default class LayerConfig {
             anchorH = iconH;
         }
 
-        let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation}deg;display:block;" />`;
+        
+        let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation};display:block;" />`;
+        
         if (iconUrl.startsWith(Utils.assets_path)) {
             const key = iconUrl.substr(Utils.assets_path.length);
             html = new Combine([
                 (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
-            ]).SetStyle(`width:100%;height:100%;rotate:${rotation}deg;display:block;`).Render();
+            ]).SetStyle(`width:100%;height:100%;rotate:${rotation};display:block;`).Render();
         }
         return {
             icon:
@@ -224,7 +228,8 @@ export default class LayerConfig {
                     iconAnchor: [anchorW, anchorH],
                     popupAnchor: [0, 3 - anchorH],
                     rotation: rotation,
-                    iconUrl: iconUrl
+                    iconUrl: iconUrl,
+                    className: clickable ? "leaflet-div-icon" : "leaflet-div-icon unclickable"
                 },
             color: color,
             weight: weight,

@@ -21,7 +21,7 @@
     "generate:layouts": "ts-node scripts/createLayouts.ts",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "generate": "npm run generate:images && npm run generate:translations && npm run generate:layouts && npm run generate:editor-layer-index",
-    "build": "rm -rf dist/ npm run generate && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "build": "rm -rf dist/ && npm run generate && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "prepare-deploy": "npm run generate && npm run build && rm -rf .cache",
     "deploy:staging": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/Staging/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:production": "npm run prepare-deploy && npm run optimize-images && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",

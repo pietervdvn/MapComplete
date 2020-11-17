@@ -21,7 +21,7 @@ export class FeatureInfoBox extends UIElement {
         layerConfig: LayerConfig
     ) {
         super();
-        if(layerConfig === undefined){
+        if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
         this._tags = tags;
@@ -30,7 +30,7 @@ export class FeatureInfoBox extends UIElement {
 
         this._title = layerConfig.title === undefined ? undefined :
             new TagRenderingAnswer(tags, layerConfig.title)
-            .SetClass("featureinfobox-title");
+                .SetClass("featureinfobox-title");
         this._titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");

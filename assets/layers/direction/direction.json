@@ -16,11 +16,11 @@
   "tagRenderings": [],
   "icon":  "./assets/svg/direction_gradient.svg",
   "rotation": {
-    "render": "{camera:direction}",
+    "render": "{camera:direction}deg",
     "mappings": [
       {
         "if": "direction~*",
-        "then": "{direction}"
+        "then": "{direction}deg"
       }
     ]
   },

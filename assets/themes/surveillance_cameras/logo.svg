@@ -40,7 +40,7 @@
      id="namedview8"
      showgrid="false"
      inkscape:zoom="1.1125147"
-     inkscape:cx="-139.39327"
+     inkscape:cx="-288.60478"
      inkscape:cy="92.396852"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -49,11 +49,12 @@
   <circle
      style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path812"
-     cx="150.55981"
+     cx="-150.55981"
      cy="149.44019"
-     r="148.76208" />
+     r="148.76208"
+     transform="scale(-1,1)" />
   <path
-     d="m 40.704254,162.40461 21.579577,-6.49818 31.631474,44.29458 -37.37159,12.69576 z M 47.692578,132.54304 235.49705,79.515388 c 4.91364,-1.240239 11.77146,-0.481561 14.12789,8.422577 0,0 11.08182,49.394605 16.75297,72.577085 1.99836,8.16887 -0.18239,11.65946 -5.84024,13.16739 l -149.60059,42.89541 z"
+     d="m 260.41537,162.40461 -21.57957,-6.49818 -31.63148,44.29458 37.37159,12.69576 z M 253.42705,132.54304 65.622579,79.515388 c -4.91364,-1.240239 -11.77146,-0.481561 -14.12789,8.422577 0,0 -11.08182,49.394605 -16.75297,72.577085 -1.99836,8.16887 0.18239,11.65946 5.84024,13.16739 l 149.600591,42.89541 z"
      id="path4"
      inkscape:connector-curvature="0"
      style="fill:#000000;stroke:#00ff00;stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

@@ -80,7 +80,7 @@ export default class LayoutConfig {
                 } else {
                     throw "Unkown fixed layer " + layer;
                 }
-            return new LayerConfig(layer, `${this.id}.layers[${i}]`);
+            return new LayerConfig(layer, this.roamingRenderings,`${this.id}.layers[${i}]`);
         });
         this.hideFromOverview = json.hideFromOverview ?? false;
 

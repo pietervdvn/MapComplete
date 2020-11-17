@@ -66,7 +66,8 @@ export interface LayerConfigJson {
      */
     iconSize?: string | TagRenderingConfigJson;
     /**
-     * The rotation of an icon, useful for e.g. directions
+     * The rotation of an icon, useful for e.g. directions.
+     * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
      */
     rotation?: string | TagRenderingConfigJson;
 

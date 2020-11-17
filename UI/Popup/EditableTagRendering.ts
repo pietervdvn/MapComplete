@@ -29,6 +29,8 @@ export default class EditableTagRendering extends UIElement {
 
         this._answer = new TagRenderingAnswer(tags, configuration);
         this._answer.SetStyle("width:100%;")
+        this._question = this.GenerateQuestion();
+        this.dumbMode = false;
 
         if (this._configuration.question !== undefined) {
             if (State.state.featureSwitchUserbadge.data) {
@@ -66,7 +68,6 @@ export default class EditableTagRendering extends UIElement {
     InnerRender(): string {
 
         if (this._editMode.data) {
-            this._question = this.GenerateQuestion();
             return this._question.Render();
         }
         

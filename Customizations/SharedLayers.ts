@@ -14,6 +14,7 @@ import * as bike_cleaning from "../assets/layers/bike_cleaning/bike_cleaning.jso
 import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
 import * as direction from "../assets/layers/direction/direction.json"
+import * as surveillance_camera from "../assets/layers/surveillance_cameras/surveillance_cameras.json"
 import LayerConfig from "./JSON/LayerConfig";
 
 export default class SharedLayers {
@@ -25,21 +26,22 @@ export default class SharedLayers {
 
     private static getSharedLayers(){
         const sharedLayersList = [
-            new LayerConfig(drinkingWater, "shared_layers"),
-            new LayerConfig(ghostbikes, "shared_layers"),
-            new LayerConfig(viewpoint, "shared_layers"),
-            new LayerConfig(bike_parking, "shared_layers"),
-            new LayerConfig(bike_repair_station, "shared_layers"),
-            new LayerConfig(bike_monitoring_station, "shared_layers"),
-            new LayerConfig(birdhides, "shared_layers"),
-            new LayerConfig(nature_reserve, "shared_layers"),
-            new LayerConfig(bike_cafes, "shared_layers"),
-            new LayerConfig(cycling_themed_objects, "shared_layers"),
-            new LayerConfig(bike_shops, "shared_layers"),
-            new LayerConfig(bike_cleaning, "shared_layers"),
-            new LayerConfig(maps, "shared_layers"),
-            new LayerConfig(direction, "shared_layers"),
-            new LayerConfig(information_boards, "shared_layers") 
+            new LayerConfig(drinkingWater,[], "shared_layers"),
+            new LayerConfig(ghostbikes,[], "shared_layers"),
+            new LayerConfig(viewpoint,[], "shared_layers"),
+            new LayerConfig(bike_parking,[], "shared_layers"),
+            new LayerConfig(bike_repair_station,[], "shared_layers"),
+            new LayerConfig(bike_monitoring_station,[], "shared_layers"),
+            new LayerConfig(birdhides,[], "shared_layers"),
+            new LayerConfig(nature_reserve,[], "shared_layers"),
+            new LayerConfig(bike_cafes,[], "shared_layers"),
+            new LayerConfig(cycling_themed_objects,[], "shared_layers"),
+            new LayerConfig(bike_shops,[], "shared_layers"),
+            new LayerConfig(bike_cleaning,[], "shared_layers"),
+            new LayerConfig(maps,[], "shared_layers"),
+            new LayerConfig(direction,[], "shared_layers"),
+            new LayerConfig(information_boards,[], "shared_layers"),
+            new LayerConfig(surveillance_camera,[], "shared_layers")
         ];
 
         const sharedLayers = new Map<string, LayerConfig>();
