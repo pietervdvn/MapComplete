@@ -74,18 +74,20 @@ if (layoutFromBase64.startsWith("wiki:")) {
 
     $.ajax({
         url: url,
-        dataType: 'xml',
         success: function (data) {
-            const layoutJson = data.querySelector('[id="bodyContent"]')
-                .querySelector('[class="mw-parser-output"]')
-                .children[0]
-                .firstChild.textContent;
+            // Hacky McHackFace has been working here. This probably break in the future
+            const startTrigger = "<div class=\"mw-parser-output\">";
+            const start = data.indexOf(startTrigger);
+            data = data.substr(start, 
+                data.indexOf("<div class=\"printfooter\">") - start)
+            data = data.substr(0, data.lastIndexOf("</p>"))
+            data = data.substr(startTrigger.length + 3);
+            
             try {
-                console.log("DOWNLOADED:",layoutJson);
-                const parsed = JSON.parse(layoutJson);
+                const parsed = JSON.parse(data);
                 parsed["id"] = layoutFromBase64
-                const layout =new LayoutConfig(parsed);
-                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(layoutJson));
+                const layout = new LayoutConfig(parsed);
+                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
                     .SetClass("clickable")
