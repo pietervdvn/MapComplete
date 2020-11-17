@@ -197,7 +197,7 @@ function createLandingPage(layout: LayoutConfig) {
     Locale.language.setData(layout.language[0]);
 
     const ogTitle = Translations.W(layout.title)?.InnerRender();
-    const ogDescr = Translations.W(layout.description ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
+    const ogDescr = Translations.W(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
     const ogImage = layout.socialImage;
 
     let customCss = "";

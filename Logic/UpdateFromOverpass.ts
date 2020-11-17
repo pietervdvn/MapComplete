@@ -133,10 +133,10 @@ export class UpdateFromOverpass {
         this.ForceRefresh();
         console.log(`QUERY FAILED (retrying in ${5 * this.retries.data} sec)`, reason);
         this.retries.ping();
+        this.runningQuery.setData(false)
         const self = this;
         window?.setTimeout(
             function () {
-                self.runningQuery.setData(false)
                 self.update(state)
             }, this.retries.data * 5000
         )

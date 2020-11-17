@@ -99,7 +99,7 @@ export default class LayerConfig {
                 });
         }
 
-        this.tagRenderings = trs(json.tagRenderings);
+        this.tagRenderings = trs(json.tagRenderings).concat(roamingRenderings);
         this.titleIcons = trs(json.titleIcons ?? ["wikipedialink","osmlink"]);
         
 
