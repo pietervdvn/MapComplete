@@ -11,12 +11,11 @@
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature."
   },
   "language": [
-    "nl",
     "de",
     "en"
   ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
-  "icon": "https://d30y9cdsu7xlg0.cloudfront.net/png/45246-200.png",
+  "icon": "./assets/themes/climbing/climbing_no_rope.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -28,7 +27,7 @@
       "id": "climbing",
       "name": {
         "nl": "Klimgelegenheiden",
-        "de": "Klettergelegenheiten",
+        "de": "Klettermöglichkeiten",
         "en": "Climbing opportunities"
       },
       "minzoom": 10,
@@ -40,9 +39,9 @@
       },
       "title": {
         "render": {
+          "en": "Climbing opportunity",
           "nl": "Klimgelegenheid",
-          "de": "Klettergelegenheit",
-          "en": "Climbing opportunity"
+          "de": "Klettermöglichkeit"
         },
         "mappings": [
           {
@@ -66,18 +65,56 @@
       },
       "tagRenderings": [
         {
+          "render": "<a href='{website}' target='_blank'>{website}</a>",
+          "freeform": {
+            "key": "website"
+          }
+        },
+        {
+          "render": "<a href='tel:{phone}'>{phone}</a>",
+          "freeform": {
+            "key": "phone"
+          }
+        },
+        {
+          "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+          "freeform": {
+            "key": "email"
+          }
+        },
+        {
+          "render": "{opening_hours_table(opening_hours)}",
+          "freeform": {
+            "key": "opening_hours"
+          }
+        },
+        {
+          "question": {
+            "de": "Kann hier gebouldert werden?",
+            "en": "Is bouldering possible here?"
+          },
           "mappings": [
             {
-              "if": {
-                "and": [
-                  "climbing:boulder=yes"
-                ]
-              },
+              "if": "climbing:boulder=yes",
               "then": {
-                "nl": "Bolderen kan hier",
                 "de": "Hier kann gebouldert werden",
                 "en": "Bouldering is possible here"
               }
+            },
+            {
+              "if": "climbing:boulder=no",
+              "then": {
+                "de": "Hier kann nicht gebouldert werden",
+                "en": "Bouldering is not possible here"
+              }
+            },
+            {
+              "if": "climbing:boulder~*",
+              "then": {
+                "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
+                "en": "There are {climbing:boulder} boulder routes"
+              },
+              "hideInAnswer": true
             }
           ]
         },
@@ -100,7 +137,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://d30y9cdsu7xlg0.cloudfront.net/png/45246-200.png"
+        "render": "./assets/themes/climbing/climbing_no_rope.svg"
       },
       "width": {
         "render": "8"
@@ -111,7 +148,23 @@
       "color": {
         "render": "#00f"
       },
-      "presets": [],
+      "presets": [
+        {
+          "tags": [
+            "sport=climbing"
+          ],
+          "title": {
+            "de": "Klettermöglichkeit",
+            "en": "",
+            "nl": "Kletterkarte"
+          },
+          "description": {
+            "de": "",
+            "en": "",
+            "nl": "Een klimroute op rots"
+          }
+        }
+      ],
       "wayHandling": 2
     },
     {
@@ -124,7 +177,6 @@
       "minzoom": 18,
       "overpassTags": {
         "and": [
-          "sport=climbing",
           "climbing=route"
         ]
       },
@@ -168,22 +220,6 @@
           },
           "freeform": {
             "key": "climbing:grade:french"
-          }
-        },
-        {
-          "render": {
-            "de": "",
-            "en": "",
-            "nl": "Lengte <b>{climbing:length}</b>"
-          },
-          "question": {
-            "de": "",
-            "en": "",
-            "nl": "Wat is de lengte in meter (van de grond tot het katrol?)"
-          },
-          "freeform": {
-            "key": "climbing:length",
-            "type": "nat"
           }
         },
         {
@@ -238,7 +274,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 1,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/5/50/Green_Arrow_Up.svg"
+        "render": "./assets/themes/climbing/climbing_route.svg"
       },
       "width": {
         "render": "4"
@@ -252,7 +288,6 @@
       "presets": [
         {
           "tags": [
-            "sport=climbing",
             "climbing=route"
           ],
           "title": {
@@ -269,5 +304,50 @@
       ]
     }
   ],
-  "roamingRenderings": []
+  "roamingRenderings": [
+    {
+      "render": {
+        "en": "Name: {name}",
+        "nl": "Naam: {name}",
+        "de": "Name: {name}"
+      },
+      "question": {
+        "en": "What is the name of this climbing opportunity?",
+        "nl": "Wat is de naam van dit Klimgelegenheid?",
+        "de": "Wie heißt diese Klettergelegenheit?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "noname=yes",
+              "name="
+            ]
+          },
+          "then": {
+            "en": "This climbing opportunity doesn't have a name",
+            "nl": "Dit Klimgelegenheid heeft geen naam",
+            "de": "Diese Klettergelegenheit hat keinen Namen"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "de": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
+        "en": "The routes are <b>{climbing:length}m</b> long in average"
+      },
+      "question": {
+        "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+        "en": "What is the (average) length of the routes in meters?"
+      },
+      "freeform": {
+        "key": "climbing:length",
+        "type": "pnat"
+      }
+    }
+  ]
 }
