@@ -420,6 +420,11 @@ a {
 }
 
 
+.leaflet-div-icon svg {
+    width: calc(100%);
+    height: calc(100%);
+}
+
 /****** ShareScreen *****/
 
 .literal-code {

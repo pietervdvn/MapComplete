@@ -121,6 +121,12 @@ export interface LayerConfigJson {
     /**
      * All the tag renderings.
      * A tag rendering is a block that either shows the known value or asks a question.
+     * 
+     * Refer to the class `TagRenderingConfigJson` to see the possibilities.
+     * 
+     * Note that we can also use a string here - where the string refers to a tagrenering defined in `assets/questions/questions.json`,
+     * where a few very general questions are defined e.g. website, phone number, ...
+     * 
      */
     tagRenderings?: (string | TagRenderingConfigJson) []
 }

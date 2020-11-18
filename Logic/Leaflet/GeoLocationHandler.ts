@@ -25,14 +25,10 @@ export class GeoLocationHandler extends UIElement {
 
 
         function onAccuratePositionProgress(e) {
-            console.log(e.accuracy);
-            console.log(e.latlng);
             State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionFound(e) {
-            console.log(e.accuracy);
-            console.log(e.latlng);
             State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
