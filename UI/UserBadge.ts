@@ -109,7 +109,7 @@ export class UserBadge extends UIElement {
 
         const userName = new Link(
             new FixedUiElement(user.name),
-            `https://www.openstreetmap.org/user/${user.name}'`,
+            `https://www.openstreetmap.org/user/${user.name}`,
             true);
 
 
