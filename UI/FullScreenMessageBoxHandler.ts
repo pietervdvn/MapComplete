@@ -8,64 +8,23 @@ import Combine from "./Base/Combine";
  */
 export class FullScreenMessageBox extends UIElement {
 
-    private static readonly _toTheMap_height : string = "5em";
-    
-    private _uielement: UIElement;
     private readonly returnToTheMap: UIElement;
+    private _content: UIElement;
 
     constructor(onClear: (() => void)) {
         super(State.state.fullScreenMessage);
-        const self = this;
-        State.state.fullScreenMessage.addCallbackAndRun(uiElement => {
-            this._uielement = new Combine([State.state.fullScreenMessage.data]).SetStyle(
-                "display:block;"+
-                "padding: 1em;"+
-                "padding-bottom:6em;"+
-                `margin-bottom:${FullScreenMessageBox._toTheMap_height};`+
-                "box-sizing:border-box;"+
-                `height:calc(100vh - ${FullScreenMessageBox._toTheMap_height});`+
-                "overflow-y: auto;" +
-                "max-width:100vw;" +
-                "overflow-x:hidden;" +
-                "background:white;"
-
-            );
-        });
-        
-        
         this.HideOnEmpty(true);
-
-        State.state.fullScreenMessage.addCallback(latestData => {
-            if (latestData === undefined) {
-                location.hash = "";
-            } else {
-                // The 'hash' makes sure a new piece of history is added. This makes the 'back-button' on android remove the popup
-                location.hash = "#element";
-            }
-            this.Update();
-        })
-
-        if (window !== undefined) {
-            window.onhashchange = function () {
-                if (location.hash === "") {
-                    // No more element: back to the map!
-                    console.log("Clearing full screen message");
-                    State.state.fullScreenMessage.setData(undefined);
-                    onClear();
-                }
-            }
-        }
 
         this.returnToTheMap =
             new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
-            .SetStyle("background:#7ebc6f;" +
-                "position: fixed;" +
-                "z-index: 10000;" +
-                "bottom: 0;" +
-                "left: 0;" +
-                `height: ${FullScreenMessageBox._toTheMap_height};` +
+                .SetStyle("background:var(--catch-detail-color);" +
+                    "position: fixed;" +
+                    "z-index: 10000;" +
+                    "bottom: 0;" +
+                    "left: 0;" +
+                    `height: var(--return-to-the-map-height);` +
                 "width: 100vw;" +
-                "color: white;" +
+                "color: var(--catch-detail-color-contrast);" +
                 "font-weight: bold;" +
                 "pointer-events: all;" +
                 "cursor: pointer;" +
@@ -74,10 +33,8 @@ export class FullScreenMessageBox extends UIElement {
                 "padding-bottom: 1.2em;" +
                 "box-sizing:border-box")
             .onClick(() => {
-                console.log("Returning...")
                 State.state.fullScreenMessage.setData(undefined);
                 onClear();
-                self.Update();
             });
 
     }
@@ -87,7 +44,21 @@ export class FullScreenMessageBox extends UIElement {
         if (State.state.fullScreenMessage.data === undefined) {
             return "";
         }
-        return new Combine([this._uielement, this.returnToTheMap])
+        this._content = State.state.fullScreenMessage.data;
+        const uielement = new Combine([this._content]).SetStyle(
+            "display:block;" +
+            "padding: 1em;" +
+            "padding-bottom:6em;" +
+            `margin-bottom: var(--return-to-the-map-height);` +
+            "box-sizing:border-box;" +
+            `height:calc(100vh - var(--return-to-the-map-height));` +
+            "overflow-y: auto;" +
+            "max-width:100vw;" +
+            "overflow-x:hidden;" +
+            "background:var(--background-color);" +
+            "color: var(--foreground-color);"
+        );
+        return new Combine([uielement, this.returnToTheMap])
             .Render();
     }
 

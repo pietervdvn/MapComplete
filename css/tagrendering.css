@@ -30,11 +30,17 @@
 .question {
     display: block;
     margin-top: 1em;
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
     padding: 1em;
     border-radius: 1em;
     font-size: larger;
 
+}
+
+.question svg {
+    width: 100%;
+    height: 100%;
 }
 
 .question-text {
@@ -65,15 +71,15 @@
 }
 
 input:checked + label .question-option-with-border {
-    border: 2px solid black;
+    border: 2px solid var(--subtle-detail-color-contrast);
 }
 
 
 .save {
     display: inline-block;
-    border: solid white 2px;
-    background-color: #3a3aeb;
-    color: white;
+    border: solid var(--catch-detail-color-contrast) 2px;
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-color-contrast);
     padding: 0.2em 0.6em;
     font-size: x-large;
     font-weight: bold;
@@ -89,9 +95,9 @@ input:checked + label .question-option-with-border {
 
 .login-button-friendly {
     display: inline-block;
-    border: solid white 2px;
-    background-color: #3a3aeb;
-    color: white;
+    background-color:var(--catch-detail-color);
+    color: var(--catch-detail-color-contrast);
+    border: solid var(--catch-detail-color-contrast) 2px;
     padding: 0.2em 0.6em;
     font-size: large;
     font-weight: bold;
@@ -115,7 +121,24 @@ input:checked + label .question-option-with-border {
     height: 1.3em;
     padding: 0.5em;
     border-radius: 0.65em;
-    border: solid black 1px;
+    border: solid var(--popup-border) 1px;
     font-size: medium;
     float: right;
+}
+
+.edit-button svg {
+    width: 1.3em;
+    height: 1.3em;
+    padding: 0.5em;
+    border-radius: 0.65em;
+    border: solid var(--foreground-color) 1px;
+    stroke: var(--foreground-color) !important;
+    fill: var(--foreground-color) !important;
+    font-size: medium;
+    float: right;
+}
+
+.edit-button svg path{
+    stroke: var(--foreground-color) !important;
+    fill: var(--foreground-color) !important;
 }

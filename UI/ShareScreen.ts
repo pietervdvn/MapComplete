@@ -32,9 +32,17 @@ export class ShareScreen extends UIElement {
         const optionCheckboxes: UIElement[] = []
         const optionParts: (UIEventSource<string>)[] = [];
 
+        function check() {
+            return Svg.checkmark_svg().SetStyle("width: 1.5em; display:inline-block;");
+        }
+
+        function nocheck() {
+            return Svg.no_checkmark_svg().SetStyle("width: 1.5em; display: inline-block;");
+        }
+
         const includeLocation = new CheckBox(
-            new Combine([Svg.checkmark, tr.fsIncludeCurrentLocation]),
-            new Combine([Svg.no_checkmark, tr.fsIncludeCurrentLocation]),
+            new Combine([check(), tr.fsIncludeCurrentLocation]),
+            new Combine([nocheck(), tr.fsIncludeCurrentLocation]),
             true
         )
         optionCheckboxes.push(includeLocation);
@@ -68,8 +76,8 @@ export class ShareScreen extends UIElement {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
             }));
             const includeCurrentBackground = new CheckBox(
-                new Combine([Svg.checkmark, currentBackground]),
-                new Combine([Svg.no_checkmark, currentBackground]),
+                new Combine([check(), currentBackground]),
+                new Combine([nocheck(), currentBackground]),
                 true
             )
             optionCheckboxes.push(includeCurrentBackground);
@@ -83,8 +91,8 @@ export class ShareScreen extends UIElement {
 
 
             const includeLayerChoices = new CheckBox(
-                new Combine([Svg.checkmark, tr.fsIncludeCurrentLayers]),
-                new Combine([Svg.no_checkmark, tr.fsIncludeCurrentLayers]),
+                new Combine([check(), tr.fsIncludeCurrentLayers]),
+                new Combine([nocheck(), tr.fsIncludeCurrentLayers]),
                 true
             )
             optionCheckboxes.push(includeLayerChoices);
@@ -113,8 +121,8 @@ export class ShareScreen extends UIElement {
         for (const swtch of switches) {
 
             const checkbox = new CheckBox(
-                new Combine([Svg.checkmark, Translations.W(swtch.human)]),
-                new Combine([Svg.no_checkmark, Translations.W(swtch.human)]), !swtch.reverse
+                new Combine([check(), Translations.W(swtch.human)]),
+                new Combine([nocheck(), Translations.W(swtch.human)]), !swtch.reverse
             );
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {

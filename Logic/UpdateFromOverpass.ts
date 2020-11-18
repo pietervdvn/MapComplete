@@ -62,6 +62,11 @@ export class UpdateFromOverpass {
             if (state.locationControl.data.zoom < layer.minzoom) {
                 continue;
             }
+            if(layer.doNotDownload){
+                continue;
+            }
+                
+                
             // Check if data for this layer has already been loaded
             let previouslyLoaded = false;
             for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
@@ -128,6 +133,7 @@ export class UpdateFromOverpass {
         this.ForceRefresh();
         console.log(`QUERY FAILED (retrying in ${5 * this.retries.data} sec)`, reason);
         this.retries.ping();
+        this.runningQuery.setData(false)
         const self = this;
         window?.setTimeout(
             function () {

@@ -191,6 +191,16 @@
           }
         },
         {
+          "question": {
+            "en": "In which direction are you looking when sitting on the bench?"
+          },
+          "render": "When sitting on the bench, one looks towards {direction}*",
+          "freeform": {
+            "key": "direction",
+            "type": "direction"
+          }
+        },
+        {
           "render": {
             "en": "Colour: {colour}",
             "de": "Farbe: {colour}",
@@ -297,7 +307,7 @@
         "render": "8"
       },
       "iconSize": {
-        "render": "20,20,center"
+        "render": "30,30,center"
       },
       "color": {
         "render": "#00f"

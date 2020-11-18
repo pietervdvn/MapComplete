@@ -118,7 +118,6 @@ export default class TagRenderingQuestion extends UIElement {
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
-                console.log("IsEquiv?",t0, t1, t0?.isEquivalent(t1))
                 return t0?.isEquivalent(t1) ?? false
             },
             (indices) => {
@@ -162,8 +161,6 @@ export default class TagRenderingQuestion extends UIElement {
                     }
 
                 }
-                console.log(indices, freeformExtras);
-
                 if (freeformField) {
                     if (freeformExtras.length > 0) {
                         freeformField.GetValue().setData(new Tag(this._configuration.freeform.key, freeformExtras.join(";")));
@@ -254,7 +251,8 @@ export default class TagRenderingQuestion extends UIElement {
 
         const textField = ValidatedTextField.InputForType(this._configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
-            country: this._tags.data._country
+            country: this._tags.data._country,
+            location: [this._tags.data._lat, this._tags.data._lon]
         });
 
         textField.GetValue().setData(this._tags.data[this._configuration.freeform.key]);

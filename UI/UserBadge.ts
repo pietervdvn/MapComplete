@@ -34,7 +34,7 @@ export class UserBadge extends UIElement {
             .SetClass("userbadge-login")
             .onClick(() => State.state.osmConnection.AttemptLogin());
         this._logout =
-            Svg.logout_ui()
+            Svg.logout_svg()
                 .onClick(() => {
                     State.state.osmConnection.LogOut();
                 });
@@ -52,7 +52,7 @@ export class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return Svg.home_img;
+                    return Svg.home;
                 }
                 return "";
             })
@@ -75,7 +75,7 @@ export class UserBadge extends UIElement {
 
         let messageSpan: UIElement =
             new Link(
-                new Combine([Svg.envelope_img, "" + user.totalMessages]),
+                new Combine([Svg.envelope, "" + user.totalMessages]),
                 'https://www.openstreetmap.org/messages/inbox',
                 true
             )
@@ -83,7 +83,7 @@ export class UserBadge extends UIElement {
 
         if (user.unreadMessages > 0) {
             messageSpan = new Link(
-                new Combine([Svg.envelope_img, "" + user.unreadMessages]),
+                new Combine([Svg.envelope, "" + user.unreadMessages]),
                 'https://www.openstreetmap.org/messages/inbox',
                 true
             ).SetClass("alert")
@@ -94,17 +94,8 @@ export class UserBadge extends UIElement {
             dryrun = new FixedUiElement("TESTING").SetClass("alert");
         }
 
-        if (user.home !== undefined) {
-            const icon = L.icon({
-                iconUrl: Img.AsData(Svg.home),
-                iconSize: [20, 20],
-                iconAnchor: [10, 10]
-            });
-            L.marker([user.home.lat, user.home.lon], {icon: icon}).addTo(State.state.bm.map);
-        }
-
         const settings =
-            new Link(Svg.gear_ui(),
+            new Link(Svg.gear_svg(),
                 `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`, 
                 true)
 
@@ -124,7 +115,7 @@ export class UserBadge extends UIElement {
 
         const csCount =
             new Link(
-                new Combine([Svg.star_img, "" + user.csCount]),
+                new Combine([Svg.star, "" + user.csCount]),
                 `https://www.openstreetmap.org/user/${user.name}/history`,
                 true);
 

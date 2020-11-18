@@ -24,9 +24,10 @@ export class WelcomeMessage extends UIElement {
         this.description = new Combine([
             "<h3>", layout.title, "</h3>",
             layout.description
-
         ])
         layout.descriptionTail
+        
+        
 
 
         this.plzLogIn =

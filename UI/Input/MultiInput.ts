@@ -71,7 +71,7 @@ export class MultiInput<T> extends InputElement<T[]> {
             input.IsSelected.addCallback(() => this.UpdateIsSelected());
 
             const moveUpBtn = Svg.up_ui()
-                .onClick(() => {
+                .SetClass('small-image').onClick(() => {
                     const v = self._value.data[i];
                     self._value.data[i] = self._value.data[i - 1];
                     self._value.data[i - 1] = v;
@@ -79,8 +79,8 @@ export class MultiInput<T> extends InputElement<T[]> {
                 });
 
             const moveDownBtn = 
-                Svg.down_ui().SetStyle('max-width: 1.5em; margin-left: 5px;display:block;')
-                .onClick(() => {
+                Svg.down_ui()
+                    .SetClass('small-image') .onClick(() => {
                     const v = self._value.data[i];
                     self._value.data[i] = self._value.data[i + 1];
                     self._value.data[i + 1] = v;
@@ -98,7 +98,7 @@ export class MultiInput<T> extends InputElement<T[]> {
 
 
             const deleteBtn =
-                Svg.delete_icon_ui().SetStyle('max-width: 1.5em;width:1.5em; margin-left: 5px;')
+                Svg.delete_icon_ui().SetClass('small-image')
                 .onClick(() => {
                     self._value.data.splice(i, 1);
                     self._value.ping();

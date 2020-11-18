@@ -27,24 +27,27 @@ export default class EditableTagRendering extends UIElement {
         this.ListenTo(this._editMode);
         this.ListenTo(State.state?.osmConnection?.userDetails)
 
-        const self = this;
-
         this._answer = new TagRenderingAnswer(tags, configuration);
-        
         this._answer.SetStyle("width:100%;")
+        this._question = this.GenerateQuestion();
+        this.dumbMode = false;
 
         if (this._configuration.question !== undefined) {
-            // 2.3em total width
-            if(State.state.featureSwitchUserbadge.data){
-                
-            this._editButton = 
-                Svg.pencil_ui().SetClass("edit-button")
-                .onClick(() => {
-                    self._editMode.setData(true);
-                });
+            if (State.state.featureSwitchUserbadge.data) {
+                // 2.3em total width
+                const self = this;
+                this._editButton =
+                    Svg.pencil_svg().SetClass("edit-button")
+                        .onClick(() => {
+                            self._editMode.setData(true);
+                        });
             }
+        }
+    }
 
-
+    private GenerateQuestion() {
+        const self = this;
+        if (this._configuration.question !== undefined) {
             // And at last, set up the skip button
             const cancelbutton =
                 Translations.t.general.cancel.Clone()
@@ -53,7 +56,7 @@ export default class EditableTagRendering extends UIElement {
                         self._editMode.setData(false)
                     });
 
-            this._question = new TagRenderingQuestion(tags, configuration,
+            return new TagRenderingQuestion(this._tags, this._configuration,
                 () => {
                     self._editMode.setData(false)
                 },

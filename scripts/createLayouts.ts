@@ -1,16 +1,16 @@
-import {Img} from "./UI/Img"
-import {UIElement} from "./UI/UIElement";
+import {Img} from "../UI/Img"
+import {UIElement} from "../UI/UIElement";
 Img.runningFromConsole = true;
 // We HAVE to mark this while importing
 UIElement.runningFromConsole = true;
 
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
-import Locale from "./UI/i18n/Locale";
+import Locale from "../UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
-import Translations from "./UI/i18n/Translations";
-import {Translation} from "./UI/i18n/Translation";
-import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import Translations from "../UI/i18n/Translations";
+import {Translation} from "../UI/i18n/Translation";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 
 
 function enc(str: string): string {
@@ -197,12 +197,18 @@ function createLandingPage(layout: LayoutConfig) {
     Locale.language.setData(layout.language[0]);
 
     const ogTitle = Translations.W(layout.title)?.InnerRender();
-    const ogDescr = Translations.W(layout.description ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
+    const ogDescr = Translations.W(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
     const ogImage = layout.socialImage;
 
     let customCss = "";
     if (layout.customCss !== undefined && layout.customCss !== "") {
-        customCss = `<link rel='stylesheet" href=${layout.customCss}"/>`
+
+        try {
+            const cssContent = readFileSync(layout.customCss);
+            customCss = "<style>" + cssContent + "</style>";
+        } catch (e) {
+            customCss = `<link rel='stylesheet' href="${layout.customCss}"/>`
+        }
     }
 
     const og = `
@@ -237,6 +243,11 @@ function createLandingPage(layout: LayoutConfig) {
     return output;
 }
 
+const generatedDir = "./assets/generated";
+if (! existsSync(generatedDir)) {
+    mkdirSync(generatedDir)
+}
+
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
 const all = AllKnownLayouts.allSets;
 
@@ -245,10 +256,7 @@ let wikiPage = "{|class=\"wikitable sortable\"\n" +
     "|-";
 
 
-const generatedDir = "./assets/generated";
-if (! existsSync(generatedDir)) {
-    mkdirSync(generatedDir)
-}
+
 
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {

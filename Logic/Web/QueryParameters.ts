@@ -2,23 +2,26 @@
  * Wraps the query parameters into UIEventSources
  */
 import {UIEventSource} from "../UIEventSource";
+import Hash from "./Hash";
 
 export class QueryParameters {
 
-    private static order: string [] = ["layout","test","z","lat","lon"];
+    private static order: string [] = ["layout", "test", "z", "lat", "lon"];
     private static knownSources = {};
     private static initialized = false;
     private static defaults = {}
-    
-    private static addOrder(key){
-        if(this.order.indexOf(key) < 0){
+
+    private static documentation = {}
+
+    private static addOrder(key) {
+        if (this.order.indexOf(key) < 0) {
             this.order.push(key)
         }
     }
 
     private static init() {
-        
-        if(this.initialized){
+
+        if (this.initialized) {
             return;
         }
         this.initialized = true;
@@ -55,14 +58,15 @@ export class QueryParameters {
 
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
-        history.replaceState(null, "", "?" + parts.join("&"));
+        history.replaceState(null, "", "?" + parts.join("&") + "#" + Hash.Get().data);
 
     }
 
-    public static GetQueryParameter(key: string, deflt: string): UIEventSource<string> {
+    public static GetQueryParameter(key: string, deflt: string, documentation?: string): UIEventSource<string> {
         if(!this.initialized){
             this.init();
         }
+        QueryParameters.documentation[key] = documentation;
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt;
         }
@@ -74,6 +78,14 @@ export class QueryParameters {
         QueryParameters.knownSources[key] = source;
         source.addCallback(() => QueryParameters.Serialize())
         return source;
+    }
+
+    public static GenerateQueryParameterDocs(): string {
+        const docs = [];
+        for (const key in QueryParameters.documentation) {
+            docs.push("**" + key + "**: " + QueryParameters.documentation[key] + " (default value: _" + QueryParameters.defaults[key] + "_)")
+        }
+        return docs.join("\n\n");
     }
 
 }

@@ -44,13 +44,17 @@ export class ImageUploadFlow extends UIElement {
         this._licensePicker = licensePicker;
         this._selectedLicence = licensePicker.GetValue();
 
-        this._connectButton = new Combine([t.pleaseLogin])
+        this._connectButton = t.pleaseLogin.Clone()
             .onClick(() => State.state.osmConnection.AttemptLogin())
             .SetClass("login-button-friendly");
 
     }
 
     InnerRender(): string {
+        
+        if(!State.state.featureSwitchUserbadge.data){
+            return "";
+        }
 
         const t = Translations.t.image;
         if (State.state.osmConnection.userDetails === undefined) {
@@ -97,23 +101,10 @@ export class ImageUploadFlow extends UIElement {
         ]);
 
         const label = new Combine([
-            Svg.camera_plus_ui().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
+            Svg.camera_plus_svg().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
             Translations.t.image.addPicture
-                .SetStyle("width:max-content;font-size: 28px;" +
-                    "font-weight: bold;" +
-                    "float: left;" +
-                    "margin-top: 4px;" +
-                    "padding-top: 4px;" +
-                    "padding-bottom: 4px;" +
-                    "padding-left: 13px;"),
-
-        ]).SetStyle(" display: flex;" +
-            "cursor:pointer;" +
-            "padding: 0.5em;" +
-            "border-radius: 1em;" +
-            "border: 3px solid black;" +
-            "box-sizing:border-box;")
-
+        ]).SetClass("image-upload-flow-button")
+    
         const actualInputElement =
             `<input style='display: none' id='fileselector-${this.id}' type='file' accept='image/*' name='picField' multiple='multiple' alt=''/>`;
         
@@ -127,7 +118,8 @@ export class ImageUploadFlow extends UIElement {
         return new Combine([
             form,
             extraInfo
-        ]).SetStyle("margin-top: 1em;margin-bottom: 2em;text-align: center;")
+        ]).SetClass("image-upload-flow")
+            .SetStyle("margin-top: 1em;margin-bottom: 2em;text-align: center;")
             .Render();
     }
 

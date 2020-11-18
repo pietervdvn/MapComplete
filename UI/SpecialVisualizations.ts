@@ -39,12 +39,16 @@ export class SubstitutedTranslation extends UIElement {
             return []
         }
         const tags = this.tags.data;
+        txt = SubstitutedTranslation.SubstituteKeys(txt, tags);
+        return this.EvaluateSpecialComponents(txt);
+    }
+
+    public static SubstituteKeys(txt: string, tags: any) {
         for (const key in tags) {
             // Poor mans replace all
             txt = txt.split("{" + key + "}").join(tags[key]);
         }
-
-        return this.EvaluateSpecialComponents(txt);
+        return txt;
     }
 
     private EvaluateSpecialComponents(template: string): UIElement[] {
@@ -98,7 +102,20 @@ export default class SpecialVisualizations {
         args: { name: string, defaultValue?: string, doc: string }[]
     }[] =
 
-        [
+        [{
+            funcName: "all_tags",
+            docs: "Prints all key-value pairs of the object - used for debugging",
+            args: [],
+            constr: ((tags: UIEventSource<any>) => {
+                return new VariableUiElement(tags.map(tags => {
+                    const parts = [];
+                    for (const key in tags) {
+                        parts.push(key + "=" + tags[key]);
+                    }
+                    return parts.join("<br/>")
+                })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
+            })
+        },
             {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
@@ -166,21 +183,7 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
-            
-            {
-                funcName: "all_tags",
-                docs: "Prints all key-value pairs of the object - used for debugging",
-                args:[],
-                constr: ((tags: UIEventSource<any>) => {
-                    return new VariableUiElement(tags.map(tags => {
-                        const parts = [];
-                        for (const key in tags) {
-                            parts.push(key+"="+tags[key]);
-                        }
-                        return parts.join("<br/>")
-                    })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
-                })
-            }
+
 
         ]
     static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();

@@ -56,8 +56,8 @@ export class Imgur {
             },
         };
         $.ajax(settings).done(function (response) {
-            const descr  : string= response.data.description;
-            const data : any = {};
+            const descr: string = response.data.description ?? "";
+            const data: any = {};
             for (const tag of descr.split("\n")) {
                 const kv = tag.split(":");
                 const k = kv[0];

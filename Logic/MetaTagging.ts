@@ -82,7 +82,7 @@ export default class MetaTagging {
         })
     )
     private static isOpen = new SimpleMetaTagger(
-        ["_isOpen", "_isOpen:description"], "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no",
+        ["_isOpen", "_isOpen:description"], "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
         (feature => {
             const tagsSource = State.state.allElements.addOrGetElement(feature);
             tagsSource.addCallback(tags => {
@@ -123,16 +123,40 @@ export default class MetaTagging {
         })
     )
 
-    public static carriageWayWidth = new SimpleMetaTagger(
-        ["_width:needed","_width:needed:no_pedestrians", "_width:difference"],
+    private static directionSimplified = new SimpleMetaTagger(
+        ["_direction:simplified", "_direction:leftright"], "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
+        (feature => {
+            const tags = feature.properties;
+            const direction = tags["camera:direction"] ?? tags["direction"];
+            if (direction === undefined) {
+                return;
+            }
+            let n = Number(direction);
+            if (isNaN(n)) {
+                return;
+            }
+
+            // [22.5 -> 67.5] is sector 1
+            // [67.5 -> ] is sector 1
+            n = (n + 22.5) % 360;
+            n = Math.floor(n / 45);
+            tags["_direction:simplified"] = n;
+            tags["_direction:leftright"] = n <= 3 ? "right" : "left";
+
+
+        })
+    )
+
+    private static carriageWayWidth = new SimpleMetaTagger(
+        ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
         "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present",
         (feature: any, index: number) => {
 
             const properties = feature.properties;
-            if(properties["width:carriageway"] === undefined){
+            if (properties["width:carriageway"] === undefined) {
                 return;
             }
-            
+
             const carWidth = 2;
             const cyclistWidth = 1.5;
             const pedestrianWidth = 0.75;
@@ -239,7 +263,8 @@ export default class MetaTagging {
         MetaTagging.surfaceArea,
         MetaTagging.country,
         MetaTagging.isOpen,
-        MetaTagging.carriageWayWidth
+        MetaTagging.carriageWayWidth,
+        MetaTagging.directionSimplified
 
     ];
 

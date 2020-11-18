@@ -35,6 +35,9 @@ import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personalLayout/personalLayout.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import * as L from "leaflet";
+import {Img} from "./UI/Img";
+import {UserDetails} from "./Logic/Osm/OsmConnection";
 
 export class InitUiElements {
 
@@ -110,6 +113,9 @@ export class InitUiElements {
 
         InitUiElements.setupAllLayerElements();
 
+        if (layoutToUse.customCss !== undefined) {
+           Utils.LoadCustomCss(layoutToUse.customCss);
+        }
 
         function updateFavs() {
             const favs = State.state.favouriteLayers.data ?? [];
@@ -139,6 +145,7 @@ export class InitUiElements {
 
         }
 
+
         if (layoutToUse.id === personal.id) {
             State.state.favouriteLayers.addCallback(updateFavs);
             State.state.installedThemes.addCallback(updateFavs);
@@ -150,27 +157,36 @@ export class InitUiElements {
          * This is given to the div which renders fullscreen on mobile devices
          */
         State.state.selectedElement.addCallback((feature) => {
-                if (feature?.feature?.properties === undefined) {
+
+                if (feature === undefined) {
+                    State.state.fullScreenMessage.setData(undefined);
+                }
+                if (feature?.properties === undefined) {
                     return;
                 }
-                const data = feature.feature.properties;
+                const data = feature.properties;
                 // Which is the applicable set?
                 for (const layer of layoutToUse.layers) {
                     if (typeof layer === "string") {
                         continue;
                     }
                     const applicable = layer.overpassTags.matches(TagUtils.proprtiesToKV(data));
-                    if (applicable) {
-                        // This layer is the layer that gives the questions
-
-                        const featureBox = new FeatureInfoBox(
-                            State.state.allElements.getElement(data.id),
-                            layer
-                        );
-
-                        State.state.fullScreenMessage.setData(featureBox);
-                        break;
+                    if (!applicable) {
+                        continue;
                     }
+                    
+                    if(layer.title === null && layer.tagRenderings.length === 0){
+                        continue;
+                    }
+                    
+                    // This layer is the layer that gives the questions
+                    const featureBox = new FeatureInfoBox(
+                        State.state.allElements.getElement(data.id),
+                        layer
+                    );
+
+                    State.state.fullScreenMessage.setData(featureBox);
+                    break;
                 }
             }
         );
@@ -201,6 +217,21 @@ export class InitUiElements {
             content.AttachTo("messagesbox");
         }
 
+        State.state.osmConnection.userDetails.map((userDetails: UserDetails) => userDetails?.home)
+            .addCallbackAndRun(home => {
+                if (home === undefined) {
+                    return;
+                }
+                const color = getComputedStyle(document.body).getPropertyValue("--subtle-detail-color")
+                const icon = L.icon({
+                    iconUrl: Img.AsData(Svg.home_white_bg.replace(/#ffffff/g, color)),
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                });
+                const marker = L.marker([home.lat, home.lon], {icon: icon})
+                marker.addTo(State.state.bm.map)
+                console.log(marker)
+            });
 
         new GeoLocationHandler()
             .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
@@ -269,7 +300,7 @@ export class InitUiElements {
         ]
 
         if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
+            tabs.push({header: Svg.share, content: new ShareScreen()});
         }
 
         if (State.state.featureSwitchMoreQuests.data) {
@@ -282,12 +313,12 @@ export class InitUiElements {
 
 
         tabs.push({
-                header: Svg.help_img,
+                header: Svg.help    ,
                 content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
                     if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
-                    return Translations.t.general.aboutMapcomplete.Render();
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version "+State.vNumber]).Render();
                 }, [Locale.language]))
             }
         );
@@ -303,8 +334,8 @@ export class InitUiElements {
 
         const fullOptions = this.CreateWelcomePane();
 
-        const help = Svg.help_ui().SetClass("open-welcome-button");
-        const close = Svg.close_ui().SetClass("close-welcome-button");
+        const help = Svg.help_svg().SetClass("open-welcome-button");
+        const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
                 close,
@@ -324,11 +355,15 @@ export class InitUiElements {
             checkbox.isEnabled.setData(false);
         })
 
+        State.state.selectedElement.addCallback(() => {
+            checkbox.isEnabled.setData(false);
+        })
+
 
         const fullOptions2 = this.CreateWelcomePane();
         State.state.fullScreenMessage.setData(fullOptions2)
 
-        Svg.help_ui()
+        Svg.help_svg()
             .SetClass("open-welcome-button")
             .SetClass("shadow")
             .onClick(() => {
@@ -365,15 +400,15 @@ export class InitUiElements {
                 return;
             }
 
-            layerControlPanel.SetStyle("display:block;padding:1em;border-radius:1em;");
-            const closeButton = Svg.close_ui().SetClass("layer-selection-toggle").SetStyle("  background: #e5f5ff;")
+            layerControlPanel.SetStyle("display:block;padding:0.75em;border-radius:1em;");
+            const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
                 new Combine([
                     closeButton,
                     layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
                     .SetClass("hidden-on-mobile")
                 ,
-                Svg.layers_ui().SetClass("layer-selection-toggle"),
+                Svg.layers_svg().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
             );
 
@@ -432,17 +467,19 @@ export class InitUiElements {
                 return new Combine([mapComplete, reportBug, " | ", stats, " | ", editHere, editWithJosm]).Render();
 
             }, [State.state.osmConnection.userDetails])
-                
         ).SetClass("map-attribution")
     }
 
     static InitBaseMap() {
         const bm = new Basemap("leafletDiv", State.state.locationControl, this.CreateAttribution());
         State.state.bm = bm;
+        bm.map.on("popupclose", () => {
+            State.state.selectedElement.setData(undefined)
+        })
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId);
+        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId, "The id of the background layer to start with");
 
         queryParam.addCallbackAndRun((selectedId: string) => {
             const available = State.state.availableBackgroundLayers.data;
@@ -472,18 +509,15 @@ export class InitUiElements {
                 throw "Layer " + layer + " was not substituted";
             }
 
-            const generateInfo = (tagsES, feature) => {
+            let generateContents = (tags: UIEventSource<any>) => new FeatureInfoBox(tags, layer);
+            if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {
+                generateContents = undefined;
+            }
 
-                return new FeatureInfoBox(
-                    tagsES,
-                    layer,
-                )
-            };
-
-            const flayer: FilteredLayer = FilteredLayer.fromDefinition(layer, generateInfo);
+            const flayer: FilteredLayer = new FilteredLayer(layer, generateContents);
             flayers.push(flayer);
 
-            QueryParameters.GetQueryParameter("layer-" + layer.id, "true")
+            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wehter or not layer " + layer.id + " is shown")
                 .map<boolean>((str) => str !== "false", [], (b) => b.toString())
                 .syncWith(
                     flayer.isDisplayed

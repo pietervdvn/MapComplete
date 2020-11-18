@@ -1,20 +1,20 @@
-/*
+//*
 
 
+import Direction from "./UI/Input/DirectionInput";
 import {UIEventSource} from "./Logic/UIEventSource";
-import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
-import SharedLayers from "./Customizations/SharedLayers";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
-const tags = {
-    mapillary: "wweALGY5g8_T8UjGkcWCfw",
-    wikimedia_commons: "File:Boekenkast Sint-Lodewijks.jpg"
-}
-const src = new UIEventSource(tags);
+const d = new UIEventSource("90");
+new Direction(d, [51.21576,3.22001]).AttachTo("maindiv")
+new VariableUiElement(d.map(d => "" + d + "°")).AttachTo("extradiv")
 
-new FeatureInfoBox(src, SharedLayers.sharedLayers["ghost_bike"]).AttachTo('maindiv');
+UIEventSource.Chronic(25, () => {
+    const degr = (Number(d.data) + 1) % 360;
+    d.setData(""+ degr);
+    return true;
+})
 
-//const subs = new SubstitutedTranslation(new Translation({"nl":"NL {image_carousel()} {image_upload()}"}), src)
-//subs.AttachTo("maindiv")
 /*/
 
 

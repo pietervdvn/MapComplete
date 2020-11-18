@@ -1,0 +1,34 @@
+{
+  "id": "surveillance",
+  "title": {
+    "en": "Surveillance under Surveillance",
+    "nl": "Surveillance under Surveillance"
+  },
+  "shortDescription": {
+    "en": "Surveillance cameras and other means of surveillance",
+    "nl": "Bewakingscameras en dergelijke"
+  },
+  "description": {
+    "en": "On this open map, you can find surveillance cameras.",
+    "nl": "Op deze open kaart kan je bewakingscamera's vinden."
+  },
+  "language": [
+    "en",
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/surveillance_cameras/logo.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "customCss": "./assets/themes/surveillance_cameras/custom_theme.css",
+  "defaultBackgroundId": "Stadia.AlidadeSmoothDark",
+  "layers": [
+    "direction",
+    "surveillance_cameras"
+  ],
+  "roamingRenderings": []
+}

@@ -21,15 +21,16 @@ export class FeatureInfoBox extends UIElement {
         layerConfig: LayerConfig
     ) {
         super();
-        if(layerConfig === undefined){
+        if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
         this._tags = tags;
         this._layerConfig = layerConfig;
 
 
-        this._title = new TagRenderingAnswer(tags, layerConfig.title)
-            .SetClass("featureinfobox-title");
+        this._title = layerConfig.title === undefined ? undefined :
+            new TagRenderingAnswer(tags, layerConfig.title)
+                .SetClass("featureinfobox-title");
         this._titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
@@ -37,7 +38,6 @@ export class FeatureInfoBox extends UIElement {
         if (State.state.featureSwitchUserbadge.data) {
             this._questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
-
     }
 
     InnerRender(): string {

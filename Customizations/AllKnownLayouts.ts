@@ -16,10 +16,11 @@ import * as charging_stations from "../assets/themes/charging_stations/charging_
 import * as widths from "../assets/themes/widths/width.json"
 import * as drinking_water from "../assets/themes/drinking_water/drinking_water.json"
 import * as climbing from "../assets/themes/climbing/climbing.json"
-import LayerConfig from "./JSON/LayerConfig";
-import SharedLayers from "./SharedLayers";
+import * as surveillance_cameras from "../assets/themes/surveillance_cameras/surveillance_cameras.json"
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
+import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
+import SharedLayers from "./SharedLayers";
 
 export class AllKnownLayouts {
 
@@ -62,6 +63,7 @@ export class AllKnownLayouts {
         new LayoutConfig(buurtnatuur),
         new LayoutConfig(bike_monitoring_stations),
         new LayoutConfig(climbing),
+        new LayoutConfig(surveillance_cameras)
     ];
 
 

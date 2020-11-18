@@ -4,7 +4,6 @@ import {UIElement} from "../../UI/UIElement";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {Basemap} from "./Basemap";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import Svg from "../../Svg";
 import {Img} from "../../UI/Img";
 
@@ -48,15 +47,18 @@ export class GeoLocationHandler extends UIElement {
         map.on('accuratepositionfound', onAccuratePositionFound);
         map.on('accuratepositionerror', onAccuratePositionError);
 
-FixedUiElement
-        const icon = L.icon(
-            {
-                iconUrl: Img.AsData(Svg.crosshair_blue),
-                iconSize: [40, 40], // size of the icon
-                iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
-            })
+
 
         State.state.currentGPSLocation.addCallback((location) => {
+
+            const color = getComputedStyle(document.body).getPropertyValue("--catch-detail-color")
+            const icon = L.icon(
+                {
+                    iconUrl: Img.AsData(Svg.crosshair.replace(/#000000/g, color)),
+                    iconSize: [40, 40], // size of the icon
+                    iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
+                })
+            
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);
 

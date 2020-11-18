@@ -3,6 +3,7 @@ import * as $ from "jquery"
 
 export class Utils {
 
+    public static readonly assets_path = "./assets/svg/";
 
     static EncodeXmlValue(str) {
         return str.replace(/&/g, '&amp;')
@@ -154,5 +155,19 @@ export class Utils {
             });
 
     }
+    
+    public static LoadCustomCss(location: string){
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.id = "customCss";
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = location;
+        link.media = 'all';
+        head.appendChild(link);
+        console.log("Added custom layout ",location)
+    }
+
+
 
 }

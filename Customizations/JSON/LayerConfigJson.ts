@@ -30,6 +30,12 @@ export interface LayerConfigJson {
     overpassTags: AndOrTagConfigJson | string;
 
     /**
+     * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers. 
+     * Works well together with 'passAllFeatures', to add decoration
+     */
+    doNotDownload?: boolean;
+    
+    /**
      * The zoomlevel at which point the data is shown and loaded.
      */
     minzoom: number;
@@ -39,8 +45,13 @@ export interface LayerConfigJson {
     /**
      * The title shown in a popup for elements of this layer.
      */
-    title: string | TagRenderingConfigJson;
-    
+    title?: string | TagRenderingConfigJson;
+
+    /**
+     * Small icons shown next to the title.
+     * If not specified, the OsmLink and wikipedia links will be used by default.
+     * Use an empty array to hide them
+     */
     titleIcons?: (string | TagRenderingConfigJson)[];
 
     /**
@@ -54,9 +65,15 @@ export interface LayerConfigJson {
      * Default is '40,40,center'
      */
     iconSize?: string | TagRenderingConfigJson;
-    
     /**
-     * The color for way-elements
+     * The rotation of an icon, useful for e.g. directions.
+     * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
+     */
+    rotation?: string | TagRenderingConfigJson;
+
+    /**
+     * The color for way-elements and SVG-elements.
+     * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead
      */
     color?: string | TagRenderingConfigJson;
     /**
@@ -88,6 +105,11 @@ export interface LayerConfigJson {
     hideUnderlayingFeaturesMinPercentage?:number;
 
     /**
+     * If set, this layer will pass all the features it receives onto the next layer
+     */
+    passAllFeatures?:boolean
+    
+    /**
      * Presets for this layer
      */
     presets?: {
@@ -98,6 +120,7 @@ export interface LayerConfigJson {
 
     /**
      * All the tag renderings.
+     * A tag rendering is a block that either shows the known value or asks a question.
      */
     tagRenderings?: (string | TagRenderingConfigJson) []
 }

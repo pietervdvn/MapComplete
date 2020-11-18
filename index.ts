@@ -4,8 +4,8 @@ import {InitUiElements} from "./InitUiElements";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
-import SharedLayers from "./Customizations/SharedLayers";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import {Utils} from "./Utils";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -30,6 +30,10 @@ if(location.href.indexOf("pietervdvn.github.io") >= 0){
     defaultLayout = "bookcases"
 }
 
+const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
+if(customCssQP.data !== undefined && customCssQP.data !== ""){
+    Utils.LoadCustomCss(customCssQP.data);
+}
 
 
 let testing: UIEventSource<string>;
@@ -54,23 +58,7 @@ if (path !== "index.html" && path !== "") {
     defaultLayout = path.substr(0, path.length - 5);
     console.log("Using layout", defaultLayout);
 }
-
-// Run over all questsets. If a part of the URL matches a searched-for part in the layout, it'll take that as the default
-for (const k in AllKnownLayouts.allSets) {
-    const layout : LayoutConfig= AllKnownLayouts.allSets[k];
-    const possibleParts = (layout.locationContains ?? []);
-    for (const locationMatch of possibleParts) {
-        if (locationMatch === "") {
-            continue
-        }
-        if (window.location.href.toLowerCase().indexOf(locationMatch.toLowerCase()) >= 0) {
-            defaultLayout = layout.name;
-        }
-    }
-}
-
-defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout).data;
-
+defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout,"The layout to load into MapComplete").data;
 let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
 
 
@@ -86,18 +74,20 @@ if (layoutFromBase64.startsWith("wiki:")) {
 
     $.ajax({
         url: url,
-        dataType: 'xml',
         success: function (data) {
-            const layoutJson = data.querySelector('[id="bodyContent"]')
-                .querySelector('[class="mw-parser-output"]')
-                .children[0]
-                .firstChild.textContent;
+            // Hacky McHackFace has been working here. This probably break in the future
+            const startTrigger = "<div class=\"mw-parser-output\">";
+            const start = data.indexOf(startTrigger);
+            data = data.substr(start, 
+                data.indexOf("<div class=\"printfooter\">") - start)
+            data = data.substr(0, data.lastIndexOf("</p>"))
+            data = data.substr(startTrigger.length + 3);
+            
             try {
-                console.log("DOWNLOADED:",layoutJson);
-                const parsed = JSON.parse(layoutJson);
+                const parsed = JSON.parse(data);
                 parsed["id"] = layoutFromBase64
-                const layout =new LayoutConfig(parsed);
-                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(layoutJson));
+                const layout = new LayoutConfig(parsed);
+                InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
                     .SetClass("clickable")
@@ -118,3 +108,4 @@ if (layoutFromBase64.startsWith("wiki:")) {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 }
 
+// console.log(QueryParameters.GenerateQueryParameterDocs())

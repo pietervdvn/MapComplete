@@ -5,7 +5,6 @@
     text-align: center;
     word-break: normal;
 }
-
 .oh-table th {
     padding: 0;
     margin: 0;
@@ -34,22 +33,22 @@
 }
 
 .oh-timecell:hover {
-    background-color: #92b1ff !important;
+    background-color: var(--catch-detail-color) !important;
 }
 
 
 .oh-timecell-selected {
-    background-color: #0048ff;
+    background-color: var(--catch-detail-color);
 }
 
 
 .oh-timecell-half {
     border-bottom: 1px solid #ddd;
-    background-color: aliceblue;
+    background-color: var(--subtle-detail-color);
 }
 
 .oh-timecell-half.oh-timecell-selected {
-    background-color: #0048ff;
+    background-color: var(--catch-detail-color);
 }
 
 .oh-table tr {
@@ -75,12 +74,12 @@
 }
 
 .oh-timecol-selected {
-    border-right: #0048ff;
+    border-right: var(--catch-detail-color);
 }
 
 .oh-timecol-selected > span {
-    background-color: #0048ff;
-    color: white;
+    background-color: var(--catch-detail-color);
+    color: var(--background-color);
     width: 100%;
     display: block;
 }
@@ -96,11 +95,11 @@
 }
 
 .oh-timerow-selected .oh-timecell-0 {
-    border-left: 10px solid #0048ff !important;
+    border-left: 10px solid var(--catch-detail-color) !important;
 }
 
 .oh-timerow-selected .oh-timecell-6 {
-    border-right: 10px solid #0048ff !important;
+    border-right: 10px solid var(--catch-detail-color) !important;
 }
 
 
@@ -117,7 +116,7 @@
     top: 0;
     left: 0;
     width: calc(100% - 4px);
-    background: #0048ff;
+    background: var(--catch-detail-color);
     z-index: 1;
     box-sizing: border-box;
 }
@@ -276,7 +275,7 @@
 
 
 .ohviz-today {
-    background-color: #e5f5ff;
+    background-color: var(--subtle-detail-color);
 }
 
 .ohviz-weekday {
@@ -290,7 +289,7 @@
 }
 
 .ohviz-container {
-    border: 0.5em solid #e5f5ff;
+    border: 0.5em solid var(--subtle-detail-color);
     border-radius: 1em;
     display: block;
 }
