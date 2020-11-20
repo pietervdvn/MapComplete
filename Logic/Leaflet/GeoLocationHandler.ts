@@ -114,7 +114,12 @@ export class GeoLocationHandler extends UIElement {
             return "";
         }
         if (State.state.currentGPSLocation.data !== undefined) {
-            map.flyTo(State.state.currentGPSLocation.data.latlng, 18);
+            State.state.bm.map.flyTo(
+                State.state.currentGPSLocation.data.latlng, 16,
+                {
+                    duration: 0.25,
+                }
+            );
         }
 
 
