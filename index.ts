@@ -7,7 +7,7 @@ import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
 
-let defaultLayout = "bookcases"
+let defaultLayout = "climbing"
 // --------------------- Special actions based on the parameters -----------------
 // @ts-ignore
 if (location.href.startsWith("http://buurtnatuur.be")) {
