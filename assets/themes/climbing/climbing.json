@@ -1,0 +1,435 @@
+{
+  "id": "climbing",
+  "title": {
+    "nl": "Open Klimkaart",
+    "de": "Offene Kletterkarte",
+    "en": "Open Climbing Map"
+  },
+  "description": {
+    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
+    "de": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
+    "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature."
+  },
+  "language": [
+    "de",
+    "en"
+  ],
+  "maintainer": "Christian Neumann <christian@utopicode.de>",
+  "icon": "./assets/themes/climbing/climbing_no_rope.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "climbing",
+      "name": {
+        "nl": "Klimgelegenheiden",
+        "de": "Klettermöglichkeiten",
+        "en": "Climbing opportunities"
+      },
+      "minzoom": 10,
+      "overpassTags": {
+        "and": [
+          "sport=climbing",
+          "climbing!~route",
+          "leisure!~sports_centre"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Climbing opportunity",
+          "nl": "Klimgelegenheid",
+          "de": "Klettermöglichkeit"
+        }
+      },
+      "description": {
+        "nl": "Een klimgelegenheid",
+        "de": "Eine Klettergelegenheit",
+        "en": "A climbing opportunity"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "<strong>{name}</strong>",
+            "nl": "<strong>{name}</strong>",
+            "de": "<strong>{name}</strong>"
+          },
+          "question": {
+            "en": "What is the name of this climbing opportunity?",
+            "nl": "Wat is de naam van dit Klimgelegenheid?",
+            "de": "Wie heißt diese Klettergelegenheit?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "noname=yes",
+                  "name="
+                ]
+              },
+              "then": {
+                "en": "This climbing opportunity doesn't have a name",
+                "nl": "Dit Klimgelegenheid heeft geen naam",
+                "de": "Diese Klettergelegenheit hat keinen Namen"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_no_rope.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "sport=climbing"
+          ],
+          "title": {
+            "en": "Climbing opportunity",
+            "nl": "Klimgelegenheid",
+            "de": "Klettermöglichkeit"
+          },
+          "description": {
+            "nl": "Een klimgelegenheid",
+            "de": "Eine Klettergelegenheit",
+            "en": "A climbing opportunity"
+          }
+        }
+      ],
+      "wayHandling": 1
+    },
+    {
+      "id": "climbing_gym",
+      "name": {
+        "de": "Kletterhallen",
+        "en": "Climbing gyms"
+      },
+      "minzoom": 10,
+      "overpassTags": {
+        "and": [
+          "sport=climbing",
+          "leisure=sports_centre"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Klimzaal",
+          "de": "Kletterhalle",
+          "en": "Climbing gym"
+        }
+      },
+      "description": {
+        "de": "Eine Kletterhalle",
+        "en": "A climbing gym"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "<strong>{name}</strong>",
+            "nl": "<strong>{name}</strong>",
+            "de": "<strong>{name}</strong>"
+          },
+          "question": {
+            "en": "What is the name of this climbing gym?",
+            "nl": "Wat is de naam van dit Klimzaal?",
+            "de": "Wie heißt diese Kletterhalle?"
+          },
+          "freeform": {
+            "key": "name"
+          }
+        },
+        "website",
+        "phone",
+        "email",
+        "opening_hours"
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_gym.svg"
+      },
+      "width": "0",
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "wayHandling": 1
+    },
+    {
+      "id": "climbing_route",
+      "name": {
+        "en": "Climbing routes",
+        "de": "Kletterrouten"
+      },
+      "minzoom": 18,
+      "overpassTags": {
+        "and": [
+          "climbing=route"
+        ]
+      },
+      "title": {
+        "render": {
+          "de": "Kleterroute",
+          "en": "Climbing route"
+        }
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "<strong>{name}</strong>",
+            "nl": "<strong>{name}</strong>",
+            "de": "<strong>{name}</strong>"
+          },
+          "question": {
+            "en": "What is the name of this climbing route?",
+            "de": "Wie heißt diese Kletterroute?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "noname=yes",
+                  "name="
+                ]
+              },
+              "then": {
+                "en": "This climbing route doesn't have a name",
+                "de": "Diese Kletterroute hat keinen Namen"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 1,
+      "icon": {
+        "render": "./assets/themes/climbing/climbing_route.svg"
+      },
+      "width": {
+        "render": "4"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#0f0"
+      }
+    }
+  ],
+  "roamingRenderings": [
+    {
+      "question": {
+        "en": "Is there a (unofficial) website with more informations (e.g. topos)?",
+        "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
+      },
+      "condition": {
+        "and": [
+          "leisure!~sports_centre",
+          "sport=climbing"
+        ]
+      },
+      "render": "<a href='{url}' target='_blank'>{url}</a>",
+      "freeform": {
+        "key": "url",
+        "type": "url"
+      }
+    },
+    {
+      "render": {
+        "de": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
+        "en": "The routes are <b>{climbing:length}m</b> long in average"
+      },
+      "condition": {
+        "and": [
+          "climbing!~route",
+          {
+            "or": [
+              "climbing=sport",
+              "climbing=traditional"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
+        "en": "What is the (average) length of the routes in meters?"
+      },
+      "freeform": {
+        "key": "climbing:length",
+        "type": "pnat"
+      }
+    },
+    {
+      "question": {
+        "de": "Kann hier gebouldert werden?",
+        "en": "Is bouldering possible here?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:boulder=yes",
+          "then": {
+            "de": "Hier kann gebouldert werden",
+            "en": "Bouldering is possible here"
+          }
+        },
+        {
+          "if": "climbing:boulder=no",
+          "then": {
+            "de": "Hier kann nicht gebouldert werden",
+            "en": "Bouldering is not possible here"
+          }
+        },
+        {
+          "if": "climbing:boulder~*",
+          "then": {
+            "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
+            "en": "There are {climbing:boulder} boulder routes"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Ist Toprope-Klettern hier möglich?",
+        "en": "Is toprope climbing possible here?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:toprope=yes",
+          "then": {
+            "de": "Toprope-Klettern ist hier möglich",
+            "en": "Toprope climbing is possible here"
+          }
+        },
+        {
+          "if": "climbing:toprope=no",
+          "then": {
+            "de": "Toprope-Climbing ist hier nicht möglich",
+            "en": "Toprope climbing is not possible here"
+          }
+        },
+        {
+          "if": "climbing:toprope~*",
+          "then": {
+            "de": "Hier gibt es {climbing:toprope} Toprope-Routen",
+            "en": "There are {climbing:toprope} toprope routes"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
+        "en": "Is sport climbing possible here (fixed anchors)?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:sport=yes",
+          "then": {
+            "de": "Sportklettern ist hier möglich",
+            "en": "Sport climbing is possible here"
+          }
+        },
+        {
+          "if": "climbing:sport=no",
+          "then": {
+            "de": "Sportklettern ist hier nicht möglich",
+            "en": "Sport climbing is not possible here"
+          }
+        },
+        {
+          "if": "climbing:sport~*",
+          "then": {
+            "de": "Hier gibt es {climbing:sport} Sportkletter-Routen",
+            "en": "There are {climbing:sport} sport climbing routes"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
+        "en": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+      },
+      "mappings": [
+        {
+          "if": "climbing:traditional=yes",
+          "then": {
+            "de": "Traditionelles Klettern ist hier möglich",
+            "en": "Traditional climbing is possible here"
+          }
+        },
+        {
+          "if": "climbing:traditional=no",
+          "then": {
+            "de": "Traditionelles Klettern ist hier nicht möglich",
+            "en": "Traditional climbing is not possible here"
+          }
+        },
+        {
+          "if": "climbing:traditional~*",
+          "then": {
+            "de": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern",
+            "en": "There are {climbing:traditional} traditional climbing routes"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "de": "Gibt es hier eine Speedkletter-Wand?",
+        "en": "Is there a speed climbing wall?"
+      },
+      "condition": {
+        "and": [
+          "leisure=sports_centre",
+          "climbing:sport=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "climbing:speed=yes",
+          "then": {
+            "de": "Hier gibt es eine Speedkletter-Wand",
+            "en": "There is a speed climbing wall"
+          }
+        },
+        {
+          "if": "climbing:speed=no",
+          "then": {
+            "de": "Hier gibt es keine Speedkletter-Wand",
+            "en": "There is no speed climbing wall"
+          }
+        },
+        {
+          "if": "climbing:speed~*",
+          "then": {
+            "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
+            "en": "There are {climbing:speed} speed climbing walls"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ]
+}
