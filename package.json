@@ -25,9 +25,7 @@
     "prepare-deploy": "npm run generate && npm run build && rm -rf .cache",
     "deploy:staging": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/Staging/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:production": "rm -rf ./assets/generated && npm run prepare-deploy && npm run optimize-images && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
-
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\).html\" | xargs rm) && (find *.webmanifest | xargs rm)"
-    
   },
   "keywords": [
     "OpenStreetMap",
@@ -40,6 +38,7 @@
     "codegrid-js": "git://github.com/hlaw/codegrid-js.git",
     "country-language": "^0.1.7",
     "email-validator": "^2.0.4",
+    "escape-html": "^1.0.3",
     "i18next-client": "^1.11.4",
     "jquery": "latest",
     "leaflet": "^1.7.1",
