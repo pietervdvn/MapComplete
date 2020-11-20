@@ -17,6 +17,14 @@ export class GeoLocationHandler extends UIElement {
     constructor() {
         super(undefined);
         this._hasLocation = State.state.currentGPSLocation.map((location) => location !== undefined);
+        var self = this;
+        import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
+            self.init();
+        })
+    }
+
+
+    public init() {
         this.ListenTo(this._hasLocation);
         this.ListenTo(this._isActive);
         this.ListenTo(this._permission);
