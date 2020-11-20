@@ -45,10 +45,13 @@ export class FullScreenMessageBox extends UIElement {
             return "";
         }
         this._content = State.state.fullScreenMessage.data;
-        const uielement = new Combine([this._content]).SetStyle(
-            "display:block;" +
+        const innerWrap = new Combine([this._content]).SetStyle(
+            "display: block;" +
             "padding: 1em;" +
-            "padding-bottom:6em;" +
+            "padding-bottom: 6em; "
+        );
+        const uielement = new Combine([innerWrap]).SetStyle(
+            "display:block;" +
             `margin-bottom: var(--return-to-the-map-height);` +
             "box-sizing:border-box;" +
             `height:calc(100vh - var(--return-to-the-map-height));` +
