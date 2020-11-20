@@ -230,7 +230,6 @@ export class InitUiElements {
                 });
                 const marker = L.marker([home.lat, home.lon], {icon: icon})
                 marker.addTo(State.state.bm.map)
-                console.log(marker)
             });
 
         new GeoLocationHandler()

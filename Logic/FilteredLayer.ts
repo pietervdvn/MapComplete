@@ -184,7 +184,9 @@ export class FilteredLayer {
                 if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
                     const center = GeoOperations.centerpoint(feature).geometry.coordinates;
                     popup.setLatLng({lat: center[1], lng: center[0]});
-                    popup.openOn(State.state.bm.map)
+                    popup.openOn(State.state.bm.map);
+                    State.state.selectedElement.setData(feature);
+                    uiElement.Update();
                 }
 
             }

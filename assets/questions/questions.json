@@ -5,17 +5,40 @@
   
   "osmlink": {
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
-    "mappings":[{
-      "if": "id~=-",
-      "then": "<span class='alert'>Uploading...</alert>"
-    }]
+    "mappings": [
+      {
+        "if": "id~=-",
+        "then": "<span class='alert'>Uploading...</alert>"
+      }
+    ]
   },
-
   "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition":  "wikipedia~*"
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
+    "condition": "wikipedia~*"
   },
-  
+  "phonelink": {
+    "render": "<a href='tel:{phone}' target='_blank'><img src='./assets/svg/phone.svg'/></a>",
+    "condition": "phone~*"
+  },
+  "description": {
+    "question": {
+      "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
+      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
+    },
+    "render": "{description}",
+    "freeform": {
+      "key": "description"
+    },
+    "mappings": [
+      {
+        "if": "description=",
+        "then": {
+          "nl": "<span style='font-size: small'>Geen extra beschrijving</span>",
+          "en": "<span style='font-size: small'>No extra description</span>"
+        }
+      }
+    ]
+  },
   "website": {
     "question": {
       "en": "What is the website of {name}?",
