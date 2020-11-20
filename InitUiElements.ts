@@ -80,7 +80,7 @@ export class InitUiElements {
                    layoutDefinition: string = "") {
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
-            new FixedUiElement("Error: incorrect layout <i>" + layoutName + "</i><br/><a href='https://pietervdvn.github.io/MapComplete/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
+            new FixedUiElement("Error: incorrect layout <i>" + layoutName + "</i><br/><a href='https://kletterspots.de/index.html'>Go back</a>").AttachTo("centermessage").onClick(() => {
             });
             throw "Incorrect layout"
         }

@@ -147,13 +147,13 @@ export class ShareScreen extends UIElement {
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
 
 
-            let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.id.toLowerCase() + ".html"
+            let literalText = "https://kletterspots.de/" + layout.id.toLowerCase() + ".html"
 
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
             let hash = "";
             if (layoutDefinition !== undefined) {
-                literalText = "https://pietervdvn.github.io/MapComplete/index.html"
+                literalText = "https://kletterspots.de/"
                 if (layout.id.startsWith("wiki:")) {
                     parts.push("userlayout=" + encodeURIComponent(layout.id))
                 } else {
