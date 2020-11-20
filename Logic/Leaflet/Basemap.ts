@@ -42,6 +42,11 @@ export class Basemap {
             layers: [this._previousLayer],
         });
 
+        L.control.scale(
+            {
+                position: 'topright',
+            }
+        ).addTo(this.map)
 
         // Users are not allowed to zoom to the 'copies' on the left and the right, stuff goes wrong then
         // We give a bit of leeway for people on the edges
