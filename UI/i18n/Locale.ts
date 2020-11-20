@@ -8,7 +8,7 @@ export default class Locale {
     public static language: UIEventSource<string> = Locale.setup();
 
     private static setup() {
-        const source = LocalStorageSource.Get('language', "en");
+        const source = LocalStorageSource.Get('language', "de");
         if (!UIElement.runningFromConsole) {
             // @ts-ignore
             window.setLanguage = function (language: string) {
