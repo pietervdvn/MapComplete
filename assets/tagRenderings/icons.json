@@ -12,7 +12,10 @@
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
     "condition": "wikipedia~*"
   },
-
+  "phonelink": {
+    "render": "<a href='tel:{phone}' target='_blank'><img src='./assets/svg/phone.svg'/></a>",
+    "condition": "phone~*"
+  },
   "sharelink": {
     "render": "{share_link()}"
   }

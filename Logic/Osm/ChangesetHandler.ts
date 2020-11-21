@@ -1,3 +1,4 @@
+import escapeHtml from "escape-html";
 import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
@@ -105,7 +106,7 @@ export class ChangesetHandler {
                 `<tag k="theme" v="${layout.id}"/>`,
                 `<tag k="language" v="${Locale.language.data}"/>`,
                 surveySource,
-                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${layout.maintainer}"/>` : "",
+                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${escapeHtml(layout.maintainer)}"/>` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {
             if (response === undefined) {

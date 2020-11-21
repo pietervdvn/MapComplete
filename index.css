@@ -408,10 +408,7 @@ a {
 }
 
 .leaflet-popup-content {
-    width: 40em !important;
-    max-height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    width: 45em !important;
 }
 
 .leaflet-div-icon {
@@ -419,6 +416,11 @@ a {
     border: unset !important;
 }
 
+
+.leaflet-div-icon svg {
+    width: calc(100%);
+    height: calc(100%);
+}
 
 /****** ShareScreen *****/
 

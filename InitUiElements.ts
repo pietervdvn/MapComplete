@@ -161,7 +161,7 @@ export class InitUiElements {
                 if (feature === undefined) {
                     State.state.fullScreenMessage.setData(undefined);
                 }
-                if (feature?.properties === undefined) {
+                if (feature?.properties === undefined) {    
                     return;
                 }
                 const data = feature.properties;
@@ -175,7 +175,7 @@ export class InitUiElements {
                         continue;
                     }
                     
-                    if(layer.title === null && layer.tagRenderings.length === 0){
+                    if((layer.title ?? null) === null && layer.tagRenderings.length === 0){
                         continue;
                     }
                     
@@ -230,7 +230,6 @@ export class InitUiElements {
                 });
                 const marker = L.marker([home.lat, home.lon], {icon: icon})
                 marker.addTo(State.state.bm.map)
-                console.log(marker)
             });
 
         new GeoLocationHandler()
