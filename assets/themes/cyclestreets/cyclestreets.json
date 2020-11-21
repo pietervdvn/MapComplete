@@ -166,7 +166,7 @@
           }
         ]
       },
-      "icon": "./assets/pencil.svg",
+      "icon": "./assets/svg/pencil.svg",
       "width": "5",
       "color": {
         "render": "#aaaaaa",

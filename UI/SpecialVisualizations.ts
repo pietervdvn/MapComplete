@@ -9,6 +9,7 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import Locale from "../UI/i18n/Locale";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import {Translation} from "./i18n/Translation";
+import State from "../State";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -183,7 +184,41 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
+            {
+                funcName: "share_link",
+                docs: "Creates a link that (attempts to) open the native 'share'-screen",
+                example: "{share_link()} to share the current page, {share_link(<some_url>)} to share the given url",
+                args: [
+                    {
+                        name: "url",
+                        doc: "The url to share",
+                        defaultValue: "{current_url()}"
+                    }
+                ],
+                constr: (tagSource: UIEventSource<any>, args) => {
+                    if (navigator.share !== undefined) {
+                        return new FixedUiElement("").onClick(() => {
+                            
+                            let name = tagSource["name"]
+                            let title= State.state.layoutToUse.data.title.txt
+                            if(name === undefined){
+                                name = title
+                            }else{
+                                name = `${name} (${title})`
+                            }
+                            
+                            navigator.share({
+                                url: args[0] ?? window.location.href,
+                                title: name,
+                                text: State.state.layoutToUse.data.shortDescription.txt
+                            })
+                        })
+                    } else {
+                        return new FixedUiElement("")
+                    }
 
+                }
+            }
 
         ]
     static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();

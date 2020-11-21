@@ -2,20 +2,6 @@
   "images": {
     "render": "{image_carousel()}{image_upload()}"
   },
-
-  "osmlink": {
-    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
-    "mappings":[{
-      "if": "id~=-",
-      "then": "<span class='alert'>Uploading...</alert>"
-    }]
-  },
-
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition":  "wikipedia~*"
-  },
-
   "phone": {
     "question": {
       "en": "What is the phone number of {name}?",
@@ -27,7 +13,6 @@
       "type": "phone"
     }
   },
-
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "freeform": {
@@ -35,7 +20,6 @@
       "type": "email"
     }
   },
-  
   "website": {
     "question": {
       "en": "What is the website of {name}?",
@@ -49,7 +33,6 @@
       "type": "url"
     }
   },
-
   "opening_hours": {
     "question": {
       "en": "What are the opening hours of {name}?",

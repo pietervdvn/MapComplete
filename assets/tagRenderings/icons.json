@@ -1,2 +1,19 @@
 {
+  "osmlink": {
+    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
+    "mappings": [
+      {
+        "if": "id~=-",
+        "then": "<span class='alert'>Uploading...</alert>"
+      }
+    ]
+  },
+  "wikipedialink": {
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
+    "condition": "wikipedia~*"
+  },
+
+  "sharelink": {
+    "render": "{share_link()}"
+  }
 }

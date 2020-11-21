@@ -15,6 +15,8 @@ import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
 import * as direction from "../assets/layers/direction/direction.json"
 import * as surveillance_camera from "../assets/layers/surveillance_cameras/surveillance_cameras.json"
+import * as toilets from "../assets/layers/toilets/toilets.json"
+
 import LayerConfig from "./JSON/LayerConfig";
 
 export default class SharedLayers {
@@ -41,6 +43,7 @@ export default class SharedLayers {
             new LayerConfig(maps,[], "shared_layers"),
             new LayerConfig(direction,[], "shared_layers"),
             new LayerConfig(information_boards,[], "shared_layers"),
+            new LayerConfig(toilets,[], "shared_layers"),
             new LayerConfig(surveillance_camera,[], "shared_layers")
         ];
 
