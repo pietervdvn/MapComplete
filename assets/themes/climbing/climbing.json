@@ -12,7 +12,8 @@
   },
   "language": [
     "de",
-    "en"
+    "en",
+    "nl"
   ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
   "icon": "./assets/themes/climbing/climbing_no_rope.svg",
@@ -23,6 +24,114 @@
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
+    {
+      "id": "climbing_club",
+      "name": {
+        "nl": "Klimclub",
+        "en": "Climbing club"
+      },
+      "minzoom": 10,
+      "overpassTags": {
+        "or": [
+          "club=climbing",
+          {
+            "and": [
+              "sport=climbing",
+              {
+                "or": [
+                  "office~*",
+                  "club~*"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Climbing club",
+          "nl": "Klimclub",
+          "de": "Klettermöglichkeit"
+        },
+        "mappings": [
+          {
+            "if": "office~*",
+            "then": {
+              "nl": "Klimorganisatie",
+              "en": "Climbing NGO"
+            }
+          }
+        ]
+      },
+      "description": {
+        "nl": "Een klimclub of organisatie",
+        "en": "A climbing club or organisations"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "<strong>{name}</strong>",
+            "nl": "<strong>{name}</strong>",
+            "de": "<strong>{name}</strong>"
+          },
+          "question": {
+            "en": "What is the name of this climbing club or NGO?",
+            "nl": "Wat is de naam van deze klimclub?"
+          },
+          "freeform": {
+            "key": "name"
+          }
+        },
+        "website",
+        "email",
+        "phone",
+        "opening_hours"
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/climbing/club.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "club=sport",
+            "sport=climbing"
+          ],
+          "title": {
+            "en": "Climbing club",
+            "nl": "Klimclub"
+          },
+          "description": {
+            "nl": "Een klimclub",
+            "en": "A climbing club"
+          }
+        },
+        {
+          "tags": [
+            "office=ngo",
+            "sport=climbing"
+          ],
+          "title": {
+            "en": "Climbing NGO",
+            "nl": "Een klimorganisatie"
+          },
+          "description": {
+            "nl": "Een VZW die werkt rond klimmen",
+            "en": "A NGO workign around climbing"
+          }
+        }
+      ],
+      "wayHandling": 1
+    },
     {
       "id": "climbing",
       "name": {
@@ -118,7 +227,8 @@
       "id": "climbing_gym",
       "name": {
         "de": "Kletterhallen",
-        "en": "Climbing gyms"
+        "en": "Climbing gyms",
+        "nl": "Klimzaal"
       },
       "minzoom": 10,
       "overpassTags": {
@@ -173,7 +283,8 @@
       "id": "climbing_route",
       "name": {
         "en": "Climbing routes",
-        "de": "Kletterrouten"
+        "de": "Kletterrouten",
+        "nl": "Klimroute"
       },
       "minzoom": 18,
       "overpassTags": {
@@ -184,7 +295,8 @@
       "title": {
         "render": {
           "de": "Kleterroute",
-          "en": "Climbing route"
+          "en": "Climbing route",
+          "nl": "Klimroute"
         }
       },
       "tagRenderings": [
@@ -196,7 +308,8 @@
           },
           "question": {
             "en": "What is the name of this climbing route?",
-            "de": "Wie heißt diese Kletterroute?"
+            "de": "Wie heißt diese Kletterroute?",
+            "nl": "Hoe heet deze klimroute?"
           },
           "freeform": {
             "key": "name"
@@ -211,7 +324,8 @@
               },
               "then": {
                 "en": "This climbing route doesn't have a name",
-                "de": "Diese Kletterroute hat keinen Namen"
+                "de": "Diese Kletterroute hat keinen Namen",
+                "nl": "Deze klimroute heeft geen naam"
               }
             }
           ]
@@ -241,7 +355,9 @@
       "condition": {
         "and": [
           "leisure!~sports_centre",
-          "sport=climbing"
+          "sport=climbing",
+          "office=",
+          "club="
         ]
       },
       "render": "<a href='{url}' target='_blank'>{url}</a>",
@@ -253,11 +369,14 @@
     {
       "render": {
         "de": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
-        "en": "The routes are <b>{climbing:length}m</b> long in average"
+        "en": "The routes are <b>{climbing:length}m</b> long on average",
+        "nl": "De klimroutes zijn gemiddeld <b>{climbing:length}m</b> lang"
       },
       "condition": {
         "and": [
           "climbing!~route",
+          "office=",
+          "club=",
           {
             "or": [
               "climbing=sport",
@@ -268,7 +387,8 @@
       },
       "question": {
         "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
-        "en": "What is the (average) length of the routes in meters?"
+        "en": "What is the (average) length of the routes in meters?",
+        "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?"
       },
       "freeform": {
         "key": "climbing:length",
@@ -278,132 +398,175 @@
     {
       "question": {
         "de": "Kann hier gebouldert werden?",
-        "en": "Is bouldering possible here?"
+        "en": "Is bouldering possible here?",
+        "nl": "Is het mogelijk om hier te bolderen?"
       },
       "mappings": [
         {
           "if": "climbing:boulder=yes",
           "then": {
             "de": "Hier kann gebouldert werden",
-            "en": "Bouldering is possible here"
+            "en": "Bouldering is possible here",
+            "nl": "Bolderen kan hier"
           }
         },
         {
           "if": "climbing:boulder=no",
           "then": {
             "de": "Hier kann nicht gebouldert werden",
-            "en": "Bouldering is not possible here"
+            "en": "Bouldering is not possible here",
+            "nl": "Bolderen kan hier niet"
           }
         },
         {
           "if": "climbing:boulder~*",
           "then": {
             "de": "Hier gibt es {climbing:boulder} Boulder-Routen",
-            "en": "There are {climbing:boulder} boulder routes"
+            "en": "There are {climbing:boulder} boulder routes",
+            "nl": "Er zijn hier {climbing:boulder} bolderroutes"
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": {
+        "and": [
+          "office=",
+          "club="
+        ]
+      }
     },
     {
       "question": {
         "de": "Ist Toprope-Klettern hier möglich?",
-        "en": "Is toprope climbing possible here?"
+        "en": "Is toprope climbing possible here?",
+        "nl": "Is het mogelijk om hier te toprope-klimmen?"
       },
       "mappings": [
         {
           "if": "climbing:toprope=yes",
           "then": {
             "de": "Toprope-Klettern ist hier möglich",
-            "en": "Toprope climbing is possible here"
+            "en": "Toprope climbing is possible here",
+            "nl": "Toprope-klimmen kan hier"
           }
         },
         {
           "if": "climbing:toprope=no",
           "then": {
             "de": "Toprope-Climbing ist hier nicht möglich",
-            "en": "Toprope climbing is not possible here"
+            "en": "Toprope climbing is not possible here",
+            "nl": "Toprope-klimmen kan hier niet"
           }
         },
         {
           "if": "climbing:toprope~*",
           "then": {
             "de": "Hier gibt es {climbing:toprope} Toprope-Routen",
-            "en": "There are {climbing:toprope} toprope routes"
+            "en": "There are {climbing:toprope} toprope routes",
+            "nl": "Er zijn hier {climbing:toprope} toprope routes"
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": {
+        "and": [
+          "office=",
+          "club="
+        ]
+      }
     },
     {
       "question": {
         "de": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
-        "en": "Is sport climbing possible here (fixed anchors)?"
+        "en": "Is sport climbing possible here on fixed anchors?",
+        "nl": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?"
       },
       "mappings": [
         {
           "if": "climbing:sport=yes",
           "then": {
             "de": "Sportklettern ist hier möglich",
-            "en": "Sport climbing is possible here"
+            "en": "Sport climbing is possible here",
+            "nl": "Sportklimmen/voorklimmen kan hier"
           }
         },
         {
           "if": "climbing:sport=no",
           "then": {
             "de": "Sportklettern ist hier nicht möglich",
-            "en": "Sport climbing is not possible here"
+            "en": "Sport climbing is not possible here",
+            "nl": "Sportklimmen/voorklimmen kan hier niet"
           }
         },
         {
           "if": "climbing:sport~*",
           "then": {
             "de": "Hier gibt es {climbing:sport} Sportkletter-Routen",
-            "en": "There are {climbing:sport} sport climbing routes"
+            "en": "There are {climbing:sport} sport climbing routes",
+            "nl": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes"
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": {
+        "and": [
+          "office=",
+          "club="
+        ]
+      }
     },
     {
       "question": {
         "de": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
-        "en": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+        "en": "Is traditional climbing possible here (using own gear e.g. chocks)?",
+        "nl": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
       },
       "mappings": [
         {
           "if": "climbing:traditional=yes",
           "then": {
             "de": "Traditionelles Klettern ist hier möglich",
-            "en": "Traditional climbing is possible here"
+            "en": "Traditional climbing is possible here",
+            "nl": "Traditioneel klimmen kan hier"
           }
         },
         {
           "if": "climbing:traditional=no",
           "then": {
             "de": "Traditionelles Klettern ist hier nicht möglich",
-            "en": "Traditional climbing is not possible here"
+            "en": "Traditional climbing is not possible here",
+            "nl": "Traditioneel klimmen kan hier niet"
           }
         },
         {
           "if": "climbing:traditional~*",
           "then": {
             "de": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern",
-            "en": "There are {climbing:traditional} traditional climbing routes"
+            "en": "There are {climbing:traditional} traditional climbing routes",
+            "nl": "Er zijn hier {climbing:traditional} traditionele klimroutes"
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "condition": {
+        "and": [
+          "office=",
+          "club="
+        ]
+      }
     },
     {
       "question": {
         "de": "Gibt es hier eine Speedkletter-Wand?",
-        "en": "Is there a speed climbing wall?"
+        "en": "Is there a speed climbing wall?",
+        "nl": "Is er een snelklimmuur (speed climbing)?"
       },
       "condition": {
         "and": [
           "leisure=sports_centre",
-          "climbing:sport=yes"
+          "climbing:sport=yes",
+          "office=",
+          "club="
         ]
       },
       "mappings": [
@@ -411,21 +574,24 @@
           "if": "climbing:speed=yes",
           "then": {
             "de": "Hier gibt es eine Speedkletter-Wand",
-            "en": "There is a speed climbing wall"
+            "en": "There is a speed climbing wall",
+            "nl": "Er is een snelklimmuur voor speed climbing"
           }
         },
         {
           "if": "climbing:speed=no",
           "then": {
             "de": "Hier gibt es keine Speedkletter-Wand",
-            "en": "There is no speed climbing wall"
+            "en": "There is no speed climbing wall",
+            "nl": "Er is geen snelklimmuur voor speed climbing"
           }
         },
         {
           "if": "climbing:speed~*",
           "then": {
             "de": "Hier gibt es {climbing:speed} Speedkletter-Routen",
-            "en": "There are {climbing:speed} speed climbing walls"
+            "en": "There are {climbing:speed} speed climbing walls",
+            "nl": "Er zijn hier {climbing:speed} snelklimmuren"
           },
           "hideInAnswer": true
         }
