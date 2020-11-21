@@ -1,29 +1,6 @@
 {
-  "email": {
-    "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-    "freeform": {
-      "key": "email",
-      "type": "email"
-    }
-  },
-
   "images": {
     "render": "{image_carousel()}{image_upload()}"
-  },
-
-  "opening_hours": {
-    "question": {
-      "en": "What are the opening hours of {name}?",
-      "de": "Was sind die Öffnungszeiten von {name}?"
-    },
-    "render": {
-      "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
-      "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
-    },
-    "freeform": {
-      "key": "opening_hours",
-      "type": "opening_hours"
-    }
   },
 
   "osmlink": {
@@ -32,6 +9,11 @@
       "if": "id~=-",
       "then": "<span class='alert'>Uploading...</alert>"
     }]
+  },
+
+  "wikipedialink": {
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
+    "condition":  "wikipedia~*"
   },
 
   "phone": {
@@ -46,9 +28,12 @@
     }
   },
 
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition":  "wikipedia~*"
+  "email": {
+    "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+    "freeform": {
+      "key": "email",
+      "type": "email"
+    }
   },
   
   "website": {
@@ -63,6 +48,21 @@
     "freeform": {
       "key": "website",
       "type": "url"
+    }
+  },
+
+  "opening_hours": {
+    "question": {
+      "en": "What are the opening hours of {name}?",
+      "de": "Was sind die Öffnungszeiten von {name}?"
+    },
+    "render": {
+      "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
+      "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+    },
+    "freeform": {
+      "key": "opening_hours",
+      "type": "opening_hours"
     }
   }
 }
