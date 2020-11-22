@@ -196,8 +196,8 @@ export default class SpecialVisualizations {
                     }
                 ],
                 constr: (tagSource: UIEventSource<any>, args) => {
-                    if (navigator.share !== undefined) {
-                        return new FixedUiElement("").onClick(() => {
+                    if (navigator.share) {
+                        return new FixedUiElement("Share").onClick(() => {
                             
                             let name = tagSource["name"]
                             let title= State.state.layoutToUse.data.title.txt
