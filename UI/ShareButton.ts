@@ -15,7 +15,7 @@ export default class ShareButton extends UIElement{
     }
     
     InnerRender(): string {
-        return `<button type="button" id="${this.id}">${this._embedded.Render()}</button>`
+        return `<button type="button" class="share-button" id="${this.id}">${this._embedded.Render()}</button>`
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {

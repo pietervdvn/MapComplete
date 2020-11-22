@@ -46,5 +46,15 @@
       "key": "opening_hours",
       "type": "opening_hours"
     }
+  },
+  "description": {
+    "question": {
+      "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
+      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
+    },
+    "render": "{description}",
+    "freeform": {
+      "key": "description"
+    }
   }
 }

@@ -10,6 +10,8 @@ import Locale from "../UI/i18n/Locale";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import {Translation} from "./i18n/Translation";
 import State from "../State";
+import ShareButton from "./ShareButton";
+import Svg from "../Svg";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -196,25 +198,21 @@ export default class SpecialVisualizations {
                     }
                 ],
                 constr: (tagSource: UIEventSource<any>, args) => {
-                    if (navigator.share) {
-                        return new FixedUiElement("Share").onClick(() => {
-                            
-                            let name = tagSource["name"]
-                            let title= State.state.layoutToUse.data.title.txt
-                            if(name === undefined){
-                                name = title
-                            }else{
-                                name = `${name} (${title})`
-                            }
-                            
-                            navigator.share({
-                                url: args[0] ?? window.location.href,
-                                title: name,
-                                text: State.state.layoutToUse.data.shortDescription.txt
-                            })
-                        })
+                    if (window.navigator.share) {
+                        const title = State.state.layoutToUse.data.title.txt;
+                        let name = tagSource.data.name;
+                        if(name){
+                            name += `${name} (${title})`
+                        }else{
+                            name = title;
+                        }
+                     return new ShareButton(Svg.share_svg(), {
+                         title: name,
+                         url: args[0] ?? window.location.href,
+                         text: State.state.layoutToUse.data.shortDescription.txt
+                     })
                     } else {
-                        return new FixedUiElement("")
+                        return new Combine(["<button type='button' class='share-button' style='background:red;'>",  Svg.share_svg() ,"</button>"])
                     }
 
                 }
