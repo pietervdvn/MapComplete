@@ -7,7 +7,7 @@
     "de": "Mit Fahrrad zusammenhängendes Objekt"
   },
   "minzoom": 13,
-  "overpassTags": "theme~cycling|bicycle",
+  "overpassTags": {"or": ["theme~cycling|bicycle", "sport=cycling"]},
   "title": {
     "render": {
       "en": "Bike related object",
@@ -18,12 +18,13 @@
     "mappings": [
       {
         "if": "name~*",
+        "then":"<i>{name}</i>"
+      },
+      {
+        "if": "leisure=track",
         "then": {
-          "en": "<i>{name}</i>",
-          "nl": "<i>{name}</i>",
-          "fr": "<i>{name}</i>",
-          "gl": "<i>{name}</i>",
-          "de": "<i>{name}</i>"
+          "nl": "Wielerpiste",
+          "en": "Cycle track"
         }
       }
     ]

@@ -6,12 +6,12 @@
     "fr": "Carte des cartes"
   },
   "shortDescription": {
-    "en": "On this map, all the maps known by OpenStreetMap are shown",
+    "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
     "nl": "Een kaart met alle kaarten die OpenStreetMap kent",
     "fr": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap"
   },
   "description": {
-    "en": "On this map you can find all maps OpenStreetMap knows.<br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
+    "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
     "nl": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
     "fr": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap."
   },

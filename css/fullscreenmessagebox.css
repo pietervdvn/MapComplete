@@ -1,0 +1,57 @@
+.fullscreenmessage-content {
+    max-height: calc(100vh - var(--return-to-the-map-height));
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    display: block;
+}
+
+.fullscreenmessage-content .featureinfobox {
+    padding: 1em;
+    position: relative;
+}
+
+.fullscreenmessage-content .featureinfobox-content {
+    padding: 1em;
+    top: var(--variable-title-height);
+    /* 2em extra: padding from the title */
+    max-height: calc(100vh - var(--variable-title-height) - var(--return-to-the-map-height) - 2em) !important;
+    display: block;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.fullscreenmessage-content .featureinfobox-titlebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    background-color: var(--background-color);
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+ 
+}
+
+.to-the-map span {
+    font-size: xx-large;
+}
+
+.to-the-map {
+    background: var(--catch-detail-color);
+    height: var(--return-to-the-map-height);
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    color: var(--catch-detail-color-contrast);
+    font-weight: bold;
+    pointer-events: all;
+    cursor: pointer;
+    padding-top: 1.2em;
+    text-align: center;
+    padding-bottom: 1.2em;
+    box-sizing: border-box;
+}

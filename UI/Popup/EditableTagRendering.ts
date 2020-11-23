@@ -33,7 +33,7 @@ export default class EditableTagRendering extends UIElement {
         this.dumbMode = false;
 
         if (this._configuration.question !== undefined) {
-            if (State.state.featureSwitchUserbadge.data) {
+            if (State.state?.featureSwitchUserbadge?.data) {
                 // 2.3em total width
                 const self = this;
                 this._editButton =

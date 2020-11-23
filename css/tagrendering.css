@@ -1,10 +1,22 @@
+
+.featureinfobox {
+    display: flex;
+   flex-direction: column; 
+}
+
 .featureinfobox-title {
     font-size: xx-large;    
 }
 .featureinfobox-icons img{
     max-height: 1.5em;
+    width: 1.5em;
 }
 .featureinfobox-icons {
+}
+
+.featureinfobox-icons span {
+    display: inline-block;
+    padding-right: 0.1em;
 }
 
 .featureinfobox-titlebar{
@@ -12,7 +24,23 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid var(--foreground-color);
 }
+
+.featureinfobox-content {
+    display:block;
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+    .featureinfobox-content {
+        display:block;
+        max-height: unset !important;
+        overflow-y: auto;
+    }
+}
+
 
 .answer {
     display: flex;
@@ -41,6 +69,12 @@
 .question svg {
     width: 100%;
     height: 100%;
+}
+
+.question a {
+    pointer-events: none;
+    text-decoration: none;
+    color: var(--subtle-detail-color-contrast)
 }
 
 .question-text {

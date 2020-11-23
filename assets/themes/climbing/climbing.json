@@ -230,6 +230,86 @@
       "color": {
         "render": "#0f0"
       }
+    },
+    {
+      "id": "maybe_climbing",
+      "name": {
+        "nl": "Klimgelegenheiden?",
+        "de": "Klettermöglichkeiten?",
+        "en": "Climbing opportunities?"
+      },
+      "minzoom": 19,
+      "overpassTags": {
+        "or": [
+          "leisure=sports_centre",
+          "barrier=wall",
+          "barrier=retaining_wall",
+          "natural=cliff",
+          "natural=rock",
+          "natural=stone"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Climbing opportunity?",
+          "nl": "Klimgelegenheid?",
+          "de": "Klettermöglichkeit?"
+        }
+      },
+      "description": {
+        "nl": "Een klimgelegenheid?",
+        "de": "Eine Klettergelegenheit?",
+        "en": "A climbing opportunity?"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "<strong>{name}</strong>",
+            "de": "<strong>{name}</strong>"
+          },
+          "condition": "name~*"
+        },
+        {
+          "question": {
+            "en": "Is climbing possible here?",
+            "de": "Kann hier geklettert werden?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "sport!~climbing"
+                ]
+              },
+              "then": {
+                "en": "Climbing is not possible here",
+                "de": "Hier kann nicht geklettert werden"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "sport=climbing"
+                ]
+              },
+              "then": {
+                "en": "Climbing is possible here",
+                "de": "Hier kann geklettert werden"
+              }
+            }
+          ]
+        }
+      ],
+      "icon": "./assets/themes/climbing/climbing_unknown.svg",
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "width": {
+        "render": "5"
+      },
+      "color": {
+        "render": "#ddff55"
+      },
+      "wayHandling": 0
     }
   ],
   "roamingRenderings": [
@@ -280,6 +360,7 @@
         "de": "Kann hier gebouldert werden?",
         "en": "Is bouldering possible here?"
       },
+      "condition": "sport=climbing",
       "mappings": [
         {
           "if": "climbing:boulder=yes",
@@ -306,6 +387,7 @@
       ]
     },
     {
+      "condition": "sport=climbing",
       "question": {
         "de": "Ist Toprope-Klettern hier möglich?",
         "en": "Is toprope climbing possible here?"
@@ -336,6 +418,7 @@
       ]
     },
     {
+      "condition": "sport=climbing",
       "question": {
         "de": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
         "en": "Is sport climbing possible here (fixed anchors)?"
@@ -366,6 +449,7 @@
       ]
     },
     {
+      "condition": "sport=climbing",
       "question": {
         "de": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
         "en": "Is traditional climbing possible here (using own gear e.g. chocks)?"
