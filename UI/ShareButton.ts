@@ -12,9 +12,6 @@ export default class ShareButton extends UIElement{
         super();
         this._embedded = embedded;
         this._shareData = shareData;
-        if(this._shareData.url.indexOf("#")> 0){
-            this._shareData.url = this._shareData.url.replace("#","&hash_content=");
-        }
     }
     
     InnerRender(): string {
@@ -25,6 +22,7 @@ export default class ShareButton extends UIElement{
         super.InnerUpdate(htmlElement);
         const self= this;
         htmlElement.addEventListener('click', () => {
+            alert("URL:" + self._shareData.url)
             if (navigator.share) {
                 navigator.share(self._shareData).then(() => {
                     console.log('Thanks for sharing!');

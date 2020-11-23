@@ -197,19 +197,23 @@ export default class SpecialVisualizations {
                     }
                 ],
                 constr: (tagSource: UIEventSource<any>, args) => {
-                    if (window.navigator.share) {
+                    if (window.navigator.share || true) {
                         const title = State.state.layoutToUse.data.title.txt;
                         let name = tagSource.data.name;
-                        if(name){
+                        if (name) {
                             name = `${name} (${title})`
-                        }else{
+                        } else {
                             name = title;
                         }
-                     return new ShareButton(Svg.share_svg(), {
-                         title: name,
-                         url: args[0] ?? window.location.href,
-                         text: State.state.layoutToUse.data.shortDescription.txt
-                     })
+                        let url = args[0] ?? ""
+                        if (url === "") {
+                            url = window.location.href
+                        }
+                        return new ShareButton(Svg.share_svg(), {
+                            title: name,
+                            url: url,
+                            text: State.state.layoutToUse.data.shortDescription.txt
+                        })
                     } else {
                         return new FixedUiElement("")
                     }

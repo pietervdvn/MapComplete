@@ -85,11 +85,6 @@ export class InitUiElements {
             throw "Incorrect layout"
         }
 
-        const hashContent = QueryParameters.GetQueryParameter("hash_content", "", "A workaround for the share-api which doesn't share the hash...");
-        if((hashContent.data ?? "") !== ""){
-            window.location.hash = hashContent.data;
-        }
-        
         console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
         State.state = new State(layoutToUse);
         
