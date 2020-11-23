@@ -16,26 +16,15 @@ export class FullScreenMessageBox extends UIElement {
         this.HideOnEmpty(true);
 
         this.returnToTheMap =
-            new Combine([Translations.t.general.returnToTheMap.Clone().SetStyle("font-size:xx-large")])
-                .SetStyle("background:var(--catch-detail-color);" +
-                    "position: fixed;" +
-                    "z-index: 10000;" +
-                    "bottom: 0;" +
-                    "left: 0;" +
-                    `height: var(--return-to-the-map-height);` +
-                "width: 100vw;" +
-                "color: var(--catch-detail-color-contrast);" +
-                "font-weight: bold;" +
-                "pointer-events: all;" +
-                "cursor: pointer;" +
-                "padding-top: 1.2em;" +
-                "text-align: center;" +
-                "padding-bottom: 1.2em;" +
-                "box-sizing:border-box")
-            .onClick(() => {
-                State.state.fullScreenMessage.setData(undefined);
-                onClear();
-            });
+            new Combine([
+                // Wrapped another time to prevent the value of 'em' to fluctuate
+                Translations.t.general.returnToTheMap.Clone()
+            ])
+                .onClick(() => {
+                    State.state.fullScreenMessage.setData(undefined);
+                    onClear();
+                })
+                .SetClass("to-the-map")
 
     }
 
@@ -45,21 +34,17 @@ export class FullScreenMessageBox extends UIElement {
             return "";
         }
         this._content = State.state.fullScreenMessage.data;
-        const uielement = new Combine([this._content]).SetStyle(
-            "display:block;" +
-            "padding: 1em;" +
-            "padding-bottom:6em;" +
-            `margin-bottom: var(--return-to-the-map-height);` +
-            "box-sizing:border-box;" +
-            `height:calc(100vh - var(--return-to-the-map-height));` +
-            "overflow-y: auto;" +
-            "max-width:100vw;" +
-            "overflow-x:hidden;" +
-            "background:var(--background-color);" +
-            "color: var(--foreground-color);"
-        );
-        return new Combine([uielement, this.returnToTheMap])
+        const innerWrap = new Combine([this._content]).SetClass("fullscreenmessage-content")
+
+        return new Combine([innerWrap, this.returnToTheMap])
+            .SetStyle("display:block; height: 100%;")
             .Render();
+    }
+
+    protected InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+        const height = htmlElement.getElementsByClassName("featureinfobox-titlebar")[0]?.clientHeight ?? 0;
+        htmlElement.style.setProperty("--variable-title-height", height+"px")
     }
 
 

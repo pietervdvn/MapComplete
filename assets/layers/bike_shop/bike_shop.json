@@ -13,6 +13,13 @@
     "or": [
       "shop=bicycle",
       {
+        "#": "A bicycle rental with a network is something such as villo, bluebike, ... We don't want them",
+        "and": [
+          "amenity=bicycle_rental",
+          "network="
+        ]
+      },
+      {
         "#": "if sport is defined and is not bicycle, it is retrackted; if bicycle retail/repair is marked as 'no', it is retracted too.",
         "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
         "and": [
@@ -68,7 +75,12 @@
         }
       },
       {
-        "if": "shop!~bicycle",
+        "if": {
+          "and": [
+            "shop!~bicycle",
+            "shop~*"
+          ]
+        },
         "then": "Other shop"
       },
       {
@@ -128,6 +140,23 @@
         }
       },
       {
+        "if": {
+          "and": [
+            "name~*",
+            {
+              "or": [
+                "service:bicycle:rental=yes",
+                "amenity=bicycle_rental"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "nl": "Fietsverhuur <i>{name}</i>",
+          "en": "Bicycle rental <i>{name}</i>"
+        }
+      },
+      {
         "if": "name~*",
         "then": {
           "en": "Bike repair/shop <i>{name}</i>",
@@ -141,37 +170,35 @@
   },
   "titleIcons": [
     {
-      "mappings": [
-        {
-          "if": "service:bicycle:pump=yes",
-          "then": "<img src='./assets/layers/bike_shop/pump.svg'>"
-        }
-      ]
+      "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
+      "condition": "operator=De Fietsambassade Gent"
     },
     {
-      "mappings": [
-        {
-          "if": "service:bicycle:diy=yes",
-          "then": "<img src='./assets/layers/bike_shop/tools.svg'>"
-        }
-      ]
+      "condition": {
+        "or": [
+          "service:bicycle:pump=yes",
+          "service:bicycle:pump=seperate"
+        ]
+      },
+      "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
     },
     {
-      "mappings": [
-        {
-          "if": {
-            "or": [
-              "service:bicycle:cleaning=yes",
-              "service:bicycle:cleaning=diy"
-            ]
-          },
-          "then": "<img src='./assets/layers/bike_shop/bike_cleaning.svg'>"
-        }
-      ]
+      "condition": "service:bicycle:diy=yes",
+      "render": "<img src='./assets/layers/bike_shop/tools.svg'/>"
     },
+    {
+      "condition": {
+        "or": [
+          "service:bicycle:cleaning=yes",
+          "service:bicycle:cleaning=diy"
+        ]
+      },
+      "render": "<img src='./assets/layers/bike_shop/bike_cleaning.svg'/>"
+    },
+    "phonelink",
     "wikipedialink",
-    "osmlink"
-   
+    "osmlink",
+    "sharelink"
   ],
   "description": {
     "en": "A shop specifically selling bicycles or related items",
@@ -182,6 +209,7 @@
     {
       "condition": {
         "and": [
+          "shop~*",
           "shop!~bicycle",
           "shop!~sports"
         ]
@@ -255,6 +283,13 @@
       "freeform": {
         "key": "opening_hours",
         "type": "opening_hours"
+      }
+    },
+    "description",
+    {
+      "render": "Enkel voor {access}",
+      "freeform": {
+        "key": "access"
       }
     },
     {
@@ -439,6 +474,13 @@
             "gl": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa",
             "de": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an"
           }
+        },
+        {
+          "if": "service:bicycle:pump=seperate",
+          "then": {
+            "en": "There is bicycle pump, it is shown as a seperate point ",
+            "nl": "Er is een fietspomp, deze is apart aangeduid"
+          }
         }
       ]
     },
@@ -469,6 +511,13 @@
             "fr": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même",
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
             "de": "Dieses Geschäft bietet keine Werkzeuge für Heimwerkerreparaturen an"
+          }
+        },
+        {
+          "if": "service:bicycle:diy=only_sold",
+          "then": {
+            "en": "Tools for DIY repair are only available if you bought/hire the bike in the shop",
+            "nl": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt"
           }
         }
       ]
@@ -521,6 +570,10 @@
   "icon": {
     "render": "./assets/layers/bike_shop/repair_shop.svg",
     "mappings": [
+      {
+        "if": "operator=De Fietsambassade Gent",
+        "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+      },
       {
         "if": "service:bicycle:retail=yes",
         "then": "./assets/layers/bike_shop/shop.svg"

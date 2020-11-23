@@ -10,6 +10,7 @@
     --shadow-color: #00000066;
     
     --return-to-the-map-height: 5em;
+    --variable-title-height: 0px; /*Set by javascript dynamically*/
 }
 
 html, body {
@@ -408,10 +409,7 @@ a {
 }
 
 .leaflet-popup-content {
-    width: 40em !important;
-    max-height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    width: 45em !important;
 }
 
 .leaflet-div-icon {
@@ -419,6 +417,11 @@ a {
     border: unset !important;
 }
 
+
+.leaflet-div-icon svg {
+    width: calc(100%);
+    height: calc(100%);
+}
 
 /****** ShareScreen *****/
 
@@ -499,3 +502,35 @@ a {
     max-width: 1em;
 }
 
+
+.share-button {
+    background-color: var(--subtle-detail-color);
+    border: none;
+    color: var(--subtle-detail-color-contrast);
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 3em;
+    height: 2.5em;
+    width: 2.5em;
+    box-sizing: border-box;
+    padding:0;
+}
+
+.share-button svg {
+    height: 1.5em;
+    width: 1.5em;
+    padding: 0.5em;
+    padding-left: 0.4em;
+    fill: var(--subtle-detail-color-contrast);
+    stroke: var(--subtle-detail-color-contrast);
+}
+
+.share-button svg path{
+    fill: var(--subtle-detail-color-contrast);
+    stroke: var(--subtle-detail-color-contrast);
+}
+
+.share-button svg circle{
+    fill: var(--subtle-detail-color-contrast);
+    stroke: var(--subtle-detail-color-contrast);
+}

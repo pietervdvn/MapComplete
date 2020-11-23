@@ -17,6 +17,14 @@ export class GeoLocationHandler extends UIElement {
     constructor() {
         super(undefined);
         this._hasLocation = State.state.currentGPSLocation.map((location) => location !== undefined);
+        var self = this;
+        import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
+            self.init();
+        })
+    }
+
+
+    public init() {
         this.ListenTo(this._hasLocation);
         this.ListenTo(this._isActive);
         this.ListenTo(this._permission);
@@ -25,14 +33,10 @@ export class GeoLocationHandler extends UIElement {
 
 
         function onAccuratePositionProgress(e) {
-            console.log(e.accuracy);
-            console.log(e.latlng);
             State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionFound(e) {
-            console.log(e.accuracy);
-            console.log(e.latlng);
             State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
@@ -106,7 +110,12 @@ export class GeoLocationHandler extends UIElement {
             return "";
         }
         if (State.state.currentGPSLocation.data !== undefined) {
-            map.flyTo(State.state.currentGPSLocation.data.latlng, 18);
+            State.state.bm.map.flyTo(
+                State.state.currentGPSLocation.data.latlng, 16,
+                {
+                    duration: 0.25,
+                }
+            );
         }
 
 

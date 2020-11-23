@@ -1,6 +1,7 @@
 import {UIElement} from "../UI/UIElement";
 UIElement.runningFromConsole = true;
-
+import {Img} from "../UI/Img";
+Img.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
@@ -15,7 +16,6 @@ import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
 import {Utils} from "../Utils";
 import {Translation} from "../UI/i18n/Translation";
-
 
 
 new T([
@@ -34,6 +34,15 @@ new T([
         const and = FromJSON.Tag({"and": ["key=value", "x=y"]}) as And;
         equal((and.and[0] as Tag).key, "key");
         equal((and.and[1] as Tag).value, "y");
+
+
+        const notReg = FromJSON.Tag("x!~y") as And;
+        equal(notReg.matches([{k:"x",v:"y"}]), false)
+        equal(notReg.matches([{k:"x",v:"z"}]), true)
+        equal(notReg.matches([{k:"x",v:""}]), true)
+
+        equal(notReg.matches([]), true)
+
 
     })],
     ["Is equivalent test", (() => {
