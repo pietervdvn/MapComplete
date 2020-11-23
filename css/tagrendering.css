@@ -24,6 +24,7 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid var(--foreground-color);
 }
 
 .featureinfobox-content {

@@ -197,7 +197,8 @@
     },
     "phonelink",
     "wikipedialink",
-    "osmlink"
+    "osmlink",
+    "sharelink"
   ],
   "description": {
     "en": "A shop specifically selling bicycles or related items",

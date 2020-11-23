@@ -12,6 +12,9 @@ export default class ShareButton extends UIElement{
         super();
         this._embedded = embedded;
         this._shareData = shareData;
+        if(this._shareData.url.indexOf("#")> 0){
+            this._shareData.url = this._shareData.url.replace("#","&hash_content=");
+        }
     }
     
     InnerRender(): string {

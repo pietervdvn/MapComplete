@@ -31,7 +31,7 @@
     padding: 0.5em;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 2px solid var(--foreground-color);
+ 
 }
 
 .to-the-map span {
