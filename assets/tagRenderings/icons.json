@@ -13,7 +13,7 @@
     "condition": "wikipedia~*"
   },
   "phonelink": {
-    "render": "<a href='tel:{phone}' target='_blank'><img src='./assets/svg/phone.svg'/></a>",
+    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
     "condition": "phone~*"
   },
   "sharelink": {

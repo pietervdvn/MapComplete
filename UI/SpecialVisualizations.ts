@@ -193,8 +193,7 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "url",
-                        doc: "The url to share",
-                        defaultValue: "{current_url()}"
+                        doc: "The url to share (defualt: current URL)",
                     }
                 ],
                 constr: (tagSource: UIEventSource<any>, args) => {
@@ -202,7 +201,7 @@ export default class SpecialVisualizations {
                         const title = State.state.layoutToUse.data.title.txt;
                         let name = tagSource.data.name;
                         if(name){
-                            name += `${name} (${title})`
+                            name = `${name} (${title})`
                         }else{
                             name = title;
                         }
@@ -212,7 +211,7 @@ export default class SpecialVisualizations {
                          text: State.state.layoutToUse.data.shortDescription.txt
                      })
                     } else {
-                        return new Combine(["<button type='button' class='share-button' style='background:red;'>",  Svg.share_svg() ,"</button>"])
+                        return new FixedUiElement("")
                     }
 
                 }

@@ -299,7 +299,7 @@ export class InitUiElements {
         ]
 
         if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share, content: new ShareScreen()});
+            tabs.push({header: Svg.share_img, content: new ShareScreen()});
         }
 
         if (State.state.featureSwitchMoreQuests.data) {

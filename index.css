@@ -10,6 +10,7 @@
     --shadow-color: #00000066;
     
     --return-to-the-map-height: 5em;
+    --variable-title-height: 0px; /*Set by javascript dynamically*/
 }
 
 html, body {
@@ -509,15 +510,17 @@ a {
     text-decoration: none;
     display: inline-block;
     border-radius: 3em;
-    width: 4em;
-    height: 3em;
+    height: 2.5em;
+    width: 2.5em;
     box-sizing: border-box;
+    padding:0;
 }
 
 .share-button svg {
-    max-height: 2.0em;
-    width: 2.0em;
+    height: 1.5em;
+    width: 1.5em;
     padding: 0.5em;
+    padding-left: 0.4em;
     fill: var(--subtle-detail-color-contrast);
     stroke: var(--subtle-detail-color-contrast);
 }

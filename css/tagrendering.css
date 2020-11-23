@@ -9,13 +9,14 @@
 }
 .featureinfobox-icons img{
     max-height: 1.5em;
-    width:1.5em;
+    width: 1.5em;
 }
 .featureinfobox-icons {
 }
 
 .featureinfobox-icons span {
     display: inline-block;
+    padding-right: 0.1em;
 }
 
 .featureinfobox-titlebar{
@@ -29,6 +30,7 @@
     display:block;
     max-height: 75vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     .featureinfobox-content {
