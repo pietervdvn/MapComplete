@@ -6,6 +6,7 @@ import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class FeatureInfoBox extends UIElement {
     private _tags: UIEventSource<any>;
@@ -46,7 +47,8 @@ export class FeatureInfoBox extends UIElement {
                 .SetClass("featureinfobox-titlebar"),
             new Combine([
                     ...this._renderings,
-                    this._questionBox
+                    this._questionBox,
+                    new FixedUiElement("").SetClass("featureinfobox-tail")
                 ]
             ).SetClass("featureinfobox-content"),
         ]).SetClass("featureinfobox")

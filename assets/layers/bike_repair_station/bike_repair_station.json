@@ -95,7 +95,8 @@
       "condition":  "operator=De Fietsambassade Gent"
     },
     "wikipedialink",
-    "osmlink"
+    "osmlink",
+    "sharelink"
   ],
   "tagRenderings": [
     "images",
@@ -171,6 +172,34 @@
         {
           "if": "operator=De Fietsambassade Gent",
           "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>"
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Wanneer is dit fietsherstelpunt open?",
+        "en": "When is this bicycle repair point opened?"
+      },
+      "render": "{opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "Dag en nacht open",
+            "en": "Always opened"
+          }
+        },
+        {
+          "if": "opening_hours=",
+          "then": {
+            "nl": "Dag en nacht open",
+            "en": "Always opened"
+          },
+          "hideInAnswer": true
         }
       ]
     },

@@ -30,7 +30,7 @@
     <path
        id="path819"
        d="m 19.212364,278.17517 -11.9689358,5.52059 11.9388628,5.50669"
-       style="fill:none;stroke-width:2.43863511;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:#000000" />
+       style="fill:none !important;stroke-width:2.43863511;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke:#000000" />
     <circle
        r="3.9119694"
        cy="283.69574"

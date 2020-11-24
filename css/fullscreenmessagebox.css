@@ -8,7 +8,7 @@
 }
 
 .fullscreenmessage-content .featureinfobox {
-    padding: 1em;
+    padding-top: 1em;
     position: relative;
 }
 
@@ -33,6 +33,12 @@
     box-sizing: border-box;
  
 }
+
+.fullscreenmessage-content .featureinfobox-tail {
+    display: block;
+    height: 1em;
+}
+
 
 .to-the-map span {
     font-size: xx-large;

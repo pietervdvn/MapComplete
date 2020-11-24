@@ -521,16 +521,16 @@ a {
     width: 1.5em;
     padding: 0.5em;
     padding-left: 0.4em;
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 .share-button svg path{
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 .share-button svg circle{
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }

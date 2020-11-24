@@ -22,7 +22,6 @@ export default class ShareButton extends UIElement{
         super.InnerUpdate(htmlElement);
         const self= this;
         htmlElement.addEventListener('click', () => {
-            alert("URL:" + self._shareData.url)
             if (navigator.share) {
                 navigator.share(self._shareData).then(() => {
                     console.log('Thanks for sharing!');

@@ -28,10 +28,11 @@
 }
 
 .featureinfobox-content {
-    display:block;
+    display: block;
     max-height: 75vh;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-top: 1em;
 }
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     .featureinfobox-content {
