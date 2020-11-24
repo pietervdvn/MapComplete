@@ -100,8 +100,20 @@ export default class LayerConfig {
         }
 
         this.tagRenderings = trs(json.tagRenderings).concat(roamingRenderings);
-        this.titleIcons = trs(json.titleIcons ?? ["phonelink","wikipedialink","osmlink", "sharelink"]);
-        
+
+
+        const titleIcons = [];
+        const defaultIcons = ["phonelink", "emaillink", "wikipedialink", "osmlink", "sharelink"];
+        for (const icon of (json.titleIcons ?? defaultIcons)) {
+            if (icon === "defaults") {
+                titleIcons.push(...defaultIcons);
+            } else {
+                titleIcons.push(icon);
+            }
+        }
+
+        this.titleIcons = trs(titleIcons);
+
 
         function tr(key, deflt) {
             const v = json[key];

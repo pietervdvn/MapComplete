@@ -197,7 +197,7 @@ export default class SpecialVisualizations {
                     }
                 ],
                 constr: (tagSource: UIEventSource<any>, args) => {
-                    if (window.navigator.share || true) {
+                    if (window.navigator.share) {
                         const title = State.state.layoutToUse.data.title.txt;
                         let name = tagSource.data.name;
                         if (name) {

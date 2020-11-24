@@ -1,4 +1,16 @@
 {
+  "wikipedialink": {
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
+    "condition": "wikipedia~*"
+  },
+  "phonelink": {
+    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
+    "condition": "phone~*"
+  },
+  "emaillink": {
+    "render": "<a href='mailto:{email}'><img src='./assets/svg/send_email.svg'/></a>",
+    "condition": "email~*"
+  },
   "osmlink": {
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
     "mappings": [
@@ -7,14 +19,6 @@
         "then": "<span class='alert'>Uploading...</alert>"
       }
     ]
-  },
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*"
-  },
-  "phonelink": {
-    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
-    "condition": "phone~*"
   },
   "sharelink": {
     "render": "{share_link()}"
