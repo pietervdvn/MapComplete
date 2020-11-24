@@ -93,7 +93,7 @@
         "render": "40,40,center"
       },
       "color": {
-        "render": "#00f"
+        "render": "#d38d5fAA"
       },
       "presets": [
         {
@@ -112,7 +112,7 @@
           }
         }
       ],
-      "wayHandling": 1
+      "wayHandling": 2
     },
     {
       "id": "climbing_gym",
@@ -304,10 +304,10 @@
       "icon": "./assets/themes/climbing/climbing_unknown.svg",
       "hideUnderlayingFeaturesMinPercentage": 0,
       "width": {
-        "render": "5"
+        "render": "2"
       },
       "color": {
-        "render": "#ddff55"
+        "render": "#ddff55AA"
       },
       "wayHandling": 0
     }
