@@ -10,10 +10,6 @@ Contains tweaks for small screens
 
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
 
-    .leaflet-control-attribution {
-        display: none;
-    }
-    
     .only-on-mobile {
         display: unset;
         background-color: var(--background-color);

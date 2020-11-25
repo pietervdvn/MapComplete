@@ -71,6 +71,21 @@
           "gl": "Bomba de ar estragada",
           "de": "Kaputte Pumpe"
         }
+      },{
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no",
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Bicycle pump <i>{name}</i>",
+          "nl": "Fietspomp <i>{name}</i>",
+          "fr": "Pompe de vélo <i>{name}</i>",
+          "gl": "Bomba de ar <i>{name}</i>",
+          "de": "Fahrradpumpe <i>{name}</i>"
+        }
       },
       {
         "if": {
