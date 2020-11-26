@@ -192,7 +192,7 @@
         },
         {
           "question": {
-            "en": "In which direction are you looking when sitting on the bench?"
+            "en": "In which direction are you looking when sitting on the bench?",
             "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?"
           },
           "render": {
