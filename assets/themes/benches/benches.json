@@ -417,7 +417,7 @@
         "render": "8"
       },
       "iconSize": {
-        "render": "20,20,center"
+        "render": "30,30,center"
       },
       "color": {
         "render": "#00f"
