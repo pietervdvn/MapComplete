@@ -193,8 +193,12 @@
         {
           "question": {
             "en": "In which direction are you looking when sitting on the bench?"
+            "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?"
           },
-          "render": "When sitting on the bench, one looks towards {direction}*",
+          "render": {
+            "en": "When sitting on the bench, one looks towards {direction}°.",
+            "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°."
+          },
           "freeform": {
             "key": "direction",
             "type": "direction"
