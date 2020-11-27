@@ -42,6 +42,37 @@
     }
 }
 
+@media only screen and (max-height: 600px) {
+    /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
+    .featureinfobox-content {
+        position: relative;
+        width: 100% !important;
+        max-width: unset !important;
+        max-height: unset !important;
+        height: 100vh;
+    }
+    
+    .answer {
+        max-width: 48% !important;
+        padding-right: 0.3em;
+        box-sizing: border-box;
+    }
+
+    .question {
+        max-width: 48% !important;
+        padding-right: 0.3em;
+        box-sizing: border-box;
+    }
+    
+    .first-rendering{
+        position: absolute;
+        left: 50%;
+        width: 94%;
+        padding-right: 0.3em;
+        box-sizing: border-box;
+    }
+}
+
 
 .answer {
     display: flex;

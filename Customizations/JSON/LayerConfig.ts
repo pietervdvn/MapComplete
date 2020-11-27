@@ -256,7 +256,6 @@ export default class LayerConfig {
                     html = new Combine([
                         (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
                     ]).SetStyle(style)
-
                         .Render();
                 }
                 return html;

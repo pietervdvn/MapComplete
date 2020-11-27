@@ -98,17 +98,36 @@ a {
 
 .single-layer-selection-toggle{
     position: relative;
-    width: 2.5em;
-    height: 2.5em;
+    width:  2em;
+    height: 2em;
 }
 .single-layer-selection-toggle img{
-    max-height: 2.5em !important;
-    max-width: 2.5em !important;
+    max-height: 2em !important;
+    max-width:  2em !important;
 }
 
 .single-layer-selection-toggle svg{
-    max-height:2.5em !important;
-    max-width: 2.5em !important;
+    max-height:2em !important;
+    max-width: 2em !important;
+}
+
+.simple-add-ui-icon{
+    position: relative;
+    display: block;
+    width:  3.5em;
+    height: 3.5em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+}
+
+.simple-add-ui-icon img{
+    max-height:3.5em !important;
+    max-width: 3.5em !important;
+}
+
+.simple-add-ui-icon svg{
+    max-height:3.5em !important;
+    max-width: 3.5em !important;
 }
 
 .layer-selection-toggle {

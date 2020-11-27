@@ -57,6 +57,12 @@ export interface LayerConfigJson {
     /**
      * The icon for an element.
      * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
+     * 
+     * The result of the icon is rendered as follows:
+     * the resulting string is interpreted as a _list_ of items, seperated by ";". The bottommost layer is the first layer.
+     * As a result, on could use a generic pin, then overlay it with a specific icon.
+     * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
+     * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
      */
     icon?: string | TagRenderingConfigJson;
 
@@ -65,8 +71,10 @@ export interface LayerConfigJson {
      * The 'badge'-toggle changes their behaviour.
      * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
      * If badges is false, it'll be a simple overlay
+     * 
+     * Note: strings are interpreted as icons, so layering and substituting is supported
      */
-    iconOverlays?: {if: AndOrTagConfigJson, then: string, badge?: boolean}[]
+    iconOverlays?: {if: string | AndOrTagConfigJson, then: string, badge?: boolean}[]
 
     /**
      * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ... 

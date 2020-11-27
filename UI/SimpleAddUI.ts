@@ -9,6 +9,7 @@ import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
 import Svg from "../Svg";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -21,7 +22,7 @@ export class SimpleAddUI extends UIElement {
     private _confirmPreset: UIEventSource<{
         description: string | UIElement,
         name: string | UIElement,
-        icon: string,
+        icon: UIElement,
         tags: Tag[],
         layerToAddTo: FilteredLayer
     }>
@@ -52,8 +53,8 @@ export class SimpleAddUI extends UIElement {
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
-                let icon: string = layer.layerDef.icon.GetRenderValue(
-                    TagUtils.KVtoProperties(preset.tags ?? [])).txt
+                const tags = TagUtils.KVtoProperties(preset.tags ?? []);
+                let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html).SetClass("simple-add-ui-icon");
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";

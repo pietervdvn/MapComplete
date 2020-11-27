@@ -58,7 +58,7 @@ export class SubstitutedTranslation extends UIElement {
 
         for (const knownSpecial of SpecialVisualizations.specialVisualizations) {
 
-            // NOte: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
+            // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)}(.*)`);
             if (matched != null) {
 
