@@ -129,13 +129,17 @@ export class FilteredLayer {
 
         let self = this;
         this._geolayer = L.geoJSON(data, {
-            style: feature =>
-                self.layerDef.GenerateLeafletStyle(feature.properties, self._showOnPopup !== undefined),
+            style: feature => {
+                const tagsSource = State.state.allElements.getElement(feature.properties.id);
+                return self.layerDef.GenerateLeafletStyle(tagsSource, self._showOnPopup !== undefined);
+            },
             pointToLayer: function (feature, latLng) {
                 // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
                 // Click handling is done in the next step
+                
+                const tagSource = State.state.allElements.getElement(feature.properties.id);
 
-                const style = self.layerDef.GenerateLeafletStyle(feature.properties, self._showOnPopup !== undefined);
+                const style = self.layerDef.GenerateLeafletStyle(tagSource, self._showOnPopup !== undefined);
                 let marker;
                 if (style.icon === undefined) {
                     marker = L.circle(latLng, {

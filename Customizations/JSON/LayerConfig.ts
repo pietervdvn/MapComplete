@@ -12,6 +12,8 @@ import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
+import {UIElement} from "../../UI/UIElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export default class LayerConfig {
 
@@ -153,7 +155,7 @@ export default class LayerConfig {
     }
 
 
-    public GenerateLeafletStyle(tags: any, clickable: boolean):
+    public GenerateLeafletStyle(tags: UIEventSource<any>, clickable: boolean):
         {
             color: string;
             icon: {
@@ -162,7 +164,6 @@ export default class LayerConfig {
                 iconAnchor: [number, number];
                 iconSize: [number, number];
                 html: string;
-                rotation: string;
                 className?: string;
             };
             weight: number; dashArray: number[]
@@ -186,11 +187,10 @@ export default class LayerConfig {
         }
 
         function render(tr: TagRenderingConfig, deflt?: string) {
-            const str = (tr?.GetRenderValue(tags)?.txt ?? deflt);
-            return SubstitutedTranslation.SubstituteKeys(str, tags);
+            const str = (tr?.GetRenderValue(tags.data)?.txt ?? deflt);
+            return SubstitutedTranslation.SubstituteKeys(str, tags.data);
         }
 
-        const iconUrl = render(this.icon);
         const iconSize = render(this.iconSize, "40,40,center").split(",");
         const dashArray = render(this.dashArray).split(" ").map(Number);
         let color = render(this.color, "#00f");
@@ -200,8 +200,6 @@ export default class LayerConfig {
         }
 
         const weight = rendernum(this.width, 5);
-        const rotation = render(this.rotation, "0deg");
-
 
         const iconW = num(iconSize[0]);
         const iconH = num(iconSize[1]);
@@ -223,24 +221,35 @@ export default class LayerConfig {
             anchorH = iconH;
         }
 
-        
-        let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation};display:block;" />`;
-        
-        if (iconUrl.startsWith(Utils.assets_path)) {
-            const key = iconUrl.substr(Utils.assets_path.length);
-            html = new Combine([
-                (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
-            ]).SetStyle(`width:100%;height:100%;rotate:${rotation};display:block;`).Render();
-        }
+        const iconUrlStatic = render(this.icon);
+
+        var mappedHtml = tags.map(_ => {
+            // What do you mean, 'tags' is never read?
+            // It is read implicitly in the 'render' method
+            const iconUrl = render(this.icon);
+            const rotation = render(this.rotation, "0deg");
+            let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation};display:block;" />`;
+
+            if (iconUrl.startsWith(Utils.assets_path)) {
+                const key = iconUrl.substr(Utils.assets_path.length);
+                html = new Combine([
+                    (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
+                ]).SetStyle(`width:100%;height:100%;rotate:${rotation};display:block;`)
+
+                    .Render();
+            }
+            return html;
+        })
+
+
         return {
             icon:
                 {
-                    html: html,
+                    html: new VariableUiElement(mappedHtml).Render(),
                     iconSize: [iconW, iconH],
                     iconAnchor: [anchorW, anchorH],
                     popupAnchor: [0, 3 - anchorH],
-                    rotation: rotation,
-                    iconUrl: iconUrl,
+                    iconUrl: iconUrlStatic,
                     className: clickable ? "leaflet-div-icon" : "leaflet-div-icon unclickable"
                 },
             color: color,
