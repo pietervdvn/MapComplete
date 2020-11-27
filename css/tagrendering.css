@@ -42,7 +42,7 @@
     }
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 600px) and (min-width: 600px){
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
     .featureinfobox-content {
         position: relative;
