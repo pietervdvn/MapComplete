@@ -96,6 +96,21 @@ a {
     box-shadow: 0 0 10px var(--shadow-color);
 }
 
+.single-layer-selection-toggle{
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+}
+.single-layer-selection-toggle img{
+    max-height: 2.5em !important;
+    max-width: 2.5em !important;
+}
+
+.single-layer-selection-toggle svg{
+    max-height:2.5em !important;
+    max-width: 2.5em !important;
+}
+
 .layer-selection-toggle {
     border-radius: 1em;
     display: flex;

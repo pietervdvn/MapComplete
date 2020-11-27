@@ -61,6 +61,14 @@ export interface LayerConfigJson {
     icon?: string | TagRenderingConfigJson;
 
     /**
+     * IconsOverlays are a list of extra icons/badges to overlay over the icon.
+     * The 'badge'-toggle changes their behaviour.
+     * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
+     * If badges is false, it'll be a simple overlay
+     */
+    iconOverlays?: {if: AndOrTagConfigJson, then: string, badge?: boolean}[]
+
+    /**
      * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ... 
      * Default is '40,40,center'
      */

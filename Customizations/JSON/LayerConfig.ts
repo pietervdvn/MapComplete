@@ -12,7 +12,6 @@ import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
-import {UIElement} from "../../UI/UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 
 export default class LayerConfig {
@@ -35,6 +34,7 @@ export default class LayerConfig {
     titleIcons: TagRenderingConfig[];
 
     icon: TagRenderingConfig;
+    iconOverlays: { if: TagsFilter, then: string, badge: boolean }[]
     iconSize: TagRenderingConfig;
     rotation: TagRenderingConfig;
     color: TagRenderingConfig;
@@ -138,6 +138,14 @@ export default class LayerConfig {
 
         this.title = tr("title", undefined);
         this.icon = tr("icon", Img.AsData(Svg.bug));
+        this.iconOverlays = (json.iconOverlays ?? []).map(overlay => {
+            return {
+                if: FromJSON.Tag(overlay.if),
+                then: overlay.then,
+                badge: overlay.badge ?? false
+            }
+        });
+
         const iconPath = this.icon.GetRenderValue({id: "node/-1"}).txt;
         if (iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
@@ -222,23 +230,65 @@ export default class LayerConfig {
         }
 
         const iconUrlStatic = render(this.icon);
-
-        var mappedHtml = tags.map(_ => {
+        const self = this;
+        var mappedHtml = tags.map(tags => {
             // What do you mean, 'tags' is never read?
             // It is read implicitly in the 'render' method
-            const iconUrl = render(this.icon);
-            const rotation = render(this.rotation, "0deg");
-            let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation};display:block;" />`;
+            const iconUrl = render(self.icon);
+            const rotation = render(self.rotation, "0deg");
 
-            if (iconUrl.startsWith(Utils.assets_path)) {
-                const key = iconUrl.substr(Utils.assets_path.length);
-                html = new Combine([
-                    (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
-                ]).SetStyle(`width:100%;height:100%;rotate:${rotation};display:block;`)
+            let htmlParts = [];
+            let sourceParts = iconUrl.split(";");
 
-                    .Render();
+            function genHtmlFromString(sourcePart: string, style?: string): string {
+                style = style ?? `width:100%;height:100%;rotate:${rotation};display:block;position: absolute; top: 0, left: 0`;
+                let html = `<img src="${sourcePart}" style="${style}" />`;
+                const match = sourcePart.match(/([a-zA-Z0-9_]*):#([0-9a-fA-F]{3,6})/)
+                if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+                    html = new Combine([
+                        (Svg.All[match[1] + ".svg"] as string)
+                            .replace(/#000000/g, "#" + match[2])
+                    ]).SetStyle(style).Render();
+                }
+
+                if (sourcePart.startsWith(Utils.assets_path)) {
+                    const key = sourcePart.substr(Utils.assets_path.length);
+                    html = new Combine([
+                        (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
+                    ]).SetStyle(style)
+
+                        .Render();
+                }
+                return html;
             }
-            return html;
+
+
+            for (const sourcePart of sourceParts) {
+                htmlParts.push(genHtmlFromString(sourcePart))
+            }
+
+
+            let badges = [];
+            for (const iconOverlay of self.iconOverlays) {
+                if (!iconOverlay.if.matchesProperties(tags)) {
+                    continue;
+                }
+                if (iconOverlay.badge) {
+                    badges.push(genHtmlFromString(iconOverlay.then, "display: block;height:100%"))
+                } else {
+                    htmlParts.push(genHtmlFromString(iconOverlay.then));
+                }
+            }
+
+            if (badges.length > 0) {
+                const badgesComponent = new Combine(badges)
+
+                    .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;")
+                    .Render()
+
+                htmlParts.push(badgesComponent)
+            }
+            return htmlParts.join("");
         })
 
 
