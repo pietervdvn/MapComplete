@@ -1,7 +1,15 @@
 {
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*"
+    "condition": "wikipedia~*",
+    "mappings": [
+      {
+        "if": {
+          "and": ["wikipedia=","wikidata~*"],
+          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+        }
+      }
+    ]
   },
   "phonelink": {
     "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
