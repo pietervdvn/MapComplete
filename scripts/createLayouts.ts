@@ -281,7 +281,7 @@ for (const layoutName in all) {
     wikiPage += "\n"+generateWikiEntry(layout);
 }
 
-wikiPage += "|}"
+wikiPage += "\n|}"
 
 writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     if (err !== null) {
