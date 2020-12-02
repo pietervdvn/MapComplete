@@ -90,6 +90,11 @@ Contains tweaks for small screens
         max-width: 100vw;
     }
 
+    .userbadge-login {
+        min-width: unset;
+        width: calc(100vw - 5px);
+    }
+
     #topleft-tools {
         padding: 0.2em !important;
         padding-top: 0.3em !important;

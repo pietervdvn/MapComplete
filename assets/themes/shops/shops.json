@@ -17,7 +17,7 @@
     "fr"
   ],
   "maintainer": "MapComplete",
-  "icon": "circle:#fff;./assets/themes/shops/shop.svg",
+  "icon": "./assets/themes/shops/shop.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -31,7 +31,7 @@
         "en": "Shop",
         "fr": "Magasin"
       },
-      "minzoom": 14,
+      "minzoom": 16,
       "overpassTags": {
         "and": [
           "shop~*"
