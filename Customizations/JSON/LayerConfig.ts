@@ -13,6 +13,7 @@ import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../../UI/UIElement";
 
 export default class LayerConfig {
 
@@ -240,8 +241,8 @@ export default class LayerConfig {
             let htmlParts = [];
             let sourceParts = iconUrl.split(";");
 
-            function genHtmlFromString(sourcePart: string, style?: string): string {
-                style = style ?? `width:100%;height:100%;rotate:${rotation};display:block;position: absolute; top: 0, left: 0`;
+            function genHtmlFromString(sourcePart: string): string {
+                const style = `width:100%;height:100%;rotate:${rotation};display:block;position: absolute; top: 0, left: 0`;
                 let html = `<img src="${sourcePart}" style="${style}" />`;
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):#([0-9a-fA-F]{3,6})/)
                 if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
@@ -273,7 +274,18 @@ export default class LayerConfig {
                     continue;
                 }
                 if (iconOverlay.badge) {
-                    badges.push(genHtmlFromString(iconOverlay.then, "display: block;height:100%"))
+                    const badgeParts: string[] = [];
+                    const partDefs = iconOverlay.then.split(";");
+
+                    for (const badgePartStr of partDefs) {
+                        badgeParts.push(genHtmlFromString(badgePartStr))
+                    }
+
+                    const badgeCompound = new Combine(badgeParts)
+                        .SetStyle("display:flex;position:relative;width:100%;height:100%;");
+
+                    badges.push(badgeCompound)
+
                 } else {
                     htmlParts.push(genHtmlFromString(iconOverlay.then));
                 }
@@ -281,7 +293,6 @@ export default class LayerConfig {
 
             if (badges.length > 0) {
                 const badgesComponent = new Combine(badges)
-
                     .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;")
                     .Render()
 

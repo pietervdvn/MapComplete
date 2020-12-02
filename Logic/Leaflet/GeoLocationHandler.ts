@@ -110,11 +110,8 @@ export class GeoLocationHandler extends UIElement {
             return "";
         }
         if (State.state.currentGPSLocation.data !== undefined) {
-            State.state.bm.map.flyTo(
-                State.state.currentGPSLocation.data.latlng, 16,
-                {
-                    duration: 0.25,
-                }
+            State.state.bm.map.setView(
+                State.state.currentGPSLocation.data.latlng, 16
             );
         }
 

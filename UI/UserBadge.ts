@@ -1,5 +1,4 @@
 import {UIElement} from "./UIElement";
-import * as L from "leaflet";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Translations from "./i18n/Translations";
@@ -9,7 +8,6 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import Combine from "./Base/Combine";
 import Svg from "../Svg";
 import Link from "./Base/Link";
-import {Img} from "./Img";
 import LanguagePicker from "./LanguagePicker";
 
 /**
@@ -61,7 +59,7 @@ export class UserBadge extends UIElement {
             if (home === undefined) {
                 return;
             }
-            State.state.bm.map.flyTo([home.lat, home.lon], 18);
+            State.state.bm.map.setView([home.lat, home.lon], 16);
         });
 
     }

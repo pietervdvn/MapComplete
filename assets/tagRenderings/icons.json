@@ -5,9 +5,12 @@
     "mappings": [
       {
         "if": {
-          "and": ["wikipedia=","wikidata~*"],
-          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
-        }
+          "and": [
+            "wikipedia=",
+            "wikidata~*"
+          ]
+        },
+        "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
       }
     ]
   },
