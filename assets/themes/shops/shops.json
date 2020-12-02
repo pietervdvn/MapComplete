@@ -17,7 +17,7 @@
     "fr"
   ],
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/shops/shop.svg",
+  "icon": "circle:#fff;./assets/themes/shops/shop.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
