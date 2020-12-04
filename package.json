@@ -41,6 +41,7 @@
     "escape-html": "^1.0.3",
     "i18next-client": "^1.11.4",
     "jquery": "latest",
+    "latlon2country": "^1.0.3",
     "leaflet": "^1.7.1",
     "leaflet-providers": "^1.10.2",
     "libphonenumber": "0.0.10",

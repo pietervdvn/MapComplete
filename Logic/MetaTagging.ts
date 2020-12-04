@@ -4,6 +4,7 @@ import State from "../State";
 import opening_hours from "opening_hours";
 import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
+import CountryCoder from "latlon2country/lib/countryCoder";
 
 
 class SimpleMetaTagger {
@@ -61,28 +62,22 @@ export default class MetaTagging {
         })
     );
     private static country = new SimpleMetaTagger(
-        ["_country"], "The country code of the point",
+        ["_country"], "",
         ((feature, index) => {
+            const coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
             const centerPoint = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0]
             // But the codegrid SHOULD be a number!
-            CodeGrid.getCode(lat, lon, (error, code) => {
-                if (error === null) {
-                    feature.properties["_country"] = code;
-
-                    // There is a huge performance issue: if there are ~1000 features receiving a ping at the same time, 
-                    // The application hangs big time
-                    // So we disable pinging all together
-
-                } else {
-                    console.warn("Could not determine country for", feature.properties.id, error);
-                }
+            coder.CountryCodeFor(lon, lat, (countries) => {
+                feature.properties["_country"] = countries[0];
+                console.log("Country is ",countries.join(";"))
             });
         })
     )
     private static isOpen = new SimpleMetaTagger(
-        ["_isOpen", "_isOpen:description"], "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
+        ["_isOpen", "_isOpen:description"],
+        "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
         (feature => {
             const tagsSource = State.state.allElements.addOrGetElement(feature);
             tagsSource.addCallback(tags => {
@@ -98,7 +93,7 @@ export default class MetaTagging {
                         lat: tags._lat,
                         lon: tags._lon,
                         address: {
-                            country_code: tags._country
+                            country_code: tags._country.toLowerCase()
                         }
                     }, {tag_key: "opening_hours"});
 

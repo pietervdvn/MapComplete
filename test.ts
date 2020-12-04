@@ -1,20 +1,17 @@
 //*
 
+import CountryCoder from "latlon2country/lib/countryCoder";
 
-import Direction from "./UI/Input/DirectionInput";
-import {UIEventSource} from "./Logic/UIEventSource";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
+f
+unction pr(countries) {
+    console.log(">>>>>", countries.join(";"))
+}
 
-const d = new UIEventSource("90");
-new Direction(d).AttachTo("maindiv")
-new VariableUiElement(d.map(d => "" + d + "°")).AttachTo("extradiv")
-
-UIEventSource.Chronic(25, () => {
-    const degr = (Number(d.data) + 1) % 360;
-    d.setData(""+ degr);
-    return true;
-})
-
+coder.CountryCodeFor(3.2, 51.2, pr)
+coder.CountryCodeFor(4.2, 51.2, pr);
+coder.CountryCodeFor(4.92119, 51.43995, pr)
+coder.CountryCodeFor(4.93189, 51.43552, pr)
+coder.CountryCodeFor(34.2581, 44.7536, pr)
 /*/
 
 
