@@ -14,6 +14,39 @@
       }
     ]
   },
+  "isOpen": {
+    "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+    "mappings": [
+      {
+        "if": "_isOpen=yes",
+        "then": "clock:#0f0;ring:#0f0"
+      },
+      {
+        "if": "_isOpen=no",
+        "then": "circle:#f00;clock:#fff"
+      },
+      {
+        "#": "Still loading the country",
+        "if": {
+          "and": [
+            "_isOpen=",
+            "opening_hours~*"
+          ]
+        },
+        "then": "clock:#ff0;ring:#ff0"
+      },
+      {
+        "#": "Still loading the country",
+        "if": {
+          "and": [
+            "_isOpen=parse_error",
+            "opening_hours~*"
+          ]
+        },
+        "then": "circle:#f0f;clock:#fff"
+      }
+    ]
+  },
   "phonelink": {
     "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
     "condition": "phone~*"

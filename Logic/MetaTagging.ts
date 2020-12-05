@@ -67,11 +67,15 @@ export default class MetaTagging {
 
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
-            const lon = centerPoint.geometry.coordinates[0]
+            const lon = centerPoint.geometry.coordinates[0];
             coder.GetCountryCodeFor(lon, lat, (countries) => {
-                feature.properties["_country"] = countries[0].trim().toLowerCase();
-                const tagsSource = State.state.allElements.getEventSourceFor(feature);
-                tagsSource.ping();
+                try {
+                    feature.properties["_country"] = countries[0].trim().toLowerCase();
+                    const tagsSource = State.state.allElements.getEventSourceFor(feature);
+                    tagsSource.ping();
+                } catch (e) {
+                    console.error(e)
+                }
             });
         }
     )
@@ -85,6 +89,8 @@ export default class MetaTagging {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;
                 }
+                try{
+                    
                 const oh = new opening_hours(tags["opening_hours"], {
                     lat: tags._lat,
                     lon: tags._lon,
@@ -105,7 +111,7 @@ export default class MetaTagging {
                         tagsSource.ping();
                     }
 
-                    const nextChange = oh.getNextChange() as Date;
+                    const nextChange = oh.getNextChange();
                     if (nextChange !== undefined) {
                         window.setTimeout(
                             updateTags,
@@ -114,6 +120,10 @@ export default class MetaTagging {
                     }
                 }
                 updateTags();
+                }catch(e){
+                    console.error(e);
+                    tags["_isOpen"] = "parse_error";
+                }
 
             })
         })

@@ -13,6 +13,7 @@ import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {UIElement} from "../../UI/UIElement";
 
 export default class LayerConfig {
@@ -35,7 +36,7 @@ export default class LayerConfig {
     titleIcons: TagRenderingConfig[];
 
     icon: TagRenderingConfig;
-    iconOverlays: { if: TagsFilter, then: string, badge: boolean }[]
+    iconOverlays: { if: TagsFilter, then: TagRenderingConfig, badge: boolean }[]
     iconSize: TagRenderingConfig;
     rotation: TagRenderingConfig;
     color: TagRenderingConfig;
@@ -140,9 +141,13 @@ export default class LayerConfig {
         this.title = tr("title", undefined);
         this.icon = tr("icon", Img.AsData(Svg.bug));
         this.iconOverlays = (json.iconOverlays ?? []).map(overlay => {
+            let tr = new TagRenderingConfig(overlay.then);
+            if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
+                tr = SharedTagRenderings.SharedIcons[overlay.then];
+            }
             return {
                 if: FromJSON.Tag(overlay.if),
-                then: overlay.then,
+                then: tr,
                 badge: overlay.badge ?? false
             }
         });
@@ -172,7 +177,7 @@ export default class LayerConfig {
                 popupAnchor: [number, number];
                 iconAnchor: [number, number];
                 iconSize: [number, number];
-                html: string;
+                html: UIElement;
                 className?: string;
             };
             weight: number; dashArray: number[]
@@ -232,32 +237,31 @@ export default class LayerConfig {
 
         const iconUrlStatic = render(this.icon);
         const self = this;
-        var mappedHtml = tags.map(tags => {
-            // What do you mean, 'tags' is never read?
+        var mappedHtml = tags.map(tgs => {
+            // What do you mean, 'tgs' is never read?
             // It is read implicitly in the 'render' method
             const iconUrl = render(self.icon);
             const rotation = render(self.rotation, "0deg");
 
-            let htmlParts = [];
+            let htmlParts: UIElement[] = [];
             let sourceParts = iconUrl.split(";");
 
-            function genHtmlFromString(sourcePart: string): string {
+            function genHtmlFromString(sourcePart: string): UIElement {
                 const style = `width:100%;height:100%;rotate:${rotation};display:block;position: absolute; top: 0, left: 0`;
-                let html = `<img src="${sourcePart}" style="${style}" />`;
+                let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):#([0-9a-fA-F]{3,6})/)
                 if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
                     html = new Combine([
                         (Svg.All[match[1] + ".svg"] as string)
                             .replace(/#000000/g, "#" + match[2])
-                    ]).SetStyle(style).Render();
+                    ]).SetStyle(style);
                 }
 
                 if (sourcePart.startsWith(Utils.assets_path)) {
                     const key = sourcePart.substr(Utils.assets_path.length);
                     html = new Combine([
                         (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
-                    ]).SetStyle(style)
-                        .Render();
+                    ]).SetStyle(style);
                 }
                 return html;
             }
@@ -270,12 +274,12 @@ export default class LayerConfig {
 
             let badges = [];
             for (const iconOverlay of self.iconOverlays) {
-                if (!iconOverlay.if.matchesProperties(tags)) {
+                if (!iconOverlay.if.matchesProperties(tgs)) {
                     continue;
                 }
                 if (iconOverlay.badge) {
-                    const badgeParts: string[] = [];
-                    const partDefs = iconOverlay.then.split(";");
+                    const badgeParts: UIElement[] = [];
+                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";");
 
                     for (const badgePartStr of partDefs) {
                         badgeParts.push(genHtmlFromString(badgePartStr))
@@ -287,25 +291,24 @@ export default class LayerConfig {
                     badges.push(badgeCompound)
 
                 } else {
-                    htmlParts.push(genHtmlFromString(iconOverlay.then));
+                    htmlParts.push(genHtmlFromString(
+                        iconOverlay.then.GetRenderValue(tgs).txt));
                 }
             }
 
             if (badges.length > 0) {
                 const badgesComponent = new Combine(badges)
-                    .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;")
-                    .Render()
-
+                    .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;");
                 htmlParts.push(badgesComponent)
             }
-            return htmlParts.join("");
+            return new Combine(htmlParts).Render();
         })
 
 
         return {
             icon:
                 {
-                    html: new VariableUiElement(mappedHtml).Render(),
+                    html: new VariableUiElement(mappedHtml),
                     iconSize: [iconW, iconH],
                     iconAnchor: [anchorW, anchorH],
                     popupAnchor: [0, 3 - anchorH],

@@ -19,9 +19,9 @@ export class LayerSelection extends UIElement {
             const leafletStyle = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>({id: "node/-1"}), true)
             const leafletHtml = leafletStyle.icon.html;
             const icon =
-                new FixedUiElement(leafletHtml)
+                new FixedUiElement(leafletHtml.Render())
                     .SetClass("single-layer-selection-toggle")
-            let iconUnselected: UIElement = new FixedUiElement(leafletHtml) 
+            let iconUnselected: UIElement = new FixedUiElement(leafletHtml.Render()) 
                 .SetClass("single-layer-selection-toggle")
                 .SetStyle("opacity:0.2;");
 

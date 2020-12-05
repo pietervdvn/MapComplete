@@ -152,8 +152,16 @@ export class FilteredLayer {
                         color: style.color
                     });
                 } else {
+                    style.icon.html.ListenTo(self.isDisplayed)
                     marker = L.marker(latLng, {
-                        icon: L.divIcon(style.icon)
+                        icon: L.divIcon({
+                            html: style.icon.html.Render(),
+                            className: style.icon.className,
+                            iconAnchor: style.icon.iconAnchor,
+                            iconUrl: style.icon.iconUrl,
+                            popupAnchor: style.icon.popupAnchor,
+                            iconSize: style.icon.iconSize
+                        })
                     });
                 }
                 return marker;

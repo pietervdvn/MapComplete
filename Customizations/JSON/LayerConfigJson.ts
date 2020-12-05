@@ -74,7 +74,7 @@ export interface LayerConfigJson {
      * 
      * Note: strings are interpreted as icons, so layering and substituting is supported
      */
-    iconOverlays?: {if: string | AndOrTagConfigJson, then: string, badge?: boolean}[]
+    iconOverlays?: {if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson, badge?: boolean}[]
 
     /**
      * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ... 

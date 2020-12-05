@@ -67,6 +67,9 @@
           }
         ]
       },
+      "titleIcons": [
+        "isOpen"
+      ],
       "description": {
         "en": "A shop",
         "fr": "Un magasin"
@@ -238,23 +241,8 @@
       },
       "iconOverlays": [
         {
-          "if": "_isOpen=yes",
-          "then": "clock:#0f0",
-          "badge": true
-        },
-        {
-          "if": "_isOpen=no",
-          "then": "circle:#f00;clock:#fff",
-          "badge": true
-        },
-        {
-          "if": {
-            "and": [
-              "_isOpen=",
-              "opening_hours~*"
-            ]
-          },
-          "then": "clock:#ff0",
+          "if": "opening_hours~*",
+          "then": "isOpen",
           "badge": true
         }
       ],

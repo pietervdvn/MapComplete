@@ -54,7 +54,7 @@ export class SimpleAddUI extends UIElement {
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html).SetClass("simple-add-ui-icon");
+                let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.Render()).SetClass("simple-add-ui-icon");
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";

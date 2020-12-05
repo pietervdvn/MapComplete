@@ -5,27 +5,29 @@ import * as icons from "../assets/tagRenderings/icons.json";
 export default class SharedTagRenderings {
 
     public static SharedTagRendering = SharedTagRenderings.generatedSharedFields();
+    public static SharedIcons = SharedTagRenderings.generatedSharedFields(true);
 
-    private static generatedSharedFields() {
+    private static generatedSharedFields(iconsOnly = false) {
         const dict = {}
-        
-        
-        function add(key, store){
+
+
+        function add(key, store) {
             try {
                 dict[key] = new TagRenderingConfig(store[key])
             } catch (e) {
                 console.error("BUG: could not parse", key, " from questions.json or icons.json", e)
             }
         }
-        
-        
-        for (const key in questions) {
-            add(key, questions);
+
+        if (!iconsOnly) {
+            for (const key in questions) {
+                add(key, questions);
+            }
         }
         for (const key in icons) {
             add(key, icons);
         }
-        
+
         return dict;
     }
 
