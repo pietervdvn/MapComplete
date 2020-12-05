@@ -1,17 +1,5 @@
-//*
+/*
 
-import CountryCoder from "latlon2country/lib/countryCoder";
-
-f
-unction pr(countries) {
-    console.log(">>>>>", countries.join(";"))
-}
-
-coder.CountryCodeFor(3.2, 51.2, pr)
-coder.CountryCodeFor(4.2, 51.2, pr);
-coder.CountryCodeFor(4.92119, 51.43995, pr)
-coder.CountryCodeFor(4.93189, 51.43552, pr)
-coder.CountryCodeFor(34.2581, 44.7536, pr)
 /*/
 
 

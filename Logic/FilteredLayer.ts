@@ -7,6 +7,7 @@ import {UIElement} from "../UI/UIElement";
 import State from "../State";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import Hash from "./Web/Hash";
+import LazyElement from "../UI/Base/LazyElement";
 
 /***
  * A filtered layer is a layer which offers a 'set-data' function
@@ -78,7 +79,7 @@ export class FilteredLayer {
             const tags = TagUtils.proprtiesToKV(feature.properties);
             const matches = this.filters.matches(tags);
             if (matches) {
-                selfFeatures.push(feature);
+               selfFeatures.push(feature);
             }
             if (!matches || this.layerDef.passAllFeatures) {
                 leftoverFeatures.push(feature);
@@ -130,14 +131,13 @@ export class FilteredLayer {
         let self = this;
         this._geolayer = L.geoJSON(data, {
             style: feature => {
-                const tagsSource = State.state.allElements.getElement(feature.properties.id);
+                const tagsSource = State.state.allElements.getEventSourceFor(feature);
                 return self.layerDef.GenerateLeafletStyle(tagsSource, self._showOnPopup !== undefined);
             },
             pointToLayer: function (feature, latLng) {
                 // Point to layer converts the 'point' to a layer object - as the geojson layer natively cannot handle points
                 // Click handling is done in the next step
-                
-                const tagSource = State.state.allElements.getElement(feature.properties.id);
+                const tagSource = State.state.allElements.getEventSourceFor(feature);
 
                 const style = self.layerDef.GenerateLeafletStyle(tagSource, self._showOnPopup !== undefined);
                 let marker;
@@ -169,10 +169,9 @@ export class FilteredLayer {
                     closeOnEscapeKey: true,
                 }, layer);
 
-                let uiElement: UIElement;
 
-                const eventSource = State.state.allElements.addOrGetElement(feature);
-                uiElement = self._showOnPopup(eventSource, feature);
+                const eventSource = State.state.allElements.getEventSourceFor(feature);
+                let uiElement: LazyElement = new LazyElement(() => self._showOnPopup(eventSource, feature));
                 popup.setContent(uiElement.Render());
                 layer.bindPopup(popup);
                 // We first render the UIelement (which'll still need an update later on...)
@@ -181,11 +180,16 @@ export class FilteredLayer {
 
                 layer.on("click", (e) => {
                     // We set the element as selected...
+                    uiElement.Activate();
                     State.state.selectedElement.setData(feature);
-                    uiElement.Update();
                 });
 
                 if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
+                    // This element is in the URL, so this is a share link
+                    // We already open it
+                    uiElement.Activate();
+                    popup.setContent(uiElement.Render());
+               
                     const center = GeoOperations.centerpoint(feature).geometry.coordinates;
                     popup.setLatLng({lat: center[1], lng: center[0]});
                     popup.openOn(State.state.bm.map);

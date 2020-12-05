@@ -12,7 +12,7 @@ export class TextField extends InputElement<string> {
     private readonly _htmlType: string;
     private readonly _textAreaRows: number;
 
-    private readonly _isValid: (string, country) => boolean;
+    private readonly _isValid: (string,country) => boolean;
     private _label: UIElement;
 
     constructor(options?: {
@@ -22,7 +22,7 @@ export class TextField extends InputElement<string> {
         htmlType?: string,
         label?: UIElement,
         textAreaRows?: number,
-        isValid?: ((s: string, country?: string) => boolean)
+        isValid?: ((s: string, country?: () => string) => boolean)
     }) {
         super(undefined);
         const self = this;

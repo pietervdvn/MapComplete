@@ -96,17 +96,20 @@ export class UpdateFromOverpass {
         const self = this;
 
         self.retries.setData(0);
-        
+
         let newIds = 1;
         for (const feature of geojson.features) {
-            if(feature.properties.id === undefined){
-                feature.properties.id = "ext/"+newIds;
+            if (feature.properties.id === undefined) {
+                feature.properties.id = "ext/" + newIds;
                 newIds++;
             }
         }
-        
+
+        geojson.features.forEach(feature => {
+            State.state.allElements.addElement(feature);
+        })
         MetaTagging.addMetatags(geojson.features);
-        
+
         function renderLayers(layers: FilteredLayer[]) {
             if (layers.length === 0) {
                 self.runningQuery.setData(false);
@@ -124,6 +127,7 @@ export class UpdateFromOverpass {
                 renderLayers(rest);
             }, 50)
         }
+
 
         renderLayers(State.state.filteredLayers.data);
     }

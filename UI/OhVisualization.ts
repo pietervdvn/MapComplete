@@ -151,7 +151,7 @@ export default class OpeningHoursVisualization extends UIElement {
 
         const tags = this._source.data;
         if (tags._country === undefined) {
-            return "Loading...";
+            return "Loading country information...";
         }
         let oh = null;
 
@@ -165,7 +165,7 @@ export default class OpeningHoursVisualization extends UIElement {
             }, {tag_key: this._key});
         } catch (e) {
             console.log(e);
-            return "Error: could not visualize these opening hours"
+            return `Error: could not visualize these opening hours<br/><spann class='subtle'>${e}</spann>`
         }
 
         if (!oh.getState() && !oh.getUnknown()) {

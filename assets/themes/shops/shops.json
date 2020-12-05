@@ -74,6 +74,16 @@
       "tagRenderings": [
         "images",
         {
+          "question": {
+            "en": "What is the name of this shop?",
+            "fr": "Qu'est-ce que le nom de ce magasin?"
+          },
+          "render": "This shop is called <i>{name}</i>",
+          "freeform": {
+            "key": "name"
+          }
+        },
+        {
           "render": {
             "en": "This shop sells {shop}",
             "fr": "Ce magasin vends {shop}"
@@ -226,6 +236,28 @@
       "icon": {
         "render": "./assets/themes/shops/shop.svg"
       },
+      "iconOverlays": [
+        {
+          "if": "_isOpen=yes",
+          "then": "clock:#0f0",
+          "badge": true
+        },
+        {
+          "if": "_isOpen=no",
+          "then": "circle:#f00;clock:#fff",
+          "badge": true
+        },
+        {
+          "if": {
+            "and": [
+              "_isOpen=",
+              "opening_hours~*"
+            ]
+          },
+          "then": "clock:#ff0",
+          "badge": true
+        }
+      ],
       "width": {
         "render": "8"
       },

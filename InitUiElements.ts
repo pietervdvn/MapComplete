@@ -181,7 +181,7 @@ export class InitUiElements {
                     
                     // This layer is the layer that gives the questions
                     const featureBox = new FeatureInfoBox(
-                        State.state.allElements.getElement(data.id),
+                        State.state.allElements.getEventSourceById(data.id),
                         layer
                     );
 

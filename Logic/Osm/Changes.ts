@@ -18,7 +18,7 @@ export class Changes {
         if (changes.length == 0) {
             return;
         }
-        const eventSource = tags ?? State.state?.allElements.getElement(elementId);
+        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
         const elementTags = eventSource.data;
         const pending : {elementId:string, key: string, value: string}[] = [];
         for (const change of changes) {
