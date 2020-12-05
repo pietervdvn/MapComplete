@@ -4,14 +4,6 @@
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "main": "index.js",
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "tiles/",
-        "staticOutDir": "tiles/"
-      }
-    ]
-  },
   "scripts": {
     "start": "parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "test": "ts-node test/*",
@@ -59,7 +51,6 @@
     "canvas": "^2.6.1",
     "fs": "0.0.1-security",
     "marked": "^1.1.1",
-    "parcel-plugin-static-files-copy": "^2.4.3",
     "promise-svg2img": "^0.2.0",
     "read-file": "^0.2.0",
     "ts-node": "^9.0.0",
