@@ -910,8 +910,8 @@
   },
   "reviews": {
     "title": {
-      "en": "Reviews",
-      "nl": "Beoordelingen"
+      "en": "{count} reviews",
+      "nl": "{count} beoordelingen"
     },
     "no_reviews_yet": {
       "en": "There are no reviews yet. Be the first to write one and help open data and the business!",

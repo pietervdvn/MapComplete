@@ -23,30 +23,43 @@ export default class ReviewElement extends UIElement {
 
     InnerRender(): string {
 
+        function genStars(rating: number) {
+            const scoreTen = Math.round(rating / 10);
+            return new Combine([
+                "<img src='./assets/svg/star.svg' />".repeat(Math.floor(scoreTen / 2)),
+                scoreTen % 2 == 1 ? "<img src='./assets/svg/star_half.svg' />" : ""
+            ])
+        }
+
         const elements = [];
+        const revs = this._reviews.data;
+        revs.sort((a,b) => (b.date.getTime() - a.date.getTime())); // Sort with most recent first
+        const avg = (revs.map(review => review.rating).reduce((a, b) => a + b, 0) / revs.length);
+        elements.push(
+            new Combine([
+                genStars(avg).SetClass("stars"),
+                Translations.t.reviews.title
+                    .Subs({count: "" + revs.length})
+            ])
 
-        elements.push(Translations.t.reviews.title.SetClass("review-title"));
+                .SetClass("review-title"));
 
-        elements.push(...this._reviews.data.map(review => {
-            const stars = Math.round(review.rating / 10)
-            const fullStars = Math.floor(stars / 2);
+        elements.push(...revs.map(review => {
             const d = review.date;
-
             return new Combine(
                 [
                     new Combine([
+                        genStars(review.rating)
+                            .SetClass("review-rating"),
+                        new FixedUiElement(review.comment).SetClass("review-comment")
+                    ]).SetClass("review-stars-comment"),
 
-                        new Combine([
-                            "<img src='./assets/svg/star.svg' />".repeat(fullStars),
-                            stars % 2 == 1 ? "<img src='./assets/svg/star_half.svg' />" : ""
-                        ]).SetClass("review-rating"),
+                    new Combine([
+
+                        new FixedUiElement(review.author).SetClass("review-author"),
                         new FixedUiElement(`${d.getFullYear()}-${Utils.TwoDigits(d.getMonth() + 1)}-${Utils.TwoDigits(d.getDate())} ${Utils.TwoDigits(d.getHours())}:${Utils.TwoDigits(d.getMinutes())}`)
-                            .SetClass("review-date"),
-                    ]).SetClass("review-stars-date"),
-
-                    new FixedUiElement(review.comment).SetClass("review-comment"),
-                    "<br/>",
-                    new FixedUiElement(review.author).SetClass("review-author"),
+                            .SetClass("review-date")
+                    ]).SetClass("review-author-date")
 
                 ]
             ).SetClass("review-element")

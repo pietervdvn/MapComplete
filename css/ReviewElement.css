@@ -1,3 +1,18 @@
+.review-title {
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.review-title img {
+    max-width: 1.5em;
+    height: 1.5em;
+}
+
+
 .review-rating img {
     max-width: 1em;
     height: 1em;
@@ -6,23 +21,33 @@
 .review-rating {
     display: flex;
     flex-direction: row;
+    width: 5em;
+    margin-right: 0.5em;
+    flex-shrink: 0;
 }
 
 .review-date {
     color: var(--subtle-detail-color-light-contrast);
 }
 
-.review-stars-date {
+.review-stars-comment {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 0.5em;
 }
 
+
+
 .review-author {
     font-weight: bold;
+    margin-right: 0.5em;
+}
+
+.review-author-date {
     display: flex;
+    margin-bottom: 0.5em;
     justify-content: flex-end;
 }
+
 
 .review-element {
     padding: 1em;
@@ -51,6 +76,3 @@
     margin-left: 0.5em;
 }
 
-.review-title {
-    font-size: x-large;
-}

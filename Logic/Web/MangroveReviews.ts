@@ -30,7 +30,33 @@ export default class MangroveReviews {
         
         mangrove.getReviews({sub: uri}).then(
             (data) => {
-                const reviews = [];
+                const reviews = [{
+                    date: new Date(),
+                    comment: "Short",
+                    rating: 1,
+                    author: "Troll"
+                },{
+                    date: new Date(),
+                    comment: "Not good",
+                    rating: 10,
+                    author: "Troll"
+                },{
+                    date: new Date(),
+                    comment: "Not soo good",
+                    rating: 20,
+                    author: "Troll"
+                },{
+                    date: new Date(),
+                    comment: "Meh",
+                    rating: 30,
+                    author: "Troll"
+                },
+                    {
+                    date: new Date(),
+                    comment: "Lorum ipsum lorem qsmldkfj qsdfmqmsd qmlsdmlkjazmeliq dmqlsdkf amldkfjqmlskdbmaize qsmdl fka mqlsnkd azie qmxbilqmslef amlzdf qsmdlfk afdml kqbnqsdlkf m",
+                    rating: 50,
+                    author: "Troll"
+                }];
                 for (const review of data.reviews) {
                     const r = review.payload;
                     reviews.push({

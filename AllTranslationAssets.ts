@@ -124,7 +124,8 @@ export default class AllTranslationAssets {
     loginNeeded: new Translation( {"en":"<h3>Log in</h3>A personal layout is only available for OpenStreetMap users","es":"<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenstreetMap","ca":"<h3>Entrar</h3>El disseny personalizat només està disponible pels usuaris d' OpenstreetMap","gl":"<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap","de":"<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar"} ),
     reload: new Translation( {"en":"Reload the data","es":"Recargar datos","ca":"Recarregar dades","gl":"Recargar os datos","de":"Daten neu laden"} ),
 },
-  reviews: {    title: new Translation( {"en":"Reviews","nl":"Beoordelingen"} ),
-    attribution: new Translation( {"en":"Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>"} ),
+  reviews: {    title: new Translation( {"en":"{count} reviews","nl":"{count} beoordelingen"} ),
+    no_reviews_yet: new Translation( {"en":"There are no reviews yet. Be the first to write one and help open data and the business!","nl":"Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf"} ),
+    attribution: new Translation( {"en":"Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>","nl":"De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a> "} ),
 },
 }}
