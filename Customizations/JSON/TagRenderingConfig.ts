@@ -26,7 +26,7 @@ export default class TagRenderingConfig {
     mappings?: {
         if: TagsFilter,
         then: Translation
-        hideInAnswer: boolean
+        hideInAnswer: boolean | TagsFilter
     }[]
 
     constructor(json: string | TagRenderingConfigJson, context?: string) {
@@ -62,10 +62,16 @@ export default class TagRenderingConfig {
                 if (mapping.then === undefined) {
                     throw "Invalid mapping: if without body"
                 }
+                let hideInAnswer : boolean | TagsFilter = false;
+                if(typeof mapping.hideInAnswer === "boolean"){
+                    hideInAnswer = mapping.hideInAnswer;
+                }else{
+                    hideInAnswer = FromJSON.Tag(mapping.hideInAnswer);
+                }
                 return {
                     if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}]`),
                     then: Translations.T(mapping.then),
-                    hideInAnswer: mapping.hideInAnswer ?? false
+                    hideInAnswer: hideInAnswer
                 };
             });
         }

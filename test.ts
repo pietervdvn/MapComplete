@@ -1,4 +1,49 @@
+//*
+import MangroveReviews from "./Logic/Web/MangroveReviews";
+import ReviewElement from "./UI/ReviewElement";
+
+const review = MangroveReviews.GetReviewsFor(3.22000, 51.21576, "Pietervdvn Software Consultancy")
+new ReviewElement(review).AttachTo("maindiv");
 /*
+mangrove.getReviews({sub: 'geo:,?q=&u=15'}).then(
+    (data) => {
+        for (const review of data.reviews) {
+            console.log(review.payload);
+            // .signature
+            // .kid
+            // .jwt
+        }
+    }
+);*/
+
+/*
+mangrove.generateKeypair().then(
+    keypair => {
+        mangrove.keypairToJwk(keypair).then(jwk => {
+            console.log(jwk)
+            //   const restoredKeypair = await mangrove.jwkToKeypair(jwk).
+// Sign and submit a review (reviews of this example subject are removed from the database).
+            mangrove.signAndSubmitReview(keypair, {
+                // Lat,lon!
+                sub: "geo:51.21576,3.22000?q=Pietervdvn Software Consultancy&u=15",
+                rating: 100,
+                opinion: "Excellent knowledge about OSM",
+                metadata: {
+                    nickname: "Pietervdvn",
+                }
+            })
+        })
+    }
+)
+*/
+
+/*
+// Given by a particular user since certain time.
+const userReviews = await getReviews({
+    kid: '-----BEGIN PUBLIC KEY-----MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDo6mN4kY6YFhpvF0u3hfVWD1RnDElPweX3U3KiUAx0dVeFLPAmeKdQY3J5agY3VspnHo1p/wH9hbZ63qPbCr6g==-----END PUBLIC KEY-----',
+    gt_iat: 1580860800
+})*/
+
 
 /*/
 

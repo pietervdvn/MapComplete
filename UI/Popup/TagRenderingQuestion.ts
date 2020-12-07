@@ -198,9 +198,12 @@ export default class TagRenderingQuestion extends UIElement {
     private GenerateMappingElement(mapping: {
         if: TagsFilter,
         then: Translation,
-        hideInAnswer: boolean
+        hideInAnswer: boolean | TagsFilter
     }): InputElement<TagsFilter> {
-        if (mapping.hideInAnswer) {
+        if (mapping.hideInAnswer === true) {
+            return undefined;
+        }
+        if(typeof(mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matches(this._tags.data)){
             return undefined;
         }
         return new FixedInputElement(

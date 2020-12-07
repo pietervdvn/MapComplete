@@ -907,5 +907,19 @@
       "gl": "Recargar os datos",
       "de": "Daten neu laden"
     }
+  },
+  "reviews": {
+    "title": {
+      "en": "Reviews",
+      "nl": "Beoordelingen"
+    },
+    "no_reviews_yet": {
+      "en": "There are no reviews yet. Be the first to write one and help open data and the business!",
+      "nl": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf"
+    },
+    "attribution": {
+      "en": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>",
+      "nl": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a> "
+    }
   }
 }

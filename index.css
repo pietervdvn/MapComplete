@@ -1,6 +1,8 @@
 :root {
     --subtle-detail-color: #e5f5ff;
     --subtle-detail-color-contrast: black;
+    --subtle-detail-color-light-contrast: lightgrey;
+    
     --catch-detail-color: #3a3aeb;
     --catch-detail-color-contrast: white;
     --alert-color: #fee4d1;
