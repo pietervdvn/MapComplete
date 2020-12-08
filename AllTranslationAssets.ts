@@ -131,7 +131,7 @@ export default class AllTranslationAssets {
     write_a_comment: new Translation( {"en":"Leave a review...","nl":"Schrijf een beoordeling..."} ),
     no_rating: new Translation( {"en":"No rating given","nl":"Geen score bekend"} ),
     posting_as: new Translation( {"en":"Posting as","nl":"Ingelogd als"} ),
-    i_am_affiliated: new Translation( {"en":"<div'><span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are the owner, creator, employee, ... or similar</span></div>","nl":"<div style='display:inline-block;max-width: 40%;'><span>I am affiliated with this object</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span></div>"} ),
+    i_am_affiliated: new Translation( {"en":"<div'><span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span></div>","nl":"<div style='display:inline-block;max-width: 40%;'><span>I am affiliated with this object</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span></div>"} ),
     affiliated_reviewer_warning: new Translation( {"en":"(Affiliated review)","nl":"(Review door betrokkene)"} ),
     saving_review: new Translation( {"en":"Saving...","nl":"Opslaan..."} ),
     saved: new Translation( {"en":"<span class='thanks'>Review saved. Thanks for sharing!</span>","nl":"<span class='thanks'>Bedankt om je beoordeling te delen!</span>"} ),
