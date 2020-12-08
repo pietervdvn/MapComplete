@@ -143,6 +143,10 @@ export interface LayerConfigJson {
      * Note that we can also use a string here - where the string refers to a tagrenering defined in `assets/questions/questions.json`,
      * where a few very general questions are defined e.g. website, phone number, ...
      * 
+     * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
+     * 
      */
     tagRenderings?: (string | TagRenderingConfigJson) []
+    
+    
 }

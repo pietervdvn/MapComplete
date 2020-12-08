@@ -67,9 +67,6 @@
           }
         ]
       },
-      "titleIcons": [
-        "isOpen"
-      ],
       "description": {
         "en": "A shop",
         "fr": "Un magasin"
@@ -233,7 +230,9 @@
             "key": "opening_hours",
             "type": "opening_hours"
           }
-        }
+        },
+        "questions",
+        "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {

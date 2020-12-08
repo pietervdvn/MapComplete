@@ -158,7 +158,6 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
-                console.log("Validating phone number",str,"in country",country())
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
             (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational()

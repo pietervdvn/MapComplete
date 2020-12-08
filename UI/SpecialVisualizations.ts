@@ -12,6 +12,10 @@ import {Translation} from "./i18n/Translation";
 import State from "../State";
 import ShareButton from "./ShareButton";
 import Svg from "../Svg";
+import ReviewElement from "./Reviews/ReviewElement";
+import MangroveReviews from "../Logic/Web/MangroveReviews";
+import Translations from "./i18n/Translations";
+import ReviewForm from "./Reviews/ReviewForm";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -119,6 +123,7 @@ export default class SpecialVisualizations {
                 })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
             })
         },
+
             {
                 funcName: "image_carousel",
                 docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
@@ -147,6 +152,24 @@ export default class SpecialVisualizations {
                 }],
                 constr: (tags, args) => {
                     return new ImageUploadFlow(tags, args[0])
+                }
+            },
+
+            {
+                funcName: "reviews",
+                docs: "Adds an overview of the mangrove-reviews of this object. IMPORTANT: the _name_ of the object should be defined for this to work!",
+                args: [],
+                constr: (tags, args) => {
+                    const tgs = tags.data;
+                    if (tgs.name === undefined || tgs.name === "") {
+                        return Translations.t.reviews.name_required;
+                    }
+                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat), tgs.name,
+                        State.state.mangroveIdentity,
+                        State.state.osmConnection._dryRun
+                    );
+                    const form = new ReviewForm(r => mangrove.AddReview(r), State.state.osmConnection.userDetails);
+                    return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
                 }
             },
             {

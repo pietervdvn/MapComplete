@@ -1,50 +1,54 @@
 //*
 import MangroveReviews from "./Logic/Web/MangroveReviews";
-import ReviewElement from "./UI/ReviewElement";
+import ReviewElement from "./UI/Reviews/ReviewElement";
+import {UIEventSource} from "./Logic/UIEventSource";
+import ReviewForm from "./UI/Reviews/ReviewForm";
+import Combine from "./UI/Base/Combine";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-const review = MangroveReviews.GetReviewsFor(3.22000, 51.21576, "Pietervdvn Software Consultancy")
-new ReviewElement(review).AttachTo("maindiv");
-/*
-mangrove.getReviews({sub: 'geo:,?q=&u=15'}).then(
-    (data) => {
-        for (const review of data.reviews) {
-            console.log(review.payload);
-            // .signature
-            // .kid
-            // .jwt
-        }
-    }
-);*/
+const identity = '{"crv":"P-256","d":"6NHPmTFRedjNl-ZfLRAXhOaNKtRR9GYzPHsO1CzN5wQ","ext":true,"key_ops":["sign"],"kty":"EC","x":"Thm_pL5m0m9Jl41z9vgMTHNyja-9H58v0stJWT4KhTI","y":"PjBldCW85b8K6jEZbw0c2UZskpo-rrkwfPnD7s1MXSM","metadata":"Mangrove private key"}'
+
+const mangroveReviews = new MangroveReviews(0, 0, "Null Island",
+    new UIEventSource<string>(identity), true)
+
+new ReviewElement(mangroveReviews.GetSubjectUri(), mangroveReviews.GetReviews()).AttachTo("maindiv");
+const form = new ReviewForm((r,done) => {
+    mangroveReviews.AddReview(r, done);
+});
+form.AttachTo("extradiv")
+
+form.GetValue().map(r => form.IsValid(r)).addCallback(d => console.log(d))
 
 /*
-mangrove.generateKeypair().then(
-    keypair => {
-        mangrove.keypairToJwk(keypair).then(jwk => {
-            console.log(jwk)
-            //   const restoredKeypair = await mangrove.jwkToKeypair(jwk).
-// Sign and submit a review (reviews of this example subject are removed from the database).
-            mangrove.signAndSubmitReview(keypair, {
-                // Lat,lon!
-                sub: "geo:51.21576,3.22000?q=Pietervdvn Software Consultancy&u=15",
-                rating: 100,
-                opinion: "Excellent knowledge about OSM",
-                metadata: {
-                    nickname: "Pietervdvn",
-                }
-            })
-        })
-    }
+window.setTimeout(
+    () => {
+mangroveReviews.AddReview({
+    comment: "These are liars - not even an island here!",
+    author: "Lost Tourist",
+    date: new Date(),
+    affiliated: false,
+    rating: 10
+}, (() => {alert("Review added");return undefined;}));
+        
+    }, 1000
+)
+
+window.setTimeout(
+    () => {
+        mangroveReviews.AddReview({
+            comment: "Excellent conditions to measure weather!!",
+            author: "Weather-Boy",
+            date: new Date(),
+            affiliated: true,
+            rating: 90
+        }, (() => {
+            alert("Review added");
+            return undefined;
+        }));
+
+    }, 1000
 )
 */
-
-/*
-// Given by a particular user since certain time.
-const userReviews = await getReviews({
-    kid: '-----BEGIN PUBLIC KEY-----MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEDo6mN4kY6YFhpvF0u3hfVWD1RnDElPweX3U3KiUAx0dVeFLPAmeKdQY3J5agY3VspnHo1p/wH9hbZ63qPbCr6g==-----END PUBLIC KEY-----',
-    gt_iat: 1580860800
-})*/
-
-
 /*/
 
 

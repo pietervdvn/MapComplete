@@ -1,75 +1,158 @@
 import * as mangrove from 'mangrove-reviews'
 import {UIEventSource} from "../UIEventSource";
+import {Review} from "./Review";
+
+export class MangroveIdentity {
+    private readonly _mangroveIdentity: UIEventSource<string>;
+    public keypair: any = undefined;
+
+    constructor(mangroveIdentity: UIEventSource<string>) {
+        const self = this;
+        this._mangroveIdentity = mangroveIdentity;
+        mangroveIdentity.addCallbackAndRun(str => {
+            if (str === undefined || str === "") {
+                return;
+            }
+            mangrove.jwkToKeypair(JSON.parse(str)).then(keypair => {
+                self.keypair = keypair;
+                console.log("Identity loaded")
+            })
+        })
+        if ((mangroveIdentity.data ?? "") === "") {
+            this.CreateIdentity();
+        }
+    }
+
+    /**
+     * Creates an identity if none exists already.
+     * Is written into the UIEventsource, which was passed into the constructor
+     * @constructor
+     */
+    private CreateIdentity() {
+        if ("" !== (this._mangroveIdentity.data ?? "")) {
+            throw "Identity already defined - not creating a new one"
+        }
+        const self = this;
+        mangrove.generateKeypair().then(
+            keypair => {
+                self.keypair = keypair;
+                mangrove.keypairToJwk(keypair).then(jwk => {
+                    self._mangroveIdentity.setData(JSON.stringify(jwk));
+                })
+            });
+    }
+
+}
 
 export default class MangroveReviews {
+    private readonly _lon: number;
+    private readonly _lat: number;
+    private readonly _name: string;
+    private readonly _reviews: UIEventSource<Review[]> = new UIEventSource<Review[]>([]);
+    private _dryRun: boolean;
+    private _mangroveIdentity: MangroveIdentity;
+    private _lastUpdate : Date = undefined;
 
-    constructor() {
+    private static _reviewsCache = {};
+    
+    public static Get(lon: number, lat: number, name: string,
+                      identity: MangroveIdentity,
+                      dryRun?: boolean){
+        const newReviews = new MangroveReviews(lon, lat, name, identity, dryRun);
+        
+        const uri = newReviews.GetSubjectUri();
+        const cached = MangroveReviews._reviewsCache[uri];
+        if(cached !== undefined){
+            return cached;
+        }
+        MangroveReviews._reviewsCache[uri] = newReviews;
+        
+        return newReviews;
     }
+    
+   private constructor(lon: number, lat: number, name: string,
+                identity: MangroveIdentity,
+                dryRun?: boolean) {
+      
+        this._lon = lon;
+        this._lat = lat;
+        this._name = name;
+        this._mangroveIdentity = identity;
+        this._dryRun = dryRun;
+
+    }
+
+    /**
+     * Gets an URI which represents the item in a mangrove-compatible way
+     * @constructor
+     */
+    public GetSubjectUri() {
+        let uri = `geo:${this._lat},${this._lon}?u=50`;
+        if (this._name !== undefined && this._name !== null) {
+            uri += "&q=" + this._name;
+        }
+        return uri;
+    }
+
 
     /**
      * Gives a UIEVentsource with all reviews.
      * Note: rating is between 1 and 100
      */
-    public static GetReviewsFor(lon: number, lat: number, name: string): UIEventSource<{
-        comment?: string,
-        author: string,
-        date: Date,
-        rating: number
-    }[]> {
-
-        let uri = `geo:${lat},${lon}?u=50`;
-        if (name !== undefined && name !== null) {
-            uri += "&q=" + name;
-        }
-        const reviewsSource : UIEventSource< {
-            comment?: string,
-            author: string,
-            date: Date,
-            rating: number
-        }[]> = new UIEventSource([]);
+    public GetReviews(): UIEventSource<Review[]> {
         
-        mangrove.getReviews({sub: uri}).then(
+        if(this._lastUpdate !== undefined && this._reviews.data !== undefined &&
+            (new Date().getTime() - this._lastUpdate.getTime()) < 15000
+        ){
+            // Last update was pretty recent
+            return this._reviews;
+        }
+        this._lastUpdate = new Date();
+
+        const self = this;
+        mangrove.getReviews({sub: this.GetSubjectUri()}).then(
             (data) => {
-                const reviews = [{
-                    date: new Date(),
-                    comment: "Short",
-                    rating: 1,
-                    author: "Troll"
-                },{
-                    date: new Date(),
-                    comment: "Not good",
-                    rating: 10,
-                    author: "Troll"
-                },{
-                    date: new Date(),
-                    comment: "Not soo good",
-                    rating: 20,
-                    author: "Troll"
-                },{
-                    date: new Date(),
-                    comment: "Meh",
-                    rating: 30,
-                    author: "Troll"
-                },
-                    {
-                    date: new Date(),
-                    comment: "Lorum ipsum lorem qsmldkfj qsdfmqmsd qmlsdmlkjazmeliq dmqlsdkf amldkfjqmlskdbmaize qsmdl fka mqlsnkd azie qmxbilqmslef amlzdf qsmdlfk afdml kqbnqsdlkf m",
-                    rating: 50,
-                    author: "Troll"
-                }];
+                const reviews = [];
                 for (const review of data.reviews) {
                     const r = review.payload;
                     reviews.push({
                         date: new Date(r.iat * 1000),
                         comment: r.opinion,
                         author: r.metadata.nickname,
+                        affiliated: r.metadata.is_affiliated,
                         rating: r.rating // percentage points
                     })
                 }
-                reviewsSource.setData(reviews)
+                self._reviews.setData(reviews)
             }
         );
-        return reviewsSource;
+        return this._reviews;
+    }
+
+    AddReview(r: Review, callback?: (() => void)) {
+
+
+        callback = callback ?? (() => {
+            return undefined;
+        });
+
+        const payload = {
+            sub: this.GetSubjectUri(),
+            rating: r.rating,
+            opinion: r.comment,
+            metadata: {
+                is_affiliated: r.affiliated,
+                nickname: r.author,
+            }
+        };
+        if (this._dryRun) {
+            console.log("DRYRUNNING mangrove reviews: ", payload);
+        } else {
+            mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(callback)
+        }
+        this._reviews.data.push(r);
+        this._reviews.ping();
+        callback();
     }
 
 

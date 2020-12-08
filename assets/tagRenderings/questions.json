@@ -2,6 +2,9 @@
   "images": {
     "render": "{image_carousel()}{image_upload()}"
   },
+  "reviews": {
+    "render": "{reviews()}"
+  },
   "phone": {
     "question": {
       "en": "What is the phone number of {name}?",

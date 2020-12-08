@@ -64,7 +64,7 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue())
+        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state.osmConnection)
             .onClick(save)
 
 

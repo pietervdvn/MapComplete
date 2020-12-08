@@ -35,11 +35,25 @@ export class FeatureInfoBox extends UIElement {
         this._titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
-        this._renderings = layerConfig.tagRenderings.map(tr => new EditableTagRendering(tags, tr));
-        this._renderings[0]?.SetClass("first-rendering");
+        
+        let questionBox : UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {
-            this._questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
+            questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
+        
+        let questionBoxIsUsed = false;
+        this._renderings = layerConfig.tagRenderings.map(tr => {
+            if(tr.question === null){
+                questionBoxIsUsed = true;
+                // This is the question box!
+                return questionBox;
+            }
+            return new EditableTagRendering(tags, tr);
+        });
+        this._renderings[0]?.SetClass("first-rendering");
+       if(!questionBoxIsUsed){
+           this._renderings.push(questionBox);
+       }
     }
 
     InnerRender(): string {

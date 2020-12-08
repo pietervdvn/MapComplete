@@ -5,6 +5,7 @@ import Combine from "./Base/Combine";
 import Translations from "./i18n/Translations";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {OH} from "../Logic/OpeningHours";
+import State from "../State";
 
 export default class OpeningHoursVisualization extends UIElement {
     private readonly _key: string;
@@ -165,7 +166,12 @@ export default class OpeningHoursVisualization extends UIElement {
             }, {tag_key: this._key});
         } catch (e) {
             console.log(e);
-            return `Error: could not visualize these opening hours<br/><spann class='subtle'>${e}</spann>`
+            const msg = new Combine([Translations.t.general.opening_hours.error_loading,
+            State.state?.osmConnection?.userDetails?.data?.csCount >= State.userJourney.tagsVisibleAndWikiLinked ?
+                 `<span class='subtle'>${e}</span>`
+                : ""
+            ]);
+            return msg.Render();
         }
 
         if (!oh.getState() && !oh.getUnknown()) {

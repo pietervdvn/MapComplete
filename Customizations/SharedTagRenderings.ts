@@ -10,12 +10,11 @@ export default class SharedTagRenderings {
     private static generatedSharedFields(iconsOnly = false) {
         const dict = {}
 
-
         function add(key, store) {
             try {
-                dict[key] = new TagRenderingConfig(store[key])
+                dict[key] = new TagRenderingConfig(store[key], key)
             } catch (e) {
-                console.error("BUG: could not parse", key, " from questions.json or icons.json", e)
+                console.error("BUG: could not parse", key, " from questions.json or icons.json - this error happened during the build step of the SharedTagRenderings", e)
             }
         }
 

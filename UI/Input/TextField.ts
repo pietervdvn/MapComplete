@@ -63,11 +63,11 @@ export class TextField extends InputElement<string> {
 
     InnerRender(): string {
 
+        const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
         if (this._htmlType === "area") {
-            return `<span id="${this.id}"><textarea id="txt-${this.id}" class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea></span>`
+            return `<span id="${this.id}"><textarea id="txt-${this.id}" placeholder='${placeholder}' class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea></span>`
         }
 
-        const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
         let label = "";
         if (this._label != undefined) {
             label = this._label.Render();

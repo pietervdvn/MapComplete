@@ -93,6 +93,12 @@ export default class LayerConfig {
             return tagRenderings.map(
                 (renderingJson, i) => {
                     if (typeof renderingJson === "string") {
+                        
+                        if(renderingJson === "questions"){
+                            return new TagRenderingConfig("questions")
+                        }
+                        
+                        
                         const shared = SharedTagRenderings.SharedTagRendering[renderingJson];
                         if (shared !== undefined) {
                             return shared;

@@ -830,6 +830,10 @@
       }
     },
     "opening_hours": {
+      "error_loading": {
+        "en": "Error: could not visualize these opening hours.",
+        "nl": "Sorry, deze openingsuren kunnen niet getoond worden"
+      },
       "open_during_ph": {
         "nl": "Op een feestdag is deze zaak",
         "ca": "Durant festes aquest servei és",
@@ -913,13 +917,49 @@
       "en": "{count} reviews",
       "nl": "{count} beoordelingen"
     },
+    "name_required": {
+      "en": "A name is required in order to display and create reviews",
+      "nl": "De naam van dit object moet gekend zijn om een review te kunnen maken"
+    },
     "no_reviews_yet": {
       "en": "There are no reviews yet. Be the first to write one and help open data and the business!",
       "nl": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf"
     },
+    "write_a_comment": {
+      "en": "Leave a review...",
+      "nl": "Schrijf een beoordeling..."
+    },
+    "no_rating": {
+      "en": "No rating given",
+      "nl": "Geen score bekend"
+    },
+    "posting_as": {
+      "en": "Posting as",
+      "nl": "Ingelogd als"
+    },
+    "i_am_affiliated": {
+      "en": "<div'><span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span></div>",
+      "nl": "<div style='display:inline-block;max-width: 40%;'><span>I am affiliated with this object</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span></div>"
+    },
+    "affiliated_reviewer_warning": {
+      "en": "(Affiliated review)",
+      "nl": "(Review door betrokkene)"
+    },
+    "saving_review": {
+      "en": "Saving...",
+      "nl": "Opslaan..."
+    },
+    "saved": {
+      "en": "<span class='thanks'>Review saved. Thanks for sharing!</span>",
+      "nl": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>"
+    },
     "attribution": {
       "en": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>",
       "nl": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a> "
+    },
+    "plz_login": {
+      "en": "Login to leave a review",
+      "nl": "Meld je aan om een beoordeling te geven"
     }
   }
 }

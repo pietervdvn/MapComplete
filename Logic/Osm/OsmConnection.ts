@@ -24,7 +24,7 @@ export class OsmConnection {
     
     public auth;
     public userDetails: UIEventSource<UserDetails>;
-    private _dryRun: boolean;
+    _dryRun: boolean;
 
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
