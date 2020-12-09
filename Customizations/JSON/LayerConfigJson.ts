@@ -131,6 +131,10 @@ export interface LayerConfigJson {
     presets?: {
         title: string | any,
         tags: string[],
+        /**
+         * The first sentence is shown in small letters beneath the button to add a new one.
+         * The full text is shown in the full popup
+         */
         description?: string | any,
     }[],
 
