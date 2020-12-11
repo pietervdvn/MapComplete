@@ -27,7 +27,7 @@ export default class ReviewForm extends InputElement<Review> {
         this.userDetails = userDetails;
         const t = Translations.t.reviews;
         this._value  = new UIEventSource({
-            made_by_user: false,
+            made_by_user: new UIEventSource<boolean>(true),
             rating: undefined,
             comment: undefined,
             author: userDetails.data.name,
