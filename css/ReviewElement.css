@@ -23,6 +23,10 @@
     height: 1em;
 }
 
+.review-by-current-user {
+    border: 5px solid var(--catch-detail-color);
+}
+
 .review-rating {
     display: flex;
     flex-direction: row;

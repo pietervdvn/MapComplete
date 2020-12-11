@@ -5,6 +5,7 @@ import {Review} from "./Review";
 export class MangroveIdentity {
     private readonly _mangroveIdentity: UIEventSource<string>;
     public keypair: any = undefined;
+    public readonly kid: UIEventSource<string> = new UIEventSource<string>(undefined);
 
     constructor(mangroveIdentity: UIEventSource<string>) {
         const self = this;
@@ -13,10 +14,12 @@ export class MangroveIdentity {
             if (str === undefined || str === "") {
                 return;
             }
-            console.log("JWK ", JSON.parse(str));
             mangrove.jwkToKeypair(JSON.parse(str)).then(keypair => {
                 self.keypair = keypair;
-                console.log("Identity loaded")
+                mangrove.publicToPem(keypair.publicKey).then(pem => {
+                    console.log("Identity loaded")
+                    self.kid.setData(pem);
+                })
             })
         })
         if ((mangroveIdentity.data ?? "") === "") {
@@ -117,9 +120,10 @@ export default class MangroveReviews {
                 const reviewsByUser = [];
                 for (const review of data.reviews) {
                     const r = review.payload;
-                    console.log("PublicKey is ",self._mangroveIdentity.keypair, "reviews is",review.signature);
-                    const byUser = self._mangroveIdentity.keypair.publicKey === review.signature;
-                    console.log("IS SAME: ", byUser);
+
+
+                    console.log("PublicKey is ", self._mangroveIdentity.kid.data, "reviews.kid is", review.kid);
+                    const byUser = self._mangroveIdentity.kid.map(data => data === review.signature);
                     const rev: Review = {
                         made_by_user: byUser,
                         date: new Date(r.iat * 1000),
@@ -133,7 +137,7 @@ export default class MangroveReviews {
 
                     (rev.made_by_user ? reviewsByUser : reviews).push(rev);
                 }
-                self._reviews.setData(reviews)
+                self._reviews.setData(reviewsByUser.concat(reviews))
             }
         );
         return this._reviews;
