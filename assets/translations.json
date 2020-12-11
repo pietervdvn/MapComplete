@@ -351,10 +351,10 @@
         "de": "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten."
       },
       "confirmButton": {
-        "en": "Add a {category} here.<br/><div class='alert'>Your addition will be visble for everyone</div>",
+        "en": "Add a {category} here.<br/><div class='alert'>Your addition is visble for everyone</div>",
         "ca": "Afegir {category} aquí",
         "es": "Añadir {category} aquí",
-        "nl": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor zichtbaar voor iedereen</div>",
+        "nl": "Voeg hier een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
         "fr": "Ajouter un/une {category} ici",
         "gl": "Engadir {category} aquí",
         "de": "Hier eine {category} hinzufügen"
