@@ -13,6 +13,7 @@ export class MangroveIdentity {
             if (str === undefined || str === "") {
                 return;
             }
+            console.log("JWK ", JSON.parse(str));
             mangrove.jwkToKeypair(JSON.parse(str)).then(keypair => {
                 self.keypair = keypair;
                 console.log("Identity loaded")
@@ -113,15 +114,24 @@ export default class MangroveReviews {
         mangrove.getReviews({sub: this.GetSubjectUri()}).then(
             (data) => {
                 const reviews = [];
+                const reviewsByUser = [];
                 for (const review of data.reviews) {
                     const r = review.payload;
-                    reviews.push({
+                    console.log("PublicKey is ",self._mangroveIdentity.keypair, "reviews is",review.signature);
+                    const byUser = self._mangroveIdentity.keypair.publicKey === review.signature;
+                    console.log("IS SAME: ", byUser);
+                    const rev: Review = {
+                        made_by_user: byUser,
                         date: new Date(r.iat * 1000),
                         comment: r.opinion,
                         author: r.metadata.nickname,
                         affiliated: r.metadata.is_affiliated,
                         rating: r.rating // percentage points
-                    })
+                    };
+
+                   
+
+                    (rev.made_by_user ? reviewsByUser : reviews).push(rev);
                 }
                 self._reviews.setData(reviews)
             }
@@ -141,18 +151,37 @@ export default class MangroveReviews {
             rating: r.rating,
             opinion: r.comment,
             metadata: {
-                is_affiliated: r.affiliated,
                 nickname: r.author,
             }
         };
-        if (this._dryRun) {
-            console.log("DRYRUNNING mangrove reviews: ", payload);
-        } else {
-            mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(callback)
+        if (r.affiliated) {
+            // @ts-ignore
+            payload.metadata.is_affiliated = true;
         }
-        this._reviews.data.push(r);
-        this._reviews.ping();
-        callback();
+        if (this._dryRun) {
+            console.warn("DRYRUNNING mangrove reviews: ", payload);
+            if (callback) {
+                if (callback) {
+                    console.log("Calling callback")
+                    callback();
+                }
+                this._reviews.data.push(r);
+                this._reviews.ping();
+
+            }
+        } else {
+            mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(() => {
+                if (callback) {
+                    console.log("Calling callback")
+                    callback();
+                }
+                this._reviews.data.push(r);
+                this._reviews.ping();
+
+            })
+        }
+
+
     }
 
 

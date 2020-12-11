@@ -135,7 +135,8 @@ export default class AllTranslationAssets {
     affiliated_reviewer_warning: new Translation( {"en":"(Affiliated review)","nl":"(Review door betrokkene)"} ),
     saving_review: new Translation( {"en":"Saving...","nl":"Opslaan..."} ),
     saved: new Translation( {"en":"<span class='thanks'>Review saved. Thanks for sharing!</span>","nl":"<span class='thanks'>Bedankt om je beoordeling te delen!</span>"} ),
-    attribution: new Translation( {"en":"Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>","nl":"De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a> "} ),
+    tos: new Translation( {"en":"If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>","nl":"Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>"} ),
+    attribution: new Translation( {"en":"Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.","nl":"De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a>. "} ),
     plz_login: new Translation( {"en":"Login to leave a review","nl":"Meld je aan om een beoordeling te geven"} ),
 },
 }}

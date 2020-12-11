@@ -27,6 +27,7 @@ export default class ReviewForm extends InputElement<Review> {
         this.userDetails = userDetails;
         const t = Translations.t.reviews;
         this._value  = new UIEventSource({
+            made_by_user: false,
             rating: undefined,
             comment: undefined,
             author: userDetails.data.name,
@@ -53,7 +54,7 @@ export default class ReviewForm extends InputElement<Review> {
                 .onClick(() => {
                     self._saveButton = Translations.t.reviews.saving_review;
                     onSave(this._value.data, () => {
-                        self._saveButton = Translations.t.reviews.saved;
+                        self._saveButton = Translations.t.reviews.saved.SetClass("thanks");
                     });
                 })
 
@@ -97,7 +98,9 @@ export default class ReviewForm extends InputElement<Review> {
             new Combine([
                 this._isAffiliated,
                 this._saveButton
-            ]).SetClass("review-form-bottom")
+            ]).SetClass("review-form-bottom"),
+            "<br/>",
+            Translations.t.reviews.tos.SetClass("subtle")
         ])
             .SetClass("review-form")
             .Render();

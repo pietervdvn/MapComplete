@@ -168,7 +168,7 @@ export default class SpecialVisualizations {
                         State.state.mangroveIdentity,
                         State.state.osmConnection._dryRun
                     );
-                    const form = new ReviewForm(r => mangrove.AddReview(r), State.state.osmConnection.userDetails);
+                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), State.state.osmConnection.userDetails);
                     return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
                 }
             },
