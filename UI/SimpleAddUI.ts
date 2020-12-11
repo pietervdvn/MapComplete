@@ -28,6 +28,7 @@ export class SimpleAddUI extends UIElement {
     }>
         = new UIEventSource(undefined);
     private confirmButton: UIElement = undefined;
+    private _confirmDescription: UIElement = undefined;
     private openLayerControl: UIElement;
     private cancelButton: UIElement;
     private goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(), 
@@ -69,7 +70,7 @@ export class SimpleAddUI extends UIElement {
                             "<b>",
                             preset.title,
                             "</b>",
-                            preset.description !== undefined ? new Combine(["<br/>", preset.description]) : "",
+                            preset.description !== undefined ? new Combine(["<br/>", preset.description.FirstSentence()]) : "",
                             tagInfo
                         ])
                     ).onClick(
@@ -78,9 +79,9 @@ export class SimpleAddUI extends UIElement {
                                 new Combine([
                                     "<b>",
                                     Translations.t.general.add.confirmButton.Subs({category: preset.title}),
-                                    "</b><br/>",
-                                    preset.description !== undefined ? preset.description : ""]));
+                                    "</b>"]));
                             self.confirmButton.onClick(self.CreatePoint(preset.tags, layer));
+                            self._confirmDescription = preset.description;
                             self._confirmPreset.setData({
                                 tags: preset.tags,
                                 layerToAddTo: layer,
@@ -148,6 +149,7 @@ export class SimpleAddUI extends UIElement {
                 userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
                 this.confirmButton,
                 this.cancelButton,
+                this._confirmDescription,
                 tagInfo
 
             ]).Render();
@@ -190,7 +192,7 @@ export class SimpleAddUI extends UIElement {
         }
 
         if (State.state.locationControl.data.zoom < State.userJourney.minZoomLevelToAddNewPoints) {
-            return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
+            return new Combine([header, Translations.t.general.add.zoomInFurther.SetClass("alert")]).Render()
         }
 
         if (State.state.layerUpdater.runningQuery.data) {

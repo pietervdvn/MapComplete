@@ -126,7 +126,17 @@ export interface LayerConfigJson {
     passAllFeatures?:boolean
     
     /**
-     * Presets for this layer
+     * Presets for this layer.
+     * A preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);
+     * it will prompt the user to add a new point.
+     * 
+     * The most important aspect are the tags, which define which tags the new point will have;
+     * The title is shown in the dialog, along with the first sentence of the description.
+     * 
+     * Upon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.
+     * 
+     * Note: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!
+     * NB: if no presets are defined, the popup to add new points doesn't show up at all
      */
     presets?: {
         title: string | any,
