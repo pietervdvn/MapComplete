@@ -146,14 +146,14 @@ export class ShareScreen extends UIElement {
         this._options = new VerticalCombine(optionCheckboxes)
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
 
-
-            let literalText = "https://pietervdvn.github.io/MapComplete/" + layout.id.toLowerCase() + ".html"
+            const host = window.location.host;
+            let literalText = `https://${host}/${layout.id.toLowerCase()}.html`
 
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
             let hash = "";
             if (layoutDefinition !== undefined) {
-                literalText = "https://pietervdvn.github.io/MapComplete/index.html"
+                literalText = `https://${host}/index.html`
                 if (layout.id.startsWith("wiki:")) {
                     parts.push("userlayout=" + encodeURIComponent(layout.id))
                 } else {

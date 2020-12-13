@@ -270,7 +270,7 @@ for (const layoutName in all) {
     };
     const layout = all[layoutName];
     validate(layout)
-    const manif = JSON.stringify(createManifest(layout, "/MapComplete"));
+    const manif = JSON.stringify(createManifest(layout, ""));
 
     const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
     writeFile(manifestLocation, manif, err);

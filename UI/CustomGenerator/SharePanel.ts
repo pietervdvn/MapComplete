@@ -42,7 +42,7 @@ export default class SharePanel extends UIElement {
                 "Copy the json configuration from the 'save-tab', paste it between the 'nowiki'-tags in the Wiki",
                 "Click 'save' to save the wiki page",
                 "Share the link with the url parameter <span class='literal-code'>userlayout=wiki:YOURWIKIPAGE</span>, e.g. " +
-                `<a href='./index.html?userlayout=${proposedNameEnc}' target='_blank'>https://pietervdvn.github.io/MapComplete/index.html?userlayout=${proposedNameEnc}</a>`
+                `<a href='./index.html?userlayout=${proposedNameEnc}' target='_blank'>https://mapcomplete.osm.be?userlayout=${proposedNameEnc}</a>`
             ].map(li => `<li>${li}</li>`),
 
             "</ol>",
