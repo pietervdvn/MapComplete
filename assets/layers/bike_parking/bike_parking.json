@@ -147,6 +147,51 @@
       ]
     },
     {
+      "#": "Underground?",
+      "question": {
+        "en": "What is the relative location of this bicycle parking?",
+        "nl": "Wat is de relatieve locatie van deze parking??"
+      },
+      "mappings": [
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Underground parking",
+            "nl": "Ondergrondse parking"
+          }
+        },
+        {
+          "if": "location=underground",
+          "then": {
+            "en": "Underground parking",
+            "nl": "Ondergrondse parking"
+          }
+        },
+        {
+          "if": "location=surface",
+          "then": {
+            "en": "Surface level parking",
+            "nl": "Parking op de begane grond"
+          }
+        },
+        {
+          "if": "location=",
+          "then": {
+            "en": "Surface level parking",
+            "nl": "Parking op de begane grond"
+          },
+          "hideInAnwser": true
+        },
+        {
+          "if": "location=rooftop",
+          "then": {
+            "en": "Rooftop parking",
+            "nl": "Dakparking"
+          }
+        }
+      ]
+    },
+    {
       "#": "Is covered?",
       "question": {
         "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
@@ -154,7 +199,12 @@
         "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
         "de": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze."
       },
-      "condition": "bicycle_parking!=shed",
+      "condition": {
+        "and": [
+          "bicycle_parking!=shed",
+          "location!=underground"
+        ]
+      },
       "mappings": [
         {
           "if": "covered=yes",
