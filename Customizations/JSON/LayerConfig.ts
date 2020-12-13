@@ -100,7 +100,7 @@ export default class LayerConfig {
         }
 
         this.tagRenderings = trs(json.tagRenderings).concat(roamingRenderings);
-        this.titleIcons = trs(json.titleIcons ?? ["wikipedialink","osmlink"]);
+        this.titleIcons = trs(json.titleIcons ?? ["phonelink","wikipedialink","osmlink", "sharelink"]);
         
 
         function tr(key, deflt) {

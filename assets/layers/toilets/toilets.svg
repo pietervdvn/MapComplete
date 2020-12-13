@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="64"
+   height="64"
+   viewBox="0 0 64 64"
+   id="svg2"
+   sodipodi:docname="toilets.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="2.6074563"
+     inkscape:cx="-96.695116"
+     inkscape:cy="91.228234"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" />
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="background"
+     transform="translate(0,-64)">
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.23933503;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path847"
+       cx="31.580557"
+       cy="96.215309"
+       rx="31.580557"
+       ry="31.513508" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="icon"
+     transform="translate(0,-64)">
+    <rect
+       width="44.118912"
+       height="44.118912"
+       x="9.5211029"
+       y="74.2229"
+       id="canvas"
+       style="visibility:hidden;fill:none;stroke:none;stroke-width:2.75743198" />
+    <path
+       d="m 29.512484,76.980332 v 38.604048 h 4.136148 V 76.980332 Z m -10.34037,2.757432 c -2.284331,0 -4.136148,1.851809 -4.136148,4.136148 0,2.284339 1.851817,4.136148 4.136148,4.136148 2.284331,0 4.136148,-1.851809 4.136148,-4.136148 0,-2.284339 -1.851817,-4.136148 -4.136148,-4.136148 z m 24.816887,0 c -2.28433,0 -4.136148,1.851809 -4.136148,4.136148 0,2.284339 1.851818,4.136148 4.136148,4.136148 2.284331,0 4.136147,-1.851809 4.136147,-4.136148 0,-2.284339 -1.851816,-4.136148 -4.136147,-4.136148 z M 16.414682,90.767492 c -1.653692,0 -2.757432,1.567738 -2.757432,2.757432 0,1.454076 3.44679,4.126883 3.44679,5.514863 0,1.533053 -4.825506,2.757433 -4.825506,8.272293 h 4.825506 v 8.2723 h 4.136148 v -8.2723 h 4.825506 c 0,-5.51486 -4.825506,-6.8122 -4.825506,-8.272293 0,-1.460087 3.44679,-3.994691 3.44679,-5.514863 0,-1.123626 -1.171156,-2.757432 -2.757432,-2.757432 z m 23.438171,0 c -1.454087,0 -2.757431,1.324863 -2.757431,2.757432 0,2.757431 4.825505,11.074036 4.825505,13.787156 v 8.2723 h 4.136147 v -8.2723 c 0,-2.65943 4.825505,-11.029725 4.825505,-13.787156 0,-1.525908 -1.237249,-2.757432 -2.757431,-2.757432 z"
+       id="toilets"
+       style="fill:#734a08;fill-opacity:1;stroke:none;stroke-width:2.75743198"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

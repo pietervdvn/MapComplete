@@ -9,6 +9,9 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import Locale from "../UI/i18n/Locale";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import {Translation} from "./i18n/Translation";
+import State from "../State";
+import ShareButton from "./ShareButton";
+import Svg from "../Svg";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -183,7 +186,36 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
+            {
+                funcName: "share_link",
+                docs: "Creates a link that (attempts to) open the native 'share'-screen",
+                example: "{share_link()} to share the current page, {share_link(<some_url>)} to share the given url",
+                args: [
+                    {
+                        name: "url",
+                        doc: "The url to share (defualt: current URL)",
+                    }
+                ],
+                constr: (tagSource: UIEventSource<any>, args) => {
+                    if (window.navigator.share) {
+                        const title = State.state.layoutToUse.data.title.txt;
+                        let name = tagSource.data.name;
+                        if(name){
+                            name = `${name} (${title})`
+                        }else{
+                            name = title;
+                        }
+                     return new ShareButton(Svg.share_svg(), {
+                         title: name,
+                         url: args[0] ?? window.location.href,
+                         text: State.state.layoutToUse.data.shortDescription.txt
+                     })
+                    } else {
+                        return new FixedUiElement("")
+                    }
 
+                }
+            }
 
         ]
     static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();

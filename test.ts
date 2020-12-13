@@ -6,7 +6,7 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 
 const d = new UIEventSource("90");
-new Direction(d, [51.21576,3.22001]).AttachTo("maindiv")
+new Direction(d).AttachTo("maindiv")
 new VariableUiElement(d.map(d => "" + d + "°")).AttachTo("extradiv")
 
 UIEventSource.Chronic(25, () => {

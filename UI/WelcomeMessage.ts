@@ -53,7 +53,8 @@ export class WelcomeMessage extends UIElement {
             loginStatus,
             this.tail,
             "<br/>",
-            this.languagePicker
+            this.languagePicker,
+            Translations.t.general.customIntro as UIElement
         ]).Render()
     }
 
