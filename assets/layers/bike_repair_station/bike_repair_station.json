@@ -71,6 +71,21 @@
           "gl": "Bomba de ar estragada",
           "de": "Kaputte Pumpe"
         }
+      },{
+        "if": {
+          "and": [
+            "service:bicycle:pump=yes",
+            "service:bicycle:tools=no",
+            "name~*"
+          ]
+        },
+        "then": {
+          "en": "Bicycle pump <i>{name}</i>",
+          "nl": "Fietspomp <i>{name}</i>",
+          "fr": "Pompe de vélo <i>{name}</i>",
+          "gl": "Bomba de ar <i>{name}</i>",
+          "de": "Fahrradpumpe <i>{name}</i>"
+        }
       },
       {
         "if": {
@@ -94,8 +109,7 @@
       "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
       "condition":  "operator=De Fietsambassade Gent"
     },
-    "wikipedialink",
-    "osmlink"
+    "defaults"
   ],
   "tagRenderings": [
     "images",
@@ -171,6 +185,34 @@
         {
           "if": "operator=De Fietsambassade Gent",
           "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>"
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Wanneer is dit fietsherstelpunt open?",
+        "en": "When is this bicycle repair point opened?"
+      },
+      "render": "{opening_hours_table()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "Dag en nacht open",
+            "en": "Always opened"
+          }
+        },
+        {
+          "if": "opening_hours=",
+          "then": {
+            "nl": "Dag en nacht open",
+            "en": "Always opened"
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -448,6 +490,13 @@
       }
     ]
   },
+  "iconOverlays": [
+    {
+      "if": "operator=De Fietsambassade Gent",
+      "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg",
+      "badge": true
+    }
+  ],
   "iconSize": {
     "render": {
       "en": "50,50,bottom"
@@ -477,7 +526,11 @@
         "amenity=bicycle_repair_station",
         "service:bicycle:tools=no",
         "service:bicycle:pump=yes"
-      ]
+      ],
+      "description": {
+        "en": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' height='200'/><img src='./assets/layers/bike_repair_station/pump_example.png' height='200'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' height='200'/>",
+        "nl": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' height='200'/><img src='./assets/layers/bike_repair_station/pump_example.png' height='200'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' height='200'/>"
+      }
     },
     {
       "title": {
@@ -491,7 +544,11 @@
         "amenity=bicycle_repair_station",
         "service:bicycle:tools=yes",
         "service:bicycle:pump=yes"
-      ]
+      ],
+      "description": {
+        "en": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
+        "nl": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
+      }
     },
     {
       "title": {

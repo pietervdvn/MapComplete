@@ -1,20 +1,54 @@
 //*
-
-
-import Direction from "./UI/Input/DirectionInput";
+import MangroveReviews from "./Logic/Web/MangroveReviews";
+import ReviewElement from "./UI/Reviews/ReviewElement";
 import {UIEventSource} from "./Logic/UIEventSource";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import ReviewForm from "./UI/Reviews/ReviewForm";
+import Combine from "./UI/Base/Combine";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-const d = new UIEventSource("90");
-new Direction(d).AttachTo("maindiv")
-new VariableUiElement(d.map(d => "" + d + "°")).AttachTo("extradiv")
+const identity = '{"crv":"P-256","d":"6NHPmTFRedjNl-ZfLRAXhOaNKtRR9GYzPHsO1CzN5wQ","ext":true,"key_ops":["sign"],"kty":"EC","x":"Thm_pL5m0m9Jl41z9vgMTHNyja-9H58v0stJWT4KhTI","y":"PjBldCW85b8K6jEZbw0c2UZskpo-rrkwfPnD7s1MXSM","metadata":"Mangrove private key"}'
 
-UIEventSource.Chronic(25, () => {
-    const degr = (Number(d.data) + 1) % 360;
-    d.setData(""+ degr);
-    return true;
-})
+const mangroveReviews = new MangroveReviews(0, 0, "Null Island",
+    new UIEventSource<string>(identity), true)
 
+new ReviewElement(mangroveReviews.GetSubjectUri(), mangroveReviews.GetReviews()).AttachTo("maindiv");
+const form = new ReviewForm((r,done) => {
+    mangroveReviews.AddReview(r, done);
+});
+form.AttachTo("extradiv")
+
+form.GetValue().map(r => form.IsValid(r)).addCallback(d => console.log(d))
+
+/*
+window.setTimeout(
+    () => {
+mangroveReviews.AddReview({
+    comment: "These are liars - not even an island here!",
+    author: "Lost Tourist",
+    date: new Date(),
+    affiliated: false,
+    rating: 10
+}, (() => {alert("Review added");return undefined;}));
+        
+    }, 1000
+)
+
+window.setTimeout(
+    () => {
+        mangroveReviews.AddReview({
+            comment: "Excellent conditions to measure weather!!",
+            author: "Weather-Boy",
+            date: new Date(),
+            affiliated: true,
+            rating: 90
+        }, (() => {
+            alert("Review added");
+            return undefined;
+        }));
+
+    }, 1000
+)
+*/
 /*/
 
 

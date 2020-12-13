@@ -26,13 +26,20 @@ export default class TagRenderingConfig {
     mappings?: {
         if: TagsFilter,
         then: Translation
-        hideInAnswer: boolean
+        hideInAnswer: boolean | TagsFilter
     }[]
 
     constructor(json: string | TagRenderingConfigJson, context?: string) {
 
-        if(json === undefined){
-            throw "Initing a TagRenderingConfig with undefined in "+context;
+        if (json === "questions") {
+            // Very special value
+            this.render = null;
+            this.question = null;
+            this.condition = null;
+        }
+
+        if (json === undefined) {
+            throw "Initing a TagRenderingConfig with undefined in " + context;
         }
         if (typeof json === "string") {
             this.render = Translations.T(json);
@@ -62,10 +69,16 @@ export default class TagRenderingConfig {
                 if (mapping.then === undefined) {
                     throw "Invalid mapping: if without body"
                 }
+                let hideInAnswer : boolean | TagsFilter = false;
+                if (typeof mapping.hideInAnswer === "boolean") {
+                    hideInAnswer = mapping.hideInAnswer;
+                } else if (mapping.hideInAnswer !== undefined) {
+                    hideInAnswer = FromJSON.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
+                }
                 return {
-                    if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}]`),
+                    if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}].if`),
                     then: Translations.T(mapping.then),
-                    hideInAnswer: mapping.hideInAnswer ?? false
+                    hideInAnswer: hideInAnswer
                 };
             });
         }

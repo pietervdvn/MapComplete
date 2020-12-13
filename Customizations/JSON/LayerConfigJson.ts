@@ -57,8 +57,24 @@ export interface LayerConfigJson {
     /**
      * The icon for an element.
      * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
+     * 
+     * The result of the icon is rendered as follows:
+     * the resulting string is interpreted as a _list_ of items, seperated by ";". The bottommost layer is the first layer.
+     * As a result, on could use a generic pin, then overlay it with a specific icon.
+     * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
+     * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
      */
     icon?: string | TagRenderingConfigJson;
+
+    /**
+     * IconsOverlays are a list of extra icons/badges to overlay over the icon.
+     * The 'badge'-toggle changes their behaviour.
+     * If badge is set, it will be added as a 25% height icon at the bottom right of the icon, with all the badges in a flex layout.
+     * If badges is false, it'll be a simple overlay
+     * 
+     * Note: strings are interpreted as icons, so layering and substituting is supported
+     */
+    iconOverlays?: {if: string | AndOrTagConfigJson, then: string | TagRenderingConfigJson, badge?: boolean}[]
 
     /**
      * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ... 
@@ -110,7 +126,17 @@ export interface LayerConfigJson {
     passAllFeatures?:boolean
     
     /**
-     * Presets for this layer
+     * Presets for this layer.
+     * A preset shows up when clicking the map on a without data (or when right-clicking/long-pressing);
+     * it will prompt the user to add a new point.
+     * 
+     * The most important aspect are the tags, which define which tags the new point will have;
+     * The title is shown in the dialog, along with the first sentence of the description.
+     * 
+     * Upon confirmation, the full description is shown beneath the buttons - perfect to add pictures and examples.
+     * 
+     * Note: the icon of the preset is determined automatically based on the tags and the icon above. Don't worry about that!
+     * NB: if no presets are defined, the popup to add new points doesn't show up at all
      */
     presets?: {
         title: string | any,
@@ -127,6 +153,10 @@ export interface LayerConfigJson {
      * Note that we can also use a string here - where the string refers to a tagrenering defined in `assets/questions/questions.json`,
      * where a few very general questions are defined e.g. website, phone number, ...
      * 
+     * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
+     * 
      */
     tagRenderings?: (string | TagRenderingConfigJson) []
+    
+    
 }

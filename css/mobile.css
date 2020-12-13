@@ -10,10 +10,6 @@ Contains tweaks for small screens
 
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
 
-    .leaflet-control-attribution {
-        display: none;
-    }
-    
     .only-on-mobile {
         display: unset;
         background-color: var(--background-color);
@@ -94,6 +90,11 @@ Contains tweaks for small screens
         max-width: 100vw;
     }
 
+    .userbadge-login {
+        min-width: unset;
+        width: calc(100vw - 5px);
+    }
+
     #topleft-tools {
         padding: 0.2em !important;
         padding-top: 0.3em !important;
@@ -103,3 +104,5 @@ Contains tweaks for small screens
         margin-bottom: 0.3em;
     }
 }
+
+

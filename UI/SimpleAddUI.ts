@@ -9,6 +9,7 @@ import State from "../State";
 
 import {UIEventSource} from "../Logic/UIEventSource";
 import Svg from "../Svg";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -21,12 +22,13 @@ export class SimpleAddUI extends UIElement {
     private _confirmPreset: UIEventSource<{
         description: string | UIElement,
         name: string | UIElement,
-        icon: string,
+        icon: UIElement,
         tags: Tag[],
         layerToAddTo: FilteredLayer
     }>
         = new UIEventSource(undefined);
     private confirmButton: UIElement = undefined;
+    private _confirmDescription: UIElement = undefined;
     private openLayerControl: UIElement;
     private cancelButton: UIElement;
     private goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(), 
@@ -52,8 +54,8 @@ export class SimpleAddUI extends UIElement {
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
-                let icon: string = layer.layerDef.icon.GetRenderValue(
-                    TagUtils.KVtoProperties(preset.tags ?? [])).txt
+                const tags = TagUtils.KVtoProperties(preset.tags ?? []);
+                let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.Render()).SetClass("simple-add-ui-icon");
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";
@@ -68,7 +70,7 @@ export class SimpleAddUI extends UIElement {
                             "<b>",
                             preset.title,
                             "</b>",
-                            preset.description !== undefined ? new Combine(["<br/>", preset.description]) : "",
+                            preset.description !== undefined ? new Combine(["<br/>", preset.description.FirstSentence()]) : "",
                             tagInfo
                         ])
                     ).onClick(
@@ -77,9 +79,9 @@ export class SimpleAddUI extends UIElement {
                                 new Combine([
                                     "<b>",
                                     Translations.t.general.add.confirmButton.Subs({category: preset.title}),
-                                    "</b><br/>",
-                                    preset.description !== undefined ? preset.description : ""]));
+                                    "</b>"]));
                             self.confirmButton.onClick(self.CreatePoint(preset.tags, layer));
+                            self._confirmDescription = preset.description;
                             self._confirmPreset.setData({
                                 tags: preset.tags,
                                 layerToAddTo: layer,
@@ -147,6 +149,7 @@ export class SimpleAddUI extends UIElement {
                 userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
                 this.confirmButton,
                 this.cancelButton,
+                this._confirmDescription,
                 tagInfo
 
             ]).Render();
@@ -189,7 +192,7 @@ export class SimpleAddUI extends UIElement {
         }
 
         if (State.state.locationControl.data.zoom < State.userJourney.minZoomLevelToAddNewPoints) {
-            return new Combine([header, Translations.t.general.add.zoomInFurther]).Render()
+            return new Combine([header, Translations.t.general.add.zoomInFurther.SetClass("alert")]).Render()
         }
 
         if (State.state.layerUpdater.runningQuery.data) {

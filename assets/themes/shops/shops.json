@@ -31,7 +31,7 @@
         "en": "Shop",
         "fr": "Magasin"
       },
-      "minzoom": 14,
+      "minzoom": 16,
       "overpassTags": {
         "and": [
           "shop~*"
@@ -73,6 +73,16 @@
       },
       "tagRenderings": [
         "images",
+        {
+          "question": {
+            "en": "What is the name of this shop?",
+            "fr": "Qu'est-ce que le nom de ce magasin?"
+          },
+          "render": "This shop is called <i>{name}</i>",
+          "freeform": {
+            "key": "name"
+          }
+        },
         {
           "render": {
             "en": "This shop sells {shop}",
@@ -220,12 +230,21 @@
             "key": "opening_hours",
             "type": "opening_hours"
           }
-        }
+        },
+        "questions",
+        "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/shops/shop.svg"
       },
+      "iconOverlays": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen",
+          "badge": true
+        }
+      ],
       "width": {
         "render": "8"
       },

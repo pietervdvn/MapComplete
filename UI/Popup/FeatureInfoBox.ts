@@ -6,6 +6,7 @@ import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class FeatureInfoBox extends UIElement {
     private _tags: UIEventSource<any>;
@@ -34,10 +35,25 @@ export class FeatureInfoBox extends UIElement {
         this._titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
-        this._renderings = layerConfig.tagRenderings.map(tr => new EditableTagRendering(tags, tr));
+        
+        let questionBox : UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {
-            this._questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
+            questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
+        
+        let questionBoxIsUsed = false;
+        this._renderings = layerConfig.tagRenderings.map(tr => {
+            if(tr.question === null){
+                questionBoxIsUsed = true;
+                // This is the question box!
+                return questionBox;
+            }
+            return new EditableTagRendering(tags, tr);
+        });
+        this._renderings[0]?.SetClass("first-rendering");
+       if(!questionBoxIsUsed){
+           this._renderings.push(questionBox);
+       }
     }
 
     InnerRender(): string {
@@ -46,7 +62,8 @@ export class FeatureInfoBox extends UIElement {
                 .SetClass("featureinfobox-titlebar"),
             new Combine([
                     ...this._renderings,
-                    this._questionBox
+                    this._questionBox,
+                    new FixedUiElement("").SetClass("featureinfobox-tail")
                 ]
             ).SetClass("featureinfobox-content"),
         ]).SetClass("featureinfobox")

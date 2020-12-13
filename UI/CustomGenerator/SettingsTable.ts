@@ -13,7 +13,7 @@ export default class SettingsTable extends UIElement {
     public selectedSetting: UIEventSource<SingleSetting<any>>;
 
     constructor(elements: (SingleSetting<any> | string)[],
-                currentSelectedSetting: UIEventSource<SingleSetting<any>>) {
+                currentSelectedSetting?: UIEventSource<SingleSetting<any>>) {
         super(undefined);
         const self = this;
         this.selectedSetting = currentSelectedSetting ?? new UIEventSource<SingleSetting<any>>(undefined);

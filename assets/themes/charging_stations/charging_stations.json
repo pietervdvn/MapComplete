@@ -13,7 +13,7 @@
     "en"
   ],
   "maintainer": "",
-  "icon": "./assets/themes/charging_stations/charging_station.svg",
+  "icon": "./assets/themes/charging_stations/logo.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
@@ -44,14 +44,56 @@
         "images",
         {
           "#": "Type",
+          "question": "Is this charging station meant for cars or bicycles?",
           "mappings": [
             {
-              "if": "bicycle=yes",
-              "then": "This is a charging station for <b>bicycles</b>"
+              "if": {
+                "and": [
+                  "motorcar=yes",
+                  "bicycle=yes"
+                ]
+              },
+              "then": "This is a charging station for <b>both bicycles and cars</b>"
             },
             {
-              "if": "motorcar=yes",
-              "then": "This is a charging station for <b>electric vehicles</b>"
+              "if": {
+                "and": [
+                  "motorcar=",
+                  "car=",
+                  "bicycle=yes"
+                ]
+              },
+              "then": "This is a charging station exclusively for <b>bicycles</b>"
+            },
+            {
+              "if": {
+                "and": [
+                  "motorcar=yes",
+                  "car=",
+                  "bicycle="
+                ]
+              },
+              "then": "This is a charging station exclusively for <b>electric cars and similar vehicles</b>"
+            },
+            {
+              "if": {
+                "and": [
+                  "car=yes",
+                  "bicycle="
+                ]
+              },
+              "then": "This is a charging station exclusively for <b>electric cars</b>",
+              "hideInAnswer": true
+            },
+            {
+              "if": {
+                "and": [
+                  "car=yes",
+                  "bicycle=yes"
+                ]
+              },
+              "then": "This is a charging station for <b>both electric cars and bicycles</b>",
+              "hideInAnswer": true
             }
           ]
         },
@@ -189,13 +231,45 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/charging_stations/charging_station.svg"
+        "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
+        "mappings": [
+          {
+            "if": "bicycle=yes",
+            "then": "pin:#fff;./assets/themes/charging_stations/bicycle.svg"
+          },
+          {
+            "if": {
+              "or": [
+                "car=yes",
+                "motorcar=yes"
+              ]
+            },
+            "then": "pin:#fff;./assets/themes/charging_stations/car.svg"
+          }
+        ]
       },
+      "iconOverlays": [
+        {
+          "if": {
+            "and": [
+              "bicycle=yes",
+              {
+                "or": [
+                  "motorcar=yes",
+                  "car=yes"
+                ]
+              }
+            ]
+          },
+          "then": "circle:#fff;./assets/themes/charging_stations/car.svg",
+          "badge": true
+        }
+      ],
       "width": {
         "render": "8"
       },
       "iconSize": {
-        "render": "40,40,center"
+        "render": "50,50,bottom"
       },
       "color": {
         "render": "#00f"

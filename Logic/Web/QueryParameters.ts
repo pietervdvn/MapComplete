@@ -27,7 +27,6 @@ export class QueryParameters {
         this.initialized = true;
        
         if (window?.location?.search) {
-            console.log("Window.location.search is",window.location.search)
             const params = window.location.search.substr(1).split("&");
             for (const param of params) {
                 const kv = param.split("=");
@@ -51,7 +50,12 @@ export class QueryParameters {
             if (QueryParameters.knownSources[key].data === undefined) {
                 continue;
             }
-            
+
+            if (QueryParameters.knownSources[key].data === "undefined") {
+                continue;
+            }
+
+
             if (QueryParameters.knownSources[key].data == QueryParameters.defaults[key]) {
                 continue;
             }

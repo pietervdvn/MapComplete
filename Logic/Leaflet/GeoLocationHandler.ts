@@ -103,18 +103,15 @@ export class GeoLocationHandler extends UIElement {
     }
 
     
-    private StartGeolocating() {
+    private StartGeolocating(zoomlevel = 19) {
         const self = this;
         const map = State.state.bm.map;
         if (self._permission.data === "denied") {
             return "";
         }
         if (State.state.currentGPSLocation.data !== undefined) {
-            State.state.bm.map.flyTo(
-                State.state.currentGPSLocation.data.latlng, 16,
-                {
-                    duration: 0.25,
-                }
+            State.state.bm.map.setView(
+                State.state.currentGPSLocation.data.latlng, zoomlevel
             );
         }
 
@@ -148,8 +145,15 @@ export class GeoLocationHandler extends UIElement {
 
         const self = this;
         htmlElement.onclick = function () {
-            self.StartGeolocating();
+            self.StartGeolocating(19);
         }
+
+        htmlElement.oncontextmenu = function (e) {
+            self.StartGeolocating(15);
+            e.preventDefault();
+            return false;
+        }
+
     }
 
 }

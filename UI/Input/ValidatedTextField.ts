@@ -14,8 +14,8 @@ import DirectionInput from "./DirectionInput";
 interface TextFieldDef {
     name: string,
     explanation: string,
-    isValid: ((s: string, country?: string) => boolean),
-    reformat?: ((s: string, country?: string) => string),
+    isValid: ((s: string, country?:() => string) => boolean),
+    reformat?: ((s: string, country?: () => string) => string),
     inputHelper?: (value: UIEventSource<string>, options?: {
         location: [number, number]
     }) => InputElement<string>,
@@ -26,8 +26,8 @@ export default class ValidatedTextField {
 
     private static tp(name: string,
                       explanation: string,
-                      isValid?: ((s: string, country?: string) => boolean),
-                      reformat?: ((s: string, country?: string) => string),
+                      isValid?: ((s: string, country?: () => string) => boolean),
+                      reformat?: ((s: string, country?: () => string) => string),
                       inputHelper?: (value: UIEventSource<string>, options?:{
                           location: [number, number]
                       }) => InputElement<string>): TextFieldDef {
@@ -154,13 +154,13 @@ export default class ValidatedTextField {
         ValidatedTextField.tp(
             "phone",
             "A phone number",
-            (str, country: any) => {
+            (str, country: () => string) => {
                 if (str === undefined) {
                     return false;
                 }
-                return parsePhoneNumberFromString(str, country?.toUpperCase())?.isValid() ?? false
+                return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
-            (str, country: any) => parsePhoneNumberFromString(str, country?.toUpperCase()).formatInternational()
+            (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational()
         ),
         ValidatedTextField.tp(
             "opening_hours",
@@ -200,8 +200,8 @@ export default class ValidatedTextField {
         value?: UIEventSource<string>,
         textArea?: boolean,
         textAreaRows?: number,
-        isValid?: ((s: string, country: string) => boolean),
-        country?: string,
+        isValid?: ((s: string, country: () => string) => boolean),
+        country?: () => string,
         location?: [number /*lat*/, number /*lon*/]
     }): InputElement<string> {
         options = options ?? {};
@@ -304,7 +304,7 @@ export default class ValidatedTextField {
         textArea?: boolean,
         textAreaRows?: number,
         isValid?: ((string: string) => boolean),
-        country?: string
+        country?: () => string
     }): InputElement<T> {
         let textField: InputElement<string>;
         if (options?.type) {

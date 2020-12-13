@@ -42,10 +42,14 @@ export class ElementStorage {
         }
     }
 
-    getElement(elementId): UIEventSource<any> {
+    getEventSourceById(elementId): UIEventSource<any> {
         if (elementId in this._elements) {
             return this._elements[elementId];
         }
-        console.log("Can not find eventsource with id ", elementId);
+        console.error("Can not find eventsource with id ", elementId);
+    }
+
+    getEventSourceFor(feature): UIEventSource<any> {
+        return this.getEventSourceById(feature.properties.id);
     }
 }

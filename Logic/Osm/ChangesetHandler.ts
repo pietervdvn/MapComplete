@@ -181,7 +181,7 @@ export class ChangesetHandler {
                     continue;
                 }
                 console.log("Rewriting id: ", oldId, "-->", newId);
-                const element = allElements.getElement("node/" + oldId);
+                const element = allElements.getEventSourceById("node/" + oldId);
                 element.data.id = "node/" + newId;
                 allElements.addElementById("node/" + newId, element);
                 element.ping();

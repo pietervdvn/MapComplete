@@ -12,6 +12,9 @@ import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
+import {UIElement} from "../../UI/UIElement";
 
 export default class LayerConfig {
 
@@ -33,6 +36,7 @@ export default class LayerConfig {
     titleIcons: TagRenderingConfig[];
 
     icon: TagRenderingConfig;
+    iconOverlays: { if: TagsFilter, then: TagRenderingConfig, badge: boolean }[]
     iconSize: TagRenderingConfig;
     rotation: TagRenderingConfig;
     color: TagRenderingConfig;
@@ -89,6 +93,12 @@ export default class LayerConfig {
             return tagRenderings.map(
                 (renderingJson, i) => {
                     if (typeof renderingJson === "string") {
+                        
+                        if(renderingJson === "questions"){
+                            return new TagRenderingConfig("questions")
+                        }
+                        
+                        
                         const shared = SharedTagRenderings.SharedTagRendering[renderingJson];
                         if (shared !== undefined) {
                             return shared;
@@ -100,8 +110,20 @@ export default class LayerConfig {
         }
 
         this.tagRenderings = trs(json.tagRenderings).concat(roamingRenderings);
-        this.titleIcons = trs(json.titleIcons ?? ["phonelink","wikipedialink","osmlink", "sharelink"]);
-        
+
+
+        const titleIcons = [];
+        const defaultIcons = ["phonelink", "emaillink", "wikipedialink", "osmlink", "sharelink"];
+        for (const icon of (json.titleIcons ?? defaultIcons)) {
+            if (icon === "defaults") {
+                titleIcons.push(...defaultIcons);
+            } else {
+                titleIcons.push(icon);
+            }
+        }
+
+        this.titleIcons = trs(titleIcons);
+
 
         function tr(key, deflt) {
             const v = json[key];
@@ -124,6 +146,18 @@ export default class LayerConfig {
 
         this.title = tr("title", undefined);
         this.icon = tr("icon", Img.AsData(Svg.bug));
+        this.iconOverlays = (json.iconOverlays ?? []).map(overlay => {
+            let tr = new TagRenderingConfig(overlay.then);
+            if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
+                tr = SharedTagRenderings.SharedIcons[overlay.then];
+            }
+            return {
+                if: FromJSON.Tag(overlay.if),
+                then: tr,
+                badge: overlay.badge ?? false
+            }
+        });
+
         const iconPath = this.icon.GetRenderValue({id: "node/-1"}).txt;
         if (iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length);
@@ -141,7 +175,7 @@ export default class LayerConfig {
     }
 
 
-    public GenerateLeafletStyle(tags: any, clickable: boolean):
+    public GenerateLeafletStyle(tags: UIEventSource<any>, clickable: boolean):
         {
             color: string;
             icon: {
@@ -149,8 +183,7 @@ export default class LayerConfig {
                 popupAnchor: [number, number];
                 iconAnchor: [number, number];
                 iconSize: [number, number];
-                html: string;
-                rotation: string;
+                html: UIElement;
                 className?: string;
             };
             weight: number; dashArray: number[]
@@ -174,11 +207,10 @@ export default class LayerConfig {
         }
 
         function render(tr: TagRenderingConfig, deflt?: string) {
-            const str = (tr?.GetRenderValue(tags)?.txt ?? deflt);
-            return SubstitutedTranslation.SubstituteKeys(str, tags);
+            const str = (tr?.GetRenderValue(tags.data)?.txt ?? deflt);
+            return SubstitutedTranslation.SubstituteKeys(str, tags.data);
         }
 
-        const iconUrl = render(this.icon);
         const iconSize = render(this.iconSize, "40,40,center").split(",");
         const dashArray = render(this.dashArray).split(" ").map(Number);
         let color = render(this.color, "#00f");
@@ -188,8 +220,6 @@ export default class LayerConfig {
         }
 
         const weight = rendernum(this.width, 5);
-        const rotation = render(this.rotation, "0deg");
-
 
         const iconW = num(iconSize[0]);
         const iconH = num(iconSize[1]);
@@ -211,24 +241,84 @@ export default class LayerConfig {
             anchorH = iconH;
         }
 
-        
-        let html = `<img src="${iconUrl}" style="width:100%;height:100%;rotate:${rotation};display:block;" />`;
-        
-        if (iconUrl.startsWith(Utils.assets_path)) {
-            const key = iconUrl.substr(Utils.assets_path.length);
-            html = new Combine([
-                (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
-            ]).SetStyle(`width:100%;height:100%;rotate:${rotation};display:block;`).Render();
-        }
+        const iconUrlStatic = render(this.icon);
+        const self = this;
+        var mappedHtml = tags.map(tgs => {
+            // What do you mean, 'tgs' is never read?
+            // It is read implicitly in the 'render' method
+            const iconUrl = render(self.icon);
+            const rotation = render(self.rotation, "0deg");
+
+            let htmlParts: UIElement[] = [];
+            let sourceParts = iconUrl.split(";");
+
+            function genHtmlFromString(sourcePart: string): UIElement {
+                const style = `width:100%;height:100%;rotate:${rotation};display:block;position: absolute; top: 0, left: 0`;
+                let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
+                const match = sourcePart.match(/([a-zA-Z0-9_]*):#([0-9a-fA-F]{3,6})/)
+                if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+                    html = new Combine([
+                        (Svg.All[match[1] + ".svg"] as string)
+                            .replace(/#000000/g, "#" + match[2])
+                    ]).SetStyle(style);
+                }
+
+                if (sourcePart.startsWith(Utils.assets_path)) {
+                    const key = sourcePart.substr(Utils.assets_path.length);
+                    html = new Combine([
+                        (Svg.All[key] as string).replace(/stop-color:#000000/g, 'stop-color:' + color)
+                    ]).SetStyle(style);
+                }
+                return html;
+            }
+
+
+            for (const sourcePart of sourceParts) {
+                htmlParts.push(genHtmlFromString(sourcePart))
+            }
+
+
+            let badges = [];
+            for (const iconOverlay of self.iconOverlays) {
+                if (!iconOverlay.if.matchesProperties(tgs)) {
+                    continue;
+                }
+                if (iconOverlay.badge) {
+                    const badgeParts: UIElement[] = [];
+                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";");
+
+                    for (const badgePartStr of partDefs) {
+                        badgeParts.push(genHtmlFromString(badgePartStr))
+                    }
+
+                    const badgeCompound = new Combine(badgeParts)
+                        .SetStyle("display:flex;position:relative;width:100%;height:100%;");
+
+                    badges.push(badgeCompound)
+
+                } else {
+                    htmlParts.push(genHtmlFromString(
+                        iconOverlay.then.GetRenderValue(tgs).txt));
+                }
+            }
+
+            if (badges.length > 0) {
+                const badgesComponent = new Combine(badges)
+                    .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;");
+                htmlParts.push(badgesComponent)
+            }
+            return new Combine(htmlParts).Render();
+        })
+
+
         return {
             icon:
                 {
-                    html: html,
+                    html: new VariableUiElement(mappedHtml),
                     iconSize: [iconW, iconH],
                     iconAnchor: [anchorW, anchorH],
                     popupAnchor: [0, 3 - anchorH],
-                    rotation: rotation,
-                    iconUrl: iconUrl,
+                    iconUrl: iconUrlStatic,
                     className: clickable ? "leaflet-div-icon" : "leaflet-div-icon unclickable"
                 },
             color: color,

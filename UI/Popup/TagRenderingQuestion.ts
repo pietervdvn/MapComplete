@@ -64,7 +64,7 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue())
+        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state.osmConnection)
             .onClick(save)
 
 
@@ -198,9 +198,12 @@ export default class TagRenderingQuestion extends UIElement {
     private GenerateMappingElement(mapping: {
         if: TagsFilter,
         then: Translation,
-        hideInAnswer: boolean
+        hideInAnswer: boolean | TagsFilter
     }): InputElement<TagsFilter> {
-        if (mapping.hideInAnswer) {
+        if (mapping.hideInAnswer === true) {
+            return undefined;
+        }
+        if(typeof(mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matches(this._tags.data)){
             return undefined;
         }
         return new FixedInputElement(
@@ -251,7 +254,7 @@ export default class TagRenderingQuestion extends UIElement {
 
         const textField = ValidatedTextField.InputForType(this._configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
-            country: this._tags.data._country,
+            country: () => this._tags.data._country,
             location: [this._tags.data._lat, this._tags.data._lon]
         });
 

@@ -5,6 +5,7 @@ import State from "../State";
 import Translations from "./i18n/Translations";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class LayerSelection extends UIElement {
 
@@ -15,15 +16,15 @@ export class LayerSelection extends UIElement {
         this._checkboxes = [];
 
         for (const layer of State.state.filteredLayers.data) {
-            let iconUrl = "./asets/checkbox.svg";
-            if (layer.layerDef.icon ) {
-                iconUrl = layer.layerDef.icon.GetRenderValue({id:"node/-1"}).txt;
-            }
-            const icon = new FixedUiElement(`<img style="height:2em;max-width: 2em;" src="${iconUrl}">`);
+            const leafletStyle = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>({id: "node/-1"}), true)
+            const leafletHtml = leafletStyle.icon.html;
+            const icon =
+                new FixedUiElement(leafletHtml.Render())
+                    .SetClass("single-layer-selection-toggle")
+            let iconUnselected: UIElement = new FixedUiElement(leafletHtml.Render()) 
+                .SetClass("single-layer-selection-toggle")
+                .SetStyle("opacity:0.2;");
 
-            let iconUnselected: UIElement;
-                iconUnselected = new FixedUiElement(`<img style="height:2em;max-width: 2em; opacity:0.2;" src="${iconUrl}">`);
-            
             const name = Translations.WT(layer.layerDef.name).Clone()
                 .SetStyle("font-size:large;margin-left: 0.5em;");
 

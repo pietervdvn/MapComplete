@@ -22,7 +22,9 @@ export default class QuestionBox extends UIElement {
         this.ListenTo(this._skippedQuestions);
         this._tags = tags;
         const self = this;
-        this._tagRenderings = tagRenderings.filter(tr => tr.question !== undefined);
+        this._tagRenderings = tagRenderings
+            .filter(tr => tr.question !== undefined)
+            .filter(tr => tr.question !== null);
         this._tagRenderingQuestions = this._tagRenderings
             .map((tagRendering, i) => new TagRenderingQuestion(this._tags, tagRendering,
                 () => {

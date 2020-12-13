@@ -169,5 +169,14 @@ export class Utils {
     }
 
 
+    static MatchKeys(object: any, prototype: any, context?: string){
+
+        for (const objectKey in object) {
+            if(prototype[objectKey] === undefined){
+                console.error("Key ", objectKey, "might be not supported (in context",context,")")
+            }   
+        }
+        
+    }
 
 }

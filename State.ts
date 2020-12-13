@@ -13,6 +13,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {BaseLayer} from "./Logic/BaseLayer";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
+import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -23,7 +24,7 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    public static vNumber = "0.2.2a";
+    public static vNumber = "0.2.5b";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -64,13 +65,15 @@ export default class State {
      */
     public osmConnection: OsmConnection;
 
+    public mangroveIdentity: MangroveIdentity;
+
     public favouriteLayers: UIEventSource<string[]>;
 
     public layerUpdater: UpdateFromOverpass;
 
 
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
-    
+
     /**
      *  The message that should be shown at the center of the screen
      */
@@ -207,6 +210,10 @@ export default class State {
                 "Used to complete the login"),
             layoutToUse.id,
             true
+        );
+
+        this.mangroveIdentity = new MangroveIdentity(
+            this.osmConnection.GetLongPreference("identity", "mangrove")
         );
 
 

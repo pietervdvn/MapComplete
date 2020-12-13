@@ -1,6 +1,8 @@
 :root {
     --subtle-detail-color: #e5f5ff;
     --subtle-detail-color-contrast: black;
+    --subtle-detail-color-light-contrast: lightgrey;
+    
     --catch-detail-color: #3a3aeb;
     --catch-detail-color-contrast: white;
     --alert-color: #fee4d1;
@@ -94,6 +96,40 @@ a {
     border-radius: 1em;
     cursor: pointer;
     box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.single-layer-selection-toggle{
+    position: relative;
+    width:  2em;
+    height: 2em;
+}
+.single-layer-selection-toggle img{
+    max-height: 2em !important;
+    max-width:  2em !important;
+}
+
+.single-layer-selection-toggle svg{
+    max-height:2em !important;
+    max-width: 2em !important;
+}
+
+.simple-add-ui-icon{
+    position: relative;
+    display: block;
+    width:  3.5em;
+    height: 3.5em;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+}
+
+.simple-add-ui-icon img{
+    max-height:3.5em !important;
+    max-width: 3.5em !important;
+}
+
+.simple-add-ui-icon svg{
+    max-height:3.5em !important;
+    max-width: 3.5em !important;
 }
 
 .layer-selection-toggle {
@@ -521,16 +557,16 @@ a {
     width: 1.5em;
     padding: 0.5em;
     padding-left: 0.4em;
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 .share-button svg path{
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 .share-button svg circle{
-    fill: var(--subtle-detail-color-contrast);
-    stroke: var(--subtle-detail-color-contrast);
+    fill: var(--subtle-detail-color-contrast) !important;
+    stroke: var(--subtle-detail-color-contrast) !important;
 }

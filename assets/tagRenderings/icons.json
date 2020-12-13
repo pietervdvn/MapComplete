@@ -1,4 +1,60 @@
 {
+  "wikipedialink": {
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
+    "condition": "wikipedia~*",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "wikipedia=",
+            "wikidata~*"
+          ]
+        },
+        "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+      }
+    ]
+  },
+  "isOpen": {
+    "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+    "mappings": [
+      {
+        "if": "_isOpen=yes",
+        "then": "clock:#0f0;ring:#0f0"
+      },
+      {
+        "if": "_isOpen=no",
+        "then": "circle:#f00;clock:#fff"
+      },
+      {
+        "#": "Still loading the country",
+        "if": {
+          "and": [
+            "_isOpen=",
+            "opening_hours~*"
+          ]
+        },
+        "then": "clock:#ff0;ring:#ff0"
+      },
+      {
+        "#": "Still loading the country",
+        "if": {
+          "and": [
+            "_isOpen=parse_error",
+            "opening_hours~*"
+          ]
+        },
+        "then": "circle:#f0f;clock:#fff"
+      }
+    ]
+  },
+  "phonelink": {
+    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
+    "condition": "phone~*"
+  },
+  "emaillink": {
+    "render": "<a href='mailto:{email}'><img src='./assets/svg/send_email.svg'/></a>",
+    "condition": "email~*"
+  },
   "osmlink": {
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
     "mappings": [
@@ -7,14 +63,6 @@
         "then": "<span class='alert'>Uploading...</alert>"
       }
     ]
-  },
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*"
-  },
-  "phonelink": {
-    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
-    "condition": "phone~*"
   },
   "sharelink": {
     "render": "{share_link()}"
