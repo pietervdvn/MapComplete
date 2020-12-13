@@ -250,7 +250,7 @@
     {
       "#": "Access",
       "question": {
-        "en": "Who can use this bicycle?",
+        "en": "Who can use this bicycle parking?",
         "nl": "Wie mag er deze fietsenstalling gebruiken?"
       },
       "render": {
