@@ -86,11 +86,11 @@ function generateWikiEntry(layout: LayoutConfig){
         auth=`Yes, by ${layout.maintainer};`
     }
     return `{{service_item
-|name= [https://kletterspots.de/${layout.id}.html ${layout.id}]
+|name= [https://mapcomplete.osm.be/${layout.id}.html ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
 |descr= A MapComplete theme: ${Translations.W(layout.description).InnerRender()}
-|material= {{yes|[https://kletterspots.de/ ${auth}]}}
+|material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ${layout.id}
 }}`
