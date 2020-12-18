@@ -17,7 +17,6 @@ export default class InstalledThemes {
     static InstalledThemes(osmConnection: OsmConnection) : UIEventSource<{ layout: LayoutConfig; definition: string }[]>{
        return osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
-            console.log("Updating the installed themes")
             if (allPreferences === undefined) {
                 console.log("All prefs is undefined");
                 return installedThemes;
@@ -25,7 +24,6 @@ export default class InstalledThemes {
             const invalidThemes = []
             for (var allPreferencesKey in allPreferences) {
                 const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
-                console.log("Preference key match:",themename," for key ",allPreferencesKey);
                 if (themename && themename[1] !== "") {
                     const customLayout = osmConnection.GetLongPreference("installed-theme-" + themename[1]);
                     if (customLayout.data === undefined) {
@@ -34,6 +32,7 @@ export default class InstalledThemes {
                     }
                     try {
                         var json = atob(customLayout.data);
+                        console.log("Found a theme:",json);
                         const layout = new LayoutConfig(
                             JSON.parse(json));
                         installedThemes.push({
