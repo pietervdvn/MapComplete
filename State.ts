@@ -14,6 +14,7 @@ import {BaseLayer} from "./Logic/BaseLayer";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
+import InstalledThemes from "./Logic/InstalledThemes";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -233,47 +234,7 @@ export default class State {
         })
 
 
-        this.installedThemes = this.osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
-            const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
-            if (allPreferences === undefined) {
-                return installedThemes;
-            }
-            const invalidThemes = []
-            for (const allPreferencesKey in allPreferences) {
-                const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
-                if (themename && themename[1] !== "") {
-                    const customLayout = self.osmConnection.GetLongPreference("installed-theme-" + themename[1]);
-                    if (customLayout.data === undefined) {
-                        console.log("No data defined for ", themename[1]);
-                        continue;
-                    }
-                    try {
-                        const json = btoa(customLayout.data);
-                        console.log(json);
-                        const layout = new LayoutConfig(
-                            JSON.parse(json));
-                        installedThemes.push({
-                            layout: layout,
-                            definition: customLayout.data
-                        });
-                    } catch (e) {
-                        console.warn("Could not parse custom layout from preferences - deleting: ", allPreferencesKey, e, customLayout.data);
-                        invalidThemes.push(themename[1])
-                    }
-                }
-            }
-
-            for (const invalid of invalidThemes) {
-                console.error("Attempting to remove ", invalid)
-                this.osmConnection.GetLongPreference(
-                    "installed-theme-" + invalid
-                ).setData(null);
-            }
-
-            return installedThemes;
-
-        });
-
+        this.installedThemes = InstalledThemes.InstalledThemes(this.osmConnection );
 
         // IMportant: the favourite layers are initiliazed _after_ the installed themes, as these might contain an installedTheme
         this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
