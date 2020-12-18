@@ -62,8 +62,8 @@ export class AllKnownLayouts {
         new LayoutConfig(widths),
         new LayoutConfig(buurtnatuur),
         new LayoutConfig(bike_monitoring_stations),
-        new LayoutConfig(surveillance_cameras)
-        new LayoutConfig(climbing),
+        new LayoutConfig(surveillance_cameras),
+        new LayoutConfig(climbing)
     ];
 
 

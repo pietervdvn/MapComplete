@@ -101,11 +101,13 @@
 
 .review-form-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 
 .review-form-rating {
+    display: block ruby;
 }
 
 .review-form .save {

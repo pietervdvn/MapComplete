@@ -48,7 +48,7 @@ export default class ReviewForm extends InputElement<Review> {
 
         this._postingAs =
             new Combine([t.posting_as, new VariableUiElement(userDetails.map((ud: UserDetails) => ud.name)).SetClass("review-author")])
-                .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-right: 0.5;")
+                .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-left: auto;")
         this._saveButton =
             new SaveButton(this._value.map(r => self.IsValid(r)), undefined)
                 .onClick(() => {
@@ -58,7 +58,7 @@ export default class ReviewForm extends InputElement<Review> {
                     });
                 })
 
-        this._isAffiliated = new CheckBoxes([t.i_am_affiliated]).SetStyle(" display:inline-block;")
+        this._isAffiliated = new CheckBoxes([t.i_am_affiliated])
 
         this._comment = comment;
         const stars = []

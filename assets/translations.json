@@ -963,8 +963,8 @@
       "nl": "Ingelogd als"
     },
     "i_am_affiliated": {
-      "en": "<div'><span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span></div>",
-      "nl": "<div style='display:inline-block;max-width: 40%;'><span>I am affiliated with this object</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span></div>"
+      "en": "<span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span>",
+      "nl": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>"
     },
     "affiliated_reviewer_warning": {
       "en": "(Affiliated review)",
