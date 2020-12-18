@@ -55,7 +55,10 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {
-    defaultLayout = path.substr(0, path.length - 5);
+    defaultLayout = path;
+    if(path.endsWith(".html")){
+        defaultLayout = path.substr(0, path.length - 5);
+    }
     console.log("Using layout", defaultLayout);
 }
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout,"The layout to load into MapComplete").data;
