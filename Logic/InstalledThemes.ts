@@ -17,8 +17,7 @@ export default class InstalledThemes {
     static InstalledThemes(osmConnection: OsmConnection) : UIEventSource<{ layout: LayoutConfig; definition: string }[]>{
        return osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
-            console.log("UPdating the installed themes")
-            console.log("All preferences are ",allPreferences)
+            console.log("Updating the installed themes")
             if (allPreferences === undefined) {
                 console.log("All prefs is undefined");
                 return installedThemes;
@@ -35,7 +34,6 @@ export default class InstalledThemes {
                     }
                     try {
                         var json = atob(customLayout.data);
-                        console.log(json);
                         const layout = new LayoutConfig(
                             JSON.parse(json));
                         installedThemes.push({
