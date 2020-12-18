@@ -149,7 +149,7 @@
       "name": {
         "de": "Kletterhallen",
         "en": "Climbing gyms",
-        "nl": "Klimzaal"
+        "nl": "Klimzalen"
       },
       "minzoom": 10,
       "overpassTags": {
@@ -180,7 +180,9 @@
         "en": "A climbing gym"
       },
       "tagRenderings": [
-        {
+        "images",
+        "questions",
+        {"#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -198,7 +200,8 @@
         "website",
         "phone",
         "email",
-        "opening_hours"
+        "opening_hours",
+        "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -321,7 +324,7 @@
     {
       "id": "climbing",
       "name": {
-        "nl": "Klimgelegenheiden",
+        "nl": "Klimgelegenheden",
         "de": "Klettermöglichkeiten",
         "en": "Climbing opportunities"
       },
@@ -348,7 +351,9 @@
         "en": "A climbing opportunity"
       },
       "tagRenderings": [
-        {
+        "images",
+        "questions",
+        {"#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -377,7 +382,8 @@
               }
             }
           ]
-        }
+        },
+        "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {

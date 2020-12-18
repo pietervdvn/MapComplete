@@ -89,7 +89,11 @@ function generateWikiEntry(layout: LayoutConfig){
 |name= [https://mapcomplete.osm.be/${layout.id}.html ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
-|descr= A MapComplete theme: ${Translations.W(layout.description).InnerRender()}
+|descr= A MapComplete theme: ${Translations.W(layout.description)
+        .InnerRender()
+        .replace("<a href='", "[[")
+        .replace(/'>.*<\/a>/, "]]")
+    }
 |material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ${layout.id}
