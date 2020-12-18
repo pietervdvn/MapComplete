@@ -100,6 +100,7 @@ export class MoreScreen extends UIElement {
 
 
         const customThemesNames = State.state.installedThemes.data ?? [];
+        
         if (customThemesNames.length > 0) {
             els.push(Translations.t.general.customThemeIntro)
 
