@@ -9,7 +9,11 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 export interface LayoutConfigJson {
     /**
      * The id of this layout.
-     * This should be a simple, lowercase string which is used to create the html-page, e.g.
+     * 
+     * This is used as hashtag in the changeset message, which will read something like "Adding data with #mapcomplete for theme #<the theme id>"
+     * Make sure it is something decent and descriptive, it should be a simple, lowercase string.
+     * 
+     * On official themes, it'll become the name of the page, e.g.
      * 'cyclestreets' which become 'cyclestreets.html'
      */
     id: string;
@@ -39,7 +43,8 @@ export interface LayoutConfigJson {
     title: string | any;
 
     /**
-     * A short description, showed as social description and in the 'more theme'-buttons
+     * A short description, showed as social description and in the 'more theme'-buttons.
+     * Note that if this one is not defined, the first sentence of 'description' is used
      */
     shortDescription?: string | any;
     
