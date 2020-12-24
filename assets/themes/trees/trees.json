@@ -50,8 +50,8 @@
       "tagRenderings": [
         {
           "render": {
-            "nl": "Bladertype van deze boom:",
-            "en": "Leaf type of this tree:"
+            "nl": "Bladertype van de boom:",
+            "en": "Leaf type of the tree:"
           },
           "question": {
             "nl": "Is dit een naald- of loofboom?",
@@ -65,8 +65,8 @@
                 ]
               },
               "then": {
-                "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> loofboom",
-                "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> broadleaved"
+                "nl": "Dit is een <img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> loofboom",
+                "en": "This tree is <img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> broadleaved"
               }
             },
             {
@@ -76,35 +76,132 @@
                 ]
               },
               "then": {
-                "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> naaldboom",
-                "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> needleleaved"
+                "nl": "Dit is een <img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> naaldboom",
+                "en": "This tree is <img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> needleleaved"
               }
             },
             {
               "if": {
                 "and": [
-                  "leaf_type=needleleaved"
+                  "leaf_type=leafless"
                 ]
               },
               "then": {
-                "nl": "permanent bladloos",
-                "en": "permanently leafless"
+                "nl": "Deze boom is <img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> permanent bladloos",
+                "en": "This tree is <img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> permanently leafless"
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "Significantie van de boom:",
+            "en": "Significance of the tree:"
+          },
+          "question": {
+            "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
+            "en": "How significant is this tree? Choose the first answer that applies."
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "denotation=natural_monument"
+                ]
+              },
+              "then": {
+                "nl": "De boom is houtig erfgoed. Hij is bijzonder oud of van een zeldzame soort.",
+                "en": "The tree is a natural monument. It may be especially old, a valuable species."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=landmark"
+                ]
+              },
+              "then": {
+                "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
+                "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=agricultural"
+                ]
+              },
+              "then": {
+                "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
+                "en": "The tree is used for agricultural purposes, e.g. in an orchard."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=park"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
+                "en": "The tree is in a park or similar (cemetery, school grounds, …)."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=garden"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
+                "en": "The tree is a residential garden."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=avenue"
+                ]
+              },
+              "then": {
+                "nl": "Dit is een laanboom.",
+                "en": "This is a tree along an avenue."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=urban"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat in een woonkern.",
+                "en": "The tree is an urban area."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "denotation=none"
+                ]
+              },
+              "then": {
+                "nl": "De boom staat buiten een woonkern.",
+                "en": "The tree is outside of an urban area."
               }
             }
           ]
         },
         {
           "render": {
-            "nl": "Bladercyclus van deze boom:",
-            "en": "Leaf cycle of this tree:"
+            "nl": "Bladercyclus van de boom:",
+            "en": "Leaf cycle of the tree:"
           },
           "question": {
             "nl": "Is deze boom bladhoudend of bladverliezend?",
             "en": "Is this tree evergreen or deciduous?"
-          },
-          "freeform": {
-            "key": null,
-            "addExtraTags": []
           },
           "mappings": [
             {
@@ -169,6 +266,34 @@
         "render": "#00f"
       },
       "presets": [
+        {
+          "tags": [
+            "natural=tree",
+            "leaf_type=broadleaved"
+          ],
+          "title": {
+            "nl": "Loofboom",
+            "en": "Broadleaved tree"
+          },
+          "description": {
+            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
+            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+          }
+        },
+        {
+          "tags": [
+            "natural=tree",
+            "leaf_type=needleleaved"
+          ],
+          "title": {
+            "nl": "Naaldboom",
+            "en": "Needleleaved tree"
+          },
+          "description": {
+            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
+            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+          }
+        },
         {
           "tags": [
             "natural=tree"
