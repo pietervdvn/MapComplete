@@ -1,0 +1,190 @@
+{
+  "id": "trees",
+  "title": {
+    "nl": "Bomen",
+    "en": "Trees"
+  },
+  "shortDescription": {
+    "nl": "Breng bomen in kaart",
+    "en": "Map all the trees"
+  },
+  "description": {
+    "nl": "Breng bomen in kaart!",
+    "en": "Map all the trees!"
+  },
+  "language": [
+    "nl",
+    "en"
+  ],
+  "maintainer": "Midgard",
+  "icon": "./assets/themes/trees/logo.svg",
+  "version": "0",
+  "startLat": 50.642,
+  "startLon": 4.482,
+  "startZoom": 8,
+  "widenFactor": 0.05,
+  "socialImage": "./assets/themes/trees/logo.svg",
+  "layers": [
+    {
+      "id": "tree",
+      "name": {
+        "nl": "Boom",
+        "en": "Tree"
+      },
+      "minzoom": 18,
+      "overpassTags": {
+        "and": [
+          "natural=tree"
+        ]
+      },
+      "title": {
+        "render": {
+          "nl": "Boom",
+          "en": "Tree"
+        },
+        "mappings": []
+      },
+      "description": {
+        "nl": ""
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "Bladertype van deze boom:",
+            "en": "Leaf type of this tree:"
+          },
+          "question": {
+            "nl": "Is dit een naald- of loofboom?",
+            "en": "Is this a broadleaved or needleleaved tree?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "leaf_type=broadleaved"
+                ]
+              },
+              "then": {
+                "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> loofboom",
+                "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> broadleaved"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_type=needleleaved"
+                ]
+              },
+              "then": {
+                "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> naaldboom",
+                "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> needleleaved"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_type=needleleaved"
+                ]
+              },
+              "then": {
+                "nl": "permanent bladloos",
+                "en": "permanently leafless"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "Bladercyclus van deze boom:",
+            "en": "Leaf cycle of this tree:"
+          },
+          "question": {
+            "nl": "Is deze boom bladhoudend of bladverliezend?",
+            "en": "Is this tree evergreen or deciduous?"
+          },
+          "freeform": {
+            "key": null,
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "leaf_cycle=deciduous"
+                ]
+              },
+              "then": {
+                "nl": "bladverliezend (is een periode van het jaar kaal)",
+                "en": "deciduous (loses leaves for some time of the year)"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "leaf_cycle=evergreen"
+                ]
+              },
+              "then": {
+                "nl": "bladhoudend",
+                "en": "evergreen"
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "leaf_type!~^leafless$"
+            ]
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/trees/unknown.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "leaf_type=broadleaved"
+              ]
+            },
+            "then": "./assets/themes/trees/broadleaved.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "leaf_type=needleleaved"
+              ]
+            },
+            "then": "./assets/themes/trees/needleleaved.svg"
+          }
+        ]
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "natural=tree"
+          ],
+          "title": {
+            "nl": "Boom",
+            "en": "Tree"
+          },
+          "description": {
+            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
+            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+          }
+        }
+      ]
+    }
+  ],
+  "roamingRenderings": [],
+  "defaultBackgroundId": "AGIV"
+}
