@@ -44,15 +44,8 @@
         },
         "mappings": []
       },
-      "description": {
-        "nl": ""
-      },
       "tagRenderings": [
         {
-          "render": {
-            "nl": "Bladertype van de boom:",
-            "en": "Leaf type of the tree:"
-          },
           "question": {
             "nl": "Is dit een naald- of loofboom?",
             "en": "Is this a broadleaved or needleleaved tree?"
@@ -65,8 +58,8 @@
                 ]
               },
               "then": {
-                "nl": "Dit is een <img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> loofboom",
-                "en": "This tree is <img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> broadleaved"
+                "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dit is een loofboom.",
+                "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> This tree is broadleaved."
               }
             },
             {
@@ -76,8 +69,8 @@
                 ]
               },
               "then": {
-                "nl": "Dit is een <img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> naaldboom",
-                "en": "This tree is <img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> needleleaved"
+                "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Dit is een naaldboom.",
+                "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> This tree is needleleaved."
               }
             },
             {
@@ -87,18 +80,14 @@
                 ]
               },
               "then": {
-                "nl": "Deze boom is <img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> permanent bladloos",
-                "en": "This tree is <img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> permanently leafless"
+                "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Deze boom is permanent bladloos.",
+                "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> This tree is permanently leafless."
               },
               "hideInAnswer": true
             }
           ]
         },
         {
-          "render": {
-            "nl": "Significantie van de boom:",
-            "en": "Significance of the tree:"
-          },
           "question": {
             "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
             "en": "How significant is this tree? Choose the first answer that applies."
@@ -111,8 +100,8 @@
                 ]
               },
               "then": {
-                "nl": "De boom is houtig erfgoed. Hij is bijzonder oud of van een zeldzame soort.",
-                "en": "The tree is a natural monument. It may be especially old, a valuable species."
+                "nl": "De boom is houtig erfgoed, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
+                "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species."
               }
             },
             {
@@ -195,10 +184,6 @@
           ]
         },
         {
-          "render": {
-            "nl": "Bladercyclus van de boom:",
-            "en": "Leaf cycle of the tree:"
-          },
           "question": {
             "nl": "Is deze boom bladhoudend of bladverliezend?",
             "en": "Is this tree evergreen or deciduous?"
@@ -211,8 +196,8 @@
                 ]
               },
               "then": {
-                "nl": "bladverliezend (is een periode van het jaar kaal)",
-                "en": "deciduous (loses leaves for some time of the year)"
+                "nl": "Deze boom is bladverliezend: hij is een periode van het jaar kaal.",
+                "en": "This tree is deciduous: it loses its leaves for some time of the year."
               }
             },
             {
@@ -222,8 +207,8 @@
                 ]
               },
               "then": {
-                "nl": "bladhoudend",
-                "en": "evergreen"
+                "nl": "Deze boom is groenblijvend.",
+                "en": "This tree is evergreen."
               }
             }
           ],
@@ -276,8 +261,8 @@
             "en": "Broadleaved tree"
           },
           "description": {
-            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
-            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+            "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
+            "en": "A tree of a species with leaves, such as oak or populus."
           }
         },
         {
@@ -290,8 +275,8 @@
             "en": "Needleleaved tree"
           },
           "description": {
-            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
-            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+            "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
+            "en": "A tree of a species with needles, such as pine or spruce."
           }
         },
         {
@@ -303,8 +288,8 @@
             "en": "Tree"
           },
           "description": {
-            "nl": "Gebruik indien mogelijk de luchtfoto's om de boom zo nauwkeurig mogelijk te plaatsen.",
-            "en": "Use the aerial photos (if available) to position the tree as accurately as possible."
+            "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
+            "en": "If you're not sure whether it's a broadleaved or needleleaved tree."
           }
         }
       ]
