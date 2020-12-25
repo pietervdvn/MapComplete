@@ -177,7 +177,7 @@
       "condition": {
         "or": [
           "service:bicycle:pump=yes",
-          "service:bicycle:pump=seperate"
+          "service:bicycle:pump=separate"
         ]
       },
       "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
