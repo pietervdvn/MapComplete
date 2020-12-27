@@ -17,6 +17,7 @@ import * as widths from "../assets/themes/widths/width.json"
 import * as drinking_water from "../assets/themes/drinking_water/drinking_water.json"
 import * as climbing from "../assets/themes/climbing/climbing.json"
 import * as surveillance_cameras from "../assets/themes/surveillance_cameras/surveillance_cameras.json"
+import * as trees from "../assets/themes/trees/trees.json"
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
@@ -63,7 +64,8 @@ export class AllKnownLayouts {
         new LayoutConfig(buurtnatuur),
         new LayoutConfig(bike_monitoring_stations),
         new LayoutConfig(surveillance_cameras),
-        new LayoutConfig(climbing)
+        new LayoutConfig(climbing),
+        new LayoutConfig(trees),
     ];
 
 

@@ -63,7 +63,7 @@ export default class MetaTagging {
         ["_country"], "The country code of the property (with latlon2country)",
         (feature, index) => {
 
-            const coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+            const coder = new CountryCoder("/latlon2country");
 
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];

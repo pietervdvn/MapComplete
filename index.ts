@@ -73,7 +73,8 @@ if (layoutFromBase64.startsWith("wiki:")) {
     new FixedUiElement(`Downloading ${themeName} from the wiki...`)
         .AttachTo("centermessage");
     const cleanUrl = `https://wiki.openstreetmap.org/wiki/${themeName}`;
-    const url = `https://cors-anywhere.herokuapp.com/` + cleanUrl; // VERY SAFE AND HACKER-PROOF!
+    //const url = `https://cors-anywhere.herokuapp.com/` + cleanUrl; // ~NOT~ VERY SAFE AND HACKER-PROOF!
+    const url = cleanUrl; // MUCH SAFER!
 
     $.ajax({
         url: url,
