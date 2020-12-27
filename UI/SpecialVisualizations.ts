@@ -29,7 +29,12 @@ export class SubstitutedTranslation extends UIElement {
         this.translation = translation;
         this.tags = tags;
         const self = this;
-        Locale.language.addCallbackAndRun(() => {
+        tags.addCallbackAndRun(() => {
+            self.content = self.CreateContent();
+            self.Update();
+        });
+
+        Locale.language.addCallback(() => {
             self.content = self.CreateContent();
             self.Update();
         });

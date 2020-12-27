@@ -113,7 +113,6 @@ export default class TagRenderingQuestion extends UIElement {
     }
 
     private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>): InputElement<TagsFilter> {
-        const possibleTags = elements.map(el => el.GetValue().data);
         const checkBoxes = new CheckBoxes(elements);
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
@@ -125,8 +124,7 @@ export default class TagRenderingQuestion extends UIElement {
                     return undefined;
                 }
                 const tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
-                const multi = TagUtils.FlattenMultiAnswer(tags);
-                return multi;
+                return TagUtils.FlattenMultiAnswer(tags);
             },
             (tags: TagsFilter) => {
                 // {key --> values[]}
