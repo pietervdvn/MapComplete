@@ -80,8 +80,8 @@
           "camera:type!=dome",
           {
             "and": [
-              "camera:mount!=ceiling",
-              "camera:mount!=pole"
+              "camera:type=dome",
+              "camera:mount=wall"
             ]
           }
         ]
