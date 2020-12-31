@@ -99,7 +99,7 @@ export default class MetaTagging {
                     }
                 }, {tag_key: "opening_hours"});
                 // AUtomatically triggered on the next change
-                const updateTags = () => {
+                    const updateTags = () => {
                     const oldValueIsOpen = tags["_isOpen"];
                     tags["_isOpen"] = oh.getState() ? "yes" : "no";
                     const comment = oh.getComment();
@@ -112,14 +112,14 @@ export default class MetaTagging {
                     }
 
                     const nextChange = oh.getNextChange();
-                    if (nextChange !== undefined) {
+                        if (nextChange !== undefined) {
                         window.setTimeout(
                             updateTags,
                             (nextChange.getTime() - (new Date()).getTime())
                         )
                     }
                 }
-                updateTags();
+                            updateTags();
                 }catch(e){
                     console.error(e);
                     tags["_isOpen"] = "parse_error";
@@ -280,7 +280,7 @@ export default class MetaTagging {
             try {
                 metatag.addMetaTags(features);
             } catch (e) {
-                console.error("Could not calculate metatag ", metatag.keys.join(","), ":", e)
+                console.error("Could not calculate metatag for ", metatag.keys.join(","), ":", e)
 
             }
         }

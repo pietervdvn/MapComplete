@@ -163,13 +163,14 @@ export default class SpecialVisualizations {
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. IMPORTANT: the _name_ of the object should be defined for this to work!",
-                args: [],
+                args: [{name:"subject", doc:"The identifier used for this value; by default the name of the reviewed object"}],
                 constr: (tags, args) => {
                     const tgs = tags.data;
-                    if (tgs.name === undefined || tgs.name === "") {
+                    const subject = args[0] ?? tgs.name ?? "";
+                    if (subject === "") {
                         return Translations.t.reviews.name_required;
                     }
-                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat), tgs.name,
+                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),subject,
                         State.state.mangroveIdentity,
                         State.state.osmConnection._dryRun
                     );
