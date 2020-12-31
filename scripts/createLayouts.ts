@@ -86,7 +86,7 @@ function generateWikiEntry(layout: LayoutConfig){
         auth=`Yes, by ${layout.maintainer};`
     }
     return `{{service_item
-|name= [https://mapcomplete.osm.be/${layout.id}.html ${layout.id}]
+|name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
 |region= Worldwide
 |lang= ${languages}
 |descr= A MapComplete theme: ${Translations.W(layout.description)

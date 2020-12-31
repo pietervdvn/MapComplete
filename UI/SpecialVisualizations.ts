@@ -38,7 +38,7 @@ export class SubstitutedTranslation extends UIElement {
             self.content = self.CreateContent();
             self.Update();
         });
-        
+
     }
 
     InnerRender(): string {
@@ -93,7 +93,7 @@ export class SubstitutedTranslation extends UIElement {
                     return [...partBefore, element, ...partAfter]
                 } catch (e) {
                     console.error(e);
-                    return [...partBefore,new FixedUiElement(`Failed loading ${knownSpecial.funcName}(${matched[2]}): ${e}`) ,  ...partAfter]
+                    return [...partBefore, new FixedUiElement(`Failed loading ${knownSpecial.funcName}(${matched[2]}): ${e}`), ...partAfter]
                 }
             }
         }
@@ -163,10 +163,17 @@ export default class SpecialVisualizations {
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. IMPORTANT: the _name_ of the object should be defined for this to work!",
-                args: [{name:"subject", doc:"The identifier used for this value; by default the name of the reviewed object"}],
+                args: [{
+                    name: "subject",
+                    doc: "The identifier used for this value; by default the name of the reviewed object"
+                }],
                 constr: (tags, args) => {
                     const tgs = tags.data;
-                    const subject = args[0] ?? tgs.name ?? "";
+                    console.log("Args[0]", args[0])
+                    const subject = tgs.name ?? "";
+                    if (args[0] !== undefined && args[0] !== "") {
+                        subject = args[0];
+                    }
                     if (subject === "") {
                         return Translations.t.reviews.name_required;
                     }

@@ -20,7 +20,7 @@
   "startZoom": 10,
   "widenFactor": 0.05,
   "socialImage": "",
-  "hideInoverview": true,
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "playgrounds",
