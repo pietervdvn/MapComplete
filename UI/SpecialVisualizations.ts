@@ -170,7 +170,8 @@ export default class SpecialVisualizations {
                     if (subject === "") {
                         return Translations.t.reviews.name_required;
                     }
-                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),subject,
+                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
+                        encodeURIComponent(subject),
                         State.state.mangroveIdentity,
                         State.state.osmConnection._dryRun
                     );
