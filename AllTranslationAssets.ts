@@ -126,6 +126,7 @@ export default class AllTranslationAssets {
     reload: new Translation( {"en":"Reload the data","es":"Recargar datos","ca":"Recarregar dades","gl":"Recargar os datos","de":"Daten neu laden","fr":"Recharger les données"} ),
 },
   reviews: {    title: new Translation( {"en":"{count} reviews","nl":"{count} beoordelingen"} ),
+    title_singular: new Translation( {"en":"One review","nl":"Eén beoordeling"} ),
     name_required: new Translation( {"en":"A name is required in order to display and create reviews","nl":"De naam van dit object moet gekend zijn om een review te kunnen maken"} ),
     no_reviews_yet: new Translation( {"en":"There are no reviews yet. Be the first to write one and help open data and the business!","nl":"Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf"} ),
     write_a_comment: new Translation( {"en":"Leave a review...","nl":"Schrijf een beoordeling..."} ),

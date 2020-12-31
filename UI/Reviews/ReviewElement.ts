@@ -35,8 +35,10 @@ export default class ReviewElement extends UIElement {
             new Combine([
                 SingleReview.GenStars(avg).SetClass("stars"),
                 `<a target="_blank" href='https://mangrove.reviews/search?sub=${encodeURIComponent(this._subject)}'>`,
-                Translations.t.reviews.title
-                    .Subs({count: "" + revs.length}),
+               revs.length === 1 ? Translations.t.reviews.title_singular :
+                   Translations.t.reviews.title
+                      .Subs({count: "" + revs.length})
+                ,
                 "</a>"
             ])
 

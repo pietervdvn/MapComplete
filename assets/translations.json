@@ -156,7 +156,8 @@
       "en": "Loading data failed. Trying again... ({count})",
       "ca": "La càrrega de dades ha fallat.Tornant-ho a intentar... ({count})",
       "es": "La carga de datos ha fallado.Volviéndolo a probar... ({count})",
-      "gl": "A carga dos datos fallou. Tentándoo de novo... ({count})", "fr": "Le chargement a échoué. Essayer à nouveau... ({count})",
+      "gl": "A carga dos datos fallou. Tentándoo de novo... ({count})",
+      "fr": "Le chargement a échoué. Essayer à nouveau... ({count})",
       "de": "Laden von Daten fehlgeschlagen. Erneuter Versuch... ({count})"
     }
   },
@@ -366,7 +367,8 @@
         "en": "Open the layer control box",
         "ca": "Obrir el control de capes",
         "es": "Abrir el control de capas",
-        "nl": "Open de laag-instellingen",                    "fr": "Ouvrir la panneau de contrôle",
+        "nl": "Open de laag-instellingen",
+        "fr": "Ouvrir la panneau de contrôle",
         "de": "Das Ebenen-Kontrollkästchen öffnen"
       },
       "layerNotEnabled": {
@@ -512,7 +514,8 @@
         "ca": "Enllaç copiat al portapapers",
         "es": "Enlace copiado en el portapapeles",
         "gl": "Ligazón copiada ó portapapeis",
-        "nl": "Link gekopieerd naar klembord","fr": "Lien copié dans le presse-papier",
+        "nl": "Link gekopieerd naar klembord",
+        "fr": "Lien copié dans le presse-papier",
         "de": "Link in die Zwischenablage kopiert"
       },
       "thanksForSharing": {
@@ -520,7 +523,8 @@
         "ca": "Gràcies per compartir",
         "es": "Gracias por compartir",
         "gl": "Grazas por compartir!",
-        "nl": "Bedankt om te delen!", "fr": "Merci d'avoir partagé!",
+        "nl": "Bedankt om te delen!",
+        "fr": "Merci d'avoir partagé!",
         "de": "Danke für das Teilen!"
       },
       "editThisTheme": {
@@ -528,7 +532,8 @@
         "ca": "Editar aquest repte",
         "es": "Editar este reto",
         "gl": "Editar este tema",
-        "nl": "Pas dit thema aan", "fr": "Editer ce thème",
+        "nl": "Pas dit thema aan",
+        "fr": "Editer ce thème",
         "de": "Dieses Thema bearbeiten"
       },
       "editThemeDescription": {
@@ -536,7 +541,8 @@
         "ca": "Afegir o canviar preguntes d'aquest repte",
         "es": "Añadir o cambiar preguntas de este reto",
         "gl": "Engadir ou mudar preguntas a este tema do mapa",
-        "nl": "Pas vragen aan of voeg vragen toe aan dit kaartthema", "fr": "Ajouter ou modifier des questions à ce thème",
+        "nl": "Pas vragen aan of voeg vragen toe aan dit kaartthema",
+        "fr": "Ajouter ou modifier des questions à ce thème",
         "de": "Fragen zu diesem Kartenthema hinzufügen oder ändern"
       },
       "fsUserbadge": {
@@ -544,7 +550,8 @@
         "ca": "Activar el botó d'entrada",
         "es": "Activar el botón de entrada",
         "gl": "Activar botón de inicio de sesión",
-        "nl": "Activeer de login-knop", "fr": "Activer le bouton de connexion",
+        "nl": "Activeer de login-knop",
+        "fr": "Activer le bouton de connexion",
         "de": " Anmelde-Knopf aktivieren"
       },
       "fsSearch": {
@@ -552,7 +559,8 @@
         "ca": "Activar la barra de cerca",
         "es": "Activar la barra de búsqueda",
         "gl": "Activar a barra de procura",
-        "nl": "Activeer de zoekbalk","fr": "Activer la barre de recherche",
+        "nl": "Activeer de zoekbalk",
+        "fr": "Activer la barre de recherche",
         "de": " Suchleiste aktivieren"
       },
       "fsWelcomeMessage": {
@@ -560,7 +568,8 @@
         "ca": "Mostra el missatge emergent de benvinguda i pestanyes associades",
         "es": "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
         "gl": "Amosar a xanela emerxente da mensaxe de benvida e as lapelas asociadas",
-        "nl": "Toon het welkomstbericht en de bijhorende tabbladen", "fr": "Afficher le message de bienvenue et les onglets associés",
+        "nl": "Toon het welkomstbericht en de bijhorende tabbladen",
+        "fr": "Afficher le message de bienvenue et les onglets associés",
         "de": "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen"
       },
       "fsLayers": {
@@ -568,7 +577,8 @@
         "ca": "Activar el control de capes",
         "es": "Activar el control de capas",
         "gl": "Activar o control de capas",
-        "nl": "Toon de knop voor laagbediening",  "fr": "Activer le contrôle des couches",
+        "nl": "Toon de knop voor laagbediening",
+        "fr": "Activer le contrôle des couches",
         "de": "Aktivieren der Layersteuerung"
       },
       "fsLayerControlToggle": {
@@ -576,7 +586,8 @@
         "gl": "Comenza co control de capas expandido",
         "ca": "Iniciar el control de capes avançat",
         "es": "Iniciar el control de capas avanzado",
-        "nl": "Toon de laagbediening meteen volledig", "fr": "Démarrer avec le contrôle des couches ouvert",
+        "nl": "Toon de laagbediening meteen volledig",
+        "fr": "Démarrer avec le contrôle des couches ouvert",
         "de": "Mit der erweiterten Ebenenkontrolle beginnen"
       },
       "fsAddNew": {
@@ -941,6 +952,10 @@
     "title": {
       "en": "{count} reviews",
       "nl": "{count} beoordelingen"
+    },
+    "title_singular": {
+      "en": "One review",
+      "nl": "Eén beoordeling"
     },
     "name_required": {
       "en": "A name is required in order to display and create reviews",
