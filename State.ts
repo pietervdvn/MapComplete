@@ -10,11 +10,13 @@ import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {BaseLayer} from "./Logic/BaseLayer";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 import InstalledThemes from "./Logic/InstalledThemes";
+import {BaseLayer} from "./Models/BaseLayer";
+import Loc from "./Models/Loc";
+import Constants from "./Models/Constants";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -24,25 +26,14 @@ export default class State {
 
     // The singleton of the global state
     public static state: State;
-
-    public static vNumber = "0.2.6a";
-
-    // The user journey states thresholds when a new feature gets unlocked
-    public static userJourney = {
-        addNewPointsUnlock: 0,
-        moreScreenUnlock: 5,
-        personalLayoutUnlock: 20,
-        tagsVisibleAt: 100,
-        mapCompleteHelpUnlock: 200,
-        tagsVisibleAndWikiLinked: 150,
-        themeGeneratorReadOnlyUnlock: 200,
-        themeGeneratorFullUnlock: 500, 
-        addNewPointWithUnreadMessagesUnlock: 500,
-        minZoomLevelToAddNewPoints: (Utils.isRetina() ? 18 : 19)
-    };
-
+    
+    public static vNumber = Constants.vNumber;
+    public static userJourney = Constants.userJourney;
+    
     public static runningFromConsole: boolean = false;
 
+    
+    
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 
     /**
@@ -89,11 +80,6 @@ export default class State {
      */
     public readonly selectedElement = new UIEventSource<any>(undefined);
 
-    public readonly zoom: UIEventSource<number>;
-    public readonly lat: UIEventSource<number>;
-    public readonly lon: UIEventSource<number>;
-
-
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
     public readonly featureSwitchLayers: UIEventSource<boolean>;
@@ -108,7 +94,7 @@ export default class State {
     /**
      * The map location: currently centered lat, lon and zoom
      */
-    public readonly locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>(undefined);
+    public readonly locationControl = new UIEventSource<Loc>(undefined);
 
     /**
      * The location as delivered by the GPS
@@ -142,23 +128,23 @@ export default class State {
                 return ("" + fl).substr(0, 8);
             })
         }
-        this.zoom = asFloat(
+        const zoom = asFloat(
             QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom, "The initial/current zoom level")
             .syncWith(LocalStorageSource.Get("zoom")));
-        this.lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
+        const lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
-        this.lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
+        const lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
             .syncWith(LocalStorageSource.Get("lon")));
 
 
-        this.locationControl = new UIEventSource<{ lat: number, lon: number, zoom: number }>({
-            zoom: Utils.asFloat(this.zoom.data),
-            lat: Utils.asFloat(this.lat.data),
-            lon: Utils.asFloat(this.lon.data),
+        this.locationControl = new UIEventSource<Loc>({
+            zoom: Utils.asFloat(zoom.data),
+            lat: Utils.asFloat(lat.data),
+            lon: Utils.asFloat(lon.data),
         }).addCallback((latlonz) => {
-            this.zoom.setData(latlonz.zoom);
-            this.lat.setData(latlonz.lat);
-            this.lon.setData(latlonz.lon);
+            zoom.setData(latlonz.zoom);
+            lat.setData(latlonz.lat);
+            lon.setData(latlonz.lon);
         });
 
         this.layoutToUse.addCallback(layoutToUse => {
@@ -236,7 +222,7 @@ export default class State {
 
         this.installedThemes = InstalledThemes.InstalledThemes(this.osmConnection );
 
-        // IMportant: the favourite layers are initiliazed _after_ the installed themes, as these might contain an installedTheme
+        // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
         this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
             str => Utils.Dedup(str?.split(";")) ?? [],
             [], layers => Utils.Dedup(layers)?.join(";")

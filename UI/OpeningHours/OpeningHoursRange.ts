@@ -1,15 +1,14 @@
-import {UIElement} from "../../UIElement";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import {OH, OpeningHour} from "../../../Logic/OpeningHours";
-import Combine from "../../Base/Combine";
-import {Utils} from "../../../Utils";
-import {FixedUiElement} from "../../Base/FixedUiElement";
-import {VariableUiElement} from "../../Base/VariableUIElement";
-import Svg from "../../../Svg";
-
 /**
  * A single opening hours range, shown on top of the OH-picker table
  */
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Svg from "../../Svg";
+import {Utils} from "../../Utils";
+import Combine from "../Base/Combine";
+import {OH, OpeningHour} from "./OpeningHours";
+
 export default class OpeningHoursRange extends UIElement {
     private _oh: UIEventSource<OpeningHour>;
 

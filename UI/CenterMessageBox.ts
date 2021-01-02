@@ -11,7 +11,7 @@ export class CenterMessageBox extends UIElement {
         this.ListenTo(State.state.locationControl);
         this.ListenTo(State.state.layerUpdater.retries);
         this.ListenTo(State.state.layerUpdater.runningQuery);
-        this.ListenTo(State.state.layerUpdater.sufficentlyZoomed);
+        this.ListenTo(State.state.layerUpdater.sufficientlyZoomed);
     }
 
     private static prep(): { innerHtml: string, done: boolean } {
@@ -27,7 +27,7 @@ export class CenterMessageBox extends UIElement {
             return {innerHtml: Translations.t.centerMessage.loadingData.Render(), done: false};
             
         } 
-        if (!lu.sufficentlyZoomed.data) {
+        if (!lu.sufficientlyZoomed.data) {
             return {innerHtml: Translations.t.centerMessage.zoomIn.Render(), done: false};
         } else {
             return {innerHtml: Translations.t.centerMessage.ready.Render(), done: true};

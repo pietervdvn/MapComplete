@@ -15,7 +15,7 @@ import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {PersonalLayersPanel} from "./Logic/PersonalLayersPanel";
+import {PersonalLayersPanel} from "./UI/PersonalLayersPanel";
 import Locale from "./UI/i18n/Locale";
 import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
@@ -29,7 +29,7 @@ import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
-import AvailableBaseLayers from "./Logic/AvailableBaseLayers";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
@@ -38,6 +38,7 @@ import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import {Img} from "./UI/Img";
 import {UserDetails} from "./Logic/Osm/OsmConnection";
+import Attribution from "./UI/Misc/Attribution";
 
 export class InitUiElements {
 
@@ -414,7 +415,7 @@ export class InitUiElements {
             checkbox.AttachTo("layer-selection");
 
 
-            State.state.bm.Location.addCallback(() => {
+            State.state.locationControl.addCallback(() => {
                 // Close the layer selection when the map is moved
                 checkbox.isEnabled.setData(false);
             });
@@ -433,51 +434,15 @@ export class InitUiElements {
 
         });
     }
-
-
-    static CreateAttribution() {
-        return new VariableUiElement(
-            State.state.locationControl.map((location) => {
-                const mapComplete = new Link(`Mapcomplete ${State.vNumber}`, 'https://github.com/pietervdvn/MapComplete', true);
-                const reportBug = new Link(Svg.bug_img, "https://github.com/pietervdvn/MapComplete/issues", true);
-
-                const layoutId = State.state.layoutToUse.data.id;
-                const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
-                const stats = new Link(Svg.statistics_img, osmChaLink, true)
-                let editHere: (UIElement | string) = "";
-                if (location !== undefined) {
-                    const idLink = `https://www.openstreetmap.org/edit?editor=id#map=${location.zoom}/${location.lat}/${location.lon}`
-                    editHere = new Link(Svg.pencil_img, idLink, true);
-                }
-                let editWithJosm: (UIElement | string) = ""
-                if (location !== undefined &&
-                    State.state.osmConnection !== undefined &&
-                    State.state.bm !== undefined &&
-                    State.state.osmConnection.userDetails.data.csCount >= State.userJourney.tagsVisibleAndWikiLinked) {
-                    const bounds = (State.state.bm as Basemap).map.getBounds();
-                    const top = bounds.getNorth();
-                    const bottom = bounds.getSouth();
-                    const right = bounds.getEast();
-                    const left = bounds.getWest();
-
-                    const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
-                    editWithJosm = new Link(Svg.josm_logo_img, josmLink, true);
-                }
-                return new Combine([mapComplete, reportBug, " | ", stats, " | ", editHere, editWithJosm]).Render();
-
-            }, [State.state.osmConnection.userDetails])
-        ).SetClass("map-attribution")
-    }
-
     static InitBaseMap() {
-        const bm = new Basemap("leafletDiv", State.state.locationControl, this.CreateAttribution());
+        const bm = new Basemap("leafletDiv", State.state.locationControl, new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.bm));
         State.state.bm = bm;
         bm.map.on("popupclose", () => {
             State.state.selectedElement.setData(undefined)
         })
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
-        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state).availableEditorLayers;
+        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl, State.state.bm).availableEditorLayers;
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId, "The id of the background layer to start with");
 
         queryParam.addCallbackAndRun((selectedId: string) => {

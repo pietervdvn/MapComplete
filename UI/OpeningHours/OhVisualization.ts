@@ -1,11 +1,10 @@
-import {UIElement} from "./UIElement";
-import {UIEventSource} from "../Logic/UIEventSource";
-import opening_hours from "opening_hours";
-import Combine from "./Base/Combine";
-import Translations from "./i18n/Translations";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {OH} from "../Logic/OpeningHours";
-import State from "../State";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import Combine from "../Base/Combine";
+import State from "../../State";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {OH} from "./OpeningHours";
+import Translations from "../i18n/Translations";
 
 export default class OpeningHoursVisualization extends UIElement {
     private readonly _key: string;

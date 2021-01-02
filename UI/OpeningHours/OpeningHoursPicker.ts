@@ -1,10 +1,10 @@
-import {UIElement} from "../../UIElement";
-import {InputElement} from "../InputElement";
-import {OpeningHour, OH} from "../../../Logic/OpeningHours";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
 import OpeningHoursRange from "./OpeningHoursRange";
-import Combine from "../../Base/Combine";
+import Combine from "../Base/Combine";
+import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
+import {OH, OpeningHour} from "./OpeningHours";
+import {InputElement} from "../Input/InputElement";
 
 export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
     private readonly _ohs: UIEventSource<OpeningHour[]>;    

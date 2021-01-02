@@ -1,13 +1,11 @@
-/**
- * Fetches data from random data sources
- */
+
 import {UIEventSource} from "../UIEventSource";
 import * as $ from "jquery"
-
+/**
+ * Fetches data from random data sources, used in the metatagging
+ */
 export default class LiveQueryHandler {
 
-
-    private static cache = {} // url --> UIEventSource<actual data>
     private static neededShorthands = {} // url -> (shorthand:paths)[]
 
     public static FetchLiveData(url: string, shorthands: string[]): UIEventSource<any /* string -> string */> {

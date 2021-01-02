@@ -11,7 +11,7 @@ import {MultiInput} from "../Input/MultiInput";
 import TagRenderingPanel from "./TagRenderingPanel";
 import SingleSetting from "./SingleSetting";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import AvailableBaseLayers from "../../Logic/AvailableBaseLayers";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {DropDown} from "../Input/DropDown";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import Svg from "../../Svg";

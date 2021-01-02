@@ -8,7 +8,7 @@ import MetaTagging from "./MetaTagging";
 
 export class UpdateFromOverpass {
 
-    public readonly sufficentlyZoomed: UIEventSource<boolean>;
+    public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
@@ -29,7 +29,7 @@ export class UpdateFromOverpass {
         this.state = state;
         const self = this;
 
-        this.sufficentlyZoomed = State.state.locationControl.map(location => {
+        this.sufficientlyZoomed = State.state.locationControl.map(location => {
                 if(location?.zoom === undefined){
                     return false;
                 }
@@ -50,7 +50,14 @@ export class UpdateFromOverpass {
 
         self.update(state);
         
-    }q
+    }
+
+    public ForceRefresh() {
+        for (let i = 0; i < 25; i++) {
+            this.previousBounds.set(i, []);
+        }
+        this.update(this.state);
+    }
 
     private GetFilter(state: State) {
         const filters: TagsFilter[] = [];
@@ -91,7 +98,6 @@ export class UpdateFromOverpass {
         }
         return new Or(filters);
     }
-
     private handleData(geojson: any) {
         const self = this;
 
@@ -131,7 +137,6 @@ export class UpdateFromOverpass {
 
         renderLayers(State.state.filteredLayers.data);
     }
-
     private handleFail(state: State, reason: any) {
         this.retries.data++;
         this.ForceRefresh();
@@ -146,8 +151,6 @@ export class UpdateFromOverpass {
         )
 
     }
-
-
     private update(state: State): void {
         const filter = this.GetFilter(state);
         if (filter === undefined) {
@@ -188,8 +191,6 @@ export class UpdateFromOverpass {
         
 
     }
-
-
     private IsInBounds(state: State, bounds: Bounds): boolean {
         if (this.previousBounds === undefined) {
             return false;
@@ -202,11 +203,7 @@ export class UpdateFromOverpass {
             b.getWest() >= bounds.west;
     }
     
-    public ForceRefresh() {
-        for (let i = 0; i < 25; i++) {
-            this.previousBounds.set(i, []);
-        }
-        this.update(this.state);
-    }
-
+    
+    
+    
 }

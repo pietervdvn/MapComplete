@@ -1,20 +1,20 @@
-import {InputElement} from "../InputElement";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import {UIElement} from "../../UIElement";
-import Combine from "../../Base/Combine";
-import {OH} from "../../../Logic/OpeningHours";
-import OpeningHoursPicker from "./OpeningHoursPicker";
-import {VariableUiElement} from "../../Base/VariableUIElement";
-import Translations from "../../i18n/Translations";
-import {FixedUiElement} from "../../Base/FixedUiElement";
-import PublicHolidayInput from "./PublicHolidayInput";
-
-
 /**
  * The full opening hours element, including the table, opening hours picker.
  * Keeps track of unparsed rules
  * Exports everything conventiently as a string, for direct use
  */
+import OpeningHoursPicker from "./OpeningHoursPicker";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Combine from "../Base/Combine";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {OH} from "./OpeningHours";
+import {InputElement} from "../Input/InputElement";
+import PublicHolidayInput from "./PublicHolidayInput";
+import Translations from "../i18n/Translations";
+
+
 export default class OpeningHoursInput extends InputElement<string> {
 
 

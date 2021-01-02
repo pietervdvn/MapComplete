@@ -8,7 +8,7 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
-import OpeningHoursInput from "./OpeningHours/OpeningHoursInput";
+import OpeningHoursInput from "../OpeningHours/OpeningHoursInput";
 import DirectionInput from "./DirectionInput";
 
 interface TextFieldDef {

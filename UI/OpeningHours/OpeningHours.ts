@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";
+import {Utils} from "../../Utils";
 
 export interface OpeningHour {
     weekday: number, // 0 is monday, 1 is tuesday, ...

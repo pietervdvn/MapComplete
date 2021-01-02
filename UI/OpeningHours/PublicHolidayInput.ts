@@ -1,11 +1,12 @@
-import {InputElement} from "../InputElement";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import {UIElement} from "../../UIElement";
-import {DropDown} from "../DropDown";
-import Translations from "../../i18n/Translations";
-import Combine from "../../Base/Combine";
-import {TextField} from "../TextField";
-import {OH} from "../../../Logic/OpeningHours";
+
+import {OH} from "./OpeningHours";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import Combine from "../Base/Combine";
+import {TextField} from "../Input/TextField";
+import {DropDown} from "../Input/DropDown";
+import {InputElement} from "../Input/InputElement";
+import Translations from "../i18n/Translations";
 
 export default class PublicHolidayInput extends InputElement<string> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);

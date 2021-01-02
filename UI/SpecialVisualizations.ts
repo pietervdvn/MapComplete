@@ -1,5 +1,4 @@
 import {UIElement} from "./UIElement";
-import OpeningHoursVisualization from "./OhVisualization";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
@@ -16,6 +15,7 @@ import ReviewElement from "./Reviews/ReviewElement";
 import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
+import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;

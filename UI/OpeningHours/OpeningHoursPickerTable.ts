@@ -1,15 +1,14 @@
-import {InputElement} from "../InputElement";
-import {OpeningHour} from "../../../Logic/OpeningHours";
-import {UIEventSource} from "../../../Logic/UIEventSource";
-import {Utils} from "../../../Utils";
-import {UIElement} from "../../UIElement";
-import Translations from "../../i18n/Translations";
-import {Browser} from "leaflet";
-
 /**
  * This is the base-table which is selectable by hovering over it.
  * It will genarate the currently selected opening hour.
  */
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {Utils} from "../../Utils";
+import {OpeningHour} from "./OpeningHours";
+import {InputElement} from "../Input/InputElement";
+import Translations from "../i18n/Translations";
+
 export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]> {
     public readonly IsSelected: UIEventSource<boolean>;
     private readonly weekdays: UIEventSource<UIElement[]>;
