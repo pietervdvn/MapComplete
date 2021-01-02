@@ -3,7 +3,7 @@ import {DropDown} from "./Input/DropDown";
 import Translations from "./i18n/Translations";
 import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {BaseLayer} from "../Logic/BaseLayer";
+import {BaseLayer} from "../Models/BaseLayer";
 
 export default class BackgroundSelector extends UIElement {
 
@@ -28,7 +28,7 @@ export default class BackgroundSelector extends UIElement {
             baseLayers.push({value: layer, shown: layer.name ?? "id:" + layer.id});
         }
 
-        this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.bm.CurrentLayer);
+        this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.backgroundLayer);
     }
 
     InnerRender(): string {

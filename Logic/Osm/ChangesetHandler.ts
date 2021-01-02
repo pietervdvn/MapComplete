@@ -5,6 +5,8 @@ import {ElementStorage} from "../ElementStorage";
 import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import Constants from "../../Models/Constants";
+import {Basemap} from "../Leaflet/Basemap";
 
 export class ChangesetHandler {
 
@@ -101,12 +103,14 @@ export class ChangesetHandler {
             path: '/api/0.6/changeset/create',
             options: {header: {'Content-Type': 'text/xml'}},
             content: [`<osm><changeset>`,
-                `<tag k="created_by" v="MapComplete ${State.vNumber}" />`,
+                `<tag k="created_by" v="MapComplete ${Constants.vNumber}" />`,
                 `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.id}${commentExtra}"/>`,
                 `<tag k="theme" v="${layout.id}"/>`,
                 `<tag k="language" v="${Locale.language.data}"/>`,
+                `<tag k="host" v="${escapeHtml(window.location.host)}"/>`,
+                `<tag k="imagery" v="${State.state.backgroundLayer.data.id}/>`,
                 surveySource,
-                layout.maintainer !== undefined ? `<tag k="theme-creator" v="${escapeHtml(layout.maintainer)}"/>` : "",
+                (layout.maintainer ?? "") !== "" ? `<tag k="theme-creator" v="${escapeHtml(layout.maintainer)}"/>` : "",
                 `</changeset></osm>`].join("")
         }, function (err, response) {
             if (response === undefined) {

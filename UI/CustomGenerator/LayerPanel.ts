@@ -21,6 +21,7 @@ import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import Svg from "../../Svg";
+import Constants from "../../Models/Constants";
 
 /**
  * Shows the configuration for a single layer
@@ -142,7 +143,7 @@ export default class LayerPanel extends UIElement {
             }
         )
 
-        if (userDetails.csCount >= State.userJourney.themeGeneratorFullUnlock) {
+        if (userDetails.csCount >= Constants.userJourney.themeGeneratorFullUnlock) {
 
             const presetPanel = new MultiInput("Add a preset",
                 () => ({tags: [], title: {}}),
@@ -151,7 +152,7 @@ export default class LayerPanel extends UIElement {
             new SingleSetting(config, presetPanel, ["layers", index, "presets"], "Presets", "")
             this.presetsPanel = presetPanel;
         } else {
-            this.presetsPanel = new FixedUiElement(`Creating a custom theme which also edits OSM is only unlocked after ${State.userJourney.themeGeneratorFullUnlock} changesets`).SetClass("alert");
+            this.presetsPanel = new FixedUiElement(`Creating a custom theme which also edits OSM is only unlocked after ${Constants.userJourney.themeGeneratorFullUnlock} changesets`).SetClass("alert");
         }
 
         function loadTagRenderings() {

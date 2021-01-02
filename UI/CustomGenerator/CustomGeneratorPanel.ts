@@ -17,6 +17,7 @@ import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import HelpText from "./HelpText";
 import Svg from "../../Svg";
+import Constants from "../../Models/Constants";
 
 
 export default class CustomGeneratorPanel extends UIElement {
@@ -103,11 +104,12 @@ export default class CustomGeneratorPanel extends UIElement {
                 this.loginButton
             ]).Render();
         }
-        if (ud.csCount <= State.userJourney.themeGeneratorReadOnlyUnlock) {
+        const journey = Constants.userJourney;
+        if (ud.csCount <= journey.themeGeneratorReadOnlyUnlock) {
             return new Combine([
                 "<h3>Too little experience</h3>",
-                `<p>Creating your own (readonly) themes can only be done if you have more then <b>${State.userJourney.themeGeneratorReadOnlyUnlock}</b> changesets made</p>`,
-                `<p>Making a theme including survey options can be done at <b>${State.userJourney.themeGeneratorFullUnlock}</b> changesets</p>`
+                `<p>Creating your own (readonly) themes can only be done if you have more then <b>${journey.themeGeneratorReadOnlyUnlock}</b> changesets made</p>`,
+                `<p>Making a theme including survey options can be done at <b>${journey.themeGeneratorFullUnlock}</b> changesets</p>`
             ]).Render();
         }
         return this.mainPanel.Render()

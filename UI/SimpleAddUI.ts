@@ -10,6 +10,7 @@ import State from "../State";
 import {UIEventSource} from "../Logic/UIEventSource";
 import Svg from "../Svg";
 import {FixedUiElement} from "./Base/FixedUiElement";
+import Constants from "../Models/Constants";
 
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
@@ -59,7 +60,7 @@ export class SimpleAddUI extends UIElement {
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = "";
-                if (csCount > State.userJourney.tagsVisibleAt) {
+                if (csCount > Constants.userJourney.tagsVisibleAt) {
                     tagInfo = preset.tags.map(t => t.asHumanString(false, true)).join("&");
                     tagInfo = `<br/><span class='subtle'>${tagInfo}</span>`
                 }
@@ -139,8 +140,8 @@ export class SimpleAddUI extends UIElement {
 
             let tagInfo = "";
             const csCount = State.state.osmConnection.userDetails.data.csCount;
-            if (csCount > State.userJourney.tagsVisibleAt) {
-                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > State.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
+            if (csCount > Constants.userJourney.tagsVisibleAt) {
+                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
                 tagInfo = `<br/>More information about the preset: ${tagInfo}`
             }
 
@@ -169,7 +170,7 @@ export class SimpleAddUI extends UIElement {
             return new Combine([header, this._loginButton]).Render()
         }
 
-        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < State.userJourney.addNewPointWithUnreadMessagesUnlock) {
+        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < Constants.userJourney.addNewPointWithUnreadMessagesUnlock) {
             return new Combine([header,
                 Translations.t.general.readYourMessages.Clone().SetClass("alert"),
                 this.goToInboxButton
@@ -185,13 +186,13 @@ export class SimpleAddUI extends UIElement {
             ]);
         }
 
-        if (userDetails.data.csCount < State.userJourney.addNewPointsUnlock) {
+        if (userDetails.data.csCount < Constants.userJourney.addNewPointsUnlock) {
             return new Combine([header, "<span class='alert'>",
                 Translations.t.general.fewChangesBefore,
                 "</span>"]).Render();
         }
 
-        if (State.state.locationControl.data.zoom < State.userJourney.minZoomLevelToAddNewPoints) {
+        if (State.state.locationControl.data.zoom < Constants.userJourney.minZoomLevelToAddNewPoints) {
             return new Combine([header, Translations.t.general.add.zoomInFurther.SetClass("alert")]).Render()
         }
 

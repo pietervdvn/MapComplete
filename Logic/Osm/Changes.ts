@@ -7,6 +7,7 @@ import {And, Tag, TagsFilter} from "../Tags";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
+import Constants from "../../Models/Constants";
 
 export class Changes {
 
@@ -181,7 +182,7 @@ export class Changes {
                 }
 
 
-                let changes = `<osmChange version='0.6' generator='Mapcomplete ${State.vNumber}'>`;
+                let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
 
                 if (creations.length > 0) {
                     changes +=

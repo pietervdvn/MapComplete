@@ -18,6 +18,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import SpecialVisualizations from "../SpecialVisualizations";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
+import Constants from "../../Models/Constants";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
@@ -46,7 +47,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         this.SetClass("min-height");
 
         this.options = options ?? {};
-        const questionsNotUnlocked = userDetails.csCount < State.userJourney.themeGeneratorFullUnlock;
+        const questionsNotUnlocked = userDetails.csCount < Constants.userJourney.themeGeneratorFullUnlock;
         this.options.disableQuestions = 
             (this.options.disableQuestions ?? false) ||
             questionsNotUnlocked; 
@@ -89,7 +90,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
                 "<br/><br/>" +
                 "Furhtermore, some special functions are supported:"+SpecialVisualizations.HelpMessage.Render()),
 
-            questionsNotUnlocked ? `You need at least ${State.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",
+            questionsNotUnlocked ? `You need at least ${Constants.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",
             ...(options?.disableQuestions ? [] : questionSettings),
 
             "<h3>Mappings</h3>",

@@ -17,6 +17,7 @@ import InstalledThemes from "./Logic/InstalledThemes";
 import {BaseLayer} from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -27,12 +28,7 @@ export default class State {
     // The singleton of the global state
     public static state: State;
     
-    public static vNumber = Constants.vNumber;
-    public static userJourney = Constants.userJourney;
-    
     public static runningFromConsole: boolean = false;
-
-    
     
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 
@@ -95,7 +91,8 @@ export default class State {
      * The map location: currently centered lat, lon and zoom
      */
     public readonly locationControl = new UIEventSource<Loc>(undefined);
-
+    public readonly backgroundLayer = new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto);
+    
     /**
      * The location as delivered by the GPS
      */
@@ -109,7 +106,7 @@ export default class State {
     public layerControlIsOpened: UIEventSource<boolean> = QueryParameters.GetQueryParameter("layer-control-toggle", "false", "Wether or not the layer control is shown")
         .map<boolean>((str) => str !== "false", [], b => "" + b)
 
-    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${State.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
+    public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
         str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
     );
 

@@ -14,6 +14,7 @@ import {SubtleButton} from "./Base/SubtleButton";
 import Svg from "../Svg";
 import {Translation} from "./i18n/Translation";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import Constants from "../Models/Constants";
 
 export class ShareScreen extends UIElement {
     private readonly _options: UIElement;
@@ -71,7 +72,7 @@ export class ShareScreen extends UIElement {
 
         if (State.state !== undefined) {
 
-            const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = (State.state.bm as Basemap).CurrentLayer;
+            const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = State.state.backgroundLayer;
             const currentBackground = new VariableUiElement(currentLayer.map(layer => {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
             }));
@@ -190,7 +191,7 @@ export class ShareScreen extends UIElement {
                 new VariableUiElement(
                     State.state.osmConnection.userDetails.map(
                         userDetails => {
-                            if (userDetails.csCount <= State.userJourney.themeGeneratorReadOnlyUnlock) {
+                            if (userDetails.csCount <= Constants.userJourney.themeGeneratorReadOnlyUnlock) {
                                 return "";
                             }
 

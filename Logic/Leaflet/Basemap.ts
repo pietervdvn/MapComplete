@@ -12,16 +12,16 @@ export class Basemap {
     public readonly map: Map;
 
     public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
-    public readonly CurrentLayer: UIEventSource<BaseLayer> = new UIEventSource(AvailableBaseLayers.osmCarto);
 
 
     constructor(leafletElementId: string,
                 location: UIEventSource<Loc>,
+                currentLayer: UIEventSource<BaseLayer>,
                 extraAttribution: UIElement) {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
-            layers: [ AvailableBaseLayers.osmCarto.layer],
+            layers: [AvailableBaseLayers.osmCarto.layer],
         });
 
         L.control.scale(
@@ -30,17 +30,31 @@ export class Basemap {
             }
         ).addTo(this.map)
 
+
         // Users are not allowed to zoom to the 'copies' on the left and the right, stuff goes wrong then
         // We give a bit of leeway for people on the edges
         // Also see: https://www.reddit.com/r/openstreetmap/comments/ih4zzc/mapcomplete_a_new_easytouse_editor/g31ubyv/
         this.map.setMaxBounds(
-            [[-100,-200],[100,200]]
+            [[-100, -200], [100, 200]]
         );
         this.map.attributionControl.setPrefix(
             extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
 
         this.map.zoomControl.setPosition("bottomright");
         const self = this;
+
+        let previousLayer = currentLayer.data;
+        currentLayer.addCallbackAndRun(layer => {
+            if (layer === previousLayer) {
+                return;
+            }
+            if (previousLayer !== undefined) {
+                self.map.removeLayer(previousLayer.layer);
+            }
+            previousLayer = layer;
+            self.map.addLayer(layer.layer);
+        })
+
 
         this.map.on("moveend", function () {
             location.data.zoom = self.map.getZoom();
@@ -57,6 +71,8 @@ export class Basemap {
             self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
             e.preventDefault();
         });
+
+
     }
 
 

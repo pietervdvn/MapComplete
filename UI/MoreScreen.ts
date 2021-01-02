@@ -9,6 +9,7 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Svg from "../Svg";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
+import Constants from "../Models/Constants";
 
 export class MoreScreen extends UIElement {
 
@@ -74,7 +75,7 @@ export class MoreScreen extends UIElement {
 
         els.push(new VariableUiElement(
             State.state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < State.userJourney.themeGeneratorReadOnlyUnlock) {
+                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
                     return tr.requestATheme.Render();
                 }
                 return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
@@ -88,7 +89,7 @@ export class MoreScreen extends UIElement {
         for (const k in AllKnownLayouts.allSets) {
             const layout : LayoutConfig = AllKnownLayouts.allSets[k];
             if (k === personal.id) {
-                if (State.state.osmConnection.userDetails.data.csCount < State.userJourney.personalLayoutUnlock) {
+                if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
                     continue;
                 }
             }

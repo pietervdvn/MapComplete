@@ -39,6 +39,7 @@ import * as L from "leaflet";
 import {Img} from "./UI/Img";
 import {UserDetails} from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/Misc/Attribution";
+import Constants from "./Models/Constants";
 
 export class InitUiElements {
 
@@ -315,10 +316,10 @@ export class InitUiElements {
         tabs.push({
                 header: Svg.help    ,
                 content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
-                    if (userdetails.csCount < State.userJourney.mapCompleteHelpUnlock) {
+                    if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version "+State.vNumber]).Render();
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version "+Constants.vNumber]).Render();
                 }, [Locale.language]))
             }
         );
@@ -435,26 +436,30 @@ export class InitUiElements {
         });
     }
     static InitBaseMap() {
-        const bm = new Basemap("leafletDiv", State.state.locationControl, new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.bm));
+        const bm = new Basemap("leafletDiv", 
+            State.state.locationControl, 
+            State.state.backgroundLayer,
+            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.bm)
+        );
         State.state.bm = bm;
         bm.map.on("popupclose", () => {
             State.state.selectedElement.setData(undefined)
         })
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
-        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl, State.state.bm).availableEditorLayers;
+        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl, State.state.backgroundLayer).availableEditorLayers;
         const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId, "The id of the background layer to start with");
 
         queryParam.addCallbackAndRun((selectedId: string) => {
             const available = State.state.availableBackgroundLayers.data;
             for (const layer of available) {
                 if (layer.id === selectedId) {
-                    State.state.bm.CurrentLayer.setData(layer);
+                    State.state.backgroundLayer.setData(layer);
                 }
             }
         })
 
-        State.state.bm.CurrentLayer.addCallbackAndRun(currentLayer => {
+        State.state.backgroundLayer.addCallbackAndRun(currentLayer => {
             queryParam.setData(currentLayer.id);
         });
 

@@ -5,6 +5,7 @@ import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {OH} from "./OpeningHours";
 import Translations from "../i18n/Translations";
+import Constants from "../../Models/Constants";
 
 export default class OpeningHoursVisualization extends UIElement {
     private readonly _key: string;
@@ -166,7 +167,7 @@ export default class OpeningHoursVisualization extends UIElement {
         } catch (e) {
             console.log(e);
             const msg = new Combine([Translations.t.general.opening_hours.error_loading,
-            State.state?.osmConnection?.userDetails?.data?.csCount >= State.userJourney.tagsVisibleAndWikiLinked ?
+            State.state?.osmConnection?.userDetails?.data?.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked ?
                  `<span class='subtle'>${e}</span>`
                 : ""
             ]);

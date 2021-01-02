@@ -18,6 +18,7 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
+import Constants from "../../Models/Constants";
 
 /**
  * Shows the question element.
@@ -72,14 +73,14 @@ export default class TagRenderingQuestion extends UIElement {
             self._inputElement.GetValue().map(
                 (tags: TagsFilter) => {
                     const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
-                    if (csCount < State.userJourney.tagsVisibleAt) {
+                    if (csCount < Constants.userJourney.tagsVisibleAt) {
                         return "";
                     }
 
                     if (tags === undefined) {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
-                    if (csCount < State.userJourney.tagsVisibleAndWikiLinked) {
+                    if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                         const tagsStr = tags.asHumanString(false, true);
                         return new FixedUiElement(tagsStr).SetClass("subtle").Render();
                     }

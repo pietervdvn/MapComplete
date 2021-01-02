@@ -33,7 +33,7 @@ export default class AvailableBaseLayers {
     public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
     constructor(location: UIEventSource<{ lat: number, lon: number, zoom: number }>,
-                bm: Basemap) {
+                currentBackgroundLayer: UIEventSource<BaseLayer>) {
         const self = this;
         this.availableEditorLayers =
             location.map(
@@ -59,8 +59,7 @@ export default class AvailableBaseLayers {
 
         // Change the baselayer back to OSM if we go out of the current range of the layer
         this.availableEditorLayers.addCallbackAndRun(availableLayers => {
-            const layerControl = bm.CurrentLayer;
-            const currentLayer = layerControl.data.id;
+            const currentLayer = currentBackgroundLayer.data.id;
             for (const availableLayer of availableLayers) {
                 if (availableLayer.id === currentLayer) {
 
