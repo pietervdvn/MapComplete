@@ -1,6 +1,6 @@
 import {UIElement} from "../UI/UIElement";
 UIElement.runningFromConsole = true;
-import {Img} from "../UI/Img";
+import Img from "../UI/Base/Img";
 Img.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
@@ -9,13 +9,13 @@ import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
-import {OH, OpeningHour} from "../Logic/OpeningHours";
-import PublicHolidayInput from "../UI/Input/OpeningHours/PublicHolidayInput";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
 import {Utils} from "../Utils";
 import {Translation} from "../UI/i18n/Translation";
+import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
+import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
 
 
 new T([

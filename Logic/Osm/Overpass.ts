@@ -1,7 +1,7 @@
-import {Bounds} from "../Bounds";
 import {TagsFilter} from "../Tags";
 import * as $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
+import Bounds from "../../Models/Bounds";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -26,7 +26,7 @@ export class Overpass {
         return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
     }
     
-    queryGeoJson(bounds: Bounds, continuation: ((any) => void), onFail: ((reason) => void)): void {
+    queryGeoJson(bounds: Bounds, continuation: ((any, date: Date) => void), onFail: ((reason) => void)): void {
 
         let query = this.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
@@ -48,7 +48,8 @@ export class Overpass {
                 }
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
-                continuation(geojson);
+                const osmTime = new Date(json.osm3s.timestamp_osm_base);
+                continuation(geojson, osmTime);
             }).fail(onFail)
     }
 }

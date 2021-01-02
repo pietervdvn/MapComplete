@@ -1,12 +1,11 @@
 import * as fs from "fs";
-import {Utils} from "../Utils";
 
 function genImages() {
 
     console.log("Generating images")
     const dir = fs.readdirSync("./assets/svg")
 
-    let module = "import {Img} from \"./UI/Img\";\nimport {FixedUiElement} from \"./UI/Base/FixedUiElement\";\n\nexport default class Svg {\n\n\n";
+    let module = "import Img from \"./UI/Base/Img\";\nimport {FixedUiElement} from \"./UI/Base/FixedUiElement\";\n\nexport default class Svg {\n\n\n";
     const allNames: string[] = [];
     for (const path of dir) {
 

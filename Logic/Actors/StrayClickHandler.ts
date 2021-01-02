@@ -1,9 +1,9 @@
 import * as L from "leaflet";
 import {UIElement} from "../../UI/UIElement";
-import {Img} from "../../UI/Img";
 import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
 import {FilteredLayer} from "../FilteredLayer";
+import Img from "../../UI/Base/Img";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.

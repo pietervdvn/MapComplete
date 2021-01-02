@@ -1,4 +1,4 @@
-export class Img {
+export default class Img {
 
     public static runningFromConsole = false;
     

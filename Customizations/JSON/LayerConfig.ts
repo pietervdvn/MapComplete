@@ -6,7 +6,7 @@ import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
-import {Img} from "../../UI/Img";
+import Img from "../../UI/Base/Img";
 import Svg from "../../Svg";
 import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";

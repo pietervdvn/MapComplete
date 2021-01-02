@@ -1,12 +1,12 @@
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {OsmPreferences} from "./Osm/OsmPreferences";
-import {UIEventSource} from "./UIEventSource";
-import {OsmConnection} from "./Osm/OsmConnection";
+import {UIEventSource} from "../UIEventSource";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import {OsmConnection} from "../Osm/OsmConnection";
 
 export default class InstalledThemes {
-
-    static InstalledThemes(osmConnection: OsmConnection): UIEventSource<{ layout: LayoutConfig; definition: string }[]> {
-        return osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
+    public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
+    
+    constructor(osmConnection: OsmConnection) {
+        this.installedThemes = osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
             if (allPreferences === undefined) {
                 console.log("All prefs is undefined");
@@ -41,7 +41,6 @@ export default class InstalledThemes {
             return installedThemes;
 
         });
-
     }
 
     private static DeleteInvalid(osmConnection: OsmConnection, invalidThemes: any[]) {

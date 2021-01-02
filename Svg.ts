@@ -1,4 +1,4 @@
-import {Img} from "./UI/Img";
+import Img from "./UI/Base/Img";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
 export default class Svg {

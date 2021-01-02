@@ -12,7 +12,7 @@ import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {LayerSelection} from "./UI/LayerSelection";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
+import UpdateFromOverpass from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayersPanel} from "./UI/PersonalLayersPanel";
@@ -35,10 +35,11 @@ import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personalLayout/personalLayout.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
-import {Img} from "./UI/Img";
+import Img from "./UI/Base/Img";
 import {UserDetails} from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/Misc/Attribution";
 import Constants from "./Models/Constants";
+import MetaTagging from "./Logic/MetaTagging";
 
 export class InitUiElements {
 
@@ -340,7 +341,7 @@ export class InitUiElements {
     }
 
     static InitBaseMap() {
-        
+
         const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap);
         const bm = new Basemap("leafletDiv",
             State.state.locationControl,
@@ -349,22 +350,16 @@ export class InitUiElements {
             attr
         );
         State.state.leafletMap.setData(bm.map);
-        
+
         bm.map.on("popupclose", () => {
             State.state.selectedElement.setData(undefined)
         })
-        
-        
-        State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
     }
 
     static InitLayers() {
-
-        const flayers: FilteredLayer[] = []
-
         const state = State.state;
-
+        const flayers: FilteredLayer[] = []
         for (const layer of state.layoutToUse.data.layers) {
 
             if (typeof (layer) === "string") {
@@ -387,6 +382,40 @@ export class InitUiElements {
         }
 
         State.state.filteredLayers.setData(flayers);
+
+        const updater = new UpdateFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
+        State.state.layerUpdater = updater;
+
+        updater.features.addCallback(features => {
+
+            features.forEach(feature => {
+                State.state.allElements.addElement(feature);
+            })
+            MetaTagging.addMetatags(features);
+
+            function renderLayers(layers) {
+
+
+                if (layers.length === 0) {
+                    if (features.length > 0) {
+                        console.warn("Got some leftovers: ", features.join("; "))
+                    }
+                    return;
+                }
+                // We use window.setTimeout to give JS some time to update everything and make the interface not too laggy
+                window.setTimeout(() => {
+                    const layer = layers[0];
+                    const rest = layers.slice(1, layers.length);
+                    features = layer.SetApplicableData(features);
+                    renderLayers(rest);
+                }, 50)
+            }
+
+            renderLayers(flayers);
+
+        })
+
+
     }
 
     private static setupAllLayerElements() {

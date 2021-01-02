@@ -57,7 +57,7 @@ export class SearchAndGo extends UIElement {
                 }
 
                 const bb = result[0].boundingbox;
-                const bounds = [
+                const bounds : [[number, number], [number, number]] = [
                     [bb[0], bb[2]],
                     [bb[1], bb[3]]
                 ]

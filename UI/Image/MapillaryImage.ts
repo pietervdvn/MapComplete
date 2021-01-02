@@ -1,10 +1,7 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/Web/Wikimedia";
-import {Imgur} from "../../Logic/Web/Imgur";
 import {Mapillary} from "../../Logic/Web/Mapillary";
-import {Img} from "../Img";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Svg from "../../Svg";
 
 

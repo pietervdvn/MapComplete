@@ -23,8 +23,8 @@ export class FilteredLayer {
     public readonly name: string | UIElement;
     public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
-    private readonly combinedIsDisplayed: UIEventSource<boolean>;
     public readonly layerDef: LayerConfig;
+    private readonly combinedIsDisplayed: UIEventSource<boolean>;
     private readonly _maxAllowedOverlap: number;
 
     /** The featurecollection from overpass
@@ -37,10 +37,10 @@ export class FilteredLayer {
      * The leaflet layer object which should be removed on rerendering
      */
     private _geolayer;
-    
+
     private _showOnPopup: (tags: UIEventSource<any>, feature: any) => UIElement;
 
-    
+
     constructor(
         layerDef: LayerConfig,
         showOnPopup: ((tags: UIEventSource<any>, feature: any) => UIElement)
@@ -68,25 +68,26 @@ export class FilteredLayer {
             }
         })
     }
+
     /**
      * The main function to load data into this layer.
      * The data that is NOT used by this layer, is returned as a geojson object; the other data is rendered
      */
-    public SetApplicableData(geojson: any): any {
+    public SetApplicableData(features: any[]): any[] {
         const leftoverFeatures = [];
         const selfFeatures = [];
-        for (let feature of geojson.features) {
+        for (let feature of features) {
             const tags = TagUtils.proprtiesToKV(feature.properties);
             const matches = this.filters.matches(tags);
             if (matches) {
-               selfFeatures.push(feature);
+                selfFeatures.push(feature);
             }
             if (!matches || this.layerDef.passAllFeatures) {
                 leftoverFeatures.push(feature);
             }
         }
 
-       this.RenderLayer(selfFeatures)
+        this.RenderLayer(selfFeatures)
 
         const notShadowed = [];
         for (const feature of leftoverFeatures) {
@@ -100,16 +101,13 @@ export class FilteredLayer {
             notShadowed.push(feature);
         }
 
-        return {
-            type: "FeatureCollection",
-            features: notShadowed
-        };
+        return notShadowed;
     }
 
 
     public AddNewElement(element) {
         this._newElements.push(element);
-        this.RenderLayer( this._dataFromOverpass); // Update the layer
+        this.RenderLayer(this._dataFromOverpass); // Update the layer
     }
 
     private RenderLayer(features) {
@@ -197,7 +195,7 @@ export class FilteredLayer {
                     // We already open it
                     uiElement.Activate();
                     popup.setContent(uiElement.Render());
-               
+
                     const center = GeoOperations.centerpoint(feature).geometry.coordinates;
                     popup.setLatLng({lat: center[1], lng: center[0]});
                     popup.openOn(State.state.leafletMap.data);

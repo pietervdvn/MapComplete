@@ -3,7 +3,7 @@ import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
 import {Utils} from "../../Utils";
 import Svg from "../../Svg";
-import {Img} from "../../UI/Img";
+import Img from "../../UI/Base/Img";
 
 export class GeoLocationHandler extends UIElement {
 

@@ -1,4 +1,4 @@
-import {Img} from "../UI/Img"
+import Img from "../UI/Base/Img"
 import {UIElement} from "../UI/UIElement";
 Img.runningFromConsole = true;
 // We HAVE to mark this while importing

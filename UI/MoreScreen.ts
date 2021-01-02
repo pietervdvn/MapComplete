@@ -56,15 +56,13 @@ export class MoreScreen extends UIElement {
         if (description !== undefined) {
             description = new Combine(["<br/>", description]);
         }
-        const link =
-            new SubtleButton(layout.icon,
-                new Combine([
-                    "<b>",
-                    Translations.W(layout.title),
-                    "</b>",
-                    description ?? "",
-                ]), {url: linkText, newTab: false})
-        return link;
+        return new SubtleButton(layout.icon,
+            new Combine([
+                "<b>",
+                Translations.W(layout.title),
+                "</b>",
+                description ?? "",
+            ]), {url: linkText, newTab: false});
     }
 
     InnerRender(): string {

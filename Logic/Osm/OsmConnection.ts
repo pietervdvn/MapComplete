@@ -4,9 +4,9 @@ import {UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {ElementStorage} from "../ElementStorage";
-import {Img} from "../../UI/Img";
 import Svg from "../../Svg";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import Img from "../../UI/Base/Img";
 
 export class UserDetails {
 

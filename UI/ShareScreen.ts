@@ -6,7 +6,6 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import CheckBox from "./Input/CheckBox";
 import {VerticalCombine} from "./Base/VerticalCombine";
 import State from "../State";
-import {Basemap} from "../Logic/Leaflet/Basemap";
 import {FilteredLayer} from "../Logic/FilteredLayer";
 import {Utils} from "../Utils";
 import {UIEventSource} from "../Logic/UIEventSource";

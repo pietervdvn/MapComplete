@@ -13,7 +13,7 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
-import InstalledThemes from "./Logic/InstalledThemes";
+import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import {BaseLayer} from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
@@ -237,7 +237,7 @@ export default class State {
         })
 
 
-        this.installedThemes = InstalledThemes.InstalledThemes(this.osmConnection );
+        this.installedThemes = new InstalledThemes(this.osmConnection).installedThemes;
 
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
         this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(

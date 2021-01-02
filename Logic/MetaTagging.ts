@@ -4,6 +4,7 @@ import opening_hours from "opening_hours";
 import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
 import CountryCoder from "latlon2country"
+import {UIEventSource} from "./UIEventSource";
 
 class SimpleMetaTagger {
     private _f: (feature: any, index: number) => void;
@@ -264,7 +265,7 @@ export default class MetaTagging {
         }
     );
 
-    public static metatags = [
+    private static metatags = [
         MetaTagging.latlon,
         MetaTagging.surfaceArea,
         MetaTagging.country,
@@ -274,6 +275,10 @@ export default class MetaTagging {
 
     ];
 
+    /**
+     * An actor which adds metatags on every feature in the given object
+     * The features are a list of geojson-features, with a "properties"-field and geometry
+     */
     static addMetatags(features: any[]) {
 
         for (const metatag of MetaTagging.metatags) {
