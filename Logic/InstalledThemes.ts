@@ -4,18 +4,9 @@ import {UIEventSource} from "./UIEventSource";
 import {OsmConnection} from "./Osm/OsmConnection";
 
 export default class InstalledThemes {
-    
-    private static DeleteInvalid(osmConnection: OsmConnection, invalidThemes: any[]){
-       // for (const invalid of invalidThemes) {
-       //     console.error("Attempting to remove ", invalid)
-       //     osmConnection.GetLongPreference(
-       //         "installed-theme-" + invalid
-       //     ).setData(null);
-       // }
-    }
-    
-    static InstalledThemes(osmConnection: OsmConnection) : UIEventSource<{ layout: LayoutConfig; definition: string }[]>{
-       return osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
+
+    static InstalledThemes(osmConnection: OsmConnection): UIEventSource<{ layout: LayoutConfig; definition: string }[]> {
+        return osmConnection.preferencesHandler.preferences.map<{ layout: LayoutConfig, definition: string }[]>(allPreferences => {
             const installedThemes: { layout: LayoutConfig, definition: string }[] = [];
             if (allPreferences === undefined) {
                 console.log("All prefs is undefined");
@@ -31,8 +22,7 @@ export default class InstalledThemes {
                         continue;
                     }
                     try {
-                        var json = atob(customLayout.data);
-                        console.log("Found a theme:",json);
+                        const json = atob(customLayout.data);
                         const layout = new LayoutConfig(
                             JSON.parse(json));
                         installedThemes.push({
@@ -53,5 +43,14 @@ export default class InstalledThemes {
         });
 
     }
-    
+
+    private static DeleteInvalid(osmConnection: OsmConnection, invalidThemes: any[]) {
+        for (const invalid of invalidThemes) {
+            console.error("Attempting to remove ", invalid)
+            osmConnection.GetLongPreference(
+                "installed-theme-" + invalid
+            ).setData(null);
+        }
+    }
+
 }

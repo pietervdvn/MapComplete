@@ -1,16 +1,15 @@
-import {UIElement} from "../UI/UIElement";
+import {UIElement} from "./UIElement";
 import State from "../State";
 import Translations from "../UI/i18n/Translations";
-import {UIEventSource} from "./UIEventSource";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import Combine from "../UI/Base/Combine";
 import CheckBox from "../UI/Input/CheckBox";
 import * as personal from "../assets/themes/personalLayout/personalLayout.json";
-import {SubtleButton} from "../UI/Base/SubtleButton";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
-import {Img} from "../UI/Img";
+import {SubtleButton} from "./Base/SubtleButton";
+import {FixedUiElement} from "./Base/FixedUiElement";
 import Svg from "../Svg";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import {UIEventSource} from "../Logic/UIEventSource";
 
 export class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
@@ -22,7 +21,7 @@ export class PersonalLayersPanel extends UIElement {
         this.UpdateView([]);
         const self = this;
         State.state.installedThemes.addCallback(extraThemes => {
-            self.UpdateView(extraThemes.map(layout => layout.layout.layoutConfig));
+            self.UpdateView(extraThemes.map(layout => layout.layout));
             self.Update();
         })
     }
@@ -56,12 +55,12 @@ export class PersonalLayersPanel extends UIElement {
                 if (typeof layer === "string") {
                     continue;
                 }
-                let icon = layer.icon ?? Img.AsData(Svg.checkmark);
-                let iconUnset = layer.icon ?? "";
-                if (layer.icon !== undefined && typeof (layer.icon) !== "string") {
-                    icon = layer.icon.GetRenderValue({"id": "node/-123456"}).txt ?? Img.AsData(Svg.checkmark)
-                    iconUnset = icon;
-                }
+                let icon :UIElement = layer.GenerateLeafletStyle(new UIEventSource<any>({id:"node/-1"}), false).icon.html
+                    ?? Svg.checkmark_svg();
+                let iconUnset =new FixedUiElement(icon.Render());
+                icon.SetClass("single-layer-selection-toggle")
+                iconUnset.SetClass("single-layer-selection-toggle")
+
 
                 let name = layer.name ?? layer.id;
                 if (name === undefined) {
@@ -74,15 +73,13 @@ export class PersonalLayersPanel extends UIElement {
                     layer.description !== undefined ? new Combine(["<br/>", layer.description]) : "",
                 ])
                 
-                const iconImage = `<img src="${icon}">`;
-                const iconUnsetImage = `<img src="${iconUnset}">`
                 
                 const cb = new CheckBox(
                     new SubtleButton(
-                        new FixedUiElement(iconImage).SetStyle(""), 
+                        icon, 
                         content),
                     new SubtleButton(
-                        new FixedUiElement(iconUnsetImage).SetStyle("opacity:0.1;"),
+                        iconUnset.SetStyle("opacity:0.1"),
                         new Combine(["<del>",
                             content,
                             "</del>"

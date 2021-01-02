@@ -152,7 +152,6 @@ export default class State {
             this.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
             "The id of the background layer to start with")
             .map((selectedId: string) => {
-                console.log("SELECTED ID", selectedId)
                 const available = self.availableBackgroundLayers.data;
                 for (const layer of available) {
                     if (layer.id === selectedId) {
