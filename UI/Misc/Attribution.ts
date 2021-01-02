@@ -1,30 +1,30 @@
 import {UIElement} from "../UIElement";
 import Link from "../Base/Link";
 import Svg from "../../Svg";
-import {Basemap} from "../../Logic/Leaflet/Basemap";
 import Combine from "../Base/Combine";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
+import * as L from "leaflet"
 
 export default class Attribution extends UIElement {
     
     private readonly _location: UIEventSource<Loc>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _userDetails: UIEventSource<UserDetails>;
-    private readonly _basemap: Basemap;
+    private readonly _leafletMap: UIEventSource<L.Map>;
 
     constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
                 layoutToUse: UIEventSource<LayoutConfig>,
-                basemap: Basemap) {
+                leafletMap: UIEventSource<L.Map>) {
         super(location);
         this._layoutToUse = layoutToUse;
         this.ListenTo(layoutToUse);
         this._userDetails = userDetails;
-        this._basemap = basemap;
+        this._leafletMap = leafletMap;
         this.ListenTo(userDetails);
         this._location = location;
         this.SetClass("map-attribution");
@@ -47,9 +47,9 @@ export default class Attribution extends UIElement {
         }
         let editWithJosm: (UIElement | string) = ""
         if (location !== undefined &&
-            this._basemap !== undefined &&
+            this._leafletMap.data !== undefined &&
             userDetails.csCount >=  Constants.userJourney.tagsVisibleAndWikiLinked) {
-            const bounds = this._basemap.map.getBounds();
+            const bounds = this._leafletMap.data.getBounds();
             const top = bounds.getNorth();
             const bottom = bounds.getSouth();
             const right = bounds.getEast();

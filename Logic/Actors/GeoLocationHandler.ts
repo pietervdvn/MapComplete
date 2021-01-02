@@ -1,9 +1,7 @@
 import * as L from "leaflet";
 import {UIEventSource} from "../UIEventSource";
 import {UIElement} from "../../UI/UIElement";
-import State from "../../State";
 import {Utils} from "../../Utils";
-import {Basemap} from "./Basemap";
 import Svg from "../../Svg";
 import {Img} from "../../UI/Img";
 
@@ -11,12 +9,20 @@ export class GeoLocationHandler extends UIElement {
 
     private readonly _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _permission: UIEventSource<string> = new UIEventSource<string>("");
-    private _marker: any;
+    private _marker: L.Marker;
     private readonly _hasLocation: UIEventSource<boolean>;
+    private readonly _currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>;
+    private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _featureSwitch: UIEventSource<boolean>;
 
-    constructor() {
+    constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
+                leafletMap: UIEventSource<L.Map>,
+                featureSwitch: UIEventSource<boolean>) {
         super(undefined);
-        this._hasLocation = State.state.currentGPSLocation.map((location) => location !== undefined);
+        this._currentGPSLocation = currentGPSLocation;
+        this._leafletMap = leafletMap;
+        this._featureSwitch = featureSwitch;
+        this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
         var self = this;
         import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
             self.init();
@@ -33,11 +39,11 @@ export class GeoLocationHandler extends UIElement {
 
 
         function onAccuratePositionProgress(e) {
-            State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
+            self._currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionFound(e) {
-            State.state.currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
+            self._currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
         }
 
         function onAccuratePositionError(e) {
@@ -45,15 +51,13 @@ export class GeoLocationHandler extends UIElement {
 
         }
 
-        const bm : Basemap = State.state.bm;
-        const map = bm.map;
+        const map = this._leafletMap.data;
         map.on('accuratepositionprogress', onAccuratePositionProgress);
         map.on('accuratepositionfound', onAccuratePositionFound);
         map.on('accuratepositionerror', onAccuratePositionError);
 
 
-
-        State.state.currentGPSLocation.addCallback((location) => {
+        this._currentGPSLocation.addCallback((location) => {
 
             const color = getComputedStyle(document.body).getPropertyValue("--catch-detail-color")
             const icon = L.icon(
@@ -62,7 +66,7 @@ export class GeoLocationHandler extends UIElement {
                     iconSize: [40, 40], // size of the icon
                     iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
                 })
-            
+
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);
 
@@ -88,10 +92,10 @@ export class GeoLocationHandler extends UIElement {
     }
 
     InnerRender(): string {
-        if(!State.state.featureSwitchGeolocation.data){
+        if (!this._featureSwitch.data) {
             return "";
         }
-        
+
         if (this._hasLocation.data) {
             return Svg.crosshair_blue_img;
         }
@@ -102,16 +106,31 @@ export class GeoLocationHandler extends UIElement {
         return Svg.crosshair_img;
     }
 
-    
+    InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+
+        const self = this;
+        htmlElement.onclick = function () {
+            self.StartGeolocating(19);
+        }
+
+        htmlElement.oncontextmenu = function (e) {
+            self.StartGeolocating(15);
+            e.preventDefault();
+            return false;
+        }
+
+    }
+
     private StartGeolocating(zoomlevel = 19) {
         const self = this;
-        const map = State.state.bm.map;
+        const map : any = this._leafletMap.data;
         if (self._permission.data === "denied") {
             return "";
         }
-        if (State.state.currentGPSLocation.data !== undefined) {
-            State.state.bm.map.setView(
-                State.state.currentGPSLocation.data.latlng, zoomlevel
+        if (this._currentGPSLocation.data !== undefined) {
+            this._leafletMap.data.setView(
+                this._currentGPSLocation.data.latlng, zoomlevel
             );
         }
 
@@ -121,8 +140,8 @@ export class GeoLocationHandler extends UIElement {
             maxWait: 10000, // defaults to 10000
             desiredAccuracy: 50 // defaults to 20
         });
-        
-        
+
+
         if (!self._isActive.data) {
             self._isActive.setData(true);
             Utils.DoEvery(60000, () => {
@@ -138,22 +157,6 @@ export class GeoLocationHandler extends UIElement {
                 });
             })
         }
-    }
-    
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-
-        const self = this;
-        htmlElement.onclick = function () {
-            self.StartGeolocating(19);
-        }
-
-        htmlElement.oncontextmenu = function (e) {
-            self.StartGeolocating(15);
-            e.preventDefault();
-            return false;
-        }
-
     }
 
 }

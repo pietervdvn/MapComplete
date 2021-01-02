@@ -1,27 +1,23 @@
 import * as L from "leaflet"
-import {UIEventSource} from "../UIEventSource";
-import {UIElement} from "../../UI/UIElement";
-import {BaseLayer} from "../../Models/BaseLayer";
-import AvailableBaseLayers from "../Actors/AvailableBaseLayers";
-import Loc from "../../Models/Loc";
+import {UIEventSource} from "../Logic/UIEventSource";
+import Loc from "../Models/Loc";
+import {UIElement} from "./UIElement";
+import {BaseLayer} from "../Models/BaseLayer";
 
 export class Basemap {
 
 
-    // @ts-ignore
-    public readonly map: Map;
-
-    public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
-
+    public readonly map: L.Map;
 
     constructor(leafletElementId: string,
                 location: UIEventSource<Loc>,
                 currentLayer: UIEventSource<BaseLayer>,
+                lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
                 extraAttribution: UIElement) {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
-            layers: [AvailableBaseLayers.osmCarto.layer],
+            layers: [currentLayer.data.layer],
         });
 
         L.control.scale(
@@ -64,11 +60,14 @@ export class Basemap {
         });
 
         this.map.on("click", function (e) {
-            self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
+            // @ts-ignore
+            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
         });
 
         this.map.on("contextmenu", function (e) {
-            self.LastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            // @ts-ignore
+            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            // @ts-ignore
             e.preventDefault();
         });
 

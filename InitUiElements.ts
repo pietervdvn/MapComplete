@@ -7,7 +7,7 @@ import Combine from "./UI/Base/Combine";
 import {UIElement} from "./UI/UIElement";
 import {MoreScreen} from "./UI/MoreScreen";
 import {FilteredLayer} from "./Logic/FilteredLayer";
-import {Basemap} from "./Logic/Leaflet/Basemap";
+import {Basemap} from "./UI/Basemap";
 import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {LayerSelection} from "./UI/LayerSelection";
@@ -17,7 +17,7 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayersPanel} from "./UI/PersonalLayersPanel";
 import Locale from "./UI/i18n/Locale";
-import {StrayClickHandler} from "./Logic/Leaflet/StrayClickHandler";
+import {StrayClickHandler} from "./Logic/Actors/StrayClickHandler";
 import {SimpleAddUI} from "./UI/SimpleAddUI";
 import {CenterMessageBox} from "./UI/CenterMessageBox";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
@@ -25,11 +25,10 @@ import {TagUtils} from "./Logic/Tags";
 import {UserBadge} from "./UI/UserBadge";
 import {SearchAndGo} from "./UI/SearchAndGo";
 import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
-import {GeoLocationHandler} from "./Logic/Leaflet/GeoLocationHandler";
+import {GeoLocationHandler} from "./Logic/Actors/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import BackgroundSelector from "./UI/BackgroundSelector";
-import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
@@ -44,40 +43,6 @@ import Constants from "./Models/Constants";
 export class InitUiElements {
 
 
-    private static setupAllLayerElements() {
-
-        // ------------- Setup the layers -------------------------------
-
-        InitUiElements.InitLayers();
-        InitUiElements.InitLayerSelection();
-
-
-        // ------------------ Setup various other UI elements ------------
-
-
-        InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
-
-            let presetCount = 0;
-            for (const layer of State.state.filteredLayers.data) {
-                for (const preset of layer.layerDef.presets) {
-                    presetCount++;
-                }
-            }
-            if (presetCount == 0) {
-                return;
-            }
-
-
-            new StrayClickHandler(() => {
-                    return new SimpleAddUI();
-                }
-            );
-        });
-
-        new CenterMessageBox().AttachTo("centermessage");
-
-    }
-
     static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
                    layoutDefinition: string = "") {
         if (layoutToUse === undefined) {
@@ -88,8 +53,10 @@ export class InitUiElements {
         }
 
         console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
+
+
         State.state = new State(layoutToUse);
-        
+
         // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
@@ -116,7 +83,7 @@ export class InitUiElements {
         InitUiElements.setupAllLayerElements();
 
         if (layoutToUse.customCss !== undefined) {
-           Utils.LoadCustomCss(layoutToUse.customCss);
+            Utils.LoadCustomCss(layoutToUse.customCss);
         }
 
         function updateFavs() {
@@ -163,7 +130,7 @@ export class InitUiElements {
                 if (feature === undefined) {
                     State.state.fullScreenMessage.setData(undefined);
                 }
-                if (feature?.properties === undefined) {    
+                if (feature?.properties === undefined) {
                     return;
                 }
                 const data = feature.properties;
@@ -176,11 +143,11 @@ export class InitUiElements {
                     if (!applicable) {
                         continue;
                     }
-                    
-                    if((layer.title ?? null) === null && layer.tagRenderings.length === 0){
+
+                    if ((layer.title ?? null) === null && layer.tagRenderings.length === 0) {
                         continue;
                     }
-                    
+
                     // This layer is the layer that gives the questions
                     const featureBox = new FeatureInfoBox(
                         State.state.allElements.getEventSourceById(data.id),
@@ -231,15 +198,19 @@ export class InitUiElements {
                     iconAnchor: [15, 15]
                 });
                 const marker = L.marker([home.lat, home.lon], {icon: icon})
-                marker.addTo(State.state.bm.map)
+                marker.addTo(State.state.leafletMap.data)
             });
 
-        new GeoLocationHandler()
+        new GeoLocationHandler(
+            State.state.currentGPSLocation,
+            State.state.leafletMap,
+            State.state.featureSwitchGeolocation
+        )
             .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
             .AttachTo("geolocate-button");
         State.state.locationControl.ping();
     }
-    
+
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
         try {
             let hash = location.hash.substr(1);
@@ -282,55 +253,6 @@ export class InitUiElements {
 
     }
 
-
-    private static CreateWelcomePane() {
-
-        const layoutToUse = State.state.layoutToUse.data;
-        let welcome: UIElement = new WelcomeMessage();
-        if (layoutToUse.id === personal.id) {
-            welcome = new PersonalLayersPanel();
-        }
-
-        const tabs = [
-            {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
-            {
-                header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro as UIElement
-            },
-
-        ]
-
-        if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
-        }
-
-        if (State.state.featureSwitchMoreQuests.data) {
-
-            tabs.push({
-                header: Svg.add_img,
-                content: new MoreScreen()
-            });
-        }
-
-
-        tabs.push({
-                header: Svg.help    ,
-                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
-                    if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
-                        return ""
-                    }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version "+Constants.vNumber]).Render();
-                }, [Locale.language]))
-            }
-        );
-
-
-        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
-            .ListenTo(State.state.osmConnection.userDetails);
-
-    }
-
-
     static InitWelcomeMessage() {
 
         const fullOptions = this.CreateWelcomePane();
@@ -372,25 +294,6 @@ export class InitUiElements {
             }).AttachTo("help-button-mobile");
 
 
-    }
-    
-    private static GenerateLayerControlPanel() {
-
-
-        let layerControlPanel: UIElement = undefined;
-        if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
-            layerControlPanel = new BackgroundSelector();
-            layerControlPanel.SetStyle("margin:1em");
-            layerControlPanel.onClick(() => {            });
-        }
-
-        if (State.state.filteredLayers.data.length > 1) {
-            const layerSelection = new LayerSelection();
-            layerSelection.onClick(() => {
-            });
-            layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
-        }
-        return layerControlPanel;
     }
 
     static InitLayerSelection() {
@@ -435,36 +338,26 @@ export class InitUiElements {
 
         });
     }
+
     static InitBaseMap() {
-        const bm = new Basemap("leafletDiv", 
-            State.state.locationControl, 
+        
+        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap);
+        const bm = new Basemap("leafletDiv",
+            State.state.locationControl,
             State.state.backgroundLayer,
-            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.bm)
+            State.state.LastClickLocation,
+            attr
         );
-        State.state.bm = bm;
+        State.state.leafletMap.setData(bm.map);
+        
         bm.map.on("popupclose", () => {
             State.state.selectedElement.setData(undefined)
         })
+        
+        
         State.state.layerUpdater = new UpdateFromOverpass(State.state);
 
-        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl, State.state.backgroundLayer).availableEditorLayers;
-        const queryParam = QueryParameters.GetQueryParameter("background", State.state.layoutToUse.data.defaultBackgroundId, "The id of the background layer to start with");
-
-        queryParam.addCallbackAndRun((selectedId: string) => {
-            const available = State.state.availableBackgroundLayers.data;
-            for (const layer of available) {
-                if (layer.id === selectedId) {
-                    State.state.backgroundLayer.setData(layer);
-                }
-            }
-        })
-
-        State.state.backgroundLayer.addCallbackAndRun(currentLayer => {
-            queryParam.setData(currentLayer.id);
-        });
-
     }
-
 
     static InitLayers() {
 
@@ -494,6 +387,113 @@ export class InitUiElements {
         }
 
         State.state.filteredLayers.setData(flayers);
+    }
+
+    private static setupAllLayerElements() {
+
+        // ------------- Setup the layers -------------------------------
+
+        InitUiElements.InitLayers();
+        InitUiElements.InitLayerSelection();
+
+
+        // ------------------ Setup various other UI elements ------------
+
+
+        InitUiElements.OnlyIf(State.state.featureSwitchAddNew, () => {
+
+            let presetCount = 0;
+            for (const layer of State.state.filteredLayers.data) {
+                for (const preset of layer.layerDef.presets) {
+                    presetCount++;
+                }
+            }
+            if (presetCount == 0) {
+                return;
+            }
+
+
+            new StrayClickHandler(
+                State.state.LastClickLocation,
+                State.state.selectedElement,
+                State.state.filteredLayers,
+                State.state.leafletMap,
+                State.state.fullScreenMessage,
+                () => {
+                    return new SimpleAddUI();
+                }
+            );
+        });
+
+        new CenterMessageBox().AttachTo("centermessage");
+
+    }
+
+    private static CreateWelcomePane() {
+
+        const layoutToUse = State.state.layoutToUse.data;
+        let welcome: UIElement = new WelcomeMessage();
+        if (layoutToUse.id === personal.id) {
+            welcome = new PersonalLayersPanel();
+        }
+
+        const tabs = [
+            {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
+            {
+                header: Svg.osm_logo_img,
+                content: Translations.t.general.openStreetMapIntro as UIElement
+            },
+
+        ]
+
+        if (State.state.featureSwitchShareScreen.data) {
+            tabs.push({header: Svg.share_img, content: new ShareScreen()});
+        }
+
+        if (State.state.featureSwitchMoreQuests.data) {
+
+            tabs.push({
+                header: Svg.add_img,
+                content: new MoreScreen()
+            });
+        }
+
+
+        tabs.push({
+                header: Svg.help,
+                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
+                    if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
+                        return ""
+                    }
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).Render();
+                }, [Locale.language]))
+            }
+        );
+
+
+        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
+            .ListenTo(State.state.osmConnection.userDetails);
+
+    }
+
+    private static GenerateLayerControlPanel() {
+
+
+        let layerControlPanel: UIElement = undefined;
+        if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
+            layerControlPanel = new BackgroundSelector();
+            layerControlPanel.SetStyle("margin:1em");
+            layerControlPanel.onClick(() => {
+            });
+        }
+
+        if (State.state.filteredLayers.data.length > 1) {
+            const layerSelection = new LayerSelection();
+            layerSelection.onClick(() => {
+            });
+            layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
+        }
+        return layerControlPanel;
     }
 
 }

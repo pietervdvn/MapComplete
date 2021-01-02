@@ -2,10 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
-import * as L from "leaflet"
-import * as X from "leaflet-providers"
-import {Basemap} from "../../Logic/Leaflet/Basemap";
-import State from "../../State";
+
 
 /**
  * Selects a direction in degrees

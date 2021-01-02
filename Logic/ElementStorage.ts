@@ -1,5 +1,5 @@
 /**
- * Keeps track of a dictionary 'elementID' -> element
+ * Keeps track of a dictionary 'elementID' -> UIEventSource<tags>
  */
 import {UIEventSource} from "./UIEventSource";
 

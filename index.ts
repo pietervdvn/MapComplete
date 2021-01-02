@@ -6,6 +6,7 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
+import {Overpass} from "./Logic/Osm/Overpass";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -17,17 +18,7 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 
 
 if (location.href.indexOf("buurtnatuur.be") >= 0) {
-    // Reload the https version. This is important for the 'locate me' button
     defaultLayout = "buurtnatuur"
-}
-
-
-if (location.href.indexOf("buurtnatuur.be") >= 0) {
-    defaultLayout = "buurtnatuur"
-}
-
-if(location.href.indexOf("pietervdvn.github.io") >= 0){
-    defaultLayout = "bookcases"
 }
 
 const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
@@ -43,7 +34,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     testing.setData(testing.data ?? "true")
     // If you have a testfile somewhere, enable this to spoof overpass
     // This should be hosted independantly, e.g. with `cd assets; webfsd -p 8080` + a CORS plugin to disable cors rules
-    //Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
+    // Overpass.testUrl = "http://127.0.0.1:8080/streetwidths.geojson";
 } else {
     testing = QueryParameters.GetQueryParameter("test", "false");
 }
@@ -78,7 +69,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
     $.ajax({
         url: url,
         success: function (data) {
-            // Hacky McHackFace has been working here. This probably break in the future
+            // Hacky McHackFace has been working here. This'll probably break in the future
             const startTrigger = "<div class=\"mw-parser-output\">";
             const start = data.indexOf(startTrigger);
             data = data.substr(start, 
@@ -113,4 +104,3 @@ if (layoutFromBase64.startsWith("wiki:")) {
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
     e.preventDefault();
 }, false);
-// console.log(QueryParameters.GenerateQueryParameterDocs())

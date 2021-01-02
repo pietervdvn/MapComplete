@@ -1,8 +1,9 @@
 import * as L from "leaflet";
 import {UIElement} from "../../UI/UIElement";
-import State from "../../State";
 import {Img} from "../../UI/Img";
 import Svg from "../../Svg";
+import {UIEventSource} from "../UIEventSource";
+import {FilteredLayer} from "../FilteredLayer";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -13,25 +14,29 @@ export class StrayClickHandler {
     private _uiToShow: (() => UIElement);
 
     constructor(
+        lastClickLocation: UIEventSource<{ lat: number, lon:number }>,
+        selectedElement: UIEventSource<string>,
+        filteredLayers: UIEventSource<FilteredLayer[]>,
+        leafletMap: UIEventSource<L.Map>,
+        fullscreenMessage: UIEventSource<UIElement>,
         uiToShow: (() => UIElement)) {
         this._uiToShow = uiToShow;
         const self = this;
-        const map = State.state.bm.map;
-        State.state.filteredLayers.data.forEach((filteredLayer) => {
+        filteredLayers.data.forEach((filteredLayer) => {
             filteredLayer.isDisplayed.addCallback(isEnabled => {
-                if(isEnabled && self._lastMarker){
+                if(isEnabled && self._lastMarker && leafletMap.data !== undefined){
                     // When a layer is activated, we remove the 'last click location' in order to force the user to reclick
                     // This reclick might be at a location where a feature now appeared...
-                     map.removeLayer(self._lastMarker);
+                     leafletMap.data.removeLayer(self._lastMarker);
                 }
             })
         })
         
-        State.state.bm.LastClickLocation.addCallback(function (lastClick) {
-            State.state.selectedElement.setData(undefined);
+        lastClickLocation.addCallback(function (lastClick) {
+            selectedElement.setData(undefined);
 
             if (self._lastMarker !== undefined) {
-                map.removeLayer(self._lastMarker);
+                leafletMap.data?.removeLayer(self._lastMarker);
             }
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
                 icon: L.icon({
@@ -43,18 +48,18 @@ export class StrayClickHandler {
             });
             const uiElement = uiToShow();
             const popup = L.popup().setContent(uiElement.Render());
-            self._lastMarker.addTo(map);
+            self._lastMarker.addTo(leafletMap.data);
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
-                State.state.fullScreenMessage.setData(self._uiToShow());
+                fullscreenMessage.setData(self._uiToShow());
                 uiElement.Update();
             });
         });
 
-        State.state.selectedElement.addCallback(() => {
+        selectedElement.addCallback(() => {
             if (self._lastMarker !== undefined) {
-                map.removeLayer(self._lastMarker);
+                leafletMap.data.removeLayer(self._lastMarker);
                 this._lastMarker = undefined;
             }
         })

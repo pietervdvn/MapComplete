@@ -59,7 +59,7 @@ export class UserBadge extends UIElement {
             if (home === undefined) {
                 return;
             }
-            State.state.bm.map.setView([home.lat, home.lon], 16);
+            State.state.leafletMap.data.setView([home.lat, home.lon], 16);
         });
 
     }

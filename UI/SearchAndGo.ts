@@ -61,7 +61,7 @@ export class SearchAndGo extends UIElement {
                     [bb[0], bb[2]],
                     [bb[1], bb[3]]
                 ]
-                State.state.bm.map.fitBounds(bounds);
+                State.state.leafletMap.data.fitBounds(bounds);
                 self._placeholder.setData(Translations.t.general.search.search);
             },
             () => {

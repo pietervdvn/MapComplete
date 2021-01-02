@@ -8,7 +8,7 @@ export class Geocoding {
     static Search(query: string,
                   handleResult: ((places: { display_name: string, lat: number, lon: number, boundingbox: number[] }[]) => void),
                   onFail: (() => void)) {
-        const b = State.state.bm.map.getBounds();
+        const b = State.state.leafletMap.data.getBounds();
         console.log(b);
         $.getJSON(
             Geocoding.host + "format=json&limit=1&viewbox=" + 

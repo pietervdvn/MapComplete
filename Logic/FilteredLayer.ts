@@ -58,7 +58,7 @@ export class FilteredLayer {
             [State.state.locationControl]
         );
         this.combinedIsDisplayed.addCallback(function (isDisplayed) {
-            const map = State.state.bm.map;
+            const map = State.state.leafletMap.data;
             if (self._geolayer !== undefined && self._geolayer !== null) {
                 if (isDisplayed) {
                     self._geolayer.addTo(map);
@@ -116,7 +116,7 @@ export class FilteredLayer {
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
             // Remove the old geojson layer from the map - we'll reshow all the elements later on anyway
-            State.state.bm.map.removeLayer(this._geolayer);
+            State.state.leafletMap.data.removeLayer(this._geolayer);
         }
 
         // We fetch all the data we have to show:
@@ -200,7 +200,7 @@ export class FilteredLayer {
                
                     const center = GeoOperations.centerpoint(feature).geometry.coordinates;
                     popup.setLatLng({lat: center[1], lng: center[0]});
-                    popup.openOn(State.state.bm.map);
+                    popup.openOn(State.state.leafletMap.data);
                     State.state.selectedElement.setData(feature);
                     uiElement.Update();
                 }
@@ -209,7 +209,7 @@ export class FilteredLayer {
         });
 
         if (this.combinedIsDisplayed.data) {
-            this._geolayer.addTo(State.state.bm.map);
+            this._geolayer.addTo(State.state.leafletMap.data);
         }
 
     }

@@ -1,10 +1,9 @@
 import * as editorlayerindex from "../../assets/editor-layer-index.json"
+import {BaseLayer} from "../../Models/BaseLayer";
+import * as L from "leaflet";
+import * as X from "leaflet-providers";
 import {UIEventSource} from "../UIEventSource";
 import {GeoOperations} from "../GeoOperations";
-import {Basemap} from "../Leaflet/Basemap";
-import {BaseLayer} from "../../Models/BaseLayer";
-import * as X from "leaflet-providers";
-import * as L from "leaflet";
 import {TileLayer} from "leaflet";
 import {Utils} from "../../Utils";
 
@@ -32,12 +31,16 @@ export default class AvailableBaseLayers {
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
     public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
-    constructor(location: UIEventSource<{ lat: number, lon: number, zoom: number }>,
-                currentBackgroundLayer: UIEventSource<BaseLayer>) {
+    constructor(location: UIEventSource<{ lat: number, lon: number, zoom: number }>) {
         const self = this;
         this.availableEditorLayers =
             location.map(
                 (currentLocation) => {
+                    
+                    if(currentLocation === undefined){
+                        return AvailableBaseLayers.layerOverview;
+                    }
+                    
                     const currentLayers = self.availableEditorLayers?.data;
                     const newLayers = AvailableBaseLayers.AvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
 
@@ -57,36 +60,15 @@ export default class AvailableBaseLayers {
                 });
 
 
-        // Change the baselayer back to OSM if we go out of the current range of the layer
-        this.availableEditorLayers.addCallbackAndRun(availableLayers => {
-            const currentLayer = currentBackgroundLayer.data.id;
-            for (const availableLayer of availableLayers) {
-                if (availableLayer.id === currentLayer) {
-
-                    if (availableLayer.max_zoom < location.data.zoom) {
-                        break;
-                    }
-
-                    if (availableLayer.min_zoom > location.data.zoom) {
-                        break;
-                    }
-                    return; // All good - the current layer still works!
-                }
-            }
-            // Oops, we panned out of range for this layer!
-            console.log("AvailableBaseLayers-actor: detected that the current bounds aren't sufficient anymore - reverting to OSM standard")
-            layerControl.setData(AvailableBaseLayers.osmCarto);
-
-        });
-
-
+        
     }
 
     private static AvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [AvailableBaseLayers.osmCarto]
         const globalLayers = [];
-        for (const i in AvailableBaseLayers.layerOverview) {
-            const layer = AvailableBaseLayers.layerOverview[i];
+        for (const layerOverviewItem of AvailableBaseLayers.layerOverview) {
+            const layer = layerOverviewItem;
+            
             if (layer.feature?.geometry === undefined || layer.feature?.geometry === null) {
                 globalLayers.push(layer);
                 continue;

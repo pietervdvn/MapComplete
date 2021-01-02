@@ -162,7 +162,7 @@ export class UpdateFromOverpass {
             return;
         }
 
-        const bounds = state.bm.map.getBounds();
+        const bounds = state.leafletMap.data.getBounds();
 
         const diff = state.layoutToUse.data.widenFactor;
 
@@ -196,7 +196,7 @@ export class UpdateFromOverpass {
             return false;
         }
 
-        const b = state.bm.map.getBounds();
+        const b = state.leafletMap.data.getBounds();
         return b.getSouth() >= bounds.south &&
             b.getNorth() <= bounds.north &&
             b.getEast() <= bounds.east &&

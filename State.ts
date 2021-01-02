@@ -18,6 +18,8 @@ import {BaseLayer} from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
+import * as L from "leaflet"
+import LayerResetter from "./Logic/Actors/LayerResetter";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -41,9 +43,9 @@ export default class State {
      */
     public changes: Changes;
     /**
-     THe basemap with leaflet instance
+     The leaflet instance of the big basemap
      */
-    public bm;
+    public leafletMap = new UIEventSource<L.Map>(undefined);
     /**
      * Background layer id
      */
@@ -91,8 +93,11 @@ export default class State {
      * The map location: currently centered lat, lon and zoom
      */
     public readonly locationControl = new UIEventSource<Loc>(undefined);
-    public readonly backgroundLayer = new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto);
-    
+    public readonly backgroundLayer;
+    /* Last location where a click was registered
+     */
+    public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
+
     /**
      * The location as delivered by the GPS
      */
@@ -114,23 +119,12 @@ export default class State {
         const self = this;
         this.layoutToUse.setData(layoutToUse);
 
-        function asFloat(source: UIEventSource<string>): UIEventSource<number> {
-            return source.map(str => {
-                let parsed = parseFloat(str);
-                return isNaN(parsed) ? undefined : parsed;
-            }, [], fl => {
-                if (fl === undefined || isNaN(fl)) {
-                    return undefined;
-                }
-                return ("" + fl).substr(0, 8);
-            })
-        }
-        const zoom = asFloat(
+        const zoom = State.asFloat(
             QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom, "The initial/current zoom level")
             .syncWith(LocalStorageSource.Get("zoom")));
-        const lat = asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
+        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
-        const lon = asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
+        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
             .syncWith(LocalStorageSource.Get("lon")));
 
 
@@ -153,11 +147,35 @@ export default class State {
         });
 
 
+        this.availableBackgroundLayers = new AvailableBaseLayers(this.locationControl).availableEditorLayers;
+        this.backgroundLayer = QueryParameters.GetQueryParameter("background",
+            this.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
+            "The id of the background layer to start with")
+            .map((selectedId: string) => {
+                console.log("SELECTED ID", selectedId)
+                const available = self.availableBackgroundLayers.data;
+                for (const layer of available) {
+                    if (layer.id === selectedId) {
+                        return layer;
+                    }
+                }
+                return AvailableBaseLayers.osmCarto;
+            }, [], layer => layer.id);
+
+
+        new LayerResetter(
+            this.backgroundLayer,this.locationControl,
+            this.availableBackgroundLayers, this.layoutToUse.map((layout : LayoutConfig)=> layout.defaultBackgroundId));
+
+
+        
+
+
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {
             const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined, documentation);
             // I'm so sorry about someone trying to decipher this
 
-            // It takes the current layout, extracts the default value for this query paramter. A query parameter event source is then retreived and flattened
+            // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
             return UIEventSource.flatten(
                 self.layoutToUse.map((layout) => {
                     const defaultValue = deflt(layout);
@@ -186,6 +204,9 @@ export default class State {
         this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true,
             "Disables/Enables the geolocation button");
 
+
+        
+        
         const testParam = QueryParameters.GetQueryParameter("test", "false",
             "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org").data;
         this.osmConnection = new OsmConnection(
@@ -264,4 +285,16 @@ export default class State {
 
     }
 
+   private static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+        return source.map(str => {
+            let parsed = parseFloat(str);
+            return isNaN(parsed) ? undefined : parsed;
+        }, [], fl => {
+            if (fl === undefined || isNaN(fl)) {
+                return undefined;
+            }
+            return ("" + fl).substr(0, 8);
+        })
+    }
+    
 }

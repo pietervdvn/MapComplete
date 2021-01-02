@@ -115,7 +115,7 @@ export class SimpleAddUI extends UIElement {
     private CreatePoint(tags: Tag[], layerToAddTo: FilteredLayer) {
         return () => {
 
-            const loc = State.state.bm.LastClickLocation.data;
+            const loc = State.state.LastClickLocation.data;
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             State.state.selectedElement.setData(feature);
             layerToAddTo.AddNewElement(feature);
