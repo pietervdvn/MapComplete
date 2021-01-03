@@ -16,4 +16,5 @@ export default class Constants {
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Utils.isRetina() ? 18 : 19)
     };
+    
 }

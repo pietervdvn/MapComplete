@@ -1,3 +1,4 @@
+console.log("AVAILABLE LAYERS")
 import * as editorlayerindex from "../../assets/editor-layer-index.json"
 import {BaseLayer} from "../../Models/BaseLayer";
 import * as L from "leaflet";

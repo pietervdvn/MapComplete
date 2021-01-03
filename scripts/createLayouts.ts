@@ -12,7 +12,6 @@ import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 
-
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }

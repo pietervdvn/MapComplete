@@ -6,7 +6,6 @@ import State from "../../State";
 import Locale from "../../UI/i18n/Locale";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Constants from "../../Models/Constants";
-import {Basemap} from "../Leaflet/Basemap";
 
 export class ChangesetHandler {
 

@@ -6,6 +6,7 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {OH} from "./OpeningHours";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
+import opening_hours from "opening_hours";
 
 export default class OpeningHoursVisualization extends UIElement {
     private readonly _key: string;

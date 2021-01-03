@@ -7,14 +7,14 @@ import {UserDetails} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
-import * as L from "leaflet"
+import LeafletMap from "../../Models/LeafletMap";
 
 export default class Attribution extends UIElement {
     
     private readonly _location: UIEventSource<Loc>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _userDetails: UIEventSource<UserDetails>;
-    private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _leafletMap: UIEventSource<LeafletMap>;
 
     constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,

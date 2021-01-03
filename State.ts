@@ -15,9 +15,7 @@ import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import {BaseLayer} from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
-import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
-import * as L from "leaflet"
-import LayerResetter from "./Logic/Actors/LayerResetter";
+
 import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 
@@ -101,7 +99,7 @@ export default class State {
      * The map location: currently centered lat, lon and zoom
      */
     public readonly locationControl = new UIEventSource<Loc>(undefined);
-    public readonly backgroundLayer;
+    public backgroundLayer;
     /* Last location where a click was registered
      */
     public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
@@ -155,24 +153,6 @@ export default class State {
         });
 
 
-        this.availableBackgroundLayers = new AvailableBaseLayers(this.locationControl).availableEditorLayers;
-        this.backgroundLayer = QueryParameters.GetQueryParameter("background",
-            this.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
-            "The id of the background layer to start with")
-            .map((selectedId: string) => {
-                const available = self.availableBackgroundLayers.data;
-                for (const layer of available) {
-                    if (layer.id === selectedId) {
-                        return layer;
-                    }
-                }
-                return AvailableBaseLayers.osmCarto;
-            }, [], layer => layer.id);
-
-
-        new LayerResetter(
-            this.backgroundLayer, this.locationControl,
-            this.availableBackgroundLayers, this.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
 
 
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {

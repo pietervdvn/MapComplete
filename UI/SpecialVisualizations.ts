@@ -8,7 +8,7 @@ import {FixedUiElement} from "./Base/FixedUiElement";
 import Locale from "../UI/i18n/Locale";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import {Translation} from "./i18n/Translation";
-import State from "../State";
+
 import ShareButton from "./ShareButton";
 import Svg from "../Svg";
 import ReviewElement from "./Reviews/ReviewElement";
@@ -16,6 +16,8 @@ import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
+
+import State from "../State";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -89,7 +91,7 @@ export class SubstitutedTranslation extends UIElement {
                     }
 
 
-                    const element = knownSpecial.constr(this.tags, args);
+                    const element = knownSpecial.constr(State.state, this.tags, args);
                     return [...partBefore, element, ...partAfter]
                 } catch (e) {
                     console.error(e);
@@ -108,7 +110,7 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: {
         funcName: string,
-        constr: ((tagSource: UIEventSource<any>, argument: string[]) => UIElement),
+        constr: ((state: State,tagSource: UIEventSource<any>, argument: string[]) => UIElement),
         docs: string,
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
@@ -118,7 +120,7 @@ export default class SpecialVisualizations {
             funcName: "all_tags",
             docs: "Prints all key-value pairs of the object - used for debugging",
             args: [],
-            constr: ((tags: UIEventSource<any>) => {
+            constr: ((state: State,tags: UIEventSource<any>) => {
                 return new VariableUiElement(tags.map(tags => {
                     const parts = [];
                     for (const key in tags) {
@@ -142,7 +144,7 @@ export default class SpecialVisualizations {
                         defaultValue: "true",
                         doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
                     }],
-                constr: (tags, args) => {
+                constr: (state: State,tags, args) => {
                     return new ImageCarousel(tags, args[0], args[1].toLowerCase() === "true");
                 }
             },
@@ -155,7 +157,7 @@ export default class SpecialVisualizations {
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
                     defaultValue: "image"
                 }],
-                constr: (tags, args) => {
+                constr: (state: State,tags, args) => {
                     return new ImageUploadFlow(tags, args[0])
                 }
             },
@@ -167,7 +169,7 @@ export default class SpecialVisualizations {
                     name: "subject",
                     doc: "The identifier used for this value; by default the name of the reviewed object"
                 }],
-                constr: (tags, args) => {
+                constr: (state: State,tags, args) => {
                     const tgs = tags.data;
                     console.log("Args[0]", args[0])
                     let subject = tgs.name ?? "";
@@ -179,10 +181,10 @@ export default class SpecialVisualizations {
                     }
                     const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
                         encodeURIComponent(subject),
-                        State.state.mangroveIdentity,
-                        State.state.osmConnection._dryRun
+                        state.mangroveIdentity,
+                        state.osmConnection._dryRun
                     );
-                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), State.state.osmConnection.userDetails);
+                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection.userDetails);
                     return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
                 }
             },
@@ -194,7 +196,7 @@ export default class SpecialVisualizations {
                     defaultValue: "opening_hours",
                     doc: "The tagkey from which the table is constructed."
                 }],
-                constr: (tagSource: UIEventSource<any>, args) => {
+                constr: (state: State,tagSource: UIEventSource<any>, args) => {
                     let keyname = args[0];
                     if (keyname === undefined || keyname === "") {
                         keyname = keyname ?? "opening_hours"
@@ -215,7 +217,7 @@ export default class SpecialVisualizations {
                 }, {
                     name: "path", doc: "The path (or shorthand) that should be returned"
                 }],
-                constr: (tagSource: UIEventSource<any>, args) => {
+                constr: (state: State,tagSource: UIEventSource<any>, args) => {
                     const url = args[0];
                     const shorthands = args[1];
                     const neededValue = args[2];
@@ -233,9 +235,9 @@ export default class SpecialVisualizations {
                         doc: "The url to share (defualt: current URL)",
                     }
                 ],
-                constr: (tagSource: UIEventSource<any>, args) => {
+                constr: (state: State,tagSource: UIEventSource<any>, args) => {
                     if (window.navigator.share) {
-                        const title = State.state.layoutToUse.data.title.txt;
+                        const title = state.layoutToUse.data.title.txt;
                         let name = tagSource.data.name;
                         if (name) {
                             name = `${name} (${title})`
@@ -249,7 +251,7 @@ export default class SpecialVisualizations {
                         return new ShareButton(Svg.share_svg(), {
                             title: name,
                             url: url,
-                            text: State.state.layoutToUse.data.shortDescription.txt
+                            text: state.layoutToUse.data.shortDescription.txt
                         })
                     } else {
                         return new FixedUiElement("")

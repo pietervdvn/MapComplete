@@ -46,6 +46,8 @@ import FilteringFeatureSource from "./Logic/FeatureSource/FilteringFeatureSource
 import WayHandlingApplyingFeatureSource from "./Logic/FeatureSource/WayHandlingApplyingFeatureSource";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import NoOverlapSource from "./Logic/FeatureSource/NoOverlapSource";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
+import LayerResetter from "./Logic/Actors/LayerResetter";
 
 export class InitUiElements {
 
@@ -83,6 +85,12 @@ export class InitUiElements {
                 console.warn("NOT saving custom layout to OSM as we are tesing -> probably in an iFrame")
             }
         }
+
+
+
+
+
+
         InitUiElements.InitBaseMap();
 
         new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
@@ -348,6 +356,28 @@ export class InitUiElements {
 
     static InitBaseMap() {
 
+        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl).availableEditorLayers;
+        State.state.backgroundLayer = QueryParameters.GetQueryParameter("background",
+            State.state.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
+            "The id of the background layer to start with")
+            .map((selectedId: string) => {
+                const available = State.state.availableBackgroundLayers.data;
+                for (const layer of available) {
+                    if (layer.id === selectedId) {
+                        return layer;
+                    }
+                }
+                return AvailableBaseLayers.osmCarto;
+            }, [], layer => layer.id);
+
+
+
+
+        new LayerResetter(
+            State.state.backgroundLayer, State.state.locationControl,
+            State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
+
+
         const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap);
         const bm = new Basemap("leafletDiv",
             State.state.locationControl,
@@ -364,6 +394,10 @@ export class InitUiElements {
     }
 
     static InitLayers() {
+
+
+
+
         const state = State.state;
         const flayers: FilteredLayer[] = []
         for (const layer of state.layoutToUse.data.layers) {
