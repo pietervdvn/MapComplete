@@ -1,22 +1,19 @@
-import {Or, TagsFilter} from "./Tags";
-import {UIEventSource} from "./UIEventSource";
-import Bounds from "../Models/Bounds";
-import {Overpass} from "./Osm/Overpass";
-import Loc from "../Models/Loc";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import FeatureSource from "./Actors/FeatureSource";
+import {UIEventSource} from "../UIEventSource";
+import Loc from "../../Models/Loc";
+import {Or, TagsFilter} from "../Tags";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import {Overpass} from "../Osm/Overpass";
+import Bounds from "../../Models/Bounds";
+import FeatureSource from "../FeatureSource/FeatureSource";
+
 
 export default class UpdateFromOverpass implements FeatureSource{
 
     /**
      * The last loaded features of the geojson
      */
-    public readonly features: UIEventSource<any[]> = new UIEventSource<any[]>(undefined);
+    public readonly features: UIEventSource<{feature:any, freshness: Date}[]> = new UIEventSource<any[]>(undefined);
 
-    /**
-     * The time of updating according to Overpass
-     */
-    public readonly freshness:UIEventSource<Date> = new UIEventSource<Date>(undefined);
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
@@ -142,8 +139,7 @@ export default class UpdateFromOverpass implements FeatureSource{
             function (data, date) {
                 self._previousBounds.get(z).push(queryBounds);
                 self.retries.setData(0);
-                self.freshness.setData(date);
-                self.features.setData(data.features);
+                self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
                 self.runningQuery.setData(false);
             },
             function (reason) {

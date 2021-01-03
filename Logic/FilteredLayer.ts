@@ -10,29 +10,20 @@ import Hash from "./Web/Hash";
 import LazyElement from "../UI/Base/LazyElement";
 
 /***
- * A filtered layer is a layer which offers a 'set-data' function
- * It is initialized with a tagfilter.
- *
- * When geojson-data is given to 'setData', all the geojson matching the filter, is rendered on this layer.
- * If it is not rendered, it is returned in a 'leftOver'-geojson; which can be consumed by the next layer.
- *
- * This also makes sure that no objects are rendered twice if they are applicable on two layers
+ * 
  */
 export class FilteredLayer {
 
     public readonly name: string | UIElement;
-    public readonly filters: TagsFilter;
     public readonly isDisplayed: UIEventSource<boolean> = new UIEventSource(true);
     public readonly layerDef: LayerConfig;
-    private readonly combinedIsDisplayed: UIEventSource<boolean>;
+
+    private readonly filters: TagsFilter;
     private readonly _maxAllowedOverlap: number;
 
     /** The featurecollection from overpass
      */
     private _dataFromOverpass: any[];
-    /** List of new elements, geojson features
-     */
-    private _newElements = [];
     /**
      * The leaflet layer object which should be removed on rerendering
      */
@@ -51,22 +42,7 @@ export class FilteredLayer {
         this.name = name;
         this.filters = layerDef.overpassTags;
         this._maxAllowedOverlap = layerDef.hideUnderlayingFeaturesMinPercentage;
-        const self = this;
-        this.combinedIsDisplayed = this.isDisplayed.map<boolean>(isDisplayed => {
-                return isDisplayed && State.state.locationControl.data.zoom >= self.layerDef.minzoom
-            },
-            [State.state.locationControl]
-        );
-        this.combinedIsDisplayed.addCallback(function (isDisplayed) {
-            const map = State.state.leafletMap.data;
-            if (self._geolayer !== undefined && self._geolayer !== null) {
-                if (isDisplayed) {
-                    self._geolayer.addTo(map);
-                } else {
-                    map.removeLayer(self._geolayer);
-                }
-            }
-        })
+
     }
 
     /**
@@ -88,29 +64,11 @@ export class FilteredLayer {
         }
 
         this.RenderLayer(selfFeatures)
-
-        const notShadowed = [];
-        for (const feature of leftoverFeatures) {
-            if (this._maxAllowedOverlap !== undefined && this._maxAllowedOverlap > 0) {
-                if (GeoOperations.featureIsContainedInAny(feature, selfFeatures, this._maxAllowedOverlap)) {
-                    // This feature is filtered away
-                    continue;
-                }
-            }
-
-            notShadowed.push(feature);
-        }
-
-        return notShadowed;
+        return leftoverFeatures;
     }
 
 
-    public AddNewElement(element) {
-        this._newElements.push(element);
-        this.RenderLayer(this._dataFromOverpass); // Update the layer
-    }
-
-    private RenderLayer(features) {
+    private RenderLayer(features: any[]) {
 
         if (this._geolayer !== undefined && this._geolayer !== null) {
             // Remove the old geojson layer from the map - we'll reshow all the elements later on anyway
@@ -118,12 +76,9 @@ export class FilteredLayer {
         }
 
         // We fetch all the data we have to show:
-        let fusedFeatures = this.ApplyWayHandling(this.FuseData(features));
-
-        // And we copy some features as points - if needed
         const data = {
             type: "FeatureCollection",
-            features: fusedFeatures
+            features: features
         }
 
         let self = this;
@@ -144,13 +99,7 @@ export class FilteredLayer {
                         radius: 25,
                         color: style.color
                     });
-                } else if (style.icon.iconUrl.startsWith("$circle")) {
-                    marker = L.circle(latLng, {
-                        radius: 25,
-                        color: style.color
-                    });
                 } else {
-                    style.icon.html.ListenTo(self.isDisplayed)
                     marker = L.marker(latLng, {
                         icon: L.divIcon({
                             html: style.icon.html.Render(),
@@ -206,72 +155,9 @@ export class FilteredLayer {
             }
         });
 
-        if (this.combinedIsDisplayed.data) {
-            this._geolayer.addTo(State.state.leafletMap.data);
-        }
+        this._geolayer.addTo(State.state.leafletMap.data);
 
     }
 
-    private ApplyWayHandling(fusedFeatures: any[]) {
-        if (this.layerDef.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
-            // We don't have to do anything special
-            return fusedFeatures;
-        }
 
-
-        // We have to convert all the ways into centerpoints
-        const existingPoints = [];
-        const newPoints = [];
-        const existingWays = [];
-
-        for (const feature of fusedFeatures) {
-            if (feature.geometry.type === "Point") {
-                existingPoints.push(feature);
-                continue;
-            }
-
-            existingWays.push(feature);
-            const centerPoint = GeoOperations.centerpoint(feature);
-            newPoints.push(centerPoint);
-        }
-
-        fusedFeatures = existingPoints.concat(newPoints);
-        if (this.layerDef.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
-            fusedFeatures = fusedFeatures.concat(existingWays)
-        }
-        return fusedFeatures;
-    }
-
-    //*Fuses the old and the new datasets*/
-    private FuseData(data: any[]) {
-        const oldData = this._dataFromOverpass ?? [];
-
-        // We keep track of all the ids that are freshly loaded in order to avoid adding duplicates
-        const idsFromOverpass: Set<number> = new Set<number>();
-        // A list of all the features to show
-        const fusedFeatures = [];
-        // First, we add all the fresh data:
-        for (const feature of data) {
-            idsFromOverpass.add(feature.properties.id);
-            fusedFeatures.push(feature);
-        }
-        // Now we add all the stale data
-        for (const feature of oldData) {
-            if (idsFromOverpass.has(feature.properties.id)) {
-                continue; // Feature already loaded and a fresher version is available
-            }
-            idsFromOverpass.add(feature.properties.id);
-            fusedFeatures.push(feature);
-        }
-        this._dataFromOverpass = fusedFeatures;
-
-        for (const feature of this._newElements) {
-            if (!idsFromOverpass.has(feature.properties.id)) {
-                // This element is not yet uploaded or not yet visible in overpass
-                // We include it in the layer
-                fusedFeatures.push(feature);
-            }
-        }
-        return fusedFeatures;
-    }
 }

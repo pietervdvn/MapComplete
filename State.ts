@@ -5,8 +5,6 @@ import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
 import Translations from "./UI/i18n/Translations";
-import {FilteredLayer} from "./Logic/FilteredLayer";
-import {UpdateFromOverpass} from "./Logic/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
@@ -20,6 +18,8 @@ import Constants from "./Models/Constants";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import * as L from "leaflet"
 import LayerResetter from "./Logic/Actors/LayerResetter";
+import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
+import LayerConfig from "./Customizations/JSON/LayerConfig";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -29,9 +29,9 @@ export default class State {
 
     // The singleton of the global state
     public static state: State;
-    
+
     public static runningFromConsole: boolean = false;
-    
+
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 
     /**
@@ -62,7 +62,15 @@ export default class State {
     public layerUpdater: UpdateFromOverpass;
 
 
-    public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([])
+    public filteredLayers: UIEventSource<{
+        readonly   name: string | UIElement;
+        readonly isDisplayed: UIEventSource<boolean>,
+        readonly  layerDef: LayerConfig;
+    }[]> = new UIEventSource<{
+        readonly   name: string | UIElement;
+        readonly isDisplayed: UIEventSource<boolean>,
+        readonly  layerDef: LayerConfig;
+    }[]>([])
 
     /**
      *  The message that should be shown at the center of the screen
@@ -102,9 +110,9 @@ export default class State {
      * The location as delivered by the GPS
      */
     public currentGPSLocation: UIEventSource<{
-        latlng: {lat:number, lng:number},
+        latlng: { lat: number, lng: number },
         accuracy: number
-    }> = new UIEventSource<{ latlng: {lat:number, lng:number}, accuracy: number }>(undefined);
+    }> = new UIEventSource<{ latlng: { lat: number, lng: number }, accuracy: number }>(undefined);
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
@@ -121,7 +129,7 @@ export default class State {
 
         const zoom = State.asFloat(
             QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom, "The initial/current zoom level")
-            .syncWith(LocalStorageSource.Get("zoom")));
+                .syncWith(LocalStorageSource.Get("zoom")));
         const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
         const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
@@ -163,11 +171,8 @@ export default class State {
 
 
         new LayerResetter(
-            this.backgroundLayer,this.locationControl,
-            this.availableBackgroundLayers, this.layoutToUse.map((layout : LayoutConfig)=> layout.defaultBackgroundId));
-
-
-        
+            this.backgroundLayer, this.locationControl,
+            this.availableBackgroundLayers, this.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
 
 
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {
@@ -192,7 +197,7 @@ export default class State {
             "Disables/Enables the layer control");
         this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
             "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
-        this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true, 
+        this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true,
             "Disables/enables the help menu or welcome message");
         this.featureSwitchIframe = featSw("fs-iframe", () => false,
             "Disables/Enables the iframe-popup");
@@ -204,8 +209,6 @@ export default class State {
             "Disables/Enables the geolocation button");
 
 
-        
-        
         const testParam = QueryParameters.GetQueryParameter("test", "false",
             "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org").data;
         this.osmConnection = new OsmConnection(
@@ -231,8 +234,8 @@ export default class State {
             }
         )
         h.addCallbackAndRun(hash => {
-            if(hash === undefined || hash === ""){
-               self.selectedElement.setData(undefined);
+            if (hash === undefined || hash === "") {
+                self.selectedElement.setData(undefined);
             }
         })
 
@@ -284,7 +287,7 @@ export default class State {
 
     }
 
-   private static asFloat(source: UIEventSource<string>): UIEventSource<number> {
+    private static asFloat(source: UIEventSource<string>): UIEventSource<number> {
         return source.map(str => {
             let parsed = parseFloat(str);
             return isNaN(parsed) ? undefined : parsed;
@@ -295,5 +298,5 @@ export default class State {
             return ("" + fl).substr(0, 8);
         })
     }
-    
+
 }

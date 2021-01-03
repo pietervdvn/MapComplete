@@ -121,7 +121,8 @@ export interface LayerConfigJson {
     hideUnderlayingFeaturesMinPercentage?:number;
 
     /**
-     * If set, this layer will pass all the features it receives onto the next layer
+     * If set, this layer will pass all the features it receives onto the next layer.
+     * This is ideal for decoration, e.g. directionss on cameras
      */
     passAllFeatures?:boolean
     

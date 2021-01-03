@@ -75,14 +75,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
-        "render": "./assets/themes/buurtnatuur/nature_reserve.svg",
-        "mappings": [
-          {
-            "#": "This is a little bit a hack to force a circle to be shown while keeping the icon in the 'new' menu",
-            "if": "id~node/[0-9]*",
-            "then": "$circle"
-          }
-        ]
+        "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
       },
       "width": {
         "render": "5"
@@ -179,14 +172,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
-        "render": "./assets/themes/buurtnatuur/park.svg",
-        "mappings": [
-          {
-            "#": "This is a little bit a hack to force a circle to be shown while keeping the icon in the 'new' menu",
-            "if": "id~node/[0-9]*",
-            "then": "$circle"
-          }
-        ]
+        "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
       },
       "width": {
         "render": "5"
@@ -271,14 +257,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/buurtnatuur/forest.svg",
-        "mappings": [
-          {
-            "#": "This is a little bit a hack to force a circle to be shown while keeping the icon in the 'new' menu",
-            "if": "id~node/[0-9]*",
-            "then": "$circle"
-          }
-        ]
+        "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
       },
       "width": {
         "render": "5"

@@ -3,9 +3,12 @@
   "version": "0.0.5",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
+  "bugs": "https://github.com/pietervdvn/MapComplete/issues",
+  "homepage": "https://mapcomplete.osm.be",
   "main": "index.js",
   "scripts": {
-    "start": "parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "increase-memory": "export NODE_OPTIONS=--max_old_space_size=4096",
+    "start": "npm run increase-memory && parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "test": "ts-node test/*",
     "generate:editor-layer-index": "cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
@@ -24,7 +27,7 @@
     "Editor"
   ],
   "author": "pietervdvn",
-  "license": "MIT",
+  "license": "GPL",
   "dependencies": {
     "@types/leaflet-providers": "^1.2.0",
     "country-language": "^0.1.7",

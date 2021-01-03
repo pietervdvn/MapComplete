@@ -12,7 +12,7 @@ import State from "./State";
 import {WelcomeMessage} from "./UI/WelcomeMessage";
 import {LayerSelection} from "./UI/LayerSelection";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
-import UpdateFromOverpass from "./Logic/UpdateFromOverpass";
+import LoadFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {PersonalLayersPanel} from "./UI/PersonalLayersPanel";
@@ -40,6 +40,12 @@ import {UserDetails} from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/Misc/Attribution";
 import Constants from "./Models/Constants";
 import MetaTagging from "./Logic/MetaTagging";
+import FeatureSourceMerger from "./Logic/FeatureSource/FeatureSourceMerger";
+import RememberingSource from "./Logic/FeatureSource/RememberingSource";
+import FilteringFeatureSource from "./Logic/FeatureSource/FilteringFeatureSource";
+import WayHandlingApplyingFeatureSource from "./Logic/FeatureSource/WayHandlingApplyingFeatureSource";
+import FeatureSource from "./Logic/FeatureSource/FeatureSource";
+import NoOverlapSource from "./Logic/FeatureSource/NoOverlapSource";
 
 export class InitUiElements {
 
@@ -374,7 +380,7 @@ export class InitUiElements {
             const flayer: FilteredLayer = new FilteredLayer(layer, generateContents);
             flayers.push(flayer);
 
-            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wehter or not layer " + layer.id + " is shown")
+            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
                 .map<boolean>((str) => str !== "false", [], (b) => b.toString())
                 .syncWith(
                     flayer.isDisplayed
@@ -383,11 +389,45 @@ export class InitUiElements {
 
         State.state.filteredLayers.setData(flayers);
 
-        const updater = new UpdateFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
+        function addMatchingIds(src: FeatureSource) {
+
+            src.features.addCallback(features => {
+                features.forEach(f => {
+                    const properties = f.feature.properties;
+                    if (properties._matching_layer_id) {
+                        return;
+                    }
+
+                    for (const flayer of flayers) {
+                        if (flayer.layerDef.overpassTags.matchesProperties(properties)) {
+                            properties._matching_layer_id = flayer.layerDef.id;
+                            break;
+                        }
+                    }
+                })
+            });
+        }
+
+        const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
 
-        updater.features.addCallback(features => {
+        addMatchingIds(updater);
+        addMatchingIds(State.state.changes);
 
+
+        const source =
+            new FilteringFeatureSource(
+                flayers,
+                State.state.locationControl,
+                new FeatureSourceMerger([
+                    new RememberingSource(new WayHandlingApplyingFeatureSource(flayers,
+                        new NoOverlapSource(flayers, updater)
+                    )),
+                    State.state.changes]));
+
+
+        source.features.addCallback((featuresFreshness: { feature: any, freshness: Date }[]) => {
+            let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addElement(feature);
             })
@@ -402,13 +442,10 @@ export class InitUiElements {
                     }
                     return;
                 }
-                // We use window.setTimeout to give JS some time to update everything and make the interface not too laggy
-                window.setTimeout(() => {
-                    const layer = layers[0];
-                    const rest = layers.slice(1, layers.length);
-                    features = layer.SetApplicableData(features);
-                    renderLayers(rest);
-                }, 50)
+                const layer = layers[0];
+                const rest = layers.slice(1, layers.length);
+                features = layer.SetApplicableData(features);
+                renderLayers(rest);
             }
 
             renderLayers(flayers);

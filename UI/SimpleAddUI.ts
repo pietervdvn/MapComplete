@@ -1,6 +1,5 @@
 import {UIElement} from "./UIElement";
 import {Tag, TagUtils} from "../Logic/Tags";
-import {FilteredLayer} from "../Logic/FilteredLayer";
 import Translations from "./i18n/Translations";
 import Combine from "./Base/Combine";
 import {SubtleButton} from "./Base/SubtleButton";
@@ -25,7 +24,9 @@ export class SimpleAddUI extends UIElement {
         name: string | UIElement,
         icon: UIElement,
         tags: Tag[],
-        layerToAddTo: FilteredLayer
+        layerToAddTo: {
+            name: UIElement | string,
+            isDisplayed: UIEventSource<boolean> }
     }>
         = new UIEventSource(undefined);
     private confirmButton: UIElement = undefined;
@@ -81,7 +82,7 @@ export class SimpleAddUI extends UIElement {
                                     "<b>",
                                     Translations.t.general.add.confirmButton.Subs({category: preset.title}),
                                     "</b>"]));
-                            self.confirmButton.onClick(self.CreatePoint(preset.tags, layer));
+                            self.confirmButton.onClick(self.CreatePoint(preset.tags));
                             self._confirmDescription = preset.description;
                             self._confirmPreset.setData({
                                 tags: preset.tags,
@@ -112,13 +113,11 @@ export class SimpleAddUI extends UIElement {
         })
     }
 
-    private CreatePoint(tags: Tag[], layerToAddTo: FilteredLayer) {
+    private CreatePoint(tags: Tag[]) {
         return () => {
-
             const loc = State.state.LastClickLocation.data;
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             State.state.selectedElement.setData(feature);
-            layerToAddTo.AddNewElement(feature);
         }
     }
 
@@ -130,7 +129,7 @@ export class SimpleAddUI extends UIElement {
             
             if(!this._confirmPreset.data.layerToAddTo.isDisplayed.data){
                 return new Combine([
-                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
+                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.name})
                         .SetClass("alert"),
                     this.openLayerControl,
                     

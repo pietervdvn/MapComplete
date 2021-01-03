@@ -2,7 +2,6 @@ import * as L from "leaflet";
 import {UIElement} from "../../UI/UIElement";
 import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
-import {FilteredLayer} from "../FilteredLayer";
 import Img from "../../UI/Base/Img";
 
 /**
@@ -16,7 +15,7 @@ export class StrayClickHandler {
     constructor(
         lastClickLocation: UIEventSource<{ lat: number, lon:number }>,
         selectedElement: UIEventSource<string>,
-        filteredLayers: UIEventSource<FilteredLayer[]>,
+        filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean>}[]>,
         leafletMap: UIEventSource<L.Map>,
         fullscreenMessage: UIEventSource<UIElement>,
         uiToShow: (() => UIElement)) {

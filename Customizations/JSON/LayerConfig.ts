@@ -145,7 +145,7 @@ export default class LayerConfig {
 
 
         this.title = tr("title", undefined);
-        this.icon = tr("icon", Img.AsData(Svg.bug));
+        this.icon = tr("icon", Img.AsData(Svg.pin));
         this.iconOverlays = (json.iconOverlays ?? []).map(overlay => {
             let tr = new TagRenderingConfig(overlay.then);
             if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {

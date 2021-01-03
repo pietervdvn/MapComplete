@@ -1,71 +1,25 @@
-/**
- * Handles all changes made to OSM.
- * Needs an authenticator via OsmConnection
- */
 import {OsmNode, OsmObject} from "./OsmObject";
 import {And, Tag, TagsFilter} from "../Tags";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
+import FeatureSource from "../FeatureSource/FeatureSource";
 
-export class Changes {
+/**
+ * Handles all changes made to OSM.
+ * Needs an authenticator via OsmConnection
+ */
+export class Changes implements FeatureSource{
 
-    private static _nextId = -1; // New assined ID's are negative
-
-    addTag(elementId: string, tagsFilter: TagsFilter,
-           tags?: UIEventSource<any>) {
-        const changes = this.tagToChange(tagsFilter);
-        if (changes.length == 0) {
-            return;
-        }
-        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
-        const elementTags = eventSource.data;
-        const pending : {elementId:string, key: string, value: string}[] = [];
-        for (const change of changes) {
-            if (elementTags[change.k] !== change.v) {
-                elementTags[change.k] = change.v;
-                pending.push({elementId: elementTags.id, key: change.k, value: change.v});
-            }
-        }
-        if(pending.length === 0){
-            return;
-        }
-        console.log("Sending ping",eventSource)
-        eventSource.ping();
-        this.uploadAll([], pending);
-    }
-
-
-    private tagToChange(tagsFilter: TagsFilter) {
-        let changes: { k: string, v: string }[] = [];
-
-        if (tagsFilter instanceof Tag) {
-            const tag = tagsFilter as Tag;
-            if (typeof tag.value !== "string") {
-                throw "Invalid value"
-            }
-            return [this.checkChange(tag.key, tag.value)];
-        }
-
-        if (tagsFilter instanceof And) {
-            const and = tagsFilter as And;
-            for (const tag of and.and) {
-                changes = changes.concat(this.tagToChange(tag));
-            }
-            return changes;
-        }
-        console.log("Unsupported tagsfilter element to addTag", tagsFilter);
-        throw "Unsupported tagsFilter element";
-    }
+    public features = new UIEventSource<{feature: any, freshness: Date}[]>([]);
+    
+    private static _nextId = -1; // Newly assigned ID's are negative
 
     /**
      * Adds a change to the pending changes
-     * @param elementId
-     * @param key
-     * @param value
      */
-    private checkChange(key: string, value: string): { k: string, v: string } {
+    private static checkChange(key: string, value: string): { k: string, v: string } {
         if (key === undefined || key === null) {
             console.log("Invalid key");
             return undefined;
@@ -85,12 +39,35 @@ export class Changes {
         return {k: key, v: value};
     }
 
+    addTag(elementId: string, tagsFilter: TagsFilter,
+           tags?: UIEventSource<any>) {
+        const changes = this.tagToChange(tagsFilter);
+        if (changes.length == 0) {
+            return;
+        }
+        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
+        const elementTags = eventSource.data;
+        const pending: { elementId: string, key: string, value: string }[] = [];
+        for (const change of changes) {
+            if (elementTags[change.k] !== change.v) {
+                elementTags[change.k] = change.v;
+                pending.push({elementId: elementTags.id, key: change.k, value: change.v});
+            }
+        }
+        if (pending.length === 0) {
+            return;
+        }
+        console.log("Sending ping", eventSource)
+        eventSource.ping();
+        this.uploadAll([], pending);
+    }
+
     /**
      * Create a new node element at the given lat/long.
      * An internal OsmObject is created to upload later on, a geojson represention is returned.
      * Note that the geojson version shares the tags (properties) by pointer, but has _no_ id in properties
      */
-    createElement(basicTags:Tag[], lat: number, lon: number) {
+    public createElement(basicTags: Tag[], lat: number, lon: number) {
         console.log("Creating a new element with ", basicTags)
         const osmNode = new OsmNode(Changes._nextId);
         Changes._nextId--;
@@ -113,6 +90,9 @@ export class Changes {
             }
         }
 
+        this.features.data.push({feature:geojson, freshness: new Date()});
+        this.features.ping();
+        
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a 
         const changes = [];
@@ -128,6 +108,27 @@ export class Changes {
         return geojson;
     }
 
+    private tagToChange(tagsFilter: TagsFilter) {
+        let changes: { k: string, v: string }[] = [];
+
+        if (tagsFilter instanceof Tag) {
+            const tag = tagsFilter as Tag;
+            if (typeof tag.value !== "string") {
+                throw "Invalid value"
+            }
+            return [Changes.checkChange(tag.key, tag.value)];
+        }
+
+        if (tagsFilter instanceof And) {
+            const and = tagsFilter as And;
+            for (const tag of and.and) {
+                changes = changes.concat(this.tagToChange(tag));
+            }
+            return changes;
+        }
+        console.log("Unsupported tagsfilter element to addTag", tagsFilter);
+        throw "Unsupported tagsFilter element";
+    }
 
     private uploadChangesWithLatestVersions(
         knownElements, newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
