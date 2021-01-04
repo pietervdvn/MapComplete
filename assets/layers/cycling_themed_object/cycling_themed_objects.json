@@ -12,7 +12,8 @@
       "theme~cycling|bicycle",
       "sport=cycling",
       "association=cycling|bicycle",
-      "ngo=cycling|bicycle"
+      "ngo=cycling|bicycle",
+      "club=bicycle|cycling"
     ]
   },
   "title": {
