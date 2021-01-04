@@ -24,6 +24,9 @@
   "startZoom": 8,
   "widenFactor": 0.01,
   "socialImage": "./assets/themes/trees/logo.svg",
+  "clustering": {
+    "maxZoom": 18
+  },
   "layers": [
     "tree_nodes"
   ],

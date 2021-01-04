@@ -4,7 +4,7 @@
     "nl": "Boom",
     "en": "Tree"
   },
-  "minzoom": 18,
+  "minzoom": 14,
   "overpassTags": {
     "and": ["natural=tree"]
   },
@@ -347,22 +347,23 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/themes/trees/unknown.svg",
+    "render": "circle:#ffffff;./assets/themes/trees/unknown.svg",
     "mappings": [
       {
         "if": {
           "and": ["leaf_type=broadleaved"]
         },
-        "then": "./assets/themes/trees/broadleaved.svg"
+        "then": "circle:#ffffff;./assets/themes/trees/broadleaved.svg"
       },
       {
         "if": {
           "and": ["leaf_type=needleleaved"]
         },
-        "then": "./assets/themes/trees/needleleaved.svg"
+        "then": "circle:#ffffff;./assets/themes/trees/needleleaved.svg"
       }
     ]
   },
+  "wayHandling": 1,
   "width": {
     "render": "8"
   },
