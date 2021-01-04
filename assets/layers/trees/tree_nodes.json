@@ -1,0 +1,418 @@
+{
+  "id": "tree_nodes",
+  "name": {
+    "nl": "Boom",
+    "en": "Tree"
+  },
+  "minzoom": 18,
+  "overpassTags": {
+    "and": ["natural=tree"]
+  },
+  "title": {
+    "render": {
+      "nl": "Boom",
+      "en": "Tree"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "<i>{name}</i>",
+          "en": "<i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "nl": "Hoogte: {height}",
+        "en": "Height: {height}"
+      },
+      "condition": {
+        "and": [
+          "height~*"
+        ]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": ["height~^[0-9.]+$"]
+          },
+          "then": {
+            "nl": "Hoogte: {height}&nbsp;m",
+            "en": "Height: {height}&nbsp;m"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Is dit een naald- of loofboom?",
+        "en": "Is this a broadleaved or needleleaved tree?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": ["leaf_type=broadleaved"]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
+            "en": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved"
+          }
+        },
+        {
+          "if": {
+            "and": ["leaf_type=needleleaved"]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
+            "en": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved"
+          }
+        },
+        {
+          "if": {
+            "and": ["leaf_type=leafless"]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
+            "en": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
+        "en": "How significant is this tree? Choose the first answer that applies."
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": ["denotation=landmark"]
+          },
+          "then": {
+            "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
+            "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=natural_monument"]
+          },
+          "then": {
+            "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
+            "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=agricultural"]
+          },
+          "then": {
+            "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
+            "en": "The tree is used for agricultural purposes, e.g. in an orchard."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=park"]
+          },
+          "then": {
+            "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
+            "en": "The tree is in a park or similar (cemetery, school grounds, …)."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=garden"]
+          },
+          "then": {
+            "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
+            "en": "The tree is a residential garden."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=avenue"]
+          },
+          "then": {
+            "nl": "Dit is een laanboom.",
+            "en": "This is a tree along an avenue."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=urban"]
+          },
+          "then": {
+            "nl": "De boom staat in een woonkern.",
+            "en": "The tree is an urban area."
+          }
+        },
+        {
+          "if": {
+            "and": ["denotation=none"]
+          },
+          "then": {
+            "nl": "De boom staat buiten een woonkern.",
+            "en": "The tree is outside of an urban area."
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Is deze boom groenblijvend of bladverliezend?",
+        "en": "Is this tree evergreen or deciduous?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": ["leaf_cycle=deciduous"]
+          },
+          "then": {
+            "nl": "Bladverliezend: de boom is een periode van het jaar kaal.",
+            "en": "Deciduous: the tree loses its leaves for some time of the year."
+          }
+        },
+        {
+          "if": {
+            "and": ["leaf_cycle=evergreen"]
+          },
+          "then": {
+            "nl": "Groenblijvend.",
+            "en": "Evergreen."
+          }
+        }
+      ],
+      "condition": {
+        "and": ["leaf_type!~^leafless$"]
+      }
+    },
+    {
+      "render": {
+        "nl": "Naam: {name}",
+        "en": "Naam: {name}"
+      },
+      "question": {
+        "nl": "Heeft de boom een naam?",
+        "en": "Does the tree have a name?"
+      },
+      "freeform": {
+        "key": "name",
+        "addExtraTags": [
+          "noname="
+        ]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "name=",
+              "noname=yes"
+            ]
+          },
+          "then": {
+            "nl": "De boom heeft geen naam.",
+            "en": "The tree does not have a name."
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "denotation=landmark",
+          "denotation=natural_monument",
+          "name~*"
+        ]
+      }
+    },
+    {
+      "question": {
+        "nl": "Is deze boom erkend als erfgoed?",
+        "en": "Is this tree registered heritage?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "heritage=4",
+              "heritage:operator=OnroerendErfgoed"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/60/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
+            "en": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/60/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "heritage=4",
+              "heritage:operator=aatl"
+            ]
+          },
+          "then": {
+            "nl": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel",
+            "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "heritage=yes",
+              "heritage:operator="
+            ]
+          },
+          "then": {
+            "nl": "Erkend als erfgoed door een andere organisatie",
+            "en": "Registered as heritage by a different organisation"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "heritage=no",
+              "heritage:operator="
+            ]
+          },
+          "then": {
+            "nl": "Niet erkend als erfgoed",
+            "en": "Not registered as heritage"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "heritage~*"
+            ]
+          },
+          "then": {
+            "nl": "Erkend als erfgoed door een andere organisatie",
+            "en": "Registered as heritage by a different organisation"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": {
+        "or": [
+          "denotation=landmark",
+          "denotation=natural_monument"
+        ]
+      }
+    },
+    {
+      "render": {
+        "nl": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/60/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "en": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/60/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+      },
+      "question": {
+        "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
+        "en": "What is the ID issuesd by Onroerend Erfgoed Flanders?"
+      },
+      "freeform": {
+        "key": "ref:OnroerendErfgoed",
+        "type": "nat"
+      },
+      "condition": {
+        "and": [
+          "heritage=4",
+          "heritage:operator=OnroerendErfgoed"
+        ]
+      }
+    },
+    {
+      "render": {
+        "nl": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e4/Wikidata-logo_S.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+        "en": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e4/Wikidata-logo_S.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+      },
+      "question": {
+        "nl": "Wat is het Wikidata-ID van deze boom?",
+        "en": "What is the Wikidata ID for this tree?"
+      },
+      "freeform": {
+        "key": "wikidata",
+        "type": "wikidata"
+      },
+      "condition": {
+        "or": [
+          "denotation=landmark",
+          "denotation=natural_monument",
+          "wikidata~*"
+        ]
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/themes/trees/unknown.svg",
+    "mappings": [
+      {
+        "if": {
+          "and": ["leaf_type=broadleaved"]
+        },
+        "then": "./assets/themes/trees/broadleaved.svg"
+      },
+      {
+        "if": {
+          "and": ["leaf_type=needleleaved"]
+        },
+        "then": "./assets/themes/trees/needleleaved.svg"
+      }
+    ]
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,bottom"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "natural=tree",
+        "leaf_type=broadleaved"
+      ],
+      "title": {
+        "nl": "Loofboom",
+        "en": "Broadleaved tree"
+      },
+      "description": {
+        "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
+        "en": "A tree of a species with leaves, such as oak or populus."
+      }
+    },
+    {
+      "tags": [
+        "natural=tree",
+        "leaf_type=needleleaved"
+      ],
+      "title": {
+        "nl": "Naaldboom",
+        "en": "Needleleaved tree"
+      },
+      "description": {
+        "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
+        "en": "A tree of a species with needles, such as pine or spruce."
+      }
+    },
+    {
+      "tags": [
+        "natural=tree"
+      ],
+      "title": {
+        "nl": "Boom",
+        "en": "Tree"
+      },
+      "description": {
+        "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
+        "en": "If you're not sure whether it's a broadleaved or needleleaved tree."
+      }
+    }
+  ]
+}

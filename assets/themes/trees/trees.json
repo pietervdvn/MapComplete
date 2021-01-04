@@ -1,0 +1,32 @@
+{
+  "id": "trees",
+  "title": {
+    "nl": "Bomen",
+    "en": "Trees"
+  },
+  "shortDescription": {
+    "nl": "Breng bomen in kaart",
+    "en": "Map all the trees"
+  },
+  "description": {
+    "nl": "Breng bomen in kaart!",
+    "en": "Map all the trees!"
+  },
+  "language": [
+    "nl",
+    "en"
+  ],
+  "maintainer": "Midgard",
+  "icon": "./assets/themes/trees/logo.svg",
+  "version": "0",
+  "startLat": 50.642,
+  "startLon": 4.482,
+  "startZoom": 8,
+  "widenFactor": 0.01,
+  "socialImage": "./assets/themes/trees/logo.svg",
+  "layers": [
+    "tree_nodes"
+  ],
+  "roamingRenderings": [],
+  "defaultBackgroundId": "AGIV"
+}

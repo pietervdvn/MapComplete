@@ -17,6 +17,7 @@ import * as direction from "../assets/layers/direction/direction.json"
 import * as surveillance_camera from "../assets/layers/surveillance_cameras/surveillance_cameras.json"
 import * as toilets from "../assets/layers/toilets/toilets.json"
 import * as bookcases from "../assets/layers/public_bookcases/public_bookcases.json"
+import * as tree_nodes from "../assets/layers/trees/tree_nodes.json"
 import LayerConfig from "./JSON/LayerConfig";
 
 export default class SharedLayers {
@@ -45,7 +46,8 @@ export default class SharedLayers {
             new LayerConfig(information_boards,[], "shared_layers"),
             new LayerConfig(toilets,[], "shared_layers"),
             new LayerConfig(bookcases,[], "shared_layers"),
-            new LayerConfig(surveillance_camera,[], "shared_layers")
+            new LayerConfig(surveillance_camera,[], "shared_layers"),
+            new LayerConfig(tree_nodes,[], "shared_layers")
         ];
 
         const sharedLayers = new Map<string, LayerConfig>();
