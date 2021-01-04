@@ -7,7 +7,15 @@
     "de": "Mit Fahrrad zusammenhängendes Objekt"
   },
   "minzoom": 13,
-  "overpassTags": {"or": ["theme~cycling|bicycle", "sport=cycling"]},
+  "overpassTags": {
+    "or": [
+      "theme~cycling|bicycle",
+      "sport=cycling",
+      "association~cycling|bicycle",
+      "ngo~cycling|bicycle",
+      "club~bicycle|cycling"
+    ]
+  },
   "title": {
     "render": {
       "en": "Bike related object",
@@ -18,7 +26,7 @@
     "mappings": [
       {
         "if": "name~*",
-        "then":"<i>{name}</i>"
+        "then": "<i>{name}</i>"
       },
       {
         "if": "leisure=track",
@@ -30,32 +38,13 @@
     ]
   },
   "description": {},
-  "tagRenderings": [ "images",
-
-    {
-      "render": "<a href='{website}' target='_blank'>{website}</a>",
-      "freeform": {
-        "key": "website"
-      }
-    },
-    {
-      "render": "<a href='tel:{phone}'>{phone}</a>",
-      "freeform": {
-        "key": "phone"
-      }
-    },
-    {
-      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-      "freeform": {
-        "key": "email"
-      }
-    },
-    {
-      "render": "{opening_hours_table(opening_hours)}",
-      "freeform": {
-        "key": "opening_hours"
-      }
-    }
+  "tagRenderings": [
+    "images",
+    "description",
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {

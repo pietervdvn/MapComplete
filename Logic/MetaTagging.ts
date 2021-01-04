@@ -7,10 +7,9 @@ import CountryCoder from "latlon2country"
 import {UIEventSource} from "./UIEventSource";
 
 class SimpleMetaTagger {
-    private _f: (feature: any, index: number) => void;
     public readonly keys: string[];
     public readonly doc: string;
-
+    private _f: (feature: any, index: number) => void;
 
     constructor(keys: string[], doc: string, f: ((feature: any, index: number) => void)) {
         this.keys = keys;
@@ -90,39 +89,39 @@ export default class MetaTagging {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;
                 }
-                try{
-                    
-                const oh = new opening_hours(tags["opening_hours"], {
-                    lat: tags._lat,
-                    lon: tags._lon,
-                    address: {
-                        country_code: tags._country.toLowerCase()
-                    }
-                }, {tag_key: "opening_hours"});
-                // AUtomatically triggered on the next change
+                try {
+
+                    const oh = new opening_hours(tags["opening_hours"], {
+                        lat: tags._lat,
+                        lon: tags._lon,
+                        address: {
+                            country_code: tags._country.toLowerCase()
+                        }
+                    }, {tag_key: "opening_hours"});
+                    // AUtomatically triggered on the next change
                     const updateTags = () => {
-                    const oldValueIsOpen = tags["_isOpen"];
-                    tags["_isOpen"] = oh.getState() ? "yes" : "no";
-                    const comment = oh.getComment();
-                    if (comment) {
-                        tags["_isOpen:description"] = comment;
-                    }
+                        const oldValueIsOpen = tags["_isOpen"];
+                        tags["_isOpen"] = oh.getState() ? "yes" : "no";
+                        const comment = oh.getComment();
+                        if (comment) {
+                            tags["_isOpen:description"] = comment;
+                        }
 
-                    if (oldValueIsOpen !== tags._isOpen) {
-                        tagsSource.ping();
-                    }
+                        if (oldValueIsOpen !== tags._isOpen) {
+                            tagsSource.ping();
+                        }
 
-                    const nextChange = oh.getNextChange();
+                        const nextChange = oh.getNextChange();
                         if (nextChange !== undefined) {
-                        window.setTimeout(
-                            updateTags,
-                            (nextChange.getTime() - (new Date()).getTime())
-                        )
+                            window.setTimeout(
+                                updateTags,
+                                (nextChange.getTime() - (new Date()).getTime())
+                            )
+                        }
                     }
-                }
-                            updateTags();
-                }catch(e){
-                    console.error(e);
+                    updateTags();
+                } catch (e) {
+                    console.error("Error while parsing opening hours of ", tags.id, e);
                     tags["_isOpen"] = "parse_error";
                 }
 
@@ -235,8 +234,8 @@ export default class MetaTagging {
             let carWidthUsed = (onewayCar ? 1 : 2) * carWidth;
             properties["_width:needed:cars"] = Utils.Round(carWidthUsed);
             properties["_width:needed:parking"] = Utils.Round(parallelParkingCount * carWidth)
-            
-            
+
+
             let cyclistWidthUsed = 0;
             if (cyclingAllowed) {
                 cyclistWidthUsed = (onewayBike ? 1 : 2) * cyclistWidth;
@@ -251,16 +250,16 @@ export default class MetaTagging {
                 carWidthUsed +
                 cyclistWidthUsed +
                 parallelParkingCount * carWidthUsed;
-            properties["_width:needed:no_pedestrians"] =Utils.Round(targetWidthIgnoringPedestrians);
-          
+            properties["_width:needed:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians);
+
             const pedestriansNeed = Math.max(0, pedestrianFlowNeeded) * pedestrianWidth;
-            const targetWidth = targetWidthIgnoringPedestrians + pedestriansNeed ;
+            const targetWidth = targetWidthIgnoringPedestrians + pedestriansNeed;
             properties["_width:needed"] = Utils.Round(targetWidth);
             properties["_width:needed:pedestrians"] = Utils.Round(pedestriansNeed)
 
 
-            properties["_width:difference"] = Utils.Round(targetWidth - width );
-            properties["_width:difference:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians - width) ;
+            properties["_width:difference"] = Utils.Round(targetWidth - width);
+            properties["_width:difference:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians - width);
 
         }
     );
