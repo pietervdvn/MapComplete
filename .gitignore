@@ -5,3 +5,6 @@ node_modules
 scratch
 assets/editor-layer-index.json
 assets/generated/*
+/*.webmanifest
+/*.html
+!/index.html
