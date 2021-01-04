@@ -278,8 +278,10 @@ export class InitUiElements {
             checkbox.isEnabled.setData(false);
         })
 
-        State.state.selectedElement.addCallback(() => {
-            checkbox.isEnabled.setData(false);
+        State.state.selectedElement.addCallback(selected => {
+            if(selected !== undefined){
+                checkbox.isEnabled.setData(false);
+            }
         })
 
 
@@ -367,11 +369,6 @@ export class InitUiElements {
             attr
         );
         State.state.leafletMap.setData(bm.map);
-
-        bm.map.on("popupclose", () => {
-            State.state.selectedElement.setData(undefined)
-        })
-
     }
 
     private static InitLayers() {

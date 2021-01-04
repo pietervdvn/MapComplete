@@ -17,6 +17,7 @@ export default class ShowDataLayer {
 
     private readonly _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _onSelectedTrigger: any = {}; // osmId+geometry.type+matching_layer_id --> () => void
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
@@ -62,6 +63,16 @@ export default class ShowDataLayer {
         leafletMap.addCallback(() => update());
         zoom.map(z => (layoutToUse.clustering?.maxZoom ?? 0) >= z).addCallback(() => {
             update();
+        });
+        State.state.selectedElement.addCallback(feature => {
+            if(feature === undefined){
+                return;
+            }
+            const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
+            const action = self._onSelectedTrigger[id];
+            if(action){
+                action();
+            }
         });
 
     }
@@ -109,7 +120,7 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        let uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
+        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
         popup.setContent(uiElement.Render());
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
@@ -118,10 +129,17 @@ export default class ShowDataLayer {
 
         leafletLayer.on("click", (e) => {
             // We set the element as selected...
-            uiElement.Activate();
+         //   uiElement.Activate();
             State.state.selectedElement.setData(feature);
         });
-
+        
+        const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
+        this._onSelectedTrigger[id]
+         = () => {
+            leafletLayer.openPopup();
+            uiElement.Activate();
+        }
+        
 
         if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
             // This element is in the URL, so this is a share link
