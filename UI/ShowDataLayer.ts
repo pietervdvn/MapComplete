@@ -21,7 +21,6 @@ export default class ShowDataLayer {
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
-                zoom: UIEventSource<number>,
                 layoutToUse: LayoutConfig) {
         this._leafletMap = leafletMap;
         const self = this;
@@ -44,12 +43,10 @@ export default class ShowDataLayer {
             const feats = features.data.map(ff => ff.feature);
             let geoLayer = self.CreateGeojsonLayer(feats)
             if (layoutToUse.clustering !== undefined) {
-                if (layoutToUse.clustering.maxZoom >= zoom.data) {
                     const cl = window["L"];
-                    const cluster = cl.markerClusterGroup();
+                    const cluster = cl.markerClusterGroup({ disableClusteringAtZoom: layoutToUse.clustering.maxZoom });
                     cluster.addLayer(geoLayer);
                     geoLayer = cluster;
-                }
             }
 
             if (oldGeoLayer) {
@@ -61,9 +58,6 @@ export default class ShowDataLayer {
 
         features.addCallbackAndRun(() => update());
         leafletMap.addCallback(() => update());
-        zoom.map(z => (layoutToUse.clustering?.maxZoom ?? 0) >= z).addCallback(() => {
-            update();
-        });
         State.state.selectedElement.addCallback(feature => {
             if(feature === undefined){
                 return;

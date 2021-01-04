@@ -419,7 +419,6 @@ export class InitUiElements {
         })
 
         new ShowDataLayer(source.features, State.state.leafletMap,
-            State.state.locationControl.map(l => l.zoom),
             State.state.layoutToUse.data);
 
 
