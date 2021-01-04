@@ -128,9 +128,15 @@ export interface LayoutConfigJson {
      */
     clustering?: {
         /**
-         * All zoom levels above 'maxzoom' are not clustered anymore
+         * All zoom levels above 'maxzoom' are not clustered anymore.
+         * Defaults to 18
          */
-        maxZoom?: number
+        maxZoom?: number,
+        /**
+         * The number of elements that should be showed (in total) before clustering starts to happen.
+         * If clustering is defined, defaults to 0
+         */
+        minNeededElements?: number
     },
 
     /**

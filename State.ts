@@ -76,13 +76,11 @@ export default class State {
      This message is shown full screen on mobile devices
      */
     public readonly fullScreenMessage = new UIEventSource<UIElement>(undefined)
-        .addCallback(fs => console.log("Fullscreen message is", fs));
 
     /**
      The latest element that was selected - used to generate the right UI at the right place
      */
     public readonly selectedElement = new UIEventSource<any>(undefined)
-        .addCallback(selected => console.log("Selected element is", selected));
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;

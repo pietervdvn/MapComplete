@@ -42,7 +42,7 @@ export default class ShowDataLayer {
 
             const feats = features.data.map(ff => ff.feature);
             let geoLayer = self.CreateGeojsonLayer(feats)
-            if (layoutToUse.clustering !== undefined) {
+            if (layoutToUse.clustering.minNeededElements <= features.data.length) {
                     const cl = window["L"];
                     const cluster = cl.markerClusterGroup({ disableClusteringAtZoom: layoutToUse.clustering.maxZoom });
                     cluster.addLayer(geoLayer);
