@@ -13,27 +13,18 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
 
 
     constructor(layers: { layerDef: LayerConfig }[], upstream: FeatureSource) {
-        let noPassthroughts = true;
-        for (const layer of layers) {
-            if (layer.layerDef.passAllFeatures) {
-                noPassthroughts = false;
-                break;
-            }
-        }
-
         this.features = upstream.features.map(features => {
             const newFeatures: { feature: any, freshness: Date }[] = [];
             if(features === undefined){
                 return newFeatures;
             }
-
            
             for (const f of features) {
                 if (f.feature._matching_layer_id) {
                     // Already matched previously
                     // We simply add it
                     newFeatures.push(f);
-                    return;
+                    continue;
                 }
 
                 

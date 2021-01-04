@@ -419,7 +419,6 @@ export class InitUiElements {
                 State.state.allElements.addElement(feature);
             })
             MetaTagging.addMetatags(features);
-            console.log("ALL FEATURES", features);
         })
 
         new ShowDataLayer(source.features, State.state.leafletMap,

@@ -32,7 +32,6 @@ export default class ShowDataLayer {
         }
 
         function update() {
-            console.log("UPDATING!")
             if (features.data === undefined) {
                 return;
             }
