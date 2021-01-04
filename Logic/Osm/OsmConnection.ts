@@ -8,7 +8,7 @@ import Svg from "../../Svg";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Img from "../../UI/Base/Img";
 
-export class UserDetails {
+export default class UserDetails {
 
     public loggedIn = false;
     public name = "Not logged in";
@@ -21,15 +21,15 @@ export class UserDetails {
 }
 
 export class OsmConnection {
-    
+
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     _dryRun: boolean;
 
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
-    
-    private _onLoggedIn : ((userDetails: UserDetails) => void)[] = [];
+
+    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
 
     constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
@@ -44,11 +44,11 @@ export class OsmConnection {
         } catch (e) {
             console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
         }
-        
+
         const iframeMode = window !== window.top;
 
 
-        if ( iframeMode || pwaStandAloneMode || !singlePage) {
+        if (iframeMode || pwaStandAloneMode || !singlePage) {
             // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
             // Same for an iframe...
             this.auth = new osmAuth({
@@ -74,7 +74,7 @@ export class OsmConnection {
         this._dryRun = dryRun;
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
-        
+
         this.changesetHandler = new ChangesetHandler(layoutName, dryRun, this, this.auth);
         if (oauth_token.data !== undefined) {
             console.log(oauth_token.data)
@@ -86,7 +86,7 @@ export class OsmConnection {
                 }, this.auth);
 
             oauth_token.setData(undefined);
-           
+
         }
         if (this.auth.authenticated()) {
             this.AttemptLogin(); // Also updates the user badge
@@ -100,7 +100,8 @@ export class OsmConnection {
         layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
-                           continuation: () => void = () => {}) {
+        continuation: () => void = () => {
+        }) {
         this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, continuation);
     }
 
@@ -112,10 +113,10 @@ export class OsmConnection {
         return this.preferencesHandler.GetLongPreference(key, prefix);
     }
 
-    public OnLoggedIn(action: (userDetails: UserDetails) => void){
+    public OnLoggedIn(action: (userDetails: UserDetails) => void) {
         this._onLoggedIn.push(action);
     }
-    
+
     public LogOut() {
         this.auth.logout();
         this.userDetails.data.loggedIn = false;
@@ -132,7 +133,7 @@ export class OsmConnection {
             method: 'GET',
             path: '/api/0.6/user/details'
         }, function (err, details) {
-            if(err != null){
+            if (err != null) {
                 console.log(err);
                 return;
             }
@@ -140,9 +141,9 @@ export class OsmConnection {
             if (details == null) {
                 return;
             }
-            
+
             self.CheckForMessagesContinuously();
-            
+
             // details is an XML DOM of user details
             let userInfo = details.getElementsByTagName("user")[0];
 
@@ -177,7 +178,7 @@ export class OsmConnection {
                 action(self.userDetails.data);
             }
             self._onLoggedIn = [];
-          
+
         });
     }
 
@@ -189,7 +190,7 @@ export class OsmConnection {
                 console.log("Checking for messages")
                 this.AttemptLogin();
             }
-        },  5 * 60 * 1000);
+        }, 5 * 60 * 1000);
     }
 
 

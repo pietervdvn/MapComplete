@@ -1,7 +1,7 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
-import {OsmConnection, UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 export class SaveButton extends UIElement {
 

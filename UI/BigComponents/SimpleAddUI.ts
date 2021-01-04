@@ -1,20 +1,19 @@
-import {UIElement} from "./UIElement";
-import {Tag, TagUtils} from "../Logic/Tags";
-import Translations from "./i18n/Translations";
-import Combine from "./Base/Combine";
-import {SubtleButton} from "./Base/SubtleButton";
-import Locale from "./i18n/Locale";
-import State from "../State";
-
-import {UIEventSource} from "../Logic/UIEventSource";
-import Svg from "../Svg";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import Constants from "../Models/Constants";
-
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-export class SimpleAddUI extends UIElement {
+import Locale from "../i18n/Locale";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {Tag, TagUtils} from "../../Logic/Tags";
+import {UIElement} from "../UIElement";
+import Svg from "../../Svg";
+import {SubtleButton} from "../Base/SubtleButton";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import Constants from "../../Models/Constants";
+
+export default class SimpleAddUI extends UIElement {
     private readonly _addButtons: UIElement[];
     
     private _loginButton : UIElement;

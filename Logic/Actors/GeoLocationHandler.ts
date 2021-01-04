@@ -5,7 +5,7 @@ import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 
-export class GeoLocationHandler extends UIElement {
+export default class GeoLocationHandler extends UIElement {
 
     private readonly _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _permission: UIEventSource<string> = new UIEventSource<string>("");
@@ -13,17 +13,14 @@ export class GeoLocationHandler extends UIElement {
     private readonly _hasLocation: UIEventSource<boolean>;
     private readonly _currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>;
     private readonly _leafletMap: UIEventSource<L.Map>;
-    private readonly _featureSwitch: UIEventSource<boolean>;
 
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
-                leafletMap: UIEventSource<L.Map>,
-                featureSwitch: UIEventSource<boolean>) {
+                leafletMap: UIEventSource<L.Map>) {
         super(undefined);
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
-        this._featureSwitch = featureSwitch;
         this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
-        var self = this;
+        const self = this;
         import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
             self.init();
         })
@@ -92,10 +89,6 @@ export class GeoLocationHandler extends UIElement {
     }
 
     InnerRender(): string {
-        if (!this._featureSwitch.data) {
-            return "";
-        }
-
         if (this._hasLocation.data) {
             return Svg.crosshair_blue_img;
         }
@@ -124,7 +117,7 @@ export class GeoLocationHandler extends UIElement {
 
     private StartGeolocating(zoomlevel = 19) {
         const self = this;
-        const map : any = this._leafletMap.data;
+        const map: any = this._leafletMap.data;
         if (self._permission.data === "denied") {
             return "";
         }

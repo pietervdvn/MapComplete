@@ -8,14 +8,14 @@ import Img from "../../UI/Base/Img";
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
  * Shows the given uiToShow-element in the messagebox
  */
-export class StrayClickHandler {
+export default class StrayClickHandler {
     private _lastMarker;
     private _uiToShow: (() => UIElement);
 
     constructor(
-        lastClickLocation: UIEventSource<{ lat: number, lon:number }>,
+        lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
         selectedElement: UIEventSource<string>,
-        filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean>}[]>,
+        filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
         leafletMap: UIEventSource<L.Map>,
         fullscreenMessage: UIEventSource<UIElement>,
         uiToShow: (() => UIElement)) {
@@ -23,14 +23,14 @@ export class StrayClickHandler {
         const self = this;
         filteredLayers.data.forEach((filteredLayer) => {
             filteredLayer.isDisplayed.addCallback(isEnabled => {
-                if(isEnabled && self._lastMarker && leafletMap.data !== undefined){
+                if (isEnabled && self._lastMarker && leafletMap.data !== undefined) {
                     // When a layer is activated, we remove the 'last click location' in order to force the user to reclick
                     // This reclick might be at a location where a feature now appeared...
-                     leafletMap.data.removeLayer(self._lastMarker);
+                    leafletMap.data.removeLayer(self._lastMarker);
                 }
             })
         })
-        
+
         lastClickLocation.addCallback(function (lastClick) {
             selectedElement.setData(undefined);
 

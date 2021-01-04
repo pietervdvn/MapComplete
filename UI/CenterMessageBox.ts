@@ -2,10 +2,9 @@ import {UIElement} from "./UIElement";
 import Translations from "./i18n/Translations";
 import State from "../State";
 
-export class CenterMessageBox extends UIElement {
+export default class CenterMessageBox extends UIElement {
 
-    constructor(
-    ) {
+    constructor() {
         super(State.state.centerMessage);
 
         this.ListenTo(State.state.locationControl);
@@ -19,14 +18,17 @@ export class CenterMessageBox extends UIElement {
             return {innerHtml: State.state.centerMessage.data, done: false};
         }
         const lu = State.state.layerUpdater;
-        if(lu.retries.data > 0) {
-            return {innerHtml: Translations.t.centerMessage.retrying.Subs({count: ""+ lu.retries.data}).Render(), done: false};
+        if (lu.retries.data > 0) {
+            return {
+                innerHtml: Translations.t.centerMessage.retrying.Subs({count: "" + lu.retries.data}).Render(),
+                done: false
+            };
         }
-        
+
         if (lu.runningQuery.data) {
             return {innerHtml: Translations.t.centerMessage.loadingData.Render(), done: false};
-            
-        } 
+
+        }
         if (!lu.sufficientlyZoomed.data) {
             return {innerHtml: Translations.t.centerMessage.zoomIn.Render(), done: false};
         } else {

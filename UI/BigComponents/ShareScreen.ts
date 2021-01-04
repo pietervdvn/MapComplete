@@ -1,21 +1,21 @@
-import {UIElement} from "./UIElement";
-import Translations from "./i18n/Translations";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import Combine from "./Base/Combine";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import CheckBox from "./Input/CheckBox";
-import {VerticalCombine} from "./Base/VerticalCombine";
-import State from "../State";
-import {FilteredLayer} from "../Logic/FilteredLayer";
-import {Utils} from "../Utils";
-import {UIEventSource} from "../Logic/UIEventSource";
-import {SubtleButton} from "./Base/SubtleButton";
-import Svg from "../Svg";
-import {Translation} from "./i18n/Translation";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import Constants from "../Models/Constants";
+import {VerticalCombine} from "../Base/VerticalCombine";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {Translation} from "../i18n/Translation";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import Svg from "../../Svg";
+import Combine from "../Base/Combine";
+import {SubtleButton} from "../Base/SubtleButton";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {Utils} from "../../Utils";
+import State from "../../State";
+import CheckBox from "../Input/CheckBox";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import Constants from "../../Models/Constants";
+import LayerConfig from "../../Customizations/JSON/LayerConfig";
 
-export class ShareScreen extends UIElement {
+export default class ShareScreen extends UIElement {
     private readonly _options: UIElement;
     private readonly _iframeCode: UIElement;
     public iframe: UIEventSource<string>;
@@ -61,7 +61,7 @@ export class ShareScreen extends UIElement {
         }, [currentLocation]));
 
 
-        function fLayerToParam(flayer: FilteredLayer) {
+        function fLayerToParam(flayer: {isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig}) {
             if (flayer.isDisplayed.data) {
                 return null; // Being displayed is the default
             }

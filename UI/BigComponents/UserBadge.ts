@@ -1,25 +1,25 @@
-import {UIElement} from "./UIElement";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import Translations from "./i18n/Translations";
-import {UserDetails} from "../Logic/Osm/OsmConnection";
-import State from "../State";
-import {UIEventSource} from "../Logic/UIEventSource";
-import Combine from "./Base/Combine";
-import Svg from "../Svg";
-import Link from "./Base/Link";
-import LanguagePicker from "./LanguagePicker";
-
 /**
  * Handles and updates the user badge
  */
-export class UserBadge extends UIElement {
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import Svg from "../../Svg";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import LanguagePicker from "../LanguagePicker";
+import Translations from "../i18n/Translations";
+import Link from "../Base/Link";
+
+export default class UserBadge extends UIElement {
     private _userDetails: UIEventSource<UserDetails>;
     private _logout: UIElement;
     private _homeButton: UIElement;
     private _languagePicker: UIElement;
 
-    private _loginButton : UIElement;
+    private _loginButton: UIElement;
 
     constructor() {
         super(State.state.osmConnection.userDetails);
@@ -94,7 +94,7 @@ export class UserBadge extends UIElement {
 
         const settings =
             new Link(Svg.gear_svg(),
-                `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`, 
+                `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`,
                 true)
 
 

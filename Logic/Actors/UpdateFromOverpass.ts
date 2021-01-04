@@ -38,6 +38,7 @@ export default class UpdateFromOverpass implements FeatureSource{
         location: UIEventSource<Loc>,
         layoutToUse: UIEventSource<LayoutConfig>,
         leafletMap: UIEventSource<L.Map>) {
+        console.log("Crating overpass updater")
         this._location = location;
         this._layoutToUse = layoutToUse;
         this._leafletMap = leafletMap;

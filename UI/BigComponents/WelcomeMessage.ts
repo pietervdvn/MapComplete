@@ -1,12 +1,12 @@
-import {UIElement} from "./UIElement";
-import Locale from "../UI/i18n/Locale";
-import State from "../State";
-import Translations from "./i18n/Translations";
-import Combine from "./Base/Combine";
-import LanguagePicker from "./LanguagePicker";
+import Locale from "../i18n/Locale";
+import {UIElement} from "../UIElement";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import LanguagePicker from "../LanguagePicker";
+import Translations from "../i18n/Translations";
 
 
-export class WelcomeMessage extends UIElement {
+export default class WelcomeMessage extends UIElement {
     private languagePicker: UIElement;
 
     private readonly description: UIElement;
@@ -25,11 +25,6 @@ export class WelcomeMessage extends UIElement {
             "<h3>", layout.title, "</h3>",
             layout.description
         ])
-        layout.descriptionTail
-        
-        
-
-
         this.plzLogIn =
             Translations.t.general.loginWithOpenStreetMap
                 .onClick(() => {

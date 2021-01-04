@@ -1,13 +1,13 @@
-import {UIElement} from "./UIElement";
-import CheckBox from "./Input/CheckBox";
-import Combine from "./Base/Combine";
-import State from "../State";
-import Translations from "./i18n/Translations";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import State from "../../State";
+import CheckBox from "../Input/CheckBox";
+import Combine from "../Base/Combine";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
 
-export class LayerSelection extends UIElement {
+export default class LayerSelection extends UIElement {
 
     private readonly _checkboxes: UIElement[];
 
@@ -16,7 +16,9 @@ export class LayerSelection extends UIElement {
         this._checkboxes = [];
 
         for (const layer of State.state.filteredLayers.data) {
-            const leafletStyle = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>({id: "node/-1"}), true)
+            const leafletStyle = layer.layerDef.GenerateLeafletStyle(
+                new UIEventSource<any>({id: "node/-1"}), 
+                false)
             const leafletHtml = leafletStyle.icon.html;
             const icon =
                 new FixedUiElement(leafletHtml.Render())

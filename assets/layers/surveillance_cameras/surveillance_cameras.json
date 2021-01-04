@@ -335,6 +335,7 @@
     ]
   },
   "rotation": {
+    "#": "Note: {camera:direction} is substituted by a number, giving the string 'calc(123deg + 90deg)'  ; it is this string that is used as css property, which interprets the calc",
     "render": "calc({camera:direction}deg + 90deg)",
     "mappings": [
       {

@@ -14,14 +14,13 @@ export default class FilteringFeatureSource implements FeatureSource {
                 upstream: FeatureSource) {
 
         const layerDict = {};
-       
+
         const self = this;
-        
+
         function update() {
-            console.log("UPdating...")
             const features: { feature: any, freshness: Date }[] = upstream.features.data;
             const newFeatures = features.filter(f => {
-                const layerId = f.feature.properties._matching_layer_id;
+                const layerId = f.feature._matching_layer_id;
                 if (layerId === undefined) {
                     console.error(f)
                     throw "feature._matching_layer_id is undefined"
@@ -37,16 +36,22 @@ export default class FilteringFeatureSource implements FeatureSource {
             });
             self.features.setData(newFeatures);
         }
+
         for (const layer of layers) {
             layerDict[layer.layerDef.id] = layer;
-            layer.isDisplayed.addCallback(update)
+            layer.isDisplayed.addCallback(() => {
+                console.log("Updating due to layer change")
+                update()})
         }
-        upstream.features.addCallback(update);
-        location.map(l => l.zoom).addCallback(update);
+        upstream.features.addCallback(() => {
+            console.log("Updating due to upstream change")
+            update()});
+        location.map(l => l.zoom).addCallback(() => {
+            console.log("UPdating due to zoom level change")
+            update();});
 
 
     }
-
 
 
 }

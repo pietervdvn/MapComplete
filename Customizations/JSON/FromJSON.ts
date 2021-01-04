@@ -11,7 +11,7 @@ export class FromJSON {
     }
 
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
-        if(json === undefined){
+        if (json === undefined) {
             throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
         }
         if (typeof (json) == "string") {
@@ -33,7 +33,7 @@ export class FromJSON {
                     split[1] = "..*"
                 }
                 return new RegexTag(
-                        new RegExp("^" + split[0] + "$"),
+                    new RegExp("^" + split[0] + "$"),
                     new RegExp("^" + split[1] + "$")
                 );
             }
@@ -58,11 +58,17 @@ export class FromJSON {
                     new RegExp("^" + split[1] + "$")
                 );
             }
-            const split = Utils.SplitFirst(tag, "=");
-            if(split[1] == "*"){
-                throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
+            if (tag.indexOf("=") >= 0) {
+
+
+                const split = Utils.SplitFirst(tag, "=");
+                if (split[1] == "*") {
+                    throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
+                }
+                return new Tag(split[0], split[1])
             }
-            return new Tag(split[0], split[1])
+            throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
+
         }
         if (json.and !== undefined) {
             return new And(json.and.map(t => FromJSON.Tag(t, context)));

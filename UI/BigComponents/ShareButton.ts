@@ -1,4 +1,4 @@
-import {UIElement} from "./UIElement";
+import {UIElement} from "../UIElement";
 
 export default class ShareButton extends UIElement{
     private _embedded: UIElement;

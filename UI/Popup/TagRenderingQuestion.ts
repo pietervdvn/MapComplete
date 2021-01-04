@@ -25,7 +25,7 @@ import Constants from "../../Models/Constants";
  * Note that the value _migh_ already be known, e.g. when selected or when changing the value
  */
 export default class TagRenderingQuestion extends UIElement {
-    private _tags: UIEventSource<any>;
+    private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
 
     private _saveButton: UIElement;

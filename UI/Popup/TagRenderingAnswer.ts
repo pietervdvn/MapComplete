@@ -7,7 +7,7 @@ import {SubstitutedTranslation} from "../SpecialVisualizations";
  * Displays the correct value for a known tagrendering
  */
 export default class TagRenderingAnswer extends UIElement {
-    private _tags: UIEventSource<any>;
+    private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
     private _content: UIElement;
 

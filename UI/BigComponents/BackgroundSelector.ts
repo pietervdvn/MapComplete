@@ -1,9 +1,9 @@
-import {UIElement} from "./UIElement";
-import {DropDown} from "./Input/DropDown";
-import Translations from "./i18n/Translations";
-import State from "../State";
-import {UIEventSource} from "../Logic/UIEventSource";
-import {BaseLayer} from "../Models/BaseLayer";
+import {UIElement} from "../UIElement";
+import {DropDown} from "../Input/DropDown";
+import Translations from "../i18n/Translations";
+import State from "../../State";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {BaseLayer} from "../../Models/BaseLayer";
 
 export default class BackgroundSelector extends UIElement {
 

@@ -9,8 +9,8 @@ import State from "../../State";
 import Svg from "../../Svg";
 
 export default class EditableTagRendering extends UIElement {
-    private _tags: UIEventSource<any>;
-    private _configuration: TagRenderingConfig;
+    private readonly _tags: UIEventSource<any>;
+    private readonly _configuration: TagRenderingConfig;
 
     private _editMode: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _editButton: UIElement;

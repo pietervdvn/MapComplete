@@ -9,7 +9,7 @@ import Locale from "../UI/i18n/Locale";
 import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import {Translation} from "./i18n/Translation";
 
-import ShareButton from "./ShareButton";
+import ShareButton from "./BigComponents/ShareButton";
 import Svg from "../Svg";
 import ReviewElement from "./Reviews/ReviewElement";
 import MangroveReviews from "../Logic/Web/MangroveReviews";

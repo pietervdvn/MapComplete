@@ -1,53 +1,45 @@
-import Translations from "./UI/i18n/Translations";
-import {TabbedComponent} from "./UI/Base/TabbedComponent";
-import {ShareScreen} from "./UI/ShareScreen";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import CheckBox from "./UI/Input/CheckBox";
 import Combine from "./UI/Base/Combine";
-import {UIElement} from "./UI/UIElement";
-import {MoreScreen} from "./UI/MoreScreen";
-import {FilteredLayer} from "./Logic/FilteredLayer";
-import {Basemap} from "./UI/Basemap";
+import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
-import {WelcomeMessage} from "./UI/WelcomeMessage";
-import {LayerSelection} from "./UI/LayerSelection";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import LoadFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
-import {PersonalLayersPanel} from "./UI/PersonalLayersPanel";
-import Locale from "./UI/i18n/Locale";
-import {StrayClickHandler} from "./Logic/Actors/StrayClickHandler";
-import {SimpleAddUI} from "./UI/SimpleAddUI";
-import {CenterMessageBox} from "./UI/CenterMessageBox";
+import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
+import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
+import CenterMessageBox from "./UI/CenterMessageBox";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import {TagUtils} from "./Logic/Tags";
-import {UserBadge} from "./UI/UserBadge";
-import {SearchAndGo} from "./UI/SearchAndGo";
-import {FullScreenMessageBox} from "./UI/FullScreenMessageBoxHandler";
-import {GeoLocationHandler} from "./Logic/Actors/GeoLocationHandler";
+import UserBadge from "./UI/BigComponents/UserBadge";
+import SearchAndGo from "./UI/BigComponents/SearchAndGo";
+import FullScreenMessageBox from "./UI/FullScreenMessageBoxHandler";
+import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
-import BackgroundSelector from "./UI/BackgroundSelector";
-import {FeatureInfoBox} from "./UI/Popup/FeatureInfoBox";
+import FeatureInfoBox from "./UI/Popup/FeatureInfoBox";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personalLayout/personalLayout.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";
-import {UserDetails} from "./Logic/Osm/OsmConnection";
-import Attribution from "./UI/Misc/Attribution";
-import Constants from "./Models/Constants";
+import UserDetails from "./Logic/Osm/OsmConnection";
+import Attribution from "./UI/BigComponents/Attribution";
 import MetaTagging from "./Logic/MetaTagging";
 import FeatureSourceMerger from "./Logic/FeatureSource/FeatureSourceMerger";
 import RememberingSource from "./Logic/FeatureSource/RememberingSource";
 import FilteringFeatureSource from "./Logic/FeatureSource/FilteringFeatureSource";
 import WayHandlingApplyingFeatureSource from "./Logic/FeatureSource/WayHandlingApplyingFeatureSource";
-import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import NoOverlapSource from "./Logic/FeatureSource/NoOverlapSource";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
+import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
+import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
+import FeatureSwitched from "./UI/Base/FeatureSwitched";
+import FeatureDuplicatorPerLayer from "./Logic/FeatureSource/FeatureDuplicatorPerLayer";
+import LayerConfig from "./Customizations/JSON/LayerConfig";
+import ShowDataLayer from "./UI/ShowDataLayer";
 
 export class InitUiElements {
 
@@ -85,10 +77,6 @@ export class InitUiElements {
                 console.warn("NOT saving custom layout to OSM as we are tesing -> probably in an iFrame")
             }
         }
-
-
-
-
 
 
         InitUiElements.InitBaseMap();
@@ -216,13 +204,15 @@ export class InitUiElements {
                 marker.addTo(State.state.leafletMap.data)
             });
 
-        new GeoLocationHandler(
-            State.state.currentGPSLocation,
-            State.state.leafletMap,
-            State.state.featureSwitchGeolocation
-        )
-            .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
+        new FeatureSwitched(
+            new GeoLocationHandler(
+                State.state.currentGPSLocation,
+                State.state.leafletMap
+            )
+                .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
+            , State.state.featureSwitchGeolocation)
             .AttachTo("geolocate-button");
+
         State.state.locationControl.ping();
     }
 
@@ -254,23 +244,18 @@ export class InitUiElements {
         }
     }
 
-    static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
-        featureSwitch.addCallback(() => {
+    private static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
+        featureSwitch.addCallbackAndRun(() => {
 
             if (featureSwitch.data) {
                 callback();
             }
         });
-
-        if (featureSwitch.data) {
-            callback();
-        }
-
     }
 
-    static InitWelcomeMessage() {
+    private static InitWelcomeMessage() {
 
-        const fullOptions = this.CreateWelcomePane();
+        const fullOptions = new FullWelcomePaneWithTabs();
 
         const help = Svg.help_svg().SetClass("open-welcome-button");
         const close = Svg.close_svg().SetClass("close-welcome-button");
@@ -298,7 +283,7 @@ export class InitUiElements {
         })
 
 
-        const fullOptions2 = this.CreateWelcomePane();
+        const fullOptions2 = new FullWelcomePaneWithTabs();
         State.state.fullScreenMessage.setData(fullOptions2)
 
         Svg.help_svg()
@@ -311,15 +296,11 @@ export class InitUiElements {
 
     }
 
-    static InitLayerSelection() {
+    private static InitLayerSelection() {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const layerControlPanel = this.GenerateLayerControlPanel();
-            if (layerControlPanel === undefined) {
-                return;
-            }
-
-            layerControlPanel.SetStyle("display:block;padding:0.75em;border-radius:1em;");
+            const layerControlPanel = new LayerControlPanel()
+                .SetStyle("display:block;padding:0.75em;border-radius:1em;");
             const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
                 new Combine([
@@ -334,18 +315,19 @@ export class InitUiElements {
             checkbox.AttachTo("layer-selection");
 
 
-            State.state.locationControl.addCallback(() => {
+            State.state.locationControl
+                .addCallback(() => {
                 // Close the layer selection when the map is moved
-                checkbox.isEnabled.setData(false);
+              //  checkbox.isEnabled.setData(false);
             });
 
-            const fullScreen = this.GenerateLayerControlPanel();
+            const fullScreen = new LayerControlPanel();
             checkbox.isEnabled.addCallback(isEnabled => {
                 if (isEnabled) {
                     State.state.fullScreenMessage.setData(fullScreen);
                 }
             })
-            State.state.fullScreenMessage.addCallbackAndRun(latest => {
+            State.state.fullScreenMessage.addCallback(latest => {
                 if (latest === undefined) {
                     checkbox.isEnabled.setData(false);
                 }
@@ -354,7 +336,7 @@ export class InitUiElements {
         });
     }
 
-    static InitBaseMap() {
+    private static InitBaseMap() {
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl).availableEditorLayers;
         State.state.backgroundLayer = QueryParameters.GetQueryParameter("background",
@@ -369,8 +351,6 @@ export class InitUiElements {
                 }
                 return AvailableBaseLayers.osmCarto;
             }, [], layer => layer.id);
-
-
 
 
         new LayerResetter(
@@ -393,61 +373,33 @@ export class InitUiElements {
 
     }
 
-    static InitLayers() {
-
-
+    private static InitLayers() {
 
 
         const state = State.state;
-        const flayers: FilteredLayer[] = []
+        const flayers: { layerDef: LayerConfig, isDisplayed: UIEventSource<boolean> }[] = []
         for (const layer of state.layoutToUse.data.layers) {
 
             if (typeof (layer) === "string") {
                 throw "Layer " + layer + " was not substituted";
             }
 
-            let generateContents = (tags: UIEventSource<any>) => new FeatureInfoBox(tags, layer);
-            if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {
-                generateContents = undefined;
+            const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
+                .map<boolean>((str) => str !== "false", [], (b) => b.toString());
+            const flayer = {
+                isDisplayed: isDisplayed,
+                layerDef: layer
             }
-
-            const flayer: FilteredLayer = new FilteredLayer(layer, generateContents);
             flayers.push(flayer);
-
-            QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
-                .map<boolean>((str) => str !== "false", [], (b) => b.toString())
-                .syncWith(
-                    flayer.isDisplayed
-                )
         }
 
         State.state.filteredLayers.setData(flayers);
 
-        function addMatchingIds(src: FeatureSource) {
-
-            src.features.addCallback(features => {
-                features.forEach(f => {
-                    const properties = f.feature.properties;
-                    if (properties._matching_layer_id) {
-                        return;
-                    }
-
-                    for (const flayer of flayers) {
-                        if (flayer.layerDef.overpassTags.matchesProperties(properties)) {
-                            properties._matching_layer_id = flayer.layerDef.id;
-                            break;
-                        }
-                    }
-                })
-            });
-        }
+     
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-
-        addMatchingIds(updater);
-        addMatchingIds(State.state.changes);
-
+       
 
         const source =
             new FilteringFeatureSource(
@@ -455,9 +407,9 @@ export class InitUiElements {
                 State.state.locationControl,
                 new FeatureSourceMerger([
                     new RememberingSource(new WayHandlingApplyingFeatureSource(flayers,
-                        new NoOverlapSource(flayers, updater)
+                        new NoOverlapSource(flayers,  new FeatureDuplicatorPerLayer(flayers, updater))
                     )),
-                    State.state.changes]));
+                    new FeatureDuplicatorPerLayer(flayers, State.state.changes)]));
 
 
         source.features.addCallback((featuresFreshness: { feature: any, freshness: Date }[]) => {
@@ -466,25 +418,9 @@ export class InitUiElements {
                 State.state.allElements.addElement(feature);
             })
             MetaTagging.addMetatags(features);
-
-            function renderLayers(layers) {
-
-
-                if (layers.length === 0) {
-                    if (features.length > 0) {
-                        console.warn("Got some leftovers: ", features.join("; "))
-                    }
-                    return;
-                }
-                const layer = layers[0];
-                const rest = layers.slice(1, layers.length);
-                features = layer.SetApplicableData(features);
-                renderLayers(rest);
-            }
-
-            renderLayers(flayers);
-
         })
+        
+        new ShowDataLayer(source.features, State.state.leafletMap, flayers);
 
 
     }
@@ -528,72 +464,4 @@ export class InitUiElements {
         new CenterMessageBox().AttachTo("centermessage");
 
     }
-
-    private static CreateWelcomePane() {
-
-        const layoutToUse = State.state.layoutToUse.data;
-        let welcome: UIElement = new WelcomeMessage();
-        if (layoutToUse.id === personal.id) {
-            welcome = new PersonalLayersPanel();
-        }
-
-        const tabs = [
-            {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
-            {
-                header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro as UIElement
-            },
-
-        ]
-
-        if (State.state.featureSwitchShareScreen.data) {
-            tabs.push({header: Svg.share_img, content: new ShareScreen()});
-        }
-
-        if (State.state.featureSwitchMoreQuests.data) {
-
-            tabs.push({
-                header: Svg.add_img,
-                content: new MoreScreen()
-            });
-        }
-
-
-        tabs.push({
-                header: Svg.help,
-                content: new VariableUiElement(State.state.osmConnection.userDetails.map(userdetails => {
-                    if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
-                        return ""
-                    }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).Render();
-                }, [Locale.language]))
-            }
-        );
-
-
-        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
-            .ListenTo(State.state.osmConnection.userDetails);
-
-    }
-
-    private static GenerateLayerControlPanel() {
-
-
-        let layerControlPanel: UIElement = undefined;
-        if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
-            layerControlPanel = new BackgroundSelector();
-            layerControlPanel.SetStyle("margin:1em");
-            layerControlPanel.onClick(() => {
-            });
-        }
-
-        if (State.state.filteredLayers.data.length > 1) {
-            const layerSelection = new LayerSelection();
-            layerSelection.onClick(() => {
-            });
-            layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
-        }
-        return layerControlPanel;
-    }
-
 }

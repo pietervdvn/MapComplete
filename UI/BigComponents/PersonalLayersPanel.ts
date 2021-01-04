@@ -1,17 +1,16 @@
-import {UIElement} from "./UIElement";
-import State from "../State";
-import Translations from "../UI/i18n/Translations";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import Combine from "../UI/Base/Combine";
-import CheckBox from "../UI/Input/CheckBox";
-import * as personal from "../assets/themes/personalLayout/personalLayout.json";
-import {SubtleButton} from "./Base/SubtleButton";
-import {FixedUiElement} from "./Base/FixedUiElement";
-import Svg from "../Svg";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {UIEventSource} from "../Logic/UIEventSource";
-
-export class PersonalLayersPanel extends UIElement {
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {UIElement} from "../UIElement";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
+import Svg from "../../Svg";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import CheckBox from "../Input/CheckBox";
+import {SubtleButton} from "../Base/SubtleButton";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import Translations from "../i18n/Translations";
+import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
+export default class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
 
     constructor() {

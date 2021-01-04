@@ -18,7 +18,7 @@ export default class FeatureSourceMerger implements FeatureSource {
         let all = {}; // Mapping 'id' -> {feature, freshness}
         for (const source of this._sources) {
             for (const f of source.features.data) {
-                const id = f.feature.properties.id+f.feature.geometry.type;
+                const id = f.feature.properties.id+f.feature.geometry.type+f.feature._matching_layer_id;
                 const oldV = all[id];
                 if(oldV === undefined){
                     all[id] = f;

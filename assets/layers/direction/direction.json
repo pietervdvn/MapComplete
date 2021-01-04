@@ -5,7 +5,10 @@
   },
   "minzoom": 16,
   "overpassTags": {
-    "or": ["camera:direction~*","direction~*"]
+    "or": [
+      "camera:direction~*",
+      "direction~*"
+    ]
   },
   "doNotDownload": true,
   "passAllFeatures": true,
@@ -14,7 +17,16 @@
     "en": "This layer visualizes directions"
   },
   "tagRenderings": [],
-  "icon":  "./assets/svg/direction_gradient.svg",
+  "icon": {
+    "render": "direction_gradient:var(--catch-detail-color)",
+    "#": "For some weird reason, showing the icon in the layer control panel breaks the svg-gradient (because the svg gradient has a global color or smthng) - so we use a different icon without gradient",
+    "mappings": [
+      {
+        "if": "id=node/-1",
+        "then": "direction:var(--catch-detail-color)"
+      }
+    ]
+  },
   "rotation": {
     "render": "{camera:direction}deg",
     "mappings": [
@@ -24,7 +36,7 @@
       }
     ]
   },
-  "iconSize":  "200,200,center",
+  "iconSize": "200,200,center",
   "color": "--catch-detail-color",
   "stroke": "0",
   "presets": [],

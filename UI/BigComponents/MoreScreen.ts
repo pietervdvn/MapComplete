@@ -1,17 +1,17 @@
-import {UIElement} from "./UIElement";
-import {VerticalCombine} from "./Base/VerticalCombine";
-import Translations from "./i18n/Translations";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import Combine from "./Base/Combine";
-import {SubtleButton} from "./Base/SubtleButton";
-import State from "../State";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import Svg from "../Svg";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import * as personal from "../assets/themes/personalLayout/personalLayout.json"
-import Constants from "../Models/Constants";
+import {VerticalCombine} from "../Base/VerticalCombine";
+import {UIElement} from "../UIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
+import Svg from "../../Svg";
+import State from "../../State";
+import Combine from "../Base/Combine";
+import {SubtleButton} from "../Base/SubtleButton";
+import Translations from "../i18n/Translations";
+import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
+import Constants from "../../Models/Constants";
 
-export class MoreScreen extends UIElement {
+export default class MoreScreen extends UIElement {
 
     
     constructor() {

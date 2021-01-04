@@ -1,6 +1,6 @@
 import {TileLayer} from "leaflet";
 
-export interface BaseLayer {
+export default interface BaseLayer {
     id: string,
     name: string,
     layer: TileLayer,

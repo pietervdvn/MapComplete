@@ -9,9 +9,9 @@ import Translations from "../i18n/Translations";
  * Generates all the questions, one by one
  */
 export default class QuestionBox extends UIElement {
-    private _tags: UIEventSource<any>;
+    private readonly _tags: UIEventSource<any>;
 
-    private _tagRenderings: TagRenderingConfig[];
+    private readonly _tagRenderings: TagRenderingConfig[];
     private _tagRenderingQuestions: UIElement[];
 
     private _skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])

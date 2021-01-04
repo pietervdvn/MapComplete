@@ -45,7 +45,7 @@ export default class NoOverlapSource {
                     partitions[layerId] = []
                 }
                 for (const feature of features) {
-                    partitions[feature.feature.properties._matching_layer_id].push(feature);
+                    partitions[feature.feature._matching_layer_id].push(feature);
                 }
 
                 // With this partitioning in hand, we run over every layer and remove every underlying feature if needed

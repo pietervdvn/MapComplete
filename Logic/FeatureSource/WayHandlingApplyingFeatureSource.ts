@@ -32,7 +32,7 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                 const newFeatures: { feature: any, freshness: Date }[] = [];
                 for (const f of features) {
                     const feat = f.feature;
-                    const layerId = feat.properties._matching_layer_id;
+                    const layerId = feat._matching_layer_id;
                     const layer: LayerConfig = layerDict[layerId].layerDef;
                     if (layer === undefined) {
                         throw "No layer found with id " + layerId;
@@ -50,6 +50,7 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                     }
 
                     const centerPoint = GeoOperations.centerpoint(feat);
+                    centerPoint._matching_layer_id = feat._matching_layer_id;
                     newFeatures.push({feature: centerPoint, freshness: f.freshness});
                     
                     if(layer.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY){

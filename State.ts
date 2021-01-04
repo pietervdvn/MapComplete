@@ -12,7 +12,7 @@ import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 import InstalledThemes from "./Logic/Actors/InstalledThemes";
-import {BaseLayer} from "./Models/BaseLayer";
+import BaseLayer from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
 
@@ -61,11 +61,9 @@ export default class State {
 
 
     public filteredLayers: UIEventSource<{
-        readonly   name: string | UIElement;
         readonly isDisplayed: UIEventSource<boolean>,
-        readonly  layerDef: LayerConfig;
+        readonly layerDef: LayerConfig;
     }[]> = new UIEventSource<{
-        readonly   name: string | UIElement;
         readonly isDisplayed: UIEventSource<boolean>,
         readonly  layerDef: LayerConfig;
     }[]>([])
@@ -114,7 +112,8 @@ export default class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
-    public layerControlIsOpened: UIEventSource<boolean> = QueryParameters.GetQueryParameter("layer-control-toggle", "false", "Wether or not the layer control is shown")
+    public layerControlIsOpened: UIEventSource<boolean> = 
+        QueryParameters.GetQueryParameter("layer-control-toggle", "false", "Whether or not the layer control is shown")
         .map<boolean>((str) => str !== "false", [], b => "" + b)
 
     public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
@@ -151,8 +150,6 @@ export default class State {
             lcd.lon = lcd.lon ?? layoutToUse?.startLon;
             self.locationControl.ping();
         });
-
-
 
 
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {

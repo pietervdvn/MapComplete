@@ -6,7 +6,7 @@ import Combine from "./Base/Combine";
 /**
  * Handles the full screen popup on mobile
  */
-export class FullScreenMessageBox extends UIElement {
+export default class FullScreenMessageBox extends UIElement {
 
     private readonly returnToTheMap: UIElement;
     private _content: UIElement;

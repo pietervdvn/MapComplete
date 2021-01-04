@@ -1,8 +1,8 @@
 import * as L from "leaflet"
-import {UIEventSource} from "../Logic/UIEventSource";
-import Loc from "../Models/Loc";
-import {UIElement} from "./UIElement";
-import {BaseLayer} from "../Models/BaseLayer";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import Loc from "../../Models/Loc";
+import {UIElement} from "../UIElement";
+import BaseLayer from "../../Models/BaseLayer";
 
 export class Basemap {
 
