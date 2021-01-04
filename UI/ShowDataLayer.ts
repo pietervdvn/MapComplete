@@ -3,12 +3,15 @@
  */
 import {UIEventSource} from "../Logic/UIEventSource";
 import * as L from "leaflet"
+import "leaflet.markercluster"
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import State from "../State";
 import LazyElement from "./Base/LazyElement";
 import Hash from "../Logic/Web/Hash";
 import {GeoOperations} from "../Logic/GeoOperations";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+
 
 export default class ShowDataLayer {
 
@@ -17,15 +20,14 @@ export default class ShowDataLayer {
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
-                layers: { layerDef: LayerConfig, isDisplayed: UIEventSource<boolean> }[]) {
+                layoutToUse: LayoutConfig) {
         this._leafletMap = leafletMap;
         const self = this;
-
         let oldGeoLayer: L.Layer = undefined;
 
         this._layerDict = {};
-        for (const layer of layers) {
-            this._layerDict[layer.layerDef.id] = layer.layerDef;
+        for (const layer of layoutToUse.layers) {
+            this._layerDict[layer.id] = layer;
         }
 
         function update() {
@@ -38,7 +40,13 @@ export default class ShowDataLayer {
             const mp = leafletMap.data;
 
             const feats = features.data.map(ff => ff.feature);
-            const geoLayer = self.CreateGeojsonLayer(feats);
+            let geoLayer = self.CreateGeojsonLayer(feats)
+            const cl = window["L"];
+            const cluster = cl.markerClusterGroup();
+            cluster.addLayer(geoLayer);
+            geoLayer = cluster;
+
+
             if (oldGeoLayer) {
                 mp.removeLayer(oldGeoLayer);
             }
@@ -65,7 +73,7 @@ export default class ShowDataLayer {
         // Click handling is done in the next step
 
         const tagSource = State.state.allElements.getEventSourceFor(feature);
-        const layer : LayerConfig = this._layerDict[feature._matching_layer_id];
+        const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
 
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
         return L.marker(latLng, {
@@ -79,14 +87,14 @@ export default class ShowDataLayer {
             })
         });
     }
-    
-    private postProcessFeature(feature, leafletLayer: L.Layer){
-        const layer : LayerConfig = this._layerDict[feature._matching_layer_id];
+
+    private postProcessFeature(feature, leafletLayer: L.Layer) {
+        const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
         if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {
             // No popup action defined -> Don't do anything
             return;
         }
-        
+
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
@@ -106,7 +114,7 @@ export default class ShowDataLayer {
             uiElement.Activate();
             State.state.selectedElement.setData(feature);
         });
-        
+
 
         if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
             // This element is in the URL, so this is a share link

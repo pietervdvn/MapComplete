@@ -29,6 +29,7 @@
   "author": "pietervdvn",
   "license": "GPL",
   "dependencies": {
+    "@types/leaflet-markercluster": "^1.0.3",
     "@types/leaflet-providers": "^1.2.0",
     "@types/leaflet.markercluster": "^1.4.3",
     "country-language": "^0.1.7",

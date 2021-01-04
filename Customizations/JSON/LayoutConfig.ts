@@ -24,6 +24,8 @@ export default class LayoutConfig {
     public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
     public readonly layers: LayerConfig[];
+    public readonly clustering: {  };
+    
     public readonly hideFromOverview: boolean;
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
@@ -32,12 +34,12 @@ export default class LayoutConfig {
     public readonly enableLayers: boolean;
     public readonly enableSearch: boolean;
     public readonly enableGeolocation: boolean;
-   public readonly enableBackgroundLayerSelection: boolean;
+    public readonly enableBackgroundLayerSelection: boolean;
     public readonly customCss?: string;
 
-    constructor(json: LayoutConfigJson, context?:string) {
+    constructor(json: LayoutConfigJson, context?: string) {
         this.id = json.id;
-        context = (context ?? "")+"."+this.id;
+        context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
         this.changesetmessage = json.changesetmessage;
         this.version = json.version;
@@ -47,16 +49,16 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
-        if(json.title === undefined){
-            throw "Title not defined in "+this.id;
+        if (json.title === undefined) {
+            throw "Title not defined in " + this.id;
         }
-        if(json.description === undefined){
-            throw "Description not defined in "+this.id;
+        if (json.description === undefined) {
+            throw "Description not defined in " + this.id;
         }
-        this.title = new Translation(json.title, context+".title");
-        this.description = new Translation(json.description, context+".description");
-        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context+".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*":""}, context) : new Translation(json.descriptionTail, context+".descriptionTail");
+        this.title = new Translation(json.title, context + ".title");
+        this.description = new Translation(json.description, context + ".description");
+        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
+        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context) : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
         this.startZoom = json.startZoom;
@@ -80,8 +82,20 @@ export default class LayoutConfig {
                 } else {
                     throw "Unkown fixed layer " + layer;
                 }
-            return new LayerConfig(layer, this.roamingRenderings,`${this.id}.layers[${i}]`);
+            return new LayerConfig(layer, this.roamingRenderings, `${this.id}.layers[${i}]`);
         });
+
+
+        this.clustering = json.clustering ?? false;
+
+        if(this.clustering){
+            for (const layer of this.layers) {
+                if(layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY){
+                    throw "In order to allow clustering, every layer must be set to CENTER_ONLY";
+                }
+            }
+        }
+        
         this.hideFromOverview = json.hideFromOverview ?? false;
 
         this.enableUserBadge = json.enableUserBadge ?? true;

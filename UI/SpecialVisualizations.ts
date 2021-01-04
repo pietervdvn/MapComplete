@@ -171,7 +171,6 @@ export default class SpecialVisualizations {
                 }],
                 constr: (state: State,tags, args) => {
                     const tgs = tags.data;
-                    console.log("Args[0]", args[0])
                     let subject = tgs.name ?? "";
                     if (args[0] !== undefined && args[0] !== "") {
                         subject = args[0];

@@ -8,18 +8,19 @@ import Constants from "../../Models/Constants";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
 import LeafletMap from "../../Models/LeafletMap";
+import * as L from "leaflet"
 
 export default class Attribution extends UIElement {
     
     private readonly _location: UIEventSource<Loc>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _userDetails: UIEventSource<UserDetails>;
-    private readonly _leafletMap: UIEventSource<LeafletMap>;
+    private readonly _leafletMap: UIEventSource<L.Map>;
 
     constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
                 layoutToUse: UIEventSource<LayoutConfig>,
-                leafletMap: UIEventSource<LeafletMap>) {
+                leafletMap: UIEventSource<L.Map>) {
         super(location);
         this._layoutToUse = layoutToUse;
         this.ListenTo(layoutToUse);

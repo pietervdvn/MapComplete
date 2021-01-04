@@ -358,7 +358,8 @@ export class InitUiElements {
             State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
 
 
-        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap);
+        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, 
+            State.state.leafletMap);
         const bm = new Basemap("leafletDiv",
             State.state.locationControl,
             State.state.backgroundLayer,

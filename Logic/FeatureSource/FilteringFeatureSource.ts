@@ -40,14 +40,11 @@ export default class FilteringFeatureSource implements FeatureSource {
         for (const layer of layers) {
             layerDict[layer.layerDef.id] = layer;
             layer.isDisplayed.addCallback(() => {
-                console.log("Updating due to layer change")
                 update()})
         }
         upstream.features.addCallback(() => {
-            console.log("Updating due to upstream change")
             update()});
         location.map(l => l.zoom).addCallback(() => {
-            console.log("UPdating due to zoom level change")
             update();});
 
 

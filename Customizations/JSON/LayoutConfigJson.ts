@@ -124,6 +124,13 @@ export interface LayoutConfigJson {
     layers: (LayerConfigJson | string)[],
 
     /**
+     * If defined, data will be clustered.
+     */
+    clustering: { 
+        maxZoom?: number
+    },
+
+    /**
      * The URL of a custom CSS stylesheet to modify the layout
      */
     customCss?: string;
