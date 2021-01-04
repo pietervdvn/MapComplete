@@ -126,7 +126,7 @@ export interface LayoutConfigJson {
     /**
      * If defined, data will be clustered.
      */
-    clustering: {
+    clustering?: {
         /**
          * All zoom levels above 'maxzoom' are not clustered anymore
          */

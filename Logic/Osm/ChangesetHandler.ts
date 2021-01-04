@@ -108,7 +108,7 @@ export class ChangesetHandler {
                 `<tag k="theme" v="${layout.id}"/>`,
                 `<tag k="language" v="${Locale.language.data}"/>`,
                 `<tag k="host" v="${escapeHtml(window.location.host)}"/>`,
-                `<tag k="imagery" v="${State.state.backgroundLayer.data.id}/>`,
+                `<tag k="imagery" v="${State.state.backgroundLayer.data.id}"/>`,
                 surveySource,
                 (layout.maintainer ?? "") !== "" ? `<tag k="theme-creator" v="${escapeHtml(layout.maintainer)}"/>` : "",
                 `</changeset></osm>`].join("")
