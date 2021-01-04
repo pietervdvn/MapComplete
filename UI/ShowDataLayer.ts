@@ -39,12 +39,10 @@ export default class ShowDataLayer {
 
             const feats = features.data.map(ff => ff.feature);
             const geoLayer = self.CreateGeojsonLayer(feats);
-
             if (oldGeoLayer) {
                 mp.removeLayer(oldGeoLayer);
             }
-
-            geoLayer.addTo(mp);
+            mp.addLayer(geoLayer);
             oldGeoLayer = geoLayer;
         }
 

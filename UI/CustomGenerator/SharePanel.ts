@@ -3,7 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import Combine from "../Base/Combine";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 
 export default class SharePanel extends UIElement {
     private _config: UIEventSource<LayoutConfigJson>;

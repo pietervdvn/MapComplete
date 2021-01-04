@@ -3,7 +3,7 @@ import Link from "../Base/Link";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
@@ -19,7 +19,7 @@ export default class Attribution extends UIElement {
     constructor(location: UIEventSource<Loc>,
                 userDetails: UIEventSource<UserDetails>,
                 layoutToUse: UIEventSource<LayoutConfig>,
-                leafletMap: UIEventSource<L.Map>) {
+                leafletMap: UIEventSource<LeafletMap>) {
         super(location);
         this._layoutToUse = layoutToUse;
         this.ListenTo(layoutToUse);
@@ -49,7 +49,7 @@ export default class Attribution extends UIElement {
         if (location !== undefined &&
             this._leafletMap.data !== undefined &&
             userDetails.csCount >=  Constants.userJourney.tagsVisibleAndWikiLinked) {
-            const bounds = this._leafletMap.data.getBounds();
+            const bounds : any= this._leafletMap.data.getBounds();
             const top = bounds.getNorth();
             const bottom = bounds.getSouth();
             const right = bounds.getEast();

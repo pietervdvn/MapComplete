@@ -1,5 +1,5 @@
 import {UIEventSource} from "../UIEventSource";
-import {BaseLayer} from "../../Models/BaseLayer";
+import BaseLayer from "../../Models/BaseLayer";
 import AvailableBaseLayers from "./AvailableBaseLayers";
 import Loc from "../../Models/Loc";
 

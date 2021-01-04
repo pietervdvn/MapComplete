@@ -9,7 +9,7 @@ import Svg from "../../Svg";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {SaveButton} from "../Popup/SaveButton";
 import CheckBoxes from "../Input/Checkboxes";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 
 export default class ReviewForm extends InputElement<Review> {
 

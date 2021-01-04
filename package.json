@@ -30,6 +30,7 @@
   "license": "GPL",
   "dependencies": {
     "@types/leaflet-providers": "^1.2.0",
+    "@types/leaflet.markercluster": "^1.4.3",
     "country-language": "^0.1.7",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
@@ -38,6 +39,7 @@
     "latlon2country": "^1.0.8",
     "leaflet": "^1.7.1",
     "leaflet-providers": "^1.10.2",
+    "leaflet.markercluster": "^1.4.1",
     "libphonenumber": "0.0.10",
     "libphonenumber-js": "^1.7.55",
     "mangrove-reviews": "^0.1.3",

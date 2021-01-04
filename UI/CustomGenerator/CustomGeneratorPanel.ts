@@ -1,5 +1,5 @@
 import {UIElement} from "../UIElement";
-import {OsmConnection, UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import SingleSetting from "./SingleSetting";
 import GeneralSettings from "./GeneralSettings";
@@ -11,7 +11,6 @@ import AllLayersPanel from "./AllLayersPanel";
 import SharePanel from "./SharePanel";
 import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import {SubtleButton} from "../Base/SubtleButton";
-import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import SavePanel from "./SavePanel";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";

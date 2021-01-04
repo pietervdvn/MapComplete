@@ -12,6 +12,7 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
+import LayerConfig from "../../Customizations/JSON/LayerConfig";
 
 export default class SimpleAddUI extends UIElement {
     private readonly _addButtons: UIElement[];
@@ -24,7 +25,7 @@ export default class SimpleAddUI extends UIElement {
         icon: UIElement,
         tags: Tag[],
         layerToAddTo: {
-            name: UIElement | string,
+            layerDef: LayerConfig,
             isDisplayed: UIEventSource<boolean> }
     }>
         = new UIEventSource(undefined);
@@ -128,7 +129,7 @@ export default class SimpleAddUI extends UIElement {
             
             if(!this._confirmPreset.data.layerToAddTo.isDisplayed.data){
                 return new Combine([
-                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.name})
+                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
                         .SetClass("alert"),
                     this.openLayerControl,
                     

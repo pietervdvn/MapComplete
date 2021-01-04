@@ -1,5 +1,5 @@
 import {UIEventSource} from "../UIEventSource";
-import {OsmConnection, UserDetails} from "./OsmConnection";
+import UserDetails, {OsmConnection} from "./OsmConnection";
 import {Utils} from "../../Utils";
 
 export class OsmPreferences {

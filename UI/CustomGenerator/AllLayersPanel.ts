@@ -6,7 +6,7 @@ import {LayoutConfigJson} from "../../Customizations/JSON/LayoutConfigJson";
 import Combine from "../Base/Combine";
 import {GenerateEmpty} from "./GenerateEmpty";
 import LayerPanelWithPreview from "./LayerPanelWithPreview";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 import {MultiInput} from "../Input/MultiInput";
 import TagRenderingPanel from "./TagRenderingPanel";
 import SingleSetting from "./SingleSetting";

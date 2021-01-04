@@ -6,19 +6,6 @@ import ReviewForm from "./UI/Reviews/ReviewForm";
 import Combine from "./UI/Base/Combine";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-const identity = '{"crv":"P-256","d":"6NHPmTFRedjNl-ZfLRAXhOaNKtRR9GYzPHsO1CzN5wQ","ext":true,"key_ops":["sign"],"kty":"EC","x":"Thm_pL5m0m9Jl41z9vgMTHNyja-9H58v0stJWT4KhTI","y":"PjBldCW85b8K6jEZbw0c2UZskpo-rrkwfPnD7s1MXSM","metadata":"Mangrove private key"}'
-
-const mangroveReviews = new MangroveReviews(0, 0, "Null Island",
-    new UIEventSource<string>(identity), true)
-
-new ReviewElement(mangroveReviews.GetSubjectUri(), mangroveReviews.GetReviews()).AttachTo("maindiv");
-const form = new ReviewForm((r,done) => {
-    mangroveReviews.AddReview(r, done);
-});
-form.AttachTo("extradiv")
-
-form.GetValue().map(r => form.IsValid(r)).addCallback(d => console.log(d))
-
 /*
 window.setTimeout(
     () => {

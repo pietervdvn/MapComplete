@@ -8,7 +8,7 @@ import {FromJSON} from "../../Customizations/JSON/FromJSON";
 import Combine from "../Base/Combine";
 import PageSplit from "../Base/PageSplit";
 import TagRenderingPreview from "./TagRenderingPreview";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 
 
 export default class LayerPanelWithPreview extends UIElement{

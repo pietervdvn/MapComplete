@@ -1,4 +1,5 @@
 import escapeHtml from "escape-html";
+// @ts-ignore
 import {OsmConnection, UserDetails} from "./OsmConnection";
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";

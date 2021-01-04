@@ -16,8 +16,7 @@ import {TagRenderingConfigJson} from "../../Customizations/JSON/TagRenderingConf
 import {MultiInput} from "../Input/MultiInput";
 import {LayerConfigJson} from "../../Customizations/JSON/LayerConfigJson";
 import PresetInputPanel from "./PresetInputPanel";
-import {UserDetails} from "../../Logic/Osm/OsmConnection";
-import State from "../../State";
+import UserDetails from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import Svg from "../../Svg";
