@@ -90,9 +90,6 @@ export class Changes implements FeatureSource{
             }
         }
 
-        this.features.data.push({feature:geojson, freshness: new Date()});
-        this.features.ping();
-        
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a 
         const changes = [];
@@ -104,6 +101,10 @@ export class Changes implements FeatureSource{
             changes.push({elementId: id, key: kv.key, value: kv.value})
         }
         State.state.allElements.addOrGetElement(geojson).ping();
+
+        this.features.data.push({feature:geojson, freshness: new Date()});
+        this.features.ping();
+
         this.uploadAll([osmNode], changes);
         return geojson;
     }

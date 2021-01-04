@@ -36,8 +36,11 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                     return;
                 }
 
+                
+                let foundALayer = false;
                 for (const layer of layers) {
                     if (layer.layerDef.overpassTags.matchesProperties(f.feature.properties)) {
+                        foundALayer = true;
                         if (layer.layerDef.passAllFeatures) {
 
                             // We copy the feature; the "properties" field is kept identical though!
@@ -57,6 +60,9 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                             break;
                         }
                     }
+                }
+                if(!foundALayer){
+                    console.error("LAYER DEDUP PANIC: no suitable layer found for ", f, JSON.stringify(f), "within layers", layers)
                 }
             }
             return newFeatures;

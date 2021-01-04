@@ -317,9 +317,9 @@ export class InitUiElements {
 
             State.state.locationControl
                 .addCallback(() => {
-                // Close the layer selection when the map is moved
-              //  checkbox.isEnabled.setData(false);
-            });
+                    // Close the layer selection when the map is moved
+                    //  checkbox.isEnabled.setData(false);
+                });
 
             const fullScreen = new LayerControlPanel();
             checkbox.isEnabled.addCallback(isEnabled => {
@@ -358,7 +358,7 @@ export class InitUiElements {
             State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
 
 
-        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, 
+        const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse,
             State.state.leafletMap);
         const bm = new Basemap("leafletDiv",
             State.state.locationControl,
@@ -396,11 +396,10 @@ export class InitUiElements {
 
         State.state.filteredLayers.setData(flayers);
 
-     
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-       
+
 
         const source =
             new FilteringFeatureSource(
@@ -408,10 +407,11 @@ export class InitUiElements {
                 State.state.locationControl,
                 new FeatureSourceMerger([
                     new RememberingSource(new WayHandlingApplyingFeatureSource(flayers,
-                        new NoOverlapSource(flayers,  new FeatureDuplicatorPerLayer(flayers, updater))
+                        new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, updater))
                     )),
-                    new FeatureDuplicatorPerLayer(flayers, State.state.changes)]));
-
+                    new FeatureDuplicatorPerLayer(flayers, State.state.changes)
+                ])
+            );
 
         source.features.addCallback((featuresFreshness: { feature: any, freshness: Date }[]) => {
             let features = featuresFreshness.map(ff => ff.feature);
@@ -419,9 +419,10 @@ export class InitUiElements {
                 State.state.allElements.addElement(feature);
             })
             MetaTagging.addMetatags(features);
+            console.log("ALL FEATURES", features);
         })
-        
-        new ShowDataLayer(source.features, State.state.leafletMap, 
+
+        new ShowDataLayer(source.features, State.state.leafletMap,
             State.state.locationControl.map(l => l.zoom),
             State.state.layoutToUse.data);
 
