@@ -71,6 +71,20 @@
     "freeform": {
       "key": "opening_hours",
       "type": "opening_hours"
-    }
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": ["opening_hours=by appointment",
+          "opening_hours=by_appointment",
+          "opening_hours=\"by appointment\""]
+        },
+        "then": {
+          "en": "Only by appointment",
+          "nl": "Enkel op afspraak"
+        },
+        "hideInAnswers": true
+      }
+    ]
   }
 }

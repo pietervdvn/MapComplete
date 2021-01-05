@@ -1,0 +1,163 @@
+{
+  "id": "bicycle_library",
+  "name": {
+    "en": "Bicycle library",
+    "nl": "Fietsbibliotheek"
+  },
+  "minzoom": 8  ,
+  "overpassTags": "amenity=bicycle_library",
+  "title": {
+    "render": {
+      "en": "Bicycle library",
+      "nl": "Fietsbibliotheek"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "<i>{name}</i>"
+      }
+    ]
+  },
+  "titleIcons": [
+    {
+      "condition": {
+        "or": [
+          "service:bicycle:pump=yes",
+          "service:bicycle:pump=separate"
+        ]
+      },
+      "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
+    },
+    "defaults"
+  ],
+  "description": {
+    "en": "A facility where bicycles can be lent for longer period of times",
+    "nl": "Een plaats waar men voor langere tijd een fiets kan lenen"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this bicycle library?",
+        "nl": "Wat is de naam van deze fietsbieb?"
+      },
+      "render": {
+        "en": "This bicycle library shop is called {name}",
+        "nl": "Deze fietsbieb heet {name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "website",
+    "phone",
+    "email",
+    "opening_hours",
+    {
+      "question": {
+        "en": "How much does lending a bicycle cost?",
+        "nl": "Hoeveel kost het huren van een fiets?"
+      },
+      "render":{
+        "en": "Lending a bicycle costs {charge}",
+        "nl": "Een fiets huren kost {charge{"
+      },
+      "freeform": {
+        "key": "charge",
+        "extraTags": ["fee=yes"]
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": ["fee=no","charge="]
+          },
+          "then": {
+            "en": "Lending a bicycle is free",
+            "nl": "Een fiets huren is gratis"
+          }
+        },
+        {
+          "if": {
+            "and": ["fee=yes","charge=€20warranty + €20/year"]
+          },
+          "then": {
+            "en": "Lending a bicycle costs €20/year and €20 warranty",
+            "nl": "Een fiets huren kost €20/jaar en €20 waarborg"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Who can lend bicycles here?",
+        "nl": "Voor wie worden hier fietsen aangeboden?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "bicycle_library:for=child",
+          "then": {
+            "nl": "Aanbod voor kinderen",
+            "en": "Bikes for children available"
+          }
+        },
+        {
+          "if": "bicycle_library:for=adult",
+          "then": {
+            "nl": "Aanbod voor volwassenen",
+            "en": "Bikes for adult available"
+          }
+        },
+        {
+          "if": "bicycle_library:for=disabled",
+          "then": {
+            "nl": "Aanbod voor personen met een handicap",
+            "en": "Bikes for disabled persons available"
+          }
+        }
+      ]
+    },
+    "description"
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "Fietsbibliotheek",
+        "nl": "Bicycle library"
+      },
+      "tags": [
+        "amenity=bicycle_library"
+      ],
+      "description": {
+        "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
+        "en": "A bicycle library has a collection of bikes which can be lent"
+      }
+    }
+  ],
+  "icon": {
+    "render": "pin:#22ff55;./assets/layers/bicycle_library/bicycle_library.svg"
+  },
+  "iconOverlays": [
+    {
+      "if": "opening_hours~*",
+      "then": "isOpen",
+      "badge": true
+    },
+    {
+      "if": "service:bicycle:pump=yes",
+      "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
+      "badge": true
+    }
+  ],
+  "width": {
+    "render": "1"
+  },
+  "iconSize": {
+    "render": "50,50,bottom"
+  },
+  "color": {
+    "render": "#c00"
+  },
+  "wayHandling": 2
+}

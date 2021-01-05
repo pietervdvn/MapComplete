@@ -116,6 +116,9 @@ export default class ShowDataLayer {
         const tags = State.state.allElements.getEventSourceFor(feature);
         const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
         popup.setContent(uiElement.Render());
+        popup.on('popupclose', () => {
+           State.state.selectedElement.setData(undefined); 
+        });
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
         // But at least it'll be visible already

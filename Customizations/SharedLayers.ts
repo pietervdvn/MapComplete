@@ -11,6 +11,8 @@ import * as bike_monitoring_station from "../assets/layers/bike_monitoring_stati
 import * as cycling_themed_objects from "../assets/layers/cycling_themed_object/cycling_themed_objects.json"
 import * as bike_shops from "../assets/layers/bike_shop/bike_shop.json"
 import * as bike_cleaning from "../assets/layers/bike_cleaning/bike_cleaning.json"
+import * as bicycle_library from "../assets/layers/bicycle_library/bicycle_library.json"
+
 import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
 import * as direction from "../assets/layers/direction/direction.json"
@@ -38,6 +40,7 @@ export default class SharedLayers {
             new LayerConfig(birdhides,[], "shared_layers"),
             new LayerConfig(nature_reserve,[], "shared_layers"),
             new LayerConfig(bike_cafes,[], "shared_layers"),
+            new LayerConfig(bicycle_library, [], "bike_library"),
             new LayerConfig(cycling_themed_objects,[], "shared_layers"),
             new LayerConfig(bike_shops,[], "shared_layers"),
             new LayerConfig(bike_cleaning,[], "shared_layers"),
