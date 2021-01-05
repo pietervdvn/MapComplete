@@ -43,7 +43,7 @@ export default class ShowDataLayer {
             const feats = features.data.map(ff => ff.feature);
             let geoLayer = self.CreateGeojsonLayer(feats)
             if (layoutToUse.clustering.minNeededElements <= features.data.length) {
-                    const cl = window["L"];
+                    const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
                     const cluster = cl.markerClusterGroup({ disableClusteringAtZoom: layoutToUse.clustering.maxZoom });
                     cluster.addLayer(geoLayer);
                     geoLayer = cluster;
@@ -116,7 +116,7 @@ export default class ShowDataLayer {
         const tags = State.state.allElements.getEventSourceFor(feature);
         const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
         popup.setContent(uiElement.Render());
-        popup.on('popupclose', () => {
+        popup.on('remove', () => {
            State.state.selectedElement.setData(undefined); 
         });
         leafletLayer.bindPopup(popup);
@@ -126,13 +126,16 @@ export default class ShowDataLayer {
 
         leafletLayer.on("click", (e) => {
             // We set the element as selected...
-         //   uiElement.Activate();
+            uiElement.Activate();
             State.state.selectedElement.setData(feature);
         });
         
         const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
         this._onSelectedTrigger[id]
          = () => {
+            if(popup.isOpen()){
+                return;
+            }
             leafletLayer.openPopup();
             uiElement.Activate();
         }
