@@ -10,13 +10,14 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
+import Locale from "../i18n/Locale";
 export default class PersonalLayersPanel extends UIElement {
     private checkboxes: UIElement[] = [];
 
     constructor() {
         super(State.state.favouriteLayers);
         this.ListenTo(State.state.osmConnection.userDetails);
-
+        this.ListenTo(Locale.language);
         this.UpdateView([]);
         const self = this;
         State.state.installedThemes.addCallback(extraThemes => {
@@ -33,6 +34,10 @@ export default class PersonalLayersPanel extends UIElement {
         const allLayouts = AllKnownLayouts.layoutsList.concat(extraThemes);
         for (const layout of allLayouts) {
             if (layout.id === personal.id) {
+                continue;
+            }
+            
+            if(layout.hideFromOverview){
                 continue;
             }
 

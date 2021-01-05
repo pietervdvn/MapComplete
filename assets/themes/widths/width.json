@@ -62,7 +62,6 @@
           }
         ]
       },
-      "description": {},
       "tagRenderings": [
         {
           "render": "Deze straat is <b>{width:carriageway}m</b> breed"

@@ -66,7 +66,7 @@ export default class LayerConfig {
 
         this.id = json.id;
         this.name = Translations.T(json.name);
-        this.description = Translations.T(json.name);
+        this.description = Translations.T(json.description);
         this.overpassTags = FromJSON.Tag(json.overpassTags, context + ".overpasstags");
         this.doNotDownload = json.doNotDownload ?? false,
             this.passAllFeatures = json.passAllFeatures ?? false;

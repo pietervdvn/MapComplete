@@ -19,7 +19,7 @@ export interface LayerConfigJson {
 
     /**
      * A description for this layer.
-     * Shown in the layer selections and in the personal theme
+     * Shown in the layer selections and in the personel theme
      */
     description?: string | any;
 

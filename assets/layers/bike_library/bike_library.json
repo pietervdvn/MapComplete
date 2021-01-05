@@ -1,0 +1,105 @@
+{
+  "id": "bike_libraries",
+  "name": {
+    "en": "Bicycle library",
+    "nl": "Fietsbibliotheek",
+  },
+  "minzoom": 13,
+  "overpassTags": "amenity=bicycle_library",
+  "title": {
+    "render": {
+      "en": "Bicycle library",
+      "nl": "Fietsbibliotheek"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "<i>{name}</i>"
+      }
+    ]
+  },
+  "titleIcons": [
+    {
+      "condition": {
+        "or": [
+          "service:bicycle:pump=yes",
+          "service:bicycle:pump=separate"
+        ]
+      },
+      "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
+    },
+    "defaults"
+  ],
+  "description": {
+    "en": "A facility where bicycles can be lent for longer period of times",
+    "nl": "Een plaats waar men voor langere tijd een fiets kan lenen"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this bicycle library?",
+        "nl": "Wat is de naam van deze fietsbieb?",
+      },
+      "render": {
+        "en": "This bicycle library shop is called {name}",
+        "nl": "Deze fietsbieb heet {name}",
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "website",
+    "phone",
+    "email",
+    "opening_hours",
+    "description",
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 1,
+  "presets": [
+    {
+      "title": {
+        "en": "Fietsbibliotheek",
+        "nl": "Bicycle library",
+      },
+      "tags": [
+        "shop=bicycle"
+      ]
+    }
+  ],
+  "icon": {
+    "render": "./assets/layers/bike_shop/repair_shop.svg",
+    "mappings": [
+      {
+        "if": "operator=De Fietsambassade Gent",
+        "then": "./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg"
+      },
+      {
+        "if": "service:bicycle:retail=yes",
+        "then": "./assets/layers/bike_shop/shop.svg"
+      }
+    ]
+  },
+  "iconOverlays": [
+    {
+      "if": "opening_hours~*",
+      "then": "isOpen",
+      "badge": true
+    },
+    {
+      "if": "service:bicycle:pump=yes",
+      "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
+      "badge": true
+    }
+  ],
+  "width": {
+    "render": "1"
+  },
+  "iconSize": {
+    "render": "50,50,bottom"
+  },
+  "color": {
+    "render": "#c00"
+  },
+  "wayHandling": 2
+}
