@@ -39,8 +39,6 @@ export default class FilteringFeatureSource implements FeatureSource {
 
         for (const layer of layers) {
             layerDict[layer.layerDef.id] = layer;
-            layer.isDisplayed.addCallback(() => {
-                update()})
         }
         upstream.features.addCallback(() => {
             update()});
@@ -48,12 +46,16 @@ export default class FilteringFeatureSource implements FeatureSource {
             // We want something that is stable for the shown layers
             const displayedLayerIndexes = [];
             for (let i = 0; i < layers.length; i++) {
-                if(l.zoom <= layers[i].layerDef.minzoom){
-                    displayedLayerIndexes.push(i);
+                if(l.zoom < layers[i].layerDef.minzoom){
+                    continue;
                 }
+                if(!layers[i].isDisplayed.data){
+                    continue;
+                }
+                displayedLayerIndexes.push(i);
             }
             return displayedLayerIndexes.join(",")
-        })
+        }, layers.map(l => l.isDisplayed))
             .addCallback(() => {
             update();});
 
