@@ -44,7 +44,17 @@ export default class FilteringFeatureSource implements FeatureSource {
         }
         upstream.features.addCallback(() => {
             update()});
-        location.map(l => l.zoom).addCallback(() => {
+        location.map(l => {
+            // We want something that is stable for the shown layers
+            const displayedLayerIndexes = [];
+            for (let i = 0; i < layers.length; i++) {
+                if(l.zoom <= layers[i].layerDef.minzoom){
+                    displayedLayerIndexes.push(i);
+                }
+            }
+            return displayedLayerIndexes.join(",")
+        })
+            .addCallback(() => {
             update();});
 
 
