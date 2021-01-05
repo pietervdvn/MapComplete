@@ -196,6 +196,14 @@ export default class OpeningHoursVisualization extends UIElement {
             // Closed!
             const opensAtDate = oh.getNextChange();
             if(opensAtDate === undefined){
+                const comm = oh.getComment();
+                if(comm !== undefined){
+                    return new FixedUiElement(comm).SetClass("ohviz-closed").Render();
+                }
+                
+                if(oh.getState()){
+                    return Translations.t.general.opening_hours.open_24_7.SetClass("ohviz-closed").Render()
+                }
                 return Translations.t.general.opening_hours.closed_permanently.SetClass("ohviz-closed").Render()
             }
             const moment = `${opensAtDate.getDay()}/${opensAtDate.getMonth() + 1} ${OH.hhmm(opensAtDate.getHours(), opensAtDate.getMinutes())}`

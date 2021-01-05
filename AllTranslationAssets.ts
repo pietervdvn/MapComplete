@@ -116,6 +116,7 @@ export default class AllTranslationAssets {
       not_all_rules_parsed: new Translation( {"en":"The opening hours of this shop are complicated. The following rules are ignored in the input element:","fr":"Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées:","ca":"L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:","es":"El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:"} ),
       closed_until: new Translation( {"en":"Closed until {date}","ca":"Tancat fins {date}","es":"Cerrado hasta {date}","nl":"Gesloten - open op {date}","fr":"Fermé jusqu'à"} ),
       closed_permanently: new Translation( {"en":"Closed for an unkown duration","ca":"Tancat - sense dia d'obertura conegut","es":"Cerrado - sin día de apertura conocido","nl":"Gesloten voor onbepaalde tijd","fr":"Fermé"} ),
+      open_24_7: new Translation( {"en":"Opened around the clock","nl":"Dag en nacht open"} ),
       ph_not_known: new Translation( {"en":" ","ca":" ","es":" ","nl":" "} ),
       ph_closed: new Translation( {"en":"closed","ca":"tancat","es":"cerrado","nl":"gesloten","fr":"fermé"} ),
       ph_open: new Translation( {"en":"opened","ca":"tancat","es":"abierto","nl":"open","fr":"ouvert"} ),

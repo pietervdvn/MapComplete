@@ -900,6 +900,10 @@
         "nl": "Gesloten voor onbepaalde tijd",
         "fr": "Fermé"
       },
+      "open_24_7": {
+        "en": "Opened around the clock",
+        "nl": "Dag en nacht open"
+      },
       "ph_not_known": {
         "en": " ",
         "ca": " ",
