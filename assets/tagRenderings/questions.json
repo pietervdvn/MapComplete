@@ -83,7 +83,7 @@
           "en": "Only by appointment",
           "nl": "Enkel op afspraak"
         },
-        "hideInAnswers": true
+        "hideInAnswer": true
       }
     ]
   }
