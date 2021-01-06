@@ -21,7 +21,7 @@ export default class TagRenderingConfig {
         addExtraTags: TagsFilter[];
     };
 
-    multiAnswer: boolean;
+    readonly multiAnswer: boolean;
 
     mappings?: {
         if: TagsFilter,
@@ -69,7 +69,7 @@ export default class TagRenderingConfig {
                 if (mapping.then === undefined) {
                     throw "Invalid mapping: if without body"
                 }
-                let hideInAnswer : boolean | TagsFilter = false;
+                let hideInAnswer: boolean | TagsFilter = false;
                 if (typeof mapping.hideInAnswer === "boolean") {
                     hideInAnswer = mapping.hideInAnswer;
                 } else if (mapping.hideInAnswer !== undefined) {
@@ -111,7 +111,8 @@ export default class TagRenderingConfig {
             }
         }
 
-        if (this.freeform?.key === undefined){
+
+        if (this.freeform?.key === undefined) {
             return this.render;
         }
 

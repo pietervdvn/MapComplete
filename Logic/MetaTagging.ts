@@ -101,6 +101,14 @@ export default class MetaTagging {
                     // AUtomatically triggered on the next change
                     const updateTags = () => {
                         const oldValueIsOpen = tags["_isOpen"];
+                        const oldNextChange =tags["_isOpen:nextTrigger"] ?? 0;
+
+                        if(oldNextChange > (new Date()).getTime() && 
+                        tags["_isOpen:oldvalue"] === tags["opening_hours"]){
+                            // Already calculated and should not yet be triggered
+                            return;
+                        }
+                        
                         tags["_isOpen"] = oh.getState() ? "yes" : "no";
                         const comment = oh.getComment();
                         if (comment) {
@@ -113,10 +121,16 @@ export default class MetaTagging {
 
                         const nextChange = oh.getNextChange();
                         if (nextChange !== undefined) {
+                            const timeout = nextChange.getTime() - (new Date()).getTime();
+                            tags["_isOpen:nextTrigger"] = nextChange.getTime();
+                            tags["_isOpen:oldvalue"] = tags.opening_hours
                             window.setTimeout(
-                                updateTags,
-                                (nextChange.getTime() - (new Date()).getTime())
-                            )
+                                () => {
+                                    console.log("Updating the _isOpen tag for ", tags.id);
+                                    updateTags();
+                                },
+                                timeout
+                           )
                         }
                     }
                     updateTags();

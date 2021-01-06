@@ -2,8 +2,11 @@ import {Utils} from "../Utils";
 
 export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
+
     abstract asOverpass(): string[]
-    abstract substituteValues(tags: any) : TagsFilter;
+
+    abstract substituteValues(tags: any): TagsFilter;
+
     abstract isUsableAsAnswer(): boolean;
 
     abstract isEquivalent(other: TagsFilter): boolean;
@@ -28,15 +31,8 @@ export class RegexTag extends TagsFilter {
         this.invert = invert;
     }
 
-    asOverpass(): string[] {
-        if (typeof this.key === "string") {
-            return [`['${this.key}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
-        }
-        return [`[~'${this.key.source}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
-    }
-
     private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
-        if(typeof possibleRegex === "string"){
+        if (typeof possibleRegex === "string") {
             return fromTag === possibleRegex;
         }
         return fromTag.match(possibleRegex) !== null;
@@ -48,14 +44,21 @@ export class RegexTag extends TagsFilter {
         }
         return r.source;
     }
-    
+
+    asOverpass(): string[] {
+        if (typeof this.key === "string") {
+            return [`['${this.key}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+        }
+        return [`[~'${this.key.source}'${this.invert ? "!" : ""}~'${RegexTag.source(this.value)}']`];
+    }
+
     isUsableAsAnswer(): boolean {
         return false;
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tag of tags) {
-            if (RegexTag.doesMatch(tag.k, this.key)){
+            if (RegexTag.doesMatch(tag.k, this.key)) {
                 return RegexTag.doesMatch(tag.v, this.value) != this.invert;
             }
         }
@@ -78,7 +81,7 @@ export class RegexTag extends TagsFilter {
         if (other instanceof RegexTag) {
             return other.asHumanString() == this.asHumanString();
         }
-        if(other instanceof Tag){
+        if (other instanceof Tag) {
             return RegexTag.doesMatch(other.key, this.key) && RegexTag.doesMatch(other.value, this.value);
         }
         return false;
@@ -94,27 +97,27 @@ export class Tag extends TagsFilter {
         super()
         this.key = key
         this.value = value
-        if(key === undefined || key === ""){
+        if (key === undefined || key === "") {
             throw "Invalid key: undefined or empty";
         }
-        if(value === undefined){
+        if (value === undefined) {
             throw "Invalid value: value is undefined";
         }
-        if(value === "*"){
-         console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)
+        if (value === "*") {
+            console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)
         }
     }
 
     matches(tags: { k: string; v: string }[]): boolean {
-        
+
         for (const tag of tags) {
             if (this.key == tag.k) {
                 return this.value === tag.v;
             }
         }
-        
+
         // The tag was not found
-        if(this.value === ""){
+        if (this.value === "") {
             // and it shouldn't be found!
             return true;
         }
@@ -146,16 +149,16 @@ export class Tag extends TagsFilter {
         }
         return this.key + "=" + v;
     }
-    
+
     isUsableAsAnswer(): boolean {
         return true;
     }
-    
+
     isEquivalent(other: TagsFilter): boolean {
-        if(other instanceof Tag){
+        if (other instanceof Tag) {
             return this.key === other.key && this.value === other.value;
         }
-        if(other instanceof RegexTag){
+        if (other instanceof RegexTag) {
             other.isEquivalent(this);
         }
         return false;
@@ -185,7 +188,7 @@ export class Or extends TagsFilter {
         const choices = [];
         for (const tagsFilter of this.or) {
             const subChoices = tagsFilter.asOverpass();
-            for(const subChoice of subChoices){
+            for (const subChoice of subChoices) {
                 choices.push(subChoice)
             }
         }
@@ -203,21 +206,21 @@ export class Or extends TagsFilter {
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.or.map(t => t.asHumanString(linkToWiki, shorten)).join("|");
     }
-    
+
     isUsableAsAnswer(): boolean {
         return false;
     }
-    
+
     isEquivalent(other: TagsFilter): boolean {
-        if(other instanceof Or){
+        if (other instanceof Or) {
 
             for (const selfTag of this.or) {
                 let matchFound = false;
-                for (let i = 0; i < other.or.length && !matchFound; i++){
+                for (let i = 0; i < other.or.length && !matchFound; i++) {
                     let otherTag = other.or[i];
                     matchFound = selfTag.isEquivalent(otherTag);
                 }
-                if(!matchFound){
+                if (!matchFound) {
                     return false;
                 }
             }
@@ -236,6 +239,14 @@ export class And extends TagsFilter {
         this.and = and;
     }
 
+    private static combine(filter: string, choices: string[]): string[] {
+        const values = [];
+        for (const or of choices) {
+            values.push(filter + or);
+        }
+        return values;
+    }
+
     matches(tags: { k: string; v: string }[]): boolean {
         for (const tagsFilter of this.and) {
             if (!tagsFilter.matches(tags)) {
@@ -244,14 +255,6 @@ export class And extends TagsFilter {
         }
 
         return true;
-    }
-
-    private static combine(filter: string, choices: string[]): string[] {
-        const values = [];
-        for (const or of choices) {
-            values.push(filter + or);
-        }
-        return values;
     }
 
     asOverpass(): string[] {
@@ -285,16 +288,16 @@ export class And extends TagsFilter {
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.and.map(t => t.asHumanString(linkToWiki, shorten)).join("&");
     }
-    
+
     isUsableAsAnswer(): boolean {
         for (const t of this.and) {
-            if(!t.isUsableAsAnswer()){
+            if (!t.isUsableAsAnswer()) {
                 return false;
             }
         }
         return true;
     }
-    
+
     isEquivalent(other: TagsFilter): boolean {
         if (!(other instanceof And)) {
             return false;
@@ -343,7 +346,6 @@ export class And extends TagsFilter {
 }
 
 
-
 export class TagUtils {
     static proprtiesToKV(properties: any): { k: string, v: string }[] {
         const result = [];
@@ -374,13 +376,13 @@ export class TagUtils {
     /**
      * Given two hashes of {key --> values[]}, makes sure that every neededTag is present in availableTags
      */
-    static AllKeysAreContained(availableTags: any, neededTags: any){
+    static AllKeysAreContained(availableTags: any, neededTags: any) {
         for (const neededKey in neededTags) {
-            const availableValues : string[] = availableTags[neededKey]
-            if(availableValues === undefined){
+            const availableValues: string[] = availableTags[neededKey]
+            if (availableValues === undefined) {
                 return false;
             }
-            const neededValues : string[] = neededTags[neededKey];
+            const neededValues: string[] = neededTags[neededKey];
             for (const neededValue of neededValues) {
                 if (availableValues.indexOf(neededValue) < 0) {
                     return false;
@@ -392,11 +394,11 @@ export class TagUtils {
 
     /***
      * Creates a hash {key --> [values]}, with all the values present in the tagsfilter
-     * 
+     *
      * @param tagsFilters
      * @constructor
      */
-    static SplitKeys(tagsFilters: TagsFilter[]){
+    static SplitKeys(tagsFilters: TagsFilter[]) {
         const keyValues = {} // Map string -> string[]
         tagsFilters = [...tagsFilters] // copy all
         while (tagsFilters.length > 0) {
@@ -425,6 +427,7 @@ export class TagUtils {
         }
         return keyValues;
     }
+
     /**
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
      * E.g:
@@ -449,4 +452,21 @@ export class TagUtils {
         return new And(and);
     }
 
+    static MatchesMultiAnswer(tag: TagsFilter, tags: any): boolean {
+        const splitted = TagUtils.SplitKeys([tag]);
+        console.log("Matching multianswer", tag, tags)
+        for (const splitKey in splitted) {
+            const neededValues = splitted[splitKey];
+            const actualValue = tags[splitKey].split(";");
+            for (const neededValue of neededValues) {
+                console.log("needed", neededValue, "have: ", actualValue, actualValue.indexOf(neededValue) )
+                if (actualValue.indexOf(neededValue) < 0) {
+                    console.log("NOT FOUND")
+                    return false;
+                }
+            }
+        }
+        console.log("OK")
+        return true;
+    }
 }

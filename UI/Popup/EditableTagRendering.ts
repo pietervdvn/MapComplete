@@ -7,6 +7,7 @@ import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import Svg from "../../Svg";
+import {TagUtils} from "../../Logic/Tags";
 
 export default class EditableTagRendering extends UIElement {
     private readonly _tags: UIEventSource<any>;
@@ -45,6 +46,29 @@ export default class EditableTagRendering extends UIElement {
         }
     }
 
+    InnerRender(): string {
+        if (!this._configuration?.condition?.matchesProperties(this._tags.data)) {
+            return "";
+        }
+        if (this._editMode.data) {
+            return this._question.Render();
+        }
+        if (this._configuration.multiAnswer) {
+            const atLeastOneMatch = this._configuration.mappings.some(mp =>TagUtils.MatchesMultiAnswer(mp.if, this._tags.data));
+            console.log("SOME MATCH?", atLeastOneMatch)
+            if (!atLeastOneMatch) {
+                return "";
+            }
+        } else if (this._configuration.GetRenderValue(this._tags.data) === undefined) {
+            return "";
+        }
+
+        return new Combine([this._answer,
+            (State.state?.osmConnection?.userDetails?.data?.loggedIn ?? true) ? this._editButton : undefined
+        ]).SetClass("answer")
+            .Render();
+    }
+
     private GenerateQuestion() {
         const self = this;
         if (this._configuration.question !== undefined) {
@@ -62,27 +86,6 @@ export default class EditableTagRendering extends UIElement {
                 },
                 cancelbutton)
         }
-    }
-
-
-    InnerRender(): string {
-
-        if (this._editMode.data) {
-            return this._question.Render();
-        }
-        
-        if(this._configuration.GetRenderValue(this._tags.data)=== undefined){
-            return "";
-        }
-        
-        if(!this._configuration?.condition?.matchesProperties(this._tags.data)){
-            return "";
-        }
-
-        return new Combine([this._answer,
-            (State.state?.osmConnection?.userDetails?.data?.loggedIn ?? true) ? this._editButton : undefined
-        ]).SetClass("answer")
-            .Render();
     }
 
 }

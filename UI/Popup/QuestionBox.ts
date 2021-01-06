@@ -3,6 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
+import {TagUtils} from "../../Logic/Tags";
 
 
 /**
@@ -46,20 +47,39 @@ export default class QuestionBox extends UIElement {
             })
     }
 
+    /**
+     * Returns true if it is known or not shown, false if the question should be asked
+     * @constructor
+     */
+    IsKnown(tagRendering: TagRenderingConfig): boolean {
+        if (tagRendering.condition &&
+            !tagRendering.condition.matchesProperties(this._tags.data)) {
+            // Filtered away by the condition
+            return true;
+        }
+        if(tagRendering.multiAnswer){
+            for (const m of tagRendering.mappings) {
+                if(TagUtils.MatchesMultiAnswer(m.if, this._tags.data)){
+                    return true;
+                }
+            }
+        }
+        
+        if (tagRendering.GetRenderValue(this._tags.data) !== undefined) {
+            // This value is known and can be rendered
+            return true;
+        }
+        
+        return false;
+    }
+
     InnerRender(): string {
         for (let i = 0; i < this._tagRenderingQuestions.length; i++) {
             let tagRendering = this._tagRenderings[i];
-            if(tagRendering.condition &&
-                !tagRendering.condition.matchesProperties(this._tags.data)){
-                // Filtered away by the condition
+      
+            if(this.IsKnown(tagRendering)){
                 continue;
             }
-            
-            if (tagRendering.GetRenderValue(this._tags.data) !== undefined) {
-                // This value is known
-                continue;
-            }
-            
 
             if (this._skippedQuestions.data.indexOf(i) >= 0) {
                 continue;

@@ -147,13 +147,15 @@ export default class ShareScreen extends UIElement {
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
 
             const host = window.location.host;
-            let literalText = `https://${host}/${layout.id.toLowerCase()}.html`
+            let path = window.location.pathname;
+            path = path.substr(0, path.lastIndexOf("/"));
+            let literalText = `https://${host}${path}/${layout.id.toLowerCase()}`
 
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
 
             let hash = "";
             if (layoutDefinition !== undefined) {
-                literalText = `https://${host}/index.html`
+                literalText = `https://${host}${path}/`
                 if (layout.id.startsWith("wiki:")) {
                     parts.push("userlayout=" + encodeURIComponent(layout.id))
                 } else {

@@ -40,15 +40,22 @@ export default class MoreScreen extends UIElement {
         }
 
         const currentLocation = State.state.locationControl.data;
+        let path = window.location.pathname;
+        // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
+        path = path.substr(0, path.lastIndexOf("/"));
+        // Path will now contain '/dir/dir', or empty string in case of nothing
+        if(path === ""){
+            path = "."
+        }
         let linkText =
-            `./${layout.id.toLowerCase()}.html?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            `${path}/${layout.id.toLowerCase()}?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
 
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-            linkText = `./index.html?layout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            linkText = `${path}/index.html?layout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
         }
 
         if (customThemeDefinition) {
-            linkText = `./index.html?userlayout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}#${customThemeDefinition}`
+            linkText = `${path}/?userlayout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}#${customThemeDefinition}`
 
         }
 
