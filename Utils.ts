@@ -175,6 +175,45 @@ export class Utils {
                 console.error("Key ", objectKey, "might be not supported (in context",context,")")
             }   
         }
+    }
+    
+    static Merge(source: any, target: any){
+        target = JSON.parse(JSON.stringify(target));
+        source = JSON.parse(JSON.stringify(source));
+        for (const key in source) {
+            const sourceV = source[key];
+            const targetV = target[key]
+            if(typeof sourceV === "object"){
+                if(targetV === undefined){
+                    target[key] = sourceV;
+                }else{
+                    Utils.Merge(sourceV, targetV);
+                }
+                
+            }else{
+                target[key] = sourceV;
+            }
+            
+        }
+        return target;
+    }
+    
+    static ToMuchTags(source: any, toCheck: any, context: string){
+
+        for (const key in toCheck) {
+            const toCheckV = toCheck[key];
+            const sourceV = source[key];
+            if(sourceV === undefined){
+                console.error("Probably a wrong tag in ", context, ": ", key, "might be wrong")
+            }
+            if(typeof toCheckV === "object"){
+                if(typeof sourceV !== "object"){
+                    console.error("Probably a wrong value in ", context, ": ", key, "is a fixed value in the source")
+                }else{
+                    Utils.ToMuchTags(sourceV, toCheckV, context+"."+key);
+                }
+            }
+        }
         
     }
     

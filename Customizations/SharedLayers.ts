@@ -1,4 +1,3 @@
-
 import * as drinkingWater from "../assets/layers/drinking_water/drinking_water.json";
 import * as ghostbikes from "../assets/layers/ghost_bike/ghost_bike.json"
 import * as viewpoint from "../assets/layers/viewpoint/viewpoint.json"
@@ -21,45 +20,57 @@ import * as toilets from "../assets/layers/toilets/toilets.json"
 import * as bookcases from "../assets/layers/public_bookcases/public_bookcases.json"
 import * as tree_nodes from "../assets/layers/trees/tree_nodes.json"
 import LayerConfig from "./JSON/LayerConfig";
+import {LayerConfigJson} from "./JSON/LayerConfigJson";
 
 export default class SharedLayers {
-    
-    
-    
 
+
+    private static sharedLayersListRaw : LayerConfigJson[] = [
+        drinkingWater,
+        ghostbikes,
+        viewpoint,
+        bike_parking,
+        bike_repair_station,
+        bike_monitoring_station,
+        birdhides,
+        nature_reserve,
+        bike_cafes,
+        bicycle_library,
+        cycling_themed_objects,
+        bike_shops,
+        bike_cleaning,
+        maps,
+        direction,
+        information_boards,
+        toilets,
+        bookcases,
+        surveillance_camera,
+        tree_nodes
+    ];
+
+    // Must be below the list...
     public static sharedLayers: Map<string, LayerConfig> = SharedLayers.getSharedLayers();
+    public static sharedLayersJson: Map<string, any> = SharedLayers.getSharedLayersJson();
 
-    private static getSharedLayers(){
-        const sharedLayersList = [
-            new LayerConfig(drinkingWater,[], "shared_layers"),
-            new LayerConfig(ghostbikes,[], "shared_layers"),
-            new LayerConfig(viewpoint,[], "shared_layers"),
-            new LayerConfig(bike_parking,[], "shared_layers"),
-            new LayerConfig(bike_repair_station,[], "shared_layers"),
-            new LayerConfig(bike_monitoring_station,[], "shared_layers"),
-            new LayerConfig(birdhides,[], "shared_layers"),
-            new LayerConfig(nature_reserve,[], "shared_layers"),
-            new LayerConfig(bike_cafes,[], "shared_layers"),
-            new LayerConfig(bicycle_library, [], "bike_library"),
-            new LayerConfig(cycling_themed_objects,[], "shared_layers"),
-            new LayerConfig(bike_shops,[], "shared_layers"),
-            new LayerConfig(bike_cleaning,[], "shared_layers"),
-            new LayerConfig(maps,[], "shared_layers"),
-            new LayerConfig(direction,[], "shared_layers"),
-            new LayerConfig(information_boards,[], "shared_layers"),
-            new LayerConfig(toilets,[], "shared_layers"),
-            new LayerConfig(bookcases,[], "shared_layers"),
-            new LayerConfig(surveillance_camera,[], "shared_layers"),
-            new LayerConfig(tree_nodes,[], "shared_layers")
-        ];
 
+    private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
-        for (const layer of sharedLayersList) {
+        for (const layer of SharedLayers.sharedLayersListRaw) {
+            const parsed = new LayerConfig(layer, [], "shared_layers")
+            sharedLayers.set(layer.id, parsed);
+            sharedLayers[layer.id] = parsed;
+        }
+        return sharedLayers;
+    }
+
+    private static getSharedLayersJson(): Map<string, any> {
+        const sharedLayers = new Map<string, any>();
+        for (const layer of SharedLayers.sharedLayersListRaw) {
             sharedLayers.set(layer.id, layer);
             sharedLayers[layer.id] = layer;
         }
         return sharedLayers;
     }
-    
-    
+
+
 }

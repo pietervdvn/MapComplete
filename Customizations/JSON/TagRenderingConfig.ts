@@ -46,7 +46,7 @@ export default class TagRenderingConfig {
             this.multiAnswer = false;
             return;
         }
-
+        
         this.render = Translations.T(json.render);
         this.question = Translations.T(json.question);
         this.condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);

@@ -120,8 +120,11 @@ export interface LayoutConfigJson {
      * 
      * *layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself
      * 
+     * Note that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: "layername", override: ...}
+     * The 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer
+     * 
      */
-    layers: (LayerConfigJson | string)[],
+    layers: (LayerConfigJson | string | {builtin: string, override: any})[],
 
     /**
      * If defined, data will be clustered.
