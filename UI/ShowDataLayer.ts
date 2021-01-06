@@ -69,6 +69,10 @@ export default class ShowDataLayer {
             }
         });
         Hash.hash.addCallback(id => {
+            // This is a bit of an edge case: if the hash becomes an id to search, we have to show the corresponding popup
+            if(State.state.selectedElement !== undefined){
+                return; // Something is already selected, we don't have to apply this fix
+            }
             const action = self._onSelectedTrigger[id];
             if(action){
                 action();
@@ -144,6 +148,7 @@ export default class ShowDataLayer {
             }
             leafletLayer.openPopup();
             uiElement.Activate();
+            State.state.selectedElement.setData(feature);
         }
         this._onSelectedTrigger[feature.properties.id.replace("/","_")] = this._onSelectedTrigger[id];
 
