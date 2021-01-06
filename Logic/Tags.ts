@@ -454,19 +454,19 @@ export class TagUtils {
 
     static MatchesMultiAnswer(tag: TagsFilter, tags: any): boolean {
         const splitted = TagUtils.SplitKeys([tag]);
-        console.log("Matching multianswer", tag, tags)
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
+            if(tags[splitKey] === undefined) {
+                return false;
+            }
+            
             const actualValue = tags[splitKey].split(";");
             for (const neededValue of neededValues) {
-                console.log("needed", neededValue, "have: ", actualValue, actualValue.indexOf(neededValue) )
                 if (actualValue.indexOf(neededValue) < 0) {
-                    console.log("NOT FOUND")
                     return false;
                 }
             }
         }
-        console.log("OK")
         return true;
     }
 }

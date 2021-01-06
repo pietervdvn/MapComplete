@@ -62,7 +62,7 @@ export class QueryParameters {
 
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
-        history.replaceState(null, "", "?" + parts.join("&") + "#" + Hash.Get().data);
+        history.replaceState(null, "", "?" + parts.join("&") + "#" + Hash.hash.data);
 
     }
 

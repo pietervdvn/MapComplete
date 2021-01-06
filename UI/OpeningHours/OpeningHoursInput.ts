@@ -13,6 +13,7 @@ import {OH} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
 import PublicHolidayInput from "./PublicHolidayInput";
 import Translations from "../i18n/Translations";
+import {Utils} from "../../Utils";
 
 
 export default class OpeningHoursInput extends InputElement<string> {
@@ -63,15 +64,13 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._phSelector = new PublicHolidayInput(ph);
 
         function update() {
-            let rules = OH.ToString(rulesFromOhPicker.data);
-            if (leftoverRules.data.length != 0) {
-                rules += ";" + leftoverRules.data.join(";")
-            }
-            const phData = ph.data;
-            if (phData !== undefined && phData !== "") {
-                rules += ";" + phData;
-            }
-            value.setData(rules);
+            const regular = OH.ToString(rulesFromOhPicker.data);
+            const rules : string[] = [
+                regular,
+                ...leftoverRules.data,
+                ph.data
+            ]
+            value.setData(Utils.NoEmpty(rules).join(";"));
         }
 
         rulesFromOhPicker.addCallback(update);

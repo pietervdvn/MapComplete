@@ -201,7 +201,7 @@ export default class State {
         );
 
 
-        const h = Hash.Get();
+        const h = Hash.hash;
         this.selectedElement.addCallback(selected => {
                 if (selected === undefined) {
                     h.setData("");

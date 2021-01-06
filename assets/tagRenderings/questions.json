@@ -8,6 +8,7 @@
   "phone": {
     "question": {
       "en": "What is the phone number of {name}?",
+      "nl": "Wat is het telefoonnummer van {name}?",
       "de": "Was ist die Telefonnummer von {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",

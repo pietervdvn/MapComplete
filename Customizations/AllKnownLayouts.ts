@@ -20,6 +20,7 @@ import * as surveillance_cameras from "../assets/themes/surveillance_cameras/sur
 import * as trees from "../assets/themes/trees/trees.json"
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
 import * as playgrounds from "../assets/themes/playgrounds/playgrounds.json"
+import * as bicycle_lib from "../assets/themes/bicycle_library/bicycle_library.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
 import SharedLayers from "./SharedLayers";
@@ -57,6 +58,7 @@ export class AllKnownLayouts {
         new LayoutConfig(drinking_water),
         new LayoutConfig(nature),
         new LayoutConfig(cyclestreets),
+        new LayoutConfig(bicycle_lib),
         new LayoutConfig(maps),
         new LayoutConfig(fritures),
         new LayoutConfig(benches),

@@ -1,0 +1,27 @@
+{
+  "id": "bicyclelib",
+  "maintainer": "MapComplete",
+  "version": "2020-08-29",
+  "language": [
+    "en",
+    "nl",
+  ],
+  "title": {
+    "en": "Bicycle libraries",
+    "nl": "Fietsbibliotheken",
+  },
+  "description": {
+    "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
+    "en": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike"
+  },
+  "icon": "./assets/themes/bicycle_library/logo.svg",
+  "socialImage": null,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "roamingRenderings": [],
+  "layers": [
+    "bicycle_library"
+  ]
+}

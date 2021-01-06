@@ -68,6 +68,12 @@ export default class ShowDataLayer {
                 action();
             }
         });
+        Hash.hash.addCallback(id => {
+            const action = self._onSelectedTrigger[id];
+            if(action){
+                action();
+            }
+        })
 
     }
 
@@ -139,9 +145,9 @@ export default class ShowDataLayer {
             leafletLayer.openPopup();
             uiElement.Activate();
         }
-        
+        this._onSelectedTrigger[feature.properties.id.replace("/","_")] = this._onSelectedTrigger[id];
 
-        if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
+        if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data) {
             // This element is in the URL, so this is a share link
             // We already open it
             uiElement.Activate();

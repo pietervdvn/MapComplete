@@ -40,6 +40,7 @@ import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import FeatureDuplicatorPerLayer from "./Logic/FeatureSource/FeatureDuplicatorPerLayer";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
+import Hash from "./Logic/Web/Hash";
 
 export class InitUiElements {
 
@@ -132,6 +133,7 @@ export class InitUiElements {
 
                 if (feature === undefined) {
                     State.state.fullScreenMessage.setData(undefined);
+                    Hash.hash.setData(undefined);
                 }
                 if (feature?.properties === undefined) {
                     return;

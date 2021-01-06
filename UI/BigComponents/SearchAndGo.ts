@@ -8,6 +8,7 @@ import State from "../../State";
 import {TextField} from "../Input/TextField";
 import {Geocoding} from "../../Logic/Osm/Geocoding";
 import Translations from "../i18n/Translations";
+import Hash from "../../Logic/Web/Hash";
 
 export default class SearchAndGo extends UIElement {
 
@@ -61,11 +62,14 @@ export default class SearchAndGo extends UIElement {
                     return;
                 }
 
-                const bb = result[0].boundingbox;
+                const poi = result[0];
+                const bb = poi.boundingbox;
                 const bounds: [[number, number], [number, number]] = [
                     [bb[0], bb[2]],
                     [bb[1], bb[3]]
                 ]
+            State.state.selectedElement. setData(undefined);
+                Hash.hash.setData(poi.osm_type+"_"+poi.osm_id);
                 State.state.leafletMap.data.fitBounds(bounds);
                 self._placeholder.setData(Translations.t.general.search.search);
             },
