@@ -1,20 +1,8 @@
 import {UIEventSource} from "../Logic/UIEventSource";
+import Constants from "../Models/Constants";
+import {Utils} from "../Utils";
 
 export abstract class UIElement extends UIEventSource<string> {
-
-    private static nextId: number = 0;
-
-    public readonly id: string;
-    public readonly _source: UIEventSource<any>;
-    private clss: string[] = []
-
-    private style: string;
-
-    private _hideIfEmpty = false;
-
-    public dumbMode = false;
-    
-    private lastInnerRender: string;
 
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.
@@ -22,6 +10,16 @@ export abstract class UIElement extends UIEventSource<string> {
      * This is a workaround and yet another hack
      */
     public static runningFromConsole = false;
+    private static nextId: number = 0;
+    public readonly id: string;
+    public readonly _source: UIEventSource<any>;
+    public dumbMode = false;
+    private clss: string[] = []
+    private style: string;
+    private _hideIfEmpty = false;
+    private lastInnerRender: string;
+    private _onClick: () => void;
+    private _onHover: UIEventSource<boolean>;
 
     protected constructor(source: UIEventSource<any> = undefined) {
         super("");
@@ -31,7 +29,6 @@ export abstract class UIElement extends UIEventSource<string> {
         this.dumbMode = true;
         this.ListenTo(source);
     }
-
 
     public ListenTo(source: UIEventSource<any>) {
         if (source === undefined) {
@@ -46,8 +43,6 @@ export abstract class UIElement extends UIEventSource<string> {
         return this;
     }
 
-    private _onClick: () => void;
-
     public onClick(f: (() => void)) {
         this.dumbMode = false;
         this._onClick = f;
@@ -55,8 +50,6 @@ export abstract class UIElement extends UIEventSource<string> {
         this.Update();
         return this;
     }
-
-    private _onHover: UIEventSource<boolean>;
 
     public IsHovered(): UIEventSource<boolean> {
         this.dumbMode = false;
@@ -69,10 +62,10 @@ export abstract class UIElement extends UIEventSource<string> {
     }
 
     Update(): void {
-        if (UIElement.runningFromConsole) {
+        if (Utils.runningFromConsole) {
             return;
         }
-        
+
         let element = document.getElementById(this.id);
         if (element === undefined || element === null) {
             // The element is not painted or, in the case of 'dumbmode' this UI-element is not explicitely present
@@ -101,7 +94,7 @@ export abstract class UIElement extends UIEventSource<string> {
             const self = this;
             element.onclick = (e) => {
                 // @ts-ignore
-                if(e.consumed){
+                if (e.consumed) {
                     return;
                 }
                 self._onClick();
@@ -123,29 +116,10 @@ export abstract class UIElement extends UIEventSource<string> {
 
     }
 
-    private UpdateAllChildren() {
-        for (const i in this) {
-            const child = this[i];
-            if (child instanceof UIElement) {
-                child.Update();
-            } else if (child instanceof Array) {
-                for (const ch of child) {
-                    if (ch instanceof UIElement) {
-                        ch.Update();
-                    }
-                }
-            }
-        }
-    }
-
     HideOnEmpty(hide: boolean) {
         this._hideIfEmpty = hide;
         this.Update();
         return this;
-    }
-
-    // Called after the HTML has been replaced. Can be used for css tricks
-    protected InnerUpdate(htmlElement: HTMLElement) {
     }
 
     Render(): string {
@@ -192,6 +166,7 @@ export abstract class UIElement extends UIEventSource<string> {
         }
         return this;
     }
+
     public RemoveClass(clss: string): UIElement {
         const i = this.clss.indexOf(clss);
         if (i >= 0) {
@@ -201,12 +176,30 @@ export abstract class UIElement extends UIEventSource<string> {
         return this;
     }
 
-
     public SetStyle(style: string): UIElement {
         this.dumbMode = false;
         this.style = style;
         this.Update();
         return this;
+    }
+
+    // Called after the HTML has been replaced. Can be used for css tricks
+    protected InnerUpdate(htmlElement: HTMLElement) {
+    }
+
+    private UpdateAllChildren() {
+        for (const i in this) {
+            const child = this[i];
+            if (child instanceof UIElement) {
+                child.Update();
+            } else if (child instanceof Array) {
+                for (const ch of child) {
+                    if (ch instanceof UIElement) {
+                        ch.Update();
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -1,7 +1,5 @@
 import {UIElement} from "../UI/UIElement";
 UIElement.runningFromConsole = true;
-import Img from "../UI/Base/Img";
-Img.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
