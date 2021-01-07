@@ -11,7 +11,7 @@
     --popup-border: white;
     --shadow-color: #00000066;
     --variable-title-height: 0px; /* Set by javascript */
-    --return-to-the-map-height: 5em;
+    --return-to-the-map-height: 2em;
 }
 
 html, body {

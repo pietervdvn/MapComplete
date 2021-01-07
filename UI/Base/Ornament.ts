@@ -12,7 +12,7 @@ export default class Ornament extends UIElement {
         this.SetClass("ornament")
         const self = this;
         this.onClick(() => {
-            self._index.setData((self._index.data + 1) % Ornament.ornamentsCount);
+            self._index.setData((self._index.data + 1) % (Ornament.ornamentsCount + 1));
 
         })
     }
@@ -28,7 +28,10 @@ export default class Ornament extends UIElement {
     }
 
     InnerRender(): string {
-        return Svg.All[`Ornament-Horiz-${this._index.data}.svg`]
+        if(this._index.data == 0){
+            return "<svg></svg>"
+        }
+        return Svg.All[`Ornament-Horiz-${this._index.data - 1}.svg`]
     }
 
 }

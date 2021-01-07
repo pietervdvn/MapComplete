@@ -262,7 +262,10 @@ input:checked + label .question-option-with-border {
     text-align: center;
     box-sizing: border-box;
     display: block;
-    max-height: 2em;
+    max-height: var(--return-to-the-map-height);
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
 }
 
 .to-the-map-inner{
