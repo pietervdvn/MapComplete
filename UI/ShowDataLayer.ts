@@ -151,7 +151,6 @@ export default class ShowDataLayer {
             State.state.selectedElement.setData(feature);
         }
         this._onSelectedTrigger[feature.properties.id.replace("/","_")] = this._onSelectedTrigger[id];
-
         if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data) {
             // This element is in the URL, so this is a share link
             // We already open it

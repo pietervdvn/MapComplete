@@ -7,6 +7,9 @@ import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
+import Svg from "../../Svg";
+import Ornament from "../Base/Ornament";
 
 export default class FeatureInfoBox extends UIElement {
     private _tags: UIEventSource<any>;
@@ -16,6 +19,8 @@ export default class FeatureInfoBox extends UIElement {
     private _titleIcons: UIElement;
     private _renderings: UIElement[];
     private _questionBox: UIElement;
+    private _returnToTheMap: UIElement;
+    private _tail: UIElement;
 
     constructor(
         tags: UIEventSource<any>,
@@ -28,10 +33,14 @@ export default class FeatureInfoBox extends UIElement {
         this._tags = tags;
         this._layerConfig = layerConfig;
 
+        this._returnToTheMap = Svg.back_svg().onClick(() => {
+            State.state.fullScreenMessage.setData(undefined);
+            State.state.selectedElement.setData(undefined);
+        }).SetClass("only-on-mobile")
+            .SetClass("featureinfobox-back-to-the-map")
 
-        this._title = layerConfig.title === undefined ? undefined :
-            new TagRenderingAnswer(tags, layerConfig.title)
-                .SetClass("featureinfobox-title");
+        this._title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
+            .SetClass("featureinfobox-title");
         this._titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
@@ -54,16 +63,18 @@ export default class FeatureInfoBox extends UIElement {
         if (!questionBoxIsUsed) {
             this._renderings.push(questionBox);
         }
+        this._tail = new Combine([new Ornament()]).SetClass("only-on-mobile");
     }
 
     InnerRender(): string {
         return new Combine([
-            new Combine([this._title, this._titleIcons])
-                .SetClass("featureinfobox-titlebar"),
+            new Combine([
+                this._returnToTheMap, new Combine([this._title, this._titleIcons]).SetClass("featureinfobox-titlebar-title")
+            ]).SetClass("featureinfobox-titlebar"),
             new Combine([
                     ...this._renderings,
                     this._questionBox,
-                    new FixedUiElement("").SetClass("featureinfobox-tail")
+                   this._tail.SetClass("featureinfobox-tail")
                 ]
             ).SetClass("featureinfobox-content"),
         ]).SetClass("featureinfobox")

@@ -22,8 +22,12 @@ export class MangroveIdentity {
                 })
             })
         })
-        if ((mangroveIdentity.data ?? "") === "") {
-            this.CreateIdentity();
+        try {
+            if ((mangroveIdentity.data ?? "") === "") {
+                this.CreateIdentity();
+            }
+        }catch(e){
+            console.error("Could not create identity: ", e)
         }
     }
 

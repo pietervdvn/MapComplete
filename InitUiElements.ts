@@ -174,9 +174,7 @@ export class InitUiElements {
         });
 
 
-        new FullScreenMessageBox(() => {
-            State.state.selectedElement.setData(undefined)
-        }).AttachTo("messagesboxmobile");
+        new FullScreenMessageBox().AttachTo("messagesboxmobile");
 
 
         InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {

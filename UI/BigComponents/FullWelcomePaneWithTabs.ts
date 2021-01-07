@@ -1,6 +1,6 @@
 import {UIElement} from "../UIElement";
 import State from "../../State";
-import WelcomeMessage from "./WelcomeMessage";
+import ThemeIntroductionPanel from "./ThemeIntroductionPanel";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json";
 import PersonalLayersPanel from "./PersonalLayersPanel";
 import Svg from "../../Svg";
@@ -15,6 +15,8 @@ import {TabbedComponent} from "../Base/TabbedComponent";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import UserDetails from "../../Logic/Osm/OsmConnection";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import CombinedInputElement from "../Input/CombinedInputElement";
 
 export default class FullWelcomePaneWithTabs extends UIElement {
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
@@ -27,9 +29,9 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         this._layoutToUse = State.state.layoutToUse;
         this._userDetails = State.state.osmConnection.userDetails;
 
-       
+
         const layoutToUse = this._layoutToUse.data;
-        let welcome: UIElement = new WelcomeMessage();
+        let welcome: UIElement = new ThemeIntroductionPanel();
         if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
         }
@@ -66,10 +68,18 @@ export default class FullWelcomePaneWithTabs extends UIElement {
             }
         );
 
-        this._component = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
+        const tabbedPart = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
             .ListenTo(this._userDetails);
 
+        const backButton = new Combine([
+            new Combine([Translations.t.general.returnToTheMap.Clone().SetClass("to-the-map")])
+                .SetClass("to-the-map-inner")
+                
+        ]).SetClass("only-on-mobile")
+            .onClick(() => State.state.fullScreenMessage.setData(undefined));
 
+        tabbedPart.SetStyle("overflow-y: auto; max-height: calc( 100vh - 4em);display:block;")
+        this._component = new Combine([tabbedPart, backButton]).SetStyle("width:100%;");
     }
 
     InnerRender(): string {
