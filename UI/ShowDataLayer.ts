@@ -124,7 +124,8 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
+        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer),
+            "<div style='height: 90vh'>Rendering</div>");
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
            State.state.selectedElement.setData(undefined); 

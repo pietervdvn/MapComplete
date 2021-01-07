@@ -5,10 +5,10 @@ import LayerSelection from "./LayerSelection";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 
-export default class LayerControlPanel extends UIElement{
+export default class LayerControlPanel extends UIElement {
     private readonly _panel: UIElement;
-    
-    
+
+
     constructor() {
         super();
         let layerControlPanel: UIElement = undefined;
@@ -21,7 +21,8 @@ export default class LayerControlPanel extends UIElement{
 
         if (State.state.filteredLayers.data.length > 1) {
             const layerSelection = new LayerSelection();
-            layerSelection.onClick(() => {            });
+            layerSelection.onClick(() => {
+            });
             layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
         }
 
@@ -32,14 +33,14 @@ export default class LayerControlPanel extends UIElement{
 
         ]).SetClass("only-on-mobile")
             .onClick(() => State.state.fullScreenMessage.setData(undefined));
-        
-        layerControlPanel = new Combine([layerControlPanel, backButton]);
-        
+
+        layerControlPanel = new Combine([layerControlPanel , backButton]);
+
         this._panel = layerControlPanel;
     }
-    
+
     InnerRender(): string {
         return this._panel.Render();
     }
-    
+
 }
