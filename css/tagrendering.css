@@ -35,7 +35,6 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     flex-grow: 2;
     word-break: break-all;
 }

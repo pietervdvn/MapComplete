@@ -3,6 +3,7 @@ import State from "../../State";
 import BackgroundSelector from "./BackgroundSelector";
 import LayerSelection from "./LayerSelection";
 import Combine from "../Base/Combine";
+import Translations from "../i18n/Translations";
 
 export default class LayerControlPanel extends UIElement{
     private readonly _panel: UIElement;
@@ -23,6 +24,17 @@ export default class LayerControlPanel extends UIElement{
             layerSelection.onClick(() => {            });
             layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
         }
+
+
+        const backButton = new Combine([
+            new Combine([Translations.t.general.returnToTheMap.Clone().SetClass("to-the-map")])
+                .SetClass("to-the-map-inner")
+
+        ]).SetClass("only-on-mobile")
+            .onClick(() => State.state.fullScreenMessage.setData(undefined));
+        
+        layerControlPanel = new Combine([layerControlPanel, backButton]);
+        
         this._panel = layerControlPanel;
     }
     

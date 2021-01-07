@@ -7,6 +7,9 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 
+/**
+ * Shows the panel with all layers and a toggle for each of them
+ */
 export default class LayerSelection extends UIElement {
 
     private readonly _checkboxes: UIElement[];
