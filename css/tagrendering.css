@@ -28,7 +28,7 @@
     box-shadow: 0 10px 10px -10px var(--shadow-color);
     display: flex;
     justify-content: space-between;
-    max-width: 95vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -68,7 +68,7 @@
     max-height: 75vh;
     overflow-y: auto;
     padding-top: 1em;
-    max-width: 95vw;
+    width:100%;
     overflow-x: hidden;
 }
 

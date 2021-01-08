@@ -103,6 +103,7 @@ a {
     position: relative;
     width: 2em;
     height: 2em;
+    flex-shrink: 0;
 }
 
 .single-layer-selection-toggle img {

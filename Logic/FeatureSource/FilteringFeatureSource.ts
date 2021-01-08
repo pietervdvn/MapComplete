@@ -32,20 +32,20 @@ export default class FilteringFeatureSource implements FeatureSource {
                 if (layer === undefined) {
                     throw "No layer found with id " + layerId;
                 }
-                if(layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom)){
+                if (FilteringFeatureSource.showLayer(layer, location)) {
                     return true;
                 }
                 // Does it match any other layer?
                 for (const toCheck of layers) {
-                    if(!toCheck.isDisplayed.data){
+                    if (!FilteringFeatureSource.showLayer(toCheck, location)) {
                         continue;
                     }
-                    if(toCheck.layerDef.overpassTags.matchesProperties(f.feature.properties)){
+                    if (toCheck.layerDef.overpassTags.matchesProperties(f.feature.properties)) {
                         return true;
                     }
                 }
                 return false;
-                
+
             });
             self.features.setData(newFeatures);
         }
@@ -54,15 +54,16 @@ export default class FilteringFeatureSource implements FeatureSource {
             layerDict[layer.layerDef.id] = layer;
         }
         upstream.features.addCallback(() => {
-            update()});
+            update()
+        });
         location.map(l => {
             // We want something that is stable for the shown layers
             const displayedLayerIndexes = [];
             for (let i = 0; i < layers.length; i++) {
-                if(l.zoom < layers[i].layerDef.minzoom){
+                if (l.zoom < layers[i].layerDef.minzoom) {
                     continue;
                 }
-                if(!layers[i].isDisplayed.data){
+                if (!layers[i].isDisplayed.data) {
                     continue;
                 }
                 displayedLayerIndexes.push(i);
@@ -70,10 +71,16 @@ export default class FilteringFeatureSource implements FeatureSource {
             return displayedLayerIndexes.join(",")
         }, layers.map(l => l.isDisplayed))
             .addCallback(() => {
-            update();});
+                update();
+            });
 
 
     }
 
-
+    private static showLayer(layer: {
+        isDisplayed: UIEventSource<boolean>,
+        layerDef: LayerConfig
+    }, location: UIEventSource<Loc>) {
+        return layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom)
+    }
 }

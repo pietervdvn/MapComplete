@@ -43,10 +43,13 @@ export default class LayerSelection extends UIElement {
                 }
                 return ""
             }))
-            const style = "display:flex;align-items:center;flex-wrap:wrap;"
+            const style = "display:flex;align-items:center;"
+            const styleWhole = "display:flex; flex-wrap: wrap"
             this._checkboxes.push(new CheckBox(
-                new Combine([icon, name, zoomStatus]).SetStyle(style),
-                new Combine([iconUnselected, "<del>", name, "</del>", zoomStatus]).SetStyle(style),
+                new Combine([new Combine([icon, name]).SetStyle(style), zoomStatus])
+                    .SetStyle(styleWhole),
+                new Combine([new Combine([iconUnselected, "<del>", name, "</del>"]).SetStyle(style), zoomStatus])
+                    .SetStyle(styleWhole),
                 layer.isDisplayed)
                 .SetStyle("margin:0.3em;")
             );
