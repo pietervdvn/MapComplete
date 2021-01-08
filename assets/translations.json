@@ -309,14 +309,24 @@
         "gl": "Engadir {category} aquí",
         "de": "Hier eine neue {category} hinzufügen"
       },
-      "header": {
-        "en": "<h2>Add a point?</h2>You clicked somewhere where no data is known yet.<br/>",
-        "ca": "<h2>Vols afegir un punt?</h2>Has marcat un lloc on no coneixem les dades.<br/>",
-        "es": "<h2>Quieres añadir un punto?</h2>Has marcado un lugar del que no conocemos los datos.<br/>",
-        "nl": "<h2>Punt toevoegen?</h2>Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
-        "fr": "<h2>Pas de données</h2>Vous avez cliqué sur un endroit où il n'y a pas encore de données. <br/>",
-        "gl": "<h2>Queres engadir un punto?</h2>Marcaches un lugar onde non coñecemos os datos.<br/>",
-        "de": "<h2>Punkt hinzufügen?</h2>Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br/>"
+      "title": {
+        "en": "Add a new point?",
+        "ca": "Vols afegir un punt?",
+        "es": "Quieres añadir un punto?",
+        "nl": "Nieuw punt toevoegen?",
+        "fr": "Pas de données",
+        "gl": "Queres engadir un punto?",
+        "de": "Punkt hinzufügen?"
+
+      },
+      "intro": {
+        "en": "You clicked somewhere where no data is known yet.<br/>",
+        "ca": "Has marcat un lloc on no coneixem les dades.<br/>",
+        "es": "Has marcado un lugar del que no conocemos los datos.<br/>",
+        "nl": "Je klikte ergens waar er nog geen data is. Kies hieronder welk punt je wilt toevoegen<br/>",
+        "fr": "Vous avez cliqué sur un endroit où il n'y a pas encore de données. <br/>",
+        "gl": "Marcaches un lugar onde non coñecemos os datos.<br/>",
+        "de": "Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br/>"
       },
       "pleaseLogin": {
         "en": "<a class='activate-osm-authentication'>Please log in to add a new point</a>",

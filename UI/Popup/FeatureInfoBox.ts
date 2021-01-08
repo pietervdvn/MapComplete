@@ -6,10 +6,7 @@ import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
-import Svg from "../../Svg";
-import Ornament from "../Base/Ornament";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class FeatureInfoBox extends UIElement {
@@ -49,7 +46,7 @@ export default class FeatureInfoBox extends UIElement {
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-        const tail = new Combine([new Ornament()]).SetClass("only-on-mobile");
+        const tail = new Combine([]).SetClass("only-on-mobile");
 
         const content = new Combine([
                 ...renderings,
