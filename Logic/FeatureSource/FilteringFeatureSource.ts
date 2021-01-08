@@ -32,7 +32,20 @@ export default class FilteringFeatureSource implements FeatureSource {
                 if (layer === undefined) {
                     throw "No layer found with id " + layerId;
                 }
-                return layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom);
+                if(layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom)){
+                    return true;
+                }
+                // Does it match any other layer?
+                for (const toCheck of layers) {
+                    if(!toCheck.isDisplayed.data){
+                        continue;
+                    }
+                    if(toCheck.layerDef.overpassTags.matchesProperties(f.feature.properties)){
+                        return true;
+                    }
+                }
+                return false;
+                
             });
             self.features.setData(newFeatures);
         }
