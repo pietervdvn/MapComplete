@@ -15,12 +15,15 @@
 .fullscreenmessage-content .featureinfobox-content {
     padding: 1em;
     top: var(--variable-title-height);
-    /* 2em extra: padding from the title */
     max-height: calc(100vh - var(--variable-title-height)) !important;
-    display: block;
+    min-height: calc(100vh - var(--variable-title-height)) !important;
     position: absolute;
     overflow-y: auto;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
 }
 
 .fullscreenmessage-content .featureinfobox-titlebar {
@@ -32,7 +35,7 @@
     padding: 0.5em;
     width: 100%;
     box-sizing: border-box;
- 
+
 }
 
 .fullscreenmessage-content .featureinfobox-tail {

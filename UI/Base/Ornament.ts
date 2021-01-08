@@ -1,18 +1,25 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Svg from "../../Svg";
+import State from "../../State";
 
 export default class Ornament extends UIElement {
     private static readonly ornamentsCount = Ornament.countOrnaments();
-    private readonly _index = new UIEventSource<number>(0)
+    private readonly _index = new UIEventSource<string>("0")
 
-    constructor(index = new UIEventSource<number>(0)) {
-        super(index);
+    constructor(index = undefined) {
+        super();
+        index = index ?? State.state.osmConnection.GetPreference("ornament");
+        this.ListenTo(index);
         this._index = index;
         this.SetClass("ornament")
         const self = this;
         this.onClick(() => {
-            self._index.setData((self._index.data + 1) % (Ornament.ornamentsCount + 1));
+            let c = Number(index.data);
+            if(isNaN(c)){
+                c = 0;
+            }
+            self._index.setData(""+ ((c + 1) % (Ornament.ornamentsCount + 1)));
 
         })
     }
@@ -28,10 +35,11 @@ export default class Ornament extends UIElement {
     }
 
     InnerRender(): string {
-        if(this._index.data == 0){
+        if(this._index.data == "0"){
             return "<svg></svg>"
         }
-        return Svg.All[`Ornament-Horiz-${this._index.data - 1}.svg`]
+        console.log(this._index.data)
+        return Svg.All[`Ornament-Horiz-${Number(this._index.data) - 1}.svg`]
     }
 
 }
