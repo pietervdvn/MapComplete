@@ -744,14 +744,21 @@
       "fr": "Carte de fonds",
       "de": "Hintergrundkarte"
     },
-    "zoomInToSeeThisLayer": {
-      "en": "Zoom in to see this layer",
-      "ca": "Amplia per veure aquesta capa",
-      "es": "Amplía para ver esta capa",
-      "nl": "Vergroot de kaart om deze laag te zien",
-      "fr": "Aggrandissez la carte pour voir cette couche",
-      "de": "Vergrößern, um diese Ebene zu sehen"
+    "layerSelection": {
+      "zoomInToSeeThisLayer": {
+        "en": "Zoom in to see this layer",
+        "ca": "Amplia per veure aquesta capa",
+        "es": "Amplía para ver esta capa",
+        "nl": "Vergroot de kaart om deze laag te zien",
+        "fr": "Aggrandissez la carte pour voir cette couche",
+        "de": "Vergrößern, um diese Ebene zu sehen"
+      },
+      "title": {
+        "en": "Select layers",
+        "nl": "Selecteer lagen"
+      }
     },
+    
     "weekdays": {
       "abbreviations": {
         "monday": {

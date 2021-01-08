@@ -36,14 +36,14 @@ export default class LayerSelection extends UIElement {
 
             const zoomStatus = new VariableUiElement(State.state.locationControl.map(location => {
                 if (location.zoom < layer.layerDef.minzoom) {
-                    return Translations.t.general.zoomInToSeeThisLayer
+                    return Translations.t.general.layerSelection.zoomInToSeeThisLayer
                         .SetClass("alert")
                         .SetStyle("display: block ruby;width:min-content;")
                         .Render();
                 }
                 return ""
             }))
-            const style = "display:flex;align-items:center;"
+            const style = "display:flex;align-items:center;flex-wrap:wrap;"
             this._checkboxes.push(new CheckBox(
                 new Combine([icon, name, zoomStatus]).SetStyle(style),
                 new Combine([iconUnselected, "<del>", name, "</del>", zoomStatus]).SetStyle(style),
