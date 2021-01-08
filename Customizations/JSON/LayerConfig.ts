@@ -177,7 +177,6 @@ export default class LayerConfig {
         this.tagRenderings.push(...addAll.tagRenderings);
         this.iconOverlays.push(...addAll.iconOverlays);
         for (const icon of addAll.titleIcons) {
-            console.log("Adding ",icon, "to", this.id)
             this.titleIcons.splice(0,0, icon);
         }
         return this;

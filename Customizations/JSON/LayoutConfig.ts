@@ -96,7 +96,6 @@ export default class LayoutConfig {
                 if (shared === undefined) {
                     throw "Unkown fixed layer " + name;
                 }
-                console.log("PREMERGE", layer, shared)
                 // @ts-ignore
                 layer = Utils.Merge(layer.override, shared);
             }

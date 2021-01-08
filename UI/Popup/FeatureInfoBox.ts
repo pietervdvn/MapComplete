@@ -12,6 +12,8 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 export default class FeatureInfoBox extends UIElement {
     private _component: UIElement;
 
+    public title: UIEventSource<string> ;
+    
     constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
@@ -24,6 +26,7 @@ export default class FeatureInfoBox extends UIElement {
 
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
             .SetClass("featureinfobox-title");
+        this.title = title;
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");

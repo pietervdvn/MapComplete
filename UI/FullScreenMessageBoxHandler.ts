@@ -19,7 +19,7 @@ export default class FullScreenMessageBox extends UIElement {
         if (State.state.fullScreenMessage.data === undefined) {
             return "";
         }
-        this._content = State.state.fullScreenMessage.data;
+        this._content = State.state.fullScreenMessage.data.content;
         return new Combine([this._content]).SetClass("fullscreenmessage-content").Render();
     }
 

@@ -43,27 +43,23 @@ export class QueryParameters {
     private static Serialize() {
         const parts = []
         for (const key of QueryParameters.order) {
-            if (QueryParameters.knownSources[key] === undefined || QueryParameters.knownSources[key].data === undefined) {
+            if (QueryParameters.knownSources[key]?.data === undefined) {
                 continue;
             }
             
-            if (QueryParameters.knownSources[key].data === undefined) {
-                continue;
-            }
-
             if (QueryParameters.knownSources[key].data === "undefined") {
                 continue;
             }
 
-
-            if (QueryParameters.knownSources[key].data == QueryParameters.defaults[key]) {
+            if (QueryParameters.knownSources[key].data === QueryParameters.defaults[key]) {
                 continue;
             }
 
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
         // Don't pollute the history every time a parameter changes
-        history.replaceState(null, "", "?" + parts.join("&") + "#" + Hash.hash.data);
+        
+        history.replaceState(null, "", "?" + parts.join("&") + Hash.Current());
 
     }
 

@@ -6,7 +6,6 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
-import {Overpass} from "./Logic/Osm/Overpass";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------

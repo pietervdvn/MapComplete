@@ -4,7 +4,6 @@ import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import Locale from "./UI/i18n/Locale";
-import Translations from "./UI/i18n/Translations";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
@@ -18,6 +17,7 @@ import Constants from "./Models/Constants";
 
 import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
+import TitleHandler from "./Logic/Actors/TitleHandler";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -75,7 +75,7 @@ export default class State {
     /**
      This message is shown full screen on mobile devices
      */
-    public readonly fullScreenMessage = new UIEventSource<UIElement>(undefined)
+    public readonly fullScreenMessage = new UIEventSource<{ content: UIElement, hashText: string, titleText?: UIElement }>(undefined)
 
     /**
      The latest element that was selected - used to generate the right UI at the right place
@@ -112,9 +112,9 @@ export default class State {
     public layoutDefinition: string;
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
 
-    public layerControlIsOpened: UIEventSource<boolean> = 
+    public layerControlIsOpened: UIEventSource<boolean> =
         QueryParameters.GetQueryParameter("layer-control-toggle", "false", "Whether or not the layer control is shown")
-        .map<boolean>((str) => str !== "false", [], b => "" + b)
+            .map<boolean>((str) => str !== "false", [], b => "" + b)
 
     public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
         str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
@@ -240,13 +240,8 @@ export default class State {
             }
         }).ping()
 
-        this.layoutToUse.map((layoutToUse) => {
-                return Translations.WT(layoutToUse?.title)?.txt ?? "MapComplete"
-            }, [Locale.language]
-        ).addCallbackAndRun((title) => {
-            document.title = title
-        });
-
+        new TitleHandler(this.layoutToUse, this.fullScreenMessage);
+        
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
