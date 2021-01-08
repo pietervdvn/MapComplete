@@ -19,22 +19,18 @@ import {UIElement} from "../../UI/UIElement";
 export default class LayerConfig {
 
 
+    static WAYHANDLING_DEFAULT = 0;
+    static WAYHANDLING_CENTER_ONLY = 1;
+    static WAYHANDLING_CENTER_AND_WAY = 2;
     id: string;
-
     name: Translation
-
     description: Translation;
     overpassTags: TagsFilter;
     doNotDownload: boolean;
-
     passAllFeatures: boolean;
-
     minzoom: number;
-
     title?: TagRenderingConfig;
-
     titleIcons: TagRenderingConfig[];
-
     icon: TagRenderingConfig;
     iconOverlays: { if: TagsFilter, then: TagRenderingConfig, badge: boolean }[]
     iconSize: TagRenderingConfig;
@@ -42,14 +38,7 @@ export default class LayerConfig {
     color: TagRenderingConfig;
     width: TagRenderingConfig;
     dashArray: TagRenderingConfig;
-
-
     wayHandling: number;
-
-    static WAYHANDLING_DEFAULT = 0;
-    static WAYHANDLING_CENTER_ONLY = 1;
-    static WAYHANDLING_CENTER_AND_WAY = 2;
-
     hideUnderlayingFeaturesMinPercentage?: number;
 
     presets: {
@@ -60,10 +49,10 @@ export default class LayerConfig {
 
     tagRenderings: TagRenderingConfig [];
 
-    constructor(json: LayerConfigJson, roamingRenderings: TagRenderingConfig[],
+    constructor(json: LayerConfigJson,
                 context?: string) {
         context = context + "." + json.id;
-
+        const self = this;
         this.id = json.id;
         this.name = Translations.T(json.name);
         this.description = Translations.T(json.description);
@@ -81,6 +70,28 @@ export default class LayerConfig {
             }))
 
 
+        /** Given a key, gets the corresponding property from the json (or the default if not found
+         *
+         * The found value is interpreted as a tagrendering and fetched/parsed
+         * */
+        function tr(key: string, deflt) {
+            const v = json[key];
+            if (v === undefined || v === null) {
+                if (deflt === undefined) {
+                    return undefined;
+                }
+                return new TagRenderingConfig(deflt, self.overpassTags, `${context}.${key}.default value`);
+            }
+            if (typeof v === "string") {
+                const shared = SharedTagRenderings.SharedTagRendering[v];
+                if (shared) {
+                    console.log("Got shared TR:", v, "-->", shared)
+                    return shared;
+                }
+            }
+            return new TagRenderingConfig(v, self.overpassTags, `${context}.${key}`);
+        }
+
         /**
          * Converts a list of tagRenderingCOnfigJSON in to TagRenderingConfig
          * A string is interpreted as a name to call
@@ -90,26 +101,27 @@ export default class LayerConfig {
             if (tagRenderings === undefined) {
                 return [];
             }
+
             return tagRenderings.map(
                 (renderingJson, i) => {
                     if (typeof renderingJson === "string") {
-                        
-                        if(renderingJson === "questions"){
-                            return new TagRenderingConfig("questions")
+
+                        if (renderingJson === "questions") {
+                            return new TagRenderingConfig("questions", undefined)
                         }
-                        
-                        
+
+
                         const shared = SharedTagRenderings.SharedTagRendering[renderingJson];
                         if (shared !== undefined) {
                             return shared;
                         }
                         throw `Predefined tagRendering ${renderingJson} not found in ${context}`;
                     }
-                    return new TagRenderingConfig(renderingJson, `${context}.tagrendering[${i}]`);
+                    return new TagRenderingConfig(renderingJson, self.overpassTags, `${context}.tagrendering[${i}]`);
                 });
         }
 
-        this.tagRenderings = trs(json.tagRenderings).concat(roamingRenderings);
+        this.tagRenderings = trs(json.tagRenderings);
 
 
         const titleIcons = [];
@@ -125,29 +137,10 @@ export default class LayerConfig {
         this.titleIcons = trs(titleIcons);
 
 
-        function tr(key, deflt) {
-            const v = json[key];
-            if (v === undefined || v === null) {
-                if (deflt === undefined) {
-                    return undefined;
-                }
-                return new TagRenderingConfig(deflt);
-            }
-            if (typeof v === "string") {
-                const shared = SharedTagRenderings.SharedTagRendering[v];
-                if (shared) {
-                    console.log("Got shared TR:", v, "-->", shared)
-                    return shared;
-                }
-            }
-            return new TagRenderingConfig(v, context + "." + key);
-        }
-
-
         this.title = tr("title", undefined);
         this.icon = tr("icon", Img.AsData(Svg.pin));
-        this.iconOverlays = (json.iconOverlays ?? []).map(overlay => {
-            let tr = new TagRenderingConfig(overlay.then);
+        this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
+            let tr = new TagRenderingConfig(overlay.then, self.overpassTags, `iconoverlays.${i}`);
             if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
                 tr = SharedTagRenderings.SharedIcons[overlay.then];
             }
@@ -175,18 +168,54 @@ export default class LayerConfig {
     }
 
 
+    public AddRoamingRenderings(addAll: {
+        tagRenderings: TagRenderingConfig[],
+        titleIcons: TagRenderingConfig[],
+        iconOverlays: { "if": TagsFilter, then: TagRenderingConfig, badge: boolean }[]
+
+    }): LayerConfig {
+        this.tagRenderings.push(...addAll.tagRenderings);
+        this.iconOverlays.push(...addAll.iconOverlays);
+        for (const icon of addAll.titleIcons) {
+            console.log("Adding ",icon, "to", this.id)
+            this.titleIcons.splice(0,0, icon);
+        }
+        return this;
+    }
+
+    public GetRoamingRenderings(): {
+        tagRenderings: TagRenderingConfig[],
+        titleIcons: TagRenderingConfig[],
+        iconOverlays: { "if": TagsFilter, then: TagRenderingConfig, badge: boolean }[]
+
+    } {
+
+        const tagRenderings = this.tagRenderings.filter(tr => tr.roaming);
+        const titleIcons = this.titleIcons.filter(tr => tr.roaming);
+        const iconOverlays = this.iconOverlays.filter(io => io.then.roaming)
+
+        return {
+            tagRenderings: tagRenderings,
+            titleIcons: titleIcons,
+            iconOverlays: iconOverlays
+        }
+
+    }
+
     public GenerateLeafletStyle(tags: UIEventSource<any>, clickable: boolean):
         {
-            color: string;
-            icon: {
-                iconUrl: string,
-                popupAnchor: [number, number];
-                iconAnchor: [number, number];
-                iconSize: [number, number];
-                html: UIElement;
-                className?: string;
-            };
-            weight: number; dashArray: number[]
+            icon:
+                {
+                    html: UIElement,
+                    iconSize: [number, number],
+                    iconAnchor: [number, number],
+                    popupAnchor: [number, number],
+                    iconUrl: string,
+                    className: string
+                },
+            color: string,
+            weight: number,
+            dashArray: number[]
         } {
 
         function num(str, deflt = 40) {
@@ -259,7 +288,7 @@ export default class LayerConfig {
                 if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
                     html = new Combine([
                         (Svg.All[match[1] + ".svg"] as string)
-                            .replace(/#000000/g,  match[2])
+                            .replace(/#000000/g, match[2])
                     ]).SetStyle(style);
                 }
                 return html;

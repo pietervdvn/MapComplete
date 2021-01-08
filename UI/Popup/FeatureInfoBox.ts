@@ -25,7 +25,7 @@ export default class FeatureInfoBox extends UIElement {
         }
 
 
-        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"))
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
             .SetClass("featureinfobox-title");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
@@ -53,7 +53,6 @@ export default class FeatureInfoBox extends UIElement {
 
         const content = new Combine([
                 ...renderings,
-                questionBox,
                 tail.SetClass("featureinfobox-tail")
             ]
         )

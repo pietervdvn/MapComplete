@@ -1,4 +1,4 @@
-import {TagsFilter} from "../../Logic/Tags";
+import {And, TagsFilter} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
@@ -11,25 +11,26 @@ import {Translation} from "../../UI/i18n/Translation";
  */
 export default class TagRenderingConfig {
 
-    render?: Translation;
-    question?: Translation;
-    condition?: TagsFilter;
+    readonly render?: Translation;
+    readonly question?: Translation;
+    readonly condition?: TagsFilter;
 
-    freeform?: {
-        key: string,
-        type: string,
-        addExtraTags: TagsFilter[];
+    readonly freeform?: {
+        readonly  key: string,
+        readonly    type: string,
+        readonly   addExtraTags: TagsFilter[];
     };
 
     readonly multiAnswer: boolean;
 
-    mappings?: {
-        if: TagsFilter,
-        then: Translation
-        hideInAnswer: boolean | TagsFilter
+    readonly mappings?: {
+        readonly    if: TagsFilter,
+        readonly   then: Translation
+        readonly   hideInAnswer: boolean | TagsFilter
     }[]
+    readonly roaming: boolean;
 
-    constructor(json: string | TagRenderingConfigJson, context?: string) {
+    constructor(json: string | TagRenderingConfigJson, conditionIfRoaming: TagsFilter, context?: string) {
 
         if (json === "questions") {
             // Very special value
@@ -46,10 +47,16 @@ export default class TagRenderingConfig {
             this.multiAnswer = false;
             return;
         }
-        
+
         this.render = Translations.T(json.render);
         this.question = Translations.T(json.question);
-        this.condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
+        this.roaming = json.roaming ?? false;
+        const condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
+        if (this.roaming && conditionIfRoaming !== undefined) {
+            this.condition = new And([condition, conditionIfRoaming]);
+        } else {
+            this.condition = condition;
+        }
         if (json.freeform) {
             this.freeform = {
                 key: json.freeform.key,

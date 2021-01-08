@@ -56,7 +56,7 @@ export default class SharedLayers {
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
         for (const layer of SharedLayers.sharedLayersListRaw) {
-            const parsed = new LayerConfig(layer, [], "shared_layers")
+            const parsed = new LayerConfig(layer,  "shared_layers")
             sharedLayers.set(layer.id, parsed);
             sharedLayers[layer.id] = parsed;
         }

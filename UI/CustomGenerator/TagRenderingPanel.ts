@@ -111,7 +111,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         
         this.validText = new VariableUiElement(value.map((json: TagRenderingConfigJson) => {
             try{
-                new TagRenderingConfig(json, options?.title ?? "");
+                new TagRenderingConfig(json,undefined, options?.title ?? "");
                 return "";
             }catch(e){
                 return "<span class='alert'>"+e+"</span>"

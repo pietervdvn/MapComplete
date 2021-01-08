@@ -26,6 +26,7 @@
   "overpassTags": {
     "or": [
       "service:bicycle:cleaning=yes",
+      "service:bicycle:cleaning=diy",
       "amenity=bicycle_wash"
     ]
   },
@@ -38,13 +39,87 @@
         "nl": "Fietsschoonmaakpunt"
       },
       "tags": [
-        "amenity=bicycle_wash",
-        "service:bicycle:cleaning=yes"
+        "amenity=bicycle_wash"
       ]
     }
   ],
   "color": "#6bc4f7",
+  "iconOverlays": [
+    {
+      "if": {
+        "and": [
+          "service:bicycle:cleaning~*",
+          "amenity!=bike_wash"
+        ]
+      },
+      "then": {
+        "render": "./assets/layers/bike_cleaning/bike_cleaning_icon.svg",
+        "roaming": true
+      },
+      "badge": true
+    }
+  ],
+  "titleIcons": [
+    {
+      "render": "<img src='./assets/layers/bike_cleaning/bike_cleaning_icon.svg'/>",
+      "roaming": true
+    }
+  ],
   "tagRenderings": [
-    "images"
+    "images",
+    {
+      "question": "How much does it cost to use the cleaning service?",
+      "render": "Using the cleaning service costs {charge}",
+      "condition": "amenity!=bike_wash",
+      "freeform": {
+        "key": "service:bicycle:cleaning:charge",
+        "addExtraTags": [
+          "service:bicycle:cleaning:fee=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
+          "then": "The cleaning service is free to use"
+        },
+        {
+          "if": "service:bicycle:cleaning:fee=no&",
+          "then": "Free to use",
+          "hideInAnswer": true
+        },
+        {
+          "if": "service:bicycle:cleaning:fee=yes",
+          "then": "The cleaning service has a fee"
+        }
+      ],
+      "roaming": true
+    },
+    {
+      "question": "How much does it cost to use the cleaning service?",
+      "render": "Using the cleaning service costs {charge}",
+      "condition": "amenity=bike_wash",
+      "freeform": {
+        "key": "charge",
+        "addExtraTags": [
+          "fee=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "fee=no&charge=",
+          "then": "Free to use cleaning service"
+        },
+        {
+          "if": "fee=no&",
+          "then": "Free to use",
+          "hideInAnswer": true
+        },
+        {
+          "if": "fee=yes",
+          "then": "The cleaning service has a fee"
+        }
+      ],
+      "roaming": false
+    }
   ]
 }

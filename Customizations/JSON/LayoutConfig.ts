@@ -75,7 +75,7 @@ export default class LayoutConfig {
                         return SharedTagRenderings.SharedTagRendering[tr];
                     }
                 }
-                return new TagRenderingConfig(tr, `${this.id}.roaming_renderings[${i}]`);
+                return new TagRenderingConfig(tr, undefined,`${this.id}.roaming_renderings[${i}]`);
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
@@ -102,9 +102,23 @@ export default class LayoutConfig {
             }
 
             // @ts-ignore
-            return new LayerConfig(layer, this.roamingRenderings, `${this.id}.layers[${i}]`);
+            return new LayerConfig(layer, `${this.id}.layers[${i}]`)
         });
+        
+        // ALl the layers are constructed, let them share tags in piece now!
+        const roaming : {r, source: LayerConfig}[] = []
+        for (const layer of this.layers) {
+            roaming.push({r: layer.GetRoamingRenderings(), source:layer});
+        }
 
+        for (const layer of this.layers) {
+            for (const r of roaming) {
+                if(r.source == layer){
+                    continue;
+                }
+                layer.AddRoamingRenderings(r.r);
+            }
+        }
 
         this.clustering = {
             maxZoom: 16,
