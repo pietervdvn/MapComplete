@@ -1,17 +1,21 @@
 
 .featureinfobox {
     display: flex;
-   flex-direction: column; 
+    flex-direction: column;
 }
 
 .featureinfobox-title {
-    font-size: xx-large;    
+    font-size: xx-large;
+    word-break: break-word;
 }
-.featureinfobox-icons img{
+
+.featureinfobox-icons img {
     max-height: 1.5em;
     width: 1.5em;
 }
+
 .featureinfobox-icons {
+    margin-left: auto;
 }
 
 .featureinfobox-icons span {
@@ -19,30 +23,64 @@
     padding-right: 0.1em;
 }
 
-.featureinfobox-titlebar{
+.featureinfobox-titlebar {
+    border-bottom: 2px solid var(--foreground-color);
+    box-shadow: 0 10px 10px -10px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.featureinfobox-titlebar-title {
     font-size: large;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid var(--foreground-color);
+    flex-grow: 2;
+    word-break: break-all;
 }
+
+.featureinfobox-back-to-the-map {
+    padding: 0.5em;
+    border-radius: 999em;
+    margin-right: 0.4em;
+    width: 2em;
+    height: 2em;
+    background: var(--subtle-detail-color);
+    flex-shrink: 0;
+}
+
+.featureinfobox-back-to-the-map svg {
+    width: 1.75em;
+    height: 1.75em;
+    margin-left: 0.15em;
+    margin-top: 0.15em
+}
+
+.featureinfobox-back-to-the-map svg path{
+    stroke: var(--subtle-detail-color-contrast) !important;
+}
+
 
 .featureinfobox-content {
     display: block;
     max-height: 75vh;
     overflow-y: auto;
-    overflow-x: hidden;
     padding-top: 1em;
+    width:100%;
+    overflow-x: hidden;
 }
+
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
     .featureinfobox-content {
-        display:block;
+        display: block;
         max-height: unset !important;
         overflow-y: auto;
     }
 }
 
-@media only screen and (max-height: 600px) and (min-width: 600px){
+@media only screen and (max-height: 600px) and (min-width: 600px) {
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
     .featureinfobox-content {
         position: relative;
@@ -51,7 +89,7 @@
         max-height: unset !important;
         height: 100vh;
     }
-    
+
     .answer {
         max-width: 48% !important;
         padding-right: 0.3em;
@@ -63,8 +101,8 @@
         padding-right: 0.3em;
         box-sizing: border-box;
     }
-    
-    .first-rendering{
+
+    .first-rendering {
         position: absolute;
         left: 50%;
         width: 94%;
@@ -129,7 +167,7 @@
     border-radius: 0.5em;
     display: inline-block;
     width: 100%;
-    margin:0;
+    margin: 0;
     margin-left: -2em;
     box-sizing: border-box;
     padding: 0.5em;
@@ -161,7 +199,7 @@ input:checked + label .question-option-with-border {
 
 .login-button-friendly {
     display: inline-block;
-    background-color:var(--catch-detail-color);
+    background-color: var(--catch-detail-color);
     color: var(--catch-detail-color-contrast);
     border: solid var(--catch-detail-color-contrast) 2px;
     padding: 0.2em 0.6em;
@@ -204,7 +242,34 @@ input:checked + label .question-option-with-border {
     float: right;
 }
 
-.edit-button svg path{
+.edit-button svg path {
     stroke: var(--foreground-color) !important;
     fill: var(--foreground-color) !important;
+}
+
+
+
+.to-the-map span {
+    font-size: xx-large;
+}
+
+.to-the-map {
+    background: var(--catch-detail-color);
+    height: var(--return-to-the-map-height);
+    color: var(--catch-detail-color-contrast);
+    font-weight: bold;
+    pointer-events: all;
+    cursor: pointer;
+    padding-top: 0.4em;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    max-height: var(--return-to-the-map-height);
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.to-the-map-inner{
+    font-size: xx-large;
 }

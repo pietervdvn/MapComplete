@@ -53,7 +53,9 @@ export default class TagRenderingQuestion extends UIElement {
         this._inputElement = this.GenerateInputElement()
         const self = this;
         const save = () => {
+            console.log("Save clicked!")
             const selection = self._inputElement.GetValue().data;
+            console.log("Selection is", selection)
             if (selection) {
                 (State.state?.changes ?? new Changes())
                     .addTag(tags.data.id, selection, tags);
@@ -65,7 +67,7 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state.osmConnection)
+        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state?.osmConnection)
             .onClick(save)
 
 

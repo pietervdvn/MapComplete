@@ -1,7 +1,5 @@
-import {UIElement} from "../UI/UIElement";
-UIElement.runningFromConsole = true;
-import Img from "../UI/Base/Img";
-Img.runningFromConsole = true;
+import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
@@ -12,7 +10,6 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
-import {Utils} from "../Utils";
 import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
@@ -42,7 +39,20 @@ new T([
         equal(notReg.matches([{k:"x",v:""}]), true)
 
         equal(notReg.matches([]), true)
+        
+        
+        const noMatch = FromJSON.Tag("key!=value") as Tag;
+        equal(noMatch.matches([{k:"key",v:"value"}]), false)
+        equal(noMatch.matches([{k:"key",v:"otherValue"}]), true)
+        equal(noMatch.matches([{k:"key",v:""}]), true)
+        equal(noMatch.matches([{k:"otherKey",v:""}]), true)
 
+        
+        const multiMatch = FromJSON.Tag("vending~.*bicycle_tube.*") as Tag;
+        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"something;bicycle_tube"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube;something"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"xyz;bicycle_tube;something"}]), true)
 
     })],
     ["Is equivalent test", (() => {
@@ -94,7 +104,7 @@ new T([
                 }
             ],
             condition: "x="
-        }, "");
+        }, undefined,"");
 
         equal(undefined, tr.GetRenderValue({"foo": "bar"}));
         equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
@@ -147,7 +157,7 @@ new T([
                 ]
             };
 
-            const constr = new TagRenderingConfig(def, "test");
+            const constr = new TagRenderingConfig(def,  undefined,"test");
             const uiEl = new EditableTagRendering(new UIEventSource<any>(
                 {leisure: "park", "access": "no"}), constr
             );

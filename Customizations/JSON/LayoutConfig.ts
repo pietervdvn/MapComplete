@@ -4,6 +4,7 @@ import LayerConfig from "./LayerConfig";
 import {LayoutConfigJson} from "./LayoutConfigJson";
 import SharedLayers from "../SharedLayers";
 import SharedTagRenderings from "../SharedTagRenderings";
+import {Utils} from "../../Utils";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -24,11 +25,11 @@ export default class LayoutConfig {
     public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
     public readonly layers: LayerConfig[];
-    public readonly clustering?: { 
+    public readonly clustering?: {
         maxZoom: number,
         minNeededElements: number
     };
-    
+
     public readonly hideFromOverview: boolean;
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
@@ -74,34 +75,62 @@ export default class LayoutConfig {
                         return SharedTagRenderings.SharedTagRendering[tr];
                     }
                 }
-                return new TagRenderingConfig(tr, `${this.id}.roaming_renderings[${i}]`);
+                return new TagRenderingConfig(tr, undefined,`${this.id}.roaming_renderings[${i}]`);
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.layers = json.layers.map((layer, i) => {
-            if (typeof layer === "string"){
+            if (typeof layer === "string") {
                 if (SharedLayers.sharedLayers[layer] !== undefined) {
                     return SharedLayers.sharedLayers[layer];
                 } else {
                     throw "Unkown fixed layer " + layer;
                 }
             }
-            return new LayerConfig(layer, this.roamingRenderings, `${this.id}.layers[${i}]`);
-        });
+            // @ts-ignore
+            if (layer.builtin !== undefined) {
+                // @ts-ignore
+                const name = layer.builtin;
+                console.warn("Overwriting!")
+                const shared = SharedLayers.sharedLayersJson[name];
+                if (shared === undefined) {
+                    throw "Unkown fixed layer " + name;
+                }
+                // @ts-ignore
+                layer = Utils.Merge(layer.override, shared);
+            }
 
+            // @ts-ignore
+            return new LayerConfig(layer, `${this.id}.layers[${i}]`)
+        });
+        
+        // ALl the layers are constructed, let them share tags in piece now!
+        const roaming : {r, source: LayerConfig}[] = []
+        for (const layer of this.layers) {
+            roaming.push({r: layer.GetRoamingRenderings(), source:layer});
+        }
+
+        for (const layer of this.layers) {
+            for (const r of roaming) {
+                if(r.source == layer){
+                    continue;
+                }
+                layer.AddRoamingRenderings(r.r);
+            }
+        }
 
         this.clustering = {
             maxZoom: 16,
             minNeededElements: 250
         };
-        if(json.clustering){
+        if (json.clustering) {
             this.clustering = {
-                maxZoom : json.clustering.maxZoom ?? 18,
+                maxZoom: json.clustering.maxZoom ?? 18,
                 minNeededElements: json.clustering.minNeededElements ?? 1
             }
             for (const layer of this.layers) {
-                if(layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY){
-                    console.error("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id,"does not respect this for layout",this.id);
+                if (layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY) {
+                    console.error("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id, "does not respect this for layout", this.id);
                 }
             }
         }

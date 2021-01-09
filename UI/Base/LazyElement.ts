@@ -6,9 +6,11 @@ export default class LazyElement extends UIElement {
     private _content: UIElement = undefined;
 
     public Activate: () => void;
+    private _loadingContent: string;
 
-    constructor(content: (() => UIElement)) {
+    constructor(content: (() => UIElement), loadingContent = "Rendering...") {
         super();
+        this._loadingContent = loadingContent;
         this.dumbMode = false;
         const self = this;
         this.Activate = () => {
@@ -21,7 +23,7 @@ export default class LazyElement extends UIElement {
 
     InnerRender(): string {
         if (this._content === undefined) {
-            return "Rendering...";
+            return this._loadingContent;
         }
         return this._content.InnerRender();
     }

@@ -6,7 +6,6 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
-import {Overpass} from "./Logic/Osm/Overpass";
 
 let defaultLayout = "bookcases"
 // --------------------- Special actions based on the parameters -----------------
@@ -77,8 +76,8 @@ if (layoutFromBase64.startsWith("wiki:")) {
             data = data.substr(start, 
                 data.indexOf("<div class=\"printfooter\">") - start)
             data = data.substr(0, data.lastIndexOf("</p>"))
-            data = data.substr(startTrigger.length + 3);
-            
+            data = data.substr( data.indexOf("<p>") + 3) 
+            console.log(data)
             try {
                 const parsed = JSON.parse(data);
                 parsed["id"] = layoutFromBase64
@@ -88,6 +87,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
                     .SetClass("clickable")
                     .AttachTo("centermessage");
+                console.error("Could not parse the text", data)
                 throw e;
             }
         },

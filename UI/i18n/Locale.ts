@@ -1,6 +1,6 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
+import {Utils} from "../../Utils";
 
 
 export default class Locale {
@@ -9,7 +9,7 @@ export default class Locale {
 
     private static setup() {
         const source = LocalStorageSource.Get('language', "en");
-        if (!UIElement.runningFromConsole) {
+        if (!Utils.runningFromConsole) {
             // @ts-ignore
             window.setLanguage = function (language: string) {
                 source.setData(language)

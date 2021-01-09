@@ -7,6 +7,9 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 
+/**
+ * Shows the panel with all layers and a toggle for each of them
+ */
 export default class LayerSelection extends UIElement {
 
     private readonly _checkboxes: UIElement[];
@@ -33,7 +36,7 @@ export default class LayerSelection extends UIElement {
 
             const zoomStatus = new VariableUiElement(State.state.locationControl.map(location => {
                 if (location.zoom < layer.layerDef.minzoom) {
-                    return Translations.t.general.zoomInToSeeThisLayer
+                    return Translations.t.general.layerSelection.zoomInToSeeThisLayer
                         .SetClass("alert")
                         .SetStyle("display: block ruby;width:min-content;")
                         .Render();
@@ -41,9 +44,12 @@ export default class LayerSelection extends UIElement {
                 return ""
             }))
             const style = "display:flex;align-items:center;"
+            const styleWhole = "display:flex; flex-wrap: wrap"
             this._checkboxes.push(new CheckBox(
-                new Combine([icon, name, zoomStatus]).SetStyle(style),
-                new Combine([iconUnselected, "<del>", name, "</del>", zoomStatus]).SetStyle(style),
+                new Combine([new Combine([icon, name]).SetStyle(style), zoomStatus])
+                    .SetStyle(styleWhole),
+                new Combine([new Combine([iconUnselected, "<del>", name, "</del>"]).SetStyle(style), zoomStatus])
+                    .SetStyle(styleWhole),
                 layer.isDisplayed)
                 .SetStyle("margin:0.3em;")
             );

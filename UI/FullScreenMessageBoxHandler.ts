@@ -1,5 +1,4 @@
 import {UIElement} from "./UIElement";
-import Translations from "./i18n/Translations";
 import State from "../State";
 import Combine from "./Base/Combine";
 
@@ -8,24 +7,11 @@ import Combine from "./Base/Combine";
  */
 export default class FullScreenMessageBox extends UIElement {
 
-    private readonly returnToTheMap: UIElement;
     private _content: UIElement;
 
-    constructor(onClear: (() => void)) {
+    constructor() {
         super(State.state.fullScreenMessage);
         this.HideOnEmpty(true);
-
-        this.returnToTheMap =
-            new Combine([
-                // Wrapped another time to prevent the value of 'em' to fluctuate
-                Translations.t.general.returnToTheMap.Clone()
-            ])
-                .onClick(() => {
-                    State.state.fullScreenMessage.setData(undefined);
-                    onClear();
-                })
-                .SetClass("to-the-map")
-
     }
 
 
@@ -33,18 +19,15 @@ export default class FullScreenMessageBox extends UIElement {
         if (State.state.fullScreenMessage.data === undefined) {
             return "";
         }
-        this._content = State.state.fullScreenMessage.data;
-        const innerWrap = new Combine([this._content]).SetClass("fullscreenmessage-content")
-
-        return new Combine([innerWrap, this.returnToTheMap])
-            .SetStyle("display:block; height: 100%;")
-            .Render();
+        this._content = State.state.fullScreenMessage.data.content;
+        return new Combine([this._content]).SetClass("fullscreenmessage-content").Render();
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
+        // This is a bit out of place, and it is a fix specifically for the featureinfobox-titlebar
         const height = htmlElement.getElementsByClassName("featureinfobox-titlebar")[0]?.clientHeight ?? 0;
-        htmlElement.style.setProperty("--variable-title-height", height+"px")
+        htmlElement.style.setProperty("--variable-title-height", height + "px")
     }
 
 

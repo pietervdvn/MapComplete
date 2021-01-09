@@ -40,7 +40,7 @@ export default class TagRenderingPreview extends UIElement {
             rendering =
                 new VariableUiElement(es.map(tagRenderingConfig => {
                         try {
-                            const tr = new EditableTagRendering(self.previewTagValue, new TagRenderingConfig(tagRenderingConfig, "preview"));
+                            const tr = new EditableTagRendering(self.previewTagValue, new TagRenderingConfig(tagRenderingConfig, undefined,"preview"));
                             return tr.Render();
                         } catch (e) {
                             return new Combine(["Could not show this tagrendering:", e.message]).Render();

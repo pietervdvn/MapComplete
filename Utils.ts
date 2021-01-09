@@ -1,8 +1,16 @@
-import {UIElement} from "./UI/UIElement";
 import * as $ from "jquery"
+import Constants from "./Models/Constants";
+
 
 export class Utils {
 
+    /**
+     * In the 'deploy'-step, some code needs to be run by ts-node.
+     * However, ts-node crashes when it sees 'document'. When running from console, we flag this and disable all code where document is needed.
+     * This is a workaround and yet another hack
+     */
+    public static runningFromConsole = false;
+    
     public static readonly assets_path = "./assets/svg/";
 
     static EncodeXmlValue(str) {
@@ -59,7 +67,7 @@ export class Utils {
     }
 
     static DoEvery(millis: number, f: (() => void)) {
-        if (UIElement.runningFromConsole) {
+        if (Utils.runningFromConsole) {
             return;
         }
         window.setTimeout(
@@ -134,15 +142,6 @@ export class Utils {
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
-    public static isRetina(): boolean {
-        if (UIElement.runningFromConsole) {
-            return;
-        }
-        // The cause for this line of code: https://github.com/pietervdvn/MapComplete/issues/115
-        // See https://stackoverflow.com/questions/19689715/what-is-the-best-way-to-detect-retina-support-on-a-device-using-javascript
-        return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2));
-    }
-
     // Date will be undefined on failure
     public static changesetDate(id: number, action: ((isFound: Date) => void)): void {
         $.getJSON("https://www.openstreetmap.org/api/0.6/changeset/" + id,
@@ -175,6 +174,45 @@ export class Utils {
             if(prototype[objectKey] === undefined){
                 console.error("Key ", objectKey, "might be not supported (in context",context,")")
             }   
+        }
+    }
+    
+    static Merge(source: any, target: any){
+        target = JSON.parse(JSON.stringify(target));
+        source = JSON.parse(JSON.stringify(source));
+        for (const key in source) {
+            const sourceV = source[key];
+            const targetV = target[key]
+            if(typeof sourceV === "object"){
+                if(targetV === undefined){
+                    target[key] = sourceV;
+                }else{
+                    Utils.Merge(sourceV, targetV);
+                }
+                
+            }else{
+                target[key] = sourceV;
+            }
+            
+        }
+        return target;
+    }
+    
+    static ToMuchTags(source: any, toCheck: any, context: string){
+
+        for (const key in toCheck) {
+            const toCheckV = toCheck[key];
+            const sourceV = source[key];
+            if(sourceV === undefined){
+                console.error("Probably a wrong tag in ", context, ": ", key, "might be wrong")
+            }
+            if(typeof toCheckV === "object"){
+                if(typeof sourceV !== "object"){
+                    console.error("Probably a wrong value in ", context, ": ", key, "is a fixed value in the source")
+                }else{
+                    Utils.ToMuchTags(sourceV, toCheckV, context+"."+key);
+                }
+            }
         }
         
     }

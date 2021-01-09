@@ -107,7 +107,8 @@
   "titleIcons": [
     {
       "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
-      "condition":  "operator=De Fietsambassade Gent"
+      "condition":  "operator=De Fietsambassade Gent",
+      "roaming": true
     },
     "defaults"
   ],

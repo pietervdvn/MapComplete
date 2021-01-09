@@ -40,6 +40,8 @@ import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import FeatureDuplicatorPerLayer from "./Logic/FeatureSource/FeatureDuplicatorPerLayer";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
+import Hash from "./Logic/Web/Hash";
+import HistoryHandling from "./Logic/Actors/HistoryHandling";
 
 export class InitUiElements {
 
@@ -157,11 +159,17 @@ export class InitUiElements {
                         layer
                     );
 
-                    State.state.fullScreenMessage.setData(featureBox);
+                    State.state.fullScreenMessage.setData({
+                        content: featureBox,
+                        hashText: feature.properties.id.replace("/", "_"),
+                        titleText: featureBox.title
+                    });
                     break;
                 }
             }
         );
+
+        new HistoryHandling(Hash.hash, State.state.fullScreenMessage);
 
         InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
             new UserBadge().AttachTo('userbadge');
@@ -172,9 +180,7 @@ export class InitUiElements {
         });
 
 
-        new FullScreenMessageBox(() => {
-            State.state.selectedElement.setData(undefined)
-        }).AttachTo("messagesboxmobile");
+        new FullScreenMessageBox().AttachTo("messagesboxmobile");
 
 
         InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
@@ -279,20 +285,23 @@ export class InitUiElements {
         })
 
         State.state.selectedElement.addCallback(selected => {
-            if(selected !== undefined){
+            if (selected !== undefined) {
                 checkbox.isEnabled.setData(false);
             }
         })
 
 
         const fullOptions2 = new FullWelcomePaneWithTabs();
-        State.state.fullScreenMessage.setData(fullOptions2)
+        if (Hash.hash.data === undefined) {
+            State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
+            
+        }
 
         Svg.help_svg()
             .SetClass("open-welcome-button")
             .SetClass("shadow")
             .onClick(() => {
-                State.state.fullScreenMessage.setData(fullOptions2)
+                State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");
 
 
@@ -326,7 +335,7 @@ export class InitUiElements {
             const fullScreen = new LayerControlPanel();
             checkbox.isEnabled.addCallback(isEnabled => {
                 if (isEnabled) {
-                    State.state.fullScreenMessage.setData(fullScreen);
+                    State.state.fullScreenMessage.setData({content: fullScreen, hashText: "layer-select"});
                 }
             })
             State.state.fullScreenMessage.addCallback(latest => {

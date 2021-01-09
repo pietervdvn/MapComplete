@@ -1,16 +1,16 @@
-import Img from "../UI/Base/Img"
-import {UIElement} from "../UI/UIElement";
-Img.runningFromConsole = true;
 // We HAVE to mark this while importing
-UIElement.runningFromConsole = true;
+import {Utils} from "../Utils";
+Utils.runningFromConsole = true;
 
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
 import svg2img from 'promise-svg2img';
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+
+
 
 function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());

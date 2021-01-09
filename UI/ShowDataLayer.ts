@@ -43,7 +43,7 @@ export default class ShowDataLayer {
             const feats = features.data.map(ff => ff.feature);
             let geoLayer = self.CreateGeojsonLayer(feats)
             if (layoutToUse.clustering.minNeededElements <= features.data.length) {
-                    const cl = window["L"];
+                    const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
                     const cluster = cl.markerClusterGroup({ disableClusteringAtZoom: layoutToUse.clustering.maxZoom });
                     cluster.addLayer(geoLayer);
                     geoLayer = cluster;
@@ -68,6 +68,16 @@ export default class ShowDataLayer {
                 action();
             }
         });
+        Hash.hash.addCallback(id => {
+            // This is a bit of an edge case: if the hash becomes an id to search, we have to show the corresponding popup
+            if(State.state.selectedElement !== undefined){
+                return; // Something is already selected, we don't have to apply this fix
+            }
+            const action = self._onSelectedTrigger[id];
+            if(action){
+                action();
+            }
+        })
 
     }
 
@@ -114,9 +124,10 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer));
+        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer),
+            "<div style='height: 90vh'>Rendering</div>");
         popup.setContent(uiElement.Render());
-        popup.on('popupclose', () => {
+        popup.on('remove', () => {
            State.state.selectedElement.setData(undefined); 
         });
         leafletLayer.bindPopup(popup);
@@ -126,21 +137,24 @@ export default class ShowDataLayer {
 
         leafletLayer.on("click", (e) => {
             // We set the element as selected...
-         //   uiElement.Activate();
+            uiElement.Activate();
             State.state.selectedElement.setData(feature);
         });
         
         const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
         this._onSelectedTrigger[id]
          = () => {
+            if(popup.isOpen()){
+                return;
+            }
             leafletLayer.openPopup();
             uiElement.Activate();
+            State.state.selectedElement.setData(feature);
         }
-        
-
-        if (feature.properties.id.replace(/\//g, "_") === Hash.Get().data) {
+        this._onSelectedTrigger[feature.properties.id.replace("/","_")] = this._onSelectedTrigger[id];
+        if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data) {
             // This element is in the URL, so this is a share link
-            // We already open it
+            // We open the relevant popup straight away
             uiElement.Activate();
             popup.setContent(uiElement.Render());
 

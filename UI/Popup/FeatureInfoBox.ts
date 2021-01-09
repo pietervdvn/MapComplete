@@ -6,17 +6,14 @@ import QuestionBox from "./QuestionBox";
 import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
-import {FixedUiElement} from "../Base/FixedUiElement";
+import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
+import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class FeatureInfoBox extends UIElement {
-    private _tags: UIEventSource<any>;
-    private _layerConfig: LayerConfig;
+    private _component: UIElement;
 
-    private _title: UIElement;
-    private _titleIcons: UIElement;
-    private _renderings: UIElement[];
-    private _questionBox: UIElement;
-
+    public title: UIElement ;
+    
     constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
@@ -25,14 +22,12 @@ export default class FeatureInfoBox extends UIElement {
         if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
-        this._tags = tags;
-        this._layerConfig = layerConfig;
 
 
-        this._title = layerConfig.title === undefined ? undefined :
-            new TagRenderingAnswer(tags, layerConfig.title)
-                .SetClass("featureinfobox-title");
-        this._titleIcons = new Combine(
+        const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
+            .SetClass("featureinfobox-title");
+        this.title = title;
+        const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
             .SetClass("featureinfobox-icons");
 
@@ -42,7 +37,7 @@ export default class FeatureInfoBox extends UIElement {
         }
 
         let questionBoxIsUsed = false;
-        this._renderings = layerConfig.tagRenderings.map(tr => {
+        const renderings = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
                 questionBoxIsUsed = true;
                 // This is the question box!
@@ -50,25 +45,26 @@ export default class FeatureInfoBox extends UIElement {
             }
             return new EditableTagRendering(tags, tr);
         });
-        this._renderings[0]?.SetClass("first-rendering");
+        renderings[0]?.SetClass("first-rendering");
         if (!questionBoxIsUsed) {
-            this._renderings.push(questionBox);
+            renderings.push(questionBox);
         }
+        const tail = new Combine([]).SetClass("only-on-mobile");
+
+        const content = new Combine([
+                ...renderings,
+                tail.SetClass("featureinfobox-tail")
+            ]
+        )
+        const titleBar = new Combine([
+            new Combine([title, titleIcons]).SetClass("featureinfobox-titlebar-title")
+        ])
+
+        this._component = new ScrollableFullScreen(titleBar, content)
     }
 
     InnerRender(): string {
-        return new Combine([
-            new Combine([this._title, this._titleIcons])
-                .SetClass("featureinfobox-titlebar"),
-            new Combine([
-                    ...this._renderings,
-                    this._questionBox,
-                    new FixedUiElement("").SetClass("featureinfobox-tail")
-                ]
-            ).SetClass("featureinfobox-content"),
-        ]).SetClass("featureinfobox")
-            .Render();
+        return this._component.Render();
     }
-
 
 }

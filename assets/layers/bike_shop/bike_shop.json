@@ -186,15 +186,6 @@
       "condition": "service:bicycle:diy=yes",
       "render": "<img src='./assets/layers/bike_shop/tools.svg'/>"
     },
-    {
-      "condition": {
-        "or": [
-          "service:bicycle:cleaning=yes",
-          "service:bicycle:cleaning=diy"
-        ]
-      },
-      "render": "<img src='./assets/layers/bike_shop/bike_cleaning.svg'/>"
-    },
     "defaults"
   ],
   "description": {

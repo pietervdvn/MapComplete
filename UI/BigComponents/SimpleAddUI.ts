@@ -13,47 +13,175 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class SimpleAddUI extends UIElement {
-    private readonly _addButtons: UIElement[];
-    
-    private _loginButton : UIElement;
-    
-    private _confirmPreset: UIEventSource<{
+    private readonly _loginButton: UIElement;
+
+    private readonly _confirmPreset: UIEventSource<{
         description: string | UIElement,
         name: string | UIElement,
         icon: UIElement,
         tags: Tag[],
         layerToAddTo: {
             layerDef: LayerConfig,
-            isDisplayed: UIEventSource<boolean> }
+            isDisplayed: UIEventSource<boolean>
+        }
     }>
         = new UIEventSource(undefined);
-    private confirmButton: UIElement = undefined;
-    private _confirmDescription: UIElement = undefined;
-    private openLayerControl: UIElement;
-    private cancelButton: UIElement;
-    private goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(), 
-        Translations.t.general.goToInbox, {url:"https://www.openstreetmap.org/messages/inbox", newTab: false});
+
+    private _component: UIElement;
+
+    private readonly openLayerControl: UIElement;
+    private readonly cancelButton: UIElement;
+    private readonly goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(),
+        Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor() {
-        super(State.state.locationControl);
+        super(State.state.locationControl.map(loc => loc.zoom));
+        const self = this;
         this.ListenTo(Locale.language);
         this.ListenTo(State.state.osmConnection.userDetails);
         this.ListenTo(State.state.layerUpdater.runningQuery);
         this.ListenTo(this._confirmPreset);
         this.ListenTo(State.state.locationControl);
-        
+        State.state.filteredLayers.data?.map(layer => {
+            self.ListenTo(layer.isDisplayed)
+        })
+
         this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
-        
-        this._addButtons = [];
+
         this.SetStyle("font-size:large");
-        
+        this.cancelButton = new SubtleButton(Svg.close_ui(),
+            Translations.t.general.cancel
+        ).onClick(() => {
+            self._confirmPreset.setData(undefined);
+        })
+
+        this.openLayerControl = new SubtleButton(Svg.layers_ui(),
+            Translations.t.general.add.openLayerControl
+        ).onClick(() => {
+            State.state.fullScreenMessage.setData(undefined);
+            State.state.layerControlIsOpened.setData(true);
+        })
+    }
+
+    InnerRender(): string {
+
+        this._component = new ScrollableFullScreen(
+            Translations.t.general.add.title,
+            this.CreateContent()
+        )
+        return this._component.Render();
+
+    }
+
+    private CreatePresetsPanel(): UIElement {
+        const userDetails = State.state.osmConnection.userDetails;
+        if (userDetails === undefined) {
+            return undefined;
+        }
+
+        if (!userDetails.data.loggedIn) {
+            return this._loginButton;
+        }
+
+        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < Constants.userJourney.addNewPointWithUnreadMessagesUnlock) {
+            return new Combine([
+                Translations.t.general.readYourMessages.Clone().SetClass("alert"),
+                this.goToInboxButton
+            ]);
+
+        }
+
+        if (userDetails.data.csCount < Constants.userJourney.addNewPointsUnlock) {
+            return new Combine(["<span class='alert'>",
+                Translations.t.general.fewChangesBefore,
+                "</span>"]);
+        }
+
+        if (State.state.locationControl.data.zoom < Constants.userJourney.minZoomLevelToAddNewPoints) {
+            return Translations.t.general.add.zoomInFurther.SetClass("alert")
+        }
+
+        if (State.state.layerUpdater.runningQuery.data) {
+            return Translations.t.general.add.stillLoading
+        }
+
+        const presetButtons = this.CreatePresetButtons()
+        return new Combine(presetButtons).SetClass("add-popup-all-buttons")
+    }
+
+
+    private CreateContent(): UIElement {
+        const confirmPanel = this.CreateConfirmPanel();
+        if (confirmPanel !== undefined) {
+            return confirmPanel;
+        }
+
+        let intro: UIElement = Translations.t.general.add.intro;
+
+        let testMode: UIElement = undefined;
+        if (State.state.osmConnection?.userDetails?.data?.dryRun) {
+            testMode = new Combine([
+                "<span class='alert'>",
+                "Test mode - changes won't be saved",
+                "</span>"
+            ]);
+        }
+
+        let presets = this.CreatePresetsPanel();
+        return new Combine([intro, testMode, presets])
+
+
+    }
+
+    private CreateConfirmPanel(): UIElement {
+        const preset = this._confirmPreset.data;
+        if (preset === undefined) {
+            return undefined;
+        }
+
+        const confirmButton = new SubtleButton(preset.icon,
+            new Combine([
+                "<b>",
+                Translations.t.general.add.confirmButton.Subs({category: preset.name}),
+                "</b>"]));
+        confirmButton.onClick(this.CreatePoint(preset.tags));
+
+        if (!this._confirmPreset.data.layerToAddTo.isDisplayed.data) {
+            return new Combine([
+                Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
+                    .SetClass("alert"),
+                this.openLayerControl,
+
+                this.cancelButton
+            ]);
+        }
+
+        let tagInfo = "";
+        const csCount = State.state.osmConnection.userDetails.data.csCount;
+        if (csCount > Constants.userJourney.tagsVisibleAt) {
+            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
+            tagInfo = `<br/>More information about the preset: ${tagInfo}`
+        }
+
+        return new Combine([
+            Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
+            State.state.osmConnection.userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
+            confirmButton,
+            this.cancelButton,
+            preset.description,
+            tagInfo
+
+        ])
+
+    }
+
+    private CreatePresetButtons() {
+        const allButtons = [];
         const self = this;
         for (const layer of State.state.filteredLayers.data) {
-
-            this.ListenTo(layer.isDisplayed);
-
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
@@ -77,13 +205,6 @@ export default class SimpleAddUI extends UIElement {
                         ])
                     ).onClick(
                         () => {
-                            self.confirmButton = new SubtleButton(icon,
-                                new Combine([
-                                    "<b>",
-                                    Translations.t.general.add.confirmButton.Subs({category: preset.title}),
-                                    "</b>"]));
-                            self.confirmButton.onClick(self.CreatePoint(preset.tags));
-                            self._confirmDescription = preset.description;
                             self._confirmPreset.setData({
                                 tags: preset.tags,
                                 layerToAddTo: layer,
@@ -94,23 +215,10 @@ export default class SimpleAddUI extends UIElement {
                             self.Update();
                         }
                     )
-
-
-                this._addButtons.push(button);
+                allButtons.push(button);
             }
         }
-
-        this.cancelButton = new SubtleButton(Svg.close_ui(),
-            Translations.t.general.cancel
-        ).onClick(() => {
-            self._confirmPreset.setData(undefined);
-        })
-
-        this.openLayerControl = new SubtleButton(Svg.layers_ui(),
-            Translations.t.general.add.openLayerControl
-        ).onClick(() => {
-            State.state.layerControlIsOpened.setData(true);
-        })
+        return allButtons;
     }
 
     private CreatePoint(tags: Tag[]) {
@@ -119,87 +227,6 @@ export default class SimpleAddUI extends UIElement {
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             State.state.selectedElement.setData(feature);
         }
-    }
-
-    InnerRender(): string {
-
-        const userDetails = State.state.osmConnection.userDetails;
-
-        if (this._confirmPreset.data !== undefined) {
-            
-            if(!this._confirmPreset.data.layerToAddTo.isDisplayed.data){
-                return new Combine([
-                    Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
-                        .SetClass("alert"),
-                    this.openLayerControl,
-                    
-                    this.cancelButton
-                ]).Render();
-            }
-
-            let tagInfo = "";
-            const csCount = State.state.osmConnection.userDetails.data.csCount;
-            if (csCount > Constants.userJourney.tagsVisibleAt) {
-                tagInfo = this._confirmPreset.data .tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
-                tagInfo = `<br/>More information about the preset: ${tagInfo}`
-            }
-
-            return new Combine([
-                Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
-                userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
-                this.confirmButton,
-                this.cancelButton,
-                this._confirmDescription,
-                tagInfo
-
-            ]).Render();
-
-
-        }
-
-
-        let header: UIElement = Translations.t.general.add.header;
-
-
-        if (userDetails === undefined) {
-            return header.Render();
-        }
-
-        if (!userDetails.data.loggedIn) {
-            return new Combine([header, this._loginButton]).Render()
-        }
-
-        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < Constants.userJourney.addNewPointWithUnreadMessagesUnlock) {
-            return new Combine([header,
-                Translations.t.general.readYourMessages.Clone().SetClass("alert"),
-                this.goToInboxButton
-            ]).Render();
-
-        }
-
-        if (userDetails.data.dryRun) {
-            header = new Combine([header,
-                "<span class='alert'>",
-                "Test mode - changes won't be saved",
-                "</span>"
-            ]);
-        }
-
-        if (userDetails.data.csCount < Constants.userJourney.addNewPointsUnlock) {
-            return new Combine([header, "<span class='alert'>",
-                Translations.t.general.fewChangesBefore,
-                "</span>"]).Render();
-        }
-
-        if (State.state.locationControl.data.zoom < Constants.userJourney.minZoomLevelToAddNewPoints) {
-            return new Combine([header, Translations.t.general.add.zoomInFurther.SetClass("alert")]).Render()
-        }
-
-        if (State.state.layerUpdater.runningQuery.data) {
-            return new Combine([header, Translations.t.general.add.stillLoading]).Render()
-        }
-
-        return header.Render() + new Combine(this._addButtons).SetClass("add-popup-all-buttons").Render();
     }
 
 

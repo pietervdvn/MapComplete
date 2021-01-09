@@ -17,7 +17,7 @@ export default class StrayClickHandler {
         selectedElement: UIEventSource<string>,
         filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
         leafletMap: UIEventSource<L.Map>,
-        fullscreenMessage: UIEventSource<UIElement>,
+        fullscreenMessage: UIEventSource<{content: UIElement, hashText: string}>,
         uiToShow: (() => UIElement)) {
         this._uiToShow = uiToShow;
         const self = this;
@@ -51,7 +51,7 @@ export default class StrayClickHandler {
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
-                fullscreenMessage.setData(self._uiToShow());
+                fullscreenMessage.setData({content: self._uiToShow(), hashText: "new"});
                 uiElement.Update();
             });
         });

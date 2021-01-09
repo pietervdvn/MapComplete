@@ -196,8 +196,8 @@ export default class OpeningHoursVisualization extends UIElement {
             // Closed!
             const opensAtDate = oh.getNextChange();
             if(opensAtDate === undefined){
-                const comm = oh.getComment();
-                if(comm !== undefined){
+                const comm = oh.getComment() ?? oh.getUnknown();
+                if(!!comm){
                     return new FixedUiElement(comm).SetClass("ohviz-closed").Render();
                 }
                 

@@ -4,15 +4,16 @@ import State from "../../State";
 import Combine from "../Base/Combine";
 import LanguagePicker from "../LanguagePicker";
 import Translations from "../i18n/Translations";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
-
-export default class WelcomeMessage extends UIElement {
+export default class ThemeIntroductionPanel extends UIElement {
     private languagePicker: UIElement;
 
     private readonly description: UIElement;
     private readonly plzLogIn: UIElement;
     private readonly welcomeBack: UIElement;
     private readonly tail: UIElement;
+    private readonly loginStatus: UIElement;
 
 
     constructor() {
@@ -32,20 +33,24 @@ export default class WelcomeMessage extends UIElement {
                 });
         this.welcomeBack = Translations.t.general.welcomeBack;
         this.tail = layout.descriptionTail;
+        this.loginStatus = new VariableUiElement(
+            State.state.osmConnection.userDetails.map(
+                userdetails => {
+                    if (State.state.featureSwitchUserbadge.data) {
+                        return "";
+                    }
+                    return (userdetails.loggedIn ? this.welcomeBack : this.plzLogIn).Render();
+                }
+            )
+            
+        )
     }
 
     InnerRender(): string {
-
-        let loginStatus = undefined;
-        if (State.state.featureSwitchUserbadge.data) {
-            loginStatus = (State.state.osmConnection.userDetails.data.loggedIn ? this.welcomeBack : 
-                this.plzLogIn);
-        }
-
         return new Combine([
             this.description,
             "<br/><br/>",
-            loginStatus,
+            this.loginStatus,
             this.tail,
             "<br/>",
             this.languagePicker
