@@ -7,11 +7,20 @@
     "render": {
       "en": "Bicycle tube vending machine"
     },
-    "mappings": [{
-      "if": "name~*",
-      "then": "Bicycle tube vending machine {name}"
-    }]
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "Bicycle tube vending machine {name}"
+      }
+    ]
   },
+  "titleIcons": [
+    {
+      "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
+      "condition": "operator=De Fietsambassade Gent"
+    },
+    "defaults"
+  ],
   "icon": {
     "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
   },
