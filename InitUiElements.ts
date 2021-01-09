@@ -292,7 +292,10 @@ export class InitUiElements {
 
 
         const fullOptions2 = new FullWelcomePaneWithTabs();
-        State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
+        if (Hash.hash.data === undefined) {
+            State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
+            
+        }
 
         Svg.help_svg()
             .SetClass("open-welcome-button")

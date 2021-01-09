@@ -47,6 +47,12 @@ new T([
         equal(noMatch.matches([{k:"key",v:""}]), true)
         equal(noMatch.matches([{k:"otherKey",v:""}]), true)
 
+        
+        const multiMatch = FromJSON.Tag("vending~.*bicycle_tube.*") as Tag;
+        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"something;bicycle_tube"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube;something"}]), true)
+        equal(multiMatch.matches([{k:"vending",v:"xyz;bicycle_tube;something"}]), true)
 
     })],
     ["Is equivalent test", (() => {

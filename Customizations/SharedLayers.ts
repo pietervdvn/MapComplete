@@ -11,7 +11,7 @@ import * as cycling_themed_objects from "../assets/layers/cycling_themed_object/
 import * as bike_shops from "../assets/layers/bike_shop/bike_shop.json"
 import * as bike_cleaning from "../assets/layers/bike_cleaning/bike_cleaning.json"
 import * as bicycle_library from "../assets/layers/bicycle_library/bicycle_library.json"
-
+import * as bicycle_tube_vending_machine from "../assets/layers/bicycle_tube_vending_machine/bicycle_tube_vending_machine.json"
 import * as maps from "../assets/layers/maps/maps.json"
 import * as information_boards from "../assets/layers/information_board/information_board.json"
 import * as direction from "../assets/layers/direction/direction.json"
@@ -39,6 +39,7 @@ export default class SharedLayers {
         cycling_themed_objects,
         bike_shops,
         bike_cleaning,
+        bicycle_tube_vending_machine,
         maps,
         direction,
         information_boards,

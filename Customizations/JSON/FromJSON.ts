@@ -11,7 +11,17 @@ export class FromJSON {
     }
 
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
-        if (json === undefined) {
+        try{
+            return this.TagUnsafe(json, context);
+        }catch(e){
+            console.error("Could not parse tag", json,"in context",context,"due to ", e)
+            throw e;
+        }
+    }
+
+    private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
+
+            if (json === undefined) {
             throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
         }
         if (typeof (json) == "string") {

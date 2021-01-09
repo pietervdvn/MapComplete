@@ -12,7 +12,7 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 export default class FeatureInfoBox extends UIElement {
     private _component: UIElement;
 
-    public title: UIEventSource<string> ;
+    public title: UIElement ;
     
     constructor(
         tags: UIEventSource<any>,
