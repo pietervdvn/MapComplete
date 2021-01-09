@@ -132,7 +132,20 @@
           "then": "Schwalbe tubes are sold here"
         }
       ],
-      "multiAnswer": true
+      "multiAnswer": true,
+      "condition": "operator!=Schwalbe"
+    },
+    {
+      "question": "Who maintains this vending machine?",
+      "mappings": [
+        {
+          "if": "operator=Schwalbe",
+          "then": "Maintained by Schwalbe"
+        }
+      ],
+      "freeform": {
+        "key": "operator"
+      }
     },
     {
       "question": "Are other bicycle bicycle accessories sold here?",
