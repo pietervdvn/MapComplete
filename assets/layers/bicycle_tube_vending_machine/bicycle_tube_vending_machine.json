@@ -1,0 +1,151 @@
+{
+  "id": "bicycle_tube_vending_machine",
+  "name": {
+    "en": "Bicycle tube vending machine"
+  },
+  "title": {
+    "render": {
+      "en": "Bicycle tube vending machine"
+    },
+    "mappings": [{
+      "if": "name~*",
+      "then": "Bicycle tube vending machine {name}"
+    }]
+  },
+  "icon": {
+    "render": "pin:#ffffff;./assets/layers/bicycle_tube_vending_machine/pinIcon.svg"
+  },
+  "iconOverlays": [
+    {
+      "if": {
+        "or": [
+          "operational_status=broken",
+          "operational_status=closed"
+        ]
+      },
+      "then": "close:#c33",
+      "badge": true
+    }
+  ],
+  "iconSize": "50,50,bottom",
+  "overpassTags": {
+    "and": [
+      "amenity=vending_machine",
+      "vending~.*bicycle_tube.*"
+    ]
+  },
+  "minzoom": 13,
+  "wayHandling": 2,
+  "presets": [
+    {
+      "title": {
+        "en": "Bicycle tube vending machine"
+      },
+      "tags": [
+        "amenity=vending_machine",
+        "vending=bicycle_tube",
+        "vending:bicycle_tube=yes"
+      ]
+    }
+  ],
+  "color": "#6bc4f7",
+  "tagRenderings": [
+    "images",
+    {
+      "#": "Still in use?",
+      "question": {
+        "en": "Is this vending machine still operational?"
+      },
+      "render": {
+        "en": "The operational status is <i>{operational_status</i>"
+      },
+      "freeform": {
+        "key": "operational_status"
+      },
+      "mappings": [
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This vending machine works"
+          }
+        },
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This vending machine is broken"
+          }
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This vending machine is closed"
+          }
+        }
+      ]
+    },
+    {
+      "question": "How much does a bicycle tube cost?",
+      "render": "A bicycle tube costs {charge}",
+      "freeform": {
+        "key": "charge"
+      }
+    },
+    {
+      "question": "How can one pay at this tube vending machine?",
+      "mappings": [
+        {
+          "if": "payment:coins=yes",
+          "then": "Payment with coins is possible"
+        },
+        {
+          "if": "payment:notes=yes",
+          "then": "Payment with notes is possible"
+        },
+        {
+          "if": "payment:cards=yes",
+          "then": "Payment with cards is possible"
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "question": "Which brand of tubes are sold here?",
+      "freeform": {
+        "key": "brand"
+      },
+      "mappings": [
+        {
+          "if": "brand=Continental",
+          "then": "Continental tubes are sold here"
+        },
+        {
+          "if": "brand=Schwalbe",
+          "then": "Schwalbe tubes are sold here"
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "question": "Are other bicycle bicycle accessories sold here?",
+      "mappings": [
+        {
+          "if": "vending:bicycle_light=yes",
+          "then": "Bicycle lights are sold here"
+        },
+        {
+          "if": "vending:gloves=yes",
+          "then": "Gloves are sold here"
+        },
+        {
+          "if": "vending:bicycle_repair_kit=yes",
+          "then": "Bicycle repair kits are sold here"
+        },
+        {
+          "if": "vending:bicycle_pump=yes",
+          "then": "Bicycle pumps are sold here"
+        }
+      ],
+      "multiAnswer": true
+    }
+  ]
+}
