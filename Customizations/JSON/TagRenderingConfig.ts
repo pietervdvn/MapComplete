@@ -93,6 +93,10 @@ export default class TagRenderingConfig {
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
             throw `A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
+        
+        if(this.freeform && this.render === undefined){
+            throw `Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+        }
 
         if (json.multiAnswer) {
             if ((this.mappings?.length ?? 0) === 0) {

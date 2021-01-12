@@ -97,6 +97,7 @@
             "key": "opening_hours",
             "type": "opening_hours"
           },
+          "render": "{opening_hours_table(opening_hours)}",
           "question": {
             "nl": "Op welke uren is deze speeltuin toegankelijk?"
           },

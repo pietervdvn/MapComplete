@@ -122,6 +122,7 @@
       "freeform": {
         "key": "brand"
       },
+      "render": "{brand} tubes are sold here",
       "mappings": [
         {
           "if": "brand=Continental",
@@ -137,10 +138,15 @@
     },
     {
       "question": "Who maintains this vending machine?",
+      "render": "This vending machine is maintained by {operator}",
       "mappings": [
         {
           "if": "operator=Schwalbe",
           "then": "Maintained by Schwalbe"
+        },
+        {
+          "if": "operator=Continental",
+          "then": "Maintained by Continental"
         }
       ],
       "freeform": {
@@ -165,6 +171,10 @@
         {
           "if": "vending:bicycle_pump=yes",
           "then": "Bicycle pumps are sold here"
+        },
+        {
+          "if": "vending:bicycle_lock=yes",
+          "then": "Bicycle locks are sold here"
         }
       ],
       "multiAnswer": true
