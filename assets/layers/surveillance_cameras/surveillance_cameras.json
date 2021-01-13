@@ -188,6 +188,10 @@
         "en": "On which level is this camera located?",
         "nl": "Op welke verdieping bevindt deze camera zich?"
       },
+      "render": {
+        "en": "Located on level {level}",
+        "nl": "Bevindt zich op verdieping {level}"
+      },
       "freeform": {
         "key": "level",
         "type": "nat"
@@ -286,6 +290,10 @@
       "question": {
         "en": "How is this camera placed?",
         "nl": "Hoe is deze camera geplaatst?"
+      },
+      "render": {
+        "en": "Mounting method: {mount}",
+        "nl": "Montage: {mount}"
       },
       "freeform": {
         "key": "camera:mount"
