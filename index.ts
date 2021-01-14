@@ -105,6 +105,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
     // This is the default case: a builtin theme
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
+    document.getElementById("decoration-desktop").remove();
     State.state = new State(undefined);
     document.getElementById("messagesboxmobile").remove();
     new MoreScreen(true)
