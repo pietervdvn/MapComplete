@@ -227,7 +227,7 @@ function createLandingPage(layout: LayoutConfig) {
     }
 
     let output = template
-        .replace(`./manifest.manifest`, `./${enc(layout.id)}.webmanifest`)
+        .replace("./manifest.manifest",`${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
@@ -251,7 +251,7 @@ if (! existsSync(generatedDir)) {
     mkdirSync(generatedDir)
 }
 
-const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap"]
+const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap","custom"]
 const all = AllKnownLayouts.allSets;
 
 let wikiPage = "{|class=\"wikitable sortable\"\n" +
@@ -278,12 +278,12 @@ for (const layoutName in all) {
     const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
     writeFile(manifestLocation, manif, err);
 
+    // Create a landing page for the given theme
     const landing = createLandingPage(layout);
     writeFile(enc(layout.id) + ".html", landing, err)
 
     wikiPage += "\n"+generateWikiEntry(layout);
 }
-
 wikiPage += "\n|}"
 
 writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {

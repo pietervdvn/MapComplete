@@ -24,10 +24,10 @@
   "maintainer": "MapComplete",
   "icon": "./assets/themes/cyclofix/logo.svg",
   "version": "0",
-  "startLat": 50.8465573,
+  "startLat": 0,
   "defaultBackgroundId": "CartoDB.Voyager",
-  "startLon": 4.3516970,
-  "startZoom": 16,
+  "startLon": 0,
+  "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "./assets/themes/cyclofix/logo.svg",
   "layers": [

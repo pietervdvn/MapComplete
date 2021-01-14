@@ -11,7 +11,7 @@ export class Translation extends UIElement {
 
     constructor(translations: object, context?: string) {
         super(Locale.language)
-        if(translations === undefined){
+        if (translations === undefined) {
             throw `Translation without content (${context})`
         }
         let count = 0;
@@ -19,11 +19,40 @@ export class Translation extends UIElement {
             count++;
         }
         this.translations = translations;
-        if(count === 0){
+        if (count === 0) {
             throw `No translations given in the object (${context})`
         }
     }
 
+    get txt(): string {
+        if (this.translations["*"]) {
+            return this.translations["*"];
+        }
+        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
+        if (txt !== undefined) {
+            return txt;
+        }
+        const en = this.translations["en"];
+        if (en !== undefined) {
+            return en;
+        }
+        for (const i in this.translations) {
+            return this.translations[i]; // Return a random language
+        }
+        console.error("Missing language ", Locale.language.data, "for", this.translations)
+        return "";
+    }
+
+    public SupportedLanguages(): string[] {
+        const langs = []
+        for (const translationsKey in this.translations) {
+            if(translationsKey === "#"){
+                continue;
+            }
+            langs.push(translationsKey)
+        }
+        return langs;
+    }
 
     public Subs(text: any): Translation {
         const newTranslations = {};
@@ -56,27 +85,6 @@ export class Translation extends UIElement {
         return new Translation(newTranslations);
 
     }
-
-
-    get txt(): string {
-        if (this.translations["*"]) {
-            return this.translations["*"];
-        }
-        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
-        if (txt !== undefined) {
-            return txt;
-        }
-        const en = this.translations["en"];
-        if (en !== undefined) {
-            return en;
-        }
-        for (const i in this.translations) {
-            return this.translations[i]; // Return a random language
-        }
-        console.error("Missing language ", Locale.language.data, "for", this.translations)
-        return "";
-    }
-
 
     InnerRender(): string {
         return this.txt

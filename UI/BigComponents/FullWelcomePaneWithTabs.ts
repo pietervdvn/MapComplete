@@ -78,7 +78,6 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         ]).SetClass("only-on-mobile")
             .onClick(() => State.state.fullScreenMessage.setData(undefined));
 
-        tabbedPart.SetStyle("overflow-y: auto; max-height: calc( 100vh - 4em);display:block;")
         this._component = new Combine([tabbedPart, backButton]).SetStyle("width:100%;");
     }
 

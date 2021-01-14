@@ -125,11 +125,11 @@ export default class State {
         this.layoutToUse.setData(layoutToUse);
 
         const zoom = State.asFloat(
-            QueryParameters.GetQueryParameter("z", "" + layoutToUse.startZoom, "The initial/current zoom level")
+            QueryParameters.GetQueryParameter("z", "" + layoutToUse?.startZoom, "The initial/current zoom level")
                 .syncWith(LocalStorageSource.Get("zoom")));
-        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse.startLat, "The initial/current latitude")
+        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse?.startLat, "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
-        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse.startLon, "The initial/current longitude of the app")
+        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse?.startLon, "The initial/current longitude of the app")
             .syncWith(LocalStorageSource.Get("lon")));
 
 
@@ -192,7 +192,7 @@ export default class State {
             testParam === "true",
             QueryParameters.GetQueryParameter("oauth_token", undefined,
                 "Used to complete the login"),
-            layoutToUse.id,
+            layoutToUse?.id,
             true
         );
 

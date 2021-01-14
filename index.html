@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="vendor/MarkerCluster.css"/>
     <link rel="stylesheet" href="vendor/MarkerCluster.Default.css"/>
     <!-- $$$CUSTOM-CSS -->
+    <!-- $$$MANIFEST -->
     <link rel="manifest" href="./manifest.manifest">
+
     <link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">
 
     <meta property="og:type" content="website">
@@ -35,7 +37,7 @@
 </head>
 <body>
 
-<div style="position: absolute; left: 1em; bottom: 1em; width:35vh; height:35vh;"
+<div style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;"
      id="decoration-desktop">
     <!-- A nice decoration while loading or on errors -->
     <!-- DECORATION 0 START -->
@@ -63,7 +65,6 @@
 </div>
 
 <div id="centermessage">Loading MapComplete, hang on...</div>
-<div id="top-right"></div>
 
 <span id="geolocate-button"></span>
 <div id="leafletDiv"></div>

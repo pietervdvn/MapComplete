@@ -162,6 +162,13 @@
     }
   },
   "general": {
+    "index": {
+      "#": "This text is shown above the theme buttons when no theme is loaded",
+      "en": "<h3>Welcome to MapComplete</h3> MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.<br/><br/>Pick a theme below to get started.",
+      "nl": "<h3>Welkom bij MapComplete</h3> MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.<br/><br/>Kies hieronder een thema om te beginnen."
+    },
+    
+    
     "loginWithOpenStreetMap": {
       "en": "Login with OpenStreetMap",
       "ca": "Entra a OpenStreetMap",

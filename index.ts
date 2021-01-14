@@ -6,8 +6,10 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
+import MoreScreen from "./UI/BigComponents/MoreScreen";
+import State from "./State";
 
-let defaultLayout = "bookcases"
+let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------
 // @ts-ignore
 if (location.href.startsWith("http://buurtnatuur.be")) {
@@ -21,7 +23,7 @@ if (location.href.indexOf("buurtnatuur.be") >= 0) {
 }
 
 const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
-if(customCssQP.data !== undefined && customCssQP.data !== ""){
+if (customCssQP.data !== undefined && customCssQP.data !== "") {
     Utils.LoadCustomCss(customCssQP.data);
 }
 
@@ -42,17 +44,16 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 // ----------------- SELECT THE RIGHT QUESTSET -----------------
 
 
-
 const path = window.location.pathname.split("/").slice(-1)[0];
 if (path !== "index.html" && path !== "") {
     defaultLayout = path;
-    if(path.endsWith(".html")){
+    if (path.endsWith(".html")) {
         defaultLayout = path.substr(0, path.length - 5);
     }
     console.log("Using layout", defaultLayout);
 }
-defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout,"The layout to load into MapComplete").data;
-let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()] ?? AllKnownLayouts["all"];
+defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout, "The layout to load into MapComplete").data;
+let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()];
 
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
@@ -73,10 +74,10 @@ if (layoutFromBase64.startsWith("wiki:")) {
             // Hacky McHackFace has been working here. This'll probably break in the future
             const startTrigger = "<div class=\"mw-parser-output\">";
             const start = data.indexOf(startTrigger);
-            data = data.substr(start, 
+            data = data.substr(start,
                 data.indexOf("<div class=\"printfooter\">") - start)
             data = data.substr(0, data.lastIndexOf("</p>"))
-            data = data.substr( data.indexOf("<p>") + 3) 
+            data = data.substr(data.indexOf("<p>") + 3)
             console.log(data)
             try {
                 const parsed = JSON.parse(data);
@@ -100,8 +101,16 @@ if (layoutFromBase64.startsWith("wiki:")) {
 } else if (layoutFromBase64 !== "false") {
     layoutToUse = InitUiElements.LoadLayoutFromHash(userLayoutParam);
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout, location.hash.substr(1));
-} else {
+} else if (layoutToUse !== undefined) {
+    // This is the default case: a builtin theme
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
+} else {
+    State.state = new State(undefined);
+    document.getElementById("messagesboxmobile").remove();
+    new MoreScreen(true)
+        .SetStyle("background: var(--background-color); display: block; margin-left: 5vw; margin-right: 5vw; pointer-events: all;")
+        .AttachTo("topleft-tools");
+    
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
     e.preventDefault();

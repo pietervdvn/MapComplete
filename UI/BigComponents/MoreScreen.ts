@@ -10,12 +10,17 @@ import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
 import Constants from "../../Models/Constants";
+import LanguagePicker from "../LanguagePicker";
 
 export default class MoreScreen extends UIElement {
+    private readonly _onMainScreen: boolean;
+    
+    private _component: UIElement;
 
     
-    constructor() {
+    constructor(onMainScreen: boolean = false) {
         super(State.state.locationControl);
+        this._onMainScreen = onMainScreen;
         this.ListenTo(State.state.osmConnection.userDetails);
         this.ListenTo(State.state.installedThemes);
     }
@@ -35,7 +40,7 @@ export default class MoreScreen extends UIElement {
                 return undefined;
             }
         }
-        if (layout.id === State.state.layoutToUse.data.id) {
+        if (layout.id === State.state.layoutToUse.data?.id) {
             return undefined;
         }
 
@@ -115,12 +120,23 @@ export default class MoreScreen extends UIElement {
             }
         }
 
+        let intro : UIElement= tr.intro;
+        if(this._onMainScreen){
+           intro = new Combine([
+               
+           LanguagePicker.CreateLanguagePicker(Translations.t.general.index.SupportedLanguages())
+               .SetStyle("position: absolute; right: 1.5em; top: 1.5em;"),
+            Translations.t.general.index.SetStyle("margin-top: 2em;display:block; margin-bottom: 1em;")
+           ]) 
+        }
+        
 
-        return new VerticalCombine([
-            tr.intro,
+        this._component = new VerticalCombine([
+          intro,
             new VerticalCombine(els),
             tr.streetcomplete
-        ]).Render();
+        ]);
+        return this._component.Render();
     }
 
 }
