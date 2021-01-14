@@ -41,6 +41,7 @@ export default class ShowDataLayer {
             const mp = leafletMap.data;
 
             const feats = features.data.map(ff => ff.feature);
+
             let geoLayer = self.CreateGeojsonLayer(feats)
             if (layoutToUse.clustering.minNeededElements <= features.data.length) {
                     const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
@@ -79,6 +80,7 @@ export default class ShowDataLayer {
             }
         })
 
+        update();
     }
 
 
@@ -94,7 +96,7 @@ export default class ShowDataLayer {
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
 
-        const tagSource = State.state.allElements.getEventSourceFor(feature);
+        const tagSource = State.state.allElements.addOrGetElement(feature)
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
 
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));

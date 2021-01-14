@@ -18,7 +18,7 @@ export default class ScrollableFullScreen extends UIElement {
             State.state.selectedElement.setData(undefined);
         }).SetClass("only-on-mobile")
             .SetClass("featureinfobox-back-to-the-map")
-        title.SetClass("featureinfobox-title")
+        title.SetStyle("width: 100%; display: block;")
         const ornament = new Combine([new Ornament().SetStyle("height:5em;")]).SetClass("only-on-mobile")
 
         this._component = new Combine([

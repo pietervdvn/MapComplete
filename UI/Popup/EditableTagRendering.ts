@@ -55,7 +55,6 @@ export default class EditableTagRendering extends UIElement {
         }
         if (this._configuration.multiAnswer) {
             const atLeastOneMatch = this._configuration.mappings.some(mp =>TagUtils.MatchesMultiAnswer(mp.if, this._tags.data));
-            console.log("SOME MATCH?", atLeastOneMatch)
             if (!atLeastOneMatch) {
                 return "";
             }

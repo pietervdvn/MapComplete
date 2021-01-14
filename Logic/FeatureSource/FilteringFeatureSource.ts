@@ -74,6 +74,7 @@ export default class FilteringFeatureSource implements FeatureSource {
                 update();
             });
 
+        update();
 
     }
 

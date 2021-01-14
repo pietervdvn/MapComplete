@@ -9,15 +9,20 @@ export default class FeatureSourceMerger implements FeatureSource {
     constructor(sources: FeatureSource[]) {
         this._sources = sources;
         const self = this;
-        for (const source of sources) {
-            source.features.addCallback(() => self.Update());
+        for (let i = 0; i < sources.length; i++){
+            let source = sources[i];
+            source.features.addCallback(() => {
+                self.Update();
+            });
         }
+        this.Update();
     }
 
     private Update() {
         let all = {}; // Mapping 'id' -> {feature, freshness}
         for (const source of this._sources) {
             if(source?.features?.data === undefined){
+                console.log("Not defined");
                 continue;
             }
             for (const f of source.features.data) {

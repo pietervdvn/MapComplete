@@ -130,7 +130,7 @@ export default class UpdateFromOverpass implements FeatureSource{
         const w = Math.max(-180, bounds.getWest() - diff);
         const queryBounds = {north: n, east: e, south: s, west: w};
 
-        const z = Math.floor(this._location.data.zoom);
+        const z = Math.floor(this._location.data.zoom ?? 0);
 
         this.runningQuery.setData(true);
         const self = this;

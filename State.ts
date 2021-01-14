@@ -125,11 +125,11 @@ export default class State {
         this.layoutToUse.setData(layoutToUse);
 
         const zoom = State.asFloat(
-            QueryParameters.GetQueryParameter("z", "" + layoutToUse?.startZoom, "The initial/current zoom level")
+            QueryParameters.GetQueryParameter("z", "" +(layoutToUse?.startZoom ?? 1), "The initial/current zoom level")
                 .syncWith(LocalStorageSource.Get("zoom")));
-        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + layoutToUse?.startLat, "The initial/current latitude")
+        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + (layoutToUse?.startLat ?? 0), "The initial/current latitude")
             .syncWith(LocalStorageSource.Get("lat")));
-        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + layoutToUse?.startLon, "The initial/current longitude of the app")
+        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + (layoutToUse?.startLon ?? 0), "The initial/current longitude of the app")
             .syncWith(LocalStorageSource.Get("lon")));
 
 
@@ -188,6 +188,9 @@ export default class State {
 
         const testParam = QueryParameters.GetQueryParameter("test", "false",
             "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org").data;
+       
+       
+       
         this.osmConnection = new OsmConnection(
             testParam === "true",
             QueryParameters.GetQueryParameter("oauth_token", undefined,
@@ -245,18 +248,6 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-
-        if (State.runningFromConsole) {
-            console.warn("running from console - not initializing map. Assuming test.html");
-            return;
-        }
-
-
-        if (document.getElementById("leafletDiv") === null) {
-            console.warn("leafletDiv not found - not initializing map. Assuming test.html");
-            return;
-        }
-
     }
 
     private static asFloat(source: UIEventSource<string>): UIEventSource<number> {

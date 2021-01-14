@@ -27,21 +27,16 @@ import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
 import MetaTagging from "./Logic/MetaTagging";
-import FeatureSourceMerger from "./Logic/FeatureSource/FeatureSourceMerger";
-import RememberingSource from "./Logic/FeatureSource/RememberingSource";
-import FilteringFeatureSource from "./Logic/FeatureSource/FilteringFeatureSource";
-import WayHandlingApplyingFeatureSource from "./Logic/FeatureSource/WayHandlingApplyingFeatureSource";
-import NoOverlapSource from "./Logic/FeatureSource/NoOverlapSource";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
 import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
 import FeatureSwitched from "./UI/Base/FeatureSwitched";
-import FeatureDuplicatorPerLayer from "./Logic/FeatureSource/FeatureDuplicatorPerLayer";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import HistoryHandling from "./Logic/Actors/HistoryHandling";
+import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 
 export class InitUiElements {
 
@@ -294,7 +289,7 @@ export class InitUiElements {
         const fullOptions2 = new FullWelcomePaneWithTabs();
         if (Hash.hash.data === undefined) {
             State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
-            
+
         }
 
         Svg.help_svg()
@@ -405,19 +400,8 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
+        const source = new FeaturePipeline(flayers, updater);
 
-
-        const source =
-            new FilteringFeatureSource(
-                flayers,
-                State.state.locationControl,
-                new FeatureSourceMerger([
-                    new RememberingSource(new WayHandlingApplyingFeatureSource(flayers,
-                        new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, updater))
-                    )),
-                    new FeatureDuplicatorPerLayer(flayers, State.state.changes)
-                ])
-            );
 
         source.features.addCallback((featuresFreshness: { feature: any, freshness: Date }[]) => {
             let features = featuresFreshness.map(ff => ff.feature);
