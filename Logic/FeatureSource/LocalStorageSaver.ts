@@ -5,12 +5,13 @@
  */
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 
 export default class LocalStorageSaver implements FeatureSource {
     public static readonly storageKey: string = "cached-features";
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
-    constructor(source: FeatureSource) {
+    constructor(source: FeatureSource, layout: UIEventSource<LayoutConfig>) {
         this.features = source.features;
 
         this.features.addCallbackAndRun(features => {
@@ -22,7 +23,9 @@ export default class LocalStorageSaver implements FeatureSource {
             }
 
             try {
-                localStorage.setItem(LocalStorageSaver.storageKey, JSON.stringify(features));
+                const key = LocalStorageSaver.storageKey+layout.data.id
+                localStorage.setItem(key, JSON.stringify(features));
+                console.log("Saved ",features.length, "elements to",key)
             } catch (e) {
                 console.warn("Could not save the features to local storage:", e)
             }

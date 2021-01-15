@@ -91,7 +91,6 @@ export default class LayoutConfig {
             if (layer.builtin !== undefined) {
                 // @ts-ignore
                 const name = layer.builtin;
-                console.warn("Overwriting!")
                 const shared = SharedLayers.sharedLayersJson[name];
                 if (shared === undefined) {
                     throw "Unkown fixed layer " + name;

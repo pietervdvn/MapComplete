@@ -161,7 +161,7 @@ class BBox{
     }
 
     static get(feature) {
-        if (feature.bbox === undefined) {
+        if (feature.bbox?.overlapsWith === undefined) {
 
             if (feature.geometry.type === "MultiPolygon") {
                 let coordinates = [];

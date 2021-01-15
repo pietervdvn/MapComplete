@@ -65,6 +65,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
         .AttachTo("centermessage");
     const cleanUrl = `https://wiki.openstreetmap.org/wiki/${themeName}`;
     const url = `https://cors-anywhere.herokuapp.com/` + cleanUrl; // ~NOT~ VERY SAFE AND HACKER-PROOF!
+    // We use cors-anywhere because the wiki from openstreetmap is locked-down :(
     /*/
     const url = cleanUrl; // MUCH SAFER! //*/
 
@@ -81,7 +82,8 @@ if (layoutFromBase64.startsWith("wiki:")) {
             console.log(data)
             try {
                 const parsed = JSON.parse(data);
-                parsed["id"] = layoutFromBase64
+                // Overwrite the id to the wiki:value
+                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-') 
                 const layout = new LayoutConfig(parsed);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
@@ -92,8 +94,11 @@ if (layoutFromBase64.startsWith("wiki:")) {
                 throw e;
             }
         },
-    }).fail(() => {
-        new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?`)
+    }).fail((_, textstatus, error) => {
+        console.error("Could not download the wiki theme:", textstatus, error)
+        new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?<br/>`+
+            error +
+            "<a href='https://${window.location.host}/'>Go back</a>")
             .SetClass("clickable")
             .AttachTo("centermessage");
     });
@@ -105,6 +110,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
     // This is the default case: a builtin theme
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
+    // We fall through: no theme loaded: just show a few buttons
     document.getElementById("decoration-desktop").remove();
     State.state = new State(undefined);
     document.getElementById("messagesboxmobile").remove();

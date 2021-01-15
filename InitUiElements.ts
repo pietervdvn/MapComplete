@@ -45,7 +45,7 @@ export class InitUiElements {
                    layoutDefinition: string = "") {
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
-            new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/index.html'>Go back</a>`).AttachTo("centermessage").onClick(() => {
+            new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
             });
             throw "Incorrect layout"
         }
@@ -400,10 +400,13 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-        const source = new FeaturePipeline(flayers, updater);
+        const source = new FeaturePipeline(flayers, updater, state.layoutToUse);
 
 
-        source.features.addCallback((featuresFreshness: { feature: any, freshness: Date }[]) => {
+        source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
+            if(featuresFreshness === undefined){
+                return;
+            }
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addElement(feature);

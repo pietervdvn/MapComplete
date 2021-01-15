@@ -4,11 +4,11 @@ import {Utils} from "../../Utils";
 
 export class OsmPreferences {
 
-    private auth: any;
-    private userDetails: UIEventSource<UserDetails>;
-
     public preferences = new UIEventSource<any>({});
     public preferenceSources: any = {}
+    private auth: any;
+    private userDetails: UIEventSource<UserDetails>;
+    private longPreferences = {};
 
     constructor(auth, osmConnection: OsmConnection) {
         this.auth = auth;
@@ -16,8 +16,6 @@ export class OsmPreferences {
         const self = this;
         osmConnection.OnLoggedIn(() => self.UpdatePreferences());
     }
-
-    private longPreferences = {};
 
     /**
      * OSM preferences can be at most 255 chars
@@ -43,8 +41,8 @@ export class OsmPreferences {
             if (str === undefined || str === "") {
                 return;
             }
-            if(str === null){
-                console.error("Deleting "+allStartWith);
+            if (str === null) {
+                console.error("Deleting " + allStartWith);
                 let count = parseInt(length.data);
                 for (let i = 0; i < count; i++) {
                     // Delete all the preferences
@@ -99,7 +97,7 @@ export class OsmPreferences {
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
         key = prefix + key;
-        if(key.length >= 255){
+        if (key.length >= 255) {
             throw "Preferences: key length to big";
         }
         if (this.preferenceSources[key] !== undefined) {
@@ -158,14 +156,14 @@ export class OsmPreferences {
         if (v === undefined || v === "") {
             this.auth.xhr({
                 method: 'DELETE',
-                path: '/api/0.6/user/preferences/' + k,
+                path: '/api/0.6/user/preferences/' + encodeURIComponent(k),
                 options: {header: {'Content-Type': 'text/plain'}},
             }, function (error) {
                 if (error) {
                     console.log("Could not remove preference", error);
                     return;
                 }
-                console.log("Preference ",k,"removed!");
+                console.log("Preference ", k, "removed!");
 
             });
             return;
@@ -174,7 +172,7 @@ export class OsmPreferences {
 
         this.auth.xhr({
             method: 'PUT',
-            path: '/api/0.6/user/preferences/' + k,
+            path: '/api/0.6/user/preferences/' + encodeURIComponent(k),
             options: {header: {'Content-Type': 'text/plain'}},
             content: v
         }, function (error) {
