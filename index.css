@@ -304,8 +304,6 @@ a {
     z-index: 5000;
     transition: all 500ms linear;
     pointer-events: none;
-    /* Shadow offset */
-    padding: 0.5em 10px 0 0.5em;
 }
 
 .welcomeMessage {

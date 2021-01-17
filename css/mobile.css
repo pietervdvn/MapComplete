@@ -95,11 +95,6 @@ Contains tweaks for small screens
         width: calc(100vw - 5px);
     }
 
-    #topleft-tools {
-        padding: 0.2em !important;
-        padding-top: 0.3em !important;
-    }
-
     #userbadge {
         margin-bottom: 0.3em;
     }
