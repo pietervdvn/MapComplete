@@ -131,10 +131,10 @@ export default class MoreScreen extends UIElement {
         }
         
 
-        this._component = new VerticalCombine([
           intro,
-            new VerticalCombine(els),
             tr.streetcomplete
+        this._component = new Combine([
+            new Combine(els),
         ]);
         return this._component.Render();
     }
