@@ -131,6 +131,8 @@ export default class MoreScreen extends UIElement {
 
            LanguagePicker.CreateLanguagePicker(Translations.t.general.index.SupportedLanguages())
                .SetClass("absolute top-2 right-3 dropdown-ui-element-2226"),
+            //    todo add logo above text
+            //    new FixedUiElement(`<img class="h-24 w-24" src="./assets/svg/logo.svg" alt="MapComplete Logo">`),
                Translations.t.general.index.SetClass("sm:text-center lg:text-left block m-6 mt-8")
            ])
         }
