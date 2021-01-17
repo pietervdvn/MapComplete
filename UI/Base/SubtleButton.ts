@@ -24,6 +24,8 @@ export class SubtleButton extends UIElement{
             this.image = imageUrl;
         }
 
+        // Reset the loading message once things are loaded
+        document.getElementById('centermessage').innerText = '';
     }
 
     InnerRender(): string {
