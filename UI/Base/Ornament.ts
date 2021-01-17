@@ -16,10 +16,10 @@ export default class Ornament extends UIElement {
         const self = this;
         this.onClick(() => {
             let c = Number(index.data);
-            if(isNaN(c)){
+            if (isNaN(c)) {
                 c = 0;
             }
-            self._index.setData(""+ ((c + 1) % (Ornament.ornamentsCount + 1)));
+            self._index.setData("" + ((c + 1) % (Ornament.ornamentsCount + 1)));
 
         })
     }
@@ -35,11 +35,11 @@ export default class Ornament extends UIElement {
     }
 
     InnerRender(): string {
-        if(this._index.data == "0"){
+        const svg = Svg.All[`Ornament-Horiz-${Number(this._index.data) - 1}.svg`];
+        if (this._index.data == "0" || svg === undefined) {
             return "<svg></svg>"
         }
-        console.log(this._index.data)
-        return Svg.All[`Ornament-Horiz-${Number(this._index.data) - 1}.svg`]
+        return svg;
     }
 
 }
