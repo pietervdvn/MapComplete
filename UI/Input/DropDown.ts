@@ -14,10 +14,14 @@ export class DropDown<T> extends InputElement<T> {
 
     constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
-                value: UIEventSource<T> = undefined) {
+                value: UIEventSource<T> = undefined,
+                label_class: string,
+                select_class: string) {
         super(undefined);
         this._value = value ?? new UIEventSource<T>(undefined);
         this._label = Translations.W(label);
+        this._label_class = label_class || '';
+        this._select_class = select_class || '';
         this._values = values.map(v => {
             return {
                 value: v.value,
@@ -29,10 +33,8 @@ export class DropDown<T> extends InputElement<T> {
             this.ListenTo(v.shown._source);
         }
         this.ListenTo(this._value);
-        
-        this.onClick(() => {}) // by registering a click, the click event is consumed and doesn't bubble furter to other elements, e.g. checkboxes
-        
 
+        this.onClick(() => {}) // by registering a click, the click event is consumed and doesn't bubble furter to other elements, e.g. checkboxes
     }
 
     GetValue(): UIEventSource<T> {
@@ -57,13 +59,13 @@ export class DropDown<T> extends InputElement<T> {
         for (let i = 0; i < this._values.length; i++) {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
         }
-        return "<form>" +
-            "<label for='dropdown-" + this.id + "'>" + this._label.Render() + " </label>" +
-            "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
 
+        return `<form>` +
+            `<label class='${this._label_class}' for='dropdown-${this.id}'>${this._label.Render()}</label>` +
+            `<select class='${this._select_class}' name='dropdown-${this.id}' id='dropdown-${this.id}'>` +
             options +
-            "</select>" +
-            "</form>";
+            `</select>` +
+            `</form>`;
     }
 
     protected InnerUpdate(element) {
