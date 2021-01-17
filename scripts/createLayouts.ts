@@ -150,16 +150,14 @@ function createManifest(layout: LayoutConfig, relativePath: string) {
     let icon = layout.icon;
     if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
         // This is an svg. Lets create the needed pngs!
-        
+
         let path = layout.icon;
         if (layout.icon.startsWith("<")) {
             // THis is already the svg
             path = "./assets/generated/" + layout.id + "_logo.svg"
             writeFileSync(path, layout.icon)
         }
-        
-        
-        
+
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
             const name = createIcon(path, size, layout);

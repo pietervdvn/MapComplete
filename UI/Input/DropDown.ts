@@ -52,15 +52,15 @@ export class DropDown<T> extends InputElement<T> {
         if(this._values.length <=1){
             return "";
         }
-        
+
         let options = "";
         for (let i = 0; i < this._values.length; i++) {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
         }
-        
         return "<form>" +
             "<label for='dropdown-" + this.id + "'>" + this._label.Render() + " </label>" +
             "<select name='dropdown-" + this.id + "' id='dropdown-" + this.id + "'>" +
+
             options +
             "</select>" +
             "</form>";

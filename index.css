@@ -387,9 +387,7 @@ a {
     background-color: var(--background-color);
     color: var(--foreground-color);
 
-
     transition: opacity 500ms linear;
-
 
     text-align: center;
     horiz-align: center;

@@ -14,10 +14,10 @@ import LanguagePicker from "../LanguagePicker";
 
 export default class MoreScreen extends UIElement {
     private readonly _onMainScreen: boolean;
-    
+
     private _component: UIElement;
 
-    
+
     constructor(onMainScreen: boolean = false) {
         super(State.state.locationControl);
         this._onMainScreen = onMainScreen;
@@ -111,7 +111,7 @@ export default class MoreScreen extends UIElement {
 
 
         const customThemesNames = State.state.installedThemes.data ?? [];
-        
+
         if (customThemesNames.length > 0) {
             els.push(Translations.t.general.customThemeIntro)
 
@@ -123,7 +123,7 @@ export default class MoreScreen extends UIElement {
         let intro : UIElement= tr.intro;
         if(this._onMainScreen){
            intro = new Combine([
-               
+
            LanguagePicker.CreateLanguagePicker(Translations.t.general.index.SupportedLanguages())
                .SetStyle("position: absolute; right: 1.5em; top: 1.5em;"),
             Translations.t.general.index.SetStyle("margin-top: 2em;display:block; margin-bottom: 1em;")

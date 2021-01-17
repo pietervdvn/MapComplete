@@ -14,7 +14,7 @@ export class SubtleButton extends UIElement{
         this.linkTo = linkTo;
         this.message = Translations.W(message);
         if(this.message !== null){
-        this.message.dumbMode = false;
+            this.message.dumbMode = false;
         }
         if ((imageUrl ?? "") === "") {
             this.image = new FixedUiElement("");
@@ -27,7 +27,7 @@ export class SubtleButton extends UIElement{
     }
 
     InnerRender(): string {
-        
+
         if(this.message !== null && this.message.IsEmpty()){
             // Message == null: special case to force empty text
             return "";
@@ -41,7 +41,7 @@ export class SubtleButton extends UIElement{
                 '</a>'
             ]).Render();
         }
-        
+
         return new Combine([
             '<span class="subtle-button">',
             this.image,
