@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --subtle-detail-color: #e5f5ff;
     --subtle-detail-color-contrast: black;
