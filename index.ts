@@ -83,7 +83,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
             try {
                 const parsed = JSON.parse(data);
                 // Overwrite the id to the wiki:value
-                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-') 
+                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-')
                 const layout = new LayoutConfig(parsed);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
@@ -115,9 +115,8 @@ if (layoutFromBase64.startsWith("wiki:")) {
     State.state = new State(undefined);
     document.getElementById("messagesboxmobile").remove();
     new MoreScreen(true)
-        .SetStyle("background: var(--background-color); display: block; margin-left: 5vw; margin-right: 5vw; pointer-events: all;")
+        .SetStyle("pointer-events: all;")
         .AttachTo("topleft-tools");
-    
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
     e.preventDefault();
