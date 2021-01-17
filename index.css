@@ -492,52 +492,6 @@ a {
 }
 
 /** Switch layout **/
-.subtle-button {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    font-size: large;
-    margin: 0.5em;
-    background-color: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
-    border-radius: 1em;
-    align-items: center;
-    text-decoration: none;
-}
-
-
-.subtle-button a {
-    text-decoration: unset !important;
-    color: unset !important;
-    display: block ruby;
-}
-
-.round-button .subtle-button {
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
-    display: block !important;
-    margin: 0;
-    padding: 0.5em;
-}
-
-.small-button .subtle-button {
-    height: 2em;
-}
-
-.small-button .subtle-button img {
-    max-height: 1.8em;
-}
-
-.subtle-button img {
-    max-width: 3em;
-    height: 3em;
-    margin-right: 0.5em;
-    padding: 0;
-    padding-bottom: 0.2em;
-}
-
-
 .small-image img {
     height: 1em;
     max-width: 1em;
