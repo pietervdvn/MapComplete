@@ -125,7 +125,7 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
         console.log("Creating icon ", name, newname)
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
-        svg2img(iconPath,
+      /*  svg2img(iconPath,
             // @ts-ignore
             {width: size, height: size, preserveAspectRatio: true})
             .then((buffer) => {
@@ -134,7 +134,7 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
             }).catch((error) => {
             console.log("ERROR while writing" + iconPath, error)
         });
-
+//*/
     } catch (e) {
         console.error("Could not read icon", iconPath, "due to", e)
     }
