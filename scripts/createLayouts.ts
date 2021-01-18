@@ -1,15 +1,19 @@
 // We HAVE to mark this while importing
 import {Utils} from "../Utils";
+
 Utils.runningFromConsole = true;
 
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
+<<<<<<< HEAD
 // import svg2img from 'promise-svg2img';
+=======
+import * as sharp from "sharp"
+>>>>>>> master
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
-
 
 
 function enc(str: string): string {
@@ -75,14 +79,14 @@ function validate(layout: LayoutConfig) {
 
 }
 
-function generateWikiEntry(layout: LayoutConfig){
-    if(layout.hideFromOverview){
+function generateWikiEntry(layout: LayoutConfig) {
+    if (layout.hideFromOverview) {
         return "";
     }
     const languages = layout.language.map(ln => `{{#language:${ln}|en}}`).join(", ")
     let auth = "Yes";
-    if(layout.maintainer !== "" && layout.maintainer !== "MapComplete"){
-        auth=`Yes, by ${layout.maintainer};`
+    if (layout.maintainer !== "" && layout.maintainer !== "MapComplete") {
+        auth = `Yes, by ${layout.maintainer};`
     }
     return `{{service_item
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
@@ -101,8 +105,12 @@ function generateWikiEntry(layout: LayoutConfig){
 
 const alreadyWritten = []
 
+<<<<<<< HEAD
 
 function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
+=======
+async function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
+>>>>>>> master
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
         name = name.substr(2)
@@ -127,16 +135,21 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
         /*
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
-      /*  svg2img(iconPath,
-            // @ts-ignore
-            {width: size, height: size, preserveAspectRatio: true})
-            .then((buffer) => {
-                console.log("Writing icon", newname)
-                writeFileSync(newname, buffer);
-            }).catch((error) => {
-            console.log("ERROR while writing" + iconPath, error)
-        });
-//*/
+
+        let img = await sharp(iconPath)
+        let resized = await img.resize(size)
+        await resized.toFile(newname)
+
+        /*  svg2img(iconPath,
+              // @ts-ignore
+              {width: size, height: size, preserveAspectRatio: true})
+              .then((buffer) => {
+                  console.log("Writing icon", newname)
+                  writeFileSync(newname, buffer);
+              }).catch((error) => {
+              console.log("ERROR while writing" + iconPath, error)
+          });
+  //*/
     } catch (e) {
         console.error("Could not read icon", iconPath, "due to", e)
     }
@@ -144,9 +157,13 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
     return newname;
 }
 
+<<<<<<< HEAD
 //*/
 
 function createManifest(layout: LayoutConfig, relativePath: string) {
+=======
+async function createManifest(layout: LayoutConfig, relativePath: string) {
+>>>>>>> master
     const name = layout.id;
 
     const icons = [];
@@ -162,9 +179,13 @@ function createManifest(layout: LayoutConfig, relativePath: string) {
             writeFileSync(path, layout.icon)
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
-            const name = createIcon(path, size, layout);
+            const name = await createIcon(path, size, layout);
             icons.push({
                 src: name,
                 sizes: size + "x" + size,
@@ -197,7 +218,8 @@ function createManifest(layout: LayoutConfig, relativePath: string) {
 }
 
 const template = readFileSync("index.html", "utf8");
-function createLandingPage(layout: LayoutConfig) {
+
+async function createLandingPage(layout: LayoutConfig) {
 
     Locale.language.setData(layout.language[0]);
 
@@ -229,7 +251,7 @@ function createLandingPage(layout: LayoutConfig) {
     }
 
     let output = template
-        .replace("./manifest.manifest",`${enc(layout.id)}.webmanifest`)
+        .replace("./manifest.manifest", `${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
@@ -249,18 +271,16 @@ function createLandingPage(layout: LayoutConfig) {
 }
 
 const generatedDir = "./assets/generated";
-if (! existsSync(generatedDir)) {
+if (!existsSync(generatedDir)) {
     mkdirSync(generatedDir)
 }
 
-const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap","custom"]
+const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
 const all = AllKnownLayouts.allSets;
 
 let wikiPage = "{|class=\"wikitable sortable\"\n" +
     "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
     "|-";
-
-
 
 
 for (const layoutName in all) {
@@ -275,16 +295,16 @@ for (const layoutName in all) {
     };
     const layout = all[layoutName];
     validate(layout)
-    const manif = JSON.stringify(createManifest(layout, ""));
-
-    const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
-    writeFile(manifestLocation, manif, err);
-
+    createManifest(layout, "").then(manifObj => {
+        const manif = JSON.stringify(manifObj);
+        const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
+        writeFile(manifestLocation, manif, err);
+    })
     // Create a landing page for the given theme
-    const landing = createLandingPage(layout);
-    writeFile(enc(layout.id) + ".html", landing, err)
-
-    wikiPage += "\n"+generateWikiEntry(layout);
+    createLandingPage(layout).then(landing => {
+        writeFile(enc(layout.id) + ".html", landing, err)
+        wikiPage += "\n" + generateWikiEntry(layout);
+    });
 }
 wikiPage += "\n|}"
 

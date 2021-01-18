@@ -13,7 +13,7 @@
     "nl"
   ],
   "maintainer": "",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/0/00/Map_icons_by_Scott_de_Jonge_-_playground.svg",
+  "icon": "./assets/themes/playgrounds/playground.svg",
   "version": "0",
   "startLat": 50.535,
   "startLon": 4.399,

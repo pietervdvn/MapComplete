@@ -29,6 +29,10 @@ html, body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+svg, img {
+    box-sizing: content-box;
+}
+
 a {
     color: var(--foreground-color)
 }
@@ -123,10 +127,8 @@ a {
 .simple-add-ui-icon {
     position: relative;
     display: block;
-    width: 3.5em;
+    width: 4em;
     height: 3.5em;
-    padding-right: 0.3em;
-    padding-left: 0.3em;
 }
 
 .simple-add-ui-icon img {
@@ -445,6 +447,7 @@ a {
     height: 1em;
     fill: black;
     border-radius: 0;
+    display: inline;
 }
 
 .leaflet-popup-content {

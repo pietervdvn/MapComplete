@@ -34,7 +34,6 @@
     "@types/leaflet-providers": "^1.2.0",
     "@types/leaflet.markercluster": "^1.4.3",
     "autoprefixer": "^9.8.6",
-    "canvas": "^2.6.1",
     "country-language": "^0.1.7",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
@@ -54,6 +53,7 @@
     "parcel": "^1.12.4",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "sharp": "^0.27.0",
     "turf": "^3.0.14"
   },
   "devDependencies": {
@@ -62,7 +62,6 @@
     "assert": "^2.0.0",
     "fs": "0.0.1-security",
     "marked": "^1.1.1",
-    "promise-svg2img": "^0.2.0",
     "read-file": "^0.2.0",
     "ts-node": "^9.0.0",
     "ts-node-dev": "^1.0.0-pre.63",

@@ -42,7 +42,8 @@ export class InitUiElements {
 
 
     static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
-                   layoutDefinition: string = "") {
+                   layoutDefinition: string = "") {  
+       
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
             new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
@@ -77,8 +78,6 @@ export class InitUiElements {
 
 
         InitUiElements.InitBaseMap();
-
-        new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
 
         InitUiElements.setupAllLayerElements();
 
@@ -215,6 +214,9 @@ export class InitUiElements {
             .AttachTo("geolocate-button");
 
         State.state.locationControl.ping();
+        // Reset the loading message once things are loaded
+        new CenterMessageBox().AttachTo("centermessage");
+        
     }
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
@@ -455,8 +457,6 @@ export class InitUiElements {
                 }
             );
         });
-
-        new CenterMessageBox().AttachTo("centermessage");
 
     }
 }

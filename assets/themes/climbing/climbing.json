@@ -32,6 +32,7 @@
     {
       "id": "climbing_club",
       "name": {
+        "de": "Kletterverein",
         "nl": "Klimclub",
         "en": "Climbing club"
       },
@@ -56,19 +57,21 @@
         "render": {
           "en": "Climbing club",
           "nl": "Klimclub",
-          "de": "Klettermöglichkeit"
+          "de": "Kletterverein"
         },
         "mappings": [
           {
             "if": "office~*",
             "then": {
               "nl": "Klimorganisatie",
-              "en": "Climbing NGO"
+              "en": "Climbing NGO",
+              "de": "Kletter-Organisation"
             }
           }
         ]
       },
       "description": {
+        "de": "Ein Kletterverein oder eine Organisation",
         "nl": "Een klimclub of organisatie",
         "en": "A climbing club or organisations"
       },
@@ -81,6 +84,7 @@
           },
           "question": {
             "en": "What is the name of this climbing club or NGO?",
+            "de": "Wie lautet der Name dieses Vereins oder Organisation?",
             "nl": "Wat is de naam van deze klimclub?"
           },
           "freeform": {
@@ -119,10 +123,12 @@
             "sport=climbing"
           ],
           "title": {
+            "de": "Kletterverein",
             "en": "Climbing club",
             "nl": "Klimclub"
           },
           "description": {
+            "de": "Ein Kletterverein",
             "nl": "Een klimclub",
             "en": "A climbing club"
           }
@@ -133,12 +139,14 @@
             "sport=climbing"
           ],
           "title": {
+            "de": "Eine Kletter-Organisation",
             "en": "Climbing NGO",
             "nl": "Een klimorganisatie"
           },
           "description": {
+            "de": "Eine Organisation, welche sich mit dem Klettern beschäftigt",
             "nl": "Een VZW die werkt rond klimmen",
-            "en": "A NGO workign around climbing"
+            "en": "A NGO working around climbing"
           }
         }
       ],
@@ -287,8 +295,9 @@
         {
           "#": "Length",
           "render": {
-            "en": "This route is {climbing:length} meter high",
-            "nl": "Deze klimroute is {climbing:length} meter hoog"
+            "de": "Diese Route ist {climbing:length} Meter lang",
+            "en": "This route is {climbing:length} meter long",
+            "nl": "Deze klimroute is {climbing:length} meter lang"
           },
           "freeform": {
             "key": "climbing:length",
@@ -298,6 +307,7 @@
         {
           "#": "Difficulty",
           "render": {
+            "en": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
             "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
             "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
           },
@@ -552,10 +562,12 @@
     {
       "#": "Difficulty-min",
       "question": {
+        "de": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
         "en": "What is the level of the easiest route here, accoring to the french classification system?",
         "nl": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?"
       },
       "render": {
+        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
         "en": "The minimal difficulty is {climbing:grade:french} according to the french/belgian system",
         "nl": "De minimale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
       },
@@ -573,10 +585,12 @@
     {
       "#": "Difficulty-max",
       "question": {
+        "de": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
         "en": "What is the level of the most difficult route here, accoring to the french classification system?",
         "nl": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?"
       },
       "render": {
+        "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
         "en": "The maximal difficulty is {climbing:grade:french} according to the french/belgian system",
         "nl": "De maximale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
       },
@@ -618,6 +632,7 @@
         {
           "if": "climbing:boulder=limited",
           "then": {
+            "de": "Bouldern ist hier nur an wenigen Routen möglich",
             "en": "Bouldering is possible, allthough there are only a few routes",
             "nl": "Bolderen kan hier, maar er zijn niet zoveel routes"
           }

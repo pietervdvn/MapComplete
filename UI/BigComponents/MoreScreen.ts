@@ -98,11 +98,7 @@ export default class MoreScreen extends UIElement {
             linkButton.push(this.createLinkButton(layout));
         }
 
-        els.push(new Combine([
-            `<div class='rounded-xl overflow-hidden bg-gradient-to-tr from-green-400 via-blue-500 to-green-500 p-5 m-8 mt-5'>`,
-            new Combine(linkButton),
-            `</div>`
-        ]))
+        els.push(new Combine(linkButton))
 
         els.push(new VariableUiElement(
             State.state.osmConnection.userDetails.map(userDetails => {

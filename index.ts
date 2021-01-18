@@ -58,6 +58,11 @@ let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCas
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
 const layoutFromBase64 = decodeURIComponent(userLayoutParam.data);
+document.getElementById('centermessage').innerText = '';
+document.getElementById("decoration-desktop").remove();
+
+
+
 if (layoutFromBase64.startsWith("wiki:")) {
     console.log("Downloading map theme from the wiki");
     const themeName = layoutFromBase64.substr("wiki:".length);
@@ -111,11 +116,11 @@ if (layoutFromBase64.startsWith("wiki:")) {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
     // We fall through: no theme loaded: just show a few buttons
-    document.getElementById("decoration-desktop").remove();
     State.state = new State(undefined);
     document.getElementById("messagesboxmobile").remove();
     new MoreScreen(true)
         .SetStyle("pointer-events: all;")
+        .AddClass("block m-5")
         .AttachTo("topleft-tools");
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9

@@ -45,8 +45,8 @@
     padding: 0.5em;
     border-radius: 999em;
     margin-right: 0.4em;
-    width: 2em;
-    height: 2em;
+    width: min-content;
+    height: min-content;
     background: var(--subtle-detail-color);
     flex-shrink: 0;
 }
