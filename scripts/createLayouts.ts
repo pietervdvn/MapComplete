@@ -7,11 +7,7 @@ import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
-<<<<<<< HEAD
-// import svg2img from 'promise-svg2img';
-=======
 import * as sharp from "sharp"
->>>>>>> master
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 
@@ -105,12 +101,7 @@ function generateWikiEntry(layout: LayoutConfig) {
 
 const alreadyWritten = []
 
-<<<<<<< HEAD
-
-function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
-=======
 async function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
->>>>>>> master
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
         name = name.substr(2)
@@ -157,13 +148,7 @@ async function createIcon(iconPath: string, size: number, layout: LayoutConfig) 
     return newname;
 }
 
-<<<<<<< HEAD
-//*/
-
-function createManifest(layout: LayoutConfig, relativePath: string) {
-=======
 async function createManifest(layout: LayoutConfig, relativePath: string) {
->>>>>>> master
     const name = layout.id;
 
     const icons = [];
@@ -179,10 +164,6 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
             writeFileSync(path, layout.icon)
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
             const name = await createIcon(path, size, layout);
