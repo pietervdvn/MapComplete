@@ -127,7 +127,7 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
         /*
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
-        svg2img(iconPath,
+      /*  svg2img(iconPath,
             // @ts-ignore
             {width: size, height: size, preserveAspectRatio: true})
             .then((buffer) => {

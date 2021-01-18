@@ -133,8 +133,7 @@
           "then": "Schwalbe tubes are sold here"
         }
       ],
-      "multiAnswer": true,
-      "condition": "operator!=Schwalbe"
+      "multiAnswer": true
     },
     {
       "question": "Who maintains this vending machine?",
