@@ -6,7 +6,7 @@ import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
-import svg2img from 'promise-svg2img';
+// import svg2img from 'promise-svg2img';
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 
@@ -101,6 +101,7 @@ function generateWikiEntry(layout: LayoutConfig){
 
 const alreadyWritten = []
 
+
 function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
@@ -122,7 +123,8 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
     }
 
     try {
-        console.log("Creating icon ", name, newname)
+        console.log("Could not create icon! ", name, newname)
+        /*
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
         svg2img(iconPath,
@@ -134,13 +136,15 @@ function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
             }).catch((error) => {
             console.log("ERROR while writing" + iconPath, error)
         });
-
+//*/
     } catch (e) {
         console.error("Could not read icon", iconPath, "due to", e)
     }
 
     return newname;
 }
+
+//*/
 
 function createManifest(layout: LayoutConfig, relativePath: string) {
     const name = layout.id;

@@ -11,12 +11,14 @@ export class DropDown<T> extends InputElement<T> {
     private readonly _value: UIEventSource<T>;
 
     public IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _label_class: string;
+    private readonly _select_class: string;
 
     constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
                 value: UIEventSource<T> = undefined,
-                label_class: string,
-                select_class: string) {
+                label_class: string = "",
+                select_class: string = "") {
         super(undefined);
         this._value = value ?? new UIEventSource<T>(undefined);
         this._label = Translations.W(label);
