@@ -95,14 +95,10 @@ a {
 }
 
 #layer-selection {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
     z-index: 9000;
     background-color: var(--background-color);
     color: var(--foreground-color);
 
-    border-radius: 1em;
     cursor: pointer;
     box-shadow: 0 0 10px var(--shadow-color);
 }
@@ -142,7 +138,6 @@ a {
 }
 
 .layer-selection-toggle {
-    border-radius: 1em;
     display: flex;
     flex-direction: column-reverse;
     background: var(--subtle-detail-color);
