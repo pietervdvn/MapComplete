@@ -4,20 +4,6 @@
     flex-direction: column;
 }
 
-.featureinfobox-icons img {
-    max-height: 1.5em;
-    width: 1.5em;
-}
-
-.featureinfobox-icons {
-    margin-left: auto;
-}
-
-.featureinfobox-icons span {
-    display: inline-block;
-    padding-right: 0.1em;
-}
-
 .featureinfobox-back-to-the-map {
     padding: 0.5em;
     border-radius: 999em;
@@ -38,7 +24,6 @@
 .featureinfobox-back-to-the-map svg path{
     stroke: var(--subtle-detail-color-contrast) !important;
 }
-
 
 .featureinfobox-content {
     display: block;
