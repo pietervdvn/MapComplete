@@ -120,7 +120,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
     document.getElementById("messagesboxmobile").remove();
     new MoreScreen(true)
         .SetStyle("pointer-events: all;")
-        .AddClass("block m-5")
+        .AddClass("block m-5 lg:w-3/4 lg:ml-40")
         .AttachTo("topleft-tools");
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
