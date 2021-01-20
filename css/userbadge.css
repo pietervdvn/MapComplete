@@ -58,9 +58,6 @@
     height: 4em;
     padding: 0;
     margin: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
     opacity: 0;
     transition: opacity 500ms linear;
 }
