@@ -297,7 +297,7 @@ export class InitUiElements {
 
         // ?-Button on Mobile, opens full screen layer with close-button at the bottom
         Svg.help_svg()
-            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow" )
+            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow ml-3" )
             .onClick(() => {
                 State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");
