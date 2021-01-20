@@ -13,7 +13,7 @@ export default class LanguagePicker {
             return undefined;
         }
 
-        return new DropDown(label, languages.map(lang => {
+        return new DropDown("Change Language", languages.map(lang => {
                 return {value: lang, shown: lang}
             }
         ), Locale.language, 'sr-only', 'bg-indigo-100 p-1 rounded hover:bg-indigo-200');
