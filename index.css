@@ -342,7 +342,6 @@ a {
 }
 
 .open-welcome-button {
-    display: inline-block;
     box-sizing: border-box;
     background: var(--subtle-detail-color);
     color: var(--foreground-color);

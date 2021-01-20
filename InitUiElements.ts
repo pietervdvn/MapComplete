@@ -42,8 +42,8 @@ export class InitUiElements {
 
 
     static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
-                   layoutDefinition: string = "") {  
-       
+                   layoutDefinition: string = "") {
+
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
             new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
@@ -216,7 +216,7 @@ export class InitUiElements {
         State.state.locationControl.ping();
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
-        
+
     }
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
@@ -260,7 +260,7 @@ export class InitUiElements {
 
         const fullOptions = new FullWelcomePaneWithTabs();
 
-        const help = Svg.help_svg().SetClass("open-welcome-button");
+        const help = Svg.help_svg().SetClass("open-welcome-button block");
         const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
@@ -295,8 +295,7 @@ export class InitUiElements {
         }
 
         Svg.help_svg()
-            .SetClass("open-welcome-button")
-            .SetClass("shadow")
+            .SetClass("open-welcome-button block shadow")
             .onClick(() => {
                 State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");
