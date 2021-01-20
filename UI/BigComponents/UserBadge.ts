@@ -29,7 +29,7 @@ export default class UserBadge extends UIElement {
 
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
-            .SetClass("userbadge-login")
+            .SetClass("userbadge-login pt-3 w-full")
             .onClick(() => State.state.osmConnection.AttemptLogin());
         this._logout =
             Svg.logout_svg()

@@ -260,6 +260,7 @@ export class InitUiElements {
 
         const fullOptions = new FullWelcomePaneWithTabs();
 
+        // ?-Button on Desktop, opens panel with close-X.
         const help = Svg.help_svg().SetClass("open-welcome-button block");
         const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
@@ -294,8 +295,9 @@ export class InitUiElements {
 
         }
 
+        // ?-Button on Mobile, opens full screen layer with close-button at the bottom
         Svg.help_svg()
-            .SetClass("open-welcome-button block shadow")
+            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow" )
             .onClick(() => {
                 State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");

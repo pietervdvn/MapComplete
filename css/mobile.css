@@ -92,7 +92,6 @@ Contains tweaks for small screens
 
     .userbadge-login {
         min-width: unset;
-        width: calc(100vw - 5px);
     }
 
     #userbadge {
