@@ -4,11 +4,6 @@
     flex-direction: column;
 }
 
-.featureinfobox-title {
-    font-size: xx-large;
-    word-break: break-word;
-}
-
 .featureinfobox-icons img {
     max-height: 1.5em;
     width: 1.5em;
@@ -21,24 +16,6 @@
 .featureinfobox-icons span {
     display: inline-block;
     padding-right: 0.1em;
-}
-
-.featureinfobox-titlebar {
-    border-bottom: 2px solid var(--foreground-color);
-    box-shadow: 0 10px 10px -10px var(--shadow-color);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.featureinfobox-titlebar-title {
-    font-size: large;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 2;
-    word-break: break-all;
 }
 
 .featureinfobox-back-to-the-map {

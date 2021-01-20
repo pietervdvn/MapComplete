@@ -25,9 +25,6 @@ export default class FullScreenMessageBox extends UIElement {
 
     protected InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
-        // This is a bit out of place, and it is a fix specifically for the featureinfobox-titlebar
-        const height = htmlElement.getElementsByClassName("featureinfobox-titlebar")[0]?.clientHeight ?? 0;
-        htmlElement.style.setProperty("--variable-title-height", height + "px")
     }
 
 

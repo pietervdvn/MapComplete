@@ -18,11 +18,11 @@ export default class ScrollableFullScreen extends UIElement {
             State.state.selectedElement.setData(undefined);
         }).SetClass("only-on-mobile")
             .SetClass("featureinfobox-back-to-the-map")
-        title.SetStyle("width: 100%; display: block;")
+        title.SetClass("block w-full")
         const ornament = new Combine([new Ornament().SetStyle("height:5em;")]).SetClass("only-on-mobile")
 
         this._component = new Combine([
-            new Combine([returnToTheMap, title]).SetClass("featureinfobox-titlebar"),
+            new Combine([returnToTheMap, title]).SetClass("border-b-2 border-black shadow sm:shadow-none fixed sm:relative top-0 left-0 right-0 z-50 bg-white p-2 sm:p-0 flex overflow-hidden"),
             new Combine(["<span>",content,"</span>", ornament]).SetClass("featureinfobox-content"),
             // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
         ])
