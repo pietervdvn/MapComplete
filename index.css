@@ -362,28 +362,9 @@ a {
 
 
 #centermessage {
-    position: absolute;
-    top: 30%;
-
-    left: 25%;
-    width: 50%;
-
-    font-size: large;
-
-    padding: 2em;
-    border-radius: 2em;
     z-index: 4000;
     pointer-events: none;
-
-    opacity: 1;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
     transition: opacity 500ms linear;
-
-    text-align: center;
-    horiz-align: center;
-    font-weight: bold;
 }
 
 
