@@ -88,7 +88,6 @@ export default class TagRenderingQuestion extends UIElement {
                     return tags.asHumanString(true, true);
                 }
             )
-
         ).AddClass("block")
     }
 
@@ -270,12 +269,13 @@ export default class TagRenderingQuestion extends UIElement {
     InnerRender(): string {
         return new Combine([
             this._question,
-            this._inputElement, "<br/>",
+            this._inputElement,
             this._cancelButton,
-            this._saveButton, "<br/>",
-            this._appliedTags])
-            .SetClass("question")
-            .Render()
+            this._saveButton,
+            this._appliedTags]
+        )
+        .SetClass("question")
+        .Render()
     }
 
 }
