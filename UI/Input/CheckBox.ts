@@ -28,5 +28,5 @@ export default class CheckBox extends UIElement{
             return Translations.W(this._showDisabled).Render();
         }
     }
-    
+
 }

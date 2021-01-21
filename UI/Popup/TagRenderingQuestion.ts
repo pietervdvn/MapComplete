@@ -78,7 +78,6 @@ export default class TagRenderingQuestion extends UIElement {
                     if (csCount < Constants.userJourney.tagsVisibleAt) {
                         return "";
                     }
-
                     if (tags === undefined) {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
@@ -89,8 +88,8 @@ export default class TagRenderingQuestion extends UIElement {
                     return tags.asHumanString(true, true);
                 }
             )
-        )
 
+        ).AddClass("block")
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {
@@ -267,7 +266,6 @@ export default class TagRenderingQuestion extends UIElement {
         );
 
     }
-
 
     InnerRender(): string {
         return new Combine([
