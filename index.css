@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @variants responsive {
+    .max-h-65vh {
+      max-height: 65vh;
+    }
+  }
+}
+
+
 :root {
     --subtle-detail-color: #e5f5ff;
     --subtle-detail-color-contrast: black;
