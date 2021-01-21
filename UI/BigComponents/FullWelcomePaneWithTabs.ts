@@ -15,8 +15,7 @@ import {TabbedComponent} from "../Base/TabbedComponent";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import UserDetails from "../../Logic/Osm/OsmConnection";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import CombinedInputElement from "../Input/CombinedInputElement";
+import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class FullWelcomePaneWithTabs extends UIElement {
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
@@ -24,7 +23,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
 
     private readonly _component: UIElement;
 
-    constructor() {
+    constructor(onClose: () => void) {
         super(State.state.layoutToUse);
         this._layoutToUse = State.state.layoutToUse;
         this._userDetails = State.state.osmConnection.userDetails;
@@ -71,14 +70,13 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         const tabbedPart = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
             .ListenTo(this._userDetails);
 
-        const backButton = new Combine([
-            new Combine([Translations.t.general.returnToTheMap.Clone().SetClass("to-the-map")])
-                .SetClass("to-the-map-inner")
-                
-        ]).SetClass("only-on-mobile")
-            .onClick(() => State.state.fullScreenMessage.setData(undefined));
+       
 
-        this._component = new Combine([tabbedPart, backButton]).SetStyle("width:100%;");
+        this._component = new ScrollableFullScreen(
+            layoutToUse.title,
+            tabbedPart,
+            onClose
+        )
     }
 
     InnerRender(): string {

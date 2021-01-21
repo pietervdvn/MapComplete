@@ -11,22 +11,23 @@ export default class ScrollableFullScreen extends UIElement {
     private _component: Combine;
 
 
-    constructor(title: UIElement, content: UIElement) {
+    constructor(title: UIElement, content: UIElement, onClose: (() => void)) {
         super();
         const returnToTheMap = Svg.back_svg().onClick(() => {
-            State.state.fullScreenMessage.setData(undefined);
-            State.state.selectedElement.setData(undefined);
-        }).SetClass("only-on-mobile")
+            onClose();
+        }).SetClass("sm:hidden")
             .SetClass("featureinfobox-back-to-the-map")
         title.SetStyle("width: 100%; display: block;")
-        const ornament = new Combine([new Ornament().SetStyle("height:5em;")]).SetClass("only-on-mobile")
+        const ornament = new Combine([new Ornament().SetStyle("height:5em;")])
+            .SetClass("block sm:hidden")
 
         this._component = new Combine([
-            new Combine([returnToTheMap, title]).SetClass("featureinfobox-titlebar"),
-            new Combine(["<span>",content,"</span>", ornament]).SetClass("featureinfobox-content"),
-            // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
+            new Combine([returnToTheMap, title])
+                .SetClass("text-xl break-words"),
+            new Combine([content, ornament])
+                
         ])
-        this.SetClass("featureinfobox");
+        this.SetClass("fixed h-screen w-screen fixed sm:relative");
 
     }
 

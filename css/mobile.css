@@ -20,17 +20,6 @@ Contains tweaks for small screens
         display: none !important;
     }
 
-    #messagesbox {
-        display: none;
-        background-color: var(--background-color);
-        color: var(--foreground-color);
-    }
-
-    #help-button-mobile{
-        display: unset;
-        pointer-events: all;
-    }
-
     #help-button-mobile div {
         box-shadow: 0 0 10px #0006;
         margin-bottom: 10px;
@@ -38,12 +27,6 @@ Contains tweaks for small screens
 
     #geolocate-button {
         display: block;
-    }
-    
-    .leaflet-popup {
-        /* On mobile, the popups are shown as a full-screen element */
-        display: none;
-        visibility: hidden;
     }
 
     #centermessage {

@@ -10,14 +10,12 @@ import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
-import {TagUtils} from "./Logic/Tags";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import FullScreenMessageBox from "./UI/FullScreenMessageBoxHandler";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
-import FeatureInfoBox from "./UI/Popup/FeatureInfoBox";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
 import * as personal from "./assets/themes/personalLayout/personalLayout.json"
@@ -121,49 +119,6 @@ export class InitUiElements {
         }
 
 
-        /**
-         * Show the questions and information for the selected element
-         * This is given to the div which renders fullscreen on mobile devices
-         */
-        State.state.selectedElement.addCallback((feature) => {
-
-                if (feature === undefined) {
-                    State.state.fullScreenMessage.setData(undefined);
-                }
-                if (feature?.properties === undefined) {
-                    return;
-                }
-                const data = feature.properties;
-                // Which is the applicable set?
-                for (const layer of layoutToUse.layers) {
-                    if (typeof layer === "string") {
-                        continue;
-                    }
-                    const applicable = layer.overpassTags.matches(TagUtils.proprtiesToKV(data));
-                    if (!applicable) {
-                        continue;
-                    }
-
-                    if ((layer.title ?? null) === null && layer.tagRenderings.length === 0) {
-                        continue;
-                    }
-
-                    // This layer is the layer that gives the questions
-                    const featureBox = new FeatureInfoBox(
-                        State.state.allElements.getEventSourceById(data.id),
-                        layer
-                    );
-
-                    State.state.fullScreenMessage.setData({
-                        content: featureBox,
-                        hashText: feature.properties.id.replace("/", "_"),
-                        titleText: featureBox.title
-                    });
-                    break;
-                }
-            }
-        );
-
         new HistoryHandling(Hash.hash, State.state.fullScreenMessage);
 
         InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
@@ -256,7 +211,8 @@ export class InitUiElements {
 
     private static InitWelcomeMessage() {
 
-        const fullOptions = new FullWelcomePaneWithTabs();
+        const isOpened = new UIEventSource<boolean>(true);
+        const fullOptions = new FullWelcomePaneWithTabs(() => isOpened.setData(false));
 
         const help = Svg.help_svg().SetClass("open-welcome-button");
         const close = Svg.close_svg().SetClass("close-welcome-button");
@@ -285,27 +241,12 @@ export class InitUiElements {
             }
         })
 
-
-        const fullOptions2 = new FullWelcomePaneWithTabs();
-        if (Hash.hash.data === undefined) {
-            State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
-
-        }
-
-        Svg.help_svg()
-            .SetClass("open-welcome-button")
-            .SetClass("shadow")
-            .onClick(() => {
-                State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
-            }).AttachTo("help-button-mobile");
-
-
     }
 
     private static InitLayerSelection() {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const layerControlPanel = new LayerControlPanel()
+            const layerControlPanel = new LayerControlPanel(() => State.state.layerControlIsOpened.setData(false))
                 .SetStyle("display:block;padding:0.75em;border-radius:1em;");
             const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
@@ -324,20 +265,9 @@ export class InitUiElements {
             State.state.locationControl
                 .addCallback(() => {
                     // Close the layer selection when the map is moved
-                    //  checkbox.isEnabled.setData(false);
+                    checkbox.isEnabled.setData(false);
                 });
 
-            const fullScreen = new LayerControlPanel();
-            checkbox.isEnabled.addCallback(isEnabled => {
-                if (isEnabled) {
-                    State.state.fullScreenMessage.setData({content: fullScreen, hashText: "layer-select"});
-                }
-            })
-            State.state.fullScreenMessage.addCallback(latest => {
-                if (latest === undefined) {
-                    checkbox.isEnabled.setData(false);
-                }
-            })
 
         });
     }
@@ -404,7 +334,7 @@ export class InitUiElements {
 
 
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
-            if(featuresFreshness === undefined){
+            if (featuresFreshness === undefined) {
                 return;
             }
             let features = featuresFreshness.map(ff => ff.feature);
@@ -451,7 +381,9 @@ export class InitUiElements {
                 State.state.leafletMap,
                 State.state.fullScreenMessage,
                 () => {
-                    return new SimpleAddUI();
+                    return new SimpleAddUI(
+                        () => State.state.LastClickLocation.setData(undefined)
+                    );
                 }
             );
         });

@@ -16,7 +16,8 @@ export default class FeatureInfoBox extends UIElement {
     
     constructor(
         tags: UIEventSource<any>,
-        layerConfig: LayerConfig
+        layerConfig: LayerConfig,
+        onClose: () => {}
     ) {
         super();
         if (layerConfig === undefined) {
@@ -60,7 +61,7 @@ export default class FeatureInfoBox extends UIElement {
             new Combine([title, titleIcons]).SetClass("featureinfobox-titlebar-title")
         ])
 
-        this._component = new ScrollableFullScreen(titleBar, content)
+        this._component = new ScrollableFullScreen(titleBar, content, onClose)
     }
 
     InnerRender(): string {

@@ -68,7 +68,7 @@ export default class AllLayersPanel extends UIElement {
                     const layer = config.layers[i];
                     if (typeof layer !== "string") {
                         try {
-                            const iconTagRendering = new TagRenderingConfig(layer.icon, undefined, "icon")
+                            const iconTagRendering = new TagRenderingConfig(layer["icon"], undefined, "icon")
                             const icon = iconTagRendering.GetRenderValue({"id": "node/-1"}).txt;
                             return `<img src='${icon}'>`
                         } catch (e) {

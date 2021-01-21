@@ -37,7 +37,7 @@ export default class SimpleAddUI extends UIElement {
     private readonly goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(),
         Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
 
-    constructor() {
+    constructor(onClose: () => void) {
         super(State.state.locationControl.map(loc => loc.zoom));
         const self = this;
         this.ListenTo(Locale.language);
@@ -61,17 +61,17 @@ export default class SimpleAddUI extends UIElement {
         this.openLayerControl = new SubtleButton(Svg.layers_ui(),
             Translations.t.general.add.openLayerControl
         ).onClick(() => {
-            State.state.fullScreenMessage.setData(undefined);
             State.state.layerControlIsOpened.setData(true);
         })
+        
+        this._component = new ScrollableFullScreen(
+            Translations.t.general.add.title,
+            this.CreateContent(),
+            onClose
+        );
     }
 
     InnerRender(): string {
-
-        this._component = new ScrollableFullScreen(
-            Translations.t.general.add.title,
-            this.CreateContent()
-        )
         return this._component.Render();
 
     }

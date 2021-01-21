@@ -11,7 +11,7 @@ export default class LayerControlPanel extends UIElement {
     private readonly _panel: UIElement;
 
 
-    constructor() {
+    constructor(onClose: () => void) {
         super();
         let layerControlPanel: UIElement = new FixedUiElement("");
         if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
@@ -31,7 +31,9 @@ export default class LayerControlPanel extends UIElement {
 
         const title =Translations.t.general.layerSelection.title.SetClass("featureinfobox-title")
 
-        this._panel = new ScrollableFullScreen(title, layerControlPanel);
+        this._panel = new ScrollableFullScreen(title, layerControlPanel, () => {
+            onClose
+        });
     }
 
     InnerRender(): string {

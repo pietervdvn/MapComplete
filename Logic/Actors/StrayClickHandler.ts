@@ -32,11 +32,16 @@ export default class StrayClickHandler {
         })
 
         lastClickLocation.addCallback(function (lastClick) {
-            selectedElement.setData(undefined);
-
+            
             if (self._lastMarker !== undefined) {
                 leafletMap.data?.removeLayer(self._lastMarker);
             }
+            
+            if(lastClick === undefined){
+                return;
+            }
+
+            selectedElement.setData(undefined);
             self._lastMarker = L.marker([lastClick.lat, lastClick.lon], {
                 icon: L.icon({
                     iconUrl: Img.AsData(Svg.add),
@@ -51,7 +56,6 @@ export default class StrayClickHandler {
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
-                fullscreenMessage.setData({content: self._uiToShow(), hashText: "new"});
                 uiElement.Update();
             });
         });
