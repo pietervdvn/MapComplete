@@ -9,11 +9,11 @@ export default class HistoryHandling {
                 fullscreenMessage.setData(undefined);
             }
         })
-        
+
         fullscreenMessage.addCallback(fs => {
             hash.setData(fs?.hashText);
         })
-        
+
     }
 
 }

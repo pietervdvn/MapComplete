@@ -1,24 +1,6 @@
 
-.featureinfobox-back-to-the-map {
-    padding: 0.5em;
-    border-radius: 999em;
-    margin-right: 0.4em;
-    width: min-content;
-    height: min-content;
-    background: var(--subtle-detail-color);
-    flex-shrink: 0;
-}
 
-.featureinfobox-back-to-the-map svg {
-    width: 1.75em;
-    height: 1.75em;
-    margin-left: 0.15em;
-    margin-top: 0.15em
-}
 
-.featureinfobox-back-to-the-map svg path{
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
 
 @media only screen and (max-height: 600px) and (min-width: 600px) {
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/

@@ -7,6 +7,7 @@
     width: 100%;
     min-width: 20em;
     pointer-events: all;
+    border-radius: 999em;
 }
 
 #userbadge a {
@@ -60,6 +61,7 @@
     margin: 0;
     opacity: 0;
     transition: opacity 500ms linear;
+    border-radius: 999em;
 }
 
 .usertext {

@@ -109,7 +109,7 @@ export abstract class UIElement extends UIEventSource<string> {
 
     }
 
-    HideOnEmpty(hide: boolean) {
+    HideOnEmpty(hide: boolean): UIElement {
         this._hideIfEmpty = hide;
         this.Update();
         return this;

@@ -73,68 +73,68 @@
         {
           "if": "bicycle_parking=stands",
           "then": {
-            "en": "Staple racks <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
-            "nl": "Nietjes <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
-            "fr": "Arceaux <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
-            "gl": "De roda (Stands) <img width='150px' src='./assets/layers/bike_parking/staple.svg'>",
-            "de": "Fahrradbügel <img width='150px' src='./assets/layers/bike_parking/staple.svg'>"
+            "en": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+            "nl": "Nietjes <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+            "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+            "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
+            "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
           }
         },
         {
           "if": "bicycle_parking=wall_loops",
           "then": {
-            "en": "Wheel rack/loops <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "nl": "Wielrek/lussen <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "fr": "Pinces-roues <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "gl": "Aros <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "de": "Metallgestänge <img width='150px' src='./assets/layers/bike_parking/wall_loops.svg'>"
+            "en": "Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "nl": "Wielrek/lussen <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "fr": "Pinces-roues <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "gl": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "de": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
           }
         },
         {
           "if": "bicycle_parking=handlebar_holder",
           "then": {
-            "en": "Handlebar holder <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "nl": "Stuurhouder <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "fr": "Support guidon <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "gl": "Cadeado para guiador <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "de": "Halter für Fahrradlenker <img width='150px' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+            "en": "Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "nl": "Stuurhouder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "fr": "Support guidon <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "gl": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "de": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
           }
         },
         {
           "if": "bicycle_parking=rack",
           "then": {
-            "en": "Rack <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
-            "nl": "Rek <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
-            "fr": "Râtelier <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
-            "gl": "Cremalleira <img width='150px' src='./assets/layers/bike_parking/rack.svg'>",
-            "de": "Gestell <img width='150px' src='./assets/layers/bike_parking/rack.svg'>"
+            "en": "Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "nl": "Rek <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "fr": "Râtelier <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "gl": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "de": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
           }
         },
         {
           "if": "bicycle_parking=two_tier",
           "then": {
-            "en": "Two-tiered <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "nl": "Dubbel (twee verdiepingen) <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "fr": "Superposé <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "gl": "Dobre cremalleira <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "de": "Zweistufig <img width='150px' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "en": "Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "nl": "Dubbel (twee verdiepingen) <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "fr": "Superposé <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "gl": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "de": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
           }
         },
         {
           "if": "bicycle_parking=shed",
           "then": {
-            "en": "Shed <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
-            "nl": "Schuur <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
-            "fr": "Abri <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
-            "gl": "Abeiro <img width='150px' src='./assets/layers/bike_parking/shed.svg'>",
-            "de": "Schuppen <img width='150px' src='./assets/layers/bike_parking/shed.svg'>"
+            "en": "Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "nl": "Schuur <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "fr": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "gl": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "de": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
           }
         },
         {
           "if": "bicycle_parking=bollard",
           "then": {
-            "en": "Bollard <img width='150px' src='./assets/layers/bike_parking/bollard.svg'>",
-            "nl": "Paal met ring <img width='150px' src='./assets/layers/bike_parking/bollard.svg'>"
+            "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
+            "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
           }
         },
         {

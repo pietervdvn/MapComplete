@@ -147,6 +147,8 @@ export class InitUiElements {
                         continue;
                     }
 
+                    console.log("Creating the featureInfobox");
+                    let start = new Date()
                     // This layer is the layer that gives the questions
                     const featureBox = new FeatureInfoBox(
                         State.state.allElements.getEventSourceById(data.id),
@@ -158,6 +160,8 @@ export class InitUiElements {
                         hashText: feature.properties.id.replace("/", "_"),
                         titleText: featureBox.title
                     });
+                    let end = new Date();
+                    console.log("Creating featureInfoBox took", (end.getTime() - start.getTime()) , "ms")
                     break;
                 }
             }
@@ -290,14 +294,15 @@ export class InitUiElements {
 
 
         const fullOptions2 = new FullWelcomePaneWithTabs();
-        if (Hash.hash.data === undefined) {
+        if (Hash.Current() === "") {
             State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
 
         }
 
+
         // ?-Button on Mobile, opens full screen layer with close-button at the bottom
         Svg.help_svg()
-            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow ml-3" )
+            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow ml-3")
             .onClick(() => {
                 State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");
@@ -407,12 +412,17 @@ export class InitUiElements {
 
 
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
-            if(featuresFreshness === undefined){
+            if (featuresFreshness === undefined) {
                 return;
             }
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addElement(feature);
+                
+                if(Hash.hash.data === feature.properties.id.replace("/","_")){
+                    State.state.selectedElement.setData(feature);
+                }
+                
             })
             MetaTagging.addMetatags(features);
         })

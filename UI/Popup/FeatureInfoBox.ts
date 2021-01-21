@@ -25,11 +25,12 @@ export default class FeatureInfoBox extends UIElement {
 
 
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
-            .SetClass("text-2xl break-words font-bold p-2");
+            .AddClass("text-2xl break-words font-bold p-2");
         this.title = title;
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
-            .SetClass("h-8 w-8 pt-2 box-content");
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)
+                .AddClass("block w-8 h-8 align-baseline box-content p-0.5")))
+            .AddClass("flex flex-row flex-wrap pt-1 items-center mr-2");
 
         let questionBox: UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {

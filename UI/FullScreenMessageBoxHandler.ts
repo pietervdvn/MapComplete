@@ -20,7 +20,8 @@ export default class FullScreenMessageBox extends UIElement {
             return "";
         }
         this._content = State.state.fullScreenMessage.data.content;
-        return new Combine([this._content]).SetClass("block max-h-screen h-screen overflow-x-hidden overflow-y-auto bg-white p-2").Render();
+        return new Combine([this._content])
+            .SetClass("block max-h-screen h-screen overflow-x-hidden overflow-y-auto bg-white p-0").Render();
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {

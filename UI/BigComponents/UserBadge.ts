@@ -50,7 +50,7 @@ export default class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return Svg.home;
+                    return Svg.home_svg().Render();
                 }
                 return "";
             })

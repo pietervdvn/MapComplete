@@ -21,6 +21,7 @@ export default class TagRenderingAnswer extends UIElement {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
+        this.AddClass("flex items-center flex-row text-lg")
     }
 
     InnerRender(): string {
@@ -33,11 +34,6 @@ export default class TagRenderingAnswer extends UIElement {
         const tags = this._tags.data;
         if (tags === undefined) {
             return "";
-        }
-        const tr = this._configuration.GetRenderValue(tags);
-        if (tr !== undefined) {
-            this._content = new SubstitutedTranslation(tr, this._tags);
-            return this._content.Render();
         }
 
         // The render value doesn't work well with multi-answers (checkboxes), so we have to check for them manually
@@ -65,6 +61,14 @@ export default class TagRenderingAnswer extends UIElement {
                 return this._content.Render();
             }
         }
+        
+        const tr = this._configuration.GetRenderValue(tags);
+        if (tr !== undefined) {
+            this._content = new SubstitutedTranslation(tr, this._tags);
+            return this._content.Render();
+        }
+
+       
         return "";
 
     }

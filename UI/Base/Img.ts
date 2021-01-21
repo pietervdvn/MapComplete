@@ -12,7 +12,7 @@ export default class Img {
        return `data:image/svg+xml;base64,${(btoa(source))}`;
    }
 
-    static AsImageElement(source: string, css_class: string): string{
+    static AsImageElement(source: string, css_class: string = ""): string{
         return `<img class="${css_class}" alt="" src="${Img.AsData(source)}">`;
     }
 }

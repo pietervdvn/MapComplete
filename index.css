@@ -7,6 +7,10 @@
     .max-h-65vh {
       max-height: 65vh;
     }
+      
+      .max-h-20vh {
+          max-height: 20vh;
+      }
   }
 }
 
@@ -40,11 +44,17 @@ html, body {
 
 svg, img {
     box-sizing: content-box;
+    width: 100%;
+    height: 100%;
 }
 
 a {
     color: var(--foreground-color)
 }
+
+
+
+
 
 #topleft-tools svg {
     fill: var(--foreground-color) !important;
@@ -280,16 +290,6 @@ a {
     color: var(--foreground-color);
 }
 
-.search-go img {
-    position: relative;
-    float: right;
-    height: 1.2em;
-    border: 2px solid black;
-    padding: 0.4em;
-    margin-left: 0.5em;
-    margin-right: 0;
-}
-
 
 .add-popup-all-buttons {
     max-height: 50vh;
@@ -478,39 +478,6 @@ a {
 .small-image img {
     height: 1em;
     max-width: 1em;
-}
-
-
-.share-button {
-    background-color: var(--subtle-detail-color);
-    border: none;
-    color: var(--subtle-detail-color-contrast);
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 3em;
-    height: 2.5em;
-    width: 2.5em;
-    box-sizing: border-box;
-    padding: 0;
-}
-
-.share-button svg {
-    height: 1.5em;
-    width: 1.5em;
-    padding: 0.5em;
-    padding-left: 0.4em;
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
-
-.share-button svg path {
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
-
-.share-button svg circle {
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 
