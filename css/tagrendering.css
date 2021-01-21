@@ -26,10 +26,12 @@
         max-height: 100vh;
     }
 
-    .answer {
-        max-width: 48% !important;
-        padding-right: 0.3em;
-        box-sizing: border-box;
+    .landscape\:w-1\/2 {
+        width: 50%
+    }
+
+    .landscape\:p-2 {
+        padding: 0.5rem;
     }
 
     .question {
@@ -45,15 +47,6 @@
         padding-right: 0.3em;
         box-sizing: border-box;
     }
-}
-
-
-.answer {
-    display: flex;
-    width: 100%;
-    font-size: large;
-    justify-content: space-between;
-    word-break: break-word;
 }
 
 .question .form-text-field > input {
