@@ -102,9 +102,6 @@ export default class TagRenderingQuestion extends UIElement {
             return ff;
         }
 
-        mappings = Utils.NoNull([...mappings, ff]);
-        mappings.forEach(el => el.SetClass("question-option-with-border"))
-
         if (this._configuration.multiAnswer) {
             return this.GenerateMultiAnswer(mappings, ff)
         } else {

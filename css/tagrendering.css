@@ -94,13 +94,11 @@
 .question-option-with-border {
     border: 2px solid lightgray;
     border-radius: 0.5em;
-    display: inline-block;
+    display: block;
     width: 100%;
-    margin: 0;
-    margin-left: -2em;
+    margin: 5px ​0;
     box-sizing: border-box;
     padding: 0.5em;
-    padding-left: 2em;
 }
 
 input:checked + label .question-option-with-border {
