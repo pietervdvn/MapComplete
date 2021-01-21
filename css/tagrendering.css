@@ -1,9 +1,4 @@
 
-.featureinfobox {
-    display: flex;
-    flex-direction: column;
-}
-
 .featureinfobox-back-to-the-map {
     padding: 0.5em;
     border-radius: 999em;
@@ -25,31 +20,10 @@
     stroke: var(--subtle-detail-color-contrast) !important;
 }
 
-.featureinfobox-content {
-    display: block;
-    max-height: 75vh;
-    overflow-y: auto;
-    padding-top: 1em;
-    width:100%;
-    overflow-x: hidden;
-}
-
-@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
-    .featureinfobox-content {
-        display: block;
-        max-height: unset !important;
-        overflow-y: auto;
-    }
-}
-
 @media only screen and (max-height: 600px) and (min-width: 600px) {
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
-    .featureinfobox-content {
-        position: relative;
-        width: 100% !important;
-        max-width: unset !important;
-        max-height: unset !important;
-        height: 100vh;
+    .landscape\:max-h-screen {
+        max-height: 100vh;
     }
 
     .answer {
