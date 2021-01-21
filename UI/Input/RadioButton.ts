@@ -74,14 +74,14 @@ export class RadioButton<T> extends InputElement<T> {
         for (let i = 0; i < this._elements.length; i++){
             const el = this._elements[i];
             const htmlElement =
-                '<input type="radio" id="' + this.IdFor(i) + '" name="radiogroup-' + this.id + '">' +
-                '<label for="' + this.IdFor(i) + '">' + el.Render() + '</label>' +
-                '<br>';
+                `<input type="radio" id="${this.IdFor(i)}" name="radiogroup-${this.id}">` +
+                `<label for="${this.IdFor(i)}">${el.Render()}</label>` +
+                `<br>`;
             body += htmlElement;
 
         }
 
-        return "<form id='" + this.id + "-form'>" + body + "</form>";
+        return `<form id='${this.id}-form'>${body}</form>`;
     }
 
     public ShowValue(t: T): boolean {
