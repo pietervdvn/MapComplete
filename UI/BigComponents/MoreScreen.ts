@@ -11,13 +11,14 @@ import Translations from "../i18n/Translations";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
 import Constants from "../../Models/Constants";
 import LanguagePicker from "../LanguagePicker";
+import IndexText from "./IndexText";
 
 export default class MoreScreen extends UIElement {
     private readonly _onMainScreen: boolean;
-    
+
     private _component: UIElement;
 
-    
+
     constructor(onMainScreen: boolean = false) {
         super(State.state.locationControl);
         this._onMainScreen = onMainScreen;
@@ -65,15 +66,14 @@ export default class MoreScreen extends UIElement {
         }
 
         let description = Translations.W(layout.shortDescription);
-        if (description !== undefined) {
-            description = new Combine(["<br/>", description]);
-        }
         return new SubtleButton(layout.icon,
             new Combine([
-                "<b>",
+                `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
                 Translations.W(layout.title),
-                "</b>",
+                `</dt>`,
+                `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900'>`,
                 description ?? "",
+                `</dd>`,
             ]), {url: linkText, newTab: false});
     }
 
@@ -83,21 +83,10 @@ export default class MoreScreen extends UIElement {
 
         const els: UIElement[] = []
 
-        els.push(new VariableUiElement(
-            State.state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
-                    return tr.requestATheme.Render();
-                }
-                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
-                    url: "./customGenerator.html",
-                    newTab: false
-                }).Render();
-            })
-        ));
-
+        const linkButton: UIElement[] = []
 
         for (const k in AllKnownLayouts.allSets) {
-            const layout : LayoutConfig = AllKnownLayouts.allSets[k];
+            const layout: LayoutConfig = AllKnownLayouts.allSets[k];
             if (k === personal.id) {
                 if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
                     continue;
@@ -106,12 +95,25 @@ export default class MoreScreen extends UIElement {
             if (layout.id !== k) {
                 continue; // This layout was added multiple time due to an uppercase
             }
-            els.push(this.createLinkButton(layout));
+            linkButton.push(this.createLinkButton(layout));
         }
 
+        els.push(new Combine(linkButton))
+
+        els.push(new VariableUiElement(
+            State.state.osmConnection.userDetails.map(userDetails => {
+                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
+                    return tr.requestATheme.SetClass("block text-base mx-10 my-3").Render();
+                }
+                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
+                    url: "./customGenerator.html",
+                    newTab: false
+                }).Render();
+            })
+        ));
 
         const customThemesNames = State.state.installedThemes.data ?? [];
-        
+
         if (customThemesNames.length > 0) {
             els.push(Translations.t.general.customThemeIntro)
 
@@ -123,18 +125,19 @@ export default class MoreScreen extends UIElement {
         let intro : UIElement= tr.intro;
         if(this._onMainScreen){
            intro = new Combine([
-               
-           LanguagePicker.CreateLanguagePicker(Translations.t.general.index.SupportedLanguages())
-               .SetStyle("position: absolute; right: 1.5em; top: 1.5em;"),
-            Translations.t.general.index.SetStyle("margin-top: 2em;display:block; margin-bottom: 1em;")
-           ]) 
-        }
-        
 
-        this._component = new VerticalCombine([
-          intro,
-            new VerticalCombine(els),
-            tr.streetcomplete
+           LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
+               .SetClass("absolute top-2 right-3 dropdown-ui-element-2226"),
+               new IndexText()
+                   
+                   
+           ])
+        }
+
+        this._component = new Combine([
+            intro,
+            new Combine(els),
+            tr.streetcomplete.SetClass("block text-base mx-10 my-3 mb-10")
         ]);
         return this._component.Render();
     }

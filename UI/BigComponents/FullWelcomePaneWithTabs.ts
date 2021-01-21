@@ -74,7 +74,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         const backButton = new Combine([
             new Combine([Translations.t.general.returnToTheMap.Clone().SetClass("to-the-map")])
                 .SetClass("to-the-map-inner")
-                
+
         ]).SetClass("only-on-mobile")
             .onClick(() => State.state.fullScreenMessage.setData(undefined));
 

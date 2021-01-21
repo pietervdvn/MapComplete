@@ -43,6 +43,7 @@ export class InitUiElements {
 
     static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
                    layoutDefinition: string = "") {
+
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
             new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
@@ -77,8 +78,6 @@ export class InitUiElements {
 
 
         InitUiElements.InitBaseMap();
-
-        new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
 
         InitUiElements.setupAllLayerElements();
 
@@ -148,6 +147,8 @@ export class InitUiElements {
                         continue;
                     }
 
+                    console.log("Creating the featureInfobox");
+                    let start = new Date()
                     // This layer is the layer that gives the questions
                     const featureBox = new FeatureInfoBox(
                         State.state.allElements.getEventSourceById(data.id),
@@ -159,6 +160,8 @@ export class InitUiElements {
                         hashText: feature.properties.id.replace("/", "_"),
                         titleText: featureBox.title
                     });
+                    let end = new Date();
+                    console.log("Creating featureInfoBox took", (end.getTime() - start.getTime()) , "ms")
                     break;
                 }
             }
@@ -215,6 +218,9 @@ export class InitUiElements {
             .AttachTo("geolocate-button");
 
         State.state.locationControl.ping();
+        // Reset the loading message once things are loaded
+        new CenterMessageBox().AttachTo("centermessage");
+
     }
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
@@ -258,7 +264,8 @@ export class InitUiElements {
 
         const fullOptions = new FullWelcomePaneWithTabs();
 
-        const help = Svg.help_svg().SetClass("open-welcome-button");
+        // ?-Button on Desktop, opens panel with close-X.
+        const help = Svg.help_svg().SetClass("open-welcome-button block");
         const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
@@ -287,14 +294,15 @@ export class InitUiElements {
 
 
         const fullOptions2 = new FullWelcomePaneWithTabs();
-        if (Hash.hash.data === undefined) {
+        if (Hash.Current() === "") {
             State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
 
         }
 
+
+        // ?-Button on Mobile, opens full screen layer with close-button at the bottom
         Svg.help_svg()
-            .SetClass("open-welcome-button")
-            .SetClass("shadow")
+            .SetClass("open-welcome-button block rounded-3xl overflow-hidden shadow ml-3")
             .onClick(() => {
                 State.state.fullScreenMessage.setData({content: fullOptions2, hashText: "welcome"})
             }).AttachTo("help-button-mobile");
@@ -404,12 +412,17 @@ export class InitUiElements {
 
 
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
-            if(featuresFreshness === undefined){
+            if (featuresFreshness === undefined) {
                 return;
             }
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addElement(feature);
+                
+                if(Hash.hash.data === feature.properties.id.replace("/","_")){
+                    State.state.selectedElement.setData(feature);
+                }
+                
             })
             MetaTagging.addMetatags(features);
         })
@@ -455,8 +468,6 @@ export class InitUiElements {
                 }
             );
         });
-
-        new CenterMessageBox().AttachTo("centermessage");
 
     }
 }

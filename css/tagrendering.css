@@ -1,99 +1,19 @@
 
-.featureinfobox {
-    display: flex;
-    flex-direction: column;
-}
-
-.featureinfobox-title {
-    font-size: xx-large;
-    word-break: break-word;
-}
-
-.featureinfobox-icons img {
-    max-height: 1.5em;
-    width: 1.5em;
-}
-
-.featureinfobox-icons {
-    margin-left: auto;
-}
-
-.featureinfobox-icons span {
-    display: inline-block;
-    padding-right: 0.1em;
-}
-
-.featureinfobox-titlebar {
-    border-bottom: 2px solid var(--foreground-color);
-    box-shadow: 0 10px 10px -10px var(--shadow-color);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.featureinfobox-titlebar-title {
-    font-size: large;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 2;
-    word-break: break-all;
-}
-
-.featureinfobox-back-to-the-map {
-    padding: 0.5em;
-    border-radius: 999em;
-    margin-right: 0.4em;
-    width: 2em;
-    height: 2em;
-    background: var(--subtle-detail-color);
-    flex-shrink: 0;
-}
-
-.featureinfobox-back-to-the-map svg {
-    width: 1.75em;
-    height: 1.75em;
-    margin-left: 0.15em;
-    margin-top: 0.15em
-}
-
-.featureinfobox-back-to-the-map svg path{
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
 
 
-.featureinfobox-content {
-    display: block;
-    max-height: 75vh;
-    overflow-y: auto;
-    padding-top: 1em;
-    width:100%;
-    overflow-x: hidden;
-}
-
-@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
-    .featureinfobox-content {
-        display: block;
-        max-height: unset !important;
-        overflow-y: auto;
-    }
-}
 
 @media only screen and (max-height: 600px) and (min-width: 600px) {
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
-    .featureinfobox-content {
-        position: relative;
-        width: 100% !important;
-        max-width: unset !important;
-        max-height: unset !important;
-        height: 100vh;
+    .landscape\:max-h-screen {
+        max-height: 100vh;
     }
 
-    .answer {
-        max-width: 48% !important;
-        padding-right: 0.3em;
-        box-sizing: border-box;
+    .landscape\:w-1\/2 {
+        width: 50%
+    }
+
+    .landscape\:p-2 {
+        padding: 0.5rem;
     }
 
     .question {
@@ -109,15 +29,6 @@
         padding-right: 0.3em;
         box-sizing: border-box;
     }
-}
-
-
-.answer {
-    display: flex;
-    width: 100%;
-    font-size: large;
-    justify-content: space-between;
-    word-break: break-word;
 }
 
 .question .form-text-field > input {
@@ -165,13 +76,11 @@
 .question-option-with-border {
     border: 2px solid lightgray;
     border-radius: 0.5em;
-    display: inline-block;
+    display: block;
     width: 100%;
-    margin: 0;
-    margin-left: -2em;
+    margin: 5px ​0;
     box-sizing: border-box;
     padding: 0.5em;
-    padding-left: 2em;
 }
 
 input:checked + label .question-option-with-border {
@@ -268,6 +177,7 @@ input:checked + label .question-option-with-border {
     position: fixed;
     width: 100vw;
     bottom: 0;
+    z-index: 100000;
 }
 
 .to-the-map-inner{

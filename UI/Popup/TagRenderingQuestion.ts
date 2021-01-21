@@ -78,7 +78,6 @@ export default class TagRenderingQuestion extends UIElement {
                     if (csCount < Constants.userJourney.tagsVisibleAt) {
                         return "";
                     }
-
                     if (tags === undefined) {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
@@ -89,8 +88,7 @@ export default class TagRenderingQuestion extends UIElement {
                     return tags.asHumanString(true, true);
                 }
             )
-        )
-
+        ).AddClass("block")
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {
@@ -103,9 +101,6 @@ export default class TagRenderingQuestion extends UIElement {
         if (mappings.length == 0) {
             return ff;
         }
-
-        mappings = Utils.NoNull([...mappings, ff]);
-        mappings.forEach(el => el.SetClass("question-option-with-border"))
 
         if (this._configuration.multiAnswer) {
             return this.GenerateMultiAnswer(mappings, ff)
@@ -268,16 +263,16 @@ export default class TagRenderingQuestion extends UIElement {
 
     }
 
-
     InnerRender(): string {
         return new Combine([
             this._question,
-            this._inputElement, "<br/>",
+            this._inputElement,
             this._cancelButton,
-            this._saveButton, "<br/>",
-            this._appliedTags])
-            .SetClass("question")
-            .Render()
+            this._saveButton,
+            this._appliedTags]
+        )
+        .SetClass("question")
+        .Render()
     }
 
 }

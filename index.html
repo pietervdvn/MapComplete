@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/openinghourstable.css"/>
     <link rel="stylesheet" href="./css/tagrendering.css"/>
     <link rel="stylesheet" href="./css/imageUploadFlow.css"/>
-    <link rel="stylesheet" href="./css/fullscreenmessagebox.css"/>
+
     <link href="css/ReviewElement.css" rel="stylesheet"/>
     <link rel="stylesheet" href="vendor/MarkerCluster.css"/>
     <link rel="stylesheet" href="vendor/MarkerCluster.Default.css"/>
@@ -37,8 +37,7 @@
 </head>
 <body>
 
-<div style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;"
-     id="decoration-desktop">
+<div style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;" id="decoration-desktop">
     <!-- A nice decoration while loading or on errors -->
     <!-- DECORATION 0 START -->
     <img src="./assets/svg/add.svg"/>
@@ -46,27 +45,25 @@
 </div>
 
 <div class="only-on-mobile">
-    <div id="messagesboxmobile">
-    </div>
+    <div id="messagesboxmobile"></div>
 </div>
 
 <div id="topleft-tools">
-    <div id="userbadge-and-search">
-        <div id="userbadge" class="shadow">
-        </div>
-        <div id="searchbox" class="shadow"></div>
+    <div id="userbadge-and-search" class="p-3">
+        <div id="userbadge" class="shadow rounded-3xl overflow-hidden"></div>
+        <div id="searchbox" class="shadow rounded-3xl overflow-hidden"></div>
     </div>
-    <div id="messagesbox"></div>
-    <br/>
+    <div id="messagesbox" class="rounded-3xl overflow-hidden ml-3"></div>
     <div id="help-button-mobile"></div>
 </div>
 
-<div id="layer-selection">
+<div id="layer-selection" class="absolute bottom-3 left-3 rounded-3xl overflow-hidden"></div>
+
+<div id="centermessage" class="absolute rounded-3xl h-24 left-24 right-24 top-56 bg-white p-3 pt-5 sm:pt-8 text-xl font-bold text-center">
+    Loading MapComplete, hang on...
 </div>
 
-<div id="centermessage">Loading MapComplete, hang on...</div>
-
-<span id="geolocate-button"></span>
+<div id="geolocate-button"></div>
 <div id="leafletDiv"></div>
 
 <script src="./index.ts"></script>

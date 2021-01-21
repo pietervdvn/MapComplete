@@ -29,7 +29,7 @@ export default class LayerControlPanel extends UIElement {
         }
 
 
-        const title =Translations.t.general.layerSelection.title.SetClass("featureinfobox-title")
+        const title = Translations.t.general.layerSelection.title.SetClass("text-2xl break-words font-bold p-2")
 
         this._panel = new ScrollableFullScreen(title, layerControlPanel);
     }

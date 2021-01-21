@@ -87,11 +87,11 @@ export default class ReviewForm extends InputElement<Review> {
     }
 
     InnerRender(): string {
-        
+
         if(!this.userDetails.data.loggedIn){
             return Translations.t.reviews.plz_login.Render();
         }
-        
+
         return new Combine([
             new Combine([this._stars, this._postingAs]).SetClass("review-form-top"),
             this._comment,

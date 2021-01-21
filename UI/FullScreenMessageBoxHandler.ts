@@ -20,14 +20,12 @@ export default class FullScreenMessageBox extends UIElement {
             return "";
         }
         this._content = State.state.fullScreenMessage.data.content;
-        return new Combine([this._content]).SetClass("fullscreenmessage-content").Render();
+        return new Combine([this._content])
+            .SetClass("block max-h-screen h-screen overflow-x-hidden overflow-y-auto bg-white p-0").Render();
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
         super.InnerUpdate(htmlElement);
-        // This is a bit out of place, and it is a fix specifically for the featureinfobox-titlebar
-        const height = htmlElement.getElementsByClassName("featureinfobox-titlebar")[0]?.clientHeight ?? 0;
-        htmlElement.style.setProperty("--variable-title-height", height + "px")
     }
 
 

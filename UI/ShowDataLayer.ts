@@ -69,7 +69,7 @@ export default class ShowDataLayer {
                 action();
             }
         });
-        Hash.hash.addCallback(id => {
+        Hash.hash.addCallbackAndRun(id => {
             // This is a bit of an edge case: if the hash becomes an id to search, we have to show the corresponding popup
             if(State.state.selectedElement !== undefined){
                 return; // Something is already selected, we don't have to apply this fix
@@ -130,6 +130,9 @@ export default class ShowDataLayer {
             "<div style='height: 90vh'>Rendering</div>");
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
+            if(!popup.isOpen()){
+                return;
+            }
            State.state.selectedElement.setData(undefined); 
         });
         leafletLayer.bindPopup(popup);
