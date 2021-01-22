@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .max-h-65vh {
+      max-height: 65vh;
+    }
+      
+      .max-h-20vh {
+          max-height: 20vh;
+      }
+  }
+}
+
+
 :root {
     --subtle-detail-color: #e5f5ff;
     --subtle-detail-color-contrast: black;
@@ -25,9 +42,19 @@ html, body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+svg, img {
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+}
+
 a {
     color: var(--foreground-color)
 }
+
+
+
+
 
 #topleft-tools svg {
     fill: var(--foreground-color) !important;
@@ -85,14 +112,10 @@ a {
 
 
 #layer-selection {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
     z-index: 9000;
     background-color: var(--background-color);
     color: var(--foreground-color);
 
-    border-radius: 1em;
     cursor: pointer;
     box-shadow: 0 0 10px var(--shadow-color);
 }
@@ -117,10 +140,8 @@ a {
 .simple-add-ui-icon {
     position: relative;
     display: block;
-    width: 3.5em;
+    width: 4em;
     height: 3.5em;
-    padding-right: 0.3em;
-    padding-left: 0.3em;
 }
 
 .simple-add-ui-icon img {
@@ -134,7 +155,6 @@ a {
 }
 
 .layer-selection-toggle {
-    border-radius: 1em;
     display: flex;
     flex-direction: column-reverse;
     background: var(--subtle-detail-color);
@@ -236,7 +256,6 @@ a {
 
     transition: all 500ms linear;
     pointer-events: all;
-    border-radius: 1.3em;
     margin: 0 0 0.5em;
     width: 100%;
 }
@@ -269,17 +288,6 @@ a {
     color: var(--foreground-color);
 }
 
-.search-go img {
-    position: relative;
-    float: right;
-    height: 1.2em;
-    border: 2px solid black;
-    border-radius: 2em;
-    padding: 0.4em;
-    margin-left: 0.5em;
-    margin-right: 0;
-}
-
 
 .add-popup-all-buttons {
     max-height: 50vh;
@@ -298,8 +306,8 @@ a {
     z-index: 5000;
     transition: all 500ms linear;
     pointer-events: none;
-    /* Shadow offset */
-    padding: 0.5em 10px 0 0.5em;
+    left: 0;
+    right: 0;
 }
 
 .welcomeMessage {
@@ -334,7 +342,6 @@ a {
 }
 
 .open-welcome-button {
-    display: inline-block;
     box-sizing: border-box;
     background: var(--subtle-detail-color);
     color: var(--foreground-color);
@@ -342,7 +349,6 @@ a {
     height: 3.5em;
     width: 3.5em;
     padding: 0.75em;
-    border-radius: 1em;
 }
 
 .open-welcome-button svg {
@@ -356,7 +362,6 @@ a {
     padding: 0;
     pointer-events: all;
     box-shadow: 0 0 10px var(--shadow-color);
-    border-radius: 1em;
     width: min-content;
     background-color: var(--background-color);
     color: var(--foreground-color);
@@ -364,30 +369,9 @@ a {
 
 
 #centermessage {
-    position: absolute;
-    top: 30%;
-
-    left: 25%;
-    width: 50%;
-
-    font-size: large;
-
-    padding: 2em;
-    border-radius: 2em;
     z-index: 4000;
     pointer-events: none;
-
-    opacity: 1;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
-
     transition: opacity 500ms linear;
-
-
-    text-align: center;
-    horiz-align: center;
-    font-weight: bold;
 }
 
 
@@ -443,6 +427,7 @@ a {
     height: 1em;
     fill: black;
     border-radius: 0;
+    display: inline;
 }
 
 .leaflet-popup-content {
@@ -488,88 +473,9 @@ a {
 }
 
 /** Switch layout **/
-.subtle-button {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    font-size: large;
-    margin: 0.5em;
-    background-color: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
-    border-radius: 1em;
-    align-items: center;
-    text-decoration: none;
-}
-
-
-.subtle-button a {
-    text-decoration: unset !important;
-    color: unset !important;
-    display: block ruby;
-}
-
-.round-button .subtle-button {
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
-    display: block !important;
-    margin: 0;
-    padding: 0.5em;
-}
-
-.small-button .subtle-button {
-    height: 2em;
-}
-
-.small-button .subtle-button img {
-    max-height: 1.8em;
-}
-
-.subtle-button img {
-    max-width: 3em;
-    height: 3em;
-    margin-right: 0.5em;
-    padding: 0;
-    padding-bottom: 0.2em;
-}
-
-
 .small-image img {
     height: 1em;
     max-width: 1em;
-}
-
-
-.share-button {
-    background-color: var(--subtle-detail-color);
-    border: none;
-    color: var(--subtle-detail-color-contrast);
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 3em;
-    height: 2.5em;
-    width: 2.5em;
-    box-sizing: border-box;
-    padding: 0;
-}
-
-.share-button svg {
-    height: 1.5em;
-    width: 1.5em;
-    padding: 0.5em;
-    padding-left: 0.4em;
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
-
-.share-button svg path {
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
-}
-
-.share-button svg circle {
-    fill: var(--subtle-detail-color-contrast) !important;
-    stroke: var(--subtle-detail-color-contrast) !important;
 }
 
 

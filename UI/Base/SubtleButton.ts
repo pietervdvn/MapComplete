@@ -14,20 +14,25 @@ export class SubtleButton extends UIElement{
         this.linkTo = linkTo;
         this.message = Translations.W(message);
         if(this.message !== null){
-        this.message.dumbMode = false;
+            this.message.dumbMode = false;
         }
+        let img;
         if ((imageUrl ?? "") === "") {
-            this.image = new FixedUiElement("");
+            img = new FixedUiElement("");
         } else if (typeof (imageUrl) === "string") {
-            this.image = new FixedUiElement(`<img style="height:3em" src="${imageUrl}">`);
+            img = new FixedUiElement(`<img style="width: 100%;" src="${imageUrl}" alt="">`);
         } else {
-            this.image = imageUrl;
+            img = imageUrl;
         }
-
+        img.AddClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
+        this.image = new Combine([img])
+            .AddClass("flex-shrink-0");
+        
+       
     }
 
     InnerRender(): string {
-        
+
         if(this.message !== null && this.message.IsEmpty()){
             // Message == null: special case to force empty text
             return "";
@@ -35,19 +40,21 @@ export class SubtleButton extends UIElement{
 
         if(this.linkTo != undefined){
             return new Combine([
-                `<a class="subtle-button" href="${this.linkTo.url}" ${this.linkTo.newTab ? 'target="_blank"' : ""}>`,
+                `<a class='block flex group p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200' href="${this.linkTo.url}" ${this.linkTo.newTab ? 'target="_blank"' : ""}>`,
                 this.image,
+                `<div class='ml-4'>`,
                 this.message,
-                '</a>'
+                `</div>`,
+                `</a>`
             ]).Render();
         }
-        
+
+        // Styling todo
         return new Combine([
-            '<span class="subtle-button">',
             this.image,
             this.message,
-            '</span>'
-        ]).Render();
+        ]).AddClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200")
+            .Render();
     }
 
 

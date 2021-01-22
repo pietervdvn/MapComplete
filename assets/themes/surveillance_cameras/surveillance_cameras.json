@@ -24,7 +24,6 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
-  "customCss": "./assets/themes/surveillance_cameras/custom_theme.css",
   "defaultBackgroundId": "Stadia.AlidadeSmoothDark",
   "layers": [
     "direction",

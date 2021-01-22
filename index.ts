@@ -8,6 +8,9 @@ import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {Utils} from "./Utils";
 import MoreScreen from "./UI/BigComponents/MoreScreen";
 import State from "./State";
+import Combine from "./UI/Base/Combine";
+import Translations from "./UI/i18n/Translations";
+import {UIElement} from "./UI/UIElement";
 
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------
@@ -58,6 +61,10 @@ let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCas
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
 const layoutFromBase64 = decodeURIComponent(userLayoutParam.data);
+document.getElementById('centermessage').innerText = '';
+document.getElementById("decoration-desktop").remove();
+
+
 if (layoutFromBase64.startsWith("wiki:")) {
     console.log("Downloading map theme from the wiki");
     const themeName = layoutFromBase64.substr("wiki:".length);
@@ -83,7 +90,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
             try {
                 const parsed = JSON.parse(data);
                 // Overwrite the id to the wiki:value
-                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-') 
+                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-')
                 const layout = new LayoutConfig(parsed);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
@@ -96,7 +103,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
         },
     }).fail((_, textstatus, error) => {
         console.error("Could not download the wiki theme:", textstatus, error)
-        new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?<br/>`+
+        new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?<br/>` +
             error +
             "<a href='https://${window.location.host}/'>Go back</a>")
             .SetClass("clickable")
@@ -111,13 +118,13 @@ if (layoutFromBase64.startsWith("wiki:")) {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
     // We fall through: no theme loaded: just show a few buttons
-    document.getElementById("decoration-desktop").remove();
     State.state = new State(undefined);
     document.getElementById("messagesboxmobile").remove();
-    new MoreScreen(true)
-        .SetStyle("background: var(--background-color); display: block; margin-left: 5vw; margin-right: 5vw; pointer-events: all;")
+    new Combine([new MoreScreen(true)
+        .SetStyle("pointer-events: all;"),
+        Translations.t.general.openStreetMapIntro
+    ]).AddClass("block m-5 lg:w-3/4 lg:ml-40")
         .AttachTo("topleft-tools");
-    
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
     e.preventDefault();

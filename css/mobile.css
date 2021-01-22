@@ -11,11 +11,11 @@ Contains tweaks for small screens
 @media only screen and (max-width: 600px), only screen and (max-height: 600px) {
 
     .only-on-mobile {
-        display: unset !important;  
+        display: unset !important;
         background-color: var(--background-color);
         color: var(--foreground-color);
     }
-    
+
     .hidden-on-mobile {
         display: none !important;
     }
@@ -35,7 +35,7 @@ Contains tweaks for small screens
         width: 60%;
 
     }
-    
+
     .add-popup-all-buttons {
         /* Buttons in the 'add new point' have a default of 50vh maxheight which is ugly in the new context*/
         max-height: unset !important;
@@ -43,7 +43,7 @@ Contains tweaks for small screens
 
     #messagesboxmobile {
         display: block;
-    
+
         position: absolute;
         z-index: 10000;
         width: 100vw;
@@ -75,12 +75,6 @@ Contains tweaks for small screens
 
     .userbadge-login {
         min-width: unset;
-        width: calc(100vw - 5px);
-    }
-
-    #topleft-tools {
-        padding: 0.2em !important;
-        padding-top: 0.3em !important;
     }
 
     #userbadge {

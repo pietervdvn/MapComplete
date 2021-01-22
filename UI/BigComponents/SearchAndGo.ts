@@ -22,7 +22,7 @@ export default class SearchAndGo extends UIElement {
     );
 
     private _foundEntries = new UIEventSource([]);
-    private _goButton = Svg.search_ui().SetClass('search-go');
+    private _goButton = Svg.search_ui().AddClass('w-8 h-8 full-rounded border-black float-right');
 
     constructor() {
         super(undefined);

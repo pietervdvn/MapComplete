@@ -122,7 +122,8 @@ async function createIcon(iconPath: string, size: number, layout: LayoutConfig) 
     }
 
     try {
-        console.log("Creating icon ", name, newname)
+        console.log("Could not create icon! ", name, newname)
+        /*
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
 
@@ -162,7 +163,6 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
             path = "./assets/generated/" + layout.id + "_logo.svg"
             writeFileSync(path, layout.icon)
         }
-
 
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {

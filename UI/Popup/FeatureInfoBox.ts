@@ -13,7 +13,7 @@ export default class FeatureInfoBox extends UIElement {
     private _component: UIElement;
 
     public title: UIElement ;
-    
+
     constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
@@ -26,11 +26,12 @@ export default class FeatureInfoBox extends UIElement {
 
 
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
-            .SetClass("featureinfobox-title");
+            .AddClass("text-2xl break-words font-bold p-2");
         this.title = title;
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)))
-            .SetClass("featureinfobox-icons");
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)
+                .AddClass("block w-8 h-8 align-baseline box-content p-0.5")))
+            .AddClass("flex flex-row flex-wrap pt-1 items-center mr-2");
 
         let questionBox: UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {
@@ -58,7 +59,7 @@ export default class FeatureInfoBox extends UIElement {
             ]
         )
         const titleBar = new Combine([
-            new Combine([title, titleIcons]).SetClass("featureinfobox-titlebar-title")
+            new Combine([title, titleIcons]).SetClass("flex flex-grow justify-between")
         ])
 
         this._component = new ScrollableFullScreen(titleBar, content, onClose)

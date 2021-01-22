@@ -281,7 +281,7 @@ export default class LayerConfig {
             let sourceParts = iconUrl.split(";");
 
             function genHtmlFromString(sourcePart: string): UIElement {
-                const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0, left: 0`;
+                const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
                 let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/)
                 if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {

@@ -12,5 +12,4 @@ export class FixedUiElement extends UIElement {
         return this._html;
     }
 
-
 }

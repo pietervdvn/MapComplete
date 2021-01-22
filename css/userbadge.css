@@ -2,16 +2,12 @@
     display: inline-block;
     background-color: var(--background-color);
     color: var(--foreground-color);
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-    border-bottom-right-radius: 1.5em;
-    border-top-right-radius: 1.5em;
     margin: 0;
     margin-bottom: 0.5em;
     width: 100%;
     min-width: 20em;
     pointer-events: all;
+    border-radius: 999em;
 }
 
 #userbadge a {
@@ -63,11 +59,9 @@
     height: 4em;
     padding: 0;
     margin: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
     opacity: 0;
     transition: opacity 500ms linear;
+    border-radius: 999em;
 }
 
 .usertext {
@@ -101,11 +95,6 @@
 
     display: inline-block;
     text-align: center;
-    -webkit-border-radius: 2em;
-    -moz-border-radius: 2em;
-    border-radius: 2em;
-    border-bottom-right-radius: 1.5em;
-    border-top-right-radius: 1.5em;
     margin: 0;
 
     min-width: 20em;

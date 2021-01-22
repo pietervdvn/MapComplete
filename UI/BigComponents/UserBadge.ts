@@ -29,7 +29,7 @@ export default class UserBadge extends UIElement {
 
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
-            .SetClass("userbadge-login")
+            .SetClass("userbadge-login pt-3 w-full")
             .onClick(() => State.state.osmConnection.AttemptLogin());
         this._logout =
             Svg.logout_svg()
@@ -50,7 +50,7 @@ export default class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return Svg.home;
+                    return Svg.home_svg().Render();
                 }
                 return "";
             })

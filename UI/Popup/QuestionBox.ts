@@ -40,7 +40,6 @@ export default class QuestionBox extends UIElement {
                     })
             ));
 
-
         this._skippedQuestionsButton = Translations.t.general.skippedQuestions.Clone()
             .onClick(() => {
                 self._skippedQuestions.setData([]);
@@ -64,19 +63,19 @@ export default class QuestionBox extends UIElement {
                 }
             }
         }
-        
+
         if (tagRendering.GetRenderValue(this._tags.data) !== undefined) {
             // This value is known and can be rendered
             return true;
         }
-        
+
         return false;
     }
 
     InnerRender(): string {
         for (let i = 0; i < this._tagRenderingQuestions.length; i++) {
             let tagRendering = this._tagRenderings[i];
-      
+
             if(this.IsKnown(tagRendering)){
                 continue;
             }

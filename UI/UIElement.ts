@@ -1,5 +1,4 @@
 import {UIEventSource} from "../Logic/UIEventSource";
-import Constants from "../Models/Constants";
 import {Utils} from "../Utils";
 
 export abstract class UIElement extends UIEventSource<string> {
@@ -8,7 +7,7 @@ export abstract class UIElement extends UIEventSource<string> {
     public readonly id: string;
     public readonly _source: UIEventSource<any>;
     public dumbMode = false;
-    private clss: string[] = []
+    private clss: Set<string> = new Set<string>();
     private style: string;
     private _hideIfEmpty = false;
     private lastInnerRender: string;
@@ -110,7 +109,7 @@ export abstract class UIElement extends UIEventSource<string> {
 
     }
 
-    HideOnEmpty(hide: boolean) {
+    HideOnEmpty(hide: boolean): UIElement {
         this._hideIfEmpty = hide;
         this.Update();
         return this;
@@ -127,8 +126,8 @@ export abstract class UIElement extends UIEventSource<string> {
             style = `style="${this.style}" `;
         }
         let clss = "";
-        if (this.clss.length > 0) {
-            clss = `class='${this.clss.join(" ")}' `;
+        if (this.clss.size > 0) {
+            clss = `class='${Array.from(this.clss).join(" ")}' `;
         }
         return `<span ${clss}${style}id='${this.id}'>${this.lastInnerRender}</span>`
     }
@@ -151,20 +150,34 @@ export abstract class UIElement extends UIEventSource<string> {
     }
 
     public SetClass(clss: string): UIElement {
+        return this.AddClass(clss);
+    }
+
+    /**
+     * Adds all the relevant classes, space seperated
+     * @param clss
+     * @constructor
+     */
+    public AddClass(clss: string) {
         this.dumbMode = false;
-        if (clss === "" && this.clss.length > 0) {
-            throw "Use RemoveClass instead";
-        } else if (this.clss.indexOf(clss) < 0) {
-            this.clss.push(clss);
+        const all = clss.split(" ");
+        let recordedChange = false;
+        for (const c of all) {
+            if (this.clss.has(clss)) {
+                continue;
+            }
+            this.clss.add(c);
+            recordedChange = true;
+        }
+        if (recordedChange) {
             this.Update();
         }
         return this;
     }
 
     public RemoveClass(clss: string): UIElement {
-        const i = this.clss.indexOf(clss);
-        if (i >= 0) {
-            this.clss.splice(i, 1);
+        if (this.clss.has(clss)) {
+            this.clss.delete(clss);
             this.Update();
         }
         return this;

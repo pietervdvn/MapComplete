@@ -18,6 +18,12 @@ function transformTranslation(obj: any, depth = 1) {
 
     let values = ""
     for (const key in obj) {
+        if(key === "#"){
+            continue;
+        }
+        if(key.match("^[a-zA-Z0-9_]*$") === null){
+            throw "Invalid character in key: "+key
+        }
         values += (Utils.Times((_) => "  ", depth)) + key + ": " + transformTranslation(obj[key], depth + 1) + ",\n"
     }
     return `{${values}}`;

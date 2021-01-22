@@ -81,7 +81,7 @@ I love it to see where the project ends up. You are free to reuse the software (
 
 To develop:
 
-
+0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
 0. Make a fork and clone the repository.
 1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
 2. Run `npm install` to install the package dependencies

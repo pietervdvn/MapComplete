@@ -81,6 +81,7 @@ export default class State {
      The latest element that was selected - used to generate the right UI at the right place
      */
     public readonly selectedElement = new UIEventSource<any>(undefined)
+    publ
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
@@ -209,7 +210,7 @@ export default class State {
                 if (selected === undefined) {
                     h.setData("");
                 } else {
-                    h.setData(selected.id)
+                    h.setData(selected.id.replace("/","_"))
                 }
             }
         )

@@ -40,7 +40,6 @@ export default class CenterMessageBox extends UIElement {
         return CenterMessageBox.prep().innerHtml;
     }
 
-
     InnerUpdate(htmlElement: HTMLElement) {
         const pstyle = htmlElement.parentElement.style;
         if (State.state.centerMessage.data != "") {

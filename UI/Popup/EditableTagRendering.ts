@@ -64,7 +64,7 @@ export default class EditableTagRendering extends UIElement {
 
         return new Combine([this._answer,
             (State.state?.osmConnection?.userDetails?.data?.loggedIn ?? true) ? this._editButton : undefined
-        ]).SetClass("answer")
+        ]).SetClass("flex w-full break-word justify-between text-default landscape:w-1/2 landscape:p-2 pb-2 border-b border-gray-300 mb-2")
             .Render();
     }
 

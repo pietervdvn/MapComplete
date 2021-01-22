@@ -1,12 +1,11 @@
 export class UIEventSource<T>{
-    
+
     public data: T;
     private _callbacks = [];
 
     constructor(data: T) {
         this.data = data;
     }
-
 
     public addCallback(callback: ((latestData: T) => void)): UIEventSource<T> {
         if(callback === console.log){
@@ -49,19 +48,19 @@ export class UIEventSource<T>{
                 sink.setData(source.data?.data);
             })
         }
-        
+
         return sink;
     }
-    
+
     public map<J>(f: ((T) => J),
                   extraSources: UIEventSource<any>[] = [],
                   g: ((J) => T) = undefined ): UIEventSource<J> {
         const self = this;
-        
+
         const newSource = new UIEventSource<J>(
             f(this.data)
         );
-        
+
         const update = function () {
             newSource.setData(f(self.data));
         }
@@ -70,17 +69,17 @@ export class UIEventSource<T>{
         for (const extraSource of extraSources) {
             extraSource?.addCallback(update);
         }
-      
+
         if(g !== undefined) {
             newSource.addCallback((latest) => {
                 self.setData(g(latest));
             })
         }
-        
+
         return newSource;
     }
 
-    
+
     public syncWith(otherSource: UIEventSource<T>, reverseOverride = false): UIEventSource<T> {
         this.addCallback((latest) => otherSource.setData(latest));
         const self = this;
@@ -94,11 +93,11 @@ export class UIEventSource<T>{
         }
         return this;
     }
-    
+
     public stabilized(millisToStabilize) : UIEventSource<T>{
-        
+
         const newSource = new UIEventSource<T>(this.data);
-        
+
         let currentCallback = 0;
         this.addCallback(latestData => {
             currentCallback++;
@@ -109,10 +108,10 @@ export class UIEventSource<T>{
                 }
             }, millisToStabilize)
         });
-        
+
         return newSource;
     }
-    
+
     public static Chronic(millis: number, asLong: () => boolean = undefined): UIEventSource<Date> {
         const source = new UIEventSource<Date>(undefined);
 
@@ -125,7 +124,7 @@ export class UIEventSource<T>{
 
         run();
         return source;
-        
+
     }
 
 }

@@ -29,9 +29,11 @@
   "author": "pietervdvn",
   "license": "GPL",
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@types/leaflet-markercluster": "^1.0.3",
     "@types/leaflet-providers": "^1.2.0",
     "@types/leaflet.markercluster": "^1.4.3",
+    "autoprefixer": "^9.8.6",
     "country-language": "^0.1.7",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
@@ -49,6 +51,8 @@
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
     "parcel": "^1.12.4",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "sharp": "^0.27.0",
     "turf": "^3.0.14"
   },
@@ -56,7 +60,6 @@
     "@babel/polyfill": "^7.10.4",
     "@types/node": "^7.0.5",
     "assert": "^2.0.0",
-    "canvas": "^2.6.1",
     "fs": "0.0.1-security",
     "marked": "^1.1.1",
     "read-file": "^0.2.0",

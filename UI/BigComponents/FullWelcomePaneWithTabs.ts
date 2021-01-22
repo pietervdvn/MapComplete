@@ -70,7 +70,6 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         const tabbedPart = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
             .ListenTo(this._userDetails);
 
-       
 
         this._component = new ScrollableFullScreen(
             layoutToUse.title,

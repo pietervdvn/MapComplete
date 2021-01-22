@@ -41,6 +41,7 @@ export class InitUiElements {
 
     static InitAll(layoutToUse: LayoutConfig, layoutFromBase64: string, testing: UIEventSource<string>, layoutName: string,
                    layoutDefinition: string = "") {
+
         if (layoutToUse === undefined) {
             console.log("Incorrect layout")
             new FixedUiElement(`Error: incorrect layout <i>${layoutName}</i><br/><a href='https://${window.location.host}/'>Go back</a>`).AttachTo("centermessage").onClick(() => {
@@ -75,8 +76,6 @@ export class InitUiElements {
 
 
         InitUiElements.InitBaseMap();
-
-        new FixedUiElement("").AttachTo("decoration-desktop"); // Remove the decoration
 
         InitUiElements.setupAllLayerElements();
 
@@ -170,6 +169,9 @@ export class InitUiElements {
             .AttachTo("geolocate-button");
 
         State.state.locationControl.ping();
+        // Reset the loading message once things are loaded
+        new CenterMessageBox().AttachTo("centermessage");
+
     }
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
@@ -214,7 +216,8 @@ export class InitUiElements {
         const isOpened = new UIEventSource<boolean>(true);
         const fullOptions = new FullWelcomePaneWithTabs(() => isOpened.setData(false));
 
-        const help = Svg.help_svg().SetClass("open-welcome-button");
+        // ?-Button on Desktop, opens panel with close-X.
+        const help = Svg.help_svg().SetClass("open-welcome-button block");
         const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
             new Combine([
@@ -340,6 +343,11 @@ export class InitUiElements {
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addElement(feature);
+                
+                if(Hash.hash.data === feature.properties.id.replace("/","_")){
+                    State.state.selectedElement.setData(feature);
+                }
+                
             })
             MetaTagging.addMetatags(features);
         })
@@ -387,8 +395,6 @@ export class InitUiElements {
                 }
             );
         });
-
-        new CenterMessageBox().AttachTo("centermessage");
 
     }
 }
