@@ -38,7 +38,7 @@ export default class AllTranslationAssets {
     returnToTheMap: new Translation( {"en":"Return to the map","ca":"Tornar al mapa","es":"Volver al mapa","nl":"Naar de kaart","fr":"Retourner sur la carte","gl":"Voltar ó mapa","de":"Zurück zur Karte"} ),
     save: new Translation( {"en":"Save","ca":"Desar","es":"Guardar","nl":"Opslaan","fr":"Sauvegarder","gl":"Gardar","de":"Speichern"} ),
     cancel: new Translation( {"en":"Cancel","ca":"Cancel·lar","es":"Cancelar","nl":"Annuleren","fr":"Annuler","gl":"Desbotar","de":"Abbrechen"} ),
-    skip: new Translation( {"en":"Skip this question","ca":"Saltar aquesta pregunta","es":"Saltar esta pregunta","nl":"Vraag overslaan","fr":"Passer la question","gl":"Ignorar esta pregunta","de":"Diese Frage überspringen"} ),
+    skip: new Translation( {"en":"Skip this question","ca":"Saltar aquesta pregunta","es":"Saltar esta pregunta","nl":"Vraag overslaan","fr":"Passer la question","gl":"Ignorar esta pregunta","de":"Frage überspringen"} ),
     oneSkippedQuestion: new Translation( {"en":"One question is skipped","ca":"Has ignorat una pregunta","es":"Has ignorado una pregunta","nl":"Een vraag is overgeslaan","fr":"Une question a été passée","gl":"Ignoraches unha pregunta","de":"Eine Frage wurde übersprungen"} ),
     skippedQuestions: new Translation( {"en":"Some questions are skipped","ca":"Has ignorat algunes preguntes","es":"Has ignorado algunas preguntas","nl":"Sommige vragen zijn overgeslaan","fr":"Questions passées","gl":"Ignoraches algunhas preguntas","de":"Einige Fragen wurden übersprungen"} ),
     number: new Translation( {"en":"number","ca":"nombre","es":"número","nl":"getal","fr":"nombre","gl":"número","de":"Zahl"} ),

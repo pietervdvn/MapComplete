@@ -114,9 +114,6 @@
     display: block ruby;
 }
 
-.review-form .save-non-active {
-    display: block ruby;
-}
 .review-form textarea {
     resize: unset;
 }

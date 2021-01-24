@@ -17,9 +17,9 @@ export default class ScrollableFullScreen extends UIElement {
             State.state.fullScreenMessage.setData(undefined);
             State.state.selectedElement.setData(undefined);
         }).SetClass("block sm:hidden mb-2 bg-blue-50 rounded-full w-12 h-12 p-1.5")
-        
+
         title.SetClass("block w-full")
-        
+
         const ornament = new Combine([new Ornament().SetStyle("height:5em;")]).SetClass("sm:hidden")
 
         this._component = new Combine([
