@@ -11,6 +11,27 @@
       .max-h-20vh {
           max-height: 20vh;
       }
+  .btn {
+      @apply inline-flex justify-center;
+      @apply py-2 px-4;
+      @apply border border-transparent shadow-sm;
+      @apply shadow-sm rounded-3xl;
+      @apply ring-2 ring-blue-200 hover:ring-blue-300;
+      @apply mt-1 mr-1;
+      @apply text-sm font-medium text-white;
+      @apply bg-blue-600 hover:bg-blue-700;
+      @apply focus:outline-none focus:ring-blue-700;
+  }
+
+  .btn-secondary {
+      @apply bg-gray-600 hover:bg-gray-700;
+  }
+
+  .btn-disabled {
+      @apply bg-gray-500 hover:bg-gray-500;
+      @apply text-gray-300;
+      @apply ring-gray-200 hover:ring-gray-200 focus:ring-gray-200;
+      @apply cursor-default;
   }
 }
 

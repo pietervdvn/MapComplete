@@ -74,7 +74,7 @@ export default class EditableTagRendering extends UIElement {
             // And at last, set up the skip button
             const cancelbutton =
                 Translations.t.general.cancel.Clone()
-                    .SetClass("cancel")
+                    .SetClass("btn btn-secondary mr-3")
                     .onClick(() => {
                         self._editMode.setData(false)
                     });
