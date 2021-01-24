@@ -28,5 +28,4 @@ export default class LazyElement extends UIElement {
         return this._content.InnerRender();
     }
 
-
 }

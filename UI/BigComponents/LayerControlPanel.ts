@@ -31,9 +31,7 @@ export default class LayerControlPanel extends UIElement {
 
         const title = Translations.t.general.layerSelection.title.SetClass("text-2xl break-words font-bold p-2")
 
-        this._panel = new ScrollableFullScreen(title, layerControlPanel, () => {
-            onClose
-        });
+        this._panel = new ScrollableFullScreen(title, layerControlPanel, onClose);
     }
 
     InnerRender(): string {

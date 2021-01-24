@@ -1,56 +1,4 @@
 
-<<<<<<< HEAD
-.featureinfobox {
-    display: flex;
-    flex-direction: column;
-}
-
-.featureinfobox-icons img {
-    max-height: 1.5em;
-    width: 1.5em;
-}
-
-.featureinfobox-icons {
-    margin-left: auto;
-}
-
-.featureinfobox-icons span {
-    display: inline-block;
-    padding-right: 0.1em;
-}
-
-.featureinfobox-titlebar {
-    border-bottom: 2px solid var(--foreground-color);
-    box-shadow: 0 10px 10px -10px var(--shadow-color);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.featureinfobox-titlebar-title {
-    font-size: large;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 2;
-    word-break: break-all;
-}
-
-.featureinfobox-back-to-the-map {
-    padding: 0.5em;
-    border-radius: 999em;
-    margin-right: 0.4em;
-    width: 2em;
-    height: 2em;
-    background: var(--subtle-detail-color);
-    flex-shrink: 0;
-}
-=======
->>>>>>> master
-
-
-
 @media only screen and (max-height: 600px) and (min-width: 600px) {
     /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
     .landscape\:max-h-screen {
@@ -127,7 +75,7 @@
     border-radius: 0.5em;
     display: block;
     width: 100%;
-    margin: 5px ​0;
+    margin: 5px;
     box-sizing: border-box;
     padding: 0.5em;
 }

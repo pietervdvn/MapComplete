@@ -3,16 +3,42 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    .max-h-65vh {
-      max-height: 65vh;
+    @variants responsive {
+        .max-h-65vh {
+            max-height: 65vh;
+        }
+
+        .max-h-20vh {
+            max-height: 20vh;
+        }
+        
+        .z-above-map{
+            z-index: 10000
+        }
+        
+        .z-above-map-higher {
+            z-index: 10100
+        }
+        
+        .z-above-map-high {
+            z-index: 10200 !important;
+        }
+        
+        .z-above-map-highest{
+            z-index: 50000
+        }
+
     }
-      
-      .max-h-20vh {
-          max-height: 20vh;
-      }
-  }
 }
+
+
+@media only screen and (max-width: 640px), only screen and (max-height: 640px) {
+    .no-transform {
+        /*This is a workaround to let popup contents escape the popup on mobile*/
+        transform: none !important;
+    }
+}
+
 
 
 :root {
@@ -51,9 +77,6 @@ svg, img {
 a {
     color: var(--foreground-color)
 }
-
-
-
 
 
 #topleft-tools svg {
@@ -107,8 +130,6 @@ a {
 #geolocate-button > .uielement {
     display: block;
 }
-
-
 
 
 #layer-selection {

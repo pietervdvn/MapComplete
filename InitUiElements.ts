@@ -227,7 +227,7 @@ export class InitUiElements {
                     .onClick(() => {/*Catch the click*/
                     })]),
             help
-            , true
+            , isOpened
         ).AttachTo("messagesbox");
         const openedTime = new Date().getTime();
         State.state.locationControl.addCallback(() => {
@@ -249,20 +249,21 @@ export class InitUiElements {
     private static InitLayerSelection() {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const layerControlPanel = new LayerControlPanel(() => State.state.layerControlIsOpened.setData(false))
-                .SetStyle("display:block;padding:0.75em;border-radius:1em;");
-            const closeButton = Svg.close_svg().SetClass("layer-selection-toggle").SetStyle("  background: var(--subtle-detail-color);")
+            const layerControlPanel = new LayerControlPanel(
+                () => State.state.layerControlIsOpened.setData(false))
+                .SetClass("block p-1 rounded-full");
+            const closeButton = Svg.close_svg()
+                .SetClass("layer-selection-toggle")
+                .SetStyle("  background: var(--subtle-detail-color);")
             const checkbox = new CheckBox(
                 new Combine([
                     closeButton,
-                    layerControlPanel]).SetStyle("display:flex;flex-direction:row;")
-                    .SetClass("hidden-on-mobile")
+                    layerControlPanel])
+                    .SetClass("flex flex-row")
                 ,
                 Svg.layers_svg().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
-            );
-
-            checkbox.AttachTo("layer-selection");
+            ).AttachTo("layer-selection");
 
 
             State.state.locationControl
