@@ -10,6 +10,9 @@ module.exports = {
         '65vh': '65vh',
         '20vh': '20vh',
       },
+      screens: {
+        'landscape': { 'raw': '(max-height: 600px) and (min-width: 600px)' },
+      },
     },
   },
   variants: {
