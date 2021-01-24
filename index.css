@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    .max-h-65vh {
-      max-height: 65vh;
-    }
-      
-      .max-h-20vh {
-          max-height: 20vh;
-      }
   .btn {
       @apply inline-flex justify-center;
       @apply py-2 px-4;
