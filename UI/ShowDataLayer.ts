@@ -44,10 +44,10 @@ export default class ShowDataLayer {
 
             let geoLayer = self.CreateGeojsonLayer(feats)
             if (layoutToUse.clustering.minNeededElements <= features.data.length) {
-                    const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
-                    const cluster = cl.markerClusterGroup({ disableClusteringAtZoom: layoutToUse.clustering.maxZoom });
-                    cluster.addLayer(geoLayer);
-                    geoLayer = cluster;
+                const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
+                const cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.clustering.maxZoom});
+                cluster.addLayer(geoLayer);
+                geoLayer = cluster;
             }
 
             if (oldGeoLayer) {
@@ -60,22 +60,22 @@ export default class ShowDataLayer {
         features.addCallbackAndRun(() => update());
         leafletMap.addCallback(() => update());
         State.state.selectedElement.addCallback(feature => {
-            if(feature === undefined){
+            if (feature === undefined) {
                 return;
             }
-            const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
+            const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
             const action = self._onSelectedTrigger[id];
-            if(action){
+            if (action) {
                 action();
             }
         });
         Hash.hash.addCallbackAndRun(id => {
             // This is a bit of an edge case: if the hash becomes an id to search, we have to show the corresponding popup
-            if(State.state.selectedElement !== undefined){
+            if (State.state.selectedElement !== undefined) {
                 return; // Something is already selected, we don't have to apply this fix
             }
             const action = self._onSelectedTrigger[id];
-            if(action){
+            if (action) {
                 action();
             }
         })
@@ -126,41 +126,48 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement: LazyElement = new LazyElement(() => new FeatureInfoBox(tags, layer, () => popup.closePopup()),
+        const uiElement: LazyElement<FeatureInfoBox> = new LazyElement(() => new FeatureInfoBox(tags, layer, () => {
+                console.log("Closing the popup!")
+                State.state.selectedElement.setData(undefined);
+                popup.remove();
+
+            }),
             "<div style='height: 90vh'>Rendering</div>");
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
-            if(!popup.isOpen()){
+            if (!popup.isOpen()) {
                 return;
             }
-           State.state.selectedElement.setData(undefined); 
+            State.state.selectedElement.setData(undefined);
         });
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
         // But at least it'll be visible already
 
 
-        leafletLayer.on("click", (e) => {
+        leafletLayer.on("click", () => {
             // We set the element as selected...
-            uiElement.Activate();
+            
+            uiElement.Activate(e => e.PrepFullscreen());
             State.state.selectedElement.setData(feature);
         });
-        
-        const id = feature.properties.id+feature.geometry.type+feature._matching_layer_id;
+
+        const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
         this._onSelectedTrigger[id]
-         = () => {
-            if(popup.isOpen()){
+            = () => {
+            if (popup.isOpen()) {
                 return;
             }
             leafletLayer.openPopup();
-            uiElement.Activate();
+            uiElement.Activate(e => e.PrepFullscreen());
             State.state.selectedElement.setData(feature);
         }
-        this._onSelectedTrigger[feature.properties.id.replace("/","_")] = this._onSelectedTrigger[id];
-        if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data) {
+        this._onSelectedTrigger[feature.properties.id.replace("/", "_")] = this._onSelectedTrigger[id];
+        if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data && State.state.selectedElement.data === undefined) {
             // This element is in the URL, so this is a share link
             // We open the relevant popup straight away
-            uiElement.Activate();
+            console.log("Opening the popup due to sharelink")
+            uiElement.Activate(e => e.PrepFullscreen());
             popup.setContent(uiElement.Render());
 
             const center = GeoOperations.centerpoint(feature).geometry.coordinates;

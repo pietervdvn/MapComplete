@@ -12,7 +12,6 @@ import CenterMessageBox from "./UI/CenterMessageBox";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
-import FullScreenMessageBox from "./UI/FullScreenMessageBoxHandler";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
@@ -33,7 +32,6 @@ import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
-import HistoryHandling from "./Logic/Actors/HistoryHandling";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 
 export class InitUiElements {
@@ -118,8 +116,6 @@ export class InitUiElements {
         }
 
 
-        new HistoryHandling(Hash.hash, State.state.fullScreenMessage);
-
         InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
             new UserBadge().AttachTo('userbadge');
         });
@@ -127,9 +123,6 @@ export class InitUiElements {
         InitUiElements.OnlyIf((State.state.featureSwitchSearch), () => {
             new SearchAndGo().AttachTo("searchbox");
         });
-
-
-        new FullScreenMessageBox().AttachTo("messagesboxmobile");
 
 
         InitUiElements.OnlyIf(State.state.featureSwitchWelcomeMessage, () => {
@@ -214,18 +207,18 @@ export class InitUiElements {
     private static InitWelcomeMessage() {
 
         const isOpened = new UIEventSource<boolean>(true);
-        const fullOptions = new FullWelcomePaneWithTabs(() => isOpened.setData(false));
+        const fullOptions = new FullWelcomePaneWithTabs(() => {
+            console.log("Closing the welcome message...")
+            isOpened.setData(false);
+        });
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = Svg.help_svg().SetClass("open-welcome-button block");
-        const close = Svg.close_svg().SetClass("close-welcome-button");
         const checkbox = new CheckBox(
-            new Combine([
-                close,
                 fullOptions
                     .SetClass("welcomeMessage")
                     .onClick(() => {/*Catch the click*/
-                    })]),
+                    }),
             help
             , isOpened
         ).AttachTo("messagesbox");
@@ -252,15 +245,8 @@ export class InitUiElements {
             const layerControlPanel = new LayerControlPanel(
                 () => State.state.layerControlIsOpened.setData(false))
                 .SetClass("block p-1 rounded-full");
-            const closeButton = Svg.close_svg()
-                .SetClass("layer-selection-toggle")
-                .SetStyle("  background: var(--subtle-detail-color);")
-            const checkbox = new CheckBox(
-                new Combine([
-                    closeButton,
-                    layerControlPanel])
-                    .SetClass("flex flex-row")
-                ,
+              const checkbox = new CheckBox(
+                    layerControlPanel,
                 Svg.layers_svg().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
             ).AttachTo("layer-selection");
@@ -388,7 +374,6 @@ export class InitUiElements {
                 State.state.selectedElement,
                 State.state.filteredLayers,
                 State.state.leafletMap,
-                State.state.fullScreenMessage,
                 () => {
                     return new SimpleAddUI(
                         () => State.state.LastClickLocation.setData(undefined)

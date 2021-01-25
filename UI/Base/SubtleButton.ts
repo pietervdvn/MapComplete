@@ -24,9 +24,9 @@ export class SubtleButton extends UIElement{
         } else {
             img = imageUrl;
         }
-        img.AddClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
+        img.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
         this.image = new Combine([img])
-            .AddClass("flex-shrink-0");
+            .SetClass("flex-shrink-0");
         
        
     }
@@ -53,7 +53,7 @@ export class SubtleButton extends UIElement{
         return new Combine([
             this.image,
             this.message,
-        ]).AddClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200")
+        ]).SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200")
             .Render();
     }
 

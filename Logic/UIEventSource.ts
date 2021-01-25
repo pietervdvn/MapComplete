@@ -1,14 +1,64 @@
-export class UIEventSource<T>{
+export class UIEventSource<T> {
 
     public data: T;
+    private readonly tag: string;
     private _callbacks = [];
+    
+    private static allSources : UIEventSource<any>[] = UIEventSource.PrepPerf();
+    
+    static PrepPerf(){
+        // @ts-ignore
+        window.mcperf = () => {
+            console.log(UIEventSource.allSources.length, "uieventsources created");
+            const copy = [...UIEventSource.allSources];
+            copy.sort((a,b) => b._callbacks.length - a._callbacks.length);
+            console.log("Topten is:")
+            for (let i = 0; i < 10; i++) {
+                console.log(copy[i].tag, copy[i]);
+            }
+        }
+        return [];
+    }
 
-    constructor(data: T) {
+    constructor(data: T, tag: string = "") {
+        this.tag = tag;
         this.data = data;
+        UIEventSource.allSources.push(this);
+    }
+
+    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
+        const sink = new UIEventSource<X>(source.data?.data);
+
+        source.addCallback((latestData) => {
+            sink.setData(latestData?.data);
+        });
+
+        for (const possibleSource of possibleSources) {
+            possibleSource?.addCallback(() => {
+                sink.setData(source.data?.data);
+            })
+        }
+
+        return sink;
+    }
+
+    public static Chronic(millis: number, asLong: () => boolean = undefined): UIEventSource<Date> {
+        const source = new UIEventSource<Date>(undefined);
+
+        function run() {
+            source.setData(new Date());
+            if (asLong === undefined || asLong()) {
+                window.setTimeout(run, millis);
+            }
+        }
+
+        run();
+        return source;
+
     }
 
     public addCallback(callback: ((latestData: T) => void)): UIEventSource<T> {
-        if(callback === console.log){
+        if (callback === console.log) {
             // This ^^^ actually works!
             throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
         }
@@ -36,25 +86,9 @@ export class UIEventSource<T>{
         }
     }
 
-    public static flatten<X>(source: UIEventSource<UIEventSource<X>>, possibleSources: UIEventSource<any>[]): UIEventSource<X> {
-        const sink = new UIEventSource<X>(source.data?.data);
-
-        source.addCallback((latestData) => {
-           sink.setData(latestData?.data);
-        });
-
-        for (const possibleSource of possibleSources) {
-            possibleSource?.addCallback(() => {
-                sink.setData(source.data?.data);
-            })
-        }
-
-        return sink;
-    }
-
     public map<J>(f: ((T) => J),
                   extraSources: UIEventSource<any>[] = [],
-                  g: ((J) => T) = undefined ): UIEventSource<J> {
+                  g: ((J) => T) = undefined): UIEventSource<J> {
         const self = this;
 
         const newSource = new UIEventSource<J>(
@@ -70,7 +104,7 @@ export class UIEventSource<T>{
             extraSource?.addCallback(update);
         }
 
-        if(g !== undefined) {
+        if (g !== undefined) {
             newSource.addCallback((latest) => {
                 self.setData(g(latest));
             })
@@ -78,7 +112,6 @@ export class UIEventSource<T>{
 
         return newSource;
     }
-
 
     public syncWith(otherSource: UIEventSource<T>, reverseOverride = false): UIEventSource<T> {
         this.addCallback((latest) => otherSource.setData(latest));
@@ -94,7 +127,7 @@ export class UIEventSource<T>{
         return this;
     }
 
-    public stabilized(millisToStabilize) : UIEventSource<T>{
+    public stabilized(millisToStabilize): UIEventSource<T> {
 
         const newSource = new UIEventSource<T>(this.data);
 
@@ -103,28 +136,13 @@ export class UIEventSource<T>{
             currentCallback++;
             const thisCallback = currentCallback;
             window.setTimeout(() => {
-                if(thisCallback === currentCallback){
+                if (thisCallback === currentCallback) {
                     newSource.setData(latestData);
                 }
             }, millisToStabilize)
         });
 
         return newSource;
-    }
-
-    public static Chronic(millis: number, asLong: () => boolean = undefined): UIEventSource<Date> {
-        const source = new UIEventSource<Date>(undefined);
-
-        function run() {
-            source.setData(new Date());
-            if (asLong === undefined || asLong()) {
-                window.setTimeout(run, millis);
-            }
-        }
-
-        run();
-        return source;
-
     }
 
 }

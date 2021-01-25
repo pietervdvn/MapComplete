@@ -17,7 +17,6 @@ export default class StrayClickHandler {
         selectedElement: UIEventSource<string>,
         filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
         leafletMap: UIEventSource<L.Map>,
-        fullscreenMessage: UIEventSource<{content: UIElement, hashText: string}>,
         uiToShow: (() => UIElement)) {
         this._uiToShow = uiToShow;
         const self = this;

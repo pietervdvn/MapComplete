@@ -149,16 +149,12 @@ export abstract class UIElement extends UIEventSource<string> {
         return this.InnerRender() === "";
     }
 
-    public SetClass(clss: string): UIElement {
-        return this.AddClass(clss);
-    }
-
     /**
      * Adds all the relevant classes, space seperated
      * @param clss
      * @constructor
      */
-    public AddClass(clss: string) {
+    public SetClass(clss: string) {
         this.dumbMode = false;
         const all = clss.split(" ");
         let recordedChange = false;

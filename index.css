@@ -32,12 +32,18 @@
 }
 
 
-@media only screen and (max-width: 640px), only screen and (max-height: 640px) {
+@media only screen and (max-width: 640px) {
     .no-transform {
-        /*This is a workaround to let popup contents escape the popup on mobile*/
+        /*This is a workaround to let popup contents escape the popup on mobile - see scrollableFullScreen.ts*/
         transform: none !important;
     }
+
+    .clutter-hidden {
+        /*This is a workaround to let popup contents escape the popup on mobile - see scrollableFullScreen.ts*/
+        visibility: hidden !important;
+    }
 }
+
 
 
 
@@ -55,6 +61,11 @@
     --shadow-color: #00000066;
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
+}
+
+.hide-when-fullscreen-is-shown {
+    /*Clutter is actually a class indicating that the element should be hidden when a scrollableFullScreen is opened
+    It doesn't actually define any rules*/
 }
 
 html, body {
@@ -333,7 +344,6 @@ a {
 
 .welcomeMessage {
     display: block;
-    margin-left: 4em;
     max-width: calc(100vw - 5em);
     width: 40em;
     max-height: calc(100vh - 15em);

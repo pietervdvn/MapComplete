@@ -79,10 +79,3 @@
     max-height: 30vh;
     border-radius: 1em;
 }
-
-
-.hidden {
-    /* This is used by the slideshow, to hide non-active slides*/
-    display: none !important;
-
-}

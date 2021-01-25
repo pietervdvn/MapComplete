@@ -88,7 +88,7 @@ export default class TagRenderingQuestion extends UIElement {
                     return tags.asHumanString(true, true);
                 }
             )
-        ).AddClass("block")
+        ).SetClass("block")
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {

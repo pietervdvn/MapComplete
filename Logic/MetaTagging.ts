@@ -74,7 +74,7 @@ export default class MetaTagging {
                     const tagsSource = State.state.allElements.getEventSourceFor(feature);
                     tagsSource.ping();
                 } catch (e) {
-                    console.error(e)
+                    console.warn(e)
                 }
             });
         }

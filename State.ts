@@ -72,10 +72,6 @@ export default class State {
      *  The message that should be shown at the center of the screen
      */
     public readonly centerMessage = new UIEventSource<string>("");
-    /**
-     This message is shown full screen on mobile devices
-     */
-    public readonly fullScreenMessage = new UIEventSource<{ content: UIElement, hashText: string, titleText?: UIElement }>(undefined)
 
     /**
      The latest element that was selected - used to generate the right UI at the right place
@@ -244,7 +240,7 @@ export default class State {
             }
         }).ping()
 
-        new TitleHandler(this.layoutToUse, this.fullScreenMessage);
+        new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
         
 
         this.allElements = new ElementStorage();

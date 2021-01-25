@@ -21,7 +21,7 @@ export default class TagRenderingAnswer extends UIElement {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
-        this.AddClass("flex items-center flex-row text-lg")
+        this.SetClass("flex items-center flex-row text-lg")
     }
 
     InnerRender(): string {

@@ -9,29 +9,41 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
-export default class FeatureInfoBox extends UIElement {
-    private _component: UIElement;
-
-    public title: UIElement ;
+export default class FeatureInfoBox extends ScrollableFullScreen {
 
     constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        onClose: () => {}
+        onClose: () => void
     ) {
-        super();
+        super(
+            FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
+            FeatureInfoBox.GenerateContent(tags, layerConfig),
+            onClose
+        );
         if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
-
-
+    }
+    
+    private static GenerateTitleBar( tags: UIEventSource<any>,
+                                     layerConfig: LayerConfig): UIElement{
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
-            .AddClass("text-2xl break-words font-bold p-2");
-        this.title = title;
+            .SetClass("text-2xl break-words font-bold p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)
-                .AddClass("block w-8 h-8 align-baseline box-content p-0.5")))
-            .AddClass("flex flex-row flex-wrap pt-1 items-center mr-2");
+                .SetClass("block w-8 h-8 align-baseline box-content p-0.5")))
+            .SetClass("flex flex-row flex-wrap pt-1 items-center mr-2");
+
+      return new Combine([
+            new Combine([title, titleIcons]).SetClass("flex flex-grow justify-between")
+        ])
+    }
+    
+    private static GenerateContent(tags: UIEventSource<any>,
+                                   layerConfig: LayerConfig): UIElement{
+
+
 
         let questionBox: UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {
@@ -53,20 +65,12 @@ export default class FeatureInfoBox extends UIElement {
         }
         const tail = new Combine([]).SetClass("only-on-mobile");
 
-        const content = new Combine([
+        return new Combine([
                 ...renderings,
                 tail.SetClass("featureinfobox-tail")
             ]
         )
-        const titleBar = new Combine([
-            new Combine([title, titleIcons]).SetClass("flex flex-grow justify-between")
-        ])
 
-        this._component = new ScrollableFullScreen(titleBar, content, onClose)
-    }
-
-    InnerRender(): string {
-        return this._component.Render();
     }
 
 }

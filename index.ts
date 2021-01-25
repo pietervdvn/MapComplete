@@ -119,11 +119,10 @@ if (layoutFromBase64.startsWith("wiki:")) {
 } else {
     // We fall through: no theme loaded: just show a few buttons
     State.state = new State(undefined);
-    document.getElementById("messagesboxmobile").remove();
     new Combine([new MoreScreen(true)
         .SetStyle("pointer-events: all;"),
         Translations.t.general.openStreetMapIntro
-    ]).AddClass("block m-5 lg:w-3/4 lg:ml-40")
+    ]).SetClass("block m-5 lg:w-3/4 lg:ml-40")
         .AttachTo("topleft-tools");
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9

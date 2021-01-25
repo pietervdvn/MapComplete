@@ -4,7 +4,7 @@ import {Utils} from "../../Utils";
 
 export class OsmPreferences {
 
-    public preferences = new UIEventSource<any>({});
+    public preferences = new UIEventSource<any>({}, "all-osm-preferences");
     public preferenceSources: any = {}
     private auth: any;
     private userDetails: UIEventSource<UserDetails>;
@@ -29,7 +29,7 @@ export class OsmPreferences {
             return this.longPreferences[prefix + key];
         }
 
-        const source = new UIEventSource<string>(undefined);
+        const source = new UIEventSource<string>(undefined, "long-osm-preference:"+prefix+key);
         this.longPreferences[prefix + key] = source;
 
         const allStartWith = prefix + key + "-combined";
@@ -106,7 +106,7 @@ export class OsmPreferences {
         if (this.userDetails.data.loggedIn && this.preferences.data[key] === undefined) {
             this.UpdatePreferences();
         }
-        const pref = new UIEventSource<string>(this.preferences.data[key]);
+        const pref = new UIEventSource<string>(this.preferences.data[key],"osm-preference:"+key);
         pref.addCallback((v) => {
             this.SetPreference(key, v);
         });

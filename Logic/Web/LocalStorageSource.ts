@@ -5,7 +5,7 @@ export class LocalStorageSource {
     static Get(key: string, defaultValue: string = undefined): UIEventSource<string> {
         try {
             const saved = localStorage.getItem(key);
-            const source = new UIEventSource<string>(saved ?? defaultValue);
+            const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:"+key);
 
             source.addCallback((data) => {
                 localStorage.setItem(key, data);
