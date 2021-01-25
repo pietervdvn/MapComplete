@@ -50,9 +50,9 @@ export default class UserBadge extends UIElement {
         this._homeButton = new VariableUiElement(
             this._userDetails.map((userinfo) => {
                 if (userinfo.home) {
-                    return Svg.home_svg().Render();
+                    return Svg.home_ui().Render();
                 }
-                return "";
+                return " ";
             })
         ).onClick(() => {
             const home = State.state.osmConnection.userDetails.data?.home;

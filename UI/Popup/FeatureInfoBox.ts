@@ -9,25 +9,29 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
-export default class FeatureInfoBox extends ScrollableFullScreen {
+export default class FeatureInfoBox extends UIElement {
+    private _component: ScrollableFullScreen;
 
     constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
         onClose: () => void
     ) {
-        super(
-            FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
-            FeatureInfoBox.GenerateContent(tags, layerConfig),
-            onClose
-        );
+        super();
         if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
+        const title = FeatureInfoBox.GenerateTitleBar(tags, layerConfig);
+        const contents = FeatureInfoBox.GenerateContent(tags, layerConfig);
+        this._component = new ScrollableFullScreen(title, contents, onClose)
     }
     
-    private static GenerateTitleBar( tags: UIEventSource<any>,
-                                     layerConfig: LayerConfig): UIElement{
+    InnerRender(): string {
+        return this._component.Render();
+    }
+
+    private static GenerateTitleBar(tags: UIEventSource<any>,
+                                    layerConfig: LayerConfig): UIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
             .SetClass("text-2xl break-words font-bold p-2");
         const titleIcons = new Combine(
@@ -35,14 +39,13 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 .SetClass("block w-8 h-8 align-baseline box-content p-0.5")))
             .SetClass("flex flex-row flex-wrap pt-1 items-center mr-2");
 
-      return new Combine([
+        return new Combine([
             new Combine([title, titleIcons]).SetClass("flex flex-grow justify-between")
         ])
     }
-    
-    private static GenerateContent(tags: UIEventSource<any>,
-                                   layerConfig: LayerConfig): UIElement{
 
+    private static GenerateContent(tags: UIEventSource<any>,
+                                   layerConfig: LayerConfig): UIElement {
 
 
         let questionBox: UIElement = undefined;
@@ -69,8 +72,10 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 ...renderings,
                 tail.SetClass("featureinfobox-tail")
             ]
-        )
+        ).SetClass("block sm:max-h-65vh")
 
     }
+
+  
 
 }

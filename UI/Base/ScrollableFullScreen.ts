@@ -8,21 +8,13 @@ import Ornament from "./Ornament";
  */
 export default class ScrollableFullScreen extends UIElement {
     private static _isInited = false;
-    private title: UIElement;
-    private content: UIElement;
     private _component: UIElement;
 
     constructor(title: UIElement, content: UIElement, onClose: (() => void)) {
         super();
-        this.content = content;
-        this.title = title;
         if (!ScrollableFullScreen._isInited) {
             ScrollableFullScreen._isInited = ScrollableFullScreen.PreparePatchesForFullscreen();
         }
-        if (onClose === undefined) {
-            console.error("ScrollableFullScreen initialized without onClose!")
-        }
-        this.dumbMode = false;
         const returnToTheMap =
             new Combine([
                 Svg.back_svg().SetClass("block sm:hidden"),
@@ -54,6 +46,7 @@ export default class ScrollableFullScreen extends UIElement {
                 ]).SetClass("block flex flex-col  relative bg-white")
             ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen sm:max-h-65vh sm:w-auto sm:relative");
 
+        this.dumbMode = false;
     }
 
     private static HideClutter(htmlElement: HTMLElement) {
@@ -113,7 +106,7 @@ export default class ScrollableFullScreen extends UIElement {
 
     }
 
-    private static RestoreLeaflet() {
+    public static RestoreLeaflet() {
         console.log("Restoring")
         const noTransf = document.getElementsByClassName("scrollable-fullscreen-no-transform");
         for (let i = 0; i < noTransf.length; ++i) {
@@ -134,12 +127,6 @@ export default class ScrollableFullScreen extends UIElement {
         return this._component.Render();
     }
     
-    Update() {
-        console.log("Updating  the scrollableFullScreen")
-        super.Update();
-        this._component.Update();
-    }
-
     public PrepFullscreen(htmlElement = undefined) {
         ScrollableFullScreen.PatchLeaflet(htmlElement);
 
@@ -149,8 +136,14 @@ export default class ScrollableFullScreen extends UIElement {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
+        console.log("Inner updating scrollale", this.id)
         this.PrepFullscreen(htmlElement)
         super.InnerUpdate(htmlElement);
+    }
+    
+    Update() {
+        console.log("Updating scrollable", this.id)
+        super.Update();
     }
 
 

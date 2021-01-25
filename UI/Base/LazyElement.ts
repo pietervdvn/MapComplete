@@ -28,9 +28,7 @@ export default class LazyElement<T extends UIElement> extends UIElement {
         if (this._content === undefined) {
             return this._loadingContent;
         }
-        return this._content.InnerRender();
+        return this._content.Render();
     }
-    
-
 
 }

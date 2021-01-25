@@ -11,6 +11,9 @@ import Hash from "../Logic/Web/Hash";
 import {GeoOperations} from "../Logic/GeoOperations";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import {UIElement} from "./UIElement";
+import Combine from "./Base/Combine";
+import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 
 
 export default class ShowDataLayer {
@@ -126,15 +129,16 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement: LazyElement<FeatureInfoBox> = new LazyElement(() => new FeatureInfoBox(tags, layer, () => {
+        const uiElement: LazyElement<UIElement> = new LazyElement(() =>new Combine([ new FeatureInfoBox(tags, layer, () => {
                 console.log("Closing the popup!")
                 State.state.selectedElement.setData(undefined);
                 popup.remove();
 
-            }),
+            })]),
             "<div style='height: 90vh'>Rendering</div>");
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
+            ScrollableFullScreen.RestoreLeaflet(); // Just in case...
             if (!popup.isOpen()) {
                 return;
             }
@@ -159,7 +163,7 @@ export default class ShowDataLayer {
                 return;
             }
             leafletLayer.openPopup();
-            uiElement.Activate(e => e.PrepFullscreen());
+            uiElement.Activate();
             State.state.selectedElement.setData(feature);
         }
         this._onSelectedTrigger[feature.properties.id.replace("/", "_")] = this._onSelectedTrigger[id];
@@ -167,7 +171,7 @@ export default class ShowDataLayer {
             // This element is in the URL, so this is a share link
             // We open the relevant popup straight away
             console.log("Opening the popup due to sharelink")
-            uiElement.Activate(e => e.PrepFullscreen());
+            uiElement.Activate(     );
             popup.setContent(uiElement.Render());
 
             const center = GeoOperations.centerpoint(feature).geometry.coordinates;
