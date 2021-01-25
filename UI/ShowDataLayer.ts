@@ -148,7 +148,7 @@ export default class ShowDataLayer {
         leafletLayer.on("click", () => {
             // We set the element as selected...
             
-            uiElement.Activate(e => e.PrepFullscreen());
+            uiElement.Activate();
             State.state.selectedElement.setData(feature);
         });
 

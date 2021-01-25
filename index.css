@@ -15,22 +15,32 @@
         .z-above-map{
             z-index: 10000
         }
-        
-        .z-above-map-higher {
-            z-index: 10100
-        }
-        
-        .z-above-map-high {
-            z-index: 10200 !important;
-        }
-        
-        .z-above-map-highest{
-            z-index: 50000
-        }
 
     }
-}
 
+  .btn {
+      @apply inline-flex justify-center;
+      @apply py-2 px-4;
+      @apply border border-transparent shadow-sm;
+      @apply shadow-sm rounded-3xl;
+      @apply ring-2 ring-blue-200 hover:ring-blue-300;
+      @apply mt-1 mr-1;
+      @apply text-sm font-medium text-white;
+      @apply bg-blue-600 hover:bg-blue-700;
+      @apply focus:outline-none focus:ring-blue-700;
+  }
+
+  .btn-secondary {
+      @apply bg-gray-600 hover:bg-gray-700;
+  }
+
+  .btn-disabled {
+      @apply bg-gray-500 hover:bg-gray-500;
+      @apply text-gray-300;
+      @apply ring-gray-200 hover:ring-gray-200 focus:ring-gray-200;
+      @apply cursor-default;
+  }
+}
 
 @media only screen and (max-width: 640px) {
     .no-transform {

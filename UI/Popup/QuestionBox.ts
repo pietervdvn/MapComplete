@@ -33,7 +33,7 @@ export default class QuestionBox extends UIElement {
                     self._skippedQuestions.ping();
                 },
                 Translations.t.general.skip.Clone()
-                    .SetClass("cancel")
+                    .SetClass("btn btn-secondary mr-3")
                     .onClick(() => {
                         self._skippedQuestions.data.push(i);
                         self._skippedQuestions.ping();

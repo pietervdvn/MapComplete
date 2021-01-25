@@ -22,15 +22,14 @@ export class SaveButton extends UIElement {
     }
 
     InnerRender(): string {
-        let clss = "save";
-
         if(this._userDetails != undefined &&  !this._userDetails.data.loggedIn){
             return this._friendlyLogin.Render();
         }
+        let inactive_class = ''
         if (this._value.data === false || (this._value.data ?? "") === "") {
-            clss = "save-non-active";
+            inactive_class = "btn-disabled";
         }
-        return Translations.t.general.save.Clone().SetClass(clss).Render();
+        return Translations.t.general.save.Clone().SetClass(`btn ${inactive_class}`).Render();
     }
 
 }

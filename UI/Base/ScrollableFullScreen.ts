@@ -97,7 +97,7 @@ export default class ScrollableFullScreen extends UIElement {
     }
 
     private static PatchLeaflet(htmlElement) {
-        if(htmlElement === null){
+        if(htmlElement === undefined || htmlElement === null){
             return;
         }
         do {
@@ -141,8 +141,9 @@ export default class ScrollableFullScreen extends UIElement {
     }
 
     public PrepFullscreen(htmlElement = undefined) {
-        htmlElement = htmlElement ?? document.getElementById(this.id);
         ScrollableFullScreen.PatchLeaflet(htmlElement);
+
+        htmlElement = htmlElement ?? document.getElementById(this.id);
         ScrollableFullScreen.HideClutter(htmlElement);
 
     }
