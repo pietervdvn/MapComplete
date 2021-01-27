@@ -28,9 +28,6 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    public static runningFromConsole: boolean = false;
-
-    
     
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 

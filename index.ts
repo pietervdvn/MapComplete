@@ -118,10 +118,10 @@ if (layoutFromBase64.startsWith("wiki:")) {
 } else {
     // We fall through: no theme loaded: just show a few buttons
     State.state = new State(undefined);
-    new Combine([new MoreScreen(true)
-        .SetStyle("pointer-events: all;"),
-        Translations.t.general.openStreetMapIntro
+    new Combine([new MoreScreen(true),
+        Translations.t.general.aboutMapcomplete
     ]).SetClass("block m-5 lg:w-3/4 lg:ml-40")
+        .SetStyle("pointer-events: all;")
         .AttachTo("topleft-tools");
 }
 window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9

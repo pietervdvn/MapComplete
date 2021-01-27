@@ -1,3 +1,5 @@
+import {Utils} from "../Utils";
+
 export class UIEventSource<T> {
 
     public data: T;
@@ -6,7 +8,10 @@ export class UIEventSource<T> {
     
     private static allSources : UIEventSource<any>[] = UIEventSource.PrepPerf();
     
-    static PrepPerf(){
+    static PrepPerf() : UIEventSource<any>[]{
+        if(Utils.runningFromConsole){
+            return [];
+        }
         // @ts-ignore
         window.mcperf = () => {
             console.log(UIEventSource.allSources.length, "uieventsources created");
