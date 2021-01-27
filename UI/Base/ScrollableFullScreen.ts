@@ -40,7 +40,7 @@ export default class ScrollableFullScreen extends UIElement {
                     new Combine([returnToTheMap, title])
                         .SetClass("border-b-2 border-black shadow md:shadow-none bg-white p-2 pb-0 md:p-0 flex overflow-x-hidden flex-shrink-0 max-h-20vh"),
                     new Combine([content, ornament])
-                        .SetClass("p-2 md:pt-4 w-full h-full overflow-y-auto overflow-x-hidden md:max-h-65vh"),
+                        .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto overflow-x-hidden md:max-h-65vh"),
                     // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
                 ]).SetClass("flex flex-col h-full relative bg-white")
             ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative");

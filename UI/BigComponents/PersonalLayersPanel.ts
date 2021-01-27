@@ -48,7 +48,8 @@ export default class PersonalLayersPanel extends UIElement {
                     layout.title,
                     "</b><br/>",
                     layout.shortDescription ?? ""
-                ]).SetStyle("background: #eee; display: block; padding: 0.5em; border-radius:0.5em; overflow:auto;")
+                ]).SetClass("block p1 overflow-auto rounded")
+                    .SetStyle("background: #eee;")
             this.checkboxes.push(header);
 
             for (const layer of layout.layers) {

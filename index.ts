@@ -10,7 +10,6 @@ import MoreScreen from "./UI/BigComponents/MoreScreen";
 import State from "./State";
 import Combine from "./UI/Base/Combine";
 import Translations from "./UI/i18n/Translations";
-import {UIElement} from "./UI/UIElement";
 
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------

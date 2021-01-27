@@ -47,6 +47,7 @@ export class RadioButton<T> extends InputElement<T> {
                 self._selectedElementIndex.setData(i);
             })
         }
+        this.dumbMode = false;
 
     }
 
@@ -69,7 +70,6 @@ export class RadioButton<T> extends InputElement<T> {
     }
 
     InnerRender(): string {
-
         let body = "";
         for (let i = 0; i < this._elements.length; i++){
             const el = this._elements[i];
@@ -118,7 +118,6 @@ export class RadioButton<T> extends InputElement<T> {
                 }
             }
         }
-
 
         const el = document.getElementById(this.id);
         el.addEventListener("change",

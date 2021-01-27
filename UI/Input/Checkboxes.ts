@@ -24,10 +24,8 @@ export default class CheckBoxes extends InputElement<number[]> {
 
 
     IsValid(ts: number[]): boolean {
-        if (ts === undefined) {
-            return false;
-        }
-        return true;
+        return ts !== undefined;
+        
     }
 
     GetValue(): UIEventSource<number[]> {
@@ -48,7 +46,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             body += htmlElement;
 
         }
-
+        
         return `<form id='${this.id}'>${body}</form>`;
     }
 
