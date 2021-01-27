@@ -13,7 +13,6 @@ export default class LazyElement<T extends UIElement> extends UIElement {
         this.dumbMode = false;
         const self = this;
         this.Activate = (onElement?: (element: T) => void) => {
-            console.log("ACTIVATED")
             if (this._content === undefined) {
                 self._content = content();
             }

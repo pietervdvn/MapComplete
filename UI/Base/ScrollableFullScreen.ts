@@ -21,7 +21,6 @@ export default class ScrollableFullScreen extends UIElement {
                 Svg.close_svg().SetClass("hidden sm:block")
             ])
                 .onClick(() => {
-                    console.log("Clicked back!");
                     ScrollableFullScreen.RestoreLeaflet();
                     if (onClose !== undefined) {
                         onClose();
@@ -107,7 +106,6 @@ export default class ScrollableFullScreen extends UIElement {
     }
 
     public static RestoreLeaflet() {
-        console.log("Restoring")
         const noTransf = document.getElementsByClassName("scrollable-fullscreen-no-transform");
         for (let i = 0; i < noTransf.length; ++i) {
             noTransf[i].classList.remove("no-transform");
@@ -136,13 +134,11 @@ export default class ScrollableFullScreen extends UIElement {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        console.log("Inner updating scrollale", this.id)
         this.PrepFullscreen(htmlElement)
         super.InnerUpdate(htmlElement);
     }
     
     Update() {
-        console.log("Updating scrollable", this.id)
         super.Update();
     }
 

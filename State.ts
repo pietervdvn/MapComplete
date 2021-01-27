@@ -30,6 +30,8 @@ export default class State {
 
     public static runningFromConsole: boolean = false;
 
+    
+    
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 
     /**
@@ -74,11 +76,11 @@ export default class State {
     public readonly centerMessage = new UIEventSource<string>("");
 
     /**
-     The latest element that was selected - used to generate the right UI at the right place
+     The latest element that was selected
      */
     public readonly selectedElement = new UIEventSource<any>(undefined)
-    publ
 
+    
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
     public readonly featureSwitchLayers: UIEventSource<boolean>;
@@ -88,6 +90,7 @@ export default class State {
     public readonly featureSwitchMoreQuests: UIEventSource<boolean>;
     public readonly featureSwitchShareScreen: UIEventSource<boolean>;
     public readonly featureSwitchGeolocation: UIEventSource<boolean>;
+    public readonly featureSwitchIsTesting: UIEventSource<boolean>;
 
 
     /**
@@ -119,36 +122,39 @@ export default class State {
 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
+        
         this.layoutToUse.setData(layoutToUse);
 
-        const zoom = State.asFloat(
-            QueryParameters.GetQueryParameter("z", "" +(layoutToUse?.startZoom ?? 1), "The initial/current zoom level")
-                .syncWith(LocalStorageSource.Get("zoom")));
-        const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + (layoutToUse?.startLat ?? 0), "The initial/current latitude")
-            .syncWith(LocalStorageSource.Get("lat")));
-        const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + (layoutToUse?.startLon ?? 0), "The initial/current longitude of the app")
-            .syncWith(LocalStorageSource.Get("lon")));
+        // -- Location control initialization
+        {    const zoom = State.asFloat(
+                QueryParameters.GetQueryParameter("z", "" + (layoutToUse?.startZoom ?? 1), "The initial/current zoom level")
+                    .syncWith(LocalStorageSource.Get("zoom")));
+            const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + (layoutToUse?.startLat ?? 0), "The initial/current latitude")
+                .syncWith(LocalStorageSource.Get("lat")));
+            const lon = State.asFloat(QueryParameters.GetQueryParameter("lon", "" + (layoutToUse?.startLon ?? 0), "The initial/current longitude of the app")
+                .syncWith(LocalStorageSource.Get("lon")));
 
 
-        this.locationControl = new UIEventSource<Loc>({
-            zoom: Utils.asFloat(zoom.data),
-            lat: Utils.asFloat(lat.data),
-            lon: Utils.asFloat(lon.data),
-        }).addCallback((latlonz) => {
-            zoom.setData(latlonz.zoom);
-            lat.setData(latlonz.lat);
-            lon.setData(latlonz.lon);
-        });
+            this.locationControl = new UIEventSource<Loc>({
+                zoom: Utils.asFloat(zoom.data),
+                lat: Utils.asFloat(lat.data),
+                lon: Utils.asFloat(lon.data),
+            }).addCallback((latlonz) => {
+                zoom.setData(latlonz.zoom);
+                lat.setData(latlonz.lat);
+                lon.setData(latlonz.lon);
+            });
 
-        this.layoutToUse.addCallback(layoutToUse => {
-            const lcd = self.locationControl.data;
-            lcd.zoom = lcd.zoom ?? layoutToUse?.startZoom;
-            lcd.lat = lcd.lat ?? layoutToUse?.startLat;
-            lcd.lon = lcd.lon ?? layoutToUse?.startLon;
-            self.locationControl.ping();
-        });
+            this.layoutToUse.addCallback(layoutToUse => {
+                const lcd = self.locationControl.data;
+                lcd.zoom = lcd.zoom ?? layoutToUse?.startZoom;
+                lcd.lat = lcd.lat ?? layoutToUse?.startLat;
+                lcd.lon = lcd.lon ?? layoutToUse?.startLon;
+                self.locationControl.ping();
+            });
 
-
+        }
+        // Helper function to initialize feature switches
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {
             const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined, documentation);
             // I'm so sorry about someone trying to decipher this
@@ -162,59 +168,51 @@ export default class State {
                 }), [queryParameterSource]);
         }
 
+        // Feature switch initialization - not as a function as the UIEventSources are readonly
+        { 
+            
+            this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true,
+                "Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.");
+            this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true,
+                "Disables/Enables the search bar");
+            this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true,
+                "Disables/Enables the layer control");
+            this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
+                "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
+            this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true,
+                "Disables/enables the help menu or welcome message");
+            this.featureSwitchIframe = featSw("fs-iframe", () => false,
+                "Disables/Enables the iframe-popup");
+            this.featureSwitchMoreQuests = featSw("fs-more-quests", (layoutToUse) => layoutToUse?.enableMoreQuests ?? true,
+                "Disables/Enables the 'More Quests'-tab in the welcome message");
+            this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true,
+                "Disables/Enables the 'Share-screen'-tab in the welcome message");
+            this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true,
+                "Disables/Enables the geolocation button");
 
-        this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true,
-            "Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.");
-        this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true,
-            "Disables/Enables the search bar");
-        this.featureSwitchLayers = featSw("fs-layers", (layoutToUse) => layoutToUse?.enableLayers ?? true,
-            "Disables/Enables the layer control");
-        this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
-            "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
-        this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true,
-            "Disables/enables the help menu or welcome message");
-        this.featureSwitchIframe = featSw("fs-iframe", () => false,
-            "Disables/Enables the iframe-popup");
-        this.featureSwitchMoreQuests = featSw("fs-more-quests", (layoutToUse) => layoutToUse?.enableMoreQuests ?? true,
-            "Disables/Enables the 'More Quests'-tab in the welcome message");
-        this.featureSwitchShareScreen = featSw("fs-share-screen", (layoutToUse) => layoutToUse?.enableShareScreen ?? true,
-            "Disables/Enables the 'Share-screen'-tab in the welcome message");
-        this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true,
-            "Disables/Enables the geolocation button");
 
-
-        const testParam = QueryParameters.GetQueryParameter("test", "false",
-            "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org").data;
-       
+            this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",
+                "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org")
+                .map(str => str === "true",[], b => ""+b);
+        }
        
        
         this.osmConnection = new OsmConnection(
-            testParam === "true",
+            this.featureSwitchIsTesting.data,
             QueryParameters.GetQueryParameter("oauth_token", undefined,
                 "Used to complete the login"),
             layoutToUse?.id,
             true
         );
 
+
+        this.allElements = new ElementStorage();
+        this.changes = new Changes();
+        
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         );
 
-
-        const h = Hash.hash;
-        this.selectedElement.addCallback(selected => {
-                if (selected === undefined) {
-                    h.setData("");
-                } else {
-                    h.setData(selected.id.replace("/","_"))
-                }
-            }
-        )
-        h.addCallbackAndRun(hash => {
-            if (hash === undefined || hash === "") {
-                self.selectedElement.setData(undefined);
-            }
-        })
 
 
         this.installedThemes = new InstalledThemes(this.osmConnection).installedThemes;
@@ -243,8 +241,6 @@ export default class State {
         new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
         
 
-        this.allElements = new ElementStorage();
-        this.changes = new Changes();
     }
 
     private static asFloat(source: UIEventSource<string>): UIEventSource<number> {
@@ -258,5 +254,6 @@ export default class State {
             return ("" + fl).substr(0, 8);
         })
     }
+    
 
 }

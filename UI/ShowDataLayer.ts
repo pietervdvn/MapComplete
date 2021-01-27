@@ -72,18 +72,9 @@ export default class ShowDataLayer {
                 action();
             }
         });
-        Hash.hash.addCallbackAndRun(id => {
-            // This is a bit of an edge case: if the hash becomes an id to search, we have to show the corresponding popup
-            if (State.state.selectedElement !== undefined) {
-                return; // Something is already selected, we don't have to apply this fix
-            }
-            const action = self._onSelectedTrigger[id];
-            if (action) {
-                action();
-            }
-        })
 
         update();
+        
     }
 
 
@@ -167,19 +158,6 @@ export default class ShowDataLayer {
             State.state.selectedElement.setData(feature);
         }
         this._onSelectedTrigger[feature.properties.id.replace("/", "_")] = this._onSelectedTrigger[id];
-        if (feature.properties.id.replace(/\//g, "_") === Hash.hash.data && State.state.selectedElement.data === undefined) {
-            // This element is in the URL, so this is a share link
-            // We open the relevant popup straight away
-            console.log("Opening the popup due to sharelink")
-            uiElement.Activate(     );
-            popup.setContent(uiElement.Render());
-
-            const center = GeoOperations.centerpoint(feature).geometry.coordinates;
-            popup.setLatLng({lat: center[1], lng: center[0]});
-            popup.openOn(State.state.leafletMap.data);
-            State.state.selectedElement.setData(feature);
-            uiElement.Update();
-        }
     }
 
     private CreateGeojsonLayer(features: any[]): L.Layer {

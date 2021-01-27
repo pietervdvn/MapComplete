@@ -33,6 +33,8 @@ import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
+import HashHandler from "./Logic/Actors/SelectedFeatureHandler";
+import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 
 export class InitUiElements {
 
@@ -231,7 +233,7 @@ export class InitUiElements {
             checkbox.isEnabled.setData(false);
         })
 
-        State.state.selectedElement.addCallback(selected => {
+        State.state.selectedElement.addCallbackAndRun(selected => {
             if (selected !== undefined) {
                 checkbox.isEnabled.setData(false);
             }
@@ -258,6 +260,11 @@ export class InitUiElements {
                     checkbox.isEnabled.setData(false);
                 });
 
+            State.state.selectedElement.addCallbackAndRun(feature => {
+                if(feature !== undefined){
+                    checkbox.isEnabled.setData(false);
+                }
+            })
 
         });
     }
@@ -341,6 +348,8 @@ export class InitUiElements {
 
         new ShowDataLayer(source.features, State.state.leafletMap,
             State.state.layoutToUse.data);
+        
+        new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 
 
     }
