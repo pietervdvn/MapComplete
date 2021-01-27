@@ -17,8 +17,8 @@ export default class ScrollableFullScreen extends UIElement {
         }
         const returnToTheMap =
             new Combine([
-                Svg.back_svg().SetClass("block sm:hidden"),
-                Svg.close_svg().SetClass("hidden sm:block")
+                Svg.back_svg().SetClass("block md:hidden"),
+                Svg.close_svg().SetClass("hidden md:block")
             ])
                 .onClick(() => {
                     ScrollableFullScreen.RestoreLeaflet();
@@ -31,19 +31,19 @@ export default class ScrollableFullScreen extends UIElement {
 
         title.SetClass("block w-full text-2xl font-bold p-2 pl-4")
         const ornament = new Combine([new Ornament().SetStyle("height:5em;")])
-            .SetClass("block sm:hidden h-5")
+            .SetClass("md:hidden h-5")
 
 
         this._component =
             new Combine([
                 new Combine([
                     new Combine([returnToTheMap, title])
-                        .SetClass("border-b-2 border-black shadow sm:shadow-none bg-white p-2 pb-0 sm:p-0 flex overflow-x-hidden flex-shrink-0 max-h-20vh"),
-                    new Combine(["<span>", content, "</span>", ornament])
-                        .SetClass("block p-2 sm:pt-4 w-full h-screen landscape:h-screen  sm:h-full sm:w-full overflow-y-auto overflow-x-hidden"),
+                        .SetClass("border-b-2 border-black shadow md:shadow-none bg-white p-2 pb-0 md:p-0 flex overflow-x-hidden flex-shrink-0 max-h-20vh"),
+                    new Combine([content, ornament])
+                        .SetClass("p-2 md:pt-4 w-full h-full overflow-y-auto overflow-x-hidden md:max-h-65vh"),
                     // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
-                ]).SetClass("block flex flex-col  relative bg-white")
-            ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen sm:max-h-65vh sm:w-auto sm:relative");
+                ]).SetClass("flex flex-col h-full relative bg-white")
+            ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative");
 
         this.dumbMode = false;
     }

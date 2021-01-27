@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
     .no-transform {
         /*This is a workaround to let popup contents escape the popup on mobile - see scrollableFullScreen.ts*/
         transform: none !important;
@@ -519,24 +519,3 @@ a {
     max-width: 1em;
 }
 
-
-.ornament {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.ornament svg {
-    height: 2.5em;
-    width: 100%;
-}
-
-.ornament svg path {
-    stroke: var(--subtle-detail-color-light-contrast);
-}
-
-.ornament svg polygon {
-    fill: var(--subtle-detail-color-light-contrast);
-}

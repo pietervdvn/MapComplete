@@ -69,7 +69,7 @@ export default class SearchAndGo extends UIElement {
                     [bb[1], bb[3]]
                 ]
             State.state.selectedElement. setData(undefined);
-                Hash.hash.setData(poi.osm_type+"_"+poi.osm_id);
+                Hash.hash.setData(poi.osm_type+"/"+poi.osm_id);
                 State.state.leafletMap.data.fitBounds(bounds);
                 self._placeholder.setData(Translations.t.general.search.search);
             },

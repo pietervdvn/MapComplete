@@ -10,9 +10,11 @@ export default class Ornament extends UIElement {
     constructor(index = undefined) {
         super();
         index = index ?? State.state.osmConnection.GetPreference("ornament");
+
+        this.SetClass("pt-3 pb-3 flex justify-center box-border")
+
         this.ListenTo(index);
         this._index = index;
-        this.SetClass("ornament")
         const self = this;
         this.onClick(() => {
             let c = Number(index.data);

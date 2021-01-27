@@ -49,20 +49,6 @@ Contains tweaks for small screens
         width: 100vw;
         height: 100vh;
     }
-
-    #welcomeMessage {
-        display: inline-block;
-        background-color: var(--background-color);
-        border-radius: 0;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        max-height: max-content;
-        box-shadow: unset;
-        overflow-y: unset;
-    }
 }
 
 @media only screen and (max-width: 600px) {

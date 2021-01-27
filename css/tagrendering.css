@@ -1,31 +1,3 @@
-@media only screen and (max-height: 600px) and (min-width: 600px) {
-    /* landscape mode: the first tagrendering of the infobox gets a special treatment and is placed on the right*/
-    .landscape\:max-h-screen {
-        max-height: 100vh;
-    }
-
-    .landscape\:w-1\/2 {
-        width: 50%
-    }
-
-    .landscape\:p-2 {
-        padding: 0.5rem;
-    }
-
-    .question {
-        max-width: 48% !important;
-        padding-right: 0.3em;
-        box-sizing: border-box;
-    }
-
-    .first-rendering {
-        position: absolute;
-        left: 50%;
-        width: 94%;
-        padding-right: 0.3em;
-        box-sizing: border-box;
-    }
-}
 
 .question .form-text-field > input {
     width: 100%;

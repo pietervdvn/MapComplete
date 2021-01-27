@@ -62,7 +62,6 @@ export default class FeatureInfoBox extends UIElement {
             }
             return new EditableTagRendering(tags, tr);
         });
-        renderings[0]?.SetClass("first-rendering");
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
@@ -72,7 +71,7 @@ export default class FeatureInfoBox extends UIElement {
                 ...renderings,
                 tail.SetClass("featureinfobox-tail")
             ]
-        ).SetClass("block sm:max-h-65vh")
+        ).SetClass("block")
 
     }
 
