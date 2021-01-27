@@ -8,3 +8,4 @@ assets/generated/*
 /*.webmanifest
 /*.html
 !/index.html
+.parcel-cache
