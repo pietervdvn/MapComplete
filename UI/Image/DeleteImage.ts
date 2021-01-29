@@ -42,7 +42,7 @@ export default class DeleteImage extends UIElement {
     }
 
     InnerRender(): string {
-        if(!State.state.featureSwitchUserbadge.data){
+        if(! State.state?.featureSwitchUserbadge?.data){
             return "";
         }
 

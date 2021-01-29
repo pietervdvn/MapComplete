@@ -81,6 +81,7 @@
 
 .review-attribution img {
     height: 3em;
+    width: auto;
     margin-left: 0.5em;
 }
 

@@ -1,5 +1,4 @@
 import {UIElement} from "../UIElement";
-import {ImageSearcher} from "../../Logic/Actors/ImageSearcher";
 import {SlideShow} from "./SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
@@ -9,31 +8,31 @@ import {ImgurImage} from "./ImgurImage";
 import {MapillaryImage} from "./MapillaryImage";
 import {SimpleImageElement} from "./SimpleImageElement";
 
-
 export class ImageCarousel extends UIElement{
 
     public readonly slideshow: UIElement;
 
-    constructor(tags: UIEventSource<any>, imagePrefix: string = "image", loadSpecial: boolean =true) {
-        super(tags);
-        const searcher : UIEventSource<{url:string}[]> = new ImageSearcher(tags, imagePrefix, loadSpecial).images;
-        const uiElements = searcher.map((imageURLS: {key: string, url:string}[]) => {
+    constructor(images: UIEventSource<{key: string, url:string}[]>, tags: UIEventSource<any>) {
+        super(images);
+        const uiElements = images.map((imageURLS: {key: string, url:string}[]) => {
             const uiElements: UIElement[] = [];
             for (const url of imageURLS) {
-                let image = ImageCarousel.CreateImageElement(url.url);
+                let image = ImageCarousel.CreateImageElement(url.url)
                 if(url.key !== undefined){
                     image = new Combine([
                         image,
                         new DeleteImage(url.key, tags)
                     ]);
                 }
+            image
+                .SetClass("w-full block")
                 uiElements.push(image);
             }
             return uiElements;
         });
 
         this.slideshow = new SlideShow(uiElements).HideOnEmpty(true);
-        
+        this.SetClass("block image-carousel-marker");
     }
 
     /***

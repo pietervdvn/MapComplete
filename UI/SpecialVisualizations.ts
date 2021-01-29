@@ -18,6 +18,7 @@ import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
 
 import State from "../State";
+import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
@@ -40,11 +41,14 @@ export class SubstitutedTranslation extends UIElement {
             self.content = self.CreateContent();
             self.Update();
         });
-
+        this.SetClass("block w-full")
     }
 
     InnerRender(): string {
-        return new Combine(this.content).Render();
+        if(this.content.length == 1){
+            return this.content[0].Render();
+        }
+        return new Combine(this.content).SetClass("block w-full").Render();
     }
 
     private CreateContent(): UIElement[] {
@@ -145,7 +149,11 @@ export default class SpecialVisualizations {
                         doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
                     }],
                 constr: (state: State,tags, args) => {
-                    return new ImageCarousel(tags, args[0], args[1].toLowerCase() === "true");
+                    const imagePrefix = args[0];
+                    const loadSpecial = args[1].toLowerCase() === "true";
+                    const searcher : UIEventSource<{ key: string, url: string }[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
+
+                    return new ImageCarousel(searcher, tags);
                 }
             },
 

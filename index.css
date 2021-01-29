@@ -71,11 +71,27 @@
     --shadow-color: #00000066;
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
+    
+    --image-carousel-height: 400px;
 }
 
-.hide-when-fullscreen-is-shown {
+.clutter {
     /*Clutter is actually a class indicating that the element should be hidden when a scrollableFullScreen is opened
     It doesn't actually define any rules*/
+}
+.slick-carousel-content {
+    width: 300px;
+    max-height: var(--image-carousel-height);
+    display: block;
+    margin-left: 10px;
+}
+
+.slick-carousel-content img {
+    /**
+Workaround to patch images within a slick carousel
+ */
+   height: var(--image-carousel-height);
+    width: auto;
 }
 
 html, body {
@@ -415,49 +431,6 @@ a {
     transition: opacity 500ms linear;
 }
 
-
-.imgWithAttr {
-    max-height: 20em;
-
-    position: relative;
-    overflow: hidden;
-
-}
-
-.attribution {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-weight: bold;
-    font-size: smaller;
-
-    position: absolute;
-    bottom: 0;
-    left: 6em; /* Offset for the go left button*/
-    padding: 0.25em;
-    margin-bottom: 0.25em;
-    border-radius: 0.5em;
-
-}
-
-.attribution img {
-    height: 1.2em !important;
-    padding-right: 0.5em;
-    padding-left: 0.2em;
-
-}
-
-.attribution-author {
-    display: inline-block;
-}
-
-.license {
-    font-size: small;
-    font-weight: lighter;
-}
-
-.attribution a {
-    color: white;
-}
 
 
 /***************** Info box (box containing features and questions ******************/

@@ -3,6 +3,9 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/Web/Wikimedia";
 import {Mapillary} from "../../Logic/Web/Mapillary";
 import Svg from "../../Svg";
+import {SimpleImageElement} from "./SimpleImageElement";
+import Combine from "../Base/Combine";
+import Attribution from "./Attribution";
 
 
 export class MapillaryImage extends UIElement {
@@ -39,22 +42,21 @@ export class MapillaryImage extends UIElement {
 
     InnerRender(): string {
         const url = `https://images.mapillary.com/${this._imageLocation}/thumb-640.jpg?client_id=TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2`;
-        const image = `<img src='${url}'>`;
+        const image =new SimpleImageElement(new UIEventSource<string>(url))
 
-        if (this._imageMeta === undefined || this._imageMeta.data === null) {
-            return image;
+        if (!this._imageMeta?.data ) {
+            return image.Render();
         }
+        
+        const meta = this._imageMeta.data;
 
-        const attribution =
-            "<span class='attribution-author'><b>" + (this._imageMeta.data.artist ?? "") + "</b></span>" + " <span class='license'>" + (this._imageMeta.data.licenseShortName ?? "") + "</span>";
-
-        return "<div class='imgWithAttr'>" +
-            image +
-            "<div class='attribution'>" +
-            Svg.mapillary_ui().Render() +
-            attribution +
-            "</div>" +
-            "</div>";
+  
+        return new Combine([
+            image,
+            new Attribution(meta.artist, meta.license, Svg.mapillary_svg())
+            
+        ]).SetClass("relative block").Render();
+           
     }
 
 
