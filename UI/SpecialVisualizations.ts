@@ -16,6 +16,7 @@ import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
 
 import State from "../State";
+import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 
 export default class SpecialVisualizations {
 
@@ -56,7 +57,11 @@ export default class SpecialVisualizations {
                         doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
                     }],
                 constr: (state: State,tags, args) => {
-                    return new ImageCarousel(tags, args[0], args[1].toLowerCase() === "true");
+                    const imagePrefix = args[0];
+                    const loadSpecial = args[1].toLowerCase() === "true";
+                    const searcher : UIEventSource<{ key: string, url: string }[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
+
+                    return new ImageCarousel(searcher, tags);
                 }
             },
 

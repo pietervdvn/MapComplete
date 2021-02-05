@@ -33,7 +33,6 @@ export default class Hash {
                 return;
             }
 
-            h = h.replace(/\//g, "_");
             window.location.hash = "#" + h;
         });
 

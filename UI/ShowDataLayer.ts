@@ -30,8 +30,8 @@ export default class ShowDataLayer {
             this._layerDict[layer.id] = layer;
         }
 
-        
-        function openSelectedElementFeature(feature: any){
+
+        function openSelectedElementFeature(feature: any) {
             if (feature === undefined) {
                 return;
             }
@@ -41,7 +41,7 @@ export default class ShowDataLayer {
                 action();
             }
         }
-        
+
         function update() {
             if (features.data === undefined) {
                 return;
@@ -66,6 +66,7 @@ export default class ShowDataLayer {
             }
             mp.addLayer(geoLayer);
             oldGeoLayer = geoLayer;
+            openSelectedElementFeature(State.state.selectedElement.data);
         }
 
         features.addCallback(() => update());
@@ -109,7 +110,7 @@ export default class ShowDataLayer {
             // No popup action defined -> Don't do anything
             return;
         }
-
+        const self = this;
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
@@ -121,17 +122,14 @@ export default class ShowDataLayer {
         const uiElement = new LazyElement(() =>
                 FeatureInfoBox.construct(tags, layer, () => {
                     State.state.selectedElement.setData(undefined);
+                     leafletLayer.closePopup();
                     popup.remove();
-                    leafletLayer.closePopup();
                     ScrollableFullScreen.RestoreLeaflet();
                 }),
             "<div style='height: 90vh'>Rendering</div>"); // By setting 90vh, leaflet will attempt to fit the entire screen and move the feature down
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
             ScrollableFullScreen.RestoreLeaflet(); // Just in case...
-            if (!popup.isOpen()) {
-                return;
-            }
             State.state.selectedElement.setData(undefined);
         });
         leafletLayer.bindPopup(popup);
@@ -139,6 +137,7 @@ export default class ShowDataLayer {
         // But at least it'll be visible already
 
         leafletLayer.on("popupopen", () => {
+            console.log("Popup opened")
             uiElement.Activate();
             State.state.selectedElement.setData(feature);
         })
@@ -146,8 +145,10 @@ export default class ShowDataLayer {
         this._onSelectedTrigger[id]
             = () => {
             if (!popup.isOpen()) {
-                leafletLayer.openPopup();
-                uiElement.Activate();
+                console.log("Action triggered")
+                // Close all the popups which might still be opened
+                self._leafletMap.data.closePopup();
+                leafletLayer.openPopup()
                 return;
             }
         }

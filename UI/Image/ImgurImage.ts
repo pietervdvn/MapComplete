@@ -2,6 +2,9 @@ import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/Web/Wikimedia";
 import {Imgur} from "../../Logic/Web/Imgur";
+import Combine from "../Base/Combine";
+import Attribution from "./Attribution";
+import {SimpleImageElement} from "./SimpleImageElement";
 
 
 export class ImgurImage extends UIElement {
@@ -33,21 +36,20 @@ export class ImgurImage extends UIElement {
     }
 
     InnerRender(): string {
-        const image = `<img src='${this._imageLocation}' alt='' >`;
+        const image = new SimpleImageElement( new UIEventSource (this._imageLocation));
         
         if(this._imageMeta.data === null){
-            return image;
+            return image.Render();
         }
+        
+        const meta = this._imageMeta.data;
+        return new Combine([
+            image,
+            new Attribution(meta.artist, meta.license, undefined),
+            
+        ]).SetClass('block relative')
+            .Render();
 
-        const attribution =
-            "<span class='attribution-author'><b>" + (this._imageMeta.data.artist ?? "") + "</b></span>" + " <span class='license'>" + (this._imageMeta.data.licenseShortName ?? "") + "</span>";
-
-        return "<div class='imgWithAttr'>" +
-            image +
-            "<div class='attribution'>" +
-            attribution +
-            "</div>" +
-            "</div>";
     }
 
 

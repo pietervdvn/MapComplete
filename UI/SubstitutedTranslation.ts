@@ -58,6 +58,9 @@ export class SubstitutedTranslation extends UIElement {
     }
 
     InnerRender(): string {
+        if(this.content.length == 1){
+            return this.content[0].Render();
+        }
         return new Combine(this.content).Render();
     }
 

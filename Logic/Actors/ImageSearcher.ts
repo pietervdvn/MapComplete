@@ -17,17 +17,17 @@ import {UIEventSource} from "../UIEventSource";
  * Note that this list is embedded into an UIEVentSource, ready to put it into a carousel.
  *
  */
-export class ImageSearcher {
+export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>{
 
-    public readonly images = new UIEventSource<{ key: string, url: string }[]>([]);
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
 
     constructor(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true) {
+        super([])
         const self = this;
 
         function AddImages(images: { key: string, url: string }[]) {
-            const oldUrls = self.images.data.map(kurl => kurl.url);
+            const oldUrls = self.data.map(kurl => kurl.url);
             let somethingChanged = false;
             for (const image of images) {
                 const url = image.url;
@@ -41,11 +41,11 @@ export class ImageSearcher {
                     continue;
                 }
 
-                self.images.data.push(image);
+                self.data.push(image);
                 somethingChanged = true;
             }
             if (somethingChanged) {
-                self.images.ping();
+                self.ping();
             }
         }
 
