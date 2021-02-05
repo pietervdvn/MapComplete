@@ -21,8 +21,8 @@ export class ImageCarousel extends UIElement{
                 if(url.key !== undefined){
                     image = new Combine([
                         image,
-                        new DeleteImage(url.key, tags)
-                    ]);
+                        new DeleteImage(url.key, tags).SetClass("delete-image-marker absolute top-0 left-0 pl-3")
+                    ]).SetClass("relative");
                 }
             image
                 .SetClass("w-full block")
@@ -32,7 +32,7 @@ export class ImageCarousel extends UIElement{
         });
 
         this.slideshow = new SlideShow(uiElements).HideOnEmpty(true);
-        this.SetClass("block image-carousel-marker");
+        this.SetClass("block w-full");
     }
 
     /***

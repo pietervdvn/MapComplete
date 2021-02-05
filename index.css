@@ -122,6 +122,10 @@ a {
     color: var(--foreground-color)
 }
 
+.slick-prev:before, .slick-next:before {
+    /*Slideshow workaround*/
+    color:black !important;
+}
 
 #topleft-tools svg {
     fill: var(--foreground-color) !important;
@@ -158,6 +162,8 @@ a {
     color: var(--popup-border) !important;
     box-shadow: 0 3px 14px var(--shadow-color) !important;
 }
+
+
 
 #geolocate-button {
     position: absolute;

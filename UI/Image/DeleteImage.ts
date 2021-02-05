@@ -22,21 +22,20 @@ export default class DeleteImage extends UIElement {
 
         this.isDeletedBadge = Translations.t.image.isDeleted;
 
-        const style = "display:block;color:white;width:100%;"
         const deleteButton = Translations.t.image.doDelete.Clone()
-            .SetStyle(style+"background:#ff8c8c;")
+            .SetClass("block w-full pl-4 pr-4")
+            .SetStyle("color:white;background:#ff8c8c; border-top-left-radius:30rem; border-top-right-radius: 30rem;")
             .onClick(() => {
                 State.state?.changes.addTag(tags.data.id, new Tag(key, ""));
             });
 
-        const cancelButton = Translations.t.general.cancel;
+        const cancelButton = Translations.t.general.cancel.SetClass("bg-white pl-4 pr-4").SetStyle( "border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");
         this.deleteDialog = new CheckBox(
             new Combine([
                 deleteButton,
                 cancelButton
-                
-            ]).SetStyle("display:flex;flex-direction:column;"),
-            Svg.delete_icon_ui().SetStyle('width:1.5em;display:block;padding-left: calc(50% - 0.75em);')
+            ]).SetClass("flex flex-col background-black"),
+            Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
         )
 
     }

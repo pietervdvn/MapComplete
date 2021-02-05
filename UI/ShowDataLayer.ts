@@ -23,7 +23,7 @@ export default class ShowDataLayer {
                 layoutToUse: LayoutConfig) {
         this._leafletMap = leafletMap;
         const self = this;
-        let oldGeoLayer: L.Layer = undefined;
+        const mp = leafletMap.data;
 
         this._layerDict = {};
         for (const layer of layoutToUse.layers) {
@@ -42,6 +42,12 @@ export default class ShowDataLayer {
             }
         }
 
+
+        const knownFeatureIds = new Set<string>();
+        const geoLayer = self.CreateGeojsonLayer();
+        mp.addLayer(geoLayer);
+        let cluster = undefined;
+
         function update() {
             if (features.data === undefined) {
                 return;
@@ -49,30 +55,36 @@ export default class ShowDataLayer {
             if (leafletMap.data === undefined) {
                 return;
             }
-            const mp = leafletMap.data;
-
+            
             const feats = features.data.map(ff => ff.feature);
 
-            let geoLayer = self.CreateGeojsonLayer(feats)
-            if (layoutToUse.clustering.minNeededElements <= features.data.length) {
-                const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
-                const cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.clustering.maxZoom});
-                cluster.addLayer(geoLayer);
-                geoLayer = cluster;
+            for (const feat of feats) {
+                const key = feat.geometry.type + feat.properties.id + feat.layer;
+                if (knownFeatureIds.has(key)) {
+                    continue;
+                }
+                knownFeatureIds.add(key);
+                // @ts-ignore
+                geoLayer.addData(feat);
+                console.log("Added ", feat)
             }
-
-            if (oldGeoLayer) {
-                mp.removeLayer(oldGeoLayer);
+            if (cluster === undefined) {
+                if (layoutToUse.clustering.minNeededElements <= features.data.length) {
+                    // Activate clustering if it wasn't already activated
+                    const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
+                    cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.clustering.maxZoom});
+                    cluster.addLayer(geoLayer);
+                    mp.removeLayer(geoLayer)
+                    mp.addLayer(cluster);
+                }
             }
-            mp.addLayer(geoLayer);
-            oldGeoLayer = geoLayer;
-            openSelectedElementFeature(State.state.selectedElement.data);
         }
 
         features.addCallback(() => update());
         leafletMap.addCallback(() => update());
-        update();
+
         State.state.selectedElement.addCallbackAndRun(openSelectedElementFeature);
+        update();
     }
 
 
@@ -122,7 +134,7 @@ export default class ShowDataLayer {
         const uiElement = new LazyElement(() =>
                 FeatureInfoBox.construct(tags, layer, () => {
                     State.state.selectedElement.setData(undefined);
-                     leafletLayer.closePopup();
+                    leafletLayer.closePopup();
                     popup.remove();
                     ScrollableFullScreen.RestoreLeaflet();
                 }),
@@ -156,11 +168,11 @@ export default class ShowDataLayer {
 
     }
 
-    private CreateGeojsonLayer(features: any[]): L.Layer {
+    private CreateGeojsonLayer(): L.Layer {
         const self = this;
         const data = {
             type: "FeatureCollection",
-            features: features
+            features: []
         }
         return L.geoJSON(data, {
             style: feature => self.createStyleFor(feature),

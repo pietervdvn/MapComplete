@@ -29,6 +29,7 @@ export class SubstitutedTranslation extends UIElement {
             self.content = self.CreateContent();
             self.Update();
         });
+        this.SetClass("w-full")
 
     }
 

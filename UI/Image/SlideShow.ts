@@ -41,7 +41,7 @@ export class SlideShow extends UIElement {
             return;
         }
         $('.slick-carousel').not('.slick-initialized').slick({
-            //   autoplay: true,
+            autoplay: true,
             arrows: true,
             dots: true,
             lazyLoad: 'progressive',
