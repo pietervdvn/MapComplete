@@ -8,13 +8,13 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
 import Img from "../../UI/Base/Img";
 import Svg from "../../Svg";
-import {SubstitutedTranslation} from "../../UI/SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {UIElement} from "../../UI/UIElement";
+import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 export default class LayerConfig {
 

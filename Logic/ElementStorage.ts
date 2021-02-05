@@ -16,7 +16,7 @@ export class ElementStorage {
     }
 
     addElement(element): UIEventSource<any> {
-        const eventSource = new UIEventSource<any>(element.properties);
+        const eventSource = new UIEventSource<any>(element.properties, "tags of "+element.properties.id);
         this._elements[element.properties.id] = eventSource;
         return eventSource;
     }

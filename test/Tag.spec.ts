@@ -9,10 +9,10 @@ import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
 import EditableTagRendering from "../UI/Popup/EditableTagRendering";
-import {SubstitutedTranslation} from "../UI/SpecialVisualizations";
 import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
+import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
 
 
 new T([
@@ -109,7 +109,7 @@ new T([
         equal(undefined, tr.GetRenderValue({"foo": "bar"}));
         equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
         equal("Ook een {name}", tr.GetRenderValue({"name": "xyz"})?.txt);
-        equal("Ook een xyz", new SubstitutedTranslation( tr.GetRenderValue({"name": "xyz"}),
+        equal("Ook een xyz", SubstitutedTranslation.construct( tr.GetRenderValue({"name": "xyz"}),
             new UIEventSource<any>({"name":"xyz"})).InnerRender());
         equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 

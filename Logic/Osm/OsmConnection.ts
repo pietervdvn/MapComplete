@@ -69,7 +69,7 @@ export class OsmConnection {
         }
 
 
-        this.userDetails = new UIEventSource<UserDetails>(new UserDetails());
+        this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
 

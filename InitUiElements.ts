@@ -336,7 +336,7 @@ export class InitUiElements {
             }
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
-                State.state.allElements.addElement(feature);
+                State.state.allElements.addOrGetElement(feature);
                 
                 if(Hash.hash.data === feature.properties.id.replace("/","_")){
                     State.state.selectedElement.setData(feature);

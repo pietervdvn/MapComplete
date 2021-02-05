@@ -6,7 +6,6 @@ import {InputElement} from "../Input/InputElement";
 import {And, Tag, TagsFilter, TagUtils} from "../../Logic/Tags";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {FixedInputElement} from "../Input/FixedInputElement";
-import {SubstitutedTranslation} from "../SpecialVisualizations";
 import {RadioButton} from "../Input/RadioButton";
 import {Utils} from "../../Utils";
 import CheckBoxes from "../Input/Checkboxes";
@@ -19,6 +18,7 @@ import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
 
 /**
  * Shows the question element.
@@ -203,7 +203,7 @@ export default class TagRenderingQuestion extends UIElement {
             return undefined;
         }
         return new FixedInputElement(
-            new SubstitutedTranslation(mapping.then, this._tags),
+            SubstitutedTranslation.construct(mapping.then, this._tags),
             mapping.if,
             (t0, t1) => t1.isEquivalent(t0));
     }

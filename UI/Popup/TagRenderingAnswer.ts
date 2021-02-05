@@ -1,10 +1,10 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {UIElement} from "../UIElement";
-import {SubstitutedTranslation} from "../SpecialVisualizations";
 import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
 import {TagUtils} from "../../Logic/Tags";
+import {SubstitutedTranslation} from "../SubstitutedTranslation";
 
 /***
  * Displays the correct value for a known tagrendering
@@ -64,7 +64,7 @@ export default class TagRenderingAnswer extends UIElement {
         
         const tr = this._configuration.GetRenderValue(tags);
         if (tr !== undefined) {
-            this._content = new SubstitutedTranslation(tr, this._tags);
+            this._content = SubstitutedTranslation.construct(tr, this._tags);
             return this._content.Render();
         }
 

@@ -116,12 +116,12 @@ export default class ShowDataLayer {
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
+            closeButton: false
         }, leafletLayer);
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
         const uiElement: LazyElement<UIElement> = new LazyElement(() =>new Combine([ new FeatureInfoBox(tags, layer, () => {
-                console.log("Closing the popup!")
                 State.state.selectedElement.setData(undefined);
                 popup.remove();
 

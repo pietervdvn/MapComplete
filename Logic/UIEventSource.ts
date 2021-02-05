@@ -13,7 +13,7 @@ export class UIEventSource<T> {
             return [];
         }
         // @ts-ignore
-        window.mcperf = () => {
+        window.mapcomplete_performance = () => {
             console.log(UIEventSource.allSources.length, "uieventsources created");
             const copy = [...UIEventSource.allSources];
             copy.sort((a,b) => b._callbacks.length - a._callbacks.length);
