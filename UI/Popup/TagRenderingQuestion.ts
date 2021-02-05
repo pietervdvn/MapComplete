@@ -43,7 +43,7 @@ export default class TagRenderingQuestion extends UIElement {
         this._tags = tags;
         this._configuration = configuration;
         this._cancelButton = cancelButton;
-        this._question = new SubstitutedTranslation(this._configuration.question, tags)
+        this._question = SubstitutedTranslation.construct(this._configuration.question, tags)
             .SetClass("question-text");
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"

@@ -12,7 +12,7 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 export default class FeatureInfoBox extends UIElement {
     private _component: ScrollableFullScreen;
 
-    constructor(
+    private constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
         onClose: () => void
@@ -75,6 +75,21 @@ export default class FeatureInfoBox extends UIElement {
 
     }
 
-  
 
+
+    private static featureInfoboxCache : Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
+    static construct(tags: UIEventSource<any>, layer: LayerConfig, onClose: () => void) {
+        let innerMap = FeatureInfoBox.featureInfoboxCache.get(layer);
+        if(innerMap === undefined){
+            innerMap = new Map<UIEventSource<any>, FeatureInfoBox>();
+            FeatureInfoBox.featureInfoboxCache.set(layer, innerMap);
+        }
+        
+        let featureInfoBox = innerMap.get(tags);
+        if(featureInfoBox === undefined){
+            featureInfoBox = new FeatureInfoBox(tags, layer, onClose);
+            innerMap.set(tags, featureInfoBox);
+        }
+        return featureInfoBox;
+    }
 }

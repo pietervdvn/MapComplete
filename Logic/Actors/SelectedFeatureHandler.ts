@@ -40,6 +40,10 @@ export default class SelectedFeatureHandler {
         if(features === undefined){
             return;
         }
+        if(this._selectedFeature.data?.properties?.id === this._hash.data){
+            // Feature already selected
+            return;
+        }
         for (const feature of features) {
             const id = feature.feature?.properties?.id;
             if(id === this._hash.data){

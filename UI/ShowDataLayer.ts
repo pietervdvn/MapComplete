@@ -7,12 +7,8 @@ import "leaflet.markercluster"
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import State from "../State";
 import LazyElement from "./Base/LazyElement";
-import Hash from "../Logic/Web/Hash";
-import {GeoOperations} from "../Logic/GeoOperations";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {UIElement} from "./UIElement";
-import Combine from "./Base/Combine";
 import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 
 
@@ -34,6 +30,18 @@ export default class ShowDataLayer {
             this._layerDict[layer.id] = layer;
         }
 
+        
+        function openSelectedElementFeature(feature: any){
+            if (feature === undefined) {
+                return;
+            }
+            const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
+            const action = self._onSelectedTrigger[id];
+            if (action) {
+                action();
+            }
+        }
+        
         function update() {
             if (features.data === undefined) {
                 return;
@@ -60,21 +68,10 @@ export default class ShowDataLayer {
             oldGeoLayer = geoLayer;
         }
 
-        features.addCallbackAndRun(() => update());
+        features.addCallback(() => update());
         leafletMap.addCallback(() => update());
-        State.state.selectedElement.addCallback(feature => {
-            if (feature === undefined) {
-                return;
-            }
-            const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
-            const action = self._onSelectedTrigger[id];
-            if (action) {
-                action();
-            }
-        });
-
         update();
-        
+        State.state.selectedElement.addCallbackAndRun(openSelectedElementFeature);
     }
 
 
@@ -121,12 +118,14 @@ export default class ShowDataLayer {
 
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement: LazyElement<UIElement> = new LazyElement(() =>new Combine([ new FeatureInfoBox(tags, layer, () => {
-                State.state.selectedElement.setData(undefined);
-                popup.remove();
-
-            })]),
-            "<div style='height: 90vh'>Rendering</div>");
+        const uiElement = new LazyElement(() =>
+                FeatureInfoBox.construct(tags, layer, () => {
+                    State.state.selectedElement.setData(undefined);
+                    popup.remove();
+                    leafletLayer.closePopup();
+                    ScrollableFullScreen.RestoreLeaflet();
+                }),
+            "<div style='height: 90vh'>Rendering</div>"); // By setting 90vh, leaflet will attempt to fit the entire screen and move the feature down
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
             ScrollableFullScreen.RestoreLeaflet(); // Just in case...
@@ -139,25 +138,21 @@ export default class ShowDataLayer {
         // We first render the UIelement (which'll still need an update later on...)
         // But at least it'll be visible already
 
-
-        leafletLayer.on("click", () => {
-            // We set the element as selected...
-            
+        leafletLayer.on("popupopen", () => {
             uiElement.Activate();
             State.state.selectedElement.setData(feature);
-        });
-
+        })
         const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
         this._onSelectedTrigger[id]
             = () => {
-            if (popup.isOpen()) {
+            if (!popup.isOpen()) {
+                leafletLayer.openPopup();
+                uiElement.Activate();
                 return;
             }
-            leafletLayer.openPopup();
-            uiElement.Activate();
-            State.state.selectedElement.setData(feature);
         }
         this._onSelectedTrigger[feature.properties.id.replace("/", "_")] = this._onSelectedTrigger[id];
+
     }
 
     private CreateGeojsonLayer(features: any[]): L.Layer {
