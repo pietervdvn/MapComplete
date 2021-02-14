@@ -52,9 +52,6 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                         }
                     }
                 }
-                if(!foundALayer){
-                    console.error("LAYER DEDUP PANIC: no suitable layer found for ", f, JSON.stringify(f), "within layers", layers)
-                }
             }
             return newFeatures;
 

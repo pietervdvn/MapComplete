@@ -4,7 +4,6 @@ import opening_hours from "opening_hours";
 import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
 import CountryCoder from "latlon2country"
-import {UIEventSource} from "./UIEventSource";
 
 class SimpleMetaTagger {
     public readonly keys: string[];
@@ -135,7 +134,7 @@ export default class MetaTagging {
                     }
                     updateTags();
                 } catch (e) {
-                    console.error("Error while parsing opening hours of ", tags.id, e);
+                    console.warn("Error while parsing opening hours of ", tags.id, e);
                     tags["_isOpen"] = "parse_error";
                 }
 

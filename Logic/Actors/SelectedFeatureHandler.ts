@@ -44,10 +44,12 @@ export default class SelectedFeatureHandler {
             // Feature already selected
             return;
         }
+        console.log("Selecting a feature from the hash...")
         for (const feature of features) {
             const id = feature.feature?.properties?.id;
             if(id === this._hash.data){
                 this._selectedFeature.setData(feature.feature);
+                break;
             }
         }
     }

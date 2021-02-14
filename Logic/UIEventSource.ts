@@ -77,7 +77,7 @@ export class UIEventSource<T> {
     }
 
     public setData(t: T): UIEventSource<T> {
-        if (this.data === t) {
+        if (this.data == t) { // MUST COMPARE BY REFERENCE!
             return;
         }
         this.data = t;
@@ -86,8 +86,12 @@ export class UIEventSource<T> {
     }
 
     public ping(): void {
+        const old = this.data;
         for (const callback of this._callbacks) {
             callback(this.data);
+            if(this.data === undefined && old !== undefined){
+                throw "Something undefined the data!"
+            }
         }
     }
 

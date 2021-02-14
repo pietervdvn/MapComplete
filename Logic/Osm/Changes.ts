@@ -100,10 +100,12 @@ export class Changes implements FeatureSource{
             }
             changes.push({elementId: id, key: kv.key, value: kv.value})
         }
-        State.state.allElements.addOrGetElement(geojson).ping();
-
+       
+        console.log("New feature added and pinged")
         this.features.data.push({feature:geojson, freshness: new Date()});
         this.features.ping();
+        
+        State.state.allElements.addOrGetElement(geojson).ping();
 
         this.uploadAll([osmNode], changes);
         return geojson;

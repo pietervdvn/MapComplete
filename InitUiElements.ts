@@ -1,6 +1,5 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import CheckBox from "./UI/Input/CheckBox";
-import Combine from "./UI/Base/Combine";
 import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/UpdateFromOverpass";
@@ -29,12 +28,12 @@ import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
 import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
 import FeatureSwitched from "./UI/Base/FeatureSwitched";
-import LayerConfig from "./Customizations/JSON/LayerConfig";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
-import HashHandler from "./Logic/Actors/SelectedFeatureHandler";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
+import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
+import Translations from "./UI/i18n/Translations";
 
 export class InitUiElements {
 
@@ -217,10 +216,10 @@ export class InitUiElements {
         // ?-Button on Desktop, opens panel with close-X.
         const help = Svg.help_svg().SetClass("open-welcome-button block");
         const checkbox = new CheckBox(
-                fullOptions
-                    .SetClass("welcomeMessage")
-                    .onClick(() => {/*Catch the click*/
-                    }),
+            fullOptions
+                .SetClass("welcomeMessage")
+                .onClick(() => {/*Catch the click*/
+                }),
             help
             , isOpened
         ).AttachTo("messagesbox");
@@ -247,8 +246,8 @@ export class InitUiElements {
             const layerControlPanel = new LayerControlPanel(
                 () => State.state.layerControlIsOpened.setData(false))
                 .SetClass("block p-1 rounded-full");
-              const checkbox = new CheckBox(
-                    layerControlPanel,
+            const checkbox = new CheckBox(
+                layerControlPanel,
                 Svg.layers_svg().SetClass("layer-selection-toggle"),
                 State.state.layerControlIsOpened
             ).AttachTo("layer-selection");
@@ -261,7 +260,7 @@ export class InitUiElements {
                 });
 
             State.state.selectedElement.addCallbackAndRun(feature => {
-                if(feature !== undefined){
+                if (feature !== undefined) {
                     checkbox.isEnabled.setData(false);
                 }
             })
@@ -306,28 +305,27 @@ export class InitUiElements {
 
 
         const state = State.state;
-        const flayers: { layerDef: LayerConfig, isDisplayed: UIEventSource<boolean> }[] = []
-        for (const layer of state.layoutToUse.data.layers) {
+        state.filteredLayers = 
+            state.layoutToUse.map(layoutToUse => {
+                const flayers = [];
 
-            if (typeof (layer) === "string") {
-                throw "Layer " + layer + " was not substituted";
-            }
+                for (const layer of layoutToUse.layers) {
 
-            const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
-                .map<boolean>((str) => str !== "false", [], (b) => b.toString());
-            const flayer = {
-                isDisplayed: isDisplayed,
-                layerDef: layer
-            }
-            flayers.push(flayer);
-        }
-
-        State.state.filteredLayers.setData(flayers);
+                    const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
+                        .map<boolean>((str) => str !== "false", [], (b) => b.toString());
+                    const flayer = {
+                        isDisplayed: isDisplayed,
+                        layerDef: layer
+                    }
+                    flayers.push(flayer);
+                }
+                return flayers;
+            });
 
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-        const source = new FeaturePipeline(flayers, updater, state.layoutToUse);
+        const source = new FeaturePipeline(state.filteredLayers.data, updater, state.layoutToUse, state.changes, state.locationControl);
 
 
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
@@ -337,18 +335,18 @@ export class InitUiElements {
             let features = featuresFreshness.map(ff => ff.feature);
             features.forEach(feature => {
                 State.state.allElements.addOrGetElement(feature);
-                
-                if(Hash.hash.data === feature.properties.id.replace("/","_")){
+
+                if (Hash.hash.data === feature.properties.id.replace("/", "_")) {
                     State.state.selectedElement.setData(feature);
                 }
-                
+
             })
             MetaTagging.addMetatags(features);
         })
 
         new ShowDataLayer(source.features, State.state.leafletMap,
-            State.state.layoutToUse.data);
-        
+            State.state.layoutToUse);
+
         new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 
 
@@ -383,11 +381,11 @@ export class InitUiElements {
                 State.state.selectedElement,
                 State.state.filteredLayers,
                 State.state.leafletMap,
-                () => {
-                    return new SimpleAddUI(
-                        () => State.state.LastClickLocation.setData(undefined)
-                    );
-                }
+                () =>
+                    new ScrollableFullScreen(
+                        Translations.t.general.add.title,
+                        new SimpleAddUI(),
+                        () => State.state.LastClickLocation.setData(undefined))
             );
         });
 

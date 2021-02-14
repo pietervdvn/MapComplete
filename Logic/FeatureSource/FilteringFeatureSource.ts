@@ -13,29 +13,35 @@ export default class FilteringFeatureSource implements FeatureSource {
                 location: UIEventSource<Loc>,
                 upstream: FeatureSource) {
 
-        const layerDict = {};
-
         const self = this;
+        
+        const layerDict = {};
+        for (const layer of layers) {
+            layerDict[layer.layerDef.id] = layer;
+        }
 
+       
         function update() {
+            console.log("Updating the filtering layer")
             const features: { feature: any, freshness: Date }[] = upstream.features.data;
+            
+            
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
-                if (layerId === undefined) {
-                    console.error(f)
-                    throw "feature._matching_layer_id is undefined"
+                if (layerId !== undefined) {
+                    const layer: {
+                        isDisplayed: UIEventSource<boolean>,
+                        layerDef: LayerConfig
+                    } = layerDict[layerId];
+                    if (layer === undefined) {
+                        console.error("No layer found with id ", layerId);
+                        return true;
+                    }
+                    if (FilteringFeatureSource.showLayer(layer, location)) {
+                        return true;
+                    }
                 }
-                const layer: {
-                    isDisplayed: UIEventSource<boolean>,
-                    layerDef: LayerConfig
-                } = layerDict[layerId];
-                if (layer === undefined) {
-                    throw "No layer found with id " + layerId;
-                }
-                if (FilteringFeatureSource.showLayer(layer, location)) {
-                    return true;
-                }
-                // Does it match any other layer?
+                // Does it match any other layer - e.g. because of a switch?
                 for (const toCheck of layers) {
                     if (!FilteringFeatureSource.showLayer(toCheck, location)) {
                         continue;
@@ -50,9 +56,7 @@ export default class FilteringFeatureSource implements FeatureSource {
             self.features.setData(newFeatures);
         }
 
-        for (const layer of layers) {
-            layerDict[layer.layerDef.id] = layer;
-        }
+
         upstream.features.addCallback(() => {
             update()
         });

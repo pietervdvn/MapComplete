@@ -16,74 +16,67 @@ export default class ShowDataLayer {
 
     private readonly _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
-    private readonly _onSelectedTrigger: any = {}; // osmId+geometry.type+matching_layer_id --> () => void
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
-                layoutToUse: LayoutConfig) {
+                layoutToUse: UIEventSource<LayoutConfig>) {
         this._leafletMap = leafletMap;
         const self = this;
         const mp = leafletMap.data;
 
         this._layerDict = {};
-        for (const layer of layoutToUse.layers) {
-            this._layerDict[layer.id] = layer;
-        }
 
-
-        function openSelectedElementFeature(feature: any) {
-            if (feature === undefined) {
-                return;
+        layoutToUse.addCallbackAndRun(layoutToUse => {
+            for (const layer of layoutToUse.layers) {
+                this._layerDict[layer.id] = layer;
             }
-            const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
-            const action = self._onSelectedTrigger[id];
-            if (action) {
-                action();
-            }
-        }
+        });
 
-
-        const knownFeatureIds = new Set<string>();
-        const geoLayer = self.CreateGeojsonLayer();
-        mp.addLayer(geoLayer);
+        let geoLayer = undefined;
         let cluster = undefined;
 
         function update() {
+            console.log("Updating the data layer...", features.data.length, "objects loaded")
             if (features.data === undefined) {
                 return;
             }
             if (leafletMap.data === undefined) {
                 return;
             }
-            
-            const feats = features.data.map(ff => ff.feature);
 
-            for (const feat of feats) {
+            // clean all the old stuff away, if any
+            if (geoLayer !== undefined) {
+                mp.removeLayer(geoLayer);
+            }
+            if (cluster !== undefined) {
+                mp.removeLayer(cluster);
+            }
+
+            const allFeats = features.data.map(ff => ff.feature);
+            console.log("AllFeats contain ", allFeats.length)
+            geoLayer = self.CreateGeojsonLayer();
+            let i = 0;
+            for (const feat of allFeats) {
                 const key = feat.geometry.type + feat.properties.id + feat.layer;
-                if (knownFeatureIds.has(key)) {
-                    continue;
-                }
-                knownFeatureIds.add(key);
                 // @ts-ignore
                 geoLayer.addData(feat);
-                console.log("Added ", feat)
+                i++;
             }
-            if (cluster === undefined) {
-                if (layoutToUse.clustering.minNeededElements <= features.data.length) {
-                    // Activate clustering if it wasn't already activated
-                    const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
-                    cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.clustering.maxZoom});
-                    cluster.addLayer(geoLayer);
-                    mp.removeLayer(geoLayer)
-                    mp.addLayer(cluster);
-                }
+            if (layoutToUse.data.clustering.minNeededElements <= allFeats.length) {
+                // Activate clustering if it wasn't already activated
+                const cl = window["L"]; // This is a dirty workaround, the clustering plugin binds to the L of the window, not of the namespace or something
+                cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.data.clustering.maxZoom});
+                cluster.addLayer(geoLayer);
+                mp.addLayer(cluster);
+                console.log("Added cluster", i)
+            } else {
+                mp.addLayer(geoLayer)
+                console.log("Added geoLayer", i)
             }
         }
 
         features.addCallback(() => update());
         leafletMap.addCallback(() => update());
-
-        State.state.selectedElement.addCallbackAndRun(openSelectedElementFeature);
         update();
     }
 
@@ -102,6 +95,10 @@ export default class ShowDataLayer {
 
         const tagSource = State.state.allElements.addOrGetElement(feature)
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
+
+        if (layer === undefined) {
+            return;
+        }
 
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
         return L.marker(latLng, {
@@ -122,13 +119,13 @@ export default class ShowDataLayer {
             // No popup action defined -> Don't do anything
             return;
         }
-        const self = this;
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
             closeButton: false
         }, leafletLayer);
 
+        let isOpen = false;
 
         const tags = State.state.allElements.getEventSourceFor(feature);
         const uiElement = new LazyElement(() =>
@@ -141,30 +138,45 @@ export default class ShowDataLayer {
             "<div style='height: 90vh'>Rendering</div>"); // By setting 90vh, leaflet will attempt to fit the entire screen and move the feature down
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
+            if (!isOpen) {
+                return;
+            }
+            console.log("Closing popup...")
+            isOpen = false;
             ScrollableFullScreen.RestoreLeaflet(); // Just in case...
             State.state.selectedElement.setData(undefined);
+
         });
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
         // But at least it'll be visible already
 
+
         leafletLayer.on("popupopen", () => {
-            console.log("Popup opened")
-            uiElement.Activate();
+            isOpen = true;
             State.state.selectedElement.setData(feature);
+            uiElement.Activate();
         })
-        const id = feature.properties.id + feature.geometry.type + feature._matching_layer_id;
-        this._onSelectedTrigger[id]
-            = () => {
-            if (!popup.isOpen()) {
-                console.log("Action triggered")
-                // Close all the popups which might still be opened
-                self._leafletMap.data.closePopup();
-                leafletLayer.openPopup()
-                return;
+
+        State.state.selectedElement.addCallbackAndRun(selected => {
+                if (selected === undefined) {
+                    if (popup.isOpen() && isOpen) {
+                        popup.remove();
+                    }
+                } else if (selected == feature && selected.geometry.type == feature.geometry.type) {
+                    // If wayhandling introduces a centerpoint and an area, this code might become unstable:
+                    // The popup for the centerpoint would open, a bit later the area would close the first popup and open it's own
+                    // In the process, the 'selectedElement' is set to undefined and to the other feature again, causing an infinite loop
+
+                    // This is why we check for the geometry-type too
+
+                    if (!popup.isOpen() && !isOpen) {
+                        isOpen = true;
+                        leafletLayer.openPopup();
+                    }
+                }
             }
-        }
-        this._onSelectedTrigger[feature.properties.id.replace("/", "_")] = this._onSelectedTrigger[id];
+        );
 
     }
 

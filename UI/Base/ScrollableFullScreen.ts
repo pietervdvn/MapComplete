@@ -21,6 +21,7 @@ export default class ScrollableFullScreen extends UIElement {
                 Svg.close_svg().SetClass("hidden md:block")
             ])
                 .onClick(() => {
+                    console.log("Closing...")
                     ScrollableFullScreen.RestoreLeaflet();
                     if (onClose !== undefined) {
                         onClose();
@@ -92,6 +93,19 @@ export default class ScrollableFullScreen extends UIElement {
         if(htmlElement === undefined || htmlElement === null){
             return;
         }
+
+        let toHide = document.getElementsByClassName("leaflet-pane");
+        for (let i = 0; i < toHide.length; ++i) {
+            toHide[i].classList.add("no-transform");
+            toHide[i].classList.add("scrollable-fullscreen-no-transform");
+        }
+
+        toHide = document.getElementsByClassName("leaflet-popup");
+        for (let i = 0; i < toHide.length; ++i) {
+            toHide[i].classList.add("no-transform");
+            toHide[i].classList.add("scrollable-fullscreen-no-transform");
+        }
+        
         do {
             // A leaflet workaround: in order for fullscreen to work, we need to get the parent element which does a transform3d and remove/read the transform
             if (htmlElement.style.transform !== "") {

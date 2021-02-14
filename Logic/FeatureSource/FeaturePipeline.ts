@@ -1,5 +1,4 @@
 import FilteringFeatureSource from "../FeatureSource/FilteringFeatureSource";
-import State from "../../State";
 import FeatureSourceMerger from "../FeatureSource/FeatureSourceMerger";
 import RememberingSource from "../FeatureSource/RememberingSource";
 import WayHandlingApplyingFeatureSource from "../FeatureSource/WayHandlingApplyingFeatureSource";
@@ -11,6 +10,7 @@ import LocalStorageSaver from "./LocalStorageSaver";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import LocalStorageSource from "./LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import Loc from "../../Models/Loc";
 
 export default class FeaturePipeline implements FeatureSource {
 
@@ -18,7 +18,9 @@ export default class FeaturePipeline implements FeatureSource {
 
     constructor(flayers: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[],
                 updater: FeatureSource,
-                layout: UIEventSource<LayoutConfig>) {
+                layout: UIEventSource<LayoutConfig>,
+                newPoints: FeatureSource,
+                locationControl: UIEventSource<Loc>) {
 
         const amendedOverpassSource =
             new RememberingSource(
@@ -34,15 +36,18 @@ export default class FeaturePipeline implements FeatureSource {
                     new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout)))
                 ));
 
+        newPoints = new FeatureDuplicatorPerLayer(flayers, newPoints);
+        
         const merged = new FeatureSourceMerger([
             amendedOverpassSource,
-            new FeatureDuplicatorPerLayer(flayers, State.state.changes),
-            amendedLocalStorageSource
+            amendedLocalStorageSource,
+            newPoints
         ]);
+
         const source =
             new FilteringFeatureSource(
                 flayers,
-                State.state.locationControl,
+                locationControl,
                 merged
             );
         this.features = source.features;

@@ -359,15 +359,6 @@ a {
     color: var(--foreground-color);
 }
 
-
-.add-popup-all-buttons {
-    max-height: 50vh;
-    display: inline-block;
-    overflow-y: auto;
-    width: 100%;
-}
-
-
 /**************************************/
 
 

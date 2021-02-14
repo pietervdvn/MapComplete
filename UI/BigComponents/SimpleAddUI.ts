@@ -13,7 +13,6 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
-import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class SimpleAddUI extends UIElement {
     private readonly _loginButton: UIElement;
@@ -37,7 +36,7 @@ export default class SimpleAddUI extends UIElement {
     private readonly goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(),
         Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
 
-    constructor(onClose: () => void) {
+    constructor() {
         super(State.state.locationControl.map(loc => loc.zoom));
         const self = this;
         this.ListenTo(Locale.language);
@@ -64,14 +63,10 @@ export default class SimpleAddUI extends UIElement {
             State.state.layerControlIsOpened.setData(true);
         })
         
-        this._component = new ScrollableFullScreen(
-            Translations.t.general.add.title,
-            this.CreateContent(),
-            onClose
-        );
     }
 
     InnerRender(): string {
+        this._component = this.CreateContent();
         return this._component.Render();
 
     }
@@ -109,7 +104,7 @@ export default class SimpleAddUI extends UIElement {
         }
 
         const presetButtons = this.CreatePresetButtons()
-        return new Combine(presetButtons).SetClass("add-popup-all-buttons")
+        return new Combine(presetButtons)
     }
 
 
