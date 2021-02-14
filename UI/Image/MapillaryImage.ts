@@ -54,7 +54,6 @@ export class MapillaryImage extends UIElement {
         return new Combine([
             image,
             new Attribution(meta.artist, meta.license, Svg.mapillary_svg())
-            
         ]).SetClass("relative block").Render();
            
     }

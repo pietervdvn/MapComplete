@@ -10,6 +10,7 @@ import LazyElement from "./Base/LazyElement";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import ScrollableFullScreen from "./Base/ScrollableFullScreen";
+import {GeoOperations} from "../Logic/GeoOperations";
 
 
 export default class ShowDataLayer {
@@ -53,14 +54,10 @@ export default class ShowDataLayer {
             }
 
             const allFeats = features.data.map(ff => ff.feature);
-            console.log("AllFeats contain ", allFeats.length)
             geoLayer = self.CreateGeojsonLayer();
-            let i = 0;
             for (const feat of allFeats) {
-                const key = feat.geometry.type + feat.properties.id + feat.layer;
                 // @ts-ignore
                 geoLayer.addData(feat);
-                i++;
             }
             if (layoutToUse.data.clustering.minNeededElements <= allFeats.length) {
                 // Activate clustering if it wasn't already activated
@@ -68,11 +65,11 @@ export default class ShowDataLayer {
                 cluster = cl.markerClusterGroup({disableClusteringAtZoom: layoutToUse.data.clustering.maxZoom});
                 cluster.addLayer(geoLayer);
                 mp.addLayer(cluster);
-                console.log("Added cluster", i)
             } else {
                 mp.addLayer(geoLayer)
-                console.log("Added geoLayer", i)
             }
+            
+            State.state.selectedElement.ping();
         }
 
         features.addCallback(() => update());
@@ -87,7 +84,7 @@ export default class ShowDataLayer {
         const layer = this._layerDict[feature._matching_layer_id];
         return layer.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
     }
-
+    
     private pointToLayer(feature, latLng): L.Layer {
         // Leaflet cannot handle geojson points natively
         // We have to convert them to the appropriate icon
@@ -125,8 +122,6 @@ export default class ShowDataLayer {
             closeButton: false
         }, leafletLayer);
 
-        let isOpen = false;
-
         const tags = State.state.allElements.getEventSourceFor(feature);
         const uiElement = new LazyElement(() =>
                 FeatureInfoBox.construct(tags, layer, () => {
@@ -138,14 +133,7 @@ export default class ShowDataLayer {
             "<div style='height: 90vh'>Rendering</div>"); // By setting 90vh, leaflet will attempt to fit the entire screen and move the feature down
         popup.setContent(uiElement.Render());
         popup.on('remove', () => {
-            if (!isOpen) {
-                return;
-            }
-            console.log("Closing popup...")
-            isOpen = false;
             ScrollableFullScreen.RestoreLeaflet(); // Just in case...
-            State.state.selectedElement.setData(undefined);
-
         });
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
@@ -153,26 +141,34 @@ export default class ShowDataLayer {
 
 
         leafletLayer.on("popupopen", () => {
-            isOpen = true;
             State.state.selectedElement.setData(feature);
             uiElement.Activate();
         })
 
         State.state.selectedElement.addCallbackAndRun(selected => {
+            if(selected !== undefined && feature.properties.id === selected.properties.id){
+                console.log("Currently selected feature:", selected, "feature is",feature, "is same?", selected == feature)
+            }
+           
                 if (selected === undefined) {
-                    if (popup.isOpen() && isOpen) {
+                    if (popup.isOpen()) {
                         popup.remove();
                     }
-                } else if (selected == feature && selected.geometry.type == feature.geometry.type) {
+                } else if (selected == feature && selected.geometry.type === feature.geometry.type) {
+                    console.log("Found the popup to open!")
                     // If wayhandling introduces a centerpoint and an area, this code might become unstable:
                     // The popup for the centerpoint would open, a bit later the area would close the first popup and open it's own
                     // In the process, the 'selectedElement' is set to undefined and to the other feature again, causing an infinite loop
 
                     // This is why we check for the geometry-type too
 
-                    if (!popup.isOpen() && !isOpen) {
-                        isOpen = true;
-                        leafletLayer.openPopup();
+                    const mp = this._leafletMap.data;
+                    if (!popup.isOpen() && mp !== undefined) {
+                        var centerpoint = GeoOperations.centerpointCoordinates(feature);
+                        console.log("centerpoint:", centerpoint,"of",feature)
+                        popup
+                            .setLatLng(GeoOperations.centerpointCoordinates(feature))
+                            .openOn(mp);
                     }
                 }
             }

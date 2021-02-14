@@ -12,7 +12,7 @@ export default class Attribution extends Combine {
                 Translations.W((license ?? "") === "undefined" ? "CC0" : (license ?? ""))
             ]).SetClass("flex flex-col")
         ]);
-        this.SetClass("flex flex-row bg-black text-white text-sm absolute bottom-0 left-0 p-0.5 rounded");
+        this.SetClass("flex flex-row bg-black text-white text-sm absolute bottom-0 left-0 p-0.5 pl-5 pr-3 rounded-lg");
     }
 
 }

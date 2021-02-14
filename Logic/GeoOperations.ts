@@ -14,6 +14,12 @@ export class GeoOperations {
         
         return newFeature;
     }
+    
+    static centerpointCoordinates(feature: any){
+        const coordinates = turf.center(feature).geometry.coordinates;
+        coordinates.reverse();
+        return coordinates;
+    }
 
     static featureIsContainedInAny(feature: any,
                                    shouldNotContain: any[],
