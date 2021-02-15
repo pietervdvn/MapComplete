@@ -40,6 +40,7 @@ export class SlideShow extends UIElement {
         if(this._embeddedElements.data.length == 0){
             return;
         }
+        // @ts-ignore
         $('.slick-carousel').not('.slick-initialized').slick({
             autoplay: true,
             arrows: true,

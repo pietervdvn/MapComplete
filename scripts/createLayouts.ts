@@ -7,7 +7,6 @@ import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
-import * as sharp from "sharp"
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 

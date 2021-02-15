@@ -1,3 +1,4 @@
+// @ts-ignore
 import $ from "jquery"
 import {LicenseInfo} from "./Wikimedia";
 
@@ -55,6 +56,7 @@ export class Imgur {
                 Accept: 'application/json',
             },
         };
+        // @ts-ignore
         $.ajax(settings).done(function (response) {
             const descr: string = response.data.description ?? "";
             const data: any = {};
@@ -108,11 +110,13 @@ export class Imgur {
 
         // Response contains stringified JSON
         // Image URL available at response.data.link
+        // @ts-ignore
         $.ajax(settings).done(function (response) {
             response = JSON.parse(response);
             handleSuccessfullUpload(response.data.link);
         }).fail((reason) => {
             console.log("Uploading to IMGUR failed", reason);
+            // @ts-ignore
             onFail(reason);
         });
     }
