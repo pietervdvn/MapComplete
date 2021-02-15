@@ -37,7 +37,6 @@ export default class ShowDataLayer {
         let cluster = undefined;
 
         function update() {
-            console.log("Updating the data layer...", features.data.length, "objects loaded")
             if (features.data === undefined) {
                 return;
             }
@@ -68,7 +67,7 @@ export default class ShowDataLayer {
             } else {
                 mp.addLayer(geoLayer)
             }
-            
+
             State.state.selectedElement.ping();
         }
 
@@ -84,7 +83,7 @@ export default class ShowDataLayer {
         const layer = this._layerDict[feature._matching_layer_id];
         return layer.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
     }
-    
+
     private pointToLayer(feature, latLng): L.Layer {
         // Leaflet cannot handle geojson points natively
         // We have to convert them to the appropriate icon
@@ -146,16 +145,12 @@ export default class ShowDataLayer {
         })
 
         State.state.selectedElement.addCallbackAndRun(selected => {
-            if(selected !== undefined && feature.properties.id === selected.properties.id){
-                console.log("Currently selected feature:", selected, "feature is",feature, "is same?", selected == feature)
-            }
            
                 if (selected === undefined) {
                     if (popup.isOpen()) {
                         popup.remove();
                     }
                 } else if (selected == feature && selected.geometry.type === feature.geometry.type) {
-                    console.log("Found the popup to open!")
                     // If wayhandling introduces a centerpoint and an area, this code might become unstable:
                     // The popup for the centerpoint would open, a bit later the area would close the first popup and open it's own
                     // In the process, the 'selectedElement' is set to undefined and to the other feature again, causing an infinite loop
@@ -165,7 +160,6 @@ export default class ShowDataLayer {
                     const mp = this._leafletMap.data;
                     if (!popup.isOpen() && mp !== undefined) {
                         var centerpoint = GeoOperations.centerpointCoordinates(feature);
-                        console.log("centerpoint:", centerpoint,"of",feature)
                         popup
                             .setLatLng(GeoOperations.centerpointCoordinates(feature))
                             .openOn(mp);
