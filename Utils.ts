@@ -141,21 +141,9 @@ export class Utils {
     }
 
     // Date will be undefined on failure
-    public static changesetDate(id: number, action: ((isFound: Date) => void)): void {
-        $.getJSON("https://www.openstreetmap.org/api/0.6/changeset/" + id,
-            function (data) {
-                console.log(data)
-                action(new Date(data.elements[0].created_at));
-            })
-            .fail(() => {
-                action(undefined);
-            });
-
-    }
-    
     public static LoadCustomCss(location: string){
-        var head = document.getElementsByTagName('head')[0];
-        var link = document.createElement('link');
+        const head = document.getElementsByTagName('head')[0];
+        const link = document.createElement('link');
         link.id = "customCss";
         link.rel = 'stylesheet';
         link.type = 'text/css';
@@ -164,17 +152,6 @@ export class Utils {
         head.appendChild(link);
         console.log("Added custom layout ",location)
     }
-
-
-    static MatchKeys(object: any, prototype: any, context?: string){
-
-        for (const objectKey in object) {
-            if(prototype[objectKey] === undefined){
-                console.error("Key ", objectKey, "might be not supported (in context",context,")")
-            }   
-        }
-    }
-    
     static Merge(source: any, target: any){
         target = JSON.parse(JSON.stringify(target));
         source = JSON.parse(JSON.stringify(source));
@@ -195,24 +172,4 @@ export class Utils {
         }
         return target;
     }
-    
-    static ToMuchTags(source: any, toCheck: any, context: string){
-
-        for (const key in toCheck) {
-            const toCheckV = toCheck[key];
-            const sourceV = source[key];
-            if(sourceV === undefined){
-                console.error("Probably a wrong tag in ", context, ": ", key, "might be wrong")
-            }
-            if(typeof toCheckV === "object"){
-                if(typeof sourceV !== "object"){
-                    console.error("Probably a wrong value in ", context, ": ", key, "is a fixed value in the source")
-                }else{
-                    Utils.ToMuchTags(sourceV, toCheckV, context+"."+key);
-                }
-            }
-        }
-        
-    }
-    
 }

@@ -50,6 +50,11 @@ export interface TagRenderingConfigJson {
      */
     mappings?: {
         if: AndOrTagConfigJson | string,
+        /**
+         * Only applicable if 'multiAnswer' is set.
+         * This tag is applied if the respective checkbox is unset
+         */
+        ifnot?: AndOrTagConfigJson | string,
         then: string | any
         hideInAnswer?: boolean
     }[]

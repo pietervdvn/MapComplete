@@ -1,4 +1,5 @@
 import {Utils} from "../Utils";
+import {type} from "os";
 
 export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
@@ -16,6 +17,8 @@ export abstract class TagsFilter {
     }
 
     abstract asHumanString(linkToWiki: boolean, shorten: boolean);
+
+    abstract usedKeys(): string[];
 }
 
 
@@ -85,6 +88,13 @@ export class RegexTag extends TagsFilter {
             return RegexTag.doesMatch(other.key, this.key) && RegexTag.doesMatch(other.value, this.value);
         }
         return false;
+    }
+
+    usedKeys(): string[] {
+        if (typeof this.key === "string") {
+            return [this.key];
+        }
+        throw "Key cannot be determined as it is a regex"
     }
 }
 
@@ -163,6 +173,10 @@ export class Tag extends TagsFilter {
         }
         return false;
     }
+
+    usedKeys(): string[] {
+        return [this.key];
+    }
 }
 
 
@@ -227,6 +241,10 @@ export class Or extends TagsFilter {
             return true;
         }
         return false;
+    }
+
+    usedKeys(): string[] {
+        return [].concat(this.or.map(subkeys => subkeys.usedKeys()));
     }
 }
 
@@ -343,6 +361,10 @@ export class And extends TagsFilter {
 
         return true;
     }
+
+    usedKeys(): string[] {
+        return [].concat(this.and.map(subkeys => subkeys.usedKeys()));
+    }
 }
 
 
@@ -456,10 +478,10 @@ export class TagUtils {
         const splitted = TagUtils.SplitKeys([tag]);
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
-            if(tags[splitKey] === undefined) {
+            if (tags[splitKey] === undefined) {
                 return false;
             }
-            
+
             const actualValue = tags[splitKey].split(";");
             for (const neededValue of neededValues) {
                 if (actualValue.indexOf(neededValue) < 0) {

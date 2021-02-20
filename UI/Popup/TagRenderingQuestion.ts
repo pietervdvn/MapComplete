@@ -107,14 +107,14 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
         if (this._configuration.multiAnswer) {
-            return this.GenerateMultiAnswer(mappings, ff)
+            return this.GenerateMultiAnswer(mappings, ff, this._configuration.mappings.map(mp => mp.ifnot))
         } else {
             return new RadioButton(mappings, false)
         }
 
     }
 
-    private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>): InputElement<TagsFilter> {
+    private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
         const checkBoxes = new CheckBoxes(elements);
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
@@ -126,6 +126,18 @@ export default class TagRenderingQuestion extends UIElement {
                     return undefined;
                 }
                 const tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
+                const oppositeTags: TagsFilter[] = [];
+                for (let i = 0; i < ifNotSelected.length; i++) {
+                    if(indices.indexOf(i) >= 0){
+                        continue;
+                    }
+                    const notSelected = ifNotSelected[i];
+                    if(notSelected === undefined){
+                        continue;
+                    }
+                    oppositeTags.push(notSelected);
+                }
+                tags.push(TagUtils.FlattenMultiAnswer(oppositeTags));
                 return TagUtils.FlattenMultiAnswer(tags);
             },
             (tags: TagsFilter) => {

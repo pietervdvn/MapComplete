@@ -104,14 +104,17 @@
       "mappings": [
         {
           "if": "payment:coins=yes",
+          "ifnot":  "payment:coins=no",
           "then": "Payment with coins is possible"
         },
         {
           "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
           "then": "Payment with notes is possible"
         },
         {
           "if": "payment:cards=yes",
+          "ifnot": "payment:cards=no",
           "then": "Payment with cards is possible"
         }
       ],
@@ -157,22 +160,27 @@
       "mappings": [
         {
           "if": "vending:bicycle_light=yes",
+          "ifnot": "vending:bicycle_light=no",
           "then": "Bicycle lights are sold here"
         },
         {
           "if": "vending:gloves=yes",
+          "ifnot": "vending:gloves=no",
           "then": "Gloves are sold here"
         },
         {
           "if": "vending:bicycle_repair_kit=yes",
+          "ifnot": "vending:bicycle_repair_kit=no",
           "then": "Bicycle repair kits are sold here"
         },
         {
           "if": "vending:bicycle_pump=yes",
+          "ifnot": "vending:bicycle_pump=no",
           "then": "Bicycle pumps are sold here"
         },
         {
           "if": "vending:bicycle_lock=yes",
+          "ifnot": "vending:bicycle_lock=no",
           "then": "Bicycle locks are sold here"
         }
       ],

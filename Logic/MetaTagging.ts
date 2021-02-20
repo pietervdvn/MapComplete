@@ -294,7 +294,7 @@ export default class MetaTagging {
         MetaTagging.isOpen,
         MetaTagging.carriageWayWidth,
         MetaTagging.directionSimplified,
-        MetaTagging.currentTime
+    //    MetaTagging.currentTime
 
     ];
 

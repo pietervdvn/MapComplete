@@ -4,6 +4,7 @@ import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Translation} from "../../UI/i18n/Translation";
+import {Utils} from "../../Utils";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -24,9 +25,10 @@ export default class TagRenderingConfig {
     readonly multiAnswer: boolean;
 
     readonly mappings?: {
-        readonly    if: TagsFilter,
-        readonly   then: Translation
-        readonly   hideInAnswer: boolean | TagsFilter
+        readonly if: TagsFilter,
+        readonly ifnot?: TagsFilter,
+        readonly then: Translation
+        readonly hideInAnswer: boolean | TagsFilter
     }[]
     readonly roaming: boolean;
 
@@ -74,7 +76,10 @@ export default class TagRenderingConfig {
             this.mappings = json.mappings.map((mapping, i) => {
 
                 if (mapping.then === undefined) {
-                    throw "Invalid mapping: if without body"
+                    throw `${context}.mapping[${i}]: Invalid mapping: if without body`
+                }
+                if (mapping.ifnot !== undefined && !this.multiAnswer) {
+                    throw `${context}.mapping[${i}]: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
                 }
                 let hideInAnswer: boolean | TagsFilter = false;
                 if (typeof mapping.hideInAnswer === "boolean") {
@@ -82,25 +87,53 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = FromJSON.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
-                return {
+                const mp = {
                     if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}].if`),
+                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${context}.mapping[${i}].ifnot`) : undefined),
                     then: Translations.T(mapping.then),
                     hideInAnswer: hideInAnswer
                 };
+                if (this.question) {
+                    if (hideInAnswer !== true && !mp.if.isUsableAsAnswer()) {
+                        throw `${context}.mapping[${i}].if: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
+                    }
+
+                    if (hideInAnswer !== true && !(mp.ifnot?.isUsableAsAnswer() ?? true)) {
+                        throw `${context}.mapping[${i}].ifnot: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
+                    }
+                }
+
+                return mp;
             });
         }
 
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
-            throw `A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
-        }
-        
-        if(this.freeform && this.render === undefined){
-            throw `Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+            throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
 
-        if (json.multiAnswer) {
+        if (this.freeform && this.render === undefined) {
+            throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+        }
+
+        if (this.question !== undefined && json.multiAnswer) {
             if ((this.mappings?.length ?? 0) === 0) {
-                throw "MultiAnswer is set, but no mappings are defined"
+                throw `${context} MultiAnswer is set, but no mappings are defined`
+            }
+
+            let allKeys = [];
+            let allHaveIfNot = true;
+            for (const mapping of this.mappings) {
+                if (mapping.hideInAnswer) {
+                    continue;
+                }
+                if (mapping.ifnot === undefined) {
+                    allHaveIfNot = false;
+                }
+                allKeys = allKeys.concat(mapping.if.usedKeys());
+            }
+            allKeys = Utils.Dedup(allKeys);
+            if (allKeys.length > 1 && !allHaveIfNot) {
+                throw `${context}: A multi-answer is defined, which generates values over multiple keys. Please define ifnot-tags too on every mapping`
             }
 
         }
