@@ -413,13 +413,13 @@
       }
     },
     "pickLanguage": {
-      "en": "Choose a language",
-      "ca": "Tria idioma",
-      "es": "Escoge idioma",
-      "nl": "Kies je taal",
-      "fr": "Choisir la langue",
-      "gl": "Escoller lingua",
-      "de": "Wählen Sie eine Sprache"
+      "en": "Choose a language: ",
+      "ca": "Tria idioma: ",
+      "es": "Escoge idioma: ",
+      "nl": "Kies je taal: ",
+      "fr": "Choisir la langue: ",
+      "gl": "Escoller lingua: ",
+      "de": "Wählen Sie eine Sprache: "
     },
     "about": {
       "en": "Easily edit and add OpenStreetMap for a certain theme",

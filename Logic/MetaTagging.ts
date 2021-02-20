@@ -276,6 +276,16 @@ export default class MetaTagging {
 
         }
     );
+    
+    private static currentTime = new SimpleMetaTagger(
+        ["_date:now"],
+        "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
+        feature => {
+            const now = new Date();
+            // @ts-ignore
+            feature.properties["_date:now"] = now.toISOString().splice(0,-5).replace("T", " ");
+        }
+    )
 
     private static metatags = [
         MetaTagging.latlon,
@@ -283,7 +293,8 @@ export default class MetaTagging {
         MetaTagging.country,
         MetaTagging.isOpen,
         MetaTagging.carriageWayWidth,
-        MetaTagging.directionSimplified
+        MetaTagging.directionSimplified,
+        MetaTagging.currentTime
 
     ];
 

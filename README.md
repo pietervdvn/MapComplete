@@ -265,3 +265,5 @@ Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/t
 Urinal icon: https://thenounproject.com/term/urinal/1307984/
 
 24/7 icon: https://www.vecteezy.com/vector-art/1394992-24-7-service-and-support-icon-set
+
+Translation-icon: https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg

@@ -98,8 +98,7 @@ export default class MoreScreen extends UIElement {
             linkButton.push(this.createLinkButton(layout));
         }
 
-        els.push(new Combine(linkButton))
-
+       
         els.push(new VariableUiElement(
             State.state.osmConnection.userDetails.map(userDetails => {
                 if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
@@ -111,6 +110,9 @@ export default class MoreScreen extends UIElement {
                 }).Render();
             })
         ));
+
+        els.push(new Combine(linkButton))
+
 
         const customThemesNames = State.state.installedThemes.data ?? [];
 

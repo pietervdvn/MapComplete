@@ -156,7 +156,7 @@ export default class ShareScreen extends UIElement {
             let hash = "";
             if (layoutDefinition !== undefined) {
                 literalText = `https://${host}${path}/`
-                if (layout.id.startsWith("wiki:")) {
+                if (layout.id.startsWith("http")) {
                     parts.push("userlayout=" + encodeURIComponent(layout.id))
                 } else {
                     hash = ("#" + layoutDefinition)

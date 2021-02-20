@@ -25,7 +25,7 @@ export default class UserBadge extends UIElement {
         super(State.state.osmConnection.userDetails);
         this._userDetails = State.state.osmConnection.userDetails;
         this._languagePicker = (LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language) ?? new FixedUiElement(""))
-            .SetStyle("display:inline-block;width:min-content;");
+            .SetStyle("width:min-content;");
 
         this._loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
@@ -70,13 +70,21 @@ export default class UserBadge extends UIElement {
             return this._loginButton.Render();
         }
 
+        const linkStyle = "flex items-baseline"
 
         let messageSpan: UIElement =
             new Link(
-                new Combine([Svg.envelope, "" + user.totalMessages]),
+                new Combine([Svg.envelope, "" + user.totalMessages]).SetClass(linkStyle),
                 'https://www.openstreetmap.org/messages/inbox',
                 true
             )
+
+
+        const csCount =
+            new Link(
+                new Combine([Svg.star, "" + user.csCount]).SetClass(linkStyle),
+                `https://www.openstreetmap.org/user/${user.name}/history`,
+                true);
 
 
         if (user.unreadMessages > 0) {
@@ -111,20 +119,14 @@ export default class UserBadge extends UIElement {
             true);
 
 
-        const csCount =
-            new Link(
-                new Combine([Svg.star, "" + user.csCount]),
-                `https://www.openstreetmap.org/user/${user.name}/history`,
-                true);
-
-
         const userStats = new Combine([
             this._homeButton,
             settings,
             messageSpan,
             csCount,
-            this._logout,
-            this._languagePicker])
+            this._languagePicker,
+            this._logout
+        ])
             .SetClass("userstats")
 
         const usertext = new Combine([

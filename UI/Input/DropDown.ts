@@ -62,7 +62,7 @@ export class DropDown<T> extends InputElement<T> {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
         }
 
-        return `<form>` +
+        return `<form class="flex">` +
             `<label class='${this._label_class}' for='dropdown-${this.id}'>${this._label.Render()}</label>` +
             `<select class='${this._select_class}' name='dropdown-${this.id}' id='dropdown-${this.id}'>` +
             options +
