@@ -17,6 +17,11 @@ export default class Constants {
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19)
     };
+    /**
+     * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
+     * (Note that pendingChanges might upload sooner if the popup is closed or similar)
+     */
+    static updateTimeoutSec: number = 30;
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

@@ -18,6 +18,7 @@ import Constants from "./Models/Constants";
 import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
+import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -207,6 +208,8 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
+        
+        new PendingChangesUploader(this.changes, this.selectedElement);
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")

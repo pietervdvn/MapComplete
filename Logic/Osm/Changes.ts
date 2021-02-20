@@ -12,9 +12,17 @@ import FeatureSource from "../FeatureSource/FeatureSource";
  */
 export class Changes implements FeatureSource{
 
+    /**
+     * The newly created points, as a FeatureSource
+     */
     public features = new UIEventSource<{feature: any, freshness: Date}[]>([]);
     
     private static _nextId = -1; // Newly assigned ID's are negative
+    /**
+     * All the pending changes
+     */
+    public readonly pending: UIEventSource<{ elementId: string, key: string, value: string }[]> = 
+        new UIEventSource<{elementId: string; key: string; value: string}[]>([]);
 
     /**
      * Adds a change to the pending changes
@@ -39,6 +47,8 @@ export class Changes implements FeatureSource{
         return {k: key, v: value};
     }
 
+    
+    
     addTag(elementId: string, tagsFilter: TagsFilter,
            tags?: UIEventSource<any>) {
         const changes = this.tagToChange(tagsFilter);
@@ -47,21 +57,30 @@ export class Changes implements FeatureSource{
         }
         const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
         const elementTags = eventSource.data;
-        const pending: { elementId: string, key: string, value: string }[] = [];
         for (const change of changes) {
             if (elementTags[change.k] !== change.v) {
                 elementTags[change.k] = change.v;
-                pending.push({elementId: elementTags.id, key: change.k, value: change.v});
+                this.pending.data.push({elementId: elementTags.id, key: change.k, value: change.v});
             }
         }
-        if (pending.length === 0) {
-            return;
-        }
-        console.log("Sending ping", eventSource)
+        this.pending.ping();
         eventSource.ping();
-        this.uploadAll([], pending);
     }
 
+    /**
+     * Uploads all the pending changes in one go.
+     * Triggered by the 'PendingChangeUploader'-actor in Actors
+     */
+    public flushChanges(flushreason: string = undefined){
+        if(this.pending.data.length === 0){
+            return;
+        }
+        if(flushreason !== undefined){
+            console.log(flushreason)
+        }
+        this.uploadAll([], this.pending.data);
+        this.pending.setData([]);
+    }
     /**
      * Create a new node element at the given lat/long.
      * An internal OsmObject is created to upload later on, a geojson represention is returned.
