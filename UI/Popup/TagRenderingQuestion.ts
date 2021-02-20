@@ -91,7 +91,7 @@ export default class TagRenderingQuestion extends UIElement {
         ).SetClass("block")
     }
 
-    private GenerateInputElement(): InputElement<TagsFilter> {
+    private     GenerateInputElement(): InputElement<TagsFilter> {
         const ff = this.GenerateFreeform();
         const self = this;
         let mappings =
@@ -190,15 +190,20 @@ export default class TagRenderingQuestion extends UIElement {
 
 
         freeformField?.GetValue()?.addCallbackAndRun(value => {
+            // The list of indices of the selected elements
             const es = checkBoxes.GetValue();
             const i = elements.length - 1;
+            // The actual index of the freeform-element
             const index = es.data.indexOf(i);
             if (value === undefined) {
+                // No data is set in the freeform text field; so we delete the checkmark if it is selected
                 if (index >= 0) {
                     es.data.splice(index, 1);
                     es.ping();
                 }
             } else if (index < 0) {
+                // There is data defined in the checkmark, but the checkmark isn't checked, so we check it
+                // This is of course because the data changed
                 es.data.push(i);
                 es.ping();
             }

@@ -1,7 +1,7 @@
 // We HAVE to mark this while importing
 import {Utils} from "../Utils";
-
 Utils.runningFromConsole = true;
+const sharp = require('sharp');
 
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
@@ -55,7 +55,7 @@ function validate(layout: LayoutConfig) {
         }
     }
 
-    let message = `Translation completenes for theme ${layout.id}`
+    let message = `Translation completeness for theme ${layout.id}`
     let isComplete = true;
     for (const ln of layout.language) {
         const amiss = missing[ln];
@@ -121,25 +121,11 @@ async function createIcon(iconPath: string, size: number, layout: LayoutConfig) 
     }
 
     try {
-        console.log("Could not create icon! ", name, newname)
-        /*
         // We already read to file, in order to crash here if the file is not found
         readFileSync(iconPath);
-
         let img = await sharp(iconPath)
         let resized = await img.resize(size)
         await resized.toFile(newname)
-
-        /*  svg2img(iconPath,
-              // @ts-ignore
-              {width: size, height: size, preserveAspectRatio: true})
-              .then((buffer) => {
-                  console.log("Writing icon", newname)
-                  writeFileSync(newname, buffer);
-              }).catch((error) => {
-              console.log("ERROR while writing" + iconPath, error)
-          });
-  //*/
     } catch (e) {
         console.error("Could not read icon", iconPath, "due to", e)
     }

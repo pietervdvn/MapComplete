@@ -86,12 +86,8 @@ export class UIEventSource<T> {
     }
 
     public ping(): void {
-        const old = this.data;
         for (const callback of this._callbacks) {
             callback(this.data);
-            if(this.data === undefined && old !== undefined){
-                throw "Something undefined the data!"
-            }
         }
     }
 
