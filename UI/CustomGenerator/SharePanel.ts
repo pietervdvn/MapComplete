@@ -14,10 +14,6 @@ export default class SharePanel extends UIElement {
         super(undefined);
         this._config = config;
 
-
-        const proposedName = `User:${userDetails.name}/${config.data.id}`
-        const proposedNameEnc = encodeURIComponent(`wiki:User:${userDetails.name}/${config.data.id}`)
-
         this._panel = new Combine([
             "<h2>Share</h2>",
             "Share the following link with friends:<br/>",
