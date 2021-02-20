@@ -145,6 +145,7 @@ export default class ShowDataLayer {
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature);
             uiElement.Activate();
+            uiElement.Update();
         })
 
         State.state.selectedElement.addCallbackAndRun(selected => {

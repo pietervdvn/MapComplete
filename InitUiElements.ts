@@ -152,8 +152,9 @@ export class InitUiElements {
             , State.state.featureSwitchGeolocation)
             .AttachTo("geolocate-button");
 
-
-        updateFavs();
+        if (layoutToUse.id === personal.id) {
+            updateFavs();
+        }
         InitUiElements.setupAllLayerElements();
         
         if (layoutToUse.id === personal.id) {
