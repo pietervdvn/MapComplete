@@ -22,7 +22,7 @@ export default class LayerControlPanel extends UIElement {
         }
 
         if (State.state.filteredLayers.data.length > 1) {
-            const layerSelection = new LayerSelection();
+            const layerSelection = new LayerSelection(State.state.filteredLayers);
             layerSelection.onClick(() => {
             });
             layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);

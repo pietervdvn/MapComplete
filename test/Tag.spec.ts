@@ -15,7 +15,7 @@ import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
 import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
 
 
-new T([
+new T("Tags", [
     ["Tag replacement works in translation", () => {
         const tr = new Translation({
             "en": "Test {key} abc"

@@ -12,16 +12,12 @@ export default class NoOverlapSource {
 
     features: UIEventSource<{ feature: any, freshness: Date }[]> = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
 
-    constructor(layers: {
+    constructor(layers: UIEventSource<{
                     layerDef: LayerConfig
-                }[],
+                }[]>,
                 upstream: FeatureSource) {
-        const layerDict = {};
         let noOverlapRemoval = true;
-        const layerIds = []
-        for (const layer of layers) {
-            layerDict[layer.layerDef.id] = layer;
-            layerIds.push(layer.layerDef.id);
+        for (const layer of layers.data) {
             if ((layer.layerDef.hideUnderlayingFeaturesMinPercentage ?? 0) !== 0) {
                 noOverlapRemoval = false;
             }
@@ -31,13 +27,22 @@ export default class NoOverlapSource {
             return;
         }
 
-
         this.features = upstream.features.map(
             features => {
                 if (features === undefined) {
                     return;
                 }
-               
+
+                const layerIds = []
+                const layerDict = {};
+                for (const layer of layers.data) {
+                    layerDict[layer.layerDef.id] = layer;
+                    layerIds.push(layer.layerDef.id);
+                    if ((layer.layerDef.hideUnderlayingFeaturesMinPercentage ?? 0) !== 0) {
+                        noOverlapRemoval = false;
+                    }
+                }
+
                 // There is overlap removal active
                 // We partition all the features with their respective layerIDs
                 const partitions = {};
@@ -67,7 +72,7 @@ export default class NoOverlapSource {
                                 guardPartition.map(f => f.feature),
                                 percentage
                             );
-                            if(!doesOverlap){
+                            if (!doesOverlap) {
                                 newPartition.push(mightBeDeleted);
                             }
                         }

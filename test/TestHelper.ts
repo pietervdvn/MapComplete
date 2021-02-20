@@ -1,6 +1,7 @@
+
 export default class T {
 
-    constructor(tests: [string, () => void ][]) {
+    constructor(testsuite: string, tests: [string, () => void ][]) {
         let failures : string []= [];
         for (const [name, test] of tests) {
             try {
@@ -11,10 +12,16 @@ export default class T {
             }
         }
         if (failures.length == 0) {
-            console.log("All tests done!")
+            console.log(`All tests of ${testsuite} done!`)
         } else {
-            console.warn(failures.length, "tests failed :(")
+            console.warn(failures.length, `tests of ${testsuite} failed :(`)
             console.log("Failed tests: ", failures.join(","))
+        }
+    }
+
+    static assertContains(needle: string, actual: string){
+        if(actual.indexOf(needle) < 0){
+            throw `The substring ${needle} was not found`
         }
     }
 

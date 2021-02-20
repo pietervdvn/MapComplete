@@ -6,26 +6,27 @@ import Loc from "../../Models/Loc";
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
 
-    constructor(layers: {
+    constructor(layers: UIEventSource<{
                     isDisplayed: UIEventSource<boolean>,
                     layerDef: LayerConfig
-                }[],
+                }[]>,
                 location: UIEventSource<Loc>,
                 upstream: FeatureSource) {
 
         const self = this;
-        
-        const layerDict = {};
-        for (const layer of layers) {
-            layerDict[layer.layerDef.id] = layer;
-        }
 
-       
+
         function update() {
-            console.log("Updating the filtering layer")
+
+            const layerDict = {};
+            for (const layer of layers.data) {
+                layerDict[layer.layerDef.id] = layer;
+            }
+
+            console.log("Updating the filtering layer, input ", upstream.features.data.length, "features")
             const features: { feature: any, freshness: Date }[] = upstream.features.data;
-            
-            
+
+
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
                 if (layerId !== undefined) {
@@ -42,7 +43,7 @@ export default class FilteringFeatureSource implements FeatureSource {
                     }
                 }
                 // Does it match any other layer - e.g. because of a switch?
-                for (const toCheck of layers) {
+                for (const toCheck of layers.data) {
                     if (!FilteringFeatureSource.showLayer(toCheck, location)) {
                         continue;
                     }
@@ -53,6 +54,8 @@ export default class FilteringFeatureSource implements FeatureSource {
                 return false;
 
             });
+            console.log("Updating the filtering layer, output ", newFeatures.length, "features")
+
             self.features.setData(newFeatures);
         }
 
@@ -63,20 +66,33 @@ export default class FilteringFeatureSource implements FeatureSource {
         location.map(l => {
             // We want something that is stable for the shown layers
             const displayedLayerIndexes = [];
-            for (let i = 0; i < layers.length; i++) {
-                if (l.zoom < layers[i].layerDef.minzoom) {
+            for (let i = 0; i < layers.data.length; i++) {
+                const layer = layers.data[i];
+                if (l.zoom < layer.layerDef.minzoom) {
                     continue;
                 }
-                if (!layers[i].isDisplayed.data) {
+                if (!layer.isDisplayed.data) {
                     continue;
                 }
                 displayedLayerIndexes.push(i);
             }
             return displayedLayerIndexes.join(",")
-        }, layers.map(l => l.isDisplayed))
-            .addCallback(() => {
-                update();
-            });
+        }).addCallback(() => {
+            update();
+        });
+        
+        layers.addCallback(update);
+        
+        const registered = new Set<UIEventSource<boolean>>();
+        layers.addCallback(layers => {
+            for (const layer of layers) {
+                if(registered.has(layer.isDisplayed)){
+                    continue;
+                }
+                registered.add(layer.isDisplayed);
+                layer.isDisplayed.addCallback(update);
+            }
+        })
 
         update();
 

@@ -1,6 +1,4 @@
 import * as $ from "jquery"
-import Constants from "./Models/Constants";
-
 
 export class Utils {
 

@@ -7,18 +7,18 @@ import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
 
 
-export default class UpdateFromOverpass implements FeatureSource{
+export default class UpdateFromOverpass implements FeatureSource {
 
     /**
      * The last loaded features of the geojson
      */
-    public readonly features: UIEventSource<{feature:any, freshness: Date}[]> = new UIEventSource<any[]>(undefined);
+    public readonly features: UIEventSource<{ feature: any, freshness: Date }[]> = new UIEventSource<any[]>(undefined);
 
 
     public readonly sufficientlyZoomed: UIEventSource<boolean>;
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    public readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
-    
+    public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0);
+    private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
     /**
      * The previous bounds for which the query has been run at the given zoom level
      *
@@ -44,7 +44,7 @@ export default class UpdateFromOverpass implements FeatureSource{
         const self = this;
 
         this.sufficientlyZoomed = location.map(location => {
-                if(location?.zoom === undefined){
+                if (location?.zoom === undefined) {
                     return false;
                 }
                 let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
@@ -55,11 +55,11 @@ export default class UpdateFromOverpass implements FeatureSource{
             // This update removes all data on all layers -> erase the map on lower levels too
             this._previousBounds.set(i, []);
         }
-       
+
         layoutToUse.addCallback(() => {
             self.update()
         });
-        location.addCallbackAndRun(() => {
+        location.addCallback(() => {
             self.update()
         });
     }
@@ -74,17 +74,17 @@ export default class UpdateFromOverpass implements FeatureSource{
     private GetFilter() {
         const filters: TagsFilter[] = [];
         for (const layer of this._layoutToUse.data.layers) {
-            if(typeof(layer) === "string"){
+            if (typeof (layer) === "string") {
                 continue;
             }
             if (this._location.data.zoom < layer.minzoom) {
                 continue;
             }
-            if(layer.doNotDownload){
+            if (layer.doNotDownload) {
                 continue;
             }
-                
-                
+
+
             // Check if data for this layer has already been loaded
             let previouslyLoaded = false;
             for (let z = layer.minzoom; z < 25 && !previouslyLoaded; z++) {
@@ -94,7 +94,7 @@ export default class UpdateFromOverpass implements FeatureSource{
                 }
                 for (const previousLoadedBound of previousLoadedBounds) {
                     previouslyLoaded = previouslyLoaded || this.IsInBounds(previousLoadedBound);
-                    if(previouslyLoaded){
+                    if (previouslyLoaded) {
                         break;
                     }
                 }
@@ -109,6 +109,7 @@ export default class UpdateFromOverpass implements FeatureSource{
         }
         return new Or(filters);
     }
+
     private update(): void {
         const filter = this.GetFilter();
         if (filter === undefined) {
@@ -145,21 +146,36 @@ export default class UpdateFromOverpass implements FeatureSource{
             function (reason) {
                 self.retries.data++;
                 self.ForceRefresh();
-                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec)`, undefined);
+                self.timeout.setData(self.retries.data * 5);
+                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec)`, reason);
                 self.retries.ping();
-                self.runningQuery.setData(false)
-                window?.setTimeout(
-                    function () {
-                        self.update()
-                    }, self.retries.data * 5000
-                )
+                self.runningQuery.setData(false);
+
+                function countDown() {
+                    window?.setTimeout(
+                        function () {
+                            console.log("Countdown: ", self.timeout.data)
+                            if (self.timeout.data > 1) {
+                                self.timeout.setData(self.timeout.data - 1);
+                                window.setTimeout(
+                                    countDown,
+                                    1000
+                                )
+                            } else {
+                                self.timeout.setData(0);
+                                self.update()
+                            }
+                        }, 1000 
+                    )
+                }
+                countDown();
+
             }
         );
-        
-        
-        
+
 
     }
+
     private IsInBounds(bounds: Bounds): boolean {
         if (this._previousBounds === undefined) {
             return false;
@@ -171,8 +187,6 @@ export default class UpdateFromOverpass implements FeatureSource{
             b.getEast() <= bounds.east &&
             b.getWest() >= bounds.west;
     }
-    
-    
-    
-    
+
+
 }

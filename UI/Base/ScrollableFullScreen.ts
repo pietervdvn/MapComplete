@@ -21,7 +21,6 @@ export default class ScrollableFullScreen extends UIElement {
                 Svg.close_svg().SetClass("hidden md:block")
             ])
                 .onClick(() => {
-                    console.log("Closing...")
                     ScrollableFullScreen.RestoreLeaflet();
                     if (onClose !== undefined) {
                         onClose();

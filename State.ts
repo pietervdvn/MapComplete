@@ -28,7 +28,7 @@ export default class State {
     // The singleton of the global state
     public static state: State;
 
-    
+
     public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
 
     /**
@@ -77,7 +77,7 @@ export default class State {
      */
     public readonly selectedElement = new UIEventSource<any>(undefined)
 
-    
+
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
     public readonly featureSwitchLayers: UIEventSource<boolean>;
@@ -119,11 +119,12 @@ export default class State {
 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
-        
+
         this.layoutToUse.setData(layoutToUse);
 
         // -- Location control initialization
-        {    const zoom = State.asFloat(
+        {
+            const zoom = State.asFloat(
                 QueryParameters.GetQueryParameter("z", "" + (layoutToUse?.startZoom ?? 1), "The initial/current zoom level")
                     .syncWith(LocalStorageSource.Get("zoom")));
             const lat = State.asFloat(QueryParameters.GetQueryParameter("lat", "" + (layoutToUse?.startLat ?? 0), "The initial/current latitude")
@@ -151,6 +152,7 @@ export default class State {
             });
 
         }
+
         // Helper function to initialize feature switches
         function featSw(key: string, deflt: (layout: LayoutConfig) => boolean, documentation: string): UIEventSource<boolean> {
             const queryParameterSource = QueryParameters.GetQueryParameter(key, undefined, documentation);
@@ -166,8 +168,8 @@ export default class State {
         }
 
         // Feature switch initialization - not as a function as the UIEventSources are readonly
-        { 
-            
+        {
+
             this.featureSwitchUserbadge = featSw("fs-userbadge", (layoutToUse) => layoutToUse?.enableUserBadge ?? true,
                 "Disables/Enables the user information pill (userbadge) at the top left. Disabling this disables logging in and thus disables editing all together, effectively putting MapComplete into read-only mode.");
             this.featureSwitchSearch = featSw("fs-search", (layoutToUse) => layoutToUse?.enableSearch ?? true,
@@ -190,10 +192,10 @@ export default class State {
 
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",
                 "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org")
-                .map(str => str === "true",[], b => ""+b);
+                .map(str => str === "true", [], b => "" + b);
         }
-       
-       
+
+
         this.osmConnection = new OsmConnection(
             this.featureSwitchIsTesting.data,
             QueryParameters.GetQueryParameter("oauth_token", undefined,
@@ -205,20 +207,21 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        
+
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         );
 
 
-
         this.installedThemes = new InstalledThemes(this.osmConnection).installedThemes;
 
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
-        this.favouriteLayers = this.osmConnection.GetLongPreference("favouriteLayers").map(
-            str => Utils.Dedup(str?.split(";")) ?? [],
-            [], layers => Utils.Dedup(layers)?.join(";")
-        );
+        this.favouriteLayers = LocalStorageSource.Get("favouriteLayers")
+            .syncWith(this.osmConnection.GetLongPreference("favouriteLayers"))
+            .map(
+                str => Utils.Dedup(str?.split(";")) ?? [],
+                [], layers => Utils.Dedup(layers)?.join(";")
+            );
 
         Locale.language.syncWith(this.osmConnection.GetPreference("language"));
 
@@ -236,7 +239,7 @@ export default class State {
         }).ping()
 
         new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
-        
+
 
     }
 
@@ -251,6 +254,6 @@ export default class State {
             return ("" + fl).substr(0, 8);
         })
     }
-    
+
 
 }

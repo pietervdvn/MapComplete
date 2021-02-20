@@ -12,7 +12,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
 
-    constructor(layers: { layerDef: LayerConfig }[], upstream: FeatureSource) {
+    constructor(layers: UIEventSource<{ layerDef: LayerConfig }[]>, upstream: FeatureSource) {
         this.features = upstream.features.map(features => {
             const newFeatures: { feature: any, freshness: Date }[] = [];
             if(features === undefined){
@@ -29,7 +29,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
 
                 
                 let foundALayer = false;
-                for (const layer of layers) {
+                for (const layer of layers.data) {
                     if (layer.layerDef.overpassTags.matchesProperties(f.feature.properties)) {
                         foundALayer = true;
                         if (layer.layerDef.passAllFeatures) {

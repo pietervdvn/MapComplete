@@ -6,29 +6,26 @@ import {GeoOperations} from "../GeoOperations";
 export default class WayHandlingApplyingFeatureSource implements FeatureSource {
     features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
-    constructor(layers: {
+    constructor(layers: UIEventSource<{
                     layerDef: LayerConfig
-                }[],
+                }[]>,
                 upstream: FeatureSource) {
-        const layerDict = {};
-        let allDefaultWayHandling = true;
-        for (const layer of layers) {
-            layerDict[layer.layerDef.id] = layer;
-            if (layer.layerDef.wayHandling !== LayerConfig.WAYHANDLING_DEFAULT) {
-                allDefaultWayHandling = false;
-            }
-        }
-        if (allDefaultWayHandling) {
-            this.features = upstream.features;
-            return;
-        }
-
 
         this.features = upstream.features.map(
             features => {
                 if(features === undefined){
                     return;
                 }
+
+                const layerDict = {};
+                let allDefaultWayHandling = true;
+                for (const layer of layers.data) {
+                    layerDict[layer.layerDef.id] = layer;
+                    if (layer.layerDef.wayHandling !== LayerConfig.WAYHANDLING_DEFAULT) {
+                        allDefaultWayHandling = false;
+                    }
+                }
+                
                 const newFeatures: { feature: any, freshness: Date }[] = [];
                 for (const f of features) {
                     const feat = f.feature;

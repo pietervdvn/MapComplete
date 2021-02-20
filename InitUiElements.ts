@@ -74,15 +74,8 @@ export class InitUiElements {
         }
 
 
-        InitUiElements.InitBaseMap();
-
-        InitUiElements.setupAllLayerElements();
-
-        if (layoutToUse.customCss !== undefined) {
-            Utils.LoadCustomCss(layoutToUse.customCss);
-        }
-
         function updateFavs() {
+            // This is purely for the personal theme to load the layers there
             const favs = State.state.favouriteLayers.data ?? [];
 
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
@@ -103,19 +96,16 @@ export class InitUiElements {
                     }
                 }
             }
-
-            InitUiElements.setupAllLayerElements();
-            State.state.layerUpdater.ForceRefresh();
             State.state.layoutToUse.ping();
-
+            State.state.layerUpdater?.ForceRefresh();
         }
 
 
-        if (layoutToUse.id === personal.id) {
-            State.state.favouriteLayers.addCallback(updateFavs);
-            State.state.installedThemes.addCallback(updateFavs);
+        if (layoutToUse.customCss !== undefined) {
+            Utils.LoadCustomCss(layoutToUse.customCss);
         }
 
+        InitUiElements.InitBaseMap();
 
         InitUiElements.OnlyIf(State.state.featureSwitchUserbadge, () => {
             new UserBadge().AttachTo('userbadge');
@@ -162,7 +152,17 @@ export class InitUiElements {
             , State.state.featureSwitchGeolocation)
             .AttachTo("geolocate-button");
 
-        State.state.locationControl.ping();
+
+        updateFavs();
+        InitUiElements.setupAllLayerElements();
+        
+        if (layoutToUse.id === personal.id) {
+            State.state.favouriteLayers.addCallback(updateFavs);
+            State.state.installedThemes.addCallback(updateFavs);
+        }else{
+            State.state.locationControl.ping();
+        }
+        
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
 
@@ -209,7 +209,6 @@ export class InitUiElements {
 
         const isOpened = new UIEventSource<boolean>(true);
         const fullOptions = new FullWelcomePaneWithTabs(() => {
-            console.log("Closing the welcome message...")
             isOpened.setData(false);
         });
 
@@ -325,7 +324,7 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-        const source = new FeaturePipeline(state.filteredLayers.data, updater, state.layoutToUse, state.changes, state.locationControl);
+        const source = new FeaturePipeline(state.filteredLayers, updater, state.layoutToUse, state.changes, state.locationControl);
 
 
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {

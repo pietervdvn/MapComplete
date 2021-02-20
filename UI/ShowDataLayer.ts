@@ -15,7 +15,7 @@ import {GeoOperations} from "../Logic/GeoOperations";
 
 export default class ShowDataLayer {
 
-    private readonly _layerDict;
+    private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
@@ -24,12 +24,11 @@ export default class ShowDataLayer {
         this._leafletMap = leafletMap;
         const self = this;
         const mp = leafletMap.data;
-
-        this._layerDict = {};
+        self._layerDict = {};
 
         layoutToUse.addCallbackAndRun(layoutToUse => {
             for (const layer of layoutToUse.layers) {
-                this._layerDict[layer.id] = layer;
+                self._layerDict[layer.id] = layer;
             }
         });
 
@@ -81,7 +80,7 @@ export default class ShowDataLayer {
         const tagsSource = State.state.allElements.getEventSourceFor(feature);
         // Every object is tied to exactly one layer
         const layer = this._layerDict[feature._matching_layer_id];
-        return layer.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
+        return layer?.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
     }
 
     private pointToLayer(feature, latLng): L.Layer {
@@ -111,6 +110,10 @@ export default class ShowDataLayer {
 
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
+        if(layer === undefined){
+            console.warn("No layer found for object (probably a now disabled layer)", feature)
+            return;
+        }
         if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {
             // No popup action defined -> Don't do anything
             return;
@@ -159,10 +162,10 @@ export default class ShowDataLayer {
 
                     const mp = this._leafletMap.data;
                     if (!popup.isOpen() && mp !== undefined) {
-                        var centerpoint = GeoOperations.centerpointCoordinates(feature);
                         popup
                             .setLatLng(GeoOperations.centerpointCoordinates(feature))
                             .openOn(mp);
+                        uiElement.Activate();
                     }
                 }
             }

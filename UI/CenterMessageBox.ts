@@ -8,7 +8,7 @@ export default class CenterMessageBox extends UIElement {
         super(State.state.centerMessage);
 
         this.ListenTo(State.state.locationControl);
-        this.ListenTo(State.state.layerUpdater.retries);
+        this.ListenTo(State.state.layerUpdater.timeout);
         this.ListenTo(State.state.layerUpdater.runningQuery);
         this.ListenTo(State.state.layerUpdater.sufficientlyZoomed);
     }
@@ -18,9 +18,9 @@ export default class CenterMessageBox extends UIElement {
             return {innerHtml: State.state.centerMessage.data, done: false};
         }
         const lu = State.state.layerUpdater;
-        if (lu.retries.data > 0) {
+        if (lu.timeout.data > 0) {
             return {
-                innerHtml: Translations.t.centerMessage.retrying.Subs({count: "" + lu.retries.data}).Render(),
+                innerHtml: Translations.t.centerMessage.retrying.Subs({count: "" + lu.timeout.data}).Render(),
                 done: false
             };
         }

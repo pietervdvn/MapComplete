@@ -102,6 +102,10 @@ export default class TagRenderingQuestion extends UIElement {
             return ff;
         }
 
+        if(ff){
+            mappings.push(ff);
+        }
+
         if (this._configuration.multiAnswer) {
             return this.GenerateMultiAnswer(mappings, ff)
         } else {

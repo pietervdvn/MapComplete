@@ -13,7 +13,7 @@ export default class InstalledThemes {
                 return installedThemes;
             }
             const invalidThemes = []
-            for (var allPreferencesKey in allPreferences) {
+            for (const allPreferencesKey in allPreferences) {
                 const themename = allPreferencesKey.match(/^mapcomplete-installed-theme-(.*)-combined-length$/);
                 if (themename && themename[1] !== "") {
                     const customLayout = osmConnection.GetLongPreference("installed-theme-" + themename[1]);
@@ -37,7 +37,7 @@ export default class InstalledThemes {
             }
 
             InstalledThemes.DeleteInvalid(osmConnection, invalidThemes);
-
+            
             return installedThemes;
 
         });

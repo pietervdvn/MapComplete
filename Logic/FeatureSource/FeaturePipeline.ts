@@ -16,7 +16,7 @@ export default class FeaturePipeline implements FeatureSource {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
-    constructor(flayers: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[],
+    constructor(flayers: UIEventSource<{ isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[]>,
                 updater: FeatureSource,
                 layout: UIEventSource<LayoutConfig>,
                 newPoints: FeatureSource,

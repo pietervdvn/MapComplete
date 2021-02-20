@@ -6,27 +6,44 @@ import CheckBox from "../Input/CheckBox";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
+import LayerConfig from "../../Customizations/JSON/LayerConfig";
 
 /**
  * Shows the panel with all layers and a toggle for each of them
  */
 export default class LayerSelection extends UIElement {
 
-    private readonly _checkboxes: UIElement[];
+    private _checkboxes: UIElement[];
+    private activeLayers: UIEventSource<{
+        readonly isDisplayed: UIEventSource<boolean>,
+        readonly layerDef: LayerConfig;
+    }[]>;
 
-    constructor() {
-        super(undefined);
+    constructor(activeLayers: UIEventSource<{
+        readonly isDisplayed: UIEventSource<boolean>,
+        readonly layerDef: LayerConfig;
+    }[]>) {
+        super(activeLayers);
+        if(activeLayers === undefined){
+            throw "ActiveLayers should be defined..."
+        }
+        this.activeLayers = activeLayers;
+
+    }
+
+    InnerRender(): string {
+
         this._checkboxes = [];
 
-        for (const layer of State.state.filteredLayers.data) {
+        for (const layer of this.activeLayers.data) {
             const leafletStyle = layer.layerDef.GenerateLeafletStyle(
-                new UIEventSource<any>({id: "node/-1"}), 
+                new UIEventSource<any>({id: "node/-1"}),
                 false)
             const leafletHtml = leafletStyle.icon.html;
             const icon =
                 new FixedUiElement(leafletHtml.Render())
                     .SetClass("single-layer-selection-toggle")
-            let iconUnselected: UIElement = new FixedUiElement(leafletHtml.Render()) 
+            let iconUnselected: UIElement = new FixedUiElement(leafletHtml.Render())
                 .SetClass("single-layer-selection-toggle")
                 .SetStyle("opacity:0.2;");
 
@@ -54,9 +71,8 @@ export default class LayerSelection extends UIElement {
                 .SetStyle("margin:0.3em;")
             );
         }
-    }
 
-    InnerRender(): string {
+
         return new Combine(this._checkboxes)
             .SetStyle("display:flex;flex-direction:column;")
             .Render();
