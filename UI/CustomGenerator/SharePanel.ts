@@ -22,31 +22,11 @@ export default class SharePanel extends UIElement {
             "<h2>Share</h2>",
             "Share the following link with friends:<br/>",
             new VariableUiElement(liveUrl.map(url => `<a href='${url}' target="_blank">${url}</a>`)),
-            "<h2>Publish on OSM Wiki</h2>",
-            "In the list of 'hacks upon hacks to make MapComplete work', it is now possible to put the JSON-file onto a Wikipage*.<br/>" +
-            "This is a <i>very stable</i> and <i>very well-tested</i> solution. Using wikipages as source control! What could possibly go wrong???? /s<br/><br/>",
-
-            "Why to publish the layout as a wikipage?",
-            "<ul>",
-            ...["If something breaks, it can be fixed centrally",
-                "If someone has a remark about your preset, the talk page can be used to point this out and discuss the preset",
-                "In case of a grave error, everyone can step in to fix the prest"].map(li => `<li>${li}</li>`),
-            "</ul>",
-
-            "In order to make this work:",
-            "<ol>",
-
-            ...[`Create a new page on the OSM-wiki, e.g. <a href='https://wiki.osm.org/wiki/${proposedName}' target="_blank">${proposedName}</a>`,
-                "Click 'create page'",
-                "Type <span class='literal-code'>&lt;nowiki&gt;</span>, a few newlines and <span class='literal-code'>&lt;/nowiki&gt;</span>",
-                "Copy the json configuration from the 'save-tab', paste it between the 'nowiki'-tags in the Wiki",
-                "Click 'save' to save the wiki page",
-                "Share the link with the url parameter <span class='literal-code'>userlayout=wiki:YOURWIKIPAGE</span>, e.g. " +
-                `<a href='./custom?userlayout=${proposedNameEnc}' target='_blank'>https://${window.location.host}?userlayout=${proposedNameEnc}</a>`
-            ].map(li => `<li>${li}</li>`),
-
-            "</ol>",
-            "(* This has made a lot of people very angry and been widely regarded as a bad move.)",
+            "<h2>Publish on some website</h2>",
+            
+            "It is possible to load a JSON-file from the wide internet, but you'll need some (public CORS-enabled) server.",
+            `Put the raw json online, and use ${window.location.host}?userlayout=https://<your-url-here>.json`,
+            "Please note: it used to be possible to load from the wiki - this is not possible anymore due to technical reasons.",
             "</div>"
         ]);
     }

@@ -64,36 +64,24 @@ document.getElementById('centermessage').innerText = '';
 document.getElementById("decoration-desktop").remove();
 
 
-if (layoutFromBase64.startsWith("wiki:")) {
-    console.log("Downloading map theme from the wiki");
-    const themeName = layoutFromBase64.substr("wiki:".length);
-    new FixedUiElement(`Downloading ${themeName} from the wiki...`)
+if (layoutFromBase64.startsWith("http")) {
+    const link = layoutFromBase64;
+    console.log("Downloading map theme from ", link);
+    new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`)
         .AttachTo("centermessage");
-    const cleanUrl = `https://wiki.openstreetmap.org/wiki/${themeName}`;
-    const url = `https://cors-anywhere.herokuapp.com/` + cleanUrl; // ~NOT~ VERY SAFE AND HACKER-PROOF!
-    // We use cors-anywhere because the wiki from openstreetmap is locked-down :(
-    /*/
-    const url = cleanUrl; // MUCH SAFER! //*/
 
     $.ajax({
-        url: url,
+        url: link,
         success: function (data) {
-            // Hacky McHackFace has been working here. This'll probably break in the future
-            const startTrigger = "<div class=\"mw-parser-output\">";
-            const start = data.indexOf(startTrigger);
-            data = data.substr(start,
-                data.indexOf("<div class=\"printfooter\">") - start)
-            data = data.substr(0, data.lastIndexOf("</p>"))
-            data = data.substr(data.indexOf("<p>") + 3)
-            console.log(data)
+   
             try {
                 const parsed = JSON.parse(data);
                 // Overwrite the id to the wiki:value
-                parsed.id = layoutFromBase64.replace(/[: \/]/g, '-')
+                parsed.id = link;
                 const layout = new LayoutConfig(parsed);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
-                new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>${e}`)
+                new FixedUiElement(`<a href="${link}">${link}</a> is invalid:<br/>${e}<br/> <a href='https://${window.location.host}/'>Go back</a>")`)
                     .SetClass("clickable")
                     .AttachTo("centermessage");
                 console.error("Could not parse the text", data)
@@ -102,7 +90,7 @@ if (layoutFromBase64.startsWith("wiki:")) {
         },
     }).fail((_, textstatus, error) => {
         console.error("Could not download the wiki theme:", textstatus, error)
-        new FixedUiElement(`<a href="${cleanUrl}">${themeName}</a> is invalid:<br/>Could not download - wrong URL?<br/>` +
+        new FixedUiElement(`<a href="${link}">${link}</a> is invalid:<br/>Could not download - wrong URL?<br/>` +
             error +
             "<a href='https://${window.location.host}/'>Go back</a>")
             .SetClass("clickable")
