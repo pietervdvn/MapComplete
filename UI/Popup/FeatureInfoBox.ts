@@ -10,6 +10,7 @@ import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
 export default class FeatureInfoBox extends UIElement {
+    private static featureInfoboxCache: Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
     private _component: ScrollableFullScreen;
 
     private constructor(
@@ -21,13 +22,25 @@ export default class FeatureInfoBox extends UIElement {
         if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
-        const title = FeatureInfoBox.GenerateTitleBar(tags, layerConfig);
-        const contents = FeatureInfoBox.GenerateContent(tags, layerConfig);
-        this._component = new ScrollableFullScreen(title, contents, onClose)
+
+            const title = FeatureInfoBox.GenerateTitleBar(tags, layerConfig);
+            const contents = FeatureInfoBox.GenerateContent(tags, layerConfig);
+            this._component = new ScrollableFullScreen(title, contents, onClose);
     }
-    
-    InnerRender(): string {
-        return this._component.Render();
+
+    static construct(tags: UIEventSource<any>, layer: LayerConfig, onClose: () => void) {
+        let innerMap = FeatureInfoBox.featureInfoboxCache.get(layer);
+        if (innerMap === undefined) {
+            innerMap = new Map<UIEventSource<any>, FeatureInfoBox>();
+            FeatureInfoBox.featureInfoboxCache.set(layer, innerMap);
+        }
+
+        let featureInfoBox = innerMap.get(tags);
+        if (featureInfoBox === undefined) {
+            featureInfoBox = new FeatureInfoBox(tags, layer, onClose);
+            innerMap.set(tags, featureInfoBox);
+        }
+        return featureInfoBox;
     }
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
@@ -56,8 +69,8 @@ export default class FeatureInfoBox extends UIElement {
         let questionBoxIsUsed = false;
         const renderings = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
-                questionBoxIsUsed = true;
                 // This is the question box!
+                questionBoxIsUsed = true;
                 return questionBox;
             }
             return new EditableTagRendering(tags, tr);
@@ -75,21 +88,7 @@ export default class FeatureInfoBox extends UIElement {
 
     }
 
-
-
-    private static featureInfoboxCache : Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
-    static construct(tags: UIEventSource<any>, layer: LayerConfig, onClose: () => void) {
-        let innerMap = FeatureInfoBox.featureInfoboxCache.get(layer);
-        if(innerMap === undefined){
-            innerMap = new Map<UIEventSource<any>, FeatureInfoBox>();
-            FeatureInfoBox.featureInfoboxCache.set(layer, innerMap);
-        }
-        
-        let featureInfoBox = innerMap.get(tags);
-        if(featureInfoBox === undefined){
-            featureInfoBox = new FeatureInfoBox(tags, layer, onClose);
-            innerMap.set(tags, featureInfoBox);
-        }
-        return featureInfoBox;
+    InnerRender(): string {
+        return this._component.Render();
     }
 }

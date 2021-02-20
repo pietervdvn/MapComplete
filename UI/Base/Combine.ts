@@ -25,11 +25,7 @@ export default class Combine extends UIElement {
                 console.error("Not a UI-element", ui);
                 return "";
             }
-            let rendered = ui.Render();
-            if(ui.IsEmpty()){
-                return "";
-            }
-            return rendered;
+            return ui.Render();
         }).join("");
     }
 
