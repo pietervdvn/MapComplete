@@ -8,17 +8,17 @@
   "orientation": "portrait-primary, landscape-primary",
   "icons": [
     {
-      "src": "./assets/add.svg",
+      "src": "./assets/svg/add.svg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/svg"
     },
     {
-      "src": "./assets/add.svg",
+      "src": "./assets/svg/add.svg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg"
     },
     {
-      "src": "./assets/add.svg",
+      "src": "./assets/svg/add.svg",
       "sizes": "513x513",
       "type": "image/svg"
     }
