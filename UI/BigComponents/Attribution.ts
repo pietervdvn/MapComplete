@@ -32,13 +32,13 @@ export default class Attribution extends UIElement {
     }
 
     InnerRender(): string {
-        const location : Loc = this._location.data;
-        const userDetails = this._userDetails.data;
+        const location : Loc = this._location?.data;
+        const userDetails = this._userDetails?.data;
 
         const mapComplete = new Link(`Mapcomplete ${Constants.vNumber}`, 'https://github.com/pietervdvn/MapComplete', true);
         const reportBug = new Link(Svg.bug_img, "https://github.com/pietervdvn/MapComplete/issues", true);
 
-        const layoutId = this._layoutToUse.data.id;
+        const layoutId = this._layoutToUse?.data?.id;
         const osmChaLink = `https://osmcha.org/?filters=%7B%22comment%22%3A%5B%7B%22label%22%3A%22%23${layoutId}%22%2C%22value%22%3A%22%23${layoutId}%22%7D%5D%2C%22date__gte%22%3A%5B%7B%22label%22%3A%222020-07-05%22%2C%22value%22%3A%222020-07-05%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22MapComplete%22%2C%22value%22%3A%22MapComplete%22%7D%5D%7D`
         const stats = new Link(Svg.statistics_img, osmChaLink, true)
         let editHere: (UIElement | string) = "";
@@ -48,7 +48,7 @@ export default class Attribution extends UIElement {
         }
         let editWithJosm: (UIElement | string) = ""
         if (location !== undefined &&
-            this._leafletMap.data !== undefined &&
+            this._leafletMap?.data !== undefined &&
             userDetails.csCount >=  Constants.userJourney.tagsVisibleAndWikiLinked) {
             const bounds : any= this._leafletMap.data.getBounds();
             const top = bounds.getNorth();
@@ -59,7 +59,7 @@ export default class Attribution extends UIElement {
             const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
             editWithJosm = new Link(Svg.josm_logo_img, josmLink, true);
         }
-        return new Combine([mapComplete, reportBug, " | ", stats, " | ", editHere, editWithJosm]).Render();
+        return new Combine([mapComplete, reportBug, stats, editHere, editWithJosm]).Render();
     }
 
 

@@ -513,6 +513,16 @@
       "gl": "<h3>Un mapa aberto</h3><p></p>Non sería xenial se houbera un só mapa, que todos puideran empregar e editar de xeito libre?Un só lugar para almacenar toda a información xeográfica? Entón, todos eses sitios web con mapas diferentes, pequenos e incompatíbeis (que sempre están desactualizados) xa non serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> é ese mapa. Os datos do mapa pódense empregar de balde (con <a href='https://osm.org/copyright' target='_blank'> atribución e publicación de modificacións neses datos</a>).Ademais diso, todos poden engadir de xeito ceibe novos datos e corrixir erros. Este sitio web tamén emprega o OpenStreetMap. Todos os datos proveñen de alí, e as túas respostas e correccións tamén serán engadidas alí.</p><p>Moitas persoas e aplicacións xa empregan o OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero tamén os mapas do Facebook, Instagram, Apple e Bing son (en parte) impulsados ​​polo OpenStreetMap.Se mudas algo aquí, tamén será reflexado nesas aplicacións, na súa seguinte actualización!</p>",
       "de": "<h3>Eine offene Karte</h3><p>Wäre es nicht toll, wenn es eine offene Karte gäbe, die von jedem angepasst und benutzt werden könnte? Eine Karte, zu der jeder seine Interessen hinzufügen kann? Dann bräuchte man all diese Websites mit unterschiedlichen, kleinen und inkompatiblen Karten (die immer veraltet sind) nicht mehr.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> ist diese offene Karte. Die Kartendaten können kostenlos verwendet werden (mit <a href='https://osm.org/copyright' target='_blank'>Attribution und Veröffentlichung von Änderungen an diesen Daten</a>). Darüber hinaus können Sie die Karte kostenlos ändern und Fehler beheben, wenn Sie ein Konto erstellen. Diese Website basiert ebenfalls auf OpenStreetMap. Wenn Sie eine Frage hier beantworten, geht die Antwort auch dorthin.</p>Viele Menschen und Anwendungen nutzen OpenStreetMap bereits: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, verschiedene spezialisierte Routenplaner, die Hintergrundkarten auf Facebook, Instagram,...<br/>Sogar Apple Maps und Bing Maps verwenden OpenStreetMap in ihren Karten!</p></p><p>Wenn Sie hier einen Punkt hinzufügen oder eine Frage beantworten, wird er nach einer Weile in all diesen Anwendungen sichtbar sein.</p>"
     },
+    "attribution": {
+      "attributionTitle": {
+        "en": "Attribution notice",
+        "nl": "Met dank aan"
+      },
+      "attributionContent": {
+        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p><p>Some images are provided by Wikimedia</p>"
+      }
+    },
+
     "sharescreen": {
       "intro": {
         "en": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",

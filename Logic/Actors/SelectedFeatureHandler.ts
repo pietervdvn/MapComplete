@@ -18,7 +18,9 @@ export default class SelectedFeatureHandler {
         this._featureSource = featureSource;
         const self = this;
         hash.addCallback(h => {
+            console.log("Hash is now ", h)
             if (h === undefined || h === "") {
+                console.log("Deselecting feature...")
                 selectedFeature.setData(undefined);
             }else{
                 self.selectFeature();

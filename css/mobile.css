@@ -51,6 +51,13 @@ Contains tweaks for small screens
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .leaflet-control-attribution{
+        display: none;
+    }
+}
+
+
 @media only screen and (max-width: 600px) {
     /* Portrait */
     #userbadge-and-search {

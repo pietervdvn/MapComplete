@@ -122,6 +122,9 @@ a {
     color: var(--foreground-color);
 }
 
+.subtle-background {
+    background: var(--subtle-detail-color);
+}
 .slick-prev:before, .slick-next:before {
     /*Slideshow workaround*/
     color:black !important;
@@ -163,34 +166,6 @@ a {
     box-shadow: 0 3px 14px var(--shadow-color) !important;
 }
 
-
-
-#geolocate-button {
-    position: absolute;
-    bottom: 25px;
-    right: 50px;
-}
-
-#geolocate-button img {
-    width: 31px;
-    height: 31px;
-    margin: 6px;
-}
-
-#geolocate-button > .uielement {
-    display: block;
-}
-
-
-#layer-selection {
-    z-index: 9000;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--shadow-color);
-}
-
 .single-layer-selection-toggle {
     position: relative;
     width: 2em;
@@ -225,18 +200,6 @@ a {
     max-width: 3.5em !important;
 }
 
-.layer-selection-toggle {
-    display: flex;
-    flex-direction: column-reverse;
-    background: var(--subtle-detail-color);
-}
-
-.layer-selection-toggle svg {
-    display: block;
-    width: 2em;
-    height: 2em;
-    padding: 0.75em;
-}
 
 /**************** GENERIC ****************/
 

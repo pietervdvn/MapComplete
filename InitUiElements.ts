@@ -34,6 +34,9 @@ import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
+import MapControlButton from "./UI/MapControlButton";
+import {Map} from "leaflet";
+import Combine from "./UI/Base/Combine";
 
 export class InitUiElements {
 
@@ -122,8 +125,11 @@ export class InitUiElements {
 
         if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
             const currentLocation = State.state.locationControl;
-            const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`;
-            new Link(Svg.pop_out_ui().SetClass("iframe-escape"), url, true)
+            const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom ?? 0}&lat=${currentLocation.data.lat ?? 0}&lon=${currentLocation.data.lon ?? 0}`;
+            new MapControlButton(
+                new Link(Svg.pop_out_img, url, true)
+                    .SetClass("block w-full h-full p-1.5")
+            )
                 .AttachTo("messagesbox");
         }
 
@@ -142,27 +148,44 @@ export class InitUiElements {
                 marker.addTo(State.state.leafletMap.data)
             });
 
-        new FeatureSwitched(
-            new GeoLocationHandler(
-                State.state.currentGPSLocation,
-                State.state.leafletMap
-            )
-                .SetStyle(`position:relative;display:block;border: solid 2px #0005;cursor: pointer; z-index: 999; /*Just below leaflets zoom*/background-color: white;border-radius: 5px;width: 43px;height: 43px;`)
-            , State.state.featureSwitchGeolocation)
-            .AttachTo("geolocate-button");
+        const geolocationButton = new FeatureSwitched(
+            new MapControlButton(
+                new GeoLocationHandler(
+                    State.state.currentGPSLocation,
+                    State.state.leafletMap
+                )),
+            State.state.featureSwitchGeolocation);
+
+        const plus = new MapControlButton(
+            Svg.plus_ui()
+        ).onClick(() => {
+            State.state.locationControl.data.zoom++;
+            State.state.locationControl.ping();
+        })
+
+        const min = new MapControlButton(
+            Svg.min_ui()
+        ).onClick(() => {
+            State.state.locationControl.data.zoom--;
+            State.state.locationControl.ping();
+        })
+
+        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-1")))
+            .SetClass("flex flex-col")
+            .AttachTo("bottom-right");
 
         if (layoutToUse.id === personal.id) {
             updateFavs();
         }
         InitUiElements.setupAllLayerElements();
-        
+
         if (layoutToUse.id === personal.id) {
             State.state.favouriteLayers.addCallback(updateFavs);
             State.state.installedThemes.addCallback(updateFavs);
-        }else{
+        } else {
             State.state.locationControl.ping();
         }
-        
+
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
 
@@ -247,15 +270,39 @@ export class InitUiElements {
                 .SetClass("block p-1 rounded-full");
             const checkbox = new CheckBox(
                 layerControlPanel,
-                Svg.layers_svg().SetClass("layer-selection-toggle"),
+                new MapControlButton(Svg.layers_svg()),
                 State.state.layerControlIsOpened
-            ).AttachTo("layer-selection");
+            )
+            const copyrightState = new UIEventSource<boolean>(false);
+            const copyrightNotice =
+                new ScrollableFullScreen(
+                    Translations.t.general.attribution.attributionTitle,
+                    new Combine([
+                        Translations.t.general.attribution.attributionContent,
+                        "<br/>",
+                        new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
+                    ]),
+                    () => {
+                        copyrightState.setData(false)
+                    }
+                )
+
+            ;
+            const copyrightButton = new CheckBox(
+                copyrightNotice,
+                new MapControlButton(Svg.osm_copyright_svg()),
+                copyrightState
+            ).SetClass("p-0.5 md:hidden")
+
+           new Combine([copyrightButton, checkbox])
+               .AttachTo("layer-selection");
 
 
             State.state.locationControl
                 .addCallback(() => {
                     // Close the layer selection when the map is moved
                     checkbox.isEnabled.setData(false);
+                    copyrightButton.isEnabled.setData(false);
                 });
 
             State.state.selectedElement.addCallbackAndRun(feature => {
@@ -304,7 +351,7 @@ export class InitUiElements {
 
 
         const state = State.state;
-        state.filteredLayers = 
+        state.filteredLayers =
             state.layoutToUse.map(layoutToUse => {
                 const flayers = [];
 

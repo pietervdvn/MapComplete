@@ -36,7 +36,6 @@ export class Basemap {
         this.map.attributionControl.setPrefix(
             extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
 
-        this.map.zoomControl.setPosition("bottomright");
         const self = this;
 
         let previousLayer = currentLayer.data;
@@ -58,6 +57,13 @@ export class Basemap {
             location.data.lon = self.map.getCenter().lng;
             location.ping();
         });
+
+        location.map(loc => loc.zoom)
+            .addCallback(zoom => {
+                if (Math.abs(self.map.getZoom() - zoom) > 0.1) {
+                    self.map.setZoom(zoom, {});
+                }
+            })
 
         this.map.on("click", function (e) {
             // @ts-ignore

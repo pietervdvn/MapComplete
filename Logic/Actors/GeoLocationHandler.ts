@@ -20,6 +20,7 @@ export default class GeoLocationHandler extends UIElement {
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
         this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
+        this.dumbMode = false;
         const self = this;
         import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
             self.init();
@@ -117,6 +118,7 @@ export default class GeoLocationHandler extends UIElement {
 
     private StartGeolocating(zoomlevel = 19) {
         const self = this;
+        console.log("Starting geolocation")
         const map: any = this._leafletMap.data;
         if (self._permission.data === "denied") {
             return "";
