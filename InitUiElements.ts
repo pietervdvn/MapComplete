@@ -236,7 +236,8 @@ export class InitUiElements {
         });
 
         // ?-Button on Desktop, opens panel with close-X.
-        const help = Svg.help_svg().SetClass("open-welcome-button block");
+        const help = new MapControlButton(Svg.help_svg());
+         //   .SetClass("open-welcome-button block");
         const checkbox = new CheckBox(
             fullOptions
                 .SetClass("welcomeMessage")
@@ -295,7 +296,7 @@ export class InitUiElements {
             ).SetClass("p-0.5 md:hidden")
 
            new Combine([copyrightButton, checkbox])
-               .AttachTo("layer-selection");
+               .AttachTo("bottom-left");
 
 
             State.state.locationControl

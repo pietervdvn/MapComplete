@@ -18,6 +18,8 @@ export class Basemap {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
             layers: [currentLayer.data.layer],
+            zoomControl: false
+            
         });
 
         L.control.scale(

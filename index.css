@@ -16,6 +16,10 @@
             z-index: 10000
         }
 
+        .z-above-controls{
+            z-index: 10001
+        }
+
     }
 
   .btn {
@@ -347,38 +351,6 @@ a {
     color: var(--foreground-color);
 }
 
-.close-welcome-button {
-    position: absolute;
-    display: inline-block;
-    height: 100%;
-    background-color: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
-    box-sizing: border-box;
-    width: 4em;
-    padding: 1em;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
-}
-
-.close-welcome-button svg {
-    width: 2em;
-    height: 2em;
-}
-
-.open-welcome-button {
-    box-sizing: border-box;
-    background: var(--subtle-detail-color);
-    color: var(--foreground-color);
-
-    height: 3.5em;
-    width: 3.5em;
-    padding: 0.75em;
-}
-
-.open-welcome-button svg {
-    width: 2em;
-    height: 2em;
-}
 
 #messagesbox {
     /*Only shown on big screens*/
@@ -437,21 +409,6 @@ a {
     box-sizing: border-box;
 }
 
-
-.iframe-escape {
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
-    border-radius: 2em;
-    display: block;
-    width: min-content;
-}
-
-.iframe-escape img {
-    padding: 1em;
-    width: 2em;
-    height: 2em;
-}
 
 /** Switch layout **/
 .small-image img {

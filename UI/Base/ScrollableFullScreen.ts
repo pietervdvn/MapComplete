@@ -43,7 +43,7 @@ export default class ScrollableFullScreen extends UIElement {
                         .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto md:max-h-65vh"),
                     // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
                 ]).SetClass("flex flex-col h-full relative bg-white")
-            ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative");
+            ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative z-above-controls");
 
         this.dumbMode = false;
     }
