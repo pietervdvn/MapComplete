@@ -123,9 +123,8 @@ export class InitUiElements {
         if ((window != window.top && !State.state.featureSwitchWelcomeMessage.data) || State.state.featureSwitchIframe.data) {
             const currentLocation = State.state.locationControl;
             const url = `${window.location.origin}${window.location.pathname}?z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`;
-            const content = new Link(Svg.pop_out_ui().SetClass("iframe-escape"), url, true);
-            new FixedUiElement(content.Render()).AttachTo("help-button-mobile")
-            content.AttachTo("messagesbox");
+            new Link(Svg.pop_out_ui().SetClass("iframe-escape"), url, true)
+                .AttachTo("messagesbox");
         }
 
         State.state.osmConnection.userDetails.map((userDetails: UserDetails) => userDetails?.home)
