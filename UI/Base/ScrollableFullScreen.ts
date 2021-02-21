@@ -27,9 +27,9 @@ export default class ScrollableFullScreen extends UIElement {
                     } else {
                         console.error("WARNING: onClose is not defined")
                     }
-                }).SetClass("mb-2 bg-blue-50 rounded-full w-12 h-12 p-1.5")
+                }).SetClass("mb-2 bg-blue-50 rounded-full w-12 h-12 p-1.5 flex-shrink-0")
 
-        title.SetClass("block w-full text-2xl font-bold p-2 pl-4")
+        title.SetClass("block text-l sm:text-xl md:text-2xl w-full font-bold p-2 pl-4 max-h-20vh overflow-y-auto")
         const ornament = new Combine([new Ornament().SetStyle("height:5em;")])
             .SetClass("md:hidden h-5")
 
@@ -38,9 +38,9 @@ export default class ScrollableFullScreen extends UIElement {
             new Combine([
                 new Combine([
                     new Combine([returnToTheMap, title])
-                        .SetClass("border-b-2 border-black shadow md:shadow-none bg-white p-2 pb-0 md:p-0 flex overflow-x-hidden flex-shrink-0 max-h-20vh"),
+                        .SetClass("border-b-2 border-black shadow md:shadow-none bg-white p-2 pb-0 md:p-0 flex flex-shrink-0"),
                     new Combine([content, ornament])
-                        .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto overflow-x-hidden md:max-h-65vh"),
+                        .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto md:max-h-65vh"),
                     // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
                 ]).SetClass("flex flex-col h-full relative bg-white")
             ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative");

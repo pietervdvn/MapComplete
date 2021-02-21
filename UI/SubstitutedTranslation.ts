@@ -30,7 +30,6 @@ export class SubstitutedTranslation extends UIElement {
             self.Update();
         });
         this.SetClass("w-full")
-
     }
 
     public static construct(

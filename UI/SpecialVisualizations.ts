@@ -163,7 +163,7 @@ export default class SpecialVisualizations {
                         if (url === "") {
                             url = window.location.href
                         }
-                        return new ShareButton(Svg.share_svg(), {
+                        return new ShareButton(Svg.share_ui(), {
                             title: name,
                             url: url,
                             text: state.layoutToUse.data.shortDescription.txt

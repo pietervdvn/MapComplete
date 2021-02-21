@@ -119,7 +119,7 @@ svg, img {
 
 
 a {
-    color: var(--foreground-color)
+    color: var(--foreground-color);
 }
 
 .slick-prev:before, .slick-next:before {

@@ -29,7 +29,7 @@ export default class EditableTagRendering extends UIElement {
         this.ListenTo(State.state?.osmConnection?.userDetails)
 
         this._answer = new TagRenderingAnswer(tags, configuration);
-        this._answer.SetStyle("width:100%;")
+        this._answer.SetClass("w-full")
         this._question = this.GenerateQuestion();
         this.dumbMode = false;
 

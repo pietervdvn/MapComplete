@@ -46,14 +46,16 @@ export default class FeatureInfoBox extends UIElement {
     private static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig): UIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
-            .SetClass("text-2xl break-words font-bold p-2");
+            .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon)
-                .SetClass("block w-8 h-8 align-baseline box-content p-0.5")))
-            .SetClass("flex flex-row flex-wrap pt-1 items-center mr-2");
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, 
+                "block w-8 h-8 align-baseline box-content sm:p-0.5", "width: 2rem !important;")
+                .HideOnEmpty(true)
+            ))
+            .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
 
         return new Combine([
-            new Combine([title, titleIcons]).SetClass("flex flex-grow justify-between")
+            new Combine([title, titleIcons]).SetClass("flex flex-col sm:flex-row flex-grow justify-between")
         ])
     }
 

@@ -13,13 +13,16 @@ export class DropDown<T> extends InputElement<T> {
     public IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _label_class: string;
     private readonly _select_class: string;
+    private _form_style: string;
 
     constructor(label: string | UIElement,
                 values: { value: T, shown: string | UIElement }[],
                 value: UIEventSource<T> = undefined,
                 label_class: string = "",
-                select_class: string = "") {
+                select_class: string = "",
+                form_style: string = "flex") {
         super(undefined);
+        this._form_style = form_style;
         this._value = value ?? new UIEventSource<T>(undefined);
         this._label = Translations.W(label);
         this._label_class = label_class || '';
@@ -62,7 +65,7 @@ export class DropDown<T> extends InputElement<T> {
             options += "<option value='" + i + "'>" + this._values[i].shown.InnerRender() + "</option>"
         }
 
-        return `<form class="flex">` +
+        return `<form class="${this._form_style}">` +
             `<label class='${this._label_class}' for='dropdown-${this.id}'>${this._label.Render()}</label>` +
             `<select class='${this._select_class}' name='dropdown-${this.id}' id='dropdown-${this.id}'>` +
             options +

@@ -79,7 +79,7 @@ export abstract class UIElement extends UIEventSource<string> {
             if (element.innerHTML === "") {
                 element.parentElement.style.display = "none";
             } else {
-                element.parentElement.style.display = "block";
+                element.parentElement.style.display = "";
             }
         }
 
@@ -129,7 +129,7 @@ export abstract class UIElement extends UIEventSource<string> {
         if (this.clss.size > 0) {
             clss = `class='${Array.from(this.clss).join(" ")}' `;
         }
-        return `<span ${clss}${style}id='${this.id}'>${this.lastInnerRender}</span>`
+        return `<span ${clss}${style}id='${this.id}' gen="${this.constructor.name}">${this.lastInnerRender}</span>`
     }
 
     AttachTo(divId: string) {

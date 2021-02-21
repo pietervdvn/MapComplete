@@ -13,15 +13,20 @@ export default class TagRenderingAnswer extends UIElement {
     private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
     private _content: UIElement;
+    private readonly _contentClass: string;
+    private _contentStyle: string;
 
-    constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig) {
+    constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig, contentClasses: string = "", contentStyle: string = "") {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
+        this._contentClass = contentClasses;
+        this._contentStyle = contentStyle;
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
         this.SetClass("flex items-center flex-row text-lg")
+        this.SetStyle("word-wrap: anywhere;");
     }
 
     InnerRender(): string {
@@ -58,16 +63,15 @@ export default class TagRenderingAnswer extends UIElement {
                     ])
 
                 }
-                return this._content.Render();
+                return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
             }
         }
         
         const tr = this._configuration.GetRenderValue(tags);
         if (tr !== undefined) {
             this._content = SubstitutedTranslation.construct(tr, this._tags);
-            return this._content.Render();
+            return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
         }
-
        
         return "";
 

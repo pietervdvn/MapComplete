@@ -33,6 +33,7 @@ export class ImageCarousel extends UIElement{
 
         this.slideshow = new SlideShow(uiElements).HideOnEmpty(true);
         this.SetClass("block w-full");
+        this.slideshow.SetClass("w-full");
     }
 
     /***

@@ -35,7 +35,9 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
-            State.state.osmConnection.GetPreference("pictures-license")
+            State.state.osmConnection.GetPreference("pictures-license"),
+            "","",
+            "flex flex-col sm:flex-row"
         );
         licensePicker.SetStyle("float:left");
 
