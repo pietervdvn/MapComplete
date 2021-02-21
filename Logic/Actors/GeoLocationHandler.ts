@@ -4,6 +4,7 @@ import {UIElement} from "../../UI/UIElement";
 import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 export default class GeoLocationHandler extends UIElement {
 
@@ -13,7 +14,9 @@ export default class GeoLocationHandler extends UIElement {
     private readonly _hasLocation: UIEventSource<boolean>;
     private readonly _currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>;
     private readonly _leafletMap: UIEventSource<L.Map>;
-
+    private _lastUserRequest: Date;
+    private readonly _previousLocationGrant : UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
+    
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
                 leafletMap: UIEventSource<L.Map>) {
         super(undefined);
@@ -56,6 +59,15 @@ export default class GeoLocationHandler extends UIElement {
 
 
         this._currentGPSLocation.addCallback((location) => {
+            self._previousLocationGrant.setData("granted");
+
+            const timeSinceRequest = (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
+            if(timeSinceRequest < 30){
+                self._lastUserRequest = undefined;
+                this._leafletMap.data.setView(
+                    this._currentGPSLocation.data.latlng, this._leafletMap.data.getZoom()
+                );
+            }
 
             const color = getComputedStyle(document.body).getPropertyValue("--catch-detail-color")
             const icon = L.icon(
@@ -78,7 +90,7 @@ export default class GeoLocationHandler extends UIElement {
             ?.then(function (status) {
                 console.log("Geolocation is already", status)
                 if (status.state === "granted") {
-                    self.StartGeolocating();
+                   self.StartGeolocating();
                 }
                 self._permission.setData(status.state);
                 status.onchange = function () {
@@ -86,6 +98,11 @@ export default class GeoLocationHandler extends UIElement {
                 }
             });
 
+        if(this._previousLocationGrant.data === "granted"){
+            this._previousLocationGrant.setData("");
+            self.StartGeolocating();
+        }
+        
         this.HideOnEmpty(true);
     }
 
@@ -116,11 +133,14 @@ export default class GeoLocationHandler extends UIElement {
 
     }
 
+   
     private StartGeolocating(zoomlevel = 19) {
         const self = this;
         console.log("Starting geolocation")
+        this._lastUserRequest = new Date();
         const map: any = this._leafletMap.data;
         if (self._permission.data === "denied") {
+            self._previousLocationGrant.setData("");
             return "";
         }
         if (this._currentGPSLocation.data !== undefined) {
