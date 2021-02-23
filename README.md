@@ -21,7 +21,7 @@ An explicit non-goal of MapComplete is to modify geometries of ways. Although ad
 
 # Creating your own theme
 
-It is possible to quickly make and distrubute your own theme - [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
+It is possible to quickly make and distribute your own theme - [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
 
 ## Examples
 

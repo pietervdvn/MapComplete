@@ -21,6 +21,7 @@ The custom theme generator is a special page of MapComplete, where one can creat
 
 However, the custom theme generator is extremely buggy and built before some updates. This means that some features are _not_ available through the custom theme generator. The custom theme generator is good to get the basics of the theme set up, but you will have to edit the raw JSON-file anyway afterwards.
 
+[A quick tutorial for the custom theme generator can be found here](https://www.youtube.com/watch?v=nVbFrNVPxPw).
 
 Loading your theme
 ------------------
@@ -56,7 +57,7 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
     - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
     - Add an import statatement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
     - Add your theme to the `LayoutList`, by adding a line `FromJSON.LayoutFromJSON(yourtheme)`
- 6) Test your theme: run the project as described [above](#Dev)
+ 6) Test your theme: run the project as described [above](../README.md#Dev)
  7) Happy with your theme? Time to open a Pull Request!
  8) Thanks a lot for improving MapComplete!
  
@@ -90,6 +91,15 @@ Making a tagrendering as if it were a question only. If you have a question such
 The correct way to handle this is to use _This bench does have a backrest_ and _This bench does not have a backrest_ as answers.
 
 One has to think first in terms of _what is shown to the user if it is known_, only then in terms of _what is the question I want to ask_
+
+### Using layers to distinguish on attributes
+
+One layer should portray one kind of physical object, e.g. "benches" or "restaurants". It should contain all of them, disregarding other properties.
+
+One should not make one layer for benches with a backrest and one layer for benches without. This is confusing for users and poses problems: what if the backrest status is unknown? What if it is some weird value?
+Also, it isn't possible to 'move' an attribute to another layer.
+
+Instead, make one layer for one kind of object and change the icon based on attributes.
 
 ### Using layers as filters
 
