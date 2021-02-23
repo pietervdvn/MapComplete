@@ -2,9 +2,16 @@ import {LayerConfigJson} from "./LayerConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 
 /**
- * Defines what a JSON-segment defining a layout should look like.
+ * Defines the entire theme.
+ * 
+ * A theme is the collection of the layers that are shown; the intro text, the icon, ...
+ * It more or less defines the entire experience.
+ * 
+ * Most of the fields defined here are metadata about the theme, such as its name, description, supported languages, default starting location, ...
+ * 
+ * The main chunk of the json will however be the 'layers'-array, where the details of your layers are.
  *
- * General remark: a type (string | any) indicates either a fixed or a translatable string
+ * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
     /**
