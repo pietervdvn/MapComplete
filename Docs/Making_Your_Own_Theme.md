@@ -13,6 +13,7 @@ Before you start, you should have the following qualifications:
 - You're theme will add well-understood tags (aka: the tags have a wiki page, are not controversial and are objective)
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to help testing
 
+If you do not have those qualifications, reach out to the MapComplete community channel on [Telegram](https://t.me/joinchat/HiMUavahRG--SCvC)
 
 The custom theme generator
 --------------------------
