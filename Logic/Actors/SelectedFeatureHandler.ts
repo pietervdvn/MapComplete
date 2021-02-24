@@ -20,7 +20,7 @@ export default class SelectedFeatureHandler {
         hash.addCallback(h => {
             console.log("Hash is now ", h)
             if (h === undefined || h === "") {
-                console.log("Deselecting feature...")
+                console.error("Deselecting feature...")
                 selectedFeature.setData(undefined);
             }else{
                 self.selectFeature();

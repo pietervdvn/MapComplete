@@ -394,7 +394,7 @@ export class InitUiElements {
         new ShowDataLayer(source.features, State.state.leafletMap,
             State.state.layoutToUse);
 
-        new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
+      // TOO reenable  new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 
 
     }

@@ -314,7 +314,7 @@ export default class OpeningHoursVisualization extends UIElement {
 
 
         return new Combine([
-            "<table class='ohviz' style='width:100%;'>",
+            "<table class='ohviz' style='width:100%; word-break: normal;'>",
             rows.map(el => "<tr>" + el.Render() + "</tr>").join(""),
             "</table>"
         ]).SetClass("ohviz-container").Render();
