@@ -46,20 +46,6 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-    .no-transform {
-        /*This is a workaround to let popup contents escape the popup on mobile - see scrollableFullScreen.ts*/
-        transform: none !important;
-    }
-
-    .clutter-hidden {
-        /*This is a workaround to let popup contents escape the popup on mobile - see scrollableFullScreen.ts*/
-        visibility: hidden !important;
-    }
-}
-
-
-
 
 :root {
     --subtle-detail-color: #e5f5ff;
@@ -79,10 +65,6 @@
     --image-carousel-height: 400px;
 }
 
-.clutter {
-    /*Clutter is actually a class indicating that the element should be hidden when a scrollableFullScreen is opened
-    It doesn't actually define any rules*/
-}
 .slick-carousel-content {
     width: 300px;
     max-height: var(--image-carousel-height);

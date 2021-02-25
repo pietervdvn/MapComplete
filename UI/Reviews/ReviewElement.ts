@@ -33,7 +33,7 @@ export default class ReviewElement extends UIElement {
         const avg = (revs.map(review => review.rating).reduce((a, b) => a + b, 0) / revs.length);
         elements.push(
             new Combine([
-                SingleReview.GenStars(avg).SetClass("stars"),
+                SingleReview.GenStars(avg).SetClass("stars flex"),
                 `<a target="_blank" href='https://mangrove.reviews/search?sub=${encodeURIComponent(this._subject)}'>`,
                revs.length === 1 ? Translations.t.reviews.title_singular :
                    Translations.t.reviews.title

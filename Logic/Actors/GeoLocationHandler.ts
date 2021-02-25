@@ -8,13 +8,46 @@ import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 export default class GeoLocationHandler extends UIElement {
 
+    /**
+     * Wether or not the geolocation is active, aka the user requested the current location
+     * @private
+     */
     private readonly _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+
+    /**
+     * The callback over the permission API
+     * @private
+     */
     private readonly _permission: UIEventSource<string> = new UIEventSource<string>("");
+    /***
+     * The marker on the map, in order to update it
+     * @private
+     */
     private _marker: L.Marker;
+    /**
+     * Literally: _currentGPSLocation.data != undefined
+     * @private
+     */
     private readonly _hasLocation: UIEventSource<boolean>;
     private readonly _currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>;
+    /**
+     * Kept in order to update the marker
+     * @private
+     */
     private readonly _leafletMap: UIEventSource<L.Map>;
+    /**
+     * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
+     * @private
+     */
     private _lastUserRequest: Date;
+    /**
+     * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
+     * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
+     *
+     * Instead, we set this flag. If this flag is set upon loading the page, we start geolocating immediately.
+     * If the user denies the geolocation this time, we unset this flag
+     * @private
+     */
     private readonly _previousLocationGrant : UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
     
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
@@ -28,16 +61,25 @@ export default class GeoLocationHandler extends UIElement {
         import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
             self.init();
         })
+        
+        const currentPointer = this._isActive.map(isActive => {
+            if(isActive && !self._hasLocation.data){
+                return "cursor-wait"
+            }
+            return "cursor-pointer"
+        }, [this._hasLocation])
+        currentPointer.addCallbackAndRun(pointerClass => {
+            self.SetClass(pointerClass);
+            self.Update()
+        })
     }
 
-
-    public init() {
+    private init() {
         this.ListenTo(this._hasLocation);
         this.ListenTo(this._isActive);
         this.ListenTo(this._permission);
 
         const self = this;
-
 
         function onAccuratePositionProgress(e) {
             self._currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
@@ -60,7 +102,7 @@ export default class GeoLocationHandler extends UIElement {
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
-
+            
             const timeSinceRequest = (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if(timeSinceRequest < 30){
                 self._lastUserRequest = undefined;
@@ -90,7 +132,7 @@ export default class GeoLocationHandler extends UIElement {
             ?.then(function (status) {
                 console.log("Geolocation is already", status)
                 if (status.state === "granted") {
-                   self.StartGeolocating();
+                   self.StartGeolocating(19, false);
                 }
                 self._permission.setData(status.state);
                 status.onchange = function () {
@@ -134,10 +176,10 @@ export default class GeoLocationHandler extends UIElement {
     }
 
    
-    private StartGeolocating(zoomlevel = 19) {
+    private StartGeolocating(zoomlevel = 19, zoomToGPS=true) {
         const self = this;
         console.log("Starting geolocation")
-        this._lastUserRequest = new Date();
+        this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
         const map: any = this._leafletMap.data;
         if (self._permission.data === "denied") {
             self._previousLocationGrant.setData("");

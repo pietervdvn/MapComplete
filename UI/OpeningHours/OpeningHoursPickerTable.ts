@@ -63,7 +63,6 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     protected InnerUpdate() {
         const self = this;
         const table = (document.getElementById(`oh-table-${this.id}`) as HTMLTableElement);
-        console.log("Inner update!")
         if (table === undefined || table === null) {
             return;
         }

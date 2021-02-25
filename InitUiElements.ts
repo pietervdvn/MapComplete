@@ -31,11 +31,9 @@ import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
-import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
-import {Map} from "leaflet";
 import Combine from "./UI/Base/Combine";
 
 export class InitUiElements {
@@ -230,15 +228,13 @@ export class InitUiElements {
 
     private static InitWelcomeMessage() {
 
-        const isOpened = new UIEventSource<boolean>(true);
-        const fullOptions = new FullWelcomePaneWithTabs(() => {
-            isOpened.setData(false);
-        });
+        const isOpened = new UIEventSource<boolean>(false);
+        const fullOptions = new FullWelcomePaneWithTabs(isOpened);
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
-         //   .SetClass("open-welcome-button block");
-        const checkbox = new CheckBox(
+        //   .SetClass("open-welcome-button block");
+        new CheckBox(
             fullOptions
                 .SetClass("welcomeMessage")
                 .onClick(() => {/*Catch the click*/
@@ -252,14 +248,15 @@ export class InitUiElements {
                 // Don't autoclose the first 15 secs when the map is moving
                 return;
             }
-            checkbox.isEnabled.setData(false);
+            isOpened.setData(false);
         })
 
         State.state.selectedElement.addCallbackAndRun(selected => {
             if (selected !== undefined) {
-                checkbox.isEnabled.setData(false);
+                isOpened.setData(false);
             }
         })
+        isOpened.setData(true)
 
     }
 
@@ -267,36 +264,32 @@ export class InitUiElements {
         InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
             const layerControlPanel = new LayerControlPanel(
-                () => State.state.layerControlIsOpened.setData(false))
+                State.state.layerControlIsOpened)
                 .SetClass("block p-1 rounded-full");
             const checkbox = new CheckBox(
                 layerControlPanel,
                 new MapControlButton(Svg.layers_svg()),
                 State.state.layerControlIsOpened
             )
-            const copyrightState = new UIEventSource<boolean>(false);
             const copyrightNotice =
                 new ScrollableFullScreen(
-                    Translations.t.general.attribution.attributionTitle,
-                    new Combine([
+                    () => Translations.t.general.attribution.attributionTitle.Clone(),
+                    () =>  new Combine([
                         Translations.t.general.attribution.attributionContent,
                         "<br/>",
                         new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
-                    ]),
-                    () => {
-                        copyrightState.setData(false)
-                    }
+                    ])
                 )
 
             ;
             const copyrightButton = new CheckBox(
                 copyrightNotice,
                 new MapControlButton(Svg.osm_copyright_svg()),
-                copyrightState
+                copyrightNotice.isShown
             ).SetClass("p-0.5 md:hidden")
 
-           new Combine([copyrightButton, checkbox])
-               .AttachTo("bottom-left");
+            new Combine([copyrightButton, checkbox])
+                .AttachTo("bottom-left");
 
 
             State.state.locationControl
@@ -394,7 +387,7 @@ export class InitUiElements {
         new ShowDataLayer(source.features, State.state.leafletMap,
             State.state.layoutToUse);
 
-      // TOO reenable  new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
+        // TOO reenable  new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 
 
     }
@@ -423,16 +416,22 @@ export class InitUiElements {
             }
 
 
+            const addNewPoint = new ScrollableFullScreen(
+                () => Translations.t.general.add.title.Clone(),
+                () => new SimpleAddUI());
+
+            addNewPoint.isShown.addCallback(isShown => {
+                if (!isShown) {
+                    State.state.LastClickLocation.setData(undefined)
+                }
+            })
+
             new StrayClickHandler(
                 State.state.LastClickLocation,
                 State.state.selectedElement,
                 State.state.filteredLayers,
                 State.state.leafletMap,
-                () =>
-                    new ScrollableFullScreen(
-                        Translations.t.general.add.title,
-                        new SimpleAddUI(),
-                        () => State.state.LastClickLocation.setData(undefined))
+                addNewPoint
             );
         });
 

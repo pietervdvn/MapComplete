@@ -17,6 +17,12 @@ export default class LazyElement extends UIElement {
                 self._content = content();
             }
             self.Update();
+            // @ts-ignore
+            if(this._content.Activate){
+                // THis is ugly - I know
+                // @ts-ignore
+                this._content.Activate();
+            }
         }
     }
 

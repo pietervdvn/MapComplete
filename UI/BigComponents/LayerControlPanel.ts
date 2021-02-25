@@ -6,13 +6,20 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
-export default class LayerControlPanel extends UIElement {
-    private readonly _panel: UIElement;
+export default class LayerControlPanel extends ScrollableFullScreen {
 
+    constructor(isShown: UIEventSource<boolean>) {
+        super(LayerControlPanel.GenTitle, LayerControlPanel.GeneratePanel, isShown);
+    }
 
-    constructor(onClose: () => void) {
-        super();
+    private static GenTitle(): UIElement {
+        const title = Translations.t.general.layerSelection.title.SetClass("text-2xl break-words font-bold p-2")
+        return title.Clone();
+    }
+
+    private static GeneratePanel() {
         let layerControlPanel: UIElement = new FixedUiElement("");
         if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
             layerControlPanel = new BackgroundSelector();
@@ -28,14 +35,7 @@ export default class LayerControlPanel extends UIElement {
             layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
         }
 
-
-        const title = Translations.t.general.layerSelection.title.SetClass("text-2xl break-words font-bold p-2")
-
-        this._panel = new ScrollableFullScreen(title, layerControlPanel, onClose);
-    }
-
-    InnerRender(): string {
-        return this._panel.Render();
+        return layerControlPanel;
     }
 
 }

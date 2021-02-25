@@ -9,7 +9,6 @@ import State from "../State";
 import LazyElement from "./Base/LazyElement";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import ScrollableFullScreen from "./Base/ScrollableFullScreen";
 import {GeoOperations} from "../Logic/GeoOperations";
 
 
@@ -125,18 +124,19 @@ export default class ShowDataLayer {
         }, leafletLayer);
 
         const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement = new LazyElement(() =>
-                FeatureInfoBox.construct(tags, layer, () => {
-                    State.state.selectedElement.setData(undefined);
-                    leafletLayer.closePopup();
-                    popup.remove();
-                    ScrollableFullScreen.RestoreLeaflet();
-                }),
-            "<div style='height: 90vh'>Rendering</div>"); // By setting 90vh, leaflet will attempt to fit the entire screen and move the feature down
+        const uiElement = new LazyElement(() => {
+                const infoBox = FeatureInfoBox.construct(tags, layer);
+                infoBox.isShown.addCallback(isShown => {
+                    if(!isShown){
+                        State.state.selectedElement.setData(undefined);
+                        leafletLayer.closePopup();
+                        popup.remove();
+                    }
+                });
+                return infoBox;
+            },
+            "<div style='height: 50vh'>Rendering</div>"); // By setting 50vh, leaflet will attempt to fit the entire screen and move the feature down
         popup.setContent(uiElement.Render());
-        popup.on('remove', () => {
-            ScrollableFullScreen.RestoreLeaflet(); // Just in case...
-        });
         leafletLayer.bindPopup(popup);
         // We first render the UIelement (which'll still need an update later on...)
         // But at least it'll be visible already
@@ -145,7 +145,6 @@ export default class ShowDataLayer {
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature);
             uiElement.Activate();
-            uiElement.Update();
         })
 
         State.state.selectedElement.addCallbackAndRun(selected => {

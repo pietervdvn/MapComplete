@@ -23,13 +23,22 @@ export default class FullWelcomePaneWithTabs extends UIElement {
 
     private readonly _component: UIElement;
 
-    constructor(onClose: () => void) {
+    constructor(isShown: UIEventSource<boolean>) {
         super(State.state.layoutToUse);
         this._layoutToUse = State.state.layoutToUse;
         this._userDetails = State.state.osmConnection.userDetails;
-
-
         const layoutToUse = this._layoutToUse.data;
+      
+
+        this._component = new ScrollableFullScreen(
+            () => layoutToUse.title.Clone(),
+            () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails),
+            isShown
+        )
+    }
+
+    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>) {
+
         let welcome: UIElement = new ThemeIntroductionPanel();
         if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
@@ -58,7 +67,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
 
         tabs.push({
                 header: Svg.help,
-                content: new VariableUiElement(this._userDetails.map(userdetails => {
+                content: new VariableUiElement(userDetails.map(userdetails => {
                     if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
@@ -67,15 +76,8 @@ export default class FullWelcomePaneWithTabs extends UIElement {
             }
         );
 
-        const tabbedPart = new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
-            .ListenTo(this._userDetails);
-
-
-        this._component = new ScrollableFullScreen(
-            layoutToUse.title,
-            tabbedPart,
-            onClose
-        )
+        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
+            .ListenTo(userDetails);
     }
 
     InnerRender(): string {

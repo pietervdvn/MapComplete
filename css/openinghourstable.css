@@ -4,6 +4,7 @@
     height: 100%;
     text-align: center;
     word-break: normal;
+    word-wrap: normal;
 }
 .oh-table th {
     padding: 0;
@@ -170,6 +171,7 @@
 
 .ohviz-table {
     word-break: normal;
+    word-wrap: normal;
 }
 
 .ohviz-range {

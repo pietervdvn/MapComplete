@@ -1,8 +1,8 @@
 import * as L from "leaflet";
-import {UIElement} from "../../UI/UIElement";
 import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
 import Img from "../../UI/Base/Img";
+import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
 
 /**
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
@@ -10,15 +10,13 @@ import Img from "../../UI/Base/Img";
  */
 export default class StrayClickHandler {
     private _lastMarker;
-    private _uiToShow: (() => UIElement);
 
     constructor(
         lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
         selectedElement: UIEventSource<string>,
         filteredLayers: UIEventSource<{ readonly isDisplayed: UIEventSource<boolean> }[]>,
         leafletMap: UIEventSource<L.Map>,
-        uiToShow: (() => UIElement)) {
-        this._uiToShow = uiToShow;
+        uiToShow: ScrollableFullScreen) {
         const self = this;
         filteredLayers.data.forEach((filteredLayer) => {
             filteredLayer.isDisplayed.addCallback(isEnabled => {
@@ -49,13 +47,13 @@ export default class StrayClickHandler {
                     popupAnchor: [0, -45]
                 })
             });
-            const uiElement = uiToShow();
-            const popup = L.popup().setContent(uiElement.Render());
+            const popup = L.popup().setContent(uiToShow.Render());
             self._lastMarker.addTo(leafletMap.data);
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
-                uiElement.Update();
+                uiToShow.Activate();
+                uiToShow.Update();
             });
         });
 

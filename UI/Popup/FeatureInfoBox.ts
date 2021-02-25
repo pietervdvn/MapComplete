@@ -9,26 +9,21 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 
-export default class FeatureInfoBox extends UIElement {
+export default class FeatureInfoBox extends ScrollableFullScreen {
     private static featureInfoboxCache: Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
-    private _component: ScrollableFullScreen;
 
     private constructor(
         tags: UIEventSource<any>,
-        layerConfig: LayerConfig,
-        onClose: () => void
+        layerConfig: LayerConfig
     ) {
-        super();
+        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),() => FeatureInfoBox.GenerateContent(tags, layerConfig));
         if (layerConfig === undefined) {
-            throw "Undefined layerconfig"
+            throw "Undefined layerconfig";
         }
 
-            const title = FeatureInfoBox.GenerateTitleBar(tags, layerConfig);
-            const contents = FeatureInfoBox.GenerateContent(tags, layerConfig);
-            this._component = new ScrollableFullScreen(title, contents, onClose);
     }
 
-    static construct(tags: UIEventSource<any>, layer: LayerConfig, onClose: () => void) {
+    static construct(tags: UIEventSource<any>, layer: LayerConfig): FeatureInfoBox {
         let innerMap = FeatureInfoBox.featureInfoboxCache.get(layer);
         if (innerMap === undefined) {
             innerMap = new Map<UIEventSource<any>, FeatureInfoBox>();
@@ -37,7 +32,7 @@ export default class FeatureInfoBox extends UIElement {
 
         let featureInfoBox = innerMap.get(tags);
         if (featureInfoBox === undefined) {
-            featureInfoBox = new FeatureInfoBox(tags, layer, onClose);
+            featureInfoBox = new FeatureInfoBox(tags, layer);
             innerMap.set(tags, featureInfoBox);
         }
         return featureInfoBox;
@@ -48,7 +43,7 @@ export default class FeatureInfoBox extends UIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
-            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon, 
+            layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
                 "block w-8 h-8 align-baseline box-content sm:p-0.5", "width: 2rem !important;")
                 .HideOnEmpty(true)
             ))
@@ -90,7 +85,4 @@ export default class FeatureInfoBox extends UIElement {
 
     }
 
-    InnerRender(): string {
-        return this._component.Render();
-    }
 }
