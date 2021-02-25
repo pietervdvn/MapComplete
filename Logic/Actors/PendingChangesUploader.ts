@@ -36,6 +36,22 @@ export default class PendingChangesUploader{
                 changes.flushChanges("Flushing changes due to focus lost");
             }
         });
+        
+        document.onfocus = () => {
+            changes.flushChanges("OnFocus")
+        }
+
+        document.onblur = () => {
+            changes.flushChanges("OnFocus")
+        }
+        try{
+            document.addEventListener("visibilitychange", () => {
+                changes.flushChanges("Visibility change")
+            }, false);
+        }catch(e){
+            console.warn("Could not register visibility change listener", e)
+        }
+
 
         window.onbeforeunload = function(e){ 
             
