@@ -35,6 +35,7 @@ import ScrollableFullScreen from "./UI/Base/ScrollableFullScreen";
 import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
+import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 
 export class InitUiElements {
 
@@ -257,7 +258,8 @@ export class InitUiElements {
             }
         })
         isOpened.setData(true)
-
+        
+ 
     }
 
     private static InitLayerSelection() {
@@ -387,7 +389,7 @@ export class InitUiElements {
         new ShowDataLayer(source.features, State.state.leafletMap,
             State.state.layoutToUse);
 
-        // TOO reenable  new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
+        new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 
 
     }

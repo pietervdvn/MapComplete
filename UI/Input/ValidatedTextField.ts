@@ -165,7 +165,7 @@ export default class ValidatedTextField {
         ValidatedTextField.tp(
             "opening_hours",
             "Has extra elements to easily input when a POI is opened",
-            (s, country) => true, // TODO
+            (s, country) => true, 
             str => str, 
             (value) => {
                 return new OpeningHoursInput(value);

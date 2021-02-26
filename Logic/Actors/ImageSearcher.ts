@@ -52,14 +52,12 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
 
         // By wrapping this in a UIEventSource, we prevent multiple queries of loadWikiData
         this._wdItem.addCallback(wdItemContents => {
-            // TODO HANDLE IMAGES
             const images = ImageSearcher.loadWikidata(wdItemContents).map(url => {
                 return {url: url, key: undefined}
             });
             AddImages(images);
         });
         this._commons.addCallback(commonsData => {
-            // TODO Handle images
             const images = ImageSearcher.LoadCommons(commonsData).map(url => {
                 return {url: url, key: undefined}
             });

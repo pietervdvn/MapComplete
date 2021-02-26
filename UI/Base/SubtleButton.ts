@@ -49,7 +49,6 @@ export class SubtleButton extends UIElement{
             ]).Render();
         }
 
-        // Styling todo
         return new Combine([
             this.image,
             this.message,
