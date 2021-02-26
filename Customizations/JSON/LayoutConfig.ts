@@ -2,7 +2,7 @@ import {Translation} from "../../UI/i18n/Translation";
 import TagRenderingConfig from "./TagRenderingConfig";
 import LayerConfig from "./LayerConfig";
 import {LayoutConfigJson} from "./LayoutConfigJson";
-import SharedLayers from "../SharedLayers";
+import AllKnownLayers from "../AllKnownLayers";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {Utils} from "../../Utils";
 
@@ -81,8 +81,8 @@ export default class LayoutConfig {
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.layers = json.layers.map((layer, i) => {
             if (typeof layer === "string") {
-                if (SharedLayers.sharedLayers[layer] !== undefined) {
-                    return SharedLayers.sharedLayers[layer];
+                if (AllKnownLayers.sharedLayers[layer] !== undefined) {
+                    return AllKnownLayers.sharedLayers[layer];
                 } else {
                     throw "Unkown fixed layer " + layer;
                 }
@@ -91,7 +91,7 @@ export default class LayoutConfig {
             if (layer.builtin !== undefined) {
                 // @ts-ignore
                 const name = layer.builtin;
-                const shared = SharedLayers.sharedLayersJson[name];
+                const shared = AllKnownLayers.sharedLayersJson[name];
                 if (shared === undefined) {
                     throw "Unkown fixed layer " + name;
                 }

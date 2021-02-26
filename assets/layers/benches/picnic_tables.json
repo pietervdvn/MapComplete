@@ -1,0 +1,78 @@
+{
+  "id": "picnic_tables",
+  "name": {
+    "en": "Picnic tables"
+  },
+  "minzoom": 12,
+  "overpassTags": {
+    "and": [
+      "leisure=picnic_table"
+    ]
+  },
+  "title": {
+    "render": {
+      "en": "Picnic table"
+    }
+  },
+  "description": {
+    "en": "The layer showing picnic tables"
+  },
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What material is this picnic table made of?"
+      },
+      "render": {
+        "en": "This picnic table is made of {material}"
+      },
+      "freeform": {
+        "key": "material"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "material=wood"
+            ]
+          },
+          "then": {
+            "en": "This is a wooden picnic table"
+          }
+        }
+      ]
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "circle:#e6cf39;./assets/layers/benches/picnic_table.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "35,35,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [
+    {
+      "tags": [
+        "leisure=picnic_table"
+      ],
+      "title": {
+        "en": "Picnic table"
+      }
+    },
+    {
+      "tags": [
+        "leisure=picnic_table",
+        "material=wood"
+      ],
+      "title": {
+        "en": "Wooden picnic table"
+      }
+    }
+  ],
+  "wayHandling": 1
+}

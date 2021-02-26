@@ -1,0 +1,92 @@
+{
+  "id": "bench_at_pt",
+  "name": {
+    "en": "Benches at public transport stops",
+    "de": "Sitzbänke bei Haltestellen",
+    "fr": "Bancs des arrêts de transport en commun"
+  },
+  "minzoom": 14,
+  "overpassTags": {
+    "or": [
+      "bench=yes",
+      "bench=stand_up_bench"
+    ]
+  },
+  "title": {
+    "render": {
+      "en": "Bench",
+      "de": "Sitzbank",
+      "fr": "Banc"
+    },
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "public_transport=platform",
+            "railway=platform",
+            "highway=bus_stop"
+          ]
+        },
+        "then": {
+          "en": "Bench at public transport stop",
+          "de": "Sitzbank bei Haltestelle",
+          "fr": "Banc d'un arrêt de transport en commun"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "amenity=shelter"
+          ]
+        },
+        "then": {
+          "en": "Bench in shelter",
+          "de": "Sitzbank in Unterstand",
+          "fr": "Banc dans un abri"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "render": {
+        "en": "{name}",
+        "de": "{name}",
+        "fr": "{name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    {
+      "render": {
+        "en": "Stand up bench",
+        "de": "Stehbank",
+        "fr": "Banc assis debout"
+      },
+      "freeform": {
+        "key": "bench",
+        "addExtraTags": []
+      },
+      "condition": {
+        "and": [
+          "bench=stand_up_bench"
+        ]
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/themes/benches/bench_public_transport.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "35,35,center"
+  },
+  "color": {
+    "render": "#00f"
+  }
+}

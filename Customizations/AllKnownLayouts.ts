@@ -23,7 +23,7 @@ import * as playgrounds from "../assets/themes/playgrounds/playgrounds.json"
 import * as bicycle_lib from "../assets/themes/bicycle_library/bicycle_library.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
-import SharedLayers from "./SharedLayers";
+import AllKnownLayers from "./AllKnownLayers";
 
 export class AllKnownLayouts {
 
@@ -39,7 +39,7 @@ export class AllKnownLayouts {
             console.log("The current date is ",date,", which means we remember our dead")
             // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
             layout.layers.push(
-                SharedLayers.sharedLayers.get("ghost_bike")
+                AllKnownLayers.sharedLayers.get("ghost_bike")
             );
 
         }
@@ -81,9 +81,9 @@ export class AllKnownLayouts {
             for (let i = 0; i < layout.layers.length; i++) {
                 let layer = layout.layers[i];
                 if (typeof (layer) === "string") {
-                    layer = layout.layers[i] = SharedLayers.sharedLayers.get(layer);
+                    layer = layout.layers[i] = AllKnownLayers.sharedLayers.get(layer);
                     if(layer === undefined){
-                        console.log("Defined layers are ", SharedLayers.sharedLayers.keys())
+                        console.log("Defined layers are ", AllKnownLayers.sharedLayers.keys())
                         throw `Layer ${layer} was not found or defined - probably a type was made`
                     }
                 }

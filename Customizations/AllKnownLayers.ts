@@ -19,10 +19,13 @@ import * as surveillance_camera from "../assets/layers/surveillance_cameras/surv
 import * as toilets from "../assets/layers/toilets/toilets.json"
 import * as bookcases from "../assets/layers/public_bookcases/public_bookcases.json"
 import * as tree_nodes from "../assets/layers/trees/tree_nodes.json"
+import * as benches from "../assets/layers/benches/benches.json"
+import * as benches_at_pt from "../assets/layers/benches/benches_at_pt.json"
+import * as picnic_tables from "../assets/layers/benches/picnic_tables.json"
 import LayerConfig from "./JSON/LayerConfig";
 import {LayerConfigJson} from "./JSON/LayerConfigJson";
 
-export default class SharedLayers {
+export default class AllKnownLayers {
 
 
     private static sharedLayersListRaw : LayerConfigJson[] = [
@@ -46,17 +49,20 @@ export default class SharedLayers {
         toilets,
         bookcases,
         surveillance_camera,
-        tree_nodes
+        tree_nodes,
+        benches,
+        benches_at_pt,
+        picnic_tables
     ];
 
     // Must be below the list...
-    public static sharedLayers: Map<string, LayerConfig> = SharedLayers.getSharedLayers();
-    public static sharedLayersJson: Map<string, any> = SharedLayers.getSharedLayersJson();
+    public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
+    public static sharedLayersJson: Map<string, any> = AllKnownLayers.getSharedLayersJson();
 
 
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
-        for (const layer of SharedLayers.sharedLayersListRaw) {
+        for (const layer of AllKnownLayers.sharedLayersListRaw) {
             const parsed = new LayerConfig(layer,  "shared_layers")
             sharedLayers.set(layer.id, parsed);
             sharedLayers[layer.id] = parsed;
@@ -66,7 +72,7 @@ export default class SharedLayers {
 
     private static getSharedLayersJson(): Map<string, any> {
         const sharedLayers = new Map<string, any>();
-        for (const layer of SharedLayers.sharedLayersListRaw) {
+        for (const layer of AllKnownLayers.sharedLayersListRaw) {
             sharedLayers.set(layer.id, layer);
             sharedLayers[layer.id] = layer;
         }
