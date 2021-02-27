@@ -9,6 +9,7 @@ import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs"
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
+import Constants from "../Models/Constants";
 
 
 function enc(str: string): string {
@@ -279,6 +280,23 @@ writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
         console.log("Could not save wikiindex", err);
     }
 });
+ createManifest(new LayoutConfig({
+    icon: "./assets/svg/add.svg",
+    id: "index",
+    language: "en",
+    layers: [],
+    maintainer: "Pieter Vander Vennet",
+    startLat: 0,
+    startLon: 0,
+    startZoom: 0,
+    title: "MapComplete",
+    version: Constants.vNumber,
+    description:"MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
+}),"index").then(manifObj => {
+     const manif = JSON.stringify(manifObj);
+     writeFileSync("index.webmanifest",manif)
+ })
+
 console.log("Counting all translations")
 Translations.CountTranslations();
 console.log("All done!");
