@@ -281,7 +281,7 @@ writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     }
 });
  createManifest(new LayoutConfig({
-    icon: "./assets/svg/add.svg",
+    icon: "./assets/svg/mapcomplete_logo.svg",
     id: "index",
     language: "en",
     layers: [],
