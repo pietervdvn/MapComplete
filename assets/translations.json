@@ -19,7 +19,7 @@
       "de": "Ihr Bild hochladen..."
     },
     "uploadingMultiple": {
-      "en": "Uploading {count} of your picture...",
+      "en": "Uploading {count} pictures...",
       "nl": "Bezig met {count} foto's te uploaden...",
       "ca": "Pujant {count} de la teva imatge...",
       "es": "Subiendo {count} de tus fotos...",

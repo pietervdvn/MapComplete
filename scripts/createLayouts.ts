@@ -218,7 +218,7 @@ async function createLandingPage(layout: LayoutConfig) {
     }
 
     let output = template
-        .replace("./manifest.manifest", `${enc(layout.id)}.webmanifest`)
+        .replace("./index.webmanifest", `${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
@@ -263,7 +263,7 @@ for (const layoutName in all) {
     const layout = all[layoutName];
     validate(layout)
     createManifest(layout, "").then(manifObj => {
-        const manif = JSON.stringify(manifObj);
+        const manif = JSON.stringify(manifObj, undefined, 2);
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
         writeFile(manifestLocation, manif, err);
     })
@@ -292,8 +292,8 @@ writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     title: "MapComplete",
     version: Constants.vNumber,
     description:"MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
-}),"index").then(manifObj => {
-     const manif = JSON.stringify(manifObj);
+}),"").then(manifObj => {
+     const manif = JSON.stringify(manifObj, undefined, 2);
      writeFileSync("index.webmanifest",manif)
  })
 
