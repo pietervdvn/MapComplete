@@ -22,10 +22,7 @@ export default class ThemeIntroductionPanel extends UIElement {
         this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language, Translations.t.general.pickLanguage);
         const layout = State.state.layoutToUse.data;
 
-        this.description = new Combine([
-            "<h3>", layout.title, "</h3>",
-            layout.description
-        ])
+        this.description = layout.description
         this.plzLogIn =
             Translations.t.general.loginWithOpenStreetMap
                 .onClick(() => {

@@ -1,13 +1,13 @@
 {
   "id": "playgrounds",
   "title": {
-    "nl": "Speelzones"
+    "nl": "Speelplekken"
   },
   "shortDescription": {
-    "nl": "Speelzones en speeltuinen"
+    "nl": "Speelplekken en sportplekken"
   },
   "description": {
-    "nl": "Deze kaart toont speelzones in het groen"
+    "nl": "Op deze kaart vind je speelplekken zoals speeltuinen, speelbossen en sportterreinen"
   },
   "language": [
     "nl"
@@ -20,7 +20,6 @@
   "startZoom": 10,
   "widenFactor": 0.05,
   "socialImage": "",
-  "hideFromOverview": true,
   "layers": [
     {
       "id": "playgrounds",
@@ -33,6 +32,9 @@
           "leisure=playground"
         ]
       },
+      "description": {
+        "nl": "Speeltuinen en speelbossen"
+      },
       "title": {
         "render": {
           "nl": "Speeltuin"
@@ -41,17 +43,27 @@
           {
             "if": {
               "and": [
+                "playground=forest",
                 "name~*"
               ]
             },
+            "then": {
+              "nl": "Speelbos <i>{name}</i>"
+            }
+          },
+          {
+            "if": "playground=forest",
+            "then": {
+              "nl": "Speelbos"
+            }
+          },
+          {
+            "if": "name~*",
             "then": {
               "nl": "Speeltuin <i>{name}</i>"
             }
           }
         ]
-      },
-      "description": {
-        "nl": "Alle speeltuinen"
       },
       "tagRenderings": [
         "images",

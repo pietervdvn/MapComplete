@@ -218,7 +218,7 @@ async function createLandingPage(layout: LayoutConfig) {
     }
 
     let output = template
-        .replace("./index.webmanifest", `${enc(layout.id)}.webmanifest`)
+        .replace("./index.manifest", `${enc(layout.id)}.webmanifest`)
         .replace("<!-- $$$OG-META -->", og)
         .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
@@ -294,7 +294,7 @@ writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
     description:"MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
 }),"").then(manifObj => {
      const manif = JSON.stringify(manifObj, undefined, 2);
-     writeFileSync("index.webmanifest",manif)
+     writeFileSync("index.manifest",manif)
  })
 
 console.log("Counting all translations")
