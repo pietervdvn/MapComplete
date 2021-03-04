@@ -21,6 +21,7 @@ import * as trees from "../assets/themes/trees/trees.json"
 import * as personal from "../assets/themes/personalLayout/personalLayout.json"
 import * as playgrounds from "../assets/themes/playgrounds/playgrounds.json"
 import * as bicycle_lib from "../assets/themes/bicycle_library/bicycle_library.json"
+import * as campersites from "../assets/themes/campersites/campersites.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
 import AllKnownLayers from "./AllKnownLayers";
@@ -70,6 +71,7 @@ export class AllKnownLayouts {
         new LayoutConfig(climbing),
         new LayoutConfig(playgrounds),
         new LayoutConfig(trees),
+		new LayoutConfig(campersites)
     ];
 
 

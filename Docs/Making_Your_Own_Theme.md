@@ -56,8 +56,8 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
    - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
  5) Add your theme to the code base:
     - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
-    - Add an import statatement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
-    - Add your theme to the `LayoutList`, by adding a line `FromJSON.LayoutFromJSON(yourtheme)`
+    - Add an import statement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
+    - Add your theme to the `LayoutsList`, by adding a line `new LayoutConfig(yourtheme)`
  6) Test your theme: run the project as described [above](../README.md#Dev)
  7) Happy with your theme? Time to open a Pull Request!
  8) Thanks a lot for improving MapComplete!

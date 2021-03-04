@@ -1,0 +1,718 @@
+
+{
+  "id": "campersite",
+  "title": {
+    "en": "Campersites"
+  },
+  "shortDescription": {
+    "en": "Find sites to spend the night with your camper"
+  },
+  "description": {
+    "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app."
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/campersites/caravan.svg",
+  "version": "0",
+  "startLat": 43.14,
+  "startLon": 3.14,
+  "startZoom": 14,
+  "widenFactor": 0.05,
+  "socialImage": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
+  "layers": [
+    {
+      "id": "caravansites",
+      "name": {
+        "en": "Camper sites"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "tourism=caravan_site"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Camper site {name}"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "fee=no"
+              ]
+            },
+            "then": {
+              "en": "Free camper site {name}"
+            }
+          }
+        ]
+      },
+      "description": {
+        "en": "camper sites"
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "render": {
+            "en": "power supply"
+          },
+          "question": {
+            "en": "Does this place have a power supply?"
+          },
+          "freeform": {
+            "key": "power_supply",
+            "addExtraTags": [
+              "power_supply=yes"
+            ]
+          },
+          "condition": {
+            "and": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "power_supply=yes"
+                ]
+              },
+              "then": {
+                "en": "This place has a power supply"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "power_supply=no"
+                ]
+              },
+              "then": {
+                "en": "This place does not have power supply"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "This place charges {charge}"
+          },
+          "question": {
+            "en": "How much does this place charge?"
+          },
+          "mappings": [],
+          "freeform": {
+            "key": "charge"
+          },
+          "condition": {
+            "and": [
+              "fee=yes"
+            ]
+          }
+        },
+        {
+          "render": {
+            "en": "This place is called {name}"
+          },
+          "question": {
+            "en": "What is this place called?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "condition": {
+            "and": [
+              "name="
+            ]
+          }
+        },
+        {
+          "render": {
+            "en": "Sanitary dump station"
+          },
+          "question": {
+            "en": "Does this place have a sanitary dump station?"
+          },
+          "freeform": {
+            "key": "",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station=yes"
+                ]
+              },
+              "then": {
+                "en": "This place has a sanitary dump station"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station=no"
+                ]
+              },
+              "then": {
+                "en": "This place does not have a sanitary dump station"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "This place is operated by {operator}"
+          },
+          "question": {
+            "en": "Who operates this place?"
+          },
+          "freeform": {
+            "key": "operator"
+          }
+        },
+        {
+          "render": {
+            "en": "{capacity} campers can use this place at the same time"
+          },
+          "question": {
+            "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)"
+          },
+          "freeform": {
+            "key": "capacity",
+            "type": "pnat"
+          }
+        },
+        {
+          "render": {
+            "en": "internet access"
+          },
+          "question": {
+            "en": "Does this place provide internet access?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "internet_access=yes"
+                ]
+              },
+              "then": {
+                "en": "There is internet access"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "internet_access=no"
+                ]
+              },
+              "then": {
+                "en": "There is no internet access"
+              }
+            }
+          ],
+          "freeform": {
+            "key": "internet_access"
+          }
+        },
+        {
+          "render": {
+            "en": "internet access price"
+          },
+          "question": {
+            "en": "Do you have to pay for the internet access?"
+          },
+          "freeform": {
+            "key": ""
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "internet_access:fee=yes"
+                ]
+              },
+              "then": {
+                "en": "You need to pay extra for internet access"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "internet_access:fee=no"
+                ]
+              },
+              "then": {
+                "en": "You  do not need to pay extra for internet access"
+              }
+            }
+          ],
+          "condition": {
+            "and": [
+              "internet_access=yes"
+            ]
+          }
+        },
+        "reviews",
+        {
+          "render": {
+            "en": "toilets"
+          },
+          "question": {
+            "en": "Does this place have toilets?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "toilets=yes"
+                ]
+              },
+              "then": {
+                "en": "This place has toilets"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "toilets=no"
+                ]
+              },
+              "then": {
+                "en": "This place does not have toilets"
+              }
+            }
+          ],
+          "freeform": {
+            "key": "toilets"
+          }
+        },
+        {
+          "render": {
+            "en": "More details about this place: {description}"
+          },
+          "question": {
+            "en": "Would you like to add a general description of this place? (please keep it objective; opinions go into the reviews)"
+          },
+          "freeform": {
+            "key": "description",
+            "type": "text"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/campersites/caravan.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "fee=no"
+              ]
+            },
+            "then": {
+              "en": "./assets/themes/campersites/caravan_green.svg"
+            }
+          }
+        ]
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "fee=yes"
+              ]
+            },
+            "then": {
+              "en": "This place charges a fee"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                "fee=no"
+              ]
+            },
+            "then": {
+              "en": "You can use this place for free"
+            }
+          }
+        ]
+      },
+      "color": {
+        "render": "#00f",
+        "condition": {
+          "and": []
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "fee=no"
+              ]
+            },
+            "then": {
+              "en": "for free"
+            }
+          }
+        ]
+      },
+      "presets": [
+        {
+          "tags": [
+            "tourism=caravan_site"
+          ],
+          "title": {
+            "en": "camper site"
+          },
+          "description": {
+            "en": "Add a new official camper site. Please zoom in sufficiently for exact placement. Don't copy info from copyrighted content. Your data will be added straight to the global OpenStreetMap database!"
+          }
+        }
+      ],
+      "wayHandling": 2
+    },
+    {
+      "id": "dumpstations",
+      "name": {
+        "en": "Sanitary dump stations"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "or": [
+          "sanitary_dump_station=yes",
+          "amenity=sanitary_dump_station"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Dump station {name}"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "name="
+              ]
+            },
+            "then": {
+              "en": "Dump station"
+            }
+          }
+        ],
+        "condition": {
+          "and": []
+        }
+      },
+      "description": {
+        "en": "Sanitary dump stations"
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "render": {
+            "en": "fee"
+          },
+          "question": {
+            "en": "Does this place charge a fee?"
+          },
+          "freeform": {
+            "key": "",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fee=yes"
+                ]
+              },
+              "then": {
+                "en": "You need to pay for use"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fee=no"
+                ]
+              },
+              "then": {
+                "en": "Can be used for free"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "This place charges {charge}"
+          },
+          "question": {
+            "en": "How much does this place charge?"
+          },
+          "mappings": [],
+          "freeform": {
+            "key": "charge"
+          },
+          "condition": {
+            "and": [
+              "fee=yes"
+            ]
+          }
+        },
+        {
+          "render": {
+            "en": "power supply"
+          },
+          "question": {
+            "en": "Does this place have a power supply?"
+          },
+          "freeform": {
+            "key": "power_supply",
+            "addExtraTags": [
+              "power_supply=yes"
+            ]
+          },
+          "condition": {
+            "and": []
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "power_supply=yes"
+                ]
+              },
+              "then": {
+                "en": "This place has a power supply"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "power_supply=no"
+                ]
+              },
+              "then": {
+                "en": "This place does not have power supply"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "water point"
+          },
+          "question": {
+            "en": "Does this place have a water point?"
+          },
+          "freeform": {
+            "key": "water_point",
+            "addExtraTags": [
+              "water_point=yes"
+            ]
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "water_point=yes"
+                ]
+              },
+              "then": {
+                "en": "This place has a water point"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "water_point=no"
+                ]
+              },
+              "then": {
+                "en": "This place does not have a water point"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "grey water"
+          },
+          "question": {
+            "en": "Can you dispose of grey water here?"
+          },
+          "freeform": {
+            "key": "sanitary_dump_station:grey_water"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station:grey_water=yes"
+                ]
+              },
+              "then": {
+                "en": "You can dispose of grey water here"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station:grey_water=no"
+                ]
+              },
+              "then": {
+                "en": "You cannot dispose of gray water here"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "chemical toilet"
+          },
+          "question": {
+            "en": "Can you dispose of chemical toilet waste here?"
+          },
+          "freeform": {
+            "key": "sanitary_dump_station:chemical_toilet"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station:chemical_toilet=yes"
+                ]
+              },
+              "then": {
+                "en": "You can dispose of chemical toilet waste here"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "sanitary_dump_station:chemical_toilet=no"
+                ]
+              },
+              "then": {
+                "en": "You cannot dispose of chemical toilet waste here"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "access tag"
+          },
+          "question": {
+            "en": "Who can use this dump station?"
+          },
+          "freeform": {
+            "key": "access"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "access=network"
+                ]
+              },
+              "then": {
+                "en": "You need a network key/code to use this"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "access=customers"
+                ]
+              },
+              "then": {
+                "en": "You need to be a customer of camping/campersite to use this place"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "access=public"
+                ]
+              },
+              "then": {
+                "en": "Anyone can use this dump station"
+              },
+              "hideInAnswer": false
+            },
+            {
+              "if": {
+                "and": [
+                  "access=yes"
+                ]
+              },
+              "then": {
+                "en": "Anyone can use this dump station"
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "This place is operated by {operator}"
+          },
+          "question": {
+            "en": "Who operates this place?"
+          },
+          "freeform": {
+            "key": "operator"
+          }
+        },
+        {
+          "render": {
+            "en": "This station is part of network {network}"
+          },
+          "question": {
+            "en": "What network is this place a part of?"
+          },
+          "freeform": {
+            "key": "network"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/campersites/sanitary_dump_station.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=sanitary_dump_station"
+          ],
+          "title": {
+            "en": "sanitary dump station"
+          },
+          "description": {
+            "en": "Add a new sanitary dump station. Please zoom in sufficiently for exact placement. Don't copy info from copyrighted content. Your data will be added straight to the global OpenStreetMap database!"
+          }
+        }
+      ]
+    }
+  ],
+  "roamingRenderings": []
+}
