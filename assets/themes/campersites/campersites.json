@@ -20,7 +20,7 @@
   "startLon": 3.14,
   "startZoom": 14,
   "widenFactor": 0.05,
-  "socialImage": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
+  "socialImage": "./assets/themes/campersites/Bar%C3%9Fel_Wohnmobilstellplatz.jpg",
   "layers": [
     {
       "id": "caravansites",
