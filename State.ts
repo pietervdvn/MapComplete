@@ -9,7 +9,6 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import Hash from "./Logic/Web/Hash";
-import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import BaseLayer from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
@@ -52,8 +51,6 @@ export default class State {
      The user credentials
      */
     public osmConnection: OsmConnection;
-
-    public mangroveIdentity: MangroveIdentity;
 
     public favouriteLayers: UIEventSource<string[]>;
 
@@ -208,13 +205,8 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        
+
         new PendingChangesUploader(this.changes, this.selectedElement);
-
-        this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.GetLongPreference("identity", "mangrove")
-        );
-
 
         this.installedThemes = new InstalledThemes(this.osmConnection).installedThemes;
 

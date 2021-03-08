@@ -10,7 +10,6 @@ import {ImageUploadFlow} from "./Image/ImageUploadFlow";
 import ShareButton from "./BigComponents/ShareButton";
 import Svg from "../Svg";
 import ReviewElement from "./Reviews/ReviewElement";
-import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
 import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
@@ -78,31 +77,6 @@ export default class SpecialVisualizations {
                 }
             },
 
-            {
-                funcName: "reviews",
-                docs: "Adds an overview of the mangrove-reviews of this object. IMPORTANT: the _name_ of the object should be defined for this to work!",
-                args: [{
-                    name: "subject",
-                    doc: "The identifier used for this value; by default the name of the reviewed object"
-                }],
-                constr: (state: State,tags, args) => {
-                    const tgs = tags.data;
-                    let subject = tgs.name ?? "";
-                    if (args[0] !== undefined && args[0] !== "") {
-                        subject = args[0];
-                    }
-                    if (subject === "") {
-                        return Translations.t.reviews.name_required;
-                    }
-                    const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
-                        encodeURIComponent(subject),
-                        state.mangroveIdentity,
-                        state.osmConnection._dryRun
-                    );
-                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection.userDetails);
-                    return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
-                }
-            },
             {
                 funcName: "opening_hours_table",
                 docs: "Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to create a table of the tag 'opening_hours'.",

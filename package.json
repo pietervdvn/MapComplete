@@ -46,7 +46,6 @@
     "leaflet.markercluster": "^1.4.1",
     "libphonenumber": "0.0.10",
     "libphonenumber-js": "^1.7.55",
-    "mangrove-reviews": "^0.1.3",
     "moment": "^2.29.0",
     "opening_hours": "^3.5.0",
     "osm-auth": "^1.0.2",
