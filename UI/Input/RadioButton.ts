@@ -99,7 +99,7 @@ export class RadioButton<T> extends InputElement<T> {
                 e.GetValue().setData(t);
                 const radio = document.getElementById(this.IdFor(i));
                 // @ts-ignore
-                radio?.checked = true;
+                // radio?.checked = true;
                 return;
             }
 
