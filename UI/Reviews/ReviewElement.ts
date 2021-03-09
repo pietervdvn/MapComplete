@@ -1,5 +1,6 @@
 /**
- * Shows the reviews and scoring base on mangrove.reviesw
+ * Shows the reviews and scoring base on mangrove.reviews
+ * The middle element is some other component shown in the middle, e.g. the review input element
  */
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Review} from "../../Logic/Web/Review";

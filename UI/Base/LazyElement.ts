@@ -18,7 +18,7 @@ export default class LazyElement extends UIElement {
             }
             self.Update();
             // @ts-ignore
-            if(this._content.Activate){
+            if (this._content.Activate) {
                 // THis is ugly - I know
                 // @ts-ignore
                 this._content.Activate();
