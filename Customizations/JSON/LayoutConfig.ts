@@ -103,7 +103,7 @@ export default class LayoutConfig {
             return new LayerConfig(layer, `${this.id}.layers[${i}]`)
         });
         
-        // ALl the layers are constructed, let them share tags in piece now!
+        // ALl the layers are constructed, let them share tags in now!
         const roaming : {r, source: LayerConfig}[] = []
         for (const layer of this.layers) {
             roaming.push({r: layer.GetRoamingRenderings(), source:layer});
@@ -116,6 +116,17 @@ export default class LayoutConfig {
                 }
                 layer.AddRoamingRenderings(r.r);
             }
+        }
+        
+        for(const layer of this.layers) {
+            layer.AddRoamingRenderings(
+                {
+                    titleIcons:[],
+                    iconOverlays: [],
+                    tagRenderings: this.roamingRenderings
+                }  
+                
+            );
         }
 
         this.clustering = {
