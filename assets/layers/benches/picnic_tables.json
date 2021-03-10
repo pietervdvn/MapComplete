@@ -5,11 +5,7 @@
     "nl": "Picnictafels"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "and": [
-      "leisure=picnic_table"
-    ]
-  },
+  "overpassTags": "leisure=picnic_table",
   "title": {
     "render": {
       "en": "Picnic table",
@@ -35,22 +31,14 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "material=wood"
-            ]
-          },
+          "if": "material=wood",
           "then": {
             "en": "This is a wooden picnic table",
             "nl": "Deze picnictafel is gemaakt uit hout"
           }
         },
         {
-          "if": {
-            "and": [
-              "material=concrete"
-            ]
-          },
+          "if": "material=concrete",
           "then": {
             "en": "This is a concrete picnic table",
             "nl": "Deze picnictafel is gemaakt uit beton"

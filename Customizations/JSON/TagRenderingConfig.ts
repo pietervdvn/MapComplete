@@ -66,8 +66,17 @@ export default class TagRenderingConfig {
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? []
             }
+            if(this.freeform.key === undefined || this.freeform.key === ""){
+                throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
+            }
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
                 throw `Freeform.key ${this.freeform.key} is an invalid type`
+            }
+            if(this.freeform.addExtraTags){
+                const usedKeys = new And(this.freeform.addExtraTags).usedKeys();
+                if(usedKeys.indexOf(this.freeform.key)){
+                    throw `The freeform key ${this.freeform.key} will be overwritten by one of the extra tags, as they use the same key too. This is in ${context}`;
+                }
             }
         }
 
