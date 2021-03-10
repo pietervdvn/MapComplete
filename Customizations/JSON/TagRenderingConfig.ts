@@ -114,6 +114,10 @@ export default class TagRenderingConfig {
         if (this.freeform && this.render === undefined) {
             throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
         }
+        
+        if(this.render && this.question && this.freeform === undefined){
+            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}`
+        }
 
         if (this.question !== undefined && json.multiAnswer) {
             if ((this.mappings?.length ?? 0) === 0) {
