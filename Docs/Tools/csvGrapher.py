@@ -80,7 +80,6 @@ def build_hist(stats, keyIndex, valueIndex, condition=None):
     hist = Hist("date")
     c = 0
     for row in stats:
-        print(row[0] + " => " + str(condition(row)))
         if condition is not None and not condition(row):
             continue
         c += 1
@@ -214,10 +213,12 @@ def gen_theme_breakdown_graphs(contents, user=None):
         create_theme_breakdown(contents, str(year), user)
 
 def main():
+    print("Creating logs...")
     with open('stats.csv', newline='') as csvfile:
         stats = list(csv.reader(csvfile, delimiter=',', quotechar='"'))
-        # create_yearly_usercount_graphs(stats)
-        gen_theme_breakdown_graphs(stats, "joost schouppe")
+        print("Found "+str(len(stats))+" changesets")
+        create_yearly_usercount_graphs(stats)
+        gen_theme_breakdown_graphs(stats)
     print("All done!")
 
 
