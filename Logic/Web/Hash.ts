@@ -1,6 +1,9 @@
 import {UIEventSource} from "../UIEventSource";
 import {Utils} from "../../Utils";
 
+/**
+ * Wrapper around the hash to create an UIEventSource from it
+ */
 export default class Hash {
 
     public static hash: UIEventSource<string> = Hash.Get();
@@ -33,12 +36,14 @@ export default class Hash {
                 return;
             }
 
+            history.pushState({}, "")
             window.location.hash = "#" + h;
         });
 
 
         window.onhashchange = () => {
             let newValue = window.location.hash.substr(1);
+            console.log("The hash is now:", newValue)
             if (newValue === "") {
                 newValue = undefined;
             }
