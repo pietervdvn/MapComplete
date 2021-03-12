@@ -219,6 +219,7 @@ def changes_per_theme_daily(contents):
     for row in contents:
         
         
+        
 def main():
     print("Creating graphs...")
     with open('stats.csv', newline='') as csvfile:

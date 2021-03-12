@@ -280,7 +280,8 @@ export class InitUiElements {
                         Translations.t.general.attribution.attributionContent,
                         "<br/>",
                         new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
-                    ])
+                    ]),
+                    "copyright"
                 )
 
             ;
@@ -420,7 +421,8 @@ export class InitUiElements {
 
             const addNewPoint = new ScrollableFullScreen(
                 () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI());
+                () => new SimpleAddUI(),
+                "new");
 
             addNewPoint.isShown.addCallback(isShown => {
                 if (!isShown) {

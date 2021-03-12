@@ -49,6 +49,15 @@ export default class Hash {
             }
             hash.setData(newValue)
         }
+        
+        window.addEventListener('popstate', e => {
+            let newValue = window.location.hash.substr(1);
+            console.log("Popstate: the hash is now:", newValue)
+            if (newValue === "") {
+                newValue = undefined;
+            }
+            hash.setData(newValue)
+        })
 
         return hash;
     }

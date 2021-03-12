@@ -33,7 +33,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         this._component = new ScrollableFullScreen(
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails),
-            isShown
+            "welcome" ,isShown
         )
     }
 
