@@ -111,14 +111,15 @@ def pyplot_init():
 
 
 def create_usercount_graphs(stats, year="", show=False):
+    print("Creating usercount graphs "+year)
     dates, cumul_uniq, unique_per_day, new_users = cumulative_users(stats, year)
     total = cumul_uniq[-1]
 
     if year != "":
         year = " in " + year
     pyplot_init()
-    pyplot.bar(dates, unique_per_day, label='Unique contributors')
-    pyplot.bar(dates, new_users, label='First time contributor via MapComplete')
+    pyplot.fill_between(dates, unique_per_day, label='Unique contributors')
+    pyplot.fill_between(dates, new_users, label='First time contributor via MapComplete')
     pyplot.legend()
     pyplot.title("Unique contributors" + year + ' with MapComplete (' + str(total) + ' contributors)')
     pyplot.ylabel("Number of unique contributors")
@@ -161,6 +162,7 @@ theme_remappings = {
 
 
 def create_theme_breakdown(stats, year="", user=None, columnIndex=3):
+    print("Creating theme breakdown "+year)
     themeCounts = {}
     for row in stats:
         if not row[0].startswith(year):
@@ -212,8 +214,13 @@ def gen_theme_breakdown_graphs(contents, user=None):
     for year in range(2020, currentYear + 1):
         create_theme_breakdown(contents, str(year), user)
 
+def changes_per_theme_daily(contents):
+    hist = {}
+    for row in contents:
+        
+        
 def main():
-    print("Creating logs...")
+    print("Creating graphs...")
     with open('stats.csv', newline='') as csvfile:
         stats = list(csv.reader(csvfile, delimiter=',', quotechar='"'))
         print("Found "+str(len(stats))+" changesets")
@@ -222,4 +229,6 @@ def main():
     print("All done!")
 
 
+# pyplot.fill_between(range(0,5),  [1,2,3,3,2],)
+# pyplot.show()
 main()

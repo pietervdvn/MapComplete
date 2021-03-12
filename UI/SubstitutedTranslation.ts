@@ -6,9 +6,11 @@ import Combine from "./Base/Combine";
 import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations from "./SpecialVisualizations";
+import {Utils} from "../Utils";
 
 export class SubstitutedTranslation extends UIElement {
-    private static cachedTranslations: Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>> = new Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>();
+    private static cachedTranslations: 
+        Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>> = new Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>>();
     private readonly tags: UIEventSource<any>;
     private readonly translation: Translation;
     private content: UIElement[];
@@ -32,20 +34,26 @@ export class SubstitutedTranslation extends UIElement {
         this.SetClass("w-full")
     }
 
+    private static GenerateMap(){
+        return new Map<UIEventSource<any>, SubstitutedTranslation>()
+    }
+    private static GenerateSubCache(){
+        return new  Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>();
+    }
+    
     public static construct(
         translation: Translation,
         tags: UIEventSource<any>): SubstitutedTranslation {
-        if (!this.cachedTranslations.has(translation)) {
-            this.cachedTranslations.set(translation, new Map<UIEventSource<any>, SubstitutedTranslation>());
-        }
-        const innerMap = this.cachedTranslations.get(translation);
+        
+       /* let cachedTranslations = Utils.getOrSetDefault(SubstitutedTranslation.cachedTranslations, SubstitutedTranslation.GenerateSubCache);
+        const innerMap = Utils.getOrSetDefault(cachedTranslations, translation, SubstitutedTranslation.GenerateMap);
 
         const cachedTranslation = innerMap.get(tags);
         if (cachedTranslation !== undefined) {
             return cachedTranslation;
-        }
+        }*/
         const st = new SubstitutedTranslation(translation, tags);
-        innerMap.set(tags, st);
+       // innerMap.set(tags, st);
         return st;
     }
 

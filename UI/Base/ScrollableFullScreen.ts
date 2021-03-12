@@ -14,12 +14,13 @@ export default class ScrollableFullScreen extends UIElement {
     private _component: UIElement;
     private _fullscreencomponent: UIElement;
 
-    constructor(title: (() => UIElement), content: (() => UIElement), isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
+    constructor(title: ((mode: string) => UIElement), content: ((mode: string) => UIElement), 
+                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
         super();
         this.isShown = isShown;
 
-        this._component = this.BuildComponent(title(), content(), isShown);
-        this._fullscreencomponent = this.BuildComponent(title(), content(), isShown);
+        this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown);
+        this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile"), isShown);
         this.dumbMode = false;
         const self = this;
         isShown.addCallback(isShown => {

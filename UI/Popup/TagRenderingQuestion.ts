@@ -38,7 +38,8 @@ export default class TagRenderingQuestion extends UIElement {
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 afterSave?: () => void,
-                cancelButton?: UIElement) {
+                cancelButton?: UIElement        
+    ) {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;

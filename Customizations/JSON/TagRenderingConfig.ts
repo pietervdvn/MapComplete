@@ -74,7 +74,7 @@ export default class TagRenderingConfig {
             }
             if(this.freeform.addExtraTags){
                 const usedKeys = new And(this.freeform.addExtraTags).usedKeys();
-                if(usedKeys.indexOf(this.freeform.key)){
+                if(usedKeys.indexOf(this.freeform.key) >= 0){
                     throw `The freeform key ${this.freeform.key} will be overwritten by one of the extra tags, as they use the same key too. This is in ${context}`;
                 }
             }

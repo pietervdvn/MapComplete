@@ -17,7 +17,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
     ) {
-        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),() => FeatureInfoBox.GenerateContent(tags, layerConfig));
+        super((mode:string) => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, mode),
+            (mode:string) => FeatureInfoBox.GenerateContent(tags, layerConfig, mode));
+       
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
         }
@@ -46,7 +48,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     private static GenerateContent(tags: UIEventSource<any>,
-                                   layerConfig: LayerConfig): UIElement {
+                                   layerConfig: LayerConfig,
+                                   mode: string): UIElement {
 
 
         let questionBox: UIElement = undefined;
