@@ -18,19 +18,19 @@ export default class Translations {
     }
 
 
-    static T(t: string | any): Translation {
+    static T(t: string | any, context = undefined): Translation {
         if(t === undefined){
             return undefined;
         }
         if(typeof t === "string"){
-            return new Translation({"*":t});
+            return new Translation({"*":t}, context);
         }
         if(t.render !== undefined){
             const msg = "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
             console.error(msg, t);
             throw msg
         }
-        return new Translation(t);
+        return new Translation(t, context);
     }
 
     private static wtcache = {}
