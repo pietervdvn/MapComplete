@@ -6,7 +6,7 @@ There are some fancy statistics available about MapComplete use. You can find al
 All Time usage
 --------------
 
-![Cumultive contributors](Docs/Tools/CumulativeContributors.png)
+![Tools/CumulativeContributors.png]
 ![Cumulative changesets per contributor](Docs/Tools/Cumulative changesets per contributor.png)
 
 Note: in 2020, MapComplete would still make one changeset per answered question. This heavily skews the below graphs towards `buurtnatuur` and `cyclofìx`, two heavily used themes at the beginning.
