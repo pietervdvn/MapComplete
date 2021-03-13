@@ -196,7 +196,7 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
         else:
             edits_per_day_cumul = themes.map(lambda themes_for_date: len([x for x in themes_for_date if theme == x]))
 
-        if running_totals is None:
+        if (not cumulative) or (running_totals is None):
             running_totals = edits_per_day_cumul
         else:
             running_totals = list(map(lambda ab: ab[0] + ab[1], zip(running_totals, edits_per_day_cumul)))
@@ -211,7 +211,7 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
             else:
                 other_cumul = list(map(lambda ab: ab[0] + ab[1], zip(other_cumul, edits_per_day_cumul)))
 
-    keys = themes.keys()
+    keys = list(themes.keys())
     values_to_show.reverse()
     values_to_show.append(("other", other_cumul))
     totals = dict(per_theme_count)
@@ -225,7 +225,11 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
         msg = kv[0] + " (" + str(totals[kv[0]]) + ")"
         if kv[0] == "other":
             msg = str(other_theme_count) + " small " + subject + "s (" + str(other_total) + " changes)"
-        pyplot.fill_between(keys, kv[1], label=msg)
+        if cumulative:
+            pyplot.fill_between(keys, kv[1], label=msg)
+        else:
+            print("Keys:"+str(keys)+" "+str(kv[1]))
+            pyplot.plot(keys, kv[1], label=msg)
 
     if cumulative:
         cumulative_txt = "Cumulative changesets"
@@ -246,6 +250,7 @@ def create_graphs(contents):
     create_usercount_graphs(contents)
     create_theme_breakdown(contents)
     cumulative_changes_per(contents, 3, "theme", cutoff=10)
+    cumulative_changes_per(contents, 3, "theme", cutoff=10, cumulative=False)
     cumulative_changes_per(contents, 1, "contributor", cutoff=15)
     cumulative_changes_per(contents, 2, "language", cutoff=1)
     cumulative_changes_per(contents, 4, "version number", cutoff=1)
@@ -258,9 +263,11 @@ def create_graphs(contents):
         create_usercount_graphs(contents_filtered, extratext)
         create_theme_breakdown(contents_filtered, extratext)
         cumulative_changes_per(contents_filtered, 3, "theme", extratext, cutoff=5)
+        cumulative_changes_per(contents_filtered, 3, "theme", extratext, cutoff=5, cumulative=False)
         cumulative_changes_per(contents_filtered, 1, "contributor", extratext, cutoff=10)
         cumulative_changes_per(contents_filtered, 2, "language", extratext, cutoff=1)
         cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, cumulative=False)
+        cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
 
 
 theme_remappings = {
@@ -290,6 +297,7 @@ def clean_input(contents):
         if theme in theme_remappings:
             theme = theme_remappings[theme]
         row[3] = theme
+        row[4] = row[4].strip().strip("\"")[0:len("MapComplete x.x.x")]
         yield [data.strip().strip("\"") for data in row]
 
 

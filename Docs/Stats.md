@@ -1,7 +1,7 @@
 Statistics
 ==========
 
-There are some fancy statistics available about MapComplete use. You can find all the stats (and the scripts to generate them) [](Tools/) 
+There are some fancy statistics available about MapComplete use. The most important once are listed below, some more graphs (and the scripts to generate them) are [in the tools directory](Tools/) 
 
 All Time usage
 --------------
