@@ -13,7 +13,7 @@ echo "" > tmp.csv
 for f in stats.*.json
 do
     echo $f
-    jq ".features[].properties | [.date, .user, .metadata.language, .metadata.theme, .editor, .create, .modify, .comment]" "$f" | tr -d "\n" | sed "s/]\[/\n/g" | tr -d "][" >> tmp.csv
+    jq ".features[].properties | [.date, .user, .metadata.language, .metadata.theme, .editor, .create, .modify, .comment, .metadata.host]" "$f" | tr -d "\n" | sed "s/]\[/\n/g" | tr -d "][" >> tmp.csv
     echo "" >> tmp.csv
 done
 

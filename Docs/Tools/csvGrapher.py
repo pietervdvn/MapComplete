@@ -249,6 +249,7 @@ def create_graphs(contents):
     cumulative_changes_per(contents, 1, "contributor", cutoff=15)
     cumulative_changes_per(contents, 2, "language", cutoff=1)
     cumulative_changes_per(contents, 4, "version number", cutoff=1)
+    cumulative_changes_per(contents, 8, "host", cutoff=1)
 
     currentYear = datetime.now().year
     for year in range(2020, currentYear + 1):
