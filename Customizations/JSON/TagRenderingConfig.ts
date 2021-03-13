@@ -45,13 +45,13 @@ export default class TagRenderingConfig {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
         if (typeof json === "string") {
-            this.render = Translations.T(json);
+            this.render = Translations.T(json, context+".render");
             this.multiAnswer = false;
             return;
         }
 
-        this.render = Translations.T(json.render);
-        this.question = Translations.T(json.question);
+        this.render = Translations.T(json.render, context+".render");
+        this.question = Translations.T(json.question, context+".question");
         this.roaming = json.roaming ?? false;
         const condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (this.roaming && conditionIfRoaming !== undefined) {
@@ -96,10 +96,11 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = FromJSON.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
+                const mappingContext = `${context}.mapping[${i}]`
                 const mp = {
-                    if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}].if`),
-                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${context}.mapping[${i}].ifnot`) : undefined),
-                    then: Translations.T(mapping.then),
+                    if: FromJSON.Tag(mapping.if, `${mappingContext}.if`),
+                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
+                    then: Translations.T(mapping.then, `{mappingContext}.then`),
                     hideInAnswer: hideInAnswer
                 };
                 if (this.question) {

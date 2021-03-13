@@ -54,19 +54,19 @@ export default class LayerConfig {
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
-        this.name = Translations.T(json.name);
-        this.description = Translations.T(json.description);
+        this.name = Translations.T(json.name, context+".name");
+        this.description = Translations.T(json.description, context+".description");
         this.overpassTags = FromJSON.Tag(json.overpassTags, context + ".overpasstags");
         this.doNotDownload = json.doNotDownload ?? false,
             this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
         this.hideUnderlayingFeaturesMinPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
-        this.presets = (json.presets ?? []).map(pr =>
+        this.presets = (json.presets ?? []).map((pr, i) =>
             ({
-                title: Translations.T(pr.title),
+                title: Translations.T(pr.title, `${context}.presets[${i}].title`),
                 tags: pr.tags.map(t => FromJSON.SimpleTag(t)),
-                description: Translations.T(pr.description)
+                description: Translations.T(pr.description, `${context}.presets[${i}].description`)
             }))
 
 

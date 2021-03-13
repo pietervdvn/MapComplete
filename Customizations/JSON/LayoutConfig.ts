@@ -53,6 +53,9 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
+        if(this.language.length == 0){
+            throw "No languages defined. Define at least one language"
+        }
         if (json.title === undefined) {
             throw "Title not defined in " + this.id;
         }
@@ -62,7 +65,7 @@ export default class LayoutConfig {
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context) : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context+".descriptionTail") : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
         this.startZoom = json.startZoom;
