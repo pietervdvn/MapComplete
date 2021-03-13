@@ -1,4 +1,4 @@
-import {And, TagsFilter} from "../../Logic/Tags";
+import {And, TagsFilter, TagUtils} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
@@ -152,6 +152,40 @@ export default class TagRenderingConfig {
         }
     }
 
+
+    /**
+     * Returns true if it is known or not shown, false if the question should be asked
+     * @constructor
+     */
+    public IsKnown(tags: any): boolean {
+        if (this.condition &&
+            !this.condition.matchesProperties(tags)) {
+            // Filtered away by the condition
+            return true;
+        }
+        if(this.multiAnswer){
+            for (const m of this.mappings) {
+                if(TagUtils.MatchesMultiAnswer(m.if, tags)){
+                    return true;
+                }
+            }
+
+            const free = this.freeform?.key
+            if(free !== undefined){
+                return tags[free] !== undefined
+            }
+            return false
+
+        }
+
+        if (this.GetRenderValue(tags) !== undefined) {
+            // This value is known and can be rendered
+            return true;
+        }
+
+        return false;
+    }
+    
     /**
      * Gets the correct rendering value (or undefined if not known)
      * @constructor

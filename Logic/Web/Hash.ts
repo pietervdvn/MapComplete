@@ -43,16 +43,14 @@ export default class Hash {
 
         window.onhashchange = () => {
             let newValue = window.location.hash.substr(1);
-            console.log("The hash is now:", newValue)
             if (newValue === "") {
                 newValue = undefined;
             }
             hash.setData(newValue)
         }
         
-        window.addEventListener('popstate', e => {
+        window.addEventListener('popstate', _ => {
             let newValue = window.location.hash.substr(1);
-            console.log("Popstate: the hash is now:", newValue)
             if (newValue === "") {
                 newValue = undefined;
             }

@@ -53,13 +53,8 @@ export default class EditableTagRendering extends UIElement {
         if (this._editMode.data) {
             return this._question.Render();
         }
-        if (this._configuration.multiAnswer) {
-            const atLeastOneMatch = this._configuration.mappings.some(mp =>TagUtils.MatchesMultiAnswer(mp.if, this._tags.data));
-            if (!atLeastOneMatch) {
-                return "";
-            }
-        } else if (this._configuration.GetRenderValue(this._tags.data) === undefined) {
-            return "";
+        if(!this._configuration.IsKnown(this._tags.data)){
+            return ""
         }
 
         return new Combine([this._answer,

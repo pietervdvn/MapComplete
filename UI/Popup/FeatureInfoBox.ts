@@ -56,24 +56,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
         let questionBoxIsUsed = false;
-        const renderings = layerConfig.tagRenderings.map(tr => {
+        const renderings = layerConfig.tagRenderings.map((tr,i) => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;
                 return questionBox;
             }
-            return new EditableTagRendering(tags, tr);
+            return  new EditableTagRendering(tags, tr);
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-        const tail = new Combine([]).SetClass("only-on-mobile");
 
-        return new Combine([
-                ...renderings,
-                tail.SetClass("featureinfobox-tail")
-            ]
-        ).SetClass("block")
+        return new Combine(renderings).SetClass("block")
 
     }
 

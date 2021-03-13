@@ -5,6 +5,7 @@ import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
 import {TagUtils} from "../../Logic/Tags";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import {Translation} from "../i18n/Translation";
 
 /***
  * Displays the correct value for a known tagrendering
@@ -43,7 +44,7 @@ export default class TagRenderingAnswer extends UIElement {
 
         // The render value doesn't work well with multi-answers (checkboxes), so we have to check for them manually
         if (this._configuration.multiAnswer) {
-            const applicableThens = Utils.NoNull(this._configuration.mappings.map(mapping => {
+            const applicableThens: Translation[] = Utils.NoNull(this._configuration.mappings.map(mapping => {
                 if (mapping.if === undefined) {
                     return mapping.then;
                 }
@@ -52,12 +53,20 @@ export default class TagRenderingAnswer extends UIElement {
                 }
                 return undefined;
             }))
-            if (applicableThens.length >= 0) {
-                if (applicableThens.length === 1) {
-                    this._content = applicableThens[0];
+
+            if (this._configuration.freeform !== undefined && tags[this._configuration.freeform.key] !== undefined) {
+                applicableThens.push(this._configuration.render)
+            }
+
+            const self = this
+            const valuesToRender: UIElement[] = applicableThens.map(tr => SubstitutedTranslation.construct(tr, self._tags))
+
+            if (valuesToRender.length >= 0) {
+                if (valuesToRender.length === 1) {
+                    this._content = valuesToRender[0];
                 } else {
                     this._content = new Combine(["<ul>",
-                        ...applicableThens.map(tr => new Combine(["<li>", tr, "</li>"]))
+                        ...valuesToRender.map(tr => new Combine(["<li>", tr, "</li>"]))
                         ,
                         "</ul>"
                     ])
@@ -66,13 +75,13 @@ export default class TagRenderingAnswer extends UIElement {
                 return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
             }
         }
-        
+
         const tr = this._configuration.GetRenderValue(tags);
         if (tr !== undefined) {
             this._content = SubstitutedTranslation.construct(tr, this._tags);
             return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
         }
-       
+
         return "";
 
     }
