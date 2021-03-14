@@ -4,7 +4,9 @@
     "nl": "Speeltuinen"
   },
   "minzoom": 13,
-  "overpassTags": "leisure=playground",
+  "overpassTags": {
+    "and": ["leisure=playground","playground!=forest"]
+  },
   "description": {
     "nl": "Speeltuinen en speelbossen"
   },
@@ -13,23 +15,6 @@
       "nl": "Speeltuin"
     },
     "mappings": [
-      {
-        "if": {
-          "and": [
-            "playground=forest",
-            "name~*"
-          ]
-        },
-        "then": {
-          "nl": "Speelbos <i>{name}</i>"
-        }
-      },
-      {
-        "if": "playground=forest",
-        "then": {
-          "nl": "Speelbos"
-        }
-      },
       {
         "if": "name~*",
         "then": {
@@ -57,7 +42,7 @@
         },
         {
           "if": "surface=sand",
-          "then": "De ondergrond is <b>zan</b>"
+          "then": "De ondergrond is <b>zand</b>"
         },
         {
           "if": "surface=paving_stones",
@@ -74,7 +59,7 @@
       ]
     },
     {
-      "render": {
+      "question": {
         "nl": "Is deze speeltuin 's nachts verlicht?"
       },
       "mappings": [
