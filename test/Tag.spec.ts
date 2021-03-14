@@ -27,6 +27,26 @@ new T("Tags", [
         const tag = FromJSON.Tag("key=value") as Tag;
         equal(tag.key, "key");
         equal(tag.value, "value");
+        equal(tag.matches([{k:"key",v:"value"}]), true)
+        equal(tag.matches([{k:"key",v:"z"}]), false)
+        equal(tag.matches([{k:"key",v:""}]), false)
+        equal(tag.matches([{k:"other_key",v:""}]), false)
+        equal(tag.matches([{k:"other_key",v:"value"}]), false)
+
+        const isEmpty = FromJSON.Tag("key=") as Tag;
+        equal(isEmpty.matches([{k:"key",v:"value"}]), false)
+        equal(isEmpty.matches([{k:"key",v:""}]), true)
+        equal(isEmpty.matches([{k:"other_key",v:""}]), true)
+        equal(isEmpty.matches([{k:"other_key",v:"value"}]), true)
+
+        const isNotEmpty = FromJSON.Tag("key!=");
+        equal(isNotEmpty.matches([{k:"key",v:"value"}]), true)
+        equal(isNotEmpty.matches([{k:"key",v:"other_value"}]), true)
+        equal(isNotEmpty.matches([{k:"key",v:""}]), false)
+        equal(isNotEmpty.matches([{k:"other_key",v:""}]), false)
+        equal(isNotEmpty.matches([{k:"other_key",v:"value"}]), false)
+
+
 
         const and = FromJSON.Tag({"and": ["key=value", "x=y"]}) as And;
         equal((and.and[0] as Tag).key, "key");
@@ -37,9 +57,7 @@ new T("Tags", [
         equal(notReg.matches([{k:"x",v:"y"}]), false)
         equal(notReg.matches([{k:"x",v:"z"}]), true)
         equal(notReg.matches([{k:"x",v:""}]), true)
-
         equal(notReg.matches([]), true)
-        
         
         const noMatch = FromJSON.Tag("key!=value") as Tag;
         equal(noMatch.matches([{k:"key",v:"value"}]), false)
@@ -53,6 +71,12 @@ new T("Tags", [
         equal(multiMatch.matches([{k:"vending",v:"something;bicycle_tube"}]), true)
         equal(multiMatch.matches([{k:"vending",v:"bicycle_tube;something"}]), true)
         equal(multiMatch.matches([{k:"vending",v:"xyz;bicycle_tube;something"}]), true)
+        
+        const nameStartsWith = FromJSON.Tag("name~[sS]peelbos.*")
+        equal(nameStartsWith.matches([{k:"name",v: "Speelbos Sint-Anna"}]), true)
+        equal(nameStartsWith.matches([{k:"name",v: "speelbos Sint-Anna"}]), true)
+        equal(nameStartsWith.matches([{k:"name",v: "Sint-Anna"}]), false)
+        equal(nameStartsWith.matches([{k:"name",v: ""}]), false)
 
     })],
     ["Is equivalent test", (() => {

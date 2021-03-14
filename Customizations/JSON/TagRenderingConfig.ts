@@ -82,7 +82,10 @@ export default class TagRenderingConfig {
 
         this.multiAnswer = json.multiAnswer ?? false
         if (json.mappings) {
+            
+            
             this.mappings = json.mappings.map((mapping, i) => {
+
 
                 if (mapping.then === undefined) {
                     throw `${context}.mapping[${i}]: Invalid mapping: if without body`
@@ -104,7 +107,7 @@ export default class TagRenderingConfig {
                     hideInAnswer: hideInAnswer
                 };
                 if (this.question) {
-                    if (hideInAnswer !== true && !mp.if.isUsableAsAnswer()) {
+                    if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {
                         throw `${context}.mapping[${i}].if: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
                     }
 
@@ -127,6 +130,32 @@ export default class TagRenderingConfig {
         
         if(this.render && this.question && this.freeform === undefined){
             throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}`
+        }
+        
+        if(!json.multiAnswer && this.mappings !== undefined && this.question !== undefined){
+            let keys = []
+            for (let i = 0; i < this.mappings.length; i++){
+                const mapping = this.mappings[i];
+                if(mapping.if === undefined){
+                    throw `${context}.mappings[${i}].if is undefined`
+                }
+                keys.push(...mapping.if.usedKeys())
+            }
+            keys = Utils.Dedup(keys)
+            for (let i = 0; i < this.mappings.length; i++){
+                const mapping = this.mappings[i];
+                if(mapping.hideInAnswer){
+                    continue
+                }
+                
+                const usedKeys = mapping.if.usedKeys();
+                for (const expectedKey of keys) {
+                    if(usedKeys.indexOf(expectedKey) < 0){
+                        const msg = `${context}.mappings[${i}]: This mapping only defines values for ${usedKeys.join(', ')}, but it should also give a value for ${expectedKey}`
+                        console.warn(msg)
+                    }
+                }
+            }
         }
 
         if (this.question !== undefined && json.multiAnswer) {

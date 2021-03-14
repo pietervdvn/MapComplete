@@ -22,6 +22,7 @@ import * as personal from "../assets/themes/personalLayout/personalLayout.json"
 import * as playgrounds from "../assets/themes/playgrounds/playgrounds.json"
 import * as bicycle_lib from "../assets/themes/bicycle_library/bicycle_library.json"
 import * as play_forests from "../assets/themes/play_forests/play_forests.json"
+import * as speelplekken from "../assets/themes/speelplekken/speelplekken.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
 import AllKnownLayers from "./AllKnownLayers";
@@ -71,7 +72,8 @@ export class AllKnownLayouts {
         new LayoutConfig(climbing),
         new LayoutConfig(playgrounds),
         new LayoutConfig(trees),
-        new LayoutConfig(play_forests)
+        new LayoutConfig(play_forests) ,
+        new LayoutConfig(speelplekken)
     ];
 
 

@@ -1,5 +1,4 @@
 import {Utils} from "../Utils";
-import {type} from "os";
 
 export abstract class TagsFilter {
     abstract matches(tags: { k: string, v: string }[]): boolean
@@ -26,12 +25,14 @@ export class RegexTag extends TagsFilter {
     private readonly key: RegExp | string;
     private readonly value: RegExp | string;
     private readonly invert: boolean;
+    private readonly matchesEmpty: boolean
 
     constructor(key: string | RegExp, value: RegExp | string, invert: boolean = false) {
         super();
         this.key = key;
         this.value = value;
         this.invert = invert;
+        this.matchesEmpty = RegexTag.doesMatch("", this.value);
     }
 
     private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
@@ -64,6 +65,10 @@ export class RegexTag extends TagsFilter {
             if (RegexTag.doesMatch(tag.k, this.key)) {
                 return RegexTag.doesMatch(tag.v, this.value) != this.invert;
             }
+        }
+        if(this.matchesEmpty){
+            // The value is 'empty'
+            return !this.invert;
         }
         // The matching key was not found
         return this.invert;
@@ -244,7 +249,7 @@ export class Or extends TagsFilter {
     }
 
     usedKeys(): string[] {
-        return [].concat(this.or.map(subkeys => subkeys.usedKeys()));
+        return [].concat(...this.or.map(subkeys => subkeys.usedKeys()));
     }
 }
 
@@ -363,7 +368,7 @@ export class And extends TagsFilter {
     }
 
     usedKeys(): string[] {
-        return [].concat(this.and.map(subkeys => subkeys.usedKeys()));
+        return [].concat(...this.and.map(subkeys => subkeys.usedKeys()));
     }
 }
 
