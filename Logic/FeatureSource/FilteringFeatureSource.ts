@@ -84,13 +84,13 @@ export default class FilteringFeatureSource implements FeatureSource {
         layers.addCallback(update);
         
         const registered = new Set<UIEventSource<boolean>>();
-        layers.addCallback(layers => {
+        layers.addCallbackAndRun(layers => {
             for (const layer of layers) {
                 if(registered.has(layer.isDisplayed)){
                     continue;
                 }
                 registered.add(layer.isDisplayed);
-                layer.isDisplayed.addCallback(update);
+                layer.isDisplayed.addCallback(() => update());
             }
         })
 
