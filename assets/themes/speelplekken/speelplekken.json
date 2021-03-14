@@ -15,16 +15,18 @@
   "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
   "hideInOverview": true,
+  "lockLocation": true,
   "version": "0",
-  "startLat": 51.16174,
+  "startLat": 51.17174,
   "startLon": 4.449462,
-  "startZoom": 13,
+  "startZoom": 12,
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
     "play_forest",
     "playground",
-    "sport_pitch"
+    "sport_pitch",
+    "slow_roads"
   ],
   "roamingRenderings": []
 }

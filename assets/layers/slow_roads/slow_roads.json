@@ -1,0 +1,178 @@
+{
+  "id": "slow_roads",
+  "name": {
+    "nl": "Trage wegen"
+  },
+  "minzoom": 14,
+  "overpassTags": {
+    "or": [
+      "highway=pedestrian",
+      "highway=cycleway",
+      "highway=footway",
+      "highway=path",
+      "highway=bridleway",
+      "highway=living_street",
+      "highway=track"
+    ]
+  },
+  "title": {
+    "render": {
+      "nl": "Trage weg"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "{name}"
+        }
+      },
+      {
+        "if": "highway=footway",
+        "then": {
+          "nl": "Voetpad"
+        }
+      },
+      {
+        "if": "highway=cycleway",
+        "then": {
+          "nl": "Fietspad"
+        }
+      },
+      {
+        "if": "highway=pedestrian",
+        "then": {
+          "nl": "Voetgangersstraat"
+        }
+      },
+      {
+        "if": "highway=living_street",
+        "then": {
+          "nl": "Woonerf"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "nl": "Wat is de wegverharding van dit pad?"
+      },
+      "render": {
+        "nl": "De ondergrond is <b>{surface}</b>",
+        "en": "The surface is <b>{surface}</b>"
+      },
+      "freeform": {
+        "key": "surface"
+      },
+      "mappings": [
+        {
+          "if": "surface=grass",
+          "then": {
+            "nl": "De ondergrond is <b>gras</b>",
+            "en": "The surface is <b>grass</b>"
+          }
+        },
+        {
+          "if": "surface=ground",
+          "then": {
+            "nl": "De ondergrond is <b>aarde</b>",
+            "en": "The surface is <b>ground</b>"
+          }
+        },
+        {
+          "if": "surface=unpaved",
+          "then": {
+            "nl": "De ondergrond is <b>onverhard</b>",
+            "en": "The surface is <b>unpaved</b>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "surface=sand",
+          "then": {
+            "nl": "De ondergrond is <b>zand</b>",
+            "en": "The surface is <b>sand</b>"
+          }
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
+            "en": "The surface is <b>paving stones</b>"
+          }
+        },
+        {
+          "if": "surface=asphalt",
+          "then": {
+            "nl": "De ondergrond is <b>asfalt</b>",
+            "en": "The surface is <b>asphalt</b>"
+          }
+        },
+        {
+          "if": "surface=concrete",
+          "then": {
+            "nl": "De ondergrond is <b>beton</b>",
+            "en": "The surface is <b>concrete</b>"
+          }
+        },
+        {
+          "if": "surface=paved",
+          "then": {
+            "nl": "De ondergrond is <b>verhard</b>",
+            "en": "The surface is <b>paved</b>"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": "Is deze weg 's nachts verlicht?",
+      "mappings": [
+        {
+          "if": "lit=yes",
+          "then": "'s nachts verlicht"
+        },
+        {
+          "if": "lit=no",
+          "then": "Niet verlicht"
+        }
+      ]
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/svg/bug.svg",
+    "mappings": []
+  },
+  "width": {
+    "render": "4"
+  },
+  "color": {
+    "render": "#bb2",
+    "mappings": [
+      {
+        "if": "highway=cycleway",
+        "then": "#00c"
+      },
+      {
+        "if": "highway=path",
+        "then": "#bb2"
+      },
+      {
+        "if": "highway=footway",
+        "then": "#c30"
+      },
+      {
+        "if": "highway=pedestrian",
+        "then": "#3c3"
+      },
+      {
+        "if": "highway=living_street",
+        "then": "#ccc"
+      }
+    ]
+  },
+  "presets": [
+  ]
+}

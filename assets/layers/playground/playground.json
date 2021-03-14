@@ -79,6 +79,22 @@
             "nl": "De ondergrond is <b>beton</b>",
             "en": "The surface is <b>concrete</b>"
           }
+        },
+        {
+          "if": "surface=unpaved",
+          "then": {
+            "nl": "De ondergrond is <b>onverhard</b>",
+            "en": "The surface is <b>unpaved</b>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "surface=paved",
+          "then": {
+            "nl": "De ondergrond is <b>verhard</b>",
+            "en": "The surface is <b>paved</b>"
+          },
+          "hideInAnswer": true
         }
       ]
     },

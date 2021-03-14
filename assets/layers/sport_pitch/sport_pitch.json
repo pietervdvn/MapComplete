@@ -187,8 +187,22 @@
         }
       ]
     },
-    "phone",
-    "email",
+    {
+      "question": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      },
+      "render": "<a href='tel:{phone}'>{phone}</a>"
+    },
+    {
+      "question": "Wat is het email-adres van de bevoegde dienst of uitbater?",
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      },
+      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+    },
     "questions",
     {"render":"{reviews(name, sportpitch)}"}
   ],

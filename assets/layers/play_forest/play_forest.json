@@ -107,7 +107,7 @@
         "playground=forest",
         "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
       ],
-      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de betreffende borden<br/><img src='./assets/layers/play_forest/icon.svg'/>"
+      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de overeenkomstige borden.<br/><img src='./assets/layers/play_forest/icon.svg'/>"
     }
   ],
   "wayHandling": 2

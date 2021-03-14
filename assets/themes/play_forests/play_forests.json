@@ -18,6 +18,7 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
+  "hideInOverview": true,
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
