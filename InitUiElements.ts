@@ -258,8 +258,8 @@ export class InitUiElements {
             }
         })
         isOpened.setData(Hash.hash.data === undefined)
-        
- 
+
+
     }
 
     private static InitLayerSelection() {
@@ -276,7 +276,7 @@ export class InitUiElements {
             const copyrightNotice =
                 new ScrollableFullScreen(
                     () => Translations.t.general.attribution.attributionTitle.Clone(),
-                    () =>  new Combine([
+                    () => new Combine([
                         Translations.t.general.attribution.attributionContent,
                         "<br/>",
                         new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
@@ -335,6 +335,7 @@ export class InitUiElements {
 
         const attr = new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse,
             State.state.leafletMap);
+
         const bm = new Basemap("leafletDiv",
             State.state.locationControl,
             State.state.backgroundLayer,
@@ -342,6 +343,22 @@ export class InitUiElements {
             attr
         );
         State.state.leafletMap.setData(bm.map);
+        const layout = State.state.layoutToUse.data
+        if (layout.lockLocation) {
+            const tile = Utils.embedded_tile(layout.startLat, layout.startLon, layout.startZoom - 1)
+            const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y)
+            // We use the bounds to get a sense of distance for this zoom level
+            const latDiff = bounds[0][0] - bounds[1][0]
+            const lonDiff = bounds[0][1] - bounds[1][1]
+            console.warn("Locking the bounds to ", bounds)
+            bm.map.setMaxBounds(
+                [[ layout.startLat - latDiff, layout.startLon - lonDiff ],
+                    [ layout.startLat + latDiff, layout.startLon + lonDiff ],
+                ]
+            );
+            bm.map.setMinZoom(layout.startZoom)
+        }
+
     }
 
     private static InitLayers() {

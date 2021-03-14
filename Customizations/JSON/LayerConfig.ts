@@ -48,6 +48,8 @@ export default class LayerConfig {
     }[];
 
     tagRenderings: TagRenderingConfig [];
+    
+    private readonly configuration_warnings : string[] = []
 
     constructor(json: LayerConfigJson,
                 context?: string) {

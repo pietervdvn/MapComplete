@@ -31,6 +31,7 @@ export default class LayoutConfig {
     };
 
     public readonly hideFromOverview: boolean;
+    public readonly lockLocation: boolean | [[number,number],[number, number]];
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
     public readonly enableMoreQuests: boolean;
@@ -149,7 +150,7 @@ export default class LayoutConfig {
         }
 
         this.hideFromOverview = json.hideFromOverview ?? false;
-
+        this.lockLocation = json.lockLocation ?? false;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;
