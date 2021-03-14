@@ -3,7 +3,7 @@
   "name": {
     "nl": "Speelbossen"
   },
-  "minzoom": 12,
+  "minzoom": 13,
   "overpassTags": {
     "and": [
       "playground=forest"
@@ -14,6 +14,12 @@
       "nl": "Speelbos"
     },
     "mappings": [
+      {
+        "if": "name~Speelbos.*",
+        "then": {
+          "nl": "{name}"
+        }
+      },
       {
         "if": "name~*",
         "then": {
@@ -59,7 +65,7 @@
       ]
     },
     {
-      "question": "Naar waar kan men emailen indien er problemen zijn met de speelzone?",
+      "question": "Wie kan men emailen indien er problemen zijn met de speelzone?",
       "render": "De bevoegde dienst kan bereikt worden via {email}",
       "freeform": {
         "key": "email",
@@ -67,7 +73,7 @@
       }
     },
     {
-      "question": "Naar waar kan men bellen indien er problemen zijn met de speelzone?",
+      "question": "Wie kan men bellen indien er problemen zijn met de speelzone?",
       "render": "De bevoegde dienst kan getelefoneerd worden via {phone}",
       "freeform": {
         "key": "phone",
@@ -82,7 +88,7 @@
   "hideUnderlayingFeaturesMinPercentage": 0,
   "hideFromOverview": false,
   "icon": {
-    "render": "./assets/layers/play_forest/icon.jpg"
+    "render": "./assets/layers/play_forest/icon.svg"
   },
   "width": {
     "render": "8"
@@ -101,7 +107,7 @@
         "playground=forest",
         "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
       ],
-      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de betreffende borden<br/><img src='./assets/layers/play_forest/icon.jpg'/>"
+      "description": "Een zone in het bos, duidelijk gemarkeerd als speelzone met de betreffende borden<br/><img src='./assets/layers/play_forest/icon.svg'/>"
     }
   ],
   "wayHandling": 2

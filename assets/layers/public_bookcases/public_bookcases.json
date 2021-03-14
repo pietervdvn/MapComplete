@@ -256,7 +256,9 @@
             "de": "Teil des Netzwerks 'Little Free Library'",
             "fr": "Fait partie du réseau 'Little Free Library'"
           },
-          "if": "brand=Little Free Library"
+          "if":{
+            "and": ["brand=Little Free Library","nobrand="]
+          } 
         },
         {
           "if": {

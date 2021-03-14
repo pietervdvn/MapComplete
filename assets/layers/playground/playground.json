@@ -1,0 +1,236 @@
+{
+  "id": "playground",
+  "name": {
+    "nl": "Speeltuinen"
+  },
+  "minzoom": 13,
+  "overpassTags": "leisure=playground",
+  "description": {
+    "nl": "Speeltuinen en speelbossen"
+  },
+  "title": {
+    "render": {
+      "nl": "Speeltuin"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "playground=forest",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Speelbos <i>{name}</i>"
+        }
+      },
+      {
+        "if": "playground=forest",
+        "then": {
+          "nl": "Speelbos"
+        }
+      },
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "Speeltuin <i>{name}</i>"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "nl": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>"
+      },
+      "render": {
+        "nl": "De ondergrond is <b>{surface}</b>"
+      },
+      "freeform": {
+        "key": "surface"
+      },
+      "mappings": [
+        {
+          "if": "surface=grass",
+          "then": "De ondergrond is <b>gras</b>"
+        },
+        {
+          "if": "surface=sand",
+          "then": "De ondergrond is <b>zan</b>"
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": "De ondergrond bestaat uit <b>stoeptegels</b>"
+        },
+        {
+          "if": "surface=asphalt",
+          "then": "De ondergrond is <b>asfalt</b>"
+        },
+        {
+          "if": "surface=concrete",
+          "then": "De ondergrond is <b>beton</b>"
+        }
+      ]
+    },
+    {
+      "render": {
+        "nl": "Is deze speeltuin 's nachts verlicht?"
+      },
+      "mappings": [
+        {
+          "if": "lit=yes",
+          "then": "Deze speeltuin is 's nachts verlicht"
+        },
+        {
+          "if": "lit=no",
+          "then": "Deze speeltuin is 's nachts niet verlicht"
+        }
+      ]
+    },
+    {
+      "render": {
+        "nl": "Toegankelijk vanaf {min_age} jaar oud"
+      },
+      "question": {
+        "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?"
+      },
+      "freeform": {
+        "key": "min_age",
+        "type": "pnat"
+      }
+    },
+    {
+      "render": {
+        "nl": "Toegankelijk tot {max_age}"
+      },
+      "question": {
+        "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?"
+      },
+      "freeform": {
+        "key": "max_age",
+        "type": "pnat"
+      }
+    },
+    {
+      "question": "Wie beheert deze speeltuin?",
+      "render": "Beheer door {operator}",
+      "freeform": {
+        "key": "operator"
+      }
+    },
+    {
+      "question": "Is deze speeltuin vrij toegankelijk voor het publiek?",
+      "mappings": [
+        {
+          "if": "access=",
+          "then": "Vrij toegankelijk voor het publiek",
+          "hideInAnswer": true
+        },
+        {
+          "if": "access=yes",
+          "then": "Vrij toegankelijk voor het publiek"
+        },
+        {
+          "if": "access=customers",
+          "then": "Enkel toegankelijk voor klanten van de bijhorende zaak"
+        },
+        {
+          "if": "access=students",
+          "then": "Vrij toegankelijk voor scholieren van de school"
+        },
+        {
+          "if": "access=private",
+          "then": "Niet vrij toegankelijk"
+        }
+      ]
+    },
+    {
+      "question": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
+      "render": "De bevoegde dienst kan bereikt worden via {email}",
+      "freeform": {
+        "key": "email",
+        "type": "email"
+      }
+    },
+    {
+      "question": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
+      "render": "De bevoegde dienst kan getelefoneerd worden via {phone}",
+      "freeform": {
+        "key": "phone",
+        "type": "phone"
+      }
+    },
+    {
+      "question": {
+        "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?"
+      },
+      "mappings": [
+        {
+          "if": "wheelchair=yes",
+          "then": {
+            "nl": "Geheel toegankelijk voor rolstoelgebruikers"
+          }
+        },
+        {
+          "if": "wheelchair=limited",
+          "then": {
+            "nl": "Beperkt toegankelijk voor rolstoelgebruikers"
+          }
+        },
+        {
+          "if": "wheelchair=no",
+          "then": {
+            "nl": "Niet toegankelijk voor rolstoelgebruikers"
+          }
+        }
+      ]
+    },
+    {
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "render": "{opening_hours_table(opening_hours)}",
+      "question": {
+        "nl": "Op welke uren is deze speeltuin toegankelijk?"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=sunrise-sunset",
+          "then": {
+            "nl": "Van zonsopgang tot zonsondergang"
+          }
+        }
+      ]
+    },
+    "questions",
+    {
+      "render": "{reviews(name, playground)}"
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "https://upload.wikimedia.org/wikipedia/commons/0/00/Map_icons_by_Scott_de_Jonge_-_playground.svg"
+  },
+  "width": {
+    "render": "3"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#0c3"
+  },
+  "presets": [
+    {
+      "tags": [
+        "leisure=playground"
+      ],
+      "title": {
+        "nl": "Speeltuin"
+      }
+    }
+  ],
+  "wayHandling": 2
+}

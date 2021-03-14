@@ -1,0 +1,28 @@
+{
+  "id": "speelplekken",
+  "title": {
+    "nl": "Speelplekken in de Antwerpse Zuidrand"
+  },
+  "shortDescription": {
+    "nl": "Speelplekken in de Antwerpse Zuidrand"
+  },
+  "description": {
+    "nl": "Speelplekken in de Antwerpse Zuidrand. Een project van Provincie Antwerpen, in samenwerking met Createlli, Sportpret en OpenStreetMap België"
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/play_forest/icon.svg",
+  "version": "0",
+  "startLat": 51.16174,
+  "startLon": 4.449462,
+  "startZoom": 13,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "play_forest",
+    "playground"
+  ],
+  "roamingRenderings": []
+}

@@ -54,7 +54,7 @@
           "if": {
             "and": [
               "cyclestreet=",
-              "proposed:cyclestreet=yes"
+              "proposed:cyclestreet=yes",
             ]
           },
           "then": {
