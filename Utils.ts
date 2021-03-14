@@ -183,4 +183,39 @@ export class Utils {
         return dict.get(k);
 
     }
+
+    /**
+     * Calculates the tile bounds of the
+     * @param z
+     * @param x
+     * @param y
+     * @returns [[lat, lon], [lat, lon]]
+     */
+    static tile_bounds(z: number, x: number, y: number): [[number, number], [number, number]] {
+        return [[Utils.tile2lat(y, z), Utils.tile2long(x, z)], [Utils.tile2lat(y + 1, z), Utils.tile2long(x + 1, z)]]
+    }
+
+    /**
+     * Return x, y of the tile containing (lat, lon) on the given zoom level
+     */
+    static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
+        return {x: Utils.lon2tile(lon, z), y: Utils.lat2tile(lat, z), z: z}
+    }
+
+    private static tile2long(x, z) {
+        return (x / Math.pow(2, z) * 360 - 180);
+    }
+
+    private static tile2lat(y, z) {
+        const n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
+        return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))));
+    }
+
+    private static lon2tile(lon, zoom) {
+        return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
+    }
+
+    private static lat2tile(lat, zoom) {
+        return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
+    }
 }
