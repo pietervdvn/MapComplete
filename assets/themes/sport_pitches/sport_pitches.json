@@ -1,0 +1,27 @@
+{
+  "id": "sport_pitches",
+  "title": {
+    "nl": "Sportvelden"
+  },
+  "shortDescription": {
+    "nl": "Deze kaart toont sportvelden"
+  },
+  "description": {
+    "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen"
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/layers/sport_pitch/tabletennis.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    "sport_pitch"
+  ],
+  "roamingRenderings": []
+}

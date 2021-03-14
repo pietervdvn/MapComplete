@@ -12,8 +12,9 @@
   "language": [
     "nl"
   ],
-  "maintainer": "",
+  "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
+  "hideInOverview": true,
   "version": "0",
   "startLat": 51.16174,
   "startLon": 4.449462,
@@ -22,7 +23,8 @@
   "socialImage": "",
   "layers": [
     "play_forest",
-    "playground"
+    "playground",
+    "sport_pitch"
   ],
   "roamingRenderings": []
 }

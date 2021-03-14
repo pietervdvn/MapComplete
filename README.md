@@ -1,3 +1,4 @@
+
 # MapComplete
 
 > Let a thousand flowers bloom
@@ -242,3 +243,5 @@ Urinal icon: https://thenounproject.com/term/urinal/1307984/
 24/7 icon: https://www.vecteezy.com/vector-art/1394992-24-7-service-and-support-icon-set
 
 Translation-icon: https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg
+
+PingPong-table icon: Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.com

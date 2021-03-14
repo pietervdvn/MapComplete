@@ -1,24 +1,31 @@
 {
   "id": "playground",
   "name": {
-    "nl": "Speeltuinen"
+    "nl": "Speeltuinen",
+    "en": "Playgrounds"
   },
   "minzoom": 13,
   "overpassTags": {
-    "and": ["leisure=playground","playground!=forest"]
+    "and": [
+      "leisure=playground",
+      "playground!=forest"
+    ]
   },
   "description": {
-    "nl": "Speeltuinen en speelbossen"
+    "nl": "Speeltuinen",
+    "en": "Playgrounds"
   },
   "title": {
     "render": {
-      "nl": "Speeltuin"
+      "nl": "Speeltuin",
+      "en": "Playground"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "nl": "Speeltuin <i>{name}</i>"
+          "nl": "Speeltuin <i>{name}</i>",
+          "en": "Playground <i>{name}</i>"
         }
       }
     ]
@@ -27,10 +34,12 @@
     "images",
     {
       "question": {
-        "nl": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>"
+        "nl": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
+        "en": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>"
       },
       "render": {
-        "nl": "De ondergrond is <b>{surface}</b>"
+        "nl": "De ondergrond is <b>{surface}</b>",
+        "en": "The surface is <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -38,23 +47,38 @@
       "mappings": [
         {
           "if": "surface=grass",
-          "then": "De ondergrond is <b>gras</b>"
+          "then": {
+            "nl": "De ondergrond is <b>gras</b>",
+            "en": "The surface is <b>grass</b>"
+          }
         },
         {
           "if": "surface=sand",
-          "then": "De ondergrond is <b>zand</b>"
+          "then": {
+            "nl": "De ondergrond is <b>zand</b>",
+            "en": "The surface is <b>sand</b>"
+          }
         },
         {
           "if": "surface=paving_stones",
-          "then": "De ondergrond bestaat uit <b>stoeptegels</b>"
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
+            "en": "The surface is <b>paving stones</b>"
+          }
         },
         {
           "if": "surface=asphalt",
-          "then": "De ondergrond is <b>asfalt</b>"
+          "then": {
+            "nl": "De ondergrond is <b>asfalt</b>",
+            "en": "The surface is <b>asphalt</b>"
+          }
         },
         {
           "if": "surface=concrete",
-          "then": "De ondergrond is <b>beton</b>"
+          "then": {
+            "nl": "De ondergrond is <b>beton</b>",
+            "en": "The surface is <b>concrete</b>"
+          }
         }
       ]
     },

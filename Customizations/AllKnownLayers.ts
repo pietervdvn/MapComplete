@@ -24,6 +24,7 @@ import * as benches_at_pt from "../assets/layers/benches/benches_at_pt.json"
 import * as picnic_tables from "../assets/layers/benches/picnic_tables.json"
 import * as play_forest from "../assets/layers/play_forest/play_forest.json"
 import * as playground from "../assets/layers/playground/playground.json"
+import * as sport_pitch from "../assets/layers/sport_pitch/sport_pitch.json"
 import LayerConfig from "./JSON/LayerConfig";
 import {LayerConfigJson} from "./JSON/LayerConfigJson";
 
@@ -56,7 +57,8 @@ export default class AllKnownLayers {
         benches_at_pt,
         picnic_tables,
         play_forest,
-        playground
+        playground,
+        sport_pitch
     ];
 
     // Must be below the list...
