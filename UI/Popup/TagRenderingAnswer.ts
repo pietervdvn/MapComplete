@@ -44,17 +44,25 @@ export default class TagRenderingAnswer extends UIElement {
 
         // The render value doesn't work well with multi-answers (checkboxes), so we have to check for them manually
         if (this._configuration.multiAnswer) {
+            
+            let freeformKeyUsed = this._configuration.freeform?.key === undefined; // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
             const applicableThens: Translation[] = Utils.NoNull(this._configuration.mappings.map(mapping => {
                 if (mapping.if === undefined) {
                     return mapping.then;
                 }
                 if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
+                    if(!freeformKeyUsed){
+                        if(mapping.if.usedKeys().indexOf(this._configuration.freeform.key) >= 0){
+                            freeformKeyUsed = true;
+                        }
+                    }
                     return mapping.then;
                 }
                 return undefined;
             }))
 
-            if (this._configuration.freeform !== undefined && tags[this._configuration.freeform.key] !== undefined) {
+            if (!freeformKeyUsed
+                && tags[this._configuration.freeform.key] !== undefined) {
                 applicableThens.push(this._configuration.render)
             }
 
