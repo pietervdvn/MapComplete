@@ -101,7 +101,6 @@
           "question": {
             "en": "How much does this place charge?"
           },
-          "mappings": [],
           "freeform": {
             "key": "charge"
           },
@@ -309,11 +308,12 @@
             "type": "text"
           }
         },
+        "questions",
 		"reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/campersites/caravan.svg",
+        "render": "circle:white;./assets/themes/campersites/caravan.svg",
         "mappings": [
           {
             "if": {
@@ -321,9 +321,7 @@
                 "fee=no"
               ]
             },
-            "then": {
-              "en": "./assets/themes/campersites/caravan_green.svg"
-            }
+            "then": "circle:white;./assets/themes/campersites/caravan_green.svg"
           }
         ]
       },
@@ -571,13 +569,13 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/campersites/sanitary_dump_station.svg"
+        "render": "circle:white;./assets/themes/campersites/sanitary_dump_station.svg"
       },
       "width": {
         "render": "8"
       },
       "iconSize": {
-        "render": "40,40,center"
+        "render": "32,32,center"
       },
       "color": {
         "render": "#00f"
