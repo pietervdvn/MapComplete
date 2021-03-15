@@ -167,7 +167,7 @@ def create_theme_breakdown(stats, fileExtra="", cutoff=5):
     return themes
 
 
-def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5, cumulative=True):
+def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5, cumulative=True, sort=True):
     print("Creating graph about " + subject + filenameextra)
     themes = Hist("date")
     dates_per_theme = Hist("theme")
@@ -179,7 +179,10 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
         dates_per_theme.add(th, row[0])
     per_theme_count = list(zip(dates_per_theme.keys(), dates_per_theme.map(len)))
     # PerThemeCount gives the most popular theme first
-    per_theme_count.sort(key=lambda kv: kv[1], reverse=False)
+    if sort == True:
+        per_theme_count.sort(key=lambda kv: kv[1], reverse=False)
+    elif sort is not None:
+        per_theme_count.sort(key=sort)
     values_to_show = []  # (theme name, value to fill between - this is stacked, with the first layer to print last)
     running_totals = None
     other_total = 0
@@ -228,7 +231,6 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
         if cumulative:
             pyplot.fill_between(keys, kv[1], label=msg)
         else:
-            print("Keys:"+str(keys)+" "+str(kv[1]))
             pyplot.plot(keys, kv[1], label=msg)
 
     if cumulative:
@@ -253,7 +255,7 @@ def create_graphs(contents):
     cumulative_changes_per(contents, 3, "theme", cutoff=10, cumulative=False)
     cumulative_changes_per(contents, 1, "contributor", cutoff=15)
     cumulative_changes_per(contents, 2, "language", cutoff=1)
-    cumulative_changes_per(contents, 4, "version number", cutoff=1)
+    cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=lambda kv : kv[0])
     cumulative_changes_per(contents, 8, "host", cutoff=1)
 
     currentYear = datetime.now().year
@@ -266,7 +268,8 @@ def create_graphs(contents):
         cumulative_changes_per(contents_filtered, 3, "theme", extratext, cutoff=5, cumulative=False)
         cumulative_changes_per(contents_filtered, 1, "contributor", extratext, cutoff=10)
         cumulative_changes_per(contents_filtered, 2, "language", extratext, cutoff=1)
-        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, cumulative=False)
+        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, cumulative=False, sort=lambda kv : kv[0])
+        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, sort=lambda kv : kv[0])
         cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
 
 
