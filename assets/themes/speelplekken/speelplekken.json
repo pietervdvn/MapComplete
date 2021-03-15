@@ -22,11 +22,14 @@
   "startZoom": 12,
   "widenFactor": 0.05,
   "socialImage": "",
+  "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     "play_forest",
     "playground",
     "sport_pitch",
-    "slow_roads"
+    "slow_roads",
+    "drinking_water",
+    "toilets"
   ],
   "roamingRenderings": []
 }
