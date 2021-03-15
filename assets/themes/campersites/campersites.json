@@ -27,7 +27,7 @@
       "name": {
         "en": "Camper sites"
       },
-      "minzoom": 12,
+      "minzoom": 10,
       "overpassTags": {
         "and": [
           "tourism=caravan_site",
@@ -354,7 +354,7 @@
       "name": {
         "en": "Sanitary dump stations"
       },
-      "minzoom": 12,
+      "minzoom": 10,
       "overpassTags": {
         "and": [
           "amenity=sanitary_dump_station",
