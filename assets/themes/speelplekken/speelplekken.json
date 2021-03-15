@@ -14,7 +14,7 @@
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
-  "hideInOverview": true,
+  "hideFromOverview": true,
   "lockLocation": true,
   "version": "0",
   "startLat": 51.17174,

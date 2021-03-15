@@ -150,6 +150,10 @@ export default class LayoutConfig {
         }
 
         this.hideFromOverview = json.hideFromOverview ?? false;
+        // @ts-ignore
+        if(json.hideInOverview){
+            throw "The json for "+this.id+" contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
+        }
         this.lockLocation = json.lockLocation ?? false;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
