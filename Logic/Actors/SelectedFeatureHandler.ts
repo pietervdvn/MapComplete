@@ -1,5 +1,4 @@
 import {UIEventSource} from "../UIEventSource";
-import {UIElement} from "../../UI/UIElement";
 import FeatureSource from "../FeatureSource/FeatureSource";
 
 /**
@@ -18,9 +17,7 @@ export default class SelectedFeatureHandler {
         this._featureSource = featureSource;
         const self = this;
         hash.addCallback(h => {
-            console.log("Hash is now ", h)
             if (h === undefined || h === "") {
-                console.error("Deselecting feature...")
                 selectedFeature.setData(undefined);
             }else{
                 self.selectFeature();
@@ -30,7 +27,10 @@ export default class SelectedFeatureHandler {
         featureSource.features.addCallback(_ => self.selectFeature());
 
         selectedFeature.addCallback(feature => {
-            hash.setData(feature?.properties?.id ?? "");
+            const h = feature?.properties?.id;
+            if(h !== undefined){
+                hash.setData(h)
+            }
         })
 
         this.selectFeature();
@@ -51,7 +51,6 @@ export default class SelectedFeatureHandler {
         if(hash === undefined || hash === "" || hash === "#"){
             return;
         }
-        console.log("Selecting a feature from the hash...")
         for (const feature of features) {
             const id = feature.feature?.properties?.id;
             if(id === hash){

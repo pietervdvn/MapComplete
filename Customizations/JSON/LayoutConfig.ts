@@ -31,6 +31,7 @@ export default class LayoutConfig {
     };
 
     public readonly hideFromOverview: boolean;
+    public readonly lockLocation: boolean | [[number,number],[number, number]];
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
     public readonly enableMoreQuests: boolean;
@@ -53,6 +54,9 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
+        if(this.language.length == 0){
+            throw "No languages defined. Define at least one language"
+        }
         if (json.title === undefined) {
             throw "Title not defined in " + this.id;
         }
@@ -62,7 +66,7 @@ export default class LayoutConfig {
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context) : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context+".descriptionTail") : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
         this.startZoom = json.startZoom;
@@ -103,7 +107,7 @@ export default class LayoutConfig {
             return new LayerConfig(layer, `${this.id}.layers[${i}]`)
         });
         
-        // ALl the layers are constructed, let them share tags in piece now!
+        // ALl the layers are constructed, let them share tags in now!
         const roaming : {r, source: LayerConfig}[] = []
         for (const layer of this.layers) {
             roaming.push({r: layer.GetRoamingRenderings(), source:layer});
@@ -116,6 +120,17 @@ export default class LayoutConfig {
                 }
                 layer.AddRoamingRenderings(r.r);
             }
+        }
+        
+        for(const layer of this.layers) {
+            layer.AddRoamingRenderings(
+                {
+                    titleIcons:[],
+                    iconOverlays: [],
+                    tagRenderings: this.roamingRenderings
+                }  
+                
+            );
         }
 
         this.clustering = {
@@ -135,7 +150,7 @@ export default class LayoutConfig {
         }
 
         this.hideFromOverview = json.hideFromOverview ?? false;
-
+        this.lockLocation = json.lockLocation ?? false;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;

@@ -6,18 +6,13 @@
     "fr": "Bancs"
   },
   "minzoom": 14,
-  "overpassTags": {
-    "and": [
-      "amenity=bench"
-    ]
-  },
+  "overpassTags": "amenity=bench",
   "title": {
     "render": {
       "en": "Bench",
       "de": "Sitzbank",
       "fr": "Banc"
-    },
-    "mappings": []
+    }
   },
   "tagRenderings": [
     "images",
@@ -28,16 +23,11 @@
         "fr": "Dossier"
       },
       "freeform": {
-        "key": "backrest",
-        "addExtraTags": []
+        "key": "backrest"
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "backrest=yes"
-            ]
-          },
+          "if": "backrest=yes",
           "then": {
             "en": "Backrest: Yes",
             "de": "Rückenlehne: Ja",
@@ -45,11 +35,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "backrest=no"
-            ]
-          },
+          "if": "backrest=no",
           "then": {
             "en": "Backrest: No",
             "de": "Rückenlehne: Nein",
@@ -73,7 +59,6 @@
         "key": "seats",
         "type": "nat"
       },
-      "mappings": [],
       "question": {
         "en": "How many seats does this bench have?",
         "de": "Wie viele Sitzplätze hat diese Bank?",
@@ -92,11 +77,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "material=wood"
-            ]
-          },
+          "if": "material=wood",
           "then": {
             "en": "Material: wood",
             "de": "Material: Holz",
@@ -104,11 +85,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "material=metal"
-            ]
-          },
+          "if": "material=metal",
           "then": {
             "en": "Material: metal",
             "de": "Material: Metall",
@@ -116,11 +93,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "material=stone"
-            ]
-          },
+          "if": "material=stone",
           "then": {
             "en": "Material: stone",
             "de": "Material: Stein",
@@ -128,11 +101,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "material=concrete"
-            ]
-          },
+          "if": "material=concrete",
           "then": {
             "en": "Material: concrete",
             "de": "Material: Beton",
@@ -140,11 +109,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "material=plastic"
-            ]
-          },
+          "if": "material=plastic",
           "then": {
             "en": "Material: plastic",
             "de": "Material: Kunststoff",
@@ -152,11 +117,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "material=steel"
-            ]
-          },
+          "if": "material=steel",
           "then": {
             "en": "Material: steel",
             "de": "Material: Stahl",
@@ -200,11 +161,7 @@
       },
       "mappings": [
         {
-          "if": {
-            "and": [
-              "colour=brown"
-            ]
-          },
+          "if": "colour=brown",
           "then": {
             "en": "Colour: brown",
             "de": "Farbe: braun",
@@ -212,11 +169,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=green"
-            ]
-          },
+          "if": "colour=green",
           "then": {
             "en": "Colour: green",
             "de": "Farbe: grün",
@@ -224,11 +177,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=gray"
-            ]
-          },
+          "if": "colour=gray",
           "then": {
             "en": "Colour: gray",
             "de": "Farbe: grau",
@@ -236,11 +185,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=white"
-            ]
-          },
+          "if": "colour=white",
           "then": {
             "en": "Colour: white",
             "de": "Farbe: weiß",
@@ -248,11 +193,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=red"
-            ]
-          },
+          "if": "colour=red",
           "then": {
             "en": "Colour: red",
             "de": "Farbe: rot",
@@ -260,11 +201,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=black"
-            ]
-          },
+          "if": "colour=black",
           "then": {
             "en": "Colour: black",
             "de": "Farbe: schwarz",
@@ -272,11 +209,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=blue"
-            ]
-          },
+          "if": "colour=blue",
           "then": {
             "en": "Colour: blue",
             "de": "Farbe: blau",
@@ -284,11 +217,7 @@
           }
         },
         {
-          "if": {
-            "and": [
-              "colour=yellow"
-            ]
-          },
+          "if": "colour=yellow",
           "then": {
             "en": "Colour: yellow",
             "de": "Farbe: gelb",

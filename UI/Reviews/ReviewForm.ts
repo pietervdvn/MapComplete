@@ -56,7 +56,7 @@ export default class ReviewForm extends InputElement<Review> {
                     onSave(this._value.data, () => {
                         self._saveButton = Translations.t.reviews.saved.SetClass("thanks");
                     });
-                })
+                }).SetClass("break-normal")
 
         this._isAffiliated = new CheckBoxes([t.i_am_affiliated])
 

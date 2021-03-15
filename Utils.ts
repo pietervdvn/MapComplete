@@ -8,7 +8,7 @@ export class Utils {
      * This is a workaround and yet another hack
      */
     public static runningFromConsole = false;
-    
+
     public static readonly assets_path = "./assets/svg/";
 
     static EncodeXmlValue(str) {
@@ -46,7 +46,7 @@ export class Utils {
     }
 
     public static Round(i: number) {
-        if(i < 0){
+        if (i < 0) {
             return "-" + Utils.Round(-i);
         }
         const j = "" + Math.floor(i * 10);
@@ -86,8 +86,8 @@ export class Utils {
         }
         return ls;
     }
-    
-    public static NoEmpty(array: string[]): string[]{
+
+    public static NoEmpty(array: string[]): string[] {
         const ls: string[] = [];
         for (const t of array) {
             if (t === "") {
@@ -98,18 +98,18 @@ export class Utils {
         return ls;
     }
 
-    public static EllipsesAfter(str : string, l : number = 100){
-        if(str === undefined){
+    public static EllipsesAfter(str: string, l: number = 100) {
+        if (str === undefined) {
             return undefined;
         }
-        if(str.length <= l){
+        if (str.length <= l) {
             return str;
         }
-        return str.substr(0, l - 3)+"...";
+        return str.substr(0, l - 3) + "...";
     }
-    
-    public static Dedup(arr: string[]):string[]{
-        if(arr === undefined){
+
+    public static Dedup(arr: string[]): string[] {
+        if (arr === undefined) {
             return undefined;
         }
         const newArr = [];
@@ -141,7 +141,7 @@ export class Utils {
     }
 
     // Date will be undefined on failure
-    public static LoadCustomCss(location: string){
+    public static LoadCustomCss(location: string) {
         const head = document.getElementsByTagName('head')[0];
         const link = document.createElement('link');
         link.id = "customCss";
@@ -150,26 +150,72 @@ export class Utils {
         link.href = location;
         link.media = 'all';
         head.appendChild(link);
-        console.log("Added custom layout ",location)
+        console.log("Added custom layout ", location)
     }
-    static Merge(source: any, target: any){
+
+    static Merge(source: any, target: any) {
         target = JSON.parse(JSON.stringify(target));
         source = JSON.parse(JSON.stringify(source));
         for (const key in source) {
             const sourceV = source[key];
             const targetV = target[key]
-            if(typeof sourceV === "object"){
-                if(targetV === undefined){
+            if (typeof sourceV === "object") {
+                if (targetV === undefined) {
                     target[key] = sourceV;
-                }else{
+                } else {
                     Utils.Merge(sourceV, targetV);
                 }
-                
-            }else{
+
+            } else {
                 target[key] = sourceV;
             }
-            
+
         }
         return target;
+    }
+
+    static getOrSetDefault<K, V>(dict: Map<K, V>, k: K, v: () => V) {
+        let found = dict.get(k);
+        if (found !== undefined) {
+            return found;
+        }
+        dict.set(k, v());
+        return dict.get(k);
+
+    }
+
+    /**
+     * Calculates the tile bounds of the
+     * @param z
+     * @param x
+     * @param y
+     * @returns [[lat, lon], [lat, lon]]
+     */
+    static tile_bounds(z: number, x: number, y: number): [[number, number], [number, number]] {
+        return [[Utils.tile2lat(y, z), Utils.tile2long(x, z)], [Utils.tile2lat(y + 1, z), Utils.tile2long(x + 1, z)]]
+    }
+
+    /**
+     * Return x, y of the tile containing (lat, lon) on the given zoom level
+     */
+    static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
+        return {x: Utils.lon2tile(lon, z), y: Utils.lat2tile(lat, z), z: z}
+    }
+
+    private static tile2long(x, z) {
+        return (x / Math.pow(2, z) * 360 - 180);
+    }
+
+    private static tile2lat(y, z) {
+        const n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
+        return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))));
+    }
+
+    private static lon2tile(lon, zoom) {
+        return (Math.floor((lon + 180) / 360 * Math.pow(2, zoom)));
+    }
+
+    private static lat2tile(lat, zoom) {
+        return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
     }
 }

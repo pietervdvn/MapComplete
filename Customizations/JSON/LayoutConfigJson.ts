@@ -158,6 +158,13 @@ export interface LayoutConfigJson {
      */
     hideFromOverview?: boolean;
 
+    /**
+     * If set to true, the basemap will not scroll outside of the area visible on initial zoom.
+     * If set to [[lat0, lon0], [lat1, lon1]], the map will not scroll outside of those bounds.
+     * Off by default, which will enable panning to the entire world
+     */
+    lockLocation?: boolean | [[number, number], [number, number]];
+    
     enableUserBadge?: boolean;
     enableShareScreen?: boolean;
     enableMoreQuests?: boolean;

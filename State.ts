@@ -76,7 +76,7 @@ export default class State {
     /**
      The latest element that was selected
      */
-    public readonly selectedElement = new UIEventSource<any>(undefined)
+    public readonly selectedElement = new UIEventSource<any>(undefined, "Selected element")
 
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;

@@ -11,7 +11,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 export default class LayerControlPanel extends ScrollableFullScreen {
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(LayerControlPanel.GenTitle, LayerControlPanel.GeneratePanel, isShown);
+        super(LayerControlPanel.GenTitle, LayerControlPanel.GeneratePanel, "layers", isShown);
     }
 
     private static GenTitle(): UIElement {

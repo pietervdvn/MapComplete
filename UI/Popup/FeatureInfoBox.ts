@@ -8,6 +8,7 @@ import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
+import {Utils} from "../../Utils";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
     private static featureInfoboxCache: Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
@@ -16,7 +17,10 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
     ) {
-        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),() => FeatureInfoBox.GenerateContent(tags, layerConfig));
+        super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
+            () => FeatureInfoBox.GenerateContent(tags, layerConfig),
+            tags.data.id);
+       
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
         }
@@ -24,18 +28,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     static construct(tags: UIEventSource<any>, layer: LayerConfig): FeatureInfoBox {
-        let innerMap = FeatureInfoBox.featureInfoboxCache.get(layer);
-        if (innerMap === undefined) {
-            innerMap = new Map<UIEventSource<any>, FeatureInfoBox>();
-            FeatureInfoBox.featureInfoboxCache.set(layer, innerMap);
-        }
-
-        let featureInfoBox = innerMap.get(tags);
-        if (featureInfoBox === undefined) {
-            featureInfoBox = new FeatureInfoBox(tags, layer);
-            innerMap.set(tags, featureInfoBox);
-        }
-        return featureInfoBox;
+        let innerMap = Utils.getOrSetDefault(FeatureInfoBox.featureInfoboxCache, layer,() => new Map<UIEventSource<any>, FeatureInfoBox>())
+        return Utils.getOrSetDefault(innerMap, tags, () => new FeatureInfoBox(tags, layer));
     }
 
     private static GenerateTitleBar(tags: UIEventSource<any>,
@@ -56,32 +50,25 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): UIElement {
-
-
         let questionBox: UIElement = undefined;
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
 
         let questionBoxIsUsed = false;
-        const renderings = layerConfig.tagRenderings.map(tr => {
+        const renderings = layerConfig.tagRenderings.map((tr,i) => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;
                 return questionBox;
             }
-            return new EditableTagRendering(tags, tr);
+            return  new EditableTagRendering(tags, tr);
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-        const tail = new Combine([]).SetClass("only-on-mobile");
 
-        return new Combine([
-                ...renderings,
-                tail.SetClass("featureinfobox-tail")
-            ]
-        ).SetClass("block")
+        return new Combine(renderings).SetClass("block")
 
     }
 

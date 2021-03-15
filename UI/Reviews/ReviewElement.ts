@@ -1,5 +1,6 @@
 /**
- * Shows the reviews and scoring base on mangrove.reviesw
+ * Shows the reviews and scoring base on mangrove.reviews
+ * The middle element is some other component shown in the middle, e.g. the review input element
  */
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Review} from "../../Logic/Web/Review";
@@ -11,7 +12,7 @@ import SingleReview from "./SingleReview";
 export default class ReviewElement extends UIElement {
     private readonly _reviews: UIEventSource<Review[]>;
     private readonly _subject: string;
-    private _middleElement: UIElement;
+    private readonly _middleElement: UIElement;
 
     constructor(subject: string, reviews: UIEventSource<Review[]>, middleElement: UIElement) {
         super(reviews);
@@ -33,7 +34,7 @@ export default class ReviewElement extends UIElement {
         const avg = (revs.map(review => review.rating).reduce((a, b) => a + b, 0) / revs.length);
         elements.push(
             new Combine([
-                SingleReview.GenStars(avg).SetClass("stars flex"),
+               SingleReview.GenStars(avg),
                 `<a target="_blank" href='https://mangrove.reviews/search?sub=${encodeURIComponent(this._subject)}'>`,
                revs.length === 1 ? Translations.t.reviews.title_singular :
                    Translations.t.reviews.title
@@ -42,7 +43,7 @@ export default class ReviewElement extends UIElement {
                 "</a>"
             ])
 
-                .SetClass("review-title"));
+                .SetClass("font-2xl flex justify-between items-center pl-2 pr-2"));
         
         elements.push(this._middleElement);
 
@@ -55,7 +56,7 @@ export default class ReviewElement extends UIElement {
 
                 .SetClass("review-attribution"))
 
-        return new Combine(elements).SetClass("review").Render();
+        return new Combine(elements).SetClass("block").Render();
     }
 
 }

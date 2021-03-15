@@ -22,7 +22,7 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: {
         funcName: string,
-        constr: ((state: State,tagSource: UIEventSource<any>, argument: string[]) => UIElement),
+        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => UIElement),
         docs: string,
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
@@ -32,7 +32,7 @@ export default class SpecialVisualizations {
             funcName: "all_tags",
             docs: "Prints all key-value pairs of the object - used for debugging",
             args: [],
-            constr: ((state: State,tags: UIEventSource<any>) => {
+            constr: ((state: State, tags: UIEventSource<any>) => {
                 return new VariableUiElement(tags.map(tags => {
                     const parts = [];
                     for (const key in tags) {
@@ -56,10 +56,10 @@ export default class SpecialVisualizations {
                         defaultValue: "true",
                         doc: "Also include images given via 'Wikidata', 'wikimedia_commons' and 'mapillary"
                     }],
-                constr: (state: State,tags, args) => {
+                constr: (state: State, tags, args) => {
                     const imagePrefix = args[0];
                     const loadSpecial = args[1].toLowerCase() === "true";
-                    const searcher : UIEventSource<{ key: string, url: string }[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
+                    const searcher: UIEventSource<{ key: string, url: string }[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
 
                     return new ImageCarousel(searcher, tags);
                 }
@@ -73,25 +73,28 @@ export default class SpecialVisualizations {
                     doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
                     defaultValue: "image"
                 }],
-                constr: (state: State,tags, args) => {
+                constr: (state: State, tags, args) => {
                     return new ImageUploadFlow(tags, args[0])
                 }
             },
 
             {
                 funcName: "reviews",
-                docs: "Adds an overview of the mangrove-reviews of this object. IMPORTANT: the _name_ of the object should be defined for this to work!",
+                docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
+                example: "<b>{reviews()}<b> for a vanilla review, <b>{reviews(name, play_forest)}</b> to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used",
                 args: [{
-                    name: "subject",
-                    doc: "The identifier used for this value; by default the name of the reviewed object"
+                    name: "subjectKey",
+                    defaultValue: "name",
+                    doc: "The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>"
+                }, {
+                    name: "fallback",
+                    doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value"
                 }],
-                constr: (state: State,tags, args) => {
+                constr: (state: State, tags, args) => {
                     const tgs = tags.data;
-                    let subject = tgs.name ?? "";
-                    if (args[0] !== undefined && args[0] !== "") {
-                        subject = args[0];
-                    }
-                    if (subject === "") {
+                    const key = args[0] ?? "name"
+                    let subject = tgs[key] ?? args[1];
+                    if (subject === undefined || subject === "") {
                         return Translations.t.reviews.name_required;
                     }
                     const mangrove = MangroveReviews.Get(Number(tgs._lon), Number(tgs._lat),
@@ -111,7 +114,7 @@ export default class SpecialVisualizations {
                     defaultValue: "opening_hours",
                     doc: "The tagkey from which the table is constructed."
                 }],
-                constr: (state: State,tagSource: UIEventSource<any>, args) => {
+                constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     let keyname = args[0];
                     if (keyname === undefined || keyname === "") {
                         keyname = keyname ?? "opening_hours"
@@ -132,7 +135,7 @@ export default class SpecialVisualizations {
                 }, {
                     name: "path", doc: "The path (or shorthand) that should be returned"
                 }],
-                constr: (state: State,tagSource: UIEventSource<any>, args) => {
+                constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     const url = args[0];
                     const shorthands = args[1];
                     const neededValue = args[2];
@@ -147,10 +150,10 @@ export default class SpecialVisualizations {
                 args: [
                     {
                         name: "url",
-                        doc: "The url to share (defualt: current URL)",
+                        doc: "The url to share (default: current URL)",
                     }
                 ],
-                constr: (state: State,tagSource: UIEventSource<any>, args) => {
+                constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     if (window.navigator.share) {
                         const title = state.layoutToUse.data.title.txt;
                         let name = tagSource.data.name;
@@ -204,7 +207,9 @@ export default class SpecialVisualizations {
 
 
         return new Combine([
+                "<h3>Special tag renderings</h3>",
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                "General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
 
             ]

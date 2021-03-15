@@ -1,4 +1,4 @@
-import {And, TagsFilter} from "../../Logic/Tags";
+import {And, TagsFilter, TagUtils} from "../../Logic/Tags";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {FromJSON} from "./FromJSON";
@@ -15,6 +15,8 @@ export default class TagRenderingConfig {
     readonly render?: Translation;
     readonly question?: Translation;
     readonly condition?: TagsFilter;
+    
+    readonly configuration_warnings : string[] = []
 
     readonly freeform?: {
         readonly  key: string,
@@ -45,13 +47,13 @@ export default class TagRenderingConfig {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
         if (typeof json === "string") {
-            this.render = Translations.T(json);
+            this.render = Translations.T(json, context+".render");
             this.multiAnswer = false;
             return;
         }
 
-        this.render = Translations.T(json.render);
-        this.question = Translations.T(json.question);
+        this.render = Translations.T(json.render, context+".render");
+        this.question = Translations.T(json.question, context+".question");
         this.roaming = json.roaming ?? false;
         const condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (this.roaming && conditionIfRoaming !== undefined) {
@@ -66,14 +68,26 @@ export default class TagRenderingConfig {
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? []
             }
+            if(this.freeform.key === undefined || this.freeform.key === ""){
+                throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
+            }
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
                 throw `Freeform.key ${this.freeform.key} is an invalid type`
+            }
+            if(this.freeform.addExtraTags){
+                const usedKeys = new And(this.freeform.addExtraTags).usedKeys();
+                if(usedKeys.indexOf(this.freeform.key) >= 0){
+                    throw `The freeform key ${this.freeform.key} will be overwritten by one of the extra tags, as they use the same key too. This is in ${context}`;
+                }
             }
         }
 
         this.multiAnswer = json.multiAnswer ?? false
         if (json.mappings) {
+            
+            
             this.mappings = json.mappings.map((mapping, i) => {
+
 
                 if (mapping.then === undefined) {
                     throw `${context}.mapping[${i}]: Invalid mapping: if without body`
@@ -87,14 +101,15 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = FromJSON.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
+                const mappingContext = `${context}.mapping[${i}]`
                 const mp = {
-                    if: FromJSON.Tag(mapping.if, `${context}.mapping[${i}].if`),
-                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${context}.mapping[${i}].ifnot`) : undefined),
-                    then: Translations.T(mapping.then),
+                    if: FromJSON.Tag(mapping.if, `${mappingContext}.if`),
+                    ifnot: (mapping.ifnot !== undefined ? FromJSON.Tag(mapping.ifnot, `${mappingContext}.ifnot`) : undefined),
+                    then: Translations.T(mapping.then, `{mappingContext}.then`),
                     hideInAnswer: hideInAnswer
                 };
                 if (this.question) {
-                    if (hideInAnswer !== true && !mp.if.isUsableAsAnswer()) {
+                    if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {
                         throw `${context}.mapping[${i}].if: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
                     }
 
@@ -113,6 +128,36 @@ export default class TagRenderingConfig {
 
         if (this.freeform && this.render === undefined) {
             throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
+        }
+        
+        if(this.render && this.question && this.freeform === undefined){
+            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}`
+        }
+        
+        if(!json.multiAnswer && this.mappings !== undefined && this.question !== undefined){
+            let keys = []
+            for (let i = 0; i < this.mappings.length; i++){
+                const mapping = this.mappings[i];
+                if(mapping.if === undefined){
+                    throw `${context}.mappings[${i}].if is undefined`
+                }
+                keys.push(...mapping.if.usedKeys())
+            }
+            keys = Utils.Dedup(keys)
+            for (let i = 0; i < this.mappings.length; i++){
+                const mapping = this.mappings[i];
+                if(mapping.hideInAnswer){
+                    continue
+                }
+                
+                const usedKeys = mapping.if.usedKeys();
+                for (const expectedKey of keys) {
+                    if(usedKeys.indexOf(expectedKey) < 0){
+                        const msg = `${context}.mappings[${i}]: This mapping only defines values for ${usedKeys.join(', ')}, but it should also give a value for ${expectedKey}`
+                        this.configuration_warnings.push(msg)
+                    }
+                }
+            }
         }
 
         if (this.question !== undefined && json.multiAnswer) {
@@ -139,6 +184,40 @@ export default class TagRenderingConfig {
         }
     }
 
+
+    /**
+     * Returns true if it is known or not shown, false if the question should be asked
+     * @constructor
+     */
+    public IsKnown(tags: any): boolean {
+        if (this.condition &&
+            !this.condition.matchesProperties(tags)) {
+            // Filtered away by the condition
+            return true;
+        }
+        if(this.multiAnswer){
+            for (const m of this.mappings) {
+                if(TagUtils.MatchesMultiAnswer(m.if, tags)){
+                    return true;
+                }
+            }
+
+            const free = this.freeform?.key
+            if(free !== undefined){
+                return tags[free] !== undefined
+            }
+            return false
+
+        }
+
+        if (this.GetRenderValue(tags) !== undefined) {
+            // This value is known and can be rendered
+            return true;
+        }
+
+        return false;
+    }
+    
     /**
      * Gets the correct rendering value (or undefined if not known)
      * @constructor

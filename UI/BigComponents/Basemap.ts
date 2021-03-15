@@ -75,8 +75,6 @@ export class Basemap {
         this.map.on("contextmenu", function (e) {
             // @ts-ignore
             lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
-            // @ts-ignore
-            e.preventDefault();
         });
 
 

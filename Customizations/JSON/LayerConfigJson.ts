@@ -140,8 +140,20 @@ export interface LayerConfigJson {
      * NB: if no presets are defined, the popup to add new points doesn't show up at all
      */
     presets?: {
+        /**
+         * The title - shown on the 'add-new'-button.
+         */
         title: string | any,
+        /**
+         * The tags to add. It determines the icon too
+         */
         tags: string[],
+        /**
+         * The _first sentence_ of the description is shown on the button of the `add` menu.
+         * The full description is shown in the confirmation dialog.
+         * 
+         * (The first sentence is until the first '.'-character in the description)
+         */
         description?: string | any,
     }[],
 

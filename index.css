@@ -19,7 +19,7 @@
         .z-above-controls{
             z-index: 10001
         }
-
+        
     }
 
   .btn {
@@ -110,7 +110,15 @@ a {
 
 .subtle-background {
     background: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
 }
+
+.subtle-lighter {
+    color: var(--subtle-detail-color-light-contrast);
+}
+
+.border-attention-catch{ border: 5px solid var(--catch-detail-color);}
+
 .slick-prev:before, .slick-next:before {
     /*Slideshow workaround*/
     color:black !important;

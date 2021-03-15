@@ -87,6 +87,9 @@ export default class MangroveReviews {
         this._name = name;
         this._mangroveIdentity = identity;
         this._dryRun = dryRun;
+        if(dryRun){
+            console.warn("Mangrove reviews will _not_ be saved as dryrun is specified")
+        }
 
     }
 
@@ -170,7 +173,6 @@ export default class MangroveReviews {
             console.warn("DRYRUNNING mangrove reviews: ", payload);
             if (callback) {
                 if (callback) {
-                    console.log("Calling callback")
                     callback();
                 }
                 this._reviews.data.push(r);
@@ -180,7 +182,6 @@ export default class MangroveReviews {
         } else {
             mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(() => {
                 if (callback) {
-                    console.log("Calling callback")
                     callback();
                 }
                 this._reviews.data.push(r);

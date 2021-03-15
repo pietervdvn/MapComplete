@@ -125,7 +125,7 @@ export default class MetaTagging {
                             tags["_isOpen:oldvalue"] = tags.opening_hours
                             window.setTimeout(
                                 () => {
-                                    console.log("Updating the _isOpen tag for ", tags.id);
+                                    console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
                                     updateTags();
                                 },
                                 timeout
