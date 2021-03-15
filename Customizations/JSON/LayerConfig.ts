@@ -48,16 +48,16 @@ export default class LayerConfig {
     }[];
 
     tagRenderings: TagRenderingConfig [];
-    
-    private readonly configuration_warnings : string[] = []
+
+    private readonly configuration_warnings: string[] = []
 
     constructor(json: LayerConfigJson,
                 context?: string) {
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
-        this.name = Translations.T(json.name, context+".name");
-        this.description = Translations.T(json.description, context+".description");
+        this.name = Translations.T(json.name, context + ".name");
+        this.description = Translations.T(json.description, context + ".description");
         this.overpassTags = FromJSON.Tag(json.overpassTags, context + ".overpasstags");
         this.doNotDownload = json.doNotDownload ?? false,
             this.passAllFeatures = json.passAllFeatures ?? false;
@@ -176,10 +176,18 @@ export default class LayerConfig {
         iconOverlays: { "if": TagsFilter, then: TagRenderingConfig, badge: boolean }[]
 
     }): LayerConfig {
-        this.tagRenderings.push(...addAll.tagRenderings);
+
+        let insertionPoint = this.tagRenderings.map(tr => tr.IsQuestionBoxElement()).indexOf(true)
+        if (insertionPoint < 0) {
+            // No 'questions' defined - we just add them all to the end
+            insertionPoint = this.tagRenderings.length;
+        }
+        this.tagRenderings.splice(insertionPoint, 0, ...addAll.tagRenderings);
+
+
         this.iconOverlays.push(...addAll.iconOverlays);
         for (const icon of addAll.titleIcons) {
-            this.titleIcons.splice(0,0, icon);
+            this.titleIcons.splice(0, 0, icon);
         }
         return this;
     }

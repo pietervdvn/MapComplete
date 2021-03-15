@@ -218,6 +218,10 @@ export default class TagRenderingConfig {
         return false;
     }
     
+    public IsQuestionBoxElement(): boolean{
+        return this.question === null && this.condition === null;
+    }
+    
     /**
      * Gets the correct rendering value (or undefined if not known)
      * @constructor
