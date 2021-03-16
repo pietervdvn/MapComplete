@@ -60,6 +60,13 @@
           }
         },
         {
+          "if": "surface=woodchips",
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>houtsnippers</b>",
+            "en": "The surface consist of <b>woodchips</b>"
+          }
+        },
+        {
           "if": "surface=paving_stones",
           "then": {
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
@@ -100,25 +107,34 @@
     },
     {
       "question": {
-        "nl": "Is deze speeltuin 's nachts verlicht?"
+        "nl": "Is deze speeltuin 's nachts verlicht?",
+        "en": "Is this playground lit at night?"
       },
       "mappings": [
         {
           "if": "lit=yes",
-          "then": "Deze speeltuin is 's nachts verlicht"
+          "then": {
+            "nl": "Deze speeltuin is 's nachts verlicht",
+            "en": "This playground is lit at night"
+          }
         },
         {
           "if": "lit=no",
-          "then": "Deze speeltuin is 's nachts niet verlicht"
+          "then": {
+            "nl": "Deze speeltuin is 's nachts niet verlicht",
+            "en": "This playground is not lit at night"
+          }
         }
       ]
     },
     {
       "render": {
-        "nl": "Toegankelijk vanaf {min_age} jaar oud"
+        "nl": "Toegankelijk vanaf {min_age} jaar oud",
+        "en": "Accessible to kids older then {min_age} years"
       },
       "question": {
-        "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?"
+        "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
+        "en": "What is the minimum age required to access this playground?"
       },
       "freeform": {
         "key": "min_age",
@@ -127,10 +143,12 @@
     },
     {
       "render": {
-        "nl": "Toegankelijk tot {max_age}"
+        "nl": "Toegankelijk tot {max_age}",
+        "en": "Accessible to kids of at most {max_age}"
       },
       "question": {
-        "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?"
+        "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
+        "en": "What is the maximum age allowed to access this playground?"
       },
       "freeform": {
         "key": "max_age",
@@ -138,49 +156,85 @@
       }
     },
     {
-      "question": "Wie beheert deze speeltuin?",
-      "render": "Beheer door {operator}",
+      "question": {
+        "nl": "Wie beheert deze speeltuin?",
+        "en": "Who operates this playground?"
+      },
+      "render": {
+        "nl": "Beheer door {operator}",
+        "en": "Operated by {operator}"
+      },
       "freeform": {
         "key": "operator"
       }
     },
     {
-      "question": "Is deze speeltuin vrij toegankelijk voor het publiek?",
+      "question": {
+        "nl": "Is deze speeltuin vrij toegankelijk voor het publiek?",
+        "en": "Is this playground accessible to the general public?"
+      },
       "mappings": [
         {
           "if": "access=",
-          "then": "Vrij toegankelijk voor het publiek",
+          "then": {
+            "en": "Accessible to the general public",
+            "nl": "Vrij toegankelijk voor het publiek"
+          },
           "hideInAnswer": true
         },
         {
           "if": "access=yes",
-          "then": "Vrij toegankelijk voor het publiek"
+          "then": {
+            "en": "Accessible to the general public",
+            "nl": "Vrij toegankelijk voor het publiek"
+          }
         },
         {
           "if": "access=customers",
-          "then": "Enkel toegankelijk voor klanten van de bijhorende zaak"
+          "then": {
+            "en": "Only accessible for clients of the operating business",
+            "nl": "Enkel toegankelijk voor klanten van de bijhorende zaak"
+          }
         },
         {
           "if": "access=students",
-          "then": "Vrij toegankelijk voor scholieren van de school"
+          "then": {
+            "en": "Only accessible to studants of the school",
+            "nl": "Vrij toegankelijk voor scholieren van de school"
+          }
         },
         {
           "if": "access=private",
-          "then": "Niet vrij toegankelijk"
+          "then": {
+            "en": "Not accessible",
+            "nl": "Niet vrij toegankelijk"
+          }
         }
       ]
     },
     {
-      "question": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
-      "render": "De bevoegde dienst kan bereikt worden via {email}",
+      "question": {
+        "nl": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
+        "en": "What is the email address of the playground maintainer?"
+      },
+      "render": {
+        "nl": "De bevoegde dienst kan bereikt worden via <a href='mailto:{email}'>{email}</a>",
+        "en": "<a href='mailto:{email}'>{email}</a>"
+      },
       "freeform": {
         "key": "email",
         "type": "email"
       }
     },
     {
-      "question": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
-      "render": "De bevoegde dienst kan getelefoneerd worden via {phone}",
+      "question": {
+        "nl": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
+        "en": "What is the phone number of the playground maintainer?"
+      },
+      "render": {
+        "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
+        "en": "<a href='tel:{phone}'>{phone}</a>"
+      },
       "freeform": {
         "key": "phone",
         "type": "phone"
