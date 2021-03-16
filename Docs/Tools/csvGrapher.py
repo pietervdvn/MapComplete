@@ -343,8 +343,8 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         create_graphs(stats)
-        create_per_theme_graphs(stats)
-        create_per_contributor_graphs(stats, 50)
+        # create_per_theme_graphs(stats)
+        # create_per_contributor_graphs(stats, 50)
     print("All done!")
 
 
