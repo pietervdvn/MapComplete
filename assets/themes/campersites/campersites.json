@@ -249,7 +249,7 @@
         },	
 		{
           "render": {
-            "en": "Official website: {website}"
+            "en": "Official website: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
