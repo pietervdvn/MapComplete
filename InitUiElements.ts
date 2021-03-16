@@ -257,7 +257,7 @@ export class InitUiElements {
                 isOpened.setData(false);
             }
         })
-        isOpened.setData(Hash.hash.data === undefined)
+        isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "")
 
 
     }
