@@ -1,7 +1,9 @@
 import csv
+import string
 from datetime import datetime
 
 from matplotlib import pyplot
+import re
 
 
 def counts(lst):
@@ -107,7 +109,6 @@ def cumulative_users(stats):
 def pyplot_init():
     pyplot.figure(figsize=(14, 8), dpi=200)
     pyplot.xticks(rotation='vertical')
-    pyplot.tight_layout()
 
 
 def create_usercount_graphs(stats, extra_text=""):
@@ -122,7 +123,7 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot.title("Unique contributors" + extra_text + ' with MapComplete (' + str(total) + ' contributors)')
     pyplot.ylabel("Number of unique contributors")
     pyplot.xlabel("Date")
-    pyplot.savefig("Contributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w', bbox_inches='tight')
+    pyplot.savefig("Contributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w')
 
     pyplot_init()
     pyplot.plot(dates, cumul_uniq, label='Cumulative unique contributors')
@@ -130,8 +131,7 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot.title("Cumulative unique contributors" + extra_text + " with MapComplete - " + str(total) + " contributors")
     pyplot.ylabel("Number of unique contributors")
     pyplot.xlabel("Date")
-    pyplot.savefig("CumulativeContributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w',
-                   bbox_inches='tight')
+    pyplot.savefig("CumulativeContributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w')
 
 
 def create_theme_breakdown(stats, fileExtra="", cutoff=5):
@@ -248,14 +248,20 @@ def contents_where(contents, index, starts_with, invert=False):
             yield row
 
 
+def sortable_user_number(kv):
+    str = kv[0]
+    ls = list(map(lambda str : "0"+str if len(str) < 2 else str, re.findall("[0-9]+", str)))
+    return ".".join(ls)
+
+
 def create_graphs(contents):
+    cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=sortable_user_number)
     create_usercount_graphs(contents)
     create_theme_breakdown(contents)
     cumulative_changes_per(contents, 3, "theme", cutoff=10)
     cumulative_changes_per(contents, 3, "theme", cutoff=10, cumulative=False)
     cumulative_changes_per(contents, 1, "contributor", cutoff=15)
     cumulative_changes_per(contents, 2, "language", cutoff=1)
-    cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=lambda kv : kv[0])
     cumulative_changes_per(contents, 8, "host", cutoff=1)
 
     currentYear = datetime.now().year
@@ -268,9 +274,35 @@ def create_graphs(contents):
         cumulative_changes_per(contents_filtered, 3, "theme", extratext, cutoff=5, cumulative=False)
         cumulative_changes_per(contents_filtered, 1, "contributor", extratext, cutoff=10)
         cumulative_changes_per(contents_filtered, 2, "language", extratext, cutoff=1)
-        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, cumulative=False, sort=lambda kv : kv[0])
-        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, sort=lambda kv : kv[0])
+        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, cumulative=False,
+                               sort=sortable_user_number)
+        cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, sort=sortable_user_number)
         cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
+
+
+def create_per_theme_graphs(contents):
+    all_themes = set(map(lambda row: row[3], contents))
+    for theme in all_themes:
+        filtered = list(contents_where(contents, 3, theme))
+        if len(filtered) < 10:
+            # less then 10 changesets - we do not map it
+            continue
+        contributors = set(map(lambda row: row[1], filtered))
+        if len(contributors) < 2:
+            continue  # one contributor makes a boring graph
+        cumulative_changes_per(filtered, 1, "contributor", " for theme " + theme, cutoff=1)
+
+
+def create_per_contributor_graphs(contents, least_needed_changesets):
+    all_contributors = set(map(lambda row: row[1], contents))
+    for contrib in all_contributors:
+        filtered = list(contents_where(contents, 1, contrib))
+        if len(filtered) < least_needed_changesets:
+            continue
+        themes = set(map(lambda row: row[3], filtered))
+        if len(themes) < 2:
+            continue  # one theme makes a boring graph
+        cumulative_changes_per(filtered, 3, "theme", " for contributor " + contrib, cutoff=1)
 
 
 theme_remappings = {
@@ -282,10 +314,10 @@ theme_remappings = {
     "pomp": "cyclofix",
     "wiki:user:joost_schouppe/campersite": "campersite",
     "wiki-user-joost_schouppe-geveltuintjes": "geveltuintjes",
-    "wiki-user-joost_schouppe-campersite": "campersites",
-    "wiki-User-joost_schouppe-campersite": "campersites",
+    "wiki-user-joost_schouppe-campersite": "campersite",
+    "wiki-User-joost_schouppe-campersite": "campersite",
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
-    "wiki:User:joost_schouppe/campersite": "campersites",
+    "wiki:User:joost_schouppe/campersite": "campersite",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
 }
 
@@ -300,7 +332,8 @@ def clean_input(contents):
         if theme in theme_remappings:
             theme = theme_remappings[theme]
         row[3] = theme
-        row[4] = row[4].strip().strip("\"")[0:len("MapComplete x.x.x")]
+        row[4] = row[4].strip().strip("\"")[len("MapComplete "):]
+        row[4] = re.findall("[0-9]*\.[0-9]*\.[0-9]*", row[4])[0]
         yield [data.strip().strip("\"") for data in row]
 
 
@@ -310,6 +343,8 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         create_graphs(stats)
+        create_per_theme_graphs(stats)
+        create_per_contributor_graphs(stats, 50)
     print("All done!")
 
 
