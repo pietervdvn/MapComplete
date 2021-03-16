@@ -1,5 +1,6 @@
 // We HAVE to mark this while importing
 import {Utils} from "../Utils";
+
 Utils.runningFromConsole = true;
 const sharp = require('sharp');
 
@@ -114,6 +115,7 @@ async function createIcon(iconPath: string, size: number, layout: LayoutConfig) 
 async function createManifest(layout: LayoutConfig, relativePath: string) {
     const name = layout.id;
 
+    Translation.forcedLanguage = "en"
     const icons = [];
 
     let icon = layout.icon;
@@ -194,14 +196,21 @@ async function createLandingPage(layout: LayoutConfig) {
         writeFileSync(icon, layout.icon);
     }
 
+
+    let themeSpecific = [
+        `<title>${ogTitle}</title>`,
+        `<link rel="manifest" href="${enc(layout.id)}.webmanifest">`,
+        og,
+        customCss,
+        `<link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">`,
+        `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`,
+        `<link rel="shortcut icon" href="${icon}">`,
+        `<link rel="apple-touch-icon" href="${icon}">`,
+    ].join("\n")
+
     let output = template
-        .replace("./index.manifest", `${enc(layout.id)}.webmanifest`)
-        .replace("<!-- $$$OG-META -->", og)
-        .replace(/<title>.+?<\/title>/, `<title>${ogTitle}</title>`)
         .replace("Loading MapComplete, hang on...", `Loading MapComplete theme <i>${ogTitle}</i>...`)
-        .replace("<!-- $$$CUSTOM-CSS -->", customCss)
-        .replace(`<link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">`,
-            `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`);
+        .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific);
 
     try {
         output = output
@@ -245,7 +254,7 @@ for (const layoutName in all) {
     });
 }
 
- createManifest(new LayoutConfig({
+createManifest(new LayoutConfig({
     icon: "./assets/svg/mapcomplete_logo.svg",
     id: "index",
     language: "en",
@@ -256,11 +265,11 @@ for (const layoutName in all) {
     startZoom: 0,
     title: "MapComplete",
     version: Constants.vNumber,
-    description:"MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
-}),"").then(manifObj => {
-     const manif = JSON.stringify(manifObj, undefined, 2);
-     writeFileSync("index.manifest",manif)
- })
+    description: "MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
+}), "").then(manifObj => {
+    const manif = JSON.stringify(manifObj, undefined, 2);
+    writeFileSync("index.manifest", manif)
+})
 
 console.log("Counting all translations")
 Translations.CountTranslations();
