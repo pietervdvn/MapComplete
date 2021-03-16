@@ -75,29 +75,6 @@ function validate(layout: LayoutConfig) {
 
 }
 
-function generateWikiEntry(layout: LayoutConfig) {
-    if (layout.hideFromOverview) {
-        return "";
-    }
-    const languages = layout.language.map(ln => `{{#language:${ln}|en}}`).join(", ")
-    let auth = "Yes";
-    if (layout.maintainer !== "" && layout.maintainer !== "MapComplete") {
-        auth = `Yes, by ${layout.maintainer};`
-    }
-    return `{{service_item
-|name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
-|region= Worldwide
-|lang= ${languages}
-|descr= A MapComplete theme: ${Translations.W(layout.description)
-        .InnerRender()
-        .replace("<a href='", "[[")
-        .replace(/'>.*<\/a>/, "]]")
-    }
-|material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
-|image= MapComplete_Screenshot.png
-|genre= POI, editor, ${layout.id}
-}}`
-}
 
 const alreadyWritten = []
 
@@ -245,11 +222,6 @@ if (!existsSync(generatedDir)) {
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
 const all = AllKnownLayouts.allSets;
 
-let wikiPage = "{|class=\"wikitable sortable\"\n" +
-    "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
-    "|-";
-
-
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
@@ -270,16 +242,9 @@ for (const layoutName in all) {
     // Create a landing page for the given theme
     createLandingPage(layout).then(landing => {
         writeFile(enc(layout.id) + ".html", landing, err)
-        wikiPage += "\n" + generateWikiEntry(layout);
     });
 }
-wikiPage += "\n|}"
 
-writeFile(generatedDir + "/wikiIndex", wikiPage, (err) => {
-    if (err !== null) {
-        console.log("Could not save wikiindex", err);
-    }
-});
  createManifest(new LayoutConfig({
     icon: "./assets/svg/mapcomplete_logo.svg",
     id: "index",

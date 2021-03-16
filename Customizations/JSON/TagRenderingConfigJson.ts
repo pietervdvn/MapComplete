@@ -4,6 +4,8 @@ export interface TagRenderingConfigJson {
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
+     * 
+     * Note that this is a HTML-interpreted value, so you can add links as e.g. <a href='{website}'>{website}</a>
      */
     render?: string | any,
 
