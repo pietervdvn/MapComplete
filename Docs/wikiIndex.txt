@@ -1,0 +1,202 @@
+{|class="wikitable sortable"
+! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image
+|-
+{{service_item
+|name= [https://mapcomplete.osm.be/personal personal]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:gl|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: Create a personal theme based on all the available layers of all themes
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, personal
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/cyclofix cyclofix]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:gl|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to [[https://cyclofix.osm.be/]].
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, cyclofix
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/aed aed]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: On this map, one can find and mark nearby defibrillators
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, aed
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/bookcases bookcases]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, bookcases
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/toilets toilets]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: A map of public toilets
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, toilets
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/artworks artworks]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: Welcome to Open Artwork Map, a map of statues, busts, grafittis, ... all over the world
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, artworks
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/ghostbikes ghostbikes]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, ghostbikes
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/shops shops]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: On this map, one can mark basic information about shops, add opening hours and phone numbers
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, shops
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/drinking_water drinking_water]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: On this map, publicly accessible drinkging water spots are shown and can be easily added
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, drinking_water
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/nature nature]
+|region= Worldwide
+|lang= {{#language:nl|en}}
+|descr= A MapComplete theme: Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, nature
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/fietsstraten fietsstraten]
+|region= Worldwide
+|lang= {{#language:nl|en}}
+|descr= A MapComplete theme: Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, fietsstraten
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/bicyclelib bicyclelib]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, bicyclelib
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/maps maps]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, maps
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/fritures fritures]
+|region= Worldwide
+|lang= {{#language:nl|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: Op deze kaart vind je je favoriete frituur!
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, fritures
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/benches benches]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}
+|descr= A MapComplete theme: This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes, by Florian Edelmann;]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, benches
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/charging_stations charging_stations]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: On this open map, one can find and mark information about charging stations
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, charging_stations
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/surveillance surveillance]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: On this open map, you can find surveillance cameras.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, surveillance
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/climbing climbing]
+|region= Worldwide
+|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes, by Christian Neumann <christian@utopicode.de>;]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, climbing
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/playgrounds playgrounds]
+|region= Worldwide
+|lang= {{#language:nl|en}}
+|descr= A MapComplete theme: Op deze kaart vind je speelplekken zoals speeltuinen, speelbossen en sportterreinen
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, playgrounds
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/trees trees]
+|region= Worldwide
+|lang= {{#language:nl|en}}, {{#language:en|en}}
+|descr= A MapComplete theme: Map all the trees!
+|material= {{yes|[https://mapcomplete.osm.be/ Yes, by Midgard;]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, trees
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/campersite campersite]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.
+|material= {{yes|[https://mapcomplete.osm.be/ Yes, by joost schouppe;]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, campersite
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/sport_pitches sport_pitches]
+|region= Worldwide
+|lang= {{#language:nl|en}}
+|descr= A MapComplete theme: Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, sport_pitches
+}}
+|}
