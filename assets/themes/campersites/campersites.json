@@ -85,12 +85,17 @@
             {
               "if": {
                 "and": [
-                  "fee=no"
+                  "fee=no","charge="
                 ]
               },
               "then": {
                 "en": "Can be used for free"
               }
+			},
+			{
+			  "if": "fee=no", 
+			  "then": "Can be used for free", 
+			  "hideInAnswer":true
             }
           ]
         },
