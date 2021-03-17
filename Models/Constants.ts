@@ -2,17 +2,17 @@ import { Utils } from "../Utils";
 
 export default class Constants {
     
-    public static vNumber = "0.5.13";
+    public static vNumber = "0.5.14";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         addNewPointsUnlock: 0,
         moreScreenUnlock: 1,
-        personalLayoutUnlock: 5,
-        tagsVisibleAt: 20,
+        personalLayoutUnlock: 15,
+        tagsVisibleAt: 25,
         mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
-        themeGeneratorReadOnlyUnlock: 200,
+        themeGeneratorReadOnlyUnlock: 100,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19)
