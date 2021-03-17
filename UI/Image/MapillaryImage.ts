@@ -11,7 +11,7 @@ import Attribution from "./Attribution";
 export class MapillaryImage extends UIElement {
 
     /***
-     * Dictionary from url to alreayd known license info
+     * Dictionary from url to already known license info
      */
     private static allLicenseInfos: any = {};
     private readonly _imageMeta: UIEventSource<LicenseInfo>;
@@ -19,11 +19,11 @@ export class MapillaryImage extends UIElement {
 
     constructor(source: string) {
         super()
-        
-        if(source.toLowerCase().startsWith("https://www.mapillary.com/map/im/")){
+
+        if (source.toLowerCase().startsWith("https://www.mapillary.com/map/im/")) {
             source = source.substring("https://www.mapillary.com/map/im/".length);
         }
-        
+
         this._imageLocation = source;
         if (MapillaryImage.allLicenseInfos[source] !== undefined) {
             this._imageMeta = MapillaryImage.allLicenseInfos[source];
@@ -42,20 +42,18 @@ export class MapillaryImage extends UIElement {
 
     InnerRender(): string {
         const url = `https://images.mapillary.com/${this._imageLocation}/thumb-640.jpg?client_id=TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2`;
-        const image =new SimpleImageElement(new UIEventSource<string>(url))
-
-        if (!this._imageMeta?.data ) {
+        const image = new SimpleImageElement(new UIEventSource<string>(url))
+        
+        const meta = this._imageMeta?.data;
+        if (!meta) {
             return image.Render();
         }
-        
-        const meta = this._imageMeta.data;
 
-  
         return new Combine([
             image,
             new Attribution(meta.artist, meta.license, Svg.mapillary_svg())
         ]).SetClass("relative block").Render();
-           
+
     }
 
 

@@ -3,8 +3,9 @@ import {LicenseInfo, Wikimedia} from "../../Logic/Web/Wikimedia";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Svg from "../../Svg";
 import Link from "../Base/Link";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Combine from "../Base/Combine";
+import {SimpleImageElement} from "./SimpleImageElement";
+import Attribution from "./Attribution";
 
 
 export class WikimediaImage extends UIElement {
@@ -30,25 +31,27 @@ export class WikimediaImage extends UIElement {
 
         this.ListenTo(this._imageMeta);
 
-      
+
     }
 
     InnerRender(): string {
-        let url = Wikimedia.ImageNameToUrl(this._imageLocation, 500, 400);
-        url = url.replace(/'/g, '%27');
+        const url = Wikimedia.ImageNameToUrl(this._imageLocation, 500, 400)
+            .replace(/'/g, '%27');
+        const image = new SimpleImageElement(new UIEventSource<string>(url))
+        const meta = this._imageMeta?.data;
 
-        const wikimediaLink = new Link(Svg.wikimedia_commons_white_img,
+        if (!meta) {
+            return image.Render();
+        }
+        new Link(Svg.wikimedia_commons_white_img,
             `https://commons.wikimedia.org/wiki/${this._imageLocation}`, true)
             .SetStyle("width:2em;height: 2em");
+        
+        return new Combine([
+            image,
+            new Attribution(meta.artist, meta.license, Svg.wikimedia_commons_white_svg())
+        ]).SetClass("relative block").Render()
 
-        const attribution = new FixedUiElement(this._imageMeta.data.artist ?? "").SetClass("attribution-author");
-        const license = new FixedUiElement(this._imageMeta.data.licenseShortName ?? "").SetClass("license");
-        const image = "<img src='" + url + "' " + "alt='" + this._imageMeta.data.description + "' >";
-
-        return "<div class='imgWithAttr'>" +
-            image +
-            new Combine([wikimediaLink, attribution]).SetClass("attribution").Render() +
-            "</div>";
     }
 
 
