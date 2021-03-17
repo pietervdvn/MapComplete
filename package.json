@@ -30,6 +30,7 @@
   "author": "pietervdvn",
   "license": "GPL",
   "dependencies": {
+    "@babel/preset-env": "7.13.8",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@types/jquery": "^3.5.5",
     "@types/leaflet-markercluster": "^1.0.3",
@@ -52,7 +53,7 @@
     "opening_hours": "^3.5.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.4",
-    "parcel": "^1.12.4",
+    "parcel": "^1.2.4",
     "postcss": "^7.0.35",
     "sharp": "^0.27.0",
     "slick-carousel": "^1.8.1",
