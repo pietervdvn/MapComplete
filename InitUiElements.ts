@@ -257,9 +257,7 @@ export class InitUiElements {
                 isOpened.setData(false);
             }
         })
-        isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "")
-
-
+        isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "" || Hash.hash.data == "welcome")
     }
 
     private static InitLayerSelection() {
