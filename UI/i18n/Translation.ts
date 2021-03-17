@@ -5,7 +5,7 @@ import {Utils} from "../../Utils";
 
 export class Translation extends UIElement {
 
-    private static forcedLanguage = undefined;
+    public static forcedLanguage = undefined;
 
     public readonly translations: object
 
