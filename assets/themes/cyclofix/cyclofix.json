@@ -22,14 +22,14 @@
     "de"
   ],
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/cyclofix/logo.svg",
+  "icon": "assets/themes/cyclofix/logo.svg",
   "version": "0",
   "startLat": 0,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.05,
-  "socialImage": "./assets/themes/cyclofix/logo.svg",
+  "socialImage": "assets/themes/cyclofix/logo.svg",
   "layers": [
     "bike_cafes",
     "bike_shops",

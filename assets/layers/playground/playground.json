@@ -242,25 +242,29 @@
     },
     {
       "question": {
-        "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?"
+        "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
+        "en": "Is this playground accessible to wheelchair users?"
       },
       "mappings": [
         {
           "if": "wheelchair=yes",
           "then": {
-            "nl": "Geheel toegankelijk voor rolstoelgebruikers"
+            "nl": "Geheel toegankelijk voor rolstoelgebruikers",
+            "en": "Completely accessible for wheelchair users"
           }
         },
         {
           "if": "wheelchair=limited",
           "then": {
-            "nl": "Beperkt toegankelijk voor rolstoelgebruikers"
+            "nl": "Beperkt toegankelijk voor rolstoelgebruikers",
+            "en": "Limited accessibility for wheelchair users"
           }
         },
         {
           "if": "wheelchair=no",
           "then": {
-            "nl": "Niet toegankelijk voor rolstoelgebruikers"
+            "nl": "Niet toegankelijk voor rolstoelgebruikers",
+            "en": "Not accessible for wheelchair users"
           }
         }
       ]
@@ -272,13 +276,15 @@
       },
       "render": "{opening_hours_table(opening_hours)}",
       "question": {
-        "nl": "Op welke uren is deze speeltuin toegankelijk?"
+        "nl": "Op welke uren is deze speeltuin toegankelijk?",
+        "en": "When is this playground accessible?"
       },
       "mappings": [
         {
           "if": "opening_hours=sunrise-sunset",
           "then": {
-            "nl": "Van zonsopgang tot zonsondergang"
+            "nl": "Van zonsopgang tot zonsondergang",
+            "en": "Accessible from sunrise till sunset"
           }
         }
       ]

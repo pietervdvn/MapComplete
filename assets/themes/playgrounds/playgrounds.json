@@ -1,16 +1,20 @@
 {
   "id": "playgrounds",
   "title": {
-    "nl": "Speelplekken"
+    "nl": "Speelplekken",
+    "en": "Playgrounds"
   },
   "shortDescription": {
-    "nl": "Speelplekken en sportplekken"
+    "nl": "Een kaart met speeltuinen",
+    "en": "A map with playgrounds"
   },
   "description": {
-    "nl": "Op deze kaart vind je speelplekken zoals speeltuinen, speelbossen en sportterreinen"
+    "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
+    "en": "On this map, you find playgrounds and can add more information"
   },
   "language": [
-    "nl"
+    "nl",
+    "en"
   ],
   "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",
