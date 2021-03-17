@@ -1,8 +1,6 @@
 // We HAVE to mark this while importing
 import {Utils} from "../Utils";
-
 Utils.runningFromConsole = true;
-const sharp = require('sharp');
 
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
@@ -11,6 +9,8 @@ import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import Constants from "../Models/Constants";
+
+const sharp = require('sharp');
 
 
 function enc(str: string): string {
@@ -150,7 +150,7 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
     const ogTitle = Translations.W(layout.title).InnerRender();
     const ogDescr = Translations.W(layout.description ?? "").InnerRender();
 
-    const manif = {
+    return {
         name: name,
         short_name: ogTitle,
         start_url: `${relativePath}/${layout.id.toLowerCase()}.html`,
@@ -159,13 +159,12 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
         description: ogDescr,
         orientation: "portrait-primary, landscape-primary",
         icons: icons
-    }
-    return manif;
+    };
 }
 
 const template = readFileSync("index.html", "utf8");
 
-async function createLandingPage(layout: LayoutConfig) {
+async function createLandingPage(layout: LayoutConfig, manifest) {
 
     Locale.language.setData(layout.language[0]);
 
@@ -195,8 +194,15 @@ async function createLandingPage(layout: LayoutConfig) {
         icon = `./assets/generated/${layout.id}_icon.svg`
         writeFileSync(icon, layout.icon);
     }
-
-
+    
+    const apple_icons = []
+    for (const icon of manifest.icons) {
+        if(icon.type !== "image/png"){
+            continue;
+        }
+        apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="${icon.src}">`)
+    }
+    
     let themeSpecific = [
         `<title>${ogTitle}</title>`,
         `<link rel="manifest" href="${enc(layout.id)}.webmanifest">`,
@@ -204,8 +210,7 @@ async function createLandingPage(layout: LayoutConfig) {
         customCss,
         `<link rel="icon" href="assets/svg/add.svg" sizes="any" type="image/svg+xml">`,
         `<link rel="icon" href="${icon}" sizes="any" type="image/svg+xml">`,
-        `<link rel="shortcut icon" href="${icon}">`,
-        `<link rel="apple-touch-icon" href="${icon}">`,
+        ...apple_icons
     ].join("\n")
 
     let output = template
@@ -247,11 +252,13 @@ for (const layoutName in all) {
         const manif = JSON.stringify(manifObj, undefined, 2);
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
         writeFile(manifestLocation, manif, err);
+        
+        // Create a landing page for the given theme
+        createLandingPage(layout, manifObj).then(landing => {
+            writeFile(enc(layout.id) + ".html", landing, err)
+        });
     })
-    // Create a landing page for the given theme
-    createLandingPage(layout).then(landing => {
-        writeFile(enc(layout.id) + ".html", landing, err)
-    });
+   
 }
 
 createManifest(new LayoutConfig({
