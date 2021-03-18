@@ -141,7 +141,7 @@ export default class SimpleAddUI extends UIElement {
             new Combine([
                 "<b>",
                 Translations.t.general.add.confirmButton.Subs({category: preset.name}),
-                "</b>"]));
+                "</b>"])).SetClass("break-words");
         confirmButton.onClick(this.CreatePoint(preset.tags));
 
         if (!this._confirmPreset.data.layerToAddTo.isDisplayed.data) {
@@ -183,10 +183,10 @@ export default class SimpleAddUI extends UIElement {
                 let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.Render()).SetClass("simple-add-ui-icon");
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
-                let tagInfo = "";
+                let tagInfo = undefined;
                 if (csCount > Constants.userJourney.tagsVisibleAt) {
-                    tagInfo = preset.tags.map(t => t.asHumanString(false, true)).join("&");
-                    tagInfo = `<br/><span class='subtle'>${tagInfo}</span>`
+                    const presets = preset.tags.map(t => new Combine ([t.asHumanString(false, true), " "]).SetClass("subtle break-words") )
+                    tagInfo = new Combine(presets)
                 }
                 const button: UIElement =
                     new SubtleButton(
@@ -196,6 +196,7 @@ export default class SimpleAddUI extends UIElement {
                             preset.title,
                             "</b>",
                             preset.description !== undefined ? new Combine(["<br/>", preset.description.FirstSentence()]) : "",
+                            "<br/>",
                             tagInfo
                         ])
                     ).onClick(

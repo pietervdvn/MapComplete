@@ -74,7 +74,8 @@ export interface LayoutConfigJson {
 
     /**
      * Link to a 'social image' which is included as og:image-tag on official themes.
-     * Usefull to share the theme on social media
+     * Useful to share the theme on social media.
+     * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information
      */
     socialImage?: string;
 
