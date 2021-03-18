@@ -298,9 +298,11 @@ def create_per_contributor_graphs(contents, least_needed_changesets):
     for contrib in all_contributors:
         filtered = list(contents_where(contents, 1, contrib))
         if len(filtered) < least_needed_changesets:
+            print("Skipping "+contrib+" - too little changesets");
             continue
         themes = set(map(lambda row: row[3], filtered))
         if len(themes) < 2:
+            print("Skipping "+contrib+" - only one theme edited");
             continue  # one theme makes a boring graph
         cumulative_changes_per(filtered, 3, "theme", " for contributor " + contrib, cutoff=1)
 
@@ -344,7 +346,7 @@ def main():
         print("Found " + str(len(stats)) + " changesets")
         create_graphs(stats)
         # create_per_theme_graphs(stats)
-        # create_per_contributor_graphs(stats, 50)
+        # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
 
