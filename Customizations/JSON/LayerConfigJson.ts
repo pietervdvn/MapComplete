@@ -25,13 +25,6 @@ export interface LayerConfigJson {
 
 
     /**
-     * The tags to load from overpass. Either a simple 'key=value'-string, otherwise an advanced configuration
-     * DEPRECATED
-     * shorthand for source: {osmTags: "key=value"}
-     */
-    //overpassTags: AndOrTagConfigJson | string;
-
-    /**
      * This determines where the data for the layer is fetched.
      * There are some options:
      * 
@@ -41,6 +34,10 @@ export interface LayerConfigJson {
      * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_. 
      *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
      *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
+     *      
+     *      
+     * NOTE: the previous format was 'overpassTags: AndOrTagCOnfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
+     *  While still supported, this is considered deprecated
      */
     source: {osmTags: AndOrTagConfigJson | string} | {geoJsonSource: string} | {overpassScript: string}
 

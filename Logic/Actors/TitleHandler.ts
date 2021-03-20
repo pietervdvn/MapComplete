@@ -39,7 +39,7 @@ class TitleElement extends UIElement {
              if(layer.title === undefined){
                  continue;
              }
-            if (layer.overpassTags.matchesProperties(properties)) {
+            if (layer.source.osmTags.matchesProperties(properties)) {
 
                 const title = new TagRenderingAnswer(
                     this._allElementsStorage.getEventSourceFor(feature),

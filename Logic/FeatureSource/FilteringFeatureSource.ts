@@ -47,7 +47,7 @@ export default class FilteringFeatureSource implements FeatureSource {
                     if (!FilteringFeatureSource.showLayer(toCheck, location)) {
                         continue;
                     }
-                    if (toCheck.layerDef.overpassTags.matchesProperties(f.feature.properties)) {
+                    if (toCheck.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         return true;
                     }
                 }

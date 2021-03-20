@@ -102,7 +102,7 @@ export default class LayerPanel extends UIElement {
                     "Consider that we want to show 'Nature Reserves' and 'Forests'. Now, ofter, there are pieces of forest mapped _in_ the nature reserve.<br/>" +
                     "Now, showing those pieces of forest overlapping with the nature reserve truly clutters the map and is very user-unfriendly.<br/>" +
                     "The features are placed layer by layer. If a feature below a feature on this layer overlaps for more then 'x'-percent, the underlying feature is hidden."),
-                setting(new AndOrTagInput(), "overpassTags", "Overpass query",
+                setting(new AndOrTagInput(), ["osmSource","overpassTags"], "Overpass query",
                     "The tags of the objects to load from overpass"),
 
             ],
