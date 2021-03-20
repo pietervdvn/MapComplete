@@ -30,7 +30,7 @@ export default class FeatureDuplicatorPerLayer implements FeatureSource {
                 
                 let foundALayer = false;
                 for (const layer of layers.data) {
-                    if (layer.layerDef.overpassTags.matchesProperties(f.feature.properties)) {
+                    if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         foundALayer = true;
                         if (layer.layerDef.passAllFeatures) {
 

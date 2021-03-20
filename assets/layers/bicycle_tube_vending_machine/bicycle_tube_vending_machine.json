@@ -37,11 +37,13 @@
     }
   ],
   "iconSize": "50,50,bottom",
-  "overpassTags": {
-    "and": [
-      "amenity=vending_machine",
-      "vending~.*bicycle_tube.*"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending~.*bicycle_tube.*"
+      ]
+    }
   },
   "minzoom": 13,
   "wayHandling": 2,
@@ -104,7 +106,7 @@
       "mappings": [
         {
           "if": "payment:coins=yes",
-          "ifnot":  "payment:coins=no",
+          "ifnot": "payment:coins=no",
           "then": "Payment with coins is possible"
         },
         {

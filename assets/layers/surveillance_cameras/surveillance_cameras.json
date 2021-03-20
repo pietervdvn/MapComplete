@@ -5,17 +5,19 @@
     "nl": "Bewakingscamera's"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "and": [
-      "man_made=surveillance",
-      {
-        "or": [
-          "surveillance:type=camera",
-          "surveillance:type=ALPR",
-          "surveillance:type=ANPR"
-        ]
-      }
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "man_made=surveillance",
+        {
+          "or": [
+            "surveillance:type=camera",
+            "surveillance:type=ALPR",
+            "surveillance:type=ANPR"
+          ]
+        }
+      ]
+    }
   },
   "title": {
     "render": {

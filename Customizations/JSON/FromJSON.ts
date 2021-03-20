@@ -9,7 +9,6 @@ export class FromJSON {
         const tag = Utils.SplitFirst(json, "=");
         return new Tag(tag[0], tag[1]);
     }
-
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         try{
             return this.TagUnsafe(json, context);

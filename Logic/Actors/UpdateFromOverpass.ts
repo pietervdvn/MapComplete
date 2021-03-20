@@ -5,6 +5,7 @@ import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {Overpass} from "../Osm/Overpass";
 import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
+import {Utils} from "../../Utils";
 
 
 export default class UpdateFromOverpass implements FeatureSource {
@@ -71,11 +72,12 @@ export default class UpdateFromOverpass implements FeatureSource {
         this.update();
     }
 
-    private GetFilter() {
-        const filters: TagsFilter[] = [];
+    private GetFilter(): Overpass {
+        let filters: TagsFilter[] = [];
+        let extraScripts: string[] = [];
         for (const layer of this._layoutToUse.data.layers) {
             if (typeof (layer) === "string") {
-                continue;
+                throw "A layer was not expanded!"
             }
             if (this._location.data.zoom < layer.minzoom) {
                 continue;
@@ -102,20 +104,21 @@ export default class UpdateFromOverpass implements FeatureSource {
             if (previouslyLoaded) {
                 continue;
             }
-            filters.push(layer.overpassTags);
+            if (layer.source.overpassScript !== undefined) {
+                extraScripts.push(layer.source.overpassScript)
+            } else {
+                filters.push(layer.source.osmTags);
+            }
         }
-        if (filters.length === 0) {
+        filters = Utils.NoNull(filters)
+        extraScripts = Utils.NoNull(extraScripts)
+        if (filters.length + extraScripts.length === 0) {
             return undefined;
         }
-        return new Or(filters);
+        return new Overpass(new Or(filters), extraScripts);
     }
 
     private update(): void {
-        const filter = this.GetFilter();
-        if (filter === undefined) {
-            return;
-        }
-
         if (this.runningQuery.data) {
             console.log("Still running a query, skip");
             return;
@@ -133,9 +136,12 @@ export default class UpdateFromOverpass implements FeatureSource {
 
         const z = Math.floor(this._location.data.zoom ?? 0);
 
-        this.runningQuery.setData(true);
         const self = this;
-        const overpass = new Overpass(filter);
+        const overpass = this.GetFilter();
+        if (overpass === undefined) {
+            return;
+        }
+        this.runningQuery.setData(true);
         overpass.queryGeoJson(queryBounds,
             function (data, date) {
                 self._previousBounds.get(z).push(queryBounds);
@@ -165,9 +171,10 @@ export default class UpdateFromOverpass implements FeatureSource {
                                 self.timeout.setData(0);
                                 self.update()
                             }
-                        }, 1000 
+                        }, 1000
                     )
                 }
+
                 countDown();
 
             }

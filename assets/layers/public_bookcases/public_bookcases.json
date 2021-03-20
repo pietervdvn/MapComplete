@@ -12,7 +12,9 @@
     "de": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
     "fr": "Une armoire ou une boite contenant des livres en libre accès"
   },
-  "overpassTags": "amenity=public_bookcase",
+  "source": {
+    "osmTags": "amenity=public_bookcase"
+  },
   "minzoom": 12,
   "wayHandling": 2,
   "title": {
@@ -256,9 +258,12 @@
             "de": "Teil des Netzwerks 'Little Free Library'",
             "fr": "Fait partie du réseau 'Little Free Library'"
           },
-          "if":{
-            "and": ["brand=Little Free Library","nobrand="]
-          } 
+          "if": {
+            "and": [
+              "brand=Little Free Library",
+              "nobrand="
+            ]
+          }
         },
         {
           "if": {

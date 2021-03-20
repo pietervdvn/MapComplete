@@ -5,11 +5,13 @@
     "nl": "Kaarten"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "or": [
-      "tourism=map",
-      "information=map"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "tourism=map",
+        "information=map"
+      ]
+    }
   },
   "title": {
     "render": {

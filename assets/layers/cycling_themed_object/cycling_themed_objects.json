@@ -7,14 +7,16 @@
     "de": "Mit Fahrrad zusammenhängendes Objekt"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "or": [
-      "theme~cycling|bicycle",
-      "sport=cycling",
-      "association~cycling|bicycle",
-      "ngo~cycling|bicycle",
-      "club~bicycle|cycling"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "theme~cycling|bicycle",
+        "sport=cycling",
+        "association~cycling|bicycle",
+        "ngo~cycling|bicycle",
+        "club~bicycle|cycling"
+      ]
+    }
   },
   "title": {
     "render": {

@@ -4,10 +4,12 @@
     "nl": "Vogelkijkhutten"
   },
   "minzoom": 14,
-  "overpassTags": {
-    "and": [
-      "leisure=bird_hide"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "leisure=bird_hide"
+      ]
+    }
   },
   "title": {
     "render": {

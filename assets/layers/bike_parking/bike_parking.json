@@ -8,10 +8,12 @@
     "de": "Fahrrad-Parkplätze"
   },
   "minzoom": 17,
-  "overpassTags": {
-    "and": [
-      "amenity=bicycle_parking"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=bicycle_parking"
+      ]
+    }
   },
   "icon": {
     "render": {

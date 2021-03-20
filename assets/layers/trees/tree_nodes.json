@@ -5,8 +5,12 @@
     "en": "Tree"
   },
   "minzoom": 14,
-  "overpassTags": {
-    "and": ["natural=tree"]
+  "source": {
+    "osmTags": {
+      "and": [
+        "natural=tree"
+      ]
+    }
   },
   "title": {
     "render": {
@@ -38,7 +42,9 @@
       "mappings": [
         {
           "if": {
-            "and": ["height~^[0-9.]+$"]
+            "and": [
+              "height~^[0-9.]+$"
+            ]
           },
           "then": {
             "nl": "Hoogte: {height}&nbsp;m",
@@ -55,7 +61,9 @@
       "mappings": [
         {
           "if": {
-            "and": ["leaf_type=broadleaved"]
+            "and": [
+              "leaf_type=broadleaved"
+            ]
           },
           "then": {
             "nl": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Loofboom",
@@ -64,7 +72,9 @@
         },
         {
           "if": {
-            "and": ["leaf_type=needleleaved"]
+            "and": [
+              "leaf_type=needleleaved"
+            ]
           },
           "then": {
             "nl": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Naaldboom",
@@ -73,7 +83,9 @@
         },
         {
           "if": {
-            "and": ["leaf_type=leafless"]
+            "and": [
+              "leaf_type=leafless"
+            ]
           },
           "then": {
             "nl": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanent bladloos",
@@ -91,7 +103,9 @@
       "mappings": [
         {
           "if": {
-            "and": ["denotation=landmark"]
+            "and": [
+              "denotation=landmark"
+            ]
           },
           "then": {
             "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
@@ -100,7 +114,9 @@
         },
         {
           "if": {
-            "and": ["denotation=natural_monument"]
+            "and": [
+              "denotation=natural_monument"
+            ]
           },
           "then": {
             "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
@@ -109,7 +125,9 @@
         },
         {
           "if": {
-            "and": ["denotation=agricultural"]
+            "and": [
+              "denotation=agricultural"
+            ]
           },
           "then": {
             "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
@@ -118,7 +136,9 @@
         },
         {
           "if": {
-            "and": ["denotation=park"]
+            "and": [
+              "denotation=park"
+            ]
           },
           "then": {
             "nl": "De boom staat in een park of dergelijke (begraafplaats, schoolterrein, …).",
@@ -127,7 +147,9 @@
         },
         {
           "if": {
-            "and": ["denotation=garden"]
+            "and": [
+              "denotation=garden"
+            ]
           },
           "then": {
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
@@ -136,7 +158,9 @@
         },
         {
           "if": {
-            "and": ["denotation=avenue"]
+            "and": [
+              "denotation=avenue"
+            ]
           },
           "then": {
             "nl": "Dit is een laanboom.",
@@ -145,7 +169,9 @@
         },
         {
           "if": {
-            "and": ["denotation=urban"]
+            "and": [
+              "denotation=urban"
+            ]
           },
           "then": {
             "nl": "De boom staat in een woonkern.",
@@ -154,7 +180,9 @@
         },
         {
           "if": {
-            "and": ["denotation=none"]
+            "and": [
+              "denotation=none"
+            ]
           },
           "then": {
             "nl": "De boom staat buiten een woonkern.",
@@ -171,7 +199,9 @@
       "mappings": [
         {
           "if": {
-            "and": ["leaf_cycle=deciduous"]
+            "and": [
+              "leaf_cycle=deciduous"
+            ]
           },
           "then": {
             "nl": "Bladverliezend: de boom is een periode van het jaar kaal.",
@@ -180,7 +210,9 @@
         },
         {
           "if": {
-            "and": ["leaf_cycle=evergreen"]
+            "and": [
+              "leaf_cycle=evergreen"
+            ]
           },
           "then": {
             "nl": "Groenblijvend.",
@@ -189,7 +221,9 @@
         }
       ],
       "condition": {
-        "and": ["leaf_type!~^leafless$"]
+        "and": [
+          "leaf_type!~^leafless$"
+        ]
       }
     },
     {
@@ -351,13 +385,17 @@
     "mappings": [
       {
         "if": {
-          "and": ["leaf_type=broadleaved"]
+          "and": [
+            "leaf_type=broadleaved"
+          ]
         },
         "then": "circle:#ffffff;./assets/themes/trees/broadleaved.svg"
       },
       {
         "if": {
-          "and": ["leaf_type=needleleaved"]
+          "and": [
+            "leaf_type=needleleaved"
+          ]
         },
         "then": "circle:#ffffff;./assets/themes/trees/needleleaved.svg"
       }

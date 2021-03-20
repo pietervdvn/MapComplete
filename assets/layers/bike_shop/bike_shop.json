@@ -8,41 +8,43 @@
     "de": "Fahrradwerkstatt/geschäft"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "#": "We select all bicycle shops, sport shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
-    "or": [
-      "shop=bicycle",
-      {
-        "#": "A bicycle rental with a network is something such as villo, bluebike, ... We don't want them",
-        "and": [
-          "amenity=bicycle_rental",
-          "network="
-        ]
-      },
-      {
-        "#": "if sport is defined and is not bicycle, it is retrackted; if bicycle retail/repair is marked as 'no', it is retracted too.",
-        "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
-        "and": [
-          "shop=sports",
-          "service:bicycle:retail!=no",
-          "service:bicycle:repair!=no",
-          {
-            "or": [
-              "sport=bicycle",
-              "sport=cycling",
-              "sport="
-            ]
-          }
-        ]
-      },
-      {
-        "#": "Any shop with any bicycle service",
-        "and": [
-          "shop~*",
-          "service:bicycle:.*~~.*"
-        ]
-      }
-    ]
+  "source": {
+    "osmTags": {
+      "#": "We select all bicycle shops, sport shops (but we try to weed out non-bicycle related shops), and any shop with a bicycle related tag",
+      "or": [
+        "shop=bicycle",
+        {
+          "#": "A bicycle rental with a network is something such as villo, bluebike, ... We don't want them",
+          "and": [
+            "amenity=bicycle_rental",
+            "network="
+          ]
+        },
+        {
+          "#": "if sport is defined and is not bicycle, it is retrackted; if bicycle retail/repair is marked as 'no', it is retracted too.",
+          "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
+          "and": [
+            "shop=sports",
+            "service:bicycle:retail!=no",
+            "service:bicycle:repair!=no",
+            {
+              "or": [
+                "sport=bicycle",
+                "sport=cycling",
+                "sport="
+              ]
+            }
+          ]
+        },
+        {
+          "#": "Any shop with any bicycle service",
+          "and": [
+            "shop~*",
+            "service:bicycle:.*~~.*"
+          ]
+        }
+      ]
+    }
   },
   "title": {
     "render": {
@@ -575,7 +577,7 @@
       "badge": true
     },
     {
-     "if": "service:bicycle:pump=yes",
+      "if": "service:bicycle:pump=yes",
       "then": "circle:#e2783d;./assets/layers/bike_repair_station/pump.svg",
       "badge": true
     }

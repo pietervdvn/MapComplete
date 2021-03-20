@@ -23,12 +23,14 @@
     "render": "./assets/layers/bike_cleaning/bike_cleaning.svg"
   },
   "iconSize": "50,50,bottom",
-  "overpassTags": {
-    "or": [
-      "service:bicycle:cleaning=yes",
-      "service:bicycle:cleaning=diy",
-      "amenity=bicycle_wash"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "service:bicycle:cleaning=yes",
+        "service:bicycle:cleaning=diy",
+        "amenity=bicycle_wash"
+      ]
+    }
   },
   "minzoom": 13,
   "wayHandling": 1,

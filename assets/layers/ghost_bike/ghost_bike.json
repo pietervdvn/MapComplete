@@ -5,7 +5,9 @@
     "nl": "Witte Fietsen",
     "de": "Geisterrad"
   },
-  "overpassTags": "memorial=ghost_bike",
+  "source": {
+    "osmTags": "memorial=ghost_bike"
+  },
   "minzoom": 0,
   "title": {
     "render": {
@@ -43,7 +45,7 @@
     }
   ],
   "tagRenderings": [
-    { 
+    {
       "render": {
         "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
         "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",

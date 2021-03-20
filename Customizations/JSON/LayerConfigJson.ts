@@ -26,8 +26,23 @@ export interface LayerConfigJson {
 
     /**
      * The tags to load from overpass. Either a simple 'key=value'-string, otherwise an advanced configuration
+     * DEPRECATED
+     * shorthand for source: {osmTags: "key=value"}
      */
-    overpassTags: AndOrTagConfigJson | string;
+    //overpassTags: AndOrTagConfigJson | string;
+
+    /**
+     * This determines where the data for the layer is fetched.
+     * There are some options:
+     * 
+     * source: {osmTags: "key=value"} will fetch all objects with given tags from OSM. Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
+     * source: {geoJsonSource: "https://my.source.net/some-geo-data.geojson"} to fetch a geojson from a third party source
+     * 
+     * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_. 
+     *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
+     *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
+     */
+    source: {osmTags: AndOrTagConfigJson | string} | {geoJsonSource: string} | {overpassScript: string}
 
     /**
      * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers. 

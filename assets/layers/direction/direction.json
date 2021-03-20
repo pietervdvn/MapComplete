@@ -4,11 +4,13 @@
     "en": "Direction visualization"
   },
   "minzoom": 16,
-  "overpassTags": {
-    "or": [
-      "camera:direction~*",
-      "direction~*"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "camera:direction~*",
+        "direction~*"
+      ]
+    }
   },
   "doNotDownload": true,
   "passAllFeatures": true,

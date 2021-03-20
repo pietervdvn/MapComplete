@@ -5,10 +5,12 @@
     "en": "Information boards"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "and": [
-      "information=board"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "information=board"
+      ]
+    }
   },
   "title": {
     "render": {
@@ -16,7 +18,9 @@
       "en": "Information board"
     }
   },
-  "tagRenderings": [ "images"],
+  "tagRenderings": [
+    "images"
+  ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/information_board/board.svg"

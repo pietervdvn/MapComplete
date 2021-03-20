@@ -15,6 +15,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {UIElement} from "../../UI/UIElement";
 import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
+import SourceConfig from "./SourceConfig";
 
 export default class LayerConfig {
 
@@ -25,7 +26,7 @@ export default class LayerConfig {
     id: string;
     name: Translation
     description: Translation;
-    overpassTags: TagsFilter;
+    source: SourceConfig;
     doNotDownload: boolean;
     passAllFeatures: boolean;
     minzoom: number;
@@ -49,8 +50,6 @@ export default class LayerConfig {
 
     tagRenderings: TagRenderingConfig [];
 
-    private readonly configuration_warnings: string[] = []
-
     constructor(json: LayerConfigJson,
                 context?: string) {
         context = context + "." + json.id;
@@ -58,9 +57,39 @@ export default class LayerConfig {
         this.id = json.id;
         this.name = Translations.T(json.name, context + ".name");
         this.description = Translations.T(json.description, context + ".description");
-        this.overpassTags = FromJSON.Tag(json.overpassTags, context + ".overpasstags");
-        this.doNotDownload = json.doNotDownload ?? false,
-            this.passAllFeatures = json.passAllFeatures ?? false;
+
+        let legacy = undefined;
+        if (json["overpassTags"] !== undefined) {
+            // @ts-ignore
+            legacy = FromJSON.Tag(json["overpassTags"], context + ".overpasstags");
+        }
+        if(json.source !== undefined){
+            if (legacy !== undefined ) {
+                throw context+"Both the legacy 'layer.overpasstags' and the new 'layer.source'-field are defined"
+            }
+
+            let osmTags: TagsFilter = legacy;
+            if (json.source["osmTags"]) {
+                osmTags = FromJSON.Tag(json.source["osmTags"], context + "source.osmTags");
+            }
+
+
+            this.source = new SourceConfig({
+                osmTags: osmTags,
+                geojsonSource: json.source["geoJsonSource"],
+                overpassScript: json.source["overpassScript"],
+            });
+        }else{
+            this.source = new SourceConfig({
+                osmTags : legacy
+            })
+        }
+        
+      
+
+
+        this.doNotDownload = json.doNotDownload ?? false;
+        this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom;
         this.wayHandling = json.wayHandling ?? 0;
         this.hideUnderlayingFeaturesMinPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
@@ -82,16 +111,15 @@ export default class LayerConfig {
                 if (deflt === undefined) {
                     return undefined;
                 }
-                return new TagRenderingConfig(deflt, self.overpassTags, `${context}.${key}.default value`);
+                return new TagRenderingConfig(deflt, self.source.osmTags, `${context}.${key}.default value`);
             }
             if (typeof v === "string") {
                 const shared = SharedTagRenderings.SharedTagRendering[v];
                 if (shared) {
-                    console.log("Got shared TR:", v, "-->", shared)
                     return shared;
                 }
             }
-            return new TagRenderingConfig(v, self.overpassTags, `${context}.${key}`);
+            return new TagRenderingConfig(v, self.source.osmTags, `${context}.${key}`);
         }
 
         /**
@@ -119,7 +147,7 @@ export default class LayerConfig {
                         }
                         throw `Predefined tagRendering ${renderingJson} not found in ${context}`;
                     }
-                    return new TagRenderingConfig(renderingJson, self.overpassTags, `${context}.tagrendering[${i}]`);
+                    return new TagRenderingConfig(renderingJson, self.source.osmTags, `${context}.tagrendering[${i}]`);
                 });
         }
 
@@ -142,7 +170,7 @@ export default class LayerConfig {
         this.title = tr("title", undefined);
         this.icon = tr("icon", Img.AsData(Svg.pin));
         this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
-            let tr = new TagRenderingConfig(overlay.then, self.overpassTags, `iconoverlays.${i}`);
+            let tr = new TagRenderingConfig(overlay.then, self.source.osmTags, `iconoverlays.${i}`);
             if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
                 tr = SharedTagRenderings.SharedIcons[overlay.then];
             }
@@ -281,7 +309,7 @@ export default class LayerConfig {
 
         const iconUrlStatic = render(this.icon);
         const self = this;
-        var mappedHtml = tags.map(tgs => {
+        const mappedHtml = tags.map(tgs => {
             // What do you mean, 'tgs' is never read?
             // It is read implicitly in the 'render' method
             const iconUrl = render(self.icon);

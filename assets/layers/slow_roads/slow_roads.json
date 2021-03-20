@@ -4,16 +4,18 @@
     "nl": "Trage wegen"
   },
   "minzoom": 14,
-  "overpassTags": {
-    "or": [
-      "highway=pedestrian",
-      "highway=cycleway",
-      "highway=footway",
-      "highway=path",
-      "highway=bridleway",
-      "highway=living_street",
-      "highway=track"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "highway=pedestrian",
+        "highway=cycleway",
+        "highway=footway",
+        "highway=path",
+        "highway=bridleway",
+        "highway=living_street",
+        "highway=track"
+      ]
+    }
   },
   "title": {
     "render": {

@@ -8,18 +8,20 @@
     "de": "Fahrrad-Café"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "and": [
-      "amenity~pub|bar|cafe|restaurant",
-      {
-        "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
-        "or": [
-          "pub~cycling|bicycle",
-          "theme~cycling|bicycle",
-          "service:bicycle:.*~~*"
-        ]
-      }
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity~pub|bar|cafe|restaurant",
+        {
+          "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
+          "or": [
+            "pub~cycling|bicycle",
+            "theme~cycling|bicycle",
+            "service:bicycle:.*~~*"
+          ]
+        }
+      ]
+    }
   },
   "title": {
     "render": {

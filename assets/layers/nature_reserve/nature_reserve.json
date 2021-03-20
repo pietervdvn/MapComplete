@@ -4,11 +4,13 @@
     "nl": "Natuurgebied"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "or": [
-      "leisure=nature_reserve",
-      "boundary=protected_area"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "leisure=nature_reserve",
+        "boundary=protected_area"
+      ]
+    }
   },
   "title": {
     "render": {
@@ -330,7 +332,8 @@
         "key": "description:0"
       }
     },
-    {"#": "Surface are",
+    {
+      "#": "Surface are",
       "render": {
         "en": "Surface area: {_surface:ha}Ha",
         "mappings": {

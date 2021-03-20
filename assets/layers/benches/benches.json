@@ -6,7 +6,9 @@
     "fr": "Bancs"
   },
   "minzoom": 14,
-  "overpassTags": "amenity=bench",
+  "source": {
+    "osmTags": "amenity=bench"
+  },
   "title": {
     "render": {
       "en": "Bench",

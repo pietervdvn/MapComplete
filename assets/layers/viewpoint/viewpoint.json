@@ -10,7 +10,9 @@
     "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
     "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt"
   },
-  "overpassTags": "tourism=viewpoint",
+  "source": {
+    "osmTags": "tourism=viewpoint"
+  },
   "minzoom": 14,
   "icon": "./assets/layers/viewpoint/viewpoint.svg",
   "iconSize": "20,20,center",

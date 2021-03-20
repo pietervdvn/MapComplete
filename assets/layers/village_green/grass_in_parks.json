@@ -1,0 +1,48 @@
+{
+  "id": "grass_in_parks",
+  "name": {
+    "nl": "Toegankelijke grasvelden in parken"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "landuse=grass",
+        {
+          "or": [
+            "access=public",
+            "access=yes"
+          ]
+        }
+      ]
+    },
+    "overpassScript": "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );"
+  },
+  "minzoom": 0,
+  "title": {
+    "render": {
+      "nl": "Speelweide in een park"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "nl": "{name}"
+        }
+      }
+    ]
+  },
+  "icon": "./assets/themes/playgrounds/playground.svg",
+  "iconSize": "40,40,bottom",
+  "width": "1",
+  "color": "#0f0",
+  "wayHandling": 2,
+  "tagRenderings": [
+    "images",
+    {
+      "render": "Op dit grasveld in het park mag je spelen, picnicken, zitten, ..."
+    },
+    {
+      "render": "{reviews(name, landuse=grass )}"
+    }
+  ]
+}

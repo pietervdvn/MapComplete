@@ -5,7 +5,8 @@
     "nl": "Fietsbibliotheek"
   },
   "minzoom": 8  ,
-  "overpassTags": "amenity=bicycle_library",
+  "source": {
+    "osmTags": "amenity=bicycle_library"},
   "title": {
     "render": {
       "en": "Bicycle library",

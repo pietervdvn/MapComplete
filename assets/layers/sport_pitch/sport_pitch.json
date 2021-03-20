@@ -5,10 +5,11 @@
   },
   "wayHandling": 2,
   "minzoom": 12,
-  "overpassTags": {
+  "source": {
+    "osmTags": {
     "and": [
       "leisure=pitch"
-    ]
+    ]}
   },
   "title": {
     "render": {
@@ -211,13 +212,13 @@
     "render": "./assets/layers/sport_pitch/tabletennis.svg"
   },
   "width": {
-    "render": "8"
+    "render": "1"
   },
   "iconSize": {
     "render": "40,40,center"
   },
   "color": {
-    "render": "#00f"
+    "render": "#009"
   },
   "presets": [
     {

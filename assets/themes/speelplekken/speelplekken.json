@@ -27,7 +27,9 @@
     "play_forest",
     "playground",
     "sport_pitch",
-    "slow_roads"
+    "slow_roads",
+    "grass_in_parks",
+    "village_green"
   ],
   "roamingRenderings": []
 }

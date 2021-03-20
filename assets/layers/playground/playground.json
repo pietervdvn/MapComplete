@@ -5,11 +5,13 @@
     "en": "Playgrounds"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "and": [
-      "leisure=playground",
-      "playground!=forest"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "leisure=playground",
+        "playground!=forest"
+      ]
+    }
   },
   "description": {
     "nl": "Speeltuinen",
@@ -299,7 +301,7 @@
     "render": "https://upload.wikimedia.org/wikipedia/commons/0/00/Map_icons_by_Scott_de_Jonge_-_playground.svg"
   },
   "width": {
-    "render": "3"
+    "render": "1"
   },
   "iconSize": {
     "render": "40,40,center"

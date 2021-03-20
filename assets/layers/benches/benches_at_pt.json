@@ -6,11 +6,13 @@
     "fr": "Bancs des arrêts de transport en commun"
   },
   "minzoom": 14,
-  "overpassTags": {
-    "or": [
-      "bench=yes",
-      "bench=stand_up_bench"
-    ]
+  "source": {
+    "osmTags": {
+      "or": [
+        "bench=yes",
+        "bench=stand_up_bench"
+      ]
+    }
   },
   "title": {
     "render": {

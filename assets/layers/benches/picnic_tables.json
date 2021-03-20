@@ -5,7 +5,9 @@
     "nl": "Picnictafels"
   },
   "minzoom": 12,
-  "overpassTags": "leisure=picnic_table",
+  "source": {
+    "osmTags": "leisure=picnic_table"
+  },
   "title": {
     "render": {
       "en": "Picnic table",

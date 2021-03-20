@@ -8,10 +8,12 @@
     "de": "Fahrradstationen (Reparatur, Pumpe oder beides)"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "and": [
-      "amenity=bicycle_repair_station"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=bicycle_repair_station"
+      ]
+    }
   },
   "title": {
     "render": {
@@ -71,7 +73,8 @@
           "gl": "Bomba de ar estragada",
           "de": "Kaputte Pumpe"
         }
-      },{
+      },
+      {
         "if": {
           "and": [
             "service:bicycle:pump=yes",
@@ -107,7 +110,7 @@
   "titleIcons": [
     {
       "render": "<a href='https://fietsambassade.gent.be/' target='_blank'><img src='./assets/themes/cyclofix/fietsambassade_gent_logo_small.svg'/></a>",
-      "condition":  "operator=De Fietsambassade Gent",
+      "condition": "operator=De Fietsambassade Gent",
       "roaming": true
     },
     "defaults"

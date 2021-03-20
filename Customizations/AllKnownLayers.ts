@@ -28,6 +28,8 @@ import * as sport_pitch from "../assets/layers/sport_pitch/sport_pitch.json"
 import * as slow_roads from "../assets/layers/slow_roads/slow_roads.json"
 import LayerConfig from "./JSON/LayerConfig";
 import {LayerConfigJson} from "./JSON/LayerConfigJson";
+import * as grass_in_parks from "../assets/layers/village_green/grass_in_parks.json"
+import * as village_green from "../assets/layers/village_green/village_green.json"
 
 export default class AllKnownLayers {
 
@@ -60,7 +62,9 @@ export default class AllKnownLayers {
         play_forest,
         playground,
         sport_pitch,
-        slow_roads
+        slow_roads,
+        grass_in_parks,
+        village_green
     ];
 
     // Must be below the list...

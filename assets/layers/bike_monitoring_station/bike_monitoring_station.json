@@ -1,14 +1,16 @@
- {
+{
   "id": "bike_monitoring_station",
   "name": {
     "en": "Monitoring stations"
   },
   "minzoom": 12,
-  "overpassTags": {
-    "and": [
-      "man_made=monitoring_station",
-      "monitoring:bicycle=yes"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "man_made=monitoring_station",
+        "monitoring:bicycle=yes"
+      ]
+    }
   },
   "title": {
     "render": {
@@ -32,12 +34,15 @@
       }
     ]
   },
-  "tagRenderings": [ "images",
-
+  "tagRenderings": [
+    "images",
     {
       "render": "<b>{live({url},{url:format},hour)}</b> cyclists last hour<br/><b>{live({url},{url:format},day)}</b> cyclists today<br/><b>{live({url},{url:format},year)}</b> cyclists this year<br/>",
       "condition": {
-        "and": ["url~*","url:format~*"]
+        "and": [
+          "url~*",
+          "url:format~*"
+        ]
       }
     }
   ],

@@ -5,7 +5,9 @@
     "de": "Toiletten",
     "fr": "Toilettes"
   },
-  "overpassTags": "amenity=toilets",
+  "source": {
+    "osmTags": "amenity=toilets"
+  },
   "title": {
     "render": {
       "en": "Toilet",

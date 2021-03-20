@@ -31,14 +31,15 @@
       "badge": true
     }
   ],
-  
   "iconSize": "40,40,bottom",
-  "overpassTags": {
-    "and": [
-      "amenity=drinking_water",
-      "access!=permissive",
-      "access!=private"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=drinking_water",
+        "access!=permissive",
+        "access!=private"
+      ]
+    }
   },
   "minzoom": 13,
   "wayHandling": 1,

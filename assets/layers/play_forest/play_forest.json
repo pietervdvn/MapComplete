@@ -4,10 +4,12 @@
     "nl": "Speelbossen"
   },
   "minzoom": 13,
-  "overpassTags": {
-    "and": [
-      "playground=forest"
-    ]
+  "source": {
+    "osmTags": {
+      "and": [
+        "playground=forest"
+      ]
+    }
   },
   "title": {
     "render": {
