@@ -93,7 +93,7 @@
     "render": "./assets/layers/play_forest/icon.svg"
   },
   "width": {
-    "render": "8"
+    "render": "2"
   },
   "iconSize": {
     "render": "40,40,center"

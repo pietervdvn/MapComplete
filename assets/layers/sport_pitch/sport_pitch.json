@@ -209,13 +209,13 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/layers/sport_pitch/tabletennis.svg"
+    "render": "circle:white;./assets/layers/sport_pitch/tabletennis.svg"
   },
   "width": {
     "render": "1"
   },
   "iconSize": {
-    "render": "40,40,center"
+    "render": "25,25,center"
   },
   "color": {
     "render": "#009"

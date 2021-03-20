@@ -3,12 +3,11 @@
   "name": {
     "nl": "Trage wegen"
   },
-  "minzoom": 14,
+  "minzoom": 16,
   "source": {
     "osmTags": {
       "or": [
         "highway=pedestrian",
-        "highway=cycleway",
         "highway=footway",
         "highway=path",
         "highway=bridleway",
@@ -51,6 +50,9 @@
         "then": {
           "nl": "Woonerf"
         }
+      },
+      {"if": "highway=path",
+        "then": "Klein pad"
       }
     ]
   },
@@ -150,6 +152,7 @@
   "width": {
     "render": "4"
   },
+  "dashArray": "2 10 6 10",
   "color": {
     "render": "#bb2",
     "mappings": [
