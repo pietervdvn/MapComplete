@@ -11,7 +11,6 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Utils} from "../../Utils";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
-    private static featureInfoboxCache: Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>> = new Map<LayerConfig, Map<UIEventSource<any>, FeatureInfoBox>>();
 
     private constructor(
         tags: UIEventSource<any>,
@@ -28,8 +27,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     static construct(tags: UIEventSource<any>, layer: LayerConfig): FeatureInfoBox {
-        let innerMap = Utils.getOrSetDefault(FeatureInfoBox.featureInfoboxCache, layer,() => new Map<UIEventSource<any>, FeatureInfoBox>())
-        return Utils.getOrSetDefault(innerMap, tags, () => new FeatureInfoBox(tags, layer));
+        return new FeatureInfoBox(tags, layer)
     }
 
     private static GenerateTitleBar(tags: UIEventSource<any>,

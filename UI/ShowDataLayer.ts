@@ -6,16 +6,16 @@ import * as L from "leaflet"
 import "leaflet.markercluster"
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import State from "../State";
-import LazyElement from "./Base/LazyElement";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {GeoOperations} from "../Logic/GeoOperations";
 
 
 export default class ShowDataLayer {
 
     private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
+
+    private readonly _popups = new Map<any, L.Layer>();
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
@@ -72,6 +72,35 @@ export default class ShowDataLayer {
         features.addCallback(() => update());
         leafletMap.addCallback(() => update());
         update();
+
+
+        State.state.selectedElement.addCallbackAndRun(selected => {
+            if (selected === undefined) {
+                mp.closePopup();
+                return;
+            }
+            const marker = self._popups.get(selected);
+            if (marker === undefined) {
+                return;
+            }
+            marker.openPopup();
+
+            const popup = marker.getPopup();
+            const tags = State.state.allElements.getEventSourceFor(selected);
+            const layer: LayerConfig = this._layerDict[selected._matching_layer_id];
+            const infoBox = FeatureInfoBox.construct(tags, layer);
+
+            infoBox.isShown.addCallback(isShown => {
+                if (!isShown) {
+                    State.state.selectedElement.setData(undefined);
+                }
+            });
+
+            popup.setContent(infoBox.Render());
+            infoBox.Activate();
+            infoBox.Update();
+        })
+
     }
 
 
@@ -107,9 +136,10 @@ export default class ShowDataLayer {
         });
     }
 
+
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
-        if(layer === undefined){
+        if (layer === undefined) {
             console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
             return;
         }
@@ -123,53 +153,15 @@ export default class ShowDataLayer {
             closeButton: false
         }, leafletLayer);
 
-        const tags = State.state.allElements.getEventSourceFor(feature);
-        const uiElement = new LazyElement(() => {
-                const infoBox = FeatureInfoBox.construct(tags, layer);
-                infoBox.isShown.addCallback(isShown => {
-                    if(!isShown){
-                        State.state.selectedElement.setData(undefined);
-                        leafletLayer.closePopup();
-                        popup.remove();
-                    }
-                });
-                return infoBox;
-            },
-            "<div style='height: 50vh'>Rendering</div>"); // By setting 50vh, leaflet will attempt to fit the entire screen and move the feature down
-        popup.setContent(uiElement.Render());
+        // By setting 50vh, leaflet will attempt to fit the entire screen and move the feature down
+        popup.setContent("<div style='height: 50vh'>Rendering</div>");
+
         leafletLayer.bindPopup(popup);
-        // We first render the UIelement (which'll still need an update later on...)
-        // But at least it'll be visible already
-
-
         leafletLayer.on("popupopen", () => {
-            State.state.selectedElement.setData(feature);
-            uiElement.Activate();
-        })
+            State.state.selectedElement.setData(feature)
+        });
 
-        State.state.selectedElement.addCallbackAndRun(selected => {
-           
-                if (selected === undefined) {
-                    if (popup.isOpen()) {
-                        popup.remove();
-                    }
-                } else if (selected == feature && selected.geometry.type === feature.geometry.type) {
-                    // If wayhandling introduces a centerpoint and an area, this code might become unstable:
-                    // The popup for the centerpoint would open, a bit later the area would close the first popup and open it's own
-                    // In the process, the 'selectedElement' is set to undefined and to the other feature again, causing an infinite loop
-
-                    // This is why we check for the geometry-type too
-
-                    const mp = this._leafletMap.data;
-                    if (!popup.isOpen() && mp !== undefined) {
-                        popup
-                            .setLatLng(GeoOperations.centerpointCoordinates(feature))
-                            .openOn(mp);
-                        uiElement.Activate();
-                    }
-                }
-            }
-        );
+        this._popups.set(feature, leafletLayer);
 
     }
 
