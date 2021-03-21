@@ -1,0 +1,164 @@
+{
+  "id": "grb",
+  "title": {
+    "nl": "GRB Fixup"
+  },
+  "shortDescription": {
+    "nl": "Grb Fixup"
+  },
+  "description": {
+    "nl": "GRB Fixup"
+  },
+  "language": [
+    "nl"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/bug.svg",
+  "version": "0",
+  "startLat": 51.2132,
+  "startLon": 3.231,
+  "startZoom": 14,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "grb-fixmes",
+      "name": {
+        "nl": "Fixmes op gebouwen"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "fixme~*",
+            "building~*"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "nl": "{addr:street} {addr:housenumber}"
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "fixme~*"
+              ]
+            },
+            "then": {
+              "nl": "{fixme}"
+            }
+          }
+        ]
+      },
+      "description": {
+        "nl": "Dit gebouw heeft een foutmelding"
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "Het huisnummer is <b>{addr:housenumber}</b>"
+          },
+          "question": {
+            "nl": "Wat is het huisnummer?"
+          },
+          "freeform": {
+            "key": "addr:housenumber"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "not:addr:housenumber=yes",
+                  "addr:housenumber="
+                ]
+              },
+              "then": {
+                "nl": "Geen huisnummer"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "De wooneeinheid-aanduiding is <b>{addr:unit}</b> "
+          },
+          "freeform": {
+            "key": "addr:unit"
+          },
+          "mappings": [
+            {
+              "if": "addr:unit=",
+              "then": "Geen wooneenheid-nummer"
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "De straat is <b>{addr:street}</b>"
+          },
+          "freeform": {
+            "key": "addr:street"
+          },
+          "question": {
+            "nl": "Wat is de straat?"
+          }
+        },
+        {
+          "render": {
+            "nl": "De fixme is <b>{fixme}</b>"
+          },
+          "question": {
+            "nl": "Wat zegt de fixme?"
+          },
+          "freeform": {
+            "key": "fixme"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fixme="
+                ]
+              },
+              "then": {
+                "nl": "Geen fixme"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "Dit gebouw begint maar op de {building:min_level} verdieping"
+          },
+          "question": {
+            "nl": "Hoeveel verdiepingen ontbreken?"
+          },
+          "freeform": {
+            "key": "building:min_level",
+            "type": "pnat"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "2"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "dashes": "2 2",
+      "color": {
+        "render": "#00f"
+      },
+      "presets": []
+    }
+  ],
+  "hideFromOverview": true,
+  "roamingRenderings": [],
+  "defaultBackgroundId": "AGIVFlandersGRB"
+}
