@@ -394,7 +394,7 @@ export class InitUiElements {
             features.forEach(feature => {
                 State.state.allElements.addOrGetElement(feature);
 
-                if (Hash.hash.data === feature.properties.id.replace("/", "_")) {
+                if (Hash.hash.data === feature.properties.id) {
                     State.state.selectedElement.setData(feature);
                 }
 

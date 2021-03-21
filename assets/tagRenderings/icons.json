@@ -62,7 +62,8 @@
         "if": "id~=-",
         "then": "<span class='alert'>Uploading...</alert>"
       }
-    ]
+    ],
+    "condition": "id~(node|way|relation)/[0-9]*"
   },
   "sharelink": {
     "render": "{share_link()}"

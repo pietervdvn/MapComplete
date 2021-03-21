@@ -110,7 +110,7 @@ export default class ShowDataLayer {
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
         if(layer === undefined){
-            console.warn("No layer found for object (probably a now disabled layer)", feature)
+            console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
             return;
         }
         if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {

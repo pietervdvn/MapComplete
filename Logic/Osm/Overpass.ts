@@ -44,6 +44,7 @@ export class Overpass {
                 if (status !== "success") {
                     console.log("Query failed")
                     onFail(status);
+                    return;
                 }
 
                 if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {

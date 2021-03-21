@@ -22,7 +22,6 @@ export default class FeatureSourceMerger implements FeatureSource {
         let all = {}; // Mapping 'id' -> {feature, freshness}
         for (const source of this._sources) {
             if(source?.features?.data === undefined){
-                console.log("Not defined");
                 continue;
             }
             for (const f of source.features.data) {

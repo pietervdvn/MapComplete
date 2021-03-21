@@ -127,7 +127,7 @@ export default class LayerConfig {
          * A string is interpreted as a name to call
          * @param tagRenderings
          */
-        function trs(tagRenderings?: (string | TagRenderingConfigJson)[]) {
+        function trs(tagRenderings?: (string | TagRenderingConfigJson)[], readOnly = false) {
             if (tagRenderings === undefined) {
                 return [];
             }
@@ -137,6 +137,10 @@ export default class LayerConfig {
                     if (typeof renderingJson === "string") {
 
                         if (renderingJson === "questions") {
+                            if(readOnly){
+                                throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}`
+                            }
+                            
                             return new TagRenderingConfig("questions", undefined)
                         }
 
@@ -151,7 +155,7 @@ export default class LayerConfig {
                 });
         }
 
-        this.tagRenderings = trs(json.tagRenderings);
+        this.tagRenderings = trs(json.tagRenderings, this.source.geojsonSource !== undefined);
 
 
         const titleIcons = [];
@@ -164,7 +168,7 @@ export default class LayerConfig {
             }
         }
 
-        this.titleIcons = trs(titleIcons);
+        this.titleIcons = trs(titleIcons, true);
 
 
         this.title = tr("title", undefined);

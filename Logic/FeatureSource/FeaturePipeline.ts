@@ -11,6 +11,7 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import LocalStorageSource from "./LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
+import GeoJsonSource from "./GeoJsonSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
@@ -30,6 +31,15 @@ export default class FeaturePipeline implements FeatureSource {
                 )
             );
 
+        const geojsonSources: GeoJsonSource [] = []
+        for (const flayer of flayers.data) {
+            const sourceUrl = flayer.layerDef.source.geojsonSource
+            if (sourceUrl !== undefined) {
+                geojsonSources.push(new WayHandlingApplyingFeatureSource(flayers, 
+                    new GeoJsonSource(flayer.layerDef.id, sourceUrl)))
+            }
+        }
+
         const amendedLocalStorageSource =
             new RememberingSource(
                 new WayHandlingApplyingFeatureSource(flayers,
@@ -37,11 +47,12 @@ export default class FeaturePipeline implements FeatureSource {
                 ));
 
         newPoints = new FeatureDuplicatorPerLayer(flayers, newPoints);
-        
+
         const merged = new FeatureSourceMerger([
             amendedOverpassSource,
             amendedLocalStorageSource,
-            newPoints
+            newPoints,
+            ...geojsonSources
         ]);
 
         const source =

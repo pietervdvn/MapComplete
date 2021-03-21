@@ -15,7 +15,7 @@
   "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
   "hideFromOverview": true,
-  "lockLocation": true,
+  "lockLocation": false,
   "version": "0",
   "startLat": 51.17174,
   "startLon": 4.449462,
@@ -23,13 +23,28 @@
   "widenFactor": 0.05,
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
-  "layers": [
+  "layersX": [
     "play_forest",
     "playground",
     "sport_pitch",
     "slow_roads",
     "grass_in_parks",
     "village_green"
+  ],
+  "layers": [
+    {
+      "id": "test",
+      "source": {
+        "osmTags": "country~*",
+        "geoJsonSource": "https://pietervdvn.github.io/latlon2country/15.10774.14922.json"
+      },
+      "maxOverlapPercentage": 0,
+      "name": "test",
+      "title": "Test",
+      "minzoom": 0
+    }
+    
+    
   ],
   "roamingRenderings": []
 }

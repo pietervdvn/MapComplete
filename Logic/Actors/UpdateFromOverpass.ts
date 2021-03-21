@@ -85,6 +85,10 @@ export default class UpdateFromOverpass implements FeatureSource {
             if (layer.doNotDownload) {
                 continue;
             }
+            if(layer.source.geojsonSource !== undefined){
+                // Not our responsibility to download this layer!
+                continue;
+            }
 
 
             // Check if data for this layer has already been loaded
