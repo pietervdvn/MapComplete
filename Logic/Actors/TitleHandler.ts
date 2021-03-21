@@ -27,7 +27,6 @@ class TitleElement extends UIElement {
     InnerRender(): string {
 
         const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ?? "MapComplete"
-        console.log("Default title: ", defaultTitle)
         const feature = this._selectedFeature.data;
 
         if (feature === undefined) {
@@ -60,13 +59,10 @@ export default class TitleHandler {
                 selectedFeature: UIEventSource<any>,
                 allElementsStorage: ElementStorage) {
 
-        console.log("Titlehandler inited")
         selectedFeature.addCallbackAndRun(_ => {
             const title = new TitleElement(layoutToUse, selectedFeature, allElementsStorage)
             const d = document.createElement('div');
-            const contents = title.InnerRender()
-            d.innerHTML = contents;
-            console.log("Setting title to ", d.innerText, contents)
+            d.innerHTML = title.InnerRender();
             // We pass everything into a div to strip out images etc...
             document.title = (d.textContent || d.innerText);
         })
