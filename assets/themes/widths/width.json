@@ -13,14 +13,12 @@
     "nl"
   ],
   "hideFromOverview": true,
-
   "enableUserBadge": false,
-  "enableShareScreen":false,
+  "enableShareScreen": false,
   "enableMoreQuests": false,
-  "enableLayers":false,
+  "enableLayers": false,
   "enableSearch": false,
-  "enableGeolocation":false,
-  
+  "enableGeolocation": false,
   "maintainer": "",
   "icon": "./assets/themes/widths/icon.svg",
   "version": "0",
@@ -36,10 +34,12 @@
         "nl": "Straten met een breedte"
       },
       "minzoom": 14,
-      "overpassTags": {
-        "and": [
-          "width:carriageway~*"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "width:carriageway~*"
+          ]
+        }
       },
       "titleIcons": [],
       "title": {

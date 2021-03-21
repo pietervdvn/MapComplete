@@ -32,10 +32,12 @@
         "fr": "Magasin"
       },
       "minzoom": 16,
-      "overpassTags": {
-        "and": [
-          "shop~*"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "shop~*"
+          ]
+        }
       },
       "title": {
         "render": {

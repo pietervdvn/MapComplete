@@ -27,10 +27,12 @@
         "fr": "Friteries"
       },
       "minzoom": 8,
-      "overpassTags": {
-        "and": [
-          "cuisine~.*friture.*"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "cuisine~.*friture.*"
+          ]
+        }
       },
       "title": {
         "render": {

@@ -1,4 +1,3 @@
-
 {
   "id": "campersite",
   "title": {
@@ -28,13 +27,15 @@
         "en": "Camper sites"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "and": [
-          "tourism=caravan_site",
-		  "permanent_camping!~only"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "tourism=caravan_site",
+            "permanent_camping!~only"
+          ]
+        }
       },
-	  "title": {
+      "title": {
         "render": {
           "en": "Camper site {name}"
         },
@@ -56,7 +57,7 @@
       },
       "tagRenderings": [
         "images",
-		{
+        {
           "render": {
             "en": "This place is called {name}"
           },
@@ -67,7 +68,7 @@
             "key": "name"
           }
         },
-		{
+        {
           "question": {
             "en": "Does this place charge a fee?"
           },
@@ -85,17 +86,18 @@
             {
               "if": {
                 "and": [
-                  "fee=no","charge="
+                  "fee=no",
+                  "charge="
                 ]
               },
               "then": {
                 "en": "Can be used for free"
               }
-			},
-			{
-			  "if": "fee=no", 
-			  "then": "Can be used for free", 
-			  "hideInAnswer":true
+            },
+            {
+              "if": "fee=no",
+              "then": "Can be used for free",
+              "hideInAnswer": true
             }
           ]
         },
@@ -114,7 +116,7 @@
               "fee=yes"
             ]
           }
-        },		
+        },
         {
           "question": {
             "en": "Does this place have a sanitary dump station?"
@@ -169,17 +171,17 @@
                 "en": "There is internet access"
               }
             },
-			{
+            {
               "if": {
                 "or": [
                   "internet_access=wifi",
-				  "internet_access=wlan"
+                  "internet_access=wlan"
                 ]
               },
               "then": {
                 "en": "There is internet access"
               },
-			  "hideInAnswer": true
+              "hideInAnswer": true
             },
             {
               "if": {
@@ -251,8 +253,8 @@
               }
             }
           ]
-        },	
-		{
+        },
+        {
           "render": {
             "en": "Official website: <a href='{website}'>{website}</a>"
           },
@@ -264,7 +266,7 @@
             "en": "Does this place have a website?"
           }
         },
-		{
+        {
           "question": {
             "en": "Does this place offer spots for long term rental?"
           },
@@ -301,7 +303,7 @@
             }
           ]
         },
-       {
+        {
           "render": {
             "en": "More details about this place: {description}"
           },
@@ -314,7 +316,7 @@
           }
         },
         "questions",
-		"reviews"
+        "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -360,11 +362,13 @@
         "en": "Sanitary dump stations"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "and": [
-          "amenity=sanitary_dump_station",
-		  "vehicle!~no"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=sanitary_dump_station",
+            "vehicle!~no"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -601,43 +605,43 @@
     }
   ],
   "roamingRenderings": [
-          {
-          "render": {
-            "en": "This place is operated by {operator}"
+    {
+      "render": {
+        "en": "This place is operated by {operator}"
+      },
+      "question": {
+        "en": "Who operates this place?"
+      },
+      "freeform": {
+        "key": "operator"
+      }
+    },
+    {
+      "question": {
+        "en": "Does this place have a power supply?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "power_supply=yes"
+            ]
           },
-          "question": {
-            "en": "Who operates this place?"
-          },
-          "freeform": {
-            "key": "operator"
+          "then": {
+            "en": "This place has a power supply"
           }
         },
-       {
-          "question": {
-            "en": "Does this place have a power supply?"
+        {
+          "if": {
+            "and": [
+              "power_supply=no"
+            ]
           },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "power_supply=yes"
-                ]
-              },
-              "then": {
-                "en": "This place has a power supply"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "power_supply=no"
-                ]
-              },
-              "then": {
-                "en": "This place does not have power supply"
-              }
-            }
-          ]
+          "then": {
+            "en": "This place does not have power supply"
+          }
         }
-		]
+      ]
+    }
+  ]
 }

@@ -96,11 +96,13 @@
         "nl": "Fietsstraten"
       },
       "minzoom": 9,
-      "overpassTags": {
-        "and": [
-          "cyclestreet=yes",
-          "traffic_sign="
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "cyclestreet=yes",
+            "traffic_sign="
+          ]
+        }
       },
       "description": {
         "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen."
@@ -123,7 +125,9 @@
       },
       "minzoom": 9,
       "wayHandling": 0,
-      "overpassTags": "proposed:cyclestreet=yes",
+      "source": {
+        "osmTags": "proposed:cyclestreet=yes"
+      },
       "title": {
         "render": {
           "nl": "Toekomstige fietsstraat"
@@ -152,7 +156,9 @@
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren"
       },
-      "overpassTags": "highway~residential|tertiary|unclassified",
+      "source": {
+        "osmTags": "highway~residential|tertiary|unclassified"
+      },
       "minzoom": 18,
       "wayHandling": 0,
       "title": {

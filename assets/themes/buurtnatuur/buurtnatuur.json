@@ -34,11 +34,13 @@
         "nl": "Natuurgebied"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "or": [
-          "leisure=nature_reserve",
-          "boundary=protected_area"
-        ]
+      "source": {
+        "osmTags": {
+          "or": [
+            "leisure=nature_reserve",
+            "boundary=protected_area"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -131,11 +133,13 @@
         "nl": "Park"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "or": [
-          "leisure=park",
-          "landuse=village_green"
-        ]
+      "source": {
+        "osmTags": {
+          "or": [
+            "leisure=park",
+            "landuse=village_green"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -215,12 +219,14 @@
         "nl": "Bos"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "or": [
-          "landuse=forest",
-          "natural=wood",
-          "natural=scrub"
-        ]
+      "source": {
+        "osmTags": {
+          "or": [
+            "landuse=forest",
+            "natural=wood",
+            "natural=scrub"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -330,7 +336,9 @@
       },
       "freeform": {
         "key": "access:description",
-        "addExtraTags": ["access="]
+        "addExtraTags": [
+          "access="
+        ]
       },
       "mappings": [
         {
@@ -499,7 +507,7 @@
         ]
       }
     },
-   {
+    {
       "#": "Non-editable description {description}",
       "render": {
         "nl": "Extra info: <i>{description}</i>"

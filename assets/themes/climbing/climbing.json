@@ -37,21 +37,23 @@
         "en": "Climbing club"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "or": [
-          "club=climbing",
-          {
-            "and": [
-              "sport=climbing",
-              {
-                "or": [
-                  "office~*",
-                  "club~*"
-                ]
-              }
-            ]
-          }
-        ]
+      "source": {
+        "osmTags": {
+          "or": [
+            "club=climbing",
+            {
+              "and": [
+                "sport=climbing",
+                {
+                  "or": [
+                    "office~*",
+                    "club~*"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       },
       "title": {
         "render": {
@@ -160,11 +162,13 @@
         "nl": "Klimzalen"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "and": [
-          "sport=climbing",
-          "leisure=sports_centre"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "sport=climbing",
+            "leisure=sports_centre"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -190,7 +194,8 @@
       "tagRenderings": [
         "images",
         "questions",
-        {"#": "name",
+        {
+          "#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -236,10 +241,12 @@
         "nl": "Klimroute"
       },
       "minzoom": 18,
-      "overpassTags": {
-        "and": [
-          "climbing=route"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "climbing=route"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -339,14 +346,16 @@
         "en": "Climbing opportunities"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "and": [
-          "sport=climbing",
-          "climbing!~route",
-          "leisure!~sports_centre",
-          "climbing!=route_top",
-          "climbing!=route_bottom"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "sport=climbing",
+            "climbing!~route",
+            "leisure!~sports_centre",
+            "climbing!=route_top",
+            "climbing!=route_bottom"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -363,7 +372,8 @@
       "tagRenderings": [
         "images",
         "questions",
-        {"#": "name",
+        {
+          "#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
@@ -435,15 +445,17 @@
         "en": "Climbing opportunities?"
       },
       "minzoom": 19,
-      "overpassTags": {
-        "or": [
-          "leisure=sports_centre",
-          "barrier=wall",
-          "barrier=retaining_wall",
-          "natural=cliff",
-          "natural=rock",
-          "natural=stone"
-        ]
+      "source": {
+        "osmTags": {
+          "or": [
+            "leisure=sports_centre",
+            "barrier=wall",
+            "barrier=retaining_wall",
+            "natural=cliff",
+            "natural=rock",
+            "natural=stone"
+          ]
+        }
       },
       "title": {
         "render": {

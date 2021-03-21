@@ -32,24 +32,6 @@ import AllKnownLayers from "./AllKnownLayers";
 export class AllKnownLayouts {
 
     public static allLayers: Map<string, LayerConfig> = undefined;
-
-    private static GenerateCycloFix(): LayoutConfig {
-        const layout = new LayoutConfig(cyclofix)
-        const now = new Date();
-        const m = now.getMonth() + 1;
-        const day = new Date().getDate() + 1;
-        const date = day + "/" + m;
-        if (date === "31/10" || date === "1/11" || date === "2/11") {
-            console.log("The current date is ",date,", which means we remember our dead")
-            // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
-            layout.layers.push(
-                AllKnownLayers.sharedLayers.get("ghost_bike")
-            );
-
-        }
-        return layout;
-
-    }
     public static layoutsList: LayoutConfig[] = [
         new LayoutConfig(personal),
         AllKnownLayouts.GenerateCycloFix(),
@@ -74,14 +56,30 @@ export class AllKnownLayouts {
         new LayoutConfig(climbing),
         new LayoutConfig(playgrounds),
         new LayoutConfig(trees),
-    		new LayoutConfig(campersites),
-        new LayoutConfig(play_forests) ,
+        new LayoutConfig(campersites),
+        new LayoutConfig(play_forests),
         new LayoutConfig(speelplekken),
         new LayoutConfig(sport_pitches)
     ];
-
-
     public static allSets: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
+
+    private static GenerateCycloFix(): LayoutConfig {
+        const layout = new LayoutConfig(cyclofix)
+        const now = new Date();
+        const m = now.getMonth() + 1;
+        const day = new Date().getDate() + 1;
+        const date = day + "/" + m;
+        if (date === "31/10" || date === "1/11" || date === "2/11") {
+            console.log("The current date is ", date, ", which means we remember our dead")
+            // Around Halloween/Fiesta de muerte/Allerzielen, we remember the dead
+            layout.layers.push(
+                AllKnownLayers.sharedLayers.get("ghost_bike")
+            );
+
+        }
+        return layout;
+
+    }
 
     private static AllLayouts(): Map<string, LayoutConfig> {
         this.allLayers = new Map<string, LayerConfig>();
@@ -90,7 +88,7 @@ export class AllKnownLayouts {
                 let layer = layout.layers[i];
                 if (typeof (layer) === "string") {
                     layer = layout.layers[i] = AllKnownLayers.sharedLayers.get(layer);
-                    if(layer === undefined){
+                    if (layer === undefined) {
                         console.log("Defined layers are ", AllKnownLayers.sharedLayers.keys())
                         throw `Layer ${layer} was not found or defined - probably a type was made`
                     }

@@ -27,10 +27,12 @@
         "en": "Charging stations"
       },
       "minzoom": 10,
-      "overpassTags": {
-        "and": [
-          "amenity=charging_station"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=charging_station"
+          ]
+        }
       },
       "title": {
         "render": {

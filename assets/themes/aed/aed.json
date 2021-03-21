@@ -12,8 +12,8 @@
   "icon": "./assets/themes/aed/logo.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
-	"ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
-	"es": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
+    "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
+    "es": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
     "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
     "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
     "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
@@ -41,7 +41,9 @@
         "nl": "Defibrillatoren",
         "de": "Defibrillatoren"
       },
-      "overpassTags": "emergency=defibrillator",
+      "source": {
+        "osmTags": "emergency=defibrillator"
+      },
       "minzoom": 12,
       "title": {
         "render": {
@@ -75,8 +77,8 @@
         {
           "question": {
             "en": "Is this defibrillator located indoors?",
-			"ca": "Està el desfibril·lador a l'interior?",
-			"es": "¿Esté el desfibrilador en interior?",
+            "ca": "Està el desfibril·lador a l'interior?",
+            "es": "¿Esté el desfibrilador en interior?",
             "fr": "Ce défibrillateur est-il disposé en intérieur ?",
             "nl": "Hangt deze defibrillator binnen of buiten?",
             "de": "Befindet sich dieser Defibrillator im Gebäude?"

@@ -33,7 +33,9 @@
         "fr": "Œuvres d'art",
         "de": "Kunstwerke"
       },
-      "overpassTags": "tourism=artwork",
+      "source": {
+        "osmTags": "tourism=artwork"
+      },
       "title": {
         "render": {
           "en": "Artwork",
