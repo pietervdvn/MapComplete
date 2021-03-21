@@ -71,6 +71,9 @@ export default class FilteringFeatureSource implements FeatureSource {
                 if (l.zoom < layer.layerDef.minzoom) {
                     continue;
                 }
+                if(l.zoom > layer.layerDef.maxzoom){
+                    continue;
+                }
                 if (!layer.isDisplayed.data) {
                     continue;
                 }
@@ -102,6 +105,6 @@ export default class FilteringFeatureSource implements FeatureSource {
         isDisplayed: UIEventSource<boolean>,
         layerDef: LayerConfig
     }, location: UIEventSource<Loc>) {
-        return layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom)
+        return layer.isDisplayed.data && (layer.layerDef.minzoom <= location.data.zoom) && (layer.layerDef.maxzoom >= location.data.zoom)
     }
 }

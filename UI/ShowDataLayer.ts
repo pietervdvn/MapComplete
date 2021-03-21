@@ -179,6 +179,7 @@ export default class ShowDataLayer {
             type: "FeatureCollection",
             features: []
         }
+        // @ts-ignore
         return L.geoJSON(data, {
             style: feature => self.createStyleFor(feature),
             pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),

@@ -41,7 +41,8 @@
       "maxOverlapPercentage": 0,
       "name": "test",
       "title": "Test",
-      "minzoom": 0
+      "minzoom": 0,
+      "maxzoom": 14
     }
     
     

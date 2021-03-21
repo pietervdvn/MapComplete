@@ -30,6 +30,7 @@ export default class LayerConfig {
     doNotDownload: boolean;
     passAllFeatures: boolean;
     minzoom: number;
+    maxzoom: number;
     title?: TagRenderingConfig;
     titleIcons: TagRenderingConfig[];
     icon: TagRenderingConfig;
@@ -49,7 +50,7 @@ export default class LayerConfig {
     }[];
 
     tagRenderings: TagRenderingConfig [];
-
+    
     constructor(json: LayerConfigJson,
                 context?: string) {
         context = context + "." + json.id;
@@ -90,7 +91,8 @@ export default class LayerConfig {
 
         this.doNotDownload = json.doNotDownload ?? false;
         this.passAllFeatures = json.passAllFeatures ?? false;
-        this.minzoom = json.minzoom;
+        this.minzoom = json.minzoom ?? 0;
+        this.maxzoom = json.maxzoom ?? 1000;
         this.wayHandling = json.wayHandling ?? 0;
         this.hideUnderlayingFeaturesMinPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
         this.presets = (json.presets ?? []).map((pr, i) =>
@@ -125,7 +127,6 @@ export default class LayerConfig {
         /**
          * Converts a list of tagRenderingCOnfigJSON in to TagRenderingConfig
          * A string is interpreted as a name to call
-         * @param tagRenderings
          */
         function trs(tagRenderings?: (string | TagRenderingConfigJson)[], readOnly = false) {
             if (tagRenderings === undefined) {
