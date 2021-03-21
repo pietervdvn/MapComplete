@@ -11,62 +11,65 @@ class TitleElement extends UIElement {
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _selectedFeature: UIEventSource<any>;
     private readonly _allElementsStorage: ElementStorage;
-    
+
     constructor(layoutToUse: UIEventSource<LayoutConfig>,
                 selectedFeature: UIEventSource<any>,
-                allElementsStorage : ElementStorage) {
+                allElementsStorage: ElementStorage) {
         super(layoutToUse);
         this._layoutToUse = layoutToUse;
         this._selectedFeature = selectedFeature;
         this._allElementsStorage = allElementsStorage;
         this.ListenTo(Locale.language);
+        this.ListenTo(this._selectedFeature)
         this.dumbMode = false;
     }
-    
+
     InnerRender(): string {
-        
+
         const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ?? "MapComplete"
+        console.log("Default title: ", defaultTitle)
         const feature = this._selectedFeature.data;
 
-        if(feature === undefined){
+        if (feature === undefined) {
             return defaultTitle;
         }
 
 
         const layout = this._layoutToUse.data;
         const properties = this._selectedFeature.data.properties;
-         for (const layer of layout.layers) {
-             if(layer.title === undefined){
-                 continue;
-             }
-            if (layer.source.osmTags.matchesProperties(properties)) {
 
+        for (const layer of layout.layers) {
+            if (layer.title === undefined) {
+                continue;
+            }
+            if (layer.source.osmTags.matchesProperties(properties)) {
                 const title = new TagRenderingAnswer(
                     this._allElementsStorage.getEventSourceFor(feature),
                     layer.title
                 )
-                return new Combine([defaultTitle," | ", title]).Render();
+                return new Combine([defaultTitle, " | ", title]).Render();
             }
         }
         return defaultTitle;
     }
-    
+
 }
 
 export default class TitleHandler {
     constructor(layoutToUse: UIEventSource<LayoutConfig>,
                 selectedFeature: UIEventSource<any>,
-                allElementsStorage : ElementStorage) {
+                allElementsStorage: ElementStorage) {
 
-        new TitleElement(layoutToUse, selectedFeature, allElementsStorage)
-            .addCallbackAndRun(contents => {
+        console.log("Titlehandler inited")
+        selectedFeature.addCallbackAndRun(_ => {
+            const title = new TitleElement(layoutToUse, selectedFeature, allElementsStorage)
+            const d = document.createElement('div');
+            const contents = title.InnerRender()
+            d.innerHTML = contents;
+            console.log("Setting title to ", d.innerText, contents)
+            // We pass everything into a div to strip out images etc...
+            document.title = (d.textContent || d.innerText);
+        })
 
-                const d = document.createElement('div');
-                d.innerHTML = contents;
-                // We pass everything into a div to strip out images etc...
-                document.title = (d.textContent || d.innerText);
-
-            });
-        
     }
 }
