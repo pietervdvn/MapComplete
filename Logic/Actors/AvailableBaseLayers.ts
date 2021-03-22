@@ -172,8 +172,6 @@ export default class AvailableBaseLayers {
             l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
-            l("Stadia.AlidadeSmooth", "Alidade Smooth (by Stadia)"),
-            l("Stadia.AlidadeSmoothDark", "Alidade Smooth Dark (by Stadia)"),
             l("Stadia.OSMBright", "Osm Bright (by Stadia)"),
             l("CartoDB.Positron", "Positron (by CartoDB)"),
             l("CartoDB.PositronNoLabels", "Positron  - no labels (by CartoDB)"),

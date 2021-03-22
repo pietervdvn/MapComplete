@@ -24,7 +24,7 @@
   "startZoom": 1,
   "widenFactor": 0.05,
   "socialImage": "",
-  "defaultBackgroundId": "Stadia.AlidadeSmoothDark",
+  "defaultBackgroundId": "osm",
   "layers": [
     "direction",
     "surveillance_cameras"
