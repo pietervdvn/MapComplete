@@ -80,7 +80,13 @@ Every field is documented in the source code itself - you can find them here:
 - [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags is documented [here](Docs/Tags_format.md)
 
-## Some pitfalls
+### MetaTags
+
+There are few tags available that are calculated for convenience - e.g. the country an object is located at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
+
+
+ Some pitfalls
+---------------
 
 ### Not publishing
 
