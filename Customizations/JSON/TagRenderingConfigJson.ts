@@ -97,8 +97,21 @@ export interface TagRenderingConfigJson {
          *     then: "Maintained by Agentschap Natuur en Bos"
          *     hideInAnswer: true
          * }
+         * 
+         * Hide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate
+         * 
+         * e.g.
+         * 
+         * 
+         * Also have a look for the meta-tags
+         * 
+         * {
+         *     if: "operator=Agentschap Natuur en Bos",
+         *     then: "Maintained by Agentschap Natuur en Bos",
+         *     hideInAnswer: "_country!=be"
+         * }
          */
-        hideInAnswer?: boolean,
+        hideInAnswer?: boolean | string | AndOrTagConfigJson,
         /**
          * Only applicable if 'multiAnswer' is set.
          * This is for situations such as:

@@ -27,24 +27,24 @@ new T("Tags", [
         const tag = FromJSON.Tag("key=value") as Tag;
         equal(tag.key, "key");
         equal(tag.value, "value");
-        equal(tag.matches([{k:"key",v:"value"}]), true)
-        equal(tag.matches([{k:"key",v:"z"}]), false)
-        equal(tag.matches([{k:"key",v:""}]), false)
-        equal(tag.matches([{k:"other_key",v:""}]), false)
-        equal(tag.matches([{k:"other_key",v:"value"}]), false)
+        equal(tag.matchesProperties({"key":"value"}), true)
+        equal(tag.matchesProperties({"key":"z"}), false)
+        equal(tag.matchesProperties({"key":""}), false)
+        equal(tag.matchesProperties({"other_key":""}), false)
+        equal(tag.matchesProperties({"other_key":"value"}), false)
 
         const isEmpty = FromJSON.Tag("key=") as Tag;
-        equal(isEmpty.matches([{k:"key",v:"value"}]), false)
-        equal(isEmpty.matches([{k:"key",v:""}]), true)
-        equal(isEmpty.matches([{k:"other_key",v:""}]), true)
-        equal(isEmpty.matches([{k:"other_key",v:"value"}]), true)
+        equal(isEmpty.matchesProperties({"key":"value"}), false)
+        equal(isEmpty.matchesProperties({"key":""}), true)
+        equal(isEmpty.matchesProperties({"other_key":""}), true)
+        equal(isEmpty.matchesProperties({"other_key":"value"}), true)
 
         const isNotEmpty = FromJSON.Tag("key!=");
-        equal(isNotEmpty.matches([{k:"key",v:"value"}]), true)
-        equal(isNotEmpty.matches([{k:"key",v:"other_value"}]), true)
-        equal(isNotEmpty.matches([{k:"key",v:""}]), false)
-        equal(isNotEmpty.matches([{k:"other_key",v:""}]), false)
-        equal(isNotEmpty.matches([{k:"other_key",v:"value"}]), false)
+        equal(isNotEmpty.matchesProperties({"key":"value"}), true)
+        equal(isNotEmpty.matchesProperties({"key":"other_value"}), true)
+        equal(isNotEmpty.matchesProperties({"key":""}), false)
+        equal(isNotEmpty.matchesProperties({"other_key":""}), false)
+        equal(isNotEmpty.matchesProperties({"other_key":"value"}), false)
 
 
 
@@ -54,29 +54,29 @@ new T("Tags", [
 
 
         const notReg = FromJSON.Tag("x!~y") as And;
-        equal(notReg.matches([{k:"x",v:"y"}]), false)
-        equal(notReg.matches([{k:"x",v:"z"}]), true)
-        equal(notReg.matches([{k:"x",v:""}]), true)
-        equal(notReg.matches([]), true)
+        equal(notReg.matchesProperties({"x":"y"}), false)
+        equal(notReg.matchesProperties({"x":"z"}), true)
+        equal(notReg.matchesProperties({"x":""}), true)
+        equal(notReg.matchesProperties({}), true)
         
         const noMatch = FromJSON.Tag("key!=value") as Tag;
-        equal(noMatch.matches([{k:"key",v:"value"}]), false)
-        equal(noMatch.matches([{k:"key",v:"otherValue"}]), true)
-        equal(noMatch.matches([{k:"key",v:""}]), true)
-        equal(noMatch.matches([{k:"otherKey",v:""}]), true)
+        equal(noMatch.matchesProperties({"key":"value"}), false)
+        equal(noMatch.matchesProperties({"key":"otherValue"}), true)
+        equal(noMatch.matchesProperties({"key":""}), true)
+        equal(noMatch.matchesProperties({"otherKey":""}), true)
 
         
         const multiMatch = FromJSON.Tag("vending~.*bicycle_tube.*") as Tag;
-        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube"}]), true)
-        equal(multiMatch.matches([{k:"vending",v:"something;bicycle_tube"}]), true)
-        equal(multiMatch.matches([{k:"vending",v:"bicycle_tube;something"}]), true)
-        equal(multiMatch.matches([{k:"vending",v:"xyz;bicycle_tube;something"}]), true)
+        equal(multiMatch.matchesProperties({"vending":"bicycle_tube"}), true)
+        equal(multiMatch.matchesProperties({"vending":"something;bicycle_tube"}), true)
+        equal(multiMatch.matchesProperties({"vending":"bicycle_tube;something"}), true)
+        equal(multiMatch.matchesProperties({"vending":"xyz;bicycle_tube;something"}), true)
         
         const nameStartsWith = FromJSON.Tag("name~[sS]peelbos.*")
-        equal(nameStartsWith.matches([{k:"name",v: "Speelbos Sint-Anna"}]), true)
-        equal(nameStartsWith.matches([{k:"name",v: "speelbos Sint-Anna"}]), true)
-        equal(nameStartsWith.matches([{k:"name",v: "Sint-Anna"}]), false)
-        equal(nameStartsWith.matches([{k:"name",v: ""}]), false)
+        equal(nameStartsWith.matchesProperties({"name": "Speelbos Sint-Anna"}), true)
+        equal(nameStartsWith.matchesProperties({"name": "speelbos Sint-Anna"}), true)
+        equal(nameStartsWith.matchesProperties({"name": "Sint-Anna"}), false)
+        equal(nameStartsWith.matchesProperties({"name": ""}), false)
 
     })],
     ["Is equivalent test", (() => {
@@ -143,7 +143,7 @@ new T("Tags", [
         "Empty match test",
         () => {
             const t = new Tag("key","");
-            equal(false, t.matches([{k: "key", v:"somevalue"}]))
+            equal(false, t.matchesProperties({ "key":"somevalue"}))
         }
     ],
     [
@@ -238,8 +238,7 @@ new T("Tags", [
             equal(r.startHour,10 );
             equal(r.endHour, 12)
 
-        }
-    ],
+        }],
     ["Parse OH 1",() => {
         const rules = OH.ParseRule("11:00-19:00");
         equal(rules.length, 7);
@@ -382,5 +381,5 @@ new T("Tags", [
         equal(Utils.Round(-0.5),  "-0.5")
         equal(Utils.Round(-1.6),  "-1.6")
 
-    }]
-]);
+    }
+]]);

@@ -221,7 +221,7 @@ export default class TagRenderingQuestion extends UIElement {
         if (mapping.hideInAnswer === true) {
             return undefined;
         }
-        if(typeof(mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matches(this._tags.data)){
+        if(typeof(mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)){
             return undefined;
         }
         return new FixedInputElement(

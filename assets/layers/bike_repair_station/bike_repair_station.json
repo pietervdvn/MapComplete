@@ -188,7 +188,8 @@
       "mappings": [
         {
           "if": "operator=De Fietsambassade Gent",
-          "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>"
+          "then": "<a href='https://fietsambassade.gent.be/' target='_blank'>De Fietsambassade Gent</a>",
+          "hideInAnswer": "_country!=be"
         }
       ]
     },

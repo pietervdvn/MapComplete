@@ -1,7 +1,6 @@
 import {Utils} from "../Utils";
 
 export abstract class TagsFilter {
-    abstract matches(tags: { k: string, v: string }[]): boolean
 
     abstract asOverpass(): string[]
 
@@ -11,13 +10,19 @@ export abstract class TagsFilter {
 
     abstract isEquivalent(other: TagsFilter): boolean;
 
-    matchesProperties(properties: Map<string, string>): boolean {
-        return this.matches(TagUtils.proprtiesToKV(properties));
-    }
+    abstract matchesProperties(properties: any): boolean;
 
     abstract asHumanString(linkToWiki: boolean, shorten: boolean);
 
     abstract usedKeys(): string[];
+    
+    public matches(tags: {k: string, v: string}[]){
+        const properties = {};
+        for (const kv of tags) {
+            properties[kv.k] = kv.v;
+        }
+        return this.matchesProperties(properties);
+    }
 }
 
 
@@ -59,14 +64,15 @@ export class RegexTag extends TagsFilter {
     isUsableAsAnswer(): boolean {
         return false;
     }
-
-    matches(tags: { k: string; v: string }[]): boolean {
-        for (const tag of tags) {
-            if (RegexTag.doesMatch(tag.k, this.key)) {
-                return RegexTag.doesMatch(tag.v, this.value) != this.invert;
+    
+    matchesProperties(tags: any): boolean {
+        for (const key in tags) {
+            if (RegexTag.doesMatch(key, this.key)) {
+                const value = tags[key]
+                return RegexTag.doesMatch(value, this.value) != this.invert;
             }
         }
-        if(this.matchesEmpty){
+        if (this.matchesEmpty) {
             // The value is 'empty'
             return !this.invert;
         }
@@ -123,14 +129,14 @@ export class Tag extends TagsFilter {
         }
     }
 
-    matches(tags: { k: string; v: string }[]): boolean {
-
-        for (const tag of tags) {
-            if (this.key == tag.k) {
-                return this.value === tag.v;
+    
+    matchesProperties(properties: any): boolean {
+        for (const propertiesKey in properties) {
+            if(this.key === propertiesKey){
+                const value = properties[propertiesKey];
+                return value === this.value;
             }
-        }
-
+        }  
         // The tag was not found
         if (this.value === "") {
             // and it shouldn't be found!
@@ -192,10 +198,10 @@ export class Or extends TagsFilter {
         super();
         this.or = or;
     }
-
-    matches(tags: { k: string; v: string }[]): boolean {
+    
+    matchesProperties(properties: any): boolean {
         for (const tagsFilter of this.or) {
-            if (tagsFilter.matches(tags)) {
+            if (tagsFilter.matchesProperties(properties)) {
                 return true;
             }
         }
@@ -270,9 +276,9 @@ export class And extends TagsFilter {
         return values;
     }
 
-    matches(tags: { k: string; v: string }[]): boolean {
+    matchesProperties(tags: any): boolean {
         for (const tagsFilter of this.and) {
-            if (!tagsFilter.matches(tags)) {
+            if (!tagsFilter.matchesProperties(tags)) {
                 return false;
             }
         }
@@ -374,14 +380,6 @@ export class And extends TagsFilter {
 
 
 export class TagUtils {
-    static proprtiesToKV(properties: any): { k: string, v: string }[] {
-        const result = [];
-        for (const k in properties) {
-            result.push({k: k, v: properties[k]})
-        }
-        return result;
-    }
-
     static ApplyTemplate(template: string, tags: any): string {
         for (const k in tags) {
             while (template.indexOf("{" + k + "}") >= 0) {
