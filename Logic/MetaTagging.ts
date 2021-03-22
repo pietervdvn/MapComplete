@@ -4,13 +4,15 @@ import opening_hours from "opening_hours";
 import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
 import CountryCoder from "latlon2country"
+import {UIElement} from "../UI/UIElement";
+import Combine from "../UI/Base/Combine";
 
 class SimpleMetaTagger {
     public readonly keys: string[];
     public readonly doc: string;
-    private _f: (feature: any, index: number) => void;
+    private readonly _f: (feature: any, index: number, freshness: Date) => void;
 
-    constructor(keys: string[], doc: string, f: ((feature: any, index: number) => void)) {
+    constructor(keys: string[], doc: string, f: ((feature: any, index: number, freshness: Date) => void)) {
         this.keys = keys;
         this.doc = doc;
         this._f = f;
@@ -21,10 +23,10 @@ class SimpleMetaTagger {
         }
     }
 
-    addMetaTags(features: any[]) {
+    addMetaTags(features: { feature: any, freshness: Date }[]) {
         for (let i = 0; i < features.length; i++) {
             let feature = features[i];
-            this._f(feature, i);
+            this._f(feature.feature, i, feature.freshness);
         }
     }
 
@@ -60,7 +62,7 @@ export default class MetaTagging {
     );
     private static country = new SimpleMetaTagger(
         ["_country"], "The country code of the property (with latlon2country)",
-        (feature, index) => {
+        feature => {
 
             const coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 
@@ -100,14 +102,14 @@ export default class MetaTagging {
                     // AUtomatically triggered on the next change
                     const updateTags = () => {
                         const oldValueIsOpen = tags["_isOpen"];
-                        const oldNextChange =tags["_isOpen:nextTrigger"] ?? 0;
+                        const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
 
-                        if(oldNextChange > (new Date()).getTime() && 
-                        tags["_isOpen:oldvalue"] === tags["opening_hours"]){
+                        if (oldNextChange > (new Date()).getTime() &&
+                            tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
                             // Already calculated and should not yet be triggered
                             return;
                         }
-                        
+
                         tags["_isOpen"] = oh.getState() ? "yes" : "no";
                         const comment = oh.getComment();
                         if (comment) {
@@ -129,7 +131,7 @@ export default class MetaTagging {
                                     updateTags();
                                 },
                                 timeout
-                           )
+                            )
                         }
                     }
                     updateTags();
@@ -204,7 +206,6 @@ export default class MetaTagging {
             const _sidewalkNone = new Tag("sidewalk", "none");
 
 
-            let parkingStateKnown = true;
             let parallelParkingCount = 0;
 
 
@@ -219,7 +220,6 @@ export default class MetaTagging {
             } else if (_otherParkingMode.matchesProperties(properties)) {
                 parallelParkingCount = 0;
             } else {
-                parkingStateKnown = false;
                 console.log("No parking data for ", properties.name, properties.id, properties)
             }
 
@@ -276,14 +276,29 @@ export default class MetaTagging {
 
         }
     );
-    
+
     private static currentTime = new SimpleMetaTagger(
-        ["_date:now"],
+        ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
         "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
-        feature => {
+        (feature, _, freshness) => {
             const now = new Date();
-            // @ts-ignore
-            feature.properties["_date:now"] = now.toISOString().splice(0,-5).replace("T", " ");
+            
+            if(typeof freshness === "string" ){
+                freshness = new Date(freshness)
+            }
+
+            function date(d: Date) {
+                return d.toISOString().slice(0, 10);
+            }
+
+            function datetime(d: Date) {
+                return d.toISOString().slice(0, -5).replace("T", " ");
+            }
+            feature.properties["_now:date"] = date(now);
+            feature.properties["_now:datetime"] = datetime(now);
+            feature.properties["_loaded:date"] = date(freshness);
+            feature.properties["_loaded:datetime"] = datetime(freshness);
+
         }
     )
 
@@ -294,7 +309,7 @@ export default class MetaTagging {
         MetaTagging.isOpen,
         MetaTagging.carriageWayWidth,
         MetaTagging.directionSimplified,
-    //    MetaTagging.currentTime
+        MetaTagging.currentTime
 
     ];
 
@@ -302,7 +317,7 @@ export default class MetaTagging {
      * An actor which adds metatags on every feature in the given object
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
-    static addMetatags(features: any[]) {
+    static addMetatags(features: {feature: any, freshness: Date}[]) {
 
         for (const metatag of MetaTagging.metatags) {
             try {
@@ -313,5 +328,20 @@ export default class MetaTagging {
             }
         }
 
+    }
+    
+    static HelpText() : UIElement{
+        const subElements: UIElement[] = [];
+
+        for (const metatag of MetaTagging.metatags) {
+            subElements.push(
+                new Combine([
+                    "<h3>", metatag.keys.join(", "), "</h3>",
+                    metatag.doc]
+                )
+            )
+        }
+        
+        return new Combine(subElements)
     }
 }
