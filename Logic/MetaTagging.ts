@@ -3,9 +3,9 @@ import State from "../State";
 import opening_hours from "opening_hours";
 import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
-import CountryCoder from "latlon2country"
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import CountryCoder from "latlon2country"
 
 class SimpleMetaTagger {
     public readonly keys: string[];
