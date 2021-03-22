@@ -264,10 +264,11 @@ export default class OpeningHoursVisualization extends UIElement {
             const isToday = (new Date().getDay() + 6) % 7 === i;
             let weekday = OpeningHoursVisualization.weekdays[i].Render();
 
+            let dateToShow = ""
             if (!isWeekstable) {
                 const day = new Date(lastMonday)
                 day.setDate(day.getDate() + i);
-                weekday = " " + day.getDate() + "/" + (day.getMonth() + 1);
+                dateToShow = "" + day.getDate() + "/" + (day.getMonth() + 1);
             }
 
             let innerContent: string[] = [];
@@ -282,7 +283,7 @@ export default class OpeningHoursVisualization extends UIElement {
             for (const range of dayRanges) {
                 if (!range.isOpen && !range.isSpecial) {
                     innerContent.push(
-                        new FixedUiElement(range.comment).SetClass("ohviz-day-off").Render())
+                        new FixedUiElement(range.comment ?? dateToShow).SetClass("ohviz-day-off").Render())
                     continue;
                 }
 
@@ -294,7 +295,7 @@ export default class OpeningHoursVisualization extends UIElement {
                 const width = (100 * (range.endDate - range.startDate) / 1000) / (latestclose - earliestOpen);
                 const startPercentage = (100 * startpoint / availableArea);
                 innerContent.push(
-                    new FixedUiElement(range.comment).SetStyle(`left:${startPercentage}%; width:${width}%`).SetClass("ohviz-range").Render())
+                    new FixedUiElement(range.comment ?? dateToShow).SetStyle(`left:${startPercentage}%; width:${width}%`).SetClass("ohviz-range").Render())
             }
 
             // Add line for 'now'
