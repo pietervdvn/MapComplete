@@ -98,13 +98,23 @@ export interface TagRenderingConfigJson {
          *     hideInAnswer: true
          * }
          * 
-         * Hide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate
+         * Hide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.
+         * Keep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch
          * 
-         * e.g.
+         * e.g., for toilets: if "wheelchair=no", we know there is no wheelchair dedicated room.
+         * For the location of the changing table, the option "in the wheelchair accessible toilet is weird", so we write:
          * 
+         * {
+         *     "question": "Where is the changing table located?"
+         *     "mappings": [
+         *         {"if":"changing_table:location=female","then":"In the female restroom"},
+         *        {"if":"changing_table:location=male","then":"In the male restroom"},
+         *        {"if":"changing_table:location=wheelchair","then":"In the wheelchair accessible restroom", "hideInAnswer": "wheelchair=no"},
+         *         
+         *     ]
+         * }
          * 
          * Also have a look for the meta-tags
-         * 
          * {
          *     if: "operator=Agentschap Natuur en Bos",
          *     then: "Maintained by Agentschap Natuur en Bos",
