@@ -1,10 +1,12 @@
 import {GeoOperations} from "./GeoOperations";
 import State from "../State";
 import opening_hours from "opening_hours";
-import {And, Or, Tag} from "./Tags";
+import {Or} from "./Or";
 import {Utils} from "../Utils";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import {Tag} from "./Tag";
+import {And} from "./And";
 
 class SimpleMetaTagger {
     public readonly keys: string[];

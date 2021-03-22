@@ -9,7 +9,7 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Utils} from "../../Utils";
-import {Tag} from "../../Logic/Tags";
+import {Tag} from "../../Logic/Tag";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 

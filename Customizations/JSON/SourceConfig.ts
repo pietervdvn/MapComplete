@@ -1,4 +1,4 @@
-import {TagsFilter} from "../../Logic/Tags";
+import {TagsFilter} from "../../Logic/TagsFilter";
 
 export default class SourceConfig {
 

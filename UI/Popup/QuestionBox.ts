@@ -3,7 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
-import {TagUtils} from "../../Logic/Tags";
+import {TagUtils} from "../../Logic/TagUtils";
 
 
 /**

@@ -1,10 +1,12 @@
 import {OsmNode, OsmObject} from "./OsmObject";
-import {And, Tag, TagsFilter} from "../Tags";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import FeatureSource from "../FeatureSource/FeatureSource";
+import {TagsFilter} from "../TagsFilter";
+import {Tag} from "../Tag";
+import {And} from "../And";
 
 /**
  * Handles all changes made to OSM.

@@ -6,9 +6,9 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {Imgur} from "../../Logic/Web/Imgur";
 import {DropDown} from "../Input/DropDown";
-import {Tag} from "../../Logic/Tags";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
+import {Tag} from "../../Logic/Tag";
 
 export class ImageUploadFlow extends UIElement {
     private readonly _licensePicker: UIElement;

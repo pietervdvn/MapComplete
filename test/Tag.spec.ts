@@ -3,7 +3,6 @@ Utils.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
 import {FromJSON} from "../Customizations/JSON/FromJSON";
-import {And, Tag} from "../Logic/Tags";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {UIEventSource} from "../Logic/UIEventSource";
@@ -13,6 +12,8 @@ import {Translation} from "../UI/i18n/Translation";
 import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
 import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
 import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
+import {Tag} from "../Logic/Tag";
+import {And} from "../Logic/And";
 
 
 new T("Tags", [

@@ -1,7 +1,7 @@
-import {TagsFilter} from "../Tags";
 import * as $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
 import Bounds from "../../Models/Bounds";
+import {TagsFilter} from "../TagsFilter";
 
 /**
  * Interfaces overpass to get all the latest data

@@ -3,9 +3,9 @@ import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {UIElement} from "../UIElement";
 import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
-import {TagUtils} from "../../Logic/Tags";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {Translation} from "../i18n/Translation";
+import {TagUtils} from "../../Logic/TagUtils";
 
 /***
  * Displays the correct value for a known tagrendering

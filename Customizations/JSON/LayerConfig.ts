@@ -1,6 +1,5 @@
 import Translations from "../../UI/i18n/Translations";
 import TagRenderingConfig from "./TagRenderingConfig";
-import {Tag, TagsFilter} from "../../Logic/Tags";
 import {LayerConfigJson} from "./LayerConfigJson";
 import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
@@ -16,6 +15,8 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {UIElement} from "../../UI/UIElement";
 import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
+import {TagsFilter} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tag";
 
 export default class LayerConfig {
 

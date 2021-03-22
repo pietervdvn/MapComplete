@@ -4,8 +4,8 @@ import Translations from "../i18n/Translations";
 import CheckBox from "../Input/CheckBox";
 import Combine from "../Base/Combine";
 import State from "../../State";
-import {Tag} from "../../Logic/Tags";
 import Svg from "../../Svg";
+import {Tag} from "../../Logic/Tag";
 
 
 export default class DeleteImage extends UIElement {

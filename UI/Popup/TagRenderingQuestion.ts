@@ -3,7 +3,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import {InputElement} from "../Input/InputElement";
-import {And, Tag, TagsFilter, TagUtils} from "../../Logic/Tags";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {RadioButton} from "../Input/RadioButton";
@@ -19,6 +18,10 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
+import {TagsFilter} from "../../Logic/TagsFilter";
+import {Tag} from "../../Logic/Tag";
+import {And} from "../../Logic/And";
+import {TagUtils} from "../../Logic/TagUtils";
 
 /**
  * Shows the question element.

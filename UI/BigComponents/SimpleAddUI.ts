@@ -3,7 +3,6 @@
  */
 import Locale from "../i18n/Locale";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {Tag, TagUtils} from "../../Logic/Tags";
 import {UIElement} from "../UIElement";
 import Svg from "../../Svg";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -13,6 +12,8 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import {Tag} from "../../Logic/Tag";
+import {TagUtils} from "../../Logic/TagUtils";
 
 export default class SimpleAddUI extends UIElement {
     private readonly _loginButton: UIElement;
