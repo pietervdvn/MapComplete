@@ -5,7 +5,6 @@ import {And, Or, Tag} from "./Tags";
 import {Utils} from "../Utils";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
-import CountryCoder from "latlon2country"
 
 class SimpleMetaTagger {
     public readonly keys: string[];
@@ -42,6 +41,7 @@ class SimpleMetaTagger {
 export default class MetaTagging {
 
 
+    static coder: any;
     private static latlon = new SimpleMetaTagger(["_lat", "_lon"], "The latitude and longitude of the point (or centerpoint in the case of a way/area)",
         (feature => {
             const centerPoint = GeoOperations.centerpoint(feature);
@@ -64,12 +64,12 @@ export default class MetaTagging {
         ["_country"], "The country code of the property (with latlon2country)",
         feature => {
 
-            const coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 
             let centerPoint: any = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
             const lon = centerPoint.geometry.coordinates[0];
-            coder.GetCountryCodeFor(lon, lat, (countries) => {
+
+            MetaTagging.GetCountryCodeFor(lon, lat, (countries) => {
                 try {
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
                     const tagsSource = State.state.allElements.getEventSourceFor(feature);
@@ -143,7 +143,6 @@ export default class MetaTagging {
             })
         })
     )
-
     private static directionSimplified = new SimpleMetaTagger(
         ["_direction:simplified", "_direction:leftright"], "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
         (feature => {
@@ -167,7 +166,6 @@ export default class MetaTagging {
 
         })
     )
-
     private static carriageWayWidth = new SimpleMetaTagger(
         ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
         "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present",
@@ -276,14 +274,13 @@ export default class MetaTagging {
 
         }
     );
-
     private static currentTime = new SimpleMetaTagger(
         ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
         "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
         (feature, _, freshness) => {
             const now = new Date();
-            
-            if(typeof freshness === "string" ){
+
+            if (typeof freshness === "string") {
                 freshness = new Date(freshness)
             }
 
@@ -294,6 +291,7 @@ export default class MetaTagging {
             function datetime(d: Date) {
                 return d.toISOString().slice(0, -5).replace("T", " ");
             }
+
             feature.properties["_now:date"] = date(now);
             feature.properties["_now:datetime"] = datetime(now);
             feature.properties["_loaded:date"] = date(freshness);
@@ -301,7 +299,6 @@ export default class MetaTagging {
 
         }
     )
-
     private static metatags = [
         MetaTagging.latlon,
         MetaTagging.surfaceArea,
@@ -317,7 +314,7 @@ export default class MetaTagging {
      * An actor which adds metatags on every feature in the given object
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
-    static addMetatags(features: {feature: any, freshness: Date}[]) {
+    static addMetatags(features: { feature: any, freshness: Date }[]) {
 
         for (const metatag of MetaTagging.metatags) {
             try {
@@ -329,9 +326,21 @@ export default class MetaTagging {
         }
 
     }
-    
-    static HelpText() : UIElement{
-        const subElements: UIElement[] = [];
+
+    static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
+        MetaTagging.coder.GetCountryCodeFor(lon, lat, callback)
+    }
+
+    static HelpText(): UIElement {
+        const subElements: UIElement[] = [
+            new Combine([
+                "<h1>Metatags</h1>",
+                "Metatags are extra tags available, in order to display more data or to give better questions.",
+                "The are calculated when the data arrives in the webbrowser. This document gives an overview of the available metatags"
+            ])
+            
+            
+        ];
 
         for (const metatag of MetaTagging.metatags) {
             subElements.push(
@@ -341,7 +350,7 @@ export default class MetaTagging {
                 )
             )
         }
-        
+
         return new Combine(subElements)
     }
 }

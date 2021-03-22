@@ -14,7 +14,7 @@ function WriteFile(filename, html: UIElement) : void {
 }
 
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage)
-// WriteFile("./Docs/CalculatedTags.md", MetaTagging.HelpText())
+WriteFile("./Docs/CalculatedTags.md", MetaTagging.HelpText())
 
 
 console.log("Generated docs")

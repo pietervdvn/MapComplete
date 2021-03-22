@@ -11,6 +11,15 @@ import State from "./State";
 import Combine from "./UI/Base/Combine";
 import Translations from "./UI/i18n/Translations";
 
+
+import CountryCoder from "latlon2country"
+
+import MetaTagging from "./Logic/MetaTagging";
+
+// Workaround for a stupid crash: inject the function
+MetaTagging.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+
+
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------
 // @ts-ignore
@@ -73,7 +82,7 @@ if (layoutFromBase64.startsWith("http")) {
     $.ajax({
         url: link,
         success: function (data) {
-   
+
             try {
                 const parsed = JSON.parse(data);
                 // Overwrite the id to the wiki:value
