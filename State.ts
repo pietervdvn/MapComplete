@@ -1,4 +1,3 @@
-import {UIElement} from "./UI/UIElement";
 import {Utils} from "./Utils";
 import {ElementStorage} from "./Logic/ElementStorage";
 import {Changes} from "./Logic/Osm/Changes";
@@ -8,7 +7,6 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
-import Hash from "./Logic/Web/Hash";
 import {MangroveIdentity} from "./Logic/Web/MangroveReviews";
 import InstalledThemes from "./Logic/Actors/InstalledThemes";
 import BaseLayer from "./Models/BaseLayer";
@@ -89,6 +87,7 @@ export default class State {
     public readonly featureSwitchShareScreen: UIEventSource<boolean>;
     public readonly featureSwitchGeolocation: UIEventSource<boolean>;
     public readonly featureSwitchIsTesting: UIEventSource<boolean>;
+    public readonly featureSwitchIsDebugging: UIEventSource<boolean>;
 
 
     /**
@@ -194,6 +193,10 @@ export default class State {
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",
                 "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org")
                 .map(str => str === "true", [], b => "" + b);
+            
+            this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter("debug","false",
+                "If true, shows some extra debugging help such as all the available tags on every object")
+                .map(str => str === "true", [], b => "" + b)
         }
 
 

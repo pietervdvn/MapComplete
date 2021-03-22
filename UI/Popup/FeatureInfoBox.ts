@@ -9,6 +9,7 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Utils} from "../../Utils";
+import {Tag} from "../../Logic/Tags";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -54,7 +55,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
         let questionBoxIsUsed = false;
-        const renderings = layerConfig.tagRenderings.map((tr,i) => {
+        const renderings = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;
@@ -64,6 +65,11 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
+        }
+        
+        if(State.state.featureSwitchIsDebugging.data){
+            const config: TagRenderingConfig = new TagRenderingConfig({render:"{all_tags()}"}, new Tag("id",""), "");
+            renderings.push(new TagRenderingAnswer(tags,config ))
         }
 
         return new Combine(renderings).SetClass("block")

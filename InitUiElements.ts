@@ -390,8 +390,8 @@ export class InitUiElements {
             if (featuresFreshness === undefined) {
                 return;
             }
-            let features = featuresFreshness.map(ff => ff.feature);
-            features.forEach(feature => {
+            featuresFreshness.forEach(featureFresh => {
+                const feature = featureFresh.feature;
                 State.state.allElements.addOrGetElement(feature);
 
                 if (Hash.hash.data === feature.properties.id) {
@@ -399,7 +399,7 @@ export class InitUiElements {
                 }
 
             })
-            MetaTagging.addMetatags(features);
+            MetaTagging.addMetatags(featuresFreshness);
         })
 
         new ShowDataLayer(source.features, State.state.leafletMap,
