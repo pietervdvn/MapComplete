@@ -280,11 +280,11 @@ def create_graphs(contents):
         cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
 
 
-def create_per_theme_graphs(contents):
+def create_per_theme_graphs(contents, cutoff=10):
     all_themes = set(map(lambda row: row[3], contents))
     for theme in all_themes:
         filtered = list(contents_where(contents, 3, theme))
-        if len(filtered) < 10:
+        if len(filtered) < cutoff:
             # less then 10 changesets - we do not map it
             continue
         contributors = set(map(lambda row: row[1], filtered))
@@ -345,7 +345,7 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         create_graphs(stats)
-        # create_per_theme_graphs(stats)
+        create_per_theme_graphs(stats, 15)
         # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
