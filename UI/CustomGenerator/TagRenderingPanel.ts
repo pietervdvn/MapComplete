@@ -61,6 +61,13 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         function setting(input: InputElement<any>, id: string | string[], name: string, description: string | UIElement): SingleSetting<any> {
             return new SingleSetting<any>(value, input, id, name, description);
         }
+        
+        this._value.addCallback(value => {
+            if(value?.freeform?.key == ""){
+                value.freeform = undefined;
+                this._value.ping();
+            }
+        })
 
         const questionSettings = [
 
