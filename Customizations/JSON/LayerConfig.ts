@@ -28,6 +28,7 @@ export default class LayerConfig {
     name: Translation
     description: Translation;
     source: SourceConfig;
+    calculatedTags: [string, string][]
     doNotDownload: boolean;
     passAllFeatures: boolean;
     minzoom: number;
@@ -51,8 +52,9 @@ export default class LayerConfig {
     }[];
 
     tagRenderings: TagRenderingConfig [];
-    
+
     constructor(json: LayerConfigJson,
+                official: boolean= true,
                 context?: string) {
         context = context + "." + json.id;
         const self = this;
@@ -65,9 +67,9 @@ export default class LayerConfig {
             // @ts-ignore
             legacy = FromJSON.Tag(json["overpassTags"], context + ".overpasstags");
         }
-        if(json.source !== undefined){
-            if (legacy !== undefined ) {
-                throw context+"Both the legacy 'layer.overpasstags' and the new 'layer.source'-field are defined"
+        if (json.source !== undefined) {
+            if (legacy !== undefined) {
+                throw context + "Both the legacy 'layer.overpasstags' and the new 'layer.source'-field are defined"
             }
 
             let osmTags: TagsFilter = legacy;
@@ -81,14 +83,21 @@ export default class LayerConfig {
                 geojsonSource: json.source["geoJsonSource"],
                 overpassScript: json.source["overpassScript"],
             });
-        }else{
+        } else {
             this.source = new SourceConfig({
-                osmTags : legacy
+                osmTags: legacy
             })
         }
-        
-      
 
+
+        this.calculatedTags = undefined;
+        if (json.calculatedTags !== undefined) {
+            console.warn("Unofficial theme with custom javascript! This is a security risk")
+            this.calculatedTags = [];
+            for (const key in json.calculatedTags) {
+                this.calculatedTags.push([key, json.calculatedTags[key]])
+            }
+        }
 
         this.doNotDownload = json.doNotDownload ?? false;
         this.passAllFeatures = json.passAllFeatures ?? false;
@@ -139,10 +148,10 @@ export default class LayerConfig {
                     if (typeof renderingJson === "string") {
 
                         if (renderingJson === "questions") {
-                            if(readOnly){
+                            if (readOnly) {
                                 throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}`
                             }
-                            
+
                             return new TagRenderingConfig("questions", undefined)
                         }
 
@@ -203,6 +212,13 @@ export default class LayerConfig {
 
     }
 
+    public CustomCodeSnippets(): string[]{
+        if(this.calculatedTags === undefined){
+            return []
+        }
+        
+        return this.calculatedTags.map(code => code[1]);
+    }
 
     public AddRoamingRenderings(addAll: {
         tagRenderings: TagRenderingConfig[],

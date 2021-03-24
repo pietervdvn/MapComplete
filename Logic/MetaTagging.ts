@@ -1,39 +1,45 @@
 import {GeoOperations} from "./GeoOperations";
-import State from "../State";
-import opening_hours from "opening_hours";
-import {Or} from "./Or";
-import {Utils} from "../Utils";
-import {UIElement} from "../UI/UIElement";
-import Combine from "../UI/Base/Combine";
-import {Tag} from "./Tag";
-import {And} from "./And";
+import LayerConfig from "../Customizations/JSON/LayerConfig";
+import SimpleMetaTagger from "./SimpleMetaTagger";
 
-class SimpleMetaTagger {
-    public readonly keys: string[];
-    public readonly doc: string;
-    private readonly _f: (feature: any, index: number, freshness: Date) => void;
+export class ExtraFunction {
 
-    constructor(keys: string[], doc: string, f: ((feature: any, index: number, freshness: Date) => void)) {
-        this.keys = keys;
-        this.doc = doc;
-        this._f = f;
-        for (const key of keys) {
-            if (!key.startsWith('_')) {
-                throw `Incorrect metakey ${key}: it should start with underscore (_)`
+    static readonly doc: string = "When the feature is downloaded, some extra tags can be calculated by a javascript snippet. The feature is passed as 'feat'; there are a few functions available on it to handle it - apart from 'feat.tags' which is a classic object containing all the tags."
+    private static DistanceToFunc = new ExtraFunction(
+        "distanceTo",
+        "Calculates the distance between the feature and a specified point",
+        ["longitude", "latitude"],
+        (feature) => {
+            return (lon, lat) => {
+                // Feature._lon and ._lat is conveniently place by one of the other metatags
+                return GeoOperations.distanceBetween([lon, lat], [feature._lon, feature._lat]);
             }
         }
+    )
+    private static readonly allFuncs : ExtraFunction[] = [ExtraFunction.DistanceToFunc];
+    private readonly _name: string;
+    private readonly _args: string[];
+    private readonly _doc: string;
+    private readonly _f: (feat: any) => any;
+
+    constructor(name: string, doc: string, args: string[], f: ((feat: any) => any)) {
+        this._name = name;
+        this._doc = doc;
+        this._args = args;
+        this._f = f;
+
     }
 
-    addMetaTags(features: { feature: any, freshness: Date }[]) {
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
-            this._f(feature.feature, i, feature.freshness);
+    public static FullPatchFeature(feature) {
+        for (const func of ExtraFunction.allFuncs) {
+            func.PatchFeature(feature);
         }
     }
 
-
+    public PatchFeature(feature: any) {
+        feature[this._name] = this._f(feature);
+    }
 }
-
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -43,282 +49,13 @@ class SimpleMetaTagger {
 export default class MetaTagging {
 
 
-    static coder: any;
-    private static latlon = new SimpleMetaTagger(["_lat", "_lon"], "The latitude and longitude of the point (or centerpoint in the case of a way/area)",
-        (feature => {
-            const centerPoint = GeoOperations.centerpoint(feature);
-            const lat = centerPoint.geometry.coordinates[1];
-            const lon = centerPoint.geometry.coordinates[0];
-            feature.properties["_lat"] = "" + lat;
-            feature.properties["_lon"] = "" + lon;
-        })
-    );
-    private static surfaceArea = new SimpleMetaTagger(
-        ["_surface", "_surface:ha"], "The surface area of the feature, in square meters and in hectare. Not set on points and ways",
-        (feature => {
-            const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
-            feature.properties["_surface"] = "" + sqMeters;
-            feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000) / 10;
-
-        })
-    );
-    private static country = new SimpleMetaTagger(
-        ["_country"], "The country code of the property (with latlon2country)",
-        feature => {
-
-
-            let centerPoint: any = GeoOperations.centerpoint(feature);
-            const lat = centerPoint.geometry.coordinates[1];
-            const lon = centerPoint.geometry.coordinates[0];
-
-            MetaTagging.GetCountryCodeFor(lon, lat, (countries) => {
-                try {
-                    feature.properties["_country"] = countries[0].trim().toLowerCase();
-                    const tagsSource = State.state.allElements.getEventSourceFor(feature);
-                    tagsSource.ping();
-                } catch (e) {
-                    console.warn(e)
-                }
-            });
-        }
-    )
-    private static isOpen = new SimpleMetaTagger(
-        ["_isOpen", "_isOpen:description"],
-        "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
-        (feature => {
-
-            const tagsSource = State.state.allElements.getEventSourceFor(feature);
-            tagsSource.addCallbackAndRun(tags => {
-                if (tags.opening_hours === undefined || tags._country === undefined) {
-                    return;
-                }
-                try {
-
-                    const oh = new opening_hours(tags["opening_hours"], {
-                        lat: tags._lat,
-                        lon: tags._lon,
-                        address: {
-                            country_code: tags._country.toLowerCase()
-                        }
-                    }, {tag_key: "opening_hours"});
-                    // AUtomatically triggered on the next change
-                    const updateTags = () => {
-                        const oldValueIsOpen = tags["_isOpen"];
-                        const oldNextChange = tags["_isOpen:nextTrigger"] ?? 0;
-
-                        if (oldNextChange > (new Date()).getTime() &&
-                            tags["_isOpen:oldvalue"] === tags["opening_hours"]) {
-                            // Already calculated and should not yet be triggered
-                            return;
-                        }
-
-                        tags["_isOpen"] = oh.getState() ? "yes" : "no";
-                        const comment = oh.getComment();
-                        if (comment) {
-                            tags["_isOpen:description"] = comment;
-                        }
-
-                        if (oldValueIsOpen !== tags._isOpen) {
-                            tagsSource.ping();
-                        }
-
-                        const nextChange = oh.getNextChange();
-                        if (nextChange !== undefined) {
-                            const timeout = nextChange.getTime() - (new Date()).getTime();
-                            tags["_isOpen:nextTrigger"] = nextChange.getTime();
-                            tags["_isOpen:oldvalue"] = tags.opening_hours
-                            window.setTimeout(
-                                () => {
-                                    console.log("Updating the _isOpen tag for ", tags.id, ", it's timer expired after", timeout);
-                                    updateTags();
-                                },
-                                timeout
-                            )
-                        }
-                    }
-                    updateTags();
-                } catch (e) {
-                    console.warn("Error while parsing opening hours of ", tags.id, e);
-                    tags["_isOpen"] = "parse_error";
-                }
-
-            })
-        })
-    )
-    private static directionSimplified = new SimpleMetaTagger(
-        ["_direction:simplified", "_direction:leftright"], "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
-        (feature => {
-            const tags = feature.properties;
-            const direction = tags["camera:direction"] ?? tags["direction"];
-            if (direction === undefined) {
-                return;
-            }
-            let n = Number(direction);
-            if (isNaN(n)) {
-                return;
-            }
-
-            // [22.5 -> 67.5] is sector 1
-            // [67.5 -> ] is sector 1
-            n = (n + 22.5) % 360;
-            n = Math.floor(n / 45);
-            tags["_direction:simplified"] = n;
-            tags["_direction:leftright"] = n <= 3 ? "right" : "left";
-
-
-        })
-    )
-    private static carriageWayWidth = new SimpleMetaTagger(
-        ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
-        "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present",
-        (feature: any, index: number) => {
-
-            const properties = feature.properties;
-            if (properties["width:carriageway"] === undefined) {
-                return;
-            }
-
-            const carWidth = 2;
-            const cyclistWidth = 1.5;
-            const pedestrianWidth = 0.75;
-
-
-            const _leftSideParking =
-                new And([new Tag("parking:lane:left", "parallel"), new Tag("parking:lane:right", "no_parking")]);
-            const _rightSideParking =
-                new And([new Tag("parking:lane:right", "parallel"), new Tag("parking:lane:left", "no_parking")]);
-
-            const _bothSideParking = new Tag("parking:lane:both", "parallel");
-            const _noSideParking = new Tag("parking:lane:both", "no_parking");
-            const _otherParkingMode =
-                new Or([
-                    new Tag("parking:lane:both", "perpendicular"),
-                    new Tag("parking:lane:left", "perpendicular"),
-                    new Tag("parking:lane:right", "perpendicular"),
-                    new Tag("parking:lane:both", "diagonal"),
-                    new Tag("parking:lane:left", "diagonal"),
-                    new Tag("parking:lane:right", "diagonal"),
-                ])
-
-            const _sidewalkBoth = new Tag("sidewalk", "both");
-            const _sidewalkLeft = new Tag("sidewalk", "left");
-            const _sidewalkRight = new Tag("sidewalk", "right");
-            const _sidewalkNone = new Tag("sidewalk", "none");
-
-
-            let parallelParkingCount = 0;
-
-
-            const _oneSideParking = new Or([_leftSideParking, _rightSideParking]);
-
-            if (_oneSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 1;
-            } else if (_bothSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 2;
-            } else if (_noSideParking.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else if (_otherParkingMode.matchesProperties(properties)) {
-                parallelParkingCount = 0;
-            } else {
-                console.log("No parking data for ", properties.name, properties.id, properties)
-            }
-
-
-            let pedestrianFlowNeeded;
-            if (_sidewalkBoth.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 0;
-            } else if (_sidewalkNone.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 2;
-            } else if (_sidewalkLeft.matchesProperties(properties) || _sidewalkRight.matchesProperties(properties)) {
-                pedestrianFlowNeeded = 1;
-            } else {
-                pedestrianFlowNeeded = -1;
-            }
-
-
-            let onewayCar = properties.oneway === "yes";
-            let onewayBike = properties["oneway:bicycle"] === "yes" ||
-                (onewayCar && properties["oneway:bicycle"] === undefined)
-
-            let cyclingAllowed =
-                !(properties.bicycle === "use_sidepath"
-                    || properties.bicycle === "no");
-
-            let carWidthUsed = (onewayCar ? 1 : 2) * carWidth;
-            properties["_width:needed:cars"] = Utils.Round(carWidthUsed);
-            properties["_width:needed:parking"] = Utils.Round(parallelParkingCount * carWidth)
-
-
-            let cyclistWidthUsed = 0;
-            if (cyclingAllowed) {
-                cyclistWidthUsed = (onewayBike ? 1 : 2) * cyclistWidth;
-            }
-            properties["_width:needed:cyclists"] = Utils.Round(cyclistWidthUsed)
-
-
-            const width = parseFloat(properties["width:carriageway"]);
-
-
-            const targetWidthIgnoringPedestrians =
-                carWidthUsed +
-                cyclistWidthUsed +
-                parallelParkingCount * carWidthUsed;
-            properties["_width:needed:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians);
-
-            const pedestriansNeed = Math.max(0, pedestrianFlowNeeded) * pedestrianWidth;
-            const targetWidth = targetWidthIgnoringPedestrians + pedestriansNeed;
-            properties["_width:needed"] = Utils.Round(targetWidth);
-            properties["_width:needed:pedestrians"] = Utils.Round(pedestriansNeed)
-
-
-            properties["_width:difference"] = Utils.Round(targetWidth - width);
-            properties["_width:difference:no_pedestrians"] = Utils.Round(targetWidthIgnoringPedestrians - width);
-
-        }
-    );
-    private static currentTime = new SimpleMetaTagger(
-        ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
-        "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
-        (feature, _, freshness) => {
-            const now = new Date();
-
-            if (typeof freshness === "string") {
-                freshness = new Date(freshness)
-            }
-
-            function date(d: Date) {
-                return d.toISOString().slice(0, 10);
-            }
-
-            function datetime(d: Date) {
-                return d.toISOString().slice(0, -5).replace("T", " ");
-            }
-
-            feature.properties["_now:date"] = date(now);
-            feature.properties["_now:datetime"] = datetime(now);
-            feature.properties["_loaded:date"] = date(freshness);
-            feature.properties["_loaded:datetime"] = datetime(freshness);
-
-        }
-    )
-    private static metatags = [
-        MetaTagging.latlon,
-        MetaTagging.surfaceArea,
-        MetaTagging.country,
-        MetaTagging.isOpen,
-        MetaTagging.carriageWayWidth,
-        MetaTagging.directionSimplified,
-        MetaTagging.currentTime
-
-    ];
-
     /**
      * An actor which adds metatags on every feature in the given object
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
-    static addMetatags(features: { feature: any, freshness: Date }[]) {
+    static addMetatags(features: { feature: any; freshness: Date }[], layers: LayerConfig[]) {
 
-        for (const metatag of MetaTagging.metatags) {
+        for (const metatag of SimpleMetaTagger.metatags) {
             try {
                 metatag.addMetaTags(features);
             } catch (e) {
@@ -327,32 +64,63 @@ export default class MetaTagging {
             }
         }
 
-    }
-
-    static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
-        MetaTagging.coder.GetCountryCodeFor(lon, lat, callback)
-    }
-
-    static HelpText(): UIElement {
-        const subElements: UIElement[] = [
-            new Combine([
-                "<h1>Metatags</h1>",
-                "Metatags are extra tags available, in order to display more data or to give better questions.",
-                "The are calculated when the data arrives in the webbrowser. This document gives an overview of the available metatags"
-            ])
-            
-            
-        ];
-
-        for (const metatag of MetaTagging.metatags) {
-            subElements.push(
-                new Combine([
-                    "<h3>", metatag.keys.join(", "), "</h3>",
-                    metatag.doc]
-                )
-            )
+        // The functions - per layer - which add the new keys
+        const layerFuncs = new Map<string, ((feature: any) => void)>();
+        for (const layer of layers) {
+            layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
         }
 
-        return new Combine(subElements)
+        for (const feature of features) {
+            // @ts-ignore
+            const key = feature.feature._matching_layer_id;
+            const f = layerFuncs.get(key);
+            if (f === undefined) {
+                continue;
+            }
+
+            f(feature.feature)
+        }
+
+    }
+
+
+    private static createRetaggingFunc(layer: LayerConfig): ((feature: any) => void) {
+        const calculatedTags: [string, string][] = layer.calculatedTags;
+        if (calculatedTags === undefined) {
+            return undefined;
+        }
+
+        const functions: ((feature: any) => void)[] = [];
+        for (const entry of calculatedTags) {
+            const key = entry[0]
+            const code = entry[1];
+            if (code === undefined) {
+                continue;
+            }
+
+            const func = new Function("feat", "return " + code + ";");
+
+            const f = (feature: any) => {
+                feature.properties[key] = func(feature);
+            }
+            functions.push(f)
+        }
+        return (feature) => {
+            const tags = feature.properties
+            if (tags === undefined) {
+                return;
+            }
+
+            ExtraFunction.FullPatchFeature(feature);
+
+            for (const f of functions) {
+                try {
+                    f(feature);
+                } catch (e) {
+                    console.error("While calculating a tag value: ", e)
+                }
+
+            }
+        }
     }
 }

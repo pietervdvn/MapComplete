@@ -15,6 +15,9 @@
   "source": {
     "osmTags": "amenity=public_bookcase"
   },
+  "calculatedTags": {
+    "_distanceToPietervdn": "feat.distanceTo(3.704388, 51.05281) < 1 ? 'closeby' : 'faraway'"
+  },
   "minzoom": 12,
   "wayHandling": 2,
   "title": {

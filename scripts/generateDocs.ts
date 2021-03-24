@@ -1,9 +1,10 @@
 import {Utils} from "../Utils";
-Utils.runningFromConsole = true;
 import SpecialVisualizations from "../UI/SpecialVisualizations";
-import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
+import {writeFileSync} from "fs";
 import {UIElement} from "../UI/UIElement";
-import MetaTagging from "../Logic/MetaTagging";
+import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
+
+Utils.runningFromConsole = true;
 
 
 const TurndownService = require('turndown')
@@ -14,7 +15,7 @@ function WriteFile(filename, html: UIElement) : void {
 }
 
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage)
-WriteFile("./Docs/CalculatedTags.md", MetaTagging.HelpText())
+WriteFile("./Docs/CalculatedTags.md", SimpleMetaTagger.HelpText())
 
 
 console.log("Generated docs")

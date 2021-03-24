@@ -21,6 +21,15 @@ export class GeoOperations {
         return coordinates;
     }
 
+    /**
+     * Returns the distance between the two points in kilometers
+     * @param lonlat0
+     * @param lonlat1
+     */
+    static distanceBetween(lonlat0: [number,number], lonlat1:[number, number]){
+        return turf.distance(lonlat0, lonlat1)
+    }
+
     static featureIsContainedInAny(feature: any,
                                    shouldNotContain: any[],
                                    maxOverlapPercentage: number): boolean {

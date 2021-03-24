@@ -31,7 +31,7 @@ export default class LayoutConfig {
     };
 
     public readonly hideFromOverview: boolean;
-    public readonly lockLocation: boolean | [[number,number],[number, number]];
+    public readonly lockLocation: boolean | [[number, number], [number, number]];
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
     public readonly enableMoreQuests: boolean;
@@ -39,10 +39,12 @@ export default class LayoutConfig {
     public readonly enableLayers: boolean;
     public readonly enableSearch: boolean;
     public readonly enableGeolocation: boolean;
+    private readonly _official : boolean;
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly customCss?: string;
 
-    constructor(json: LayoutConfigJson, context?: string) {
+    constructor(json: LayoutConfigJson, official=true, context?: string) {
+        this._official = official;
         this.id = json.id;
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
@@ -54,7 +56,7 @@ export default class LayoutConfig {
         } else {
             this.language = json.language;
         }
-        if(this.language.length == 0){
+        if (this.language.length == 0) {
             throw "No languages defined. Define at least one language"
         }
         if (json.title === undefined) {
@@ -66,7 +68,7 @@ export default class LayoutConfig {
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context+".descriptionTail") : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.descriptionTail = json.descriptionTail === undefined ? new Translation({"*": ""}, context + ".descriptionTail") : new Translation(json.descriptionTail, context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage;
         this.startZoom = json.startZoom;
@@ -79,7 +81,7 @@ export default class LayoutConfig {
                         return SharedTagRenderings.SharedTagRendering[tr];
                     }
                 }
-                return new TagRenderingConfig(tr, undefined,`${this.id}.roaming_renderings[${i}]`);
+                return new TagRenderingConfig(tr, undefined, `${this.id}.roaming_renderings[${i}]`);
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
@@ -104,32 +106,31 @@ export default class LayoutConfig {
             }
 
             // @ts-ignore
-            return new LayerConfig(layer, `${this.id}.layers[${i}]`)
+            return new LayerConfig(layer, official,`${this.id}.layers[${i}]`)
         });
-        
+
         // ALl the layers are constructed, let them share tags in now!
-        const roaming : {r, source: LayerConfig}[] = []
+        const roaming: { r, source: LayerConfig }[] = []
         for (const layer of this.layers) {
-            roaming.push({r: layer.GetRoamingRenderings(), source:layer});
+            roaming.push({r: layer.GetRoamingRenderings(), source: layer});
         }
 
         for (const layer of this.layers) {
             for (const r of roaming) {
-                if(r.source == layer){
+                if (r.source == layer) {
                     continue;
                 }
                 layer.AddRoamingRenderings(r.r);
             }
         }
-        
-        for(const layer of this.layers) {
+
+        for (const layer of this.layers) {
             layer.AddRoamingRenderings(
                 {
-                    titleIcons:[],
+                    titleIcons: [],
                     iconOverlays: [],
                     tagRenderings: this.roamingRenderings
-                }  
-                
+                }
             );
         }
 
@@ -151,8 +152,8 @@ export default class LayoutConfig {
 
         this.hideFromOverview = json.hideFromOverview ?? false;
         // @ts-ignore
-        if(json.hideInOverview){
-            throw "The json for "+this.id+" contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
+        if (json.hideInOverview) {
+            throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
         }
         this.lockLocation = json.lockLocation ?? false;
         this.enableUserBadge = json.enableUserBadge ?? true;
@@ -166,4 +167,19 @@ export default class LayoutConfig {
         this.customCss = json.customCss;
     }
 
+    public CustomCodeSnippets(): string[] {
+        if(this._official){
+            return [];
+        }
+        const msg = "<br/><b>This layout uses <span class='alert'>custom javascript</span>, loaded for the wide internet. The code is printed below, please report suspicious code on the issue tracker of MapComplete:</b><br/>"
+        const custom = [];
+        for (const layer of this.layers) {
+            custom.push(...layer.CustomCodeSnippets().map(code => code+"<br />"))
+        }
+        if (custom.length === 0) {
+            return custom;
+        }
+        custom.splice(0, 0, msg);
+        return custom;
+    }
 }

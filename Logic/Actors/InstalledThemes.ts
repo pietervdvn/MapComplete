@@ -24,7 +24,7 @@ export default class InstalledThemes {
                     try {
                         const json = atob(customLayout.data);
                         const layout = new LayoutConfig(
-                            JSON.parse(json));
+                            JSON.parse(json), false);
                         installedThemes.push({
                             layout: layout,
                             definition: customLayout.data

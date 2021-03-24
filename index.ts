@@ -14,10 +14,10 @@ import Translations from "./UI/i18n/Translations";
 
 import CountryCoder from "latlon2country"
 
-import MetaTagging from "./Logic/MetaTagging";
+import SimpleMetaTagger from "./Logic/SimpleMetaTagger";
 
 // Workaround for a stupid crash: inject the function
-MetaTagging.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
+SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 
 
 let defaultLayout = ""
@@ -87,7 +87,7 @@ if (layoutFromBase64.startsWith("http")) {
                 const parsed = JSON.parse(data);
                 // Overwrite the id to the wiki:value
                 parsed.id = link;
-                const layout = new LayoutConfig(parsed);
+                const layout = new LayoutConfig(parsed, false);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
                 new FixedUiElement(`<a href="${link}">${link}</a> is invalid:<br/>${e}<br/> <a href='https://${window.location.host}/'>Go back</a>")`)

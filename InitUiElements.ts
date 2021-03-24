@@ -209,7 +209,7 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = new LayoutConfig(JSON.parse(atob(hash)));
+            const layoutToUse = new LayoutConfig(JSON.parse(atob(hash)), false);
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
@@ -380,7 +380,6 @@ export class InitUiElements {
                 return flayers;
             });
 
-
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
         const source = new FeaturePipeline(state.filteredLayers, updater, state.layoutToUse, state.changes, state.locationControl);
@@ -399,7 +398,8 @@ export class InitUiElements {
                 }
 
             })
-            MetaTagging.addMetatags(featuresFreshness);
+
+            MetaTagging.addMetatags(featuresFreshness, state.layoutToUse.data.layers);
         })
 
         new ShowDataLayer(source.features, State.state.leafletMap,

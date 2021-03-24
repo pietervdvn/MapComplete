@@ -42,6 +42,11 @@ export interface LayerConfigJson {
     source: {osmTags: AndOrTagConfigJson | string} | {geoJsonSource: string} | {overpassScript: string}
 
     /**
+     * A dictionary of 'key': 'js-expression'. These js-expressions will be calculated for every feature, giving extra tags to work with in the rest of the pipieline
+     */
+    calculatedTags? : any;
+
+    /**
      * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers. 
      * Works well together with 'passAllFeatures', to add decoration
      */
