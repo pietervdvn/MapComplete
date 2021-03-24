@@ -1,10 +1,35 @@
 import {GeoOperations} from "./GeoOperations";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SimpleMetaTagger from "./SimpleMetaTagger";
+import {UIElement} from "../UI/UIElement";
+import Combine from "../UI/Base/Combine";
 
 export class ExtraFunction {
 
-    static readonly doc: string = "When the feature is downloaded, some extra tags can be calculated by a javascript snippet. The feature is passed as 'feat'; there are a few functions available on it to handle it - apart from 'feat.tags' which is a classic object containing all the tags."
+    static readonly intro = `<h2>Calculating tags with Javascript</h2>
+
+<p>In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. <b>_lat</b>, <b>lon</b>, <b>_country</b>), as detailed above.</p>
+
+<p>It is also possible to calculate your own tags - but this requires some javascript knowledge. </p>
+
+Before proceeding, some warnings:
+
+<ul>
+<li> DO NOT DO THIS AS BEGINNER</li>
+<li> <b>Only do this if all other techniques fail</b>. This should <i>not</i> be done to create a rendering effect, only to calculate a specific value</li>
+<li> <b>THIS MIGHT BE DISABLED WITHOUT ANY NOTICE ON UNOFFICIAL THEMES</b>. As unofficial themes might be loaded from the internet, this is the equivalent of injecting arbitrary code into the client. It'll be disabled if abuse occurs.</li>
+</ul>
+In the layer object, add a field <b>calculatedTags</b>, e.g.:
+
+<div class="code">
+  "calculatedTags": {
+    "_someKey": "javascript-expression",
+    "name": "feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
+    "_distanceCloserThen3Km": "feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
+  }
+</div>
+`
+
     private static DistanceToFunc = new ExtraFunction(
         "distanceTo",
         "Calculates the distance between the feature and a specified point",
@@ -16,7 +41,7 @@ export class ExtraFunction {
             }
         }
     )
-    private static readonly allFuncs : ExtraFunction[] = [ExtraFunction.DistanceToFunc];
+    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc];
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
@@ -34,6 +59,21 @@ export class ExtraFunction {
         for (const func of ExtraFunction.allFuncs) {
             func.PatchFeature(feature);
         }
+    }
+
+    public static HelpText(): UIElement {
+        return new Combine([
+            ExtraFunction.intro,
+            ...ExtraFunction.allFuncs.map(func =>
+                new Combine([
+                    "<h3>" + func._name + "</h3>",
+                    func._doc,
+                    "<ul>",
+                    ...func._args.map(arg => "<li>" + arg + "</li>"),
+                    "</ul>"
+                ])
+            )
+        ]);
     }
 
     public PatchFeature(feature: any) {

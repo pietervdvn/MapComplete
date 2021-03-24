@@ -54,8 +54,8 @@ export default class LayerConfig {
     tagRenderings: TagRenderingConfig [];
 
     constructor(json: LayerConfigJson,
-                official: boolean= true,
-                context?: string) {
+                context?: string,
+                official: boolean = true,) {
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
@@ -92,7 +92,9 @@ export default class LayerConfig {
 
         this.calculatedTags = undefined;
         if (json.calculatedTags !== undefined) {
-            console.warn("Unofficial theme with custom javascript! This is a security risk")
+            if (!official) {
+                console.warn(`Unofficial theme ${this.id} with custom javascript! This is a security risk`)
+            }
             this.calculatedTags = [];
             for (const key in json.calculatedTags) {
                 this.calculatedTags.push([key, json.calculatedTags[key]])
@@ -212,11 +214,11 @@ export default class LayerConfig {
 
     }
 
-    public CustomCodeSnippets(): string[]{
-        if(this.calculatedTags === undefined){
+    public CustomCodeSnippets(): string[] {
+        if (this.calculatedTags === undefined) {
             return []
         }
-        
+
         return this.calculatedTags.map(code => code[1]);
     }
 

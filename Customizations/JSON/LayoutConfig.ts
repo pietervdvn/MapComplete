@@ -106,7 +106,7 @@ export default class LayoutConfig {
             }
 
             // @ts-ignore
-            return new LayerConfig(layer, official,`${this.id}.layers[${i}]`)
+            return new LayerConfig(layer,`${this.id}.layers[${i}]`, official)
         });
 
         // ALl the layers are constructed, let them share tags in now!

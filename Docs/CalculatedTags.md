@@ -1,3 +1,8 @@
+Metatags
+--------
+
+Metatags are extra tags available, in order to display more data or to give better questions.The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags
+
 ### \_lat, \_lon
 
 The latitude and longitude of the point (or centerpoint in the case of a way/area)
@@ -25,3 +30,27 @@ Legacy for a specific project calculating the needed width for safe traffic on a
 ### \_now:date, \_now:datetime, \_loaded:date, \_loaded:\_datetime
 
 Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely
+
+Calculating tags with Javascript
+--------------------------------
+
+In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. **\_lat**, **lon**, **\_country**), as detailed above.
+
+It is also possible to calculate your own tags - but this requires some javascript knowledge.
+
+Before proceeding, some warnings:
+
+*   DO NOT DO THIS AS BEGINNER
+*   **Only do this if all other techniques fail**. This should _not_ be done to create a rendering effect, only to calculate a specific value
+*   **THIS MIGHT BE DISABLED WITHOUT ANY NOTICE ON UNOFFICIAL THEMES**. As unofficial themes might be loaded from the internet, this is the equivalent of injecting arbitrary code into the client. It'll be disabled if abuse occurs.
+
+In the layer object, add a field **calculatedTags**, e.g.:
+
+"calculatedTags": { "\_someKey": "javascript-expression", "name": "feat.properties.name ?? feat.properties.ref ?? feat.properties.operator", "\_distanceCloserThen3Km": "feat.distanceTo( some\_lon, some\_lat) < 3 ? 'yes' : 'no'" }
+
+### distanceTo
+
+Calculates the distance between the feature and a specified point
+
+*   longitude
+*   latitude

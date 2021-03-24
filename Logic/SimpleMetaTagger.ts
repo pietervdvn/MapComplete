@@ -309,7 +309,7 @@ export default class SimpleMetaTagger {
     static HelpText(): UIElement {
         const subElements: UIElement[] = [
             new Combine([
-                "<h1>Metatags</h1>",
+                "<h2>Metatags</h2>",
                 "Metatags are extra tags available, in order to display more data or to give better questions.",
                 "The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags"
             ])
