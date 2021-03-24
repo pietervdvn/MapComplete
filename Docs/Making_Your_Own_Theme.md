@@ -100,6 +100,15 @@ The correct way to handle this is to use _This bench does have a backrest_ and _
 
 One has to think first in terms of _what is shown to the user if it is known_, only then in terms of _what is the question I want to ask_
 
+### Forgetting the casual/noob mapper
+
+MapComplete is in the first place a tool to help *non-technical* people visualize their interest and contribute to it. In order to maximize contribution:
+
+1. Use simple language. Avoid difficult words and explain jargon
+2. Put the simple questions first and the difficult ones on the back. The contributor can then stop at a difficult point and go to the next POI
+3. Use symbols and images, also in the mappings on questions
+4. Make sure the icons (on the map and in the questions) are big enough, clear enough and contrast enough with the background map
+
 ### Using layers to distinguish on attributes
 
 One layer should portray one kind of physical object, e.g. "benches" or "restaurants". It should contain all of them, disregarding other properties.
