@@ -26,6 +26,7 @@ import * as play_forests from "../assets/themes/play_forests/play_forests.json"
 import * as speelplekken from "../assets/themes/speelplekken/speelplekken.json"
 import * as sport_pitches from "../assets/themes/sport_pitches/sport_pitches.json"
 import * as grb from "../assets/themes/grb.json"
+import * as facadegardens from "../assets/themes/facadegardens/facadegardens.json"
 import LayerConfig from "./JSON/LayerConfig";
 import LayoutConfig from "./JSON/LayoutConfig";
 import AllKnownLayers from "./AllKnownLayers";
@@ -61,7 +62,8 @@ export class AllKnownLayouts {
         new LayoutConfig(play_forests),
         new LayoutConfig(speelplekken),
         new LayoutConfig(sport_pitches),
-        new LayoutConfig(grb)
+        new LayoutConfig(grb),
+		new LayoutConfig(facadegardens)
     ];
     public static allSets: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
 
