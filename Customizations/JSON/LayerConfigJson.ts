@@ -1,5 +1,6 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
+import TagRenderingConfig from "./TagRenderingConfig";
 
 /**
  * Configuration for a single layer
@@ -51,7 +52,15 @@ export interface LayerConfigJson {
      * Works well together with 'passAllFeatures', to add decoration
      */
     doNotDownload?: boolean;
-    
+
+    /**
+     * This tagrendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
+     * This is useful to hide certain features from view
+     * The default value is 'yes'
+     */
+    isShown?: TagRenderingConfigJson;
+
+
     /**
      * The zoomlevel at which point the data is shown and loaded.
      * Default: 0

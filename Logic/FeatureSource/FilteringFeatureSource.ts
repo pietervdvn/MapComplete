@@ -29,6 +29,7 @@ export default class FilteringFeatureSource implements FeatureSource {
 
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
+                
                 if (layerId !== undefined) {
                     const layer: {
                         isDisplayed: UIEventSource<boolean>,
@@ -38,6 +39,17 @@ export default class FilteringFeatureSource implements FeatureSource {
                         console.error("No layer found with id ", layerId);
                         return true;
                     }
+                    
+                    const isShown = layer.layerDef.isShown
+                    const tags = f.feature.properties;
+                    console.log("Is shown: ", isShown," known? ", isShown.IsKnown(tags), " result: ", isShown.GetRenderValue(tags).txt)
+                    if(isShown.IsKnown(tags)){
+                        const result = layer.layerDef.isShown.GetRenderValue(f.feature.properties).txt;
+                        if(result !== "yes"){
+                            return false;
+                        }
+                    }
+                    
                     if (FilteringFeatureSource.showLayer(layer, location)) {
                         return true;
                     }

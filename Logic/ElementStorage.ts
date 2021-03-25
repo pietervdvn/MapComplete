@@ -15,30 +15,42 @@ export class ElementStorage {
         this._elements[id] = eventSource;
     }
 
-    addElement(element): UIEventSource<any> {
-        const eventSource = new UIEventSource<any>(element.properties, "tags of "+element.properties.id);
-        this._elements[element.properties.id] = eventSource;
-        return eventSource;
-    }
-
-    addOrGetElement(element: any) : UIEventSource<any>{
-        const elementId = element.properties.id;
+    /**
+     * Creates a UIEventSource for the tags of the given feature.
+     * If an UIEventsource has been created previously, the same UIEventSource will be returned
+     *
+     * Note: it will cleverly merge the tags, if needed
+     */
+    addOrGetElement(feature: any): UIEventSource<any> {
+        const elementId = feature.properties.id;
         if (elementId in this._elements) {
             const es = this._elements[elementId];
+            if (es.data == feature.properties) {
+                // Reference comparison gives the same object! we can just return the event source
+                return es;
+            }
+
+
             const keptKeys = es.data;
             // The element already exists
             // We add all the new keys to the old keys
-            for (const k in element.properties) {
-                const v = element.properties[k];
+            let somethingChanged = false;
+            for (const k in feature.properties) {
+                const v = feature.properties[k];
                 if (keptKeys[k] !== v) {
                     keptKeys[k] = v;
-                    es.ping();
+                    somethingChanged = true;
                 }
+            }
+            if (somethingChanged) {
+                es.ping();
             }
 
             return es;
-        }else{
-            return this.addElement(element);
+        } else {
+            const eventSource = new UIEventSource<any>(feature.properties, "tags of " + feature.properties.id);
+            this._elements[feature.properties.id] = eventSource;
+            return eventSource;
         }
     }
 
@@ -47,9 +59,5 @@ export class ElementStorage {
             return this._elements[elementId];
         }
         console.error("Can not find eventsource with id ", elementId);
-    }
-
-    getEventSourceFor(feature): UIEventSource<any> {
-        return this.getEventSourceById(feature.properties.id);
     }
 }

@@ -7,30 +7,15 @@ import {TagsFilter} from "../TagsFilter";
  * Interfaces overpass to get all the latest data
  */
 export class Overpass {
-    private _filter: TagsFilter
     public static testUrl: string = null
-    private readonly  _extraScripts: string[];
+    private _filter: TagsFilter
+    private readonly _extraScripts: string[];
 
     constructor(filter: TagsFilter, extraScripts: string[]) {
         this._filter = filter
         this._extraScripts = extraScripts;
     }
 
-    
-    private buildQuery(bbox: string): string {
-        const filters = this._filter.asOverpass()
-        let filter = ""
-        for (const filterOr of filters) {
-            filter += 'nwr' + filterOr + ';'
-        }
-        for (const extraScript of this._extraScripts){
-            filter += '('+extraScript+');';
-        }
-        const query =
-            '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;'
-        return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
-    }
-    
     queryGeoJson(bounds: Bounds, continuation: ((any, date: Date) => void), onFail: ((reason) => void)): void {
 
         let query = this.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
@@ -52,11 +37,27 @@ export class Overpass {
                     onFail("Runtime error (timeout)")
                     return;
                 }
+
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
                 console.log("Received geojson", geojson)
                 const osmTime = new Date(json.osm3s.timestamp_osm_base);
                 continuation(geojson, osmTime);
+
             }).fail(onFail)
+    }
+
+    private buildQuery(bbox: string): string {
+        const filters = this._filter.asOverpass()
+        let filter = ""
+        for (const filterOr of filters) {
+            filter += 'nwr' + filterOr + ';'
+        }
+        for (const extraScript of this._extraScripts) {
+            filter += '(' + extraScript + ');';
+        }
+        const query =
+            '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;'
+        return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
     }
 }

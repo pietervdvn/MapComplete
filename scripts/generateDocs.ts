@@ -4,8 +4,8 @@ import SpecialVisualizations from "../UI/SpecialVisualizations";
 import {writeFileSync} from "fs";
 import {UIElement} from "../UI/UIElement";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
-import {ExtraFunction} from "../Logic/MetaTagging";
 import Combine from "../UI/Base/Combine";
+import {ExtraFunction} from "../Logic/ExtraFunction";
 
 
 

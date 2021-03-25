@@ -3,6 +3,9 @@ import {UIEventSource} from "../UIEventSource";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../GeoOperations";
 
+/**
+ * This is the part of the pipeline which introduces extra points at the center of an area (but only if this is demanded by the wayhandling)
+ */
 export default class WayHandlingApplyingFeatureSource implements FeatureSource {
     features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
@@ -46,6 +49,7 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                         continue;
                     }
 
+                    // Create the copy
                     const centerPoint = GeoOperations.centerpoint(feat);
                     centerPoint._matching_layer_id = feat._matching_layer_id;
                     newFeatures.push({feature: centerPoint, freshness: f.freshness});

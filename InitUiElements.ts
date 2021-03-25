@@ -384,26 +384,7 @@ export class InitUiElements {
         State.state.layerUpdater = updater;
         const source = new FeaturePipeline(state.filteredLayers, updater, state.layoutToUse, state.changes, state.locationControl);
 
-
-        source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
-            if (featuresFreshness === undefined) {
-                return;
-            }
-            featuresFreshness.forEach(featureFresh => {
-                const feature = featureFresh.feature;
-                State.state.allElements.addOrGetElement(feature);
-
-                if (Hash.hash.data === feature.properties.id) {
-                    State.state.selectedElement.setData(feature);
-                }
-
-            })
-
-            MetaTagging.addMetatags(featuresFreshness, state.layoutToUse.data.layers);
-        })
-
-        new ShowDataLayer(source.features, State.state.leafletMap,
-            State.state.layoutToUse);
+        new ShowDataLayer(source.features, State.state.leafletMap,            State.state.layoutToUse);
 
         new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 

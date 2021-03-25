@@ -24,6 +24,7 @@ export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
     static WAYHANDLING_CENTER_ONLY = 1;
     static WAYHANDLING_CENTER_AND_WAY = 2;
+    
     id: string;
     name: Translation
     description: Translation;
@@ -31,6 +32,7 @@ export default class LayerConfig {
     calculatedTags: [string, string][]
     doNotDownload: boolean;
     passAllFeatures: boolean;
+    isShown: TagRenderingConfig;
     minzoom: number;
     maxzoom: number;
     title?: TagRenderingConfig;
@@ -205,6 +207,7 @@ export default class LayerConfig {
                 throw "Builtin SVG asset not found: " + iconPath
             }
         }
+        this.isShown = tr("isShown", "yes");
         this.iconSize = tr("iconSize", "40,40,center");
         this.color = tr("color", "#0000ff");
         this.width = tr("width", "7");

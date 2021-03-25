@@ -12,6 +12,7 @@ import LocalStorageSource from "./LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
 import GeoJsonSource from "./GeoJsonSource";
+import MetaTaggingFeatureSource from "./MetaTaggingFeatureSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
@@ -25,42 +26,42 @@ export default class FeaturePipeline implements FeatureSource {
 
         const amendedOverpassSource =
             new RememberingSource(
-                new WayHandlingApplyingFeatureSource(flayers,
-                    new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers,
-                        new LocalStorageSaver(updater, layout)))
-                )
+                new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers,
+                    new LocalStorageSaver(updater, layout)))
             );
 
         const geojsonSources: GeoJsonSource [] = []
         for (const flayer of flayers.data) {
             const sourceUrl = flayer.layerDef.source.geojsonSource
             if (sourceUrl !== undefined) {
-                geojsonSources.push(new WayHandlingApplyingFeatureSource(flayers, 
-                    new GeoJsonSource(flayer.layerDef.id, sourceUrl)))
+                geojsonSources.push(
+                    new GeoJsonSource(flayer.layerDef.id, sourceUrl))
             }
         }
 
         const amendedLocalStorageSource =
             new RememberingSource(
-                new WayHandlingApplyingFeatureSource(flayers,
-                    new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout)))
-                ));
+                new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout)))
+            );
 
         newPoints = new FeatureDuplicatorPerLayer(flayers, newPoints);
 
-        const merged = new FeatureSourceMerger([
-            amendedOverpassSource,
-            amendedLocalStorageSource,
-            newPoints,
-            ...geojsonSources
-        ]);
+        const merged =
+            new MetaTaggingFeatureSource(
+                new FeatureSourceMerger([
+                    amendedOverpassSource,
+                    amendedLocalStorageSource,
+                    newPoints,
+                    ...geojsonSources
+                ]));
 
         const source =
-            new FilteringFeatureSource(
-                flayers,
-                locationControl,
-                merged
-            );
+            new WayHandlingApplyingFeatureSource(flayers,
+                new FilteringFeatureSource(
+                    flayers,
+                    locationControl,
+                    merged
+                ));
         this.features = source.features;
     }
 

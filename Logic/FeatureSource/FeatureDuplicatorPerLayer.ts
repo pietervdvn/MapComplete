@@ -6,7 +6,7 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
  * If this is the case, multiple objects with a different _matching_layer_id are generated.
- * If not, the _feature_layter_id is added
+ * In any case, this featureSource marks the objects with _matching_layer_id
  */
 export default class FeatureDuplicatorPerLayer implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;

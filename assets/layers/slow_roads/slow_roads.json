@@ -6,13 +6,19 @@
   "minzoom": 16,
   "source": {
     "osmTags": {
-      "or": [
-        "highway=pedestrian",
-        "highway=footway",
-        "highway=path",
-        "highway=bridleway",
-        "highway=living_street",
-        "highway=track"
+      "and": [
+        {
+          "or": [
+            "highway=pedestrian",
+            "highway=footway",
+            "highway=path",
+            "highway=bridleway",
+            "highway=living_street",
+            "highway=track"
+          ]
+        },
+        "access!=no",
+        "access!=private"
       ]
     }
   },
@@ -51,7 +57,8 @@
           "nl": "Woonerf"
         }
       },
-      {"if": "highway=path",
+      {
+        "if": "highway=path",
         "then": "Klein pad"
       }
     ]

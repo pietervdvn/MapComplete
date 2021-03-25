@@ -43,7 +43,7 @@ class TitleElement extends UIElement {
             }
             if (layer.source.osmTags.matchesProperties(properties)) {
                 const title = new TagRenderingAnswer(
-                    this._allElementsStorage.getEventSourceFor(feature),
+                    this._allElementsStorage.addOrGetElement(feature),
                     layer.title
                 )
                 return new Combine([defaultTitle, " | ", title]).Render();

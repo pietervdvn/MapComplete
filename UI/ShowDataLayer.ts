@@ -86,7 +86,7 @@ export default class ShowDataLayer {
             marker.openPopup();
 
             const popup = marker.getPopup();
-            const tags = State.state.allElements.getEventSourceFor(selected);
+            const tags = State.state.allElements.addOrGetElement(selected);
             const layer: LayerConfig = this._layerDict[selected._matching_layer_id];
             const infoBox = FeatureInfoBox.construct(tags, layer);
 
@@ -105,7 +105,7 @@ export default class ShowDataLayer {
 
 
     private createStyleFor(feature) {
-        const tagsSource = State.state.allElements.getEventSourceFor(feature);
+        const tagsSource = State.state.allElements.addOrGetElement(feature);
         // Every object is tied to exactly one layer
         const layer = this._layerDict[feature._matching_layer_id];
         return layer?.GenerateLeafletStyle(tagsSource, layer._showOnPopup !== undefined);
