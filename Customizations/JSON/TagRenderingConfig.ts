@@ -133,7 +133,7 @@ export default class TagRenderingConfig {
         }
         
         if(this.render && this.question && this.freeform === undefined){
-            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}`
+            throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}; the question is ${this.question.txt}`
         }
         
         if(!json.multiAnswer && this.mappings !== undefined && this.question !== undefined){

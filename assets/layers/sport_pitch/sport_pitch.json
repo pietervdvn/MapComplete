@@ -1,34 +1,42 @@
 {
   "id": "sport_pitch",
   "name": {
-    "nl": "Sportterrein"
+    "nl": "Sportterrein",
+    "en": "Sport pitches"
   },
   "wayHandling": 2,
   "minzoom": 12,
   "source": {
     "osmTags": {
-    "and": [
-      "leisure=pitch"
-    ]}
+      "and": [
+        "leisure=pitch"
+      ]
+    }
   },
   "title": {
     "render": {
-      "nl": "Sportterrein"
+      "nl": "Sportterrein",
+      "en": "Sport pitch"
     }
   },
   "description": {
-    "nl": "Een sportterrein"
+    "nl": "Een sportterrein",
+    "en": "A sport pitch"
   },
   "tagRenderings": [
     "images",
     {
       "render": {
-        "nl": "Hier kan men {sport} beoefenen"
+        "nl": "Hier kan men {sport} beoefenen",
+        "en": "{sport} is played here"
       },
       "freeform": {
         "key": "sport"
       },
-      "question": "Welke sporten kan men hier beoefenen?",
+      "question": {
+        "nl": "Welke sporten kan men hier beoefenen?",
+        "en": "Which sport can be played here?"
+      },
       "multiAnswer": true,
       "mappings": [
         {
@@ -38,7 +46,8 @@
             ]
           },
           "then": {
-            "nl": "Hier kan men basketbal spelen"
+            "nl": "Hier kan men basketbal spelen",
+            "en": "Basketball is played here"
           }
         },
         {
@@ -48,7 +57,8 @@
             ]
           },
           "then": {
-            "nl": "Hier kan men voetbal spelen"
+            "nl": "Hier kan men voetbal spelen",
+            "en": "Soccer is played here"
           }
         },
         {
@@ -58,7 +68,8 @@
             ]
           },
           "then": {
-            "nl": "Dit is een pingpongtafel"
+            "nl": "Dit is een pingpongtafel",
+            "en": "This is a pingpong table"
           }
         },
         {
@@ -68,7 +79,8 @@
             ]
           },
           "then": {
-            "nl": "Hier kan men tennis spelen"
+            "nl": "Hier kan men tennis spelen",
+            "en": "Tennis is played here"
           }
         },
         {
@@ -78,7 +90,8 @@
             ]
           },
           "then": {
-            "nl": "Hier kan men korfbal spelen"
+            "nl": "Hier kan men korfbal spelen",
+            "en": "Korfball is played here"
           }
         },
         {
@@ -88,59 +101,62 @@
             ]
           },
           "then": {
-            "nl": "Hier kan men basketbal beoefenen"
+            "nl": "Hier kan men basketbal beoefenen",
+            "en": "Basketball is played here"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Wat is de ondergrond van dit sportveld?",
+        "en": "Which is the surface of this sport pitch?"
+      },
+      "render": {
+        "nl": "De ondergrond is <b>{surface}</b>",
+        "en": "The surface is <b>{surface}</b>"
+      },
+      "freeform": {
+        "key": "surface"
+      },
+      "mappings": [
+        {
+          "if": "surface=grass",
+          "then": {
+            "nl": "De ondergrond is <b>gras</b>",
+            "en": "The surface is <b>grass</b>"
+          }
+        },
+        {
+          "if": "surface=sand",
+          "then": {
+            "nl": "De ondergrond is <b>zand</b>",
+            "en": "The surface is <b>sand</b>"
+          }
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": {
+            "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
+            "en": "The surface is <b>paving stones</b>"
+          }
+        },
+        {
+          "if": "surface=asphalt",
+          "then": {
+            "nl": "De ondergrond is <b>asfalt</b>",
+            "en": "The surface is <b>asphalt</b>"
+          }
+        },
+        {
+          "if": "surface=concrete",
+          "then": {
+            "nl": "De ondergrond is <b>beton</b>",
+            "en": "The surface is <b>concrete</b>"
           }
         }
       ]
-    },{
-    "question": {
-      "nl": "Wat is de ondergrond van dit sportveld?",
-      "en": "Which is the surface of this sport pitch?"
-    },
-    "render": {
-      "nl": "De ondergrond is <b>{surface}</b>",
-      "en": "The surface is <b>{surface}</b>"
-    },
-    "freeform": {
-      "key": "surface"
-    },
-    "mappings": [
-      {
-        "if": "surface=grass",
-        "then": {
-          "nl": "De ondergrond is <b>gras</b>",
-          "en": "The surface is <b>grass</b>"
-        }
-      },
-      {
-        "if": "surface=sand",
-        "then": {
-          "nl": "De ondergrond is <b>zand</b>",
-          "en": "The surface is <b>sand</b>"
-        }
-      },
-      {
-        "if": "surface=paving_stones",
-        "then": {
-          "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
-          "en": "The surface is <b>paving stones</b>"
-        }
-      },
-      {
-        "if": "surface=asphalt",
-        "then": {
-          "nl": "De ondergrond is <b>asfalt</b>",
-          "en": "The surface is <b>asphalt</b>"
-        }
-      },
-      {
-        "if": "surface=concrete",
-        "then": {
-          "nl": "De ondergrond is <b>beton</b>",
-          "en": "The surface is <b>concrete</b>"
-        }
-      }
-    ]
     },
     {
       "question": {
@@ -151,7 +167,8 @@
           "if": "access=public",
           "then": "Publiek toegankelijk"
         },
-        {"if": "access=limited",
+        {
+          "if": "access=limited",
           "then": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)"
         },
         {
@@ -169,7 +186,12 @@
         "nl": "Moet men reserveren om gebruik te maken van dit sportveld?"
       },
       "condition": {
-        "and": [        "access!=public", "access!=private", "access!=members"]},
+        "and": [
+          "access!=public",
+          "access!=private",
+          "access!=members"
+        ]
+      },
       "mappings": [
         {
           "if": "reservation=required",
@@ -179,7 +201,8 @@
           "if": "reservation=recommended",
           "then": "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein"
         },
-        {"if": "reservation=yes",
+        {
+          "if": "reservation=yes",
           "then": "Reserveren is mogelijk, maar geen voorwaarde"
         },
         {
@@ -204,13 +227,52 @@
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
     },
+    {
+      "question": {
+        "nl": "Wanneer is dit sportveld toegankelijk?",
+        "en": "When is this pitch accessible?"
+      },
+      "render": "{opening_hours()}",
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours=",
+          "then": "24/7 toegankelijk",
+          "hideInAnswer": true
+        },
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "24/7 toegankelijk",
+            "en": "Always accessible"
+          }
+        }
+      ]
+    },
     "questions",
-    {"render":"{reviews(name, sportpitch)}"}
+    {
+      "render": "{reviews(name, sportpitch)}"
+    }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "circle:white;./assets/layers/sport_pitch/tabletennis.svg"
   },
+  "iconOverlays": [
+    {
+      "if": {
+        "and": [
+          "opening_hours!=24/7",
+          "opening_hours~*"
+        ]
+      },
+      "then": "isOpen",
+      "badge": true
+    }
+  ],
   "width": {
     "render": "1"
   },

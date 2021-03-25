@@ -288,6 +288,21 @@
             "nl": "Van zonsopgang tot zonsondergang",
             "en": "Accessible from sunrise till sunset"
           }
+        },
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "nl": "Dag en nacht toegankelijk",
+            "en": "Always accessible"
+          }
+        },
+        {
+          "if": "opening_hours=",
+          "then": {
+            "nl": "Dag en nacht toegankelijk",
+            "en": "Always accessible"
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -300,6 +315,18 @@
   "icon": {
     "render": "https://upload.wikimedia.org/wikipedia/commons/0/00/Map_icons_by_Scott_de_Jonge_-_playground.svg"
   },
+  "iconOverlays": [
+    {
+      "if": {
+        "and": [
+          "opening_hours!=24/7",
+          "opening_hours~*"
+        ]
+      },
+      "then": "isOpen",
+      "badge": true
+    }
+  ],
   "width": {
     "render": "1"
   },

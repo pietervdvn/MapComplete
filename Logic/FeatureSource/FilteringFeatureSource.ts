@@ -42,7 +42,6 @@ export default class FilteringFeatureSource implements FeatureSource {
                     
                     const isShown = layer.layerDef.isShown
                     const tags = f.feature.properties;
-                    console.log("Is shown: ", isShown," known? ", isShown.IsKnown(tags), " result: ", isShown.GetRenderValue(tags).txt)
                     if(isShown.IsKnown(tags)){
                         const result = layer.layerDef.isShown.GetRenderValue(f.feature.properties).txt;
                         if(result !== "yes"){
