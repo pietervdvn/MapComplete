@@ -45,10 +45,8 @@ Some advanced functions are available on <b>feat</b> as well:
                 for (const layerId of layerIds) {
                     const otherLayer = featuresPerLayer.get(layerId);
                     if (otherLayer === undefined) {
-                        console.error(`Trying to calculate 'overlapWith' with specified layer ${layerId}, but such layer is found`);
                         continue;
                     }
-
                     if (otherLayer.length === 0) {
                         continue;
                     }
