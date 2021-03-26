@@ -49,7 +49,7 @@ export default class SimpleMetaTagger {
             const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
             feature.properties["_surface"] = "" + sqMeters;
             feature.properties["_surface:ha"] = "" + Math.floor(sqMeters / 1000) / 10;
-
+            feature.area = sqMeters;
         })
     );
     private static country = new SimpleMetaTagger(

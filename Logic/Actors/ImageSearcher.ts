@@ -17,12 +17,12 @@ import {UIEventSource} from "../UIEventSource";
  * Note that this list is embedded into an UIEVentSource, ready to put it into a carousel.
  *
  */
-export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>{
+export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]> {
 
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
 
-    constructor(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true) {
+    private constructor(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true) {
         super([])
         const self = this;
 
@@ -31,7 +31,6 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
             let somethingChanged = false;
             for (const image of images) {
                 const url = image.url;
-                const key = image.key;
 
                 if (url === undefined || url === null || url === "") {
                     continue;
@@ -93,7 +92,7 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
                     if (mapillary.indexOf(prefix) < 0) {
                         mapillary = prefix + mapillary;
                     }
-                    
+
 
                     AddImages([{url: mapillary, key: undefined}]);
                 }
@@ -114,7 +113,6 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
                 imageURLS.push(wd.image);
                 Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
                     for (const image of images.images) {
-                        // @ts-ignore
                         if (image.startsWith("File:")) {
                             imageURLS.push(image);
                         }
@@ -129,17 +127,15 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
         const imageUrls = [];
         const allCommons: string[] = commonsData.split(";");
         for (const commons of allCommons) {
-            // @ts-ignore
             if (commons.startsWith("Category:")) {
                 Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
                     for (const image of images.images) {
-                        // @ts-ignore
                         if (image.startsWith("File:")) {
                             imageUrls.push(image);
                         }
                     }
                 })
-            } else { // @ts-ignore
+            } else {
                 if (commons.startsWith("File:")) {
                     imageUrls.push(commons);
                 }
@@ -167,6 +163,19 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
 
 
         return images;
+    }
+    
+    private static _cache = new Map<string, ImageSearcher>();
+
+    public static construct(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true): ImageSearcher {
+        const key = tags["id"] + " "+imagePrefix+loadSpecial;
+        if(ImageSearcher._cache.has(key)){
+            return ImageSearcher._cache.get(key)
+        }
+       
+        const searcher = new ImageSearcher(tags, imagePrefix, loadSpecial);
+        ImageSearcher._cache.set(key, searcher)
+        return searcher;
     }
 
 }

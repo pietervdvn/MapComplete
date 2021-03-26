@@ -158,7 +158,7 @@ export default class UpdateFromOverpass implements FeatureSource {
                 self.retries.data++;
                 self.ForceRefresh();
                 self.timeout.setData(self.retries.data * 5);
-                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec)`, reason);
+                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec)`);
                 self.retries.ping();
                 self.runningQuery.setData(false);
 

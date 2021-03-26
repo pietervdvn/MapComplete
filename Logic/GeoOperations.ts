@@ -30,67 +30,61 @@ export class GeoOperations {
         return turf.distance(lonlat0, lonlat1)
     }
 
-    static featureIsContainedInAny(feature: any,
-                                   shouldNotContain: any[],
-                                   maxOverlapPercentage: number): boolean {
-        // Returns 'false' if no problematic intersection is found
+    /**
+     * Calculates the overlap of 'feature' with every other specified feature.
+     * The features with which 'feature' overlaps, are returned together with their overlap area in m²
+     * 
+     * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
+     */
+    static calculateOverlap(feature: any,
+                                   otherFeatures: any[]): { feat: any, overlap: number }[] {
+        const featureBBox = BBox.get(feature);
+        const result : { feat: any, overlap: number }[] = [];
         if (feature.geometry.type === "Point") {
             const coor = feature.geometry.coordinates;
-            for (const shouldNotContainElement of shouldNotContain) {
+            for (const otherFeature of otherFeatures) {
 
-                let shouldNotContainBBox = BBox.get(shouldNotContainElement);
-                let featureBBox = BBox.get(feature);
-                if (!featureBBox.overlapsWith(shouldNotContainBBox)) {
+                let otherFeatureBBox = BBox.get(otherFeature);
+                 if (!featureBBox.overlapsWith(otherFeatureBBox)) {
                     continue;
                 }
 
-                if (this.inside(coor, shouldNotContainElement)) {
-                    return true
+                if (this.inside(coor, otherFeatures)) {
+                   result.push({ feat: otherFeatures, overlap: undefined })
                 }
             }
-            return false;
+            return result;
         }
 
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
 
-            const poly = feature;
-            let featureBBox = BBox.get(feature);
-            const featureSurface = GeoOperations.surfaceAreaInSqMeters(poly);
-            for (const shouldNotContainElement of shouldNotContain) {
-
-                const shouldNotContainBBox = BBox.get(shouldNotContainElement);
-                const overlaps = featureBBox.overlapsWith(shouldNotContainBBox)
+            for (const otherFeature of otherFeatures) {
+                const otherFeatureBBox = BBox.get(otherFeature);
+                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
                 if (!overlaps) {
                     continue;
                 }
 
                 // Calculate the surface area of the intersection
-                // If it is too big, refuse
                 try {
 
-                    const intersection = turf.intersect(poly, shouldNotContainElement);
+                    const intersection = turf.intersect(feature, otherFeature);
                     if (intersection == null) {
                         continue;
                     }
-                    const intersectionSize = turf.area(intersection);
-                    const ratio = intersectionSize / featureSurface;
-
-                    if (ratio * 100 >= maxOverlapPercentage) {
-                        console.log("Refused", poly.id, " due to ", shouldNotContainElement.id, "intersection ratio is ", ratio, "which is bigger then the target ratio of ", (maxOverlapPercentage / 100))
-                        return true;
-                    }
+                    const intersectionSize = turf.area(intersection); // in m²
+                    result.push({feat: otherFeature, overlap: intersectionSize})
                 } catch (exception) {
                     console.log("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
-                    // We assume that this failed due to an intersection
-                    return true;
                 }
 
             }
-            return false; // No problematic intersections found
+            return result;
         }
-
-        return false;
+        console.error("Could not correctly calculate the overlap of ", feature, ": unsupported type")
+        return result;
     }
+    
     public static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html

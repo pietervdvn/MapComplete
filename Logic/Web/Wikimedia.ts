@@ -5,12 +5,12 @@ import * as $ from "jquery"
  */
 export class Wikimedia {
 
+    private static knownLicenses = {};
+
     static ImageNameToUrl(filename: string, width: number = 500, height: number = 200): string {
         filename = encodeURIComponent(filename);
         return "https://commons.wikimedia.org/wiki/Special:FilePath/" + filename + "?width=" + width + "&height=" + height;
     }
-
-    private static knownLicenses = {};
 
     static LicenseData(filename: string, handle: ((LicenseInfo) => void)): void {
         if (filename in this.knownLicenses) {
@@ -42,8 +42,9 @@ export class Wikimedia {
 
     }
 
-    static GetCategoryFiles(categoryName: string, handleCategory: ((ImagesInCategory) => void),
-                            alreadyLoaded = 0, continueParameter: { k: string, param: string } = undefined) {
+    static GetCategoryFiles(categoryName: string, handleCategory: ((ImagesInCategory: ImagesInCategory) => void),
+                            alreadyLoaded = 0,
+                            continueParameter: { k: string, param: string } = undefined) {
         if (categoryName === undefined || categoryName === null || categoryName === "") {
             return;
         }
@@ -58,7 +59,8 @@ export class Wikimedia {
         if (continueParameter !== undefined) {
             url = url + "&" + continueParameter.k + "=" + continueParameter.param;
         }
-
+        const self = this;
+        console.log("Loading a wikimedia category: ", url)
         $.getJSON(url, (response) => {
             let imageOverview = new ImagesInCategory();
             let members = response.query?.categorymembers;
@@ -67,21 +69,27 @@ export class Wikimedia {
             }
 
             for (const member of members) {
-
                 imageOverview.images.push(member.title);
             }
-            if (response.continue === undefined || alreadyLoaded > 30) {
+            console.log("Got images! ", imageOverview)
+            if (response.continue === undefined) {
                 handleCategory(imageOverview);
-            } else {
-                console.log("Recursive load for ", categoryName)
-                this.GetCategoryFiles(categoryName, (recursiveImages) => {
-                    for (const image of imageOverview.images) {
-                        recursiveImages.images.push(image);
-                    }
+                return;
+            }
+
+            if (alreadyLoaded > 10) {
+                console.log(`Recursive wikimedia category load stopped for ${categoryName} - got already enough images now (${alreadyLoaded})`)
+                handleCategory(imageOverview)
+                return;
+            }
+
+            self.GetCategoryFiles(categoryName,
+                (recursiveImages) => {
+                    recursiveImages.images.push(...imageOverview.images);
                     handleCategory(recursiveImages);
                 },
-                    alreadyLoaded + 10, {k: "cmcontinue", param: response.continue.cmcontinue})
-            }
+                alreadyLoaded + 10,
+                {k: "cmcontinue", param: response.continue.cmcontinue})
 
         });
     }
@@ -102,8 +110,7 @@ export class Wikimedia {
             handleWikidata(wd);
         });
     }
-    
-    
+
 
 }
 

@@ -25,7 +25,7 @@
   "startLat": 50.8435,
   "startLon": 4.3688,
   "startZoom": 16,
-  "widenFactor": 0.05,
+  "widenFactor": 0.01,
   "socialImage": "./assets/themes/buurtnatuur/social_image.jpg",
   "layers": [
     {
@@ -75,7 +75,6 @@
       "tagRenderings": [
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
         "render": "circle:#ffffff;./assets/themes/buurtnatuur/nature_reserve.svg"
       },
@@ -141,6 +140,19 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve').map(o => o.overlap))/feat.area",
+        "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' :'no'"
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [
+          {
+            "if": "_tooMuchOverlap=yes",
+            "then": "no"
+          }
+        ]
+      },
       "title": {
         "render": {
           "nl": "Park"
@@ -149,7 +161,7 @@
           {
             "if": {
               "and": [
-                "name:nl~"
+                "name:nl~*"
               ]
             },
             "then": {
@@ -174,7 +186,6 @@
       "tagRenderings": [
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 10,
       "icon": {
         "render": "circle:#ffffff;./assets/themes/buurtnatuur/park.svg"
       },
@@ -228,6 +239,19 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve').map(o => o.overlap))/feat.area",
+        "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' : 'no'"
+      ],
+      "isShown": {
+        "render": "yes",
+        "mappings": [
+          {
+            "if": "_tooMuchOverlap=yes",
+            "then": "no"
+          }
+        ]
+      },
       "title": {
         "render": {
           "nl": "Bos"
@@ -236,7 +260,7 @@
           {
             "if": {
               "and": [
-                "name:nl~"
+                "name:nl~*"
               ]
             },
             "then": {
@@ -261,7 +285,6 @@
       "tagRenderings": [
         "images"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "circle:#ffffff;./assets/themes/buurtnatuur/forest.svg"
       },

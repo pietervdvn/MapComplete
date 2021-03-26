@@ -26,9 +26,19 @@ export default class MetaTagging {
         }
 
         // The functions - per layer - which add the new keys
-        const layerFuncs = new Map<string, ((feature: any) => void)>();
+        const layerFuncs = new Map<string, ((featursPerLayer: Map<string, any[]>, feature: any) => void)>();
         for (const layer of layers) {
             layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
+        }
+
+        const featuresPerLayer = new Map<string, any[]>();
+        for (const feature of features) {
+
+            const key = feature.feature._matching_layer_id;
+            if (!featuresPerLayer.has(key)) {
+                featuresPerLayer.set(key, [])
+            }
+            featuresPerLayer.get(key).push(feature.feature)
         }
 
         for (const feature of features) {
@@ -39,19 +49,19 @@ export default class MetaTagging {
                 continue;
             }
 
-            f(feature.feature)
+            f(featuresPerLayer, feature.feature)
         }
 
     }
 
 
-    private static createRetaggingFunc(layer: LayerConfig): ((feature: any) => void) {
+    private static createRetaggingFunc(layer: LayerConfig): ((featuresPerLayer: Map<string, any[]>, feature: any) => void) {
         const calculatedTags: [string, string][] = layer.calculatedTags;
         if (calculatedTags === undefined) {
             return undefined;
         }
 
-        const functions: ((feature: any) => void)[] = [];
+        const functions: ((featuresPerLayer: Map<string, any[]>, feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
@@ -61,26 +71,24 @@ export default class MetaTagging {
 
             const func = new Function("feat", "return " + code + ";");
 
-            const f = (feature: any) => {
+            const f = (featuresPerLayer, feature: any) => {
                 feature.properties[key] = func(feature);
             }
             functions.push(f)
         }
-        return (feature) => {
+        return (featuresPerLayer: Map<string, any[]>, feature) => {
             const tags = feature.properties
             if (tags === undefined) {
                 return;
             }
 
-            ExtraFunction.FullPatchFeature(feature);
-
-            for (const f of functions) {
-                try {
-                    f(feature);
-                } catch (e) {
-                    console.error("While calculating a tag value: ", e)
+            ExtraFunction.FullPatchFeature(featuresPerLayer, feature);
+            try {
+                for (const f of functions) {
+                    f(featuresPerLayer, feature);
                 }
-
+            } catch (e) {
+                console.error("While calculating a tag value: ", e)
             }
         }
     }

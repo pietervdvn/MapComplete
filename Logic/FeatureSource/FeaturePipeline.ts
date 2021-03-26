@@ -2,7 +2,6 @@ import FilteringFeatureSource from "../FeatureSource/FilteringFeatureSource";
 import FeatureSourceMerger from "../FeatureSource/FeatureSourceMerger";
 import RememberingSource from "../FeatureSource/RememberingSource";
 import WayHandlingApplyingFeatureSource from "../FeatureSource/WayHandlingApplyingFeatureSource";
-import NoOverlapSource from "../FeatureSource/NoOverlapSource";
 import FeatureDuplicatorPerLayer from "../FeatureSource/FeatureDuplicatorPerLayer";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {UIEventSource} from "../UIEventSource";
@@ -25,9 +24,8 @@ export default class FeaturePipeline implements FeatureSource {
                 locationControl: UIEventSource<Loc>) {
 
         const amendedOverpassSource =
-            new RememberingSource(
-                new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers,
-                    new LocalStorageSaver(updater, layout)))
+            new RememberingSource(new FeatureDuplicatorPerLayer(flayers,
+                new LocalStorageSaver(updater, layout))
             );
 
         const geojsonSources: GeoJsonSource [] = []
@@ -40,8 +38,7 @@ export default class FeaturePipeline implements FeatureSource {
         }
 
         const amendedLocalStorageSource =
-            new RememberingSource(
-                new NoOverlapSource(flayers, new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout)))
+            new RememberingSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
             );
 
         newPoints = new FeatureDuplicatorPerLayer(flayers, newPoints);

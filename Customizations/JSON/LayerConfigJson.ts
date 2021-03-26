@@ -43,9 +43,17 @@ export interface LayerConfigJson {
     source: {osmTags: AndOrTagConfigJson | string} | {geoJsonSource: string} | {overpassScript: string}
 
     /**
-     * A dictionary of 'key': 'js-expression'. These js-expressions will be calculated for every feature, giving extra tags to work with in the rest of the pipieline
+     * 
+     * A list of extra tags to calculate, specified as "keyToAssignTo=javascript-expression".
+     * There are a few extra functions available. Refer to <a>Docs/CalculatedTags.md</a> for more information
+     * The functions will be run in order, e.g.
+     * [
+     *  "_max_overlap_m2=Math.max(...feat.overlapsWith("someOtherLayer").map(o => o.overlap))
+     *  "_max_overlap_ratio=Number(feat._max_overlap_m2)/feat.area
+     * ]
+     * 
      */
-    calculatedTags? : any;
+    calculatedTags? : string[];
 
     /**
      * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers. 
@@ -144,14 +152,6 @@ export interface LayerConfigJson {
      * 2) The centerpoint and the way
      */
     wayHandling?: number;
-
-    /**
-     * Consider that we want to show 'Nature Reserves' and 'Forests'. Now, ofter, there are pieces of forest mapped _in_ the nature reserve.
-     * Now, showing those pieces of forest overlapping with the nature reserve truly clutters the map and is very user-unfriendly.
-     * 
-     * The features are placed layer by layer. If a feature below a feature on this layer overlaps for more then 'x'-percent, the underlying feature is hidden.
-     */
-    hideUnderlayingFeaturesMinPercentage?:number;
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.

@@ -24,7 +24,7 @@ export default class LayerConfig {
     static WAYHANDLING_DEFAULT = 0;
     static WAYHANDLING_CENTER_ONLY = 1;
     static WAYHANDLING_CENTER_AND_WAY = 2;
-    
+
     id: string;
     name: Translation
     description: Translation;
@@ -45,7 +45,6 @@ export default class LayerConfig {
     width: TagRenderingConfig;
     dashArray: TagRenderingConfig;
     wayHandling: number;
-    hideUnderlayingFeaturesMinPercentage?: number;
 
     presets: {
         title: Translation,
@@ -98,8 +97,13 @@ export default class LayerConfig {
                 console.warn(`Unofficial theme ${this.id} with custom javascript! This is a security risk`)
             }
             this.calculatedTags = [];
-            for (const key in json.calculatedTags) {
-                this.calculatedTags.push([key, json.calculatedTags[key]])
+            for (const kv of json.calculatedTags) {
+
+                const index = kv.indexOf("=")
+                const key = kv.substring(0, index);
+                const code = kv.substring(index + 1);
+
+                this.calculatedTags.push([key, code])
             }
         }
 
@@ -108,7 +112,6 @@ export default class LayerConfig {
         this.minzoom = json.minzoom ?? 0;
         this.maxzoom = json.maxzoom ?? 1000;
         this.wayHandling = json.wayHandling ?? 0;
-        this.hideUnderlayingFeaturesMinPercentage = json.hideUnderlayingFeaturesMinPercentage ?? 0;
         this.presets = (json.presets ?? []).map((pr, i) =>
             ({
                 title: Translations.T(pr.title, `${context}.presets[${i}].title`),
@@ -215,6 +218,9 @@ export default class LayerConfig {
         this.dashArray = tr("dashArray", "");
 
 
+        if(json["showIf"] !== undefined){
+            throw "Invalid key on layerconfig "+this.id+": showIf. Did you mean 'isShown' instead?";
+        }
     }
 
     public CustomCodeSnippets(): string[] {

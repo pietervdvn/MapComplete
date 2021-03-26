@@ -59,7 +59,7 @@ export default class SpecialVisualizations {
                 constr: (state: State, tags, args) => {
                     const imagePrefix = args[0];
                     const loadSpecial = args[1].toLowerCase() === "true";
-                    const searcher: UIEventSource<{ key: string, url: string }[]> = new ImageSearcher(tags, imagePrefix, loadSpecial);
+                    const searcher: UIEventSource<{ key: string, url: string }[]> = ImageSearcher.construct(tags, imagePrefix, loadSpecial);
 
                     return new ImageCarousel(searcher, tags);
                 }
