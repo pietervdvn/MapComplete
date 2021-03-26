@@ -19,6 +19,7 @@ import {UIEventSource} from "../UIEventSource";
  */
 export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]> {
 
+    private static _cache = new Map<string, ImageSearcher>();
     private readonly _wdItem = new UIEventSource<string>("");
     private readonly _commons = new UIEventSource<string>("");
 
@@ -48,23 +49,20 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
             }
         }
 
+        function addImage(image: string) {
+            AddImages([{url: image, key: undefined}]);
+        }
+
 
         // By wrapping this in a UIEventSource, we prevent multiple queries of loadWikiData
         this._wdItem.addCallback(wdItemContents => {
-            const images = ImageSearcher.loadWikidata(wdItemContents).map(url => {
-                return {url: url, key: undefined}
-            });
-            AddImages(images);
+            ImageSearcher.loadWikidata(wdItemContents, addImage);
         });
         this._commons.addCallback(commonsData => {
-            const images = ImageSearcher.LoadCommons(commonsData).map(url => {
-                return {url: url, key: undefined}
-            });
-            AddImages(images);
+            ImageSearcher.LoadCommons(commonsData, addImage)
         });
         tags.addCallbackAndRun(tags => {
-            const images = ImageSearcher.LoadImages(tags, imagePrefix, loadSpecial);
-            AddImages(images);
+            AddImages(ImageSearcher.LoadImages(tags, imagePrefix));
         });
 
         if (loadSpecial) {
@@ -100,51 +98,58 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
         }
     }
 
-    private static loadWikidata(wikidataItem): string[] {
+    public static construct(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true): ImageSearcher {
+        const key = tags["id"] + " " + imagePrefix + loadSpecial;
+        if (ImageSearcher._cache.has(key)) {
+            return ImageSearcher._cache.get(key)
+        }
+
+        const searcher = new ImageSearcher(tags, imagePrefix, loadSpecial);
+        ImageSearcher._cache.set(key, searcher)
+        return searcher;
+    }
+
+    private static loadWikidata(wikidataItem, addImage: ((url: string) => void)): void {
         // Load the wikidata item, then detect usage on 'commons'
         let allWikidataId = wikidataItem.split(";");
-        const imageURLS: string[] = [];
         for (let wikidataId of allWikidataId) {
             // @ts-ignore
             if (wikidataId.startsWith("Q")) {
                 wikidataId = wikidataId.substr(1);
             }
             Wikimedia.GetWikiData(parseInt(wikidataId), (wd: Wikidata) => {
-                imageURLS.push(wd.image);
+                addImage(wd.image);
                 Wikimedia.GetCategoryFiles(wd.commonsWiki, (images: ImagesInCategory) => {
                     for (const image of images.images) {
                         if (image.startsWith("File:")) {
-                            imageURLS.push(image);
+                            addImage(image);
                         }
                     }
                 })
             })
         }
-        return imageURLS;
     }
 
-    private static LoadCommons(commonsData: string): string[] {
-        const imageUrls = [];
+    private static LoadCommons(commonsData: string, addImage: ((url: string) => void)): void {
         const allCommons: string[] = commonsData.split(";");
         for (const commons of allCommons) {
             if (commons.startsWith("Category:")) {
                 Wikimedia.GetCategoryFiles(commons, (images: ImagesInCategory) => {
                     for (const image of images.images) {
                         if (image.startsWith("File:")) {
-                            imageUrls.push(image);
+                            addImage(image)
                         }
                     }
                 })
             } else {
                 if (commons.startsWith("File:")) {
-                    imageUrls.push(commons);
+                    addImage(commons)
                 }
             }
         }
-        return imageUrls;
     }
 
-    private static LoadImages(tags: any, imagePrefix: string, loadAdditional: boolean): { key: string, url: string }[] {
+    private static LoadImages(tags: any, imagePrefix: string): { key: string, url: string }[] {
         const imageTag = tags[imagePrefix];
         const images: { key: string, url: string }[] = [];
         if (imageTag !== undefined) {
@@ -163,19 +168,6 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
 
 
         return images;
-    }
-    
-    private static _cache = new Map<string, ImageSearcher>();
-
-    public static construct(tags: UIEventSource<any>, imagePrefix = "image", loadSpecial = true): ImageSearcher {
-        const key = tags["id"] + " "+imagePrefix+loadSpecial;
-        if(ImageSearcher._cache.has(key)){
-            return ImageSearcher._cache.get(key)
-        }
-       
-        const searcher = new ImageSearcher(tags, imagePrefix, loadSpecial);
-        ImageSearcher._cache.set(key, searcher)
-        return searcher;
     }
 
 }
