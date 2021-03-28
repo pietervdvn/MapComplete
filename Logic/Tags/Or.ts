@@ -30,14 +30,6 @@ export class Or extends TagsFilter {
         return choices;
     }
 
-    substituteValues(tags: any): TagsFilter {
-        const newChoices = [];
-        for (const c of this.or) {
-            newChoices.push(c.substituteValues(tags));
-        }
-        return new Or(newChoices);
-    }
-
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.or.map(t => t.asHumanString(linkToWiki, shorten)).join("|");
     }

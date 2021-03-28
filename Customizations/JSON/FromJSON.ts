@@ -5,6 +5,7 @@ import {Or} from "../../Logic/Tags/Or";
 import {And} from "../../Logic/Tags/And";
 import {Tag} from "../../Logic/Tags/Tag";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 
 export class FromJSON {
 
@@ -12,18 +13,19 @@ export class FromJSON {
         const tag = Utils.SplitFirst(json, "=");
         return new Tag(tag[0], tag[1]);
     }
+
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
-        try{
+        try {
             return this.TagUnsafe(json, context);
-        }catch(e){
-            console.error("Could not parse tag", json,"in context",context,"due to ", e)
+        } catch (e) {
+            console.error("Could not parse tag", json, "in context", context, "due to ", e)
             throw e;
         }
     }
 
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 
-            if (json === undefined) {
+        if (json === undefined) {
             throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
         }
         if (typeof (json) == "string") {
@@ -49,6 +51,11 @@ export class FromJSON {
                     new RegExp("^" + split[1] + "$")
                 );
             }
+            if(tag.indexOf(":=") >= 0){
+                const split = Utils.SplitFirst(tag, ":=");
+                return new SubstitutingTag(split[0], split[1]);
+            }
+            
             if (tag.indexOf("!=") >= 0) {
                 const split = Utils.SplitFirst(tag, "!=");
                 if (split[1] === "*") {

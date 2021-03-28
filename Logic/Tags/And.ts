@@ -46,14 +46,6 @@ export class And extends TagsFilter {
         return allChoices;
     }
 
-    substituteValues(tags: any): TagsFilter {
-        const newChoices = [];
-        for (const c of this.and) {
-            newChoices.push(c.substituteValues(tags));
-        }
-        return new And(newChoices);
-    }
-
     asHumanString(linkToWiki: boolean, shorten: boolean) {
         return this.and.map(t => t.asHumanString(linkToWiki, shorten)).join("&");
     }

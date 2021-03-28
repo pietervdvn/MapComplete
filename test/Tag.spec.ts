@@ -78,6 +78,14 @@ new T("Tags", [
         equal(nameStartsWith.matchesProperties({"name": "speelbos Sint-Anna"}), true)
         equal(nameStartsWith.matchesProperties({"name": "Sint-Anna"}), false)
         equal(nameStartsWith.matchesProperties({"name": ""}), false)
+        
+        
+        const assign = FromJSON.Tag("survey:date:={_date:now}")
+        equal(assign.matchesProperties({"survey:date":"2021-03-29", "_date:now":"2021-03-29"}), true);
+        equal(assign.matchesProperties({"survey:date":"2021-03-29", "_date:now":"2021-01-01"}), false);
+        equal(assign.matchesProperties({"survey:date":"2021-03-29"}), false);
+        equal(assign.matchesProperties({"_date:now":"2021-03-29"}), false);
+        equal(assign.matchesProperties({"some_key":"2021-03-29"}), false);
 
     })],
     ["Is equivalent test", (() => {
