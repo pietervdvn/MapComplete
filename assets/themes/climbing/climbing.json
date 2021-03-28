@@ -21,7 +21,7 @@
     "nl"
   ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
-  "icon": "./assets/themes/climbing/climbing_no_rope.svg",
+  "icon": "./assets/themes/climbing/climbing_icon.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
