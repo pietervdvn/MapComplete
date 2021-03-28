@@ -5,7 +5,7 @@ import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {Translation} from "../i18n/Translation";
-import {TagUtils} from "../../Logic/TagUtils";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 /***
  * Displays the correct value for a known tagrendering

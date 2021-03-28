@@ -8,7 +8,7 @@ import {Imgur} from "../../Logic/Web/Imgur";
 import {DropDown} from "../Input/DropDown";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
-import {Tag} from "../../Logic/Tag";
+import {Tag} from "../../Logic/Tags/Tag";
 
 export class ImageUploadFlow extends UIElement {
     private readonly _licensePicker: UIElement;

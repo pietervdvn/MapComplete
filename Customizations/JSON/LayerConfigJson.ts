@@ -1,6 +1,5 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
-import TagRenderingConfig from "./TagRenderingConfig";
 
 /**
  * Configuration for a single layer

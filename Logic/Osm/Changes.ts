@@ -4,9 +4,9 @@ import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import FeatureSource from "../FeatureSource/FeatureSource";
-import {TagsFilter} from "../TagsFilter";
-import {Tag} from "../Tag";
-import {And} from "../And";
+import {TagsFilter} from "../Tags/TagsFilter";
+import {Tag} from "../Tags/Tag";
+import {And} from "../Tags/And";
 
 /**
  * Handles all changes made to OSM.

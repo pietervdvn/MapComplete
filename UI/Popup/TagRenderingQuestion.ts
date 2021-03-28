@@ -18,10 +18,10 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
-import {TagsFilter} from "../../Logic/TagsFilter";
-import {Tag} from "../../Logic/Tag";
-import {And} from "../../Logic/And";
-import {TagUtils} from "../../Logic/TagUtils";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {Tag} from "../../Logic/Tags/Tag";
+import {And} from "../../Logic/Tags/And";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 /**
  * Shows the question element.

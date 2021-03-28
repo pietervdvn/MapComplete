@@ -7,7 +7,6 @@ import Combine from "../Base/Combine";
 import TagRenderingAnswer from "./TagRenderingAnswer";
 import State from "../../State";
 import Svg from "../../Svg";
-import {TagUtils} from "../../Logic/TagUtils";
 
 export default class EditableTagRendering extends UIElement {
     private readonly _tags: UIEventSource<any>;

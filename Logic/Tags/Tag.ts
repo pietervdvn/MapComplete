@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";
+import {Utils} from "../../Utils";
 import {RegexTag} from "./RegexTag";
 import {TagsFilter} from "./TagsFilter";
 import {TagUtils} from "./TagUtils";

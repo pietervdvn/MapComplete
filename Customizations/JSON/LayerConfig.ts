@@ -15,8 +15,8 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {UIElement} from "../../UI/UIElement";
 import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
-import {TagsFilter} from "../../Logic/TagsFilter";
-import {Tag} from "../../Logic/Tag";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {Tag} from "../../Logic/Tags/Tag";
 
 export default class LayerConfig {
 
