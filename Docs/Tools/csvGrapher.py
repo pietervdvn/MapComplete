@@ -32,7 +32,7 @@ class Hist:
         for v in self.dictionary.values():
             allV += list(set(v))
         return list(set(allV))
-
+    
     def keys(self):
         return self.dictionary.keys()
 
@@ -58,6 +58,15 @@ class Hist:
             running_value = add(running_value, v)
             vals.append(running_value)
         return vals
+
+    # Returns [(key, flatten(values))]
+    def flatten(self, flatten):
+        result = []
+        keys = self.keys()
+        for key in keys:
+            v = flatten(self.get(key))
+            result.append((key, v))
+        return result
 
     def csv(self):
         csv = self.key + "," + ",".join(self.values())
@@ -117,8 +126,8 @@ def create_usercount_graphs(stats, extra_text=""):
     total = cumul_uniq[-1]
 
     pyplot_init()
-    pyplot.fill_between(dates, unique_per_day, label='Unique contributors')
-    pyplot.fill_between(dates, new_users, label='First time contributor via MapComplete')
+    pyplot.bar(dates, unique_per_day, label='Unique contributors')
+    pyplot.bar(dates, new_users, label='First time contributor via MapComplete')
     pyplot.legend()
     pyplot.title("Unique contributors" + extra_text + ' with MapComplete (' + str(total) + ' contributors)')
     pyplot.ylabel("Number of unique contributors")
@@ -166,6 +175,27 @@ def create_theme_breakdown(stats, fileExtra="", cutoff=5):
                    bbox_inches='tight')
     return themes
 
+def summed_changes_per(contents, extraText, sum_column=5):
+    newPerDay = build_hist(contents, 0, 5)
+    kv = newPerDay.flatten(sum)
+    keysNew = list(map(lambda kv: as_date(kv[0]), kv))
+    valuesNew = list(map(lambda kv: kv[1], kv))
+    changedPerDay = build_hist(contents, 0, 6)
+    kv = changedPerDay.flatten(sum)
+    keysChanged = list(map(lambda kv: as_date(kv[0]), kv))
+    valuesChanged = list(map(lambda kv: kv[1], kv))
+    if len(keysChanged) == 0 and len(keysNew) == 0:
+        return
+
+    pyplot_init()
+    text = "New and changed nodes per day "+extraText
+    pyplot.title(text)
+    if len(keysChanged) > 0:
+        pyplot.bar(keysChanged, valuesChanged, label="Changed")
+    if len(keysNew) > 0:
+        pyplot.bar(keysNew, valuesNew, label="New")
+    pyplot.legend()
+    pyplot.savefig(text)
 
 def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5, cumulative=True, sort=True):
     print("Creating graph about " + subject + filenameextra)
@@ -255,9 +285,11 @@ def sortable_user_number(kv):
 
 
 def create_graphs(contents):
+    summed_changes_per(contents, "")
     cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=sortable_user_number)
     create_usercount_graphs(contents)
     create_theme_breakdown(contents)
+    cumulative_changes_per(contents, 3, "created element", cutoff=10)
     cumulative_changes_per(contents, 3, "theme", cutoff=10)
     cumulative_changes_per(contents, 3, "theme", cutoff=10, cumulative=False)
     cumulative_changes_per(contents, 1, "contributor", cutoff=15)
@@ -278,6 +310,8 @@ def create_graphs(contents):
                                sort=sortable_user_number)
         cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, sort=sortable_user_number)
         cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
+        summed_changes_per(contents_filtered, "for year "+str(year))
+
 
 
 def create_per_theme_graphs(contents, cutoff=10):
@@ -288,9 +322,10 @@ def create_per_theme_graphs(contents, cutoff=10):
             # less then 10 changesets - we do not map it
             continue
         contributors = set(map(lambda row: row[1], filtered))
-        if len(contributors) < 2:
-            continue  # one contributor makes a boring graph
-        cumulative_changes_per(filtered, 1, "contributor", " for theme " + theme, cutoff=1)
+        if len(contributors) >= 2:
+            cumulative_changes_per(filtered, 1, "contributor", " for theme " + theme, cutoff=1)
+        if len(filtered) > 25:
+            summed_changes_per(filtered, "for theme "+theme)
 
 
 def create_per_contributor_graphs(contents, least_needed_changesets):
@@ -301,15 +336,17 @@ def create_per_contributor_graphs(contents, least_needed_changesets):
             print("Skipping "+contrib+" - too little changesets");
             continue
         themes = set(map(lambda row: row[3], filtered))
-        if len(themes) < 2:
-            print("Skipping "+contrib+" - only one theme edited");
-            continue  # one theme makes a boring graph
-        cumulative_changes_per(filtered, 3, "theme", " for contributor " + contrib, cutoff=1)
+        if len(themes) >= 2:
+            cumulative_changes_per(filtered, 3, "theme", " for contributor " + contrib, cutoff=1)
+        if len(filtered) > 25:
+            summed_changes_per(filtered, "for contributor "+contrib)
 
 
 theme_remappings = {
     "metamap": "maps",
     "groen": "buurtnatuur",
+    "updaten van metadata met mapcomplete": "buurtnatuur",
+    "Toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
     "wiki:mapcomplete/fritures": "fritures",
     "wiki:MapComplete/Fritures": "fritures",
     "lits": "lit",
@@ -336,7 +373,10 @@ def clean_input(contents):
         row[3] = theme
         row[4] = row[4].strip().strip("\"")[len("MapComplete "):]
         row[4] = re.findall("[0-9]*\.[0-9]*\.[0-9]*", row[4])[0]
-        yield [data.strip().strip("\"") for data in row]
+        row = [data.strip().strip("\"") for data in row]
+        row[5] = int(row[5])
+        row[6] = int(row[6])
+        yield row
 
 
 def main():
@@ -350,6 +390,4 @@ def main():
     print("All done!")
 
 
-# pyplot.fill_between(range(0,5),  [1,2,3,3,2],)
-# pyplot.show()
 main()
