@@ -103,7 +103,6 @@ Some advanced functions are available on <b>feat</b> as well:
                         throw "Undefined distance!"
                     }
                     if(closestFeature === undefined || distance < closestDistance){
-                        console.log("Distance between ", feature.properties.id, "and", otherFeature.properties.id, "is", distance)
                         closestFeature = otherFeature
                         closestDistance = distance;
                     }

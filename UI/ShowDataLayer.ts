@@ -27,7 +27,9 @@ export default class ShowDataLayer {
 
         layoutToUse.addCallbackAndRun(layoutToUse => {
             for (const layer of layoutToUse.layers) {
-                self._layerDict[layer.id] = layer;
+                if (self._layerDict[layer.id] === undefined) {
+                    self._layerDict[layer.id] = layer;
+                }
             }
         });
 

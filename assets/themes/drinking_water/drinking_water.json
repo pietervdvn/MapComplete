@@ -17,6 +17,8 @@
   "startLon":  4.3516970,
   "startZoom": 16,
   "widenFactor": 0.05,
-  "layers": ["drinking_water"],
+  "layers": [
+    "drinking_water",
+  ],
   "roamingRenderings": []
 }

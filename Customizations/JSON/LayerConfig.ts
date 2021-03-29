@@ -81,7 +81,7 @@ export default class LayerConfig {
 
             this.source = new SourceConfig({
                 osmTags: osmTags,
-                geojsonSource: json.source["geoJsonSource"],
+                geojsonSource: json.source["geoJson"],
                 overpassScript: json.source["overpassScript"],
             });
         } else {
