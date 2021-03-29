@@ -213,6 +213,7 @@ export class InitUiElements {
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
+
             new FixedUiElement("Error: could not parse the custom layout:<br/> " + e).AttachTo("centermessage");
             throw e;
         }
@@ -350,8 +351,8 @@ export class InitUiElements {
             const lonDiff = bounds[0][1] - bounds[1][1]
             console.warn("Locking the bounds to ", bounds)
             bm.map.setMaxBounds(
-                [[ layout.startLat - latDiff, layout.startLon - lonDiff ],
-                    [ layout.startLat + latDiff, layout.startLon + lonDiff ],
+                [[layout.startLat - latDiff, layout.startLon - lonDiff],
+                    [layout.startLat + latDiff, layout.startLon + lonDiff],
                 ]
             );
             bm.map.setMinZoom(layout.startZoom)
@@ -384,7 +385,7 @@ export class InitUiElements {
         State.state.layerUpdater = updater;
         const source = new FeaturePipeline(state.filteredLayers, updater, state.layoutToUse, state.changes, state.locationControl);
 
-        new ShowDataLayer(source.features, State.state.leafletMap,            State.state.layoutToUse);
+        new ShowDataLayer(source.features, State.state.leafletMap, State.state.layoutToUse);
 
         new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
 

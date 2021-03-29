@@ -1,5 +1,8 @@
 import {UIEventSource} from "../UIEventSource";
 
+/**
+ * UIEventsource-wrapper around localStorage
+ */
 export class LocalStorageSource {
 
     static Get(key: string, defaultValue: string = undefined): UIEventSource<string> {
@@ -8,7 +11,14 @@ export class LocalStorageSource {
             const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:"+key);
 
             source.addCallback((data) => {
-                localStorage.setItem(key, data);
+                try{
+                    localStorage.setItem(key, data);
+                }catch(e){
+                    // Probably exceeded the quota with this item!
+                    // Lets nuke everything
+                    localStorage.clear()
+                }
+                
             });
             return source;
         } catch (e) {
