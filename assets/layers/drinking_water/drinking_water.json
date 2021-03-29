@@ -129,7 +129,7 @@
     },
     {
       "render":{
-        "en": "<a href='#{_closest_other_drinking_water_id}'>The closest other drinking water fountain is {_closest_other_drinking_water_distance} meter</a>"
+        "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain on {_closest_other_drinking_water_distance} meter</a>"
       }
     }
   ]
