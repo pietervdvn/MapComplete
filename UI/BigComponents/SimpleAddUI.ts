@@ -12,8 +12,8 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
-import {Tag} from "../../Logic/Tag";
-import {TagUtils} from "../../Logic/TagUtils";
+import {Tag} from "../../Logic/Tags/Tag";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class SimpleAddUI extends UIElement {
     private readonly _loginButton: UIElement;
