@@ -46,8 +46,8 @@ export class And extends TagsFilter {
         return allChoices;
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean) {
-        return this.and.map(t => t.asHumanString(linkToWiki, shorten)).join("&");
+    asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
+        return this.and.map(t => t.asHumanString(linkToWiki, shorten, properties)).join("&");
     }
 
     isUsableAsAnswer(): boolean {
@@ -107,5 +107,13 @@ export class And extends TagsFilter {
 
     usedKeys(): string[] {
         return [].concat(...this.and.map(subkeys => subkeys.usedKeys()));
+    }
+
+    asChange(properties: any): { k: string; v: string }[] {
+        const result = []
+        for (const tagsFilter of this.and) {
+            result.push(...tagsFilter.asChange(properties))
+        }
+        return result;
     }
 }

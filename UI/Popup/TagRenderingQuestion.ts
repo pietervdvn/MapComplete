@@ -86,10 +86,10 @@ export default class TagRenderingQuestion extends UIElement {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
                     if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                        const tagsStr = tags.asHumanString(false, true);
+                        const tagsStr = tags.asHumanString(false, true, self._tags.data);
                         return new FixedUiElement(tagsStr).SetClass("subtle").Render();
                     }
-                    return tags.asHumanString(true, true);
+                    return tags.asHumanString(true, true, self._tags.data);
                 }
             )
         ).SetClass("block")

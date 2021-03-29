@@ -6,7 +6,6 @@ import Constants from "../../Models/Constants";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {TagsFilter} from "../Tags/TagsFilter";
 import {Tag} from "../Tags/Tag";
-import {And} from "../Tags/And";
 
 /**
  * Handles all changes made to OSM.
@@ -29,7 +28,9 @@ export class Changes implements FeatureSource{
     /**
      * Adds a change to the pending changes
      */
-    private static checkChange(key: string, value: string): { k: string, v: string } {
+    private static checkChange(kv: {k: string, v: string}): { k: string, v: string } {
+        const key = kv.k;
+        const value = kv.v;
         if (key === undefined || key === null) {
             console.log("Invalid key");
             return undefined;
@@ -43,22 +44,19 @@ export class Changes implements FeatureSource{
             console.warn("Tag starts with or ends with a space - trimming anyway")
         }
 
-        key = key.trim();
-        value = value.trim();
-
-        return {k: key, v: value};
+        return {k: key.trim(), v: value.trim()};
     }
 
     
     
     addTag(elementId: string, tagsFilter: TagsFilter,
            tags?: UIEventSource<any>) {
-        const changes = this.tagToChange(tagsFilter);
+        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
+        const elementTags = eventSource.data;
+        const changes = tagsFilter.asChange(elementTags).map(Changes.checkChange)
         if (changes.length == 0) {
             return;
         }
-        const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
-        const elementTags = eventSource.data;
         for (const change of changes) {
             if (elementTags[change.k] !== change.v) {
                 elementTags[change.k] = change.v;
@@ -130,28 +128,6 @@ export class Changes implements FeatureSource{
 
         this.uploadAll([osmNode], changes);
         return geojson;
-    }
-
-    private tagToChange(tagsFilter: TagsFilter) {
-        let changes: { k: string, v: string }[] = [];
-
-        if (tagsFilter instanceof Tag) {
-            const tag = tagsFilter as Tag;
-            if (typeof tag.value !== "string") {
-                throw "Invalid value"
-            }
-            return [Changes.checkChange(tag.key, tag.value)];
-        }
-
-        if (tagsFilter instanceof And) {
-            const and = tagsFilter as And;
-            for (const tag of and.and) {
-                changes = changes.concat(this.tagToChange(tag));
-            }
-            return changes;
-        }
-        console.log("Unsupported tagsfilter element to addTag", tagsFilter);
-        throw "Unsupported tagsFilter element";
     }
 
     private uploadChangesWithLatestVersions(

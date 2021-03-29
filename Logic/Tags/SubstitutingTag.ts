@@ -18,15 +18,15 @@ export default class SubstitutingTag implements TagsFilter {
         this._value = value;
     }
 
-    private static substituteString(template: string, dict: any) {
+    private static substituteString(template: string, dict: any): string {
         for (const k in dict) {
             template = template.replace(new RegExp("\\{" + k + "\\}", 'g'), dict[k])
         }
         return template;
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean) {
-        return this._key + ":=" + this._value;
+    asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
+        return this._key + "=" + SubstitutingTag.substituteString(this._value, properties);
     }
 
     asOverpass(): string[] {
@@ -55,5 +55,13 @@ export default class SubstitutingTag implements TagsFilter {
 
     usedKeys(): string[] {
         return [this._key];
+    }
+
+    asChange(properties: any): { k: string; v: string }[] {
+        const v = SubstitutingTag.substituteString(this._value, properties);
+        if (v.match(/{.*}/) !== null) {
+            throw "Could not calculate all the substitutions: still have " + v
+        }
+        return [{k: this._key, v: v}];
     }
 }
