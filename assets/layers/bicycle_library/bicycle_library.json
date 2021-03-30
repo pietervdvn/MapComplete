@@ -61,7 +61,7 @@
       },
       "render":{
         "en": "Lending a bicycle costs {charge}",
-        "nl": "Een fiets huren kost {charge{"
+        "nl": "Een fiets huren kost {charge}"
       },
       "freeform": {
         "key": "charge",
