@@ -19,18 +19,23 @@
   },
   "osmlink": {
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
-    "mappings":[{
-      "if": "id~=-",
-      "then": "<span class='alert'>Uploading...</alert>"
-    }]
+    "mappings": [
+      {
+        "if": "id~=-",
+        "then": "<span class='alert'>Uploading...</alert>"
+      }
+    ]
   },
-
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "condition":  "wikipedia~*"
+    "condition": "wikipedia~*"
   },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+    "question": {
+      "nl": "Wat is het email-adres van {name}?",
+      "en": "What is the email address of {name}?"
+    },
     "freeform": {
       "key": "email",
       "type": "email"
@@ -49,7 +54,6 @@
       "type": "url"
     }
   },
-
   "description": {
     "question": {
       "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
@@ -59,7 +63,7 @@
     "freeform": {
       "key": "description"
     }
-  }, 
+  },
   "opening_hours": {
     "question": {
       "en": "What are the opening hours of {name}?",

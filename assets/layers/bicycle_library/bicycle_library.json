@@ -43,7 +43,7 @@
         "nl": "Wat is de naam van deze fietsbieb?"
       },
       "render": {
-        "en": "This bicycle library shop is called {name}",
+        "en": "This bicycle library is called {name}",
         "nl": "Deze fietsbieb heet {name}"
       },
       "freeform": {
