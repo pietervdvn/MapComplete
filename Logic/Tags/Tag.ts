@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";
+import {Utils} from "../../Utils";
 import {RegexTag} from "./RegexTag";
 import {TagsFilter} from "./TagsFilter";
 import {TagUtils} from "./TagUtils";
@@ -80,5 +80,9 @@ export class Tag extends TagsFilter {
 
     usedKeys(): string[] {
         return [this.key];
+    }
+
+    asChange(properties: any): { k: string; v: string }[] {
+        return [{k: this.key,  v: this.value}];
     }
 }

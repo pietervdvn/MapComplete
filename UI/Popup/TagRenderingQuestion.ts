@@ -18,10 +18,10 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import {Translation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
-import {TagsFilter} from "../../Logic/TagsFilter";
-import {Tag} from "../../Logic/Tag";
-import {And} from "../../Logic/And";
-import {TagUtils} from "../../Logic/TagUtils";
+import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {Tag} from "../../Logic/Tags/Tag";
+import {And} from "../../Logic/Tags/And";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 /**
  * Shows the question element.
@@ -57,9 +57,8 @@ export default class TagRenderingQuestion extends UIElement {
         this._inputElement = this.GenerateInputElement()
         const self = this;
         const save = () => {
-            console.log("Save clicked!")
             const selection = self._inputElement.GetValue().data;
-            console.log("Selection is", selection)
+            console.log("Save button clicked, the tags are is", selection)
             if (selection) {
                 (State.state?.changes ?? new Changes())
                     .addTag(tags.data.id, selection, tags);
@@ -86,10 +85,10 @@ export default class TagRenderingQuestion extends UIElement {
                         return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
                     }
                     if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                        const tagsStr = tags.asHumanString(false, true);
+                        const tagsStr = tags.asHumanString(false, true, self._tags.data);
                         return new FixedUiElement(tagsStr).SetClass("subtle").Render();
                     }
-                    return tags.asHumanString(true, true);
+                    return tags.asHumanString(true, true, self._tags.data);
                 }
             )
         ).SetClass("block")

@@ -16,9 +16,7 @@ export class GeoOperations {
     }
     
     static centerpointCoordinates(feature: any){
-        const coordinates = turf.center(feature).geometry.coordinates;
-        coordinates.reverse();
-        return coordinates;
+        return turf.center(feature).geometry.coordinates;
     }
 
     /**

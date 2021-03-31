@@ -95,7 +95,7 @@
       "name": {
         "nl": "Fietsstraten"
       },
-      "minzoom": 9,
+      "minzoom": 7,
       "source": {
         "osmTags": {
           "and": [

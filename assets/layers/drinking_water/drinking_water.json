@@ -41,6 +41,10 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_closest_other_drinking_water_id=feat.closest('drinking_water').id",
+    "_closest_other_drinking_water_distance=Math.floor(feat.distanceTo(feat.closest('drinking_water')) * 1000)"
+  ],
   "minzoom": 13,
   "wayHandling": 1,
   "presets": [
@@ -122,6 +126,12 @@
           }
         }
       ]
+    },
+    {
+      "render":{
+        "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>",
+        "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>"
+      }
     }
   ]
 }

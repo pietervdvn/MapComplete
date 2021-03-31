@@ -55,10 +55,6 @@ export class RegexTag extends TagsFilter {
         return this.invert;
     }
 
-    substituteValues(tags: any): TagsFilter {
-        return this;
-    }
-
     asHumanString() {
         if (typeof this.key === "string") {
             return `${this.key}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
@@ -81,5 +77,9 @@ export class RegexTag extends TagsFilter {
             return [this.key];
         }
         throw "Key cannot be determined as it is a regex"
+    }
+
+    asChange(properties: any): { k: string; v: string }[] {
+        throw "Cannot convert a regex-tag into a change";
     }
 }

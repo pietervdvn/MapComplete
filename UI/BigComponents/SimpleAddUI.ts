@@ -12,8 +12,8 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
-import {Tag} from "../../Logic/Tag";
-import {TagUtils} from "../../Logic/TagUtils";
+import {Tag} from "../../Logic/Tags/Tag";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class SimpleAddUI extends UIElement {
     private readonly _loginButton: UIElement;
@@ -158,7 +158,7 @@ export default class SimpleAddUI extends UIElement {
         let tagInfo = "";
         const csCount = State.state.osmConnection.userDetails.data.csCount;
         if (csCount > Constants.userJourney.tagsVisibleAt) {
-            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
+            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true, {})).join("&");
             tagInfo = `<br/>More information about the preset: ${tagInfo}`
         }
 
@@ -186,7 +186,7 @@ export default class SimpleAddUI extends UIElement {
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = undefined;
                 if (csCount > Constants.userJourney.tagsVisibleAt) {
-                    const presets = preset.tags.map(t => new Combine ([t.asHumanString(false, true), " "]).SetClass("subtle break-words") )
+                    const presets = preset.tags.map(t => new Combine ([t.asHumanString(false, true, {}), " "]).SetClass("subtle break-words") )
                     tagInfo = new Combine(presets)
                 }
                 const button: UIElement =

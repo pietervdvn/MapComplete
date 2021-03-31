@@ -61,13 +61,59 @@ Some advanced functions are available on <b>feat</b> as well:
         "Calculates the distance between the feature and a specified point",
         ["longitude", "latitude"],
         (featuresPerLayer, feature) => {
-            return (lon, lat) => {
-                // Feature._lon and ._lat is conveniently place by one of the other metatags
-                return GeoOperations.distanceBetween([lon, lat], [feature._lon, feature._lat]);
+            return (arg0, lat) => {
+                if(typeof arg0 === "number"){
+                    const lon = arg0
+                    // Feature._lon and ._lat is conveniently place by one of the other metatags
+                    return GeoOperations.distanceBetween([lon, lat], [feature._lon, feature._lat]);
+                }else{
+                    // arg0 is probably a feature
+                    return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0),[feature._lon, feature._lat])
+                }
+              
             }
         }
     )
-    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc];
+
+    private static ClosestObjectFunc = new ExtraFunction(
+        "closest",
+        "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.",
+        ["list of features"],
+        (featuresPerLayer, feature) => {
+            return (features) => {
+                if (typeof features === "string") {
+                    features = featuresPerLayer.get(features)
+                }
+                let closestFeature = undefined;
+                let closestDistance = undefined;
+                for (const otherFeature of features) {
+                    if(otherFeature == feature){
+                        continue; // We ignore self
+                    }
+                    let distance = undefined;
+                    if (otherFeature._lon !== undefined && otherFeature._lat !== undefined) {
+                        distance = GeoOperations.distanceBetween([otherFeature._lon, otherFeature._lat], [feature._lon, feature._lat]);
+                    } else {
+                        distance = GeoOperations.distanceBetween(
+                            GeoOperations.centerpointCoordinates(otherFeature),
+                            [feature._lon, feature._lat]
+                        )
+                    }
+                    if(distance === undefined){
+                        throw "Undefined distance!"
+                    }
+                    if(closestFeature === undefined || distance < closestDistance){
+                        closestFeature = otherFeature
+                        closestDistance = distance;
+                    }
+                }
+                return closestFeature;
+            }
+        }
+    )
+
+
+    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc, ExtraFunction.ClosestObjectFunc];
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
@@ -91,10 +137,10 @@ Some advanced functions are available on <b>feat</b> as well:
         return new Combine([
             ExtraFunction.intro,
             "<ul>",
-            ...ExtraFunction.allFuncs.map(func => 
-            new Combine([
-                "<li>", func._name, "</li>"
-            ])
+            ...ExtraFunction.allFuncs.map(func =>
+                new Combine([
+                    "<li>", func._name, "</li>"
+                ])
             ),
             "</ul>",
             ...ExtraFunction.allFuncs.map(func =>

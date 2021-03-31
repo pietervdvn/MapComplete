@@ -30,16 +30,8 @@ export class Or extends TagsFilter {
         return choices;
     }
 
-    substituteValues(tags: any): TagsFilter {
-        const newChoices = [];
-        for (const c of this.or) {
-            newChoices.push(c.substituteValues(tags));
-        }
-        return new Or(newChoices);
-    }
-
-    asHumanString(linkToWiki: boolean, shorten: boolean) {
-        return this.or.map(t => t.asHumanString(linkToWiki, shorten)).join("|");
+    asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
+        return this.or.map(t => t.asHumanString(linkToWiki, shorten, properties)).join("|");
     }
 
     isUsableAsAnswer(): boolean {
@@ -66,6 +58,10 @@ export class Or extends TagsFilter {
 
     usedKeys(): string[] {
         return [].concat(...this.or.map(subkeys => subkeys.usedKeys()));
+    }
+
+    asChange(properties: any): { k: string; v: string }[] {
+       throw "Can not convert an 'or' into a changeset"
     }
 }
 

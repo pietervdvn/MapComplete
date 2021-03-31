@@ -227,6 +227,24 @@
           }
         }
       ]
+    },
+    {
+      "question":{
+        "en": "When was this bench last surveyed?"
+      },
+      "render": {
+        "en": "This bench was last surveyed on {survey:date}"
+      },
+      "freeform": {
+        "key": "survey:date",
+        "type": "date"
+      },
+      "mappings": [
+        {
+          "if": "survey:date:={_now:date}",
+          "then": "Surveyed today!"
+        }
+      ]
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,

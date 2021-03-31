@@ -1,7 +1,7 @@
 import {Tag} from "./Tag";
 import {TagsFilter} from "./TagsFilter";
 import {And} from "./And";
-import {Utils} from "../Utils";
+import {Utils} from "../../Utils";
 
 export class TagUtils {
     static ApplyTemplate(template: string, tags: any): string {

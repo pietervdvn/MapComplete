@@ -1,7 +1,6 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import * as $ from "jquery";
-import {Layer} from "leaflet";
 
 /**
  * Fetches a geojson file somewhere and passes it along

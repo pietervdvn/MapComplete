@@ -5,7 +5,7 @@ import CheckBox from "../Input/CheckBox";
 import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
-import {Tag} from "../../Logic/Tag";
+import {Tag} from "../../Logic/Tags/Tag";
 
 
 export default class DeleteImage extends UIElement {
