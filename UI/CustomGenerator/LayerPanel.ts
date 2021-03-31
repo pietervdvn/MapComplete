@@ -98,7 +98,7 @@ export default class LayerPanel extends UIElement {
                         {value: 2, shown: "Show both the ways/areas and the centerpoints"},
                         {value: 1, shown: "Show everything as centerpoint"}]), "wayHandling", "Way handling",
                     "Describes how ways and areas are represented on the map: areas can be represented as the area itself, or it can be converted into the centerpoint"),
-                setting(new AndOrTagInput(), ["osmSource","overpassTags"], "Overpass query",
+                setting(new AndOrTagInput(), ["overpassTags"], "Overpass query",
                     "The tags of the objects to load from overpass"),
 
             ],
