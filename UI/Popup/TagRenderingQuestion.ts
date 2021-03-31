@@ -41,7 +41,7 @@ export default class TagRenderingQuestion extends UIElement {
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 afterSave?: () => void,
-                cancelButton?: UIElement        
+                cancelButton?: UIElement
     ) {
         super(tags);
         this._tags = tags;
@@ -94,7 +94,19 @@ export default class TagRenderingQuestion extends UIElement {
         ).SetClass("block")
     }
 
-    private     GenerateInputElement(): InputElement<TagsFilter> {
+    InnerRender(): string {
+        return new Combine([
+            this._question,
+            this._inputElement,
+            this._cancelButton,
+            this._saveButton,
+            this._appliedTags]
+        )
+            .SetClass("question")
+            .Render()
+    }
+
+    private GenerateInputElement(): InputElement<TagsFilter> {
         const ff = this.GenerateFreeform();
         const self = this;
         let mappings =
@@ -105,7 +117,7 @@ export default class TagRenderingQuestion extends UIElement {
             return ff;
         }
 
-        if(ff){
+        if (ff) {
             mappings.push(ff);
         }
 
@@ -131,11 +143,11 @@ export default class TagRenderingQuestion extends UIElement {
                 const tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
                 const oppositeTags: TagsFilter[] = [];
                 for (let i = 0; i < ifNotSelected.length; i++) {
-                    if(indices.indexOf(i) >= 0){
+                    if (indices.indexOf(i) >= 0) {
                         continue;
                     }
                     const notSelected = ifNotSelected[i];
-                    if(notSelected === undefined){
+                    if (notSelected === undefined) {
                         continue;
                     }
                     oppositeTags.push(notSelected);
@@ -223,7 +235,7 @@ export default class TagRenderingQuestion extends UIElement {
         if (mapping.hideInAnswer === true) {
             return undefined;
         }
-        if(typeof(mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)){
+        if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
             return undefined;
         }
         return new FixedInputElement(
@@ -231,7 +243,6 @@ export default class TagRenderingQuestion extends UIElement {
             mapping.if,
             (t0, t1) => t1.isEquivalent(t0));
     }
-
 
     private GenerateFreeform(): InputElement<TagsFilter> {
         const freeform = this._configuration.freeform;
@@ -285,18 +296,6 @@ export default class TagRenderingQuestion extends UIElement {
             pickString, toString
         );
 
-    }
-
-    InnerRender(): string {
-        return new Combine([
-            this._question,
-            this._inputElement,
-            this._cancelButton,
-            this._saveButton,
-            this._appliedTags]
-        )
-        .SetClass("question")
-        .Render()
     }
 
 }

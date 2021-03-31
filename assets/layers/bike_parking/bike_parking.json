@@ -67,7 +67,7 @@
       },
       "freeform": {
         "key": "bicycle_parking",
-        "extraTags": [
+        "addExtraTags": [
           "fixme=Freeform used on 'bicycle_parking'-tag: possibly a wrong value"
         ]
       },
@@ -260,7 +260,7 @@
       },
       "freeform": {
         "key": "access",
-        "extraTags": [
+        "addExtraTags": [
           "fixme=Freeform used on 'access'-tag: possibly a wrong value"
         ]
       },

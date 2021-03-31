@@ -17,13 +17,13 @@ export default class TagRenderingConfig {
     readonly render?: Translation;
     readonly question?: Translation;
     readonly condition?: TagsFilter;
-    
-    readonly configuration_warnings : string[] = []
+
+    readonly configuration_warnings: string[] = []
 
     readonly freeform?: {
-        readonly  key: string,
-        readonly    type: string,
-        readonly   addExtraTags: TagsFilter[];
+        readonly key: string,
+        readonly type: string,
+        readonly addExtraTags: TagsFilter[];
     };
 
     readonly multiAnswer: boolean;
@@ -49,13 +49,13 @@ export default class TagRenderingConfig {
             throw "Initing a TagRenderingConfig with undefined in " + context;
         }
         if (typeof json === "string") {
-            this.render = Translations.T(json, context+".render");
+            this.render = Translations.T(json, context + ".render");
             this.multiAnswer = false;
             return;
         }
 
-        this.render = Translations.T(json.render, context+".render");
-        this.question = Translations.T(json.question, context+".question");
+        this.render = Translations.T(json.render, context + ".render");
+        this.question = Translations.T(json.question, context + ".question");
         this.roaming = json.roaming ?? false;
         const condition = FromJSON.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (this.roaming && conditionIfRoaming !== undefined) {
@@ -70,15 +70,18 @@ export default class TagRenderingConfig {
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? []
             }
-            if(this.freeform.key === undefined || this.freeform.key === ""){
+            if(json.freeform["extraTags"] !== undefined){
+                throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
+            }
+            if (this.freeform.key === undefined || this.freeform.key === "") {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
                 throw `Freeform.key ${this.freeform.key} is an invalid type`
             }
-            if(this.freeform.addExtraTags){
+            if (this.freeform.addExtraTags) {
                 const usedKeys = new And(this.freeform.addExtraTags).usedKeys();
-                if(usedKeys.indexOf(this.freeform.key) >= 0){
+                if (usedKeys.indexOf(this.freeform.key) >= 0) {
                     throw `The freeform key ${this.freeform.key} will be overwritten by one of the extra tags, as they use the same key too. This is in ${context}`;
                 }
             }
@@ -86,8 +89,8 @@ export default class TagRenderingConfig {
 
         this.multiAnswer = json.multiAnswer ?? false
         if (json.mappings) {
-            
-            
+
+
             this.mappings = json.mappings.map((mapping, i) => {
 
 
@@ -131,30 +134,30 @@ export default class TagRenderingConfig {
         if (this.freeform && this.render === undefined) {
             throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
         }
-        
-        if(this.render && this.question && this.freeform === undefined){
+
+        if (this.render && this.question && this.freeform === undefined) {
             throw `${context}: Detected a tagrendering which takes input without freeform key in ${context}; the question is ${this.question.txt}`
         }
-        
-        if(!json.multiAnswer && this.mappings !== undefined && this.question !== undefined){
+
+        if (!json.multiAnswer && this.mappings !== undefined && this.question !== undefined) {
             let keys = []
-            for (let i = 0; i < this.mappings.length; i++){
+            for (let i = 0; i < this.mappings.length; i++) {
                 const mapping = this.mappings[i];
-                if(mapping.if === undefined){
+                if (mapping.if === undefined) {
                     throw `${context}.mappings[${i}].if is undefined`
                 }
                 keys.push(...mapping.if.usedKeys())
             }
             keys = Utils.Dedup(keys)
-            for (let i = 0; i < this.mappings.length; i++){
+            for (let i = 0; i < this.mappings.length; i++) {
                 const mapping = this.mappings[i];
-                if(mapping.hideInAnswer){
+                if (mapping.hideInAnswer) {
                     continue
                 }
-                
+
                 const usedKeys = mapping.if.usedKeys();
                 for (const expectedKey of keys) {
-                    if(usedKeys.indexOf(expectedKey) < 0){
+                    if (usedKeys.indexOf(expectedKey) < 0) {
                         const msg = `${context}.mappings[${i}]: This mapping only defines values for ${usedKeys.join(', ')}, but it should also give a value for ${expectedKey}`
                         this.configuration_warnings.push(msg)
                     }
@@ -197,15 +200,15 @@ export default class TagRenderingConfig {
             // Filtered away by the condition
             return true;
         }
-        if(this.multiAnswer){
+        if (this.multiAnswer) {
             for (const m of this.mappings) {
-                if(TagUtils.MatchesMultiAnswer(m.if, tags)){
+                if (TagUtils.MatchesMultiAnswer(m.if, tags)) {
                     return true;
                 }
             }
 
             const free = this.freeform?.key
-            if(free !== undefined){
+            if (free !== undefined) {
                 return tags[free] !== undefined
             }
             return false
@@ -219,11 +222,11 @@ export default class TagRenderingConfig {
 
         return false;
     }
-    
-    public IsQuestionBoxElement(): boolean{
+
+    public IsQuestionBoxElement(): boolean {
         return this.question === null && this.condition === null;
     }
-    
+
     /**
      * Gets the correct rendering value (or undefined if not known)
      * @constructor

@@ -65,7 +65,7 @@
       },
       "freeform": {
         "key": "charge",
-        "extraTags": ["fee=yes"]
+        "addExtraTags": ["fee=yes"]
       },
       "mappings": [
         {
