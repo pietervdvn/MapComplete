@@ -99,10 +99,18 @@
       "source": {
         "osmTags": {
           "and": [
-            "cyclestreet=yes",
-            "traffic_sign="
+            "cyclestreet=yes"
           ]
         }
+      },
+      "isShown": {
+        "render": "yes",
+        "mappings": [
+          {
+            "if": "id!~way/.*",
+            "then": "no"
+          }
+        ]
       },
       "description": {
         "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen."
