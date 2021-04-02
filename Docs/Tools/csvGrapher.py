@@ -118,6 +118,7 @@ def cumulative_users(stats):
 def pyplot_init():
     pyplot.figure(figsize=(14, 8), dpi=200)
     pyplot.xticks(rotation='vertical')
+    pyplot.grid()
 
 
 def create_usercount_graphs(stats, extra_text=""):
