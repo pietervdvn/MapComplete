@@ -84,6 +84,17 @@ Every field is documented in the source code itself - you can find them here:
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
 
+ Some hints
+------------
+
+### Everything is HTML
+
+All the texts are actually *HTML*-snippets, so you can use `<b>` to add bold, or `<img src=...>` to add images to mappings or tagrenderings. 
+
+Some remarks: 
+
+- links are disabled when answering a question (e.g. a link in a mapping) as it should trigger the answer - not trigger to open the link.
+- If you include images, e.g. to clarify a type, make sure these are _icons_ or _diagrams_ - not actual pictures! If users see a picture, they think it is a picture of _that actual object_, not a type to clarify the type. An icon is however perceived as something more abstract. 
 
  Some pitfalls
 ---------------
