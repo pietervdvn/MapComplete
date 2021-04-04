@@ -36,6 +36,8 @@ import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
+import LZString from "lz-string";
+import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 
 export class InitUiElements {
 
@@ -209,7 +211,17 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = new LayoutConfig(JSON.parse(atob(hash)), false);
+            
+            let json = {}
+            try{
+               json = JSON.parse(atob(hash));
+            } catch (e) {
+                // We try to decode with lz-string
+                json = JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash)))
+            }
+           
+            // @ts-ignore
+            const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {

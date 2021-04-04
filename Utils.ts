@@ -10,6 +10,8 @@ export class Utils {
     public static runningFromConsole = false;
 
     public static readonly assets_path = "./assets/svg/";
+    private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
+    private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
     static EncodeXmlValue(str) {
         return str.replace(/&/g, '&amp;')
@@ -200,6 +202,42 @@ export class Utils {
      */
     static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
         return {x: Utils.lon2tile(lon, z), y: Utils.lat2tile(lat, z), z: z}
+    }
+
+    public static MinifyJSON(stringified: string): string {
+        stringified = stringified.replace(/\|/g, "||");
+
+        const keys = Utils.knownKeys.concat(Utils.extraKeys);
+        for (let i = 0; i < keys.length; i++) {
+            const knownKey = keys[i];
+            let code = i;
+            if (i >= 124) {
+                code += 1; // Character 127 is our 'escape' character |
+            }
+            let replacement = "|" + String.fromCharCode(code)
+            stringified = stringified.replace(new RegExp(`\"${knownKey}\":`, "g"), replacement);
+        }
+
+        return stringified;
+    }
+
+    public static UnMinify(minified: string): string {
+
+        const parts = minified.split("|");
+        let result = parts.shift();
+        const keys = Utils.knownKeys.concat(Utils.extraKeys);
+
+        for (const part of parts) {
+            if (part == "") {
+                // Empty string => this was a || originally
+                result += "|"
+                continue
+            }
+            const i = part.charCodeAt(0);
+            result += "\"" + keys[i] + "\":" + part.substring(1)
+        }
+
+        return result;
     }
 
     private static tile2long(x, z) {

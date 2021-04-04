@@ -17,7 +17,8 @@ import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import HelpText from "./HelpText";
 import Svg from "../../Svg";
 import Constants from "../../Models/Constants";
-
+import LZString from "lz-string";
+import {Utils} from "../../Utils";
 
 export default class CustomGeneratorPanel extends UIElement {
     private mainPanel: UIElement;
@@ -40,7 +41,7 @@ export default class CustomGeneratorPanel extends UIElement {
 
     private InitMainPanel(layout: LayoutConfigJson, userDetails: UserDetails, connection: OsmConnection) {
         const es = new UIEventSource(layout);
-        const encoded = es.map(config => btoa(JSON.stringify(config)));
+        const encoded = es.map(config => LZString.compressToBase64(Utils.MinifyJSON(JSON.stringify(config, null, 0))));
         encoded.addCallback(encoded => LocalStorageSource.Get("last-custom-theme"))
         const liveUrl = encoded.map(encoded => `./index.html?userlayout=${es.data.id}#${encoded}`)
         const testUrl = encoded.map(encoded => `./index.html?test=true&userlayout=${es.data.id}#${encoded}`)
