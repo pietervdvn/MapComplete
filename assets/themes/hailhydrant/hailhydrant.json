@@ -1,0 +1,601 @@
+{
+  "id": "HailHydrant",
+  "title": {
+    "en": "Hydrants, Fire and Rescue Stations, Extinguishers"
+  },
+  "shortDescription": {
+    "en": "Map to show hydrants, fire and rescue stations, extinguishers"
+  },
+  "description": {
+    "en": "On this map you can find and update local hydrants, fire & resue stations, and extinguishers to help make the most awesome map of your community!"
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "https://wiki.openstreetmap.org/w/images/8/8c/Hailhydrant-logo.svg",
+  "version": "0",
+  "startLat": 13.67801,
+  "startLon": 121.6625,
+  "startZoom": 6,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "hydrants",
+      "name": {
+        "en": "Map of hydrants"
+      },
+      "minzoom": 14,
+      "overpassTags": {
+        "and": [
+          "emergency=fire_hydrant"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Hydrant"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire hydrants."
+      },
+      "tagRenderings": [
+        {
+          "question": {
+            "en": "What colour is the hydrant?"
+          },
+          "render": {
+            "en": "The hydrant colour is {colour}"
+          },
+          "freeform": {
+            "key": "colour"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "colour=yellow"
+                ]
+              },
+              "then": {
+                "en": "The hydrant colour is yellow"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What type of hydrant is it?"
+          },
+          "freeform": {
+            "key": "fire_hydrant:type"
+          },
+          "render": {
+            "en": " Hydrant type: {fire_hydrant:type}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=pillar"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:50px; height:60px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Downtown_Charlottesville_fire_hydrant_1.jpg/176px-Downtown_Charlottesville_fire_hydrant_1.jpg\" /> Pillar type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=pipe"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:50px; height:60px\" src=\"https://wiki.openstreetmap.org/w/images/thumb/3/33/Hydrants_20130326_112938.JPG/159px-Hydrants_20130326_112938.JPG\" /> Pipe type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=wall"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:60px; height:50px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Guentherscheid_Tunnel_Rescue4.jpg/320px-Guentherscheid_Tunnel_Rescue4.jpg\" /> Wall type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=underground"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:60px; height:50px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Berlin_hydrant_20050211_p1000517.jpg/320px-Berlin_hydrant_20050211_p1000517.jpg\" /> Underground type."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How many couplings are there?"
+          },
+          "render": {
+            "en": "Couplings: {couplings}"
+          },
+          "freeform": {
+            "key": "couplings",
+            "type": "pnat"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "couplings=1"
+                ]
+              },
+              "then": {
+                "en": "The hydrant has one (1) coupling."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "couplings=2"
+                ]
+              },
+              "then": {
+                "en": "The hydrant has two (2) couplings."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "couplings=3"
+                ]
+              },
+              "then": {
+                "en": "The hydrant has three (3) coupling."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "Update the lifecycle status of the hydrant."
+          },
+          "render": {
+            "en": "Lifecycle status"
+          },
+          "freeform": {
+            "key": "disused:emergency"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "emergency=fire_hydrant"
+                ]
+              },
+              "then": {
+                "en": "Hydrant is (fully or partially) working."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "disused:emergency=fire_hydrant",
+                  "emergency="
+                ]
+              },
+              "then": {
+                "en": "Hydrant is unavailable for use."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "removed:emergency=fire_hydrant",
+                  "emergency="
+                ]
+              },
+              "then": {
+                "en": "Hydrant has been removed."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "Describe the position of the hydrant."
+          },
+          "render": {
+            "en": "Position: {fire_hydrant:position}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:position=sidewalk"
+                ]
+              },
+              "then": {
+                "en": "Sidewalk"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:position=lane"
+                ]
+              },
+              "then": {
+                "en": "Road-side"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:position=underground"
+                ]
+              },
+              "then": {
+                "en": "Underground"
+              }
+            }
+          ],
+          "freeform": {
+            "key": "fire_hydrant:position"
+          }
+        },
+        {
+          "render": {
+            "en": "Mapillary: {mapillary}"
+          },
+          "question": {
+            "en": "Do you know the Mapillary photo id?"
+          },
+          "freeform": {
+            "key": "mapillary"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/6/66/Hydrant_02.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "15,15,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "emergency=fire_hydrant"
+          ],
+          "title": {
+            "en": "fire hydrant"
+          },
+          "description": {
+            "en": "Add a new fire hydant to the map."
+          }
+        }
+      ],
+      "wayHandling": 1,
+      "osmSource": {
+        "overpassTags": {
+          "and": [
+            "emergency=fire_hydrant"
+          ]
+        }
+      }
+    },
+    {
+      "id": "extinguisher",
+      "name": {
+        "en": "Map of fire extinguishers."
+      },
+      "minzoom": 14,
+      "overpassTags": {
+        "and": [
+          "emergency=fire_extinguisher"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Extinguishers"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire hydrants."
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "Location: {location}"
+          },
+          "question": {
+            "en": "Where is it positioned?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "location=indoor"
+                ]
+              },
+              "then": {
+                "en": "Indoor"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "location=outdoor"
+                ]
+              },
+              "then": {
+                "en": "Outdoor"
+              }
+            }
+          ],
+          "freeform": {
+            "key": "location"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/e/e8/MUTCD_RS-090.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "emergency=fire_extinguisher"
+          ],
+          "title": {
+            "en": "fire extinguisher"
+          },
+          "description": {
+            "en": "Add a fire extinguisher to the map"
+          }
+        }
+      ],
+      "wayHandling": 1,
+      "osmSource": {
+        "overpassTags": {
+          "and": [
+            "emergency=fire_extinguisher"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stations",
+      "name": {
+        "en": "Map of fire stations"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "amenity=fire_station"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Fire Station"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire stations."
+      },
+      "tagRenderings": [
+        {
+          "freeform": {
+            "key": "addr:street"
+          },
+          "question": {
+            "en": " What street is the station located?"
+          },
+          "render": {
+            "en": "The station is along a highway called {addr:street}."
+          }
+        },
+        {
+          "question": {
+            "en": "In what place is the station located? (e.g. name of neighbourhood, villlage, or town)"
+          },
+          "freeform": {
+            "key": "addr:place"
+          },
+          "render": {
+            "en": "The station is to be found within {addr:place}."
+          }
+        },
+        {
+          "question": {
+            "en": "What agency operates this station?"
+          },
+          "render": {
+            "en": "Operator: {operator}"
+          },
+          "freeform": {
+            "key": "operator"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator=Bureau of Fire Protection",
+                  "operator:type=public"
+                ]
+              },
+              "then": {
+                "en": "Bureau of Fire Protection"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How would you classifiy the operator of this station?"
+          },
+          "render": {
+            "en": "Operator type: {operator:type}"
+          },
+          "freeform": {
+            "key": "operator:type"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator:type=public"
+                ]
+              },
+              "then": {
+                "en": "Public"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=ngo"
+                ]
+              },
+              "then": {
+                "en": "Volunteer"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=community"
+                ]
+              },
+              "then": {
+                "en": "Community-based, or informal organization"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=private"
+                ]
+              },
+              "then": {
+                "en": "Private"
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/8/84/British_Columbia_W-318-L.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=fire_station"
+          ],
+          "title": {
+            "en": "fire station"
+          },
+          "description": {
+            "en": "Add a fire station to the map."
+          }
+        }
+      ],
+      "osmSource": {
+        "overpassTags": {
+          "and": [
+            "amenity=fire_station"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rescuestation",
+      "name": {
+        "en": "Map of rescue stations"
+      },
+      "minzoom": 12,
+      "overpassTags": {
+        "and": [
+          "amenity=rescue_station"
+        ]
+      },
+      "title": {
+        "render": {
+          "en": "Rescue Station"
+        }
+      },
+      "description": {
+        "en": "Map layer to show rescue stations."
+      },
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emojione_1F6A8.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=rescue_station"
+          ],
+          "title": {
+            "en": "rescue station"
+          },
+          "description": {
+            "en": "Add a rescue or emergency service station to the map"
+          }
+        }
+      ],
+      "osmSource": {
+        "overpassTags": {
+          "and": [
+            "amenity=rescue_station"
+          ]
+        }
+      }
+    }
+  ],
+  "roamingRenderings": [
+    {}
+  ],
+  "defaultBackgroundId": "HDM_HOT"
+}
