@@ -13,7 +13,7 @@
     "en"
   ],
   "maintainer": "",
-  "icon": "https://wiki.openstreetmap.org/w/images/8/8c/Hailhydrant-logo.svg",
+  "icon": "assets/themes/hailhydrant/logo.svg",
   "version": "0",
   "startLat": 13.67801,
   "startLon": 121.6625,
