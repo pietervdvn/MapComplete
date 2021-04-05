@@ -3,8 +3,7 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
 /**
  * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
  * If the desired tags are missing and a question is defined, a question will be shown instead.
- *
- /
+ */
 export interface TagRenderingConfigJson {
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
