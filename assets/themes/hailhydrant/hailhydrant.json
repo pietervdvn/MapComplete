@@ -55,6 +55,16 @@
             {
               "if": {
                 "and": [
+                  "colour=red"
+                ]
+              },
+              "then": {
+                "en": "The hydrant colour is red"
+              }
+            },
+            {
+              "if": {
+                "and": [
                   "colour=yellow"
                 ]
               },
