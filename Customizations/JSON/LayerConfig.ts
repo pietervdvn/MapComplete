@@ -369,7 +369,6 @@ export default class LayerConfig {
         const self = this;
         const mappedHtml = tags.map(tgs => {
             function genHtmlFromString(sourcePart: string): UIElement {
-                console.log("Got source part ", sourcePart)
                 if (sourcePart.indexOf("html:") == 0) {
                     // We use § as a replacement for ;
                     const html = sourcePart.substring("html:".length)
