@@ -54,7 +54,7 @@ export class SubstitutedTranslation extends UIElement {
         for (const key in tags) {
             txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
         }
-        return txt.replace(/{.*}/g, "");
+        return txt;
     }
 
     private static GenerateMap() {
@@ -117,8 +117,8 @@ export class SubstitutedTranslation extends UIElement {
             }
         }
 
-        // IF we end up here, no changes have to be made
-        return [new FixedUiElement(template)];
+        // IF we end up here, no changes have to be made - except to remove any resting {}
+        return [new FixedUiElement(template.replace(/{.*}/g, ""))];
     }
 
 }

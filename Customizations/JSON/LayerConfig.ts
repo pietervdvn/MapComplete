@@ -332,7 +332,7 @@ export default class LayerConfig {
 
         function render(tr: TagRenderingConfig, deflt?: string) {
             const str = (tr?.GetRenderValue(tags.data)?.txt ?? deflt);
-            return SubstitutedTranslation.SubstituteKeys(str, tags.data);
+            return SubstitutedTranslation.SubstituteKeys(str, tags.data).replace(/{.*}/g, "");
         }
 
         const iconSize = render(this.iconSize, "40,40,center").split(",");
