@@ -18,11 +18,11 @@ export default class SubstitutingTag implements TagsFilter {
         this._value = value;
     }
 
-    private static substituteString(template: string, dict: any): string {
+    public static substituteString(template: string, dict: any): string {
         for (const k in dict) {
             template = template.replace(new RegExp("\\{" + k + "\\}", 'g'), dict[k])
         }
-        return template;
+        return template.replace(/{.*}/g, "");
     }
 
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {

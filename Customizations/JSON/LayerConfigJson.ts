@@ -105,6 +105,9 @@ export interface LayerConfigJson {
      * As a result, on could use a generic pin, then overlay it with a specific icon.
      * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
      * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
+     * 
+     * Also note that one can specify to use HTML by entering some html between "<html>" and "</html" into here, for example
+     * "icon": "some_icon.svg;<html><div style="margin-top: 50px; background: white; display: block">{name}</div>"
      */
     icon?: string | TagRenderingConfigJson;
 

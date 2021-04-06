@@ -9,7 +9,7 @@ import SpecialVisualizations from "./SpecialVisualizations";
 import {Utils} from "../Utils";
 
 export class SubstitutedTranslation extends UIElement {
-    private static cachedTranslations: 
+    private static cachedTranslations:
         Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>> = new Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>>();
     private readonly tags: UIEventSource<any>;
     private readonly translation: Translation;
@@ -34,39 +34,39 @@ export class SubstitutedTranslation extends UIElement {
         this.SetClass("w-full")
     }
 
-    private static GenerateMap(){
-        return new Map<UIEventSource<any>, SubstitutedTranslation>()
-    }
-    private static GenerateSubCache(){
-        return new  Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>();
-    }
-    
     public static construct(
         translation: Translation,
         tags: UIEventSource<any>): SubstitutedTranslation {
-        
-       /* let cachedTranslations = Utils.getOrSetDefault(SubstitutedTranslation.cachedTranslations, SubstitutedTranslation.GenerateSubCache);
-        const innerMap = Utils.getOrSetDefault(cachedTranslations, translation, SubstitutedTranslation.GenerateMap);
 
-        const cachedTranslation = innerMap.get(tags);
-        if (cachedTranslation !== undefined) {
-            return cachedTranslation;
-        }*/
+        /* let cachedTranslations = Utils.getOrSetDefault(SubstitutedTranslation.cachedTranslations, SubstitutedTranslation.GenerateSubCache);
+         const innerMap = Utils.getOrSetDefault(cachedTranslations, translation, SubstitutedTranslation.GenerateMap);
+ 
+         const cachedTranslation = innerMap.get(tags);
+         if (cachedTranslation !== undefined) {
+             return cachedTranslation;
+         }*/
         const st = new SubstitutedTranslation(translation, tags);
-       // innerMap.set(tags, st);
+        // innerMap.set(tags, st);
         return st;
     }
 
     public static SubstituteKeys(txt: string, tags: any) {
         for (const key in tags) {
-            // Poor mans replace all
-            txt = txt.split("{" + key + "}").join(tags[key]);
+            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
         }
-        return txt;
+        return txt.replace(/{.*}/g, "");
+    }
+
+    private static GenerateMap() {
+        return new Map<UIEventSource<any>, SubstitutedTranslation>()
+    }
+
+    private static GenerateSubCache() {
+        return new Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>();
     }
 
     InnerRender(): string {
-        if(this.content.length == 1){
+        if (this.content.length == 1) {
             return this.content[0].Render();
         }
         return new Combine(this.content).Render();

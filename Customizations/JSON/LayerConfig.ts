@@ -17,6 +17,7 @@ import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
+import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 
 export default class LayerConfig {
 
@@ -218,9 +219,33 @@ export default class LayerConfig {
         this.dashArray = tr("dashArray", "");
 
 
-        if(json["showIf"] !== undefined){
-            throw "Invalid key on layerconfig "+this.id+": showIf. Did you mean 'isShown' instead?";
+        if (json["showIf"] !== undefined) {
+            throw "Invalid key on layerconfig " + this.id + ": showIf. Did you mean 'isShown' instead?";
         }
+    }
+
+    /**
+     * Splits the parts of the icon, at ";" but makes sure that everything between "<html>" and "</html>" stays together
+     * @param template
+     * @constructor
+     * @private
+     */
+    private static SplitParts(template: string): string[] {
+        const htmlParts = template.split("<html>");
+        const parts = []
+        for (const htmlPart of htmlParts) {
+            if (htmlPart.indexOf("</html>") >= 0) {
+                const subparts = htmlPart.split("</html>");
+                if (subparts.length != 2) {
+                    throw "Invalid rendering with embedded html: " + htmlPart;
+                }
+                parts.push("html:" + subparts[0]);
+                parts.push(...subparts[1].split(";"))
+            } else {
+                parts.push(...htmlPart.split(";"))
+            }
+        }
+        return parts.filter(prt => prt != "");
     }
 
     public CustomCodeSnippets(): string[] {
@@ -343,15 +368,16 @@ export default class LayerConfig {
         const iconUrlStatic = render(this.icon);
         const self = this;
         const mappedHtml = tags.map(tgs => {
-            // What do you mean, 'tgs' is never read?
-            // It is read implicitly in the 'render' method
-            const iconUrl = render(self.icon);
-            const rotation = render(self.rotation, "0deg");
-
-            let htmlParts: UIElement[] = [];
-            let sourceParts = iconUrl.split(";");
-
             function genHtmlFromString(sourcePart: string): UIElement {
+                console.log("Got source part ", sourcePart)
+                if (sourcePart.indexOf("html:") == 0) {
+                    // We use § as a replacement for ;
+                    const html = sourcePart.substring("html:".length)
+                    const inner = new FixedUiElement(SubstitutingTag.substituteString(html, tgs)).SetClass("block w-min text-center")
+                    const outer = new Combine([inner]).SetClass("flex flex-col items-center")
+                    return outer;
+                }
+
                 const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
                 let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/)
@@ -365,6 +391,14 @@ export default class LayerConfig {
             }
 
 
+            // What do you mean, 'tgs' is never read?
+            // It is read implicitly in the 'render' method
+            const iconUrl = render(self.icon);
+            const rotation = render(self.rotation, "0deg");
+
+            let htmlParts: UIElement[] = [];
+            let sourceParts = LayerConfig.SplitParts(iconUrl);
+
             for (const sourcePart of sourceParts) {
                 htmlParts.push(genHtmlFromString(sourcePart))
             }
@@ -377,7 +411,7 @@ export default class LayerConfig {
                 }
                 if (iconOverlay.badge) {
                     const badgeParts: UIElement[] = [];
-                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";");
+                    const partDefs = LayerConfig.SplitParts(iconOverlay.then.GetRenderValue(tgs).txt);
 
                     for (const badgePartStr of partDefs) {
                         badgeParts.push(genHtmlFromString(badgePartStr))
