@@ -50,7 +50,7 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
 1) Fork this repository
 2) Go to `assets/themes` and create a new directory `yourtheme`
 3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in the customThemeBuilder (the tab with the *Floppy disk* icon)
-4) Copy all the images into this new directory: external assets can suddenly break and leak privacy
+4) Copy all the images into this new directory. **No external sources are allowed!** External image sources leak privacy or can break.
    - Make sure the license is suitable, preferable a Creative Commons license. Attribution can be added at the bottom of this document
    - If an SVG version is available, use the SVG version
    - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
@@ -58,9 +58,10 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
     - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
     - Add an import statement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
     - Add your theme to the `LayoutsList`, by adding a line `new LayoutConfig(yourtheme)`
- 6) Test your theme: run the project as described [above](../README.md#Dev)
- 7) Happy with your theme? Time to open a Pull Request!
- 8) Thanks a lot for improving MapComplete!
+ 6) Add some finishing touches, such as a social image. See [this blog post](https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit) for some hints
+ 7) Test your theme: run the project as described [above](../README.md#Dev)
+ 8) Happy with your theme? Time to open a Pull Request!
+ 9) Thanks a lot for improving MapComplete!
  
  
  The .JSON-format
