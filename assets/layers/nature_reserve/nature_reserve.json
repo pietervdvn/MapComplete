@@ -20,7 +20,7 @@
       {
         "if": {
           "and": [
-            "name:nl~"
+            "name:nl~*"
           ]
         },
         "then": {
