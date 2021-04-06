@@ -38,6 +38,7 @@ import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
+import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 
 export class InitUiElements {
 
@@ -287,11 +288,7 @@ export class InitUiElements {
             const copyrightNotice =
                 new ScrollableFullScreen(
                     () => Translations.t.general.attribution.attributionTitle.Clone(),
-                    () => new Combine([
-                        Translations.t.general.attribution.attributionContent,
-                        "<br/>",
-                        new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
-                    ]),
+                    () => new AttributionPanel(State.state.layoutToUse),
                     "copyright"
                 )
 
