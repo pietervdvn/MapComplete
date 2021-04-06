@@ -34,7 +34,7 @@ Adds the time that the data got loaded - pretty much the time of downloading fro
 Calculating tags with Javascript
 --------------------------------
 
-In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. **\_lat**, **lon**, **\_country**), as detailed above.
+In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. **lat**, **lon**, **\_country**), as detailed above.
 
 It is also possible to calculate your own tags - but this requires some javascript knowledge.
 
@@ -46,7 +46,13 @@ Before proceeding, some warnings:
 
 In the layer object, add a field **calculatedTags**, e.g.:
 
-"calculatedTags": { "\_someKey": "javascript-expression", "name": "feat.properties.name ?? feat.properties.ref ?? feat.properties.operator", "\_distanceCloserThen3Km": "feat.distanceTo( some\_lon, some\_lat) < 3 ? 'yes' : 'no'" }
+"calculatedTags": \[ "\_someKey=javascript-expression", "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator", "\_distanceCloserThen3Km=feat.distanceTo( some\_lon, some\_lat) < 3 ? 'yes' : 'no'" \]
+
+The above code will be executed for every feature in the layer. The feature is accessible as **feat** and is an amended geojson object: - **area** contains the surface area (in square meters) of the object - **lat** and **lon** contain the latitude and longitude Some advanced functions are available on **feat** as well:
+
+*   distanceTo
+*   overlapWith
+*   closest
 
 ### distanceTo
 
@@ -54,3 +60,15 @@ Calculates the distance between the feature and a specified point
 
 *   longitude
 *   latitude
+
+### overlapWith
+
+Gives a list of features from the specified layer which this feature overlaps with, the amount of overlap in m². The returned value is **{ feat: GeoJSONFeature, overlap: number}**
+
+*   ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
+
+### closest
+
+Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.
+
+*   list of features
