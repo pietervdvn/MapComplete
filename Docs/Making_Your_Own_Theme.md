@@ -139,4 +139,6 @@ For example, in the [cyclofix-theme](https://mapcomplete.osm.org/cyclofix), ther
 
 If all the layers are deselected except the bike wash layer, a shop having this tag will still match and will still show up as shop.
 
+### Not reading the .JSON-specs
 
+There are a few advanced features to do fancy stuff available, which are documented only in the spec above - for example, reusing background images and substituting the colours or HTML-rendering. If you need advanced stuff, read it through!
