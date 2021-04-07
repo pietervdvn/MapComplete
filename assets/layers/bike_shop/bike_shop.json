@@ -59,7 +59,6 @@
         "if": {
           "and": [
             "shop=sports",
-            "name~*"
           ]
         },
         "then": {
@@ -69,17 +68,9 @@
         }
       },
       {
-        "if": "shop=sports",
-        "then": {
-          "en": "Sport gear shop",
-          "nl": "Sportwinkel",
-          "fr": "Magasin de sport"
-        }
-      },
-      {
         "if": {
           "and": [
-            "shop!~bicycle",
+            "shop!~.*bicycle.*",
             "shop~*"
           ]
         },
@@ -88,9 +79,24 @@
       {
         "if": {
           "and": [
-            "name~*",
+            {
+              "or": [
+                "service:bicycle:rental=yes",
+                "amenity=bicycle_rental"
+              ]
+            }
+          ]
+        },
+        "then": {
+          "nl": "Fietsverhuur <i>{name}</i>",
+          "en": "Bicycle rental <i>{name}</i>"
+        }
+      },
+      {
+        "if": {
+          "and": [
             "service:bicycle:retail!~yes",
-            "service:bicycle:repair!~no"
+            "service:bicycle:repair=yes"
           ]
         },
         "then": {
@@ -104,22 +110,6 @@
       {
         "if": {
           "and": [
-            "service:bicycle:retail!~yes",
-            "service:bicycle:repair!~no"
-          ]
-        },
-        "then": {
-          "en": "Bike repair",
-          "nl": "Fietsenmaker",
-          "fr": "Réparateur de vélo",
-          "gl": "Arranxo de bicicletas",
-          "de": "Fahrradwerkstatt"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*",
             "service:bicycle:repair!~yes"
           ]
         },
@@ -129,33 +119,6 @@
           "fr": "Magasin de vélo <i>{name}</i>",
           "gl": "Tenda de bicicletas <i>{name}</i>",
           "de": "Fahrradgeschäft <i>{name}</i>"
-        }
-      },
-      {
-        "if": "service:bicycle:repair!~yes",
-        "then": {
-          "en": "Bike shop",
-          "nl": "Fietswinkel",
-          "fr": "Magasin de vélo",
-          "gl": "Tenda de bicicletas",
-          "de": "Fahrradgeschäft"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*",
-            {
-              "or": [
-                "service:bicycle:rental=yes",
-                "amenity=bicycle_rental"
-              ]
-            }
-          ]
-        },
-        "then": {
-          "nl": "Fietsverhuur <i>{name}</i>",
-          "en": "Bicycle rental <i>{name}</i>"
         }
       },
       {
