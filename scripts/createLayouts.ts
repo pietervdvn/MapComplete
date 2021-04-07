@@ -184,7 +184,7 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
     }
 
     const og = `
-    <meta property="og:image" content="${ogImage ?? './assets/svg/add.svg'}">
+    <meta property="og:image" content="${ogImage ?? './assets/SocialImage.png'}">
     <meta property="og:title" content="${ogTitle}">
     <meta property="og:description" content="${ogDescr}">`
 
