@@ -226,12 +226,6 @@ Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
 
 Statistics icon via https://www.onlinewebfonts.com/icon/197818
 
-Chronometer (on monitoring_station.svg): ANTU chronometer
-https://commons.wikimedia.org/w/index.php?title=Antu_chronometer
-
-Fries icon:
-https://www.flaticon.com/free-icon/french-fries_1144288
-
 Shower icon (used in 'bike_cleaning.svg'):
 https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
 

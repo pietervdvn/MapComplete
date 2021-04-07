@@ -77,34 +77,45 @@ function missingLicenseInfos(licenseInfos: SmallLicense[], allIcons: string[]) {
 
 const prompt = require('prompt-sync')();
 
+const knownLicenses = new Map<string, SmallLicense>()
+knownLicenses.set("cf", {
+    authors: ["Pieter Fiers", "Thibault Declercq", "Pierre Barban", "Joost Schouppe","Pieter Vander Vennet"],
+    path: undefined,
+    license: "CC-BY-SA",
+    sources: ["https://osoc.be/editions/2020/cyclofix"]
+})
+knownLicenses.set("me", {
+    authors: ["Pieter Vander Vennet"],
+    path : undefined,
+    license: "CC0",
+    sources: []
+})
+
+knownLicenses.set("t", {
+    authors: [],
+    path : undefined,
+    license: "CC0; trivial",
+    sources: []
+})
+
+knownLicenses.set("na", {
+    authors: [],
+    path : undefined,
+    license: "CC0",
+    sources: []
+})
+
+
 function promptLicenseFor(path): SmallLicense {
-    const author = prompt("What is the author for artwork " + path + "? (me == Pieter Vander Vennet/CC0, Q to quit)  > ")
+    const author = prompt("What is the author for artwork " + path + "? (or: [Q]uit, [S]kip)  > ")
     path = path.substring(path.lastIndexOf("/") + 1)
-    if (author == "me") {
-        return {
-            authors: ["Pieter Vander Vennet"],
-            path: path,
-            license: "CC0",
-            sources: []
-        }
+ 
+    if(knownLicenses.has(author)){
+        const license = knownLicenses.get(author);
+        license.path = path;
+        return license;
     }
-    if (author == "cf") {
-        return {
-            authors: ["Pieter Fiers", "Thibault Declercq", "Pierre Barban", "Joost Schouppe","Pieter Vander Vennet"],
-            path: path,
-            license: "CC-BY-SA",
-            sources: ["https://osoc.be/editions/2020/cyclofix"]
-        }
-    }
-    if (author == "gitte") {
-        return {
-            authors: ["Gitte Vande Graveele"],
-            path: path,
-            license: "CC-BY-SA",
-            sources: ["https://osoc.be/editions/2020/walk-by-brussels"]
-        }
-    }
-    
+
     if(author == "s"){
         return null;
     }
@@ -127,6 +138,25 @@ function createLicenseInfoFor(path): void {
     writeFileSync(path + ".license_info.json", JSON.stringify(li, null, "  "))
 }
 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
 console.log("Checking and compiling license info")
 const contents = readDirRecSync("./assets")
     .filter(entry => entry.indexOf("./assets/generated") != 0)
@@ -138,6 +168,8 @@ const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
 console.log(`There are ${missingLicenses.length} licenses missing.`)
+
+shuffle(missingLicenses)
 
 let i = 1;
 for (const missingLicens of missingLicenses) {
