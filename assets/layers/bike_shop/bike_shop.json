@@ -58,7 +58,7 @@
       {
         "if": {
           "and": [
-            "shop=sports",
+            "shop=sports"
           ]
         },
         "then": {
