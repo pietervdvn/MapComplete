@@ -295,7 +295,7 @@
       },
       "render": {
         "en": "Mounting method: {mount}",
-        "nl": "Montage: {mount}"
+        "nl": "Montage: {camera:mount}"
       },
       "freeform": {
         "key": "camera:mount"
