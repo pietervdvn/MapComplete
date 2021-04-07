@@ -82,21 +82,21 @@
           "if": "operational_status=",
           "then": {
             "en": "This drinking water works",
-            "nl": "Deze drinkwaterfonteint werkt"
+            "nl": "Deze drinkwaterfontein werkt"
           }
         },
         {
           "if": "operational_status=broken",
           "then": {
             "en": "This drinking water is broken",
-            "nl": "Deze drinkwaterfonteint is kapot"
+            "nl": "Deze drinkwaterfontein is kapot"
           }
         },
         {
           "if": "operational_status=closed",
           "then": {
             "en": "This drinking water is closed",
-            "nl": "Deze drinkwaterfonteint is afgesloten"
+            "nl": "Deze drinkwaterfontein is afgesloten"
           }
         }
       ]
