@@ -428,11 +428,12 @@ export class InitUiElements {
             }
 
 
+            const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
                 () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI(),
-                "new");
-
+                () => new SimpleAddUI(newPointDialogIsShown),
+                "new",
+                newPointDialogIsShown)
             addNewPoint.isShown.addCallback(isShown => {
                 if (!isShown) {
                     State.state.LastClickLocation.setData(undefined)

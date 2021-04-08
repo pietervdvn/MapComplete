@@ -37,7 +37,7 @@ export default class SimpleAddUI extends UIElement {
     private readonly goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(),
         Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
 
-    constructor() {
+    constructor(isShown: UIEventSource<boolean>) {
         super(State.state.locationControl.map(loc => loc.zoom));
         const self = this;
         this.ListenTo(Locale.language);
@@ -64,6 +64,18 @@ export default class SimpleAddUI extends UIElement {
             State.state.layerControlIsOpened.setData(true);
         })
         
+        // IS shown is the state of the dialog - we reset the choice if the dialog dissappears
+        isShown.addCallback(isShown => 
+        {
+            if(!isShown){
+                self._confirmPreset.setData(undefined)
+            }
+        })
+        // If the click location changes, we reset the dialog as well
+        State.state.LastClickLocation.addCallback(() => {
+            self._confirmPreset.setData(undefined)
+        })
+
     }
 
     InnerRender(): string {
@@ -143,7 +155,9 @@ export default class SimpleAddUI extends UIElement {
                 "<b>",
                 Translations.t.general.add.confirmButton.Subs({category: preset.name}),
                 "</b>"])).SetClass("break-words");
-        confirmButton.onClick(this.CreatePoint(preset.tags));
+        confirmButton.onClick(
+            this.CreatePoint(preset.tags)
+        );
 
         if (!this._confirmPreset.data.layerToAddTo.isDisplayed.data) {
             return new Combine([
@@ -158,7 +172,7 @@ export default class SimpleAddUI extends UIElement {
         let tagInfo = "";
         const csCount = State.state.osmConnection.userDetails.data.csCount;
         if (csCount > Constants.userJourney.tagsVisibleAt) {
-            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true, {})).join("&");
+            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
             tagInfo = `<br/>More information about the preset: ${tagInfo}`
         }
 
@@ -186,7 +200,7 @@ export default class SimpleAddUI extends UIElement {
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = undefined;
                 if (csCount > Constants.userJourney.tagsVisibleAt) {
-                    const presets = preset.tags.map(t => new Combine ([t.asHumanString(false, true, {}), " "]).SetClass("subtle break-words") )
+                    const presets = preset.tags.map(t => new Combine([t.asHumanString(false, true), " "]).SetClass("subtle break-words"))
                     tagInfo = new Combine(presets)
                 }
                 const button: UIElement =
@@ -220,11 +234,17 @@ export default class SimpleAddUI extends UIElement {
 
     private CreatePoint(tags: Tag[]) {
         return () => {
+            console.log("Create Point Triggered")
             const loc = State.state.LastClickLocation.data;
             let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             State.state.selectedElement.setData(feature);
+            this._confirmPreset.setData(undefined);
         }
     }
 
+    public OnClose(){
+        console.log("On close triggered")
+        this._confirmPreset.setData(undefined)
+    }
 
 }
