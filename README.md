@@ -209,16 +209,8 @@ Camera Icon, Dave Gandy, CC-BY-SA 3.0
 https://commons.wikimedia.org/wiki/File:OOjs_UI_indicator_search-rtl.svg
 Search Icon, MIT
 
-https://commons.wikimedia.org/wiki/File:Trash_font_awesome.svg
-Trash icon by Dave Gandy, CC-BY-SA
- 	
-https://commons.wikimedia.org/wiki/File:Home-icon.svg
-Home icon by Timothy Miller, CC-BY-SA 3.0
-
 https://commons.wikimedia.org/wiki/File:Map_icons_by_Scott_de_Jonge_-_bicycle-store.svg
 Bicycle logo,  	Scott de Jonge
-
-Nature Reserve icon via http://www.onlinewebfonts.com/icon/389579, CC BY 3.0 (@ Эдуард Черных)
 
 Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
 
@@ -237,5 +229,3 @@ Urinal icon: https://thenounproject.com/term/urinal/1307984/
 24/7 icon: https://www.vecteezy.com/vector-art/1394992-24-7-service-and-support-icon-set
 
 Translation-icon: https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg
-
-PingPong-table icon: Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.com

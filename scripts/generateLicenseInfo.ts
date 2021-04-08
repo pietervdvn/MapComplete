@@ -107,6 +107,10 @@ knownLicenses.set("na", {
 
 
 function promptLicenseFor(path): SmallLicense {
+    console.log("License abbreviations:")
+    knownLicenses.forEach((value, key) => {
+        console.log(key, " => ", value)
+    })
     const author = prompt("What is the author for artwork " + path + "? (or: [Q]uit, [S]kip)  > ")
     path = path.substring(path.lastIndexOf("/") + 1)
  
@@ -121,6 +125,10 @@ function promptLicenseFor(path): SmallLicense {
     }
     if (author == "Q" || author == "q" || author == "") {
         throw "Quitting now!"
+    }
+    let authors = author.split(";")
+    if(author.toLowerCase() == "none"){
+        authors = []
     }
     return {
         authors: author.split(";"),
@@ -169,7 +177,7 @@ const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
 console.log(`There are ${missingLicenses.length} licenses missing.`)
 
-shuffle(missingLicenses)
+// shuffle(missingLicenses)
 
 let i = 1;
 for (const missingLicens of missingLicenses) {
