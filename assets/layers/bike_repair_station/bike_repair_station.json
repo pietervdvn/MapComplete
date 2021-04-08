@@ -533,8 +533,8 @@
         "service:bicycle:pump=yes"
       ],
       "description": {
-        "en": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' height='200'/><img src='./assets/layers/bike_repair_station/pump_example.png' height='200'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' height='200'/>",
-        "nl": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' height='200'/><img src='./assets/layers/bike_repair_station/pump_example.png' height='200'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' height='200'/>"
+        "en": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+        "nl": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
       }
     },
     {
