@@ -125,12 +125,22 @@ export class Translation extends UIElement {
             if (isIcon) {
                 const icons = render.split(";").filter(part => part.match(/(\.svg|\.png|\.jpg)$/) != null)
                 allIcons.push(...icons)
-            } else if(!Utils.runningFromConsole){
+            } else if (!Utils.runningFromConsole) {
                 // This might be a tagrendering containing some img as html
                 const htmlElement = document.createElement("div")
                 htmlElement.innerHTML = render
                 const images = Array.from(htmlElement.getElementsByTagName("img")).map(img => img.src)
                 allIcons.push(...images)
+            } else {
+                // We are running this in ts-node (~= nodejs), and can not access document
+                // So, we fallback to simple regex
+                const matches = render.match(/<img[^>]+>/g)
+                if (matches != null) {
+                    const sources = matches.map(img => img.match(/src=("[^"]+"|'[^']+'|[^/ ]+)/))
+                        .filter(match => match != null)
+                        .map(match => match[1].trim().replace(/^['"]/, '').replace(/['"]$/, ''));
+                    allIcons.push(...sources)
+                }
             }
         }
         return allIcons.filter(icon => icon != undefined)

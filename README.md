@@ -214,16 +214,9 @@ Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofra
 
 Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
 
-Statistics icon via https://www.onlinewebfonts.com/icon/197818
-
 Shower icon (used in 'bike_cleaning.svg'):
 https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
 
 Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons, GPLv3.0
 
-
 Urinal icon: https://thenounproject.com/term/urinal/1307984/
-
-24/7 icon: https://www.vecteezy.com/vector-art/1394992-24-7-service-and-support-icon-set
-
-Translation-icon: https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg
