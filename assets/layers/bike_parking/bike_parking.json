@@ -293,7 +293,6 @@
       "question": {
         "en": "Does this bicycle parking have spots for cargo bikes?",
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
-        "fr": "TODO: fr",
         "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?",
         "de": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?"
       },
@@ -303,7 +302,6 @@
           "then": {
             "en": "This parking has room for cargo bikes",
             "nl": "Deze parking heeft plaats voor bakfietsen",
-            "fr": "TODO: fr",
             "gl": "Este aparcadoiro ten espazo para bicicletas de carga.",
             "de": "Dieser Parkplatz bietet Platz für Lastenfahrräder"
           }
@@ -313,7 +311,6 @@
           "then": {
             "en": "This parking has designated (official) spots for cargo bikes.",
             "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen",
-            "fr": "TODO: fr",
             "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
             "de": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder."
           }
@@ -323,7 +320,6 @@
           "then": {
             "en": "You're not allowed to park cargo bikes",
             "nl": "Je mag hier geen bakfietsen parkeren",
-            "fr": "TODO: fr",
             "gl": "Non está permitido aparcar bicicletas de carga",
             "de": "Es ist nicht erlaubt, Lastenfahrräder zu parken"
           }
