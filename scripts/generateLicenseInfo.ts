@@ -182,5 +182,6 @@ for (const missingLicens of missingLicenses) {
     //    continue
     }
     createLicenseInfoFor(missingLicens)
-    
 }
+
+console.log("You're through!")

@@ -174,7 +174,5 @@ Search Icon, MIT
 https://commons.wikimedia.org/wiki/File:Map_icons_by_Scott_de_Jonge_-_bicycle-store.svg
 Bicycle logo,  	Scott de Jonge
 
-Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
-
 Shower icon (used in 'bike_cleaning.svg'):
 https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
