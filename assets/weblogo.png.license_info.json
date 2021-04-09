@@ -1,0 +1,12 @@
+{
+  "authors": [
+    "Pieter Vander Vennet",
+    " OpenStreetMap"
+  ],
+  "path": "weblogo.png",
+  "license": "Logo; CC-BY-SA",
+  "sources": [
+    "https://mapcomplete.osm.be",
+    " https://www.openstreetmap.org"
+  ]
+}

@@ -68,5 +68,29 @@
     "sources": [
       "https://www.vecteezy.com/vector-art/226361-ornaments-and-flourishes"
     ]
-  }
+  },
+  {
+  "authors": [],
+  "path": "star.svg",
+  "license": "CC0; trivial",
+  "sources": []
+},
+  {
+  "authors": [],
+  "path": "star_outline.svg",
+  "license": "CC0; trivial",
+  "sources": []
+},
+  {
+  "authors": [],
+  "path": "star_half.svg",
+  "license": "CC0; trivial",
+  "sources": []
+},
+  {
+  "authors": [],
+  "path": "star_outline_half.svg",
+  "license": "CC0; trivial",
+  "sources": []
+}
 ] 

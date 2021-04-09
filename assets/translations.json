@@ -519,10 +519,10 @@
         "nl": "Met dank aan"
       },
       "attributionContent": {
-        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p><p>Rendered with <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a></p>"
+        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>"
       },
       "themeBy": {
-        "en": "Theme created by {author}"
+        "en": "Theme maintained by {author}"
       },
       "iconAttribution": {
         "title": {
