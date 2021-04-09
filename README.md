@@ -142,49 +142,9 @@ Whenever a change is made -even adding a single tag- the change is uploaded into
 
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing them. 
 
-### Query parameters
+# Documentation
 
-By adding extra query parameters, more options are available to influence:
-
-**test**: If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org (default value: _false_)
-
-**layout**: The layout to load into MapComplete (default value: _bookcases_)
-
-**userlayout**: undefined (default value: _false_)
-
-**layer-control-toggle**: Wether or not the layer control is shown (default value: _false_)
-
-**tab**: The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >200 changesets) (default value: _0_)
-
-**z**: The initial/current zoom level (default value: _1_)
-
-**lat**: The initial/current latitude (default value: _0_)
-
-**lon**: The initial/current longitude of the app (default value: _0_)
-
-**fs-userbadge**: Disables/Enables the userbadge (and thus disables login capabilities) (default value: _true_)
-
-**fs-search**: Disables/Enables the search bar (default value: _true_)
-
-**fs-layers**: Disables/Enables the layer control (default value: _true_)
-
-**fs-add-new**: Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place) (default value: _true_)
-
-**fs-welcome-message**: undefined (default value: _true_)
-
-**fs-iframe**: Disables/Enables the iframe-popup (default value: _false_)
-
-**fs-more-quests**: Disables/Enables the 'More Quests'-tab in the welcome message (default value: _true_)
-
-**fs-share-screen**: Disables/Enables the 'Share-screen'-tab in the welcome message (default value: _true_)
-
-**fs-geolocation**: Disables/Enables the geolocation button (default value: _true_)
-
-**oauth_token**: Used to complete the login (default value: _undefined_)
-
-**background**: The id of the background layer to start with (default value: _undefined_)
-
-**layer-bookcases**: Wehter or not layer bookcases is shown (default value: _true_) index.ts:104:8
+All documentation can be found in [here](Docs/)
 
 # Privacy
 
@@ -195,11 +155,15 @@ Geolocation is available on mobile only throught hte device's GPS location (so n
 TODO: erase cookies of third party websites and API's
 
 
-# Attributions
+# Attribution
 
 Data from OpenStreetMap
 
 Background layer selection: curated by https://github.com/osmlab/editor-layer-index
+
+Icons are attributed in various 'license_info.json'-files and can be found in the app.
+
+
 
 https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg
 Camera Icon, Dave Gandy, CC-BY-SA 3.0
@@ -212,11 +176,5 @@ Bicycle logo,  	Scott de Jonge
 
 Park icon via http://www.onlinewebfonts.com/icon/425974, CC BY 3.0 (@sterankofrank)
 
-Forest icon via https://www.onlinewebfonts.com/icon/498112, CC BY
-
 Shower icon (used in 'bike_cleaning.svg'):
 https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
-
-Bench icons from StreetComplete: https://github.com/westnordost/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons, GPLv3.0
-
-Urinal icon: https://thenounproject.com/term/urinal/1307984/

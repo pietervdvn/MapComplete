@@ -28,7 +28,6 @@ function readDirRecSync(path): string[] {
 function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
-        console.log("Reading info from " + path)
         const parsed = JSON.parse(readFileSync(path, "UTF-8"))
         if (Array.isArray(parsed)) {
             const l: SmallLicense[] = parsed
@@ -166,7 +165,7 @@ writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfo
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
-console.log(`There are ${missingLicenses.length} licenses missing.`)
+console.log(`There are ${missingLicenses.length} licenses missing.`, missingLicenses)
 
 // shuffle(missingLicenses)
 
@@ -178,6 +177,10 @@ process.on('SIGINT', function() {
 let i = 1;
 for (const missingLicens of missingLicenses) {
     console.log(i + " / " + missingLicenses.length)
-    createLicenseInfoFor(missingLicens)
     i++;
+    if(i < missingLicenses.length - 5){
+    //    continue
+    }
+    createLicenseInfoFor(missingLicens)
+    
 }

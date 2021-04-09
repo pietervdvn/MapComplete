@@ -24,6 +24,12 @@ export interface LayoutConfigJson {
      * 'cyclestreets' which become 'cyclestreets.html'
      */
     id: string;
+
+    /**
+     * Who helped to create this theme and should be attributed?
+     */
+    credits?: string;
+    
     /**
      * Who does maintian this preset?
      */

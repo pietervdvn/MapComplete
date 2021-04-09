@@ -21,7 +21,9 @@ export default class AttributionPanel extends Combine {
     constructor(layoutToUse: UIEventSource<LayoutConfig>) {
         super([
             Translations.t.general.attribution.attributionContent,
-            Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.data.maintainer}),
+
+            ((layoutToUse.data.maintainer ?? "") == "") ? "" : Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.data.maintainer}),
+            layoutToUse.data.credits ,
             "<br/>",
             new Attribution(undefined, undefined, State.state.layoutToUse, undefined),
             "<br/>",
@@ -50,7 +52,7 @@ export default class AttributionPanel extends Combine {
             new Combine([
                 new FixedUiElement(license.authors.join("; ")).SetClass("font-bold"),
                 new Combine([license.license,  license.sources.length > 0 ? " - " : "", 
-                    ...license.sources.map(link => `<a href='${link}'>${new URL(link).hostname}</a> `)]).SetClass("block")
+                    ...license.sources.map(link => `<a href='${link}' target="_blank">${new URL(link).hostname}</a> `)]).SetClass("block")
             ]).SetClass("flex flex-col")
         ]).SetClass("flex")
     }

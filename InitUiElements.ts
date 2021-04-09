@@ -297,7 +297,7 @@ export class InitUiElements {
                 copyrightNotice,
                 new MapControlButton(Svg.osm_copyright_svg()),
                 copyrightNotice.isShown
-            ).SetClass("p-0.5 md:hidden")
+            ).SetClass("p-0.5")
 
             new Combine([copyrightButton, checkbox])
                 .AttachTo("bottom-left");
