@@ -1,17 +1,8 @@
 import {Utils} from "../Utils";
+import {lstatSync, readdirSync, readFileSync, writeFileSync} from "fs";
+import SmallLicense from "../Models/smallLicense";
 
 Utils.runningFromConsole = true;
-
-import {existsSync, mkdirSync, readdirSync, readFileSync, writeFile, writeFileSync, lstatSync} from "fs";
-import {LicenseInfo} from "../Logic/Web/Wikimedia";
-import {icon, Icon} from "leaflet";
-
-interface SmallLicense {
-    path: string,
-    authors: string[],
-    license: string,
-    sources: string[]
-}
 
 /**
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.
@@ -178,6 +169,11 @@ const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 console.log(`There are ${missingLicenses.length} licenses missing.`)
 
 // shuffle(missingLicenses)
+
+process.on('SIGINT', function() {
+    console.log("Aborting... Bye!");
+    process.exit();
+});
 
 let i = 1;
 for (const missingLicens of missingLicenses) {

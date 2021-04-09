@@ -452,5 +452,23 @@ export default class LayerConfig {
         };
     }
 
+    public ExtractImages(): Set<string> {
+        const parts: Set<string>[] = []
+        parts.push(...this.tagRenderings?.map(tr => tr.ExtractImages(false)))
+        parts.push(...this.titleIcons?.map(tr => tr.ExtractImages(true)))
+        parts.push(this.icon?.ExtractImages(true))
+        parts.push(...this.iconOverlays?.map(overlay => overlay.then.ExtractImages(true)))
+        for (const preset of this.presets) {
+            parts.push(new Set<string>(preset.description?.ExtractImages(false)))
+        }
+       
+        const allIcons = new Set<string>();
+        for (const part of parts) {
+            part?.forEach(allIcons.add, allIcons)
+        }
+
+        return allIcons;
+    }
+
 
 }

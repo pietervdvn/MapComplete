@@ -182,4 +182,14 @@ export default class LayoutConfig {
         custom.splice(0, 0, msg);
         return custom;
     }
+    
+    public ExtractImages() : Set<string>{
+        const icons = new Set<string>()
+        for (const layer of this.layers) {
+            layer.ExtractImages().forEach(icons.add, icons)
+        }
+        icons.add(this.icon)
+        icons.add(this.socialImage)
+        return icons
+    }
 }

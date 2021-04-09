@@ -8,6 +8,8 @@ export class Translation extends UIElement {
     public static forcedLanguage = undefined;
 
     public readonly translations: object
+    return
+    allIcons;
 
     constructor(translations: object, context?: string) {
         super(Locale.language)
@@ -46,7 +48,7 @@ export class Translation extends UIElement {
     public SupportedLanguages(): string[] {
         const langs = []
         for (const translationsKey in this.translations) {
-            if(translationsKey === "#"){
+            if (translationsKey === "#") {
                 continue;
             }
             langs.push(translationsKey)
@@ -102,7 +104,6 @@ export class Translation extends UIElement {
         return new Translation(this.translations)
     }
 
-
     FirstSentence() {
 
         const tr = {};
@@ -114,5 +115,24 @@ export class Translation extends UIElement {
         }
 
         return new Translation(tr);
+    }
+
+    public ExtractImages(isIcon = false): string[] {
+        const allIcons: string[] = []
+        for (const key in this.translations) {
+            const render = this.translations[key]
+
+            if (isIcon) {
+                const icons = render.split(";").filter(part => part.match(/(\.svg|\.png|\.jpg)$/) != null)
+                allIcons.push(...icons)
+            } else if(!Utils.runningFromConsole){
+                // This might be a tagrendering containing some img as html
+                const htmlElement = document.createElement("div")
+                htmlElement.innerHTML = render
+                const images = Array.from(htmlElement.getElementsByTagName("img")).map(img => img.src)
+                allIcons.push(...images)
+            }
+        }
+        return allIcons.filter(icon => icon != undefined)
     }
 }

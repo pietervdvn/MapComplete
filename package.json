@@ -9,7 +9,7 @@
   "scripts": {
     "increase-memory": "export NODE_OPTIONS=--max_old_space_size=4096",
     "start": "npm run increase-memory && parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
-    "test": "ts-node test/Tag.spec.ts && ts-node test/TagQuestion.spec.ts && ts-node test/ImageSearcher.spec.ts",
+    "test": "ts-node test/Tag.spec.ts && ts-node test/TagQuestion.spec.ts && ts-node test/ImageSearcher.spec.ts && ts-node test/ImageAttribution.spec.ts",
     "generate:editor-layer-index": "cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
     "generate:translations": "ts-node scripts/generateTranslations.ts",

@@ -70,7 +70,7 @@ export default class TagRenderingConfig {
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? []
             }
-            if(json.freeform["extraTags"] !== undefined){
+            if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
             }
             if (this.freeform.key === undefined || this.freeform.key === "") {
@@ -254,5 +254,16 @@ export default class TagRenderingConfig {
         return undefined;
     }
 
+    public ExtractImages(isIcon: boolean): Set<string> {
+        
+        const usedIcons = new Set<string>()
+        this.render?.ExtractImages(isIcon)?.forEach(usedIcons.add, usedIcons)
+
+        for (const mapping of this.mappings ?? []) {
+            mapping.then.ExtractImages(isIcon).forEach(usedIcons.add, usedIcons)
+        }
+        
+        return usedIcons;
+    }
 
 }

@@ -16,18 +16,19 @@ import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
 
 
-new T("ImageSearcher", [
+new T("ImageAttribution Tests", [
     [
-        "Should find images",
+        "Should find all the images",
         () => {
-            const tags = new UIEventSource({
-                "mapillary": "https://www.mapillary.com/app/?pKey=bYH6FFl8LXAPapz4PNSh3Q"
-            });
-            const searcher = ImageSearcher.construct(tags)
-            const result = searcher.data[0];
-            equal(result.url, "https://www.mapillary.com/map/im/bYH6FFl8LXAPapz4PNSh3Q");
+            const pumps = AllKnownLayers.sharedLayers["bike_repair_station"]
+            const expected = "./assets/layers/bike_repair_station/pump_example_manual.jpg"
+            const images = pumps.ExtractImages();
+
+            equal(images.length, 5, "The pump example was not found")
         }
     ]
 
