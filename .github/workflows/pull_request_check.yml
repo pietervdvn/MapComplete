@@ -8,10 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/npm@master
+      
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: install deps
+        run: npm install
+          
+      - name: create generated dir
+        run: mkdir ./assets/generated
+
+      - name: create stub themes
+        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
+  
+         
       - name: Compile license info
-        run: npm run generate:licenses
+        run: npm run validate:licenses
      
       - name: Compile and validate themes and layers
-        run: npm run generate:layeroverview
+        run: npm run validate:layeroverview
 
