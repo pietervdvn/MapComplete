@@ -26,7 +26,7 @@ jobs:
   
          
       - name: Compile license info
-        run: npm run generate:licenses
+        run: npm run validate:licenses
      
       - name: Compile themes and layers
-        run: npm run generate:layeroverview
+        run: npm run validate:layeroverview

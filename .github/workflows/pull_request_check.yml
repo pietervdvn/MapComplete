@@ -25,7 +25,11 @@ jobs:
         run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
   
       - name: Compile license info
-        run: npm run validate:licenses
+        run: npm run generate:licenses
      
       - name: Compile and validate themes and layers
         run: npm run validate:layeroverview 
+        
+      - name: Validate license info
+        run: npm run validate:licenses
+
