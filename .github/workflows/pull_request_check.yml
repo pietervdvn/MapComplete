@@ -29,5 +29,3 @@ jobs:
      
       - name: Compile and validate themes and layers; creates layer_report.txt if any errors are found
         run: npm run validate:layeroverview 
-
-
