@@ -10,6 +10,7 @@ import * as licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense";
 import {Icon} from "leaflet";
 import Img from "../Base/Img";
+import {Utils} from "../../Utils";
 
 /**
  * The attribution panel shown on mobile
@@ -28,7 +29,8 @@ export default class AttributionPanel extends Combine {
             new Attribution(undefined, undefined, State.state.layoutToUse, undefined),
             "<br/>",
             Translations.t.general.attribution.iconAttribution.title.Clone().SetClass("font-bold pt-12 pb-3"),
-            ...Array.from(layoutToUse.data.ExtractImages()).map(AttributionPanel.IconAttribution)
+            ...Utils.NoNull(Array.from(layoutToUse.data.ExtractImages()))
+                .map(AttributionPanel.IconAttribution)
         ]);
         this.SetClass("flex flex-col")
     }
