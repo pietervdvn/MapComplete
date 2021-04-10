@@ -414,7 +414,7 @@ export default class LayerConfig {
             const label = self.label.GetRenderValue(tgs)?.Subs(tgs).SetClass("block w-min text-center")
             console.log("Generating label gave ", label, " source: ", self.label, "tags: ", tgs)
             if (label !== undefined) {
-                htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center");
+                htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
             }
             return new Combine(htmlParts).Render();
         })
