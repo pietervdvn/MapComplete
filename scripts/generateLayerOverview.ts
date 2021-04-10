@@ -98,7 +98,7 @@ for (const themeFile of themeFiles) {
                 } 
             } else {
                 // layer.builtin contains layer overrides - we can skip those
-                layerErrorCount .push(validateLayer(layer, themeFile.id))
+                layerErrorCount .push(...validateLayer(layer, themeFile.id))
             }
         }
     }
@@ -116,6 +116,9 @@ for (const themeFile of themeFiles) {
         themeErrorCount.push("Could not parse theme "+ themeFile["id"]+ "due to", e)
     }
 }
+
+console.log("LE", layerErrorCount)
+
 if (layerErrorCount.length + themeErrorCount.length == 0) {
     console.log("All good!")
 } else {
@@ -125,7 +128,7 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
     if(process.argv.indexOf("--no-fail") >= 0) {
         console.log(msg)
     }else if(process.argv.indexOf("--report") >= 0){
-        writeFileSync("layer-report.txt", errors)
+        writeFileSync("layer_report.txt", errors)
     }else{
         
         throw msg;

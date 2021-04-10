@@ -202,7 +202,9 @@ if(missingLicenses.length > 0){
     const msg = `There are ${missingLicenses.length} licenses missing.`
     if(process.argv.indexOf("--no-fail") >= 0){
         console.log(msg)
-    }else{
+    }else if(process.argv.indexOf("--report") >= 0){
+        writeFileSync("missing_licenses.txt", missingLicenses.join("\n"))
+    } else{
 
         throw msg
     }
