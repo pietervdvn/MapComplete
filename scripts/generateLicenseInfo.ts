@@ -86,6 +86,19 @@ knownLicenses.set("na", {
     sources: []
 })
 
+knownLicenses.set("chrn", {
+    authors: ["Christian Neumann"],
+    path: undefined,
+    license: "CC-BY-SA 3.0",
+    sources: ["https://utopicode.de/", "https://github.com/chrneumann/MapComplete"]
+})
+
+knownLicenses.set("klimaan", {
+    authors: ["Klimaan VZW"],
+    path: undefined,
+    license: "CC-BY-SA 3.0",
+    sources: ["https://klimaan.be/"]
+})
 
 function promptLicenseFor(path): SmallLicense {
     console.log("License abbreviations:")
@@ -182,6 +195,9 @@ const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
 
+if(process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0 ) {
+    queryMissingLicenses(missingLicenses)
+}
 if(missingLicenses.length > 0){
     const msg = `There are ${missingLicenses.length} licenses missing.`
     if(process.argv.indexOf("--no-fail") >= 0){
@@ -190,10 +206,6 @@ if(missingLicenses.length > 0){
 
         throw msg
     }
-}
-
-if(process.argv.indexOf("--prompt") >= 0) {
-    queryMissingLicenses(missingLicenses)
 }
 
 cleanLicenseInfo(licensePaths, licenseInfos)
