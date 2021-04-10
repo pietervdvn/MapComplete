@@ -18,6 +18,9 @@ jobs:
       - name: install deps
         run: npm install
           
+      - name: create generated ir
+        run: mkdir ./assets/generated
+          
       - name: Compile license info
         run: npm run generate:licenses
      
