@@ -139,7 +139,6 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]){
     for (const license of allLicenseInfos) {
         const p = license.path
         const dir = p.substring(0, p.lastIndexOf("/"))
-        console.log(dir)
         license.path = p.substring(dir.length + 1)
         if(!perDirectory.has(dir)){
             perDirectory.set(dir, [])
