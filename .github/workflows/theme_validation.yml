@@ -18,9 +18,13 @@ jobs:
       - name: install deps
         run: npm install
           
-      - name: create generated ir
+      - name: create generated dir
         run: mkdir ./assets/generated
-          
+
+      - name: create stub themes
+        run: echo '{"layers": [], "themes": []}' > ./assets/generated/known_layers_and_themes.json
+  
+         
       - name: Compile license info
         run: npm run generate:licenses
      
