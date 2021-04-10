@@ -1,6 +1,7 @@
 import {Utils} from "../Utils";
 import {lstatSync, readdirSync, readFileSync, writeFileSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
+import ScriptUtils from "./ScriptUtils";
 
 Utils.runningFromConsole = true;
 
@@ -8,22 +9,6 @@ Utils.runningFromConsole = true;
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.
  * Checks that the license info is included for each of them and generates a compiles license_info.json for those
  */
-
-function readDirRecSync(path): string[] {
-    const result = []
-    for (const entry of readdirSync(path)) {
-        const fullEntry = path + "/" + entry
-        const stats = lstatSync(fullEntry)
-        if (stats.isDirectory()) {
-            // Subdirectory
-            // @ts-ignore
-            result.push(...readDirRecSync(fullEntry))
-        } else {
-            result.push(fullEntry)
-        }
-    }
-    return result;
-}
 
 function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
@@ -69,28 +54,28 @@ const prompt = require('prompt-sync')();
 
 const knownLicenses = new Map<string, SmallLicense>()
 knownLicenses.set("cf", {
-    authors: ["Pieter Fiers", "Thibault Declercq", "Pierre Barban", "Joost Schouppe","Pieter Vander Vennet"],
+    authors: ["Pieter Fiers", "Thibault Declercq", "Pierre Barban", "Joost Schouppe", "Pieter Vander Vennet"],
     path: undefined,
     license: "CC-BY-SA",
     sources: ["https://osoc.be/editions/2020/cyclofix"]
 })
 knownLicenses.set("me", {
     authors: ["Pieter Vander Vennet"],
-    path : undefined,
+    path: undefined,
     license: "CC0",
     sources: []
 })
 
 knownLicenses.set("t", {
     authors: [],
-    path : undefined,
+    path: undefined,
     license: "CC0; trivial",
     sources: []
 })
 
 knownLicenses.set("na", {
     authors: [],
-    path : undefined,
+    path: undefined,
     license: "CC0",
     sources: []
 })
@@ -103,21 +88,21 @@ function promptLicenseFor(path): SmallLicense {
     })
     const author = prompt("What is the author for artwork " + path + "? (or: [Q]uit, [S]kip)  > ")
     path = path.substring(path.lastIndexOf("/") + 1)
- 
-    if(knownLicenses.has(author)){
+
+    if (knownLicenses.has(author)) {
         const license = knownLicenses.get(author);
         license.path = path;
         return license;
     }
 
-    if(author == "s"){
+    if (author == "s") {
         return null;
     }
     if (author == "Q" || author == "q" || author == "") {
         throw "Quitting now!"
     }
     let authors = author.split(";")
-    if(author.toLowerCase() == "none"){
+    if (author.toLowerCase() == "none") {
         authors = []
     }
     return {
@@ -130,7 +115,7 @@ function promptLicenseFor(path): SmallLicense {
 
 function createLicenseInfoFor(path): void {
     const li = promptLicenseFor(path);
-    if(li == null){
+    if (li == null) {
         return;
     }
     writeFileSync(path + ".license_info.json", JSON.stringify(li, null, "  "))
@@ -156,7 +141,7 @@ function shuffle(array) {
 }
 
 console.log("Checking and compiling license info")
-const contents = readDirRecSync("./assets")
+const contents = ScriptUtils.readDirRecSync("./assets")
     .filter(entry => entry.indexOf("./assets/generated") != 0)
 const licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
 const licenseInfos = generateLicenseInfos(licensePaths);
@@ -169,7 +154,7 @@ console.log(`There are ${missingLicenses.length} licenses missing.`, missingLice
 
 // shuffle(missingLicenses)
 
-process.on('SIGINT', function() {
+process.on('SIGINT', function () {
     console.log("Aborting... Bye!");
     process.exit();
 });
@@ -178,8 +163,8 @@ let i = 1;
 for (const missingLicens of missingLicenses) {
     console.log(i + " / " + missingLicenses.length)
     i++;
-    if(i < missingLicenses.length - 5){
-    //    continue
+    if (i < missingLicenses.length - 5) {
+        //    continue
     }
     createLicenseInfoFor(missingLicens)
 }

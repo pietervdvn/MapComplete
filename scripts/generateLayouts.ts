@@ -234,7 +234,7 @@ if (!existsSync(generatedDir)) {
 }
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
-const all = AllKnownLayouts.allSets;
+const all = AllKnownLayouts.allKnownLayouts;
 
 for (const layoutName in all) {
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
