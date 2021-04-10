@@ -24,8 +24,8 @@ jobs:
       - name: create stub themes
         run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
   
-      - name: Compile license info; creates missing_licenses.txt if any missing
+      - name: Compile license info
         run: npm run validate:licenses
      
-      - name: Compile and validate themes and layers; creates layer_report.txt if any errors are found
+      - name: Compile and validate themes and layers
         run: npm run validate:layeroverview 

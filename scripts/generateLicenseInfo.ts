@@ -200,12 +200,12 @@ if(process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0
 }
 if(missingLicenses.length > 0){
     const msg = `There are ${missingLicenses.length} licenses missing.`
+    console.error(msg)
     if(process.argv.indexOf("--no-fail") >= 0){
-        console.log(msg)
+      
     }else if(process.argv.indexOf("--report") >= 0){
         writeFileSync("missing_licenses.txt", missingLicenses.join("\n"))
     } else{
-
         throw msg
     }
 }
