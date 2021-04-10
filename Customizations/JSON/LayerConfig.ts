@@ -7,6 +7,7 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
 import Img from "../../UI/Base/Img";
 import Svg from "../../Svg";
+
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
@@ -18,7 +19,6 @@ import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
-
 export default class LayerConfig {
 
 

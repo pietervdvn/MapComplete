@@ -90,6 +90,9 @@ export default class TagRenderingConfig {
         this.multiAnswer = json.multiAnswer ?? false
         if (json.mappings) {
 
+            if(!Array.isArray(json.mappings)){
+                throw "Tagrendering has a 'mappings'-object, but expected a list ("+context+")"
+            }
 
             this.mappings = json.mappings.map((mapping, i) => {
 

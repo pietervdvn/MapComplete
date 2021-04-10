@@ -8,20 +8,23 @@
   "main": "index.js",
   "scripts": {
     "increase-memory": "export NODE_OPTIONS=--max_old_space_size=4096",
-    "start": "npm run increase-memory && parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
+    "start": "ts-node scripts/generateLayerOverview.ts && npm run increase-memory && parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "test": "ts-node test/Tag.spec.ts && ts-node test/TagQuestion.spec.ts && ts-node test/ImageSearcher.spec.ts && ts-node test/ImageAttribution.spec.ts",
     "generate:editor-layer-index": "cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
     "generate:translations": "ts-node scripts/generateTranslations.ts",
     "generate:layouts": "ts-node scripts/generateLayouts.ts",
     "generate:docs": "ts-node scripts/generateDocs.ts",
+    "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts",
+    "generate:licenses": "ts-node scripts/generateLicenseInfo.ts",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
     "generate": "npm run generate:images && npm run generate:translations",
     "build": "rm -rf dist/ && npm run generate && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
-    "prepare-deploy": "npm run test && npm run generate:editor-layer-index && npm run generate:layouts && npm run generate && npm run build && rm -rf .cache && npm run generate:docs",
+    "prepare-deploy": "npm run test && npm run generate:editor-layer-index && npm run generate:layouts && npm run generate:layeroverview && npm run generate && npm run build && rm -rf .cache && npm run generate:docs",
     "deploy:staging": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/Staging/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:pietervdvn": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:production": "rm -rf ./assets/generated && npm run prepare-deploy && npm run optimize-images && rm -rf /home/pietervdvn/git/mapcomplete.github.io/* && cp -r dist/* /home/pietervdvn/git/mapcomplete.github.io/ && cd /home/pietervdvn/git/mapcomplete.github.io/ && echo \"mapcomplete.osm.be\" > CNAME  && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
+    "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\).html\" | xargs rm) && rm *.webmanifest"
   },
   "keywords": [
@@ -64,6 +67,7 @@
     "sharp": "^0.27.0",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "tslint": "^6.1.3",
     "turf": "^3.0.14"
   },
   "devDependencies": {
@@ -76,6 +80,7 @@
     "read-file": "^0.2.0",
     "ts-node": "^9.0.0",
     "ts-node-dev": "^1.0.0-pre.63",
+    "tslint-no-circular-imports": "^0.7.0",
     "turndown": "^7.0.0",
     "typescript": "^3.9.7",
     "write-file": "^1.0.0"

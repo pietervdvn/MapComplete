@@ -19,6 +19,9 @@ export class Translation extends UIElement {
         let count = 0;
         for (const translationsKey in translations) {
             count++;
+            if(typeof(translations[translationsKey]) != "string"){
+               throw "Error in an object depicting a translation: a non-string object was found. ("+context+")\n    You probably put some other section accidentally in the translation" 
+            }
         }
         this.translations = translations;
         if (count === 0) {
@@ -134,12 +137,17 @@ export class Translation extends UIElement {
             } else {
                 // We are running this in ts-node (~= nodejs), and can not access document
                 // So, we fallback to simple regex
-                const matches = render.match(/<img[^>]+>/g)
-                if (matches != null) {
-                    const sources = matches.map(img => img.match(/src=("[^"]+"|'[^']+'|[^/ ]+)/))
-                        .filter(match => match != null)
-                        .map(match => match[1].trim().replace(/^['"]/, '').replace(/['"]$/, ''));
-                    allIcons.push(...sources)
+                try {
+                    const matches = render.match(/<img[^>]+>/g)
+                    if (matches != null) {
+                        const sources = matches.map(img => img.match(/src=("[^"]+"|'[^']+'|[^/ ]+)/))
+                            .filter(match => match != null)
+                            .map(match => match[1].trim().replace(/^['"]/, '').replace(/['"]$/, ''));
+                        allIcons.push(...sources)
+                    }
+                }catch(e){
+                    console.error("Could not search for images: ", render, this.txt)
+                    throw e
                 }
             }
         }

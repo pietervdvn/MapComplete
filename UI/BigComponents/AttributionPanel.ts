@@ -34,7 +34,6 @@ export default class AttributionPanel extends Combine {
     }
 
     private static IconAttribution(iconPath: string) {
-        console.log("Attribution panel for ", iconPath)
         if (iconPath.startsWith("http")) {
             iconPath = "." + new URL(iconPath).pathname;
         }

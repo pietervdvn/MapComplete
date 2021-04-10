@@ -17,9 +17,7 @@ function createTable(preferences: any) {
     }
     rendered = true;
     const prefs = [];
-    console.log(preferences);
     for (const key in preferences) {
-        console.log(key)
         const pref = connection.GetPreference(key, "");
 
         let value: UIElement = new FixedUiElement(pref.data);
@@ -36,19 +34,17 @@ function createTable(preferences: any) {
             "</td><td>",
             new Button("delete", () => pref.setData("")),
             "</td><td>",
-            value, 
+            value,
             "</td></tr>"
         ];
         prefs.push(...c);
     }
 
-    const el = new Combine(
+    new Combine(
         ["<table>",
             ...prefs,
             "</table>"]
-    ); // .AttachTo("maindiv");
-    console.log(el.InnerRender())
-    el.AttachTo("maindiv");
+    ).AttachTo("maindiv");
 }
 
 connection.preferencesHandler.preferences.addCallback((prefs) => createTable(prefs))
