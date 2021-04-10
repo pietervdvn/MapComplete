@@ -22,6 +22,12 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
             licenses.push(...l)
         } else {
             const smallLicens: SmallLicense = parsed;
+            /*if(parsed.license === "CC-BY"){
+                console.log("Rewriting ", path)
+                parsed.license === "CC-BY 4.0"
+                writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
+            }*/
+            
             smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
             licenses.push(smallLicens)
         }
