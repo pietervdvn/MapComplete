@@ -61,7 +61,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         const images = Array.from(layer.ExtractImages())
         const remoteImages = images.filter(img => img.indexOf("http") == 0)
         for (const remoteImage of remoteImages) {
-            errorCount.push("Found a remote image: "+ remoteImage+ " in layer "+ layer.id)
+            errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id)
         }
         for (const image of images) {
             if (!knownPaths.has(image)) {
@@ -71,7 +71,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         }
 
     } catch (e) {
-        return [`Layer ${layerJson.id}` ?? JSON.stringify(layerJson).substring(0, 50)+" is invalid: "+ e]
+        return [`Layer ${layerJson.id}` ?? JSON.stringify(layerJson).substring(0, 50) + " is invalid: " + e]
     }
     return errorCount
 }
@@ -80,7 +80,7 @@ let layerErrorCount = []
 const knownLayerIds = new Set<string>();
 for (const layerFile of layerFiles) {
     knownLayerIds.add(layerFile.id)
-    layerErrorCount .push(...validateLayer(layerFile))
+    layerErrorCount.push(...validateLayer(layerFile))
 }
 
 let themeErrorCount = []
@@ -89,16 +89,16 @@ for (const themeFile of themeFiles) {
     for (const layer of themeFile.layers) {
         if (typeof layer === "string") {
             if (!knownLayerIds.has(layer)) {
-                themeErrorCount.push("Unknown layer id: "+ layer)
+                themeErrorCount.push("Unknown layer id: " + layer)
             }
         } else {
             if (layer.builtin !== undefined) {
                 if (!knownLayerIds.has(layer.builtin)) {
-                    themeErrorCount.push("Unknown layer id: "+ layer.builtin+ "(which uses inheritance)")
-                } 
+                    themeErrorCount.push("Unknown layer id: " + layer.builtin + "(which uses inheritance)")
+                }
             } else {
                 // layer.builtin contains layer overrides - we can skip those
-                layerErrorCount .push(...validateLayer(layer, themeFile.id))
+                layerErrorCount.push(...validateLayer(layer, themeFile.id))
             }
         }
     }
@@ -110,10 +110,10 @@ for (const themeFile of themeFiles) {
     try {
         const theme = new LayoutConfig(themeFile, true, "test")
         if (theme.id !== theme.id.toLowerCase()) {
-            themeErrorCount.push("Theme ids should be in lowercase, but it is "+ theme.id)
+            themeErrorCount.push("Theme ids should be in lowercase, but it is " + theme.id)
         }
     } catch (e) {
-        themeErrorCount.push("Could not parse theme "+ themeFile["id"]+ "due to", e)
+        themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
     }
 }
 
@@ -125,12 +125,12 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
     const errors = layerErrorCount.concat(themeErrorCount).join("\n")
     console.log(errors)
     const msg = (`Found ${errors.length} errors in the layers; ${themeErrorCount} errors in the themes`)
-    if(process.argv.indexOf("--no-fail") >= 0) {
-        console.log(msg)
-    }else if(process.argv.indexOf("--report") >= 0){
+    console.log(msg)
+    if (process.argv.indexOf("--report") >= 0) {
         writeFileSync("layer_report.txt", errors)
-    }else{
-        
+    }
+    
+    if (process.argv.indexOf("--no-fail") < 0) {
         throw msg;
     }
 }

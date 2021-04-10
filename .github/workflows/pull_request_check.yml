@@ -2,7 +2,10 @@ name: Pull request check
 on:
   pull_request:
     types: [opened, edited, synchronize, ready_for_review, review_requested]
-
+  push:
+    - master
+    - develop
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,3 +36,11 @@ jobs:
       - name: Validate license info
         run: npm run validate:licenses
 
+      - name: Set failure key
+        run: |
+          if [[ -f "layer_report.txt" || -f "missing_licenses.txt" ]]; then
+              echo "VALIDATION_FAILED=true" >>$GITHUB_ENV
+          fi
+          
+      - name: Test variable
+        run: echo "${{ env.VALIDATION_FAILED }}"

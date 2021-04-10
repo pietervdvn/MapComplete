@@ -27,7 +27,7 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
                 parsed.license === "CC-BY 4.0"
                 writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
             }*/
-            
+
             smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
             licenses.push(smallLicens)
         }
@@ -140,32 +140,32 @@ function createLicenseInfoFor(path): void {
     writeFileSync(path + ".license_info.json", JSON.stringify(li, null, "  "))
 }
 
-function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]){
+function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
     // Read the license info file from the generated assets, creates a compiled license info in every directory
     // Note: this removes all the old license infos
     for (const licensePath of licensePaths) {
         unlinkSync(licensePath)
     }
-    
+
     const perDirectory = new Map<string, SmallLicense[]>()
 
     for (const license of allLicenseInfos) {
         const p = license.path
         const dir = p.substring(0, p.lastIndexOf("/"))
         license.path = p.substring(dir.length + 1)
-        if(!perDirectory.has(dir)){
+        if (!perDirectory.has(dir)) {
             perDirectory.set(dir, [])
         }
         perDirectory.get(dir).push(license)
     }
-    
+
     perDirectory.forEach((licenses, dir) => {
-        writeFileSync( dir+"/license_info.json", JSON.stringify(licenses, null, 2))
+        writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
     })
-    
+
 }
 
-function queryMissingLicenses(missingLicenses: string[])  {
+function queryMissingLicenses(missingLicenses: string[]) {
     process.on('SIGINT', function () {
         console.log("Aborting... Bye!");
         process.exit();
@@ -195,17 +195,16 @@ const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
 
-if(process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0 ) {
+if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
     queryMissingLicenses(missingLicenses)
 }
-if(missingLicenses.length > 0){
+if (missingLicenses.length > 0) {
     const msg = `There are ${missingLicenses.length} licenses missing.`
     console.error(msg)
-    if(process.argv.indexOf("--no-fail") >= 0){
-      
-    }else if(process.argv.indexOf("--report") >= 0){
+    if (process.argv.indexOf("--report") >= 0) {
         writeFileSync("missing_licenses.txt", missingLicenses.join("\n"))
-    } else{
+    }
+    if (process.argv.indexOf("--no-fail") < 0) {
         throw msg
     }
 }
