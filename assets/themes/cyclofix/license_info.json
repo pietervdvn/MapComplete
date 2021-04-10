@@ -1,0 +1,36 @@
+[
+  {
+    "authors": [
+      "De Fietsambassade"
+    ],
+    "path": "fietsambassade_gent_logo.svg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://fietsambassade.gent.be"
+    ]
+  },
+  {
+    "authors": [
+      "De Fietsambassade"
+    ],
+    "path": "fietsambassade_gent_logo_small.svg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://fietsambassade.gent.be"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "path": "logo.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  }
+]

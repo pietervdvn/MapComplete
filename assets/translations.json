@@ -519,7 +519,15 @@
         "nl": "Met dank aan"
       },
       "attributionContent": {
-        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p><p>Some images are provided by Wikimedia</p>"
+        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>"
+      },
+      "themeBy": {
+        "en": "Theme maintained by {author}"
+      },
+      "iconAttribution": {
+        "title": {
+          "en": "Used icons"
+        }
       }
     },
 

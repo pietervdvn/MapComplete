@@ -1,0 +1,31 @@
+name: Pull request check
+on:
+  pull_request:
+    types: [opened, edited, synchronize, ready_for_review, review_requested]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: install deps
+        run: npm install
+          
+      - name: create generated dir
+        run: mkdir ./assets/generated
+
+      - name: create stub themes
+        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
+  
+      - name: Compile license info; creates missing_licenses.txt if any missing
+        run: npm run validate:licenses
+     
+      - name: Compile and validate themes and layers; creates layer_report.txt if any errors are found
+        run: npm run validate:layeroverview 

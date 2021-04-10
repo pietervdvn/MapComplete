@@ -333,14 +333,14 @@
       }
     },
     {
-      "#": "Surface are",
+      "#": "Surface area",
       "render": {
-        "en": "Surface area: {_surface:ha}Ha",
-        "mappings": {
+        "en": "Surface area: {_surface:ha}Ha"
+      },
+      "mappings":[ {
           "if": "_surface:ha=0",
-          "then": ""
-        }
-      }
+          "then": {"*":""}
+        }]
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 10,

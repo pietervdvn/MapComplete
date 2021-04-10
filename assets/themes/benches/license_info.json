@@ -1,0 +1,24 @@
+[
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "bench_poi.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/v25.0-beta1/res/graphics/authors.txt",
+      "https://github.com/streetcomplete/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons"
+    ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "bench_public_transport.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/v25.0-beta1/res/graphics/authors.txt",
+      "https://github.com/streetcomplete/StreetComplete/tree/v25.0-beta1/res/graphics/quest%20icons"
+    ]
+  }
+]

@@ -313,7 +313,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "https://upload.wikimedia.org/wikipedia/commons/0/00/Map_icons_by_Scott_de_Jonge_-_playground.svg"
+    "render": "./assets/themes/playgrounds/playground.svg"
   },
   "iconOverlays": [
     {
