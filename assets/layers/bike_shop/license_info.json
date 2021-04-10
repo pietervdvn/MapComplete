@@ -7,7 +7,7 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "place_with_pump.svg",
+    "path": "pump.svg",
     "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
@@ -21,7 +21,7 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "non_bike_repair_shop.svg",
+    "path": "repair_shop.svg",
     "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"
@@ -35,7 +35,21 @@
       "Joost Schouppe",
       "Pieter Vander Vennet"
     ],
-    "path": "non_bike_shop.svg",
+    "path": "shop.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "path": "tools.svg",
     "license": "CC-BY-SA",
     "sources": [
       "https://osoc.be/editions/2020/cyclofix"

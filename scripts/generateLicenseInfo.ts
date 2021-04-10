@@ -1,5 +1,5 @@
 import {Utils} from "../Utils";
-import {lstatSync, readdirSync, readFileSync, writeFileSync} from "fs";
+import {lstatSync, readdirSync, readFileSync, writeFileSync, unlinkSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
@@ -146,6 +146,33 @@ function shuffle(array) {
     return array;
 }
 
+function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]){
+    // Read the license info file from the generated assets, creates a compiled license info in every directory
+    // Note: this removes all the old license infos
+    for (const licensePath of licensePaths) {
+        unlinkSync(licensePath)
+    }
+    
+    const perDirectory = new Map<string, SmallLicense[]>()
+
+    for (const license of allLicenseInfos) {
+        const p = license.path
+        const dir = p.substring(0, p.lastIndexOf("/"))
+        console.log(dir)
+        license.path = p.substring(dir.length + 1)
+        if(!perDirectory.has(dir)){
+            perDirectory.set(dir, [])
+        }
+        perDirectory.get(dir).push(license)
+    }
+    
+    perDirectory.forEach((licenses, dir) => {
+        writeFileSync( dir+"/license_info.json", JSON.stringify(licenses, null, 2))
+    })
+    
+}
+
+
 console.log("Checking and compiling license info")
 const contents = ScriptUtils.readDirRecSync("./assets")
     .filter(entry => entry.indexOf("./assets/generated") != 0)
@@ -159,6 +186,10 @@ const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 console.log(`There are ${missingLicenses.length} licenses missing.`, missingLicenses)
 
 // shuffle(missingLicenses)
+
+
+// cleanLicenseInfo(licensePaths, licenseInfos)
+
 
 process.on('SIGINT', function () {
     console.log("Aborting... Bye!");
