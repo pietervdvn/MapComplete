@@ -94,13 +94,22 @@ for (const themeFile of themeFiles) {
                 console.error("Unknown layer id: ", layer)
                 themeErrorCount++
             }
-        } else if (layer.builtin === undefined) {
-            // layer.builtin contains layer overrides - we can skip those
-            layerErrorCount += validateLayer(layer, themeFile.id)
+        } else {
+            if (layer.builtin !== undefined) {
+                if (!knownLayerIds.has(layer.builtin)) {
+                    console.error("Unknown layer id: ", layer.builtin, "(which uses inheritance)")
+                    themeErrorCount++
+                } 
+            } else {
+                // layer.builtin contains layer overrides - we can skip those
+                layerErrorCount += validateLayer(layer, themeFile.id)
+            }
         }
     }
 
-    themeFile.layers = themeFile.layers.filter(l => typeof l != "string")
+    themeFile.layers = themeFile.layers
+        .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
+        .filter(l => l.builtin === undefined)
 
     try {
         const theme = new LayoutConfig(themeFile, true, "test")
