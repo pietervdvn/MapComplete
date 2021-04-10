@@ -9,6 +9,7 @@ import * as licenses from "../assets/generated/license_info.json"
 import SmallLicense from "../Models/smallLicense";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
+import {Layer} from "leaflet";
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -50,59 +51,54 @@ for (const i in licenses) {
 }
 const knownPaths = new Set<string>(licensePaths)
 
-function validateLayer(layerJson: LayerConfigJson, context?: string): number {
-    let errorCount = 0;
+function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
+    let errorCount = [];
     if (layerJson["overpassTags"] !== undefined) {
-        errorCount++
-        console.error("CRIT! Layer ", layerJson.id, "still uses the old 'overpassTags'-format. Please use 'source: {osmTags: <tags>}' instead")
+        errorCount.push("CRIT! Layer ", layerJson.id, "still uses the old 'overpassTags'-format. Please use 'source: {osmTags: <tags>}' instead")
     }
     try {
         const layer = new LayerConfig(layerJson, "test", true)
         const images = Array.from(layer.ExtractImages())
         const remoteImages = images.filter(img => img.indexOf("http") == 0)
         for (const remoteImage of remoteImages) {
-            console.error("Found a remote image:", remoteImage, "in layer", layer.id)
-            errorCount++
+            errorCount.push("Found a remote image: "+ remoteImage+ " in layer "+ layer.id)
         }
         for (const image of images) {
             if (!knownPaths.has(image)) {
-                console.error("Image with path", image, "not found or not attributed; it is used in", layer.id, context === undefined ? "" : ` in a layer defined in the theme ${context}`)
-                errorCount++
+                const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
+                errorCount.push(`Image with path ${image} not found or not attributed; it is used in ${layer.id}${ctx}`)
             }
         }
 
     } catch (e) {
-        console.error("Layer ", layerJson.id ?? JSON.stringify(layerJson).substring(0, 50), " is invalid: ", e)
-        return 1
+        return [`Layer ${layerJson.id}` ?? JSON.stringify(layerJson).substring(0, 50)+" is invalid: "+ e]
     }
     return errorCount
 }
 
-let layerErrorCount = 0
+let layerErrorCount = []
 const knownLayerIds = new Set<string>();
 for (const layerFile of layerFiles) {
     knownLayerIds.add(layerFile.id)
-    layerErrorCount += validateLayer(layerFile)
+    layerErrorCount .push(...validateLayer(layerFile))
 }
 
-let themeErrorCount = 0
+let themeErrorCount = []
 for (const themeFile of themeFiles) {
 
     for (const layer of themeFile.layers) {
         if (typeof layer === "string") {
             if (!knownLayerIds.has(layer)) {
-                console.error("Unknown layer id: ", layer)
-                themeErrorCount++
+                themeErrorCount.push("Unknown layer id: "+ layer)
             }
         } else {
             if (layer.builtin !== undefined) {
                 if (!knownLayerIds.has(layer.builtin)) {
-                    console.error("Unknown layer id: ", layer.builtin, "(which uses inheritance)")
-                    themeErrorCount++
+                    themeErrorCount.push("Unknown layer id: "+ layer.builtin+ "(which uses inheritance)")
                 } 
             } else {
                 // layer.builtin contains layer overrides - we can skip those
-                layerErrorCount += validateLayer(layer, themeFile.id)
+                layerErrorCount .push(validateLayer(layer, themeFile.id))
             }
         }
     }
@@ -114,21 +110,24 @@ for (const themeFile of themeFiles) {
     try {
         const theme = new LayoutConfig(themeFile, true, "test")
         if (theme.id !== theme.id.toLowerCase()) {
-            console.error("Theme ids should be in lowercase, but it is ", theme.id)
+            themeErrorCount.push("Theme ids should be in lowercase, but it is "+ theme.id)
         }
     } catch (e) {
-        console.error("Could not parse theme", themeFile["id"], "due to", e)
-        themeErrorCount++;
+        themeErrorCount.push("Could not parse theme "+ themeFile["id"]+ "due to", e)
     }
 }
-
-if (layerErrorCount + themeErrorCount == 0) {
+if (layerErrorCount.length + themeErrorCount.length == 0) {
     console.log("All good!")
 } else {
-    const msg = (`Found ${layerErrorCount} errors in the layers; ${themeErrorCount} errors in the themes`)
-    if(process.argv.indexOf("--no-fail") >= 0){
+    const errors = layerErrorCount.concat(themeErrorCount).join("\n")
+    console.log(errors)
+    const msg = (`Found ${errors.length} errors in the layers; ${themeErrorCount} errors in the themes`)
+    if(process.argv.indexOf("--no-fail") >= 0) {
         console.log(msg)
+    }else if(process.argv.indexOf("--report") >= 0){
+        writeFileSync("layer-report.txt", errors)
     }else{
+        
         throw msg;
     }
 }
