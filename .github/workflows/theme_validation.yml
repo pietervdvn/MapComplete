@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/npm@master
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        with:
+          node-version: '10.x'
+          
+      - name: install deps
+        run: npm install
+          
       - name: Compile license info
         run: npm run generate:licenses
      
