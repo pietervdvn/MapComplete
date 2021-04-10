@@ -131,7 +131,7 @@ export interface LayerConfigJson {
     rotation?: string | TagRenderingConfigJson;
     /**
      * A HTML-fragment that is shown at the center of the icon, for example: 
-     * <div style="margin-top: 50px; background: white; display: block">{name}</div>
+     * <div style="background: white; display: block">{name}</div>
      */
     label?: string | TagRenderingConfigJson ;
     

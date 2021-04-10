@@ -43,7 +43,7 @@
     "mappings": [
       {
         "if": "name~*",
-        "then": "<div style='margin-top: 42px; background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+        "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
       }
     ]
   },

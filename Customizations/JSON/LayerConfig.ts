@@ -325,7 +325,7 @@ export default class LayerConfig {
         const weight = rendernum(this.width, 5);
 
         const iconW = num(iconSize[0]);
-        const iconH = num(iconSize[1]);
+        let iconH = num(iconSize[1]);
         const mode = iconSize[2] ?? "center"
 
         let anchorW = iconW / 2;
@@ -375,7 +375,7 @@ export default class LayerConfig {
             const rotation = render(self.rotation, "0deg");
 
             let htmlParts: UIElement[] = [];
-            let sourceParts = iconUrl.split(";").filter(prt => prt != "");
+            let sourceParts = Utils.NoNull(iconUrl.split(";").filter(prt => prt != ""));
             for (const sourcePart of sourceParts) {
                 htmlParts.push(genHtmlFromString(sourcePart))
             }
@@ -410,8 +410,11 @@ export default class LayerConfig {
                 htmlParts.push(badgesComponent)
             }
 
+            if(sourceParts.length ==0){iconH = 0}
 
-            const label = self.label.GetRenderValue(tgs)?.Subs(tgs).SetClass("block w-min text-center")
+            const label = self.label.GetRenderValue(tgs)?.Subs(tgs)
+                .SetClass("block w-min text-center")
+                .SetStyle("margin-top: "+(iconH + 2) +"px")
             console.log("Generating label gave ", label, " source: ", self.label, "tags: ", tgs)
             if (label !== undefined) {
                 htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
