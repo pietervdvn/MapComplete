@@ -164,15 +164,3 @@ Background layer selection: curated by https://github.com/osmlab/editor-layer-in
 Icons are attributed in various 'license_info.json'-files and can be found in the app.
 
 
-
-https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg
-Camera Icon, Dave Gandy, CC-BY-SA 3.0
-
-https://commons.wikimedia.org/wiki/File:OOjs_UI_indicator_search-rtl.svg
-Search Icon, MIT
-
-https://commons.wikimedia.org/wiki/File:Map_icons_by_Scott_de_Jonge_-_bicycle-store.svg
-Bicycle logo,  	Scott de Jonge
-
-Shower icon (used in 'bike_cleaning.svg'):
-https://commons.wikimedia.org/wiki/File:Shower_symbol.svg
