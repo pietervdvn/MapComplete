@@ -3,13 +3,13 @@ import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import {existsSync, mkdirSync, readFileSync, writeFile, writeFileSync} from "fs";
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import Constants from "../Models/Constants";
-
+import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
+import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 const sharp = require('sharp');
 
 
@@ -234,9 +234,12 @@ if (!existsSync(generatedDir)) {
 }
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
-const all = AllKnownLayouts.allKnownLayouts;
+const all : LayoutConfigJson[] = all_known_layouts.themes;
 
-for (const layoutName in all) {
+for (const i in all) {
+    const layoutConfigJson : LayoutConfigJson = all[i]
+    const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
+    const layoutName = layout.id
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
         console.log(`Skipping a layout with name${layoutName}, it is on the blacklist`);
         continue;
@@ -246,7 +249,6 @@ for (const layoutName in all) {
             console.log("Could not write manifest for ", layoutName, " because ", err)
         }
     };
-    const layout = all[layoutName];
     validate(layout)
     createManifest(layout, "").then(manifObj => {
         const manif = JSON.stringify(manifObj, undefined, 2);

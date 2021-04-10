@@ -117,5 +117,9 @@ if (layerErrorCount + themeErrorCount == 0) {
     console.log("All good!")
 } else {
     const msg = (`Found ${layerErrorCount} errors in the layers; ${themeErrorCount} errors in the themes`)
-    throw msg;
+    if(process.argv.indexOf("--no-fail") >= 0){
+        console.log(msg)
+    }else{
+        throw msg;
+    }
 }

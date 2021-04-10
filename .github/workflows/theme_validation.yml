@@ -1,0 +1,17 @@
+name: Theme Validation
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile license info
+        run: npm run generate:licenses
+     
+      - name: Compile and validate themes and layers
+        run: npm run generate:layeroverview
