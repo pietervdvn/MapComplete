@@ -127,25 +127,6 @@ function createLicenseInfoFor(path): void {
     writeFileSync(path + ".license_info.json", JSON.stringify(li, null, "  "))
 }
 
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-}
-
 function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]){
     // Read the license info file from the generated assets, creates a compiled license info in every directory
     // Note: this removes all the old license infos
@@ -172,6 +153,24 @@ function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]){
     
 }
 
+function queryMissingLicenses(missingLicenses: string[])  {
+    process.on('SIGINT', function () {
+        console.log("Aborting... Bye!");
+        process.exit();
+    });
+
+    let i = 1;
+    for (const missingLicens of missingLicenses) {
+        console.log(i + " / " + missingLicenses.length)
+        i++;
+        if (i < missingLicenses.length - 5) {
+            //    continue
+        }
+        createLicenseInfoFor(missingLicens)
+    }
+
+    console.log("You're through!")
+}
 
 console.log("Checking and compiling license info")
 const contents = ScriptUtils.readDirRecSync("./assets")
@@ -183,27 +182,16 @@ writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfo
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 
-console.log(`There are ${missingLicenses.length} licenses missing.`, missingLicenses)
+cleanLicenseInfo(licensePaths, licenseInfos)
 
-// shuffle(missingLicenses)
-
-
-// cleanLicenseInfo(licensePaths, licenseInfos)
-
-
-process.on('SIGINT', function () {
-    console.log("Aborting... Bye!");
-    process.exit();
-});
-
-let i = 1;
-for (const missingLicens of missingLicenses) {
-    console.log(i + " / " + missingLicenses.length)
-    i++;
-    if (i < missingLicenses.length - 5) {
-        //    continue
-    }
-    createLicenseInfoFor(missingLicens)
+if(missingLicenses.length > 0){
+    const msg = `There are ${missingLicenses.length} licenses missing.`
+    /*
+    console.log(msg)
+    /*/
+    throw msg
+     //*/
 }
 
-console.log("You're through!")
+// queryMissingLicenses(missingLicenses)
+

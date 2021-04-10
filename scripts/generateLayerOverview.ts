@@ -70,7 +70,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): number {
                 errorCount++
             }
         }
-       
+
     } catch (e) {
         console.error("Layer ", layerJson.id ?? JSON.stringify(layerJson).substring(0, 50), " is invalid: ", e)
         return 1
@@ -94,7 +94,7 @@ for (const themeFile of themeFiles) {
                 console.error("Unknown layer id: ", layer)
                 themeErrorCount++
             }
-        }else if(layer.builtin === undefined){
+        } else if (layer.builtin === undefined) {
             // layer.builtin contains layer overrides - we can skip those
             layerErrorCount += validateLayer(layer, themeFile.id)
         }
@@ -104,7 +104,7 @@ for (const themeFile of themeFiles) {
 
     try {
         const theme = new LayoutConfig(themeFile, true, "test")
-        if(theme.id !== theme.id.toLowerCase()){
+        if (theme.id !== theme.id.toLowerCase()) {
             console.error("Theme ids should be in lowercase, but it is ", theme.id)
         }
     } catch (e) {
@@ -113,4 +113,9 @@ for (const themeFile of themeFiles) {
     }
 }
 
-console.log("Found ", layerErrorCount, "errors in the layers; " + themeErrorCount + " errors in the themes")
+if (layerErrorCount + themeErrorCount == 0) {
+    console.log("All good!")
+} else {
+    const msg = (`Found ${layerErrorCount} errors in the layers; ${themeErrorCount} errors in the themes`)
+    throw msg;
+}
