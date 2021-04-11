@@ -87,7 +87,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"hydrant_pillar.svg\" /> Pillar type."
+                "en": "<img style=\"width:15px\" src=\"hydrant_pillar.svg\" /> Pillar type."
               }
             },
             {
@@ -97,7 +97,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"hydrant_unknown.svg\" /> Pipe type."
+                "en": "<img style=\"width:15px\" src=\"hydrant_unknown.svg\" /> Pipe type."
               }
             },
             {
@@ -107,7 +107,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"hydrant_unknown.svg\" /> Wall type."
+                "en": "<img style=\"width:15px\" src=\"hydrant_unknown.svg\" /> Wall type."
               }
             },
             {
@@ -117,7 +117,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"hydrant_underground.svg\" /> Underground type."
+                "en": "<img style=\"width:15px\" src=\"hydrant_underground.svg\" /> Underground type."
               }
             }
           ]
@@ -170,7 +170,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "Hydrant_02.svg"
+        "render": "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
       },
       "width": {
         "render": "8"
@@ -261,7 +261,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "MUTCD_RS-090.svg"
+        "render": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg"
       },
       "width": {
         "render": "8"
@@ -418,7 +418,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "British_Columbia_W-318-L.svg"
+        "render": "https://upload.wikimedia.org/wikipedia/commons/1/19/Twemoji12_1f692.svg"
       },
       "width": {
         "render": "8"
@@ -474,7 +474,7 @@
       "tagRenderings": [],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "Emojione_1F6A8.svg"
+        "render": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Twemoji12_26d1.svg"
       },
       "width": {
         "render": "8"
