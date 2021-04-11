@@ -1,6 +1,6 @@
 name: Pull request check
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, edited, synchronize, ready_for_review, review_requested]
 
 jobs:
@@ -32,3 +32,20 @@ jobs:
         
       - name: Validate license info
         run: npm run validate:licenses
+
+      - name: Set failure key
+        run: |
+          if [[ -f "layer_report.txt" || -f "missing_licenses.txt" ]]; then
+              echo "VALIDATION_FAILED=true" >>$GITHUB_ENV
+          fi
+          
+      - name: Test variable
+        run: echo "${{ env.VALIDATION_FAILED }}"
+        
+      - name: Comment PR
+        uses: allthatjazzleo/actions-pull-request-add-comment@master
+        if: >-
+          env.VALIDATION_FAILED == 'true'
+        with:
+          message: "cat layer_report.txt missing_licenses.txt"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
