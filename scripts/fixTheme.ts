@@ -16,6 +16,8 @@ if(process.argv.length == 2){
 }
 
 const path = process.argv[2]
+const dir = path.substring(0, path.lastIndexOf("/"))
+
 console.log("Fixing up ", path)
 
 const themeConfigJson : LayoutConfigJson = JSON.parse(readFileSync(path, "UTF8"))
@@ -47,7 +49,7 @@ for (const layerConfigJson of themeConfigJson.layers) {
             authors: [],
             sources: [remoteImage]
         })
-        replacements.push({source: remoteImage, destination: imgPath})
+        replacements.push({source: remoteImage, destination: `${dir}/${imgPath}`})
     }
 }
 
@@ -56,7 +58,6 @@ for (const replacement of replacements) {
     fixedThemeJson = fixedThemeJson.replace(new RegExp(replacement.source, "g"), replacement.destination)
 }
 
-const dir = path.substring(0, path.lastIndexOf("/"))
 const fixScriptPath = dir  + "/fix_script_"+path.replace(/\//g,"_")+".sh"
 writeFileSync(dir + "/generated.license_info.json", JSON.stringify(licenses, null, "  "))
 writeFileSync(fixScriptPath, linuxHints.join("\n"))

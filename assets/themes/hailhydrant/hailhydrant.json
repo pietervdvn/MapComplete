@@ -13,7 +13,7 @@
     "en"
   ],
   "maintainer": "",
-  "icon": "assets/themes/hailhydrant/logo.svg",
+  "icon": "./assets/themes/hailhydrant/logo.svg",
   "version": "0",
   "startLat": 13.67801,
   "startLon": 121.6625,
@@ -87,7 +87,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:15px\" src=\"hydrant_pillar.svg\" /> Pillar type."
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type."
               }
             },
             {
@@ -97,7 +97,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:15px\" src=\"hydrant_unknown.svg\" /> Pipe type."
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type."
               }
             },
             {
@@ -107,7 +107,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:15px\" src=\"hydrant_unknown.svg\" /> Wall type."
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type."
               }
             },
             {
@@ -117,7 +117,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:15px\" src=\"hydrant_underground.svg\" /> Underground type."
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type."
               }
             }
           ]
@@ -170,7 +170,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "hydrant.svg"
+        "render": "./assets/themes/hailhydrant/hydrant.svg"
       },
       "width": {
         "render": "8"
@@ -261,7 +261,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "Twemoji12_1f9ef.svg"
+        "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
       },
       "width": {
         "render": "8"
@@ -418,7 +418,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "Twemoji12_1f692.svg"
+        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
       },
       "width": {
         "render": "8"
@@ -474,7 +474,7 @@
       "tagRenderings": [],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "Twemoji12_26d1.svg"
+        "render": "./assets/themes/hailhydrant/Twemoji12_26d1.svg"
       },
       "width": {
         "render": "8"
