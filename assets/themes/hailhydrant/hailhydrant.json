@@ -27,11 +27,6 @@
         "en": "Map of hydrants"
       },
       "minzoom": 14,
-      "overpassTags": {
-        "and": [
-          "emergency=fire_hydrant"
-        ]
-      },
       "title": {
         "render": {
           "en": "Hydrant"
@@ -92,7 +87,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_pillar.svg\" /> Pillar type."
+                "en": "<img style=\"width:20px\" src=\"hydrant_pillar.svg\" /> Pillar type."
               }
             },
             {
@@ -102,7 +97,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_unknown.svg\" /> Pipe type."
+                "en": "<img style=\"width:20px\" src=\"hydrant_unknown.svg\" /> Pipe type."
               }
             },
             {
@@ -112,7 +107,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_unknown.svg\" /> Wall type."
+                "en": "<img style=\"width:20px\" src=\"hydrant_unknown.svg\" /> Wall type."
               }
             },
             {
@@ -122,7 +117,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_underground.svg\" /> Underground type."
+                "en": "<img style=\"width:20px\" src=\"hydrant_underground.svg\" /> Underground type."
               }
             }
           ]
@@ -175,7 +170,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/6/66/Hydrant_02.svg"
+        "render": "Hydrant_02.svg"
       },
       "width": {
         "render": "8"
@@ -206,6 +201,13 @@
             "emergency=fire_hydrant"
           ]
         }
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_hydrant"
+          ]
+        }
       }
     },
     {
@@ -214,11 +216,6 @@
         "en": "Map of fire extinguishers."
       },
       "minzoom": 14,
-      "overpassTags": {
-        "and": [
-          "emergency=fire_extinguisher"
-        ]
-      },
       "title": {
         "render": {
           "en": "Extinguishers"
@@ -264,7 +261,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/e/e8/MUTCD_RS-090.svg"
+        "render": "MUTCD_RS-090.svg"
       },
       "width": {
         "render": "8"
@@ -295,6 +292,13 @@
             "emergency=fire_extinguisher"
           ]
         }
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_extinguisher"
+          ]
+        }
       }
     },
     {
@@ -303,11 +307,6 @@
         "en": "Map of fire stations"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=fire_station"
-        ]
-      },
       "title": {
         "render": {
           "en": "Fire Station"
@@ -419,7 +418,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/8/84/British_Columbia_W-318-L.svg"
+        "render": "British_Columbia_W-318-L.svg"
       },
       "width": {
         "render": "8"
@@ -449,6 +448,13 @@
             "amenity=fire_station"
           ]
         }
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=fire_station"
+          ]
+        }
       }
     },
     {
@@ -457,11 +463,6 @@
         "en": "Map of rescue stations"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=rescue_station"
-        ]
-      },
       "title": {
         "render": {
           "en": "Rescue Station"
@@ -473,7 +474,7 @@
       "tagRenderings": [],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emojione_1F6A8.svg"
+        "render": "Emojione_1F6A8.svg"
       },
       "width": {
         "render": "8"
@@ -503,11 +504,15 @@
             "amenity=rescue_station"
           ]
         }
+      },
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=rescue_station"
+          ]
+        }
       }
     }
-  ],
-  "roamingRenderings": [
-    {}
   ],
   "defaultBackgroundId": "HDM_HOT"
 }
