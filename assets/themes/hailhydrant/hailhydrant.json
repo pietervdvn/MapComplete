@@ -1,5 +1,5 @@
 {
-  "id": "HailHydrant",
+  "id": "hailhydrant",
   "title": {
     "en": "Hydrants, Extinguishers, Fire stations, and Rescue stations."
   },
@@ -7,7 +7,7 @@
     "en": "Map to show hydrants, extinguishers, fire stations, and rescue stations."
   },
   "description": {
-    "en": "On this map you can find and update hydrants, fire stations,  rescue stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others."
+    "en": "On this map you can find and update hydrants, fire stations, rescue stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others."
   },
   "language": [
     "en"
@@ -43,10 +43,10 @@
       "tagRenderings": [
         {
           "question": {
-            "en": "What colour is the hydrant?"
+            "en": "What color is the hydrant?"
           },
           "render": {
-            "en": "The hydrant colour is {colour}"
+            "en": "The hydrant color is {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -55,21 +55,21 @@
             {
               "if": {
                 "and": [
-                  "colour=red"
+                  "colour=yellow"
                 ]
               },
               "then": {
-                "en": "The hydrant colour is red"
+                "en": "The hydrant color is yellow."
               }
             },
             {
               "if": {
                 "and": [
-                  "colour=yellow"
+                  "colour=red"
                 ]
               },
               "then": {
-                "en": "The hydrant colour is yellow"
+                "en": "The hydrant color is red."
               }
             }
           ]
@@ -92,7 +92,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:50px; height:60px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Downtown_Charlottesville_fire_hydrant_1.jpg/176px-Downtown_Charlottesville_fire_hydrant_1.jpg\" /> Pillar type."
+                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_pillar.svg\" /> Pillar type."
               }
             },
             {
@@ -102,7 +102,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:50px; height:60px\" src=\"https://wiki.openstreetmap.org/w/images/thumb/3/33/Hydrants_20130326_112938.JPG/159px-Hydrants_20130326_112938.JPG\" /> Pipe type."
+                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_unknown.svg\" /> Pipe type."
               }
             },
             {
@@ -112,7 +112,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:60px; height:50px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Guentherscheid_Tunnel_Rescue4.jpg/320px-Guentherscheid_Tunnel_Rescue4.jpg\" /> Wall type."
+                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_unknown.svg\" /> Wall type."
               }
             },
             {
@@ -122,51 +122,7 @@
                 ]
               },
               "then": {
-                "en": "<img style=\"width:60px; height:50px\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Berlin_hydrant_20050211_p1000517.jpg/320px-Berlin_hydrant_20050211_p1000517.jpg\" /> Underground type."
-              }
-            }
-          ]
-        },
-        {
-          "question": {
-            "en": "How many couplings are there?"
-          },
-          "render": {
-            "en": "Couplings: {couplings}"
-          },
-          "freeform": {
-            "key": "couplings",
-            "type": "pnat"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "couplings=1"
-                ]
-              },
-              "then": {
-                "en": "The hydrant has one (1) coupling."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "couplings=2"
-                ]
-              },
-              "then": {
-                "en": "The hydrant has two (2) couplings."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "couplings=3"
-                ]
-              },
-              "then": {
-                "en": "The hydrant has three (3) coupling."
+                "en": "<img style=\"width:20px\" src=\"https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_underground.svg\" /> Underground type."
               }
             }
           ]
@@ -189,7 +145,7 @@
                 ]
               },
               "then": {
-                "en": "Hydrant is (fully or partially) working."
+                "en": "The hydrant is (fully or partially) working."
               }
             },
             {
@@ -200,7 +156,7 @@
                 ]
               },
               "then": {
-                "en": "Hydrant is unavailable for use."
+                "en": "The hydrant is unavailable."
               }
             },
             {
@@ -211,64 +167,10 @@
                 ]
               },
               "then": {
-                "en": "Hydrant has been removed."
+                "en": "The hydrant has been removed."
               }
             }
           ]
-        },
-        {
-          "question": {
-            "en": "Describe the position of the hydrant."
-          },
-          "render": {
-            "en": "Position: {fire_hydrant:position}"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "fire_hydrant:position=sidewalk"
-                ]
-              },
-              "then": {
-                "en": "Sidewalk"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "fire_hydrant:position=lane"
-                ]
-              },
-              "then": {
-                "en": "Road-side"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "fire_hydrant:position=underground"
-                ]
-              },
-              "then": {
-                "en": "Underground"
-              }
-            }
-          ],
-          "freeform": {
-            "key": "fire_hydrant:position"
-          }
-        },
-        {
-          "render": {
-            "en": "Mapillary: {mapillary}"
-          },
-          "question": {
-            "en": "Do you know the Mapillary photo id?"
-          },
-          "freeform": {
-            "key": "mapillary"
-          }
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
@@ -290,10 +192,10 @@
             "emergency=fire_hydrant"
           ],
           "title": {
-            "en": "fire hydrant"
+            "en": "Fire hydrant"
           },
           "description": {
-            "en": "Add a new fire hydant to the map."
+            "en": "Add a new fire hydrant to the map."
           }
         }
       ],
@@ -341,7 +243,7 @@
                 ]
               },
               "then": {
-                "en": "Indoor"
+                "en": "Found indoors."
               }
             },
             {
@@ -351,7 +253,7 @@
                 ]
               },
               "then": {
-                "en": "Outdoor"
+                "en": "Found outdoors."
               }
             }
           ],
@@ -379,7 +281,7 @@
             "emergency=fire_extinguisher"
           ],
           "title": {
-            "en": "fire extinguisher"
+            "en": "Fire extinguisher"
           },
           "description": {
             "en": "Add a fire extinguisher to the map"
@@ -428,7 +330,7 @@
         },
         {
           "question": {
-            "en": "In what place is the station located? (e.g. name of neighbourhood, villlage, or town)"
+            "en": "In what place is the station located? (e.g. name of neighborhood, villlage, or town)"
           },
           "freeform": {
             "key": "addr:place"
