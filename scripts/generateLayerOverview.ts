@@ -56,7 +56,7 @@ const linuxHints = []
 function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
     let errorCount = [];
     if (layerJson["overpassTags"] !== undefined) {
-        errorCount.push("Layer "+ layerJson.id+ "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
+        errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
     }
     try {
         const layer = new LayerConfig(layerJson, "test", true)
@@ -65,7 +65,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         for (const remoteImage of remoteImages) {
             errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
             const path = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
-            linuxHints.push("wget "+remoteImage)
+            linuxHints.push("wget " + remoteImage)
             linuxHints.push(`echo '{"path":"${path}", "license": "<insert license here>", "authors": [ "<insert author(s) here"], "sources": [${remoteImage}]`)
         }
         for (const image of images) {
@@ -130,9 +130,10 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
     const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
     console.log(msg)
     if (process.argv.indexOf("--report") >= 0) {
+        console.log("Writing report!")
         writeFileSync("layer_report.txt", errors)
     }
-    
+
     if (process.argv.indexOf("--no-fail") < 0) {
         throw msg;
     }
