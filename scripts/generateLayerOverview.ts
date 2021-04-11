@@ -64,7 +64,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         const remoteImages = images.filter(img => img.indexOf("http") == 0)
         for (const remoteImage of remoteImages) {
             errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
-            const path = remoteImage.substring(remoteImage.lastIndexOf("/") + )
+            const path = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
             linuxHints.push("wget "+remoteImage)
             linuxHints.push(`echo '{"path":"${path}", "license": "<insert license here>", "authors": [ "<insert author(s) here"], "sources": [${remoteImage}]`)
         }
