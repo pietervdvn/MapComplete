@@ -193,7 +193,7 @@ export default class LayerConfig {
 
 
         this.title = tr("title", undefined);
-        this.icon = tr("icon", Img.AsData(Svg.pin));
+        this.icon = tr("icon", "");
         this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
             let tr = new TagRenderingConfig(overlay.then, self.source.osmTags, `iconoverlays.${i}`);
             if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
@@ -415,7 +415,6 @@ export default class LayerConfig {
             const label = self.label.GetRenderValue(tgs)?.Subs(tgs)
                 .SetClass("block w-min text-center")
                 .SetStyle("margin-top: "+(iconH + 2) +"px")
-            console.log("Generating label gave ", label, " source: ", self.label, "tags: ", tgs)
             if (label !== undefined) {
                 htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
             }
