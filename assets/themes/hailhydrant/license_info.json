@@ -1,0 +1,34 @@
+[
+  {
+    "authors": ["https://openclipart.org/artist/rones"],
+    "path": "extinguisher.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/315876/fire-extinguisher"
+    ]
+  },
+    {
+    "authors": ["https://openclipart.org/artist/j4p4n"],
+    "path": "yellowfirehydrant.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/326295/yellow-fire-hydrant"
+    ]
+  },
+    {
+    "authors": ["https://openclipart.org/artist/TVLuke"],
+    "path": "fire_brigade.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/318142/fire-brigade"
+    ]
+  },
+    {
+    "authors": ["https://openclipart.org/artist/qubodup"],
+    "path": "blue_signal_light.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/177928/blue-signal-light"
+    ]
+  }
+]
