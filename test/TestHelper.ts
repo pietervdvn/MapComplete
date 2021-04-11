@@ -25,4 +25,9 @@ export default class T {
         }
     }
 
+    static isTrue(b: boolean, msg: string) {
+        if(!b){
+            throw "Expected true, but got false: "+msg
+        }
+    }
 }

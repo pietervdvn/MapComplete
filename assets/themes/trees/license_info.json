@@ -1,0 +1,52 @@
+[
+  {
+    "path": "broadleaved.svg",
+    "authors": [
+      "Midgard"
+    ],
+    "license": "CC BY-SA 4.0",
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "leafless.svg",
+    "authors": [
+      "Midgard"
+    ],
+    "license": "CC BY-SA 4.0",
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "logo.svg",
+    "authors": [
+      "Midgard"
+    ],
+    "license": "CC BY-SA 4.0",
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "needleleaved.svg",
+    "authors": [
+      "Midgard"
+    ],
+    "license": "CC BY-SA 4.0",
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  },
+  {
+    "path": "unknown.svg",
+    "authors": [
+      "Midgard"
+    ],
+    "license": "CC BY-SA 4.0",
+    "sources": [
+      "https://www.openstreetmap.org/user/M!dgard"
+    ]
+  }
+]

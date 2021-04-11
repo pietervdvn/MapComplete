@@ -1,0 +1,10 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-no-circular-imports"
+    ],
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}

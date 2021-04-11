@@ -1,0 +1,42 @@
+[
+  {
+    "authors": [
+      "OpenStreetMap",
+      " Pieter Vander Vennet",
+      " M!dgard"
+    ],
+    "path": "map-stickered.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://OpenStreetMap.org",
+      " https://wiki.openstreetmap.org/wiki/Logos"
+    ]
+  },
+  {
+    "authors": [],
+    "path": "map.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ],
+    "note": "Modified OpenStreetMap logo"
+  },
+  {
+    "authors": [],
+    "path": "osm-logo-buggy-attr.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ],
+    "note": "Modified OpenStreetMap logo"
+  },
+  {
+    "authors": [],
+    "path": "osm-logo-white-bg.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ],
+    "note": "Modified OpenStreetMap logo"
+  }
+]

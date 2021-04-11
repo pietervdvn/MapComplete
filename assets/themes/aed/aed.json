@@ -125,7 +125,12 @@
             "nl": "Toegankelijkheid is {access}",
             "de": "Zugang ist {access}"
           },
-          "condition": "indoor=yes",
+          "condition": {
+            "or": [
+              "indoor=yes",
+              "access~*"
+            ]
+          },
           "freeform": {
             "key": "access",
             "addExtraTags": [
@@ -209,7 +214,10 @@
           }
         },
         {
-          "render": "{defibrillator:location}",
+          "render": {
+            "nl": "<i>Meer informatie over de locatie:</i><br/>{defibrillator:location}",
+            "en": "<i>Extra information about the location:</i><br/>{defibrillator:location}"
+          },
           "question": {
             "en": "Please give some explanation on where the defibrillator can be found",
             "ca": "Dóna detalls d'on es pot trobar el desfibril·lador",

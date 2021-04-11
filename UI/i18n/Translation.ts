@@ -8,6 +8,8 @@ export class Translation extends UIElement {
     public static forcedLanguage = undefined;
 
     public readonly translations: object
+    return
+    allIcons;
 
     constructor(translations: object, context?: string) {
         super(Locale.language)
@@ -17,6 +19,9 @@ export class Translation extends UIElement {
         let count = 0;
         for (const translationsKey in translations) {
             count++;
+            if(typeof(translations[translationsKey]) != "string"){
+               throw "Error in an object depicting a translation: a non-string object was found. ("+context+")\n    You probably put some other section accidentally in the translation" 
+            }
         }
         this.translations = translations;
         if (count === 0) {
@@ -46,7 +51,7 @@ export class Translation extends UIElement {
     public SupportedLanguages(): string[] {
         const langs = []
         for (const translationsKey in this.translations) {
-            if(translationsKey === "#"){
+            if (translationsKey === "#") {
                 continue;
             }
             langs.push(translationsKey)
@@ -102,7 +107,6 @@ export class Translation extends UIElement {
         return new Translation(this.translations)
     }
 
-
     FirstSentence() {
 
         const tr = {};
@@ -114,5 +118,39 @@ export class Translation extends UIElement {
         }
 
         return new Translation(tr);
+    }
+
+    public ExtractImages(isIcon = false): string[] {
+        const allIcons: string[] = []
+        for (const key in this.translations) {
+            const render = this.translations[key]
+
+            if (isIcon) {
+                const icons = render.split(";").filter(part => part.match(/(\.svg|\.png|\.jpg)$/) != null)
+                allIcons.push(...icons)
+            } else if (!Utils.runningFromConsole) {
+                // This might be a tagrendering containing some img as html
+                const htmlElement = document.createElement("div")
+                htmlElement.innerHTML = render
+                const images = Array.from(htmlElement.getElementsByTagName("img")).map(img => img.src)
+                allIcons.push(...images)
+            } else {
+                // We are running this in ts-node (~= nodejs), and can not access document
+                // So, we fallback to simple regex
+                try {
+                    const matches = render.match(/<img[^>]+>/g)
+                    if (matches != null) {
+                        const sources = matches.map(img => img.match(/src=("[^"]+"|'[^']+'|[^/ ]+)/))
+                            .filter(match => match != null)
+                            .map(match => match[1].trim().replace(/^['"]/, '').replace(/['"]$/, ''));
+                        allIcons.push(...sources)
+                    }
+                }catch(e){
+                    console.error("Could not search for images: ", render, this.txt)
+                    throw e
+                }
+            }
+        }
+        return allIcons.filter(icon => icon != undefined)
     }
 }

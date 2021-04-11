@@ -50,17 +50,19 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
 1) Fork this repository
 2) Go to `assets/themes` and create a new directory `yourtheme`
 3) Create a new file `yourtheme.json`, paste the theme configuration in there. You can find your theme configuration in the customThemeBuilder (the tab with the *Floppy disk* icon)
-4) Copy all the images into this new directory: external assets can suddenly break and leak privacy
-   - Make sure the license is suitable, preferable a Creative Commons license. Attribution can be added at the bottom of this document
-   - If an SVG version is available, use the SVG version
-   - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
+4) Copy all the images into this new directory. **No external sources are allowed!** External image sources leak privacy or can break.
+    - Make sure the license is suitable, preferable a Creative Commons license or CC0-license.
+    - If an SVG version is available, use the SVG version
+    - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
+    - Create a file `license_info.json` in the theme directory, which contains metadata on every artwork source 
  5) Add your theme to the code base:
     - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
     - Add an import statement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
     - Add your theme to the `LayoutsList`, by adding a line `new LayoutConfig(yourtheme)`
- 6) Test your theme: run the project as described [above](../README.md#Dev)
- 7) Happy with your theme? Time to open a Pull Request!
- 8) Thanks a lot for improving MapComplete!
+ 6) Add some finishing touches, such as a social image. See [this blog post](https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit) for some hints
+ 7) Test your theme: run the project as described [above](../README.md#Dev)
+ 8) Happy with your theme? Time to open a Pull Request!
+ 9) Thanks a lot for improving MapComplete!
  
  
  The .JSON-format
@@ -84,6 +86,17 @@ Every field is documented in the source code itself - you can find them here:
 
 There are few tags available that are calculated for convenience - e.g. the country an object is located at. [An overview of all these metatags is available here](Docs/CalculatedTags.md)
 
+ Some hints
+------------
+
+### Everything is HTML
+
+All the texts are actually *HTML*-snippets, so you can use `<b>` to add bold, or `<img src=...>` to add images to mappings or tagrenderings. 
+
+Some remarks: 
+
+- links are disabled when answering a question (e.g. a link in a mapping) as it should trigger the answer - not trigger to open the link.
+- If you include images, e.g. to clarify a type, make sure these are _icons_ or _diagrams_ - not actual pictures! If users see a picture, they think it is a picture of _that actual object_, not a type to clarify the type. An icon is however perceived as something more abstract. 
 
  Some pitfalls
 ---------------
@@ -128,4 +141,6 @@ For example, in the [cyclofix-theme](https://mapcomplete.osm.org/cyclofix), ther
 
 If all the layers are deselected except the bike wash layer, a shop having this tag will still match and will still show up as shop.
 
+### Not reading the .JSON-specs
 
+There are a few advanced features to do fancy stuff available, which are documented only in the spec above - for example, reusing background images and substituting the colours or HTML-rendering. If you need advanced stuff, read it through!

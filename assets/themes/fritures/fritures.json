@@ -223,7 +223,9 @@
               }
             }
           ]
-        }
+        },
+        "questions",
+        "reviews"
       ],
       "icon": {
         "render": "./assets/themes/fritures/fries.svg"

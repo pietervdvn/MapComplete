@@ -1,11 +1,15 @@
 import {AndOrTagConfigJson} from "./TagConfigJson";
 
+/**
+ * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
+ * If the desired tags are missing and a question is defined, a question will be shown instead.
+ */
 export interface TagRenderingConfigJson {
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
      * 
-     * Note that this is a HTML-interpreted value, so you can add links as e.g. <a href='{website}'>{website}</a>
+     * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
      */
     render?: string | any,
 

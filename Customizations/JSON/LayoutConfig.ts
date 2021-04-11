@@ -9,6 +9,7 @@ import {Utils} from "../../Utils";
 export default class LayoutConfig {
     public readonly id: string;
     public readonly maintainer: string;
+    public readonly credits?: string;
     public readonly changesetmessage?: string;
     public readonly version: string;
     public readonly language: string[];
@@ -48,6 +49,7 @@ export default class LayoutConfig {
         this.id = json.id;
         context = (context ?? "") + "." + this.id;
         this.maintainer = json.maintainer;
+        this.credits = json.credits;
         this.changesetmessage = json.changesetmessage;
         this.version = json.version;
         this.language = [];
@@ -181,5 +183,15 @@ export default class LayoutConfig {
         }
         custom.splice(0, 0, msg);
         return custom;
+    }
+    
+    public ExtractImages() : Set<string>{
+        const icons = new Set<string>()
+        for (const layer of this.layers) {
+            layer.ExtractImages().forEach(icons.add, icons)
+        }
+        icons.add(this.icon)
+        icons.add(this.socialImage)
+        return icons
     }
 }
