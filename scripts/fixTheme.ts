@@ -57,7 +57,13 @@ for (const replacement of replacements) {
 }
 
 const dir = path.substring(0, path.lastIndexOf("/"))
+const fixScriptPath = dir  + "/fix_script_"+path.replace(/\//g,"_")+".sh"
 writeFileSync(dir + "/generated.license_info.json", JSON.stringify(licenses, null, "  "))
-writeFileSync(dir  + "/fix_script_"+path.replace(/\//g,"_")+".sh", linuxHints.join("\n"))
+writeFileSync(fixScriptPath, linuxHints.join("\n"))
 writeFileSync(path+".autofixed.json", fixedThemeJson)
-     
+
+console.log(`IMPORTANT:
+ 1) run ${fixScriptPath}
+ 2) Copy generated.license_info.json over into license_info.json and add the missing attributions and authors
+ 3) Verify ${path}.autofixed.json as theme, and rename it to ${path}
+ 4) Delete the fix script and other unneeded files`)
