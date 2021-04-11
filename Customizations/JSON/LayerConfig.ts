@@ -19,6 +19,7 @@ import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
+
 export default class LayerConfig {
 
 
@@ -41,6 +42,7 @@ export default class LayerConfig {
     icon: TagRenderingConfig;
     iconOverlays: { if: TagsFilter, then: TagRenderingConfig, badge: boolean }[]
     iconSize: TagRenderingConfig;
+    label: TagRenderingConfig;
     rotation: TagRenderingConfig;
     color: TagRenderingConfig;
     width: TagRenderingConfig;
@@ -213,6 +215,7 @@ export default class LayerConfig {
         }
         this.isShown = tr("isShown", "yes");
         this.iconSize = tr("iconSize", "40,40,center");
+        this.label = tr("label", "")
         this.color = tr("color", "#0000ff");
         this.width = tr("width", "7");
         this.rotation = tr("rotation", "0");
@@ -222,30 +225,6 @@ export default class LayerConfig {
         if (json["showIf"] !== undefined) {
             throw "Invalid key on layerconfig " + this.id + ": showIf. Did you mean 'isShown' instead?";
         }
-    }
-
-    /**
-     * Splits the parts of the icon, at ";" but makes sure that everything between "<html>" and "</html>" stays together
-     * @param template
-     * @constructor
-     * @private
-     */
-    private static SplitParts(template: string): string[] {
-        const htmlParts = template.split("<html>");
-        const parts = []
-        for (const htmlPart of htmlParts) {
-            if (htmlPart.indexOf("</html>") >= 0) {
-                const subparts = htmlPart.split("</html>");
-                if (subparts.length != 2) {
-                    throw "Invalid rendering with embedded html: " + htmlPart;
-                }
-                parts.push("html:" + subparts[0]);
-                parts.push(...subparts[1].split(";"))
-            } else {
-                parts.push(...htmlPart.split(";"))
-            }
-        }
-        return parts.filter(prt => prt != "");
     }
 
     public CustomCodeSnippets(): string[] {
@@ -346,7 +325,7 @@ export default class LayerConfig {
         const weight = rendernum(this.width, 5);
 
         const iconW = num(iconSize[0]);
-        const iconH = num(iconSize[1]);
+        let iconH = num(iconSize[1]);
         const mode = iconSize[2] ?? "center"
 
         let anchorW = iconW / 2;
@@ -396,12 +375,10 @@ export default class LayerConfig {
             const rotation = render(self.rotation, "0deg");
 
             let htmlParts: UIElement[] = [];
-            let sourceParts = LayerConfig.SplitParts(iconUrl);
-
+            let sourceParts = Utils.NoNull(iconUrl.split(";").filter(prt => prt != ""));
             for (const sourcePart of sourceParts) {
                 htmlParts.push(genHtmlFromString(sourcePart))
             }
-
 
             let badges = [];
             for (const iconOverlay of self.iconOverlays) {
@@ -410,7 +387,7 @@ export default class LayerConfig {
                 }
                 if (iconOverlay.badge) {
                     const badgeParts: UIElement[] = [];
-                    const partDefs = LayerConfig.SplitParts(iconOverlay.then.GetRenderValue(tgs).txt);
+                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";").filter(prt => prt != "");
 
                     for (const badgePartStr of partDefs) {
                         badgeParts.push(genHtmlFromString(badgePartStr))
@@ -431,6 +408,16 @@ export default class LayerConfig {
                 const badgesComponent = new Combine(badges)
                     .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;");
                 htmlParts.push(badgesComponent)
+            }
+
+            if(sourceParts.length ==0){iconH = 0}
+
+            const label = self.label.GetRenderValue(tgs)?.Subs(tgs)
+                .SetClass("block w-min text-center")
+                .SetStyle("margin-top: "+(iconH + 2) +"px")
+            console.log("Generating label gave ", label, " source: ", self.label, "tags: ", tgs)
+            if (label !== undefined) {
+                htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
             }
             return new Combine(htmlParts).Render();
         })
@@ -461,7 +448,7 @@ export default class LayerConfig {
         for (const preset of this.presets) {
             parts.push(new Set<string>(preset.description?.ExtractImages(false)))
         }
-       
+
         const allIcons = new Set<string>();
         for (const part of parts) {
             part?.forEach(allIcons.add, allIcons)

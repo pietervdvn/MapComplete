@@ -117,8 +117,6 @@ for (const themeFile of themeFiles) {
     }
 }
 
-console.log("LE", layerErrorCount)
-
 if (layerErrorCount.length + themeErrorCount.length == 0) {
     console.log("All good!")
 } else {
