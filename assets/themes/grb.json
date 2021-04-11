@@ -35,6 +35,9 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_grbNumber=(feat.properties.fixme?.match(/GRB thinks that this has number ([^;]+)/ ) ?? ['','none']) [1]"
+      ],
       "title": {
         "render": {
           "nl": "{addr:street} {addr:housenumber}"
@@ -77,12 +80,40 @@
               "then": {
                 "nl": "Geen huisnummer"
               }
+            },
+            {
+              "if": {
+                "and": [
+                  "addr:housenumber:={_grbNumber}",
+                  "fixme="
+                ]
+              },
+              "then": "Het huisnummer is <b>{_grbNumber}</b>, wat overeenkomt met het GRB",
+              "hideInAnswer": {
+                "or": [
+                  "_grbNumber=",
+                  "_grbNumber=none",
+                  "_grbNumber=no number"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "addr:housenumber:=",
+                  "not:addr:housenumber=yes",
+                  "fixme="
+                ]
+              },
+              "then": "Dit gebouw heeft geen nummer, net zoals in het GRB",
+              "hideInAnswer": "_grbNumber!=no number"
             }
           ]
         },
         {
+          "question": "Wat is de wooneenheid-aanduiding?",
           "render": {
-            "nl": "De wooneeinheid-aanduiding is <b>{addr:unit}</b> "
+            "nl": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
           },
           "freeform": {
             "key": "addr:unit"
@@ -142,8 +173,13 @@
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
-      "icon": {
-        "render": "./assets/svg/bug.svg"
+      "label": {
+        "mappings": [
+          {
+            "if": "addr:housenumber~*",
+            "then": "<div style='background-color: white; font: large; width: 1.5em; height: 1.5em; border-radius: 100%'>{addr:housenumber}</div>"
+          }
+        ]
       },
       "width": {
         "render": "2"
@@ -155,6 +191,7 @@
       "color": {
         "render": "#00f"
       },
+      "wayHandling": 2,
       "presets": []
     }
   ],

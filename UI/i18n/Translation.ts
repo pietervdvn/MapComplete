@@ -19,8 +19,8 @@ export class Translation extends UIElement {
         let count = 0;
         for (const translationsKey in translations) {
             count++;
-            if(typeof(translations[translationsKey]) != "string"){
-               throw "Error in an object depicting a translation: a non-string object was found. ("+context+")\n    You probably put some other section accidentally in the translation" 
+            if (typeof (translations[translationsKey]) != "string") {
+                throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
         }
         this.translations = translations;
@@ -73,9 +73,13 @@ export class Translation extends UIElement {
                 let rtext: string = "";
                 if (typeof (el) === "string") {
                     rtext = el;
-                } else {
+                } else if(typeof(el) === "number") {
+                    // HUH? Where did that number come from?
+                    rtext = "" + el;
+                }else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.InnerRender();
+
                 }
                 for (let i = 0; i < parts.length - 1; i++) {
                     combined.push(parts[i]);
@@ -145,7 +149,7 @@ export class Translation extends UIElement {
                             .map(match => match[1].trim().replace(/^['"]/, '').replace(/['"]$/, ''));
                         allIcons.push(...sources)
                     }
-                }catch(e){
+                } catch (e) {
                     console.error("Could not search for images: ", render, this.txt)
                     throw e
                 }
