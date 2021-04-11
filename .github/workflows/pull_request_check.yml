@@ -36,7 +36,9 @@ jobs:
       - name: Set failure key
         run: |
           if [[ -f "layer_report.txt" || -f "missing_licenses.txt" ]]; then
-              echo "VALIDATION_FAILED=true" >>$GITHUB_ENV
+            echo "VALIDATION_FAILED=true" >> $GITHUB_ENV
+          else
+            echo "VALIDATION_FAILED=false" >> $GITHUB_ENV
           fi
           
       - name: Test variable
