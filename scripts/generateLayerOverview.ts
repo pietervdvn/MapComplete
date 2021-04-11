@@ -51,17 +51,22 @@ for (const i in licenses) {
 }
 const knownPaths = new Set<string>(licensePaths)
 
+const linuxHints = []
+
 function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
     let errorCount = [];
     if (layerJson["overpassTags"] !== undefined) {
-        errorCount.push("CRIT! Layer ", layerJson.id, "still uses the old 'overpassTags'-format. Please use 'source: {osmTags: <tags>}' instead")
+        errorCount.push("Layer "+ layerJson.id+ "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
     }
     try {
         const layer = new LayerConfig(layerJson, "test", true)
         const images = Array.from(layer.ExtractImages())
         const remoteImages = images.filter(img => img.indexOf("http") == 0)
         for (const remoteImage of remoteImages) {
-            errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id)
+            errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
+            const path = remoteImage.substring(remoteImage.lastIndexOf("/") + )
+            linuxHints.push("wget "+remoteImage)
+            linuxHints.push(`echo '{"path":"${path}", "license": "<insert license here>", "authors": [ "<insert author(s) here"], "sources": [${remoteImage}]`)
         }
         for (const image of images) {
             if (!knownPaths.has(image)) {
@@ -122,7 +127,7 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
 } else {
     const errors = layerErrorCount.concat(themeErrorCount).join("\n")
     console.log(errors)
-    const msg = (`Found ${errors.length} errors in the layers; ${themeErrorCount} errors in the themes`)
+    const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
     console.log(msg)
     if (process.argv.indexOf("--report") >= 0) {
         writeFileSync("layer_report.txt", errors)
