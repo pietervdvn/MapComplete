@@ -2,10 +2,7 @@ name: Pull request check
 on:
   pull_request:
     types: [opened, edited, synchronize, ready_for_review, review_requested]
-  push:
-    branches:
-      - develop
-      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,4 +49,4 @@ jobs:
         with:
           # message: 'yoyo🤙🏻'
           message: "cat layer_report.txt missing_licenses.txt"
-          GITHUB_TOKEN: ${{ secrets.MAPCOMPLETE_PR_COMMENT_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
