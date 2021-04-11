@@ -170,7 +170,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
+        "render": "hydrant.svg"
       },
       "width": {
         "render": "8"
@@ -261,7 +261,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg"
+        "render": "Twemoji12_1f9ef.svg"
       },
       "width": {
         "render": "8"
@@ -418,7 +418,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/1/19/Twemoji12_1f692.svg"
+        "render": "Twemoji12_1f692.svg"
       },
       "width": {
         "render": "8"
@@ -474,7 +474,7 @@
       "tagRenderings": [],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Twemoji12_26d1.svg"
+        "render": "Twemoji12_26d1.svg"
       },
       "width": {
         "render": "8"
