@@ -7,7 +7,13 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 
 let layout = GenerateEmpty.createEmptyLayout();
 if (window.location.hash.length > 10) {
-    layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+    try{
+        layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+    }catch(e){
+        console.log("Initial load of theme failed, attempt nr 2 with decompression", e)
+        layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+    }
+    
 } else {
     const hash = LocalStorageSource.Get("last-custom-theme").data
     if (hash !== undefined) {

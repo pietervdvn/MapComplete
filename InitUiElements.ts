@@ -39,6 +39,8 @@ import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
+import AllKnownLayers from "./Customizations/AllKnownLayers";
+import LayerConfig from "./Customizations/JSON/LayerConfig";
 
 export class InitUiElements {
 
@@ -83,13 +85,9 @@ export class InitUiElements {
             // This is purely for the personal theme to load the layers there
             const favs = State.state.favouriteLayers.data ?? [];
 
+            
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
             for (const fav of favs) {
-                const layer = AllKnownLayouts.allLayers[fav];
-                if (!!layer) {
-                    layoutToUse.layers.push(layer);
-                }
-
                 for (const layouts of State.state.installedThemes.data) {
                     for (const layer of layouts.layout.layers) {
                         if (typeof layer === "string") {
@@ -218,7 +216,7 @@ export class InitUiElements {
                json = JSON.parse(atob(hash));
             } catch (e) {
                 // We try to decode with lz-string
-                json = JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash)))
+                json = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
             }
            
             // @ts-ignore
