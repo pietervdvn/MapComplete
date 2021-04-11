@@ -38,6 +38,10 @@ export class QueryParameters {
                 QueryParameters.knownSources[key] = source;
             }
         }
+        
+        window["mapcomplete_query_parameter_overview"] = () => {
+            console.log(QueryParameters.GenerateQueryParameterDocs())
+        }
     }
 
     private static Serialize() {
@@ -84,7 +88,13 @@ export class QueryParameters {
     public static GenerateQueryParameterDocs(): string {
         const docs = [];
         for (const key in QueryParameters.documentation) {
-            docs.push("**" + key + "**: " + QueryParameters.documentation[key] + " (default value: _" + QueryParameters.defaults[key] + "_)")
+            docs.push([
+                " "+key+" ",
+                "-".repeat(key.length + 2),
+                QueryParameters.documentation[key],
+                QueryParameters.defaults[key] === undefined ? "No default value set" : `The default value is _${QueryParameters.defaults[key]}_`
+                
+            ].join("\n"))
         }
         return docs.join("\n\n");
     }

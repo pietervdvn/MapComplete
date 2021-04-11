@@ -1,0 +1,72 @@
+[
+  {
+    "authors": [
+      "Agentschap Natuur en Bos"
+    ],
+    "path": "ANB.jpg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.natuurenbos.be/"
+    ]
+  },
+  {
+    "authors": [
+      "Natuurpunt"
+    ],
+    "path": "Natuurpunt.jpg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.natuurpunt.be/"
+    ]
+  },
+  {
+    "authors": [
+      "@ Federico Sibella"
+    ],
+    "path": "forest.svg",
+    "license": "CC-BY 3.0",
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/498112"
+    ]
+  },
+  {
+    "authors": [
+      "Groen"
+    ],
+    "path": "groen_logo.svg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.groen.be/"
+    ]
+  },
+  {
+    "authors": [
+      "@ Эдуард Черных"
+    ],
+    "path": "nature_reserve.svg",
+    "license": "CC-BY 3.0",
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/389579"
+    ]
+  },
+  {
+    "authors": [
+      "@sterankofrank"
+    ],
+    "path": "park.svg",
+    "license": "CC-BY 3.0",
+    "sources": [
+      "http://www.onlinewebfonts.com/icon/425974"
+    ]
+  },
+  {
+    "authors": [
+      "Groen"
+    ],
+    "path": "social_image.jpg",
+    "license": "All rights reserved",
+    "sources": [
+      ""
+    ]
+  }
+]

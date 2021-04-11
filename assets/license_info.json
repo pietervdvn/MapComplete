@@ -1,0 +1,64 @@
+[
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "SocialImage.png",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "OpenStreetMap"
+    ],
+    "path": "generic_osm_background.png",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://www.OpenStreetMap.org"
+    ]
+  },
+  {
+    "authors": [
+      "Mangrove Reviews"
+    ],
+    "path": "mangrove_logo.png",
+    "license": "logo; All rights reserved",
+    "sources": [
+      "https://mangrove.reviews/"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "social_image_front.png",
+    "license": "CC-BY-SA",
+    "sources": [
+      ""
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet",
+      " OpenStreetMap"
+    ],
+    "path": "weblogo.png",
+    "license": "Logo; CC-BY-SA",
+    "sources": [
+      "https://mapcomplete.osm.be",
+      " https://www.openstreetmap.org"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet",
+      " OpenStreetMap"
+    ],
+    "path": "weblogo.svg",
+    "license": "Logo; CC-BY-SA",
+    "sources": [
+      "https://mapcomplete.osm.be",
+      " https://www.openstreetmap.org"
+    ]
+  }
+]

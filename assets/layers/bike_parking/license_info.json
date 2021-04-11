@@ -1,0 +1,100 @@
+[
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "bollard.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "handlebar_holder.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "path": "parking.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
+    "authors": [
+      "Pieter Fiers",
+      "Thibault Declercq",
+      "Pierre Barban",
+      "Joost Schouppe",
+      "Pieter Vander Vennet"
+    ],
+    "path": "parking_old.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/cyclofix"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "rack.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "shed.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "staple.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "two_tier.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  },
+  {
+    "authors": [
+      "Gitte Vande Graveele"
+    ],
+    "path": "wall_loops.svg",
+    "license": "CC-BY-SA",
+    "sources": [
+      "https://osoc.be/editions/2020/walk-by-brussels"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_gym.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_icon.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_no_rope.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_rope.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_route.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "climbing_unknown.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  },
+  {
+    "authors": [
+      "Christian Neumann"
+    ],
+    "path": "club.svg",
+    "license": "CC-BY-SA 3.0",
+    "sources": [
+      "https://utopicode.de/",
+      "https://github.com/chrneumann/MapComplete"
+    ]
+  }
+]

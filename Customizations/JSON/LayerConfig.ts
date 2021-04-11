@@ -7,6 +7,7 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
 import Img from "../../UI/Base/Img";
 import Svg from "../../Svg";
+
 import {Utils} from "../../Utils";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
@@ -17,6 +18,7 @@ import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
+import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 
 export default class LayerConfig {
 
@@ -40,6 +42,7 @@ export default class LayerConfig {
     icon: TagRenderingConfig;
     iconOverlays: { if: TagsFilter, then: TagRenderingConfig, badge: boolean }[]
     iconSize: TagRenderingConfig;
+    label: TagRenderingConfig;
     rotation: TagRenderingConfig;
     color: TagRenderingConfig;
     width: TagRenderingConfig;
@@ -212,14 +215,15 @@ export default class LayerConfig {
         }
         this.isShown = tr("isShown", "yes");
         this.iconSize = tr("iconSize", "40,40,center");
+        this.label = tr("label", "")
         this.color = tr("color", "#0000ff");
         this.width = tr("width", "7");
         this.rotation = tr("rotation", "0");
         this.dashArray = tr("dashArray", "");
 
 
-        if(json["showIf"] !== undefined){
-            throw "Invalid key on layerconfig "+this.id+": showIf. Did you mean 'isShown' instead?";
+        if (json["showIf"] !== undefined) {
+            throw "Invalid key on layerconfig " + this.id + ": showIf. Did you mean 'isShown' instead?";
         }
     }
 
@@ -307,7 +311,7 @@ export default class LayerConfig {
 
         function render(tr: TagRenderingConfig, deflt?: string) {
             const str = (tr?.GetRenderValue(tags.data)?.txt ?? deflt);
-            return SubstitutedTranslation.SubstituteKeys(str, tags.data);
+            return SubstitutedTranslation.SubstituteKeys(str, tags.data).replace(/{.*}/g, "");
         }
 
         const iconSize = render(this.iconSize, "40,40,center").split(",");
@@ -321,7 +325,7 @@ export default class LayerConfig {
         const weight = rendernum(this.width, 5);
 
         const iconW = num(iconSize[0]);
-        const iconH = num(iconSize[1]);
+        let iconH = num(iconSize[1]);
         const mode = iconSize[2] ?? "center"
 
         let anchorW = iconW / 2;
@@ -343,15 +347,15 @@ export default class LayerConfig {
         const iconUrlStatic = render(this.icon);
         const self = this;
         const mappedHtml = tags.map(tgs => {
-            // What do you mean, 'tgs' is never read?
-            // It is read implicitly in the 'render' method
-            const iconUrl = render(self.icon);
-            const rotation = render(self.rotation, "0deg");
-
-            let htmlParts: UIElement[] = [];
-            let sourceParts = iconUrl.split(";");
-
             function genHtmlFromString(sourcePart: string): UIElement {
+                if (sourcePart.indexOf("html:") == 0) {
+                    // We use § as a replacement for ;
+                    const html = sourcePart.substring("html:".length)
+                    const inner = new FixedUiElement(SubstitutingTag.substituteString(html, tgs)).SetClass("block w-min text-center")
+                    const outer = new Combine([inner]).SetClass("flex flex-col items-center")
+                    return outer;
+                }
+
                 const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
                 let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/)
@@ -365,10 +369,16 @@ export default class LayerConfig {
             }
 
 
+            // What do you mean, 'tgs' is never read?
+            // It is read implicitly in the 'render' method
+            const iconUrl = render(self.icon);
+            const rotation = render(self.rotation, "0deg");
+
+            let htmlParts: UIElement[] = [];
+            let sourceParts = Utils.NoNull(iconUrl.split(";").filter(prt => prt != ""));
             for (const sourcePart of sourceParts) {
                 htmlParts.push(genHtmlFromString(sourcePart))
             }
-
 
             let badges = [];
             for (const iconOverlay of self.iconOverlays) {
@@ -377,7 +387,7 @@ export default class LayerConfig {
                 }
                 if (iconOverlay.badge) {
                     const badgeParts: UIElement[] = [];
-                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";");
+                    const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";").filter(prt => prt != "");
 
                     for (const badgePartStr of partDefs) {
                         badgeParts.push(genHtmlFromString(badgePartStr))
@@ -399,6 +409,16 @@ export default class LayerConfig {
                     .SetStyle("display:flex;height:50%;width:100%;position:absolute;top:50%;left:50%;");
                 htmlParts.push(badgesComponent)
             }
+
+            if(sourceParts.length ==0){iconH = 0}
+
+            const label = self.label.GetRenderValue(tgs)?.Subs(tgs)
+                .SetClass("block w-min text-center")
+                .SetStyle("margin-top: "+(iconH + 2) +"px")
+            console.log("Generating label gave ", label, " source: ", self.label, "tags: ", tgs)
+            if (label !== undefined) {
+                htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
+            }
             return new Combine(htmlParts).Render();
         })
 
@@ -417,6 +437,24 @@ export default class LayerConfig {
             weight: weight,
             dashArray: dashArray
         };
+    }
+
+    public ExtractImages(): Set<string> {
+        const parts: Set<string>[] = []
+        parts.push(...this.tagRenderings?.map(tr => tr.ExtractImages(false)))
+        parts.push(...this.titleIcons?.map(tr => tr.ExtractImages(true)))
+        parts.push(this.icon?.ExtractImages(true))
+        parts.push(...this.iconOverlays?.map(overlay => overlay.then.ExtractImages(true)))
+        for (const preset of this.presets) {
+            parts.push(new Set<string>(preset.description?.ExtractImages(false)))
+        }
+
+        const allIcons = new Set<string>();
+        for (const part of parts) {
+            part?.forEach(allIcons.add, allIcons)
+        }
+
+        return allIcons;
     }
 
 

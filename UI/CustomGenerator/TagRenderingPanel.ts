@@ -21,15 +21,14 @@ import Constants from "../../Models/Constants";
 
 export default class TagRenderingPanel extends InputElement<TagRenderingConfigJson> {
 
+    public IsImage = false;
+    public options: { title?: string; description?: string; disableQuestions?: boolean; isImage?: boolean; };
+    public readonly validText: UIElement;
+    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private intro: UIElement;
     private settingsTable: UIElement;
-
-    public IsImage = false;
     private readonly _value: UIEventSource<TagRenderingConfigJson>;
-    public options: { title?: string; description?: string; disableQuestions?: boolean; isImage?: boolean; };
 
-    public readonly validText : UIElement;
-    
     constructor(languages: UIEventSource<string[]>,
                 currentlySelected: UIEventSource<SingleSetting<any>>,
                 userDetails: UserDetails,
@@ -47,11 +46,11 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
         this.options = options ?? {};
         const questionsNotUnlocked = userDetails.csCount < Constants.userJourney.themeGeneratorFullUnlock;
-        this.options.disableQuestions = 
+        this.options.disableQuestions =
             (this.options.disableQuestions ?? false) ||
-            questionsNotUnlocked; 
+            questionsNotUnlocked;
 
-        this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>", 
+        this.intro = new Combine(["<h3>", options?.title ?? "TagRendering", "</h3>",
             options?.description ?? "A tagrendering converts OSM-tags into a value on screen. Fill out the field 'render' with the text that should appear. Note that `{key}` will be replaced with the corresponding `value`, if present.<br/>For specific known tags (e.g. if `foo=bar`, make a mapping).  "])
         this.IsImage = options?.isImage ?? false;
 
@@ -61,10 +60,20 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         function setting(input: InputElement<any>, id: string | string[], name: string, description: string | UIElement): SingleSetting<any> {
             return new SingleSetting<any>(value, input, id, name, description);
         }
-        
+
         this._value.addCallback(value => {
-            if(value?.freeform?.key == ""){
+            let doPing = false;
+            if (value?.freeform?.key == "") {
                 value.freeform = undefined;
+                doPing = true;
+            }
+
+            if (value?.render == "") {
+                value.render = undefined;
+                doPing = true;
+            }
+
+            if (doPing) {
                 this._value.ping();
             }
         })
@@ -72,7 +81,7 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         const questionSettings = [
 
 
-            setting(options?.noLanguage ? new TextField({placeholder:"question"}) : new MultiLingualTextFields(languages)
+            setting(options?.noLanguage ? new TextField({placeholder: "question"}) : new MultiLingualTextFields(languages)
                 , "question", "Question", "If the key or mapping doesn't match, this question is asked"),
 
             "<h3>Freeform key</h3>",
@@ -90,11 +99,11 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
 
         const settings: (string | SingleSetting<any>)[] = [
             setting(
-                options?.noLanguage ? new TextField({placeholder:"Rendering"}) :
-                    new MultiLingualTextFields(languages), "render", "Value to show", 
+                options?.noLanguage ? new TextField({placeholder: "Rendering"}) :
+                    new MultiLingualTextFields(languages), "render", "Value to show",
                 "Renders this value. Note that <span class='literal-code'>{key}</span>-parts are substituted by the corresponding values of the element. If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value." +
                 "<br/><br/>" +
-                "Furhtermore, some special functions are supported:"+SpecialVisualizations.HelpMessage.Render()),
+                "Furhtermore, some special functions are supported:" + SpecialVisualizations.HelpMessage.Render()),
 
             questionsNotUnlocked ? `You need at least ${Constants.userJourney.themeGeneratorFullUnlock} changesets to unlock the 'question'-field and to use your theme to edit OSM data` : "",
             ...(options?.disableQuestions ? [] : questionSettings),
@@ -114,17 +123,17 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
         ];
 
         this.settingsTable = new SettingsTable(settings, currentlySelected);
-    
-        
+
+
         this.validText = new VariableUiElement(value.map((json: TagRenderingConfigJson) => {
-            try{
-                new TagRenderingConfig(json,undefined, options?.title ?? "");
+            try {
+                new TagRenderingConfig(json, undefined, options?.title ?? "");
                 return "";
-            }catch(e){
-                return "<span class='alert'>"+e+"</span>"
+            } catch (e) {
+                return "<span class='alert'>" + e + "</span>"
             }
         }));
-    
+
     }
 
     InnerRender(): string {
@@ -137,8 +146,6 @@ export default class TagRenderingPanel extends InputElement<TagRenderingConfigJs
     GetValue(): UIEventSource<TagRenderingConfigJson> {
         return this._value;
     }
-
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     IsValid(t: TagRenderingConfigJson): boolean {
         return false;

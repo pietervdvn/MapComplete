@@ -81,7 +81,7 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
                     let mapillary = tags.mapillary;
                     const prefix = "https://www.mapillary.com/map/im/";
 
-                    let regex = /https?:\/\/www.mapillary.com\/app\/.*&pKey=([^&]*)/
+                    let regex = /https?:\/\/www.mapillary.com\/app\/.*pKey=([^&]*).*/
                     let match = mapillary.match(regex);
                     if (match) {
                         mapillary = match[1];

@@ -85,15 +85,11 @@ export default class MoreScreen extends UIElement {
 
         const linkButton: UIElement[] = []
 
-        for (const k in AllKnownLayouts.allSets) {
-            const layout: LayoutConfig = AllKnownLayouts.allSets[k];
-            if (k === personal.id) {
+        for (const layout of AllKnownLayouts.layoutsList) {
+            if (layout.id === personal.id) {
                 if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
                     continue;
                 }
-            }
-            if (layout.id !== k) {
-                continue; // This layout was added multiple time due to an uppercase
             }
             linkButton.push(this.createLinkButton(layout));
         }

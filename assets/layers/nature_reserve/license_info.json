@@ -1,0 +1,42 @@
+[
+  {
+    "authors": [
+      "Agentschap Natuur en Bos"
+    ],
+    "path": "ANB.jpg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.natuurenbos.be/"
+    ]
+  },
+  {
+    "authors": [
+      "Natuurpunt"
+    ],
+    "path": "Natuurpunt.jpg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.natuurpunt.be/"
+    ]
+  },
+  {
+    "authors": [
+      "Groen"
+    ],
+    "path": "groen_logo.svg",
+    "license": "All rights reserved",
+    "sources": [
+      "https://www.groen.be/"
+    ]
+  },
+  {
+    "authors": [
+      "@ Эдуард Черных"
+    ],
+    "path": "nature_reserve.svg",
+    "license": "CC-BY 3.0",
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/389579"
+    ]
+  }
+]

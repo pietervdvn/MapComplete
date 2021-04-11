@@ -36,6 +36,9 @@ import Translations from "./UI/i18n/Translations";
 import MapControlButton from "./UI/MapControlButton";
 import Combine from "./UI/Base/Combine";
 import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
+import LZString from "lz-string";
+import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
+import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 
 export class InitUiElements {
 
@@ -209,7 +212,17 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            const layoutToUse = new LayoutConfig(JSON.parse(atob(hash)), false);
+            
+            let json = {}
+            try{
+               json = JSON.parse(atob(hash));
+            } catch (e) {
+                // We try to decode with lz-string
+                json = JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash)))
+            }
+           
+            // @ts-ignore
+            const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
             return layoutToUse;
         } catch (e) {
@@ -275,11 +288,7 @@ export class InitUiElements {
             const copyrightNotice =
                 new ScrollableFullScreen(
                     () => Translations.t.general.attribution.attributionTitle.Clone(),
-                    () => new Combine([
-                        Translations.t.general.attribution.attributionContent,
-                        "<br/>",
-                        new Attribution(undefined, undefined, State.state.layoutToUse, undefined)
-                    ]),
+                    () => new AttributionPanel(State.state.layoutToUse),
                     "copyright"
                 )
 
@@ -288,7 +297,7 @@ export class InitUiElements {
                 copyrightNotice,
                 new MapControlButton(Svg.osm_copyright_svg()),
                 copyrightNotice.isShown
-            ).SetClass("p-0.5 md:hidden")
+            ).SetClass("p-0.5")
 
             new Combine([copyrightButton, checkbox])
                 .AttachTo("bottom-left");
@@ -416,11 +425,12 @@ export class InitUiElements {
             }
 
 
+            const newPointDialogIsShown = new UIEventSource<boolean>(false);
             const addNewPoint = new ScrollableFullScreen(
                 () => Translations.t.general.add.title.Clone(),
-                () => new SimpleAddUI(),
-                "new");
-
+                () => new SimpleAddUI(newPointDialogIsShown),
+                "new",
+                newPointDialogIsShown)
             addNewPoint.isShown.addCallback(isShown => {
                 if (!isShown) {
                     State.state.LastClickLocation.setData(undefined)
@@ -436,5 +446,6 @@ export class InitUiElements {
             );
         });
 
+        
     }
 }

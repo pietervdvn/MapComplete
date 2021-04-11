@@ -105,6 +105,7 @@ export interface LayerConfigJson {
      * As a result, on could use a generic pin, then overlay it with a specific icon.
      * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
      * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
+     * 
      */
     icon?: string | TagRenderingConfigJson;
 
@@ -128,7 +129,12 @@ export interface LayerConfigJson {
      * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
      */
     rotation?: string | TagRenderingConfigJson;
-
+    /**
+     * A HTML-fragment that is shown at the center of the icon, for example: 
+     * <div style="background: white; display: block">{name}</div>
+     */
+    label?: string | TagRenderingConfigJson ;
+    
     /**
      * The color for way-elements and SVG-elements.
      * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead

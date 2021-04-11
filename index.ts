@@ -52,7 +52,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
 }
 
 
-// ----------------- SELECT THE RIGHT QUESTSET -----------------
+// ----------------- SELECT THE RIGHT Theme -----------------
 
 
 const path = window.location.pathname.split("/").slice(-1)[0];
@@ -64,7 +64,7 @@ if (path !== "index.html" && path !== "") {
     console.log("Using layout", defaultLayout);
 }
 defaultLayout = QueryParameters.GetQueryParameter("layout", defaultLayout, "The layout to load into MapComplete").data;
-let layoutToUse: LayoutConfig = AllKnownLayouts.allSets[defaultLayout.toLowerCase()];
+let layoutToUse: LayoutConfig = AllKnownLayouts.allKnownLayouts.get(defaultLayout.toLowerCase());
 
 
 const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false");
@@ -81,7 +81,7 @@ if (layoutFromBase64.startsWith("http")) {
 
     $.ajax({
         url: link,
-        success: function (data) {
+        success: (data) => {
 
             try {
                 const parsed = JSON.parse(data);
@@ -121,6 +121,6 @@ if (layoutFromBase64.startsWith("http")) {
         .SetStyle("pointer-events: all;")
         .AttachTo("topleft-tools");
 }
-window.addEventListener('contextmenu', function (e) { // Not compatible with IE < 9
+window.addEventListener('contextmenu', (e) => { // Not compatible with IE < 9
     e.preventDefault();
 }, false);

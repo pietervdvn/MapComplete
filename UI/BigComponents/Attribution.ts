@@ -10,6 +10,9 @@ import Loc from "../../Models/Loc";
 import LeafletMap from "../../Models/LeafletMap";
 import * as L from "leaflet"
 
+/**
+ * The bottom right attribution panel in the leaflet map
+ */
 export default class Attribution extends UIElement {
     
     private readonly _location: UIEventSource<Loc>;

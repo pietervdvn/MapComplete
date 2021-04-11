@@ -13,13 +13,14 @@
     "nl"
   ],
   "maintainer": "",
-  "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Low_Hanging_Fruit_-_The_Noun_Project.svg",
+  "icon": "./assets/themes/fruit_trees/fruit_tree.svg",
   "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.001,
   "socialImage": "",
+  "hideFromOverview": true,
   "layers": [
     {
       "id": "orchards",
@@ -27,11 +28,12 @@
         "nl": "Boomgaarden"
       },
       "minzoom": 12,
-      "overpassTags": {
+      "source":{
+      "osmTags": {
         "and": [
           "landuse=orchard"
         ]
-      },
+     } },
       "title": {
         "render": {
           "nl": "Boomgaard"
@@ -72,11 +74,12 @@
         "nl": "Boom"
       },
       "minzoom": 12,
-      "overpassTags": {
+      "source":{
+      "osmTags": {
         "and": [
           "natural=tree"
         ]
-      },
+      }},
       "title": {
         "render": {
           "nl": "Boom"
@@ -138,7 +141,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Low_Hanging_Fruit_-_The_Noun_Project.svg"
+        "render": "./assets/themes/fruit_trees/fruit_tree.svg"
       },
       "width": {
         "render": "8"

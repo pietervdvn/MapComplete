@@ -1,0 +1,65 @@
+name: Pull request check
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize, ready_for_review, review_requested]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: install deps
+        run: npm install
+          
+      - name: create generated dir
+        run: mkdir ./assets/generated
+
+      - name: create stub themes
+        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
+  
+      - name: Compile license info
+        run: npm run generate:licenses
+     
+      - name: Compile and validate themes and layers
+        run: npm run validate:layeroverview 
+        
+      - name: Validate license info
+        run: npm run validate:licenses
+
+      - name: Set failure key
+        run: |
+          ls
+          if [[ -f "layer_report.txt" || -f "missing_licenses.txt" ]]; then
+            echo "Found a report..."
+            echo "VALIDATION_FAILED=true" >> $GITHUB_ENV
+          else
+            echo "VALIDATION_FAILED=false" >> $GITHUB_ENV
+          fi
+          
+      - name: Test variable
+        run: echo "${{ env.VALIDATION_FAILED }}"
+        
+      - name: Archive reports
+        uses: actions/upload-artifact@v2
+        if: >-
+          env.VALIDATION_FAILED == 'true'
+        with:
+          name: reports
+          path: |
+            layer_report.txt
+            missing_licenses.txt
+        
+      - name: Comment PR
+        uses: allthatjazzleo/actions-pull-request-add-comment@master
+        if: >-
+          env.VALIDATION_FAILED == 'true'
+        with:
+          message: "cat layer_report.txt missing_licenses.txt"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  

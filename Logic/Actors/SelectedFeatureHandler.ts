@@ -27,6 +27,10 @@ export default class SelectedFeatureHandler {
         featureSource.features.addCallback(_ => self.selectFeature());
 
         selectedFeature.addCallback(feature => {
+            if(feature === undefined){
+                hash.setData("")
+            }
+            
             const h = feature?.properties?.id;
             if(h !== undefined){
                 hash.setData(h)
