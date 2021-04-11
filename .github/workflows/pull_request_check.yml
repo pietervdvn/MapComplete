@@ -44,3 +44,12 @@ jobs:
           
       - name: Test variable
         run: echo "${{ env.VALIDATION_FAILED }}"
+        
+      - name: Comment PR
+        uses: allthatjazzleo/actions-pull-request-add-comment@master
+        if: >-
+          env.VALIDATION_FAILED == 'true'
+        with:
+          # message: 'yoyo🤙🏻'
+          message: "cat layer_report.txt missing_licenses.txt"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
