@@ -25,10 +25,26 @@
   },
     {
     "authors": ["https://openclipart.org/artist/qubodup"],
-    "path": "blue_signal_light.svg",
+    "path": "blue-signal-light.svg",
     "license": "CC0",
     "sources": [
       "https://openclipart.org/detail/177928/blue-signal-light"
+    ]
+  },
+    {
+    "authors": ["https://www.mapbox.com/maki-icons/"],
+    "path": "fire-station-15.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/260728/firestation15"
+    ]
+  },
+    {
+    "authors": ["https://openclipart.org/artist/rdevries"],
+    "path": "Fire-truck.svg",
+    "license": "CC0",
+    "sources": [
+      "https://openclipart.org/detail/190874/fire-truck"
     ]
   }
 ]
