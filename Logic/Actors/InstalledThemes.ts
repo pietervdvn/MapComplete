@@ -1,6 +1,8 @@
 import {UIEventSource} from "../UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {OsmConnection} from "../Osm/OsmConnection";
+import {Utils} from "../../Utils";
+import LZString from "lz-string";
 
 export default class InstalledThemes {
     public installedThemes: UIEventSource<{ layout: LayoutConfig; definition: string }[]>;
@@ -22,9 +24,13 @@ export default class InstalledThemes {
                         continue;
                     }
                     try {
-                        const json = atob(customLayout.data);
-                        const layout = new LayoutConfig(
-                            JSON.parse(json), false);
+                        let layoutJson;
+                        try{
+                            layoutJson = JSON.parse(atob(customLayout.data))
+                        }catch(e){
+                            layoutJson =  JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(customLayout.data)))
+                        }
+                        const layout = new LayoutConfig(layoutJson, false);
                         installedThemes.push({
                             layout: layout,
                             definition: customLayout.data

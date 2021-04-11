@@ -4,14 +4,17 @@ import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 import CustomGeneratorPanel from "./UI/CustomGenerator/CustomGeneratorPanel";
 import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
+import {Utils} from "./Utils";
+import LZString from "lz-string";
 
 let layout = GenerateEmpty.createEmptyLayout();
 if (window.location.hash.length > 10) {
+    const hash = window.location.hash.substr(1)
     try{
-        layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+        layout = JSON.parse(atob(hash)) as LayoutConfigJson;
     }catch(e){
         console.log("Initial load of theme failed, attempt nr 2 with decompression", e)
-        layout = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+        layout =  JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash)))
     }
     
 } else {

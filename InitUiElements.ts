@@ -216,7 +216,8 @@ export class InitUiElements {
                json = JSON.parse(atob(hash));
             } catch (e) {
                 // We try to decode with lz-string
-                json = JSON.parse(atob(window.location.hash.substr(1))) as LayoutConfigJson;
+                json = JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash))) as LayoutConfigJson;
+             
             }
            
             // @ts-ignore
