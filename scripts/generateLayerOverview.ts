@@ -51,8 +51,6 @@ for (const i in licenses) {
 }
 const knownPaths = new Set<string>(licensePaths)
 
-const linuxHints = []
-
 function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
     let errorCount = [];
     if (layerJson["overpassTags"] !== undefined) {
@@ -65,9 +63,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         for (const remoteImage of remoteImages) {
             errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
             const path = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
-            linuxHints.push("wget " + remoteImage)
-            linuxHints.push(`echo '{"path":"${path}", "license": "<insert license here>", "authors": [ "<insert author(s) here"], "sources": [${remoteImage}] > ${path}.license_info.json`)
-        }
+          }
         for (const image of images) {
             if (!knownPaths.has(image)) {
                 const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
@@ -129,7 +125,6 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
     console.log(errors)
     const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
     console.log(msg)
-    console.log(linuxHints.join("\n"))
     if (process.argv.indexOf("--report") >= 0) {
         console.log("Writing report!")
         writeFileSync("layer_report.txt", errors)

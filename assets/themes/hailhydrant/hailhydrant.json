@@ -1,0 +1,520 @@
+{
+  "id": "hailhydrant",
+  "title": {
+    "en": "Hydrants, Extinguishers, Fire stations, and Rescue stations."
+  },
+  "shortDescription": {
+    "en": "Map to show hydrants, extinguishers, fire stations, and rescue stations."
+  },
+  "description": {
+    "en": "On this map you can find and update hydrants, fire stations, rescue stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others."
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/themes/hailhydrant/logo.svg",
+  "version": "0",
+  "startLat": 13.67801,
+  "startLon": 121.6625,
+  "startZoom": 6,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "hydrants",
+      "name": {
+        "en": "Map of hydrants"
+      },
+      "minzoom": 14,
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_hydrant"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Hydrant"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire hydrants."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "question": {
+            "en": "What color is the hydrant?"
+          },
+          "render": {
+            "en": "The hydrant color is {colour}"
+          },
+          "freeform": {
+            "key": "colour"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "colour=yellow"
+                ]
+              },
+              "then": {
+                "en": "The hydrant color is yellow."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "colour=red"
+                ]
+              },
+              "then": {
+                "en": "The hydrant color is red."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What type of hydrant is it?"
+          },
+          "freeform": {
+            "key": "fire_hydrant:type"
+          },
+          "render": {
+            "en": " Hydrant type: {fire_hydrant:type}"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=pillar"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=pipe"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=wall"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type=underground"
+                ]
+              },
+              "then": {
+                "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type."
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "Update the lifecycle status of the hydrant."
+          },
+          "render": {
+            "en": "Lifecycle status"
+          },
+          "freeform": {
+            "key": "disused:emergency"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "emergency=fire_hydrant"
+                ]
+              },
+              "then": {
+                "en": "The hydrant is (fully or partially) working."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "disused:emergency=fire_hydrant",
+                  "emergency="
+                ]
+              },
+              "then": {
+                "en": "The hydrant is unavailable."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "removed:emergency=fire_hydrant",
+                  "emergency="
+                ]
+              },
+              "then": {
+                "en": "The hydrant has been removed."
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/hailhydrant/hydrant.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "emergency=fire_hydrant"
+          ],
+          "title": {
+            "en": "Fire hydrant"
+          },
+          "description": {
+            "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground."
+          }
+        }
+      ],
+      "wayHandling": 2
+    },
+    {
+      "id": "extinguisher",
+      "name": {
+        "en": "Map of fire extinguishers."
+      },
+      "minzoom": 14,
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_extinguisher"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Extinguishers"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire hydrants."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "render": {
+            "en": "Location: {location}"
+          },
+          "question": {
+            "en": "Where is it positioned?"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "location=indoor"
+                ]
+              },
+              "then": {
+                "en": "Found indoors."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "location=outdoor"
+                ]
+              },
+              "then": {
+                "en": "Found outdoors."
+              }
+            }
+          ],
+          "freeform": {
+            "key": "location"
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/hailhydrant/Twemoji12_1f9ef.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "20,20,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": [
+        {
+          "tags": [
+            "emergency=fire_extinguisher"
+          ],
+          "title": {
+            "en": "Fire extinguisher"
+          },
+          "description": {
+            "en": "A fire extinguisher is a small, portable device used to stop a fire"
+          }
+        }
+      ],
+      "wayHandling": 1
+    },
+    {
+      "id": "fire_stations",
+      "name": {
+        "en": "Map of fire stations"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=fire_station"
+          ]
+        }
+      },
+      "wayHandling": 2,
+      "title": {
+        "render": {
+          "en": "Fire Station"
+        }
+      },
+      "description": {
+        "en": "Map layer to show fire stations."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "freeform": {
+            "key": "name"
+          },
+          "question": {
+            "en": "What is the name of this station?"
+          },
+          "render": {
+            "en": "This station is called {name}."
+          }
+        },
+        {
+          "freeform": {
+            "key": "addr:street"
+          },
+          "question": {
+            "en": " What is the street name where the station located?"
+          },
+          "render": {
+            "en": "This station is along a highway called {addr:street}."
+          }
+        },
+        {
+          "question": {
+            "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)"
+          },
+          "freeform": {
+            "key": "addr:place"
+          },
+          "render": {
+            "en": "Th isstation is to be found within {addr:place}."
+          }
+        },
+        {
+          "question": {
+            "en": "What agency operates this station?"
+          },
+          "render": {
+            "en": "This station is operated by {operator}."
+          },
+          "freeform": {
+            "key": "operator"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator=Bureau of Fire Protection",
+                  "operator:type=government"
+                ]
+              },
+              "then": {
+                "en": "Bureau of Fire Protection"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How is the station operator classified??"
+          },
+          "render": {
+            "en": "The operator is a(n) {operator:type} entity."
+          },
+          "freeform": {
+            "key": "operator:type"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator:type=government"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by the government."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=community"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by a community-based, or informal organization."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=ngo"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by a formal group of volunteers."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=private"
+                ]
+              },
+              "then": {
+                "en": "The station is privately operated."
+              }
+            }
+          ]
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
+      },
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "color": {
+        "render": "#c22"
+      },
+      "presets": [
+        {
+          "tags": [
+            "amenity=fire_station"
+          ],
+          "title": {
+            "en": "Fire station"
+          },
+          "description": {
+            "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation."
+          }
+        }
+      ]
+    },
+    {
+      "id": "rescuestation",
+      "name": {
+        "en": "Map of rescue stations"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=rescue_station"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Rescue Station"
+        }
+      },
+      "description": {
+        "en": "Map layer to show rescue stations."
+      },
+      "tagRenderings": [
+        "images",
+        {
+          "question": {
+            "en": "What is this entity called?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "render": {
+            "en": "This entity is called {name}."
+          }
+        }
+      ],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/themes/hailhydrant/Twemoji12_26d1.svg"
+      },
+      "width": {
+        "render": "1"
+      },
+      "iconSize": {
+        "render": "35,35,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets-disabled": [
+        {
+          "tags": [
+            "amenity=rescue_station"
+          ],
+          "title": {
+            "en": "Rescue station"
+          },
+          "description": {
+            "en": "Add a rescue or emergency service station to the map"
+          }
+        }
+      ],
+      "wayHandling": 2
+    }
+  ],
+  "defaultBackgroundId": "HDM_HOT"
+}
+

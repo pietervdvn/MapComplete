@@ -193,17 +193,18 @@ writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfo
 
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
-
+const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
 
 if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
     queryMissingLicenses(missingLicenses)
 }
 if (missingLicenses.length > 0) {
-    const msg = `There are ${missingLicenses.length} licenses missing.`
+    const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
+    console.log( missingLicenses.concat(invalidLicenses).join("\n"))
     console.error(msg)
     if (process.argv.indexOf("--report") >= 0) {
         console.log("Writing report!")
-        writeFileSync("missing_licenses.txt", missingLicenses.join("\n"))
+        writeFileSync("missing_licenses.txt", missingLicenses.concat(invalidLicenses).join("\n"))
     }
     if (process.argv.indexOf("--no-fail") < 0) {
         throw msg
