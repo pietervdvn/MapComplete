@@ -27,10 +27,12 @@
         "en": "Map of hydrants"
       },
       "minzoom": 14,
-      "overpassTags": {
-        "and": [
-          "emergency=fire_hydrant"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_hydrant"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -196,18 +198,11 @@
             "en": "Fire hydrant"
           },
           "description": {
-            "en": "Add a new fire hydrant to the map."
+            "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground."
           }
         }
       ],
-      "wayHandling": 1,
-      "osmSource": {
-        "overpassTags": {
-          "and": [
-            "emergency=fire_hydrant"
-          ]
-        }
-      }
+      "wayHandling": 2
     },
     {
       "id": "extinguisher",
@@ -215,10 +210,12 @@
         "en": "Map of fire extinguishers."
       },
       "minzoom": 14,
-      "overpassTags": {
-        "and": [
-          "emergency=fire_extinguisher"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "emergency=fire_extinguisher"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -286,30 +283,26 @@
             "en": "Fire extinguisher"
           },
           "description": {
-            "en": "Add a fire extinguisher to the map"
+            "en": "A fire extinguisher is a small, portable device used to stop a fire"
           }
         }
       ],
-      "wayHandling": 1,
-      "osmSource": {
-        "overpassTags": {
-          "and": [
-            "emergency=fire_extinguisher"
-          ]
-        }
-      }
+      "wayHandling": 1
     },
     {
-      "id": "stations",
+      "id": "fire_stations",
       "name": {
         "en": "Map of fire stations"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=fire_station"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=fire_station"
+          ]
+        }
       },
+      "wayHandling": 2,
       "title": {
         "render": {
           "en": "Fire Station"
@@ -436,13 +429,13 @@
         "render": "./assets/themes/hailhydrant/Twemoji12_1f692.svg"
       },
       "width": {
-        "render": "8"
+        "render": "1"
       },
       "iconSize": {
         "render": "35,35,center"
       },
       "color": {
-        "render": "#00f"
+        "render": "#c22"
       },
       "presets": [
         {
@@ -453,17 +446,10 @@
             "en": "Fire station"
           },
           "description": {
-            "en": "Add a fire station to the map."
+            "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation."
           }
         }
-      ],
-      "osmSource": {
-        "overpassTags": {
-          "and": [
-            "amenity=fire_station"
-          ]
-        }
-      }
+      ]
     },
     {
       "id": "rescuestation",
@@ -471,10 +457,12 @@
         "en": "Map of rescue stations"
       },
       "minzoom": 12,
-      "overpassTags": {
-        "and": [
-          "amenity=rescue_station"
-        ]
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=rescue_station"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -503,7 +491,7 @@
         "render": "./assets/themes/hailhydrant/Twemoji12_26d1.svg"
       },
       "width": {
-        "render": "8"
+        "render": "1"
       },
       "iconSize": {
         "render": "35,35,center"
@@ -511,7 +499,7 @@
       "color": {
         "render": "#00f"
       },
-      "presets": [
+      "presets-disabled": [
         {
           "tags": [
             "amenity=rescue_station"
@@ -524,13 +512,7 @@
           }
         }
       ],
-      "osmSource": {
-        "overpassTags": {
-          "and": [
-            "amenity=rescue_station"
-          ]
-        }
-      }
+      "wayHandling": 2
     }
   ],
   "defaultBackgroundId": "HDM_HOT"

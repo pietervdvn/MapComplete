@@ -11,13 +11,10 @@
   },
   {
     "authors": [
-      "https://twemoji.twitter.com/"
+      "Twemoji Project"
     ],
     "path": "Twemoji12_1f9ef.svg",
     "license": "CC-BY 4.0",
-    "authors": [
-      "Twemoji Project"
-    ],
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg",
       "https://twemoji.twitter.com/"
@@ -66,7 +63,6 @@
       "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
     ]
   },
-
   {
     "path": "Twemoji12_1f692.svg",
     "license": "CC-BY 4.0",
