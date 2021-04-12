@@ -181,7 +181,7 @@
         "render": "8"
       },
       "iconSize": {
-        "render": "15,15,center"
+        "render": "20,20,center"
       },
       "color": {
         "render": "#00f"
@@ -319,24 +319,35 @@
       "tagRenderings": [
         {
           "freeform": {
+            "key": "name"
+          },
+          "question": {
+            "en": "What is the name of this station?"
+          },
+          "render": {
+            "en": "This station is called {name}."
+          }
+        },
+        {
+          "freeform": {
             "key": "addr:street"
           },
           "question": {
-            "en": " What street is the station located?"
+            "en": " What is the street name where the station located?"
           },
           "render": {
-            "en": "The station is along a highway called {addr:street}."
+            "en": "This station is along a highway called {addr:street}."
           }
         },
         {
           "question": {
-            "en": "In what place is the station located? (e.g. name of neighborhood, villlage, or town)"
+            "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)"
           },
           "freeform": {
             "key": "addr:place"
           },
           "render": {
-            "en": "The station is to be found within {addr:place}."
+            "en": "Th isstation is to be found within {addr:place}."
           }
         },
         {
@@ -344,7 +355,7 @@
             "en": "What agency operates this station?"
           },
           "render": {
-            "en": "Operator: {operator}"
+            "en": "This station is operated by {operator}."
           },
           "freeform": {
             "key": "operator"
@@ -354,7 +365,7 @@
               "if": {
                 "and": [
                   "operator=Bureau of Fire Protection",
-                  "operator:type=public"
+                  "operator:type=government"
                 ]
               },
               "then": {
@@ -365,10 +376,10 @@
         },
         {
           "question": {
-            "en": "How would you classifiy the operator of this station?"
+            "en": "How is the station operator classified??"
           },
           "render": {
-            "en": "Operator type: {operator:type}"
+            "en": "The operator is a(n) {operator:type} entity."
           },
           "freeform": {
             "key": "operator:type"
@@ -377,21 +388,11 @@
             {
               "if": {
                 "and": [
-                  "operator:type=public"
+                  "operator:type=government"
                 ]
               },
               "then": {
-                "en": "Public"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "operator:type=ngo"
-                ]
-              },
-              "then": {
-                "en": "Volunteer"
+                "en": "The station is operated by the government."
               }
             },
             {
@@ -401,7 +402,17 @@
                 ]
               },
               "then": {
-                "en": "Community-based, or informal organization"
+                "en": "The station is operated by a community-based, or informal organization."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=ngo"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by a formal group of volunteers."
               }
             },
             {
@@ -411,7 +422,7 @@
                 ]
               },
               "then": {
-                "en": "Private"
+                "en": "The station is privately operated."
               }
             }
           ]
@@ -425,7 +436,7 @@
         "render": "8"
       },
       "iconSize": {
-        "render": "20,20,center"
+        "render": "35,35,center"
       },
       "color": {
         "render": "#00f"
@@ -470,7 +481,30 @@
       "description": {
         "en": "Map layer to show rescue stations."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        {
+          "freeform": {
+            "key": "image"
+          },
+          "render": {
+            "en": "{all_tags()}"
+          },
+          "question": {
+            "en": "Available images."
+          }
+        },
+        {
+          "question": {
+            "en": "What is this service called?"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "render": {
+            "en": "This service is called {name}."
+          }
+        }
+      ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Twemoji12_26d1.svg"
@@ -479,7 +513,7 @@
         "render": "8"
       },
       "iconSize": {
-        "render": "20,20,center"
+        "render": "35,35,center"
       },
       "color": {
         "render": "#00f"
