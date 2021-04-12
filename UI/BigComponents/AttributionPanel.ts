@@ -28,11 +28,11 @@ export default class AttributionPanel extends Combine {
             "<br/>",
             new Attribution(undefined, undefined, State.state.layoutToUse, undefined),
             "<br/>",
-            Translations.t.general.attribution.iconAttribution.title.Clone().SetClass("font-bold pt-12 pb-3"),
+            "<h3>",Translations.t.general.attribution.iconAttribution.title.Clone().SetClass("pt-6 pb-3"),"</h3>",
             ...Utils.NoNull(Array.from(layoutToUse.data.ExtractImages()))
                 .map(AttributionPanel.IconAttribution)
         ]);
-        this.SetClass("flex flex-col")
+        this.SetClass("flex flex-col link-underline")
     }
 
     private static IconAttribution(iconPath: string) {

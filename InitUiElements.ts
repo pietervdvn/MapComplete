@@ -247,7 +247,6 @@ export class InitUiElements {
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
-        //   .SetClass("open-welcome-button block");
         new CheckBox(
             fullOptions
                 .SetClass("welcomeMessage")

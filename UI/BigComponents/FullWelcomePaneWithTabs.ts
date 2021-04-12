@@ -47,7 +47,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {
                 header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro as UIElement
+                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline") as UIElement
             },
 
         ]
@@ -71,7 +71,7 @@ export default class FullWelcomePaneWithTabs extends UIElement {
                     if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).Render();
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).SetClass("link-underline").Render();
                 }, [Locale.language]))
             }
         );

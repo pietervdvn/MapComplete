@@ -41,6 +41,7 @@ export default class ThemeIntroductionPanel extends UIElement {
                 }
             )
         )
+        this.SetClass("link-underline")
     }
 
     InnerRender(): string {
