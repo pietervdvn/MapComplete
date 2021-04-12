@@ -1,16 +1,6 @@
 [
   {
     "authors": [
-      "https://openclipart.org/artist/rones"
-    ],
-    "path": "extinguisher.svg",
-    "license": "CC0",
-    "sources": [
-      "https://openclipart.org/detail/315876/fire-extinguisher"
-    ]
-  },
-  {
-    "authors": [
       "http://jaanos.deviantart.com/"
     ],
     "path": "hydrant.svg",
@@ -21,42 +11,16 @@
   },
   {
     "authors": [
-      "https://openclipart.org/artist/TVLuke"
+      "https://twemoji.twitter.com/"
     ],
-    "path": "fire_brigade.svg",
-    "license": "CC0",
-    "sources": [
-      "https://openclipart.org/detail/318142/fire-brigade"
-    ]
-  },
-  {
+    "path": "Twemoji12_1f9ef.svg",
+    "license": "CC-BY 4.0",
     "authors": [
-      "https://openclipart.org/artist/qubodup"
+      "Twemoji Project"
     ],
-    "path": "blue-signal-light.svg",
-    "license": "CC0",
     "sources": [
-      "https://openclipart.org/detail/177928/blue-signal-light"
-    ]
-  },
-  {
-    "authors": [
-      "https://www.mapbox.com/maki-icons/"
-    ],
-    "path": "fire-station-15.svg",
-    "license": "CC0",
-    "sources": [
-      "https://openclipart.org/detail/260728/firestation15"
-    ]
-  },
-  {
-    "authors": [
-      "https://openclipart.org/artist/rdevries"
-    ],
-    "path": "Fire-truck.svg",
-    "license": "CC0",
-    "sources": [
-      "https://openclipart.org/detail/190874/fire-truck"
+      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg",
+      "https://twemoji.twitter.com/"
     ]
   },
   {
@@ -102,17 +66,7 @@
       "https://raw.githubusercontent.com/mapamore/MapComplete/master/assets/themes/hailhydrant/hydrant.svg"
     ]
   },
-  {
-    "path": "Twemoji12_1f9ef.svg",
-    "license": "CC-BY 4.0",
-    "authors": [
-      "Twemoji Project"
-    ],
-    "sources": [
-      "https://upload.wikimedia.org/wikipedia/commons/9/9b/Twemoji12_1f9ef.svg",
-      "https://twemoji.twitter.com/"
-    ]
-  },
+
   {
     "path": "Twemoji12_1f692.svg",
     "license": "CC-BY 4.0",
