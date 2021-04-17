@@ -42,6 +42,10 @@ export default class LayoutConfig {
     public readonly enableGeolocation: boolean;
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly customCss?: string;
+    /*
+    How long is the cache valid, in seconds?
+     */
+    public readonly cacheTimeout?: number;
     private readonly _official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
@@ -167,6 +171,7 @@ export default class LayoutConfig {
         this.enableAddNewPoints = json.enableAddNewPoints ?? true;
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true;
         this.customCss = json.customCss;
+        this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
     }
 
     public CustomCodeSnippets(): string[] {

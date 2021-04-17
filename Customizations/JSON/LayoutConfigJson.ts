@@ -118,6 +118,25 @@ export interface LayoutConfigJson {
      * The id of the default background. BY default: vanilla OSM
      */
     defaultBackgroundId?: string;
+
+    /**
+     * The number of seconds that a feature is allowed to stay in the cache.
+     * The caching flow is as following:
+     * 
+     * 1. The application is opened the first time
+     * 2. An overpass query is run
+     * 3. The result is saved to local storage
+     * 
+     * On the next opening:
+     *
+     * 1. The application is opened
+     * 2. Data is loaded from cache and displayed
+     * 3. An overpass query is run
+     * 4. All data (both from overpass ánd local storage) are saved again to local storage (except when to old)
+     * 
+     * Default value: 60 days
+     */
+    cacheTimout?: number;
     
     
     /**
