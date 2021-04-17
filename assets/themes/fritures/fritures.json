@@ -224,6 +224,35 @@
             }
           ]
         },
+        {
+          "question": {
+            "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
+            "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>"
+          },
+          "mappings": [
+            {
+              "if": "bulk_purchase=yes",
+              "then": {
+                "nl": "Je mag je <b>eigen containers</b> meenemen om je bestelling in mee te nemen en zo minder afval te maken",
+                "en": "You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste"
+              }
+            },
+            {
+              "if": "bulk_purchase=no",
+              "then": {
+                "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
+                "en": "Bringing your own container is <b>not allowed</b>"
+              }
+            },
+            {
+              "if": "bulk_purchase=only",
+              "then": {
+                "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
+                "en": "You <b>must</b> bring your own container to order here."
+              }
+            }
+          ]
+        },
         "questions",
         "reviews"
       ],
