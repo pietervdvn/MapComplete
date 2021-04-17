@@ -206,7 +206,7 @@ export default class OpeningHoursVisualization extends UIElement {
                 }
                 return Translations.t.general.opening_hours.closed_permanently.SetClass("ohviz-closed").Render()
             }
-            const moment = `${opensAtDate.getDay()}/${opensAtDate.getMonth() + 1} ${OH.hhmm(opensAtDate.getHours(), opensAtDate.getMinutes())}`
+            const moment = `${opensAtDate.getDate()}/${opensAtDate.getMonth() + 1} ${OH.hhmm(opensAtDate.getHours(), opensAtDate.getMinutes())}`
             return Translations.t.general.opening_hours.closed_until.Subs({date: moment}).SetClass("ohviz-closed").Render()
         }
 
