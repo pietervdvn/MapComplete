@@ -1,78 +1,78 @@
 [
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_gym.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_icon.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_no_rope.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_rope.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_route.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "climbing_unknown.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   },
   {
     "authors": [
-      "Christian Neumann"
+      "Polarbear w", "Christian Neumann"
     ],
     "path": "club.svg",
-    "license": "CC-BY-SA 3.0",
+    "license": "CC0",
     "sources": [
-      "https://utopicode.de/",
+      "https://wiki.openstreetmap.org/wiki/File:Climbing_icon_no_rope.svg", "https://utopicode.de/",
       "https://github.com/chrneumann/MapComplete"
     ]
   }
