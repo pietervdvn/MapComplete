@@ -15,13 +15,14 @@ export default class LocalStorageSaver implements FeatureSource {
         this.features = source.features;
 
         this.features.addCallbackAndRun(features => {
+            if (features === undefined) {
+                return;
+            }
             
             const now = new Date().getTime()
             features = features.filter(f => layout.data.cacheTimeout > Math.abs(now - f.freshness.getTime())/1000) 
             
-            if (features === undefined) {
-                return;
-            }
+       
             if(features.length == 0){
                 return;
             }

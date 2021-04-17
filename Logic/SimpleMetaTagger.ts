@@ -64,7 +64,7 @@ export default class SimpleMetaTagger {
             SimpleMetaTagger.GetCountryCodeFor(lon, lat, (countries) => {
                 try {
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
-                    const tagsSource = State.state.allElements.addOrGetElement(feature);
+                    const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
                     tagsSource.ping();
                 } catch (e) {
                     console.warn(e)
@@ -77,7 +77,7 @@ export default class SimpleMetaTagger {
         "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
         (feature => {
 
-            const tagsSource = State.state.allElements.addOrGetElement(feature);
+            const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
             tagsSource.addCallbackAndRun(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;

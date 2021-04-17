@@ -19,7 +19,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
             tags.data.id);
-       
+
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
         }
@@ -49,6 +49,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): UIElement {
         let questionBox: UIElement = undefined;
+        
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
@@ -60,15 +61,15 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 questionBoxIsUsed = true;
                 return questionBox;
             }
-            return  new EditableTagRendering(tags, tr);
+            return new EditableTagRendering(tags, tr);
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-        
-        if(State.state.featureSwitchIsDebugging.data){
-            const config: TagRenderingConfig = new TagRenderingConfig({render:"{all_tags()}"}, new Tag("id",""), "");
-            renderings.push(new TagRenderingAnswer(tags,config ))
+
+        if (State.state.featureSwitchIsDebugging.data) {
+            const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+            renderings.push(new TagRenderingAnswer(tags, config))
         }
 
         return new Combine(renderings).SetClass("block")

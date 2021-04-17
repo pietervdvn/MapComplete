@@ -14,7 +14,9 @@ export abstract class TagsFilter {
 
     /**
      * Converts the tagsFilter into a list of key-values that should be uploaded to OSM.
-     * Throws an error if not applicable
+     * Throws an error if not applicable.
+     * 
+     * Note: properties are the already existing tags-object. It is only used in the substituting tag
      */
     abstract asChange(properties:any): {k: string, v:string}[]
     

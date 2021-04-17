@@ -5,14 +5,14 @@ import {UIEventSource} from "./UIEventSource";
 
 export class ElementStorage {
 
-    private _elements = [];
+    private _elements = new Map<string, UIEventSource<any>>();
 
     constructor() {
 
     }
 
     addElementById(id: string, eventSource: UIEventSource<any>) {
-        this._elements[id] = eventSource;
+        this._elements.set(id, eventSource);
     }
 
     /**
@@ -23,13 +23,12 @@ export class ElementStorage {
      */
     addOrGetElement(feature: any): UIEventSource<any> {
         const elementId = feature.properties.id;
-        if (elementId in this._elements) {
-            const es = this._elements[elementId];
+        if (this._elements.has(elementId)) {
+            const es = this._elements.get(elementId);
             if (es.data == feature.properties) {
                 // Reference comparison gives the same object! we can just return the event source
                 return es;
             }
-
 
             const keptKeys = es.data;
             // The element already exists
@@ -49,15 +48,20 @@ export class ElementStorage {
             return es;
         } else {
             const eventSource = new UIEventSource<any>(feature.properties, "tags of " + feature.properties.id);
-            this._elements[feature.properties.id] = eventSource;
+            this._elements.set(feature.properties.id, eventSource);
             return eventSource;
         }
     }
 
     getEventSourceById(elementId): UIEventSource<any> {
-        if (elementId in this._elements) {
-            return this._elements[elementId];
+        if (this._elements.has(elementId)) {
+            return this._elements.get(elementId);
         }
         console.error("Can not find eventsource with id ", elementId);
+        return undefined;
+    }
+
+    has(id) {
+        return this._elements.has(id);
     }
 }
