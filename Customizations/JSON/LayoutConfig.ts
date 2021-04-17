@@ -40,11 +40,11 @@ export default class LayoutConfig {
     public readonly enableLayers: boolean;
     public readonly enableSearch: boolean;
     public readonly enableGeolocation: boolean;
-    private readonly _official : boolean;
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly customCss?: string;
+    private readonly _official: boolean;
 
-    constructor(json: LayoutConfigJson, official=true, context?: string) {
+    constructor(json: LayoutConfigJson, official = true, context?: string) {
         this._official = official;
         this.id = json.id;
         context = (context ?? "") + "." + this.id;
@@ -108,7 +108,7 @@ export default class LayoutConfig {
             }
 
             // @ts-ignore
-            return new LayerConfig(layer,`${this.id}.layers[${i}]`, official)
+            return new LayerConfig(layer, `${this.id}.layers[${i}]`, official)
         });
 
         // ALl the layers are constructed, let them share tags in now!
@@ -170,13 +170,13 @@ export default class LayoutConfig {
     }
 
     public CustomCodeSnippets(): string[] {
-        if(this._official){
+        if (this._official) {
             return [];
         }
         const msg = "<br/><b>This layout uses <span class='alert'>custom javascript</span>, loaded for the wide internet. The code is printed below, please report suspicious code on the issue tracker of MapComplete:</b><br/>"
         const custom = [];
         for (const layer of this.layers) {
-            custom.push(...layer.CustomCodeSnippets().map(code => code+"<br />"))
+            custom.push(...layer.CustomCodeSnippets().map(code => code + "<br />"))
         }
         if (custom.length === 0) {
             return custom;
@@ -184,8 +184,8 @@ export default class LayoutConfig {
         custom.splice(0, 0, msg);
         return custom;
     }
-    
-    public ExtractImages() : Set<string>{
+
+    public ExtractImages(): Set<string> {
         const icons = new Set<string>()
         for (const layer of this.layers) {
             layer.ExtractImages().forEach(icons.add, icons)
@@ -194,4 +194,53 @@ export default class LayoutConfig {
         icons.add(this.socialImage)
         return icons
     }
+
+    /**
+     * Replaces all the relative image-urls with a fixed image url
+     * This is to fix loading from external sources
+     *
+     * It should be passed the location where the original theme file is hosted.
+     *
+     * If no images are rewritten, the same object is returned, otherwise a new copy is returned
+     */
+    public patchImages(originalURL: string, originalJson: string): LayoutConfig {
+        const allImages = Array.from(this.ExtractImages())
+        const rewriting = new Map<string, string>()
+
+        // Needed for absolute urls: note that it doesn't contain a trailing slash
+        const origin = new URL(originalURL).origin
+        let path = new URL(originalURL).href
+        path = path.substring(0, path.lastIndexOf("/"))
+        for (const image of allImages) {
+            if(image == "" || image == undefined){
+                continue
+            }
+            if (image.startsWith("http://") || image.startsWith("https://")) {
+                continue
+            }
+            if (image.startsWith("/")) {
+                // This is an absolute path
+                rewriting.set(image, origin + image)
+            } else if (image.startsWith("./assets/themes")) {
+                // Legacy workaround
+                rewriting.set(image, path + image.substring(image.lastIndexOf("/")))
+            } else if (image.startsWith("./")) {
+                // This is a relative url
+                rewriting.set(image, path + image.substring(1))
+            } else {
+                // This is a relative URL with only the path
+                rewriting.set(image, path + image)
+            }
+        }
+        if (rewriting.size == 0) {
+            return this;
+        }
+        rewriting.forEach((value, key) => {
+            console.log("Rewriting",key, "==>", value)
+            
+            originalJson = originalJson.replace(new RegExp(key, "g"), value)
+        })
+        return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")
+    }
+
 }

@@ -456,5 +456,4 @@ export default class LayerConfig {
         return allIcons;
     }
 
-
 }
