@@ -130,8 +130,11 @@ export interface LayerConfigJson {
      */
     rotation?: string | TagRenderingConfigJson;
     /**
-     * A HTML-fragment that is shown at the center of the icon, for example: 
+     * A HTML-fragment that is shown below the icon, for example: 
      * <div style="background: white; display: block">{name}</div>
+     * 
+     * If the icon is undefined, then the label is shown in the center of the feature.
+     * Note that, if the wayhandling hides the icon then no label is shown as well.
      */
     label?: string | TagRenderingConfigJson ;
     

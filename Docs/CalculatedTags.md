@@ -53,6 +53,7 @@ The above code will be executed for every feature in the layer. The feature is a
 *   distanceTo
 *   overlapWith
 *   closest
+*   memberships
 
 ### distanceTo
 
@@ -72,3 +73,7 @@ Gives a list of features from the specified layer which this feature overlaps wi
 Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.
 
 *   list of features
+
+### memberships
+
+Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. For example: \`\_part\_of\_walking\_routes=feat.memberships().map(r => r.relation.tags.name).join(';')\`

@@ -16,10 +16,6 @@ export default class MetaTaggingFeatureSource implements FeatureSource {
                 featuresFreshness.forEach(featureFresh => {
                     const feature = featureFresh.feature;
                     
-                    if(!State.state.allElements.has(feature.properties.id)){
-                        State.state.allElements.addOrGetElement(feature)
-                    }
-                    
                     if (Hash.hash.data === feature.properties.id) {
                         State.state.selectedElement.setData(feature);
                     }

@@ -1,4 +1,4 @@
-import * as turf from 'turf'
+import * as turf from '@turf/turf'
 
 export class GeoOperations {
 
@@ -118,6 +118,9 @@ export class GeoOperations {
         return inside;
     };
 
+    static lengthInMeters(feature: any) {
+        return turf.length(feature) * 1000
+    }
 }
 
 

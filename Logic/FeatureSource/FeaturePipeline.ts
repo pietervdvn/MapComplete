@@ -12,6 +12,7 @@ import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Loc from "../../Models/Loc";
 import GeoJsonSource from "./GeoJsonSource";
 import MetaTaggingFeatureSource from "./MetaTaggingFeatureSource";
+import RegisteringFeatureSource from "./RegisteringFeatureSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
@@ -24,33 +25,38 @@ export default class FeaturePipeline implements FeatureSource {
                 locationControl: UIEventSource<Loc>) {
 
         const amendedOverpassSource =
-            new RememberingSource(new FeatureDuplicatorPerLayer(flayers,
-                new LocalStorageSaver(updater, layout))
-            );
+            new RememberingSource(
+                new LocalStorageSaver(
+                    new MetaTaggingFeatureSource( // first we metatag, then we save to get the metatags into storage too
+                        new RegisteringFeatureSource(
+                            new FeatureDuplicatorPerLayer(flayers,
+                                updater)
+                        )), layout));
 
         const geojsonSources: GeoJsonSource [] = []
         for (const flayer of flayers.data) {
             const sourceUrl = flayer.layerDef.source.geojsonSource
             if (sourceUrl !== undefined) {
-                geojsonSources.push(
-                    new GeoJsonSource(flayer.layerDef.id, sourceUrl))
+                geojsonSources.push(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers,
+                    new GeoJsonSource(flayer.layerDef.id, sourceUrl))))
             }
         }
 
         const amendedLocalStorageSource =
-            new RememberingSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
-            );
+            new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
+            ));
 
-        newPoints = new FeatureDuplicatorPerLayer(flayers, newPoints);
+        newPoints = new MetaTaggingFeatureSource(new FeatureDuplicatorPerLayer(flayers,
+            new RegisteringFeatureSource(newPoints)));
 
         const merged =
-            new MetaTaggingFeatureSource(
-                new FeatureSourceMerger([
-                    amendedOverpassSource,
-                    amendedLocalStorageSource,
-                    newPoints,
-                    ...geojsonSources
-                ]));
+
+            new FeatureSourceMerger([
+                amendedOverpassSource,
+                amendedLocalStorageSource,
+                newPoints,
+                ...geojsonSources
+            ]);
 
         const source =
             new WayHandlingApplyingFeatureSource(flayers,

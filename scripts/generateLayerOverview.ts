@@ -42,7 +42,7 @@ writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify(
 }))
 
 
-console.log("Discovered ", layerFiles.length, "layers and ", themeFiles.length, "themes\n")
+console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
 console.log("   ---------- VALIDATING ---------")
 // ------------- VALIDATION --------------
 const licensePaths = []

@@ -52,6 +52,18 @@ export default class SimpleMetaTagger {
             feature.area = sqMeters;
         })
     );
+    
+    private static lngth = new SimpleMetaTagger(
+        ["_length", "_length:km"], "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter",
+        (feature => {
+            const l = GeoOperations.lengthInMeters(feature)
+            feature.properties["_length"] = "" + l
+            const km = Math.floor(l / 1000)
+            const kmRest = Math.round((l - km * 1000) / 100)
+            feature.properties["_length:km"] = "" + km+ "." + kmRest
+        })
+    )
+    
     private static country = new SimpleMetaTagger(
         ["_country"], "The country code of the property (with latlon2country)",
         feature => {
@@ -294,6 +306,7 @@ export default class SimpleMetaTagger {
     public static metatags = [
         SimpleMetaTagger.latlon,
         SimpleMetaTagger.surfaceArea,
+        SimpleMetaTagger.lngth,
         SimpleMetaTagger.country,
         SimpleMetaTagger.isOpen,
         SimpleMetaTagger.carriageWayWidth,

@@ -1,6 +1,7 @@
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import State from "../State";
 
 export class ExtraFunction {
 
@@ -35,7 +36,7 @@ The above code will be executed for every feature in the layer. The feature is a
 Some advanced functions are available on <b>feat</b> as well:
 
 `
-    private static OverlapFunc = new ExtraFunction(
+    private static readonly OverlapFunc = new ExtraFunction(
         "overlapWith",
         "Gives a list of features from the specified layer which this feature overlaps with, the amount of overlap in m². The returned value is <b>{ feat: GeoJSONFeature, overlap: number}</b>",
         ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"],
@@ -56,26 +57,26 @@ Some advanced functions are available on <b>feat</b> as well:
             }
         }
     )
-    private static DistanceToFunc = new ExtraFunction(
+    private static readonly DistanceToFunc = new ExtraFunction(
         "distanceTo",
         "Calculates the distance between the feature and a specified point",
         ["longitude", "latitude"],
         (featuresPerLayer, feature) => {
             return (arg0, lat) => {
-                if(typeof arg0 === "number"){
+                if (typeof arg0 === "number") {
                     const lon = arg0
                     // Feature._lon and ._lat is conveniently place by one of the other metatags
                     return GeoOperations.distanceBetween([lon, lat], [feature._lon, feature._lat]);
-                }else{
+                } else {
                     // arg0 is probably a feature
-                    return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0),[feature._lon, feature._lat])
+                    return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), [feature._lon, feature._lat])
                 }
-              
+
             }
         }
     )
 
-    private static ClosestObjectFunc = new ExtraFunction(
+    private static readonly ClosestObjectFunc = new ExtraFunction(
         "closest",
         "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.",
         ["list of features"],
@@ -87,7 +88,7 @@ Some advanced functions are available on <b>feat</b> as well:
                 let closestFeature = undefined;
                 let closestDistance = undefined;
                 for (const otherFeature of features) {
-                    if(otherFeature == feature){
+                    if (otherFeature == feature) {
                         continue; // We ignore self
                     }
                     let distance = undefined;
@@ -99,10 +100,10 @@ Some advanced functions are available on <b>feat</b> as well:
                             [feature._lon, feature._lat]
                         )
                     }
-                    if(distance === undefined){
+                    if (distance === undefined) {
                         throw "Undefined distance!"
                     }
-                    if(closestFeature === undefined || distance < closestDistance){
+                    if (closestFeature === undefined || distance < closestDistance) {
                         closestFeature = otherFeature
                         closestDistance = distance;
                     }
@@ -113,7 +114,19 @@ Some advanced functions are available on <b>feat</b> as well:
     )
 
 
-    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc, ExtraFunction.ClosestObjectFunc];
+    private static readonly Memberships = new ExtraFunction(
+        "memberships",
+        "Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. \n\nFor example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
+        [],
+        (featuresPerLayer, feature) => {
+            return () => {
+               return State.state.knownRelations.data?.get(feature.id) ?? [];
+            }
+
+        }
+    )
+
+    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc, ExtraFunction.ClosestObjectFunc, ExtraFunction.Memberships];
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
