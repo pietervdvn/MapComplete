@@ -189,7 +189,11 @@ export class OH {
         if(spl.length != 2){
             return null;
         }
-        return {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
+        const hm = {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
+        if(isNaN(hm.hours) || isNaN(hm.minutes) ){
+            return null;
+        }
+        return hm;
     }
 
     public static parseHHMMRange(hhmmhhmm: string): {
