@@ -11,6 +11,10 @@ The latitude and longitude of the point (or centerpoint in the case of a way/are
 
 The surface area of the feature, in square meters and in hectare. Not set on points and ways
 
+### \_length, \_length:km
+
+The total length of a feature in meters (and in kilometers, rounded to one decimal for '\_length:km'). For a surface, the length of the perimeter
+
 ### \_country
 
 The country code of the property (with latlon2country)

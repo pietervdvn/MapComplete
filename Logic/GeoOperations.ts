@@ -15,7 +15,8 @@ export class GeoOperations {
         return newFeature;
     }
     
-    static centerpointCoordinates(feature: any){
+    static centerpointCoordinates(feature: any): [number, number]{
+        // @ts-ignore
         return turf.center(feature).geometry.coordinates;
     }
 
