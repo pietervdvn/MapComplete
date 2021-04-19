@@ -1,0 +1,25 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete A map of maps",
+  "description": "This theme shows all (touristic) maps that OpenStreetMap knows of",
+  "project_url": "https://mapcomplete.osm.be/maps",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/maps/logo.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "tourism",
+   "description": "The MapComplete theme A map of maps has a layer Maps showing features with this tag",
+   "value": "map"
+  },
+  {
+   "key": "information",
+   "description": "The MapComplete theme A map of maps has a layer Maps showing features with this tag",
+   "value": "map"
+  }
+ ]
+}

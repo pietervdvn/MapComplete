@@ -1,0 +1,20 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Trees",
+  "description": "Map all the trees",
+  "project_url": "https://mapcomplete.osm.be/trees",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/trees/logo.svg",
+  "contact_name": "Pieter Vander Vennet, Midgard",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "natural",
+   "description": "The MapComplete theme Trees has a layer Tree showing features with this tag",
+   "value": "tree"
+  }
+ ]
+}

@@ -1,16 +1,20 @@
 {
   "id": "sport_pitches",
   "title": {
-    "nl": "Sportvelden"
+    "nl": "Sportvelden",
+    "en": "Sport pitches"
   },
   "shortDescription": {
-    "nl": "Deze kaart toont sportvelden"
+    "nl": "Deze kaart toont sportvelden",
+    "en": "A map showing sport pitches"
   },
   "description": {
-    "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen"
+    "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
+    "en": "A sport pitch is an area where sports are played"
   },
   "language": [
-    "nl"
+    "nl",
+    "en"
   ],
   "maintainer": "",
   "icon": "./assets/layers/sport_pitch/tabletennis.svg",

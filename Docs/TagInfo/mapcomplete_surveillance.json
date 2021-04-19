@@ -1,0 +1,43 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Surveillance under Surveillance",
+  "description": "Surveillance cameras and other means of surveillance",
+  "project_url": "https://mapcomplete.osm.be/surveillance",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/surveillance_cameras/logo.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "camera:direction",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Direction visualization showing features with this tag"
+  },
+  {
+   "key": "direction",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Direction visualization showing features with this tag"
+  },
+  {
+   "key": "man_made",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+   "value": "surveillance"
+  },
+  {
+   "key": "surveillance:type",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+   "value": "camera"
+  },
+  {
+   "key": "surveillance:type",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+   "value": "ALPR"
+  },
+  {
+   "key": "surveillance:type",
+   "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+   "value": "ANPR"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete De Natuur in",
+  "description": "Deze kaart bevat informatie voor natuurliefhebbers",
+  "project_url": "https://mapcomplete.osm.be/nature",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/nature/logo.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme De Natuur in has a layer Drinking water showing features with this tag",
+   "value": "drinking_water"
+  },
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme De Natuur in has a layer Vogelkijkhutten showing features with this tag",
+   "value": "bird_hide"
+  },
+  {
+   "key": "tourism",
+   "description": "The MapComplete theme De Natuur in has a layer Maps showing features with this tag",
+   "value": "map"
+  },
+  {
+   "key": "information",
+   "description": "The MapComplete theme De Natuur in has a layer Maps showing features with this tag",
+   "value": "map"
+  },
+  {
+   "key": "information",
+   "description": "The MapComplete theme De Natuur in has a layer Information boards showing features with this tag",
+   "value": "board"
+  },
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme De Natuur in has a layer Natuurgebied showing features with this tag",
+   "value": "nature_reserve"
+  },
+  {
+   "key": "boundary",
+   "description": "The MapComplete theme De Natuur in has a layer Natuurgebied showing features with this tag",
+   "value": "protected_area"
+  }
+ ]
+}

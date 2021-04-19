@@ -1,0 +1,20 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Charging stations",
+  "description": "A worldwide map of charging stations",
+  "project_url": "https://mapcomplete.osm.be/charging_stations",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/charging_stations/logo.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
+   "value": "charging_station"
+  }
+ ]
+}

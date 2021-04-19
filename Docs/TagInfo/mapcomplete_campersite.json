@@ -1,0 +1,25 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Campersites",
+  "description": "Find sites to spend the night with your camper",
+  "project_url": "https://mapcomplete.osm.be/campersite",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/campersites/caravan.svg",
+  "contact_name": "Pieter Vander Vennet, joost schouppe",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "tourism",
+   "description": "The MapComplete theme Campersites has a layer Camper sites showing features with this tag",
+   "value": "caravan_site"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Campersites has a layer Sanitary dump stations showing features with this tag",
+   "value": "sanitary_dump_station"
+  }
+ ]
+}

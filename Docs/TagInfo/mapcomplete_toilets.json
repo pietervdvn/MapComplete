@@ -1,0 +1,20 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Open Toilet Map",
+  "description": "A map of public toilets",
+  "project_url": "https://mapcomplete.osm.be/toilets",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/toilets/toilets.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Open Toilet Map has a layer Toilets showing features with this tag",
+   "value": "toilets"
+  }
+ ]
+}

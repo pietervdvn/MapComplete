@@ -1,0 +1,25 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Facade gardens",
+  "description": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
+  "project_url": "https://mapcomplete.osm.be/facadegardens",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/facadegardens/geveltuin.svg",
+  "contact_name": "Pieter Vander Vennet, joost schouppe; stla",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme Facade gardens has a layer Facade gardens showing features with this tag",
+   "value": "garden"
+  },
+  {
+   "key": "garden:type",
+   "description": "The MapComplete theme Facade gardens has a layer Facade gardens showing features with this tag",
+   "value": "facade_garden"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Fietsstraten",
+  "description": "Een kaart met alle gekende fietsstraten",
+  "project_url": "https://mapcomplete.osm.be/fietsstraten",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/cyclestreets/F111.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "cyclestreet",
+   "description": "The MapComplete theme Fietsstraten has a layer Fietsstraten showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "The MapComplete theme Fietsstraten has a layer Toekomstige fietsstraat showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag"
+  }
+ ]
+}

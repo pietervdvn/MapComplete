@@ -1,0 +1,35 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Hydrants, Extinguishers, Fire stations, and Rescue stations.",
+  "description": "Map to show hydrants, extinguishers, fire stations, and rescue stations.",
+  "project_url": "https://mapcomplete.osm.be/hailhydrant",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/hailhydrant/logo.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "emergency",
+   "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Rescue stations. has a layer Map of hydrants showing features with this tag",
+   "value": "fire_hydrant"
+  },
+  {
+   "key": "emergency",
+   "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Rescue stations. has a layer Map of fire extinguishers. showing features with this tag",
+   "value": "fire_extinguisher"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Rescue stations. has a layer Map of fire stations showing features with this tag",
+   "value": "fire_station"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Rescue stations. has a layer Map of rescue stations showing features with this tag",
+   "value": "rescue_station"
+  }
+ ]
+}

@@ -61,7 +61,11 @@ export class Or extends TagsFilter {
     }
 
     asChange(properties: any): { k: string; v: string }[] {
-       throw "Can not convert an 'or' into a changeset"
+        const result = []
+        for (const tagsFilter of this.or) {
+            result.push(...tagsFilter.asChange(properties))
+        }
+        return result;
     }
 }
 

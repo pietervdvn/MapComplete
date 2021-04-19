@@ -1,0 +1,83 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Open Climbing Map",
+  "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature",
+  "project_url": "https://mapcomplete.osm.be/climbing",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/climbing/climbing_icon.svg",
+  "contact_name": "Pieter Vander Vennet, Christian Neumann <christian@utopicode.de>",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "club",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing club showing features with this tag",
+   "value": "climbing"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing club showing features with this tag",
+   "value": "climbing"
+  },
+  {
+   "key": "office",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing club showing features with this tag"
+  },
+  {
+   "key": "club",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing club showing features with this tag"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing gyms showing features with this tag",
+   "value": "climbing"
+  },
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing gyms showing features with this tag",
+   "value": "sports_centre"
+  },
+  {
+   "key": "climbing",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing routes showing features with this tag",
+   "value": "route"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities showing features with this tag",
+   "value": "climbing"
+  },
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "sports_centre"
+  },
+  {
+   "key": "barrier",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "wall"
+  },
+  {
+   "key": "barrier",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "retaining_wall"
+  },
+  {
+   "key": "natural",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "cliff"
+  },
+  {
+   "key": "natural",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "rock"
+  },
+  {
+   "key": "natural",
+   "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
+   "value": "stone"
+  }
+ ]
+}

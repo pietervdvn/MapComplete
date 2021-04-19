@@ -1,0 +1,20 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Open Artwork Map",
+  "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis, ",
+  "project_url": "https://mapcomplete.osm.be/artworks",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/artwork/artwork.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "tourism",
+   "description": "The MapComplete theme Open Artwork Map has a layer Artworks showing features with this tag",
+   "value": "artwork"
+  }
+ ]
+}

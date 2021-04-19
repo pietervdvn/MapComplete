@@ -1,0 +1,131 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Cyclofix - an open map for cyclists",
+  "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs",
+  "project_url": "https://mapcomplete.osm.be/cyclofix",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclofix/logo.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag"
+  },
+  {
+   "key": "pub",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag"
+  },
+  {
+   "key": "theme",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cafe showing features with this tag"
+  },
+  {
+   "key": "shop",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": "bicycle"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": "bicycle_rental"
+  },
+  {
+   "key": "network",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": ""
+  },
+  {
+   "key": "shop",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": "sports"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": "bicycle"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": "cycling"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag",
+   "value": ""
+  },
+  {
+   "key": "shop",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike repair/shop showing features with this tag"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle library showing features with this tag",
+   "value": "bicycle_library"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike stations (repair, pump or both) showing features with this tag",
+   "value": "bicycle_repair_station"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag",
+   "value": "vending_machine"
+  },
+  {
+   "key": "vending",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bicycle tube vending machine showing features with this tag"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Drinking water showing features with this tag",
+   "value": "drinking_water"
+  },
+  {
+   "key": "theme",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag"
+  },
+  {
+   "key": "sport",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag",
+   "value": "cycling"
+  },
+  {
+   "key": "association",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag"
+  },
+  {
+   "key": "ngo",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag"
+  },
+  {
+   "key": "club",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike related object showing features with this tag"
+  },
+  {
+   "key": "service:bicycle:cleaning",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "service:bicycle:cleaning",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+   "value": "diy"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike cleaning service showing features with this tag",
+   "value": "bicycle_wash"
+  },
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Bike parking showing features with this tag",
+   "value": "bicycle_parking"
+  }
+ ]
+}

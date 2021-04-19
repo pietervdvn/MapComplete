@@ -1,0 +1,35 @@
+{
+ "data_format": 1,
+ "data_updated": "20210319T161618Z",
+ "project": {
+  "name": "MapComplete Benches",
+  "description": "A map of benches",
+  "project_url": "https://mapcomplete.osm.be/benches",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/benches/bench_poi.svg",
+  "contact_name": "Pieter Vander Vennet, Florian Edelmann",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Benches has a layer Benches showing features with this tag",
+   "value": "bench"
+  },
+  {
+   "key": "bench",
+   "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
+   "value": "yes"
+  },
+  {
+   "key": "bench",
+   "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
+   "value": "stand_up_bench"
+  },
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme Benches has a layer Picnic tables showing features with this tag",
+   "value": "picnic_table"
+  }
+ ]
+}
