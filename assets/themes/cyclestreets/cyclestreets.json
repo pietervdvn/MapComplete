@@ -165,7 +165,13 @@
         "nl": "Laag waar je een straat als fietsstraat kan markeren"
       },
       "source": {
-        "osmTags": "highway~residential|tertiary|unclassified"
+        "osmTags": {
+          "or": [
+            "highway=residential",
+            "highway=tertiary",
+            "highway=unclassified"
+          ]
+        }
       },
       "minzoom": 18,
       "wayHandling": 0,

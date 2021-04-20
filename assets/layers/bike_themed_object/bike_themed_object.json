@@ -10,11 +10,16 @@
   "source": {
     "osmTags": {
       "or": [
-        "theme~cycling|bicycle",
+        "theme=bicycle",
+        "theme=cycling",
         "sport=cycling",
-        "association~cycling|bicycle",
-        "ngo~cycling|bicycle",
-        "club~bicycle|cycling"
+        "association=cycling",
+        "association=bicycle",
+        "ngo=cycling",
+        "ngo=bicycle",
+
+        "club=bicycle",
+        "club=cycling"
       ]
     }
   },

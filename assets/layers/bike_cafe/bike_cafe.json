@@ -22,8 +22,10 @@
         {
           "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
           "or": [
-            "pub~cycling|bicycle",
-            "theme~cycling|bicycle",
+            "pub=cycling",
+            "pub=bicycle",
+            "theme=cycling",
+            "theme=bicycle",
             "service:bicycle:.*~~*"
           ]
         }
