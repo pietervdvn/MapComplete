@@ -7,6 +7,7 @@ import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
 
 export default class SimpleMetaTagger {
     public readonly keys: string[];
@@ -330,7 +331,7 @@ export default class SimpleMetaTagger {
 
         ];
 
-        for (const metatag of SimpleMetaTagger.metatags) {
+        for (const metatag of SimpleMetaTagger.metatags.concat(UpdateTagsFromOsmAPI.metaTagger)) {
             subElements.push(
                 new Combine([
                     "<h3>", metatag.keys.join(", "), "</h3>",

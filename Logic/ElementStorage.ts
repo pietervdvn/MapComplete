@@ -23,34 +23,43 @@ export class ElementStorage {
      */
     addOrGetElement(feature: any): UIEventSource<any> {
         const elementId = feature.properties.id;
-        if (this._elements.has(elementId)) {
-            const es = this._elements.get(elementId);
-            if (es.data == feature.properties) {
-                // Reference comparison gives the same object! we can just return the event source
-                return es;
-            }
+        const newProperties = feature.properties;
 
-            const keptKeys = es.data;
-            // The element already exists
-            // We add all the new keys to the old keys
-            let somethingChanged = false;
-            for (const k in feature.properties) {
-                const v = feature.properties[k];
-                if (keptKeys[k] !== v) {
-                    keptKeys[k] = v;
-                    somethingChanged = true;
-                }
-            }
-            if (somethingChanged) {
-                es.ping();
-            }
+        const es = this.addOrGetById(elementId, newProperties)
 
-            return es;
-        } else {
-            const eventSource = new UIEventSource<any>(feature.properties, "tags of " + feature.properties.id);
-            this._elements.set(feature.properties.id, eventSource);
+        // At last, we overwrite the tag of the new feature to use the tags in the already existing event source
+        feature.properties = es.data
+        return es;
+    }
+
+    addOrGetById(elementId: string, newProperties: any): UIEventSource<any> {
+        if (!this._elements.has(elementId)) {
+            const eventSource = new UIEventSource<any>(newProperties, "tags of " + elementId);
+            this._elements.set(elementId, eventSource);
             return eventSource;
         }
+
+
+        const es = this._elements.get(elementId);
+        if (es.data == newProperties) {
+            // Reference comparison gives the same object! we can just return the event source
+            return es;
+        }
+        const keptKeys = es.data;
+        // The element already exists
+        // We use the new feature to overwrite all the properties in the already existing eventsource
+        let somethingChanged = false;
+        for (const k in newProperties) {
+            const v = newProperties[k];
+            if (keptKeys[k] !== v) {
+                keptKeys[k] = v;
+                somethingChanged = true;
+            }
+        }
+        if (somethingChanged) {
+            es.ping();
+        }
+        return es;
     }
 
     getEventSourceById(elementId): UIEventSource<any> {

@@ -18,6 +18,7 @@ import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
+import UpdateTagsFromOsmAPI from "./Logic/Actors/UpdateTagsFromOsmAPI";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -252,6 +253,7 @@ export default class State {
 
         new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
 
+        new UpdateTagsFromOsmAPI(this.selectedElement.map(el => el?.properties?.id), this.allElements)
 
     }
 
