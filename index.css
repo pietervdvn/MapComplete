@@ -283,6 +283,12 @@ li::marker {
     color: #999;
 }
 
+.link-underline .subtle a {
+    color: var(--foreground-color);
+    text-decoration: underline 1px #7193bb88;
+    color: #7193bb;
+}
+
 .bold {
     font-weight: bold;
 }

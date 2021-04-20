@@ -9,6 +9,8 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Tag} from "../../Logic/Tags/Tag";
+import Constants from "../../Models/Constants";
+import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -49,7 +51,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): UIElement {
         let questionBox: UIElement = undefined;
-        
+
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
@@ -65,6 +67,12 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
+        }
+
+        if (State.state.osmConnection.userDetails.data.csCount >= Constants.userJourney.historyLinkVisible ||
+            State.state.featureSwitchIsDebugging.data == true ||
+            State.state.featureSwitchIsTesting.data == true) {
+            renderings.push(new TagRenderingAnswer( tags, SharedTagRenderings.SharedTagRendering.get("last_edit")))
         }
 
         if (State.state.featureSwitchIsDebugging.data) {

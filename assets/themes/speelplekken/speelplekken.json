@@ -15,7 +15,7 @@
   "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
   "hideFromOverview": true,
-  "lockLocation": false,
+  "lockLocation": true,
   "version": "0",
   "startLat": 51.17174,
   "startLon": 4.449462,
@@ -27,7 +27,8 @@
     "play_forest",
     "playground",
     "sport_pitch",
-    { "builtin": "slow_roads",
+    {
+      "builtin": "slow_roads",
       "override": {
         "calculatedTags": [
           "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
@@ -109,7 +110,7 @@
             "nl": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
           },
           "render": "Signalisatie geplaatst door {operator}",
-          "freeform":{
+          "freeform": {
             "key": "operator"
           }
         },
@@ -130,7 +131,7 @@
       ],
       "color": {
         "render": "#6d6",
-        "mappings":[
+        "mappings": [
           {
             "if": "color~*",
             "then": "{color}"
@@ -140,8 +141,16 @@
       "width": {
         "render": "3"
       }
+    },
+    {
+      "source": {
+        "osmTags": {
+          "or": []
+        },
+        "geoJson": "https://pietervdvn.github.io/speelplekken-cache.geojson"
+      },
+      "passAllFeatures": true
     }
-
   ],
   "roamingRenderings": [
     {

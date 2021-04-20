@@ -136,7 +136,7 @@ export default class LayerConfig {
                 return new TagRenderingConfig(deflt, self.source.osmTags, `${context}.${key}.default value`);
             }
             if (typeof v === "string") {
-                const shared = SharedTagRenderings.SharedTagRendering[v];
+                const shared = SharedTagRenderings.SharedTagRendering.get(v);
                 if (shared) {
                     return shared;
                 }
@@ -166,7 +166,7 @@ export default class LayerConfig {
                         }
 
 
-                        const shared = SharedTagRenderings.SharedTagRendering[renderingJson];
+                        const shared = SharedTagRenderings.SharedTagRendering.get(renderingJson);
                         if (shared !== undefined) {
                             return shared;
                         }
@@ -196,8 +196,8 @@ export default class LayerConfig {
         this.icon = tr("icon", "");
         this.iconOverlays = (json.iconOverlays ?? []).map((overlay, i) => {
             let tr = new TagRenderingConfig(overlay.then, self.source.osmTags, `iconoverlays.${i}`);
-            if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons[overlay.then] !== undefined) {
-                tr = SharedTagRenderings.SharedIcons[overlay.then];
+            if (typeof overlay.then === "string" && SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined) {
+                tr = SharedTagRenderings.SharedIcons.get(overlay.then);
             }
             return {
                 if: FromJSON.Tag(overlay.if),
@@ -410,13 +410,19 @@ export default class LayerConfig {
                 htmlParts.push(badgesComponent)
             }
 
-            if(sourceParts.length ==0){iconH = 0}
+            if (sourceParts.length == 0) {
+                iconH = 0
+            }
+            try {
 
-            const label = self.label.GetRenderValue(tgs)?.Subs(tgs)
-                .SetClass("block w-min text-center")
-                .SetStyle("margin-top: "+(iconH + 2) +"px")
-            if (label !== undefined) {
-                htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
+                const label = self.label?.GetRenderValue(tgs)?.Subs(tgs)
+                    ?.SetClass("block w-min text-center")
+                    ?.SetStyle("margin-top: " + (iconH + 2) + "px")
+                if (label !== undefined) {
+                    htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
+                }
+            } catch (e) {
+                console.error(e, tgs)
             }
             return new Combine(htmlParts).Render();
         })

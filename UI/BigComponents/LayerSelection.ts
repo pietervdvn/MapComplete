@@ -47,9 +47,12 @@ export default class LayerSelection extends UIElement {
                 .SetClass("single-layer-selection-toggle")
                 .SetStyle("opacity:0.2;");
 
-            const name = Translations.WT(layer.layerDef.name).Clone()
-                .SetStyle("font-size:large;margin-left: 0.5em;");
+            const name = Translations.WT(layer.layerDef.name)?.Clone()
+                ?.SetStyle("font-size:large;margin-left: 0.5em;");
 
+            if(name === undefined){
+                continue
+            }
 
             const zoomStatus = new VariableUiElement(State.state.locationControl.map(location => {
                 if (location.zoom < layer.layerDef.minzoom) {

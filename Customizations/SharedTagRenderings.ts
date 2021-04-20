@@ -4,15 +4,15 @@ import * as icons from "../assets/tagRenderings/icons.json";
 
 export default class SharedTagRenderings {
 
-    public static SharedTagRendering = SharedTagRenderings.generatedSharedFields();
-    public static SharedIcons = SharedTagRenderings.generatedSharedFields(true);
+    public static SharedTagRendering : Map<string, TagRenderingConfig> = SharedTagRenderings.generatedSharedFields();
+    public static SharedIcons : Map<string, TagRenderingConfig> = SharedTagRenderings.generatedSharedFields(true);
 
-    private static generatedSharedFields(iconsOnly = false) {
-        const dict = {}
+    private static generatedSharedFields(iconsOnly = false) : Map<string, TagRenderingConfig>{
+        const dict = new Map<string, TagRenderingConfig>();
 
         function add(key, store) {
             try {
-                dict[key] = new TagRenderingConfig(store[key], key)
+                dict.set(key, new TagRenderingConfig(store[key], key))
             } catch (e) {
                 console.error("BUG: could not parse", key, " from questions.json or icons.json - this error happened during the build step of the SharedTagRenderings", e)
             }

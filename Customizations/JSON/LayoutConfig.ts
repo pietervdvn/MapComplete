@@ -83,8 +83,8 @@ export default class LayoutConfig {
         this.widenFactor = json.widenFactor ?? 0.05;
         this.roamingRenderings = (json.roamingRenderings ?? []).map((tr, i) => {
                 if (typeof tr === "string") {
-                    if (SharedTagRenderings.SharedTagRendering[tr] !== undefined) {
-                        return SharedTagRenderings.SharedTagRendering[tr];
+                    if (SharedTagRenderings.SharedTagRendering.get(tr) !== undefined) {
+                        return SharedTagRenderings.SharedTagRendering.get(tr);
                     }
                 }
                 return new TagRenderingConfig(tr, undefined, `${this.id}.roaming_renderings[${i}]`);
