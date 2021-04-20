@@ -15,18 +15,16 @@ export abstract class OsmObject {
         this.type = type;
     }
 
-    static DownloadObject(id, continuation: ((element: OsmObject) => void)) {
+    static DownloadObject(id, continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
-        
-        const newContinuation = (element: OsmObject) => {
-            
-            console.log("Received: ",element);
-            
-            continuation(element);
+
+        const newContinuation = (element: OsmObject, meta :OsmObjectMeta) => {
+            console.log("Received: ", element, "with meta", meta);
+            continuation(element, meta);
         }
-        
+
         switch (type) {
             case("node"):
                 return new OsmNode(idN).Download(newContinuation);
@@ -38,66 +36,7 @@ export abstract class OsmObject {
         }
     }
 
-
-    abstract SaveExtraData(element);
-
-
-    /**
-     * Generates the changeset-XML for tags
-     * @constructor
-     */
-    TagsXML(): string {
-        let tags = "";
-        for (const key in this.tags) {
-            const v = this.tags[key];
-            if (v !== "") {
-                tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
-            }
-        }
-        return tags;
-    }
-
-
-    Download(continuation: ((element: OsmObject) => void)) {
-        const self = this;
-        $.getJSON("https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id,
-            function (data) {
-                const element = data.elements[0];
-                self.tags = element.tags;
-                self.version = element.version;
-                self.SaveExtraData(element);
-                continuation(self);
-            }
-        );
-        return this;
-    }
-
-    public addTag(k: string, v: string): void {
-        if (k in this.tags) {
-            const oldV = this.tags[k];
-            if (oldV == v) {
-                return;
-            }
-            console.log("WARNING: overwriting ",oldV, " with ", v," for key ",k)
-        }
-        this.tags[k] = v;
-        if(v === undefined || v === ""){
-            delete this.tags[k];
-        }
-        this.changed = true;
-    }
-
-    protected VersionXML(){
-        if(this.version === undefined){
-            return "";
-        }
-        return 'version="'+this.version+'"';
-    }
-    abstract ChangesetXML(changesetId: string): string;
-
-
-
-    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects : any) => void)) {
+    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
         // local function which downloads all the objects one by one
         // this is one big loop, running one download, then rerunning the entire function
         if (neededIds.length == 0) {
@@ -115,9 +54,70 @@ export abstract class OsmObject {
         OsmObject.DownloadObject(neededId,
             function (element) {
                 knownElements[neededId] = element; // assign the element for later, continue downloading the next element
-                OsmObject.DownloadAll(neededIds,knownElements, continuation);
+                OsmObject.DownloadAll(neededIds, knownElements, continuation);
             }
         );
+    }
+
+    abstract SaveExtraData(element);
+
+    /**
+     * Generates the changeset-XML for tags
+     * @constructor
+     */
+    TagsXML(): string {
+        let tags = "";
+        for (const key in this.tags) {
+            const v = this.tags[key];
+            if (v !== "") {
+                tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
+            }
+        }
+        return tags;
+    }
+
+    Download(continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
+        const self = this;
+        $.getJSON("https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id,
+            function (data) {
+                const element = data.elements[0];
+                self.tags = element.tags;
+                self.version = element.version;
+                self.SaveExtraData(element);
+                continuation(self, {
+                    "_last_edit:contributor": element.user,
+                    "_last_edit:contributor:uid": element.uid,
+                    "_last_edit:changeset": element.changeset,
+                    "_last_edit:timestamp": new Date(element.timestamp),
+                    "_version_number": element.version
+                });
+            }
+        );
+        return this;
+    }
+
+    public addTag(k: string, v: string): void {
+        if (k in this.tags) {
+            const oldV = this.tags[k];
+            if (oldV == v) {
+                return;
+            }
+            console.log("WARNING: overwriting ", oldV, " with ", v, " for key ", k)
+        }
+        this.tags[k] = v;
+        if (v === undefined || v === "") {
+            delete this.tags[k];
+        }
+        this.changed = true;
+    }
+
+    abstract ChangesetXML(changesetId: string): string;
+
+    protected VersionXML() {
+        if (this.version === undefined) {
+            return "";
+        }
+        return 'version="' + this.version + '"';
     }
 }
 
@@ -147,6 +147,15 @@ export class OsmNode extends OsmObject {
         this.lat = element.lat;
         this.lon = element.lon;
     }
+}
+
+export interface OsmObjectMeta{
+    "_last_edit:contributor": string,
+    "_last_edit:contributor:uid": number,
+    "_last_edit:changeset": number,
+    "_last_edit:timestamp": Date,
+    "_version_number": number
+
 }
 
 export class OsmWay extends OsmObject {
