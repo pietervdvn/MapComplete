@@ -1,5 +1,5 @@
 {
-  "id": "toilets",
+  "id": "toilet",
   "name": {
     "en": "Toilets",
     "de": "Toiletten",
@@ -16,15 +16,15 @@
     }
   },
   "icon": {
-    "render": "./assets/layers/toilets/toilets.svg",
+    "render": "./assets/layers/toilet/toilets.svg",
     "mappings": [
       {
         "if": "wheelchair=yes",
-        "then": "./assets/layers/toilets/wheelchair.svg"
+        "then": "./assets/layers/toilet/wheelchair.svg"
       },
       {
         "if": "toilets:position=urinals",
-        "then": "./assets/layers/toilets/urinal.svg"
+        "then": "./assets/layers/toilet/urinal.svg"
       }
     ]
   },

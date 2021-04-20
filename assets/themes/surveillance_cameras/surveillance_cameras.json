@@ -27,7 +27,7 @@
   "defaultBackgroundId": "osm",
   "layers": [
     "direction",
-    "surveillance_cameras"
+    "surveillance_camera"
   ],
   "roamingRenderings": []
 }

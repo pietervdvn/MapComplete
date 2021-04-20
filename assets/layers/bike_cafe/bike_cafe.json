@@ -1,5 +1,5 @@
 {
-  "id": "bike_cafes",
+  "id": "bike_cafe",
   "name": {
     "en": "Bike cafe",
     "nl": "Fietscafé",
@@ -11,7 +11,14 @@
   "source": {
     "osmTags": {
       "and": [
-        "amenity~pub|bar|cafe|restaurant",
+        {
+          "or": [
+            "amenity=pub",
+            "amenity=bar",
+            "amenity=cafe",
+            "amenity=restaurant"
+          ]
+        },
         {
           "#": "Note the double tilde in 'service:bicycle' which interprets the key as regex too",
           "or": [

@@ -1,5 +1,5 @@
 {
-  "id": "birdhides",
+  "id": "birdhide",
   "name": {
     "nl": "Vogelkijkhutten"
   },
@@ -178,7 +178,7 @@
   ],
   "icon": {
     "render": {
-      "nl": "./assets/layers/bird_hide/birdhide.svg"
+      "nl": "./assets/layers/birdhide/birdhide.svg"
     },
     "mappings": [
       {
@@ -189,7 +189,7 @@
             "amenity=shelter"
           ]
         },
-        "then": "./assets/layers/bird_hide/birdshelter.svg"
+        "then": "./assets/layers/birdhide/birdshelter.svg"
       }
     ]
   },

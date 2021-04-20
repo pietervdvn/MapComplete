@@ -23,6 +23,6 @@
   "widenFactor": 0.05,
   "icon": "./assets/themes/toilets/toilets.svg",
   "layers": [
-    "toilets"
+    "toilet"
   ]
 }

@@ -25,9 +25,9 @@ const layerFiles = ScriptUtils.readDirRecSync("./assets/layers")
     .map(path => {
         try {
             const parsed = JSON.parse(readFileSync(path, "UTF8"));
-            return parsed
+            return {parsed: parsed, path: path}
         } catch (e) {
-            console.error("Could not parse file ", path, "due to ", e)
+            console.error("Could not parse file ", "./assets/layers/"+ path, "due to ", e)
         }
     })
 const themeFiles: any[] = ScriptUtils.readDirRecSync("./assets/themes")
@@ -37,7 +37,7 @@ const themeFiles: any[] = ScriptUtils.readDirRecSync("./assets/themes")
         return JSON.parse(readFileSync(path, "UTF8"));
     })
 writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
-    "layers": layerFiles,
+    "layers": layerFiles.map(l => l.parsed),
     "themes": themeFiles
 }))
 
@@ -51,9 +51,7 @@ for (const i in licenses) {
 }
 const knownPaths = new Set<string>(licensePaths)
 
-const linuxHints = []
-
-function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
+function validateLayer(layerJson: LayerConfigJson, path: string, context?: string): string[] {
     let errorCount = [];
     if (layerJson["overpassTags"] !== undefined) {
         errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
@@ -65,9 +63,13 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         for (const remoteImage of remoteImages) {
             errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
             const path = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
-            linuxHints.push("wget " + remoteImage)
-            linuxHints.push(`echo '{"path":"${path}", "license": "<insert license here>", "authors": [ "<insert author(s) here"], "sources": [${remoteImage}] > ${path}.license_info.json`)
         }
+    
+        const expected  : string = `assets/layers/${layer.id}/${layer.id}.json`
+        if(path!=undefined && path.indexOf(expected)< 0){
+            errorCount.push("Layer is in an incorrect place. The path is "+path+", but expected "+expected)
+        }
+    
         for (const image of images) {
             if (!knownPaths.has(image)) {
                 const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
@@ -76,6 +78,7 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
         }
 
     } catch (e) {
+        console.error(e)
         return [`Layer ${layerJson.id}` ?? JSON.stringify(layerJson).substring(0, 50) + " is invalid: " + e]
     }
     return errorCount
@@ -84,8 +87,8 @@ function validateLayer(layerJson: LayerConfigJson, context?: string): string[] {
 let layerErrorCount = []
 const knownLayerIds = new Set<string>();
 for (const layerFile of layerFiles) {
-    knownLayerIds.add(layerFile.id)
-    layerErrorCount.push(...validateLayer(layerFile))
+    knownLayerIds.add(layerFile.parsed.id)
+    layerErrorCount.push(...validateLayer(layerFile.parsed, layerFile.path))
 }
 
 let themeErrorCount = []
@@ -94,7 +97,7 @@ for (const themeFile of themeFiles) {
     for (const layer of themeFile.layers) {
         if (typeof layer === "string") {
             if (!knownLayerIds.has(layer)) {
-                themeErrorCount.push("Unknown layer id: " + layer)
+                themeErrorCount.push(`Unknown layer id: ${layer} in theme ${themeFile.id}`)
             }
         } else {
             if (layer.builtin !== undefined) {
@@ -103,7 +106,7 @@ for (const themeFile of themeFiles) {
                 }
             } else {
                 // layer.builtin contains layer overrides - we can skip those
-                layerErrorCount.push(...validateLayer(layer, themeFile.id))
+                layerErrorCount.push(...validateLayer(layer,undefined, themeFile.id))
             }
         }
     }
@@ -129,7 +132,6 @@ if (layerErrorCount.length + themeErrorCount.length == 0) {
     console.log(errors)
     const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
     console.log(msg)
-    console.log(linuxHints.join("\n"))
     if (process.argv.indexOf("--report") >= 0) {
         console.log("Writing report!")
         writeFileSync("layer_report.txt", errors)

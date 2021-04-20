@@ -49,7 +49,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/layers/cycling_themed_object/other_services.svg"
+    "render": "./assets/layers/bike_themed_object/other_services.svg"
   },
   "width": {
     "render": "2"
