@@ -1,0 +1,135 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete Sport pitches",
+  "description": "A map showing sport pitches",
+  "project_url": "https://mapcomplete.osm.be/sport_pitches",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/layers/sport_pitch/tabletennis.svg",
+  "contact_name": "Pieter Vander Vennet, ",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "leisure",
+   "description": "The MapComplete theme Sport pitches has a layer Sport pitches showing features with this tag",
+   "value": "pitch"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'sport'"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=basketball with a fixed text, namely 'Basketball is played here' and allows to pick this as a default answer.",
+   "value": "basketball"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=soccer with a fixed text, namely 'Soccer is played here' and allows to pick this as a default answer.",
+   "value": "soccer"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=table_tennis with a fixed text, namely 'This is a pingpong table' and allows to pick this as a default answer.",
+   "value": "table_tennis"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=tennis with a fixed text, namely 'Tennis is played here' and allows to pick this as a default answer.",
+   "value": "tennis"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=korfball with a fixed text, namely 'Korfball is played here' and allows to pick this as a default answer.",
+   "value": "korfball"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'surface'"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer.",
+   "value": "grass"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer.",
+   "value": "sand"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer.",
+   "value": "paving_stones"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer.",
+   "value": "asphalt"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer.",
+   "value": "concrete"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows access=public with a fixed text, namely 'Publiek toegankelijk' and allows to pick this as a default answer.",
+   "value": "public"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows access=limited with a fixed text, namely 'Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)' and allows to pick this as a default answer.",
+   "value": "limited"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows access=members with a fixed text, namely 'Enkel toegankelijk voor leden van de bijhorende sportclub' and allows to pick this as a default answer.",
+   "value": "members"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows access=private with a fixed text, namely 'Privaat en niet toegankelijk' and allows to pick this as a default answer.",
+   "value": "private"
+  },
+  {
+   "key": "reservation",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows reservation=required with a fixed text, namely 'Reserveren is verplicht om gebruik te maken van dit sportterrein' and allows to pick this as a default answer.",
+   "value": "required"
+  },
+  {
+   "key": "reservation",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows reservation=recommended with a fixed text, namely 'Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein' and allows to pick this as a default answer.",
+   "value": "recommended"
+  },
+  {
+   "key": "reservation",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows reservation=yes with a fixed text, namely 'Reserveren is mogelijk, maar geen voorwaarde' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "reservation",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows reservation=no with a fixed text, namely 'Reserveren is niet mogelijk' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "phone",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'phone'"
+  },
+  {
+   "key": "email",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'email'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'opening_hours'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer.",
+   "value": "24/7"
+  }
+ ]
+}

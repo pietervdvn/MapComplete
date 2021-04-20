@@ -1,5 +1,5 @@
 {
-  "id": "picnic_tables",
+  "id": "picnic_table",
   "name": {
     "en": "Picnic tables",
     "nl": "Picnictafels"
@@ -51,7 +51,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "circle:#e6cf39;./assets/layers/benches/picnic_table.svg"
+    "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
   },
   "width": {
     "render": "8"

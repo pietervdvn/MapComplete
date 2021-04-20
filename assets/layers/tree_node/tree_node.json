@@ -1,5 +1,5 @@
 {
-  "id": "tree_nodes",
+  "id": "tree_node",
   "name": {
     "nl": "Boom",
     "en": "Tree"
@@ -277,8 +277,8 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/layers/trees/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
-            "en": "<img src=\"./assets/layers/trees/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
+            "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Erkend als houtig erfgoed door Onroerend Erfgoed Vlaanderen",
+            "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
           }
         },
         {
@@ -339,8 +339,8 @@
     },
     {
       "render": {
-        "nl": "<img src=\"./assets/layers/trees/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "en": "<img src=\"./assets/layers/trees/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",

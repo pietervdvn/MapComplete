@@ -80,6 +80,19 @@ export class RegexTag extends TagsFilter {
     }
 
     asChange(properties: any): { k: string; v: string }[] {
-        throw "Cannot convert a regex-tag into a change";
+        if(this.invert){
+            return []
+        }
+        if (typeof this.key === "string") {
+            if( typeof this.value === "string"){
+                return [{k: this.key, v: this.value}]
+            }
+            if(this.value.toString() != "/^..*$/"){
+                console.warn("Regex value in tag; using wildcard:", this.key, this.value)
+            }
+            return [{k: this.key, v: undefined}]
+        }
+        console.error("Cannot export regex tag to asChange; ", this.key, this.value)
+        return []
     }
 }

@@ -1,0 +1,41 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete Ghost bikes",
+  "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location",
+  "project_url": "https://mapcomplete.osm.be/ghostbikes",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/ghostbikes/logo.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "memorial",
+   "description": "The MapComplete theme Ghost bikes has a layer Ghost bikes showing features with this tag",
+   "value": "ghost_bike"
+  },
+  {
+   "key": "name",
+   "description": "Layer 'Ghost bikes' (in the MapComplete.osm.be theme 'Ghost bikes') shows and asks freeform values for key 'name'"
+  },
+  {
+   "key": "noname",
+   "description": "Layer 'Ghost bikes' (in the MapComplete.osm.be theme 'Ghost bikes') shows noname=yes with a fixed text, namely 'No name is marked on the bike' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "source",
+   "description": "Layer 'Ghost bikes' (in the MapComplete.osm.be theme 'Ghost bikes') shows and asks freeform values for key 'source'"
+  },
+  {
+   "key": "inscription",
+   "description": "Layer 'Ghost bikes' (in the MapComplete.osm.be theme 'Ghost bikes') shows and asks freeform values for key 'inscription'"
+  },
+  {
+   "key": "start_date",
+   "description": "Layer 'Ghost bikes' (in the MapComplete.osm.be theme 'Ghost bikes') shows and asks freeform values for key 'start_date'"
+  }
+ ]
+}

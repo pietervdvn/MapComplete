@@ -22,10 +22,10 @@
   "socialImage": "",
   "layers": [
     "drinking_water",
-    "birdhides",
-    "maps",
-    "information_boards",
-    "nature_reserves"
+    "birdhide",
+    "map",
+    "information_board",
+    "nature_reserve"
   ],
   "roamingRenderings": []
 }

@@ -1,0 +1,78 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete Open Shop Map",
+  "description": "An editable map with basic shop information",
+  "project_url": "https://mapcomplete.osm.be/shops",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/shops/shop.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "shop",
+   "description": "The MapComplete theme Open Shop Map has a layer Shop showing features with this tag"
+  },
+  {
+   "key": "name",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'name'"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'shop'"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=convenience with a fixed text, namely 'Convenience store' and allows to pick this as a default answer.",
+   "value": "convenience"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer.",
+   "value": "supermarket"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=clothes with a fixed text, namely 'Clothing store' and allows to pick this as a default answer.",
+   "value": "clothes"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer.",
+   "value": "hairdresser"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=bakery with a fixed text, namely 'Bakery' and allows to pick this as a default answer.",
+   "value": "bakery"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=car_repair with a fixed text, namely 'Car repair (garage)' and allows to pick this as a default answer.",
+   "value": "car_repair"
+  },
+  {
+   "key": "shop",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows shop=car with a fixed text, namely 'Car dealer' and allows to pick this as a default answer.",
+   "value": "car"
+  },
+  {
+   "key": "phone",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'phone'"
+  },
+  {
+   "key": "website",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'website'"
+  },
+  {
+   "key": "email",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'email'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Shop' (in the MapComplete.osm.be theme 'Open Shop Map') shows and asks freeform values for key 'opening_hours'"
+  }
+ ]
+}

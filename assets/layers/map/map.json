@@ -1,5 +1,5 @@
 {
-  "id": "maps",
+  "id": "map",
   "name": {
     "en": "Maps",
     "nl": "Kaarten"
@@ -126,7 +126,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/layers/maps/map.svg",
+    "render": "./assets/layers/map/map.svg",
     "mappings": [
       {
         "if": {
@@ -135,7 +135,7 @@
             "map_source:attribution=sticker"
           ]
         },
-        "then": "./assets/layers/maps/map-stickered.svg"
+        "then": "./assets/layers/map/map-stickered.svg"
       },
       {
         "if": {
@@ -144,7 +144,7 @@
             "map_source:attribution=yes"
           ]
         },
-        "then": "./assets/layers/maps/osm-logo-white-bg.svg"
+        "then": "./assets/layers/map/osm-logo-white-bg.svg"
       },
       {
         "if": {
@@ -152,7 +152,7 @@
             "map_source=OpenStreetMap"
           ]
         },
-        "then": "./assets/layers/maps/osm-logo-buggy-attr.svg"
+        "then": "./assets/layers/map/osm-logo-buggy-attr.svg"
       }
     ]
   },

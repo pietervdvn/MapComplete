@@ -28,7 +28,7 @@
     "maxZoom": 18
   },
   "layers": [
-    "tree_nodes"
+    "tree_node"
   ],
   "roamingRenderings": [],
   "defaultBackgroundId": "AGIV"

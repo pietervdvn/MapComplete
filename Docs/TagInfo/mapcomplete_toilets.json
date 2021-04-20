@@ -1,0 +1,122 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete Open Toilet Map",
+  "description": "A map of public toilets",
+  "project_url": "https://mapcomplete.osm.be/toilets",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/toilets/toilets.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Open Toilet Map has a layer Toilets showing features with this tag",
+   "value": "toilets"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows and asks freeform values for key 'access'"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer.",
+   "value": "customers"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer.",
+   "value": "key"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "fee",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "charge",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows and asks freeform values for key 'charge'"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "toilets:position",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer.",
+   "value": "seated"
+  },
+  {
+   "key": "toilets:position",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows toilets:position=urinals with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer.",
+   "value": "urinals"
+  },
+  {
+   "key": "toilets:position",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer.",
+   "value": "squat"
+  },
+  {
+   "key": "toilets:position",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows toilets:position=seated;urinals with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer.",
+   "value": "seated;urinals"
+  },
+  {
+   "key": "changing_table",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "changing_table",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "changing_table:location",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows and asks freeform values for key 'changing_table:location'"
+  },
+  {
+   "key": "changing_table:location",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer.",
+   "value": "female_toilet"
+  },
+  {
+   "key": "changing_table:location",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer.",
+   "value": "male_toilet"
+  },
+  {
+   "key": "changing_table:location",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer.",
+   "value": "wheelchair_toilet"
+  },
+  {
+   "key": "changing_table:location",
+   "description": "Layer 'Toilets' (in the MapComplete.osm.be theme 'Open Toilet Map') shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer.",
+   "value": "dedicated_room"
+  }
+ ]
+}

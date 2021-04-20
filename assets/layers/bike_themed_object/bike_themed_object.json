@@ -10,11 +10,16 @@
   "source": {
     "osmTags": {
       "or": [
-        "theme~cycling|bicycle",
+        "theme=bicycle",
+        "theme=cycling",
         "sport=cycling",
-        "association~cycling|bicycle",
-        "ngo~cycling|bicycle",
-        "club~bicycle|cycling"
+        "association=cycling",
+        "association=bicycle",
+        "ngo=cycling",
+        "ngo=bicycle",
+
+        "club=bicycle",
+        "club=cycling"
       ]
     }
   },
@@ -49,7 +54,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/layers/cycling_themed_object/other_services.svg"
+    "render": "./assets/layers/bike_themed_object/other_services.svg"
   },
   "width": {
     "render": "2"

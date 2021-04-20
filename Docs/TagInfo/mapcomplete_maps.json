@@ -1,0 +1,73 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete A map of maps",
+  "description": "This theme shows all (touristic) maps that OpenStreetMap knows of",
+  "project_url": "https://mapcomplete.osm.be/maps",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/maps/logo.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "tourism",
+   "description": "The MapComplete theme A map of maps has a layer Maps showing features with this tag",
+   "value": "map"
+  },
+  {
+   "key": "information",
+   "description": "The MapComplete theme A map of maps has a layer Maps showing features with this tag",
+   "value": "map"
+  },
+  {
+   "key": "map_source",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows and asks freeform values for key 'map_source'"
+  },
+  {
+   "key": "map_source",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer.",
+   "value": "OpenStreetMap"
+  },
+  {
+   "key": "not:map_source",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer. Picking this answer will delete the key not:map_source.",
+   "value": ""
+  },
+  {
+   "key": "map_source:attribution",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "map_source:attribution",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer.",
+   "value": "incomplete"
+  },
+  {
+   "key": "map_source:attribution",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer.",
+   "value": "sticker"
+  },
+  {
+   "key": "map_source:attribution",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer.",
+   "value": "none"
+  },
+  {
+   "key": "service:bicycle:cleaning:charge",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+  },
+  {
+   "key": "service:bicycle:cleaning:fee",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "value": "no&service:bicycle:cleaning:charge="
+  },
+  {
+   "key": "service:bicycle:cleaning:fee",
+   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "value": "yes"
+  }
+ ]
+}

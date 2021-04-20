@@ -1,0 +1,63 @@
+{
+ "data_format": 1,
+ "data_updated": "20210320T093904Z",
+ "project": {
+  "name": "MapComplete Drinking Water",
+  "description": "On this map, publicly accessible drinkging water spots are shown and can be easily added",
+  "project_url": "https://mapcomplete.osm.be/drinking_water",
+  "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+  "icon_url": "https://mapcomplete.osm.be/./assets/themes/drinking_water/logo.svg",
+  "contact_name": "Pieter Vander Vennet, MapComplete",
+  "contact_email": "pietervdvn@posteo.net"
+ },
+ "tags": [
+  {
+   "key": "amenity",
+   "description": "The MapComplete theme Drinking Water has a layer Drinking water showing features with this tag",
+   "value": "drinking_water"
+  },
+  {
+   "key": "operational_status",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows and asks freeform values for key 'operational_status'"
+  },
+  {
+   "key": "operational_status",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer. Picking this answer will delete the key operational_status.",
+   "value": ""
+  },
+  {
+   "key": "operational_status",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer.",
+   "value": "broken"
+  },
+  {
+   "key": "operational_status",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer.",
+   "value": "closed"
+  },
+  {
+   "key": "bottle",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "bottle",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "service:bicycle:cleaning:charge",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+  },
+  {
+   "key": "service:bicycle:cleaning:fee",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "value": "no&service:bicycle:cleaning:charge="
+  },
+  {
+   "key": "service:bicycle:cleaning:fee",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "value": "yes"
+  }
+ ]
+}
