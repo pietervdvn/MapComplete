@@ -125,7 +125,12 @@ export default class UpdateFromOverpass implements FeatureSource {
 
     private update(): void {
         if (this.runningQuery.data) {
-            console.log("Still running a query, skip");
+            console.log("Still running a query, not updating");
+            return;
+        }
+        
+        if(this.timeout.data > 0){
+            console.log("Still in timeout - not updating")
             return;
         }
 
