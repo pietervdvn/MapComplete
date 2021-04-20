@@ -1,6 +1,6 @@
 {
  "data_format": 1,
- "data_updated": "20210319T161618Z",
+ "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Fietsstraten",
   "description": "Een kaart met alle gekende fietsstraten",
@@ -17,13 +17,171 @@
    "value": "yes"
   },
   {
+   "key": "cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'Fietsstraten' (in the MapComplete.osm.be theme 'Fietsstraten') shows and asks freeform values for key 'cyclestreet:start_date'"
+  },
+  {
    "key": "proposed:cyclestreet",
    "description": "The MapComplete theme Fietsstraten has a layer Toekomstige fietsstraat showing features with this tag",
    "value": "yes"
   },
   {
+   "key": "cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'Toekomstige fietsstraat' (in the MapComplete.osm.be theme 'Fietsstraten') shows and asks freeform values for key 'cyclestreet:start_date'"
+  },
+  {
    "key": "highway",
-   "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag"
+   "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag",
+   "value": "residential"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag",
+   "value": "tertiary"
+  },
+  {
+   "key": "highway",
+   "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag",
+   "value": "unclassified"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "maxspeed",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "30"
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'Deze straat is een fietsstraat (en dus zone 30)' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=yes with a fixed text, namely 'Deze straat wordt binnenkort een fietsstraat' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "proposed:cyclestreet",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key proposed:cyclestreet.",
+   "value": ""
+  },
+  {
+   "key": "overtaking:motor_vehicle",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows cyclestreet=&proposed:cyclestreet=&overtaking:motor_vehicle= with a fixed text, namely 'Deze straat is geen fietsstraat' and allows to pick this as a default answer. Picking this answer will delete the key overtaking:motor_vehicle.",
+   "value": ""
+  },
+  {
+   "key": "cyclestreet:start_date",
+   "description": "Layer 'Alle straten' (in the MapComplete.osm.be theme 'Fietsstraten') shows and asks freeform values for key 'cyclestreet:start_date'"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "data_format": 1,
- "data_updated": "20210319T161618Z",
+ "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Charging stations",
   "description": "A worldwide map of charging stations",
@@ -15,6 +15,87 @@
    "key": "amenity",
    "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
    "value": "charging_station"
+  },
+  {
+   "key": "motorcar",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=yes&bicycle=yes with a fixed text, namely 'This is a charging station for <b>both bicycles and cars</b>' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "bicycle",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=yes&bicycle=yes with a fixed text, namely 'This is a charging station for <b>both bicycles and cars</b>' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "motorcar",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=&car=&bicycle=yes with a fixed text, namely 'This is a charging station exclusively for <b>bicycles</b>' and allows to pick this as a default answer. Picking this answer will delete the key motorcar.",
+   "value": ""
+  },
+  {
+   "key": "car",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=&car=&bicycle=yes with a fixed text, namely 'This is a charging station exclusively for <b>bicycles</b>' and allows to pick this as a default answer. Picking this answer will delete the key car.",
+   "value": ""
+  },
+  {
+   "key": "bicycle",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=&car=&bicycle=yes with a fixed text, namely 'This is a charging station exclusively for <b>bicycles</b>' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "motorcar",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=yes&car=&bicycle= with a fixed text, namely 'This is a charging station exclusively for <b>electric cars and similar vehicles</b>' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "car",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=yes&car=&bicycle= with a fixed text, namely 'This is a charging station exclusively for <b>electric cars and similar vehicles</b>' and allows to pick this as a default answer. Picking this answer will delete the key car.",
+   "value": ""
+  },
+  {
+   "key": "bicycle",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows motorcar=yes&car=&bicycle= with a fixed text, namely 'This is a charging station exclusively for <b>electric cars and similar vehicles</b>' and allows to pick this as a default answer. Picking this answer will delete the key bicycle.",
+   "value": ""
+  },
+  {
+   "key": "capacity",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows values with key 'capacity'"
+  },
+  {
+   "key": "authentication:phone_call:number",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows values with key 'authentication:phone_call:number'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows and asks freeform values for key 'opening_hours'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer.",
+   "value": "24/7"
+  },
+  {
+   "key": "network",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows and asks freeform values for key 'network'"
+  },
+  {
+   "key": "no:network",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows no:network=yes with a fixed text, namely 'Not part of a bigger network' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "network",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows network=AeroVironment with a fixed text, namely 'AeroVironment' and allows to pick this as a default answer.",
+   "value": "AeroVironment"
+  },
+  {
+   "key": "network",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows network=Blink with a fixed text, namely 'Blink' and allows to pick this as a default answer.",
+   "value": "Blink"
+  },
+  {
+   "key": "network",
+   "description": "Layer 'Charging stations' (in the MapComplete.osm.be theme 'Charging stations') shows network=eVgo with a fixed text, namely 'eVgo' and allows to pick this as a default answer.",
+   "value": "eVgo"
   }
  ]
 }

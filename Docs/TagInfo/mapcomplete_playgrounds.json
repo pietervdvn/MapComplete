@@ -1,6 +1,6 @@
 {
  "data_format": 1,
- "data_updated": "20210319T161618Z",
+ "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Playgrounds",
   "description": "A map with playgrounds",
@@ -15,6 +15,119 @@
    "key": "leisure",
    "description": "The MapComplete theme Playgrounds has a layer Playgrounds showing features with this tag",
    "value": "playground"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'surface'"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer.",
+   "value": "grass"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer.",
+   "value": "sand"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=woodchips with a fixed text, namely 'The surface consist of <b>woodchips</b>' and allows to pick this as a default answer.",
+   "value": "woodchips"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer.",
+   "value": "paving_stones"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer.",
+   "value": "asphalt"
+  },
+  {
+   "key": "surface",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer.",
+   "value": "concrete"
+  },
+  {
+   "key": "lit",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows lit=yes with a fixed text, namely 'This playground is lit at night' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "lit",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows lit=no with a fixed text, namely 'This playground is not lit at night' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "min_age",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'min_age'"
+  },
+  {
+   "key": "max_age",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'max_age'"
+  },
+  {
+   "key": "operator",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'operator'"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows access=yes with a fixed text, namely 'Accessible to the general public' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows access=customers with a fixed text, namely 'Only accessible for clients of the operating business' and allows to pick this as a default answer.",
+   "value": "customers"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows access=students with a fixed text, namely 'Only accessible to studants of the school' and allows to pick this as a default answer.",
+   "value": "students"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows access=private with a fixed text, namely 'Not accessible' and allows to pick this as a default answer.",
+   "value": "private"
+  },
+  {
+   "key": "email",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'email'"
+  },
+  {
+   "key": "phone",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'phone'"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows wheelchair=yes with a fixed text, namely 'Completely accessible for wheelchair users' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows wheelchair=limited with a fixed text, namely 'Limited accessibility for wheelchair users' and allows to pick this as a default answer.",
+   "value": "limited"
+  },
+  {
+   "key": "wheelchair",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows wheelchair=no with a fixed text, namely 'Not accessible for wheelchair users' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows and asks freeform values for key 'opening_hours'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows opening_hours=sunrise-sunset with a fixed text, namely 'Accessible from sunrise till sunset' and allows to pick this as a default answer.",
+   "value": "sunrise-sunset"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Playgrounds' (in the MapComplete.osm.be theme 'Playgrounds') shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer.",
+   "value": "24/7"
   }
  ]
 }

@@ -13,20 +13,60 @@ import {readFileSync, writeFile, writeFileSync} from "fs";
 
 const outputDirectory = "Docs/TagInfo"
 
+function generateTagOverview(kv: { k: string, v: string }, description: string) {
+    const overview = {
+        // OSM tag key (required)
+        key: kv.k,
+        description: description
+    };
+    if (kv.v !== undefined) {
+        // OSM tag value (optional, if not supplied it means "all values")
+        overview["value"] = kv.v
+    }
+    return overview
+}
+
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
     const usedTags = layer.source.osmTags.asChange({})
     const result = []
     for (const kv of usedTags) {
-        const overview = {
-            // OSM tag key (required)
-            key: kv.k,
-            description: "The MapComplete theme " + layout.title.txt + " has a layer " + layer.name.txt + " showing features with this tag"
-        };
-        if (kv.v !== undefined) {
-            // OSM tag value (optional, if not supplied it means "all values")
-            overview["value"] = kv.v
+        const description = "The MapComplete theme " + layout.title.txt + " has a layer " + layer.name.txt + " showing features with this tag"
+        result.push(generateTagOverview(kv, description))
+    }
+
+    for (const tr of layer.tagRenderings) {
+        const q = tr.question?.txt;
+        const key = tr.freeform?.key;
+        if (key != undefined) {
+            let descr = "Layer '" + layer.name.txt + "' (in the MapComplete.osm.be theme '" + layout.title.txt + "')";
+            if (q == undefined) {
+                descr += " shows values with";
+            } else {
+                descr += " shows and asks freeform values for"
+            }
+            descr += " key '" + key + "'"
+            result.push(generateTagOverview({k: key, v: undefined}, descr))
         }
-        result.push(overview)
+
+        const mappings = tr.mappings ?? []
+        for (const mapping of mappings) {
+
+            let descr = "Layer '" + layer.name.txt + "' (in the MapComplete.osm.be theme '" + layout.title.txt + "')";
+            descr += " shows " + mapping.if.asHumanString(false, false, {}) + " with a fixed text, namely '" + mapping.then.txt + "'";
+            if (q != undefined
+                && mapping.hideInAnswer != true // != true will also match if a 
+            ) {
+                descr += " and allows to pick this as a default answer."
+            }
+            for (const kv of mapping.if.asChange({})) {
+                let d = descr;
+                if (q!=undefined && kv.v == "") {
+                    d = `${descr} Picking this answer will delete the key ${kv.k}.`
+                }
+                result.push(generateTagOverview(kv, d))
+            }
+
+        }
     }
     return result;
 }
@@ -97,5 +137,6 @@ let projectList = readFileSync(tagInfoList, "UTF8")
     .sort()
     .filter(entry => entry != "")
 
-console.log("Writing taginfo project filelist")
-writeFileSync(tagInfoList, projectList.join("\n")+"\n")
+console.log("Writing taginfo project filelist");
+writeFileSync(tagInfoList, projectList.join("\n") + "\n");
+    

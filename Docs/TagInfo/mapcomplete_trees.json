@@ -1,6 +1,6 @@
 {
  "data_format": 1,
- "data_updated": "20210319T161618Z",
+ "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Trees",
   "description": "Map all the trees",
@@ -15,6 +15,128 @@
    "key": "natural",
    "description": "The MapComplete theme Trees has a layer Tree showing features with this tag",
    "value": "tree"
+  },
+  {
+   "key": "leaf_type",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_type=broadleaved with a fixed text, namely '<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved' and allows to pick this as a default answer.",
+   "value": "broadleaved"
+  },
+  {
+   "key": "leaf_type",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_type=needleleaved with a fixed text, namely '<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved' and allows to pick this as a default answer.",
+   "value": "needleleaved"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=landmark with a fixed text, namely 'The tree is remarkable due to its size or prominent location. It is useful for navigation.' and allows to pick this as a default answer.",
+   "value": "landmark"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=natural_monument with a fixed text, namely 'The tree is a natural monument, e.g. because it is especially old, or of a valuable species.' and allows to pick this as a default answer.",
+   "value": "natural_monument"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=agricultural with a fixed text, namely 'The tree is used for agricultural purposes, e.g. in an orchard.' and allows to pick this as a default answer.",
+   "value": "agricultural"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=park with a fixed text, namely 'The tree is in a park or similar (cemetery, school grounds, …).' and allows to pick this as a default answer.",
+   "value": "park"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=garden with a fixed text, namely 'The tree is a residential garden.' and allows to pick this as a default answer.",
+   "value": "garden"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=avenue with a fixed text, namely 'This is a tree along an avenue.' and allows to pick this as a default answer.",
+   "value": "avenue"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=urban with a fixed text, namely 'The tree is an urban area.' and allows to pick this as a default answer.",
+   "value": "urban"
+  },
+  {
+   "key": "denotation",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows denotation=none with a fixed text, namely 'The tree is outside of an urban area.' and allows to pick this as a default answer.",
+   "value": "none"
+  },
+  {
+   "key": "leaf_cycle",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_cycle=deciduous with a fixed text, namely 'Deciduous: the tree loses its leaves for some time of the year.' and allows to pick this as a default answer.",
+   "value": "deciduous"
+  },
+  {
+   "key": "leaf_cycle",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_cycle=evergreen with a fixed text, namely 'Evergreen.' and allows to pick this as a default answer.",
+   "value": "evergreen"
+  },
+  {
+   "key": "name",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows and asks freeform values for key 'name'"
+  },
+  {
+   "key": "name",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows name=&noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer. Picking this answer will delete the key name.",
+   "value": ""
+  },
+  {
+   "key": "noname",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows name=&noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "heritage",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely '<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer.",
+   "value": "4"
+  },
+  {
+   "key": "heritage:operator",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=4&heritage:operator=OnroerendErfgoed with a fixed text, namely '<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer.",
+   "value": "OnroerendErfgoed"
+  },
+  {
+   "key": "heritage",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=4&heritage:operator=aatl with a fixed text, namely 'Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels' and allows to pick this as a default answer.",
+   "value": "4"
+  },
+  {
+   "key": "heritage:operator",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=4&heritage:operator=aatl with a fixed text, namely 'Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels' and allows to pick this as a default answer.",
+   "value": "aatl"
+  },
+  {
+   "key": "heritage",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=yes&heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer.",
+   "value": "yes"
+  },
+  {
+   "key": "heritage:operator",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=yes&heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer. Picking this answer will delete the key heritage:operator.",
+   "value": ""
+  },
+  {
+   "key": "heritage",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=no&heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer.",
+   "value": "no"
+  },
+  {
+   "key": "heritage:operator",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=no&heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer. Picking this answer will delete the key heritage:operator.",
+   "value": ""
+  },
+  {
+   "key": "ref:OnroerendErfgoed",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows and asks freeform values for key 'ref:OnroerendErfgoed'"
+  },
+  {
+   "key": "wikidata",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows and asks freeform values for key 'wikidata'"
   }
  ]
 }
