@@ -358,6 +358,7 @@ theme_remappings = {
     "wiki-User-joost_schouppe-campersite": "campersite",
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
     "wiki:User:joost_schouppe/campersite": "campersite",
+    "arbres":"arbres_leffia",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
 }
 
