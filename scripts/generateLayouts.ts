@@ -234,6 +234,7 @@ if (!existsSync(generatedDir)) {
 }
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
+// @ts-ignore
 const all : LayoutConfigJson[] = all_known_layouts.themes;
 
 for (const i in all) {
