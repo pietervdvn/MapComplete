@@ -38,26 +38,27 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
         const q = tr.question?.txt;
         const key = tr.freeform?.key;
         if (key != undefined) {
-            let descr = "Layer '" + layer.name.txt + "' (in the MapComplete.osm.be theme '" + layout.title.txt + "')";
+            let descr = `Layer '${layer.name.txt}'`;
             if (q == undefined) {
                 descr += " shows values with";
             } else {
                 descr += " shows and asks freeform values for"
             }
-            descr += " key '" + key + "'"
+            descr += ` key '${key}' (in the MapComplete.osm.be theme '${layout.title.txt}')`
             result.push(generateTagOverview({k: key, v: undefined}, descr))
         }
 
         const mappings = tr.mappings ?? []
         for (const mapping of mappings) {
 
-            let descr = "Layer '" + layer.name.txt + "' (in the MapComplete.osm.be theme '" + layout.title.txt + "')";
+            let descr = "Layer '" + layer.name.txt + "'";
             descr += " shows " + mapping.if.asHumanString(false, false, {}) + " with a fixed text, namely '" + mapping.then.txt + "'";
             if (q != undefined
                 && mapping.hideInAnswer != true // != true will also match if a 
             ) {
-                descr += " and allows to pick this as a default answer."
+                descr += " and allows to pick this as a default answer"
             }
+            descr += ` (in the MapComplete.osm.be theme '${layout.title.txt}')`
             for (const kv of mapping.if.asChange({})) {
                 let d = descr;
                 if (q!=undefined && kv.v == "") {

@@ -17,50 +17,50 @@
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'operational_status'"
+   "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer. Picking this answer will delete the key operational_status.",
+   "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key operational_status.",
    "value": ""
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "broken"
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "closed"
   },
   {
    "key": "bottle",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "bottle",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Drinking water' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
@@ -70,100 +70,100 @@
   },
   {
    "key": "shelter",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "building",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer. Picking this answer will delete the key building.",
+   "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key building.",
    "value": ""
   },
   {
    "key": "amenity",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer. Picking this answer will delete the key amenity.",
+   "description": "Layer 'Vogelkijkhutten' shows shelter=no&building=&amenity= with a fixed text, namely 'Vogelkijkwand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key amenity.",
    "value": ""
   },
   {
    "key": "amenity",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "shelter"
   },
   {
    "key": "building",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "shelter",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter&building=yes&shelter=yes with a fixed text, namely 'Vogelkijkhut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "amenity",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut'",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "shelter"
   },
   {
    "key": "building",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut'",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "shelter",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut'",
+   "description": "Layer 'Vogelkijkhutten' shows amenity=shelter|building=yes|shelter=yes with a fixed text, namely 'Vogelkijkhut' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "wheelchair",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows wheelchair=designated with a fixed text, namely 'Er zijn speciale voorzieningen voor rolstoelen' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows wheelchair=designated with a fixed text, namely 'Er zijn speciale voorzieningen voor rolstoelen' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "designated"
   },
   {
    "key": "wheelchair",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows wheelchair=yes with a fixed text, namely 'Een rolstoel raakt er vlot' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows wheelchair=yes with a fixed text, namely 'Een rolstoel raakt er vlot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "wheelchair",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows wheelchair=limited with a fixed text, namely 'Je kan er raken met een rolstoel, maar het is niet makkelijk' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows wheelchair=limited with a fixed text, namely 'Je kan er raken met een rolstoel, maar het is niet makkelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "limited"
   },
   {
    "key": "wheelchair",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows wheelchair=no with a fixed text, namely 'Niet rolstoeltoegankelijk' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows wheelchair=no with a fixed text, namely 'Niet rolstoeltoegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "operator",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'operator'"
+   "description": "Layer 'Vogelkijkhutten' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "operator",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows operator=Natuurpunt with a fixed text, namely 'Beheer door Natuurpunt' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows operator=Natuurpunt with a fixed text, namely 'Beheer door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "Natuurpunt"
   },
   {
    "key": "operator",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Beheer door het Agentschap Natuur en Bos ' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows operator=Agentschap Natuur en Bos with a fixed text, namely 'Beheer door het Agentschap Natuur en Bos ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "Agentschap Natuur en Bos"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Vogelkijkhutten' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Vogelkijkhutten' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Vogelkijkhutten' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
@@ -178,60 +178,60 @@
   },
   {
    "key": "map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'map_source'"
+   "description": "Layer 'Maps' shows and asks freeform values for key 'map_source' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "OpenStreetMap"
   },
   {
    "key": "not:map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer. Picking this answer will delete the key not:map_source.",
+   "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key not:map_source.",
    "value": ""
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "incomplete"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "sticker"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "none"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all'",
+   "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Maps' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
@@ -241,21 +241,21 @@
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Information boards' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Information boards' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Information boards' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Information boards' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Information boards' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Information boards' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
@@ -270,165 +270,165 @@
   },
   {
    "key": "access:description",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'access:description'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'access:description' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer. Picking this answer will delete the key fee.",
+   "description": "Layer 'Natuurgebied' shows access=yes&fee= with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
    "value": ""
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer. Picking this answer will delete the key fee.",
+   "description": "Layer 'Natuurgebied' shows access=no&fee= with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
    "value": ""
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "private"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer. Picking this answer will delete the key fee.",
+   "description": "Layer 'Natuurgebied' shows access=private&fee= with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
    "value": ""
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "permissive"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer. Picking this answer will delete the key fee.",
+   "description": "Layer 'Natuurgebied' shows access=permissive&fee= with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
    "value": ""
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "guided"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer. Picking this answer will delete the key fee.",
+   "description": "Layer 'Natuurgebied' shows access=guided&fee= with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key fee.",
    "value": ""
   },
   {
    "key": "access",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "operator",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'operator'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "operator",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows operator=Natuurpunt with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows operator=Natuurpunt with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "Natuurpunt"
   },
   {
    "key": "operator",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}'"
+   "description": "Layer 'Natuurgebied' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "operator",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows operator=Agentschap Natuur en Bos with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows operator=Agentschap Natuur en Bos with a fixed text, namely '<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "Agentschap Natuur en Bos"
   },
   {
    "key": "name:nl",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'name:nl'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'name:nl' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "name",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'name'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "noname",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "name",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer. Picking this answer will delete the key name.",
+   "description": "Layer 'Natuurgebied' shows noname=yes&name= with a fixed text, namely 'Dit gebied heeft geen naam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in') Picking this answer will delete the key name.",
    "value": ""
   },
   {
    "key": "dog",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "leashed"
   },
   {
    "key": "dog",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no"
   },
   {
    "key": "dog",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   },
   {
    "key": "website",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'website'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "curator",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'curator'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'curator' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "email",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'email'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "phone",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'phone'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "description",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows values with key 'description'"
+   "description": "Layer 'Natuurgebied' shows values with key 'description' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "description:0",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'description:0'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'description:0' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "_surface:ha",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows _surface:ha=0 with a fixed text, namely ''",
+   "description": "Layer 'Natuurgebied' shows _surface:ha=0 with a fixed text, namely '' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "0"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Natuurgebied' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'De Natuur in')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Natuurgebied' (in the MapComplete.osm.be theme 'De Natuur in') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Natuurgebied' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'De Natuur in')",
    "value": "yes"
   }
  ]

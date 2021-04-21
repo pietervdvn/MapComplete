@@ -17,50 +17,50 @@
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows and asks freeform values for key 'operational_status'"
+   "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the MapComplete.osm.be theme 'Drinking Water')"
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer. Picking this answer will delete the key operational_status.",
+   "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water') Picking this answer will delete the key operational_status.",
    "value": ""
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "broken"
   },
   {
    "key": "operational_status",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "closed"
   },
   {
    "key": "bottle",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "yes"
   },
   {
    "key": "bottle",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "no"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Drinking water' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Drinking Water')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Drinking water' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
    "value": "yes"
   }
  ]

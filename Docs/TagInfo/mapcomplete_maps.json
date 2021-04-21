@@ -22,60 +22,60 @@
   },
   {
    "key": "map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows and asks freeform values for key 'map_source'"
+   "description": "Layer 'Maps' shows and asks freeform values for key 'map_source' (in the MapComplete.osm.be theme 'A map of maps')"
   },
   {
    "key": "map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "OpenStreetMap"
   },
   {
    "key": "not:map_source",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer. Picking this answer will delete the key not:map_source.",
+   "description": "Layer 'Maps' shows map_source=OpenStreetMap&not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps') Picking this answer will delete the key not:map_source.",
    "value": ""
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "yes"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "incomplete"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "sticker"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "none"
   },
   {
    "key": "map_source:attribution",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all'",
+   "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "no"
   },
   {
    "key": "service:bicycle:cleaning:charge",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows and asks freeform values for key 'service:bicycle:cleaning:charge'"
+   "description": "Layer 'Maps' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'A map of maps')"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "no&service:bicycle:cleaning:charge="
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use' (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
-   "description": "Layer 'Maps' (in the MapComplete.osm.be theme 'A map of maps') shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer.",
+   "description": "Layer 'Maps' shows service:bicycle:cleaning:fee=yes with a fixed text, namely 'The cleaning service has a fee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'A map of maps')",
    "value": "yes"
   }
  ]
