@@ -72,12 +72,9 @@ if(layoutToUse.id === "cyclofix"){
     QueryParameters.GetQueryParameter("layer-bike_shops", "true", "Legacy - keep De Fietsambassade working").syncWith(
         QueryParameters.GetQueryParameter("layer-bike_shop","true","Legacy - keep De Fietsambassade working")
     )
-    const bikeShops = QueryParameters.GetQueryParameter("layer-bike_cafes", "true", "Legacy - keep De Fietsambassade working").syncWith(
+    const bikecafes = QueryParameters.GetQueryParameter("layer-bike_cafes", "true", "Legacy - keep De Fietsambassade working").syncWith(
         QueryParameters.GetQueryParameter("layer-bike_cafe","true","Legacy - keep De Fietsambassade working")
     )
-    if(!bikeShops.data){
-        QueryParameters.GetQueryParameter("layer-bike_themed_object", "Legacy - hide bike themed object").setData("false")
-    }
 }
 
 
