@@ -143,6 +143,8 @@
       }
     },
     {
+      "id": "speelplekken-cache",
+      "name": "",
       "source": {
         "osmTags": {
           "or": []

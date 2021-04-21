@@ -250,7 +250,8 @@
             "en": "Always accessible"
           }
         }
-      ]
+      ],
+      "condition": "access~*"
     },
     "questions",
     {
