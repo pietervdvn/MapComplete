@@ -84,13 +84,17 @@ if (layoutFromBase64.startsWith("http")) {
         success: (data) => {
 
             try {
-                const parsed = JSON.parse(data);
+                console.log("Received ", data)
+                let parsed = data;
+                if(typeof parsed == "string"){
+                    parsed = JSON.parse(data);
+                }
                 // Overwrite the id to the wiki:value
                 parsed.id = link;
                 const layout = new LayoutConfig(parsed, false);
                 InitUiElements.InitAll(layout, layoutFromBase64, testing, layoutFromBase64, btoa(data));
             } catch (e) {
-                new FixedUiElement(`<a href="${link}">${link}</a> is invalid:<br/>${e}<br/> <a href='https://${window.location.host}/'>Go back</a>")`)
+                new FixedUiElement(`<a href="${link}">${link}</a> is invalid:<br/>${e}<br/> <a href='https://${window.location.host}/'>Go back</a>`)
                     .SetClass("clickable")
                     .AttachTo("centermessage");
                 console.error("Could not parse the text", data)
