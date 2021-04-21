@@ -95,7 +95,8 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
 
         //  "data_url": "...",          # this should be the URL under which this project file can be accessed (optional)
         // timestamp when project file was updated (optional, will use HTTP header date if not available)
-        "data_updated": generationTime,
+        // Not marked as not to pollute the github history
+        //"data_updated": generationTime,
         "project": {
             "name": "MapComplete " + layout.title.txt,          // name of the project (required)
             "description": layout.shortDescription.txt,   // short description of the project (required)

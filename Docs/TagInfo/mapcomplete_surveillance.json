@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Surveillance under Surveillance",
   "description": "Surveillance cameras and other means of surveillance",
@@ -86,6 +85,11 @@
    "key": "indoor",
    "description": "Layer 'Surveillance camera's' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "indoor",
+   "description": "Layer 'Surveillance camera's' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') shows indoor= with a fixed text, namely 'This camera is probably located outdoors' Picking this answer will delete the key indoor.",
+   "value": ""
   },
   {
    "key": "level",

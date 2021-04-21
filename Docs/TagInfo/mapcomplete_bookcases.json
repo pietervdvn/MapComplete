@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Open Bookcase Map",
   "description": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored",
@@ -58,6 +57,11 @@
    "key": "indoor",
    "description": "Layer 'Bookcases' (in the MapComplete.osm.be theme 'Open Bookcase Map') shows indoor=no with a fixed text, namely 'This bookcase is located outdoors' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "indoor",
+   "description": "Layer 'Bookcases' (in the MapComplete.osm.be theme 'Open Bookcase Map') shows indoor= with a fixed text, namely 'This bookcase is located outdoors' Picking this answer will delete the key indoor.",
+   "value": ""
   },
   {
    "key": "access",

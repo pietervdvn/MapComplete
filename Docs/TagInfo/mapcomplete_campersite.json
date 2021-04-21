@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Campersites",
   "description": "Find sites to spend the night with your camper",
@@ -36,6 +35,11 @@
    "value": ""
   },
   {
+   "key": "fee",
+   "description": "Layer 'Camper sites' (in the MapComplete.osm.be theme 'Campersites') shows fee=no with a fixed text, namely 'Can be used for free'",
+   "value": "no"
+  },
+  {
    "key": "charge",
    "description": "Layer 'Camper sites' (in the MapComplete.osm.be theme 'Campersites') shows and asks freeform values for key 'charge'"
   },
@@ -57,6 +61,16 @@
    "key": "internet_access",
    "description": "Layer 'Camper sites' (in the MapComplete.osm.be theme 'Campersites') shows internet_access=yes with a fixed text, namely 'There is internet access' and allows to pick this as a default answer.",
    "value": "yes"
+  },
+  {
+   "key": "internet_access",
+   "description": "Layer 'Camper sites' (in the MapComplete.osm.be theme 'Campersites') shows internet_access=wifi|internet_access=wlan with a fixed text, namely 'There is internet access'",
+   "value": "wifi"
+  },
+  {
+   "key": "internet_access",
+   "description": "Layer 'Camper sites' (in the MapComplete.osm.be theme 'Campersites') shows internet_access=wifi|internet_access=wlan with a fixed text, namely 'There is internet access'",
+   "value": "wlan"
   },
   {
    "key": "internet_access",
@@ -178,6 +192,11 @@
    "key": "access",
    "description": "Layer 'Sanitary dump stations' (in the MapComplete.osm.be theme 'Campersites') shows access=customers with a fixed text, namely 'You need to be a customer of camping/campersite to use this place' and allows to pick this as a default answer.",
    "value": "customers"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Sanitary dump stations' (in the MapComplete.osm.be theme 'Campersites') shows access=public with a fixed text, namely 'Anyone can use this dump station'",
+   "value": "public"
   },
   {
    "key": "access",

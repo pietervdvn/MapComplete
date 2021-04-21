@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Trees",
   "description": "Map all the trees",
@@ -17,6 +16,10 @@
    "value": "tree"
   },
   {
+   "key": "height",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m'"
+  },
+  {
    "key": "leaf_type",
    "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_type=broadleaved with a fixed text, namely '<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved' and allows to pick this as a default answer.",
    "value": "broadleaved"
@@ -25,6 +28,11 @@
    "key": "leaf_type",
    "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_type=needleleaved with a fixed text, namely '<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved' and allows to pick this as a default answer.",
    "value": "needleleaved"
+  },
+  {
+   "key": "leaf_type",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows leaf_type=leafless with a fixed text, namely '<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless'",
+   "value": "leafless"
   },
   {
    "key": "denotation",
@@ -129,6 +137,10 @@
    "key": "heritage:operator",
    "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage=no&heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer. Picking this answer will delete the key heritage:operator.",
    "value": ""
+  },
+  {
+   "key": "heritage",
+   "description": "Layer 'Tree' (in the MapComplete.osm.be theme 'Trees') shows heritage~^..*$ with a fixed text, namely 'Registered as heritage by a different organisation'"
   },
   {
    "key": "ref:OnroerendErfgoed",

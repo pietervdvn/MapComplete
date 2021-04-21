@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Sport pitches",
   "description": "A map showing sport pitches",
@@ -44,6 +43,11 @@
    "key": "sport",
    "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=korfball with a fixed text, namely 'Korfball is played here' and allows to pick this as a default answer.",
    "value": "korfball"
+  },
+  {
+   "key": "sport",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows sport=basket with a fixed text, namely 'Basketball is played here'",
+   "value": "basket"
   },
   {
    "key": "surface",
@@ -125,6 +129,11 @@
   {
    "key": "opening_hours",
    "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows and asks freeform values for key 'opening_hours'"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Sport pitches' (in the MapComplete.osm.be theme 'Sport pitches') shows opening_hours= with a fixed text, namely '24/7 toegankelijk' Picking this answer will delete the key opening_hours.",
+   "value": ""
   },
   {
    "key": "opening_hours",

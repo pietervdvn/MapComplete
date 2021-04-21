@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Open Climbing Map",
   "description": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature",
@@ -81,6 +80,10 @@
    "value": "limited"
   },
   {
+   "key": "climbing:boulder",
+   "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes'"
+  },
+  {
    "key": "climbing:toprope",
    "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -89,6 +92,10 @@
    "key": "climbing:toprope",
    "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:toprope",
+   "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope~^..*$ with a fixed text, namely 'There are {climbing:toprope} toprope routes'"
   },
   {
    "key": "climbing:sport",
@@ -101,6 +108,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:sport",
+   "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes'"
+  },
+  {
    "key": "climbing:traditional",
    "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional=yes with a fixed text, namely 'Traditional climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -111,6 +122,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:traditional",
+   "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional~^..*$ with a fixed text, namely 'There are {climbing:traditional} traditional climbing routes'"
+  },
+  {
    "key": "climbing:speed",
    "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer.",
    "value": "yes"
@@ -119,6 +134,10 @@
    "key": "climbing:speed",
    "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:speed",
+   "description": "Layer 'Climbing club' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls'"
   },
   {
    "key": "sport",
@@ -162,6 +181,10 @@
    "value": "limited"
   },
   {
+   "key": "climbing:boulder",
+   "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes'"
+  },
+  {
    "key": "climbing:toprope",
    "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -170,6 +193,10 @@
    "key": "climbing:toprope",
    "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:toprope",
+   "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope~^..*$ with a fixed text, namely 'There are {climbing:toprope} toprope routes'"
   },
   {
    "key": "climbing:sport",
@@ -182,6 +209,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:sport",
+   "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes'"
+  },
+  {
    "key": "climbing:traditional",
    "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional=yes with a fixed text, namely 'Traditional climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -192,6 +223,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:traditional",
+   "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional~^..*$ with a fixed text, namely 'There are {climbing:traditional} traditional climbing routes'"
+  },
+  {
    "key": "climbing:speed",
    "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer.",
    "value": "yes"
@@ -200,6 +235,10 @@
    "key": "climbing:speed",
    "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:speed",
+   "description": "Layer 'Climbing gyms' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls'"
   },
   {
    "key": "name",
@@ -258,6 +297,10 @@
    "value": "limited"
   },
   {
+   "key": "climbing:boulder",
+   "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes'"
+  },
+  {
    "key": "climbing:toprope",
    "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -266,6 +309,10 @@
    "key": "climbing:toprope",
    "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:toprope",
+   "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope~^..*$ with a fixed text, namely 'There are {climbing:toprope} toprope routes'"
   },
   {
    "key": "climbing:sport",
@@ -278,6 +325,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:sport",
+   "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes'"
+  },
+  {
    "key": "climbing:traditional",
    "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional=yes with a fixed text, namely 'Traditional climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -288,6 +339,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:traditional",
+   "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional~^..*$ with a fixed text, namely 'There are {climbing:traditional} traditional climbing routes'"
+  },
+  {
    "key": "climbing:speed",
    "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer.",
    "value": "yes"
@@ -296,6 +351,10 @@
    "key": "climbing:speed",
    "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:speed",
+   "description": "Layer 'Climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls'"
   },
   {
    "key": "name",
@@ -356,6 +415,10 @@
    "value": "limited"
   },
   {
+   "key": "climbing:boulder",
+   "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes'"
+  },
+  {
    "key": "climbing:toprope",
    "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -364,6 +427,10 @@
    "key": "climbing:toprope",
    "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:toprope",
+   "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope~^..*$ with a fixed text, namely 'There are {climbing:toprope} toprope routes'"
   },
   {
    "key": "climbing:sport",
@@ -376,6 +443,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:sport",
+   "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes'"
+  },
+  {
    "key": "climbing:traditional",
    "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional=yes with a fixed text, namely 'Traditional climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -386,6 +457,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:traditional",
+   "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional~^..*$ with a fixed text, namely 'There are {climbing:traditional} traditional climbing routes'"
+  },
+  {
    "key": "climbing:speed",
    "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer.",
    "value": "yes"
@@ -394,6 +469,10 @@
    "key": "climbing:speed",
    "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:speed",
+   "description": "Layer 'Climbing opportunities' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls'"
   },
   {
    "key": "name",
@@ -476,6 +555,10 @@
    "value": "limited"
   },
   {
+   "key": "climbing:boulder",
+   "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes'"
+  },
+  {
    "key": "climbing:toprope",
    "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -484,6 +567,10 @@
    "key": "climbing:toprope",
    "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:toprope",
+   "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:toprope~^..*$ with a fixed text, namely 'There are {climbing:toprope} toprope routes'"
   },
   {
    "key": "climbing:sport",
@@ -496,6 +583,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:sport",
+   "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes'"
+  },
+  {
    "key": "climbing:traditional",
    "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional=yes with a fixed text, namely 'Traditional climbing is possible here' and allows to pick this as a default answer.",
    "value": "yes"
@@ -506,6 +597,10 @@
    "value": "no"
   },
   {
+   "key": "climbing:traditional",
+   "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:traditional~^..*$ with a fixed text, namely 'There are {climbing:traditional} traditional climbing routes'"
+  },
+  {
    "key": "climbing:speed",
    "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer.",
    "value": "yes"
@@ -514,6 +609,10 @@
    "key": "climbing:speed",
    "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer.",
    "value": "no"
+  },
+  {
+   "key": "climbing:speed",
+   "description": "Layer 'Climbing opportunities?' (in the MapComplete.osm.be theme 'Open Climbing Map') shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls'"
   }
  ]
 }

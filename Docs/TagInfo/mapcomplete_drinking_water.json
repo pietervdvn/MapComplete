@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Drinking Water",
   "description": "On this map, publicly accessible drinkging water spots are shown and can be easily added",
@@ -53,6 +52,11 @@
    "key": "service:bicycle:cleaning:fee",
    "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge= with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer.",
    "value": "no&service:bicycle:cleaning:charge="
+  },
+  {
+   "key": "service:bicycle:cleaning:fee",
+   "description": "Layer 'Drinking water' (in the MapComplete.osm.be theme 'Drinking Water') shows service:bicycle:cleaning:fee=no& with a fixed text, namely 'Free to use'",
+   "value": "no&"
   },
   {
    "key": "service:bicycle:cleaning:fee",
