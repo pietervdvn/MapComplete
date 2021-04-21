@@ -23,7 +23,7 @@ export default class DirectionInput extends InputElement<string> {
                 return;
             }
             const cone = selfElement.getElementsByClassName("direction-svg")[0] as HTMLElement
-            cone.style.rotate = rotation + "deg";
+            cone.style.transform = `rotate(${rotation}deg)`;
 
         })
 
@@ -38,7 +38,7 @@ export default class DirectionInput extends InputElement<string> {
         return new Combine([
             `<div id="direction-leaflet-div-${this.id}" style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
             Svg.direction_svg().SetStyle(
-                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;rotate:${this.value.data}deg;`)
+                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg"),
             Svg.compass_svg().SetStyle(
                 "position: absolute;top: 0;left: 0;width: 100%;height: 100%;")
@@ -74,7 +74,7 @@ export default class DirectionInput extends InputElement<string> {
 
         htmlElement.onmousedown = (ev: MouseEvent) => {
             isDown = true;
-            onPosChange(ev.x, ev.y);
+            onPosChange(ev.clientX, ev.clientY);
             ev.preventDefault();
         }
 
@@ -84,7 +84,7 @@ export default class DirectionInput extends InputElement<string> {
 
         htmlElement.onmousemove = (ev: MouseEvent) => {
             if (isDown) {
-                onPosChange(ev.x, ev.y);
+                onPosChange(ev.clientX, ev.clientY);
             } ev.preventDefault();
         }
     }
