@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Open Artwork Map",
   "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
@@ -18,79 +17,79 @@
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows and asks freeform values for key 'artwork_type'"
+   "description": "Layer 'Artworks' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Open Artwork Map')"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "architecture"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "mural"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "painting"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "sculpture"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "statue"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "bust"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "stone"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "installation"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "graffiti"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "relief"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "azulejo"
   },
   {
    "key": "artwork_type",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer.",
+   "description": "Layer 'Artworks' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
    "value": "tilework"
   },
   {
    "key": "artist_name",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows and asks freeform values for key 'artist_name'"
+   "description": "Layer 'Artworks' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Open Artwork Map')"
   },
   {
    "key": "website",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows and asks freeform values for key 'website'"
+   "description": "Layer 'Artworks' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Artwork Map')"
   },
   {
    "key": "wikidata",
-   "description": "Layer 'Artworks' (in the MapComplete.osm.be theme 'Open Artwork Map') shows and asks freeform values for key 'wikidata'"
+   "description": "Layer 'Artworks' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Artwork Map')"
   }
  ]
 }

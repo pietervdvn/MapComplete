@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Open AED Map",
   "description": "On this map, one can find and mark nearby defibrillators",
@@ -18,40 +17,45 @@
   },
   {
    "key": "indoor",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows indoor=yes with a fixed text, namely 'This defibrillator is located indoors' and allows to pick this as a default answer.",
+   "description": "Layer 'Defibrillators' shows indoor=yes with a fixed text, namely 'This defibrillator is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
    "value": "yes"
   },
   {
    "key": "indoor",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows indoor=no with a fixed text, namely 'This defibrillator is located outdoors' and allows to pick this as a default answer.",
+   "description": "Layer 'Defibrillators' shows indoor=no with a fixed text, namely 'This defibrillator is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
    "value": "no"
   },
   {
    "key": "access",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows and asks freeform values for key 'access'"
+   "description": "Layer 'Defibrillators' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Open AED Map')"
   },
   {
    "key": "access",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer.",
+   "description": "Layer 'Defibrillators' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
    "value": "yes"
   },
   {
    "key": "access",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer.",
+   "description": "Layer 'Defibrillators' shows access=public with a fixed text, namely 'Publicly accessible' (in the MapComplete.osm.be theme 'Open AED Map')",
+   "value": "public"
+  },
+  {
+   "key": "access",
+   "description": "Layer 'Defibrillators' shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
    "value": "customers"
   },
   {
    "key": "access",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, ...)' and allows to pick this as a default answer.",
+   "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
    "value": "private"
   },
   {
    "key": "level",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows and asks freeform values for key 'level'"
+   "description": "Layer 'Defibrillators' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open AED Map')"
   },
   {
    "key": "defibrillator:location",
-   "description": "Layer 'Defibrillators' (in the MapComplete.osm.be theme 'Open AED Map') shows and asks freeform values for key 'defibrillator:location'"
+   "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location' (in the MapComplete.osm.be theme 'Open AED Map')"
   }
  ]
 }

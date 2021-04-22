@@ -196,7 +196,7 @@
     {
       "question": {
         "nl": "Wanneer is dit fietsherstelpunt open?",
-        "en": "When is this bicycle repair point opened?"
+        "en": "When is this bicycle repair point open?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -208,14 +208,14 @@
           "if": "opening_hours=24/7",
           "then": {
             "nl": "Dag en nacht open",
-            "en": "Always opened"
+            "en": "Always open"
           }
         },
         {
           "if": "opening_hours=",
           "then": {
             "nl": "Dag en nacht open",
-            "en": "Always opened"
+            "en": "Always open"
           },
           "hideInAnswer": true
         }
@@ -255,7 +255,7 @@
     },
     {
       "question": {
-        "en": "Does this bike station have a hook to suspend your bike with or a stand to elevate it?",
+        "en": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
         "nl": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
         "fr": "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?",
         "gl": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?",

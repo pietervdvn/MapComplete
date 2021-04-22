@@ -86,6 +86,17 @@
     ]
   },
   {
+    "path": "Twemoji_1f691.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Twemoji Project"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Twemoji_1f691.svg",
+      "https://twemoji.twitter.com/"
+    ]
+  },
+  {
     "authors": [
       "Erwin Olario"
     ],

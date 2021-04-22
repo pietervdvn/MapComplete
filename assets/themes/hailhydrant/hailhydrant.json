@@ -1,13 +1,13 @@
 {
   "id": "hailhydrant",
   "title": {
-    "en": "Hydrants, Extinguishers, Fire stations, and Rescue stations."
+    "en": "Hydrants, Extinguishers, Fire stations, and Ambulance stations."
   },
   "shortDescription": {
-    "en": "Map to show hydrants, extinguishers, fire stations, and rescue stations."
+    "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations."
   },
   "description": {
-    "en": "On this map you can find and update hydrants, fire stations, rescue stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others."
+    "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others."
   },
   "language": [
     "en"
@@ -43,7 +43,6 @@
         "en": "Map layer to show fire hydrants."
       },
       "tagRenderings": [
-        "images",
         {
           "question": {
             "en": "What color is the hydrant?"
@@ -55,6 +54,17 @@
             "key": "colour"
           },
           "mappings": [
+            {
+              "if": {
+                "and": [
+                  "colour="
+                ]
+              },
+              "then": {
+                "en": "The hydrant color is unknown."
+              },
+              "hideInAnswer": true
+            },
             {
               "if": {
                 "and": [
@@ -88,6 +98,17 @@
             "en": " Hydrant type: {fire_hydrant:type}"
           },
           "mappings": [
+            {
+              "if": {
+                "and": [
+                  "fire_hydrant:type="
+                ]
+              },
+              "then": {
+                "en": "The hydrant type is unknown."
+              },
+              "hideInAnswer": true
+            },
             {
               "if": {
                 "and": [
@@ -174,7 +195,8 @@
               }
             }
           ]
-        }
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -226,7 +248,6 @@
         "en": "Map layer to show fire hydrants."
       },
       "tagRenderings": [
-        "images",
         {
           "render": {
             "en": "Location: {location}"
@@ -259,7 +280,8 @@
           "freeform": {
             "key": "location"
           }
-        }
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -312,13 +334,12 @@
         "en": "Map layer to show fire stations."
       },
       "tagRenderings": [
-        "images",
         {
           "freeform": {
             "key": "name"
           },
           "question": {
-            "en": "What is the name of this station?"
+            "en": "What is the name of this fire station?"
           },
           "render": {
             "en": "This station is called {name}."
@@ -343,7 +364,7 @@
             "key": "addr:place"
           },
           "render": {
-            "en": "Th isstation is to be found within {addr:place}."
+            "en": "This station is found within {addr:place}."
           }
         },
         {
@@ -422,7 +443,8 @@
               }
             }
           ]
-        }
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -452,43 +474,130 @@
       ]
     },
     {
-      "id": "rescuestation",
+      "id": "ambulancestation",
       "name": {
-        "en": "Map of rescue stations"
+        "en": "Map of ambulance stations"
       },
       "minzoom": 12,
       "source": {
         "osmTags": {
           "and": [
-            "amenity=rescue_station"
+            "emergency=ambulance_station"
           ]
         }
       },
       "title": {
         "render": {
-          "en": "Rescue Station"
+          "en": "Ambulance Station"
         }
       },
       "description": {
-        "en": "Map layer to show rescue stations."
+        "en": "An  ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies."
       },
       "tagRenderings": [
-        "images",
         {
-          "question": {
-            "en": "What is this entity called?"
-          },
           "freeform": {
             "key": "name"
           },
+          "question": {
+            "en": "What is the name of this ambulance station?"
+          },
           "render": {
-            "en": "This entity is called {name}."
+            "en": "This station is called {name}."
           }
-        }
+        },
+        {
+          "freeform": {
+            "key": "addr:street"
+          },
+          "question": {
+            "en": " What is the street name where the station located?"
+          },
+          "render": {
+            "en": "This station is along a highway called {addr:street}."
+          }
+        },
+        {
+          "question": {
+            "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)"
+          },
+          "freeform": {
+            "key": "addr:place"
+          },
+          "render": {
+            "en": "This station is found within {addr:place}."
+          }
+        },
+        {
+          "question": {
+            "en": "What agency operates this station?"
+          },
+          "render": {
+            "en": "This station is operated by {operator}."
+          },
+          "freeform": {
+            "key": "operator"
+          },
+          "mappings": []
+        },
+        {
+          "question": {
+            "en": "How is the station operator classified??"
+          },
+          "render": {
+            "en": "The operator is a(n) {operator:type} entity."
+          },
+          "freeform": {
+            "key": "operator:type"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator:type=government"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by the government."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=community"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by a community-based, or informal organization."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=ngo"
+                ]
+              },
+              "then": {
+                "en": "The station is operated by a formal group of volunteers."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=private"
+                ]
+              },
+              "then": {
+                "en": "The station is privately operated."
+              }
+            }
+          ]
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/hailhydrant/Twemoji12_26d1.svg"
+        "render": "./assets/themes/hailhydrant/Twemoji_1f691.svg"
       },
       "width": {
         "render": "1"
@@ -499,16 +608,16 @@
       "color": {
         "render": "#00f"
       },
-      "presets-disabled": [
+      "presets": [
         {
           "tags": [
-            "amenity=rescue_station"
+            "emergency=ambulance_station"
           ],
           "title": {
-            "en": "Rescue station"
+            "en": "Ambulance station"
           },
           "description": {
-            "en": "Add a rescue or emergency service station to the map"
+            "en": "Add an ambulance station to the map"
           }
         }
       ],
@@ -517,4 +626,3 @@
   ],
   "defaultBackgroundId": "HDM_HOT"
 }
-

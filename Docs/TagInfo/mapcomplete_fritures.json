@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Friturenkaart",
   "description": "Op deze kaart vind je je favoriete frituur!",
@@ -17,58 +16,58 @@
   },
   {
    "key": "name",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows and asks freeform values for key 'name'"
+   "description": "Layer 'Frituren' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Friturenkaart')"
   },
   {
    "key": "opening_hours",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows and asks freeform values for key 'opening_hours'"
+   "description": "Layer 'Frituren' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Friturenkaart')"
   },
   {
    "key": "website",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows and asks freeform values for key 'website'"
+   "description": "Layer 'Frituren' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Friturenkaart')"
   },
   {
    "key": "phone",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows and asks freeform values for key 'phone'"
+   "description": "Layer 'Frituren' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Friturenkaart')"
   },
   {
    "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegetarian=yes with a fixed text, namely 'Er zijn vegetarische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "yes"
   },
   {
    "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegetarian=limited with a fixed text, namely 'Slechts enkele vegetarische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "limited"
   },
   {
    "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen vegetarische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "no"
   },
   {
    "key": "diet:vegan",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegan=yes with a fixed text, namely 'Er zijn veganistische snacks aanwezig' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "yes"
   },
   {
    "key": "diet:vegan",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegan=limited with a fixed text, namely 'Slechts enkele veganistische snacks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "limited"
   },
   {
    "key": "diet:vegetarian",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows diet:vegetarian=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows diet:vegetarian=no with a fixed text, namely 'Geen veganistische snacks beschikbaar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "no"
   },
   {
    "key": "friture:oil",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows friture:oil=vegetable with a fixed text, namely 'Plantaardige olie' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "vegetable"
   },
   {
    "key": "friture:oil",
-   "description": "Layer 'Frituren' (in the MapComplete.osm.be theme 'Friturenkaart') shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer.",
+   "description": "Layer 'Frituren' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "animal"
   }
  ]

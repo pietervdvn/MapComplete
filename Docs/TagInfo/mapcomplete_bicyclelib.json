@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Bicycle libraries",
   "description": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee",
@@ -18,66 +17,66 @@
   },
   {
    "key": "name",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'name'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "website",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'website'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "phone",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'phone'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "email",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'email'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "opening_hours",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'opening_hours'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "charge",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'charge'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   },
   {
    "key": "fee",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "no"
   },
   {
    "key": "charge",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer. Picking this answer will delete the key charge.",
+   "description": "Layer 'Bicycle library' shows fee=no&charge= with a fixed text, namely 'Lending a bicycle is free' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries') Picking this answer will delete the key charge.",
    "value": ""
   },
   {
    "key": "fee",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "yes"
   },
   {
    "key": "charge",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows fee=yes&charge=€20warranty + €20/year with a fixed text, namely 'Lending a bicycle costs €20/year and €20 warranty' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "€20warranty + €20/year"
   },
   {
    "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows bicycle_library:for=child with a fixed text, namely 'Bikes for children available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "child"
   },
   {
    "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows bicycle_library:for=adult with a fixed text, namely 'Bikes for adult available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "adult"
   },
   {
    "key": "bicycle_library:for",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer.",
+   "description": "Layer 'Bicycle library' shows bicycle_library:for=disabled with a fixed text, namely 'Bikes for disabled persons available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle libraries')",
    "value": "disabled"
   },
   {
    "key": "description",
-   "description": "Layer 'Bicycle library' (in the MapComplete.osm.be theme 'Bicycle libraries') shows and asks freeform values for key 'description'"
+   "description": "Layer 'Bicycle library' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Bicycle libraries')"
   }
  ]
 }

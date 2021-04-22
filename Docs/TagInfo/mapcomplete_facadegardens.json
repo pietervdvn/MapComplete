@@ -1,6 +1,5 @@
 {
  "data_format": 1,
- "data_updated": "20210320T093904Z",
  "project": {
   "name": "MapComplete Facade gardens",
   "description": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
@@ -23,70 +22,70 @@
   },
   {
    "key": "direction",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows and asks freeform values for key 'direction'"
+   "description": "Layer 'Facade gardens' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Facade gardens')"
   },
   {
    "key": "direct_sunlight",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows direct_sunlight=yes with a fixed text, namely 'The garden is in full sun' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows direct_sunlight=yes with a fixed text, namely 'The garden is in full sun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "yes"
   },
   {
    "key": "direct_sunlight",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows direct_sunlight=partial with a fixed text, namely 'The garden is in partial shade' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows direct_sunlight=partial with a fixed text, namely 'The garden is in partial shade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "partial"
   },
   {
    "key": "direct_sunlight",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows direct_sunlight=no with a fixed text, namely 'The sun is in the shade' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows direct_sunlight=no with a fixed text, namely 'The sun is in the shade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "no"
   },
   {
    "key": "rain_barrel",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows rain_barrel=yes with a fixed text, namely 'There is a rain barrel' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows rain_barrel=yes with a fixed text, namely 'There is a rain barrel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "yes"
   },
   {
    "key": "rain_barrel",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows rain_barrel=no with a fixed text, namely 'There is no rain barrel' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows rain_barrel=no with a fixed text, namely 'There is no rain barrel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "no"
   },
   {
    "key": "start_date",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows and asks freeform values for key 'start_date'"
+   "description": "Layer 'Facade gardens' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Facade gardens')"
   },
   {
    "key": "edible",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows edible=yes with a fixed text, namely 'There are edible plants' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows edible=yes with a fixed text, namely 'There are edible plants' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "yes"
   },
   {
    "key": "edible",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows edible=no with a fixed text, namely 'There are no edible plants' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows edible=no with a fixed text, namely 'There are no edible plants' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "no"
   },
   {
    "key": "plant",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows plant=vine with a fixed text, namely 'There are vines' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows plant=vine with a fixed text, namely 'There are vines' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "vine"
   },
   {
    "key": "plant",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows plant=flower with a fixed text, namely 'There are flowering plants' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows plant=flower with a fixed text, namely 'There are flowering plants' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "flower"
   },
   {
    "key": "plant",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows plant=shrub with a fixed text, namely 'There are shrubs' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows plant=shrub with a fixed text, namely 'There are shrubs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "shrub"
   },
   {
    "key": "plant",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows plant=groundcover with a fixed text, namely 'There are groundcovering plants' and allows to pick this as a default answer.",
+   "description": "Layer 'Facade gardens' shows plant=groundcover with a fixed text, namely 'There are groundcovering plants' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Facade gardens')",
    "value": "groundcover"
   },
   {
    "key": "description",
-   "description": "Layer 'Facade gardens' (in the MapComplete.osm.be theme 'Facade gardens') shows and asks freeform values for key 'description'"
+   "description": "Layer 'Facade gardens' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Facade gardens')"
   }
  ]
 }
