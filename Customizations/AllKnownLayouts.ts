@@ -10,7 +10,7 @@ export class AllKnownLayouts {
     public static layoutsList: LayoutConfig[] = AllKnownLayouts.GenerateOrderedList(AllKnownLayouts.allKnownLayouts);
 
     private static GenerateOrderedList(allKnownLayouts: Map<string, LayoutConfig>): LayoutConfig[] {
-        const keys = ["personal", "cyclofix", "bookcases", "toilets", "aed"]
+        const keys = ["personal", "cyclofix", "hailhydrant", "bookcases", "toilets", "aed"]
         const list = []
         for (const key of keys) {
             list.push(allKnownLayouts.get(key))
