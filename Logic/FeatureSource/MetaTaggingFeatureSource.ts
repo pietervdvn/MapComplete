@@ -3,6 +3,7 @@ import {UIEventSource} from "../UIEventSource";
 import State from "../../State";
 import Hash from "../Web/Hash";
 import MetaTagging from "../MetaTagging";
+import ExtractRelations from "../Osm/ExtractRelations";
 
 export default class MetaTaggingFeatureSource implements FeatureSource {
     features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{feature: any; freshness: Date}[]>(undefined);
@@ -21,7 +22,7 @@ export default class MetaTaggingFeatureSource implements FeatureSource {
                     }
                 })
 
-                MetaTagging.addMetatags(featuresFreshness, State.state.layoutToUse.data.layers);
+                MetaTagging.addMetatags(featuresFreshness, State.state.knownRelations.data, State.state.layoutToUse.data.layers);
                 self.features.setData(featuresFreshness);
         });
     }

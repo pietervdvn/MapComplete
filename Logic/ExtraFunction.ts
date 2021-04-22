@@ -2,6 +2,7 @@ import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
 import State from "../State";
+import {Relation} from "./Osm/ExtractRelations";
 
 export class ExtraFunction {
 
@@ -40,11 +41,11 @@ Some advanced functions are available on <b>feat</b> as well:
         "overlapWith",
         "Gives a list of features from the specified layer which this feature overlaps with, the amount of overlap in m². The returned value is <b>{ feat: GeoJSONFeature, overlap: number}</b>",
         ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"],
-        (featuresPerLayer, feat) => {
+        (params, feat) => {
             return (...layerIds: string[]) => {
                 const result = []
                 for (const layerId of layerIds) {
-                    const otherLayer = featuresPerLayer.get(layerId);
+                    const otherLayer = params.featuresPerLayer.get(layerId);
                     if (otherLayer === undefined) {
                         continue;
                     }
@@ -80,10 +81,10 @@ Some advanced functions are available on <b>feat</b> as well:
         "closest",
         "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.",
         ["list of features"],
-        (featuresPerLayer, feature) => {
+        (params, feature) => {
             return (features) => {
                 if (typeof features === "string") {
-                    features = featuresPerLayer.get(features)
+                    features = params.featuresPerLayer.get(features)
                 }
                 let closestFeature = undefined;
                 let closestDistance = undefined;
@@ -118,11 +119,8 @@ Some advanced functions are available on <b>feat</b> as well:
         "memberships",
         "Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. \n\nFor example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
         [],
-        (featuresPerLayer, feature) => {
-            return () => {
-               return State.state.knownRelations.data?.get(feature.id) ?? [];
-            }
-
+        (params, feature) => {
+            return () =>   params.relations ?? [];
         }
     )
 
@@ -130,9 +128,9 @@ Some advanced functions are available on <b>feat</b> as well:
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
-    private readonly _f: (featuresPerLayer: Map<string, any[]>, feat: any) => any;
+    private readonly _f: (params: {featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[]}, feat: any) => any;
 
-    constructor(name: string, doc: string, args: string[], f: ((featuresPerLayer: Map<string, any[]>, feat: any) => any)) {
+    constructor(name: string, doc: string, args: string[], f: ((params: {featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[]}, feat: any) => any)) {
         this._name = name;
         this._doc = doc;
         this._args = args;
@@ -140,9 +138,9 @@ Some advanced functions are available on <b>feat</b> as well:
 
     }
 
-    public static FullPatchFeature(featuresPerLayer: Map<string, any[]>, feature) {
+    public static FullPatchFeature(featuresPerLayer: Map<string, any[]>,relations: {role: string, relation: Relation}[], feature) {
         for (const func of ExtraFunction.allFuncs) {
-            func.PatchFeature(featuresPerLayer, feature);
+            func.PatchFeature(featuresPerLayer, relations, feature);
         }
     }
 
@@ -168,7 +166,8 @@ Some advanced functions are available on <b>feat</b> as well:
         ]);
     }
 
-    public PatchFeature(featuresPerLayer: Map<string, any[]>, feature: any) {
-        feature[this._name] = this._f(featuresPerLayer, feature);
+    public PatchFeature(featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[], feature: any) {
+     
+        feature[this._name] = this._f({featuresPerLayer: featuresPerLayer, relations: relations}, feature);
     }
 }

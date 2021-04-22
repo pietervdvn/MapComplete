@@ -14,6 +14,8 @@ import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
 import {Script} from "vm";
+import MetaTagging from "../Logic/MetaTagging";
+import State from "../State";
 
 function createOverpassObject(theme: LayoutConfig) {
     let filters: TagsFilter[] = [];
@@ -26,8 +28,8 @@ function createOverpassObject(theme: LayoutConfig) {
             continue;
         }
         if (layer.source.geojsonSource !== undefined) {
-            // Not our responsibility to download this layer!
-            continue;
+            // We download these anyway - we are building the cache after all!
+            //continue;
         }
 
 
@@ -68,17 +70,17 @@ function metaJsonName(targetDir: string, x: number, y: number, z: number): strin
     return targetDir + "_" + z + "_" + x + "_" + y + ".meta.json"
 }
 
-async function downloadRaw(targetdir: string,  r: TileRange, overpass: Overpass) {
+async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass) {
     let downloaded = 0
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
-            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total)
             downloaded++;
             const filename = rawJsonName(targetdir, x, y, r.zoomlevel)
             if (existsSync(filename)) {
                 console.log("Already exists: ", filename)
                 continue;
             }
+            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total)
 
             const boundsArr = Utils.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
@@ -87,28 +89,35 @@ async function downloadRaw(targetdir: string,  r: TileRange, overpass: Overpass)
                 east: Math.max(boundsArr[0][1], boundsArr[1][1]),
                 west: Math.min(boundsArr[0][1], boundsArr[1][1])
             }
-            console.log("Downloading tile", r.zoomlevel, x, y, "with bounds", bounds)
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
+            let gotResponse = false
             ScriptUtils.DownloadJSON(url,
                 chunks => {
+                    gotResponse = true;
                     saveResponse(chunks, filename)
                 })
 
-            await ScriptUtils.sleep(10000)
-            console.debug("Waking up")
+            while (!gotResponse) {
+                await ScriptUtils.sleep(10000)
+                console.debug("Waking up")
+                if (!gotResponse) {
+                    console.log("Didn't get an answer yet - waiting more")
+                }
+            }
+
 
         }
     }
 }
 
-async function postProcess(targetdir: string, r: TileRange) {
+async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig) {
     let processed = 0;
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
             processed++;
             const filename = rawJsonName(targetdir, x, y, r.zoomlevel)
-            console.log(" Post processing", processed, "/",r. total, filename)
+            console.log(" Post processing", processed, "/", r.total, filename)
             if (!existsSync(filename)) {
                 throw "Not found - and not downloaded. Run this script again!: " + filename
             }
@@ -118,11 +127,26 @@ async function postProcess(targetdir: string, r: TileRange) {
 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
+            const osmTime = new Date(rawOsm.osm3s.timestamp_osm_base);
+
+            for (const feature of geojson.features) {
+
+                for (const layer of theme.layers) {
+                    if (layer.source.osmTags.matchesProperties(feature.properties)) {
+                        feature["_matching_layer_id"] = layer.id;
+                        break;
+                    }
+                }
+            }
+            const featuresFreshness = geojson.features.map(feature => ({
+                freshness: osmTime,
+                feature: feature
+            }));
+            // Extract the relationship information
+            const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
+            MetaTagging.addMetatags(featuresFreshness, relations, theme.layers);
             writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson))
 
-            // Extract the relationship information
-            const relations = ExtractRelations.GetRelationElements(rawOsm)
-            const osmTime = new Date(rawOsm.osm3s.timestamp_osm_base);
 
             const meta = {
                 freshness: osmTime,
@@ -145,7 +169,7 @@ async function main(args: string[]) {
     }
     const themeName = args[0]
     const zoomlevel = Number(args[1])
-    const targetdir = args[2]
+    const targetdir = args[2] + "/" + themeName
     const lat0 = Number(args[3])
     const lon0 = Number(args[4])
     const lat1 = Number(args[5])
@@ -167,7 +191,7 @@ async function main(args: string[]) {
 
 
     await downloadRaw(targetdir, tileRange, overpass)
-    await postProcess(targetdir, tileRange)
+    await postProcess(targetdir, tileRange, theme)
 }
 
 

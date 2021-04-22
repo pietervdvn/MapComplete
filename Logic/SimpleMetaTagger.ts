@@ -9,6 +9,7 @@ import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
 import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
 
+
 export default class SimpleMetaTagger {
     public readonly keys: string[];
     public readonly doc: string;
@@ -89,7 +90,12 @@ export default class SimpleMetaTagger {
         ["_isOpen", "_isOpen:description"],
         "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
         (feature => {
-
+            if(Utils.runningFromConsole){
+                // We are running from console, thus probably creating a cache
+                // isOpen is irrelevant
+                return
+            }
+            
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
             tagsSource.addCallbackAndRun(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
@@ -317,7 +323,7 @@ export default class SimpleMetaTagger {
     ];
 
     static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
-        SimpleMetaTagger.coder.GetCountryCodeFor(lon, lat, callback)
+        SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
     }
 
     static HelpText(): UIElement {

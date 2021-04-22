@@ -17,7 +17,6 @@ export default class ExtractRelations {
 
     public static RegisterRelations(overpassJson: any) : void{
         const memberships = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(overpassJson))
-        console.log("Assigned memberships: ", memberships)
         State.state.knownRelations.setData(memberships)
     }
 
@@ -40,7 +39,7 @@ export default class ExtractRelations {
      * @param relations
      * @constructor
      */
-    private static BuildMembershipTable(relations: Relation[]): Map<string, { role: string, relation: Relation, }[]> {
+    public static BuildMembershipTable(relations: Relation[]): Map<string, { role: string, relation: Relation }[]> {
         const memberships = new Map<string, { role: string, relation: Relation }[]>()
 
         for (const relation of relations) {
