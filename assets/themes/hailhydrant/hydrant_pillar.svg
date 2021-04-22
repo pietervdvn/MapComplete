@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+	<path d="m9 2c-1.662 0-3 1.338-3 3v1h-1c-0.277 0-0.5 0.223-0.5 0.5v3c0 0.277 0.223 0.5 0.5 0.5h1v6l-1 1h8l-1-1v-6h1c0.277 0 0.5-0.223 0.5-0.5v-3c0-0.277-0.223-0.5-0.5-0.5h-1v-1c0-1.662-1.338-3-3-3z" fill="#f00" stroke="#000" stroke-dashoffset="2.3036" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:stroke fill markers"/>
+	<path d="m7 11v5h1v-2h2v2h1v-5h-1v2h-2v-2z" fill="#fff" style="paint-order:stroke fill markers"/>
+</svg>
