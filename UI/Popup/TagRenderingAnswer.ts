@@ -26,7 +26,7 @@ export default class TagRenderingAnswer extends UIElement {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
-        this.SetClass("flex items-center flex-row text-lg")
+        this.SetClass("flex items-center flex-row text-lg link-underline")
         this.SetStyle("word-wrap: anywhere;");
     }
 
@@ -46,7 +46,7 @@ export default class TagRenderingAnswer extends UIElement {
         if (this._configuration.multiAnswer) {
             
             let freeformKeyUsed = this._configuration.freeform?.key === undefined; // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-            const applicableThens: Translation[] = Utils.NoNull(this._configuration.mappings.map(mapping => {
+            const applicableThens: Translation[] = Utils.NoNull(this._configuration.mappings?.map(mapping => {
                 if (mapping.if === undefined) {
                     return mapping.then;
                 }
@@ -59,7 +59,7 @@ export default class TagRenderingAnswer extends UIElement {
                     return mapping.then;
                 }
                 return undefined;
-            }))
+            }) ?? [])
 
             if (!freeformKeyUsed
                 && tags[this._configuration.freeform.key] !== undefined) {

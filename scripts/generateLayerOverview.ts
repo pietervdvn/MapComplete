@@ -27,7 +27,7 @@ const layerFiles = ScriptUtils.readDirRecSync("./assets/layers")
             const parsed = JSON.parse(readFileSync(path, "UTF8"));
             return {parsed: parsed, path: path}
         } catch (e) {
-            console.error("Could not parse file ", "./assets/layers/"+ path, "due to ", e)
+            console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
         }
     })
 const themeFiles: any[] = ScriptUtils.readDirRecSync("./assets/themes")
@@ -42,7 +42,7 @@ writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify(
 }))
 
 
-console.log("Discovered ", layerFiles.length, "layers and ", themeFiles.length, "themes\n")
+console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
 console.log("   ---------- VALIDATING ---------")
 // ------------- VALIDATION --------------
 const licensePaths = []
@@ -64,12 +64,11 @@ function validateLayer(layerJson: LayerConfigJson, path: string, context?: strin
             errorCount.push("Found a remote image: " + remoteImage + " in layer " + layer.id + ", please download it.")
             const path = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
         }
-    
-        const expected  : string = `assets/layers/${layer.id}/${layer.id}.json`
-        if(path!=undefined && path.indexOf(expected)< 0){
-            errorCount.push("Layer is in an incorrect place. The path is "+path+", but expected "+expected)
+        const expected: string = `assets/layers/${layer.id}/${layer.id}.json`
+        if (path != undefined && path.indexOf(expected) < 0) {
+            errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
         }
-    
+
         for (const image of images) {
             if (!knownPaths.has(image)) {
                 const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
@@ -106,7 +105,7 @@ for (const themeFile of themeFiles) {
                 }
             } else {
                 // layer.builtin contains layer overrides - we can skip those
-                layerErrorCount.push(...validateLayer(layer,undefined, themeFile.id))
+                layerErrorCount.push(...validateLayer(layer, undefined, themeFile.id))
             }
         }
     }

@@ -15,7 +15,7 @@
   "maintainer": "MapComplete",
   "icon": "./assets/layers/play_forest/icon.svg",
   "hideFromOverview": true,
-  "lockLocation": false,
+  "lockLocation": true,
   "version": "0",
   "startLat": 51.17174,
   "startLon": 4.449462,
@@ -24,13 +24,176 @@
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
-    "play_forest",
-    "playground",
-    "sport_pitch",
-    "slow_roads",
-    "grass_in_parks",
-    "village_green"
-
+    {
+      "builtin": "play_forest",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "playground",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "sport_pitch",
+      "override": {
+        "minzoom": 15,
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "slow_roads",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        },
+        "calculatedTags": [
+          "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
+        ]
+      }
+    },
+    {
+      "builtin": "grass_in_parks",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "village_green",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "id": "walking_routes",
+      "name": {
+        "nl": "Wandelroutes van provincie Antwerpen"
+      },
+      "description": "Walking routes by 'provincie Antwerpen'",
+      "source": {
+        "osmTags": {
+          "and": [
+            "type=route",
+            "route=foot",
+            "operator=provincie Antwerpen"
+          ]
+        },
+        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 14
+      },
+      "title": {
+        "render": "Wandeling <i>{name}</i>",
+        "mappings": [
+          {
+            "if": "name~.*wandeling.*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "Deze wandeling is <b>{_length:km}km</b> lang"
+          }
+        },
+        {
+          "mappings": [
+            {
+              "if": "route=iwn",
+              "then": {
+                "nl": "Dit is een internationale wandelroute"
+              }
+            },
+            {
+              "if": "route=nwn",
+              "then": {
+                "nl": "Dit is een nationale wandelroute"
+              }
+            },
+            {
+              "if": "route=rwn",
+              "then": {
+                "nl": "Dit is een regionale wandelroute"
+              }
+            },
+            {
+              "if": "route=lwn",
+              "then": {
+                "nl": "Dit is een lokale wandelroute"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "<h3>Korte beschrijving:</h3>{description}"
+          },
+          "question": "Geef een korte beschrijving van de wandeling (max 255 tekens)",
+          "freeform": {
+            "key": "description",
+            "type": "text"
+          }
+        },
+        {
+          "question": {
+            "nl": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
+          },
+          "render": "Signalisatie geplaatst door {operator}",
+          "freeform": {
+            "key": "operator"
+          }
+        },
+        {
+          "question": {
+            "nl": "Naar wie kan men emailen bij problemen rond signalisatie?"
+          },
+          "render": {
+            "nl": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+          },
+          "freeform": {
+            "key": "operator:email",
+            "type": "email"
+          }
+        },
+        "questions",
+        "reviews"
+      ],
+      "color": {
+        "render": "#6d6",
+        "mappings": [
+          {
+            "if": "color~*",
+            "then": "{color}"
+          }
+        ]
+      },
+      "width": {
+        "render": "3"
+      }
+    }
   ],
-  "roamingRenderings": []
+  "roamingRenderings": [
+    {
+      "render": "Maakt deel uit van {_part_of_walking_routes}",
+      "condition": "_part_of_walking_routes~*"
+    }
+  ]
 }

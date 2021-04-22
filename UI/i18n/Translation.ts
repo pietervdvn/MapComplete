@@ -73,10 +73,18 @@ export class Translation extends UIElement {
                 let rtext: string = "";
                 if (typeof (el) === "string") {
                     rtext = el;
-                } else if(typeof(el) === "number") {
-                    // HUH? Where did that number come from?
+                } else if (typeof (el) === "number") {
+                    // HUH? Where did that number come from? It might be a version number or something calculated
                     rtext = "" + el;
-                }else {
+                } else if (el["toISOString"] != undefined) {
+                    // This is a date, probably the timestamp of the object
+                    // @ts-ignore
+                    const date: Date = el;
+                    rtext = date.toLocaleString();
+                } else if (el.InnerRender === undefined) {
+                    console.error("InnerREnder is not defined", el);
+                    throw "Hmmm, el.InnerRender is not defined?"
+                } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.InnerRender();
 

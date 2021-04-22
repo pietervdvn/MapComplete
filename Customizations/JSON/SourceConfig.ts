@@ -5,11 +5,13 @@ export default class SourceConfig {
     osmTags?: TagsFilter;
     overpassScript?: string;
     geojsonSource?: string;
+    geojsonZoomLevel?: number;
 
     constructor(params: {
         osmTags?: TagsFilter,
         overpassScript?: string,
-        geojsonSource?: string
+        geojsonSource?: string,
+        geojsonSourceLevel?: number
     }) {
 
         let defined = 0;
@@ -28,5 +30,6 @@ export default class SourceConfig {
         this.osmTags = params.osmTags;
         this.overpassScript = params.overpassScript;
         this.geojsonSource = params.geojsonSource;
+        this.geojsonZoomLevel = params.geojsonSourceLevel;
     }
 }

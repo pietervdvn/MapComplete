@@ -195,7 +195,8 @@
               }
             }
           ]
-        },"images"
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -392,7 +393,7 @@
         },
         {
           "question": {
-            "en": "How is the station operator classified??"
+            "en": "How is the station operator classified?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity."
@@ -442,7 +443,8 @@
               }
             }
           ]
-        },"images"
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
@@ -540,7 +542,7 @@
         },
         {
           "question": {
-            "en": "How is the station operator classified??"
+            "en": "How is the station operator classified?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity."
@@ -590,7 +592,8 @@
               }
             }
           ]
-        },"images"
+        },
+        "images"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {

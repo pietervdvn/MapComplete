@@ -2,20 +2,22 @@ import { Utils } from "../Utils";
 
 export default class Constants {
     
-    public static vNumber = "0.6.10";
+    public static vNumber = "0.6.11";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         addNewPointsUnlock: 0,
         moreScreenUnlock: 1,
         personalLayoutUnlock: 15,
+        historyLinkVisible: 20,
         tagsVisibleAt: 25,
         mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
-        minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19)
+        minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19),
+       
     };
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.

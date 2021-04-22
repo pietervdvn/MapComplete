@@ -7,6 +7,8 @@ import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
+
 
 export default class SimpleMetaTagger {
     public readonly keys: string[];
@@ -52,6 +54,18 @@ export default class SimpleMetaTagger {
             feature.area = sqMeters;
         })
     );
+    
+    private static lngth = new SimpleMetaTagger(
+        ["_length", "_length:km"], "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter",
+        (feature => {
+            const l = GeoOperations.lengthInMeters(feature)
+            feature.properties["_length"] = "" + l
+            const km = Math.floor(l / 1000)
+            const kmRest = Math.round((l - km * 1000) / 100)
+            feature.properties["_length:km"] = "" + km+ "." + kmRest
+        })
+    )
+    
     private static country = new SimpleMetaTagger(
         ["_country"], "The country code of the property (with latlon2country)",
         feature => {
@@ -64,7 +78,7 @@ export default class SimpleMetaTagger {
             SimpleMetaTagger.GetCountryCodeFor(lon, lat, (countries) => {
                 try {
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
-                    const tagsSource = State.state.allElements.addOrGetElement(feature);
+                    const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
                     tagsSource.ping();
                 } catch (e) {
                     console.warn(e)
@@ -76,8 +90,13 @@ export default class SimpleMetaTagger {
         ["_isOpen", "_isOpen:description"],
         "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
         (feature => {
-
-            const tagsSource = State.state.allElements.addOrGetElement(feature);
+            if(Utils.runningFromConsole){
+                // We are running from console, thus probably creating a cache
+                // isOpen is irrelevant
+                return
+            }
+            
+            const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
             tagsSource.addCallbackAndRun(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;
@@ -294,6 +313,7 @@ export default class SimpleMetaTagger {
     public static metatags = [
         SimpleMetaTagger.latlon,
         SimpleMetaTagger.surfaceArea,
+        SimpleMetaTagger.lngth,
         SimpleMetaTagger.country,
         SimpleMetaTagger.isOpen,
         SimpleMetaTagger.carriageWayWidth,
@@ -303,7 +323,7 @@ export default class SimpleMetaTagger {
     ];
 
     static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
-        SimpleMetaTagger.coder.GetCountryCodeFor(lon, lat, callback)
+        SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
     }
 
     static HelpText(): UIElement {
@@ -317,7 +337,7 @@ export default class SimpleMetaTagger {
 
         ];
 
-        for (const metatag of SimpleMetaTagger.metatags) {
+        for (const metatag of SimpleMetaTagger.metatags.concat(UpdateTagsFromOsmAPI.metaTagger)) {
             subElements.push(
                 new Combine([
                     "<h3>", metatag.keys.join(", "), "</h3>",

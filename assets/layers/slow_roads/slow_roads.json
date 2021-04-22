@@ -159,31 +159,33 @@
   "width": {
     "render": "4"
   },
-  "dashArray": "2 10 6 10",
-  "color": {
-    "render": "#bb2",
+  "dashArray": {
+    "render": "",
     "mappings": [
       {
         "if": "highway=cycleway",
-        "then": "#00c"
+        "then": ""
       },
       {
         "if": "highway=path",
-        "then": "#bb2"
+        "then": "10 3"
       },
       {
         "if": "highway=footway",
-        "then": "#c30"
+        "then": "10 10"
       },
       {
         "if": "highway=pedestrian",
-        "then": "#3c3"
+        "then": "10 10"
       },
       {
         "if": "highway=living_street",
-        "then": "#ccc"
+        "then": "10 5 3 5"
       }
     ]
+  },
+  "color": {
+    "render": "#eaba2a"
   },
   "presets": [
   ]

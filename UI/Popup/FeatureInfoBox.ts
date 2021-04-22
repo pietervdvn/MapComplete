@@ -9,6 +9,8 @@ import State from "../../State";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Tag} from "../../Logic/Tags/Tag";
+import Constants from "../../Models/Constants";
+import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -19,7 +21,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
             tags.data.id);
-       
+
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
         }
@@ -49,6 +51,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): UIElement {
         let questionBox: UIElement = undefined;
+
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
         }
@@ -60,15 +63,21 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 questionBoxIsUsed = true;
                 return questionBox;
             }
-            return  new EditableTagRendering(tags, tr);
+            return new EditableTagRendering(tags, tr);
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-        
-        if(State.state.featureSwitchIsDebugging.data){
-            const config: TagRenderingConfig = new TagRenderingConfig({render:"{all_tags()}"}, new Tag("id",""), "");
-            renderings.push(new TagRenderingAnswer(tags,config ))
+
+        if (State.state.osmConnection.userDetails.data.csCount >= Constants.userJourney.historyLinkVisible ||
+            State.state.featureSwitchIsDebugging.data == true ||
+            State.state.featureSwitchIsTesting.data == true) {
+            renderings.push(new TagRenderingAnswer( tags, SharedTagRenderings.SharedTagRendering.get("last_edit")))
+        }
+
+        if (State.state.featureSwitchIsDebugging.data) {
+            const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+            renderings.push(new TagRenderingAnswer(tags, config))
         }
 
         return new Combine(renderings).SetClass("block")

@@ -31,7 +31,7 @@ export default class ShareScreen extends UIElement {
 
         const optionCheckboxes: UIElement[] = []
         const optionParts: (UIEventSource<string>)[] = [];
-
+        this.SetClass("link-underline")
         function check() {
             return Svg.checkmark_svg().SetStyle("width: 1.5em; display:inline-block;");
         }

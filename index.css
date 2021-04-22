@@ -101,11 +101,52 @@ svg, img {
     box-sizing: content-box;
     width: 100%;
     height: 100%;
+    display: unset;
 }
 
 
 a {
     color: var(--foreground-color);
+}
+
+.link-underline a {
+    text-decoration: underline 1px #0078a855;; 
+    color: #0078A8;
+}
+
+li {
+    margin-left: 0.5em;
+    padding-left: 0.2em;
+    margin-top: 0.1em;
+}
+
+h2 {
+    font-size: large;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: larger;
+    margin-top: 0.6em;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: larger;
+    margin-top: 0.6em;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+
+p {
+    padding-top: 0.1em;
+}
+
+li::marker {
+    content: "•"
 }
 
 .subtle-background {
@@ -240,6 +281,12 @@ a {
 
 .subtle {
     color: #999;
+}
+
+.link-underline .subtle a {
+    color: var(--foreground-color);
+    text-decoration: underline 1px #7193bb88;
+    color: #7193bb;
 }
 
 .bold {

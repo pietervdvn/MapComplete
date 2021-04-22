@@ -1,4 +1,5 @@
 import {lstatSync, readdirSync} from "fs";
+import * as https from "https";
 
 export default class ScriptUtils {
     public static readDirRecSync(path): string[] {
@@ -16,5 +17,30 @@ export default class ScriptUtils {
         }
         return result;
     }
+    
+    public static DownloadJSON(url, continuation : (parts : string []) => void){
+        https.get(url, (res) => {
+            console.log("Got response!")
+            const parts : string[] = []
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                // @ts-ignore
+                parts.push(chunk)
+            });
+
+            res.addListener('end', function () {
+                continuation(parts)
+            });
+        })
+    }
+
+    public static sleep(ms) {
+        return new Promise((resolve) => {
+            console.debug("Sleeping for", ms)
+            setTimeout(resolve, ms);
+           
+        });
+    }
+
 
 }

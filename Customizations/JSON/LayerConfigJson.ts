@@ -29,7 +29,8 @@ export interface LayerConfigJson {
      * There are some options:
      *
      * source: {osmTags: "key=value"} will fetch all objects with given tags from OSM. Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
-     * source: {geoJsonSource: "https://my.source.net/some-geo-data.geojson"} to fetch a geojson from a third party source
+     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"} to fetch a geojson from a third party source
+     * source: {geoJson: "https://my.source.net/some-tile-geojson-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted
      *
      * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
      *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
@@ -40,7 +41,7 @@ export interface LayerConfigJson {
      *  While still supported, this is considered deprecated
      */
     source: { osmTags: AndOrTagConfigJson | string } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string } |
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number } |
         { osmTags: AndOrTagConfigJson | string, overpassScript: string }
 
     /**
@@ -130,8 +131,11 @@ export interface LayerConfigJson {
      */
     rotation?: string | TagRenderingConfigJson;
     /**
-     * A HTML-fragment that is shown at the center of the icon, for example: 
+     * A HTML-fragment that is shown below the icon, for example: 
      * <div style="background: white; display: block">{name}</div>
+     * 
+     * If the icon is undefined, then the label is shown in the center of the feature.
+     * Note that, if the wayhandling hides the icon then no label is shown as well.
      */
     label?: string | TagRenderingConfigJson ;
     

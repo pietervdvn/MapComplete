@@ -11,6 +11,10 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
 export default class FeatureDuplicatorPerLayer implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
+    
+    public static GetMatchingLayerId(){
+        
+    }
 
     constructor(layers: UIEventSource<{ layerDef: LayerConfig }[]>, upstream: FeatureSource) {
         this.features = upstream.features.map(features => {

@@ -77,7 +77,8 @@ export default class TagRenderingConfig {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
-                throw `Freeform.key ${this.freeform.key} is an invalid type`
+                const knownKeys = ValidatedTextField.tpList.map(tp => tp.name).join(", ");
+                throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
             }
             if (this.freeform.addExtraTags) {
                 const usedKeys = new And(this.freeform.addExtraTags).usedKeys();
@@ -204,7 +205,7 @@ export default class TagRenderingConfig {
             return true;
         }
         if (this.multiAnswer) {
-            for (const m of this.mappings) {
+            for (const m of this.mappings ?? []) {
                 if (TagUtils.MatchesMultiAnswer(m.if, tags)) {
                     return true;
                 }

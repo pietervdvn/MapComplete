@@ -3,8 +3,8 @@
 
 > Let a thousand flowers bloom
 
-
-MapComplete attempts to be a webversion crossover of StreetComplete and MapContrib. It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
+MapComplete is an OpenStreetMap viewer and editor. It shows map features on a certain topic, and allows to see, edit and add new features to the map.
+It can be seen as a webversion crossover of StreetComplete and MapContrib. It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
 
 The design goals of MapComplete are to be:
 
@@ -155,12 +155,10 @@ Geolocation is available on mobile only throught hte device's GPS location (so n
 TODO: erase cookies of third party websites and API's
 
 
-# Attribution
+# Attribution and Copyright
 
-Data from OpenStreetMap
+The code is available under GPL; all map data comes from OpenStreetMap (both foreground and background maps).
 
 Background layer selection: curated by https://github.com/osmlab/editor-layer-index
 
 Icons are attributed in various 'license_info.json'-files and can be found in the app.
-
-

@@ -1,7 +1,8 @@
 import * as $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
 import Bounds from "../../Models/Bounds";
-import {TagsFilter} from "../TagsFilter";
+import {TagsFilter} from "../Tags/TagsFilter";
+import ExtractRelations from "./ExtractRelations";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -38,16 +39,16 @@ export class Overpass {
                     return;
                 }
 
+                ExtractRelations.RegisterRelations(json)
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
-                console.log("Received geojson", geojson)
                 const osmTime = new Date(json.osm3s.timestamp_osm_base);
                 continuation(geojson, osmTime);
 
             }).fail(onFail)
     }
 
-    private buildQuery(bbox: string): string {
+    buildQuery(bbox: string): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {

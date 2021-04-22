@@ -57,9 +57,11 @@ export class Changes implements FeatureSource{
         if (changes.length == 0) {
             return;
         }
+      
         for (const change of changes) {
             if (elementTags[change.k] !== change.v) {
                 elementTags[change.k] = change.v;
+                console.log("Applied ", change.k, "=", change.v)
                 this.pending.data.push({elementId: elementTags.id, key: change.k, value: change.v});
             }
         }

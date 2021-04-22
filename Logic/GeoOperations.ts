@@ -1,4 +1,4 @@
-import * as turf from 'turf'
+import * as turf from '@turf/turf'
 
 export class GeoOperations {
 
@@ -15,7 +15,8 @@ export class GeoOperations {
         return newFeature;
     }
     
-    static centerpointCoordinates(feature: any){
+    static centerpointCoordinates(feature: any): [number, number]{
+        // @ts-ignore
         return turf.center(feature).geometry.coordinates;
     }
 
@@ -118,6 +119,9 @@ export class GeoOperations {
         return inside;
     };
 
+    static lengthInMeters(feature: any) {
+        return turf.length(feature) * 1000
+    }
 }
 
 

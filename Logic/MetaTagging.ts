@@ -1,6 +1,14 @@
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
+import State from "../State";
+import {Relation} from "./Osm/ExtractRelations";
+
+
+interface Params {
+    featuresPerLayer: Map<string, any[]>,
+    memberships: Map<string, { role: string, relation: Relation }[]>
+}
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -14,7 +22,8 @@ export default class MetaTagging {
      * An actor which adds metatags on every feature in the given object
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
-    static addMetatags(features: { feature: any; freshness: Date }[], layers: LayerConfig[]) {
+    static addMetatags(features: { feature: any; freshness: Date }[],
+                       relations: Map<string, { role: string, relation: Relation }[]>, layers: LayerConfig[]) {
 
         for (const metatag of SimpleMetaTagger.metatags) {
             try {
@@ -26,7 +35,7 @@ export default class MetaTagging {
         }
 
         // The functions - per layer - which add the new keys
-        const layerFuncs = new Map<string, ((featursPerLayer: Map<string, any[]>, feature: any) => void)>();
+        const layerFuncs = new Map<string, ((params: Params, feature: any) => void)>();
         for (const layer of layers) {
             layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
         }
@@ -48,27 +57,26 @@ export default class MetaTagging {
             if (f === undefined) {
                 continue;
             }
-
-            f(featuresPerLayer, feature.feature)
+            f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
         }
 
     }
 
 
-    private static createRetaggingFunc(layer: LayerConfig): ((featuresPerLayer: Map<string, any[]>, feature: any) => void) {
+    private static createRetaggingFunc(layer: LayerConfig):
+        ((params: Params, feature: any) => void) {
         const calculatedTags: [string, string][] = layer.calculatedTags;
         if (calculatedTags === undefined) {
             return undefined;
         }
 
-        const functions: ((featuresPerLayer: Map<string, any[]>, feature: any) => void)[] = [];
+        const functions: ((params: Params, feature: any) => void)[] = [];
         for (const entry of calculatedTags) {
             const key = entry[0]
             const code = entry[1];
             if (code === undefined) {
                 continue;
             }
-
             const func = new Function("feat", "return " + code + ";");
 
             const f = (featuresPerLayer, feature: any) => {
@@ -76,16 +84,17 @@ export default class MetaTagging {
             }
             functions.push(f)
         }
-        return (featuresPerLayer: Map<string, any[]>, feature) => {
+        return (params: Params, feature) => {
             const tags = feature.properties
             if (tags === undefined) {
                 return;
             }
 
-            ExtraFunction.FullPatchFeature(featuresPerLayer, feature);
+            const relations = params.memberships.get(feature.properties.id)
+            ExtraFunction.FullPatchFeature(params.featuresPerLayer, relations, feature);
             try {
                 for (const f of functions) {
-                    f(featuresPerLayer, feature);
+                    f(params, feature);
                 }
             } catch (e) {
                 console.error("While calculating a tag value: ", e)

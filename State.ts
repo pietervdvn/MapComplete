@@ -17,6 +17,8 @@ import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
+import {Relation} from "./Logic/Osm/ExtractRelations";
+import UpdateTagsFromOsmAPI from "./Logic/Actors/UpdateTagsFromOsmAPI";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -76,6 +78,11 @@ export default class State {
      */
     public readonly selectedElement = new UIEventSource<any>(undefined, "Selected element")
 
+    /**
+     * Keeps track of relations: which way is part of which other way?
+     * Set by the overpass-updater; used in the metatagging
+     */
+    public readonly knownRelations = new UIEventSource<Map<string, {role: string, relation: Relation}[]>>(undefined, "Relation memberships")
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
@@ -246,6 +253,7 @@ export default class State {
 
         new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
 
+        new UpdateTagsFromOsmAPI(this.selectedElement.map(el => el?.properties?.id), this.allElements)
 
     }
 

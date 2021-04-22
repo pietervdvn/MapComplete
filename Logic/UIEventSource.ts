@@ -21,6 +21,7 @@ export class UIEventSource<T> {
             for (let i = 0; i < 10; i++) {
                 console.log(copy[i].tag, copy[i]);
             }
+            return UIEventSource.allSources;
         }
         return [];
     }

@@ -11,6 +11,10 @@ The latitude and longitude of the point (or centerpoint in the case of a way/are
 
 The surface area of the feature, in square meters and in hectare. Not set on points and ways
 
+### \_length, \_length:km
+
+The total length of a feature in meters (and in kilometers, rounded to one decimal for '\_length:km'). For a surface, the length of the perimeter
+
 ### \_country
 
 The country code of the property (with latlon2country)
@@ -53,6 +57,7 @@ The above code will be executed for every feature in the layer. The feature is a
 *   distanceTo
 *   overlapWith
 *   closest
+*   memberships
 
 ### distanceTo
 
@@ -72,3 +77,7 @@ Gives a list of features from the specified layer which this feature overlaps wi
 Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered.
 
 *   list of features
+
+### memberships
+
+Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. For example: \`\_part\_of\_walking\_routes=feat.memberships().map(r => r.relation.tags.name).join(';')\`

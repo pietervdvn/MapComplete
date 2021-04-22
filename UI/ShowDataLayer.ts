@@ -88,7 +88,7 @@ export default class ShowDataLayer {
             marker.openPopup();
 
             const popup = marker.getPopup();
-            const tags = State.state.allElements.addOrGetElement(selected);
+            const tags = State.state.allElements.getEventSourceById(selected.properties.id);
             const layer: LayerConfig = this._layerDict[selected._matching_layer_id];
             const infoBox = FeatureInfoBox.construct(tags, layer);
 
@@ -118,7 +118,7 @@ export default class ShowDataLayer {
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
 
-        const tagSource = State.state.allElements.addOrGetElement(feature)
+        const tagSource = State.state.allElements.getEventSourceById(feature.properties.id)
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
 
         if (layer === undefined) {

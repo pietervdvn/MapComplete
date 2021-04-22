@@ -42,10 +42,11 @@ class TitleElement extends UIElement {
                 continue;
             }
             if (layer.source.osmTags.matchesProperties(properties)) {
-                const title = new TagRenderingAnswer(
-                    this._allElementsStorage.addOrGetElement(feature),
-                    layer.title
-                )
+                const tags = this._allElementsStorage.getEventSourceById(feature.properties.id);
+                if (tags == undefined) {
+                    return defaultTitle;
+                }
+                const title = new TagRenderingAnswer(tags, layer.title)
                 return new Combine([defaultTitle, " | ", title]).Render();
             }
         }
