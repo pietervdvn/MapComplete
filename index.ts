@@ -68,7 +68,7 @@ let layoutToUse: LayoutConfig = AllKnownLayouts.allKnownLayouts.get(defaultLayou
 
 
 // WOrkaround/legacy
-if(layoutToUse.id === "cyclofix"){
+if(layoutToUse?.id === "cyclofix"){
     QueryParameters.GetQueryParameter("layer-bike_shops", "true", "Legacy - keep De Fietsambassade working").syncWith(
         QueryParameters.GetQueryParameter("layer-bike_shop","true","Legacy - keep De Fietsambassade working")
     )
