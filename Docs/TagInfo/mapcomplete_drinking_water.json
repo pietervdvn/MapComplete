@@ -2,7 +2,7 @@
  "data_format": 1,
  "project": {
   "name": "MapComplete Drinking Water",
-  "description": "On this map, publicly accessible drinkging water spots are shown and can be easily added",
+  "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
   "project_url": "https://mapcomplete.osm.be/drinking_water",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
   "icon_url": "https://mapcomplete.osm.be/./assets/themes/drinking_water/logo.svg",

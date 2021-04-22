@@ -442,12 +442,12 @@
   },
   {
    "key": "opening_hours",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours=24/7 with a fixed text, namely 'Always opened' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours=24/7 with a fixed text, namely 'Always open' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
    "value": "24/7"
   },
   {
    "key": "opening_hours",
-   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours= with a fixed text, namely 'Always opened' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows opening_hours= with a fixed text, namely 'Always open' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') Picking this answer will delete the key opening_hours.",
    "value": ""
   },
   {
