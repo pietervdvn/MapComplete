@@ -16,6 +16,8 @@ import * as OsmToGeoJson from "osmtogeojson";
 import {Script} from "vm";
 import MetaTagging from "../Logic/MetaTagging";
 import State from "../State";
+import {createEvalAwarePartialHost} from "ts-node/dist/repl";
+import {fail} from "assert";
 
 function createOverpassObject(theme: LayoutConfig) {
     let filters: TagsFilter[] = [];
@@ -48,14 +50,15 @@ function createOverpassObject(theme: LayoutConfig) {
     return new Overpass(new Or(filters), extraScripts);
 }
 
-function saveResponse(chunks: string[], targetDir: string) {
+function saveResponse(chunks: string[], targetDir: string): boolean {
     const contents = chunks.join("")
     if (contents.startsWith("<?xml")) {
         // THis is an error message
-        console.error("Failed to create ", targetDir, "probably over quota")
-        return;
+        console.error("Failed to create ", targetDir, "probably over quota: ", contents)
+        return false;
     }
     writeFileSync(targetDir, contents)
+    return true
 }
 
 function rawJsonName(targetDir: string, x: number, y: number, z: number): string {
@@ -70,17 +73,20 @@ function metaJsonName(targetDir: string, x: number, y: number, z: number): strin
     return targetDir + "_" + z + "_" + x + "_" + y + ".meta.json"
 }
 
-async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass) {
+async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/* : {failed: number, skipped :number} */ {
     let downloaded = 0
+    let failed = 0
+    let skipped = 0
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
             downloaded++;
             const filename = rawJsonName(targetdir, x, y, r.zoomlevel)
             if (existsSync(filename)) {
                 console.log("Already exists: ", filename)
+                skipped++
                 continue;
             }
-            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total)
+            console.log("x:", (x - r.xstart), "/", (r.xend - r.xstart), "; y:", (y - r.ystart), "/", (r.yend - r.ystart), "; total: ", downloaded, "/", r.total, "failed: ", failed, "skipped: ", skipped)
 
             const boundsArr = Utils.tile_bounds(r.zoomlevel, x, y)
             const bounds = {
@@ -92,10 +98,11 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass) 
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
             let gotResponse = false
+            let success = false;
             ScriptUtils.DownloadJSON(url,
                 chunks => {
                     gotResponse = true;
-                    saveResponse(chunks, filename)
+                    success = saveResponse(chunks, filename)
                 })
 
             while (!gotResponse) {
@@ -105,10 +112,21 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass) 
                     console.log("Didn't get an answer yet - waiting more")
                 }
             }
+            
+            if(!success){
+                failed++;
+                console.log("Hit the rate limit - waiting 90s")
+                for (let i = 0; i < 90; i++) {
+                    console.log(90 - i)
+                    await ScriptUtils.sleep(1000)
+                }
+            }
 
 
         }
     }
+
+    return {failed: failed, skipped: skipped}
 }
 
 async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig) {
@@ -189,8 +207,15 @@ async function main(args: string[]) {
 
     const overpass = createOverpassObject(theme)
 
+    let failed = 0;
+    do {
+        const cachingResult = await downloadRaw(targetdir, tileRange, overpass)
+        failed = cachingResult.failed
+        if (failed > 0) {
+            ScriptUtils.sleep(30000)
+        }
+    } while (failed > 0)
 
-    await downloadRaw(targetdir, tileRange, overpass)
     await postProcess(targetdir, tileRange, theme)
 }
 
