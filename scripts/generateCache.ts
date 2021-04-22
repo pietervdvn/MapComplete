@@ -156,10 +156,13 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
                     }
                 }
             }
-            const featuresFreshness = geojson.features.map(feature => ({
-                freshness: osmTime,
-                feature: feature
-            }));
+            const featuresFreshness = geojson.features.map(feature => {
+                feature["_timestamp"] = rawOsm.osm3s.timestamp_osm_base;
+                return ({
+                    freshness: osmTime,
+                    feature: feature
+                });
+            });
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
             MetaTagging.addMetatags(featuresFreshness, relations, theme.layers);

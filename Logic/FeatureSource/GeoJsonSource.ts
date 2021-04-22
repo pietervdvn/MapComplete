@@ -179,7 +179,12 @@ export default class GeoJsonSource implements FeatureSource {
                 }
                 self.seenids.add(feature.properties.id)
 
-                newFeatures.push({feature: feature, freshness: time})
+                let freshness : Date = time;
+                if(feature["_timestamp"] !== undefined){
+                    freshness = new Date(feature["_timestamp"])
+                }
+                
+                newFeatures.push({feature: feature, freshness: freshness})
             }
             console.log("Downloaded "+newFeatures.length+" new features and "+skipped+" already seen features from "+ url);
             
