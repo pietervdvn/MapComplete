@@ -35,6 +35,10 @@ Legacy for a specific project calculating the needed width for safe traffic on a
 
 Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely
 
+### \_last\_edit:contributor, \_last\_edit:contributor:uid, \_last\_edit:changeset, \_last\_edit:timestamp, \_version\_number
+
+Information about the last edit of this object. IMPORTANT: this data is \_only\_ loaded when the popup is added. This means it should \_not\_ be used to render icons!
+
 Calculating tags with Javascript
 --------------------------------
 

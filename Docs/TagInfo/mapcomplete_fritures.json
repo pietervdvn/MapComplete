@@ -69,6 +69,21 @@
    "key": "friture:oil",
    "description": "Layer 'Frituren' shows friture:oil=animal with a fixed text, namely 'Dierlijk vet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
    "value": "animal"
+  },
+  {
+   "key": "bulk_purchase",
+   "description": "Layer 'Frituren' shows bulk_purchase=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+   "value": "yes"
+  },
+  {
+   "key": "bulk_purchase",
+   "description": "Layer 'Frituren' shows bulk_purchase=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+   "value": "no"
+  },
+  {
+   "key": "bulk_purchase",
+   "description": "Layer 'Frituren' shows bulk_purchase=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Friturenkaart')",
+   "value": "only"
   }
  ]
 }
