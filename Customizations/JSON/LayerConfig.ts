@@ -85,6 +85,7 @@ export default class LayerConfig {
             this.source = new SourceConfig({
                 osmTags: osmTags,
                 geojsonSource: json.source["geoJson"],
+                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                 overpassScript: json.source["overpassScript"],
             });
         } else {
@@ -159,7 +160,7 @@ export default class LayerConfig {
 
                         if (renderingJson === "questions") {
                             if (readOnly) {
-                                throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}`
+                                throw `A tagrendering has a question, but asking a question does not make sense here: is it a title icon or a geojson-layer? ${context}. The offending tagrendering is ${JSON.stringify(renderingJson)}`
                             }
 
                             return new TagRenderingConfig("questions", undefined)
@@ -176,7 +177,7 @@ export default class LayerConfig {
                 });
         }
 
-        this.tagRenderings = trs(json.tagRenderings, this.source.geojsonSource !== undefined);
+        this.tagRenderings = trs(json.tagRenderings, false);
 
 
         const titleIcons = [];

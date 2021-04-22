@@ -108,7 +108,7 @@ export default class LayoutConfig {
                     throw "Unkown fixed layer " + name;
                 }
                 // @ts-ignore
-                layer = Utils.Merge(layer.override, shared);
+                layer = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
             }
 
             // @ts-ignore

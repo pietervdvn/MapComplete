@@ -20,9 +20,15 @@ export default class ExtractRelations {
         console.log("Assigned memberships: ", memberships)
         State.state.knownRelations.setData(memberships)
     }
-    
-    private static GetRelationElements(overpassJson: any): Relation[] {
-        const relations = overpassJson.elements.filter(element => element.type === "relation")
+
+    /**
+     * Gets an overview of the relations - except for multipolygons. We don't care about those
+     * @param overpassJson
+     * @constructor
+     */
+    public static GetRelationElements(overpassJson: any): Relation[] {
+        const relations = overpassJson.elements
+            .filter(element => element.type === "relation" && element.tags.type !== "multipolygon")
         for (const relation of relations) {
             relation.properties = relation.tags
         }

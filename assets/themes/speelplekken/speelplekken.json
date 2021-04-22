@@ -24,19 +24,64 @@
   "socialImage": "",
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
-    "play_forest",
-    "playground",
-    "sport_pitch",
+    {
+      "builtin": "play_forest",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "playground",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "sport_pitch",
+      "override": {
+        "minzoom": 15,
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
     {
       "builtin": "slow_roads",
       "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        },
         "calculatedTags": [
           "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
         ]
       }
     },
-    "grass_in_parks",
-    "village_green",
+    {
+      "builtin": "grass_in_parks",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
+    {
+      "builtin": "village_green",
+      "override": {
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
+      }
+    },
     {
       "id": "walking_routes",
       "name": {
@@ -50,7 +95,9 @@
             "route=foot",
             "operator=provincie Antwerpen"
           ]
-        }
+        },
+        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 14
       },
       "title": {
         "render": "Wandeling <i>{name}</i>",
@@ -141,17 +188,6 @@
       "width": {
         "render": "3"
       }
-    },
-    {
-      "id": "speelplekken-cache",
-      "name": "",
-      "source": {
-        "osmTags": {
-          "or": []
-        },
-        "geoJson": "https://pietervdvn.github.io/speelplekken-cache.geojson"
-      },
-      "passAllFeatures": true
     }
   ],
   "roamingRenderings": [

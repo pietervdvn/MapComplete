@@ -33,15 +33,10 @@ export default class FeaturePipeline implements FeatureSource {
                                 updater)
                         )), layout));
 
-        const geojsonSources: GeoJsonSource [] = []
-        for (const flayer of flayers.data) {
-            const sourceUrl = flayer.layerDef.source.geojsonSource
-            if (sourceUrl !== undefined) {
-                geojsonSources.push(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers,
-                    new GeoJsonSource(flayer.layerDef.id, sourceUrl))))
-            }
-        }
-
+        const geojsonSources: FeatureSource [] = GeoJsonSource
+            .ConstructMultiSource(flayers.data, locationControl)
+            .map(geojsonSource => new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, geojsonSource)));
+        
         const amendedLocalStorageSource =
             new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
             ));

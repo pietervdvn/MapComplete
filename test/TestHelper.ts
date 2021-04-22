@@ -1,6 +1,6 @@
 
 export default class T {
-
+    
     constructor(testsuite: string, tests: [string, () => void ][]) {
         let failures : string []= [];
         for (const [name, test] of tests) {

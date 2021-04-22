@@ -48,7 +48,7 @@ export class Overpass {
             }).fail(onFail)
     }
 
-    private buildQuery(bbox: string): string {
+    buildQuery(bbox: string): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {
