@@ -393,7 +393,7 @@
         },
         {
           "question": {
-            "en": "How is the station operator classified??"
+            "en": "How is the station operator classified?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity."
@@ -542,7 +542,7 @@
         },
         {
           "question": {
-            "en": "How is the station operator classified??"
+            "en": "How is the station operator classified?"
           },
           "render": {
             "en": "The operator is a(n) {operator:type} entity."
