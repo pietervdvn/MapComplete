@@ -135,6 +135,16 @@ export class OsmConnection {
         }, function (err, details) {
             if (err != null) {
                 console.log(err);
+                if (err.status == 401) {
+                    console.log("Clearing tokens...")
+                    // Not authorized - our token probably got revoked
+                    // Reset all the tokens
+                    const tokens = [
+                        "https://www.openstreetmap.orgoauth_request_token_secret", 
+                        "https://www.openstreetmap.orgoauth_token",
+                        "https://www.openstreetmap.orgoauth_token_secret"]
+                    tokens.forEach(token => localStorage.removeItem(token))
+                }
                 return;
             }
 
