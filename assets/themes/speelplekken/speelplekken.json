@@ -37,19 +37,22 @@
     {
       "builtin": "playground",
       "override": {
-        "icon": "./assets/themes/speelplekken/speeltuin.svg"
+        "icon": "./assets/themes/speelplekken/speeltuin.svg",
+        "minzoom":14 
       }
     },
     {
       "builtin": "village_green",
       "override": {
-        "icon": "./assets/themes/speelplekken/speelweide.svg"
+        "icon": "./assets/themes/speelplekken/speelweide.svg",
+        "minzoom":14
       }
     },
     {
       "builtin": "grass_in_parks",
       "override": {
-        "icon": "./assets/themes/speelplekken/speelweide.svg"
+        "icon": "./assets/themes/speelplekken/speelweide.svg",
+        "minzoom":14
       }
     },
      "sport_pitch",
