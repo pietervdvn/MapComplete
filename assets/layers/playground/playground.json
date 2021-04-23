@@ -342,7 +342,8 @@
         "leisure=playground"
       ],
       "title": {
-        "nl": "Speeltuin"
+        "nl": "Speeltuin",
+        "en": "Playground"
       }
     }
   ],

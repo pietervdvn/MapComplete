@@ -183,7 +183,8 @@
     },
     {
       "question": {
-        "nl": "Moet men reserveren om gebruik te maken van dit sportveld?"
+        "nl": "Moet men reserveren om gebruik te maken van dit sportveld?",
+        "en": "Does one have to make an appointment to use this sport pitch?"
       },
       "condition": {
         "and": [
@@ -195,24 +196,40 @@
       "mappings": [
         {
           "if": "reservation=required",
-          "then": "Reserveren is verplicht om gebruik te maken van dit sportterrein"
+          "then": {
+            "nl":             "Reserveren is verplicht om gebruik te maken van dit sportterrein",
+            "en": "Making an appointment is obligatory to use this sport pitch"
+          }
         },
         {
           "if": "reservation=recommended",
-          "then": "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein"
+          "then": {
+            "nl": 
+            "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein",
+            "en": "Making an appointment is recommended when using this sport pitch"
+          }
         },
         {
           "if": "reservation=yes",
-          "then": "Reserveren is mogelijk, maar geen voorwaarde"
+          "then": {
+            "nl":"Reserveren is mogelijk, maar geen voorwaarde",
+            "en": "Making an appointment is possible, but not necessary to use this sport pitch"
+          }
         },
         {
           "if": "reservation=no",
-          "then": "Reserveren is niet mogelijk"
+          "then": {
+        "nl":    "Reserveren is niet mogelijk",
+            "en": "Making an appointment is not possible"
+          }
         }
       ]
     },
     {
-      "question": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
+      "question": {
+      "nl":  "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
+        "en": "What is the phone number of the operator?"
+      },
       "freeform": {
         "key": "phone",
         "type": "phone"
@@ -220,7 +237,10 @@
       "render": "<a href='tel:{phone}'>{phone}</a>"
     },
     {
-      "question": "Wat is het email-adres van de bevoegde dienst of uitbater?",
+      "question": {
+        "nl": "Wat is het email-adres van de bevoegde dienst of uitbater?",
+        "en": "What is the email address of the operator?"
+      },
       "freeform": {
         "key": "email",
         "type": "email"
