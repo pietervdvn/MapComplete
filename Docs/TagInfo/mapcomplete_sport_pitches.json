@@ -5,7 +5,7 @@
   "description": "A map showing sport pitches",
   "project_url": "https://mapcomplete.osm.be/sport_pitches",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/layers/sport_pitch/tabletennis.svg",
+  "icon_url": "https://mapcomplete.osm.be/./assets/layers/sport_pitch/table_tennis.svg",
   "contact_name": "Pieter Vander Vennet, ",
   "contact_email": "pietervdvn@posteo.net"
  },
@@ -80,42 +80,42 @@
   },
   {
    "key": "access",
-   "description": "Layer 'Sport pitches' shows access=public with a fixed text, namely 'Publiek toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows access=public with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "public"
   },
   {
    "key": "access",
-   "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Limited access (e.g. only with an appointment, during certain hours, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "limited"
   },
   {
    "key": "access",
-   "description": "Layer 'Sport pitches' shows access=members with a fixed text, namely 'Enkel toegankelijk voor leden van de bijhorende sportclub' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows access=members with a fixed text, namely 'Only accessible for members of the club' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "members"
   },
   {
    "key": "access",
-   "description": "Layer 'Sport pitches' shows access=private with a fixed text, namely 'Privaat en niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows access=private with a fixed text, namely 'Private - not accessible to the public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "private"
   },
   {
    "key": "reservation",
-   "description": "Layer 'Sport pitches' shows reservation=required with a fixed text, namely 'Reserveren is verplicht om gebruik te maken van dit sportterrein' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows reservation=required with a fixed text, namely 'Making an appointment is obligatory to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "required"
   },
   {
    "key": "reservation",
-   "description": "Layer 'Sport pitches' shows reservation=recommended with a fixed text, namely 'Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows reservation=recommended with a fixed text, namely 'Making an appointment is recommended when using this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "recommended"
   },
   {
    "key": "reservation",
-   "description": "Layer 'Sport pitches' shows reservation=yes with a fixed text, namely 'Reserveren is mogelijk, maar geen voorwaarde' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows reservation=yes with a fixed text, namely 'Making an appointment is possible, but not necessary to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "yes"
   },
   {
    "key": "reservation",
-   "description": "Layer 'Sport pitches' shows reservation=no with a fixed text, namely 'Reserveren is niet mogelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+   "description": "Layer 'Sport pitches' shows reservation=no with a fixed text, namely 'Making an appointment is not possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
    "value": "no"
   },
   {
