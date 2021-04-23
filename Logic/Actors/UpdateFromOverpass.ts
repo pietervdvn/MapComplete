@@ -11,6 +11,8 @@ import {TagsFilter} from "../Tags/TagsFilter";
 
 export default class UpdateFromOverpass implements FeatureSource {
 
+    public readonly name = "UpdateFromOverpass"
+    
     /**
      * The last loaded features of the geojson
      */
@@ -86,7 +88,7 @@ export default class UpdateFromOverpass implements FeatureSource {
             if (layer.doNotDownload) {
                 continue;
             }
-            if(layer.source.geojsonSource !== undefined){
+            if (layer.source.geojsonSource !== undefined) {
                 // Not our responsibility to download this layer!
                 continue;
             }
@@ -128,8 +130,8 @@ export default class UpdateFromOverpass implements FeatureSource {
             console.log("Still running a query, not updating");
             return;
         }
-        
-        if(this.timeout.data > 0){
+
+        if (this.timeout.data > 0) {
             console.log("Still in timeout - not updating")
             return;
         }

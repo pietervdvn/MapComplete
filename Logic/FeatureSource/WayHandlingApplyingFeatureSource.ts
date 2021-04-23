@@ -51,7 +51,7 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
 
                     // Create the copy
                     const centerPoint = GeoOperations.centerpoint(feat);
-                    centerPoint._matching_layer_id = feat._matching_layer_id;
+                    centerPoint["_matching_layer_id"] = feat._matching_layer_id;
                     newFeatures.push({feature: centerPoint, freshness: f.freshness});
                     
                     if(layer.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY){

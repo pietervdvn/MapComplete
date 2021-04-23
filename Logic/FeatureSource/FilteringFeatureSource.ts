@@ -5,7 +5,7 @@ import Loc from "../../Models/Loc";
 
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
-
+public readonly name = "FilteringFeatureSource"
     constructor(layers: UIEventSource<{
                     isDisplayed: UIEventSource<boolean>,
                     layerDef: LayerConfig
@@ -23,7 +23,6 @@ export default class FilteringFeatureSource implements FeatureSource {
                 layerDict[layer.layerDef.id] = layer;
             }
 
-            console.log("Updating the filtering layer, input ", upstream.features.data.length, "features")
             const features: { feature: any, freshness: Date }[] = upstream.features.data;
 
 
@@ -65,8 +64,6 @@ export default class FilteringFeatureSource implements FeatureSource {
                 return false;
 
             });
-            console.log("Updating the filtering layer, output ", newFeatures.length, "features")
-
             self.features.setData(newFeatures);
         }
 

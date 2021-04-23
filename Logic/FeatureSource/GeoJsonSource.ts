@@ -14,12 +14,10 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
  */
 export default class GeoJsonSource implements FeatureSource {
 
-    features: UIEventSource<{ feature: any; freshness: Date }[]>;
-
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly name;
     private readonly onFail: ((errorMsg: any, url: string) => void) = undefined;
-
     private readonly layerId: string;
-
     private readonly seenids: Set<string> = new Set<string>()
 
     constructor(locationControl: UIEventSource<Loc>,
@@ -27,6 +25,7 @@ export default class GeoJsonSource implements FeatureSource {
                 onFail?: ((errorMsg: any) => void)) {
         this.layerId = flayer.layerDef.id;
         let url = flayer.layerDef.source.geojsonSource;
+        this.name = "GeoJsonSource of " + url;
         const zoomLevel = flayer.layerDef.source.geojsonZoomLevel;
 
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
@@ -110,8 +109,6 @@ export default class GeoJsonSource implements FeatureSource {
             flayersPerSource.get(url).push(flayer)
         }
 
-        console.log("SOURCES", flayersPerSource)
-
         const sources: GeoJsonSource[] = []
 
         flayersPerSource.forEach((flayers, key) => {
@@ -153,13 +150,11 @@ export default class GeoJsonSource implements FeatureSource {
         const self = this;
         $.getJSON(url, function (json, status) {
             if (status !== "success") {
-                console.log("Fetching geojson failed failed")
                 self.onFail(status, url);
                 return;
             }
 
             if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
-                console.log("Timeout or other runtime error");
                 self.onFail("Runtime error (timeout)", url)
                 return;
             }
@@ -179,19 +174,19 @@ export default class GeoJsonSource implements FeatureSource {
                 }
                 self.seenids.add(feature.properties.id)
 
-                let freshness : Date = time;
-                if(feature["_timestamp"] !== undefined){
+                let freshness: Date = time;
+                if (feature["_timestamp"] !== undefined) {
                     freshness = new Date(feature["_timestamp"])
                 }
-                
+
                 newFeatures.push({feature: feature, freshness: freshness})
             }
-            console.log("Downloaded "+newFeatures.length+" new features and "+skipped+" already seen features from "+ url);
-            
-            if(newFeatures.length == 0){
+            console.debug("Downloaded " + newFeatures.length + " new features and " + skipped + " already seen features from " + url);
+
+            if (newFeatures.length == 0) {
                 return;
             }
-            
+
             eventSource.setData(eventSource.data.concat(newFeatures))
 
         }).fail(msg => self.onFail(msg, url))

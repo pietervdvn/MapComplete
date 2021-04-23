@@ -18,6 +18,8 @@ export default class FeaturePipeline implements FeatureSource {
 
     public features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
+   public readonly name = "FeaturePipeline"
+    
     constructor(flayers: UIEventSource<{ isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[]>,
                 updater: FeatureSource,
                 layout: UIEventSource<LayoutConfig>,

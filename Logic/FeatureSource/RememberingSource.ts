@@ -5,10 +5,13 @@ import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 
 export default class RememberingSource implements FeatureSource {
-    features: UIEventSource<{ feature: any, freshness: Date }[]>;
+    public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;
 
+    public readonly name;
+    
     constructor(source: FeatureSource) {
         const self = this;
+        this.name = "RememberingSource of "+source.name;
         const empty = [];
         this.features = source.features.map(features => {
             const oldFeatures = self.features?.data ?? empty;

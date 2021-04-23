@@ -11,6 +11,8 @@ export default class LocalStorageSaver implements FeatureSource {
     public static readonly storageKey: string = "cached-features";
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
+    public readonly name = "LocalStorageSaver";
+    
     constructor(source: FeatureSource, layout: UIEventSource<LayoutConfig>) {
         this.features = source.features;
 

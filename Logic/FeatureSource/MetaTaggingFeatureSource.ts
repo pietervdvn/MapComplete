@@ -6,10 +6,13 @@ import MetaTagging from "../MetaTagging";
 import ExtractRelations from "../Osm/ExtractRelations";
 
 export default class MetaTaggingFeatureSource implements FeatureSource {
-    features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{feature: any; freshness: Date}[]>(undefined);
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{feature: any; freshness: Date}[]>(undefined);
+    
+    public readonly name;
     
     constructor(source: FeatureSource) {
         const self = this;
+        this.name = "MetaTagging of "+source.name
         source.features.addCallbackAndRun((featuresFreshness: { feature: any, freshness: Date }[]) => {
                 if (featuresFreshness === undefined) {
                     return;

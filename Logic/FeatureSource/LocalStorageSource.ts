@@ -5,6 +5,7 @@ import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 
 export default class LocalStorageSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly name = "LocalStorageSource";
 
     constructor(layout: UIEventSource<LayoutConfig>) {
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
@@ -17,8 +18,15 @@ export default class LocalStorageSource implements FeatureSource {
                 if (fromStorage == null) {
                     return;
                 }
-                const loaded = JSON.parse(fromStorage);
-                this.features.setData(loaded);
+                const loaded :  { feature: any; freshness: Date | string }[]= 
+                    JSON.parse(fromStorage);
+                
+                const parsed :  { feature: any; freshness: Date }[]= loaded.map(ff => ({
+                    feature: ff.feature,
+                    freshness : typeof ff.freshness == "string" ? new Date(ff.freshness) : ff.freshness
+                }))
+                
+                this.features.setData(parsed);
                 console.log("Loaded ", loaded.length, " features from localstorage as cache")
             } catch (e) {
                 console.log("Could not load features from localStorage:", e)
