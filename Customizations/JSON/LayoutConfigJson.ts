@@ -115,6 +115,11 @@ export interface LayoutConfigJson {
     roamingRenderings?: (TagRenderingConfigJson | string)[],
 
     /**
+     * An override applied on all layers of the theme
+     */
+    overrideAll?: any;
+    
+    /**
      * The id of the default background. BY default: vanilla OSM
      */
     defaultBackgroundId?: string;
@@ -161,6 +166,7 @@ export interface LayoutConfigJson {
 
     /**
      * If defined, data will be clustered.
+     * Defaults to {maxZoom: 16, minNeeded: 500}
      */
     clustering?: {
         /**

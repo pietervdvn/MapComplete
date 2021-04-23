@@ -93,8 +93,13 @@ export default class LayoutConfig {
         this.defaultBackgroundId = json.defaultBackgroundId;
         this.layers = json.layers.map((layer, i) => {
             if (typeof layer === "string") {
-                if (AllKnownLayers.sharedLayers[layer] !== undefined) {
-                    return AllKnownLayers.sharedLayers[layer];
+                if (AllKnownLayers.sharedLayersJson[layer] !== undefined) {
+                    if(json.overrideAll !== undefined){
+                        let lyr = JSON.parse(JSON.stringify( AllKnownLayers.sharedLayersJson[layer]));
+                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr),`${this.id}+overrideAll.layers[${i}]`, official);
+                    }else{
+                        return AllKnownLayers.sharedLayers[layer]
+                    }
                 } else {
                     throw "Unkown fixed layer " + layer;
                 }
@@ -109,12 +114,17 @@ export default class LayoutConfig {
                 }
                 // @ts-ignore
                 layer = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
+              
+          
             }
-
+            if(json.overrideAll !== undefined){
+                layer = Utils.Merge(json.overrideAll, layer);
+            }
+      
             // @ts-ignore
             return new LayerConfig(layer, `${this.id}.layers[${i}]`, official)
         });
-
+        
         // ALl the layers are constructed, let them share tags in now!
         const roaming: { r, source: LayerConfig }[] = []
         for (const layer of this.layers) {
@@ -140,10 +150,11 @@ export default class LayoutConfig {
             );
         }
 
-        this.clustering = {
+        const defaultClustering = {
             maxZoom: 16,
-            minNeededElements: 250
+            minNeededElements: 500
         };
+        this.clustering = defaultClustering;
         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
