@@ -67,6 +67,11 @@ function validateLayer(layerJson: LayerConfigJson, path: string, knownPaths: Set
         }
 
         for (const image of images) {
+            if(image.indexOf("{") >= 0){
+                console.warn("Ignoring image with { in the path: ", image)
+                continue
+            }
+            
             if (!knownPaths.has(image)) {
                 const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
                 errorCount.push(`Image with path ${image} not found or not attributed; it is used in ${layer.id}${ctx}`)
@@ -132,9 +137,6 @@ function validateTranslationCompletenessOfObject(object: any, expectedLanguages:
         if (ok !== total) {
             isComplete = false;
         }
-    }
-    if (!isComplete) {
-        console.log(message)
     }
     return missingTranlations
 
@@ -205,11 +207,15 @@ function main(args: string[]) {
     }
 
     if(missingTranslations.length > 0){
+        console.log(missingTranslations.length, "missing translations")
         writeFileSync("missing_translations.txt", missingTranslations.join("\n"))
     }
     
     if (layerErrorCount.length + themeErrorCount.length == 0) {
         console.log("All good!")
+        
+        // We load again from disc, as modifications were made above
+        const lt = loadThemesAndLayers();
         writeFiles(lt);
     } else {
         const errors = layerErrorCount.concat(themeErrorCount).join("\n")

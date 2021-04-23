@@ -189,12 +189,25 @@ const contents = ScriptUtils.readDirRecSync("./assets")
     .filter(entry => entry.indexOf("./assets/generated") != 0)
 const licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
 const licenseInfos = generateLicenseInfos(licensePaths);
+
+
 writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfos, null, "  "))
 
 const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg)$/i) != null)
 const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
-
+for (const licenseInfo of licenseInfos) {
+    for (const source of licenseInfo.sources) {
+        if(source == ""){
+            invalidLicenses.push("Invalid license: empty string in "+JSON.stringify(licenseInfo))
+        }
+        try{
+            new URL(source);
+        }catch{
+            invalidLicenses.push("Not a valid URL: "+source)
+        }
+    }
+}
 if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
     queryMissingLicenses(missingLicenses)
 }
