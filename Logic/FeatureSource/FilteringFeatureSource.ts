@@ -15,16 +15,21 @@ public readonly name = "FilteringFeatureSource"
 
         const self = this;
 
+        console.log("INITING pipeline: ",layers)
 
         function update() {
 
             const layerDict = {};
+            if(layers.data.length == 0){
+                throw "No layers defined!"
+            }
             for (const layer of layers.data) {
                 layerDict[layer.layerDef.id] = layer;
             }
 
             const features: { feature: any, freshness: Date }[] = upstream.features.data;
 
+            const missingLayers = new Set<string>();
 
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
@@ -35,7 +40,7 @@ public readonly name = "FilteringFeatureSource"
                         layerDef: LayerConfig
                     } = layerDict[layerId];
                     if (layer === undefined) {
-                        console.error("No layer found with id ", layerId);
+                        missingLayers.add(layerId)
                         return true;
                     }
                     
@@ -65,6 +70,9 @@ public readonly name = "FilteringFeatureSource"
 
             });
             self.features.setData(newFeatures);
+            if(missingLayers.size > 0){
+                console.error("Some layers were not found: ", Array.from(missingLayers))
+            }
         }
 
 

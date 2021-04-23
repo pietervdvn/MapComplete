@@ -7,16 +7,17 @@ import {GeoOperations} from "../GeoOperations";
  * This is the part of the pipeline which introduces extra points at the center of an area (but only if this is demanded by the wayhandling)
  */
 export default class WayHandlingApplyingFeatureSource implements FeatureSource {
-    features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public readonly name;
 
     constructor(layers: UIEventSource<{
                     layerDef: LayerConfig
                 }[]>,
                 upstream: FeatureSource) {
-
+        this.name = "Wayhandling of " + upstream.name;
         this.features = upstream.features.map(
             features => {
-                if(features === undefined){
+                if (features === undefined) {
                     return;
                 }
 
@@ -28,7 +29,7 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                         allDefaultWayHandling = false;
                     }
                 }
-                
+
                 const newFeatures: { feature: any, freshness: Date }[] = [];
                 for (const f of features) {
                     const feat = f.feature;
@@ -37,8 +38,8 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                     if (layer === undefined) {
                         throw "No layer found with id " + layerId;
                     }
-                    
-                    if(layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT){
+
+                    if (layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
                         newFeatures.push(f);
                         continue;
                     }
@@ -52,12 +53,12 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                     // Create the copy
                     const centerPoint = GeoOperations.centerpoint(feat);
                     centerPoint["_matching_layer_id"] = feat._matching_layer_id;
+
                     newFeatures.push({feature: centerPoint, freshness: f.freshness});
-                    
-                    if(layer.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY){
+                    if (layer.wayHandling === LayerConfig.WAYHANDLING_CENTER_AND_WAY) {
                         newFeatures.push(f);
                     }
-                    
+
                 }
                 return newFeatures;
             }
