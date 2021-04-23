@@ -9,6 +9,8 @@ export default class SelectedFeatureHandler {
     private readonly _hash: UIEventSource<string>;
     private readonly _selectedFeature: UIEventSource<any>;
 
+    private static readonly _no_trigger_on = ["welcome","copyright","layers"]
+    
     constructor(hash: UIEventSource<string>, 
                 selectedFeature: UIEventSource<any>,
                 featureSource: FeatureSource) {
@@ -28,7 +30,9 @@ export default class SelectedFeatureHandler {
 
         selectedFeature.addCallback(feature => {
             if(feature === undefined){
-                hash.setData("")
+                if(SelectedFeatureHandler._no_trigger_on.indexOf(hash.data) < 0){
+                    hash.setData("")
+                }
             }
             
             const h = feature?.properties?.id;
