@@ -13,6 +13,8 @@ import {Tag} from "../Tags/Tag";
  */
 export class Changes implements FeatureSource{
 
+    
+    public readonly name = "Newly added features"
     /**
      * The newly created points, as a FeatureSource
      */
