@@ -3,9 +3,9 @@ import {UIEventSource} from "../UIEventSource";
 import {Review} from "./Review";
 
 export class MangroveIdentity {
-    private readonly _mangroveIdentity: UIEventSource<string>;
     public keypair: any = undefined;
     public readonly kid: UIEventSource<string> = new UIEventSource<string>(undefined);
+    private readonly _mangroveIdentity: UIEventSource<string>;
 
     constructor(mangroveIdentity: UIEventSource<string>) {
         const self = this;
@@ -26,7 +26,7 @@ export class MangroveIdentity {
             if ((mangroveIdentity.data ?? "") === "") {
                 this.CreateIdentity();
             }
-        }catch(e){
+        } catch (e) {
             console.error("Could not create identity: ", e)
         }
     }
@@ -53,44 +53,45 @@ export class MangroveIdentity {
 }
 
 export default class MangroveReviews {
+    private static _reviewsCache = {};
+    private static didWarn = false;
     private readonly _lon: number;
     private readonly _lat: number;
     private readonly _name: string;
     private readonly _reviews: UIEventSource<Review[]> = new UIEventSource<Review[]>([]);
     private _dryRun: boolean;
     private _mangroveIdentity: MangroveIdentity;
-    private _lastUpdate : Date = undefined;
+    private _lastUpdate: Date = undefined;
 
-    private static _reviewsCache = {};
-    
-    public static Get(lon: number, lat: number, name: string,
-                      identity: MangroveIdentity,
-                      dryRun?: boolean){
-        const newReviews = new MangroveReviews(lon, lat, name, identity, dryRun);
-        
-        const uri = newReviews.GetSubjectUri();
-        const cached = MangroveReviews._reviewsCache[uri];
-        if(cached !== undefined){
-            return cached;
-        }
-        MangroveReviews._reviewsCache[uri] = newReviews;
-        
-        return newReviews;
-    }
-    
-   private constructor(lon: number, lat: number, name: string,
-                identity: MangroveIdentity,
-                dryRun?: boolean) {
-      
+    private constructor(lon: number, lat: number, name: string,
+                        identity: MangroveIdentity,
+                        dryRun?: boolean) {
+
         this._lon = lon;
         this._lat = lat;
         this._name = name;
         this._mangroveIdentity = identity;
         this._dryRun = dryRun;
-        if(dryRun){
+        if (dryRun && !MangroveReviews.didWarn) {
+            MangroveReviews.didWarn = true;
             console.warn("Mangrove reviews will _not_ be saved as dryrun is specified")
         }
 
+    }
+
+    public static Get(lon: number, lat: number, name: string,
+                      identity: MangroveIdentity,
+                      dryRun?: boolean) {
+        const newReviews = new MangroveReviews(lon, lat, name, identity, dryRun);
+
+        const uri = newReviews.GetSubjectUri();
+        const cached = MangroveReviews._reviewsCache[uri];
+        if (cached !== undefined) {
+            return cached;
+        }
+        MangroveReviews._reviewsCache[uri] = newReviews;
+
+        return newReviews;
     }
 
     /**
@@ -111,10 +112,10 @@ export default class MangroveReviews {
      * Note: rating is between 1 and 100
      */
     public GetReviews(): UIEventSource<Review[]> {
-        
-        if(this._lastUpdate !== undefined && this._reviews.data !== undefined &&
+
+        if (this._lastUpdate !== undefined && this._reviews.data !== undefined &&
             (new Date().getTime() - this._lastUpdate.getTime()) < 15000
-        ){
+        ) {
             // Last update was pretty recent
             return this._reviews;
         }
@@ -140,7 +141,6 @@ export default class MangroveReviews {
                         rating: r.rating // percentage points
                     };
 
-                   
 
                     (rev.made_by_user ? reviewsByUser : reviews).push(rev);
                 }

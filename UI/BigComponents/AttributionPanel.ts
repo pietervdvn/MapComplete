@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import Attribution from "./Attribution";
@@ -8,9 +7,8 @@ import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import * as licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense";
-import {Icon} from "leaflet";
-import Img from "../Base/Img";
 import {Utils} from "../../Utils";
+import Link from "../Base/Link";
 
 /**
  * The attribution panel shown on mobile
@@ -48,12 +46,25 @@ export default class AttributionPanel extends Combine {
             return undefined;
         }
 
+        const sources =Utils.NoNull(Utils.NoEmpty(license.sources))
+       
         return new Combine([
             `<img src='${iconPath}' style="width: 50px; height: 50px; margin-right: 0.5em;">`,
             new Combine([
                 new FixedUiElement(license.authors.join("; ")).SetClass("font-bold"),
-                new Combine([license.license,  license.sources.length > 0 ? " - " : "", 
-                    ...license.sources.map(link => `<a href='${link}' target="_blank">${new URL(link).hostname}</a> `)]).SetClass("block")
+                new Combine([license.license, 
+                    sources.length > 0 ? " - " : "", 
+                    ... sources.map(lnk => {
+                        let sourceLinkContent = lnk;
+                        try{
+                            sourceLinkContent =   new URL(lnk).hostname
+                        }catch{
+                            console.error("Not a valid URL:", lnk)
+                        }
+                        return new Link(sourceLinkContent, lnk, true);
+                    })
+                ]
+                ).SetClass("block")
             ]).SetClass("flex flex-col")
         ]).SetClass("flex")
     }

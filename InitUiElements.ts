@@ -375,8 +375,8 @@ export class InitUiElements {
             state.layoutToUse.map(layoutToUse => {
                 const flayers = [];
 
+               
                 for (const layer of layoutToUse.layers) {
-
                     const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
                         .map<boolean>((str) => str !== "false", [], (b) => b.toString());
                     const flayer = {

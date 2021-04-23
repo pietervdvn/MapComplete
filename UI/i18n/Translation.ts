@@ -20,6 +20,7 @@ export class Translation extends UIElement {
         for (const translationsKey in translations) {
             count++;
             if (typeof (translations[translationsKey]) != "string") {
+                console.error("Non-string object in translation: ", translations[translationsKey])
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
         }

@@ -117,6 +117,12 @@ export class SubstitutedTranslation extends UIElement {
             }
         }
 
+        // Let's to a small sanity check to help the theme designers:
+        if(template.search(/{[^}]+\([^}]*\)}/) >= 0){
+            // Hmm, we might have found an invalid rendering name
+            console.warn("Found a suspicious special rendering value in: ", template, " did you mean one of: ", SpecialVisualizations.specialVisualizations.map(sp => sp.funcName+"()").join(", "))
+        }
+        
         // IF we end up here, no changes have to be made - except to remove any resting {}
         return [new FixedUiElement(template.replace(/{.*}/g, ""))];
     }

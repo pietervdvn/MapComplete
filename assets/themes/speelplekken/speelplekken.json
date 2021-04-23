@@ -30,58 +30,39 @@
         "source": {
           "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 14
-        }
+        },
+        "icon": "./assets/themes/speelplekken/speelbos.svg"
       }
     },
     {
       "builtin": "playground",
       "override": {
-        "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14
-        }
-      }
-    },
-    {
-      "builtin": "sport_pitch",
-      "override": {
-        "minzoom": 15,
-        "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14
-        }
-      }
-    },
-    {
-      "builtin": "slow_roads",
-      "override": {
-        "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14
-        },
-        "calculatedTags": [
-          "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
-        ]
-      }
-    },
-    {
-      "builtin": "grass_in_parks",
-      "override": {
-        "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14
-        }
+        "icon": "./assets/themes/speelplekken/speeltuin.svg"
       }
     },
     {
       "builtin": "village_green",
       "override": {
-        "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14
-        }
+        "icon": "./assets/themes/speelplekken/speelweide.svg"
       }
     },
+    {
+      "builtin": "grass_in_parks",
+      "override": {
+        "icon": "./assets/themes/speelplekken/speelweide.svg"
+      }
+    },
+     "sport_pitch",
+    
+    {
+      "builtin": "slow_roads",
+      "override": {
+        "calculatedTags": [
+          "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
+        ]
+      }
+    },
+    
     {
       "id": "walking_routes",
       "name": {
@@ -190,6 +171,12 @@
       }
     }
   ],
+  "overrideAll": {
+    "source": {
+      "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+      "geoJsonZoomLevel": 14
+    }
+  },
   "roamingRenderings": [
     {
       "render": "Maakt deel uit van {_part_of_walking_routes}",

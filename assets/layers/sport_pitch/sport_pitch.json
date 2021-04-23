@@ -4,7 +4,7 @@
     "nl": "Sportterrein",
     "en": "Sport pitches"
   },
-  "wayHandling": 2,
+  "wayHandling": 1,
   "minzoom": 12,
   "source": {
     "osmTags": {
@@ -13,6 +13,9 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_size_classification=Number(feat.properties._surface) < 200 ? 'small' :  (Number(feat.properties._surface) < 750 ? 'medium' : 'large') "
+  ],
   "title": {
     "render": {
       "nl": "Sportterrein",
@@ -264,7 +267,7 @@
         "nl": "Wanneer is dit sportveld toegankelijk?",
         "en": "When is this pitch accessible?"
       },
-      "render": "{opening_hours()}",
+      "render": "Openingsuren: {opening_hours_table()}",
       "freeform": {
         "key": "opening_hours",
         "type": "opening_hours"
@@ -292,7 +295,25 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "circle:white;./assets/layers/sport_pitch/tabletennis.svg"
+    "render": "./assets/layers/sport_pitch/basketball.svg",
+    "mappings": [
+      {
+        "if": {
+          "or": [
+            "sport=baseball",
+            "sport=basketball",
+            "sport=beachvolleyball",
+            "sport=boules",
+            "sport=skateboard",
+            "sport=soccer",
+            "sport=table_tennis",
+            "sport=tennis",
+            "sport=volleyball"
+          ]
+        },
+        "then": "./assets/layers/sport_pitch/{sport}.svg"
+      }
+    ]
   },
   "iconOverlays": [
     {
@@ -310,7 +331,24 @@
     "render": "1"
   },
   "iconSize": {
-    "render": "25,25,center"
+    "render": "25,25,center",
+    "mappings": [
+      {
+        "if": {
+         "or": ["_size_classification=medium","id~node/.*"]
+        },
+        "then": "40,40,center"
+      },
+      {
+        "if": "_size_classification=small",
+        "then": "25,25,center"
+      },
+      
+      {
+        "if": "_size_classification=large",
+        "then": "50,50,center"
+      }
+    ]
   },
   "color": {
     "render": "#009"

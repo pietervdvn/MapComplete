@@ -13,6 +13,9 @@
       ]
     }
   },
+  "calculatedTags": [
+    "_size_classification=Number(feat.properties._surface) < 10 ? 'small' :  (Number(feat.properties._surface) < 100 ? 'medium' : 'large') "
+  ],
   "description": {
     "nl": "Speeltuinen",
     "en": "Playgrounds"
@@ -331,7 +334,25 @@
     "render": "1"
   },
   "iconSize": {
-    "render": "40,40,center"
+    "render": "40,40,center",
+    "mappings": [
+      {
+        "if": "id~node/.*",
+        "then": "40,40,center"
+      },
+      {
+        "if": "_size_classification=small",
+        "then": "25,25,center"
+      },
+      {
+        "if": "_size_classification=medium",
+        "then": "40,40,center"
+      },
+      {
+        "if": "_size_classification=large",
+        "then": "60,60,center"
+      }
+    ]
   },
   "color": {
     "render": "#0c3"

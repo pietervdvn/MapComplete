@@ -335,7 +335,8 @@
     {
       "#": "Surface area",
       "render": {
-        "en": "Surface area: {_surface:ha}Ha"
+        "en": "Surface area: {_surface:ha}Ha",
+        "nl": "Totale oppervlakte: {_surface:ha}Ha"
       },
       "mappings":[ {
           "if": "_surface:ha=0",

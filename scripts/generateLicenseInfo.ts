@@ -13,6 +13,9 @@ Utils.runningFromConsole = true;
 function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
+        try{
+            
+        
         const parsed = JSON.parse(readFileSync(path, "UTF-8"))
         if (Array.isArray(parsed)) {
             const l: SmallLicense[] = parsed
@@ -30,6 +33,8 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
 
             smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
             licenses.push(smallLicens)
+        }}catch(e){
+            console.error("Error: ",e, "while handling",path)
         }
 
     }

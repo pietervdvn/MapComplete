@@ -6,7 +6,7 @@
     "path": "SocialImageForeground.svg",
     "license": "CC-BY-SA",
     "sources": [
-      ""
+      "https://mapcomplete.osm.be"
     ]
   },
   {
@@ -15,9 +15,7 @@
     ],
     "path": "add.svg",
     "license": "CC0",
-    "sources": [
-      ""
-    ]
+    "sources": []
   },
   {
     "authors": [
@@ -354,7 +352,7 @@
     "path": "mapcomplete_logo.svg",
     "license": "Logo; CC-BY-SA",
     "sources": [
-      ""
+      "https://mapcomplete.osm.be"
     ]
   },
   {
