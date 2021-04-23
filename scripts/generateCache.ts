@@ -2,10 +2,9 @@
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
 import {TileRange, Utils} from "../Utils";
-
 Utils.runningFromConsole = true
 import {Overpass} from "../Logic/Osm/Overpass";
-import {writeFileSync, existsSync, readFileSync} from "fs";
+import {existsSync, readFileSync, writeFileSync} from "fs";
 import {TagsFilter} from "../Logic/Tags/TagsFilter";
 import {Or} from "../Logic/Tags/Or";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
@@ -13,11 +12,9 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
-import {Script} from "vm";
 import MetaTagging from "../Logic/MetaTagging";
-import State from "../State";
-import {createEvalAwarePartialHost} from "ts-node/dist/repl";
-import {fail} from "assert";
+
+
 
 function createOverpassObject(theme: LayoutConfig) {
     let filters: TagsFilter[] = [];
@@ -67,10 +64,6 @@ function rawJsonName(targetDir: string, x: number, y: number, z: number): string
 
 function geoJsonName(targetDir: string, x: number, y: number, z: number): string {
     return targetDir + "_" + z + "_" + x + "_" + y + ".geojson"
-}
-
-function metaJsonName(targetDir: string, x: number, y: number, z: number): string {
-    return targetDir + "_" + z + "_" + x + "_" + y + ".meta.json"
 }
 
 async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/* : {failed: number, skipped :number} */ {
@@ -167,17 +160,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
             MetaTagging.addMetatags(featuresFreshness, relations, theme.layers);
             writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson))
-
-
-            const meta = {
-                freshness: osmTime,
-                relations: relations
-            }
-
-            writeFileSync(
-                metaJsonName(targetdir, x, y, r.zoomlevel),
-                JSON.stringify(meta)
-            )
+         
         }
     }
 }
