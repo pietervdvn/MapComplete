@@ -1,7 +1,8 @@
 {
   "id": "direction",
   "name": {
-    "en": "Direction visualization"
+    "en": "Direction visualization",
+    "nl": "Richtingsvisualisatie"
   },
   "minzoom": 16,
   "source": {
@@ -16,7 +17,8 @@
   "passAllFeatures": true,
   "title": null,
   "description": {
-    "en": "This layer visualizes directions"
+    "en": "This layer visualizes directions",
+    "nl": "Deze laag toont de oriëntatie van een object"
   },
   "tagRenderings": [],
   "icon": {

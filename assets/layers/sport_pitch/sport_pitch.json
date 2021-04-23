@@ -160,24 +160,37 @@
     },
     {
       "question": {
-        "nl": "Is dit sportterrein publiek toegankelijk?"
+        "nl": "Is dit sportterrein publiek toegankelijk?",
+        "en": "Is this sport pitch publicly accessible?"
       },
       "mappings": [
         {
           "if": "access=public",
-          "then": "Publiek toegankelijk"
+          "then": {
+            "nl": "Publiek toegankelijk",
+            "en": "Public access"
+          }
         },
         {
           "if": "access=limited",
-          "then": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)"
+          "then": {
+            "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)",
+            "en": "Limited access (e.g. only with an appointment, during certain hours, ...)"
+          }
         },
         {
           "if": "access=members",
-          "then": "Enkel toegankelijk voor leden van de bijhorende sportclub"
+          "then": {
+            "nl": "Enkel toegankelijk voor leden van de bijhorende sportclub",
+            "en": "Only accessible for members of the club"
+          }
         },
         {
           "if": "access=private",
-          "then": "Privaat en niet toegankelijk"
+          "then": {
+            "nl": "Privaat en niet toegankelijk",
+            "en": "Private - not accessible to the public"
+          }
         }
       ]
     },
@@ -197,29 +210,28 @@
         {
           "if": "reservation=required",
           "then": {
-            "nl":             "Reserveren is verplicht om gebruik te maken van dit sportterrein",
+            "nl": "Reserveren is verplicht om gebruik te maken van dit sportterrein",
             "en": "Making an appointment is obligatory to use this sport pitch"
           }
         },
         {
           "if": "reservation=recommended",
           "then": {
-            "nl": 
-            "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein",
+            "nl": "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein",
             "en": "Making an appointment is recommended when using this sport pitch"
           }
         },
         {
           "if": "reservation=yes",
           "then": {
-            "nl":"Reserveren is mogelijk, maar geen voorwaarde",
+            "nl": "Reserveren is mogelijk, maar geen voorwaarde",
             "en": "Making an appointment is possible, but not necessary to use this sport pitch"
           }
         },
         {
           "if": "reservation=no",
           "then": {
-        "nl":    "Reserveren is niet mogelijk",
+            "nl": "Reserveren is niet mogelijk",
             "en": "Making an appointment is not possible"
           }
         }
@@ -227,7 +239,7 @@
     },
     {
       "question": {
-      "nl":  "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
+        "nl": "Wat is het telefoonnummer van de bevoegde dienst of uitbater?",
         "en": "What is the phone number of the operator?"
       },
       "freeform": {
@@ -306,7 +318,8 @@
   "presets": [
     {
       "title": {
-        "nl": "Ping-pong tafel"
+        "nl": "Ping-pong tafel",
+        "en": "Tabletennis table"
       },
       "tags": [
         "leisure=pitch",
@@ -315,7 +328,8 @@
     },
     {
       "title": {
-        "nl": "Sportterrein"
+        "nl": "Sportterrein",
+        "en": "Sport pitch"
       },
       "tags": [
         "leisure=pitch",

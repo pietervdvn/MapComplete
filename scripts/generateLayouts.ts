@@ -17,69 +17,9 @@ function enc(str: string): string {
     return encodeURIComponent(str.toLowerCase());
 }
 
-function validate(layout: LayoutConfig) {
-    const translations: Translation[] = [];
-    const queue: any[] = [layout]
-
-    while (queue.length > 0) {
-        const item = queue.pop();
-        for (const key in item) {
-            const v = item[key];
-            if (v === undefined) {
-                continue;
-            }
-            if (v instanceof Translation || v?.translations !== undefined) {
-                translations.push(v);
-            } else if (
-                ["string", "function", "boolean", "number"].indexOf(typeof (v)) < 0) {
-                queue.push(v)
-            }
-        }
-    }
-
-    const missing = {}
-    const present = {}
-    for (const ln of layout.language) {
-        missing[ln] = 0;
-        present[ln] = 0;
-        for (const translation of translations) {
-            if (translation.translations["*"] !== undefined) {
-                continue;
-            }
-            const txt = translation.translations[ln];
-            const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
-            if (isMissing) {
-                console.log(`   ${layout.id}: No translation for`, ln, "in", translation.translations, "got:", txt)
-                missing[ln]++
-            } else {
-                present[ln]++;
-            }
-        }
-    }
-
-    let message = `Translation completeness for theme ${layout.id}`
-    let isComplete = true;
-    for (const ln of layout.language) {
-        const amiss = missing[ln];
-        const ok = present[ln];
-        const total = amiss + ok;
-        message += `\n${ln}: ${ok}/${total}`
-        if (ok !== total) {
-            isComplete = false;
-        }
-    }
-    if (isComplete) {
-        console.log(`${layout.id} is fully translated!`)
-    } else {
-        console.log(message)
-    }
-
-}
-
-
 const alreadyWritten = []
 
-async function createIcon(iconPath: string, size: number, layout: LayoutConfig) {
+async function createIcon(iconPath: string, size: number) {
     let name = iconPath.split(".").slice(0, -1).join(".");
     if (name.startsWith("./")) {
         name = name.substr(2)
@@ -131,7 +71,7 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
 
         const sizes = [72, 96, 120, 128, 144, 152, 180, 192, 384, 512];
         for (const size of sizes) {
-            const name = await createIcon(path, size, layout);
+            const name = await createIcon(path, size);
             icons.push({
                 src: name,
                 sizes: size + "x" + size,
@@ -250,7 +190,6 @@ for (const i in all) {
             console.log("Could not write manifest for ", layoutName, " because ", err)
         }
     };
-    validate(layout)
     createManifest(layout, "").then(manifObj => {
         const manif = JSON.stringify(manifObj, undefined, 2);
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
