@@ -4,7 +4,7 @@
 > Let a thousand flowers bloom
 
 MapComplete is an OpenStreetMap viewer and editor. It shows map features on a certain topic, and allows to see, edit and add new features to the map.
-It can be seen as a webversion crossover of StreetComplete and MapContrib. It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
+It can be seen as a webversion crossover of [StreetComplete](https://github.com/streetcomplete/StreetComplete/) and [MapContrib](https://github.com/MapContrib/MapContrib). It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
 
 The design goals of MapComplete are to be:
 
