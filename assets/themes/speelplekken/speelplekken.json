@@ -55,7 +55,12 @@
         "minzoom":14
       }
     },
-     "sport_pitch",
+    {
+      "builtin":   "sport_pitch",
+      "override": {
+        "minzoom": 14
+      }
+    },
     
     {
       "builtin": "slow_roads",
@@ -174,9 +179,14 @@
       }
     }
   ],
+  "clustering": {
+    "maxZoom": 16,
+    "minNeededElements": 100
+  },
   "overrideAll": {
     "source": {
-      "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+      "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+      "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
       "geoJsonZoomLevel": 14
     }
   },

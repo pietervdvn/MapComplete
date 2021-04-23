@@ -30,7 +30,7 @@ export interface LayerConfigJson {
      *
      * source: {osmTags: "key=value"} will fetch all objects with given tags from OSM. Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
      * source: {geoJson: "https://my.source.net/some-geo-data.geojson"} to fetch a geojson from a third party source
-     * source: {geoJson: "https://my.source.net/some-tile-geojson-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted
+     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
      *
      * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
      *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query

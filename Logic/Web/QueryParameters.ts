@@ -79,7 +79,7 @@ export class QueryParameters {
             return QueryParameters.knownSources[key];
         }
         QueryParameters.addOrder(key);
-        const source = new UIEventSource<string>(deflt);
+        const source = new UIEventSource<string>(deflt, "&"+key);
         QueryParameters.knownSources[key] = source;
         source.addCallback(() => QueryParameters.Serialize())
         return source;

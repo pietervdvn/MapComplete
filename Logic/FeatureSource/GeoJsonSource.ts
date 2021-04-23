@@ -16,15 +16,15 @@ export default class GeoJsonSource implements FeatureSource {
 
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name;
-    private readonly onFail: ((errorMsg: any, url: string) => void) = undefined;
+    private onFail: ((errorMsg: any, url: string) => void) = undefined;
     private readonly layerId: string;
     private readonly seenids: Set<string> = new Set<string>()
 
-    constructor(locationControl: UIEventSource<Loc>,
+   private constructor(locationControl: UIEventSource<Loc>,
                 flayer: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig },
                 onFail?: ((errorMsg: any) => void)) {
         this.layerId = flayer.layerDef.id;
-        let url = flayer.layerDef.source.geojsonSource;
+        let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         this.name = "GeoJsonSource of " + url;
         const zoomLevel = flayer.layerDef.source.geojsonZoomLevel;
 
@@ -34,58 +34,66 @@ export default class GeoJsonSource implements FeatureSource {
             // This is a classic, static geojson layer
             if (onFail === undefined) {
                 onFail = errorMsg => {
-                    console.warn(`Could not load geojson layer from`, url, "due to", errorMsg)
                 }
             }
             this.onFail = onFail;
 
             this.LoadJSONFrom(url)
         } else {
-            // This is a dynamic template with a fixed zoom level
-            url = url.replace("{z}", "" + zoomLevel)
-            const loadedTiles = new Set<string>();
-            const self = this;
-            this.onFail = (msg, url) => {
-                console.warn(`Could not load geojson layer from`, url, "due to", msg)
-                loadedTiles.delete(url)
-            }
+            this.ConfigureDynamicLayer(url, zoomLevel, locationControl, flayer)
+        }
+    }
+    
+    private ConfigureDynamicLayer(url: string, zoomLevel: number, locationControl: UIEventSource<Loc>, flayer:  { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }){
+        // This is a dynamic template with a fixed zoom level
+        url = url.replace("{z}", "" + zoomLevel)
+        const loadedTiles = new Set<string>();
+        const self = this;
+        this.onFail = (msg, url) => {
+            console.warn(`Could not load geojson layer from`, url, "due to", msg)
+            loadedTiles.add(url); // We add the url to the 'loadedTiles' in order to not reload it in the future
+        }
 
-            const neededTiles = locationControl.map(
-                location => {
-
-                    if (!flayer.isDisplayed.data) {
-                        return undefined;
+        const neededTiles = locationControl.map(
+            location => {
+                // Yup, this is cheating to just get the bounds here
+                const bounds = State.state.leafletMap.data.getBounds()
+                const tileRange = Utils.TileRangeBetween(zoomLevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
+                const needed = new Set<string>();
+                for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
+                    for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
+                        let neededUrl = url.replace("{x}", "" + x).replace("{y}", "" + y);
+                        needed.add(neededUrl)
                     }
-
-                    // Yup, this is cheating to just get the bounds here
-                    const bounds = State.state.leafletMap.data.getBounds()
-                    const tileRange = Utils.TileRangeBetween(zoomLevel, bounds.getNorth(), bounds.getEast(), bounds.getSouth(), bounds.getWest())
-                    const needed = new Set<string>();
-                    for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
-                        for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
-                            let neededUrl = url.replace("{x}", "" + x).replace("{y}", "" + y);
-                            needed.add(neededUrl)
-                        }
-                    }
-                    return needed;
                 }
-            );
-            neededTiles.stabilized(250).addCallback((needed: Set<string>) => {
-                if (needed === undefined) {
+                return needed;
+            }
+        , [flayer.isDisplayed]);
+        neededTiles.stabilized(250).addCallback((needed: Set<string>) => {
+            if (needed === undefined) {
+                return;
+            }
+            if (!flayer.isDisplayed.data) {
+                // No need to download! - the layer is disabled
+                return;
+            }
+        console.log("???", locationControl, flayer.layerDef)
+           if(locationControl.data.zoom < flayer.layerDef.minzoom){
+               console.log("Not downloading ", needed, "not sufficiently zoomed")
+               return;
+           }
+            
+            needed.forEach(neededTile => {
+                if (loadedTiles.has(neededTile)) {
                     return;
                 }
-                needed.forEach(neededTile => {
-                    if (loadedTiles.has(neededTile)) {
-                        return;
-                    }
 
-                    loadedTiles.add(neededTile)
-                    self.LoadJSONFrom(neededTile)
+                loadedTiles.add(neededTile)
+                self.LoadJSONFrom(neededTile)
 
-                })
             })
+        })
 
-        }
     }
 
     /**
@@ -98,7 +106,7 @@ export default class GeoJsonSource implements FeatureSource {
 
         const flayersPerSource = new Map<string, { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig }[]>();
         for (const flayer of flayers) {
-            const url = flayer.layerDef.source.geojsonSource
+            const url = flayer.layerDef.source.geojsonSource?.replace(/{layer}/g, flayer.layerDef.id)
             if (url === undefined) {
                 continue;
             }

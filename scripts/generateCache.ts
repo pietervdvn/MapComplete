@@ -2,6 +2,7 @@
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
 import {TileRange, Utils} from "../Utils";
+
 Utils.runningFromConsole = true
 import {Overpass} from "../Logic/Osm/Overpass";
 import {existsSync, readFileSync, writeFileSync} from "fs";
@@ -13,7 +14,6 @@ import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
-
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -105,8 +105,8 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
                     console.log("Didn't get an answer yet - waiting more")
                 }
             }
-            
-            if(!success){
+
+            if (!success) {
                 failed++;
                 console.log("Hit the rate limit - waiting 90s")
                 for (let i = 0; i < 90; i++) {
@@ -159,11 +159,36 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
             MetaTagging.addMetatags(featuresFreshness, relations, theme.layers);
-            writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson))
-         
+
+
+            writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson, null, " "))
+
         }
     }
 }
+
+async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfig) {
+    let processed = 0;
+    const z = r.zoomlevel;
+    for (let x = r.xstart; x <= r.xend; x++) {
+        for (let y = r.ystart; y <= r.yend; y++) {
+            const file = readFileSync(geoJsonName(targetdir, x, y, z), "UTF8")
+
+            for (const layer of theme.layers) {
+                const geojson = JSON.parse(file)
+                geojson.features = geojson.features.filter(f => f._matching_layer_id === layer.id)
+                if(geojson.features.length == 0){
+                    continue;
+                }
+                const new_path = geoJsonName(targetdir+"_"+layer.id, x, y, z);
+                writeFileSync(new_path, JSON.stringify(geojson, null, " "))
+            }
+        
+            
+        }
+    }
+}
+
 
 async function main(args: string[]) {
 
@@ -203,6 +228,7 @@ async function main(args: string[]) {
     } while (failed > 0)
 
     await postProcess(targetdir, tileRange, theme)
+    await splitPerLayer(targetdir, tileRange, theme)
 }
 
 

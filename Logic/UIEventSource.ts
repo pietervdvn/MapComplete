@@ -98,7 +98,8 @@ export class UIEventSource<T> {
         const self = this;
 
         const newSource = new UIEventSource<J>(
-            f(this.data)
+            f(this.data),
+            "map("+this.tag+")"
         );
 
         const update = function () {
