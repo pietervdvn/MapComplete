@@ -77,9 +77,8 @@ export default class GeoJsonSource implements FeatureSource {
                 // No need to download! - the layer is disabled
                 return;
             }
-        console.log("???", locationControl, flayer.layerDef)
+
            if(locationControl.data.zoom < flayer.layerDef.minzoom){
-               console.log("Not downloading ", needed, "not sufficiently zoomed")
                return;
            }
             

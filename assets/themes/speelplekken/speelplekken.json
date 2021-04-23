@@ -58,7 +58,7 @@
     {
       "builtin":   "sport_pitch",
       "override": {
-        "minzoom": 14
+        "minzoom": 15
       }
     },
     
