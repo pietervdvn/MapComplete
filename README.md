@@ -4,7 +4,7 @@
 > Let a thousand flowers bloom
 
 MapComplete is an OpenStreetMap viewer and editor. It shows map features on a certain topic, and allows to see, edit and add new features to the map.
-It can be seen as a webversion crossover of [StreetComplete](https://github.com/streetcomplete/StreetComplete/) and [MapContrib](https://github.com/MapContrib/MapContrib). It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
+It can be seen as a webversion crossover of StreetComplete and MapContrib. It tries to be just as easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle infrastructure, ...)
 
 The design goals of MapComplete are to be:
 
@@ -109,13 +109,12 @@ A theme has translations into the preset.json (`assets/themes/themename/themenam
 
 ### High-level overview
 
-The website is purely static. This means that there is no database here, nor one is needed as all the data is kept in OpenStreetMap, Wikimedia (for images), IMGUR. Settings are saved in the preferences-space of the OSM-website, amended by some local-storage if the user is not logged-in.
+The website is purely static. This means that there is no database here, nor one is needed as all the data is kept in OpenStreetMap, Wikimedia (for images), Imgur. Settings are saved in the preferences-space of the OSM-website, amended by some local-storage if the user is not logged-in.
 
 When viewing, the data is loaded from overpass. The data is then converted (in the browser) to geojson, which is rendered by Leaflet. 
 
 When a map feature is clicked, a popup shows the information, images and questions that are relevant for that object.
 The answers given by the user are sent (after a few seconds) to OpenStreetMap directly - if the user is logged in. If not logged in, the user is prompted to do so. 
-
 
 The UI-event-source is a class where the entire system is built upon, it acts as an observable object: another object can register for changes to update when needed.
 
@@ -130,7 +129,7 @@ Images are fetched from:
 
 ### Uploading images
 
-Images are uplaoded to imgur, as their API was way easier to handle. The URL is written into the changes
+Images are uploaded to Imgur, as their API was way easier to handle. The URL is written into the changes.
 
 The idea is that once in a while, the images are transfered to wikipedia or that we hook up wikimedia directly (but I need some help in getting their API working).
 
@@ -138,7 +137,7 @@ The idea is that once in a while, the images are transfered to wikipedia or that
 
 In order to avoid lots of small changesets, a changeset is opened and kept open. The changeset number is saved into the users preferences on OSM.
 
-Whenever a change is made -even adding a single tag- the change is uploaded into this changeset. If that fails, the changeset is probably closed and we open a new changeset.
+Whenever a change is made -even adding a single tag - the change is uploaded into this changeset. If that fails, the changeset is probably closed and we open a new changeset.
 
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing them. 
 
@@ -150,7 +149,7 @@ All documentation can be found in [here](Docs/)
 
 Privacy is important, we try to leak as little information as possible.
 All major personal information is handled by OSM.
-Geolocation is available on mobile only throught hte device's GPS location (so no geolocation is sent of to google)
+Geolocation is available on mobile only throught hte device's GPS location (so no geolocation is sent of to Google).
 
 TODO: erase cookies of third party websites and API's
 
