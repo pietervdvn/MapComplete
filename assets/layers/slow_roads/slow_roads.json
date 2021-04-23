@@ -157,7 +157,7 @@
     "mappings": []
   },
   "width": {
-    "render": "4"
+    "render": "7"
   },
   "dashArray": {
     "render": "",
@@ -168,19 +168,15 @@
       },
       {
         "if": "highway=path",
-        "then": "10 3"
+        "then": "0 12"
       },
       {
-        "if": "highway=footway",
-        "then": "10 10"
-      },
-      {
-        "if": "highway=pedestrian",
-        "then": "10 10"
+        "if": {"or":["highway=footway","highway=pedestrian"]},
+        "then": "12 18"
       },
       {
         "if": "highway=living_street",
-        "then": "10 5 3 5"
+        "then": "12 12 0 12"
       }
     ]
   },

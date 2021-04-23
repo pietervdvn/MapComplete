@@ -13,7 +13,7 @@
     "nl"
   ],
   "maintainer": "MapComplete",
-  "icon": "./assets/layers/play_forest/icon.svg",
+  "icon": "./assets/themes/speelplekken/logo.svg",
   "hideFromOverview": true,
   "lockLocation": true,
   "version": "0",
@@ -186,7 +186,7 @@
         ]
       },
       "width": {
-        "render": "3"
+        "render": "9"
       }
     }
   ],

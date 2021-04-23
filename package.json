@@ -15,7 +15,7 @@
     "generate:translations": "ts-node scripts/generateTranslations.ts",
     "generate:layouts": "ts-node scripts/generateLayouts.ts",
     "generate:docs": "ts-node scripts/generateDocs.ts && ts-node scripts/generateTaginfoProjectFiles.ts",
-    "generate:cache:speelplekken": "ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.20 4.37 51.11 4.51",
+    "generate:cache:speelplekken": "ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.22 4.30 51.08 4.55",
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "validate:layeroverview": "ts-node scripts/generateLayerOverview.ts --report",
