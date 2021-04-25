@@ -149,6 +149,9 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
                         break;
                     }
                 }
+                if(feature["_matching_layer_id"] === undefined){
+                    console.log("No matching layer found for ", feature.properties.id)
+                }
             }
             const featuresFreshness = geojson.features.map(feature => {
                 return ({
@@ -164,7 +167,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             for (const feature of geojson.features) {
                 const layer = layerIndex.get(feature["_matching_layer_id"])
                 if (layer === undefined) {
-                    console.error("Didn't find a layer for " + feature["_matching_layer_id"])
+                    // Probably some extra, unneeded data, e.g. a point of a way
                     continue
                 }
 
