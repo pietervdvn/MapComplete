@@ -210,6 +210,14 @@ export default class LayoutConfig {
         icons.add(this.socialImage)
         return icons
     }
+    
+    public LayerIndex() : Map<string, LayerConfig>{
+        const index = new Map<string, LayerConfig>();
+        for (const layer of this.layers) {
+            index.set(layer.id, layer)
+        }
+        return index;
+    }
 
     /**
      * Replaces all the relative image-urls with a fixed image url
