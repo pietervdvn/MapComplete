@@ -31,7 +31,8 @@
           "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 14
         },
-        "icon": "./assets/themes/speelplekken/speelbos.svg"
+        "icon": "./assets/themes/speelplekken/speelbos.svg",
+        "minzoom": 12
       }
     },
     {

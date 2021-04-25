@@ -1,7 +1,7 @@
 {
   "id": "slow_roads",
   "name": {
-    "nl": "Trage wegen"
+    "nl": "Paadjes, trage wegen en autoluwe straten"
   },
   "minzoom": 16,
   "source": {
@@ -65,6 +65,11 @@
   },
   "tagRenderings": [
     "images",
+    {
+      "render": {
+        "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
+      }
+    },
     {
       "question": {
         "nl": "Wat is de wegverharding van dit pad?"
@@ -171,7 +176,12 @@
         "then": "0 12"
       },
       {
-        "if": {"or":["highway=footway","highway=pedestrian"]},
+        "if": {
+          "or": [
+            "highway=footway",
+            "highway=pedestrian"
+          ]
+        },
         "then": "12 18"
       },
       {
