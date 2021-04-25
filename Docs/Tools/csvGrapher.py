@@ -144,7 +144,7 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot.savefig("CumulativeContributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w')
 
 
-def create_theme_breakdown(stats, fileExtra="", cutoff=5):
+def create_theme_breakdown(stats, fileExtra="", cutoff=15):
     print("Creating theme breakdown " + fileExtra)
     themeCounts = {}
     for row in stats:
@@ -359,6 +359,8 @@ theme_remappings = {
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
     "wiki:User:joost_schouppe/campersite": "campersite",
     "arbres":"arbres_leffia",
+    "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
+    "testing mapcomplete 0.0.0":"buurtnatuur",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
 }
 
@@ -401,7 +403,7 @@ def main():
    
         
         create_graphs(stats)
-        # create_per_theme_graphs(stats, 15)
+        create_per_theme_graphs(stats, 15)
         # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
