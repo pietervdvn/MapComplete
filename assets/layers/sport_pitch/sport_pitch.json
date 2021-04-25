@@ -295,7 +295,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "./assets/layers/sport_pitch/basketball.svg",
+    "render": "circle:white;./assets/layers/sport_pitch/basketball.svg",
     "mappings": [
       {
         "if": {
@@ -311,7 +311,7 @@
             "sport=volleyball"
           ]
         },
-        "then": "./assets/layers/sport_pitch/{sport}.svg"
+        "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"
       }
     ]
   },

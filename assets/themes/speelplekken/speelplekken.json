@@ -83,7 +83,7 @@
           "and": [
             "type=route",
             "route=foot",
-            "operator=provincie Antwerpen"
+            "operator~[pP]rovincie Antwerpen"
           ]
         },
         "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
@@ -172,6 +172,10 @@
           {
             "if": "color~*",
             "then": "{color}"
+          },
+          {
+            "if": "colour~*",
+            "then": "{colour}"
           }
         ]
       },
