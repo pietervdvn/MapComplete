@@ -11,30 +11,36 @@ import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
 
 
 export default class SimpleMetaTagger {
-    public readonly keys: string[];
-    public readonly doc: string;
-    private readonly _f: (feature: any, index: number, freshness: Date) => void;
-
-    constructor(keys: string[], doc: string, f: ((feature: any, index: number, freshness: Date) => void)) {
-        this.keys = keys;
-        this.doc = doc;
-        this._f = f;
-        for (const key of keys) {
-            if (!key.startsWith('_')) {
-                throw `Incorrect metakey ${key}: it should start with underscore (_)`
-            }
-        }
-    }
-
-    addMetaTags(features: { feature: any, freshness: Date }[]) {
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
-            this._f(feature.feature, i, feature.freshness);
-        }
-    }
-
     static coder: any;
-    private static latlon = new SimpleMetaTagger(["_lat", "_lon"], "The latitude and longitude of the point (or centerpoint in the case of a way/area)",
+    public static readonly objectMetaInfo = new SimpleMetaTagger(
+        {
+            keys: ["_last_edit:contributor",
+                "_last_edit:contributor:uid",
+                "_last_edit:changeset",
+                "_last_edit:timestamp",
+                "_version_number"],
+            doc: "Information about the last edit of this object."
+        },
+        (feature) => {/*Note: also handled by 'UpdateTagsFromOsmAPI'*/
+
+            const tgs = feature.properties;
+            tgs["_last_edit:contributor"] = tgs["user"]
+            tgs["_last_edit:contributor:uid"] = tgs["uid"]
+            tgs["_last_edit:changeset"] = tgs["changeset"]
+            tgs["_last_edit:timestamp"] = tgs["timestamp"]
+            tgs["_version_number"] = tgs["version"]
+
+            delete tgs["timestamp"]
+            delete tgs["version"]
+            delete tgs["changeset"]
+            delete tgs["user"]
+            delete tgs["uid"]
+        }
+    )
+    private static latlon = new SimpleMetaTagger({
+            keys: ["_lat", "_lon"],
+            doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)"
+        },
         (feature => {
             const centerPoint = GeoOperations.centerpoint(feature);
             const lat = centerPoint.geometry.coordinates[1];
@@ -46,7 +52,10 @@ export default class SimpleMetaTagger {
         })
     );
     private static surfaceArea = new SimpleMetaTagger(
-        ["_surface", "_surface:ha"], "The surface area of the feature, in square meters and in hectare. Not set on points and ways",
+        {
+            keys: ["_surface", "_surface:ha"],
+            doc: "The surface area of the feature, in square meters and in hectare. Not set on points and ways"
+        },
         (feature => {
             const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature);
             feature.properties["_surface"] = "" + sqMeters;
@@ -54,20 +63,24 @@ export default class SimpleMetaTagger {
             feature.area = sqMeters;
         })
     );
-    
     private static lngth = new SimpleMetaTagger(
-        ["_length", "_length:km"], "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter",
+        {
+            keys: ["_length", "_length:km"],
+            doc: "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter"
+        },
         (feature => {
             const l = GeoOperations.lengthInMeters(feature)
             feature.properties["_length"] = "" + l
             const km = Math.floor(l / 1000)
             const kmRest = Math.round((l - km * 1000) / 100)
-            feature.properties["_length:km"] = "" + km+ "." + kmRest
+            feature.properties["_length:km"] = "" + km + "." + kmRest
         })
     )
-    
     private static country = new SimpleMetaTagger(
-        ["_country"], "The country code of the property (with latlon2country)",
+        {
+            keys: ["_country"],
+            doc: "The country code of the property (with latlon2country)"
+        },
         feature => {
 
 
@@ -87,15 +100,18 @@ export default class SimpleMetaTagger {
         }
     )
     private static isOpen = new SimpleMetaTagger(
-        ["_isOpen", "_isOpen:description"],
-        "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
+        {
+            keys: ["_isOpen", "_isOpen:description"],
+            doc: "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
+            includesDates: true
+        },
         (feature => {
-            if(Utils.runningFromConsole){
+            if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
                 return
             }
-            
+
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
             tagsSource.addCallbackAndRun(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
@@ -155,7 +171,10 @@ export default class SimpleMetaTagger {
         })
     )
     private static directionSimplified = new SimpleMetaTagger(
-        ["_direction:simplified", "_direction:leftright"], "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
+        {
+            keys: ["_direction:simplified", "_direction:leftright"],
+            doc: "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map"
+        },
         (feature => {
             const tags = feature.properties;
             const direction = tags["camera:direction"] ?? tags["direction"];
@@ -178,8 +197,10 @@ export default class SimpleMetaTagger {
         })
     )
     private static carriageWayWidth = new SimpleMetaTagger(
-        ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
-        "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present",
+        {
+            keys: ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
+            doc: "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present"
+        },
         (feature: any, index: number) => {
 
             const properties = feature.properties;
@@ -286,8 +307,11 @@ export default class SimpleMetaTagger {
         }
     );
     private static currentTime = new SimpleMetaTagger(
-        ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
-        "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
+        {
+            keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
+            doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
+            includesDates: true
+        },
         (feature, _, freshness) => {
             const now = new Date();
 
@@ -318,9 +342,26 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.isOpen,
         SimpleMetaTagger.carriageWayWidth,
         SimpleMetaTagger.directionSimplified,
-        SimpleMetaTagger.currentTime
+        SimpleMetaTagger.currentTime,
+        SimpleMetaTagger.objectMetaInfo
 
     ];
+    public readonly keys: string[];
+    public readonly doc: string;
+    public readonly includesDates: boolean
+    private readonly _f: (feature: any, index: number, freshness: Date) => void;
+
+    constructor(docs: { keys: string[], doc: string, includesDates?: boolean }, f: ((feature: any, index: number, freshness: Date) => void)) {
+        this.keys = docs.keys;
+        this.doc = docs.doc;
+        this._f = f;
+        this.includesDates = docs.includesDates ?? false;
+        for (const key of docs.keys) {
+            if (!key.startsWith('_')) {
+                throw `Incorrect metakey ${key}: it should start with underscore (_)`
+            }
+        }
+    }
 
     static GetCountryCodeFor(lon: number, lat: number, callback: (country: string) => void) {
         SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
@@ -337,7 +378,7 @@ export default class SimpleMetaTagger {
 
         ];
 
-        for (const metatag of SimpleMetaTagger.metatags.concat(UpdateTagsFromOsmAPI.metaTagger)) {
+        for (const metatag of SimpleMetaTagger.metatags) {
             subElements.push(
                 new Combine([
                     "<h3>", metatag.keys.join(", "), "</h3>",
@@ -347,6 +388,13 @@ export default class SimpleMetaTagger {
         }
 
         return new Combine(subElements)
+    }
+
+    addMetaTags(features: { feature: any, freshness: Date }[]) {
+        for (let i = 0; i < features.length; i++) {
+            let feature = features[i];
+            this._f(feature.feature, i, feature.freshness);
+        }
     }
 
 

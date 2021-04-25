@@ -3,6 +3,7 @@ import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
 import State from "../State";
 import {Relation} from "./Osm/ExtractRelations";
+import {meta} from "@turf/turf";
 
 
 interface Params {
@@ -23,9 +24,15 @@ export default class MetaTagging {
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
     static addMetatags(features: { feature: any; freshness: Date }[],
-                       relations: Map<string, { role: string, relation: Relation }[]>, layers: LayerConfig[]) {
+                       relations: Map<string, { role: string, relation: Relation }[]>, 
+                       layers: LayerConfig[],
+                       includeDates = true) {
 
         for (const metatag of SimpleMetaTagger.metatags) {
+            if(metatag.includesDates && !includeDates){
+                // We do not add dated entries
+                continue;
+            }
             try {
                 metatag.addMetaTags(features);
             } catch (e) {

@@ -11,10 +11,12 @@ export class Overpass {
     public static testUrl: string = null
     private _filter: TagsFilter
     private readonly _extraScripts: string[];
+    private _includeMeta: boolean;
 
-    constructor(filter: TagsFilter, extraScripts: string[]) {
+    constructor(filter: TagsFilter, extraScripts: string[], includeMeta = true) {
         this._filter = filter
         this._extraScripts = extraScripts;
+        this._includeMeta = includeMeta;
     }
 
     queryGeoJson(bounds: Bounds, continuation: ((any, date: Date) => void), onFail: ((reason) => void)): void {
@@ -58,7 +60,7 @@ export class Overpass {
             filter += '(' + extraScript + ');';
         }
         const query =
-            '[out:json][timeout:25]' + bbox + ';(' + filter + ');out body;>;out skel qt;'
+            `[out:json][timeout:25]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
         return "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query)
     }
 }

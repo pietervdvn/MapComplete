@@ -1,21 +1,9 @@
 import {UIEventSource} from "../UIEventSource";
 import {ElementStorage} from "../ElementStorage";
 import {OsmObject, OsmObjectMeta} from "../Osm/OsmObject";
-import SimpleMetaTagger from "../SimpleMetaTagger";
 
 export default class UpdateTagsFromOsmAPI {
 
-
-    public static readonly metaTagger = new SimpleMetaTagger(
-        ["_last_edit:contributor",
-            "_last_edit:contributor:uid",
-            "_last_edit:changeset",
-            "_last_edit:timestamp",
-            "_version_number"],
-        "Information about the last edit of this object. \n\nIMPORTANT: this data is _only_ loaded when the popup is added. This means it should _not_ be used to render icons!",
-        () => {/*Do nothing - this is only added for documentation reasons*/
-        }
-    )
 
     /***
      * This actor downloads the element from the OSM-API and updates the corresponding tags in the UI-updater.

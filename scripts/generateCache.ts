@@ -14,6 +14,8 @@ import ScriptUtils from "./ScriptUtils";
 import ExtractRelations from "../Logic/Osm/ExtractRelations";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
+import LayerConfig from "../Customizations/JSON/LayerConfig";
+import {GeoOperations} from "../Logic/GeoOperations";
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -114,8 +116,6 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
                     await ScriptUtils.sleep(1000)
                 }
             }
-
-
         }
     }
 
@@ -124,6 +124,7 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
 
 async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig) {
     let processed = 0;
+    const layerIndex = theme.LayerIndex();
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
             processed++;
@@ -150,7 +151,6 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
                 }
             }
             const featuresFreshness = geojson.features.map(feature => {
-                feature["_timestamp"] = rawOsm.osm3s.timestamp_osm_base;
                 return ({
                     freshness: osmTime,
                     feature: feature
@@ -158,7 +158,25 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             });
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
-            MetaTagging.addMetatags(featuresFreshness, relations, theme.layers);
+            MetaTagging.addMetatags(featuresFreshness, relations, theme.layers, false);
+
+
+            for (const feature of geojson.features) {
+                const layer = layerIndex.get(feature["_matching_layer_id"])
+                if (layer === undefined) {
+                    console.error("Didn't find a layer for " + feature["_matching_layer_id"])
+                    continue
+                }
+
+                if (layer.wayHandling == LayerConfig.WAYHANDLING_CENTER_ONLY) {
+
+                    const centerpoint = GeoOperations.centerpointCoordinates(feature)
+
+                    feature.geometry.type = "Point"
+                    feature.geometry["coordinates"] = centerpoint;
+
+                }
+            }
 
 
             writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson, null, " "))
@@ -168,7 +186,6 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
 }
 
 async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfig) {
-    let processed = 0;
     const z = r.zoomlevel;
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
@@ -177,14 +194,14 @@ async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfi
             for (const layer of theme.layers) {
                 const geojson = JSON.parse(file)
                 geojson.features = geojson.features.filter(f => f._matching_layer_id === layer.id)
-                if(geojson.features.length == 0){
+                if (geojson.features.length == 0) {
                     continue;
                 }
-                const new_path = geoJsonName(targetdir+"_"+layer.id, x, y, z);
+                const new_path = geoJsonName(targetdir + "_" + layer.id, x, y, z);
                 writeFileSync(new_path, JSON.stringify(geojson, null, " "))
             }
-        
-            
+
+
         }
     }
 }
