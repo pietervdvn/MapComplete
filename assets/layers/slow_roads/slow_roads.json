@@ -68,7 +68,8 @@
     {
       "render": {
         "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
-      }
+      },
+      "condition": "highway=living_street"
     },
     {
       "question": {
