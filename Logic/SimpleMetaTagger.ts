@@ -371,8 +371,9 @@ export default class SimpleMetaTagger {
         const subElements: UIElement[] = [
             new Combine([
                 "<h2>Metatags</h2>",
-                "Metatags are extra tags available, in order to display more data or to give better questions.",
-                "The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags"
+                "<p>Metatags are extra tags available, in order to display more data or to give better questions.</p>",
+                "<p>The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.</p>",
+                "<p><b>Hint:</b> when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object</p>"
             ])
 
 

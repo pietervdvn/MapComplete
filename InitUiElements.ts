@@ -8,7 +8,6 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";
 import SimpleAddUI from "./UI/BigComponents/SimpleAddUI";
 import CenterMessageBox from "./UI/CenterMessageBox";
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import UserBadge from "./UI/BigComponents/UserBadge";
 import SearchAndGo from "./UI/BigComponents/SearchAndGo";
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
@@ -22,7 +21,6 @@ import * as L from "leaflet";
 import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
-import MetaTagging from "./Logic/MetaTagging";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
@@ -39,8 +37,6 @@ import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
-import AllKnownLayers from "./Customizations/AllKnownLayers";
-import LayerConfig from "./Customizations/JSON/LayerConfig";
 
 export class InitUiElements {
 
@@ -211,7 +207,7 @@ export class InitUiElements {
                 dedicatedHashFromLocalStorage.setData(hash);
             }
             
-            let json = {}
+            let json: {}
             try{
                json = JSON.parse(atob(hash));
             } catch (e) {
