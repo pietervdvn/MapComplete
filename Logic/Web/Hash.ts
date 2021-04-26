@@ -26,7 +26,6 @@ export default class Hash {
         }
         const hash = new UIEventSource<string>(window.location.hash.substr(1));
         hash.addCallback(h => {
-            console.trace("Hash was changed into ",h)
             if (h === "undefined") {
                 console.warn("Got a literal 'undefined' as hash, ignoring")
                 h = undefined;
