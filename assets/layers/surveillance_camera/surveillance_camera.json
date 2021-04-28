@@ -73,11 +73,16 @@
       "#": "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view",
       "question": {
         "en": "In which geographical direction does this camera film?",
-        "nl": "Naar welke geografische richting filmt deze camera?"
+        "nl": "In welke geografische richting filmt deze camera?"
       },
-      "render": "Films to {camera:direction}",
+      "render": {
+        "en": "Films to a compass heading of {camera:direction}",
+        "nl": "Filmt in kompasrichting {camera:direction}"
+      },
       "condition": {
         "or": [
+          "camera:direction~*",
+          "direction~*",
           "camera:type!=dome",
           {
             "and": [
@@ -90,7 +95,22 @@
       "freeform": {
         "key": "camera:direction",
         "type": "direction"
-      }
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "camera:direction=",
+              "direction~*"
+            ]
+          },
+          "then": {
+            "en": "Films to a compass heading of {direction}",
+            "nl": "Filmt in kompasrichting {direction}"
+          },
+          "hideInAnswer": true
+        }
+      ]
     },
     {
       "#": "Operator",
