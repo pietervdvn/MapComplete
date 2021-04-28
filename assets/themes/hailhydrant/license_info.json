@@ -28,7 +28,7 @@
     ],
     "sources": [
       "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_underground.svg"
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_pillar.svg"
     ]
   },
   {
@@ -39,7 +39,7 @@
     ],
     "sources": [
       "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_underground.svg"
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_unknown.svg"
     ]
   },
   {
@@ -50,7 +50,7 @@
     ],
     "sources": [
       "https://www.openstreetmap.org/user/M!dgard",
-      "https://mapcomplete.braindeaddev.com/assets/layers/fire/hydrant_underground.svg"
+      "https://mapcomplete.braindeaddev.com/assets/layers/fire_hydrants/hydrant_underground.svg"
     ]
   },
   {
