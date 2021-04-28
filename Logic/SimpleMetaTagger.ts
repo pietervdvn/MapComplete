@@ -10,6 +10,14 @@ import Combine from "../UI/Base/Combine";
 import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
 
 
+const cardinalDirections = {
+    N:   0, NNE:  22.5, NE:  45, ENE:  67.5,
+    E:  90, ESE: 112.5, SE: 135, SSE: 157.5,
+    S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
+    W: 270, WNW: 292.5, NW: 315, NNW: 337.5
+}
+
+
 export default class SimpleMetaTagger {
     static coder: any;
     public static readonly objectMetaInfo = new SimpleMetaTagger(
@@ -172,8 +180,8 @@ export default class SimpleMetaTagger {
     )
     private static directionSimplified = new SimpleMetaTagger(
         {
-            keys: ["_direction:simplified", "_direction:leftright"],
-            doc: "_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map"
+            keys: ["_direction:numerical", "_direction:leftright"],
+            doc: "_direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map"
         },
         (feature => {
             const tags = feature.properties;
@@ -181,18 +189,16 @@ export default class SimpleMetaTagger {
             if (direction === undefined) {
                 return;
             }
-            let n = Number(direction);
+            const n = cardinalDirections[direction] ?? Number(direction);
             if (isNaN(n)) {
                 return;
             }
 
-            // [22.5 -> 67.5] is sector 1
-            // [67.5 -> ] is sector 1
-            n = (n + 22.5) % 360;
-            n = Math.floor(n / 45);
-            tags["_direction:simplified"] = n;
-            tags["_direction:leftright"] = n <= 3 ? "right" : "left";
+            // The % operator has range (-360, 360). We apply a trick to get [0, 360).
+            const normalized = ((n % 360) + 360) % 360;
 
+            tags["_direction:numerical"] = normalized;
+            tags["_direction:leftright"] = normalized <= 180 ? "right" : "left";
 
         })
     )
