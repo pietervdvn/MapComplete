@@ -25,6 +25,17 @@
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
+      "id": "shadow",
+      "source": {
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson",
+        "osmTags": "shadow=yes"
+      },
+      "color": "#444444",
+      "width": {
+        "render": "1"
+      }
+    },
+    {
       "builtin": "play_forest",
       "override": {
         "source": {
@@ -39,39 +50,62 @@
       "builtin": "playground",
       "override": {
         "icon": "./assets/themes/speelplekken/speeltuin.svg",
-        "minzoom":14 
+        "minzoom": 14,
+        "source": {
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
       }
     },
     {
       "builtin": "village_green",
       "override": {
         "icon": "./assets/themes/speelplekken/speelweide.svg",
-        "minzoom":14
+        "minzoom": 14,
+        "source": {
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
       }
     },
     {
       "builtin": "grass_in_parks",
       "override": {
         "icon": "./assets/themes/speelplekken/speelweide.svg",
-        "minzoom":14
+        "minzoom": 14,
+        "source": {
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
       }
     },
     {
-      "builtin":   "sport_pitch",
+      "builtin": "sport_pitch",
       "override": {
-        "minzoom": 15
+        "minzoom": 15,
+        "source": {
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
       }
     },
-    
     {
       "builtin": "slow_roads",
       "override": {
         "calculatedTags": [
           "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')"
-        ]
+        ],
+        "source": {
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14
+        }
       }
     },
-    
     {
       "id": "walking_routes",
       "name": {
@@ -187,13 +221,6 @@
   "clustering": {
     "maxZoom": 16,
     "minNeededElements": 100
-  },
-  "overrideAll": {
-    "source": {
-      "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-      "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-      "geoJsonZoomLevel": 14
-    }
   },
   "roamingRenderings": [
     {
