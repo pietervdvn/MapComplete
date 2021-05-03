@@ -295,7 +295,7 @@
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
-    "render": "circle:white;./assets/layers/sport_pitch/basketball.svg",
+    "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
     "mappings": [
       {
         "if": {
@@ -325,6 +325,16 @@
       },
       "then": "isOpen",
       "badge": true
+    },
+    {
+      "if": {
+        "or": [
+          "access=customers",
+          "access=private",
+          "access=no"
+        ]
+      },
+      "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
     }
   ],
   "width": {
@@ -351,7 +361,7 @@
     ]
   },
   "color": {
-    "render": "#009"
+    "render": "#7cb82f"
   },
   "presets": [
     {
