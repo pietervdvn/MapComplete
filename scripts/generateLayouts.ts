@@ -212,9 +212,9 @@ createManifest(new LayoutConfig({
     startLat: 0,
     startLon: 0,
     startZoom: 0,
-    title: "MapComplete",
+    title: {en:"MapComplete"},
     version: Constants.vNumber,
-    description: "MapComplete as a map viewer and editor which show thematic POI based on OpenStreetMap"
+    description: {en:"A thematic map viewer and editor based on OpenStreetMap"}
 }), "").then(manifObj => {
     const manif = JSON.stringify(manifObj, undefined, 2);
     writeFileSync("index.manifest", manif)
