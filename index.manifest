@@ -4,7 +4,7 @@
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "An easy to use OpenStreetMap viewer and editor",
+  "description": "A thematic map viewer and editor based on OpenStreetMap",
   "orientation": "portrait-primary, landscape-primary",
   "icons": [
     {

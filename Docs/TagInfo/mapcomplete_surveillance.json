@@ -58,6 +58,15 @@
    "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
   },
   {
+   "key": "camera:direction",
+   "description": "Layer 'Surveillance camera's' shows camera:direction=&direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction.",
+   "value": ""
+  },
+  {
+   "key": "direction",
+   "description": "Layer 'Surveillance camera's' shows camera:direction=&direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
+  },
+  {
    "key": "operator",
    "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Surveillance under Surveillance')"
   },

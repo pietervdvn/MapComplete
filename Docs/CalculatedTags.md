@@ -31,9 +31,9 @@ If 'opening\_hours' is present, it will add the current state of the feature (be
 
 Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present
 
-### \_direction:simplified, \_direction:leftright
+### \_direction:numerical, \_direction:leftright
 
-\_direction:simplified turns 'camera:direction' and 'direction' into either 0, 45, 90, 135, 180, 225, 270 or 315, whichever is closest. \_direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map
+\_direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). \_direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map
 
 ### \_now:date, \_now:datetime, \_loaded:date, \_loaded:\_datetime
 
