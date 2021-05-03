@@ -81,7 +81,7 @@ export class InitUiElements {
             // This is purely for the personal theme to load the layers there
             const favs = State.state.favouriteLayers.data ?? [];
 
-            
+
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
             for (const fav of favs) {
                 for (const layouts of State.state.installedThemes.data) {
@@ -206,16 +206,16 @@ export class InitUiElements {
                 hashFromLocalStorage.setData(hash);
                 dedicatedHashFromLocalStorage.setData(hash);
             }
-            
+
             let json: {}
-            try{
-               json = JSON.parse(atob(hash));
+            try {
+                json = JSON.parse(atob(hash));
             } catch (e) {
                 // We try to decode with lz-string
-                json = JSON.parse( Utils.UnMinify(LZString.decompressFromBase64(hash))) as LayoutConfigJson;
-             
+                json = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(hash))) as LayoutConfigJson;
+
             }
-           
+
             // @ts-ignore
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
@@ -229,7 +229,6 @@ export class InitUiElements {
 
     private static OnlyIf(featureSwitch: UIEventSource<boolean>, callback: () => void) {
         featureSwitch.addCallbackAndRun(() => {
-
             if (featureSwitch.data) {
                 callback();
             }
@@ -269,48 +268,54 @@ export class InitUiElements {
     }
 
     private static InitLayerSelection() {
-        InitUiElements.OnlyIf(State.state.featureSwitchLayers, () => {
 
-            const layerControlPanel = new LayerControlPanel(
-                State.state.layerControlIsOpened)
-                .SetClass("block p-1 rounded-full");
-            const checkbox = new CheckBox(
-                layerControlPanel,
-                new MapControlButton(Svg.layers_svg()),
-                State.state.layerControlIsOpened
+        const copyrightNotice =
+            new ScrollableFullScreen(
+                () => Translations.t.general.attribution.attributionTitle.Clone(),
+                () => new AttributionPanel(State.state.layoutToUse),
+                "copyright"
             )
-            const copyrightNotice =
-                new ScrollableFullScreen(
-                    () => Translations.t.general.attribution.attributionTitle.Clone(),
-                    () => new AttributionPanel(State.state.layoutToUse),
-                    "copyright"
-                )
 
-            ;
-            const copyrightButton = new CheckBox(
-                copyrightNotice,
-                new MapControlButton(Svg.osm_copyright_svg()),
-                copyrightNotice.isShown
-            ).SetClass("p-0.5")
+        ;
+        const copyrightButton = new CheckBox(
+            copyrightNotice,
+            new MapControlButton(Svg.osm_copyright_svg()),
+            copyrightNotice.isShown
+        ).SetClass("p-0.5")
 
-            new Combine([copyrightButton, checkbox])
-                .AttachTo("bottom-left");
+        const layerControlPanel = new LayerControlPanel(
+            State.state.layerControlIsOpened)
+            .SetClass("block p-1 rounded-full");
+        const layerControlButton = new CheckBox(
+            layerControlPanel,
+            new MapControlButton(Svg.layers_svg()),
+            State.state.layerControlIsOpened
+        )
+
+        const layerControl = new CheckBox(
+            layerControlButton,
+            "",
+            State.state.featureSwitchLayers
+        )
+
+        new Combine([copyrightButton, layerControl])
+            .AttachTo("bottom-left");
 
 
-            State.state.locationControl
-                .addCallback(() => {
-                    // Close the layer selection when the map is moved
-                    checkbox.isEnabled.setData(false);
-                    copyrightButton.isEnabled.setData(false);
-                });
+        State.state.locationControl
+            .addCallback(() => {
+                // Close the layer selection when the map is moved
+                layerControlButton.isEnabled.setData(false);
+                copyrightButton.isEnabled.setData(false);
+            });
 
-            State.state.selectedElement.addCallbackAndRun(feature => {
-                if (feature !== undefined) {
-                    checkbox.isEnabled.setData(false);
-                }
-            })
+        State.state.selectedElement.addCallbackAndRun(feature => {
+            if (feature !== undefined) {
+                layerControlButton.isEnabled.setData(false);
+                copyrightButton.isEnabled.setData(false);
+            }
+        })
 
-        });
     }
 
     private static InitBaseMap() {
@@ -371,7 +376,7 @@ export class InitUiElements {
             state.layoutToUse.map(layoutToUse => {
                 const flayers = [];
 
-               
+
                 for (const layer of layoutToUse.layers) {
                     const isDisplayed = QueryParameters.GetQueryParameter("layer-" + layer.id, "true", "Wether or not layer " + layer.id + " is shown")
                         .map<boolean>((str) => str !== "false", [], (b) => b.toString());
@@ -440,6 +445,6 @@ export class InitUiElements {
             );
         });
 
-        
+
     }
 }

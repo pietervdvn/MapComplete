@@ -114,6 +114,10 @@ a {
     color: #0078A8;
 }
 
+.link-no-underline a {
+    text-decoration: none;
+}
+
 li {
     margin-left: 0.5em;
     padding-left: 0.2em;

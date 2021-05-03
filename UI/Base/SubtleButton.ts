@@ -52,7 +52,7 @@ export class SubtleButton extends UIElement{
         return new Combine([
             this.image,
             this.message,
-        ]).SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200")
+        ]).SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline")
             .Render();
     }
 

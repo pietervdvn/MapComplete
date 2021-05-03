@@ -1,10 +1,10 @@
 {
   "name": "index",
-  "short_name": "M",
+  "short_name": "MapComplete",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "M",
+  "description": "An easy to use OpenStreetMap viewer and editor",
   "orientation": "portrait-primary, landscape-primary",
   "icons": [
     {
