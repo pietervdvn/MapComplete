@@ -5,7 +5,7 @@
   "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
   "project_url": "https://mapcomplete.osm.be/artworks",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/themes/artwork/artwork.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/artwork/artwork.svg",
   "contact_name": "Pieter Vander Vennet, MapComplete",
   "contact_email": "pietervdvn@posteo.net"
  },
@@ -14,6 +14,22 @@
    "key": "tourism",
    "description": "The MapComplete theme Open Artwork Map has a layer Artworks showing features with this tag",
    "value": "artwork"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "artwork_type",

@@ -5,7 +5,7 @@
   "description": "Een kaart met alle gekende fietsstraten",
   "project_url": "https://mapcomplete.osm.be/fietsstraten",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/themes/cyclestreets/F111.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/cyclestreets/F111.svg",
   "contact_name": "Pieter Vander Vennet, MapComplete",
   "contact_email": "pietervdvn@posteo.net"
  },
@@ -14,6 +14,22 @@
    "key": "cyclestreet",
    "description": "The MapComplete theme Fietsstraten has a layer Fietsstraten showing features with this tag",
    "value": "yes"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Fietsstraten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Fietsstraten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Fietsstraten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Fietsstraten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "cyclestreet",
@@ -78,6 +94,22 @@
    "key": "proposed:cyclestreet",
    "description": "The MapComplete theme Fietsstraten has a layer Toekomstige fietsstraat showing features with this tag",
    "value": "yes"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Toekomstige fietsstraat allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Toekomstige fietsstraat allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Toekomstige fietsstraat allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Toekomstige fietsstraat allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "cyclestreet",
@@ -152,6 +184,22 @@
    "key": "highway",
    "description": "The MapComplete theme Fietsstraten has a layer Alle straten showing features with this tag",
    "value": "unclassified"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Alle straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Alle straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Alle straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Alle straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "cyclestreet",

@@ -13,9 +13,11 @@ export interface LayerConfigJson {
 
     /**
      * The name of this layer
-     * Used in the layer control panel and the 'Personal theme'
+     * Used in the layer control panel and the 'Personal theme'.
+     * 
+     * If not given, will be hidden (and thus not toggable) in the layer control
      */
-    name: string | any
+    name?: string | any
 
     /**
      * A description for this layer.

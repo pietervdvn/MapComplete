@@ -5,7 +5,7 @@
   "description": "A public bookcase is a small streetside cabinet, box, old phone boot or some other objects where books are stored",
   "project_url": "https://mapcomplete.osm.be/bookcases",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/themes/bookcases/bookcase.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/bookcases/bookcase.svg",
   "contact_name": "Pieter Vander Vennet, MapComplete",
   "contact_email": "pietervdvn@posteo.net"
  },
@@ -14,6 +14,22 @@
    "key": "amenity",
    "description": "The MapComplete theme Open Bookcase Map has a layer Bookcases showing features with this tag",
    "value": "public_bookcase"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "name",

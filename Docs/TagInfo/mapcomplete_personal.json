@@ -5,7 +5,7 @@
   "description": "Create a personal theme based on all the available layers of all themes",
   "project_url": "https://mapcomplete.osm.be/personal",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/svg/addSmall.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/svg/addSmall.svg",
   "contact_name": "Pieter Vander Vennet, MapComplete",
   "contact_email": "pietervdvn@posteo.net"
  },

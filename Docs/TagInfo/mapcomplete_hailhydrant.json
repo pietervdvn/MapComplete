@@ -5,7 +5,7 @@
   "description": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
   "project_url": "https://mapcomplete.osm.be/hailhydrant",
   "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
-  "icon_url": "https://mapcomplete.osm.be/./assets/themes/hailhydrant/logo.svg",
+  "icon_url": "https://mapcomplete.osm.be/assets/themes/hailhydrant/logo.svg",
   "contact_name": "Pieter Vander Vennet, Erwin Olario",
   "contact_email": "pietervdvn@posteo.net"
  },
@@ -93,6 +93,22 @@
    "value": ""
   },
   {
+   "key": "image",
+   "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
    "key": "emergency",
    "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Ambulance stations. has a layer Map of fire extinguishers. showing features with this tag",
    "value": "fire_extinguisher"
@@ -110,6 +126,22 @@
    "key": "location",
    "description": "Layer 'Map of fire extinguishers.' shows location=outdoor with a fixed text, namely 'Found outdoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
    "value": "outdoor"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   },
   {
    "key": "amenity",
@@ -167,6 +199,22 @@
    "value": "private"
   },
   {
+   "key": "image",
+   "description": "The layer 'Map of fire stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Map of fire stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Map of fire stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Map of fire stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
    "key": "emergency",
    "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Ambulance stations. has a layer Map of ambulance stations showing features with this tag",
    "value": "ambulance_station"
@@ -210,6 +258,22 @@
    "key": "operator:type",
    "description": "Layer 'Map of ambulance stations' shows operator:type=private with a fixed text, namely 'The station is privately operated.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations.')",
    "value": "private"
+  },
+  {
+   "key": "image",
+   "description": "The layer 'Map of ambulance stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "mapillary",
+   "description": "The layer 'Map of ambulance stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikidata",
+   "description": "The layer 'Map of ambulance stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+  },
+  {
+   "key": "wikipedia",
+   "description": "The layer 'Map of ambulance stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
   }
  ]
 }
