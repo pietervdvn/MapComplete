@@ -11,6 +11,10 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {Translation} from "../UI/i18n/Translation";
 import {readFileSync, writeFile, writeFileSync} from "fs";
 
+/**
+ * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
+ */
+
 const outputDirectory = "Docs/TagInfo"
 
 function generateTagOverview(kv: { k: string, v: string }, description: string) {
@@ -27,6 +31,7 @@ function generateTagOverview(kv: { k: string, v: string }, description: string) 
 }
 
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
+
     const usedTags = layer.source.osmTags.asChange({})
     const result = []
     for (const kv of usedTags) {
@@ -35,6 +40,22 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
     }
 
     for (const tr of layer.tagRenderings) {
+        {
+            const usesImageCarousel = (tr.render?.txt?.indexOf("image_carousel()") ?? -2) > 0
+            const usesImageUpload = (tr.render?.txt?.indexOf("image_upload()") ?? -2) > 0
+            if (usesImageCarousel || usesImageUpload) {
+           
+                const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary`;
+                const descrUpload = `The layer '${layer.name.txt} allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary`;
+
+                const descr = usesImageUpload ? descrUpload : descrNoUpload;
+                result.push(generateTagOverview({k: "image", v: undefined}, descr));
+                result.push(generateTagOverview({k: "mapillary", v: undefined}, descr));
+                result.push(generateTagOverview({k: "wikidata", v: undefined}, descr));
+                result.push(generateTagOverview({k: "wikipedia", v: undefined}, descr));
+            }
+        }
+
         const q = tr.question?.txt;
         const key = tr.freeform?.key;
         if (key != undefined) {
@@ -61,7 +82,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
             descr += ` (in the MapComplete.osm.be theme '${layout.title.txt}')`
             for (const kv of mapping.if.asChange({})) {
                 let d = descr;
-                if (q!=undefined && kv.v == "") {
+                if (q != undefined && kv.v == "") {
                     d = `${descr} Picking this answer will delete the key ${kv.k}.`
                 }
                 result.push(generateTagOverview(kv, d))
@@ -82,13 +103,15 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
         usedTags.push(...generateLayerUsage(layer, layout))
     }
 
-    const t = new Date();
-    const generationTime = t.getUTCFullYear() + Utils.TwoDigits(t.getUTCMonth()) + Utils.TwoDigits(t.getUTCDate()) + "T" + Utils.TwoDigits(t.getUTCHours()) + Utils.TwoDigits(t.getUTCMinutes()) + Utils.TwoDigits(t.getSeconds()) + "Z"
 
     let icon = layout.icon;
     if (icon.startsWith("./")) {
         icon = icon.substring(2)
     }
+    /*
+        const t = new Date();
+        const generationTime = t.getUTCFullYear() + Utils.TwoDigits(t.getUTCMonth()) + Utils.TwoDigits(t.getUTCDate()) + "T" + Utils.TwoDigits(t.getUTCHours()) + Utils.TwoDigits(t.getUTCMinutes()) + Utils.TwoDigits(t.getSeconds()) + "Z"
+    */
 
     const themeInfo = {
         // data format version, currently always 1, will get updated if there are incompatible changes to the format (required)
@@ -103,7 +126,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
             "description": layout.shortDescription.txt,   // short description of the project (required)
             "project_url": "https://mapcomplete.osm.be/" + layout.id,   // home page of the project with general information (required)
             "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",       // documentation of the project and especially the tags used (optional)
-            "icon_url": "https://mapcomplete.osm.be/" + layout.icon,      // project logo, should work in 16x16 pixels on white and light gray backgrounds (optional)
+            "icon_url": "https://mapcomplete.osm.be/" + icon,      // project logo, should work in 16x16 pixels on white and light gray backgrounds (optional)
             "contact_name": "Pieter Vander Vennet, " + layout.maintainer,  // contact name, needed for taginfo maintainer (required)
             "contact_email": "pietervdvn@posteo.net"  // contact email, needed for taginfo maintainer (required)
         },
