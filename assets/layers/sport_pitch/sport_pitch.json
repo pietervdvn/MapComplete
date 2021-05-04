@@ -334,7 +334,8 @@
           "access=no"
         ]
       },
-      "then": "circle:white;./assets/layers/sport_pitch/lock.svg"
+      "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
+      "badge":true
     }
   ],
   "width": {
