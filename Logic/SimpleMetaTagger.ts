@@ -7,7 +7,6 @@ import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
-import UpdateTagsFromOsmAPI from "./Actors/UpdateTagsFromOsmAPI";
 
 
 const cardinalDirections = {

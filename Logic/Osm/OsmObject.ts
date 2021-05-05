@@ -13,6 +13,9 @@ export abstract class OsmObject {
     protected constructor(type: string, id: number) {
         this.id = id;
         this.type = type;
+        this.tags = {
+            id: id
+        }
     }
 
     static DownloadObject(id, continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
@@ -20,7 +23,7 @@ export abstract class OsmObject {
         const type = splitted[0];
         const idN = splitted[1];
 
-        const newContinuation = (element: OsmObject, meta :OsmObjectMeta) => {
+        const newContinuation = (element: OsmObject, meta: OsmObjectMeta) => {
             console.log("Received: ", element, "with meta", meta);
             continuation(element, meta);
         }
@@ -59,7 +62,12 @@ export abstract class OsmObject {
         );
     }
 
-    abstract SaveExtraData(element);
+    // The centerpoint of the feature, as [lat, lon]
+    public abstract centerpoint(): [number, number];
+
+    public abstract asGeoJson(): any;
+
+    abstract SaveExtraData(element: any, allElements: any[]);
 
     /**
      * Generates the changeset-XML for tags
@@ -78,12 +86,21 @@ export abstract class OsmObject {
 
     Download(continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
         const self = this;
-        $.getJSON("https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id,
-            function (data) {
-                const element = data.elements[0];
+        const full = this.type !== "way" ? "" : "/full";
+        const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
+        $.getJSON(url, function (data) {
+                const element = data.elements[data.elements.length - 1];
                 self.tags = element.tags;
+                const tgs = self.tags;
+                tgs["_last_edit:contributor"] = element.user
+                tgs["_last_edit:contributor:uid"] = element.uid
+                tgs["_last_edit:changeset"] = element.changeset
+                tgs["_last_edit:timestamp"] = element.timestamp
+                tgs["_version_number"] = element.version
+                tgs["id"] = self.type+"/"+self.id;
+
                 self.version = element.version;
-                self.SaveExtraData(element);
+                self.SaveExtraData(element, data.elements);
                 continuation(self, {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
@@ -135,21 +152,36 @@ export class OsmNode extends OsmObject {
     ChangesetXML(changesetId: string): string {
         let tags = this.TagsXML();
 
-        let change =
-            '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
+        return '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
             tags +
             '        </node>\n';
-
-        return change;
     }
 
     SaveExtraData(element) {
         this.lat = element.lat;
         this.lon = element.lon;
     }
+
+    centerpoint(): [number, number] {
+        return [this.lat, this.lon];
+    }
+
+    asGeoJson() {
+        return {
+            "type": "Feature",
+            "properties": this.tags,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    this.lon,
+                    this.lat
+                ]
+            }
+        }
+    }
 }
 
-export interface OsmObjectMeta{
+export interface OsmObjectMeta {
     "_last_edit:contributor": string,
     "_last_edit:contributor:uid": number,
     "_last_edit:changeset": number,
@@ -161,10 +193,17 @@ export interface OsmObjectMeta{
 export class OsmWay extends OsmObject {
 
     nodes: number[];
+    coordinates: [number, number][] = []
+    lat: number;
+    lon: number;
 
     constructor(id) {
         super("way", id);
 
+    }
+
+    centerpoint(): [number, number] {
+        return [this.lat, this.lon];
     }
 
     ChangesetXML(changesetId: string): string {
@@ -174,17 +213,39 @@ export class OsmWay extends OsmObject {
             nds += '      <nd ref="' + this.nodes[node] + '"/>\n';
         }
 
-        let change =
-            '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
+        return '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             nds +
             tags +
             '        </way>\n';
-
-        return change;
     }
 
-    SaveExtraData(element) {
+    SaveExtraData(element, allNodes) {
+        console.log("Way-extras: ", allNodes)
+
+        
+        for (const node of allNodes) {
+            if (node.type === "node") {
+                const n = new OsmNode(node.id);
+                n.SaveExtraData(node)
+                const cp = n.centerpoint();
+                this.coordinates.push(cp);
+            }
+        }
+        let count = this.coordinates.length;
+        this.lat = this.coordinates.map(c => c[0]).reduce((a, b) => a + b, 0) / count;
+        this.lon = this.coordinates.map(c => c[1]).reduce((a, b) => a + b, 0) / count;
         this.nodes = element.nodes;
+    }
+
+    asGeoJson() {
+        return {
+            "type": "Feature",
+            "properties": this.tags,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": this.coordinates.map(c => [c[1], c[0]])
+            }
+        }
     }
 }
 
@@ -197,24 +258,29 @@ export class OsmRelation extends OsmObject {
 
     }
 
+    centerpoint(): [number, number] {
+        return [0, 0]; // TODO
+    }
+
     ChangesetXML(changesetId: string): string {
         let members = "";
-        for (const memberI in this.members) {
-            const member = this.members[memberI];
+        for (const member of this.members) {
             members += '      <member type="' + member.type + '" ref="' + member.ref + '" role="' + member.role + '"/>\n';
         }
 
         let tags = this.TagsXML();
-        let change =
-            '    <relation id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
+        return '    <relation id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             members +
             tags +
             '        </relation>\n';
-        return change;
 
     }
 
     SaveExtraData(element) {
         this.members = element.members;
+    }
+
+    asGeoJson() {
+        throw "Not Implemented"
     }
 }

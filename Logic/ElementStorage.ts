@@ -48,6 +48,7 @@ export class ElementStorage {
         const keptKeys = es.data;
         // The element already exists
         // We use the new feature to overwrite all the properties in the already existing eventsource
+        console.log("Merging multiple instances of ", elementId)
         let somethingChanged = false;
         for (const k in newProperties) {
             const v = newProperties[k];

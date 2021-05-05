@@ -5,12 +5,14 @@ import Loc from "../../Models/Loc";
 
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
-public readonly name = "FilteringFeatureSource"
+    public readonly name = "FilteringFeatureSource"
+
     constructor(layers: UIEventSource<{
                     isDisplayed: UIEventSource<boolean>,
                     layerDef: LayerConfig
                 }[]>,
                 location: UIEventSource<Loc>,
+                selectedElement: UIEventSource<any>,
                 upstream: FeatureSource) {
 
         const self = this;
@@ -18,7 +20,7 @@ public readonly name = "FilteringFeatureSource"
         function update() {
 
             const layerDict = {};
-            if(layers.data.length == 0){
+            if (layers.data.length == 0) {
                 throw "No layers defined!"
             }
             for (const layer of layers.data) {
@@ -32,6 +34,11 @@ public readonly name = "FilteringFeatureSource"
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
                 
+                if(selectedElement.data === f.feature){
+                    // This is the selected object - it gets a free pass even if zoom is not sufficient
+                    return true;
+                }
+                
                 if (layerId !== undefined) {
                     const layer: {
                         isDisplayed: UIEventSource<boolean>,
@@ -41,16 +48,16 @@ public readonly name = "FilteringFeatureSource"
                         missingLayers.add(layerId)
                         return true;
                     }
-                    
+
                     const isShown = layer.layerDef.isShown
                     const tags = f.feature.properties;
-                    if(isShown.IsKnown(tags)){
+                    if (isShown.IsKnown(tags)) {
                         const result = layer.layerDef.isShown.GetRenderValue(f.feature.properties).txt;
-                        if(result !== "yes"){
+                        if (result !== "yes") {
                             return false;
                         }
                     }
-                    
+
                     if (FilteringFeatureSource.showLayer(layer, location)) {
                         return true;
                     }
@@ -69,7 +76,7 @@ public readonly name = "FilteringFeatureSource"
             });
             console.log("Filtering layer source: input: ", upstream.features.data?.length, "output:", newFeatures.length)
             self.features.setData(newFeatures);
-            if(missingLayers.size > 0){
+            if (missingLayers.size > 0) {
                 console.error("Some layers were not found: ", Array.from(missingLayers))
             }
         }
@@ -86,7 +93,7 @@ public readonly name = "FilteringFeatureSource"
                 if (l.zoom < layer.layerDef.minzoom) {
                     continue;
                 }
-                if(l.zoom > layer.layerDef.maxzoom){
+                if (l.zoom > layer.layerDef.maxzoom) {
                     continue;
                 }
                 if (!layer.isDisplayed.data) {
@@ -98,13 +105,13 @@ public readonly name = "FilteringFeatureSource"
         }).addCallback(() => {
             update();
         });
-        
+
         layers.addCallback(update);
-        
+
         const registered = new Set<UIEventSource<boolean>>();
         layers.addCallbackAndRun(layers => {
             for (const layer of layers) {
-                if(registered.has(layer.isDisplayed)){
+                if (registered.has(layer.isDisplayed)) {
                     continue;
                 }
                 registered.add(layer.isDisplayed);

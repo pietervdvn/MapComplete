@@ -185,6 +185,9 @@ export class InitUiElements {
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
 
+        // At last, zoom to the needed location if the focus is on an element
+
+
     }
 
     static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
@@ -391,12 +394,18 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-        const source = new FeaturePipeline(state.filteredLayers, updater, state.layoutToUse, state.changes, state.locationControl);
+        const source = new FeaturePipeline(state.filteredLayers, 
+            updater, 
+            state.osmApiFeatureSource, 
+            state.layoutToUse, 
+            state.changes,
+            state.locationControl,
+            state.selectedElement);
 
         new ShowDataLayer(source.features, State.state.leafletMap, State.state.layoutToUse);
 
-        new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source);
-
+        const selectedFeatureHandler = new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source, State.state.osmApiFeatureSource);
+        selectedFeatureHandler.zoomToSelectedFeature(State.state.locationControl);
 
     }
 

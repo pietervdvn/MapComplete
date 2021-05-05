@@ -1,9 +1,7 @@
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
-import State from "../State";
 import {Relation} from "./Osm/ExtractRelations";
-import {meta} from "@turf/turf";
 
 
 interface Params {
