@@ -3,13 +3,10 @@ import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {TagsFilter} from "../Logic/Tags/TagsFilter";
-import LanguagePicker from "../UI/LanguagePicker";
 import Locale from "../UI/i18n/Locale";
-import {Layer} from "leaflet";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {Translation} from "../UI/i18n/Translation";
-import {readFileSync, writeFile, writeFileSync} from "fs";
+import {readFileSync, writeFileSync} from "fs";
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
