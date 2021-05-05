@@ -8,7 +8,7 @@ export default class UpdateTagsFromOsmAPI {
     /***
      * This actor downloads the element from the OSM-API and updates the corresponding tags in the UI-updater.
      */
-    constructor(idToDownload: UIEventSource<string>, allElements: ElementStorage) {
+    constructor(idToDownload: UIEventSource<string>, allElements: ElementStorage, callback? : (element: OsmObject) => void) {
 
         idToDownload.addCallbackAndRun(id => {
             if (id === undefined) {
