@@ -80,18 +80,18 @@ I love it to see where the project ends up. You are free to reuse the software (
 To develop:
 
 0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
-0. Make a fork and clone the repository.
-1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
-2. Run `npm install` to install the package dependencies
-3. Run `npm run generate` and `npm run generate:editor-layer-index` to generate some additional dependencies
-4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
+1. Make a fork and clone the repository.
+2. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
+3. Install `ts-node` and `parcel`. `npm install -g ts-node parcel`
+4. Run `npm install` to install the package dependencies
+5. Run `npm run generate` and `npm run generate:editor-layer-index` to generate some additional dependencies
+6. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+7. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
 
 To deploy:
 
-0. `rm -rf dist/` to remove the local build
-1. `npm run build`
-2. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
+0. `npm run build`
+1. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
 
 ## Translating MapComplete
 
