@@ -67,6 +67,36 @@ export abstract class OsmObject {
         })
     }
 
+    private static ParseObjects(elements: any[]) : OsmObject[]{
+        const objects: OsmObject[] = [];
+        const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+        for (const element of elements) {
+            const type = element.type;
+            const idN = element.id;
+            let osmObject: OsmObject = null
+            switch (type) {
+                case("node"):
+                    const node = new OsmNode(idN);
+                    allNodes.set(idN, node);
+                    osmObject = node
+                    node.SaveExtraData(element);
+                    break;
+                case("way"):
+                    osmObject = new OsmWay(idN);
+                    const nodes = element.nodes.map(i => allNodes.get(i));
+                    osmObject.SaveExtraData(element, nodes)
+                    break;
+                case("relation"):
+                    osmObject = new OsmRelation(idN);
+                    osmObject.SaveExtraData(element, [])
+                    break;
+            }
+            osmObject.LoadData(element)
+            objects.push(osmObject)
+        }
+        return objects;
+    }
+    
     //Loads an area from the OSM-api.
     // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
     public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
@@ -77,32 +107,7 @@ export abstract class OsmObject {
         const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
         $.getJSON(url, data => {
             const elements: any[] = data.elements;
-            const objects: OsmObject[] = [];
-            const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
-            for (const element of elements) {
-                const type = element.type;
-                const idN = element.id;
-                let osmObject: OsmObject = null
-                switch (type) {
-                    case("node"):
-                        const node = new OsmNode(idN);
-                        allNodes.set(idN, node);
-                        osmObject = node
-                        node.SaveExtraData(element);
-                        break;
-                    case("way"):
-                        osmObject = new OsmWay(idN);
-                        const nodes = element.nodes.map(i => allNodes.get(i));
-                        osmObject.SaveExtraData(element, nodes)
-                        break;
-                    case("relation"):
-                        osmObject = new OsmRelation(idN);
-                        osmObject.SaveExtraData(element, [])
-                        break;
-                }
-                osmObject.LoadData(element)
-                objects.push(osmObject)
-            }
+            const objects = OsmObject.ParseObjects(elements)
             callback(objects);
 
         })
@@ -157,10 +162,16 @@ export abstract class OsmObject {
         const full = this.type !== "way" ? "" : "/full";
         const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
         $.getJSON(url, function (data) {
-                const element = data.elements[data.elements.length - 1];
+            
+                const element = data.elements.pop();
 
+                let nodes = []
+                if(data.elements.length > 2){
+                    nodes = OsmObject.ParseObjects(data.elements)
+                }
+                
                 self.LoadData(element)
-                self.SaveExtraData(element, data.elements);
+                self.SaveExtraData(element, nodes);
 
                 continuation(self, {
                     "_last_edit:contributor": element.user,

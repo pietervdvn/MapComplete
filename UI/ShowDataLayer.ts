@@ -162,9 +162,8 @@ export default class ShowDataLayer {
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature)
         });
-
+        
         this._popups.set(feature, leafletLayer);
-
     }
 
     private CreateGeojsonLayer(): L.Layer {

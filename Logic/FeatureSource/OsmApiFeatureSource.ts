@@ -22,10 +22,8 @@ export default class OsmApiFeatureSource implements FeatureSource {
 
 
     public load(id: string) {
-        console.log("Updating from OSM API: ", id)
         OsmObject.DownloadObject(id, (element, meta) => {
             const geojson = element.asGeoJson();
-            console.warn(geojson)
             geojson.id = geojson.properties.id;
             this.features.setData([{feature: geojson, freshness: meta["_last_edit:timestamp"]}])
         })

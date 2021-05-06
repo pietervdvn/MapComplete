@@ -34,7 +34,7 @@ export default class FilteringFeatureSource implements FeatureSource {
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
                 
-                if(selectedElement.data === f.feature){
+                if(selectedElement.data !== undefined && selectedElement.data?.id === f.feature.id){
                     // This is the selected object - it gets a free pass even if zoom is not sufficient
                     return true;
                 }
