@@ -394,6 +394,9 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
+        
+        
+        
         const source = new FeaturePipeline(state.filteredLayers, 
             updater, 
             state.osmApiFeatureSource, 

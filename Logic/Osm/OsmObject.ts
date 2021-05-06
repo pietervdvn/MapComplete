@@ -9,6 +9,7 @@ export abstract class OsmObject {
     tags: {} = {};
     version: number;
     public changed: boolean = false;
+    timestamp: Date;
 
     protected constructor(type: string, id: number) {
         this.id = id;
@@ -24,7 +25,6 @@ export abstract class OsmObject {
         const idN = splitted[1];
 
         const newContinuation = (element: OsmObject, meta: OsmObjectMeta) => {
-            console.log("Received: ", element, "with meta", meta);
             continuation(element, meta);
         }
 
@@ -37,6 +37,75 @@ export abstract class OsmObject {
                 return new OsmRelation(idN).Download(newContinuation);
 
         }
+    }
+
+    public static DownloadHistory(id: string, continuation: (versions: OsmObject[]) => void): void {
+        const splitted = id.split("/");
+        const type = splitted[0];
+        const idN = splitted[1];
+        $.getJSON("https://openStreetMap.org/api/0.6/" + type + "/" + idN + "/history", data => {
+            const elements: any[] = data.elements;
+            const osmObjects: OsmObject[] = []
+            for (const element of elements) {
+                let osmObject: OsmObject = null
+                switch (type) {
+                    case("node"):
+                        osmObject = new OsmNode(idN);
+                        break;
+                    case("way"):
+                        osmObject = new OsmWay(idN);
+                        break;
+                    case("relation"):
+                        osmObject = new OsmRelation(idN);
+                        break;
+                }
+                osmObject?.LoadData(element);
+                osmObject?.SaveExtraData(element, []);
+                osmObjects.push(osmObject)
+            }
+            continuation(osmObjects)
+        })
+    }
+
+    //Loads an area from the OSM-api.
+    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
+    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
+        const minlon = bounds[0][1]
+        const maxlon = bounds[1][1]
+        const minlat = bounds[1][0]
+        const maxlat = bounds[0][0];
+        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
+        $.getJSON(url, data => {
+            const elements: any[] = data.elements;
+            const objects: OsmObject[] = [];
+            const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+            for (const element of elements) {
+                const type = element.type;
+                const idN = element.id;
+                let osmObject: OsmObject = null
+                switch (type) {
+                    case("node"):
+                        const node = new OsmNode(idN);
+                        allNodes.set(idN, node);
+                        osmObject = node
+                        node.SaveExtraData(element);
+                        break;
+                    case("way"):
+                        osmObject = new OsmWay(idN);
+                        const nodes = element.nodes.map(i => allNodes.get(i));
+                        osmObject.SaveExtraData(element, nodes)
+                        break;
+                    case("relation"):
+                        osmObject = new OsmRelation(idN);
+                        osmObject.SaveExtraData(element, [])
+                        break;
+                }
+                osmObject.LoadData(element)
+                objects.push(osmObject)
+            }
+            callback(objects);
+
+        })
     }
 
     public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
@@ -53,7 +122,6 @@ export abstract class OsmObject {
             return;
         }
 
-        console.log("Downloading ", neededId);
         OsmObject.DownloadObject(neededId,
             function (element) {
                 knownElements[neededId] = element; // assign the element for later, continue downloading the next element
@@ -90,17 +158,10 @@ export abstract class OsmObject {
         const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
         $.getJSON(url, function (data) {
                 const element = data.elements[data.elements.length - 1];
-                self.tags = element.tags;
-                const tgs = self.tags;
-                tgs["_last_edit:contributor"] = element.user
-                tgs["_last_edit:contributor:uid"] = element.uid
-                tgs["_last_edit:changeset"] = element.changeset
-                tgs["_last_edit:timestamp"] = element.timestamp
-                tgs["_version_number"] = element.version
-                tgs["id"] = self.type+"/"+self.id;
 
-                self.version = element.version;
+                self.LoadData(element)
                 self.SaveExtraData(element, data.elements);
+
                 continuation(self, {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
@@ -119,7 +180,7 @@ export abstract class OsmObject {
             if (oldV == v) {
                 return;
             }
-            console.log("WARNING: overwriting ", oldV, " with ", v, " for key ", k)
+            console.log("Overwriting ", oldV, " with ", v, " for key ", k)
         }
         this.tags[k] = v;
         if (v === undefined || v === "") {
@@ -135,6 +196,25 @@ export abstract class OsmObject {
             return "";
         }
         return 'version="' + this.version + '"';
+    }
+
+    private LoadData(element: any): void {
+        this.tags = element.tags ?? this.tags;
+        this.version = element.version;
+        this.timestamp = element.timestamp;
+        const tgs = this.tags;
+        if(element.tags === undefined){
+            // Simple node which is part of a way - not important
+            return;
+        }
+        tgs["_last_edit:contributor"] = element.user
+        tgs["_last_edit:contributor:uid"] = element.uid
+        tgs["_last_edit:changeset"] = element.changeset
+        tgs["_last_edit:timestamp"] = element.timestamp
+        tgs["_version_number"] = element.version
+        tgs["id"] = this.type + "/" + this.id;
+      
+
     }
 }
 
@@ -219,21 +299,20 @@ export class OsmWay extends OsmObject {
             '        </way>\n';
     }
 
-    SaveExtraData(element, allNodes) {
-        console.log("Way-extras: ", allNodes)
+    SaveExtraData(element, allNodes: OsmNode[]) {
 
-        
+        let latSum = 0
+        let lonSum = 0
+
         for (const node of allNodes) {
-            if (node.type === "node") {
-                const n = new OsmNode(node.id);
-                n.SaveExtraData(node)
-                const cp = n.centerpoint();
-                this.coordinates.push(cp);
-            }
+            const cp = node.centerpoint();
+            this.coordinates.push(cp);
+            latSum = cp[0]
+            lonSum = cp[1]
         }
         let count = this.coordinates.length;
-        this.lat = this.coordinates.map(c => c[0]).reduce((a, b) => a + b, 0) / count;
-        this.lon = this.coordinates.map(c => c[1]).reduce((a, b) => a + b, 0) / count;
+        this.lat = latSum / count;
+        this.lon = lonSum / count;
         this.nodes = element.nodes;
     }
 

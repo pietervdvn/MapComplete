@@ -59,7 +59,7 @@ export default class State {
 
     public layerUpdater: UpdateFromOverpass;
     
-    public osmApiFeatureSource : OsmApiFeatureSource = new OsmApiFeatureSource();
+    public osmApiFeatureSource : OsmApiFeatureSource ;
 
 
     public filteredLayers: UIEventSource<{
@@ -220,6 +220,7 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
+        this.osmApiFeatureSource = new OsmApiFeatureSource(this.locationControl)
         
         new PendingChangesUploader(this.changes, this.selectedElement);
 
