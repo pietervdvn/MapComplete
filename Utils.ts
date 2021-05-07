@@ -285,6 +285,15 @@ export class Utils {
         }
         return result;
     }
+
+    public static downloadTxtFile (contents: string, fileName: string = "download.txt") {
+        const element = document.createElement("a");
+        const file = new Blob([contents], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = fileName;
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
 }
 
 export interface TileRange{

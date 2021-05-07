@@ -5,11 +5,71 @@ import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {UIElement} from "./UI/UIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
+import postcss from "postcss";
+import prefix = postcss.vendor.prefix;
+import {Utils} from "./Utils";
+import {SubtleButton} from "./UI/Base/SubtleButton";
 
 
 const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "");
 
 let rendered = false;
+
+function salvageThemes(preferences: any) {
+    const knownThemeNames = new Set<string>();
+    const correctThemeNames = []
+    for (const key in preferences) {
+        if (!(typeof key === "string")) {
+            continue;
+        }
+        const prefix = "mapcomplete-installed-theme-";
+        // mapcomplete-installed-theme-arbres_llefia-combined-11
+        //mapcomplete-installed-theme-1roadAlllanes-combined-length
+        if (!key.startsWith(prefix)) {
+            continue;
+        }
+        const theme = key.substring(prefix.length, key.indexOf("-combined-"))
+
+        if (key.endsWith("-length")) {
+            correctThemeNames.push(theme)
+        } else {
+            knownThemeNames.add(theme);
+        }
+    }
+
+    for (const correctThemeName of correctThemeNames) {
+        knownThemeNames.delete(correctThemeName);
+    }
+
+    const missingValues = Array.from(knownThemeNames).map(failedTheme => {
+
+        let i = 0;
+        let foundValue = undefined
+        let combined = ""
+        do {
+            const key = prefix + failedTheme + "-combined-" + i;
+            foundValue = preferences[key]
+            i++;
+            combined += foundValue ?? ""
+        } while (foundValue !== undefined);
+
+        const json = Utils.UnMinify(combined);
+
+        return {
+            themeName: failedTheme,
+            contents: json
+        }
+    })
+    return missingValues;
+}
+
+function SalvageButton(theme: {themeName: string, contents: string}){
+    return new SubtleButton("bug.svg", "Download broken theme "+theme.themeName).onClick(
+        () => {
+            Utils.downloadTxtFile(theme.contents, theme.themeName+".json")
+        }
+    )
+}
 
 function createTable(preferences: any) {
     if (rendered) {
@@ -41,7 +101,9 @@ function createTable(preferences: any) {
     }
 
     new Combine(
-        ["<table>",
+        [
+            ...salvageThemes(preferences).map(theme => SalvageButton(theme)),
+            "<table>",
             ...prefs,
             "</table>"]
     ).AttachTo("maindiv");
