@@ -47,6 +47,12 @@ If you want to deploy your fork:
 1. `npm run build`
 2. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the landing page, visiting `yourwebsite/<theme>` should bring you to the appropriate theme.
 
+
+Weird errors
+------------
+
+Try removing `node_modules`, `package-lock.json` and `.cache`
+
  Overview of package.json-scripts
  --------------------------------
  
@@ -72,4 +78,3 @@ If you want to deploy your fork:
   - `lint`: get depressed by the amount of warnings
   - `clean`: remove some generated files which are annoying in the repo
   
-
