@@ -18,7 +18,7 @@ import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
-import UpdateTagsFromOsmAPI from "./Logic/Actors/UpdateTagsFromOsmAPI";
+import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -58,6 +58,8 @@ export default class State {
     public favouriteLayers: UIEventSource<string[]>;
 
     public layerUpdater: UpdateFromOverpass;
+    
+    public osmApiFeatureSource : OsmApiFeatureSource ;
 
 
     public filteredLayers: UIEventSource<{
@@ -218,6 +220,7 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
+        this.osmApiFeatureSource = new OsmApiFeatureSource(this.locationControl)
         
         new PendingChangesUploader(this.changes, this.selectedElement);
 
@@ -252,8 +255,6 @@ export default class State {
         }).ping()
 
         new TitleHandler(this.layoutToUse, this.selectedElement, this.allElements);
-
-        new UpdateTagsFromOsmAPI(this.selectedElement.map(el => el?.properties?.id), this.allElements)
 
     }
 

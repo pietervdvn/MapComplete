@@ -189,7 +189,7 @@ export class Utils {
      * @param z
      * @param x
      * @param y
-     * @returns [[lat, lon], [lat, lon]]
+     * @returns [[maxlat, minlon], [minlat, maxlon]]
      */
     static tile_bounds(z: number, x: number, y: number): [[number, number], [number, number]] {
         return [[Utils.tile2lat(y, z), Utils.tile2long(x, z)], [Utils.tile2lat(y + 1, z), Utils.tile2long(x + 1, z)]]
@@ -201,8 +201,8 @@ export class Utils {
     static embedded_tile(lat: number, lon: number, z: number): { x: number, y: number, z: number } {
         return {x: Utils.lon2tile(lon, z), y: Utils.lat2tile(lat, z), z: z}
     }
-    
-    static TileRangeBetween(zoomlevel: number, lat0: number, lon0: number, lat1:number, lon1: number) : TileRange{
+
+    static TileRangeBetween(zoomlevel: number, lat0: number, lon0: number, lat1: number, lon1: number): TileRange {
         const t0 = Utils.embedded_tile(lat0, lon0, zoomlevel)
         const t1 = Utils.embedded_tile(lat1, lon1, zoomlevel)
 
@@ -211,12 +211,12 @@ export class Utils {
         const ystart = Math.min(t0.y, t1.y)
         const yend = Math.max(t0.y, t1.y)
         const total = (1 + xend - xstart) * (1 + yend - ystart)
-        
+
         return {
             xstart: xstart,
             xend: xend,
             ystart: ystart,
-            yend: yend, 
+            yend: yend,
             total: total,
             zoomlevel: zoomlevel
         }
@@ -274,8 +274,27 @@ export class Utils {
     private static lat2tile(lat, zoom) {
         return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
     }
-}
 
+    public static MapRange<T> (tileRange: TileRange, f: (x: number, y: number) => T): T[] {
+        const result : T[] = []
+        for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
+            for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
+              const t=  f(x, y);
+              result.push(t)
+            }
+        }
+        return result;
+    }
+
+    public static downloadTxtFile (contents: string, fileName: string = "download.txt") {
+        const element = document.createElement("a");
+        const file = new Blob([contents], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = fileName;
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
+}
 
 export interface TileRange{
     xstart: number,
@@ -284,4 +303,5 @@ export interface TileRange{
     yend: number,
     total: number,
     zoomlevel: number
+    
 }

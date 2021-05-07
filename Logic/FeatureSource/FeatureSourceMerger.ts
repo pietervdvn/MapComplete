@@ -21,27 +21,48 @@ export default class FeatureSourceMerger implements FeatureSource {
     }
 
     private Update() {
-        let all = {}; // Mapping 'id' -> {feature, freshness}
+
+        let somethingChanged = false;
+        const all: Map<string, { feature: any, freshness: Date }> = new Map<string, { feature: any; freshness: Date }>();
+        // We seed the dictionary with the previously loaded features
+        const oldValues = this.features.data ?? [];
+        for (const oldValue of oldValues) {
+            all.set(oldValue.feature.id, oldValue)
+        }
+
         for (const source of this._sources) {
             if (source?.features?.data === undefined) {
                 continue;
             }
             for (const f of source.features.data) {
                 const id = f.feature.properties.id;
-                const oldV = all[id];
-                if (oldV === undefined) {
-                    all[id] = f;
-                } else {
-                    if (oldV.freshness < f.freshness) {
-                        all[id] = f;
-                    }
+                if (!all.has(id)) {
+                    // This is a new feature
+                    somethingChanged = true;
+                    all.set(id, f);
+                    continue;
+                }
+
+                // This value has been seen already, either in a previous run or by a previous datasource
+                // Let's figure out if something changed
+                const oldV = all.get(id);
+                if (oldV.freshness < f.freshness) {
+                    // Jup, this feature is fresher
+                    all.set(id, f);
+                    somethingChanged = true;
                 }
             }
         }
-        const newList = [];
-        for (const id in all) {
-            newList.push(all[id]);
+        
+        if(!somethingChanged){
+            // We don't bother triggering an update
+            return;
         }
+        
+        const newList = [];
+        all.forEach((value, key) => {
+            newList.push(value)
+        })
         this.features.setData(newList);
     }
 

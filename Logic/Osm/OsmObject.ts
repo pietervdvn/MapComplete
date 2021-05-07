@@ -9,10 +9,14 @@ export abstract class OsmObject {
     tags: {} = {};
     version: number;
     public changed: boolean = false;
+    timestamp: Date;
 
     protected constructor(type: string, id: number) {
         this.id = id;
         this.type = type;
+        this.tags = {
+            id: id
+        }
     }
 
     static DownloadObject(id, continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
@@ -20,8 +24,7 @@ export abstract class OsmObject {
         const type = splitted[0];
         const idN = splitted[1];
 
-        const newContinuation = (element: OsmObject, meta :OsmObjectMeta) => {
-            console.log("Received: ", element, "with meta", meta);
+        const newContinuation = (element: OsmObject, meta: OsmObjectMeta) => {
             continuation(element, meta);
         }
 
@@ -34,6 +37,80 @@ export abstract class OsmObject {
                 return new OsmRelation(idN).Download(newContinuation);
 
         }
+    }
+
+    public static DownloadHistory(id: string, continuation: (versions: OsmObject[]) => void): void {
+        const splitted = id.split("/");
+        const type = splitted[0];
+        const idN = splitted[1];
+        $.getJSON("https://openStreetMap.org/api/0.6/" + type + "/" + idN + "/history", data => {
+            const elements: any[] = data.elements;
+            const osmObjects: OsmObject[] = []
+            for (const element of elements) {
+                let osmObject: OsmObject = null
+                switch (type) {
+                    case("node"):
+                        osmObject = new OsmNode(idN);
+                        break;
+                    case("way"):
+                        osmObject = new OsmWay(idN);
+                        break;
+                    case("relation"):
+                        osmObject = new OsmRelation(idN);
+                        break;
+                }
+                osmObject?.LoadData(element);
+                osmObject?.SaveExtraData(element, []);
+                osmObjects.push(osmObject)
+            }
+            continuation(osmObjects)
+        })
+    }
+
+    private static ParseObjects(elements: any[]) : OsmObject[]{
+        const objects: OsmObject[] = [];
+        const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
+        for (const element of elements) {
+            const type = element.type;
+            const idN = element.id;
+            let osmObject: OsmObject = null
+            switch (type) {
+                case("node"):
+                    const node = new OsmNode(idN);
+                    allNodes.set(idN, node);
+                    osmObject = node
+                    node.SaveExtraData(element);
+                    break;
+                case("way"):
+                    osmObject = new OsmWay(idN);
+                    const nodes = element.nodes.map(i => allNodes.get(i));
+                    osmObject.SaveExtraData(element, nodes)
+                    break;
+                case("relation"):
+                    osmObject = new OsmRelation(idN);
+                    osmObject.SaveExtraData(element, [])
+                    break;
+            }
+            osmObject.LoadData(element)
+            objects.push(osmObject)
+        }
+        return objects;
+    }
+    
+    //Loads an area from the OSM-api.
+    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
+    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
+        const minlon = bounds[0][1]
+        const maxlon = bounds[1][1]
+        const minlat = bounds[1][0]
+        const maxlat = bounds[0][0];
+        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
+        $.getJSON(url, data => {
+            const elements: any[] = data.elements;
+            const objects = OsmObject.ParseObjects(elements)
+            callback(objects);
+
+        })
     }
 
     public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
@@ -50,7 +127,6 @@ export abstract class OsmObject {
             return;
         }
 
-        console.log("Downloading ", neededId);
         OsmObject.DownloadObject(neededId,
             function (element) {
                 knownElements[neededId] = element; // assign the element for later, continue downloading the next element
@@ -59,7 +135,12 @@ export abstract class OsmObject {
         );
     }
 
-    abstract SaveExtraData(element);
+    // The centerpoint of the feature, as [lat, lon]
+    public abstract centerpoint(): [number, number];
+
+    public abstract asGeoJson(): any;
+
+    abstract SaveExtraData(element: any, allElements: any[]);
 
     /**
      * Generates the changeset-XML for tags
@@ -78,12 +159,20 @@ export abstract class OsmObject {
 
     Download(continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
         const self = this;
-        $.getJSON("https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id,
-            function (data) {
-                const element = data.elements[0];
-                self.tags = element.tags;
-                self.version = element.version;
-                self.SaveExtraData(element);
+        const full = this.type !== "way" ? "" : "/full";
+        const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
+        $.getJSON(url, function (data) {
+            
+                const element = data.elements.pop();
+
+                let nodes = []
+                if(data.elements.length > 2){
+                    nodes = OsmObject.ParseObjects(data.elements)
+                }
+                
+                self.LoadData(element)
+                self.SaveExtraData(element, nodes);
+
                 continuation(self, {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
@@ -102,7 +191,7 @@ export abstract class OsmObject {
             if (oldV == v) {
                 return;
             }
-            console.log("WARNING: overwriting ", oldV, " with ", v, " for key ", k)
+            console.log("Overwriting ", oldV, " with ", v, " for key ", k)
         }
         this.tags[k] = v;
         if (v === undefined || v === "") {
@@ -118,6 +207,25 @@ export abstract class OsmObject {
             return "";
         }
         return 'version="' + this.version + '"';
+    }
+
+    private LoadData(element: any): void {
+        this.tags = element.tags ?? this.tags;
+        this.version = element.version;
+        this.timestamp = element.timestamp;
+        const tgs = this.tags;
+        if(element.tags === undefined){
+            // Simple node which is part of a way - not important
+            return;
+        }
+        tgs["_last_edit:contributor"] = element.user
+        tgs["_last_edit:contributor:uid"] = element.uid
+        tgs["_last_edit:changeset"] = element.changeset
+        tgs["_last_edit:timestamp"] = element.timestamp
+        tgs["_version_number"] = element.version
+        tgs["id"] = this.type + "/" + this.id;
+      
+
     }
 }
 
@@ -135,21 +243,36 @@ export class OsmNode extends OsmObject {
     ChangesetXML(changesetId: string): string {
         let tags = this.TagsXML();
 
-        let change =
-            '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
+        return '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
             tags +
             '        </node>\n';
-
-        return change;
     }
 
     SaveExtraData(element) {
         this.lat = element.lat;
         this.lon = element.lon;
     }
+
+    centerpoint(): [number, number] {
+        return [this.lat, this.lon];
+    }
+
+    asGeoJson() {
+        return {
+            "type": "Feature",
+            "properties": this.tags,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    this.lon,
+                    this.lat
+                ]
+            }
+        }
+    }
 }
 
-export interface OsmObjectMeta{
+export interface OsmObjectMeta {
     "_last_edit:contributor": string,
     "_last_edit:contributor:uid": number,
     "_last_edit:changeset": number,
@@ -161,10 +284,17 @@ export interface OsmObjectMeta{
 export class OsmWay extends OsmObject {
 
     nodes: number[];
+    coordinates: [number, number][] = []
+    lat: number;
+    lon: number;
 
     constructor(id) {
         super("way", id);
 
+    }
+
+    centerpoint(): [number, number] {
+        return [this.lat, this.lon];
     }
 
     ChangesetXML(changesetId: string): string {
@@ -174,17 +304,38 @@ export class OsmWay extends OsmObject {
             nds += '      <nd ref="' + this.nodes[node] + '"/>\n';
         }
 
-        let change =
-            '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
+        return '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             nds +
             tags +
             '        </way>\n';
-
-        return change;
     }
 
-    SaveExtraData(element) {
+    SaveExtraData(element, allNodes: OsmNode[]) {
+
+        let latSum = 0
+        let lonSum = 0
+
+        for (const node of allNodes) {
+            const cp = node.centerpoint();
+            this.coordinates.push(cp);
+            latSum = cp[0]
+            lonSum = cp[1]
+        }
+        let count = this.coordinates.length;
+        this.lat = latSum / count;
+        this.lon = lonSum / count;
         this.nodes = element.nodes;
+    }
+
+    asGeoJson() {
+        return {
+            "type": "Feature",
+            "properties": this.tags,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": this.coordinates.map(c => [c[1], c[0]])
+            }
+        }
     }
 }
 
@@ -197,24 +348,29 @@ export class OsmRelation extends OsmObject {
 
     }
 
+    centerpoint(): [number, number] {
+        return [0, 0]; // TODO
+    }
+
     ChangesetXML(changesetId: string): string {
         let members = "";
-        for (const memberI in this.members) {
-            const member = this.members[memberI];
+        for (const member of this.members) {
             members += '      <member type="' + member.type + '" ref="' + member.ref + '" role="' + member.role + '"/>\n';
         }
 
         let tags = this.TagsXML();
-        let change =
-            '    <relation id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
+        return '    <relation id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             members +
             tags +
             '        </relation>\n';
-        return change;
 
     }
 
     SaveExtraData(element) {
         this.members = element.members;
+    }
+
+    asGeoJson() {
+        throw "Not Implemented"
     }
 }

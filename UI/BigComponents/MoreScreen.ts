@@ -1,4 +1,3 @@
-import {VerticalCombine} from "../Base/VerticalCombine";
 import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
@@ -53,15 +52,17 @@ export default class MoreScreen extends UIElement {
         if(path === ""){
             path = "."
         }
+        
+        const params = `z=${currentLocation.zoom ?? 1}&lat=${currentLocation.lat ?? 0}&lon=${currentLocation.lon ?? 0}`
         let linkText =
-            `${path}/${layout.id.toLowerCase()}?z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            `${path}/${layout.id.toLowerCase()}?${params}`
 
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-            linkText = `${path}/index.html?layout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}`
+            linkText = `${path}/index.html?layout=${layout.id}&${params}`
         }
 
         if (customThemeDefinition) {
-            linkText = `${path}/?userlayout=${layout.id}&z=${currentLocation.zoom}&lat=${currentLocation.lat}&lon=${currentLocation.lon}#${customThemeDefinition}`
+            linkText = `${path}/?userlayout=${layout.id}&${params}#${customThemeDefinition}`
 
         }
 
