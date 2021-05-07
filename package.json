@@ -19,6 +19,7 @@
     "generate:cache:speelplekken": "ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.22 4.30 51.08 4.55",
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
+    "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",
     "validate:layeroverview": "ts-node scripts/generateLayerOverview.ts --report",
     "validate:licenses": "ts-node scripts/generateLicenseInfo.ts --report",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",

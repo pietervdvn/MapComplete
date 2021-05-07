@@ -59,8 +59,9 @@ If you want to deploy your fork:
  - `generate:translations`: compiles the translation file into a javascript file
  - `generate:layouts`: uses `index.html` as template to create all the theme index pages. You'll want to run `clean` when done
  - `generate:docs`: generates various documents, such as information about available metatags, information to put on the [OSM-wiki](https://wiki.openstreetmap.org/wiki/MapComplete),...
+ - `generate:report`: downloads statistics from OsmCha, compiles neat graphs
   - `generate:cache:speelplekken`: creates an offline copy of all the data required for one specific (paid for) theme
-  -  `generate:layeroverview`: reads all the theme- and layerconfigurations, compiles them into a single JSON.
+  - `generate:layeroverview`: reads all the theme- and layerconfigurations, compiles them into a single JSON.
   - `reset:layeroverview`: if something is wrong with the layeroverview, creates an empty one
   - `generate:licenses`: compiles all the license info of images into a single json
   - `optimize:images`: attempts to make smaller pngs - optional to run before a deployment
