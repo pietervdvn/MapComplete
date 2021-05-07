@@ -5,8 +5,6 @@ import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import {UIElement} from "./UI/UIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
-import postcss from "postcss";
-import prefix = postcss.vendor.prefix;
 import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 
