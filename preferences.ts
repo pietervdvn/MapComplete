@@ -7,6 +7,8 @@ import {UIElement} from "./UI/UIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";
+import LZString from "lz-string";
+import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 
 
 const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "");
@@ -45,26 +47,49 @@ function salvageThemes(preferences: any) {
         let foundValue = undefined
         let combined = ""
         do {
+            const prefix = "mapcomplete-installed-theme-";
             const key = prefix + failedTheme + "-combined-" + i;
             foundValue = preferences[key]
+            console.log(key,"-->",foundValue)
             i++;
             combined += foundValue ?? ""
         } while (foundValue !== undefined);
 
-        const json = Utils.UnMinify(combined);
+        if(combined === ""){
+            return null;
+        }
+        
+        console.log("COmbined value is", combined)
+        let jsonObject;
+        try {
+            jsonObject = JSON.parse(atob(combined));
+        } catch (e) {
+            // We try to decode with lz-string
+            jsonObject = JSON.parse(Utils.UnMinify(LZString.decompressFromBase64(combined))) as LayoutConfigJson;
+
+        }
 
         return {
             themeName: failedTheme,
-            contents: json
+            contents: JSON.stringify(jsonObject, null, "  ")
         }
     })
-    return missingValues;
+    return  Utils.NoNull(missingValues);
 }
 
-function SalvageButton(theme: {themeName: string, contents: string}){
-    return new SubtleButton("bug.svg", "Download broken theme "+theme.themeName).onClick(
+function clearAll(preferences){
+    for (const key in preferences) {
+        const pref = connection.GetPreference(key, "");
+        if (key.startsWith("mapcomplete")) {
+            pref.setData("")
+        }
+    }
+}
+
+function SalvageButton(theme: { themeName: string, contents: string }) {
+    return new SubtleButton("./assets/svg/bug.svg", "Download broken theme " + theme.themeName).onClick(
         () => {
-            Utils.downloadTxtFile(theme.contents, theme.themeName+".json")
+            Utils.downloadTxtFile(theme.contents, theme.themeName + ".json")
         }
     )
 }
@@ -103,7 +128,8 @@ function createTable(preferences: any) {
             ...salvageThemes(preferences).map(theme => SalvageButton(theme)),
             "<table>",
             ...prefs,
-            "</table>"]
+            "</table>",
+        new SubtleButton("./assets/svg/delete_icon.svg", "Delete all mapcomplete preferences (mangrove identies are preserved)").onClick(() => clearAll(preferences))]
     ).AttachTo("maindiv");
 }
 
