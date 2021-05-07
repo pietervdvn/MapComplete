@@ -19,6 +19,7 @@
     "generate:cache:speelplekken": "ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.22 4.30 51.08 4.55",
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
+    "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",
     "validate:layeroverview": "ts-node scripts/generateLayerOverview.ts --report",
     "validate:licenses": "ts-node scripts/generateLicenseInfo.ts --report",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
@@ -27,7 +28,7 @@
     "build": "rm -rf dist/ && npm run generate && parcel build --public-url ./ *.html assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
     "prepare-deploy": "npm run generate && npm run test && npm run generate:editor-layer-index && npm run generate:layouts && npm run generate:layeroverview && npm run build && rm -rf .cache && npm run generate:docs",
     "deploy:staging": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/Staging/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/Staging/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
-    "deploy:pietervdvn": "npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
+    "deploy:pietervdvn": "cd /home/pietervdvn/git/pietervdvn.github.io/ && git pull && cd - && npm run prepare-deploy && rm -rf /home/pietervdvn/git/pietervdvn.github.io/MapComplete/* && cp -r dist/* /home/pietervdvn/git/pietervdvn.github.io/MapComplete/ && cd /home/pietervdvn/git/pietervdvn.github.io/ && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "deploy:production": "rm -rf ./assets/generated && npm run prepare-deploy && npm run optimize-images && rm -rf /home/pietervdvn/git/mapcomplete.github.io/* && cp -r dist/* /home/pietervdvn/git/mapcomplete.github.io/ && cd /home/pietervdvn/git/mapcomplete.github.io/ && echo \"mapcomplete.osm.be\" > CNAME  && git add * && git commit -m 'New MapComplete Version' && git push && cd - && npm run clean",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(index\\|land\\|test\\|preferences\\|customGenerator\\).html\" | xargs rm) && rm *.webmanifest"
