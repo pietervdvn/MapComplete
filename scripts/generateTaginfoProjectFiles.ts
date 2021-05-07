@@ -41,7 +41,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
             const usesImageCarousel = (tr.render?.txt?.indexOf("image_carousel()") ?? -2) > 0
             const usesImageUpload = (tr.render?.txt?.indexOf("image_upload()") ?? -2) > 0
             if (usesImageCarousel || usesImageUpload) {
-           
+
                 const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary`;
                 const descrUpload = `The layer '${layer.name.txt} allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary`;
 
@@ -136,6 +136,28 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
     return filename
 }
 
+// Write the URLS to the taginfo repository. Might fail if the repository is not checked ou
+function generateProjectsOverview() {
+    try {
+        const tagInfoList = "../taginfo-projects/project_list.txt"
+        let projectList = readFileSync(tagInfoList, "UTF8")
+            .split("\n")
+            .filter(entry => entry.indexOf("mapcomplete_") < 0)
+            .concat(files.map(f => `${f} https://raw.githubusercontent.com/pietervdvn/MapComplete/master/Docs/TagInfo/${f}.json`))
+            .sort()
+            .filter(entry => entry != "")
+
+        console.log("Writing taginfo project filelist");
+        writeFileSync(tagInfoList, projectList.join("\n") + "\n");
+
+
+    } catch (e) {
+        console.warn("Could not write the taginfo-projects list - the repository is probably not checked out. Are you creating a fork? Ignore this message then.")
+    }
+
+}
+
+
 
 console.log("Creating taginfo project files")
 
@@ -150,15 +172,4 @@ for (const layout of AllKnownLayouts.layoutsList) {
     }
     files.push(generateTagInfoEntry(layout));
 }
-
-const tagInfoList = "../taginfo-projects/project_list.txt"
-let projectList = readFileSync(tagInfoList, "UTF8")
-    .split("\n")
-    .filter(entry => entry.indexOf("mapcomplete_") < 0)
-    .concat(files.map(f => `${f} https://raw.githubusercontent.com/pietervdvn/MapComplete/master/Docs/TagInfo/${f}.json`))
-    .sort()
-    .filter(entry => entry != "")
-
-console.log("Writing taginfo project filelist");
-writeFileSync(tagInfoList, projectList.join("\n") + "\n");
-    
+generateProjectsOverview();
