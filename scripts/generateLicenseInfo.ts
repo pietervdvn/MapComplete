@@ -1,5 +1,5 @@
 import {Utils} from "../Utils";
-import {lstatSync, readdirSync, readFileSync, writeFileSync, unlinkSync} from "fs";
+import {lstatSync, readdirSync, readFileSync, writeFileSync, unlinkSync, existsSync, mkdir, mkdirSync} from "fs";
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
@@ -13,28 +13,29 @@ Utils.runningFromConsole = true;
 function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
-        try{
-            
-        
-        const parsed = JSON.parse(readFileSync(path, "UTF-8"))
-        if (Array.isArray(parsed)) {
-            const l: SmallLicense[] = parsed
-            for (const smallLicens of l) {
-                smallLicens.path = path.substring(0, path.length - "license_info.json".length) + smallLicens.path
-            }
-            licenses.push(...l)
-        } else {
-            const smallLicens: SmallLicense = parsed;
-            /*if(parsed.license === "CC-BY"){
-                console.log("Rewriting ", path)
-                parsed.license === "CC-BY 4.0"
-                writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
-            }*/
+        try {
 
-            smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
-            licenses.push(smallLicens)
-        }}catch(e){
-            console.error("Error: ",e, "while handling",path)
+
+            const parsed = JSON.parse(readFileSync(path, "UTF-8"))
+            if (Array.isArray(parsed)) {
+                const l: SmallLicense[] = parsed
+                for (const smallLicens of l) {
+                    smallLicens.path = path.substring(0, path.length - "license_info.json".length) + smallLicens.path
+                }
+                licenses.push(...l)
+            } else {
+                const smallLicens: SmallLicense = parsed;
+                /*if(parsed.license === "CC-BY"){
+                    console.log("Rewriting ", path)
+                    parsed.license === "CC-BY 4.0"
+                    writeFileSync(path, JSON.stringify(smallLicens, null, "  "))
+                }*/
+
+                smallLicens.path = path.substring(0, 1 + path.lastIndexOf("/")) + smallLicens.path
+                licenses.push(smallLicens)
+            }
+        } catch (e) {
+            console.error("Error: ", e, "while handling", path)
         }
 
     }
@@ -195,6 +196,9 @@ const contents = ScriptUtils.readDirRecSync("./assets")
 const licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
 const licenseInfos = generateLicenseInfos(licensePaths);
 
+if (!existsSync("./assets/generated")) {
+    mkdirSync("./assets/generated")
+}
 
 writeFileSync("./assets/generated/license_info.json", JSON.stringify(licenseInfos, null, "  "))
 
@@ -203,13 +207,13 @@ const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
 const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
 for (const licenseInfo of licenseInfos) {
     for (const source of licenseInfo.sources) {
-        if(source == ""){
-            invalidLicenses.push("Invalid license: empty string in "+JSON.stringify(licenseInfo))
+        if (source == "") {
+            invalidLicenses.push("Invalid license: empty string in " + JSON.stringify(licenseInfo))
         }
-        try{
+        try {
             new URL(source);
-        }catch{
-            invalidLicenses.push("Not a valid URL: "+source)
+        } catch {
+            invalidLicenses.push("Not a valid URL: " + source)
         }
     }
 }
@@ -218,7 +222,7 @@ if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 
 }
 if (missingLicenses.length > 0) {
     const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
-    console.log( missingLicenses.concat(invalidLicenses).join("\n"))
+    console.log(missingLicenses.concat(invalidLicenses).join("\n"))
     console.error(msg)
     if (process.argv.indexOf("--report") >= 0) {
         console.log("Writing report!")

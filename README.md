@@ -60,7 +60,7 @@ A typical user journey would be:
     * Note that _all messages_ must be read before being able to add a point.
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is added deliberately to make sure new users _have_ to read feedback from the community.
     
-4. At 50 changesets, the [personal layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The personal theme is a theme where contributors can pick layers from all the offical themes. Note that the personal theme is always available.
+4. At 50 changesets, the [personal layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The personal theme is a theme where contributors can pick layers from all the official themes. Note that the personal theme is always available.
 
 5. At 200 changesets, the tags become visible when answering questions and when adding a new point from a preset. This is to give more control to power users and to teach new users the tagging scheme
 
@@ -77,21 +77,8 @@ I love it to see where the project ends up. You are free to reuse the software (
 
 ## Dev
 
-To develop:
+To develop or deploy a version of MapComplete, have a look [to the guide](Docs/Development_deployment.md).
 
-0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
-0. Make a fork and clone the repository.
-1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
-2. Run `npm install` to install the package dependencies
-3. Run `npm run generate` and `npm run generate:editor-layer-index` to generate some additional dependencies
-4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, the 'bookcases'-theme is loaded. In order to load another theme, use `layout=themename` or `userlayout=true#<layout configuration>`. Note that the custom URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version. (These are automatically generated from a template on the server).
-
-To deploy:
-
-0. `rm -rf dist/` to remove the local build
-1. `npm run build`
-2. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the website
 
 ## Translating MapComplete
 
@@ -131,7 +118,7 @@ Images are fetched from:
 
 Images are uploaded to Imgur, as their API was way easier to handle. The URL is written into the changes.
 
-The idea is that once in a while, the images are transfered to wikipedia or that we hook up wikimedia directly (but I need some help in getting their API working).
+The idea is that once in a while, the images are transferred to wikipedia or that we hook up wikimedia directly (but I need some help in getting their API working).
 
 ### Uploading changes
 
@@ -149,7 +136,7 @@ All documentation can be found in [here](Docs/)
 
 Privacy is important, we try to leak as little information as possible.
 All major personal information is handled by OSM.
-Geolocation is available on mobile only throught hte device's GPS location (so no geolocation is sent of to Google).
+Geolocation is available on mobile only through the device's GPS location (so no geolocation is sent of to Google).
 
 TODO: erase cookies of third party websites and API's
 
