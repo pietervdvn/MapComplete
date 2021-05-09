@@ -149,6 +149,9 @@ export abstract class OsmObject {
     TagsXML(): string {
         let tags = "";
         for (const key in this.tags) {
+            if(key.startsWith("_")){
+                continue;
+            }
             const v = this.tags[key];
             if (v !== "") {
                 tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'

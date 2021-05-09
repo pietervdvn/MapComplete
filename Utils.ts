@@ -1,4 +1,5 @@
 import * as $ from "jquery"
+import {type} from "os";
 
 export class Utils {
 
@@ -14,6 +15,10 @@ export class Utils {
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
     static EncodeXmlValue(str) {
+        if(typeof str !== "string"){
+            str = ""+str
+        }
+        
         return str.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')

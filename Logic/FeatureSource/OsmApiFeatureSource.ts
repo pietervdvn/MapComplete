@@ -22,6 +22,10 @@ export default class OsmApiFeatureSource implements FeatureSource {
 
 
     public load(id: string) {
+        if(id.indexOf("-") >= 0){
+            // Newly added point - not yet in OSM
+            return;
+        }
         OsmObject.DownloadObject(id, (element, meta) => {
             const geojson = element.asGeoJson();
             geojson.id = geojson.properties.id;
