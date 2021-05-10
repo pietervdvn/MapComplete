@@ -152,6 +152,9 @@ export abstract class OsmObject {
             if(key.startsWith("_")){
                 continue;
             }
+            if(key === "id"){
+                continue;
+            }
             const v = this.tags[key];
             if (v !== "") {
                 tags += '        <tag k="' + Utils.EncodeXmlValue(key) + '" v="' + Utils.EncodeXmlValue(this.tags[key]) + '"/>\n'
