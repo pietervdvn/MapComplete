@@ -165,16 +165,19 @@
     "#": "These texts are shown above the theme buttons when no theme is loaded",
     "title": {
       "en": "Welcome to MapComplete",
-      "nl": "Welkom bij MapComplete"
+      "nl": "Welkom bij MapComplete",
+      "de": "Willkommen auf MapComplete"
     },
     "intro": {
       "nl": "MapComplete is een OpenStreetMap applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
-      "en": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme."
+      "en": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.",
+      "de": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu einem bestimmten Thema angezeigt und angepasst werden können."
     },
 
     "pickTheme": {
       "en": "Pick a theme below to get started.",
-      "nl": "Kies hieronder een thema om te beginnen."
+      "nl": "Kies hieronder een thema om te beginnen.",
+      "de": "Wähle unten ein Thema, um zu starten"
     }
   },
   "general": {
@@ -816,49 +819,56 @@
           "ca": "Dil",
           "es": "Lun",
           "nl": "Maan",
-          "fr": "Lun"
+          "fr": "Lun",
+          "de": "Mo"
         },
         "tuesday": {
           "en": "Tue",
           "ca": "Dim",
           "es": "Mar",
           "nl": "Din",
-          "fr": "Mar"
+          "fr": "Mar",
+          "de": "Di"
         },
         "wednesday": {
           "en": "Wed",
           "ca": "Dic",
           "es": "Mie",
           "nl": "Woe",
-          "fr": "Mer"
+          "fr": "Mer",
+          "de": "Mi"
         },
         "thursday": {
           "en": "Thu",
           "ca": "Dij",
           "es": "Jue",
           "nl": "Don",
-          "fr": "Jeu"
+          "fr": "Jeu",
+          "de": "Do"
         },
         "friday": {
           "en": "Fri",
           "ca": "Div",
           "es": "Vie",
           "nl": "Vrij",
-          "fr": "Ven"
+          "fr": "Ven",
+          "de": "Fr"
         },
         "saturday": {
           "en": "Sat",
           "ca": "Dis",
           "es": "Sab",
           "nl": "Zat",
-          "fr": "Sam"
+          "fr": "Sam",
+          "de": "Sa"
         },
         "sunday": {
           "en": "Sun",
           "ca": "Diu",
           "es": "Dom",
           "nl": "Zon",
-          "fr": "Dim"
+          "fr": "Dim",
+          "de": "So"
         }
       },
       "monday": {
@@ -866,120 +876,138 @@
         "ca": "Dilluns",
         "es": "Lunes",
         "nl": "Maandag",
-        "fr": "Lundi"
+        "fr": "Lundi",
+        "de": "Montag"
       },
       "tuesday": {
         "en": "Tuesday",
         "ca": "Dimarts",
         "es": "Martes",
         "nl": "Dinsdag",
-        "fr": "Mardi"
+        "fr": "Mardi",
+        "de": "Dienstag"
       },
       "wednesday": {
         "en": "Wednesday",
         "ca": "Dimecres",
         "es": "Miércoles",
         "nl": "Woensdag",
-        "fr": "Mercredi"
+        "fr": "Mercredi",
+        "de": "Mittwoch"
       },
       "thursday": {
         "en": "Thursday",
         "ca": "Dijous",
         "es": "Jueves",
         "nl": "Donderdag",
-        "fr": "Jeudi"
+        "fr": "Jeudi",
+        "de": "Donnerstag"
       },
       "friday": {
         "en": "Friday",
         "ca": "Divendres",
         "es": "Viernes",
         "nl": "Vrijdag",
-        "fr": "Vendredi"
+        "fr": "Vendredi",
+        "de": "Freitag"
       },
       "saturday": {
         "en": "Saturday",
         "ca": "Dissabte",
         "es": "Sábado",
         "nl": "Zaterdag",
-        "fr": "Samedi"
+        "fr": "Samedi",
+        "de": "Samstag"
       },
       "sunday": {
         "en": "Sunday",
         "ca": "Diumenge",
         "es": "Domingo",
         "nl": "Zondag",
-        "fr": "Dimanche"
+        "fr": "Dimanche",
+        "de": "Sonntag"
       }
     },
     "opening_hours": {
       "error_loading": {
         "en": "Error: could not visualize these opening hours.",
-        "nl": "Sorry, deze openingsuren kunnen niet getoond worden"
+        "nl": "Sorry, deze openingsuren kunnen niet getoond worden",
+        "de": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden"
       },
       "open_during_ph": {
         "nl": "Op een feestdag is deze zaak",
         "ca": "Durant festes aquest servei és",
         "es": "Durante fiestas este servicio está",
         "en": "During a public holiday, this amenity is",
-        "fr": "Pendant les congés, ce lieu est"
+        "fr": "Pendant les congés, ce lieu est",
+        "de": "An Feiertagen ist diese Einrichtung"
       },
       "opensAt": {
         "en": "from",
         "ca": "des de",
         "es": "desde",
         "nl": "vanaf",
-        "fr": "à partir de"
+        "fr": "à partir de",
+        "de": "von"
       },
       "openTill": {
         "en": "till",
         "ca": "fins",
         "es": " hasta",
         "nl": "tot",
-        "fr": "jusqu'à"
+        "fr": "jusqu'à",
+        "de": "bis"
       },
       "not_all_rules_parsed": {
         "en": "The opening hours of this shop are complicated. The following rules are ignored in the input element:",
         "fr": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées:",
         "ca": "L'horari d'aquesta botiga és complicat. Les normes següents seran ignorades en l'entrada:",
-        "es": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:"
+        "es": "El horario de esta tienda es complejo. Las normas siguientes serán ignoradas en la entrada:",
+        "de": "Die Öffnungszeiten dieses Geschäfts sind abweichend. Die folgenden Regeln werden im Eingabeelement ignoriert:"
       },
       "closed_until": {
         "en": "Closed until {date}",
         "ca": "Tancat fins {date}",
         "es": "Cerrado hasta {date}",
         "nl": "Gesloten - open op {date}",
-        "fr": "Fermé jusqu'à"
+        "fr": "Fermé jusqu'à",
+        "de": "Geschlossen bis {date}"
       },
       "closed_permanently": {
         "en": "Closed for an unkown duration",
         "ca": "Tancat - sense dia d'obertura conegut",
         "es": "Cerrado - sin día de apertura conocido",
         "nl": "Gesloten voor onbepaalde tijd",
-        "fr": "Fermé"
+        "fr": "Fermé",
+        "de": "Geschlossen auf unbestimmte Zeit"
       },
       "open_24_7": {
         "en": "Opened around the clock",
-        "nl": "Dag en nacht open"
+        "nl": "Dag en nacht open",
+        "de": "Tag und Nacht geöffnet"
       },
       "ph_not_known": {
         "en": " ",
         "ca": " ",
         "es": " ",
-        "nl": " "
+        "nl": " ",
+        "de": " "
       },
       "ph_closed": {
         "en": "closed",
         "ca": "tancat",
         "es": "cerrado",
         "nl": "gesloten",
-        "fr": "fermé"
+        "fr": "fermé",
+        "de": "geschlossen"
       },
       "ph_open": {
         "en": "opened",
         "ca": "tancat",
         "es": "abierto",
         "nl": "open",
-        "fr": "ouvert"
+        "fr": "ouvert",
+        "de": "geöffnet"
       }
     }
   },
@@ -1012,35 +1040,43 @@
   "reviews": {
     "title": {
       "en": "{count} reviews",
-      "nl": "{count} beoordelingen"
+      "nl": "{count} beoordelingen",
+      "de": "{count} Rezensionen"
     },
     "title_singular": {
       "en": "One review",
-      "nl": "Eén beoordeling"
+      "nl": "Eén beoordeling",
+      "de": "Eine Rezension"
     },
     "name_required": {
       "en": "A name is required in order to display and create reviews",
-      "nl": "De naam van dit object moet gekend zijn om een review te kunnen maken"
+      "nl": "De naam van dit object moet gekend zijn om een review te kunnen maken",
+      "de": "Der Name des Objekts ist notwendig, um eine Bewertung erstellen zu können"
     },
     "no_reviews_yet": {
       "en": "There are no reviews yet. Be the first to write one and help open data and the business!",
-      "nl": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf"
+      "nl": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf",
+      "de": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!"
     },
     "write_a_comment": {
       "en": "Leave a review...",
-      "nl": "Schrijf een beoordeling..."
+      "nl": "Schrijf een beoordeling...",
+      "de": "Schreibe ein Kommentar..."
     },
     "no_rating": {
       "en": "No rating given",
-      "nl": "Geen score bekend"
+      "nl": "Geen score bekend",
+      "de": "Keine Bewertung vorhanden"
     },
     "posting_as": {
       "en": "Posting as",
-      "nl": "Ingelogd als"
+      "nl": "Ingelogd als",
+      "de": "Angemeldet als"
     },
     "i_am_affiliated": {
       "en": "<span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span>",
-      "nl": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>"
+      "nl": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
+      "de": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>"
     },
     "affiliated_reviewer_warning": {
       "en": "(Affiliated review)",
@@ -1048,15 +1084,18 @@
     },
     "saving_review": {
       "en": "Saving...",
-      "nl": "Opslaan..."
+      "nl": "Opslaan...",
+      "de": "Speichern..."
     },
     "saved": {
       "en": "<span class='thanks'>Review saved. Thanks for sharing!</span>",
-      "nl": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>"
+      "nl": "<span class='thanks'>Bedankt om je beoordeling te delen!</span>",
+      "de": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>"
     },
     "tos": {
       "en": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
-      "nl": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>"
+      "nl": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
+      "de": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>TOS und den Datenschutzrichtlinien von Mangrove.reviews zu</a>"
     },
     "attribution": {
       "en": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
@@ -1064,7 +1103,8 @@
     },
     "plz_login": {
       "en": "Login to leave a review",
-      "nl": "Meld je aan om een beoordeling te geven"
+      "nl": "Meld je aan om een beoordeling te geven",
+      "de": "Melde dich an, um eine Rezension zu vergeben"
     }
   }
 }
