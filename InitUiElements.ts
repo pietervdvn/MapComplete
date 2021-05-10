@@ -37,6 +37,8 @@ import SelectedFeatureHandler from "./Logic/Actors/SelectedFeatureHandler";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
+import ContributorCount from "./Logic/ContributorCount";
+import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 
 export class InitUiElements {
 
@@ -270,12 +272,12 @@ export class InitUiElements {
         isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "" || Hash.hash.data == "welcome")
     }
 
-    private static InitLayerSelection() {
+    private static InitLayerSelection(featureSource: FeatureSource) {
 
         const copyrightNotice =
             new ScrollableFullScreen(
                 () => Translations.t.general.attribution.attributionTitle.Clone(),
-                () => new AttributionPanel(State.state.layoutToUse),
+                () => new AttributionPanel(State.state.layoutToUse, new ContributorCount(featureSource).Contributors),
                 "copyright"
             )
 
@@ -371,7 +373,7 @@ export class InitUiElements {
 
     }
 
-    private static InitLayers() {
+    private static InitLayers() : FeatureSource{
 
 
         const state = State.state;
@@ -409,15 +411,15 @@ export class InitUiElements {
 
         const selectedFeatureHandler = new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source, State.state.osmApiFeatureSource);
         selectedFeatureHandler.zoomToSelectedFeature(State.state.locationControl);
-
+        return source;
     }
 
     private static setupAllLayerElements() {
 
         // ------------- Setup the layers -------------------------------
 
-        InitUiElements.InitLayers();
-        InitUiElements.InitLayerSelection();
+       const source =  InitUiElements.InitLayers();
+        InitUiElements.InitLayerSelection(source);
 
 
         // ------------------ Setup various other UI elements ------------
