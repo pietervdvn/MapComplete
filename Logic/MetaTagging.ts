@@ -62,7 +62,12 @@ export default class MetaTagging {
             if (f === undefined) {
                 continue;
             }
-            f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
+            try{
+                f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
+            }catch(e){
+                console.error(e)
+            }
+           
         }
 
     }
@@ -84,10 +89,21 @@ export default class MetaTagging {
             }
             const func = new Function("feat", "return " + code + ";");
 
+            try{
+                
+           
             const f = (featuresPerLayer, feature: any) => {
-                feature.properties[key] = func(feature);
+                try{
+                    feature.properties[key] = func(feature);
+                }catch(e){
+                    console.error("Could not calculate a metatag defined by "+code+" due to "+e+". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features")
+                }
+              
             }
             functions.push(f)
+            }catch(e){
+                console.error("Could not create a dynamic function: ", e)
+            }
         }
         return (params: Params, feature) => {
             const tags = feature.properties

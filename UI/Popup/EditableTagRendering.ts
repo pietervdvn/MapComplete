@@ -53,7 +53,9 @@ export default class EditableTagRendering extends UIElement {
             return this._question.Render();
         }
         if(!this._configuration.IsKnown(this._tags.data)){
-            return ""
+            // Even though it is not known, we hide the question here
+            // It is the questionbox's task to show the question in edit mode
+            return "";
         }
 
         return new Combine([this._answer,

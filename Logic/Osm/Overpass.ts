@@ -45,6 +45,7 @@ export class Overpass {
                 // @ts-ignore
                 const geojson = OsmToGeoJson.default(json);
                 const osmTime = new Date(json.osm3s.timestamp_osm_base);
+
                 continuation(geojson, osmTime);
 
             }).fail(onFail)

@@ -31,17 +31,20 @@ export default class SimpleMetaTagger {
         (feature) => {/*Note: also handled by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties;
-            tgs["_last_edit:contributor"] = tgs["user"]
-            tgs["_last_edit:contributor:uid"] = tgs["uid"]
-            tgs["_last_edit:changeset"] = tgs["changeset"]
-            tgs["_last_edit:timestamp"] = tgs["timestamp"]
-            tgs["_version_number"] = tgs["version"]
-
-            delete tgs["timestamp"]
-            delete tgs["version"]
-            delete tgs["changeset"]
-            delete tgs["user"]
-            delete tgs["uid"]
+            
+            function move(src: string, target: string){
+                if(tgs[src] === undefined){
+                    return;
+                }
+                tgs[target] = tgs[src]
+                delete tgs[src]
+            }
+            
+            move("user","_last_edit:contributor")
+            move("uid","_last_edit:contributor:uid")
+            move("changeset","_last_edit:changeset")
+            move("timestamp","_last_edit:timestamp")
+            move("version","_version_number")
         }
     )
     private static latlon = new SimpleMetaTagger({

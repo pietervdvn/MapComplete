@@ -3,7 +3,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
-import {TagUtils} from "../../Logic/TagUtils";
 
 
 /**
@@ -44,6 +43,7 @@ export default class QuestionBox extends UIElement {
             .onClick(() => {
                 self._skippedQuestions.setData([]);
             })
+        this.SetClass("block")
     }
 
     InnerRender(): string {
@@ -57,7 +57,6 @@ export default class QuestionBox extends UIElement {
             if (this._skippedQuestions.data.indexOf(i) >= 0) {
                 continue;
             }
-
             // this value is NOT known
             return this._tagRenderingQuestions[i].Render();
         }

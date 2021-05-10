@@ -7,6 +7,7 @@ import Bounds from "../../Models/Bounds";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {Utils} from "../../Utils";
 import {TagsFilter} from "../Tags/TagsFilter";
+import SimpleMetaTagger from "../SimpleMetaTagger";
 
 
 export default class UpdateFromOverpass implements FeatureSource {
@@ -158,14 +159,17 @@ export default class UpdateFromOverpass implements FeatureSource {
             function (data, date) {
                 self._previousBounds.get(z).push(queryBounds);
                 self.retries.setData(0);
-                self.features.setData(data.features.map(f => ({feature: f, freshness: date})));
+                const features = data.features.map(f => ({feature: f, freshness: date}));
+                SimpleMetaTagger.objectMetaInfo.addMetaTags(features)
+
+                self.features.setData(features);
                 self.runningQuery.setData(false);
             },
             function (reason) {
                 self.retries.data++;
                 self.ForceRefresh();
                 self.timeout.setData(self.retries.data * 5);
-                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec)`);
+                console.log(`QUERY FAILED (retrying in ${5 * self.retries.data} sec) due to ${reason}`);
                 self.retries.ping();
                 self.runningQuery.setData(false);
 

@@ -16,6 +16,9 @@ export class RegexTag extends TagsFilter {
     }
 
     private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
+        if(fromTag === undefined){
+            return;
+        }
         if (typeof possibleRegex === "string") {
             return fromTag === possibleRegex;
         }
@@ -42,6 +45,9 @@ export class RegexTag extends TagsFilter {
 
     matchesProperties(tags: any): boolean {
         for (const key in tags) {
+            if(key === undefined){
+                continue;
+            }
             if (RegexTag.doesMatch(key, this.key)) {
                 const value = tags[key]
                 return RegexTag.doesMatch(value, this.value) != this.invert;

@@ -67,7 +67,46 @@ export abstract class OsmObject {
         })
     }
 
-    private static ParseObjects(elements: any[]) : OsmObject[]{
+    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
+    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
+        const minlon = bounds[0][1]
+        const maxlon = bounds[1][1]
+        const minlat = bounds[1][0]
+        const maxlat = bounds[0][0];
+        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
+        $.getJSON(url, data => {
+            const elements: any[] = data.elements;
+            const objects = OsmObject.ParseObjects(elements)
+            callback(objects);
+
+        })
+    }
+
+    //Loads an area from the OSM-api.
+
+    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
+        // local function which downloads all the objects one by one
+        // this is one big loop, running one download, then rerunning the entire function
+        if (neededIds.length == 0) {
+            continuation(knownElements);
+            return;
+        }
+        const neededId = neededIds.pop();
+
+        if (neededId in knownElements) {
+            OsmObject.DownloadAll(neededIds, knownElements, continuation);
+            return;
+        }
+
+        OsmObject.DownloadObject(neededId,
+            function (element) {
+                knownElements[neededId] = element; // assign the element for later, continue downloading the next element
+                OsmObject.DownloadAll(neededIds, knownElements, continuation);
+            }
+        );
+    }
+
+    private static ParseObjects(elements: any[]): OsmObject[] {
         const objects: OsmObject[] = [];
         const allNodes: Map<number, OsmNode> = new Map<number, OsmNode>()
         for (const element of elements) {
@@ -96,44 +135,6 @@ export abstract class OsmObject {
         }
         return objects;
     }
-    
-    //Loads an area from the OSM-api.
-    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
-    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
-        const minlon = bounds[0][1]
-        const maxlon = bounds[1][1]
-        const minlat = bounds[1][0]
-        const maxlat = bounds[0][0];
-        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        $.getJSON(url, data => {
-            const elements: any[] = data.elements;
-            const objects = OsmObject.ParseObjects(elements)
-            callback(objects);
-
-        })
-    }
-
-    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
-        // local function which downloads all the objects one by one
-        // this is one big loop, running one download, then rerunning the entire function
-        if (neededIds.length == 0) {
-            continuation(knownElements);
-            return;
-        }
-        const neededId = neededIds.pop();
-
-        if (neededId in knownElements) {
-            OsmObject.DownloadAll(neededIds, knownElements, continuation);
-            return;
-        }
-
-        OsmObject.DownloadObject(neededId,
-            function (element) {
-                knownElements[neededId] = element; // assign the element for later, continue downloading the next element
-                OsmObject.DownloadAll(neededIds, knownElements, continuation);
-            }
-        );
-    }
 
     // The centerpoint of the feature, as [lat, lon]
     public abstract centerpoint(): [number, number];
@@ -149,10 +150,10 @@ export abstract class OsmObject {
     TagsXML(): string {
         let tags = "";
         for (const key in this.tags) {
-            if(key.startsWith("_")){
+            if (key.startsWith("_")) {
                 continue;
             }
-            if(key === "id"){
+            if (key === "id") {
                 continue;
             }
             const v = this.tags[key];
@@ -168,24 +169,25 @@ export abstract class OsmObject {
         const full = this.type !== "way" ? "" : "/full";
         const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
         $.getJSON(url, function (data) {
-            
+
                 const element = data.elements.pop();
 
                 let nodes = []
-                if(data.elements.length > 2){
+                if (data.elements.length > 2) {
                     nodes = OsmObject.ParseObjects(data.elements)
                 }
-                
+
                 self.LoadData(element)
                 self.SaveExtraData(element, nodes);
-
-                continuation(self, {
+                const meta = {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
                     "_last_edit:changeset": element.changeset,
                     "_last_edit:timestamp": new Date(element.timestamp),
                     "_version_number": element.version
-                });
+                }
+
+                continuation(self, meta);
             }
         );
         return this;
@@ -220,7 +222,7 @@ export abstract class OsmObject {
         this.version = element.version;
         this.timestamp = element.timestamp;
         const tgs = this.tags;
-        if(element.tags === undefined){
+        if (element.tags === undefined) {
             // Simple node which is part of a way - not important
             return;
         }
@@ -230,8 +232,6 @@ export abstract class OsmObject {
         tgs["_last_edit:timestamp"] = element.timestamp
         tgs["_version_number"] = element.version
         tgs["id"] = this.type + "/" + this.id;
-      
-
     }
 }
 
