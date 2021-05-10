@@ -10,7 +10,7 @@ export class MultiInput<T> extends InputElement<T[]> {
     private readonly _value: UIEventSource<T[]>;
     IsSelected: UIEventSource<boolean>;
     private elements: UIElement[] = [];
-    private inputELements: InputElement<T>[] = [];
+    private inputElements: InputElement<T>[] = [];
     private addTag: UIElement;
     private _options: { allowMovement?: boolean };
 
@@ -48,16 +48,16 @@ export class MultiInput<T> extends InputElement<T[]> {
             return;
         }
         for (let i = 0; i < tags.length; i++) {
-            this.inputELements[i].GetValue().setData(tags[i]);
+            this.inputElements[i].GetValue().setData(tags[i]);
         }
     }
     
     private UpdateIsSelected(){
-        this.IsSelected.setData(this.inputELements.map(input => input.IsSelected.data).reduce((a,b) => a && b))
+        this.IsSelected.setData(this.inputElements.map(input => input.IsSelected.data).reduce((a,b) => a && b))
     }
 
     private createElements(createInput: (() => InputElement<T>)) {
-        this.inputELements.splice(0, this.inputELements.length);
+        this.inputElements.splice(0, this.inputElements.length);
         this.elements = [];
         const self = this;
         for (let i = 0; i < this._value.data.length; i++) {
@@ -67,7 +67,7 @@ export class MultiInput<T> extends InputElement<T[]> {
                     self._value.ping();
                 }
             );
-            this.inputELements.push(input);
+            this.inputElements.push(input);
             input.IsSelected.addCallback(() => this.UpdateIsSelected());
 
             const moveUpBtn = Svg.up_ui()
