@@ -5,6 +5,7 @@ from datetime import datetime
 from matplotlib import pyplot
 import re
 
+useLegend = True
 
 def counts(lst):
     counts = {}
@@ -129,7 +130,8 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot_init()
     pyplot.bar(dates, unique_per_day, label='Unique contributors')
     pyplot.bar(dates, new_users, label='First time contributor via MapComplete')
-    pyplot.legend()
+    if (useLegend):
+        pyplot.legend()
     pyplot.title("Unique contributors" + extra_text + ' with MapComplete (' + str(total) + ' contributors)')
     pyplot.ylabel("Number of unique contributors")
     pyplot.xlabel("Date")
@@ -137,7 +139,8 @@ def create_usercount_graphs(stats, extra_text=""):
 
     pyplot_init()
     pyplot.plot(dates, cumul_uniq, label='Cumulative unique contributors')
-    pyplot.legend()
+    if (useLegend):
+        pyplot.legend()
     pyplot.title("Cumulative unique contributors" + extra_text + " with MapComplete - " + str(total) + " contributors")
     pyplot.ylabel("Number of unique contributors")
     pyplot.xlabel("Date")
@@ -195,7 +198,8 @@ def summed_changes_per(contents, extraText, sum_column=5):
         pyplot.bar(keysChanged, valuesChanged, label="Changed")
     if len(keysNew) > 0:
         pyplot.bar(keysNew, valuesNew, label="New")
-    pyplot.legend()
+    if (useLegend):
+        pyplot.legend()
     pyplot.savefig(text)
 
 def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5, cumulative=True, sort=True):
@@ -269,7 +273,8 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
     else:
         cumulative_txt = "Changesets"
     pyplot.title(cumulative_txt + " per " + subject + filenameextra + " (" + str(total) + " changesets)")
-    pyplot.legend(loc="upper left", ncol=3)
+    if (useLegend):
+        pyplot.legend(loc="upper left", ncol=3)
     pyplot.savefig(cumulative_txt + " per " + subject + filenameextra + ".png")
 
 
