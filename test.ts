@@ -1,5 +1,4 @@
 
 
 
-alert("Hello wrold!")
-downloadTxtFile("abc")
+alert("Hello world!")
