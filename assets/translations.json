@@ -513,16 +513,26 @@
         "nl": "Met dank aan"
       },
       "attributionContent": {
-        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>"
+        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
+        "nl": "<p>Alle data is voorzien door <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, gratis en vrij te hergebruiken onder <a href='https://osm.org/copyright' target='_blank'>de Open DataBase Licentie</a>.</p>"
       },
       "themeBy": {
-        "en": "Theme maintained by {author}"
+        "en": "Theme maintained by {author}",
+        "nl": "Thema gemaakt door {author}"
       },
       "iconAttribution": {
         "title": {
-          "en": "Used icons"
+          "en": "Used icons",
+          "nl": "Iconen en afbeeldingen"
         }
+      },
+      "mapContributionsBy": {
+        "en": "The current visible data has edits made by {contributors}"
+      },
+      "mapContributionsByAndHidden": {
+        "en": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors"
       }
+     
     },
 
     "sharescreen": {
