@@ -52,11 +52,12 @@ async function createIcon(iconPath: string, size: number) {
     return newname;
 }
 
-async function createManifest(layout: LayoutConfig, relativePath: string) {
+async function createManifest(layout: LayoutConfig) {
     const name = layout.id;
 
     Translation.forcedLanguage = "en"
     const icons = [];
+    
 
     let icon = layout.icon;
     if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
@@ -93,7 +94,7 @@ async function createManifest(layout: LayoutConfig, relativePath: string) {
     return {
         name: name,
         short_name: ogTitle,
-        start_url: `${relativePath}/${layout.id.toLowerCase()}.html`,
+        start_url: `${layout.id.toLowerCase()}.html`,
         display: "standalone",
         background_color: "#fff",
         description: ogDescr,
@@ -176,7 +177,6 @@ if (!existsSync(generatedDir)) {
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
 // @ts-ignore
 const all : LayoutConfigJson[] = all_known_layouts.themes;
-
 for (const i in all) {
     const layoutConfigJson : LayoutConfigJson = all[i]
     const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
@@ -190,7 +190,7 @@ for (const i in all) {
             console.log("Could not write manifest for ", layoutName, " because ", err)
         }
     };
-    createManifest(layout, "").then(manifObj => {
+    createManifest(layout).then(manifObj => {
         const manif = JSON.stringify(manifObj, undefined, 2);
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
         writeFile(manifestLocation, manif, err);
@@ -215,7 +215,7 @@ createManifest(new LayoutConfig({
     title: {en:"MapComplete"},
     version: Constants.vNumber,
     description: {en:"A thematic map viewer and editor based on OpenStreetMap"}
-}), "").then(manifObj => {
+})).then(manifObj => {
     const manif = JSON.stringify(manifObj, undefined, 2);
     writeFileSync("index.manifest", manif)
 })

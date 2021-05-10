@@ -34,11 +34,11 @@ function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/translations.json", "utf-8"))
     const transformed = transformTranslation(translations);
 
-    let module = `import {Translation} from "./UI/i18n/Translation"\n\nexport default class AllTranslationAssets {\n\n`;
+    let module = `import {Translation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
     module += " public static t = " + transformed;
     module += "}"
 
-    fs.writeFileSync("AllTranslationAssets.ts", module);
+    fs.writeFileSync("./assets/generated/CompiledTranslations.ts", module);
 
 
 }
