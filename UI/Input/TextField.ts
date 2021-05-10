@@ -130,7 +130,7 @@ export class TextField extends InputElement<string> {
                 self.enterPressed.setData(field.value);
             }
         });
-
+        
     }
 
     public SetCursorPosition(i: number) {

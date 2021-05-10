@@ -143,6 +143,12 @@ if (layoutFromBase64.startsWith("http")) {
         .SetStyle("pointer-events: all;")
         .AttachTo("topleft-tools");
 }
+// Remove all context event listeners on mobile to prevent long presses
 window.addEventListener('contextmenu', (e) => { // Not compatible with IE < 9
+    
+    if(e.target["nodeName"] === "INPUT"){
+        return;
+    }
     e.preventDefault();
+    return false;
 }, false);
