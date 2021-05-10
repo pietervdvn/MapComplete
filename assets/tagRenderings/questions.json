@@ -80,7 +80,7 @@
   },
   "last_edit": {
     "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
-    "#condition": "_last_edit:contributor~*",
+    "condition": "_last_edit:contributor~*",
     "render": "<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>"
   }
 }
