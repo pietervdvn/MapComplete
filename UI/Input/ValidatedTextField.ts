@@ -145,7 +145,12 @@ export default class ValidatedTextField {
                     for (const dontLike of blacklistedTrackingParams) {
                         url.searchParams.delete(dontLike)
                     }
-                    return url.toString();
+                    let cleaned = url.toString();
+                    if(cleaned.endsWith("/") && !str.endsWith("/")){
+                        // Do not add a trailing '/' if it wasn't typed originally
+                        cleaned = cleaned.substr(0, cleaned.length - 1)
+                    }
+                    return cleaned;
                 } catch (e) {
                     console.error(e)
                     return undefined;
