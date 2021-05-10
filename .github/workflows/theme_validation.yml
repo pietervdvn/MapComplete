@@ -24,6 +24,8 @@ jobs:
       - name: create stub themes
         run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
   
+      - name: generate translations
+        run: npm run generate:translations
          
       - name: Compile license info
         run: npm run validate:licenses
