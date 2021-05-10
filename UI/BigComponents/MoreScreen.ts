@@ -55,14 +55,14 @@ export default class MoreScreen extends UIElement {
         
         const params = `z=${currentLocation.zoom ?? 1}&lat=${currentLocation.lat ?? 0}&lon=${currentLocation.lon ?? 0}`
         let linkText =
-            `${path}/${layout.id.toLowerCase()}?${params}`
+            `${path}/${layout.id.toLowerCase()}.html?${params}`
 
         if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
             linkText = `${path}/index.html?layout=${layout.id}&${params}`
         }
 
         if (customThemeDefinition) {
-            linkText = `${path}/?userlayout=${layout.id}&${params}#${customThemeDefinition}`
+            linkText = `${path}/index.html?userlayout=${layout.id}&${params}#${customThemeDefinition}`
 
         }
 
