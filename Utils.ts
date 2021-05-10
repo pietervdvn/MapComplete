@@ -291,6 +291,11 @@ export class Utils {
         return result;
     }
 
+    /**
+     * Triggers a 'download file' popup which will download the contents
+     * @param contents
+     * @param fileName
+     */
     public static downloadTxtFile (contents: string, fileName: string = "download.txt") {
         const element = document.createElement("a");
         const file = new Blob([contents], {type: 'text/plain'});
@@ -299,6 +304,7 @@ export class Utils {
         document.body.appendChild(element); // Required for this to work in FireFox
         element.click();
     }
+    
 }
 
 export interface TileRange{
