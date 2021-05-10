@@ -16,7 +16,7 @@ jobs:
             ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
           
       - name: install deps
-        run: npm install
+        run: npm ci
           
       - name: create generated dir
         run: mkdir ./assets/generated
