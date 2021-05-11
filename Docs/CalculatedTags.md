@@ -5,7 +5,7 @@ Metatags are extra tags available, in order to display more data or to give bett
 
 The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
-**Hint:** when using metatags, add the \[query parameter\](URL\_Parameters.md) \`debug=true\` to the URL. This will include a box in the popup for features which shows all the properties of the object
+**Hint:** when using metatags, add the [query parameter](URL\_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object
 
 ### \_lat, \_lon
 
@@ -88,4 +88,4 @@ Given either a list of geojson features or a single layer name, gives the single
 
 ### memberships
 
-Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. For example: \`\_part\_of\_walking\_routes=feat.memberships().map(r => r.relation.tags.name).join(';')\`
+Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`
