@@ -80,7 +80,7 @@ Every field is documented in the source code itself - you can find them here:
 - [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/LayoutConfigJson.ts)
 - [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/LayerConfigJson.ts)
 - [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/JSON/TagRenderingConfigJson.ts)
-- At last, the exact semantics of tags is documented [here](Docs/Tags_format.md)
+- At last, the exact semantics of tags is documented [here](Tags_format.md)
 
 ### MetaTags
 
