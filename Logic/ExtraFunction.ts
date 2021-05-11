@@ -117,7 +117,7 @@ Some advanced functions are available on <b>feat</b> as well:
 
     private static readonly Memberships = new ExtraFunction(
         "memberships",
-        "Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. \n\nFor example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
+        "Gives a list of <code>{role: string, relation: Relation}</code>-objects, containing all the relations that this feature is part of. \n\nFor example: <code>_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')</code>",
         [],
         (params, feature) => {
             return () =>   params.relations ?? [];
