@@ -10,6 +10,7 @@ export class TextField extends InputElement<string> {
     private readonly _placeholder: UIElement;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _htmlType: string;
+    private readonly _inputMode : string;
     private readonly _textAreaRows: number;
 
     private readonly _isValid: (string,country) => boolean;
@@ -20,6 +21,7 @@ export class TextField extends InputElement<string> {
         value?: UIEventSource<string>,
         textArea?: boolean,
         htmlType?: string,
+        inputMode?: string,
         label?: UIElement,
         textAreaRows?: number,
         isValid?: ((s: string, country?: () => string) => boolean)
@@ -36,6 +38,7 @@ export class TextField extends InputElement<string> {
         this._isValid = options.isValid ?? ((str, country) => true);
 
         this._placeholder = Translations.W(options.placeholder ?? "");
+        this._inputMode = options.inputMode;
         this.ListenTo(this._placeholder._source);
 
         this.onClick(() => {
@@ -72,11 +75,15 @@ export class TextField extends InputElement<string> {
         if (this._label != undefined) {
             label = this._label.Render();
         }
+        let inputMode = ""
+        if(this._inputMode !== undefined){
+            inputMode = `inputmode="${this._inputMode}" `
+        }
         return new Combine([
             `<span id="${this.id}">`,
             `<form onSubmit='return false' class='form-text-field'>`,
             label,
-            `<input type='${this._htmlType}' placeholder='${placeholder}' id='txt-${this.id}'/>`,
+            `<input type='${this._htmlType}' ${inputMode} placeholder='${placeholder}' id='txt-${this.id}'/>`,
             `</form>`,
             `</span>`
         ]).Render();
@@ -134,9 +141,6 @@ export class TextField extends InputElement<string> {
     }
 
     public SetCursorPosition(i: number) {
-        if(this._htmlType !== "text" && this._htmlType !== "area"){
-            return;
-        }
         const field = document.getElementById('txt-' + this.id);
         if(field === undefined || field === null){
             return;

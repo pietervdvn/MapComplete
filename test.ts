@@ -1,4 +1,3 @@
+import ValidatedTextField from "./UI/Input/ValidatedTextField";
 
-
-
-alert("Hello world!")
+ValidatedTextField.InputForType("phone").AttachTo("maindiv")

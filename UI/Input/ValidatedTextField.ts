@@ -10,45 +10,23 @@ import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
 import OpeningHoursInput from "../OpeningHours/OpeningHoursInput";
 import DirectionInput from "./DirectionInput";
+import ColorPicker from "./ColorPicker";
+import {Utils} from "../../Utils";
 
 interface TextFieldDef {
     name: string,
     explanation: string,
-    isValid: ((s: string, country?:() => string) => boolean),
+    isValid: ((s: string, country?: () => string) => boolean),
     reformat?: ((s: string, country?: () => string) => string),
     inputHelper?: (value: UIEventSource<string>, options?: {
         location: [number, number]
     }) => InputElement<string>,
+
+    inputmode?: string
 }
 
 export default class ValidatedTextField {
 
-
-    private static tp(name: string,
-                      explanation: string,
-                      isValid?: ((s: string, country?: () => string) => boolean),
-                      reformat?: ((s: string, country?: () => string) => string),
-                      inputHelper?: (value: UIEventSource<string>, options?:{
-                          location: [number, number]
-                      }) => InputElement<string>): TextFieldDef {
-
-        if (isValid === undefined) {
-            isValid = () => true;
-        }
-
-        if (reformat === undefined) {
-            reformat = (str, _) => str;
-        }
-
-
-        return {
-            name: name,
-            explanation: explanation,
-            isValid: isValid,
-            reformat: reformat,
-            inputHelper: inputHelper
-        }
-    }
 
     public static tpList: TextFieldDef[] = [
         ValidatedTextField.tp(
@@ -56,7 +34,12 @@ export default class ValidatedTextField {
             "A basic string"),
         ValidatedTextField.tp(
             "text",
-            "A string, but allows input of longer strings more comfortably (a text area)"),
+            "A string, but allows input of longer strings more comfortably (a text area)",
+            undefined,
+            undefined,
+            undefined,
+            "text"),
+        
         ValidatedTextField.tp(
             "date",
             "A date",
@@ -87,44 +70,63 @@ export default class ValidatedTextField {
             (str) => {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
-            }),
+            },
+            undefined,
+            undefined,
+            "numeric"),
         ValidatedTextField.tp(
             "nat",
             "A positive number or zero",
             (str) => {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
-            }),
+            },
+            undefined,
+            undefined,
+            "numeric"),
         ValidatedTextField.tp(
             "pnat",
             "A strict positive number",
             (str) => {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) > 0
-            }),
+            },
+            undefined,
+            undefined,
+            "numeric"),
         ValidatedTextField.tp(
             "direction",
             "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
             (str) => {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
-            },str => str,
+            }, str => str,
             (value) => {
-              return new DirectionInput(value);
-            }
+                return new DirectionInput(value);
+            },
+            "numeric"
         ),
         ValidatedTextField.tp(
             "float",
             "A decimal",
-            (str) => !isNaN(Number(str))),
+            (str) => !isNaN(Number(str)),
+            undefined,
+            undefined,
+            "decimal"),
         ValidatedTextField.tp(
             "pfloat",
             "A positive decimal (incl zero)",
-            (str) => !isNaN(Number(str)) && Number(str) >= 0),
+            (str) => !isNaN(Number(str)) && Number(str) >= 0,
+            undefined,
+            undefined,
+            "decimal"),
         ValidatedTextField.tp(
             "email",
             "An email adress",
-            (str) => EmailValidator.validate(str)),
+            (str) => EmailValidator.validate(str),
+            undefined,
+            undefined,
+            "email"),
         ValidatedTextField.tp(
             "url",
             "A url",
@@ -135,18 +137,19 @@ export default class ValidatedTextField {
                 } catch (e) {
                     return false;
                 }
-            }, (str) => {
+            },
+            (str) => {
                 try {
                     const url = new URL(str);
                     const blacklistedTrackingParams = [
                         "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
                         "gclid",
-                        "cmpid", "agid", "utm", "utm_source","utm_medium"]
+                        "cmpid", "agid", "utm", "utm_source", "utm_medium"]
                     for (const dontLike of blacklistedTrackingParams) {
                         url.searchParams.delete(dontLike)
                     }
                     let cleaned = url.toString();
-                    if(cleaned.endsWith("/") && !str.endsWith("/")){
+                    if (cleaned.endsWith("/") && !str.endsWith("/")) {
                         // Do not add a trailing '/' if it wasn't typed originally
                         cleaned = cleaned.substr(0, cleaned.length - 1)
                     }
@@ -155,7 +158,9 @@ export default class ValidatedTextField {
                     console.error(e)
                     return undefined;
                 }
-            }),
+            },
+            undefined,
+            "url"),
         ValidatedTextField.tp(
             "phone",
             "A phone number",
@@ -165,26 +170,35 @@ export default class ValidatedTextField {
                 }
                 return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.isValid() ?? false
             },
-            (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational()
+            (str, country: () => string) => parsePhoneNumberFromString(str, (country())?.toUpperCase() as any).formatInternational(),
+            undefined,
+            "tel"
         ),
         ValidatedTextField.tp(
             "opening_hours",
             "Has extra elements to easily input when a POI is opened",
-            (s, country) => true, 
-            str => str, 
+            () => true,
+            str => str,
             (value) => {
                 return new OpeningHoursInput(value);
             }
+        ),
+        ValidatedTextField.tp(
+            "color",
+            "Shows a color picker",
+            () => true,
+            str => str,
+            (value) => {
+                return new ColorPicker(value.map(color => {
+                    return Utils.ColourNameToHex(color ?? "");
+                }, [], str => Utils.HexToColourName(str)))
+            }
         )
     ]
-    
-    private static allTypesDict(){
-        const types = {};
-        for (const tp of ValidatedTextField.tpList) {
-            types[tp.name] = tp;
-        }
-        return types;
-    }
+    /**
+     * {string (typename) --> TextFieldDef}
+     */
+    public static AllTypes = ValidatedTextField.allTypesDict();
 
     public static TypeDropdown(): DropDown<string> {
         const values: { value: string, shown: string }[] = [];
@@ -195,15 +209,12 @@ export default class ValidatedTextField {
         return new DropDown<string>("", values)
     }
 
-    /**
-     * {string (typename) --> TextFieldDef}
-     */
-    public static AllTypes = ValidatedTextField.allTypesDict();
-
     public static InputForType(type: string, options?: {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
-        textArea?: boolean,
+        htmlType?: string,
+        textArea?:boolean,
+        inputMode?:string,
         textAreaRows?: number,
         isValid?: ((s: string, country: () => string) => boolean),
         country?: () => string,
@@ -218,16 +229,16 @@ export default class ValidatedTextField {
         if (options.isValid) {
             const optValid = options.isValid;
             isValid = (str, country) => {
-                if(str === undefined){
+                if (str === undefined) {
                     return false;
                 }
                 return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
             }
-        }else{
+        } else {
             isValid = isValidTp;
         }
         options.isValid = isValid;
-
+        options.inputMode = tp.inputmode;
         let input: InputElement<string> = new TextField(options);
         if (tp.reformat) {
             input.GetValue().addCallbackAndRun(str => {
@@ -240,7 +251,7 @@ export default class ValidatedTextField {
         }
 
         if (tp.inputHelper) {
-            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(),{
+            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(), {
                 location: options.location
             }));
         }
@@ -270,7 +281,7 @@ export default class ValidatedTextField {
         const textField = ValidatedTextField.InputForType(type);
         return new InputElementMap(textField, (n0, n1) => n0 === n1, fromString, toString)
     }
-    
+
     public static KeyInput(allowEmpty: boolean = false): InputElement<string> {
 
         function fromString(str) {
@@ -299,8 +310,6 @@ export default class ValidatedTextField {
         return new InputElementMap(textfield, isSame, fromString, toString);
     }
 
-
-
     static Mapped<T>(fromString: (str) => T, toString: (T) => string, options?: {
         placeholder?: string | UIElement,
         type?: string,
@@ -322,5 +331,47 @@ export default class ValidatedTextField {
             fromString, toString
         );
 
+    }
+
+    public static HelpText(): string {
+        const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
+        return "# Available types for text fields\n\nThe listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them\n\n" + explanations
+    }
+
+    private static tp(name: string,
+                      explanation: string,
+                      isValid?: ((s: string, country?: () => string) => boolean),
+                      reformat?: ((s: string, country?: () => string) => string),
+                      inputHelper?: (value: UIEventSource<string>, options?: {
+                          location: [number, number]
+                      }) => InputElement<string>,
+                      inputmode?: string): TextFieldDef {
+
+        if (isValid === undefined) {
+            isValid = () => true;
+        }
+
+        if (reformat === undefined) {
+            reformat = (str, _) => str;
+        }
+
+
+        return {
+            name: name,
+            explanation: explanation,
+            isValid: isValid,
+            reformat: reformat,
+            inputHelper: inputHelper,
+            inputmode: inputmode
+        }
+    }
+
+
+    private static allTypesDict() {
+        const types = {};
+        for (const tp of ValidatedTextField.tpList) {
+            types[tp.name] = tp;
+        }
+        return types;
     }
 }

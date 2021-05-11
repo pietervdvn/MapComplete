@@ -6,6 +6,7 @@ import {UIElement} from "../UI/UIElement";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
 import Combine from "../UI/Base/Combine";
 import {ExtraFunction} from "../Logic/ExtraFunction";
+import ValidatedTextField from "../UI/Input/ValidatedTextField";
 
 
 
@@ -19,6 +20,6 @@ function WriteFile(filename, html: UIElement) : void {
 
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage)
 WriteFile("./Docs/CalculatedTags.md", new Combine([SimpleMetaTagger.HelpText(), ExtraFunction.HelpText()]))
-
+writeFileSync("./Docs/SpecialInputElements", ValidatedTextField.HelpText());
 console.log("Generated docs")
 
