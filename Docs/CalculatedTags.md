@@ -5,7 +5,7 @@ Metatags are extra tags available, in order to display more data or to give bett
 
 The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
-**Hint:** when using metatags, add the \[query parameter\](URL\_Parameters.md) \`debug=true\` to the URL. This will include a box in the popup for features which shows all the properties of the object
+**Hint:** when using metatags, add the [query parameter](URL\_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object
 
 ### \_lat, \_lon
 
