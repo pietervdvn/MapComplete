@@ -1,7 +1,6 @@
 import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
-import State from "../State";
 import {Relation} from "./Osm/ExtractRelations";
 
 export class ExtraFunction {
@@ -65,9 +64,8 @@ Some advanced functions are available on <b>feat</b> as well:
         (featuresPerLayer, feature) => {
             return (arg0, lat) => {
                 if (typeof arg0 === "number") {
-                    const lon = arg0
                     // Feature._lon and ._lat is conveniently place by one of the other metatags
-                    return GeoOperations.distanceBetween([lon, lat], [feature._lon, feature._lat]);
+                    return GeoOperations.distanceBetween([arg0, lat], [feature._lon, feature._lat]);
                 } else {
                     // arg0 is probably a feature
                     return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), [feature._lon, feature._lat])
@@ -117,9 +115,11 @@ Some advanced functions are available on <b>feat</b> as well:
 
     private static readonly Memberships = new ExtraFunction(
         "memberships",
-        "Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. \n\nFor example: <code>_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')</code>",
+        "Gives a list of <code>{role: string, relation: Relation}</code>-objects, containing all the relations that this feature is part of. " +
+        "\n\n" +
+        "For example: <code>_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')</code>",
         [],
-        (params, feature) => {
+        (params, _) => {
             return () =>   params.relations ?? [];
         }
     )

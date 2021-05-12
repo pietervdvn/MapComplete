@@ -1,6 +1,6 @@
 import * as $ from "jquery"
 import {type} from "os";
-
+import * as colors from "./assets/colors.json"
 export class Utils {
 
     /**
@@ -305,6 +305,69 @@ export class Utils {
         element.click();
     }
     
+    
+    public static ColourNameToHex(color: string): string{
+        return colors[color.toLowerCase()] ?? color;
+    }
+    
+    public static HexToColourName(hex : string): string{
+        hex = hex.toLowerCase()
+        if(!hex.startsWith("#")){
+            return hex;
+        }
+        const c = Utils.color(hex);
+        
+        let smallestDiff = Number.MAX_VALUE;
+        let bestColor = undefined;
+        for (const color in colors) {
+            if(!colors.hasOwnProperty(color)){
+                continue;
+            }
+            const foundhex = colors[color];
+            if(typeof foundhex !== "string"){
+                continue
+            }
+            if(foundhex === hex){
+                return color
+            }
+            const diff = this.colorDiff(Utils.color(foundhex), c)
+            if(diff > 50){
+                continue;
+            }
+            if(diff < smallestDiff){
+                smallestDiff = diff;
+                bestColor = color;
+            }
+        }
+        return bestColor ?? hex;
+    }
+    
+    private static colorDiff(c0 : {r: number, g: number, b: number}, c1: {r: number, g: number, b: number}){
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) +Math.abs(c0.b - c1.b) ;
+    }
+    
+    private static color(hex: string) : {r: number, g: number, b: number}{
+        if(hex.startsWith == undefined){
+            console.trace("WUT?", hex)
+            throw "wut?"
+        }
+        if(!hex.startsWith("#")){
+            return  undefined;
+        }
+        if(hex.length === 4){
+         return {
+             r : parseInt(hex.substr(1, 1), 16),
+            g : parseInt(hex.substr(2, 1), 16),
+             b : parseInt(hex.substr(3, 1), 16),
+         }  
+        }
+
+        return {
+            r : parseInt(hex.substr(1, 2), 16),
+            g : parseInt(hex.substr(3, 2), 16),
+            b : parseInt(hex.substr(5, 2), 16),
+        }
+    }
 }
 
 export interface TileRange{

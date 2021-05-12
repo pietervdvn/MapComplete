@@ -41,7 +41,7 @@ export interface TagRenderingConfigJson {
         type?: string,
         /**
          * If a value is added with the textfield, these extra tag is addded.
-         * Usefull to add a 'fixme=freeform textfield used - to be checked'
+         * Useful to add a 'fixme=freeform textfield used - to be checked'
          **/
         addExtraTags?: string[];
     },

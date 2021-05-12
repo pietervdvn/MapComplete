@@ -88,4 +88,4 @@ Given either a list of geojson features or a single layer name, gives the single
 
 ### memberships
 
-Gives a list of {role: string, relation: Relation}-objects, containing all the relations that this feature is part of. For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`
+Gives a list of `{role: string, relation: Relation}`\-objects, containing all the relations that this feature is part of. For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`
