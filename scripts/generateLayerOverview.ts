@@ -29,7 +29,7 @@ const layerFiles = ScriptUtils.readDirRecSync("./assets/layers")
         }
     })
 const themeFiles: any[] = ScriptUtils.readDirRecSync("./assets/themes")
-    .filter(path => path.indexOf(".json") > 0)
+    .filter(path => path.endsWith(".json"))
     .filter(path => path.indexOf("license_info.json") < 0)
     .map(path => {
         return JSON.parse(readFileSync(path, "UTF8"));
