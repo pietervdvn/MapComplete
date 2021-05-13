@@ -1,5 +1,3 @@
-import * as $ from "jquery"
-import {type} from "os";
 import * as colors from "./assets/colors.json"
 export class Utils {
 
