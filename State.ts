@@ -220,7 +220,7 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
-        this.osmApiFeatureSource = new OsmApiFeatureSource(this.locationControl)
+        this.osmApiFeatureSource = new OsmApiFeatureSource()
         
         new PendingChangesUploader(this.changes, this.selectedElement);
 

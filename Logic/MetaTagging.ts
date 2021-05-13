@@ -95,9 +95,7 @@ export default class MetaTagging {
 
                 const f = (featuresPerLayer, feature: any) => {
                     try {
-                       const result = func(feature);
-                       console.debug("Calculated tag with code ", code, " returned ", result)
-                        feature.properties[key] =result;
+                        feature.properties[key] =func(feature);
                     } catch (e) {
                         console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features")
                     }
@@ -114,7 +112,7 @@ export default class MetaTagging {
                 return;
             }
 
-            const relations = params.memberships.get(feature.properties.id)
+            const relations = params.memberships?.get(feature.properties.id) ?? []
             ExtraFunction.FullPatchFeature(params.featuresPerLayer, relations, feature);
             try {
                 for (const f of functions) {

@@ -2,6 +2,7 @@ import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import Loc from "../../Models/Loc";
+import Hash from "../Web/Hash";
 
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
@@ -34,7 +35,7 @@ export default class FilteringFeatureSource implements FeatureSource {
             const newFeatures = features.filter(f => {
                 const layerId = f.feature._matching_layer_id;
                 
-                if(selectedElement.data !== undefined && selectedElement.data?.id === f.feature.id){
+                if(selectedElement.data?.id === f.feature.id || f.feature.id === Hash.hash.data){
                     // This is the selected object - it gets a free pass even if zoom is not sufficient
                     return true;
                 }

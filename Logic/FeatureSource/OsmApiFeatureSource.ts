@@ -11,13 +11,7 @@ export default class OsmApiFeatureSource implements FeatureSource {
     public readonly name: string = "OsmApiFeatureSource";
     private readonly loadedTiles: Set<string> = new Set<string>();
 
-    constructor(location: UIEventSource<Loc>) {
-       /* const self = this
-        location.addCallback(_ => {
-            self.loadArea()
-        })
-        */
-
+    constructor() {
     }
 
 
@@ -26,6 +20,7 @@ export default class OsmApiFeatureSource implements FeatureSource {
             // Newly added point - not yet in OSM
             return;
         }
+        console.debug("Downloading", id, "from the OSM-API")
         OsmObject.DownloadObject(id, (element, meta) => {
             const geojson = element.asGeoJson();
             geojson.id = geojson.properties.id;
