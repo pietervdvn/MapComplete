@@ -22,12 +22,13 @@ export default class MetaTagging {
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
     static addMetatags(features: { feature: any; freshness: Date }[],
-                       relations: Map<string, { role: string, relation: Relation }[]>, 
+                       relations: Map<string, { role: string, relation: Relation }[]>,
                        layers: LayerConfig[],
                        includeDates = true) {
 
+        console.debug("Adding meta tags to all features")
         for (const metatag of SimpleMetaTagger.metatags) {
-            if(metatag.includesDates && !includeDates){
+            if (metatag.includesDates && !includeDates) {
                 // We do not add dated entries
                 continue;
             }
@@ -62,12 +63,12 @@ export default class MetaTagging {
             if (f === undefined) {
                 continue;
             }
-            try{
+            try {
                 f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
-            }catch(e){
+            } catch (e) {
                 console.error(e)
             }
-           
+
         }
 
     }
@@ -89,19 +90,21 @@ export default class MetaTagging {
             }
             const func = new Function("feat", "return " + code + ";");
 
-            try{
-                
-           
-            const f = (featuresPerLayer, feature: any) => {
-                try{
-                    feature.properties[key] = func(feature);
-                }catch(e){
-                    console.error("Could not calculate a metatag defined by "+code+" due to "+e+". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features")
+            try {
+
+
+                const f = (featuresPerLayer, feature: any) => {
+                    try {
+                       const result = func(feature);
+                       console.debug("Calculated tag with code ", code, " returned ", result)
+                        feature.properties[key] =result;
+                    } catch (e) {
+                        console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features")
+                    }
+
                 }
-              
-            }
-            functions.push(f)
-            }catch(e){
+                functions.push(f)
+            } catch (e) {
                 console.error("Could not create a dynamic function: ", e)
             }
         }

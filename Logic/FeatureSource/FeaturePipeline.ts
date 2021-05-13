@@ -31,11 +31,12 @@ export default class FeaturePipeline implements FeatureSource {
         // first we metatag, then we save to get the metatags into storage too
         // Note that we need to register before we do metatagging (as it expects the event sources)
 
+        // AT last, the metaTagging also needs to be run _after_ the duplicatorPerLayer
         const amendedOverpassSource =
             new RememberingSource(
                 new LocalStorageSaver(
-                    new FeatureDuplicatorPerLayer(flayers,
-                        new MetaTaggingFeatureSource(
+                    new MetaTaggingFeatureSource(
+                        new FeatureDuplicatorPerLayer(flayers,
                             new RegisteringFeatureSource(
                                 updater)
                         )), layout));
@@ -48,12 +49,14 @@ export default class FeaturePipeline implements FeatureSource {
             new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
             ));
 
-        newPoints = new MetaTaggingFeatureSource(new FeatureDuplicatorPerLayer(flayers,
-            new RegisteringFeatureSource(newPoints)));
+        newPoints = new MetaTaggingFeatureSource(
+            new FeatureDuplicatorPerLayer(flayers,
+                new RegisteringFeatureSource(newPoints)));
 
         const amendedOsmApiSource = new RememberingSource(
-            new FeatureDuplicatorPerLayer(flayers,
-                new MetaTaggingFeatureSource(
+            new MetaTaggingFeatureSource(
+                new FeatureDuplicatorPerLayer(flayers,
+
                     new RegisteringFeatureSource(fromOsmApi))));
 
         const merged =
