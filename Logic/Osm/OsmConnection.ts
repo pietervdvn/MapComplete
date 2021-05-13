@@ -30,48 +30,21 @@ export class OsmConnection {
     public changesetHandler: ChangesetHandler;
 
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
+    private readonly _iframeMode: Boolean | boolean;
+    private readonly _singlePage: boolean;
 
     constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
                 singlePage: boolean = true) {
-
-        let pwaStandAloneMode = false;
-        try {
-            if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
-                pwaStandAloneMode = true;
-            }
-        } catch (e) {
-            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
-        }
-
-        const iframeMode = window !== window.top;
-
-
-        if (iframeMode || pwaStandAloneMode || !singlePage) {
-            // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
-            // Same for an iframe...
-            this.auth = new osmAuth({
-                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-                singlepage: false,
-                auto: true,
-            });
-        } else {
-
-            this.auth = new osmAuth({
-                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-                singlepage: true,
-                landing: window.location.href,
-                auto: true,
-            });
-        }
-
+        this._singlePage = singlePage;
+        this._iframeMode = window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
+        
+        this.updateAuthObject();
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
@@ -92,6 +65,36 @@ export class OsmConnection {
             this.AttemptLogin(); // Also updates the user badge
         } else {
             console.log("Not authenticated");
+        }
+    }
+    
+    private updateAuthObject(){
+        let pwaStandAloneMode = false;
+        try {
+            if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
+                pwaStandAloneMode = true;
+            }
+        } catch (e) {
+            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
+        }
+        if (this._iframeMode || pwaStandAloneMode || !this._singlePage) {
+            // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
+            // Same for an iframe...
+            this.auth = new osmAuth({
+                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+                singlepage: false,
+                auto: true,
+            });
+        } else {
+
+            this.auth = new osmAuth({
+                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+                singlepage: true,
+                landing: window.location.href,
+                auto: true,
+            });
         }
     }
 
@@ -129,6 +132,7 @@ export class OsmConnection {
     public AttemptLogin() {
         const self = this;
         console.log("Trying to log in...");
+        this.updateAuthObject();
         this.auth.xhr({
             method: 'GET',
             path: '/api/0.6/user/details'
