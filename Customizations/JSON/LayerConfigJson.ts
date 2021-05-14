@@ -30,20 +30,34 @@ export interface LayerConfigJson {
      * This determines where the data for the layer is fetched.
      * There are some options:
      *
-     * source: {osmTags: "key=value"} will fetch all objects with given tags from OSM. Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
-     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"} to fetch a geojson from a third party source
-     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-     *
+     * # Query OSM directly
+     * source: {osmTags: "key=value"} 
+     *  will fetch all objects with given tags from OSM.
+     *  Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
+     * 
+     * # Query OSM Via the overpass API with a custom script
      * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
      *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
      *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
      *
      *
+     * # A single geojson-file 
+     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"} 
+     *  fetches a geojson from a third party source
+     *  
+     * # A tiled geojson source
+     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} 
+     *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+     *
+     * 
+     * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too 
+     * 
+     * 
      * NOTE: the previous format was 'overpassTags: AndOrTagCOnfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
     source: { osmTags: AndOrTagConfigJson | string } |
-        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number } |
+        { osmTags: AndOrTagConfigJson | string, geoJson: string, geoJsonZoomLevel?: number, isOsmCache?: boolean } |
         { osmTags: AndOrTagConfigJson | string, overpassScript: string }
 
     /**

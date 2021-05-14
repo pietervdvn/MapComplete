@@ -13,7 +13,7 @@ import BaseLayer from "./Models/BaseLayer";
 import Loc from "./Models/Loc";
 import Constants from "./Models/Constants";
 
-import UpdateFromOverpass from "./Logic/Actors/UpdateFromOverpass";
+import OverpassFeatureSource from "./Logic/Actors/OverpassFeatureSource";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
@@ -57,7 +57,7 @@ export default class State {
 
     public favouriteLayers: UIEventSource<string[]>;
 
-    public layerUpdater: UpdateFromOverpass;
+    public layerUpdater: OverpassFeatureSource;
     
     public osmApiFeatureSource : OsmApiFeatureSource ;
 

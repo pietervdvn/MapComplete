@@ -32,8 +32,13 @@ const themeFiles: any[] = ScriptUtils.readDirRecSync("./assets/themes")
     .filter(path => path.endsWith(".json"))
     .filter(path => path.indexOf("license_info.json") < 0)
     .map(path => {
-        return JSON.parse(readFileSync(path, "UTF8"));
-    })
+        try{
+            return JSON.parse(readFileSync(path, "UTF8"));
+        }catch(e){
+            console.error("Could not read file ", path, "due to ", e)
+            throw e
+        }
+    });
 
 console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
 return {

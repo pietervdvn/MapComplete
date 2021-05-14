@@ -18,28 +18,38 @@ export default class ScriptUtils {
         return result;
     }
     
-    public static DownloadJSON(url, continuation : (parts : string []) => void){
-        https.get(url, (res) => {
-            console.log("Got response!")
-            const parts : string[] = []
-            res.setEncoding('utf8');
-            res.on('data', function (chunk) {
-                // @ts-ignore
-                parts.push(chunk)
-            });
+    public static DownloadJSON(url) : Promise<any>{
+        return new Promise((resolve, reject) => {
+            https.get(url, (res) => {
+                const parts : string[] = []
+                res.setEncoding('utf8');
+                res.on('data', function (chunk) {
+                    // @ts-ignore
+                    parts.push(chunk)
+                });
 
-            res.addListener('end', function () {
-                continuation(parts)
-            });
+                res.addListener('end', function () {
+                    const result = parts.join("")
+                    try{
+                        resolve(JSON.parse(result))
+                    }catch (e){
+                        reject(e)
+                    }
+                });
+            })
         })
+       
     }
 
     public static sleep(ms) {
+        if(ms <= 0){
+            process.stdout.write("\r                                       \r")
+            return;
+        }
         return new Promise((resolve) => {
-            console.debug("Sleeping for", ms)
-            setTimeout(resolve, ms);
-           
-        });
+            process.stdout.write("\r Sleeping for "+(ms/1000)+"s \r")
+            setTimeout(resolve, 1000);
+        }).then(() => ScriptUtils.sleep(ms - 1000));
     }
 
 

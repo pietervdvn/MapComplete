@@ -10,9 +10,9 @@ import {TagsFilter} from "../Tags/TagsFilter";
 import SimpleMetaTagger from "../SimpleMetaTagger";
 
 
-export default class UpdateFromOverpass implements FeatureSource {
+export default class OverpassFeatureSource implements FeatureSource {
 
-    public readonly name = "UpdateFromOverpass"
+    public readonly name = "OverpassFeatureSource"
     
     /**
      * The last loaded features of the geojson

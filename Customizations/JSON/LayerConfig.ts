@@ -87,7 +87,8 @@ export default class LayerConfig {
                 geojsonSource: json.source["geoJson"],
                 geojsonSourceLevel: json.source["geoJsonZoomLevel"],
                 overpassScript: json.source["overpassScript"],
-            });
+                isOsmCache: json.source["isOsmCache"]
+            }, this.id);
         } else {
             this.source = new SourceConfig({
                 osmTags: legacy

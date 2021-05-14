@@ -84,7 +84,6 @@ export class ElementStorage {
             }
         }
         if (somethingChanged) {
-            console.trace(`Merging multiple instances of ${elementId}: ` + debug_msg.join(", ")+" newProperties: ", newProperties)
             es.ping();
         }
         return es;

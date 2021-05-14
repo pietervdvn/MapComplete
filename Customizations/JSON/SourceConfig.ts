@@ -6,13 +6,15 @@ export default class SourceConfig {
     overpassScript?: string;
     geojsonSource?: string;
     geojsonZoomLevel?: number;
+    isOsmCacheLayer: boolean;
 
     constructor(params: {
         osmTags?: TagsFilter,
         overpassScript?: string,
         geojsonSource?: string,
+        isOsmCache?: boolean,
         geojsonSourceLevel?: number
-    }) {
+    }, context?: string) {
 
         let defined = 0;
         if (params.osmTags) {
@@ -27,9 +29,14 @@ export default class SourceConfig {
         if (defined == 0) {
             throw "Source: nothing correct defined in the source"
         }
+        if(params.isOsmCache && params.geojsonSource == undefined){
+            console.error(params)
+            throw `Source said it is a OSM-cached layer, but didn't define the actual source of the cache (in context ${context})`
+        }
         this.osmTags = params.osmTags;
         this.overpassScript = params.overpassScript;
         this.geojsonSource = params.geojsonSource;
         this.geojsonZoomLevel = params.geojsonSourceLevel;
+        this.isOsmCacheLayer = params.isOsmCache ?? false;
     }
 }

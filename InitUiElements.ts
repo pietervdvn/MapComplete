@@ -2,7 +2,7 @@ import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import CheckBox from "./UI/Input/CheckBox";
 import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
-import LoadFromOverpass from "./Logic/Actors/UpdateFromOverpass";
+import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import StrayClickHandler from "./Logic/Actors/StrayClickHandler";

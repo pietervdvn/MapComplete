@@ -49,7 +49,7 @@ export class RegexTag extends TagsFilter {
                 continue;
             }
             if (RegexTag.doesMatch(key, this.key)) {
-                const value = tags[key]
+                const value = tags[key] ?? "";
                 return RegexTag.doesMatch(value, this.value) != this.invert;
             }
         }

@@ -26,7 +26,6 @@ export default class MetaTagging {
                        layers: LayerConfig[],
                        includeDates = true) {
 
-        console.debug("Adding meta tags to all features")
         for (const metatag of SimpleMetaTagger.metatags) {
             if (metatag.includesDates && !includeDates) {
                 // We do not add dated entries
@@ -95,9 +94,17 @@ export default class MetaTagging {
 
                 const f = (featuresPerLayer, feature: any) => {
                     try {
-                        feature.properties[key] =func(feature);
+                        let result = func(feature);
+                        if(result === undefined || result === ""){
+                            return;
+                        }
+                        if(typeof result !== "string"){
+                            // Make sure it is a string!
+                            result = "" + result;
+                        }
+                        feature.properties[key] = result; 
                     } catch (e) {
-                        console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features")
+                        console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
                     }
 
                 }

@@ -16,6 +16,7 @@ import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../Logic/GeoOperations";
+import {fail} from "assert";
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -29,8 +30,11 @@ function createOverpassObject(theme: LayoutConfig) {
             continue;
         }
         if (layer.source.geojsonSource !== undefined) {
-            // We download these anyway - we are building the cache after all!
-            //continue;
+            // This layer defines a geoJson-source
+            // SHould it be cached?
+            if (!layer.source.isOsmCacheLayer) {
+                continue;
+            }
         }
 
 
@@ -49,17 +53,6 @@ function createOverpassObject(theme: LayoutConfig) {
     return new Overpass(new Or(filters), extraScripts);
 }
 
-function saveResponse(chunks: string[], targetDir: string): boolean {
-    const contents = chunks.join("")
-    if (contents.startsWith("<?xml")) {
-        // THis is an error message
-        console.error("Failed to create ", targetDir, "probably over quota: ", contents)
-        return false;
-    }
-    writeFileSync(targetDir, contents)
-    return true
-}
-
 function rawJsonName(targetDir: string, x: number, y: number, z: number): string {
     return targetDir + "_" + z + "_" + x + "_" + y + ".json"
 }
@@ -68,6 +61,7 @@ function geoJsonName(targetDir: string, x: number, y: number, z: number): string
     return targetDir + "_" + z + "_" + x + "_" + y + ".geojson"
 }
 
+/// Downloads the given feature and saves them to disk
 async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/* : {failed: number, skipped :number} */ {
     let downloaded = 0
     let failed = 0
@@ -92,37 +86,48 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
             }
             const url = overpass.buildQuery("[bbox:" + bounds.south + "," + bounds.west + "," + bounds.north + "," + bounds.east + "]")
 
-            let gotResponse = false
-            let success = false;
-            ScriptUtils.DownloadJSON(url,
-                chunks => {
-                    gotResponse = true;
-                    success = saveResponse(chunks, filename)
+            await ScriptUtils.DownloadJSON(url)
+                .then(json => {
+                        console.log("Got the response - writing to ", filename)
+                        writeFileSync(filename, JSON.stringify(json, null, "  "));
+                    }
+                )
+                .catch(err => {
+                    console.log("Could not download - probably hit the rate limit; waiting a bit")
+                    failed++;
+                    return ScriptUtils.sleep(60000).then(() => console.log("Waiting is done"))
                 })
-
-            while (!gotResponse) {
-                await ScriptUtils.sleep(10000)
-                console.debug("Waking up")
-                if (!gotResponse) {
-                    console.log("Didn't get an answer yet - waiting more")
-                }
-            }
-
-            if (!success) {
-                failed++;
-                console.log("Hit the rate limit - waiting 90s")
-                for (let i = 0; i < 90; i++) {
-                    console.log(90 - i)
-                    await ScriptUtils.sleep(1000)
-                }
-            }
+            // Cooldown
+            console.debug("Cooling down 10s")
+            await ScriptUtils.sleep(10000)
         }
     }
 
     return {failed: failed, skipped: skipped}
 }
 
-async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig) {
+/* 
+ * Downloads extra geojson sources and returns the features.
+ * Extra geojson layers should not be tiled
+ */
+async function downloadExtraData(theme: LayoutConfig)/* : any[] */ {
+    const allFeatures: any[] = []
+    for (const layer of theme.layers) {
+        const source = layer.source.geojsonSource;
+        if (source === undefined) {
+            continue;
+        }
+        if (layer.source.isOsmCacheLayer) {
+            // Cached layers are not considered here
+            continue;
+        }
+        console.log("Downloading extra data: ", source)
+        await ScriptUtils.DownloadJSON(source).then(json => allFeatures.push(...json.features))
+    }
+    return allFeatures;
+}
+
+async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig, extraFeatures: any[]) {
     let processed = 0;
     const layerIndex = theme.LayerIndex();
     for (let x = r.xstart; x <= r.xend; x++) {
@@ -131,7 +136,8 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             const filename = rawJsonName(targetdir, x, y, r.zoomlevel)
             console.log(" Post processing", processed, "/", r.total, filename)
             if (!existsSync(filename)) {
-                throw "Not found - and not downloaded. Run this script again!: " + filename
+                console.error("Not found - and not downloaded. Run this script again!: " + filename)
+                continue;
             }
 
             // We read the raw OSM-file and convert it to a geojson
@@ -140,6 +146,8 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
             const osmTime = new Date(rawOsm.osm3s.timestamp_osm_base);
+            // And merge in the extra features - needed for the metatagging
+            geojson.features.push(...extraFeatures);
 
             for (const feature of geojson.features) {
 
@@ -148,9 +156,6 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
                         feature["_matching_layer_id"] = layer.id;
                         break;
                     }
-                }
-                if(feature["_matching_layer_id"] === undefined){
-                    console.log("No matching layer found for ", feature.properties.id)
                 }
             }
             const featuresFreshness = geojson.features.map(feature => {
@@ -161,6 +166,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
             });
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
+
             MetaTagging.addMetatags(featuresFreshness, relations, theme.layers, false);
 
 
@@ -180,9 +186,14 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig)
 
                 }
             }
+            for (const feature of geojson.features) {
+                // Some cleanup
+                delete feature["bbox"]
+            }
 
-
-            writeFileSync(geoJsonName(targetdir, x, y, r.zoomlevel), JSON.stringify(geojson, null, " "))
+            const targetPath = geoJsonName(targetdir+".unfiltered", x, y, r.zoomlevel)
+            // This is the geojson file containing all features
+            writeFileSync(targetPath, JSON.stringify(geojson, null, " "))
 
         }
     }
@@ -192,15 +203,30 @@ async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfi
     const z = r.zoomlevel;
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
-            const file = readFileSync(geoJsonName(targetdir, x, y, z), "UTF8")
+            const file = readFileSync(geoJsonName(targetdir+".unfiltered", x, y, z), "UTF8")
 
             for (const layer of theme.layers) {
-                const geojson = JSON.parse(file)
-                geojson.features = geojson.features.filter(f => f._matching_layer_id === layer.id)
-                if (geojson.features.length == 0) {
+                if (!layer.source.isOsmCacheLayer) {
                     continue;
                 }
+                const geojson = JSON.parse(file)
+                const oldLength = geojson.features.length;
+                geojson.features = geojson.features
+                    .filter(f => f._matching_layer_id === layer.id)
+                    .filter(f => {
+                        const isShown = layer.isShown.GetRenderValue(f.properties).txt
+                        if (isShown === "no") {
+                            console.log("Dropping feature ", f.id)
+                            return false;
+                        }
+                        return true;
+                    })
                 const new_path = geoJsonName(targetdir + "_" + layer.id, x, y, z);
+                console.log(new_path, " has ", geojson.features.length, " features after filtering (dropped ", oldLength - geojson.features.length,")" )
+                if (geojson.features.length == 0) {
+                    console.log("Not writing geojson file as it is empty", new_path)
+                    continue;
+                }
                 writeFileSync(new_path, JSON.stringify(geojson, null, " "))
             }
 
@@ -243,11 +269,12 @@ async function main(args: string[]) {
         const cachingResult = await downloadRaw(targetdir, tileRange, overpass)
         failed = cachingResult.failed
         if (failed > 0) {
-            ScriptUtils.sleep(30000)
+            await ScriptUtils.sleep(30000)
         }
     } while (failed > 0)
 
-    await postProcess(targetdir, tileRange, theme)
+    const extraFeatures = await downloadExtraData(theme);
+    await postProcess(targetdir, tileRange, theme, extraFeatures)
     await splitPerLayer(targetdir, tileRange, theme)
 }
 

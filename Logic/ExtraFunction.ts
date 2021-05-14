@@ -38,7 +38,7 @@ Some advanced functions are available on <b>feat</b> as well:
 `
     private static readonly OverlapFunc = new ExtraFunction(
         "overlapWith",
-        "Gives a list of features from the specified layer which this feature overlaps with, the amount of overlap in m². The returned value is <b>{ feat: GeoJSONFeature, overlap: number}</b>",
+        "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is <code>{ feat: GeoJSONFeature, overlap: number}[]</code> where <code>overlap</code> is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or <code>undefined</code> if the current feature is a point",
         ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"],
         (params, feat) => {
             return (...layerIds: string[]) => {

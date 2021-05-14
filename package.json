@@ -9,14 +9,14 @@
   "scripts": {
     "increase-memory": "export NODE_OPTIONS=--max_old_space_size=4096",
     "start": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory && parcel *.html UI/** Logic/** assets/** assets/**/** assets/**/**/** vendor/* vendor/*/*",
-    "test": "ts-node test/Tag.spec.ts && ts-node test/TagQuestion.spec.ts && ts-node test/ImageSearcher.spec.ts && ts-node test/ImageAttribution.spec.ts && ts-node test/Theme.spec.ts",
+    "test": "ts-node test/TestAll.ts",
     "init": "npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",
     "generate:editor-layer-index": "cd assets/ && wget https://osmlab.github.io/editor-layer-index/imagery.geojson --output-document=editor-layer-index.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
     "generate:translations": "ts-node scripts/generateTranslations.ts",
     "generate:layouts": "ts-node scripts/generateLayouts.ts",
     "generate:docs": "ts-node scripts/generateDocs.ts && ts-node scripts/generateTaginfoProjectFiles.ts",
-    "generate:cache:speelplekken": "ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.22 4.30 51.08 4.55",
+    "generate:cache:speelplekken": "npm run generate:layeroverview && ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.20 4.35 51.09 4.56",
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",
@@ -79,8 +79,7 @@
     "sharp": "^0.27.0",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "tslint": "^6.1.3",
-    "turf": "^3.0.14"
+    "tslint": "^6.1.3"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",
