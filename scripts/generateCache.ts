@@ -216,7 +216,6 @@ async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfi
                     .filter(f => {
                         const isShown = layer.isShown.GetRenderValue(f.properties).txt
                         if (isShown === "no") {
-                            console.log("Dropping feature ", f.id)
                             return false;
                         }
                         return true;
