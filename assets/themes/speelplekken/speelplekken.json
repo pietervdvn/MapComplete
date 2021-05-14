@@ -47,7 +47,7 @@
         "minzoom": 12
       },
       "calculatedTags": [
-        "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+        "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
       ]
     },
     {
@@ -62,7 +62,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ]
       }
     },
@@ -78,7 +78,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ]
       }
     },
@@ -94,7 +94,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ]
       }
     },
@@ -109,7 +109,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ]
       }
     },
@@ -118,11 +118,11 @@
       "override": {
         "calculatedTags": [
           "_part_of_walking_routes=feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\").join(', ')",
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes' : 'no'"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ],
         "source": {
-          "geoJson": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonWeb": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         }
@@ -142,7 +142,7 @@
             "operator~[pP]rovincie Antwerpen"
           ]
         },
-        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
+        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
         "geoJsonZoomLevel": 14,
         "isOsmCache": true
       },
