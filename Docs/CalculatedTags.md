@@ -76,7 +76,7 @@ Calculates the distance between the feature and a specified point
 
 ### overlapWith
 
-Gives a list of features from the specified layer which this feature overlaps with, the amount of overlap in m². The returned value is **{ feat: GeoJSONFeature, overlap: number}**
+Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point
 
 *   ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
 
