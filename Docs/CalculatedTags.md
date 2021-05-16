@@ -69,7 +69,7 @@ The above code will be executed for every feature in the layer. The feature is a
 
 ### distanceTo
 
-Calculates the distance between the feature and a specified point
+Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object
 
 *   longitude
 *   latitude

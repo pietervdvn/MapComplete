@@ -49,5 +49,6 @@
       ]
     }
   ],
-  "hideFromOverview": true
+  "hideFromOverview": true,
+  "defaultBackgroundId": "HDM_HOT"
 }
