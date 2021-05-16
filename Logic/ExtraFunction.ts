@@ -2,6 +2,8 @@ import {GeoOperations} from "./GeoOperations";
 import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
 import {Relation} from "./Osm/ExtractRelations";
+import State from "../State";
+import {Utils} from "../Utils";
 
 export class ExtraFunction {
 
@@ -59,17 +61,25 @@ Some advanced functions are available on <b>feat</b> as well:
     )
     private static readonly DistanceToFunc = new ExtraFunction(
         "distanceTo",
-        "Calculates the distance between the feature and a specified point",
+        "Calculates the distance between the feature and a specified point in kilometer. The input should either be a pair of coordinates, a geojson feature or the ID of an object",
         ["longitude", "latitude"],
         (featuresPerLayer, feature) => {
             return (arg0, lat) => {
                 if (typeof arg0 === "number") {
                     // Feature._lon and ._lat is conveniently place by one of the other metatags
                     return GeoOperations.distanceBetween([arg0, lat], [feature._lon, feature._lat]);
-                } else {
-                    // arg0 is probably a feature
-                    return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), [feature._lon, feature._lat])
                 }
+                if (typeof arg0 === "string") {
+                    // This is an identifier
+                    const feature = State.state.allElements.ContainingFeatures.get(arg0);
+                    if(feature === undefined){
+                        return undefined;
+                    }
+                    arg0 = feature;
+                }
+
+                // arg0 is probably a feature
+                return GeoOperations.distanceBetween(GeoOperations.centerpointCoordinates(arg0), [feature._lon, feature._lat])
 
             }
         }
@@ -82,8 +92,21 @@ Some advanced functions are available on <b>feat</b> as well:
         (params, feature) => {
             return (features) => {
                 if (typeof features === "string") {
+                    const name = features
                     features = params.featuresPerLayer.get(features)
+                    if (features === undefined) {
+                        var keys = Utils.NoNull(Array.from(params.featuresPerLayer.keys()));
+                        if (keys.length > 0) {
+                            throw `No features defined for ${name}. Defined layers are ${keys.join(", ")}`;
+                        } else {
+                            // This is the first pass over an external dataset
+                            // Other data probably still has to load!
+                            return undefined;
+                        }
+
+                    }
                 }
+
                 let closestFeature = undefined;
                 let closestDistance = undefined;
                 for (const otherFeature of features) {
@@ -120,7 +143,7 @@ Some advanced functions are available on <b>feat</b> as well:
         "For example: <code>_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')</code>",
         [],
         (params, _) => {
-            return () =>   params.relations ?? [];
+            return () => params.relations ?? [];
         }
     )
 
@@ -128,9 +151,9 @@ Some advanced functions are available on <b>feat</b> as well:
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
-    private readonly _f: (params: {featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[]}, feat: any) => any;
+    private readonly _f: (params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any;
 
-    constructor(name: string, doc: string, args: string[], f: ((params: {featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[]}, feat: any) => any)) {
+    constructor(name: string, doc: string, args: string[], f: ((params: { featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[] }, feat: any) => any)) {
         this._name = name;
         this._doc = doc;
         this._args = args;
@@ -138,7 +161,7 @@ Some advanced functions are available on <b>feat</b> as well:
 
     }
 
-    public static FullPatchFeature(featuresPerLayer: Map<string, any[]>,relations: {role: string, relation: Relation}[], feature) {
+    public static FullPatchFeature(featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[], feature) {
         for (const func of ExtraFunction.allFuncs) {
             func.PatchFeature(featuresPerLayer, relations, feature);
         }
@@ -166,8 +189,8 @@ Some advanced functions are available on <b>feat</b> as well:
         ]);
     }
 
-    public PatchFeature(featuresPerLayer: Map<string, any[]>, relations: {role: string, relation: Relation}[], feature: any) {
-     
+    public PatchFeature(featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[], feature: any) {
+
         feature[this._name] = this._f({featuresPerLayer: featuresPerLayer, relations: relations}, feature);
     }
 }

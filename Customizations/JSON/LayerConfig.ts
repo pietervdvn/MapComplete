@@ -81,7 +81,10 @@ export default class LayerConfig {
                 osmTags = FromJSON.Tag(json.source["osmTags"], context + "source.osmTags");
             }
 
-
+            if(json.source["geoJsonSource"] !== undefined){
+                throw context + "Use 'geoJson' instead of 'geoJsonSource'"
+            }
+            
             this.source = new SourceConfig({
                 osmTags: osmTags,
                 geojsonSource: json.source["geoJson"],
@@ -107,7 +110,7 @@ export default class LayerConfig {
                 const index = kv.indexOf("=")
                 const key = kv.substring(0, index);
                 const code = kv.substring(index + 1);
-
+                
                 this.calculatedTags.push([key, code])
             }
         }
@@ -172,7 +175,10 @@ export default class LayerConfig {
                         if (shared !== undefined) {
                             return shared;
                         }
-                        throw `Predefined tagRendering ${renderingJson} not found in ${context}`;
+                        
+                        const keys = Array.from(SharedTagRenderings.SharedTagRendering.keys())
+                        
+                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n      Try one of ${(keys.join(", "))}`;
                     }
                     return new TagRenderingConfig(renderingJson, self.source.osmTags, `${context}.tagrendering[${i}]`);
                 });

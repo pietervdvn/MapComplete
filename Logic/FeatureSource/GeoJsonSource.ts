@@ -19,6 +19,7 @@ export default class GeoJsonSource implements FeatureSource {
     private onFail: ((errorMsg: any, url: string) => void) = undefined;
     private readonly layerId: string;
     private readonly seenids: Set<string> = new Set<string>()
+    public readonly isOsmCache: boolean
 
     private constructor(locationControl: UIEventSource<Loc>,
                         flayer: { isDisplayed: UIEventSource<boolean>, layerDef: LayerConfig },
@@ -27,6 +28,8 @@ export default class GeoJsonSource implements FeatureSource {
         let url = flayer.layerDef.source.geojsonSource.replace("{layer}", flayer.layerDef.id);
         this.name = "GeoJsonSource of " + url;
         const zoomLevel = flayer.layerDef.source.geojsonZoomLevel;
+        
+        this.isOsmCache = flayer.layerDef.source.isOsmCacheLayer;
 
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
 

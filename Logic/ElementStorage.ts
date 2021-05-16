@@ -6,6 +6,7 @@ import {UIEventSource} from "./UIEventSource";
 export class ElementStorage {
 
     private _elements = new Map<string, UIEventSource<any>>();
+    public ContainingFeatures = new Map<string, any>();
 
     constructor() {
 
@@ -24,11 +25,16 @@ export class ElementStorage {
     addOrGetElement(feature: any): UIEventSource<any> {
         const elementId = feature.properties.id;
         const newProperties = feature.properties;
-
+        
         const es = this.addOrGetById(elementId, newProperties)
 
         // At last, we overwrite the tag of the new feature to use the tags in the already existing event source
         feature.properties = es.data
+        
+        if(!this.ContainingFeatures.has(elementId)){
+            this.ContainingFeatures.set(elementId, feature);
+        }
+        
         return es;
     }
 

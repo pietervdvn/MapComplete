@@ -1,0 +1,53 @@
+{
+  "id": "aed_brugge",
+  "title": {
+    "nl": "Open AED-kaart - Brugge edition"
+  },
+  "maintainer": "MapComplete",
+  "icon": "./assets/themes/aed/logo.svg",
+  "description": {
+    "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren"
+  },
+  "language": [
+    "nl"
+  ],
+  "version": "2021-05-16",
+  "startLat": 51.25634,
+  "startLon": 3.195682,
+  "startZoom": 12,
+  "layers": [
+    "defibrillator",
+    {
+      "id": "Brugge",
+      "name": "Brugse dataset",
+      "source": {
+        "osmTags": "Brugs volgnummer~*",
+        "geoJson": "https://raw.githubusercontent.com/pietervdvn/pietervdvn.github.io/master/aeds_brugge.json"
+      },
+      "calculatedTags": [
+        "_closest_osm_aed=feat.closest('defibrillator')?.properties?.id",
+        "_closest_osm_aed_distance=feat.distanceTo(feat.properties._closest_osm_aed) * 1000",
+        "_has_closeby_feature=Number(feat.properties._closest_osm_aed_distance) < 25 ? 'yes' : 'no'"
+      ],
+      "title": "AED in Brugse dataset",
+      "icon": {
+        "render": "circle:green",
+        "mappings": [
+          {
+            "if": "_has_closeby_feature=yes",
+            "then": "circle:#ffff00aa"
+          },
+          {
+            "if": "Status=oud",
+            "then": "circle:red"
+          }
+        ]
+      },
+      "iconSize": "20,20,center",
+      "tagRenderings": [
+        "all_tags"
+      ]
+    }
+  ],
+  "hideFromOverview": true
+}

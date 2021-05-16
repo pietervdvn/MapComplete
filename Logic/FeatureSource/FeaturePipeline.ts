@@ -35,7 +35,7 @@ export default class FeaturePipeline implements FeatureSource {
         const amendedOverpassSource =
             new RememberingSource(
                 new LocalStorageSaver(
-                    new MetaTaggingFeatureSource(
+                    new MetaTaggingFeatureSource(this,
                         new FeatureDuplicatorPerLayer(flayers,
                             new RegisteringFeatureSource(
                                 updater)
@@ -43,18 +43,24 @@ export default class FeaturePipeline implements FeatureSource {
 
         const geojsonSources: FeatureSource [] = GeoJsonSource
             .ConstructMultiSource(flayers.data, locationControl)
-            .map(geojsonSource => new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, geojsonSource)));
+            .map(geojsonSource => {
+                let source = new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, geojsonSource));
+                if(!geojsonSource.isOsmCache){
+                    source = new MetaTaggingFeatureSource(this, source, updater.features);
+                }
+                return source
+            });
 
         const amendedLocalStorageSource =
             new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
             ));
 
-        newPoints = new MetaTaggingFeatureSource(
+        newPoints = new MetaTaggingFeatureSource(this,
             new FeatureDuplicatorPerLayer(flayers,
                 new RegisteringFeatureSource(newPoints)));
 
         const amendedOsmApiSource = new RememberingSource(
-            new MetaTaggingFeatureSource(
+            new MetaTaggingFeatureSource(this,
                 new FeatureDuplicatorPerLayer(flayers,
 
                     new RegisteringFeatureSource(fromOsmApi))));

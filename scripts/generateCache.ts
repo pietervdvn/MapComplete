@@ -17,6 +17,8 @@ import MetaTagging from "../Logic/MetaTagging";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../Logic/GeoOperations";
 import {fail} from "assert";
+import {UIEventSource} from "../Logic/UIEventSource";
+import DummyFeatureSource from "../Logic/FeatureSource/DummyFeatureSource";
 
 
 function createOverpassObject(theme: LayoutConfig) {
@@ -142,7 +144,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig,
 
             // We read the raw OSM-file and convert it to a geojson
             const rawOsm = JSON.parse(readFileSync(filename, "UTF8"))
-
+ 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
             const osmTime = new Date(rawOsm.osm3s.timestamp_osm_base);
@@ -167,7 +169,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig,
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
 
-            MetaTagging.addMetatags(featuresFreshness, relations, theme.layers, false);
+            MetaTagging.addMetatags(featuresFreshness, new DummyFeatureSource(new UIEventSource<{feature: any; freshness: Date}[]>(featuresFreshness)) , relations, theme.layers, false);
 
 
             for (const feature of geojson.features) {
