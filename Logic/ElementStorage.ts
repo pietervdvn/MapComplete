@@ -69,6 +69,9 @@ export class ElementStorage {
         const debug_msg = []
         let somethingChanged = false;
         for (const k in newProperties) {
+            if(!newProperties.hasOwnProperty(k)){
+                continue;
+            }
             const v = newProperties[k];
 
             if (keptKeys[k] !== v) {

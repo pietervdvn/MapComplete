@@ -22,7 +22,8 @@ export default class FilteringFeatureSource implements FeatureSource {
 
             const layerDict = {};
             if (layers.data.length == 0) {
-                throw "No layers defined!"
+                console.warn("No layers defined!")
+                return;
             }
             for (const layer of layers.data) {
                 layerDict[layer.layerDef.id] = layer;
