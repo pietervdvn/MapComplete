@@ -31,6 +31,6 @@
   "startLon": 0,
   "startZoom": 16,
   "widenFactor": 0.05,
-  "layers": [  ],
+  "layers": [ ],
   "roamingRenderings": []
 }

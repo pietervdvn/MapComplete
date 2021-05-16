@@ -11,6 +11,10 @@
   "source": {
     "osmTags": "emergency=defibrillator"
   },
+  "calculatedTags": [
+    "_days_since_last_survey=Math.floor(new Date() - new Date(feat.properties['survey:date'])/(1000*60*60*24))",
+    "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
+  ],
   "minzoom": 12,
   "title": {
     "render": {
@@ -26,11 +30,7 @@
     "render": "./assets/themes/aed/aed.svg",
     "mappings": [
       {
-        "if": {
-          "and": [
-            "survey:date~*"
-          ]
-        },
+        "if": "_recently_surveyed=true",
         "then": {
           "en": "./assets/layers/defibrillator/aed_checked.svg"
         }
@@ -408,7 +408,7 @@
       }
     },
     {
-      "question":{
+      "question": {
         "en": "When was this defibrillator last surveyed?",
         "nl": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?"
       },
