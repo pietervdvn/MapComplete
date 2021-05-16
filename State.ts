@@ -97,6 +97,7 @@ export default class State {
     public readonly featureSwitchGeolocation: UIEventSource<boolean>;
     public readonly featureSwitchIsTesting: UIEventSource<boolean>;
     public readonly featureSwitchIsDebugging: UIEventSource<boolean>;
+    public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>;
 
 
     /**
@@ -197,6 +198,8 @@ export default class State {
                 "Disables/Enables the 'Share-screen'-tab in the welcome message");
             this.featureSwitchGeolocation = featSw("fs-geolocation", (layoutToUse) => layoutToUse?.enableGeolocation ?? true,
                 "Disables/Enables the geolocation button");
+            this.featureSwitchShowAllQuestions = featSw("fs-all-questions", (layoutToUse) => layoutToUse?.enableShowAllQuestions ?? false,
+                "Always show all questions");
 
 
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",

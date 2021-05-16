@@ -3,6 +3,8 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
+import State from "../../State";
+import Combine from "../Base/Combine";
 
 
 /**
@@ -47,6 +49,7 @@ export default class QuestionBox extends UIElement {
     }
 
     InnerRender(): string {
+        const allQuestions : UIElement[] = []
         for (let i = 0; i < this._tagRenderingQuestions.length; i++) {
             let tagRendering = this._tagRenderings[i];
 
@@ -57,15 +60,19 @@ export default class QuestionBox extends UIElement {
             if (this._skippedQuestions.data.indexOf(i) >= 0) {
                 continue;
             }
-            // this value is NOT known
-            return this._tagRenderingQuestions[i].Render();
+            // this value is NOT known - we show the questions for it
+            if(State.state.featureSwitchShowAllQuestions.data || allQuestions.length == 0){
+                allQuestions.push(this._tagRenderingQuestions[i])
+            }
+        
         }
 
-        if (this._skippedQuestions.data.length > 0) {
-            return this._skippedQuestionsButton.Render();
+        if(this._skippedQuestions.data.length > 0){
+            allQuestions.push(this._skippedQuestionsButton)
         }
+        
 
-        return "";
+        return new Combine(allQuestions).Render();
     }
 
 }

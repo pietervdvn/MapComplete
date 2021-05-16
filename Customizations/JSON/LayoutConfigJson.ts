@@ -205,4 +205,5 @@ export interface LayoutConfigJson {
     enableAddNewPoints?: boolean;
     enableGeolocation?: boolean;
     enableBackgroundLayerSelection?: boolean;
+    enableShowAllQuestions?: boolean;
 }

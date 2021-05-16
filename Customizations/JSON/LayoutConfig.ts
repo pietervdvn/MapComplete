@@ -25,7 +25,7 @@ export default class LayoutConfig {
     public readonly widenFactor: number;
     public readonly roamingRenderings: TagRenderingConfig[];
     public readonly defaultBackgroundId?: string;
-    public readonly layers: LayerConfig[];
+    public layers: LayerConfig[];
     public readonly clustering?: {
         maxZoom: number,
         minNeededElements: number
@@ -41,6 +41,8 @@ export default class LayoutConfig {
     public readonly enableSearch: boolean;
     public readonly enableGeolocation: boolean;
     public readonly enableBackgroundLayerSelection: boolean;
+    public readonly enableShowAllQuestions: boolean;
+
     public readonly customCss?: string;
     /*
     How long is the cache valid, in seconds?
@@ -94,10 +96,10 @@ export default class LayoutConfig {
         this.layers = json.layers.map((layer, i) => {
             if (typeof layer === "string") {
                 if (AllKnownLayers.sharedLayersJson[layer] !== undefined) {
-                    if(json.overrideAll !== undefined){
-                        let lyr = JSON.parse(JSON.stringify( AllKnownLayers.sharedLayersJson[layer]));
-                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr),`${this.id}+overrideAll.layers[${i}]`, official);
-                    }else{
+                    if (json.overrideAll !== undefined) {
+                        let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
+                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${this.id}+overrideAll.layers[${i}]`, official);
+                    } else {
                         return AllKnownLayers.sharedLayers[layer]
                     }
                 } else {
@@ -114,17 +116,17 @@ export default class LayoutConfig {
                 }
                 // @ts-ignore
                 layer = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
-              
-          
+
+
             }
-            if(json.overrideAll !== undefined){
+            if (json.overrideAll !== undefined) {
                 layer = Utils.Merge(json.overrideAll, layer);
             }
-      
+
             // @ts-ignore
             return new LayerConfig(layer, `${this.id}.layers[${i}]`, official)
         });
-        
+
         // ALl the layers are constructed, let them share tags in now!
         const roaming: { r, source: LayerConfig }[] = []
         for (const layer of this.layers) {
@@ -181,6 +183,7 @@ export default class LayoutConfig {
         this.enableGeolocation = json.enableGeolocation ?? true;
         this.enableAddNewPoints = json.enableAddNewPoints ?? true;
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true;
+        this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
     }
@@ -210,8 +213,8 @@ export default class LayoutConfig {
         icons.add(this.socialImage)
         return icons
     }
-    
-    public LayerIndex() : Map<string, LayerConfig>{
+
+    public LayerIndex(): Map<string, LayerConfig> {
         const index = new Map<string, LayerConfig>();
         for (const layer of this.layers) {
             index.set(layer.id, layer)
@@ -236,7 +239,7 @@ export default class LayoutConfig {
         let path = new URL(originalURL).href
         path = path.substring(0, path.lastIndexOf("/"))
         for (const image of allImages) {
-            if(image == "" || image == undefined){
+            if (image == "" || image == undefined) {
                 continue
             }
             if (image.startsWith("http://") || image.startsWith("https://")) {
@@ -260,8 +263,8 @@ export default class LayoutConfig {
             return this;
         }
         rewriting.forEach((value, key) => {
-            console.log("Rewriting",key, "==>", value)
-            
+            console.log("Rewriting", key, "==>", value)
+
             originalJson = originalJson.replace(new RegExp(key, "g"), value)
         })
         return new LayoutConfig(JSON.parse(originalJson), false, "Layout rewriting")

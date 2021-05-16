@@ -39,6 +39,9 @@ import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
+import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
+import AllKnownLayers from "./Customizations/AllKnownLayers";
+import LayerConfig from "./Customizations/JSON/LayerConfig";
 
 export class InitUiElements {
 
@@ -82,23 +85,44 @@ export class InitUiElements {
         function updateFavs() {
             // This is purely for the personal theme to load the layers there
             const favs = State.state.favouriteLayers.data ?? [];
+            
+            const neededLayers = new Set<LayerConfig>();
 
-
+            console.log("Favourites are: ", favs)
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
+            let somethingChanged = false;
             for (const fav of favs) {
+                
+                if(AllKnownLayers.sharedLayers.has(fav)){
+                    const layer = AllKnownLayers.sharedLayers.get(fav)
+                    if(!neededLayers.has(layer)){
+                        neededLayers.add(layer)
+                        somethingChanged = true;
+                    }
+                }
+
+                
                 for (const layouts of State.state.installedThemes.data) {
                     for (const layer of layouts.layout.layers) {
                         if (typeof layer === "string") {
                             continue;
                         }
                         if (layer.id === fav) {
-                            layoutToUse.layers.push(layer);
+                            if(!neededLayers.has(layer)){
+                                neededLayers.add(layer)
+                                somethingChanged = true;
+                            }
                         }
                     }
                 }
             }
-            State.state.layoutToUse.ping();
-            State.state.layerUpdater?.ForceRefresh();
+            if(somethingChanged){
+                console.log("layoutToUse.layers:", layoutToUse.layers)
+                State.state.layoutToUse.data.layers = Array.from(neededLayers);
+                State.state.layoutToUse.ping();
+                State.state.layerUpdater?.ForceRefresh();
+            }
+            
         }
 
 
