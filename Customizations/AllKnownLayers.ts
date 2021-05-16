@@ -22,18 +22,22 @@ export default class AllKnownLayers {
                 }
             }
         }
-        
-        for(const layout of known_layers.themes){
+
+        for (const layout of known_layers.themes) {
             for (const layer of layout.layers) {
-                if(typeof layer === "string"){
+                if (typeof layer === "string") {
                     continue;
                 }
-                const parsed = new LayerConfig(layer, "shared_layer_in_theme")
-                sharedLayers.set(layer.id, parsed);
-                sharedLayers[layer.id] = parsed;
+                try {
+                    const parsed = new LayerConfig(layer, "shared_layer_in_theme")
+                    sharedLayers.set(layer.id, parsed);
+                    sharedLayers[layer.id] = parsed;
+                } catch (e) {
+                    console.error("Could not parse a layer in theme ", layout.id, "due to", e)
+                }
             }
         }
-        
+
         return sharedLayers;
     }
 

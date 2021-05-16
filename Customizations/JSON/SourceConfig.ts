@@ -27,7 +27,7 @@ export default class SourceConfig {
             defined++;
         }
         if (defined == 0) {
-            throw "Source: nothing correct defined in the source"
+            throw `Source: nothing correct defined in the source (in ${context}) (the params are ${JSON.stringify(params)})`
         }
         if(params.isOsmCache && params.geojsonSource == undefined){
             console.error(params)
