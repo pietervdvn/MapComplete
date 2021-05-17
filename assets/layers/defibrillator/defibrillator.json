@@ -226,7 +226,23 @@
         "fr": "Ce défibrillateur est à l'étage {level}",
         "nl": "De defibrillator bevindt zicht op verdieping {level}",
         "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk"
-      }
+      },
+      "mappings": [
+        {
+          "if": "level=0",
+          "then": {
+            "en": "This defibrillator is on the <b>ground floor</b>",
+            "nl": "Deze defibrillator bevindt zich <b>gelijkvloers</b>"
+          }
+        },
+        {
+          "if": "level=1",
+          "then": {
+            "en": "This defibrillator is on the <b>first floor</b>",
+            "nl": "Deze defibrillator is op de <b>eerste verdieping</b>"
+          }
+        }
+      ]
     },
     {
       "render": {
