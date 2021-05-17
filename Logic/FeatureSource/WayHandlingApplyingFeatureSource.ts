@@ -36,7 +36,8 @@ export default class WayHandlingApplyingFeatureSource implements FeatureSource {
                     const layerId = feat._matching_layer_id;
                     const layer: LayerConfig = layerDict[layerId].layerDef;
                     if (layer === undefined) {
-                        throw "No layer found with id " + layerId;
+                        console.error("No layer found with id " + layerId);
+                        continue;
                     }
 
                     if (layer.wayHandling === LayerConfig.WAYHANDLING_DEFAULT) {
