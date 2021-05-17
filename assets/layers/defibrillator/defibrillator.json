@@ -212,8 +212,7 @@
       },
       "condition": {
         "and": [
-          "indoor=yes",
-          "access!~private"
+          "indoor=yes"
         ]
       },
       "freeform": {

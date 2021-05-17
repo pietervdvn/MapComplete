@@ -1,5 +1,5 @@
 {
-  "id": "speelplekken",
+  "id": "speelplekken_temp",
   "title": {
     "nl": "Speelplekken in de Antwerpse Zuidrand"
   },
@@ -120,6 +120,7 @@
           "_part_of_walking_routes=Array.from(new Set(feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\"))).join(', ')",
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
         ],
+        "minzoom": 9,
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",
           "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
@@ -249,15 +250,8 @@
     {
       "render": "Maakt deel uit van {_part_of_walking_routes}",
       "condition": "_part_of_walking_routes~*"
-    },
-    {
-      "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
-      "freeform": {
-        "key": "video",
-        "type": "url"
-      },
-      "question": "Wat is de link naar de video-reportage?"
     }
+  
   ],
   "overrideAll": {
     "isShown": {

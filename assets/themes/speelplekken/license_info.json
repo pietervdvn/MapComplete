@@ -1,6 +1,16 @@
 [
   {
     "authors": [
+      "Departement Omgeving, Vlaamse Overheid"
+    ],
+    "path": "Departement_Omgeving_Vlaanderen.png",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://omgeving.vlaanderen.be/"
+    ]
+  },
+  {
+    "authors": [
       "Gitte Loos (Createlli) in opdracht van Provincie Antwerpen "
     ],
     "path": "logo.svg",
@@ -41,6 +51,16 @@
     "sources": [
       "https://createlli.com/",
       "https://www.provincieantwerpen.be/"
+    ]
+  },
+  {
+    "authors": [
+      "Provincie Antwerpen"
+    ],
+    "path": "provincie_antwerpen_CMYK.jpg",
+    "license": "Logo; All rights reserved",
+    "sources": [
+      "https://www.antwerpen.be/"
     ]
   }
 ]

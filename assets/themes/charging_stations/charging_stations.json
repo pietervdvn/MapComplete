@@ -101,7 +101,8 @@
         },
         {
           "#": "capacity",
-          "render": "{capacity} vehicles can be charged here",
+          "render": "{capacity} vehicles can be charged here at the same time",
+          "question": "How much vehicles can be charged here at the same time?",
           "freeform": {
             "key": "capacity",
             "type": "pnat"
