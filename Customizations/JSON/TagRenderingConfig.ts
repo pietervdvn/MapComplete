@@ -104,6 +104,15 @@ export default class TagRenderingConfig {
                 if (mapping.ifnot !== undefined && !this.multiAnswer) {
                     throw `${context}.mapping[${i}]: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
                 }
+                
+                if(mapping.if === undefined){
+                    throw `${context}.mapping[${i}]: Invalid mapping: "if" is not defined, but the tagrendering is not a multianswer`
+                }
+                if(typeof mapping.if !== "string" && mapping.if["length"] !== undefined){
+                    throw `${context}.mapping[${i}]: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
+                }
+                
+                
                 let hideInAnswer: boolean | TagsFilter = false;
                 if (typeof mapping.hideInAnswer === "boolean") {
                     hideInAnswer = mapping.hideInAnswer;

@@ -28,6 +28,10 @@ export default class AllKnownLayers {
                 if (typeof layer === "string") {
                     continue;
                 }
+                if(layer.builtin !== undefined){
+                    // This is a builtin layer of which stuff is overridden - skip
+                    continue;
+                }
                 try {
                     const parsed = new LayerConfig(layer, "shared_layer_in_theme")
                     sharedLayers.set(layer.id, parsed);
