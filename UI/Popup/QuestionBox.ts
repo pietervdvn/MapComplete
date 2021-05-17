@@ -45,7 +45,7 @@ export default class QuestionBox extends UIElement {
             .onClick(() => {
                 self._skippedQuestions.setData([]);
             })
-        this.SetClass("block")
+        this.SetClass("block mb-8")
     }
 
     InnerRender(): string {

@@ -89,6 +89,16 @@
    "description": "Layer 'Defibrillators' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open AED Map')"
   },
   {
+   "key": "level",
+   "description": "Layer 'Defibrillators' shows level=0 with a fixed text, namely 'This defibrillator is on the <b>ground floor</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+   "value": "0"
+  },
+  {
+   "key": "level",
+   "description": "Layer 'Defibrillators' shows level=1 with a fixed text, namely 'This defibrillator is on the <b>first floor</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+   "value": "1"
+  },
+  {
    "key": "defibrillator:location",
    "description": "Layer 'Defibrillators' shows and asks freeform values for key 'defibrillator:location' (in the MapComplete.osm.be theme 'Open AED Map')"
   },
@@ -135,6 +145,11 @@
   {
    "key": "opening_hours",
    "description": "Layer 'Defibrillators' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open AED Map')"
+  },
+  {
+   "key": "opening_hours",
+   "description": "Layer 'Defibrillators' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+   "value": "24/7"
   },
   {
    "key": "description",
