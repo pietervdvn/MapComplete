@@ -400,13 +400,23 @@
         "nl": "{opening_hours_table(opening_hours)}"
       },
       "question": {
-        "en": "At what times is this defibrillator available? (use 24/7 to indicate it's always available)",
-        "nl": "Wanneer is deze defibrillator beschikbaar? (schrijf 24/7 om aan te geven dat hij steeds beschikbaar is)"
+        "en": "At what times is this defibrillator available?",
+        "nl": "Wanneer is deze defibrillator beschikbaar?"
       },
       "freeform": {
         "key": "opening_hours",
         "type": "opening_hours"
-      }
+      },
+      "mappings": [
+            {
+              "if": "opening_hours=24/7",
+              "then": 
+              {
+                "en": "24/7 opened (including holidays)",
+                "nl": "24/7 open (inclusief feestdagen)"
+              }
+            }
+          ]
     },
     {
       "render": {
