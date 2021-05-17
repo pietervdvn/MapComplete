@@ -3,6 +3,7 @@
   "name": {
     "nl": "Paadjes, trage wegen en autoluwe straten"
   },
+  "icon": "./assets/layers/slow_roads/slow_road.svg",
   "minzoom": 16,
   "source": {
     "osmTags": {
@@ -158,10 +159,6 @@
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 0,
-  "icon": {
-    "render": "./assets/svg/bug.svg",
-    "mappings": []
-  },
   "width": {
     "render": "7"
   },

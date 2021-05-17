@@ -130,6 +130,7 @@
     },
     {
       "id": "walking_routes",
+      "icon": "./assets/themes/speelplekken/walking_route.svg",
       "name": {
         "nl": "Wandelroutes van provincie Antwerpen"
       },
