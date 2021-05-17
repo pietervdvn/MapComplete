@@ -93,7 +93,7 @@
   },
   {
    "key": "capacity",
-   "description": "Layer 'Charging stations' shows values with key 'capacity' (in the MapComplete.osm.be theme 'Charging stations')"
+   "description": "Layer 'Charging stations' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Charging stations')"
   },
   {
    "key": "authentication:membership_card",
