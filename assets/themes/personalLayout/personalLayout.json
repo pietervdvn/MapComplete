@@ -6,6 +6,7 @@
     "es": "Interficie personal",
     "ca": "Interfície personal",
     "gl": "Tema personalizado",
+    "fr": "Thème personnalisé",
     "de": "Persönliches Thema"
   },
   "description": {
@@ -14,6 +15,7 @@
     "es": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
     "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
+    "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
     "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
   },
   "language": [
@@ -22,6 +24,7 @@
     "es",
     "ca",
     "gl",
+    "fr",
     "de"
   ],
   "maintainer": "MapComplete",
