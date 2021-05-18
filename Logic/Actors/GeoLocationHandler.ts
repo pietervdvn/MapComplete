@@ -48,8 +48,8 @@ export default class GeoLocationHandler extends UIElement {
      * If the user denies the geolocation this time, we unset this flag
      * @private
      */
-    private readonly _previousLocationGrant : UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
-    
+    private readonly _previousLocationGrant: UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
+
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
                 leafletMap: UIEventSource<L.Map>) {
         super(undefined);
@@ -61,9 +61,9 @@ export default class GeoLocationHandler extends UIElement {
         import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
             self.init();
         })
-        
+
         const currentPointer = this._isActive.map(isActive => {
-            if(isActive && !self._hasLocation.data){
+            if (isActive && !self._hasLocation.data) {
                 return "cursor-wait"
             }
             return "cursor-pointer"
@@ -72,6 +72,33 @@ export default class GeoLocationHandler extends UIElement {
             self.SetClass(pointerClass);
             self.Update()
         })
+    }
+
+    InnerRender(): string {
+        if (this._hasLocation.data) {
+            return Svg.crosshair_blue_img;
+        }
+        if (this._isActive.data) {
+            return Svg.crosshair_blue_center_img;
+        }
+
+        return Svg.crosshair_img;
+    }
+
+    InnerUpdate(htmlElement: HTMLElement) {
+        super.InnerUpdate(htmlElement);
+
+        const self = this;
+        htmlElement.onclick = function () {
+            self.StartGeolocating(19);
+        }
+
+        htmlElement.oncontextmenu = function (e) {
+            self.StartGeolocating(15);
+            e.preventDefault();
+            return false;
+        }
+
     }
 
     private init() {
@@ -102,16 +129,21 @@ export default class GeoLocationHandler extends UIElement {
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
-            
+
             const timeSinceRequest = (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
-            if(timeSinceRequest < 30){
+            if (timeSinceRequest < 30) {
                 self._lastUserRequest = undefined;
                 this._leafletMap.data.setView(
                     this._currentGPSLocation.data.latlng, this._leafletMap.data.getZoom()
                 );
             }
 
-            const color = getComputedStyle(document.body).getPropertyValue("--catch-detail-color")
+            let color = "#1111cc";
+            try {
+                color = getComputedStyle(document.body).getPropertyValue("--catch-detail-color")
+            } catch (e) {
+                console.error(e)
+            }
             const icon = L.icon(
                 {
                     iconUrl: Img.AsData(Svg.crosshair.replace(/#000000/g, color)),
@@ -128,59 +160,59 @@ export default class GeoLocationHandler extends UIElement {
             self._marker = newMarker;
         });
 
-        navigator?.permissions?.query({name: 'geolocation'})
-            ?.then(function (status) {
-                console.log("Geolocation is already", status)
-                if (status.state === "granted") {
-                   self.StartGeolocating(19, false);
-                }
-                self._permission.setData(status.state);
-                status.onchange = function () {
-                    self._permission.setData(status.state);
-                }
-            });
+        try {
 
-        if(this._previousLocationGrant.data === "granted"){
+            navigator?.permissions?.query({name: 'geolocation'})
+                ?.then(function (status) {
+                    console.log("Geolocation is already", status)
+                    if (status.state === "granted") {
+                        self.StartGeolocating(19, false);
+                    }
+                    self._permission.setData(status.state);
+                    status.onchange = function () {
+                        self._permission.setData(status.state);
+                    }
+                });
+
+        } catch (e) {
+            console.log(e)
+            self.StartGeolocating()
+        }
+        if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
             self.StartGeolocating();
         }
-        
+
         this.HideOnEmpty(true);
     }
 
-    InnerRender(): string {
-        if (this._hasLocation.data) {
-            return Svg.crosshair_blue_img;
-        }
-        if (this._isActive.data) {
-            return Svg.crosshair_blue_center_img;
-        }
-
-        return Svg.crosshair_img;
-    }
-
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-
+    private locate() {
         const self = this;
-        htmlElement.onclick = function () {
-            self.StartGeolocating(19);
-        }
+        const map: any = this._leafletMap.data;
 
-        htmlElement.oncontextmenu = function (e) {
-            self.StartGeolocating(15);
-            e.preventDefault();
-            return false;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                self._currentGPSLocation.setData({
+                    latlng: [position.coords.latitude, position.coords.longitude],
+                    accuracy: position.coords.accuracy
+                });
+            }, function () {
+                console.warn("Could not get location with navigator.geolocation")
+            });
+            return;
+        } else {
+            map.findAccuratePosition({
+                maxWait: 10000, // defaults to 10000
+                desiredAccuracy: 50 // defaults to 20
+            });
         }
-
     }
 
-   
-    private StartGeolocating(zoomlevel = 19, zoomToGPS=true) {
+    private StartGeolocating(zoomlevel = 19, zoomToGPS = true) {
         const self = this;
         console.log("Starting geolocation")
+
         this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
-        const map: any = this._leafletMap.data;
         if (self._permission.data === "denied") {
             self._previousLocationGrant.setData("");
             return "";
@@ -193,10 +225,7 @@ export default class GeoLocationHandler extends UIElement {
 
 
         console.log("Searching location using GPS")
-        map.findAccuratePosition({
-            maxWait: 10000, // defaults to 10000
-            desiredAccuracy: 50 // defaults to 20
-        });
+        this.locate();
 
 
         if (!self._isActive.data) {
@@ -207,11 +236,7 @@ export default class GeoLocationHandler extends UIElement {
                     console.log("Not starting gps: document not visible")
                     return;
                 }
-
-                map.findAccuratePosition({
-                    maxWait: 10000, // defaults to 10000
-                    desiredAccuracy: 50 // defaults to 20
-                });
+                this.locate();
             })
         }
     }

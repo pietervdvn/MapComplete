@@ -1,4 +1,5 @@
 import * as colors from "./assets/colors.json"
+
 export class Utils {
 
     /**
@@ -13,10 +14,10 @@ export class Utils {
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
     static EncodeXmlValue(str) {
-        if(typeof str !== "string"){
-            str = ""+str
+        if (typeof str !== "string") {
+            str = "" + str
         }
-        
+
         return str.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
@@ -261,6 +262,66 @@ export class Utils {
         return result;
     }
 
+    public static MapRange<T>(tileRange: TileRange, f: (x: number, y: number) => T): T[] {
+        const result: T[] = []
+        for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
+            for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
+                const t = f(x, y);
+                result.push(t)
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Triggers a 'download file' popup which will download the contents
+     * @param contents
+     * @param fileName
+     */
+    public static downloadTxtFile(contents: string, fileName: string = "download.txt") {
+        const element = document.createElement("a");
+        const file = new Blob([contents], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = fileName;
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
+
+    public static ColourNameToHex(color: string): string {
+        return colors[color.toLowerCase()] ?? color;
+    }
+
+    public static HexToColourName(hex: string): string {
+        hex = hex.toLowerCase()
+        if (!hex.startsWith("#")) {
+            return hex;
+        }
+        const c = Utils.color(hex);
+
+        let smallestDiff = Number.MAX_VALUE;
+        let bestColor = undefined;
+        for (const color in colors) {
+            if (!colors.hasOwnProperty(color)) {
+                continue;
+            }
+            const foundhex = colors[color];
+            if (typeof foundhex !== "string") {
+                continue
+            }
+            if (foundhex === hex) {
+                return color
+            }
+            const diff = this.colorDiff(Utils.color(foundhex), c)
+            if (diff > 50) {
+                continue;
+            }
+            if (diff < smallestDiff) {
+                smallestDiff = diff;
+                bestColor = color;
+            }
+        }
+        return bestColor ?? hex;
+    }
     private static tile2long(x, z) {
         return (x / Math.pow(2, z) * 360 - 180);
     }
@@ -278,102 +339,40 @@ export class Utils {
         return (Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom)));
     }
 
-    public static MapRange<T> (tileRange: TileRange, f: (x: number, y: number) => T): T[] {
-        const result : T[] = []
-        for (let x = tileRange.xstart; x <= tileRange.xend; x++) {
-            for (let y = tileRange.ystart; y <= tileRange.yend; y++) {
-              const t=  f(x, y);
-              result.push(t)
-            }
-        }
-        return result;
+    private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
 
-    /**
-     * Triggers a 'download file' popup which will download the contents
-     * @param contents
-     * @param fileName
-     */
-    public static downloadTxtFile (contents: string, fileName: string = "download.txt") {
-        const element = document.createElement("a");
-        const file = new Blob([contents], {type: 'text/plain'});
-        element.href = URL.createObjectURL(file);
-        element.download = fileName;
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
-    }
-    
-    
-    public static ColourNameToHex(color: string): string{
-        return colors[color.toLowerCase()] ?? color;
-    }
-    
-    public static HexToColourName(hex : string): string{
-        hex = hex.toLowerCase()
-        if(!hex.startsWith("#")){
-            return hex;
-        }
-        const c = Utils.color(hex);
-        
-        let smallestDiff = Number.MAX_VALUE;
-        let bestColor = undefined;
-        for (const color in colors) {
-            if(!colors.hasOwnProperty(color)){
-                continue;
-            }
-            const foundhex = colors[color];
-            if(typeof foundhex !== "string"){
-                continue
-            }
-            if(foundhex === hex){
-                return color
-            }
-            const diff = this.colorDiff(Utils.color(foundhex), c)
-            if(diff > 50){
-                continue;
-            }
-            if(diff < smallestDiff){
-                smallestDiff = diff;
-                bestColor = color;
-            }
-        }
-        return bestColor ?? hex;
-    }
-    
-    private static colorDiff(c0 : {r: number, g: number, b: number}, c1: {r: number, g: number, b: number}){
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) +Math.abs(c0.b - c1.b) ;
-    }
-    
-    private static color(hex: string) : {r: number, g: number, b: number}{
-        if(hex.startsWith == undefined){
+    private static color(hex: string): { r: number, g: number, b: number } {
+        if (hex.startsWith == undefined) {
             console.trace("WUT?", hex)
             throw "wut?"
         }
-        if(!hex.startsWith("#")){
-            return  undefined;
+        if (!hex.startsWith("#")) {
+            return undefined;
         }
-        if(hex.length === 4){
-         return {
-             r : parseInt(hex.substr(1, 1), 16),
-            g : parseInt(hex.substr(2, 1), 16),
-             b : parseInt(hex.substr(3, 1), 16),
-         }  
+        if (hex.length === 4) {
+            return {
+                r: parseInt(hex.substr(1, 1), 16),
+                g: parseInt(hex.substr(2, 1), 16),
+                b: parseInt(hex.substr(3, 1), 16),
+            }
         }
 
         return {
-            r : parseInt(hex.substr(1, 2), 16),
-            g : parseInt(hex.substr(3, 2), 16),
-            b : parseInt(hex.substr(5, 2), 16),
+            r: parseInt(hex.substr(1, 2), 16),
+            g: parseInt(hex.substr(3, 2), 16),
+            b: parseInt(hex.substr(5, 2), 16),
         }
     }
 }
 
-export interface TileRange{
+export interface TileRange {
     xstart: number,
     ystart: number,
     xend: number,
     yend: number,
     total: number,
     zoomlevel: number
-    
+
 }

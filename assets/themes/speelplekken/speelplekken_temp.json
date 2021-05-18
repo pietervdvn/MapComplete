@@ -25,17 +25,6 @@
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
-      "id": "shadow",
-      "source": {
-        "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson",
-        "osmTags": "shadow=yes"
-      },
-      "color": "#444444",
-      "width": {
-        "render": "1"
-      }
-    },
-    {
       "builtin": "play_forest",
       "override": {
         "source": {
