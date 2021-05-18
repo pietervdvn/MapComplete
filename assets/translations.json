@@ -154,7 +154,7 @@
     },
     "retrying": {
       "en": "Loading data failed. Trying again in {count} seconds...",
-      "nl": "Data inladed mislukt - wordt opnieuw geladen over {count} seconden",
+      "nl": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden",
       "ca": "La càrrega de dades ha fallat. Tornant-ho a intentar... ({count})",
       "es": "La carga de datos ha fallado. Volviéndolo a probar... ({count})",
       "gl": "A carga dos datos fallou. Tentándoo de novo... ({count})",
