@@ -617,7 +617,7 @@
         "gl": "Activar botón de inicio de sesión",
         "nl": "Activeer de login-knop",
         "fr": "Activer le bouton de connexion",
-        "de": " Anmelde-Knopf aktivieren"
+        "de": "Anmelde-Knopf aktivieren"
       },
       "fsSearch": {
         "en": "Enable the search bar",
@@ -626,7 +626,7 @@
         "gl": "Activar a barra de procura",
         "nl": "Activeer de zoekbalk",
         "fr": "Activer la barre de recherche",
-        "de": " Suchleiste aktivieren"
+        "de": "Suchleiste aktivieren"
       },
       "fsWelcomeMessage": {
         "en": "Show the welcome message popup and associated tabs",
@@ -773,7 +773,7 @@
     },
     "getStartedNewAccount": {
       "en": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
-      "nl": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a> ",
+      "nl": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
       "fr": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>enregistrez-vous</a>",
       "es": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea una nueva cuenta</a>",
       "ca": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea un nou compte</a>",
@@ -968,7 +968,7 @@
       "openTill": {
         "en": "till",
         "ca": "fins",
-        "es": " hasta",
+        "es": "hasta",
         "nl": "tot",
         "fr": "jusqu'à",
         "de": "bis"
