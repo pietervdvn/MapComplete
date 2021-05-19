@@ -3,10 +3,6 @@
         "title": "Open AED-kaart",
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren"
     },
-    "aed_brugge": {
-        "title": "Open AED-kaart - Brugge edition",
-        "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren"
-    },
     "artworks": {
         "title": "Kunstwerkenkaart",
         "description": "Welkom op de Open Kunstwerken Kaart",
@@ -95,136 +91,51 @@
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
     },
     "buurtnatuur": {
-        "title": "Breng jouw buurtnatuur in kaart",
-        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
-        "description": "<img style='float:right;margin: 1em;width: 10em;height: auto;' src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo/> <br /><b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten.<ul><li>In welke natuurgebieden kan jij terecht? Hoe toegankelijk zijn ze?</li><li>In welke bossen kan een gezin in jouw gemeente opnieuw op adem komen?</li><li>Op welke onbekende plekjes is het zalig spelen?</li></ul><p>Samen kleuren we heel Vlaanderen en Brussel groen.Blijf op de hoogte van de resultaten van buurtnatuur.be: <a href='https://www.groen.be/buurtnatuur' target='_blank'>meld je aan voor e-mailupdates</a>.",
         "descriptionTail": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>",
         "layers": {
             "0": {
-                "name": "Natuurgebied",
                 "title": {
-                    "render": "Natuurgebied",
                     "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
                         "1": {
                             "then": "{name}"
                         }
-                    }
-                },
-                "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
-                "presets": {
-                    "0": {
-                        "title": "Natuurreservaat",
-                        "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
                     }
                 }
             },
             "1": {
                 "name": "Park",
-                "title": {
-                    "render": "Park",
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    }
-                },
-                "description": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ...",
-                "presets": {
-                    "0": {
-                        "title": "Park",
-                        "description": "Voeg een ontbrekend park toe"
-                    }
-                }
+                "description": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ..."
             },
             "2": {
-                "name": "Bos",
                 "title": {
-                    "render": "Bos",
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    }
+                    "render": "Bos"
                 },
-                "description": "Een bos is een verzameling bomen, al dan niet als productiehout.",
                 "presets": {
                     "0": {
-                        "title": "Bos",
-                        "description": "Voeg een ontbrekend bos toe aan de kaart"
+                        "title": "Bos"
                     }
                 }
             }
         },
         "roamingRenderings": {
             "0": {
-                "render": "De toegankelijkheid van dit gebied is: {access:description}",
-                "question": "Is dit gebied toegankelijk?",
                 "mappings": {
                     "0": {
                         "then": "Dit gebied is vrij toegankelijk"
                     },
-                    "1": {
-                        "then": "Vrij toegankelijk"
-                    },
-                    "2": {
-                        "then": "Niet toegankelijk"
-                    },
-                    "3": {
-                        "then": "Niet toegankelijk, want privégebied"
-                    },
                     "4": {
                         "then": "Toegankelijk, ondanks dat het privegebied is"
-                    },
-                    "5": {
-                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                    },
-                    "6": {
-                        "then": "Toegankelijk mits betaling"
                     }
                 }
             },
             "1": {
-                "render": "Beheer door {operator}",
-                "question": "Wie beheert dit gebied?",
-                "mappings": {
-                    "1": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-                    },
-                    "2": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
-                    },
-                    "3": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-                    }
-                }
+                "question": "Wie beheert dit gebied?"
             },
             "2": {
                 "render": "Extra info: <i>{description}</i>"
             },
-            "3": {
-                "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-            },
-            "4": {
-                "render": "Dit gebied heet {name:nl}",
-                "question": "Wat is de Nederlandstalige naam van dit gebied?"
-            },
             "5": {
-                "render": "Dit gebied heet {name}",
-                "question": "Wat is de naam van dit gebied?",
-                "mappings": {
-                    "0": {
-                        "then": "Dit gebied heeft geen naam"
-                    }
-                }
+                "render": "Dit gebied heet {name}"
             }
         }
     },
@@ -427,54 +338,27 @@
         }
     },
     "fietsstraten": {
-        "title": "Fietsstraten",
-        "shortDescription": "Een kaart met alle gekende fietsstraten",
-        "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
         "roamingRenderings": {
             "0": {
                 "question": "Is deze straat een fietsstraat?",
                 "mappings": {
-                    "0": {
-                        "then": "Deze straat is een fietsstraat (en dus zone 30)"
-                    },
-                    "1": {
-                        "then": "Deze straat is een fietsstraat"
-                    },
-                    "2": {
-                        "then": "Deze straat wordt binnenkort een fietsstraat"
-                    },
                     "3": {
                         "then": "Deze straat is geen fietsstraat"
                     }
                 }
-            },
-            "1": {
-                "question": "Wanneer wordt deze straat een fietsstraat?",
-                "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
             }
         },
         "layers": {
             "0": {
-                "name": "Fietsstraten",
                 "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen."
             },
             "1": {
-                "name": "Toekomstige fietsstraat",
-                "description": "Deze straat wordt binnenkort een fietsstraat",
                 "title": {
-                    "render": "Toekomstige fietsstraat",
                     "mappings": {
                         "0": {
                             "then": "{name} wordt fietsstraat"
                         }
                     }
-                }
-            },
-            "2": {
-                "name": "Alle straten",
-                "description": "Laag waar je een straat als fietsstraat kan markeren",
-                "title": {
-                    "render": "Straat"
                 }
             }
         }
@@ -575,71 +459,32 @@
         }
     },
     "fritures": {
-        "title": "Friturenkaart",
-        "description": "Op deze kaart vind je je favoriete frituur!",
         "layers": {
             "0": {
-                "name": "Frituren",
                 "title": {
-                    "render": "Frituur",
-                    "mappings": {
-                        "0": {
-                            "then": " <i>{name}</i>"
-                        }
-                    }
+                    "render": "Frituur"
                 },
                 "tagRenderings": {
                     "1": {
-                        "render": "{name}",
                         "question": "Wat is de naam van deze frituur?"
-                    },
-                    "2": {
-                        "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
-                        "question": "Wat zijn de openinguren van deze frituur?"
                     },
                     "3": {
                         "question": "Wat is de website van deze frituur?"
                     },
                     "4": {
-                        "render": "<a href='tel:{phone}'>{phone}</a>",
                         "question": "Wat is het telefoonnummer van deze frituur?"
                     },
                     "5": {
-                        "question": "Heeft deze frituur vegetarische snacks?",
                         "mappings": {
-                            "0": {
-                                "then": "Er zijn vegetarische snacks aanwezig"
-                            },
-                            "1": {
-                                "then": "Slechts enkele vegetarische snacks"
-                            },
                             "2": {
                                 "then": "Geen vegetarische snacks beschikbaar"
                             }
                         }
                     },
                     "6": {
-                        "question": "Heeft deze frituur veganistische snacks?",
                         "mappings": {
-                            "0": {
-                                "then": "Er zijn veganistische snacks aanwezig"
-                            },
-                            "1": {
-                                "then": "Slechts enkele veganistische snacks"
-                            },
                             "2": {
                                 "then": "Geen veganistische snacks beschikbaar"
-                            }
-                        }
-                    },
-                    "7": {
-                        "question": "Bakt deze frituur in dierlijk  vetof plantaardig olie?",
-                        "mappings": {
-                            "0": {
-                                "then": "Plantaardige olie"
-                            },
-                            "1": {
-                                "then": "Dierlijk vet"
                             }
                         }
                     },
@@ -657,60 +502,32 @@
                             }
                         }
                     }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Frituur"
-                    }
                 }
             }
         }
     },
     "boomgaarden": {
-        "title": "Open Boomgaardenkaart",
-        "shortDescription": "Boomgaarden en fruitbomen",
         "description": "Op deze kaart vindt je boomgaarden en fruitbomen",
         "layers": {
             "0": {
-                "name": "Boomgaarden",
-                "title": {
-                    "render": "Boomgaard"
-                },
                 "presets": {
                     "0": {
-                        "title": "Boomgaard",
                         "description": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)"
                     }
                 }
             },
             "1": {
-                "name": "Boom",
-                "title": {
-                    "render": "Boom"
-                },
-                "description": "Een boom",
                 "tagRenderings": {
                     "0": {
-                        "render": "De soort is {species:nl}",
-                        "question": "Wat is de soort van deze boom (in het Nederlands)?"
-                    },
-                    "1": {
-                        "render": "Het ras (taxon) van deze boom is <b>{taxon}</b>",
-                        "question": "Wat is het taxon (ras) van deze boom?"
+                        "render": "De soort is {species:nl}"
                     },
                     "2": {
-                        "render": "Beschrijving: <i>{description}</i>",
-                        "question": "Welke beschrijving past bij deze boom?"
-                    },
-                    "3": {
-                        "render": "Referentienummer: <b>{ref}</b>",
-                        "question": "Is er een refernetienummer?"
+                        "render": "Beschrijving: <i>{description}</i>"
                     }
                 },
                 "presets": {
                     "0": {
-                        "title": "Boom",
-                        "description": "Voeg hier een boom toe"
+                        "title": "Boom"
                     }
                 }
             }
@@ -721,50 +538,22 @@
         "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geinstalleerd.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account."
     },
     "grb": {
-        "title": "GRB Fixup",
-        "shortDescription": "Grb Fixup",
-        "description": "GRB Fixup",
         "layers": {
             "0": {
                 "name": "Fixmes op gebouwen",
-                "title": {
-                    "render": "{addr:street} {addr:housenumber}",
-                    "mappings": {
-                        "0": {
-                            "then": "{fixme}"
-                        }
-                    }
-                },
-                "description": "Dit gebouw heeft een foutmelding",
                 "tagRenderings": {
                     "0": {
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>",
-                        "question": "Wat is het huisnummer?",
-                        "mappings": {
-                            "0": {
-                                "then": "Geen huisnummer"
-                            }
-                        }
-                    },
-                    "1": {
-                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
                     },
                     "2": {
-                        "render": "De straat is <b>{addr:street}</b>",
-                        "question": "Wat is de straat?"
+                        "render": "De straat is <b>{addr:street}</b>"
                     },
                     "3": {
-                        "render": "De fixme is <b>{fixme}</b>",
-                        "question": "Wat zegt de fixme?",
                         "mappings": {
                             "0": {
                                 "then": "Geen fixme"
                             }
                         }
-                    },
-                    "4": {
-                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping",
-                        "question": "Hoeveel verdiepingen ontbreken?"
                     }
                 }
             }
@@ -775,19 +564,9 @@
         "shortDescription": "Een kaart met alle kaarten die OpenStreetMap kent",
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen."
     },
-    "nature": {
-        "title": "De Natuur in",
-        "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
-        "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
-    },
     "personal": {
         "title": "Persoonlijk thema",
         "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas"
-    },
-    "play_forests": {
-        "title": "Speelbossen",
-        "shortDescription": "Deze kaart toont speelbossen",
-        "description": "Een speelbos is een zone in een bos die vrij toegankelijk is voor spelende kinderen. Deze wordt  in bossen van het Agentschap Natuur en bos altijd aangeduid met het overeenkomstige bord."
     },
     "playgrounds": {
         "title": "Speelplekken",
@@ -795,82 +574,38 @@
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen"
     },
     "speelplekken": {
-        "title": "Speelplekken in de Antwerpse Zuidrand",
-        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
-        "description": "Speelplekken in de Antwerpse Zuidrand. Een project van Provincie Antwerpen, in samenwerking met Createlli, Sportpret en OpenStreetMap België",
         "layers": {
             "7": {
                 "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
-                    "0": {
-                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
-                    },
                     "1": {
                         "mappings": {
-                            "0": {
-                                "then": "Dit is een internationale wandelroute"
-                            },
-                            "1": {
-                                "then": "Dit is een nationale wandelroute"
-                            },
                             "2": {
                                 "then": "Dit is een regionale wandelroute"
-                            },
-                            "3": {
-                                "then": "Dit is een lokale wandelroute"
                             }
                         }
                     },
-                    "2": {
-                        "render": "<h3>Korte beschrijving:</h3>{description}"
-                    },
-                    "3": {
-                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
-                    },
                     "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
-                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?"
                     }
                 }
             }
         }
     },
     "speelplekken_temp": {
-        "title": "Speelplekken in de Antwerpse Zuidrand",
-        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
         "description": "Speelplekken in de Antwerpse Zuidrand. Een project van Provincie Antwerpen, in samenwerking met Createlli, Sportpret en OpenStreetMap België",
         "layers": {
             "6": {
-                "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
-                    "0": {
-                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
-                    },
                     "1": {
                         "mappings": {
-                            "0": {
-                                "then": "Dit is een internationale wandelroute"
-                            },
                             "1": {
                                 "then": "Dit is een nationale wandelroute"
-                            },
-                            "2": {
-                                "then": "Dit is een regionale wandelroute"
-                            },
-                            "3": {
-                                "then": "Dit is een lokale wandelroute"
                             }
                         }
                     },
-                    "2": {
-                        "render": "<h3>Korte beschrijving:</h3>{description}"
-                    },
                     "3": {
                         "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
-                    },
-                    "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
-                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
                     }
                 }
             }
@@ -892,21 +627,23 @@
         "description": "Breng bomen in kaart!"
     },
     "width": {
-        "title": "Straatbreedtes",
-        "shortDescription": "Is de straat breed genoeg?",
-        "description": " <h3>De straat is opgebruikt</h3>\n <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte.</p>\n <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p>\n <h3>Legende</h3>\n <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/>\n <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/>\n <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/>\n <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Woonerf, autoluw, autoloos of enkel plaatselijk verkeer<br/>\n <br/>\n <br/>\n Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/>\n Klik op een straat om meer informatie te zien.\n <h3>Hoe gaan we verder?</h3>\n Verschillende ingrepen kunnen de stad teruggeven aan de inwoners en de stad leefbaarder en levendiger maken.<br/>\n Denk aan:\n <ul>\n <li>De autovrije zone's uitbreiden</li>\n <li>De binnenstad fietszone maken</li>\n <li>Het aantal woonerven uitbreiden</li>\n <li>Grotere auto's meer belasten - ze nemen immers meer parkeerruimte in.</li>\n <li>Laat toeristen verplicht parkeren onder het zand; een (fiets)taxi kan hen naar hun hotel brengen</li>\n <li>Voorzie in elke straat enkele parkeerplaatsen voor kortparkeren. Zo kunnen leveringen, iemand afzetten,... gebeuren zonder op het voetpad en fietspad te parkeren</li>\n </ul>",
         "layers": {
             "0": {
-                "name": "Straten met een breedte",
-                "title": {
-                    "render": "{name}",
-                    "mappings": {
-                        "0": {
-                            "then": "Naamloos segmet"
-                        }
-                    }
-                }
+                "name": "Straten met een breedte"
             }
         }
+    },
+    "campersite": {
+        "title": "Campeerplaatsen"
+    },
+    "bike_monitoring_stations": {
+        "description": "Dit thema toont fietstelstations met live data",
+        "shortDescription": "Fietstelstations met live data van Brussels Mobiliteit",
+        "title": "Fietstelstations"
+    },
+    "benches": {
+        "description": "Deze kaart toont alle zitbanken die in OpenStreetMap gekend zijn: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account can je informatie verbeteren en nieuwe zitbanken in toevoegen.",
+        "shortDescription": "Een kaart met zitbanken",
+        "title": "Zitbanken"
     }
 }
