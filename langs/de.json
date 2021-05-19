@@ -1,0 +1,174 @@
+{
+  "image": {
+    "addPicture": "Bild hinzufügen",
+    "uploadingPicture": "Ihr Bild hochladen...",
+    "uploadingMultiple": "{count} Ihrer Bilder hochgeladen...",
+    "pleaseLogin": "Bitte einloggen, um ein Bild hinzuzufügen",
+    "willBePublished": "Ihr Bild wird veröffentlicht: ",
+    "cco": "in die Public Domain",
+    "ccbs": "unter der CC-BY-SA-Lizenz",
+    "ccb": "unter der CC-BY-Lizenz",
+    "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie Internet und sind API's von Dritten erlaubt? Brave Browser oder UMatrix blockieren evtl..",
+    "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder",
+    "uploadDone": "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
+    "dontDelete": "Abbrechen",
+    "doDelete": "Bild entfernen",
+    "isDeleted": "Gelöscht"
+  },
+  "centerMessage": {
+    "loadingData": "Daten werden geladen...",
+    "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
+    "ready": "Erledigt!",
+    "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch... ({count})"
+  },
+  "index": {
+    "#": "These texts are shown above the theme buttons when no theme is loaded",
+    "title": "Willkommen auf MapComplete",
+    "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu einem bestimmten Thema angezeigt und angepasst werden können.",
+    "pickTheme": "Wähle unten ein Thema, um zu starten"
+  },
+  "general": {
+    "loginWithOpenStreetMap": "Anmeldung mit OpenStreetMap",
+    "welcomeBack": "Sie sind eingeloggt, willkommen zurück!",
+    "loginToStart": "Anmelden, um diese Frage zu beantworten",
+    "search": {
+      "search": "Einen Ort suchen",
+      "searching": "Auf der Suche...",
+      "nothing": "Nichts gefunden...",
+      "error": "Etwas ging schief..."
+    },
+    "returnToTheMap": "Zurück zur Karte",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "skip": "Frage überspringen",
+    "oneSkippedQuestion": "Eine Frage wurde übersprungen",
+    "skippedQuestions": "Einige Fragen wurden übersprungen",
+    "number": "Zahl",
+    "osmLinkTooltip": "Dieses Objekt auf OpenStreetMap anschauen für die Geschichte und weitere Bearbeitungsmöglichkeiten",
+    "add": {
+      "addNew": "Hier eine neue {category} hinzufügen",
+      "title": "Punkt hinzufügen?",
+      "intro": "Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br/>",
+      "pleaseLogin": "<a class='activate-osm-authentication'>Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen</a>",
+      "zoomInFurther": "Weiter einzoomen, um einen Punkt hinzuzufügen.",
+      "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie etwas, bevor Sie einen neuen Punkt hinzufügen.",
+      "confirmIntro": "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
+      "confirmButton": "Hier eine {category} hinzufügen",
+      "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
+      "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
+    },
+    "pickLanguage": "Wählen Sie eine Sprache: ",
+    "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
+    "nameInlineQuestion": "Der Name dieser {category} ist $$$",
+    "noNameCategory": "{category} ohne Namen",
+    "questions": {
+      "phoneNumberOf": "Wie lautet die Telefonnummer der {category}?",
+      "phoneNumberIs": "Die Telefonnummer der {category} lautet <a href='tel:{phone}' target='_blank'>{phone}</a>",
+      "websiteOf": "Was ist die Website der {category}?",
+      "websiteIs": "Webseite: <a href='{website}' target='_blank'>{website}</a>",
+      "emailOf": "Wie lautet die E-Mail-Adresse der {category}?",
+      "emailIs": "Die E-Mail-Adresse dieser {category} lautet <a href='mailto:{email}' target='_blank'>{email}</a>"
+    },
+    "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Wäre es nicht toll, wenn es eine offene Karte gäbe, die von jedem angepasst und benutzt werden könnte? Eine Karte, zu der jeder seine Interessen hinzufügen kann? Dann bräuchte man all diese Websites mit unterschiedlichen, kleinen und inkompatiblen Karten (die immer veraltet sind) nicht mehr.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> ist diese offene Karte. Die Kartendaten können kostenlos verwendet werden (mit <a href='https://osm.org/copyright' target='_blank'>Attribution und Veröffentlichung von Änderungen an diesen Daten</a>). Darüber hinaus können Sie die Karte kostenlos ändern und Fehler beheben, wenn Sie ein Konto erstellen. Diese Website basiert ebenfalls auf OpenStreetMap. Wenn Sie eine Frage hier beantworten, geht die Antwort auch dorthin.</p>Viele Menschen und Anwendungen nutzen OpenStreetMap bereits: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, verschiedene spezialisierte Routenplaner, die Hintergrundkarten auf Facebook, Instagram,...<br/>Sogar Apple Maps und Bing Maps verwenden OpenStreetMap in ihren Karten!</p></p><p>Wenn Sie hier einen Punkt hinzufügen oder eine Frage beantworten, wird er nach einer Weile in all diesen Anwendungen sichtbar sein.</p>",
+    "attribution": {
+      "attributionTitle": {},
+      "attributionContent": {},
+      "themeBy": {},
+      "iconAttribution": {
+        "title": {}
+      },
+      "mapContributionsBy": {},
+      "mapContributionsByAndHidden": {}
+    },
+    "sharescreen": {
+      "intro": "<h3>Diese Karte teilen</h3> Sie können diese Karte teilen, indem Sie den untenstehenden Link kopieren und an Freunde und Familie schick",
+      "addToHomeScreen": "<h3>Zum Startbildschirm hinzufügen</h3> Sie können diese Website einfach zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der URL-Leiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
+      "embedIntro": "<h3>Auf Ihrer Website einbetten</h3>Bitte, betten Sie diese Karte in Ihre Website ein. <br/>Wir ermutigen Sie, es zu tun - Sie müssen nicht einmal um Erlaubnis fragen. <br/> Es ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
+      "copiedToClipboard": "Link in die Zwischenablage kopiert",
+      "thanksForSharing": "Danke für das Teilen!",
+      "editThisTheme": "Dieses Thema bearbeiten",
+      "editThemeDescription": "Fragen zu diesem Kartenthema hinzufügen oder ändern",
+      "fsUserbadge": "Anmelde-Knopf aktivieren",
+      "fsSearch": "Suchleiste aktivieren",
+      "fsWelcomeMessage": "Popup der Begrüßungsnachricht und zugehörige Registerkarten anzeigen",
+      "fsLayers": "Aktivieren der Layersteuerung",
+      "fsLayerControlToggle": "Mit der erweiterten Ebenenkontrolle beginnen",
+      "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
+      "fsGeolocation": "Die Schaltfläche 'Mich geolokalisieren' aktivieren (nur für Mobil)",
+      "fsIncludeCurrentBackgroundMap": "Die aktuelle Hintergrundwahl einschließen <b>{name}</b>",
+      "fsIncludeCurrentLayers": "Die aktuelle Ebenenauswahl einbeziehen",
+      "fsIncludeCurrentLocation": "Aktuelle Position einbeziehen"
+    },
+    "morescreen": {
+      "intro": "<h3>Weitere Quests</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
+      "requestATheme": "Wenn Sie einen speziell angefertigte Quest wünschen, können Sie diesen <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>hier</a> anfragen.",
+      "streetcomplete": "Eine andere, ähnliche Anwendung ist <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
+      "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu"
+    },
+    "readYourMessages": "Bitte lesen Sie alle Ihre OpenStreetMap-Nachrichten, bevor Sie einen neuen Punkt hinzufügen",
+    "fewChangesBefore": "Bitte beantworten Sie ein paar Fragen zu bestehenden Punkten, bevor Sie einen neuen Punkt hinzufügen.",
+    "goToInbox": "Posteingang öffnen",
+    "getStartedLogin": "Mit OpenStreetMap einloggen und loslegen",
+    "getStartedNewAccount": " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
+    "noTagsSelected": "Keine Tags ausgewählt",
+    "customThemeIntro": "<h3>Kundenspezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen",
+    "aboutMapcomplete": "<h3>Über MapComplete</h3><p>MapComplete ist ein OpenStreetMap-Editor, der jedem helfen soll, auf einfache Weise Informationen zu einem <b>Einzelthema hinzuzufügen.</b></p><p>Nur Merkmale, die für ein einzelnes Thema relevant sind, werden mit einigen vordefinierten Fragen gezeigt, um die Dinge <b>einfach und extrem benutzerfreundlich</b> zu halten. Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p><p>Ein weiterer wichtiger Teil von MapComplete ist jedoch, immer <b>den nächsten Schritt anzubieten</b>um mehr über OpenStreetMap zu erfahren:<ul><li>Ein iframe ohne UI-Elemente verlinkt zu einer Vollbildversion</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Wenn Sie nicht eingeloggt sind, werden Sie gebeten, sich einzuloggen</li><li>Wenn Sie eine einzige Frage beantwortet haben, dürfen Sie Punkte hinzufügen</li><li>An einem bestimmten Punkt erscheinen die tatsächlich hinzugefügten Tags, die später mit dem Wiki verlinkt werden...</li></ul></p><p>Fällt Ihnen ein Problem mit MapComplete auf? Haben Sie einen Feature-Wunsch? Wollen Sie beim Übersetzen helfen? Gehen Sie <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zum Quellcode</a> oder <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>zur Problemverfolgung</a>.</p>",
+    "backgroundMap": "Hintergrundkarte",
+    "layerSelection": {
+      "zoomInToSeeThisLayer": "Vergrößern, um diese Ebene zu sehen",
+      "title": {}
+    },
+    "weekdays": {
+      "abbreviations": {
+        "monday": "Mo",
+        "tuesday": "Di",
+        "wednesday": "Mi",
+        "thursday": "Do",
+        "friday": "Fr",
+        "saturday": "Sa",
+        "sunday": "So"
+      },
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
+    "opening_hours": {
+      "error_loading": "Fehler: Diese Öffnungszeiten können nicht angezeigt werden",
+      "open_during_ph": "An Feiertagen ist diese Einrichtung",
+      "opensAt": "von",
+      "openTill": "bis",
+      "not_all_rules_parsed": "Die Öffnungszeiten dieses Geschäfts sind abweichend. Die folgenden Regeln werden im Eingabeelement ignoriert:",
+      "closed_until": "Geschlossen bis {date}",
+      "closed_permanently": "Geschlossen auf unbestimmte Zeit",
+      "open_24_7": "Tag und Nacht geöffnet",
+      "ph_not_known": " ",
+      "ph_closed": "geschlossen",
+      "ph_open": "geöffnet"
+    }
+  },
+  "favourite": {
+    "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
+    "loginNeeded": "<h3>Anmelden</h3>Ein persönliches Layout ist nur für OpenStreetMap-Benutzer verfügbar",
+    "reload": "Daten neu laden"
+  },
+  "reviews": {
+    "title": "{count} Rezensionen",
+    "title_singular": "Eine Rezension",
+    "name_required": "Der Name des Objekts ist notwendig, um eine Bewertung erstellen zu können",
+    "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
+    "write_a_comment": "Schreibe einen Kommentar...",
+    "no_rating": "Keine Bewertung vorhanden",
+    "posting_as": "Angemeldet als",
+    "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
+    "affiliated_reviewer_warning": {},
+    "saving_review": "Speichern...",
+    "saved": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
+    "tos": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
+    "attribution": {},
+    "plz_login": "Melde dich an, um eine Rezension zu vergeben"
+  }
+}
