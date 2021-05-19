@@ -240,7 +240,6 @@
       "render": "Maakt deel uit van {_part_of_walking_routes}",
       "condition": "_part_of_walking_routes~*"
     }
-  
   ],
   "overrideAll": {
     "isShown": {

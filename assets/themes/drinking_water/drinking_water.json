@@ -17,7 +17,7 @@
   "version": "0",
   "startLat": 50.8465573,
   "defaultBackgroundId": "CartoDB.Voyager",
-  "startLon": 4.3516970,
+  "startLon": 4.351697,
   "startZoom": 16,
   "widenFactor": 0.05,
   "layers": [

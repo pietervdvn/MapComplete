@@ -29,7 +29,9 @@
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
-  "bench","bench_at_pt","picnic_table"
+    "bench",
+    "bench_at_pt",
+    "picnic_table"
   ],
   "roamingRenderings": []
 }

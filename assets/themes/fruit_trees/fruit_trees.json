@@ -28,18 +28,21 @@
         "nl": "Boomgaarden"
       },
       "minzoom": 12,
-      "source":{
-      "osmTags": {
-        "and": [
-          "landuse=orchard"
-        ]
-     } },
+      "source": {
+        "osmTags": {
+          "and": [
+            "landuse=orchard"
+          ]
+        }
+      },
       "title": {
         "render": {
           "nl": "Boomgaard"
         }
       },
-      "tagRenderings": ["images"],
+      "tagRenderings": [
+        "images"
+      ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/buurtnatuur/forest.svg"
@@ -74,12 +77,13 @@
         "nl": "Boom"
       },
       "minzoom": 12,
-      "source":{
-      "osmTags": {
-        "and": [
-          "natural=tree"
-        ]
-      }},
+      "source": {
+        "osmTags": {
+          "and": [
+            "natural=tree"
+          ]
+        }
+      },
       "title": {
         "render": {
           "nl": "Boom"

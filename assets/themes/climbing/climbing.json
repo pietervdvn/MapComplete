@@ -314,7 +314,7 @@
         {
           "#": "Difficulty",
           "render": {
-            "en": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
+            "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
             "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
             "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
           },
