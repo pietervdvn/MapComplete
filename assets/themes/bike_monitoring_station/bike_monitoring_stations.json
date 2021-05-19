@@ -1,16 +1,20 @@
 {
   "id": "bike_monitoring_stations",
   "title": {
-    "en": "Bike Monitoring stations"
+    "en": "Bike Monitoring stations",
+    "nl": "Fietstelstations"
   },
   "shortDescription": {
-    "en": "Bike monitoring stations with live data from Brussels Mobility"
+    "en": "Bike monitoring stations with live data from Brussels Mobility",
+    "nl": "Fietstelstations met live data van Brussels Mobiliteit"
   },
   "description": {
-    "en": "This theme shows bike monitoring stations with live data"
+    "en": "This theme shows bike monitoring stations with live data",
+    "nl": "Dit thema toont fietstelstations met live data"
   },
   "language": [
-    "en"
+    "en",
+    "nl"
   ],
   "hideFromOverview": true,
   "maintainer": "",

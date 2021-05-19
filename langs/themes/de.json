@@ -164,6 +164,9 @@
                     },
                     "3": {
                         "render": "Diese Route ist {climbing:length} Meter lang"
+                    },
+                    "4": {
+                        "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
                     }
                 }
             },

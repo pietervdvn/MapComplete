@@ -40,6 +40,7 @@ class TranslationPart {
             this.contents.set(translationsKey, v)
         }
     }
+
     recursiveAdd(object: any) {
 
 
@@ -78,6 +79,9 @@ class TranslationPart {
             const value = this.contents.get(key);
 
             if (typeof value === "string") {
+                if (key === "#") {
+                    continue;
+                }
                 languages.push(key)
             } else {
                 languages.push(...(value as TranslationPart).knownLanguages())
@@ -193,12 +197,10 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
     const langs = tr.knownLanguages();
     for (const lang of langs) {
-        if(lang === "#"){
+        if (lang === "#") {
             // Lets not export our comments
             continue;
         }
-        console.log("Exporting ", lang)
-
         let json = tr.toJson(lang)
         try {
             json = JSON.stringify(JSON.parse(json), null, "    ");
@@ -229,7 +231,11 @@ function MergeTranslation(source: any, target: any, language: string, context: s
             }
 
             targetV[language] = sourceV;
-            console.log("   + ", context + "." + language, "-->", sourceV)
+            let was = ""
+            if(targetV[language] !== undefined){
+                was = " (overwritten "+targetV[language]+")"
+            }
+            console.log("   + ", context + "." + language, "-->", sourceV, was)
             continue
         }
         if (typeof sourceV === "object") {
@@ -246,22 +252,17 @@ function MergeTranslation(source: any, target: any, language: string, context: s
     return target;
 }
 
-function mergeLayerTranslation(layerConfig: LayerConfigJson, path: string, translationFiles: Map<string, any>) {
+function mergeLayerTranslation(layerConfig: { id: string }, path: string, translationFiles: Map<string, any>) {
     const id = layerConfig.id;
     translationFiles.forEach((translations, lang) => {
         const translationsForLayer = translations[id]
         MergeTranslation(translationsForLayer, layerConfig, lang, id)
     })
-    writeFileSync(path, JSON.stringify(layerConfig, null, "  "))
+
 }
 
-/**
- * Load the translations back into the layers
- */
-function mergeLayerTranslations() {
-
-
-    const translationFilePaths = ScriptUtils.readDirRecSync("./langs/layers")
+function loadTranslationFilesFrom(target: string): Map<string, any> {
+    const translationFilePaths = ScriptUtils.readDirRecSync("./langs/" + target)
         .filter(path => path.endsWith(".json"))
 
     const translationFiles = new Map<string, any>();
@@ -270,14 +271,43 @@ function mergeLayerTranslations() {
         language = language.substr(0, language.length - 5)
         translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
     }
+    return translationFiles;
+}
+
+/**
+ * Load the translations back into the layers
+ */
+function mergeLayerTranslations() {
 
     const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
-        mergeLayerTranslation(layerFile.parsed, layerFile.path, translationFiles)
+        mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  "))
     }
 }
 
+function mergeThemeTranslations() {
+    const themeFiles = ScriptUtils.getThemeFiles();
+    for (const themeFile of themeFiles) {
+        const config = themeFile.parsed;
+        mergeLayerTranslation(config, themeFile.path, loadTranslationFilesFrom("themes"))
+
+        const oldLanguages = config.language;
+        const allTranslations = new TranslationPart();
+        allTranslations.recursiveAdd(config)
+        const newLanguages = allTranslations.knownLanguages()
+        const languageDiff = newLanguages.filter(l => oldLanguages.indexOf(l) < 0).join(", ")
+        if (languageDiff !== "") {
+            config.language = newLanguages;
+            console.log(" :hooray: Got a new language for theme", config.id, ":", languageDiff)
+        }
+        writeFileSync(themeFile.path, JSON.stringify(config, null, "  "))
+    }
+}
+
+
 mergeLayerTranslations();
+mergeThemeTranslations();
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
 generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
 
