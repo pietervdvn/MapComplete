@@ -408,15 +408,14 @@
         "type": "opening_hours"
       },
       "mappings": [
-            {
-              "if": "opening_hours=24/7",
-              "then": 
-              {
-                "en": "24/7 opened (including holidays)",
-                "nl": "24/7 open (inclusief feestdagen)"
-              }
-            }
-          ]
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "nl": "24/7 open (inclusief feestdagen)"
+          }
+        }
+      ]
     },
     {
       "render": {

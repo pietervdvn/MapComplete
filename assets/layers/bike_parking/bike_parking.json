@@ -16,7 +16,7 @@
     }
   },
   "icon": {
-    "render":  "./assets/layers/bike_parking/parking.svg"
+    "render": "./assets/layers/bike_parking/parking.svg"
   },
   "iconSize": "40,40,bottom",
   "color": "#00f",

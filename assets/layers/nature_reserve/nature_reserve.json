@@ -338,10 +338,14 @@
         "en": "Surface area: {_surface:ha}Ha",
         "nl": "Totale oppervlakte: {_surface:ha}Ha"
       },
-      "mappings":[ {
+      "mappings": [
+        {
           "if": "_surface:ha=0",
-          "then": {"*":""}
-        }]
+          "then": {
+            "*": ""
+          }
+        }
+      ]
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 10,
@@ -373,4 +377,3 @@
     }
   ]
 }
-   

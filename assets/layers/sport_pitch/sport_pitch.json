@@ -367,7 +367,7 @@
         ]
       },
       "then": "circle:white;./assets/layers/sport_pitch/lock.svg",
-      "badge":true
+      "badge": true
     }
   ],
   "width": {
@@ -378,7 +378,10 @@
     "mappings": [
       {
         "if": {
-         "or": ["_size_classification=medium","id~node/.*"]
+          "or": [
+            "_size_classification=medium",
+            "id~node/.*"
+          ]
         },
         "then": "40,40,center"
       },
@@ -386,7 +389,6 @@
         "if": "_size_classification=small",
         "then": "25,25,center"
       },
-      
       {
         "if": "_size_classification=large",
         "then": "50,50,center"

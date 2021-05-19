@@ -4,9 +4,10 @@
     "en": "Bicycle library",
     "nl": "Fietsbibliotheek"
   },
-  "minzoom": 8  ,
+  "minzoom": 8,
   "source": {
-    "osmTags": "amenity=bicycle_library"},
+    "osmTags": "amenity=bicycle_library"
+  },
   "title": {
     "render": {
       "en": "Bicycle library",
@@ -59,18 +60,23 @@
         "en": "How much does lending a bicycle cost?",
         "nl": "Hoeveel kost het huren van een fiets?"
       },
-      "render":{
+      "render": {
         "en": "Lending a bicycle costs {charge}",
         "nl": "Een fiets huren kost {charge}"
       },
       "freeform": {
         "key": "charge",
-        "addExtraTags": ["fee=yes"]
+        "addExtraTags": [
+          "fee=yes"
+        ]
       },
       "mappings": [
         {
           "if": {
-            "and": ["fee=no","charge="]
+            "and": [
+              "fee=no",
+              "charge="
+            ]
           },
           "then": {
             "en": "Lending a bicycle is free",
@@ -79,7 +85,10 @@
         },
         {
           "if": {
-            "and": ["fee=yes","charge=€20warranty + €20/year"]
+            "and": [
+              "fee=yes",
+              "charge=€20warranty + €20/year"
+            ]
           },
           "then": {
             "en": "Lending a bicycle costs €20/year and €20 warranty",
