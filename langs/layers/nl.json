@@ -138,7 +138,8 @@
                     "then": "Fietstelstation {ref}"
                 }
             }
-        }
+        },
+        "name": "Telstation"
     },
     "bike_parking": {
         "name": "Fietsparking",
@@ -1728,5 +1729,254 @@
                 }
             }
         }
+    },
+    "toilet": {
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "3": {
+                        "then": "De luiertafel bevindt zich in een daartoe voorziene kamer "
+                    },
+                    "2": {
+                        "then": "De luiertafel bevindt zich in de rolstoeltoegankelijke toilet "
+                    },
+                    "1": {
+                        "then": "De luiertafel bevindt zich in de herentoiletten "
+                    },
+                    "0": {
+                        "then": "De luiertafel bevindt zich in de vrouwentoiletten "
+                    }
+                },
+                "render": "De luiertafel bevindt zich in {changing_table:location}",
+                "question": "Waar bevindt de luiertafel zich?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "Geen luiertafel"
+                    },
+                    "0": {
+                        "then": "Er is een luiertafel"
+                    }
+                },
+                "question": "Is er een luiertafel beschikbaar?"
+            },
+            "5": {
+                "mappings": {
+                    "3": {
+                        "then": "Er zijn zowel urinoirs als zittoiletten"
+                    },
+                    "2": {
+                        "then": "Er zijn enkel hurktoiletten"
+                    },
+                    "1": {
+                        "then": "Er zijn enkel urinoirs"
+                    },
+                    "0": {
+                        "then": "Er zijn enkel WC's om op te zitten"
+                    }
+                },
+                "question": "Welke toiletten zijn dit?"
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": "Niet toegankelijk voor rolstoelgebruikers"
+                    },
+                    "0": {
+                        "then": "Er is een toilet voor rolstoelgebruikers"
+                    }
+                },
+                "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
+            },
+            "3": {
+                "render": "De toiletten gebruiken kost {charge}",
+                "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?"
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "0": {
+                        "then": "Men moet betalen om deze toiletten te gebruiken"
+                    }
+                },
+                "question": "Zijn deze toiletten gratis te gebruiken?"
+            },
+            "1": {
+                "mappings": {
+                    "3": {
+                        "then": "Toegankelijk na het vragen van de sleutel"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "1": {
+                        "then": "Enkel toegang voor klanten"
+                    },
+                    "0": {
+                        "then": "Publiek toegankelijk"
+                    }
+                },
+                "render": "Toegankelijkheid is {access}",
+                "question": "Zijn deze toiletten publiek toegankelijk?"
+            }
+        },
+        "presets": {
+            "1": {
+                "description": "Deze toiletten hebben op zijn minst één rolstoeltoegankelijke WC",
+                "title": "Een rolstoeltoegankelijke toilet"
+            },
+            "0": {
+                "description": "Een publieke toilet",
+                "title": "Toilet"
+            }
+        },
+        "title": {
+            "render": "Toilet"
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": "Deze verkoopsautomaat is uitgeschakeld"
+                    },
+                    "1": {
+                        "then": "Deze verkoopsautomaat is kapot"
+                    },
+                    "0": {
+                        "then": "Deze verkoopsautomaat werkt"
+                    }
+                },
+                "render": "Deze verkoopsautomaat is <i>{operational_status}</i>",
+                "question": "Is deze verkoopsautomaat nog steeds werkende?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Fietsbanden-verkoopsautomaat"
+            }
+        },
+        "title": {
+            "render": "Fietsbanden-verkoopsautomaat"
+        },
+        "name": "Fietsbanden-verkoopsautomaat"
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "2": {
+                "render": "Leunbank"
+            },
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Zitbank in een schuilhokje"
+                },
+                "0": {
+                    "then": "Zitbank aan een bushalte"
+                }
+            },
+            "render": "Zitbank"
+        },
+        "name": "Zitbanken aan bushaltes"
+    },
+    "bench": {
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe zitbank toe",
+                "title": "Zitbank"
+            }
+        },
+        "tagRenderings": {
+            "6": {
+                "render": "Deze bank is laatst gesurveyd op {survey:date}",
+                "question": "Wanneer is deze laatste bank laatst gesurveyed?"
+            },
+            "5": {
+                "mappings": {
+                    "7": {
+                        "then": "De kleur is geel"
+                    },
+                    "6": {
+                        "then": "De kleur is blauw"
+                    },
+                    "5": {
+                        "then": "De kleur is zwart"
+                    },
+                    "4": {
+                        "then": "De kleur is rood"
+                    },
+                    "3": {
+                        "then": "De kleur is wit"
+                    },
+                    "2": {
+                        "then": "De kleur is grijs"
+                    },
+                    "1": {
+                        "then": "De kleur is groen"
+                    },
+                    "0": {
+                        "then": "De kleur is bruin"
+                    }
+                },
+                "question": "Welke kleur heeft deze zitbank?",
+                "render": "Kleur: {colour}"
+            },
+            "4": {
+                "render": "Wanneer je op deze bank zit, dan kijk je in {direction}°.",
+                "question": "In welke richting kijk je wanneer je op deze zitbank zit?"
+            },
+            "3": {
+                "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
+                "mappings": {
+                    "5": {
+                        "then": "Gemaakt uit staal"
+                    },
+                    "4": {
+                        "then": "Gemaakt uit plastiek"
+                    },
+                    "3": {
+                        "then": "Gemaakt uit beton"
+                    },
+                    "2": {
+                        "then": "Gemaakt uit steen"
+                    },
+                    "1": {
+                        "then": "Gemaakt uit metaal"
+                    },
+                    "0": {
+                        "then": "Gemaakt uit hout"
+                    }
+                },
+                "render": "Gemaakt van {material}"
+            },
+            "2": {
+                "question": "Hoeveel zitplaatsen heeft deze bank?",
+                "render": "{seats} zitplaatsen"
+            },
+            "1": {
+                "question": "Heeft deze zitbank een rugleuning?",
+                "mappings": {
+                    "1": {
+                        "then": "Rugleuning ontbreekt"
+                    },
+                    "0": {
+                        "then": "Heeft een rugleuning"
+                    }
+                },
+                "render": "Rugleuning"
+            }
+        },
+        "title": {
+            "render": "Zitbank"
+        },
+        "name": "Zitbanken"
     }
 }
