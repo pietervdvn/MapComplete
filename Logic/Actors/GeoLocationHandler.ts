@@ -175,8 +175,7 @@ export default class GeoLocationHandler extends UIElement {
                 });
 
         } catch (e) {
-            console.log(e)
-            self.StartGeolocating()
+            console.error(e)
         }
         if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
