@@ -1,0 +1,1785 @@
+{
+    "bench": {
+        "name": "Benches",
+        "title": {
+            "render": "Bench"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Backrest",
+                "mappings": {
+                    "0": {
+                        "then": "Backrest: Yes"
+                    },
+                    "1": {
+                        "then": "Backrest: No"
+                    }
+                },
+                "question": "Does this bench have a backrest?"
+            },
+            "2": {
+                "render": "{seats} seats",
+                "question": "How many seats does this bench have?"
+            },
+            "3": {
+                "render": "Material: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Material: wood"
+                    },
+                    "1": {
+                        "then": "Material: metal"
+                    },
+                    "2": {
+                        "then": "Material: stone"
+                    },
+                    "3": {
+                        "then": "Material: concrete"
+                    },
+                    "4": {
+                        "then": "Material: plastic"
+                    },
+                    "5": {
+                        "then": "Material: steel"
+                    }
+                },
+                "question": "What is the bench (seating) made from?"
+            },
+            "4": {
+                "question": "In which direction are you looking when sitting on the bench?",
+                "render": "When sitting on the bench, one looks towards {direction}°."
+            },
+            "5": {
+                "render": "Colour: {colour}",
+                "question": "Which colour does this bench have?",
+                "mappings": {
+                    "0": {
+                        "then": "Colour: brown"
+                    },
+                    "1": {
+                        "then": "Colour: green"
+                    },
+                    "2": {
+                        "then": "Colour: gray"
+                    },
+                    "3": {
+                        "then": "Colour: white"
+                    },
+                    "4": {
+                        "then": "Colour: red"
+                    },
+                    "5": {
+                        "then": "Colour: black"
+                    },
+                    "6": {
+                        "then": "Colour: blue"
+                    },
+                    "7": {
+                        "then": "Colour: yellow"
+                    }
+                }
+            },
+            "6": {
+                "question": "When was this bench last surveyed?",
+                "render": "This bench was last surveyed on {survey:date}"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Bench",
+                "description": "Add a new bench"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "name": "Benches at public transport stops",
+        "title": {
+            "render": "Bench",
+            "mappings": {
+                "0": {
+                    "then": "Bench at public transport stop"
+                },
+                "1": {
+                    "then": "Bench in shelter"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            },
+            "2": {
+                "render": "Stand up bench"
+            }
+        }
+    },
+    "bicycle_library": {
+        "name": "Bicycle library",
+        "title": {
+            "render": "Bicycle library"
+        },
+        "description": "A facility where bicycles can be lent for longer period of times",
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this bicycle library?",
+                "render": "This bicycle library is called {name}"
+            },
+            "6": {
+                "question": "How much does lending a bicycle cost?",
+                "render": "Lending a bicycle costs {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "Lending a bicycle is free"
+                    },
+                    "1": {
+                        "then": "Lending a bicycle costs €20/year and €20 warranty"
+                    }
+                }
+            },
+            "7": {
+                "question": "Who can lend bicycles here?",
+                "mappings": {
+                    "0": {
+                        "then": "Bikes for children available"
+                    },
+                    "1": {
+                        "then": "Bikes for adult available"
+                    },
+                    "2": {
+                        "then": "Bikes for disabled persons available"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Fietsbibliotheek",
+                "description": "A bicycle library has a collection of bikes which can be lent"
+            }
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "name": "Bicycle tube vending machine",
+        "title": {
+            "render": "Bicycle tube vending machine"
+        },
+        "presets": {
+            "0": {
+                "title": "Bicycle tube vending machine"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Is this vending machine still operational?",
+                "render": "The operational status is <i>{operational_status</i>",
+                "mappings": {
+                    "0": {
+                        "then": "This vending machine works"
+                    },
+                    "1": {
+                        "then": "This vending machine is broken"
+                    },
+                    "2": {
+                        "then": "This vending machine is closed"
+                    }
+                }
+            }
+        }
+    },
+    "bike_cafe": {
+        "name": "Bike cafe",
+        "title": {
+            "render": "Bike cafe",
+            "mappings": {
+                "0": {
+                    "then": "Bike cafe <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What is the name of this bike cafe?",
+                "render": "This bike cafe is called {name}"
+            },
+            "2": {
+                "question": "Does this bike cafe offer a bike pump for use by anyone?",
+                "mappings": {
+                    "0": {
+                        "then": "This bike cafe offers a bike pump for anyone"
+                    },
+                    "1": {
+                        "then": "This bike cafe doesn't offer a bike pump for anyone"
+                    }
+                }
+            },
+            "3": {
+                "question": "Are there tools here to repair your own bike?",
+                "mappings": {
+                    "0": {
+                        "then": "This bike cafe offers tools for DIY repair"
+                    },
+                    "1": {
+                        "then": "This bike cafe doesn't offer tools for DIY repair"
+                    }
+                }
+            },
+            "4": {
+                "question": "Does this bike cafe repair bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This bike cafe repairs bikes"
+                    },
+                    "1": {
+                        "then": "This bike cafe doesn't repair bikes"
+                    }
+                }
+            },
+            "5": {
+                "question": "What is the website of {name}?"
+            },
+            "6": {
+                "question": "What is the phone number of {name}?"
+            },
+            "7": {
+                "question": "What is the email address of {name}?"
+            },
+            "8": {
+                "question": "When it this bike café opened?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Bike cafe"
+            }
+        }
+    },
+    "bike_cleaning": {
+        "name": "Bike cleaning service",
+        "title": {
+            "render": "Bike cleaning service",
+            "mappings": {
+                "0": {
+                    "then": "Bike cleaning service <i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Bike cleaning service"
+            }
+        }
+    },
+    "bike_monitoring_station": {
+        "name": "Monitoring stations",
+        "title": {
+            "render": "Bicycle counting station",
+            "mappings": {
+                "0": {
+                    "then": "Bicycle counting station {name}"
+                },
+                "1": {
+                    "then": "Bicycle counting station {ref}"
+                }
+            }
+        }
+    },
+    "bike_parking": {
+        "name": "Bike parking",
+        "icon": {
+            "render": "./assets/layers/bike_parking/parking.svg"
+        },
+        "presets": {
+            "0": {
+                "title": "Bike parking"
+            }
+        },
+        "title": {
+            "render": "Bike parking"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What is the type of this bicycle parking?",
+                "render": "This is a bicycle parking of the type: {bicycle_parking}",
+                "mappings": {
+                    "0": {
+                        "then": "Staple racks <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                    },
+                    "1": {
+                        "then": "Wheel rack/loops <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                    },
+                    "2": {
+                        "then": "Handlebar holder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                    },
+                    "3": {
+                        "then": "Rack <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                    },
+                    "4": {
+                        "then": "Two-tiered <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                    },
+                    "5": {
+                        "then": "Shed <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    },
+                    "6": {
+                        "then": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                    },
+                    "7": {
+                        "then": "An area on the floor which is  marked for bicycle parking"
+                    }
+                }
+            },
+            "2": {
+                "question": "What is the relative location of this bicycle parking?",
+                "mappings": {
+                    "0": {
+                        "then": "Underground parking"
+                    },
+                    "1": {
+                        "then": "Underground parking"
+                    },
+                    "2": {
+                        "then": "Surface level parking"
+                    },
+                    "3": {
+                        "then": "Surface level parking"
+                    },
+                    "4": {
+                        "then": "Rooftop parking"
+                    }
+                }
+            },
+            "3": {
+                "question": "Is this parking covered? Also select \"covered\" for indoor parkings.",
+                "mappings": {
+                    "0": {
+                        "then": "This parking is covered (it has a roof)"
+                    },
+                    "1": {
+                        "then": "This parking is not covered"
+                    }
+                }
+            },
+            "4": {
+                "question": "How many bicycles fit in this bicycle parking (including possible cargo bicycles)?",
+                "render": "Place for {capacity} bikes"
+            },
+            "5": {
+                "question": "Who can use this bicycle parking?",
+                "render": "{access}",
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Access is primarily for visitors to a business"
+                    },
+                    "2": {
+                        "then": "Access is limited to members of a school, company or organisation"
+                    }
+                }
+            },
+            "6": {
+                "question": "Does this bicycle parking have spots for cargo bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This parking has room for cargo bikes"
+                    },
+                    "1": {
+                        "then": "This parking has designated (official) spots for cargo bikes."
+                    },
+                    "2": {
+                        "then": "You're not allowed to park cargo bikes"
+                    }
+                }
+            },
+            "7": {
+                "question": "How many cargo bicycles fit in this bicycle parking?",
+                "render": "This parking fits {capacity:cargo_bike} cargo bikes"
+            }
+        }
+    },
+    "bike_repair_station": {
+        "name": "Bike stations (repair, pump or both)",
+        "title": {
+            "render": "Bike station (pump & repair)",
+            "mappings": {
+                "0": {
+                    "then": "Bike repair station"
+                },
+                "1": {
+                    "then": "Bike repair station"
+                },
+                "2": {
+                    "then": "Broken pump"
+                },
+                "3": {
+                    "then": "Bicycle pump <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bicycle pump"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Which services are available at this bike station?",
+                "mappings": {
+                    "0": {
+                        "then": "There is only a pump present"
+                    },
+                    "1": {
+                        "then": "There are only tools (screwdrivers, pliers...) present"
+                    },
+                    "2": {
+                        "then": "There are both tools and a pump present"
+                    }
+                }
+            },
+            "2": {
+                "question": "Who maintains this cycle pump?",
+                "render": "Maintained by {operator}"
+            },
+            "3": {
+                "question": "When is this bicycle repair point open?",
+                "mappings": {
+                    "0": {
+                        "then": "Always open"
+                    },
+                    "1": {
+                        "then": "Always open"
+                    }
+                }
+            },
+            "4": {
+                "question": "Does this bike repair station have a special tool to repair your bike chain?",
+                "mappings": {
+                    "0": {
+                        "then": "There is a chain tool"
+                    },
+                    "1": {
+                        "then": "There is no chain tool"
+                    }
+                }
+            },
+            "5": {
+                "question": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
+                "mappings": {
+                    "0": {
+                        "then": "There is a hook or stand"
+                    },
+                    "1": {
+                        "then": "There is no hook or stand"
+                    }
+                }
+            },
+            "6": {
+                "question": "Is the bike pump still operational?",
+                "mappings": {
+                    "0": {
+                        "then": "The bike pump is broken"
+                    },
+                    "1": {
+                        "then": "The bike pump is operational"
+                    }
+                }
+            },
+            "7": {
+                "question": "What valves are supported?",
+                "render": "This pump supports the following valves: {valves}",
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand (also known as Presta)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (cars)"
+                    }
+                }
+            },
+            "8": {
+                "question": "Is this an electric bike pump?",
+                "mappings": {
+                    "0": {
+                        "then": "Manual pump"
+                    },
+                    "1": {
+                        "then": "Electrical pump"
+                    }
+                }
+            },
+            "9": {
+                "question": "Does the pump have a pressure indicator or manometer?",
+                "mappings": {
+                    "0": {
+                        "then": "There is a manometer"
+                    },
+                    "1": {
+                        "then": "There is no manometer"
+                    },
+                    "2": {
+                        "then": "There is manometer but it is broken"
+                    }
+                }
+            }
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        },
+        "iconSize": {
+            "render": "50,50,bottom"
+        },
+        "color": {
+            "render": "#00f"
+        },
+        "width": {
+            "render": "1"
+        },
+        "presets": {
+            "0": {
+                "title": "Bike pump",
+                "description": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
+            },
+            "1": {
+                "title": "Bike repair station and pump",
+                "description": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
+            },
+            "2": {
+                "title": "Bike repair station without pump"
+            }
+        }
+    },
+    "bike_shop": {
+        "name": "Bike repair/shop",
+        "title": {
+            "render": "Bike repair/shop",
+            "mappings": {
+                "0": {
+                    "then": "Sport gear shop <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Bicycle rental <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Bike repair <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Bike shop <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Bike repair/shop <i>{name}</i>"
+                }
+            }
+        },
+        "description": "A shop specifically selling bicycles or related items",
+        "tagRenderings": {
+            "1": {
+                "render": "This shop is specialized in selling {shop} and does bicycle related activities"
+            },
+            "2": {
+                "question": "What is the name of this bicycle shop?",
+                "render": "This bicycle shop is called {name}"
+            },
+            "3": {
+                "question": "What is the website of {name}?"
+            },
+            "4": {
+                "question": "What is the phone number of {name}?"
+            },
+            "5": {
+                "question": "What is the email address of {name}?"
+            },
+            "9": {
+                "question": "Does this shop sell bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell bikes"
+                    }
+                }
+            },
+            "10": {
+                "question": "Does this shop repair bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop repairs bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't repair bikes"
+                    },
+                    "2": {
+                        "then": "This shop only repairs bikes bought here"
+                    },
+                    "3": {
+                        "then": "This shop only repairs bikes of a certain brand"
+                    }
+                }
+            },
+            "11": {
+                "question": "Does this shop rent out bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop rents out bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't rent out bikes"
+                    }
+                }
+            },
+            "12": {
+                "question": "Does this shop sell second-hand bikes?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop sells second-hand bikes"
+                    },
+                    "1": {
+                        "then": "This shop doesn't sell second-hand bikes"
+                    },
+                    "2": {
+                        "then": "This shop only sells second-hand bikes"
+                    }
+                }
+            },
+            "13": {
+                "question": "Does this shop offer a bike pump for use by anyone?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers a bike pump for anyone"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer a bike pump for anyone"
+                    },
+                    "2": {
+                        "then": "There is bicycle pump, it is shown as a seperate point "
+                    }
+                }
+            },
+            "14": {
+                "question": "Are there tools here to repair your own bike?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers tools for DIY repair"
+                    },
+                    "1": {
+                        "then": "This shop doesn't offer tools for DIY repair"
+                    },
+                    "2": {
+                        "then": "Tools for DIY repair are only available if you bought/hire the bike in the shop"
+                    }
+                }
+            },
+            "15": {
+                "question": "Are bicycles washed here?",
+                "mappings": {
+                    "0": {
+                        "then": "This shop cleans bicycles"
+                    },
+                    "1": {
+                        "then": "This shop has an installation where one can clean bicycles themselves"
+                    },
+                    "2": {
+                        "then": "This shop doesn't offer bicycle cleaning"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Bike repair/shop"
+            }
+        }
+    },
+    "bike_themed_object": {
+        "name": "Bike related object",
+        "title": {
+            "render": "Bike related object",
+            "mappings": {
+                "1": {
+                    "then": "Cycle track"
+                }
+            }
+        }
+    },
+    "defibrillator": {
+        "name": "Defibrillators",
+        "title": {
+            "render": "Defibrillator"
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Defibrillator"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Is this defibrillator located indoors?",
+                "mappings": {
+                    "0": {
+                        "then": "This defibrillator is located indoors"
+                    },
+                    "1": {
+                        "then": "This defibrillator is located outdoors"
+                    }
+                }
+            },
+            "2": {
+                "question": "Is this defibrillator freely accessible?",
+                "render": "Access is {access}",
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Publicly accessible"
+                    },
+                    "2": {
+                        "then": "Only accessible to customers"
+                    },
+                    "3": {
+                        "then": "Not accessible to the general public (e.g. only accesible to staff, the owners, ...)"
+                    },
+                    "4": {
+                        "then": "Not accessible, possibly only for professional use"
+                    }
+                }
+            },
+            "3": {
+                "render": "There is no info about the type of device",
+                "question": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
+                "mappings": {
+                    "0": {
+                        "then": "This is a manual defibrillator for professionals"
+                    },
+                    "1": {
+                        "then": "This is a normal automatic defibrillator"
+                    }
+                }
+            },
+            "4": {
+                "question": "On which floor is this defibrillator located?",
+                "render": "This defibrillator is on floor {level}",
+                "mappings": {
+                    "0": {
+                        "then": "This defibrillator is on the <b>ground floor</b>"
+                    },
+                    "1": {
+                        "then": "This defibrillator is on the <b>first floor</b>"
+                    }
+                }
+            },
+            "5": {
+                "render": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}",
+                "question": "Please give some explanation on where the defibrillator can be found (in the local language)"
+            },
+            "6": {
+                "render": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}",
+                "question": "Please give some explanation on where the defibrillator can be found (in English)"
+            },
+            "7": {
+                "render": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
+                "question": "Please give some explanation on where the defibrillator can be found (in French)"
+            },
+            "8": {
+                "question": "Is this defibrillator accessible with a wheelchair?",
+                "mappings": {
+                    "0": {
+                        "then": "This defibrillator is specially adapated for wheelchair users"
+                    },
+                    "1": {
+                        "then": "This defibrillator is easily reachable with a wheelchair"
+                    },
+                    "2": {
+                        "then": "It is possible to reach the defibrillator in a wheelchair, but it is not easy"
+                    },
+                    "3": {
+                        "then": "This defibrillator is not reachable with a wheelchair"
+                    }
+                }
+            },
+            "9": {
+                "render": "Official identification number of the device: <i>{ref}</i>",
+                "question": "What is the official identification number of the device? (if visible on device)"
+            },
+            "10": {
+                "render": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
+                "question": "What is the email for questions about this defibrillator?"
+            },
+            "11": {
+                "render": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
+                "question": "What is the phone number for questions about this defibrillator?"
+            },
+            "12": {
+                "render": "{opening_hours_table(opening_hours)}",
+                "question": "At what times is this defibrillator available?",
+                "mappings": {
+                    "0": {
+                        "then": "24/7 opened (including holidays)"
+                    }
+                }
+            },
+            "13": {
+                "render": "Additional information: {description}",
+                "question": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)"
+            },
+            "14": {
+                "question": "When was this defibrillator last surveyed?",
+                "render": "This defibrillator was last surveyed on {survey:date}",
+                "mappings": {
+                    "0": {
+                        "then": "Checked today!"
+                    }
+                }
+            },
+            "15": {
+                "render": "Extra information for OpenStreetMap experts: {fixme}",
+                "question": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)"
+            }
+        }
+    },
+    "direction": {
+        "name": "Direction visualization",
+        "description": "This layer visualizes directions"
+    },
+    "drinking_water": {
+        "name": "Drinking water",
+        "title": {
+            "render": "Drinking water"
+        },
+        "presets": {
+            "0": {
+                "title": "Drinking water"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Is this drinking water spot still operational?",
+                "render": "The operational status is <i>{operational_status</i>",
+                "mappings": {
+                    "0": {
+                        "then": "This drinking water works"
+                    },
+                    "1": {
+                        "then": "This drinking water is broken"
+                    },
+                    "2": {
+                        "then": "This drinking water is closed"
+                    }
+                }
+            },
+            "2": {
+                "question": "How easy is it to fill water bottles?",
+                "mappings": {
+                    "0": {
+                        "then": "It is easy to refill water bottles"
+                    },
+                    "1": {
+                        "then": "Water bottles may not fit"
+                    }
+                }
+            },
+            "3": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>"
+            }
+        }
+    },
+    "ghost_bike": {
+        "name": "Ghost bikes",
+        "title": {
+            "render": "Ghost bike",
+            "mappings": {
+                "0": {
+                    "then": "Ghost bike in the remembrance of {name}"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Ghost bike"
+            }
+        },
+        "tagRenderings": {
+            "0": {
+                "render": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location."
+            },
+            "2": {
+                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+                "render": "In remembrance of {name}",
+                "mappings": {
+                    "0": {
+                        "then": "No name is marked on the bike"
+                    }
+                }
+            },
+            "3": {
+                "question": "On what webpage can one find more information about the Ghost bike or the accident?",
+                "render": "<a href='{source}' target='_blank'>More information is available</a>"
+            },
+            "4": {
+                "question": "What is the inscription on this Ghost bike?",
+                "render": "<i>{inscription}</i>"
+            },
+            "5": {
+                "question": "When was this Ghost bike installed?",
+                "render": "Placed on {start_date}"
+            }
+        }
+    },
+    "information_board": {
+        "name": "Information boards",
+        "title": {
+            "render": "Information board"
+        },
+        "presets": {
+            "0": {
+                "title": "Information board"
+            }
+        }
+    },
+    "map": {
+        "name": "Maps",
+        "title": {
+            "render": "Map"
+        },
+        "description": "A map, meant for tourists which is permanently installed in the public space",
+        "tagRenderings": {
+            "1": {
+                "question": "On which data is this map based?",
+                "mappings": {
+                    "0": {
+                        "then": "This map is based on OpenStreetMap"
+                    }
+                },
+                "render": "This map is based on {map_source}"
+            },
+            "2": {
+                "question": "Is the OpenStreetMap-attribution given?",
+                "mappings": {
+                    "0": {
+                        "then": "OpenStreetMap is clearly attributed, including the ODBL-license"
+                    },
+                    "1": {
+                        "then": "OpenStreetMap is clearly attributed, but the license is not mentioned"
+                    },
+                    "2": {
+                        "then": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it"
+                    },
+                    "3": {
+                        "then": "There is no attribution at all"
+                    },
+                    "4": {
+                        "then": "There is no attribution at all"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Map",
+                "description": "Add a missing map"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "5": {
+                "question": "Are dogs allowed in this nature reserve?",
+                "mappings": {
+                    "0": {
+                        "then": "Dogs have to be leashed"
+                    },
+                    "1": {
+                        "then": "No dogs allowed"
+                    },
+                    "2": {
+                        "then": "Dogs are allowed to roam freely"
+                    }
+                }
+            },
+            "6": {
+                "question": "On which webpage can one find more information about this nature reserve?"
+            },
+            "7": {
+                "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
+                "render": "{curator} is the curator of this nature reserve"
+            },
+            "8": {
+                "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "12": {
+                "render": "Surface area: {_surface:ha}Ha"
+            }
+        }
+    },
+    "picnic_table": {
+        "name": "Picnic tables",
+        "title": {
+            "render": "Picnic table"
+        },
+        "description": "The layer showing picnic tables",
+        "tagRenderings": {
+            "0": {
+                "question": "What material is this picnic table made of?",
+                "render": "This picnic table is made of {material}",
+                "mappings": {
+                    "0": {
+                        "then": "This is a wooden picnic table"
+                    },
+                    "1": {
+                        "then": "This is a concrete picnic table"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Picnic table"
+            }
+        }
+    },
+    "playground": {
+        "name": "Playgrounds",
+        "description": "Playgrounds",
+        "title": {
+            "render": "Playground",
+            "mappings": {
+                "0": {
+                    "then": "Playground <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
+                "render": "The surface is <b>{surface}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "The surface is <b>grass</b>"
+                    },
+                    "1": {
+                        "then": "The surface is <b>sand</b>"
+                    },
+                    "2": {
+                        "then": "The surface consist of <b>woodchips</b>"
+                    },
+                    "3": {
+                        "then": "The surface is <b>paving stones</b>"
+                    },
+                    "4": {
+                        "then": "The surface is <b>asphalt</b>"
+                    },
+                    "5": {
+                        "then": "The surface is <b>concrete</b>"
+                    },
+                    "6": {
+                        "then": "The surface is <b>unpaved</b>"
+                    },
+                    "7": {
+                        "then": "The surface is <b>paved</b>"
+                    }
+                }
+            },
+            "2": {
+                "question": "Is this playground lit at night?",
+                "mappings": {
+                    "0": {
+                        "then": "This playground is lit at night"
+                    },
+                    "1": {
+                        "then": "This playground is not lit at night"
+                    }
+                }
+            },
+            "3": {
+                "render": "Accessible to kids older then {min_age} years",
+                "question": "What is the minimum age required to access this playground?"
+            },
+            "4": {
+                "render": "Accessible to kids of at most {max_age}",
+                "question": "What is the maximum age allowed to access this playground?"
+            },
+            "5": {
+                "question": "Who operates this playground?",
+                "render": "Operated by {operator}"
+            },
+            "6": {
+                "question": "Is this playground accessible to the general public?",
+                "mappings": {
+                    "0": {
+                        "then": "Accessible to the general public"
+                    },
+                    "1": {
+                        "then": "Accessible to the general public"
+                    },
+                    "2": {
+                        "then": "Only accessible for clients of the operating business"
+                    },
+                    "3": {
+                        "then": "Only accessible to studants of the school"
+                    },
+                    "4": {
+                        "then": "Not accessible"
+                    }
+                }
+            },
+            "7": {
+                "question": "What is the email address of the playground maintainer?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "8": {
+                "question": "What is the phone number of the playground maintainer?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "9": {
+                "question": "Is this playground accessible to wheelchair users?",
+                "mappings": {
+                    "0": {
+                        "then": "Completely accessible for wheelchair users"
+                    },
+                    "1": {
+                        "then": "Limited accessibility for wheelchair users"
+                    },
+                    "2": {
+                        "then": "Not accessible for wheelchair users"
+                    }
+                }
+            },
+            "10": {
+                "question": "When is this playground accessible?",
+                "mappings": {
+                    "0": {
+                        "then": "Accessible from sunrise till sunset"
+                    },
+                    "1": {
+                        "then": "Always accessible"
+                    },
+                    "2": {
+                        "then": "Always accessible"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Playground"
+            }
+        }
+    },
+    "public_bookcase": {
+        "name": "Bookcases",
+        "description": "A streetside cabinet with books, accessible to anyone",
+        "title": {
+            "render": "Bookcase",
+            "mappings": {
+                "0": {
+                    "then": "Public bookcase <i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Bookcase"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "The name of this bookcase is {name}",
+                "question": "What is the name of this public bookcase?",
+                "mappings": {
+                    "0": {
+                        "then": "This bookcase doesn't have a name"
+                    }
+                }
+            },
+            "2": {
+                "render": "{capacity} books fit in this bookcase",
+                "question": "How many books fit into this public bookcase?"
+            },
+            "3": {
+                "question": "What kind of books can be found in this public bookcase?",
+                "mappings": {
+                    "0": {
+                        "then": "Mostly children books"
+                    },
+                    "1": {
+                        "then": "Mostly books for adults"
+                    },
+                    "2": {
+                        "then": "Both books for kids and adults"
+                    }
+                }
+            },
+            "4": {
+                "question": "Is this bookcase located outdoors?",
+                "mappings": {
+                    "0": {
+                        "then": "This bookcase is located indoors"
+                    },
+                    "1": {
+                        "then": "This bookcase is located outdoors"
+                    },
+                    "2": {
+                        "then": "This bookcase is located outdoors"
+                    }
+                }
+            },
+            "5": {
+                "question": "Is this public bookcase freely accessible?",
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible"
+                    },
+                    "1": {
+                        "then": "Only accessible to customers"
+                    }
+                }
+            },
+            "6": {
+                "question": "Who maintains this public bookcase?",
+                "render": "Operated by {operator}"
+            },
+            "7": {
+                "question": "Is this public bookcase part of a bigger network?",
+                "render": "This public bookcase is part of {brand}",
+                "mappings": {
+                    "0": {
+                        "then": "Part of the network 'Little Free Library'"
+                    },
+                    "1": {
+                        "then": "This public bookcase is not part of a bigger network"
+                    }
+                }
+            },
+            "8": {
+                "render": "The reference number of this public bookcase within {brand} is {ref}",
+                "question": "What is the reference number of this public bookcase?",
+                "mappings": {
+                    "0": {
+                        "then": "This bookcase is not part of a bigger network"
+                    }
+                }
+            },
+            "9": {
+                "question": "When was this public bookcase installed?",
+                "render": "Installed on {start_date}"
+            },
+            "10": {
+                "render": "More info on <a href='{website}' target='_blank'>the website</a>",
+                "question": "Is there a website with more information about this public bookcase?"
+            }
+        }
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "2": {
+                "render": "The surface is <b>{surface}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "The surface is <b>grass</b>"
+                    },
+                    "1": {
+                        "then": "The surface is <b>ground</b>"
+                    },
+                    "2": {
+                        "then": "The surface is <b>unpaved</b>"
+                    },
+                    "3": {
+                        "then": "The surface is <b>sand</b>"
+                    },
+                    "4": {
+                        "then": "The surface is <b>paving stones</b>"
+                    },
+                    "5": {
+                        "then": "The surface is <b>asphalt</b>"
+                    },
+                    "6": {
+                        "then": "The surface is <b>concrete</b>"
+                    },
+                    "7": {
+                        "then": "The surface is <b>paved</b>"
+                    }
+                }
+            }
+        }
+    },
+    "sport_pitch": {
+        "name": "Sport pitches",
+        "title": {
+            "render": "Sport pitch"
+        },
+        "description": "A sport pitch",
+        "tagRenderings": {
+            "1": {
+                "render": "{sport} is played here",
+                "question": "Which sport can be played here?",
+                "mappings": {
+                    "0": {
+                        "then": "Basketball is played here"
+                    },
+                    "1": {
+                        "then": "Soccer is played here"
+                    },
+                    "2": {
+                        "then": "This is a pingpong table"
+                    },
+                    "3": {
+                        "then": "Tennis is played here"
+                    },
+                    "4": {
+                        "then": "Korfball is played here"
+                    },
+                    "5": {
+                        "then": "Basketball is played here"
+                    }
+                }
+            },
+            "2": {
+                "question": "Which is the surface of this sport pitch?",
+                "render": "The surface is <b>{surface}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "The surface is <b>grass</b>"
+                    },
+                    "1": {
+                        "then": "The surface is <b>sand</b>"
+                    },
+                    "2": {
+                        "then": "The surface is <b>paving stones</b>"
+                    },
+                    "3": {
+                        "then": "The surface is <b>asphalt</b>"
+                    },
+                    "4": {
+                        "then": "The surface is <b>concrete</b>"
+                    }
+                }
+            },
+            "3": {
+                "question": "Is this sport pitch publicly accessible?",
+                "mappings": {
+                    "0": {
+                        "then": "Public access"
+                    },
+                    "1": {
+                        "then": "Limited access (e.g. only with an appointment, during certain hours, ...)"
+                    },
+                    "2": {
+                        "then": "Only accessible for members of the club"
+                    },
+                    "3": {
+                        "then": "Private - not accessible to the public"
+                    }
+                }
+            },
+            "4": {
+                "question": "Does one have to make an appointment to use this sport pitch?",
+                "mappings": {
+                    "0": {
+                        "then": "Making an appointment is obligatory to use this sport pitch"
+                    },
+                    "1": {
+                        "then": "Making an appointment is recommended when using this sport pitch"
+                    },
+                    "2": {
+                        "then": "Making an appointment is possible, but not necessary to use this sport pitch"
+                    },
+                    "3": {
+                        "then": "Making an appointment is not possible"
+                    }
+                }
+            },
+            "5": {
+                "question": "What is the phone number of the operator?"
+            },
+            "6": {
+                "question": "What is the email address of the operator?"
+            },
+            "7": {
+                "question": "When is this pitch accessible?",
+                "mappings": {
+                    "1": {
+                        "then": "Always accessible"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Tabletennis table"
+            },
+            "1": {
+                "title": "Sport pitch"
+            }
+        }
+    },
+    "surveillance_camera": {
+        "name": "Surveillance camera's",
+        "title": {
+            "render": "Surveillance Camera"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "What kind of camera is this?",
+                "mappings": {
+                    "0": {
+                        "then": "A fixed (non-moving) camera"
+                    },
+                    "1": {
+                        "then": "A dome camera (which can turn)"
+                    },
+                    "2": {
+                        "then": "A panning camera"
+                    }
+                }
+            },
+            "2": {
+                "question": "In which geographical direction does this camera film?",
+                "render": "Films to a compass heading of {camera:direction}",
+                "mappings": {
+                    "0": {
+                        "then": "Films to a compass heading of {direction}"
+                    }
+                }
+            },
+            "3": {
+                "question": "Who operates this CCTV?",
+                "render": "Operated by {operator}"
+            },
+            "4": {
+                "question": "What kind of surveillance is this camera",
+                "mappings": {
+                    "0": {
+                        "then": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,..."
+                    },
+                    "1": {
+                        "then": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)"
+                    },
+                    "2": {
+                        "then": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ..."
+                    }
+                }
+            },
+            "5": {
+                "question": "Is the public space surveilled by this camera an indoor or outdoor space?",
+                "mappings": {
+                    "0": {
+                        "then": "This camera is located indoors"
+                    },
+                    "1": {
+                        "then": "This camera is located outdoors"
+                    },
+                    "2": {
+                        "then": "This camera is probably located outdoors"
+                    }
+                }
+            },
+            "6": {
+                "question": "On which level is this camera located?",
+                "render": "Located on level {level}"
+            },
+            "7": {
+                "question": "What exactly is surveilled here?",
+                "render": " Surveills a {surveillance:zone}",
+                "mappings": {
+                    "0": {
+                        "then": "Surveills a parking"
+                    },
+                    "1": {
+                        "then": "Surveills the traffic"
+                    },
+                    "2": {
+                        "then": "Surveills an entrance"
+                    },
+                    "3": {
+                        "then": "Surveills a corridor"
+                    },
+                    "4": {
+                        "then": "Surveills a public tranport platform"
+                    },
+                    "5": {
+                        "then": "Surveills a shop"
+                    }
+                }
+            },
+            "8": {
+                "question": "How is this camera placed?",
+                "render": "Mounting method: {mount}",
+                "mappings": {
+                    "0": {
+                        "then": "This camera is placed against a wall"
+                    },
+                    "1": {
+                        "then": "This camera is placed one a pole"
+                    },
+                    "2": {
+                        "then": "This camera is placed on the ceiling"
+                    }
+                }
+            }
+        }
+    },
+    "toilet": {
+        "name": "Toilets",
+        "title": {
+            "render": "Toilet"
+        },
+        "presets": {
+            "0": {
+                "title": "Toilet",
+                "description": "A publicly accessible toilet or restroom"
+            },
+            "1": {
+                "title": "Toilets with wheelchair accessible toilet",
+                "description": "A restroom which has at least one wheelchair-accessible toilet"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Are these toilets publicly accessible?",
+                "render": "Access is {access}",
+                "mappings": {
+                    "0": {
+                        "then": "Public access"
+                    },
+                    "1": {
+                        "then": "Only access to customers"
+                    },
+                    "2": {
+                        "then": "Not accessible"
+                    },
+                    "3": {
+                        "then": "Accessible, but one has to ask a key to enter"
+                    }
+                }
+            },
+            "2": {
+                "question": "Are these toilets free to use?",
+                "mappings": {
+                    "0": {
+                        "then": "These are paid toilets"
+                    },
+                    "1": {
+                        "then": "Free to use"
+                    }
+                }
+            },
+            "3": {
+                "question": "How much does one have to pay for these toilets?",
+                "render": "The fee is {charge}"
+            },
+            "4": {
+                "question": "Is there a dedicated toilet for wheelchair users",
+                "mappings": {
+                    "0": {
+                        "then": "There is a dedicated toilet for wheelchair users"
+                    },
+                    "1": {
+                        "then": "No wheelchair access"
+                    }
+                }
+            },
+            "5": {
+                "question": "Which kind of toilets are this?",
+                "mappings": {
+                    "0": {
+                        "then": "There are only seated toilets"
+                    },
+                    "1": {
+                        "then": "There are only urinals here"
+                    },
+                    "2": {
+                        "then": "There are only squat toilets here"
+                    },
+                    "3": {
+                        "then": "Both seated toilets and urinals are available here"
+                    }
+                }
+            },
+            "6": {
+                "question": "Is a changing table (to change diapers) available?",
+                "mappings": {
+                    "0": {
+                        "then": "A changing table is available"
+                    },
+                    "1": {
+                        "then": "No changing table is available"
+                    }
+                }
+            },
+            "7": {
+                "question": "Where is the changing table located?",
+                "render": "The changing table is located at {changing_table:location}",
+                "mappings": {
+                    "0": {
+                        "then": "The changing table is in the toilet for women. "
+                    },
+                    "1": {
+                        "then": "The changing table is in the toilet for men. "
+                    },
+                    "2": {
+                        "then": "The changing table is in the toilet for wheelchair users. "
+                    },
+                    "3": {
+                        "then": "The changing table is in a dedicated room. "
+                    }
+                }
+            }
+        }
+    },
+    "tree_node": {
+        "name": "Tree",
+        "title": {
+            "render": "Tree",
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Height: {height}",
+                "mappings": {
+                    "0": {
+                        "then": "Height: {height}&nbsp;m"
+                    }
+                }
+            },
+            "2": {
+                "question": "Is this a broadleaved or needleleaved tree?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/trees/broadleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Broadleaved"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/trees/needleleaved.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Needleleaved"
+                    },
+                    "2": {
+                        "then": "<img src=\"./assets/themes/trees/leafless.svg\" style=\"width:1.5em;height:1.5em\" alt=\"\"/> Permanently leafless"
+                    }
+                }
+            },
+            "3": {
+                "question": "How significant is this tree? Choose the first answer that applies.",
+                "mappings": {
+                    "0": {
+                        "then": "The tree is remarkable due to its size or prominent location. It is useful for navigation."
+                    },
+                    "1": {
+                        "then": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species."
+                    },
+                    "2": {
+                        "then": "The tree is used for agricultural purposes, e.g. in an orchard."
+                    },
+                    "3": {
+                        "then": "The tree is in a park or similar (cemetery, school grounds, …)."
+                    },
+                    "4": {
+                        "then": "The tree is a residential garden."
+                    },
+                    "5": {
+                        "then": "This is a tree along an avenue."
+                    },
+                    "6": {
+                        "then": "The tree is an urban area."
+                    },
+                    "7": {
+                        "then": "The tree is outside of an urban area."
+                    }
+                }
+            },
+            "4": {
+                "question": "Is this tree evergreen or deciduous?",
+                "mappings": {
+                    "0": {
+                        "then": "Deciduous: the tree loses its leaves for some time of the year."
+                    },
+                    "1": {
+                        "then": "Evergreen."
+                    }
+                }
+            },
+            "5": {
+                "render": "Naam: {name}",
+                "question": "Does the tree have a name?",
+                "mappings": {
+                    "0": {
+                        "then": "The tree does not have a name."
+                    }
+                }
+            },
+            "6": {
+                "question": "Is this tree registered heritage?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Registered as heritage by <i>Onroerend Erfgoed</i> Flanders"
+                    },
+                    "1": {
+                        "then": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels"
+                    },
+                    "2": {
+                        "then": "Registered as heritage by a different organisation"
+                    },
+                    "3": {
+                        "then": "Not registered as heritage"
+                    },
+                    "4": {
+                        "then": "Registered as heritage by a different organisation"
+                    }
+                }
+            },
+            "7": {
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+                "question": "What is the ID issuesd by Onroerend Erfgoed Flanders?"
+            },
+            "8": {
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+                "question": "What is the Wikidata ID for this tree?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Broadleaved tree",
+                "description": "A tree of a species with leaves, such as oak or populus."
+            },
+            "1": {
+                "title": "Needleleaved tree",
+                "description": "A tree of a species with needles, such as pine or spruce."
+            },
+            "2": {
+                "title": "Tree",
+                "description": "If you're not sure whether it's a broadleaved or needleleaved tree."
+            }
+        }
+    },
+    "viewpoint": {
+        "name": "Viewpoint",
+        "description": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
+        "presets": {
+            "0": {
+                "title": "Viewpoint"
+            }
+        },
+        "title": {
+            "render": "Viewpoint"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Do you want to add a description?"
+            }
+        }
+    }
+}

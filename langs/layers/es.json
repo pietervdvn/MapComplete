@@ -1,0 +1,57 @@
+{
+    "defibrillator": {
+        "name": "Desfibriladores",
+        "title": {
+            "render": "Desfibrilador"
+        },
+        "presets": {
+            "0": {
+                "title": "Desfibrilador"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "¿Esté el desfibrilador en interior?",
+                "mappings": {
+                    "0": {
+                        "then": "Este desfibrilador está en interior"
+                    },
+                    "1": {
+                        "then": "Este desfibrilador está en exterior"
+                    }
+                }
+            },
+            "2": {
+                "question": "¿Está el desfibrilador accesible libremente?",
+                "render": "El acceso es {access}",
+                "mappings": {
+                    "0": {
+                        "then": "Acceso libre"
+                    },
+                    "1": {
+                        "then": "Publicament accesible"
+                    },
+                    "2": {
+                        "then": "Sólo accesible a clientes"
+                    },
+                    "3": {
+                        "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
+                    }
+                }
+            },
+            "4": {
+                "question": "¿En qué planta se encuentra el defibrilador localizado?",
+                "render": "El desfibrilador se encuentra en la planta {level}"
+            },
+            "5": {
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
+            },
+            "6": {
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
+            },
+            "7": {
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
+            }
+        }
+    }
+}

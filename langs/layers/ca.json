@@ -1,0 +1,57 @@
+{
+    "defibrillator": {
+        "name": "Desfibril·ladors",
+        "title": {
+            "render": "Desfibril·lador"
+        },
+        "presets": {
+            "0": {
+                "title": "Desfibril·lador"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Està el desfibril·lador a l'interior?",
+                "mappings": {
+                    "0": {
+                        "then": "Aquest desfibril·lador està a l'interior"
+                    },
+                    "1": {
+                        "then": "Aquest desfibril·lador està a l'exterior"
+                    }
+                }
+            },
+            "2": {
+                "question": "Està el desfibril·lador accessible lliurement?",
+                "render": "L'accés és {access}",
+                "mappings": {
+                    "0": {
+                        "then": "Accés lliure"
+                    },
+                    "1": {
+                        "then": "Publicament accessible"
+                    },
+                    "2": {
+                        "then": "Només accessible a clients"
+                    },
+                    "3": {
+                        "then": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)"
+                    }
+                }
+            },
+            "4": {
+                "question": "A quina planta està el desfibril·lador localitzat?",
+                "render": "Aquest desfibril·lador és a la planta {level}"
+            },
+            "5": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "6": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            },
+            "7": {
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+            }
+        }
+    }
+}
