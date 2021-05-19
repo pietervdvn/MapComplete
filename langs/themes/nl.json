@@ -782,5 +782,9 @@
                 }
             }
         }
+    },
+    "toilets": {
+        "description": "Een kaart met openbare toiletten",
+        "title": "Open Toilettenkaart"
     }
 }
