@@ -98,7 +98,6 @@
     "fritures": {
         "layers": {
             "0": {
-                "name": "Friteries",
                 "title": {
                     "mappings": {
                         "0": {
@@ -110,9 +109,6 @@
                     "1": {
                         "question": "Quel est le nom de cette friterie?"
                     },
-                    "2": {
-                        "question": "Quand est ce-que ce friterie ouvert?"
-                    },
                     "3": {
                         "question": "Quel est le site web de cette  friterie?"
                     },
@@ -121,9 +117,6 @@
                     },
                     "5": {
                         "mappings": {
-                            "0": {
-                                "then": "Des collations végétariennes sont disponibles"
-                            },
                             "2": {
                                 "then": "Pas d'en-cas végétariens disponibles"
                             }
@@ -131,18 +124,8 @@
                     },
                     "6": {
                         "mappings": {
-                            "0": {
-                                "then": "Des collations végétaliens sont disponibles"
-                            },
                             "2": {
                                 "then": "Pas d'en-cas végétaliens disponibles"
-                            }
-                        }
-                    },
-                    "7": {
-                        "mappings": {
-                            "0": {
-                                "then": "Huile végétale"
                             }
                         }
                     }

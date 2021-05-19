@@ -91,7 +91,6 @@
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren"
     },
     "buurtnatuur": {
-        "descriptionTail": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>",
         "layers": {
             "0": {
                 "title": {
@@ -103,13 +102,9 @@
                 }
             },
             "1": {
-                "name": "Park",
                 "description": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ..."
             },
             "2": {
-                "title": {
-                    "render": "Bos"
-                },
                 "presets": {
                     "0": {
                         "title": "Bos"
@@ -120,22 +115,13 @@
         "roamingRenderings": {
             "0": {
                 "mappings": {
-                    "0": {
-                        "then": "Dit gebied is vrij toegankelijk"
-                    },
                     "4": {
                         "then": "Toegankelijk, ondanks dat het privegebied is"
                     }
                 }
             },
-            "1": {
-                "question": "Wie beheert dit gebied?"
-            },
             "2": {
                 "render": "Extra info: <i>{description}</i>"
-            },
-            "5": {
-                "render": "Dit gebied heet {name}"
             }
         }
     },
@@ -340,7 +326,6 @@
     "fietsstraten": {
         "roamingRenderings": {
             "0": {
-                "question": "Is deze straat een fietsstraat?",
                 "mappings": {
                     "3": {
                         "then": "Deze straat is geen fietsstraat"
@@ -349,9 +334,6 @@
             }
         },
         "layers": {
-            "0": {
-                "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen."
-            },
             "1": {
                 "title": {
                     "mappings": {
@@ -461,9 +443,6 @@
     "fritures": {
         "layers": {
             "0": {
-                "title": {
-                    "render": "Frituur"
-                },
                 "tagRenderings": {
                     "1": {
                         "question": "Wat is de naam van deze frituur?"
@@ -473,13 +452,6 @@
                     },
                     "4": {
                         "question": "Wat is het telefoonnummer van deze frituur?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "2": {
-                                "then": "Geen vegetarische snacks beschikbaar"
-                            }
-                        }
                     },
                     "6": {
                         "mappings": {
@@ -507,7 +479,6 @@
         }
     },
     "boomgaarden": {
-        "description": "Op deze kaart vindt je boomgaarden en fruitbomen",
         "layers": {
             "0": {
                 "presets": {
@@ -518,16 +489,8 @@
             },
             "1": {
                 "tagRenderings": {
-                    "0": {
-                        "render": "De soort is {species:nl}"
-                    },
                     "2": {
                         "render": "Beschrijving: <i>{description}</i>"
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "Boom"
                     }
                 }
             }
@@ -540,13 +503,9 @@
     "grb": {
         "layers": {
             "0": {
-                "name": "Fixmes op gebouwen",
                 "tagRenderings": {
                     "0": {
                         "render": "Het huisnummer is <b>{addr:housenumber}</b>"
-                    },
-                    "2": {
-                        "render": "De straat is <b>{addr:street}</b>"
                     },
                     "3": {
                         "mappings": {
@@ -576,7 +535,6 @@
     "speelplekken": {
         "layers": {
             "7": {
-                "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
                     "1": {
                         "mappings": {
@@ -584,9 +542,6 @@
                                 "then": "Dit is een regionale wandelroute"
                             }
                         }
-                    },
-                    "4": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?"
                     }
                 }
             }
@@ -597,13 +552,6 @@
         "layers": {
             "6": {
                 "tagRenderings": {
-                    "1": {
-                        "mappings": {
-                            "1": {
-                                "then": "Dit is een nationale wandelroute"
-                            }
-                        }
-                    },
                     "3": {
                         "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
                     }
@@ -625,13 +573,6 @@
         "title": "Bomen",
         "shortDescription": "Breng bomen in kaart",
         "description": "Breng bomen in kaart!"
-    },
-    "width": {
-        "layers": {
-            "0": {
-                "name": "Straten met een breedte"
-            }
-        }
     },
     "campersite": {
         "title": "Campeerplaatsen"
