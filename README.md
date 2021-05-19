@@ -84,6 +84,8 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 
 The core strings of MapComplete are translated on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/).
 
+[![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
+
 A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
 
 0. Fork this repository
