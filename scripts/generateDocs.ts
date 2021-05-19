@@ -20,6 +20,6 @@ function WriteFile(filename, html: UIElement) : void {
 
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage)
 WriteFile("./Docs/CalculatedTags.md", new Combine([SimpleMetaTagger.HelpText(), ExtraFunction.HelpText()]))
-writeFileSync("./Docs/SpecialInputElements", ValidatedTextField.HelpText());
+writeFileSync("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText());
 console.log("Generated docs")
 
