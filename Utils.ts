@@ -161,6 +161,9 @@ export class Utils {
 
     static Merge(source: any, target: any) {
         for (const key in source) {
+            if(!source.hasOwnProperty(key)){
+                continue
+            }
             const sourceV = source[key];
             const targetV = target[key]
             if (typeof sourceV === "object") {
@@ -322,6 +325,7 @@ export class Utils {
         }
         return bestColor ?? hex;
     }
+
     private static tile2long(x, z) {
         return (x / Math.pow(2, z) * 360 - 180);
     }

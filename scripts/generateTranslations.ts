@@ -6,6 +6,7 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import * as bookcases from "../assets/layers/public_bookcase/public_bookcase.json"
 import LayerOverviewUtils from "./generateLayerOverview";
+import {Script} from "vm";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -108,12 +109,12 @@ class TranslationPart {
 
             if (typeof value === "string") {
                 value = value.replace(/"/g, "\\\"")
-                if(neededLanguage === undefined){
+                if (neededLanguage === undefined) {
                     parts.push(`\"${key}\": \"${value}\"`)
-                }else if (key === neededLanguage){
-                   return `"${value}"`
+                } else if (key === neededLanguage) {
+                    return `"${value}"`
                 }
-               
+
             } else {
                 const sub = (value as TranslationPart).toJson(neededLanguage)
                 if (sub !== "") {
@@ -196,6 +197,7 @@ function generateTranslationFromLayerConfig(layerConfig: LayerConfigJson): Trans
     return tr;
 }
 
+// Get all the string out of the themes
 function generateLayerTranslationsObject() {
     const layerFiles = new LayerOverviewUtils().getLayerFiles();
 
@@ -210,20 +212,88 @@ function generateLayerTranslationsObject() {
     const langs = tr.knownLanguages();
     for (const lang of langs) {
         console.log("Exporting ", lang)
-        
+
         let json = tr.toJson(lang)
-        try{
+        try {
             json = JSON.stringify(JSON.parse(json), null, "    ");
-        }catch (e) {
+        } catch (e) {
             console.error(e)
         }
-        
+
         writeFileSync("langs/layers/" + lang + ".json", json)
     }
 }
 
+function MergeTranslation(source: any, target: any, language: string, context: string = "") {
+    for (const key in source) {
+        if (!source.hasOwnProperty(key)) {
+            continue
+        }
+        const sourceV = source[key];
+        const targetV = target[key]
+        if (typeof sourceV === "string") {
+            if (targetV[language] === sourceV) {
+                // Already the same
+                continue;
+            }
+            
+            if(typeof targetV === "string"){
+                console.error("Could not add a translation to string ", targetV, ". The translation is", sourceV, " in "+context)
+                continue;
+            }
 
-generateLayerTranslationsObject()
+            targetV[language] = sourceV;
+            console.log("   + ",context + "." + language, "-->", sourceV)
+            continue
+        }
+        if (typeof sourceV === "object") {
+            if (targetV === undefined) {
+                throw "MergingTranslations failed: source object has a path that does not exist anymore in the target: " + context
+            } else {
+                MergeTranslation(sourceV, targetV, language, context + "." + key);
+            }
+            continue;
+        }
+        throw "Case fallthrough"
+
+    }
+    return target;
+}
+
+function mergeLayerTranslation(layerConfig: LayerConfigJson, path: string, translationFiles: Map<string, any>) {
+    const id = layerConfig.id;
+    translationFiles.forEach((translations, lang) => {
+        const translationsForLayer = translations[id]
+      //  MergeTranslation(translationsForLayer, layerConfig, lang, id)
+    })
+    writeFileSync(path, JSON.stringify(layerConfig, null, "  "))
+}
+
+/**
+ * Load the translations back into the layers
+ */
+function mergeLayerTranslations() {
+
+
+    const translationFilePaths = ScriptUtils.readDirRecSync("./langs/layers")
+        .filter(path => path.endsWith(".json"))
+
+    const translationFiles = new Map<string, any>();
+    for (const translationFilePath of translationFilePaths) {
+        let language = translationFilePath.substr(translationFilePath.lastIndexOf("/") + 1)
+        language = language.substr(0, language.length - 5)
+        translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
+    }
+
+    const layerFiles = new LayerOverviewUtils().getLayerFiles();
+    for (const layerFile of layerFiles) {
+        mergeLayerTranslation(layerFile.parsed, layerFile.path, translationFiles)
+    }
+}
+
+// generateLayerTranslationsObject()
+mergeLayerTranslations();
+
 
 compileTranslationsFromWeblate();
 genTranslations()
