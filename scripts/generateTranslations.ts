@@ -1,12 +1,10 @@
 import * as fs from "fs";
+import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {readFileSync, writeFileSync} from "fs";
-import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
-import * as bookcases from "../assets/layers/public_bookcase/public_bookcase.json"
-import LayerOverviewUtils from "./generateLayerOverview";
-import {Script} from "vm";
+import LayoutConfig from "../Customizations/JSON/LayoutConfig";
+import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -191,21 +189,14 @@ function compileTranslationsFromWeblate() {
 
 }
 
-function generateTranslationFromLayerConfig(layerConfig: LayerConfigJson): TranslationPart {
-    const tr = new TranslationPart();
-    tr.recursiveAdd(layerConfig)
-    return tr;
-}
-
-// Get all the string out of the themes
-function generateLayerTranslationsObject() {
-    const layerFiles = new LayerOverviewUtils().getLayerFiles();
-
+// Get all the strings out of the layers
+function generateTranslationsObjectFrom(objects: {path: string, parsed: {id: string}}[], target: string) {
     const tr = new TranslationPart();
 
-    for (const layerFile of layerFiles) {
-        const config: LayerConfigJson = layerFile.parsed;
-        const layerTr = generateTranslationFromLayerConfig(config)
+    for (const layerFile of objects) {
+        const config: {id: string} = layerFile.parsed;
+        const layerTr =new TranslationPart();
+        layerTr.recursiveAdd(config)
         tr.contents.set(config.id, layerTr)
     }
 
@@ -220,7 +211,7 @@ function generateLayerTranslationsObject() {
             console.error(e)
         }
 
-        writeFileSync("langs/layers/" + lang + ".json", json)
+        writeFileSync(`langs/${target}/${lang}.json`, json)
     }
 }
 
@@ -285,13 +276,14 @@ function mergeLayerTranslations() {
         translationFiles.set(language, JSON.parse(readFileSync(translationFilePath, "utf8")))
     }
 
-    const layerFiles = new LayerOverviewUtils().getLayerFiles();
+    const layerFiles = ScriptUtils.getLayerFiles();
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, translationFiles)
     }
 }
 mergeLayerTranslations();
-generateLayerTranslationsObject()
+generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
+generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
 
 
 

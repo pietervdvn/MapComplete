@@ -1,5 +1,6 @@
-import {lstatSync, readdirSync} from "fs";
+import {lstatSync, readdirSync, readFileSync} from "fs";
 import * as https from "https";
+import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 
 export default class ScriptUtils {
     public static readDirRecSync(path): string[] {
@@ -56,6 +57,34 @@ export default class ScriptUtils {
             process.stdout.write("\r Sleeping for " + (ms / 1000) + "s \r")
             setTimeout(resolve, 1000);
         }).then(() => ScriptUtils.sleep(ms - 1000));
+    }
+
+    public static getLayerFiles(): { parsed: LayerConfigJson, path: string }[] {
+        return ScriptUtils.readDirRecSync("./assets/layers")
+            .filter(path => path.indexOf(".json") > 0)
+            .filter(path => path.indexOf("license_info.json") < 0)
+            .map(path => {
+                try {
+                    const parsed = JSON.parse(readFileSync(path, "UTF8"));
+                    return {parsed: parsed, path: path}
+                } catch (e) {
+                    console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
+                }
+            })
+    }
+
+    public static getThemeFiles() {
+        return ScriptUtils.readDirRecSync("./assets/themes")
+            .filter(path => path.endsWith(".json"))
+            .filter(path => path.indexOf("license_info.json") < 0)
+            .map(path => {
+                try {
+                    return JSON.parse(readFileSync(path, "UTF8"));
+                } catch (e) {
+                    console.error("Could not read file ", path, "due to ", e)
+                    throw e
+                }
+            });
     }
 
 

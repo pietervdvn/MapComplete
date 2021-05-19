@@ -17,43 +17,13 @@ interface LayersAndThemes {
 }
 
 
-export default class LayerOverviewUtils {
-
-    getLayerFiles(): {parsed: LayerConfigJson, path: string}[] {
-        return ScriptUtils.readDirRecSync("./assets/layers")
-            .filter(path => path.indexOf(".json") > 0)
-            .filter(path => path.indexOf("license_info.json") < 0)
-            .map(path => {
-                try {
-                    const parsed = JSON.parse(readFileSync(path, "UTF8"));
-                    return {parsed: parsed, path: path}
-                } catch (e) {
-                    console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
-                }
-            })
-    }
-
-
-    getThemeFiles() {
-        return ScriptUtils.readDirRecSync("./assets/themes")
-            .filter(path => path.endsWith(".json"))
-            .filter(path => path.indexOf("license_info.json") < 0)
-            .map(path => {
-                try {
-                    return JSON.parse(readFileSync(path, "UTF8"));
-                } catch (e) {
-                    console.error("Could not read file ", path, "due to ", e)
-                    throw e
-                }
-            });
-    }
-
+class LayerOverviewUtils {
 
     loadThemesAndLayers(): LayersAndThemes {
 
-        const layerFiles = this.getLayerFiles();
+        const layerFiles = ScriptUtils.getLayerFiles();
 
-        const themeFiles: any[] = this.getThemeFiles();
+        const themeFiles: any[] = ScriptUtils.getThemeFiles();
 
         console.log("Discovered", layerFiles.length, "layers and", themeFiles.length, "themes\n")
         return {
