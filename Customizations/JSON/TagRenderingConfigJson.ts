@@ -37,6 +37,7 @@ export interface TagRenderingConfigJson {
         key: string,
         /**
          * The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...
+         * See UI/Input/ValidatedTextField.ts for supported values
          */
         type?: string,
         /**
