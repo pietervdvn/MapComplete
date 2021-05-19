@@ -28,7 +28,7 @@ export default class AllKnownLayers {
                 if (typeof layer === "string") {
                     continue;
                 }
-                if(layer.builtin !== undefined){
+                if (layer.builtin !== undefined) {
                     // This is a builtin layer of which stuff is overridden - skip
                     continue;
                 }
@@ -37,7 +37,9 @@ export default class AllKnownLayers {
                     sharedLayers.set(layer.id, parsed);
                     sharedLayers[layer.id] = parsed;
                 } catch (e) {
-                    console.error("Could not parse a layer in theme ", layout.id, "due to", e)
+                    if (!Utils.runningFromConsole) {
+                        console.error("Could not parse a layer in theme ", layout.id, "due to", e)
+                    }
                 }
             }
         }

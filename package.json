@@ -20,7 +20,7 @@
     "generate:layeroverview": "ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",
-    "generate:contributor-list": "git log --pretty='%aN' | sort | uniq -c | sort -h| sed 's/ *\\([0-9]*\\) \\(.*\\)$/{\"contributor\":\"\\2\", \"commits\":\\1}/' | tr '\\n' ',' | sed 's/^/{\"contributors\":[/' | sed 's/,$/]}/' > assets/contributors.json",
+    "generate:contributor-list": "git log --pretty='%aN' | sort | uniq -c | sort -hr | sed 's/ *\\([0-9]*\\) \\(.*\\)$/{\"contributor\":\"\\2\", \"commits\":\\1}/' | tr '\\n' ',' | sed 's/^/{\"contributors\":[/' | sed 's/,$/]}/' > assets/contributors.json",
     "validate:layeroverview": "ts-node scripts/generateLayerOverview.ts --report",
     "validate:licenses": "ts-node scripts/generateLicenseInfo.ts --report",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",

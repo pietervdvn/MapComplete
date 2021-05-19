@@ -10,7 +10,8 @@ import SmallLicense from "../../Models/smallLicense";
 import {Utils} from "../../Utils";
 import Link from "../Base/Link";
 import {VariableUiElement} from "../Base/VariableUIElement";
-
+import {UIElement} from "../UIElement";
+import * as contributors from "../../assets/contributors.json"
 /**
  * The attribution panel shown on mobile
  */
@@ -57,6 +58,7 @@ export default class AttributionPanel extends Combine {
 
             })),
             "<br/>",
+            AttributionPanel.CodeContributors(),
             "<h3>", Translations.t.general.attribution.iconAttribution.title.Clone().SetClass("pt-6 pb-3"), "</h3>",
             ...Utils.NoNull(Array.from(layoutToUse.data.ExtractImages()))
                 .map(AttributionPanel.IconAttribution)
@@ -65,7 +67,19 @@ export default class AttributionPanel extends Combine {
         this.SetStyle("max-width: calc(100vw - 5em); width: 40em;")
     }
 
-    private static IconAttribution(iconPath: string) {
+    private static CodeContributors() : UIElement{
+
+        const total = contributors.contributors.length;
+     const filtered =   contributors.contributors
+         .splice(10, total - 10)
+         .map(c => c.contributor)
+         .join(", ")
+        
+        
+        return Translations.t.general.attribution.codeContributionsBy.Subs({contributors: filtered, hiddenCount: total - 10});
+    }
+    
+    private static IconAttribution(iconPath: string) : UIElement{
         if (iconPath.startsWith("http")) {
             iconPath = "." + new URL(iconPath).pathname;
         }

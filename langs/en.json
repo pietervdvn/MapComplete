@@ -78,7 +78,8 @@
                 "title": "Used icons"
             },
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
-            "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors"
+            "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
+            "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "sharescreen": {
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
