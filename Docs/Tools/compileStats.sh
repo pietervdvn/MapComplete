@@ -2,5 +2,4 @@
 
 ./fetchStats.sh
 ./csvPerChange.sh
-python csvGrapher.py 
-
+python3 csvGrapher.py
