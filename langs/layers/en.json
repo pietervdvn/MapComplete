@@ -285,9 +285,6 @@
     },
     "bike_parking": {
         "name": "Bike parking",
-        "icon": {
-            "render": "./assets/layers/bike_parking/parking.svg"
-        },
         "presets": {
             "0": {
                 "title": "Bike parking"
@@ -525,15 +522,6 @@
         },
         "icon": {
             "render": "./assets/layers/bike_repair_station/repair_station.svg"
-        },
-        "iconSize": {
-            "render": "50,50,bottom"
-        },
-        "color": {
-            "render": "#00f"
-        },
-        "width": {
-            "render": "1"
         },
         "presets": {
             "0": {

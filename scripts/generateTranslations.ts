@@ -291,7 +291,7 @@ function mergeLayerTranslations() {
     }
 }
 mergeLayerTranslations();
-// generateLayerTranslationsObject()
+generateLayerTranslationsObject()
 
 
 

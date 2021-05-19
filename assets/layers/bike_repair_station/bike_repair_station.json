@@ -503,19 +503,13 @@
     }
   ],
   "iconSize": {
-    "render": {
-      "en": "50,50,bottom"
-    }
+    "render": "50,50,bottom"
   },
   "color": {
-    "render": {
-      "en": "#00f"
-    }
+    "render": "#00f"
   },
   "width": {
-    "render": {
-      "en": "1"
-    }
+    "render": "1"
   },
   "wayHandling": 2,
   "presets": [
