@@ -1,6 +1,16 @@
 [
   {
     "authors": [
+      "Pietervdvn"
+    ],
+    "path": "MapComplete_Screenshot.png",
+    "license": "GPL3",
+    "sources": [
+      "https://mapcomplete.osm.be/bookcases"
+    ]
+  },
+  {
+    "authors": [
       "pietervdvn"
     ],
     "path": "SocialImageSmall.png",
