@@ -82,7 +82,9 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 
 ## Translating MapComplete
 
-Help to translate mapcomplete.
+The core strings of MapComplete are translated on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/).
+
+[![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
 
 A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
 
@@ -91,6 +93,8 @@ A theme has translations into the preset.json (`assets/themes/themename/themenam
 2. Add extra strings to the texts. If it used to be a single-language theme, one can replace the strings, e.g.: `"description": "Welcome to Open Bookcase Map"` to `"description": {"en": "Welcome to Open Bookcase Map", "nl": "Welkom bij de OpenBoekenruilkastenKaart", "fr": "Bienvenue sûr la carte des petites bibliotheques"}`. If the correct language is not found, it'll fallback to another supported language.
 3. If you notice missing translations in the core of MapComplete, fork this project, open [the file containing all translations](https://github.com/pietervdvn/MapComplete/blob/master/assets/translations.json), add add a language string there
 4. Send a pull request to update the languages, I'll gladly add it! It doesn't have to be a complete translation from the start ;)
+
+(Note that themes will be moved to weblate in the future too)
 
 ## Architecture
 
