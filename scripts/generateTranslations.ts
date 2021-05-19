@@ -3,8 +3,6 @@ import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
-import LayoutConfig from "../Customizations/JSON/LayoutConfig";
-import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -42,17 +40,6 @@ class TranslationPart {
             this.contents.set(translationsKey, v)
         }
     }
-
-    isLeaf() {
-        for (let key of Array.from(this.contents.keys())) {
-            const value = this.contents.get(key);
-            if (typeof value !== "string") {
-                return false;
-            }
-        }
-        return true;
-    }
-
     recursiveAdd(object: any) {
 
 
@@ -107,6 +94,7 @@ class TranslationPart {
 
             if (typeof value === "string") {
                 value = value.replace(/"/g, "\\\"")
+                    .replace(/\n/g, "\\n")
                 if (neededLanguage === undefined) {
                     parts.push(`\"${key}\": \"${value}\"`)
                 } else if (key === neededLanguage) {
@@ -190,18 +178,25 @@ function compileTranslationsFromWeblate() {
 }
 
 // Get all the strings out of the layers
-function generateTranslationsObjectFrom(objects: {path: string, parsed: {id: string}}[], target: string) {
+function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
     const tr = new TranslationPart();
 
     for (const layerFile of objects) {
-        const config: {id: string} = layerFile.parsed;
-        const layerTr =new TranslationPart();
+        const config: { id: string } = layerFile.parsed;
+        const layerTr = new TranslationPart();
+        if (config === undefined) {
+            throw "Got something not parsed! Path is " + layerFile.path
+        }
         layerTr.recursiveAdd(config)
         tr.contents.set(config.id, layerTr)
     }
 
     const langs = tr.knownLanguages();
     for (const lang of langs) {
+        if(lang === "#"){
+            // Lets not export our comments
+            continue;
+        }
         console.log("Exporting ", lang)
 
         let json = tr.toJson(lang)
@@ -227,14 +222,14 @@ function MergeTranslation(source: any, target: any, language: string, context: s
                 // Already the same
                 continue;
             }
-            
-            if(typeof targetV === "string"){
-                console.error("Could not add a translation to string ", targetV, ". The translation is", sourceV, " in "+context)
+
+            if (typeof targetV === "string") {
+                console.error("Could not add a translation to string ", targetV, ". The translation is", sourceV, " in " + context)
                 continue;
             }
 
             targetV[language] = sourceV;
-            console.log("   + ",context + "." + language, "-->", sourceV)
+            console.log("   + ", context + "." + language, "-->", sourceV)
             continue
         }
         if (typeof sourceV === "object") {
@@ -281,10 +276,10 @@ function mergeLayerTranslations() {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, translationFiles)
     }
 }
+
 mergeLayerTranslations();
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
 generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
-
 
 
 compileTranslationsFromWeblate();

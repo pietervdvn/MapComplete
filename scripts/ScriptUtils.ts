@@ -1,6 +1,7 @@
 import {lstatSync, readdirSync, readFileSync} from "fs";
 import * as https from "https";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
+import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 
 export default class ScriptUtils {
     public static readDirRecSync(path): string[] {
@@ -73,13 +74,14 @@ export default class ScriptUtils {
             })
     }
 
-    public static getThemeFiles() {
+    public static getThemeFiles() : {parsed: LayoutConfigJson, path: string}[] {
         return ScriptUtils.readDirRecSync("./assets/themes")
             .filter(path => path.endsWith(".json"))
             .filter(path => path.indexOf("license_info.json") < 0)
             .map(path => {
                 try {
-                    return JSON.parse(readFileSync(path, "UTF8"));
+                    const parsed = JSON.parse(readFileSync(path, "UTF8"));
+                    return {parsed: parsed, path: path}
                 } catch (e) {
                     console.error("Could not read file ", path, "due to ", e)
                     throw e
