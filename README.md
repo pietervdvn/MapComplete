@@ -82,7 +82,7 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 
 ## Translating MapComplete
 
-Help to translate mapcomplete.
+Help to translate mapcomplete via [Hosted Weblate]().
 
 A theme has translations into the preset.json (`assets/themes/themename/themename.json`). To add a translation:
 

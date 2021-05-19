@@ -1,0 +1,448 @@
+{
+  "image": {
+    "addPicture": {
+      "en": "Add picture"
+    },
+    "uploadingPicture": {
+      "en": "Uploading your picture..."
+    },
+    "uploadingMultiple": {
+      "en": "Uploading {count} pictures..."
+    },
+    "pleaseLogin": {
+      "en": "Please login to add a picture"
+    },
+    "willBePublished": {
+      "en": "Your picture will be published: "
+    },
+    "cco": {
+      "en": "in the public domain"
+    },
+    "ccbs": {
+      "en": "under the CC-BY-SA-license"
+    },
+    "ccb": {
+      "en": "under the CC-BY-license"
+    },
+    "uploadFailed": {
+      "en": "Could not upload your picture. Do you have internet and are third party API's allowed? Brave browser or UMatrix might block them."
+    },
+    "respectPrivacy": {
+      "en": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources."
+    },
+    "uploadDone": {
+      "en": "<span class='thanks'>Your picture has been added. Thanks for helping out!</span>"
+    },
+    "dontDelete": {
+      "en": "Cancel"
+    },
+    "doDelete": {
+      "en": "Remove image"
+    },
+    "isDeleted": {
+      "en": "Deleted"
+    }
+  },
+  "centerMessage": {
+    "loadingData": {
+      "en": "Loading data..."
+    },
+    "zoomIn": {
+      "en": "Zoom in to view or edit the data"
+    },
+    "ready": {
+      "en": "Done!"
+    },
+    "retrying": {
+      "en": "Loading data failed. Trying again in {count} seconds..."
+    }
+  },
+  "index": {
+    "#": "These texts are shown above the theme buttons when no theme is loaded",
+    "title": {
+      "en": "Welcome to MapComplete"
+    },
+    "intro": {
+      "en": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme."
+    },
+    "pickTheme": {
+      "en": "Pick a theme below to get started."
+    }
+  },
+  "general": {
+    "loginWithOpenStreetMap": {
+      "en": "Login with OpenStreetMap"
+    },
+    "welcomeBack": {
+      "en": "You are logged in, welcome back!"
+    },
+    "loginToStart": {
+      "en": "Login to answer this question"
+    },
+    "search": {
+      "search": {
+        "en": "Search a location"
+      },
+      "searching": {
+        "en": "Searching..."
+      },
+      "nothing": {
+        "en": "Nothing found..."
+      },
+      "error": {
+        "en": "Something went wrong..."
+      }
+    },
+    "returnToTheMap": {
+      "en": "Return to the map"
+    },
+    "save": {
+      "en": "Save"
+    },
+    "cancel": {
+      "en": "Cancel"
+    },
+    "skip": {
+      "en": "Skip this question"
+    },
+    "oneSkippedQuestion": {
+      "en": "One question is skipped"
+    },
+    "skippedQuestions": {
+      "en": "Some questions are skipped"
+    },
+    "number": {
+      "en": "number"
+    },
+    "osmLinkTooltip": {
+      "en": "See this object on OpenStreetMap for history and more editing options"
+    },
+    "add": {
+      "addNew": {
+        "en": "Add a new {category} here"
+      },
+      "title": {
+        "en": "Add a new point?"
+      },
+      "intro": {
+        "en": "You clicked somewhere where no data is known yet.<br/>"
+      },
+      "pleaseLogin": {
+        "en": "<a class='activate-osm-authentication'>Please log in to add a new point</a>"
+      },
+      "zoomInFurther": {
+        "en": "Zoom in further to add a point."
+      },
+      "stillLoading": {
+        "en": "The data is still loading. Please wait a bit before you add a new point."
+      },
+      "confirmIntro": {
+        "en": "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data."
+      },
+      "confirmButton": {
+        "en": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>"
+      },
+      "openLayerControl": {
+        "en": "Open the layer control box"
+      },
+      "layerNotEnabled": {
+        "en": "The layer {layer} is not enabled. Enable this layer to add a point"
+      }
+    },
+    "pickLanguage": {
+      "en": "Choose a language: "
+    },
+    "about": {
+      "en": "Easily edit and add OpenStreetMap for a certain theme"
+    },
+    "nameInlineQuestion": {
+      "en": "The name of this {category} is $$$"
+    },
+    "noNameCategory": {
+      "en": "{category} without a name"
+    },
+    "questions": {
+      "phoneNumberOf": {
+        "en": "What is the phone number of {category}?"
+      },
+      "phoneNumberIs": {
+        "en": "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>"
+      },
+      "websiteOf": {
+        "en": "What is the website of {category}?"
+      },
+      "websiteIs": {
+        "en": "Website: <a href='{website}' target='_blank'>{website}</a>"
+      },
+      "emailOf": {
+        "en": "What is the email address of {category}?"
+      },
+      "emailIs": {
+        "en": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
+      }
+    },
+    "openStreetMapIntro": {
+      "en": "<h3>An Open Map</h3><p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p><p>A ton of people and application already use OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap. If you change something here, it'll be reflected in those applications too - after their next update!</p>"
+    },
+    "attribution": {
+      "attributionTitle": {
+        "en": "Attribution notice"
+      },
+      "attributionContent": {
+        "en": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>"
+      },
+      "themeBy": {
+        "en": "Theme maintained by {author}"
+      },
+      "iconAttribution": {
+        "title": {
+          "en": "Used icons"
+        }
+      },
+      "mapContributionsBy": {
+        "en": "The current visible data has edits made by {contributors}"
+      },
+      "mapContributionsByAndHidden": {
+        "en": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors"
+      }
+    },
+    "sharescreen": {
+      "intro": {
+        "en": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:"
+      },
+      "addToHomeScreen": {
+        "en": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this."
+      },
+      "embedIntro": {
+        "en": "<h3>Embed on your website</h3>Please, embed this map into your website. <br/>We encourage you to do it - you don't even have to ask permission. <br/> It is free, and always will be. The more people using this, the more valuable it becomes."
+      },
+      "copiedToClipboard": {
+        "en": "Link copied to clipboard"
+      },
+      "thanksForSharing": {
+        "en": "Thanks for sharing!"
+      },
+      "editThisTheme": {
+        "en": "Edit this theme"
+      },
+      "editThemeDescription": {
+        "en": "Add or change questions to this map theme"
+      },
+      "fsUserbadge": {
+        "en": "Enable the login button"
+      },
+      "fsSearch": {
+        "en": "Enable the search bar"
+      },
+      "fsWelcomeMessage": {
+        "en": "Show the welcome message popup and associated tabs"
+      },
+      "fsLayers": {
+        "en": "Enable the layer control"
+      },
+      "fsLayerControlToggle": {
+        "en": "Start with the layer control expanded"
+      },
+      "fsAddNew": {
+        "en": "Enable the 'add new POI' button"
+      },
+      "fsGeolocation": {
+        "en": "Enable the 'geolocate-me' button (mobile only)"
+      },
+      "fsIncludeCurrentBackgroundMap": {
+        "en": "Include the current background choice <b>{name}</b>"
+      },
+      "fsIncludeCurrentLayers": {
+        "en": "Include the current layer choices"
+      },
+      "fsIncludeCurrentLocation": {
+        "en": "Include current location"
+      }
+    },
+    "morescreen": {
+      "intro": {
+        "en": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available."
+      },
+      "requestATheme": {
+        "en": "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>here</a>."
+      },
+      "streetcomplete": {
+        "en": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+      },
+      "createYourOwnTheme": {
+        "en": "Create your own MapComplete theme from scratch"
+      }
+    },
+    "readYourMessages": {
+      "en": "Please, read all your OpenStreetMap-messages before adding a new point."
+    },
+    "fewChangesBefore": {
+      "en": "Please, answer a few questions of existing points before adding a new point."
+    },
+    "goToInbox": {
+      "en": "Open inbox"
+    },
+    "getStartedLogin": {
+      "en": "Login with OpenStreetMap to get started"
+    },
+    "getStartedNewAccount": {
+      "en": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>"
+    },
+    "noTagsSelected": {
+      "en": "No tags selected"
+    },
+    "customThemeIntro": {
+      "en": "<h3>Custom themes</h3>These are previously visited user-generated themes."
+    },
+    "aboutMapcomplete": {
+      "en": "<h3>About MapComplete</h3><p>With MapComplete you can enrich OpenStreetMap with information on a <b>single theme.</b> Answer a few questions, and within minutes your contributions will be available around the globe! The <b>theme maintainer</b> defines elements, questions and languages for the theme.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete</li><li>The full-screen version offers information about OpenStreetMap</li><li>Viewing works without login, but editing requires an OSM login.</li><li>If you are not logged in, you are asked to log in</li><li>Once you answered a single question, you can add new points to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D' target='_blank' >OsmCha</a>.</p>"
+    },
+    "backgroundMap": {
+      "en": "Background map"
+    },
+    "layerSelection": {
+      "zoomInToSeeThisLayer": {
+        "en": "Zoom in to see this layer"
+      },
+      "title": {
+        "en": "Select layers"
+      }
+    },
+    "weekdays": {
+      "abbreviations": {
+        "monday": {
+          "en": "Mon"
+        },
+        "tuesday": {
+          "en": "Tue"
+        },
+        "wednesday": {
+          "en": "Wed"
+        },
+        "thursday": {
+          "en": "Thu"
+        },
+        "friday": {
+          "en": "Fri"
+        },
+        "saturday": {
+          "en": "Sat"
+        },
+        "sunday": {
+          "en": "Sun"
+        }
+      },
+      "monday": {
+        "en": "Monday"
+      },
+      "tuesday": {
+        "en": "Tuesday"
+      },
+      "wednesday": {
+        "en": "Wednesday"
+      },
+      "thursday": {
+        "en": "Thursday"
+      },
+      "friday": {
+        "en": "Friday"
+      },
+      "saturday": {
+        "en": "Saturday"
+      },
+      "sunday": {
+        "en": "Sunday"
+      }
+    },
+    "opening_hours": {
+      "error_loading": {
+        "en": "Error: could not visualize these opening hours."
+      },
+      "open_during_ph": {
+        "en": "During a public holiday, this amenity is"
+      },
+      "opensAt": {
+        "en": "from"
+      },
+      "openTill": {
+        "en": "till"
+      },
+      "not_all_rules_parsed": {
+        "en": "The opening hours of this shop are complicated. The following rules are ignored in the input element:"
+      },
+      "closed_until": {
+        "en": "Closed until {date}"
+      },
+      "closed_permanently": {
+        "en": "Closed for an unkown duration"
+      },
+      "open_24_7": {
+        "en": "Opened around the clock"
+      },
+      "ph_not_known": {
+        "en": " "
+      },
+      "ph_closed": {
+        "en": "closed"
+      },
+      "ph_open": {
+        "en": "opened"
+      }
+    }
+  },
+  "favourite": {
+    "panelIntro": {
+      "en": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes"
+    },
+    "loginNeeded": {
+      "en": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users"
+    },
+    "reload": {
+      "en": "Reload the data"
+    }
+  },
+  "reviews": {
+    "title": {
+      "en": "{count} reviews"
+    },
+    "title_singular": {
+      "en": "One review"
+    },
+    "name_required": {
+      "en": "A name is required in order to display and create reviews"
+    },
+    "no_reviews_yet": {
+      "en": "There are no reviews yet. Be the first to write one and help open data and the business!"
+    },
+    "write_a_comment": {
+      "en": "Leave a review..."
+    },
+    "no_rating": {
+      "en": "No rating given"
+    },
+    "posting_as": {
+      "en": "Posting as"
+    },
+    "i_am_affiliated": {
+      "en": "<span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, ...</span>"
+    },
+    "affiliated_reviewer_warning": {
+      "en": "(Affiliated review)"
+    },
+    "saving_review": {
+      "en": "Saving..."
+    },
+    "saved": {
+      "en": "<span class='thanks'>Review saved. Thanks for sharing!</span>"
+    },
+    "tos": {
+      "en": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>"
+    },
+    "attribution": {
+      "en": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>."
+    },
+    "plz_login": {
+      "en": "Login to leave a review"
+    }
+  }
+}
