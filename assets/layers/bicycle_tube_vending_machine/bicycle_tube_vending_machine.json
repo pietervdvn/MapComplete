@@ -1,11 +1,13 @@
 {
   "id": "bicycle_tube_vending_machine",
   "name": {
-    "en": "Bicycle tube vending machine"
+    "en": "Bicycle tube vending machine",
+    "nl": "Fietsbanden-verkoopsautomaat"
   },
   "title": {
     "render": {
-      "en": "Bicycle tube vending machine"
+      "en": "Bicycle tube vending machine",
+      "nl": "Fietsbanden-verkoopsautomaat"
     },
     "mappings": [
       {
@@ -50,7 +52,8 @@
   "presets": [
     {
       "title": {
-        "en": "Bicycle tube vending machine"
+        "en": "Bicycle tube vending machine",
+        "nl": "Fietsbanden-verkoopsautomaat"
       },
       "tags": [
         "amenity=vending_machine",
@@ -65,10 +68,12 @@
     {
       "#": "Still in use?",
       "question": {
-        "en": "Is this vending machine still operational?"
+        "en": "Is this vending machine still operational?",
+        "nl": "Is deze verkoopsautomaat nog steeds werkende?"
       },
       "render": {
-        "en": "The operational status is <i>{operational_status</i>"
+        "en": "The operational status is <i>{operational_status</i>",
+        "nl": "Deze verkoopsautomaat is <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -77,19 +82,22 @@
         {
           "if": "operational_status=",
           "then": {
-            "en": "This vending machine works"
+            "en": "This vending machine works",
+            "nl": "Deze verkoopsautomaat werkt"
           }
         },
         {
           "if": "operational_status=broken",
           "then": {
-            "en": "This vending machine is broken"
+            "en": "This vending machine is broken",
+            "nl": "Deze verkoopsautomaat is kapot"
           }
         },
         {
           "if": "operational_status=closed",
           "then": {
-            "en": "This vending machine is closed"
+            "en": "This vending machine is closed",
+            "nl": "Deze verkoopsautomaat is uitgeschakeld"
           }
         }
       ]

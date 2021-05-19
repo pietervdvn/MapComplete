@@ -264,7 +264,7 @@ function mergeLayerTranslation(layerConfig: LayerConfigJson, path: string, trans
     const id = layerConfig.id;
     translationFiles.forEach((translations, lang) => {
         const translationsForLayer = translations[id]
-      //  MergeTranslation(translationsForLayer, layerConfig, lang, id)
+        MergeTranslation(translationsForLayer, layerConfig, lang, id)
     })
     writeFileSync(path, JSON.stringify(layerConfig, null, "  "))
 }
@@ -290,9 +290,9 @@ function mergeLayerTranslations() {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, translationFiles)
     }
 }
-
-// generateLayerTranslationsObject()
 mergeLayerTranslations();
+// generateLayerTranslationsObject()
+
 
 
 compileTranslationsFromWeblate();

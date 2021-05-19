@@ -3,7 +3,8 @@
   "name": {
     "en": "Benches",
     "de": "Sitzbänke",
-    "fr": "Bancs"
+    "fr": "Bancs",
+    "nl": "Zitbanken"
   },
   "minzoom": 14,
   "source": {
@@ -13,7 +14,8 @@
     "render": {
       "en": "Bench",
       "de": "Sitzbank",
-      "fr": "Banc"
+      "fr": "Banc",
+      "nl": "Zitbank"
     }
   },
   "tagRenderings": [
@@ -22,7 +24,8 @@
       "render": {
         "en": "Backrest",
         "de": "Rückenlehne",
-        "fr": "Dossier"
+        "fr": "Dossier",
+        "nl": "Rugleuning"
       },
       "freeform": {
         "key": "backrest"
@@ -33,7 +36,8 @@
           "then": {
             "en": "Backrest: Yes",
             "de": "Rückenlehne: Ja",
-            "fr": "Dossier: Oui"
+            "fr": "Dossier: Oui",
+            "nl": "Heeft een rugleuning"
           }
         },
         {
@@ -41,21 +45,24 @@
           "then": {
             "en": "Backrest: No",
             "de": "Rückenlehne: Nein",
-            "fr": "Dossier: Non"
+            "fr": "Dossier: Non",
+            "nl": "Rugleuning ontbreekt"
           }
         }
       ],
       "question": {
         "en": "Does this bench have a backrest?",
         "de": "Hat diese Bank eine Rückenlehne?",
-        "fr": "Ce banc dispose-t-il d'un dossier ?"
+        "fr": "Ce banc dispose-t-il d'un dossier ?",
+        "nl": "Heeft deze zitbank een rugleuning?"
       }
     },
     {
       "render": {
         "en": "{seats} seats",
         "de": "{seats} Sitzplätze",
-        "fr": "{seats} places"
+        "fr": "{seats} places",
+        "nl": "{seats} zitplaatsen"
       },
       "freeform": {
         "key": "seats",
@@ -64,14 +71,16 @@
       "question": {
         "en": "How many seats does this bench have?",
         "de": "Wie viele Sitzplätze hat diese Bank?",
-        "fr": "De combien de places dispose ce banc ?"
+        "fr": "De combien de places dispose ce banc ?",
+        "nl": "Hoeveel zitplaatsen heeft deze bank?"
       }
     },
     {
       "render": {
         "en": "Material: {material}",
         "de": "Material: {material}",
-        "fr": "Matériau : {material}"
+        "fr": "Matériau : {material}",
+        "nl": "Gemaakt van {material}"
       },
       "freeform": {
         "key": "material",
@@ -83,7 +92,8 @@
           "then": {
             "en": "Material: wood",
             "de": "Material: Holz",
-            "fr": "Matériau : bois"
+            "fr": "Matériau : bois",
+            "nl": "Gemaakt uit hout"
           }
         },
         {
@@ -91,7 +101,8 @@
           "then": {
             "en": "Material: metal",
             "de": "Material: Metall",
-            "fr": "Matériau : métal"
+            "fr": "Matériau : métal",
+            "nl": "Gemaakt uit metaal"
           }
         },
         {
@@ -99,7 +110,8 @@
           "then": {
             "en": "Material: stone",
             "de": "Material: Stein",
-            "fr": "Matériau: pierre"
+            "fr": "Matériau: pierre",
+            "nl": "Gemaakt uit steen"
           }
         },
         {
@@ -107,7 +119,8 @@
           "then": {
             "en": "Material: concrete",
             "de": "Material: Beton",
-            "fr": "Matériau : béton"
+            "fr": "Matériau : béton",
+            "nl": "Gemaakt uit beton"
           }
         },
         {
@@ -115,7 +128,8 @@
           "then": {
             "en": "Material: plastic",
             "de": "Material: Kunststoff",
-            "fr": "Matériau : plastique"
+            "fr": "Matériau : plastique",
+            "nl": "Gemaakt uit plastiek"
           }
         },
         {
@@ -123,24 +137,28 @@
           "then": {
             "en": "Material: steel",
             "de": "Material: Stahl",
-            "fr": "Matériau : acier"
+            "fr": "Matériau : acier",
+            "nl": "Gemaakt uit staal"
           }
         }
       ],
       "question": {
         "en": "What is the bench (seating) made from?",
         "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?",
-        "fr": "De quel matériau ce banc est-il fait ?"
+        "fr": "De quel matériau ce banc est-il fait ?",
+        "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?"
       }
     },
     {
       "question": {
         "en": "In which direction are you looking when sitting on the bench?",
-        "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?"
+        "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
+        "nl": "In welke richting kijk je wanneer je op deze zitbank zit?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
-        "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°."
+        "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°.",
+        "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°."
       },
       "freeform": {
         "key": "direction",
@@ -151,12 +169,14 @@
       "render": {
         "en": "Colour: {colour}",
         "de": "Farbe: {colour}",
-        "fr": "Couleur : {colour}"
+        "fr": "Couleur : {colour}",
+        "nl": "Kleur: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
         "de": "Welche Farbe hat diese Sitzbank?",
-        "fr": "Quelle est la couleur de ce banc ?"
+        "fr": "Quelle est la couleur de ce banc ?",
+        "nl": "Welke kleur heeft deze zitbank?"
       },
       "freeform": {
         "key": "colour",
@@ -168,7 +188,8 @@
           "then": {
             "en": "Colour: brown",
             "de": "Farbe: braun",
-            "fr": "Couleur : marron"
+            "fr": "Couleur : marron",
+            "nl": "De kleur is bruin"
           }
         },
         {
@@ -176,7 +197,8 @@
           "then": {
             "en": "Colour: green",
             "de": "Farbe: grün",
-            "fr": "Couleur : verte"
+            "fr": "Couleur : verte",
+            "nl": "De kleur is groen"
           }
         },
         {
@@ -184,7 +206,8 @@
           "then": {
             "en": "Colour: gray",
             "de": "Farbe: grau",
-            "fr": "Couleur : gris"
+            "fr": "Couleur : gris",
+            "nl": "De kleur is grijs"
           }
         },
         {
@@ -192,7 +215,8 @@
           "then": {
             "en": "Colour: white",
             "de": "Farbe: weiß",
-            "fr": "Couleur : blanc"
+            "fr": "Couleur : blanc",
+            "nl": "De kleur is wit"
           }
         },
         {
@@ -200,7 +224,8 @@
           "then": {
             "en": "Colour: red",
             "de": "Farbe: rot",
-            "fr": "Couleur : rouge"
+            "fr": "Couleur : rouge",
+            "nl": "De kleur is rood"
           }
         },
         {
@@ -208,7 +233,8 @@
           "then": {
             "en": "Colour: black",
             "de": "Farbe: schwarz",
-            "fr": "Couleur : noire"
+            "fr": "Couleur : noire",
+            "nl": "De kleur is zwart"
           }
         },
         {
@@ -216,7 +242,8 @@
           "then": {
             "en": "Colour: blue",
             "de": "Farbe: blau",
-            "fr": "Couleur : bleu"
+            "fr": "Couleur : bleu",
+            "nl": "De kleur is blauw"
           }
         },
         {
@@ -224,17 +251,20 @@
           "then": {
             "en": "Colour: yellow",
             "de": "Farbe: gelb",
-            "fr": "Couleur : jaune"
+            "fr": "Couleur : jaune",
+            "nl": "De kleur is geel"
           }
         }
       ]
     },
     {
       "question": {
-        "en": "When was this bench last surveyed?"
+        "en": "When was this bench last surveyed?",
+        "nl": "Wanneer is deze laatste bank laatst gesurveyed?"
       },
       "render": {
-        "en": "This bench was last surveyed on {survey:date}"
+        "en": "This bench was last surveyed on {survey:date}",
+        "nl": "Deze bank is laatst gesurveyd op {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -270,12 +300,14 @@
       "title": {
         "en": "Bench",
         "de": "Sitzbank",
-        "fr": "Banc"
+        "fr": "Banc",
+        "nl": "Zitbank"
       },
       "description": {
         "en": "Add a new bench",
         "de": "Neue Sitzbank eintragen",
-        "fr": "Ajouter un nouveau banc"
+        "fr": "Ajouter un nouveau banc",
+        "nl": "Voeg een nieuwe zitbank toe"
       }
     }
   ]

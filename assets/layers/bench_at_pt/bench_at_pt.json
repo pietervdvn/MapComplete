@@ -3,7 +3,8 @@
   "name": {
     "en": "Benches at public transport stops",
     "de": "Sitzbänke bei Haltestellen",
-    "fr": "Bancs des arrêts de transport en commun"
+    "fr": "Bancs des arrêts de transport en commun",
+    "nl": "Zitbanken aan bushaltes"
   },
   "minzoom": 14,
   "source": {
@@ -18,7 +19,8 @@
     "render": {
       "en": "Bench",
       "de": "Sitzbank",
-      "fr": "Banc"
+      "fr": "Banc",
+      "nl": "Zitbank"
     },
     "mappings": [
       {
@@ -32,7 +34,8 @@
         "then": {
           "en": "Bench at public transport stop",
           "de": "Sitzbank bei Haltestelle",
-          "fr": "Banc d'un arrêt de transport en commun"
+          "fr": "Banc d'un arrêt de transport en commun",
+          "nl": "Zitbank aan een bushalte"
         }
       },
       {
@@ -44,7 +47,8 @@
         "then": {
           "en": "Bench in shelter",
           "de": "Sitzbank in Unterstand",
-          "fr": "Banc dans un abri"
+          "fr": "Banc dans un abri",
+          "nl": "Zitbank in een schuilhokje"
         }
       }
     ]
@@ -55,7 +59,8 @@
       "render": {
         "en": "{name}",
         "de": "{name}",
-        "fr": "{name}"
+        "fr": "{name}",
+        "nl": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -65,7 +70,8 @@
       "render": {
         "en": "Stand up bench",
         "de": "Stehbank",
-        "fr": "Banc assis debout"
+        "fr": "Banc assis debout",
+        "nl": "Leunbank"
       },
       "freeform": {
         "key": "bench",

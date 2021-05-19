@@ -1,7 +1,8 @@
 {
   "id": "bike_monitoring_station",
   "name": {
-    "en": "Monitoring stations"
+    "en": "Monitoring stations",
+    "nl": "Telstation"
   },
   "minzoom": 12,
   "source": {
