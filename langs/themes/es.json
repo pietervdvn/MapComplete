@@ -1,0 +1,10 @@
+{
+    "aed": {
+        "title": "Mapa abierto de desfibriladores (DEA)",
+        "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos"
+    },
+    "personal": {
+        "title": "Interficie personal",
+        "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies"
+    }
+}

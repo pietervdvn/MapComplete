@@ -1,0 +1,269 @@
+{
+    "aed": {
+        "title": "Carte des défibrillateurs (DAE)",
+        "description": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs"
+    },
+    "artworks": {
+        "title": "Carte ouverte des œuvres d'art",
+        "description": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
+        "layers": {
+            "0": {
+                "name": "Œuvres d'art",
+                "title": {
+                    "render": "Œuvre d'art",
+                    "mappings": {
+                        "0": {
+                            "then": "Œuvre d'art <i>{name}</i>"
+                        }
+                    }
+                },
+                "description": "Diverses œuvres d'art",
+                "presets": {
+                    "0": {
+                        "title": "Œuvre d'art"
+                    }
+                },
+                "tagRenderings": {
+                    "1": {
+                        "render": "Type d'œuvre : {artwork_type}",
+                        "question": "Quel est le type de cette œuvre d'art?",
+                        "mappings": {
+                            "0": {
+                                "then": "Architecture"
+                            },
+                            "1": {
+                                "then": "Peinture murale"
+                            },
+                            "2": {
+                                "then": "Peinture"
+                            },
+                            "3": {
+                                "then": "Sculpture"
+                            },
+                            "4": {
+                                "then": "Statue"
+                            },
+                            "5": {
+                                "then": "Buste"
+                            },
+                            "6": {
+                                "then": "Rocher"
+                            },
+                            "7": {
+                                "then": "Installation"
+                            },
+                            "8": {
+                                "then": "Graffiti"
+                            },
+                            "9": {
+                                "then": "Relief"
+                            },
+                            "10": {
+                                "then": "Azulejo (faïence latine)"
+                            },
+                            "11": {
+                                "then": "Carrelage"
+                            }
+                        }
+                    },
+                    "2": {
+                        "question": "Quel artiste a créé cette œuvre ?",
+                        "render": "Créé par {artist_name}"
+                    },
+                    "3": {
+                        "question": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
+                        "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+                    },
+                    "4": {
+                        "question": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
+                        "render": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+                    }
+                }
+            }
+        }
+    },
+    "benches": {
+        "title": "Bancs",
+        "shortDescription": "Carte des bancs",
+        "description": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants."
+    },
+    "bookcases": {
+        "title": "Carte des microbibliothèques",
+        "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap."
+    },
+    "cyclofix": {
+        "title": "Cyclofix - Une carte ouverte pour les cyclistes",
+        "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
+    },
+    "fritures": {
+        "title": "Carte des friteries",
+        "layers": {
+            "0": {
+                "name": "Friteries",
+                "title": {
+                    "render": "Friterie",
+                    "mappings": {
+                        "0": {
+                            "then": " <i>{name}</i>"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "1": {
+                        "render": "{name}",
+                        "question": "Quel est le nom de cette friterie?"
+                    },
+                    "2": {
+                        "render": "<h3>Horaires</h3>{opening_hours_table(opening_hours)}",
+                        "question": "Quand est ce-que ce friterie ouvert?"
+                    },
+                    "3": {
+                        "question": "Quel est le site web de cette  friterie?"
+                    },
+                    "4": {
+                        "render": "<a href='tel:{phone}'>{phone}</a>",
+                        "question": "Quel est le numéro de téléphone de cette friterie?"
+                    },
+                    "5": {
+                        "question": "Cette friterie est-elle équipée de snacks végétariens ?",
+                        "mappings": {
+                            "0": {
+                                "then": "Des collations végétariennes sont disponibles"
+                            },
+                            "1": {
+                                "then": "Quelques snacks végétariens seulement"
+                            },
+                            "2": {
+                                "then": "Pas d'en-cas végétariens disponibles"
+                            }
+                        }
+                    },
+                    "6": {
+                        "question": "Cette friterie est-elle équipée de snacks végétaliens ?",
+                        "mappings": {
+                            "0": {
+                                "then": "Des collations végétaliens sont disponibles"
+                            },
+                            "1": {
+                                "then": "Quelques snacks végétaliens seulement"
+                            },
+                            "2": {
+                                "then": "Pas d'en-cas végétaliens disponibles"
+                            }
+                        }
+                    },
+                    "7": {
+                        "question": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
+                        "mappings": {
+                            "0": {
+                                "then": "Huile végétale"
+                            },
+                            "1": {
+                                "then": "Graisse animale"
+                            }
+                        }
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Friturie"
+                    }
+                }
+            }
+        }
+    },
+    "maps": {
+        "title": "Carte des cartes",
+        "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
+        "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap."
+    },
+    "personal": {
+        "title": "Thème personnalisé",
+        "description": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes"
+    },
+    "shops": {
+        "title": "Carte des magasins",
+        "shortDescription": "Carte modifiable affichant les informations de base des magasins",
+        "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone",
+        "layers": {
+            "0": {
+                "name": "Magasin",
+                "title": {
+                    "render": "Magasin",
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        },
+                        "1": {
+                            "then": "{shop}"
+                        }
+                    }
+                },
+                "description": "Un magasin",
+                "tagRenderings": {
+                    "1": {
+                        "question": "Qu'est-ce que le nom de ce magasin?"
+                    },
+                    "2": {
+                        "render": "Ce magasin vends {shop}",
+                        "question": "Que vends ce magasin ?",
+                        "mappings": {
+                            "0": {
+                                "then": "Épicerie/superette"
+                            },
+                            "1": {
+                                "then": "Supermarché"
+                            },
+                            "2": {
+                                "then": "Magasin de vêtements"
+                            },
+                            "3": {
+                                "then": "Coiffeur"
+                            },
+                            "4": {
+                                "then": "Boulangerie"
+                            },
+                            "5": {
+                                "then": "Garagiste"
+                            },
+                            "6": {
+                                "then": "Concessionnaire"
+                            }
+                        }
+                    },
+                    "3": {
+                        "render": "<a href='tel:{phone}'>{phone}</a>",
+                        "question": "Quel est le numéro de téléphone ?"
+                    },
+                    "4": {
+                        "render": "<a href='{website}'>{website}</a>",
+                        "question": "Quel est le site internet de ce magasin ?"
+                    },
+                    "5": {
+                        "render": "<a href='mailto:{email}'>{email}</a>",
+                        "question": "Quel est l'adresse mail de ce magasin ?"
+                    },
+                    "6": {
+                        "render": "{opening_hours_table(opening_hours)}",
+                        "question": "Quels sont les horaires d'ouverture de ce magasin ?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Magasin",
+                        "description": "Ajouter un nouveau magasin"
+                    }
+                }
+            }
+        }
+    },
+    "sport_pitches": {
+        "title": "Terrains de sport",
+        "shortDescription": "Une carte montrant les terrains de sport",
+        "description": "Un terrain de sport est une zone faite pour pratiquer un sport"
+    },
+    "toilets": {
+        "title": "Carte des WC et toilettes publiques",
+        "description": "Carte affichant les WC et toilettes publiques"
+    }
+}

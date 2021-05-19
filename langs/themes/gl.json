@@ -1,0 +1,10 @@
+{
+    "cyclofix": {
+        "title": "Cyclofix - Un mapa aberto para os ciclistas",
+        "description": "O obxectivo deste mapa é amosar ós ciclistas unha solución doada de empregar para atopar a infraestrutura axeitada para as súas necesidades.<br><br>Podes obter a túa localización precisa (só para dispositivos móbiles) e escoller as capas que sexan relevantes para ti na esquina inferior esquerda. Tamén podes empregar esta ferramenta para engadir ou editar puntos de interese ó mapa e fornecer máis datos respondendo as cuestións.<br><br>Todas as modificacións que fagas serán gardadas de xeito automático na base de datos global do OpenStreetMap e outros poderán reutilizalos libremente.<br><br>Para máis información sobre o proxecto cyclofix, vai a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
+    },
+    "personal": {
+        "title": "Tema personalizado",
+        "description": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas"
+    }
+}
