@@ -165,7 +165,7 @@ function genTranslations() {
 
 // Read 'lang/*.json', writes to 'assets/generated/translations.json'
 function compileTranslationsFromWeblate() {
-    const translations = ScriptUtils.readDirRecSync("./langs")
+    const translations = ScriptUtils.readDirRecSync("./langs", 1)
         .filter(path => path.indexOf(".json") > 0)
 
     const allTranslations = new TranslationPart()

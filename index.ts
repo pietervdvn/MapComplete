@@ -106,6 +106,8 @@ if (layoutFromBase64.startsWith("http")) {
                 let parsed = data;
                 if (typeof parsed == "string") {
                     parsed = JSON.parse(data);
+                }else{
+                    data = JSON.stringify(parsed) // De wereld op zijn kop
                 }
                 // Overwrite the id to the wiki:value
                 parsed.id = link;

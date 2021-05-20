@@ -3,6 +3,7 @@ import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
 import {Relation} from "./Osm/ExtractRelations";
 import FeatureSource from "./FeatureSource/FeatureSource";
+import State from "../State";
 
 
 interface Params {
@@ -48,7 +49,7 @@ export default class MetaTagging {
         }
 
         const featuresPerLayer = new Map<string, any[]>();
-        for (const feature of features) {
+        for (const feature of (allKnownFeatures.features?.data ?? features ?? [])) {
 
             const key = feature.feature._matching_layer_id;
             if (!featuresPerLayer.has(key)) {
@@ -57,13 +58,14 @@ export default class MetaTagging {
             featuresPerLayer.get(key).push(feature.feature)
         }
 
-        for (const feature of (allKnownFeatures.features?.data ?? features ?? [])) {
+        for (const feature of features) {
             // @ts-ignore
             const key = feature.feature._matching_layer_id;
             const f = layerFuncs.get(key);
             if (f === undefined) {
                 continue;
             }
+           
             try {
                 f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
             } catch (e) {
@@ -71,6 +73,7 @@ export default class MetaTagging {
             }
 
         }
+
 
     }
 
@@ -97,14 +100,14 @@ export default class MetaTagging {
                 const f = (featuresPerLayer, feature: any) => {
                     try {
                         let result = func(feature);
-                        if(result === undefined || result === ""){
+                        if (result === undefined || result === "") {
                             return;
                         }
-                        if(typeof result !== "string"){
+                        if (typeof result !== "string") {
                             // Make sure it is a string!
                             result = "" + result;
                         }
-                        feature.properties[key] = result; 
+                        feature.properties[key] = result;
                     } catch (e) {
                         console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
                     }

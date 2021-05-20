@@ -110,7 +110,7 @@ Some advanced functions are available on <b>feat</b> as well:
                 let closestFeature = undefined;
                 let closestDistance = undefined;
                 for (const otherFeature of features) {
-                    if (otherFeature == feature) {
+                    if (otherFeature == feature || otherFeature.id == feature.id) {
                         continue; // We ignore self
                     }
                     let distance = undefined;

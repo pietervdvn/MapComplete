@@ -4,15 +4,18 @@ import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 
 export default class ScriptUtils {
-    public static readDirRecSync(path): string[] {
+    public static readDirRecSync(path, maxDepth = 999): string[] {
         const result = []
+        if(maxDepth <= 0){
+            return []
+        }
         for (const entry of readdirSync(path)) {
             const fullEntry = path + "/" + entry
             const stats = lstatSync(fullEntry)
             if (stats.isDirectory()) {
                 // Subdirectory
                 // @ts-ignore
-                result.push(...ScriptUtils.readDirRecSync(fullEntry))
+                result.push(...ScriptUtils.readDirRecSync(fullEntry, maxDepth - 1))
             } else {
                 result.push(fullEntry)
             }
