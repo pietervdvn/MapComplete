@@ -3,19 +3,22 @@
   "title": {
     "en": "Open Toilet Map",
     "de": "Offene Toilette Karte",
-    "fr": "Carte des WC et toilettes publiques"
+    "fr": "Carte des WC et toilettes publiques",
+    "nl": "Open Toilettenkaart"
   },
   "description": {
     "en": "A map of public toilets",
     "de": "Eine Karte der öffentlichen Toiletten",
-    "fr": "Carte affichant les WC et toilettes publiques"
+    "fr": "Carte affichant les WC et toilettes publiques",
+    "nl": "Een kaart met openbare toiletten"
   },
   "maintainer": "MapComplete",
   "version": "2020-08-29",
   "language": [
     "en",
     "de",
-    "fr"
+    "fr",
+    "nl"
   ],
   "startZoom": 12,
   "startLat": 51.2095,

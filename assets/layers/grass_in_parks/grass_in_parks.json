@@ -5,12 +5,17 @@
   },
   "source": {
     "osmTags": {
-      "and": [
-        "landuse=grass",
+      "or": [
+        "name=Park Oude God",
         {
-          "or": [
-            "access=public",
-            "access=yes"
+          "and": [
+            "landuse=grass",
+            {
+              "or": [
+                "access=public",
+                "access=yes"
+              ]
+            }
           ]
         }
       ]
