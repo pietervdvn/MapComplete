@@ -96,12 +96,10 @@
         "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
     },
     "fritures": {
-        "title": "Carte des friteries",
         "layers": {
             "0": {
                 "name": "Friteries",
                 "title": {
-                    "render": "Friterie",
                     "mappings": {
                         "0": {
                             "then": " <i>{name}</i>"
@@ -110,28 +108,21 @@
                 },
                 "tagRenderings": {
                     "1": {
-                        "render": "{name}",
                         "question": "Quel est le nom de cette friterie?"
                     },
                     "2": {
-                        "render": "<h3>Horaires</h3>{opening_hours_table(opening_hours)}",
                         "question": "Quand est ce-que ce friterie ouvert?"
                     },
                     "3": {
                         "question": "Quel est le site web de cette  friterie?"
                     },
                     "4": {
-                        "render": "<a href='tel:{phone}'>{phone}</a>",
                         "question": "Quel est le numéro de téléphone de cette friterie?"
                     },
                     "5": {
-                        "question": "Cette friterie est-elle équipée de snacks végétariens ?",
                         "mappings": {
                             "0": {
                                 "then": "Des collations végétariennes sont disponibles"
-                            },
-                            "1": {
-                                "then": "Quelques snacks végétariens seulement"
                             },
                             "2": {
                                 "then": "Pas d'en-cas végétariens disponibles"
@@ -139,13 +130,9 @@
                         }
                     },
                     "6": {
-                        "question": "Cette friterie est-elle équipée de snacks végétaliens ?",
                         "mappings": {
                             "0": {
                                 "then": "Des collations végétaliens sont disponibles"
-                            },
-                            "1": {
-                                "then": "Quelques snacks végétaliens seulement"
                             },
                             "2": {
                                 "then": "Pas d'en-cas végétaliens disponibles"
@@ -153,13 +140,9 @@
                         }
                     },
                     "7": {
-                        "question": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
                         "mappings": {
                             "0": {
                                 "then": "Huile végétale"
-                            },
-                            "1": {
-                                "then": "Graisse animale"
                             }
                         }
                     }
