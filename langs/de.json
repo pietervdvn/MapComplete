@@ -1,22 +1,22 @@
 {
     "image": {
         "addPicture": "Bild hinzufügen",
-        "uploadingPicture": "Ihr Bild hochladen...",
-        "uploadingMultiple": "{count} Ihrer Bilder hochgeladen...",
+        "uploadingPicture": "Ihr Bild hochladen…",
+        "uploadingMultiple": "{count} Ihrer Bilder hochgeladen…",
         "pleaseLogin": "Bitte einloggen, um ein Bild hinzuzufügen",
         "willBePublished": "Ihr Bild wird veröffentlicht: ",
         "cco": "in die Public Domain",
         "ccbs": "unter der CC-BY-SA-Lizenz",
         "ccb": "unter der CC-BY-Lizenz",
-        "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie Internet und sind API's von Dritten erlaubt? Brave Browser oder UMatrix blockieren evtl..",
-        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder",
+        "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie Internet und sind APIs von Dritten erlaubt? Brave Browser oder UMatrix blockieren eventuell.",
+        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie Google Maps oder Streetview.",
         "uploadDone": "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
         "dontDelete": "Abbrechen",
         "doDelete": "Bild entfernen",
         "isDeleted": "Gelöscht"
     },
     "centerMessage": {
-        "loadingData": "Daten werden geladen...",
+        "loadingData": "Daten werden geladen…",
         "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
         "ready": "Erledigt!",
         "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch... ({count})"
@@ -145,7 +145,10 @@
             "iconAttribution": {
                 "title": "Verwendete Icons"
             },
-            "attributionTitle": "Danksagung"
+            "attributionTitle": "Danksagung",
+            "codeContributionsBy": "MapComplete wurde von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a> erstellt",
+            "themeBy": "Thema betreut von {author}",
+            "attributionContent": "<p>Alle Daten wurden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>"
         }
     },
     "favourite": {
@@ -165,6 +168,8 @@
         "saving_review": "Speichern...",
         "saved": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
         "tos": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
-        "plz_login": "Melde dich an, um eine Rezension zu vergeben"
+        "plz_login": "Melde dich an, um eine Rezension zu vergeben",
+        "affiliated_reviewer_warning": "(Partner-Rezension)",
+        "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar."
     }
 }
