@@ -74,6 +74,10 @@
                         "then": "Couleur : jaune"
                     }
                 }
+            },
+            "4": {
+                "render": "Assis sur le banc, on regarde vers {direction}°.",
+                "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?"
             }
         },
         "presets": {
