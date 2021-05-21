@@ -6,7 +6,13 @@
         "pleaseLogin": "Proszę, zaloguj się by dodać ilustrację",
         "isDeleted": "Usunięte",
         "doDelete": "Usuń ilustrację",
-        "dontDelete": "Anuluj"
+        "dontDelete": "Anuluj",
+        "uploadDone": "<span class=\"thanks\">Twoja ilustracja została dodana. Dzięki za pomoc!</span>",
+        "uploadFailed": "Wysyłanie ilustracji nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
+        "cco": "w domenie publicznej",
+        "ccb": "na licencji CC-BY",
+        "ccbs": "na licencji CC-BY-SA",
+        "willBePublished": "Twoja ilustracja będzie opublikowana: "
     },
     "general": {
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap"
