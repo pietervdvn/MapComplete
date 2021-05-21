@@ -1,1 +1,7 @@
-{}
+{
+    "image": {
+        "uploadingMultiple": "Wysyłanie {count} ilustracji…",
+        "uploadingPicture": "Wysyłanie ilustracji…",
+        "addPicture": "Dodaj ilustrację"
+    }
+}
