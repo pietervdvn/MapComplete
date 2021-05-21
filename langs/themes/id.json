@@ -1,1 +1,156 @@
-{}
+{
+    "charging_stations": {
+        "title": "Stasiun pengisian daya"
+    },
+    "campersite": {
+        "roamingRenderings": {
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": "Tempat ini tidak memiliki sumber listrik"
+                    },
+                    "0": {
+                        "then": "Tempat ini memiliki catu daya"
+                    }
+                }
+            }
+        },
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "9": {
+                        "question": "Tempat sini terada situs web?",
+                        "render": "Situs resmi: <a href='{website}'>{website}</a>"
+                    },
+                    "8": {
+                        "mappings": {
+                            "1": {
+                                "then": "Tempat sini tiada tandas"
+                            },
+                            "0": {
+                                "then": "Tempat sini ada tandas"
+                            }
+                        }
+                    },
+                    "6": {
+                        "mappings": {
+                            "2": {
+                                "then": "Tiada akses Web"
+                            },
+                            "1": {
+                                "then": "Akses Web tersedia"
+                            },
+                            "0": {
+                                "then": "Akses Web tersedia"
+                            }
+                        },
+                        "question": "Tempat ini berbagi akses Web?"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Boleh digunakan tanpa bayaran"
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "Apakah nama tempat ini?"
+                    }
+                }
+            }
+        }
+    },
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
+                    }
+                }
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "climbing": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "0": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "4": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            }
+        }
+    },
+    "shops": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "5": {
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "4": {
+                        "render": "<a href='{website}'>{website}</a>"
+                    },
+                    "3": {
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    }
+                }
+            }
+        }
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<a href='{website}'>{website}</a>"
+                    }
+                }
+            }
+        }
+    }
+}
