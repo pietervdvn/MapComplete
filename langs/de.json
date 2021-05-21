@@ -101,7 +101,7 @@
         "getStartedLogin": "Mit OpenStreetMap einloggen und loslegen",
         "getStartedNewAccount": " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
         "noTagsSelected": "Keine Tags ausgewählt",
-        "customThemeIntro": "<h3>Spezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
+        "customThemeIntro": "<h3>Benutzerdefinierte Themes</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
         "aboutMapcomplete": "<h3>Über MapComplete</h3><p>MapComplete ist ein OpenStreetMap-Editor, der jedem helfen soll, auf einfache Weise Informationen zu einem <b>Einzelthema hinzuzufügen.</b></p><p>Nur Merkmale, die für ein einzelnes Thema relevant sind, werden mit einigen vordefinierten Fragen gezeigt, um die Dinge <b>einfach und extrem benutzerfreundlich</b> zu halten. Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p><p>Ein weiterer wichtiger Teil von MapComplete ist jedoch, immer <b>den nächsten Schritt anzubieten</b>um mehr über OpenStreetMap zu erfahren:<ul><li>Ein iframe ohne UI-Elemente verlinkt zu einer Vollbildversion</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Wenn Sie nicht eingeloggt sind, werden Sie gebeten, sich einzuloggen</li><li>Wenn Sie eine einzige Frage beantwortet haben, dürfen Sie Punkte hinzufügen</li><li>An einem bestimmten Punkt erscheinen die tatsächlich hinzugefügten Tags, die später mit dem Wiki verlinkt werden...</li></ul></p><p>Fällt Ihnen ein Problem mit MapComplete auf? Haben Sie einen Feature-Wunsch? Wollen Sie beim Übersetzen helfen? Gehen Sie <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zum Quellcode</a> oder <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>zur Problemverfolgung</a>.</p>",
         "backgroundMap": "Hintergrundkarte",
         "layerSelection": {
@@ -161,7 +161,7 @@
         "title_singular": "Eine Rezension",
         "name_required": "Der Name des Objekts ist notwendig, um eine Bewertung erstellen zu können",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
-        "write_a_comment": "Schreibe einen Kommentar...",
+        "write_a_comment": "Schreibe einen Kommentar…",
         "no_rating": "Keine Bewertung vorhanden",
         "posting_as": "Angemeldet als",
         "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
