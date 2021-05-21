@@ -1,1 +1,26 @@
-{}
+{
+    "general": {
+        "questions": {
+            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
+            "websiteIs": "Situs Web: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "nameInlineQuestion": "Name {category} ini adalah $$$",
+        "pickLanguage": "Pilih bahasa: ",
+        "layerSelection": {
+            "title": "Pilih lapisan"
+        },
+        "backgroundMap": "Peta latar belakang",
+        "search": {
+            "searching": "Sdg mencari…"
+        },
+        "opening_hours": {
+            "ph_not_known": " "
+        }
+    },
+    "image": {
+        "doDelete": "Buang gambar"
+    },
+    "centerMessage": {
+        "ready": "Selesai!"
+    }
+}
