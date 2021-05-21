@@ -1,16 +1,16 @@
 {
     "image": {
         "addPicture": "Bild hinzufügen",
-        "uploadingPicture": "Ihr Bild hochladen…",
-        "uploadingMultiple": "{count} Ihrer Bilder hochgeladen…",
+        "uploadingPicture": "Bild wird hochgeladen…",
+        "uploadingMultiple": "{count} Bilder hochladen…",
         "pleaseLogin": "Bitte einloggen, um ein Bild hinzuzufügen",
         "willBePublished": "Ihr Bild wird veröffentlicht: ",
-        "cco": "in die Public Domain",
-        "ccbs": "unter der CC-BY-SA-Lizenz",
-        "ccb": "unter der CC-BY-Lizenz",
-        "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie Internet und sind APIs von Dritten erlaubt? Brave Browser oder UMatrix blockieren eventuell.",
-        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie Google Maps oder Streetview.",
-        "uploadDone": "<span class='thanks'>Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
+        "cco": "als 'Public Domain'",
+        "ccbs": "unter der 'CC-BY-SA-Lizenz'",
+        "ccb": "unter der 'CC-BY-Lizenz'",
+        "uploadFailed": "Wir konnten Ihr Bild nicht hochladen. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
+        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
+        "uploadDone": "<span class=\"thanks\">Ihr Bild wurde hinzugefügt. Vielen Dank für Ihre Hilfe!</span>",
         "dontDelete": "Abbrechen",
         "doDelete": "Bild entfernen",
         "isDeleted": "Gelöscht"
@@ -19,13 +19,13 @@
         "loadingData": "Daten werden geladen…",
         "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
         "ready": "Erledigt!",
-        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch... ({count})"
+        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in  ({count}) Sekunden…"
     },
     "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
-        "title": "Willkommen auf MapComplete",
+        "#": "Dieser Text wird über den Thema Auswahlbuttons gezeigt, wenn kein Thema geladen ist.",
+        "title": "Willkommen bei MapComplete",
         "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu einem bestimmten Thema angezeigt und angepasst werden können.",
-        "pickTheme": "Wähle unten ein Thema, um zu starten"
+        "pickTheme": "Wähle unten ein Thema, um zu starten."
     },
     "general": {
         "loginWithOpenStreetMap": "Anmeldung mit OpenStreetMap",
@@ -33,9 +33,9 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "search": {
             "search": "Einen Ort suchen",
-            "searching": "Auf der Suche...",
-            "nothing": "Nichts gefunden...",
-            "error": "Etwas ging schief..."
+            "searching": "Suchen…",
+            "nothing": "Nichts gefunden…",
+            "error": "Etwas ging schief…"
         },
         "returnToTheMap": "Zurück zur Karte",
         "save": "Speichern",
@@ -44,12 +44,12 @@
         "oneSkippedQuestion": "Eine Frage wurde übersprungen",
         "skippedQuestions": "Einige Fragen wurden übersprungen",
         "number": "Zahl",
-        "osmLinkTooltip": "Dieses Objekt auf OpenStreetMap anschauen für die Geschichte und weitere Bearbeitungsmöglichkeiten",
+        "osmLinkTooltip": "Dieses Objekt auf OpenStreetMap anschauen für dessen Verlauf und weitere Bearbeitungsmöglichkeiten",
         "add": {
             "addNew": "Hier eine neue {category} hinzufügen",
             "title": "Punkt hinzufügen?",
-            "intro": "Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br/>",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen</a>",
+            "intro": "Sie haben irgendwo geklickt, wo noch keine Daten bekannt sind.<br>",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Bitte loggen Sie sich ein, um einen neuen Punkt hinzuzufügen</a>",
             "zoomInFurther": "Weiter einzoomen, um einen Punkt hinzuzufügen.",
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie etwas, bevor Sie einen neuen Punkt hinzufügen.",
             "confirmIntro": "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
@@ -101,7 +101,7 @@
         "getStartedLogin": "Mit OpenStreetMap einloggen und loslegen",
         "getStartedNewAccount": " oder <a href='https://www.openstreetmap.org/user/new' target='_blank'>ein neues Konto anlegen</a>",
         "noTagsSelected": "Keine Tags ausgewählt",
-        "customThemeIntro": "<h3>Kundenspezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen",
+        "customThemeIntro": "<h3>Spezifische Themen</h3>Dies sind zuvor besuchte benutzergenerierte Themen.",
         "aboutMapcomplete": "<h3>Über MapComplete</h3><p>MapComplete ist ein OpenStreetMap-Editor, der jedem helfen soll, auf einfache Weise Informationen zu einem <b>Einzelthema hinzuzufügen.</b></p><p>Nur Merkmale, die für ein einzelnes Thema relevant sind, werden mit einigen vordefinierten Fragen gezeigt, um die Dinge <b>einfach und extrem benutzerfreundlich</b> zu halten. Der Themen-Betreuer kann auch eine Sprache für die Schnittstelle wählen, Elemente deaktivieren oder sogar in eine andere Website ohne jegliches UI-Element einbetten.</p><p>Ein weiterer wichtiger Teil von MapComplete ist jedoch, immer <b>den nächsten Schritt anzubieten</b>um mehr über OpenStreetMap zu erfahren:<ul><li>Ein iframe ohne UI-Elemente verlinkt zu einer Vollbildversion</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Wenn Sie nicht eingeloggt sind, werden Sie gebeten, sich einzuloggen</li><li>Wenn Sie eine einzige Frage beantwortet haben, dürfen Sie Punkte hinzufügen</li><li>An einem bestimmten Punkt erscheinen die tatsächlich hinzugefügten Tags, die später mit dem Wiki verlinkt werden...</li></ul></p><p>Fällt Ihnen ein Problem mit MapComplete auf? Haben Sie einen Feature-Wunsch? Wollen Sie beim Übersetzen helfen? Gehen Sie <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zum Quellcode</a> oder <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>zur Problemverfolgung</a>.</p>",
         "backgroundMap": "Hintergrundkarte",
         "layerSelection": {
@@ -165,7 +165,7 @@
         "no_rating": "Keine Bewertung vorhanden",
         "posting_as": "Angemeldet als",
         "i_am_affiliated": "<span>Ich bin angehörig</span><br/><span class='subtle'>Überprüfe, ob du Eigentümer, Ersteller, Angestellter etc. bist</span>",
-        "saving_review": "Speichern...",
+        "saving_review": "Speichern…",
         "saved": "<span class='thanks'>Rezension gespeichert. Vielen Dank für den Beitrag!</span>",
         "tos": "Mit deiner Rezension stimmst du den <a href='https://mangrove.reviews/terms' target='_blank'>AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
         "plz_login": "Melde dich an, um eine Rezension zu vergeben",
