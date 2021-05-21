@@ -78,6 +78,10 @@
             "4": {
                 "render": "Assis sur le banc, on regarde vers {direction}°.",
                 "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?"
+            },
+            "6": {
+                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
+                "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?"
             }
         },
         "presets": {
@@ -165,6 +169,9 @@
             },
             "7": {
                 "question": "Quel est l'adresse email de {name}?"
+            },
+            "8": {
+                "question": "Quand ce Café vélo est-t-il ouvert ?"
             }
         },
         "presets": {
@@ -205,6 +212,12 @@
                     },
                     "5": {
                         "then": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    },
+                    "7": {
+                        "then": "Zone au sol qui est marquée pour le stationnement des vélos"
+                    },
+                    "6": {
+                        "then": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
                     }
                 }
             },
@@ -215,6 +228,65 @@
             "7": {
                 "question": "Combien de vélos de transport entrent dans ce parking à vélos ?",
                 "render": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport."
+            },
+            "6": {
+                "mappings": {
+                    "2": {
+                        "then": "Il est interdit de garer des vélos cargo"
+                    },
+                    "1": {
+                        "then": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo."
+                    },
+                    "0": {
+                        "then": "Ce parking a de la place pour les vélos cargo"
+                    }
+                },
+                "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": "Accès limité aux membres d'une école, entreprise ou organisation"
+                    },
+                    "1": {
+                        "then": "Accès destiné principalement aux visiteurs d'un lieu"
+                    },
+                    "0": {
+                        "then": "Accessible publiquement"
+                    }
+                },
+                "question": "Qui peut utiliser ce parking à vélo ?"
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "Ce parking n'est pas couvert"
+                    },
+                    "0": {
+                        "then": "Ce parking est couvert (il a un toit)"
+                    }
+                },
+                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
+            },
+            "2": {
+                "mappings": {
+                    "4": {
+                        "then": "Parking sur un toit"
+                    },
+                    "3": {
+                        "then": "Parking en surface"
+                    },
+                    "2": {
+                        "then": "Parking en surface"
+                    },
+                    "1": {
+                        "then": "Parking souterrain"
+                    },
+                    "0": {
+                        "then": "Parking souterrain"
+                    }
+                },
+                "question": "Quelle est la position relative de ce parking à vélo ?"
             }
         }
     },
@@ -327,6 +399,21 @@
                         "then": "Il y a un manomètre mais il est cassé"
                     }
                 }
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "Ouvert en permanence"
+                    },
+                    "0": {
+                        "then": "Ouvert en permanence"
+                    }
+                },
+                "question": "Quand ce point de réparation de vélo est-il ouvert ?"
+            },
+            "2": {
+                "render": "Mantenue par {operator}",
+                "question": "Qui maintient cette pompe à vélo ?"
             }
         },
         "presets": {
@@ -334,7 +421,8 @@
                 "title": "Pompe à vélo"
             },
             "1": {
-                "title": "Point de réparation vélo avec pompe"
+                "title": "Point de réparation vélo avec pompe",
+                "description": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
             },
             "2": {
                 "title": "Point de réparation vélo sans pompe"
@@ -357,6 +445,9 @@
                 },
                 "5": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Location de vélo <i>{name}</i>"
                 }
             }
         },
@@ -435,6 +526,9 @@
                     },
                     "1": {
                         "then": "Ce magasin n'offre pas de pompe en libre accès"
+                    },
+                    "2": {
+                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé "
                     }
                 }
             },
@@ -446,20 +540,46 @@
                     },
                     "1": {
                         "then": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même"
+                    },
+                    "2": {
+                        "then": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
                     }
                 }
+            },
+            "15": {
+                "mappings": {
+                    "2": {
+                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
+                    },
+                    "1": {
+                        "then": "Ce magasin a une installation pour laver soi même des vélos"
+                    },
+                    "0": {
+                        "then": "Ce magasin lave les vélos"
+                    }
+                },
+                "question": "Lave-t-on les vélos ici ?"
+            },
+            "1": {
+                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
             }
         },
         "presets": {
             "0": {
                 "title": "Magasin et réparateur de vélo"
             }
-        }
+        },
+        "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien"
     },
     "bike_themed_object": {
         "name": "Objet cycliste",
         "title": {
-            "render": "Objet cycliste"
+            "render": "Objet cycliste",
+            "mappings": {
+                "1": {
+                    "then": "Piste cyclable"
+                }
+            }
         }
     },
     "defibrillator": {
@@ -499,25 +619,102 @@
                     },
                     "3": {
                         "then": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)"
+                    },
+                    "4": {
+                        "then": "Pas accessible, peut-être uniquement à usage professionnel"
                     }
                 }
             },
             "4": {
                 "question": "À quel étage est situé ce défibrillateur ?",
-                "render": "Ce défibrillateur est à l'étage {level}"
+                "render": "Ce défibrillateur est à l'étage {level}",
+                "mappings": {
+                    "1": {
+                        "then": "Ce défibrillateur est au <b>premier étage</b>"
+                    },
+                    "0": {
+                        "then": "Ce défibrillateur est au <b>rez-de-chaussée</b>"
+                    }
+                }
             },
             "5": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)"
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}"
             },
             "6": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)"
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}"
             },
             "7": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)"
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}"
             },
             "11": {
                 "render": "Numéro de téléphone pour questions sur le défibrillateur: <a href='tel:{phone}'>{phone}</a>",
                 "question": "Quel est le numéro de téléphone pour questions sur le défibrillateur?"
+            },
+            "15": {
+                "question": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)",
+                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
+            },
+            "14": {
+                "mappings": {
+                    "0": {
+                        "then": "Vérifié aujourd'hui !"
+                    }
+                },
+                "render": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}",
+                "question": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?"
+            },
+            "13": {
+                "question": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
+                "render": "Informations supplémentaires : {description}"
+            },
+            "12": {
+                "mappings": {
+                    "0": {
+                        "then": "Ouvert jour et nuit (même pendant les jours feriés)"
+                    }
+                },
+                "render": "{opening_hours_table(opening_hours)}",
+                "question": "À quels horaires ce défibrillateur est-il accessible ?"
+            },
+            "10": {
+                "question": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?",
+                "render": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>"
+            },
+            "9": {
+                "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)",
+                "render": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>"
+            },
+            "8": {
+                "mappings": {
+                    "3": {
+                        "then": "Ce défibrillateur n'est pas atteignable en fauteuil roulant"
+                    },
+                    "2": {
+                        "then": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile"
+                    },
+                    "1": {
+                        "then": "Ce défibrillateur est facilement atteignable en fauteuil roulant"
+                    },
+                    "0": {
+                        "then": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant"
+                    }
+                },
+                "question": "Ce défibrillatuer est-il accessible en fauteuil roulant ?"
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "C'est un défibrillateur automatique manuel"
+                    },
+                    "0": {
+                        "then": "C'est un défibrillateur manuel pour professionnel"
+                    }
+                },
+                "question": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
+                "render": "Il n'y a pas d'information sur le type de dispositif"
             }
         }
     },
@@ -853,5 +1050,111 @@
                 }
             }
         }
+    },
+    "direction": {
+        "description": "Cette couche visualise les directions",
+        "name": "Visualisation de la direction"
+    },
+    "bike_monitoring_station": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Station de comptage de vélo {ref}"
+                },
+                "0": {
+                    "then": "Station de comptage de vélo {name}"
+                }
+            },
+            "render": "Station de comptage de vélo"
+        },
+        "name": "Stations de contrôle"
+    },
+    "bike_cleaning": {
+        "presets": {
+            "0": {
+                "title": "Service de nettoyage de vélo"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Service de nettoyage de vélo <i>{name}</i>"
+                }
+            },
+            "render": "Service de nettoyage de vélo"
+        },
+        "name": "Service de nettoyage de vélo"
+    },
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": "Le distributeur automatique est fermé"
+                    },
+                    "1": {
+                        "then": "Le distributeur automatique est en panne"
+                    },
+                    "0": {
+                        "then": "Le distributeur automatique fonctionne"
+                    }
+                },
+                "render": "L'état opérationnel est <i>{operational_status}</i>",
+                "question": "Cette machine est-elle encore opérationelle ?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Distributeur automatique de chambre à air de vélo"
+            }
+        },
+        "title": {
+            "render": "Distributeur automatique de chambre à air de vélo"
+        },
+        "name": "Distributeur automatique de chambre à air de vélo"
+    },
+    "bicycle_library": {
+        "presets": {
+            "0": {
+                "description": "Une vélothèque a une collection de vélos qui peuvent être empruntés"
+            }
+        },
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "2": {
+                        "then": "Vélos pour personnes handicapées disponibles"
+                    },
+                    "1": {
+                        "then": "Vélos pour adultes disponibles"
+                    },
+                    "0": {
+                        "then": "Vélos pour enfants disponibles"
+                    }
+                },
+                "question": "Qui peut emprunter des vélos ici ?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "Emprunter un vélo coûte 20€/an et 20€ de garantie"
+                    },
+                    "0": {
+                        "then": "L'emprunt de vélo est gratuit"
+                    }
+                },
+                "render": "Emprunter un vélo coûte {charge}",
+                "question": "Combien coûte l'emprunt d'un vélo ?"
+            },
+            "1": {
+                "render": "Cette vélothèque s'appelle {name}",
+                "question": "Quel est le nom de cette vélothèque ?"
+            }
+        },
+        "description": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
+        "title": {
+            "render": "Vélothèque"
+        },
+        "name": "Vélothèque"
     }
 }
