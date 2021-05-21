@@ -1,1 +1,175 @@
-{}
+{
+    "reviews": {
+        "attribution": "Le recensioni sono fornite da <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e sono disponibili con licenza <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
+        "tos": "Quando pubblichi una recensione, accetti i <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">termini di utilizzo e la informativa sulla privacy di Mangrove.reviews</a>",
+        "plz_login": "Accedi per lasciare una recensione",
+        "saved": "<span class=\"thanks\">Recensione salvata. Grazie per averla condivisa!</span>",
+        "saving_review": "Salvataggio…",
+        "affiliated_reviewer_warning": "(Recensione di un affiliato)",
+        "i_am_affiliated": "<span>Sono associato con questo oggetto</span><br><span class=\"subtle\">Spunta se sei il proprietario, creatore, dipendente, etc.</span>",
+        "posting_as": "Pubblica come",
+        "no_rating": "Nessun voto ricevuto",
+        "write_a_comment": "Lascia una recensione…",
+        "no_reviews_yet": "Non ci sono ancora recensioni. Sii il primo a scriverne una aiutando così i dati liberi e l’attività!",
+        "name_required": "È richiesto un nome per poter mostrare e creare recensioni",
+        "title_singular": "Una recensione",
+        "title": "{count} recensioni"
+    },
+    "general": {
+        "aboutMapcomplete": "<h3>Informazioni su MapComplete</h3><p>Con MapComplete puoi arricchire OpenStreetMap con informazioni su un <b>singolo argomento</b>. Rispondi a poche domande e in pochi minuti i tuoi contributi saranno disponibili a tutto il mondo! L’utente <b>gestore del tema</b> definisce gli elementi, le domande e le lingue per quel tema.</p><h3>Scopri altro</h3><p>MapComplete <b>fornisce sempre un passo ulteriore</b> per imparare dell’altro su OpenStreetMap.</p><ul><li>Quando viene incorporato in un sito web, il collegamento dell’iframe punta a MapComplete a tutto schermo</li><li>La versione a tutto schermo fornisce informazioni su OpenStreetMap</li><li>La visualizzazione non necessita di alcun accesso ma per modificare occorre aver effettuato l’accesso su OSM.</li><li>Se non hai effettuato l’accesso, ti verrà richiesto di farlo</li><li>Dopo aver risposto ad una sola domanda potrai aggiungere dei nuovi punti alla mappa</li><li>Dopo qualche momento verranno mostrate le etichette effettive, in seguito i collegamenti alla wiki</li></ul><p></p><br><p>Hai trovato un <b>errore</b>? Vuoi richiedere <b>nuove funzionalità</b>? Vuoi aiutare con la <b>traduzione</b>? Dai un’occhiata al <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">codice sorgente</a> oppure al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">tracker degli errori.</a></p><p>Vuoi vedere i <b>tuoi progressi</b>?Segui il contatore delle modifiche su <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+        "morescreen": {
+            "requestATheme": "Se hai bisogno di una build personalizzata, puoi farlo <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">qua</a>.",
+            "createYourOwnTheme": "Crea il tuo tema di MapComplete personalizzato da zero",
+            "streetcomplete": "Un’altra simile applicazione è <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "intro": "<h3>Altre mappe tematiche?</h3>Ti diverti a raccogliere dati geografici?<br>Sono disponibili altri temi."
+        },
+        "sharescreen": {
+            "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Siamo lieti se vorrai includere questa cartina nel tuo sito web.<br>Ti incoraggiamo a farlo (non devi neanche chieder il permesso).<br>È gratuito e lo sarà per sempre.Più persone lo useranno e più valore acquisirà.",
+            "addToHomeScreen": "<h3>Aggiungi alla tua schermata Home</h3>Puoi aggiungere facilmente questo sito web alla schermata Home del tuo smartphone. Per farlo, clicca sul pulsante ‘Aggiungi a schermata Home’ nella barra degli indirizzi.",
+            "fsIncludeCurrentLocation": "Includi la posizione attuale",
+            "fsIncludeCurrentBackgroundMap": "Includi lo sfondo attualmente selezionato <b>{name}</b>",
+            "fsIncludeCurrentLayers": "Includi i livelli correntemente selezionati",
+            "fsGeolocation": "Abilita il pusante ‘geo-localizzami’ (solo da mobile)",
+            "fsAddNew": "Abilita il pulsante ‘aggiungi nuovo PDI’",
+            "fsLayerControlToggle": "Inizia con il pannello dei livelli aperto",
+            "fsLayers": "Abilita il controllo dei livelli",
+            "fsWelcomeMessage": "Mostra il messaggio di benvenuto e le schede associate",
+            "fsSearch": "Abilita la barra di ricerca",
+            "fsUserbadge": "Abilita il pulsante di accesso",
+            "editThemeDescription": "Aggiungi o modifica le domande a questo tema della mappa",
+            "editThisTheme": "Modifica questo tema",
+            "thanksForSharing": "Grazie per la condivisione!",
+            "copiedToClipboard": "Collegamento copiato negli appunti",
+            "intro": "<h3>Condividi questa mappa</h3>Condividi questa mappa copiando il collegamento qua sotto e inviandolo ad amici o parenti:"
+        },
+        "attribution": {
+            "attributionContent": "<p>Tutti i dati sono forniti da <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, riutilizzabili liberamente con <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a></p>",
+            "attributionTitle": "Crediti",
+            "codeContributionsBy": "MapComplete è stato realizzato da {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} altri collaboratori</a>",
+            "mapContributionsByAndHidden": "I dati attualmente visibili sono stati modificati da {contributors} e {hiddenCount} altri contributori",
+            "mapContributionsBy": "I dati attualmente visibili sono stati creati da {contributors}",
+            "iconAttribution": {
+                "title": "Icone utilizzate"
+            },
+            "themeBy": "Tema manutenuto da {author}"
+        },
+        "openStreetMapIntro": "<h3>Una mappa libera</h3><p>Non sarebbe perfetto se esistesse una carta geografica che chiunque può modificare e utilizzare liberamente? Un unico posto in un cui conservare tutte le informazioni geografiche? In questo modo tutti questi siti web con mappe diverse, piccole e incompatibili (che sono sempre obsolete) diverrebbero istantaneamente inutili.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> è proprio questa mappa. I dati geografici possono essere usati liberamente (rispettando <a href=\"https://osm.org/copyright\" target=\"_blank\">l’attribuzione e la pubblicazione delle modifiche di quei dati</a>). In più, chiunque può aggiungere liberamente nuovi dati e correggere gli errori. Anche questo sito usa OpenStreetMap. Tutti i dati provengono da lì e le tue risposte e correzioni finiscono sempre lì.</p><p>Moltissime persone e applicazioni già usano OpenStreetmap: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a> ma anche le cartine di Facebook, Instagram, Apple e Bing si basano (parzialmente) su OpenStreetMap. Tutto quello che cambi qua si rifletterà anche su quelle applicazioni (non appena avranno aggiornato i loro dati!)</p>",
+        "opening_hours": {
+            "ph_open": "aperto",
+            "ph_closed": "chiuso",
+            "ph_not_known": " ",
+            "open_24_7": "Sempre aperto",
+            "closed_permanently": "Chiuso per un periodo sconosciuto",
+            "closed_until": "Chiuso fino al {date}",
+            "not_all_rules_parsed": "Gli orari di apertura di questo negozio sono complicati. Le seguenti regole sono state ignorate per l’oggetto in ingresso:",
+            "openTill": "fino a",
+            "opensAt": "da",
+            "open_during_ph": "Durante le festività questo luogo è",
+            "error_loading": "Errore: impossibile visualizzare questi orari di apertura."
+        },
+        "weekdays": {
+            "sunday": "Domenica",
+            "saturday": "Sabato",
+            "friday": "Venerdì",
+            "thursday": "Giovedì",
+            "wednesday": "Mercoledì",
+            "tuesday": "Martedì",
+            "monday": "Lunedì",
+            "abbreviations": {
+                "sunday": "Dom",
+                "saturday": "Sab",
+                "friday": "Ven",
+                "thursday": "Gio",
+                "wednesday": "Mer",
+                "tuesday": "Mar",
+                "monday": "Lun"
+            }
+        },
+        "layerSelection": {
+            "title": "Seleziona livelli",
+            "zoomInToSeeThisLayer": "Ingrandisci la mappa per vedere questo livello"
+        },
+        "backgroundMap": "Mappa di sfondo",
+        "customThemeIntro": "<h3>Temi personalizzati</h3>Questi sono i temi degli utenti che hai già visitato.",
+        "noTagsSelected": "Nessuna etichetta selezionata",
+        "getStartedNewAccount": " oppure <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nuovo account</a>",
+        "getStartedLogin": "Accedi con OpenStreetMap per iniziare",
+        "goToInbox": "Apri posta in arrivo",
+        "fewChangesBefore": "Rispondi ad alcune domande di punti esistenti prima di aggiungere un nuovo punto.",
+        "readYourMessages": "Leggi tutti i tuoi messaggi OpenStreetMap prima di aggiungere un nuovo punto.",
+        "questions": {
+            "emailIs": "L’indirizzo email di questa {category} è <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "Qual è l’indirizzo email di {category}?",
+            "websiteIs": "Sito web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Qual è il sito web di {category}?",
+            "phoneNumberIs": "Il numero di telefono di questa {category} è <a target=\"_blank\">{phone}</a>",
+            "phoneNumberOf": "Qual è il numero di telefono di {category}?"
+        },
+        "noNameCategory": "{category} senza nome",
+        "nameInlineQuestion": "Il nome di questa {category} è $$$",
+        "about": "Modifica e aggiungi con semplicità OpenStreetMap per un certo tema",
+        "pickLanguage": "Scegli una lingua: ",
+        "add": {
+            "layerNotEnabled": "Il livello {layer} non è abilitato. Abilita questo livello per aggiungere un punto",
+            "openLayerControl": "Apri il pannello di controllo dei livelli",
+            "confirmButton": "Aggiungi una {category} qua.<br><div class=\"alert\">La tua aggiunta è visibile a chiunque</div>",
+            "confirmIntro": "<h3>Aggiungere un {title} qua?</h3>Il punto che hai creato qua sarà <b>visibile da chiunque</b>. Per favore, aggiungi sulla mappa solo oggetti realmente esistenti. Molte applicazioni usano questi dati.",
+            "stillLoading": "Caricamento dei dati ancora in corso. Attendi un po’ prima di aggiungere un nuovo punto.",
+            "zoomInFurther": "Ingrandisci la mappa per aggiungere un punto.",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Accedi per aggiungere un punto</a>",
+            "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.",
+            "title": "Aggiungi un nuovo punto?",
+            "addNew": "Aggiungi una nuova {category} qua"
+        },
+        "osmLinkTooltip": "Vedi questo oggetto su OpenStreetMap per la cronologia o altre opzioni di modifica",
+        "number": "numero",
+        "skippedQuestions": "Alcune domande sono state scartate",
+        "oneSkippedQuestion": "Una domanda è stata scartata",
+        "skip": "Salta questa domanda",
+        "cancel": "Annulla",
+        "save": "Salva",
+        "returnToTheMap": "Ritorna alla mappa",
+        "search": {
+            "error": "Qualcosa è andato storto…",
+            "nothing": "Non è stato trovato nulla…",
+            "searching": "Ricerca…",
+            "search": "Cerca un luogo"
+        },
+        "loginToStart": "Accedi per rispondere alla domanda",
+        "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
+        "loginWithOpenStreetMap": "Accedi con OpenStreetMap"
+    },
+    "index": {
+        "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
+        "pickTheme": "Scegli un tema qui sotto per iniziare.",
+        "intro": "MapComplete è un visualizzatore/editore di OpenStreetMap che mostra le informazioni riguardanti uno specifico tema.",
+        "title": "Benvenuto/a su MapComplete"
+    },
+    "favourite": {
+        "reload": "Ricarica i dati",
+        "loginNeeded": "<h3>Accedi</h3>Il layout personale è disponibile soltanto per gli utenti OpenStreetMap",
+        "panelIntro": "<h3>Il tuo tema personale</h3>Attiva i tuoi livelli preferiti fra tutti i temi ufficiali"
+    },
+    "centerMessage": {
+        "retrying": "Caricamento dei dati fallito. Nuovo tentativo tra {count} secondi…",
+        "ready": "Finito!",
+        "zoomIn": "Ingrandisci la mappa per vedere e modificare i dati",
+        "loadingData": "Caricamento dei dati…"
+    },
+    "image": {
+        "isDeleted": "Cancellata",
+        "doDelete": "Rimuovi immagine",
+        "dontDelete": "Annulla",
+        "uploadDone": "<span class=\"thanks\">La tua foto è stata aggiunta! Grazie mille!</span>",
+        "respectPrivacy": "Non fotografare persone o targhe dei veicoli. Non caricare da Google Maps, Google Streetview o da altre fonti coperte da copyright.",
+        "uploadFailed": "Impossibile caricare la tua foto. La connessione internet è attiva e le API di terze parti sono abilitate? Il browser Brave o UMatrix potrebbero bloccarle.",
+        "ccb": "con licenza CC-BY",
+        "ccbs": "con licenza CC-BY-SA",
+        "cco": "nel pubblico dominio",
+        "willBePublished": "La tua foto sarà pubblicata: ",
+        "pleaseLogin": "Accedi per caricare una foto",
+        "uploadingMultiple": "Caricamento di {count} foto…",
+        "uploadingPicture": "Caricamento della tua foto…",
+        "addPicture": "Aggiungi foto"
+    }
+}
