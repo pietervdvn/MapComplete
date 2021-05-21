@@ -2,6 +2,21 @@
     "image": {
         "uploadingMultiple": "Wysyłanie {count} ilustracji…",
         "uploadingPicture": "Wysyłanie ilustracji…",
-        "addPicture": "Dodaj ilustrację"
+        "addPicture": "Dodaj ilustrację",
+        "pleaseLogin": "Proszę, zaloguj się by dodać ilustrację",
+        "isDeleted": "Usunięte",
+        "doDelete": "Usuń ilustrację",
+        "dontDelete": "Anuluj"
+    },
+    "general": {
+        "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap"
+    },
+    "index": {
+        "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
+        "intro": "MapComplete to narzędzie do przeglądania danych OpenStreetMap jak i edytor, z warstwami na różne tematy.",
+        "title": "Witaj w MapComplete"
+    },
+    "centerMessage": {
+        "loadingData": "Ładowanie danych…"
     }
 }
