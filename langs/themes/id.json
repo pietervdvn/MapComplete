@@ -67,9 +67,20 @@
                     "3": {
                         "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini."
                     }
-                }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Karya seni <i>{name}</i>"
+                        }
+                    },
+                    "render": "Karya seni"
+                },
+                "name": "Karya seni"
             }
-        }
+        },
+        "description": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
+        "title": "Buka Peta Karya Seni"
     },
     "hailhydrant": {
         "layers": {
@@ -152,5 +163,9 @@
                 }
             }
         }
+    },
+    "aed": {
+        "description": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
+        "title": "Buka Peta AED"
     }
 }
