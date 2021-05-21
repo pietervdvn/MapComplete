@@ -18,7 +18,15 @@
         }
     },
     "image": {
-        "doDelete": "Buang gambar"
+        "doDelete": "Buang gambar",
+        "ccb": "di bawah lisensi CC-BY",
+        "ccbs": "di bawah lisensi CC-BY-SA",
+        "cco": "di domain publik",
+        "willBePublished": "Gambarmu akan dipublikasikan: ",
+        "pleaseLogin": "Silakan log masuk untuk menambah gambar",
+        "uploadingMultiple": "Mengunggah {count} gambar…",
+        "uploadingPicture": "Mengunggah gambar Anda…",
+        "addPicture": "Tambahkan foto"
     },
     "centerMessage": {
         "ready": "Selesai!"
