@@ -143,7 +143,7 @@
             "opensAt": "à partir de",
             "openTill": "jusqu'à",
             "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées :",
-            "closed_until": "Fermé jusqu'à",
+            "closed_until": "Fermé jusqu'à {date}",
             "closed_permanently": "Fermé",
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
