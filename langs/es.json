@@ -103,7 +103,8 @@
         "noTagsSelected": "No se han seleccionado etiquetas",
         "backgroundMap": "Mapa de fondo",
         "layerSelection": {
-            "zoomInToSeeThisLayer": "Amplía para ver esta capa"
+            "zoomInToSeeThisLayer": "Amplía para ver esta capa",
+            "title": "Seleccionar capas"
         },
         "weekdays": {
             "abbreviations": {
@@ -133,14 +134,17 @@
             "ph_not_known": " ",
             "ph_closed": "cerrado",
             "ph_open": "abierto",
-            "open_24_7": "Abierto las 24 horas del día"
+            "open_24_7": "Abierto las 24 horas del día",
+            "error_loading": "Error: no se han podido visualizar esos horarios de apertura."
         },
         "attribution": {
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
             "iconAttribution": {
                 "title": "Iconos usados"
-            }
-        }
+            },
+            "themeBy": "Tema mantenido por {author}"
+        },
+        "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente."
     },
     "favourite": {
         "panelIntro": "<h3>Tu interficie personal</h3>Activa tus capas favoritas de todas las interficies oficiales",
@@ -148,6 +152,8 @@
         "reload": "Recargar datos"
     },
     "reviews": {
-        "title": "{count} comentarios"
+        "title": "{count} comentarios",
+        "title_singular": "Un comentario",
+        "name_required": "Se requiere un nombre para mostrar y crear comentarios"
     }
 }
