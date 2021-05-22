@@ -1,0 +1,90 @@
+{
+    "benches": {
+        "description": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
+        "shortDescription": "Una mappa delle panchine",
+        "title": "Panchine"
+    },
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "4": {
+                        "render": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+                        "question": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?"
+                    },
+                    "3": {
+                        "render": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",
+                        "question": "Su quale sito web è possibile trovare altre informazioni riguardanti quest’opera?"
+                    },
+                    "2": {
+                        "render": "Creato da {artist_name}",
+                        "question": "Quale artista ha creato quest’opera?"
+                    },
+                    "1": {
+                        "mappings": {
+                            "11": {
+                                "then": "Mosaico di piastrelle"
+                            },
+                            "10": {
+                                "then": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                            },
+                            "9": {
+                                "then": "Rilievo"
+                            },
+                            "8": {
+                                "then": "Graffiti"
+                            },
+                            "7": {
+                                "then": "Istallazione"
+                            },
+                            "6": {
+                                "then": "Masso"
+                            },
+                            "5": {
+                                "then": "Busto"
+                            },
+                            "4": {
+                                "then": "Statua"
+                            },
+                            "3": {
+                                "then": "Scultura"
+                            },
+                            "2": {
+                                "then": "Dipinto"
+                            },
+                            "1": {
+                                "then": "Murale"
+                            },
+                            "0": {
+                                "then": "Architettura"
+                            }
+                        },
+                        "question": "Che tipo di opera d’arte è questo?",
+                        "render": "Si tratta di un {artwork_type}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Opera d’arte"
+                    }
+                },
+                "description": "Diverse opere d’arte",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Opera <i>{name}</i>"
+                        }
+                    },
+                    "render": "Opera d’arte"
+                },
+                "name": "Opere d’arte"
+            }
+        },
+        "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
+        "title": "Mappa libera dell’arte"
+    },
+    "aed": {
+        "description": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze",
+        "title": "Mappa dei defibrillatori (DAE)"
+    }
+}
