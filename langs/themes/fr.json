@@ -305,5 +305,19 @@
                 }
             }
         }
+    },
+    "trees": {
+        "description": "Cartographions tous les arbres !",
+        "shortDescription": "Carte des arbres",
+        "title": "Arbres"
+    },
+    "playgrounds": {
+        "description": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
+        "shortDescription": "Une carte des aires de jeux",
+        "title": "Aires de jeux"
+    },
+    "drinking_water": {
+        "description": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
+        "title": "Eau potable"
     }
 }
