@@ -53,5 +53,41 @@
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
             }
         }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
     }
 }

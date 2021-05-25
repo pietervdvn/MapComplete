@@ -371,7 +371,8 @@
                     "2": {
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     }
-                }
+                },
+                "render": "{access}"
             },
             "6": {
                 "question": "Heeft deze fietsparking plaats voor bakfietsen?",
@@ -1823,7 +1824,8 @@
                     }
                 }
             }
-        }
+        },
+        "name": "Toiletten"
     },
     "tree_node": {
         "name": "Boom",

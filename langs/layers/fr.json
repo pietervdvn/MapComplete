@@ -255,7 +255,8 @@
                         "then": "Accessible publiquement"
                     }
                 },
-                "question": "Qui peut utiliser ce parking à vélo ?"
+                "question": "Qui peut utiliser ce parking à vélo ?",
+                "render": "{access}"
             },
             "3": {
                 "mappings": {
@@ -1156,5 +1157,41 @@
             "render": "Vélothèque"
         },
         "name": "Vélothèque"
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
     }
 }
