@@ -86,5 +86,15 @@
     "aed": {
         "description": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze",
         "title": "Mappa dei defibrillatori (DAE)"
+    },
+    "bike_monitoring_stations": {
+        "description": "Questo tema mostra le stazioni di monitoraggio bici con dati dal vivo",
+        "shortDescription": "Stazioni di monitoraggio bici con dati in tempo reale forniti da Bruxelles Mobility",
+        "title": "Stazioni di monitoraggio biciclette"
+    },
+    "trees": {
+        "description": "Mappa tutti gli alberi!",
+        "shortDescription": "Mappa tutti gli alberi",
+        "title": "Alberi"
     }
 }
