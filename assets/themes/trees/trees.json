@@ -2,19 +2,27 @@
   "id": "trees",
   "title": {
     "nl": "Bomen",
-    "en": "Trees"
+    "en": "Trees",
+    "fr": "Arbres",
+    "it": "Alberi"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
-    "en": "Map all the trees"
+    "en": "Map all the trees",
+    "fr": "Carte des arbres",
+    "it": "Mappa tutti gli alberi"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
-    "en": "Map all the trees!"
+    "en": "Map all the trees!",
+    "fr": "Cartographions tous les arbres !",
+    "it": "Mappa tutti gli alberi!"
   },
   "language": [
     "nl",
-    "en"
+    "en",
+    "fr",
+    "it"
   ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

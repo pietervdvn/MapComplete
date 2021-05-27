@@ -12,7 +12,9 @@
   },
   "language": [
     "en",
-    "nl"
+    "nl",
+    "id",
+    "ru"
   ],
   "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersites/caravan.svg",
@@ -64,7 +66,9 @@
             "en": "This place is called {name}"
           },
           "question": {
-            "en": "What is this place called?"
+            "en": "What is this place called?",
+            "id": "Apakah nama tempat ini?",
+            "ru": "Как называется это место?"
           },
           "freeform": {
             "key": "name"
@@ -93,7 +97,8 @@
                 ]
               },
               "then": {
-                "en": "Can be used for free"
+                "en": "Can be used for free",
+                "id": "Boleh digunakan tanpa bayaran"
               }
             },
             {
@@ -160,7 +165,8 @@
         },
         {
           "question": {
-            "en": "Does this place provide internet access?"
+            "en": "Does this place provide internet access?",
+            "id": "Tempat ini berbagi akses Web?"
           },
           "mappings": [
             {
@@ -170,7 +176,9 @@
                 ]
               },
               "then": {
-                "en": "There is internet access"
+                "en": "There is internet access",
+                "id": "Akses Web tersedia",
+                "ru": "Есть доступ в Интернет"
               }
             },
             {
@@ -181,7 +189,9 @@
                 ]
               },
               "then": {
-                "en": "There is internet access"
+                "en": "There is internet access",
+                "id": "Akses Web tersedia",
+                "ru": "Есть доступ в Интернет"
               },
               "hideInAnswer": true
             },
@@ -192,7 +202,9 @@
                 ]
               },
               "then": {
-                "en": "There is no internet access"
+                "en": "There is no internet access",
+                "id": "Tiada akses Web",
+                "ru": "Нет доступа в Интернет"
               }
             }
           ]
@@ -241,7 +253,8 @@
                 ]
               },
               "then": {
-                "en": "This place has toilets"
+                "en": "This place has toilets",
+                "id": "Tempat sini ada tandas"
               }
             },
             {
@@ -251,21 +264,25 @@
                 ]
               },
               "then": {
-                "en": "This place does not have toilets"
+                "en": "This place does not have toilets",
+                "id": "Tempat sini tiada tandas"
               }
             }
           ]
         },
         {
           "render": {
-            "en": "Official website: <a href='{website}'>{website}</a>"
+            "en": "Official website: <a href='{website}'>{website}</a>",
+            "id": "Situs resmi: <a href='{website}'>{website}</a>",
+            "ru": "Официальный сайт: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
             "key": "website"
           },
           "question": {
-            "en": "Does this place have a website?"
+            "en": "Does this place have a website?",
+            "id": "Tempat sini terada situs web?"
           }
         },
         {
@@ -630,7 +647,8 @@
             ]
           },
           "then": {
-            "en": "This place has a power supply"
+            "en": "This place has a power supply",
+            "id": "Tempat ini memiliki catu daya"
           }
         },
         {
@@ -640,7 +658,8 @@
             ]
           },
           "then": {
-            "en": "This place does not have power supply"
+            "en": "This place does not have power supply",
+            "id": "Tempat ini tidak memiliki sumber listrik"
           }
         }
       ]

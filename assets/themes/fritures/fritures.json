@@ -10,7 +10,9 @@
   "language": [
     "nl",
     "fr",
-    "en"
+    "en",
+    "ca",
+    "id"
   ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -86,7 +88,10 @@
         },
         {
           "render": {
-            "en": "<a href='{website}'>{website}</a>"
+            "en": "<a href='{website}'>{website}</a>",
+            "ca": "<a href='{website}'>{website}</a>",
+            "fr": "<a href='{website}'>{website}</a>",
+            "id": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",

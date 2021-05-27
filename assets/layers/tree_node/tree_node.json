@@ -22,7 +22,10 @@
         "if": "name~*",
         "then": {
           "nl": "<i>{name}</i>",
-          "en": "<i>{name}</i>"
+          "en": "<i>{name}</i>",
+          "ca": "<i>{name}</i>",
+          "de": "<i>{name}</i>",
+          "fr": "<i>{name}</i>"
         }
       }
     ]

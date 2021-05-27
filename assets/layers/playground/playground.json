@@ -224,7 +224,10 @@
       },
       "render": {
         "nl": "De bevoegde dienst kan bereikt worden via <a href='mailto:{email}'>{email}</a>",
-        "en": "<a href='mailto:{email}'>{email}</a>"
+        "en": "<a href='mailto:{email}'>{email}</a>",
+        "ca": "<a href='mailto:{email}'>{email}</a>",
+        "de": "<a href='mailto:{email}'>{email}</a>",
+        "fr": "<a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -238,7 +241,10 @@
       },
       "render": {
         "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
-        "en": "<a href='tel:{phone}'>{phone}</a>"
+        "en": "<a href='tel:{phone}'>{phone}</a>",
+        "ca": "<a href='tel:{phone}'>{phone}</a>",
+        "de": "<a href='tel:{phone}'>{phone}</a>",
+        "fr": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

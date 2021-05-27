@@ -3,7 +3,8 @@
   "name": {
     "en": "Toilets",
     "de": "Toiletten",
-    "fr": "Toilettes"
+    "fr": "Toilettes",
+    "nl": "Toiletten"
   },
   "source": {
     "osmTags": "amenity=toilets"

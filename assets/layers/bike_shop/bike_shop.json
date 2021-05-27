@@ -89,7 +89,8 @@
         },
         "then": {
           "nl": "Fietsverhuur <i>{name}</i>",
-          "en": "Bicycle rental <i>{name}</i>"
+          "en": "Bicycle rental <i>{name}</i>",
+          "fr": "Location de vélo <i>{name}</i>"
         }
       },
       {
@@ -155,7 +156,8 @@
   ],
   "description": {
     "en": "A shop specifically selling bicycles or related items",
-    "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt"
+    "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
+    "fr": "Un magasin vendant spécifiquement des vélos ou des objets en lien"
   },
   "tagRenderings": [
     "images",
@@ -169,7 +171,8 @@
       },
       "render": {
         "en": "This shop is specialized in selling {shop} and does bicycle related activities",
-        "nl": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten."
+        "nl": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten.",
+        "fr": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
       }
     },
     {
@@ -432,7 +435,8 @@
           "if": "service:bicycle:pump=seperate",
           "then": {
             "en": "There is bicycle pump, it is shown as a seperate point ",
-            "nl": "Er is een fietspomp, deze is apart aangeduid"
+            "nl": "Er is een fietspomp, deze is apart aangeduid",
+            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé "
           }
         }
       ]
@@ -470,7 +474,8 @@
           "if": "service:bicycle:diy=only_sold",
           "then": {
             "en": "Tools for DIY repair are only available if you bought/hire the bike in the shop",
-            "nl": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt"
+            "nl": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt",
+            "fr": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
           }
         }
       ]
@@ -478,28 +483,32 @@
     {
       "question": {
         "en": "Are bicycles washed here?",
-        "nl": "Biedt deze winkel een fietsschoonmaak aan?"
+        "nl": "Biedt deze winkel een fietsschoonmaak aan?",
+        "fr": "Lave-t-on les vélos ici ?"
       },
       "mappings": [
         {
           "if": "service:bicycle:cleaning=yes",
           "then": {
             "en": "This shop cleans bicycles",
-            "nl": "Deze winkel biedt fietsschoonmaak aan"
+            "nl": "Deze winkel biedt fietsschoonmaak aan",
+            "fr": "Ce magasin lave les vélos"
           }
         },
         {
           "if": "service:bicycle:cleaning=diy",
           "then": {
             "en": "This shop has an installation where one can clean bicycles themselves",
-            "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken"
+            "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken",
+            "fr": "Ce magasin a une installation pour laver soi même des vélos"
           }
         },
         {
           "if": "service:bicycle:cleaning=no",
           "then": {
             "en": "This shop doesn't offer bicycle cleaning",
-            "nl": "Deze winkel biedt geen fietsschoonmaak aan"
+            "nl": "Deze winkel biedt geen fietsschoonmaak aan",
+            "fr": "Ce magasin ne fait pas le nettoyage de vélo"
           }
         }
       ]

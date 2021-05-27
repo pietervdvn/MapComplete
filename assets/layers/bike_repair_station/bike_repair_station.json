@@ -176,11 +176,13 @@
     {
       "question": {
         "en": "Who maintains this cycle pump?",
-        "nl": "Wie beheert deze fietspomp?"
+        "nl": "Wie beheert deze fietspomp?",
+        "fr": "Qui maintient cette pompe à vélo ?"
       },
       "render": {
         "nl": "Beheer door {operator}",
-        "en": "Maintained by {operator}"
+        "en": "Maintained by {operator}",
+        "fr": "Mantenue par {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -196,7 +198,8 @@
     {
       "question": {
         "nl": "Wanneer is dit fietsherstelpunt open?",
-        "en": "When is this bicycle repair point open?"
+        "en": "When is this bicycle repair point open?",
+        "fr": "Quand ce point de réparation de vélo est-il ouvert ?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -208,14 +211,16 @@
           "if": "opening_hours=24/7",
           "then": {
             "nl": "Dag en nacht open",
-            "en": "Always open"
+            "en": "Always open",
+            "fr": "Ouvert en permanence"
           }
         },
         {
           "if": "opening_hours=",
           "then": {
             "nl": "Dag en nacht open",
-            "en": "Always open"
+            "en": "Always open",
+            "fr": "Ouvert en permanence"
           },
           "hideInAnswer": true
         }
@@ -546,7 +551,8 @@
       ],
       "description": {
         "en": "A device with tools to repair your bike combined with a pump at a fixed location. The tools are often secured with chains against theft.<h3>Example</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
-        "nl": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
+        "nl": "Een apparaat met zowel gereedschap om je fiets te herstellen, met een pomp. Deze zijn op een vastgemaakt op een plaats in de publieke ruimte, bv. aan een paal.<h3>Voorbeeld</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>",
+        "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.<h3>Exemple</h3><img src='./assets/layers/bike_repair_station/repair_station_example.jpg' height='200'/>"
       }
     },
     {

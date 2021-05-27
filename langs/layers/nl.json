@@ -361,6 +361,7 @@
             },
             "5": {
                 "question": "Wie mag er deze fietsenstalling gebruiken?",
+                "render": "{access}",
                 "mappings": {
                     "0": {
                         "then": "Publiek toegankelijke fietsenstalling"
@@ -371,8 +372,7 @@
                     "2": {
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     }
-                },
-                "render": "{access}"
+                }
             },
             "6": {
                 "question": "Heeft deze fietsparking plaats voor bakfietsen?",
@@ -1720,6 +1720,7 @@
         }
     },
     "toilet": {
+        "name": "Toiletten",
         "title": {
             "render": "Toilet"
         },
@@ -1824,8 +1825,7 @@
                     }
                 }
             }
-        },
-        "name": "Toiletten"
+        }
     },
     "tree_node": {
         "name": "Boom",

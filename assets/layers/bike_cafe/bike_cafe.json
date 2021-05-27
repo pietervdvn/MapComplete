@@ -211,7 +211,8 @@
     {
       "question": {
         "en": "When it this bike café opened?",
-        "nl": "Wanneer is dit fietscafé geopend?"
+        "nl": "Wanneer is dit fietscafé geopend?",
+        "fr": "Quand ce Café vélo est-t-il ouvert ?"
       },
       "render": "{opening_hours_table(opening_hours)}",
       "freeform": {

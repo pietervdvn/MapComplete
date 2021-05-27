@@ -14,7 +14,9 @@
   },
   "language": [
     "en",
-    "fr"
+    "fr",
+    "ca",
+    "id"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",
@@ -180,7 +182,9 @@
         {
           "render": {
             "en": "<a href='tel:{phone}'>{phone}</a>",
-            "fr": "<a href='tel:{phone}'>{phone}</a>"
+            "fr": "<a href='tel:{phone}'>{phone}</a>",
+            "ca": "<a href='tel:{phone}'>{phone}</a>",
+            "id": "<a href='tel:{phone}'>{phone}</a>"
           },
           "question": {
             "en": "What is the phone number?",
@@ -194,7 +198,9 @@
         {
           "render": {
             "en": "<a href='{website}'>{website}</a>",
-            "fr": "<a href='{website}'>{website}</a>"
+            "fr": "<a href='{website}'>{website}</a>",
+            "ca": "<a href='{website}'>{website}</a>",
+            "id": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",
@@ -208,7 +214,8 @@
         {
           "render": {
             "en": "<a href='mailto:{email}'>{email}</a>",
-            "fr": "<a href='mailto:{email}'>{email}</a>"
+            "fr": "<a href='mailto:{email}'>{email}</a>",
+            "id": "<a href='mailto:{email}'>{email}</a>"
           },
           "question": {
             "en": "What is the email address of this shop?",

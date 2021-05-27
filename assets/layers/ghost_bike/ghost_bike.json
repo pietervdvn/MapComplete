@@ -103,7 +103,9 @@
       "render": {
         "en": "<i>{inscription}</i>",
         "nl": "<i>{inscription}</i>",
-        "de": "<i>{inscription}</i>"
+        "de": "<i>{inscription}</i>",
+        "ca": "<i>{inscription}</i>",
+        "fr": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"

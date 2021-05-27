@@ -6,7 +6,10 @@
     "es": "Mapa abierto de desfibriladores (DEA)",
     "fr": "Carte des défibrillateurs (DAE)",
     "nl": "Open AED-kaart",
-    "de": "AED-Karte öffnen"
+    "de": "AED-Karte öffnen",
+    "hu": "Nyílt AED Térkép",
+    "id": "Buka Peta AED",
+    "it": "Mappa dei defibrillatori (DAE)"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -16,7 +19,9 @@
     "es": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
     "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
     "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
-    "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
+    "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
+    "id": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
+    "it": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze"
   },
   "language": [
     "en",
@@ -24,7 +29,10 @@
     "es",
     "fr",
     "nl",
-    "de"
+    "de",
+    "hu",
+    "id",
+    "it"
   ],
   "version": "2020-08-29",
   "startLat": 0,

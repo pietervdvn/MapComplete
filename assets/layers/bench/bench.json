@@ -4,7 +4,11 @@
     "en": "Benches",
     "de": "Sitzbänke",
     "fr": "Bancs",
-    "nl": "Zitbanken"
+    "nl": "Zitbanken",
+    "es": "Bancos",
+    "hu": "Padok",
+    "id": "Bangku",
+    "it": "Panchine"
   },
   "minzoom": 14,
   "source": {
@@ -15,7 +19,11 @@
       "en": "Bench",
       "de": "Sitzbank",
       "fr": "Banc",
-      "nl": "Zitbank"
+      "nl": "Zitbank",
+      "es": "Banco",
+      "hu": "Pad",
+      "id": "Bangku",
+      "it": "Panchina"
     }
   },
   "tagRenderings": [
@@ -25,7 +33,11 @@
         "en": "Backrest",
         "de": "Rückenlehne",
         "fr": "Dossier",
-        "nl": "Rugleuning"
+        "nl": "Rugleuning",
+        "es": "Respaldo",
+        "hu": "Háttámla",
+        "id": "Sandaran",
+        "it": "Schienale"
       },
       "freeform": {
         "key": "backrest"
@@ -37,7 +49,11 @@
             "en": "Backrest: Yes",
             "de": "Rückenlehne: Ja",
             "fr": "Dossier: Oui",
-            "nl": "Heeft een rugleuning"
+            "nl": "Heeft een rugleuning",
+            "es": "Respaldo: Si",
+            "hu": "Háttámla: Igen",
+            "id": "Sandaran: Ya",
+            "it": "Schienale: Sì"
           }
         },
         {
@@ -46,7 +62,11 @@
             "en": "Backrest: No",
             "de": "Rückenlehne: Nein",
             "fr": "Dossier: Non",
-            "nl": "Rugleuning ontbreekt"
+            "nl": "Rugleuning ontbreekt",
+            "es": "Respaldo: No",
+            "hu": "Háttámla: Nem",
+            "id": "Sandaran: Tidak",
+            "it": "Schienale: No"
           }
         }
       ],
@@ -54,7 +74,11 @@
         "en": "Does this bench have a backrest?",
         "de": "Hat diese Bank eine Rückenlehne?",
         "fr": "Ce banc dispose-t-il d'un dossier ?",
-        "nl": "Heeft deze zitbank een rugleuning?"
+        "nl": "Heeft deze zitbank een rugleuning?",
+        "es": "¿Este banco tiene un respaldo?",
+        "hu": "Van háttámlája ennek a padnak?",
+        "id": "Apakah bangku ini memiliki sandaran?",
+        "it": "Questa panchina ha lo schienale?"
       }
     },
     {
@@ -62,7 +86,11 @@
         "en": "{seats} seats",
         "de": "{seats} Sitzplätze",
         "fr": "{seats} places",
-        "nl": "{seats} zitplaatsen"
+        "nl": "{seats} zitplaatsen",
+        "es": "{seats} asientos",
+        "hu": "{seats} ülőhely",
+        "id": "{seats} kursi",
+        "it": "{seats} posti"
       },
       "freeform": {
         "key": "seats",
@@ -72,7 +100,10 @@
         "en": "How many seats does this bench have?",
         "de": "Wie viele Sitzplätze hat diese Bank?",
         "fr": "De combien de places dispose ce banc ?",
-        "nl": "Hoeveel zitplaatsen heeft deze bank?"
+        "nl": "Hoeveel zitplaatsen heeft deze bank?",
+        "es": "¿Cuántos asientos tiene este banco?",
+        "hu": "Hány ülőhely van ezen a padon?",
+        "it": "Quanti posti ha questa panchina?"
       }
     },
     {
@@ -80,7 +111,10 @@
         "en": "Material: {material}",
         "de": "Material: {material}",
         "fr": "Matériau : {material}",
-        "nl": "Gemaakt van {material}"
+        "nl": "Gemaakt van {material}",
+        "es": "Material: {material}",
+        "hu": "Anyag: {material}",
+        "it": "Materiale: {material}"
       },
       "freeform": {
         "key": "material",
@@ -93,7 +127,10 @@
             "en": "Material: wood",
             "de": "Material: Holz",
             "fr": "Matériau : bois",
-            "nl": "Gemaakt uit hout"
+            "nl": "Gemaakt uit hout",
+            "es": "Material: madera",
+            "hu": "Anyag: fa",
+            "it": "Materiale: legno"
           }
         },
         {
@@ -102,7 +139,10 @@
             "en": "Material: metal",
             "de": "Material: Metall",
             "fr": "Matériau : métal",
-            "nl": "Gemaakt uit metaal"
+            "nl": "Gemaakt uit metaal",
+            "es": "Material: metal",
+            "hu": "Anyag: fém",
+            "it": "Materiale: metallo"
           }
         },
         {
@@ -111,7 +151,10 @@
             "en": "Material: stone",
             "de": "Material: Stein",
             "fr": "Matériau: pierre",
-            "nl": "Gemaakt uit steen"
+            "nl": "Gemaakt uit steen",
+            "es": "Material: piedra",
+            "hu": "Anyag: kő",
+            "it": "Materiale: pietra"
           }
         },
         {
@@ -120,7 +163,10 @@
             "en": "Material: concrete",
             "de": "Material: Beton",
             "fr": "Matériau : béton",
-            "nl": "Gemaakt uit beton"
+            "nl": "Gemaakt uit beton",
+            "es": "Material: concreto",
+            "hu": "Anyag: beton",
+            "it": "Materiale: cemento"
           }
         },
         {
@@ -129,7 +175,10 @@
             "en": "Material: plastic",
             "de": "Material: Kunststoff",
             "fr": "Matériau : plastique",
-            "nl": "Gemaakt uit plastiek"
+            "nl": "Gemaakt uit plastiek",
+            "es": "Material: plastico",
+            "hu": "Anyag: műanyag",
+            "it": "Materiale: plastica"
           }
         },
         {
@@ -138,7 +187,10 @@
             "en": "Material: steel",
             "de": "Material: Stahl",
             "fr": "Matériau : acier",
-            "nl": "Gemaakt uit staal"
+            "nl": "Gemaakt uit staal",
+            "es": "Material: acero",
+            "hu": "Anyag: acél",
+            "it": "Materiale: acciaio"
           }
         }
       ],
@@ -146,19 +198,27 @@
         "en": "What is the bench (seating) made from?",
         "de": "Aus welchem Material besteht die Sitzbank (Sitzfläche)?",
         "fr": "De quel matériau ce banc est-il fait ?",
-        "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?"
+        "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
+        "hu": "Miből van a pad (ülő része)?",
+        "it": "Di che materiale è fatta questa panchina?"
       }
     },
     {
       "question": {
         "en": "In which direction are you looking when sitting on the bench?",
         "de": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
-        "nl": "In welke richting kijk je wanneer je op deze zitbank zit?"
+        "nl": "In welke richting kijk je wanneer je op deze zitbank zit?",
+        "fr": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
+        "hu": "Milyen irányba néz a pad?",
+        "it": "In che direzione si guarda quando si è seduti su questa panchina?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
         "de": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°.",
-        "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°."
+        "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°.",
+        "fr": "Assis sur le banc, on regarde vers {direction}°.",
+        "hu": "A pad {direction}° felé néz.",
+        "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°."
       },
       "freeform": {
         "key": "direction",
@@ -170,13 +230,17 @@
         "en": "Colour: {colour}",
         "de": "Farbe: {colour}",
         "fr": "Couleur : {colour}",
-        "nl": "Kleur: {colour}"
+        "nl": "Kleur: {colour}",
+        "hu": "Szín: {colour}",
+        "it": "Colore: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
         "de": "Welche Farbe hat diese Sitzbank?",
         "fr": "Quelle est la couleur de ce banc ?",
-        "nl": "Welke kleur heeft deze zitbank?"
+        "nl": "Welke kleur heeft deze zitbank?",
+        "hu": "Milyen színű a pad?",
+        "it": "Di che colore è questa panchina?"
       },
       "freeform": {
         "key": "colour",
@@ -189,7 +253,9 @@
             "en": "Colour: brown",
             "de": "Farbe: braun",
             "fr": "Couleur : marron",
-            "nl": "De kleur is bruin"
+            "nl": "De kleur is bruin",
+            "hu": "Szín: barna",
+            "it": "Colore: marrone"
           }
         },
         {
@@ -198,7 +264,9 @@
             "en": "Colour: green",
             "de": "Farbe: grün",
             "fr": "Couleur : verte",
-            "nl": "De kleur is groen"
+            "nl": "De kleur is groen",
+            "hu": "Szín: zöld",
+            "it": "Colore: verde"
           }
         },
         {
@@ -207,7 +275,9 @@
             "en": "Colour: gray",
             "de": "Farbe: grau",
             "fr": "Couleur : gris",
-            "nl": "De kleur is grijs"
+            "nl": "De kleur is grijs",
+            "hu": "Szín: szürke",
+            "it": "Colore: grigio"
           }
         },
         {
@@ -216,7 +286,9 @@
             "en": "Colour: white",
             "de": "Farbe: weiß",
             "fr": "Couleur : blanc",
-            "nl": "De kleur is wit"
+            "nl": "De kleur is wit",
+            "hu": "Szín: fehér",
+            "it": "Colore: bianco"
           }
         },
         {
@@ -225,7 +297,9 @@
             "en": "Colour: red",
             "de": "Farbe: rot",
             "fr": "Couleur : rouge",
-            "nl": "De kleur is rood"
+            "nl": "De kleur is rood",
+            "hu": "Szín: piros",
+            "it": "Colore: rosso"
           }
         },
         {
@@ -234,7 +308,9 @@
             "en": "Colour: black",
             "de": "Farbe: schwarz",
             "fr": "Couleur : noire",
-            "nl": "De kleur is zwart"
+            "nl": "De kleur is zwart",
+            "hu": "Szín: fekete",
+            "it": "Colore: nero"
           }
         },
         {
@@ -243,7 +319,9 @@
             "en": "Colour: blue",
             "de": "Farbe: blau",
             "fr": "Couleur : bleu",
-            "nl": "De kleur is blauw"
+            "nl": "De kleur is blauw",
+            "hu": "Szín: kék",
+            "it": "Colore: blu"
           }
         },
         {
@@ -252,7 +330,9 @@
             "en": "Colour: yellow",
             "de": "Farbe: gelb",
             "fr": "Couleur : jaune",
-            "nl": "De kleur is geel"
+            "nl": "De kleur is geel",
+            "hu": "Szín: sárga",
+            "it": "Colore: giallo"
           }
         }
       ]
@@ -260,11 +340,15 @@
     {
       "question": {
         "en": "When was this bench last surveyed?",
-        "nl": "Wanneer is deze laatste bank laatst gesurveyed?"
+        "nl": "Wanneer is deze laatste bank laatst gesurveyed?",
+        "fr": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
+        "it": "Quando è stata verificata l’ultima volta questa panchina?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
-        "nl": "Deze bank is laatst gesurveyd op {survey:date}"
+        "nl": "Deze bank is laatst gesurveyd op {survey:date}",
+        "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
+        "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -301,13 +385,16 @@
         "en": "Bench",
         "de": "Sitzbank",
         "fr": "Banc",
-        "nl": "Zitbank"
+        "nl": "Zitbank",
+        "es": "Banco"
       },
       "description": {
         "en": "Add a new bench",
         "de": "Neue Sitzbank eintragen",
         "fr": "Ajouter un nouveau banc",
-        "nl": "Voeg een nieuwe zitbank toe"
+        "nl": "Voeg een nieuwe zitbank toe",
+        "es": "Añadir un nuevo banco",
+        "hu": "Pad hozzáadása"
       }
     }
   ]

@@ -54,6 +54,13 @@
             }
         }
     },
+    "ghost_bike": {
+        "tagRenderings": {
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
             "8": {
@@ -66,11 +73,11 @@
     },
     "playground": {
         "tagRenderings": {
-            "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
             "7": {
                 "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             }
         }
     },
@@ -80,13 +87,6 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 }
-            }
-        }
-    },
-    "ghost_bike": {
-        "tagRenderings": {
-            "4": {
-                "render": "<i>{inscription}</i>"
             }
         }
     }

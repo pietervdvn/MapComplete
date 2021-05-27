@@ -1,7 +1,9 @@
 {
   "id": "charging_stations",
   "title": {
-    "en": "Charging stations"
+    "en": "Charging stations",
+    "id": "Stasiun pengisian daya",
+    "ru": "Зарядные станции"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations"
@@ -10,7 +12,9 @@
     "en": "On this open map, one can find and mark information about charging stations"
   },
   "language": [
-    "en"
+    "en",
+    "id",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",
@@ -24,7 +28,8 @@
     {
       "id": "charging_stations",
       "name": {
-        "en": "Charging stations"
+        "en": "Charging stations",
+        "ru": "Зарядные станции"
       },
       "minzoom": 10,
       "source": {
@@ -36,11 +41,13 @@
       },
       "title": {
         "render": {
-          "en": "Charging station"
+          "en": "Charging station",
+          "ru": "Зарядная станция"
         }
       },
       "description": {
-        "en": "A charging station"
+        "en": "A charging station",
+        "ru": "Зарядная станция"
       },
       "tagRenderings": [
         "images",
@@ -180,7 +187,8 @@
         {
           "#": "Network",
           "render": {
-            "en": "{network}"
+            "en": "{network}",
+            "ru": "{network}"
           },
           "question": {
             "en": "Which is the network of this charging stationg?"
@@ -226,7 +234,8 @@
                 ]
               },
               "then": {
-                "en": "eVgo"
+                "en": "eVgo",
+                "ru": "eVgo"
               }
             }
           ]

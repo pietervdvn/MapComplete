@@ -223,6 +223,9 @@
                 "question": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
                 "render": "Platz für {capacity} Fahrräder"
             },
+            "5": {
+                "render": "{access}"
+            },
             "6": {
                 "question": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?",
                 "mappings": {
@@ -240,9 +243,6 @@
             "7": {
                 "question": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
                 "render": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
-            },
-            "5": {
-                "render": "{access}"
             }
         }
     },
@@ -595,6 +595,26 @@
             }
         }
     },
+    "nature_reserve": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            }
+        }
+    },
     "public_bookcase": {
         "name": "Bücherschränke",
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
@@ -807,6 +827,15 @@
             }
         }
     },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
     "viewpoint": {
         "name": "Aussichtspunkt",
         "description": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
@@ -821,35 +850,6 @@
         "tagRenderings": {
             "1": {
                 "question": "Möchten Sie eine Beschreibung hinzufügen?"
-            }
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            }
-        }
-    },
-    "playground": {
-        "tagRenderings": {
-            "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            }
-        }
-    },
-    "tree_node": {
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
             }
         }
     }

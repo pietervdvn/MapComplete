@@ -18,7 +18,11 @@
   "language": [
     "nl",
     "de",
-    "en"
+    "en",
+    "ca",
+    "fr",
+    "id",
+    "ru"
   ],
   "maintainer": "Christian Neumann <christian@utopicode.de>",
   "icon": "./assets/themes/climbing/climbing_icon.svg",
@@ -82,7 +86,11 @@
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
-            "de": "<strong>{name}</strong>"
+            "de": "<strong>{name}</strong>",
+            "ca": "<strong>{name}</strong>",
+            "fr": "<strong>{name}</strong>",
+            "id": "<strong>{name}</strong>",
+            "ru": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing club or NGO?",
@@ -199,7 +207,10 @@
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
-            "de": "<strong>{name}</strong>"
+            "de": "<strong>{name}</strong>",
+            "ca": "<strong>{name}</strong>",
+            "fr": "<strong>{name}</strong>",
+            "id": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing gym?",
@@ -273,7 +284,10 @@
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
-            "de": "<strong>{name}</strong>"
+            "de": "<strong>{name}</strong>",
+            "ca": "<strong>{name}</strong>",
+            "fr": "<strong>{name}</strong>",
+            "id": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing route?",
@@ -377,7 +391,10 @@
           "render": {
             "en": "<strong>{name}</strong>",
             "nl": "<strong>{name}</strong>",
-            "de": "<strong>{name}</strong>"
+            "de": "<strong>{name}</strong>",
+            "ca": "<strong>{name}</strong>",
+            "fr": "<strong>{name}</strong>",
+            "id": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing opportunity?",
@@ -473,7 +490,10 @@
         {
           "render": {
             "en": "<strong>{name}</strong>",
-            "de": "<strong>{name}</strong>"
+            "de": "<strong>{name}</strong>",
+            "ca": "<strong>{name}</strong>",
+            "fr": "<strong>{name}</strong>",
+            "id": "<strong>{name}</strong>"
           },
           "condition": "name~*"
         },

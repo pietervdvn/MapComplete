@@ -2,19 +2,22 @@
   "id": "bike_cleaning",
   "name": {
     "en": "Bike cleaning service",
-    "nl": "Fietsschoonmaakpunt"
+    "nl": "Fietsschoonmaakpunt",
+    "fr": "Service de nettoyage de vélo"
   },
   "title": {
     "render": {
       "en": "Bike cleaning service",
-      "nl": "Fietsschoonmaakpunt"
+      "nl": "Fietsschoonmaakpunt",
+      "fr": "Service de nettoyage de vélo"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "Bike cleaning service <i>{name}</i>",
-          "nl": "Fietsschoonmaakpunt <i>{name}</i>"
+          "nl": "Fietsschoonmaakpunt <i>{name}</i>",
+          "fr": "Service de nettoyage de vélo <i>{name}</i>"
         }
       }
     ]
@@ -38,7 +41,8 @@
     {
       "title": {
         "en": "Bike cleaning service",
-        "nl": "Fietsschoonmaakpunt"
+        "nl": "Fietsschoonmaakpunt",
+        "fr": "Service de nettoyage de vélo"
       },
       "tags": [
         "amenity=bicycle_wash"

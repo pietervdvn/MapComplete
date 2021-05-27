@@ -1,4 +1,63 @@
 {
+    "bench": {
+        "name": "Bancos",
+        "title": {
+            "render": "Banco"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Respaldo",
+                "mappings": {
+                    "0": {
+                        "then": "Respaldo: Si"
+                    },
+                    "1": {
+                        "then": "Respaldo: No"
+                    }
+                },
+                "question": "¿Este banco tiene un respaldo?"
+            },
+            "2": {
+                "render": "{seats} asientos",
+                "question": "¿Cuántos asientos tiene este banco?"
+            },
+            "3": {
+                "render": "Material: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Material: madera"
+                    },
+                    "1": {
+                        "then": "Material: metal"
+                    },
+                    "2": {
+                        "then": "Material: piedra"
+                    },
+                    "3": {
+                        "then": "Material: concreto"
+                    },
+                    "4": {
+                        "then": "Material: plastico"
+                    },
+                    "5": {
+                        "then": "Material: acero"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Banco",
+                "description": "Añadir un nuevo banco"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "name": "Bancos en una parada de transporte público",
+        "title": {
+            "render": "Banco"
+        }
+    },
     "defibrillator": {
         "name": "Desfibriladores",
         "title": {
@@ -53,64 +112,5 @@
                 "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
             }
         }
-    },
-    "bench_at_pt": {
-        "title": {
-            "render": "Banco"
-        },
-        "name": "Bancos en una parada de transporte público"
-    },
-    "bench": {
-        "presets": {
-            "0": {
-                "description": "Añadir un nuevo banco",
-                "title": "Banco"
-            }
-        },
-        "tagRenderings": {
-            "3": {
-                "mappings": {
-                    "5": {
-                        "then": "Material: acero"
-                    },
-                    "4": {
-                        "then": "Material: plastico"
-                    },
-                    "3": {
-                        "then": "Material: concreto"
-                    },
-                    "2": {
-                        "then": "Material: piedra"
-                    },
-                    "1": {
-                        "then": "Material: metal"
-                    },
-                    "0": {
-                        "then": "Material: madera"
-                    }
-                },
-                "render": "Material: {material}"
-            },
-            "2": {
-                "question": "¿Cuántos asientos tiene este banco?",
-                "render": "{seats} asientos"
-            },
-            "1": {
-                "question": "¿Este banco tiene un respaldo?",
-                "mappings": {
-                    "1": {
-                        "then": "Respaldo: No"
-                    },
-                    "0": {
-                        "then": "Respaldo: Si"
-                    }
-                },
-                "render": "Respaldo"
-            }
-        },
-        "title": {
-            "render": "Banco"
-        },
-        "name": "Bancos"
     }
 }

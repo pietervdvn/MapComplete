@@ -291,7 +291,10 @@
       },
       "render": {
         "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-        "en": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+        "en": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+        "ca": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+        "de": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+        "fr": "<a href='mailto:{email}' target='_blank'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -306,7 +309,10 @@
       },
       "render": {
         "nl": "<a href='tel:{email}' target='_blank'>{phone}</a>",
-        "en": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+        "en": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+        "ca": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+        "de": "<a href='tel:{email}' target='_blank'>{phone}</a>",
+        "fr": "<a href='tel:{email}' target='_blank'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

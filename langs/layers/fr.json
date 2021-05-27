@@ -45,6 +45,10 @@
                 },
                 "question": "De quel matériau ce banc est-il fait ?"
             },
+            "4": {
+                "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
+                "render": "Assis sur le banc, on regarde vers {direction}°."
+            },
             "5": {
                 "render": "Couleur : {colour}",
                 "question": "Quelle est la couleur de ce banc ?",
@@ -75,13 +79,9 @@
                     }
                 }
             },
-            "4": {
-                "render": "Assis sur le banc, on regarde vers {direction}°.",
-                "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?"
-            },
             "6": {
-                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
-                "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?"
+                "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
+                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}"
             }
         },
         "presets": {
@@ -110,6 +110,78 @@
             },
             "2": {
                 "render": "Banc assis debout"
+            }
+        }
+    },
+    "bicycle_library": {
+        "name": "Vélothèque",
+        "title": {
+            "render": "Vélothèque"
+        },
+        "description": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
+        "tagRenderings": {
+            "1": {
+                "question": "Quel est le nom de cette vélothèque ?",
+                "render": "Cette vélothèque s'appelle {name}"
+            },
+            "6": {
+                "question": "Combien coûte l'emprunt d'un vélo ?",
+                "render": "Emprunter un vélo coûte {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "L'emprunt de vélo est gratuit"
+                    },
+                    "1": {
+                        "then": "Emprunter un vélo coûte 20€/an et 20€ de garantie"
+                    }
+                }
+            },
+            "7": {
+                "question": "Qui peut emprunter des vélos ici ?",
+                "mappings": {
+                    "0": {
+                        "then": "Vélos pour enfants disponibles"
+                    },
+                    "1": {
+                        "then": "Vélos pour adultes disponibles"
+                    },
+                    "2": {
+                        "then": "Vélos pour personnes handicapées disponibles"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Une vélothèque a une collection de vélos qui peuvent être empruntés"
+            }
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "name": "Distributeur automatique de chambre à air de vélo",
+        "title": {
+            "render": "Distributeur automatique de chambre à air de vélo"
+        },
+        "presets": {
+            "0": {
+                "title": "Distributeur automatique de chambre à air de vélo"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Cette machine est-elle encore opérationelle ?",
+                "render": "L'état opérationnel est <i>{operational_status}</i>",
+                "mappings": {
+                    "0": {
+                        "then": "Le distributeur automatique fonctionne"
+                    },
+                    "1": {
+                        "then": "Le distributeur automatique est en panne"
+                    },
+                    "2": {
+                        "then": "Le distributeur automatique est fermé"
+                    }
+                }
             }
         }
     },
@@ -180,6 +252,36 @@
             }
         }
     },
+    "bike_cleaning": {
+        "name": "Service de nettoyage de vélo",
+        "title": {
+            "render": "Service de nettoyage de vélo",
+            "mappings": {
+                "0": {
+                    "then": "Service de nettoyage de vélo <i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Service de nettoyage de vélo"
+            }
+        }
+    },
+    "bike_monitoring_station": {
+        "name": "Stations de contrôle",
+        "title": {
+            "render": "Station de comptage de vélo",
+            "mappings": {
+                "0": {
+                    "then": "Station de comptage de vélo {name}"
+                },
+                "1": {
+                    "then": "Station de comptage de vélo {ref}"
+                }
+            }
+        }
+    },
     "bike_parking": {
         "name": "Parking à vélo",
         "presets": {
@@ -213,11 +315,42 @@
                     "5": {
                         "then": "Abri <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
                     },
-                    "7": {
-                        "then": "Zone au sol qui est marquée pour le stationnement des vélos"
-                    },
                     "6": {
                         "then": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                    },
+                    "7": {
+                        "then": "Zone au sol qui est marquée pour le stationnement des vélos"
+                    }
+                }
+            },
+            "2": {
+                "question": "Quelle est la position relative de ce parking à vélo ?",
+                "mappings": {
+                    "0": {
+                        "then": "Parking souterrain"
+                    },
+                    "1": {
+                        "then": "Parking souterrain"
+                    },
+                    "2": {
+                        "then": "Parking en surface"
+                    },
+                    "3": {
+                        "then": "Parking en surface"
+                    },
+                    "4": {
+                        "then": "Parking sur un toit"
+                    }
+                }
+            },
+            "3": {
+                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
+                "mappings": {
+                    "0": {
+                        "then": "Ce parking est couvert (il a un toit)"
+                    },
+                    "1": {
+                        "then": "Ce parking n'est pas couvert"
                     }
                 }
             },
@@ -225,69 +358,38 @@
                 "question": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
                 "render": "Place pour {capacity} vélos"
             },
-            "7": {
-                "question": "Combien de vélos de transport entrent dans ce parking à vélos ?",
-                "render": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport."
-            },
-            "6": {
-                "mappings": {
-                    "2": {
-                        "then": "Il est interdit de garer des vélos cargo"
-                    },
-                    "1": {
-                        "then": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo."
-                    },
-                    "0": {
-                        "then": "Ce parking a de la place pour les vélos cargo"
-                    }
-                },
-                "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
-            },
             "5": {
+                "question": "Qui peut utiliser ce parking à vélo ?",
+                "render": "{access}",
                 "mappings": {
-                    "2": {
-                        "then": "Accès limité aux membres d'une école, entreprise ou organisation"
+                    "0": {
+                        "then": "Accessible publiquement"
                     },
                     "1": {
                         "then": "Accès destiné principalement aux visiteurs d'un lieu"
                     },
-                    "0": {
-                        "then": "Accessible publiquement"
+                    "2": {
+                        "then": "Accès limité aux membres d'une école, entreprise ou organisation"
                     }
-                },
-                "question": "Qui peut utiliser ce parking à vélo ?",
-                "render": "{access}"
+                }
             },
-            "3": {
+            "6": {
+                "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?",
                 "mappings": {
+                    "0": {
+                        "then": "Ce parking a de la place pour les vélos cargo"
+                    },
                     "1": {
-                        "then": "Ce parking n'est pas couvert"
-                    },
-                    "0": {
-                        "then": "Ce parking est couvert (il a un toit)"
-                    }
-                },
-                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
-            },
-            "2": {
-                "mappings": {
-                    "4": {
-                        "then": "Parking sur un toit"
-                    },
-                    "3": {
-                        "then": "Parking en surface"
+                        "then": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo."
                     },
                     "2": {
-                        "then": "Parking en surface"
-                    },
-                    "1": {
-                        "then": "Parking souterrain"
-                    },
-                    "0": {
-                        "then": "Parking souterrain"
+                        "then": "Il est interdit de garer des vélos cargo"
                     }
-                },
-                "question": "Quelle est la position relative de ce parking à vélo ?"
+                }
+            },
+            "7": {
+                "question": "Combien de vélos de transport entrent dans ce parking à vélos ?",
+                "render": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport."
             }
         }
     },
@@ -325,6 +427,21 @@
                     },
                     "2": {
                         "then": "Il y a des outils et une pompe"
+                    }
+                }
+            },
+            "2": {
+                "question": "Qui maintient cette pompe à vélo ?",
+                "render": "Mantenue par {operator}"
+            },
+            "3": {
+                "question": "Quand ce point de réparation de vélo est-il ouvert ?",
+                "mappings": {
+                    "0": {
+                        "then": "Ouvert en permanence"
+                    },
+                    "1": {
+                        "then": "Ouvert en permanence"
                     }
                 }
             },
@@ -400,21 +517,6 @@
                         "then": "Il y a un manomètre mais il est cassé"
                     }
                 }
-            },
-            "3": {
-                "mappings": {
-                    "1": {
-                        "then": "Ouvert en permanence"
-                    },
-                    "0": {
-                        "then": "Ouvert en permanence"
-                    }
-                },
-                "question": "Quand ce point de réparation de vélo est-il ouvert ?"
-            },
-            "2": {
-                "render": "Mantenue par {operator}",
-                "question": "Qui maintient cette pompe à vélo ?"
             }
         },
         "presets": {
@@ -438,6 +540,9 @@
                 "0": {
                     "then": "Magasin de sport <i>{name}</i>"
                 },
+                "2": {
+                    "then": "Location de vélo <i>{name}</i>"
+                },
                 "3": {
                     "then": "Réparateur de vélo <i>{name}</i>"
                 },
@@ -446,13 +551,14 @@
                 },
                 "5": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
-                },
-                "2": {
-                    "then": "Location de vélo <i>{name}</i>"
                 }
             }
         },
+        "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
         "tagRenderings": {
+            "1": {
+                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
+            },
             "2": {
                 "question": "Quel est le nom du magasin de vélo?",
                 "render": "Ce magasin s'appelle {name}"
@@ -548,29 +654,25 @@
                 }
             },
             "15": {
+                "question": "Lave-t-on les vélos ici ?",
                 "mappings": {
-                    "2": {
-                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
+                    "0": {
+                        "then": "Ce magasin lave les vélos"
                     },
                     "1": {
                         "then": "Ce magasin a une installation pour laver soi même des vélos"
                     },
-                    "0": {
-                        "then": "Ce magasin lave les vélos"
+                    "2": {
+                        "then": "Ce magasin ne fait pas le nettoyage de vélo"
                     }
-                },
-                "question": "Lave-t-on les vélos ici ?"
-            },
-            "1": {
-                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
+                }
             }
         },
         "presets": {
             "0": {
                 "title": "Magasin et réparateur de vélo"
             }
-        },
-        "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien"
+        }
     },
     "bike_themed_object": {
         "name": "Objet cycliste",
@@ -626,98 +728,102 @@
                     }
                 }
             },
+            "3": {
+                "render": "Il n'y a pas d'information sur le type de dispositif",
+                "question": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
+                "mappings": {
+                    "0": {
+                        "then": "C'est un défibrillateur manuel pour professionnel"
+                    },
+                    "1": {
+                        "then": "C'est un défibrillateur automatique manuel"
+                    }
+                }
+            },
             "4": {
                 "question": "À quel étage est situé ce défibrillateur ?",
                 "render": "Ce défibrillateur est à l'étage {level}",
                 "mappings": {
-                    "1": {
-                        "then": "Ce défibrillateur est au <b>premier étage</b>"
-                    },
                     "0": {
                         "then": "Ce défibrillateur est au <b>rez-de-chaussée</b>"
+                    },
+                    "1": {
+                        "then": "Ce défibrillateur est au <b>premier étage</b>"
                     }
                 }
             },
             "5": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
-                "render": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}"
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}",
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)"
             },
             "6": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
-                "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}"
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}",
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)"
             },
             "7": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
-                "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}"
+                "render": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}",
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)"
+            },
+            "8": {
+                "question": "Ce défibrillatuer est-il accessible en fauteuil roulant ?",
+                "mappings": {
+                    "0": {
+                        "then": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant"
+                    },
+                    "1": {
+                        "then": "Ce défibrillateur est facilement atteignable en fauteuil roulant"
+                    },
+                    "2": {
+                        "then": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile"
+                    },
+                    "3": {
+                        "then": "Ce défibrillateur n'est pas atteignable en fauteuil roulant"
+                    }
+                }
+            },
+            "9": {
+                "render": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>",
+                "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)"
+            },
+            "10": {
+                "render": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+                "question": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?"
             },
             "11": {
                 "render": "Numéro de téléphone pour questions sur le défibrillateur: <a href='tel:{phone}'>{phone}</a>",
                 "question": "Quel est le numéro de téléphone pour questions sur le défibrillateur?"
             },
-            "15": {
-                "question": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)",
-                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
-            },
-            "14": {
-                "mappings": {
-                    "0": {
-                        "then": "Vérifié aujourd'hui !"
-                    }
-                },
-                "render": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}",
-                "question": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?"
-            },
-            "13": {
-                "question": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
-                "render": "Informations supplémentaires : {description}"
-            },
             "12": {
+                "render": "{opening_hours_table(opening_hours)}",
+                "question": "À quels horaires ce défibrillateur est-il accessible ?",
                 "mappings": {
                     "0": {
                         "then": "Ouvert jour et nuit (même pendant les jours feriés)"
                     }
-                },
-                "render": "{opening_hours_table(opening_hours)}",
-                "question": "À quels horaires ce défibrillateur est-il accessible ?"
+                }
             },
-            "10": {
-                "question": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?",
-                "render": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>"
+            "13": {
+                "render": "Informations supplémentaires : {description}",
+                "question": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)"
             },
-            "9": {
-                "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)",
-                "render": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>"
-            },
-            "8": {
+            "14": {
+                "question": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?",
+                "render": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}",
                 "mappings": {
-                    "3": {
-                        "then": "Ce défibrillateur n'est pas atteignable en fauteuil roulant"
-                    },
-                    "2": {
-                        "then": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile"
-                    },
-                    "1": {
-                        "then": "Ce défibrillateur est facilement atteignable en fauteuil roulant"
-                    },
                     "0": {
-                        "then": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant"
+                        "then": "Vérifié aujourd'hui !"
                     }
-                },
-                "question": "Ce défibrillatuer est-il accessible en fauteuil roulant ?"
+                }
             },
-            "3": {
-                "mappings": {
-                    "1": {
-                        "then": "C'est un défibrillateur automatique manuel"
-                    },
-                    "0": {
-                        "then": "C'est un défibrillateur manuel pour professionnel"
-                    }
-                },
-                "question": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
-                "render": "Il n'y a pas d'information sur le type de dispositif"
+            "15": {
+                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
+                "question": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)"
             }
         }
+    },
+    "direction": {
+        "name": "Visualisation de la direction",
+        "description": "Cette couche visualise les directions"
     },
     "drinking_water": {
         "name": "Eau potable",
@@ -727,6 +833,33 @@
         "presets": {
             "0": {
                 "title": "Eau potable"
+            }
+        }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
             }
         }
     },
@@ -1052,145 +1185,12 @@
             }
         }
     },
-    "direction": {
-        "description": "Cette couche visualise les directions",
-        "name": "Visualisation de la direction"
-    },
-    "bike_monitoring_station": {
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "Station de comptage de vélo {ref}"
-                },
-                "0": {
-                    "then": "Station de comptage de vélo {name}"
-                }
-            },
-            "render": "Station de comptage de vélo"
-        },
-        "name": "Stations de contrôle"
-    },
-    "bike_cleaning": {
-        "presets": {
-            "0": {
-                "title": "Service de nettoyage de vélo"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Service de nettoyage de vélo <i>{name}</i>"
-                }
-            },
-            "render": "Service de nettoyage de vélo"
-        },
-        "name": "Service de nettoyage de vélo"
-    },
-    "bicycle_tube_vending_machine": {
-        "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "2": {
-                        "then": "Le distributeur automatique est fermé"
-                    },
-                    "1": {
-                        "then": "Le distributeur automatique est en panne"
-                    },
-                    "0": {
-                        "then": "Le distributeur automatique fonctionne"
-                    }
-                },
-                "render": "L'état opérationnel est <i>{operational_status}</i>",
-                "question": "Cette machine est-elle encore opérationelle ?"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Distributeur automatique de chambre à air de vélo"
-            }
-        },
-        "title": {
-            "render": "Distributeur automatique de chambre à air de vélo"
-        },
-        "name": "Distributeur automatique de chambre à air de vélo"
-    },
-    "bicycle_library": {
-        "presets": {
-            "0": {
-                "description": "Une vélothèque a une collection de vélos qui peuvent être empruntés"
-            }
-        },
-        "tagRenderings": {
-            "7": {
-                "mappings": {
-                    "2": {
-                        "then": "Vélos pour personnes handicapées disponibles"
-                    },
-                    "1": {
-                        "then": "Vélos pour adultes disponibles"
-                    },
-                    "0": {
-                        "then": "Vélos pour enfants disponibles"
-                    }
-                },
-                "question": "Qui peut emprunter des vélos ici ?"
-            },
-            "6": {
-                "mappings": {
-                    "1": {
-                        "then": "Emprunter un vélo coûte 20€/an et 20€ de garantie"
-                    },
-                    "0": {
-                        "then": "L'emprunt de vélo est gratuit"
-                    }
-                },
-                "render": "Emprunter un vélo coûte {charge}",
-                "question": "Combien coûte l'emprunt d'un vélo ?"
-            },
-            "1": {
-                "render": "Cette vélothèque s'appelle {name}",
-                "question": "Quel est le nom de cette vélothèque ?"
-            }
-        },
-        "description": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
-        "title": {
-            "render": "Vélothèque"
-        },
-        "name": "Vélothèque"
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            }
-        }
-    },
-    "playground": {
-        "tagRenderings": {
-            "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            }
-        }
-    },
     "tree_node": {
         "title": {
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
                 }
-            }
-        }
-    },
-    "ghost_bike": {
-        "tagRenderings": {
-            "4": {
-                "render": "<i>{inscription}</i>"
             }
         }
     }

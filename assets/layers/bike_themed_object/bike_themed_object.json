@@ -38,7 +38,8 @@
         "if": "leisure=track",
         "then": {
           "nl": "Wielerpiste",
-          "en": "Cycle track"
+          "en": "Cycle track",
+          "fr": "Piste cyclable"
         }
       }
     ]

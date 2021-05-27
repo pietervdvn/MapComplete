@@ -4,25 +4,31 @@
     "en": "Benches",
     "de": "Sitzbänke",
     "fr": "Bancs",
-    "nl": "Zitbanken"
+    "nl": "Zitbanken",
+    "it": "Panchine",
+    "ru": "Скамейки"
   },
   "shortDescription": {
     "en": "A map of benches",
     "de": "Eine Karte aller Sitzbänke",
     "fr": "Carte des bancs",
-    "nl": "Een kaart met zitbanken"
+    "nl": "Een kaart met zitbanken",
+    "it": "Una mappa delle panchine"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
     "de": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten.",
     "fr": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
-    "nl": "Deze kaart toont alle zitbanken die in OpenStreetMap gekend zijn: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account can je informatie verbeteren en nieuwe zitbanken in toevoegen."
+    "nl": "Deze kaart toont alle zitbanken die in OpenStreetMap gekend zijn: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account can je informatie verbeteren en nieuwe zitbanken in toevoegen.",
+    "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti."
   },
   "language": [
     "en",
     "de",
     "fr",
-    "nl"
+    "nl",
+    "it",
+    "ru"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",

@@ -232,7 +232,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
 
             targetV[language] = sourceV;
             let was = ""
-            if(targetV[language] !== undefined){
+            if(targetV[language] !== undefined && targetV[language] !== sourceV){
                 was = " (overwritten "+targetV[language]+")"
             }
             console.log("   + ", context + "." + language, "-->", sourceV, was)

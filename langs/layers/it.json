@@ -1,95 +1,95 @@
 {
+    "bench": {
+        "name": "Panchine",
+        "title": {
+            "render": "Panchina"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Schienale",
+                "mappings": {
+                    "0": {
+                        "then": "Schienale: Sì"
+                    },
+                    "1": {
+                        "then": "Schienale: No"
+                    }
+                },
+                "question": "Questa panchina ha lo schienale?"
+            },
+            "2": {
+                "render": "{seats} posti",
+                "question": "Quanti posti ha questa panchina?"
+            },
+            "3": {
+                "render": "Materiale: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Materiale: legno"
+                    },
+                    "1": {
+                        "then": "Materiale: metallo"
+                    },
+                    "2": {
+                        "then": "Materiale: pietra"
+                    },
+                    "3": {
+                        "then": "Materiale: cemento"
+                    },
+                    "4": {
+                        "then": "Materiale: plastica"
+                    },
+                    "5": {
+                        "then": "Materiale: acciaio"
+                    }
+                },
+                "question": "Di che materiale è fatta questa panchina?"
+            },
+            "4": {
+                "question": "In che direzione si guarda quando si è seduti su questa panchina?",
+                "render": "Quando si è seduti su questa panchina, si guarda verso {direction}°."
+            },
+            "5": {
+                "render": "Colore: {colour}",
+                "question": "Di che colore è questa panchina?",
+                "mappings": {
+                    "0": {
+                        "then": "Colore: marrone"
+                    },
+                    "1": {
+                        "then": "Colore: verde"
+                    },
+                    "2": {
+                        "then": "Colore: grigio"
+                    },
+                    "3": {
+                        "then": "Colore: bianco"
+                    },
+                    "4": {
+                        "then": "Colore: rosso"
+                    },
+                    "5": {
+                        "then": "Colore: nero"
+                    },
+                    "6": {
+                        "then": "Colore: blu"
+                    },
+                    "7": {
+                        "then": "Colore: giallo"
+                    }
+                }
+            },
+            "6": {
+                "question": "Quando è stata verificata l’ultima volta questa panchina?",
+                "render": "Questa panchina è stata controllata l’ultima volta in data {survey:date}"
+            }
+        }
+    },
     "bench_at_pt": {
         "tagRenderings": {
             "1": {
                 "render": "{name}"
             }
         }
-    },
-    "bench": {
-        "tagRenderings": {
-            "6": {
-                "render": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
-                "question": "Quando è stata verificata l’ultima volta questa panchina?"
-            },
-            "5": {
-                "mappings": {
-                    "7": {
-                        "then": "Colore: giallo"
-                    },
-                    "6": {
-                        "then": "Colore: blu"
-                    },
-                    "5": {
-                        "then": "Colore: nero"
-                    },
-                    "4": {
-                        "then": "Colore: rosso"
-                    },
-                    "3": {
-                        "then": "Colore: bianco"
-                    },
-                    "2": {
-                        "then": "Colore: grigio"
-                    },
-                    "1": {
-                        "then": "Colore: verde"
-                    },
-                    "0": {
-                        "then": "Colore: marrone"
-                    }
-                },
-                "question": "Di che colore è questa panchina?",
-                "render": "Colore: {colour}"
-            },
-            "4": {
-                "render": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
-                "question": "In che direzione si guarda quando si è seduti su questa panchina?"
-            },
-            "3": {
-                "question": "Di che materiale è fatta questa panchina?",
-                "mappings": {
-                    "5": {
-                        "then": "Materiale: acciaio"
-                    },
-                    "4": {
-                        "then": "Materiale: plastica"
-                    },
-                    "3": {
-                        "then": "Materiale: cemento"
-                    },
-                    "2": {
-                        "then": "Materiale: pietra"
-                    },
-                    "1": {
-                        "then": "Materiale: metallo"
-                    },
-                    "0": {
-                        "then": "Materiale: legno"
-                    }
-                },
-                "render": "Materiale: {material}"
-            },
-            "2": {
-                "question": "Quanti posti ha questa panchina?",
-                "render": "{seats} posti"
-            },
-            "1": {
-                "question": "Questa panchina ha lo schienale?",
-                "mappings": {
-                    "1": {
-                        "then": "Schienale: No"
-                    },
-                    "0": {
-                        "then": "Schienale: Sì"
-                    }
-                },
-                "render": "Schienale"
-            }
-        },
-        "title": {
-            "render": "Panchina"
-        },
-        "name": "Panchine"
     }
 }

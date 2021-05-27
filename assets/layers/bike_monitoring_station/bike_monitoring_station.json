@@ -2,7 +2,8 @@
   "id": "bike_monitoring_station",
   "name": {
     "en": "Monitoring stations",
-    "nl": "Telstation"
+    "nl": "Telstation",
+    "fr": "Stations de contrôle"
   },
   "minzoom": 12,
   "source": {
@@ -16,21 +17,24 @@
   "title": {
     "render": {
       "nl": "Fietstelstation",
-      "en": "Bicycle counting station"
+      "en": "Bicycle counting station",
+      "fr": "Station de comptage de vélo"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "Bicycle counting station {name}",
-          "nl": "Fietstelstation {name}"
+          "nl": "Fietstelstation {name}",
+          "fr": "Station de comptage de vélo {name}"
         }
       },
       {
         "if": "ref~*",
         "then": {
           "en": "Bicycle counting station {ref}",
-          "nl": "Fietstelstation {ref}"
+          "nl": "Fietstelstation {ref}",
+          "fr": "Station de comptage de vélo {ref}"
         }
       }
     ]
