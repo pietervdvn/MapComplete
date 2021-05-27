@@ -5,6 +5,7 @@ import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
+import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 
 export default class GeoLocationHandler extends UIElement {
 
@@ -49,12 +50,15 @@ export default class GeoLocationHandler extends UIElement {
      * @private
      */
     private readonly _previousLocationGrant: UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
+    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
 
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
-                leafletMap: UIEventSource<L.Map>) {
+                leafletMap: UIEventSource<L.Map>,
+                layoutToUse: UIEventSource<LayoutConfig>) {
         super(undefined);
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
+        this._layoutToUse = layoutToUse;
         this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
         this.dumbMode = false;
         const self = this;
@@ -90,11 +94,11 @@ export default class GeoLocationHandler extends UIElement {
 
         const self = this;
         htmlElement.onclick = function () {
-            self.StartGeolocating(19);
+            self.StartGeolocating();
         }
 
         htmlElement.oncontextmenu = function (e) {
-            self.StartGeolocating(15);
+            self.StartGeolocating();
             e.preventDefault();
             return false;
         }
@@ -133,9 +137,24 @@ export default class GeoLocationHandler extends UIElement {
             const timeSinceRequest = (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
                 self._lastUserRequest = undefined;
-                this._leafletMap.data.setView(
-                    this._currentGPSLocation.data.latlng, this._leafletMap.data.getZoom()
-                );
+
+                // We use the layout location
+                const b = this._layoutToUse.data.lockLocation
+                let inRange = true;
+                if(b){
+                    if(b!== true){
+                        // B is an array with our locklocation
+                        inRange = b[0][0] <= location.latlng[0] && location.latlng[0] <= b[1][0] &&
+                            b[0][1] <= location.latlng[1] && location.latlng[1] <= b[1][1];
+                    }
+                }
+                if (!inRange) {
+                    console.log("Not zooming to GPS location: out of bounds", b, location.latlng)
+                } else {
+                    this._leafletMap.data.setView(
+                        location.latlng, this._leafletMap.data.getZoom()
+                    );
+                }
             }
 
             let color = "#1111cc";
@@ -166,7 +185,7 @@ export default class GeoLocationHandler extends UIElement {
                 ?.then(function (status) {
                     console.log("Geolocation is already", status)
                     if (status.state === "granted") {
-                        self.StartGeolocating(19, false);
+                        self.StartGeolocating(false);
                     }
                     self._permission.setData(status.state);
                     status.onchange = function () {
@@ -179,7 +198,7 @@ export default class GeoLocationHandler extends UIElement {
         }
         if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
-            self.StartGeolocating();
+            self.StartGeolocating(false);
         }
 
         this.HideOnEmpty(true);
@@ -207,7 +226,7 @@ export default class GeoLocationHandler extends UIElement {
         }
     }
 
-    private StartGeolocating(zoomlevel = 19, zoomToGPS = true) {
+    private StartGeolocating(zoomToGPS = true) {
         const self = this;
         console.log("Starting geolocation")
 
@@ -217,9 +236,7 @@ export default class GeoLocationHandler extends UIElement {
             return "";
         }
         if (this._currentGPSLocation.data !== undefined) {
-            this._leafletMap.data.setView(
-                this._currentGPSLocation.data.latlng, zoomlevel
-            );
+            this._currentGPSLocation.ping()
         }
 
 

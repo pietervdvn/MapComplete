@@ -85,30 +85,30 @@ export class InitUiElements {
         function updateFavs() {
             // This is purely for the personal theme to load the layers there
             const favs = State.state.favouriteLayers.data ?? [];
-            
+
             const neededLayers = new Set<LayerConfig>();
 
             console.log("Favourites are: ", favs)
             layoutToUse.layers.splice(0, layoutToUse.layers.length);
             let somethingChanged = false;
             for (const fav of favs) {
-                
-                if(AllKnownLayers.sharedLayers.has(fav)){
+
+                if (AllKnownLayers.sharedLayers.has(fav)) {
                     const layer = AllKnownLayers.sharedLayers.get(fav)
-                    if(!neededLayers.has(layer)){
+                    if (!neededLayers.has(layer)) {
                         neededLayers.add(layer)
                         somethingChanged = true;
                     }
                 }
 
-                
+
                 for (const layouts of State.state.installedThemes.data) {
                     for (const layer of layouts.layout.layers) {
                         if (typeof layer === "string") {
                             continue;
                         }
                         if (layer.id === fav) {
-                            if(!neededLayers.has(layer)){
+                            if (!neededLayers.has(layer)) {
                                 neededLayers.add(layer)
                                 somethingChanged = true;
                             }
@@ -116,13 +116,13 @@ export class InitUiElements {
                     }
                 }
             }
-            if(somethingChanged){
+            if (somethingChanged) {
                 console.log("layoutToUse.layers:", layoutToUse.layers)
                 State.state.layoutToUse.data.layers = Array.from(neededLayers);
                 State.state.layoutToUse.ping();
                 State.state.layerUpdater?.ForceRefresh();
             }
-            
+
         }
 
 
@@ -174,7 +174,8 @@ export class InitUiElements {
             new MapControlButton(
                 new GeoLocationHandler(
                     State.state.currentGPSLocation,
-                    State.state.leafletMap
+                    State.state.leafletMap,
+                    State.state.layoutToUse
                 )),
             State.state.featureSwitchGeolocation);
 
@@ -381,23 +382,25 @@ export class InitUiElements {
         State.state.leafletMap.setData(bm.map);
         const layout = State.state.layoutToUse.data
         if (layout.lockLocation) {
-            const tile = Utils.embedded_tile(layout.startLat, layout.startLon, layout.startZoom - 1)
-            const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y)
-            // We use the bounds to get a sense of distance for this zoom level
-            const latDiff = bounds[0][0] - bounds[1][0]
-            const lonDiff = bounds[0][1] - bounds[1][1]
-            console.warn("Locking the bounds to ", bounds)
-            bm.map.setMaxBounds(
-                [[layout.startLat - latDiff, layout.startLon - lonDiff],
+
+            if (layout.lockLocation === true) {
+                const tile = Utils.embedded_tile(layout.startLat, layout.startLon, layout.startZoom - 1)
+                const bounds = Utils.tile_bounds(tile.z, tile.x, tile.y)
+                // We use the bounds to get a sense of distance for this zoom level
+                const latDiff = bounds[0][0] - bounds[1][0]
+                const lonDiff = bounds[0][1] - bounds[1][1]
+                layout.lockLocation = [[layout.startLat - latDiff, layout.startLon - lonDiff],
                     [layout.startLat + latDiff, layout.startLon + lonDiff],
-                ]
-            );
+                ];
+            }
+            console.warn("Locking the bounds to ", layout.lockLocation)
+            bm.map.setMaxBounds(layout.lockLocation);
             bm.map.setMinZoom(layout.startZoom)
         }
 
     }
 
-    private static InitLayers() : FeatureSource{
+    private static InitLayers(): FeatureSource {
 
 
         const state = State.state;
@@ -420,13 +423,12 @@ export class InitUiElements {
 
         const updater = new LoadFromOverpass(state.locationControl, state.layoutToUse, state.leafletMap);
         State.state.layerUpdater = updater;
-        
-        
-        
-        const source = new FeaturePipeline(state.filteredLayers, 
-            updater, 
-            state.osmApiFeatureSource, 
-            state.layoutToUse, 
+
+
+        const source = new FeaturePipeline(state.filteredLayers,
+            updater,
+            state.osmApiFeatureSource,
+            state.layoutToUse,
             state.changes,
             state.locationControl,
             state.selectedElement);
@@ -442,7 +444,7 @@ export class InitUiElements {
 
         // ------------- Setup the layers -------------------------------
 
-       const source =  InitUiElements.InitLayers();
+        const source = InitUiElements.InitLayers();
         InitUiElements.InitLayerSelection(source);
 
 
