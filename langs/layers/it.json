@@ -518,6 +518,12 @@
                         "then": "C’è un manometro ma è rotto"
                     }
                 }
+            },
+            "4": {
+                "question": ""
+            },
+            "3": {
+                "question": ""
             }
         },
         "icon": {
