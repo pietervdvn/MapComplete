@@ -1,0 +1,99 @@
+{
+    "climbing": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            }
+        }
+    },
+    "charging_stations": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "6": {
+                        "mappings": {
+                            "3": {
+                                "then": "eVgo"
+                            }
+                        },
+                        "render": "{network}"
+                    }
+                },
+                "description": "Зарядная станция",
+                "title": {
+                    "render": "Зарядная станция"
+                },
+                "name": "Зарядные станции"
+            }
+        },
+        "title": "Зарядные станции"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "9": {
+                        "render": "Официальный сайт: <a href='{website}'>{website}</a>"
+                    },
+                    "6": {
+                        "mappings": {
+                            "2": {
+                                "then": "Нет доступа в Интернет"
+                            },
+                            "1": {
+                                "then": "Есть доступ в Интернет"
+                            },
+                            "0": {
+                                "then": "Есть доступ в Интернет"
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "Как называется это место?"
+                    }
+                }
+            }
+        }
+    },
+    "benches": {
+        "title": "Скамейки"
+    },
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "8": {
+                                "then": "Граффити"
+                            },
+                            "6": {
+                                "then": "Камень"
+                            },
+                            "5": {
+                                "then": "Бюст"
+                            },
+                            "4": {
+                                "then": "Статуя"
+                            },
+                            "3": {
+                                "then": "Скульптура"
+                            },
+                            "1": {
+                                "then": "Фреска"
+                            },
+                            "0": {
+                                "then": "Архитектура"
+                            }
+                        }
+                    }
+                },
+                "name": "Произведения искусства"
+            }
+        }
+    }
+}

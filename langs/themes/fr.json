@@ -118,7 +118,8 @@
                         "question": "Quand est ce-que ce friterie ouvert?"
                     },
                     "3": {
-                        "question": "Quel est le site web de cette  friterie?"
+                        "question": "Quel est le site web de cette  friterie?",
+                        "render": "<a href='{website}'>{website}</a>"
                     },
                     "4": {
                         "render": "<a href='tel:{phone}'>{phone}</a>",
@@ -265,5 +266,58 @@
     "toilets": {
         "title": "Carte des WC et toilettes publiques",
         "description": "Carte affichant les WC et toilettes publiques"
+    },
+    "climbing": {
+        "layers": {
+            "4": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "0": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            }
+        }
+    },
+    "trees": {
+        "description": "Cartographions tous les arbres !",
+        "shortDescription": "Carte des arbres",
+        "title": "Arbres"
+    },
+    "playgrounds": {
+        "description": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
+        "shortDescription": "Une carte des aires de jeux",
+        "title": "Aires de jeux"
+    },
+    "drinking_water": {
+        "description": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
+        "title": "Eau potable"
     }
 }

@@ -5,7 +5,7 @@
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "pleaseLogin": "Connectez-vous pour mettre une photo en ligne",
         "willBePublished": "Votre photo va être publiée : ",
-        "cco": "sur le domaine publique",
+        "cco": "dans le domaine publique",
         "ccbs": "sous la license CC-BY-SA",
         "ccb": "sous la license CC-BY",
         "uploadFailed": "L'ajout de la photo a échoué. Êtes-vous connecté à Internet ? Et est-ce que les API tierces sont autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
@@ -78,7 +78,8 @@
                 "title": "Icones utilisées"
             },
             "mapContributionsByAndHidden": "La partie actuellement visible des données comporte des modifications par {contributors} et {hiddenCount} contributeurs de plus",
-            "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}"
+            "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}",
+            "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>"
         },
         "sharescreen": {
             "intro": "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyez-le à vos amis :",
@@ -101,7 +102,7 @@
         },
         "morescreen": {
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
-            "requestATheme": "Si vous voulez une autre carte thématique, demande-la <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>ici</a>.",
+            "requestATheme": "Si vous voulez une autre carte thématique, demandez-la <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">ici</a>.",
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Créez votre propre MapComplete carte"
         },
@@ -142,7 +143,7 @@
             "opensAt": "à partir de",
             "openTill": "jusqu'à",
             "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées :",
-            "closed_until": "Fermé jusqu'à",
+            "closed_until": "Fermé jusqu'à {date}",
             "closed_permanently": "Fermé",
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",

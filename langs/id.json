@@ -1,0 +1,34 @@
+{
+    "general": {
+        "questions": {
+            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
+            "websiteIs": "Situs Web: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "nameInlineQuestion": "Name {category} ini adalah $$$",
+        "pickLanguage": "Pilih bahasa: ",
+        "layerSelection": {
+            "title": "Pilih lapisan"
+        },
+        "backgroundMap": "Peta latar belakang",
+        "search": {
+            "searching": "Sdg mencari…"
+        },
+        "opening_hours": {
+            "ph_not_known": " "
+        }
+    },
+    "image": {
+        "doDelete": "Buang gambar",
+        "ccb": "di bawah lisensi CC-BY",
+        "ccbs": "di bawah lisensi CC-BY-SA",
+        "cco": "di domain publik",
+        "willBePublished": "Gambarmu akan dipublikasikan: ",
+        "pleaseLogin": "Silakan log masuk untuk menambah gambar",
+        "uploadingMultiple": "Mengunggah {count} gambar…",
+        "uploadingPicture": "Mengunggah gambar Anda…",
+        "addPicture": "Tambahkan foto"
+    },
+    "centerMessage": {
+        "ready": "Selesai!"
+    }
+}

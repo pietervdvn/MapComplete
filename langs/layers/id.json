@@ -1,0 +1,25 @@
+{
+    "bench": {
+        "tagRenderings": {
+            "2": {
+                "render": "{seats} kursi"
+            },
+            "1": {
+                "question": "Apakah bangku ini memiliki sandaran?",
+                "mappings": {
+                    "1": {
+                        "then": "Sandaran: Tidak"
+                    },
+                    "0": {
+                        "then": "Sandaran: Ya"
+                    }
+                },
+                "render": "Sandaran"
+            }
+        },
+        "title": {
+            "render": "Bangku"
+        },
+        "name": "Bangku"
+    }
+}

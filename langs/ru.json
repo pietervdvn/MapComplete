@@ -1,0 +1,175 @@
+{
+    "general": {
+        "questions": {
+            "emailIs": "Адрес электронной почты у {category}: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "phoneNumberIs": "Телефонный номер {category}: <a target=\"_blank\">{phone}</a>",
+            "emailOf": "Какой адрес электронной почты у {category}?",
+            "websiteIs": "Сайт: <a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "Какой сайт у {category}?",
+            "phoneNumberOf": "Какой номер телефона у {category}?"
+        },
+        "nameInlineQuestion": "Название {category} — $$$",
+        "noNameCategory": "{category} без имени",
+        "about": "С лёгкостью редактируйте и дополняйте OpenStreetMap на опредённую тему",
+        "pickLanguage": "Выберите язык: ",
+        "add": {
+            "layerNotEnabled": "Слой {layer} не включен. Включите этот слой чтобы добавить точку",
+            "openLayerControl": "Открыть панель управления слоями",
+            "confirmButton": "Добавить {category} сюда.<br><div class=\"alert\">Ваш вклад будет виден каждому</div>",
+            "confirmIntro": "<h3>Добавить {title} сюда?</h3>Точка будет <b>видна всем</b>. Пожалуйста, добавляйте только то, что действительно существует. Много приложений используют эти данные.",
+            "stillLoading": "Данные ещё загружаются. Пожалуйста, немного подождите прежде чем добавлять новую точку.",
+            "zoomInFurther": "Приблизьте ещё чтобы добавить точку.",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Пожалуйста, войдите чтобы добавить новую точку</a>",
+            "intro": "Вы нажали туда, где ещё нет данных.<br>",
+            "title": "Добавить новую точку?",
+            "addNew": "Добавить {category} здесь"
+        },
+        "osmLinkTooltip": "Посмотрите этот объект на OpenStreetMap чтобы увидеть его историю или более детально отредактировать",
+        "number": "номер",
+        "skippedQuestions": "Несколько вопросов пропущены",
+        "oneSkippedQuestion": "Вопрос пропущен",
+        "skip": "Пропустить вопрос",
+        "cancel": "Отмена",
+        "save": "Сохранить",
+        "returnToTheMap": "Возврат к карте",
+        "search": {
+            "error": "Что-то пошло не так…",
+            "nothing": "Ничего не найдено…",
+            "searching": "Поиск…",
+            "search": "Найти место"
+        },
+        "loginToStart": "Войдите, чтобы ответить на этот вопрос",
+        "welcomeBack": "Вы вошли, с возвращением!",
+        "loginWithOpenStreetMap": "Войти с OpenStreetMap",
+        "opening_hours": {
+            "ph_not_known": " ",
+            "ph_open": "открыта",
+            "ph_closed": "закрыта",
+            "open_during_ph": "В праздничные дни эта точка",
+            "open_24_7": "Открыто круглосуточно",
+            "closed_permanently": "Закрыто на неизвестный срок",
+            "closed_until": "Закрыто до {date}",
+            "not_all_rules_parsed": "Часы работы этого магазина сложны. В элементе ввода игнорируются следующие правила:",
+            "openTill": "до",
+            "opensAt": "с",
+            "error_loading": "Ошибка: не удалось визуализировать эти часы работы."
+        },
+        "weekdays": {
+            "sunday": "Воскресенье",
+            "saturday": "Суббота",
+            "friday": "Пятница",
+            "thursday": "Четверг",
+            "wednesday": "Среда",
+            "tuesday": "Вторник",
+            "monday": "Понедельник",
+            "abbreviations": {
+                "sunday": "Вс",
+                "saturday": "Сб",
+                "friday": "Пт",
+                "thursday": "Чт",
+                "wednesday": "Ср",
+                "tuesday": "Вт",
+                "monday": "Пн"
+            }
+        },
+        "layerSelection": {
+            "title": "Выберите слои",
+            "zoomInToSeeThisLayer": "Увеличьте масштаб, чтобы увидеть этот слой"
+        },
+        "backgroundMap": "Фоновая карта",
+        "aboutMapcomplete": "<h3>О MapComplete</h3><p>С помощью MapComplete вы можете обогатить OpenStreetMap информацией по <b>одной теме.</b> Ответьте на несколько вопросов, и через несколько минут ваши материалы будут доступны по всему миру! <b>Сопровождающий темы</b> определяет элементы, вопросы и языки для темы.</p><h3>Узнайте больше</h3><p>MapComplete всегда <b>предлагает следующий шаг</b>, чтобы узнать больше об OpenStreetMap.</p><ul><li>При встраивании в веб-сайт iframe ссылается на полноэкранную версию MapComplete</li><li>Полноэкранная версия предлагает информацию об OpenStreetMap</li><li>Просмотр работает без входа, но для редактирования требуется вход в OSM.</li><li>Если вы не вошли в систему, вас попросят войти</li><li>Ответив на один вопрос, вы можете добавлять новые точки на карту</li><li>Через некоторое время отображаются актуальные OSM-метки с последующей ссылкой на вики</li></ul><p></p><br><p>Вы заметили <b>проблему</b>? У вас есть <b>запрос на функциональность</b>? Хотите <b>помочь с переводом</b>? Зайдите на <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">репозиторий с исходным кодом</a> или <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">трекер проблем.</a> </p> <p> Хотите увидеть <b>свой прогресс</b>? Следите за количеством правок на <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+        "customThemeIntro": "<h3>Пользовательские темы</h3>Это ранее просмотренные темы, созданные пользователями.",
+        "noTagsSelected": "Теги не выбраны",
+        "getStartedNewAccount": " или <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">создать новую учетную запись</a>",
+        "getStartedLogin": "Войти в OpenStreetMap, чтобы начать работу",
+        "goToInbox": "Открыть входящие сообщения",
+        "fewChangesBefore": "Пожалуйста, ответьте на несколько вопросов о существующих точках, прежде чем добавить новую точку.",
+        "readYourMessages": "Пожалуйста, прочитайте все ваши сообщения на сайте OpenStreetMap перед тем как добавлять новую точку.",
+        "morescreen": {
+            "createYourOwnTheme": "Создать собственную тему MapComplete с чистого листа",
+            "streetcomplete": "Другое, похожее приложение — <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "requestATheme": "Если вам нужен особенный квест, попросите добавить его <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">здесь</a>.",
+            "intro": "<h3>Больше тематических карт?</h3>Нравится собирать геоданные? <br> Можете посмотреть другие темы."
+        },
+        "sharescreen": {
+            "fsIncludeCurrentLocation": "Включить текущее местоположение карты",
+            "fsIncludeCurrentLayers": "Включить текущий выбор слоёв",
+            "fsIncludeCurrentBackgroundMap": "Включить текущий фоновый слой <b>{name}</b>",
+            "fsGeolocation": "Включить кнопку \"найди меня\" (только в мобильной версии)",
+            "fsSearch": "Включить строку поиска",
+            "fsUserbadge": "Включить кнопку входа в систему",
+            "fsWelcomeMessage": "Показать всплывающее окно с приветствием и соответсвующие вкладки",
+            "fsLayers": "Включить выбор слоя карты",
+            "fsAddNew": "Включить кнопку \"добавить новую точку интереса\"",
+            "fsLayerControlToggle": "Открыть панель выбора слоя",
+            "editThemeDescription": "Добавить или изменить вопросы к этой теме карты",
+            "editThisTheme": "Редактировать эту тему",
+            "thanksForSharing": "Спасибо, что поделились!",
+            "copiedToClipboard": "Ссылка скопирована в буфер обмена",
+            "embedIntro": "<h3>Встроить на свой сайт</h3>Пожалуйста, вставьте эту карту на свой сайт.<br>Мы призываем вас сделать это - вам даже не нужно спрашивать разрешения.<br>Она бесплатна и всегда будет бесплатной. Чем больше людей пользуются ею, тем более ценной она становится.",
+            "addToHomeScreen": "<h3>Добавить на домашний экран</h3>Вы можете легко добавить этот сайт на домашний экран вашего смартфона. Для этого нажмите кнопку \"Добавить на главный экран\" в строке URL.",
+            "intro": "<h3>Поделиться этой картой</h3> Поделитесь этой картой, скопировав ссылку ниже и отправив её друзьям и близким:"
+        },
+        "attribution": {
+            "codeContributionsBy": "MapComplete был создан {contributors} и <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">ещё {hiddenCount} соавторами </a>",
+            "mapContributionsByAndHidden": "Текущие видимые данные имеют правки, сделанные {contributors} и ещё {hiddenCount} пользователями",
+            "mapContributionsBy": "Текущие видимые данные имеют правки, сделанные {contributors}",
+            "iconAttribution": {
+                "title": "Используемые значки"
+            },
+            "themeBy": "Тема поддерживается {author}",
+            "attributionContent": "<p>Все данные предоставлены <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, свободное повторное использование согласно <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
+            "attributionTitle": "Уведомление об авторстве"
+        },
+        "openStreetMapIntro": "<h3>Свободная карта</h3><p>Было бы здорово если бы была одна карта, которую каждый может свободно использовать и редактировать? Использовать как общее хранилище для всей гео-информации? Тогда, все сайты с разной, неполной и несовместимой информацией (которая обычно устарела) будут больше не нужны.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> такая карта. Данные карты могу быть свободно использованы (с <a href=\"https://osm.org/copyright\" target=\"_blank\">аннотацией и публикацией изменений к данным</a>). Более того, каждый может свободно добавлять информацию и исправлять ошибки. Этот сайт также использует OpenStreetMap. Все данные берутся оттуда, а ваши ответы и исправления отправляются обратно туда.</p><p>Огромное количество людей уже использует OpenStreetMap: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, а также карты в Facebook, Instagram, Apple-карты и Bing-карты (частично) используют OpenStreetMap. Если вы что-то измените здесь, это также будет отражено в этих приложениях - после их следующего обновления!</p>"
+    },
+    "index": {
+        "pickTheme": "Выберите тему ниже чтобы начать.",
+        "#": "Эти надписи отображаются над кнопками тем, когда тема не загружена",
+        "intro": "MapComplete это редактор OpenStreetMap, который покажет информацию по особым темам.",
+        "title": "Добро пожаловать в MapComplete"
+    },
+    "centerMessage": {
+        "retrying": "Не удалось загрузить данные. Попробуем ещё раз через {count} секунд…",
+        "ready": "Готово!",
+        "zoomIn": "Приблизьте чтобы посмотреть или изменить данные",
+        "loadingData": "Загружаются данные…"
+    },
+    "image": {
+        "isDeleted": "Удалено",
+        "doDelete": "Удалить изображение",
+        "dontDelete": "Отмена",
+        "uploadDone": "<span class=\"thanks\">Ваше изображение добавлено. Спасибо за помощь!</span>",
+        "respectPrivacy": "Не фотографируйте людей и номерные знаки. Не загружайте снимки Google Maps, Google Streetview и иные закрытые источники.",
+        "uploadFailed": "Не удалось загрузить изображение. Проверьте, есть ли у вас интернет и разрешены ли сторонние API? Браузеры Brave и UMatrix могут блокировать их.",
+        "ccb": "под лицензией CC-BY",
+        "ccbs": "под лицензией CC-BY-SA",
+        "cco": "в открытом доступе",
+        "willBePublished": "Ваше изображение будет опубликоавано: ",
+        "pleaseLogin": "Войдите чтобы добавить изображение",
+        "uploadingMultiple": "Загружаем {count} изображений…",
+        "uploadingPicture": "Загружаем изображение…",
+        "addPicture": "Добавить изображение"
+    },
+    "reviews": {
+        "plz_login": "Войдите, чтобы оставить отзыв",
+        "attribution": "Отзывы созданы на основе <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> и доступны под лицензией <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
+        "tos": "Создавая отзыв, вы соглашаетесь с <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> TOS и политикой конфиденциальности Mangrove.reviews </a>",
+        "saved": "<span class=\"thanks\"> Отзыв сохранен. Спасибо, что поделились! </span>",
+        "saving_review": "Сохранение…",
+        "affiliated_reviewer_warning": "(Отзыв лица, связанного с заведением)",
+        "i_am_affiliated": "<span>Я связан с этим объектом</span><br><span class=\"subtle\"> Отметьте если вы создатель, владелец, работник, …</span>",
+        "posting_as": "Публикация от имени",
+        "no_rating": "Нет рейтинга",
+        "write_a_comment": "Оставить отзыв…",
+        "no_reviews_yet": "Пока нет отзывов. Оставьте первый отзыв и помогите открытым данным и бизнесу!",
+        "name_required": "Необходимо имя, чтобы просматривать и создавать отзывы",
+        "title_singular": "Один отзыв",
+        "title": "{count} отзыв(-ов)"
+    },
+    "favourite": {
+        "reload": "Обновить данные",
+        "loginNeeded": "<h3>Вход</h3>Личная раскладка доступна только пользователям OpenStreetMap",
+        "panelIntro": "<h3>Ваша личная тема</h3>Активируйте свои любимые слои из официальных тем"
+    }
+}

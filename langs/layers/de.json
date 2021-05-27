@@ -240,6 +240,9 @@
             "7": {
                 "question": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
                 "render": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
+            },
+            "5": {
+                "render": "{access}"
             }
         }
     },
@@ -818,6 +821,35 @@
         "tagRenderings": {
             "1": {
                 "question": "Möchten Sie eine Beschreibung hinzufügen?"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
             }
         }
     }
