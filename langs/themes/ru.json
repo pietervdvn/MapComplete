@@ -35,6 +35,12 @@
                             },
                             "9": {
                                 "then": "Рельеф"
+                            },
+                            "7": {
+                                "then": "Инсталляция"
+                            },
+                            "2": {
+                                "then": "Живопись"
                             }
                         },
                         "question": "К какому типу относится эта работа?",
@@ -49,7 +55,8 @@
                         "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
                     },
                     "2": {
-                        "question": "Какой художник создал это?"
+                        "question": "Какой художник создал это?",
+                        "render": "Создано {artist_name}"
                     }
                 },
                 "presets": {
@@ -167,6 +174,9 @@
                             }
                         },
                         "question": "Взимается ли в этом месте плата?"
+                    },
+                    "11": {
+                        "render": "Более подробная информация об этом месте: {description}"
                     }
                 },
                 "description": "площадки для кемпинга",
@@ -215,6 +225,34 @@
                         "render": "<strong>{name}</strong>"
                     }
                 }
+            },
+            "4": {
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "3": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "2": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                }
             }
         }
     },
@@ -234,5 +272,19 @@
         "description": "В этой теме показаны станции мониторинга велосипедов с данными в реальном времени",
         "shortDescription": "Станции мониторинга велосипедов с оперативными данными от Brussels Mobility",
         "title": "Станции мониторинга велосипедов"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<a href='{website}'>{website}</a>"
+                    }
+                }
+            }
+        }
+    },
+    "drinking_water": {
+        "title": "Питьевая вода"
     }
 }
