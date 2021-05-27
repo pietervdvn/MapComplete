@@ -125,6 +125,9 @@
                     },
                     "7": {
                         "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+                    },
+                    "2": {
+                        "then": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
                     }
                 },
                 "render": "È un parcheggio bici del tipo: {bicycle_parking}",
