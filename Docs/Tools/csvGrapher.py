@@ -364,6 +364,7 @@ theme_remappings = {
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
     "wiki:User:joost_schouppe/campersite": "campersite",
     "arbres":"arbres_leffia",
+     "https://llefia.org/arbres/mapcomplete.json":"arbres_leffia",
     "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
     "testing mapcomplete 0.0.0":"buurtnatuur",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
