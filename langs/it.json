@@ -117,7 +117,7 @@
             "stillLoading": "Caricamento dei dati ancora in corso. Attendi un po’ prima di aggiungere un nuovo punto.",
             "zoomInFurther": "Ingrandisci la mappa per aggiungere un punto.",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Accedi per aggiungere un punto</a>",
-            "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.",
+            "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "title": "Aggiungi un nuovo punto?",
             "addNew": "Aggiungi una nuova {category} qua"
         },

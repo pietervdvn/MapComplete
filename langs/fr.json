@@ -5,7 +5,7 @@
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "pleaseLogin": "Connectez-vous pour mettre une photo en ligne",
         "willBePublished": "Votre photo va être publiée : ",
-        "cco": "sur le domaine publique",
+        "cco": "dans le domaine publique",
         "ccbs": "sous la license CC-BY-SA",
         "ccb": "sous la license CC-BY",
         "uploadFailed": "L'ajout de la photo a échoué. Êtes-vous connecté à Internet ? Et est-ce que les API tierces sont autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
@@ -102,7 +102,7 @@
         },
         "morescreen": {
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
-            "requestATheme": "Si vous voulez une autre carte thématique, demande-la <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>ici</a>.",
+            "requestATheme": "Si vous voulez une autre carte thématique, demandez-la <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">ici</a>.",
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Créez votre propre MapComplete carte"
         },

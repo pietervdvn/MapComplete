@@ -1,0 +1,60 @@
+{
+    "general": {
+        "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne király, ha lenne egy térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely minden geoinformáció tárolására. Hogy arra a sok weboldalra a kicsi és egymással nem kompatibilis térképekkel (amik többnyire elavultak) ne legyen szükség többé.</p><p><b>Az <a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> éppen ez. A trékép adatai ingyenesen használhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">az adatokban történő változtatások megjelölésével és publikálásával</a>) Mindezeken túl bárki szabadon hozzáadhat új helyeket és kijavíthatja a hibákat. Ez a weboldal is OpenStreetMapet használ. Minden adat onnan származik és a te válaszaid és módosításaid is oda futnak be.</p><p>Rengeteg ember és alkalmazás használja már most is az OpenStreetMapet: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de még a Facebook, Instagram, Apple és Bing által használt térképek is (részben) az OpenStreetMapet használják. Ha itt módosítasz valamit, az ezekben az alkalmazásokban is megjelenik - a legközelebbi frissítés után.</p>",
+        "questions": {
+            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "noNameCategory": "Név nélküli {category}",
+        "nameInlineQuestion": "A(z) {category} neve $$$",
+        "pickLanguage": "Válassz nyelvet: ",
+        "add": {
+            "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Pont hozzáadásához engedélyezd ezt a réteget!",
+            "confirmButton": "{category} hozzáadása itt.<br><div class=\"alert\">A módosításod mindenki által látható lesz</div>",
+            "confirmIntro": "<h3>Egy {title} hozzáadása itt?</h3>A pont, amit létrehozol <b>mindenki által látható lesz</b>. Kérjük, csak valóban létező dolgokat adj hozzá. Sok alkalmazás használja ezeket az adatokat.",
+            "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá!",
+            "zoomInFurther": "Pont hozzáadásához közelíts rá jobban!",
+            "title": "Hozzáadsz egy új pontot?",
+            "addNew": "Új {category} hozzáadása itt"
+        },
+        "number": "szám",
+        "skip": "Kérdés kihagyása",
+        "oneSkippedQuestion": "Egy kérdés ki lett hagyva",
+        "skippedQuestions": "Néhány kérdés ki lett hagyva",
+        "cancel": "Mégse",
+        "save": "Mentés",
+        "returnToTheMap": "Vissza a térképhez",
+        "search": {
+            "error": "Hiba történt…",
+            "nothing": "Nincs találat",
+            "searching": "Keresés…",
+            "search": "Helyszín keresése"
+        },
+        "loginToStart": "Jelentkezz be a kérdés megválaszolásához",
+        "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
+        "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap segítségével"
+    },
+    "index": {
+        "pickTheme": "Válassz egy témát lent a kezdéshez!",
+        "title": "Üdvözlünk a MapComplete-nél!"
+    },
+    "centerMessage": {
+        "retrying": "Nem sikerült betölteni az adatokat. Újrapróbálkozás {count} másodperc múlva…",
+        "ready": "Kész!",
+        "zoomIn": "Közelíts rá az adatok megtekintéséhez és szerkesztéséhez",
+        "loadingData": "Adatok betöltése folyamatban"
+    },
+    "image": {
+        "isDeleted": "Törölve",
+        "doDelete": "Kép eltávolítása",
+        "dontDelete": "Mégse",
+        "uploadDone": "<span class=\"thanks\">A kép hozzá lett adva. Köszönjük a segítséged!</span>",
+        "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról! Ne tölts fel képeket Google Mapsről, Google Streetview-ról és egyéb szerzői jog által védett forrásokból!",
+        "uploadFailed": "A kép feltöltése sikertelen. Biztosan van hálózati kapcsolatod és engedélyezve vannak a harmadik féltől származó API-k? A Brave böngésző és az UMatrix blokkolhatja ezeket.",
+        "ccb": "a CC-BY licenc szerint",
+        "ccbs": "a CC-BY-SA licenc szerint",
+        "pleaseLogin": "Kép hozzáadásához jelentkezz be",
+        "uploadingMultiple": "{count} kép feltöltése folyamatban",
+        "uploadingPicture": "Kép feltöltése folyamatban",
+        "addPicture": "Kép hozzáadása"
+    }
+}
