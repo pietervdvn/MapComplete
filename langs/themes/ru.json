@@ -377,5 +377,104 @@
     },
     "drinking_water": {
         "title": "Питьевая вода"
+    },
+    "trees": {
+        "title": "Деревья"
+    },
+    "shops": {
+        "layers": {
+            "0": {
+                "presets": {
+                    "0": {
+                        "description": "Добавить новый магазин",
+                        "title": "Магазин"
+                    }
+                },
+                "tagRenderings": {
+                    "6": {
+                        "render": "{opening_hours_table(opening_hours)}"
+                    },
+                    "5": {
+                        "render": "<a href='mailto:{email}'>{email}</a>"
+                    },
+                    "4": {
+                        "render": "<a href='{website}'>{website}</a>"
+                    },
+                    "3": {
+                        "render": "<a href='tel:{phone}'>{phone}</a>"
+                    },
+                    "2": {
+                        "mappings": {
+                            "6": {
+                                "then": "Автосалон"
+                            },
+                            "3": {
+                                "then": "Парикмахерская"
+                            },
+                            "2": {
+                                "then": "Магазин одежды"
+                            },
+                            "1": {
+                                "then": "Супермаркет"
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "Как называется этот магазин?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "1": {
+                            "then": "{shop}"
+                        },
+                        "0": {
+                            "then": "{name}"
+                        }
+                    },
+                    "render": "Магазин"
+                },
+                "name": "Магазин"
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "3": {
+                "presets": {
+                    "0": {
+                        "title": "Станция скорой помощи"
+                    }
+                },
+                "title": {
+                    "render": "Станция скорой помощи"
+                }
+            },
+            "1": {
+                "title": {
+                    "render": "Огнетушители"
+                }
+            },
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "Пожарный гидрант"
+                    }
+                },
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "3": {
+                                "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены."
+                            }
+                        },
+                        "render": " Тип гидранта: {fire_hydrant:type}"
+                    }
+                },
+                "title": {
+                    "render": "Гидрант"
+                }
+            }
+        }
     }
 }
