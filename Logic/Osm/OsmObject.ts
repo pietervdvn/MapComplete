@@ -130,7 +130,7 @@ export abstract class OsmObject {
                     osmObject.SaveExtraData(element, [])
                     break;
             }
-            osmObject.LoadData(element)
+            osmObject?.LoadData(element)
             objects.push(osmObject)
         }
         return objects;
@@ -321,7 +321,15 @@ export class OsmWay extends OsmObject {
         let latSum = 0
         let lonSum = 0
 
+        console.log("element is", element, "nodes are", allNodes)
+
+        const nodeDict = new Map<number, OsmNode>()
         for (const node of allNodes) {
+            nodeDict.set(node.id, node)
+        }
+
+        for (const nodeId of element.nodes) {
+            const node = nodeDict.get(nodeId)
             const cp = node.centerpoint();
             this.coordinates.push(cp);
             latSum = cp[0]
@@ -338,10 +346,18 @@ export class OsmWay extends OsmObject {
             "type": "Feature",
             "properties": this.tags,
             "geometry": {
-                "type": "LineString",
+                "type": this.isPolygon() ? "Polygon" : "LineString",
                 "coordinates": this.coordinates.map(c => [c[1], c[0]])
             }
         }
+    }
+
+    private isPolygon(): boolean {
+        if (this.coordinates[0] !== this.coordinates[this.coordinates.length - 1]) {
+            return false; // Not closed
+        }
+        return Utils.isPolygon(this.tags)
+
     }
 }
 
