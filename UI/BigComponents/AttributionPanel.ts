@@ -30,7 +30,7 @@ export default class AttributionPanel extends Combine {
             "<br/>",
 
             new VariableUiElement(contributions.map(contributions => {
-                const sorted = Array.from(contributions, ([name, value]) => ({name, value}));
+                const sorted = Array.from(contributions, ([name, value]) => ({name, value})).filter(x => x.name !== undefined && x.name !== "undefined");
                 if (sorted.length === 0) {
                     return "";
                 }
@@ -77,6 +77,10 @@ export default class AttributionPanel extends Combine {
         let contribsStr = filtered.map(c => c.contributor)
             .join(", ")
 
+        if(contribsStr === ""){
+            // Hmm, something went wrong loading the contributors list. Lets show nothing
+            return undefined;
+        }
 
         return Translations.t.general.attribution.codeContributionsBy.Subs({
             contributors: contribsStr,

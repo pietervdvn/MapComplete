@@ -32,7 +32,7 @@ export default class LayoutConfig {
     };
 
     public readonly hideFromOverview: boolean;
-    public readonly lockLocation: boolean | [[number, number], [number, number]];
+    public lockLocation: boolean | [[number, number], [number, number]];
     public readonly enableUserBadge: boolean;
     public readonly enableShareScreen: boolean;
     public readonly enableMoreQuests: boolean;
@@ -174,7 +174,7 @@ export default class LayoutConfig {
         if (json.hideInOverview) {
             throw "The json for " + this.id + " contains a 'hideInOverview'. Did you mean hideFromOverview instead?"
         }
-        this.lockLocation = json.lockLocation ?? false;
+        this.lockLocation = json.lockLocation ?? undefined;
         this.enableUserBadge = json.enableUserBadge ?? true;
         this.enableShareScreen = json.enableShareScreen ?? true;
         this.enableMoreQuests = json.enableMoreQuests ?? true;
