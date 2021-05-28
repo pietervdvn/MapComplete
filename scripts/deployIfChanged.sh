@@ -17,9 +17,11 @@ cd ~/git/MapComplete
  then
    echo Not up to date with origin. Deploying!
    git pull
+   npm run generate:translations
+   git commit -am "Sync translations"
+   git push
+   npm run generate:docs
+   git commit -am "Autgenerate docs and taginfo files"
+   
    npm run deploy:production
-else
-    date
-    
-    echo "No changes detected"
  fi
