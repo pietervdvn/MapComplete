@@ -87,113 +87,113 @@
         "shortDescription": "Una mappa delle panchine",
         "description": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti."
     },
+    "bicyclelib": {
+        "title": "Biciclette in prestito",
+        "description": "Biciclette in prestito (‘bicycle library’ in inglese) è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola"
+    },
     "bike_monitoring_stations": {
         "title": "Stazioni di monitoraggio biciclette",
         "shortDescription": "Stazioni di monitoraggio bici con dati in tempo reale forniti da Bruxelles Mobility",
         "description": "Questo tema mostra le stazioni di monitoraggio bici con dati dal vivo"
     },
-    "trees": {
-        "title": "Alberi",
-        "shortDescription": "Mappa tutti gli alberi",
-        "description": "Mappa tutti gli alberi!"
-    },
     "campersite": {
+        "title": "Aree camper",
+        "shortDescription": "Trova aree dove passare la notte con il tuo camper",
+        "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
         "layers": {
             "0": {
-                "tagRenderings": {
-                    "9": {
-                        "question": "Questo luogo ha un sito web?",
-                        "render": "Sito web ufficiale: <a href='{website}'>{website}</a>"
-                    },
-                    "8": {
-                        "mappings": {
-                            "1": {
-                                "then": "Questo luogo non ha i servizi igienici"
-                            },
-                            "0": {
-                                "then": "Questo luogo ha i servizi igienici"
-                            }
-                        },
-                        "question": "Questo luogo dispone di servizi igienici?"
-                    },
-                    "7": {
-                        "mappings": {
-                            "1": {
-                                "then": "Non occorre pagare per l’accesso a internet"
-                            },
-                            "0": {
-                                "then": "Occorre pagare un extra per avere l’accesso a internet"
-                            }
-                        },
-                        "question": "Occorre pagare per avere l’accesso a internet?"
-                    },
-                    "6": {
-                        "mappings": {
-                            "2": {
-                                "then": "Non c’è l’accesso a internet"
-                            },
-                            "1": {
-                                "then": "C’è l’accesso a internet"
-                            },
-                            "0": {
-                                "then": "C’è l’accesso a internet"
-                            }
-                        },
-                        "question": "Questo luogo ha l’accesso a internet?"
-                    },
-                    "5": {
-                        "question": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
-                        "render": "{capacity} camper possono usare questo luogo al contempo"
-                    },
-                    "4": {
-                        "mappings": {
-                            "1": {
-                                "then": "Questo luogo non ha una stazione per lo scarico delle acque"
-                            },
-                            "0": {
-                                "then": "Questo luogo ha una stazione per lo scarico delle acque"
-                            }
-                        },
-                        "question": "Questo luogo ha una stazione per lo scarico delle acque?"
-                    },
-                    "3": {
-                        "question": "Quanto costa questo luogo?",
-                        "render": "Questo luogo costa {charge}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "1": {
-                                "then": "Può essere usato gratuitamente"
-                            },
-                            "0": {
-                                "then": "Devi pagare per usarlo"
-                            }
-                        },
-                        "question": "Ha una tariffa questo luogo?"
-                    },
-                    "1": {
-                        "question": "Come viene chiamato questo luogo?",
-                        "render": "Questo luogo è chiamato {name}"
-                    }
-                },
-                "description": "Aree camper",
+                "name": "Aree camper",
                 "title": {
+                    "render": "Area camper {name}",
                     "mappings": {
                         "0": {
                             "then": "Area camper senza nome"
                         }
-                    },
-                    "render": "Area camper {name}"
+                    }
                 },
-                "name": "Aree camper"
+                "description": "Aree camper",
+                "tagRenderings": {
+                    "1": {
+                        "render": "Questo luogo è chiamato {name}",
+                        "question": "Come viene chiamato questo luogo?"
+                    },
+                    "2": {
+                        "question": "Ha una tariffa questo luogo?",
+                        "mappings": {
+                            "0": {
+                                "then": "Devi pagare per usarlo"
+                            },
+                            "1": {
+                                "then": "Può essere usato gratuitamente"
+                            }
+                        }
+                    },
+                    "3": {
+                        "render": "Questo luogo costa {charge}",
+                        "question": "Quanto costa questo luogo?"
+                    },
+                    "4": {
+                        "question": "Questo luogo ha una stazione per lo scarico delle acque?",
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha una stazione per lo scarico delle acque"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha una stazione per lo scarico delle acque"
+                            }
+                        }
+                    },
+                    "5": {
+                        "render": "{capacity} camper possono usare questo luogo al contempo",
+                        "question": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)"
+                    },
+                    "6": {
+                        "question": "Questo luogo ha l’accesso a internet?",
+                        "mappings": {
+                            "0": {
+                                "then": "C’è l’accesso a internet"
+                            },
+                            "1": {
+                                "then": "C’è l’accesso a internet"
+                            },
+                            "2": {
+                                "then": "Non c’è l’accesso a internet"
+                            }
+                        }
+                    },
+                    "7": {
+                        "question": "Occorre pagare per avere l’accesso a internet?",
+                        "mappings": {
+                            "0": {
+                                "then": "Occorre pagare un extra per avere l’accesso a internet"
+                            },
+                            "1": {
+                                "then": "Non occorre pagare per l’accesso a internet"
+                            }
+                        }
+                    },
+                    "8": {
+                        "question": "Questo luogo dispone di servizi igienici?",
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha i servizi igienici"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha i servizi igienici"
+                            }
+                        }
+                    },
+                    "9": {
+                        "render": "Sito web ufficiale: <a href='{website}'>{website}</a>",
+                        "question": "Questo luogo ha un sito web?"
+                    }
+                }
             }
-        },
-        "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
-        "shortDescription": "Trova aree dove passare la notte con il tuo camper",
-        "title": "Aree camper"
+        }
     },
-    "bicyclelib": {
-        "description": "Biciclette in prestito (‘bicycle library’ in inglese) è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
-        "title": "Biciclette in prestito"
+    "trees": {
+        "title": "Alberi",
+        "shortDescription": "Mappa tutti gli alberi",
+        "description": "Mappa tutti gli alberi!"
     }
 }
