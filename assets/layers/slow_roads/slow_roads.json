@@ -67,10 +67,44 @@
   "tagRenderings": [
     "images",
     {
-      "render": {
-        "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
-      },
-      "condition": "highway=living_street"
+      "mappings": [
+        {
+          "if": "highway=living_street",
+          "then": {
+            "nl:": "<div class='flex'><img src='./assets/layers/slow_roads/woonerf.svg' style='width: 150px; height: auto; margin-right: 0.5em;' /> <div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div></div>"
+          }
+        },
+        {
+          "if": "highway=pedestrian",
+          "then": {
+            "nl": "Dit is een brede, autovrije straat"
+          }
+        },
+        {
+          "if": "highway=footway",
+          "then": {
+            "nl": "Dit is een voetpaadje"
+          }
+        },
+        {
+          "if": "highway=path",
+          "then": {
+            "nl": "Dit is een wegeltje of bospad"
+          }
+        },
+        {
+          "if": "highway=bridleway",
+          "then": {
+            "nl": "Dit is een ruiterswegel"
+          }
+        },
+        {
+          "if": "highway=track",
+          "then": {
+            "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
+          }
+        }
+      ]
     },
     {
       "question": {
