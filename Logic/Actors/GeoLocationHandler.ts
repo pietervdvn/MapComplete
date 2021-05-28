@@ -237,6 +237,7 @@ export default class GeoLocationHandler extends UIElement {
         }
         if (this._currentGPSLocation.data !== undefined) {
             this._currentGPSLocation.ping()
+            this._leafletMap.data.setZoom(16)
         }
 
 
