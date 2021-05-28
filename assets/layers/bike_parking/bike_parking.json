@@ -6,7 +6,8 @@
     "fr": "Parking à vélo",
     "gl": "Aparcadoiro de bicicletas",
     "de": "Fahrrad-Parkplätze",
-    "hu": "Kerékpáros parkoló"
+    "hu": "Kerékpáros parkoló",
+    "it": "Parcheggio bici"
   },
   "minzoom": 17,
   "source": {
@@ -31,7 +32,8 @@
         "fr": "Parking à vélo",
         "gl": "Aparcadoiro de bicicletas",
         "de": "Fahrrad-Parkplätze",
-        "hu": "Kerékpáros parkoló"
+        "hu": "Kerékpáros parkoló",
+        "it": "Parcheggio bici"
       },
       "tags": [
         "amenity=bicycle_parking"
@@ -45,7 +47,8 @@
       "fr": "Parking à vélo",
       "gl": "Aparcadoiro de bicicletas",
       "de": "Fahrrad-Parkplätze",
-      "hu": "Kerékpáros parkoló"
+      "hu": "Kerékpáros parkoló",
+      "it": "Parcheggio bici"
     }
   },
   "tagRenderings": [
@@ -58,7 +61,8 @@
         "fr": "Quelle type de parking s'agit il?",
         "gl": "Que tipo de aparcadoiro de bicicletas é?",
         "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
-        "hu": "Milyen típusú ez a kerékpáros parkoló?"
+        "hu": "Milyen típusú ez a kerékpáros parkoló?",
+        "it": "Di che tipo di parcheggio bici si tratta?"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
@@ -66,7 +70,8 @@
         "fr": "Ceci est un parking à vélo de type {bicycle_parking}",
         "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}",
         "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}",
-        "hu": "Ez egy {bicycle_parking} típusú kerékpáros parkoló"
+        "hu": "Ez egy {bicycle_parking} típusú kerékpáros parkoló",
+        "it": "È un parcheggio bici del tipo: {bicycle_parking}"
       },
       "freeform": {
         "key": "bicycle_parking",
@@ -83,7 +88,8 @@
             "fr": "Arceaux <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
             "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
             "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
-            "hu": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+            "hu": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+            "it": "Ad arco <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
           }
         },
         {
@@ -94,7 +100,8 @@
             "fr": "Pinces-roues <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "gl": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "de": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "hu": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+            "hu": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "it": "Ferma-ruota <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
           }
         },
         {
@@ -104,7 +111,8 @@
             "nl": "Stuurhouder <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
             "fr": "Support guidon <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
             "gl": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
-            "de": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+            "de": "Halter für Fahrradlenker <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>",
+            "it": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
           }
         },
         {
@@ -152,7 +160,8 @@
           "then": {
             "en": "An area on the floor which is  marked for bicycle parking",
             "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
-            "fr": "Zone au sol qui est marquée pour le stationnement des vélos"
+            "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
+            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici"
           }
         }
       ]
@@ -162,7 +171,8 @@
       "question": {
         "en": "What is the relative location of this bicycle parking?",
         "nl": "Wat is de relatieve locatie van deze parking??",
-        "fr": "Quelle est la position relative de ce parking à vélo ?"
+        "fr": "Quelle est la position relative de ce parking à vélo ?",
+        "it": "Qual è la posizione relativa di questo parcheggio bici?"
       },
       "mappings": [
         {
@@ -170,7 +180,8 @@
           "then": {
             "en": "Underground parking",
             "nl": "Ondergrondse parking",
-            "fr": "Parking souterrain"
+            "fr": "Parking souterrain",
+            "it": "Parcheggio sotterraneo"
           }
         },
         {
@@ -178,7 +189,8 @@
           "then": {
             "en": "Underground parking",
             "nl": "Ondergrondse parking",
-            "fr": "Parking souterrain"
+            "fr": "Parking souterrain",
+            "it": "Parcheggio sotterraneo"
           }
         },
         {
@@ -187,7 +199,8 @@
             "en": "Surface level parking",
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
-            "hu": "Felszíni parkoló"
+            "hu": "Felszíni parkoló",
+            "it": "Parcheggio in superficie"
           }
         },
         {
@@ -196,7 +209,8 @@
             "en": "Surface level parking",
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
-            "hu": "Felszíni parkoló"
+            "hu": "Felszíni parkoló",
+            "it": "Parcheggio in superficie"
           },
           "hideInAnwser": true
         },
@@ -206,7 +220,8 @@
             "en": "Rooftop parking",
             "nl": "Dakparking",
             "fr": "Parking sur un toit",
-            "hu": "Tetőparkoló"
+            "hu": "Tetőparkoló",
+            "it": "Parcheggio sul tetto"
           }
         }
       ]
@@ -219,7 +234,8 @@
         "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
         "de": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze.",
         "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
-        "hu": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)"
+        "hu": "Fedett ez a parkoló? (Beltéri parkoló esetén is válaszd a \"fedett\" opciót.)",
+        "it": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno."
       },
       "condition": {
         "and": [
@@ -236,7 +252,8 @@
             "gl": "Este aparcadoiro está cuberto (ten un teito)",
             "de": "Dieser Parkplatz ist überdacht (er hat ein Dach)",
             "fr": "Ce parking est couvert (il a un toit)",
-            "hu": "A parkoló fedett"
+            "hu": "A parkoló fedett",
+            "it": "È un parcheggio coperto (ha un tetto)"
           }
         },
         {
@@ -247,7 +264,8 @@
             "gl": "Este aparcadoiro non está cuberto",
             "de": "Dieser Parkplatz ist nicht überdacht.",
             "fr": "Ce parking n'est pas couvert",
-            "hu": "A parkoló nem fedett"
+            "hu": "A parkoló nem fedett",
+            "it": "Non è un parcheggio coperto"
           }
         }
       ]
@@ -266,7 +284,8 @@
         "fr": "Place pour {capacity} vélos",
         "nl": "Plaats voor {capacity} fietsen",
         "gl": "Lugar para {capacity} bicicletas",
-        "de": "Platz für {capacity} Fahrräder"
+        "de": "Platz für {capacity} Fahrräder",
+        "it": "Posti per {capacity} bici"
       },
       "freeform": {
         "key": "capacity",
@@ -278,13 +297,15 @@
       "question": {
         "en": "Who can use this bicycle parking?",
         "nl": "Wie mag er deze fietsenstalling gebruiken?",
-        "fr": "Qui peut utiliser ce parking à vélo ?"
+        "fr": "Qui peut utiliser ce parking à vélo ?",
+        "it": "Chi può usare questo parcheggio bici?"
       },
       "render": {
         "en": "{access}",
         "de": "{access}",
         "fr": "{access}",
-        "nl": "{access}"
+        "nl": "{access}",
+        "it": "{access}"
       },
       "freeform": {
         "key": "access",
@@ -298,7 +319,8 @@
           "then": {
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijke fietsenstalling",
-            "fr": "Accessible publiquement"
+            "fr": "Accessible publiquement",
+            "it": "Accessibile pubblicamente"
           }
         },
         {
@@ -306,7 +328,8 @@
           "then": {
             "en": "Access is primarily for visitors to a business",
             "nl": "Klanten van de zaak of winkel",
-            "fr": "Accès destiné principalement aux visiteurs d'un lieu"
+            "fr": "Accès destiné principalement aux visiteurs d'un lieu",
+            "it": "Accesso destinato principalmente ai visitatori di un’attività"
           }
         },
         {
@@ -314,7 +337,8 @@
           "then": {
             "en": "Access is limited to members of a school, company or organisation",
             "nl": "Private fietsenstalling van een school, een bedrijf, ...",
-            "fr": "Accès limité aux membres d'une école, entreprise ou organisation"
+            "fr": "Accès limité aux membres d'une école, entreprise ou organisation",
+            "it": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione"
           }
         }
       ]

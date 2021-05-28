@@ -4,7 +4,8 @@
     "en": "Bike related object",
     "nl": "Fietsgerelateerd object",
     "fr": "Objet cycliste",
-    "de": "Mit Fahrrad zusammenhängendes Objekt"
+    "de": "Mit Fahrrad zusammenhängendes Objekt",
+    "it": "Oggetto relativo alle bici"
   },
   "minzoom": 13,
   "source": {
@@ -27,7 +28,8 @@
       "en": "Bike related object",
       "nl": "Fietsgerelateerd object",
       "fr": "Objet cycliste",
-      "de": "Mit Fahrrad zusammenhängendes Objekt"
+      "de": "Mit Fahrrad zusammenhängendes Objekt",
+      "it": "Oggetto relativo alle bici"
     },
     "mappings": [
       {
@@ -39,7 +41,8 @@
         "then": {
           "nl": "Wielerpiste",
           "en": "Cycle track",
-          "fr": "Piste cyclable"
+          "fr": "Piste cyclable",
+          "it": "Pista ciclabile"
         }
       }
     ]

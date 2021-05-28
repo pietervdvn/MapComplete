@@ -1701,7 +1701,7 @@
                 }
             },
             "5": {
-                "render": "Naam: {name}",
+                "render": "Name: {name}",
                 "question": "Does the tree have a name?",
                 "mappings": {
                     "0": {
@@ -1731,7 +1731,7 @@
             },
             "7": {
                 "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "question": "What is the ID issuesd by Onroerend Erfgoed Flanders?"
+                "question": "What is the ID issued by Onroerend Erfgoed Flanders?"
             },
             "8": {
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",

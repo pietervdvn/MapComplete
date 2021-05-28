@@ -2,7 +2,8 @@
   "id": "information_board",
   "name": {
     "nl": "Informatieborden",
-    "en": "Information boards"
+    "en": "Information boards",
+    "it": "Pannelli informativi"
   },
   "minzoom": 12,
   "source": {
@@ -15,7 +16,8 @@
   "title": {
     "render": {
       "nl": "Informatiebord",
-      "en": "Information board"
+      "en": "Information board",
+      "it": "Pannello informativo"
     }
   },
   "tagRenderings": [
@@ -42,7 +44,8 @@
       ],
       "title": {
         "nl": "Informatiebord",
-        "en": "Information board"
+        "en": "Information board",
+        "it": "Pannello informativo"
       }
     }
   ]

@@ -3,13 +3,15 @@
   "name": {
     "en": "Bike cleaning service",
     "nl": "Fietsschoonmaakpunt",
-    "fr": "Service de nettoyage de vélo"
+    "fr": "Service de nettoyage de vélo",
+    "it": "Servizio lavaggio bici"
   },
   "title": {
     "render": {
       "en": "Bike cleaning service",
       "nl": "Fietsschoonmaakpunt",
-      "fr": "Service de nettoyage de vélo"
+      "fr": "Service de nettoyage de vélo",
+      "it": "Servizio lavaggio bici"
     },
     "mappings": [
       {
@@ -17,7 +19,8 @@
         "then": {
           "en": "Bike cleaning service <i>{name}</i>",
           "nl": "Fietsschoonmaakpunt <i>{name}</i>",
-          "fr": "Service de nettoyage de vélo <i>{name}</i>"
+          "fr": "Service de nettoyage de vélo <i>{name}</i>",
+          "it": "Servizio lavaggio bici <i>{name}</i>"
         }
       }
     ]
@@ -42,7 +45,8 @@
       "title": {
         "en": "Bike cleaning service",
         "nl": "Fietsschoonmaakpunt",
-        "fr": "Service de nettoyage de vélo"
+        "fr": "Service de nettoyage de vélo",
+        "it": "Servizio lavaggio bici"
       },
       "tags": [
         "amenity=bicycle_wash"

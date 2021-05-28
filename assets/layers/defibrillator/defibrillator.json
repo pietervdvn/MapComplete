@@ -6,7 +6,8 @@
     "es": "Desfibriladores",
     "fr": "Défibrillateurs",
     "nl": "Defibrillatoren",
-    "de": "Defibrillatoren"
+    "de": "Defibrillatoren",
+    "it": "Defibrillatori"
   },
   "source": {
     "osmTags": "emergency=defibrillator"
@@ -23,7 +24,8 @@
       "es": "Desfibrilador",
       "fr": "Défibrillateur",
       "nl": "Defibrillator",
-      "de": "Defibrillator"
+      "de": "Defibrillator",
+      "it": "Defibrillatore"
     }
   },
   "icon": {
@@ -46,7 +48,8 @@
         "es": "Desfibrilador",
         "fr": "Défibrillateur",
         "nl": "Defibrillator",
-        "de": "Defibrillator"
+        "de": "Defibrillator",
+        "it": "Defibrillatore"
       },
       "tags": [
         "emergency=defibrillator"
@@ -62,7 +65,8 @@
         "es": "¿Esté el desfibrilador en interior?",
         "fr": "Ce défibrillateur est-il disposé en intérieur ?",
         "nl": "Hangt deze defibrillator binnen of buiten?",
-        "de": "Befindet sich dieser Defibrillator im Gebäude?"
+        "de": "Befindet sich dieser Defibrillator im Gebäude?",
+        "it": "Questo defibrillatore si trova all’interno?"
       },
       "mappings": [
         {
@@ -73,7 +77,8 @@
             "es": "Este desfibrilador está en interior",
             "fr": "Ce défibrillateur est en intérieur (dans un batiment)",
             "nl": "Deze defibrillator bevindt zich in een gebouw",
-            "de": "Dieser Defibrillator befindet sich im Gebäude"
+            "de": "Dieser Defibrillator befindet sich im Gebäude",
+            "it": "Questo defibrillatore si trova all’interno"
           }
         },
         {
@@ -84,7 +89,8 @@
             "es": "Este desfibrilador está en exterior",
             "fr": "Ce défibrillateur est situé en extérieur",
             "nl": "Deze defibrillator hangt buiten",
-            "de": "Dieser Defibrillator befindet sich im Freien"
+            "de": "Dieser Defibrillator befindet sich im Freien",
+            "it": "Questo defibrillatore si trova all’esterno"
           }
         }
       ]
@@ -96,7 +102,8 @@
         "es": "¿Está el desfibrilador accesible libremente?",
         "fr": "Ce défibrillateur est-il librement accessible ?",
         "nl": "Is deze defibrillator vrij toegankelijk?",
-        "de": "Ist dieser Defibrillator frei zugänglich?"
+        "de": "Ist dieser Defibrillator frei zugänglich?",
+        "it": "Questo defibrillatore è liberamente accessibile?"
       },
       "render": {
         "en": "Access is {access}",
@@ -104,7 +111,8 @@
         "es": "El acceso es {access}",
         "fr": "{access} accessible",
         "nl": "Toegankelijkheid is {access}",
-        "de": "Zugang ist {access}"
+        "de": "Zugang ist {access}",
+        "it": "Accesso è {access}"
       },
       "freeform": {
         "key": "access",
@@ -121,7 +129,8 @@
             "es": "Acceso libre",
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
-            "de": "Öffentlich zugänglich"
+            "de": "Öffentlich zugänglich",
+            "it": "Pubblicamente accessibile"
           }
         },
         {
@@ -132,7 +141,8 @@
             "es": "Publicament accesible",
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
-            "de": "Öffentlich zugänglich"
+            "de": "Öffentlich zugänglich",
+            "it": "Pubblicamente accessibile"
           },
           "hideInAnswer": true
         },
@@ -144,7 +154,8 @@
             "es": "Sólo accesible a clientes",
             "fr": "Réservé aux clients du lieu",
             "nl": "Enkel toegankelijk voor klanten",
-            "de": "Nur für Kunden zugänglich"
+            "de": "Nur für Kunden zugänglich",
+            "it": "Accessibile solo ai clienti"
           }
         },
         {
@@ -155,7 +166,8 @@
             "es": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)",
             "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)",
             "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personneel, de eigenaar, ...)",
-            "de": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, ...)"
+            "de": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, ...)",
+            "it": "Non accessibile al pubblico (ad esempio riservato al personale, ai proprietari, etc.)"
           }
         },
         {
@@ -163,7 +175,8 @@
           "then": {
             "en": "Not accessible, possibly only for professional use",
             "nl": "Niet toegankelijk, mogelijk enkel voor professionals",
-            "fr": "Pas accessible, peut-être uniquement à usage professionnel"
+            "fr": "Pas accessible, peut-être uniquement à usage professionnel",
+            "it": "Non accessibile, potrebbe essere solo per uso professionale"
           }
         }
       ]
@@ -172,12 +185,14 @@
       "render": {
         "en": "There is no info about the type of device",
         "nl": "Er is geen info over het soort toestel",
-        "fr": "Il n'y a pas d'information sur le type de dispositif"
+        "fr": "Il n'y a pas d'information sur le type de dispositif",
+        "it": "Non vi sono informazioni riguardanti il tipo di questo dispositivo"
       },
       "question": {
         "en": "Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?",
         "nl": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?",
-        "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?"
+        "fr": "Est-ce un défibrillateur automatique normal ou un défibrillateur manuel à usage professionnel uniquement ?",
+        "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?"
       },
       "freeform": {
         "key": "defibrillator"
@@ -193,7 +208,8 @@
           "then": {
             "en": "This is a manual defibrillator for professionals",
             "nl": "Dit is een manueel toestel enkel voor professionals",
-            "fr": "C'est un défibrillateur manuel pour professionnel"
+            "fr": "C'est un défibrillateur manuel pour professionnel",
+            "it": "Questo è un defibrillatore manuale per professionisti"
           }
         },
         {
@@ -201,7 +217,8 @@
           "then": {
             "en": "This is a normal automatic defibrillator",
             "nl": "Dit is een gewone automatische defibrillator",
-            "fr": "C'est un défibrillateur automatique manuel"
+            "fr": "C'est un défibrillateur automatique manuel",
+            "it": "È un normale defibrillatore automatico"
           }
         }
       ]
@@ -213,7 +230,8 @@
         "es": "¿En qué planta se encuentra el defibrilador localizado?",
         "fr": "À quel étage est situé ce défibrillateur ?",
         "nl": "Op welke verdieping bevindt deze defibrillator zich?",
-        "de": "In welchem Stockwerk befindet sich dieser Defibrillator?"
+        "de": "In welchem Stockwerk befindet sich dieser Defibrillator?",
+        "it": "A che piano si trova questo defibrillatore?"
       },
       "condition": {
         "and": [
@@ -230,7 +248,8 @@
         "es": "El desfibrilador se encuentra en la planta {level}",
         "fr": "Ce défibrillateur est à l'étage {level}",
         "nl": "De defibrillator bevindt zicht op verdieping {level}",
-        "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk"
+        "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk",
+        "it": "Questo defibrillatore è al piano {level}"
       },
       "mappings": [
         {
@@ -238,7 +257,8 @@
           "then": {
             "en": "This defibrillator is on the <b>ground floor</b>",
             "nl": "Deze defibrillator bevindt zich <b>gelijkvloers</b>",
-            "fr": "Ce défibrillateur est au <b>rez-de-chaussée</b>"
+            "fr": "Ce défibrillateur est au <b>rez-de-chaussée</b>",
+            "it": "Questo defibrillatore è al <b>pian terreno</b>"
           }
         },
         {
@@ -246,7 +266,8 @@
           "then": {
             "en": "This defibrillator is on the <b>first floor</b>",
             "nl": "Deze defibrillator is op de <b>eerste verdieping</b>",
-            "fr": "Ce défibrillateur est au <b>premier étage</b>"
+            "fr": "Ce défibrillateur est au <b>premier étage</b>",
+            "it": "Questo defibrillatore è al <b>primo piano</b>"
           }
         }
       ]
@@ -255,7 +276,8 @@
       "render": {
         "nl": "<i>Meer informatie over de locatie (lokale taal):</i><br/>{defibrillator:location}",
         "en": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}",
-        "fr": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}"
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}",
+        "it": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in the local language)",
@@ -263,7 +285,8 @@
         "es": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
-        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)"
+        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)"
       },
       "freeform": {
         "type": "text",
@@ -274,7 +297,8 @@
       "render": {
         "nl": "<i>Meer informatie over de locatie (in het Engels):</i><br/>{defibrillator:location:en}",
         "en": "<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}",
-        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}"
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location}",
+        "it": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in English)",
@@ -282,7 +306,8 @@
         "es": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)",
-        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)"
+        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in inglese)"
       },
       "freeform": {
         "type": "text",
@@ -293,7 +318,8 @@
       "render": {
         "nl": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}",
         "en": "<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}",
-        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}"
+        "fr": "<i>Informations supplémentaires à propos de l'emplacement (en Français) :</i><br/>{defibrillator:location}",
+        "it": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in French)",
@@ -301,7 +327,8 @@
         "es": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)",
-        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)"
+        "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)",
+        "it": "Indica più precisamente dove si trova il defibrillatore (in francese)"
       },
       "freeform": {
         "type": "text",
@@ -312,7 +339,8 @@
       "question": {
         "nl": "Is deze defibrillator rolstoeltoegankelijk?",
         "en": "Is this defibrillator accessible with a wheelchair?",
-        "fr": "Ce défibrillatuer est-il accessible en fauteuil roulant ?"
+        "fr": "Ce défibrillatuer est-il accessible en fauteuil roulant ?",
+        "it": "Questo defibrillatore è accessibile con la sedia a rotelle?"
       },
       "mappings": [
         {
@@ -324,7 +352,8 @@
           "then": {
             "nl": "Deze defibrillator is speciaal aangepast voor gebruikers van een rolstoel",
             "en": "This defibrillator is specially adapated for wheelchair users",
-            "fr": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant"
+            "fr": "Ce défibrillateur est spécialement adapté aux utilisateurs en fauteuil roulant",
+            "it": "Questo defibrillatore è stato appositamente adattato per gli utenti con la sedia a rotelle"
           }
         },
         {
@@ -336,7 +365,8 @@
           "then": {
             "nl": "Deze defibrillator is vlot bereikbaar met een rolstoel",
             "en": "This defibrillator is easily reachable with a wheelchair",
-            "fr": "Ce défibrillateur est facilement atteignable en fauteuil roulant"
+            "fr": "Ce défibrillateur est facilement atteignable en fauteuil roulant",
+            "it": "Questo defibrillatore è facilmente raggiungibile con un sedia a rotelle"
           }
         },
         {
@@ -348,7 +378,8 @@
           "then": {
             "nl": "Je kan er raken met een rolstoel, maar het is niet makkelijk",
             "en": "It is possible to reach the defibrillator in a wheelchair, but it is not easy",
-            "fr": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile"
+            "fr": "Il est possible d'atteindre ce défibrillateur en fauteuil roulant, mais ce n'est pas facile",
+            "it": "È possibile raggiungere questo defibrillatore con la sedia a rotelle ma non è semplice"
           }
         },
         {
@@ -360,7 +391,8 @@
           "then": {
             "nl": "Niet rolstoeltoegankelijk",
             "en": "This defibrillator is not reachable with a wheelchair",
-            "fr": "Ce défibrillateur n'est pas atteignable en fauteuil roulant"
+            "fr": "Ce défibrillateur n'est pas atteignable en fauteuil roulant",
+            "it": "Questo defibrillatore non è raggiungibile con la sedia a rotelle"
           }
         }
       ]
@@ -369,12 +401,14 @@
       "render": {
         "nl": "Officieel identificatienummer van het toestel: <i>{ref}</i>",
         "en": "Official identification number of the device: <i>{ref}</i>",
-        "fr": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>"
+        "fr": "Numéro d'identification officiel de ce dispositif : <i>{ref}</i>",
+        "it": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>"
       },
       "question": {
         "en": "What is the official identification number of the device? (if visible on device)",
         "nl": "Wat is het officieel identificatienummer van het toestel? (indien zichtbaar op toestel)",
-        "fr": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)"
+        "fr": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)",
+        "it": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)"
       },
       "freeform": {
         "type": "text",
@@ -385,12 +419,14 @@
       "render": {
         "en": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
         "nl": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>",
-        "fr": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>"
+        "fr": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+        "it": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>"
       },
       "question": {
         "en": "What is the email for questions about this defibrillator?",
         "nl": "Wat is het email-adres voor vragen over deze defibrillator",
-        "fr": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?"
+        "fr": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?",
+        "it": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?"
       },
       "freeform": {
         "key": "email",
@@ -401,12 +437,14 @@
       "render": {
         "en": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
         "fr": "Numéro de téléphone pour questions sur le défibrillateur: <a href='tel:{phone}'>{phone}</a>",
-        "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>"
+        "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
+        "it": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
         "fr": "Quel est le numéro de téléphone pour questions sur le défibrillateur?",
-        "nl": "Wat is het telefoonnummer voor vragen over deze defibrillator"
+        "nl": "Wat is het telefoonnummer voor vragen over deze defibrillator",
+        "it": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?"
       },
       "freeform": {
         "key": "phone",
@@ -417,12 +455,14 @@
       "render": {
         "en": "{opening_hours_table(opening_hours)}",
         "nl": "{opening_hours_table(opening_hours)}",
-        "fr": "{opening_hours_table(opening_hours)}"
+        "fr": "{opening_hours_table(opening_hours)}",
+        "it": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "At what times is this defibrillator available?",
         "nl": "Wanneer is deze defibrillator beschikbaar?",
-        "fr": "À quels horaires ce défibrillateur est-il accessible ?"
+        "fr": "À quels horaires ce défibrillateur est-il accessible ?",
+        "it": "In quali orari è disponibile questo defibrillatore?"
       },
       "freeform": {
         "key": "opening_hours",
@@ -434,7 +474,8 @@
           "then": {
             "en": "24/7 opened (including holidays)",
             "nl": "24/7 open (inclusief feestdagen)",
-            "fr": "Ouvert jour et nuit (même pendant les jours feriés)"
+            "fr": "Ouvert jour et nuit (même pendant les jours feriés)",
+            "it": "Aperto 24/7 (festivi inclusi)"
           }
         }
       ]
@@ -443,12 +484,14 @@
       "render": {
         "en": "Additional information: {description}",
         "nl": "Aanvullende info: {description}",
-        "fr": "Informations supplémentaires : {description}"
+        "fr": "Informations supplémentaires : {description}",
+        "it": "Informazioni supplementari: {description}"
       },
       "question": {
         "en": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",
         "nl": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
-        "fr": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)"
+        "fr": "Y a-t-il des informations utiles pour les utilisateurs que vous n'avez pas pu décrire ci-dessus ? (laisser vide sinon)",
+        "it": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)"
       },
       "freeform": {
         "key": "description",
@@ -459,12 +502,14 @@
       "question": {
         "en": "When was this defibrillator last surveyed?",
         "nl": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?",
-        "fr": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?"
+        "fr": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?",
+        "it": "Quando è stato verificato per l’ultima volta questo defibrillatore?"
       },
       "render": {
         "en": "This defibrillator was last surveyed on {survey:date}",
         "nl": "Deze defibrillator is nagekeken in OSM op {survey:date}",
-        "fr": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}"
+        "fr": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}",
+        "it": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -476,7 +521,8 @@
           "then": {
             "en": "Checked today!",
             "nl": "Vandaag nagekeken!",
-            "fr": "Vérifié aujourd'hui !"
+            "fr": "Vérifié aujourd'hui !",
+            "it": "Verificato oggi!"
           }
         }
       ]
@@ -485,12 +531,14 @@
       "render": {
         "en": "Extra information for OpenStreetMap experts: {fixme}",
         "nl": "Extra informatie voor OpenStreetMap experts: {fixme}",
-        "fr": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
+        "fr": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
+        "it": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
         "nl": "Is er iets mis met de informatie over deze defibrillator dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
-        "fr": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)"
+        "fr": "Y a-t-il quelque chose qui ne va pas dans la manière dont ça a été cartographié, et que vous n'avez pas pu réparer ici ? (laisser une note pour les experts d'OpenStreetMap)",
+        "it": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",

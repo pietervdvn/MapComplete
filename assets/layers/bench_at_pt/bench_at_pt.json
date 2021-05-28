@@ -6,7 +6,8 @@
     "fr": "Bancs des arrêts de transport en commun",
     "nl": "Zitbanken aan bushaltes",
     "es": "Bancos en una parada de transporte público",
-    "hu": "Padok megállókban"
+    "hu": "Padok megállókban",
+    "it": "Panchine alle fermate del trasporto pubblico"
   },
   "minzoom": 14,
   "source": {
@@ -24,7 +25,8 @@
       "fr": "Banc",
       "nl": "Zitbank",
       "es": "Banco",
-      "hu": "Pad"
+      "hu": "Pad",
+      "it": "Panchina"
     },
     "mappings": [
       {
@@ -40,7 +42,8 @@
           "de": "Sitzbank bei Haltestelle",
           "fr": "Banc d'un arrêt de transport en commun",
           "nl": "Zitbank aan een bushalte",
-          "hu": "Pad megállóban"
+          "hu": "Pad megállóban",
+          "it": "Panchina alla fermata del trasporto pubblico"
         }
       },
       {
@@ -54,7 +57,8 @@
           "de": "Sitzbank in Unterstand",
           "fr": "Banc dans un abri",
           "nl": "Zitbank in een schuilhokje",
-          "hu": "Pad fedett helyen"
+          "hu": "Pad fedett helyen",
+          "it": "Panchina in un riparo"
         }
       }
     ]
@@ -79,7 +83,8 @@
         "en": "Stand up bench",
         "de": "Stehbank",
         "fr": "Banc assis debout",
-        "nl": "Leunbank"
+        "nl": "Leunbank",
+        "it": "Panca in piedi"
       },
       "freeform": {
         "key": "bench",

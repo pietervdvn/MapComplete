@@ -5,7 +5,8 @@
     "nl": "Fietscafé",
     "fr": "Café vélo",
     "gl": "Café de ciclistas",
-    "de": "Fahrrad-Café"
+    "de": "Fahrrad-Café",
+    "it": "Caffè in bici"
   },
   "minzoom": 13,
   "source": {
@@ -38,7 +39,8 @@
       "nl": "Fietscafé",
       "fr": "Café Vélo",
       "gl": "Café de ciclistas",
-      "de": "Fahrrad-Café"
+      "de": "Fahrrad-Café",
+      "it": "Caffè in bici"
     },
     "mappings": [
       {
@@ -48,7 +50,8 @@
           "nl": "Fietscafé <i>{name}</i>",
           "fr": "Café Vélo <i>{name}</i>",
           "gl": "Café de ciclistas <i>{name}</i>",
-          "de": "Fahrrad-Café <i>{name}</i>"
+          "de": "Fahrrad-Café <i>{name}</i>",
+          "it": "Caffè in bici <i>{name}</i>"
         }
       }
     ]
@@ -61,14 +64,16 @@
         "nl": "Wat is de naam van dit fietscafé?",
         "fr": "Quel est le nom de ce Café vélo",
         "gl": "Cal é o nome deste café de ciclistas?",
-        "de": "Wie heißt dieses Fahrrad-Café?"
+        "de": "Wie heißt dieses Fahrrad-Café?",
+        "it": "Qual è il nome di questo caffè in bici?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
         "nl": "Dit fietscafé heet {name}",
         "fr": "Ce Café vélo s'appelle {name}",
         "gl": "Este café de ciclistas chámase {name}",
-        "de": "Dieses Fahrrad-Café heißt {name}"
+        "de": "Dieses Fahrrad-Café heißt {name}",
+        "it": "Questo caffè in bici è chiamato {name}"
       },
       "freeform": {
         "key": "name"
@@ -80,7 +85,8 @@
         "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
         "fr": "Est-ce que ce Café vélo propose une pompe en libre accès",
         "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
-        "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?"
+        "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?",
+        "it": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
       },
       "mappings": [
         {
@@ -90,7 +96,8 @@
             "nl": "Dit fietscafé biedt een fietspomp aan voor eender wie",
             "fr": "Ce Café vélo offre une pompe en libre accès",
             "gl": "Este café de ciclistas ofrece unha bomba de ar",
-            "de": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann"
+            "de": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann",
+            "it": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile"
           }
         },
         {
@@ -100,7 +107,8 @@
             "nl": "Dit fietscafé biedt geen fietspomp aan voor iedereen",
             "fr": "Ce Café vélo n'offre pas de pompe en libre accès",
             "gl": "Este café de ciclistas non ofrece unha bomba de ar",
-            "de": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann"
+            "de": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann",
+            "it": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile"
           }
         }
       ]
@@ -111,7 +119,8 @@
         "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
         "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo?",
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
-        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
+        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
+        "it": "Ci sono degli strumenti per riparare la propria bicicletta?"
       },
       "mappings": [
         {
@@ -121,7 +130,8 @@
             "nl": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo propose des outils pour réparer son vélo soi-même",
             "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an."
+            "de": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an.",
+            "it": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te"
           }
         },
         {
@@ -131,7 +141,8 @@
             "nl": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même",
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an."
+            "de": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an.",
+            "it": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te"
           }
         }
       ]
@@ -142,7 +153,8 @@
         "nl": "Herstelt dit fietscafé fietsen?",
         "fr": "Est-ce que ce Café vélo répare les vélos?",
         "gl": "Este café de ciclistas arranxa bicicletas?",
-        "de": "Repariert dieses Fahrrad-Café Fahrräder?"
+        "de": "Repariert dieses Fahrrad-Café Fahrräder?",
+        "it": "Questo caffè in bici ripara le bici?"
       },
       "mappings": [
         {
@@ -152,7 +164,8 @@
             "nl": "Dit fietscafé herstelt fietsen",
             "fr": "Ce Café vélo répare les vélos",
             "gl": "Este café de ciclistas arranxa bicicletas",
-            "de": "Dieses Fahrrad-Café repariert Fahrräder"
+            "de": "Dieses Fahrrad-Café repariert Fahrräder",
+            "it": "Questo caffè in bici ripara le bici"
           }
         },
         {
@@ -162,7 +175,8 @@
             "nl": "Dit fietscafé herstelt geen fietsen",
             "fr": "Ce Café vélo ne répare pas les vélos",
             "gl": "Este café de ciclistas non arranxa bicicletas",
-            "de": "Dieses Fahrrad-Café repariert keine Fahrräder"
+            "de": "Dieses Fahrrad-Café repariert keine Fahrräder",
+            "it": "Questo caffè in bici non ripara le bici"
           }
         }
       ]
@@ -173,7 +187,8 @@
         "nl": "Wat is de website van {name}?",
         "fr": "Quel est le site internet de {name}?",
         "gl": "Cal é a páxina web de {name}?",
-        "de": "Was ist die Webseite von {name}?"
+        "de": "Was ist die Webseite von {name}?",
+        "it": "Qual è il sito web di {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -186,7 +201,8 @@
         "nl": "Wat is het telefoonnummer van {name}?",
         "fr": "Quel est le nom de {name}?",
         "gl": "Cal é o número de teléfono de {name}?",
-        "de": "Wie lautet die Telefonnummer von {name}?"
+        "de": "Wie lautet die Telefonnummer von {name}?",
+        "it": "Qual è il numero di telefono di {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -200,7 +216,8 @@
         "nl": "Wat is het email-adres van {name}?",
         "fr": "Quel est l'adresse email de {name}?",
         "gl": "Cal é o enderezo de correo electrónico de {name}?",
-        "de": "Wie lautet die E-Mail-Adresse von {name}?"
+        "de": "Wie lautet die E-Mail-Adresse von {name}?",
+        "it": "Qual è l’indirizzo email di {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {
@@ -212,7 +229,8 @@
       "question": {
         "en": "When it this bike café opened?",
         "nl": "Wanneer is dit fietscafé geopend?",
-        "fr": "Quand ce Café vélo est-t-il ouvert ?"
+        "fr": "Quand ce Café vélo est-t-il ouvert ?",
+        "it": "Quando è aperto questo caffè in bici?"
       },
       "render": "{opening_hours_table(opening_hours)}",
       "freeform": {
@@ -241,7 +259,8 @@
         "nl": "Fietscafé",
         "fr": "Café Vélo",
         "gl": "Café de ciclistas",
-        "de": "Fahrrad-Café"
+        "de": "Fahrrad-Café",
+        "it": "Caffè in bici"
       },
       "tags": [
         "amenity=pub",

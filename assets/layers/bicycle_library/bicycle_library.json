@@ -3,7 +3,8 @@
   "name": {
     "en": "Bicycle library",
     "nl": "Fietsbibliotheek",
-    "fr": "Vélothèque"
+    "fr": "Vélothèque",
+    "it": "Bici in prestito"
   },
   "minzoom": 8,
   "source": {
@@ -13,7 +14,8 @@
     "render": {
       "en": "Bicycle library",
       "nl": "Fietsbibliotheek",
-      "fr": "Vélothèque"
+      "fr": "Vélothèque",
+      "it": "Bici in prestito"
     },
     "mappings": [
       {
@@ -38,7 +40,8 @@
     "en": "A facility where bicycles can be lent for longer period of times",
     "nl": "Een plaats waar men voor langere tijd een fiets kan lenen",
     "fr": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
-    "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre"
+    "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+    "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi"
   },
   "tagRenderings": [
     "images",
@@ -46,12 +49,14 @@
       "question": {
         "en": "What is the name of this bicycle library?",
         "nl": "Wat is de naam van deze fietsbieb?",
-        "fr": "Quel est le nom de cette vélothèque ?"
+        "fr": "Quel est le nom de cette vélothèque ?",
+        "it": "Qual è il nome di questo “bici in prestito”?"
       },
       "render": {
         "en": "This bicycle library is called {name}",
         "nl": "Deze fietsbieb heet {name}",
-        "fr": "Cette vélothèque s'appelle {name}"
+        "fr": "Cette vélothèque s'appelle {name}",
+        "it": "Il “bici in prestito” è chiamato {name}"
       },
       "freeform": {
         "key": "name"
@@ -66,13 +71,15 @@
         "en": "How much does lending a bicycle cost?",
         "nl": "Hoeveel kost het huren van een fiets?",
         "fr": "Combien coûte l'emprunt d'un vélo ?",
-        "hu": "Mennyibe kerül egy kerékpár kölcsönzése?"
+        "hu": "Mennyibe kerül egy kerékpár kölcsönzése?",
+        "it": "Quanto costa il prestito di una bicicletta?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
         "nl": "Een fiets huren kost {charge}",
         "fr": "Emprunter un vélo coûte {charge}",
-        "hu": "Egy kerékpár kölcsönzése {charge}"
+        "hu": "Egy kerékpár kölcsönzése {charge}",
+        "it": "Il prestito di una bicicletta costa {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -92,7 +99,8 @@
             "en": "Lending a bicycle is free",
             "nl": "Een fiets huren is gratis",
             "fr": "L'emprunt de vélo est gratuit",
-            "hu": "A kerékpárkölcsönzés ingyenes"
+            "hu": "A kerékpárkölcsönzés ingyenes",
+            "it": "Il prestito di una bicicletta è gratuito"
           }
         },
         {
@@ -105,7 +113,8 @@
           "then": {
             "en": "Lending a bicycle costs €20/year and €20 warranty",
             "nl": "Een fiets huren kost €20/jaar en €20 waarborg",
-            "fr": "Emprunter un vélo coûte 20€/an et 20€ de garantie"
+            "fr": "Emprunter un vélo coûte 20€/an et 20€ de garantie",
+            "it": "Il prestito di una bicicletta costa 20€/anno più 20€ di garanzia"
           }
         }
       ]
@@ -115,7 +124,8 @@
         "en": "Who can lend bicycles here?",
         "nl": "Voor wie worden hier fietsen aangeboden?",
         "fr": "Qui peut emprunter des vélos ici ?",
-        "hu": "Ki kölcsönözhet itt kerékpárt?"
+        "hu": "Ki kölcsönözhet itt kerékpárt?",
+        "it": "Chi può prendere in prestito le biciclette qua?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -125,7 +135,8 @@
             "nl": "Aanbod voor kinderen",
             "en": "Bikes for children available",
             "fr": "Vélos pour enfants disponibles",
-            "hu": ""
+            "hu": "",
+            "it": "Sono disponibili biciclette per bambini"
           }
         },
         {
@@ -133,7 +144,8 @@
           "then": {
             "nl": "Aanbod voor volwassenen",
             "en": "Bikes for adult available",
-            "fr": "Vélos pour adultes disponibles"
+            "fr": "Vélos pour adultes disponibles",
+            "it": "Sono disponibili biciclette per adulti"
           }
         },
         {
@@ -141,7 +153,8 @@
           "then": {
             "nl": "Aanbod voor personen met een handicap",
             "en": "Bikes for disabled persons available",
-            "fr": "Vélos pour personnes handicapées disponibles"
+            "fr": "Vélos pour personnes handicapées disponibles",
+            "it": "Sono disponibili biciclette per disabili"
           }
         }
       ]
@@ -161,7 +174,8 @@
       "description": {
         "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
         "en": "A bicycle library has a collection of bikes which can be lent",
-        "fr": "Une vélothèque a une collection de vélos qui peuvent être empruntés"
+        "fr": "Une vélothèque a une collection de vélos qui peuvent être empruntés",
+        "it": "Una “ciclo-teca” o “bici in prestito” (‘bicycle library’ in inglese) ha una collezione di bici che possno essere prestate"
       }
     }
   ],

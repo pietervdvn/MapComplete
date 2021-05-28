@@ -1471,6 +1471,25 @@
             }
         },
         "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": "Dit is een brede, autovrije straat"
+                    },
+                    "2": {
+                        "then": "Dit is een voetpaadje"
+                    },
+                    "3": {
+                        "then": "Dit is een wegeltje of bospad"
+                    },
+                    "4": {
+                        "then": "Dit is een ruiterswegel"
+                    },
+                    "5": {
+                        "then": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
+                    }
+                }
+            },
             "2": {
                 "question": "Wat is de wegverharding van dit pad?",
                 "render": "De ondergrond is <b>{surface}</b>",

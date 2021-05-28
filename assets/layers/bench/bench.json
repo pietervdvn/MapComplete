@@ -8,7 +8,8 @@
     "es": "Bancos",
     "hu": "Padok",
     "id": "Bangku",
-    "it": "Panchine"
+    "it": "Panchine",
+    "ru": "Скамейки"
   },
   "minzoom": 14,
   "source": {
@@ -114,7 +115,8 @@
         "nl": "Gemaakt van {material}",
         "es": "Material: {material}",
         "hu": "Anyag: {material}",
-        "it": "Materiale: {material}"
+        "it": "Materiale: {material}",
+        "ru": "Материал: {material}"
       },
       "freeform": {
         "key": "material",
@@ -130,7 +132,8 @@
             "nl": "Gemaakt uit hout",
             "es": "Material: madera",
             "hu": "Anyag: fa",
-            "it": "Materiale: legno"
+            "it": "Materiale: legno",
+            "ru": "Материал: дерево"
           }
         },
         {
@@ -142,7 +145,8 @@
             "nl": "Gemaakt uit metaal",
             "es": "Material: metal",
             "hu": "Anyag: fém",
-            "it": "Materiale: metallo"
+            "it": "Materiale: metallo",
+            "ru": "Материал: металл"
           }
         },
         {
@@ -154,7 +158,8 @@
             "nl": "Gemaakt uit steen",
             "es": "Material: piedra",
             "hu": "Anyag: kő",
-            "it": "Materiale: pietra"
+            "it": "Materiale: pietra",
+            "ru": "Материал: камень"
           }
         },
         {
@@ -166,7 +171,8 @@
             "nl": "Gemaakt uit beton",
             "es": "Material: concreto",
             "hu": "Anyag: beton",
-            "it": "Materiale: cemento"
+            "it": "Materiale: cemento",
+            "ru": "Материал: бетон"
           }
         },
         {
@@ -178,7 +184,8 @@
             "nl": "Gemaakt uit plastiek",
             "es": "Material: plastico",
             "hu": "Anyag: műanyag",
-            "it": "Materiale: plastica"
+            "it": "Materiale: plastica",
+            "ru": "Материал: пластик"
           }
         },
         {
@@ -190,7 +197,8 @@
             "nl": "Gemaakt uit staal",
             "es": "Material: acero",
             "hu": "Anyag: acél",
-            "it": "Materiale: acciaio"
+            "it": "Materiale: acciaio",
+            "ru": "Материал: сталь"
           }
         }
       ],
@@ -255,7 +263,8 @@
             "fr": "Couleur : marron",
             "nl": "De kleur is bruin",
             "hu": "Szín: barna",
-            "it": "Colore: marrone"
+            "it": "Colore: marrone",
+            "ru": "Цвет: коричневый"
           }
         },
         {
@@ -266,7 +275,8 @@
             "fr": "Couleur : verte",
             "nl": "De kleur is groen",
             "hu": "Szín: zöld",
-            "it": "Colore: verde"
+            "it": "Colore: verde",
+            "ru": "Цвет: зеленый"
           }
         },
         {
@@ -277,7 +287,8 @@
             "fr": "Couleur : gris",
             "nl": "De kleur is grijs",
             "hu": "Szín: szürke",
-            "it": "Colore: grigio"
+            "it": "Colore: grigio",
+            "ru": "Цвет: серый"
           }
         },
         {
@@ -288,7 +299,8 @@
             "fr": "Couleur : blanc",
             "nl": "De kleur is wit",
             "hu": "Szín: fehér",
-            "it": "Colore: bianco"
+            "it": "Colore: bianco",
+            "ru": "Цвет: белый"
           }
         },
         {
@@ -299,7 +311,8 @@
             "fr": "Couleur : rouge",
             "nl": "De kleur is rood",
             "hu": "Szín: piros",
-            "it": "Colore: rosso"
+            "it": "Colore: rosso",
+            "ru": "Цвет: красный"
           }
         },
         {
@@ -310,7 +323,8 @@
             "fr": "Couleur : noire",
             "nl": "De kleur is zwart",
             "hu": "Szín: fekete",
-            "it": "Colore: nero"
+            "it": "Colore: nero",
+            "ru": "Цвет: чёрный"
           }
         },
         {
@@ -321,7 +335,8 @@
             "fr": "Couleur : bleu",
             "nl": "De kleur is blauw",
             "hu": "Szín: kék",
-            "it": "Colore: blu"
+            "it": "Colore: blu",
+            "ru": "Цвет: синий"
           }
         },
         {
@@ -332,7 +347,8 @@
             "fr": "Couleur : jaune",
             "nl": "De kleur is geel",
             "hu": "Szín: sárga",
-            "it": "Colore: giallo"
+            "it": "Colore: giallo",
+            "ru": "Цвет: желтый"
           }
         }
       ]
@@ -386,7 +402,8 @@
         "de": "Sitzbank",
         "fr": "Banc",
         "nl": "Zitbank",
-        "es": "Banco"
+        "es": "Banco",
+        "it": "Panchina"
       },
       "description": {
         "en": "Add a new bench",
@@ -394,7 +411,8 @@
         "fr": "Ajouter un nouveau banc",
         "nl": "Voeg een nieuwe zitbank toe",
         "es": "Añadir un nuevo banco",
-        "hu": "Pad hozzáadása"
+        "hu": "Pad hozzáadása",
+        "it": "Aggiungi una nuova panchina"
       }
     }
   ]

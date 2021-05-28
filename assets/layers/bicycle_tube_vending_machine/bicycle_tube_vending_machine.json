@@ -3,13 +3,15 @@
   "name": {
     "en": "Bicycle tube vending machine",
     "nl": "Fietsbanden-verkoopsautomaat",
-    "fr": "Distributeur automatique de chambre à air de vélo"
+    "fr": "Distributeur automatique de chambre à air de vélo",
+    "it": "Distributore automatico di camere d’aria per bici"
   },
   "title": {
     "render": {
       "en": "Bicycle tube vending machine",
       "nl": "Fietsbanden-verkoopsautomaat",
-      "fr": "Distributeur automatique de chambre à air de vélo"
+      "fr": "Distributeur automatique de chambre à air de vélo",
+      "it": "Distributore automatico di camere d’aria per bici"
     },
     "mappings": [
       {
@@ -56,7 +58,8 @@
       "title": {
         "en": "Bicycle tube vending machine",
         "nl": "Fietsbanden-verkoopsautomaat",
-        "fr": "Distributeur automatique de chambre à air de vélo"
+        "fr": "Distributeur automatique de chambre à air de vélo",
+        "it": "Distributore automatico di camere d’aria per bici"
       },
       "tags": [
         "amenity=vending_machine",
@@ -73,12 +76,14 @@
       "question": {
         "en": "Is this vending machine still operational?",
         "nl": "Is deze verkoopsautomaat nog steeds werkende?",
-        "fr": "Cette machine est-elle encore opérationelle ?"
+        "fr": "Cette machine est-elle encore opérationelle ?",
+        "it": "Questo distributore automatico funziona ancora?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
         "nl": "Deze verkoopsautomaat is <i>{operational_status}</i>",
-        "fr": "L'état opérationnel est <i>{operational_status}</i>"
+        "fr": "L'état opérationnel est <i>{operational_status}</i>",
+        "it": "Lo stato operativo è <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -90,7 +95,8 @@
             "en": "This vending machine works",
             "nl": "Deze verkoopsautomaat werkt",
             "fr": "Le distributeur automatique fonctionne",
-            "hu": "Az automata működik"
+            "hu": "Az automata működik",
+            "it": "Il distributore automatico funziona"
           }
         },
         {
@@ -99,7 +105,8 @@
             "en": "This vending machine is broken",
             "nl": "Deze verkoopsautomaat is kapot",
             "fr": "Le distributeur automatique est en panne",
-            "hu": "Az automata elromlott"
+            "hu": "Az automata elromlott",
+            "it": "Il distributore automatico è guasto"
           }
         },
         {
@@ -108,7 +115,8 @@
             "en": "This vending machine is closed",
             "nl": "Deze verkoopsautomaat is uitgeschakeld",
             "fr": "Le distributeur automatique est fermé",
-            "hu": "Az automata zárva van"
+            "hu": "Az automata zárva van",
+            "it": "Il distributore automatico è spento"
           }
         }
       ]

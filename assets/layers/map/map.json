@@ -2,7 +2,8 @@
   "id": "map",
   "name": {
     "en": "Maps",
-    "nl": "Kaarten"
+    "nl": "Kaarten",
+    "it": "Mappe"
   },
   "minzoom": 12,
   "source": {
@@ -16,19 +17,22 @@
   "title": {
     "render": {
       "en": "Map",
-      "nl": "Kaart"
+      "nl": "Kaart",
+      "it": "Mappa"
     }
   },
   "description": {
     "en": "A map, meant for tourists which is permanently installed in the public space",
-    "nl": "Een permantent geinstalleerde kaart"
+    "nl": "Een permantent geinstalleerde kaart",
+    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico"
   },
   "tagRenderings": [
     "images",
     {
       "question": {
         "en": "On which data is this map based?",
-        "nl": "Op welke data is deze kaart gebaseerd?"
+        "nl": "Op welke data is deze kaart gebaseerd?",
+        "it": "Su quali dati si basa questa mappa?"
       },
       "mappings": [
         {
@@ -40,7 +44,8 @@
           },
           "then": {
             "en": "This map is based on OpenStreetMap",
-            "nl": "Deze kaart is gebaseerd op OpenStreetMap"
+            "nl": "Deze kaart is gebaseerd op OpenStreetMap",
+            "it": "Questa mappa si basa su OpenStreetMap"
           }
         }
       ],
@@ -49,13 +54,15 @@
       },
       "render": {
         "en": "This map is based on {map_source}",
-        "nl": "Deze kaart is gebaseerd op {map_source}"
+        "nl": "Deze kaart is gebaseerd op {map_source}",
+        "it": "Questa mappa si basa su {map_source}"
       }
     },
     {
       "question": {
         "en": "Is the OpenStreetMap-attribution given?",
-        "nl": "Is de attributie voor OpenStreetMap aanwezig?"
+        "nl": "Is de attributie voor OpenStreetMap aanwezig?",
+        "it": "L’attribuzione a OpenStreetMap è presente?"
       },
       "mappings": [
         {
@@ -66,7 +73,8 @@
           },
           "then": {
             "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
-            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" "
+            "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" ",
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL"
           }
         },
         {
@@ -77,7 +85,8 @@
           },
           "then": {
             "en": "OpenStreetMap is clearly attributed, but the license is not mentioned",
-            "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt"
+            "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt",
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare"
           }
         },
         {
@@ -88,7 +97,8 @@
           },
           "then": {
             "en": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it",
-            "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker"
+            "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker",
+            "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap"
           }
         },
         {
@@ -99,7 +109,8 @@
           },
           "then": {
             "en": "There is no attribution at all",
-            "nl": "Er is geen attributie"
+            "nl": "Er is geen attributie",
+            "it": "Non c’è alcuna attribuzione"
           }
         },
         {
@@ -110,7 +121,8 @@
           },
           "then": {
             "nl": "Er is geen attributie",
-            "en": "There is no attribution at all"
+            "en": "There is no attribution at all",
+            "it": "Non c’è alcuna attribuzione"
           },
           "hideInAnswer": true
         }
@@ -172,11 +184,13 @@
       ],
       "title": {
         "en": "Map",
-        "nl": "Kaart"
+        "nl": "Kaart",
+        "it": "Mappa"
       },
       "description": {
         "en": "Add a missing map",
-        "nl": "Voeg een ontbrekende kaart toe"
+        "nl": "Voeg een ontbrekende kaart toe",
+        "it": "Aggiungi una mappa mancante"
       }
     }
   ],

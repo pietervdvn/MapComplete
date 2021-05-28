@@ -3,7 +3,8 @@
   "name": {
     "en": "Direction visualization",
     "nl": "Richtingsvisualisatie",
-    "fr": "Visualisation de la direction"
+    "fr": "Visualisation de la direction",
+    "it": "Visualizzazione della direzione"
   },
   "minzoom": 16,
   "source": {
@@ -20,7 +21,8 @@
   "description": {
     "en": "This layer visualizes directions",
     "nl": "Deze laag toont de oriëntatie van een object",
-    "fr": "Cette couche visualise les directions"
+    "fr": "Cette couche visualise les directions",
+    "it": "Questo livello visualizza le direzioni"
   },
   "tagRenderings": [],
   "icon": {

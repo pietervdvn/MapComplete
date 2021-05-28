@@ -223,7 +223,8 @@
       "#": "Dogs?",
       "question": {
         "nl": "Zijn honden toegelaten in dit gebied?",
-        "en": "Are dogs allowed in this nature reserve?"
+        "en": "Are dogs allowed in this nature reserve?",
+        "it": "I cani sono ammessi in questa riserva naturale?"
       },
       "condition": {
         "or": [
@@ -237,21 +238,24 @@
           "if": "dog=leashed",
           "then": {
             "nl": "Honden moeten aan de leiband",
-            "en": "Dogs have to be leashed"
+            "en": "Dogs have to be leashed",
+            "it": "I cani devono essere tenuti al guinzaglio"
           }
         },
         {
           "if": "dog=no",
           "then": {
             "nl": "Honden zijn niet toegestaan",
-            "en": "No dogs allowed"
+            "en": "No dogs allowed",
+            "it": "I cani non sono ammessi"
           }
         },
         {
           "if": "dog=yes",
           "then": {
             "nl": "Honden zijn welkom en mogen vrij rondlopen",
-            "en": "Dogs are allowed to roam freely"
+            "en": "Dogs are allowed to roam freely",
+            "it": "I cani sono liberi di girare liberi"
           }
         }
       ]

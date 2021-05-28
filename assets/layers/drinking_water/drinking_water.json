@@ -5,7 +5,8 @@
     "nl": "Drinkbaar water",
     "fr": "Eau potable",
     "gl": "Auga potábel",
-    "de": "Trinkwasser"
+    "de": "Trinkwasser",
+    "it": "Acqua potabile"
   },
   "title": {
     "render": {
@@ -13,7 +14,8 @@
       "nl": "Drinkbaar water",
       "fr": "Eau potable",
       "gl": "Auga potábel",
-      "de": "Trinkwasser"
+      "de": "Trinkwasser",
+      "it": "Acqua potabile"
     }
   },
   "icon": {
@@ -54,7 +56,8 @@
         "nl": "Drinkbaar water",
         "fr": "Eau potable",
         "gl": "Auga potábel",
-        "de": "Trinkwasser"
+        "de": "Trinkwasser",
+        "it": "Acqua potabile"
       },
       "tags": [
         "amenity=drinking_water"
@@ -68,11 +71,13 @@
       "#": "Still in use?",
       "question": {
         "en": "Is this drinking water spot still operational?",
-        "nl": "Is deze drinkwaterkraan nog steeds werkende?"
+        "nl": "Is deze drinkwaterkraan nog steeds werkende?",
+        "it": "Questo punto di acqua potabile è sempre funzionante?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
-        "nl": "Deze waterkraan-status is <i>{operational_status}</i>"
+        "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
+        "it": "Lo stato operativo è <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -82,21 +87,24 @@
           "if": "operational_status=",
           "then": {
             "en": "This drinking water works",
-            "nl": "Deze drinkwaterfontein werkt"
+            "nl": "Deze drinkwaterfontein werkt",
+            "it": "La fontanella funziona"
           }
         },
         {
           "if": "operational_status=broken",
           "then": {
             "en": "This drinking water is broken",
-            "nl": "Deze drinkwaterfontein is kapot"
+            "nl": "Deze drinkwaterfontein is kapot",
+            "it": "La fontanella è guasta"
           }
         },
         {
           "if": "operational_status=closed",
           "then": {
             "en": "This drinking water is closed",
-            "nl": "Deze drinkwaterfontein is afgesloten"
+            "nl": "Deze drinkwaterfontein is afgesloten",
+            "it": "La fontanella è chiusa"
           }
         }
       ]
@@ -106,7 +114,8 @@
       "question": {
         "en": "How easy is it to fill water bottles?",
         "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
-        "de": "Wie einfach ist es, Wasserflaschen zu füllen?"
+        "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
+        "it": "Quanto è facile riempire d’acqua le bottiglie?"
       },
       "mappings": [
         {
@@ -114,7 +123,8 @@
           "then": {
             "en": "It is easy to refill water bottles",
             "nl": "Een drinkbus bijvullen gaat makkelijk",
-            "de": "Es ist einfach, Wasserflaschen nachzufüllen"
+            "de": "Es ist einfach, Wasserflaschen nachzufüllen",
+            "it": "È facile riempire d’acqua le bottiglie"
           }
         },
         {
@@ -122,7 +132,8 @@
           "then": {
             "en": "Water bottles may not fit",
             "nl": "Een drinkbus past moeilijk",
-            "de": "Wasserflaschen passen möglicherweise nicht"
+            "de": "Wasserflaschen passen möglicherweise nicht",
+            "it": "Le bottiglie d’acqua potrebbero non entrare"
           }
         }
       ]
@@ -130,7 +141,8 @@
     {
       "render": {
         "en": "<a href='#{_closest_other_drinking_water_id}'>There is another drinking water fountain at {_closest_other_drinking_water_distance} meter</a>",
-        "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>"
+        "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
+        "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>"
       },
       "condition": "_closest_other_drinking_water_id~*"
     }

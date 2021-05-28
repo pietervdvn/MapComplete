@@ -3,7 +3,8 @@
   "name": {
     "en": "Ghost bikes",
     "nl": "Witte Fietsen",
-    "de": "Geisterrad"
+    "de": "Geisterrad",
+    "it": "Bici fantasma"
   },
   "source": {
     "osmTags": "memorial=ghost_bike"
@@ -13,7 +14,8 @@
     "render": {
       "en": "Ghost bike",
       "nl": "Witte Fiets",
-      "de": "Geisterrad"
+      "de": "Geisterrad",
+      "it": "Bici fantasma"
     },
     "mappings": [
       {
@@ -21,7 +23,8 @@
         "then": {
           "en": "Ghost bike in the remembrance of {name}",
           "nl": "Witte fiets ter nagedachtenis van {name}",
-          "de": "Geisterrad im Gedenken an {name}"
+          "de": "Geisterrad im Gedenken an {name}",
+          "it": "Bici fantasma in ricordo di {name}"
         }
       }
     ]
@@ -36,7 +39,8 @@
       "title": {
         "en": "Ghost bike",
         "nl": "Witte fiets",
-        "de": "Geisterrad"
+        "de": "Geisterrad",
+        "it": "Bici fantasma"
       },
       "tags": [
         "historic=memorial",
@@ -49,7 +53,8 @@
       "render": {
         "en": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.",
         "nl": "Een Witte Fiets (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
-        "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird."
+        "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
+        "it": "Una <b>bici fantasma</b> (o ‘ghost bike’ in inglese) è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente."
       }
     },
     "images",
@@ -57,12 +62,14 @@
       "question": {
         "en": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
         "nl": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
-        "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>"
+        "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'><br/>Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.</span>",
+        "it": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>"
       },
       "render": {
         "en": "In remembrance of {name}",
         "nl": "Ter nagedachtenis van {name}",
-        "de": "Im Gedenken an {name}"
+        "de": "Im Gedenken an {name}",
+        "it": "In ricordo di {name}"
       },
       "freeform": {
         "key": "name"
@@ -73,7 +80,8 @@
           "then": {
             "en": "No name is marked on the bike",
             "nl": "De naam is niet aangeduid op de fiets",
-            "de": "Auf dem Fahrrad ist kein Name angegeben"
+            "de": "Auf dem Fahrrad ist kein Name angegeben",
+            "it": "Nessun nome scritto sulla bici"
           }
         }
       ]
@@ -82,12 +90,14 @@
       "question": {
         "en": "On what webpage can one find more information about the Ghost bike or the accident?",
         "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
-        "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?"
+        "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
+        "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?"
       },
       "render": {
         "en": "<a href='{source}' target='_blank'>More information is available</a>",
         "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
-        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>"
+        "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
+        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>"
       },
       "freeform": {
         "type": "url",
@@ -98,14 +108,16 @@
       "question": {
         "en": "What is the inscription on this Ghost bike?",
         "nl": "Wat is het opschrift op deze witte fiets?",
-        "de": "Wie lautet die Inschrift auf diesem Geisterrad?"
+        "de": "Wie lautet die Inschrift auf diesem Geisterrad?",
+        "it": "Che cosa è scritto sulla bici fantasma?"
       },
       "render": {
         "en": "<i>{inscription}</i>",
         "nl": "<i>{inscription}</i>",
         "de": "<i>{inscription}</i>",
         "ca": "<i>{inscription}</i>",
-        "fr": "<i>{inscription}</i>"
+        "fr": "<i>{inscription}</i>",
+        "it": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"
@@ -114,11 +126,13 @@
     {
       "question": {
         "nl": "Wanneer werd deze witte fiets geplaatst?",
-        "en": "When was this Ghost bike installed?"
+        "en": "When was this Ghost bike installed?",
+        "it": "Quando è stata installata questa bici fantasma?"
       },
       "render": {
         "nl": "Geplaatst op {start_date}",
-        "en": "Placed on {start_date}"
+        "en": "Placed on {start_date}",
+        "it": "Piazzata in data {start_date}"
       },
       "freeform": {
         "key": "start_date",

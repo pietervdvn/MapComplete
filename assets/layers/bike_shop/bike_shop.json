@@ -5,7 +5,8 @@
     "nl": "Fietszaak",
     "fr": "Magasin ou réparateur de vélo",
     "gl": "Tenda/arranxo de bicicletas",
-    "de": "Fahrradwerkstatt/geschäft"
+    "de": "Fahrradwerkstatt/geschäft",
+    "it": "Venditore/riparatore bici"
   },
   "minzoom": 13,
   "source": {
@@ -52,7 +53,8 @@
       "nl": "Fietszaak",
       "fr": "Magasin ou réparateur de vélo",
       "gl": "Tenda/arranxo de bicicletas",
-      "de": "Fahrradwerkstatt/geschäft"
+      "de": "Fahrradwerkstatt/geschäft",
+      "it": "Venditore/riparatore bici"
     },
     "mappings": [
       {
@@ -64,7 +66,8 @@
         "then": {
           "en": "Sport gear shop <i>{name}</i>",
           "nl": "Sportwinkel <i>{name}</i>",
-          "fr": "Magasin de sport <i>{name}</i>"
+          "fr": "Magasin de sport <i>{name}</i>",
+          "it": "Negozio di articoli sportivi <i>{name}</i>"
         }
       },
       {
@@ -90,7 +93,8 @@
         "then": {
           "nl": "Fietsverhuur <i>{name}</i>",
           "en": "Bicycle rental <i>{name}</i>",
-          "fr": "Location de vélo <i>{name}</i>"
+          "fr": "Location de vélo <i>{name}</i>",
+          "it": "Noleggio di biciclette <i>{name}</i>"
         }
       },
       {
@@ -105,7 +109,8 @@
           "nl": "Fietsenmaker <i>{name}</i>",
           "fr": "Réparateur de vélo <i>{name}</i>",
           "gl": "Arranxo de bicicletas <i>{name}</i>",
-          "de": "Fahrradwerkstatt <i>{name}</i>"
+          "de": "Fahrradwerkstatt <i>{name}</i>",
+          "it": "Riparazione biciclette <i>{name</i>"
         }
       },
       {
@@ -119,7 +124,8 @@
           "nl": "Fietswinkel <i>{name}</i>",
           "fr": "Magasin de vélo <i>{name}</i>",
           "gl": "Tenda de bicicletas <i>{name}</i>",
-          "de": "Fahrradgeschäft <i>{name}</i>"
+          "de": "Fahrradgeschäft <i>{name}</i>",
+          "it": "Negozio di biciclette <i>{name}</i>"
         }
       },
       {
@@ -129,7 +135,8 @@
           "nl": "Fietszaak <i>{name}</i>",
           "fr": "Magasin ou réparateur de vélo <i>{name}</i>",
           "gl": "Tenda/arranxo de bicicletas <i>{name}</i>",
-          "de": "Fahrradwerkstatt/geschäft <i>{name}</i>"
+          "de": "Fahrradwerkstatt/geschäft <i>{name}</i>",
+          "it": "Venditore/riparatore bici <i>{name}</i>"
         }
       }
     ]
@@ -157,7 +164,8 @@
   "description": {
     "en": "A shop specifically selling bicycles or related items",
     "nl": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
-    "fr": "Un magasin vendant spécifiquement des vélos ou des objets en lien"
+    "fr": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
+    "it": "Un negozio che vende specificatamente biciclette o articoli similari"
   },
   "tagRenderings": [
     "images",
@@ -172,7 +180,8 @@
       "render": {
         "en": "This shop is specialized in selling {shop} and does bicycle related activities",
         "nl": "Deze winkel verkoopt {shop} en heeft fiets-gerelateerde activiteiten.",
-        "fr": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
+        "fr": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo",
+        "it": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
       }
     },
     {
@@ -181,14 +190,16 @@
         "nl": "Wat is de naam van deze fietszaak?",
         "fr": "Quel est le nom du magasin de vélo?",
         "gl": "Cal é o nome desta tenda de bicicletas?",
-        "de": "Wie heißt dieser Fahrradladen?"
+        "de": "Wie heißt dieser Fahrradladen?",
+        "it": "Qual è il nome di questo negozio di biciclette?"
       },
       "render": {
         "en": "This bicycle shop is called {name}",
         "nl": "Deze fietszaak heet {name}",
         "fr": "Ce magasin s'appelle {name}",
         "gl": "Esta tenda de bicicletas chámase {name}",
-        "de": "Dieses Fahrradgeschäft heißt {name}"
+        "de": "Dieses Fahrradgeschäft heißt {name}",
+        "it": "Questo negozio di biciclette è chiamato {name}"
       },
       "freeform": {
         "key": "name"
@@ -199,7 +210,8 @@
         "en": "What is the website of {name}?",
         "nl": "Wat is de website van {name}?",
         "fr": "Quel est le site internet de {name}?",
-        "gl": "Cal é a páxina web de {name}?"
+        "gl": "Cal é a páxina web de {name}?",
+        "it": "Qual è il sito web di {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -212,7 +224,8 @@
         "en": "What is the phone number of {name}?",
         "nl": "Wat is het telefoonnummer van {name}?",
         "fr": "Quel est le nom de {name}?",
-        "gl": "Cal é o número de teléfono de {name}?"
+        "gl": "Cal é o número de teléfono de {name}?",
+        "it": "Qual è il numero di telefono di {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -225,7 +238,8 @@
         "en": "What is the email address of {name}?",
         "nl": "Wat is het email-adres van {name}?",
         "fr": "Quel est l'adresse email de {name}?",
-        "gl": "Cal é o enderezo de correo electrónico de {name}?"
+        "gl": "Cal é o enderezo de correo electrónico de {name}?",
+        "it": "Qual è l’indirizzo email di {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {
@@ -254,7 +268,8 @@
         "nl": "Verkoopt deze fietszaak fietsen?",
         "fr": "Est-ce que ce magasin vend des vélos?",
         "gl": "Esta tenda vende bicicletas?",
-        "de": "Verkauft dieser Laden Fahrräder?"
+        "de": "Verkauft dieser Laden Fahrräder?",
+        "it": "Questo negozio vende bici?"
       },
       "mappings": [
         {
@@ -264,7 +279,8 @@
             "nl": "Deze winkel verkoopt fietsen",
             "fr": "Ce magasin vend des vélos",
             "gl": "Esta tenda vende bicicletas",
-            "de": "Dieses Geschäft verkauft Fahrräder"
+            "de": "Dieses Geschäft verkauft Fahrräder",
+            "it": "Questo negozio vende bici"
           }
         },
         {
@@ -274,7 +290,8 @@
             "nl": "Deze winkel verkoopt geen fietsen",
             "fr": "Ce magasin ne vend pas de vélo",
             "gl": "Esta tenda non vende bicicletas",
-            "de": "Dieses Geschäft verkauft keine Fahrräder"
+            "de": "Dieses Geschäft verkauft keine Fahrräder",
+            "it": "Questo negozio non vende bici"
           }
         }
       ]
@@ -285,7 +302,8 @@
         "nl": "Herstelt deze winkel fietsen?",
         "fr": "Est-ce que ce magasin répare des vélos?",
         "gl": "Esta tenda arranxa bicicletas?",
-        "de": "Repariert dieses Geschäft Fahrräder?"
+        "de": "Repariert dieses Geschäft Fahrräder?",
+        "it": "Questo negozio ripara bici?"
       },
       "mappings": [
         {
@@ -295,7 +313,8 @@
             "nl": "Deze winkel herstelt fietsen",
             "fr": "Ce magasin répare des vélos",
             "gl": "Esta tenda arranxa bicicletas",
-            "de": "Dieses Geschäft repariert Fahrräder"
+            "de": "Dieses Geschäft repariert Fahrräder",
+            "it": "Questo negozio ripara bici"
           }
         },
         {
@@ -305,7 +324,8 @@
             "nl": "Deze winkel herstelt geen fietsen",
             "fr": "Ce magasin ne répare pas les vélos",
             "gl": "Esta tenda non arranxa bicicletas",
-            "de": "Dieses Geschäft repariert keine Fahrräder"
+            "de": "Dieses Geschäft repariert keine Fahrräder",
+            "it": "Questo negozio non ripara bici"
           }
         },
         {
@@ -315,7 +335,8 @@
             "nl": "Deze winkel herstelt enkel fietsen die hier werden gekocht",
             "fr": "Ce magasin ne répare seulement les vélos achetés là-bas",
             "gl": "Esta tenda só arranxa bicicletas mercadas aquí",
-            "de": "Dieses Geschäft repariert nur hier gekaufte Fahrräder"
+            "de": "Dieses Geschäft repariert nur hier gekaufte Fahrräder",
+            "it": "Questo negozio ripara solo le bici che sono state acquistate qua"
           }
         },
         {
@@ -325,7 +346,8 @@
             "nl": "Deze winkel herstelt enkel fietsen van een bepaald merk",
             "fr": "Ce magasin ne répare seulement des marques spécifiques",
             "gl": "Esta tenda só arranxa bicicletas dunha certa marca",
-            "de": "Dieses Geschäft repariert nur Fahrräder einer bestimmten Marke"
+            "de": "Dieses Geschäft repariert nur Fahrräder einer bestimmten Marke",
+            "it": "Questo negozio ripara solo le biciclette di una certa marca"
           }
         }
       ]
@@ -336,7 +358,8 @@
         "nl": "Verhuurt deze winkel fietsen?",
         "fr": "Est-ce ce magasin loue des vélos?",
         "gl": "Esta tenda aluga bicicletas?",
-        "de": "Vermietet dieser Laden Fahrräder?"
+        "de": "Vermietet dieser Laden Fahrräder?",
+        "it": "Questo negozio noleggia le bici?"
       },
       "mappings": [
         {
@@ -346,7 +369,8 @@
             "nl": "Deze winkel verhuurt fietsen",
             "fr": "Ce magasin loue des vélos",
             "gl": "Esta tenda aluga bicicletas",
-            "de": "Dieses Geschäft vermietet Fahrräder"
+            "de": "Dieses Geschäft vermietet Fahrräder",
+            "it": "Questo negozio noleggia le bici"
           }
         },
         {
@@ -356,7 +380,8 @@
             "nl": "Deze winkel verhuurt geen fietsen",
             "fr": "Ce magasin ne loue pas de vélos",
             "gl": "Esta tenda non aluga bicicletas",
-            "de": "Dieses Geschäft vermietet keine Fahrräder"
+            "de": "Dieses Geschäft vermietet keine Fahrräder",
+            "it": "Questo negozio non noleggia le bici"
           }
         }
       ]
@@ -367,7 +392,8 @@
         "nl": "Verkoopt deze winkel tweedehands fietsen?",
         "fr": "Est-ce ce magasin vend des vélos d'occasion",
         "gl": "Esta tenda vende bicicletas de segunda man?",
-        "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?"
+        "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?",
+        "it": "Questo negozio vende bici usate?"
       },
       "mappings": [
         {
@@ -377,7 +403,8 @@
             "nl": "Deze winkel verkoopt tweedehands fietsen",
             "fr": "Ce magasin vend des vélos d'occasion",
             "gl": "Esta tenda vende bicicletas de segunda man",
-            "de": "Dieses Geschäft verkauft gebrauchte Fahrräder"
+            "de": "Dieses Geschäft verkauft gebrauchte Fahrräder",
+            "it": "Questo negozio vende bici usate"
           }
         },
         {
@@ -387,7 +414,8 @@
             "nl": "Deze winkel verkoopt geen tweedehands fietsen",
             "fr": "Ce magasin ne vend pas de vélos d'occasion",
             "gl": "Esta tenda non vende bicicletas de segunda man",
-            "de": "Dieses Geschäft verkauft keine gebrauchten Fahrräder"
+            "de": "Dieses Geschäft verkauft keine gebrauchten Fahrräder",
+            "it": "Questo negozio non vende bici usate"
           }
         },
         {
@@ -397,7 +425,8 @@
             "nl": "Deze winkel verkoopt enkel tweedehands fietsen",
             "fr": "Ce magasin vend seulement des vélos d'occasion",
             "gl": "Esta tenda só vende bicicletas de segunda man",
-            "de": "Dieses Geschäft verkauft nur gebrauchte Fahrräder"
+            "de": "Dieses Geschäft verkauft nur gebrauchte Fahrräder",
+            "it": "Questo negozio vende solamente bici usate"
           }
         }
       ]
@@ -408,7 +437,8 @@
         "nl": "Biedt deze winkel een fietspomp aan voor iedereen?",
         "fr": "Est-ce que ce magasin offre une pompe en accès libre?",
         "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?",
-        "de": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?"
+        "de": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?",
+        "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
       },
       "mappings": [
         {
@@ -418,7 +448,8 @@
             "nl": "Deze winkel biedt een fietspomp aan voor iedereen",
             "fr": "Ce magasin offre une pompe en acces libre",
             "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa",
-            "de": "Dieses Geschäft bietet eine Fahrradpumpe für alle an"
+            "de": "Dieses Geschäft bietet eine Fahrradpumpe für alle an",
+            "it": "Questo negozio offre l’uso pubblico di una pompa per bici"
           }
         },
         {
@@ -428,7 +459,8 @@
             "nl": "Deze winkel biedt geen fietspomp aan voor eender wie",
             "fr": "Ce magasin n'offre pas de pompe en libre accès",
             "gl": "Esta tenda non ofrece unha bomba de ar para uso de calquera persoa",
-            "de": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an"
+            "de": "Dieses Geschäft bietet für niemanden eine Fahrradpumpe an",
+            "it": "Questo negozio non offre l’uso pubblico di una pompa per bici"
           }
         },
         {
@@ -436,7 +468,8 @@
           "then": {
             "en": "There is bicycle pump, it is shown as a seperate point ",
             "nl": "Er is een fietspomp, deze is apart aangeduid",
-            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé "
+            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé ",
+            "it": "C’è una pompa per bici, è mostrata come punto separato "
           }
         }
       ]
@@ -447,7 +480,8 @@
         "nl": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
         "fr": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin?",
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
-        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
+        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
+        "it": "Sono presenti degli attrezzi per riparare la propria bici?"
       },
       "mappings": [
         {
@@ -457,7 +491,8 @@
             "nl": "Deze winkel biedt gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce magasin offre des outils pour réparer son vélo soi-même",
             "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Geschäft bietet Werkzeuge für die Heimwerkerreparatur an"
+            "de": "Dieses Geschäft bietet Werkzeuge für die Heimwerkerreparatur an",
+            "it": "Questo negozio offre degli attrezzi per la riparazione fai-da-te"
           }
         },
         {
@@ -467,7 +502,8 @@
             "nl": "Deze winkel biedt geen gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce magasin n'offre pas des outils pour réparer son vélo soi-même",
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Geschäft bietet keine Werkzeuge für Heimwerkerreparaturen an"
+            "de": "Dieses Geschäft bietet keine Werkzeuge für Heimwerkerreparaturen an",
+            "it": "Questo negozio non offre degli attrezzi per la riparazione fai-da-te"
           }
         },
         {
@@ -475,7 +511,8 @@
           "then": {
             "en": "Tools for DIY repair are only available if you bought/hire the bike in the shop",
             "nl": "Het gereedschap aan om je fiets zelf te herstellen is enkel voor als je de fiets er kocht of huurt",
-            "fr": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin"
+            "fr": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin",
+            "it": "Gli attrezzi per la riparazione fai-da-te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
           }
         }
       ]
@@ -484,7 +521,8 @@
       "question": {
         "en": "Are bicycles washed here?",
         "nl": "Biedt deze winkel een fietsschoonmaak aan?",
-        "fr": "Lave-t-on les vélos ici ?"
+        "fr": "Lave-t-on les vélos ici ?",
+        "it": "Vengono lavate le bici qua?"
       },
       "mappings": [
         {
@@ -492,7 +530,8 @@
           "then": {
             "en": "This shop cleans bicycles",
             "nl": "Deze winkel biedt fietsschoonmaak aan",
-            "fr": "Ce magasin lave les vélos"
+            "fr": "Ce magasin lave les vélos",
+            "it": "Questo negozio lava le biciclette"
           }
         },
         {
@@ -500,7 +539,8 @@
           "then": {
             "en": "This shop has an installation where one can clean bicycles themselves",
             "nl": "Deze winkel biedt een installatie aan om zelf je fiets schoon te maken",
-            "fr": "Ce magasin a une installation pour laver soi même des vélos"
+            "fr": "Ce magasin a une installation pour laver soi même des vélos",
+            "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici"
           }
         },
         {
@@ -508,7 +548,8 @@
           "then": {
             "en": "This shop doesn't offer bicycle cleaning",
             "nl": "Deze winkel biedt geen fietsschoonmaak aan",
-            "fr": "Ce magasin ne fait pas le nettoyage de vélo"
+            "fr": "Ce magasin ne fait pas le nettoyage de vélo",
+            "it": "Questo negozio non offre la pulizia della bicicletta"
           }
         }
       ]
@@ -522,7 +563,8 @@
         "nl": "Fietszaak",
         "fr": "Magasin et réparateur de vélo",
         "gl": "Tenda/arranxo de bicicletas",
-        "de": "Fahrradwerkstatt/geschäft"
+        "de": "Fahrradwerkstatt/geschäft",
+        "it": "Negozio/riparatore di bici"
       },
       "tags": [
         "shop=bicycle"
