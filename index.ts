@@ -73,21 +73,32 @@ const userLayoutParam = QueryParameters.GetQueryParameter("userlayout", "false",
 if (layoutToUse?.id === "cyclofix") {
     const legacy = QueryParameters.GetQueryParameter("layer-bike_shops", "true", "Legacy - keep De Fietsambassade working");
     const correct = QueryParameters.GetQueryParameter("layer-bike_shop", "true", "Legacy - keep De Fietsambassade working")
-    if(legacy.data !== "true"){
-         correct.setData(legacy.data)
+    if (legacy.data !== "true") {
+        correct.setData(legacy.data)
     }
-    console.log("layer-bike_shop toggles: legacy:",legacy.data, "new:", correct.data)
+    console.log("layer-bike_shop toggles: legacy:", legacy.data, "new:", correct.data)
 
     const legacyCafe = QueryParameters.GetQueryParameter("layer-bike_cafes", "true", "Legacy - keep De Fietsambassade working")
     const correctCafe = QueryParameters.GetQueryParameter("layer-bike_cafe", "true", "Legacy - keep De Fietsambassade working")
-    if(legacyCafe.data !== "true"){
+    if (legacyCafe.data !== "true") {
         correctCafe.setData(legacy.data)
     }
 }
 
 
 const layoutFromBase64 = decodeURIComponent(userLayoutParam.data);
-document.getElementById('centermessage').innerText = '';
+document.getElementById('centermessage').innerText = 'Initilai';
+
+new Combine(["Initializing... <br/>",
+    new FixedUiElement("<a>If this message persist, something went wrong - click here to try again</a>")
+        .SetClass("link-underline small")
+        .onClick(() => {
+        localStorage.clear();
+            window.location.reload(true);
+
+        })])
+    .AttachTo("centermessage"); // Add an initialization and reset button if something goes wrong
+
 document.getElementById("decoration-desktop").remove();
 
 
@@ -106,7 +117,7 @@ if (layoutFromBase64.startsWith("http")) {
                 let parsed = data;
                 if (typeof parsed == "string") {
                     parsed = JSON.parse(data);
-                }else{
+                } else {
                     data = JSON.stringify(parsed) // De wereld op zijn kop
                 }
                 // Overwrite the id to the wiki:value
@@ -147,8 +158,8 @@ if (layoutFromBase64.startsWith("http")) {
 }
 // Remove all context event listeners on mobile to prevent long presses
 window.addEventListener('contextmenu', (e) => { // Not compatible with IE < 9
-    
-    if(e.target["nodeName"] === "INPUT"){
+
+    if (e.target["nodeName"] === "INPUT") {
         return;
     }
     e.preventDefault();
