@@ -22,4 +22,8 @@
    echo
    git pull
    npm run deploy:production
+else
+    date
+    
+    echo "No changes detected"
  fi
