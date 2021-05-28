@@ -8,7 +8,8 @@
     "de": "Freie Kunstwerk-Karte",
     "hu": "Nyít Műalkotás Térkép",
     "id": "Buka Peta Karya Seni",
-    "it": "Mappa libera dell’arte"
+    "it": "Mappa libera dell’arte",
+    "ru": "Открытая карта произведений искусства"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
@@ -16,7 +17,8 @@
     "fr": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
     "de": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
     "id": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
-    "it": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo"
+    "it": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
+    "ru": "Добро пожаловать на Open Artwork Map, карту статуй, бюстов, граффити и других произведений искусства по всему миру"
   },
   "language": [
     "en",
@@ -55,7 +57,8 @@
           "fr": "Œuvre d'art",
           "de": "Kunstwerk",
           "id": "Karya seni",
-          "it": "Opera d’arte"
+          "it": "Opera d’arte",
+          "ru": "Художественная работа"
         },
         "mappings": [
           {
@@ -66,7 +69,8 @@
               "fr": "Œuvre d'art <i>{name}</i>",
               "de": "Kunstwerk <i>{name}</i>",
               "id": "Karya seni <i>{name}</i>",
-              "it": "Opera <i>{name}</i>"
+              "it": "Opera <i>{name}</i>",
+              "ru": "Художественная работа <i>{name}</i>"
             }
           }
         ]
@@ -85,7 +89,8 @@
         "nl": "Verschillende soorten kunstwerken",
         "fr": "Diverses œuvres d'art",
         "de": "Verschiedene Kunstwerke",
-        "it": "Diverse opere d’arte"
+        "it": "Diverse opere d’arte",
+        "ru": "Разнообразные произведения искусства"
       },
       "minzoom": 12,
       "wayHandling": 2,
@@ -99,7 +104,8 @@
             "nl": "Kunstwerk",
             "fr": "Œuvre d'art",
             "de": "Kunstwerk",
-            "it": "Opera d’arte"
+            "it": "Opera d’arte",
+            "ru": "Художественная работа"
           }
         }
       ],
@@ -111,14 +117,16 @@
             "nl": "Dit is een {artwork_type}",
             "fr": "Type d'œuvre : {artwork_type}",
             "de": "Dies ist ein {artwork_type}",
-            "it": "Si tratta di un {artwork_type}"
+            "it": "Si tratta di un {artwork_type}",
+            "ru": "Это {artwork_type}"
           },
           "question": {
             "en": "What is the type of this artwork?",
             "nl": "Wat voor soort kunstwerk is dit?",
             "fr": "Quel est le type de cette œuvre d'art?",
             "de": "Was ist die Art dieses Kunstwerks?",
-            "it": "Che tipo di opera d’arte è questo?"
+            "it": "Che tipo di opera d’arte è questo?",
+            "ru": "К какому типу относится эта работа?"
           },
           "freeform": {
             "key": "artwork_type",
@@ -156,7 +164,8 @@
                 "nl": "Schilderij",
                 "fr": "Peinture",
                 "de": "Malerei",
-                "it": "Dipinto"
+                "it": "Dipinto",
+                "ru": "Живопись"
               }
             },
             {
@@ -210,7 +219,8 @@
                 "nl": "Installatie",
                 "fr": "Installation",
                 "de": "Installation",
-                "it": "Istallazione"
+                "it": "Istallazione",
+                "ru": "Инсталляция"
               }
             },
             {
@@ -231,7 +241,8 @@
                 "nl": "Reliëf",
                 "fr": "Relief",
                 "de": "Relief",
-                "it": "Rilievo"
+                "it": "Rilievo",
+                "ru": "Рельеф"
               }
             },
             {
@@ -241,7 +252,8 @@
                 "nl": "Azulejo (Spaanse siertegels)",
                 "fr": "Azulejo (faïence latine)",
                 "de": "Azulejo (spanische dekorative Fliesenarbeit)",
-                "it": "Azulejo (ornamento decorativo piastrellato spagnolo)"
+                "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
+                "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)"
               }
             },
             {
@@ -251,7 +263,8 @@
                 "nl": "Tegelwerk",
                 "fr": "Carrelage",
                 "de": "Fliesenarbeit",
-                "it": "Mosaico di piastrelle"
+                "it": "Mosaico di piastrelle",
+                "ru": "Плитка (мозаика)"
               }
             }
           ]
@@ -262,14 +275,16 @@
             "nl": "Welke artist creëerde dit kunstwerk?",
             "fr": "Quel artiste a créé cette œuvre ?",
             "de": "Welcher Künstler hat das geschaffen?",
-            "it": "Quale artista ha creato quest’opera?"
+            "it": "Quale artista ha creato quest’opera?",
+            "ru": "Какой художник создал это?"
           },
           "render": {
             "en": "Created by {artist_name}",
             "nl": "Gecreëerd door {artist_name}",
             "fr": "Créé par {artist_name}",
             "de": "Erstellt von {artist_name}",
-            "it": "Creato da {artist_name}"
+            "it": "Creato da {artist_name}",
+            "ru": "Создано {artist_name}"
           },
           "freeform": {
             "key": "artist_name"
@@ -281,7 +296,8 @@
             "nl": "Op welke website kan men meer informatie vinden over dit kunstwerk?",
             "fr": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
             "de": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",
-            "it": "Su quale sito web è possibile trovare altre informazioni riguardanti quest’opera?"
+            "it": "Su quale sito web è possibile trovare altre informazioni riguardanti quest’opera?",
+            "ru": "На каком сайте можно найти больше информации об этой работе?"
           },
           "render": {
             "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -289,7 +305,8 @@
             "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>",
             "de": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>",
             "id": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini.",
-            "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>"
+            "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",
+            "ru": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
           },
           "freeform": {
             "key": "website",
@@ -302,14 +319,16 @@
             "nl": "Welk wikidata-item beschrijft dit kunstwerk?",
             "fr": "Quelle entrée wikidata correspond à <b>cette œuvre d'art</b> ?",
             "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
-            "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?"
+            "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
+            "ru": "Какая запись в wikidata соответсвует <b>этой работе</b>?"
           },
           "render": {
             "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "nl": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "de": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-            "it": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            "it": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+            "ru": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
           },
           "freeform": {
             "key": "wikidata",

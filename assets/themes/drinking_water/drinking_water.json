@@ -3,7 +3,8 @@
   "title": {
     "en": "Drinking Water",
     "nl": "Drinkwaterpunten",
-    "fr": "Eau potable"
+    "fr": "Eau potable",
+    "ru": "Питьевая вода"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
@@ -13,7 +14,8 @@
   "language": [
     "en",
     "nl",
-    "fr"
+    "fr",
+    "ru"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/drinking_water/logo.svg",

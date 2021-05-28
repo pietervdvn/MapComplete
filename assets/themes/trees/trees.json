@@ -4,7 +4,8 @@
     "nl": "Bomen",
     "en": "Trees",
     "fr": "Arbres",
-    "it": "Alberi"
+    "it": "Alberi",
+    "ru": "Деревья"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
@@ -22,7 +23,8 @@
     "nl",
     "en",
     "fr",
-    "it"
+    "it",
+    "ru"
   ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

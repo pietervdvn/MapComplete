@@ -3,17 +3,20 @@
   "title": {
     "nl": "Open Klimkaart",
     "de": "Offene Kletterkarte",
-    "en": "Open Climbing Map"
+    "en": "Open Climbing Map",
+    "ru": "Открытая карта скалолазания"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
     "de": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
-    "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature."
+    "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
+    "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе."
   },
   "descriptionTail": {
     "nl": "De Open Klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
     "en": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
-    "de": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>"
+    "de": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
+    "ru": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "language": [
     "nl",
@@ -38,7 +41,8 @@
       "name": {
         "de": "Kletterverein",
         "nl": "Klimclub",
-        "en": "Climbing club"
+        "en": "Climbing club",
+        "ru": "Клуб скалолазания"
       },
       "minzoom": 10,
       "source": {
@@ -63,7 +67,8 @@
         "render": {
           "en": "Climbing club",
           "nl": "Klimclub",
-          "de": "Kletterverein"
+          "de": "Kletterverein",
+          "ru": "Клуб скалолазания"
         },
         "mappings": [
           {
@@ -210,7 +215,8 @@
             "de": "<strong>{name}</strong>",
             "ca": "<strong>{name}</strong>",
             "fr": "<strong>{name}</strong>",
-            "id": "<strong>{name}</strong>"
+            "id": "<strong>{name}</strong>",
+            "ru": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing gym?",
@@ -287,7 +293,8 @@
             "de": "<strong>{name}</strong>",
             "ca": "<strong>{name}</strong>",
             "fr": "<strong>{name}</strong>",
-            "id": "<strong>{name}</strong>"
+            "id": "<strong>{name}</strong>",
+            "ru": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing route?",
@@ -394,7 +401,8 @@
             "de": "<strong>{name}</strong>",
             "ca": "<strong>{name}</strong>",
             "fr": "<strong>{name}</strong>",
-            "id": "<strong>{name}</strong>"
+            "id": "<strong>{name}</strong>",
+            "ru": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing opportunity?",
@@ -493,7 +501,8 @@
             "de": "<strong>{name}</strong>",
             "ca": "<strong>{name}</strong>",
             "fr": "<strong>{name}</strong>",
-            "id": "<strong>{name}</strong>"
+            "id": "<strong>{name}</strong>",
+            "ru": "<strong>{name}</strong>"
           },
           "condition": "name~*"
         },

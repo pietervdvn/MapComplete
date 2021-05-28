@@ -15,6 +15,7 @@
   "language": [
     "en",
     "fr",
+    "ru",
     "ca",
     "id"
   ],
@@ -31,7 +32,8 @@
       "id": "shops",
       "name": {
         "en": "Shop",
-        "fr": "Magasin"
+        "fr": "Magasin",
+        "ru": "Магазин"
       },
       "minzoom": 16,
       "source": {
@@ -44,7 +46,8 @@
       "title": {
         "render": {
           "en": "Shop",
-          "fr": "Magasin"
+          "fr": "Magasin",
+          "ru": "Магазин"
         },
         "mappings": [
           {
@@ -55,7 +58,8 @@
             },
             "then": {
               "en": "{name}",
-              "fr": "{name}"
+              "fr": "{name}",
+              "ru": "{name}"
             }
           },
           {
@@ -66,7 +70,8 @@
             },
             "then": {
               "en": "{shop}",
-              "fr": "{shop}"
+              "fr": "{shop}",
+              "ru": "{shop}"
             }
           }
         ]
@@ -80,7 +85,8 @@
         {
           "question": {
             "en": "What is the name of this shop?",
-            "fr": "Qu'est-ce que le nom de ce magasin?"
+            "fr": "Qu'est-ce que le nom de ce magasin?",
+            "ru": "Как называется этот магазин?"
           },
           "render": "This shop is called <i>{name}</i>",
           "freeform": {
@@ -119,7 +125,8 @@
               },
               "then": {
                 "en": "Supermarket",
-                "fr": "Supermarché"
+                "fr": "Supermarché",
+                "ru": "Супермаркет"
               }
             },
             {
@@ -130,7 +137,8 @@
               },
               "then": {
                 "en": "Clothing store",
-                "fr": "Magasin de vêtements"
+                "fr": "Magasin de vêtements",
+                "ru": "Магазин одежды"
               }
             },
             {
@@ -141,7 +149,8 @@
               },
               "then": {
                 "en": "Hairdresser",
-                "fr": "Coiffeur"
+                "fr": "Coiffeur",
+                "ru": "Парикмахерская"
               }
             },
             {
@@ -174,7 +183,8 @@
               },
               "then": {
                 "en": "Car dealer",
-                "fr": "Concessionnaire"
+                "fr": "Concessionnaire",
+                "ru": "Автосалон"
               }
             }
           ]
@@ -184,7 +194,8 @@
             "en": "<a href='tel:{phone}'>{phone}</a>",
             "fr": "<a href='tel:{phone}'>{phone}</a>",
             "ca": "<a href='tel:{phone}'>{phone}</a>",
-            "id": "<a href='tel:{phone}'>{phone}</a>"
+            "id": "<a href='tel:{phone}'>{phone}</a>",
+            "ru": "<a href='tel:{phone}'>{phone}</a>"
           },
           "question": {
             "en": "What is the phone number?",
@@ -200,7 +211,8 @@
             "en": "<a href='{website}'>{website}</a>",
             "fr": "<a href='{website}'>{website}</a>",
             "ca": "<a href='{website}'>{website}</a>",
-            "id": "<a href='{website}'>{website}</a>"
+            "id": "<a href='{website}'>{website}</a>",
+            "ru": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",
@@ -215,7 +227,8 @@
           "render": {
             "en": "<a href='mailto:{email}'>{email}</a>",
             "fr": "<a href='mailto:{email}'>{email}</a>",
-            "id": "<a href='mailto:{email}'>{email}</a>"
+            "id": "<a href='mailto:{email}'>{email}</a>",
+            "ru": "<a href='mailto:{email}'>{email}</a>"
           },
           "question": {
             "en": "What is the email address of this shop?",
@@ -229,7 +242,8 @@
         {
           "render": {
             "en": "{opening_hours_table(opening_hours)}",
-            "fr": "{opening_hours_table(opening_hours)}"
+            "fr": "{opening_hours_table(opening_hours)}",
+            "ru": "{opening_hours_table(opening_hours)}"
           },
           "question": {
             "en": "What are the opening hours of this shop?",
@@ -270,11 +284,13 @@
           ],
           "title": {
             "en": "Shop",
-            "fr": "Magasin"
+            "fr": "Magasin",
+            "ru": "Магазин"
           },
           "description": {
             "en": "Add a new shop",
-            "fr": "Ajouter un nouveau magasin"
+            "fr": "Ajouter un nouveau magasin",
+            "ru": "Добавить новый магазин"
           }
         }
       ],

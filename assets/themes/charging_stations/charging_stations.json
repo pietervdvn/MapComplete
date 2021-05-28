@@ -6,10 +6,12 @@
     "ru": "Зарядные станции"
   },
   "shortDescription": {
-    "en": "A worldwide map of charging stations"
+    "en": "A worldwide map of charging stations",
+    "ru": "Карта зарядных станций по всему миру"
   },
   "description": {
-    "en": "On this open map, one can find and mark information about charging stations"
+    "en": "On this open map, one can find and mark information about charging stations",
+    "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях"
   },
   "language": [
     "en",
@@ -175,7 +177,8 @@
             "type": "opening_hours"
           },
           "question": {
-            "en": "When is this charging station opened?"
+            "en": "When is this charging station opened?",
+            "ru": "В какое время работает эта зарядная станция?"
           },
           "mappings": [
             {
@@ -191,7 +194,8 @@
             "ru": "{network}"
           },
           "question": {
-            "en": "Which is the network of this charging stationg?"
+            "en": "Which is the network of this charging stationg?",
+            "ru": "К какой сети относится эта станция?"
           },
           "freeform": {
             "key": "network"
@@ -204,7 +208,8 @@
                 ]
               },
               "then": {
-                "en": "Not part of a bigger network"
+                "en": "Not part of a bigger network",
+                "ru": "Не является частью более крупной сети"
               }
             },
             {
@@ -214,7 +219,8 @@
                 ]
               },
               "then": {
-                "en": "AeroVironment"
+                "en": "AeroVironment",
+                "ru": "AeroVironment"
               }
             },
             {
@@ -224,7 +230,8 @@
                 ]
               },
               "then": {
-                "en": "Blink"
+                "en": "Blink",
+                "ru": "Blink"
               }
             },
             {

@@ -12,7 +12,8 @@
     "fr",
     "en",
     "ca",
-    "id"
+    "id",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -91,7 +92,8 @@
             "en": "<a href='{website}'>{website}</a>",
             "ca": "<a href='{website}'>{website}</a>",
             "fr": "<a href='{website}'>{website}</a>",
-            "id": "<a href='{website}'>{website}</a>"
+            "id": "<a href='{website}'>{website}</a>",
+            "ru": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",

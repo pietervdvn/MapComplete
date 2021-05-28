@@ -11,6 +11,7 @@
   },
   "language": [
     "en",
+    "ru",
     "id"
   ],
   "maintainer": "Erwin Olario",
@@ -37,7 +38,8 @@
       },
       "title": {
         "render": {
-          "en": "Hydrant"
+          "en": "Hydrant",
+          "ru": "Гидрант"
         }
       },
       "description": {
@@ -96,7 +98,8 @@
             "key": "fire_hydrant:type"
           },
           "render": {
-            "en": " Hydrant type: {fire_hydrant:type}"
+            "en": " Hydrant type: {fire_hydrant:type}",
+            "ru": " Тип гидранта: {fire_hydrant:type}"
           },
           "mappings": [
             {
@@ -138,7 +141,8 @@
               },
               "then": {
                 "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type.",
-                "id": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                "id": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding.",
+                "ru": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены."
               }
             },
             {
@@ -219,7 +223,8 @@
             "emergency=fire_hydrant"
           ],
           "title": {
-            "en": "Fire hydrant"
+            "en": "Fire hydrant",
+            "ru": "Пожарный гидрант"
           },
           "description": {
             "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground."
@@ -243,7 +248,8 @@
       },
       "title": {
         "render": {
-          "en": "Extinguishers"
+          "en": "Extinguishers",
+          "ru": "Огнетушители"
         }
       },
       "description": {
@@ -490,7 +496,8 @@
       },
       "title": {
         "render": {
-          "en": "Ambulance Station"
+          "en": "Ambulance Station",
+          "ru": "Станция скорой помощи"
         }
       },
       "description": {
@@ -616,7 +623,8 @@
             "emergency=ambulance_station"
           ],
           "title": {
-            "en": "Ambulance station"
+            "en": "Ambulance station",
+            "ru": "Станция скорой помощи"
           },
           "description": {
             "en": "Add an ambulance station to the map"
