@@ -2,7 +2,7 @@
 
 
 # To run with crontab: 
-# 1 * * * * /home/pietervdvn/git/MapComplete/scripts/deployIfChanged.sh >> /home/pietervdvn/auto_deploy_caching.log 2>&1
+# */1 * * * * /home/pietervdvn/git/MapComplete/scripts/deployIfChanged.sh >> /home/pietervdvn/auto_deploy_caching.log 2>&1
 
 
  ACTION='\033[1;90m'
@@ -11,6 +11,7 @@
  NOCOLOR='\033[0m' # No Color
  ERROR='\033[0;31m'
 
+cd ~/git/MapComplete
 
  git fetch
  HEADHASH=$(git rev-parse HEAD)
