@@ -136,25 +136,7 @@ export default class GeoLocationHandler extends UIElement {
 
             const timeSinceRequest = (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
-                self._lastUserRequest = undefined;
-
-                // We use the layout location
-                const b = this._layoutToUse.data.lockLocation
-                let inRange = true;
-                if(b){
-                    if(b!== true){
-                        // B is an array with our locklocation
-                        inRange = b[0][0] <= location.latlng[0] && location.latlng[0] <= b[1][0] &&
-                            b[0][1] <= location.latlng[1] && location.latlng[1] <= b[1][1];
-                    }
-                }
-                if (!inRange) {
-                    console.log("Not zooming to GPS location: out of bounds", b, location.latlng)
-                } else {
-                    this._leafletMap.data.setView(
-                        location.latlng, this._leafletMap.data.getZoom()
-                    );
-                }
+                self.MoveToCurrentLoction(16)
             }
 
             let color = "#1111cc";
@@ -226,6 +208,35 @@ export default class GeoLocationHandler extends UIElement {
         }
     }
 
+    private MoveToCurrentLoction(targetZoom = 16) {
+        const location = this._currentGPSLocation.data;
+        this._lastUserRequest = undefined;
+        
+
+        if (this._currentGPSLocation.data.latlng[0] === 0 && this._currentGPSLocation.data.latlng[1] === 0) {
+            console.debug("Not moving to GPS-location: it is null island")
+            return;
+        }
+
+        // We check that the GPS location is not out of bounds
+        const b = this._layoutToUse.data.lockLocation
+        let inRange = true;
+        if (b) {
+            if (b !== true) {
+                // B is an array with our locklocation
+                inRange = b[0][0] <= location.latlng[0] && location.latlng[0] <= b[1][0] &&
+                    b[0][1] <= location.latlng[1] && location.latlng[1] <= b[1][1];
+            }
+        }
+        if (!inRange) {
+            console.log("Not zooming to GPS location: out of bounds", b, location.latlng)
+        } else {
+            this._leafletMap.data.setView(
+                location.latlng, targetZoom
+            );
+        }
+    }
+
     private StartGeolocating(zoomToGPS = true) {
         const self = this;
         console.log("Starting geolocation")
@@ -236,8 +247,7 @@ export default class GeoLocationHandler extends UIElement {
             return "";
         }
         if (this._currentGPSLocation.data !== undefined) {
-            this._currentGPSLocation.ping()
-            this._leafletMap.data.setZoom(16)
+            this.MoveToCurrentLoction(16)
         }
 
 
