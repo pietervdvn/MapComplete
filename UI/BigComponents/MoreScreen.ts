@@ -25,12 +25,78 @@ export default class MoreScreen extends UIElement {
         this.ListenTo(State.state.installedThemes);
     }
 
+    InnerRender(): string {
+
+        const tr = Translations.t.general.morescreen;
+
+        const els: UIElement[] = []
+
+        const themeButtons: UIElement[] = []
+
+        for (const layout of AllKnownLayouts.layoutsList) {
+            if (layout.id === personal.id) {
+                if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
+                    continue;
+                }
+            }
+            themeButtons.push(this.createLinkButton(layout));
+        }
+
+
+        els.push(new VariableUiElement(
+            State.state.osmConnection.userDetails.map(userDetails => {
+                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
+                    return new SubtleButton(null, tr.requestATheme, {url:"https://github.com/pietervdvn/MapComplete/issues", newTab: true}).Render();
+                }
+                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
+                    url: "./customGenerator.html",
+                    newTab: false
+                }).Render();
+            })
+        ));
+
+        els.push(new Combine(themeButtons))
+
+
+        const customThemesNames = State.state.installedThemes.data ?? [];
+
+        if (customThemesNames.length > 0) {
+            els.push(Translations.t.general.customThemeIntro)
+
+            for (const installed of State.state.installedThemes.data) {
+                els.push(this.createLinkButton(installed.layout, installed.definition));
+            }
+        }
+
+        let intro: UIElement = tr.intro;
+        const themeButtonsElement = new Combine(els)
+
+        if (this._onMainScreen) {
+            intro = new Combine([
+                LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
+                    .SetClass("absolute top-2 right-3"),
+                new IndexText()
+            ])
+            themeButtons.map(e => e?.SetClass("h-32 min-h-32 max-h-32 overflow-ellipsis overflow-hidden"))
+            themeButtonsElement.SetClass("md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4")
+        }
+
+        
+
+        this._component = new Combine([
+            intro,
+            themeButtonsElement,
+            tr.streetcomplete.SetClass("block text-base mx-10 my-3 mb-10")
+        ]);
+        return this._component.Render();
+    }
+
     private createLinkButton(layout: LayoutConfig, customThemeDefinition: string = undefined) {
         if (layout === undefined) {
             return undefined;
         }
-        if(layout.id === undefined){
-            console.error("ID is undefined for layout",layout);
+        if (layout.id === undefined) {
+            console.error("ID is undefined for layout", layout);
             return undefined;
         }
         if (layout.hideFromOverview) {
@@ -49,10 +115,10 @@ export default class MoreScreen extends UIElement {
         // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
         path = path.substr(0, path.lastIndexOf("/"));
         // Path will now contain '/dir/dir', or empty string in case of nothing
-        if(path === ""){
+        if (path === "") {
             path = "."
         }
-        
+
         const params = `z=${currentLocation.zoom ?? 1}&lat=${currentLocation.lat ?? 0}&lon=${currentLocation.lon ?? 0}`
         let linkText =
             `${path}/${layout.id.toLowerCase()}.html?${params}`
@@ -72,73 +138,10 @@ export default class MoreScreen extends UIElement {
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
                 Translations.W(layout.title),
                 `</dt>`,
-                `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900'>`,
+                `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
                 description ?? "",
                 `</dd>`,
             ]), {url: linkText, newTab: false});
-    }
-
-    InnerRender(): string {
-
-        const tr = Translations.t.general.morescreen;
-
-        const els: UIElement[] = []
-
-        const linkButton: UIElement[] = []
-
-        for (const layout of AllKnownLayouts.layoutsList) {
-            if (layout.id === personal.id) {
-                if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
-                    continue;
-                }
-            }
-            linkButton.push(this.createLinkButton(layout));
-        }
-
-       
-        els.push(new VariableUiElement(
-            State.state.osmConnection.userDetails.map(userDetails => {
-                if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
-                    return tr.requestATheme.SetClass("block text-base mx-10 my-3").Render();
-                }
-                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
-                    url: "./customGenerator.html",
-                    newTab: false
-                }).Render();
-            })
-        ));
-
-        els.push(new Combine(linkButton))
-
-
-        const customThemesNames = State.state.installedThemes.data ?? [];
-
-        if (customThemesNames.length > 0) {
-            els.push(Translations.t.general.customThemeIntro)
-
-            for (const installed of State.state.installedThemes.data) {
-                els.push(this.createLinkButton(installed.layout, installed.definition));
-            }
-        }
-
-        let intro : UIElement= tr.intro;
-        if(this._onMainScreen){
-           intro = new Combine([
-
-           LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
-               .SetClass("absolute top-2 right-3 dropdown-ui-element-2226"),
-               new IndexText()
-                   
-                   
-           ])
-        }
-
-        this._component = new Combine([
-            intro,
-            new Combine(els),
-            tr.streetcomplete.SetClass("block text-base mx-10 my-3 mb-10")
-        ]);
-        return this._component.Render();
     }
 
 }

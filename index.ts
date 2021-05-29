@@ -149,6 +149,7 @@ if (layoutFromBase64.startsWith("http")) {
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);
 } else {
     // We fall through: no theme loaded: just show an overview of layouts
+    new FixedUiElement("").AttachTo("centermessage")
     State.state = new State(undefined);
     new Combine([new MoreScreen(true),
         Translations.t.general.aboutMapcomplete.SetClass("link-underline")

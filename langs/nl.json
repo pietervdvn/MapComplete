@@ -102,7 +102,7 @@
         },
         "morescreen": {
             "intro": "<h3>Meer thematische kaarten</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer kaartthemas.",
-            "requestATheme": "Wil je een eigen kaartthema, vraag dit <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>hier aan</a>.",
+            "requestATheme": "Wil je een eigen kaartthema, vraag dit in de issue tracker.",
             "streetcomplete": "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart"
         },

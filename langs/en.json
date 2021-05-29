@@ -102,7 +102,7 @@
         },
         "morescreen": {
             "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
-            "requestATheme": "If you want a custom-built quest, request it <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>here</a>.",
+            "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Create your own MapComplete theme from scratch"
         },

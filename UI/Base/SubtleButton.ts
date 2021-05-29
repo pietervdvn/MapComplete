@@ -4,17 +4,19 @@ import Combine from "./Combine";
 import {FixedUiElement} from "./FixedUiElement";
 
 
-export class SubtleButton extends UIElement{
-    private readonly image: UIElement;
-    private readonly message: UIElement;
-    private readonly linkTo: { url: string, newTab?: boolean } = undefined;
+export class SubtleButton extends Combine {
 
     constructor(imageUrl: string | UIElement, message: string | UIElement, linkTo: { url: string, newTab?: boolean } = undefined) {
-        super(undefined);
-        this.linkTo = linkTo;
-        this.message = Translations.W(message);
-        if(this.message !== null){
-            this.message.dumbMode = false;
+        super(SubtleButton.generateContent(imageUrl, message, linkTo));
+
+        this.SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline")
+
+    }
+
+    private static generateContent(imageUrl: string | UIElement, messageT: string | UIElement, linkTo: { url: string, newTab?: boolean } = undefined): (UIElement | string)[] {
+        const message = Translations.W(messageT);
+        if (message !== null) {
+            message.dumbMode = false;
         }
         let img;
         if ((imageUrl ?? "") === "") {
@@ -25,35 +27,31 @@ export class SubtleButton extends UIElement{
             img = imageUrl;
         }
         img.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
-        this.image = new Combine([img])
+        const image = new Combine([img])
             .SetClass("flex-shrink-0");
-        
-       
-    }
 
-    InnerRender(): string {
 
-        if(this.message !== null && this.message.IsEmpty()){
+        if (message !== null && message.IsEmpty()) {
             // Message == null: special case to force empty text
-            return "";
+            return [];
         }
 
-        if(this.linkTo != undefined){
-            return new Combine([
-                `<a class='block flex group p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200' href="${this.linkTo.url}" ${this.linkTo.newTab ? 'target="_blank"' : ""}>`,
-                this.image,
-                `<div class='ml-4'>`,
-                this.message,
+        if (linkTo != undefined) {
+            return [
+                `<a class='flex group' href="${linkTo.url}" ${linkTo.newTab ? 'target="_blank"' : ""}>`,
+                image,
+                `<div class='ml-4 overflow-ellipsis'>`,
+                message,
                 `</div>`,
                 `</a>`
-            ]).Render();
+            ];
         }
 
-        return new Combine([
-            this.image,
-            this.message,
-        ]).SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline")
-            .Render();
+        return [
+            image,
+            message,
+        ];
+
     }
 
 
