@@ -72,7 +72,8 @@ export default class AttributionPanel extends Combine {
 
         const total = contributors.contributors.length;
         let filtered = contributors.contributors
-            .splice(10, total - 10);
+            
+            filtered.splice(10, total - 10);
 
         let contribsStr = filtered.map(c => c.contributor)
             .join(", ")
