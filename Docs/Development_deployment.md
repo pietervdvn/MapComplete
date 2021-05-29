@@ -18,6 +18,8 @@
  Development
  -----------
  
+ **Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make the switch ;) )
+ 
  To develop and build MapComplete, yo
  
 0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
