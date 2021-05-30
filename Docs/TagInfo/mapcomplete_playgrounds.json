@@ -114,7 +114,7 @@
   },
   {
    "key": "access",
-   "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to studants of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+   "description": "Layer 'Playgrounds' shows access=students with a fixed text, namely 'Only accessible to students of the school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
    "value": "students"
   },
   {

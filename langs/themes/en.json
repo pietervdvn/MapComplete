@@ -580,6 +580,59 @@
             }
         }
     },
+    "fietsstraten": {
+        "title": "Cyclestreets",
+        "shortDescription": "A map of cyclestreets",
+        "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+        "roamingRenderings": {
+            "0": {
+                "question": "Is this street a cyclestreet?",
+                "mappings": {
+                    "0": {
+                        "then": "This street is a cyclestreet (and has a maxspeeld of 30km/h)"
+                    },
+                    "1": {
+                        "then": "This street is a cyclestreet"
+                    },
+                    "2": {
+                        "then": "This street will become a cyclstreet soon"
+                    },
+                    "3": {
+                        "then": "This street is not a cyclestreet"
+                    }
+                }
+            },
+            "1": {
+                "question": "When will this street become a cyclestreet?",
+                "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
+            }
+        },
+        "layers": {
+            "0": {
+                "name": "Cyclestreets",
+                "description": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist"
+            },
+            "1": {
+                "name": "Future cyclestreet",
+                "description": "This street will become a cyclestreet soon",
+                "title": {
+                    "render": "Future cyclestreet",
+                    "mappings": {
+                        "0": {
+                            "then": "{name} will become a cyclestreet soon"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "name": "All streets",
+                "description": "Layer to mark any street as cycle street",
+                "title": {
+                    "render": "Street"
+                }
+            }
+        }
+    },
     "cyclofix": {
         "title": "Cyclofix - an open map for cyclists",
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
