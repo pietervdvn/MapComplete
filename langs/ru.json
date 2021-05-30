@@ -31,7 +31,7 @@
         "skip": "Пропустить вопрос",
         "cancel": "Отмена",
         "save": "Сохранить",
-        "returnToTheMap": "Возврат к карте",
+        "returnToTheMap": "Вернуться на карту",
         "search": {
             "error": "Что-то пошло не так…",
             "nothing": "Ничего не найдено…",
@@ -88,7 +88,7 @@
         "morescreen": {
             "createYourOwnTheme": "Создать собственную тему MapComplete с чистого листа",
             "streetcomplete": "Другое, похожее приложение — <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "requestATheme": "Если вам нужен особенный квест, попросите добавить его <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">здесь</a>.",
+            "requestATheme": "Если вам нужен особенный квест, запросите его в системе отслеживания ошибок",
             "intro": "<h3>Больше тематических карт?</h3>Нравится собирать геоданные? <br> Можете посмотреть другие темы."
         },
         "sharescreen": {
@@ -126,7 +126,7 @@
     "index": {
         "pickTheme": "Выберите тему ниже, чтобы начать.",
         "#": "Эти надписи отображаются над кнопками тем, когда тема не загружена",
-        "intro": "MapComplete это редактор OpenStreetMap, который показывает информацию с разделением по темам.",
+        "intro": "MapComplete - это редактор OpenStreetMap, который показывает информацию с разделением по темам.",
         "title": "Добро пожаловать в MapComplete"
     },
     "centerMessage": {
