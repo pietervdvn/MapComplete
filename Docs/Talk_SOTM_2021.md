@@ -16,10 +16,10 @@ I'm planning to do a talk/video on MapComplete on _State of the Map 2021_. This 
     a. Your granny can use it
     a. pragmatism - somewhat working today is better then something perfect tomorrow
     a. It's a trap! Cool thematic map (as iframe on website) -> the OSM rabbit hole -> easy start -> more features when mapping more -> oh, I can make a theme too!
-    b. The pareto frontier of 'easy to use' vs 'number of features'
+     b. The pareto frontier of 'easy to use' vs 'number of features'
     c. The thematic approach (+ disabling/enabling features per theme/view) 
-    d. delta(MapComplete, StreetComplete)
-    e. delta(MapComplete, MapContrib
+
+
  4. The future
     a. paid projects? Microgrant for a better theme creator?
     b. user contributed themes (see you next talk!)
