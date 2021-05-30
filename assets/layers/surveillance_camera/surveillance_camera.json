@@ -2,7 +2,8 @@
   "id": "surveillance_camera",
   "name": {
     "en": "Surveillance camera's",
-    "nl": "Bewakingscamera's"
+    "nl": "Bewakingscamera's",
+    "ru": "Камеры наблюдения"
   },
   "minzoom": 12,
   "source": {
@@ -22,7 +23,8 @@
   "title": {
     "render": {
       "en": "Surveillance Camera",
-      "nl": "Bewakingscamera"
+      "nl": "Bewakingscamera",
+      "ru": "Камера наблюдения"
     }
   },
   "tagRenderings": [
@@ -64,7 +66,8 @@
           },
           "then": {
             "en": "A panning camera",
-            "nl": "Een camera die (met een motor) van links naar rechts kan draaien"
+            "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
+            "ru": "Панорамная камера"
           }
         }
       ]

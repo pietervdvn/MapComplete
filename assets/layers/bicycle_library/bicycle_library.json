@@ -72,14 +72,16 @@
         "nl": "Hoeveel kost het huren van een fiets?",
         "fr": "Combien coûte l'emprunt d'un vélo ?",
         "hu": "Mennyibe kerül egy kerékpár kölcsönzése?",
-        "it": "Quanto costa il prestito di una bicicletta?"
+        "it": "Quanto costa il prestito di una bicicletta?",
+        "ru": "Сколько стоит прокат велосипеда?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
         "nl": "Een fiets huren kost {charge}",
         "fr": "Emprunter un vélo coûte {charge}",
         "hu": "Egy kerékpár kölcsönzése {charge}",
-        "it": "Il prestito di una bicicletta costa {charge}"
+        "it": "Il prestito di una bicicletta costa {charge}",
+        "ru": "Стоимость аренды велосипеда {charge}"
       },
       "freeform": {
         "key": "charge",

@@ -7,7 +7,8 @@
     "nl": "Zitbanken aan bushaltes",
     "es": "Bancos en una parada de transporte público",
     "hu": "Padok megállókban",
-    "it": "Panchine alle fermate del trasporto pubblico"
+    "it": "Panchine alle fermate del trasporto pubblico",
+    "ru": "Скамейки на остановках общественного транспорта"
   },
   "minzoom": 14,
   "source": {
@@ -26,7 +27,8 @@
       "nl": "Zitbank",
       "es": "Banco",
       "hu": "Pad",
-      "it": "Panchina"
+      "it": "Panchina",
+      "ru": "Скамейка"
     },
     "mappings": [
       {
@@ -43,7 +45,8 @@
           "fr": "Banc d'un arrêt de transport en commun",
           "nl": "Zitbank aan een bushalte",
           "hu": "Pad megállóban",
-          "it": "Panchina alla fermata del trasporto pubblico"
+          "it": "Panchina alla fermata del trasporto pubblico",
+          "ru": "Скамейка на остановке общественного транспорта"
         }
       },
       {
@@ -72,7 +75,8 @@
         "fr": "{name}",
         "nl": "{name}",
         "hu": "{name}",
-        "it": "{name}"
+        "it": "{name}",
+        "ru": "{name}"
       },
       "freeform": {
         "key": "name"

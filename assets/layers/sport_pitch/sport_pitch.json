@@ -3,7 +3,8 @@
   "name": {
     "nl": "Sportterrein",
     "fr": "Terrains de sport",
-    "en": "Sport pitches"
+    "en": "Sport pitches",
+    "ru": "Спортивные площадки"
   },
   "wayHandling": 1,
   "minzoom": 12,
@@ -21,7 +22,8 @@
     "render": {
       "nl": "Sportterrein",
       "fr": "Terrain de sport",
-      "en": "Sport pitch"
+      "en": "Sport pitch",
+      "ru": "Спортивная площадка"
     }
   },
   "description": {
@@ -80,7 +82,8 @@
           "then": {
             "nl": "Dit is een pingpongtafel",
             "fr": "C'est une table de ping-pong",
-            "en": "This is a pingpong table"
+            "en": "This is a pingpong table",
+            "ru": "Это стол для пинг-понга"
           }
         },
         {
@@ -131,7 +134,8 @@
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
         "fr": "La surface est <b>{surface}</b>",
-        "en": "The surface is <b>{surface}</b>"
+        "en": "The surface is <b>{surface}</b>",
+        "ru": "Поверхность - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -142,7 +146,8 @@
           "then": {
             "nl": "De ondergrond is <b>gras</b>",
             "fr": "La surface est de l'<b>herbe</b>",
-            "en": "The surface is <b>grass</b>"
+            "en": "The surface is <b>grass</b>",
+            "ru": "Поверхность - <b>трава</b>"
           }
         },
         {
@@ -150,7 +155,8 @@
           "then": {
             "nl": "De ondergrond is <b>zand</b>",
             "fr": "La surface est du <b>sable</b>",
-            "en": "The surface is <b>sand</b>"
+            "en": "The surface is <b>sand</b>",
+            "ru": "Поверхность - <b>песок</b>"
           }
         },
         {
@@ -158,7 +164,8 @@
           "then": {
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
             "fr": "La surface est des <b>pavés</b>",
-            "en": "The surface is <b>paving stones</b>"
+            "en": "The surface is <b>paving stones</b>",
+            "ru": "Поверхность - <b>брусчатка</b>"
           }
         },
         {
@@ -166,7 +173,8 @@
           "then": {
             "nl": "De ondergrond is <b>asfalt</b>",
             "fr": "La surface est de l'<b>asphalte</b>",
-            "en": "The surface is <b>asphalt</b>"
+            "en": "The surface is <b>asphalt</b>",
+            "ru": "Поверхность - <b>асфальт</b>"
           }
         },
         {
@@ -174,7 +182,8 @@
           "then": {
             "nl": "De ondergrond is <b>beton</b>",
             "fr": "La surface est du <b>béton</b>",
-            "en": "The surface is <b>concrete</b>"
+            "en": "The surface is <b>concrete</b>",
+            "ru": "Поверхность - <b>бетон</b>"
           }
         }
       ]
@@ -314,7 +323,8 @@
           "then": {
             "nl": "24/7 toegankelijk",
             "fr": "Accessible en permanence",
-            "en": "Always accessible"
+            "en": "Always accessible",
+            "ru": "Всегда доступен"
           }
         }
       ],
@@ -414,7 +424,8 @@
       "title": {
         "nl": "Sportterrein",
         "fr": "Terrain de sport",
-        "en": "Sport pitch"
+        "en": "Sport pitch",
+        "ru": "Спортивная площадка"
       },
       "tags": [
         "leisure=pitch",

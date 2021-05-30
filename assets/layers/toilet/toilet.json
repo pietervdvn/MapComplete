@@ -4,7 +4,8 @@
     "en": "Toilets",
     "de": "Toiletten",
     "fr": "Toilettes",
-    "nl": "Toiletten"
+    "nl": "Toiletten",
+    "ru": "Туалеты"
   },
   "source": {
     "osmTags": "amenity=toilets"
@@ -14,7 +15,8 @@
       "en": "Toilet",
       "de": "Toilette",
       "fr": "Toilettes",
-      "nl": "Toilet"
+      "nl": "Toilet",
+      "ru": "Туалет"
     }
   },
   "icon": {
@@ -41,7 +43,8 @@
         "en": "Toilet",
         "de": "Toilette",
         "fr": "Toilettes",
-        "nl": "Toilet"
+        "nl": "Toilet",
+        "ru": "Туалет"
       },
       "tags": [
         "amenity=toilets"
@@ -118,7 +121,8 @@
             "en": "Not accessible",
             "de": "Nicht zugänglich",
             "fr": "WC privés",
-            "nl": "Niet toegankelijk"
+            "nl": "Niet toegankelijk",
+            "ru": "Недоступно"
           }
         },
         {
@@ -145,7 +149,8 @@
             "en": "These are paid toilets",
             "de": "Dies sind bezahlte Toiletten",
             "fr": "Toilettes payantes",
-            "nl": "Men moet betalen om deze toiletten te gebruiken"
+            "nl": "Men moet betalen om deze toiletten te gebruiken",
+            "ru": "Это платные туалеты"
           },
           "if": "fee=yes"
         },

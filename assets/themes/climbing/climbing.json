@@ -751,7 +751,8 @@
           "then": {
             "de": "Sportklettern ist hier möglich",
             "en": "Sport climbing is possible here",
-            "nl": "Sportklimmen/voorklimmen kan hier"
+            "nl": "Sportklimmen/voorklimmen kan hier",
+            "ru": "Здесь можно заняться спортивным скалолазанием"
           }
         },
         {
@@ -759,7 +760,8 @@
           "then": {
             "de": "Sportklettern ist hier nicht möglich",
             "en": "Sport climbing is not possible here",
-            "nl": "Sportklimmen/voorklimmen kan hier niet"
+            "nl": "Sportklimmen/voorklimmen kan hier niet",
+            "ru": "Спортивное скалолазание здесь невозможно"
           }
         },
         {

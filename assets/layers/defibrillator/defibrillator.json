@@ -7,7 +7,8 @@
     "fr": "Défibrillateurs",
     "nl": "Defibrillatoren",
     "de": "Defibrillatoren",
-    "it": "Defibrillatori"
+    "it": "Defibrillatori",
+    "ru": "Дефибрилляторы"
   },
   "source": {
     "osmTags": "emergency=defibrillator"
@@ -25,7 +26,8 @@
       "fr": "Défibrillateur",
       "nl": "Defibrillator",
       "de": "Defibrillator",
-      "it": "Defibrillatore"
+      "it": "Defibrillatore",
+      "ru": "Дефибриллятор"
     }
   },
   "icon": {
@@ -34,7 +36,8 @@
       {
         "if": "_recently_surveyed=true",
         "then": {
-          "en": "./assets/layers/defibrillator/aed_checked.svg"
+          "en": "./assets/layers/defibrillator/aed_checked.svg",
+          "ru": "./assets/layers/defibrillator/aed_checked.svg"
         }
       }
     ]
@@ -49,7 +52,8 @@
         "fr": "Défibrillateur",
         "nl": "Defibrillator",
         "de": "Defibrillator",
-        "it": "Defibrillatore"
+        "it": "Defibrillatore",
+        "ru": "Дефибриллятор"
       },
       "tags": [
         "emergency=defibrillator"
@@ -456,13 +460,15 @@
         "en": "{opening_hours_table(opening_hours)}",
         "nl": "{opening_hours_table(opening_hours)}",
         "fr": "{opening_hours_table(opening_hours)}",
-        "it": "{opening_hours_table(opening_hours)}"
+        "it": "{opening_hours_table(opening_hours)}",
+        "ru": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "At what times is this defibrillator available?",
         "nl": "Wanneer is deze defibrillator beschikbaar?",
         "fr": "À quels horaires ce défibrillateur est-il accessible ?",
-        "it": "In quali orari è disponibile questo defibrillatore?"
+        "it": "In quali orari è disponibile questo defibrillatore?",
+        "ru": "В какое время доступен этот дефибриллятор?"
       },
       "freeform": {
         "key": "opening_hours",
@@ -485,7 +491,8 @@
         "en": "Additional information: {description}",
         "nl": "Aanvullende info: {description}",
         "fr": "Informations supplémentaires : {description}",
-        "it": "Informazioni supplementari: {description}"
+        "it": "Informazioni supplementari: {description}",
+        "ru": "Дополнительная информация: {description}"
       },
       "question": {
         "en": "Is there any useful information for users that you haven't been able to describe above? (leave blank if no)",
@@ -522,7 +529,8 @@
             "en": "Checked today!",
             "nl": "Vandaag nagekeken!",
             "fr": "Vérifié aujourd'hui !",
-            "it": "Verificato oggi!"
+            "it": "Verificato oggi!",
+            "ru": "Проверено сегодня!"
           }
         }
       ]

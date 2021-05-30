@@ -152,7 +152,8 @@
           "then": {
             "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
             "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "fr": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+            "fr": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
+            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
           }
         },
         {
@@ -181,7 +182,8 @@
             "en": "Underground parking",
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
-            "it": "Parcheggio sotterraneo"
+            "it": "Parcheggio sotterraneo",
+            "ru": "Подземная парковка"
           }
         },
         {
@@ -190,7 +192,8 @@
             "en": "Underground parking",
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
-            "it": "Parcheggio sotterraneo"
+            "it": "Parcheggio sotterraneo",
+            "ru": "Подземная парковка"
           }
         },
         {
@@ -221,7 +224,8 @@
             "nl": "Dakparking",
             "fr": "Parking sur un toit",
             "hu": "Tetőparkoló",
-            "it": "Parcheggio sul tetto"
+            "it": "Parcheggio sul tetto",
+            "ru": "Парковка на крыше"
           }
         }
       ]
@@ -277,7 +281,8 @@
         "fr": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
         "nl": "Hoeveel fietsen kunnen in deze fietsparking (inclusief potentiëel bakfietsen)?",
         "gl": "Cantas bicicletas caben neste aparcadoiro de bicicletas (incluídas as posíbeis bicicletas de carga)?",
-        "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?"
+        "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz (einschließlich möglicher Lastenfahrräder)?",
+        "it": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?"
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -305,7 +310,8 @@
         "de": "{access}",
         "fr": "{access}",
         "nl": "{access}",
-        "it": "{access}"
+        "it": "{access}",
+        "ru": "{access}"
       },
       "freeform": {
         "key": "access",
@@ -350,7 +356,8 @@
         "nl": "Heeft deze fietsparking plaats voor bakfietsen?",
         "gl": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?",
         "de": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?",
-        "fr": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
+        "fr": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?",
+        "it": "Questo parcheggio dispone di posti specifici per le bici da trasporto?"
       },
       "mappings": [
         {
@@ -360,7 +367,8 @@
             "nl": "Deze parking heeft plaats voor bakfietsen",
             "gl": "Este aparcadoiro ten espazo para bicicletas de carga.",
             "de": "Dieser Parkplatz bietet Platz für Lastenfahrräder",
-            "fr": "Ce parking a de la place pour les vélos cargo"
+            "fr": "Ce parking a de la place pour les vélos cargo",
+            "it": "Questo parcheggio ha posto per bici da trasporto"
           }
         },
         {
@@ -370,7 +378,8 @@
             "nl": "Er zijn speciale plaatsen voorzien voor bakfietsen",
             "gl": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga.",
             "de": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder.",
-            "fr": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo."
+            "fr": "Ce parking a des emplacements (officiellement) destinés aux vélos cargo.",
+            "it": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
           }
         },
         {
@@ -380,7 +389,8 @@
             "nl": "Je mag hier geen bakfietsen parkeren",
             "gl": "Non está permitido aparcar bicicletas de carga",
             "de": "Es ist nicht erlaubt, Lastenfahrräder zu parken",
-            "fr": "Il est interdit de garer des vélos cargo"
+            "fr": "Il est interdit de garer des vélos cargo",
+            "it": "Il parcheggio delle bici da trasporto è proibito"
           }
         }
       ]
@@ -392,14 +402,16 @@
         "nl": "Voor hoeveel bakfietsen heeft deze fietsparking plaats?",
         "fr": "Combien de vélos de transport entrent dans ce parking à vélos ?",
         "gl": "Cantas bicicletas de carga caben neste aparcadoiro de bicicletas?",
-        "de": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?"
+        "de": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
+        "it": "Quante bici da trasporto entrano in questo parcheggio per bici?"
       },
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
         "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
         "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport.",
         "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
-        "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
+        "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",
+        "it": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
       },
       "condition": "cargo_bike~designated|yes",
       "freeform": {

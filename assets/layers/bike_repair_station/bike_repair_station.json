@@ -93,7 +93,8 @@
           "fr": "Pompe de vélo <i>{name}</i>",
           "gl": "Bomba de ar <i>{name}</i>",
           "de": "Fahrradpumpe <i>{name}</i>",
-          "it": "Pompa per bici <i>{name}</i>"
+          "it": "Pompa per bici <i>{name}</i>",
+          "ru": "Велосипедный насос <i>{name}</i>"
         }
       },
       {
@@ -109,7 +110,8 @@
           "fr": "Pompe de vélo",
           "gl": "Bomba de ar",
           "de": "Fahrradpumpe",
-          "it": "Pompa per bici"
+          "it": "Pompa per bici",
+          "ru": "Велосипедный насос"
         }
       }
     ]
@@ -319,7 +321,8 @@
         "fr": "Est-ce que cette pompe marche t'elle toujours?",
         "gl": "Segue a funcionar a bomba de ar?",
         "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
-        "it": "La pompa per bici è sempre funzionante?"
+        "it": "La pompa per bici è sempre funzionante?",
+        "ru": "Велосипедный насос все еще работает?"
       },
       "condition": "service:bicycle:pump=yes",
       "mappings": [
@@ -331,7 +334,8 @@
             "fr": "La pompe est cassé",
             "gl": "A bomba de ar está estragada",
             "de": "Die Fahrradpumpe ist kaputt",
-            "it": "La pompa per bici è guasta"
+            "it": "La pompa per bici è guasta",
+            "ru": "Велосипедный насос сломан"
           }
         },
         {
@@ -342,7 +346,8 @@
             "fr": "La pompe est opérationnelle",
             "gl": "A bomba de ar está operativa",
             "de": "Die Fahrradpumpe ist betriebsbereit",
-            "it": "La pompa per bici funziona"
+            "it": "La pompa per bici funziona",
+            "ru": "Велосипедный насос работает"
           }
         }
       ]
@@ -362,7 +367,8 @@
         "fr": "Cette pompe est compatible avec les valves suivantes: {valves}",
         "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}",
         "de": "Diese Pumpe unterstützt die folgenden Ventile: {valves}",
-        "it": "Questa pompa è compatibile con le seguenti valvole: {valves}"
+        "it": "Questa pompa è compatibile con le seguenti valvole: {valves}",
+        "ru": "Этот насос поддерживает следующие клапаны: {valves}"
       },
       "freeform": {
         "#addExtraTags": [
@@ -380,7 +386,8 @@
             "fr": "Sclaverand (aussi appelé Presta)",
             "gl": "Sclaverand (tamén coñecido como Presta)",
             "de": "Sklaverand (auch bekannt als Presta)",
-            "it": "Sclaverand (detta anche Presta)"
+            "it": "Sclaverand (detta anche Presta)",
+            "ru": "Клапан Presta (также известный как французский клапан)"
           }
         },
         {
@@ -391,7 +398,8 @@
             "fr": "Dunlop",
             "gl": "Dunlop",
             "de": "Dunlop",
-            "it": "Dunlop"
+            "it": "Dunlop",
+            "ru": "Клапан Dunlop"
           }
         },
         {
@@ -414,7 +422,8 @@
         "fr": "Est-ce que cette pompe est électrique?",
         "gl": "Esta é unha bomba de ar eléctrica?",
         "de": "Ist dies eine elektrische Fahrradpumpe?",
-        "it": "Questa pompa per bici è elettrica?"
+        "it": "Questa pompa per bici è elettrica?",
+        "ru": "Это электрический велосипедный насос?"
       },
       "condition": "service:bicycle:pump=yes",
       "mappings": [
@@ -426,7 +435,8 @@
             "fr": "Pompe manuelle",
             "gl": "Bomba de ar manual",
             "de": "Manuelle Pumpe",
-            "it": "Pompa manuale"
+            "it": "Pompa manuale",
+            "ru": "Ручной насос"
           }
         },
         {
@@ -437,7 +447,8 @@
             "fr": "Pompe électrique",
             "gl": "Bomba de ar eléctrica",
             "de": "Elektrische Pumpe",
-            "it": "Pompa elettrica"
+            "it": "Pompa elettrica",
+            "ru": "Электрический насос"
           }
         }
       ]
@@ -461,7 +472,8 @@
             "fr": "Il y a un manomètre",
             "gl": "Hai manómetro",
             "de": "Es gibt ein Manometer",
-            "it": "C’è un manometro"
+            "it": "C’è un manometro",
+            "ru": "Есть манометр"
           }
         },
         {
@@ -472,7 +484,8 @@
             "fr": "Il n'y a pas de manomètre",
             "gl": "Non hai manómetro",
             "de": "Es gibt kein Manometer",
-            "it": "Non c’è un manometro"
+            "it": "Non c’è un manometro",
+            "ru": "Нет манометра"
           }
         },
         {
@@ -483,7 +496,8 @@
             "fr": "Il y a un manomètre mais il est cassé",
             "gl": "Hai manómetro pero está estragado",
             "de": "Es gibt ein Manometer, aber es ist kaputt",
-            "it": "C’è un manometro ma è rotto"
+            "it": "C’è un manometro ma è rotto",
+            "ru": "Есть манометр, но он сломан"
           }
         }
       ]
@@ -491,7 +505,8 @@
   ],
   "icon": {
     "render": {
-      "en": "./assets/layers/bike_repair_station/repair_station.svg"
+      "en": "./assets/layers/bike_repair_station/repair_station.svg",
+      "ru": "./assets/layers/bike_repair_station/repair_station.svg"
     },
     "mappings": [
       {
@@ -562,7 +577,8 @@
         "fr": "Pompe à vélo",
         "gl": "Bomba de ar",
         "de": "Fahrradpumpe",
-        "it": "Pompa per bici"
+        "it": "Pompa per bici",
+        "ru": "Велосипедный насос"
       },
       "tags": [
         "amenity=bicycle_repair_station",

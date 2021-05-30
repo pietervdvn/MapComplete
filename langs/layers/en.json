@@ -1092,7 +1092,7 @@
                 }
             },
             "3": {
-                "render": "Accessible to kids older then {min_age} years",
+                "render": "Accessible to kids older than {min_age} years",
                 "question": "What is the minimum age required to access this playground?"
             },
             "4": {
@@ -1116,7 +1116,7 @@
                         "then": "Only accessible for clients of the operating business"
                     },
                     "3": {
-                        "then": "Only accessible to studants of the school"
+                        "then": "Only accessible to students of the school"
                     },
                     "4": {
                         "then": "Not accessible"

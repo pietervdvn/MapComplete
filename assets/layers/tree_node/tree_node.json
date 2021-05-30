@@ -3,7 +3,8 @@
   "name": {
     "nl": "Boom",
     "en": "Tree",
-    "it": "Albero"
+    "it": "Albero",
+    "ru": "Дерево"
   },
   "minzoom": 14,
   "source": {
@@ -17,7 +18,8 @@
     "render": {
       "nl": "Boom",
       "en": "Tree",
-      "it": "Albero"
+      "it": "Albero",
+      "ru": "Дерево"
     },
     "mappings": [
       {
@@ -28,7 +30,8 @@
           "ca": "<i>{name}</i>",
           "de": "<i>{name}</i>",
           "fr": "<i>{name}</i>",
-          "it": "<i>{name}</i>"
+          "it": "<i>{name}</i>",
+          "ru": "<i>{name}</i>"
         }
       }
     ]
@@ -39,7 +42,8 @@
       "render": {
         "nl": "Hoogte: {height}",
         "en": "Height: {height}",
-        "it": "Altezza: {height}"
+        "it": "Altezza: {height}",
+        "ru": "Высота: {height}"
       },
       "condition": {
         "and": [
@@ -56,7 +60,8 @@
           "then": {
             "nl": "Hoogte: {height}&nbsp;m",
             "en": "Height: {height}&nbsp;m",
-            "it": "Altezza: {height}&nbsp;m"
+            "it": "Altezza: {height}&nbsp;m",
+            "ru": "Высота: {height}&nbsp;м"
           }
         }
       ]
@@ -254,7 +259,8 @@
       "render": {
         "nl": "Naam: {name}",
         "en": "Name: {name}",
-        "it": "Nome: {name}"
+        "it": "Nome: {name}",
+        "ru": "Название: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -488,7 +494,8 @@
       "title": {
         "nl": "Boom",
         "en": "Tree",
-        "it": "Albero"
+        "it": "Albero",
+        "ru": "Дерево"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

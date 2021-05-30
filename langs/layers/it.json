@@ -306,6 +306,9 @@
                     "2": {
                         "then": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
                     },
+                    "6": {
+                        "then": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                    },
                     "7": {
                         "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
                     }
@@ -343,6 +346,7 @@
                 }
             },
             "4": {
+                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?",
                 "render": "Posti per {capacity} bici"
             },
             "5": {
@@ -359,6 +363,24 @@
                         "then": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione"
                     }
                 }
+            },
+            "6": {
+                "question": "Questo parcheggio dispone di posti specifici per le bici da trasporto?",
+                "mappings": {
+                    "0": {
+                        "then": "Questo parcheggio ha posto per bici da trasporto"
+                    },
+                    "1": {
+                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
+                    },
+                    "2": {
+                        "then": "Il parcheggio delle bici da trasporto è proibito"
+                    }
+                }
+            },
+            "7": {
+                "question": "Quante bici da trasporto entrano in questo parcheggio per bici?",
+                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
             }
         }
     },
@@ -949,6 +971,140 @@
                         "then": "I cani sono liberi di girare liberi"
                     }
                 }
+            },
+            "6": {
+                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
+            },
+            "7": {
+                "question": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+                "render": "{curator} è il curatore di questa riserva naturale"
+            },
+            "8": {
+                "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "12": {
+                "render": "Area: {_surface:ha} ha"
+            }
+        }
+    },
+    "picnic_table": {
+        "name": "Tavoli da picnic",
+        "title": {
+            "render": "Tavolo da picnic"
+        },
+        "description": "Il livello che mostra i tavoli da picnic",
+        "tagRenderings": {
+            "0": {
+                "question": "Di che materiale è fatto questo tavolo da picnic?",
+                "render": "Questo tavolo da picnic è fatto di {material}",
+                "mappings": {
+                    "0": {
+                        "then": "È un tavolo da picnic in legno"
+                    },
+                    "1": {
+                        "then": "È un tavolo da picnic in cemento"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Tavolo da picnic"
+            }
+        }
+    },
+    "playground": {
+        "description": "Parchi giochi",
+        "title": {
+            "render": "Parco giochi",
+            "mappings": {
+                "0": {
+                    "then": "Parco giochi <i>{name}</i>"
+                }
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
+                "render": "La superficie è <b>{surface}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "La superficie è <b>prato</b>"
+                    },
+                    "1": {
+                        "then": "La superficie è <b>sabbia</b>"
+                    },
+                    "2": {
+                        "then": "La superficie consiste di <b>trucioli di legno</b>"
+                    },
+                    "3": {
+                        "then": "La superficie è <b>mattonelle regolari</b>"
+                    },
+                    "4": {
+                        "then": "La superficie è <b>asfalto</b>"
+                    },
+                    "5": {
+                        "then": "La superficie è <b>cemento</b>"
+                    },
+                    "6": {
+                        "then": "La superficie è <b>non pavimentato</b>"
+                    },
+                    "7": {
+                        "then": "La superficie è <b>pavimentato</b>"
+                    }
+                }
+            },
+            "2": {
+                "question": "È illuminato di notte questo parco giochi?",
+                "mappings": {
+                    "0": {
+                        "then": "Questo parco giochi è illuminato di notte"
+                    },
+                    "1": {
+                        "then": "Questo parco giochi non è illuminato di notte"
+                    }
+                }
+            },
+            "3": {
+                "render": "Accessibile ai bambini di almeno {min_age} anni",
+                "question": "Qual è l’età minima per accedere a questo parco giochi?"
+            },
+            "4": {
+                "render": "Accessibile ai bambini di età inferiore a {max_age}",
+                "question": "Qual è l’età massima per accedere a questo parco giochi?"
+            },
+            "5": {
+                "question": "Chi è il responsabile di questo parco giochi?",
+                "render": "Gestito da {operator}"
+            },
+            "6": {
+                "question": "Questo parco giochi è pubblicamente accessibile?",
+                "mappings": {
+                    "0": {
+                        "then": "Accessibile pubblicamente"
+                    },
+                    "1": {
+                        "then": "Accessibile pubblicamente"
+                    },
+                    "2": {
+                        "then": "Accessibile solamente ai clienti dell’attività che lo gestisce"
+                    },
+                    "3": {
+                        "then": "Accessibile solamente agli studenti della scuola"
+                    },
+                    "4": {
+                        "then": "Non accessibile"
+                    }
+                }
+            },
+            "7": {
+                "question": "Qual è l’indirizzo email del gestore di questo parco giochi?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
             }
         }
     },
