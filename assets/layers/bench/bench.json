@@ -24,7 +24,8 @@
       "es": "Banco",
       "hu": "Pad",
       "id": "Bangku",
-      "it": "Panchina"
+      "it": "Panchina",
+      "ru": "Скамейка"
     }
   },
   "tagRenderings": [
@@ -38,7 +39,8 @@
         "es": "Respaldo",
         "hu": "Háttámla",
         "id": "Sandaran",
-        "it": "Schienale"
+        "it": "Schienale",
+        "ru": "Спинка"
       },
       "freeform": {
         "key": "backrest"
@@ -54,7 +56,8 @@
             "es": "Respaldo: Si",
             "hu": "Háttámla: Igen",
             "id": "Sandaran: Ya",
-            "it": "Schienale: Sì"
+            "it": "Schienale: Sì",
+            "ru": "Со спинкой"
           }
         },
         {
@@ -67,7 +70,8 @@
             "es": "Respaldo: No",
             "hu": "Háttámla: Nem",
             "id": "Sandaran: Tidak",
-            "it": "Schienale: No"
+            "it": "Schienale: No",
+            "ru": "Без спинки"
           }
         }
       ],
@@ -79,7 +83,8 @@
         "es": "¿Este banco tiene un respaldo?",
         "hu": "Van háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
-        "it": "Questa panchina ha lo schienale?"
+        "it": "Questa panchina ha lo schienale?",
+        "ru": "Есть ли у этой скамейки спинка?"
       }
     },
     {
@@ -91,7 +96,8 @@
         "es": "{seats} asientos",
         "hu": "{seats} ülőhely",
         "id": "{seats} kursi",
-        "it": "{seats} posti"
+        "it": "{seats} posti",
+        "ru": "{seats} мест"
       },
       "freeform": {
         "key": "seats",
@@ -104,7 +110,8 @@
         "nl": "Hoeveel zitplaatsen heeft deze bank?",
         "es": "¿Cuántos asientos tiene este banco?",
         "hu": "Hány ülőhely van ezen a padon?",
-        "it": "Quanti posti ha questa panchina?"
+        "it": "Quanti posti ha questa panchina?",
+        "ru": "Сколько мест на этой скамейке?"
       }
     },
     {
@@ -218,7 +225,8 @@
         "nl": "In welke richting kijk je wanneer je op deze zitbank zit?",
         "fr": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
         "hu": "Milyen irányba néz a pad?",
-        "it": "In che direzione si guarda quando si è seduti su questa panchina?"
+        "it": "In che direzione si guarda quando si è seduti su questa panchina?",
+        "ru": "В каком направлении вы смотрите, когда сидите на скамейке?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -240,7 +248,8 @@
         "fr": "Couleur : {colour}",
         "nl": "Kleur: {colour}",
         "hu": "Szín: {colour}",
-        "it": "Colore: {colour}"
+        "it": "Colore: {colour}",
+        "ru": "Цвет: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -248,7 +257,8 @@
         "fr": "Quelle est la couleur de ce banc ?",
         "nl": "Welke kleur heeft deze zitbank?",
         "hu": "Milyen színű a pad?",
-        "it": "Di che colore è questa panchina?"
+        "it": "Di che colore è questa panchina?",
+        "ru": "Какого цвета скамейка?"
       },
       "freeform": {
         "key": "colour",
@@ -403,7 +413,8 @@
         "fr": "Banc",
         "nl": "Zitbank",
         "es": "Banco",
-        "it": "Panchina"
+        "it": "Panchina",
+        "ru": "Скамейка"
       },
       "description": {
         "en": "Add a new bench",
@@ -412,7 +423,8 @@
         "nl": "Voeg een nieuwe zitbank toe",
         "es": "Añadir un nuevo banco",
         "hu": "Pad hozzáadása",
-        "it": "Aggiungi una nuova panchina"
+        "it": "Aggiungi una nuova panchina",
+        "ru": "Добавить новую скамейку"
       }
     }
   ]

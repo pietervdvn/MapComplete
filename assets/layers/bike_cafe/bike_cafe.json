@@ -188,7 +188,8 @@
         "fr": "Quel est le site internet de {name}?",
         "gl": "Cal é a páxina web de {name}?",
         "de": "Was ist die Webseite von {name}?",
-        "it": "Qual è il sito web di {name}?"
+        "it": "Qual è il sito web di {name}?",
+        "ru": "Какой сайт у {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -202,7 +203,8 @@
         "fr": "Quel est le nom de {name}?",
         "gl": "Cal é o número de teléfono de {name}?",
         "de": "Wie lautet die Telefonnummer von {name}?",
-        "it": "Qual è il numero di telefono di {name}?"
+        "it": "Qual è il numero di telefono di {name}?",
+        "ru": "Какой номер телефона у {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -217,7 +219,8 @@
         "fr": "Quel est l'adresse email de {name}?",
         "gl": "Cal é o enderezo de correo electrónico de {name}?",
         "de": "Wie lautet die E-Mail-Adresse von {name}?",
-        "it": "Qual è l’indirizzo email di {name}?"
+        "it": "Qual è l’indirizzo email di {name}?",
+        "ru": "Какой адрес электронной почты у {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {

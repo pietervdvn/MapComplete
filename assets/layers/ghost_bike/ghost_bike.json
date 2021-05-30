@@ -97,7 +97,8 @@
         "en": "<a href='{source}' target='_blank'>More information is available</a>",
         "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
         "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
-        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>"
+        "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
+        "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>"
       },
       "freeform": {
         "type": "url",
@@ -117,7 +118,8 @@
         "de": "<i>{inscription}</i>",
         "ca": "<i>{inscription}</i>",
         "fr": "<i>{inscription}</i>",
-        "it": "<i>{inscription}</i>"
+        "it": "<i>{inscription}</i>",
+        "ru": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"

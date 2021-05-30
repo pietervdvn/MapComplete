@@ -112,7 +112,8 @@
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
-        "en": "The surface is <b>{surface}</b>"
+        "en": "The surface is <b>{surface}</b>",
+        "ru": "Поверхность - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -122,14 +123,16 @@
           "if": "surface=grass",
           "then": {
             "nl": "De ondergrond is <b>gras</b>",
-            "en": "The surface is <b>grass</b>"
+            "en": "The surface is <b>grass</b>",
+            "ru": "Поверхность - <b>трава</b>"
           }
         },
         {
           "if": "surface=ground",
           "then": {
             "nl": "De ondergrond is <b>aarde</b>",
-            "en": "The surface is <b>ground</b>"
+            "en": "The surface is <b>ground</b>",
+            "ru": "Поверхность - <b>земля</b>"
           }
         },
         {
@@ -144,28 +147,32 @@
           "if": "surface=sand",
           "then": {
             "nl": "De ondergrond is <b>zand</b>",
-            "en": "The surface is <b>sand</b>"
+            "en": "The surface is <b>sand</b>",
+            "ru": "Поверхность - <b>песок</b>"
           }
         },
         {
           "if": "surface=paving_stones",
           "then": {
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
-            "en": "The surface is <b>paving stones</b>"
+            "en": "The surface is <b>paving stones</b>",
+            "ru": "Поверхность - <b>брусчатка</b>"
           }
         },
         {
           "if": "surface=asphalt",
           "then": {
             "nl": "De ondergrond is <b>asfalt</b>",
-            "en": "The surface is <b>asphalt</b>"
+            "en": "The surface is <b>asphalt</b>",
+            "ru": "Поверхность - <b>асфальт</b>"
           }
         },
         {
           "if": "surface=concrete",
           "then": {
             "nl": "De ondergrond is <b>beton</b>",
-            "en": "The surface is <b>concrete</b>"
+            "en": "The surface is <b>concrete</b>",
+            "ru": "Поверхность - <b>бетон</b>"
           }
         },
         {

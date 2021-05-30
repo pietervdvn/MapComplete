@@ -3,7 +3,8 @@
   "name": {
     "en": "Maps",
     "nl": "Kaarten",
-    "it": "Mappe"
+    "it": "Mappe",
+    "ru": "Карты"
   },
   "minzoom": 12,
   "source": {
@@ -18,7 +19,8 @@
     "render": {
       "en": "Map",
       "nl": "Kaart",
-      "it": "Mappa"
+      "it": "Mappa",
+      "ru": "Карта"
     }
   },
   "description": {
@@ -45,7 +47,8 @@
           "then": {
             "en": "This map is based on OpenStreetMap",
             "nl": "Deze kaart is gebaseerd op OpenStreetMap",
-            "it": "Questa mappa si basa su OpenStreetMap"
+            "it": "Questa mappa si basa su OpenStreetMap",
+            "ru": "Эта карта основана на OpenStreetMap"
           }
         }
       ],
@@ -55,7 +58,8 @@
       "render": {
         "en": "This map is based on {map_source}",
         "nl": "Deze kaart is gebaseerd op {map_source}",
-        "it": "Questa mappa si basa su {map_source}"
+        "it": "Questa mappa si basa su {map_source}",
+        "ru": "Эта карта основана на {map_source}"
       }
     },
     {
@@ -185,7 +189,8 @@
       "title": {
         "en": "Map",
         "nl": "Kaart",
-        "it": "Mappa"
+        "it": "Mappa",
+        "ru": "Карта"
       },
       "description": {
         "en": "Add a missing map",

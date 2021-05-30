@@ -44,7 +44,8 @@
       "question": {
         "en": "Do you want to add a description?",
         "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
-        "de": "Möchten Sie eine Beschreibung hinzufügen?"
+        "de": "Möchten Sie eine Beschreibung hinzufügen?",
+        "ru": "Вы хотите добавить описание?"
       },
       "render": "{description}",
       "freeform": {

@@ -6,7 +6,8 @@
     "fr": "Eau potable",
     "gl": "Auga potábel",
     "de": "Trinkwasser",
-    "it": "Acqua potabile"
+    "it": "Acqua potabile",
+    "ru": "Питьевая вода"
   },
   "title": {
     "render": {
@@ -15,7 +16,8 @@
       "fr": "Eau potable",
       "gl": "Auga potábel",
       "de": "Trinkwasser",
-      "it": "Acqua potabile"
+      "it": "Acqua potabile",
+      "ru": "Питьевая вода"
     }
   },
   "icon": {
@@ -57,7 +59,8 @@
         "fr": "Eau potable",
         "gl": "Auga potábel",
         "de": "Trinkwasser",
-        "it": "Acqua potabile"
+        "it": "Acqua potabile",
+        "ru": "Питьевая вода"
       },
       "tags": [
         "amenity=drinking_water"

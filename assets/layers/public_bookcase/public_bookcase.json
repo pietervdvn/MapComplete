@@ -4,7 +4,8 @@
     "en": "Bookcases",
     "nl": "Boekenruilkastjes",
     "de": "Bücherschränke",
-    "fr": "Microbibliothèque"
+    "fr": "Microbibliothèque",
+    "ru": "Книжные шкафы"
   },
   "description": {
     "en": "A streetside cabinet with books, accessible to anyone",
@@ -22,7 +23,8 @@
       "en": "Bookcase",
       "nl": "Boekenruilkast",
       "de": "Bücherschrank",
-      "fr": "Microbibliothèque"
+      "fr": "Microbibliothèque",
+      "ru": "Книжный шкаф"
     },
     "mappings": [
       {
@@ -31,7 +33,8 @@
           "en": "Public bookcase <i>{name}</i>",
           "nl": "Boekenruilkast <i>{name}</i>",
           "de": "Öffentlicher Bücherschrank <i>{name}</i>",
-          "fr": "Microbibliothèque <i>{name}</i>"
+          "fr": "Microbibliothèque <i>{name}</i>",
+          "ru": "Общественный книжный шкаф <i>{name}</i>"
         }
       }
     ]
@@ -59,7 +62,8 @@
         "en": "Bookcase",
         "nl": "Boekenruilkast",
         "de": "Bücherschrank",
-        "fr": "Microbibliothèque"
+        "fr": "Microbibliothèque",
+        "ru": "Книжный шкаф"
       },
       "tags": [
         "amenity=public_bookcase"
@@ -79,7 +83,8 @@
         "en": "What is the name of this public bookcase?",
         "nl": "Wat is de naam van dit boekenuilkastje?",
         "de": "Wie heißt dieser öffentliche Bücherschrank?",
-        "fr": "Quel est le nom de cette microbibliothèque ?"
+        "fr": "Quel est le nom de cette microbibliothèque ?",
+        "ru": "Как называется этот общественный книжный шкаф?"
       },
       "freeform": {
         "key": "name"
@@ -96,7 +101,8 @@
             "en": "This bookcase doesn't have a name",
             "nl": "Dit boekenruilkastje heeft geen naam",
             "de": "Dieser Bücherschrank hat keinen Namen",
-            "fr": "Cette microbibliothèque n'a pas de nom"
+            "fr": "Cette microbibliothèque n'a pas de nom",
+            "ru": "У этого книжного шкафа нет названия"
           }
         }
       ]
@@ -112,7 +118,8 @@
         "en": "How many books fit into this public bookcase?",
         "nl": "Hoeveel boeken passen er in dit boekenruilkastje?",
         "de": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?",
-        "fr": "Combien de livre rentrent dans cette microbibliothèque ?"
+        "fr": "Combien de livre rentrent dans cette microbibliothèque ?",
+        "ru": "Сколько книг помещается в этом общественном книжном шкафу?"
       },
       "freeform": {
         "key": "capacity",
@@ -133,7 +140,8 @@
             "en": "Mostly children books",
             "nl": "Voornamelijk kinderboeken",
             "de": "Vorwiegend Kinderbücher",
-            "fr": "Livres pour enfants"
+            "fr": "Livres pour enfants",
+            "ru": "В основном детские книги"
           }
         },
         {
@@ -142,7 +150,8 @@
             "en": "Mostly books for adults",
             "nl": "Voornamelijk boeken voor volwassenen",
             "de": "Vorwiegend Bücher für Erwachsene",
-            "fr": "Livres pour les adultes"
+            "fr": "Livres pour les adultes",
+            "ru": "В основном книги для взрослых"
           }
         },
         {
@@ -347,7 +356,8 @@
         "en": "More info on <a href='{website}' target='_blank'>the website</a>",
         "nl": "Meer info op <a href='{website}' target='_blank'>de website</a>",
         "de": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
-        "fr": "Plus d'info sur <a href='{website} target='_blank'>le site web</a>"
+        "fr": "Plus d'info sur <a href='{website} target='_blank'>le site web</a>",
+        "ru": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>"
       },
       "question": {
         "en": "Is there a website with more information about this public bookcase?",

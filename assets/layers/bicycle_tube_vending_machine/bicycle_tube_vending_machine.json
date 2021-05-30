@@ -77,7 +77,8 @@
         "en": "Is this vending machine still operational?",
         "nl": "Is deze verkoopsautomaat nog steeds werkende?",
         "fr": "Cette machine est-elle encore opérationelle ?",
-        "it": "Questo distributore automatico funziona ancora?"
+        "it": "Questo distributore automatico funziona ancora?",
+        "ru": "Этот торговый автомат все еще работает?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
@@ -96,7 +97,8 @@
             "nl": "Deze verkoopsautomaat werkt",
             "fr": "Le distributeur automatique fonctionne",
             "hu": "Az automata működik",
-            "it": "Il distributore automatico funziona"
+            "it": "Il distributore automatico funziona",
+            "ru": "Этот торговый автомат работает"
           }
         },
         {
@@ -106,7 +108,8 @@
             "nl": "Deze verkoopsautomaat is kapot",
             "fr": "Le distributeur automatique est en panne",
             "hu": "Az automata elromlott",
-            "it": "Il distributore automatico è guasto"
+            "it": "Il distributore automatico è guasto",
+            "ru": "Этот торговый автомат сломан"
           }
         },
         {
@@ -116,7 +119,8 @@
             "nl": "Deze verkoopsautomaat is uitgeschakeld",
             "fr": "Le distributeur automatique est fermé",
             "hu": "Az automata zárva van",
-            "it": "Il distributore automatico è spento"
+            "it": "Il distributore automatico è spento",
+            "ru": "Этот торговый автомат закрыт"
           }
         }
       ]
