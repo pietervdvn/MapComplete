@@ -89,7 +89,7 @@ function clearAll(preferences){
 function SalvageButton(theme: { themeName: string, contents: string }) {
     return new SubtleButton("./assets/svg/bug.svg", "Download broken theme " + theme.themeName).onClick(
         () => {
-            Utils.downloadTxtFile(theme.contents, theme.themeName + ".json")
+            Utils.offerContentsAsDownloadableFile(theme.contents, theme.themeName + ".json")
         }
     )
 }

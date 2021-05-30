@@ -301,7 +301,7 @@ export class Utils {
      * @param contents
      * @param fileName
      */
-    public static downloadTxtFile(contents: string, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt") {
         const element = document.createElement("a");
         const file = new Blob([contents], {type: 'text/plain'});
         element.href = URL.createObjectURL(file);
