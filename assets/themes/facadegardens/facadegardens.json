@@ -14,7 +14,8 @@
   },
   "language": [
     "nl",
-    "en"
+    "en",
+    "ru"
   ],
   "maintainer": "joost schouppe; stla",
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
@@ -172,7 +173,8 @@
         {
           "render": {
             "nl": "Aanlegdatum van de tuin: {start_date}",
-            "en": "Construction date of the garden: {start_date}"
+            "en": "Construction date of the garden: {start_date}",
+            "ru": "Дата строительства сада: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
