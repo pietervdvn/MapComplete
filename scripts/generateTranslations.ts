@@ -181,7 +181,7 @@ function compileTranslationsFromWeblate() {
 
 }
 
-// Get all the strings out of the layers
+// Get all the strings out of the layers; writes them onto the weblate paths
 function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: string } }[], target: string) {
     const tr = new TranslationPart();
 
@@ -275,7 +275,7 @@ function loadTranslationFilesFrom(target: string): Map<string, any> {
 }
 
 /**
- * Load the translations back into the layers
+ * Load the translations from the weblate files back into the layers
  */
 function mergeLayerTranslations() {
 
@@ -306,11 +306,17 @@ function mergeThemeTranslations() {
 }
 
 
-mergeLayerTranslations();
-mergeThemeTranslations();
+const themeOverwritesWeblate = process.argv[0] === "--ignore-weblate"
+
+if(!themeOverwritesWeblate) {
+    mergeLayerTranslations();
+    mergeThemeTranslations();
+}
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
 generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
 
-
-compileTranslationsFromWeblate();
+if(!themeOverwritesWeblate) {
+// Generates the core translations
+    compileTranslationsFromWeblate();
+}
 genTranslations()
