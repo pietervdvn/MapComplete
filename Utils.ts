@@ -1,5 +1,4 @@
 import * as colors from "./assets/colors.json"
-import * as polygon_features from "./assets/polygon-features.json"
 
 export class Utils {
 
@@ -10,28 +9,12 @@ export class Utils {
      */
     public static runningFromConsole = false;
     public static readonly assets_path = "./assets/svg/";
-    // Empty
-    private static polygonFeatures = Utils.constructPolygonFeatures()
+
+    
+    
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
-    public static isPolygon(tags: any): boolean {
-        for (const tagsKey in tags) {
-            if (!tags.hasOwnProperty(tagsKey)) {
-                continue
-            }
-            const polyGuide = Utils.polygonFeatures.get(tagsKey)
-            if (polyGuide === undefined) {
-                continue
-            }
-            if ((polyGuide.values === null)) {
-                // We match all
-                return !polyGuide.blacklist
-            }
-            // is the key contained?
-            return polyGuide.values.has(tags[tagsKey])
-        }
-    }
 
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
@@ -346,24 +329,7 @@ export class Utils {
         return bestColor ?? hex;
     }
 
-    private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
-        const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
 
-        for (const polygonFeature of polygon_features) {
-            const key = polygonFeature.key;
-
-            if (polygonFeature.polygon === "all") {
-                result.set(key, {values: null, blacklist: false})
-                continue
-            }
-
-            const blacklist = polygonFeature.polygon === "blacklist"
-            result.set(key, {values: new Set<string>(polygonFeature.values), blacklist: blacklist})
-
-        }
-
-        return result;
-    }
 
     private static tile2long(x, z) {
         return (x / Math.pow(2, z) * 360 - 180);

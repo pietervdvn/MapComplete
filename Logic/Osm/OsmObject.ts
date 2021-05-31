@@ -1,5 +1,6 @@
 import * as $ from "jquery"
 import {Utils} from "../../Utils";
+import * as polygon_features from "../../assets/polygon-features.json";
 
 
 export abstract class OsmObject {
@@ -10,6 +11,9 @@ export abstract class OsmObject {
     version: number;
     public changed: boolean = false;
     timestamp: Date;
+
+
+    private static polygonFeatures = OsmObject.constructPolygonFeatures()
 
     protected constructor(type: string, id: number) {
         this.id = id;
@@ -65,6 +69,44 @@ export abstract class OsmObject {
             }
             continuation(osmObjects)
         })
+    }
+
+    private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
+        const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
+
+        for (const polygonFeature of polygon_features) {
+            const key = polygonFeature.key;
+
+            if (polygonFeature.polygon === "all") {
+                result.set(key, {values: null, blacklist: false})
+                continue
+            }
+
+            const blacklist = polygonFeature.polygon === "blacklist"
+            result.set(key, {values: new Set<string>(polygonFeature.values), blacklist: blacklist})
+
+        }
+
+        return result;
+    }
+
+
+    protected static isPolygon(tags: any): boolean {
+        for (const tagsKey in tags) {
+            if (!tags.hasOwnProperty(tagsKey)) {
+                continue
+            }
+            const polyGuide = OsmObject.polygonFeatures.get(tagsKey)
+            if (polyGuide === undefined) {
+                continue
+            }
+            if ((polyGuide.values === null)) {
+                // We match all
+                return !polyGuide.blacklist
+            }
+            // is the key contained?
+            return polyGuide.values.has(tags[tagsKey])
+        }
     }
 
     // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
@@ -356,7 +398,7 @@ export class OsmWay extends OsmObject {
         if (this.coordinates[0] !== this.coordinates[this.coordinates.length - 1]) {
             return false; // Not closed
         }
-        return Utils.isPolygon(this.tags)
+        return OsmObject.isPolygon(this.tags)
 
     }
 }
