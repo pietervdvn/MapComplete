@@ -306,11 +306,13 @@ function mergeThemeTranslations() {
 }
 
 
-const themeOverwritesWeblate = process.argv[0] === "--ignore-weblate"
+const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
 
 if(!themeOverwritesWeblate) {
     mergeLayerTranslations();
     mergeThemeTranslations();
+}else{
+    console.log("Ignore weblate")
 }
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
 generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
