@@ -10,24 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v1.2.0
-        with:
-            node-version: '15'
-        env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-          
-      - name: install deps
-        run: npm ci
-          
-      - name: create generated dir
-        run: mkdir ./assets/generated
-
-      - name: create stub themes
-        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
-  
-      - name: Prepare deploy
-        run: npm run prepare-deploy
         
       - name: Clone deployment repo
         run: | 
@@ -40,8 +22,12 @@ jobs:
           
       - name: "Copying files"
         run: |
+          pwd
+          echo "CLONE_DIR: $CLONE_DIR"
           echo "Deploying"
+          rm $CLONE_DIR/*
           cp dist/* $CLONE_DIR/
           cd $CLONE_DIR
+          echo "mapcomplete.osm.be" > CNAME
           git commit -am "Deploying a new version"
           git push
