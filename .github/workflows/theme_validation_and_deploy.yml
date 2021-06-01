@@ -14,20 +14,18 @@ jobs:
       - name: Clone deployment repo
         run: | 
           echo "Cloning destination repo"
-          CLONE_DIR=$(mktemp -d)
           git config --global user.email "pietervdvn+mapcomplete@posteo.net"
           git config --global user.name "MapComplete"
-          git clone --single-branch --branch main "https://x-access-token:$API_TOKEN_GITHUB@github.com/MapComplete/mapcomplete.github.io.git" "$CLONE_DIR"
+          git clone --single-branch --branch main "https://x-access-token:$API_TOKEN_GITHUB@github.com/MapComplete/mapcomplete.github.io.git"
           echo "Destination repo is cloned"
           
       - name: "Copying files"
         run: |
-          pwd
-          echo "CLONE_DIR: $CLONE_DIR"
           echo "Deploying"
-          rm $CLONE_DIR/*
-          cp dist/* $CLONE_DIR/
-          cd $CLONE_DIR
+          # rm -rf mapcomplete.github.io/*
+          # cp dist/* mapcomplete.github.io/
+          cd mapcomplete.github.io/
           echo "mapcomplete.osm.be" > CNAME
+          echo "Test" > test
           git commit -am "Deploying a new version"
           git push
