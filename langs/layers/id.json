@@ -19,7 +19,83 @@
             },
             "2": {
                 "render": "{seats} kursi"
+            },
+            "5": {
+                "render": "Warna: {colour}"
             }
+        },
+        "presets": {
+            "0": {
+                "title": "Bangku"
+            }
+        }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "3": {
+                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+            },
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
+    },
+    "bike_shop": {
+        "tagRenderings": {
+            "3": {
+                "question": "URL {name} apa?"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "tagRenderings": {
+            "5": {
+                "render": "Nama: {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            }
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "5": {
+                "render": "{access}"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "render": "Bangku"
         }
     }
 }
