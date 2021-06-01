@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "Deploying"
           rm -rf mapcomplete.github.io/*
-          cp dist/* mapcomplete.github.io/
+          cp -r dist/* mapcomplete.github.io/
           cd mapcomplete.github.io/
           echo "mapcomplete.osm.be" > CNAME
           git add *
