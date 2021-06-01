@@ -16,7 +16,7 @@ jobs:
           echo "Cloning destination repo"
           git config --global user.email "pietervdvn+mapcomplete@posteo.net"
           git config --global user.name "MapComplete"
-          git clone --single-branch --branch main "https://x-access-token:$API_TOKEN_GITHUB@github.com/MapComplete/mapcomplete.github.io.git"
+          git clone --single-branch --branch main "https://x-access-token:$DEPLOY_KEY@github.com/MapComplete/mapcomplete.github.io.git"
           echo "Destination repo is cloned"
           
       - name: "Copying files"
