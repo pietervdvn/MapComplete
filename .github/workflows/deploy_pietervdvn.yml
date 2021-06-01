@@ -33,7 +33,7 @@ jobs:
         run: | 
           echo "Cloning destination repo"
           git config --global user.email "pietervdvn@posteo.net"
-          git config --global user.name "MapComplete"
+          git config --global user.name "pietervdvn"
           git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
           echo "Destination repo is cloned"
           
