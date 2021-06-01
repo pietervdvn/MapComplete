@@ -29,7 +29,7 @@ jobs:
         
       - name: Clone deployment repo
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
+          DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
         run: | 
           echo "Cloning destination repo"
           git config --global user.email "pietervdvn@posteo.net"
