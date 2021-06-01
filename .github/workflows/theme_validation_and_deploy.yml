@@ -2,7 +2,6 @@ name: Theme Validation and deployment
 on:
   push:
     branches:
-      - develop
       - master
       
 jobs:
