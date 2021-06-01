@@ -27,5 +27,6 @@ jobs:
           cd mapcomplete.github.io/
           echo "mapcomplete.osm.be" > CNAME
           echo "Test" > test
+          git add *
           git commit -am "Deploying a new version"
           git push
