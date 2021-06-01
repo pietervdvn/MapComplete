@@ -1,0 +1,46 @@
+name: Theme Validation and deployment
+on:
+  push:
+    branches:
+      - develop
+      - master
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: install deps
+        run: npm ci
+          
+      - name: create generated dir
+        run: mkdir ./assets/generated
+
+      - name: create stub themes
+        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
+  
+      - name: generate translations
+        run: npm run generate:translations
+         
+      - name: Compile license info
+        run: npm run validate:licenses
+     
+      - name: Compile themes and layers
+        run: npm run validate:layeroverview
+        
+      - name: Prepare deploy
+        run: npm run prepare-deploy
+        
+      - name: Clone deployment repo
+        run: | 
+          echo "Cloning destination repo"
+          CLONE_DIR=$(mktemp -d)
+          git config --global user.email "pietervdvn+mapcomplete@posteo.net"
+          git config --global user.name "MapComplete"
+          git clone --single-branch --branch main "https://x-access-token:$API_TOKEN_GITHUB@github.com/MapComplete/mapcomplete.github.io.git" "$CLONE_DIR"
+          echo "Destination repo is cloned"
