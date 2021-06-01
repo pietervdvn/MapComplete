@@ -40,8 +40,8 @@ jobs:
       - name: "Copying files"
         run: |
           echo "Deploying"
-          rm -rf pietervdvn.github.io/mc/$GITHUB_REF/*
-          TARGET=${$GITHUB_REF:11}
+          TARGET=${GITHUB_REF:11}
+          rm -rf pietervdvn.github.io/mc/$TARGET/*
           mkdir -p pietervdvn.github.io/mc/$TARGET/
           cp -r dist/* pietervdvn.github.io/mc/$TARGET/
           cd mapcomplete.github.io/
