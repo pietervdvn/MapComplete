@@ -14,12 +14,14 @@ jobs:
       - name: Clone deployment repo
         run: | 
           echo "Cloning destination repo"
-          git config --global user.email "pietervdvn+mapcomplete@posteo.net"
+          git config --global user.email "pietervdvn@posteo.net"
           git config --global user.name "MapComplete"
           git clone --single-branch --branch main "https://x-access-token:$DEPLOY_KEY@github.com/MapComplete/mapcomplete.github.io.git"
           echo "Destination repo is cloned"
           
       - name: "Copying files"
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
           echo "Deploying"
           # rm -rf mapcomplete.github.io/*
