@@ -41,7 +41,9 @@ jobs:
         run: |
           echo "Deploying"
           rm -rf pietervdvn.github.io/mc/$GITHUB_REF/*
-          cp -r dist/* pietervdvn.github.io/mc/$GITHUB_REF/
+          TARGET=${$GITHUB_REF:11}
+          mkdir -p pietervdvn.github.io/mc/$TARGET/
+          cp -r dist/* pietervdvn.github.io/mc/$TARGET/
           cd mapcomplete.github.io/
           git add *
           if git status | grep -q "Changes to be committed"
