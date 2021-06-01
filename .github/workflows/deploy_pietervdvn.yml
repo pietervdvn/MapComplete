@@ -34,7 +34,7 @@ jobs:
           echo "Cloning destination repo"
           git config --global user.email "pietervdvn@posteo.net"
           git config --global user.name "MapComplete"
-          git clone --depth 1 --single-branch --branch main "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
+          git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
           echo "Destination repo is cloned"
           
       - name: "Copying files"
