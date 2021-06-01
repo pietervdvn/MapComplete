@@ -26,15 +26,6 @@ jobs:
       - name: create stub themes
         run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
   
-      - name: generate translations
-        run: npm run generate:translations
-         
-      - name: Compile license info
-        run: npm run validate:licenses
-     
-      - name: Compile themes and layers
-        run: npm run validate:layeroverview
-        
       - name: Prepare deploy
         run: npm run prepare-deploy
         
@@ -46,3 +37,11 @@ jobs:
           git config --global user.name "MapComplete"
           git clone --single-branch --branch main "https://x-access-token:$API_TOKEN_GITHUB@github.com/MapComplete/mapcomplete.github.io.git" "$CLONE_DIR"
           echo "Destination repo is cloned"
+          
+      - name: "Copying files"
+        run: |
+          echo "Deploying"
+          cp dist/* $CLONE_DIR/
+          cd $CLONE_DIR
+          git commit -am "Deploying a new version"
+          git push
