@@ -6,5 +6,33 @@
     "personal": {
         "title": "Interficie personal",
         "description": "Crea una interficie basada en todas las capas disponibles de todas las interficies"
+    },
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "1": {
+                        "question": "Cuál es el tipo de esta obra de arte?",
+                        "render": "Esta es un {artwork_type}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Obra de arte"
+                    }
+                },
+                "description": "Diversas piezas de obras de arte",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Obra de arte <i>{nombre}</i>"
+                        }
+                    },
+                    "render": "Obra de arte"
+                },
+                "name": "Obras de arte"
+            }
+        },
+        "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo"
     }
 }
