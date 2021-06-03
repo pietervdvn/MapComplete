@@ -290,7 +290,7 @@
                     },
                     "5": {
                         "render": "<a href='mailto:{email}'>{email}</a>",
-                        "question": "Quel est l'adresse mail de ce magasin ?"
+                        "question": "Quelle est l'adresse électronique de ce magasin ?"
                     },
                     "6": {
                         "render": "{opening_hours_table(opening_hours)}",
@@ -319,5 +319,54 @@
         "title": "Arbres",
         "shortDescription": "Carte des arbres",
         "description": "Cartographions tous les arbres !"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "name": "Campings",
+                "tagRenderings": {
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Peut être utilisé gratuitement"
+                            }
+                        },
+                        "question": "Cet endroit est-il payant ?"
+                    },
+                    "4": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cet endroit a une station de vidange sanitaire"
+                            }
+                        }
+                    },
+                    "6": {
+                        "question": "Cet endroit offre-t-il un accès à Internet ?"
+                    },
+                    "3": {
+                        "question": "Combien coûte cet endroit ?"
+                    },
+                    "1": {
+                        "question": "Comment s'appelle cet endroit ?",
+                        "render": "Cet endroit s'appelle {nom}"
+                    }
+                },
+                "description": "campings",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Camping sans nom"
+                        }
+                    },
+                    "render": "Camping {name}"
+                }
+            }
+        },
+        "shortDescription": "Trouver des sites pour passer la nuit avec votre camping-car",
+        "title": "Campings"
+    },
+    "bicyclelib": {
+        "description": "Une vélothèque est un endroit où on peut emprunter des vélos, souvent moyennant une petite somme annuelle. Un cas d'utilisation notable est celui des vélothèques pour les enfants, qui leur permettent de passer à un vélo plus grand quand ils sont trop grands pour leur vélo actuel",
+        "title": "Vélothèques"
     }
 }
