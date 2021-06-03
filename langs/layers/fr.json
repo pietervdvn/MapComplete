@@ -237,7 +237,7 @@
                 "question": "Quel est le site internet de {name}?"
             },
             "6": {
-                "question": "Quel est le nom de {name}?"
+                "question": "Quel est le numéro de téléphone de {name}?"
             },
             "7": {
                 "question": "Quel est l'adresse email de {name}?"
