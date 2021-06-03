@@ -42,7 +42,7 @@ class Hist:
             return self.dictionary[key]
         return None
 
-    # Returns (keys, values.map(f)). To be used with e.g. pyplot.plot
+    # Returns values.map(f). 
     def map(self, f):
         vals = []
         keys = self.keys()
@@ -60,7 +60,7 @@ class Hist:
             vals.append(running_value)
         return vals
 
-    # Returns [(key, flatten(values))]
+    # Returns [(key, flatten(values))] To be used with e.g. pyplot.plot
     def flatten(self, flatten):
         result = []
         keys = self.keys()
@@ -145,6 +145,29 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot.ylabel("Number of unique contributors")
     pyplot.xlabel("Date")
     pyplot.savefig("CumulativeContributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w')
+
+
+def create_contributors_per_total_cs(contents, extra_text = "", cutoff=25, per_day=False):
+    hist = Hist("contributor")
+    for cs in contents:
+        hist.add(cs[1], cs[0])
+        
+    count_per_contributor = hist.map(lambda dates : len(set(dates))) if per_day else hist.map(len)
+    
+    per_count = Hist("per cs count")
+    for cs_count in count_per_contributor:
+        per_count.add(min(cs_count, cutoff), 1)            
+
+    to_plot = per_count.flatten(len)
+    to_plot.sort(key=lambda a: a[0])
+    to_plot[ - 1] = (str(cutoff)+ " or more", to_plot[-1][1])
+    pyplot_init()
+    pyplot.bar(list(map(lambda a : str(a[0]), to_plot)), list(map(lambda a: a[1], to_plot)) )
+    pyplot.title("Contributors per total number of changesets"+extra_text)
+    pyplot.ylabel("Number of contributors")
+    pyplot.xlabel("Mapping days with MapComplete" if per_day else "Number of changesets with MapComplete")
+    pyplot.savefig("Contributors per total number of "+("mapping days" if per_day else "changesets")+extra_text+".png", dpi=400)
+
 
 
 def create_theme_breakdown(stats, fileExtra="", cutoff=15):
@@ -292,6 +315,9 @@ def sortable_user_number(kv):
 
 def create_graphs(contents):
     summed_changes_per(contents, "")
+    create_contributors_per_total_cs(contents)
+    create_contributors_per_total_cs(contents, per_day=True)
+    
     cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=sortable_user_number)
     create_usercount_graphs(contents)
     create_theme_breakdown(contents)
@@ -306,6 +332,8 @@ def create_graphs(contents):
     for year in range(2020, currentYear + 1):
         contents_filtered = list(contents_where(contents, 0, str(year)))
         extratext = " in " + str(year)
+        create_contributors_per_total_cs(contents_filtered, extratext)
+        create_contributors_per_total_cs(contents_filtered, extratext, per_day=True)
         create_usercount_graphs(contents_filtered, extratext)
         create_theme_breakdown(contents_filtered, extratext)
         cumulative_changes_per(contents_filtered, 3, "theme", extratext, cutoff=5)
@@ -332,6 +360,8 @@ def create_per_theme_graphs(contents, cutoff=10):
             cumulative_changes_per(filtered, 1, "contributor", " for theme " + theme, cutoff=1)
         if len(filtered) > 25:
             summed_changes_per(filtered, "for theme "+theme)
+
+
 
 
 def create_per_contributor_graphs(contents, least_needed_changesets):
@@ -364,6 +394,7 @@ theme_remappings = {
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
     "wiki:User:joost_schouppe/campersite": "campersite",
     "arbres":"arbres_llefia",
+    "aed_brugge": "aed",
      "https://llefia.org/arbres/mapcomplete.json":"arbres_llefia",
     "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
     "testing mapcomplete 0.0.0":"buurtnatuur",
@@ -406,10 +437,8 @@ def main():
         print("Found " + str(len(stats)) + " changesets")
         
         # contributor_count(stats)
-   
-        
         create_graphs(stats)
-        create_per_theme_graphs(stats, 15)
+        # create_per_theme_graphs(stats, 15)
         # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
