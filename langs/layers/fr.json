@@ -132,7 +132,7 @@
                         "then": "L'emprunt de vélo est gratuit"
                     },
                     "1": {
-                        "then": "Emprunter un vélo coûte 20€/an et 20€ de garantie"
+                        "then": "Emprunter un vélo coûte 20 €/an et 20 € de garantie"
                     }
                 }
             },
@@ -240,7 +240,7 @@
                 "question": "Quel est le numéro de téléphone de {name}?"
             },
             "7": {
-                "question": "Quel est l'adresse email de {name}?"
+                "question": "Quelle est l'adresse électronique de {name} ?"
             },
             "8": {
                 "question": "Quand ce Café vélo est-t-il ouvert ?"
@@ -521,7 +521,8 @@
         },
         "presets": {
             "0": {
-                "title": "Pompe à vélo"
+                "title": "Pompe à vélo",
+                "description": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
             },
             "1": {
                 "title": "Point de réparation vélo avec pompe",
@@ -570,7 +571,7 @@
                 "question": "Quel est le nom de {name}?"
             },
             "5": {
-                "question": "Quel est l'adresse email de {name}?"
+                "question": "Quelle est l'adresse électronique de {name} ?"
             },
             "9": {
                 "question": "Est-ce que ce magasin vend des vélos?",
@@ -786,8 +787,8 @@
                 "question": "Quel est le numéro d'identification officiel de ce dispositif ? (si il est visible sur le dispositif)"
             },
             "10": {
-                "render": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
-                "question": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?"
+                "render": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+                "question": "Quelle est l'adresse électronique pour des questions à propos de ce défibrillateur ?"
             },
             "11": {
                 "render": "Numéro de téléphone pour questions sur le défibrillateur: <a href='tel:{phone}'>{phone}</a>",
@@ -834,29 +835,111 @@
             "0": {
                 "title": "Eau potable"
             }
+        },
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": "Les bouteilles d'eau peuvent ne pas passer"
+                    },
+                    "0": {
+                        "then": "Il est facile de remplir les bouteilles d'eau"
+                    }
+                },
+                "question": "Est-il facile de remplir des bouteilles d'eau ?"
+            },
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": "Cette fontaine est fermée"
+                    },
+                    "1": {
+                        "then": "Cette fontaine est cassée"
+                    },
+                    "0": {
+                        "then": "Cette fontaine fonctionne"
+                    }
+                },
+                "render": "L'état opérationnel est <i>{operational_status</i>",
+                "question": "Ce point d'eau potable est-il toujours opérationnel ?"
+            }
         }
     },
     "ghost_bike": {
         "tagRenderings": {
             "4": {
-                "render": "<i>{inscription}</i>"
+                "render": "<i>{inscription}</i>",
+                "question": "Quelle est l'inscription sur ce vélo fantôme ?"
+            },
+            "5": {
+                "render": "Placé le {start_date}",
+                "question": "Quand ce vélo fantôme a-t-il été installée ?"
+            },
+            "3": {
+                "render": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
+                "question": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Aucun nom n'est marqué sur le vélo"
+                    }
+                },
+                "render": "En souvenir de {name}",
+                "question": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'><br/>Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille </span>"
+            },
+            "0": {
+                "render": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
             }
-        }
+        },
+        "presets": {
+            "0": {
+                "title": "Vélo fantôme"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Vélo fantôme en souvenir de {name}"
+                }
+            },
+            "render": "Vélo fantôme"
+        },
+        "name": "Vélos fantômes"
     },
     "nature_reserve": {
         "tagRenderings": {
             "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
+                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée"
             },
             "9": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "6": {
+                "question": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?"
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": "Les chiens sont autorisés à se promener librement"
+                    },
+                    "1": {
+                        "then": "Chiens interdits"
+                    },
+                    "0": {
+                        "then": "Les chiens doivent être tenus en laisse"
+                    }
+                },
+                "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
             }
         }
     },
     "playground": {
         "tagRenderings": {
             "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+                "render": "<a href='mailto:{email}'>{email}</a>",
+                "question": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?"
             },
             "8": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
@@ -1057,7 +1140,7 @@
                 "question": "Quel est le numéro de téléphone du gérant ?"
             },
             "6": {
-                "question": "Quel est l'adresse courriel du gérant ?"
+                "question": "Quelle est l'adresse courriel du gérant ?"
             },
             "7": {
                 "question": "Quand ce terrain est-il accessible ?",
@@ -1193,5 +1276,50 @@
                 }
             }
         }
+    },
+    "map": {
+        "presets": {
+            "0": {
+                "description": "Ajouter une carte manquante",
+                "title": "Carte"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "4": {
+                        "then": "Il n'y a aucune attribution"
+                    },
+                    "3": {
+                        "then": "Il n'y a aucune attribution"
+                    }
+                }
+            },
+            "1": {
+                "render": "Cette carte est basée sur {map_source}",
+                "mappings": {
+                    "0": {
+                        "then": "Cette carte est basée sur OpenStreetMap"
+                    }
+                },
+                "question": "Sur quelles données cette carte est-elle basée ?"
+            }
+        },
+        "description": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
+        "title": {
+            "render": "Carte"
+        },
+        "name": "Cartes"
+    },
+    "information_board": {
+        "presets": {
+            "0": {
+                "title": "Panneau d'informations"
+            }
+        },
+        "title": {
+            "render": "Panneau d'informations"
+        },
+        "name": "Panneaux d'informations"
     }
 }
