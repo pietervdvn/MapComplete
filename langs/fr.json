@@ -10,7 +10,7 @@
         "ccb": "sous la license CC-BY",
         "uploadFailed": "L'ajout de la photo a échoué. Êtes-vous connecté à Internet ? Et est-ce que les API tierces sont autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
         "respectPrivacy": "Merci de respecter la vie privée. Ne publiez pas les plaques d'immatriculation.",
-        "uploadDone": "<span class='thanks'>Votre photo est ajoutée. Merci beaucoup!</span>",
+        "uploadDone": "<span class=\"thanks\">Votre photo est ajoutée. Merci beaucoup !</span>",
         "dontDelete": "Annuler",
         "doDelete": "Supprimer l'image",
         "isDeleted": "Supprimé"
@@ -48,7 +48,7 @@
         "add": {
             "addNew": "Ajouter un/une {category} ici",
             "title": "Ajouter un nouveau point ?",
-            "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données. <br/>",
+            "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "pleaseLogin": "<a class='activate-osm-authentication'>Vous devez vous connecter pour ajouter un point</a>",
             "zoomInFurther": "Rapprochez vous pour ajouter un point.",
             "stillLoading": "Chargement des données en cours. Patientez un instant avant d'ajouter un nouveau point.",
@@ -66,8 +66,8 @@
             "phoneNumberIs": "Le numéro de téléphone de {category} est <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "websiteOf": "Quel est le site internet de {category} ?",
             "websiteIs": "Site Web : <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "Quelle est l'adresse email de {category} ?",
-            "emailIs": "L'adresse email de {category} est <a href='mailto:{email}' target='_blank'>{email}</a>"
+            "emailOf": "Quelle est l'adresse électronique de {category} ?",
+            "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>"
         },
         "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Ne serait-il pas génial d'avoir sur une carte que tout le monde pourrait éditer ouvertement ? Une seule et unique plateforme regroupant toutes les informations géographiques ? Ainsi nous n'aurons plus besoin de toutes ces cartes petites et incompatibles (souvent non mises à jour).</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> est la carte qu'il vous faut ! Toutes les données de cette carte peuvent être utilisé gratuitement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> d'attribution et de publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et de corriger les erreurs. Ce site internet utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple-maps et Bing-maps sont (en partie) supportés par OpenStreetMap. Si vous modifiez quelque chose ici, ces changements seront incorporés dans ces applications dès leurs mises à jour !</p>",
         "attribution": {
@@ -102,7 +102,7 @@
         },
         "morescreen": {
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
-            "requestATheme": "Si vous voulez une autre carte thématique, demandez-la <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">ici</a>.",
+            "requestATheme": "Si vous voulez une autre carte thématique, demandez-la dans le suivi des problèmes",
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Créez votre propre MapComplete carte"
         },
@@ -143,7 +143,7 @@
             "opensAt": "à partir de",
             "openTill": "jusqu'à",
             "not_all_rules_parsed": "Les heures d'ouvertures de ce magasin sont trop compliquées. Les heures suivantes ont été ignorées :",
-            "closed_until": "Fermé jusqu'à {date}",
+            "closed_until": "Fermé jusqu'au {date}",
             "closed_permanently": "Fermé",
             "open_24_7": "Ouvert en permanence",
             "ph_closed": "fermé",
