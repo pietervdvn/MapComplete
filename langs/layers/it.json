@@ -132,7 +132,7 @@
                         "then": "Il prestito di una bicicletta è gratuito"
                     },
                     "1": {
-                        "then": "Il prestito di una bicicletta costa 20€/anno più 20€ di garanzia"
+                        "then": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia"
                     }
                 }
             },
@@ -153,7 +153,7 @@
         },
         "presets": {
             "0": {
-                "description": "Una “ciclo-teca” o “bici in prestito” (‘bicycle library’ in inglese) ha una collezione di bici che possno essere prestate"
+                "description": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate"
             }
         }
     },
@@ -876,7 +876,7 @@
         },
         "tagRenderings": {
             "0": {
-                "render": "Una <b>bici fantasma</b> (o ‘ghost bike’ in inglese) è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente."
+                "render": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente."
             },
             "2": {
                 "question": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
