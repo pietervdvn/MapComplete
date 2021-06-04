@@ -31,15 +31,11 @@
       ],
       "title": "AED in Brugse dataset",
       "icon": {
-        "render": "circle:green",
+        "render": "circle:red",
         "mappings": [
           {
             "if": "_has_closeby_feature=yes",
-            "then": "circle:#ffff00aa"
-          },
-          {
-            "if": "Status=oud",
-            "then": "circle:red"
+            "then": "circle:green"
           }
         ]
       },
