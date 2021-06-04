@@ -39,12 +39,16 @@
       "builtin": "play_forest",
       "override": {
         "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 14,
-          "isOsmCache": true
+          "#geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "#geoJsonZoomLevel": 14,
+          "#isOsmCache": true
         },
         "icon": "./assets/themes/speelplekken/speelbos.svg",
-        "minzoom": 12
+        "minzoom":
+        12,
+        "calculatedTags": [
+          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
+        ]
       },
       "calculatedTags": [
         "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
@@ -252,12 +256,8 @@
       "condition": "_part_of_walking_routes~*"
     },
     {
-      "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
-      "freeform": {
-        "key": "video",
-        "type": "url"
-      },
-      "question": "Wat is de link naar de video-reportage?"
+      "condtion": "_video:id~*",
+      "render": "<iframe style='width: 100%; height: 300px' src=\"https://www.youtube-nocookie.com/embed/{_video:id}\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     }
   ],
   "overrideAll": {
