@@ -2,19 +2,23 @@
   "id": "surveillance",
   "title": {
     "en": "Surveillance under Surveillance",
-    "nl": "Surveillance under Surveillance"
+    "nl": "Surveillance under Surveillance",
+    "ja": "監視カメラの監視"
   },
   "shortDescription": {
     "en": "Surveillance cameras and other means of surveillance",
-    "nl": "Bewakingscameras en dergelijke"
+    "nl": "Bewakingscameras en dergelijke",
+    "ja": "監視カメラおよびその他の監視手段"
   },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
-    "nl": "Op deze open kaart kan je bewakingscamera's vinden."
+    "nl": "Op deze open kaart kan je bewakingscamera's vinden.",
+    "ja": "このオープンマップでは、監視カメラを確認できます。"
   },
   "language": [
     "en",
-    "nl"
+    "nl",
+    "ja"
   ],
   "maintainer": "",
   "icon": "./assets/themes/surveillance_cameras/logo.svg",

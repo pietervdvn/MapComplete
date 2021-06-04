@@ -423,13 +423,13 @@
       "render": {
         "en": "Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>",
         "nl": "Email voor vragen over deze defibrillator: <a href='mailto:{email}'>{email}</a>",
-        "fr": "Adresse email pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
+        "fr": "Adresse électronique pour des questions à propos de ce défibrillateur : <a href='mailto:{email}'>{email}</a>",
         "it": "Indirizzo email per le domande su questo defibrillatore:<a href='mailto:{email}'>{email}</a>"
       },
       "question": {
         "en": "What is the email for questions about this defibrillator?",
         "nl": "Wat is het email-adres voor vragen over deze defibrillator",
-        "fr": "Quelle est l'adresse email pour des questions à propos de ce défibrillateur ?",
+        "fr": "Quelle est l'adresse électronique pour des questions à propos de ce défibrillateur ?",
         "it": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?"
       },
       "freeform": {
@@ -440,13 +440,13 @@
     {
       "render": {
         "en": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>",
-        "fr": "Numéro de téléphone pour questions sur le défibrillateur: <a href='tel:{phone}'>{phone}</a>",
+        "fr": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel:{phone}'>{phone}</a>",
         "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
         "it": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
-        "fr": "Quel est le numéro de téléphone pour questions sur le défibrillateur?",
+        "fr": "Quel est le numéro de téléphone pour questions sur le défibrillateur ?",
         "nl": "Wat is het telefoonnummer voor vragen over deze defibrillator",
         "it": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?"
       },
@@ -480,7 +480,7 @@
           "then": {
             "en": "24/7 opened (including holidays)",
             "nl": "24/7 open (inclusief feestdagen)",
-            "fr": "Ouvert jour et nuit (même pendant les jours feriés)",
+            "fr": "Ouvert 24/7 (jours feriés inclus)",
             "it": "Aperto 24/7 (festivi inclusi)"
           }
         }

@@ -75,12 +75,14 @@
       "question": {
         "en": "Is this drinking water spot still operational?",
         "nl": "Is deze drinkwaterkraan nog steeds werkende?",
-        "it": "Questo punto di acqua potabile è sempre funzionante?"
+        "it": "Questo punto di acqua potabile è sempre funzionante?",
+        "fr": "Ce point d'eau potable est-il toujours opérationnel ?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
         "nl": "Deze waterkraan-status is <i>{operational_status}</i>",
-        "it": "Lo stato operativo è <i>{operational_status}</i>"
+        "it": "Lo stato operativo è <i>{operational_status}</i>",
+        "fr": "L'état opérationnel est <i>{operational_status</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -91,7 +93,8 @@
           "then": {
             "en": "This drinking water works",
             "nl": "Deze drinkwaterfontein werkt",
-            "it": "La fontanella funziona"
+            "it": "La fontanella funziona",
+            "fr": "Cette fontaine fonctionne"
           }
         },
         {
@@ -99,7 +102,8 @@
           "then": {
             "en": "This drinking water is broken",
             "nl": "Deze drinkwaterfontein is kapot",
-            "it": "La fontanella è guasta"
+            "it": "La fontanella è guasta",
+            "fr": "Cette fontaine est cassée"
           }
         },
         {
@@ -107,7 +111,8 @@
           "then": {
             "en": "This drinking water is closed",
             "nl": "Deze drinkwaterfontein is afgesloten",
-            "it": "La fontanella è chiusa"
+            "it": "La fontanella è chiusa",
+            "fr": "Cette fontaine est fermée"
           }
         }
       ]
@@ -118,7 +123,8 @@
         "en": "How easy is it to fill water bottles?",
         "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
         "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
-        "it": "Quanto è facile riempire d’acqua le bottiglie?"
+        "it": "Quanto è facile riempire d’acqua le bottiglie?",
+        "fr": "Est-il facile de remplir des bouteilles d'eau ?"
       },
       "mappings": [
         {
@@ -127,7 +133,8 @@
             "en": "It is easy to refill water bottles",
             "nl": "Een drinkbus bijvullen gaat makkelijk",
             "de": "Es ist einfach, Wasserflaschen nachzufüllen",
-            "it": "È facile riempire d’acqua le bottiglie"
+            "it": "È facile riempire d’acqua le bottiglie",
+            "fr": "Il est facile de remplir les bouteilles d'eau"
           }
         },
         {
@@ -136,7 +143,8 @@
             "en": "Water bottles may not fit",
             "nl": "Een drinkbus past moeilijk",
             "de": "Wasserflaschen passen möglicherweise nicht",
-            "it": "Le bottiglie d’acqua potrebbero non entrare"
+            "it": "Le bottiglie d’acqua potrebbero non entrare",
+            "fr": "Les bouteilles d'eau peuvent ne pas passer"
           }
         }
       ]

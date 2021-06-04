@@ -4,7 +4,8 @@
     "en": "Maps",
     "nl": "Kaarten",
     "it": "Mappe",
-    "ru": "Карты"
+    "ru": "Карты",
+    "fr": "Cartes"
   },
   "minzoom": 12,
   "source": {
@@ -20,13 +21,15 @@
       "en": "Map",
       "nl": "Kaart",
       "it": "Mappa",
-      "ru": "Карта"
+      "ru": "Карта",
+      "fr": "Carte"
     }
   },
   "description": {
     "en": "A map, meant for tourists which is permanently installed in the public space",
     "nl": "Een permantent geinstalleerde kaart",
-    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico"
+    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
+    "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public"
   },
   "tagRenderings": [
     "images",
@@ -34,7 +37,8 @@
       "question": {
         "en": "On which data is this map based?",
         "nl": "Op welke data is deze kaart gebaseerd?",
-        "it": "Su quali dati si basa questa mappa?"
+        "it": "Su quali dati si basa questa mappa?",
+        "fr": "Sur quelles données cette carte est-elle basée ?"
       },
       "mappings": [
         {
@@ -48,7 +52,8 @@
             "en": "This map is based on OpenStreetMap",
             "nl": "Deze kaart is gebaseerd op OpenStreetMap",
             "it": "Questa mappa si basa su OpenStreetMap",
-            "ru": "Эта карта основана на OpenStreetMap"
+            "ru": "Эта карта основана на OpenStreetMap",
+            "fr": "Cette carte est basée sur OpenStreetMap"
           }
         }
       ],
@@ -59,7 +64,8 @@
         "en": "This map is based on {map_source}",
         "nl": "Deze kaart is gebaseerd op {map_source}",
         "it": "Questa mappa si basa su {map_source}",
-        "ru": "Эта карта основана на {map_source}"
+        "ru": "Эта карта основана на {map_source}",
+        "fr": "Cette carte est basée sur {map_source}"
       }
     },
     {
@@ -114,7 +120,8 @@
           "then": {
             "en": "There is no attribution at all",
             "nl": "Er is geen attributie",
-            "it": "Non c’è alcuna attribuzione"
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution"
           }
         },
         {
@@ -126,7 +133,8 @@
           "then": {
             "nl": "Er is geen attributie",
             "en": "There is no attribution at all",
-            "it": "Non c’è alcuna attribuzione"
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution"
           },
           "hideInAnswer": true
         }
@@ -190,12 +198,14 @@
         "en": "Map",
         "nl": "Kaart",
         "it": "Mappa",
-        "ru": "Карта"
+        "ru": "Карта",
+        "fr": "Carte"
       },
       "description": {
         "en": "Add a missing map",
         "nl": "Voeg een ontbrekende kaart toe",
-        "it": "Aggiungi una mappa mancante"
+        "it": "Aggiungi una mappa mancante",
+        "fr": "Ajouter une carte manquante"
       }
     }
   ],

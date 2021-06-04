@@ -10,7 +10,8 @@
     "hu": "Nyílt AED Térkép",
     "id": "Buka Peta AED",
     "it": "Mappa dei defibrillatori (DAE)",
-    "ru": "Открытая карта AED (Автоматизированных внешних дефибрилляторов)"
+    "ru": "Открытая карта AED (Автоматизированных внешних дефибрилляторов)",
+    "ja": "オープンAEDマップ"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -23,7 +24,8 @@
     "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
     "id": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
     "it": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze",
-    "ru": "На этой карте вы можете найти и отметить ближайшие дефибрилляторы"
+    "ru": "На этой карте вы можете найти и отметить ближайшие дефибрилляторы",
+    "ja": "この地図では近くにある除細動器(AED)を見つけてマークします"
   },
   "language": [
     "en",
@@ -35,7 +37,8 @@
     "hu",
     "id",
     "it",
-    "ru"
+    "ru",
+    "ja"
   ],
   "version": "2020-08-29",
   "startLat": 0,

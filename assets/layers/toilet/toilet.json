@@ -81,7 +81,7 @@
       "question": {
         "en": "Are these toilets publicly accessible?",
         "de": "Sind diese Toiletten öffentlich zugänglich?",
-        "fr": "Ces toilettes sont-elles accessibles publiquement ?",
+        "fr": "Ces toilettes sont-elles accessibles au public ?",
         "nl": "Zijn deze toiletten publiek toegankelijk?"
       },
       "render": {
@@ -120,7 +120,7 @@
           "then": {
             "en": "Not accessible",
             "de": "Nicht zugänglich",
-            "fr": "WC privés",
+            "fr": "Toilettes privées",
             "nl": "Niet toegankelijk",
             "ru": "Недоступно"
           }
@@ -140,7 +140,7 @@
       "question": {
         "en": "Are these toilets free to use?",
         "de": "Können diese Toiletten kostenlos benutzt werden?",
-        "fr": "Ces toilettes sont-elles payantes",
+        "fr": "Ces toilettes sont-elles payantes ?",
         "nl": "Zijn deze toiletten gratis te gebruiken?"
       },
       "mappings": [
@@ -188,7 +188,7 @@
       "question": {
         "en": "Is there a dedicated toilet for wheelchair users",
         "de": "Gibt es eine Toilette für Rollstuhlfahrer?",
-        "fr": "Un WC réservé aux personnes à mobilité réduite est-il présent ?",
+        "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
         "nl": "Is er een rolstoeltoegankelijke toilet voorzien?"
       },
       "mappings": [
@@ -196,7 +196,7 @@
           "then": {
             "en": "There is a dedicated toilet for wheelchair users",
             "de": "Es gibt eine Toilette für Rollstuhlfahrer",
-            "fr": "Il y a un WC réservé pour les personnes à mobilité réduite",
+            "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
             "nl": "Er is een toilet voor rolstoelgebruikers"
           },
           "if": "wheelchair=yes"
@@ -225,7 +225,7 @@
           "then": {
             "en": "There are only seated toilets",
             "de": "Es gibt nur Sitztoiletten",
-            "fr": "Il y a uniquement des WC assis",
+            "fr": "Il y a uniquement des sièges de toilettes",
             "nl": "Er zijn enkel WC's om op te zitten"
           }
         },
@@ -243,7 +243,7 @@
           "then": {
             "en": "There are only squat toilets here",
             "de": "Es gibt hier nur Hocktoiletten.",
-            "fr": "Il y a uniquement des WC turques",
+            "fr": "Il y a uniquement des toilettes turques",
             "nl": "Er zijn enkel hurktoiletten"
           }
         },
@@ -252,7 +252,7 @@
           "then": {
             "en": "Both seated toilets and urinals are available here",
             "de": "Sowohl Sitztoiletten als auch Pissoirs sind hier verfügbar",
-            "fr": "Il y a des WC assis et des urinoirs",
+            "fr": "Il y a des sièges de toilettes et des urinoirs",
             "nl": "Er zijn zowel urinoirs als zittoiletten"
           }
         }
@@ -262,7 +262,7 @@
       "question": {
         "en": "Is a changing table (to change diapers) available?",
         "de": "Ist ein Wickeltisch (zum Wechseln der Windeln) vorhanden?",
-        "fr": "Ces WC disposent-ils d'une table à langer ?",
+        "fr": "Ces toilettes disposent-elles d'une table à langer ?",
         "nl": "Is er een luiertafel beschikbaar?"
       },
       "mappings": [
@@ -308,7 +308,7 @@
           "then": {
             "en": "The changing table is in the toilet for women. ",
             "de": "Der Wickeltisch befindet sich in der Damentoilette. ",
-            "fr": "La table à langer se situe dans les WC pour femmes. ",
+            "fr": "La table à langer est dans les toilettes pour femmes. ",
             "nl": "De luiertafel bevindt zich in de vrouwentoiletten "
           },
           "if": "changing_table:location=female_toilet"
@@ -317,7 +317,7 @@
           "then": {
             "en": "The changing table is in the toilet for men. ",
             "de": "Der Wickeltisch befindet sich in der Herrentoilette. ",
-            "fr": "La table à langer se situe dans les WC pour hommes. ",
+            "fr": "La table à langer est dans les toilettes pour hommes. ",
             "nl": "De luiertafel bevindt zich in de herentoiletten "
           },
           "if": "changing_table:location=male_toilet"
@@ -327,7 +327,7 @@
           "then": {
             "en": "The changing table is in the toilet for wheelchair users. ",
             "de": "Der Wickeltisch befindet sich in der Toilette für Rollstuhlfahrer. ",
-            "fr": "La table à langer se situe dans les WC pour personnes à mobilité réduite. ",
+            "fr": "La table à langer est dans les toilettes pour personnes à mobilité réduite. ",
             "nl": "De luiertafel bevindt zich in de rolstoeltoegankelijke toilet "
           }
         },
@@ -336,7 +336,7 @@
           "then": {
             "en": "The changing table is in a dedicated room. ",
             "de": "Der Wickeltisch befindet sich in einem eigenen Raum. ",
-            "fr": "La table à langer se situe dans un espace dédié. ",
+            "fr": "La table à langer est dans un espace dédié. ",
             "nl": "De luiertafel bevindt zich in een daartoe voorziene kamer "
           }
         }

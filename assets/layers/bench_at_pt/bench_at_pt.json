@@ -28,7 +28,8 @@
       "es": "Banco",
       "hu": "Pad",
       "it": "Panchina",
-      "ru": "Скамейка"
+      "ru": "Скамейка",
+      "id": "Bangku"
     },
     "mappings": [
       {
@@ -76,7 +77,8 @@
         "nl": "{name}",
         "hu": "{name}",
         "it": "{name}",
-        "ru": "{name}"
+        "ru": "{name}",
+        "id": "{name}"
       },
       "freeform": {
         "key": "name"

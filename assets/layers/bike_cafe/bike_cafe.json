@@ -62,7 +62,7 @@
       "question": {
         "en": "What is the name of this bike cafe?",
         "nl": "Wat is de naam van dit fietscafé?",
-        "fr": "Quel est le nom de ce Café vélo",
+        "fr": "Quel est le nom de ce Café vélo ?",
         "gl": "Cal é o nome deste café de ciclistas?",
         "de": "Wie heißt dieses Fahrrad-Café?",
         "it": "Qual è il nome di questo caffè in bici?"
@@ -83,7 +83,7 @@
       "question": {
         "en": "Does this bike cafe offer a bike pump for use by anyone?",
         "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
-        "fr": "Est-ce que ce Café vélo propose une pompe en libre accès",
+        "fr": "Est-ce que ce Café vélo propose une pompe en libre accès ?",
         "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
         "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?",
         "it": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
@@ -117,7 +117,7 @@
       "question": {
         "en": "Are there tools here to repair your own bike?",
         "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
-        "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo?",
+        "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?",
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
         "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
         "it": "Ci sono degli strumenti per riparare la propria bicicletta?"
@@ -151,7 +151,7 @@
       "question": {
         "en": "Does this bike cafe repair bikes?",
         "nl": "Herstelt dit fietscafé fietsen?",
-        "fr": "Est-ce que ce Café vélo répare les vélos?",
+        "fr": "Est-ce que ce Café vélo répare les vélos ?",
         "gl": "Este café de ciclistas arranxa bicicletas?",
         "de": "Repariert dieses Fahrrad-Café Fahrräder?",
         "it": "Questo caffè in bici ripara le bici?"
@@ -185,7 +185,7 @@
       "question": {
         "en": "What is the website of {name}?",
         "nl": "Wat is de website van {name}?",
-        "fr": "Quel est le site internet de {name}?",
+        "fr": "Quel est le site web de {name} ?",
         "gl": "Cal é a páxina web de {name}?",
         "de": "Was ist die Webseite von {name}?",
         "it": "Qual è il sito web di {name}?",
@@ -200,7 +200,7 @@
       "question": {
         "en": "What is the phone number of {name}?",
         "nl": "Wat is het telefoonnummer van {name}?",
-        "fr": "Quel est le nom de {name}?",
+        "fr": "Quel est le numéro de téléphone de {name} ?",
         "gl": "Cal é o número de teléfono de {name}?",
         "de": "Wie lautet die Telefonnummer von {name}?",
         "it": "Qual è il numero di telefono di {name}?",
@@ -216,7 +216,7 @@
       "question": {
         "en": "What is the email address of {name}?",
         "nl": "Wat is het email-adres van {name}?",
-        "fr": "Quel est l'adresse email de {name}?",
+        "fr": "Quelle est l'adresse électronique de {name} ?",
         "gl": "Cal é o enderezo de correo electrónico de {name}?",
         "de": "Wie lautet die E-Mail-Adresse von {name}?",
         "it": "Qual è l’indirizzo email di {name}?",

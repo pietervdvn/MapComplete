@@ -137,7 +137,8 @@
       "question": {
         "nl": "Is deze speeltuin 's nachts verlicht?",
         "en": "Is this playground lit at night?",
-        "it": "È illuminato di notte questo parco giochi?"
+        "it": "È illuminato di notte questo parco giochi?",
+        "fr": "Ce terrain de jeux est-il éclairé la nuit ?"
       },
       "mappings": [
         {
@@ -163,12 +164,14 @@
         "nl": "Toegankelijk vanaf {min_age} jaar oud",
         "en": "Accessible to kids older than {min_age} years",
         "it": "Accessibile ai bambini di almeno {min_age} anni",
-        "ru": "Доступно для детей старше {min_age} лет"
+        "ru": "Доступно для детей старше {min_age} лет",
+        "fr": "Accessible aux enfants de plus de {min_age} ans"
       },
       "question": {
         "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
         "en": "What is the minimum age required to access this playground?",
-        "it": "Qual è l’età minima per accedere a questo parco giochi?"
+        "it": "Qual è l’età minima per accedere a questo parco giochi?",
+        "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?"
       },
       "freeform": {
         "key": "min_age",
@@ -179,7 +182,8 @@
       "render": {
         "nl": "Toegankelijk tot {max_age}",
         "en": "Accessible to kids of at most {max_age}",
-        "it": "Accessibile ai bambini di età inferiore a {max_age}"
+        "it": "Accessibile ai bambini di età inferiore a {max_age}",
+        "fr": "Accessible aux enfants de {max_age} au maximum"
       },
       "question": {
         "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -200,7 +204,8 @@
       "render": {
         "nl": "Beheer door {operator}",
         "en": "Operated by {operator}",
-        "it": "Gestito da {operator}"
+        "it": "Gestito da {operator}",
+        "fr": "Exploité par {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -252,7 +257,8 @@
             "en": "Not accessible",
             "nl": "Niet vrij toegankelijk",
             "it": "Non accessibile",
-            "ru": "Недоступно"
+            "ru": "Недоступно",
+            "fr": "Non accessible"
           }
         }
       ]
@@ -261,7 +267,8 @@
       "question": {
         "nl": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
         "en": "What is the email address of the playground maintainer?",
-        "it": "Qual è l’indirizzo email del gestore di questo parco giochi?"
+        "it": "Qual è l’indirizzo email del gestore di questo parco giochi?",
+        "fr": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?"
       },
       "render": {
         "nl": "De bevoegde dienst kan bereikt worden via <a href='mailto:{email}'>{email}</a>",
@@ -270,7 +277,8 @@
         "de": "<a href='mailto:{email}'>{email}</a>",
         "fr": "<a href='mailto:{email}'>{email}</a>",
         "it": "<a href='mailto:{email}'>{email}</a>",
-        "ru": "<a href='mailto:{email}'>{email}</a>"
+        "ru": "<a href='mailto:{email}'>{email}</a>",
+        "id": "<a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -280,7 +288,8 @@
     {
       "question": {
         "nl": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
-        "en": "What is the phone number of the playground maintainer?"
+        "en": "What is the phone number of the playground maintainer?",
+        "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?"
       },
       "render": {
         "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
@@ -288,7 +297,8 @@
         "ca": "<a href='tel:{phone}'>{phone}</a>",
         "de": "<a href='tel:{phone}'>{phone}</a>",
         "fr": "<a href='tel:{phone}'>{phone}</a>",
-        "ru": "<a href='tel:{phone}'>{phone}</a>"
+        "ru": "<a href='tel:{phone}'>{phone}</a>",
+        "id": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -298,28 +308,32 @@
     {
       "question": {
         "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
-        "en": "Is this playground accessible to wheelchair users?"
+        "en": "Is this playground accessible to wheelchair users?",
+        "fr": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?"
       },
       "mappings": [
         {
           "if": "wheelchair=yes",
           "then": {
             "nl": "Geheel toegankelijk voor rolstoelgebruikers",
-            "en": "Completely accessible for wheelchair users"
+            "en": "Completely accessible for wheelchair users",
+            "fr": "Entièrement accessible aux personnes en fauteuil roulant"
           }
         },
         {
           "if": "wheelchair=limited",
           "then": {
             "nl": "Beperkt toegankelijk voor rolstoelgebruikers",
-            "en": "Limited accessibility for wheelchair users"
+            "en": "Limited accessibility for wheelchair users",
+            "fr": "Accessibilité limitée pour les personnes en fauteuil roulant"
           }
         },
         {
           "if": "wheelchair=no",
           "then": {
             "nl": "Niet toegankelijk voor rolstoelgebruikers",
-            "en": "Not accessible for wheelchair users"
+            "en": "Not accessible for wheelchair users",
+            "fr": "Non accessible aux personnes en fauteuil roulant"
           }
         }
       ]
@@ -332,21 +346,24 @@
       "render": "{opening_hours_table(opening_hours)}",
       "question": {
         "nl": "Op welke uren is deze speeltuin toegankelijk?",
-        "en": "When is this playground accessible?"
+        "en": "When is this playground accessible?",
+        "fr": "Quand ce terrain de jeux est-il accessible ?"
       },
       "mappings": [
         {
           "if": "opening_hours=sunrise-sunset",
           "then": {
             "nl": "Van zonsopgang tot zonsondergang",
-            "en": "Accessible from sunrise till sunset"
+            "en": "Accessible from sunrise till sunset",
+            "fr": "Accessible du lever au coucher du soleil"
           }
         },
         {
           "if": "opening_hours=24/7",
           "then": {
             "nl": "Dag en nacht toegankelijk",
-            "en": "Always accessible"
+            "en": "Always accessible",
+            "fr": "Toujours accessible"
           }
         },
         {
@@ -354,7 +371,8 @@
           "then": {
             "nl": "Dag en nacht toegankelijk",
             "en": "Always accessible",
-            "ru": "Всегда доступен"
+            "ru": "Всегда доступен",
+            "fr": "Toujours accessible"
           },
           "hideInAnswer": true
         }
@@ -416,7 +434,8 @@
       "title": {
         "nl": "Speeltuin",
         "en": "Playground",
-        "ru": "Детская площадка"
+        "ru": "Детская площадка",
+        "fr": "Terrain de jeux"
       }
     }
   ],

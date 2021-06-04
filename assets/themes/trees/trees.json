@@ -5,26 +5,30 @@
     "en": "Trees",
     "fr": "Arbres",
     "it": "Alberi",
-    "ru": "Деревья"
+    "ru": "Деревья",
+    "ja": "樹木"
   },
   "shortDescription": {
     "nl": "Breng bomen in kaart",
     "en": "Map all the trees",
     "fr": "Carte des arbres",
-    "it": "Mappa tutti gli alberi"
+    "it": "Mappa tutti gli alberi",
+    "ja": "すべての樹木をマッピングする"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
     "en": "Map all the trees!",
     "fr": "Cartographions tous les arbres !",
-    "it": "Mappa tutti gli alberi!"
+    "it": "Mappa tutti gli alberi!",
+    "ja": "すべての樹木をマッピングします!"
   },
   "language": [
     "nl",
     "en",
     "fr",
     "it",
-    "ru"
+    "ru",
+    "ja"
   ],
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

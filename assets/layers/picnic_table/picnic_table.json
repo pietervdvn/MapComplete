@@ -4,7 +4,8 @@
     "en": "Picnic tables",
     "nl": "Picnictafels",
     "it": "Tavoli da picnic",
-    "ru": "Столы для пикника"
+    "ru": "Столы для пикника",
+    "fr": "Tables de pique-nique"
   },
   "minzoom": 12,
   "source": {
@@ -15,13 +16,15 @@
       "en": "Picnic table",
       "nl": "Picnictafel",
       "it": "Tavolo da picnic",
-      "ru": "Стол для пикника"
+      "ru": "Стол для пикника",
+      "fr": "Table de pique-nique"
     }
   },
   "description": {
     "en": "The layer showing picnic tables",
     "nl": "Deze laag toont picnictafels",
-    "it": "Il livello che mostra i tavoli da picnic"
+    "it": "Il livello che mostra i tavoli da picnic",
+    "fr": "La couche montrant les tables de pique-nique"
   },
   "tagRenderings": [
     {

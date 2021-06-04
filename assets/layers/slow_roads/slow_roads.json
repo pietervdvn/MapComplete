@@ -113,7 +113,8 @@
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
         "en": "The surface is <b>{surface}</b>",
-        "ru": "Поверхность - <b>{surface}</b>"
+        "ru": "Поверхность - <b>{surface}</b>",
+        "fr": "La surface en <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -124,7 +125,8 @@
           "then": {
             "nl": "De ondergrond is <b>gras</b>",
             "en": "The surface is <b>grass</b>",
-            "ru": "Поверхность - <b>трава</b>"
+            "ru": "Поверхность - <b>трава</b>",
+            "fr": "La surface est en <b>herbe</b>"
           }
         },
         {
@@ -132,14 +134,16 @@
           "then": {
             "nl": "De ondergrond is <b>aarde</b>",
             "en": "The surface is <b>ground</b>",
-            "ru": "Поверхность - <b>земля</b>"
+            "ru": "Поверхность - <b>земля</b>",
+            "fr": "La surface est en <b>terre</b>"
           }
         },
         {
           "if": "surface=unpaved",
           "then": {
             "nl": "De ondergrond is <b>onverhard</b>",
-            "en": "The surface is <b>unpaved</b>"
+            "en": "The surface is <b>unpaved</b>",
+            "fr": "La surface est <b>non pavée</b>"
           },
           "hideInAnswer": true
         },
@@ -148,7 +152,8 @@
           "then": {
             "nl": "De ondergrond is <b>zand</b>",
             "en": "The surface is <b>sand</b>",
-            "ru": "Поверхность - <b>песок</b>"
+            "ru": "Поверхность - <b>песок</b>",
+            "fr": "La surface est en <b>sable</b>"
           }
         },
         {
@@ -172,14 +177,16 @@
           "then": {
             "nl": "De ondergrond is <b>beton</b>",
             "en": "The surface is <b>concrete</b>",
-            "ru": "Поверхность - <b>бетон</b>"
+            "ru": "Поверхность - <b>бетон</b>",
+            "fr": "La surface est en <b>béton</b>"
           }
         },
         {
           "if": "surface=paved",
           "then": {
             "nl": "De ondergrond is <b>verhard</b>",
-            "en": "The surface is <b>paved</b>"
+            "en": "The surface is <b>paved</b>",
+            "fr": "La surface est <b>pavée</b>"
           },
           "hideInAnswer": true
         }

@@ -57,7 +57,7 @@
           },
           "then": {
             "nl": "Hier kan men basketbal spelen",
-            "fr": "Ici on peut jouer au basket",
+            "fr": "Ici, on joue au basketball",
             "en": "Basketball is played here"
           }
         },
@@ -69,7 +69,7 @@
           },
           "then": {
             "nl": "Hier kan men voetbal spelen",
-            "fr": "Ici on joue au foot",
+            "fr": "Ici, on joue au football",
             "en": "Soccer is played here"
           }
         },
@@ -94,7 +94,7 @@
           },
           "then": {
             "nl": "Hier kan men tennis spelen",
-            "fr": "Ici on peut jouer au tennis",
+            "fr": "Ici, on joue au tennis",
             "en": "Tennis is played here"
           }
         },
@@ -106,7 +106,7 @@
           },
           "then": {
             "nl": "Hier kan men korfbal spelen",
-            "fr": "Ici on peut jouer au korfbal",
+            "fr": "Ici, on joue au korfball",
             "en": "Korfball is played here"
           }
         },
@@ -118,7 +118,7 @@
           },
           "then": {
             "nl": "Hier kan men basketbal beoefenen",
-            "fr": "Ici on peut jouer au basket",
+            "fr": "Ici, on joue au basketball",
             "en": "Basketball is played here"
           },
           "hideInAnswer": true
@@ -128,7 +128,7 @@
     {
       "question": {
         "nl": "Wat is de ondergrond van dit sportveld?",
-        "fr": "De quelle surface est fait ce terrain de sport ?",
+        "fr": "De quelle surface est fait ce terrain de sport ?",
         "en": "Which is the surface of this sport pitch?"
       },
       "render": {
@@ -207,7 +207,7 @@
           "if": "access=limited",
           "then": {
             "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)",
-            "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires, ...)",
+            "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
             "en": "Limited access (e.g. only with an appointment, during certain hours, ...)"
           }
         },
@@ -271,7 +271,7 @@
           "if": "reservation=no",
           "then": {
             "nl": "Reserveren is niet mogelijk",
-            "fr": "On ne peux pas réserver",
+            "fr": "On ne peut pas réserver",
             "en": "Making an appointment is not possible"
           }
         }
@@ -292,7 +292,7 @@
     {
       "question": {
         "nl": "Wat is het email-adres van de bevoegde dienst of uitbater?",
-        "fr": "Quel est l'adresse courriel du gérant ?",
+        "fr": "Quelle est l'adresse courriel du gérant ?",
         "en": "What is the email address of the operator?"
       },
       "freeform": {

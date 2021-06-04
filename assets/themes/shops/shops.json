@@ -2,19 +2,23 @@
   "id": "shops",
   "title": {
     "en": "Open Shop Map",
-    "fr": "Carte des magasins"
+    "fr": "Carte des magasins",
+    "ja": "オープン ショップ マップ"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
-    "fr": "Carte modifiable affichant les informations de base des magasins"
+    "fr": "Carte modifiable affichant les informations de base des magasins",
+    "ja": "基本的なショップ情報を含む編集可能なマップ"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
-    "fr": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone"
+    "fr": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone",
+    "ja": "この地図には店の基本情報を記入したり営業時間や電話番号を追加することができます"
   },
   "language": [
     "en",
     "fr",
+    "ja",
     "ru",
     "ca",
     "id"
@@ -33,7 +37,8 @@
       "name": {
         "en": "Shop",
         "fr": "Magasin",
-        "ru": "Магазин"
+        "ru": "Магазин",
+        "ja": "店"
       },
       "minzoom": 16,
       "source": {
@@ -47,7 +52,8 @@
         "render": {
           "en": "Shop",
           "fr": "Magasin",
-          "ru": "Магазин"
+          "ru": "Магазин",
+          "ja": "店"
         },
         "mappings": [
           {
@@ -59,7 +65,8 @@
             "then": {
               "en": "{name}",
               "fr": "{name}",
-              "ru": "{name}"
+              "ru": "{name}",
+              "ja": "{name}"
             }
           },
           {
@@ -71,14 +78,16 @@
             "then": {
               "en": "{shop}",
               "fr": "{shop}",
-              "ru": "{shop}"
+              "ru": "{shop}",
+              "ja": "{shop}"
             }
           }
         ]
       },
       "description": {
         "en": "A shop",
-        "fr": "Un magasin"
+        "fr": "Un magasin",
+        "ja": "ショップ"
       },
       "tagRenderings": [
         "images",
@@ -86,7 +95,8 @@
           "question": {
             "en": "What is the name of this shop?",
             "fr": "Qu'est-ce que le nom de ce magasin?",
-            "ru": "Как называется этот магазин?"
+            "ru": "Как называется магазин?",
+            "ja": "このお店の名前は何ですか?"
           },
           "render": "This shop is called <i>{name}</i>",
           "freeform": {
@@ -96,11 +106,13 @@
         {
           "render": {
             "en": "This shop sells {shop}",
-            "fr": "Ce magasin vends {shop}"
+            "fr": "Ce magasin vends {shop}",
+            "ja": "こちらのお店では{shop}を販売しております"
           },
           "question": {
             "en": "What does this shop sell?",
-            "fr": "Que vends ce magasin ?"
+            "fr": "Que vends ce magasin ?",
+            "ja": "このお店では何を売っていますか?"
           },
           "freeform": {
             "key": "shop"
@@ -114,7 +126,8 @@
               },
               "then": {
                 "en": "Convenience store",
-                "fr": "Épicerie/superette"
+                "fr": "Épicerie/superette",
+                "ja": "コンビニエンスストア"
               }
             },
             {
@@ -126,7 +139,8 @@
               "then": {
                 "en": "Supermarket",
                 "fr": "Supermarché",
-                "ru": "Супермаркет"
+                "ru": "Супермаркет",
+                "ja": "スーパーマーケット"
               }
             },
             {
@@ -138,7 +152,8 @@
               "then": {
                 "en": "Clothing store",
                 "fr": "Magasin de vêtements",
-                "ru": "Магазин одежды"
+                "ru": "Магазин одежды",
+                "ja": "衣料品店"
               }
             },
             {
@@ -150,7 +165,8 @@
               "then": {
                 "en": "Hairdresser",
                 "fr": "Coiffeur",
-                "ru": "Парикмахерская"
+                "ru": "Парикмахерская",
+                "ja": "理容師"
               }
             },
             {
@@ -161,7 +177,8 @@
               },
               "then": {
                 "en": "Bakery",
-                "fr": "Boulangerie"
+                "fr": "Boulangerie",
+                "ja": "ベーカリー"
               }
             },
             {
@@ -172,7 +189,8 @@
               },
               "then": {
                 "en": "Car repair (garage)",
-                "fr": "Garagiste"
+                "fr": "Garagiste",
+                "ja": "自動車修理(ガレージ)"
               }
             },
             {
@@ -184,7 +202,8 @@
               "then": {
                 "en": "Car dealer",
                 "fr": "Concessionnaire",
-                "ru": "Автосалон"
+                "ru": "Автосалон",
+                "ja": "自動車ディーラー"
               }
             }
           ]
@@ -195,11 +214,13 @@
             "fr": "<a href='tel:{phone}'>{phone}</a>",
             "ca": "<a href='tel:{phone}'>{phone}</a>",
             "id": "<a href='tel:{phone}'>{phone}</a>",
-            "ru": "<a href='tel:{phone}'>{phone}</a>"
+            "ru": "<a href='tel:{phone}'>{phone}</a>",
+            "ja": "<a href='tel:{phone}'>{phone}</a>"
           },
           "question": {
             "en": "What is the phone number?",
-            "fr": "Quel est le numéro de téléphone ?"
+            "fr": "Quel est le numéro de téléphone ?",
+            "ja": "電話番号は何番ですか?"
           },
           "freeform": {
             "key": "phone",
@@ -212,11 +233,13 @@
             "fr": "<a href='{website}'>{website}</a>",
             "ca": "<a href='{website}'>{website}</a>",
             "id": "<a href='{website}'>{website}</a>",
-            "ru": "<a href='{website}'>{website}</a>"
+            "ru": "<a href='{website}'>{website}</a>",
+            "ja": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",
-            "fr": "Quel est le site internet de ce magasin ?"
+            "fr": "Quel est le site internet de ce magasin ?",
+            "ja": "このお店のホームページは何ですか?"
           },
           "freeform": {
             "key": "website",
@@ -228,11 +251,13 @@
             "en": "<a href='mailto:{email}'>{email}</a>",
             "fr": "<a href='mailto:{email}'>{email}</a>",
             "id": "<a href='mailto:{email}'>{email}</a>",
-            "ru": "<a href='mailto:{email}'>{email}</a>"
+            "ru": "<a href='mailto:{email}'>{email}</a>",
+            "ja": "<a href='mailto:{email}'>{email}</a>"
           },
           "question": {
             "en": "What is the email address of this shop?",
-            "fr": "Quel est l'adresse mail de ce magasin ?"
+            "fr": "Quel est l'adresse mail de ce magasin ?",
+            "ja": "このお店のメールアドレスは何ですか?"
           },
           "freeform": {
             "key": "email",
@@ -243,11 +268,13 @@
           "render": {
             "en": "{opening_hours_table(opening_hours)}",
             "fr": "{opening_hours_table(opening_hours)}",
-            "ru": "{opening_hours_table(opening_hours)}"
+            "ru": "{opening_hours_table(opening_hours)}",
+            "ja": "{opening_hours_table(opening_hours)}"
           },
           "question": {
             "en": "What are the opening hours of this shop?",
-            "fr": "Quels sont les horaires d'ouverture de ce magasin ?"
+            "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
+            "ja": "この店の営業時間は何時から何時までですか?"
           },
           "freeform": {
             "key": "opening_hours",
@@ -285,12 +312,14 @@
           "title": {
             "en": "Shop",
             "fr": "Magasin",
-            "ru": "Магазин"
+            "ru": "Магазин",
+            "ja": "店"
           },
           "description": {
             "en": "Add a new shop",
             "fr": "Ajouter un nouveau magasin",
-            "ru": "Добавить новый магазин"
+            "ru": "Добавить новый магазин",
+            "ja": "新しい店を追加する"
           }
         }
       ],

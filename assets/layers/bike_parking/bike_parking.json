@@ -58,7 +58,7 @@
       "question": {
         "en": "What is the type of this bicycle parking?",
         "nl": "Van welk type is deze fietsparking?",
-        "fr": "Quelle type de parking s'agit il?",
+        "fr": "Quel type de parking à vélos est-ce ?",
         "gl": "Que tipo de aparcadoiro de bicicletas é?",
         "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
         "hu": "Milyen típusú ez a kerékpáros parkoló?",
@@ -311,7 +311,8 @@
         "fr": "{access}",
         "nl": "{access}",
         "it": "{access}",
-        "ru": "{access}"
+        "ru": "{access}",
+        "id": "{access}"
       },
       "freeform": {
         "key": "access",
@@ -408,7 +409,7 @@
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
         "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
-        "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport.",
+        "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport",
         "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
         "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",
         "it": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"

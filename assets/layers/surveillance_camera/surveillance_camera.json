@@ -3,7 +3,8 @@
   "name": {
     "en": "Surveillance camera's",
     "nl": "Bewakingscamera's",
-    "ru": "Камеры наблюдения"
+    "ru": "Камеры наблюдения",
+    "fr": "Caméras de surveillance"
   },
   "minzoom": 12,
   "source": {
@@ -24,7 +25,8 @@
     "render": {
       "en": "Surveillance Camera",
       "nl": "Bewakingscamera",
-      "ru": "Камера наблюдения"
+      "ru": "Камера наблюдения",
+      "fr": "Caméra de surveillance"
     }
   },
   "tagRenderings": [
@@ -33,7 +35,8 @@
       "#": "Camera type: fixed; panning; dome",
       "question": {
         "en": "What kind of camera is this?",
-        "nl": "Wat voor soort camera is dit?"
+        "nl": "Wat voor soort camera is dit?",
+        "fr": "Quel genre de caméra est-ce ?"
       },
       "mappings": [
         {
@@ -44,7 +47,8 @@
           },
           "then": {
             "en": "A fixed (non-moving) camera",
-            "nl": "Een vaste camera"
+            "nl": "Een vaste camera",
+            "fr": "Une caméra fixe (non mobile)"
           }
         },
         {
@@ -55,7 +59,8 @@
           },
           "then": {
             "en": "A dome camera (which can turn)",
-            "nl": "Een dome (bolvormige camera die kan draaien)"
+            "nl": "Een dome (bolvormige camera die kan draaien)",
+            "fr": "Une caméra dôme (qui peut tourner)"
           }
         },
         {
@@ -67,7 +72,8 @@
           "then": {
             "en": "A panning camera",
             "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
-            "ru": "Панорамная камера"
+            "ru": "Панорамная камера",
+            "fr": "Une caméra panoramique"
           }
         }
       ]
@@ -76,11 +82,13 @@
       "#": "direction. We don't ask this for a dome on a pole or ceiling as it has a 360° view",
       "question": {
         "en": "In which geographical direction does this camera film?",
-        "nl": "In welke geografische richting filmt deze camera?"
+        "nl": "In welke geografische richting filmt deze camera?",
+        "fr": "Dans quelle direction géographique cette caméra filme-t-elle ?"
       },
       "render": {
         "en": "Films to a compass heading of {camera:direction}",
-        "nl": "Filmt in kompasrichting {camera:direction}"
+        "nl": "Filmt in kompasrichting {camera:direction}",
+        "fr": "Filme dans une direction {camera:direction}"
       },
       "condition": {
         "or": [
@@ -109,7 +117,8 @@
           },
           "then": {
             "en": "Films to a compass heading of {direction}",
-            "nl": "Filmt in kompasrichting {direction}"
+            "nl": "Filmt in kompasrichting {direction}",
+            "fr": "Filme dans une direction {direction}"
           },
           "hideInAnswer": true
         }
@@ -122,18 +131,21 @@
       },
       "question": {
         "en": "Who operates this CCTV?",
-        "nl": "Wie beheert deze bewakingscamera?"
+        "nl": "Wie beheert deze bewakingscamera?",
+        "fr": "Qui exploite ce système de vidéosurveillance ?"
       },
       "render": {
         "en": "Operated by {operator}",
-        "nl": "Beheer door {operator}"
+        "nl": "Beheer door {operator}",
+        "fr": "Exploité par {operator}"
       }
     },
     {
       "#": "Surveillance type: public, outdoor, indoor",
       "question": {
         "en": "What kind of surveillance is this camera",
-        "nl": "Wat soort bewaking wordt hier uitgevoerd?"
+        "nl": "Wat soort bewaking wordt hier uitgevoerd?",
+        "fr": "Quel genre de surveillance est cette caméra"
       },
       "mappings": [
         {
@@ -144,7 +156,8 @@
           },
           "then": {
             "en": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,...",
-            "nl": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel..."
+            "nl": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel...",
+            "fr": "Une zone publique est surveillée, telle qu'une rue, un pont, une place, un parc, une gare, un couloir ou un tunnel public…"
           }
         },
         {
@@ -155,7 +168,8 @@
           },
           "then": {
             "en": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)",
-            "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, ...)"
+            "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, ...)",
+            "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée, etc.)"
           }
         },
         {
@@ -166,7 +180,8 @@
           },
           "then": {
             "nl": "Een private binnenruimte wordt bewaakt, bv. een winkel, een parkeergarage, ...",
-            "en": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ..."
+            "en": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ...",
+            "fr": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…"
           }
         }
       ]
@@ -175,7 +190,8 @@
       "#": "Indoor camera? This isn't clear for 'public'-cameras",
       "question": {
         "en": "Is the public space surveilled by this camera an indoor or outdoor space?",
-        "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
+        "nl": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?",
+        "fr": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?"
       },
       "condition": {
         "and": [
@@ -187,21 +203,24 @@
           "if": "indoor=yes",
           "then": {
             "en": "This camera is located indoors",
-            "nl": "Deze camera bevindt zich binnen"
+            "nl": "Deze camera bevindt zich binnen",
+            "fr": "Cette caméra est située à l'intérieur"
           }
         },
         {
           "if": "indoor=no",
           "then": {
             "en": "This camera is located outdoors",
-            "nl": "Deze camera bevindt zich buiten"
+            "nl": "Deze camera bevindt zich buiten",
+            "fr": "Cette caméra est située à l'extérieur"
           }
         },
         {
           "if": "indoor=",
           "then": {
             "en": "This camera is probably located outdoors",
-            "nl": "Deze camera bevindt zich waarschijnlijk buiten"
+            "nl": "Deze camera bevindt zich waarschijnlijk buiten",
+            "fr": "Cette caméra est probablement située à l'extérieur"
           },
           "hideInAnswer": true
         }
@@ -211,11 +230,13 @@
       "#": "Level",
       "question": {
         "en": "On which level is this camera located?",
-        "nl": "Op welke verdieping bevindt deze camera zich?"
+        "nl": "Op welke verdieping bevindt deze camera zich?",
+        "fr": "À quel niveau se trouve cette caméra ?"
       },
       "render": {
         "en": "Located on level {level}",
-        "nl": "Bevindt zich op verdieping {level}"
+        "nl": "Bevindt zich op verdieping {level}",
+        "fr": "Situé au niveau {level}"
       },
       "freeform": {
         "key": "level",
@@ -232,14 +253,16 @@
       "#": "Surveillance:zone",
       "question": {
         "en": "What exactly is surveilled here?",
-        "nl": "Wat wordt hier precies bewaakt?"
+        "nl": "Wat wordt hier precies bewaakt?",
+        "fr": "Qu'est-ce qui est surveillé ici ?"
       },
       "freeform": {
         "key": "surveillance:zone"
       },
       "render": {
         "en": " Surveills a {surveillance:zone}",
-        "nl": "Bewaakt een {surveillance:zone}"
+        "nl": "Bewaakt een {surveillance:zone}",
+        "fr": " Surveille un(e) {surveillance:zone}"
       },
       "mappings": [
         {
@@ -250,7 +273,8 @@
           },
           "then": {
             "en": "Surveills a parking",
-            "nl": "Bewaakt een parking"
+            "nl": "Bewaakt een parking",
+            "fr": "Surveille un parking"
           }
         },
         {
@@ -261,7 +285,8 @@
           },
           "then": {
             "en": "Surveills the traffic",
-            "nl": "Bewaakt het verkeer"
+            "nl": "Bewaakt het verkeer",
+            "fr": "Surveille la circulation"
           }
         },
         {
@@ -272,7 +297,8 @@
           },
           "then": {
             "en": "Surveills an entrance",
-            "nl": "Bewaakt een ingang"
+            "nl": "Bewaakt een ingang",
+            "fr": "Surveille une entrée"
           }
         },
         {
@@ -283,7 +309,8 @@
           },
           "then": {
             "en": "Surveills a corridor",
-            "nl": "Bewaakt een gang"
+            "nl": "Bewaakt een gang",
+            "fr": "Surveille un couloir"
           }
         },
         {
@@ -294,7 +321,8 @@
           },
           "then": {
             "en": "Surveills a public tranport platform",
-            "nl": "Bewaakt een perron of bushalte"
+            "nl": "Bewaakt een perron of bushalte",
+            "fr": "Surveille un quai de transport public"
           }
         },
         {
@@ -305,7 +333,8 @@
           },
           "then": {
             "en": "Surveills a shop",
-            "nl": "Bewaakt een winkel"
+            "nl": "Bewaakt een winkel",
+            "fr": "Surveille un magasin"
           }
         }
       ]
@@ -314,11 +343,13 @@
       "#": "camera:mount",
       "question": {
         "en": "How is this camera placed?",
-        "nl": "Hoe is deze camera geplaatst?"
+        "nl": "Hoe is deze camera geplaatst?",
+        "fr": "Comment cette caméra est-elle placée ?"
       },
       "render": {
         "en": "Mounting method: {mount}",
-        "nl": "Montage: {camera:mount}"
+        "nl": "Montage: {camera:mount}",
+        "fr": "Méthode de montage : {mount}"
       },
       "freeform": {
         "key": "camera:mount"
@@ -328,21 +359,24 @@
           "if": "camera:mount=wall",
           "then": {
             "en": "This camera is placed against a wall",
-            "nl": "Deze camera hangt aan een muur"
+            "nl": "Deze camera hangt aan een muur",
+            "fr": "Cette caméra est placée contre un mur"
           }
         },
         {
           "if": "camera:mount=pole",
           "then": {
             "en": "This camera is placed one a pole",
-            "nl": "Deze camera staat op een paal"
+            "nl": "Deze camera staat op een paal",
+            "fr": "Cette caméra est placée sur un poteau"
           }
         },
         {
           "if": "camera:mount=ceiling",
           "then": {
             "en": "This camera is placed on the ceiling",
-            "nl": "Deze camera hangt aan het plafond"
+            "nl": "Deze camera hangt aan het plafond",
+            "fr": "Cette caméra est placée au plafond"
           }
         }
       ]

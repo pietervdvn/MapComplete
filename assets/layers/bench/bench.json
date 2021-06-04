@@ -51,7 +51,7 @@
           "then": {
             "en": "Backrest: Yes",
             "de": "Rückenlehne: Ja",
-            "fr": "Dossier: Oui",
+            "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
             "es": "Respaldo: Si",
             "hu": "Háttámla: Igen",
@@ -65,7 +65,7 @@
           "then": {
             "en": "Backrest: No",
             "de": "Rückenlehne: Nein",
-            "fr": "Dossier: Non",
+            "fr": "Dossier : Non",
             "nl": "Rugleuning ontbreekt",
             "es": "Respaldo: No",
             "hu": "Háttámla: Nem",
@@ -161,7 +161,7 @@
           "then": {
             "en": "Material: stone",
             "de": "Material: Stein",
-            "fr": "Matériau: pierre",
+            "fr": "Matériau : pierre",
             "nl": "Gemaakt uit steen",
             "es": "Material: piedra",
             "hu": "Anyag: kő",
@@ -249,7 +249,8 @@
         "nl": "Kleur: {colour}",
         "hu": "Szín: {colour}",
         "it": "Colore: {colour}",
-        "ru": "Цвет: {colour}"
+        "ru": "Цвет: {colour}",
+        "id": "Warna: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -414,7 +415,8 @@
         "nl": "Zitbank",
         "es": "Banco",
         "it": "Panchina",
-        "ru": "Скамейка"
+        "ru": "Скамейка",
+        "id": "Bangku"
       },
       "description": {
         "en": "Add a new bench",

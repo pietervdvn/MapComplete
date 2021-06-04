@@ -130,7 +130,7 @@
       "question": {
         "en": "Which services are available at this bike station?",
         "nl": "Welke functies biedt dit fietspunt?",
-        "fr": "Quels services sont valables à cette station vélo?",
+        "fr": "Quels services sont valables à cette station vélo ?",
         "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
         "de": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?",
         "it": "Quali servizi sono disponibili in questa stazione per bici?"
@@ -248,7 +248,7 @@
       "question": {
         "en": "Does this bike repair station have a special tool to repair your bike chain?",
         "nl": "Heeft dit herstelpunt een speciale reparatieset voor je ketting?",
-        "fr": "Est-ce que cette station vélo a un outils specifique pour réparer la chaîne du velo?",
+        "fr": "Est-ce que cette station vélo a un outil specifique pour réparer la chaîne du vélo ?",
         "gl": "Esta estación de arranxo de bicicletas ten unha ferramenta especial para arranxar a cadea da túa bicicleta?",
         "de": "Verfügt diese Fahrrad-Reparaturstation über Spezialwerkzeug zur Reparatur von Fahrradketten?",
         "it": "Questa stazione di riparazione bici ha un attrezzo speciale per riparare la catena della bici?"
@@ -283,7 +283,7 @@
       "question": {
         "en": "Does this bike station have a hook to hang your bike on or a stand to raise it?",
         "nl": "Heeft dit herstelpunt een haak of standaard om je fiets op te hangen/zetten?",
-        "fr": "Est-ce que cette station vélo à un crochet pour suspendre son velo ou une accroche pour l'élevé?",
+        "fr": "Est-ce que cette station vélo à un crochet pour suspendre son vélo ou une accroche pour l'élevé ?",
         "gl": "Esta estación de bicicletas ten un guindastre para pendurar a túa bicicleta ou un soporte para elevala?",
         "de": "Hat diese Fahrradstation einen Haken, an dem Sie Ihr Fahrrad aufhängen können, oder einen Ständer, um es anzuheben?",
         "it": "Questa stazione bici ha un gancio per tenere sospesa la bici o un supporto per alzarla?"
@@ -318,7 +318,7 @@
       "question": {
         "en": "Is the bike pump still operational?",
         "nl": "Werkt de fietspomp nog?",
-        "fr": "Est-ce que cette pompe marche t'elle toujours?",
+        "fr": "La pompe à vélo fonctionne-t-elle toujours ?",
         "gl": "Segue a funcionar a bomba de ar?",
         "de": "Ist die Fahrradpumpe noch funktionstüchtig?",
         "it": "La pompa per bici è sempre funzionante?",
@@ -331,7 +331,7 @@
           "then": {
             "en": "The bike pump is broken",
             "nl": "De fietspomp is kapot",
-            "fr": "La pompe est cassé",
+            "fr": "La pompe à vélo est cassée",
             "gl": "A bomba de ar está estragada",
             "de": "Die Fahrradpumpe ist kaputt",
             "it": "La pompa per bici è guasta",
@@ -356,7 +356,7 @@
       "question": {
         "en": "What valves are supported?",
         "nl": "Welke ventielen werken er met de pomp?",
-        "fr": "Quelles valves sont compatibles?",
+        "fr": "Quelles valves sont compatibles ?",
         "gl": "Que válvulas son compatíbeis?",
         "de": "Welche Ventile werden unterstützt?",
         "it": "Quali valvole sono supportate?"
@@ -364,7 +364,7 @@
       "render": {
         "en": "This pump supports the following valves: {valves}",
         "nl": "Deze pomp werkt met de volgende ventielen: {valves}",
-        "fr": "Cette pompe est compatible avec les valves suivantes: {valves}",
+        "fr": "Cette pompe est compatible avec les valves suivantes : {valves}",
         "gl": "Esta bomba de ar admite as seguintes válvulas: {valves}",
         "de": "Diese Pumpe unterstützt die folgenden Ventile: {valves}",
         "it": "Questa pompa è compatibile con le seguenti valvole: {valves}",
@@ -419,7 +419,7 @@
       "question": {
         "en": "Is this an electric bike pump?",
         "nl": "Is dit een electrische fietspomp?",
-        "fr": "Est-ce que cette pompe est électrique?",
+        "fr": "Est-ce que cette pompe est électrique ?",
         "gl": "Esta é unha bomba de ar eléctrica?",
         "de": "Ist dies eine elektrische Fahrradpumpe?",
         "it": "Questa pompa per bici è elettrica?",
@@ -457,7 +457,7 @@
       "question": {
         "en": "Does the pump have a pressure indicator or manometer?",
         "nl": "Heeft deze pomp een luchtdrukmeter?",
-        "fr": "Est-ce que la pompe à un manomètre integré?",
+        "fr": "Est-ce que la pompe à un manomètre integré ?",
         "gl": "Ten a bomba de ar un indicador de presión ou un manómetro?",
         "de": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?",
         "it": "Questa pompa ha l’indicatore della pressione o il manometro?"
@@ -588,7 +588,8 @@
       "description": {
         "en": "A device to inflate your tires on a fixed location in the public space.<h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
         "nl": "Een apparaat waar je je fietsbanden kan oppompen, beschikbaar in de publieke ruimte. De fietspomp in je kelder telt dus niet.<h3>Voorbeelden</h3><h3>Examples of bicycle pumps</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
-        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.<h3>Esempi di pompe per biciclette</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
+        "it": "Un dispositivo per gonfiare le proprie gomme in un luogo fisso pubblicamente accessibile.<h3>Esempi di pompe per biciclette</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>",
+        "fr": "Un dispositif pour gonfler vos pneus sur un emplacement fixe dans l'espace public.<h3>Exemples de pompes à vélo</h3><div style='width: 100%; display: flex; align-items: stretch;'><img src='./assets/layers/bike_repair_station/pump_example_manual.jpg' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example.png' style='height: 200px; width: auto;'/><img src='./assets/layers/bike_repair_station/pump_example_round.jpg' style='height: 200px; width: auto;'/></div>"
       }
     },
     {

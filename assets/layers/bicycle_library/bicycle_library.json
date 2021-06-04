@@ -115,8 +115,8 @@
           "then": {
             "en": "Lending a bicycle costs €20/year and €20 warranty",
             "nl": "Een fiets huren kost €20/jaar en €20 waarborg",
-            "fr": "Emprunter un vélo coûte 20€/an et 20€ de garantie",
-            "it": "Il prestito di una bicicletta costa 20€/anno più 20€ di garanzia"
+            "fr": "Emprunter un vélo coûte 20 €/an et 20 € de garantie",
+            "it": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia"
           }
         }
       ]
@@ -177,7 +177,7 @@
         "nl": "Een fietsbieb heeft een collectie fietsen die leden mogen lenen",
         "en": "A bicycle library has a collection of bikes which can be lent",
         "fr": "Une vélothèque a une collection de vélos qui peuvent être empruntés",
-        "it": "Una “ciclo-teca” o “bici in prestito” (‘bicycle library’ in inglese) ha una collezione di bici che possno essere prestate"
+        "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate"
       }
     }
   ],
