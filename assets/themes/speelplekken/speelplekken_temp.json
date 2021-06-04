@@ -239,6 +239,14 @@
     {
       "render": "Maakt deel uit van {_part_of_walking_routes}",
       "condition": "_part_of_walking_routes~*"
+    },
+    {
+      "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
+      "freeform": {
+        "key": "video",
+        "type": "url"
+      },
+      "question": "Wat is de link naar de video-reportage?"
     }
   ],
   "overrideAll": {

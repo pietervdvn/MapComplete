@@ -18,6 +18,9 @@ export class Translation extends UIElement {
         }
         let count = 0;
         for (const translationsKey in translations) {
+            if(!translations.hasOwnProperty(translationsKey)){
+                continue
+            }
             count++;
             if (typeof (translations[translationsKey]) != "string") {
                 console.error("Non-string object in translation: ", translations[translationsKey])

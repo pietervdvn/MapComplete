@@ -1,0 +1,55 @@
+name: Deployment on pietervdvn
+on:
+  push
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v1.2.0
+        with:
+            node-version: '15'
+        env:
+            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          
+      - name: install deps
+        run: npm ci
+          
+      - name: create generated dir
+        run: mkdir ./assets/generated
+
+      - name: create stub themes
+        run: "echo '{\"layers\": [], \"themes\": []}' > ./assets/generated/known_layers_and_themes.json"
+  
+      - name: Prepare deploy
+        run: npm run prepare-deploy
+        
+      - name: Clone deployment repo
+        env:
+          DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
+        run: | 
+          echo "Cloning destination repo"
+          git config --global user.email "pietervdvn@posteo.net"
+          git config --global user.name "pietervdvn"
+          git clone --depth 1 --single-branch --branch master "https://x-access-token:$DEPLOY_KEY_PIETERVDVN@github.com/pietervdvn/pietervdvn.github.io.git"
+          echo "Destination repo is cloned"
+          
+      - name: "Copying files"
+        run: |
+          echo "Deploying"
+          TARGET=${GITHUB_REF:11}
+          rm -rf pietervdvn.github.io/mc/$TARGET/*
+          mkdir -p pietervdvn.github.io/mc/$TARGET/
+          cp -r dist/* pietervdvn.github.io/mc/$TARGET/
+          cd pietervdvn.github.io/
+          git add *
+          if git status | grep -q "Changes to be committed"
+          then
+            git commit -am "Deploying a new version of mapcomplete"
+            git push
+          else
+            echo "No changes to commit"
+          fi

@@ -5,7 +5,6 @@ import {FromJSON} from "./FromJSON";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {Translation} from "../../UI/i18n/Translation";
-import Img from "../../UI/Base/Img";
 import Svg from "../../Svg";
 
 import {Utils} from "../../Utils";
@@ -64,7 +63,14 @@ export default class LayerConfig {
         const self = this;
         this.id = json.id;
         this.name = Translations.T(json.name, context + ".name");
-        this.description = Translations.T(json.description, context + ".description");
+        
+        if(json.description !== undefined){
+            if(Object.keys(json.description).length === 0){
+                json.description = undefined;
+            }
+        }
+        
+        this.description =Translations.T(json.description, context + ".description") ; 
 
         let legacy = undefined;
         if (json["overpassTags"] !== undefined) {
@@ -360,8 +366,7 @@ export default class LayerConfig {
                     // We use § as a replacement for ;
                     const html = sourcePart.substring("html:".length)
                     const inner = new FixedUiElement(SubstitutingTag.substituteString(html, tgs)).SetClass("block w-min text-center")
-                    const outer = new Combine([inner]).SetClass("flex flex-col items-center")
-                    return outer;
+                    return new Combine([inner]).SetClass("flex flex-col items-center");
                 }
 
                 const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;

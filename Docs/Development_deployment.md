@@ -31,6 +31,14 @@
 5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename` or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
 
+ Automatic deployment
+ --------------------
+ 
+ Currently, the master branch is automatically deployed to 'mapcomplete.osm.be' by a github action.
+ 
+ Every branch is automatically built (upon push) to 'pietervdvn.github.io/mc/<branchname>' by a github action.
+
+
  Deploying a fork
  ----------------
  
