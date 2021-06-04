@@ -14,7 +14,7 @@ export default class Constants {
         mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
         themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 500,
+        themeGeneratorFullUnlock: 1,
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19),
        
