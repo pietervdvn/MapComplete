@@ -39,20 +39,17 @@
       "builtin": "play_forest",
       "override": {
         "source": {
-          "#geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
-          "#geoJsonZoomLevel": 14,
-          "#isOsmCache": true
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 14,
+          "isOsmCache": true
         },
         "icon": "./assets/themes/speelplekken/speelbos.svg",
-        "minzoom":
-        12,
+        "minzoom": 12,
         "calculatedTags": [
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
           "_video:id=new URL(feat.properties.video).searchParams.get('v')"
         ]
-      },
-      "calculatedTags": [
-        "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
-      ]
+      }
     },
     {
       "builtin": "playground",
@@ -66,7 +63,8 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -82,7 +80,8 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -98,7 +97,8 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
@@ -113,7 +113,8 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
+          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_video:id=new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
     },
