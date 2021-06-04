@@ -715,7 +715,7 @@
             },
             "10": {
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
-                "question": "Gibt es eine Webseite mit weiteren Informationen über diesen öffentlichen Bücherschrank?"
+                "question": "Gibt es eine Website mit weiteren Informationen über diesen öffentlichen Bücherschrank?"
             }
         }
     },

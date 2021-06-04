@@ -1,0 +1,175 @@
+{
+    "reviews": {
+        "i_am_affiliated": "<span>わたしは、この対象物の関係者です</span><br><span class=\"subtle\">所有者、作成者、従業員などの有無を確認します</span>",
+        "no_reviews_yet": "まだレビューはありません。最初に書き込みを行い、データとビジネスのオープン化を支援しましょう!",
+        "name_required": "レビューを表示および作成するには名前が必要です",
+        "plz_login": "ログインしてレビューを終了する",
+        "attribution": "レビューは、<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> and are available under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>で公開されます。",
+        "tos": "レビューを作成する場合は、<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviewsのTOSおよびプライバシーポリシーに同意します。</a>",
+        "saved": "<span class=\"thanks\">レビューが保存されました。共有ありがとう!</span>",
+        "saving_review": "保存中…",
+        "affiliated_reviewer_warning": "(関係者のレビュー)",
+        "posting_as": "としての投稿",
+        "no_rating": "評価が与えられていません",
+        "write_a_comment": "レビューを残す…",
+        "title_singular": "1回のレビュー",
+        "title": "{count}個のレビュー"
+    },
+    "favourite": {
+        "loginNeeded": "<h3>ログイン</h3>個人用レイアウトはOpenStreetMapユーザのみが使用できます",
+        "reload": "データを再ロードする",
+        "panelIntro": "<h3>お客様の個人的なテーマ</h3>すべての公式テーマからお気に入りのレイヤを有効にする"
+    },
+    "general": {
+        "layerSelection": {
+            "zoomInToSeeThisLayer": "レイヤを拡大表示します",
+            "title": "レイヤを選択"
+        },
+        "getStartedLogin": "OpenStreetMapを使用してログインし開始します",
+        "morescreen": {
+            "requestATheme": "カスタムビルドのクエストが必要な場合は、問題追跡ツールで要請してください",
+            "createYourOwnTheme": "独自のMapCompleteテーマを最初から作成する",
+            "streetcomplete": "別に、同様のアプリケーションには、<a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>があります。",
+            "intro": "<h3>より多くの主題図</h3>ジオデータの収集は楽しいですか?<br>他にも使用可能なテーマがあります。"
+        },
+        "sharescreen": {
+            "embedIntro": "<h3>お客様のWebサイトに埋め込む</h3> この地図をお客様のWebサイトに埋め込みます。<br>許可を得る必要もありませんので、ぜひご利用ください。<br>無料であり、常に利用できます。使う人が増えれば増えるほど、価値が増大します。",
+            "fsIncludeCurrentLocation": "現在の場所を含める",
+            "fsIncludeCurrentLayers": "現在のレイヤの選択肢を含める",
+            "fsIncludeCurrentBackgroundMap": "現在の背景の選択肢<b>{name}</b>を含める",
+            "fsGeolocation": "[geolocate-me]ボタンを有効にする(モバイルのみ)",
+            "fsAddNew": "[新しいPOIの追加]ボタンを有効にする",
+            "fsLayerControlToggle": "レイヤコントロールを展開して開始",
+            "fsLayers": "レイヤコントロールを有効にする",
+            "fsWelcomeMessage": "ウェルカムメッセージのポップアップと関連するタブを表示します",
+            "fsSearch": "検索バーを有効にする",
+            "fsUserbadge": "ログインボタンを有効にする",
+            "editThemeDescription": "このマップテーマに質問を追加または変更する",
+            "editThisTheme": "このテーマを編集",
+            "thanksForSharing": "共有してくれてありがとう!",
+            "copiedToClipboard": "クリップボードにコピーされたリンク",
+            "addToHomeScreen": "<h3>ホーム画面に追加する</h3>このサイトはスマートフォンのホーム画面に簡単に追加でき、ネイティブな雰囲気になります。これを行うには、URLバーの「ホーム画面に追加ボタン」をクリックします。",
+            "intro": "<h3>このマップを共有</h3>このマップを共有するには、次のリンクをコピーして、友人や家族に送信します。"
+        },
+        "attribution": {
+            "codeContributionsBy": "MapCompleteは{contributors}と、<a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\"> {hiddenCount}人の貢献者</a>によって開発されました",
+            "mapContributionsByAndHidden": "現在表示されているデータには、{contributors}および、{hiddenCount}人の貢献者が編集したものが含まれています",
+            "mapContributionsBy": "現在表示されているデータには、{contributors}によって編集が行われています",
+            "iconAttribution": {
+                "title": "使用されるアイコン"
+            },
+            "themeBy": "{author} によって管理されるテーマ",
+            "attributionContent": "<p>すべてのデータは<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>によって提供され、<a href=\"https://osm.org/copyright\" target=\"_blank\"> Open DataBaseライセンス</a>の下で自由に再利用できます。</p>",
+            "attributionTitle": "帰属通知"
+        },
+        "questions": {
+            "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",
+            "emailOf": "{category} の電子メールアドレスは何ですか?",
+            "websiteIs": "Webサイト:<a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "{category} のウェブサイトはどこですか?",
+            "phoneNumberIs": "この {category} の電話番号は<a target=\"_blank\">{phone}</a>です。",
+            "phoneNumberOf": "{category} の電話番号は何番ですか?"
+        },
+        "nameInlineQuestion": "この {category} の名前は $$$ です",
+        "about": "特定のテーマに沿って、OpenStreetMapを簡単に編集し、情報を追加できます",
+        "add": {
+            "intro": "データがまだわからない場所をクリックしました。<br>",
+            "addNew": "ここに新しい {category} を追加します",
+            "layerNotEnabled": "レイヤ{layer}は有効になっていません。このレイヤで点を追加できるようにする",
+            "openLayerControl": "レイヤコントロールボックスを開く",
+            "confirmButton": "ここに{category}を追加します。<br><div class=\"alert\">追加内容はすべてのユーザーに表示されます。</div>",
+            "confirmIntro": "<h3>ここに{title}を追加しますか?</h3>ここで作成したポイントは<b>すべてのユーザーに表示されます</b>。本当に存在するものだけをマップに追加してください。多くのアプリケーションがこのデータを使用しています。",
+            "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
+            "zoomInFurther": "さらにズーム拡大して点を追加します。",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
+            "title": "新しいポイントを追加しますか?"
+        },
+        "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
+        "skippedQuestions": "一部の質問はスキップされました",
+        "loginToStart": "ログインしてこの質問に答えてください",
+        "opening_hours": {
+            "ph_open": "開店",
+            "ph_closed": "閉店",
+            "ph_not_known": " ",
+            "open_24_7": "24時間営業",
+            "closed_permanently": "不明な期間、閉店しています",
+            "closed_until": "{date} まで閉店",
+            "not_all_rules_parsed": "この店の営業時間は複雑です。次のルールは入力エレメントでは無視されます。",
+            "openTill": "終了時刻",
+            "opensAt": "開始時刻",
+            "open_during_ph": "このアメニティは、祝日には",
+            "error_loading": "エラー:これらの営業時間を表示できませんでした。"
+        },
+        "weekdays": {
+            "sunday": "日曜日",
+            "saturday": "土曜日",
+            "friday": "金曜日",
+            "thursday": "木曜日",
+            "wednesday": "水曜日",
+            "tuesday": "火曜日",
+            "monday": "月曜日",
+            "abbreviations": {
+                "sunday": "日",
+                "saturday": "土",
+                "friday": "金",
+                "thursday": "木Thu",
+                "wednesday": "水曜",
+                "tuesday": "火",
+                "monday": "月"
+            }
+        },
+        "backgroundMap": "背景マップ",
+        "aboutMapcomplete": "<h3>MapCompleteについて</h3><p>MapCompleteを使えば、<b>1つのテーマに関する情報でOpenStreetMapを充実させることができます。</b>いくつかの質問に答えると、数分以内にあなたの投稿が世界中で公開されます!<b>テーマメンテナ</b>は、テーマの要素、質問、言語を定義します。</p><h3>詳細情報を見る</h3><p>MapCompleteは常にOpenStreetMapについてさらに学ぶため<b>次のステップ</b>を提供します。</p><ul><li>Webサイトに埋め込まれるとiframeはフルスクリーンのMapCompleteにリンクします</li><li>フルスクリーン版はOpenStreetMapに関する情報を提供します</li><li>ログインせずに表示することはできますが、編集にはOSMログインが必要です。</li><li>ログインしていない場合は、ログインするように求められます</li><li>1つの質問に回答すると、マップに新しいポイントを追加できます</li><li>しばらくすると、実際のOSMタグが表示され、後でWikiにリンクされます</li></ul><p></p><br><p><b>問題</b>に気づきましたか?<b>機能要求</b>はありますか?<b>翻訳の手伝いをしますか?</b><a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">ソースコード</a>または<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追跡ツール</a>に移動します。</p><p><b>進捗状況</b>を確認しますか? <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>の編集数に従います。</p>",
+        "customThemeIntro": "<h3>カスタムテーマ</h3>これらは以前にアクセスされたユーザー生成テーマです。",
+        "noTagsSelected": "タグが選択されていません",
+        "getStartedNewAccount": " または<a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">新しいアカウントを作成する</a>",
+        "goToInbox": "受信トレイを開く",
+        "fewChangesBefore": "新しいポイントを追加する前に、既存のポイントに関するいくつかの質問に答えてください。",
+        "readYourMessages": "新しいポイントを追加する前に、OpenStreetMapのメッセージをすべて読んでください。",
+        "openStreetMapIntro": "<h3>オープン地図</h3><p>誰もが自由に使用して編集できる1つのマップがあればクールではないでしょうか?すべての地理情報を格納するための単一の場所?そうすれば、異なる、小さくて互換性のない地図(常に時代遅れのもの)を持つウェブサイトは、必要なくなるでしょう。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b>こそが地図です。地図データは、(<a href=\"https://osm.org/copyright\" target=\"_blank\">データ変更の公開と帰属表示</a>をすれば)無料で利用できます。さらに、誰でも自由に新しいデータを追加したり、間違いを修正したりすることができます。このサイトでもOpenStreetMapを使っています。すべてのデータは、OSMからのものであり、あなたの答えと訂正もOSMに追加されます。</p><p>すでに多くの人やアプリケーションがOpenStreetMapを使っています:<a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>や、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>など。Fさらに、acebook、Instagram、Apple-maps、Bing-mapsも(部分的に)OpenStreetMapを利用しています。ここで何かを変更すると、次の更新後にアプリケーションにも反映されます。</p>",
+        "noNameCategory": "名前のない {category}",
+        "pickLanguage": "言語を選択します: ",
+        "number": "number",
+        "oneSkippedQuestion": "1つの質問がスキップされます",
+        "skip": "この質問をスキップします",
+        "cancel": "[キャンセル]",
+        "save": "保存",
+        "returnToTheMap": "マップに戻る",
+        "search": {
+            "error": "何かがうまくいかなかった…",
+            "nothing": "何も見つかりませんでした…",
+            "searching": "検索中…",
+            "search": "場所を検索する"
+        },
+        "welcomeBack": "ログインしました、お帰りなさい!",
+        "loginWithOpenStreetMap": "OpenStreetMapからログインする"
+    },
+    "index": {
+        "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
+        "pickTheme": "開始するには、下のテーマを選択してください。",
+        "intro": "MapCompleteはOpenStreetMapのビューア兼エディタであり、特定のテーマに関する情報を表示します。",
+        "title": "MapCompleteへようこそ"
+    },
+    "centerMessage": {
+        "zoomIn": "ズーム・インしてデータを表示または編集",
+        "retrying": "データの読み込みに失敗しました。{count} 秒以内に再試行します…",
+        "ready": "完了!",
+        "loadingData": "データをロードしています…"
+    },
+    "image": {
+        "isDeleted": "削除済み",
+        "doDelete": "イメージの削除",
+        "dontDelete": "[キャンセル]",
+        "uploadDone": "<span class=\"thanks\">あなたの写真が追加されました。ご協力ありがとうございます!</span>",
+        "respectPrivacy": "人やナンバープレートを撮影しないでください。Googleマップ、Google Streetview、その他著作権で保護された情報源をアップロードしないでください。",
+        "uploadFailed": "写真をアップロードできませんでした。インターネット接続があり、外部のAPIが許可されていますか？Brave ブラウザやUMatrixは、これらをブロックするかもしれません。",
+        "ccb": "CC-BY-ライセンスで",
+        "ccbs": "CC-BY-SA-ライセンスで",
+        "cco": "in the public domain",
+        "willBePublished": "写真は公開されます: ",
+        "pleaseLogin": "写真を追加するにはログインしてください",
+        "uploadingMultiple": "{count} 枚の写真をアップロードします…",
+        "uploadingPicture": "写真をアップロードします…",
+        "addPicture": "写真の追加"
+    }
+}
