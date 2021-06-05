@@ -293,7 +293,11 @@
         },
         "openTheMap": "",
         "loginOnlyNeededToEdit": "",
-        "testing": ""
+        "testing": "",
+        "layerSelection": {
+            "zoomInToSeeThisLayer": "",
+            "title": ""
+        }
     },
     "index": {
         "pickTheme": "請挑選主題來開始。",
