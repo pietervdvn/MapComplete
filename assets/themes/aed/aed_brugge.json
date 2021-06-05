@@ -35,7 +35,7 @@
         "mappings": [
           {
             "if": "_has_closeby_feature=yes",
-            "then": "circle:green"
+            "then": "circle:#008000aa"
           }
         ]
       },
