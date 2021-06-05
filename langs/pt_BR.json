@@ -1,1 +1,13 @@
-{}
+{
+    "image": {
+        "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
+        "ccb": "sob a licença CC-BY",
+        "ccbs": "sob a licença CC-BY-SA",
+        "cco": "no domínio público",
+        "willBePublished": "Sua imagem será publicada: ",
+        "pleaseLogin": "Faça login para adicionar uma imagem",
+        "uploadingMultiple": "Fazendo upload de {count} imagens…",
+        "uploadingPicture": "Enviando sua imagem…",
+        "addPicture": "Adicionar imagem"
+    }
+}
