@@ -15,7 +15,12 @@
         "willBePublished": "Twoja ilustracja będzie opublikowana: "
     },
     "general": {
-        "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap"
+        "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
+        "pickLanguage": "Wybierz język: ",
+        "skip": "Pomiń to pytanie",
+        "cancel": "Anuluj",
+        "save": "Zapisz",
+        "returnToTheMap": "Wróć do mapy"
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
