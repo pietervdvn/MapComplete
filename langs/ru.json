@@ -88,7 +88,7 @@
         "morescreen": {
             "createYourOwnTheme": "Создать собственную тему MapComplete с чистого листа",
             "streetcomplete": "Другое, похожее приложение — <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "requestATheme": "Если вам нужен особенный квест, запросите его в системе отслеживания ошибок",
+            "requestATheme": "Если вам нужен особенный квест, запросите его в issue-трекере",
             "intro": "<h3>Больше тематических карт?</h3>Нравится собирать геоданные? <br> Можете посмотреть другие темы."
         },
         "sharescreen": {
