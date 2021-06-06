@@ -4,25 +4,29 @@
     "en": "Bike Monitoring stations",
     "nl": "Fietstelstations",
     "it": "Stazioni di monitoraggio biciclette",
-    "ru": "Станции мониторинга велосипедов"
+    "ru": "Станции мониторинга велосипедов",
+    "ja": "自転車監視ステーション"
   },
   "shortDescription": {
     "en": "Bike monitoring stations with live data from Brussels Mobility",
     "nl": "Fietstelstations met live data van Brussels Mobiliteit",
     "it": "Stazioni di monitoraggio bici con dati in tempo reale forniti da Bruxelles Mobility",
-    "ru": "Станции мониторинга велосипедов с оперативными данными от Brussels Mobility"
+    "ru": "Станции мониторинга велосипедов с оперативными данными от Brussels Mobility",
+    "ja": "Brussels Mobilityのライブデータを使用した自転車モニタリングステーション"
   },
   "description": {
     "en": "This theme shows bike monitoring stations with live data",
     "nl": "Dit thema toont fietstelstations met live data",
     "it": "Questo tema mostra le stazioni di monitoraggio bici con dati dal vivo",
-    "ru": "В этой теме показаны станции мониторинга велосипедов с данными в реальном времени"
+    "ru": "В этой теме показаны станции мониторинга велосипедов с данными в реальном времени",
+    "ja": "このテーマでは、ライブデータのある自転車監視ステーションを示します"
   },
   "language": [
     "en",
     "nl",
     "it",
-    "ru"
+    "ru",
+    "ja"
   ],
   "hideFromOverview": true,
   "maintainer": "",

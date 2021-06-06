@@ -7,7 +7,8 @@
     "ca": "Interfície personal",
     "gl": "Tema personalizado",
     "fr": "Thème personnalisé",
-    "de": "Persönliches Thema"
+    "de": "Persönliches Thema",
+    "ja": "個人的なテーマ"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes",
@@ -16,7 +17,8 @@
     "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
     "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
-    "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen"
+    "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
+    "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する"
   },
   "language": [
     "en",
@@ -25,7 +27,8 @@
     "ca",
     "gl",
     "fr",
-    "de"
+    "de",
+    "ja"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",

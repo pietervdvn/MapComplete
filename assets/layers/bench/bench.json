@@ -9,7 +9,9 @@
     "hu": "Padok",
     "id": "Bangku",
     "it": "Panchine",
-    "ru": "Скамейки"
+    "ru": "Скамейки",
+    "zh_Hans": "长椅",
+    "zh_Hant": "長椅"
   },
   "minzoom": 14,
   "source": {
@@ -25,7 +27,9 @@
       "hu": "Pad",
       "id": "Bangku",
       "it": "Panchina",
-      "ru": "Скамейка"
+      "ru": "Скамейка",
+      "zh_Hans": "长椅",
+      "zh_Hant": "長椅"
     }
   },
   "tagRenderings": [
@@ -40,7 +44,9 @@
         "hu": "Háttámla",
         "id": "Sandaran",
         "it": "Schienale",
-        "ru": "Спинка"
+        "ru": "Спинка",
+        "zh_Hans": "靠背",
+        "zh_Hant": "靠背"
       },
       "freeform": {
         "key": "backrest"
@@ -51,13 +57,15 @@
           "then": {
             "en": "Backrest: Yes",
             "de": "Rückenlehne: Ja",
-            "fr": "Dossier: Oui",
+            "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
             "es": "Respaldo: Si",
             "hu": "Háttámla: Igen",
             "id": "Sandaran: Ya",
             "it": "Schienale: Sì",
-            "ru": "Со спинкой"
+            "ru": "Со спинкой",
+            "zh_Hans": "靠背：有",
+            "zh_Hant": "靠背：有"
           }
         },
         {
@@ -65,13 +73,15 @@
           "then": {
             "en": "Backrest: No",
             "de": "Rückenlehne: Nein",
-            "fr": "Dossier: Non",
+            "fr": "Dossier : Non",
             "nl": "Rugleuning ontbreekt",
             "es": "Respaldo: No",
             "hu": "Háttámla: Nem",
             "id": "Sandaran: Tidak",
             "it": "Schienale: No",
-            "ru": "Без спинки"
+            "ru": "Без спинки",
+            "zh_Hans": "靠背：无",
+            "zh_Hant": "靠背：無"
           }
         }
       ],
@@ -84,7 +94,9 @@
         "hu": "Van háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
         "it": "Questa panchina ha lo schienale?",
-        "ru": "Есть ли у этой скамейки спинка?"
+        "ru": "Есть ли у этой скамейки спинка?",
+        "zh_Hans": "这个长椅有靠背吗？",
+        "zh_Hant": "這個長椅是否有靠背？"
       }
     },
     {
@@ -97,7 +109,8 @@
         "hu": "{seats} ülőhely",
         "id": "{seats} kursi",
         "it": "{seats} posti",
-        "ru": "{seats} мест"
+        "ru": "{seats} мест",
+        "zh_Hant": "{seats} 座位數"
       },
       "freeform": {
         "key": "seats",
@@ -111,7 +124,9 @@
         "es": "¿Cuántos asientos tiene este banco?",
         "hu": "Hány ülőhely van ezen a padon?",
         "it": "Quanti posti ha questa panchina?",
-        "ru": "Сколько мест на этой скамейке?"
+        "ru": "Сколько мест на этой скамейке?",
+        "zh_Hans": "这个长椅有几个座位？",
+        "zh_Hant": "這個長椅有幾個位子？"
       }
     },
     {
@@ -123,7 +138,9 @@
         "es": "Material: {material}",
         "hu": "Anyag: {material}",
         "it": "Materiale: {material}",
-        "ru": "Материал: {material}"
+        "ru": "Материал: {material}",
+        "zh_Hans": "材质: {material}",
+        "zh_Hant": "材質：{material}"
       },
       "freeform": {
         "key": "material",
@@ -140,7 +157,8 @@
             "es": "Material: madera",
             "hu": "Anyag: fa",
             "it": "Materiale: legno",
-            "ru": "Материал: дерево"
+            "ru": "Материал: дерево",
+            "zh_Hans": "材质：木"
           }
         },
         {
@@ -153,7 +171,8 @@
             "es": "Material: metal",
             "hu": "Anyag: fém",
             "it": "Materiale: metallo",
-            "ru": "Материал: металл"
+            "ru": "Материал: металл",
+            "zh_Hans": "材质：金属"
           }
         },
         {
@@ -161,12 +180,13 @@
           "then": {
             "en": "Material: stone",
             "de": "Material: Stein",
-            "fr": "Matériau: pierre",
+            "fr": "Matériau : pierre",
             "nl": "Gemaakt uit steen",
             "es": "Material: piedra",
             "hu": "Anyag: kő",
             "it": "Materiale: pietra",
-            "ru": "Материал: камень"
+            "ru": "Материал: камень",
+            "zh_Hans": "材质：石头"
           }
         },
         {
@@ -179,7 +199,8 @@
             "es": "Material: concreto",
             "hu": "Anyag: beton",
             "it": "Materiale: cemento",
-            "ru": "Материал: бетон"
+            "ru": "Материал: бетон",
+            "zh_Hans": "材质：混凝土"
           }
         },
         {
@@ -192,7 +213,8 @@
             "es": "Material: plastico",
             "hu": "Anyag: műanyag",
             "it": "Materiale: plastica",
-            "ru": "Материал: пластик"
+            "ru": "Материал: пластик",
+            "zh_Hans": "材质：塑料"
           }
         },
         {
@@ -205,7 +227,8 @@
             "es": "Material: acero",
             "hu": "Anyag: acél",
             "it": "Materiale: acciaio",
-            "ru": "Материал: сталь"
+            "ru": "Материал: сталь",
+            "zh_Hans": "材质：不锈钢"
           }
         }
       ],
@@ -215,7 +238,8 @@
         "fr": "De quel matériau ce banc est-il fait ?",
         "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
         "hu": "Miből van a pad (ülő része)?",
-        "it": "Di che materiale è fatta questa panchina?"
+        "it": "Di che materiale è fatta questa panchina?",
+        "zh_Hans": "这个长椅（或座椅）是用什么材料做的？"
       }
     },
     {
@@ -226,7 +250,8 @@
         "fr": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
         "hu": "Milyen irányba néz a pad?",
         "it": "In che direzione si guarda quando si è seduti su questa panchina?",
-        "ru": "В каком направлении вы смотрите, когда сидите на скамейке?"
+        "ru": "В каком направлении вы смотрите, когда сидите на скамейке?",
+        "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -234,7 +259,8 @@
         "nl": "Wanneer je op deze bank zit, dan kijk je in {direction}°.",
         "fr": "Assis sur le banc, on regarde vers {direction}°.",
         "hu": "A pad {direction}° felé néz.",
-        "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°."
+        "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
+        "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。"
       },
       "freeform": {
         "key": "direction",
@@ -249,7 +275,9 @@
         "nl": "Kleur: {colour}",
         "hu": "Szín: {colour}",
         "it": "Colore: {colour}",
-        "ru": "Цвет: {colour}"
+        "ru": "Цвет: {colour}",
+        "id": "Warna: {colour}",
+        "zh_Hans": "颜色： {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -258,7 +286,8 @@
         "nl": "Welke kleur heeft deze zitbank?",
         "hu": "Milyen színű a pad?",
         "it": "Di che colore è questa panchina?",
-        "ru": "Какого цвета скамейка?"
+        "ru": "Какого цвета скамейка?",
+        "zh_Hans": "这个长椅是什么颜色的？"
       },
       "freeform": {
         "key": "colour",
@@ -274,7 +303,8 @@
             "nl": "De kleur is bruin",
             "hu": "Szín: barna",
             "it": "Colore: marrone",
-            "ru": "Цвет: коричневый"
+            "ru": "Цвет: коричневый",
+            "zh_Hans": "颜色：棕"
           }
         },
         {
@@ -286,7 +316,8 @@
             "nl": "De kleur is groen",
             "hu": "Szín: zöld",
             "it": "Colore: verde",
-            "ru": "Цвет: зеленый"
+            "ru": "Цвет: зеленый",
+            "zh_Hans": "颜色：绿"
           }
         },
         {
@@ -298,7 +329,8 @@
             "nl": "De kleur is grijs",
             "hu": "Szín: szürke",
             "it": "Colore: grigio",
-            "ru": "Цвет: серый"
+            "ru": "Цвет: серый",
+            "zh_Hans": "颜色：灰"
           }
         },
         {
@@ -310,7 +342,8 @@
             "nl": "De kleur is wit",
             "hu": "Szín: fehér",
             "it": "Colore: bianco",
-            "ru": "Цвет: белый"
+            "ru": "Цвет: белый",
+            "zh_Hans": "颜色：白"
           }
         },
         {
@@ -322,7 +355,8 @@
             "nl": "De kleur is rood",
             "hu": "Szín: piros",
             "it": "Colore: rosso",
-            "ru": "Цвет: красный"
+            "ru": "Цвет: красный",
+            "zh_Hans": "颜色：红"
           }
         },
         {
@@ -334,7 +368,8 @@
             "nl": "De kleur is zwart",
             "hu": "Szín: fekete",
             "it": "Colore: nero",
-            "ru": "Цвет: чёрный"
+            "ru": "Цвет: чёрный",
+            "zh_Hans": "颜色：黑"
           }
         },
         {
@@ -346,7 +381,8 @@
             "nl": "De kleur is blauw",
             "hu": "Szín: kék",
             "it": "Colore: blu",
-            "ru": "Цвет: синий"
+            "ru": "Цвет: синий",
+            "zh_Hans": "颜色：蓝"
           }
         },
         {
@@ -358,7 +394,8 @@
             "nl": "De kleur is geel",
             "hu": "Szín: sárga",
             "it": "Colore: giallo",
-            "ru": "Цвет: желтый"
+            "ru": "Цвет: желтый",
+            "zh_Hans": "颜色：黄"
           }
         }
       ]
@@ -368,13 +405,15 @@
         "en": "When was this bench last surveyed?",
         "nl": "Wanneer is deze laatste bank laatst gesurveyed?",
         "fr": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
-        "it": "Quando è stata verificata l’ultima volta questa panchina?"
+        "it": "Quando è stata verificata l’ultima volta questa panchina?",
+        "zh_Hans": "上次对这个长椅实地调查是什么时候？"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
         "nl": "Deze bank is laatst gesurveyd op {survey:date}",
         "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
-        "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}"
+        "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
+        "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查"
       },
       "freeform": {
         "key": "survey:date",
@@ -414,7 +453,9 @@
         "nl": "Zitbank",
         "es": "Banco",
         "it": "Panchina",
-        "ru": "Скамейка"
+        "ru": "Скамейка",
+        "id": "Bangku",
+        "zh_Hans": "长椅"
       },
       "description": {
         "en": "Add a new bench",
@@ -424,7 +465,8 @@
         "es": "Añadir un nuevo banco",
         "hu": "Pad hozzáadása",
         "it": "Aggiungi una nuova panchina",
-        "ru": "Добавить новую скамейку"
+        "ru": "Добавить новую скамейку",
+        "zh_Hans": "增加一个新的长椅"
       }
     }
   ]

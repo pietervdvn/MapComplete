@@ -4,23 +4,30 @@
     "en": "Campersites",
     "nl": "Kampeersite",
     "it": "Aree camper",
-    "ru": "Кемпинги"
+    "ru": "Кемпинги",
+    "ja": "キャンプサイト",
+    "fr": "Campings"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
     "it": "Trova aree dove passare la notte con il tuo camper",
-    "ru": "Найти места остановки, чтобы провести ночь в автофургоне"
+    "ru": "Найти места остановки, чтобы провести ночь в автофургоне",
+    "ja": "キャンパーと夜を共にするキャンプサイトを見つける",
+    "fr": "Trouver des sites pour passer la nuit avec votre camping-car"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
     "it": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
-    "ru": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением."
+    "ru": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением.",
+    "ja": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。"
   },
   "language": [
     "en",
     "nl",
     "it",
     "ru",
+    "ja",
+    "fr",
     "id"
   ],
   "maintainer": "joost schouppe",
@@ -37,7 +44,9 @@
       "name": {
         "en": "Camper sites",
         "it": "Aree camper",
-        "ru": "Площадки для кемпинга"
+        "ru": "Площадки для кемпинга",
+        "ja": "キャンプサイト",
+        "fr": "Campings"
       },
       "minzoom": 10,
       "source": {
@@ -52,7 +61,9 @@
         "render": {
           "en": "Camper site {name}",
           "it": "Area camper {name}",
-          "ru": "Место для кемпинга {name}"
+          "ru": "Место для кемпинга {name}",
+          "ja": "キャンプサイト {name}",
+          "fr": "Camping {name}"
         },
         "mappings": [
           {
@@ -64,7 +75,9 @@
             "then": {
               "en": "Unnamed camper site",
               "it": "Area camper senza nome",
-              "ru": "Место для кемпинга без названия"
+              "ru": "Место для кемпинга без названия",
+              "ja": "無名のキャンプサイト",
+              "fr": "Camping sans nom"
             }
           }
         ]
@@ -72,7 +85,9 @@
       "description": {
         "en": "camper sites",
         "it": "Aree camper",
-        "ru": "площадки для кемпинга"
+        "ru": "площадки для кемпинга",
+        "ja": "キャンプサイト",
+        "fr": "campings"
       },
       "tagRenderings": [
         "images",
@@ -80,13 +95,17 @@
           "render": {
             "en": "This place is called {name}",
             "it": "Questo luogo è chiamato {name}",
-            "ru": "Это место называется {name}"
+            "ru": "Это место называется {name}",
+            "ja": "この場所は {name} と呼ばれています",
+            "fr": "Cet endroit s'appelle {nom}"
           },
           "question": {
             "en": "What is this place called?",
             "id": "Apakah nama tempat ini?",
             "ru": "Как называется это место?",
-            "it": "Come viene chiamato questo luogo?"
+            "it": "Come viene chiamato questo luogo?",
+            "ja": "ここは何というところですか?",
+            "fr": "Comment s'appelle cet endroit ?"
           },
           "freeform": {
             "key": "name"
@@ -96,7 +115,9 @@
           "question": {
             "en": "Does this place charge a fee?",
             "it": "Ha una tariffa questo luogo?",
-            "ru": "Взимается ли в этом месте плата?"
+            "ru": "Взимается ли в этом месте плата?",
+            "ja": "ここは有料ですか?",
+            "fr": "Cet endroit est-il payant ?"
           },
           "mappings": [
             {
@@ -108,7 +129,8 @@
               "then": {
                 "en": "You need to pay for use",
                 "it": "Devi pagare per usarlo",
-                "ru": "За использование нужно платить"
+                "ru": "За использование нужно платить",
+                "ja": "使用料を支払う必要がある"
               }
             },
             {
@@ -122,7 +144,9 @@
                 "en": "Can be used for free",
                 "id": "Boleh digunakan tanpa bayaran",
                 "it": "Può essere usato gratuitamente",
-                "ru": "Можно использовать бесплатно"
+                "ru": "Можно использовать бесплатно",
+                "ja": "無料で使用可能",
+                "fr": "Peut être utilisé gratuitement"
               }
             },
             {
@@ -136,12 +160,15 @@
           "render": {
             "en": "This place charges {charge}",
             "it": "Questo luogo costa {charge}",
-            "ru": "Это место взимает {charge}"
+            "ru": "Это место взимает {charge}",
+            "ja": "この場所は{charge} が必要"
           },
           "question": {
             "en": "How much does this place charge?",
             "it": "Quanto costa questo luogo?",
-            "ru": "Сколько это место взимает?"
+            "ru": "Сколько это место взимает?",
+            "ja": "ここはいくらかかりますか？",
+            "fr": "Combien coûte cet endroit ?"
           },
           "freeform": {
             "key": "charge"
@@ -156,7 +183,8 @@
           "question": {
             "en": "Does this place have a sanitary dump station?",
             "it": "Questo luogo ha una stazione per lo scarico delle acque?",
-            "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров?"
+            "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров?",
+            "ja": "この場所に衛生的なゴミ捨て場はありますか?"
           },
           "mappings": [
             {
@@ -168,7 +196,9 @@
               "then": {
                 "en": "This place has a sanitary dump station",
                 "it": "Questo luogo ha una stazione per lo scarico delle acque",
-                "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров"
+                "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров",
+                "ja": "この場所には衛生的なゴミ捨て場がある",
+                "fr": "Cet endroit a une station de vidange sanitaire"
               }
             },
             {
@@ -180,7 +210,8 @@
               "then": {
                 "en": "This place does not have a sanitary dump station",
                 "it": "Questo luogo non ha una stazione per lo scarico delle acque",
-                "ru": "В этом кемпинге нет места для слива отходов из туалетных резервуаров"
+                "ru": "В этом кемпинге нет места для слива отходов из туалетных резервуаров",
+                "ja": "この場所には衛生的なゴミ捨て場がない"
               }
             }
           ]
@@ -189,12 +220,14 @@
           "render": {
             "en": "{capacity} campers can use this place at the same time",
             "it": "{capacity} camper possono usare questo luogo al contempo",
-            "ru": "{capacity} кемперов могут использовать это место одновременно"
+            "ru": "{capacity} кемперов могут использовать это место одновременно",
+            "ja": "{capacity} 人が同時に使用できます"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
             "it": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
-            "ru": "Сколько кемперов может здесь остановиться? (пропустите, если нет очевидного количества мест или разрешенных транспортных средств)"
+            "ru": "Сколько кемперов может здесь остановиться? (пропустите, если нет очевидного количества мест или разрешенных транспортных средств)",
+            "ja": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)"
           },
           "freeform": {
             "key": "capacity",
@@ -206,7 +239,9 @@
             "en": "Does this place provide internet access?",
             "id": "Tempat ini berbagi akses Web?",
             "it": "Questo luogo ha l’accesso a internet?",
-            "ru": "Предоставляет ли это место доступ в Интернет?"
+            "ru": "Предоставляет ли это место доступ в Интернет?",
+            "ja": "この場所はインターネットにアクセスできますか?",
+            "fr": "Cet endroit offre-t-il un accès à Internet ?"
           },
           "mappings": [
             {
@@ -219,7 +254,8 @@
                 "en": "There is internet access",
                 "id": "Akses Web tersedia",
                 "ru": "Есть доступ в Интернет",
-                "it": "C’è l’accesso a internet"
+                "it": "C’è l’accesso a internet",
+                "ja": "インターネットアクセスがある"
               }
             },
             {
@@ -233,7 +269,8 @@
                 "en": "There is internet access",
                 "id": "Akses Web tersedia",
                 "ru": "Есть доступ в Интернет",
-                "it": "C’è l’accesso a internet"
+                "it": "C’è l’accesso a internet",
+                "ja": "インターネットアクセスがある"
               },
               "hideInAnswer": true
             },
@@ -247,7 +284,8 @@
                 "en": "There is no internet access",
                 "id": "Tiada akses Web",
                 "ru": "Нет доступа в Интернет",
-                "it": "Non c’è l’accesso a internet"
+                "it": "Non c’è l’accesso a internet",
+                "ja": "インターネットにアクセスできない"
               }
             }
           ]
@@ -256,7 +294,8 @@
           "question": {
             "en": "Do you have to pay for the internet access?",
             "it": "Occorre pagare per avere l’accesso a internet?",
-            "ru": "Нужно ли платить за доступ в Интернет?"
+            "ru": "Нужно ли платить за доступ в Интернет?",
+            "ja": "インターネット接続にお金はかかりますか?"
           },
           "mappings": [
             {
@@ -268,7 +307,8 @@
               "then": {
                 "en": "You need to pay extra for internet access",
                 "it": "Occorre pagare un extra per avere l’accesso a internet",
-                "ru": "За доступ в Интернет нужно платить дополнительно"
+                "ru": "За доступ в Интернет нужно платить дополнительно",
+                "ja": "インターネット接続には別途料金が必要です"
               }
             },
             {
@@ -280,7 +320,8 @@
               "then": {
                 "en": "You do not need to pay extra for internet access",
                 "it": "Non occorre pagare per l’accesso a internet",
-                "ru": "Вам не нужно платить дополнительно за доступ в Интернет"
+                "ru": "Вам не нужно платить дополнительно за доступ в Интернет",
+                "ja": "インターネット接続に追加料金を支払う必要はありません"
               }
             }
           ],
@@ -294,7 +335,8 @@
           "question": {
             "en": "Does this place have toilets?",
             "it": "Questo luogo dispone di servizi igienici?",
-            "ru": "Здесь есть туалеты?"
+            "ru": "Здесь есть туалеты?",
+            "ja": "ここにトイレはありますか?"
           },
           "mappings": [
             {
@@ -307,7 +349,8 @@
                 "en": "This place has toilets",
                 "id": "Tempat sini ada tandas",
                 "it": "Questo luogo ha i servizi igienici",
-                "ru": "В этом месте есть туалеты"
+                "ru": "В этом месте есть туалеты",
+                "ja": "ここにはトイレがある"
               }
             },
             {
@@ -320,7 +363,8 @@
                 "en": "This place does not have toilets",
                 "id": "Tempat sini tiada tandas",
                 "it": "Questo luogo non ha i servizi igienici",
-                "ru": "В этом месте нет туалетов"
+                "ru": "В этом месте нет туалетов",
+                "ja": "ここにはトイレがない"
               }
             }
           ]
@@ -330,7 +374,8 @@
             "en": "Official website: <a href='{website}'>{website}</a>",
             "id": "Situs resmi: <a href='{website}'>{website}</a>",
             "ru": "Официальный сайт: <a href='{website}'>{website}</a>",
-            "it": "Sito web ufficiale: <a href='{website}'>{website}</a>"
+            "it": "Sito web ufficiale: <a href='{website}'>{website}</a>",
+            "ja": "公式Webサイト: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -340,13 +385,15 @@
             "en": "Does this place have a website?",
             "id": "Tempat sini terada situs web?",
             "it": "Questo luogo ha un sito web?",
-            "ru": "Есть ли у этого места веб-сайт?"
+            "ru": "Есть ли у этого места веб-сайт?",
+            "ja": "ここにはウェブサイトがありますか?"
           }
         },
         {
           "question": {
             "en": "Does this place offer spots for long term rental?",
-            "ru": "Предлагает ли эта площадка места для долгосрочной аренды?"
+            "ru": "Предлагает ли эта площадка места для долгосрочной аренды?",
+            "ja": "ここには長期レンタルのスポットがありますか?"
           },
           "mappings": [
             {
@@ -357,7 +404,8 @@
               },
               "then": {
                 "en": "Yes, there are some spots for long term rental, but you can also stay on a daily basis",
-                "ru": "Да, здесь есть места для долгосрочной аренды, но вы можете остановиться и на сутки"
+                "ru": "Да, здесь есть места для долгосрочной аренды, но вы можете остановиться и на сутки",
+                "ja": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます"
               }
             },
             {
@@ -368,7 +416,8 @@
               },
               "then": {
                 "en": "No, there are no permanent guests here",
-                "ru": "Нет, здесь нет постоянных гостей"
+                "ru": "Нет, здесь нет постоянных гостей",
+                "ja": "いいえ、ここには長期滞在者はいません"
               }
             },
             {
@@ -379,7 +428,8 @@
               },
               "then": {
                 "en": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)",
-                "ru": "Здесь можно остановиться, только если у вас долгосрочный контракт (это место исчезнет с этой карты, если вы выберете это)"
+                "ru": "Здесь можно остановиться, только если у вас долгосрочный контракт (это место исчезнет с этой карты, если вы выберете это)",
+                "ja": "長期契約をしている場合のみ宿泊可能です(これを選択すると、この場所はこの地図から消えます)"
               }
             }
           ]
@@ -387,11 +437,13 @@
         {
           "render": {
             "en": "More details about this place: {description}",
-            "ru": "Более подробная информация об этом месте: {description}"
+            "ru": "Более подробная информация об этом месте: {description}",
+            "ja": "この場所の詳細:{description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
-            "ru": "Хотели бы вы добавить общее описание этого места? (Не повторяйте информацию, которая уже написана выше или на которую вы уже ответили ранее. Пожалуйста, будьте объективны - мнения должны быть в отзывах)"
+            "ru": "Хотели бы вы добавить общее описание этого места? (Не повторяйте информацию, которая уже написана выше или на которую вы уже ответили ранее. Пожалуйста, будьте объективны - мнения должны быть в отзывах)",
+            "ja": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)"
           },
           "freeform": {
             "key": "description",
@@ -431,11 +483,13 @@
           ],
           "title": {
             "en": "camper site",
-            "ru": "площадка для кемпинга"
+            "ru": "площадка для кемпинга",
+            "ja": "キャンプサイト"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
-            "ru": "Добавьте новую официальную площадку для кемпинга. Это специально отведенные места для ночлега с автофургоном. Они могут выглядеть как настоящий кемпинг или просто выглядеть как парковка. Они не могут быть обозначены вообще, а просто быть определены в муниципальном решении. Обычная парковка предназначенная для отдыхающих, где не ожидается, что они проведут ночь это -НЕ- площадка для кемпинга "
+            "ru": "Добавьте новую официальную площадку для кемпинга. Это специально отведенные места для ночлега с автофургоном. Они могут выглядеть как настоящий кемпинг или просто выглядеть как парковка. Они не могут быть обозначены вообще, а просто быть определены в муниципальном решении. Обычная парковка предназначенная для отдыхающих, где не ожидается, что они проведут ночь это -НЕ- площадка для кемпинга ",
+            "ja": "新しい公式キャンプサイトを追加します。お客様のキャンピングカーで一泊する指定の場所です。本物のキャンプのように見えるかもしれないし、単なる駐車場のように見えるかもしれない。それらは全く署名されていないかもしれませんが、自治体の決定で定義されているだけです。夜を過ごすことが予想されないキャンパー向けの通常の駐車場は、キャンプサイトではない "
           }
         }
       ],
@@ -445,7 +499,8 @@
       "id": "dumpstations",
       "name": {
         "en": "Sanitary dump stations",
-        "ru": "Места для слива отходов из туалетных резервуаров"
+        "ru": "Места для слива отходов из туалетных резервуаров",
+        "ja": "衛生ゴミ捨て場"
       },
       "minzoom": 10,
       "source": {
@@ -459,7 +514,8 @@
       "title": {
         "render": {
           "en": "Dump station {name}",
-          "ru": "Ассенизационная сливная станция {name}"
+          "ru": "Ассенизационная сливная станция {name}",
+          "ja": "ゴミ捨て場 {name}"
         },
         "mappings": [
           {
@@ -470,21 +526,24 @@
             },
             "then": {
               "en": "Dump station",
-              "ru": "Ассенизационная сливная станция"
+              "ru": "Ассенизационная сливная станция",
+              "ja": "ゴミ捨て場"
             }
           }
         ]
       },
       "description": {
         "en": "Sanitary dump stations",
-        "ru": "Ассенизационные сливные станции"
+        "ru": "Ассенизационные сливные станции",
+        "ja": "衛生ゴミ捨て場"
       },
       "tagRenderings": [
         "images",
         {
           "question": {
             "en": "Does this place charge a fee?",
-            "ru": "Взимается ли в этом месте плата?"
+            "ru": "Взимается ли в этом месте плата?",
+            "ja": "ここは有料ですか?"
           },
           "mappings": [
             {
@@ -495,7 +554,8 @@
               },
               "then": {
                 "en": "You need to pay for use",
-                "ru": "За использование нужно платить"
+                "ru": "За использование нужно платить",
+                "ja": "使用料を支払う必要がある"
               }
             },
             {
@@ -506,7 +566,8 @@
               },
               "then": {
                 "en": "Can be used for free",
-                "ru": "Можно использовать бесплатно"
+                "ru": "Можно использовать бесплатно",
+                "ja": "無料で使用可能"
               }
             }
           ]
@@ -514,11 +575,13 @@
         {
           "render": {
             "en": "This place charges {charge}",
-            "ru": "Это место взимает {charge}"
+            "ru": "Это место взимает {charge}",
+            "ja": "この場所は{charge} が必要"
           },
           "question": {
             "en": "How much does this place charge?",
-            "ru": "Сколько это место взимает?"
+            "ru": "Сколько это место взимает?",
+            "ja": "ここはいくらかかりますか？"
           },
           "freeform": {
             "key": "charge"
@@ -532,7 +595,8 @@
         {
           "question": {
             "en": "Does this place have a water point?",
-            "ru": "Есть ли в этом месте водоснабжение?"
+            "ru": "Есть ли в этом месте водоснабжение?",
+            "ja": "この場所には給水所がありますか?"
           },
           "mappings": [
             {
@@ -543,7 +607,8 @@
               },
               "then": {
                 "en": "This place has a water point",
-                "ru": "В этом месте есть водоснабжение"
+                "ru": "В этом месте есть водоснабжение",
+                "ja": "この場所には給水所がある"
               }
             },
             {
@@ -554,7 +619,8 @@
               },
               "then": {
                 "en": "This place does not have a water point",
-                "ru": "В этом месте нет водоснабжения"
+                "ru": "В этом месте нет водоснабжения",
+                "ja": "この場所には給水所がない"
               }
             }
           ]
@@ -562,7 +628,8 @@
         {
           "question": {
             "en": "Can you dispose of grey water here?",
-            "ru": "Можно ли здесь утилизировать серую воду?"
+            "ru": "Можно ли здесь утилизировать серую воду?",
+            "ja": "汚水(雑排水)はこちらで処分できますか?"
           },
           "mappings": [
             {
@@ -573,7 +640,8 @@
               },
               "then": {
                 "en": "You can dispose of grey water here",
-                "ru": "Вы можете утилизировать серую воду здесь"
+                "ru": "Вы можете утилизировать серую воду здесь",
+                "ja": "ここで汚水(雑排水)を捨てることができます"
               }
             },
             {
@@ -584,7 +652,8 @@
               },
               "then": {
                 "en": "You cannot dispose of gray water here",
-                "ru": "Здесь нельзя утилизировать серую воду"
+                "ru": "Здесь нельзя утилизировать серую воду",
+                "ja": "ここでは汚水(雑排水)を捨てることはできない"
               }
             }
           ]
@@ -592,7 +661,8 @@
         {
           "question": {
             "en": "Can you dispose of chemical toilet waste here?",
-            "ru": "Можно ли здесь утилизировать отходы химических туалетов?"
+            "ru": "Можно ли здесь утилизировать отходы химических туалетов?",
+            "ja": "携帯トイレのゴミはこちらで処分できますか?"
           },
           "mappings": [
             {
@@ -603,7 +673,8 @@
               },
               "then": {
                 "en": "You can dispose of chemical toilet waste here",
-                "ru": "Вы можете утилизировать отходы химических туалетов здесь"
+                "ru": "Вы можете утилизировать отходы химических туалетов здесь",
+                "ja": "携帯トイレのゴミはここで処分できます"
               }
             },
             {
@@ -614,14 +685,16 @@
               },
               "then": {
                 "en": "You cannot dispose of chemical toilet waste here",
-                "ru": "Здесь нельзя утилизировать отходы химических туалетов"
+                "ru": "Здесь нельзя утилизировать отходы химических туалетов",
+                "ja": "ここでは携帯トイレの廃棄物を処分することはできません"
               }
             }
           ]
         },
         {
           "question": {
-            "en": "Who can use this dump station?"
+            "en": "Who can use this dump station?",
+            "ja": "このゴミ捨て場は誰が使えるんですか?"
           },
           "mappings": [
             {
@@ -631,7 +704,8 @@
                 ]
               },
               "then": {
-                "en": "You need a network key/code to use this"
+                "en": "You need a network key/code to use this",
+                "ja": "これを使用するには、ネットワークキー/コードが必要です"
               }
             },
             {
@@ -641,7 +715,8 @@
                 ]
               },
               "then": {
-                "en": "You need to be a customer of camping/campersite to use this place"
+                "en": "You need to be a customer of camping/campersite to use this place",
+                "ja": "この場所を使用するには、キャンプ/キャンプサイトのお客様である必要があります"
               }
             },
             {
@@ -651,7 +726,8 @@
                 ]
               },
               "then": {
-                "en": "Anyone can use this dump station"
+                "en": "Anyone can use this dump station",
+                "ja": "誰でもこのゴミ捨て場を使用できます"
               },
               "hideInAnswer": true
             },
@@ -662,17 +738,20 @@
                 ]
               },
               "then": {
-                "en": "Anyone can use this dump station"
+                "en": "Anyone can use this dump station",
+                "ja": "誰でもこのゴミ捨て場を使用できます"
               }
             }
           ]
         },
         {
           "render": {
-            "en": "This station is part of network {network}"
+            "en": "This station is part of network {network}",
+            "ja": "このステーションはネットワーク{network}の一部です"
           },
           "question": {
-            "en": "What network is this place a part of? (skip if none)"
+            "en": "What network is this place a part of? (skip if none)",
+            "ja": "ここは何のネットワークの一部ですか?(なければスキップ)"
           },
           "freeform": {
             "key": "network"
@@ -698,10 +777,12 @@
             "amenity=sanitary_dump_station"
           ],
           "title": {
-            "en": "sanitary dump station"
+            "en": "sanitary dump station",
+            "ja": "衛生ゴミ捨て場"
           },
           "description": {
-            "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity."
+            "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
+            "ja": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。"
           }
         }
       ]
@@ -710,10 +791,12 @@
   "roamingRenderings": [
     {
       "render": {
-        "en": "This place is operated by {operator}"
+        "en": "This place is operated by {operator}",
+        "ja": "この場所は{operator}によって運営されます"
       },
       "question": {
-        "en": "Who operates this place?"
+        "en": "Who operates this place?",
+        "ja": "この店は誰が経営しているんですか?"
       },
       "freeform": {
         "key": "operator"
@@ -721,7 +804,8 @@
     },
     {
       "question": {
-        "en": "Does this place have a power supply?"
+        "en": "Does this place have a power supply?",
+        "ja": "この場所に電源はありますか?"
       },
       "mappings": [
         {
@@ -732,7 +816,8 @@
           },
           "then": {
             "en": "This place has a power supply",
-            "id": "Tempat ini memiliki catu daya"
+            "id": "Tempat ini memiliki catu daya",
+            "ja": "この場所には電源があります"
           }
         },
         {
@@ -743,7 +828,8 @@
           },
           "then": {
             "en": "This place does not have power supply",
-            "id": "Tempat ini tidak memiliki sumber listrik"
+            "id": "Tempat ini tidak memiliki sumber listrik",
+            "ja": "この場所には電源がありません"
           }
         }
       ]

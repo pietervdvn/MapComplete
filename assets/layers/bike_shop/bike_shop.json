@@ -193,11 +193,11 @@
       "question": {
         "en": "What is the name of this bicycle shop?",
         "nl": "Wat is de naam van deze fietszaak?",
-        "fr": "Quel est le nom du magasin de vélo?",
+        "fr": "Quel est le nom du magasin de vélos ?",
         "gl": "Cal é o nome desta tenda de bicicletas?",
         "de": "Wie heißt dieser Fahrradladen?",
         "it": "Qual è il nome di questo negozio di biciclette?",
-        "ru": "Как называется этот магазин велосипедов?"
+        "ru": "Как называется магазин велосипедов?"
       },
       "render": {
         "en": "This bicycle shop is called {name}",
@@ -215,10 +215,11 @@
       "question": {
         "en": "What is the website of {name}?",
         "nl": "Wat is de website van {name}?",
-        "fr": "Quel est le site internet de {name}?",
+        "fr": "Quel est le site web de {name} ?",
         "gl": "Cal é a páxina web de {name}?",
         "it": "Qual è il sito web di {name}?",
-        "ru": "Какой сайт у {name}?"
+        "ru": "Какой сайт у {name}?",
+        "id": "URL {name} apa?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -230,7 +231,7 @@
       "question": {
         "en": "What is the phone number of {name}?",
         "nl": "Wat is het telefoonnummer van {name}?",
-        "fr": "Quel est le nom de {name}?",
+        "fr": "Quel est le numéro de téléphone de {name} ?",
         "gl": "Cal é o número de teléfono de {name}?",
         "it": "Qual è il numero di telefono di {name}?",
         "ru": "Какой номер телефона у {name}?"
@@ -245,7 +246,7 @@
       "question": {
         "en": "What is the email address of {name}?",
         "nl": "Wat is het email-adres van {name}?",
-        "fr": "Quel est l'adresse email de {name}?",
+        "fr": "Quelle est l'adresse électronique de {name} ?",
         "gl": "Cal é o enderezo de correo electrónico de {name}?",
         "it": "Qual è l’indirizzo email di {name}?",
         "ru": "Какой адрес электронной почты у {name}?"
@@ -275,7 +276,7 @@
       "question": {
         "en": "Does this shop sell bikes?",
         "nl": "Verkoopt deze fietszaak fietsen?",
-        "fr": "Est-ce que ce magasin vend des vélos?",
+        "fr": "Est-ce que ce magasin vend des vélos ?",
         "gl": "Esta tenda vende bicicletas?",
         "de": "Verkauft dieser Laden Fahrräder?",
         "it": "Questo negozio vende bici?"
@@ -311,7 +312,7 @@
       "question": {
         "en": "Does this shop repair bikes?",
         "nl": "Herstelt deze winkel fietsen?",
-        "fr": "Est-ce que ce magasin répare des vélos?",
+        "fr": "Est-ce que ce magasin répare des vélos ?",
         "gl": "Esta tenda arranxa bicicletas?",
         "de": "Repariert dieses Geschäft Fahrräder?",
         "it": "Questo negozio ripara bici?",
@@ -371,7 +372,7 @@
       "question": {
         "en": "Does this shop rent out bikes?",
         "nl": "Verhuurt deze winkel fietsen?",
-        "fr": "Est-ce ce magasin loue des vélos?",
+        "fr": "Est-ce ce magasin loue des vélos ?",
         "gl": "Esta tenda aluga bicicletas?",
         "de": "Vermietet dieser Laden Fahrräder?",
         "it": "Questo negozio noleggia le bici?",
@@ -408,7 +409,7 @@
       "question": {
         "en": "Does this shop sell second-hand bikes?",
         "nl": "Verkoopt deze winkel tweedehands fietsen?",
-        "fr": "Est-ce ce magasin vend des vélos d'occasion",
+        "fr": "Est-ce ce magasin vend des vélos d'occasion ?",
         "gl": "Esta tenda vende bicicletas de segunda man?",
         "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?",
         "it": "Questo negozio vende bici usate?",
@@ -457,7 +458,7 @@
       "question": {
         "en": "Does this shop offer a bike pump for use by anyone?",
         "nl": "Biedt deze winkel een fietspomp aan voor iedereen?",
-        "fr": "Est-ce que ce magasin offre une pompe en accès libre?",
+        "fr": "Est-ce que ce magasin offre une pompe en accès libre ?",
         "gl": "Esta tenda ofrece unha bomba de ar para uso de calquera persoa?",
         "de": "Bietet dieses Geschäft eine Fahrradpumpe zur Benutzung für alle an?",
         "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
@@ -500,7 +501,7 @@
       "question": {
         "en": "Are there tools here to repair your own bike?",
         "nl": "Biedt deze winkel gereedschap aan om je fiets zelf te herstellen?",
-        "fr": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin?",
+        "fr": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?",
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
         "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
         "it": "Sono presenti degli attrezzi per riparare la propria bici?"

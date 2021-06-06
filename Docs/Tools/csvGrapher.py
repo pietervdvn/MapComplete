@@ -396,6 +396,7 @@ theme_remappings = {
     "arbres":"arbres_llefia",
     "aed_brugge": "aed",
      "https://llefia.org/arbres/mapcomplete.json":"arbres_llefia",
+     "https://llefia.org/arbres/mapcomplete1.json":"arbres_llefia",
     "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
     "testing mapcomplete 0.0.0":"buurtnatuur",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
@@ -436,10 +437,10 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         
-        # contributor_count(stats)
+        contributor_count(stats)
         create_graphs(stats)
-        # create_per_theme_graphs(stats, 15)
-        # create_per_contributor_graphs(stats, 25)
+        create_per_theme_graphs(stats, 15)
+        create_per_contributor_graphs(stats, 25)
     print("All done!")
 
 

@@ -6,19 +6,25 @@
     "en",
     "nl",
     "it",
-    "ru"
+    "ru",
+    "ja",
+    "fr"
   ],
   "title": {
     "en": "Bicycle libraries",
     "nl": "Fietsbibliotheken",
     "it": "Biciclette in prestito",
-    "ru": "Велосипедные библиотеки"
+    "ru": "Велосипедные библиотеки",
+    "ja": "自転車ライブラリ",
+    "fr": "Vélothèques"
   },
   "description": {
     "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
     "en": "A bicycle library is a place where bicycles can be lent, often for a small yearly fee. A notable use case are bicycle libraries for kids, which allows them to change for a bigger bike when they've outgrown their current bike",
-    "it": "Biciclette in prestito (‘bicycle library’ in inglese) è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
-    "ru": "Велосипедная библиотека - это место, где велосипеды можно взять на время, часто за небольшую ежегодную плату. Примером использования являются библиотеки велосипедов для детей, что позволяет им сменить велосипед на больший, когда они перерастают свой нынешний велосипед"
+    "it": "«Biciclette in prestito» è un luogo dove le biciclette possono essere prese in prestito, spesso in cambio di un piccolo contributo annuale. Un caso degno di nota è quello delle biciclette in prestito per bambini che permettono loro di cambiare le dimensioni della propria bici quando quella attuale diventa troppo piccola",
+    "ru": "Велосипедная библиотека - это место, где велосипеды можно взять на время, часто за небольшую ежегодную плату. Примером использования являются библиотеки велосипедов для детей, что позволяет им сменить велосипед на больший, когда они перерастают свой нынешний велосипед",
+    "ja": "自転車ライブラリは、少額の年間料金で自転車を借りられる場所です。注目すべきユースケースとしては、子供向けの自転車ライブラリで、子どもの成長にあわせて大きな自転車へ借り替えられます",
+    "fr": "Une vélothèque est un endroit où on peut emprunter des vélos, souvent moyennant une petite somme annuelle. Un cas d'utilisation notable est celui des vélothèques pour les enfants, qui leur permettent de passer à un vélo plus grand quand ils sont trop grands pour leur vélo actuel"
   },
   "icon": "./assets/themes/bicycle_library/logo.svg",
   "socialImage": null,
