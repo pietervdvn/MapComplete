@@ -1,0 +1,29 @@
+{
+    "bench": {
+        "tagRenderings": {
+            "3": {
+                "render": "材質：{material}"
+            },
+            "2": {
+                "question": "這個長椅有幾個位子？",
+                "render": "{seats} 座位數"
+            },
+            "1": {
+                "question": "這個長椅是否有靠背？",
+                "mappings": {
+                    "1": {
+                        "then": "靠背：無"
+                    },
+                    "0": {
+                        "then": "靠背：有"
+                    }
+                },
+                "render": "靠背"
+            }
+        },
+        "title": {
+            "render": "長椅"
+        },
+        "name": "長椅"
+    }
+}
