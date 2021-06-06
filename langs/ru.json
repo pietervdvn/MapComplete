@@ -22,7 +22,7 @@
             "pleaseLogin": "<a class=\"activate-osm-authentication\">Пожалуйста, войдите чтобы добавить новую точку</a>",
             "intro": "Вы нажали туда, где ещё нет данных.<br>",
             "title": "Добавить новую точку?",
-            "addNew": "Добавить {category} здесь"
+            "addNew": "Добавить новую {category} здесь"
         },
         "osmLinkTooltip": "Посмотрите этот объект на OpenStreetMap чтобы увидеть его историю или отредактировать",
         "number": "номер",
