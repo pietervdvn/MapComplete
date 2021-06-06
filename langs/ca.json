@@ -132,6 +132,16 @@
             "ph_not_known": " ",
             "ph_closed": "tancat",
             "ph_open": "tancat"
+        },
+        "attribution": {
+            "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
+            "attributionTitle": "Avís d’atribució",
+            "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
+            "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
+            "iconAttribution": {
+                "title": "Icones utilitzades"
+            },
+            "themeBy": "Tema mantingut per {author}"
         }
     },
     "favourite": {
@@ -145,6 +155,8 @@
         "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
         "name_required": "És requerit un nom per mostrar i crear revisions",
         "title_singular": "Una revisió",
-        "title": "{count} revisions"
+        "title": "{count} revisions",
+        "saved": "<span class=\"thanks\">Revisió compartida. Gràcies per compartir!</span>",
+        "saving_review": "Desant…"
     }
 }
