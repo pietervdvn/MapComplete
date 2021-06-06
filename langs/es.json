@@ -1,25 +1,25 @@
 {
     "image": {
         "addPicture": "Añadir foto",
-        "uploadingPicture": "Subiendo tu imagen ...",
-        "uploadingMultiple": "Subiendo {count} de tus fotos...",
+        "uploadingPicture": "Subiendo tu imagen…",
+        "uploadingMultiple": "Subiendo {count} de tus fotos…",
         "pleaseLogin": "Entra para subir una foto",
         "willBePublished": "Tu foto será publicada: ",
         "cco": "en dominio público",
         "ccbs": "bajo licencia CC-BY-SA",
         "ccb": "bajo licencia CC-BY",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tienes Internet y se permiten API de terceros? El navegador Brave o UMatrix podría bloquearlas.",
-        "respectPrivacy": "Respeta la privacidad. No fotografíes gente o matrículas",
-        "uploadDone": "<span class='thanks'>Tu imagen ha sido añadida. Gracias por ayudar.</span>",
+        "respectPrivacy": "No fotografíes personas o matrículas. No subas datos de Google Maps, Google Streetview u otras fuentes protegidas por derechos de autor.",
+        "uploadDone": "<span class=\"thanks\">Tu imagen ha sido añadida. Gracias por ayudar.</span>",
         "dontDelete": "Cancelar",
         "doDelete": "Borrar imagen",
         "isDeleted": "Borrada"
     },
     "centerMessage": {
-        "loadingData": "Cargando datos...",
+        "loadingData": "Cargando datos…",
         "zoomIn": "Amplía para ver o editar los datos",
         "ready": "Hecho.",
-        "retrying": "La carga de datos ha fallado. Volviéndolo a probar... ({count})"
+        "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
@@ -33,7 +33,7 @@
         "loginToStart": "Entra para contestar esta pregunta",
         "search": {
             "search": "Busca una ubicación",
-            "searching": "Buscando...",
+            "searching": "Buscando…",
             "nothing": "Nada encontrado.",
             "error": "Alguna cosa no ha ido bien..."
         },
@@ -48,8 +48,8 @@
         "add": {
             "addNew": "Añadir {category} aquí",
             "title": "Quieres añadir un punto?",
-            "intro": "Has marcado un lugar del que no conocemos los datos.<br/>",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Entra para añadir un nuevo punto</a>",
+            "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">`Por favor inicia sesión para añadir un nuevo punto</a>",
             "zoomInFurther": "Acerca para añadir un punto.",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
@@ -63,7 +63,7 @@
         "noNameCategory": "{category} sin nombre",
         "questions": {
             "phoneNumberOf": "Qué teléfono tiene {category}?",
-            "phoneNumberIs": "El número de teléfono de {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberIs": "El número de teléfono de {category} es <a target=\"_blank\">{phone}</a>",
             "websiteOf": "Cual es la página web de {category}?",
             "websiteIs": "Página web: <a href='{website}' target='_blank'>{website}</a>",
             "emailOf": "¿Qué dirección de correu tiene {category}?",
