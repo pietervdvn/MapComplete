@@ -127,7 +127,8 @@
         "nl": "Voor wie worden hier fietsen aangeboden?",
         "fr": "Qui peut emprunter des vélos ici ?",
         "hu": "Ki kölcsönözhet itt kerékpárt?",
-        "it": "Chi può prendere in prestito le biciclette qua?"
+        "it": "Chi può prendere in prestito le biciclette qua?",
+        "zh_Hans": "谁可以从这里借自行车？"
       },
       "multiAnswer": true,
       "mappings": [

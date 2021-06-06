@@ -10,7 +10,8 @@
     "id": "Buka Peta Karya Seni",
     "it": "Mappa libera dell’arte",
     "ru": "Открытая карта произведений искусства",
-    "ja": "オープン アートワーク マップ"
+    "ja": "オープン アートワーク マップ",
+    "zh_Hant": "開放藝術品地圖"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
@@ -21,7 +22,8 @@
     "it": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
     "ru": "Добро пожаловать на Open Artwork Map, карту статуй, бюстов, граффити и других произведений искусства по всему миру",
     "es": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
-    "ja": "オープン アートワーク マップへようこそ。世界中の銅像や胸像、壁の落書きなどのアートワークの地図です"
+    "ja": "オープン アートワーク マップへようこそ。世界中の銅像や胸像、壁の落書きなどのアートワークの地図です",
+    "zh_Hant": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品"
   },
   "language": [
     "en",
@@ -33,6 +35,7 @@
     "it",
     "ru",
     "ja",
+    "zh_Hant",
     "es"
   ],
   "icon": "./assets/themes/artwork/artwork.svg",
@@ -52,7 +55,8 @@
         "it": "Opere d’arte",
         "ru": "Произведения искусства",
         "es": "Obras de arte",
-        "ja": "美術品"
+        "ja": "美術品",
+        "zh_Hant": "藝術品"
       },
       "source": {
         "osmTags": "tourism=artwork"
@@ -67,7 +71,8 @@
           "it": "Opera d’arte",
           "ru": "Художественная работа",
           "es": "Obra de arte",
-          "ja": "アートワーク"
+          "ja": "アートワーク",
+          "zh_Hant": "藝術品"
         },
         "mappings": [
           {
@@ -81,7 +86,8 @@
               "it": "Opera <i>{name}</i>",
               "ru": "Художественная работа <i>{name}</i>",
               "es": "Obra de arte <i>{nombre}</i>",
-              "ja": "アートワーク <i>{name}</i>"
+              "ja": "アートワーク <i>{name}</i>",
+              "zh_Hant": "藝術品<i>{name}</i>"
             }
           }
         ]
@@ -103,7 +109,8 @@
         "it": "Diverse opere d’arte",
         "ru": "Разнообразные произведения искусства",
         "es": "Diversas piezas de obras de arte",
-        "ja": "多様な作品"
+        "ja": "多様な作品",
+        "zh_Hant": "不同類型的藝術品"
       },
       "minzoom": 12,
       "wayHandling": 2,
@@ -120,7 +127,8 @@
             "it": "Opera d’arte",
             "ru": "Художественная работа",
             "es": "Obra de arte",
-            "ja": "アートワーク"
+            "ja": "アートワーク",
+            "zh_Hant": "藝術品"
           }
         }
       ],
@@ -135,7 +143,8 @@
             "it": "Si tratta di un {artwork_type}",
             "ru": "Это {artwork_type}",
             "es": "Esta es un {artwork_type}",
-            "ja": "これは{artwork_type}です"
+            "ja": "これは{artwork_type}です",
+            "zh_Hant": "這是 {artwork_type}"
           },
           "question": {
             "en": "What is the type of this artwork?",
@@ -145,7 +154,8 @@
             "it": "Che tipo di opera d’arte è questo?",
             "ru": "К какому типу относится эта работа?",
             "es": "Cuál es el tipo de esta obra de arte?",
-            "ja": "この作品の種類は何ですか?"
+            "ja": "この作品の種類は何ですか?",
+            "zh_Hant": "這是什麼類型的藝術品？"
           },
           "freeform": {
             "key": "artwork_type",
@@ -163,7 +173,8 @@
                 "de": "Architektur",
                 "it": "Architettura",
                 "ru": "Архитектура",
-                "ja": "建物"
+                "ja": "建物",
+                "zh_Hant": "建築物"
               }
             },
             {
@@ -175,7 +186,8 @@
                 "de": "Wandbild",
                 "it": "Murale",
                 "ru": "Фреска",
-                "ja": "壁画"
+                "ja": "壁画",
+                "zh_Hant": "壁畫"
               }
             },
             {
@@ -187,7 +199,8 @@
                 "de": "Malerei",
                 "it": "Dipinto",
                 "ru": "Живопись",
-                "ja": "絵画"
+                "ja": "絵画",
+                "zh_Hant": "繪畫"
               }
             },
             {
@@ -199,7 +212,8 @@
                 "de": "Skulptur",
                 "it": "Scultura",
                 "ru": "Скульптура",
-                "ja": "彫刻"
+                "ja": "彫刻",
+                "zh_Hant": "雕塑"
               }
             },
             {
@@ -211,7 +225,8 @@
                 "de": "Statue",
                 "it": "Statua",
                 "ru": "Статуя",
-                "ja": "彫像"
+                "ja": "彫像",
+                "zh_Hant": "雕像"
               }
             },
             {
@@ -223,7 +238,8 @@
                 "de": "Büste",
                 "it": "Busto",
                 "ru": "Бюст",
-                "ja": "胸像"
+                "ja": "胸像",
+                "zh_Hant": "半身像"
               }
             },
             {
@@ -235,7 +251,8 @@
                 "de": "Stein",
                 "it": "Masso",
                 "ru": "Камень",
-                "ja": "石"
+                "ja": "石",
+                "zh_Hant": "石頭"
               }
             },
             {
@@ -247,7 +264,8 @@
                 "de": "Installation",
                 "it": "Istallazione",
                 "ru": "Инсталляция",
-                "ja": "インスタレーション"
+                "ja": "インスタレーション",
+                "zh_Hant": "安裝"
               }
             },
             {
@@ -259,7 +277,8 @@
                 "de": "Graffiti",
                 "it": "Graffiti",
                 "ru": "Граффити",
-                "ja": "落書き"
+                "ja": "落書き",
+                "zh_Hant": "塗鴨"
               }
             },
             {
@@ -271,7 +290,8 @@
                 "de": "Relief",
                 "it": "Rilievo",
                 "ru": "Рельеф",
-                "ja": "レリーフ"
+                "ja": "レリーフ",
+                "zh_Hant": "寬慰"
               }
             },
             {
@@ -283,7 +303,8 @@
                 "de": "Azulejo (spanische dekorative Fliesenarbeit)",
                 "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
                 "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)",
-                "ja": "Azulejo (スペインの装飾タイル)"
+                "ja": "Azulejo (スペインの装飾タイル)",
+                "zh_Hant": "Azulejo (西班牙雕塑作品名稱)"
               }
             },
             {
@@ -295,7 +316,8 @@
                 "de": "Fliesenarbeit",
                 "it": "Mosaico di piastrelle",
                 "ru": "Плитка (мозаика)",
-                "ja": "タイルワーク"
+                "ja": "タイルワーク",
+                "zh_Hant": "瓷磚"
               }
             }
           ]
@@ -308,7 +330,8 @@
             "de": "Welcher Künstler hat das geschaffen?",
             "it": "Quale artista ha creato quest’opera?",
             "ru": "Какой художник создал это?",
-            "ja": "どのアーティストが作ったんですか?"
+            "ja": "どのアーティストが作ったんですか?",
+            "zh_Hant": "創造這個的藝術家是誰？"
           },
           "render": {
             "en": "Created by {artist_name}",
@@ -317,7 +340,8 @@
             "de": "Erstellt von {artist_name}",
             "it": "Creato da {artist_name}",
             "ru": "Создано {artist_name}",
-            "ja": "作成者:{artist_name}"
+            "ja": "作成者:{artist_name}",
+            "zh_Hant": "{artist_name} 創作"
           },
           "freeform": {
             "key": "artist_name"

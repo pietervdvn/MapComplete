@@ -98,7 +98,8 @@
             "fr": "Le distributeur automatique fonctionne",
             "hu": "Az automata működik",
             "it": "Il distributore automatico funziona",
-            "ru": "Этот торговый автомат работает"
+            "ru": "Этот торговый автомат работает",
+            "zh_Hans": "这个借还机正常工作"
           }
         },
         {
@@ -109,7 +110,8 @@
             "fr": "Le distributeur automatique est en panne",
             "hu": "Az automata elromlott",
             "it": "Il distributore automatico è guasto",
-            "ru": "Этот торговый автомат сломан"
+            "ru": "Этот торговый автомат сломан",
+            "zh_Hans": "这个借还机已经损坏"
           }
         },
         {
@@ -120,7 +122,8 @@
             "fr": "Le distributeur automatique est fermé",
             "hu": "Az automata zárva van",
             "it": "Il distributore automatico è spento",
-            "ru": "Этот торговый автомат закрыт"
+            "ru": "Этот торговый автомат закрыт",
+            "zh_Hans": "这个借还机被关闭了"
           }
         }
       ]

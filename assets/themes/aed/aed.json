@@ -11,7 +11,8 @@
     "id": "Buka Peta AED",
     "it": "Mappa dei defibrillatori (DAE)",
     "ru": "Открытая карта AED (Автоматизированных внешних дефибрилляторов)",
-    "ja": "オープンAEDマップ"
+    "ja": "オープンAEDマップ",
+    "zh_Hant": "開放AED地圖"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -25,7 +26,8 @@
     "id": "Di peta ini, seseorang dapat menemukan dan menandai defibrillator terdekat",
     "it": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze",
     "ru": "На этой карте вы можете найти и отметить ближайшие дефибрилляторы",
-    "ja": "この地図では近くにある除細動器(AED)を見つけてマークします"
+    "ja": "この地図では近くにある除細動器(AED)を見つけてマークします",
+    "zh_Hant": "在這份地圖上，你可以找到與標記附近的除顫器"
   },
   "language": [
     "en",
@@ -38,7 +40,8 @@
     "id",
     "it",
     "ru",
-    "ja"
+    "ja",
+    "zh_Hant"
   ],
   "version": "2020-08-29",
   "startLat": 0,
