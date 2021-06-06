@@ -22,7 +22,7 @@
         "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…"
     },
     "index": {
-        "#": "These texts are shown above the theme buttons when no theme is loaded",
+        "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "pickTheme": "Elige un tema de abajo para empezar.",
         "intro": "MapComplete a un visor y editor de OpenStreetMap, que te muestra información sobre un tema específico.",
         "title": "Bienvenido a MapComplete"
@@ -53,7 +53,7 @@
             "zoomInFurther": "Acerca para añadir un punto.",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
-            "confirmButton": "Añadir {category} aquí",
+            "confirmButton": "Añadir una {category} aquí.<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "openLayerControl": "Abrir el control de capas",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa"
         },
@@ -142,7 +142,9 @@
             "iconAttribution": {
                 "title": "Iconos usados"
             },
-            "themeBy": "Tema mantenido por {author}"
+            "themeBy": "Tema mantenido por {author}",
+            "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
+            "attributionTitle": "Aviso de atribución"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente."
     },
@@ -154,6 +156,12 @@
     "reviews": {
         "title": "{count} comentarios",
         "title_singular": "Un comentario",
-        "name_required": "Se requiere un nombre para mostrar y crear comentarios"
+        "name_required": "Se requiere un nombre para mostrar y crear comentarios",
+        "saved": "<span class=\"thanks\">Reseña guardada. ¡Gracias por compartir!</span>",
+        "saving_review": "Guardando…",
+        "no_rating": "Sin calificación dada",
+        "write_a_comment": "Deja una reseña…",
+        "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero en escribir una y ayuda a los datos abiertos y a los negocios!",
+        "plz_login": "Inicia sesión para dejar una reseña"
     }
 }
