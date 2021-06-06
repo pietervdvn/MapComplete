@@ -10,7 +10,7 @@
         "ccb": "bajo licencia CC-BY",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tienes Internet y se permiten API de terceros? El navegador Brave o UMatrix podría bloquearlas.",
         "respectPrivacy": "No fotografíes personas o matrículas. No subas datos de Google Maps, Google Streetview u otras fuentes protegidas por derechos de autor.",
-        "uploadDone": "<span class='thanks'>Tu imagen ha sido añadida. Gracias por ayudar.</span>",
+        "uploadDone": "<span class=\"thanks\">Tu imagen ha sido añadida. Gracias por ayudar.</span>",
         "dontDelete": "Cancelar",
         "doDelete": "Borrar imagen",
         "isDeleted": "Borrada"
@@ -19,7 +19,7 @@
         "loadingData": "Cargando datos…",
         "zoomIn": "Amplía para ver o editar los datos",
         "ready": "Hecho.",
-        "retrying": "La carga de datos ha fallado. Volviéndolo a probar... ({count})"
+        "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
