@@ -80,7 +80,21 @@
         "title": "開放攀爬地圖",
         "layers": {
             "0": {
-                "name": "攀岩社團"
+                "name": "攀岩社團",
+                "tagRenderings": {
+                    "0": {
+                        "render": "<strong>{name}</strong>"
+                    }
+                },
+                "description": "攀岩社團或組織",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "攀岩 NGO"
+                        }
+                    },
+                    "render": "攀岩社團"
+                }
             }
         }
     },
