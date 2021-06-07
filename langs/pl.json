@@ -20,7 +20,11 @@
         "skip": "Pomiń to pytanie",
         "cancel": "Anuluj",
         "save": "Zapisz",
-        "returnToTheMap": "Wróć do mapy"
+        "returnToTheMap": "Wróć do mapy",
+        "loginToStart": "Zaloguj się, aby odpowiedzieć na to pytanie",
+        "search": {
+            "error": "Coś poszło nie tak…"
+        }
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
@@ -28,6 +32,7 @@
         "title": "Witaj w MapComplete"
     },
     "centerMessage": {
-        "loadingData": "Ładowanie danych…"
+        "loadingData": "Ładowanie danych…",
+        "ready": "Zrobione!"
     }
 }
