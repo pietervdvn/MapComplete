@@ -77,7 +77,12 @@
     "climbing": {
         "descriptionTail": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
         "description": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
-        "title": "開放攀爬地圖"
+        "title": "開放攀爬地圖",
+        "layers": {
+            "0": {
+                "name": "攀岩社團"
+            }
+        }
     },
     "trees": {
         "description": "繪製所有樹木！",
