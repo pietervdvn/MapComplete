@@ -71,12 +71,14 @@
     "question": {
       "en": "What are the opening hours of {name}?",
       "fr": "Quelles sont les horaires d'ouverture de {name}?",
-      "de": "Was sind die Öffnungszeiten von {name}?"
+      "de": "Was sind die Öffnungszeiten von {name}?",
+      "nl": "Wat zijn de openingsuren van {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
       "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
-      "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+      "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
+      "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",

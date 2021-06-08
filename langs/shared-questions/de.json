@@ -1,0 +1,11 @@
+{
+    "undefined": {
+        "phone": {
+            "question": "Was ist die Telefonnummer von {name}?"
+        },
+        "opening_hours": {
+            "question": "Was sind die Öffnungszeiten von {name}?",
+            "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
+        }
+    }
+}

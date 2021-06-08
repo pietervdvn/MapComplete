@@ -1,0 +1,20 @@
+{
+    "undefined": {
+        "phone": {
+            "question": "Wat is het telefoonnummer van {name}?"
+        },
+        "email": {
+            "question": "Wat is het email-adres van {name}?"
+        },
+        "website": {
+            "question": "Wat is de website van {name}?"
+        },
+        "description": {
+            "question": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+        },
+        "opening_hours": {
+            "question": "Wat zijn de openingsuren van {name}?",
+            "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
+        }
+    }
+}
