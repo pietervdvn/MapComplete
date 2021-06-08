@@ -19,7 +19,7 @@
         "loadingData": "Daten werden geladen…",
         "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
         "ready": "Erledigt!",
-        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in  ({count}) Sekunden…"
+        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…"
     },
     "index": {
         "#": "Dieser Text wird über den Thema Auswahlbuttons gezeigt, wenn kein Thema geladen ist.",
