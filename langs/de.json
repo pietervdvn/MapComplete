@@ -19,10 +19,10 @@
         "loadingData": "Daten werden geladen…",
         "zoomIn": "Vergrößern, um die Daten anzuzeigen oder zu bearbeiten",
         "ready": "Erledigt!",
-        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…"
+        "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden …"
     },
     "index": {
-        "#": "Dieser Text wird über den Thema Auswahlbuttons gezeigt, wenn kein Thema geladen ist.",
+        "#": "Dieser Text wird über die Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "title": "Willkommen bei MapComplete",
         "intro": "MapComplete ist eine OpenStreetMap-Anwendung, mit der Informationen zu einem bestimmten Thema angezeigt und angepasst werden können.",
         "pickTheme": "Wähle unten ein Thema, um zu starten."
@@ -33,7 +33,7 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "search": {
             "search": "Einen Ort suchen",
-            "searching": "Suchen…",
+            "searching": "Suchen …",
             "nothing": "Nichts gefunden…",
             "error": "Etwas ging schief…"
         },
@@ -53,7 +53,7 @@
             "zoomInFurther": "Weiter einzoomen, um einen Punkt hinzuzufügen.",
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie etwas, bevor Sie einen neuen Punkt hinzufügen.",
             "confirmIntro": "<h3>Hier einen {title} hinzufügen?</h3>Der Punkt, den Sie hier anlegen, wird <b>für alle sichtbar sein</b>. Bitte fügen Sie der Karte nur dann Dinge hinzu, wenn sie wirklich existieren. Viele Anwendungen verwenden diese Daten.",
-            "confirmButton": "Hier eine {category} hinzufügen",
+            "confirmButton": "Fügen Sie hier eine {category} hinzu.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "openLayerControl": "Das Ebenen-Kontrollkästchen öffnen",
             "layerNotEnabled": "Die Ebene {layer} ist nicht aktiviert. Aktivieren Sie diese Ebene, um einen Punkt hinzuzufügen"
         },
@@ -91,7 +91,7 @@
         },
         "morescreen": {
             "intro": "<h3>Weitere Quests</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
-            "requestATheme": "Wenn Sie einen speziell angefertigte Quest wünschen, können Sie diesen <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>hier</a> anfragen.",
+            "requestATheme": "Wenn Sie einen speziell angefertigte Quest wünschen, fragen Sie im Problem-Tracker an.",
             "streetcomplete": "Eine andere, ähnliche Anwendung ist <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
             "createYourOwnTheme": "Erstellen Sie Ihr eigenes MapComplete-Thema von Grund auf neu"
         },
