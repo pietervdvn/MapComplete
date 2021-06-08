@@ -27,7 +27,7 @@ export class OsmConnection {
         "osm": {
             oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
             oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-            url: "https://openstreetmap.org"
+            url: "https://www.openstreetmap.org"
         },
         "osm-test": {
             oauth_consumer_key: 'Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2',
