@@ -81,7 +81,7 @@
             },
             "6": {
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
-                "render": "Die Bank wurde zuletzt am {survey:date} überprüft."
+                "render": "Diese Bank wurde zuletzt überprüft am {survey:date}"
             }
         },
         "presets": {
@@ -202,10 +202,10 @@
                 "question": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
                 "mappings": {
                     "0": {
-                        "then": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an."
+                        "then": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an"
                     },
                     "1": {
-                        "then": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an."
+                        "then": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an"
                     }
                 }
             },
@@ -329,7 +329,7 @@
                         "then": "Dieser Parkplatz ist überdacht (er hat ein Dach)"
                     },
                     "1": {
-                        "then": "Dieser Parkplatz ist nicht überdacht."
+                        "then": "Dieser Parkplatz ist nicht überdacht"
                     }
                 }
             },
@@ -1229,7 +1229,7 @@
                         "then": "Hier gibt es nur Pissoirs"
                     },
                     "2": {
-                        "then": "Es gibt hier nur Hocktoiletten."
+                        "then": "Es gibt hier nur Hocktoiletten"
                     },
                     "3": {
                         "then": "Sowohl Sitztoiletten als auch Pissoirs sind hier verfügbar"
