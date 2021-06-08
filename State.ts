@@ -210,8 +210,8 @@ export default class State {
                 "If true, shows some extra debugging help such as all the available tags on every object")
                 .map(str => str === "true", [], b => "" + b)
 
-            this.featureSwitchApiURL = QueryParameters.GetQueryParameter("backend","https://openstreetmap.org",
-                "The OSM backend to use - can be used to redirect mapcomplete to a testing backend or e.g. openHistoricalMap")
+            this.featureSwitchApiURL = QueryParameters.GetQueryParameter("backend","osm",
+                "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'")
 
         }
 
