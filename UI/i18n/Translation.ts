@@ -58,6 +58,9 @@ export class Translation extends UIElement {
             if (translationsKey === "#") {
                 continue;
             }
+            if(!this.translations.hasOwnProperty(translationsKey)){
+                continue
+            }
             langs.push(translationsKey)
         }
         return langs;
