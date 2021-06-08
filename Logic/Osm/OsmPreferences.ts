@@ -96,10 +96,13 @@ export class OsmPreferences {
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
+        console.warn(key)
         key = prefix + key;
+        key = key.replace(/[:\\\/"' {}.%]/g, '')
         if (key.length >= 255) {
             throw "Preferences: key length to big";
         }
+        console.warn(key)
         if (this.preferenceSources[key] !== undefined) {
             return this.preferenceSources[key];
         }

@@ -7,6 +7,7 @@ import {ElementStorage} from "../ElementStorage";
 import Svg from "../../Svg";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Img from "../../UI/Base/Img";
+import {Utils} from "../../Utils";
 
 export default class UserDetails {
 
@@ -22,28 +23,49 @@ export default class UserDetails {
 
 export class OsmConnection {
 
+    public static readonly _oauth_configs = {
+        "osm": {
+            oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
+            oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
+            url: "https://openstreetmap.org"
+        },
+        "osm-test": {
+            oauth_consumer_key: 'Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2',
+            oauth_secret: '3am1i1sykHDMZ66SGq4wI2Z7cJMKgzneCHp3nctn',
+            url: "https://master.apis.dev.openstreetmap.org"
+        }
+
+
+    }
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     _dryRun: boolean;
-
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
-
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
     private readonly _iframeMode: Boolean | boolean;
     private readonly _singlePage: boolean;
+    private readonly _oauth_config: {
+        oauth_consumer_key: string,
+        oauth_secret: string,
+        url: string
+    };
 
     constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
-                singlePage: boolean = true) {
+                singlePage: boolean = true,
+                osmConfiguration: "osm" | "osm-test" = 'osm'
+    ) {
         this._singlePage = singlePage;
-        this._iframeMode = window !== window.top;
+        this._oauth_config = OsmConnection._oauth_configs[osmConfiguration] ?? OsmConnection._oauth_configs.osm;
+        console.debug("Using backend", this._oauth_config.url)
+        this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
         this.userDetails.data.dryRun = dryRun;
         this._dryRun = dryRun;
-        
+
         this.updateAuthObject();
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
@@ -67,37 +89,6 @@ export class OsmConnection {
             console.log("Not authenticated");
         }
     }
-    
-    private updateAuthObject(){
-        let pwaStandAloneMode = false;
-        try {
-            if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
-                pwaStandAloneMode = true;
-            }
-        } catch (e) {
-            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
-        }
-        if (this._iframeMode || pwaStandAloneMode || !this._singlePage) {
-            // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
-            // Same for an iframe...
-            this.auth = new osmAuth({
-                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-                singlepage: false,
-                auto: true,
-            });
-        } else {
-
-            this.auth = new osmAuth({
-                oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-                oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-                singlepage: true,
-                landing: window.location.href,
-                auto: true,
-            });
-        }
-    }
-
 
     public UploadChangeset(
         layout: LayoutConfig,
@@ -144,7 +135,7 @@ export class OsmConnection {
                     // Not authorized - our token probably got revoked
                     // Reset all the tokens
                     const tokens = [
-                        "https://www.openstreetmap.orgoauth_request_token_secret", 
+                        "https://www.openstreetmap.orgoauth_request_token_secret",
                         "https://www.openstreetmap.orgoauth_token",
                         "https://www.openstreetmap.orgoauth_token_secret"]
                     tokens.forEach(token => localStorage.removeItem(token))
@@ -196,6 +187,33 @@ export class OsmConnection {
         });
     }
 
+    private updateAuthObject() {
+        let pwaStandAloneMode = false;
+        try {
+            if (Utils.runningFromConsole) {
+                pwaStandAloneMode = true
+            } else if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
+                pwaStandAloneMode = true;
+            }
+        } catch (e) {
+            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
+        }
+        const standalone = this._iframeMode || pwaStandAloneMode || !this._singlePage;
+
+        // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
+        // Same for an iframe...
+
+
+        this.auth = new osmAuth({
+            oauth_consumer_key: this._oauth_config.oauth_consumer_key,
+            oauth_secret: this._oauth_config.oauth_secret,
+            url: this._oauth_config.url,
+            landing: standalone ? undefined : window.location.href,
+            singlepage: !standalone,
+            auto: true,
+
+        });
+    }
 
     private CheckForMessagesContinuously() {
         const self = this;
