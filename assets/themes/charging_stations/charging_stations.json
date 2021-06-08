@@ -4,23 +4,27 @@
     "en": "Charging stations",
     "id": "Stasiun pengisian daya",
     "ru": "Зарядные станции",
-    "ja": "充電ステーション"
+    "ja": "充電ステーション",
+    "zh_Hant": "充電站"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
     "ru": "Карта зарядных станций по всему миру",
-    "ja": "充電ステーションの世界地図"
+    "ja": "充電ステーションの世界地図",
+    "zh_Hant": "全世界的充電站地圖"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
     "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
-    "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます"
+    "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
+    "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊"
   },
   "language": [
     "en",
     "id",
     "ru",
-    "ja"
+    "ja",
+    "zh_Hant"
   ],
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",
@@ -36,7 +40,8 @@
       "name": {
         "en": "Charging stations",
         "ru": "Зарядные станции",
-        "ja": "充電ステーション"
+        "ja": "充電ステーション",
+        "zh_Hant": "充電站"
       },
       "minzoom": 10,
       "source": {
@@ -50,13 +55,15 @@
         "render": {
           "en": "Charging station",
           "ru": "Зарядная станция",
-          "ja": "充電ステーション"
+          "ja": "充電ステーション",
+          "zh_Hant": "充電站"
         }
       },
       "description": {
         "en": "A charging station",
         "ru": "Зарядная станция",
-        "ja": "充電ステーション"
+        "ja": "充電ステーション",
+        "zh_Hant": "充電站"
       },
       "tagRenderings": [
         "images",
@@ -186,7 +193,8 @@
           "question": {
             "en": "When is this charging station opened?",
             "ru": "В какое время работает эта зарядная станция?",
-            "ja": "この充電ステーションはいつオープンしますか?"
+            "ja": "この充電ステーションはいつオープンしますか?",
+            "zh_Hant": "何時是充電站開放使用的時間？"
           },
           "mappings": [
             {
@@ -200,12 +208,14 @@
           "render": {
             "en": "{network}",
             "ru": "{network}",
-            "ja": "{network}"
+            "ja": "{network}",
+            "zh_Hant": "{network}"
           },
           "question": {
             "en": "Which is the network of this charging stationg?",
             "ru": "К какой сети относится эта станция?",
-            "ja": "この充電ステーションの運営チェーンはどこですか?"
+            "ja": "この充電ステーションの運営チェーンはどこですか?",
+            "zh_Hant": "充電站所屬的網路是？"
           },
           "freeform": {
             "key": "network"
@@ -220,7 +230,8 @@
               "then": {
                 "en": "Not part of a bigger network",
                 "ru": "Не является частью более крупной сети",
-                "ja": "大規模な運営チェーンの一部ではない"
+                "ja": "大規模な運営チェーンの一部ではない",
+                "zh_Hant": "不屬於大型網路"
               }
             },
             {
@@ -232,7 +243,8 @@
               "then": {
                 "en": "AeroVironment",
                 "ru": "AeroVironment",
-                "ja": "AeroVironment"
+                "ja": "AeroVironment",
+                "zh_Hant": "AeroVironment"
               }
             },
             {
@@ -244,7 +256,8 @@
               "then": {
                 "en": "Blink",
                 "ru": "Blink",
-                "ja": "Blink"
+                "ja": "Blink",
+                "zh_Hant": "Blink"
               }
             },
             {
@@ -256,7 +269,8 @@
               "then": {
                 "en": "eVgo",
                 "ru": "eVgo",
-                "ja": "eVgo"
+                "ja": "eVgo",
+                "zh_Hant": "eVgo"
               }
             }
           ]

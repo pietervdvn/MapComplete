@@ -7,7 +7,8 @@
     "gl": "Café de ciclistas",
     "de": "Fahrrad-Café",
     "it": "Caffè in bici",
-    "zh_Hans": "自行车咖啡"
+    "zh_Hans": "自行车咖啡",
+    "ru": "Велосипедное кафе"
   },
   "minzoom": 13,
   "source": {
@@ -42,7 +43,8 @@
       "gl": "Café de ciclistas",
       "de": "Fahrrad-Café",
       "it": "Caffè in bici",
-      "zh_Hans": "自行车咖啡"
+      "zh_Hans": "自行车咖啡",
+      "ru": "Велосипедное кафе"
     },
     "mappings": [
       {
@@ -54,7 +56,8 @@
           "gl": "Café de ciclistas <i>{name}</i>",
           "de": "Fahrrad-Café <i>{name}</i>",
           "it": "Caffè in bici <i>{name}</i>",
-          "zh_Hans": "自行车咖啡 <i>{name}</i>"
+          "zh_Hans": "自行车咖啡 <i>{name}</i>",
+          "ru": "Велосипедное кафе <i>{name}</i>"
         }
       }
     ]
@@ -69,7 +72,8 @@
         "gl": "Cal é o nome deste café de ciclistas?",
         "de": "Wie heißt dieses Fahrrad-Café?",
         "it": "Qual è il nome di questo caffè in bici?",
-        "zh_Hans": "这个自行车咖啡的名字是什么？"
+        "zh_Hans": "这个自行车咖啡的名字是什么？",
+        "ru": "Как называется это байк-кафе?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
@@ -78,7 +82,8 @@
         "gl": "Este café de ciclistas chámase {name}",
         "de": "Dieses Fahrrad-Café heißt {name}",
         "it": "Questo caffè in bici è chiamato {name}",
-        "zh_Hans": "这家自行车咖啡叫做 {name}"
+        "zh_Hans": "这家自行车咖啡叫做 {name}",
+        "ru": "Это велосипедное кафе называется {name}"
       },
       "freeform": {
         "key": "name"
@@ -92,7 +97,8 @@
         "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
         "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?",
         "it": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?",
-        "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？"
+        "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？",
+        "ru": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?"
       },
       "mappings": [
         {

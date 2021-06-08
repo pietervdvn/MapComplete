@@ -355,7 +355,8 @@
             "de": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",
             "it": "Su quale sito web è possibile trovare altre informazioni riguardanti quest’opera?",
             "ru": "На каком сайте можно найти больше информации об этой работе?",
-            "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?"
+            "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
+            "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？"
           },
           "render": {
             "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -365,7 +366,8 @@
             "id": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini.",
             "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",
             "ru": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>",
-            "ja": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
+            "ja": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある",
+            "zh_Hant": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
           },
           "freeform": {
             "key": "website",
@@ -380,7 +382,8 @@
             "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
             "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
             "ru": "Какая запись в wikidata соответсвует <b>этой работе</b>?",
-            "ja": "<b>このアートワーク</b>に関するwikidataのエントリーはどれですか?"
+            "ja": "<b>このアートワーク</b>に関するwikidataのエントリーはどれですか?",
+            "zh_Hant": "<b>這個藝術品</b>有那個對應的 wikidata 項目？"
           },
           "render": {
             "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
@@ -389,7 +392,8 @@
             "de": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "it": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
             "ru": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-            "ja": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する"
+            "ja": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する",
+            "zh_Hant": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
           },
           "freeform": {
             "key": "wikidata",

@@ -5,21 +5,24 @@
     "de": "Offene Kletterkarte",
     "en": "Open Climbing Map",
     "ru": "Открытая карта скалолазания",
-    "ja": "登山地図を開く"
+    "ja": "登山地図を開く",
+    "zh_Hant": "開放攀爬地圖"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
     "de": "Auf dieser Karte finden Sie verschiedene Klettermöglichkeiten wie Kletterhallen, Boulderhallen und Felsen in der Natur.",
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
-    "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。"
+    "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
+    "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。"
   },
   "descriptionTail": {
     "nl": "De Open Klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
     "en": "The climbing map was originally made by <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>get in touch</a> if you have feedback or questions.</p><p>The project uses data of the <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> project.</p>",
     "de": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt Daten des <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Projekts und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
     "ru": "Создатель карты скалолазания — <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Пожалуйста, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>пишите</a> если у вас есть отзыв или вопросы.</p><p>Проект использует данные <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "ja": "登山地図はもともと <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> によって作成されたものです。フィードバックや質問がありましたら、<a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ご連絡</a>ください。</p><p>このプロジェクトでは、<a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>プロジェクトのデータを使用します。</p>"
+    "ja": "登山地図はもともと <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> によって作成されたものです。フィードバックや質問がありましたら、<a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ご連絡</a>ください。</p><p>このプロジェクトでは、<a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>プロジェクトのデータを使用します。</p>",
+    "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>"
   },
   "language": [
     "nl",
@@ -27,6 +30,7 @@
     "en",
     "ru",
     "ja",
+    "zh_Hant",
     "ca",
     "fr",
     "id"
@@ -47,7 +51,8 @@
         "nl": "Klimclub",
         "en": "Climbing club",
         "ru": "Клуб скалолазания",
-        "ja": "クライミングクラブ"
+        "ja": "クライミングクラブ",
+        "zh_Hant": "攀岩社團"
       },
       "minzoom": 10,
       "source": {
@@ -74,7 +79,8 @@
           "nl": "Klimclub",
           "de": "Kletterverein",
           "ru": "Клуб скалолазания",
-          "ja": "クライミングクラブ"
+          "ja": "クライミングクラブ",
+          "zh_Hant": "攀岩社團"
         },
         "mappings": [
           {
@@ -83,7 +89,8 @@
               "nl": "Klimorganisatie",
               "en": "Climbing NGO",
               "de": "Kletter-Organisation",
-              "ja": "クライミングNGO"
+              "ja": "クライミングNGO",
+              "zh_Hant": "攀岩 NGO"
             }
           }
         ]
@@ -92,7 +99,8 @@
         "de": "Ein Kletterverein oder eine Organisation",
         "nl": "Een klimclub of organisatie",
         "en": "A climbing club or organisations",
-        "ja": "クライミングクラブや団体"
+        "ja": "クライミングクラブや団体",
+        "zh_Hant": "攀岩社團或組織"
       },
       "tagRenderings": [
         {
@@ -104,7 +112,8 @@
             "fr": "<strong>{name}</strong>",
             "id": "<strong>{name}</strong>",
             "ru": "<strong>{name}</strong>",
-            "ja": "<strong>{name}</strong>"
+            "ja": "<strong>{name}</strong>",
+            "zh_Hant": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing club or NGO?",

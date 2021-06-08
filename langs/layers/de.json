@@ -80,8 +80,8 @@
                 }
             },
             "6": {
-                "render": "Die Bank wurde zuletzt am {survey:date} überprüft.",
-                "question": "Wann wurde diese Bank zuletzt überprüft?"
+                "question": "Wann wurde diese Bank zuletzt überprüft?",
+                "render": "Die Bank wurde zuletzt am {survey:date} überprüft."
             }
         },
         "presets": {
@@ -110,6 +110,65 @@
             },
             "2": {
                 "render": "Stehbank"
+            }
+        }
+    },
+    "bicycle_library": {
+        "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+        "tagRenderings": {
+            "6": {
+                "question": "Wie viel kostet das Ausleihen eines Fahrrads?",
+                "render": "Das Ausleihen eines Fahrrads kostet {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "Das Ausleihen eines Fahrrads ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr"
+                    }
+                }
+            },
+            "7": {
+                "question": "Wer kann hier Fahrräder ausleihen?",
+                "mappings": {
+                    "0": {
+                        "then": "Fahrräder für Kinder verfügbar"
+                    },
+                    "1": {
+                        "then": "Fahrräder für Erwachsene verfügbar"
+                    },
+                    "2": {
+                        "then": "Fahrräder für Behinderte verfügbar"
+                    }
+                }
+            }
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "name": "Fahrradschlauch-Automat",
+        "title": {
+            "render": "Fahrradschlauch-Automat"
+        },
+        "presets": {
+            "0": {
+                "title": "Fahrradschlauch-Automat"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Ist dieser Automat noch in Betrieb?",
+                "render": "Der Betriebszustand ist <i>{operational_status</i>",
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Automat funktioniert"
+                    },
+                    "1": {
+                        "then": "Dieser Automat ist kaputt"
+                    },
+                    "2": {
+                        "then": "Dieser Automat ist geschlossen"
+                    }
+                }
             }
         }
     },
@@ -177,6 +236,35 @@
             }
         }
     },
+    "bike_cleaning": {
+        "name": "Fahrrad-Reinigungsdienst",
+        "title": {
+            "render": "Fahrrad-Reinigungsdienst",
+            "mappings": {
+                "0": {
+                    "then": "Fahrrad-Reinigungsdienst<i>{name}</i>"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Fahrrad-Reinigungsdienst"
+            }
+        }
+    },
+    "bike_monitoring_station": {
+        "title": {
+            "render": "Fahrradzählstation",
+            "mappings": {
+                "0": {
+                    "then": "Fahrradzählstation {name}"
+                },
+                "1": {
+                    "then": "Fahrradzählstation {ref}"
+                }
+            }
+        }
+    },
     "bike_parking": {
         "name": "Fahrrad-Parkplätze",
         "presets": {
@@ -210,11 +298,27 @@
                     "5": {
                         "then": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
                     },
-                    "7": {
-                        "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
-                    },
                     "6": {
                         "then": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                    },
+                    "7": {
+                        "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
+                    }
+                }
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Tiefgarage"
+                    },
+                    "1": {
+                        "then": "Tiefgarage"
+                    },
+                    "2": {
+                        "then": "Ebenerdiges Parken"
+                    },
+                    "3": {
+                        "then": "Ebenerdiges Parken"
                     }
                 }
             },
@@ -234,13 +338,13 @@
                 "render": "Platz für {capacity} Fahrräder"
             },
             "5": {
+                "question": "Wer kann diesen Fahrradparplatz nutzen?",
                 "render": "{access}",
                 "mappings": {
                     "0": {
                         "then": "Öffentlich zugänglich"
                     }
-                },
-                "question": "Wer kann diesen Fahrradparplatz nutzen?"
+                }
             },
             "6": {
                 "question": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?",
@@ -259,22 +363,6 @@
             "7": {
                 "question": "Wie viele Lastenfahrräder passen auf diesen Fahrrad-Parkplatz?",
                 "render": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder"
-            },
-            "2": {
-                "mappings": {
-                    "3": {
-                        "then": "Ebenerdiges Parken"
-                    },
-                    "2": {
-                        "then": "Ebenerdiges Parken"
-                    },
-                    "1": {
-                        "then": "Tiefgarage"
-                    },
-                    "0": {
-                        "then": "Tiefgarage"
-                    }
-                }
             }
         }
     },
@@ -312,6 +400,21 @@
                     },
                     "2": {
                         "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
+                    }
+                }
+            },
+            "2": {
+                "question": "Wer wartet diese Fahrradpumpe?",
+                "render": "Gewartet von {operator}"
+            },
+            "3": {
+                "question": "Wann ist diese Fahrradreparaturstelle geöffnet?",
+                "mappings": {
+                    "0": {
+                        "then": "Immer geöffnet"
+                    },
+                    "1": {
+                        "then": "Immer geöffnet"
                     }
                 }
             },
@@ -387,21 +490,6 @@
                         "then": "Es gibt ein Manometer, aber es ist kaputt"
                     }
                 }
-            },
-            "3": {
-                "mappings": {
-                    "1": {
-                        "then": "Immer geöffnet"
-                    },
-                    "0": {
-                        "then": "Immer geöffnet"
-                    }
-                },
-                "question": "Wann ist diese Fahrradreparaturstelle geöffnet?"
-            },
-            "2": {
-                "render": "Gewartet von {operator}",
-                "question": "Wer wartet diese Fahrradpumpe?"
             }
         },
         "presets": {
@@ -423,6 +511,12 @@
         "title": {
             "render": "Fahrradwerkstatt/geschäft",
             "mappings": {
+                "0": {
+                    "then": "Sportartikelgeschäft <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fahrradverleih<i>{name}</i>"
+                },
                 "3": {
                     "then": "Fahrradwerkstatt <i>{name}</i>"
                 },
@@ -431,12 +525,6 @@
                 },
                 "5": {
                     "then": "Fahrradwerkstatt/geschäft <i>{name}</i>"
-                },
-                "2": {
-                    "then": "Fahrradverleih<i>{name}</i>"
-                },
-                "0": {
-                    "then": "Sportartikelgeschäft <i>{name}</i>"
                 }
             }
         },
@@ -444,6 +532,15 @@
             "2": {
                 "question": "Wie heißt dieser Fahrradladen?",
                 "render": "Dieses Fahrradgeschäft heißt {name}"
+            },
+            "3": {
+                "question": "Was ist die Webseite von {name}?"
+            },
+            "4": {
+                "question": "Wie lautet die Telefonnummer von {name}?"
+            },
+            "5": {
+                "question": "Wie lautet die E-Mail-Adresse von {name}?"
             },
             "9": {
                 "question": "Verkauft dieser Laden Fahrräder?",
@@ -524,27 +621,18 @@
                 }
             },
             "15": {
+                "question": "Werden hier Fahrräder gewaschen?",
                 "mappings": {
-                    "2": {
-                        "then": "Dieser Laden bietet keine Fahrradreinigung an"
+                    "0": {
+                        "then": "Dieses Geschäft reinigt Fahrräder"
                     },
                     "1": {
                         "then": "Dieser Laden hat eine Anlage, in der man Fahrräder selbst reinigen kann"
                     },
-                    "0": {
-                        "then": "Dieses Geschäft reinigt Fahrräder"
+                    "2": {
+                        "then": "Dieser Laden bietet keine Fahrradreinigung an"
                     }
-                },
-                "question": "Werden hier Fahrräder gewaschen?"
-            },
-            "5": {
-                "question": "Wie lautet die E-Mail-Adresse von {name}?"
-            },
-            "4": {
-                "question": "Wie lautet die Telefonnummer von {name}?"
-            },
-            "3": {
-                "question": "Was ist die Webseite von {name}?"
+                }
             }
         },
         "presets": {
@@ -604,91 +692,91 @@
                     }
                 }
             },
+            "3": {
+                "render": "Es gibt keine Informationen über den Gerätetyp",
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
+                    }
+                }
+            },
             "4": {
                 "question": "In welchem Stockwerk befindet sich dieser Defibrillator?",
                 "render": "Dieser Defibrallator befindet sich im {level}. Stockwerk",
                 "mappings": {
-                    "1": {
-                        "then": "Dieser Defibrillator befindet sich in der <b>ersten Etage</b>"
-                    },
                     "0": {
                         "then": "Dieser Defibrillator befindet sich im <b>Erdgeschoss</b>"
+                    },
+                    "1": {
+                        "then": "Dieser Defibrillator befindet sich in der <b>ersten Etage</b>"
                     }
                 }
             },
             "5": {
-                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
-                "render": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}"
+                "render": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}",
+                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)"
             },
             "6": {
-                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)",
-                "render": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location}"
+                "render": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location}",
+                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)"
             },
             "7": {
-                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)",
-                "render": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:Standort:fr}"
+                "render": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:Standort:fr}",
+                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)"
             },
-            "12": {
+            "8": {
+                "question": "Ist dieser Defibrillator mit einem Rollstuhl erreichbar?",
                 "mappings": {
                     "0": {
-                        "then": "24/7 geöffnet (auch an Feiertagen)"
+                        "then": "Dieser Defibrillator ist speziell für Rollstuhlfahrer angepasst"
+                    },
+                    "1": {
+                        "then": "Dieser Defibrillator ist mit einem Rollstuhl leicht zu erreichen"
+                    },
+                    "2": {
+                        "then": "Es ist möglich, den Defibrillator mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
+                    },
+                    "3": {
+                        "then": "Dieser Defibrillator ist mit einem Rollstuhl nicht erreichbar"
                     }
-                },
-                "question": "Zu welchen Zeiten ist dieser Defibrillator verfügbar?"
+                }
+            },
+            "9": {
+                "render": "Offizielle Identifikationsnummer des Geräts: <i>{ref}</i>",
+                "question": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)"
+            },
+            "10": {
+                "render": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>",
+                "question": "Wie lautet die E-Mail für Fragen zu diesem Defibrillator?"
             },
             "11": {
                 "render": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>",
                 "question": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?"
             },
-            "10": {
-                "question": "Wie lautet die E-Mail für Fragen zu diesem Defibrillator?",
-                "render": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>"
-            },
-            "9": {
-                "question": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)",
-                "render": "Offizielle Identifikationsnummer des Geräts: <i>{ref}</i>"
-            },
-            "8": {
-                "mappings": {
-                    "3": {
-                        "then": "Dieser Defibrillator ist mit einem Rollstuhl nicht erreichbar"
-                    },
-                    "2": {
-                        "then": "Es ist möglich, den Defibrillator mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
-                    },
-                    "1": {
-                        "then": "Dieser Defibrillator ist mit einem Rollstuhl leicht zu erreichen"
-                    },
-                    "0": {
-                        "then": "Dieser Defibrillator ist speziell für Rollstuhlfahrer angepasst"
-                    }
-                },
-                "question": "Ist dieser Defibrillator mit einem Rollstuhl erreichbar?"
-            },
-            "3": {
+            "12": {
+                "question": "Zu welchen Zeiten ist dieser Defibrillator verfügbar?",
                 "mappings": {
                     "0": {
-                        "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
+                        "then": "24/7 geöffnet (auch an Feiertagen)"
                     }
-                },
-                "render": "Es gibt keine Informationen über den Gerätetyp"
+                }
             },
-            "15": {
-                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz an OpenStreetMap-Experten)",
-                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
+            "13": {
+                "render": "Zusätzliche Informationen: {description}",
+                "question": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)"
             },
             "14": {
+                "question": "Wann wurde dieser Defibrillator zuletzt überprüft?",
+                "render": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft",
                 "mappings": {
                     "0": {
                         "then": "Heute überprüft!"
                     }
-                },
-                "render": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft",
-                "question": "Wann wurde dieser Defibrillator zuletzt überprüft?"
+                }
             },
-            "13": {
-                "question": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)",
-                "render": "Zusätzliche Informationen: {description}"
+            "15": {
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz an OpenStreetMap-Experten)"
             }
         }
     },
@@ -703,6 +791,10 @@
             }
         },
         "tagRenderings": {
+            "1": {
+                "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
+                "render": "Der Betriebsstatus ist <i>{operational_status</i>"
+            },
             "2": {
                 "question": "Wie einfach ist es, Wasserflaschen zu füllen?",
                 "mappings": {
@@ -716,10 +808,6 @@
             },
             "3": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Ein weiterer Trinkwasserbrunnen befindet sich in {_closest_other_drinking_water_distance} Meter</a>"
-            },
-            "1": {
-                "render": "Der Betriebsstatus ist <i>{operational_status</i>",
-                "question": "Ist diese Trinkwasserstelle noch in Betrieb?"
             }
         }
     },
@@ -761,132 +849,211 @@
             }
         }
     },
+    "information_board": {
+        "name": "Informationstafeln",
+        "title": {
+            "render": "Informationstafel"
+        },
+        "presets": {
+            "0": {
+                "title": "Informationstafel"
+            }
+        }
+    },
+    "map": {
+        "name": "Karten",
+        "title": {
+            "render": "Karte"
+        },
+        "tagRenderings": {
+            "1": {
+                "question": "Auf welchen Daten basiert diese Karte?",
+                "mappings": {
+                    "0": {
+                        "then": "Diese Karte basiert auf OpenStreetMap"
+                    }
+                },
+                "render": "Diese Karte basiert auf {map_source}"
+            },
+            "2": {
+                "question": "Ist die OpenStreetMap-Attribution vorhanden?",
+                "mappings": {
+                    "0": {
+                        "then": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz"
+                    },
+                    "1": {
+                        "then": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt"
+                    },
+                    "2": {
+                        "then": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt"
+                    },
+                    "3": {
+                        "then": "Es gibt überhaupt keine Namensnennung"
+                    },
+                    "4": {
+                        "then": "Es gibt überhaupt keine Namensnennung"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Karte",
+                "description": "Fehlende Karte hinzufügen"
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
+            "5": {
+                "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?",
+                "mappings": {
+                    "0": {
+                        "then": "Hunde müssen angeleint sein"
+                    },
+                    "1": {
+                        "then": "Hunde sind nicht erlaubt"
+                    },
+                    "2": {
+                        "then": "Hunde dürfen frei herumlaufen"
+                    }
+                }
+            },
+            "6": {
+                "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
+            },
             "8": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "9": {
                 "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "6": {
-                "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
-            },
-            "5": {
+            }
+        }
+    },
+    "picnic_table": {
+        "name": "Picknick-Tische",
+        "title": {
+            "render": "Picknick-Tisch"
+        },
+        "tagRenderings": {
+            "0": {
+                "question": "Aus welchem Material besteht dieser Picknicktisch?",
+                "render": "Dieser Picknicktisch besteht aus {material}",
                 "mappings": {
-                    "2": {
-                        "then": "Hunde dürfen frei herumlaufen"
+                    "0": {
+                        "then": "Dies ist ein Picknicktisch aus Holz"
                     },
                     "1": {
-                        "then": "Hunde sind nicht erlaubt"
-                    },
-                    "0": {
-                        "then": "Hunde müssen angeleint sein"
+                        "then": "Dies ist ein Picknicktisch aus Beton"
                     }
-                },
-                "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Picknicktisch"
             }
         }
     },
     "playground": {
+        "name": "Spielplätze",
+        "description": "Spielplätze",
+        "title": {
+            "render": "Spielplatz",
+            "mappings": {
+                "0": {
+                    "then": "Spielplatz <i>{name}</i>"
+                }
+            }
+        },
         "tagRenderings": {
+            "1": {
+                "question": "Welche Oberfläche hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle die am häufigsten vorkommende aus</i>",
+                "render": "Die Oberfläche ist <b>{surface}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Die Oberfläche ist <b>Gras</b>"
+                    },
+                    "1": {
+                        "then": "Die Oberfläche ist <b>Sand</b>"
+                    },
+                    "2": {
+                        "then": "Die Oberfläche besteht aus <b>Holzschnitzeln</b>"
+                    },
+                    "3": {
+                        "then": "Die Oberfläche ist <b>Pflastersteine</b>"
+                    },
+                    "4": {
+                        "then": "Die Oberfläche ist <b>Asphalt</b>"
+                    },
+                    "5": {
+                        "then": "Die Oberfläche ist <b>Beton</b>"
+                    },
+                    "6": {
+                        "then": "Die Oberfläche ist <b>unbefestigt</b>"
+                    },
+                    "7": {
+                        "then": "Die Oberfläche ist <b>befestigt</b>"
+                    }
+                }
+            },
+            "2": {
+                "question": "Ist dieser Spielplatz nachts beleuchtet?",
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Spielplatz ist nachts beleuchtet"
+                    },
+                    "1": {
+                        "then": "Dieser Spielplatz ist nachts nicht beleuchtet"
+                    }
+                }
+            },
+            "5": {
+                "question": "Wer betreibt diesen Spielplatz?",
+                "render": "Betrieben von {operator}"
+            },
+            "6": {
+                "question": "Ist dieser Spielplatz für die Allgemeinheit zugänglich?",
+                "mappings": {
+                    "0": {
+                        "then": "Zugänglich für die Allgemeinheit"
+                    },
+                    "1": {
+                        "then": "Zugänglich für die Allgemeinheit"
+                    },
+                    "2": {
+                        "then": "Nur für Kunden des Betreibers zugänglich"
+                    },
+                    "3": {
+                        "then": "Nur für Schüler der Schule zugänglich"
+                    },
+                    "4": {
+                        "then": "Nicht zugänglich"
+                    }
+                }
+            },
             "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>",
-                "question": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?"
+                "question": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "8": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "9": {
+                "question": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?",
                 "mappings": {
-                    "2": {
-                        "then": "Nicht zugänglich für Rollstuhlfahrer"
+                    "0": {
+                        "then": "Vollständig zugänglich für Rollstuhlfahrer"
                     },
                     "1": {
                         "then": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer"
                     },
-                    "0": {
-                        "then": "Vollständig zugänglich für Rollstuhlfahrer"
-                    }
-                },
-                "question": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?"
-            },
-            "6": {
-                "mappings": {
-                    "4": {
-                        "then": "Nicht zugänglich"
-                    },
-                    "3": {
-                        "then": "Nur für Schüler der Schule zugänglich"
-                    },
                     "2": {
-                        "then": "Nur für Kunden des Betreibers zugänglich"
-                    },
-                    "1": {
-                        "then": "Zugänglich für die Allgemeinheit"
-                    },
-                    "0": {
-                        "then": "Zugänglich für die Allgemeinheit"
+                        "then": "Nicht zugänglich für Rollstuhlfahrer"
                     }
-                },
-                "question": "Ist dieser Spielplatz für die Allgemeinheit zugänglich?"
-            },
-            "5": {
-                "render": "Betrieben von {operator}",
-                "question": "Wer betreibt diesen Spielplatz?"
-            },
-            "2": {
-                "mappings": {
-                    "1": {
-                        "then": "Dieser Spielplatz ist nachts nicht beleuchtet"
-                    },
-                    "0": {
-                        "then": "Dieser Spielplatz ist nachts beleuchtet"
-                    }
-                },
-                "question": "Ist dieser Spielplatz nachts beleuchtet?"
-            },
-            "1": {
-                "mappings": {
-                    "7": {
-                        "then": "Die Oberfläche ist <b>befestigt</b>"
-                    },
-                    "6": {
-                        "then": "Die Oberfläche ist <b>unbefestigt</b>"
-                    },
-                    "5": {
-                        "then": "Die Oberfläche ist <b>Beton</b>"
-                    },
-                    "4": {
-                        "then": "Die Oberfläche ist <b>Asphalt</b>"
-                    },
-                    "3": {
-                        "then": "Die Oberfläche ist <b>Pflastersteine</b>"
-                    },
-                    "2": {
-                        "then": "Die Oberfläche besteht aus <b>Holzschnitzeln</b>"
-                    },
-                    "1": {
-                        "then": "Die Oberfläche ist <b>Sand</b>"
-                    },
-                    "0": {
-                        "then": "Die Oberfläche ist <b>Gras</b>"
-                    }
-                },
-                "render": "Die Oberfläche ist <b>{surface}</b>",
-                "question": "Welche Oberfläche hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle die am häufigsten vorkommende aus</i>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Spielplatz <i>{name}</i>"
                 }
-            },
-            "render": "Spielplatz"
-        },
-        "description": "Spielplätze",
-        "name": "Spielplätze"
+            }
+        }
     },
     "public_bookcase": {
         "name": "Bücherschränke",
@@ -1125,172 +1292,5 @@
                 "question": "Möchten Sie eine Beschreibung hinzufügen?"
             }
         }
-    },
-    "bike_monitoring_station": {
-        "title": {
-            "mappings": {
-                "1": {
-                    "then": "Fahrradzählstation {ref}"
-                },
-                "0": {
-                    "then": "Fahrradzählstation {name}"
-                }
-            },
-            "render": "Fahrradzählstation"
-        }
-    },
-    "bike_cleaning": {
-        "presets": {
-            "0": {
-                "title": "Fahrrad-Reinigungsdienst"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Fahrrad-Reinigungsdienst<i>{name}</i>"
-                }
-            },
-            "render": "Fahrrad-Reinigungsdienst"
-        },
-        "name": "Fahrrad-Reinigungsdienst"
-    },
-    "bicycle_tube_vending_machine": {
-        "tagRenderings": {
-            "1": {
-                "mappings": {
-                    "2": {
-                        "then": "Dieser Automat ist geschlossen"
-                    },
-                    "1": {
-                        "then": "Dieser Automat ist kaputt"
-                    },
-                    "0": {
-                        "then": "Dieser Automat funktioniert"
-                    }
-                },
-                "render": "Der Betriebszustand ist <i>{operational_status</i>",
-                "question": "Ist dieser Automat noch in Betrieb?"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "Fahrradschlauch-Automat"
-            }
-        },
-        "title": {
-            "render": "Fahrradschlauch-Automat"
-        },
-        "name": "Fahrradschlauch-Automat"
-    },
-    "bicycle_library": {
-        "tagRenderings": {
-            "7": {
-                "mappings": {
-                    "2": {
-                        "then": "Fahrräder für Behinderte verfügbar"
-                    },
-                    "1": {
-                        "then": "Fahrräder für Erwachsene verfügbar"
-                    },
-                    "0": {
-                        "then": "Fahrräder für Kinder verfügbar"
-                    }
-                },
-                "question": "Wer kann hier Fahrräder ausleihen?"
-            },
-            "6": {
-                "mappings": {
-                    "1": {
-                        "then": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr"
-                    },
-                    "0": {
-                        "then": "Das Ausleihen eines Fahrrads ist kostenlos"
-                    }
-                },
-                "render": "Das Ausleihen eines Fahrrads kostet {charge}",
-                "question": "Wie viel kostet das Ausleihen eines Fahrrads?"
-            }
-        },
-        "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können"
-    },
-    "picnic_table": {
-        "presets": {
-            "0": {
-                "title": "Picknicktisch"
-            }
-        },
-        "tagRenderings": {
-            "0": {
-                "mappings": {
-                    "1": {
-                        "then": "Dies ist ein Picknicktisch aus Beton"
-                    },
-                    "0": {
-                        "then": "Dies ist ein Picknicktisch aus Holz"
-                    }
-                },
-                "render": "Dieser Picknicktisch besteht aus {material}",
-                "question": "Aus welchem Material besteht dieser Picknicktisch?"
-            }
-        },
-        "title": {
-            "render": "Picknick-Tisch"
-        },
-        "name": "Picknick-Tische"
-    },
-    "map": {
-        "presets": {
-            "0": {
-                "description": "Fehlende Karte hinzufügen",
-                "title": "Karte"
-            }
-        },
-        "tagRenderings": {
-            "2": {
-                "mappings": {
-                    "4": {
-                        "then": "Es gibt überhaupt keine Namensnennung"
-                    },
-                    "3": {
-                        "then": "Es gibt überhaupt keine Namensnennung"
-                    },
-                    "2": {
-                        "then": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt"
-                    },
-                    "1": {
-                        "then": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt"
-                    },
-                    "0": {
-                        "then": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz"
-                    }
-                },
-                "question": "Ist die OpenStreetMap-Attribution vorhanden?"
-            },
-            "1": {
-                "render": "Diese Karte basiert auf {map_source}",
-                "mappings": {
-                    "0": {
-                        "then": "Diese Karte basiert auf OpenStreetMap"
-                    }
-                },
-                "question": "Auf welchen Daten basiert diese Karte?"
-            }
-        },
-        "title": {
-            "render": "Karte"
-        },
-        "name": "Karten"
-    },
-    "information_board": {
-        "presets": {
-            "0": {
-                "title": "Informationstafel"
-            }
-        },
-        "title": {
-            "render": "Informationstafel"
-        },
-        "name": "Informationstafeln"
     }
 }

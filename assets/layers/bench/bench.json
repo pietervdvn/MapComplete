@@ -239,7 +239,8 @@
         "nl": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
         "hu": "Miből van a pad (ülő része)?",
         "it": "Di che materiale è fatta questa panchina?",
-        "zh_Hans": "这个长椅（或座椅）是用什么材料做的？"
+        "zh_Hans": "这个长椅（或座椅）是用什么材料做的？",
+        "ru": "Из какого материала сделана скамейка?"
       }
     },
     {
@@ -260,7 +261,8 @@
         "fr": "Assis sur le banc, on regarde vers {direction}°.",
         "hu": "A pad {direction}° felé néz.",
         "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
-        "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。"
+        "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。",
+        "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°."
       },
       "freeform": {
         "key": "direction",
@@ -277,7 +279,8 @@
         "it": "Colore: {colour}",
         "ru": "Цвет: {colour}",
         "id": "Warna: {colour}",
-        "zh_Hans": "颜色： {colour}"
+        "zh_Hans": "颜色： {colour}",
+        "zh_Hant": "顏色：{colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -287,7 +290,8 @@
         "hu": "Milyen színű a pad?",
         "it": "Di che colore è questa panchina?",
         "ru": "Какого цвета скамейка?",
-        "zh_Hans": "这个长椅是什么颜色的？"
+        "zh_Hans": "这个长椅是什么颜色的？",
+        "zh_Hant": "這個長椅是什麼顏色的？"
       },
       "freeform": {
         "key": "colour",
@@ -304,7 +308,8 @@
             "hu": "Szín: barna",
             "it": "Colore: marrone",
             "ru": "Цвет: коричневый",
-            "zh_Hans": "颜色：棕"
+            "zh_Hans": "颜色：棕",
+            "zh_Hant": "顏色：棕色"
           }
         },
         {
@@ -317,7 +322,8 @@
             "hu": "Szín: zöld",
             "it": "Colore: verde",
             "ru": "Цвет: зеленый",
-            "zh_Hans": "颜色：绿"
+            "zh_Hans": "颜色：绿",
+            "zh_Hant": "顏色：綠色"
           }
         },
         {
@@ -330,7 +336,8 @@
             "hu": "Szín: szürke",
             "it": "Colore: grigio",
             "ru": "Цвет: серый",
-            "zh_Hans": "颜色：灰"
+            "zh_Hans": "颜色：灰",
+            "zh_Hant": "顏色：灰色"
           }
         },
         {
@@ -343,7 +350,8 @@
             "hu": "Szín: fehér",
             "it": "Colore: bianco",
             "ru": "Цвет: белый",
-            "zh_Hans": "颜色：白"
+            "zh_Hans": "颜色：白",
+            "zh_Hant": "顏色：白色"
           }
         },
         {
@@ -356,7 +364,8 @@
             "hu": "Szín: piros",
             "it": "Colore: rosso",
             "ru": "Цвет: красный",
-            "zh_Hans": "颜色：红"
+            "zh_Hans": "颜色：红",
+            "zh_Hant": "顏色：紅色"
           }
         },
         {
@@ -369,7 +378,8 @@
             "hu": "Szín: fekete",
             "it": "Colore: nero",
             "ru": "Цвет: чёрный",
-            "zh_Hans": "颜色：黑"
+            "zh_Hans": "颜色：黑",
+            "zh_Hant": "顏色：黑色"
           }
         },
         {
@@ -382,7 +392,8 @@
             "hu": "Szín: kék",
             "it": "Colore: blu",
             "ru": "Цвет: синий",
-            "zh_Hans": "颜色：蓝"
+            "zh_Hans": "颜色：蓝",
+            "zh_Hant": "顏色：藍色"
           }
         },
         {
@@ -395,7 +406,8 @@
             "hu": "Szín: sárga",
             "it": "Colore: giallo",
             "ru": "Цвет: желтый",
-            "zh_Hans": "颜色：黄"
+            "zh_Hans": "颜色：黄",
+            "zh_Hant": "顏色：黃色"
           }
         }
       ]
@@ -406,14 +418,19 @@
         "nl": "Wanneer is deze laatste bank laatst gesurveyed?",
         "fr": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
         "it": "Quando è stata verificata l’ultima volta questa panchina?",
-        "zh_Hans": "上次对这个长椅实地调查是什么时候？"
+        "zh_Hans": "上次对这个长椅实地调查是什么时候？",
+        "de": "Wann wurde diese Bank zuletzt überprüft?",
+        "ru": "Когда последний раз обследовали эту скамейку?",
+        "zh_Hant": "上一次探察長椅是什麼時候？"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
         "nl": "Deze bank is laatst gesurveyd op {survey:date}",
         "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
         "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
-        "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查"
+        "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查",
+        "de": "Die Bank wurde zuletzt am {survey:date} überprüft.",
+        "ru": "Последний раз обследование этой скамейки проводилось {survey:date}"
       },
       "freeform": {
         "key": "survey:date",

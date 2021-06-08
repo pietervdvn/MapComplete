@@ -153,7 +153,8 @@
             "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
             "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
             "fr": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
+            "de": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
           }
         },
         {
@@ -162,7 +163,8 @@
             "en": "An area on the floor which is  marked for bicycle parking",
             "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
             "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
-            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici",
+            "de": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
           }
         }
       ]
@@ -183,7 +185,8 @@
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
             "it": "Parcheggio sotterraneo",
-            "ru": "Подземная парковка"
+            "ru": "Подземная парковка",
+            "de": "Tiefgarage"
           }
         },
         {
@@ -193,7 +196,8 @@
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
             "it": "Parcheggio sotterraneo",
-            "ru": "Подземная парковка"
+            "ru": "Подземная парковка",
+            "de": "Tiefgarage"
           }
         },
         {
@@ -203,7 +207,8 @@
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
             "hu": "Felszíni parkoló",
-            "it": "Parcheggio in superficie"
+            "it": "Parcheggio in superficie",
+            "de": "Ebenerdiges Parken"
           }
         },
         {
@@ -213,7 +218,8 @@
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
             "hu": "Felszíni parkoló",
-            "it": "Parcheggio in superficie"
+            "it": "Parcheggio in superficie",
+            "de": "Ebenerdiges Parken"
           },
           "hideInAnwser": true
         },
@@ -303,7 +309,8 @@
         "en": "Who can use this bicycle parking?",
         "nl": "Wie mag er deze fietsenstalling gebruiken?",
         "fr": "Qui peut utiliser ce parking à vélo ?",
-        "it": "Chi può usare questo parcheggio bici?"
+        "it": "Chi può usare questo parcheggio bici?",
+        "de": "Wer kann diesen Fahrradparplatz nutzen?"
       },
       "render": {
         "en": "{access}",
@@ -327,7 +334,8 @@
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijke fietsenstalling",
             "fr": "Accessible publiquement",
-            "it": "Accessibile pubblicamente"
+            "it": "Accessibile pubblicamente",
+            "de": "Öffentlich zugänglich"
           }
         },
         {

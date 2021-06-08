@@ -6,7 +6,8 @@
     "it": "Aree camper",
     "ru": "Кемпинги",
     "ja": "キャンプサイト",
-    "fr": "Campings"
+    "fr": "Campings",
+    "zh_Hant": "露營地點"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -28,6 +29,7 @@
     "ru",
     "ja",
     "fr",
+    "zh_Hant",
     "id"
   ],
   "maintainer": "joost schouppe",
@@ -336,7 +338,8 @@
             "en": "Does this place have toilets?",
             "it": "Questo luogo dispone di servizi igienici?",
             "ru": "Здесь есть туалеты?",
-            "ja": "ここにトイレはありますか?"
+            "ja": "ここにトイレはありますか?",
+            "zh_Hant": "這個地方有廁所嗎？"
           },
           "mappings": [
             {
@@ -350,7 +353,8 @@
                 "id": "Tempat sini ada tandas",
                 "it": "Questo luogo ha i servizi igienici",
                 "ru": "В этом месте есть туалеты",
-                "ja": "ここにはトイレがある"
+                "ja": "ここにはトイレがある",
+                "zh_Hant": "這個地方有廁所"
               }
             },
             {
@@ -364,7 +368,8 @@
                 "id": "Tempat sini tiada tandas",
                 "it": "Questo luogo non ha i servizi igienici",
                 "ru": "В этом месте нет туалетов",
-                "ja": "ここにはトイレがない"
+                "ja": "ここにはトイレがない",
+                "zh_Hant": "這個地方並沒有廁所"
               }
             }
           ]
@@ -662,7 +667,8 @@
           "question": {
             "en": "Can you dispose of chemical toilet waste here?",
             "ru": "Можно ли здесь утилизировать отходы химических туалетов?",
-            "ja": "携帯トイレのゴミはこちらで処分できますか?"
+            "ja": "携帯トイレのゴミはこちらで処分できますか?",
+            "zh_Hant": "你能在這裡丟棄廁所化學廢棄物嗎？"
           },
           "mappings": [
             {
@@ -674,7 +680,8 @@
               "then": {
                 "en": "You can dispose of chemical toilet waste here",
                 "ru": "Вы можете утилизировать отходы химических туалетов здесь",
-                "ja": "携帯トイレのゴミはここで処分できます"
+                "ja": "携帯トイレのゴミはここで処分できます",
+                "zh_Hant": "你可以在這邊丟棄廁所化學廢棄物"
               }
             },
             {
@@ -686,7 +693,8 @@
               "then": {
                 "en": "You cannot dispose of chemical toilet waste here",
                 "ru": "Здесь нельзя утилизировать отходы химических туалетов",
-                "ja": "ここでは携帯トイレの廃棄物を処分することはできません"
+                "ja": "ここでは携帯トイレの廃棄物を処分することはできません",
+                "zh_Hant": "你不能在這邊丟棄廁所化學廢棄物"
               }
             }
           ]

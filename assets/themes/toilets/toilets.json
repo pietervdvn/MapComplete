@@ -6,7 +6,8 @@
     "fr": "Carte des WC et toilettes publiques",
     "nl": "Open Toilettenkaart",
     "ru": "Открытая карта туалетов",
-    "ja": "オープントイレマップ"
+    "ja": "オープントイレマップ",
+    "zh_Hant": "開放廁所地圖"
   },
   "description": {
     "en": "A map of public toilets",
@@ -14,7 +15,8 @@
     "fr": "Carte affichant les WC et toilettes publiques",
     "nl": "Een kaart met openbare toiletten",
     "ru": "Карта общественных туалетов",
-    "ja": "公衆トイレの地図"
+    "ja": "公衆トイレの地図",
+    "zh_Hant": "公共廁所的地圖"
   },
   "maintainer": "MapComplete",
   "version": "2020-08-29",
@@ -24,7 +26,8 @@
     "fr",
     "nl",
     "ru",
-    "ja"
+    "ja",
+    "zh_Hant"
   ],
   "startZoom": 12,
   "startLat": 51.2095,

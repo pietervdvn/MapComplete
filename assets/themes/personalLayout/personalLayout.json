@@ -8,7 +8,8 @@
     "gl": "Tema personalizado",
     "fr": "Thème personnalisé",
     "de": "Persönliches Thema",
-    "ja": "個人的なテーマ"
+    "ja": "個人的なテーマ",
+    "zh_Hant": "個人化主題"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes",
@@ -18,7 +19,8 @@
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
     "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
     "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
-    "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する"
+    "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する",
+    "zh_Hant": "從所有可用的主題圖層創建個人化主題"
   },
   "language": [
     "en",
@@ -28,7 +30,8 @@
     "gl",
     "fr",
     "de",
-    "ja"
+    "ja",
+    "zh_Hant"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",
