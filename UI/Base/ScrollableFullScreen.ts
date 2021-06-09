@@ -7,7 +7,13 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Hash from "../../Logic/Web/Hash";
 
 /**
- * Wraps some contents into a panel that scrolls the content _under_ the title
+ * 
+ * The scrollableFullScreen is a bit of a peculiar component:
+ * - It shows a title and some contents, constructed from the respective functions passed into the constructor
+ * - When the element is 'activated', one clone of title+contents is attached to the fullscreen
+ * - The element itself will - upon rendering - also show the title and contents (allthough it'll be a different clone)
+ * 
+ * 
  */
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
@@ -40,8 +46,8 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
-    InnerRender(): string {
-        return this._component.Render();
+    InnerRender(): UIElement {
+        return this._component;
     }
 
     Activate(): void {

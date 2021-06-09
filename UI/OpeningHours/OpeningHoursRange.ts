@@ -48,10 +48,10 @@ export default class OpeningHoursRange extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
         const oh = this._oh.data;
         if (oh === undefined) {
-            return "";
+            return undefined;
         }
         const height = this.getHeight();
 
@@ -62,7 +62,6 @@ export default class OpeningHoursRange extends UIElement {
 
         return new Combine(content)
             .SetClass("oh-timerange-inner")
-            .Render();
     }
 
     private getHeight(): number {

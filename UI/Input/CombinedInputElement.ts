@@ -1,14 +1,16 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import {UIElement} from "../UIElement";
+import BaseUIElement from "../BaseUIElement";
 
 export default class CombinedInputElement<T> extends InputElement<T> {
+    protected InnerConstructElement(): HTMLElement {
+       return this._combined.ConstructElement();
+    }
     private readonly _a: InputElement<T>;
-    private readonly _b: UIElement;
-    private readonly _combined: UIElement;
+    private readonly _b: BaseUIElement;
+    private readonly _combined: BaseUIElement;
     public readonly IsSelected: UIEventSource<boolean>;
-
     constructor(a: InputElement<T>, b: InputElement<T>) {
         super();
         this._a = a;
@@ -22,11 +24,6 @@ export default class CombinedInputElement<T> extends InputElement<T> {
     GetValue(): UIEventSource<T> {
         return this._a.GetValue();
     }
-
-    InnerRender(): string {
-        return this._combined.Render();
-    }
-
 
     IsValid(t: T): boolean {
         return this._a.IsValid(t);

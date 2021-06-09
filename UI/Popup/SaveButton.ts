@@ -21,15 +21,15 @@ export class SaveButton extends UIElement {
             .onClick(() => osmConnection?.AttemptLogin())
     }
 
-    InnerRender(): string {
+    InnerRender() {
         if(this._userDetails != undefined &&  !this._userDetails.data.loggedIn){
-            return this._friendlyLogin.Render();
+            return this._friendlyLogin;
         }
         let inactive_class = ''
         if (this._value.data === false || (this._value.data ?? "") === "") {
             inactive_class = "btn-disabled";
         }
-        return Translations.t.general.save.Clone().SetClass(`btn ${inactive_class}`).Render();
+        return Translations.t.general.save.Clone().SetClass(`btn ${inactive_class}`);
     }
 
 }

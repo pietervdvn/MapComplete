@@ -1,7 +1,7 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import BaseUIElement from "../BaseUIElement";
 
-export abstract class InputElement<T> extends UIElement{
+export abstract class InputElement<T> extends BaseUIElement{
     
     abstract GetValue() : UIEventSource<T>;
     abstract IsSelected: UIEventSource<boolean>;

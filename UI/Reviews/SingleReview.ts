@@ -26,7 +26,7 @@ export default class SingleReview extends UIElement{
             scoreTen % 2 == 1 ? "<img src='./assets/svg/star_half.svg' class='h-8 md:h-12'/>" : ""
         ]).SetClass("flex w-max")
     }
-    InnerRender(): string {
+    InnerRender(): UIElement {
         const d = this._review.date;
         let review = this._review;
         const el=  new Combine(
@@ -51,7 +51,7 @@ export default class SingleReview extends UIElement{
         if(review.made_by_user.data){
             el.SetClass("border-attention-catch")
         }
-        return el.Render();
+        return el;
     }
     
 }

@@ -19,7 +19,6 @@ export default class ShareButton extends UIElement{
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
         const self= this;
         htmlElement.addEventListener('click', () => {
             if (navigator.share) {

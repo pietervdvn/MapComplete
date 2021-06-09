@@ -5,6 +5,7 @@ import Combine from "../Base/Combine";
 import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
 import {OH, OpeningHour} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
+import BaseUIElement from "../BaseUIElement";
 
 export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
     private readonly _ohs: UIEventSource<OpeningHour[]>;    
@@ -12,7 +13,7 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
 
     private readonly _backgroundTable: OpeningHoursPickerTable;
 
-    private readonly _weekdays: UIEventSource<UIElement[]> = new UIEventSource<UIElement[]>([]);
+    private readonly _weekdays: UIEventSource<BaseUIElement[]> = new UIEventSource<BaseUIElement[]>([]);
 
     constructor(ohs: UIEventSource<OpeningHour[]> = new UIEventSource<OpeningHour[]>([])) {
         super();
@@ -49,8 +50,12 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
 
     }
 
-    InnerRender(): string {
-        return this._backgroundTable.Render();
+    InnerRender(): BaseUIElement {
+        return this._backgroundTable;
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._backgroundTable.ConstructElement();
     }
 
     GetValue(): UIEventSource<OpeningHour[]> {

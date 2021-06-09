@@ -1,6 +1,5 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {Utils} from "../../Utils";
 
 export default class ColorPicker extends InputElement<string> {
 

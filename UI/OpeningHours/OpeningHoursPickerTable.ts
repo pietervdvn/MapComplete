@@ -8,12 +8,13 @@ import {Utils} from "../../Utils";
 import {OpeningHour} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
 
 export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]> {
     public readonly IsSelected: UIEventSource<boolean>;
-    private readonly weekdays: UIEventSource<UIElement[]>;
+    private readonly weekdays: UIEventSource<BaseUIElement[]>;
 
-    public static readonly days: UIElement[] =
+    public static readonly days: BaseUIElement[] =
         [
             Translations.t.general.weekdays.abbreviations.monday,
             Translations.t.general.weekdays.abbreviations.tuesday,
@@ -28,8 +29,8 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
     private readonly source: UIEventSource<OpeningHour[]>;
 
 
-    constructor(weekdays: UIEventSource<UIElement[]>, source?: UIEventSource<OpeningHour[]>) {
-        super(weekdays);
+    constructor(weekdays: UIEventSource<BaseUIElement[]>, source?: UIEventSource<OpeningHour[]>) {
+        super();
         this.weekdays = weekdays;
         this.source = source ?? new UIEventSource<OpeningHour[]>([]);
         this.IsSelected = new UIEventSource<boolean>(false);

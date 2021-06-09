@@ -1,24 +1,35 @@
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 
-export default class Link extends UIElement {
-    private readonly _embeddedShow: UIElement;
-    private readonly _target: string;
-    private readonly _newTab: string;
+export default class Link extends BaseUIElement {
+    private readonly _element: HTMLElement;
 
-    constructor(embeddedShow: UIElement | string, target: string, newTab: boolean = false) {
+    constructor(embeddedShow: BaseUIElement | string, target: string | UIEventSource<string>, newTab: boolean = false) {
         super();
-        this._embeddedShow = Translations.W(embeddedShow);
-        this._target = target;
-        this._newTab = "";
-        if (newTab) {
-            this._newTab = "target='_blank'"
+        const _embeddedShow = Translations.W(embeddedShow);
+
+
+        const el = document.createElement("a")
+        
+        if(typeof target === "string"){
+            el.href = target
+        }else{
+            target.addCallbackAndRun(target => {
+                el.target = target;
+            })
         }
+        if (newTab) {
+            el.target = "_blank"
+        }
+        el.appendChild(_embeddedShow.ConstructElement())
+        this._element = el
     }
 
-    InnerRender(): string {
-        return `<a href="${this._target}" ${this._newTab}>${this._embeddedShow.Render()}</a>`;
+    protected InnerConstructElement(): HTMLElement {
+
+        return this._element;
     }
 
 }

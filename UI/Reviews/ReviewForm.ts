@@ -86,10 +86,10 @@ export default class ReviewForm extends InputElement<Review> {
         return this._value;
     }
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
 
         if(!this.userDetails.data.loggedIn){
-            return Translations.t.reviews.plz_login.Render();
+            return Translations.t.reviews.plz_login;
         }
 
         return new Combine([
@@ -103,7 +103,6 @@ export default class ReviewForm extends InputElement<Review> {
             Translations.t.reviews.tos.SetClass("subtle")
         ])
             .SetClass("review-form")
-            .Render();
     }
 
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);

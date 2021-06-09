@@ -5,7 +5,6 @@
  */
 import OpeningHoursPicker from "./OpeningHoursPicker";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -14,21 +13,20 @@ import {InputElement} from "../Input/InputElement";
 import PublicHolidayInput from "./PublicHolidayInput";
 import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
+import BaseUIElement from "../BaseUIElement";
 
 
 export default class OpeningHoursInput extends InputElement<string> {
 
 
+    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _value: UIEventSource<string>;
-
-    private readonly _ohPicker: UIElement;
-    private readonly _leftoverWarning: UIElement;
-    private readonly _phSelector: UIElement;
+    private readonly _element: BaseUIElement;
 
     constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
         super();
 
-      
+
         const leftoverRules = value.map<string[]>(str => {
             if (str === undefined) {
                 return []
@@ -61,11 +59,11 @@ export default class OpeningHoursInput extends InputElement<string> {
             }
             return "";
         })
-        this._phSelector = new PublicHolidayInput(ph);
+        const phSelector = new PublicHolidayInput(ph);
 
         function update() {
             const regular = OH.ToString(rulesFromOhPicker.data);
-            const rules : string[] = [
+            const rules: string[] = [
                 regular,
                 ...leftoverRules.data,
                 ph.data
@@ -76,38 +74,34 @@ export default class OpeningHoursInput extends InputElement<string> {
         rulesFromOhPicker.addCallback(update);
         ph.addCallback(update);
 
-        this._leftoverWarning = new VariableUiElement(leftoverRules.map((leftovers: string[]) => {
+        const leftoverWarning = new VariableUiElement(leftoverRules.map((leftovers: string[]) => {
 
             if (leftovers.length == 0) {
                 return "";
             }
             return new Combine([
                 Translations.t.general.opening_hours.not_all_rules_parsed,
-                    new FixedUiElement(leftovers.map(r => `${r}<br/>`).join("")).SetClass("subtle")
-            ]).Render();
+                new FixedUiElement(leftovers.map(r => `${r}<br/>`).join("")).SetClass("subtle")
+            ]);
 
         }))
 
-        this._ohPicker = new OpeningHoursPicker(rulesFromOhPicker);
+        const ohPicker = new OpeningHoursPicker(rulesFromOhPicker);
 
-
+        this._element = new Combine([
+            leftoverWarning,
+            ohPicker,
+            phSelector
+        ])
     }
 
+    protected InnerConstructElement(): HTMLElement {
+        return this._element.ConstructElement()
+    }
 
     GetValue(): UIEventSource<string> {
         return this._value;
     }
-
-    InnerRender(): string {
-        return new Combine([
-            this._leftoverWarning,
-            this._ohPicker,
-            this._phSelector
-        ]).Render();
-    }
-
-
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     IsValid(t: string): boolean {
         return true;

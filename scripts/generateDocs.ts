@@ -14,7 +14,7 @@ import ValidatedTextField from "../UI/Input/ValidatedTextField";
 const TurndownService = require('turndown')
 
 function WriteFile(filename, html: UIElement) : void {
-    const md = new TurndownService().turndown(html.InnerRender());
+    const md = new TurndownService().turndown(html.InnerRenderAsString());
     writeFileSync(filename, md);
 }
 

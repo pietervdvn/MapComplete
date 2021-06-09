@@ -16,7 +16,6 @@ export default class CheckBoxes extends InputElement<number[]> {
     constructor(elements: UIElement[]) {
         super(undefined);
         this._elements = Utils.NoNull(elements);
-        this.dumbMode = false;
 
         this.value = new UIEventSource<number[]>([])
         this.ListenTo(this.value);
@@ -51,7 +50,6 @@ export default class CheckBoxes extends InputElement<number[]> {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
         const self = this;
 
         for (let i = 0; i < this._elements.length; i++) {

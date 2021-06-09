@@ -143,7 +143,7 @@ export default class PublicHolidayInput extends InputElement<string> {
         }
     }
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
         const mode = this._mode.data;
         if (mode === " ") {
             return new Combine([this._dropdown,
@@ -154,9 +154,9 @@ export default class PublicHolidayInput extends InputElement<string> {
                 " ",
                 Translations.t.general.opening_hours.openTill,
                 " ",
-                this._endHour]).Render();
+                this._endHour]);
         }
-        return this._dropdown.Render();
+        return this._dropdown;
     }
 
     GetValue(): UIEventSource<string> {

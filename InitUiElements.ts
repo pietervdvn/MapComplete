@@ -1,5 +1,5 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import CheckBox from "./UI/Input/CheckBox";
+import Toggle from "./UI/Input/Toggle";
 import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
@@ -272,7 +272,7 @@ export class InitUiElements {
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
-        new CheckBox(
+        new Toggle(
             fullOptions
                 .SetClass("welcomeMessage")
                 .onClick(() => {/*Catch the click*/
@@ -307,7 +307,7 @@ export class InitUiElements {
             )
 
         ;
-        const copyrightButton = new CheckBox(
+        const copyrightButton = new Toggle(
             copyrightNotice,
             new MapControlButton(Svg.osm_copyright_svg()),
             copyrightNotice.isShown
@@ -316,13 +316,13 @@ export class InitUiElements {
         const layerControlPanel = new LayerControlPanel(
             State.state.layerControlIsOpened)
             .SetClass("block p-1 rounded-full");
-        const layerControlButton = new CheckBox(
+        const layerControlButton = new Toggle(
             layerControlPanel,
             new MapControlButton(Svg.layers_svg()),
             State.state.layerControlIsOpened
         )
 
-        const layerControl = new CheckBox(
+        const layerControl = new Toggle(
             layerControlButton,
             "",
             State.state.featureSwitchLayers

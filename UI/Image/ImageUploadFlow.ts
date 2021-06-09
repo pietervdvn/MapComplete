@@ -9,9 +9,10 @@ import {DropDown} from "../Input/DropDown";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
+import BaseUIElement from "../BaseUIElement";
 
 export class ImageUploadFlow extends UIElement {
-    private readonly _licensePicker: UIElement;
+    private readonly _licensePicker: BaseUIElement;
     private readonly _tags: UIEventSource<any>;
     private readonly _selectedLicence: UIEventSource<string>;
     private readonly _isUploading: UIEventSource<number> = new UIEventSource<number>(0)
@@ -35,10 +36,8 @@ export class ImageUploadFlow extends UIElement {
                 {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
-            State.state.osmConnection.GetPreference("pictures-license"),
-            "","",
-            "flex flex-col sm:flex-row"
-        );
+            State.state.osmConnection.GetPreference("pictures-license")
+        ).SetClass("flex flex-col sm:flex-row");
         licensePicker.SetStyle("float:left");
 
         const t = Translations.t.image;
@@ -186,8 +185,6 @@ export class ImageUploadFlow extends UIElement {
     }
 
     InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-
         this._licensePicker.Update()
         const form = document.getElementById('fileselector-form-' + this.id) as HTMLFormElement
         const selector = document.getElementById('fileselector-' + this.id)

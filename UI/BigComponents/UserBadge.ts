@@ -64,10 +64,10 @@ export default class UserBadge extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
         const user = this._userDetails.data;
         if (!user.loggedIn) {
-            return this._loginButton.Render();
+            return this._loginButton;
         }
 
         const linkStyle = "flex items-baseline"
@@ -138,7 +138,7 @@ export default class UserBadge extends UIElement {
         return new Combine([
             userIcon,
             usertext,
-        ]).Render()
+        ])
 
     }
 

@@ -48,7 +48,7 @@ export default class QuestionBox extends UIElement {
         this.SetClass("block mb-8")
     }
 
-    InnerRender(): string {
+    InnerRender() {
         const allQuestions : UIElement[] = []
         for (let i = 0; i < this._tagRenderingQuestions.length; i++) {
             let tagRendering = this._tagRenderings[i];
@@ -72,7 +72,7 @@ export default class QuestionBox extends UIElement {
         }
         
 
-        return new Combine(allQuestions).Render();
+        return new Combine(allQuestions);
     }
 
 }

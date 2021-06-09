@@ -1,55 +1,51 @@
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 import Combine from "./Combine";
-import {FixedUiElement} from "./FixedUiElement";
+import BaseUIElement from "../BaseUIElement";
+import Link from "./Link";
+import Img from "./Img";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 
 export class SubtleButton extends Combine {
 
-    constructor(imageUrl: string | UIElement, message: string | UIElement, linkTo: { url: string, newTab?: boolean } = undefined) {
+    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined) {
         super(SubtleButton.generateContent(imageUrl, message, linkTo));
 
         this.SetClass("block flex p-3 my-2 bg-blue-100 rounded-lg hover:shadow-xl hover:bg-blue-200 link-no-underline")
 
     }
 
-    private static generateContent(imageUrl: string | UIElement, messageT: string | UIElement, linkTo: { url: string, newTab?: boolean } = undefined): (UIElement | string)[] {
+    private static generateContent(imageUrl: string | BaseUIElement, messageT: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined): (BaseUIElement   )[] {
         const message = Translations.W(messageT);
-        if (message !== null) {
-            message.dumbMode = false;
-        }
         let img;
         if ((imageUrl ?? "") === "") {
-            img = new FixedUiElement("");
+            img = undefined;
         } else if (typeof (imageUrl) === "string") {
-            img = new FixedUiElement(`<img style="width: 100%;" src="${imageUrl}" alt="">`);
+            img = new Img(imageUrl).SetClass("w-full")
         } else {
             img = imageUrl;
         }
-        img.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
+        img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
         const image = new Combine([img])
             .SetClass("flex-shrink-0");
-
-
-        if (message !== null && message.IsEmpty()) {
-            // Message == null: special case to force empty text
-            return [];
-        }
-
-        if (linkTo != undefined) {
+        
+        if (linkTo == undefined) {
             return [
-                `<a class='flex group' href="${linkTo.url}" ${linkTo.newTab ? 'target="_blank"' : ""}>`,
                 image,
-                `<div class='ml-4 overflow-ellipsis'>`,
                 message,
-                `</div>`,
-                `</a>`
             ];
         }
-
+        
+        
         return [
-            image,
-            message,
+            new Link(
+                new Combine([
+                    image,
+                    message?.SetClass("block ml-4 overflow-ellipsis")
+                ]).SetClass("flex group"),
+                linkTo.url,
+                linkTo.newTab ?? false
+            )
         ];
 
     }

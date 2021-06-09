@@ -27,7 +27,7 @@ export default class TagQuestionSpec extends T {
                         }, undefined, "Testing tag"
                     );
                     const questionElement = new TagRenderingQuestion(tags, config);
-                    const html = questionElement.InnerRender();
+                    const html = questionElement.InnerRenderAsString();
                     T.assertContains("What is the name of this bookcase?", html);
                     T.assertContains("<input type='text'", html);
                 }],
@@ -53,7 +53,7 @@ export default class TagQuestionSpec extends T {
                         }, undefined, "Testing tag"
                     );
                     const questionElement = new TagRenderingQuestion(tags, config);
-                    const html = questionElement.InnerRender();
+                    const html = questionElement.InnerRenderAsString();
                     T.assertContains("What is the name of this bookcase?", html);
                     T.assertContains("This bookcase has no name", html);
                     T.assertContains("<input type='text'", html);

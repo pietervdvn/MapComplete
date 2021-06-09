@@ -26,7 +26,7 @@ export default class ReviewElement extends UIElement {
 
    
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
 
         const elements = [];
         const revs = this._reviews.data;
@@ -56,7 +56,7 @@ export default class ReviewElement extends UIElement {
 
                 .SetClass("review-attribution"))
 
-        return new Combine(elements).SetClass("block").Render();
+        return new Combine(elements).SetClass("block");
     }
 
 }

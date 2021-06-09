@@ -7,6 +7,7 @@ import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import BaseUIElement from "../BaseUIElement";
 
 export default class ThemeIntroductionPanel extends UIElement {
     private languagePicker: UIElement;
@@ -44,7 +45,7 @@ export default class ThemeIntroductionPanel extends UIElement {
         this.SetClass("link-underline")
     }
 
-    InnerRender(): string {
+    InnerRender(): BaseUIElement {
         const layout : LayoutConfig = this._layout.data;
         return new Combine([
             layout.description,
@@ -54,7 +55,7 @@ export default class ThemeIntroductionPanel extends UIElement {
             "<br/>",
             this.languagePicker,
             ...layout.CustomCodeSnippets()
-        ]).Render()
+        ])
     }
 
 

@@ -44,16 +44,14 @@ export default class AttributionPanel extends Combine {
                 const contribs = links.join(", ")
 
                 if (hiddenCount == 0) {
-
-
                     return Translations.t.general.attribution.mapContributionsBy.Subs({
                         contributors: contribs
-                    }).InnerRender()
+                    })
                 } else {
                     return Translations.t.general.attribution.mapContributionsByAndHidden.Subs({
                         contributors: contribs,
                         hiddenCount: hiddenCount
-                    }).InnerRender();
+                    });
                 }
 
 

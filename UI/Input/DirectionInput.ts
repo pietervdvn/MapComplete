@@ -14,7 +14,6 @@ export default class DirectionInput extends InputElement<string> {
 
     constructor(value?: UIEventSource<string>) {
         super();
-        this.dumbMode = false;
         this.value = value ?? new UIEventSource<string>(undefined);
 
         this.value.addCallbackAndRun(rotation => {
@@ -48,7 +47,6 @@ export default class DirectionInput extends InputElement<string> {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
         const self = this;
 
         function onPosChange(x: number, y: number) {

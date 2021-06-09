@@ -5,7 +5,7 @@ import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
 import Svg from "../../Svg";
 import State from "../../State";
 import Combine from "../Base/Combine";
-import CheckBox from "../Input/CheckBox";
+import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
@@ -79,7 +79,7 @@ export default class PersonalLayersPanel extends UIElement {
                 ])
                 
                 
-                const cb = new CheckBox(
+                const cb = new Toggle(
                     new SubtleButton(
                         icon, 
                         content),

@@ -2,7 +2,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import State from "../../State";
-import CheckBox from "../Input/CheckBox";
+import Toggle from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
@@ -65,7 +65,7 @@ export default class LayerSelection extends UIElement {
             }))
             const style = "display:flex;align-items:center;"
             const styleWhole = "display:flex; flex-wrap: wrap"
-            this._checkboxes.push(new CheckBox(
+            this._checkboxes.push(new Toggle(
                 new Combine([new Combine([icon, name]).SetStyle(style), zoomStatus])
                     .SetStyle(styleWhole),
                 new Combine([new Combine([iconUnselected, "<del>", name, "</del>"]).SetStyle(style), zoomStatus])

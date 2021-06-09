@@ -183,7 +183,6 @@ export default class GeoLocationHandler extends UIElement {
             self.StartGeolocating(false);
         }
 
-        this.HideOnEmpty(true);
     }
 
     private locate() {

@@ -4,10 +4,11 @@ import Translations from "../i18n/Translations";
 import State from "../../State";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
+import BaseUIElement from "../BaseUIElement";
 
 export default class BackgroundSelector extends UIElement {
 
-    private _dropdown: UIElement;
+    private _dropdown: BaseUIElement;
     private readonly _availableLayers: UIEventSource<BaseLayer[]>;
 
     constructor() {
@@ -31,8 +32,8 @@ export default class BackgroundSelector extends UIElement {
         this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.backgroundLayer);
     }
 
-    InnerRender(): string {
-        return this._dropdown.Render();
+    InnerRender(): BaseUIElement {
+        return this._dropdown;
     }
 
 }

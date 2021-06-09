@@ -7,7 +7,7 @@ export class FixedUiElement extends UIElement {
         super(undefined);
         this._html = html ?? "";
     }
-
+    
     InnerRender(): string {
         return this._html;
     }

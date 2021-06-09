@@ -80,8 +80,8 @@ export default class FullWelcomePaneWithTabs extends UIElement {
             .ListenTo(userDetails);
     }
 
-    InnerRender(): string {
-        return this._component.Render();
+    InnerRender(): UIElement {
+        return this._component;
 
     }
 

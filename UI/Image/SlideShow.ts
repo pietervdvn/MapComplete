@@ -35,7 +35,6 @@ export class SlideShow extends UIElement {
     }
 
     protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
         require("slick-carousel")
         if(this._embeddedElements.data.length == 0){
             return;

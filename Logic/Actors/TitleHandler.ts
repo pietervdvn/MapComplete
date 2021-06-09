@@ -21,7 +21,6 @@ class TitleElement extends UIElement {
         this._allElementsStorage = allElementsStorage;
         this.ListenTo(Locale.language);
         this.ListenTo(this._selectedFeature)
-        this.dumbMode = false;
     }
 
     InnerRender(): string {
@@ -63,7 +62,7 @@ export default class TitleHandler {
         selectedFeature.addCallbackAndRun(_ => {
             const title = new TitleElement(layoutToUse, selectedFeature, allElementsStorage)
             const d = document.createElement('div');
-            d.innerHTML = title.InnerRender();
+            d.innerHTML = title.InnerRenderAsString();
             // We pass everything into a div to strip out images etc...
             document.title = (d.textContent || d.innerText);
         })

@@ -13,8 +13,8 @@ export default class MapControlButton extends UIElement {
         this.SetStyle("box-shadow: 0 0 10px var(--shadow-color);");
     }
     
-    InnerRender(): string {
-        return this._contents.Render();
+    InnerRender() {
+        return this._contents;
     }
     
 }

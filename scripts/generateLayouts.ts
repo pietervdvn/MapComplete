@@ -88,8 +88,8 @@ async function createManifest(layout: LayoutConfig) {
         console.log(icon)
         throw "Icon is not an svg for " + layout.id
     }
-    const ogTitle = Translations.W(layout.title).InnerRender();
-    const ogDescr = Translations.W(layout.description ?? "").InnerRender();
+    const ogTitle = Translations.W(layout.title).InnerRenderAsString();
+    const ogDescr = Translations.W(layout.description ?? "").InnerRenderAsString();
 
     return {
         name: name,
@@ -109,8 +109,8 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
 
     Locale.language.setData(layout.language[0]);
 
-    const ogTitle = Translations.W(layout.title)?.InnerRender();
-    const ogDescr = Translations.W(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRender();
+    const ogTitle = Translations.W(layout.title)?.InnerRenderAsString();
+    const ogDescr = Translations.W(layout.shortDescription ?? "Easily add and edit geodata with OpenStreetMap")?.InnerRenderAsString();
     const ogImage = layout.socialImage;
 
     let customCss = "";

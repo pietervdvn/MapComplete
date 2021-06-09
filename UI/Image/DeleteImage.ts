@@ -1,7 +1,7 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
-import CheckBox from "../Input/CheckBox";
+import Toggle from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
@@ -30,7 +30,7 @@ export default class DeleteImage extends UIElement {
             });
 
         const cancelButton = Translations.t.general.cancel.SetClass("bg-white pl-4 pr-4").SetStyle( "border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");
-        this.deleteDialog = new CheckBox(
+        this.deleteDialog = new Toggle(
             new Combine([
                 deleteButton,
                 cancelButton
@@ -40,17 +40,17 @@ export default class DeleteImage extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender() {
         if(! State.state?.featureSwitchUserbadge?.data){
             return "";
         }
 
         const value = this.tags.data[this.key];
         if (value === undefined || value === "") {
-            return this.isDeletedBadge.Render();
+            return this.isDeletedBadge;
         }
 
-        return this.deleteDialog.Render();
+        return this.deleteDialog;
     }
 
 }

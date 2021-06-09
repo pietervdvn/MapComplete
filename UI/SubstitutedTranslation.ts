@@ -6,11 +6,8 @@ import Combine from "./Base/Combine";
 import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations from "./SpecialVisualizations";
-import {Utils} from "../Utils";
 
 export class SubstitutedTranslation extends UIElement {
-    private static cachedTranslations:
-        Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>> = new Map<string, Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>>();
     private readonly tags: UIEventSource<any>;
     private readonly translation: Translation;
     private content: UIElement[];
@@ -37,39 +34,24 @@ export class SubstitutedTranslation extends UIElement {
     public static construct(
         translation: Translation,
         tags: UIEventSource<any>): SubstitutedTranslation {
-
-        /* let cachedTranslations = Utils.getOrSetDefault(SubstitutedTranslation.cachedTranslations, SubstitutedTranslation.GenerateSubCache);
-         const innerMap = Utils.getOrSetDefault(cachedTranslations, translation, SubstitutedTranslation.GenerateMap);
- 
-         const cachedTranslation = innerMap.get(tags);
-         if (cachedTranslation !== undefined) {
-             return cachedTranslation;
-         }*/
-        const st = new SubstitutedTranslation(translation, tags);
-        // innerMap.set(tags, st);
-        return st;
+        return new SubstitutedTranslation(translation, tags);
     }
 
     public static SubstituteKeys(txt: string, tags: any) {
         for (const key in tags) {
+            if(!tags.hasOwnProperty(key)) {
+                continue
+            }
             txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
         }
         return txt;
     }
 
-    private static GenerateMap() {
-        return new Map<UIEventSource<any>, SubstitutedTranslation>()
-    }
-
-    private static GenerateSubCache() {
-        return new Map<Translation, Map<UIEventSource<any>, SubstitutedTranslation>>();
-    }
-
-    InnerRender(): string {
+    InnerRender() {
         if (this.content.length == 1) {
-            return this.content[0].Render();
+            return this.content[0];
         }
-        return new Combine(this.content).Render();
+        return new Combine(this.content);
     }
 
     private CreateContent(): UIElement[] {
@@ -118,11 +100,11 @@ export class SubstitutedTranslation extends UIElement {
         }
 
         // Let's to a small sanity check to help the theme designers:
-        if(template.search(/{[^}]+\([^}]*\)}/) >= 0){
+        if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
             // Hmm, we might have found an invalid rendering name
-            console.warn("Found a suspicious special rendering value in: ", template, " did you mean one of: ", SpecialVisualizations.specialVisualizations.map(sp => sp.funcName+"()").join(", "))
+            console.warn("Found a suspicious special rendering value in: ", template, " did you mean one of: ", SpecialVisualizations.specialVisualizations.map(sp => sp.funcName + "()").join(", "))
         }
-        
+
         // IF we end up here, no changes have to be made - except to remove any resting {}
         return [new FixedUiElement(template.replace(/{.*}/g, ""))];
     }

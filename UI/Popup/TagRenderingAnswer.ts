@@ -30,7 +30,7 @@ export default class TagRenderingAnswer extends UIElement {
         this.SetStyle("word-wrap: anywhere;");
     }
 
-    InnerRender(): string {
+    InnerRender(): string | UIElement{
         if (this._configuration.condition !== undefined) {
             if (!this._configuration.condition.matchesProperties(this._tags.data)) {
                 return "";
@@ -80,14 +80,14 @@ export default class TagRenderingAnswer extends UIElement {
                     ])
 
                 }
-                return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
+                return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle);
             }
         }
 
         const tr = this._configuration.GetRenderValue(tags);
         if (tr !== undefined) {
             this._content = SubstitutedTranslation.construct(tr, this._tags);
-            return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
+            return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle);
         }
 
         return "";

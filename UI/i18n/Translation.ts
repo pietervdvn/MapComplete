@@ -1,24 +1,22 @@
 import {UIElement} from "../UIElement";
-import Combine from "../Base/Combine";
 import Locale from "./Locale";
 import {Utils} from "../../Utils";
+import BaseUIElement from "../BaseUIElement";
 
-export class Translation extends UIElement {
+export class Translation extends BaseUIElement {
 
     public static forcedLanguage = undefined;
 
     public readonly translations: object
-    return
-    allIcons;
 
     constructor(translations: object, context?: string) {
-        super(Locale.language)
+        super()
         if (translations === undefined) {
             throw `Translation without content (${context})`
         }
         let count = 0;
         for (const translationsKey in translations) {
-            if(!translations.hasOwnProperty(translationsKey)){
+            if (!translations.hasOwnProperty(translationsKey)) {
                 continue
             }
             count++;
@@ -46,15 +44,29 @@ export class Translation extends UIElement {
             return en;
         }
         for (const i in this.translations) {
+            if (!this.translations.hasOwnProperty(i)) {
+                continue;
+            }
             return this.translations[i]; // Return a random language
         }
         console.error("Missing language ", Locale.language.data, "for", this.translations)
         return "";
     }
 
+    InnerConstructElement(): HTMLElement {
+        const el = document.createElement("span")
+        Locale.language.addCallbackAndRun(_ => {
+            el.innerHTML = this.txt
+        })
+        return el;
+    }
+
     public SupportedLanguages(): string[] {
         const langs = []
         for (const translationsKey in this.translations) {
+            if (!this.translations.hasOwnProperty(translationsKey)) {
+                continue;
+            }
             if (translationsKey === "#") {
                 continue;
             }
@@ -66,9 +78,15 @@ export class Translation extends UIElement {
     public Subs(text: any): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
+            if (!this.translations.hasOwnProperty(lang)) {
+                continue;
+            }
             let template: string = this.translations[lang];
             for (const k in text) {
-                const combined = [];
+                if (!text.hasOwnProperty(k)) {
+                    continue
+                }
+                const combined: (string)[] = [];
                 const parts = template.split("{" + k + "}");
                 const el: string | UIElement = text[k];
                 if (el === undefined) {
@@ -85,12 +103,12 @@ export class Translation extends UIElement {
                     // @ts-ignore
                     const date: Date = el;
                     rtext = date.toLocaleString();
-                } else if (el.InnerRender === undefined) {
+                } else if (el.InnerRenderAsString === undefined) {
                     console.error("InnerREnder is not defined", el);
                     throw "Hmmm, el.InnerRender is not defined?"
                 } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
-                    rtext = el.InnerRender();
+                    rtext = el.InnerRenderAsString();
 
                 }
                 for (let i = 0; i < parts.length - 1; i++) {
@@ -98,7 +116,7 @@ export class Translation extends UIElement {
                     combined.push(rtext)
                 }
                 combined.push(parts[parts.length - 1]);
-                template = new Combine(combined).InnerRender();
+                template = combined.join("")
             }
             newTranslations[lang] = template;
         }
@@ -107,16 +125,11 @@ export class Translation extends UIElement {
 
     }
 
-    InnerRender(): string {
-        return this.txt
-    }
-
     public replace(a: string, b: string) {
         if (a.startsWith("{") && a.endsWith("}")) {
             a = a.substr(1, a.length - 2);
         }
-        const result = this.Subs({[a]: b});
-        return result;
+        return this.Subs({[a]: b});
     }
 
     public Clone() {
@@ -127,6 +140,9 @@ export class Translation extends UIElement {
 
         const tr = {};
         for (const lng in this.translations) {
+            if (!this.translations.hasOwnProperty(lng)) {
+                continue
+            }
             let txt = this.translations[lng];
             txt = txt.replace(/\..*/, "");
             txt = Utils.EllipsesAfter(txt, 255);
@@ -139,6 +155,9 @@ export class Translation extends UIElement {
     public ExtractImages(isIcon = false): string[] {
         const allIcons: string[] = []
         for (const key in this.translations) {
+            if (!this.translations.hasOwnProperty(key)) {
+                continue;
+            }
             const render = this.translations[key]
 
             if (isIcon) {

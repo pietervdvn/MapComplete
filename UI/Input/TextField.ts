@@ -1,99 +1,85 @@
-import {UIElement} from "../UIElement";
 import {InputElement} from "./InputElement";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import Combine from "../Base/Combine";
+import BaseUIElement from "../BaseUIElement";
 
 export class TextField extends InputElement<string> {
     private readonly value: UIEventSource<string>;
     public readonly enterPressed = new UIEventSource<string>(undefined);
-    private readonly _placeholder: UIElement;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private readonly _htmlType: string;
-    private readonly _inputMode : string;
-    private readonly _textAreaRows: number;
-
-    private readonly _isValid: (string,country) => boolean;
-    private _label: UIElement;
+    
+    private _element: HTMLElement;
+    private readonly _isValid: (s: string, country?: () => string) => boolean;
 
     constructor(options?: {
-        placeholder?: string | UIElement,
+        placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
         textArea?: boolean,
         htmlType?: string,
         inputMode?: string,
-        label?: UIElement,
+        label?: BaseUIElement,
         textAreaRows?: number,
         isValid?: ((s: string, country?: () => string) => boolean)
     }) {
-        super(undefined);
+        super();
         const self = this;
-        this.value = new UIEventSource<string>("");
         options = options ?? {};
-        this._htmlType = options.textArea ? "area" : (options.htmlType ?? "text");
         this.value = options?.value ?? new UIEventSource<string>(undefined);
-
-        this._label = options.label;
-        this._textAreaRows = options.textAreaRows;
-        this._isValid = options.isValid ?? ((str, country) => true);
-
-        this._placeholder = Translations.W(options.placeholder ?? "");
-        this._inputMode = options.inputMode;
-        this.ListenTo(this._placeholder._source);
-
+        this._isValid = options.isValid ?? (_ => true);
+        
         this.onClick(() => {
             self.IsSelected.setData(true)
         });
-        this.value.addCallback((t) => {
-            const field = document.getElementById("txt-"+this.id);
-            if (field === undefined || field === null) {
-                return;
-            }
-            field.className = self.IsValid(t) ? "" : "invalid";
 
-            if (t === undefined || t === null) {
+
+
+        const placeholder = Translations.W(options. placeholder ?? "").ConstructElement().innerText.replace("'", "&#39");
+        
+        this.SetClass("form-text-field")
+        let inputEl : HTMLElement
+        if(options.htmlType === "area"){
+            const el = document.createElement("textarea")
+            el.placeholder = placeholder
+            el.rows = options.textAreaRows
+            el.cols = 50
+            el.style.cssText = "max-width: 100%; width: 100%; box-sizing: border-box"
+            inputEl = el;
+        }else{
+            const el = document.createElement("input")
+            el.type = options.htmlType
+                el.inputMode = options.inputMode
+            el.placeholder = placeholder
+            inputEl = el
+        }
+
+        const form = document.createElement("form")
+        form.onsubmit = () => false;
+       
+       if(options.label){
+           form.appendChild(options.label.ConstructElement())
+       }
+        
+        this._element = form;
+
+        const field = inputEl;
+
+
+        this.value.addCallbackAndRun(value => {
+            if (!(value !== undefined && value !== null)) {
                 return;
             }
             // @ts-ignore
-            field.value = t;
-        });
-        this.dumbMode = false;
-    }
+            field.value = value;
+            if(self.IsValid(value)){
+                self.RemoveClass("invalid")
+            }else{
+                self.SetClass("invalid")
+            }
 
-    GetValue(): UIEventSource<string> {
-        return this.value;
-    }
+        })
 
-    InnerRender(): string {
-
-        const placeholder = this._placeholder.InnerRender().replace("'", "&#39");
-        if (this._htmlType === "area") {
-            return `<span id="${this.id}"><textarea id="txt-${this.id}" placeholder='${placeholder}' class="form-text-field" rows="${this._textAreaRows}" cols="50" style="max-width: 100%; width: 100%; box-sizing: border-box"></textarea></span>`
-        }
-
-        let label = "";
-        if (this._label != undefined) {
-            label = this._label.Render();
-        }
-        let inputMode = ""
-        if(this._inputMode !== undefined){
-            inputMode = `inputmode="${this._inputMode}" `
-        }
-        return new Combine([
-            `<span id="${this.id}">`,
-            `<form onSubmit='return false' class='form-text-field'>`,
-            label,
-            `<input type='${this._htmlType}' ${inputMode} placeholder='${placeholder}' id='txt-${this.id}'/>`,
-            `</form>`,
-            `</span>`
-        ]).Render();
-    }
-    
-    InnerUpdate() {
-        const field = document.getElementById("txt-" + this.id);
-        const self = this;
         field.oninput = () => {
-            
+
             // How much characters are on the right, not including spaces?
             // @ts-ignore
             const endDistance = field.value.substring(field.selectionEnd).replace(/ /g,'').length;
@@ -107,11 +93,11 @@ export class TextField extends InputElement<string> {
             // Setting the value might cause the value to be set again. We keep the distance _to the end_ stable, as phone number formatting might cause the start to change
             // See https://github.com/pietervdvn/MapComplete/issues/103
             // We reread the field value - it might have changed!
-            
+
             // @ts-ignore
             val = field.value;
             let newCursorPos = val.length - endDistance;
-            while(newCursorPos >= 0 && 
+            while(newCursorPos >= 0 &&
                 // We count the number of _actual_ characters (non-space characters) on the right of the new value
                 // This count should become bigger then the end distance
                 val.substr(newCursorPos).replace(/ /g, '').length < endDistance
@@ -119,14 +105,10 @@ export class TextField extends InputElement<string> {
                 newCursorPos --;
             }
             // @ts-ignore
-            self.SetCursorPosition(newCursorPos);
+            TextField.SetCursorPosition(newCursorPos);
         };
 
-        if (this.value.data !== undefined && this.value.data !== null) {
-            // @ts-ignore
-            field.value = this.value.data;
-        }
-
+        
         field.addEventListener("focusin", () => self.IsSelected.setData(true));
         field.addEventListener("focusout", () => self.IsSelected.setData(false));
 
@@ -136,22 +118,31 @@ export class TextField extends InputElement<string> {
                 // @ts-ignore
                 self.enterPressed.setData(field.value);
             }
-        });
+        });        
+        
+        
         
     }
 
-    public SetCursorPosition(i: number) {
-        const field = document.getElementById('txt-' + this.id);
-        if(field === undefined || field === null){
+    GetValue(): UIEventSource<string> {
+        return this.value;
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._element;
+    }
+
+    private static SetCursorPosition(textfield: HTMLElement, i: number) {
+        if(textfield === undefined || textfield === null){
             return;
         }
         if (i === -1) {
             // @ts-ignore
-            i = field.value.length;
+            i = textfield.value.length;
         }
-        field.focus();
+        textfield.focus();
         // @ts-ignore
-        field.setSelectionRange(i, i);
+        textfield.setSelectionRange(i, i);
 
     }
 

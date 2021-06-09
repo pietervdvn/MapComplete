@@ -1,4 +1,3 @@
-import {VerticalCombine} from "../Base/VerticalCombine";
 import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
@@ -9,7 +8,7 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
 import State from "../../State";
-import CheckBox from "../Input/CheckBox";
+import Toggle from "../Input/Toggle";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
@@ -40,7 +39,7 @@ export default class ShareScreen extends UIElement {
             return Svg.no_checkmark_svg().SetStyle("width: 1.5em; display: inline-block;");
         }
 
-        const includeLocation = new CheckBox(
+        const includeLocation = new Toggle(
             new Combine([check(), tr.fsIncludeCurrentLocation]),
             new Combine([nocheck(), tr.fsIncludeCurrentLocation]),
             true
@@ -75,7 +74,7 @@ export default class ShareScreen extends UIElement {
             const currentBackground = new VariableUiElement(currentLayer.map(layer => {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
             }));
-            const includeCurrentBackground = new CheckBox(
+            const includeCurrentBackground = new Toggle(
                 new Combine([check(), currentBackground]),
                 new Combine([nocheck(), currentBackground]),
                 true
@@ -90,7 +89,7 @@ export default class ShareScreen extends UIElement {
             }, [currentLayer]));
 
 
-            const includeLayerChoices = new CheckBox(
+            const includeLayerChoices = new Toggle(
                 new Combine([check(), tr.fsIncludeCurrentLayers]),
                 new Combine([nocheck(), tr.fsIncludeCurrentLayers]),
                 true
@@ -120,7 +119,7 @@ export default class ShareScreen extends UIElement {
 
         for (const swtch of switches) {
 
-            const checkbox = new CheckBox(
+            const checkbox = new Toggle(
                 new Combine([check(), Translations.W(swtch.human)]),
                 new Combine([nocheck(), Translations.W(swtch.human)]), !swtch.reverse
             );
@@ -143,7 +142,7 @@ export default class ShareScreen extends UIElement {
         }
 
 
-        this._options = new VerticalCombine(optionCheckboxes)
+        this._options = new Combine(optionCheckboxes).SetClass("flex flex-col")
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
 
             const host = window.location.host;
@@ -216,8 +215,8 @@ export default class ShareScreen extends UIElement {
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.id)?.InnerRender() ?? "",
-                text: Translations.W(layout.description)?.InnerRender() ?? "",
+                title: Translations.W(layout.title)?.InnerRenderAsString() ?? "",
+                text: Translations.W(layout.description)?.InnerRenderAsString() ?? "",
                 url: self._link.data,
             }
 
@@ -251,11 +250,11 @@ export default class ShareScreen extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): UIElement {
 
         const tr = Translations.t.general.sharescreen;
 
-        return new VerticalCombine([
+        return new Combine([
             this._editLayout,
             tr.intro,
             this._link,
@@ -264,7 +263,7 @@ export default class ShareScreen extends UIElement {
             tr.embedIntro,
             this._options,
             this._iframeCode,
-        ]).Render()
+        ]).SetClass("flex flex-col")
     }
 
 }

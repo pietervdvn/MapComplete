@@ -12,12 +12,12 @@ import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
-import {UIElement} from "../../UI/UIElement";
 import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
+import BaseUIElement from "../../UI/BaseUIElement";
 
 export default class LayerConfig {
 
@@ -294,7 +294,7 @@ export default class LayerConfig {
         {
             icon:
                 {
-                    html: UIElement,
+                    html: BaseUIElement,
                     iconSize: [number, number],
                     iconAnchor: [number, number],
                     popupAnchor: [number, number],
@@ -361,7 +361,7 @@ export default class LayerConfig {
         const iconUrlStatic = render(this.icon);
         const self = this;
         const mappedHtml = tags.map(tgs => {
-            function genHtmlFromString(sourcePart: string): UIElement {
+            function genHtmlFromString(sourcePart: string): BaseUIElement {
                 if (sourcePart.indexOf("html:") == 0) {
                     // We use § as a replacement for ;
                     const html = sourcePart.substring("html:".length)
@@ -370,7 +370,7 @@ export default class LayerConfig {
                 }
 
                 const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
-                let html: UIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
+                let html: BaseUIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
                 const match = sourcePart.match(/([a-zA-Z0-9_]*):([^;]*)/)
                 if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
                     html = new Combine([
@@ -387,7 +387,7 @@ export default class LayerConfig {
             const iconUrl = render(self.icon);
             const rotation = render(self.rotation, "0deg");
 
-            let htmlParts: UIElement[] = [];
+            let htmlParts: BaseUIElement[] = [];
             let sourceParts = Utils.NoNull(iconUrl.split(";").filter(prt => prt != ""));
             for (const sourcePart of sourceParts) {
                 htmlParts.push(genHtmlFromString(sourcePart))
@@ -399,7 +399,7 @@ export default class LayerConfig {
                     continue;
                 }
                 if (iconOverlay.badge) {
-                    const badgeParts: UIElement[] = [];
+                    const badgeParts: BaseUIElement[] = [];
                     const partDefs = iconOverlay.then.GetRenderValue(tgs).txt.split(";").filter(prt => prt != "");
 
                     for (const badgePartStr of partDefs) {
@@ -437,7 +437,7 @@ export default class LayerConfig {
             } catch (e) {
                 console.error(e, tgs)
             }
-            return new Combine(htmlParts).Render();
+            return new Combine(htmlParts);
         })
 
 

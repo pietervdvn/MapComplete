@@ -94,7 +94,7 @@ export default class TagRenderingQuestion extends UIElement {
         ).SetClass("block")
     }
 
-    InnerRender(): string {
+    InnerRender() {
         return new Combine([
             this._question,
             this._inputElement,
@@ -103,7 +103,6 @@ export default class TagRenderingQuestion extends UIElement {
             this._appliedTags]
         )
             .SetClass("question")
-            .Render()
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {

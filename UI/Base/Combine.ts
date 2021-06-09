@@ -1,11 +1,11 @@
-import {UIElement} from "../UIElement";
 import {FixedUiElement} from "./FixedUiElement";
 import {Utils} from "../../Utils";
+import BaseUIElement from "../BaseUIElement";
 
-export default class Combine extends UIElement {
-    private readonly uiElements: UIElement[];
+export default class Combine extends BaseUIElement {
+    private readonly uiElements: BaseUIElement[];
 
-    constructor(uiElements: (string | UIElement)[]) {
+    constructor(uiElements: (string | BaseUIElement)[]) {
         super();
         this.uiElements = Utils.NoNull(uiElements)
             .map(el => {
@@ -15,18 +15,21 @@ export default class Combine extends UIElement {
                 return el;
             });
     }
+    
+    protected InnerConstructElement(): HTMLElement {
+        const el = document.createElement("span")
 
-    InnerRender(): string {
-        return this.uiElements.map(ui => {
-            if(ui === undefined || ui === null){
-                return "";
+        for (const subEl of this.uiElements) {
+            if(subEl === undefined || subEl === null){
+                continue;
             }
-            if(ui.Render === undefined){
-                console.error("Not a UI-element", ui);
-                return "";
+            const subHtml = subEl.ConstructElement()
+            if(subHtml !== undefined){
+                el.appendChild(subHtml)
             }
-            return ui.Render();
-        }).join("");
+        }
+        
+        return el;
     }
-
+    
 }

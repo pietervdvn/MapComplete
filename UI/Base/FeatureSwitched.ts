@@ -12,11 +12,11 @@ export default class FeatureSwitched extends UIElement{
         this._swtch = swtch;
     }
     
-    InnerRender(): string {
+    InnerRender(): UIElement | string {
         if(this._swtch.data){
             return this._upstream.Render();
         }
-        return "";
+        return undefined;
     }
     
 }
