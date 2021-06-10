@@ -8,16 +8,18 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
 import {OH, OpeningHour} from "./OpeningHours";
+import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
+import BaseUIElement from "../BaseUIElement";
 
 export default class OpeningHoursRange extends UIElement {
     private _oh: UIEventSource<OpeningHour>;
 
-    private readonly _startTime: UIElement;
-    private readonly _endTime: UIElement;
-    private readonly _deleteRange: UIElement;
-    private readonly _tableId: string;
+    private readonly _startTime: BaseUIElement;
+    private readonly _endTime: BaseUIElement;
+    private readonly _deleteRange: BaseUIElement;
+    private readonly _tableId: OpeningHoursPickerTable;
 
-    constructor(oh: UIEventSource<OpeningHour>, tableId: string) {
+    constructor(oh: UIEventSource<OpeningHour>, tableId: OpeningHoursPickerTable) {
         super(oh);
         this._tableId = tableId;
         const self = this;
@@ -48,7 +50,7 @@ export default class OpeningHoursRange extends UIElement {
 
     }
 
-    InnerRender(): UIElement {
+    InnerRender(): BaseUIElement {
         const oh = this._oh.data;
         if (oh === undefined) {
             return undefined;
@@ -71,8 +73,7 @@ export default class OpeningHoursRange extends UIElement {
         if (oh.endHour == 0 && oh.endMinutes == 0) {
             endhour = 24;
         }
-        const height = (endhour - oh.startHour + ((oh.endMinutes - oh.startMinutes) / 60));
-        return height;
+        return (endhour - oh.startHour + ((oh.endMinutes - oh.startMinutes) / 60));
     }
 
     protected InnerUpdate(el: HTMLElement) {
@@ -85,7 +86,7 @@ export default class OpeningHoursRange extends UIElement {
         }
 
         // The header cell containing monday, tuesday, ...
-        const table = document.getElementById(this._tableId) as HTMLTableElement;
+        const table = this._tableId.ConstructElement() as HTMLTableElement;
 
         const bodyRect = document.body.getBoundingClientRect();
         const rangeStart = table.rows[1].cells[1].getBoundingClientRect().top - bodyRect.top;

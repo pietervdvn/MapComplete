@@ -13,14 +13,15 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import BaseUIElement from "../BaseUIElement";
 
 export default class ShareScreen extends UIElement {
-    private readonly _options: UIElement;
-    private readonly _iframeCode: UIElement;
+    private readonly _options: BaseUIElement;
+    private readonly _iframeCode: BaseUIElement;
     public iframe: UIEventSource<string>;
-    private readonly _link: UIElement;
-    private readonly _linkStatus: UIEventSource<string | UIElement>;
-    private readonly _editLayout: UIElement;
+    private readonly _link: BaseUIElement;
+    private readonly _linkStatus: UIEventSource<string | BaseUIElement>;
+    private readonly _editLayout: BaseUIElement;
 
     constructor(layout: LayoutConfig = undefined, layoutDefinition: string = undefined) {
         super(undefined)
@@ -28,7 +29,7 @@ export default class ShareScreen extends UIElement {
         layoutDefinition = layoutDefinition ?? State.state?.layoutDefinition;
         const tr = Translations.t.general.sharescreen;
 
-        const optionCheckboxes: UIElement[] = []
+        const optionCheckboxes: BaseUIElement[] = []
         const optionParts: (UIEventSource<string>)[] = [];
         this.SetClass("link-underline")
         function check() {
@@ -42,7 +43,7 @@ export default class ShareScreen extends UIElement {
         const includeLocation = new Toggle(
             new Combine([check(), tr.fsIncludeCurrentLocation]),
             new Combine([nocheck(), tr.fsIncludeCurrentLocation]),
-            true
+            new UIEventSource<boolean>(true)
         )
         optionCheckboxes.push(includeLocation);
 
@@ -72,12 +73,12 @@ export default class ShareScreen extends UIElement {
 
             const currentLayer: UIEventSource<{ id: string, name: string, layer: any }> = State.state.backgroundLayer;
             const currentBackground = new VariableUiElement(currentLayer.map(layer => {
-                return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""}).Render();
+                return tr.fsIncludeCurrentBackgroundMap.Subs({name: layer?.name ?? ""});
             }));
             const includeCurrentBackground = new Toggle(
                 new Combine([check(), currentBackground]),
                 new Combine([nocheck(), currentBackground]),
-                true
+                new UIEventSource<boolean>(true)
             )
             optionCheckboxes.push(includeCurrentBackground);
             optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
@@ -92,7 +93,7 @@ export default class ShareScreen extends UIElement {
             const includeLayerChoices = new Toggle(
                 new Combine([check(), tr.fsIncludeCurrentLayers]),
                 new Combine([nocheck(), tr.fsIncludeCurrentLayers]),
-                true
+                new UIEventSource<boolean>(true)
             )
             optionCheckboxes.push(includeLayerChoices);
 
@@ -121,7 +122,8 @@ export default class ShareScreen extends UIElement {
 
             const checkbox = new Toggle(
                 new Combine([check(), Translations.W(swtch.human)]),
-                new Combine([nocheck(), Translations.W(swtch.human)]), !swtch.reverse
+                new Combine([nocheck(), Translations.W(swtch.human)]),
+                new UIEventSource<boolean>(!swtch.reverse)
             );
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
@@ -198,7 +200,7 @@ export default class ShareScreen extends UIElement {
                             return new SubtleButton(Svg.pencil_ui(),
                                 new Combine([tr.editThisTheme.SetClass("bold"), "<br/>",
                                     tr.editThemeDescription]),
-                                {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true}).Render();
+                                {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true});
 
                         }
                     ));
@@ -215,9 +217,9 @@ export default class ShareScreen extends UIElement {
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.title)?.InnerRenderAsString() ?? "",
-                text: Translations.W(layout.description)?.InnerRenderAsString() ?? "",
-                url: self._link.data,
+                title: Translations.W(layout.title)?.ConstructElement().innerText ?? "",
+                text: Translations.W(layout.description)?.ConstructElement().innerText ?? "",
+                url: url.data,
             }
 
             function rejected() {
@@ -250,7 +252,7 @@ export default class ShareScreen extends UIElement {
 
     }
 
-    InnerRender(): UIElement {
+    InnerRender(): BaseUIElement {
 
         const tr = Translations.t.general.sharescreen;
 

@@ -13,6 +13,7 @@ import BaseUIElement from "../BaseUIElement";
 export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]> {
     public readonly IsSelected: UIEventSource<boolean>;
     private readonly weekdays: UIEventSource<BaseUIElement[]>;
+    private readonly _element: HTMLTableElement
 
     public static readonly days: BaseUIElement[] =
         [
@@ -28,6 +29,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
     private readonly source: UIEventSource<OpeningHour[]>;
 
+    private static _nextId = 0;
 
     constructor(weekdays: UIEventSource<BaseUIElement[]>, source?: UIEventSource<OpeningHour[]>) {
         super();
@@ -36,9 +38,11 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
         this.IsSelected = new UIEventSource<boolean>(false);
         this.SetStyle("width:100%;height:100%;display:block;");
 
-    }
 
-    InnerRender(): string {
+        const id = OpeningHoursPickerTable._nextId;
+OpeningHoursPickerTable._nextId ++ ;
+
+
         let rows = "";
         const self = this;
         for (let h = 0; h < 24; h++) {
@@ -49,28 +53,32 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
 
             rows += `<tr><td rowspan="2" class="oh-left-col oh-timecell-full">${hs}:00</td>` +
-                Utils.Times(weekday => `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full oh-timecell-${weekday}"></td>`, 7) +
+                Utils.Times(weekday => `<td id="${id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full oh-timecell-${weekday}"></td>`, 7) +
                 '</tr><tr>' +
-                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half oh-timecell-${id}"></td>`, 7) +
+                Utils.Times(id => `<td id="${id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half oh-timecell-${id}"></td>`, 7) +
                 '</tr>';
         }
         let days = OpeningHoursPickerTable.days.map((day, i) => {
-            const innerContent  =  self.weekdays.data[i]?.Render() ?? "";
-            return day.Render() + "<span style='width:100%; display:block; position: relative;'>"+innerContent+"</span>";
+            const innerContent  =  self.weekdays.data[i]?.ConstructElement()?.innerHTML ?? "";
+            return day.ConstructElement().innerHTML + "<span style='width:100%; display:block; position: relative;'>"+innerContent+"</span>";
         }).join("</th><th width='14%'>");
-        return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th width='14%'>${days}</th></tr>${rows}</table>`;
+        
+        this._element = document.createElement("table")
+        const el = this._element;
+        this.SetClass("oh-table")
+        el.innerHTML =`<tr><th></th><th width='14%'>${days}</th></tr>${rows}`;
     }
 
-    protected InnerUpdate() {
+    protected InnerConstructElement(): HTMLElement {
+        return this._element
+    }
+
+    private InnerUpdate(table: HTMLTableElement) {
         const self = this;
-        const table = (document.getElementById(`oh-table-${this.id}`) as HTMLTableElement);
         if (table === undefined || table === null) {
             return;
         }
 
-        for (const uielement of this.weekdays.data) {
-            uielement.Update();
-        }
 
         let mouseIsDown = false;
         let selectionStart: [number, number] = undefined;

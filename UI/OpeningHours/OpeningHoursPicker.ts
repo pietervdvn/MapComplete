@@ -37,7 +37,7 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
                 source.addCallback(_ => {
                     self._ohs.setData(OH.MergeTimes(self._ohs.data))
                 })
-                const r = new OpeningHoursRange(source, `oh-table-${this._backgroundTable.id}`);
+                const r = new OpeningHoursRange(source, this._backgroundTable);
                 perWeekday[oh.weekday].push(r); 
             }
 

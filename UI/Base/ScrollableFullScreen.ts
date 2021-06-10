@@ -5,6 +5,7 @@ import Ornament from "./Ornament";
 import {FixedUiElement} from "./FixedUiElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Hash from "../../Logic/Web/Hash";
+import BaseUIElement from "../BaseUIElement";
 
 /**
  * 
@@ -18,13 +19,13 @@ import Hash from "../../Logic/Web/Hash";
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
     public isShown: UIEventSource<boolean>;
-    private _component: UIElement;
-    private _fullscreencomponent: UIElement;
+    private _component: BaseUIElement;
+    private _fullscreencomponent: BaseUIElement;
     private static readonly _actor = ScrollableFullScreen.InitActor();
     private _hashToSet: string;  
     private static _currentlyOpen : ScrollableFullScreen;
 
-    constructor(title: ((mode: string) => UIElement), content: ((mode: string) => UIElement),
+    constructor(title: ((mode: string) => BaseUIElement), content: ((mode: string) => BaseUIElement),
                 hashToSet: string,
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
               ) {
@@ -35,7 +36,6 @@ export default class ScrollableFullScreen extends UIElement {
         this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown)
             .SetClass("hidden md:block");
         this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile"), isShown);
-        this.dumbMode = false;
         const self = this;
         isShown.addCallback(isShown => {
             if (isShown) {
@@ -46,7 +46,7 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
-    InnerRender(): UIElement {
+    InnerRender(): BaseUIElement {
         return this._component;
     }
 
@@ -61,7 +61,7 @@ export default class ScrollableFullScreen extends UIElement {
         fs.classList.remove("hidden")
     }
 
-    private BuildComponent(title: UIElement, content: UIElement, isShown: UIEventSource<boolean>) {
+    private BuildComponent(title: BaseUIElement, content:BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
                 Svg.back_svg().SetClass("block md:hidden"),

@@ -9,11 +9,13 @@ import {TextField} from "../Input/TextField";
 import {Geocoding} from "../../Logic/Osm/Geocoding";
 import Translations from "../i18n/Translations";
 import Hash from "../../Logic/Web/Hash";
+import Combine from "../Base/Combine";
+import BaseUIElement from "../BaseUIElement";
 
 export default class SearchAndGo extends UIElement {
 
-    private _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
-    private _searchField = new TextField({
+    private readonly _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
+    private readonly _searchField = new TextField({
             placeholder: new VariableUiElement(
                 this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
             ),
@@ -21,8 +23,9 @@ export default class SearchAndGo extends UIElement {
         }
     );
 
-    private _foundEntries = new UIEventSource([]);
-    private _goButton = Svg.search_ui().SetClass('w-8 h-8 full-rounded border-black float-right');
+    private readonly _foundEntries = new UIEventSource([]);
+    private readonly _goButton = Svg.search_ui().SetClass('w-8 h-8 full-rounded border-black float-right');
+    private readonly _element: Combine;
 
     constructor() {
         super(undefined);
@@ -36,12 +39,13 @@ export default class SearchAndGo extends UIElement {
         this._goButton.onClick(function () {
             self.RunSearch();
         });
+        this._element = new Combine([this._searchField, this._goButton])
 
     }
 
-    InnerRender(): string {
-        return this._searchField.Render() +
-            this._goButton.Render();
+    InnerRender(): BaseUIElement
+    {
+        return this._element
 
     }
 

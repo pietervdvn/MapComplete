@@ -11,31 +11,15 @@ export default class DirectionInput extends InputElement<string> {
 
     private readonly value: UIEventSource<string>;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private _element: HTMLElement;
 
     constructor(value?: UIEventSource<string>) {
         super();
         this.value = value ?? new UIEventSource<string>(undefined);
 
-        this.value.addCallbackAndRun(rotation => {
-            const selfElement = document.getElementById(this.id);
-            if (selfElement === null) {
-                return;
-            }
-            const cone = selfElement.getElementsByClassName("direction-svg")[0] as HTMLElement
-            cone.style.transform = `rotate(${rotation}deg)`;
-
-        })
-
-    }
-
-
-    GetValue(): UIEventSource<string> {
-        return this.value;
-    }
-
-    InnerRender(): string {
-        return new Combine([
-            `<div id="direction-leaflet-div-${this.id}" style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
+        
+        this._element =       new Combine([
+            `<div style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
             Svg.direction_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg"),
@@ -43,8 +27,30 @@ export default class DirectionInput extends InputElement<string> {
                 "position: absolute;top: 0;left: 0;width: 100%;height: 100%;")
         ])
             .SetStyle("position:relative;display:block;width: min(100%, 25em); padding-top: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
-            .Render();
+            .ConstructElement()
+
+
+const self = this;
+        this.value.addCallbackAndRun(rotation => {
+            const selfElement = self._element;
+            if (selfElement === null) {
+                return;
+            }
+            const cone = selfElement.getElementsByClassName("direction-svg")[0] as HTMLElement
+            cone.style.transform = `rotate(${rotation}deg)`;
+
+        })
     }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._element
+    }
+
+
+    GetValue(): UIEventSource<string> {
+        return this.value;
+    }
+
 
     protected InnerUpdate(htmlElement: HTMLElement) {
         const self = this;

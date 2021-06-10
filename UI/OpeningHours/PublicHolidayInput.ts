@@ -1,21 +1,22 @@
-
 import {OH} from "./OpeningHours";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import {TextField} from "../Input/TextField";
 import {DropDown} from "../Input/DropDown";
 import {InputElement} from "../Input/InputElement";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class PublicHolidayInput extends InputElement<string> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly _value: UIEventSource<string>;
-    private readonly _dropdown: UIElement;
+    private readonly _dropdown: BaseUIElement;
     private readonly _mode: UIEventSource<string>;
-    private readonly _startHour: UIElement;
-    private readonly _endHour: UIElement;
+    private readonly _startHour: BaseUIElement;
+    private readonly _endHour: BaseUIElement;
+    private _element: VariableUiElement;
 
     constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
         super();
@@ -31,7 +32,6 @@ export default class PublicHolidayInput extends InputElement<string> {
         );
         this._dropdown = dropdown.SetStyle("display:inline-block;");
         this._mode = dropdown.GetValue();
-        this.ListenTo(this._mode);
 
         const start = new TextField({
             placeholder: "starthour",
@@ -97,6 +97,27 @@ export default class PublicHolidayInput extends InputElement<string> {
         end.GetValue().addCallbackAndRun(() => {
             updateValue();
         });
+        
+        this._element = new VariableUiElement(this._mode.map(
+            mode => {
+                if (mode === " ") {
+                    return new Combine([this._dropdown,
+                        " ",
+                        Translations.t.general.opening_hours.opensAt,
+                        " ",
+                        this._startHour,
+                        " ",
+                        Translations.t.general.opening_hours.openTill,
+                        " ",
+                        this._endHour]);
+                }
+                return this._dropdown;
+
+            }))
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._element.ConstructElement();
     }
 
     public static LoadValue(str: string): {
@@ -143,21 +164,6 @@ export default class PublicHolidayInput extends InputElement<string> {
         }
     }
 
-    InnerRender(): UIElement {
-        const mode = this._mode.data;
-        if (mode === " ") {
-            return new Combine([this._dropdown,
-                " ",
-                Translations.t.general.opening_hours.opensAt,
-                " ",
-                this._startHour,
-                " ",
-                Translations.t.general.opening_hours.openTill,
-                " ",
-                this._endHour]);
-        }
-        return this._dropdown;
-    }
 
     GetValue(): UIEventSource<string> {
         return this._value;
