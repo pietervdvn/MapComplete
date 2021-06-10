@@ -690,6 +690,12 @@
                     "then": ""
                 }
             }
+        },
+        "name": "",
+        "presets": {
+            "0": {
+                "title": ""
+            }
         }
     },
     "bike_cleaning": {
