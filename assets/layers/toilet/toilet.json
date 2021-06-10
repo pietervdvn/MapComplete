@@ -242,7 +242,7 @@
           "if": "toilets:position=squat",
           "then": {
             "en": "There are only squat toilets here",
-            "de": "Es gibt hier nur Hocktoiletten.",
+            "de": "Es gibt hier nur Hocktoiletten",
             "fr": "Il y a uniquement des toilettes turques",
             "nl": "Er zijn enkel hurktoiletten"
           }

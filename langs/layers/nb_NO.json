@@ -1,89 +1,89 @@
 {
-    "bench_at_pt": {
+    "bench": {
+        "name": "Benker",
         "title": {
             "render": "Benk"
-        }
-    },
-    "bench": {
-        "presets": {
-            "0": {
-                "description": "Legg til en ny benk",
-                "title": "Benk"
-            }
         },
         "tagRenderings": {
-            "5": {
+            "1": {
+                "render": "Rygglene",
                 "mappings": {
-                    "7": {
-                        "then": "Farge: gul"
-                    },
-                    "6": {
-                        "then": "Farge: blå"
-                    },
-                    "5": {
-                        "then": "Farge: svart"
-                    },
-                    "4": {
-                        "then": "Farge: rød"
-                    },
-                    "3": {
-                        "then": "Farge: hvit"
-                    },
-                    "2": {
-                        "then": "Farge: grå"
+                    "0": {
+                        "then": "Rygglene: Ja"
                     },
                     "1": {
-                        "then": "Farge: grønn"
-                    },
-                    "0": {
-                        "then": "Farge: brun"
+                        "then": "Rygglene: Nei"
                     }
                 },
-                "render": "Farge: {colour}"
+                "question": "Har denne beken et rygglene?"
+            },
+            "2": {
+                "render": "{seats} seter",
+                "question": "Hvor mange sitteplasser har denne benken?"
             },
             "3": {
+                "render": "Materiale: {material}",
                 "mappings": {
+                    "0": {
+                        "then": "Materiale: tre"
+                    },
+                    "1": {
+                        "then": "Materiale: metall"
+                    },
+                    "2": {
+                        "then": "Materiale: stein"
+                    },
+                    "3": {
+                        "then": "Materiale: betong"
+                    },
                     "4": {
                         "then": "Materiale: plastikk"
                     },
                     "5": {
                         "then": "Materiale: stål"
+                    }
+                }
+            },
+            "5": {
+                "render": "Farge: {colour}",
+                "mappings": {
+                    "0": {
+                        "then": "Farge: brun"
                     },
-                    "3": {
-                        "then": "Materiale: betong"
+                    "1": {
+                        "then": "Farge: grønn"
                     },
                     "2": {
-                        "then": "Materiale: stein"
+                        "then": "Farge: grå"
                     },
-                    "1": {
-                        "then": "Materiale: metall"
+                    "3": {
+                        "then": "Farge: hvit"
                     },
-                    "0": {
-                        "then": "Materiale: tre"
+                    "4": {
+                        "then": "Farge: rød"
+                    },
+                    "5": {
+                        "then": "Farge: svart"
+                    },
+                    "6": {
+                        "then": "Farge: blå"
+                    },
+                    "7": {
+                        "then": "Farge: gul"
                     }
-                },
-                "render": "Materiale: {material}"
-            },
-            "2": {
-                "question": "Hvor mange sitteplasser har denne benken?",
-                "render": "{seats} seter"
-            },
-            "1": {
-                "question": "Har denne beken et rygglene?",
-                "mappings": {
-                    "1": {
-                        "then": "Rygglene: Nei"
-                    },
-                    "0": {
-                        "then": "Rygglene: Ja"
-                    }
-                },
-                "render": "Rygglene"
+                }
             }
         },
+        "presets": {
+            "0": {
+                "title": "Benk",
+                "description": "Legg til en ny benk"
+            }
+        }
+    },
+    "bench_at_pt": {
         "title": {
             "render": "Benk"
-        },
-        "name": "Benker"
+        }
     }
 }

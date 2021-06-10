@@ -9,8 +9,9 @@
     "question": {
       "en": "What is the phone number of {name}?",
       "nl": "Wat is het telefoonnummer van {name}?",
-      "fr": "Quel est le numéro de téléphone de {name} ?",
-      "de": "Was ist die Telefonnummer von {name}?"
+      "fr": "Quel est le numéro de téléphone de {name} ?",
+      "de": "Was ist die Telefonnummer von {name}?",
+      "nb_NO": "Hva er telefonnummeret til {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -35,8 +36,9 @@
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
       "nl": "Wat is het email-adres van {name}?",
-      "fr": "Quelle est l'adresse courriel de {name} ?",
-      "en": "What is the email address of {name}?"
+      "fr": "Quelle est l'adresse courriel de {name} ?",
+      "en": "What is the email address of {name}?",
+      "nb_NO": "Hva er e-postadressen til {name}?"
     },
     "freeform": {
       "key": "email",
@@ -47,8 +49,9 @@
     "question": {
       "en": "What is the website of {name}?",
       "nl": "Wat is de website van {name}?",
-      "fr": "Quel est le site internet de {name}?",
-      "gl": "Cal é a páxina web de {name}?"
+      "fr": "Quel est le site web de {name} ?",
+      "gl": "Cal é a páxina web de {name}?",
+      "nb_NO": "Hva er nettsiden til {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -59,8 +62,9 @@
   "description": {
     "question": {
       "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
-      "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
-      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
+      "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
+      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
+      "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -70,15 +74,17 @@
   "opening_hours": {
     "question": {
       "en": "What are the opening hours of {name}?",
-      "fr": "Quelles sont les horaires d'ouverture de {name}?",
+      "fr": "Quelles sont les horaires d'ouverture de {name} ?",
       "de": "Was sind die Öffnungszeiten von {name}?",
-      "nl": "Wat zijn de openingsuren van {name}?"
+      "nl": "Wat zijn de openingsuren van {name}?",
+      "nb_NO": "Hva er åpningstidene for {name})"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
       "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
       "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
-      "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
+      "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
+      "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",

@@ -11,7 +11,8 @@
     "it": "Panchine",
     "ru": "Скамейки",
     "zh_Hans": "长椅",
-    "zh_Hant": "長椅"
+    "zh_Hant": "長椅",
+    "nb_NO": "Benker"
   },
   "minzoom": 14,
   "source": {
@@ -29,7 +30,8 @@
       "it": "Panchina",
       "ru": "Скамейка",
       "zh_Hans": "长椅",
-      "zh_Hant": "長椅"
+      "zh_Hant": "長椅",
+      "nb_NO": "Benk"
     }
   },
   "tagRenderings": [
@@ -46,7 +48,8 @@
         "it": "Schienale",
         "ru": "Спинка",
         "zh_Hans": "靠背",
-        "zh_Hant": "靠背"
+        "zh_Hant": "靠背",
+        "nb_NO": "Rygglene"
       },
       "freeform": {
         "key": "backrest"
@@ -65,7 +68,8 @@
             "it": "Schienale: Sì",
             "ru": "Со спинкой",
             "zh_Hans": "靠背：有",
-            "zh_Hant": "靠背：有"
+            "zh_Hant": "靠背：有",
+            "nb_NO": "Rygglene: Ja"
           }
         },
         {
@@ -81,7 +85,8 @@
             "it": "Schienale: No",
             "ru": "Без спинки",
             "zh_Hans": "靠背：无",
-            "zh_Hant": "靠背：無"
+            "zh_Hant": "靠背：無",
+            "nb_NO": "Rygglene: Nei"
           }
         }
       ],
@@ -96,7 +101,8 @@
         "it": "Questa panchina ha lo schienale?",
         "ru": "Есть ли у этой скамейки спинка?",
         "zh_Hans": "这个长椅有靠背吗？",
-        "zh_Hant": "這個長椅是否有靠背？"
+        "zh_Hant": "這個長椅是否有靠背？",
+        "nb_NO": "Har denne beken et rygglene?"
       }
     },
     {
@@ -110,7 +116,8 @@
         "id": "{seats} kursi",
         "it": "{seats} posti",
         "ru": "{seats} мест",
-        "zh_Hant": "{seats} 座位數"
+        "zh_Hant": "{seats} 座位數",
+        "nb_NO": "{seats} seter"
       },
       "freeform": {
         "key": "seats",
@@ -126,7 +133,8 @@
         "it": "Quanti posti ha questa panchina?",
         "ru": "Сколько мест на этой скамейке?",
         "zh_Hans": "这个长椅有几个座位？",
-        "zh_Hant": "這個長椅有幾個位子？"
+        "zh_Hant": "這個長椅有幾個位子？",
+        "nb_NO": "Hvor mange sitteplasser har denne benken?"
       }
     },
     {
@@ -140,7 +148,8 @@
         "it": "Materiale: {material}",
         "ru": "Материал: {material}",
         "zh_Hans": "材质: {material}",
-        "zh_Hant": "材質：{material}"
+        "zh_Hant": "材質：{material}",
+        "nb_NO": "Materiale: {material}"
       },
       "freeform": {
         "key": "material",
@@ -158,7 +167,8 @@
             "hu": "Anyag: fa",
             "it": "Materiale: legno",
             "ru": "Материал: дерево",
-            "zh_Hans": "材质：木"
+            "zh_Hans": "材质：木",
+            "nb_NO": "Materiale: tre"
           }
         },
         {
@@ -172,7 +182,8 @@
             "hu": "Anyag: fém",
             "it": "Materiale: metallo",
             "ru": "Материал: металл",
-            "zh_Hans": "材质：金属"
+            "zh_Hans": "材质：金属",
+            "nb_NO": "Materiale: metall"
           }
         },
         {
@@ -186,7 +197,8 @@
             "hu": "Anyag: kő",
             "it": "Materiale: pietra",
             "ru": "Материал: камень",
-            "zh_Hans": "材质：石头"
+            "zh_Hans": "材质：石头",
+            "nb_NO": "Materiale: stein"
           }
         },
         {
@@ -200,7 +212,8 @@
             "hu": "Anyag: beton",
             "it": "Materiale: cemento",
             "ru": "Материал: бетон",
-            "zh_Hans": "材质：混凝土"
+            "zh_Hans": "材质：混凝土",
+            "nb_NO": "Materiale: betong"
           }
         },
         {
@@ -214,7 +227,8 @@
             "hu": "Anyag: műanyag",
             "it": "Materiale: plastica",
             "ru": "Материал: пластик",
-            "zh_Hans": "材质：塑料"
+            "zh_Hans": "材质：塑料",
+            "nb_NO": "Materiale: plastikk"
           }
         },
         {
@@ -228,7 +242,8 @@
             "hu": "Anyag: acél",
             "it": "Materiale: acciaio",
             "ru": "Материал: сталь",
-            "zh_Hans": "材质：不锈钢"
+            "zh_Hans": "材质：不锈钢",
+            "nb_NO": "Materiale: stål"
           }
         }
       ],
@@ -280,7 +295,8 @@
         "ru": "Цвет: {colour}",
         "id": "Warna: {colour}",
         "zh_Hans": "颜色： {colour}",
-        "zh_Hant": "顏色：{colour}"
+        "zh_Hant": "顏色：{colour}",
+        "nb_NO": "Farge: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -309,7 +325,8 @@
             "it": "Colore: marrone",
             "ru": "Цвет: коричневый",
             "zh_Hans": "颜色：棕",
-            "zh_Hant": "顏色：棕色"
+            "zh_Hant": "顏色：棕色",
+            "nb_NO": "Farge: brun"
           }
         },
         {
@@ -323,7 +340,8 @@
             "it": "Colore: verde",
             "ru": "Цвет: зеленый",
             "zh_Hans": "颜色：绿",
-            "zh_Hant": "顏色：綠色"
+            "zh_Hant": "顏色：綠色",
+            "nb_NO": "Farge: grønn"
           }
         },
         {
@@ -337,7 +355,8 @@
             "it": "Colore: grigio",
             "ru": "Цвет: серый",
             "zh_Hans": "颜色：灰",
-            "zh_Hant": "顏色：灰色"
+            "zh_Hant": "顏色：灰色",
+            "nb_NO": "Farge: grå"
           }
         },
         {
@@ -351,7 +370,8 @@
             "it": "Colore: bianco",
             "ru": "Цвет: белый",
             "zh_Hans": "颜色：白",
-            "zh_Hant": "顏色：白色"
+            "zh_Hant": "顏色：白色",
+            "nb_NO": "Farge: hvit"
           }
         },
         {
@@ -365,7 +385,8 @@
             "it": "Colore: rosso",
             "ru": "Цвет: красный",
             "zh_Hans": "颜色：红",
-            "zh_Hant": "顏色：紅色"
+            "zh_Hant": "顏色：紅色",
+            "nb_NO": "Farge: rød"
           }
         },
         {
@@ -379,7 +400,8 @@
             "it": "Colore: nero",
             "ru": "Цвет: чёрный",
             "zh_Hans": "颜色：黑",
-            "zh_Hant": "顏色：黑色"
+            "zh_Hant": "顏色：黑色",
+            "nb_NO": "Farge: svart"
           }
         },
         {
@@ -393,7 +415,8 @@
             "it": "Colore: blu",
             "ru": "Цвет: синий",
             "zh_Hans": "颜色：蓝",
-            "zh_Hant": "顏色：藍色"
+            "zh_Hant": "顏色：藍色",
+            "nb_NO": "Farge: blå"
           }
         },
         {
@@ -407,7 +430,8 @@
             "it": "Colore: giallo",
             "ru": "Цвет: желтый",
             "zh_Hans": "颜色：黄",
-            "zh_Hant": "顏色：黃色"
+            "zh_Hant": "顏色：黃色",
+            "nb_NO": "Farge: gul"
           }
         }
       ]
@@ -429,7 +453,7 @@
         "fr": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
         "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
         "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查",
-        "de": "Die Bank wurde zuletzt am {survey:date} überprüft.",
+        "de": "Diese Bank wurde zuletzt überprüft am {survey:date}",
         "ru": "Последний раз обследование этой скамейки проводилось {survey:date}"
       },
       "freeform": {
@@ -472,7 +496,8 @@
         "it": "Panchina",
         "ru": "Скамейка",
         "id": "Bangku",
-        "zh_Hans": "长椅"
+        "zh_Hans": "长椅",
+        "nb_NO": "Benk"
       },
       "description": {
         "en": "Add a new bench",
@@ -483,7 +508,8 @@
         "hu": "Pad hozzáadása",
         "it": "Aggiungi una nuova panchina",
         "ru": "Добавить новую скамейку",
-        "zh_Hans": "增加一个新的长椅"
+        "zh_Hans": "增加一个新的长椅",
+        "nb_NO": "Legg til en ny benk"
       }
     }
   ]
