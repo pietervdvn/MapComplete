@@ -1,1 +1,89 @@
-{}
+{
+    "bench_at_pt": {
+        "title": {
+            "render": "Benk"
+        }
+    },
+    "bench": {
+        "presets": {
+            "0": {
+                "description": "Legg til en ny benk",
+                "title": "Benk"
+            }
+        },
+        "tagRenderings": {
+            "5": {
+                "mappings": {
+                    "7": {
+                        "then": "Farge: gul"
+                    },
+                    "6": {
+                        "then": "Farge: blå"
+                    },
+                    "5": {
+                        "then": "Farge: svart"
+                    },
+                    "4": {
+                        "then": "Farge: rød"
+                    },
+                    "3": {
+                        "then": "Farge: hvit"
+                    },
+                    "2": {
+                        "then": "Farge: grå"
+                    },
+                    "1": {
+                        "then": "Farge: grønn"
+                    },
+                    "0": {
+                        "then": "Farge: brun"
+                    }
+                },
+                "render": "Farge: {colour}"
+            },
+            "3": {
+                "mappings": {
+                    "4": {
+                        "then": "Materiale: plastikk"
+                    },
+                    "5": {
+                        "then": "Materiale: stål"
+                    },
+                    "3": {
+                        "then": "Materiale: betong"
+                    },
+                    "2": {
+                        "then": "Materiale: stein"
+                    },
+                    "1": {
+                        "then": "Materiale: metall"
+                    },
+                    "0": {
+                        "then": "Materiale: tre"
+                    }
+                },
+                "render": "Materiale: {material}"
+            },
+            "2": {
+                "question": "Hvor mange sitteplasser har denne benken?",
+                "render": "{seats} seter"
+            },
+            "1": {
+                "question": "Har denne beken et rygglene?",
+                "mappings": {
+                    "1": {
+                        "then": "Rygglene: Nei"
+                    },
+                    "0": {
+                        "then": "Rygglene: Ja"
+                    }
+                },
+                "render": "Rygglene"
+            }
+        },
+        "title": {
+            "render": "Benk"
+        },
+        "name": "Benker"
+    }
+}
