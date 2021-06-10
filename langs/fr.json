@@ -75,7 +75,7 @@
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "themeBy": "Thème maintenu par {author}",
             "iconAttribution": {
-                "title": "Icones utilisées"
+                "title": "Icônes utilisées"
             },
             "mapContributionsByAndHidden": "La partie actuellement visible des données comporte des modifications par {contributors} et {hiddenCount} contributeurs de plus",
             "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}",

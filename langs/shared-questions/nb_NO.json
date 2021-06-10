@@ -1,0 +1,20 @@
+{
+    "undefined": {
+        "description": {
+            "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
+        },
+        "opening_hours": {
+            "render": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+            "question": "Hva er åpningstidene for {name})"
+        },
+        "website": {
+            "question": "Hva er nettsiden til {name}?"
+        },
+        "email": {
+            "question": "Hva er e-postadressen til {name}?"
+        },
+        "phone": {
+            "question": "Hva er telefonnummeret til {name}?"
+        }
+    }
+}
