@@ -24,7 +24,8 @@
     "id",
     "ru",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",
@@ -41,7 +42,8 @@
         "en": "Charging stations",
         "ru": "Зарядные станции",
         "ja": "充電ステーション",
-        "zh_Hant": "充電站"
+        "zh_Hant": "充電站",
+        "nb_NO": "Ladestasjoner"
       },
       "minzoom": 10,
       "source": {
@@ -56,14 +58,16 @@
           "en": "Charging station",
           "ru": "Зарядная станция",
           "ja": "充電ステーション",
-          "zh_Hant": "充電站"
+          "zh_Hant": "充電站",
+          "nb_NO": "Ladestasjon"
         }
       },
       "description": {
         "en": "A charging station",
         "ru": "Зарядная станция",
         "ja": "充電ステーション",
-        "zh_Hant": "充電站"
+        "zh_Hant": "充電站",
+        "nb_NO": "En ladestasjon"
       },
       "tagRenderings": [
         "images",
@@ -194,7 +198,8 @@
             "en": "When is this charging station opened?",
             "ru": "В какое время работает эта зарядная станция?",
             "ja": "この充電ステーションはいつオープンしますか?",
-            "zh_Hant": "何時是充電站開放使用的時間？"
+            "zh_Hant": "何時是充電站開放使用的時間？",
+            "nb_NO": "Når åpnet denne ladestasjonen?"
           },
           "mappings": [
             {
@@ -209,10 +214,11 @@
             "en": "{network}",
             "ru": "{network}",
             "ja": "{network}",
-            "zh_Hant": "{network}"
+            "zh_Hant": "{network}",
+            "nb_NO": "{network}"
           },
           "question": {
-            "en": "Which is the network of this charging stationg?",
+            "en": "What network of this charging station under?",
             "ru": "К какой сети относится эта станция?",
             "ja": "この充電ステーションの運営チェーンはどこですか?",
             "zh_Hant": "充電站所屬的網路是？"

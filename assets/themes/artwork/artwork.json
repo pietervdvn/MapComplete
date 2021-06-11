@@ -36,7 +36,8 @@
     "ru",
     "ja",
     "zh_Hant",
-    "es"
+    "es",
+    "nb_NO"
   ],
   "icon": "./assets/themes/artwork/artwork.svg",
   "maintainer": "MapComplete",
@@ -56,7 +57,8 @@
         "ru": "Произведения искусства",
         "es": "Obras de arte",
         "ja": "美術品",
-        "zh_Hant": "藝術品"
+        "zh_Hant": "藝術品",
+        "nb_NO": "Kunstverk"
       },
       "source": {
         "osmTags": "tourism=artwork"
@@ -72,7 +74,8 @@
           "ru": "Художественная работа",
           "es": "Obra de arte",
           "ja": "アートワーク",
-          "zh_Hant": "藝術品"
+          "zh_Hant": "藝術品",
+          "nb_NO": "Kunstverk"
         },
         "mappings": [
           {
@@ -128,7 +131,8 @@
             "ru": "Художественная работа",
             "es": "Obra de arte",
             "ja": "アートワーク",
-            "zh_Hant": "藝術品"
+            "zh_Hant": "藝術品",
+            "nb_NO": "Kunstverk"
           }
         }
       ],
@@ -144,7 +148,8 @@
             "ru": "Это {artwork_type}",
             "es": "Esta es un {artwork_type}",
             "ja": "これは{artwork_type}です",
-            "zh_Hant": "這是 {artwork_type}"
+            "zh_Hant": "這是 {artwork_type}",
+            "nb_NO": "Dette er et kunstverk av typen {artwork_type}"
           },
           "question": {
             "en": "What is the type of this artwork?",
@@ -155,7 +160,8 @@
             "ru": "К какому типу относится эта работа?",
             "es": "Cuál es el tipo de esta obra de arte?",
             "ja": "この作品の種類は何ですか?",
-            "zh_Hant": "這是什麼類型的藝術品？"
+            "zh_Hant": "這是什麼類型的藝術品？",
+            "nb_NO": "Hvilken type kunstverk er dette?"
           },
           "freeform": {
             "key": "artwork_type",
@@ -174,7 +180,8 @@
                 "it": "Architettura",
                 "ru": "Архитектура",
                 "ja": "建物",
-                "zh_Hant": "建築物"
+                "zh_Hant": "建築物",
+                "nb_NO": "Arkitektur"
               }
             },
             {
@@ -187,7 +194,8 @@
                 "it": "Murale",
                 "ru": "Фреска",
                 "ja": "壁画",
-                "zh_Hant": "壁畫"
+                "zh_Hant": "壁畫",
+                "nb_NO": "Veggmaleri"
               }
             },
             {
@@ -200,7 +208,8 @@
                 "it": "Dipinto",
                 "ru": "Живопись",
                 "ja": "絵画",
-                "zh_Hant": "繪畫"
+                "zh_Hant": "繪畫",
+                "nb_NO": "Maleri"
               }
             },
             {
@@ -213,7 +222,8 @@
                 "it": "Scultura",
                 "ru": "Скульптура",
                 "ja": "彫刻",
-                "zh_Hant": "雕塑"
+                "zh_Hant": "雕塑",
+                "nb_NO": "Skulptur"
               }
             },
             {
@@ -226,7 +236,8 @@
                 "it": "Statua",
                 "ru": "Статуя",
                 "ja": "彫像",
-                "zh_Hant": "雕像"
+                "zh_Hant": "雕像",
+                "nb_NO": "Statue"
               }
             },
             {
@@ -239,7 +250,8 @@
                 "it": "Busto",
                 "ru": "Бюст",
                 "ja": "胸像",
-                "zh_Hant": "半身像"
+                "zh_Hant": "半身像",
+                "nb_NO": "Byste"
               }
             },
             {
@@ -252,7 +264,8 @@
                 "it": "Masso",
                 "ru": "Камень",
                 "ja": "石",
-                "zh_Hant": "石頭"
+                "zh_Hant": "石頭",
+                "nb_NO": "Stein"
               }
             },
             {
@@ -265,7 +278,8 @@
                 "it": "Istallazione",
                 "ru": "Инсталляция",
                 "ja": "インスタレーション",
-                "zh_Hant": "安裝"
+                "zh_Hant": "安裝",
+                "nb_NO": "Installasjon"
               }
             },
             {
@@ -278,7 +292,8 @@
                 "it": "Graffiti",
                 "ru": "Граффити",
                 "ja": "落書き",
-                "zh_Hant": "塗鴨"
+                "zh_Hant": "塗鴨",
+                "nb_NO": "Graffiti"
               }
             },
             {
@@ -291,7 +306,8 @@
                 "it": "Rilievo",
                 "ru": "Рельеф",
                 "ja": "レリーフ",
-                "zh_Hant": "寬慰"
+                "zh_Hant": "寬慰",
+                "nb_NO": "Relieff"
               }
             },
             {
@@ -304,7 +320,8 @@
                 "it": "Azulejo (ornamento decorativo piastrellato spagnolo)",
                 "ru": "Азуле́жу (испанская роспись глазурованной керамической плитки)",
                 "ja": "Azulejo (スペインの装飾タイル)",
-                "zh_Hant": "Azulejo (西班牙雕塑作品名稱)"
+                "zh_Hant": "Azulejo (西班牙雕塑作品名稱)",
+                "nb_NO": "Azulejo (Spansk dekorativt flisverk)"
               }
             },
             {
@@ -317,7 +334,8 @@
                 "it": "Mosaico di piastrelle",
                 "ru": "Плитка (мозаика)",
                 "ja": "タイルワーク",
-                "zh_Hant": "瓷磚"
+                "zh_Hant": "瓷磚",
+                "nb_NO": "Flisarbeid"
               }
             }
           ]
@@ -331,7 +349,8 @@
             "it": "Quale artista ha creato quest’opera?",
             "ru": "Какой художник создал это?",
             "ja": "どのアーティストが作ったんですか?",
-            "zh_Hant": "創造這個的藝術家是誰？"
+            "zh_Hant": "創造這個的藝術家是誰？",
+            "nb_NO": "Hvilken artist lagde dette?"
           },
           "render": {
             "en": "Created by {artist_name}",
@@ -341,7 +360,8 @@
             "it": "Creato da {artist_name}",
             "ru": "Создано {artist_name}",
             "ja": "作成者:{artist_name}",
-            "zh_Hant": "{artist_name} 創作"
+            "zh_Hant": "{artist_name} 創作",
+            "nb_NO": "Laget av {artist_name}"
           },
           "freeform": {
             "key": "artist_name"
@@ -349,7 +369,7 @@
         },
         {
           "question": {
-            "en": "On which website is more information about this artwork?",
+            "en": "Is there a website with more information about this artwork?",
             "nl": "Op welke website kan men meer informatie vinden over dit kunstwerk?",
             "fr": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
             "de": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",

@@ -14,7 +14,8 @@
     "ja",
     "ca",
     "id",
-    "ru"
+    "ru",
+    "nb_NO"
   ],
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -118,7 +119,8 @@
             "en": "What is the phone number?",
             "nl": "Wat is het telefoonnummer van deze frituur?",
             "fr": "Quel est le numéro de téléphone de cette friterie?",
-            "ja": "電話番号は何番ですか?"
+            "ja": "電話番号は何番ですか?",
+            "nb_NO": "Hva er telefonnummeret?"
           },
           "freeform": {
             "key": "phone",

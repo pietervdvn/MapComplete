@@ -11,7 +11,8 @@
       "nl": "Wat is het telefoonnummer van {name}?",
       "fr": "Quel est le numéro de téléphone de {name} ?",
       "de": "Was ist die Telefonnummer von {name}?",
-      "nb_NO": "Hva er telefonnummeret til {name}?"
+      "nb_NO": "Hva er telefonnummeret til {name}?",
+      "ru": "Какой номер телефона у {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -38,7 +39,8 @@
       "nl": "Wat is het email-adres van {name}?",
       "fr": "Quelle est l'adresse courriel de {name} ?",
       "en": "What is the email address of {name}?",
-      "nb_NO": "Hva er e-postadressen til {name}?"
+      "nb_NO": "Hva er e-postadressen til {name}?",
+      "ru": "Какой адрес электронной почты у {name}?"
     },
     "freeform": {
       "key": "email",
@@ -51,7 +53,8 @@
       "nl": "Wat is de website van {name}?",
       "fr": "Quel est le site web de {name} ?",
       "gl": "Cal é a páxina web de {name}?",
-      "nb_NO": "Hva er nettsiden til {name}?"
+      "nb_NO": "Hva er nettsiden til {name}?",
+      "ru": "Какой сайт у {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -77,14 +80,16 @@
       "fr": "Quelles sont les horaires d'ouverture de {name} ?",
       "de": "Was sind die Öffnungszeiten von {name}?",
       "nl": "Wat zijn de openingsuren van {name}?",
-      "nb_NO": "Hva er åpningstidene for {name})"
+      "nb_NO": "Hva er åpningstidene for {name})",
+      "ru": "Какое время работы у {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
       "fr": "<h3>Horaires d'ouverture</h3>{opening_hours_table(opening_hours)}",
       "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
       "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
-      "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}"
+      "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
+      "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",

@@ -19,6 +19,7 @@
     "en",
     "ja",
     "zh_Hant",
+    "nb_NO",
     "ru",
     "id"
   ],
@@ -36,7 +37,8 @@
       "name": {
         "en": "Map of hydrants",
         "ja": "消火栓の地図",
-        "zh_Hant": "消防栓地圖"
+        "zh_Hant": "消防栓地圖",
+        "nb_NO": "Kart over brannhydranter"
       },
       "minzoom": 14,
       "source": {
@@ -50,23 +52,27 @@
         "render": {
           "en": "Hydrant",
           "ru": "Гидрант",
-          "ja": "消火栓"
+          "ja": "消火栓",
+          "nb_NO": "Brannhydrant"
         }
       },
       "description": {
         "en": "Map layer to show fire hydrants.",
         "ja": "消火栓を表示するマップレイヤ。",
-        "zh_Hant": "顯示消防栓的地圖圖層。"
+        "zh_Hant": "顯示消防栓的地圖圖層。",
+        "nb_NO": "Kartlag for å vise brannhydranter."
       },
       "tagRenderings": [
         {
           "question": {
             "en": "What color is the hydrant?",
-            "ja": "消火栓の色は何色ですか?"
+            "ja": "消火栓の色は何色ですか?",
+            "nb_NO": "Hvilken farge har brannhydranten?"
           },
           "render": {
             "en": "The hydrant color is {colour}",
-            "ja": "消火栓の色は{color}です"
+            "ja": "消火栓の色は{color}です",
+            "nb_NO": "Brannhydranter er {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -255,7 +261,8 @@
           "title": {
             "en": "Fire hydrant",
             "ru": "Пожарный гидрант",
-            "ja": "消火栓"
+            "ja": "消火栓",
+            "nb_NO": "Brannhydrant"
           },
           "description": {
             "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
@@ -269,7 +276,8 @@
       "id": "extinguisher",
       "name": {
         "en": "Map of fire extinguishers.",
-        "ja": "消火器の地図です。"
+        "ja": "消火器の地図です。",
+        "nb_NO": "Kart over brannhydranter"
       },
       "minzoom": 14,
       "source": {
@@ -283,13 +291,15 @@
         "render": {
           "en": "Extinguishers",
           "ru": "Огнетушители",
-          "ja": "消火器"
+          "ja": "消火器",
+          "nb_NO": "Brannslokkere"
         }
       },
       "description": {
         "en": "Map layer to show fire hydrants.",
         "ja": "消火栓を表示するマップレイヤ。",
-        "zh_Hant": "顯示消防栓的地圖圖層。"
+        "zh_Hant": "顯示消防栓的地圖圖層。",
+        "nb_NO": "Kartlag for å vise brannslokkere."
       },
       "tagRenderings": [
         {
@@ -351,7 +361,8 @@
           ],
           "title": {
             "en": "Fire extinguisher",
-            "ja": "消火器"
+            "ja": "消火器",
+            "nb_NO": "Brannslukker"
           },
           "description": {
             "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -365,7 +376,8 @@
       "id": "fire_stations",
       "name": {
         "en": "Map of fire stations",
-        "ja": "消防署の地図"
+        "ja": "消防署の地図",
+        "nb_NO": "Kart over brannstasjoner"
       },
       "minzoom": 12,
       "source": {
@@ -380,7 +392,8 @@
         "render": {
           "en": "Fire Station",
           "ja": "消防署",
-          "ru": "Пожарная часть"
+          "ru": "Пожарная часть",
+          "nb_NO": "Brannstasjon"
         }
       },
       "description": {
@@ -567,7 +580,7 @@
         }
       },
       "description": {
-        "en": "An  ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+        "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。"
       },
       "tagRenderings": [

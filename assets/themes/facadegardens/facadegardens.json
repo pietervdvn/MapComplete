@@ -22,6 +22,7 @@
     "en",
     "ja",
     "zh_Hant",
+    "nb_NO",
     "ru"
   ],
   "maintainer": "joost schouppe; stla",
@@ -137,7 +138,8 @@
               "then": {
                 "nl": "Het is een halfschaduw tuintje",
                 "en": "The garden is in partial shade",
-                "ja": "庭は部分的に日陰である"
+                "ja": "庭は部分的に日陰である",
+                "nb_NO": "Denne hagen er i delvis skygge"
               }
             },
             {

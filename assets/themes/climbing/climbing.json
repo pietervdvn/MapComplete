@@ -6,7 +6,8 @@
     "en": "Open Climbing Map",
     "ru": "Открытая карта скалолазания",
     "ja": "登山地図を開く",
-    "zh_Hant": "開放攀爬地圖"
+    "zh_Hant": "開放攀爬地圖",
+    "nb_NO": "Åpent klatrekart"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -31,6 +32,7 @@
     "ru",
     "ja",
     "zh_Hant",
+    "nb_NO",
     "ca",
     "fr",
     "id"
@@ -52,7 +54,8 @@
         "en": "Climbing club",
         "ru": "Клуб скалолазания",
         "ja": "クライミングクラブ",
-        "zh_Hant": "攀岩社團"
+        "zh_Hant": "攀岩社團",
+        "nb_NO": "Klatreklubb"
       },
       "minzoom": 10,
       "source": {
@@ -80,7 +83,8 @@
           "de": "Kletterverein",
           "ru": "Клуб скалолазания",
           "ja": "クライミングクラブ",
-          "zh_Hant": "攀岩社團"
+          "zh_Hant": "攀岩社團",
+          "nb_NO": "Klatreklubb"
         },
         "mappings": [
           {
@@ -100,7 +104,8 @@
         "nl": "Een klimclub of organisatie",
         "en": "A climbing club or organisations",
         "ja": "クライミングクラブや団体",
-        "zh_Hant": "攀岩社團或組織"
+        "zh_Hant": "攀岩社團或組織",
+        "nb_NO": "En klatreklubb eller organisasjoner"
       },
       "tagRenderings": [
         {
@@ -160,13 +165,15 @@
             "de": "Kletterverein",
             "en": "Climbing club",
             "nl": "Klimclub",
-            "ja": "クライミングクラブ"
+            "ja": "クライミングクラブ",
+            "nb_NO": "Klatreklubb"
           },
           "description": {
             "de": "Ein Kletterverein",
             "nl": "Een klimclub",
             "en": "A climbing club",
-            "ja": "クライミングクラブ"
+            "ja": "クライミングクラブ",
+            "nb_NO": "En klatreklubb"
           }
         },
         {
@@ -285,7 +292,8 @@
         "en": "Climbing routes",
         "de": "Kletterrouten",
         "nl": "Klimroute",
-        "ja": "登坂ルート"
+        "ja": "登坂ルート",
+        "nb_NO": "Klatreruter"
       },
       "minzoom": 18,
       "source": {
@@ -300,7 +308,8 @@
           "de": "Kleterroute",
           "en": "Climbing route",
           "nl": "Klimroute",
-          "ja": "登坂ルート"
+          "ja": "登坂ルート",
+          "nb_NO": "Klatrerute"
         },
         "mappings": [
           {
@@ -361,7 +370,8 @@
             "de": "Diese Route ist {climbing:length} Meter lang",
             "en": "This route is {climbing:length} meter long",
             "nl": "Deze klimroute is {climbing:length} meter lang",
-            "ja": "このルート長は、 {climbing:length} メーターです"
+            "ja": "このルート長は、 {climbing:length} メーターです",
+            "nb_NO": "Denne ruten er {climbing:length} meter lang"
           },
           "freeform": {
             "key": "climbing:length",
@@ -421,14 +431,16 @@
           "en": "Climbing opportunity",
           "nl": "Klimgelegenheid",
           "de": "Klettermöglichkeit",
-          "ja": "登坂教室"
+          "ja": "登坂教室",
+          "nb_NO": "Klatremulighet"
         }
       },
       "description": {
         "nl": "Een klimgelegenheid",
         "de": "Eine Klettergelegenheit",
         "en": "A climbing opportunity",
-        "ja": "登坂教室"
+        "ja": "登坂教室",
+        "nb_NO": "En klatremulighet"
       },
       "tagRenderings": [
         "images",
@@ -495,13 +507,15 @@
             "en": "Climbing opportunity",
             "nl": "Klimgelegenheid",
             "de": "Klettermöglichkeit",
-            "ja": "登坂教室"
+            "ja": "登坂教室",
+            "nb_NO": "Klatremulighet"
           },
           "description": {
             "nl": "Een klimgelegenheid",
             "de": "Eine Klettergelegenheit",
             "en": "A climbing opportunity",
-            "ja": "登坂教室"
+            "ja": "登坂教室",
+            "nb_NO": "En klatremulighet"
           }
         }
       ],
@@ -513,7 +527,8 @@
         "nl": "Klimgelegenheiden?",
         "de": "Klettermöglichkeiten?",
         "en": "Climbing opportunities?",
-        "ja": "登坂教室？"
+        "ja": "登坂教室？",
+        "nb_NO": "Klatremuligheter?"
       },
       "minzoom": 19,
       "source": {
@@ -533,14 +548,16 @@
           "en": "Climbing opportunity?",
           "nl": "Klimgelegenheid?",
           "de": "Klettermöglichkeit?",
-          "ja": "登坂教室？"
+          "ja": "登坂教室？",
+          "nb_NO": "Klatremulighet?"
         }
       },
       "description": {
         "nl": "Een klimgelegenheid?",
         "de": "Eine Klettergelegenheit?",
         "en": "A climbing opportunity?",
-        "ja": "登坂教室？"
+        "ja": "登坂教室？",
+        "nb_NO": "En klatremulighet?"
       },
       "tagRenderings": [
         {
@@ -559,7 +576,8 @@
           "question": {
             "en": "Is climbing possible here?",
             "de": "Kann hier geklettert werden?",
-            "ja": "ここで登坂はできますか?"
+            "ja": "ここで登坂はできますか?",
+            "nb_NO": "Er klatring mulig her?"
           },
           "mappings": [
             {
@@ -571,7 +589,8 @@
               "then": {
                 "en": "Climbing is not possible here",
                 "de": "Hier kann nicht geklettert werden",
-                "ja": "ここでは登ることができない"
+                "ja": "ここでは登ることができない",
+                "nb_NO": "Klatring er ikke mulig her"
               },
               "hideInAnswer": true
             },
@@ -584,7 +603,8 @@
               "then": {
                 "en": "Climbing is possible here",
                 "de": "Hier kann geklettert werden",
-                "ja": "ここでは登ることができる"
+                "ja": "ここでは登ることができる",
+                "nb_NO": "Klatring er mulig her"
               }
             }
           ]
@@ -711,7 +731,8 @@
         "de": "Kann hier gebouldert werden?",
         "en": "Is bouldering possible here?",
         "nl": "Is het mogelijk om hier te bolderen?",
-        "ja": "ここでボルダリングはできますか?"
+        "ja": "ここでボルダリングはできますか?",
+        "nb_NO": "Er buldring mulig her?"
       },
       "mappings": [
         {
@@ -720,7 +741,8 @@
             "de": "Hier kann gebouldert werden",
             "en": "Bouldering is possible here",
             "nl": "Bolderen kan hier",
-            "ja": "ボルダリングはここで可能です"
+            "ja": "ボルダリングはここで可能です",
+            "nb_NO": "Buldring er mulig her"
           }
         },
         {
@@ -729,7 +751,8 @@
             "de": "Hier kann nicht gebouldert werden",
             "en": "Bouldering is not possible here",
             "nl": "Bolderen kan hier niet",
-            "ja": "ここではボルダリングはできません"
+            "ja": "ここではボルダリングはできません",
+            "nb_NO": "Buldring er ikke mulig her"
           }
         },
         {

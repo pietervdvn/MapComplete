@@ -8,7 +8,8 @@
     "it": "Panchine",
     "ru": "Скамейки",
     "ja": "ベンチ",
-    "zh_Hant": "長椅"
+    "zh_Hant": "長椅",
+    "nb_NO": "Benker"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -18,7 +19,8 @@
     "it": "Una mappa delle panchine",
     "ru": "Карта скамеек",
     "ja": "ベンチの地図",
-    "zh_Hant": "長椅的地圖"
+    "zh_Hant": "長椅的地圖",
+    "nb_NO": "Et benkekart"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
@@ -37,7 +39,8 @@
     "it",
     "ru",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "nb_NO"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",

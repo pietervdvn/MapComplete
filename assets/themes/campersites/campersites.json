@@ -30,7 +30,8 @@
     "ja",
     "fr",
     "zh_Hant",
-    "id"
+    "id",
+    "nb_NO"
   ],
   "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersites/caravan.svg",
@@ -148,7 +149,8 @@
                 "it": "Può essere usato gratuitamente",
                 "ru": "Можно использовать бесплатно",
                 "ja": "無料で使用可能",
-                "fr": "Peut être utilisé gratuitement"
+                "fr": "Peut être utilisé gratuitement",
+                "nb_NO": "Kan brukes gratis"
               }
             },
             {
@@ -163,14 +165,16 @@
             "en": "This place charges {charge}",
             "it": "Questo luogo costa {charge}",
             "ru": "Это место взимает {charge}",
-            "ja": "この場所は{charge} が必要"
+            "ja": "この場所は{charge} が必要",
+            "nb_NO": "Dette stedet tar {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
             "it": "Quanto costa questo luogo?",
             "ru": "Сколько это место взимает?",
             "ja": "ここはいくらかかりますか？",
-            "fr": "Combien coûte cet endroit ?"
+            "fr": "Combien coûte cet endroit ?",
+            "nb_NO": "pø"
           },
           "freeform": {
             "key": "charge"
@@ -339,7 +343,8 @@
             "it": "Questo luogo dispone di servizi igienici?",
             "ru": "Здесь есть туалеты?",
             "ja": "ここにトイレはありますか?",
-            "zh_Hant": "這個地方有廁所嗎？"
+            "zh_Hant": "這個地方有廁所嗎？",
+            "nb_NO": "Har dette stedet toaletter?"
           },
           "mappings": [
             {
@@ -354,7 +359,8 @@
                 "it": "Questo luogo ha i servizi igienici",
                 "ru": "В этом месте есть туалеты",
                 "ja": "ここにはトイレがある",
-                "zh_Hant": "這個地方有廁所"
+                "zh_Hant": "這個地方有廁所",
+                "nb_NO": "Dette stedet har toalettfasiliteter"
               }
             },
             {
@@ -369,7 +375,8 @@
                 "it": "Questo luogo non ha i servizi igienici",
                 "ru": "В этом месте нет туалетов",
                 "ja": "ここにはトイレがない",
-                "zh_Hant": "這個地方並沒有廁所"
+                "zh_Hant": "這個地方並沒有廁所",
+                "nb_NO": "Dette stedet har ikke toalettfasiliteter"
               }
             }
           ]
@@ -380,7 +387,8 @@
             "id": "Situs resmi: <a href='{website}'>{website}</a>",
             "ru": "Официальный сайт: <a href='{website}'>{website}</a>",
             "it": "Sito web ufficiale: <a href='{website}'>{website}</a>",
-            "ja": "公式Webサイト: <a href='{website}'>{website}</a>"
+            "ja": "公式Webサイト: <a href='{website}'>{website}</a>",
+            "nb_NO": "Offisiell nettside: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -391,7 +399,8 @@
             "id": "Tempat sini terada situs web?",
             "it": "Questo luogo ha un sito web?",
             "ru": "Есть ли у этого места веб-сайт?",
-            "ja": "ここにはウェブサイトがありますか?"
+            "ja": "ここにはウェブサイトがありますか?",
+            "nb_NO": "Har dette stedet en nettside?"
           }
         },
         {
@@ -443,7 +452,8 @@
           "render": {
             "en": "More details about this place: {description}",
             "ru": "Более подробная информация об этом месте: {description}",
-            "ja": "この場所の詳細:{description}"
+            "ja": "この場所の詳細:{description}",
+            "nb_NO": "Flere detaljer om dette stedet: {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",

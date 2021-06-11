@@ -12,7 +12,8 @@
     "it": "Mappa dei defibrillatori (DAE)",
     "ru": "Открытая карта AED (Автоматизированных внешних дефибрилляторов)",
     "ja": "オープンAEDマップ",
-    "zh_Hant": "開放AED地圖"
+    "zh_Hant": "開放AED地圖",
+    "nb_NO": "Åpne AED-kart"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -41,7 +42,8 @@
     "it",
     "ru",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "nb_NO"
   ],
   "version": "2020-08-29",
   "startLat": 0,
