@@ -1,1 +1,308 @@
-{}
+{
+    "artworks": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "2": {
+                        "question": "Hvilken artist lagde dette?",
+                        "render": "Laget av {artist_name}"
+                    },
+                    "1": {
+                        "mappings": {
+                            "10": {
+                                "then": "Azulejo (Spansk dekorativt flisverk)"
+                            },
+                            "1": {
+                                "then": "Veggmaleri"
+                            },
+                            "2": {
+                                "then": "Maleri"
+                            },
+                            "0": {
+                                "then": "Arkitektur"
+                            },
+                            "11": {
+                                "then": "Flisarbeid"
+                            },
+                            "9": {
+                                "then": "Relieff"
+                            },
+                            "8": {
+                                "then": "Graffiti"
+                            },
+                            "7": {
+                                "then": "Installasjon"
+                            },
+                            "6": {
+                                "then": "Stein"
+                            },
+                            "5": {
+                                "then": "Byste"
+                            },
+                            "4": {
+                                "then": "Statue"
+                            },
+                            "3": {
+                                "then": "Skulptur"
+                            }
+                        },
+                        "question": "Hvilken type kunstverk er dette?",
+                        "render": "Dette er et kunstverk av typen {artwork_type}"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Kunstverk"
+                    }
+                },
+                "title": {
+                    "render": "Kunstverk"
+                },
+                "name": "Kunstverk"
+            }
+        }
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "question": "pø",
+                        "render": "Dette stedet tar {charge}"
+                    },
+                    "11": {
+                        "render": "Flere detaljer om dette stedet: {description}"
+                    },
+                    "9": {
+                        "question": "Har dette stedet en nettside?",
+                        "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
+                    },
+                    "8": {
+                        "mappings": {
+                            "1": {
+                                "then": "Dette stedet har ikke toalettfasiliteter"
+                            },
+                            "0": {
+                                "then": "Dette stedet har toalettfasiliteter"
+                            }
+                        },
+                        "question": "Har dette stedet toaletter?"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Kan brukes gratis"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "2": {
+                "title": {
+                    "render": "Brannstasjon"
+                },
+                "name": "Kart over brannstasjoner"
+            },
+            "1": {
+                "presets": {
+                    "0": {
+                        "title": "Brannslukker"
+                    }
+                },
+                "description": "Kartlag for å vise brannslokkere.",
+                "title": {
+                    "render": "Brannslokkere"
+                },
+                "name": "Kart over brannhydranter"
+            },
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "Brannhydrant"
+                    }
+                },
+                "tagRenderings": {
+                    "0": {
+                        "render": "Brannhydranter er {colour}",
+                        "question": "Hvilken farge har brannhydranten?"
+                    }
+                },
+                "description": "Kartlag for å vise brannhydranter.",
+                "title": {
+                    "render": "Brannhydrant"
+                },
+                "name": "Kart over brannhydranter"
+            }
+        }
+    },
+    "ghostbikes": {
+        "title": "Spøkelsessykler"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "4": {
+                        "question": "Hva er telefonnummeret?"
+                    }
+                }
+            }
+        }
+    },
+    "facadegardens": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Denne hagen er i delvis skygge"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "fietsstraten": {
+        "layers": {
+            "2": {
+                "description": "Lag for å markere hvilken som helst gate som sykkelvei",
+                "name": "Alle gater"
+            },
+            "1": {
+                "title": {
+                    "render": "Fremtidig sykkelvei"
+                },
+                "name": "Fremtidig sykkelvei"
+            }
+        },
+        "roamingRenderings": {
+            "0": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
+                    },
+                    "3": {
+                        "then": "Denne gaten er ikke en sykkelvei"
+                    },
+                    "2": {
+                        "then": "Denne gaten vil bli sykkelvei ganske snart"
+                    },
+                    "1": {
+                        "then": "Denne gaten er en sykkelvei"
+                    }
+                },
+                "question": "Er denne gaten en sykkelvei?"
+            }
+        },
+        "shortDescription": "Et kart over sykkelveier"
+    },
+    "climbing": {
+        "layers": {
+            "4": {
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "1": {
+                                "then": "Klatring er mulig her"
+                            },
+                            "0": {
+                                "then": "Klatring er ikke mulig her"
+                            }
+                        },
+                        "question": "Er klatring mulig her?"
+                    }
+                },
+                "description": "En klatremulighet?",
+                "title": {
+                    "render": "Klatremulighet?"
+                },
+                "name": "Klatremuligheter?"
+            },
+            "3": {
+                "presets": {
+                    "0": {
+                        "description": "En klatremulighet",
+                        "title": "Klatremulighet"
+                    }
+                },
+                "description": "En klatremulighet",
+                "title": {
+                    "render": "Klatremulighet"
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "Denne ruten er {climbing:length} meter lang"
+                    }
+                },
+                "title": {
+                    "render": "Klatrerute"
+                },
+                "name": "Klatreruter"
+            },
+            "0": {
+                "presets": {
+                    "0": {
+                        "description": "En klatreklubb",
+                        "title": "Klatreklubb"
+                    }
+                },
+                "description": "En klatreklubb eller organisasjoner",
+                "title": {
+                    "render": "Klatreklubb"
+                },
+                "name": "Klatreklubb"
+            }
+        },
+        "title": "Åpent klatrekart",
+        "roamingRenderings": {
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": "Buldring er ikke mulig her"
+                    },
+                    "0": {
+                        "then": "Buldring er mulig her"
+                    }
+                },
+                "question": "Er buldring mulig her?"
+            }
+        }
+    },
+    "charging_stations": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "5": {
+                        "question": "Når åpnet denne ladestasjonen?"
+                    },
+                    "6": {
+                        "render": "{network}"
+                    }
+                },
+                "description": "En ladestasjon",
+                "title": {
+                    "render": "Ladestasjon"
+                },
+                "name": "Ladestasjoner"
+            }
+        }
+    },
+    "benches": {
+        "shortDescription": "Et benkekart",
+        "title": "Benker"
+    },
+    "bicyclelib": {
+        "title": "Sykkelbibliotek"
+    },
+    "aed": {
+        "title": "Åpne AED-kart"
+    }
+}
