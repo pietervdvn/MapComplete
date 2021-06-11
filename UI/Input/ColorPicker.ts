@@ -4,46 +4,33 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 export default class ColorPicker extends InputElement<string> {
 
     private readonly value: UIEventSource<string>
-
+private readonly _element : HTMLElement
     constructor(
-        value?: UIEventSource<string>
+        value: UIEventSource<string> = new UIEventSource<string>(undefined)
     ) {
         super();
-        this.value = value ?? new UIEventSource<string>(undefined);
-        const self = this;
+        this.value = value ;
+        
+        const el = document.createElement("input")
+        this._element = el;
+        
+        el.type = "color"
+        
         this.value.addCallbackAndRun(v => {
             if(v === undefined){
                 return;
             }
-            self.SetValue(v);
+           el.value =v
         });
+        
+        el.oninput = () => {
+            const hex = el.value;
+            value.setData(hex);
+        }
     }
 
-
-    InnerRender(): string {
-        return `<span id="${this.id}"><input type='color' id='color-${this.id}'></span>`;
-    }
-    
-    private SetValue(color: string){
-        const field = document.getElementById("color-" + this.id);
-        if (field === undefined || field === null) {
-            return;
-        }
-        // @ts-ignore
-        field.value = color;
-    }
-
-    protected InnerUpdate() {
-        const field = document.getElementById("color-" + this.id);
-        if (field === undefined || field === null) {
-            return;
-        }
-        const self = this;
-        field.oninput = () => {
-            const hex = field["value"];
-            self.value.setData(hex);
-        }
-
+    protected InnerConstructElement(): HTMLElement {
+        return this._element;
     }
 
     GetValue(): UIEventSource<string> {

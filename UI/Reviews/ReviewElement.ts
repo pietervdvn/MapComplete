@@ -8,13 +8,14 @@ import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import SingleReview from "./SingleReview";
+import BaseUIElement from "../BaseUIElement";
 
 export default class ReviewElement extends UIElement {
     private readonly _reviews: UIEventSource<Review[]>;
     private readonly _subject: string;
-    private readonly _middleElement: UIElement;
+    private readonly _middleElement: BaseUIElement;
 
-    constructor(subject: string, reviews: UIEventSource<Review[]>, middleElement: UIElement) {
+    constructor(subject: string, reviews: UIEventSource<Review[]>, middleElement: BaseUIElement) {
         super(reviews);
         this._middleElement = middleElement;
         if (reviews === undefined) {
@@ -26,7 +27,7 @@ export default class ReviewElement extends UIElement {
 
    
 
-    InnerRender(): UIElement {
+    InnerRender(): BaseUIElement {
 
         const elements = [];
         const revs = this._reviews.data;

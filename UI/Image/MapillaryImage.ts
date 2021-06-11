@@ -3,9 +3,10 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/Web/Wikimedia";
 import {Mapillary} from "../../Logic/Web/Mapillary";
 import Svg from "../../Svg";
-import {SimpleImageElement} from "./SimpleImageElement";
 import Combine from "../Base/Combine";
 import Attribution from "./Attribution";
+import Img from "../Base/Img";
+import BaseUIElement from "../BaseUIElement";
 
 
 export class MapillaryImage extends UIElement {
@@ -40,19 +41,19 @@ export class MapillaryImage extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): BaseUIElement {
         const url = `https://images.mapillary.com/${this._imageLocation}/thumb-640.jpg?client_id=TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2`;
-        const image = new SimpleImageElement(new UIEventSource<string>(url))
+        const image = new Img(url)
         
         const meta = this._imageMeta?.data;
         if (!meta) {
-            return image.Render();
+            return image;
         }
 
         return new Combine([
             image,
             new Attribution(meta.artist, meta.license, Svg.mapillary_svg())
-        ]).SetClass("relative block").Render();
+        ]).SetClass("relative block");
 
     }
 

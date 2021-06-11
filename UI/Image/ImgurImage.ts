@@ -4,7 +4,8 @@ import {LicenseInfo} from "../../Logic/Web/Wikimedia";
 import {Imgur} from "../../Logic/Web/Imgur";
 import Combine from "../Base/Combine";
 import Attribution from "./Attribution";
-import {SimpleImageElement} from "./SimpleImageElement";
+import BaseUIElement from "../BaseUIElement";
+import Img from "../Base/Img";
 
 
 export class ImgurImage extends UIElement {
@@ -35,11 +36,11 @@ export class ImgurImage extends UIElement {
       
     }
 
-    InnerRender(): string {
-        const image = new SimpleImageElement( new UIEventSource (this._imageLocation));
+    InnerRender(): BaseUIElement {
+        const image = new Img( this._imageLocation);
         
         if(this._imageMeta.data === null){
-            return image.Render();
+            return image;
         }
         
         const meta = this._imageMeta.data;
@@ -48,7 +49,7 @@ export class ImgurImage extends UIElement {
             new Attribution(meta.artist, meta.license, undefined),
             
         ]).SetClass('block relative')
-            .Render();
+            ;
 
     }
 

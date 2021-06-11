@@ -6,11 +6,12 @@ import Combine from "./Base/Combine";
 import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations from "./SpecialVisualizations";
+import BaseUIElement from "./BaseUIElement";
 
 export class SubstitutedTranslation extends UIElement {
     private readonly tags: UIEventSource<any>;
     private readonly translation: Translation;
-    private content: UIElement[];
+    private content: BaseUIElement[];
 
     private constructor(
         translation: Translation,
@@ -54,7 +55,7 @@ export class SubstitutedTranslation extends UIElement {
         return new Combine(this.content);
     }
 
-    private CreateContent(): UIElement[] {
+    private CreateContent(): BaseUIElement[] {
         let txt = this.translation?.txt;
         if (txt === undefined) {
             return []
@@ -64,7 +65,7 @@ export class SubstitutedTranslation extends UIElement {
         return this.EvaluateSpecialComponents(txt);
     }
 
-    private EvaluateSpecialComponents(template: string): UIElement[] {
+    private EvaluateSpecialComponents(template: string): BaseUIElement[] {
 
         for (const knownSpecial of SpecialVisualizations.specialVisualizations) {
 

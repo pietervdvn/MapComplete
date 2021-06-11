@@ -6,8 +6,11 @@ import {UIElement} from "../../UI/UIElement";
 import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer";
 import {ElementStorage} from "../ElementStorage";
 import Combine from "../../UI/Base/Combine";
+import BaseUIElement from "../../UI/BaseUIElement";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
-class TitleElement extends UIElement {
+class TitleElement extends UIEventSource<string> {
+    
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
     private readonly _selectedFeature: UIEventSource<any>;
     private readonly _allElementsStorage: ElementStorage;
@@ -15,41 +18,43 @@ class TitleElement extends UIElement {
     constructor(layoutToUse: UIEventSource<LayoutConfig>,
                 selectedFeature: UIEventSource<any>,
                 allElementsStorage: ElementStorage) {
-        super(layoutToUse);
+        super("MapComplete");
+        
         this._layoutToUse = layoutToUse;
         this._selectedFeature = selectedFeature;
         this._allElementsStorage = allElementsStorage;
-        this.ListenTo(Locale.language);
-        this.ListenTo(this._selectedFeature)
-    }
+        
+        this.syncWith(
+            this._selectedFeature.map(
+                selected => {
+                    const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ??"MapComplete"
 
-    InnerRender(): string {
+                    if(selected === undefined){
+                        return defaultTitle
+                    }
 
-        const defaultTitle = Translations.WT(this._layoutToUse.data?.title)?.txt ?? "MapComplete"
-        const feature = this._selectedFeature.data;
-
-        if (feature === undefined) {
-            return defaultTitle;
-        }
+                    const layout = layoutToUse.data;
+                    const tags = selected.properties;
 
 
-        const layout = this._layoutToUse.data;
-        const properties = this._selectedFeature.data.properties;
+                    for (const layer of layout.layers) {
+                        if (layer.title === undefined) {
+                            continue;
+                        }
+                        if (layer.source.osmTags.matchesProperties(tags)) {
+                            const title = new TagRenderingAnswer(tags, layer.title)
+                            return new Combine([defaultTitle, " | ", title]).ConstructElement().innerText;
+                        }
+                    }
 
-        for (const layer of layout.layers) {
-            if (layer.title === undefined) {
-                continue;
-            }
-            if (layer.source.osmTags.matchesProperties(properties)) {
-                const tags = this._allElementsStorage.getEventSourceById(feature.properties.id);
-                if (tags == undefined) {
-                    return defaultTitle;
+                    return defaultTitle
                 }
-                const title = new TagRenderingAnswer(tags, layer.title)
-                return new Combine([defaultTitle, " | ", title]).Render();
-            }
-        }
-        return defaultTitle;
+                , [Locale.language, layoutToUse]
+            )
+            
+        )
+        
+        
     }
 
 }
@@ -58,14 +63,8 @@ export default class TitleHandler {
     constructor(layoutToUse: UIEventSource<LayoutConfig>,
                 selectedFeature: UIEventSource<any>,
                 allElementsStorage: ElementStorage) {
-
-        selectedFeature.addCallbackAndRun(_ => {
-            const title = new TitleElement(layoutToUse, selectedFeature, allElementsStorage)
-            const d = document.createElement('div');
-            d.innerHTML = title.InnerRenderAsString();
-            // We pass everything into a div to strip out images etc...
-            document.title = (d.textContent || d.innerText);
+        new TitleElement(layoutToUse, selectedFeature, allElementsStorage).addCallbackAndRun(title => {
+            document.title = title
         })
-
     }
 }

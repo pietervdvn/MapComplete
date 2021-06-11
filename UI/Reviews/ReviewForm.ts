@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {InputElement} from "../Input/InputElement";
 import {Review} from "../../Logic/Web/Review";
 import {UIEventSource} from "../../Logic/UIEventSource";
@@ -10,16 +9,18 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {SaveButton} from "../Popup/SaveButton";
 import CheckBoxes from "../Input/Checkboxes";
 import UserDetails from "../../Logic/Osm/OsmConnection";
+import BaseUIElement from "../BaseUIElement";
+import Toggle from "../Input/Toggle";
 
 export default class ReviewForm extends InputElement<Review> {
 
     private readonly _value: UIEventSource<Review>;
-    private readonly _comment: UIElement;
-    private readonly _stars: UIElement;
-    private _saveButton: UIElement;
-    private readonly _isAffiliated: UIElement;
+    private readonly _comment: BaseUIElement;
+    private readonly _stars: BaseUIElement;
+    private _saveButton: BaseUIElement;
+    private readonly _isAffiliated: BaseUIElement;
     private userDetails: UIEventSource<UserDetails>;
-    private readonly _postingAs: UIElement;
+    private readonly _postingAs: BaseUIElement;
 
 
     constructor(onSave: ((r: Review, doneSaving: (() => void)) => void), userDetails: UIEventSource<UserDetails>) {
@@ -86,13 +87,9 @@ export default class ReviewForm extends InputElement<Review> {
         return this._value;
     }
 
-    InnerRender(): UIElement {
+    InnerConstructElement(): HTMLElement {
 
-        if(!this.userDetails.data.loggedIn){
-            return Translations.t.reviews.plz_login;
-        }
-
-        return new Combine([
+        const form = new Combine([
             new Combine([this._stars, this._postingAs]).SetClass("review-form-top"),
             this._comment,
             new Combine([
@@ -103,6 +100,11 @@ export default class ReviewForm extends InputElement<Review> {
             Translations.t.reviews.tos.SetClass("subtle")
         ])
             .SetClass("review-form")
+
+
+        return new Toggle(form, Translations.t.reviews.plz_login, 
+            this.userDetails.map(userdetails => userdetails.loggedIn))
+            .ConstructElement()
     }
 
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);

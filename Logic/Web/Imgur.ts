@@ -10,11 +10,8 @@ export class Imgur {
         handleSuccessfullUpload: ((imageURL: string) => void),
         allDone: (() => void),
         onFail: ((reason: string) => void),
-        offset:number) {
+        offset:number = 0) {
 
-        if(offset === undefined){
-            throw "Offset undefined - not uploading to prevent to much uploads!"
-        }
         if (blobs.length == offset) {
             allDone();
             return;
@@ -36,6 +33,7 @@ export class Imgur {
 
 
     }
+    
     static getDescriptionOfImage(url: string,
                        handleDescription: ((license: LicenseInfo) => void)) {
 

@@ -6,6 +6,7 @@ import Combine from "../Base/Combine";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {Translation} from "../i18n/Translation";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import BaseUIElement from "../BaseUIElement";
 
 /***
  * Displays the correct value for a known tagrendering
@@ -13,7 +14,7 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 export default class TagRenderingAnswer extends UIElement {
     private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
-    private _content: UIElement;
+    private _content: BaseUIElement;
     private readonly _contentClass: string;
     private _contentStyle: string;
 
@@ -30,7 +31,7 @@ export default class TagRenderingAnswer extends UIElement {
         this.SetStyle("word-wrap: anywhere;");
     }
 
-    InnerRender(): string | UIElement{
+    InnerRender(): string | BaseUIElement{
         if (this._configuration.condition !== undefined) {
             if (!this._configuration.condition.matchesProperties(this._tags.data)) {
                 return "";
@@ -74,8 +75,7 @@ export default class TagRenderingAnswer extends UIElement {
                     this._content = valuesToRender[0];
                 } else {
                     this._content = new Combine(["<ul>",
-                        ...valuesToRender.map(tr => new Combine(["<li>", tr, "</li>"]))
-                        ,
+                        ...valuesToRender.map(tr => new Combine(["<li>", tr, "</li>"]))                        ,
                         "</ul>"
                     ])
 

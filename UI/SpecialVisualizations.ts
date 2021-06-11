@@ -1,4 +1,3 @@
-import {UIElement} from "./UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
@@ -17,12 +16,15 @@ import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
 
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
+import BaseUIElement from "./BaseUIElement";
 
 export default class SpecialVisualizations {
+    
+    
 
     public static specialVisualizations: {
         funcName: string,
-        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => UIElement),
+        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
         docs: string,
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
@@ -36,6 +38,9 @@ export default class SpecialVisualizations {
                 return new VariableUiElement(tags.map(tags => {
                     const parts = [];
                     for (const key in tags) {
+                        if(!tags.hasOwnProperty(key)){
+                            continue;
+                        }
                         parts.push(key + "=" + tags[key]);
                     }
                     return parts.join("<br/>")
@@ -179,7 +184,7 @@ export default class SpecialVisualizations {
             }
 
         ]
-    static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();
+    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
 
     private static GenHelpMessage() {
 

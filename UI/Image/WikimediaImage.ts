@@ -4,8 +4,9 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Svg from "../../Svg";
 import Link from "../Base/Link";
 import Combine from "../Base/Combine";
-import {SimpleImageElement} from "./SimpleImageElement";
 import Attribution from "./Attribution";
+import BaseUIElement from "../BaseUIElement";
+import Img from "../Base/Img";
 
 
 export class WikimediaImage extends UIElement {
@@ -34,14 +35,14 @@ export class WikimediaImage extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): BaseUIElement {
         const url = Wikimedia.ImageNameToUrl(this._imageLocation, 500, 400)
             .replace(/'/g, '%27');
-        const image = new SimpleImageElement(new UIEventSource<string>(url))
+        const image = new Img(url)
         const meta = this._imageMeta?.data;
 
         if (!meta) {
-            return image.Render();
+            return image;
         }
         new Link(Svg.wikimedia_commons_white_img,
             `https://commons.wikimedia.org/wiki/${this._imageLocation}`, true)
@@ -50,7 +51,7 @@ export class WikimediaImage extends UIElement {
         return new Combine([
             image,
             new Attribution(meta.artist, meta.license, Svg.wikimedia_commons_white_svg())
-        ]).SetClass("relative block").Render()
+        ]).SetClass("relative block")
 
     }
 

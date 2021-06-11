@@ -6,14 +6,15 @@ import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
+import BaseUIElement from "../BaseUIElement";
 
 
 export default class DeleteImage extends UIElement {
     private readonly key: string;
     private readonly tags: UIEventSource<any>;
 
-    private readonly isDeletedBadge: UIElement;
-    private readonly deleteDialog: UIElement;
+    private readonly isDeletedBadge: BaseUIElement;
+    private readonly deleteDialog: BaseUIElement;
 
     constructor(key: string, tags: UIEventSource<any>) {
         super(tags);

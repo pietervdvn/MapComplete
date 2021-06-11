@@ -6,16 +6,17 @@ import DeleteImage from "./DeleteImage";
 import {WikimediaImage} from "./WikimediaImage";
 import {ImgurImage} from "./ImgurImage";
 import {MapillaryImage} from "./MapillaryImage";
-import {SimpleImageElement} from "./SimpleImageElement";
+import BaseUIElement from "../BaseUIElement";
+import Img from "../Base/Img";
 
 export class ImageCarousel extends UIElement{
 
-    public readonly slideshow: UIElement;
+    public readonly slideshow: BaseUIElement;
 
     constructor(images: UIEventSource<{key: string, url:string}[]>, tags: UIEventSource<any>) {
         super(images);
         const uiElements = images.map((imageURLS: {key: string, url:string}[]) => {
-            const uiElements: UIElement[] = [];
+            const uiElements: BaseUIElement[] = [];
             for (const url of imageURLS) {
                 let image = ImageCarousel.CreateImageElement(url.url)
                 if(url.key !== undefined){
@@ -41,7 +42,7 @@ export class ImageCarousel extends UIElement{
      * @param url
      * @constructor
      */
-    private static CreateImageElement(url: string): UIElement {
+    private static CreateImageElement(url: string): BaseUIElement {
         // @ts-ignore
         if (url.startsWith("File:")) {
             return new WikimediaImage(url);
@@ -53,11 +54,11 @@ export class ImageCarousel extends UIElement{
         } else if (url.toLowerCase().startsWith("https://www.mapillary.com/map/im/")) {
             return new MapillaryImage(url);
         } else {
-            return new SimpleImageElement(new UIEventSource<string>(url));
+            return new Img(url);
         }
     }
     
-    InnerRender(): string {
-        return this.slideshow.Render();
+    InnerRender() {
+        return this.slideshow;
     }
 }

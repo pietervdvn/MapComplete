@@ -2,6 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
 import {UIElement} from "../UIElement";
+import BaseUIElement from "../BaseUIElement";
 
 /**
  * Supports multi-input
@@ -10,15 +11,24 @@ export default class CheckBoxes extends InputElement<number[]> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     private readonly value: UIEventSource<number[]>;
-    private readonly _elements: UIElement[]
+    private readonly _elements: BaseUIElement[]
+    
+    
+private readonly _element : HTMLElement
 
-
-    constructor(elements: UIElement[]) {
-        super(undefined);
+    constructor(elements: BaseUIElement[]) {
+        super();
         this._elements = Utils.NoNull(elements);
-
         this.value = new UIEventSource<number[]>([])
-        this.ListenTo(this.value);
+        
+        
+        const el = document.createElement()
+        this._element = el;
+        
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+        return this._element
     }
 
 

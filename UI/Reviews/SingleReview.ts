@@ -5,6 +5,7 @@ import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
 import ReviewElement from "./ReviewElement";
+import BaseUIElement from "../BaseUIElement";
 
 export default class SingleReview extends UIElement{
     private _review: Review;
@@ -13,7 +14,7 @@ export default class SingleReview extends UIElement{
         this._review = review;
       
     }
-    public static GenStars(rating: number): UIElement {
+    public static GenStars(rating: number): BaseUIElement {
         if (rating === undefined) {
             return Translations.t.reviews.no_rating;
         }
@@ -26,7 +27,7 @@ export default class SingleReview extends UIElement{
             scoreTen % 2 == 1 ? "<img src='./assets/svg/star_half.svg' class='h-8 md:h-12'/>" : ""
         ]).SetClass("flex w-max")
     }
-    InnerRender(): UIElement {
+    InnerRender(): BaseUIElement {
         const d = this._review.date;
         let review = this._review;
         const el=  new Combine(
