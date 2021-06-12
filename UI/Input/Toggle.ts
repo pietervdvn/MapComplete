@@ -10,12 +10,13 @@ export default class Toggle extends VariableUiElement{
 
     public readonly isEnabled: UIEventSource<boolean>;
 
-    constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, data: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
+    constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, isEnabled: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
         super(
-            data.map(isEnabled => isEnabled ? showEnabled : showDisabled)
+            isEnabled.map(isEnabled => isEnabled ? showEnabled : showDisabled)
         );
+        this.isEnabled = isEnabled
         this.onClick(() => {
-            data.setData(!data.data);
+            isEnabled.setData(!isEnabled.data);
         })
 
     }

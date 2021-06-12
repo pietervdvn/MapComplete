@@ -24,6 +24,7 @@ export class OsmConnection {
 
     public auth;
     public userDetails: UIEventSource<UserDetails>;
+    public isLoggedIn: UIEventSource<boolean>
     _dryRun: boolean;
 
     public preferencesHandler: OsmPreferences;
@@ -42,6 +43,7 @@ export class OsmConnection {
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
         this.userDetails.data.dryRun = dryRun;
+        this.isLoggedIn = this.userDetails.map(user => user.loggedIn)
         this._dryRun = dryRun;
         
         this.updateAuthObject();

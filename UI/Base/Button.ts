@@ -1,9 +1,10 @@
 import {UIElement} from "../UIElement";
 import Locale from "../i18n/Locale";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
 
 export class Button extends UIElement {
-    private _text: UIElement;
+    private _text: BaseUIElement;
     private _onclick: () => void;
     private _clss: string;
 

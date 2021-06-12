@@ -8,20 +8,20 @@ import Svg from "../../Svg";
 import {SubtleButton} from "../Base/SubtleButton";
 import State from "../../State";
 import Combine from "../Base/Combine";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {Tag} from "../../Logic/Tags/Tag";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import BaseUIElement from "../BaseUIElement";
 
 export default class SimpleAddUI extends UIElement {
-    private readonly _loginButton: UIElement;
+    private readonly _loginButton: BaseUIElement;
 
     private readonly _confirmPreset: UIEventSource<{
-        description: string | UIElement,
-        name: string | UIElement,
-        icon: UIElement,
+        description: string | BaseUIElement,
+        name: string | BaseUIElement,
+        icon: BaseUIElement,
         tags: Tag[],
         layerToAddTo: {
             layerDef: LayerConfig,
@@ -30,11 +30,11 @@ export default class SimpleAddUI extends UIElement {
     }>
         = new UIEventSource(undefined);
 
-    private _component: UIElement;
+    private _component:BaseUIElement;
 
-    private readonly openLayerControl: UIElement;
-    private readonly cancelButton: UIElement;
-    private readonly goToInboxButton: UIElement = new SubtleButton(Svg.envelope_ui(),
+    private readonly openLayerControl: BaseUIElement;
+    private readonly cancelButton: BaseUIElement;
+    private readonly goToInboxButton: BaseUIElement = new SubtleButton(Svg.envelope_ui(),
         Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
 
     constructor(isShown: UIEventSource<boolean>) {
@@ -75,16 +75,15 @@ export default class SimpleAddUI extends UIElement {
         State.state.LastClickLocation.addCallback(() => {
             self._confirmPreset.setData(undefined)
         })
-
-    }
-
-    InnerRender(): string {
         this._component = this.CreateContent();
-        return this._component.Render();
+    }
+
+    InnerRender(): BaseUIElement {
+       return this._component;
 
     }
 
-    private CreatePresetsPanel(): UIElement {
+    private CreatePresetsPanel(): BaseUIElement {
         const userDetails = State.state.osmConnection.userDetails;
         if (userDetails === undefined) {
             return undefined;
@@ -121,21 +120,17 @@ export default class SimpleAddUI extends UIElement {
     }
 
 
-    private CreateContent(): UIElement {
+    private CreateContent(): BaseUIElement {
         const confirmPanel = this.CreateConfirmPanel();
         if (confirmPanel !== undefined) {
             return confirmPanel;
         }
 
-        let intro: UIElement = Translations.t.general.add.intro;
+        let intro: BaseUIElement = Translations.t.general.add.intro;
 
-        let testMode: UIElement = undefined;
+        let testMode: BaseUIElement = undefined;
         if (State.state.osmConnection?.userDetails?.data?.dryRun) {
-            testMode = new Combine([
-                "<span class='alert'>",
-                "Test mode - changes won't be saved",
-                "</span>"
-            ]);
+            testMode = Translations.t.general.testing.Clone().SetClass("alert")
         }
 
         let presets = this.CreatePresetsPanel();
@@ -144,7 +139,7 @@ export default class SimpleAddUI extends UIElement {
 
     }
 
-    private CreateConfirmPanel(): UIElement {
+    private CreateConfirmPanel(): BaseUIElement {
         const preset = this._confirmPreset.data;
         if (preset === undefined) {
             return undefined;
@@ -195,7 +190,7 @@ export default class SimpleAddUI extends UIElement {
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon: UIElement = new FixedUiElement(layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.Render()).SetClass("simple-add-ui-icon");
+                let icon: BaseUIElement = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.SetClass("simple-add-ui-icon");
 
                 const csCount = State.state.osmConnection.userDetails.data.csCount;
                 let tagInfo = undefined;

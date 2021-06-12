@@ -70,10 +70,6 @@ export default class State {
         readonly  layerDef: LayerConfig;
     }[]>([])
 
-    /**
-     *  The message that should be shown at the center of the screen
-     */
-    public readonly centerMessage = new UIEventSource<string>("");
 
     /**
      The latest element that was selected

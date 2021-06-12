@@ -1,7 +1,4 @@
 import {UIElement} from "../UIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Svg from "../../Svg";
-import State from "../../State";
 
 export default class Ornament extends UIElement {
 

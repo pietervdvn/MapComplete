@@ -132,8 +132,16 @@ export default class MoreScreen extends Combine {
             linkSuffix = `#${customThemeDefinition}`
         }
 
-        const linkText = currentLocation.map(currentLocation => 
-            `${linkPrefix}z=${currentLocation.zoom ?? 1}&lat=${currentLocation.lat ?? 0}&lon=${currentLocation.lon ?? 0}${linkSuffix}`)
+        const linkText = currentLocation.map(currentLocation => {
+            const params = [
+                ["z", currentLocation?.zoom],
+                ["lat", currentLocation?.lat],
+                ["lon",currentLocation?.lon]
+            ].filter(part => part[1] !== undefined)
+                .map(part => part[0]+"="+part[1])
+                .join("&")
+            return `${linkPrefix}${params}${linkSuffix}`;
+        })
 
   
        

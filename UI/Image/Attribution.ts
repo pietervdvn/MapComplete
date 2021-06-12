@@ -1,10 +1,11 @@
 import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
 
 export default class Attribution extends Combine {
 
-    constructor(author: UIElement | string, license: UIElement | string, icon: UIElement) {
+    constructor(author: BaseUIElement | string, license: BaseUIElement | string, icon: BaseUIElement) {
         super([
             icon?.SetClass("block left").SetStyle("height: 2em; width: 2em; padding-right: 0.5em"),
             new Combine([

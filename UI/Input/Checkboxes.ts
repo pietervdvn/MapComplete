@@ -1,7 +1,6 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
-import {UIElement} from "../UIElement";
 import BaseUIElement from "../BaseUIElement";
 
 /**
@@ -10,20 +9,57 @@ import BaseUIElement from "../BaseUIElement";
 export default class CheckBoxes extends InputElement<number[]> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
-    private readonly value: UIEventSource<number[]>;
-    private readonly _elements: BaseUIElement[]
-    
     
 private readonly _element : HTMLElement
-
-    constructor(elements: BaseUIElement[]) {
+    
+    private static _nextId = 0;
+private readonly value: UIEventSource<number[]>
+    constructor(elements: BaseUIElement[], value =new UIEventSource<number[]>([])) {
         super();
-        this._elements = Utils.NoNull(elements);
-        this.value = new UIEventSource<number[]>([])
+        this.value = value;
+        elements = Utils.NoNull(elements);
         
-        
-        const el = document.createElement()
-        this._element = el;
+        const el = document.createElement("form")
+     
+        for (let i = 0; i < elements.length; i++) {
+           
+            let inputI = elements[i];
+            const input = document.createElement("input")
+            const id = CheckBoxes._nextId
+            CheckBoxes._nextId ++;
+            input.id = "checkbox"+id
+
+            input.type = "checkbox"
+            const label = document.createElement("label")
+            label.htmlFor = input.id
+            label.appendChild(inputI.ConstructElement())
+
+            value.addCallbackAndRun(selectedValues =>{
+                if(selectedValues === undefined){
+                    return;
+                }
+                if(selectedValues.indexOf(i) >= 0){
+                    input.checked = true;
+                }
+            })
+
+            input.onchange = () => {
+                const index = value.data.indexOf(i);
+                if(input.checked && index < 0){
+                    value.data.push(i);
+                    value.ping();
+                }else if(index >= 0){
+                    value.data.splice(index,1);
+                    value.ping();
+                }
+            }
+
+
+            el.appendChild(input)
+            el.appendChild(document.createElement("br"))
+        }
+
+
         
     }
 
@@ -42,50 +78,6 @@ private readonly _element : HTMLElement
     }
 
 
-    private IdFor(i) {
-        return 'checkmark-' + this.id + '-' + i;
-    }
-
-    InnerRender(): string {
-        let body = "";
-        for (let i = 0; i < this._elements.length; i++) {
-            let el = this._elements[i];
-            const htmlElement =
-                `<input type="checkbox" id="${this.IdFor(i)}"><label for="${this.IdFor(i)}">${el.Render()}</label><br/>`;
-            body += htmlElement;
-
-        }
-        
-        return `<form id='${this.id}'>${body}</form>`;
-    }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        const self = this;
-
-        for (let i = 0; i < this._elements.length; i++) {
-            const el = document.getElementById(this.IdFor(i));
-            
-            if(this.value.data.indexOf(i) >= 0){
-                // @ts-ignore
-                el.checked = true;
-            }
-
-            el.onchange = () => {
-                const index = self.value.data.indexOf(i);
-                // @ts-ignore
-                if(el.checked && index < 0){
-                    self.value.data.push(i);
-                    self.value.ping();
-                }else if(index >= 0){
-                    self.value.data.splice(index,1);
-                    self.value.ping();
-                }
-            }
-
-        }
-
-
-    }
 
 
 }

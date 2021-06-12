@@ -128,7 +128,7 @@ export default class ShowDataLayer {
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
         return L.marker(latLng, {
             icon: L.divIcon({
-                html: style.icon.html.Render(),
+                html: style.icon.html.ConstructElement(),
                 className: style.icon.className,
                 iconAnchor: style.icon.iconAnchor,
                 iconUrl: style.icon.iconUrl,

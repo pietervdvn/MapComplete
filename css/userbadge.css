@@ -55,17 +55,6 @@
     display: block;
 }
 
-#profile-pic {
-    float: left;
-    width: 4em;
-    height: 4em;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 500ms linear;
-    border-radius: 999em;
-}
-
 .usertext {
     display: block;
     width: max-content;

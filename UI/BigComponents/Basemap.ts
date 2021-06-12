@@ -1,8 +1,8 @@
 import * as L from "leaflet"
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import {UIElement} from "../UIElement";
 import BaseLayer from "../../Models/BaseLayer";
+import BaseUIElement from "../BaseUIElement";
 
 export class Basemap {
 
@@ -13,13 +13,12 @@ export class Basemap {
                 location: UIEventSource<Loc>,
                 currentLayer: UIEventSource<BaseLayer>,
                 lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                extraAttribution: UIElement) {
+                extraAttribution: BaseUIElement) {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
             layers: [currentLayer.data.layer],
-            zoomControl: false
-            
+            zoomControl: false,
         });
 
         L.control.scale(
@@ -36,8 +35,10 @@ export class Basemap {
             [[-100, -200], [100, 200]]
         );
         this.map.attributionControl.setPrefix(
-            extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
+            "<span id='leaflet-attribution'></span> | <a href='https://osm.org'>OpenStreetMap</a>");
 
+        extraAttribution.AttachTo('leaflet-attribution')
+        
         const self = this;
 
         let previousLayer = currentLayer.data;

@@ -98,7 +98,6 @@ new Combine(["Initializing... <br/>",
 
         })])
     .AttachTo("centermessage"); // Add an initialization and reset button if something goes wrong
-
 document.getElementById("decoration-desktop").remove();
 
 

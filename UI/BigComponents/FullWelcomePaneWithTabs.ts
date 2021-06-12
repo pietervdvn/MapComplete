@@ -16,21 +16,14 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
+import BaseUIElement from "../BaseUIElement";
 
-export default class FullWelcomePaneWithTabs extends UIElement {
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
-    private readonly _userDetails: UIEventSource<UserDetails>;
+export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
-    private readonly _component: UIElement;
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(State.state.layoutToUse);
-        this._layoutToUse = State.state.layoutToUse;
-        this._userDetails = State.state.osmConnection.userDetails;
-        const layoutToUse = this._layoutToUse.data;
-      
-
-        this._component = new ScrollableFullScreen(
+        const layoutToUse = State.state.layoutToUse.data;
+        super (
             () => layoutToUse.title.Clone(),
             () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails),
             "welcome" ,isShown
@@ -43,11 +36,11 @@ export default class FullWelcomePaneWithTabs extends UIElement {
         if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
         }
-        const tabs = [
+        const tabs : {header: string | BaseUIElement, content: BaseUIElement}[] = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {
                 header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline") as UIElement
+                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline")
             },
 
         ]
@@ -71,18 +64,13 @@ export default class FullWelcomePaneWithTabs extends UIElement {
                     if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
                         return ""
                     }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).SetClass("link-underline").Render();
+                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).SetClass("link-underline");
                 }, [Locale.language]))
             }
         );
 
-        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
-            .ListenTo(userDetails);
+        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab);
     }
 
-    InnerRender(): UIElement {
-        return this._component;
-
-    }
 
 }

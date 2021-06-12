@@ -7,6 +7,7 @@ import {OH} from "./OpeningHours";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import opening_hours from "opening_hours";
+import BaseUIElement from "../BaseUIElement";
 
 export default class OpeningHoursVisualization extends UIElement {
     private static readonly weekdays = [
@@ -87,7 +88,7 @@ export default class OpeningHoursVisualization extends UIElement {
         return new Date(d.setDate(diff));
     }
 
-    InnerRender(): string | UIElement {
+    InnerRender(): string | BaseUIElement {
 
 
         const today = new Date();
@@ -168,13 +169,13 @@ export default class OpeningHoursVisualization extends UIElement {
         latestclose = Math.max(19 * 60 * 60, latestclose + 30 * 60)
 
 
-        const rows: UIElement[] = [];
+        const rows: BaseUIElement[] = [];
         const availableArea = latestclose - earliestOpen;
         // @ts-ignore
         const now = (100 * (((new Date() - today) / 1000) - earliestOpen)) / availableArea;
 
 
-        let header: UIElement[] = [];
+        let header: BaseUIElement[] = [];
 
         if (now >= 0 && now <= 100) {
             header.push(new FixedUiElement("").SetStyle(`left:${now}%;`).SetClass("ohviz-now"))
@@ -218,7 +219,7 @@ export default class OpeningHoursVisualization extends UIElement {
                 dateToShow = "" + day.getDate() + "/" + (day.getMonth() + 1);
             }
 
-            let innerContent: (string | UIElement)[] = [];
+            let innerContent: (string | BaseUIElement)[] = [];
 
             // Add the lines
             for (const changeMoment of changeHours) {
@@ -265,7 +266,7 @@ export default class OpeningHoursVisualization extends UIElement {
 
         return new Combine([
             "<table class='ohviz' style='width:100%; word-break: normal; word-wrap: normal'>",
-            ...rows.map(el => "<tr>" + el.Render() + "</tr>"),
+            ...rows.map(el => new Combine(["<tr>" ,el , "</tr>"])),
             "</table>"
         ]).SetClass("ohviz-container");
     }

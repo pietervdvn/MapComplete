@@ -22,6 +22,7 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import {And} from "../../Logic/Tags/And";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import BaseUIElement from "../BaseUIElement";
 
 /**
  * Shows the question element.
@@ -35,7 +36,7 @@ export default class TagRenderingQuestion extends UIElement {
 
     private _inputElement: InputElement<TagsFilter>;
     private _cancelButton: UIElement;
-    private _appliedTags: UIElement;
+    private _appliedTags: BaseUIElement;
     private _question: UIElement;
 
     constructor(tags: UIEventSource<any>,
@@ -82,16 +83,19 @@ export default class TagRenderingQuestion extends UIElement {
                         return "";
                     }
                     if (tags === undefined) {
-                        return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
+                        return Translations.t.general.noTagsSelected.SetClass("subtle");
                     }
                     if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                         const tagsStr = tags.asHumanString(false, true, self._tags.data);
-                        return new FixedUiElement(tagsStr).SetClass("subtle").Render();
+                        return new FixedUiElement(tagsStr).SetClass("subtle");
                     }
                     return tags.asHumanString(true, true, self._tags.data);
                 }
             )
         ).SetClass("block")
+        
+        
+        
     }
 
     InnerRender() {

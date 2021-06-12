@@ -7,12 +7,13 @@ import State from "../../State";
 import Combine from "../Base/Combine";
 import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
 import Locale from "../i18n/Locale";
+import BaseUIElement from "../BaseUIElement";
+
 export default class PersonalLayersPanel extends UIElement {
-    private checkboxes: UIElement[] = [];
+    private checkboxes: BaseUIElement[] = [];
 
     constructor() {
         super(State.state.favouriteLayers);
@@ -60,9 +61,9 @@ export default class PersonalLayersPanel extends UIElement {
                 if (typeof layer === "string") {
                     continue;
                 }
-                let icon :UIElement = layer.GenerateLeafletStyle(new UIEventSource<any>({id:"node/-1"}), false).icon.html
+                let icon :BaseUIElement = layer.GenerateLeafletStyle(new UIEventSource<any>({id:"node/-1"}), false).icon.html
                     ?? Svg.checkmark_svg();
-                let iconUnset =new FixedUiElement(icon.Render());
+                let iconUnset =new Combine([icon]);
                 icon.SetClass("single-layer-selection-toggle")
                 iconUnset.SetClass("single-layer-selection-toggle")
 
@@ -121,17 +122,17 @@ export default class PersonalLayersPanel extends UIElement {
 
     }
 
-    InnerRender(): string {
+    InnerRender(): BaseUIElement {
         const t = Translations.t.favourite;
-        const userDetails = State.state.osmConnection.userDetails.data;
-        if(!userDetails.loggedIn){
-            return t.loginNeeded.Render();
-        }
-
-        return new Combine([
-            t.panelIntro,
-            ...this.checkboxes
-        ]).Render();
+        return new Toggle(
+            new Combine([
+                t.panelIntro,
+                ...this.checkboxes
+            ]),
+            t.loginNeeded,
+            State.state.osmConnection.isLoggedIn
+            
+        )
     }
 
 

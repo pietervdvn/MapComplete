@@ -8,7 +8,7 @@ import {Tag} from "../../Logic/Tags/Tag";
 import BaseUIElement from "../BaseUIElement";
 import LicensePicker from "../BigComponents/LicensePicker";
 import Toggle from "../Input/Toggle";
-import FileSelectorButton from "../Base/FileSelectorButton";
+import FileSelectorButton from "../Input/FileSelectorButton";
 import ImgurUploader from "../../Logic/Web/ImgurUploader";
 import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";

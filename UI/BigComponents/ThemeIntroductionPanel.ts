@@ -1,62 +1,51 @@
-import Locale from "../i18n/Locale";
-import {UIElement} from "../UIElement";
 import State from "../../State";
 import Combine from "../Base/Combine";
 import LanguagePicker from "../LanguagePicker";
 import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import BaseUIElement from "../BaseUIElement";
+import Toggle from "../Input/Toggle";
 
-export default class ThemeIntroductionPanel extends UIElement {
-    private languagePicker: UIElement;
-
-    private readonly loginStatus: UIElement;
-    private _layout: UIEventSource<LayoutConfig>;
-
+export default class ThemeIntroductionPanel extends VariableUiElement {
 
     constructor() {
-        super(State.state.osmConnection.userDetails);
-        this.ListenTo(Locale.language);
-        this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language, Translations.t.general.pickLanguage);
-        this._layout = State.state.layoutToUse;
-        this.ListenTo(State.state.layoutToUse);
+
+        const languagePicker =
+            new VariableUiElement(
+                State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage))
+            )
+        ;
 
         const plzLogIn =
             Translations.t.general.loginWithOpenStreetMap
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
                 });
-        
-        
-        const welcomeBack = Translations.t.general.welcomeBack;
-        
-        this.loginStatus = new VariableUiElement(
-            State.state.osmConnection.userDetails.map(
-                userdetails => {
-                    if (State.state.featureSwitchUserbadge.data) {
-                        return "";
-                    }
-                    return (userdetails.loggedIn ? welcomeBack : plzLogIn).Render();
-                }
-            )
-        )
-        this.SetClass("link-underline")
-    }
 
-    InnerRender(): BaseUIElement {
-        const layout : LayoutConfig = this._layout.data;
-        return new Combine([
+
+        const welcomeBack = Translations.t.general.welcomeBack;
+
+        const loginStatus =
+            new Toggle(
+                new Toggle(
+                    welcomeBack,
+                    plzLogIn,
+                    State.state.osmConnection.isLoggedIn
+                ),
+                undefined,
+                State.state.featureSwitchUserbadge
+            )
+
+
+        super(State.state.layoutToUse.map (layout => new Combine([
             layout.description,
             "<br/><br/>",
-            this.loginStatus,
+            loginStatus,
             layout.descriptionTail,
             "<br/>",
-            this.languagePicker,
+            languagePicker,
             ...layout.CustomCodeSnippets()
-        ])
+        ])))
+
+        this.SetClass("link-underline")
     }
-
-
 }

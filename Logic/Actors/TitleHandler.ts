@@ -2,12 +2,9 @@ import {UIEventSource} from "../UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Translations from "../../UI/i18n/Translations";
 import Locale from "../../UI/i18n/Locale";
-import {UIElement} from "../../UI/UIElement";
 import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer";
 import {ElementStorage} from "../ElementStorage";
 import Combine from "../../UI/Base/Combine";
-import BaseUIElement from "../../UI/BaseUIElement";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 class TitleElement extends UIEventSource<string> {
     
@@ -42,7 +39,8 @@ class TitleElement extends UIEventSource<string> {
                             continue;
                         }
                         if (layer.source.osmTags.matchesProperties(tags)) {
-                            const title = new TagRenderingAnswer(tags, layer.title)
+                            const tagsSource = allElementsStorage.getEventSourceById(tags.id)
+                            const title = new TagRenderingAnswer(tagsSource, layer.title)
                             return new Combine([defaultTitle, " | ", title]).ConstructElement().innerText;
                         }
                     }

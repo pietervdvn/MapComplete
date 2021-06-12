@@ -21,7 +21,7 @@ export class DropDown<T> extends InputElement<T> {
                 }
     ) {
         super();
-this._values = values;
+        this._values = values;
         if (values.length <= 1) {
             return;
         }
@@ -36,9 +36,11 @@ this._values = values;
 
         {
             const labelEl = Translations.W(label).ConstructElement()
-            const labelHtml = document.createElement("label")
-            labelHtml.appendChild(labelEl)
-            labelHtml.htmlFor = el.id;
+            if (labelEl !== undefined) {
+                const labelHtml = document.createElement("label")
+                labelHtml.appendChild(labelEl)
+                labelHtml.htmlFor = el.id;
+            }
         }
 
 
@@ -56,14 +58,14 @@ this._values = values;
                 var index = select.selectedIndex;
                 value.setData(values[index].value);
             });
-            
+
             value.addCallbackAndRun(selected => {
                 for (let i = 0; i < values.length; i++) {
                     const value = values[i].value;
                     if (value === selected) {
                         select.selectedIndex = i;
                     }
-                } 
+                }
             })
         }
 

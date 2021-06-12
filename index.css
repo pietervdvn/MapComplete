@@ -324,52 +324,6 @@ li::marker {
 }
 
 
-.activate-osm-authentication {
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
-}
-
-
-#searchbox {
-    display: inline-block;
-    text-align: left;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
-    transition: all 500ms linear;
-    pointer-events: all;
-    margin: 0 0 0.5em;
-    width: 100%;
-}
-
-.search {
-    position: relative;
-    float: left;
-    height: 2em;
-    margin-right: 0.5em;
-}
-
-#searchbox {
-    width: 100%
-}
-
-#searchbox .form-text-field {
-    position: relative;
-    float: left;
-    margin-top: 0.2em;
-    margin-left: 1em;
-    width: calc(100% - 4em)
-}
-
-#searchbox input[type="text"] {
-    background: transparent;
-    border: none;
-    font-size: large;
-    width: 100%;
-    box-sizing: border-box;
-    color: var(--foreground-color);
-}
 
 /**************************************/
 
@@ -409,24 +363,8 @@ li::marker {
 }
 
 
-#centermessage {
-    z-index: 4000;
-    pointer-events: none;
-    transition: opacity 500ms linear;
-}
-
-
-
 /***************** Info box (box containing features and questions ******************/
 
-
-.map-attribution img {
-    width: 1em;
-    height: 1em;
-    fill: black;
-    border-radius: 0;
-    display: inline;
-}
 
 .leaflet-popup-content {
     width: 45em !important;
@@ -461,3 +399,7 @@ li::marker {
     max-width: 1em;
 }
 
+.small-image {
+    height: 1em;
+    max-width: 1em;
+}

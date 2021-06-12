@@ -25,7 +25,6 @@ import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
 import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
-import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
@@ -39,7 +38,6 @@ import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 
@@ -170,13 +168,14 @@ export class InitUiElements {
                 marker.addTo(State.state.leafletMap.data)
             });
 
-        const geolocationButton = new FeatureSwitched(
+        const geolocationButton = new Toggle(
             new MapControlButton(
                 new GeoLocationHandler(
                     State.state.currentGPSLocation,
                     State.state.leafletMap,
                     State.state.layoutToUse
                 )),
+            undefined,
             State.state.featureSwitchGeolocation);
 
         const plus = new MapControlButton(
@@ -193,7 +192,7 @@ export class InitUiElements {
             State.state.locationControl.ping();
         })
 
-        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-1")))
+        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
             .SetClass("flex flex-col")
             .AttachTo("bottom-right");
 
@@ -211,8 +210,6 @@ export class InitUiElements {
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
-
-        // At last, zoom to the needed location if the focus is on an element
 
 
     }

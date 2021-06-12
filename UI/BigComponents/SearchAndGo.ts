@@ -1,6 +1,5 @@
 import Locale from "../i18n/Locale";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import {Translation} from "../i18n/Translation";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Svg from "../../Svg";
@@ -10,78 +9,75 @@ import {Geocoding} from "../../Logic/Osm/Geocoding";
 import Translations from "../i18n/Translations";
 import Hash from "../../Logic/Web/Hash";
 import Combine from "../Base/Combine";
-import BaseUIElement from "../BaseUIElement";
 
-export default class SearchAndGo extends UIElement {
-
-    private readonly _placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
-    private readonly _searchField = new TextField({
-            placeholder: new VariableUiElement(
-                this._placeholder.map(uiElement => uiElement.InnerRender(), [Locale.language])
-            ),
-            value: new UIEventSource<string>("")
-        }
-    );
-
-    private readonly _foundEntries = new UIEventSource([]);
-    private readonly _goButton = Svg.search_ui().SetClass('w-8 h-8 full-rounded border-black float-right');
-    private readonly _element: Combine;
+export default class SearchAndGo extends Combine {
 
     constructor() {
-        super(undefined);
-        this.ListenTo(this._foundEntries);
+        const goButton = Svg.search_ui().SetClass('w-8 h-8 full-rounded border-black float-right');
 
-        const self = this;
-        this._searchField.enterPressed.addCallback(() => {
-            self.RunSearch();
-        });
+        const placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
+        const searchField = new TextField({
+                placeholder: new VariableUiElement(
+                    placeholder.map(uiElement => uiElement, [Locale.language])
+                ),
+                value: new UIEventSource<string>(""),
+            
+            inputStyle: " background: transparent;\n" +
+                "    border: none;\n" +
+                "    font-size: large;\n" +
+                "    width: 100%;\n" +
+                "    box-sizing: border-box;\n" +
+                "    color: var(--foreground-color);"
+            
+            }
+        );
+        
+        searchField.SetClass("relative float-left mt-0 ml-2")
+        searchField.SetStyle("width: calc(100% - 3em)")
 
-        this._goButton.onClick(function () {
-            self.RunSearch();
-        });
-        this._element = new Combine([this._searchField, this._goButton])
+        super([searchField, goButton])
 
-    }
+        this.SetClass("block h-8")
+        this.SetStyle("background: var(--background-color); color: var(--foreground-color); pointer-evetns:all;")
 
-    InnerRender(): BaseUIElement
-    {
-        return this._element
 
-    }
+        // Triggered by 'enter' or onclick
+        function runSearch() {
+            const searchString = searchField.GetValue().data;
+            if (searchString === undefined || searchString === "") {
+                return;
+            }
+            searchField.GetValue().setData("");
+            placeholder.setData(Translations.t.general.search.searching);
+            Geocoding.Search(searchString, (result) => {
 
-    // Triggered by 'enter' or onclick
-    private RunSearch() {
-        const searchString = this._searchField.GetValue().data;
-        if (searchString === undefined || searchString === "") {
-            return;
+                    console.log("Search result", result)
+                    if (result.length == 0) {
+                        placeholder.setData(Translations.t.general.search.nothing);
+                        return;
+                    }
+
+                    const poi = result[0];
+                    const bb = poi.boundingbox;
+                    const bounds: [[number, number], [number, number]] = [
+                        [bb[0], bb[2]],
+                        [bb[1], bb[3]]
+                    ]
+                    State.state.selectedElement.setData(undefined);
+                    Hash.hash.setData(poi.osm_type + "/" + poi.osm_id);
+                    State.state.leafletMap.data.fitBounds(bounds);
+                    placeholder.setData(Translations.t.general.search.search);
+                },
+                () => {
+                    searchField.GetValue().setData("");
+                    placeholder.setData(Translations.t.general.search.error);
+                });
+
         }
-        this._searchField.GetValue().setData("");
-        this._placeholder.setData(Translations.t.general.search.searching);
-        const self = this;
-        Geocoding.Search(searchString, (result) => {
 
-                console.log("Search result", result)
-                if (result.length == 0) {
-                    self._placeholder.setData(Translations.t.general.search.nothing);
-                    return;
-                }
 
-                const poi = result[0];
-                const bb = poi.boundingbox;
-                const bounds: [[number, number], [number, number]] = [
-                    [bb[0], bb[2]],
-                    [bb[1], bb[3]]
-                ]
-            State.state.selectedElement. setData(undefined);
-                Hash.hash.setData(poi.osm_type+"/"+poi.osm_id);
-                State.state.leafletMap.data.fitBounds(bounds);
-                self._placeholder.setData(Translations.t.general.search.search);
-            },
-            () => {
-                self._searchField.GetValue().setData("");
-                self._placeholder.setData(Translations.t.general.search.error);
-            });
-
+        searchField.enterPressed.addCallback(runSearch);
+        goButton.onClick(runSearch);
     }
 
 

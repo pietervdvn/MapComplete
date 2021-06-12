@@ -56,14 +56,16 @@ export default abstract class BaseUIElement {
     }
     /**
      * Adds all the relevant classes, space seperated
-     * @param clss
-     * @constructor
      */
     public SetClass(clss: string) {
         const all = clss.split(" ").map(clsName => clsName.trim());
         let recordedChange = false;
-        for (const c of all) {
+        for (let c of all) {
+            c = c.trim();
             if (this.clss.has(clss)) {
+                continue;
+            }
+            if(c === undefined || c === ""){
                 continue;
             }
             this.clss.add(c);

@@ -1,62 +1,46 @@
-import {UIElement} from "./UIElement";
 import Translations from "./i18n/Translations";
 import State from "../State";
+import {VariableUiElement} from "./Base/VariableUIElement";
 
-export default class CenterMessageBox extends UIElement {
+export default class CenterMessageBox extends VariableUiElement {
 
     constructor() {
-        super(State.state.centerMessage);
+        const state = State.state;
+        const updater = State.state.layerUpdater;
+        const t = Translations.t.centerMessage;
+        const message = updater.runningQuery.map(
+            isRunning => {
+                if (isRunning) {
+                    return {el: t.loadingData};
+                }
+                if (!updater.sufficientlyZoomed.data) {
+                    return {el: t.zoomIn}
+                }
+                if (updater.timeout.data > 0) {
+                    return {el: t.retrying.Subs({count: "" + updater.timeout.data})}
+                }
+                return {el: t.ready, isDone: true}
 
-        this.ListenTo(State.state.locationControl);
-        this.ListenTo(State.state.layerUpdater.timeout);
-        this.ListenTo(State.state.layerUpdater.runningQuery);
-        this.ListenTo(State.state.layerUpdater.sufficientlyZoomed);
-    }
+            },
+            [updater.timeout, updater.sufficientlyZoomed, state.locationControl]
+        )
+        
+        super(message.map(toShow => toShow.el))
+        
+        this.SetClass("block " +
+            "rounded-3xl bg-white text-xl font-bold text-center pointer-events-none p-4")
+        this.SetStyle("transition: opacity 750ms linear")
 
-    private static prep(): { innerHtml: string | UIElement, done: boolean } {
-        if (State.state.centerMessage.data != "") {
-            return {innerHtml: State.state.centerMessage.data, done: false};
-        }
-        const lu = State.state.layerUpdater;
-        if (lu.timeout.data > 0) {
-            return {
-                innerHtml: Translations.t.centerMessage.retrying.Subs({count: "" + lu.timeout.data}),
-                done: false
-            };
-        }
+        message.addCallbackAndRun(toShow => {
+            const isDone = toShow.isDone ?? false;
+            if (isDone) {
+                this.SetStyle("transition: opacity 750ms linear; opacity: 0")
+            } else {
+                this.SetStyle("transition: opacity 750ms linear; opacity: 0.75")
 
-        if (lu.runningQuery.data) {
-            return {innerHtml: Translations.t.centerMessage.loadingData, done: false};
+            }
+        })
 
-        }
-        if (!lu.sufficientlyZoomed.data) {
-            return {innerHtml: Translations.t.centerMessage.zoomIn, done: false};
-        } else {
-            return {innerHtml: Translations.t.centerMessage.ready, done: true};
-        }
-    }
-
-    InnerRender(): string | UIElement {
-        return CenterMessageBox.prep().innerHtml;
-    }
-
-    InnerUpdate(htmlElement: HTMLElement) {
-        if(htmlElement.parentElement === null){
-            return;
-        }
-        const pstyle = htmlElement.parentElement.style;
-        if (State.state.centerMessage.data != "") {
-            pstyle.opacity = "1";
-            pstyle.pointerEvents = "all";
-            return;
-        }
-        pstyle.pointerEvents = "none";
-
-        if (CenterMessageBox.prep().done) {
-            pstyle.opacity = "0";
-        } else {
-            pstyle.opacity = "0.5";
-        }
     }
 
 }

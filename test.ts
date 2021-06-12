@@ -1,15 +1,6 @@
-import {Translation} from "./UI/i18n/Translation";
-import Locale from "./UI/i18n/Locale";
-import Combine from "./UI/Base/Combine";
+import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
+import LayoutConfig from "./Customizations/JSON/LayoutConfig";
+import {UIEventSource} from "./Logic/UIEventSource";
 
 
-new Combine(["Some language:",new Translation({en:"English",nl:"Nederlands",fr:"Françcais"})]).AttachTo("maindiv")
-
-Locale.language.setData("nl")
-window.setTimeout(() => {
-    Locale.language.setData("en")
-}, 1000)
-
-window.setTimeout(() => {
-    Locale.language.setData("fr")
-}, 5000)
+new GeoLocationHandler(new UIEventSource<{latlng: any; accuracy: number}>(undefined), undefined, new UIEventSource<LayoutConfig>(undefined)).AttachTo("maindiv")

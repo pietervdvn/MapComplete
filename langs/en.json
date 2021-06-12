@@ -31,6 +31,7 @@
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "welcomeBack": "You are logged in, welcome back!",
         "loginToStart": "Login to answer this question",
+        "testing":"Testing - changes won't be saved",
         "search": {
             "search": "Search a location",
             "searching": "Searching…",

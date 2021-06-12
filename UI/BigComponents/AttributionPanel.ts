@@ -10,8 +10,8 @@ import SmallLicense from "../../Models/smallLicense";
 import {Utils} from "../../Utils";
 import Link from "../Base/Link";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UIElement} from "../UIElement";
 import * as contributors from "../../assets/contributors.json"
+import BaseUIElement from "../BaseUIElement";
 
 /**
  * The attribution panel shown on mobile
@@ -26,7 +26,7 @@ export default class AttributionPanel extends Combine {
             ((layoutToUse.data.maintainer ?? "") == "") ? "" : Translations.t.general.attribution.themeBy.Subs({author: layoutToUse.data.maintainer}),
             layoutToUse.data.credits,
             "<br/>",
-            new Attribution(undefined, undefined, State.state.layoutToUse, undefined),
+            new Attribution(State.state.locationControl, State.state.osmConnection.userDetails, State.state.layoutToUse, State.state.leafletMap),
             "<br/>",
 
             new VariableUiElement(contributions.map(contributions => {
@@ -66,7 +66,7 @@ export default class AttributionPanel extends Combine {
         this.SetStyle("max-width: calc(100vw - 5em); width: 40em;")
     }
 
-    private static CodeContributors(): UIElement {
+    private static CodeContributors(): BaseUIElement {
 
         const total = contributors.contributors.length;
         let filtered = contributors.contributors
@@ -87,7 +87,7 @@ export default class AttributionPanel extends Combine {
         });
     }
 
-    private static IconAttribution(iconPath: string): UIElement {
+    private static IconAttribution(iconPath: string): BaseUIElement {
         if (iconPath.startsWith("http")) {
             iconPath = "." + new URL(iconPath).pathname;
         }

@@ -23,6 +23,9 @@ export default class Img extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("img")
         el.src = this._src;
+        el.onload = () => {
+            el.style.opacity = "1"
+        }
         return el;
     }
 }

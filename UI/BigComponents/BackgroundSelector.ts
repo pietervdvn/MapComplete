@@ -1,39 +1,35 @@
-import {UIElement} from "../UIElement";
 import {DropDown} from "../Input/DropDown";
 import Translations from "../i18n/Translations";
 import State from "../../State";
-import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
-import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
-export default class BackgroundSelector extends UIElement {
-
-    private _dropdown: BaseUIElement;
-    private readonly _availableLayers: UIEventSource<BaseLayer[]>;
+export default class BackgroundSelector extends VariableUiElement {
 
     constructor() {
-        super();
-        const self = this;
-        this._availableLayers = State.state.availableBackgroundLayers;
-        this._availableLayers.addCallbackAndRun(available => self.CreateDropDown(available));
-    }
+        const available = State.state.availableBackgroundLayers.map(available => {
+                const baseLayers: { value: BaseLayer, shown: string }[] = [];
+                for (const i in available) {
+                    if(!available.hasOwnProperty(i)){
+                        continue;
+                    }
+                    const layer: BaseLayer = available[i];
+                    baseLayers.push({value: layer, shown: layer.name ?? "id:" + layer.id});
+                }
+                return baseLayers
+            }
+        )
 
-    private CreateDropDown(available) {
-        if(available.length === 0){
-            return;
-        }
-        
-        const baseLayers: { value: BaseLayer, shown: string }[] = [];
-        for (const i in available) {
-            const layer: BaseLayer = available[i];
-            baseLayers.push({value: layer, shown: layer.name ?? "id:" + layer.id});
-        }
+        super(
+            available.map(baseLayers => {
+                    if (baseLayers.length <= 1) {
+                        return undefined;
+                    }
+                    return new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.backgroundLayer)
+                }
+            )
+        )
 
-        this._dropdown = new DropDown(Translations.t.general.backgroundMap, baseLayers, State.state.backgroundLayer);
-    }
-
-    InnerRender(): BaseUIElement {
-        return this._dropdown;
     }
 
 }

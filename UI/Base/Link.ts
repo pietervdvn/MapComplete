@@ -6,18 +6,18 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 export default class Link extends BaseUIElement {
     private readonly _element: HTMLElement;
 
-    constructor(embeddedShow: BaseUIElement | string, target: string | UIEventSource<string>, newTab: boolean = false) {
+    constructor(embeddedShow: BaseUIElement | string, href: string | UIEventSource<string>, newTab: boolean = false) {
         super();
         const _embeddedShow = Translations.W(embeddedShow);
 
 
         const el = document.createElement("a")
         
-        if(typeof target === "string"){
-            el.href = target
+        if(typeof href === "string"){
+            el.href = href
         }else{
-            target.addCallbackAndRun(target => {
-                el.target = target;
+            href.addCallbackAndRun(href => {
+                el.href = href;
             })
         }
         if (newTab) {

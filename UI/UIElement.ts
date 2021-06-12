@@ -21,6 +21,7 @@ export abstract class UIElement extends BaseUIElement{
         if (source === undefined) {
             return this;
         }
+        console.trace("Got a listenTo in ", this.constructor.name)
         const self = this;
         source.addCallback(() => {
             self.lastInnerRender = undefined;
@@ -39,7 +40,7 @@ export abstract class UIElement extends BaseUIElement{
     }
 
     Render(): string {
-        return "Don't use Render!"
+        return this.InnerRenderAsString()
     }
 
 
@@ -51,11 +52,6 @@ export abstract class UIElement extends BaseUIElement{
         }
         return rendered
     }
-
-    public IsEmpty(): boolean {
-        return this.InnerRender() === undefined || this.InnerRender() === "";
-    }
-
 
 
     /**

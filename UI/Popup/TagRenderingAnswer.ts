@@ -19,8 +19,9 @@ export default class TagRenderingAnswer extends UIElement {
     private _contentStyle: string;
 
     constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig, contentClasses: string = "", contentStyle: string = "") {
-        super(tags);
+        super();
         this._tags = tags;
+        this.ListenTo(tags)
         this._configuration = configuration;
         this._contentClass = contentClasses;
         this._contentStyle = contentStyle;
