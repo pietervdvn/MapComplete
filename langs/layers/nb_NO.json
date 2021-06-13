@@ -82,25 +82,25 @@
         }
     },
     "bench_at_pt": {
+        "name": "Benker",
         "title": {
             "render": "Benk"
-        },
-        "name": "Benker"
+        }
     },
     "bicycle_library": {
         "tagRenderings": {
+            "1": {
+                "question": "Hva heter dette sykkelbiblioteket?",
+                "render": "Dette sykkelbiblioteket heter {name}"
+            },
             "6": {
+                "question": "Hvor mye koster det å leie en sykkel?",
+                "render": "Sykkelleie koster {charge}",
                 "mappings": {
                     "0": {
                         "then": "Det er gratis å leie en sykkel"
                     }
-                },
-                "render": "Sykkelleie koster {charge}",
-                "question": "Hvor mye koster det å leie en sykkel?"
-            },
-            "1": {
-                "render": "Dette sykkelbiblioteket heter {name}",
-                "question": "Hva heter dette sykkelbiblioteket?"
+                }
             }
         }
     }

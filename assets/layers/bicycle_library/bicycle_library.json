@@ -55,14 +55,16 @@
         "nl": "Wat is de naam van deze fietsbieb?",
         "fr": "Quel est le nom de cette vélothèque ?",
         "it": "Qual è il nome di questo “bici in prestito”?",
-        "ru": "Как называется эта велосипедная библиотека?"
+        "ru": "Как называется эта велосипедная библиотека?",
+        "nb_NO": "Hva heter dette sykkelbiblioteket?"
       },
       "render": {
         "en": "This bicycle library is called {name}",
         "nl": "Deze fietsbieb heet {name}",
         "fr": "Cette vélothèque s'appelle {name}",
         "it": "Il “bici in prestito” è chiamato {name}",
-        "ru": "Эта велосипедная библиотека называется {name}"
+        "ru": "Эта велосипедная библиотека называется {name}",
+        "nb_NO": "Dette sykkelbiblioteket heter {name}"
       },
       "freeform": {
         "key": "name"
@@ -80,7 +82,8 @@
         "hu": "Mennyibe kerül egy kerékpár kölcsönzése?",
         "it": "Quanto costa il prestito di una bicicletta?",
         "ru": "Сколько стоит прокат велосипеда?",
-        "de": "Wie viel kostet das Ausleihen eines Fahrrads?"
+        "de": "Wie viel kostet das Ausleihen eines Fahrrads?",
+        "nb_NO": "Hvor mye koster det å leie en sykkel?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -89,7 +92,8 @@
         "hu": "Egy kerékpár kölcsönzése {charge}",
         "it": "Il prestito di una bicicletta costa {charge}",
         "ru": "Стоимость аренды велосипеда {charge}",
-        "de": "Das Ausleihen eines Fahrrads kostet {charge}"
+        "de": "Das Ausleihen eines Fahrrads kostet {charge}",
+        "nb_NO": "Sykkelleie koster {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -112,7 +116,8 @@
             "hu": "A kerékpárkölcsönzés ingyenes",
             "it": "Il prestito di una bicicletta è gratuito",
             "de": "Das Ausleihen eines Fahrrads ist kostenlos",
-            "ru": "Прокат велосипедов бесплатен"
+            "ru": "Прокат велосипедов бесплатен",
+            "nb_NO": "Det er gratis å leie en sykkel"
           }
         },
         {

@@ -9,7 +9,8 @@
     "hu": "Padok megállókban",
     "it": "Panchine alle fermate del trasporto pubblico",
     "ru": "Скамейки на остановках общественного транспорта",
-    "zh_Hans": "在公交站点的长椅"
+    "zh_Hans": "在公交站点的长椅",
+    "nb_NO": "Benker"
   },
   "minzoom": 14,
   "source": {
