@@ -84,6 +84,24 @@
     "bench_at_pt": {
         "title": {
             "render": "Benk"
+        },
+        "name": "Benker"
+    },
+    "bicycle_library": {
+        "tagRenderings": {
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Det er gratis å leie en sykkel"
+                    }
+                },
+                "render": "Sykkelleie koster {charge}",
+                "question": "Hvor mye koster det å leie en sykkel?"
+            },
+            "1": {
+                "render": "Dette sykkelbiblioteket heter {name}",
+                "question": "Hva heter dette sykkelbiblioteket?"
+            }
         }
     }
 }
