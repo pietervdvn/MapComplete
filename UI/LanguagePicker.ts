@@ -3,7 +3,7 @@ import Locale from "./i18n/Locale";
 import BaseUIElement from "./BaseUIElement";
 
 export default class LanguagePicker {
-
+    
 
     public static CreateLanguagePicker(
         languages : string[] ,

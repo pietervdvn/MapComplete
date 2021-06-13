@@ -1,6 +1,7 @@
 import GeoLocationHandler from "./Logic/Actors/GeoLocationHandler";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import {UIEventSource} from "./Logic/UIEventSource";
+import LanguagePicker from "./UI/LanguagePicker";
 
 
-new GeoLocationHandler(new UIEventSource<{latlng: any; accuracy: number}>(undefined), undefined, new UIEventSource<LayoutConfig>(undefined)).AttachTo("maindiv")
+LanguagePicker.CreateLanguagePicker(["nl","en"]).AttachTo("maindiv")

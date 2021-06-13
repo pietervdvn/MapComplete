@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
@@ -15,23 +14,16 @@ import Constants from "../../Models/Constants";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import BaseUIElement from "../BaseUIElement";
 
-export default class ShareScreen extends UIElement {
-    private readonly _options: BaseUIElement;
-    private readonly _iframeCode: BaseUIElement;
-    public iframe: UIEventSource<string>;
-    private readonly _link: BaseUIElement;
-    private readonly _linkStatus: UIEventSource<string | BaseUIElement>;
-    private readonly _editLayout: BaseUIElement;
+export default class ShareScreen extends Combine {
 
     constructor(layout: LayoutConfig = undefined, layoutDefinition: string = undefined) {
-        super(undefined)
         layout = layout ?? State.state?.layoutToUse?.data;
         layoutDefinition = layoutDefinition ?? State.state?.layoutDefinition;
         const tr = Translations.t.general.sharescreen;
 
         const optionCheckboxes: BaseUIElement[] = []
         const optionParts: (UIEventSource<string>)[] = [];
-        this.SetClass("link-underline")
+        
         function check() {
             return Svg.checkmark_svg().SetStyle("width: 1.5em; display:inline-block;");
         }
@@ -41,8 +33,8 @@ export default class ShareScreen extends UIElement {
         }
 
         const includeLocation = new Toggle(
-            new Combine([check(), tr.fsIncludeCurrentLocation]),
-            new Combine([nocheck(), tr.fsIncludeCurrentLocation]),
+            new Combine([check(), tr.fsIncludeCurrentLocation.Clone()]),
+            new Combine([nocheck(), tr.fsIncludeCurrentLocation.Clone()]),
             new UIEventSource<boolean>(true)
         )
         optionCheckboxes.push(includeLocation);
@@ -91,8 +83,8 @@ export default class ShareScreen extends UIElement {
 
 
             const includeLayerChoices = new Toggle(
-                new Combine([check(), tr.fsIncludeCurrentLayers]),
-                new Combine([nocheck(), tr.fsIncludeCurrentLayers]),
+                new Combine([check(), tr.fsIncludeCurrentLayers.Clone()]),
+                new Combine([nocheck(), tr.fsIncludeCurrentLayers.Clone()]),
                 new UIEventSource<boolean>(true)
             )
             optionCheckboxes.push(includeLayerChoices);
@@ -121,8 +113,8 @@ export default class ShareScreen extends UIElement {
         for (const swtch of switches) {
 
             const checkbox = new Toggle(
-                new Combine([check(), Translations.W(swtch.human)]),
-                new Combine([nocheck(), Translations.W(swtch.human)]),
+                new Combine([check(), Translations.W(swtch.human.Clone())]),
+                new Combine([nocheck(), Translations.W(swtch.human.Clone())]),
                 new UIEventSource<boolean>(!swtch.reverse)
             );
             optionCheckboxes.push(checkbox);
@@ -144,7 +136,7 @@ export default class ShareScreen extends UIElement {
         }
 
 
-        this._options = new Combine(optionCheckboxes).SetClass("flex flex-col")
+        const options = new Combine(optionCheckboxes).SetClass("flex flex-col")
         const url = (currentLocation ?? new UIEventSource(undefined)).map(() => {
 
             const host = window.location.host;
@@ -174,12 +166,12 @@ export default class ShareScreen extends UIElement {
         }, optionParts);
 
 
-        this.iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout?.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
+        const iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout?.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
         
-        this._iframeCode = new VariableUiElement(
+        const iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>
-                         &lt;iframe src="${url}" width="100%" height="100%" title="${layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
+                         &lt;iframe src="${url}" width="100%" height="100%" style="min-width: 25Opx; min-height: 250ox" title="${layout.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt 
                     </span>`
             })
         );
@@ -187,9 +179,9 @@ export default class ShareScreen extends UIElement {
 
      
 
-        this._editLayout = new FixedUiElement("");
+        let editLayout : BaseUIElement= new FixedUiElement("");
         if ((layoutDefinition !== undefined && State.state?.osmConnection !== undefined)) {
-            this._editLayout =
+            editLayout =
                 new VariableUiElement(
                     State.state.osmConnection.userDetails.map(
                         userDetails => {
@@ -198,8 +190,8 @@ export default class ShareScreen extends UIElement {
                             }
 
                             return new SubtleButton(Svg.pencil_ui(),
-                                new Combine([tr.editThisTheme.SetClass("bold"), "<br/>",
-                                    tr.editThemeDescription]),
+                                new Combine([tr.editThisTheme.Clone().SetClass("bold"), "<br/>",
+                                    tr.editThemeDescription.Clone()]),
                                 {url: `./customGenerator.html#${State.state.layoutDefinition}`, newTab: true});
 
                         }
@@ -207,13 +199,9 @@ export default class ShareScreen extends UIElement {
 
         }
 
-        this._linkStatus = new UIEventSource<string | Translation>("");
-        this.ListenTo(this._linkStatus);
-        const self = this;
-        this._link = new VariableUiElement(
-            url.map((url) => {
-                return `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%">`
-            })
+        const linkStatus = new UIEventSource<string | Translation>("");
+        const link = new VariableUiElement(
+            url.map((url) => `<input type="text" value=" ${url}" id="code-link--copyable" style="width:90%">`)
         ).onClick(async () => {
 
             const shareData = {
@@ -231,17 +219,17 @@ export default class ShareScreen extends UIElement {
                 copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
                 document.execCommand("copy");
-                const copied = tr.copiedToClipboard;
+                const copied = tr.copiedToClipboard.Clone();
                 copied.SetClass("thanks")
-                self._linkStatus.setData(copied);
+                linkStatus.setData(copied);
             }
 
             try {
                 navigator.share(shareData)
                     .then(() => {
-                        const thx = tr.thanksForSharing;
+                        const thx = tr.thanksForSharing.Clone();
                         thx.SetClass("thanks");
-                        this._linkStatus.setData(thx);
+                        linkStatus.setData(thx);
                     }, rejected)
                     .catch(rejected)
             } catch (err) {
@@ -250,22 +238,19 @@ export default class ShareScreen extends UIElement {
 
         });
 
-    }
 
-    InnerRender(): BaseUIElement {
+       super ([
+            editLayout,
+            tr.intro.Clone(),
+            link,
+           new VariableUiElement(linkStatus),
+            tr.addToHomeScreen.Clone(),
+            tr.embedIntro.Clone(),
+            options,
+            iframeCode,
+        ])
+        this.SetClass("flex flex-col link-underline")
 
-        const tr = Translations.t.general.sharescreen;
-
-        return new Combine([
-            this._editLayout,
-            tr.intro,
-            this._link,
-            Translations.W(this._linkStatus.data),
-            tr.addToHomeScreen,
-            tr.embedIntro,
-            this._options,
-            this._iframeCode,
-        ]).SetClass("flex flex-col")
     }
 
 }

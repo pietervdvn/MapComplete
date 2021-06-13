@@ -40,6 +40,7 @@ export class DropDown<T> extends InputElement<T> {
                 const labelHtml = document.createElement("label")
                 labelHtml.appendChild(labelEl)
                 labelHtml.htmlFor = el.id;
+                el.appendChild(labelHtml)
             }
         }
 
@@ -52,7 +53,10 @@ export class DropDown<T> extends InputElement<T> {
                 const option = document.createElement("option")
                 option.value = "" + i
                 option.appendChild(Translations.W(values[i].shown).ConstructElement())
+                select.appendChild(option)
             }
+            el.appendChild(select)
+
 
             select.onchange = (() => {
                 var index = select.selectedIndex;

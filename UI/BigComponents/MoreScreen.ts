@@ -21,7 +21,7 @@ export default class MoreScreen extends Combine {
 
     private static Init(onMainScreen: boolean, state: State): BaseUIElement [] {
         const tr = Translations.t.general.morescreen;
-        let intro: BaseUIElement = tr.intro;
+        let intro: BaseUIElement = tr.intro.Clone();
         let themeButtonStyle = ""
         let themeListStyle = ""
         if (onMainScreen) {
@@ -38,7 +38,7 @@ export default class MoreScreen extends Combine {
             intro,
             MoreScreen.createOfficialThemesList(state, themeButtonStyle).SetClass(themeListStyle),
             MoreScreen.createUnofficialThemeList(themeButtonStyle)?.SetClass(themeListStyle),
-            tr.streetcomplete.SetClass("block text-base mx-10 my-3 mb-10")
+            tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10")
         ];
     }
     
@@ -77,12 +77,12 @@ export default class MoreScreen extends Combine {
         return new VariableUiElement(
             state.osmConnection.userDetails.map(userDetails => {
                 if (userDetails.csCount < Constants.userJourney.themeGeneratorReadOnlyUnlock) {
-                    return new SubtleButton(null, tr.requestATheme, {
+                    return new SubtleButton(null, tr.requestATheme.Clone(), {
                         url: "https://github.com/pietervdvn/MapComplete/issues",
                         newTab: true
                     });
                 }
-                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme, {
+                return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme.Clone(), {
                     url: "./customGenerator.html",
                     newTab: false
                 });
@@ -146,14 +146,14 @@ export default class MoreScreen extends Combine {
   
        
 
-        let description = Translations.W(layout.shortDescription);
+        let description = Translations.WT(layout.shortDescription).Clone();
         return new SubtleButton(layout.icon,
             new Combine([
                 `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                Translations.W(layout.title),
+                Translations.WT(layout.title).Clone(),
                 `</dt>`,
                 `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
-                description ?? "",
+                description.Clone().SetClass("subtle") ?? "",
                 `</dd>`,
             ]), {url: linkText, newTab: false});
     }

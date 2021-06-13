@@ -11,18 +11,19 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
 
         const languagePicker =
             new VariableUiElement(
-                State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage))
+                State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()))
             )
         ;
 
         const plzLogIn =
             Translations.t.general.loginWithOpenStreetMap
+                .Clone()
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
                 });
 
 
-        const welcomeBack = Translations.t.general.welcomeBack;
+        const welcomeBack = Translations.t.general.welcomeBack.Clone();
 
         const loginStatus =
             new Toggle(
@@ -37,10 +38,10 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
 
 
         super(State.state.layoutToUse.map (layout => new Combine([
-            layout.description,
+            layout.description.Clone(),
             "<br/><br/>",
             loginStatus,
-            layout.descriptionTail,
+            layout.descriptionTail.Clone(),
             "<br/>",
             languagePicker,
             ...layout.CustomCodeSnippets()

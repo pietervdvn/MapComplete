@@ -12,16 +12,6 @@
     overflow-x: hidden;
 }
 
-#userbadge a {
-    text-decoration: none;
-    color: var(--foreground-color);
-}
-
-
-#userbadge form {
-    width: unset !important;
-}
-
 .userstats {
     display: flex;
     align-items: center;
