@@ -1,8 +1,10 @@
 export default class T {
 
-    public readonly failures = []
+    public readonly failures : string[] = []
+    public readonly name : string;
 
     constructor(testsuite: string, tests: [string, () => void][]) {
+        this.name = testsuite
         for (const [name, test] of tests) {
             try {
                 test();

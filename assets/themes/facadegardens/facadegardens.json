@@ -3,12 +3,14 @@
   "title": {
     "nl": "Straatgeveltuintjes",
     "en": "Facade gardens",
-    "ja": "ファサード庭園"
+    "ja": "ファサード庭園",
+    "zh_Hant": "立面花園"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
     "en": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
-    "ja": "このマップには、ファサード庭園が図とともに表示され、方向、日照、植物のタイプに関する有用な情報が示されます。"
+    "ja": "このマップには、ファサード庭園が図とともに表示され、方向、日照、植物のタイプに関する有用な情報が示されます。",
+    "zh_Hant": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。"
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -19,6 +21,8 @@
     "nl",
     "en",
     "ja",
+    "zh_Hant",
+    "nb_NO",
     "ru"
   ],
   "maintainer": "joost schouppe; stla",
@@ -35,7 +39,8 @@
       "name": {
         "nl": "Geveltuintjes",
         "en": "Facade gardens",
-        "ja": "ファサード庭園"
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園"
       },
       "minzoom": 12,
       "source": {
@@ -50,13 +55,15 @@
         "render": {
           "nl": "Geveltuintje",
           "en": "Facade garden",
-          "ja": "ファサード庭園"
+          "ja": "ファサード庭園",
+          "zh_Hant": "立面花園"
         }
       },
       "description": {
         "nl": "Geveltuintjes",
         "en": "Facade gardens",
-        "ja": "ファサード庭園"
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園"
       },
       "iconOverlays": [
         {
@@ -131,7 +138,8 @@
               "then": {
                 "nl": "Het is een halfschaduw tuintje",
                 "en": "The garden is in partial shade",
-                "ja": "庭は部分的に日陰である"
+                "ja": "庭は部分的に日陰である",
+                "nb_NO": "Denne hagen er i delvis skygge"
               }
             },
             {

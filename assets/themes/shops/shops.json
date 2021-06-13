@@ -3,7 +3,8 @@
   "title": {
     "en": "Open Shop Map",
     "fr": "Carte des magasins",
-    "ja": "オープン ショップ マップ"
+    "ja": "オープン ショップ マップ",
+    "zh_Hant": "開放商店地圖"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
@@ -13,12 +14,14 @@
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
     "fr": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone",
-    "ja": "この地図には店の基本情報を記入したり営業時間や電話番号を追加することができます"
+    "ja": "この地図には店の基本情報を記入したり営業時間や電話番号を追加することができます",
+    "zh_Hant": "這份地圖上，你可以標記商家基本資訊，新增營業時間以及聯絡電話"
   },
   "language": [
     "en",
     "fr",
     "ja",
+    "zh_Hant",
     "ru",
     "ca",
     "id"

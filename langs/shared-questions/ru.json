@@ -1,0 +1,17 @@
+{
+    "undefined": {
+        "phone": {
+            "question": "Какой номер телефона у {name}?"
+        },
+        "email": {
+            "question": "Какой адрес электронной почты у {name}?"
+        },
+        "website": {
+            "question": "Какой сайт у {name}?"
+        },
+        "opening_hours": {
+            "question": "Какое время работы у {name}?",
+            "render": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}"
+        }
+    }
+}

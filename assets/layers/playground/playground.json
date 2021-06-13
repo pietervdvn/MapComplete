@@ -3,7 +3,8 @@
   "name": {
     "nl": "Speeltuinen",
     "en": "Playgrounds",
-    "ru": "Детские площадки"
+    "ru": "Детские площадки",
+    "de": "Spielplätze"
   },
   "minzoom": 13,
   "source": {
@@ -21,14 +22,16 @@
     "nl": "Speeltuinen",
     "en": "Playgrounds",
     "it": "Parchi giochi",
-    "ru": "Детские площадки"
+    "ru": "Детские площадки",
+    "de": "Spielplätze"
   },
   "title": {
     "render": {
       "nl": "Speeltuin",
       "en": "Playground",
       "it": "Parco giochi",
-      "ru": "Детская площадка"
+      "ru": "Детская площадка",
+      "de": "Spielplatz"
     },
     "mappings": [
       {
@@ -37,7 +40,8 @@
           "nl": "Speeltuin <i>{name}</i>",
           "en": "Playground <i>{name}</i>",
           "it": "Parco giochi <i>{name}</i>",
-          "ru": "Детская площадка <i>{name}</i>"
+          "ru": "Детская площадка <i>{name}</i>",
+          "de": "Spielplatz <i>{name}</i>"
         }
       }
     ]
@@ -48,13 +52,15 @@
       "question": {
         "nl": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
         "en": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
-        "it": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>"
+        "it": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
+        "de": "Welche Oberfläche hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle die am häufigsten vorkommende aus</i>"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
         "en": "The surface is <b>{surface}</b>",
         "it": "La superficie è <b>{surface}</b>",
-        "ru": "Поверхность - <b>{surface}</b>"
+        "ru": "Поверхность - <b>{surface}</b>",
+        "de": "Die Oberfläche ist <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -66,7 +72,8 @@
             "nl": "De ondergrond is <b>gras</b>",
             "en": "The surface is <b>grass</b>",
             "it": "La superficie è <b>prato</b>",
-            "ru": "Поверхность - <b>трава</b>"
+            "ru": "Поверхность - <b>трава</b>",
+            "de": "Die Oberfläche ist <b>Gras</b>"
           }
         },
         {
@@ -75,7 +82,8 @@
             "nl": "De ondergrond is <b>zand</b>",
             "en": "The surface is <b>sand</b>",
             "it": "La superficie è <b>sabbia</b>",
-            "ru": "Поверхность - <b>песок</b>"
+            "ru": "Поверхность - <b>песок</b>",
+            "de": "Die Oberfläche ist <b>Sand</b>"
           }
         },
         {
@@ -83,7 +91,8 @@
           "then": {
             "nl": "De ondergrond bestaat uit <b>houtsnippers</b>",
             "en": "The surface consist of <b>woodchips</b>",
-            "it": "La superficie consiste di <b>trucioli di legno</b>"
+            "it": "La superficie consiste di <b>trucioli di legno</b>",
+            "de": "Die Oberfläche besteht aus <b>Holzschnitzeln</b>"
           }
         },
         {
@@ -92,7 +101,8 @@
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
             "en": "The surface is <b>paving stones</b>",
             "it": "La superficie è <b>mattonelle regolari</b>",
-            "ru": "Поверхность - <b>брусчатка</b>"
+            "ru": "Поверхность - <b>брусчатка</b>",
+            "de": "Die Oberfläche ist <b>Pflastersteine</b>"
           }
         },
         {
@@ -101,7 +111,8 @@
             "nl": "De ondergrond is <b>asfalt</b>",
             "en": "The surface is <b>asphalt</b>",
             "it": "La superficie è <b>asfalto</b>",
-            "ru": "Поверхность - <b>асфальт</b>"
+            "ru": "Поверхность - <b>асфальт</b>",
+            "de": "Die Oberfläche ist <b>Asphalt</b>"
           }
         },
         {
@@ -110,7 +121,8 @@
             "nl": "De ondergrond is <b>beton</b>",
             "en": "The surface is <b>concrete</b>",
             "it": "La superficie è <b>cemento</b>",
-            "ru": "Поверхность - <b>бетон</b>"
+            "ru": "Поверхность - <b>бетон</b>",
+            "de": "Die Oberfläche ist <b>Beton</b>"
           }
         },
         {
@@ -118,7 +130,8 @@
           "then": {
             "nl": "De ondergrond is <b>onverhard</b>",
             "en": "The surface is <b>unpaved</b>",
-            "it": "La superficie è <b>non pavimentato</b>"
+            "it": "La superficie è <b>non pavimentato</b>",
+            "de": "Die Oberfläche ist <b>unbefestigt</b>"
           },
           "hideInAnswer": true
         },
@@ -127,7 +140,8 @@
           "then": {
             "nl": "De ondergrond is <b>verhard</b>",
             "en": "The surface is <b>paved</b>",
-            "it": "La superficie è <b>pavimentato</b>"
+            "it": "La superficie è <b>pavimentato</b>",
+            "de": "Die Oberfläche ist <b>befestigt</b>"
           },
           "hideInAnswer": true
         }
@@ -138,7 +152,8 @@
         "nl": "Is deze speeltuin 's nachts verlicht?",
         "en": "Is this playground lit at night?",
         "it": "È illuminato di notte questo parco giochi?",
-        "fr": "Ce terrain de jeux est-il éclairé la nuit ?"
+        "fr": "Ce terrain de jeux est-il éclairé la nuit ?",
+        "de": "Ist dieser Spielplatz nachts beleuchtet?"
       },
       "mappings": [
         {
@@ -146,7 +161,8 @@
           "then": {
             "nl": "Deze speeltuin is 's nachts verlicht",
             "en": "This playground is lit at night",
-            "it": "Questo parco giochi è illuminato di notte"
+            "it": "Questo parco giochi è illuminato di notte",
+            "de": "Dieser Spielplatz ist nachts beleuchtet"
           }
         },
         {
@@ -154,7 +170,8 @@
           "then": {
             "nl": "Deze speeltuin is 's nachts niet verlicht",
             "en": "This playground is not lit at night",
-            "it": "Questo parco giochi non è illuminato di notte"
+            "it": "Questo parco giochi non è illuminato di notte",
+            "de": "Dieser Spielplatz ist nachts nicht beleuchtet"
           }
         }
       ]
@@ -199,13 +216,15 @@
       "question": {
         "nl": "Wie beheert deze speeltuin?",
         "en": "Who operates this playground?",
-        "it": "Chi è il responsabile di questo parco giochi?"
+        "it": "Chi è il responsabile di questo parco giochi?",
+        "de": "Wer betreibt diesen Spielplatz?"
       },
       "render": {
         "nl": "Beheer door {operator}",
         "en": "Operated by {operator}",
         "it": "Gestito da {operator}",
-        "fr": "Exploité par {operator}"
+        "fr": "Exploité par {operator}",
+        "de": "Betrieben von {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -215,7 +234,8 @@
       "question": {
         "nl": "Is deze speeltuin vrij toegankelijk voor het publiek?",
         "en": "Is this playground accessible to the general public?",
-        "it": "Questo parco giochi è pubblicamente accessibile?"
+        "it": "Questo parco giochi è pubblicamente accessibile?",
+        "de": "Ist dieser Spielplatz für die Allgemeinheit zugänglich?"
       },
       "mappings": [
         {
@@ -223,7 +243,8 @@
           "then": {
             "en": "Accessible to the general public",
             "nl": "Vrij toegankelijk voor het publiek",
-            "it": "Accessibile pubblicamente"
+            "it": "Accessibile pubblicamente",
+            "de": "Zugänglich für die Allgemeinheit"
           },
           "hideInAnswer": true
         },
@@ -232,7 +253,8 @@
           "then": {
             "en": "Accessible to the general public",
             "nl": "Vrij toegankelijk voor het publiek",
-            "it": "Accessibile pubblicamente"
+            "it": "Accessibile pubblicamente",
+            "de": "Zugänglich für die Allgemeinheit"
           }
         },
         {
@@ -240,7 +262,8 @@
           "then": {
             "en": "Only accessible for clients of the operating business",
             "nl": "Enkel toegankelijk voor klanten van de bijhorende zaak",
-            "it": "Accessibile solamente ai clienti dell’attività che lo gestisce"
+            "it": "Accessibile solamente ai clienti dell’attività che lo gestisce",
+            "de": "Nur für Kunden des Betreibers zugänglich"
           }
         },
         {
@@ -248,7 +271,8 @@
           "then": {
             "en": "Only accessible to students of the school",
             "nl": "Vrij toegankelijk voor scholieren van de school",
-            "it": "Accessibile solamente agli studenti della scuola"
+            "it": "Accessibile solamente agli studenti della scuola",
+            "de": "Nur für Schüler der Schule zugänglich"
           }
         },
         {
@@ -258,7 +282,8 @@
             "nl": "Niet vrij toegankelijk",
             "it": "Non accessibile",
             "ru": "Недоступно",
-            "fr": "Non accessible"
+            "fr": "Non accessible",
+            "de": "Nicht zugänglich"
           }
         }
       ]
@@ -268,7 +293,8 @@
         "nl": "Wie kan men emailen indien er problemen zijn met de speeltuin?",
         "en": "What is the email address of the playground maintainer?",
         "it": "Qual è l’indirizzo email del gestore di questo parco giochi?",
-        "fr": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?"
+        "fr": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?",
+        "de": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?"
       },
       "render": {
         "nl": "De bevoegde dienst kan bereikt worden via <a href='mailto:{email}'>{email}</a>",
@@ -309,7 +335,8 @@
       "question": {
         "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
         "en": "Is this playground accessible to wheelchair users?",
-        "fr": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?"
+        "fr": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?",
+        "de": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?"
       },
       "mappings": [
         {
@@ -317,7 +344,8 @@
           "then": {
             "nl": "Geheel toegankelijk voor rolstoelgebruikers",
             "en": "Completely accessible for wheelchair users",
-            "fr": "Entièrement accessible aux personnes en fauteuil roulant"
+            "fr": "Entièrement accessible aux personnes en fauteuil roulant",
+            "de": "Vollständig zugänglich für Rollstuhlfahrer"
           }
         },
         {
@@ -325,7 +353,8 @@
           "then": {
             "nl": "Beperkt toegankelijk voor rolstoelgebruikers",
             "en": "Limited accessibility for wheelchair users",
-            "fr": "Accessibilité limitée pour les personnes en fauteuil roulant"
+            "fr": "Accessibilité limitée pour les personnes en fauteuil roulant",
+            "de": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer"
           }
         },
         {
@@ -333,7 +362,8 @@
           "then": {
             "nl": "Niet toegankelijk voor rolstoelgebruikers",
             "en": "Not accessible for wheelchair users",
-            "fr": "Non accessible aux personnes en fauteuil roulant"
+            "fr": "Non accessible aux personnes en fauteuil roulant",
+            "de": "Nicht zugänglich für Rollstuhlfahrer"
           }
         }
       ]

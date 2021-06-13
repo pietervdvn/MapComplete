@@ -225,7 +225,8 @@
         "nl": "Zijn honden toegelaten in dit gebied?",
         "en": "Are dogs allowed in this nature reserve?",
         "it": "I cani sono ammessi in questa riserva naturale?",
-        "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
+        "fr": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
+        "de": "Sind Hunde in diesem Naturschutzgebiet erlaubt?"
       },
       "condition": {
         "or": [
@@ -241,7 +242,8 @@
             "nl": "Honden moeten aan de leiband",
             "en": "Dogs have to be leashed",
             "it": "I cani devono essere tenuti al guinzaglio",
-            "fr": "Les chiens doivent être tenus en laisse"
+            "fr": "Les chiens doivent être tenus en laisse",
+            "de": "Hunde müssen angeleint sein"
           }
         },
         {
@@ -250,7 +252,8 @@
             "nl": "Honden zijn niet toegestaan",
             "en": "No dogs allowed",
             "it": "I cani non sono ammessi",
-            "fr": "Chiens interdits"
+            "fr": "Chiens interdits",
+            "de": "Hunde sind nicht erlaubt"
           }
         },
         {
@@ -259,7 +262,8 @@
             "nl": "Honden zijn welkom en mogen vrij rondlopen",
             "en": "Dogs are allowed to roam freely",
             "it": "I cani sono liberi di girare liberi",
-            "fr": "Les chiens sont autorisés à se promener librement"
+            "fr": "Les chiens sont autorisés à se promener librement",
+            "de": "Hunde dürfen frei herumlaufen"
           }
         }
       ]
@@ -270,7 +274,8 @@
         "en": "On which webpage can one find more information about this nature reserve?",
         "nl": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?",
         "it": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?",
-        "fr": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?"
+        "fr": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?",
+        "de": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
       },
       "render": "<a href='{website}'target='_blank'>{website}</a>",
       "freeform": {

@@ -2,19 +2,24 @@
   "id": "hailhydrant",
   "title": {
     "en": "Hydrants, Extinguishers, Fire stations, and Ambulance stations.",
-    "ja": "消火栓、消火器、消防署、救急ステーションです。"
+    "ja": "消火栓、消火器、消防署、救急ステーションです。",
+    "zh_Hant": "消防栓、滅火器、消防隊、以及急救站。"
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
-    "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。"
+    "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。",
+    "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。"
   },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
-    "ja": "このマップでは、お気に入りの近隣にある消火栓、消防署、救急ステーション、消火器を検索して更新できます。\n\n正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注視点)を追加または編集したり、利用可能な質問に答えることによって追加の詳細を提供することもできます。\n\nすべての変更は自動的にOpenStreetMapのグローバルデータベースに保存され、他のユーザが自由に再利用できます。"
+    "ja": "このマップでは、お気に入りの近隣にある消火栓、消防署、救急ステーション、消火器を検索して更新できます。\n\n正確な位置を追跡し(モバイルのみ)、左下コーナーで関連するレイヤを選択できます。このツールを使用して、マップにピン(注視点)を追加または編集したり、利用可能な質問に答えることによって追加の詳細を提供することもできます。\n\nすべての変更は自動的にOpenStreetMapのグローバルデータベースに保存され、他のユーザが自由に再利用できます。",
+    "zh_Hant": "在這份地圖上面你可以在你喜愛的社區尋找與更新消防栓、消防隊、急救站與滅火器。\n\n你可以追蹤確切位置 (只有行動版) 以及在左下角選擇與你相關的圖層。你也可以使用這工具新增或編輯地圖上的釘子 (興趣點)，以及透過回答一些問題提供額外的資訊。\n\n所有你做出的變動都會自動存到開放街圖這個全球資料庫，而且能自由讓其他人取用。"
   },
   "language": [
     "en",
     "ja",
+    "zh_Hant",
+    "nb_NO",
     "ru",
     "id"
   ],
@@ -31,7 +36,9 @@
       "id": "hydrants",
       "name": {
         "en": "Map of hydrants",
-        "ja": "消火栓の地図"
+        "ja": "消火栓の地図",
+        "zh_Hant": "消防栓地圖",
+        "nb_NO": "Kart over brannhydranter"
       },
       "minzoom": 14,
       "source": {
@@ -45,22 +52,27 @@
         "render": {
           "en": "Hydrant",
           "ru": "Гидрант",
-          "ja": "消火栓"
+          "ja": "消火栓",
+          "nb_NO": "Brannhydrant"
         }
       },
       "description": {
         "en": "Map layer to show fire hydrants.",
-        "ja": "消火栓を表示するマップレイヤ。"
+        "ja": "消火栓を表示するマップレイヤ。",
+        "zh_Hant": "顯示消防栓的地圖圖層。",
+        "nb_NO": "Kartlag for å vise brannhydranter."
       },
       "tagRenderings": [
         {
           "question": {
             "en": "What color is the hydrant?",
-            "ja": "消火栓の色は何色ですか?"
+            "ja": "消火栓の色は何色ですか?",
+            "nb_NO": "Hvilken farge har brannhydranten?"
           },
           "render": {
             "en": "The hydrant color is {colour}",
-            "ja": "消火栓の色は{color}です"
+            "ja": "消火栓の色は{color}です",
+            "nb_NO": "Brannhydranter er {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -249,7 +261,8 @@
           "title": {
             "en": "Fire hydrant",
             "ru": "Пожарный гидрант",
-            "ja": "消火栓"
+            "ja": "消火栓",
+            "nb_NO": "Brannhydrant"
           },
           "description": {
             "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
@@ -263,7 +276,8 @@
       "id": "extinguisher",
       "name": {
         "en": "Map of fire extinguishers.",
-        "ja": "消火器の地図です。"
+        "ja": "消火器の地図です。",
+        "nb_NO": "Kart over brannhydranter"
       },
       "minzoom": 14,
       "source": {
@@ -277,12 +291,15 @@
         "render": {
           "en": "Extinguishers",
           "ru": "Огнетушители",
-          "ja": "消火器"
+          "ja": "消火器",
+          "nb_NO": "Brannslokkere"
         }
       },
       "description": {
         "en": "Map layer to show fire hydrants.",
-        "ja": "消火栓を表示するマップレイヤ。"
+        "ja": "消火栓を表示するマップレイヤ。",
+        "zh_Hant": "顯示消防栓的地圖圖層。",
+        "nb_NO": "Kartlag for å vise brannslokkere."
       },
       "tagRenderings": [
         {
@@ -344,7 +361,8 @@
           ],
           "title": {
             "en": "Fire extinguisher",
-            "ja": "消火器"
+            "ja": "消火器",
+            "nb_NO": "Brannslukker"
           },
           "description": {
             "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -358,7 +376,8 @@
       "id": "fire_stations",
       "name": {
         "en": "Map of fire stations",
-        "ja": "消防署の地図"
+        "ja": "消防署の地図",
+        "nb_NO": "Kart over brannstasjoner"
       },
       "minzoom": 12,
       "source": {
@@ -373,7 +392,8 @@
         "render": {
           "en": "Fire Station",
           "ja": "消防署",
-          "ru": "Пожарная часть"
+          "ru": "Пожарная часть",
+          "nb_NO": "Brannstasjon"
         }
       },
       "description": {
@@ -560,7 +580,7 @@
         }
       },
       "description": {
-        "en": "An  ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+        "en": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "ja": "救急ステーションは、救急車、医療機器、個人用保護具、およびその他の医療用品を保管する場所です。"
       },
       "tagRenderings": [

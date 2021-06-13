@@ -20,9 +20,9 @@ export default class RememberingSource implements FeatureSource {
             }
            
             // Then new ids
-            const ids = new Set<string>(features.map(f => f.feature.properties.id + f.feature.geometry.type));
+            const ids = new Set<string>(features.map(f => f.feature.properties.id + f.feature.geometry.type + f.feature._matching_layer_id));
             // the old data
-            const oldData = oldFeatures.filter(old => !ids.has(old.feature.properties.id + old.feature.geometry.type))
+            const oldData = oldFeatures.filter(old => !ids.has(old.feature.properties.id + old.feature.geometry.type + old.feature._matching_layer_id))
             return [...features, ...oldData];
         })
     }

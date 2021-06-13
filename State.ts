@@ -94,6 +94,7 @@ export default class State {
     public readonly featureSwitchIsTesting: UIEventSource<boolean>;
     public readonly featureSwitchIsDebugging: UIEventSource<boolean>;
     public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>;
+    public readonly featureSwitchApiURL: UIEventSource<string>;
 
 
     /**
@@ -197,7 +198,6 @@ export default class State {
             this.featureSwitchShowAllQuestions = featSw("fs-all-questions", (layoutToUse) => layoutToUse?.enableShowAllQuestions ?? false,
                 "Always show all questions");
 
-
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",
                 "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org")
                 .map(str => str === "true", [], b => "" + b);
@@ -205,6 +205,10 @@ export default class State {
             this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter("debug","false",
                 "If true, shows some extra debugging help such as all the available tags on every object")
                 .map(str => str === "true", [], b => "" + b)
+
+            this.featureSwitchApiURL = QueryParameters.GetQueryParameter("backend","osm",
+                "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'")
+
         }
 
 
@@ -213,7 +217,9 @@ export default class State {
             QueryParameters.GetQueryParameter("oauth_token", undefined,
                 "Used to complete the login"),
             layoutToUse?.id,
-            true
+            true,
+            // @ts-ignore
+            this.featureSwitchApiURL.data
         );
 
 

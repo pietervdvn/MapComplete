@@ -20,7 +20,8 @@
       "nl": "Fietstelstation",
       "en": "Bicycle counting station",
       "fr": "Station de comptage de vélo",
-      "it": "Stazione conta-biciclette"
+      "it": "Stazione conta-biciclette",
+      "de": "Fahrradzählstation"
     },
     "mappings": [
       {
@@ -29,7 +30,8 @@
           "en": "Bicycle counting station {name}",
           "nl": "Fietstelstation {name}",
           "fr": "Station de comptage de vélo {name}",
-          "it": "Stazione conta-biciclette {name}"
+          "it": "Stazione conta-biciclette {name}",
+          "de": "Fahrradzählstation {name}"
         }
       },
       {
@@ -38,7 +40,8 @@
           "en": "Bicycle counting station {ref}",
           "nl": "Fietstelstation {ref}",
           "fr": "Station de comptage de vélo {ref}",
-          "it": "Stazione conta-bicicletta {ref}"
+          "it": "Stazione conta-bicicletta {ref}",
+          "de": "Fahrradzählstation {ref}"
         }
       }
     ]
