@@ -13,14 +13,14 @@ export class SubstitutedTranslation extends VariableUiElement {
 
     public constructor(
         translation: Translation,
-        tags: UIEventSource<any>) {
+        tagsSource: UIEventSource<any>) {
         super(
-           tags.map(tags => {
+            tagsSource.map(tags => {
                 const txt = Utils.SubstituteKeys(translation.txt, tags)
                if (txt === undefined) {
-                    return "no tags subs tr"
+                    return undefined
                 }
-               return new Combine(SubstitutedTranslation.EvaluateSpecialComponents(txt, tags))
+               return new Combine(SubstitutedTranslation.EvaluateSpecialComponents(txt, tagsSource))
             }, [Locale.language])
         )
         
@@ -59,6 +59,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                     try{
                       element =  knownSpecial.constr(State.state, tags, args);
                     }catch(e){
+                        console.error("SPECIALRENDERING FAILED for", tags.data.id, e)
                         element = new FixedUiElement(`Could not generate special renering for ${knownSpecial}(${args.join(", ")}) ${e}`).SetClass("alert")
                     }
                         

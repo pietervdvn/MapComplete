@@ -17,10 +17,10 @@ import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
+import LayerConfig from "../Customizations/JSON/LayerConfig";
 
 export default class SpecialVisualizations {
-    
-    
+
 
     public static specialVisualizations: {
         funcName: string,
@@ -38,7 +38,7 @@ export default class SpecialVisualizations {
                 return new VariableUiElement(tags.map(tags => {
                     const parts = [];
                     for (const key in tags) {
-                        if(!tags.hasOwnProperty(key)){
+                        if (!tags.hasOwnProperty(key)) {
                             continue;
                         }
                         parts.push(key + "=" + tags[key]);
@@ -160,22 +160,36 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     if (window.navigator.share) {
-                        const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
-                        let name = tagSource.data.name;
-                        if (name) {
-                            name = `${name} (${title})`
-                        } else {
-                            name = title;
+
+                        const generateShareData = () => {
+
+
+                            const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
+
+                            let matchingLayer: LayerConfig = undefined;
+                            for (const layer of (state?.layoutToUse?.data?.layers ?? [])) {
+                                if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
+                                    matchingLayer = layer
+                                }
+                            }
+                            let name = matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ?? tagSource.data?.name ?? "POI";
+                            if (name) {
+                                name = `${name} (${title})`
+                            } else {
+                                name = title;
+                            }
+                            let url = args[0] ?? ""
+                            if (url === "") {
+                                url = window.location.href
+                            }
+                            return {
+                                title: name,
+                                url: url,
+                                text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
+                            }
                         }
-                        let url = args[0] ?? ""
-                        if (url === "") {
-                            url = window.location.href
-                        }
-                        return new ShareButton(Svg.share_ui(), {
-                            title: name,
-                            url: url,
-                            text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
-                        })
+
+                        return new ShareButton(Svg.share_ui(), generateShareData)
                     } else {
                         return new FixedUiElement("")
                     }

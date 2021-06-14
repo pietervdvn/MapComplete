@@ -2,16 +2,16 @@ import BaseUIElement from "../BaseUIElement";
 
 export default class ShareButton extends BaseUIElement{
     private _embedded: BaseUIElement;
-    private _shareData: { text: string; title: string; url: string };
+    private _shareData: () => { text: string; title: string; url: string };
     
-    constructor(embedded: BaseUIElement, shareData: {
+    constructor(embedded: BaseUIElement, generateShareData: () => {
         text: string,
         title: string,
         url: string
     }) {
         super();
         this._embedded = embedded;
-        this._shareData = shareData;
+        this._shareData = generateShareData;
         this.SetClass("share-button")
     }
 
@@ -22,7 +22,7 @@ export default class ShareButton extends BaseUIElement{
         
         e.addEventListener('click', () => {
             if (navigator.share) {
-                navigator.share(this._shareData).then(() => {
+                navigator.share(this._shareData()).then(() => {
                     console.log('Thanks for sharing!');
                 })
                     .catch(err => {

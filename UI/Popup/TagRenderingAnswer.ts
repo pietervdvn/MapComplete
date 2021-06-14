@@ -19,6 +19,13 @@ export default class TagRenderingAnswer extends VariableUiElement {
             if(tags === undefined){
                 return undefined;
             }
+            
+            if(configuration.condition){
+                if(!configuration.condition.matchesProperties(tags)){
+                    return undefined;
+                }
+            }
+            
             const trs = Utils.NoNull(configuration.GetRenderValues(tags));
             if(trs.length === 0){
                 return  undefined;

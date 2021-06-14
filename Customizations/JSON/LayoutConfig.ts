@@ -152,11 +152,10 @@ export default class LayoutConfig {
             );
         }
 
-        const defaultClustering = {
+        this.clustering = {
             maxZoom: 16,
             minNeededElements: 500
         };
-        this.clustering = defaultClustering;
         if (json.clustering) {
             this.clustering = {
                 maxZoom: json.clustering.maxZoom ?? 18,
@@ -164,7 +163,7 @@ export default class LayoutConfig {
             }
             for (const layer of this.layers) {
                 if (layer.wayHandling !== LayerConfig.WAYHANDLING_CENTER_ONLY) {
-                    console.error("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id, "does not respect this for layout", this.id);
+                    console.debug("WARNING: In order to allow clustering, every layer must be set to CENTER_ONLY. Layer", layer.id, "does not respect this for layout", this.id);
                 }
             }
         }

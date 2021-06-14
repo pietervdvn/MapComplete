@@ -86,6 +86,7 @@ export default abstract class BaseUIElement {
         }
         return this;
     }
+    
     /**
      * The same as 'Render', but creates a HTML element instead of the HTML representation
      */
