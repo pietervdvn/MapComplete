@@ -43,11 +43,14 @@ export class DropDown<T> extends InputElement<T> {
                 el.appendChild(labelHtml)
             }
         }
+        
+        options = options ?? {}
+        options.select_class = options.select_class ?? 'bg-indigo-100 p-1 rounded hover:bg-indigo-200'
 
 
         {
             const select = document.createElement("select")
-            select.classList.add(...(options?.select_class?.split(" ") ?? []))
+            select.classList.add(...(options.select_class.split(" ") ?? []))
             for (let i = 0; i < values.length; i++) {
 
                 const option = document.createElement("option")

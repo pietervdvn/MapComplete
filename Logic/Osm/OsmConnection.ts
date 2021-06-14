@@ -67,7 +67,7 @@ export class OsmConnection {
         this.userDetails.data.dryRun = dryRun;
         const self =this;
         this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
-            if(self.userDetails.data.loggedIn == false){
+            if(self.userDetails.data.loggedIn == false && isLoggedIn == true){
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
                 self.AttemptLogin()

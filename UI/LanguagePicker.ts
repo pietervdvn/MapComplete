@@ -16,7 +16,7 @@ export default class LanguagePicker {
         return new DropDown(label, languages.map(lang => {
                 return {value: lang, shown: lang}
             }
-        ), Locale.language, { select_class: 'bg-indigo-100 p-1 rounded hover:bg-indigo-200'});
+        ), Locale.language);
     }
 
 

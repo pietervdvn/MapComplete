@@ -43,7 +43,7 @@ export default class LayerSelection extends Combine {
 
             const zoomStatus = new VariableUiElement(State.state.locationControl.map(location => {
                 if (location.zoom < layer.layerDef.minzoom) {
-                    return Translations.t.general.layerSelection.zoomInToSeeThisLayer
+                    return Translations.t.general.layerSelection.zoomInToSeeThisLayer.Clone()
                         .SetClass("alert")
                         .SetStyle("display: block ruby;width:min-content;")
                 }

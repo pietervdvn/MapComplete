@@ -27,8 +27,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             "welcome" ,isShown
         )
     }
-
-    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>) {
+    
+    private static ConstructBaseTabs(layoutToUse: LayoutConfig): { header: string | BaseUIElement; content: BaseUIElement }[]{
 
         let welcome: BaseUIElement = new ThemeIntroductionPanel();
         if (layoutToUse.id === personal.id) {
@@ -55,8 +55,13 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             });
         }
 
+        return tabs;
+    }
 
-        const tabsWithAboutMc = [...tabs]
+    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>) {
+
+        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse)
+        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse)]
         tabsWithAboutMc.push({
                 header: Svg.help,
                 content: new Combine([Translations.t.general.aboutMapcomplete.Clone(), "<br/>Version " + Constants.vNumber])
@@ -65,10 +70,11 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         );
 
         return new Toggle(
-            new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
-            new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
-            userDetails.map(userdetails =>
-                userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock)
+          new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
+           new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
+            userDetails.map((userdetails: UserDetails) =>
+                userdetails.loggedIn &&
+                userdetails.csCount >= Constants.userJourney.mapCompleteHelpUnlock)
         )
     }
 
