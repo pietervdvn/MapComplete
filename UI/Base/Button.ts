@@ -1,39 +1,29 @@
 import {UIElement} from "../UIElement";
-import Locale from "../i18n/Locale";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 
-export class Button extends UIElement {
+export class Button extends BaseUIElement {
     private _text: BaseUIElement;
     private _onclick: () => void;
-    private _clss: string;
 
-    constructor(text: string | UIElement, onclick: (() => void), clss: string = "") {
-        super(Locale.language);
+    constructor(text: string | UIElement, onclick: (() => void)) {
+        super();
         this._text = Translations.W(text);
         this._onclick = onclick;
-        if (clss !== "") {
-
-            this._clss = "class='" + clss + "'";
-        }else{
-            this._clss = "";
-        }
     }
 
-
-    InnerRender(): string {
-
-        return "<form>" +
-            "<button id='button-"+this.id+"' type='button' "+this._clss+">" + this._text.Render() +  "</button>" +
-            "</form>";
-    }
-
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        const self = this;
-        document.getElementById("button-"+this.id).onclick = function(){
-            self._onclick();
+    protected InnerConstructElement(): HTMLElement {
+        const el = this._text.ConstructElement();
+        if(el === undefined){
+            return undefined;
         }
+        const form = document.createElement("form")
+        const button = document.createElement("button")
+        button.type = "button"
+        button.appendChild(el)
+        button.onclick = this._onclick
+        form.appendChild(button)
+        return form;
     }
 
 }

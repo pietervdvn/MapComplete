@@ -6,11 +6,11 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 export default class LicensePicker extends DropDown<string>{
     
     constructor() {
-        super(Translations.t.image.willBePublished,
+        super(Translations.t.image.willBePublished.Clone(),
             [
-                {value: "CC0", shown: Translations.t.image.cco},
-                {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
-                {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
+                {value: "CC0", shown: Translations.t.image.cco.Clone()},
+                {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs.Clone()},
+                {value: "CC-BY 4.0", shown: Translations.t.image.ccb.Clone()}
             ],
             State.state?.osmConnection?.GetPreference("pictures-license") ?? new UIEventSource<string>("CC0")
         )

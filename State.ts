@@ -221,7 +221,7 @@ export default class State {
 
 
             this.backgroundLayerId = QueryParameters.GetQueryParameter("background",
-            layoutToUse.defaultBackgroundId ?? "osm",
+            layoutToUse?.defaultBackgroundId ?? "osm",
             "The id of the background layer to start with")
 
         }
