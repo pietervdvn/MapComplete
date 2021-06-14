@@ -46,7 +46,10 @@ export default class ShareScreen extends Combine {
                 return null;
             }
             if (includeL) {
-                return `z=${currentLocation.data.zoom}&lat=${currentLocation.data.lat}&lon=${currentLocation.data.lon}`
+                return [["z", currentLocation.data?.zoom], ["lat", currentLocation.data?.lat], ["lon", currentLocation.data?.lon]]
+                    .filter(p => p[1] !== undefined)
+                    .map(p => p[0]+"="+p[1])
+                    .join("&")
             } else {
                 return null;
             }
@@ -166,8 +169,6 @@ export default class ShareScreen extends Combine {
         }, optionParts);
 
 
-        const iframe = url.map(url => `&lt;iframe src="${url}" width="100%" height="100%" title="${layout?.title?.txt ?? "MapComplete"} with MapComplete"&gt;&lt;/iframe&gt`);
-        
         const iframeCode = new VariableUiElement(
             url.map((url) => {
                 return `<span class='literal-code iframe-code-block'>

@@ -31,7 +31,7 @@ export class FixedInputElement<T> extends InputElement<T> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        return undefined;
+        return this._el;
     }
 
     GetValue(): UIEventSource<T> {

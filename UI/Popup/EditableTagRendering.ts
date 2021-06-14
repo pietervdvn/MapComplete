@@ -8,6 +8,7 @@ import State from "../../State";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import BaseUIElement from "../BaseUIElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class EditableTagRendering extends Toggle {
 
@@ -28,8 +29,10 @@ export default class EditableTagRendering extends Toggle {
                     });
 
 
+            
             const answerWithEditButton = new Combine([answer,
-                new Toggle(editButton, undefined, State.state.osmConnection.isLoggedIn)]).SetClass("w-full")
+                new Toggle(editButton, undefined, State.state.osmConnection.isLoggedIn)])
+                .SetClass("flex justify-between w-full")
 
 
             const cancelbutton =
@@ -52,13 +55,12 @@ export default class EditableTagRendering extends Toggle {
                 editMode
             )
         }
-        answer.SetClass("flex w-full break-word justify-between text-default landscape:w-1/2 landscape:p-2 pb-2 border-b border-gray-300 mb-2")
-        rendering.SetClass("flex m-1 p-1 border-b border-gray-300 mb-2 pb-2")
+        rendering.SetClass("block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2")
         // The tagrendering is hidden if:
         // The answer is unknown. The questionbox will then show the question
         // There is a condition hiding the answer
         const renderingIsShown = tags.map(tags =>
-            !configuration.IsKnown(tags) &&
+            configuration.IsKnown(tags) &&
             (configuration?.condition?.matchesProperties(tags) ?? true))
         super(
             rendering,

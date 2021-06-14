@@ -190,12 +190,6 @@ export default class    TagSpec extends  T{
                         ]
                     };
 
-                    const constr = new TagRenderingConfig(def, undefined, "test");
-                    const uiEl = new EditableTagRendering(new UIEventSource<any>(
-                        {leisure: "park", "access": "no"}), constr
-                    );
-                    const rendered = uiEl.ConstructElement().innerHTML;
-                    equal(true, rendered.indexOf("Niet toegankelijk") > 0)
 
                 }
             ], [

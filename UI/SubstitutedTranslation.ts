@@ -20,9 +20,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                if (txt === undefined) {
                     return "no tags subs tr"
                 }
-                const contents = SubstitutedTranslation.EvaluateSpecialComponents(txt, tags)
-               console.log("Substr has contents", contents)
-                return new Combine(contents)
+               return new Combine(SubstitutedTranslation.EvaluateSpecialComponents(txt, tags))
             }, [Locale.language])
         )
         

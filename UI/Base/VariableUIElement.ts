@@ -26,7 +26,7 @@ export class VariableUiElement extends BaseUIElement {
                 for (const content of contents) {
                     const c = content.ConstructElement();
                     if (c !== undefined && c !== null) {
-                        el.appendChild(c)
+                        el.appendChild(c)  
                     }
 
                 }

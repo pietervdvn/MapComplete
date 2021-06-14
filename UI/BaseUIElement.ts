@@ -43,6 +43,7 @@ export default abstract class BaseUIElement {
             throw "SEVERE: could not attach UIElement to " + divId;
         }
 
+        console.log("Attaching to ", element)
         while (element.firstChild) {
             //The list is LIVE so it will re-index each call
             element.removeChild(element.firstChild);

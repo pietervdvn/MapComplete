@@ -22,13 +22,24 @@ export class RadioButton<T> extends InputElement<T> {
                     }
                 }
             ), elements.map(e => e?.GetValue()));
+        
+        if(selectFirstAsDefault){
+            
+        value.addCallbackAndRun(selected =>{
+            if(selected === undefined){
+                for (const element of elements) {
+                    const v = element.GetValue().data;
+                    if(v !== undefined){
+                        value.setData(v)
+                        break;
+                    }
+                }
+                
+                
+            }
+        })
 
-
-        /*
-                value.addCallback((t) => {
-                    self?.ShowValue(t);
-                })*/
-
+        }
 
         for (let i = 0; i < elements.length; i++) {
             // If an element is clicked, the radio button corresponding with it should be selected as well
@@ -63,14 +74,25 @@ export class RadioButton<T> extends InputElement<T> {
             input.name = groupId;
             input.type = "radio"
 
+            input.onchange = () => {
+                if(input.checked){
+                    selectedElementIndex.setData(i1)
+                }
+            }
+            
+            value.addCallbackAndRun(
+                selected => input.checked = element.IsValid(selected)
+            )
 
             const label = document.createElement("label")
             label.appendChild(labelHtml)
             label.htmlFor = input.id;
-            input.appendChild(label)
 
-            form.appendChild(input)
+            const block = document.createElement("div")
+            block.appendChild(input)
+            block.appendChild(label)
 
+            form.appendChild(block)
             form.addEventListener("change", () => {
                     // TODO FIXME
                 }
@@ -81,6 +103,7 @@ export class RadioButton<T> extends InputElement<T> {
         this.value = value;
         this._elements = elements;
 
+        this.SetClass("flex flex-col")
     }
 
     IsValid(t: T): boolean {
