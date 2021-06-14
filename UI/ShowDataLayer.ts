@@ -87,10 +87,10 @@ export default class ShowDataLayer {
             }
             marker.openPopup();
 
-            const popup = marker.getPopup();
+            
             const tags = State.state.allElements.getEventSourceById(selected.properties.id);
             const layer: LayerConfig = this._layerDict[selected._matching_layer_id];
-            const infoBox = FeatureInfoBox.construct(tags, layer);
+            const infoBox = new FeatureInfoBox(tags, layer);
 
             infoBox.isShown.addCallback(isShown => {
                 if (!isShown) {
@@ -98,9 +98,8 @@ export default class ShowDataLayer {
                 }
             });
 
-            popup.setContent(infoBox.Render());
+            infoBox.AttachTo(`popup-${selected.properties.id}`)
             infoBox.Activate();
-            infoBox.Update();
         })
 
     }
@@ -156,11 +155,13 @@ export default class ShowDataLayer {
         }, leafletLayer);
 
         // By setting 50vh, leaflet will attempt to fit the entire screen and move the feature down
-        popup.setContent("<div style='height: 50vh'>Rendering</div>");
+        popup.setContent(`<div style='height: 50vh' id='popup-${feature.properties.id}'>Rendering</div>`);
 
         leafletLayer.bindPopup(popup);
+        
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature)
+            // The feature info box is bound via the selected element callback, as there are multiple ways to open the popup (e.g. a trigger via the URL°
         });
         
         this._popups.set(feature, leafletLayer);

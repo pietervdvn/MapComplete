@@ -1,9 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import Locale from "../i18n/Locale";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import Svg from "../../Svg";
 import {SubtleButton} from "../Base/SubtleButton";
 import State from "../../State";
@@ -14,118 +12,163 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import {Tag} from "../../Logic/Tags/Tag";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Toggle from "../Input/Toggle";
+import UserDetails from "../../Logic/Osm/OsmConnection";
+import {Translation} from "../i18n/Translation";
 
-export default class SimpleAddUI extends UIElement {
-    private readonly _loginButton: BaseUIElement;
+/*
+* The SimpleAddUI is a single panel, which can have multiple states:
+* - A list of presets which can be added by the user
+* - A 'confirm-selection' button (or alternatively: please enable the layer)
+* - A 'something is wrong - please soom in further'
+* - A 'read your unread messages before adding a point'
+ */
 
-    private readonly _confirmPreset: UIEventSource<{
-        description: string | BaseUIElement,
-        name: string | BaseUIElement,
-        icon: BaseUIElement,
-        tags: Tag[],
-        layerToAddTo: {
-            layerDef: LayerConfig,
-            isDisplayed: UIEventSource<boolean>
-        }
-    }>
-        = new UIEventSource(undefined);
+interface PresetInfo {
+    description: string | Translation,
+    name: string | BaseUIElement,
+    icon: BaseUIElement,
+    tags: Tag[],
+    layerToAddTo: {
+        layerDef: LayerConfig,
+        isDisplayed: UIEventSource<boolean>
+    }
+}
 
-    private _component:BaseUIElement;
-
-    private readonly openLayerControl: BaseUIElement;
-    private readonly cancelButton: BaseUIElement;
-    private readonly goToInboxButton: BaseUIElement = new SubtleButton(Svg.envelope_ui(),
-        Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false});
+export default class SimpleAddUI extends Toggle {
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(State.state.locationControl.map(loc => loc.zoom));
-        const self = this;
-        this.ListenTo(Locale.language);
-        this.ListenTo(State.state.osmConnection.userDetails);
-        this.ListenTo(State.state.layerUpdater.runningQuery);
-        this.ListenTo(this._confirmPreset);
-        this.ListenTo(State.state.locationControl);
-        State.state.filteredLayers.data?.map(layer => {
-            self.ListenTo(layer.isDisplayed)
-        })
 
-        this._loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(() => State.state.osmConnection.AttemptLogin());
+
+        const loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(State.state.osmConnection.AttemptLogin);
+        const readYourMessages = new Combine([
+            Translations.t.general.readYourMessages.Clone().SetClass("alert"),
+            new SubtleButton(Svg.envelope_ui(),
+                Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false})
+        ]);
+        
+        
+        
+        const selectedPreset = new UIEventSource<PresetInfo>(undefined);
+        isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
+        
+        function createNewPoint(tags: any[]){
+           const loc = State.state.LastClickLocation.data;
+            let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
+            State.state.selectedElement.setData(feature);
+        }
+        
+        const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
+
+        const addUi = new VariableUiElement(
+            selectedPreset.map(preset => {
+                    if (preset === undefined) {
+                        return presetsOverview
+                    }
+                    return SimpleAddUI.CreateConfirmButton(preset,
+                        tags => {
+                            createNewPoint(tags)
+                            selectedPreset.setData(undefined)
+                        }, () => {
+                            selectedPreset.setData(undefined)
+                        })
+                }
+            ))
+
+
+        super(
+            new Toggle(
+                new Toggle(
+                    new Toggle(
+                        Translations.t.general.add.stillLoading.Clone().SetClass("alert"),
+                        addUi,
+                        State.state.layerUpdater.runningQuery
+                    ),
+                    Translations.t.general.add.zoomInFurther.Clone().SetClass("alert")                    ,
+                    State.state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
+                ),
+                readYourMessages,
+                State.state.osmConnection.userDetails.map((userdetails: UserDetails) =>
+                    userdetails.csCount >= Constants.userJourney.addNewPointWithUnreadMessagesUnlock ||
+                    userdetails.unreadMessages == 0)
+            ),
+            loginButton,
+            State.state.osmConnection.isLoggedIn
+        )
+
 
         this.SetStyle("font-size:large");
-        this.cancelButton = new SubtleButton(Svg.close_ui(),
-            Translations.t.general.cancel
-        ).onClick(() => {
-            self._confirmPreset.setData(undefined);
-        })
+    }
 
-        this.openLayerControl = new SubtleButton(Svg.layers_ui(),
-            Translations.t.general.add.openLayerControl
-        ).onClick(() => {
-            State.state.layerControlIsOpened.setData(true);
-        })
+
+
+    private static CreateConfirmButton(preset: PresetInfo,
+                                       confirm: (tags: any[]) => void, 
+                                       cancel: () => void): BaseUIElement {
+
+
+        const confirmButton = new SubtleButton(preset.icon,
+            new Combine([
+                Translations.t.general.add.addNew.Subs({category: preset.name}),
+                Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert")
+            ]).SetClass("flex flex-col")
+        ).SetClass("font-bold break-words")
+            .onClick(() => confirm(preset.tags));
+
+
+        const openLayerControl =  
+            new SubtleButton(
+                Svg.layers_ui(),
+                new Combine([
+                    Translations.t.general.add.layerNotEnabled
+                        .Subs({layer: preset.layerToAddTo.layerDef.name})
+                        .SetClass("alert"),
+                    Translations.t.general.add.openLayerControl
+                ])
+            )
+           
+            .onClick(() => State.state.layerControlIsOpened.setData(true))
         
-        // IS shown is the state of the dialog - we reset the choice if the dialog dissappears
-        isShown.addCallback(isShown => 
-        {
-            if(!isShown){
-                self._confirmPreset.setData(undefined)
-            }
-        })
-        // If the click location changes, we reset the dialog as well
-        State.state.LastClickLocation.addCallback(() => {
-            self._confirmPreset.setData(undefined)
-        })
-        this._component = this.CreateContent();
+        const openLayerOrConfirm = new Toggle(
+            confirmButton,
+            openLayerControl,
+            preset.layerToAddTo.isDisplayed
+        )
+        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset);
+
+        const cancelButton = new SubtleButton(Svg.close_ui(),
+            Translations.t.general.cancel
+        ).onClick(cancel        )
+
+        return new Combine([
+            Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
+            State.state.osmConnection.userDetails.data.dryRun ? 
+                Translations.t.general.testing.Clone().SetClass("alert") : undefined           , 
+            openLayerOrConfirm,
+            cancelButton,
+            preset.description,
+            tagInfo
+
+        ]).SetClass("flex flex-col")
+
     }
 
-    InnerRender(): BaseUIElement {
-       return this._component;
+    private static CreateTagInfoFor(preset: PresetInfo, optionallyLinkToWiki = true) {
+        const csCount = State.state.osmConnection.userDetails.data.csCount;
+        return new Toggle(
+            Translations.t.general.presetInfo.Subs({
+                tags: preset.tags.map(t => t.asHumanString(optionallyLinkToWiki && csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&"),
 
+            }),
+
+            undefined,
+            State.state.osmConnection.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAt)
+        );
     }
 
-    private CreatePresetsPanel(): BaseUIElement {
-        const userDetails = State.state.osmConnection.userDetails;
-        if (userDetails === undefined) {
-            return undefined;
-        }
-
-        if (!userDetails.data.loggedIn) {
-            return this._loginButton;
-        }
-
-        if (userDetails.data.unreadMessages > 0 && userDetails.data.csCount < Constants.userJourney.addNewPointWithUnreadMessagesUnlock) {
-            return new Combine([
-                Translations.t.general.readYourMessages.Clone().SetClass("alert"),
-                this.goToInboxButton
-            ]);
-
-        }
-
-        if (userDetails.data.csCount < Constants.userJourney.addNewPointsUnlock) {
-            return new Combine(["<span class='alert'>",
-                Translations.t.general.fewChangesBefore,
-                "</span>"]);
-        }
-
-        if (State.state.locationControl.data.zoom < Constants.userJourney.minZoomLevelToAddNewPoints) {
-            return Translations.t.general.add.zoomInFurther.SetClass("alert")
-        }
-
-        if (State.state.layerUpdater.runningQuery.data) {
-            return Translations.t.general.add.stillLoading
-        }
-
-        const presetButtons = this.CreatePresetButtons()
-        return new Combine(presetButtons)
-    }
-
-
-    private CreateContent(): BaseUIElement {
-        const confirmPanel = this.CreateConfirmPanel();
-        if (confirmPanel !== undefined) {
-            return confirmPanel;
-        }
-
+    private static CreateAllPresetsPanel(selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
+        const presetButtons = SimpleAddUI.CreatePresetButtons(selectedPreset)
         let intro: BaseUIElement = Translations.t.general.add.intro;
 
         let testMode: BaseUIElement = undefined;
@@ -133,113 +176,58 @@ export default class SimpleAddUI extends UIElement {
             testMode = Translations.t.general.testing.Clone().SetClass("alert")
         }
 
-        let presets = this.CreatePresetsPanel();
-        return new Combine([intro, testMode, presets])
-
+        return new Combine([intro, testMode, presetButtons]).SetClass("flex flex-col")
 
     }
 
-    private CreateConfirmPanel(): BaseUIElement {
-        const preset = this._confirmPreset.data;
-        if (preset === undefined) {
-            return undefined;
-        }
+    private static CreatePresetSelectButton(preset: PresetInfo){
 
-        const confirmButton = new SubtleButton(preset.icon,
+        const tagInfo =SimpleAddUI.CreateTagInfoFor(preset, false);
+        return new SubtleButton(
+            preset.icon,
             new Combine([
-                "<b>",
-                Translations.t.general.add.confirmButton.Subs({category: preset.name}),
-                "</b>"])).SetClass("break-words");
-        confirmButton.onClick(
-            this.CreatePoint(preset.tags)
-        );
-
-        if (!this._confirmPreset.data.layerToAddTo.isDisplayed.data) {
-            return new Combine([
-                Translations.t.general.add.layerNotEnabled.Subs({layer: this._confirmPreset.data.layerToAddTo.layerDef.name})
-                    .SetClass("alert"),
-                this.openLayerControl,
-
-                this.cancelButton
-            ]);
-        }
-
-        let tagInfo = "";
-        const csCount = State.state.osmConnection.userDetails.data.csCount;
-        if (csCount > Constants.userJourney.tagsVisibleAt) {
-            tagInfo = this._confirmPreset.data.tags.map(t => t.asHumanString(csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&");
-            tagInfo = `<br/>More information about the preset: ${tagInfo}`
-        }
-
-        return new Combine([
-            Translations.t.general.add.confirmIntro.Subs({title: this._confirmPreset.data.name}),
-            State.state.osmConnection.userDetails.data.dryRun ? "<span class='alert'>TESTING - changes won't be saved</span>" : "",
-            confirmButton,
-            this.cancelButton,
-            preset.description,
-            tagInfo
-
-        ])
-
+                Translations.t.general.add.addNew.Subs({
+                    category: preset.name
+                }).SetClass("font-bold"),
+                Translations.WT(preset.description)?.FirstSentence(),
+                tagInfo?.SetClass("subtle")
+            ]).SetClass("flex flex-col")
+        )
     }
-
-    private CreatePresetButtons() {
+ 
+/*
+* Generates the list with all the buttons.*/
+    private static CreatePresetButtons(selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
         const allButtons = [];
-        const self = this;
         for (const layer of State.state.filteredLayers.data) {
+            
+            if(layer.isDisplayed.data === false && State.state.featureSwitchLayers){
+                continue;
+            }
+            
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
-                const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon: BaseUIElement = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html.SetClass("simple-add-ui-icon");
 
-                const csCount = State.state.osmConnection.userDetails.data.csCount;
-                let tagInfo = undefined;
-                if (csCount > Constants.userJourney.tagsVisibleAt) {
-                    const presets = preset.tags.map(t => new Combine([t.asHumanString(false, true), " "]).SetClass("subtle break-words"))
-                    tagInfo = new Combine(presets)
+                const tags = TagUtils.KVtoProperties(preset.tags ?? []);
+                let icon: BaseUIElement = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
+                    .SetClass("w-12 h-12 block relative");
+                const presetInfo: PresetInfo = {
+                    tags: preset.tags,
+                    layerToAddTo: layer,
+                    name: preset.title,
+                    description: preset.description,
+                    icon: icon
                 }
-                const button: UIElement =
-                    new SubtleButton(
-                        icon,
-                        new Combine([
-                            "<b>",
-                            preset.title,
-                            "</b>",
-                            preset.description !== undefined ? new Combine(["<br/>", preset.description.FirstSentence()]) : "",
-                            "<br/>",
-                            tagInfo
-                        ])
-                    ).onClick(
-                        () => {
-                            self._confirmPreset.setData({
-                                tags: preset.tags,
-                                layerToAddTo: layer,
-                                name: preset.title,
-                                description: preset.description,
-                                icon: icon
-                            });
-                            self.Update();
-                        }
-                    )
+
+                const button = SimpleAddUI.CreatePresetSelectButton(presetInfo);
+                button.onClick(() => {
+                    selectedPreset.setData(presetInfo)
+                })
                 allButtons.push(button);
             }
         }
-        return allButtons;
+        return new Combine(allButtons).SetClass("flex flex-col");
     }
 
-    private CreatePoint(tags: Tag[]) {
-        return () => {
-            console.log("Create Point Triggered")
-            const loc = State.state.LastClickLocation.data;
-            let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
-            State.state.selectedElement.setData(feature);
-            this._confirmPreset.setData(undefined);
-        }
-    }
-
-    public OnClose(){
-        console.log("On close triggered")
-        this._confirmPreset.setData(undefined)
-    }
 
 }

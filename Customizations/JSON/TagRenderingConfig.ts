@@ -7,6 +7,8 @@ import {Utils} from "../../Utils";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {UIElement} from "../../UI/UIElement";
+import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 /***
  * The parsed version of TagRenderingConfigJSON
@@ -240,6 +242,46 @@ export default class TagRenderingConfig {
         return this.question === null && this.condition === null;
     }
 
+    /**
+     * Gets all the render values. Will return multiple render values if 'multianswer' is enabled.
+     * The result will equal [GetRenderValue] if not 'multiAnswer'
+     * @param tags
+     * @constructor
+     */
+    public GetRenderValues(tags: any): Translation[]{
+        if(!this.multiAnswer){
+            return [this.GetRenderValue(tags)]
+        }
+
+        // A flag to check that the freeform key isn't matched multiple times 
+        // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
+        let freeformKeyUsed = this.freeform?.key === undefined; 
+        // We run over all the mappings first, to check if the mapping matches
+        const applicableMappings: Translation[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+            if (mapping.if === undefined) {
+                return mapping.then;
+            }
+            if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
+                if(!freeformKeyUsed){
+                    if(mapping.if.usedKeys().indexOf(this.freeform.key) >= 0){
+                        // This mapping matches the freeform key - we mark the freeform key to be ignored!
+                        freeformKeyUsed = true;
+                    }
+                }
+                return mapping.then;
+            }
+            return undefined;
+        }))
+        
+        
+
+        if (!freeformKeyUsed
+            && tags[this.freeform.key] !== undefined) {
+            applicableMappings.push(this.render)
+        }
+        return applicableMappings
+    }
+    
     /**
      * Gets the correct rendering value (or undefined if not known)
      * @constructor

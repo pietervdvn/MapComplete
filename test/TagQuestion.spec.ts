@@ -5,7 +5,6 @@ Utils.runningFromConsole = true;
 import TagRenderingQuestion from "../UI/Popup/TagRenderingQuestion";
 import {UIEventSource} from "../Logic/UIEventSource";
 import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
-import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 
 export default class TagQuestionSpec extends T {
     constructor() {

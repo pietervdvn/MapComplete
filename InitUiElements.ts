@@ -269,11 +269,10 @@ export class InitUiElements {
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
+        help.onClick(() => isOpened.setData(true))
         new Toggle(
             fullOptions
-                .SetClass("welcomeMessage")
-                .onClick(() => {/*Catch the click*/
-                }),
+                .SetClass("welcomeMessage"),
             help
             , isOpened
         ).AttachTo("messagesbox");
@@ -308,7 +307,8 @@ export class InitUiElements {
             copyrightNotice,
             new MapControlButton(Svg.osm_copyright_svg()),
             copyrightNotice.isShown
-        ).SetClass("p-0.5")
+        ).ToggleOnClick()
+            .SetClass("p-0.5")
 
         const layerControlPanel = new LayerControlPanel(
             State.state.layerControlIsOpened)
@@ -317,7 +317,7 @@ export class InitUiElements {
             layerControlPanel,
             new MapControlButton(Svg.layers_svg()),
             State.state.layerControlIsOpened
-        )
+        ).ToggleOnClick()
 
         const layerControl = new Toggle(
             layerControlButton,

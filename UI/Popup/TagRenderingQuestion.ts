@@ -32,23 +32,23 @@ export default class TagRenderingQuestion extends UIElement {
     private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
 
-    private _saveButton: UIElement;
+    private _saveButton: BaseUIElement;
 
     private _inputElement: InputElement<TagsFilter>;
-    private _cancelButton: UIElement;
+    private _cancelButton: BaseUIElement;
     private _appliedTags: BaseUIElement;
-    private _question: UIElement;
+    private _question: BaseUIElement;
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 afterSave?: () => void,
-                cancelButton?: UIElement
+                cancelButton?: BaseUIElement
     ) {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
         this._cancelButton = cancelButton;
-        this._question = SubstitutedTranslation.construct(this._configuration.question, tags)
+        this._question = new SubstitutedTranslation(this._configuration.question, tags)
             .SetClass("question-text");
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
@@ -242,7 +242,7 @@ export default class TagRenderingQuestion extends UIElement {
             return undefined;
         }
         return new FixedInputElement(
-            SubstitutedTranslation.construct(mapping.then, this._tags),
+            new SubstitutedTranslation(mapping.then, this._tags),
             mapping.if,
             (t0, t1) => t1.isEquivalent(t0));
     }

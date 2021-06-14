@@ -35,8 +35,8 @@ export class SubtleButton extends UIElement {
         if (linkTo == undefined) {
             return new Combine([
                 image,
-                message,
-            ]);
+                message?.SetClass("blcok ml-4 overflow-ellipsis"),
+            ]).SetClass("flex group");
         }
 
 

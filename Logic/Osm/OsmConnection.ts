@@ -65,7 +65,14 @@ export class OsmConnection {
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
         this.userDetails.data.dryRun = dryRun;
-        this.isLoggedIn = this.userDetails.map(user => user.loggedIn)
+        const self =this;
+        this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
+            if(self.userDetails.data.loggedIn == false){
+                // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
+                // This means someone attempted to toggle this; so we attempt to login!
+                self.AttemptLogin()
+            }
+        });
         this._dryRun = dryRun;
 
         this.updateAuthObject();
@@ -217,14 +224,15 @@ export class OsmConnection {
         });
     }
 
-    private CheckForMessagesContinuously() {
-        const self = this;
-        window.setTimeout(() => {
-            if (self.userDetails.data.loggedIn) {
-                console.log("Checking for messages")
-                this.AttemptLogin();
-            }
-        }, 5 * 60 * 1000);
+    private CheckForMessagesContinuously(){
+        const self =this;
+        UIEventSource.Chronic(5 * 60 * 1000).addCallback(_ => {
+            if (self.isLoggedIn .data) {
+            console.log("Checking for messages")
+            self.AttemptLogin();
+        }
+        });
+       
     }
 
 

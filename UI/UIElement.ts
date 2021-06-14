@@ -21,7 +21,7 @@ export abstract class UIElement extends BaseUIElement{
         if (source === undefined) {
             return this;
         }
-        console.trace("Got a listenTo in ", this.constructor.name)
+        //console.trace("Got a listenTo in ", this.constructor.name)
         const self = this;
         source.addCallback(() => {
             self.lastInnerRender = undefined;

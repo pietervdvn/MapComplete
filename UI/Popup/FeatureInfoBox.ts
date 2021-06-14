@@ -11,10 +11,11 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
+import BaseUIElement from "../BaseUIElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
-    private constructor(
+    public constructor(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig
     ) {
@@ -28,12 +29,8 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     }
 
-    static construct(tags: UIEventSource<any>, layer: LayerConfig): FeatureInfoBox {
-        return new FeatureInfoBox(tags, layer)
-    }
-
     private static GenerateTitleBar(tags: UIEventSource<any>,
-                                    layerConfig: LayerConfig): UIElement {
+                                    layerConfig: LayerConfig): BaseUIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI", undefined))
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
@@ -48,7 +45,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     }
 
     private static GenerateContent(tags: UIEventSource<any>,
-                                   layerConfig: LayerConfig): UIElement {
+                                   layerConfig: LayerConfig): BaseUIElement {
         let questionBox: UIElement = undefined;
 
         if (State.state.featureSwitchUserbadge.data) {

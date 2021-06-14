@@ -37,7 +37,7 @@ export default class DeleteImage extends UIElement {
                 cancelButton
             ]).SetClass("flex flex-col background-black"),
             Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
-        )
+        ).ToggleOnClick()
 
     }
 

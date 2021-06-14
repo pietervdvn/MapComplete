@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import BaseUIElement from "../BaseUIElement";
 
 export class FixedUiElement extends BaseUIElement {

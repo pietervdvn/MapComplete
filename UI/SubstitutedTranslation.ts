@@ -1,71 +1,37 @@
-import {UIElement} from "./UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
-import Combine from "./Base/Combine";
 import State from "../State";
 import {FixedUiElement} from "./Base/FixedUiElement";
 import SpecialVisualizations from "./SpecialVisualizations";
 import BaseUIElement from "./BaseUIElement";
+import {Utils} from "../Utils";
+import {VariableUiElement} from "./Base/VariableUIElement";
+import Combine from "./Base/Combine";
 
-export class SubstitutedTranslation extends UIElement {
-    private readonly tags: UIEventSource<any>;
-    private readonly translation: Translation;
-    private content: BaseUIElement[];
+export class SubstitutedTranslation extends VariableUiElement {
 
-    private constructor(
+    public constructor(
         translation: Translation,
         tags: UIEventSource<any>) {
-        super(tags);
-        this.translation = translation;
-        this.tags = tags;
-        const self = this;
-        tags.addCallbackAndRun(() => {
-            self.content = self.CreateContent();
-            self.Update();
-        });
-
-        Locale.language.addCallback(() => {
-            self.content = self.CreateContent();
-            self.Update();
-        });
+        super(
+           tags.map(tags => {
+                const txt = Utils.SubstituteKeys(translation.txt, tags)
+               if (txt === undefined) {
+                    return "no tags subs tr"
+                }
+                const contents = SubstitutedTranslation.EvaluateSpecialComponents(txt, tags)
+               console.log("Substr has contents", contents)
+                return new Combine(contents)
+            }, [Locale.language])
+        )
+        
+        
         this.SetClass("w-full")
     }
 
-    public static construct(
-        translation: Translation,
-        tags: UIEventSource<any>): SubstitutedTranslation {
-        return new SubstitutedTranslation(translation, tags);
-    }
 
-    public static SubstituteKeys(txt: string, tags: any) {
-        for (const key in tags) {
-            if(!tags.hasOwnProperty(key)) {
-                continue
-            }
-            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
-        }
-        return txt;
-    }
-
-    InnerRender() {
-        if (this.content.length == 1) {
-            return this.content[0];
-        }
-        return new Combine(this.content);
-    }
-
-    private CreateContent(): BaseUIElement[] {
-        let txt = this.translation?.txt;
-        if (txt === undefined) {
-            return []
-        }
-        const tags = this.tags.data;
-        txt = SubstitutedTranslation.SubstituteKeys(txt, tags);
-        return this.EvaluateSpecialComponents(txt);
-    }
-
-    private EvaluateSpecialComponents(template: string): BaseUIElement[] {
+    private static EvaluateSpecialComponents(template: string, tags: UIEventSource<any>): BaseUIElement[] {
 
         for (const knownSpecial of SpecialVisualizations.specialVisualizations) {
 
@@ -74,9 +40,9 @@ export class SubstitutedTranslation extends UIElement {
             if (matched != null) {
 
                 // We found a special component that should be brought to live
-                const partBefore = this.EvaluateSpecialComponents(matched[1]);
+                const partBefore = SubstitutedTranslation.EvaluateSpecialComponents(matched[1], tags);
                 const argument = matched[2].trim();
-                const partAfter = this.EvaluateSpecialComponents(matched[3]);
+                const partAfter = SubstitutedTranslation.EvaluateSpecialComponents(matched[3], tags);
                 try {
                     const args = knownSpecial.args.map(arg => arg.defaultValue ?? "");
                     if (argument.length > 0) {
@@ -91,7 +57,13 @@ export class SubstitutedTranslation extends UIElement {
                     }
 
 
-                    const element = knownSpecial.constr(State.state, this.tags, args);
+                    let element: BaseUIElement = new FixedUiElement(`Constructing ${knownSpecial}(${args.join(", ")})`)
+                    try{
+                      element =  knownSpecial.constr(State.state, tags, args);
+                    }catch(e){
+                        element = new FixedUiElement(`Could not generate special renering for ${knownSpecial}(${args.join(", ")}) ${e}`).SetClass("alert")
+                    }
+                        
                     return [...partBefore, element, ...partAfter]
                 } catch (e) {
                     console.error(e);

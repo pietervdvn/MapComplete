@@ -144,8 +144,6 @@ export default class    TagSpec extends  T{
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
                 equal("Has no name", tr.GetRenderValue({"noname": "yes"})?.txt);
                 equal("Ook een {name}", tr.GetRenderValue({"name": "xyz"})?.txt);
-                equal("Ook een xyz", SubstitutedTranslation.construct(tr.GetRenderValue({"name": "xyz"}),
-                    new UIEventSource<any>({"name": "xyz"})).InnerRenderAsString());
                 equal(undefined, tr.GetRenderValue({"foo": "bar"}));
 
             })],
@@ -196,7 +194,7 @@ export default class    TagSpec extends  T{
                     const uiEl = new EditableTagRendering(new UIEventSource<any>(
                         {leisure: "park", "access": "no"}), constr
                     );
-                    const rendered = uiEl.InnerRenderAsString();
+                    const rendered = uiEl.ConstructElement().innerHTML;
                     equal(true, rendered.indexOf("Niet toegankelijk") > 0)
 
                 }

@@ -6,7 +6,6 @@ export default class Constants {
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
-        addNewPointsUnlock: 0,
         moreScreenUnlock: 1,
         personalLayoutUnlock: 15,
         historyLinkVisible: 20,

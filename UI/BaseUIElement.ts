@@ -104,6 +104,9 @@ export default abstract class BaseUIElement {
             return this._constructedHtmlElement
         }
 
+        if(this.InnerConstructElement === undefined){
+            throw "ERROR! This is not a correct baseUIElement: "+this.constructor.name
+        }
 
         const el = this.InnerConstructElement();
 

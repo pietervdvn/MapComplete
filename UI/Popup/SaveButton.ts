@@ -1,17 +1,11 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
-import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
 
-export class SaveButton extends UIElement {
-
-
-    private readonly _element: BaseUIElement;
+export class SaveButton extends Toggle {
 
     constructor(value: UIEventSource<any>, osmConnection: OsmConnection) {
-        super(value);
         if (value === undefined) {
             throw "No event source for savebutton, something is wrong"
         }
@@ -31,16 +25,11 @@ export class SaveButton extends UIElement {
             saveDisabled,
             isSaveable
         )
-        this._element = new Toggle(
+        super(
             save
             , pleaseLogin,
             osmConnection?.userDetails?.map(userDetails => userDetails.loggedIn) ?? new UIEventSource<any>(false)
         )
-
-    }
-
-    InnerRender(): BaseUIElement {
-        return this._element
 
     }
 

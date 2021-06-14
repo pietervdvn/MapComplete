@@ -222,23 +222,6 @@ li::marker {
     max-width: 2em !important;
 }
 
-.simple-add-ui-icon {
-    position: relative;
-    display: block;
-    width: 4em;
-    height: 3.5em;
-}
-
-.simple-add-ui-icon img {
-    max-height: 3.5em !important;
-    max-width: 3.5em !important;
-}
-
-.simple-add-ui-icon svg {
-    max-height: 3.5em !important;
-    max-width: 3.5em !important;
-}
-
 
 /**************** GENERIC ****************/
 
@@ -292,14 +275,10 @@ li::marker {
 }
 
 .link-underline .subtle a {
-    color: var(--foreground-color);
     text-decoration: underline 1px #7193bb88;
     color: #7193bb;
 }
 
-.bold {
-    font-weight: bold;
-}
 
 .thanks {
     background-color: #43d904;
@@ -316,11 +295,6 @@ li::marker {
 
 .unclickable {
     pointer-events: none !important;
-}
-
-.page-split {
-    display: flex;
-    height: 100%;
 }
 
 

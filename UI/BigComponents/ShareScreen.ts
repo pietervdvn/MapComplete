@@ -36,7 +36,7 @@ export default class ShareScreen extends Combine {
             new Combine([check(), tr.fsIncludeCurrentLocation.Clone()]),
             new Combine([nocheck(), tr.fsIncludeCurrentLocation.Clone()]),
             new UIEventSource<boolean>(true)
-        )
+        ).ToggleOnClick()
         optionCheckboxes.push(includeLocation);
 
         const currentLocation = State.state?.locationControl;
@@ -71,7 +71,7 @@ export default class ShareScreen extends Combine {
                 new Combine([check(), currentBackground]),
                 new Combine([nocheck(), currentBackground]),
                 new UIEventSource<boolean>(true)
-            )
+            ).ToggleOnClick()
             optionCheckboxes.push(includeCurrentBackground);
             optionParts.push(includeCurrentBackground.isEnabled.map((includeBG) => {
                 if (includeBG) {
@@ -86,7 +86,7 @@ export default class ShareScreen extends Combine {
                 new Combine([check(), tr.fsIncludeCurrentLayers.Clone()]),
                 new Combine([nocheck(), tr.fsIncludeCurrentLayers.Clone()]),
                 new UIEventSource<boolean>(true)
-            )
+            ).ToggleOnClick()
             optionCheckboxes.push(includeLayerChoices);
 
             optionParts.push(includeLayerChoices.isEnabled.map((includeLayerSelection) => {
@@ -116,7 +116,7 @@ export default class ShareScreen extends Combine {
                 new Combine([check(), Translations.W(swtch.human.Clone())]),
                 new Combine([nocheck(), Translations.W(swtch.human.Clone())]),
                 new UIEventSource<boolean>(!swtch.reverse)
-            );
+            ).ToggleOnClick();
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.isEnabled.map((isEn) => {
                 if (isEn) {

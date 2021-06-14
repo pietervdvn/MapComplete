@@ -102,8 +102,8 @@ export default class ReviewForm extends InputElement<Review> {
             .SetClass("review-form")
 
 
-        return new Toggle(form, Translations.t.reviews.plz_login, 
-            this.userDetails.map(userdetails => userdetails.loggedIn))
+        return new Toggle(form, Translations.t.reviews.plz_login.Clone(), 
+            this.userDetails.map(userdetails => userdetails.loggedIn)).ToggleOnClick()
             .ConstructElement()
     }
 

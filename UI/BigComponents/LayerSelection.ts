@@ -56,7 +56,7 @@ export default class LayerSelection extends Combine {
                     .SetStyle(styleWhole),
                 new Combine([new Combine([iconUnselected, "<del>", name, "</del>"]).SetStyle(style), zoomStatus])
                     .SetStyle(styleWhole),
-                layer.isDisplayed)
+                layer.isDisplayed).ToggleOnClick()
                 .SetStyle("margin:0.3em;")
             );
         }

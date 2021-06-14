@@ -149,6 +149,16 @@ export class Utils {
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
+    public static SubstituteKeys(txt: string, tags: any) {
+        for (const key in tags) {
+            if(!tags.hasOwnProperty(key)) {
+                continue
+            }
+            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
+        }
+        return txt;
+    }
+
     // Date will be undefined on failure
     public static LoadCustomCss(location: string) {
         const head = document.getElementsByTagName('head')[0];
@@ -251,6 +261,10 @@ export class Utils {
 
     public static UnMinify(minified: string): string {
 
+        if(minified === undefined || minified === null){
+            return undefined;
+        }
+        
         const parts = minified.split("|");
         let result = parts.shift();
         const keys = Utils.knownKeys.concat(Utils.extraKeys);

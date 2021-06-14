@@ -32,10 +32,14 @@ export class Translation extends BaseUIElement {
     }
 
     get txt(): string {
+      return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
+    }
+    
+    public textFor(language: string): string{
         if (this.translations["*"]) {
             return this.translations["*"];
         }
-        const txt = this.translations[Translation.forcedLanguage ?? Locale.language.data];
+        const txt = this.translations[language];
         if (txt !== undefined) {
             return txt;
         }
@@ -52,7 +56,7 @@ export class Translation extends BaseUIElement {
         console.error("Missing language ", Locale.language.data, "for", this.translations)
         return "";
     }
-
+    
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         Locale.language.addCallbackAndRun(_ => {
@@ -106,12 +110,12 @@ export class Translation extends BaseUIElement {
                     // @ts-ignore
                     const date: Date = el;
                     rtext = date.toLocaleString();
-                } else if (el.InnerRenderAsString === undefined) {
+                } else if (el.ConstructElement() === undefined) {
                     console.error("InnerREnder is not defined", el);
                     throw "Hmmm, el.InnerRender is not defined?"
                 } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
-                    rtext = el.InnerRenderAsString();
+                    rtext = el.ConstructElement().innerHTML;
 
                 }
                 for (let i = 0; i < parts.length - 1; i++) {

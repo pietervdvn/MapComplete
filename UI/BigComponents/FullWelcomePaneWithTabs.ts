@@ -65,8 +65,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         );
 
         return new Toggle(
-            new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
             new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
+            new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
             userDetails.map(userdetails =>
                 userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock)
         )

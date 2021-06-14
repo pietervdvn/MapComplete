@@ -15,9 +15,13 @@ export default class Toggle extends VariableUiElement{
             isEnabled.map(isEnabled => isEnabled ? showEnabled : showDisabled)
         );
         this.isEnabled = isEnabled
+    }
+    
+    public ToggleOnClick(): Toggle{
+        const self = this;
         this.onClick(() => {
-            isEnabled.setData(!isEnabled.data);
+           self. isEnabled.setData(!self.isEnabled.data);
         })
-
+        return this;
     }
 }

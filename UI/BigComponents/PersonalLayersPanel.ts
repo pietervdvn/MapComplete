@@ -91,7 +91,7 @@ export default class PersonalLayersPanel extends UIElement {
                             "</del>"
                         ])),
                     controls[layer.id] ?? (favs.indexOf(layer.id) >= 0)
-                );
+                ).ToggleOnClick();
                 cb.SetClass("custom-layer-checkbox");
                 controls[layer.id] = cb.isEnabled;
 
