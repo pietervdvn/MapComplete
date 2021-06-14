@@ -30,17 +30,6 @@
 }
 
 
-.tab-content {
-    z-index: 5002;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    position: relative;
-    padding: 1em;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .tab-single-header {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;

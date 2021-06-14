@@ -1,5 +1,4 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import State from "../../State";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
@@ -13,22 +12,9 @@ import ImgurUploader from "../../Logic/Web/ImgurUploader";
 import UploadFlowStateUI from "../BigComponents/UploadFlowStateUI";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 
-export class ImageUploadFlow extends UIElement {
-
-    private readonly _element: BaseUIElement;
-
-
-    private readonly _tags: UIEventSource<any>;
-    private readonly _selectedLicence: UIEventSource<string>;
-
-
-    private readonly _imagePrefix: string;
+export class ImageUploadFlow extends Toggle {
 
     constructor(tagsSource: UIEventSource<any>, imagePrefix: string = "image") {
-        super(State.state.osmConnection.userDetails);
-        this._imagePrefix = imagePrefix;
-
-
         const uploader = new ImgurUploader(url => {
             // A file was uploaded - we add it to the tags of the object
 
@@ -50,9 +36,10 @@ export class ImageUploadFlow extends UIElement {
 
         const t = Translations.t.image;
         const label = new Combine([
-            Svg.camera_plus_svg().SetStyle("width: 36px;height: 36px;padding: 0.1em;margin-top: 5px;border-radius: 0;float: left;display:block"),
-            Translations.t.image.addPicture
-        ]).SetClass("image-upload-flow-button")
+            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1"),
+            Translations.t.image.addPicture.Clone().SetClass("block align-middle mt-1 ml-3")
+        ]).SetClass("p-2 border-4 border-black rounded-full text-4xl font-bold h-full align-middle w-full flex justify-center")
+        
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback(filelist => {
             if (filelist === undefined) {
@@ -60,13 +47,13 @@ export class ImageUploadFlow extends UIElement {
             }
 
             console.log("Received images from the user, starting upload")
-            const license = this._selectedLicence.data ?? "CC0"
+            const license = licensePicker.GetValue().data ?? "CC0"
 
-            const tags = this._tags.data;
+            const tags = tagsSource.data;
 
-            const layout = State.state.layoutToUse.data
+            const layout = State.state?.layoutToUse?.data
             let matchingLayer: LayerConfig = undefined
-            for (const layer of layout.layers) {
+            for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {
                     matchingLayer = layer;
                     break;
@@ -90,30 +77,27 @@ export class ImageUploadFlow extends UIElement {
 
         const uploadFlow: BaseUIElement = new Combine([
             fileSelector,
-            Translations.t.image.respectPrivacy.SetStyle("font-size:small;"),
+            Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
             licensePicker,
             uploadStateUi
-        ]).SetClass("image-upload-flow")
-            .SetStyle("margin-top: 1em;margin-bottom: 2em;text-align: center;");
+        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
 
         const pleaseLoginButton = t.pleaseLogin.Clone()
             .onClick(() => State.state.osmConnection.AttemptLogin())
             .SetClass("login-button-friendly");
-        this._element = new Toggle(
+        super(
             new Toggle(
                 /*We can show the actual upload button!*/
                 uploadFlow,
                 /* User not logged in*/ pleaseLoginButton,
-                State.state.osmConnection.userDetails.map(userinfo => userinfo.loggedIn)
+                State.state?.osmConnection?.isLoggedIn
             ),
-            undefined /* Nothing as the user badge is disabled*/, State.state.featureSwitchUserbadge
+            undefined /* Nothing as the user badge is disabled*/, 
+            State.state.featureSwitchUserbadge
         )
 
     }
 
-    protected InnerRender(): string | BaseUIElement {
-        return this._element;
-    }
 
 }

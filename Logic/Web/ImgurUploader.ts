@@ -3,9 +3,9 @@ import {Imgur} from "./Imgur";
 
 export default class ImgurUploader {
 
-    public queue: UIEventSource<string[]>;
-    public failed: UIEventSource<string[]>;
-    public success: UIEventSource<string[]>
+    public readonly queue: UIEventSource<string[]> = new UIEventSource<string[]>([]);
+    public readonly failed: UIEventSource<string[]> = new UIEventSource<string[]>([]);
+    public readonly success: UIEventSource<string[]> = new UIEventSource<string[]>([]);
     private readonly _handleSuccessUrl: (string) => void;
 
     constructor(handleSuccessUrl: (string) => void) {

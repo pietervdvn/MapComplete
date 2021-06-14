@@ -8,9 +8,10 @@ import Svg from "../../Svg";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import {SaveButton} from "../Popup/SaveButton";
 import CheckBoxes from "../Input/Checkboxes";
-import UserDetails from "../../Logic/Osm/OsmConnection";
+import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
+import State from "../../State";
 
 export default class ReviewForm extends InputElement<Review> {
 
@@ -19,19 +20,19 @@ export default class ReviewForm extends InputElement<Review> {
     private readonly _stars: BaseUIElement;
     private _saveButton: BaseUIElement;
     private readonly _isAffiliated: BaseUIElement;
-    private userDetails: UIEventSource<UserDetails>;
     private readonly _postingAs: BaseUIElement;
+    private readonly _osmConnection: OsmConnection;
 
 
-    constructor(onSave: ((r: Review, doneSaving: (() => void)) => void), userDetails: UIEventSource<UserDetails>) {
+    constructor(onSave: ((r: Review, doneSaving: (() => void)) => void), osmConnection: OsmConnection) {
         super();
-        this.userDetails = userDetails;
+        this._osmConnection = osmConnection;
         const t = Translations.t.reviews;
         this._value  = new UIEventSource({
             made_by_user: new UIEventSource<boolean>(true),
             rating: undefined,
             comment: undefined,
-            author: userDetails.data.name,
+            author: osmConnection.userDetails.data.name,
             affiliated: false,
             date: new Date()
         });
@@ -48,7 +49,7 @@ export default class ReviewForm extends InputElement<Review> {
         const self = this;
 
         this._postingAs =
-            new Combine([t.posting_as, new VariableUiElement(userDetails.map((ud: UserDetails) => ud.name)).SetClass("review-author")])
+            new Combine([t.posting_as, new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name)).SetClass("review-author")])
                 .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-left: auto;")
         this._saveButton =
             new SaveButton(this._value.map(r => self.IsValid(r)), undefined)
@@ -100,10 +101,12 @@ export default class ReviewForm extends InputElement<Review> {
             Translations.t.reviews.tos.SetClass("subtle")
         ])
             .SetClass("review-form")
+            
+        const connection = this._osmConnection;
+        const login = Translations.t.reviews.plz_login.Clone().onClick(() => connection.AttemptLogin())
 
-
-        return new Toggle(form, Translations.t.reviews.plz_login.Clone(), 
-            this.userDetails.map(userdetails => userdetails.loggedIn)).ToggleOnClick()
+        return new Toggle(form,login , 
+            connection.isLoggedIn)
             .ConstructElement()
     }
 

@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {SlideShow} from "./SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
@@ -8,33 +7,35 @@ import {ImgurImage} from "./ImgurImage";
 import {MapillaryImage} from "./MapillaryImage";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
+import Toggle from "../Input/Toggle";
 
-export class ImageCarousel extends UIElement{
+export class ImageCarousel extends Toggle {
 
-    public readonly slideshow: BaseUIElement;
-
-    constructor(images: UIEventSource<{key: string, url:string}[]>, tags: UIEventSource<any>) {
-        super(images);
-        const uiElements = images.map((imageURLS: {key: string, url:string}[]) => {
+    constructor(images: UIEventSource<{ key: string, url: string }[]>, tags: UIEventSource<any>) {
+        const uiElements = images.map((imageURLS: { key: string, url: string }[]) => {
             const uiElements: BaseUIElement[] = [];
             for (const url of imageURLS) {
                 let image = ImageCarousel.CreateImageElement(url.url)
-                if(url.key !== undefined){
+                if (url.key !== undefined) {
                     image = new Combine([
                         image,
                         new DeleteImage(url.key, tags).SetClass("delete-image-marker absolute top-0 left-0 pl-3")
                     ]).SetClass("relative");
                 }
-            image
-                .SetClass("w-full block")
+                image
+                    .SetClass("w-full block")
+                    .SetStyle("min-width: 50px; background: grey;")
                 uiElements.push(image);
             }
             return uiElements;
         });
 
-        this.slideshow = new SlideShow(uiElements);
+        super(
+            new SlideShow(uiElements).SetClass("w-full"),
+            undefined,
+            uiElements.map(els => els.length > 0)
+        )
         this.SetClass("block w-full");
-        this.slideshow.SetClass("w-full");
     }
 
     /***
@@ -56,9 +57,5 @@ export class ImageCarousel extends UIElement{
         } else {
             return new Img(url);
         }
-    }
-    
-    InnerRender() {
-        return this.slideshow;
     }
 }

@@ -107,7 +107,7 @@ export default class SpecialVisualizations {
                         state.mangroveIdentity,
                         state.osmConnection._dryRun
                     );
-                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection.userDetails);
+                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection);
                     return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
                 }
             },
@@ -160,7 +160,7 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     if (window.navigator.share) {
-                        const title = state.layoutToUse.data.title.txt;
+                        const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
                         let name = tagSource.data.name;
                         if (name) {
                             name = `${name} (${title})`
@@ -174,7 +174,7 @@ export default class SpecialVisualizations {
                         return new ShareButton(Svg.share_ui(), {
                             title: name,
                             url: url,
-                            text: state.layoutToUse.data.shortDescription.txt
+                            text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
                         })
                     } else {
                         return new FixedUiElement("")

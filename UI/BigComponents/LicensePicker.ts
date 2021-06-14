@@ -1,6 +1,7 @@
 import {DropDown} from "../Input/DropDown";
 import Translations from "../i18n/Translations";
 import State from "../../State";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 export default class LicensePicker extends DropDown<string>{
     
@@ -11,7 +12,7 @@ export default class LicensePicker extends DropDown<string>{
                 {value: "CC-BY-SA 4.0", shown: Translations.t.image.ccbs},
                 {value: "CC-BY 4.0", shown: Translations.t.image.ccb}
             ],
-            State.state.osmConnection.GetPreference("pictures-license")
+            State.state?.osmConnection?.GetPreference("pictures-license") ?? new UIEventSource<string>("CC0")
         )
             this.SetClass("flex flex-col sm:flex-row").SetStyle("float:left");
     }

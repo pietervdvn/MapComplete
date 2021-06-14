@@ -15,8 +15,17 @@ export class TabbedComponent extends Combine {
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
             const header = Translations.W(element.header).onClick(() => openedTabSrc.setData(i))
+            openedTabSrc.addCallbackAndRun(selected => {
+                if(selected === i){
+                    header.SetClass("tab-active")
+                    header.RemoveClass("tab-non-active")
+                }else{
+                    header.SetClass("tab-non-active")
+                    header.RemoveClass("tab-active")
+                }
+            })
             const content = Translations.W(element.content)
-            content.SetClass("tab-content")
+            content.SetClass("relative p-4 w-full inline-block")
             contentElements.push(content);
             const tab = header.SetClass("block tab-single-header")
             tabs.push(tab)
