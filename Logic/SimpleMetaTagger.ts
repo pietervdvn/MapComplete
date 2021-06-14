@@ -5,13 +5,15 @@ import {Tag} from "./Tags/Tag";
 import {Or} from "./Tags/Or";
 import {Utils} from "../Utils";
 import opening_hours from "opening_hours";
-import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
+import BaseUIElement from "../UI/BaseUIElement";
+import Title from "../UI/Base/Title";
+import {FixedUiElement} from "../UI/Base/FixedUiElement";
 
 
 const cardinalDirections = {
-    N:   0, NNE:  22.5, NE:  45, ENE:  67.5,
-    E:  90, ESE: 112.5, SE: 135, SSE: 157.5,
+    N: 0, NNE: 22.5, NE: 45, ENE: 67.5,
+    E: 90, ESE: 112.5, SE: 135, SSE: 157.5,
     S: 180, SSW: 202.5, SW: 225, WSW: 247.5,
     W: 270, WNW: 292.5, NW: 315, NNW: 337.5
 }
@@ -31,20 +33,20 @@ export default class SimpleMetaTagger {
         (feature) => {/*Note: also handled by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties;
-            
-            function move(src: string, target: string){
-                if(tgs[src] === undefined){
+
+            function move(src: string, target: string) {
+                if (tgs[src] === undefined) {
                     return;
                 }
                 tgs[target] = tgs[src]
                 delete tgs[src]
             }
-            
-            move("user","_last_edit:contributor")
-            move("uid","_last_edit:contributor:uid")
-            move("changeset","_last_edit:changeset")
-            move("timestamp","_last_edit:timestamp")
-            move("version","_version_number")
+
+            move("user", "_last_edit:contributor")
+            move("uid", "_last_edit:contributor:uid")
+            move("changeset", "_last_edit:changeset")
+            move("timestamp", "_last_edit:timestamp")
+            move("version", "_version_number")
         }
     )
     private static latlon = new SimpleMetaTagger({
@@ -375,28 +377,27 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.coder?.GetCountryCodeFor(lon, lat, callback)
     }
 
-    static HelpText(): UIElement {
-        const subElements: UIElement[] = [
+    static HelpText(): BaseUIElement {
+        const subElements: (string | BaseUIElement)[] = [
             new Combine([
-                "<h2>Metatags</h2>",
-                "<p>Metatags are extra tags available, in order to display more data or to give better questions.</p>",
-                "<p>The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.</p>",
-                "<p><b>Hint:</b> when using metatags, add the <a href='URL_Parameters.md'>query parameter</a> <code>debug=true</code> to the URL. This will include a box in the popup for features which shows all the properties of the object</p>"
-            ])
-
+                new Title("Metatags", 1),
+                "Metatags are extra tags available, in order to display more data or to give better questions.",
+                "The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
+                "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object"
+            ]).SetClass("flex-col")
 
         ];
 
+        subElements.push(new Title("Metatags calculated by MapComplete", 2))
+        subElements.push(new FixedUiElement("The following values are always calculated, by default, by MapComplete and are available automatically on all elements in every theme"))
         for (const metatag of SimpleMetaTagger.metatags) {
             subElements.push(
-                new Combine([
-                    "<h3>", metatag.keys.join(", "), "</h3>",
-                    metatag.doc]
-                )
+                new Title(metatag.keys.join(", "), 3),
+                metatag.doc
             )
         }
 
-        return new Combine(subElements)
+        return new Combine(subElements).SetClass("flex-col")
     }
 
     addMetaTags(features: { feature: any, freshness: Date }[]) {

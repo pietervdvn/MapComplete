@@ -159,7 +159,6 @@ export class Utils {
         return txt;
     }
 
-    // Date will be undefined on failure
     public static LoadCustomCss(location: string) {
         const head = document.getElementsByTagName('head')[0];
         const link = document.createElement('link');

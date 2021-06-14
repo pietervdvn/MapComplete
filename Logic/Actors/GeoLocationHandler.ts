@@ -76,7 +76,6 @@ export default class GeoLocationHandler extends UIElement {
         }, [this._hasLocation])
         currentPointer.addCallbackAndRun(pointerClass => {
             self.SetClass(pointerClass);
-            self.Update()
         })
         this._element = new VariableUiElement(
             this._hasLocation.map(hasLocation => {

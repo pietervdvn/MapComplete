@@ -102,6 +102,8 @@ export default class State {
      */
     public readonly locationControl = new UIEventSource<Loc>(undefined);
     public backgroundLayer;
+    public readonly backgroundLayerId: UIEventSource<string>;
+
     /* Last location where a click was registered
      */
     public readonly LastClickLocation: UIEventSource<{ lat: number, lon: number }> = new UIEventSource<{ lat: number, lon: number }>(undefined)
@@ -123,7 +125,7 @@ export default class State {
     public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
         str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
     );
-
+ 
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
 
@@ -210,7 +212,24 @@ export default class State {
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'")
 
         }
+        {
+            // Some other feature switches
+            const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
+            if (customCssQP.data !== undefined && customCssQP.data !== "") {
+                Utils.LoadCustomCss(customCssQP.data);
+            }
 
+
+            this.backgroundLayerId = QueryParameters.GetQueryParameter("background",
+            layoutToUse.defaultBackgroundId ?? "osm",
+            "The id of the background layer to start with")
+
+        }
+        
+        
+        if(Utils.runningFromConsole){
+            return;
+        }
 
         this.osmConnection = new OsmConnection(
             this.featureSwitchIsTesting.data,

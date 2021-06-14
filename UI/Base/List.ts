@@ -30,5 +30,14 @@ export default class List extends BaseUIElement {
 
         return el;
     }
+    
+    AsMarkdown(): string {
+        if(this._ordered){
+            return "\n\n"+this.uiElements.map((el, i) => "  "+i+". "+el.AsMarkdown().replace(/\n/g, '  \n') ).join("\n") + "\n"
+        }else{
+            return "\n\n"+this.uiElements.map(el => "  - "+el.AsMarkdown().replace(/\n/g, '  \n') ).join("\n")+"\n"
+
+        }
+    }
 
 }

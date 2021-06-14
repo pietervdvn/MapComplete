@@ -33,10 +33,6 @@ if (location.href.indexOf("buurtnatuur.be") >= 0) {
     defaultLayout = "buurtnatuur"
 }
 
-const customCssQP = QueryParameters.GetQueryParameter("custom-css", "", "If specified, the custom css from the given link will be loaded additionaly");
-if (customCssQP.data !== undefined && customCssQP.data !== "") {
-    Utils.LoadCustomCss(customCssQP.data);
-}
 
 
 let testing: UIEventSource<string>;
@@ -87,7 +83,6 @@ if (layoutToUse?.id === "cyclofix") {
 
 
 const layoutFromBase64 = decodeURIComponent(userLayoutParam.data);
-document.getElementById('centermessage').innerText = 'Initilai';
 
 new Combine(["Initializing... <br/>",
     new FixedUiElement("<a>If this message persist, something went wrong - click here to try again</a>")

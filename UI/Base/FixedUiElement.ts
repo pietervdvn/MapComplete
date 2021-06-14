@@ -17,5 +17,9 @@ export class FixedUiElement extends BaseUIElement {
         e.innerHTML = this._html
         return e;
     }
+    
+    AsMarkdown(): string {
+        return this._html;
+    }
 
 }

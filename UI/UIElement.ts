@@ -33,27 +33,6 @@ export abstract class UIElement extends BaseUIElement{
         return this;
     }
 
-
-
-    Update(): void {
-
-    }
-
-    Render(): string {
-        return this.InnerRenderAsString()
-    }
-
-
-    public InnerRenderAsString(): string {
-        let rendered = this.InnerRender();
-        if (typeof rendered !== "string") {
-            let html = rendered.ConstructElement()
-            return html.innerHTML
-        }
-        return rendered
-    }
-
-
     /**
      * Should be overridden for specific HTML functionality
      */

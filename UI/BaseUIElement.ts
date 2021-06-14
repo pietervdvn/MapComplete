@@ -26,17 +26,7 @@ export default abstract class BaseUIElement {
         }
         return this;
     }
-
-    public IsHovered(): UIEventSource<boolean> {
-        if (this._onHover !== undefined) {
-            return this._onHover;
-        }
-        // Note: we just save it. 'Update' will register that an eventsource exist and install the necessary hooks
-        this._onHover = new UIEventSource<boolean>(false);
-        return this._onHover;
-    }
-
-
+    
     AttachTo(divId: string) {
         let element = document.getElementById(divId);
         if (element === null) {
@@ -83,6 +73,10 @@ export default abstract class BaseUIElement {
             this._constructedHtmlElement?.classList.remove(clss)
         }
         return this;
+    }
+    
+    public HasClass(clss: string): boolean{
+        return this.clss.has(clss)
     }
 
     public SetStyle(style: string): BaseUIElement {
@@ -155,5 +149,9 @@ export default abstract class BaseUIElement {
         }
 
         return el
+    }
+    
+    public AsMarkdown(): string{
+        throw "AsMarkdown is not implemented by "+this.constructor.name
     }
 }

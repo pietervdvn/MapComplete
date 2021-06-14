@@ -1,46 +1,48 @@
 import {GeoOperations} from "./GeoOperations";
-import {UIElement} from "../UI/UIElement";
 import Combine from "../UI/Base/Combine";
 import {Relation} from "./Osm/ExtractRelations";
 import State from "../State";
 import {Utils} from "../Utils";
+import BaseUIElement from "../UI/BaseUIElement";
+import List from "../UI/Base/List";
+import Title from "../UI/Base/Title";
 
 export class ExtraFunction {
 
 
-    static readonly intro = `<h2>Calculating tags with Javascript</h2>
+    static readonly intro = new Combine([
+        new Title("Calculating tags with Javascript", 2),
+        "In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. `lat`, `lon`, `_country`), as detailed above.",
+        "It is also possible to calculate your own tags - but this requires some javascript knowledge.",
+        "",
+        "Before proceeding, some warnings:",
+        new List([
+            "DO NOT DO THIS AS BEGINNER",
+            "**Only do this if all other techniques fail**  This should _not_ be done to create a rendering effect, only to calculate a specific value",
+            "**THIS MIGHT BE DISABLED WITHOUT ANY NOTICE ON UNOFFICIAL THEMES** As unofficial themes might be loaded from the internet, this is the equivalent of injecting arbitrary code into the client. It'll be disabled if abuse occurs."
+        ]),
+        "To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:",
+        "````",
+        "\"calculatedTags\": [",
+        "    \"_someKey=javascript-expression\",",
+        "    \"name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator\",",
+        "    \"_distanceCloserThen3Km=feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'\" ",
+        "  ]",
+        "````",
+        "",
+        "The above code will be executed for every feature in the layer. The feature is accessible as `feat` and is an amended geojson object:",
 
-<p>In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. <b>lat</b>, <b>lon</b>, <b>_country</b>), as detailed above.</p>
+        new List([
+            "`area` contains the surface area (in square meters) of the object",
+            "`lat` and `lon` contain the latitude and longitude"
+        ]),
+        "Some advanced functions are available on **feat** as well:"
+    ]).SetClass("flex-col").AsMarkdown();
 
-<p>It is also possible to calculate your own tags - but this requires some javascript knowledge. </p>
 
-Before proceeding, some warnings:
-
-<ul>
-<li> DO NOT DO THIS AS BEGINNER</li>
-<li> <b>Only do this if all other techniques fail</b>. This should <i>not</i> be done to create a rendering effect, only to calculate a specific value</li>
-<li> <b>THIS MIGHT BE DISABLED WITHOUT ANY NOTICE ON UNOFFICIAL THEMES</b>. As unofficial themes might be loaded from the internet, this is the equivalent of injecting arbitrary code into the client. It'll be disabled if abuse occurs.</li>
-</ul>
-In the layer object, add a field <b>calculatedTags</b>, e.g.:
-
-<div class="code">
-  "calculatedTags": [
-    "_someKey=javascript-expression",
-    "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
-    "_distanceCloserThen3Km=feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
-  ]
-</div>
-
-The above code will be executed for every feature in the layer. The feature is accessible as <b>feat</b> and is an amended geojson object:
-- <b>area</b> contains the surface area (in square meters) of the object
-- <b>lat</b> and <b>lon</b> contain the latitude and longitude
-
-Some advanced functions are available on <b>feat</b> as well:
-
-`
     private static readonly OverlapFunc = new ExtraFunction(
         "overlapWith",
-        "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is <code>{ feat: GeoJSONFeature, overlap: number}[]</code> where <code>overlap</code> is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or <code>undefined</code> if the current feature is a point",
+        "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point",
         ["...layerIds - one or more layer ids  of the layer from which every feature is checked for overlap)"],
         (params, feat) => {
             return (...layerIds: string[]) => {
@@ -72,7 +74,7 @@ Some advanced functions are available on <b>feat</b> as well:
                 if (typeof arg0 === "string") {
                     // This is an identifier
                     const feature = State.state.allElements.ContainingFeatures.get(arg0);
-                    if(feature === undefined){
+                    if (feature === undefined) {
                         return undefined;
                     }
                     arg0 = feature;
@@ -138,9 +140,9 @@ Some advanced functions are available on <b>feat</b> as well:
 
     private static readonly Memberships = new ExtraFunction(
         "memberships",
-        "Gives a list of <code>{role: string, relation: Relation}</code>-objects, containing all the relations that this feature is part of. " +
+        "Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. " +
         "\n\n" +
-        "For example: <code>_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')</code>",
+        "For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`",
         [],
         (params, _) => {
             return () => params.relations ?? [];
@@ -167,25 +169,19 @@ Some advanced functions are available on <b>feat</b> as well:
         }
     }
 
-    public static HelpText(): UIElement {
+    public static HelpText(): BaseUIElement {
+
+        const elems = []
+        for (const func of ExtraFunction.allFuncs) {
+            elems.push(new Title(func._name, 3),
+                func._doc,
+                new List(func._args, true))
+        }
+
         return new Combine([
             ExtraFunction.intro,
-            "<ul>",
-            ...ExtraFunction.allFuncs.map(func =>
-                new Combine([
-                    "<li>", func._name, "</li>"
-                ])
-            ),
-            "</ul>",
-            ...ExtraFunction.allFuncs.map(func =>
-                new Combine([
-                    "<h3>" + func._name + "</h3>",
-                    func._doc,
-                    "<ul>",
-                    ...func._args.map(arg => "<li>" + arg + "</li>"),
-                    "</ul>"
-                ])
-            )
+            new List(ExtraFunction.allFuncs.map(func => func._name)),
+            ...elems
         ]);
     }
 

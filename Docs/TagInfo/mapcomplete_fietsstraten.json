@@ -33,22 +33,22 @@
   },
   {
    "key": "cyclestreet",
-   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "yes"
   },
   {
    "key": "maxspeed",
-   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "30"
   },
   {
    "key": "overtaking:motor_vehicle",
-   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "no"
   },
   {
    "key": "proposed:cyclestreet",
-   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "description": "Layer 'Cyclestreets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
    "value": ""
   },
   {
@@ -113,22 +113,22 @@
   },
   {
    "key": "cyclestreet",
-   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "yes"
   },
   {
    "key": "maxspeed",
-   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "30"
   },
   {
    "key": "overtaking:motor_vehicle",
-   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "no"
   },
   {
    "key": "proposed:cyclestreet",
-   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "description": "Layer 'Future cyclestreet' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
    "value": ""
   },
   {
@@ -203,22 +203,22 @@
   },
   {
    "key": "cyclestreet",
-   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "yes"
   },
   {
    "key": "maxspeed",
-   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "30"
   },
   {
    "key": "overtaking:motor_vehicle",
-   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
    "value": "no"
   },
   {
    "key": "proposed:cyclestreet",
-   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a maxspeeld of 30km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
+   "description": "Layer 'All streets' shows cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no&proposed:cyclestreet= with a fixed text, namely 'This street is a cyclestreet (and has a speed limit of 30 km/h)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:cyclestreet.",
    "value": ""
   },
   {

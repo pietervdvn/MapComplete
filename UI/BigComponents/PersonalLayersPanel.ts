@@ -23,7 +23,6 @@ export default class PersonalLayersPanel extends UIElement {
         const self = this;
         State.state.installedThemes.addCallback(extraThemes => {
             self.UpdateView(extraThemes.map(layout => layout.layout));
-            self.Update();
         })
     }
 

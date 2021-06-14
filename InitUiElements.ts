@@ -21,7 +21,6 @@ import * as L from "leaflet";
 import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
-import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
 import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
@@ -40,6 +39,7 @@ import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 
 export class InitUiElements {
 
@@ -348,9 +348,8 @@ export class InitUiElements {
     private static InitBaseMap() {
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl).availableEditorLayers;
-        State.state.backgroundLayer = QueryParameters.GetQueryParameter("background",
-            State.state.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
-            "The id of the background layer to start with")
+
+        State.state.backgroundLayer = State.state.backgroundLayerId
             .map((selectedId: string) => {
                 const available = State.state.availableBackgroundLayers.data;
                 for (const layer of available) {
@@ -359,9 +358,8 @@ export class InitUiElements {
                     }
                 }
                 return AvailableBaseLayers.osmCarto;
-            }, [], layer => layer.id);
-
-
+            }, [State.state.availableBackgroundLayers], layer => layer.id);
+        
         new LayerResetter(
             State.state.backgroundLayer, State.state.locationControl,
             State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));
