@@ -23,6 +23,7 @@
         "dontDelete": "Avbryt",
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
-        "addPicture": "Legg til bilde"
+        "addPicture": "Legg til bilde",
+        "pleaseLogin": "Logg inn for å legge til et bilde"
     }
 }

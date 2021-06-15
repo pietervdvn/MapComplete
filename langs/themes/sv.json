@@ -1,1 +1,9 @@
-{}
+{
+    "artworks": {
+        "title": "Öppen konstverkskarta"
+    },
+    "aed": {
+        "description": "På denna karta kan man hitta och markera närliggande defibrillatorer",
+        "title": "Öppna AED-karta"
+    }
+}

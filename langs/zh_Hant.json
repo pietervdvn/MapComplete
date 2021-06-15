@@ -6,7 +6,7 @@
         "saved": "<span class=\"thanks\">已儲存審核，謝謝你的分享！</span>",
         "saving_review": "儲存中…",
         "affiliated_reviewer_warning": "(關係者審核)",
-        "i_am_affiliated": "<span>我是這物件的相關關係者</span><br><span class=\"subtle\">確認你是否是擁有者、創造者、員工、...</span>",
+        "i_am_affiliated": "<span>我是這物件的相關關係者</span><br><span class=\"subtle\">確認你是否是擁有者、創造者、員工等等</span>",
         "posting_as": "以貼文",
         "no_rating": "還沒有評分",
         "write_a_comment": "留下審核…",
@@ -57,7 +57,7 @@
             "zoomInToSeeThisLayer": "放大來看這個圖層"
         },
         "backgroundMap": "背景地圖",
-        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>豐富開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需登入 OSM。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連接到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
+        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>豐富開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需登入 OSM。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
         "customThemeIntro": "<h3>客製化主題</h3>觀看這些先前使用者創造的主題。",
         "noTagsSelected": "沒有選取標籤",
         "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
@@ -69,7 +69,7 @@
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
             "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。",
             "requestATheme": "如果你有客製化要求，請到問題追踪器那邊提出要求",
-            "intro": "<h3>看更多主題地圖？</h3>你享受收集地理資料嗎？<br>還有更多主題。"
+            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。"
         },
         "sharescreen": {
             "fsIncludeCurrentLocation": "包含目前位置",
@@ -86,7 +86,7 @@
             "editThisTheme": "編輯這個主題",
             "thanksForSharing": "感謝分享！",
             "copiedToClipboard": "複製連結到簡貼簿",
-            "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入你的網站。<br>地圖毋須額外許可，非常歡迎你多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
+            "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
             "addToHomeScreen": "<h3>新增到你主頁畫面</h3>你可以輕易將這網站加到你智慧型手機的主頁畫面，在網址列點選 '新增到主頁按鈕'來做這件事情。",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖："
         },
@@ -107,7 +107,7 @@
             "emailOf": "{category} 的電子郵件地址是？",
             "websiteIs": "網站：<a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "{category} 的網站網址是？",
-            "phoneNumberIs": "這 {category} 的電話號碼是 <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "此 {category} 的電話號碼為 <a target=\"_blank\">{phone}</a>",
             "phoneNumberOf": "{category} 的電話號碼是？"
         },
         "noNameCategory": "{category} 沒有名稱",
@@ -117,12 +117,12 @@
         "add": {
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
             "openLayerControl": "開啟圖層控制框",
-            "confirmButton": "在這裡新增 {category} 。<br><div class=\"alert\">你新增的物件大家都會看到</div>",
+            "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
             "confirmIntro": "<h3>在這裡新增 {title} ？</h3>你在這裡新增的節點<b>所有人都看得到</b>。請只有在確定有物件存在的情形下才新增上去，許多應用程式都使用這份資料。",
             "stillLoading": "目前仍在載入資料，請稍後再來新增節點。",
             "zoomInFurther": "放大來新增新的節點。",
             "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
-            "intro": "你點的地方目前還沒有任何已知的資料。<br>",
+            "intro": "您點擊處目前未有已知的資料。<br>",
             "title": "新增新的節點？",
             "addNew": "在這裡新增新的 {category}"
         },
@@ -162,12 +162,12 @@
         "dontDelete": "取消",
         "uploadDone": "<span class=\"thanks\">已經新增你的照片，謝謝你的協助！</span>",
         "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
-        "uploadFailed": "無法上傳你的圖片，你確定有網路連線以及允許第三方 API 介接？Brave 或是 UMatrix 可能會阻擋連線。",
+        "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。",
         "ccb": "以 CC-BY 授權條款",
         "ccbs": "以 CC-BY-SA 授權條款",
         "cco": "公有領域",
         "willBePublished": "你的圖片將依以下授權釋出： ",
-        "pleaseLogin": "請先登入再來新增圖片",
+        "pleaseLogin": "請登入以新增圖片",
         "uploadingMultiple": "正在上傳 {count} 張圖片…",
         "uploadingPicture": "正在上傳你的圖片…",
         "addPicture": "新增圖片"
