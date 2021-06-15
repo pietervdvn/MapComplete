@@ -53,7 +53,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
         let questionBoxIsUsed = false;
-        const renderings = layerConfig.tagRenderings.map(tr => {
+        const renderings : BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;

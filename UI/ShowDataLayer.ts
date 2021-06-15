@@ -126,22 +126,23 @@ export default class ShowDataLayer {
             closeButton: false
         }, leafletLayer);
 
-         leafletLayer.bindPopup(popup);
-        
-        let infobox : FeatureInfoBox = undefined;
-        
+        leafletLayer.bindPopup(popup);
+
+        let infobox: FeatureInfoBox = undefined;
+
         const id = `popup-${feature.properties.id}-${this._cleanCount}`
-        popup.setContent(`<div style='height: 50vh' id='${id}'>Rendering</div>`)
+        popup.setContent(`<div style='height: 65vh' id='${id}'>Rendering</div>`)
 
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature)
-                if (infobox === undefined) {
+            if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
                 infobox = new FeatureInfoBox(tags, layer);
 
                 infobox.isShown.addCallback(isShown => {
                     if (!isShown) {
                         State.state.selectedElement.setData(undefined);
+                        leafletLayer.closePopup()
                     }
                 });
             }
@@ -162,7 +163,7 @@ export default class ShowDataLayer {
                 leafletLayer.openPopup()
             }
         })
-        
+
     }
 
     private CreateGeojsonLayer(): L.Layer {

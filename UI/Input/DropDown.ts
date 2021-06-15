@@ -21,6 +21,8 @@ export class DropDown<T> extends InputElement<T> {
                 }
     ) {
         super();
+        value = value ?? new UIEventSource<T>(undefined)
+        this._value = value
         this._values = values;
         if (values.length <= 1) {
             return;
@@ -43,7 +45,7 @@ export class DropDown<T> extends InputElement<T> {
                 el.appendChild(labelHtml)
             }
         }
-        
+
         options = options ?? {}
         options.select_class = options.select_class ?? 'bg-indigo-100 p-1 rounded hover:bg-indigo-200'
 

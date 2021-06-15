@@ -1,22 +1,18 @@
 
-.slick-next {
-    top: unset;
-    bottom: -25px;
-    right: 15px;
-    z-index: 10000;
+
+
+.slick-carousel-content {
+    width: 300px;
+    max-height: var(--image-carousel-height);
+    display: block;
+    margin-left: 10px;
 }
 
-.slick-prev {
-    top: unset;
-    bottom: -25px;
-    left: 0;
-    z-index: 10000;
+.slick-carousel-content img {
+    /**
+Workaround to patch images within a slick carousel
+ */
+    height: var(--image-carousel-height);
+    width: auto;
 }
 
-.slick-next::before {
-    font-size: 35px;
-}
-
-.slick-prev::before {
-    font-size: 35px;
-}

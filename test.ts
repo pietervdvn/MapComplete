@@ -10,9 +10,9 @@ const tagsSource = new UIEventSource({
     name:'name',
     surface:'asphalt',
     image: "https://i.imgur.com/kX3rl3v.jpg",
-    "image:1": "https://i.imgur.com/kX3rl3v.jpg",
+    "image:1": "https://i.imgur.com/oHAJqMB.jpg",
+   // "opening_hours":"mo-fr 09:00-18:00",
     _country:"be",
-  //      "opening_hours":"mo-fr 09:00-18:00"
 })
 
 const state = new State(undefined)

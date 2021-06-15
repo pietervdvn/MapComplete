@@ -65,21 +65,6 @@
     --image-carousel-height: 400px;
 }
 
-.slick-carousel-content {
-    width: 300px;
-    max-height: var(--image-carousel-height);
-    display: block;
-    margin-left: 10px;
-}
-
-.slick-carousel-content img {
-    /**
-Workaround to patch images within a slick carousel
- */
-   height: var(--image-carousel-height);
-    width: auto;
-}
-
 html, body {
     height: 100%;
     min-height: 100vh;

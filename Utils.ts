@@ -108,7 +108,7 @@ export class Utils {
     }
 
     public static EllipsesAfter(str: string, l: number = 100) {
-        if (str === undefined) {
+        if (str === undefined || str === null) {
             return undefined;
         }
         if (str.length <= l) {

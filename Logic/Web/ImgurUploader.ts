@@ -26,7 +26,7 @@ export default class ImgurUploader {
             function (url) {
                 console.log("File saved at", url);
                 self.success.setData([...self.success.data, url]);
-            this.    handleSuccessUrl(url);
+                self._handleSuccessUrl(url);
             },
             function () {
                 console.log("All uploads completed");

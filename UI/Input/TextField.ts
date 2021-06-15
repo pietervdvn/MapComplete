@@ -106,7 +106,7 @@ export class TextField extends InputElement<string> {
                 newCursorPos--;
             }
             // @ts-ignore
-            TextField.SetCursorPosition(newCursorPos);
+            TextField.SetCursorPosition(field, newCursorPos);
         };
 
 

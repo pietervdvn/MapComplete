@@ -28,7 +28,7 @@ export class ImageUploadFlow extends Toggle {
                 key = imagePrefix + ":" + freeIndex;
             }
             console.log("Adding image:" + key, url);
-            State.state.changes.addTag(tags.id, new Tag(key, url));
+            State.state.changes.addTag(tags.id, new Tag(key, url), tagsSource);
         })
 
 
@@ -47,7 +47,7 @@ export class ImageUploadFlow extends Toggle {
             }
 
             console.log("Received images from the user, starting upload")
-            const license = licensePicker.GetValue().data ?? "CC0"
+            const license = licensePicker.GetValue()?.data ?? "CC0"
 
             const tags = tagsSource.data;
 
