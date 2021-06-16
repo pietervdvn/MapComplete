@@ -109,7 +109,6 @@ export default class ShowDataLayer {
         });
     }
 
-
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
         if (layer === undefined) {
@@ -156,7 +155,7 @@ export default class ShowDataLayer {
             if (selected === undefined || self._leafletMap.data === undefined) {
                 return;
             }
-            if (popup.isOpen()) {
+            if (leafletLayer.getPopup().isOpen()) {
                 return;
             }
             if (selected.properties.id === feature.properties.id) {

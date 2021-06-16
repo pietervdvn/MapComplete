@@ -103,39 +103,30 @@
     border-right: 10px solid var(--catch-detail-color) !important;
 }
 
-
-.oh-draggable-header {
-    background-color: blue;
-    height: 0.5em;
-}
-
 .oh-timerange {
+    color: var(--catch-detail-color-contrast);
     border-radius: 0.5em;
-    margin-left: 2px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - 4px);
+    margin-left: calc(5% - 1px);
+    width: 90%;
     background: var(--catch-detail-color);
     z-index: 1;
     box-sizing: border-box;
+    border: 2px solid var(--catch-detail-color);
+    overflow: unset;
 }
 
 .oh-timerange-inner {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
     height: 100%;
-    overflow-y: hidden;
+    overflow-x: unset;
 }
-
-.oh-timerange-inner input {
-     width: 100%;
-     box-sizing: border-box;
- }
 
 .oh-timerange-inner-small {
     display: flex;
@@ -144,12 +135,6 @@
     height: 100%;
     width:100%;
 }
-
-.oh-timerange-inner-small input {
-    width: min-content;
-    box-sizing: border-box;
-}
-
 .oh-delete-range{
     width: 1.5em;
     height: 1.5em;
@@ -160,10 +145,6 @@
 .oh-delete-range img {
     height: 100%;
     max-width: 2em;
-}
-
-.oh-timerange-label {
-    color: white;
 }
 
 
@@ -190,7 +171,6 @@
 
 .ohviz-today .ohviz-range {
     border: 1.5px solid black;
-
 }
 
 .ohviz-day-off {
@@ -235,70 +215,12 @@
     border-radius: 1em;
 }
 
-.ohviz-now {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    height: 100%;
-    border: 1px solid black;
-    box-sizing: border-box
-}
 
 .ohviz-line {
     position: absolute;
     top: 0;
     margin: 0;
     height: 100%;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #999;
     box-sizing: border-box
-}
-
-
-.ohviz-time-indication > div {
-    position: relative;
-    background-color: white;
-    left: -50%;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
-    font-size: smaller;
-    border-radius: 0.3em;
-    border: 1px solid #ccc;
-    word-break: initial;
-
-}
-
-.ohviz-time-indication {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-
-.ohviz-today {
-    background-color: var(--subtle-detail-color);
-}
-
-.ohviz-weekday {
-    padding-left: 0.5em;
-    word-break: normal;
-}
-
-
-.ohviz {
-    border-collapse: collapse;
-}
-
-.ohviz-container {
-    border: 0.5em solid var(--subtle-detail-color);
-    border-radius: 1em;
-    display: block;
-}
-
-.ohviz-closed {
-    padding: 1em;
-    background-color: #eee;
-    border-radius: 1em;
-    display: block;
 }

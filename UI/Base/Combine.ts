@@ -19,6 +19,9 @@ export default class Combine extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
 
+        try{
+            
+     
         for (const subEl of this.uiElements) {
             if(subEl === undefined || subEl === null){
                 continue;
@@ -27,6 +30,11 @@ export default class Combine extends BaseUIElement {
             if(subHtml !== undefined){
                 el.appendChild(subHtml)
             }
+        }
+        }catch(e){
+            const domExc = e as DOMException
+            console.error("DOMException: ", domExc.name)
+            el.appendChild(new FixedUiElement("Could not generate this combine!").SetClass("alert").ConstructElement())
         }
         
         return el;

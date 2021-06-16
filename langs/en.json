@@ -121,6 +121,7 @@
             "zoomInToSeeThisLayer": "Zoom in to see this layer",
             "title": "Select layers"
         },
+        "loadingCountry": "Determining country...",
         "weekdays": {
             "abbreviations": {
                 "monday": "Mon",

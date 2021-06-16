@@ -18,6 +18,7 @@ export default class EditableTagRendering extends Toggle {
         const editMode = new UIEventSource<boolean>(false);
 
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
+        answer.SetClass("w-full")
         let rendering = answer;
 
         if (configuration.question !== undefined && State.state?.featureSwitchUserbadge?.data) {

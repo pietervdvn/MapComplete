@@ -12,7 +12,7 @@ import ReviewElement from "./Reviews/ReviewElement";
 import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
-import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
 
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
@@ -120,11 +120,7 @@ export default class SpecialVisualizations {
                     doc: "The tagkey from which the table is constructed."
                 }],
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                    let keyname = args[0];
-                    if (keyname === undefined || keyname === "") {
-                        keyname = keyname ?? "opening_hours"
-                    }
-                    return new OpeningHoursVisualization(tagSource, keyname)
+                    return new OpeningHoursVisualization(tagSource, args[0])
                 }
             },
 

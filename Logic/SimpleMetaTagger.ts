@@ -102,9 +102,13 @@ export default class SimpleMetaTagger {
 
             SimpleMetaTagger.GetCountryCodeFor(lon, lat, (countries) => {
                 try {
+                    const oldCountry = feature.properties["_country"];
                     feature.properties["_country"] = countries[0].trim().toLowerCase();
-                    const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
-                    tagsSource.ping();
+                    if (oldCountry !== feature.properties["_country"]) {
+                        const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
+                        tagsSource.ping();
+                    }
+
                 } catch (e) {
                     console.warn(e)
                 }

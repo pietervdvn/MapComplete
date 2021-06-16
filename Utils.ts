@@ -73,6 +73,14 @@ export class Utils {
         return res;
     }
 
+    public static TimesT<T>(count : number, f: ((i: number) => T)): T[] {
+        let res : T[] = [];
+        for (let i = 0; i < count; i++) {
+            res .push(f(i));
+        }
+        return res;
+    }
+
     static DoEvery(millis: number, f: (() => void)) {
         if (Utils.runningFromConsole) {
             return;

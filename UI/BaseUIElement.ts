@@ -102,6 +102,8 @@ export default abstract class BaseUIElement {
         if(this.InnerConstructElement === undefined){
             throw "ERROR! This is not a correct baseUIElement: "+this.constructor.name
         }
+try{
+            
 
         const el = this.InnerConstructElement();
 
@@ -149,7 +151,13 @@ export default abstract class BaseUIElement {
             el.addEventListener('mouseout', () => self._onHover.setData(false));
         }
 
-        return el
+        return el}catch(e){
+            const domExc = e as DOMException;
+            if(domExc){
+                console.log("An exception occured", domExc.code, domExc.message, domExc.name )
+            }
+            console.error(e)
+}
     }
     
     public AsMarkdown(): string{

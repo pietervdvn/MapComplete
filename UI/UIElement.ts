@@ -79,8 +79,6 @@ export abstract class UIElement extends BaseUIElement{
         }
         
     }
-    
-  
 
     /**
      * @deprecated The method should not be used

@@ -6,10 +6,14 @@ export default class Table extends BaseUIElement {
 
     private readonly _header: BaseUIElement[];
     private readonly _contents: BaseUIElement[][];
+    private readonly _contentStyle: string[][];
 
-    constructor(header: (BaseUIElement | string)[], contents: (BaseUIElement | string)[][]) {
+    constructor(header: (BaseUIElement | string)[], 
+                contents: (BaseUIElement | string)[][],
+                contentStyle?: string[][]) {
         super();
-        this._header = header.map(Translations.W);
+        this._contentStyle = contentStyle ?? [];
+        this._header = header?.map(Translations.W);
         this._contents = contents.map(row => row.map(Translations.W));
     }
 
@@ -28,15 +32,23 @@ export default class Table extends BaseUIElement {
             table.appendChild(tr)
         }
 
-        for (const row of this._contents) {
+        for (let i = 0; i < this._contents.length; i++){
+            let row = this._contents[i];
             const tr = document.createElement("tr")
-            for (const elem of row) {
-                const htmlElem = elem.ConstructElement()
+            for (let j = 0; j < row.length; j++){
+                let elem = row[j];
+                const htmlElem = elem?.ConstructElement()
                 if (htmlElem === undefined) {
                     continue;
                 }
 
+                let style = undefined;
+                if(this._contentStyle !== undefined && this._contentStyle[i] !== undefined && this._contentStyle[j]!== undefined){
+                    style = this._contentStyle[i][j]
+                }
+        
                 const td = document.createElement("td")
+                td.style.cssText = style;
                 td.appendChild(htmlElem)
                 tr.appendChild(td)
             }
