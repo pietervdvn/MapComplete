@@ -60,4 +60,4 @@ Has extra elements to easily input when a POI is opened
 
 ## color
 
-Shows a color picker
+Shows a color picker Generated from ValidatedTextField.ts

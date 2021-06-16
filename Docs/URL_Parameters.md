@@ -143,4 +143,4 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  layer-<layer-id> 
 ------------------
 
- Wether or not the layer with id <layer-id> is shown The default value is _true_
+ Wether or not the layer with id <layer-id> is shown The default value is _true_ Generated from QueryParameters

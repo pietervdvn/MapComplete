@@ -161,3 +161,4 @@ Some advanced functions are available on **feat** as well:
 For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
 
 
+ Generated from SimpleMetaTagger, ExtraFunction
