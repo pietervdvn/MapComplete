@@ -43,17 +43,18 @@ export default class MoreScreen extends Combine {
     }
     
     private static createUnofficialThemeList(buttonClass: string): BaseUIElement{
-        const customThemes = State.state.installedThemes.data ?? [];
-        const els : BaseUIElement[] = []
-        if (customThemes.length > 0) {
-            els.push(Translations.t.general.customThemeIntro)
+        return new VariableUiElement(State.state.installedThemes.map(customThemes => {
+            const els : BaseUIElement[] = []
+            if (customThemes.length > 0) {
+                els.push(Translations.t.general.customThemeIntro.Clone())
 
-            const customThemesElement = new Combine(
-                customThemes.map(theme => MoreScreen.createLinkButton(theme.layout, theme.definition)?.SetClass(buttonClass))
-            )
-            els.push(customThemesElement)
-        }
-        return new Combine(els)
+                const customThemesElement = new Combine(
+                    customThemes.map(theme => MoreScreen.createLinkButton(theme.layout, theme.definition)?.SetClass(buttonClass))
+                )
+                els.push(customThemesElement)
+            }
+            return els;
+        }));
     }
 
     private static createOfficialThemesList(state: State, buttonClass: string): BaseUIElement {
