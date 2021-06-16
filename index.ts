@@ -5,7 +5,6 @@ import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {UIEventSource} from "./Logic/UIEventSource";
 import * as $ from "jquery";
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
-import {Utils} from "./Utils";
 import MoreScreen from "./UI/BigComponents/MoreScreen";
 import State from "./State";
 import Combine from "./UI/Base/Combine";
@@ -32,7 +31,6 @@ if (location.href.startsWith("http://buurtnatuur.be")) {
 if (location.href.indexOf("buurtnatuur.be") >= 0) {
     defaultLayout = "buurtnatuur"
 }
-
 
 
 let testing: UIEventSource<string>;
@@ -88,7 +86,7 @@ new Combine(["Initializing... <br/>",
     new FixedUiElement("<a>If this message persist, something went wrong - click here to try again</a>")
         .SetClass("link-underline small")
         .onClick(() => {
-        localStorage.clear();
+            localStorage.clear();
             window.location.reload(true);
 
         })])
@@ -136,8 +134,8 @@ if (layoutFromBase64.startsWith("http")) {
     });
 
 } else if (layoutFromBase64 !== "false") {
-    layoutToUse = InitUiElements.LoadLayoutFromHash(userLayoutParam);
-    InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout, location.hash.substr(1));
+    let [layoutToUse, encoded] = InitUiElements.LoadLayoutFromHash(userLayoutParam);
+    InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout, encoded);
 } else if (layoutToUse !== undefined) {
     // This is the default case: a builtin theme
     InitUiElements.InitAll(layoutToUse, layoutFromBase64, testing, defaultLayout);

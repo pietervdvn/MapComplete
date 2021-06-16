@@ -215,7 +215,7 @@ export class InitUiElements {
 
     }
 
-    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
+    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): [LayoutConfig, string]{
         try {
             let hash = location.hash.substr(1);
             const layoutFromBase64 = userLayoutParam.data;
@@ -247,7 +247,7 @@ export class InitUiElements {
             // @ts-ignore
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
-            return layoutToUse;
+            return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
 
             new FixedUiElement("Error: could not parse the custom layout:<br/> " + e).AttachTo("centermessage");
