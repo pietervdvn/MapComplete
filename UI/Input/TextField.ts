@@ -67,10 +67,10 @@ export class TextField extends InputElement<string> {
 
         this.value.addCallbackAndRun(value => {
             if (!(value !== undefined && value !== null)) {
+                field["value"] = "";
                 return;
             }
-            // @ts-ignore
-            field.value = value;
+            field["value"] = value;
             if (self.IsValid(value)) {
                 self.RemoveClass("invalid")
             } else {

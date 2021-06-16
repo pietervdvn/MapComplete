@@ -7,12 +7,19 @@ export class RadioButton<T> extends InputElement<T> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<T>;
     private _elements: InputElement<T>[];
-    private readonly _element: HTMLElement;
+    private _selectFirstAsDefault: boolean;
 
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
         super()
-        elements = Utils.NoNull(elements);
+        this._selectFirstAsDefault = selectFirstAsDefault;
+        this._elements = Utils.NoNull(elements);
+        this.value = new UIEventSource<T>(undefined)
+    }
+    protected InnerConstructElement(): HTMLElement {
+        const elements = this._elements;
+        const selectFirstAsDefault = this._selectFirstAsDefault;
+        
         const selectedElementIndex: UIEventSource<number> = new UIEventSource<number>(null);
         const value =
             UIEventSource.flatten(selectedElementIndex.map(
@@ -22,6 +29,7 @@ export class RadioButton<T> extends InputElement<T> {
                     }
                 }
             ), elements.map(e => e?.GetValue()));
+        value.syncWith(this.value)
         
         if(selectFirstAsDefault){
             
@@ -61,7 +69,20 @@ export class RadioButton<T> extends InputElement<T> {
         RadioButton._nextId++
 
         const form = document.createElement("form")
-        this._element = form;
+        const inputs = []
+
+        value.addCallbackAndRun(
+            selected => {
+                
+                let somethingChecked = false;
+                for (let i = 0; i < inputs.length; i++){
+                    let input = inputs[i];
+                    input.checked = !somethingChecked && elements[i].IsValid(selected);
+                    somethingChecked = somethingChecked || input.checked
+                }
+            }
+        )
+        
         for (let i1 = 0; i1 < elements.length; i1++) {
             let element = elements[i1];
             const labelHtml = element.ConstructElement();
@@ -73,6 +94,7 @@ export class RadioButton<T> extends InputElement<T> {
             input.id = "radio" + groupId + "-" + i1;
             input.name = groupId;
             input.type = "radio"
+               input.classList.add("p-1","cursor-pointer","ml-2","pl-2","pr-0","m-0","ml-3")
 
             input.onchange = () => {
                 if(input.checked){
@@ -80,30 +102,26 @@ export class RadioButton<T> extends InputElement<T> {
                 }
             }
             
-            value.addCallbackAndRun(
-                selected => input.checked = element.IsValid(selected)
-            )
+           
+            inputs.push(input)
 
             const label = document.createElement("label")
             label.appendChild(labelHtml)
             label.htmlFor = input.id;
+            label.classList.add("block","w-full","p-2","cursor-pointer","bg-red")
+
 
             const block = document.createElement("div")
             block.appendChild(input)
             block.appendChild(label)
+            block.classList.add("flex","w-full","border", "rounded-full", "border-gray-400")
 
             form.appendChild(block)
-            form.addEventListener("change", () => {
-                    // TODO FIXME
-                }
-            );
         }
 
 
-        this.value = value;
-        this._elements = elements;
-
         this.SetClass("flex flex-col")
+        return form;
     }
 
     IsValid(t: T): boolean {
@@ -120,9 +138,6 @@ export class RadioButton<T> extends InputElement<T> {
     }
 
 
-    protected InnerConstructElement(): HTMLElement {
-        return this._element;
-    }
 
     /*
     public ShowValue(t: T): boolean {

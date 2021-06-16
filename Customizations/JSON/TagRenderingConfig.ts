@@ -7,8 +7,6 @@ import {Utils} from "../../Utils";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {UIElement} from "../../UI/UIElement";
-import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 /***
  * The parsed version of TagRenderingConfigJSON

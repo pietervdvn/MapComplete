@@ -29,6 +29,7 @@
     },
     "general": {
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
+        "loginOnlyNeededToEdit": "to make changes to the map",
         "welcomeBack": "You are logged in, welcome back!",
         "loginToStart": "Login to answer this question",
         "testing":"Testing - changes won't be saved",
@@ -39,6 +40,7 @@
             "error": "Something went wrong…"
         },
         "returnToTheMap": "Return to the map",
+        "openTheMap": "Open the map",
         "save": "Save",
         "cancel": "Cancel",
         "skip": "Skip this question",

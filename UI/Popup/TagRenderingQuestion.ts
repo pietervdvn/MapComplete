@@ -71,7 +71,8 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state?.osmConnection)
+        this._saveButton = new SaveButton(this._inputElement.GetValue(), 
+            State.state?.osmConnection)
             .onClick(save)
 
 
@@ -92,7 +93,7 @@ export default class TagRenderingQuestion extends UIElement {
                     return tags.asHumanString(true, true, self._tags.data);
                 }
             )
-        ).SetClass("block")
+        ).SetClass("block break-all")
         
         
         
@@ -156,7 +157,9 @@ export default class TagRenderingQuestion extends UIElement {
                     oppositeTags.push(notSelected);
                 }
                 tags.push(TagUtils.FlattenMultiAnswer(oppositeTags));
-                return TagUtils.FlattenMultiAnswer(tags);
+                const actualTags = TagUtils.FlattenMultiAnswer(tags);
+                console.log("Converted ", indices.join(","), "into", actualTags.asHumanString(false, false, {}), "with elems", elements)
+                return actualTags;
             },
             (tags: TagsFilter) => {
                 // {key --> values[]}

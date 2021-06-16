@@ -8,15 +8,13 @@ import State from "../../State";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import BaseUIElement from "../BaseUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class EditableTagRendering extends Toggle {
 
     constructor(tags: UIEventSource<any>,
-                configuration: TagRenderingConfig) {
-
-        const editMode = new UIEventSource<boolean>(false);
-
+                configuration: TagRenderingConfig,
+                editMode = new UIEventSource<boolean>(false)
+                ) {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
         answer.SetClass("w-full")
         let rendering = answer;

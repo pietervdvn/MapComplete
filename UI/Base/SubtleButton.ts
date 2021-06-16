@@ -20,6 +20,7 @@ export class SubtleButton extends UIElement {
 
     private static generateContent(imageUrl: string | BaseUIElement, messageT: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined): BaseUIElement {
         const message = Translations.W(messageT);
+        message
         let img;
         if ((imageUrl ?? "") === "") {
             img = undefined;
@@ -36,7 +37,7 @@ export class SubtleButton extends UIElement {
             return new Combine([
                 image,
                 message?.SetClass("blcok ml-4 overflow-ellipsis"),
-            ]).SetClass("flex group");
+            ]).SetClass("flex group w-full");
         }
 
 
@@ -44,7 +45,7 @@ export class SubtleButton extends UIElement {
             new Combine([
                 image,
                 message?.SetClass("block ml-4 overflow-ellipsis")
-            ]).SetClass("flex group"),
+            ]).SetClass("flex group w-full"),
             linkTo.url,
             linkTo.newTab ?? false
         )

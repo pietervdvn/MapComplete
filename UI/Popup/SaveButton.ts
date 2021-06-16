@@ -26,8 +26,8 @@ export class SaveButton extends Toggle {
             isSaveable
         )
         super(
-            save
-            , pleaseLogin,
+            save, 
+            pleaseLogin,
             osmConnection?.userDetails?.map(userDetails => userDetails.loggedIn) ?? new UIEventSource<any>(false)
         )
 

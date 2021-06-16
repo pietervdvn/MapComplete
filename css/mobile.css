@@ -2,19 +2,14 @@
 Contains tweaks for small screens
 */
 
-.only-on-mobile {
-    display: none !important;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-}
-
-@media only screen and (max-width: 600px), only screen and (max-height: 600px) {
+@media only screen and (min-width: 769px) {
 
     .only-on-mobile {
-        display: unset !important;
-        background-color: var(--background-color);
-        color: var(--foreground-color);
+        display: none !important;
     }
+}
+@media only screen and (max-width: 768px), only screen and (max-height: 768px) {
+
 
     .hidden-on-mobile {
         display: none !important;

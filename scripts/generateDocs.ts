@@ -1,5 +1,4 @@
 import {Utils} from "../Utils";
-
 Utils.runningFromConsole = true;
 import SpecialVisualizations from "../UI/SpecialVisualizations";
 import SimpleMetaTagger from "../Logic/SimpleMetaTagger";
@@ -12,19 +11,19 @@ import {writeFileSync} from "fs";
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import State from "../State";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
-import Link from "../UI/Base/Link";
 
 
-function WriteFile(filename, html: string | BaseUIElement, autogenSource: string): void {
+
+function WriteFile(filename, html: string | BaseUIElement, autogenSource: string[]): void {
     writeFileSync(filename, new Combine([Translations.W(html),
-        new Link("Generated from "+autogenSource, "../../../"+autogenSource)
+        "Generated from "+autogenSource.join(", ")
     ]).AsMarkdown());
 }
 
-WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage, "UI/SpecialVisualisations.ts")
+WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage, ["UI/SpecialVisualisations.ts"])
 WriteFile("./Docs/CalculatedTags.md", new Combine([SimpleMetaTagger.HelpText(), ExtraFunction.HelpText()]).SetClass("flex-col"),
-    "SimpleMetaTagger and ExtraFunction")
-WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(),"ValidatedTextField.ts");
+    ["SimpleMetaTagger","ExtraFunction"])
+WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(),["ValidatedTextField.ts"]);
 
 
 new State(new LayoutConfig({
@@ -51,7 +50,7 @@ new State(new LayoutConfig({
 }))
 QueryParameters.GetQueryParameter("layer-<layer-id>", "true", "Wether or not the layer with id <layer-id> is shown")
 
-WriteFile("./Docs/URL_Parameters.md", QueryParameters.GenerateQueryParameterDocs(), "QueryParameters")
+WriteFile("./Docs/URL_Parameters.md", QueryParameters.GenerateQueryParameterDocs(), ["QueryParameters"])
 
 console.log("Generated docs")
 

@@ -23,14 +23,14 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         const layoutToUse = State.state.layoutToUse.data;
         super (
             () => layoutToUse.title.Clone(),
-            () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails),
+            () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),
             "welcome" ,isShown
         )
     }
     
-    private static ConstructBaseTabs(layoutToUse: LayoutConfig): { header: string | BaseUIElement; content: BaseUIElement }[]{
+    private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[]{
 
-        let welcome: BaseUIElement = new ThemeIntroductionPanel();
+        let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
         if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
         }
@@ -58,10 +58,10 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         return tabs;
     }
 
-    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>) {
+    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>, isShown: UIEventSource<boolean>) {
 
-        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse)
-        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse)]
+        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)
+        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)]
         tabsWithAboutMc.push({
                 header: Svg.help,
                 content: new Combine([Translations.t.general.aboutMapcomplete.Clone(), "<br/>Version " + Constants.vNumber])

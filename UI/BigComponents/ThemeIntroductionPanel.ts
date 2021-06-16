@@ -4,26 +4,45 @@ import LanguagePicker from "../LanguagePicker";
 import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
+import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
+import {UIEventSource} from "../../Logic/UIEventSource";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class ThemeIntroductionPanel extends VariableUiElement {
 
-    constructor() {
+    constructor(isShown: UIEventSource<boolean>) {
 
         const languagePicker =
             new VariableUiElement(
                 State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()))
             )
         ;
+        
+        const toTheMap = new SubtleButton(
+            new FixedUiElement(""),
+            Translations.t.general.openTheMap.Clone().SetClass("text-xl font-bold w-full text-center")
+        ).onClick(() =>{
+            isShown.setData(false)
+        }).SetClass("only-on-mobile")
 
         const plzLogIn =
-            Translations.t.general.loginWithOpenStreetMap
-                .Clone()
+            new SubtleButton(
+                Svg.osm_logo_ui(),
+                
+                new Combine([Translations.t.general.loginWithOpenStreetMap
+                    .Clone().SetClass("text-xl font-bold"),
+                    Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold")]
+                    ).SetClass("flex flex-col text-center w-full")
+            )
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
                 });
 
 
         const welcomeBack = Translations.t.general.welcomeBack.Clone();
+        
+        
 
         const loginStatus =
             new Toggle(
@@ -40,6 +59,7 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
         super(State.state.layoutToUse.map (layout => new Combine([
             layout.description.Clone(),
             "<br/><br/>",
+            toTheMap,
             loginStatus,
             layout.descriptionTail.Clone(),
             "<br/>",

@@ -13,7 +13,6 @@ export class SlideShow extends BaseUIElement {
 
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("div")
-        el.classList.add("slic-carousel")
         el.style.overflowX = "auto"
         el.style.width = "min-content"
         el.style.minWidth = "min-content"
@@ -25,8 +24,9 @@ export class SlideShow extends BaseUIElement {
             }
 
             for (const element of elements ?? []) {
-                element.SetClass("block ml-1")
-                    .SetStyle("width: 300px;  max-height: var(--image-carousel-height); height: var(--image-carousel-height)")
+                element
+                    .SetClass("block ml-1; bg-gray-200")
+                    .SetStyle("min-width: 150;  max-height: var(--image-carousel-height); min-height: var(--image-carousel-height)")
 
                 el.appendChild(element.ConstructElement())
             }

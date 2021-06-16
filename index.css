@@ -226,10 +226,6 @@ li::marker {
     width: 100%;
 }
 
-.question form input[type="radio"] {
-    margin-right: 0.5em;
-}
-
 .invalid {
     box-shadow: 0 0 10px #ff5353;
     height: min-content;

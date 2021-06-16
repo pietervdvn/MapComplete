@@ -18,6 +18,7 @@ export default class DirectionInput extends InputElement<string> {
         this.value = value ?? new UIEventSource<string>(undefined);
 
     }
+    
 
     protected InnerConstructElement(): HTMLElement {
 
