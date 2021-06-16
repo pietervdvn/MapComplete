@@ -1,6 +1,4 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import OpeningHoursRange from "./OpeningHoursRange";
-import Combine from "../Base/Combine";
 import OpeningHoursPickerTable from "./OpeningHoursPickerTable";
 import {OH, OpeningHour} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
@@ -22,8 +20,6 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
 
         this._backgroundTable = new OpeningHoursPickerTable(this._ohs);
         this._backgroundTable.ConstructElement()
-
-        ohs.ping();
     }
 
     InnerRender(): BaseUIElement {

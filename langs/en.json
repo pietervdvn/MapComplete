@@ -151,7 +151,8 @@
             "open_24_7": "Opened around the clock",
             "ph_not_known": " ",
             "ph_closed": "closed",
-            "ph_open": "opened"
+            "ph_open": "opened with different hours",
+            "ph_open_as_usual": "opened as usual"
         }
     },
     "favourite": {

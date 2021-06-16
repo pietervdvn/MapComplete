@@ -352,6 +352,47 @@ export default class    TagSpec extends  T{
                 ]);
                 equal(rules, "Tu 10:00-12:00; Su 13:00-17:00");
             }],
+            ["JOIN OH with end hours", () =>{
+                const rules = OH.ToString(
+                    OH.MergeTimes([
+
+                    {
+                        weekday: 1,
+                        endHour: 23,
+                        endMinutes: 30,
+                        startHour: 23,
+                        startMinutes: 0
+                    }, {
+                        weekday: 1,
+                        endHour: 24,
+                        endMinutes: 0,
+                        startHour: 23,
+                        startMinutes: 30
+                    },
+
+                ]));
+                equal(rules, "Tu 23:00-00:00");
+            }],            ["JOIN OH with overflowed hours", () =>{
+                const rules = OH.ToString(
+                    OH.MergeTimes([
+
+                        {
+                            weekday: 1,
+                            endHour: 23,
+                            endMinutes: 30,
+                            startHour: 23,
+                            startMinutes: 0
+                        }, {
+                            weekday: 1,
+                            endHour: 0,
+                            endMinutes: 0,
+                            startHour: 23,
+                            startMinutes: 30
+                        },
+
+                    ]));
+                equal(rules, "Tu 23:00-00:00");
+            }],
             ["OH 24/7", () => {
                 const rules = OH.Parse("24/7");
                 equal(rules.length, 7);
@@ -368,8 +409,10 @@ export default class    TagSpec extends  T{
                 equal(rules, null);
             }],
             ["OH Parse PH 12:00-17:00", () => {
-                const rules = PublicHolidayInput.LoadValue("PH 12:00-17:00");
+                const rules = OH.ParsePHRule("PH 12:00-17:00");
                 equal(rules.mode, " ");
+                equal(rules.start, "12:00")
+                equal(rules.end, "17:00")
             }],
             ["Round", () => {
                 equal(Utils.Round(15), "15.0")

@@ -49,10 +49,10 @@ export class OH {
 
         let rangeStart = 0;
         let rangeEnd = 0;
-        
-        function pushRule(){
+
+        function pushRule() {
             const rule = stringPerWeekday[rangeStart];
-            if(rule === ""){
+            if (rule === "") {
                 return;
             }
             if (rangeStart == (rangeEnd - 1)) {
@@ -61,7 +61,7 @@ export class OH {
                 );
             } else {
                 rules.push(
-                    `${OH.days[rangeStart]}-${OH.days[rangeEnd-1]} ${rule}`
+                    `${OH.days[rangeStart]}-${OH.days[rangeEnd - 1]} ${rule}`
                 );
             }
         }
@@ -90,13 +90,22 @@ export class OH {
      * @constructor
      */
     public static MergeTimes(ohs: OpeningHour[]): OpeningHour[] {
-        const queue = [...ohs];
+        const queue = ohs.map(oh => {
+            if (oh.endHour === 0 && oh.endMinutes === 0) {
+                const newOh = {
+                        ...oh
+                }
+                newOh.endHour = 24
+                return newOh
+            }
+            return oh;
+        });
         const newList = [];
         while (queue.length > 0) {
             let maybeAdd = queue.pop();
 
             let doAddEntry = true;
-            if(maybeAdd.weekday == undefined){
+            if (maybeAdd.weekday == undefined) {
                 doAddEntry = false;
             }
 
@@ -140,8 +149,8 @@ export class OH {
                     queue.push({
                         startHour: startHour,
                         startMinutes: startMinutes,
-                        endHour:endHour,
-                        endMinutes:endMinutes,
+                        endHour: endHour,
+                        endMinutes: endMinutes,
                         weekday: guard.weekday
                     });
 
@@ -190,21 +199,6 @@ export class OH {
             OH.endTime(checked) <= OH.endTime(mightLieIn)
     }
 
-    private static parseHHMM(hhmm: string): { hours: number, minutes: number } {
-        if(hhmm === undefined || hhmm == null){
-            return null;
-        }
-        const spl = hhmm.trim().split(":");
-        if(spl.length != 2){
-            return null;
-        }
-        const hm = {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
-        if(isNaN(hm.hours) || isNaN(hm.minutes) ){
-            return null;
-        }
-        return hm;
-    }
-
     public static parseHHMMRange(hhmmhhmm: string): {
         startHour: number,
         startMinutes: number,
@@ -224,80 +218,6 @@ export class OH {
             endHour: end.hours,
             endMinutes: end.minutes
         }
-    }
-
-    private static ParseHhmmRanges(hhmms: string): {
-        startHour: number,
-        startMinutes: number,
-        endHour: number,
-        endMinutes: number
-    }[] {
-        if (hhmms === "off") {
-            return [];
-        }
-        return hhmms.split(",")
-            .map(s => s.trim())
-            .filter(str => str !== "")
-            .map(OH.parseHHMMRange)
-            .filter(v => v != null)
-    }
-
-    private static ParseWeekday(weekday: string): number {
-        return OH.daysIndexed[weekday.trim().toLowerCase()];
-    }
-
-    private static ParseWeekdayRange(weekdays: string): number[] {
-        const split = weekdays.split("-");
-        if (split.length == 1) {
-            const parsed = OH.ParseWeekday(weekdays);
-            if(parsed == null){
-                return null;
-            }
-            return [parsed];
-        } else if (split.length == 2) {
-            let start = OH.ParseWeekday(split[0]);
-            let end = OH.ParseWeekday(split[1]);
-            if ((start ?? null) === null || (end ?? null) === null) {
-                return null;
-            }
-            let range = [];
-            for (let i = start; i <= end; i++) {
-                range.push(i);
-            }
-            return range;
-        } else {
-            return null;
-        }
-    }
-
-    private static ParseWeekdayRanges(weekdays: string): number[] {
-        let ranges = [];
-        let split = weekdays.split(",");
-        for (const weekday of split) {
-            const parsed = OH.ParseWeekdayRange(weekday)
-            if (parsed === undefined || parsed === null) {
-                return null;
-            }
-            ranges.push(...parsed);
-        }
-        return ranges;
-    }
-
-    private static multiply(weekdays: number[], timeranges: { startHour: number, startMinutes: number, endHour: number, endMinutes: number }[]) {
-        if ((weekdays ?? null) == null || (timeranges ?? null) == null) {
-            return null;
-        }
-        const ohs: OpeningHour[] = []
-        for (const timerange of timeranges) {
-            for (const weekday of weekdays) {
-                ohs.push({
-                    weekday: weekday,
-                    startHour: timerange.startHour, startMinutes: timerange.startMinutes,
-                    endHour: timerange.endHour, endMinutes: timerange.endMinutes,
-                });
-            }
-        }
-        return ohs;
     }
 
     public static ParseRule(rule: string): OpeningHour[] {
@@ -331,6 +251,49 @@ export class OH {
         }
     }
 
+    public static ParsePHRule(str: string): {
+        mode: string,
+        start?: string,
+        end?: string
+    } {
+        str = str.trim();
+        if (!str.startsWith("PH")) {
+            return null;
+        }
+
+        str = str.trim();
+        if (str === "PH off") {
+            return {
+                mode: "off"
+            }
+        }
+
+        if (str === "PH open") {
+            return {
+                mode: "open"
+            }
+        }
+
+        if (!str.startsWith("PH ")) {
+            return null;
+        }
+        try {
+
+            const timerange = OH.parseHHMMRange(str.substring(2));
+            if (timerange === null) {
+                return null;
+            }
+
+            return {
+                mode: " ",
+                start: OH.hhmm(timerange.startHour, timerange.startMinutes),
+                end: OH.hhmm(timerange.endHour, timerange.endMinutes),
+
+            }
+        } catch (e) {
+            return null;
+        }
+    }
 
     static Parse(rules: string) {
         if (rules === undefined || rules === "") {
@@ -342,7 +305,7 @@ export class OH {
         const split = rules.split(";");
 
         for (const rule of split) {
-            if(rule === ""){
+            if (rule === "") {
                 continue;
             }
             try {
@@ -376,7 +339,7 @@ export class OH {
     }[][]): [number[], string[]] {
         const changeHours: number[] = []
         const changeHourText: string[] = [];
-        
+
         const extrachangeHours: number[] = []
         const extrachangeHourText: string[] = [];
 
@@ -387,7 +350,7 @@ export class OH {
                 }
                 const startOfDay: Date = new Date(range.startDate);
                 startOfDay.setHours(0, 0, 0, 0);
-                
+
                 // The number of seconds since the start of the day
                 // @ts-ignore
                 const changeMoment: number = (range.startDate - startOfDay) / 1000;
@@ -417,7 +380,7 @@ export class OH {
         changeHours.sort();
         extrachangeHourText.sort();
         extrachangeHours.sort();
-        
+
         changeHourText.push(...extrachangeHourText);
         changeHours.push(...extrachangeHours);
 
@@ -476,6 +439,95 @@ export class OH {
         }
         return values;
     }
-    
+
+    private static parseHHMM(hhmm: string): { hours: number, minutes: number } {
+        if (hhmm === undefined || hhmm == null) {
+            return null;
+        }
+        const spl = hhmm.trim().split(":");
+        if (spl.length != 2) {
+            return null;
+        }
+        const hm = {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
+        if (isNaN(hm.hours) || isNaN(hm.minutes)) {
+            return null;
+        }
+        return hm;
+    }
+
+    private static ParseHhmmRanges(hhmms: string): {
+        startHour: number,
+        startMinutes: number,
+        endHour: number,
+        endMinutes: number
+    }[] {
+        if (hhmms === "off") {
+            return [];
+        }
+        return hhmms.split(",")
+            .map(s => s.trim())
+            .filter(str => str !== "")
+            .map(OH.parseHHMMRange)
+            .filter(v => v != null)
+    }
+
+    private static ParseWeekday(weekday: string): number {
+        return OH.daysIndexed[weekday.trim().toLowerCase()];
+    }
+
+    private static ParseWeekdayRange(weekdays: string): number[] {
+        const split = weekdays.split("-");
+        if (split.length == 1) {
+            const parsed = OH.ParseWeekday(weekdays);
+            if (parsed == null) {
+                return null;
+            }
+            return [parsed];
+        } else if (split.length == 2) {
+            let start = OH.ParseWeekday(split[0]);
+            let end = OH.ParseWeekday(split[1]);
+            if ((start ?? null) === null || (end ?? null) === null) {
+                return null;
+            }
+            let range = [];
+            for (let i = start; i <= end; i++) {
+                range.push(i);
+            }
+            return range;
+        } else {
+            return null;
+        }
+    }
+
+    private static ParseWeekdayRanges(weekdays: string): number[] {
+        let ranges = [];
+        let split = weekdays.split(",");
+        for (const weekday of split) {
+            const parsed = OH.ParseWeekdayRange(weekday)
+            if (parsed === undefined || parsed === null) {
+                return null;
+            }
+            ranges.push(...parsed);
+        }
+        return ranges;
+    }
+
+    private static multiply(weekdays: number[], timeranges: { startHour: number, startMinutes: number, endHour: number, endMinutes: number }[]) {
+        if ((weekdays ?? null) == null || (timeranges ?? null) == null) {
+            return null;
+        }
+        const ohs: OpeningHour[] = []
+        for (const timerange of timeranges) {
+            for (const weekday of weekdays) {
+                ohs.push({
+                    weekday: weekday,
+                    startHour: timerange.startHour, startMinutes: timerange.startMinutes,
+                    endHour: timerange.endHour, endMinutes: timerange.endMinutes,
+                });
+            }
+        }
+        return ohs;
+    }
+
 }
 

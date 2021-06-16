@@ -51,17 +51,23 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
         const table = document.createElement("table")
         table.classList.add("oh-table")
+        
+        const cellHeightInPx = 14;
 
         const headerRow = document.createElement("tr")
         headerRow.appendChild(document.createElement("th"))
+        headerRow.classList.add("relative")
         for (let i = 0; i < OpeningHoursPickerTable.days.length; i++) {
             let weekday = OpeningHoursPickerTable.days[i].Clone();
             const cell = document.createElement("th")
             cell.style.width = "14%"
             cell.appendChild(weekday.ConstructElement())
+            
             const fullColumnSpan = this.weekdayElements[i]
-            fullColumnSpan.classList.add("w-full","h-full","relative")
-            fullColumnSpan.style.height = "42rem"  
+            fullColumnSpan.classList.add("w-full","relative")
+            
+            // We need to round! The table height is rounded as following, we use this to calculate the actual number of pixels afterwards
+            fullColumnSpan.style.height = ( (cellHeightInPx) * 48) + "px"  
             
             
             const ranges = new VariableUiElement(
@@ -98,7 +104,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             const hs = Utils.TwoDigits(h);
             const firstCell = document.createElement("td")
             firstCell.rowSpan = 2
-            firstCell.classList.add("oh-left-col", "oh-timecell-full", "border-box","h-2")
+            firstCell.classList.add("oh-left-col", "oh-timecell-full", "border-box")
             firstCell.appendChild(new FixedUiElement(hs + ":00").ConstructElement())
 
             const evenRow = document.createElement("tr")
@@ -109,6 +115,9 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 cell.classList.add("oh-timecell", "oh-timecell-full", `oh-timecell-${weekday}`)
                 evenRow.appendChild(cell)
             }
+            evenRow.style.height = (cellHeightInPx)+"px";
+            evenRow.style.maxHeight = evenRow.style.height;
+            evenRow.style.minHeight = evenRow.style.height;
             table.appendChild(evenRow)
 
             const oddRow = document.createElement("tr")
@@ -118,6 +127,9 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                 cell.classList.add("oh-timecell", "oh-timecell-half", `oh-timecell-${weekday}`)
                 oddRow.appendChild(cell)
             }
+            oddRow.style.minHeight = evenRow.style.height;
+            oddRow.style.maxHeight = evenRow.style.height;
+
             table.appendChild(oddRow)
         }
 

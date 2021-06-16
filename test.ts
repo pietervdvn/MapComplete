@@ -8,6 +8,7 @@ import OpeningHoursPickerTable from "./UI/OpeningHours/OpeningHoursPickerTable";
 import OpeningHoursPicker from "./UI/OpeningHours/OpeningHoursPicker";
 import {OH, OpeningHour} from "./UI/OpeningHours/OpeningHours";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import PublicHolidayInput from "./UI/OpeningHours/PublicHolidayInput";
 
 
 const tagsSource = new UIEventSource({
@@ -23,15 +24,8 @@ const tagsSource = new UIEventSource({
 const state = new State(undefined)
 State.state = state
 
-const ohData = new UIEventSource<OpeningHour[]>([{
-    weekday: 1,
-    startHour: 10,
-    startMinutes: 0
-    , endHour: 12,
-    endMinutes: 0
-}])
-new OpeningHoursPicker(ohData).AttachTo("maindiv")
-new VariableUiElement(ohData.map(OH.ToString)).AttachTo("extradiv")
+const ohData = new UIEventSource<string>("")
+new OpeningHoursPicker().AttachTo("maindiv")
 /*
 const allSpecials = SpecialVisualizations.specialVisualizations.map(spec => {
     try{

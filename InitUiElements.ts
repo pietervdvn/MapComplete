@@ -210,6 +210,7 @@ export class InitUiElements {
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
+        document.getElementById("centermessage").classList.add("pointer-events-none")
 
 
     }

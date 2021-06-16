@@ -64,6 +64,7 @@
     font-size: large;
     padding: 0;
     padding-right: 0.2em;
+    box-sizing: border-box;
 }
 
 .oh-timecell-0 {
@@ -118,35 +119,6 @@
     border: 2px solid var(--catch-detail-color);
     overflow: unset;
 }
-
-.oh-timerange-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    overflow-x: unset;
-}
-
-.oh-timerange-inner-small {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
-    width:100%;
-}
-.oh-delete-range{
-    width: 1.5em;
-    height: 1.5em;
-    background:black;
-    border-radius:0.75em;
-}
-
-.oh-delete-range img {
-    height: 100%;
-    max-width: 2em;
-}
-
 
 /**** Opening hours visualization table ****/
 

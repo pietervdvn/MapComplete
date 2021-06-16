@@ -24,28 +24,28 @@ export default class OpeningHoursRange extends BaseUIElement {
     InnerConstructElement(): HTMLElement {
         const height = this.getHeight();
         const oh = this._oh;
-        const startTime = new FixedUiElement(Utils.TwoDigits(oh.startHour) + ":" + Utils.TwoDigits(oh.startMinutes)).SetClass("oh-timerange-label")
-        const endTime = new FixedUiElement(Utils.TwoDigits(oh.endHour) + ":" + Utils.TwoDigits(oh.endMinutes)).SetClass("oh-timerange-label")
-
+        const startTime = new FixedUiElement(Utils.TwoDigits(oh.startHour) + ":" + Utils.TwoDigits(oh.startMinutes))
+        const endTime = new FixedUiElement(Utils.TwoDigits(oh.endHour) + ":" + Utils.TwoDigits(oh.endMinutes))
 
         const deleteRange =
             Svg.delete_icon_ui()
-                .SetClass("oh-delete-range")
+                .SetClass("rounded-full w-6 h-6 block bg-black")
                 .onClick(() => {
                     this._onDelete()
                 });
 
 
-        let content = [deleteRange]
+        let content: BaseUIElement;
         if (height > 2) {
-            content = [startTime, deleteRange, endTime];
+            content = new Combine([startTime, deleteRange, endTime]).SetClass("flex flex-col h-full").SetStyle("justify-content: space-between;");
+        } else {
+            content = new Combine([deleteRange]).SetClass("flex flex-col h-full").SetStyle("flex-content: center; overflow-x: unset;")
         }
 
-        const el = new Combine(content)
-            .SetClass("oh-timerange-inner").ConstructElement();
+        const el = new Combine([content]).ConstructElement();
 
-        el.style.top = (100 * OH.startTime(oh) / 24) + "%"
-        el.style.height = (100 * (OH.endTime(oh) - OH.startTime(oh)) / 24) + "%"
+        el.style.top = `${100 * OH.startTime(oh) / 24}%`
+        el.style.height = `${100 * this.getHeight() / 24}%`
         return el;
     }
 

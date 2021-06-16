@@ -37,14 +37,14 @@ export default class OpeningHoursInput extends InputElement<string> {
                 if (OH.ParseRule(rule) !== null) {
                     continue;
                 }
-                if (PublicHolidayInput.LoadValue(rule) !== null) {
+                if (OH.ParsePHRule(rule) !== null) {
                     continue;
                 }
                 leftOvers.push(rule);
             }
             return leftOvers;
         })
-        // NOte: MUST be bound AFTER the leftover rules!
+        // Note: MUST be bound AFTER the leftover rules!
         const rulesFromOhPicker = value.map(OH.Parse);
 
         const ph = value.map<string>(str => {
@@ -53,7 +53,7 @@ export default class OpeningHoursInput extends InputElement<string> {
             }
             const rules = str.split(";");
             for (const rule of rules) {
-                if (PublicHolidayInput.LoadValue(rule) !== null) {
+                if (OH.ParsePHRule(rule) !== null) {
                     return rule;
                 }
             }
