@@ -2,6 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 
 /**
@@ -11,15 +12,18 @@ export default class DirectionInput extends InputElement<string> {
 
     private readonly value: UIEventSource<string>;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-    private _element: HTMLElement;
 
     constructor(value?: UIEventSource<string>) {
         super();
         this.value = value ?? new UIEventSource<string>(undefined);
 
-        
-        this._element =       new Combine([
-            `<div style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+
+
+        const element =       new Combine([
+            new FixedUiElement("").SetClass("w-full h-full absolute top-0 left-O rounded-full"),
             Svg.direction_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg"),
@@ -30,20 +34,15 @@ export default class DirectionInput extends InputElement<string> {
             .ConstructElement()
 
 
-const self = this;
         this.value.addCallbackAndRun(rotation => {
-            const selfElement = self._element;
-            if (selfElement === null) {
-                return;
-            }
-            const cone = selfElement.getElementsByClassName("direction-svg")[0] as HTMLElement
+            const cone = element.getElementsByClassName("direction-svg")[0] as HTMLElement
             cone.style.transform = `rotate(${rotation}deg)`;
 
         })
-    }
-
-    protected InnerConstructElement(): HTMLElement {
-        return this._element
+        
+        this.RegisterTriggers(element)
+        
+        return element;
     }
 
 
@@ -52,7 +51,7 @@ const self = this;
     }
 
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
+    private RegisterTriggers(htmlElement: HTMLElement) {
         const self = this;
 
         function onPosChange(x: number, y: number) {
