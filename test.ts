@@ -8,7 +8,8 @@ import TagRenderingQuestion from "./UI/Popup/TagRenderingQuestion";
 import {SlideShow} from "./UI/Image/SlideShow";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Img from "./UI/Base/Img";
-import {ImgurImage} from "./UI/Image/ImgurImage";
+import {AttributedImage} from "./UI/Image/AttributedImage";
+import {Imgur} from "./Logic/Web/Imgur";
 
 
 function TestSlideshow(){
@@ -16,7 +17,7 @@ function TestSlideshow(){
         new FixedUiElement("A"),
         new FixedUiElement("qmsldkfjqmlsdkjfmqlskdjfmqlksdf").SetClass("text-xl"),
         new Img("https://i.imgur.com/8lIQ5Hv.jpg"),
-        new ImgurImage("https://i.imgur.com/y5XudzW.jpg"),
+        new AttributedImage("https://i.imgur.com/y5XudzW.jpg", new Imgur()),
         new Img("https://www.grunge.com/img/gallery/the-real-reason-your-cat-sleeps-so-much/intro-1601496900.webp")
     ])
     new SlideShow(elems).AttachTo("maindiv")

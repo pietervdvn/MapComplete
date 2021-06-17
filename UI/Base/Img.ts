@@ -3,10 +3,12 @@ import BaseUIElement from "../BaseUIElement";
 
 export default class Img extends BaseUIElement {
     private _src: string;
+    private readonly _rawSvg: boolean;
 
-    constructor(src: string) {
+    constructor(src: string, rawSvg = false) {
         super();
         this._src = src;
+        this._rawSvg = rawSvg;
     }
 
     static AsData(source: string) {
@@ -21,6 +23,13 @@ export default class Img extends BaseUIElement {
     }
 
     protected InnerConstructElement(): HTMLElement {
+
+        if (this._rawSvg) {
+            const e = document.createElement("div")
+            e.innerHTML = this._src
+            return e;
+        }
+
         const el = document.createElement("img")
         el.src = this._src;
         el.onload = () => {

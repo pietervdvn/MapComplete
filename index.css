@@ -62,7 +62,7 @@
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
     
-    --image-carousel-height: 400px;
+    --image-carousel-height: 350px;
 }
 
 html, body {
@@ -148,10 +148,6 @@ li::marker {
 
 .border-attention-catch{ border: 5px solid var(--catch-detail-color);}
 
-.slick-prev:before, .slick-next:before {
-    /*Slideshow workaround*/
-    color:black !important;
-}
 
 #topleft-tools svg {
     fill: var(--foreground-color) !important;
@@ -360,6 +356,6 @@ li::marker {
 
 
 .slideshow-item img{
-    height: 100%;
+    height: var(--image-carousel-height);
     width: unset;
 }

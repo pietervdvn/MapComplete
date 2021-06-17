@@ -20,7 +20,7 @@ export default class ThemeIntroductionPanel extends VariableUiElement {
         ;
         
         const toTheMap = new SubtleButton(
-            new FixedUiElement(""),
+            undefined,
             Translations.t.general.openTheMap.Clone().SetClass("text-xl font-bold w-full text-center")
         ).onClick(() =>{
             isShown.setData(false)

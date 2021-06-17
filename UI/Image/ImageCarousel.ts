@@ -2,12 +2,14 @@ import {SlideShow} from "./SlideShow";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import DeleteImage from "./DeleteImage";
-import {WikimediaImage} from "./WikimediaImage";
-import {ImgurImage} from "./ImgurImage";
-import {MapillaryImage} from "./MapillaryImage";
+import {AttributedImage} from "./AttributedImage";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
 import Toggle from "../Input/Toggle";
+import ImageAttributionSource from "../../Logic/Web/ImageAttributionSource";
+import {Wikimedia} from "../../Logic/Web/Wikimedia";
+import {Mapillary} from "../../Logic/Web/Mapillary";
+import {Imgur} from "../../Logic/Web/Imgur";
 
 export class ImageCarousel extends Toggle {
 
@@ -45,17 +47,20 @@ export class ImageCarousel extends Toggle {
      */
     private static CreateImageElement(url: string): BaseUIElement {
         // @ts-ignore
+        let attrSource : ImageAttributionSource = undefined;
         if (url.startsWith("File:")) {
-            return new WikimediaImage(url);
+            attrSource = Wikimedia.singleton
         } else if (url.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
-            const commons = url.substr("https://commons.wikimedia.org/wiki/".length);
-            return new WikimediaImage(commons);
+            attrSource = Wikimedia.singleton;
         } else if (url.toLowerCase().startsWith("https://i.imgur.com/")) {
-            return new ImgurImage(url);
+            attrSource = Imgur.singleton
         } else if (url.toLowerCase().startsWith("https://www.mapillary.com/map/im/")) {
-            return new MapillaryImage(url);
+            attrSource = Mapillary.singleton
         } else {
             return new Img(url);
         }
+        
+        return new AttributedImage(url, attrSource)
+        
     }
 }

@@ -34,11 +34,11 @@ export class Basemap {
         this.map.setMaxBounds(
             [[-100, -200], [100, 200]]
         );
+
         this.map.attributionControl.setPrefix(
             "<span id='leaflet-attribution'></span> | <a href='https://osm.org'>OpenStreetMap</a>");
 
         extraAttribution.AttachTo('leaflet-attribution')
-        
         const self = this;
 
         let previousLayer = currentLayer.data;

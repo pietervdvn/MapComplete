@@ -29,14 +29,14 @@ export class SubtleButton extends UIElement {
         } else {
             img = imageUrl;
         }
-        img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0")
+        img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")
         const image = new Combine([img])
             .SetClass("flex-shrink-0");
 
         if (linkTo == undefined) {
             return new Combine([
                 image,
-                message?.SetClass("blcok ml-4 overflow-ellipsis"),
+                message?.SetClass("block overflow-ellipsis"),
             ]).SetClass("flex group w-full");
         }
 
@@ -44,7 +44,7 @@ export class SubtleButton extends UIElement {
         return new Link(
             new Combine([
                 image,
-                message?.SetClass("block ml-4 overflow-ellipsis")
+                message?.SetClass("block overflow-ellipsis")
             ]).SetClass("flex group w-full"),
             linkTo.url,
             linkTo.newTab ?? false
