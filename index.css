@@ -89,7 +89,6 @@ svg, img {
     display: unset;
 }
 
-
 a {
     color: var(--foreground-color);
 }
@@ -357,4 +356,10 @@ li::marker {
 .small-image {
     height: 1em;
     max-width: 1em;
+}
+
+
+.slideshow-item img{
+    height: 100%;
+    width: unset;
 }

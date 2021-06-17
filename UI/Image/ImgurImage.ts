@@ -6,6 +6,7 @@ import Combine from "../Base/Combine";
 import Attribution from "./Attribution";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
 
 export class ImgurImage extends UIElement {
@@ -19,7 +20,7 @@ export class ImgurImage extends UIElement {
     private readonly _imageLocation: string;
 
     constructor(source: string) {
-        super(undefined)
+        super()
         this._imageLocation = source;
         if (ImgurImage.allLicenseInfos[source] !== undefined) {
             this._imageMeta = ImgurImage.allLicenseInfos[source];
@@ -31,25 +32,15 @@ export class ImgurImage extends UIElement {
                 self._imageMeta.setData(license)
             })
         }
-        
-        this.ListenTo(this._imageMeta);
-      
     }
 
     InnerRender(): BaseUIElement {
         const image = new Img( this._imageLocation);
         
-        if(this._imageMeta.data === null){
-            return image;
-        }
-        
-        const meta = this._imageMeta.data;
         return new Combine([
             image,
-            new Attribution(meta.artist, meta.license, undefined),
-            
-        ]).SetClass('block relative')
-            ;
+           new VariableUiElement(this._imageMeta.map(meta => (meta === undefined || meta === null) ? undefined : new Attribution(meta.artist, meta.license, undefined)))
+        ]).SetClass('block relative h-full');
 
     }
 

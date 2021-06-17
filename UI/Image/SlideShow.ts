@@ -1,5 +1,7 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
+import {Utils} from "../../Utils";
+import Combine from "../Base/Combine";
 
 export class SlideShow extends BaseUIElement {
 
@@ -8,7 +10,7 @@ export class SlideShow extends BaseUIElement {
 
     constructor(embeddedElements: UIEventSource<BaseUIElement[]>) {
         super()
-        this.embeddedElements = embeddedElements;
+        this.embeddedElements =embeddedElements;
     }
 
     protected InnerConstructElement(): HTMLElement {
@@ -23,11 +25,12 @@ export class SlideShow extends BaseUIElement {
                 el.removeChild(el.lastChild)
             }
 
+            elements = Utils.NoNull(elements).map(el => new Combine([el]) 
+                .SetClass("block relative ml-1 bg-gray-200 m-1 rounded slideshow-item")
+                .SetStyle("min-width: 150px; width: max-content; height: var(--image-carousel-height);max-height: var(--image-carousel-height);")
+            )
+            
             for (const element of elements ?? []) {
-                element
-                    .SetClass("block ml-1; bg-gray-200")
-                    .SetStyle("min-width: 150;  max-height: var(--image-carousel-height); min-height: var(--image-carousel-height)")
-
                 el.appendChild(element.ConstructElement())
             }
         });

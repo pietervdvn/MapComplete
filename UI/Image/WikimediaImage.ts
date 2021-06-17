@@ -51,7 +51,7 @@ export class WikimediaImage extends UIElement {
         return new Combine([
             image,
             new Attribution(meta.artist, meta.license, Svg.wikimedia_commons_white_svg())
-        ]).SetClass("relative block")
+        ]).SetClass("relative block h-full")
 
     }
 
