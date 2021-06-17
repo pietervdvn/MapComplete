@@ -28,7 +28,16 @@ Note that 'map' will also absorb some changes, e.g. `const someEventSource : UIE
 An object which receives an UIEventSource is responsible of responding onto changes of this object. This is especially true for UI-components
 
 UI
---
+--```
+
+export default class MyComponent {
+
+    constructor(neededParameters, neededUIEventSources) {
+    
+    }
+
+}
+```
 
 The Graphical User Interface is composed of various UI-elements. For every UI-element, there is a BaseUIElement which creates the actual HTMLElement when needed.
 
@@ -177,9 +186,22 @@ export default class MyComponent extends Combine {
 
 ```
 
+Assets
+------
+
+### Themes
+
+Theme and layer configuration files go into /assets/layers and assets/themes
+
+### Images
+
+Other files (mostly images that are part of the core of mapcomplete) go into 'assets/svg' and are usable with `Svg.image_file_ui()`. Run `npm run generate:images` if you added a new image
+
 
 Logic
 -----
 
-With the 
+The last part is the business logic of the application, found in 'Logic'. Actors are small objects which react to UIEventSources to update other eventSources.
+
+State.state is a big singleton object containing a lot of the state of the entire application. That one is a bit a mess
 
