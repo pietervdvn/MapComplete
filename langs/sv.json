@@ -34,7 +34,8 @@
     "centerMessage": {
         "ready": "Klar!",
         "zoomIn": "Zooma in för att visa eller redigera data",
-        "loadingData": "Laddar data…"
+        "loadingData": "Laddar data…",
+        "retrying": "Det gick inte att ladda in data. Försöker igen om {count} sekunder…"
     },
     "image": {
         "isDeleted": "Borttagen",

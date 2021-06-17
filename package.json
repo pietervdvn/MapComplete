@@ -63,7 +63,7 @@
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
     "i18next-client": "^1.11.4",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "latlon2country": "^1.1.3",
     "leaflet": "^1.7.1",
     "leaflet-providers": "^1.10.2",
