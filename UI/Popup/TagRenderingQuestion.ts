@@ -23,6 +23,7 @@ import {Tag} from "../../Logic/Tags/Tag";
 import {And} from "../../Logic/Tags/And";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
+import {DropDown} from "../Input/DropDown";
 
 /**
  * Shows the question element.
@@ -71,7 +72,7 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue(), 
+        this._saveButton = new SaveButton(this._inputElement.GetValue(),
             State.state?.osmConnection)
             .onClick(save)
 
@@ -94,9 +95,8 @@ export default class TagRenderingQuestion extends UIElement {
                 }
             )
         ).SetClass("block break-all")
-        
-        
-        
+
+
     }
 
     InnerRender() {
@@ -111,24 +111,58 @@ export default class TagRenderingQuestion extends UIElement {
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {
-        const ff = this.GenerateFreeform();
         const self = this;
-        let mappings =
-            (this._configuration.mappings ?? []).map(mapping => self.GenerateMappingElement(mapping));
-        mappings = Utils.NoNull(mappings);
+        let inputEls: InputElement<TagsFilter>[];
 
-        if (mappings.length == 0) {
+        const mappings = (this._configuration.mappings??[])
+            .filter(            mapping => {
+                if(mapping.hideInAnswer === true){
+                    return false;
+                }
+                if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
+                    return false;
+                }
+                return true;
+            })
+      
+        
+        let allIfNots: TagsFilter[] = Utils.NoNull(this._configuration.mappings?.map(m => m.ifnot) ?? []    );
+        const ff = this.GenerateFreeform();
+        const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
+
+        if (mappings.length < 8 || this._configuration.multiAnswer || hasImages) {
+            inputEls = (mappings ?? []).map(mapping => self.GenerateMappingElement(mapping, allIfNots));
+            inputEls = Utils.NoNull(inputEls);
+        } else {
+            const dropdown: InputElement<TagsFilter> = new DropDown("",
+                mappings.map(mapping => {
+                    return {
+                        value: new And([mapping.if, ...allIfNots]),
+                        shown: Translations.WT(mapping.then).Clone()
+                    }
+                })
+            )
+
+            if (ff == undefined) {
+                return dropdown;
+            } else {
+                inputEls = [dropdown]
+            }
+        }
+
+
+        if (inputEls.length == 0) {
             return ff;
         }
 
         if (ff) {
-            mappings.push(ff);
+            inputEls.push(ff);
         }
 
         if (this._configuration.multiAnswer) {
-            return this.GenerateMultiAnswer(mappings, ff, this._configuration.mappings.map(mp => mp.ifnot))
+            return this.GenerateMultiAnswer(inputEls, ff, this._configuration.mappings.map(mp => mp.ifnot))
         } else {
-            return new RadioButton(mappings, false)
+            return new RadioButton(inputEls, false)
         }
 
     }
@@ -237,16 +271,16 @@ export default class TagRenderingQuestion extends UIElement {
         if: TagsFilter,
         then: Translation,
         hideInAnswer: boolean | TagsFilter
-    }): InputElement<TagsFilter> {
-        if (mapping.hideInAnswer === true) {
-            return undefined;
+    }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
+       
+        let tagging = mapping.if;
+        if (ifNot.length > 0) {
+            tagging = new And([tagging, ...ifNot])
         }
-        if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
-            return undefined;
-        }
+
         return new FixedInputElement(
             new SubstitutedTranslation(mapping.then, this._tags),
-            mapping.if,
+            tagging,
             (t0, t1) => t1.isEquivalent(t0));
     }
 

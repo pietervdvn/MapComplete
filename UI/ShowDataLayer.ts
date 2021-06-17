@@ -159,7 +159,12 @@ export default class ShowDataLayer {
                 return;
             }
             if (selected.properties.id === feature.properties.id) {
-                leafletLayer.openPopup()
+                // A small sanity check to prevent infinite loops:
+                // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+                if(selected.geometry.type === feature.geometry.type){
+                    leafletLayer.openPopup()    
+                }
+                
             }
         })
 
