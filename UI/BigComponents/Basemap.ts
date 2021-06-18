@@ -12,13 +12,14 @@ export class Basemap {
     constructor(leafletElementId: string,
                 location: UIEventSource<Loc>,
                 currentLayer: UIEventSource<BaseLayer>,
-                lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                extraAttribution: BaseUIElement) {
+                lastClickLocation?: UIEventSource<{ lat: number, lon: number }>,
+                extraAttribution?: BaseUIElement) {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
             layers: [currentLayer.data.layer],
             zoomControl: false,
+            attributionControl: extraAttribution !== undefined
         });
 
         L.control.scale(
@@ -70,12 +71,12 @@ export class Basemap {
 
         this.map.on("click", function (e) {
             // @ts-ignore
-            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
+            lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng})
         });
 
         this.map.on("contextmenu", function (e) {
             // @ts-ignore
-            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng});
         });
 
 

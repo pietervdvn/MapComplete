@@ -10,20 +10,28 @@ import {FixedUiElement} from "../Base/FixedUiElement";
  */
 export default class DirectionInput extends InputElement<string> {
 
-    private readonly value: UIEventSource<string>;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly value: UIEventSource<string>;
 
     constructor(value?: UIEventSource<string>) {
         super();
         this.value = value ?? new UIEventSource<string>(undefined);
 
     }
-    
+
+    GetValue(): UIEventSource<string> {
+        return this.value;
+    }
+
+    IsValid(str: string): boolean {
+        const t = Number(str);
+        return !isNaN(t) && t >= 0 && t <= 360;
+    }
 
     protected InnerConstructElement(): HTMLElement {
 
 
-        const element =       new Combine([
+        const element = new Combine([
             new FixedUiElement("").SetClass("w-full h-full absolute top-0 left-O rounded-full"),
             Svg.direction_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
@@ -40,17 +48,11 @@ export default class DirectionInput extends InputElement<string> {
             cone.style.transform = `rotate(${rotation}deg)`;
 
         })
-        
+
         this.RegisterTriggers(element)
-        
+
         return element;
     }
-
-
-    GetValue(): UIEventSource<string> {
-        return this.value;
-    }
-
 
     private RegisterTriggers(htmlElement: HTMLElement) {
         const self = this;
@@ -83,19 +85,16 @@ export default class DirectionInput extends InputElement<string> {
         }
 
         htmlElement.onmouseup = (ev) => {
-            isDown = false; ev.preventDefault();
+            isDown = false;
+            ev.preventDefault();
         }
 
         htmlElement.onmousemove = (ev: MouseEvent) => {
             if (isDown) {
                 onPosChange(ev.clientX, ev.clientY);
-            } ev.preventDefault();
+            }
+            ev.preventDefault();
         }
-    }
-
-    IsValid(str: string): boolean {
-        const t = Number(str);
-        return !isNaN(t) && t >= 0 && t <= 360;
     }
 
 }
