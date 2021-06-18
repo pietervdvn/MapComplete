@@ -84,7 +84,7 @@ export default class MoreScreen extends Combine {
                     });
                 }
                 return new SubtleButton(Svg.pencil_ui(), tr.createYourOwnTheme.Clone(), {
-                    url: "./customGenerator.html",
+                    url: "https://pietervdvn.github.io/mc/legacy/070/customGenerator.html",
                     newTab: false
                 });
             })
