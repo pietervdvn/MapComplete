@@ -12,7 +12,8 @@
         "cco": "w domenie publicznej",
         "ccb": "na licencji CC-BY",
         "ccbs": "na licencji CC-BY-SA",
-        "willBePublished": "Twoja ilustracja będzie opublikowana: "
+        "willBePublished": "Twoja ilustracja będzie opublikowana: ",
+        "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł."
     },
     "general": {
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
@@ -33,6 +34,7 @@
     },
     "centerMessage": {
         "loadingData": "Ładowanie danych…",
-        "ready": "Zrobione!"
+        "ready": "Zrobione!",
+        "zoomIn": "Przybliż żeby zobaczyć lub edytować."
     }
 }
