@@ -2,7 +2,7 @@
     "image": {
         "uploadingMultiple": "Wysyłanie {count} ilustracji…",
         "uploadingPicture": "Wysyłanie ilustracji…",
-        "addPicture": "Dodaj ilustrację",
+        "addPicture": "Dodaj zdjęcie",
         "pleaseLogin": "Proszę, zaloguj się by dodać ilustrację",
         "isDeleted": "Usunięte",
         "doDelete": "Usuń ilustrację",
@@ -12,7 +12,7 @@
         "cco": "w domenie publicznej",
         "ccb": "na licencji CC-BY",
         "ccbs": "na licencji CC-BY-SA",
-        "willBePublished": "Twoja ilustracja będzie opublikowana: ",
+        "willBePublished": "Twoje zdjęcie będzie opublikowane: ",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł."
     },
     "general": {
