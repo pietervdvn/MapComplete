@@ -25,7 +25,7 @@ export class SubtleButton extends UIElement {
         if ((imageUrl ?? "") === "") {
             img = undefined;
         } else if (typeof (imageUrl) === "string") {
-            img = new Img(imageUrl).SetClass("w-full")
+            img = new Img(imageUrl)
         } else {
             img = imageUrl;
         }

@@ -70,18 +70,7 @@ export class RadioButton<T> extends InputElement<T> {
 
         const form = document.createElement("form")
         const inputs = []
-
-        value.addCallbackAndRun(
-            selected => {
-                
-                let somethingChecked = false;
-                for (let i = 0; i < inputs.length; i++){
-                    let input = inputs[i];
-                    input.checked = !somethingChecked && elements[i].IsValid(selected);
-                    somethingChecked = somethingChecked || input.checked
-                }
-            }
-        )
+        const wrappers: HTMLElement[] = []
         
         for (let i1 = 0; i1 < elements.length; i1++) {
             let element = elements[i1];
@@ -94,7 +83,7 @@ export class RadioButton<T> extends InputElement<T> {
             input.id = "radio" + groupId + "-" + i1;
             input.name = groupId;
             input.type = "radio"
-               input.classList.add("p-1","cursor-pointer","ml-2","pl-2","pr-0","m-0","ml-3")
+               input.classList.add("p-1","cursor-pointer","ml-2","pl-2","pr-0","m-3","mr-0")
 
             input.onchange = () => {
                 if(input.checked){
@@ -114,10 +103,33 @@ export class RadioButton<T> extends InputElement<T> {
             const block = document.createElement("div")
             block.appendChild(input)
             block.appendChild(label)
-            block.classList.add("flex","w-full","border", "rounded-full", "border-gray-400")
+            block.classList.add("flex","w-full","border", "rounded-full", "border-gray-400","m-1")
+            wrappers.push(block)
 
             form.appendChild(block)
         }
+
+
+        value.addCallbackAndRun(
+            selected => {
+
+                let somethingChecked = false;
+                for (let i = 0; i < inputs.length; i++){
+                    let input = inputs[i];
+                    input.checked = !somethingChecked && elements[i].IsValid(selected);
+                    somethingChecked = somethingChecked || input.checked
+
+                    if(input.checked){
+                        wrappers[i].classList.remove("border-gray-400")
+                        wrappers[i].classList.add("border-black")
+                    }else{
+                        wrappers[i].classList.add("border-gray-400")
+                        wrappers[i].classList.remove("border-black")
+                    }
+
+                }
+            }
+        )
 
 
         this.SetClass("flex flex-col")

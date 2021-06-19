@@ -44,7 +44,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             input.id = "checkbox" + id
 
             input.type = "checkbox"
-            input.classList.add("p-1","cursor-pointer","ml-3","pl-3")
+            input.classList.add("p-1","cursor-pointer","m-3","pl-3","mr-0")
 
             const label = document.createElement("label")
             label.htmlFor = input.id
@@ -52,7 +52,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             label.classList.add("block","w-full","p-2","cursor-pointer","bg-red")
 
             const wrapper = document.createElement("span")
-            wrapper.classList.add("flex","w-full","border", "border-gray-400")
+            wrapper.classList.add("flex","w-full","border", "border-gray-400","m-1")
             wrapper.appendChild(input)
             wrapper.appendChild(label)
             el.appendChild(wrapper)
@@ -64,6 +64,16 @@ export default class CheckBoxes extends InputElement<number[]> {
                 if (selectedValues.indexOf(i) >= 0) {
                     input.checked = true;
                 }
+
+
+                if(input.checked){
+                    wrapper.classList.remove("border-gray-400")
+                    wrapper.classList.add("border-black")
+                }else{
+                    wrapper.classList.add("border-gray-400")
+                    wrapper.classList.remove("border-black")
+                }
+
             })
 
             input.onchange = () => {
