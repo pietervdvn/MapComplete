@@ -1,6 +1,3 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
 import Svg from "../../Svg";
 import State from "../../State";
@@ -8,130 +5,119 @@ import Combine from "../Base/Combine";
 import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
-import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
-import Locale from "../i18n/Locale";
 import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import Img from "../Base/Img";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
-export default class PersonalLayersPanel extends UIElement {
-    private checkboxes: BaseUIElement[] = [];
+export default class PersonalLayersPanel extends VariableUiElement {
 
     constructor() {
-        super(State.state.favouriteLayers);
-        this.ListenTo(State.state.osmConnection.userDetails);
-        this.ListenTo(Locale.language);
-        this.UpdateView([]);
-        const self = this;
-        State.state.installedThemes.addCallback(extraThemes => {
-            self.UpdateView(extraThemes.map(layout => layout.layout));
-        })
-    }
+        super(
+            State.state.installedThemes.map(installedThemes => {
+                const t = Translations.t.favourite;
 
+                // Lets get all the layers
+                const allThemes = AllKnownLayouts.layoutsList.concat(installedThemes.map(layout => layout.layout))
+                    .filter(theme => !theme.hideFromOverview)
 
-    private UpdateView(extraThemes: LayoutConfig[]) {
-        this.checkboxes = [];
-        const favs = State.state.favouriteLayers.data ?? [];
-        const controls = new Map<string, UIEventSource<boolean>>();
-        const allLayouts = AllKnownLayouts.layoutsList.concat(extraThemes);
-        for (const layout of allLayouts) {
-            if (layout.id === personal.id) {
-                continue;
-            }
-            
-            if(layout.hideFromOverview){
-                continue;
-            }
-
-            const header =
-                new Combine([
-                    `<img style="max-width: 3em;max-height: 3em; float: left; padding: 0.1em; margin-right: 0.3em;" src='${layout.icon}'>`,
-                    "<b>",
-                    layout.title,
-                    "</b><br/>",
-                    layout.shortDescription ?? ""
-                ]).SetClass("block p1 overflow-auto rounded")
-                    .SetStyle("background: #eee;")
-            this.checkboxes.push(header);
-
-            for (const layer of layout.layers) {
-                if(layer === undefined){
-                    console.warn("Undefined layer for ",layout.id)
-                    continue;
-                }
-                if (typeof layer === "string") {
-                    continue;
-                }
-                let icon :BaseUIElement = layer.GenerateLeafletStyle(new UIEventSource<any>({id:"node/-1"}), false).icon.html
-                    ?? Svg.checkmark_svg();
-                let iconUnset =new Combine([icon]);
-                icon.SetClass("single-layer-selection-toggle")
-                iconUnset.SetClass("single-layer-selection-toggle")
-
-
-                let name = layer.name ?? layer.id;
-                if (name === undefined) {
-                    continue;
-                }
-                const content = new Combine([
-                    "<b>", 
-                    name, 
-                    "</b> ",
-                    layer.description !== undefined ? new Combine(["<br/>", layer.description]) : "",
-                ])
-                
-                
-                const cb = new Toggle(
-                    new SubtleButton(
-                        icon, 
-                        content),
-                    new SubtleButton(
-                        iconUnset.SetStyle("opacity:0.1"),
-                        new Combine(["<del>",
-                            content,
-                            "</del>"
-                        ])),
-                    controls[layer.id] ?? (favs.indexOf(layer.id) >= 0)
-                ).ToggleOnClick();
-                cb.SetClass("custom-layer-checkbox");
-                controls[layer.id] = cb.isEnabled;
-
-                cb.isEnabled.addCallback((isEnabled) => {
-                    const favs = State.state.favouriteLayers;
-                    if (isEnabled) {
-                        if(favs.data.indexOf(layer.id)>= 0){
-                            return; // Already added
+                const allLayers = []
+                {
+                    const seenLayers = new Set<string>()
+                    for (const layers of allThemes.map(theme => theme.layers)) {
+                        for (const layer of layers) {
+                            if (seenLayers.has(layer.id)) {
+                                continue
+                            }
+                            seenLayers.add(layer.id)
+                            allLayers.push(layer)
                         }
-                        favs.data.push(layer.id);
-                    } else {
-                        favs.data.splice(favs.data.indexOf(layer.id), 1);
                     }
-                    favs.ping();
-                })
+                }
 
-                this.checkboxes.push(cb);
+                // Time to create a panel based on them!
+                const panel: BaseUIElement = new Combine(allLayers.map(PersonalLayersPanel.CreateLayerToggle));
 
-            }
 
-        }
-
-        State.state.favouriteLayers.addCallback((layers) => {
-            for (const layerId of layers) {
-                controls[layerId]?.setData(true);
-            }
-        });
-
+                return new Toggle(
+                    new Combine([
+                        t.panelIntro.Clone(),
+                        panel
+                    ]).SetClass("flex flex-col"),
+                    new SubtleButton(
+                        Svg.osm_logo_ui(),
+                        t.loginNeeded.Clone().SetClass("text-center")
+                    ).onClick(() => State.state.osmConnection.AttemptLogin()),
+                    State.state.osmConnection.isLoggedIn
+                )
+            })
+        )
     }
 
-    InnerRender(): BaseUIElement {
-        const t = Translations.t.favourite;
+    /***
+     * Creates a toggle for the given layer, which'll update State.state.favouriteLayers right away
+     * @param layer
+     * @constructor
+     * @private
+     */
+    private static CreateLayerToggle(layer: LayerConfig): Toggle {
+        const iconUrl = layer.icon.GetRenderValue({id: "node/-1"}).txt
+        let icon :BaseUIElement =new Combine([ layer.GenerateLeafletStyle(
+            new UIEventSource<any>({id: "node/-1"}),
+            false,
+            "2em"
+        ).icon.html]).SetClass("relative")
+        let iconUnset =new Combine([ layer.GenerateLeafletStyle(
+            new UIEventSource<any>({id: "node/-1"}),
+            false,
+            "2em"
+        ).icon.html]).SetClass("relative")
+
+        iconUnset.SetStyle("opacity:0.1")
+
+        let name = layer.name ;
+        if (name === undefined) {
+            return undefined;
+        }
+        const content = new Combine([
+            Translations.WT(name).Clone().SetClass("font-bold"),
+            Translations.WT(layer.description)?.Clone()
+        ]).SetClass("flex flex-col")
+
+        const contentUnselected = new Combine([
+            Translations.WT(name).Clone().SetClass("font-bold"),
+            Translations.WT(layer.description)?.Clone()
+        ]).SetClass("flex flex-col line-through")
+
         return new Toggle(
-            new Combine([
-                t.panelIntro,
-                ...this.checkboxes
-            ]),
-            t.loginNeeded,
-            State.state.osmConnection.isLoggedIn
-            
-        )
+            new SubtleButton(
+                icon,
+                content ),
+            new SubtleButton(
+                iconUnset,
+                contentUnselected
+            ),
+            State.state.favouriteLayers.map(favLayers => {
+                return favLayers.indexOf(layer.id) >= 0
+            }, [], (selected, current) => {
+                if (!selected && current.indexOf(layer.id) <= 0) {
+                    // Not selected and not contained: nothing to change: we return current as is
+                    return current;
+                }
+                if (selected && current.indexOf(layer.id) >= 0) {
+                    // Selected and contained: this is fine!
+                    return current;
+                }
+                const clone = [...current]
+                if (selected) {
+                    clone.push(layer.id)
+                } else {
+                    clone.splice(clone.indexOf(layer.id), 1)
+                }
+                return clone
+            })
+        ).ToggleOnClick();
     }
 
 

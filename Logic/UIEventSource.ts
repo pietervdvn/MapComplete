@@ -92,9 +92,16 @@ export class UIEventSource<T> {
         }
     }
 
-    public map<J>(f: ((T) => J),
+    /**
+     * Monoidal map:
+     * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
+     * @param f: The transforming function
+     * @param extraSources: also trigger the update if one of these sources change
+     * @param g: a 'backfunction to let the sync run in two directions. (data of the new UIEVEntSource, currentData) => newData
+     */
+    public map<J>(f: ((t: T) => J),
                   extraSources: UIEventSource<any>[] = [],
-                  g: ((J) => T) = undefined): UIEventSource<J> {
+                  g: ((j:J, t:T) => T) = undefined): UIEventSource<J> {
         const self = this;
 
         const newSource = new UIEventSource<J>(
@@ -113,7 +120,7 @@ export class UIEventSource<T> {
 
         if (g !== undefined) {
             newSource.addCallback((latest) => {
-                self.setData(g(latest));
+                self.setData(g(latest, self.data));
             })
         }
 

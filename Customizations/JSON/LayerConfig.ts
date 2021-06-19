@@ -12,7 +12,6 @@ import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
-import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
@@ -290,7 +289,7 @@ export default class LayerConfig {
 
     }
 
-    public GenerateLeafletStyle(tags: UIEventSource<any>, clickable: boolean):
+    public GenerateLeafletStyle(tags: UIEventSource<any>, clickable: boolean, widthHeight= "100%"):
         {
             icon:
                 {
