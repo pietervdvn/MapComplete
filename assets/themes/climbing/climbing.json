@@ -684,10 +684,10 @@
         "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?"
       },
       "render": {
-        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
-        "en": "The minimal difficulty is {climbing:grade:french} according to the french/belgian system",
-        "nl": "De minimale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french}です"
+        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+        "en": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system",
+        "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -709,10 +709,10 @@
         "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?"
       },
       "render": {
-        "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
-        "en": "The maximal difficulty is {climbing:grade:french} according to the french/belgian system",
-        "nl": "De maximale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french}です"
+        "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+        "en": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system",
+        "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
       },
       "freeform": {
         "key": "climbing:grade:french:max"

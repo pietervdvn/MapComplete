@@ -358,11 +358,11 @@
             },
             "2": {
                 "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De minimale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
             },
             "3": {
                 "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De maximale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
             },
             "4": {
                 "question": "Is het mogelijk om hier te bolderen?",

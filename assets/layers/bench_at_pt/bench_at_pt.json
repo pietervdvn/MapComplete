@@ -10,7 +10,8 @@
     "it": "Panchine alle fermate del trasporto pubblico",
     "ru": "Скамейки на остановках общественного транспорта",
     "zh_Hans": "在公交站点的长椅",
-    "nb_NO": "Benker"
+    "nb_NO": "Benker",
+    "zh_Hant": "大眾運輸站點的長椅"
   },
   "minzoom": 14,
   "source": {
@@ -33,7 +34,8 @@
       "ru": "Скамейка",
       "id": "Bangku",
       "zh_Hans": "长椅",
-      "nb_NO": "Benk"
+      "nb_NO": "Benk",
+      "zh_Hant": "長椅"
     },
     "mappings": [
       {
@@ -52,7 +54,8 @@
           "hu": "Pad megállóban",
           "it": "Panchina alla fermata del trasporto pubblico",
           "ru": "Скамейка на остановке общественного транспорта",
-          "zh_Hans": "在公交站点的长椅"
+          "zh_Hans": "在公交站点的长椅",
+          "zh_Hant": "大眾運輸站點的長椅"
         }
       },
       {
@@ -69,7 +72,8 @@
           "hu": "Pad fedett helyen",
           "it": "Panchina in un riparo",
           "zh_Hans": "在庇护所的长椅",
-          "ru": "Скамейка в укрытии"
+          "ru": "Скамейка в укрытии",
+          "zh_Hant": "涼亭內的長椅"
         }
       }
     ]
@@ -86,7 +90,8 @@
         "it": "{name}",
         "ru": "{name}",
         "id": "{name}",
-        "zh_Hans": "{name}"
+        "zh_Hans": "{name}",
+        "zh_Hant": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -100,7 +105,8 @@
         "nl": "Leunbank",
         "it": "Panca in piedi",
         "zh_Hans": "站立长凳",
-        "ru": "Встаньте на скамейке"
+        "ru": "Встаньте на скамейке",
+        "zh_Hant": "站立長椅"
       },
       "freeform": {
         "key": "bench",

@@ -9,12 +9,12 @@
         "website": {
             "question": "Какой сайт у {name}?"
         },
+        "description": {
+            "question": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>"
+        },
         "opening_hours": {
             "question": "Какое время работы у {name}?",
             "render": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}"
-        },
-        "description": {
-            "question": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>"
         }
     }
 }

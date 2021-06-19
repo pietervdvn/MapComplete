@@ -4,7 +4,8 @@
     "en": "Monitoring stations",
     "nl": "Telstation",
     "fr": "Stations de contrôle",
-    "it": "Stazioni di monitoraggio"
+    "it": "Stazioni di monitoraggio",
+    "zh_Hant": "監視站"
   },
   "minzoom": 12,
   "source": {
@@ -21,7 +22,8 @@
       "en": "Bicycle counting station",
       "fr": "Station de comptage de vélo",
       "it": "Stazione conta-biciclette",
-      "de": "Fahrradzählstation"
+      "de": "Fahrradzählstation",
+      "zh_Hant": "單車計數站"
     },
     "mappings": [
       {
@@ -31,7 +33,8 @@
           "nl": "Fietstelstation {name}",
           "fr": "Station de comptage de vélo {name}",
           "it": "Stazione conta-biciclette {name}",
-          "de": "Fahrradzählstation {name}"
+          "de": "Fahrradzählstation {name}",
+          "zh_Hant": "單車計數站 {name}"
         }
       },
       {
@@ -41,7 +44,8 @@
           "nl": "Fietstelstation {ref}",
           "fr": "Station de comptage de vélo {ref}",
           "it": "Stazione conta-bicicletta {ref}",
-          "de": "Fahrradzählstation {ref}"
+          "de": "Fahrradzählstation {ref}",
+          "zh_Hant": "單車計數站 {ref}"
         }
       }
     ]

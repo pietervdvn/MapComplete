@@ -6,7 +6,8 @@
     "fr": "Distributeur automatique de chambre à air de vélo",
     "it": "Distributore automatico di camere d’aria per bici",
     "de": "Fahrradschlauch-Automat",
-    "ru": "Торговый автомат для велосипедистов"
+    "ru": "Торговый автомат для велосипедистов",
+    "zh_Hant": "自行車內胎自動售貨機"
   },
   "title": {
     "render": {
@@ -15,7 +16,8 @@
       "fr": "Distributeur automatique de chambre à air de vélo",
       "it": "Distributore automatico di camere d’aria per bici",
       "de": "Fahrradschlauch-Automat",
-      "ru": "Торговый автомат для велосипедистов"
+      "ru": "Торговый автомат для велосипедистов",
+      "zh_Hant": "自行車內胎自動售貨機"
     },
     "mappings": [
       {
@@ -65,7 +67,8 @@
         "fr": "Distributeur automatique de chambre à air de vélo",
         "it": "Distributore automatico di camere d’aria per bici",
         "de": "Fahrradschlauch-Automat",
-        "ru": "Торговый автомат для велосипедистов"
+        "ru": "Торговый автомат для велосипедистов",
+        "zh_Hant": "自行車內胎自動售貨機"
       },
       "tags": [
         "amenity=vending_machine",
@@ -85,7 +88,8 @@
         "fr": "Cette machine est-elle encore opérationelle ?",
         "it": "Questo distributore automatico funziona ancora?",
         "ru": "Этот торговый автомат все еще работает?",
-        "de": "Ist dieser Automat noch in Betrieb?"
+        "de": "Ist dieser Automat noch in Betrieb?",
+        "zh_Hant": "這個自動販賣機仍有運作嗎？"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
@@ -93,7 +97,8 @@
         "fr": "L'état opérationnel est <i>{operational_status}</i>",
         "it": "Lo stato operativo è <i>{operational_status}</i>",
         "de": "Der Betriebszustand ist <i>{operational_status</i>",
-        "ru": "Рабочий статус: <i> {operational_status</i>"
+        "ru": "Рабочий статус: <i> {operational_status</i>",
+        "zh_Hant": "運作狀態是 <i>{operational_status</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -109,7 +114,8 @@
             "it": "Il distributore automatico funziona",
             "ru": "Этот торговый автомат работает",
             "zh_Hans": "这个借还机正常工作",
-            "de": "Dieser Automat funktioniert"
+            "de": "Dieser Automat funktioniert",
+            "zh_Hant": "這個自動販賣機仍運作"
           }
         },
         {
@@ -122,7 +128,8 @@
             "it": "Il distributore automatico è guasto",
             "ru": "Этот торговый автомат сломан",
             "zh_Hans": "这个借还机已经损坏",
-            "de": "Dieser Automat ist kaputt"
+            "de": "Dieser Automat ist kaputt",
+            "zh_Hant": "這個自動販賣機沒有運作了"
           }
         },
         {
@@ -135,7 +142,8 @@
             "it": "Il distributore automatico è spento",
             "ru": "Этот торговый автомат закрыт",
             "zh_Hans": "这个借还机被关闭了",
-            "de": "Dieser Automat ist geschlossen"
+            "de": "Dieser Automat ist geschlossen",
+            "zh_Hant": "這個自動販賣機已經關閉了"
           }
         }
       ]

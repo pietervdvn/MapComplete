@@ -228,11 +228,11 @@
             },
             "2": {
                 "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
-                "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)"
+                "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
             },
             "3": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
-                "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)"
+                "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
             },
             "4": {
                 "question": "Kann hier gebouldert werden?",

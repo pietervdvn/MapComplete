@@ -499,11 +499,11 @@
             },
             "2": {
                 "question": "What is the level of the easiest route here, accoring to the french classification system?",
-                "render": "The minimal difficulty is {climbing:grade:french} according to the french/belgian system"
+                "render": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system"
             },
             "3": {
                 "question": "What is the level of the most difficult route here, accoring to the french classification system?",
-                "render": "The maximal difficulty is {climbing:grade:french} according to the french/belgian system"
+                "render": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system"
             },
             "4": {
                 "question": "Is bouldering possible here?",
