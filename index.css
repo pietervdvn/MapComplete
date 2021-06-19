@@ -62,22 +62,7 @@
     --variable-title-height: 0px; /* Set by javascript */
     --return-to-the-map-height: 2em;
     
-    --image-carousel-height: 400px;
-}
-
-.slick-carousel-content {
-    width: 300px;
-    max-height: var(--image-carousel-height);
-    display: block;
-    margin-left: 10px;
-}
-
-.slick-carousel-content img {
-    /**
-Workaround to patch images within a slick carousel
- */
-   height: var(--image-carousel-height);
-    width: auto;
+    --image-carousel-height: 350px;
 }
 
 html, body {
@@ -103,7 +88,6 @@ svg, img {
     height: 100%;
     display: unset;
 }
-
 
 a {
     color: var(--foreground-color);
@@ -164,10 +148,6 @@ li::marker {
 
 .border-attention-catch{ border: 5px solid var(--catch-detail-color);}
 
-.slick-prev:before, .slick-next:before {
-    /*Slideshow workaround*/
-    color:black !important;
-}
 
 #topleft-tools svg {
     fill: var(--foreground-color) !important;
@@ -222,23 +202,6 @@ li::marker {
     max-width: 2em !important;
 }
 
-.simple-add-ui-icon {
-    position: relative;
-    display: block;
-    width: 4em;
-    height: 3.5em;
-}
-
-.simple-add-ui-icon img {
-    max-height: 3.5em !important;
-    max-width: 3.5em !important;
-}
-
-.simple-add-ui-icon svg {
-    max-height: 3.5em !important;
-    max-width: 3.5em !important;
-}
-
 
 /**************** GENERIC ****************/
 
@@ -256,10 +219,6 @@ li::marker {
     display: inline-block;
     max-width: 90vw;
     width: 100%;
-}
-
-.question form input[type="radio"] {
-    margin-right: 0.5em;
 }
 
 .invalid {
@@ -292,14 +251,10 @@ li::marker {
 }
 
 .link-underline .subtle a {
-    color: var(--foreground-color);
     text-decoration: underline 1px #7193bb88;
     color: #7193bb;
 }
 
-.bold {
-    font-weight: bold;
-}
 
 .thanks {
     background-color: #43d904;
@@ -318,58 +273,7 @@ li::marker {
     pointer-events: none !important;
 }
 
-.page-split {
-    display: flex;
-    height: 100%;
-}
 
-
-.activate-osm-authentication {
-    cursor: pointer;
-    color: blue;
-    text-decoration: underline;
-}
-
-
-#searchbox {
-    display: inline-block;
-    text-align: left;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-
-    transition: all 500ms linear;
-    pointer-events: all;
-    margin: 0 0 0.5em;
-    width: 100%;
-}
-
-.search {
-    position: relative;
-    float: left;
-    height: 2em;
-    margin-right: 0.5em;
-}
-
-#searchbox {
-    width: 100%
-}
-
-#searchbox .form-text-field {
-    position: relative;
-    float: left;
-    margin-top: 0.2em;
-    margin-left: 1em;
-    width: calc(100% - 4em)
-}
-
-#searchbox input[type="text"] {
-    background: transparent;
-    border: none;
-    font-size: large;
-    width: 100%;
-    box-sizing: border-box;
-    color: var(--foreground-color);
-}
 
 /**************************************/
 
@@ -409,24 +313,8 @@ li::marker {
 }
 
 
-#centermessage {
-    z-index: 4000;
-    pointer-events: none;
-    transition: opacity 500ms linear;
-}
-
-
-
 /***************** Info box (box containing features and questions ******************/
 
-
-.map-attribution img {
-    width: 1em;
-    height: 1em;
-    fill: black;
-    border-radius: 0;
-    display: inline;
-}
 
 .leaflet-popup-content {
     width: 45em !important;
@@ -461,3 +349,13 @@ li::marker {
     max-width: 1em;
 }
 
+.small-image {
+    height: 1em;
+    max-width: 1em;
+}
+
+
+.slideshow-item img{
+    height: var(--image-carousel-height);
+    width: unset;
+}

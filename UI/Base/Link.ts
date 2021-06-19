@@ -1,24 +1,44 @@
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
+import BaseUIElement from "../BaseUIElement";
+import {UIEventSource} from "../../Logic/UIEventSource";
 
 
-export default class Link extends UIElement {
-    private readonly _embeddedShow: UIElement;
-    private readonly _target: string;
-    private readonly _newTab: string;
+export default class Link extends BaseUIElement {
+    private readonly _href: string | UIEventSource<string>;
+    private readonly _embeddedShow: BaseUIElement;
+    private readonly _newTab: boolean;
 
-    constructor(embeddedShow: UIElement | string, target: string, newTab: boolean = false) {
+    constructor(embeddedShow: BaseUIElement | string, href: string | UIEventSource<string>, newTab: boolean = false) {
         super();
-        this._embeddedShow = Translations.W(embeddedShow);
-        this._target = target;
-        this._newTab = "";
-        if (newTab) {
-            this._newTab = "target='_blank'"
-        }
+        this._embeddedShow =Translations.W(embeddedShow);
+        this._href = href;
+        this._newTab = newTab;
+
     }
 
-    InnerRender(): string {
-        return `<a href="${this._target}" ${this._newTab}>${this._embeddedShow.Render()}</a>`;
+    protected InnerConstructElement(): HTMLElement {
+        const embeddedShow = this._embeddedShow?.ConstructElement();
+        if(embeddedShow === undefined){
+            return undefined;
+        }
+        const el = document.createElement("a")
+        if(typeof this._href === "string"){
+            el.href = this._href
+        }else{
+           this._href.addCallbackAndRun(href => {
+                el.href = href;
+            })
+        }
+        if (this._newTab) {
+            el.target = "_blank"
+        }
+        el.appendChild(embeddedShow)
+        return el;
+    }
+
+    AsMarkdown(): string {
+        // @ts-ignore
+        return `[${this._embeddedShow.AsMarkdown()}](${this._href.data ?? this._href})`;
     }
 
 }

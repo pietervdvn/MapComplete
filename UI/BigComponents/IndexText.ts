@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";

@@ -2,6 +2,7 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 
 /**
@@ -9,34 +10,29 @@ import Svg from "../../Svg";
  */
 export default class DirectionInput extends InputElement<string> {
 
-    private readonly value: UIEventSource<string>;
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly value: UIEventSource<string>;
 
     constructor(value?: UIEventSource<string>) {
         super();
-        this.dumbMode = false;
         this.value = value ?? new UIEventSource<string>(undefined);
 
-        this.value.addCallbackAndRun(rotation => {
-            const selfElement = document.getElementById(this.id);
-            if (selfElement === null) {
-                return;
-            }
-            const cone = selfElement.getElementsByClassName("direction-svg")[0] as HTMLElement
-            cone.style.transform = `rotate(${rotation}deg)`;
-
-        })
-
     }
-
 
     GetValue(): UIEventSource<string> {
         return this.value;
     }
 
-    InnerRender(): string {
-        return new Combine([
-            `<div id="direction-leaflet-div-${this.id}" style="width:100%;height: 100%;position: absolute;top:0;left:0;border-radius:100%;"></div>`,
+    IsValid(str: string): boolean {
+        const t = Number(str);
+        return !isNaN(t) && t >= 0 && t <= 360;
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+
+
+        const element = new Combine([
+            new FixedUiElement("").SetClass("w-full h-full absolute top-0 left-O rounded-full"),
             Svg.direction_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
                 .SetClass("direction-svg"),
@@ -44,11 +40,21 @@ export default class DirectionInput extends InputElement<string> {
                 "position: absolute;top: 0;left: 0;width: 100%;height: 100%;")
         ])
             .SetStyle("position:relative;display:block;width: min(100%, 25em); padding-top: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
-            .Render();
+            .ConstructElement()
+
+
+        this.value.addCallbackAndRun(rotation => {
+            const cone = element.getElementsByClassName("direction-svg")[0] as HTMLElement
+            cone.style.transform = `rotate(${rotation}deg)`;
+
+        })
+
+        this.RegisterTriggers(element)
+
+        return element;
     }
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
+    private RegisterTriggers(htmlElement: HTMLElement) {
         const self = this;
 
         function onPosChange(x: number, y: number) {
@@ -79,19 +85,16 @@ export default class DirectionInput extends InputElement<string> {
         }
 
         htmlElement.onmouseup = (ev) => {
-            isDown = false; ev.preventDefault();
+            isDown = false;
+            ev.preventDefault();
         }
 
         htmlElement.onmousemove = (ev: MouseEvent) => {
             if (isDown) {
                 onPosChange(ev.clientX, ev.clientY);
-            } ev.preventDefault();
+            }
+            ev.preventDefault();
         }
-    }
-
-    IsValid(str: string): boolean {
-        const t = Number(str);
-        return !isNaN(t) && t >= 0 && t <= 360;
     }
 
 }

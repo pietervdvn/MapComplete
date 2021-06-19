@@ -6,6 +6,8 @@ import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import BaseUIElement from "../../UI/BaseUIElement";
+import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
 export default class GeoLocationHandler extends UIElement {
 
@@ -52,19 +54,19 @@ export default class GeoLocationHandler extends UIElement {
     private readonly _previousLocationGrant: UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
 
+
+    private readonly _element: BaseUIElement;
+
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
                 leafletMap: UIEventSource<L.Map>,
                 layoutToUse: UIEventSource<LayoutConfig>) {
-        super(undefined);
+        super();
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
         this._layoutToUse = layoutToUse;
         this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
-        this.dumbMode = false;
+
         const self = this;
-        import("../../vendor/Leaflet.AccuratePosition.js").then(() => {
-            self.init();
-        })
 
         const currentPointer = this._isActive.map(isActive => {
             if (isActive && !self._hasLocation.data) {
@@ -74,62 +76,35 @@ export default class GeoLocationHandler extends UIElement {
         }, [this._hasLocation])
         currentPointer.addCallbackAndRun(pointerClass => {
             self.SetClass(pointerClass);
-            self.Update()
         })
+        this._element = new VariableUiElement(
+            this._hasLocation.map(hasLocation => {
+
+                if (hasLocation) {
+                    return Svg.crosshair_blue_ui()
+                }
+                if (self._isActive.data) {
+                    return Svg.crosshair_blue_center_ui();
+                }
+                return Svg.crosshair_ui();
+            }, [this._isActive])
+        );
+
+        this.onClick(() => self.init(true))
+
+        self.init(false)
+
     }
 
-    InnerRender(): string {
-        if (this._hasLocation.data) {
-            return Svg.crosshair_blue_img;
-        }
-        if (this._isActive.data) {
-            return Svg.crosshair_blue_center_img;
-        }
 
-        return Svg.crosshair_img;
+    protected InnerRender(): string | BaseUIElement {
+        return this._element
     }
 
-    InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
+    private init(askPermission: boolean) {
 
         const self = this;
-        htmlElement.onclick = function () {
-            self.StartGeolocating();
-        }
-
-        htmlElement.oncontextmenu = function (e) {
-            self.StartGeolocating();
-            e.preventDefault();
-            return false;
-        }
-
-    }
-
-    private init() {
-        this.ListenTo(this._hasLocation);
-        this.ListenTo(this._isActive);
-        this.ListenTo(this._permission);
-
-        const self = this;
-
-        function onAccuratePositionProgress(e) {
-            self._currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
-        }
-
-        function onAccuratePositionFound(e) {
-            self._currentGPSLocation.setData({latlng: e.latlng, accuracy: e.accuracy});
-        }
-
-        function onAccuratePositionError(e) {
-            console.log("onerror", e.message);
-
-        }
-
         const map = this._leafletMap.data;
-        map.on('accuratepositionprogress', onAccuratePositionProgress);
-        map.on('accuratepositionfound', onAccuratePositionFound);
-        map.on('accuratepositionerror', onAccuratePositionError);
-
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
@@ -178,12 +153,13 @@ export default class GeoLocationHandler extends UIElement {
         } catch (e) {
             console.error(e)
         }
-        if (this._previousLocationGrant.data === "granted") {
+        if (askPermission) {
+            self.StartGeolocating(true);
+        } else if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
             self.StartGeolocating(false);
         }
 
-        this.HideOnEmpty(true);
     }
 
     private locate() {
@@ -211,7 +187,7 @@ export default class GeoLocationHandler extends UIElement {
     private MoveToCurrentLoction(targetZoom = 16) {
         const location = this._currentGPSLocation.data;
         this._lastUserRequest = undefined;
-        
+
 
         if (this._currentGPSLocation.data.latlng[0] === 0 && this._currentGPSLocation.data.latlng[1] === 0) {
             console.debug("Not moving to GPS-location: it is null island")

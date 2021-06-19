@@ -9,6 +9,8 @@ import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";
 import LZString from "lz-string";
 import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
+import BaseUIElement from "./UI/BaseUIElement";
+import Table from "./UI/Base/Table";
 
 
 const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "");
@@ -99,11 +101,14 @@ function createTable(preferences: any) {
         return;
     }
     rendered = true;
-    const prefs = [];
+    const prefs: (BaseUIElement|string)[][] = [];
     for (const key in preferences) {
+        if(!preferences.hasOwnProperty(key)){
+            continue;
+        }
         const pref = connection.GetPreference(key, "");
 
-        let value: UIElement = new FixedUiElement(pref.data);
+        let value: BaseUIElement = new FixedUiElement(pref.data);
         if (connection.userDetails.data.csCount > 500 &&
             (key.startsWith("mapcomplete") || connection.userDetails.data.csCount > 2500)) {
             value = new TextField({
@@ -111,24 +116,22 @@ function createTable(preferences: any) {
             });
         }
 
-        const c = [
-            "<tr><td>",
+        const row = [
             key,
-            "</td><td>",
-            new Button("delete", () => pref.setData("")),
-            "</td><td>",
-            value,
-            "</td></tr>"
+            new Button("delete", () => pref.setData(null)),
+            value
         ];
-        prefs.push(...c);
+        prefs.push(row);
     }
 
     new Combine(
         [
             ...salvageThemes(preferences).map(theme => SalvageButton(theme)),
-            "<table>",
-            ...prefs,
-            "</table>",
+            new Table(
+                ["Key","","Value"],
+                prefs
+                
+            ),
         new SubtleButton("./assets/svg/delete_icon.svg", "Delete all mapcomplete preferences (mangrove identies are preserved)").onClick(() => clearAll(preferences))]
     ).AttachTo("maindiv");
 }

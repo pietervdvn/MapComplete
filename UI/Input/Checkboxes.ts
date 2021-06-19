@@ -1,82 +1,98 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
-import {UIElement} from "../UIElement";
+import BaseUIElement from "../BaseUIElement";
 
 /**
  * Supports multi-input
  */
 export default class CheckBoxes extends InputElement<number[]> {
+    private static _nextId = 0;
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly value: UIEventSource<number[]>
+    private readonly _elements: BaseUIElement[];
 
-    private readonly value: UIEventSource<number[]>;
-    private readonly _elements: UIElement[]
-
-
-    constructor(elements: UIElement[]) {
-        super(undefined);
+    constructor(elements: BaseUIElement[], value = new UIEventSource<number[]>([])) {
+        super();
+        this.value = value;
         this._elements = Utils.NoNull(elements);
-        this.dumbMode = false;
+        this.SetClass("flex flex-col")
 
-        this.value = new UIEventSource<number[]>([])
-        this.ListenTo(this.value);
     }
-
 
     IsValid(ts: number[]): boolean {
         return ts !== undefined;
-        
+
     }
 
     GetValue(): UIEventSource<number[]> {
         return this.value;
     }
 
+    protected InnerConstructElement(): HTMLElement {
+        const el = document.createElement("form")
 
-    private IdFor(i) {
-        return 'checkmark-' + this.id + '-' + i;
-    }
+        const value = this.value;
+        const elements = this._elements;
 
-    InnerRender(): string {
-        let body = "";
-        for (let i = 0; i < this._elements.length; i++) {
-            let el = this._elements[i];
-            const htmlElement =
-                `<input type="checkbox" id="${this.IdFor(i)}"><label for="${this.IdFor(i)}">${el.Render()}</label><br/>`;
-            body += htmlElement;
+        for (let i = 0; i < elements.length; i++) {
 
-        }
-        
-        return `<form id='${this.id}'>${body}</form>`;
-    }
+            let inputI = elements[i];
+            const input = document.createElement("input")
+            const id = CheckBoxes._nextId
+            CheckBoxes._nextId++;
+            input.id = "checkbox" + id
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        const self = this;
+            input.type = "checkbox"
+            input.classList.add("p-1","cursor-pointer","m-3","pl-3","mr-0")
 
-        for (let i = 0; i < this._elements.length; i++) {
-            const el = document.getElementById(this.IdFor(i));
+            const label = document.createElement("label")
+            label.htmlFor = input.id
+            label.appendChild(inputI.ConstructElement())
+            label.classList.add("block","w-full","p-2","cursor-pointer","bg-red")
+
+            const wrapper = document.createElement("span")
+            wrapper.classList.add("flex","w-full","border", "border-gray-400","m-1")
+            wrapper.appendChild(input)
+            wrapper.appendChild(label)
+            el.appendChild(wrapper)
             
-            if(this.value.data.indexOf(i) >= 0){
-                // @ts-ignore
-                el.checked = true;
-            }
+            value.addCallbackAndRun(selectedValues => {
+                if (selectedValues === undefined) {
+                    return;
+                }
+                if (selectedValues.indexOf(i) >= 0) {
+                    input.checked = true;
+                }
 
-            el.onchange = () => {
-                const index = self.value.data.indexOf(i);
-                // @ts-ignore
-                if(el.checked && index < 0){
-                    self.value.data.push(i);
-                    self.value.ping();
-                }else if(index >= 0){
-                    self.value.data.splice(index,1);
-                    self.value.ping();
+
+                if(input.checked){
+                    wrapper.classList.remove("border-gray-400")
+                    wrapper.classList.add("border-black")
+                }else{
+                    wrapper.classList.add("border-gray-400")
+                    wrapper.classList.remove("border-black")
+                }
+
+            })
+
+            input.onchange = () => {
+                // Index = index in the list of already checked items
+                const index = value.data.indexOf(i);
+                if (input.checked && index < 0) {
+                    value.data.push(i);
+                    value.ping();
+                } else if (index >= 0) {
+                    value.data.splice(index, 1);
+                    value.ping();
                 }
             }
 
+
         }
 
 
+        return el;
     }
 
 

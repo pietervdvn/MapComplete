@@ -39,7 +39,7 @@ export default class ValidatedTextField {
             undefined,
             undefined,
             "text"),
-        
+
         ValidatedTextField.tp(
             "date",
             "A date",
@@ -63,7 +63,24 @@ export default class ValidatedTextField {
             (value) => new SimpleDatePicker(value)),
         ValidatedTextField.tp(
             "wikidata",
-            "A wikidata identifier, e.g. Q42"),
+            "A wikidata identifier, e.g. Q42",
+            (str) => {
+                if (str === undefined) {
+                    return false;
+                }
+                return (str.length > 1 && (str.startsWith("q") || str.startsWith("Q")) || str.startsWith("https://www.wikidata.org/wiki/Q"))
+            },
+            (str) => {
+                if (str === undefined) {
+                    return undefined;
+                }
+                const wd = "https://www.wikidata.org/wiki/";
+                if (str.startsWith(wd)) {
+                    str = str.substr(wd.length)
+                }
+                return str.toUpperCase();
+            }),
+
         ValidatedTextField.tp(
             "int",
             "A number",
@@ -213,8 +230,8 @@ export default class ValidatedTextField {
         placeholder?: string | UIElement,
         value?: UIEventSource<string>,
         htmlType?: string,
-        textArea?:boolean,
-        inputMode?:string,
+        textArea?: boolean,
+        inputMode?: string,
         textAreaRows?: number,
         isValid?: ((s: string, country: () => string) => boolean),
         country?: () => string,

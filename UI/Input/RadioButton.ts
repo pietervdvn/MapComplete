@@ -3,52 +3,137 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
 
 export class RadioButton<T> extends InputElement<T> {
+    private static _nextId = 0;
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
-
-    private readonly _selectedElementIndex: UIEventSource<number>
-        = new UIEventSource<number>(null);
-
     private readonly value: UIEventSource<T>;
-    private readonly _elements: InputElement<T>[]
-    private readonly _selectFirstAsDefault: boolean;
+    private _elements: InputElement<T>[];
+    private _selectFirstAsDefault: boolean;
 
     constructor(elements: InputElement<T>[],
                 selectFirstAsDefault = true) {
-        super(undefined);
-        this._elements = Utils.NoNull(elements);
+        super()
         this._selectFirstAsDefault = selectFirstAsDefault;
-        const self = this;
-
-        this.value =
-            UIEventSource.flatten(this._selectedElementIndex.map(
+        this._elements = Utils.NoNull(elements);
+        this.value = new UIEventSource<T>(undefined)
+    }
+    protected InnerConstructElement(): HTMLElement {
+        const elements = this._elements;
+        const selectFirstAsDefault = this._selectFirstAsDefault;
+        
+        const selectedElementIndex: UIEventSource<number> = new UIEventSource<number>(null);
+        const value =
+            UIEventSource.flatten(selectedElementIndex.map(
                 (selectedIndex) => {
                     if (selectedIndex !== undefined && selectedIndex !== null) {
                         return elements[selectedIndex].GetValue()
                     }
                 }
             ), elements.map(e => e?.GetValue()));
-
-        this.value.addCallback((t) => {
-            self?.ShowValue(t);
+        value.syncWith(this.value)
+        
+        if(selectFirstAsDefault){
+            
+        value.addCallbackAndRun(selected =>{
+            if(selected === undefined){
+                for (const element of elements) {
+                    const v = element.GetValue().data;
+                    if(v !== undefined){
+                        value.setData(v)
+                        break;
+                    }
+                }
+                
+                
+            }
         })
 
+        }
 
         for (let i = 0; i < elements.length; i++) {
             // If an element is clicked, the radio button corresponding with it should be selected as well
             elements[i]?.onClick(() => {
-                self._selectedElementIndex.setData(i);
+                selectedElementIndex.setData(i);
             });
             elements[i].IsSelected.addCallback(isSelected => {
                 if (isSelected) {
-                    self._selectedElementIndex.setData(i);
+                    selectedElementIndex.setData(i);
                 }
             })
             elements[i].GetValue().addCallback(() => {
-                self._selectedElementIndex.setData(i);
+                selectedElementIndex.setData(i);
             })
         }
-        this.dumbMode = false;
 
+
+        const groupId = "radiogroup" + RadioButton._nextId
+        RadioButton._nextId++
+
+        const form = document.createElement("form")
+        const inputs = []
+        const wrappers: HTMLElement[] = []
+        
+        for (let i1 = 0; i1 < elements.length; i1++) {
+            let element = elements[i1];
+            const labelHtml = element.ConstructElement();
+            if (labelHtml === undefined) {
+                continue;
+            }
+            
+            const input = document.createElement("input")
+            input.id = "radio" + groupId + "-" + i1;
+            input.name = groupId;
+            input.type = "radio"
+               input.classList.add("p-1","cursor-pointer","ml-2","pl-2","pr-0","m-3","mr-0")
+
+            input.onchange = () => {
+                if(input.checked){
+                    selectedElementIndex.setData(i1)
+                }
+            }
+            
+           
+            inputs.push(input)
+
+            const label = document.createElement("label")
+            label.appendChild(labelHtml)
+            label.htmlFor = input.id;
+            label.classList.add("block","w-full","p-2","cursor-pointer","bg-red")
+
+
+            const block = document.createElement("div")
+            block.appendChild(input)
+            block.appendChild(label)
+            block.classList.add("flex","w-full","border", "rounded-full", "border-gray-400","m-1")
+            wrappers.push(block)
+
+            form.appendChild(block)
+        }
+
+
+        value.addCallbackAndRun(
+            selected => {
+
+                let somethingChecked = false;
+                for (let i = 0; i < inputs.length; i++){
+                    let input = inputs[i];
+                    input.checked = !somethingChecked && elements[i].IsValid(selected);
+                    somethingChecked = somethingChecked || input.checked
+
+                    if(input.checked){
+                        wrappers[i].classList.remove("border-gray-400")
+                        wrappers[i].classList.add("border-black")
+                    }else{
+                        wrappers[i].classList.add("border-gray-400")
+                        wrappers[i].classList.remove("border-black")
+                    }
+
+                }
+            }
+        )
+
+
+        this.SetClass("flex flex-col")
+        return form;
     }
 
     IsValid(t: T): boolean {
@@ -65,25 +150,8 @@ export class RadioButton<T> extends InputElement<T> {
     }
 
 
-    private IdFor(i) {
-        return 'radio-' + this.id + '-' + i;
-    }
 
-    InnerRender(): string {
-        let body = "";
-        for (let i = 0; i < this._elements.length; i++){
-            const el = this._elements[i];
-            const htmlElement =
-                `<label for="${this.IdFor(i)}" class="question-option-with-border">` +
-                    `<input type="radio" id="${this.IdFor(i)}" name="radiogroup-${this.id}">` +
-                    el.Render() +
-                `</label>`;
-            body += htmlElement;
-        }
-
-        return `<form id='${this.id}-form'>${body}</form>`;
-    }
-
+    /*
     public ShowValue(t: T): boolean {
         if (t === undefined) {
             return false;
@@ -104,48 +172,7 @@ export class RadioButton<T> extends InputElement<T> {
             }
 
         }
-    }
-
-    InnerUpdate(htmlElement: HTMLElement) {
-        const self = this;
-
-        function checkButtons() {
-            for (let i = 0; i < self._elements.length; i++) {
-                const el = document.getElementById(self.IdFor(i));
-                // @ts-ignore
-                if (el.checked) {
-                    self._selectedElementIndex.setData(i);
-                }
-            }
-        }
-
-        const el = document.getElementById(this.id);
-        el.addEventListener("change",
-            function () {
-                checkButtons();
-            }
-        );
-        if (this._selectedElementIndex.data !== null) {
-            const el = document.getElementById(this.IdFor(this._selectedElementIndex.data));
-            if (el) {
-                // @ts-ignore
-                el.checked = true;
-                checkButtons();
-            }
-        } else if (this._selectFirstAsDefault) {
-            this.ShowValue(this.value.data);
-            if (this._selectedElementIndex.data === null || this._selectedElementIndex.data === undefined) {
-                const el = document.getElementById(this.IdFor(0));
-                if (el) {
-                    // @ts-ignore
-                    el.checked = true;
-                    checkButtons();
-                }
-            }
-        }
-
-
-    };
+    }*/
 
 
 }

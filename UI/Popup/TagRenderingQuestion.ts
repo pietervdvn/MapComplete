@@ -22,6 +22,8 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import {And} from "../../Logic/Tags/And";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import BaseUIElement from "../BaseUIElement";
+import {DropDown} from "../Input/DropDown";
 
 /**
  * Shows the question element.
@@ -31,23 +33,23 @@ export default class TagRenderingQuestion extends UIElement {
     private readonly _tags: UIEventSource<any>;
     private _configuration: TagRenderingConfig;
 
-    private _saveButton: UIElement;
+    private _saveButton: BaseUIElement;
 
     private _inputElement: InputElement<TagsFilter>;
-    private _cancelButton: UIElement;
-    private _appliedTags: UIElement;
-    private _question: UIElement;
+    private _cancelButton: BaseUIElement;
+    private _appliedTags: BaseUIElement;
+    private _question: BaseUIElement;
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 afterSave?: () => void,
-                cancelButton?: UIElement
+                cancelButton?: BaseUIElement
     ) {
         super(tags);
         this._tags = tags;
         this._configuration = configuration;
         this._cancelButton = cancelButton;
-        this._question = SubstitutedTranslation.construct(this._configuration.question, tags)
+        this._question = new SubstitutedTranslation(this._configuration.question, tags)
             .SetClass("question-text");
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
@@ -70,7 +72,8 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue(), State.state?.osmConnection)
+        this._saveButton = new SaveButton(this._inputElement.GetValue(),
+            State.state?.osmConnection)
             .onClick(save)
 
 
@@ -82,19 +85,21 @@ export default class TagRenderingQuestion extends UIElement {
                         return "";
                     }
                     if (tags === undefined) {
-                        return Translations.t.general.noTagsSelected.SetClass("subtle").Render();
+                        return Translations.t.general.noTagsSelected.SetClass("subtle");
                     }
                     if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                         const tagsStr = tags.asHumanString(false, true, self._tags.data);
-                        return new FixedUiElement(tagsStr).SetClass("subtle").Render();
+                        return new FixedUiElement(tagsStr).SetClass("subtle");
                     }
                     return tags.asHumanString(true, true, self._tags.data);
                 }
             )
-        ).SetClass("block")
+        ).SetClass("block break-all")
+
+
     }
 
-    InnerRender(): string {
+    InnerRender() {
         return new Combine([
             this._question,
             this._inputElement,
@@ -103,28 +108,61 @@ export default class TagRenderingQuestion extends UIElement {
             this._appliedTags]
         )
             .SetClass("question")
-            .Render()
     }
 
     private GenerateInputElement(): InputElement<TagsFilter> {
-        const ff = this.GenerateFreeform();
         const self = this;
-        let mappings =
-            (this._configuration.mappings ?? []).map(mapping => self.GenerateMappingElement(mapping));
-        mappings = Utils.NoNull(mappings);
+        let inputEls: InputElement<TagsFilter>[];
 
-        if (mappings.length == 0) {
+        const mappings = (this._configuration.mappings??[])
+            .filter(            mapping => {
+                if(mapping.hideInAnswer === true){
+                    return false;
+                }
+                if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
+                    return false;
+                }
+                return true;
+            })
+      
+        
+        let allIfNots: TagsFilter[] = Utils.NoNull(this._configuration.mappings?.map(m => m.ifnot) ?? []    );
+        const ff = this.GenerateFreeform();
+        const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
+
+        if (mappings.length < 8 || this._configuration.multiAnswer || hasImages) {
+            inputEls = (mappings ?? []).map(mapping => self.GenerateMappingElement(mapping, allIfNots));
+            inputEls = Utils.NoNull(inputEls);
+        } else {
+            const dropdown: InputElement<TagsFilter> = new DropDown("",
+                mappings.map(mapping => {
+                    return {
+                        value: new And([mapping.if, ...allIfNots]),
+                        shown: Translations.WT(mapping.then).Clone()
+                    }
+                })
+            )
+
+            if (ff == undefined) {
+                return dropdown;
+            } else {
+                inputEls = [dropdown]
+            }
+        }
+
+
+        if (inputEls.length == 0) {
             return ff;
         }
 
         if (ff) {
-            mappings.push(ff);
+            inputEls.push(ff);
         }
 
         if (this._configuration.multiAnswer) {
-            return this.GenerateMultiAnswer(mappings, ff, this._configuration.mappings.map(mp => mp.ifnot))
+            return this.GenerateMultiAnswer(inputEls, ff, this._configuration.mappings.map(mp => mp.ifnot))
         } else {
-            return new RadioButton(mappings, false)
+            return new RadioButton(inputEls, false)
         }
 
     }
@@ -153,7 +191,9 @@ export default class TagRenderingQuestion extends UIElement {
                     oppositeTags.push(notSelected);
                 }
                 tags.push(TagUtils.FlattenMultiAnswer(oppositeTags));
-                return TagUtils.FlattenMultiAnswer(tags);
+                const actualTags = TagUtils.FlattenMultiAnswer(tags);
+                console.log("Converted ", indices.join(","), "into", actualTags.asHumanString(false, false, {}), "with elems", elements)
+                return actualTags;
             },
             (tags: TagsFilter) => {
                 // {key --> values[]}
@@ -231,16 +271,16 @@ export default class TagRenderingQuestion extends UIElement {
         if: TagsFilter,
         then: Translation,
         hideInAnswer: boolean | TagsFilter
-    }): InputElement<TagsFilter> {
-        if (mapping.hideInAnswer === true) {
-            return undefined;
+    }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
+       
+        let tagging = mapping.if;
+        if (ifNot.length > 0) {
+            tagging = new And([tagging, ...ifNot])
         }
-        if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
-            return undefined;
-        }
+
         return new FixedInputElement(
-            SubstitutedTranslation.construct(mapping.then, this._tags),
-            mapping.if,
+            new SubstitutedTranslation(mapping.then, this._tags),
+            tagging,
             (t0, t1) => t1.isEquivalent(t0));
     }
 

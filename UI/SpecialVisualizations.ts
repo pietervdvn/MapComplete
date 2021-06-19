@@ -1,4 +1,3 @@
-import {UIElement} from "./UIElement";
 import {UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
@@ -13,16 +12,19 @@ import ReviewElement from "./Reviews/ReviewElement";
 import MangroveReviews from "../Logic/Web/MangroveReviews";
 import Translations from "./i18n/Translations";
 import ReviewForm from "./Reviews/ReviewForm";
-import OpeningHoursVisualization from "./OpeningHours/OhVisualization";
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
 
 import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
+import BaseUIElement from "./BaseUIElement";
+import LayerConfig from "../Customizations/JSON/LayerConfig";
 
 export default class SpecialVisualizations {
 
+
     public static specialVisualizations: {
         funcName: string,
-        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => UIElement),
+        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
         docs: string,
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
@@ -36,6 +38,9 @@ export default class SpecialVisualizations {
                 return new VariableUiElement(tags.map(tags => {
                     const parts = [];
                     for (const key in tags) {
+                        if (!tags.hasOwnProperty(key)) {
+                            continue;
+                        }
                         parts.push(key + "=" + tags[key]);
                     }
                     return parts.join("<br/>")
@@ -102,7 +107,7 @@ export default class SpecialVisualizations {
                         state.mangroveIdentity,
                         state.osmConnection._dryRun
                     );
-                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection.userDetails);
+                    const form = new ReviewForm((r, whenDone) => mangrove.AddReview(r, whenDone), state.osmConnection);
                     return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form);
                 }
             },
@@ -115,11 +120,7 @@ export default class SpecialVisualizations {
                     doc: "The tagkey from which the table is constructed."
                 }],
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
-                    let keyname = args[0];
-                    if (keyname === undefined || keyname === "") {
-                        keyname = keyname ?? "opening_hours"
-                    }
-                    return new OpeningHoursVisualization(tagSource, keyname)
+                    return new OpeningHoursVisualization(tagSource, args[0])
                 }
             },
 
@@ -155,22 +156,36 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state: State, tagSource: UIEventSource<any>, args) => {
                     if (window.navigator.share) {
-                        const title = state.layoutToUse.data.title.txt;
-                        let name = tagSource.data.name;
-                        if (name) {
-                            name = `${name} (${title})`
-                        } else {
-                            name = title;
+
+                        const generateShareData = () => {
+
+
+                            const title = state?.layoutToUse?.data?.title?.txt ?? "MapComplete";
+
+                            let matchingLayer: LayerConfig = undefined;
+                            for (const layer of (state?.layoutToUse?.data?.layers ?? [])) {
+                                if (layer.source.osmTags.matchesProperties(tagSource?.data)) {
+                                    matchingLayer = layer
+                                }
+                            }
+                            let name = matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ?? tagSource.data?.name ?? "POI";
+                            if (name) {
+                                name = `${name} (${title})`
+                            } else {
+                                name = title;
+                            }
+                            let url = args[0] ?? ""
+                            if (url === "") {
+                                url = window.location.href
+                            }
+                            return {
+                                title: name,
+                                url: url,
+                                text: state?.layoutToUse?.data?.shortDescription?.txt ?? "MapComplete"
+                            }
                         }
-                        let url = args[0] ?? ""
-                        if (url === "") {
-                            url = window.location.href
-                        }
-                        return new ShareButton(Svg.share_ui(), {
-                            title: name,
-                            url: url,
-                            text: state.layoutToUse.data.shortDescription.txt
-                        })
+
+                        return new ShareButton(Svg.share_ui(), generateShareData)
                     } else {
                         return new FixedUiElement("")
                     }
@@ -179,7 +194,7 @@ export default class SpecialVisualizations {
             }
 
         ]
-    static HelpMessage: UIElement = SpecialVisualizations.GenHelpMessage();
+    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
 
     private static GenHelpMessage() {
 
@@ -211,7 +226,6 @@ export default class SpecialVisualizations {
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                 "General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
-
             ]
         );
     }

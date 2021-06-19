@@ -3,17 +3,18 @@
  * It will genarate the currently selected opening hour.
  */
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
 import {Utils} from "../../Utils";
 import {OpeningHour} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
 import Translations from "../i18n/Translations";
+import {Translation} from "../i18n/Translation";
+import {FixedUiElement} from "../Base/FixedUiElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import Combine from "../Base/Combine";
+import OpeningHoursRange from "./OpeningHoursRange";
 
 export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]> {
-    public readonly IsSelected: UIEventSource<boolean>;
-    private readonly weekdays: UIEventSource<UIElement[]>;
-
-    public static readonly days: UIElement[] =
+    public static readonly days: Translation[] =
         [
             Translations.t.general.weekdays.abbreviations.monday,
             Translations.t.general.weekdays.abbreviations.tuesday,
@@ -23,53 +24,118 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
             Translations.t.general.weekdays.abbreviations.saturday,
             Translations.t.general.weekdays.abbreviations.sunday
         ]
-
-
+    public readonly IsSelected: UIEventSource<boolean>;
     private readonly source: UIEventSource<OpeningHour[]>;
+    
+    /*
+    These html-elements are an overlay over the table columns and act as a host for the ranges in the weekdays
+     */
+    public readonly weekdayElements : HTMLElement[] = Utils.TimesT(7, () => document.createElement("div"))
 
-
-    constructor(weekdays: UIEventSource<UIElement[]>, source?: UIEventSource<OpeningHour[]>) {
-        super(weekdays);
-        this.weekdays = weekdays;
+    constructor(source?: UIEventSource<OpeningHour[]>) {
+        super();
         this.source = source ?? new UIEventSource<OpeningHour[]>([]);
         this.IsSelected = new UIEventSource<boolean>(false);
         this.SetStyle("width:100%;height:100%;display:block;");
-
     }
 
-    InnerRender(): string {
-        let rows = "";
+    IsValid(t: OpeningHour[]): boolean {
+        return true;
+    }
+
+    GetValue(): UIEventSource<OpeningHour[]> {
+        return this.source;
+    }
+
+    protected InnerConstructElement(): HTMLElement {
+
+        const table = document.createElement("table")
+        table.classList.add("oh-table")
+        
+        const cellHeightInPx = 14;
+
+        const headerRow = document.createElement("tr")
+        headerRow.appendChild(document.createElement("th"))
+        headerRow.classList.add("relative")
+        for (let i = 0; i < OpeningHoursPickerTable.days.length; i++) {
+            let weekday = OpeningHoursPickerTable.days[i].Clone();
+            const cell = document.createElement("th")
+            cell.style.width = "14%"
+            cell.appendChild(weekday.ConstructElement())
+            
+            const fullColumnSpan = this.weekdayElements[i]
+            fullColumnSpan.classList.add("w-full","relative")
+            
+            // We need to round! The table height is rounded as following, we use this to calculate the actual number of pixels afterwards
+            fullColumnSpan.style.height = ( (cellHeightInPx) * 48) + "px"  
+            
+            
+            const ranges = new VariableUiElement(
+                this.source.map(ohs => ohs.filter((oh : OpeningHour) => oh.weekday === i))
+                    .map(ohsForToday => {
+                        return new Combine(ohsForToday.map(oh => new OpeningHoursRange(oh, () =>{
+                            this.source.data.splice(this.source.data.indexOf(oh), 1)
+                            this.source.ping()
+                        })))
+                    })
+            )
+            fullColumnSpan.appendChild(ranges.ConstructElement())
+            
+            
+            
+            
+            const fullColumnSpanWrapper = document.createElement("div")
+            fullColumnSpanWrapper.classList.add("absolute")
+            fullColumnSpanWrapper.style.zIndex = "10"
+            fullColumnSpanWrapper.style.width = "13.5%"
+            fullColumnSpanWrapper.style.pointerEvents = "none"
+
+            fullColumnSpanWrapper.appendChild(fullColumnSpan)
+            
+            cell.appendChild(fullColumnSpanWrapper)
+            headerRow.appendChild(cell)
+        }
+
+        table.appendChild(headerRow)
+
         const self = this;
         for (let h = 0; h < 24; h++) {
-            let hs = "" + h;
-            if (hs.length == 1) {
-                hs = "0" + hs;
+
+            const hs = Utils.TwoDigits(h);
+            const firstCell = document.createElement("td")
+            firstCell.rowSpan = 2
+            firstCell.classList.add("oh-left-col", "oh-timecell-full", "border-box")
+            firstCell.appendChild(new FixedUiElement(hs + ":00").ConstructElement())
+
+            const evenRow = document.createElement("tr")
+            evenRow.appendChild(firstCell);
+
+            for (let weekday = 0; weekday < 7; weekday++) {
+                const cell = document.createElement("td")
+                cell.classList.add("oh-timecell", "oh-timecell-full", `oh-timecell-${weekday}`)
+                evenRow.appendChild(cell)
             }
+            evenRow.style.height = (cellHeightInPx)+"px";
+            evenRow.style.maxHeight = evenRow.style.height;
+            evenRow.style.minHeight = evenRow.style.height;
+            table.appendChild(evenRow)
 
+            const oddRow = document.createElement("tr")
 
-            rows += `<tr><td rowspan="2" class="oh-left-col oh-timecell-full">${hs}:00</td>` +
-                Utils.Times(weekday => `<td id="${this.id}-timecell-${weekday}-${h}" class="oh-timecell oh-timecell-full oh-timecell-${weekday}"></td>`, 7) +
-                '</tr><tr>' +
-                Utils.Times(id => `<td id="${this.id}-timecell-${id}-${h}-30" class="oh-timecell oh-timecell-half oh-timecell-${id}"></td>`, 7) +
-                '</tr>';
-        }
-        let days = OpeningHoursPickerTable.days.map((day, i) => {
-            const innerContent  =  self.weekdays.data[i]?.Render() ?? "";
-            return day.Render() + "<span style='width:100%; display:block; position: relative;'>"+innerContent+"</span>";
-        }).join("</th><th width='14%'>");
-        return `<table id="oh-table-${this.id}" class="oh-table"><tr><th></th><th width='14%'>${days}</th></tr>${rows}</table>`;
-    }
+            for (let weekday = 0; weekday < 7; weekday++) {
+                const cell = document.createElement("td")
+                cell.classList.add("oh-timecell", "oh-timecell-half", `oh-timecell-${weekday}`)
+                oddRow.appendChild(cell)
+            }
+            oddRow.style.minHeight = evenRow.style.height;
+            oddRow.style.maxHeight = evenRow.style.height;
 
-    protected InnerUpdate() {
-        const self = this;
-        const table = (document.getElementById(`oh-table-${this.id}`) as HTMLTableElement);
-        if (table === undefined || table === null) {
-            return;
+            table.appendChild(oddRow)
         }
 
-        for (const uielement of this.weekdays.data) {
-            uielement.Update();
-        }
+        
+        /**** Event handling below ***/
+
 
         let mouseIsDown = false;
         let selectionStart: [number, number] = undefined;
@@ -114,6 +180,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                     oh.endMinutes = 0;
                 }
                 self.source.data.push(oh);
+                console.log("Created ", oh)
             }
             self.source.ping();
 
@@ -140,6 +207,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
         };
 
         let lastSelectionIend, lastSelectionJEnd;
+
         function selectAllBetween(iEnd, jEnd) {
 
             if (lastSelectionIend === iEnd && lastSelectionJEnd === jEnd) {
@@ -209,9 +277,9 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                         jStart <= j + offset && j + offset <= jEnd) {
                         cell?.classList?.add("oh-timecell-selected")
                     } else {
-                        cell?.classList?.remove("oh-timecell-selected")          
+                        cell?.classList?.remove("oh-timecell-selected")
                     }
-                    
+
 
                 }
 
@@ -254,7 +322,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
                     ev.preventDefault();
                     for (const k in ev.targetTouches) {
                         const touch = ev.targetTouches[k];
-                        if(touch.clientX === undefined || touch.clientY === undefined){
+                        if (touch.clientX === undefined || touch.clientY === undefined) {
                             continue;
                         }
                         const elUnderTouch = document.elementFromPoint(
@@ -278,15 +346,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
         }
 
-
-    }
-
-    IsValid(t: OpeningHour[]): boolean {
-        return true;
-    }
-
-    GetValue(): UIEventSource<OpeningHour[]> {
-        return this.source;
+        return table
     }
 
 }

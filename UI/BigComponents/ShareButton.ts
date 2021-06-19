@@ -1,29 +1,28 @@
-import {UIElement} from "../UIElement";
+import BaseUIElement from "../BaseUIElement";
 
-export default class ShareButton extends UIElement{
-    private _embedded: UIElement;
-    private _shareData: { text: string; title: string; url: string };
+export default class ShareButton extends BaseUIElement{
+    private _embedded: BaseUIElement;
+    private _shareData: () => { text: string; title: string; url: string };
     
-    constructor(embedded: UIElement, shareData: {
+    constructor(embedded: BaseUIElement, generateShareData: () => {
         text: string,
         title: string,
         url: string
     }) {
         super();
         this._embedded = embedded;
-        this._shareData = shareData;
-    }
-    
-    InnerRender(): string {
-        return `<button type="button" class="share-button" id="${this.id}">${this._embedded.Render()}</button>`
+        this._shareData = generateShareData;
+        this.SetClass("share-button")
     }
 
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        const self= this;
-        htmlElement.addEventListener('click', () => {
+    protected InnerConstructElement(): HTMLElement {
+        const e = document.createElement("button")
+        e.type = "button"
+        e.appendChild(this._embedded.ConstructElement())
+        
+        e.addEventListener('click', () => {
             if (navigator.share) {
-                navigator.share(self._shareData).then(() => {
+                navigator.share(this._shareData()).then(() => {
                     console.log('Thanks for sharing!');
                 })
                     .catch(err => {
@@ -33,6 +32,9 @@ export default class ShareButton extends UIElement{
                 console.log('web share not supported');
             }
         });
+        
+        return e;
     }
+
 
 }

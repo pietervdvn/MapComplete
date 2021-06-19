@@ -47,13 +47,13 @@ export default class StrayClickHandler {
                     popupAnchor: [0, -45]
                 })
             });
-            const popup = L.popup().setContent(uiToShow.Render());
+            const popup = L.popup().setContent("<div id='strayclick'></div>");
             self._lastMarker.addTo(leafletMap.data);
             self._lastMarker.bindPopup(popup);
 
             self._lastMarker.on("click", () => {
+                uiToShow.AttachTo("strayclick")
                 uiToShow.Activate();
-                uiToShow.Update();
             });
         });
 

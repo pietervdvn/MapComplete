@@ -2,6 +2,7 @@ import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import AllTranslationAssets from "../../AllTranslationAssets";
 import {Translation} from "./Translation";
+import BaseUIElement from "../BaseUIElement";
 
 export default class Translations {
 
@@ -10,7 +11,7 @@ export default class Translations {
     }
 
     static t = AllTranslationAssets.t;
-    public static W(s: string | UIElement): UIElement {
+    public static W(s: string | BaseUIElement): BaseUIElement {
         if (typeof (s) === "string") {
             return new FixedUiElement(s);
         }

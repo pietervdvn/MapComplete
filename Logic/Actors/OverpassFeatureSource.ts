@@ -53,7 +53,6 @@ export default class OverpassFeatureSource implements FeatureSource {
                     return false;
                 }
                 let minzoom = Math.min(...layoutToUse.data.layers.map(layer => layer.minzoom ?? 18));
-                console.debug("overpass source: minzoom is ", minzoom)
                 return location.zoom >= minzoom;
             }, [layoutToUse]
         );

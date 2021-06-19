@@ -12,16 +12,6 @@
     overflow-x: hidden;
 }
 
-#userbadge a {
-    text-decoration: none;
-    color: var(--foreground-color);
-}
-
-
-#userbadge form {
-    width: unset !important;
-}
-
 .userstats {
     display: flex;
     align-items: center;
@@ -53,17 +43,6 @@
     height: 1em;
     border-radius: 0;
     display: block;
-}
-
-#profile-pic {
-    float: left;
-    width: 4em;
-    height: 4em;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 500ms linear;
-    border-radius: 999em;
 }
 
 .usertext {

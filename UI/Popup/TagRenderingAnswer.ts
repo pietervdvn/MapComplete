@@ -1,97 +1,47 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
-import {UIElement} from "../UIElement";
 import {Utils} from "../../Utils";
-import Combine from "../Base/Combine";
+import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import List from "../Base/List";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
-import {Translation} from "../i18n/Translation";
-import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 /***
  * Displays the correct value for a known tagrendering
  */
-export default class TagRenderingAnswer extends UIElement {
-    private readonly _tags: UIEventSource<any>;
-    private _configuration: TagRenderingConfig;
-    private _content: UIElement;
-    private readonly _contentClass: string;
-    private _contentStyle: string;
+export default class TagRenderingAnswer extends VariableUiElement {
 
-    constructor(tags: UIEventSource<any>, configuration: TagRenderingConfig, contentClasses: string = "", contentStyle: string = "") {
-        super(tags);
-        this._tags = tags;
-        this._configuration = configuration;
-        this._contentClass = contentClasses;
-        this._contentStyle = contentStyle;
+    constructor(tagsSource: UIEventSource<any>, configuration: TagRenderingConfig, contentClasses: string = "", contentStyle: string = "") {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
-        this.SetClass("flex items-center flex-row text-lg link-underline")
-        this.SetStyle("word-wrap: anywhere;");
-    }
-
-    InnerRender(): string {
-        if (this._configuration.condition !== undefined) {
-            if (!this._configuration.condition.matchesProperties(this._tags.data)) {
-                return "";
-            }
-        }
-
-        const tags = this._tags.data;
-        if (tags === undefined) {
-            return "";
-        }
-
-        // The render value doesn't work well with multi-answers (checkboxes), so we have to check for them manually
-        if (this._configuration.multiAnswer) {
-            
-            let freeformKeyUsed = this._configuration.freeform?.key === undefined; // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-            const applicableThens: Translation[] = Utils.NoNull(this._configuration.mappings?.map(mapping => {
-                if (mapping.if === undefined) {
-                    return mapping.then;
-                }
-                if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
-                    if(!freeformKeyUsed){
-                        if(mapping.if.usedKeys().indexOf(this._configuration.freeform.key) >= 0){
-                            freeformKeyUsed = true;
-                        }
-                    }
-                    return mapping.then;
-                }
+        super(tagsSource.map(tags => {
+            if(tags === undefined){
                 return undefined;
-            }) ?? [])
-
-            if (!freeformKeyUsed
-                && tags[this._configuration.freeform.key] !== undefined) {
-                applicableThens.push(this._configuration.render)
             }
-
-            const self = this
-            const valuesToRender: UIElement[] = applicableThens.map(tr => SubstitutedTranslation.construct(tr, self._tags))
-
-            if (valuesToRender.length >= 0) {
-                if (valuesToRender.length === 1) {
-                    this._content = valuesToRender[0];
-                } else {
-                    this._content = new Combine(["<ul>",
-                        ...valuesToRender.map(tr => new Combine(["<li>", tr, "</li>"]))
-                        ,
-                        "</ul>"
-                    ])
-
+            
+            if(configuration.condition){
+                if(!configuration.condition.matchesProperties(tags)){
+                    return undefined;
                 }
-                return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
             }
-        }
+            
+            const trs = Utils.NoNull(configuration.GetRenderValues(tags));
+            if(trs.length === 0){
+                return  undefined;
+            }
+           
+           const valuesToRender: BaseUIElement[] = trs.map(tr => new SubstitutedTranslation(tr, tagsSource))
+           if(valuesToRender.length === 1){
+              return valuesToRender[0];
+           }else if(valuesToRender.length > 1){
+               return new List(valuesToRender)
+           }
+           return undefined;
+                }).map((element : BaseUIElement) => element?.SetClass(contentClasses)?.SetStyle(contentStyle)))
 
-        const tr = this._configuration.GetRenderValue(tags);
-        if (tr !== undefined) {
-            this._content = SubstitutedTranslation.construct(tr, this._tags);
-            return this._content.SetClass(this._contentClass).SetStyle(this._contentStyle).Render();
-        }
-
-        return "";
-
+        this.SetClass("flex items-center flex-row text-lg link-underline tag-renering-answer")
+        this.SetStyle("word-wrap: anywhere;");
     }
 
 }

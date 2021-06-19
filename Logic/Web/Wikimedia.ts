@@ -1,45 +1,26 @@
 import * as $ from "jquery"
+import ImageAttributionSource from "./ImageAttributionSource";
+import BaseUIElement from "../../UI/BaseUIElement";
+import Svg from "../../Svg";
+import {UIEventSource} from "../UIEventSource";
+import Link from "../../UI/Base/Link";
 
 /**
  * This module provides endpoints for wikipedia/wikimedia and others
  */
-export class Wikimedia {
+export class Wikimedia extends ImageAttributionSource {
 
-    private static knownLicenses = {};
+
+    public static readonly singleton = new Wikimedia();
+
+    private constructor() {
+        super();
+    }
+
 
     static ImageNameToUrl(filename: string, width: number = 500, height: number = 200): string {
         filename = encodeURIComponent(filename);
         return "https://commons.wikimedia.org/wiki/Special:FilePath/" + filename + "?width=" + width + "&height=" + height;
-    }
-
-    static LicenseData(filename: string, handle: ((LicenseInfo) => void)): void {
-        if (filename in this.knownLicenses) {
-            return this.knownLicenses[filename];
-        }
-        if (filename === "") {
-            return;
-        }
-        const url = "https://en.wikipedia.org/w/" +
-            "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
-            "titles=" + filename +
-            "&format=json&origin=*";
-        $.getJSON(url, function (data) {
-            const licenseInfo = new LicenseInfo();
-            const license = data.query.pages[-1].imageinfo[0].extmetadata;
-
-            licenseInfo.artist = license.Artist?.value;
-            licenseInfo.license = license.License?.value;
-            licenseInfo.copyrighted = license.Copyrighted?.value;
-            licenseInfo.attributionRequired = license.AttributionRequired?.value;
-            licenseInfo.usageTerms = license.UsageTerms?.value;
-            licenseInfo.licenseShortName = license.LicenseShortName?.value;
-            licenseInfo.credit = license.Credit?.value;
-            licenseInfo.description = license.ImageDescription?.value;
-
-            Wikimedia.knownLicenses[filename] = licenseInfo;
-            handle(licenseInfo);
-        });
-
     }
 
     static GetCategoryFiles(categoryName: string, handleCategory: ((ImagesInCategory: ImagesInCategory) => void),
@@ -109,6 +90,71 @@ export class Wikimedia {
             }
             handleWikidata(wd);
         });
+    }
+
+    private static ExtractFileName(url: string) {
+        if (!url.startsWith("http")) {
+            return url;
+        }
+        const path = new URL(url).pathname
+        return path.substring(path.lastIndexOf("/") + 1);
+
+    }
+
+    SourceIcon(backlink: string): BaseUIElement {
+        const img = Svg.wikimedia_commons_white_svg()
+            .SetStyle("width:2em;height: 2em");
+        if (backlink === undefined) {
+            return img
+        }
+
+
+        return new Link(Svg.wikimedia_commons_white_img,
+            `https://commons.wikimedia.org/wiki/${backlink}`, true)
+
+
+    }
+
+    PrepareUrl(value: string): string {
+
+        if (value.toLowerCase().startsWith("https://commons.wikimedia.org/wiki/")) {
+            return value;
+        }
+        return Wikimedia.ImageNameToUrl(value, 500, 400)
+            .replace(/'/g, '%27');
+    }
+
+    protected DownloadAttribution(filename: string): UIEventSource<LicenseInfo> {
+
+        const source = new UIEventSource<LicenseInfo>(undefined);
+
+        filename = Wikimedia.ExtractFileName(filename)
+
+        if (filename === "") {
+            return source;
+        }
+
+        const url = "https://en.wikipedia.org/w/" +
+            "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
+            "titles=" + filename +
+            "&format=json&origin=*";
+        console.log("Getting attribution at ", url)
+        $.getJSON(url, function (data) {
+            const licenseInfo = new LicenseInfo();
+            const license = data.query.pages[-1].imageinfo[0].extmetadata;
+
+            licenseInfo.artist = license.Artist?.value;
+            licenseInfo.license = license.License?.value;
+            licenseInfo.copyrighted = license.Copyrighted?.value;
+            licenseInfo.attributionRequired = license.AttributionRequired?.value;
+            licenseInfo.usageTerms = license.UsageTerms?.value;
+            licenseInfo.licenseShortName = license.LicenseShortName?.value;
+            licenseInfo.credit = license.Credit?.value;
+            licenseInfo.description = license.ImageDescription?.value;
+            source.setData(licenseInfo);
+        });
+        return source;
+
     }
 
 

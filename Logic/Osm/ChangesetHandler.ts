@@ -10,11 +10,10 @@ import Constants from "../../Models/Constants";
 
 export class ChangesetHandler {
 
+    public readonly currentChangeset: UIEventSource<string>;
     private readonly _dryRun: boolean;
     private readonly userDetails: UIEventSource<UserDetails>;
     private readonly auth: any;
-
-    public readonly currentChangeset: UIEventSource<string>;
 
     constructor(layoutName: string, dryRun: boolean, osmConnection: OsmConnection, auth) {
         this._dryRun = dryRun;
@@ -27,14 +26,34 @@ export class ChangesetHandler {
         }
     }
 
+    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) {
+        const nodes = response.getElementsByTagName("node");
+        // @ts-ignore
+        for (const node of nodes) {
+            const oldId = parseInt(node.attributes.old_id.value);
+            const newId = parseInt(node.attributes.new_id.value);
+            if (oldId !== undefined && newId !== undefined &&
+                !isNaN(oldId) && !isNaN(newId)) {
+                if (oldId == newId) {
+                    continue;
+                }
+                console.log("Rewriting id: ", oldId, "-->", newId);
+                const element = allElements.getEventSourceById("node/" + oldId);
+                element.data.id = "node/" + newId;
+                allElements.addElementById("node/" + newId, element);
+                element.ping();
+
+            }
+        }
+    }
 
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
-         continuation: () => void) {
-        
-        if(this.userDetails.data.csCount == 0){
+        continuation: () => void) {
+
+        if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
             this.userDetails.data.csCount = 1;
             this.userDetails.ping();
@@ -51,7 +70,7 @@ export class ChangesetHandler {
 
         if (this.currentChangeset.data === undefined || this.currentChangeset.data === "") {
             // We have to open a new changeset
-            this.OpenChangeset(layout,(csId) => {
+            this.OpenChangeset(layout, (csId) => {
                 this.currentChangeset.setData(csId);
                 const changeset = generateChangeXML(csId);
                 console.log(changeset);
@@ -86,31 +105,61 @@ export class ChangesetHandler {
         }
     }
 
+    public CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
+    }) {
+        if (changesetId === undefined) {
+            changesetId = this.currentChangeset.data;
+        }
+        if (changesetId === undefined) {
+            return;
+        }
+        console.log("closing changeset", changesetId);
+        this.currentChangeset.setData("");
+        this.auth.xhr({
+            method: 'PUT',
+            path: '/api/0.6/changeset/' + changesetId + '/close',
+        }, function (err, response) {
+            if (response == null) {
+
+                console.log("err", err);
+            }
+            console.log("Closed changeset ", changesetId)
+
+            if (continuation !== undefined) {
+                continuation();
+            }
+        });
+    }
 
     private OpenChangeset(
-        layout : LayoutConfig,
+        layout: LayoutConfig,
         continuation: (changesetId: string) => void) {
 
         const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
 
-        let surveySource = "";
-        if (State.state.currentGPSLocation.data !== undefined) {
-            surveySource = '<tag k="source" v="survey"/>'
-        }
+        let path = window.location.pathname;
+        path = path.substr(1, path.lastIndexOf("/"));
+        const metadata = [
+            ["created_by", `MapComplete ${Constants.vNumber}`],
+            ["comment", `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`],
+            ["theme", layout.id],
+            ["language", Locale.language.data],
+            ["host", window.location.host],
+            ["path", path],
+            ["source", State.state.currentGPSLocation.data !== undefined ? "survey" : undefined],
+            ["imagery", State.state.backgroundLayer.data.id],
+            ["theme-creator", layout.maintainer]
+        ]
+            .filter(kv => (kv[1] ?? "") !== "")
+            .map(kv => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
+            .join("\n")
 
         this.auth.xhr({
             method: 'PUT',
             path: '/api/0.6/changeset/create',
             options: {header: {'Content-Type': 'text/xml'}},
             content: [`<osm><changeset>`,
-                `<tag k="created_by" v="MapComplete ${Constants.vNumber}" />`,
-                `<tag k="comment" v="Adding data with #MapComplete for theme #${layout.id}${commentExtra}"/>`,
-                `<tag k="theme" v="${layout.id}"/>`,
-                `<tag k="language" v="${Locale.language.data}"/>`,
-                `<tag k="host" v="${escapeHtml(window.location.host)}"/>`,
-                `<tag k="imagery" v="${State.state.backgroundLayer.data.id}"/>`,
-                surveySource,
-                (layout.maintainer ?? "") !== "" ? `<tag k="theme-creator" v="${escapeHtml(layout.maintainer)}"/>` : "",
+                metadata,
                 `</changeset></osm>`].join("")
         }, function (err, response) {
             if (response === undefined) {
@@ -145,53 +194,6 @@ export class ChangesetHandler {
             console.log("Uploaded changeset ", changesetId);
             continuation(changesetId, mapping);
         });
-    }
-
-    public CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
-    }) {
-        if (changesetId === undefined) {
-            changesetId = this.currentChangeset.data;
-        }
-        if (changesetId === undefined) {
-            return;
-        }
-        console.log("closing changeset", changesetId);
-        this.currentChangeset.setData("");
-        this.auth.xhr({
-            method: 'PUT',
-            path: '/api/0.6/changeset/' + changesetId + '/close',
-        }, function (err, response) {
-            if (response == null) {
-
-                console.log("err", err);
-            }
-            console.log("Closed changeset ", changesetId)
-
-            if (continuation !== undefined) {
-                continuation();
-            }
-        });
-    }
-
-    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) {
-        const nodes = response.getElementsByTagName("node");
-        // @ts-ignore
-        for (const node of nodes) {
-            const oldId = parseInt(node.attributes.old_id.value);
-            const newId = parseInt(node.attributes.new_id.value);
-            if (oldId !== undefined && newId !== undefined &&
-                !isNaN(oldId) && !isNaN(newId)) {
-                if(oldId == newId){
-                    continue;
-                }
-                console.log("Rewriting id: ", oldId, "-->", newId);
-                const element = allElements.getEventSourceById("node/" + oldId);
-                element.data.id = "node/" + newId;
-                allElements.addElementById("node/" + newId, element);
-                element.ping();
-
-            }
-        }
     }
 
 

@@ -1,56 +1,55 @@
 import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
-import CheckBox from "../Input/CheckBox";
+import Toggle from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
+import BaseUIElement from "../BaseUIElement";
 
 
-export default class DeleteImage extends UIElement {
-    private readonly key: string;
-    private readonly tags: UIEventSource<any>;
-
-    private readonly isDeletedBadge: UIElement;
-    private readonly deleteDialog: UIElement;
+export default class DeleteImage extends Toggle {
 
     constructor(key: string, tags: UIEventSource<any>) {
-        super(tags);
-        this.tags = tags;
-        this.key = key;
-
-        this.isDeletedBadge = Translations.t.image.isDeleted;
+        const oldValue = tags.data[key]
+        const isDeletedBadge = Translations.t.image.isDeleted.Clone()
+            .SetClass("rounded-full p-1")
+            .SetStyle("color:white;background:#ff8c8c")
+            .onClick(() => {
+                State.state?.changes?.addTag(tags.data.id, new Tag(key, oldValue), tags);
+            });
 
         const deleteButton = Translations.t.image.doDelete.Clone()
             .SetClass("block w-full pl-4 pr-4")
             .SetStyle("color:white;background:#ff8c8c; border-top-left-radius:30rem; border-top-right-radius: 30rem;")
             .onClick(() => {
-                State.state?.changes.addTag(tags.data.id, new Tag(key, ""));
+                State.state?.changes?.addTag(tags.data.id, new Tag(key, ""), tags);
             });
 
-        const cancelButton = Translations.t.general.cancel.SetClass("bg-white pl-4 pr-4").SetStyle( "border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");
-        this.deleteDialog = new CheckBox(
+        const cancelButton = Translations.t.general.cancel.Clone().SetClass("bg-white pl-4 pr-4").SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");
+        const openDelete = Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
+        const deleteDialog = new Toggle(
             new Combine([
                 deleteButton,
                 cancelButton
             ]).SetClass("flex flex-col background-black"),
-            Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
+            openDelete
         )
 
-    }
+        cancelButton.onClick(() => deleteDialog.isEnabled.setData(false))
+        openDelete.onClick(() => deleteDialog.isEnabled.setData(true))
 
-    InnerRender(): string {
-        if(! State.state?.featureSwitchUserbadge?.data){
-            return "";
-        }
-
-        const value = this.tags.data[this.key];
-        if (value === undefined || value === "") {
-            return this.isDeletedBadge.Render();
-        }
-
-        return this.deleteDialog.Render();
+        super(
+            new Toggle(
+                deleteDialog,
+                isDeletedBadge,
+                tags.map(tags => (tags[key] ?? "") !== "")
+            ),
+            undefined /*Login (and thus editing) is disabled*/,
+            State.state?.featureSwitchUserbadge ?? new UIEventSource<boolean>(true)
+        )
+        this.SetClass("cursor-pointer")
     }
 
 }

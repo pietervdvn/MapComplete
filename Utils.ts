@@ -73,6 +73,14 @@ export class Utils {
         return res;
     }
 
+    public static TimesT<T>(count : number, f: ((i: number) => T)): T[] {
+        let res : T[] = [];
+        for (let i = 0; i < count; i++) {
+            res .push(f(i));
+        }
+        return res;
+    }
+
     static DoEvery(millis: number, f: (() => void)) {
         if (Utils.runningFromConsole) {
             return;
@@ -108,7 +116,7 @@ export class Utils {
     }
 
     public static EllipsesAfter(str: string, l: number = 100) {
-        if (str === undefined) {
+        if (str === undefined || str === null) {
             return undefined;
         }
         if (str.length <= l) {
@@ -149,7 +157,16 @@ export class Utils {
         return [a.substr(0, index), a.substr(index + sep.length)];
     }
 
-    // Date will be undefined on failure
+    public static SubstituteKeys(txt: string, tags: any) {
+        for (const key in tags) {
+            if(!tags.hasOwnProperty(key)) {
+                continue
+            }
+            txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
+        }
+        return txt;
+    }
+
     public static LoadCustomCss(location: string) {
         const head = document.getElementsByTagName('head')[0];
         const link = document.createElement('link');
@@ -251,6 +268,10 @@ export class Utils {
 
     public static UnMinify(minified: string): string {
 
+        if(minified === undefined || minified === null){
+            return undefined;
+        }
+        
         const parts = minified.split("|");
         let result = parts.shift();
         const keys = Utils.knownKeys.concat(Utils.extraKeys);

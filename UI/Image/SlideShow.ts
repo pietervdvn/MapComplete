@@ -1,56 +1,49 @@
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {UIElement} from "../UIElement";
+import BaseUIElement from "../BaseUIElement";
+import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
-// @ts-ignore
-import $ from "jquery"
 
-export class SlideShow extends UIElement {
+export class SlideShow extends BaseUIElement {
 
-    private readonly _embeddedElements: UIEventSource<UIElement[]>
 
-    constructor(
-        embeddedElements: UIEventSource<UIElement[]>) {
-        super(embeddedElements);
-        this._embeddedElements = embeddedElements;
-        this._embeddedElements.addCallbackAndRun(elements => {
-            for (const element of elements ?? []) {
-                element.SetClass("slick-carousel-content")
+    private readonly embeddedElements: UIEventSource<BaseUIElement[]>;
+
+    constructor(embeddedElements: UIEventSource<BaseUIElement[]>) {
+        super()
+        this.embeddedElements =embeddedElements;
+        this.SetStyle("scroll-snap-type: x mandatory; overflow-x: scroll")
+    }   
+
+    protected InnerConstructElement(): HTMLElement {
+        const el = document.createElement("div")
+        el.style.minWidth = "min-content"
+        el.style.display = "flex"
+        el.style.justifyContent = "center"
+        this.embeddedElements.addCallbackAndRun(elements => {
+            
+            if(elements.length > 1){
+                el.style.justifyContent = "unset"
             }
-        })
+            
+            while (el.firstChild) {
+                el.removeChild(el.lastChild)
+            }
 
-    }
-
-    InnerRender(): string {
-        return new Combine(
-                this._embeddedElements.data,
-            ).SetClass("block slick-carousel")
-            .Render();
-    }
-
-    Update() {
-        super.Update();
-        for (const uiElement of this._embeddedElements.data) {
-            uiElement.Update();
-        }
-    }
-
-    protected InnerUpdate(htmlElement: HTMLElement) {
-        super.InnerUpdate(htmlElement);
-        require("slick-carousel")
-        if(this._embeddedElements.data.length == 0){
-            return;
-        }
-        // @ts-ignore
-        $('.slick-carousel').not('.slick-initialized').slick({
-            autoplay: true,
-            arrows: true,
-            dots: true,
-            lazyLoad: 'progressive',
-            variableWidth: true,
-            centerMode: true,
-            centerPadding: "60px",
-            adaptive: true  
+            elements = Utils.NoNull(elements).map(el => new Combine([el]) 
+                .SetClass("block relative ml-1 bg-gray-200 m-1 rounded slideshow-item")
+                .SetStyle("min-width: 150px; width: max-content; height: var(--image-carousel-height);max-height: var(--image-carousel-height);scroll-snap-align: start;")
+            )
+            
+            for (const element of elements ?? []) {
+                el.appendChild(element.ConstructElement())
+            }
         });
+
+        const wrapper = document.createElement("div")
+        wrapper.style.maxWidth = "100%"
+        wrapper.style.overflowX = "auto"
+        wrapper.appendChild(el)
+        return wrapper;
     }
 
 }

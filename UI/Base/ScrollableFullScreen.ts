@@ -5,20 +5,27 @@ import Ornament from "./Ornament";
 import {FixedUiElement} from "./FixedUiElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Hash from "../../Logic/Web/Hash";
+import BaseUIElement from "../BaseUIElement";
 
 /**
- * Wraps some contents into a panel that scrolls the content _under_ the title
+ * 
+ * The scrollableFullScreen is a bit of a peculiar component:
+ * - It shows a title and some contents, constructed from the respective functions passed into the constructor
+ * - When the element is 'activated', one clone of title+contents is attached to the fullscreen
+ * - The element itself will - upon rendering - also show the title and contents (allthough it'll be a different clone)
+ * 
+ * 
  */
 export default class ScrollableFullScreen extends UIElement {
     private static readonly empty = new FixedUiElement("");
     public isShown: UIEventSource<boolean>;
-    private _component: UIElement;
-    private _fullscreencomponent: UIElement;
+    private _component: BaseUIElement;
+    private _fullscreencomponent: BaseUIElement;
     private static readonly _actor = ScrollableFullScreen.InitActor();
     private _hashToSet: string;  
     private static _currentlyOpen : ScrollableFullScreen;
 
-    constructor(title: ((mode: string) => UIElement), content: ((mode: string) => UIElement),
+    constructor(title: ((mode: string) => BaseUIElement), content: ((mode: string) => BaseUIElement),
                 hashToSet: string,
                 isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
               ) {
@@ -29,7 +36,6 @@ export default class ScrollableFullScreen extends UIElement {
         this._component = this.BuildComponent(title("desktop"), content("desktop"), isShown)
             .SetClass("hidden md:block");
         this._fullscreencomponent = this.BuildComponent(title("mobile"), content("mobile"), isShown);
-        this.dumbMode = false;
         const self = this;
         isShown.addCallback(isShown => {
             if (isShown) {
@@ -40,8 +46,8 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
-    InnerRender(): string {
-        return this._component.Render();
+    InnerRender(): BaseUIElement {
+        return this._component;
     }
 
     Activate(): void {
@@ -55,7 +61,7 @@ export default class ScrollableFullScreen extends UIElement {
         fs.classList.remove("hidden")
     }
 
-    private BuildComponent(title: UIElement, content: UIElement, isShown: UIEventSource<boolean>) {
+    private BuildComponent(title: BaseUIElement, content:BaseUIElement, isShown: UIEventSource<boolean>) {
         const returnToTheMap =
             new Combine([
                 Svg.back_svg().SetClass("block md:hidden"),

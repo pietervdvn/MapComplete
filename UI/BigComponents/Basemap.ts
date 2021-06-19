@@ -1,8 +1,8 @@
 import * as L from "leaflet"
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
-import {UIElement} from "../UIElement";
 import BaseLayer from "../../Models/BaseLayer";
+import BaseUIElement from "../BaseUIElement";
 
 export class Basemap {
 
@@ -12,14 +12,14 @@ export class Basemap {
     constructor(leafletElementId: string,
                 location: UIEventSource<Loc>,
                 currentLayer: UIEventSource<BaseLayer>,
-                lastClickLocation: UIEventSource<{ lat: number, lon: number }>,
-                extraAttribution: UIElement) {
+                lastClickLocation?: UIEventSource<{ lat: number, lon: number }>,
+                extraAttribution?: BaseUIElement) {
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
             layers: [currentLayer.data.layer],
-            zoomControl: false
-            
+            zoomControl: false,
+            attributionControl: extraAttribution !== undefined
         });
 
         L.control.scale(
@@ -35,9 +35,11 @@ export class Basemap {
         this.map.setMaxBounds(
             [[-100, -200], [100, 200]]
         );
-        this.map.attributionControl.setPrefix(
-            extraAttribution.Render() + " | <a href='https://osm.org'>OpenStreetMap</a>");
 
+        this.map.attributionControl.setPrefix(
+            "<span id='leaflet-attribution'></span> | <a href='https://osm.org'>OpenStreetMap</a>");
+
+        extraAttribution.AttachTo('leaflet-attribution')
         const self = this;
 
         let previousLayer = currentLayer.data;
@@ -69,12 +71,12 @@ export class Basemap {
 
         this.map.on("click", function (e) {
             // @ts-ignore
-            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng})
+            lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng})
         });
 
         this.map.on("contextmenu", function (e) {
             // @ts-ignore
-            lastClickLocation.setData({lat: e.latlng.lat, lon: e.latlng.lng});
+            lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng});
         });
 
 

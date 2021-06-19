@@ -1,39 +1,42 @@
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import Combine from "./Combine";
+import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "./VariableUIElement";
 
-export class TabbedComponent extends UIElement {
+export class TabbedComponent extends Combine {
 
-    private headers: UIElement[] = [];
-    private content: UIElement[] = [];
+    constructor(elements: { header: BaseUIElement | string, content: BaseUIElement | string }[], openedTab: (UIEventSource<number> | number) = 0) {
 
-    constructor(elements: { header: UIElement | string, content: UIElement | string }[], openedTab: (UIEventSource<number> | number) = 0) {
-        super(typeof (openedTab) === "number" ? new UIEventSource(openedTab) : (openedTab ?? new UIEventSource<number>(0)));
-        const self = this;
+        const openedTabSrc = typeof (openedTab) === "number" ? new UIEventSource(openedTab) : (openedTab ?? new UIEventSource<number>(0))
+            
+        const tabs: BaseUIElement[] = []
+        const contentElements: BaseUIElement[] = [];
         for (let i = 0; i < elements.length; i++) {
             let element = elements[i];
-            this.headers.push(Translations.W(element.header).onClick(() => self._source.setData(i)));
+            const header = Translations.W(element.header).onClick(() => openedTabSrc.setData(i))
+            openedTabSrc.addCallbackAndRun(selected => {
+                if(selected === i){
+                    header.SetClass("tab-active")
+                    header.RemoveClass("tab-non-active")
+                }else{
+                    header.SetClass("tab-non-active")
+                    header.RemoveClass("tab-active")
+                }
+            })
             const content = Translations.W(element.content)
-            this.content.push(content);
-        }
-    }
-
-    InnerRender(): string {
-        let headerBar = "";
-        for (let i = 0; i < this.headers.length; i++) {
-            let header = this.headers[i];
-
-            if (!this.content[i].IsEmpty()) {
-                headerBar += `<div class=\'tab-single-header ${i == this._source.data ? 'tab-active' : 'tab-non-active'}\'>` +
-                    header.Render() + "</div>"
-            }
+            content.SetClass("relative p-4 w-full inline-block")
+            contentElements.push(content);
+            const tab = header.SetClass("block tab-single-header")
+            tabs.push(tab)
         }
 
+        const header = new Combine(tabs).SetClass("block tabs-header-bar")
+        const actualContent = new VariableUiElement(
+            openedTabSrc.map(i => contentElements[i])
+        )
+        super([header, actualContent])
 
-        headerBar = "<div class='tabs-header-bar'>" + headerBar + "</div>"
-
-        const content = this.content[this._source.data];
-        return headerBar + "<div class='tab-content'>" + (content?.Render() ?? "") + "</div>";
     }
 
 }

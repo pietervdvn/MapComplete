@@ -14,8 +14,7 @@ export default class ShowDataLayer {
 
     private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
-
-    private readonly _popups = new Map<any, L.Layer>();
+    private _cleanCount = 0;
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
@@ -44,6 +43,7 @@ export default class ShowDataLayer {
                 return;
             }
 
+            self._cleanCount++
             // clean all the old stuff away, if any
             if (geoLayer !== undefined) {
                 mp.removeLayer(geoLayer);
@@ -74,35 +74,6 @@ export default class ShowDataLayer {
         features.addCallback(() => update());
         leafletMap.addCallback(() => update());
         update();
-
-
-        State.state.selectedElement.addCallbackAndRun(selected => {
-            if (selected === undefined) {
-                mp.closePopup();
-                return;
-            }
-            const marker = self._popups.get(selected);
-            if (marker === undefined) {
-                return;
-            }
-            marker.openPopup();
-
-            const popup = marker.getPopup();
-            const tags = State.state.allElements.getEventSourceById(selected.properties.id);
-            const layer: LayerConfig = this._layerDict[selected._matching_layer_id];
-            const infoBox = FeatureInfoBox.construct(tags, layer);
-
-            infoBox.isShown.addCallback(isShown => {
-                if (!isShown) {
-                    State.state.selectedElement.setData(undefined);
-                }
-            });
-
-            popup.setContent(infoBox.Render());
-            infoBox.Activate();
-            infoBox.Update();
-        })
-
     }
 
 
@@ -128,7 +99,7 @@ export default class ShowDataLayer {
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
         return L.marker(latLng, {
             icon: L.divIcon({
-                html: style.icon.html.Render(),
+                html: style.icon.html.ConstructElement(),
                 className: style.icon.className,
                 iconAnchor: style.icon.iconAnchor,
                 iconUrl: style.icon.iconUrl,
@@ -137,7 +108,6 @@ export default class ShowDataLayer {
             })
         });
     }
-
 
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
@@ -155,15 +125,49 @@ export default class ShowDataLayer {
             closeButton: false
         }, leafletLayer);
 
-        // By setting 50vh, leaflet will attempt to fit the entire screen and move the feature down
-        popup.setContent("<div style='height: 50vh'>Rendering</div>");
-
         leafletLayer.bindPopup(popup);
+
+        let infobox: FeatureInfoBox = undefined;
+
+        const id = `popup-${feature.properties.id}-${this._cleanCount}`
+        popup.setContent(`<div style='height: 65vh' id='${id}'>Rendering</div>`)
+
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature)
+            if (infobox === undefined) {
+                const tags = State.state.allElements.getEventSourceById(feature.properties.id);
+                infobox = new FeatureInfoBox(tags, layer);
+
+                infobox.isShown.addCallback(isShown => {
+                    if (!isShown) {
+                        State.state.selectedElement.setData(undefined);
+                        leafletLayer.closePopup()
+                    }
+                });
+            }
+
+
+            infobox.AttachTo(id)
+            infobox.Activate();
         });
-        
-        this._popups.set(feature, leafletLayer);
+        const self = this;
+        State.state.selectedElement.addCallbackAndRun(selected => {
+            if (selected === undefined || self._leafletMap.data === undefined) {
+                return;
+            }
+            if (leafletLayer.getPopup().isOpen()) {
+                return;
+            }
+            if (selected.properties.id === feature.properties.id) {
+                // A small sanity check to prevent infinite loops:
+                // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+                if(selected.geometry.type === feature.geometry.type){
+                    leafletLayer.openPopup()    
+                }
+                
+            }
+        })
+
     }
 
     private CreateGeojsonLayer(): L.Layer {

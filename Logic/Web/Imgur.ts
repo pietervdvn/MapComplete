@@ -1,20 +1,25 @@
 // @ts-ignore
 import $ from "jquery"
 import {LicenseInfo} from "./Wikimedia";
+import ImageAttributionSource from "./ImageAttributionSource";
+import {UIEventSource} from "../UIEventSource";
+import BaseUIElement from "../../UI/BaseUIElement";
 
-export class Imgur {
+export class Imgur extends ImageAttributionSource {
+    
+    public static readonly singleton = new Imgur(); 
 
+    private constructor() {
+        super();
+    }
 
     static uploadMultiple(
         title: string, description: string, blobs: FileList,
         handleSuccessfullUpload: ((imageURL: string) => void),
         allDone: (() => void),
         onFail: ((reason: string) => void),
-        offset:number) {
+        offset: number = 0) {
 
-        if(offset === undefined){
-            throw "Offset undefined - not uploading to prevent to much uploads!"
-        }
         if (blobs.length == offset) {
             allDone();
             return;
@@ -36,54 +41,10 @@ export class Imgur {
 
 
     }
-    static getDescriptionOfImage(url: string,
-                       handleDescription: ((license: LicenseInfo) => void)) {
-
-        const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
-        
-        const apiUrl = 'https://api.imgur.com/3/image/'+hash;
-        const apiKey = '7070e7167f0a25a';
-
-        const settings = {
-            async: true,
-            crossDomain: true,
-            processData: false,
-            contentType: false,
-            type: 'GET',
-            url: apiUrl,
-            headers: {
-                Authorization: 'Client-ID ' + apiKey,
-                Accept: 'application/json',
-            },
-        };
-        // @ts-ignore
-        $.ajax(settings).done(function (response) {
-            const descr: string = response.data.description ?? "";
-            const data: any = {};
-            for (const tag of descr.split("\n")) {
-                const kv = tag.split(":");
-                const k = kv[0];
-                const v = kv[1].replace("\r", "");
-                data[k] = v;
-            }
-
-            
-            const licenseInfo = new LicenseInfo();
-            
-            licenseInfo.licenseShortName = data.license;
-            licenseInfo.artist = data.author;
-            
-            handleDescription(licenseInfo);
-            
-        }).fail((reason) => {
-            console.log("Getting metadata from to IMGUR failed", reason)
-        });
-    
-    }
 
     static uploadImage(title: string, description: string, blob,
                        handleSuccessfullUpload: ((imageURL: string) => void),
-                       onFail: (reason:string) => void) {
+                       onFail: (reason: string) => void) {
 
         const apiUrl = 'https://api.imgur.com/3/image';
         const apiKey = '7070e7167f0a25a';
@@ -120,5 +81,56 @@ export class Imgur {
             onFail(reason);
         });
     }
+
+    SourceIcon(): BaseUIElement {
+        return undefined;
+    }
+
+    protected DownloadAttribution(url: string): UIEventSource<LicenseInfo> {
+        const src = new UIEventSource<LicenseInfo>(undefined)
+
+
+        const hash = url.substr("https://i.imgur.com/".length).split(".jpg")[0];
+
+        const apiUrl = 'https://api.imgur.com/3/image/' + hash;
+        const apiKey = '7070e7167f0a25a';
+
+        const settings = {
+            async: true,
+            crossDomain: true,
+            processData: false,
+            contentType: false,
+            type: 'GET',
+            url: apiUrl,
+            headers: {
+                Authorization: 'Client-ID ' + apiKey,
+                Accept: 'application/json',
+            },
+        };
+        // @ts-ignore
+        $.ajax(settings).done(function (response) {
+            const descr: string = response.data.description ?? "";
+            const data: any = {};
+            for (const tag of descr.split("\n")) {
+                const kv = tag.split(":");
+                const k = kv[0];
+                data[k] = kv[1].replace("\r", "");
+            }
+
+
+            const licenseInfo = new LicenseInfo();
+
+            licenseInfo.licenseShortName = data.license;
+            licenseInfo.artist = data.author;
+
+            src.setData(licenseInfo)
+
+        }).fail((reason) => {
+            console.log("Getting metadata from to IMGUR failed", reason)
+        });
+
+        return src;
+    }
+
 
 }

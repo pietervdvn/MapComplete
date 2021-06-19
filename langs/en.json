@@ -29,8 +29,10 @@
     },
     "general": {
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
+        "loginOnlyNeededToEdit": "to make changes to the map",
         "welcomeBack": "You are logged in, welcome back!",
         "loginToStart": "Login to answer this question",
+        "testing":"Testing - changes won't be saved",
         "search": {
             "search": "Search a location",
             "searching": "Searching…",
@@ -38,6 +40,7 @@
             "error": "Something went wrong…"
         },
         "returnToTheMap": "Return to the map",
+        "openTheMap": "Open the map",
         "save": "Save",
         "cancel": "Cancel",
         "skip": "Skip this question",
@@ -53,7 +56,7 @@
             "zoomInFurther": "Zoom in further to add a point.",
             "stillLoading": "The data is still loading. Please wait a bit before you add a new point.",
             "confirmIntro": "<h3>Add a {title} here?</h3>The point you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
-            "confirmButton": "Add a {category} here.<br/><div class='alert'>Your addition is visible for everyone</div>",
+            "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "openLayerControl": "Open the layer control box",
             "layerNotEnabled": "The layer {layer} is not enabled. Enable this layer to add a point"
         },
@@ -107,6 +110,7 @@
             "createYourOwnTheme": "Create your own MapComplete theme from scratch"
         },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new point.",
+        "presetInfo": "The new POI will have {tags}",
         "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",
         "goToInbox": "Open inbox",
         "getStartedLogin": "Login with OpenStreetMap to get started",
@@ -119,6 +123,7 @@
             "zoomInToSeeThisLayer": "Zoom in to see this layer",
             "title": "Select layers"
         },
+        "loadingCountry": "Determining country...",
         "weekdays": {
             "abbreviations": {
                 "monday": "Mon",
@@ -148,7 +153,8 @@
             "open_24_7": "Opened around the clock",
             "ph_not_known": " ",
             "ph_closed": "closed",
-            "ph_open": "opened"
+            "ph_open": "opened with different hours",
+            "ph_open_as_usual": "opened as usual"
         }
     },
     "favourite": {

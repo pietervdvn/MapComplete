@@ -1,5 +1,5 @@
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import CheckBox from "./UI/Input/CheckBox";
+import Toggle from "./UI/Input/Toggle";
 import {Basemap} from "./UI/BigComponents/Basemap";
 import State from "./State";
 import LoadFromOverpass from "./Logic/Actors/OverpassFeatureSource";
@@ -21,11 +21,9 @@ import * as L from "leaflet";
 import Img from "./UI/Base/Img";
 import UserDetails from "./Logic/Osm/OsmConnection";
 import Attribution from "./UI/BigComponents/Attribution";
-import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import LayerResetter from "./Logic/Actors/LayerResetter";
 import FullWelcomePaneWithTabs from "./UI/BigComponents/FullWelcomePaneWithTabs";
 import LayerControlPanel from "./UI/BigComponents/LayerControlPanel";
-import FeatureSwitched from "./UI/Base/FeatureSwitched";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import Hash from "./Logic/Web/Hash";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
@@ -39,9 +37,9 @@ import {LayoutConfigJson} from "./Customizations/JSON/LayoutConfigJson";
 import AttributionPanel from "./UI/BigComponents/AttributionPanel";
 import ContributorCount from "./Logic/ContributorCount";
 import FeatureSource from "./Logic/FeatureSource/FeatureSource";
-import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 
 export class InitUiElements {
 
@@ -170,13 +168,14 @@ export class InitUiElements {
                 marker.addTo(State.state.leafletMap.data)
             });
 
-        const geolocationButton = new FeatureSwitched(
+        const geolocationButton = new Toggle(
             new MapControlButton(
                 new GeoLocationHandler(
                     State.state.currentGPSLocation,
                     State.state.leafletMap,
                     State.state.layoutToUse
                 )),
+            undefined,
             State.state.featureSwitchGeolocation);
 
         const plus = new MapControlButton(
@@ -193,7 +192,7 @@ export class InitUiElements {
             State.state.locationControl.ping();
         })
 
-        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-1")))
+        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
             .SetClass("flex flex-col")
             .AttachTo("bottom-right");
 
@@ -211,13 +210,12 @@ export class InitUiElements {
 
         // Reset the loading message once things are loaded
         new CenterMessageBox().AttachTo("centermessage");
-
-        // At last, zoom to the needed location if the focus is on an element
+        document.getElementById("centermessage").classList.add("pointer-events-none")
 
 
     }
 
-    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>) {
+    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): [LayoutConfig, string]{
         try {
             let hash = location.hash.substr(1);
             const layoutFromBase64 = userLayoutParam.data;
@@ -249,7 +247,7 @@ export class InitUiElements {
             // @ts-ignore
             const layoutToUse = new LayoutConfig(json, false);
             userLayoutParam.setData(layoutToUse.id);
-            return layoutToUse;
+            return [layoutToUse, btoa(Utils.MinifyJSON(JSON.stringify(json)))];
         } catch (e) {
 
             new FixedUiElement("Error: could not parse the custom layout:<br/> " + e).AttachTo("centermessage");
@@ -272,11 +270,10 @@ export class InitUiElements {
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg());
-        new CheckBox(
+        help.onClick(() => isOpened.setData(true))
+        new Toggle(
             fullOptions
-                .SetClass("welcomeMessage")
-                .onClick(() => {/*Catch the click*/
-                }),
+                .SetClass("welcomeMessage"),
             help
             , isOpened
         ).AttachTo("messagesbox");
@@ -307,22 +304,23 @@ export class InitUiElements {
             )
 
         ;
-        const copyrightButton = new CheckBox(
+        const copyrightButton = new Toggle(
             copyrightNotice,
             new MapControlButton(Svg.osm_copyright_svg()),
             copyrightNotice.isShown
-        ).SetClass("p-0.5")
+        ).ToggleOnClick()
+            .SetClass("p-0.5")
 
         const layerControlPanel = new LayerControlPanel(
             State.state.layerControlIsOpened)
             .SetClass("block p-1 rounded-full");
-        const layerControlButton = new CheckBox(
+        const layerControlButton = new Toggle(
             layerControlPanel,
             new MapControlButton(Svg.layers_svg()),
             State.state.layerControlIsOpened
-        )
+        ).ToggleOnClick()
 
-        const layerControl = new CheckBox(
+        const layerControl = new Toggle(
             layerControlButton,
             "",
             State.state.featureSwitchLayers
@@ -351,9 +349,8 @@ export class InitUiElements {
     private static InitBaseMap() {
 
         State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl).availableEditorLayers;
-        State.state.backgroundLayer = QueryParameters.GetQueryParameter("background",
-            State.state.layoutToUse.data.defaultBackgroundId ?? AvailableBaseLayers.osmCarto.id,
-            "The id of the background layer to start with")
+
+        State.state.backgroundLayer = State.state.backgroundLayerId
             .map((selectedId: string) => {
                 const available = State.state.availableBackgroundLayers.data;
                 for (const layer of available) {
@@ -362,9 +359,8 @@ export class InitUiElements {
                     }
                 }
                 return AvailableBaseLayers.osmCarto;
-            }, [], layer => layer.id);
-
-
+            }, [State.state.availableBackgroundLayers], layer => layer.id);
+        
         new LayerResetter(
             State.state.backgroundLayer, State.state.locationControl,
             State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));

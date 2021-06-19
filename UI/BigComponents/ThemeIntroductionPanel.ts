@@ -1,61 +1,72 @@
-import Locale from "../i18n/Locale";
-import {UIElement} from "../UIElement";
 import State from "../../State";
 import Combine from "../Base/Combine";
 import LanguagePicker from "../LanguagePicker";
 import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
+import Toggle from "../Input/Toggle";
+import {SubtleButton} from "../Base/SubtleButton";
+import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
-export default class ThemeIntroductionPanel extends UIElement {
-    private languagePicker: UIElement;
+export default class ThemeIntroductionPanel extends VariableUiElement {
 
-    private readonly loginStatus: UIElement;
-    private _layout: UIEventSource<LayoutConfig>;
+    constructor(isShown: UIEventSource<boolean>) {
 
-
-    constructor() {
-        super(State.state.osmConnection.userDetails);
-        this.ListenTo(Locale.language);
-        this.languagePicker = LanguagePicker.CreateLanguagePicker(State.state.layoutToUse.data.language, Translations.t.general.pickLanguage);
-        this._layout = State.state.layoutToUse;
-        this.ListenTo(State.state.layoutToUse);
+        const languagePicker =
+            new VariableUiElement(
+                State.state.layoutToUse.map(layout => LanguagePicker.CreateLanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()))
+            )
+        ;
+        
+        const toTheMap = new SubtleButton(
+            undefined,
+            Translations.t.general.openTheMap.Clone().SetClass("text-xl font-bold w-full text-center")
+        ).onClick(() =>{
+            isShown.setData(false)
+        }).SetClass("only-on-mobile")
 
         const plzLogIn =
-            Translations.t.general.loginWithOpenStreetMap
+            new SubtleButton(
+                Svg.osm_logo_ui(),
+                
+                new Combine([Translations.t.general.loginWithOpenStreetMap
+                    .Clone().SetClass("text-xl font-bold"),
+                    Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold")]
+                    ).SetClass("flex flex-col text-center w-full")
+            )
                 .onClick(() => {
                     State.state.osmConnection.AttemptLogin()
                 });
+
+
+        const welcomeBack = Translations.t.general.welcomeBack.Clone();
         
         
-        const welcomeBack = Translations.t.general.welcomeBack;
-        
-        this.loginStatus = new VariableUiElement(
-            State.state.osmConnection.userDetails.map(
-                userdetails => {
-                    if (State.state.featureSwitchUserbadge.data) {
-                        return "";
-                    }
-                    return (userdetails.loggedIn ? welcomeBack : plzLogIn).Render();
-                }
+
+        const loginStatus =
+            new Toggle(
+                new Toggle(
+                    welcomeBack,
+                    plzLogIn,
+                    State.state.osmConnection.isLoggedIn
+                ),
+                undefined,
+                State.state.featureSwitchUserbadge
             )
-        )
+
+
+        super(State.state.layoutToUse.map (layout => new Combine([
+            layout.description.Clone(),
+            "<br/><br/>",
+            toTheMap,
+            loginStatus,
+            layout.descriptionTail.Clone(),
+            "<br/>",
+            languagePicker,
+            ...layout.CustomCodeSnippets()
+        ])))
+
         this.SetClass("link-underline")
     }
-
-    InnerRender(): string {
-        const layout : LayoutConfig = this._layout.data;
-        return new Combine([
-            layout.description,
-            "<br/><br/>",
-            this.loginStatus,
-            layout.descriptionTail,
-            "<br/>",
-            this.languagePicker,
-            ...layout.CustomCodeSnippets()
-        ]).Render()
-    }
-
-
 }

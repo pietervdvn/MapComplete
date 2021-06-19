@@ -20,7 +20,7 @@ function generateWikiEntry(layout: LayoutConfig) {
 |region= Worldwide
 |lang= ${languages}
 |descr= A MapComplete theme: ${Translations.W(layout.description)
-        .InnerRender()
+        .InnerRenderAsString()
         .replace("<a href='", "[[")
         .replace(/'>.*<\/a>/, "]]")
     }

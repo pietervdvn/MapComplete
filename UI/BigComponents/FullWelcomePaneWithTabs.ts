@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import State from "../../State";
 import ThemeIntroductionPanel from "./ThemeIntroductionPanel";
 import * as personal from "../../assets/themes/personalLayout/personalLayout.json";
@@ -7,47 +6,39 @@ import Svg from "../../Svg";
 import Translations from "../i18n/Translations";
 import ShareScreen from "./ShareScreen";
 import MoreScreen from "./MoreScreen";
-import {VariableUiElement} from "../Base/VariableUIElement";
 import Constants from "../../Models/Constants";
 import Combine from "../Base/Combine";
-import Locale from "../i18n/Locale";
 import {TabbedComponent} from "../Base/TabbedComponent";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
+import BaseUIElement from "../BaseUIElement";
+import Toggle from "../Input/Toggle";
 
-export default class FullWelcomePaneWithTabs extends UIElement {
-    private readonly _layoutToUse: UIEventSource<LayoutConfig>;
-    private readonly _userDetails: UIEventSource<UserDetails>;
+export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
-    private readonly _component: UIElement;
 
     constructor(isShown: UIEventSource<boolean>) {
-        super(State.state.layoutToUse);
-        this._layoutToUse = State.state.layoutToUse;
-        this._userDetails = State.state.osmConnection.userDetails;
-        const layoutToUse = this._layoutToUse.data;
-      
-
-        this._component = new ScrollableFullScreen(
+        const layoutToUse = State.state.layoutToUse.data;
+        super (
             () => layoutToUse.title.Clone(),
-            () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails),
+            () => FullWelcomePaneWithTabs.GenerateContents(layoutToUse, State.state.osmConnection.userDetails, isShown),
             "welcome" ,isShown
         )
     }
+    
+    private static ConstructBaseTabs(layoutToUse: LayoutConfig, isShown: UIEventSource<boolean>): { header: string | BaseUIElement; content: BaseUIElement }[]{
 
-    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>) {
-
-        let welcome: UIElement = new ThemeIntroductionPanel();
+        let welcome: BaseUIElement = new ThemeIntroductionPanel(isShown);
         if (layoutToUse.id === personal.id) {
             welcome = new PersonalLayersPanel();
         }
-        const tabs = [
+        const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
             {header: `<img src='${layoutToUse.icon}'>`, content: welcome},
             {
                 header: Svg.osm_logo_img,
-                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline") as UIElement
+                content: Translations.t.general.openStreetMapIntro.Clone().SetClass("link-underline")
             },
 
         ]
@@ -64,25 +55,27 @@ export default class FullWelcomePaneWithTabs extends UIElement {
             });
         }
 
+        return tabs;
+    }
 
-        tabs.push({
+    private static GenerateContents(layoutToUse: LayoutConfig, userDetails: UIEventSource<UserDetails>, isShown: UIEventSource<boolean>) {
+
+        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)
+        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(layoutToUse, isShown)]
+        tabsWithAboutMc.push({
                 header: Svg.help,
-                content: new VariableUiElement(userDetails.map(userdetails => {
-                    if (userdetails.csCount < Constants.userJourney.mapCompleteHelpUnlock) {
-                        return ""
-                    }
-                    return new Combine([Translations.t.general.aboutMapcomplete, "<br/>Version " + Constants.vNumber]).SetClass("link-underline").Render();
-                }, [Locale.language]))
+                content: new Combine([Translations.t.general.aboutMapcomplete.Clone(), "<br/>Version " + Constants.vNumber])
+                    .SetClass("link-underline")
             }
         );
 
-        return new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab)
-            .ListenTo(userDetails);
-    }
-
-    InnerRender(): string {
-        return this._component.Render();
-
+        return new Toggle(
+          new TabbedComponent(tabsWithAboutMc, State.state.welcomeMessageOpenedTab),
+           new TabbedComponent(tabs, State.state.welcomeMessageOpenedTab),
+            userDetails.map((userdetails: UserDetails) =>
+                userdetails.loggedIn &&
+                userdetails.csCount >= Constants.userJourney.mapCompleteHelpUnlock)
+        )
     }
 
 }
