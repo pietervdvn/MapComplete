@@ -2,17 +2,18 @@
     "image": {
         "uploadingMultiple": "Wysyłanie {count} ilustracji…",
         "uploadingPicture": "Wysyłanie ilustracji…",
-        "addPicture": "Dodaj ilustrację",
+        "addPicture": "Dodaj zdjęcie",
         "pleaseLogin": "Proszę, zaloguj się by dodać ilustrację",
         "isDeleted": "Usunięte",
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "uploadDone": "<span class=\"thanks\">Twoja ilustracja została dodana. Dzięki za pomoc!</span>",
-        "uploadFailed": "Wysyłanie ilustracji nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
+        "uploadFailed": "Wysyłanie zdjęcia nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
         "cco": "w domenie publicznej",
         "ccb": "na licencji CC-BY",
         "ccbs": "na licencji CC-BY-SA",
-        "willBePublished": "Twoja ilustracja będzie opublikowana: "
+        "willBePublished": "Twoje zdjęcie będzie opublikowane: ",
+        "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł."
     },
     "general": {
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
@@ -23,16 +24,33 @@
         "returnToTheMap": "Wróć do mapy",
         "loginToStart": "Zaloguj się, aby odpowiedzieć na to pytanie",
         "search": {
-            "error": "Coś poszło nie tak…"
-        }
+            "error": "Coś poszło nie tak…",
+            "nothing": "Nic nie znaleziono…",
+            "searching": "Szukanie…",
+            "search": "Wyszukaj lokalizację"
+        },
+        "add": {
+            "stillLoading": "Dane wciąż się ładują. Poczekaj chwilę, zanim dodasz nowy punkt.",
+            "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
+            "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
+            "title": "Czy dodać nowy punkt?",
+            "addNew": "Dodaj nową {kategorię} tutaj"
+        },
+        "number": "numer",
+        "skippedQuestions": "Niektóre pytania są pominięte",
+        "oneSkippedQuestion": "Jedno pytanie zostało pominięte",
+        "welcomeBack": "Jesteś zalogowany, witaj z powrotem!"
     },
     "index": {
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
         "intro": "MapComplete to narzędzie do przeglądania danych OpenStreetMap jak i edytor, z warstwami na różne tematy.",
-        "title": "Witaj w MapComplete"
+        "title": "Witaj w MapComplete",
+        "#": "Te teksty są wyświetlane nad przyciskami motywu, gdy nie jest załadowany żaden motyw"
     },
     "centerMessage": {
         "loadingData": "Ładowanie danych…",
-        "ready": "Zrobione!"
+        "ready": "Zrobione!",
+        "zoomIn": "Przybliż żeby zobaczyć lub edytować",
+        "retrying": "Ładowanie danych nie powiodło się. Spróbujemy ponownie za {liczba} sekund…"
     }
 }
