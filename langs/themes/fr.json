@@ -165,7 +165,7 @@
             },
             "3": {
                 "tagRenderings": {
-                    "2": {
+                    "5": {
                         "render": "<strong>{name}</strong>"
                     }
                 }

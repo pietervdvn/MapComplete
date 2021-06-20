@@ -434,26 +434,63 @@
                         }
                     },
                     "3": {
+                        "question": "How long is this climbing route (in meters)?",
                         "render": "This route is {climbing:length} meter long"
                     },
                     "4": {
+                        "question": "What is the difficulty of this climbing route according to the french/belgian system?",
                         "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Climbing route"
                     }
                 }
             },
             "3": {
                 "name": "Climbing opportunities",
                 "title": {
-                    "render": "Climbing opportunity"
+                    "render": "Climbing opportunity",
+                    "mappings": {
+                        "0": {
+                            "then": "Climbing crag"
+                        },
+                        "1": {
+                            "then": "Climbing area <b>{name}</b>"
+                        },
+                        "2": {
+                            "then": "Climbing site"
+                        },
+                        "3": {
+                            "then": "Climbing opportunity <b>{name}</b>"
+                        }
+                    }
                 },
                 "description": "A climbing opportunity",
                 "tagRenderings": {
-                    "2": {
+                    "3": {
+                        "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
+                    },
+                    "4": {
+                        "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
+                    },
+                    "5": {
                         "render": "<strong>{name}</strong>",
                         "question": "What is the name of this climbing opportunity?",
                         "mappings": {
                             "0": {
                                 "then": "This climbing opportunity doesn't have a name"
+                            }
+                        }
+                    },
+                    "6": {
+                        "mappings": {
+                            "0": {
+                                "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
+                            },
+                            "1": {
+                                "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
                             }
                         }
                     }
@@ -483,6 +520,9 @@
                             },
                             "1": {
                                 "then": "Climbing is possible here"
+                            },
+                            "2": {
+                                "then": "Climbing is not possible here"
                             }
                         }
                     }
@@ -494,18 +534,51 @@
                 "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
             },
             "1": {
+                "mappings": {
+                    "0": {
+                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+                    },
+                    "1": {
+                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+                    },
+                    "2": {
+                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+                    },
+                    "3": {
+                        "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+                    }
+                }
+            },
+            "2": {
+                "question": "Who can access here?",
+                "mappings": {
+                    "0": {
+                        "then": "Publicly accessible to anyone"
+                    },
+                    "1": {
+                        "then": "You need a permit to access here"
+                    },
+                    "2": {
+                        "then": "Only custumers"
+                    },
+                    "3": {
+                        "then": "Only club members"
+                    }
+                }
+            },
+            "4": {
                 "render": "The routes are <b>{climbing:length}m</b> long on average",
                 "question": "What is the (average) length of the routes in meters?"
             },
-            "2": {
+            "5": {
                 "question": "What is the level of the easiest route here, accoring to the french classification system?",
                 "render": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system"
             },
-            "3": {
+            "6": {
                 "question": "What is the level of the most difficult route here, accoring to the french classification system?",
                 "render": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system"
             },
-            "4": {
+            "7": {
                 "question": "Is bouldering possible here?",
                 "mappings": {
                     "0": {
@@ -522,7 +595,7 @@
                     }
                 }
             },
-            "5": {
+            "8": {
                 "question": "Is toprope climbing possible here?",
                 "mappings": {
                     "0": {
@@ -536,7 +609,7 @@
                     }
                 }
             },
-            "6": {
+            "9": {
                 "question": "Is sport climbing possible here on fixed anchors?",
                 "mappings": {
                     "0": {
@@ -550,7 +623,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Is traditional climbing possible here (using own gear e.g. chocks)?",
                 "mappings": {
                     "0": {
@@ -564,7 +637,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Is there a speed climbing wall?",
                 "mappings": {
                     "0": {

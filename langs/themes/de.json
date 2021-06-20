@@ -177,7 +177,7 @@
                 },
                 "description": "Eine Klettergelegenheit",
                 "tagRenderings": {
-                    "2": {
+                    "5": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wie heißt diese Klettergelegenheit?",
                         "mappings": {
@@ -212,6 +212,9 @@
                             },
                             "1": {
                                 "then": "Hier kann geklettert werden"
+                            },
+                            "2": {
+                                "then": "Hier kann nicht geklettert werden"
                             }
                         }
                     }
@@ -222,19 +225,19 @@
             "0": {
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
             },
-            "1": {
+            "4": {
                 "render": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
                 "question": "Wie lang sind die Routen (durchschnittlich) in Metern?"
             },
-            "2": {
+            "5": {
                 "question": "Welche Schwierigkeit hat hier die leichteste Route (französisch/belgisches System)?",
                 "render": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
             },
-            "3": {
+            "6": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
                 "render": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)"
             },
-            "4": {
+            "7": {
                 "question": "Kann hier gebouldert werden?",
                 "mappings": {
                     "0": {
@@ -251,7 +254,7 @@
                     }
                 }
             },
-            "5": {
+            "8": {
                 "question": "Ist Toprope-Klettern hier möglich?",
                 "mappings": {
                     "0": {
@@ -265,7 +268,7 @@
                     }
                 }
             },
-            "6": {
+            "9": {
                 "question": "Ist hier Sportklettern möglich (feste Ankerpunkte)?",
                 "mappings": {
                     "0": {
@@ -279,7 +282,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
                 "mappings": {
                     "0": {
@@ -293,7 +296,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Gibt es hier eine Speedkletter-Wand?",
                 "mappings": {
                     "0": {
