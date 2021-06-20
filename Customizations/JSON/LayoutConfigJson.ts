@@ -115,7 +115,29 @@ export interface LayoutConfigJson {
     roamingRenderings?: (TagRenderingConfigJson | string)[],
 
     /**
-     * An override applied on all layers of the theme
+     * An override applied on all layers of the theme.
+     * 
+     * E.g.: if there are two layers defined:
+     * ```
+     * "layers"[
+     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ...}},
+     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ...}}
+     * ]
+     * ```
+     * 
+     * and overrideAll is specified:
+     * ```
+     * "overrideAll": {
+     *     "osmSource":{"geoJsonSource":"xyz"}
+     * }
+     * then the result will be that all the layers will have these properties applied and result in:
+     * "layers"[
+     *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ..., "geoJsonSource":"xyz"}},
+     *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ..., "geoJsonSource":"xyz"}}
+     * ]
+     * ```
+     * 
+     * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list)
      */
     overrideAll?: any;
     
