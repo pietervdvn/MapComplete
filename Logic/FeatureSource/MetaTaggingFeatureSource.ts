@@ -4,6 +4,7 @@ import State from "../../State";
 import Hash from "../Web/Hash";
 import MetaTagging from "../MetaTagging";
 import ExtractRelations from "../Osm/ExtractRelations";
+import FeatureSourceMerger from "./FeatureSourceMerger";
 
 export default class MetaTaggingFeatureSource implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>(undefined);
@@ -14,6 +15,10 @@ export default class MetaTaggingFeatureSource implements FeatureSource {
         const self = this;
         this.name = "MetaTagging of " + source.name
 
+        if(allFeaturesSource.features === undefined){
+            throw ("Initialize the featuresource fully first!"+allFeaturesSource.name)
+        }
+        
         function update() {
             const featuresFreshness = source.features.data
             if (featuresFreshness === undefined) {

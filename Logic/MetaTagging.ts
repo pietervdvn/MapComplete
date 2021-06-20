@@ -3,7 +3,6 @@ import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
 import {Relation} from "./Osm/ExtractRelations";
 import FeatureSource from "./FeatureSource/FeatureSource";
-import State from "../State";
 
 
 interface Params {
@@ -48,32 +47,43 @@ export default class MetaTagging {
             layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
         }
 
-        const featuresPerLayer = new Map<string, any[]>();
-        for (const feature of (allKnownFeatures.features?.data ?? features ?? [])) {
+        allKnownFeatures.features.addCallbackAndRun(newFeatures => {
 
-            const key = feature.feature._matching_layer_id;
-            if (!featuresPerLayer.has(key)) {
-                featuresPerLayer.set(key, [])
-            }
-            featuresPerLayer.get(key).push(feature.feature)
-        }
 
-        for (const feature of features) {
-            // @ts-ignore
-            const key = feature.feature._matching_layer_id;
-            const f = layerFuncs.get(key);
-            if (f === undefined) {
-                continue;
-            }
-           
-            try {
-                f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
-            } catch (e) {
-                console.error(e)
+
+            const featuresPerLayer = new Map<string, any[]>();
+            for (const feature of (newFeatures.concat(features))) {
+
+                const key = feature.feature._matching_layer_id;
+                if (!featuresPerLayer.has(key)) {
+                    featuresPerLayer.set(key, [])
+                }
+                featuresPerLayer.get(key).push(feature.feature)
             }
 
-        }
+            for (const feature of features) {
+                // @ts-ignore
+                const key = feature.feature._matching_layer_id;
+                const f = layerFuncs.get(key);
+                if (f === undefined) {
+                    continue;
+                }
 
+                try {
+                    f({featuresPerLayer: featuresPerLayer, memberships: relations}, feature.feature)
+                } catch (e) {
+                    console.error(e)
+                }
+
+            }
+            
+            
+            
+            
+            
+            
+        })
+        
 
     }
 
@@ -105,7 +115,7 @@ export default class MetaTagging {
                         }
                         if (typeof result !== "string") {
                             // Make sure it is a string!
-                            result = "" + result;
+                            result = JSON.stringify(result);
                         }
                         feature.properties[key] = result;
                     } catch (e) {
