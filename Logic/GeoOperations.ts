@@ -44,17 +44,16 @@ export class GeoOperations {
             const coor = feature.geometry.coordinates;
             for (const otherFeature of otherFeatures) {
 
+                if(feature.id === otherFeature.id){
+                    continue;
+                }
+
                 if (otherFeature.geometry === undefined) {
                     console.error("No geometry for feature ", feature)
                     throw "List of other features contains a feature without geometry an undefined"
                 }
 
-                let otherFeatureBBox = BBox.get(otherFeature);
-                if (!featureBBox.overlapsWith(otherFeatureBBox)) {
-                    continue;
-                }
-
-                if (this.inside(coor, otherFeature)) {
+                if (GeoOperations.inside(coor, otherFeature)) {
                     result.push({feat: otherFeature, overlap: undefined})
                 }
             }
@@ -64,6 +63,11 @@ export class GeoOperations {
         if (feature.geometry.type === "LineString") {
 
             for (const otherFeature of otherFeatures) {
+
+                if(feature.id === otherFeature.id){
+                    continue;
+                }
+                
                 const otherFeatureBBox = BBox.get(otherFeature);
                 const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
                 if (!overlaps) {
@@ -121,6 +125,18 @@ export class GeoOperations {
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
 
             for (const otherFeature of otherFeatures) {
+                
+                if(feature.id === otherFeature.id){
+                    continue;
+                }
+                
+                if(otherFeature.geometry.type === "Point"){
+                    if (this.inside(otherFeature, feature)) {
+                        result.push({feat: otherFeature, overlap: undefined})
+                    }
+                    continue;
+                }
+                
                 const otherFeatureBBox = BBox.get(otherFeature);
                 const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
                 if (!overlaps) {
@@ -153,6 +169,10 @@ export class GeoOperations {
 
         if (feature.geometry.type === "Point") {
             return false;
+        }
+        
+        if(pointCoordinate.geometry !== undefined){
+            pointCoordinate = pointCoordinate.geometry.coordinates
         }
 
         if (feature.geometry.type === "MultiPolygon") {
