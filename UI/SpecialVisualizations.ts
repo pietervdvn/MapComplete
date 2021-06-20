@@ -156,9 +156,10 @@ export default class SpecialVisualizations {
                 ],
                 constr: (state: State, tagSource: UIEventSource<any>, args: string[]) =>{
                     return new VariableUiElement(
-                        tagSource.map(tags => {
+                        tagSource
+                            .map(tags => tags[args[0]])
+                            .map(listStr => {
                             try{
-                                const listStr = tags[args[0]]
                                 if("" === listStr ?? ""){
                                     return "Nothing defined";
                                 }
