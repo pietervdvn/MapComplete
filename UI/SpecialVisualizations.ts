@@ -18,6 +18,9 @@ import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
+import List from "./Base/List";
+import Title from "./Base/Title";
+import Table from "./Base/Table";
 
 export default class SpecialVisualizations {
 
@@ -185,7 +188,11 @@ export default class SpecialVisualizations {
                                 const keys = Array.from(counts.keys())
                                 keys.sort()
                                 
-                                return "<ul>"+keys.map(key => `<li><b>${key}:</b> ${counts.get(key)}</li>`).join("")+"</ul>"
+                                return new List(keys.map(key=> new Combine[
+                                    new FixedUiElement(key).SetClass("font-bold"),
+                                        counts.get(key)
+                                    ]));
+                                
                                 
                             }catch{
                                 return "Could not generate histogram" // TODO translate
@@ -253,18 +260,12 @@ export default class SpecialVisualizations {
         const helpTexts =
             SpecialVisualizations.specialVisualizations.map(viz => new Combine(
                 [
-                    `<h3>${viz.funcName}</h3>`,
+                    new Title(viz.funcName, 3),
                     viz.docs,
-                    "<ol>",
-                    ...viz.args.map(arg => new Combine([
-                        "<li>",
-                        "<b>" + arg.name + "</b>: ",
-                        arg.doc,
-                        arg.defaultValue === undefined ? "" : (" Default: <span class='literal-code'>" + arg.defaultValue + "</span>"),
-                        "</li>"
-                    ])),
-                    "</ol>",
-                    "<b>Example usage: </b>",
+                    new Table( ["name","default","description"], 
+                        viz.args.map(arg => [arg.name, arg.defaultValue ?? "undefined", arg.doc])
+                        ),
+                    new Title("Example usage", 4),
                     new FixedUiElement(
                         viz.example ?? "{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}"
                     ).SetClass("literal-code"),
@@ -274,7 +275,7 @@ export default class SpecialVisualizations {
 
 
         return new Combine([
-                "<h3>Special tag renderings</h3>",
+            new Title("Special tag renderings",3),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                 "General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
