@@ -23,13 +23,13 @@ Before proceeding, some warnings:
 </ul>
 In the layer object, add a field <b>calculatedTags</b>, e.g.:
 
-<div class="code">
+\`\`\`
   "calculatedTags": [
     "_someKey=javascript-expression",
     "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
     "_distanceCloserThen3Km=feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
   ]
-</div>
+\`\`\`
 
 The above code will be executed for every feature in the layer. The feature is accessible as <b>feat</b> and is an amended geojson object:
 - <b>area</b> contains the surface area (in square meters) of the object
