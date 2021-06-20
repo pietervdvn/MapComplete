@@ -143,6 +143,57 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
+            
+            {
+                funcName: "histogram",
+                docs:"Create a histogram for a list of given values, read from the properties.",
+                example: "`{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram",
+                args:[
+                    {
+                        name: "key",
+                        doc: "The key to be read and to generate a histogram from"
+                    }
+                ],
+                constr: (state: State, tagSource: UIEventSource<any>, args: string[]) =>{
+                    return new VariableUiElement(
+                        tagSource.map(tags => {
+                            try{
+                                const listStr = tags[args[0]]
+                                if("" === listStr ?? ""){
+                                    return "Nothing defined";
+                                }
+                                const list : string[] = JSON.parse(listStr)
+
+                                if(list.length === 0){
+                                    return "No values given";
+                                }
+                                
+                                const counts = new Map<string, number>()
+                                for (const key of list) {
+                                    if(key === null || key === undefined || key === ""){
+                                        continue;
+                                    }
+                                    
+                                    if(!counts.has(key)){
+                                        counts.set(key, 1)
+                                    }else{
+                                        counts.set(key, counts.get(key) + 1)
+                                    }
+                                }
+                                const keys = Array.from(counts.keys())
+                                keys.sort()
+                                
+                                return "<ul>"+keys.map(key => `<li><b>${key}:</b> ${counts.get(key)}</li>`).join("")+"</ul>"
+                                
+                            }catch{
+                                return "Could not generate histogram" // TODO translate
+                            }
+                            
+                            
+                        })
+                    )
+        }
+            },
             {
                 funcName: "share_link",
                 docs: "Creates a link that (attempts to) open the native 'share'-screen",
