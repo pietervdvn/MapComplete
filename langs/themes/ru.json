@@ -350,7 +350,7 @@
             },
             "3": {
                 "tagRenderings": {
-                    "2": {
+                    "5": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
@@ -364,7 +364,7 @@
             }
         },
         "roamingRenderings": {
-            "6": {
+            "9": {
                 "mappings": {
                     "0": {
                         "then": "Здесь можно заняться спортивным скалолазанием"

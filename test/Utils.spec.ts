@@ -77,6 +77,33 @@ export default class UtilsSpec extends T {
                 console.log("Restored version has ", restored.length, "chars")
                 equal(str, restored)
 
+            }],
+            ["TestMerge", () => {
+
+                const source = {
+                    abc: "def",
+                    foo: "bar",
+                    list0: ["overwritten"],
+                    "list1+": ["appended"]
+                }
+                const target = {
+                    "xyz": "omega",
+                    "list0": ["should-be-gone"],
+                    "list1": ["should-be-kept"],
+                    "list2": ["should-be-untouched"]
+                }
+                const result = Utils.Merge(source, target)
+
+                equal(result.abc, "def")
+                equal(result.foo, "bar")
+                equal(result.xyz, "omega")
+                equal(result.list0.length, 1)
+                equal(result.list0[0], "overwritten")
+                equal(result.list1.length, 2)
+                equal(result.list1[0], "should-be-kept")
+                equal(result.list1[1], "appended")
+                equal(result.list2.length, 1)
+                equal(result.list2[0], "should-be-untouched")
             }]
         ]);
     }

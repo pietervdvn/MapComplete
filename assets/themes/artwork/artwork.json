@@ -11,7 +11,8 @@
     "it": "Mappa libera dell’arte",
     "ru": "Открытая карта произведений искусства",
     "ja": "オープン アートワーク マップ",
-    "zh_Hant": "開放藝術品地圖"
+    "zh_Hant": "開放藝術品地圖",
+    "sv": "Öppen konstverkskarta"
   },
   "description": {
     "en": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
@@ -36,6 +37,7 @@
     "ru",
     "ja",
     "zh_Hant",
+    "sv",
     "es",
     "nb_NO"
   ],
@@ -374,7 +376,7 @@
             "fr": "Sur quel site web pouvons-nous trouver plus d'informations sur cette œuvre d'art?",
             "de": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",
             "it": "Su quale sito web è possibile trovare altre informazioni riguardanti quest’opera?",
-            "ru": "На каком сайте можно найти больше информации об этой работе?",
+            "ru": "Есть ли сайт с более подробной информацией об этой работе?",
             "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
             "zh_Hant": "在那個網站能夠找到更多藝術品的資訊？"
           },

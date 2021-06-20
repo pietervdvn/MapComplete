@@ -13,7 +13,8 @@
     "ru": "Открытая карта AED (Автоматизированных внешних дефибрилляторов)",
     "ja": "オープンAEDマップ",
     "zh_Hant": "開放AED地圖",
-    "nb_NO": "Åpne AED-kart"
+    "nb_NO": "Åpne AED-kart",
+    "sv": "Öppna AED-karta"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/logo.svg",
@@ -28,7 +29,8 @@
     "it": "Su questa mappa. si possono trovare e segnalare i defibrillatori nelle vicinanze",
     "ru": "На этой карте вы можете найти и отметить ближайшие дефибрилляторы",
     "ja": "この地図では近くにある除細動器(AED)を見つけてマークします",
-    "zh_Hant": "在這份地圖上，你可以找到與標記附近的除顫器"
+    "zh_Hant": "在這份地圖上，你可以找到與標記附近的除顫器",
+    "sv": "På denna karta kan man hitta och markera närliggande defibrillatorer"
   },
   "language": [
     "en",
@@ -43,7 +45,8 @@
     "ru",
     "ja",
     "zh_Hant",
-    "nb_NO"
+    "nb_NO",
+    "sv"
   ],
   "version": "2020-08-29",
   "startLat": 0,

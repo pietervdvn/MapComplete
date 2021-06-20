@@ -168,7 +168,8 @@
             "it": "Materiale: legno",
             "ru": "Материал: дерево",
             "zh_Hans": "材质：木",
-            "nb_NO": "Materiale: tre"
+            "nb_NO": "Materiale: tre",
+            "zh_Hant": "材質：木頭"
           }
         },
         {
@@ -183,7 +184,8 @@
             "it": "Materiale: metallo",
             "ru": "Материал: металл",
             "zh_Hans": "材质：金属",
-            "nb_NO": "Materiale: metall"
+            "nb_NO": "Materiale: metall",
+            "zh_Hant": "材質：金屬"
           }
         },
         {
@@ -198,7 +200,8 @@
             "it": "Materiale: pietra",
             "ru": "Материал: камень",
             "zh_Hans": "材质：石头",
-            "nb_NO": "Materiale: stein"
+            "nb_NO": "Materiale: stein",
+            "zh_Hant": "材質：石頭"
           }
         },
         {
@@ -213,7 +216,8 @@
             "it": "Materiale: cemento",
             "ru": "Материал: бетон",
             "zh_Hans": "材质：混凝土",
-            "nb_NO": "Materiale: betong"
+            "nb_NO": "Materiale: betong",
+            "zh_Hant": "材質：水泥"
           }
         },
         {
@@ -228,7 +232,8 @@
             "it": "Materiale: plastica",
             "ru": "Материал: пластик",
             "zh_Hans": "材质：塑料",
-            "nb_NO": "Materiale: plastikk"
+            "nb_NO": "Materiale: plastikk",
+            "zh_Hant": "材質：塑膠"
           }
         },
         {
@@ -243,7 +248,8 @@
             "it": "Materiale: acciaio",
             "ru": "Материал: сталь",
             "zh_Hans": "材质：不锈钢",
-            "nb_NO": "Materiale: stål"
+            "nb_NO": "Materiale: stål",
+            "zh_Hant": "材質：鋼鐵"
           }
         }
       ],
@@ -255,7 +261,8 @@
         "hu": "Miből van a pad (ülő része)?",
         "it": "Di che materiale è fatta questa panchina?",
         "zh_Hans": "这个长椅（或座椅）是用什么材料做的？",
-        "ru": "Из какого материала сделана скамейка?"
+        "ru": "Из какого материала сделана скамейка?",
+        "zh_Hant": "這個長椅 (座位) 是什麼做的？"
       }
     },
     {
@@ -267,7 +274,8 @@
         "hu": "Milyen irányba néz a pad?",
         "it": "In che direzione si guarda quando si è seduti su questa panchina?",
         "ru": "В каком направлении вы смотрите, когда сидите на скамейке?",
-        "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？"
+        "zh_Hans": "坐在长椅上的时候你目视的方向是哪边？",
+        "zh_Hant": "坐在長椅時是面對那個方向？"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -277,7 +285,8 @@
         "hu": "A pad {direction}° felé néz.",
         "it": "Quando si è seduti su questa panchina, si guarda verso {direction}°.",
         "zh_Hans": "坐在长椅上的时候目视方向为 {direction}°方位。",
-        "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°."
+        "ru": "Сидя на скамейке, вы смотрите в сторону {direction}°.",
+        "zh_Hant": "當坐在長椅時，那個人朝向 {direction}°。"
       },
       "freeform": {
         "key": "direction",
@@ -454,7 +463,8 @@
         "it": "Questa panchina è stata controllata l’ultima volta in data {survey:date}",
         "zh_Hans": "这个长椅于 {survey:date}最后一次实地调查",
         "de": "Diese Bank wurde zuletzt überprüft am {survey:date}",
-        "ru": "Последний раз обследование этой скамейки проводилось {survey:date}"
+        "ru": "Последний раз обследование этой скамейки проводилось {survey:date}",
+        "zh_Hant": "這個長椅最後是在 {survey:date} 探查的"
       },
       "freeform": {
         "key": "survey:date",
@@ -497,7 +507,8 @@
         "ru": "Скамейка",
         "id": "Bangku",
         "zh_Hans": "长椅",
-        "nb_NO": "Benk"
+        "nb_NO": "Benk",
+        "zh_Hant": "長椅"
       },
       "description": {
         "en": "Add a new bench",
@@ -509,7 +520,8 @@
         "it": "Aggiungi una nuova panchina",
         "ru": "Добавить новую скамейку",
         "zh_Hans": "增加一个新的长椅",
-        "nb_NO": "Legg til en ny benk"
+        "nb_NO": "Legg til en ny benk",
+        "zh_Hant": "新增長椅"
       }
     }
   ]

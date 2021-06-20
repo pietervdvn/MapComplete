@@ -220,14 +220,18 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         const sourceV = source[key];
         const targetV = target[key]
         if (typeof sourceV === "string") {
+            if(targetV === undefined){
+                target[key] = source[key];
+                continue;
+            }
+            
             if (targetV[language] === sourceV) {
                 // Already the same
                 continue;
             }
 
             if (typeof targetV === "string") {
-                console.error("Could not add a translation to string ", targetV, ". The translation is", sourceV, " in " + context)
-                continue;
+                throw `At context ${context}: Could not add a translation. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(sourceV)}`
             }
 
             targetV[language] = sourceV;
@@ -240,7 +244,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         }
         if (typeof sourceV === "object") {
             if (targetV === undefined) {
-                throw "MergingTranslations failed: source object has a path that does not exist anymore in the target: " + context
+                target[language] = sourceV;
             } else {
                 MergeTranslation(sourceV, targetV, language, context + "." + key);
             }
@@ -256,7 +260,7 @@ function mergeLayerTranslation(layerConfig: { id: string }, path: string, transl
     const id = layerConfig.id;
     translationFiles.forEach((translations, lang) => {
         const translationsForLayer = translations[id]
-        MergeTranslation(translationsForLayer, layerConfig, lang, id)
+        MergeTranslation(translationsForLayer, layerConfig, lang, path+":"+id)
     })
 
 }

@@ -5,7 +5,8 @@
     "nl": "Fietsbibliotheek",
     "fr": "Vélothèque",
     "it": "Bici in prestito",
-    "ru": "Велосипедная библиотека"
+    "ru": "Велосипедная библиотека",
+    "zh_Hant": "單車圖書館"
   },
   "minzoom": 8,
   "source": {
@@ -17,7 +18,8 @@
       "nl": "Fietsbibliotheek",
       "fr": "Vélothèque",
       "it": "Bici in prestito",
-      "ru": "Велосипедная библиотека"
+      "ru": "Велосипедная библиотека",
+      "zh_Hant": "單車圖書館"
     },
     "mappings": [
       {
@@ -45,7 +47,8 @@
     "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
     "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
     "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
-    "ru": "Учреждение, где велосипед может быть арендован на более длительный срок"
+    "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
+    "zh_Hant": "能夠長期租用單車的設施"
   },
   "tagRenderings": [
     "images",
@@ -56,7 +59,8 @@
         "fr": "Quel est le nom de cette vélothèque ?",
         "it": "Qual è il nome di questo “bici in prestito”?",
         "ru": "Как называется эта велосипедная библиотека?",
-        "nb_NO": "Hva heter dette sykkelbiblioteket?"
+        "nb_NO": "Hva heter dette sykkelbiblioteket?",
+        "zh_Hant": "這個單車圖書館的名稱是？"
       },
       "render": {
         "en": "This bicycle library is called {name}",
@@ -64,7 +68,8 @@
         "fr": "Cette vélothèque s'appelle {name}",
         "it": "Il “bici in prestito” è chiamato {name}",
         "ru": "Эта велосипедная библиотека называется {name}",
-        "nb_NO": "Dette sykkelbiblioteket heter {name}"
+        "nb_NO": "Dette sykkelbiblioteket heter {name}",
+        "zh_Hant": "這個單車圖書館叫做 {name}"
       },
       "freeform": {
         "key": "name"
@@ -83,7 +88,8 @@
         "it": "Quanto costa il prestito di una bicicletta?",
         "ru": "Сколько стоит прокат велосипеда?",
         "de": "Wie viel kostet das Ausleihen eines Fahrrads?",
-        "nb_NO": "Hvor mye koster det å leie en sykkel?"
+        "nb_NO": "Hvor mye koster det å leie en sykkel?",
+        "zh_Hant": "租用單車的費用多少？"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -93,7 +99,8 @@
         "it": "Il prestito di una bicicletta costa {charge}",
         "ru": "Стоимость аренды велосипеда {charge}",
         "de": "Das Ausleihen eines Fahrrads kostet {charge}",
-        "nb_NO": "Sykkelleie koster {charge}"
+        "nb_NO": "Sykkelleie koster {charge}",
+        "zh_Hant": "租借單車需要 {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -117,7 +124,8 @@
             "it": "Il prestito di una bicicletta è gratuito",
             "de": "Das Ausleihen eines Fahrrads ist kostenlos",
             "ru": "Прокат велосипедов бесплатен",
-            "nb_NO": "Det er gratis å leie en sykkel"
+            "nb_NO": "Det er gratis å leie en sykkel",
+            "zh_Hant": "租借單車免費"
           }
         },
         {
@@ -132,7 +140,8 @@
             "nl": "Een fiets huren kost €20/jaar en €20 waarborg",
             "fr": "Emprunter un vélo coûte 20 €/an et 20 € de garantie",
             "it": "Il prestito di una bicicletta costa 20 €/anno più 20 € di garanzia",
-            "de": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr"
+            "de": "Das Ausleihen eines Fahrrads kostet 20€ pro Jahr und 20€ Gebühr",
+            "zh_Hant": "租借單車價錢 €20/year 與 €20 保證金"
           }
         }
       ]
@@ -146,7 +155,8 @@
         "it": "Chi può prendere in prestito le biciclette qua?",
         "zh_Hans": "谁可以从这里借自行车？",
         "de": "Wer kann hier Fahrräder ausleihen?",
-        "ru": "Кто здесь может арендовать велосипед?"
+        "ru": "Кто здесь может арендовать велосипед?",
+        "zh_Hant": "誰可以在這裡租單車？"
       },
       "multiAnswer": true,
       "mappings": [
@@ -159,7 +169,8 @@
             "hu": "",
             "it": "Sono disponibili biciclette per bambini",
             "de": "Fahrräder für Kinder verfügbar",
-            "ru": "Доступны детские велосипеды"
+            "ru": "Доступны детские велосипеды",
+            "zh_Hant": "提供兒童單車"
           }
         },
         {
@@ -170,7 +181,8 @@
             "fr": "Vélos pour adultes disponibles",
             "it": "Sono disponibili biciclette per adulti",
             "de": "Fahrräder für Erwachsene verfügbar",
-            "ru": "Доступны велосипеды для взрослых"
+            "ru": "Доступны велосипеды для взрослых",
+            "zh_Hant": "有提供成人單車"
           }
         },
         {
@@ -181,7 +193,8 @@
             "fr": "Vélos pour personnes handicapées disponibles",
             "it": "Sono disponibili biciclette per disabili",
             "de": "Fahrräder für Behinderte verfügbar",
-            "ru": "Доступны велосипеды для людей с ограниченными возможностями"
+            "ru": "Доступны велосипеды для людей с ограниченными возможностями",
+            "zh_Hant": "有提供行動不便人士的單車"
           }
         }
       ]
@@ -194,7 +207,8 @@
       "title": {
         "en": "Fietsbibliotheek",
         "nl": "Bicycle library",
-        "ru": "Велосипедная библиотека"
+        "ru": "Велосипедная библиотека",
+        "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)"
       },
       "tags": [
         "amenity=bicycle_library"
@@ -204,7 +218,8 @@
         "en": "A bicycle library has a collection of bikes which can be lent",
         "fr": "Une vélothèque a une collection de vélos qui peuvent être empruntés",
         "it": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
-        "ru": "В велосипедной библиотеке есть велосипеды для аренды"
+        "ru": "В велосипедной библиотеке есть велосипеды для аренды",
+        "zh_Hant": "單車圖書館有一大批單車供人租借"
       }
     }
   ],

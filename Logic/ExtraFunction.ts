@@ -38,8 +38,8 @@ export class ExtraFunction {
         ]),
         "Some advanced functions are available on **feat** as well:"
     ]).SetClass("flex-col").AsMarkdown();
-
-
+       
+    
     private static readonly OverlapFunc = new ExtraFunction(
         "overlapWith",
         "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point",

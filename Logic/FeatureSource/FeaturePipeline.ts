@@ -16,7 +16,7 @@ import RegisteringFeatureSource from "./RegisteringFeatureSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
-    public features: UIEventSource<{ feature: any; freshness: Date }[]>;
+    public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{feature: any; freshness: Date}[]>([]);
 
     public readonly name = "FeaturePipeline"
 
@@ -83,7 +83,8 @@ export default class FeaturePipeline implements FeatureSource {
                     selectedElement,
                     merged
                 ));
-        this.features = source.features;
+        
+        source.features.syncWith(this.features)
     }
 
 }

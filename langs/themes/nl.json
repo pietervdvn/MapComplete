@@ -312,9 +312,11 @@
                         }
                     },
                     "3": {
+                        "question": "Hoe lang is deze klimroute (in meters)?",
                         "render": "Deze klimroute is {climbing:length} meter lang"
                     },
                     "4": {
+                        "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
                         "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
                     }
                 }
@@ -322,11 +324,22 @@
             "3": {
                 "name": "Klimgelegenheden",
                 "title": {
-                    "render": "Klimgelegenheid"
+                    "render": "Klimgelegenheid",
+                    "mappings": {
+                        "1": {
+                            "then": "Klimsite <b>{name}</b>"
+                        },
+                        "2": {
+                            "then": "Klimsite"
+                        },
+                        "3": {
+                            "then": "Klimgelegenheid <b>{name}</b>"
+                        }
+                    }
                 },
                 "description": "Een klimgelegenheid",
                 "tagRenderings": {
-                    "2": {
+                    "5": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wat is de naam van dit Klimgelegenheid?",
                         "mappings": {
@@ -352,19 +365,19 @@
             }
         },
         "roamingRenderings": {
-            "1": {
+            "4": {
                 "render": "De klimroutes zijn gemiddeld <b>{climbing:length}m</b> lang",
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?"
             },
-            "2": {
+            "5": {
                 "question": "Wat is het niveau van de makkelijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De minimale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                "render": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem"
             },
-            "3": {
+            "6": {
                 "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
-                "render": "De maximale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                "render": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem"
             },
-            "4": {
+            "7": {
                 "question": "Is het mogelijk om hier te bolderen?",
                 "mappings": {
                     "0": {
@@ -381,7 +394,7 @@
                     }
                 }
             },
-            "5": {
+            "8": {
                 "question": "Is het mogelijk om hier te toprope-klimmen?",
                 "mappings": {
                     "0": {
@@ -395,7 +408,7 @@
                     }
                 }
             },
-            "6": {
+            "9": {
                 "question": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?",
                 "mappings": {
                     "0": {
@@ -409,7 +422,7 @@
                     }
                 }
             },
-            "7": {
+            "10": {
                 "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>",
                 "mappings": {
                     "0": {
@@ -423,7 +436,7 @@
                     }
                 }
             },
-            "8": {
+            "11": {
                 "question": "Is er een snelklimmuur (speed climbing)?",
                 "mappings": {
                     "0": {

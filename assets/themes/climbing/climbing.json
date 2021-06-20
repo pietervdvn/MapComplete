@@ -366,6 +366,10 @@
         },
         {
           "#": "Length",
+          "question": {
+            "en": "How long is this climbing route (in meters)?",
+            "nl": "Hoe lang is deze klimroute (in meters)?"
+          },
           "render": {
             "de": "Diese Route ist {climbing:length} Meter lang",
             "en": "This route is {climbing:length} meter long",
@@ -380,6 +384,10 @@
         },
         {
           "#": "Difficulty",
+          "question": {
+            "en": "What is the difficulty of this climbing route according to the french/belgian system?",
+            "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?"
+          },
           "render": {
             "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
             "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
@@ -394,17 +402,29 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/themes/climbing/climbing_route.svg"
+        "render": "circle:white;./assets/themes/climbing/climbing_route.svg"
       },
       "width": {
         "render": "4"
       },
       "iconSize": {
-        "render": "20,20,center"
+        "render": "28,28,center"
       },
       "color": {
         "render": "#0f0"
-      }
+      },
+      "presets": [
+        {
+          "title": {
+            "en": "Climbing route"
+          },
+          "tags": [
+            "sport=climbing",
+            "climbing=route"
+          ]
+        }
+      ],
+      "wayHandling": 2
     },
     {
       "id": "climbing",
@@ -433,7 +453,46 @@
           "de": "Klettermöglichkeit",
           "ja": "登坂教室",
           "nb_NO": "Klatremulighet"
-        }
+        },
+        "mappings": [
+          {
+            "if": "climbing=crag",
+            "then": {
+              "en": "Climbing crag"
+            }
+          },
+          {
+            "if": {
+              "and": [
+                {
+                  "or": [
+                    "climbing=area",
+                    "climbing=site"
+                  ]
+                },
+                "name~*"
+              ]
+            },
+            "then": {
+              "en": "Climbing area <b>{name}</b>",
+              "nl": "Klimsite <b>{name}</b>"
+            }
+          },
+          {
+            "if": "climbing=site",
+            "then": {
+              "en": "Climbing site",
+              "nl": "Klimsite"
+            }
+          },
+          {
+            "if": "name~*",
+            "then": {
+              "nl": "Klimgelegenheid <b>{name}</b>",
+              "en": "Climbing opportunity <b>{name}</b>"
+            }
+          }
+        ]
       },
       "description": {
         "nl": "Een klimgelegenheid",
@@ -445,6 +504,23 @@
       "tagRenderings": [
         "images",
         "questions",
+        {
+          "#": "Contained routes",
+          "render": "<h3>Contains the following routes</h3> <ul>{_contained_climbing_routes}</ul>",
+          "condition": "_contained_climbing_routes~*"
+        },  {
+          "#": "Contained routes length hist",
+          "render": {
+            "en": "<h3>Length overview</h3>{histogram(_length_hist)}"
+          }
+        },
+        {
+          "#": "Contained routes hist",
+          "render": {
+            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
+          }
+        },
+      
         {
           "#": "name",
           "render": {
@@ -480,6 +556,28 @@
                 "de": "Diese Klettergelegenheit hat keinen Namen",
                 "ja": "この登坂教室には名前がついていない"
               }
+            }
+          ]
+        },
+        {
+          "#": "Type",
+          "question": "What kind of climbing opportunity is this?",
+          "mappings": [
+            {
+              "if": "climbing=boulder",
+              "then": {
+                "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
+              }
+            },
+            {
+              "if": "climbing=crag",
+              "then": {
+                "en": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+              }
+            },
+            {
+              "if": "climbing=area",
+              "then": "A climbing area with one or more climbing crags and/or boulders"
             }
           ]
         },
@@ -519,7 +617,13 @@
           }
         }
       ],
-      "wayHandling": 2
+      "wayHandling": 2,
+      "calculatedTags": [
+        "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
+        "_contained_climbing_routes=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+        "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
+        "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])"
+      ]
     },
     {
       "id": "maybe_climbing",
@@ -533,13 +637,18 @@
       "minzoom": 19,
       "source": {
         "osmTags": {
-          "or": [
-            "leisure=sports_centre",
-            "barrier=wall",
-            "barrier=retaining_wall",
-            "natural=cliff",
-            "natural=rock",
-            "natural=stone"
+          "and": [
+            {
+              "or": [
+                "leisure=sports_centre",
+                "barrier=wall",
+                "barrier=retaining_wall",
+                "natural=cliff",
+                "natural=rock",
+                "natural=stone"
+              ]
+            },
+            "climbing="
           ]
         }
       },
@@ -606,6 +715,15 @@
                 "ja": "ここでは登ることができる",
                 "nb_NO": "Klatring er mulig her"
               }
+            },
+            {
+              "if": "climbing=no",
+              "then": {
+                "en": "Climbing is not possible here",
+                "de": "Hier kann nicht geklettert werden",
+                "ja": "ここでは登ることができない",
+                "nb_NO": "Klatring er ikke mulig her"
+              }
             }
           ]
         }
@@ -644,6 +762,102 @@
       }
     },
     {
+      "#": "Access from containing feature",
+      "mappings": [
+        {
+          "if": "_embedding_feature:access=yes",
+          "then": {
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+          }
+        },
+        {
+          "if": "_embedding_feature:access=permit",
+          "then": {
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+          }
+        },
+        {
+          "if": "_embedding_feature:access=customers",
+          "then": {
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to customers<br/>{_embedding_feature:access:description}"
+          }
+        },
+        {
+          "if": "_embedding_feature:access=members",
+          "then": {
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> only accessible to club members<br/>{_embedding_feature:access:description}"
+          }
+        },
+        {
+          "if": "_embedding_feature:access=no",
+          "then": "Not accessible as stated by <a href='#{_embedding_feature:id}'>the containing feature</a>"
+        }
+      ],
+      "condition": "_embedding_feature:access~*"
+    },
+    {
+      "#": "Access",
+      "question": {
+        "en": "Who can access here?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Publicly accessible to anyone"
+          }
+        },
+        {
+          "if": "access=permit",
+          "then": {
+            "en": "You need a permit to access here"
+          }
+        },
+        {
+          "if": "access=customers",
+          "then": {
+            "en": "Only custumers"
+          }
+        },
+        {
+          "if": "access=members",
+          "then": {
+            "en": "Only club members"
+          }
+        },
+        {
+          "if": "access=no",
+          "then": "Not accessible"
+        }
+      ],
+      "condition": {
+        "and": [
+          "climbing!=no",
+          "office=",
+          "club=",
+          {
+            "or": [
+              "sport=climbing",
+              "climbing:sport=yes"
+            ]
+          },
+          {
+            "or": [
+              "access~*",
+              "_embedding_feature:access="
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "#": "Access description (without _embedding_feature:access:description)",
+      "render": "{access:description}",
+      "freeform": {
+        "key": "access:description"
+      }
+    },
+    {
       "#": "Avg length?",
       "render": {
         "de": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
@@ -656,10 +870,13 @@
           "climbing!~route",
           "office=",
           "club=",
+          "climbing:toprope!=no",
           {
             "or": [
-              "climbing=sport",
-              "climbing=traditional"
+              "sport=climbing",
+              "climbing:sport=yes",
+              "climbing=traditional",
+              "climbing=gym"
             ]
           }
         ]
@@ -684,10 +901,10 @@
         "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?"
       },
       "render": {
-        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
-        "en": "The minimal difficulty is {climbing:grade:french} according to the french/belgian system",
-        "nl": "De minimale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french}です"
+        "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+        "en": "The minimal difficulty is {climbing:grade:french:min} according to the french/belgian system",
+        "nl": "De minimale klimmoeilijkheid is {climbing:grade:french:min} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -696,7 +913,13 @@
         "and": [
           "climbing!~route",
           "office=",
-          "club="
+          "club=",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          }
         ]
       }
     },
@@ -709,10 +932,10 @@
         "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?"
       },
       "render": {
-        "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french} (französisch/belgisches System)",
-        "en": "The maximal difficulty is {climbing:grade:french} according to the french/belgian system",
-        "nl": "De maximale klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
-        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french}です"
+        "de": "Die schwerste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
+        "en": "The maximal difficulty is {climbing:grade:french:max} according to the french/belgian system",
+        "nl": "De maximale klimmoeilijkheid is {climbing:grade:french:max} volgens het Franse/Belgische systeem",
+        "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
       },
       "freeform": {
         "key": "climbing:grade:french:max"
@@ -721,7 +944,13 @@
         "and": [
           "climbing!~route",
           "office=",
-          "club="
+          "club=",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          }
         ]
       }
     },
@@ -777,7 +1006,12 @@
       ],
       "condition": {
         "and": [
-          "sport=climbing",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          },
           "office=",
           "club="
         ]
@@ -823,7 +1057,12 @@
       ],
       "condition": {
         "and": [
-          "sport=climbing",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          },
           "office=",
           "club="
         ]
@@ -871,7 +1110,12 @@
       ],
       "condition": {
         "and": [
-          "sport=climbing",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          },
           "office=",
           "club="
         ]
@@ -917,7 +1161,12 @@
       ],
       "condition": {
         "and": [
-          "sport=climbing",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          },
           "office=",
           "club="
         ]
@@ -934,7 +1183,12 @@
       "condition": {
         "and": [
           "leisure=sports_centre",
-          "climbing:sport=yes",
+          {
+            "or": [
+              "climbing:sport=yes",
+              "sport=climbing"
+            ]
+          },
           "office=",
           "club="
         ]
@@ -970,5 +1224,15 @@
         }
       ]
     }
-  ]
+  ],
+  "overrideAll": {
+    "calculatedTags+": [
+      "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
+      "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
+      "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
+      "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
+      "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id",
+      "_layer=feat._layer_id"
+    ]
+  }
 }

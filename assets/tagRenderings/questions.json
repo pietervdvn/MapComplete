@@ -12,7 +12,9 @@
       "fr": "Quel est le numéro de téléphone de {name} ?",
       "de": "Was ist die Telefonnummer von {name}?",
       "nb_NO": "Hva er telefonnummeret til {name}?",
-      "ru": "Какой номер телефона у {name}?"
+      "ru": "Какой номер телефона у {name}?",
+      "sv": "Vad är telefonnumret till {name}?",
+      "zh_Hant": "{name} 的電話號碼是什麼？"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -40,7 +42,9 @@
       "fr": "Quelle est l'adresse courriel de {name} ?",
       "en": "What is the email address of {name}?",
       "nb_NO": "Hva er e-postadressen til {name}?",
-      "ru": "Какой адрес электронной почты у {name}?"
+      "ru": "Какой адрес электронной почты у {name}?",
+      "id": "Apa alamat surel dari {name}?",
+      "zh_Hant": "{name} 的電子郵件地址是什麼？"
     },
     "freeform": {
       "key": "email",
@@ -54,7 +58,9 @@
       "fr": "Quel est le site web de {name} ?",
       "gl": "Cal é a páxina web de {name}?",
       "nb_NO": "Hva er nettsiden til {name}?",
-      "ru": "Какой сайт у {name}?"
+      "ru": "Какой сайт у {name}?",
+      "id": "Apa situs web dari {name}?",
+      "zh_Hant": "{name} 網址是什麼？"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -67,7 +73,9 @@
       "nl": "Zijn er extra zaken die je niet in de bovenstaande vragen kwijt kon? Zet deze in de description<span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
       "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
       "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
-      "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
+      "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
+      "ru": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
+      "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -81,7 +89,8 @@
       "de": "Was sind die Öffnungszeiten von {name}?",
       "nl": "Wat zijn de openingsuren van {name}?",
       "nb_NO": "Hva er åpningstidene for {name})",
-      "ru": "Какое время работы у {name}?"
+      "ru": "Какое время работы у {name}?",
+      "zh_Hant": "{name} 的開放時間是什麼？"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -89,7 +98,8 @@
       "en": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}",
       "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
       "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
-      "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}"
+      "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
+      "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",

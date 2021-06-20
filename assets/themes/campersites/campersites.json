@@ -14,13 +14,15 @@
     "it": "Trova aree dove passare la notte con il tuo camper",
     "ru": "Найти места остановки, чтобы провести ночь в автофургоне",
     "ja": "キャンパーと夜を共にするキャンプサイトを見つける",
-    "fr": "Trouver des sites pour passer la nuit avec votre camping-car"
+    "fr": "Trouver des sites pour passer la nuit avec votre camping-car",
+    "zh_Hant": "露營者尋找渡過夜晚的場地"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
     "it": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
     "ru": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением.",
-    "ja": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。"
+    "ja": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。",
+    "zh_Hant": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。"
   },
   "language": [
     "en",
@@ -49,7 +51,8 @@
         "it": "Aree camper",
         "ru": "Площадки для кемпинга",
         "ja": "キャンプサイト",
-        "fr": "Campings"
+        "fr": "Campings",
+        "zh_Hant": "露營地"
       },
       "minzoom": 10,
       "source": {
@@ -66,7 +69,8 @@
           "it": "Area camper {name}",
           "ru": "Место для кемпинга {name}",
           "ja": "キャンプサイト {name}",
-          "fr": "Camping {name}"
+          "fr": "Camping {name}",
+          "zh_Hant": "露營地 {name}"
         },
         "mappings": [
           {
@@ -80,7 +84,8 @@
               "it": "Area camper senza nome",
               "ru": "Место для кемпинга без названия",
               "ja": "無名のキャンプサイト",
-              "fr": "Camping sans nom"
+              "fr": "Camping sans nom",
+              "zh_Hant": "沒有名稱的露營地"
             }
           }
         ]
@@ -90,7 +95,8 @@
         "it": "Aree camper",
         "ru": "площадки для кемпинга",
         "ja": "キャンプサイト",
-        "fr": "campings"
+        "fr": "campings",
+        "zh_Hant": "露營地"
       },
       "tagRenderings": [
         "images",
@@ -100,7 +106,8 @@
             "it": "Questo luogo è chiamato {name}",
             "ru": "Это место называется {name}",
             "ja": "この場所は {name} と呼ばれています",
-            "fr": "Cet endroit s'appelle {nom}"
+            "fr": "Cet endroit s'appelle {nom}",
+            "zh_Hant": "這個地方叫做 {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -108,7 +115,8 @@
             "ru": "Как называется это место?",
             "it": "Come viene chiamato questo luogo?",
             "ja": "ここは何というところですか?",
-            "fr": "Comment s'appelle cet endroit ?"
+            "fr": "Comment s'appelle cet endroit ?",
+            "zh_Hant": "這個地方叫做什麼？"
           },
           "freeform": {
             "key": "name"
@@ -120,7 +128,8 @@
             "it": "Ha una tariffa questo luogo?",
             "ru": "Взимается ли в этом месте плата?",
             "ja": "ここは有料ですか?",
-            "fr": "Cet endroit est-il payant ?"
+            "fr": "Cet endroit est-il payant ?",
+            "zh_Hant": "這個地方收費嗎？"
           },
           "mappings": [
             {
@@ -133,7 +142,8 @@
                 "en": "You need to pay for use",
                 "it": "Devi pagare per usarlo",
                 "ru": "За использование нужно платить",
-                "ja": "使用料を支払う必要がある"
+                "ja": "使用料を支払う必要がある",
+                "zh_Hant": "你要付費才能使用"
               }
             },
             {
@@ -150,7 +160,8 @@
                 "ru": "Можно использовать бесплатно",
                 "ja": "無料で使用可能",
                 "fr": "Peut être utilisé gratuitement",
-                "nb_NO": "Kan brukes gratis"
+                "nb_NO": "Kan brukes gratis",
+                "zh_Hant": "可以免費使用"
               }
             },
             {
@@ -166,7 +177,8 @@
             "it": "Questo luogo costa {charge}",
             "ru": "Это место взимает {charge}",
             "ja": "この場所は{charge} が必要",
-            "nb_NO": "Dette stedet tar {charge}"
+            "nb_NO": "Dette stedet tar {charge}",
+            "zh_Hant": "這個地方收費 {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -174,7 +186,8 @@
             "ru": "Сколько это место взимает?",
             "ja": "ここはいくらかかりますか？",
             "fr": "Combien coûte cet endroit ?",
-            "nb_NO": "pø"
+            "nb_NO": "pø",
+            "zh_Hant": "這個地方收多少費用？"
           },
           "freeform": {
             "key": "charge"
@@ -190,7 +203,8 @@
             "en": "Does this place have a sanitary dump station?",
             "it": "Questo luogo ha una stazione per lo scarico delle acque?",
             "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров?",
-            "ja": "この場所に衛生的なゴミ捨て場はありますか?"
+            "ja": "この場所に衛生的なゴミ捨て場はありますか?",
+            "zh_Hant": "這個地方有衛生設施嗎？"
           },
           "mappings": [
             {
@@ -204,7 +218,8 @@
                 "it": "Questo luogo ha una stazione per lo scarico delle acque",
                 "ru": "В этом кемпинге есть место для слива отходов из туалетных резервуаров",
                 "ja": "この場所には衛生的なゴミ捨て場がある",
-                "fr": "Cet endroit a une station de vidange sanitaire"
+                "fr": "Cet endroit a une station de vidange sanitaire",
+                "zh_Hant": "這個地方有衛生設施"
               }
             },
             {
@@ -217,7 +232,8 @@
                 "en": "This place does not have a sanitary dump station",
                 "it": "Questo luogo non ha una stazione per lo scarico delle acque",
                 "ru": "В этом кемпинге нет места для слива отходов из туалетных резервуаров",
-                "ja": "この場所には衛生的なゴミ捨て場がない"
+                "ja": "この場所には衛生的なゴミ捨て場がない",
+                "zh_Hant": "這個地方沒有衛生設施"
               }
             }
           ]
@@ -227,13 +243,15 @@
             "en": "{capacity} campers can use this place at the same time",
             "it": "{capacity} camper possono usare questo luogo al contempo",
             "ru": "{capacity} кемперов могут использовать это место одновременно",
-            "ja": "{capacity} 人が同時に使用できます"
+            "ja": "{capacity} 人が同時に使用できます",
+            "zh_Hant": "{capacity} 露營者能夠同時使用這個地方"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
             "it": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
             "ru": "Сколько кемперов может здесь остановиться? (пропустите, если нет очевидного количества мест или разрешенных транспортных средств)",
-            "ja": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)"
+            "ja": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)",
+            "zh_Hant": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)"
           },
           "freeform": {
             "key": "capacity",
@@ -247,7 +265,8 @@
             "it": "Questo luogo ha l’accesso a internet?",
             "ru": "Предоставляет ли это место доступ в Интернет?",
             "ja": "この場所はインターネットにアクセスできますか?",
-            "fr": "Cet endroit offre-t-il un accès à Internet ?"
+            "fr": "Cet endroit offre-t-il un accès à Internet ?",
+            "zh_Hant": "這個地方有提網路連線嗎？"
           },
           "mappings": [
             {
@@ -261,7 +280,8 @@
                 "id": "Akses Web tersedia",
                 "ru": "Есть доступ в Интернет",
                 "it": "C’è l’accesso a internet",
-                "ja": "インターネットアクセスがある"
+                "ja": "インターネットアクセスがある",
+                "zh_Hant": "這裡有網路連線"
               }
             },
             {
@@ -276,7 +296,8 @@
                 "id": "Akses Web tersedia",
                 "ru": "Есть доступ в Интернет",
                 "it": "C’è l’accesso a internet",
-                "ja": "インターネットアクセスがある"
+                "ja": "インターネットアクセスがある",
+                "zh_Hant": "這裡有網路連線"
               },
               "hideInAnswer": true
             },
@@ -291,7 +312,8 @@
                 "id": "Tiada akses Web",
                 "ru": "Нет доступа в Интернет",
                 "it": "Non c’è l’accesso a internet",
-                "ja": "インターネットにアクセスできない"
+                "ja": "インターネットにアクセスできない",
+                "zh_Hant": "這裡沒有網路連線"
               }
             }
           ]
@@ -301,7 +323,8 @@
             "en": "Do you have to pay for the internet access?",
             "it": "Occorre pagare per avere l’accesso a internet?",
             "ru": "Нужно ли платить за доступ в Интернет?",
-            "ja": "インターネット接続にお金はかかりますか?"
+            "ja": "インターネット接続にお金はかかりますか?",
+            "zh_Hant": "你需要為網路連線付費嗎？"
           },
           "mappings": [
             {
@@ -314,7 +337,8 @@
                 "en": "You need to pay extra for internet access",
                 "it": "Occorre pagare un extra per avere l’accesso a internet",
                 "ru": "За доступ в Интернет нужно платить дополнительно",
-                "ja": "インターネット接続には別途料金が必要です"
+                "ja": "インターネット接続には別途料金が必要です",
+                "zh_Hant": "你需要額外付費來使用網路連線"
               }
             },
             {
@@ -327,7 +351,8 @@
                 "en": "You do not need to pay extra for internet access",
                 "it": "Non occorre pagare per l’accesso a internet",
                 "ru": "Вам не нужно платить дополнительно за доступ в Интернет",
-                "ja": "インターネット接続に追加料金を支払う必要はありません"
+                "ja": "インターネット接続に追加料金を支払う必要はありません",
+                "zh_Hant": "你不需要額外付費來使用網路連線"
               }
             }
           ],
@@ -388,7 +413,8 @@
             "ru": "Официальный сайт: <a href='{website}'>{website}</a>",
             "it": "Sito web ufficiale: <a href='{website}'>{website}</a>",
             "ja": "公式Webサイト: <a href='{website}'>{website}</a>",
-            "nb_NO": "Offisiell nettside: <a href='{website}'>{website}</a>"
+            "nb_NO": "Offisiell nettside: <a href='{website}'>{website}</a>",
+            "zh_Hant": "官方網站：<a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -400,14 +426,16 @@
             "it": "Questo luogo ha un sito web?",
             "ru": "Есть ли у этого места веб-сайт?",
             "ja": "ここにはウェブサイトがありますか?",
-            "nb_NO": "Har dette stedet en nettside?"
+            "nb_NO": "Har dette stedet en nettside?",
+            "zh_Hant": "這個地方有網站嗎？"
           }
         },
         {
           "question": {
             "en": "Does this place offer spots for long term rental?",
             "ru": "Предлагает ли эта площадка места для долгосрочной аренды?",
-            "ja": "ここには長期レンタルのスポットがありますか?"
+            "ja": "ここには長期レンタルのスポットがありますか?",
+            "zh_Hant": "這個地方有提供長期租用嗎？"
           },
           "mappings": [
             {
@@ -419,7 +447,8 @@
               "then": {
                 "en": "Yes, there are some spots for long term rental, but you can also stay on a daily basis",
                 "ru": "Да, здесь есть места для долгосрочной аренды, но вы можете остановиться и на сутки",
-                "ja": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます"
+                "ja": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます",
+                "zh_Hant": "有，這個地方有提供長期租用，但你也可以用天計算費用"
               }
             },
             {
@@ -431,7 +460,8 @@
               "then": {
                 "en": "No, there are no permanent guests here",
                 "ru": "Нет, здесь нет постоянных гостей",
-                "ja": "いいえ、ここには長期滞在者はいません"
+                "ja": "いいえ、ここには長期滞在者はいません",
+                "zh_Hant": "沒有，這裡沒有永久的客戶"
               }
             },
             {
@@ -443,7 +473,8 @@
               "then": {
                 "en": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)",
                 "ru": "Здесь можно остановиться, только если у вас долгосрочный контракт (это место исчезнет с этой карты, если вы выберете это)",
-                "ja": "長期契約をしている場合のみ宿泊可能です(これを選択すると、この場所はこの地図から消えます)"
+                "ja": "長期契約をしている場合のみ宿泊可能です(これを選択すると、この場所はこの地図から消えます)",
+                "zh_Hant": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)"
               }
             }
           ]
@@ -453,12 +484,14 @@
             "en": "More details about this place: {description}",
             "ru": "Более подробная информация об этом месте: {description}",
             "ja": "この場所の詳細:{description}",
-            "nb_NO": "Flere detaljer om dette stedet: {description}"
+            "nb_NO": "Flere detaljer om dette stedet: {description}",
+            "zh_Hant": "這個地方更詳細的資訊： {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
             "ru": "Хотели бы вы добавить общее описание этого места? (Не повторяйте информацию, которая уже написана выше или на которую вы уже ответили ранее. Пожалуйста, будьте объективны - мнения должны быть в отзывах)",
-            "ja": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)"
+            "ja": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)",
+            "zh_Hant": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)"
           },
           "freeform": {
             "key": "description",
@@ -499,7 +532,8 @@
           "title": {
             "en": "camper site",
             "ru": "площадка для кемпинга",
-            "ja": "キャンプサイト"
+            "ja": "キャンプサイト",
+            "zh_Hant": "露營地"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",

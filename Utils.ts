@@ -1,4 +1,5 @@
 import * as colors from "./assets/colors.json"
+import {Util} from "leaflet";
 
 export class Utils {
 
@@ -10,8 +11,7 @@ export class Utils {
     public static runningFromConsole = false;
     public static readonly assets_path = "./assets/svg/";
 
-    
-    
+
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
 
@@ -179,14 +179,39 @@ export class Utils {
         console.log("Added custom layout ", location)
     }
 
+    /**
+     * Copies all key-value pairs of the source into the target.
+     * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten
+     * @param source
+     * @param target
+     * @constructor
+     */
     static Merge(source: any, target: any) {
         for (const key in source) {
             if (!source.hasOwnProperty(key)) {
                 continue
             }
+            if (key.startsWith("+") || key.endsWith("+")) {
+                const trimmedKey = key.replace("+", "");
+                const sourceV = source[key];
+                const targetV = (target[trimmedKey] ?? [])
+
+                let newList: any[];
+                if (key.startsWith("+")) {
+                    newList = sourceV.concat(targetV)
+                } else {
+                    newList = targetV.concat(sourceV)
+                }
+
+                target[trimmedKey] = newList;
+                continue;
+            }
+
             const sourceV = source[key];
             const targetV = target[key]
-            if (typeof sourceV === "object") {
+            if (sourceV?.length !== undefined && targetV?.length !== undefined && key.startsWith("+")) {
+                target[key] = targetV.concat(sourceV)
+            } else if (typeof sourceV === "object") {
                 if (targetV === undefined) {
                     target[key] = sourceV;
                 } else {
@@ -349,7 +374,6 @@ export class Utils {
         }
         return bestColor ?? hex;
     }
-
 
 
     private static tile2long(x, z) {

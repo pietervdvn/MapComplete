@@ -182,6 +182,9 @@
                             },
                             "1": {
                                 "then": "Klatring er mulig her"
+                            },
+                            "2": {
+                                "then": "Klatring er ikke mulig her"
                             }
                         }
                     }
@@ -189,7 +192,7 @@
             }
         },
         "roamingRenderings": {
-            "4": {
+            "7": {
                 "question": "Er buldring mulig her?",
                 "mappings": {
                     "0": {
