@@ -2,7 +2,7 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SimpleMetaTagger from "./SimpleMetaTagger";
 import {ExtraFunction} from "./ExtraFunction";
 import {Relation} from "./Osm/ExtractRelations";
-import FeatureSource from "./FeatureSource/FeatureSource";
+import {UIEventSource} from "./UIEventSource";
 
 
 interface Params {
@@ -23,7 +23,7 @@ export default class MetaTagging {
      * The features are a list of geojson-features, with a "properties"-field and geometry
      */
     static addMetatags(features: { feature: any; freshness: Date }[],
-                       allKnownFeatures: FeatureSource,
+                       allKnownFeatures: UIEventSource<{ feature: any; freshness: Date }[]>,
                        relations: Map<string, { role: string, relation: Relation }[]>,
                        layers: LayerConfig[],
                        includeDates = true) {
@@ -51,7 +51,7 @@ export default class MetaTagging {
             layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
         }
 
-        allKnownFeatures.features.addCallbackAndRun(newFeatures => {
+        allKnownFeatures.addCallbackAndRun(newFeatures => {
 
             const featuresPerLayer = new Map<string, any[]>();
             const allFeatures = Array.from(new Set(features.concat(newFeatures)))

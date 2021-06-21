@@ -15,12 +15,12 @@ export default class MetaTaggingFeatureSource implements FeatureSource {
      * @param source: the source of features that should get their metatag and which should be exported again
      * @param updateTrigger
      */
-    constructor(allFeaturesSource: FeatureSource, source: FeatureSource, updateTrigger?: UIEventSource<any>) {
+    constructor(allFeaturesSource: UIEventSource<{ feature: any; freshness: Date }[]>, source: FeatureSource, updateTrigger?: UIEventSource<any>) {
         const self = this;
         this.name = "MetaTagging of " + source.name
 
-        if(allFeaturesSource.features === undefined){
-            throw ("Initialize the featuresource fully first!"+allFeaturesSource.name)
+        if(allFeaturesSource === undefined){
+            throw ("UIEVentSource is undefined")
         }
         
         function update() {

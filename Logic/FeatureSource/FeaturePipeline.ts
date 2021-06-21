@@ -16,7 +16,7 @@ import RegisteringFeatureSource from "./RegisteringFeatureSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
-    public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{feature: any; freshness: Date}[]>([]);
+    public features: UIEventSource<{ feature: any; freshness: Date }[]> ;
 
     public readonly name = "FeaturePipeline"
 
@@ -28,6 +28,8 @@ export default class FeaturePipeline implements FeatureSource {
                 locationControl: UIEventSource<Loc>,
                 selectedElement: UIEventSource<any>) {
 
+        const allLoadedFeatures = new UIEventSource<{ feature: any; freshness: Date }[]>([])
+        
         // first we metatag, then we save to get the metatags into storage too
         // Note that we need to register before we do metatagging (as it expects the event sources)
 
@@ -35,7 +37,7 @@ export default class FeaturePipeline implements FeatureSource {
         const amendedOverpassSource =
             new RememberingSource(
                 new LocalStorageSaver(
-                    new MetaTaggingFeatureSource(this,
+                    new MetaTaggingFeatureSource(allLoadedFeatures,
                         new FeatureDuplicatorPerLayer(flayers,
                             new RegisteringFeatureSource(
                                 updater)
@@ -46,7 +48,7 @@ export default class FeaturePipeline implements FeatureSource {
             .map(geojsonSource => {
                 let source = new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, geojsonSource));
                 if(!geojsonSource.isOsmCache){
-                    source = new MetaTaggingFeatureSource(this, source, updater.features);
+                    source = new MetaTaggingFeatureSource(allLoadedFeatures, source, updater.features);
                 }
                 return source
             });
@@ -55,18 +57,17 @@ export default class FeaturePipeline implements FeatureSource {
             new RememberingSource(new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, new LocalStorageSource(layout))
             ));
 
-        newPoints = new MetaTaggingFeatureSource(this,
+        newPoints = new MetaTaggingFeatureSource(allLoadedFeatures,
             new FeatureDuplicatorPerLayer(flayers,
                 new RegisteringFeatureSource(newPoints)));
 
         const amendedOsmApiSource = new RememberingSource(
-            new MetaTaggingFeatureSource(this,
+            new MetaTaggingFeatureSource(allLoadedFeatures,
                 new FeatureDuplicatorPerLayer(flayers,
 
                     new RegisteringFeatureSource(fromOsmApi))));
 
         const merged =
-
             new FeatureSourceMerger([
                 amendedOverpassSource,
                 amendedOsmApiSource,
@@ -75,6 +76,8 @@ export default class FeaturePipeline implements FeatureSource {
                 ...geojsonSources
             ]);
 
+        merged.features.syncWith(allLoadedFeatures)
+        
         const source =
             new WayHandlingApplyingFeatureSource(flayers,
                 new FilteringFeatureSource(
@@ -83,8 +86,7 @@ export default class FeaturePipeline implements FeatureSource {
                     selectedElement,
                     merged
                 ));
-        
-        source.features.syncWith(this.features)
+        this.features = source.features;
     }
 
 }
