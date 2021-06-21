@@ -43,11 +43,15 @@
             "intro": "<h3>Condividi questa mappa</h3>Condividi questa mappa copiando il collegamento qua sotto e inviandolo ad amici o parenti:"
         },
         "attribution": {
+            "attributionContent": "<p>Tutti i dati sono forniti da <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, riutilizzabili liberamente con <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a></p>",
             "attributionTitle": "Crediti",
+            "codeContributionsBy": "MapComplete è stato realizzato da {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} altri collaboratori</a>",
             "mapContributionsByAndHidden": "I dati attualmente visibili sono stati modificati da {contributors} e {hiddenCount} altri contributori",
+            "mapContributionsBy": "I dati attualmente visibili sono stati creati da {contributors}",
             "iconAttribution": {
                 "title": "Icone utilizzate"
-            }
+            },
+            "themeBy": "Tema manutenuto da {author}"
         },
         "openStreetMapIntro": "<h3>Una mappa libera</h3><p>Non sarebbe perfetto se esistesse una carta geografica che chiunque può modificare e utilizzare liberamente? Un unico posto in un cui conservare tutte le informazioni geografiche? In questo modo tutti questi siti web con mappe diverse, piccole e incompatibili (che sono sempre obsolete) diverrebbero istantaneamente inutili.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> è proprio questa mappa. I dati geografici possono essere usati liberamente (rispettando <a href=\"https://osm.org/copyright\" target=\"_blank\">l’attribuzione e la pubblicazione delle modifiche di quei dati</a>). In più, chiunque può aggiungere liberamente nuovi dati e correggere gli errori. Anche questo sito usa OpenStreetMap. Tutti i dati provengono da lì e le tue risposte e correzioni finiscono sempre lì.</p><p>Moltissime persone e applicazioni già usano OpenStreetmap: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a> ma anche le cartine di Facebook, Instagram, Apple e Bing si basano (parzialmente) su OpenStreetMap. Tutto quello che cambi qua si rifletterà anche su quelle applicazioni (non appena avranno aggiornato i loro dati!)</p>",
         "opening_hours": {
