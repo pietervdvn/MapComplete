@@ -137,6 +137,9 @@
             "error_loading": "Error: no se han podido visualizar esos horarios de apertura."
         },
         "attribution": {
+            "iconAttribution": {
+                "title": "Iconos usados"
+            },
             "attributionContent": "<p>Todos los datos son proporcionados por <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, reutilizables libremente bajo <a href=\"https://osm.org/copyright\" target=\"_blank\">la Licencia Abierta de Bases de Datos (ODL)</a>.</p>"
         },
         "customThemeIntro": "<h3>Temas personalizados</h3>Estos son los temas generados por los usuarios que han sido visitados previamente."

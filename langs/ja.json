@@ -52,9 +52,11 @@
             "intro": "<h3>このマップを共有</h3>このマップを共有するには、次のリンクをコピーして、友人や家族に送信します。"
         },
         "attribution": {
+            "mapContributionsByAndHidden": "現在表示されているデータには、{contributors}および、{hiddenCount}人の貢献者が編集したものが含まれています",
             "iconAttribution": {
                 "title": "使用されるアイコン"
-            }
+            },
+            "attributionContent": "<p>すべてのデータは<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>によって提供され、<a href=\"https://osm.org/copyright\" target=\"_blank\"> Open DataBaseライセンス</a>の下で自由に再利用できます。</p>"
         },
         "questions": {
             "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",

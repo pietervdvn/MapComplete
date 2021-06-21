@@ -138,9 +138,11 @@
         "backgroundMap": "Mapa do fondo",
         "getStartedLogin": "Entra no OpenStreetMap para comezar",
         "attribution": {
+            "mapContributionsByAndHidden": "A información visíbel actual ten edicións feitas por {contributors} e {hiddenCount} contribuíntes máis",
             "iconAttribution": {
                 "title": "Iconas empregadas"
-            }
+            },
+            "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>"
         }
     },
     "favourite": {

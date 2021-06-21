@@ -139,7 +139,9 @@
             "ph_open": "geöffnet"
         },
         "attribution": {
-            "attributionTitle": "Danksagung"
+            "mapContributionsBy": "Die aktuell sichtbaren Daten wurden editiert durch {contributors}",
+            "attributionTitle": "Danksagung",
+            "themeBy": "Thema betreut von {author}"
         }
     },
     "favourite": {
