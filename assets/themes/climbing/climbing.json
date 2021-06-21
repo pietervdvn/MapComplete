@@ -437,14 +437,14 @@
             "key": "description"
           }
         },
-        {"#": "Rock type",
+        {
+          "#": "Rock type",
           "render": {
             "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
           },
           "freeform": {
             "key": "_embedding_features_with_rock:rock"
           }
-          
         },
         "reviews"
       ],
@@ -562,7 +562,7 @@
         {
           "#": "Contained routes hist",
           "render": {
-            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist, , , 3.*:#56bd56, 4.*:#ffff59, 5.*:#ffad48, 6.*:#63a9ff, 7.*:#ff5858, 8.*:#000000, .*:#aaa )}"
+            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
           },
           "condition": "_difficulty_hist!~\\[\\]"
         },
@@ -633,7 +633,8 @@
             }
           ]
         },
-        {"#": "Rock type (crag/rock/cliff only)",
+        {
+          "#": "Rock type (crag/rock/cliff only)",
           "question": {
             "en": "What is the rock type here?"
           },
@@ -652,9 +653,12 @@
               }
             }
           ],
-          
           "condition": {
-            "or": ["climbing=crag","natural=cliff","natural=bare_rock"]
+            "or": [
+              "climbing=crag",
+              "natural=cliff",
+              "natural=bare_rock"
+            ]
           }
         },
         "reviews"
@@ -731,15 +735,15 @@
       },
       "title": {
         "render": {
-          "en": "Possible climbing opportunity",
-          "nl": "Mogelijke klimgelegenheid",
+          "en": "Climbing opportunity?",
+          "nl": "Klimgelegenheid?",
           "de": "Klettermöglichkeit?",
           "ja": "登坂教室？",
           "nb_NO": "Klatremulighet?"
         }
       },
       "description": {
-        "nl": "Een mogelijke klimgelegenheid?",
+        "nl": "Een klimgelegenheid?",
         "de": "Eine Klettergelegenheit?",
         "en": "A climbing opportunity?",
         "ja": "登坂教室？",

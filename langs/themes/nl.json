@@ -79,7 +79,7 @@
                         "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
                     },
                     "4": {
-                        "question": "Welk wikidata-item beschrijft dit kunstwerk?",
+                        "question": "Welk Wikidata-item beschrijft dit kunstwerk?",
                         "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }
@@ -345,6 +345,13 @@
                         "mappings": {
                             "0": {
                                 "then": "Dit Klimgelegenheid heeft geen naam"
+                            }
+                        }
+                    },
+                    "7": {
+                        "mappings": {
+                            "0": {
+                                "then": "Kalksteen"
                             }
                         }
                     }
