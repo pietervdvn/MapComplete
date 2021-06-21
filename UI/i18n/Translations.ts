@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import AllTranslationAssets from "../../AllTranslationAssets";
 import {Translation} from "./Translation";

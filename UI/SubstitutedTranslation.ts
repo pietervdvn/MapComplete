@@ -60,7 +60,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                       element =  knownSpecial.constr(State.state, tags, args);
                     }catch(e){
                         console.error("SPECIALRENDERING FAILED for", tags.data.id, e)
-                        element = new FixedUiElement(`Could not generate special renering for ${knownSpecial}(${args.join(", ")}) ${e}`).SetClass("alert")
+                        element = new FixedUiElement(`Could not generate special rendering for ${knownSpecial}(${args.join(", ")}) ${e}`).SetClass("alert")
                     }
                         
                     return [...partBefore, element, ...partAfter]
