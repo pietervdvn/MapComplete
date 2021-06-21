@@ -4,8 +4,8 @@ import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
-import ReviewElement from "./ReviewElement";
 import BaseUIElement from "../BaseUIElement";
+import Img from "../Base/Img";
 
 export default class SingleReview extends UIElement{
     private _review: Review;
@@ -23,8 +23,8 @@ export default class SingleReview extends UIElement{
         }
         const scoreTen = Math.round(rating / 10);
         return new Combine([
-            "<img src='./assets/svg/star.svg' class='h-8 md:h-12'/>".repeat(Math.floor(scoreTen / 2)),
-            scoreTen % 2 == 1 ? "<img src='./assets/svg/star_half.svg' class='h-8 md:h-12'/>" : ""
+                ...Utils.TimesT(scoreTen / 2, _  => new Img('./assets/svg/star.svg').SetClass("'h-8 w-8 md:h-12")),
+            scoreTen % 2 == 1 ? new Img('./assets/svg/star_half.svg').SetClass('h-8 w-8 md:h-12') : undefined
         ]).SetClass("flex w-max")
     }
     InnerRender(): BaseUIElement {
@@ -39,7 +39,7 @@ export default class SingleReview extends UIElement{
                 new Combine([
                     new Combine([
 
-                        new Combine(["<b>",review.author,"</b>"]),
+                        new FixedUiElement(review.author).SetClass("font-bold"),
                         review.affiliated ? Translations.t.reviews.affiliated_reviewer_warning : "",
                     ]).SetStyle("margin-right: 0.5em"),
                     new FixedUiElement(`${d.getFullYear()}-${Utils.TwoDigits(d.getMonth() + 1)}-${Utils.TwoDigits(d.getDate())} ${Utils.TwoDigits(d.getHours())}:${Utils.TwoDigits(d.getMinutes())}`)
@@ -48,7 +48,7 @@ export default class SingleReview extends UIElement{
 
             ]
         );
-        el.SetClass("block p-2 m-1 rounded-xl subtle-background review-element");
+        el.SetClass("block p-2 m-4 rounded-xl subtle-background review-element");
         if(review.made_by_user.data){
             el.SetClass("border-attention-catch")
         }
