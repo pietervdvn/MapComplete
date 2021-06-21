@@ -82,7 +82,7 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 
 ## Translating MapComplete
 
-The core strings and builting themes of MapComplete are translated on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/).
+The core strings and builtin themes of MapComplete are translated on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/).
 You can easily make an account and start translating in their web-environment - no installation required.
 
 [![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
