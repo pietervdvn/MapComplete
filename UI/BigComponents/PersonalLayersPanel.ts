@@ -62,7 +62,6 @@ export default class PersonalLayersPanel extends VariableUiElement {
      * @private
      */
     private static CreateLayerToggle(layer: LayerConfig): Toggle {
-        const iconUrl = layer.icon.GetRenderValue({id: "node/-1"}).txt
         let icon :BaseUIElement =new Combine([ layer.GenerateLeafletStyle(
             new UIEventSource<any>({id: "node/-1"}),
             false,
