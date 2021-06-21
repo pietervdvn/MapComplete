@@ -69,9 +69,6 @@
             "emailOf": "Quelle est l'adresse électronique de {category} ?",
             "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>"
         },
-        "attribution": {
-            "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>"
-        },
         "sharescreen": {
             "intro": "<h3>Partager cette carte</h3> Partagez cette carte en copiant le lien suivant et envoyez-le à vos amis :",
             "addToHomeScreen": "<h3>Ajouter à votre page d'accueil</h3> Vous pouvez facilement ajouter la carte à votre écran d'accueil de téléphone. Cliquer sur le boutton 'ajouter à l'ecran d'accueil' dans la barre d'adresse pour éffectuer cette tâche.",
