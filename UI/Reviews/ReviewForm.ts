@@ -38,7 +38,7 @@ export default class ReviewForm extends InputElement<Review> {
         });
         const comment = new TextField({
             placeholder: Translations.t.reviews.write_a_comment,
-            textArea: true,
+            htmlType: "area",
             value: this._value.map(r => r?.comment),
             textAreaRows: 5
         })
@@ -49,7 +49,8 @@ export default class ReviewForm extends InputElement<Review> {
         const self = this;
 
         this._postingAs =
-            new Combine([t.posting_as, new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name)).SetClass("review-author")])
+            new Combine([t.posting_as, new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name))
+                .SetClass("review-author")])
                 .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-left: auto;")
         this._saveButton =
             new SaveButton(this._value.map(r => self.IsValid(r)), undefined)
@@ -91,16 +92,19 @@ export default class ReviewForm extends InputElement<Review> {
     InnerConstructElement(): HTMLElement {
 
         const form = new Combine([
-            new Combine([this._stars, this._postingAs]).SetClass("review-form-top"),
+            new Combine([this._stars, this._postingAs]).SetClass("flex"),
             this._comment,
             new Combine([
                 this._isAffiliated,
                 this._saveButton
             ]).SetClass("review-form-bottom"),
-            "<br/>",
             Translations.t.reviews.tos.SetClass("subtle")
         ])
-            .SetClass("review-form")
+            .SetClass("flex flex-col p-4")
+            .SetStyle(            "border-radius: 1em;" +
+                "    background-color: var(--subtle-detail-color);" +
+                "    color: var(--subtle-detail-color-contrast);" +
+                "    border: 2px solid var(--subtle-detail-color-contrast)")
             
         const connection = this._osmConnection;
         const login = Translations.t.reviews.plz_login.Clone().onClick(() => connection.AttemptLogin())
