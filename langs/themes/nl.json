@@ -347,6 +347,13 @@
                                 "then": "Dit Klimgelegenheid heeft geen naam"
                             }
                         }
+                    },
+                    "7": {
+                        "mappings": {
+                            "0": {
+                                "then": "Kalksteen"
+                            }
+                        }
                     }
                 },
                 "presets": {
