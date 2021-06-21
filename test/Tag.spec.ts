@@ -88,6 +88,12 @@ export default class    TagSpec extends  T{
                 equal(assign.matchesProperties({"survey:date": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"_date:now": "2021-03-29"}), false);
                 equal(assign.matchesProperties({"some_key": "2021-03-29"}), false);
+                
+                const notEmptyList = FromJSON.Tag("xyz!~\\[\\]")
+                equal(notEmptyList.matchesProperties({"xyz":undefined}), true);
+                equal(notEmptyList.matchesProperties({"xyz":"[]"}), false);
+                equal(notEmptyList.matchesProperties({"xyz":"[\"abc\"]"}), true);
+
 
             })],
             ["Is equivalent test", (() => {

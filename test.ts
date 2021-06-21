@@ -10,6 +10,8 @@ import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Img from "./UI/Base/Img";
 import {AttributedImage} from "./UI/Image/AttributedImage";
 import {Imgur} from "./Logic/Web/Imgur";
+import ReviewForm from "./UI/Reviews/ReviewForm";
+import {OsmConnection} from "./Logic/Osm/OsmConnection";
 
 
 function TestSlideshow(){
@@ -17,7 +19,7 @@ function TestSlideshow(){
         new FixedUiElement("A"),
         new FixedUiElement("qmsldkfjqmlsdkjfmqlskdjfmqlksdf").SetClass("text-xl"),
         new Img("https://i.imgur.com/8lIQ5Hv.jpg"),
-        new AttributedImage("https://i.imgur.com/y5XudzW.jpg", new Imgur()),
+        new AttributedImage("https://i.imgur.com/y5XudzW.jpg", Imgur.singleton),
         new Img("https://www.grunge.com/img/gallery/the-real-reason-your-cat-sleeps-so-much/intro-1601496900.webp")
     ])
     new SlideShow(elems).AttachTo("maindiv")
@@ -62,5 +64,6 @@ function TestAllInputMethods(){
     })).AttachTo("maindiv")    
 }
 
-
-TestSlideshow()
+new ReviewForm(() => {
+    return undefined;
+}, new OsmConnection(true, new UIEventSource<string>(undefined), "test")).AttachTo("maindiv");

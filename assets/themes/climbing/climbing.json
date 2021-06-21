@@ -505,22 +505,27 @@
         "images",
         "questions",
         {
-          "#": "Contained routes",
-          "render": "<h3>Contains the following routes</h3> <ul>{_contained_climbing_routes}</ul>",
-          "condition": "_contained_climbing_routes~*"
-        },  {
           "#": "Contained routes length hist",
           "render": {
             "en": "<h3>Length overview</h3>{histogram(_length_hist)}"
-          }
+          },
+          "condition": "_length_hist!~\\[\\]"
         },
         {
           "#": "Contained routes hist",
           "render": {
-            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
-          }
+            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist, , , 3[a-zA-Z+-]*:#56bd56, 4[a-zA-Z+-]*:#ffff59,5[a-zA-Z+-]*:#ffad48, 6[a-zA-Z+-]*:#63a9ff, 7[a-zA-Z+-]*:#ff5858, 8[a-zA-Z+-]*:#000000, .*:#aaa )}"
+            
+          },
+          "condition": "_difficulty_hist!~\\[\\]"
         },
-      
+        {
+          "#": "Containe {_contained_climbing_routes_count} routes",
+          "render": {
+           "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+          },
+          "condition": "_contained_climbing_routes~*"
+        },
         {
           "#": "name",
           "render": {
@@ -622,7 +627,8 @@
         "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
         "_contained_climbing_routes=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
-        "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])"
+        "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
+        "_contained_climbing_routes_count=JSON.parse(_contained_climbing_routes).length"
       ]
     },
     {
@@ -654,15 +660,15 @@
       },
       "title": {
         "render": {
-          "en": "Climbing opportunity?",
-          "nl": "Klimgelegenheid?",
+          "en": "Possible climbing opportunity",
+          "nl": "Mogelijke klimgelegenheid",
           "de": "Klettermöglichkeit?",
           "ja": "登坂教室？",
           "nb_NO": "Klatremulighet?"
         }
       },
       "description": {
-        "nl": "Een klimgelegenheid?",
+        "nl": "Een mogelijke klimgelegenheid?",
         "de": "Eine Klettergelegenheit?",
         "en": "A climbing opportunity?",
         "ja": "登坂教室？",
@@ -1226,13 +1232,12 @@
     }
   ],
   "overrideAll": {
-    "calculatedTags+": [
+    "+calculatedTags": [
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
       "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
       "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
       "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
-      "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id",
-      "_layer=feat._layer_id"
+      "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id"
     ]
   }
 }
