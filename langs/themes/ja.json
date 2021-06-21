@@ -75,7 +75,7 @@
                         "render": "<a href='{website}' target='_blank'>Webサイト</a>に詳細情報がある"
                     },
                     "4": {
-                        "question": "<b>このアートワーク</b>に関するwikidataのエントリーはどれですか?",
+                        "question": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
                         "render": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する"
                     }
                 }

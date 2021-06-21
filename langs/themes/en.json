@@ -75,7 +75,7 @@
                         "render": "More information on <a href='{website}' target='_blank'>this website</a>"
                     },
                     "4": {
-                        "question": "Which wikidata-entry corresponds with <b>this artwork</b>?",
+                        "question": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
                         "render": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }

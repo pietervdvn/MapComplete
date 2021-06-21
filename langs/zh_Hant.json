@@ -90,18 +90,6 @@
             "addToHomeScreen": "<h3>新增到你主頁畫面</h3>你可以輕易將這網站加到你智慧型手機的主頁畫面，在網址列點選 '新增到主頁按鈕'來做這件事情。",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖："
         },
-        "attribution": {
-            "codeContributionsBy": "MapComplete 是由 {contributors} 和其他 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 位貢獻者</a>構建而成",
-            "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
-            "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
-            "iconAttribution": {
-                "title": "使用的圖示"
-            },
-            "themeBy": "由 {author} 維護主題",
-            "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
-            "attributionTitle": "署名通知"
-        },
-        "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能自由使用與編輯，單一的地圖能夠儲存所有地理相關資訊？這樣不就很酷嗎？接著，所有的網站使用不同的、範圍小的，不相容的地圖 (通常也都過時了)，也就不再需要了。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>就是這樣的地圖，人人都能免費這些圖資 (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。只要遵循這些，任何人都能自由新增新資料與修正錯誤，這些網站也都使用開放街圖，資料也都來自開放街圖，你的答案與修正也會加到開放街圖上面。</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。如果你在開放街圖上變動資料，也會同時影響這些應用 - 在他們下次更新資料之後！</p>",
         "questions": {
             "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "{category} 的電子郵件地址是？",
