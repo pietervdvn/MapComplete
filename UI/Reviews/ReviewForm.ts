@@ -14,6 +14,7 @@ import Toggle from "../Input/Toggle";
 
 export default class ReviewForm extends InputElement<Review> {
 
+    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly _value: UIEventSource<Review>;
     private readonly _comment: BaseUIElement;
     private readonly _stars: BaseUIElement;
@@ -22,11 +23,10 @@ export default class ReviewForm extends InputElement<Review> {
     private readonly _postingAs: BaseUIElement;
     private readonly _osmConnection: OsmConnection;
 
-
     constructor(onSave: ((r: Review, doneSaving: (() => void)) => void), osmConnection: OsmConnection) {
         super();
         this._osmConnection = osmConnection;
-        this._value  = new UIEventSource({
+        this._value = new UIEventSource({
             made_by_user: new UIEventSource<boolean>(true),
             rating: undefined,
             comment: undefined,
@@ -49,16 +49,29 @@ export default class ReviewForm extends InputElement<Review> {
         this._postingAs =
             new Combine([Translations.t.reviews.posting_as.Clone(),
                 new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name))
-                .SetClass("review-author")])
+                    .SetClass("review-author")])
                 .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-left: auto;")
+
+
+        const reviewIsSaved = new UIEventSource<boolean>(false)
+        const reviewIsSaving = new UIEventSource<boolean>(false)
         this._saveButton =
-            new SaveButton(this._value.map(r => self.IsValid(r)), undefined)
-                .onClick(() => {
-                    self._saveButton = Translations.t.reviews.saving_review.Clone();
-                    onSave(this._value.data, () => {
-                        self._saveButton = Translations.t.reviews.saved.Clone().SetClass("thanks");
-                    });
-                }).SetClass("break-normal")
+            new Toggle(Translations.t.reviews.saved.Clone().SetClass("thanks"),
+                new Toggle(
+                    Translations.t.reviews.saving_review.Clone(),
+                    new SaveButton(
+                        this._value.map(r => self.IsValid(r)), osmConnection
+                    ).onClick(() => {
+                        reviewIsSaving.setData(true),
+                            onSave(this._value.data, () => {
+                                reviewIsSaved.setData(true)
+                            });
+                    }),
+                    reviewIsSaving
+                ),
+                reviewIsSaved
+            ).SetClass("break-normal")
+
 
         this._isAffiliated = new CheckBoxes([Translations.t.reviews.i_am_affiliated.Clone()])
 
@@ -100,20 +113,18 @@ export default class ReviewForm extends InputElement<Review> {
             Translations.t.reviews.tos.Clone().SetClass("subtle")
         ])
             .SetClass("flex flex-col p-4")
-            .SetStyle(            "border-radius: 1em;" +
+            .SetStyle("border-radius: 1em;" +
                 "    background-color: var(--subtle-detail-color);" +
                 "    color: var(--subtle-detail-color-contrast);" +
                 "    border: 2px solid var(--subtle-detail-color-contrast)")
-            
+
         const connection = this._osmConnection;
         const login = Translations.t.reviews.plz_login.Clone().onClick(() => connection.AttemptLogin())
 
-        return new Toggle(form,login , 
+        return new Toggle(form, login,
             connection.isLoggedIn)
             .ConstructElement()
     }
-
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
 
     IsValid(r: Review): boolean {
         if (r === undefined) {
