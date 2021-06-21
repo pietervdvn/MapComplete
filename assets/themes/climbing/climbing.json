@@ -562,7 +562,7 @@
         {
           "#": "Contained routes hist",
           "render": {
-            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist, , , 3[a-zA-Z+-]*:#56bd56, 4[a-zA-Z+-]*:#ffff59,5[a-zA-Z+-]*:#ffad48, 6[a-zA-Z+-]*:#63a9ff, 7[a-zA-Z+-]*:#ff5858, 8[a-zA-Z+-]*:#000000, .*:#aaa )}"
+            "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist, , , 3.*:#56bd56, 4.*:#ffff59, 5.*:#ffad48, 6.*:#63a9ff, 7.*:#ff5858, 8.*:#000000, .*:#aaa )}"
           },
           "condition": "_difficulty_hist!~\\[\\]"
         },
