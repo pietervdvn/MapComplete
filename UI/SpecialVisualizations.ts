@@ -18,9 +18,9 @@ import State from "../State";
 import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
 import BaseUIElement from "./BaseUIElement";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
-import List from "./Base/List";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
+import Histogram from "./BigComponents/Histogram";
 
 export default class SpecialVisualizations {
 
@@ -147,61 +147,69 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(source.map(data => data[neededValue] ?? "Loading..."));
                 }
             },
-            
+
             {
                 funcName: "histogram",
-                docs:"Create a histogram for a list of given values, read from the properties.",
+                docs: "Create a histogram for a list of given values, read from the properties.",
                 example: "`{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram",
-                args:[
+                args: [
                     {
                         name: "key",
                         doc: "The key to be read and to generate a histogram from"
+                    },
+                    {
+                        name: "title",
+                        doc: "The text to put above the given values column",
+                        defaultValue: ""
+                    },
+                    {
+                        name: "countHeader",
+                        doc: "The text to put above the counts",
+                        defaultValue: ""
+                    },
+                    {
+                        name: "colors",
+                        doc: "(Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`"
+
                     }
                 ],
-                constr: (state: State, tagSource: UIEventSource<any>, args: string[]) =>{
-                    return new VariableUiElement(
-                        tagSource
-                            .map(tags => tags[args[0]])
-                            .map(listStr => {
-                            try{
-                                if("" === listStr ?? ""){
-                                    return "Nothing defined";
-                                }
-                                const list : string[] = JSON.parse(listStr)
+                constr: (state: State, tagSource: UIEventSource<any>, args: string[]) => {
 
-                                if(list.length === 0){
-                                    return "No values given";
-                                }
-                                
-                                const counts = new Map<string, number>()
-                                for (const key of list) {
-                                    if(key === null || key === undefined || key === ""){
-                                        continue;
-                                    }
-                                    
-                                    if(!counts.has(key)){
-                                        counts.set(key, 1)
-                                    }else{
-                                        counts.set(key, counts.get(key) + 1)
-                                    }
-                                }
-                                const keys = Array.from(counts.keys())
-                                keys.sort()
-                                
-                                return new List(keys.map(key=> new Combine[
-                                    new FixedUiElement(key).SetClass("font-bold"),
-                                        counts.get(key)
-                                    ]));
-                                
-                                
-                            }catch{
-                                return "Could not generate histogram" // TODO translate
-                            }
-                            
-                            
+                    let assignColors = undefined;
+                    if (args.length >= 3) {
+                        const colors = [...args]
+                        colors.splice(0, 3)
+                        const mapping = colors.map(c => {
+                            const splitted = c.split(":");
+                            const value = splitted.pop()
+                            const regex = splitted.join(":")
+                            return {regex: "^" + regex + "$", color: value}
                         })
-                    )
-        }
+                        assignColors = (key) => {
+                            for (const kv of mapping) {
+                                if (key.match(kv.regex) !== null) {
+                                    return kv.color
+                                }
+                            }
+                            return undefined
+                        }
+                    }
+
+                    const listSource: UIEventSource<string[]> = tagSource
+                        .map(tags => {
+                            try {
+                                const value = tags[args[0]]
+                                if (value === "" || value === undefined) {
+                                    return undefined
+                                }
+                                return JSON.parse(value)
+                            } catch (e) {
+                                console.error("Could not load histogram: parsing  of the list failed: ", e)
+                                return undefined;
+                            }
+                        })
+                    return new Histogram(listSource, args[1], args[2], assignColors)
+                }
             },
             {
                 funcName: "share_link",
@@ -262,9 +270,9 @@ export default class SpecialVisualizations {
                 [
                     new Title(viz.funcName, 3),
                     viz.docs,
-                    new Table( ["name","default","description"], 
+                    new Table(["name", "default", "description"],
                         viz.args.map(arg => [arg.name, arg.defaultValue ?? "undefined", arg.doc])
-                        ),
+                    ),
                     new Title("Example usage", 4),
                     new FixedUiElement(
                         viz.example ?? "{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}"
@@ -275,7 +283,7 @@ export default class SpecialVisualizations {
 
 
         return new Combine([
-            new Title("Special tag renderings",3),
+                new Title("Special tag renderings", 3),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                 "General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
