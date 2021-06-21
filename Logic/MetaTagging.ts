@@ -27,6 +27,10 @@ export default class MetaTagging {
                        relations: Map<string, { role: string, relation: Relation }[]>,
                        layers: LayerConfig[],
                        includeDates = true) {
+        
+        if(features === undefined || features.length === 0){
+            return;
+        }
 
         for (const metatag of SimpleMetaTagger.metatags) {
             if (metatag.includesDates && !includeDates) {
@@ -49,10 +53,9 @@ export default class MetaTagging {
 
         allKnownFeatures.features.addCallbackAndRun(newFeatures => {
 
-
-
             const featuresPerLayer = new Map<string, any[]>();
-            for (const feature of (newFeatures.concat(features))) {
+            const allFeatures = Array.from(new Set(features.concat(newFeatures)))
+            for (const feature of allFeatures) {
 
                 const key = feature.feature._matching_layer_id;
                 if (!featuresPerLayer.has(key)) {
@@ -87,6 +90,7 @@ export default class MetaTagging {
 
     }
 
+    private static errorPrintCount = 0;
 
     private static createRetaggingFunc(layer: LayerConfig):
         ((params: Params, feature: any) => void) {
@@ -119,7 +123,13 @@ export default class MetaTagging {
                         }
                         feature.properties[key] = result;
                     } catch (e) {
-                        console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
+                        if(MetaTagging. errorPrintCount < 50){
+                            console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
+                            MetaTagging.   errorPrintCount ++;
+                            if(MetaTagging. errorPrintCount == 50){
+                                console.error("Got 50 errors calculating this metatagging - stopping output now")
+                            }
+                        }
                     }
 
                 }

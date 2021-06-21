@@ -363,8 +363,6 @@ export class OsmWay extends OsmObject {
         let latSum = 0
         let lonSum = 0
 
-        console.log("element is", element, "nodes are", allNodes)
-
         const nodeDict = new Map<number, OsmNode>()
         for (const node of allNodes) {
             nodeDict.set(node.id, node)
