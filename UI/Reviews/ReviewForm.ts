@@ -11,7 +11,6 @@ import CheckBoxes from "../Input/Checkboxes";
 import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
-import State from "../../State";
 
 export default class ReviewForm extends InputElement<Review> {
 
@@ -27,7 +26,6 @@ export default class ReviewForm extends InputElement<Review> {
     constructor(onSave: ((r: Review, doneSaving: (() => void)) => void), osmConnection: OsmConnection) {
         super();
         this._osmConnection = osmConnection;
-        const t = Translations.t.reviews;
         this._value  = new UIEventSource({
             made_by_user: new UIEventSource<boolean>(true),
             rating: undefined,
@@ -37,7 +35,7 @@ export default class ReviewForm extends InputElement<Review> {
             date: new Date()
         });
         const comment = new TextField({
-            placeholder: Translations.t.reviews.write_a_comment,
+            placeholder: Translations.t.reviews.write_a_comment.Clone(),
             htmlType: "area",
             value: this._value.map(r => r?.comment),
             textAreaRows: 5
@@ -49,19 +47,20 @@ export default class ReviewForm extends InputElement<Review> {
         const self = this;
 
         this._postingAs =
-            new Combine([t.posting_as, new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name))
+            new Combine([Translations.t.reviews.posting_as.Clone(),
+                new VariableUiElement(osmConnection.userDetails.map((ud: UserDetails) => ud.name))
                 .SetClass("review-author")])
                 .SetStyle("display:flex;flex-direction: column;align-items: flex-end;margin-left: auto;")
         this._saveButton =
             new SaveButton(this._value.map(r => self.IsValid(r)), undefined)
                 .onClick(() => {
-                    self._saveButton = Translations.t.reviews.saving_review;
+                    self._saveButton = Translations.t.reviews.saving_review.Clone();
                     onSave(this._value.data, () => {
-                        self._saveButton = Translations.t.reviews.saved.SetClass("thanks");
+                        self._saveButton = Translations.t.reviews.saved.Clone().SetClass("thanks");
                     });
                 }).SetClass("break-normal")
 
-        this._isAffiliated = new CheckBoxes([t.i_am_affiliated])
+        this._isAffiliated = new CheckBoxes([Translations.t.reviews.i_am_affiliated.Clone()])
 
         this._comment = comment;
         const stars = []
@@ -98,7 +97,7 @@ export default class ReviewForm extends InputElement<Review> {
                 this._isAffiliated,
                 this._saveButton
             ]).SetClass("review-form-bottom"),
-            Translations.t.reviews.tos.SetClass("subtle")
+            Translations.t.reviews.tos.Clone().SetClass("subtle")
         ])
             .SetClass("flex flex-col p-4")
             .SetStyle(            "border-radius: 1em;" +
