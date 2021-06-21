@@ -7,7 +7,6 @@ import Toggle from "../Input/Toggle";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class ThemeIntroductionPanel extends VariableUiElement {
 

@@ -66,7 +66,7 @@ export default class OpeningHoursVisualization extends UIElement {
 
         return new Toggle(
             ohTable,
-            Translations.t.general.loadingCountry.Clone(),
+            Translations.t.general.opening_hours.loadingCountry.Clone(),
             tags.map(tgs => tgs._country !== undefined)
         );
     }

@@ -157,7 +157,7 @@ export default class SimpleAddUI extends Toggle {
     private static CreateTagInfoFor(preset: PresetInfo, optionallyLinkToWiki = true) {
         const csCount = State.state.osmConnection.userDetails.data.csCount;
         return new Toggle(
-            Translations.t.general.presetInfo.Subs({
+            Translations.t.general.add.presetInfo.Subs({
                 tags: preset.tags.map(t => t.asHumanString(optionallyLinkToWiki && csCount > Constants.userJourney.tagsVisibleAndWikiLinked, true)).join("&"),
             }).SetStyle("word-break: break-all"),
 
