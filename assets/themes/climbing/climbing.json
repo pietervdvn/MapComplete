@@ -398,6 +398,54 @@
             "key": "climbing:grade:french"
           }
         },
+        {
+          "#": "Bolts",
+          "question": {
+            "en": "How much bolts does this route have before reaching the moulinette?"
+          },
+          "render": {
+            "en": "This route has {climbing:bolts} bolts"
+          },
+          "freeform": {
+            "key": "climbing:bolts",
+            "type": "pnat",
+            "addExtraTag": [
+              "climbing:bolted=yes"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "climbing:bolted=no",
+              "then": {
+                "en": "This route is not bolted"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "climbing:bolted=no&climbing:bolts=",
+              "then": {
+                "en": "This route is not bolted"
+              }
+            }
+          ]
+        },
+        {
+          "#": "Description",
+          "question": "Is there other relevant info?",
+          "render": "<h3>Description</h3><br/>{description}",
+          "freeform": {
+            "key": "description"
+          }
+        },
+        {"#": "Rock type",
+          "render": {
+            "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
+          },
+          "freeform": {
+            "key": "_embedding_features_with_rock:rock"
+          }
+          
+        },
         "reviews"
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
@@ -515,14 +563,13 @@
           "#": "Contained routes hist",
           "render": {
             "en": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist, , , 3[a-zA-Z+-]*:#56bd56, 4[a-zA-Z+-]*:#ffff59,5[a-zA-Z+-]*:#ffad48, 6[a-zA-Z+-]*:#63a9ff, 7[a-zA-Z+-]*:#ff5858, 8[a-zA-Z+-]*:#000000, .*:#aaa )}"
-            
           },
           "condition": "_difficulty_hist!~\\[\\]"
         },
         {
           "#": "Containe {_contained_climbing_routes_count} routes",
           "render": {
-           "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            "en": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
           },
           "condition": "_contained_climbing_routes~*"
         },
@@ -585,6 +632,30 @@
               "then": "A climbing area with one or more climbing crags and/or boulders"
             }
           ]
+        },
+        {"#": "Rock type (crag/rock/cliff only)",
+          "question": {
+            "en": "What is the rock type here?"
+          },
+          "render": {
+            "en": "The rock type is {rock}"
+          },
+          "freeform": {
+            "key": "rock"
+          },
+          "mappings": [
+            {
+              "if": "rock=limestone",
+              "then": {
+                "en": "Limestone",
+                "nl": "Kalksteen"
+              }
+            }
+          ],
+          
+          "condition": {
+            "or": ["climbing=crag","natural=cliff","natural=bare_rock"]
+          }
         },
         "reviews"
       ],
@@ -1235,6 +1306,9 @@
     "+calculatedTags": [
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
       "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
+      "_embedding_feature_with_rock=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.rock !== undefined)[0]",
+      "_embedding_features_with_rock:rock=JSON.parse(_embedding_feature_with_rock).rock",
+      "_embedding_features_with_rock:id=JSON.parse(_embedding_feature_with_rock).id",
       "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
       "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
       "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id"
