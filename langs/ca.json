@@ -131,6 +131,9 @@
             "ph_not_known": " ",
             "ph_closed": "tancat",
             "ph_open": "tancat"
+        },
+        "attribution": {
+            "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}"
         }
     },
     "favourite": {

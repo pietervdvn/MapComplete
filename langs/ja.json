@@ -51,6 +51,11 @@
             "addToHomeScreen": "<h3>ホーム画面に追加する</h3>このサイトはスマートフォンのホーム画面に簡単に追加でき、ネイティブな雰囲気になります。これを行うには、URLバーの「ホーム画面に追加ボタン」をクリックします。",
             "intro": "<h3>このマップを共有</h3>このマップを共有するには、次のリンクをコピーして、友人や家族に送信します。"
         },
+        "attribution": {
+            "iconAttribution": {
+                "title": "使用されるアイコン"
+            }
+        },
         "questions": {
             "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",
             "emailOf": "{category} の電子メールアドレスは何ですか?",

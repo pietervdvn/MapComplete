@@ -136,7 +136,12 @@
             "zoomInToSeeThisLayer": "Achégate para ver esta capa"
         },
         "backgroundMap": "Mapa do fondo",
-        "getStartedLogin": "Entra no OpenStreetMap para comezar"
+        "getStartedLogin": "Entra no OpenStreetMap para comezar",
+        "attribution": {
+            "iconAttribution": {
+                "title": "Iconas empregadas"
+            }
+        }
     },
     "favourite": {
         "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
