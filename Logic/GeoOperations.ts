@@ -44,7 +44,7 @@ export class GeoOperations {
             const coor = feature.geometry.coordinates;
             for (const otherFeature of otherFeatures) {
 
-                if(feature.id === otherFeature.id){
+                if (feature.id !== undefined && feature.id === otherFeature.id) {
                     continue;
                 }
 
@@ -64,59 +64,15 @@ export class GeoOperations {
 
             for (const otherFeature of otherFeatures) {
 
-                if(feature.id === otherFeature.id){
-                    continue;
-                }
-                
-                const otherFeatureBBox = BBox.get(otherFeature);
-                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
-                if (!overlaps) {
+                if (feature.id !== undefined && feature.id === otherFeature.id) {
                     continue;
                 }
 
-                // Calculate the length of the intersection
-                try {
-
-                    let intersectionPoints = turf.lineIntersect(feature, otherFeature);
-                    if (intersectionPoints.features.length == 0) {
-                        // No intersections.
-                        // If one point is inside of the polygon, all points are
-
-
-                        const coors = feature.geometry.coordinates;
-                        const startCoor = coors[0]
-                        if (this.inside(startCoor, otherFeature)) {
-                            result.push({feat: otherFeature, overlap: this.lengthInMeters(feature)})
-                        }
-
-                        continue;
-                    }
-                    let intersectionPointsArray = intersectionPoints.features.map(d => {
-                        return d.geometry.coordinates
-                    });
-
-                    if (intersectionPointsArray.length == 1) {
-                        // We need to add the start- or endpoint of the current feature, depending on which one is embedded
-                        const coors = feature.geometry.coordinates;
-                        const startCoor = coors[0]
-                        if (this.inside(startCoor, otherFeature)) {
-                            // The startpoint is embedded
-                            intersectionPointsArray.push(startCoor)
-                        } else {
-                            intersectionPointsArray.push(coors[coors.length - 1])
-                        }
-                    }
-
-                    let intersection = turf.lineSlice(turf.point(intersectionPointsArray[0]), turf.point(intersectionPointsArray[1]), feature);
-
-                    if (intersection == null) {
-                        continue;
-                    }
-                    const intersectionSize = turf.length(intersection); // in km
-                    result.push({feat: otherFeature, overlap: intersectionSize * 1000})
-                } catch (exception) {
-                    console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
+                const intersection = this.calculateInstersection(feature, otherFeature, featureBBox)
+                if (intersection === null) {
+                    continue
                 }
+                result.push({feat: otherFeature, overlap: intersection})
 
             }
             return result;
@@ -125,36 +81,26 @@ export class GeoOperations {
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
 
             for (const otherFeature of otherFeatures) {
-                
-                if(feature.id === otherFeature.id){
+
+                if (feature.id === otherFeature.id) {
                     continue;
                 }
-                
-                if(otherFeature.geometry.type === "Point"){
+
+                if (otherFeature.geometry.type === "Point") {
                     if (this.inside(otherFeature, feature)) {
                         result.push({feat: otherFeature, overlap: undefined})
                     }
                     continue;
                 }
-                
-                const otherFeatureBBox = BBox.get(otherFeature);
-                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
-                if (!overlaps) {
-                    continue;
-                }
+
 
                 // Calculate the surface area of the intersection
-                try {
 
-                    const intersection = turf.intersect(feature, otherFeature);
-                    if (intersection == null) {
-                        continue;
-                    }
-                    const intersectionSize = turf.area(intersection); // in m²
-                    result.push({feat: otherFeature, overlap: intersectionSize})
-                } catch (exception) {
-                    console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
+                const intersection = this.calculateInstersection(feature, otherFeature, featureBBox)
+                if (intersection === null) {
+                    continue;
                 }
+                result.push({feat: otherFeature, overlap: intersection})
 
             }
             return result;
@@ -170,8 +116,8 @@ export class GeoOperations {
         if (feature.geometry.type === "Point") {
             return false;
         }
-        
-        if(pointCoordinate.geometry !== undefined){
+
+        if (pointCoordinate.geometry !== undefined) {
             pointCoordinate = pointCoordinate.geometry.coordinates
         }
 
@@ -230,6 +176,98 @@ export class GeoOperations {
 
     static lengthInMeters(feature: any) {
         return turf.length(feature) * 1000
+    }
+
+    /**
+     * Calculates the intersection between two features.
+     * Returns the length if intersecting a linestring and a (multi)polygon (in meters), returns a surface area (in m²) if intersecting two (multi)polygons
+     * Returns 0 if both are linestrings
+     * Returns null if the features are not intersecting
+     */
+    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
+        try {
+            if (feature.geometry.type === "LineString") {
+
+
+                otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature);
+                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
+                if (!overlaps) {
+                    return null;
+                }
+
+                // Calculate the length of the intersection
+
+
+                let intersectionPoints = turf.lineIntersect(feature, otherFeature);
+                if (intersectionPoints.features.length == 0) {
+                    // No intersections.
+                    // If one point is inside of the polygon, all points are
+
+
+                    const coors = feature.geometry.coordinates;
+                    const startCoor = coors[0]
+                    if (this.inside(startCoor, otherFeature)) {
+                        return this.lengthInMeters(feature)
+                    }
+
+                    return null;
+                }
+                let intersectionPointsArray = intersectionPoints.features.map(d => {
+                    return d.geometry.coordinates
+                });
+
+                if (otherFeature.geometry.type === "LineString") {
+                    if (intersectionPointsArray.length > 0) {
+                        return 0
+                    }
+                    return null;
+                }
+                if (intersectionPointsArray.length == 1) {
+                    // We need to add the start- or endpoint of the current feature, depending on which one is embedded
+                    const coors = feature.geometry.coordinates;
+                    const startCoor = coors[0]
+                    if (this.inside(startCoor, otherFeature)) {
+                        // The startpoint is embedded
+                        intersectionPointsArray.push(startCoor)
+                    } else {
+                        intersectionPointsArray.push(coors[coors.length - 1])
+                    }
+                }
+
+                let intersection = turf.lineSlice(turf.point(intersectionPointsArray[0]), turf.point(intersectionPointsArray[1]), feature);
+
+                if (intersection == null) {
+                    return null;
+                }
+                const intersectionSize = turf.length(intersection); // in km
+                return intersectionSize * 1000
+
+
+            }
+
+            if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
+                const otherFeatureBBox = BBox.get(otherFeature);
+                const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
+                if (!overlaps) {
+                    return null;
+                }
+                if (otherFeature.geometry.type === "LineString") {
+                    return this.calculateInstersection(otherFeature, feature, otherFeatureBBox, featureBBox)
+                }
+
+                const intersection = turf.intersect(feature, otherFeature);
+                if (intersection == null) {
+                    return null;
+                }
+                return turf.area(intersection); // in m²
+
+            }
+
+        } catch (exception) {
+            console.warn("EXCEPTION CAUGHT WHILE INTERSECTING: ", exception);
+            return undefined
+        }
+        return undefined;
     }
 }
 
