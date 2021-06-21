@@ -70,7 +70,6 @@
             "emailIs": "Het email-adres van {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
         },
         "attribution": {
-            "themeBy": "Thema gemaakt door {author}",
             "codeContributionsBy": "MapComplete is gebouwd door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andere bijdragers</a>"
         },
         "sharescreen": {
