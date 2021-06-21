@@ -68,7 +68,6 @@
             "emailOf": "Quina és l'adreça de correu-e de {category}?",
             "emailIs": "L'adreça de correu de {category} és <a href='mailto:{email}' target='_blank'>{email}</a>"
         },
-        "openStreetMapIntro": "<h3>Un mapa obert</h3><p></p>No seria genial si hagués un únic mapa, que tothom pogués utilitzar i editar lliurement?Un sol lloc on emmagatzemar tota la informació geogràfica? Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactulitzats) ja no serien necessaris.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> és aquest mapa. Les dades del mapa es poden utilitzar de franc (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. De fet, aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats ​​per OpenStreetMap. Si canvies alguna cosa aquí també es reflectirà en aquestes aplicacions en la seva propera actualització.</p>",
         "sharescreen": {
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
             "addToHomeScreen": "<h3>Afegir-lo a la pantalla d'inici</h3>Pots afegir aquesta web a la pantalla d'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'afegir a l'inici' a la barra d'adreces URL per fer-ho.",
@@ -132,16 +131,6 @@
             "ph_not_known": " ",
             "ph_closed": "tancat",
             "ph_open": "tancat"
-        },
-        "attribution": {
-            "attributionContent": "<p>Totes les dades provenen d'<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, i es poden reutilitzar lliurement sota <a href=\"https://osm.org/copyright\" target=\"_blank\">la Llicència Oberta de Base de Dades (ODbL)</a>.</p>",
-            "attributionTitle": "Avís d’atribució",
-            "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
-            "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
-            "iconAttribution": {
-                "title": "Icones utilitzades"
-            },
-            "themeBy": "Tema mantingut per {author}"
         }
     },
     "favourite": {

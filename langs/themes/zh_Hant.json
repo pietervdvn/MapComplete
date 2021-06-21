@@ -75,7 +75,7 @@
                         "render": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
                     },
                     "4": {
-                        "question": "<b>這個藝術品</b>有那個對應的 wikidata 項目？",
+                        "question": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
                         "render": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
                     }
                 }
