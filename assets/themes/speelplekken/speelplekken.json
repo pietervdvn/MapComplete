@@ -21,7 +21,7 @@
   "startLon": 4.449462,
   "startZoom": 12,
   "widenFactor": 0.05,
-  "socialImage": "",
+  "socialImage": "social_image.jpg",
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
