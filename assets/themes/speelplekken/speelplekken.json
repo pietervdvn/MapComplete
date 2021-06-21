@@ -21,7 +21,7 @@
   "startLon": 4.449462,
   "startZoom": 12,
   "widenFactor": 0.05,
-  "socialImage": "social_image.jpg",
+  "socialImage": "./assets/themes/speelplekken/social_image.jpg",
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
