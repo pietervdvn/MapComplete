@@ -148,6 +148,7 @@
             "ph_not_known": " ",
             "ph_closed": "gesloten",
             "ph_open": "open",
+            "ph_open_as_usual": "geopend zoals gewoonlijk",
             "not_all_rules_parsed": "De openingsuren van deze zaak zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:"
         }
     },

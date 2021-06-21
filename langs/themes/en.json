@@ -469,10 +469,10 @@
                 },
                 "description": "A climbing opportunity",
                 "tagRenderings": {
-                    "3": {
+                    "2": {
                         "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
                     },
-                    "4": {
+                    "3": {
                         "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
                     },
                     "5": {
