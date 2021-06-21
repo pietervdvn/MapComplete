@@ -75,6 +75,39 @@ export default class SimpleMetaTagger {
             feature.area = sqMeters;
         })
     );
+
+    private static canonicalize = new SimpleMetaTagger(
+        {
+            doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)",
+            keys: []
+
+        },
+        (feature => {
+            const units = State.state.layoutToUse.data.units ?? [];
+            for (const key in feature.properties) {
+                if(!feature.properties.hasOwnProperty(key)){
+                    continue;
+                }
+                for (const unit of units) {
+                    if (!unit.appliesToKeys.has(key)) {
+                        continue;
+                    }
+                    const value = feature.properties[key]
+                    
+                    for (const applicableUnit of unit.applicableUnits) {
+                        const canonical = applicableUnit.canonicalValue(value)
+                        if (canonical == null) {
+                            continue
+                        }
+                        console.log("Rewritten ", key, " from", value, "into", canonical)
+                        feature.properties[key] = canonical;
+                    }
+                }
+
+            }
+        })
+    )
+
     private static lngth = new SimpleMetaTagger(
         {
             keys: ["_length", "_length:km"],
@@ -215,7 +248,7 @@ export default class SimpleMetaTagger {
             keys: ["_width:needed", "_width:needed:no_pedestrians", "_width:difference"],
             doc: "Legacy for a specific project calculating the needed width for safe traffic on a road. Only activated if 'width:carriageway' is present"
         },
-        (feature: any, index: number) => {
+        feature => {
 
             const properties = feature.properties;
             if (properties["width:carriageway"] === undefined) {
@@ -352,6 +385,7 @@ export default class SimpleMetaTagger {
         SimpleMetaTagger.latlon,
         SimpleMetaTagger.surfaceArea,
         SimpleMetaTagger.lngth,
+        SimpleMetaTagger.canonicalize,
         SimpleMetaTagger.country,
         SimpleMetaTagger.isOpen,
         SimpleMetaTagger.carriageWayWidth,

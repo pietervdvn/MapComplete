@@ -5,6 +5,7 @@ import {LayoutConfigJson} from "./LayoutConfigJson";
 import AllKnownLayers from "../AllKnownLayers";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {Utils} from "../../Utils";
+import {Unit} from "./Unit";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -30,7 +31,6 @@ export default class LayoutConfig {
         maxZoom: number,
         minNeededElements: number
     };
-
     public readonly hideFromOverview: boolean;
     public lockLocation: boolean | [[number, number], [number, number]];
     public readonly enableUserBadge: boolean;
@@ -42,12 +42,12 @@ export default class LayoutConfig {
     public readonly enableGeolocation: boolean;
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly enableShowAllQuestions: boolean;
-
     public readonly customCss?: string;
     /*
     How long is the cache valid, in seconds?
      */
     public readonly cacheTimeout?: number;
+    public readonly units: { appliesToKeys: Set<string>, applicableUnits: Unit[] }[] = []
     private readonly _official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
@@ -185,6 +185,51 @@ export default class LayoutConfig {
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
+
+
+        if ((json.units ?? []).length !== 0) {
+            for (let i1 = 0; i1 < json.units.length; i1++) {
+                let unit = json.units[i1];
+                const appliesTo = unit.appliesToKey
+
+                for (let i = 0; i < appliesTo.length; i++) {
+                    let key = appliesTo[i];
+                    if (key.trim() !== key) {
+                        throw `${context}.unit[${i1}].appliesToKey[${i}] is invalid: it starts or ends with whitespace`
+                    }
+                }
+
+                if ((unit.applicableUnits ?? []).length === 0) {
+                    throw  `${context}: define at least one applicable unit`
+                }
+                // Some keys do have unit handling
+
+                const defaultSet = unit.applicableUnits.filter(u => u.default === true)
+                // No default is defined - we pick the first as default
+                if(defaultSet.length === 0){
+                    unit.applicableUnits[0].default = true 
+                }
+              
+                // Check that there are not multiple defaults
+                if (defaultSet.length > 1) {
+                    throw `Multiple units are set as default: they have canonical values of ${defaultSet.map(u => u.canonicalDenomination).join(", ")}`
+                }
+                const applicable = unit.applicableUnits.map((u, i) => new Unit(u, `${context}.units[${i}]`))
+                this.units.push({
+                    appliesToKeys: new Set(appliesTo),
+                    applicableUnits: applicable
+                })
+            }
+
+            const seenKeys = new Set<string>()
+            for (const unit of this.units) {
+                const alreadySeen = Array.from(unit.appliesToKeys).filter(key => seenKeys.has(key));
+                if (alreadySeen.length > 0) {
+                    throw `${context}.units: multiple units define the same keys. The key(s) ${alreadySeen.join(",")} occur multiple times`
+                }
+                unit.appliesToKeys.forEach(key => seenKeys.add(key))
+            }
+        }
     }
 
     public CustomCodeSnippets(): string[] {

@@ -214,7 +214,11 @@ class LayerOverviewUtils {
             const errors = layerErrorCount.concat(themeErrorCount).join("\n")
             console.log(errors)
             const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
+            console.log ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
             console.log(msg)
+            console.log ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+   
             if (process.argv.indexOf("--report") >= 0) {
                 console.log("Writing report!")
                 writeFileSync("layer_report.txt", errors)
@@ -227,4 +231,4 @@ class LayerOverviewUtils {
     }
 }
 
-new LayerOverviewUtils().main(process.argv)
+    new LayerOverviewUtils().main(process.argv)

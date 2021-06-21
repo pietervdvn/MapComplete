@@ -8,6 +8,7 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 
+
 /***
  * The parsed version of TagRenderingConfigJSON
  * Identical data, but with some methods and validation
@@ -64,11 +65,16 @@ export default class TagRenderingConfig {
             this.condition = condition;
         }
         if (json.freeform) {
+
+
+
             this.freeform = {
                 key: json.freeform.key,
                 type: json.freeform.type ?? "string",
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
-                    FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? []
+                    FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
+              
+              
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -76,6 +82,9 @@ export default class TagRenderingConfig {
             if (this.freeform.key === undefined || this.freeform.key === "") {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
+            
+            
+            
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
                 const knownKeys = ValidatedTextField.tpList.map(tp => tp.name).join(", ");
                 throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
@@ -91,8 +100,8 @@ export default class TagRenderingConfig {
         this.multiAnswer = json.multiAnswer ?? false
         if (json.mappings) {
 
-            if(!Array.isArray(json.mappings)){
-                throw "Tagrendering has a 'mappings'-object, but expected a list ("+context+")"
+            if (!Array.isArray(json.mappings)) {
+                throw "Tagrendering has a 'mappings'-object, but expected a list (" + context + ")"
             }
 
             this.mappings = json.mappings.map((mapping, i) => {
@@ -104,15 +113,15 @@ export default class TagRenderingConfig {
                 if (mapping.ifnot !== undefined && !this.multiAnswer) {
                     throw `${context}.mapping[${i}]: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
                 }
-                
-                if(mapping.if === undefined){
+
+                if (mapping.if === undefined) {
                     throw `${context}.mapping[${i}]: Invalid mapping: "if" is not defined, but the tagrendering is not a multianswer`
                 }
-                if(typeof mapping.if !== "string" && mapping.if["length"] !== undefined){
+                if (typeof mapping.if !== "string" && mapping.if["length"] !== undefined) {
                     throw `${context}.mapping[${i}]: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`
                 }
-                
-                
+
+
                 let hideInAnswer: boolean | TagsFilter = false;
                 if (typeof mapping.hideInAnswer === "boolean") {
                     hideInAnswer = mapping.hideInAnswer;
@@ -246,22 +255,22 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): Translation[]{
-        if(!this.multiAnswer){
+    public GetRenderValues(tags: any): Translation[] {
+        if (!this.multiAnswer) {
             return [this.GetRenderValue(tags)]
         }
 
         // A flag to check that the freeform key isn't matched multiple times 
         // If it is undefined, it is "used" already, or at least we don't have to check for it anymore
-        let freeformKeyUsed = this.freeform?.key === undefined; 
+        let freeformKeyUsed = this.freeform?.key === undefined;
         // We run over all the mappings first, to check if the mapping matches
         const applicableMappings: Translation[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping.then;
             }
             if (TagUtils.MatchesMultiAnswer(mapping.if, tags)) {
-                if(!freeformKeyUsed){
-                    if(mapping.if.usedKeys().indexOf(this.freeform.key) >= 0){
+                if (!freeformKeyUsed) {
+                    if (mapping.if.usedKeys().indexOf(this.freeform.key) >= 0) {
                         // This mapping matches the freeform key - we mark the freeform key to be ignored!
                         freeformKeyUsed = true;
                     }
@@ -270,8 +279,7 @@ export default class TagRenderingConfig {
             }
             return undefined;
         }))
-        
-        
+
 
         if (!freeformKeyUsed
             && tags[this.freeform.key] !== undefined) {
@@ -279,9 +287,10 @@ export default class TagRenderingConfig {
         }
         return applicableMappings
     }
-    
+
     /**
      * Gets the correct rendering value (or undefined if not known)
+     * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
     public GetRenderValue(tags: any): Translation {
@@ -308,14 +317,14 @@ export default class TagRenderingConfig {
     }
 
     public ExtractImages(isIcon: boolean): Set<string> {
-        
+
         const usedIcons = new Set<string>()
         this.render?.ExtractImages(isIcon)?.forEach(usedIcons.add, usedIcons)
 
         for (const mapping of this.mappings ?? []) {
             mapping.then.ExtractImages(isIcon).forEach(usedIcons.add, usedIcons)
         }
-        
+
         return usedIcons;
     }
 

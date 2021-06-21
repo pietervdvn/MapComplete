@@ -1,14 +1,15 @@
 import {LayerConfigJson} from "./LayerConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
+import UnitConfigJson from "./UnitConfigJson";
 
 /**
  * Defines the entire theme.
- * 
+ *
  * A theme is the collection of the layers that are shown; the intro text, the icon, ...
  * It more or less defines the entire experience.
- * 
+ *
  * Most of the fields defined here are metadata about the theme, such as its name, description, supported languages, default starting location, ...
- * 
+ *
  * The main chunk of the json will however be the 'layers'-array, where the details of your layers are.
  *
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
@@ -16,10 +17,10 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 export interface LayoutConfigJson {
     /**
      * The id of this layout.
-     * 
+     *
      * This is used as hashtag in the changeset message, which will read something like "Adding data with #mapcomplete for theme #<the theme id>"
      * Make sure it is something decent and descriptive, it should be a simple, lowercase string.
-     * 
+     *
      * On official themes, it'll become the name of the page, e.g.
      * 'cyclestreets' which become 'cyclestreets.html'
      */
@@ -29,7 +30,7 @@ export interface LayoutConfigJson {
      * Who helped to create this theme and should be attributed?
      */
     credits?: string;
-    
+
     /**
      * Who does maintian this preset?
      */
@@ -49,7 +50,7 @@ export interface LayoutConfigJson {
      * If the theme supports multiple languages, use a list: `["en","nl","fr"]` to allow the user to pick any of them
      */
     language: string | string[];
-    
+
     /**
      * The title, as shown in the welcome message and the more-screen
      */
@@ -60,7 +61,7 @@ export interface LayoutConfigJson {
      * Note that if this one is not defined, the first sentence of 'description' is used
      */
     shortDescription?: string | any;
-    
+
     /**
      * The description, as shown in the welcome message and the more-screen
      */
@@ -116,7 +117,7 @@ export interface LayoutConfigJson {
 
     /**
      * An override applied on all layers of the theme.
-     * 
+     *
      * E.g.: if there are two layers defined:
      * ```
      * "layers"[
@@ -124,7 +125,7 @@ export interface LayoutConfigJson {
      *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ...}}
      * ]
      * ```
-     * 
+     *
      * and overrideAll is specified:
      * ```
      * "overrideAll": {
@@ -136,11 +137,11 @@ export interface LayoutConfigJson {
      *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ..., "geoJsonSource":"xyz"}}
      * ]
      * ```
-     * 
+     *
      * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list)
      */
     overrideAll?: any;
-    
+
     /**
      * The id of the default background. BY default: vanilla OSM
      */
@@ -149,42 +150,107 @@ export interface LayoutConfigJson {
     /**
      * The number of seconds that a feature is allowed to stay in the cache.
      * The caching flow is as following:
-     * 
+     *
      * 1. The application is opened the first time
      * 2. An overpass query is run
      * 3. The result is saved to local storage
-     * 
+     *
      * On the next opening:
      *
      * 1. The application is opened
      * 2. Data is loaded from cache and displayed
      * 3. An overpass query is run
      * 4. All data (both from overpass ánd local storage) are saved again to local storage (except when to old)
-     * 
+     *
      * Default value: 60 days
      */
     cacheTimout?: number;
-    
-    
+
+
     /**
      * The layers to display.
-     * 
+     *
      * Every layer contains a description of which feature to display - the overpassTags which are queried.
      * Instead of running one query for every layer, the query is fused.
-     * 
+     *
      * Afterwards, every layer is given the list of features.
      * Every layer takes away the features that match with them*, and give the leftovers to the next layers.
-     * 
+     *
      * This implies that the _order_ of the layers is important in the case of features with the same tags;
      * as the later layers might never receive their feature.
-     * 
+     *
      * *layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself
-     * 
+     *
      * Note that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: "layername", override: ...}
      * The 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer
-     * 
+     *
      */
-    layers: (LayerConfigJson | string | {builtin: string, override: any})[],
+    layers: (LayerConfigJson | string | { builtin: string, override: any })[],
+
+    /**
+     * In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)
+     *
+     * Sometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)
+     *
+     * This brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)
+     *
+     * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
+     * This is handled by defining units.
+     *
+     * # Usage
+     *
+     * First of all, you define which keys have units applied, for example:
+     *
+     * ```
+     * units: [
+     *  appliesTo: ["maxspeed", "maxspeed:hgv", "maxspeed:bus"]
+     *  applicableUnits: [
+     *      ...
+     *  ]
+     * ]
+     * ```
+     *
+     * ApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:
+     *
+     * ```
+     * applicableUnits: [
+     * {
+     *     canonicalDenomination: "km/h",
+     *     alternativeDenomination: ["km/u", "kmh", "kph"]
+     *     default: true,
+     *     human: {
+     *         en: "kilometer/hour",
+     *         nl: "kilometer/uur"
+     *     },
+     *     humanShort: {
+     *         en: "km/h",
+     *         nl: "km/u"
+     *     }
+     * },
+     * {
+     *     canoncialDenomination: "mph",
+     *     ... similar for miles an hour ...
+     * }
+     * ]
+     * ```
+     *
+     *
+     * If this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:
+     * every value will be parsed and the canonical extension will be added add presented to the other parts of the code.
+     *
+     * Also, if a freeform text field is used, an extra dropdown with applicable denominations will be given
+     *
+     */
+    
+    units?: {
+
+        /**
+         * Every key from this list will be normalized
+         */
+        appliesToKey: string[],
+
+        applicableUnits: UnitConfigJson[]
+    }[]
 
     /**
      * If defined, data will be clustered.
@@ -218,7 +284,7 @@ export interface LayoutConfigJson {
      * Off by default, which will enable panning to the entire world
      */
     lockLocation?: boolean | [[number, number], [number, number]];
-    
+
     enableUserBadge?: boolean;
     enableShareScreen?: boolean;
     enableMoreQuests?: boolean;

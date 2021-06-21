@@ -45,6 +45,8 @@ export interface TagRenderingConfigJson {
          * Useful to add a 'fixme=freeform textfield used - to be checked'
          **/
         addExtraTags?: string[];
+
+        
     },
 
     /**

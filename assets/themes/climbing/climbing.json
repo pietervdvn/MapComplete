@@ -816,6 +816,20 @@
       "wayHandling": 0
     }
   ],
+  "units": [
+    {
+      "appliesToKey": ["climbing:length"],
+      "applicableUnits": [{
+        "canonicalDenomination": "m",
+        "alternativeDenomination": ["meter","meters"],
+        "human": {
+          "en": "meter",
+          "nl": "meter"
+        },
+        "default": true
+      }]
+    }
+  ],
   "roamingRenderings": [
     {
       "#": "Website",
