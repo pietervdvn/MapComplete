@@ -67,6 +67,17 @@ export class FromJSON {
                     true
                 );
             }
+            if (tag.indexOf("!~") >= 0) {
+                const split = Utils.SplitFirst(tag, "!~");
+                if (split[1] === "*") {
+                    split[1] = "..*"
+                }
+                return new RegexTag(
+                    split[0],
+                    new RegExp("^" + split[1] + "$"),
+                    true
+                );
+            }
             if (tag.indexOf("~") >= 0) {
                 const split = Utils.SplitFirst(tag, "~");
                 if (split[1] === "*") {
