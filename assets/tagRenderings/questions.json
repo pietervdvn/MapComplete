@@ -5,6 +5,9 @@
   "reviews": {
     "render": "{reviews()}"
   },
+  "minimap": {
+    "render": "<div class='w-full h-6 rounded-full'>{minimap(19, {id})}</div>"
+  },
   "phone": {
     "question": {
       "en": "What is the phone number of {name}?",
