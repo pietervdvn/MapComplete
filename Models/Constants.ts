@@ -2,7 +2,7 @@ import { Utils } from "../Utils";
 
 export default class Constants {
     
-    public static vNumber = "0.8.0a";
+    public static vNumber = "0.8.0b";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
