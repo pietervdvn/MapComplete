@@ -249,7 +249,15 @@ export interface LayoutConfigJson {
          */
         appliesToKey: string[],
 
+        /**
+         * The possible denominations
+         */
         applicableUnits: UnitConfigJson[]
+        /**
+         * If set, invalid values will be erased in the MC application (but not in OSM of course!)
+         * Be careful with setting this
+         */
+        eraseInvalidValues?: boolean;
     }[]
 
     /**

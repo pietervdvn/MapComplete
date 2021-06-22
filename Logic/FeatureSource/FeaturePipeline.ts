@@ -77,16 +77,14 @@ export default class FeaturePipeline implements FeatureSource {
             ]);
 
         merged.features.syncWith(allLoadedFeatures)
-        
-        const source =
-            new WayHandlingApplyingFeatureSource(flayers,
-                new FilteringFeatureSource(
-                    flayers,
-                    locationControl,
-                    selectedElement,
-                    merged
-                ));
-        this.features = source.features;
+
+        this.features = new WayHandlingApplyingFeatureSource(flayers,
+            new FilteringFeatureSource(
+                flayers,
+                locationControl,
+                selectedElement,
+                merged
+            )).features;
     }
 
 }

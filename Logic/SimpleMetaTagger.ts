@@ -94,9 +94,14 @@ export default class SimpleMetaTagger {
                     }
                     const value = feature.properties[key]
                     const [, denomination] = unit.findDenomination(value)
-                    const canonical = denomination.canonicalValue(value)
+                    let canonical = denomination.canonicalValue(value) ?? undefined;
                     console.log("Rewritten ", key, " from", value, "into", canonical)
+                    if(canonical === undefined && !unit.eraseInvalid) {
+                        break;
+                    }
+                    
                     feature.properties[key] = canonical;
+                    break;
                 }
 
             }

@@ -99,7 +99,7 @@ export default class LayoutConfig {
                 if (AllKnownLayers.sharedLayersJson[layer] !== undefined) {
                     if (json.overrideAll !== undefined) {
                         let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
-                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr), this.units,`${this.id}+overrideAll.layers[${i}]`, official);
+                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr), this.units, `${this.id}+overrideAll.layers[${i}]`, official);
                     } else {
                         return AllKnownLayers.sharedLayers[layer]
                     }
@@ -190,7 +190,7 @@ export default class LayoutConfig {
 
     }
 
-    private static ExtractUnits(json: LayoutConfigJson, context: string) : Unit[]{
+    private static ExtractUnits(json: LayoutConfigJson, context: string): Unit[] {
         const result: Unit[] = []
         if ((json.units ?? []).length !== 0) {
             for (let i1 = 0; i1 < json.units.length; i1++) {
@@ -220,7 +220,7 @@ export default class LayoutConfig {
                     throw `Multiple units are set as default: they have canonical values of ${defaultSet.map(u => u.canonicalDenomination).join(", ")}`
                 }
                 const applicable = unit.applicableUnits.map((u, i) => new Denomination(u, `${context}.units[${i}]`))
-                result.push(new Unit(                   appliesTo, applicable));
+                result.push(new Unit(appliesTo, applicable, unit.eraseInvalidValues ?? false));
             }
 
             const seenKeys = new Set<string>()

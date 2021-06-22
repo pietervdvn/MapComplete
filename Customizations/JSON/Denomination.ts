@@ -6,54 +6,57 @@ import Combine from "../../UI/Base/Combine";
 
 export class Unit {
     public readonly appliesToKeys: Set<string>;
-    public readonly denominations : Denomination[];
+    public readonly denominations: Denomination[];
     public readonly defaultDenom: Denomination;
-    constructor(appliesToKeys: string[], applicableUnits: Denomination[]) {
-        this.appliesToKeys = new Set( appliesToKeys);
+    public readonly eraseInvalid : boolean;
+
+    constructor(appliesToKeys: string[], applicableUnits: Denomination[], eraseInvalid: boolean) {
+        this.appliesToKeys = new Set(appliesToKeys);
         this.denominations = applicableUnits;
-this.defaultDenom = applicableUnits.filter(denom => denom.default)[0]
+        this.defaultDenom = applicableUnits.filter(denom => denom.default)[0]
+        this.eraseInvalid = eraseInvalid
     }
 
-    isApplicableToKey(key: string | undefined) : boolean {
-        if(key === undefined){
+    isApplicableToKey(key: string | undefined): boolean {
+        if (key === undefined) {
             return false;
         }
-        
+
         return this.appliesToKeys.has(key);
     }
 
     /**
      * Finds which denomination is applicable and gives the stripped value back
      */
-    findDenomination(valueWithDenom: string) : [string, Denomination] {
+    findDenomination(valueWithDenom: string): [string, Denomination] {
         for (const denomination of this.denominations) {
-          const bare =  denomination.StrippedValue(valueWithDenom)
-            if(bare !== null){
+            const bare = denomination.StrippedValue(valueWithDenom)
+            if (bare !== null) {
                 return [bare, denomination]
             }
-        } 
+        }
         return [undefined, undefined]
     }
 
     asHumanLongValue(value: string): BaseUIElement {
-        if(value === undefined){
+        if (value === undefined) {
             return undefined;
         }
         const [stripped, denom] = this.findDenomination(value)
         const human = denom.human
-        
-        const elems = denom.prefix ? [human, stripped] : [stripped , human];
+
+        const elems = denom.prefix ? [human, stripped] : [stripped, human];
         return new Combine(elems)
-        
+
     }
 }
 
 export class Denomination {
-    private readonly _human: Translation;
-    private readonly alternativeDenominations: string [];
     public readonly canonical: string;
     readonly default: boolean;
     readonly prefix: boolean;
+    private readonly _human: Translation;
+    private readonly alternativeDenominations: string [];
 
     constructor(json: UnitConfigJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
@@ -77,13 +80,13 @@ export class Denomination {
         this.prefix = json.prefix ?? false;
 
     }
-    
-    get human() : Translation {
+
+    get human(): Translation {
         return this._human.Clone()
     }
 
     public canonicalValue(value: string, actAsDefault?: boolean) {
-        if(value === undefined){
+        if (value === undefined) {
             return undefined;
         }
         const stripped = this.StrippedValue(value, actAsDefault)
@@ -102,10 +105,10 @@ export class Denomination {
      */
     public StrippedValue(value: string, actAsDefault?: boolean): string {
 
-        if(value === undefined){
+        if (value === undefined) {
             return undefined;
         }
-        
+
         if (this.prefix) {
             if (value.startsWith(this.canonical)) {
                 return value.substring(this.canonical.length).trim();
