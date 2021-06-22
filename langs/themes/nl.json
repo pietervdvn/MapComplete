@@ -79,7 +79,7 @@
                         "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
                     },
                     "4": {
-                        "question": "Welk wikidata-item beschrijft dit kunstwerk?",
+                        "question": "Welk Wikidata-item beschrijft dit kunstwerk?",
                         "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }
@@ -239,7 +239,8 @@
         }
     },
     "campersite": {
-        "title": "Kampeersite"
+        "title": "Kampeersite",
+        "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome"
     },
     "climbing": {
         "title": "Open Klimkaart",
@@ -347,6 +348,13 @@
                                 "then": "Dit Klimgelegenheid heeft geen naam"
                             }
                         }
+                    },
+                    "7": {
+                        "mappings": {
+                            "0": {
+                                "then": "Kalksteen"
+                            }
+                        }
                     }
                 },
                 "presets": {
@@ -361,7 +369,22 @@
                 "title": {
                     "render": "Klimgelegenheid?"
                 },
-                "description": "Een klimgelegenheid?"
+                "description": "Een klimgelegenheid?",
+                "tagRenderings": {
+                    "1": {
+                        "mappings": {
+                            "2": {
+                                "then": "Klimmen is hier niet toegelaten"
+                            },
+                            "1": {
+                                "then": "Klimmen is hier niet toegelaten"
+                            },
+                            "0": {
+                                "then": "Klimmen is hier niet mogelijk"
+                            }
+                        }
+                    }
+                }
             }
         },
         "roamingRenderings": {
@@ -449,6 +472,19 @@
                         "then": "Er zijn hier {climbing:speed} snelklimmuren"
                     }
                 }
+            },
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                    },
+                    "0": {
+                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+                    }
+                }
+            },
+            "0": {
+                "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
             }
         }
     },

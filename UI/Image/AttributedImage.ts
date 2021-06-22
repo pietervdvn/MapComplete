@@ -1,7 +1,7 @@
 import Combine from "../Base/Combine";
 import Attribution from "./Attribution";
 import Img from "../Base/Img";
-import ImageAttributionSource from "../../Logic/Web/ImageAttributionSource";
+import ImageAttributionSource from "../../Logic/ImageProviders/ImageAttributionSource";
 
 
 export class AttributedImage extends Combine {

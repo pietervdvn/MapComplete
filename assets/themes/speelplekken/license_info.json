@@ -73,5 +73,25 @@
     "sources": [
       "https://www.antwerpen.be/"
     ]
+  },
+  {
+    "authors": [
+      "Createlli"
+    ],
+    "path": "social_image.jpg",
+    "license": "Logo (all rights reserved)",
+    "sources": [
+      ""
+    ]
+  },
+  {
+    "authors": [
+      "Youtube.com"
+    ],
+    "path": "youtube.svg",
+    "license": "Logo (all rights reserved)",
+    "sources": [
+      "Youtube.com"
+    ]
   }
 ]

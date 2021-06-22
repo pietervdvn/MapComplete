@@ -115,7 +115,7 @@ export default class ShowDataLayer {
             console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
             return;
         }
-        if (layer.title === undefined && (layer.tagRenderings ?? []).length === 0) {
+        if (layer.title === undefined) {
             // No popup action defined -> Don't do anything
             return;
         }

@@ -31,6 +31,7 @@
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",
     "loginToStart": "Login to answer this question",
+    "openStreetMapIntro": "<h3>An Open Map</h3><p>Wouldn't it be cool if there was a single map, which everyone could freely use and edit? A single place to store all geo-information? Then, all those websites with different, small and incompatible maps (which are always outdated) wouldn't be needed anymore.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is this map. The map data can be used for free (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). On top of that, everyone can freely add new data and fix errors. This website uses OpenStreetMap as well. All the data is from there, and your answers and corrections are added there as well.</p><p>A ton of people and application already use OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap. If you change something here, it'll be reflected in those applications too - after their next update!</p>",
     "search": {
       "search": "Search a location",
       "searching": "Searching…",
@@ -71,6 +72,12 @@
       "emailOf": "What is the email address of {category}?",
       "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
     },
+    "morescreen": {
+      "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
+      "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
+      "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
+      "createYourOwnTheme": "Create your own MapComplete theme from scratch"
+    },
     "sharescreen": {
       "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
       "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",
@@ -90,11 +97,16 @@
       "fsIncludeCurrentLayers": "Include the current layer choices",
       "fsIncludeCurrentLocation": "Include current location"
     },
-    "morescreen": {
-      "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
-      "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
-      "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
-      "createYourOwnTheme": "Create your own MapComplete theme from scratch"
+    "attribution": {
+      "attributionTitle": "Attribution notice",
+      "attributionContent": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
+      "themeBy": "Theme maintained by {author}",
+      "iconAttribution": {
+        "title": "Used icons"
+      },
+      "mapContributionsBy": "The current visible data has edits made by {contributors}",
+      "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
+      "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
     },
     "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new point.",
     "fewChangesBefore": "Please, answer a few questions of existing points before adding a new point.",

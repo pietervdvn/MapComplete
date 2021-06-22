@@ -6,10 +6,9 @@ import {AttributedImage} from "./AttributedImage";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
 import Toggle from "../Input/Toggle";
-import ImageAttributionSource from "../../Logic/Web/ImageAttributionSource";
-import {Wikimedia} from "../../Logic/Web/Wikimedia";
-import {Mapillary} from "../../Logic/Web/Mapillary";
-import {Imgur} from "../../Logic/Web/Imgur";
+import {Wikimedia} from "../../Logic/ImageProviders/Wikimedia";
+import {Imgur} from "../../Logic/ImageProviders/Imgur";
+import {Mapillary} from "../../Logic/ImageProviders/Mapillary";
 
 export class ImageCarousel extends Toggle {
 

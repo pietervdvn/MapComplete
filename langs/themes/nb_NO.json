@@ -60,6 +60,14 @@
                     "2": {
                         "question": "Hvilken artist lagde dette?",
                         "render": "Laget av {artist_name}"
+                    },
+                    "3": {
+                        "question": "Finnes det en nettside med mer info om dette kunstverket?",
+                        "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
+                    },
+                    "4": {
+                        "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
+                        "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }
             }

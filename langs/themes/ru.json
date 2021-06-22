@@ -75,7 +75,7 @@
                         "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
                     },
                     "4": {
-                        "question": "Какая запись в wikidata соответсвует <b>этой работе</b>?",
+                        "question": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
                         "render": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
                     }
                 }
