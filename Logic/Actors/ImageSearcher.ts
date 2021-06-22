@@ -1,4 +1,4 @@
-import {ImagesInCategory, Wikidata, Wikimedia} from "../Web/Wikimedia";
+import {ImagesInCategory, Wikidata, Wikimedia} from "../ImageProviders/Wikimedia";
 import {UIEventSource} from "../UIEventSource";
 
 /**

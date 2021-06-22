@@ -9,7 +9,7 @@ import {SlideShow} from "./UI/Image/SlideShow";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 import Img from "./UI/Base/Img";
 import {AttributedImage} from "./UI/Image/AttributedImage";
-import {Imgur} from "./Logic/Web/Imgur";
+import {Imgur} from "./Logic/ImageProviders/Imgur";
 import ReviewForm from "./UI/Reviews/ReviewForm";
 import {OsmConnection} from "./Logic/Osm/OsmConnection";
 

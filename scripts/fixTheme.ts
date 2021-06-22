@@ -1,14 +1,18 @@
-
 /*
  * This script attempt to automatically fix some basic issues when a theme from the custom generator is loaded
  */
 import {Utils} from "../Utils"
 Utils.runningFromConsole = true;
+
 import {readFileSync, writeFileSync} from "fs";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
-import {Layer} from "leaflet";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SmallLicense from "../Models/smallLicense";
+import ScriptUtils from "./ScriptUtils";
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
+
+
+ScriptUtils.fixUtils()
 
 if(process.argv.length == 2){
     console.log("USAGE: ts-node scripts/fixTheme <path to theme>")
@@ -22,7 +26,6 @@ console.log("Fixing up ", path)
 
 const themeConfigJson : LayoutConfigJson = JSON.parse(readFileSync(path, "UTF8"))
 
-const linuxHints = []
 const licenses : SmallLicense[] = []
 
 const replacements: {source: string, destination: string}[] = []
@@ -40,15 +43,32 @@ for (const layerConfigJson of themeConfigJson.layers) {
     const layerConfig = new LayerConfig(layerConfigJson, true)
     const images : string[] = Array.from(layerConfig.ExtractImages())
     const remoteImages = images.filter(img => img.startsWith("http"))
+    
     for (const remoteImage of remoteImages) {
-        linuxHints.push("wget " + remoteImage)
+        
+        
+        const filename = remoteImage.substring(remoteImage.lastIndexOf("/"))
+        ScriptUtils.DownloadFileTo(remoteImage, dir + "/" + filename)
+        
+        
         const imgPath = remoteImage.substring(remoteImage.lastIndexOf("/") + 1)
-        licenses.push({
-            path: imgPath,
-            license: "",
-            authors: [],
-            sources: [remoteImage]
-        })
+
+        for (const attributionSrc of AllImageProviders.ImageAttributionSource) {
+            try {
+                attributionSrc.GetAttributionFor(remoteImage).addCallbackAndRun(license => {
+                    console.log("Downloaded an attribution!")
+                    licenses.push({
+                        path: imgPath,
+                        license: license?.license ?? "",
+                        authors:Utils.NoNull([license?.artist]),
+                        sources: [remoteImage]
+                    })
+                })
+            }catch(e){
+                // Hush hush
+            }
+        }
+        
         replacements.push({source: remoteImage, destination: `${dir}/${imgPath}`})
     }
 }
@@ -58,13 +78,9 @@ for (const replacement of replacements) {
     fixedThemeJson = fixedThemeJson.replace(new RegExp(replacement.source, "g"), replacement.destination)
 }
 
-const fixScriptPath = dir  + "/fix_script_"+path.replace(/\//g,"_")+".sh"
 writeFileSync(dir + "/generated.license_info.json", JSON.stringify(licenses, null, "  "))
-writeFileSync(fixScriptPath, linuxHints.join("\n"))
 writeFileSync(path+".autofixed.json", fixedThemeJson)
 
 console.log(`IMPORTANT:
- 1) run ${fixScriptPath}
- 2) Copy generated.license_info.json over into license_info.json and add the missing attributions and authors
- 3) Verify ${path}.autofixed.json as theme, and rename it to ${path}
- 4) Delete the fix script and other unneeded files`)
+ 1) Copy generated.license_info.json over into license_info.json and add the missing attributions and authors
+ 2) Verify ${path}.autofixed.json as theme, and rename it to ${path}`)
