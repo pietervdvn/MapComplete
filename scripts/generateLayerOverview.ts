@@ -9,6 +9,7 @@ import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import {Translation} from "../UI/i18n/Translation";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
@@ -48,7 +49,7 @@ class LayerOverviewUtils {
             errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
         }
         try {
-            const layer = new LayerConfig(layerJson, "test", true)
+            const layer = new LayerConfig(layerJson, AllKnownLayers.sharedUnits,"test", true)
             const images = Array.from(layer.ExtractImages())
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
@@ -153,7 +154,7 @@ class LayerOverviewUtils {
         for (const layerFile of layerFiles) {
 
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
-            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed))
+            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed,AllKnownLayers.sharedUnits))
         }
 
         let themeErrorCount = []

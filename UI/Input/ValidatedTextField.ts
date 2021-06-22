@@ -270,7 +270,10 @@ export default class ValidatedTextField {
         if (tp.inputHelper) {
             input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(), {
                 location: options.location
-            }));
+            }),
+                (a, b) => a, // We can ignore b, as they are linked earlier
+                a => [a, a]
+                );
         }
         return input;
     }

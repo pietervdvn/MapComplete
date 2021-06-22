@@ -5,7 +5,7 @@ import {LayoutConfigJson} from "./LayoutConfigJson";
 import AllKnownLayers from "../AllKnownLayers";
 import SharedTagRenderings from "../SharedTagRenderings";
 import {Utils} from "../../Utils";
-import {Unit} from "./Unit";
+import {Denomination, Unit} from "./Denomination";
 
 export default class LayoutConfig {
     public readonly id: string;
@@ -47,7 +47,7 @@ export default class LayoutConfig {
     How long is the cache valid, in seconds?
      */
     public readonly cacheTimeout?: number;
-    public readonly units: { appliesToKeys: Set<string>, applicableUnits: Unit[] }[] = []
+    public readonly units: Unit[] = []
     private readonly _official: boolean;
 
     constructor(json: LayoutConfigJson, official = true, context?: string) {
@@ -73,6 +73,7 @@ export default class LayoutConfig {
         if (json.description === undefined) {
             throw "Description not defined in " + this.id;
         }
+        this.units = LayoutConfig.ExtractUnits(json, context);
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
@@ -98,7 +99,7 @@ export default class LayoutConfig {
                 if (AllKnownLayers.sharedLayersJson[layer] !== undefined) {
                     if (json.overrideAll !== undefined) {
                         let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
-                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr), `${this.id}+overrideAll.layers[${i}]`, official);
+                        return new LayerConfig(Utils.Merge(json.overrideAll, lyr), this.units,`${this.id}+overrideAll.layers[${i}]`, official);
                     } else {
                         return AllKnownLayers.sharedLayers[layer]
                     }
@@ -124,7 +125,7 @@ export default class LayoutConfig {
             }
 
             // @ts-ignore
-            return new LayerConfig(layer, `${this.id}.layers[${i}]`, official)
+            return new LayerConfig(layer, this.units, `${this.id}.layers[${i}]`, official)
         });
 
         // ALl the layers are constructed, let them share tags in now!
@@ -187,6 +188,10 @@ export default class LayoutConfig {
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
 
 
+    }
+
+    private static ExtractUnits(json: LayoutConfigJson, context: string) : Unit[]{
+        const result: Unit[] = []
         if ((json.units ?? []).length !== 0) {
             for (let i1 = 0; i1 < json.units.length; i1++) {
                 let unit = json.units[i1];
@@ -206,30 +211,31 @@ export default class LayoutConfig {
 
                 const defaultSet = unit.applicableUnits.filter(u => u.default === true)
                 // No default is defined - we pick the first as default
-                if(defaultSet.length === 0){
-                    unit.applicableUnits[0].default = true 
+                if (defaultSet.length === 0) {
+                    unit.applicableUnits[0].default = true
                 }
-              
+
                 // Check that there are not multiple defaults
                 if (defaultSet.length > 1) {
                     throw `Multiple units are set as default: they have canonical values of ${defaultSet.map(u => u.canonicalDenomination).join(", ")}`
                 }
-                const applicable = unit.applicableUnits.map((u, i) => new Unit(u, `${context}.units[${i}]`))
-                this.units.push({
-                    appliesToKeys: new Set(appliesTo),
-                    applicableUnits: applicable
-                })
+                const applicable = unit.applicableUnits.map((u, i) => new Denomination(u, `${context}.units[${i}]`))
+                result.push(new Unit(                   appliesTo, applicable));
             }
 
             const seenKeys = new Set<string>()
-            for (const unit of this.units) {
-                const alreadySeen = Array.from(unit.appliesToKeys).filter(key => seenKeys.has(key));
+            for (const unit of result) {
+                const alreadySeen = Array.from(unit.appliesToKeys).filter((key: string) => seenKeys.has(key));
                 if (alreadySeen.length > 0) {
                     throw `${context}.units: multiple units define the same keys. The key(s) ${alreadySeen.join(",")} occur multiple times`
                 }
                 unit.appliesToKeys.forEach(key => seenKeys.add(key))
             }
+            return result;
+
         }
+
+
     }
 
     public CustomCodeSnippets(): string[] {

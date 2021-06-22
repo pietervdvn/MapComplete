@@ -50,7 +50,8 @@ function TestTagRendering(){
                 }
             ],
             
-        }, undefined, "test")
+        }, undefined, "test"),
+        []
     ).AttachTo("maindiv")
     new VariableUiElement(tagsSource.map(tags => tags["valves"])).SetClass("alert").AttachTo("extradiv")
 }

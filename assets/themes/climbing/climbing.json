@@ -323,6 +323,7 @@
           }
         ]
       },
+     
       "tagRenderings": [
         "images",
         "questions",
@@ -371,11 +372,11 @@
             "nl": "Hoe lang is deze klimroute (in meters)?"
           },
           "render": {
-            "de": "Diese Route ist {climbing:length} Meter lang",
-            "en": "This route is {climbing:length} meter long",
-            "nl": "Deze klimroute is {climbing:length} meter lang",
-            "ja": "このルート長は、 {climbing:length} メーターです",
-            "nb_NO": "Denne ruten er {climbing:length} meter lang"
+            "de": "Diese Route ist {canonical(climbing:length)} lang",
+            "en": "This route is {canonical(climbing:length)} long",
+            "nl": "Deze klimroute is {canonical(climbing:length)} lang",
+            "ja": "このルート長は、 {canonical(climbing:length)} メーターです",
+            "nb_NO": "Denne ruten er {canonical(climbing:length)} lang"
           },
           "freeform": {
             "key": "climbing:length",
@@ -827,10 +828,17 @@
         "canonicalDenomination": "m",
         "alternativeDenomination": ["meter","meters"],
         "human": {
-          "en": "meter",
-          "nl": "meter"
+          "en": " meter",
+          "nl": " meter"
         },
         "default": true
+      },{
+        "canonicalDenomination": "ft",
+        "alternativeDenomination": ["feet","voet"],
+        "human": {
+          "en": " feet",
+          "nl": " voet"
+        }
       }]
     }
   ],
@@ -955,10 +963,10 @@
     {
       "#": "Avg length?",
       "render": {
-        "de": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
-        "en": "The routes are <b>{climbing:length}m</b> long on average",
-        "nl": "De klimroutes zijn gemiddeld <b>{climbing:length}m</b> lang",
-        "ja": "ルートの長さは平均で<b>{climbing:length} m</b>です"
+        "de": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
+        "en": "The routes are <b>{canonical(climbing:length)}</b> long on average",
+        "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
+        "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です"
       },
       "condition": {
         "and": [
@@ -1321,12 +1329,28 @@
     }
   ],
   "overrideAll": {
+    "titleIcons": [
+      {
+        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/height.svg' style='width:2rem; height:2rem'/>{climbing:length}</div>",
+        "freeform": {
+          "key": "climbing:length"
+        }
+      },
+
+      {
+        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>{climbing:bolted}</div>",
+        "freeform": {
+          "key": "climbing:bolted"
+        }
+      },
+
+      "defaults"],
     "+calculatedTags": [
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
       "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
-      "_embedding_feature_with_rock=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.rock !== undefined)[0]",
-      "_embedding_features_with_rock:rock=JSON.parse(_embedding_feature_with_rock).rock",
-      "_embedding_features_with_rock:id=JSON.parse(_embedding_feature_with_rock).id",
+      "_embedding_feature_with_rock=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.rock !== undefined)[0] ?? '{}'",
+      "_embedding_features_with_rock:rock=JSON.parse(_embedding_feature_with_rock)?.rock",
+      "_embedding_features_with_rock:id=JSON.parse(_embedding_feature_with_rock)?.id",
       "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
       "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
       "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id"

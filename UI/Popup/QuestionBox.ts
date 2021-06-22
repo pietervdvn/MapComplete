@@ -5,6 +5,8 @@ import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
 import State from "../../State";
 import Combine from "../Base/Combine";
+import BaseUIElement from "../BaseUIElement";
+import {Unit} from "../../Customizations/JSON/Denomination";
 
 
 /**
@@ -14,12 +16,12 @@ export default class QuestionBox extends UIElement {
     private readonly _tags: UIEventSource<any>;
 
     private readonly _tagRenderings: TagRenderingConfig[];
-    private _tagRenderingQuestions: UIElement[];
+    private _tagRenderingQuestions: BaseUIElement[];
 
     private _skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])
-    private _skippedQuestionsButton: UIElement;
+    private _skippedQuestionsButton: BaseUIElement;
 
-    constructor(tags: UIEventSource<any>, tagRenderings: TagRenderingConfig[]) {
+    constructor(tags: UIEventSource<any>, tagRenderings: TagRenderingConfig[], units: Unit[]) {
         super(tags);
         this.ListenTo(this._skippedQuestions);
         this._tags = tags;
@@ -28,7 +30,7 @@ export default class QuestionBox extends UIElement {
             .filter(tr => tr.question !== undefined)
             .filter(tr => tr.question !== null);
         this._tagRenderingQuestions = this._tagRenderings
-            .map((tagRendering, i) => new TagRenderingQuestion(this._tags, tagRendering,
+            .map((tagRendering, i) => new TagRenderingQuestion(this._tags, tagRendering,units,
                 () => {
                     // We save
                     self._skippedQuestions.ping();
@@ -49,7 +51,7 @@ export default class QuestionBox extends UIElement {
     }
 
     InnerRender() {
-        const allQuestions : UIElement[] = []
+        const allQuestions : BaseUIElement[] = []
         for (let i = 0; i < this._tagRenderingQuestions.length; i++) {
             let tagRendering = this._tagRenderings[i];
 

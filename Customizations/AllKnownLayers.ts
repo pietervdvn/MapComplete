@@ -8,12 +8,14 @@ export default class AllKnownLayers {
     // Must be below the list...
     public static sharedLayers: Map<string, LayerConfig> = AllKnownLayers.getSharedLayers();
     public static sharedLayersJson: Map<string, any> = AllKnownLayers.getSharedLayersJson();
+    
+    public static sharedUnits: any[] = []
 
     private static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
         for (const layer of known_layers.layers) {
             try {
-                const parsed = new LayerConfig(layer, "shared_layers")
+                const parsed = new LayerConfig(layer, AllKnownLayers.sharedUnits,"shared_layers")
                 sharedLayers.set(layer.id, parsed);
                 sharedLayers[layer.id] = parsed;
             } catch (e) {
@@ -33,7 +35,7 @@ export default class AllKnownLayers {
                     continue;
                 }
                 try {
-                    const parsed = new LayerConfig(layer, "shared_layer_in_theme")
+                    const parsed = new LayerConfig(layer, AllKnownLayers.sharedUnits ,"shared_layer_in_theme")
                     sharedLayers.set(layer.id, parsed);
                     sharedLayers[layer.id] = parsed;
                 } catch (e) {

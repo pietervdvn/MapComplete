@@ -1,5 +1,5 @@
 import T from "./TestHelper";
-import {Unit} from "../Customizations/JSON/Unit";
+import {Denomination} from "../Customizations/JSON/Denomination";
 import {equal} from "assert";
 
 export default class UnitsSpec extends T {
@@ -8,7 +8,7 @@ export default class UnitsSpec extends T {
         super("Units", [
             ["Simple canonicalize", () => {
 
-                const unit = new Unit({
+                const unit = new Denomination({
                     canonicalDenomination: "m",
                     alternativeDenomination: ["meter"],
                     'default': true,

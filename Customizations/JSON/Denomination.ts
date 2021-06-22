@@ -1,13 +1,59 @@
 import {Translation} from "../../UI/i18n/Translation";
 import UnitConfigJson from "./UnitConfigJson";
 import Translations from "../../UI/i18n/Translations";
+import BaseUIElement from "../../UI/BaseUIElement";
+import Combine from "../../UI/Base/Combine";
 
 export class Unit {
-    public readonly human: Translation;
+    public readonly appliesToKeys: Set<string>;
+    public readonly denominations : Denomination[];
+    public readonly defaultDenom: Denomination;
+    constructor(appliesToKeys: string[], applicableUnits: Denomination[]) {
+        this.appliesToKeys = new Set( appliesToKeys);
+        this.denominations = applicableUnits;
+this.defaultDenom = applicableUnits.filter(denom => denom.default)[0]
+    }
+
+    isApplicableToKey(key: string | undefined) : boolean {
+        if(key === undefined){
+            return false;
+        }
+        
+        return this.appliesToKeys.has(key);
+    }
+
+    /**
+     * Finds which denomination is applicable and gives the stripped value back
+     */
+    findDenomination(valueWithDenom: string) : [string, Denomination] {
+        for (const denomination of this.denominations) {
+          const bare =  denomination.StrippedValue(valueWithDenom)
+            if(bare !== null){
+                return [bare, denomination]
+            }
+        } 
+        return [undefined, undefined]
+    }
+
+    asHumanLongValue(value: string): BaseUIElement {
+        if(value === undefined){
+            return undefined;
+        }
+        const [stripped, denom] = this.findDenomination(value)
+        const human = denom.human
+        
+        const elems = denom.prefix ? [human, stripped] : [stripped , human];
+        return new Combine(elems)
+        
+    }
+}
+
+export class Denomination {
+    private readonly _human: Translation;
     private readonly alternativeDenominations: string [];
-    private readonly canonical: string;
-    private readonly default: boolean;
-    private readonly prefix: boolean;
+    public readonly canonical: string;
+    readonly default: boolean;
+    readonly prefix: boolean;
 
     constructor(json: UnitConfigJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
@@ -26,15 +72,22 @@ export class Unit {
 
         this.default = json.default ?? false;
 
-        this.human = Translations.T(json.human, context + "human")
+        this._human = Translations.T(json.human, context + "human")
 
         this.prefix = json.prefix ?? false;
 
     }
+    
+    get human() : Translation {
+        return this._human.Clone()
+    }
 
-    public canonicalValue(value: string) {
-        const stripped = this.StrippedValue(value)
-        if(stripped === null){
+    public canonicalValue(value: string, actAsDefault?: boolean) {
+        if(value === undefined){
+            return undefined;
+        }
+        const stripped = this.StrippedValue(value, actAsDefault)
+        if (stripped === null) {
             return null;
         }
         return stripped + this.canonical
@@ -46,11 +99,13 @@ export class Unit {
      * - the value is a Number (without unit) and default is set
      *
      * Returns null if it doesn't match this unit
-     * @param value
-     * @constructor
      */
-    private StrippedValue(value: string): string {
+    public StrippedValue(value: string, actAsDefault?: boolean): string {
 
+        if(value === undefined){
+            return undefined;
+        }
+        
         if (this.prefix) {
             if (value.startsWith(this.canonical)) {
                 return value.substring(this.canonical.length).trim();
@@ -72,7 +127,7 @@ export class Unit {
         }
 
 
-        if (this.default) {
+        if (this.default || actAsDefault) {
             const parsed = Number(value.trim())
             if (!isNaN(parsed)) {
                 return value.trim();

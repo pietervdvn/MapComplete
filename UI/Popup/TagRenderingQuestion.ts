@@ -24,6 +24,8 @@ import {And} from "../../Logic/Tags/And";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
+import {Unit} from "../../Customizations/JSON/Denomination";
+import CombinedInputElement from "../Input/CombinedInputElement";
 
 /**
  * Shows the question element.
@@ -38,14 +40,17 @@ export default class TagRenderingQuestion extends UIElement {
     private _inputElement: InputElement<TagsFilter>;
     private _cancelButton: BaseUIElement;
     private _appliedTags: BaseUIElement;
+    private readonly _applicableUnit: Unit;
     private _question: BaseUIElement;
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
+                units: Unit[],
                 afterSave?: () => void,
                 cancelButton?: BaseUIElement
     ) {
         super(tags);
+        this._applicableUnit = units.filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
         this._tags = tags;
         this._configuration = configuration;
         this._cancelButton = cancelButton;
@@ -114,9 +119,9 @@ export default class TagRenderingQuestion extends UIElement {
         const self = this;
         let inputEls: InputElement<TagsFilter>[];
 
-        const mappings = (this._configuration.mappings??[])
-            .filter(            mapping => {
-                if(mapping.hideInAnswer === true){
+        const mappings = (this._configuration.mappings ?? [])
+            .filter(mapping => {
+                if (mapping.hideInAnswer === true) {
                     return false;
                 }
                 if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
@@ -124,9 +129,9 @@ export default class TagRenderingQuestion extends UIElement {
                 }
                 return true;
             })
-      
-        
-        let allIfNots: TagsFilter[] = Utils.NoNull(this._configuration.mappings?.map(m => m.ifnot) ?? []    );
+
+
+        let allIfNots: TagsFilter[] = Utils.NoNull(this._configuration.mappings?.map(m => m.ifnot) ?? []);
         const ff = this.GenerateFreeform();
         const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
 
@@ -272,7 +277,7 @@ export default class TagRenderingQuestion extends UIElement {
         then: Translation,
         hideInAnswer: boolean | TagsFilter
     }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
-       
+
         let tagging = mapping.if;
         if (ifNot.length > 0) {
             tagging = new And([tagging, ...ifNot])
@@ -323,16 +328,41 @@ export default class TagRenderingQuestion extends UIElement {
             return undefined;
         }
 
-        const textField = ValidatedTextField.InputForType(this._configuration.freeform.type, {
+        let input: InputElement<string> = ValidatedTextField.InputForType(this._configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
             country: () => this._tags.data._country,
             location: [this._tags.data._lat, this._tags.data._lon]
         });
 
-        textField.GetValue().setData(this._tags.data[this._configuration.freeform.key]);
+        if (this._applicableUnit) {
+            // We need to apply a unit.
+            // This implies:
+            // We have to create a dropdown with applicable denominations, and fuse those values
+            const unit = this._applicableUnit
+            const unitDropDown = new DropDown("",
+                unit.denominations.map(denom => {
+                    return {
+                        shown: denom.human,
+                        value: denom
+                    }
+                })
+            )
+            unitDropDown.GetValue().setData(this._applicableUnit.defaultDenom)
+            unitDropDown.SetStyle("width: min-content")
+
+            input = new CombinedInputElement(
+                input,
+                unitDropDown,
+                (text, denom) => denom?.canonicalValue(text, true) ?? text,
+                (valueWithDenom: string) => unit.findDenomination(valueWithDenom)
+            ).SetClass("flex")
+        }
+
+
+        input.GetValue().setData(this._tags.data[this._configuration.freeform.key]);
 
         return new InputElementMap(
-            textField, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
+            input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
             pickString, toString
         );
 

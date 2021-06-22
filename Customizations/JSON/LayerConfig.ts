@@ -17,6 +17,7 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 import BaseUIElement from "../../UI/BaseUIElement";
+import {Denomination, Unit} from "./Denomination";
 
 export default class LayerConfig {
 
@@ -46,6 +47,7 @@ export default class LayerConfig {
     width: TagRenderingConfig;
     dashArray: TagRenderingConfig;
     wayHandling: number;
+    public readonly units: Unit[];
 
     presets: {
         title: Translation,
@@ -56,8 +58,10 @@ export default class LayerConfig {
     tagRenderings: TagRenderingConfig [];
 
     constructor(json: LayerConfigJson,
+                units:Unit[],
                 context?: string,
                 official: boolean = true,) {
+        this.units = units;
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;

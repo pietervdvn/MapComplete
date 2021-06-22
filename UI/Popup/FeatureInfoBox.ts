@@ -17,7 +17,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     public constructor(
         tags: UIEventSource<any>,
-        layerConfig: LayerConfig
+        layerConfig: LayerConfig,
     ) {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
@@ -35,7 +35,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             .SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2");
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => new TagRenderingAnswer(tags, icon,
-                "block w-8 h-8 align-baseline box-content sm:p-0.5", "width: 2rem !important;")
+                "block w-8 h-8 align-baseline box-content sm:p-0.5")
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
 
@@ -49,7 +49,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         let questionBox: UIElement = undefined;
 
         if (State.state.featureSwitchUserbadge.data) {
-            questionBox = new QuestionBox(tags, layerConfig.tagRenderings);
+            questionBox = new QuestionBox(tags, layerConfig.tagRenderings, layerConfig.units);
         }
 
         let questionBoxIsUsed = false;
@@ -59,7 +59,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 questionBoxIsUsed = true;
                 return questionBox;
             }
-            return new EditableTagRendering(tags, tr);
+            return new EditableTagRendering(tags, tr, layerConfig.units);
         });
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);

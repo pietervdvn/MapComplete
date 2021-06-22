@@ -9,6 +9,7 @@ import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import {Layer} from "leaflet";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import SmallLicense from "../Models/smallLicense";
+import AllKnownLayers from "../Customizations/AllKnownLayers";
 
 if(process.argv.length == 2){
     console.log("USAGE: ts-node scripts/fixTheme <path to theme>")
@@ -37,7 +38,7 @@ for (const layerConfigJson of themeConfigJson.layers) {
         layerConfigJson["source"] = { osmTags : tags}
     }
     // @ts-ignore
-    const layerConfig = new LayerConfig(layerConfigJson, true)
+    const layerConfig = new LayerConfig(layerConfigJson, AllKnownLayers.sharedUnits, "fix theme",true)
     const images : string[] = Array.from(layerConfig.ExtractImages())
     const remoteImages = images.filter(img => img.startsWith("http"))
     for (const remoteImage of remoteImages) {

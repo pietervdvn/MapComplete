@@ -8,11 +8,13 @@ import State from "../../State";
 import Svg from "../../Svg";
 import Toggle from "../Input/Toggle";
 import BaseUIElement from "../BaseUIElement";
+import {Unit} from "../../Customizations/JSON/Denomination";
 
 export default class EditableTagRendering extends Toggle {
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
+                units: Unit [],
                 editMode = new UIEventSource<boolean>(false)
                 ) {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration)
@@ -41,7 +43,7 @@ export default class EditableTagRendering extends Toggle {
                         editMode.setData(false)
                     });
 
-            const question = new TagRenderingQuestion(tags, configuration,
+            const question = new TagRenderingQuestion(tags, configuration,units,
                 () => {
                     editMode.setData(false)
                 },

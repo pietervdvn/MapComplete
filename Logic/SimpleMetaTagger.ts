@@ -85,7 +85,7 @@ export default class SimpleMetaTagger {
         (feature => {
             const units = State.state.layoutToUse.data.units ?? [];
             for (const key in feature.properties) {
-                if(!feature.properties.hasOwnProperty(key)){
+                if (!feature.properties.hasOwnProperty(key)) {
                     continue;
                 }
                 for (const unit of units) {
@@ -93,15 +93,10 @@ export default class SimpleMetaTagger {
                         continue;
                     }
                     const value = feature.properties[key]
-                    
-                    for (const applicableUnit of unit.applicableUnits) {
-                        const canonical = applicableUnit.canonicalValue(value)
-                        if (canonical == null) {
-                            continue
-                        }
-                        console.log("Rewritten ", key, " from", value, "into", canonical)
-                        feature.properties[key] = canonical;
-                    }
+                    const [, denomination] = unit.findDenomination(value)
+                    const canonical = denomination.canonicalValue(value)
+                    console.log("Rewritten ", key, " from", value, "into", canonical)
+                    feature.properties[key] = canonical;
                 }
 
             }

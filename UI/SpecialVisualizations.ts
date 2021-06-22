@@ -33,23 +33,24 @@ export default class SpecialVisualizations {
         args: { name: string, defaultValue?: string, doc: string }[]
     }[] =
 
-        [{
-            funcName: "all_tags",
-            docs: "Prints all key-value pairs of the object - used for debugging",
-            args: [],
-            constr: ((state: State, tags: UIEventSource<any>) => {
-                return new VariableUiElement(tags.map(tags => {
-                    const parts = [];
-                    for (const key in tags) {
-                        if (!tags.hasOwnProperty(key)) {
-                            continue;
+        [
+            {
+                funcName: "all_tags",
+                docs: "Prints all key-value pairs of the object - used for debugging",
+                args: [],
+                constr: ((state: State, tags: UIEventSource<any>) => {
+                    return new VariableUiElement(tags.map(tags => {
+                        const parts = [];
+                        for (const key in tags) {
+                            if (!tags.hasOwnProperty(key)) {
+                                continue;
+                            }
+                            parts.push(key + "=" + tags[key]);
                         }
-                        parts.push(key + "=" + tags[key]);
-                    }
-                    return parts.join("<br/>")
-                })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
-            })
-        },
+                        return parts.join("<br/>")
+                    })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
+                })
+            },
 
             {
                 funcName: "image_carousel",
@@ -252,13 +253,40 @@ export default class SpecialVisualizations {
                             }
                         }
 
-                        return new ShareButton(Svg.share_ui(), generateShareData)
+                        return new ShareButton(Svg.share_svg().SetClass("w-8 h-8"), generateShareData)
                     } else {
                         return new FixedUiElement("")
                     }
 
                 }
-            }
+            },
+            {funcName: "canonical",
+            docs: "Converts a short, canonical value into the long, translated text",
+            example: "{canonical(length)} will give 42 metre (in french)",
+            args:[{
+                name:"key",
+                doc: "The key of the tag to give the canonical text for"
+            }],
+            constr: (state, tagSource, args) => {
+                const key = args [0]
+                return new VariableUiElement(
+                    tagSource.map(tags => tags[key]).map(value => {
+                        if(value === undefined){
+                            return undefined
+                        }
+                        const unit = state.layoutToUse.data.units.filter(unit => unit.isApplicableToKey(key))[0]
+                        if(unit === undefined){
+                            return value;
+                        }
+                        
+                     return unit.asHumanLongValue(value);
+                        
+                        },
+                       [ state.layoutToUse])
+                    
+                    
+                )
+            }}
 
         ]
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
