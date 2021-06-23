@@ -339,7 +339,7 @@ export default class LayerConfig {
 
         const iconW = num(iconSize[0]);
         let iconH = num(iconSize[1]);
-        const mode = iconSize[2] ?? "center"
+        const mode = iconSize[2]?.trim()?.toLowerCase() ?? "center"
 
         let anchorW = iconW / 2;
         let anchorH = iconH / 2;
