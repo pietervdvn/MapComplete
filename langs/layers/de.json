@@ -1072,7 +1072,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "2": {
                 "render": "Der Name dieses Bücherschrank lautet {name}",
                 "question": "Wie heißt dieser öffentliche Bücherschrank?",
                 "mappings": {
@@ -1081,11 +1081,11 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "render": "{capacity} Bücher passen in diesen Bücherschrank",
                 "question": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?"
             },
-            "3": {
+            "4": {
                 "question": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
                 "mappings": {
                     "0": {
@@ -1099,7 +1099,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Befindet sich dieser Bücherschrank im Freien?",
                 "mappings": {
                     "0": {
@@ -1113,7 +1113,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Ist dieser öffentliche Bücherschrank frei zugänglich?",
                 "mappings": {
                     "0": {
@@ -1124,11 +1124,11 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Wer unterhält diesen öffentlichen Bücherschrank?",
                 "render": "Betrieben von {operator}"
             },
-            "7": {
+            "8": {
                 "question": "Ist dieser öffentliche Bücherschrank Teil eines größeren Netzwerks?",
                 "render": "Dieser Bücherschrank ist Teil von {brand}",
                 "mappings": {
@@ -1140,7 +1140,7 @@
                     }
                 }
             },
-            "8": {
+            "9": {
                 "render": "Die Referenznummer dieses öffentlichen Bücherschranks innerhalb {brand} lautet {ref}",
                 "question": "Wie lautet die Referenznummer dieses öffentlichen Bücherschranks?",
                 "mappings": {
@@ -1149,11 +1149,11 @@
                     }
                 }
             },
-            "9": {
+            "10": {
                 "question": "Wann wurde dieser öffentliche Bücherschrank installiert?",
                 "render": "Installiert am {start_date}"
             },
-            "10": {
+            "11": {
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
                 "question": "Gibt es eine Website mit weiteren Informationen über diesen öffentlichen Bücherschrank?"
             }

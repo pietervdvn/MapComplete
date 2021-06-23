@@ -1183,7 +1183,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "2": {
                 "render": "The name of this bookcase is {name}",
                 "question": "What is the name of this public bookcase?",
                 "mappings": {
@@ -1192,11 +1192,11 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "render": "{capacity} books fit in this bookcase",
                 "question": "How many books fit into this public bookcase?"
             },
-            "3": {
+            "4": {
                 "question": "What kind of books can be found in this public bookcase?",
                 "mappings": {
                     "0": {
@@ -1210,7 +1210,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Is this bookcase located outdoors?",
                 "mappings": {
                     "0": {
@@ -1224,7 +1224,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Is this public bookcase freely accessible?",
                 "mappings": {
                     "0": {
@@ -1235,11 +1235,11 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Who maintains this public bookcase?",
                 "render": "Operated by {operator}"
             },
-            "7": {
+            "8": {
                 "question": "Is this public bookcase part of a bigger network?",
                 "render": "This public bookcase is part of {brand}",
                 "mappings": {
@@ -1251,7 +1251,7 @@
                     }
                 }
             },
-            "8": {
+            "9": {
                 "render": "The reference number of this public bookcase within {brand} is {ref}",
                 "question": "What is the reference number of this public bookcase?",
                 "mappings": {
@@ -1260,11 +1260,11 @@
                     }
                 }
             },
-            "9": {
+            "10": {
                 "question": "When was this public bookcase installed?",
                 "render": "Installed on {start_date}"
             },
-            "10": {
+            "11": {
                 "render": "More info on <a href='{website}' target='_blank'>the website</a>",
                 "question": "Is there a website with more information about this public bookcase?"
             }

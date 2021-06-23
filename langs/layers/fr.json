@@ -1073,7 +1073,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "2": {
                 "render": "Le nom de cette microbibliothèque est {name}",
                 "question": "Quel est le nom de cette microbibliothèque ?",
                 "mappings": {
@@ -1082,11 +1082,11 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "render": "{capacity} livres peuvent entrer dans cette microbibliothèque",
                 "question": "Combien de livres peuvent entrer dans cette microbibliothèque ?"
             },
-            "3": {
+            "4": {
                 "question": "Quel type de livres peut-on dans cette microbibliothèque ?",
                 "mappings": {
                     "0": {
@@ -1100,7 +1100,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Cette microbiliothèque est-elle en extérieur ?",
                 "mappings": {
                     "0": {
@@ -1114,7 +1114,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Cette microbibliothèque est-elle librement accèssible ?",
                 "mappings": {
                     "0": {
@@ -1125,11 +1125,11 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Qui entretien cette microbibliothèque ?",
                 "render": "Entretenue par {operator}"
             },
-            "7": {
+            "8": {
                 "question": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
                 "render": "Cette microbibliothèque fait partie du groupe {brand}",
                 "mappings": {
@@ -1141,7 +1141,7 @@
                     }
                 }
             },
-            "8": {
+            "9": {
                 "render": "Cette microbibliothèque du réseau {brand} possède le numéro {ref}",
                 "question": "Quelle est le numéro de référence de cette microbibliothèque ?",
                 "mappings": {
@@ -1150,11 +1150,11 @@
                     }
                 }
             },
-            "9": {
+            "10": {
                 "question": "Quand a été installée cette microbibliothèque ?",
                 "render": "Installée le {start_date}"
             },
-            "10": {
+            "11": {
                 "render": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>",
                 "question": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?"
             }
