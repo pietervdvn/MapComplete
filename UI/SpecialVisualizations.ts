@@ -21,6 +21,10 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
+import Loc from "../Models/Loc";
+import ShowDataLayer from "./ShowDataLayer";
+import Minimap from "./Base/Minimap";
+import {Utils} from "../Utils";
 
 export default class SpecialVisualizations {
 
@@ -32,7 +36,6 @@ export default class SpecialVisualizations {
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
     }[] =
-
         [
             {
                 funcName: "all_tags",
@@ -86,7 +89,80 @@ export default class SpecialVisualizations {
                     return new ImageUploadFlow(tags, args[0])
                 }
             },
+            {
+                funcName: "minimap",
+                docs: "A small map showing the selected feature. Note that no styling is applied, wrap this in a div",
+                args: [
+                    {
+                        doc: "The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close",
+                        name: "zoomlevel",
+                        defaultValue: "18"
+                    },
+                    {
+                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.",
+                        name: "idKey",
+                        defaultValue: "id"
+                    }
+                ],
+                example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
+                constr: (state, tagSource, args) => {
 
+                    const keys = [...args]
+                    keys.splice(0, 1)
+                    const featureStore = state.allElements.ContainingFeatures
+                    const featuresToShow: UIEventSource<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
+                        const values: string[] = Utils.NoNull(keys.map(key => properties[key]))
+                        const features: { freshness: Date, feature: any }[] = []
+                        for (const value of values) {
+                            let idList = [value]
+                            if (value.startsWith("[")) {
+                                // This is a list of values
+                                idList = JSON.parse(value)
+                            }
+                            for (const id of idList) {
+                                features.push({
+                                    freshness: new Date(),
+                                    feature: featureStore.get(id)
+                                })
+                            }
+                        }
+                        return features
+                    })
+                    const properties = tagSource.data;
+
+                    let zoom = 18
+                    if (args[0]) {
+                        const parsed = Number(args[0])
+                        if (!isNaN(parsed) && parsed > 0 && parsed < 25) {
+                            zoom = parsed;
+                        }
+                    }
+                    const minimap = new Minimap(
+                        {
+                            background: state.backgroundLayer,
+                            location: new UIEventSource<Loc>({
+                                lat: Number(properties._lat),
+                                lon: Number(properties._lon),
+                                zoom: zoom
+                            }),
+                            allowMoving: false
+                        }
+                    )
+
+                    new ShowDataLayer(
+                        featuresToShow,
+                        minimap.leafletMap,
+                        State.state.layoutToUse,
+                        false,
+                        true
+                    )
+
+
+                    minimap.SetStyle("overflow: hidden; pointer-events: none;")
+                    return minimap;
+
+                }
+            },
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
@@ -169,7 +245,7 @@ export default class SpecialVisualizations {
                         defaultValue: ""
                     },
                     {
-                        name: "colors",
+                        name: "colors*",
                         doc: "(Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`"
 
                     }
@@ -260,33 +336,33 @@ export default class SpecialVisualizations {
 
                 }
             },
-            {funcName: "canonical",
-            docs: "Converts a short, canonical value into the long, translated text",
-            example: "{canonical(length)} will give 42 metre (in french)",
-            args:[{
-                name:"key",
-                doc: "The key of the tag to give the canonical text for"
-            }],
-            constr: (state, tagSource, args) => {
-                const key = args [0]
-                return new VariableUiElement(
-                    tagSource.map(tags => tags[key]).map(value => {
-                        if(value === undefined){
-                            return undefined
-                        }
-                        const unit = state.layoutToUse.data.units.filter(unit => unit.isApplicableToKey(key))[0]
-                        if(unit === undefined){
-                            return value;
-                        }
-                        
-                     return unit.asHumanLongValue(value);
-                        
-                        },
-                       [ state.layoutToUse])
-                    
-                    
-                )
-            }}
+            {
+                funcName: "canonical",
+                docs: "Converts a short, canonical value into the long, translated text",
+                example: "{canonical(length)} will give 42 metre (in french)",
+                args: [{
+                    name: "key",
+                    doc: "The key of the tag to give the canonical text for"
+                }],
+                constr: (state, tagSource, args) => {
+                    const key = args [0]
+                    return new VariableUiElement(
+                        tagSource.map(tags => tags[key]).map(value => {
+                                if (value === undefined) {
+                                    return undefined
+                                }
+                                const unit = state.layoutToUse.data.units.filter(unit => unit.isApplicableToKey(key))[0]
+                                if (unit === undefined) {
+                                    return value;
+                                }
+
+                                return unit.asHumanLongValue(value);
+
+                            },
+                            [state.layoutToUse])
+                    )
+                }
+            }
 
         ]
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
@@ -313,7 +389,7 @@ export default class SpecialVisualizations {
         return new Combine([
                 new Title("Special tag renderings", 3),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
+                "General usage is <b>{func_name()}</b>, <b>{func_name(arg, someotherarg)}</b> or <b>{func_name(args):cssStyle}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
             ]
         );

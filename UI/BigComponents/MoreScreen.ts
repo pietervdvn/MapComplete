@@ -29,7 +29,8 @@ export default class MoreScreen extends Combine {
                 LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
                     .SetClass("absolute top-2 right-3"),
                 new IndexText()
-            ])
+            ]);
+            
             themeButtonStyle = "h-32 min-h-32 max-h-32 overflow-ellipsis overflow-hidden"
             themeListStyle = "md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4"
         }
@@ -59,10 +60,23 @@ export default class MoreScreen extends Combine {
 
     private static createOfficialThemesList(state: State, buttonClass: string): BaseUIElement {
         let officialThemes = AllKnownLayouts.layoutsList
-        if (State.state.osmConnection.userDetails.data.csCount < Constants.userJourney.personalLayoutUnlock) {
-            officialThemes = officialThemes.filter(theme => theme.id !== personal.id)
-        }
-        let buttons = officialThemes.map((layout) => MoreScreen.createLinkButton(layout)?.SetClass(buttonClass))
+
+        let buttons = officialThemes.map((layout) => {
+            const button = MoreScreen.createLinkButton(layout)?.SetClass(buttonClass);
+            if(layout.id === personal.id){
+                return new VariableUiElement(
+                    State.state.osmConnection.userDetails.map(userdetails => userdetails.csCount)
+                        .map(csCount => {
+                            if(csCount < Constants.userJourney.personalLayoutUnlock){
+                                return undefined
+                            }else{
+                                return button
+                            }
+                        })
+                )
+            }
+            return button;
+        })
 
         let customGeneratorLink = MoreScreen.createCustomGeneratorButton(state)
         buttons.splice(0, 0, customGeneratorLink);

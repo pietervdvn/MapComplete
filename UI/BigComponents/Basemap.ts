@@ -14,10 +14,14 @@ export class Basemap {
                 currentLayer: UIEventSource<BaseLayer>,
                 lastClickLocation?: UIEventSource<{ lat: number, lon: number }>,
                 extraAttribution?: BaseUIElement) {
+
+        console.log("Currentlayer is" ,currentLayer, currentLayer.data, currentLayer.data?.id)
+        let previousLayer = currentLayer.data.layer();
+
         this.map = L.map(leafletElementId, {
             center: [location.data.lat ?? 0, location.data.lon ?? 0],
             zoom: location.data.zoom ?? 2,
-            layers: [currentLayer.data.layer],
+            layers: [previousLayer],
             zoomControl: false,
             attributionControl: extraAttribution !== undefined
         });
@@ -42,16 +46,16 @@ export class Basemap {
         extraAttribution.AttachTo('leaflet-attribution')
         const self = this;
 
-        let previousLayer = currentLayer.data;
         currentLayer.addCallbackAndRun(layer => {
-            if (layer === previousLayer) {
+            const newLayer = layer.layer()
+            if (newLayer === previousLayer) {
                 return;
             }
             if (previousLayer !== undefined) {
-                self.map.removeLayer(previousLayer.layer);
+                self.map.removeLayer(previousLayer);
             }
-            previousLayer = layer;
-            self.map.addLayer(layer.layer);
+            previousLayer = newLayer;
+            self.map.addLayer(newLayer);
         })
 
 

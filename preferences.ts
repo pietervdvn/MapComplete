@@ -3,7 +3,6 @@ import Combine from "./UI/Base/Combine";
 import {Button} from "./UI/Base/Button";
 import {TextField} from "./UI/Input/TextField";
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {UIElement} from "./UI/UIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
 import {Utils} from "./Utils";
 import {SubtleButton} from "./UI/Base/SubtleButton";

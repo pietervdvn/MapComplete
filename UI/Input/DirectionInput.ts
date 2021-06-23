@@ -2,21 +2,30 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
+import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import {Utils} from "../../Utils";
+import Loc from "../../Models/Loc";
 
 
 /**
  * Selects a direction in degrees
  */
 export default class DirectionInput extends InputElement<string> {
+    public static constructMinimap: ((any) => BaseUIElement);
+    private readonly _location: UIEventSource<Loc>;
 
     public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private readonly value: UIEventSource<string>;
+    private background;
 
-    constructor(value?: UIEventSource<string>) {
+    constructor(mapBackground: UIEventSource<any>, 
+                location: UIEventSource<Loc>,
+                value?: UIEventSource<string>) {
         super();
+        this._location = location;
         this.value = value ?? new UIEventSource<string>(undefined);
-
+        this.background = mapBackground;
     }
 
     GetValue(): UIEventSource<string> {
@@ -30,16 +39,23 @@ export default class DirectionInput extends InputElement<string> {
 
     protected InnerConstructElement(): HTMLElement {
 
+        let map: BaseUIElement = new FixedUiElement("")
+        if (!Utils.runningFromConsole) {
+            map = DirectionInput.constructMinimap({
+                background: this.background,
+                allowMoving: false,
+                location: this._location
+            })
+        }
 
         const element = new Combine([
-            new FixedUiElement("").SetClass("w-full h-full absolute top-0 left-O rounded-full"),
-            Svg.direction_svg().SetStyle(
+             Svg.direction_stroke_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
-                .SetClass("direction-svg"),
-            Svg.compass_svg().SetStyle(
-                "position: absolute;top: 0;left: 0;width: 100%;height: 100%;")
+                .SetClass("direction-svg relative")
+                 .SetStyle("z-index: 1000"),
+            map.SetClass("w-full h-full absolute top-0 left-O rounded-full overflow-hidden"),
         ])
-            .SetStyle("position:relative;display:block;width: min(100%, 25em); padding-top: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
+            .SetStyle("position:relative;display:block;width: min(100%, 25em); height: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
             .ConstructElement()
 
 

@@ -72,6 +72,12 @@
       "emailOf": "What is the email address of {category}?",
       "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>"
     },
+    "morescreen": {
+      "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
+      "requestATheme": "If you want a custom-built quest, request it in the issue tracker",
+      "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>.",
+      "createYourOwnTheme": "Create your own MapComplete theme from scratch"
+    },
     "sharescreen": {
       "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
       "addToHomeScreen": "<h3>Add to your home screen</h3>You can easily add this website to your smartphone home screen for a native feel. Click the 'add to home screen button' in the URL bar to do this.",

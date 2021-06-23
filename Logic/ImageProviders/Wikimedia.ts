@@ -4,6 +4,7 @@ import BaseUIElement from "../../UI/BaseUIElement";
 import Svg from "../../Svg";
 import {UIEventSource} from "../UIEventSource";
 import Link from "../../UI/Base/Link";
+import {Utils} from "../../Utils";
 
 /**
  * This module provides endpoints for wikipedia/wikimedia and others
@@ -138,21 +139,28 @@ export class Wikimedia extends ImageAttributionSource {
             "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
             "titles=" + filename +
             "&format=json&origin=*";
-        console.log("Getting attribution at ", url)
-        $.getJSON(url, function (data) {
-            const licenseInfo = new LicenseInfo();
-            const license = data.query.pages[-1].imageinfo[0].extmetadata;
+        Utils.downloadJson(url).then(
+            data =>{
+                const licenseInfo = new LicenseInfo();
+                const license = (data.query.pages[-1].imageinfo ?? [])[0]?.extmetadata;
+                if(license === undefined){
+                    console.error("This file has no usable metedata or license attached... Please fix the license info file yourself!")
+                    source.setData(null)
+                    return;
+                }
 
-            licenseInfo.artist = license.Artist?.value;
-            licenseInfo.license = license.License?.value;
-            licenseInfo.copyrighted = license.Copyrighted?.value;
-            licenseInfo.attributionRequired = license.AttributionRequired?.value;
-            licenseInfo.usageTerms = license.UsageTerms?.value;
-            licenseInfo.licenseShortName = license.LicenseShortName?.value;
-            licenseInfo.credit = license.Credit?.value;
-            licenseInfo.description = license.ImageDescription?.value;
-            source.setData(licenseInfo);
-        });
+                licenseInfo.artist = license.Artist?.value;
+                licenseInfo.license = license.License?.value;
+                licenseInfo.copyrighted = license.Copyrighted?.value;
+                licenseInfo.attributionRequired = license.AttributionRequired?.value;
+                licenseInfo.usageTerms = license.UsageTerms?.value;
+                licenseInfo.licenseShortName = license.LicenseShortName?.value;
+                licenseInfo.credit = license.Credit?.value;
+                licenseInfo.description = license.ImageDescription?.value;
+                source.setData(licenseInfo);      
+            }
+        )
+        
         return source;
 
     }

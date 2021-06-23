@@ -1,5 +1,4 @@
 import * as colors from "./assets/colors.json"
-import {Util} from "leaflet";
 
 export class Utils {
 
@@ -323,6 +322,34 @@ export class Utils {
             }
         }
         return result;
+    }
+    
+    public static externalDownloadFunction: (url: string) => Promise<any>;
+    
+    public static downloadJson(url: string): Promise<any>{
+        if(this.externalDownloadFunction !== undefined){
+            return this.externalDownloadFunction(url)
+        }
+
+        return new Promise(
+            (resolve, reject) => {
+                try{
+                    const xhr = new XMLHttpRequest();
+                    xhr.onload = () => {
+                        if (xhr.status == 200) {
+                            resolve(JSON.parse(xhr.response))
+                        } else {
+                            reject(xhr.statusText)
+                        }
+                    };
+                    xhr.open('GET', url);
+                    xhr.send();
+                }catch(e){
+                    reject(e)
+                }
+            }
+        )
+        
     }
 
     /**

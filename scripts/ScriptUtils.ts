@@ -1,12 +1,23 @@
 import {lstatSync, readdirSync, readFileSync} from "fs";
+import {Utils} from "../Utils";
+Utils.runningFromConsole = true
 import * as https from "https";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
+import * as fs from "fs";
+
 
 export default class ScriptUtils {
+
+
+    public static fixUtils() {
+        Utils.externalDownloadFunction = ScriptUtils.DownloadJSON
+    }
+
+
     public static readDirRecSync(path, maxDepth = 999): string[] {
         const result = []
-        if(maxDepth <= 0){
+        if (maxDepth <= 0) {
             return []
         }
         for (const entry of readdirSync(path)) {
@@ -21,6 +32,20 @@ export default class ScriptUtils {
             }
         }
         return result;
+    }
+
+    public static DownloadFileTo(url, targetFilePath: string): void {
+        console.log("Downloading ", url, "to", targetFilePath)
+        https.get(url, (res) => {
+            const filePath = fs.createWriteStream(targetFilePath);
+            res.pipe(filePath);
+            filePath.on('finish', () => {
+                filePath.close();
+                console.log('Download Completed');
+            })
+
+
+        })
     }
 
     public static DownloadJSON(url): Promise<any> {
@@ -77,7 +102,7 @@ export default class ScriptUtils {
             })
     }
 
-    public static getThemeFiles() : {parsed: LayoutConfigJson, path: string}[] {
+    public static getThemeFiles(): { parsed: LayoutConfigJson, path: string }[] {
         return ScriptUtils.readDirRecSync("./assets/themes")
             .filter(path => path.endsWith(".json"))
             .filter(path => path.indexOf("license_info.json") < 0)
