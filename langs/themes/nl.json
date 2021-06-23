@@ -373,14 +373,14 @@
                 "tagRenderings": {
                     "1": {
                         "mappings": {
-                            "2": {
-                                "then": "Klimmen is hier niet toegelaten"
+                            "0": {
+                                "then": "Klimmen is hier niet mogelijk"
                             },
                             "1": {
                                 "then": "Klimmen is hier niet toegelaten"
                             },
-                            "0": {
-                                "then": "Klimmen is hier niet mogelijk"
+                            "2": {
+                                "then": "Klimmen is hier niet toegelaten"
                             }
                         }
                     }
@@ -388,6 +388,19 @@
             }
         },
         "roamingRenderings": {
+            "0": {
+                "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
+            },
+            "1": {
+                "mappings": {
+                    "0": {
+                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+                    },
+                    "1": {
+                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                    }
+                }
+            },
             "4": {
                 "render": "De klimroutes zijn gemiddeld <b>{climbing:length}m</b> lang",
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?"
@@ -472,19 +485,6 @@
                         "then": "Er zijn hier {climbing:speed} snelklimmuren"
                     }
                 }
-            },
-            "1": {
-                "mappings": {
-                    "1": {
-                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
-                    },
-                    "0": {
-                        "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
-                    }
-                }
-            },
-            "0": {
-                "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
             }
         }
     },
