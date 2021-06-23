@@ -15,13 +15,15 @@ export default class ShowDataLayer {
     private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
     private _cleanCount = 0;
+    private readonly _enablePopups: boolean;
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
-                layoutToUse: UIEventSource<LayoutConfig>) {
+                layoutToUse: UIEventSource<LayoutConfig>,
+                enablePopups= true) {
         this._leafletMap = leafletMap;
+        this._enablePopups = enablePopups;
         const self = this;
-        const mp = leafletMap.data;
         self._layerDict = {};
 
         layoutToUse.addCallbackAndRun(layoutToUse => {
@@ -39,7 +41,9 @@ export default class ShowDataLayer {
             if (features.data === undefined) {
                 return;
             }
-            if (leafletMap.data === undefined) {
+            const mp = leafletMap.data;
+
+            if(mp === undefined){
                 return;
             }
 
@@ -119,6 +123,11 @@ export default class ShowDataLayer {
             // No popup action defined -> Don't do anything
             return;
         }
+        if(!this._enablePopups){
+            // Probably a map in the popup - no popups needed!
+            return;
+        }
+        
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
@@ -171,15 +180,15 @@ export default class ShowDataLayer {
     }
 
     private CreateGeojsonLayer(): L.Layer {
-        const self = this;
-        const data = {
-            type: "FeatureCollection",
-            features: []
-        }
-        // @ts-ignore
-        return L.geoJSON(data, {
-            style: feature => self.createStyleFor(feature),
-            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
+            const self = this;
+            const data = {
+                type: "FeatureCollection",
+                features: []
+            }
+            // @ts-ignore
+            return L.geoJSON(data, {
+                style: feature => self.createStyleFor(feature),
+                pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
             onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
         });
 

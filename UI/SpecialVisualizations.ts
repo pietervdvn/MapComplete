@@ -21,10 +21,13 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
+import Loc from "../Models/Loc";
+import ShowDataLayer from "./ShowDataLayer";
+import Minimap from "./Base/Minimap";
 
 export default class SpecialVisualizations {
 
-
+  
     public static specialVisualizations: {
         funcName: string,
         constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
@@ -32,7 +35,6 @@ export default class SpecialVisualizations {
         example?: string,
         args: { name: string, defaultValue?: string, doc: string }[]
     }[] =
-
         [{
             funcName: "all_tags",
             docs: "Prints all key-value pairs of the object - used for debugging",
@@ -85,7 +87,57 @@ export default class SpecialVisualizations {
                     return new ImageUploadFlow(tags, args[0])
                 }
             },
+            {
+                funcName: "minimap",
+                docs: "A small map showing the selected feature. Note that no styling is applied, wrap this in a div",
+                args: [
+                    {
+                        doc: "The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close",
+                        name: "zoomlevel",
+                        defaultValue: "18"
+                    }
+                ],
+                example: "`{minimap()}`",
+                constr: (state, tagSource, args) => {
+                    const properties = tagSource.data;
+                    const feature = state.allElements.ContainingFeatures.get(properties.id)
 
+                    let zoom = 18
+                    if(args[0] ){
+                        const parsed = Number(args[0])
+                        if(!isNaN(parsed) && parsed > 0 && parsed < 25){
+                            zoom = parsed;
+                        }
+                    }
+                    const minimap = new Minimap(
+                        {
+                            background: state.backgroundLayer,
+                            location: new UIEventSource<Loc>({
+                                lat: Number(properties._lat),
+                                lon: Number(properties._lon),
+                                zoom: zoom
+                            }),
+                            allowMoving: false
+                        }
+                    )
+
+                    new ShowDataLayer(
+                        new UIEventSource<{ feature: any; freshness: Date }[]>([
+                            {
+                                freshness: new Date(),
+                                feature: feature
+                            }
+                        ]),
+                        minimap.leafletMap,
+                        State.state.layoutToUse,
+                        false
+                    )
+
+                    minimap.SetStyle("overflow: hidden; pointer-events: none;")
+                    return minimap;
+
+                }
+            },
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",

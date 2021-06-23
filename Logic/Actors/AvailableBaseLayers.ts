@@ -14,18 +14,19 @@ import {Utils} from "../../Utils";
 export default class AvailableBaseLayers {
 
 
-    public static osmCarto: BaseLayer =
+    public static  osmCarto: BaseLayer = 
         {
             id: "osm",
-            name: "OpenStreetMap",
-            layer: AvailableBaseLayers.CreateBackgroundLayer("osm", "OpenStreetMap",
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
-                19,
-                false, false),
+                name: "OpenStreetMap",
+            layer: () => AvailableBaseLayers.CreateBackgroundLayer("osm", "OpenStreetMap",
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
+            19,
+            false, false),
             feature: null,
             max_zoom: 19,
             min_zoom: 0
-        }
+    }
+       
 
 
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
@@ -123,7 +124,7 @@ export default class AvailableBaseLayers {
                 continue
             }
 
-            const leafletLayer = AvailableBaseLayers.CreateBackgroundLayer(
+            const leafletLayer: () => TileLayer = () => AvailableBaseLayers.CreateBackgroundLayer(
                 props.id,
                 props.name,
                 props.url,
@@ -150,10 +151,10 @@ export default class AvailableBaseLayers {
     private static LoadProviderIndex(): BaseLayer[] {
         // @ts-ignore
         X; // Import X to make sure the namespace is not optimized away
-        function l(id: string, name: string) {
+        function l(id: string, name: string) : BaseLayer{
             try {
-                const layer: any = L.tileLayer.provider(id, undefined);
-                return {
+                const layer: any = () => L.tileLayer.provider(id, undefined);
+                const baseLayer : BaseLayer =  {
                     feature: null,
                     id: id,
                     name: name,
@@ -161,6 +162,7 @@ export default class AvailableBaseLayers {
                     min_zoom: layer.minzoom,
                     max_zoom: layer.maxzoom
                 }
+                return baseLayer
             } catch (e) {
                 console.error("Could not find provided layer", name, e);
                 return null;

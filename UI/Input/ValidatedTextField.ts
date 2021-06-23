@@ -1,7 +1,6 @@
 import {DropDown} from "./DropDown";
 import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
-import InputElementMap from "./InputElementMap";
 import {InputElement} from "./InputElement";
 import {TextField} from "./TextField";
 import {UIElement} from "../UIElement";
@@ -12,6 +11,7 @@ import OpeningHoursInput from "../OpeningHours/OpeningHoursInput";
 import DirectionInput from "./DirectionInput";
 import ColorPicker from "./ColorPicker";
 import {Utils} from "../../Utils";
+import Loc from "../../Models/Loc";
 
 interface TextFieldDef {
     name: string,
@@ -19,7 +19,8 @@ interface TextFieldDef {
     isValid: ((s: string, country?: () => string) => boolean),
     reformat?: ((s: string, country?: () => string) => string),
     inputHelper?: (value: UIEventSource<string>, options?: {
-        location: [number, number]
+        location: [number, number],
+        mapBackgroundLayer?: UIEventSource<any>
     }) => InputElement<string>,
 
     inputmode?: string
@@ -118,8 +119,12 @@ export default class ValidatedTextField {
                 str = "" + str;
                 return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
             }, str => str,
-            (value) => {
-                return new DirectionInput(value);
+            (value, options) => {
+                return new DirectionInput(options.mapBackgroundLayer , new UIEventSource<Loc>({
+                    lat: options.location[0],
+                    lon: options.location[1],
+                    zoom: 19
+                }),value);
             },
             "numeric"
         ),
@@ -235,7 +240,8 @@ export default class ValidatedTextField {
         textAreaRows?: number,
         isValid?: ((s: string, country: () => string) => boolean),
         country?: () => string,
-        location?: [number /*lat*/, number /*lon*/]
+        location?: [number /*lat*/, number /*lon*/],
+        mapBackgroundLayer?: UIEventSource<any>
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
@@ -269,87 +275,12 @@ export default class ValidatedTextField {
 
         if (tp.inputHelper) {
             input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(), {
-                location: options.location
+                location: options.location,
+                mapBackgroundLayer: options.mapBackgroundLayer
             }));
         }
         return input;
     }
-
-    public static NumberInput(type: string = "int", extraValidation: (number: Number) => boolean = undefined): InputElement<number> {
-        const isValid = ValidatedTextField.AllTypes[type].isValid;
-        extraValidation = extraValidation ?? (() => true)
-
-        const fromString = str => {
-            if (!isValid(str)) {
-                return undefined;
-            }
-            const n = Number(str);
-            if (!extraValidation(n)) {
-                return undefined;
-            }
-            return n;
-        };
-        const toString = num => {
-            if (num === undefined) {
-                return undefined;
-            }
-            return "" + num;
-        };
-        const textField = ValidatedTextField.InputForType(type);
-        return new InputElementMap(textField, (n0, n1) => n0 === n1, fromString, toString)
-    }
-
-    public static KeyInput(allowEmpty: boolean = false): InputElement<string> {
-
-        function fromString(str) {
-            if (str?.match(/^[a-zA-Z][a-zA-Z0-9:_-]*$/)) {
-                return str;
-            }
-            if (str === "" && allowEmpty) {
-                return "";
-            }
-
-            return undefined
-        }
-
-        const toString = str => str
-
-        function isSame(str0, str1) {
-            return str0 === str1;
-        }
-
-        const textfield = new TextField({
-            placeholder: "key",
-            isValid: str => fromString(str) !== undefined,
-            value: new UIEventSource<string>("")
-        });
-
-        return new InputElementMap(textfield, isSame, fromString, toString);
-    }
-
-    static Mapped<T>(fromString: (str) => T, toString: (T) => string, options?: {
-        placeholder?: string | UIElement,
-        type?: string,
-        value?: UIEventSource<string>,
-        startValidated?: boolean,
-        textArea?: boolean,
-        textAreaRows?: number,
-        isValid?: ((string: string) => boolean),
-        country?: () => string
-    }): InputElement<T> {
-        let textField: InputElement<string>;
-        if (options?.type) {
-            textField = ValidatedTextField.InputForType(options.type, options);
-        } else {
-            textField = new TextField(options);
-        }
-        return new InputElementMap(
-            textField, (a, b) => a === b,
-            fromString, toString
-        );
-
-    }
-
     public static HelpText(): string {
         const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
         return "# Available types for text fields\n\nThe listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them\n\n" + explanations
@@ -360,7 +291,8 @@ export default class ValidatedTextField {
                       isValid?: ((s: string, country?: () => string) => boolean),
                       reformat?: ((s: string, country?: () => string) => string),
                       inputHelper?: (value: UIEventSource<string>, options?: {
-                          location: [number, number]
+                          location: [number, number],
+                          mapBackgroundLayer: UIEventSource<any>
                       }) => InputElement<string>,
                       inputmode?: string): TextFieldDef {
 
