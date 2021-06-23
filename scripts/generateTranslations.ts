@@ -2,7 +2,6 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
@@ -197,8 +196,8 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
     const langs = tr.knownLanguages();
     for (const lang of langs) {
-        if (lang === "#") {
-            // Lets not export our comments
+        if (lang === "#" || lang === "*") {
+            // Lets not export our comments or non-translated stuff
             continue;
         }
         let json = tr.toJson(lang)
