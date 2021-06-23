@@ -424,13 +424,13 @@ def clean_input(contents):
         yield row
 
 
-def contributor_count(stats):
+def contributor_count(stats, index=1, item = "contributor"):
     seen_contributors = set()
     for line in stats:
-        contributor = line[1]
+        contributor = line[index]
         if(contributor in seen_contributors):
             continue
-        print("New contributor " + str(len(seen_contributors) + 1) + ": "+contributor)
+        print("New " + item + " " + str(len(seen_contributors) + 1) + ": "+contributor)
         seen_contributors.add(contributor)
         print(line)
 
@@ -440,10 +440,10 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         
-        contributor_count(stats)
-        create_graphs(stats)
-        create_per_theme_graphs(stats, 15)
-        create_per_contributor_graphs(stats, 25)
+        contributor_count(stats, 3, "theme")
+        # create_graphs(stats)
+        # create_per_theme_graphs(stats, 15)
+        # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
 
