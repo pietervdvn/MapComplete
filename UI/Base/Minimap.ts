@@ -31,7 +31,7 @@ export default class Minimap extends BaseUIElement {
         Minimap._nextId++
 
     }
-
+    
     protected InnerConstructElement(): HTMLElement {
         const div = document.createElement("div")
         div.id = this._id;

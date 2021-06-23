@@ -24,10 +24,11 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import ShowDataLayer from "./ShowDataLayer";
 import Minimap from "./Base/Minimap";
+import {Utils} from "../Utils";
 
 export default class SpecialVisualizations {
 
-  
+
     public static specialVisualizations: {
         funcName: string,
         constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
@@ -95,17 +96,43 @@ export default class SpecialVisualizations {
                         doc: "The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close",
                         name: "zoomlevel",
                         defaultValue: "18"
+                    },
+                    {
+                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.",
+                        name: "idKey",
+                        defaultValue: "id"
                     }
                 ],
-                example: "`{minimap()}`",
+                example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`",
                 constr: (state, tagSource, args) => {
+
+                    const keys = [...args]
+                    keys.splice(0, 1)
+                    const featureStore = state.allElements.ContainingFeatures
+                    const featuresToShow : UIEventSource<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
+                        const values: string[] = Utils.NoNull(keys.map(key => properties[key]))
+                        const features: { freshness: Date, feature: any }[] = []
+                        for (const value of values) {
+                            let idList = [value]
+                            if (value.startsWith("[")) {
+                                // This is a list of values
+                                idList = JSON.parse(value)
+                            }
+                            for (const id of idList) {
+                                features.push({
+                                    freshness: new Date(),
+                                    feature: featureStore.get(id)
+                                })
+                            }
+                        }
+                        return features
+                    })
                     const properties = tagSource.data;
-                    const feature = state.allElements.ContainingFeatures.get(properties.id)
 
                     let zoom = 18
-                    if(args[0] ){
+                    if (args[0]) {
                         const parsed = Number(args[0])
-                        if(!isNaN(parsed) && parsed > 0 && parsed < 25){
+                        if (!isNaN(parsed) && parsed > 0 && parsed < 25) {
                             zoom = parsed;
                         }
                     }
@@ -122,17 +149,14 @@ export default class SpecialVisualizations {
                     )
 
                     new ShowDataLayer(
-                        new UIEventSource<{ feature: any; freshness: Date }[]>([
-                            {
-                                freshness: new Date(),
-                                feature: feature
-                            }
-                        ]),
+                        featuresToShow,
                         minimap.leafletMap,
                         State.state.layoutToUse,
-                        false
+                        false,
+                        true
                     )
-
+                    
+                    
                     minimap.SetStyle("overflow: hidden; pointer-events: none;")
                     return minimap;
 
@@ -220,7 +244,7 @@ export default class SpecialVisualizations {
                         defaultValue: ""
                     },
                     {
-                        name: "colors",
+                        name: "colors*",
                         doc: "(Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`"
 
                     }

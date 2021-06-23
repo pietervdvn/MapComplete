@@ -16,13 +16,16 @@ export default class ShowDataLayer {
     private readonly _leafletMap: UIEventSource<L.Map>;
     private _cleanCount = 0;
     private readonly _enablePopups: boolean;
+    private readonly _features : UIEventSource<{ feature: any, freshness: Date }[]>
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
                 layoutToUse: UIEventSource<LayoutConfig>,
-                enablePopups= true) {
+                enablePopups= true,
+                zoomToFeatures = false) {
         this._leafletMap = leafletMap;
         this._enablePopups = enablePopups;
+        this._features = features;
         const self = this;
         self._layerDict = {};
 
@@ -72,6 +75,11 @@ export default class ShowDataLayer {
                 mp.addLayer(geoLayer)
             }
 
+            if(zoomToFeatures){
+                mp.fitBounds(geoLayer.getBounds())
+            }
+            
+            
             State.state.selectedElement.ping();
         }
 
@@ -81,6 +89,7 @@ export default class ShowDataLayer {
     }
 
 
+    
     private createStyleFor(feature) {
         const tagsSource = State.state.allElements.addOrGetElement(feature);
         // Every object is tied to exactly one layer
