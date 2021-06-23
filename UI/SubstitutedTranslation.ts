@@ -40,7 +40,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                 // We found a special component that should be brought to live
                 const partBefore = SubstitutedTranslation.EvaluateSpecialComponents(matched[1], tags);
                 const argument = matched[2].trim();
-                const style = matched[3] ?? ""
+                const style = matched[3]?.substring(1) ?? ""
                 const partAfter = SubstitutedTranslation.EvaluateSpecialComponents(matched[4], tags);
                 try {
                     const args = knownSpecial.args.map(arg => arg.defaultValue ?? "");

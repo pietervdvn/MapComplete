@@ -101,9 +101,13 @@ export default class ShowDataLayer {
         }
 
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
+        const baseElement = style.icon.html;
+        if(!this._enablePopups){
+            baseElement.SetStyle("cursor: initial !important")
+        }
         return L.marker(latLng, {
             icon: L.divIcon({
-                html: style.icon.html.ConstructElement(),
+                html: baseElement.ConstructElement(),
                 className: style.icon.className,
                 iconAnchor: style.icon.iconAnchor,
                 iconUrl: style.icon.iconUrl,
@@ -119,12 +123,9 @@ export default class ShowDataLayer {
             console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
             return;
         }
-        if (layer.title === undefined) {
+        if (layer.title === undefined || !this._enablePopups) {
             // No popup action defined -> Don't do anything
-            return;
-        }
-        if(!this._enablePopups){
-            // Probably a map in the popup - no popups needed!
+            // or probably a map in the popup - no popups needed!
             return;
         }
         

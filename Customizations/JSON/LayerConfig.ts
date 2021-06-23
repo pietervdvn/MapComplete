@@ -183,7 +183,7 @@ export default class LayerConfig {
                         
                         const keys = Array.from(SharedTagRenderings.SharedTagRendering.keys())
                         
-                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n      Try one of ${(keys.join(", "))}`;
+                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n    Try one of ${(keys.join(", "))}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                     }
                     return new TagRenderingConfig(renderingJson, self.source.osmTags, `${context}.tagrendering[${i}]`);
                 });

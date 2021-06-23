@@ -72,7 +72,9 @@
   ],
   "tagRenderings": [
     "images",
-    "minimap",
+    {
+      "render": "{minimap():height: 9rem; border-radius: 2.5rem; overflow:hidden;border:1px solid gray}"
+    },
     {
       "render": {
         "en": "The name of this bookcase is {name}",
