@@ -352,6 +352,11 @@ export class InitUiElements {
 
         State.state.backgroundLayer = State.state.backgroundLayerId
             .map((selectedId: string) => {
+                if(selectedId === undefined){
+                    return AvailableBaseLayers.osmCarto
+                }
+                
+                
                 const available = State.state.availableBackgroundLayers.data;
                 for (const layer of available) {
                     if (layer.id === selectedId) {

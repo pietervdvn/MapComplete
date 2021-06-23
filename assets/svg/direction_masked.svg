@@ -5,7 +5,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
@@ -14,34 +13,10 @@
    viewBox="0 0 860.50732 860.50732"
    preserveAspectRatio="xMidYMid meet"
    id="svg14"
-   sodipodi:docname="direction_gradient.svg"
+   sodipodi:docname="direction_masked.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
-     id="defs18">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient832">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop828" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop830" />
-    </linearGradient>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient832"
-       id="radialGradient838"
-       cx="430.25363"
-       cy="519.61188"
-       fx="430.25363"
-       fy="519.61188"
-       r="305.54589"
-       gradientTransform="matrix(0.95288409,-0.94890664,0.94542304,0.94938587,-470.98122,345.21193)"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
+     id="defs18" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -58,8 +33,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="0.70710678"
-     inkscape:cx="279.00239"
-     inkscape:cy="856.75313"
+     inkscape:cx="418.71218"
+     inkscape:cy="725.43016"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -74,11 +49,6 @@
        orientation="0,1"
        id="guide834"
        inkscape:locked="false" />
-    <sodipodi:guide
-       position="398.27788,720.18823"
-       orientation="0,1"
-       id="guide840"
-       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata2">
@@ -89,14 +59,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
     <dc:format>image/svg+xml</dc:format>
     <dc:type
        rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-    <dc:title />
   </cc:Work>
 </rdf:RDF>
 </metadata>
   <path
-     style="fill:url(#radialGradient838);fill-opacity:1;stroke:none;stroke-width:2.83464575;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 735.79979,124.70799 C 654.79116,43.598883 544.88842,-2.0206645 430.25389,-2.121103 315.61937,-2.0206592 205.71663,43.598888 124.70801,124.70799 l 305.54588,305.54589 z"
+     style="fill:#000000;fill-opacity:0.39163497;stroke:none;stroke-width:2.83464575;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 124.70776,124.7084 A 432.375,432.375 0 0 0 -2.121338,430.25429 432.375,432.375 0 0 0 430.25366,862.62929 432.375,432.375 0 0 0 862.62866,430.25429 432.375,432.375 0 0 0 735.79811,124.70986 L 430.25366,430.25429 Z"
      id="path836"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccccc" />
+     inkscape:connector-curvature="0" />
 </svg>

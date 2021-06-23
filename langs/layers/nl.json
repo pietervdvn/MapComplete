@@ -1361,7 +1361,7 @@
             }
         },
         "tagRenderings": {
-            "1": {
+            "2": {
                 "render": "De naam van dit boekenruilkastje is {name}",
                 "question": "Wat is de naam van dit boekenuilkastje?",
                 "mappings": {
@@ -1370,11 +1370,11 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "render": "Er passen {capacity} boeken",
                 "question": "Hoeveel boeken passen er in dit boekenruilkastje?"
             },
-            "3": {
+            "4": {
                 "question": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
                 "mappings": {
                     "0": {
@@ -1388,7 +1388,7 @@
                     }
                 }
             },
-            "4": {
+            "5": {
                 "question": "Staat dit boekenruilkastje binnen of buiten?",
                 "mappings": {
                     "0": {
@@ -1402,7 +1402,7 @@
                     }
                 }
             },
-            "5": {
+            "6": {
                 "question": "Is dit boekenruilkastje publiek toegankelijk?",
                 "mappings": {
                     "0": {
@@ -1413,11 +1413,11 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "question": "Wie is verantwoordelijk voor dit boekenruilkastje?",
                 "render": "Onderhouden door {operator}"
             },
-            "7": {
+            "8": {
                 "question": "Is dit boekenruilkastje deel van een netwerk?",
                 "render": "Dit boekenruilkastje is deel van het netwerk {brand}",
                 "mappings": {
@@ -1429,7 +1429,7 @@
                     }
                 }
             },
-            "8": {
+            "9": {
                 "render": "Het referentienummer binnen {brand} is {ref}",
                 "question": "Wat is het referentienummer van dit boekenruilkastje?",
                 "mappings": {
@@ -1438,11 +1438,11 @@
                     }
                 }
             },
-            "9": {
+            "10": {
                 "question": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
                 "render": "Geplaatst op {start_date}"
             },
-            "10": {
+            "11": {
                 "render": "Meer info op <a href='{website}' target='_blank'>de website</a>",
                 "question": "Is er een website over dit boekenruilkastje?"
             }

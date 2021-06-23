@@ -1,9 +1,11 @@
 import {lstatSync, readdirSync, readFileSync} from "fs";
+import {Utils} from "../Utils";
+Utils.runningFromConsole = true
 import * as https from "https";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import * as fs from "fs";
-import {Utils} from "../Utils";
+
 
 export default class ScriptUtils {
 

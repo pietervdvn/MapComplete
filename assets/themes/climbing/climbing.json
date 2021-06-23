@@ -780,7 +780,8 @@
                 "en": "Climbing is not possible here",
                 "de": "Hier kann nicht geklettert werden",
                 "ja": "ここでは登ることができない",
-                "nb_NO": "Klatring er ikke mulig her"
+                "nb_NO": "Klatring er ikke mulig her",
+                "nl": "Klimmen is hier niet mogelijk"
               },
               "hideInAnswer": true
             },
@@ -794,7 +795,8 @@
                 "en": "Climbing is possible here",
                 "de": "Hier kann geklettert werden",
                 "ja": "ここでは登ることができる",
-                "nb_NO": "Klatring er mulig her"
+                "nb_NO": "Klatring er mulig her",
+                "nl": "Klimmen is hier niet toegelaten"
               }
             },
             {
@@ -803,7 +805,8 @@
                 "en": "Climbing is not possible here",
                 "de": "Hier kann nicht geklettert werden",
                 "ja": "ここでは登ることができない",
-                "nb_NO": "Klatring er ikke mulig her"
+                "nb_NO": "Klatring er ikke mulig her",
+                "nl": "Klimmen is hier niet toegelaten"
               }
             }
           ]
@@ -826,7 +829,8 @@
       "question": {
         "en": "Is there a (unofficial) website with more informations (e.g. topos)?",
         "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?",
-        "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?"
+        "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?",
+        "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
       },
       "condition": {
         "and": [
@@ -848,13 +852,15 @@
         {
           "if": "_embedding_feature:access=yes",
           "then": {
-            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}",
+            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
           }
         },
         {
           "if": "_embedding_feature:access=permit",
           "then": {
-            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}"
+            "en": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that </span> a permit is needed to access<br/>{_embedding_feature:access:description}",
+            "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
           }
         },
         {

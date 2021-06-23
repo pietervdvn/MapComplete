@@ -15,7 +15,8 @@
     "ru": "Найти места остановки, чтобы провести ночь в автофургоне",
     "ja": "キャンパーと夜を共にするキャンプサイトを見つける",
     "fr": "Trouver des sites pour passer la nuit avec votre camping-car",
-    "zh_Hant": "露營者尋找渡過夜晚的場地"
+    "zh_Hant": "露營者尋找渡過夜晚的場地",
+    "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",

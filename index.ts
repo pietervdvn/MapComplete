@@ -14,10 +14,12 @@ import Translations from "./UI/i18n/Translations";
 import CountryCoder from "latlon2country"
 
 import SimpleMetaTagger from "./Logic/SimpleMetaTagger";
+import Minimap from "./UI/Base/Minimap";
+import DirectionInput from "./UI/Input/DirectionInput";
 
-// Workaround for a stupid crash: inject the function
+// Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
 SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
-
+DirectionInput.constructMinimap = options =>  new Minimap(options)
 
 let defaultLayout = ""
 // --------------------- Special actions based on the parameters -----------------

@@ -15,13 +15,18 @@ export default class ShowDataLayer {
     private _layerDict;
     private readonly _leafletMap: UIEventSource<L.Map>;
     private _cleanCount = 0;
+    private readonly _enablePopups: boolean;
+    private readonly _features : UIEventSource<{ feature: any, freshness: Date }[]>
 
     constructor(features: UIEventSource<{ feature: any, freshness: Date }[]>,
                 leafletMap: UIEventSource<L.Map>,
-                layoutToUse: UIEventSource<LayoutConfig>) {
+                layoutToUse: UIEventSource<LayoutConfig>,
+                enablePopups= true,
+                zoomToFeatures = false) {
         this._leafletMap = leafletMap;
+        this._enablePopups = enablePopups;
+        this._features = features;
         const self = this;
-        const mp = leafletMap.data;
         self._layerDict = {};
 
         layoutToUse.addCallbackAndRun(layoutToUse => {
@@ -39,7 +44,9 @@ export default class ShowDataLayer {
             if (features.data === undefined) {
                 return;
             }
-            if (leafletMap.data === undefined) {
+            const mp = leafletMap.data;
+
+            if(mp === undefined){
                 return;
             }
 
@@ -68,6 +75,11 @@ export default class ShowDataLayer {
                 mp.addLayer(geoLayer)
             }
 
+            if(zoomToFeatures){
+                mp.fitBounds(geoLayer.getBounds())
+            }
+            
+            
             State.state.selectedElement.ping();
         }
 
@@ -77,6 +89,7 @@ export default class ShowDataLayer {
     }
 
 
+    
     private createStyleFor(feature) {
         const tagsSource = State.state.allElements.addOrGetElement(feature);
         // Every object is tied to exactly one layer
@@ -97,9 +110,13 @@ export default class ShowDataLayer {
         }
 
         const style = layer.GenerateLeafletStyle(tagSource, !(layer.title === undefined && (layer.tagRenderings ?? []).length === 0));
+        const baseElement = style.icon.html;
+        if(!this._enablePopups){
+            baseElement.SetStyle("cursor: initial !important")
+        }
         return L.marker(latLng, {
             icon: L.divIcon({
-                html: style.icon.html.ConstructElement(),
+                html: baseElement.ConstructElement(),
                 className: style.icon.className,
                 iconAnchor: style.icon.iconAnchor,
                 iconUrl: style.icon.iconUrl,
@@ -115,10 +132,12 @@ export default class ShowDataLayer {
             console.warn("No layer found for object (probably a now disabled layer)", feature, this._layerDict)
             return;
         }
-        if (layer.title === undefined) {
+        if (layer.title === undefined || !this._enablePopups) {
             // No popup action defined -> Don't do anything
+            // or probably a map in the popup - no popups needed!
             return;
         }
+        
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
@@ -171,15 +190,15 @@ export default class ShowDataLayer {
     }
 
     private CreateGeojsonLayer(): L.Layer {
-        const self = this;
-        const data = {
-            type: "FeatureCollection",
-            features: []
-        }
-        // @ts-ignore
-        return L.geoJSON(data, {
-            style: feature => self.createStyleFor(feature),
-            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
+            const self = this;
+            const data = {
+                type: "FeatureCollection",
+                features: []
+            }
+            // @ts-ignore
+            return L.geoJSON(data, {
+                style: feature => self.createStyleFor(feature),
+                pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
             onEachFeature: (feature, leafletLayer) => self.postProcessFeature(feature, leafletLayer)
         });
 

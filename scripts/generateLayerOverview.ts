@@ -1,14 +1,13 @@
 import ScriptUtils from "./ScriptUtils";
-import {Utils} from "../Utils";
-import {readFileSync, writeFileSync} from "fs";
-
-Utils.runningFromConsole = true
+import {writeFileSync} from "fs";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
 import * as licenses from "../assets/generated/license_info.json"
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
 import {Translation} from "../UI/i18n/Translation";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
+
+
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 

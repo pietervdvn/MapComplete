@@ -183,7 +183,7 @@ export default class LayerConfig {
                         
                         const keys = Array.from(SharedTagRenderings.SharedTagRendering.keys())
                         
-                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n      Try one of ${(keys.join(", "))}`;
+                        throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n    Try one of ${(keys.join(", "))}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                     }
                     return new TagRenderingConfig(renderingJson, self.source.osmTags, `${context}.tagrendering[${i}]`);
                 });
@@ -361,12 +361,6 @@ export default class LayerConfig {
         const self = this;
         const mappedHtml = tags.map(tgs => {
             function genHtmlFromString(sourcePart: string): BaseUIElement {
-                if (sourcePart.indexOf("html:") == 0) {
-                    // We use § as a replacement for ;
-                    const html = sourcePart.substring("html:".length)
-                    const inner = new FixedUiElement(SubstitutingTag.substituteString(html, tgs)).SetClass("block w-min text-center")
-                    return new Combine([inner]).SetClass("flex flex-col items-center");
-                }
 
                 const style = `width:100%;height:100%;transform: rotate( ${rotation} );display:block;position: absolute; top: 0; left: 0`;
                 let html: BaseUIElement = new FixedUiElement(`<img src="${sourcePart}" style="${style}" />`);
@@ -428,7 +422,7 @@ export default class LayerConfig {
             try {
 
                 const label = self.label?.GetRenderValue(tgs)?.Subs(tgs)
-                    ?.SetClass("block w-min text-center")
+                    ?.SetClass("block text-center")
                     ?.SetStyle("margin-top: " + (iconH + 2) + "px")
                 if (label !== undefined) {
                     htmlParts.push(new Combine([label]).SetClass("flex flex-col items-center"))
