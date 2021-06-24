@@ -14,15 +14,20 @@ import {readFileSync, writeFileSync} from "fs";
 
 const outputDirectory = "Docs/TagInfo"
 
-function generateTagOverview(kv: { k: string, v: string }, description: string) {
+function generateTagOverview(kv: { k: string, v: string }, description: string) : {
+    key: string,
+    description: string,
+    value?: string
+} {
     const overview = {
         // OSM tag key (required)
         key: kv.k,
-        description: description
+        description: description,
+        value : undefined
     };
     if (kv.v !== undefined) {
         // OSM tag value (optional, if not supplied it means "all values")
-        overview["value"] = kv.v
+        overview.value = kv.v
     }
     return overview
 }
@@ -30,7 +35,11 @@ function generateTagOverview(kv: { k: string, v: string }, description: string) 
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
     const usedTags = layer.source.osmTags.asChange({})
-    const result = []
+    const result : {
+        key: string,
+        description: string,
+        value?: string
+    }[] = []
     for (const kv of usedTags) {
         const description = "The MapComplete theme " + layout.title.txt + " has a layer " + layer.name.txt + " showing features with this tag"
         result.push(generateTagOverview(kv, description))
@@ -87,7 +96,8 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
         }
     }
-    return result;
+    
+    return result.filter(result => !result.key.startsWith("_"))
 }
 
 /**
