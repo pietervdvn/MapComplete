@@ -130,6 +130,9 @@
             "key": "name"
           }
         },
+        {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
         "website",
         "email",
         "phone",
@@ -242,6 +245,9 @@
         "images",
         "questions",
         {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
+        {
           "#": "name",
           "render": {
             "en": "<strong>{name}</strong>",
@@ -327,6 +333,9 @@
       "tagRenderings": [
         "images",
         "questions",
+        {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
         {
           "#": "Name",
           "render": {
@@ -507,7 +516,7 @@
           {
             "if": "climbing=crag",
             "then": {
-              "en": "Climbing crag"
+              "en": "Climbing crag <b>{name}</b>"
             }
           },
           {
@@ -553,6 +562,9 @@
       "tagRenderings": [
         "images",
         "questions",
+        {
+          "render": "{minimap(18, id, _contained_climbing_route_ids): height: 9rem; overflow: hidden; border-radius:3rem; }"
+        },
         {
           "#": "Contained routes length hist",
           "render": {
@@ -702,6 +714,7 @@
       "calculatedTags": [
         "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
         "_contained_climbing_routes=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+        "_contained_climbing_route_ids=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p.id)",
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
         "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
         "_contained_climbing_routes_count=JSON.parse(_contained_climbing_routes).length"
@@ -751,6 +764,9 @@
         "nb_NO": "En klatremulighet?"
       },
       "tagRenderings": [
+        {
+          "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+        },
         {
           "render": {
             "en": "<strong>{name}</strong>",

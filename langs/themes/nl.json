@@ -286,7 +286,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wat is de naam van dit Klimzaal?"
                     }
@@ -303,7 +303,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "Hoe heet deze klimroute?",
                         "mappings": {
@@ -312,11 +312,11 @@
                             }
                         }
                     },
-                    "3": {
-                        "question": "Hoe lang is deze klimroute (in meters)?",
-                        "render": "Deze klimroute is {climbing:length} meter lang"
-                    },
                     "4": {
+                        "question": "Hoe lang is deze klimroute (in meters)?",
+                        "render": "Deze klimroute is {canonical(climbing:length)} lang"
+                    },
+                    "5": {
                         "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
                         "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
                     }
@@ -340,7 +340,7 @@
                 },
                 "description": "Een klimgelegenheid",
                 "tagRenderings": {
-                    "5": {
+                    "6": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wat is de naam van dit Klimgelegenheid?",
                         "mappings": {
@@ -349,7 +349,7 @@
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "mappings": {
                             "0": {
                                 "then": "Kalksteen"
@@ -371,7 +371,7 @@
                 },
                 "description": "Een klimgelegenheid?",
                 "tagRenderings": {
-                    "1": {
+                    "2": {
                         "mappings": {
                             "0": {
                                 "then": "Klimmen is hier niet mogelijk"
@@ -383,6 +383,18 @@
                                 "then": "Klimmen is hier niet toegelaten"
                             }
                         }
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    },
+                    "1": {
+                        "human": " voet"
                     }
                 }
             }
@@ -402,7 +414,7 @@
                 }
             },
             "4": {
-                "render": "De klimroutes zijn gemiddeld <b>{climbing:length}m</b> lang",
+                "render": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?"
             },
             "5": {

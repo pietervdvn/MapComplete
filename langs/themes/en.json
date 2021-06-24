@@ -407,7 +407,7 @@
                 },
                 "description": "A climbing gym",
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "What is the name of this climbing gym?"
                     }
@@ -424,7 +424,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "What is the name of this climbing route?",
                         "mappings": {
@@ -433,15 +433,15 @@
                             }
                         }
                     },
-                    "3": {
-                        "question": "How long is this climbing route (in meters)?",
-                        "render": "This route is {climbing:length} meter long"
-                    },
                     "4": {
+                        "question": "How long is this climbing route (in meters)?",
+                        "render": "This route is {canonical(climbing:length)} long"
+                    },
+                    "5": {
                         "question": "What is the difficulty of this climbing route according to the french/belgian system?",
                         "render": "The difficulty is {climbing:grade:french} according to the french/belgian system"
                     },
-                    "5": {
+                    "6": {
                         "question": "How much bolts does this route have before reaching the moulinette?",
                         "render": "This route has {climbing:bolts} bolts",
                         "mappings": {
@@ -453,7 +453,7 @@
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "render": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>"
                     }
                 },
@@ -469,7 +469,7 @@
                     "render": "Climbing opportunity",
                     "mappings": {
                         "0": {
-                            "then": "Climbing crag"
+                            "then": "Climbing crag <b>{name}</b>"
                         },
                         "1": {
                             "then": "Climbing area <b>{name}</b>"
@@ -484,16 +484,16 @@
                 },
                 "description": "A climbing opportunity",
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<h3>Length overview</h3>{histogram(_length_hist)}"
                     },
-                    "3": {
+                    "4": {
                         "render": "<h3>Difficulties overview</h3>{histogram(_difficulty_hist)}"
                     },
-                    "4": {
+                    "5": {
                         "render": "<h3>Contains {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
                     },
-                    "5": {
+                    "6": {
                         "render": "<strong>{name}</strong>",
                         "question": "What is the name of this climbing opportunity?",
                         "mappings": {
@@ -502,7 +502,7 @@
                             }
                         }
                     },
-                    "6": {
+                    "7": {
                         "mappings": {
                             "0": {
                                 "then": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope"
@@ -512,7 +512,7 @@
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "question": "What is the rock type here?",
                         "render": "The rock type is {rock}",
                         "mappings": {
@@ -536,10 +536,10 @@
                 },
                 "description": "A climbing opportunity?",
                 "tagRenderings": {
-                    "0": {
+                    "1": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "1": {
+                    "2": {
                         "question": "Is climbing possible here?",
                         "mappings": {
                             "0": {
@@ -552,6 +552,18 @@
                                 "then": "Climbing is not possible here"
                             }
                         }
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    },
+                    "1": {
+                        "human": " feet"
                     }
                 }
             }
@@ -594,7 +606,7 @@
                 }
             },
             "4": {
-                "render": "The routes are <b>{climbing:length}m</b> long on average",
+                "render": "The routes are <b>{canonical(climbing:length)}</b> long on average",
                 "question": "What is the (average) length of the routes in meters?"
             },
             "5": {

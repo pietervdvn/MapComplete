@@ -158,8 +158,8 @@
                     "render": "Klatrerute"
                 },
                 "tagRenderings": {
-                    "3": {
-                        "render": "Denne ruten er {climbing:length} meter lang"
+                    "4": {
+                        "render": "Denne ruten er {canonical(climbing:length)} lang"
                     }
                 }
             },
@@ -182,7 +182,7 @@
                 },
                 "description": "En klatremulighet?",
                 "tagRenderings": {
-                    "1": {
+                    "2": {
                         "question": "Er klatring mulig her?",
                         "mappings": {
                             "0": {

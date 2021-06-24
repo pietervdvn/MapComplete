@@ -407,7 +407,7 @@
                 },
                 "description": "クライミングジム",
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "このクライミングジムは何という名前ですか?"
                     }
@@ -424,7 +424,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "この登坂ルートの名前は何ですか?",
                         "mappings": {
@@ -433,10 +433,10 @@
                             }
                         }
                     },
-                    "3": {
-                        "render": "このルート長は、 {climbing:length} メーターです"
-                    },
                     "4": {
+                        "render": "このルート長は、 {canonical(climbing:length)} メーターです"
+                    },
+                    "5": {
                         "render": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です"
                     }
                 }
@@ -448,7 +448,7 @@
                 },
                 "description": "登坂教室",
                 "tagRenderings": {
-                    "5": {
+                    "6": {
                         "render": "<strong>{name}</strong>",
                         "question": "この登坂教室の名前は何ですか?",
                         "mappings": {
@@ -472,10 +472,10 @@
                 },
                 "description": "登坂教室？",
                 "tagRenderings": {
-                    "0": {
+                    "1": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "1": {
+                    "2": {
                         "question": "ここで登坂はできますか?",
                         "mappings": {
                             "0": {
@@ -497,7 +497,7 @@
                 "question": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?"
             },
             "4": {
-                "render": "ルートの長さは平均で<b>{climbing:length} m</b>です",
+                "render": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
                 "question": "ルートの(平均)長さはメートル単位でいくつですか?"
             },
             "5": {

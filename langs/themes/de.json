@@ -136,7 +136,7 @@
                 },
                 "description": "Eine Kletterhalle",
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wie heißt diese Kletterhalle?"
                     }
@@ -153,7 +153,7 @@
                     }
                 },
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wie heißt diese Kletterroute?",
                         "mappings": {
@@ -162,10 +162,10 @@
                             }
                         }
                     },
-                    "3": {
-                        "render": "Diese Route ist {climbing:length} Meter lang"
-                    },
                     "4": {
+                        "render": "Diese Route ist {canonical(climbing:length)} lang"
+                    },
+                    "5": {
                         "render": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems"
                     }
                 }
@@ -177,7 +177,7 @@
                 },
                 "description": "Eine Klettergelegenheit",
                 "tagRenderings": {
-                    "5": {
+                    "6": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wie heißt diese Klettergelegenheit?",
                         "mappings": {
@@ -201,10 +201,10 @@
                 },
                 "description": "Eine Klettergelegenheit?",
                 "tagRenderings": {
-                    "0": {
+                    "1": {
                         "render": "<strong>{name}</strong>"
                     },
-                    "1": {
+                    "2": {
                         "question": "Kann hier geklettert werden?",
                         "mappings": {
                             "0": {
@@ -226,7 +226,7 @@
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
             },
             "4": {
-                "render": "Die Routen sind durchschnittlich <b>{climbing:length}m</b> lang",
+                "render": "Die Routen sind durchschnittlich <b>{canonical(climbing:length)}</b> lang",
                 "question": "Wie lang sind die Routen (durchschnittlich) in Metern?"
             },
             "5": {

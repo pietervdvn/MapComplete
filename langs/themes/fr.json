@@ -151,28 +151,28 @@
             },
             "1": {
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "2": {
                 "tagRenderings": {
-                    "2": {
+                    "3": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "3": {
                 "tagRenderings": {
-                    "5": {
+                    "6": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
             },
             "4": {
                 "tagRenderings": {
-                    "0": {
+                    "1": {
                         "render": "<strong>{name}</strong>"
                     }
                 }
