@@ -151,27 +151,31 @@ export class GeoOperations {
         const x: number = pointCoordinate[0];
         const y: number = pointCoordinate[1];
 
+        for (let i = 0; i < feature.geometry.coordinates.length; i++) {
+            let poly = feature.geometry.coordinates[i];
 
-        let poly = feature.geometry.coordinates[0];
+            let inside = false;
+            for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+                const coori = poly[i];
+                const coorj = poly[j];
 
-        var inside = false;
-        for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-            const coori = poly[i];
-            const coorj = poly[j];
+                const xi = coori[0];
+                const yi = coori[1];
+                const xj = coorj[0];
+                const yj = coorj[1];
 
-            const xi = coori[0];
-            const yi = coori[1];
-            const xj = coorj[0];
-            const yj = coorj[1];
-
-            const intersect = ((yi > y) != (yj > y))
-                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-            if (intersect) {
-                inside = !inside;
+                const intersect = ((yi > y) != (yj > y))
+                    && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+                if (intersect) {
+                    inside = !inside;
+                }
+            }
+            if (inside) {
+                return true;
             }
         }
 
-        return inside;
+        return false;
     };
 
     static lengthInMeters(feature: any) {
