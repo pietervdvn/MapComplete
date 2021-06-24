@@ -1,8 +1,6 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
 import * as $ from "jquery";
-import {control} from "leaflet";
-import zoom = control.zoom;
 import Loc from "../../Models/Loc";
 import State from "../../State";
 import {Utils} from "../../Utils";
