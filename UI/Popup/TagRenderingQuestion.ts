@@ -50,7 +50,7 @@ export default class TagRenderingQuestion extends UIElement {
                 cancelButton?: BaseUIElement
     ) {
         super(tags);
-        this._applicableUnit = units.filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
+        this._applicableUnit = (units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
         this._tags = tags;
         this._configuration = configuration;
         this._cancelButton = cancelButton;

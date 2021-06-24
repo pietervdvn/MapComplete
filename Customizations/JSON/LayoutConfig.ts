@@ -73,7 +73,7 @@ export default class LayoutConfig {
         if (json.description === undefined) {
             throw "Description not defined in " + this.id;
         }
-        this.units = LayoutConfig.ExtractUnits(json, context);
+        this.units = LayoutConfig.ExtractUnits(json, context) ?? [];
         this.title = new Translation(json.title, context + ".title");
         this.description = new Translation(json.description, context + ".description");
         this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");

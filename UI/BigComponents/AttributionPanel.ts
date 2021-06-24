@@ -43,7 +43,7 @@ export default class AttributionPanel extends Combine {
                 const links = sorted.map(kv => `<a href="https://openstreetmap.org/user/${kv.name}" target="_blank">${kv.name}</a>`)
                 const contribs = links.join(", ")
 
-                if (hiddenCount == 0) {
+                if (hiddenCount <= 0) {
                     return Translations.t.general.attribution.mapContributionsBy.Subs({
                         contributors: contribs
                     })
