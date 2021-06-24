@@ -14,19 +14,18 @@ import {Utils} from "../../Utils";
 export default class AvailableBaseLayers {
 
 
-    public static  osmCarto: BaseLayer = 
+    public static osmCarto: BaseLayer =
         {
             id: "osm",
-                name: "OpenStreetMap",
+            name: "OpenStreetMap",
             layer: () => AvailableBaseLayers.CreateBackgroundLayer("osm", "OpenStreetMap",
-            "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
-            19,
-            false, false),
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
+                19,
+                false, false),
             feature: null,
             max_zoom: 19,
             min_zoom: 0
-    }
-       
+        }
 
 
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
@@ -37,11 +36,11 @@ export default class AvailableBaseLayers {
         this.availableEditorLayers =
             location.map(
                 (currentLocation) => {
-                    
-                    if(currentLocation === undefined){
+
+                    if (currentLocation === undefined) {
                         return AvailableBaseLayers.layerOverview;
                     }
-                    
+
                     const currentLayers = self.availableEditorLayers?.data;
                     const newLayers = AvailableBaseLayers.AvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
 
@@ -61,7 +60,6 @@ export default class AvailableBaseLayers {
                 });
 
 
-        
     }
 
     private static AvailableLayersAt(lon: number, lat: number): BaseLayer[] {
@@ -69,7 +67,7 @@ export default class AvailableBaseLayers {
         const globalLayers = [];
         for (const layerOverviewItem of AvailableBaseLayers.layerOverview) {
             const layer = layerOverviewItem;
-            
+
             if (layer.feature?.geometry === undefined || layer.feature?.geometry === null) {
                 globalLayers.push(layer);
                 continue;
@@ -151,10 +149,10 @@ export default class AvailableBaseLayers {
     private static LoadProviderIndex(): BaseLayer[] {
         // @ts-ignore
         X; // Import X to make sure the namespace is not optimized away
-        function l(id: string, name: string) : BaseLayer{
+        function l(id: string, name: string): BaseLayer {
             try {
                 const layer: any = () => L.tileLayer.provider(id, undefined);
-                const baseLayer : BaseLayer =  {
+                const baseLayer: BaseLayer = {
                     feature: null,
                     id: id,
                     name: name,
