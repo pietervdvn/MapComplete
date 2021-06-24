@@ -79,7 +79,7 @@ export default class SimpleMetaTagger {
     private static canonicalize = new SimpleMetaTagger(
         {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)",
-            keys: []
+            keys: ["Theme-defined keys"],
 
         },
         (feature => {
@@ -405,7 +405,7 @@ export default class SimpleMetaTagger {
         this._f = f;
         this.includesDates = docs.includesDates ?? false;
         for (const key of docs.keys) {
-            if (!key.startsWith('_')) {
+            if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
                 throw `Incorrect metakey ${key}: it should start with underscore (_)`
             }
         }

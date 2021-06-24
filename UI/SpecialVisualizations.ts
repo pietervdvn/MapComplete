@@ -392,7 +392,7 @@ export default class SpecialVisualizations {
         return new Combine([
                 new Title("Special tag renderings", 3),
                 "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is <b>{func_name()}</b>, <b>{func_name(arg, someotherarg)}</b> or <b>{func_name(args):cssStyle}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
+                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_fcs need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args",
                 ...helpTexts
             ]
         );

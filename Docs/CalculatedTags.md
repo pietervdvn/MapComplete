@@ -40,6 +40,13 @@ The surface area of the feature, in square meters and in hectare. Not set on poi
 The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter
 
 
+### Theme-defined keys 
+
+
+
+If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)
+
+
 ### _country 
 
 

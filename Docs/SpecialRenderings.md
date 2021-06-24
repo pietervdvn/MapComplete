@@ -1,7 +1,7 @@
 
 ### Special tag renderings 
 
- In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is <b>{func_name()}</b> or <b>{func_name(arg, someotherarg)}</b>. Note that you <i>do not</i> need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args 
+ In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's. General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_fcs need to use quotes around your arguments, the comma is enough to seperate them. This also implies you cannot use a comma in your args 
 ### all_tags 
 
  Prints all key-value pairs of the object - used for debugging 
@@ -36,6 +36,18 @@ image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 whe
 #### Example usage 
 
  {image_upload(image)} 
+### minimap 
+
+ A small map showing the selected feature. Note that no styling is applied, wrap this in a div 
+
+name | default | description
+------ | --------- | -------------
+zoomlevel | 18 | The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close
+idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.
+ 
+#### Example usage 
+
+ `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}` 
 ### reviews 
 
  Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten 
@@ -81,7 +93,7 @@ name | default | description
 key | undefined | The key to be read and to generate a histogram from
 title |  | The text to put above the given values column
 countHeader |  | The text to put above the counts
-colors | undefined | (Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`
+colors* | undefined | (Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`
  
 #### Example usage 
 
@@ -96,4 +108,15 @@ url | undefined | The url to share (default: current URL)
  
 #### Example usage 
 
- {share_link()} to share the current page, {share_link(<some_url>)} to share the given url Generated from UI/SpecialVisualisations.ts
+ {share_link()} to share the current page, {share_link(<some_url>)} to share the given url 
+### canonical 
+
+ Converts a short, canonical value into the long, translated text 
+
+name | default | description
+------ | --------- | -------------
+key | undefined | The key of the tag to give the canonical text for
+ 
+#### Example usage 
+
+ {canonical(length)} will give 42 metre (in french) Generated from UI/SpecialVisualisations.ts
