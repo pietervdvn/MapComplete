@@ -22,9 +22,8 @@ import Title from "./Base/Title";
 import Table from "./Base/Table";
 import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
-import ShowDataLayer from "./ShowDataLayer";
-import Minimap from "./Base/Minimap";
 import {Utils} from "../Utils";
+import BaseLayer from "../Models/BaseLayer";
 
 export default class SpecialVisualizations {
 
@@ -129,7 +128,6 @@ export default class SpecialVisualizations {
                         return features
                     })
                     const properties = tagSource.data;
-
                     let zoom = 18
                     if (args[0]) {
                         const parsed = Number(args[0])
@@ -137,7 +135,7 @@ export default class SpecialVisualizations {
                             zoom = parsed;
                         }
                     }
-                    const minimap = new Minimap(
+                    const minimap = SpecialVisualizations.constructMiniMap(
                         {
                             background: state.backgroundLayer,
                             location: new UIEventSource<Loc>({
@@ -149,9 +147,9 @@ export default class SpecialVisualizations {
                         }
                     )
 
-                    new ShowDataLayer(
+                    SpecialVisualizations.constructShowDataLayer(
                         featuresToShow,
-                        minimap.leafletMap,
+                        minimap["leafletMap"],
                         State.state.layoutToUse,
                         false,
                         true
@@ -160,7 +158,6 @@ export default class SpecialVisualizations {
 
                     minimap.SetStyle("overflow: hidden; pointer-events: none;")
                     return minimap;
-
                 }
             },
             {
@@ -366,6 +363,12 @@ export default class SpecialVisualizations {
 
         ]
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
+    static constructMiniMap: (options?: {
+        background?: UIEventSource<BaseLayer>,
+        location?: UIEventSource<Loc>,
+        allowMoving?: boolean
+    }) => BaseUIElement;
+    static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
 
     private static GenHelpMessage() {
 
