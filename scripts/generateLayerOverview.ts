@@ -47,7 +47,7 @@ class LayerOverviewUtils {
             errorCount.push("Layer " + layerJson.id + "still uses the old 'overpassTags'-format. Please use \"source\": {\"osmTags\": <tags>}' instead of \"overpassTags\": <tags> (note: this isn't your fault, the custom theme generator still spits out the old format)")
         }
         try {
-            const layer = new LayerConfig(layerJson, AllKnownLayers.sharedUnits,"test", true)
+            const layer = new LayerConfig(layerJson, AllKnownLayers.sharedUnits, "test", true)
             const images = Array.from(layer.ExtractImages())
             const remoteImages = images.filter(img => img.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
@@ -152,7 +152,7 @@ class LayerOverviewUtils {
         for (const layerFile of layerFiles) {
 
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
-            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed,AllKnownLayers.sharedUnits))
+            knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed, AllKnownLayers.sharedUnits))
         }
 
         let themeErrorCount = []
@@ -213,11 +213,11 @@ class LayerOverviewUtils {
             const errors = layerErrorCount.concat(themeErrorCount).join("\n")
             console.log(errors)
             const msg = (`Found ${layerErrorCount.length} errors in the layers; ${themeErrorCount.length} errors in the themes`)
-            console.log ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
             console.log(msg)
-            console.log ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-   
+            console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
             if (process.argv.indexOf("--report") >= 0) {
                 console.log("Writing report!")
                 writeFileSync("layer_report.txt", errors)
@@ -230,4 +230,4 @@ class LayerOverviewUtils {
     }
 }
 
-    new LayerOverviewUtils().main(process.argv)
+new LayerOverviewUtils().main(process.argv)
