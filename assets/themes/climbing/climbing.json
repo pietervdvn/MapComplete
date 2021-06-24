@@ -329,7 +329,6 @@
           }
         ]
       },
-     
       "tagRenderings": [
         "images",
         "questions",
@@ -842,23 +841,34 @@
   ],
   "units": [
     {
-      "appliesToKey": ["climbing:length"],
-      "applicableUnits": [{
-        "canonicalDenomination": "m",
-        "alternativeDenomination": ["meter","meters"],
-        "human": {
-          "en": " meter",
-          "nl": " meter"
+      "appliesToKey": [
+        "climbing:length"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter",
+            "meters"
+          ],
+          "human": {
+            "en": " meter",
+            "nl": " meter"
+          },
+          "default": true
         },
-        "default": true
-      },{
-        "canonicalDenomination": "ft",
-        "alternativeDenomination": ["feet","voet"],
-        "human": {
-          "en": " feet",
-          "nl": " voet"
+        {
+          "canonicalDenomination": "ft",
+          "alternativeDenomination": [
+            "feet",
+            "voet"
+          ],
+          "human": {
+            "en": " feet",
+            "nl": " voet"
+          }
         }
-      }]
+      ]
     }
   ],
   "roamingRenderings": [
@@ -1358,15 +1368,14 @@
           "key": "climbing:length"
         }
       },
-
       {
         "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>{climbing:bolted}</div>",
         "freeform": {
           "key": "climbing:bolted"
         }
       },
-
-      "defaults"],
+      "defaults"
+    ],
     "+calculatedTags": [
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
       "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
