@@ -81,17 +81,17 @@
     "path": "social_image.jpg",
     "license": "Logo (all rights reserved)",
     "sources": [
-      ""
+      "https://createlli.com/"
     ]
   },
   {
     "authors": [
-      "Youtube.com"
+      "Youtube"
     ],
     "path": "youtube.svg",
     "license": "Logo (all rights reserved)",
     "sources": [
-      "Youtube.com"
+      "https://www.youtube.com/"
     ]
   }
 ]

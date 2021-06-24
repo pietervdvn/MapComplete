@@ -3,6 +3,30 @@
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "path": "direction_masked.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "direction_outline.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "path": "direction_stroke.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "SocialImageForeground.svg",
     "license": "CC-BY-SA",
     "sources": [
