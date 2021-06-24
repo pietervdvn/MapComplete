@@ -91,6 +91,7 @@ export default class MetaTagging {
     }
 
     private static errorPrintCount = 0;
+    private static readonly stopErrorOutputAt = 10;
 
     private static createRetaggingFunc(layer: LayerConfig):
         ((params: Params, feature: any) => void) {
@@ -123,11 +124,11 @@ export default class MetaTagging {
                         }
                         feature.properties[key] = result;
                     } catch (e) {
-                        if(MetaTagging. errorPrintCount < 50){
-                            console.error("Could not calculate a metatag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
+                        if(MetaTagging. errorPrintCount < MetaTagging.stopErrorOutputAt){
+                            console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
                             MetaTagging.   errorPrintCount ++;
-                            if(MetaTagging. errorPrintCount == 50){
-                                console.error("Got 50 errors calculating this metatagging - stopping output now")
+                            if(MetaTagging. errorPrintCount == MetaTagging.stopErrorOutputAt){
+                                console.error("Got ",MetaTagging.stopErrorOutputAt," errors calculating this metatagging - stopping output now")
                             }
                         }
                     }
