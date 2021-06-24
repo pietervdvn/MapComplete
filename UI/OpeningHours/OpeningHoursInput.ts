@@ -25,7 +25,7 @@ export default class OpeningHoursInput extends InputElement<string> {
 
     constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
         super();
-
+        this._value = value;
 
         const leftoverRules = value.map<string[]>(str => {
             if (str === undefined) {
