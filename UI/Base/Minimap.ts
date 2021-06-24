@@ -109,8 +109,6 @@ export default class Minimap extends BaseUIElement {
                 map.getCenter().lng === location.data.lon) {
                 return;
             }
-            console.trace(map.getZoom(), map.getCenter(), location.data)
-
             location.data.zoom = map.getZoom();
             location.data.lat = map.getCenter().lat;
             location.data.lon = map.getCenter().lng;
