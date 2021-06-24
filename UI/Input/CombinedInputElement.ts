@@ -24,13 +24,13 @@ export default class CombinedInputElement<T, J, X> extends InputElement<X> {
         }, [b.IsSelected])
         this._combined = new Combine([this._a, this._b]);
         this._value = this._a.GetValue().map(
-            t => combine(t, this._b.GetValue().data),
+            t => combine(t, this._b?.GetValue()?.data),
             [this._b.GetValue()],
         )
             .addCallback(x => {
                 const [t, j] = split(x)
-                this._a.GetValue().setData(t)
-                this._b.GetValue().setData(j)
+                this._a.GetValue()?.setData(t)
+                this._b.GetValue()?.setData(j)
             })
     }
 

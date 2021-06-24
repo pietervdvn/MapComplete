@@ -264,11 +264,12 @@ export default class ValidatedTextField {
         }
 
         if (tp.inputHelper) {
-            input = new CombinedInputElement(input, tp.inputHelper(input.GetValue(), {
-                    location: options.location,
-                    mapBackgroundLayer: options.mapBackgroundLayer
+            const helper =  tp.inputHelper(input.GetValue(), {
+                location: options.location,
+                mapBackgroundLayer: options.mapBackgroundLayer
 
-            }),
+            })
+            input = new CombinedInputElement(input, helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
                 a => [a, a]
                 );
