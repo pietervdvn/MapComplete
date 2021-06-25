@@ -10,6 +10,7 @@ export class Unit {
     public readonly denominationsSorted: Denomination[];
     public readonly defaultDenom: Denomination;
     public readonly eraseInvalid: boolean;
+    private readonly possiblePostFixes: string[] = []
 
     constructor(appliesToKeys: string[], applicableUnits: Denomination[], eraseInvalid: boolean) {
         this.appliesToKeys = new Set(appliesToKeys);
@@ -32,6 +33,22 @@ export class Unit {
         }
         this.denominationsSorted = [...this.denominations]
         this.denominationsSorted.sort((a, b) => b.canonical.length - a.canonical.length)
+
+        
+        const possiblePostFixes = new Set<string>()
+        function addPostfixesOf(str){
+            for (let i = 0; i < str.length + 1; i++) {
+                const substr = str.substring(0,i)
+                possiblePostFixes.add(substr)
+            }
+        }
+        
+        for (const denomination of this.denominations) {
+            addPostfixesOf(denomination.canonical)
+            denomination.alternativeDenominations.forEach(addPostfixesOf)
+        }
+        this.possiblePostFixes = Array.from(possiblePostFixes)
+        this.possiblePostFixes.sort((a, b) => b.length - a .length)
     }
 
     isApplicableToKey(key: string | undefined): boolean {
@@ -68,6 +85,27 @@ export class Unit {
         const elems = denom.prefix ? [human, stripped] : [stripped, human];
         return new Combine(elems)
 
+    }
+
+    /**
+     *   Returns the value without any (sub)parts of any denomination - usefull as preprocessing step for validating inputs.
+     *   E.g.
+     *   if 'megawatt' is a possible denomination, then '5 Meg' will be rewritten to '5' (which can then be validated as a valid pnat)
+     *   
+     *   Returns the original string if nothign matches
+     */
+    stripUnitParts(str: string) {
+        if(str === undefined){
+            return undefined;
+        }
+
+        for (const denominationPart of this.possiblePostFixes) {
+            if(str.endsWith(denominationPart)){
+                return str.substring(0, str.length - denominationPart.length).trim()
+            }
+        }
+        
+        return str;
     }
 }
 
@@ -131,7 +169,7 @@ export class Denomination {
 
         value = value.toLowerCase()
         if (this.prefix) {
-            if (value.startsWith(this.canonical)) {
+            if (value.startsWith(this.canonical) && this.canonical !== "") {
                 return value.substring(this.canonical.length).trim();
             }
             for (const alternativeValue of this.alternativeDenominations) {
@@ -140,7 +178,7 @@ export class Denomination {
                 }
             }
         } else {
-            if (value.endsWith(this.canonical)) {
+            if (value.endsWith(this.canonical) && this.canonical !== "") {
                 return value.substring(0, value.length - this.canonical.length).trim();
             }
             for (const alternativeValue of this.alternativeDenominations) {
