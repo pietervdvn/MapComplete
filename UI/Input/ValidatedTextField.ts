@@ -12,6 +12,7 @@ import DirectionInput from "./DirectionInput";
 import ColorPicker from "./ColorPicker";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
+import {Unit} from "../../Customizations/JSON/Denomination";
 
 interface TextFieldDef {
     name: string,
@@ -231,7 +232,8 @@ export default class ValidatedTextField {
         isValid?: ((s: string, country: () => string) => boolean),
         country?: () => string,
         location?: [number /*lat*/, number /*lon*/],
-        mapBackgroundLayer?: UIEventSource<any>
+        mapBackgroundLayer?: UIEventSource<any>,
+        unit?: Unit
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
@@ -244,6 +246,9 @@ export default class ValidatedTextField {
             isValid = (str, country) => {
                 if (str === undefined) {
                     return false;
+                }
+                if(options.unit) {
+                    str = options.unit.stripUnitParts(str)
                 }
                 return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
             }
@@ -263,6 +268,39 @@ export default class ValidatedTextField {
             })
         }
 
+        if(options.unit) {
+            // We need to apply a unit.
+            // This implies:
+            // We have to create a dropdown with applicable denominations, and fuse those values
+            const unit = options.unit
+            const unitDropDown = new DropDown("",
+                unit.denominations.map(denom => {
+                    return {
+                        shown: denom.human,
+                        value: denom
+                    }
+                })
+            )
+            unitDropDown.GetValue().setData(unit.defaultDenom)
+            unitDropDown.SetStyle("width: min-content")
+
+            input = new CombinedInputElement(
+                input,
+                unitDropDown,
+                (text, denom) => {
+                    console.log("text:", text, "denom:", denom, "canon: ", denom?.canonicalValue(text, true))
+                    return denom?.canonicalValue(text, true) ?? undefined;
+                },
+                (valueWithDenom: string) => {
+                    console.log("ToSplit: ", valueWithDenom, "becomes", unit.findDenomination(valueWithDenom))
+                    const [text, denom] = unit.findDenomination(valueWithDenom) ?? [valueWithDenom, undefined];
+                    if(text === undefined){
+                        return [valueWithDenom, undefined]
+                    }
+                    return [text, denom]
+                }
+            ).SetClass("flex")
+        }
         if (tp.inputHelper) {
             const helper =  tp.inputHelper(input.GetValue(), {
                 location: options.location,

@@ -332,39 +332,9 @@ export default class TagRenderingQuestion extends UIElement {
             isValid: (str) => (str.length <= 255),
             country: () => this._tags.data._country,
             location: [this._tags.data._lat, this._tags.data._lon],
-            mapBackgroundLayer: State.state.backgroundLayer
+            mapBackgroundLayer: State.state.backgroundLayer,
+            unit: this._applicableUnit
         });
-
-        if (this._applicableUnit) {
-            // We need to apply a unit.
-            // This implies:
-            // We have to create a dropdown with applicable denominations, and fuse those values
-            const unit = this._applicableUnit
-            const unitDropDown = new DropDown("",
-                unit.denominations.map(denom => {
-                    return {
-                        shown: denom.human,
-                        value: denom
-                    }
-                })
-            )
-            unitDropDown.GetValue().setData(this._applicableUnit.defaultDenom)
-            unitDropDown.SetStyle("width: min-content")
-
-            input = new CombinedInputElement(
-                input,
-                unitDropDown,
-                (text, denom) => {
-                    console.log("text:", text, "denom:", denom, "canon: ",denom?.canonicalValue(text, true))
-                    return denom?.canonicalValue(text, true) ?? text;
-                },
-                (valueWithDenom: string) => {
-                    console.log("ToSplit: ", valueWithDenom, "becomes", unit.findDenomination(valueWithDenom))
-                    return unit.findDenomination(valueWithDenom) ?? [valueWithDenom, undefined];
-                }
-            ).SetClass("flex")
-        }
-
 
         input.GetValue().setData(this._tags.data[this._configuration.freeform.key]);
 

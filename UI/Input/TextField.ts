@@ -65,8 +65,8 @@ export class TextField extends InputElement<string> {
 
 
         this.value.addCallbackAndRun(value => {
-            if (!(value !== undefined && value !== null)) {
-                field["value"] = "";
+            if (value === undefined || value === null) {
+                // We leave the textfield as is - make sure we do not erase it!
                 return;
             }
             field["value"] = value;
