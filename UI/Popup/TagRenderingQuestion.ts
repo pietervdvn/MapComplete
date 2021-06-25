@@ -354,8 +354,14 @@ export default class TagRenderingQuestion extends UIElement {
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
-                (text, denom) => denom?.canonicalValue(text, true) ?? text,
-                (valueWithDenom: string) => unit.findDenomination(valueWithDenom)
+                (text, denom) => {
+                    console.log("text:", text, "denom:", denom, "canon: ",denom?.canonicalValue(text, true))
+                    return denom?.canonicalValue(text, true) ?? text;
+                },
+                (valueWithDenom: string) => {
+                    console.log("ToSplit: ", valueWithDenom, "becomes", unit.findDenomination(valueWithDenom))
+                    return unit.findDenomination(valueWithDenom) ?? [valueWithDenom, undefined];
+                }
             ).SetClass("flex")
         }
 

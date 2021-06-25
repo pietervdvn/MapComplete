@@ -842,12 +842,15 @@
   "units": [
     {
       "appliesToKey": [
-        "climbing:length"
+        "climbing:length",
+        "climbing:length:min",
+        "climbing:length:max"
       ],
       "applicableUnits": [
         {
-          "canonicalDenomination": "m",
+          "canonicalDenomination": "",
           "alternativeDenomination": [
+            "m",
             "meter",
             "meters"
           ],
@@ -1363,7 +1366,7 @@
   "overrideAll": {
     "titleIcons": [
       {
-        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/height.svg' style='width:2rem; height:2rem'/>{climbing:length}</div>",
+        "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/height.svg' style='width:2rem; height:2rem'/>{climbing:length}m</div>",
         "freeform": {
           "key": "climbing:length"
         }
@@ -1372,7 +1375,13 @@
         "render": "<div style='display:block ruby;' class='m-1 '><img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>{climbing:bolted}</div>",
         "freeform": {
           "key": "climbing:bolted"
-        }
+        },
+        "mappings": [
+          {
+            "if": "climbing:bolted=yes",
+            "then": "<img src='./assets/themes/climbing/carabiner.svg' style='width:2rem; height:2rem'/>"
+          }
+        ]
       },
       "defaults"
     ],

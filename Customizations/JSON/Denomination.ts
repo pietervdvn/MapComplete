@@ -7,14 +7,31 @@ import Combine from "../../UI/Base/Combine";
 export class Unit {
     public readonly appliesToKeys: Set<string>;
     public readonly denominations: Denomination[];
+    public readonly denominationsSorted: Denomination[];
     public readonly defaultDenom: Denomination;
-    public readonly eraseInvalid : boolean;
+    public readonly eraseInvalid: boolean;
 
     constructor(appliesToKeys: string[], applicableUnits: Denomination[], eraseInvalid: boolean) {
         this.appliesToKeys = new Set(appliesToKeys);
         this.denominations = applicableUnits;
         this.defaultDenom = applicableUnits.filter(denom => denom.default)[0]
         this.eraseInvalid = eraseInvalid
+        
+        const seenUnitExtensions = new Set<string>();
+        for (const denomination of this.denominations) {
+            if(seenUnitExtensions.has(denomination.canonical)){
+                throw "This canonical unit is already defined in another denomination: "+denomination.canonical
+            }
+            const duplicate = denomination.alternativeDenominations.filter(denom => seenUnitExtensions.has(denom))
+            if(duplicate.length > 0){
+                throw "A denomination is used multiple times: "+duplicate.join(", ")
+            }
+            
+            seenUnitExtensions.add(denomination.canonical)
+            denomination.alternativeDenominations.forEach(d => seenUnitExtensions.add(d))
+        }
+        this.denominationsSorted = [...this.denominations]
+        this.denominationsSorted.sort((a, b) => b.canonical.length - a.canonical.length)
     }
 
     isApplicableToKey(key: string | undefined): boolean {
@@ -29,7 +46,10 @@ export class Unit {
      * Finds which denomination is applicable and gives the stripped value back
      */
     findDenomination(valueWithDenom: string): [string, Denomination] {
-        for (const denomination of this.denominations) {
+        if(valueWithDenom === undefined){
+            return undefined;
+        }
+        for (const denomination of this.denominationsSorted) {
             const bare = denomination.StrippedValue(valueWithDenom)
             if (bare !== null) {
                 return [bare, denomination]
@@ -56,12 +76,12 @@ export class Denomination {
     readonly default: boolean;
     readonly prefix: boolean;
     private readonly _human: Translation;
-    private readonly alternativeDenominations: string [];
+    public readonly alternativeDenominations: string [];
 
     constructor(json: UnitConfigJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         this.canonical = json.canonicalDenomination.trim()
-        if ((this.canonical ?? "") === "") {
+        if (this.canonical === undefined) {
             throw `${context}: this unit has no decent canonical value defined`
         }
 
@@ -109,6 +129,7 @@ export class Denomination {
             return undefined;
         }
 
+        value = value.toLowerCase()
         if (this.prefix) {
             if (value.startsWith(this.canonical)) {
                 return value.substring(this.canonical.length).trim();
