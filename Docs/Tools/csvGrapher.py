@@ -1,11 +1,11 @@
 import csv
-import string
 from datetime import datetime
 
 from matplotlib import pyplot
 import re
 
 useLegend = True
+
 
 def counts(lst):
     counts = {}
@@ -33,7 +33,7 @@ class Hist:
         for v in self.dictionary.values():
             allV += list(set(v))
         return list(set(allV))
-    
+
     def keys(self):
         return self.dictionary.keys()
 
@@ -148,27 +148,28 @@ def create_usercount_graphs(stats, extra_text=""):
     pyplot.savefig("CumulativeContributors" + extra_text + ".png", dpi=400, facecolor='w', edgecolor='w')
 
 
-def create_contributors_per_total_cs(contents, extra_text = "", cutoff=25, per_day=False):
+def create_contributors_per_total_cs(contents, extra_text="", cutoff=25, per_day=False):
     hist = Hist("contributor")
     for cs in contents:
         hist.add(cs[1], cs[0])
-        
-    count_per_contributor = hist.map(lambda dates : len(set(dates))) if per_day else hist.map(len)
-    
+
+    count_per_contributor = hist.map(lambda dates: len(set(dates))) if per_day else hist.map(len)
+
     per_count = Hist("per cs count")
     for cs_count in count_per_contributor:
-        per_count.add(min(cs_count, cutoff), 1)            
+        per_count.add(min(cs_count, cutoff), 1)
 
     to_plot = per_count.flatten(len)
     to_plot.sort(key=lambda a: a[0])
-    to_plot[ - 1] = (str(cutoff)+ " or more", to_plot[-1][1])
+    to_plot[- 1] = (str(cutoff) + " or more", to_plot[-1][1])
     pyplot_init()
-    pyplot.bar(list(map(lambda a : str(a[0]), to_plot)), list(map(lambda a: a[1], to_plot)) )
-    pyplot.title("Contributors per total number of changesets"+extra_text)
+    pyplot.bar(list(map(lambda a: str(a[0]), to_plot)), list(map(lambda a: a[1], to_plot)))
+    pyplot.title("Contributors per total number of changesets" + extra_text)
     pyplot.ylabel("Number of contributors")
     pyplot.xlabel("Mapping days with MapComplete" if per_day else "Number of changesets with MapComplete")
-    pyplot.savefig("Contributors per total number of "+("mapping days" if per_day else "changesets")+extra_text+".png", dpi=400)
-
+    pyplot.savefig(
+        "Contributors per total number of " + ("mapping days" if per_day else "changesets") + extra_text + ".png",
+        dpi=400)
 
 
 def create_theme_breakdown(stats, fileExtra="", cutoff=15):
@@ -203,6 +204,7 @@ def create_theme_breakdown(stats, fileExtra="", cutoff=15):
                    bbox_inches='tight')
     return themes
 
+
 def summed_changes_per(contents, extraText, sum_column=5):
     newPerDay = build_hist(contents, 0, 5)
     kv = newPerDay.flatten(sum)
@@ -216,7 +218,7 @@ def summed_changes_per(contents, extraText, sum_column=5):
         return
 
     pyplot_init()
-    text = "New and changed nodes per day "+extraText
+    text = "New and changed nodes per day " + extraText
     pyplot.title(text)
     if len(keysChanged) > 0:
         pyplot.bar(keysChanged, valuesChanged, label="Changed")
@@ -225,6 +227,7 @@ def summed_changes_per(contents, extraText, sum_column=5):
     if (useLegend):
         pyplot.legend()
     pyplot.savefig(text)
+
 
 def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5, cumulative=True, sort=True):
     print("Creating graph about " + subject + filenameextra)
@@ -259,7 +262,7 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
             edits_per_day_cumul = themes.map(lambda themes_for_date: len([x for x in themes_for_date if theme == x]))
 
         if (not cumulative) or (running_totals is None):
-             running_totals = edits_per_day_cumul
+            running_totals = edits_per_day_cumul
         else:
             running_totals = list(map(lambda ab: ab[0] + ab[1], zip(running_totals, edits_per_day_cumul)))
 
@@ -310,15 +313,15 @@ def contents_where(contents, index, starts_with, invert=False):
 
 def sortable_user_number(kv):
     str = kv[0]
-    ls = list(map(lambda str : "0"+str if len(str) < 2 else str, re.findall("[0-9]+", str)))
+    ls = list(map(lambda str: "0" + str if len(str) < 2 else str, re.findall("[0-9]+", str)))
     return ".".join(ls)
 
 
 def create_graphs(contents):
-    summed_changes_per(contents, "")
+    # summed_changes_per(contents, "")
     create_contributors_per_total_cs(contents)
     create_contributors_per_total_cs(contents, per_day=True)
-    
+
     cumulative_changes_per(contents, 4, "version number", cutoff=1, sort=sortable_user_number)
     create_usercount_graphs(contents)
     create_theme_breakdown(contents)
@@ -345,8 +348,7 @@ def create_graphs(contents):
                                sort=sortable_user_number)
         cumulative_changes_per(contents_filtered, 4, "version number", extratext, cutoff=1, sort=sortable_user_number)
         cumulative_changes_per(contents_filtered, 8, "host", extratext, cutoff=1)
-        summed_changes_per(contents_filtered, "for year "+str(year))
-
+        # summed_changes_per(contents_filtered, "for year " + str(year))
 
 
 def create_per_theme_graphs(contents, cutoff=10):
@@ -359,10 +361,8 @@ def create_per_theme_graphs(contents, cutoff=10):
         contributors = set(map(lambda row: row[1], filtered))
         if len(contributors) >= 2:
             cumulative_changes_per(filtered, 1, "contributor", " for theme " + theme, cutoff=1)
-        if len(filtered) > 25:
-            summed_changes_per(filtered, "for theme "+theme)
-
-
+        # if len(filtered) > 25:
+        #    summed_changes_per(filtered, "for theme " + theme)
 
 
 def create_per_contributor_graphs(contents, least_needed_changesets):
@@ -370,20 +370,20 @@ def create_per_contributor_graphs(contents, least_needed_changesets):
     for contrib in all_contributors:
         filtered = list(contents_where(contents, 1, contrib))
         if len(filtered) < least_needed_changesets:
-            print("Skipping "+contrib+" - too little changesets");
+            print("Skipping " + contrib + " - too little changesets");
             continue
         themes = set(map(lambda row: row[3], filtered))
         if len(themes) >= 2:
             cumulative_changes_per(filtered, 3, "theme", " for contributor " + contrib, cutoff=1)
-        if len(filtered) > 25:
-            summed_changes_per(filtered, "for contributor "+contrib)
+        # if len(filtered) > 25:
+        #     summed_changes_per(filtered, "for contributor " + contrib)
 
 
 theme_remappings = {
     "metamap": "maps",
     "groen": "buurtnatuur",
     "updaten van metadata met mapcomplete": "buurtnatuur",
-    "Toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
+    "Toevoegen of dit natuurreservaat toegangkelijk is": "buurtnatuur",
     "wiki:mapcomplete/fritures": "fritures",
     "wiki:MapComplete/Fritures": "fritures",
     "lits": "lit",
@@ -394,12 +394,12 @@ theme_remappings = {
     "wiki-User-joost_schouppe-campersite": "campersite",
     "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
     "wiki:User:joost_schouppe/campersite": "campersite",
-    "arbres":"arbres_llefia",
+    "arbres": "arbres_llefia",
     "aed_brugge": "aed",
-     "https://llefia.org/arbres/mapcomplete.json":"arbres_llefia",
-     "https://llefia.org/arbres/mapcomplete1.json":"arbres_llefia",
-    "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
-    "testing mapcomplete 0.0.0":"buurtnatuur",
+    "https://llefia.org/arbres/mapcomplete.json": "arbres_llefia",
+    "https://llefia.org/arbres/mapcomplete1.json": "arbres_llefia",
+    "toevoegen of dit natuurreservaat toegangkelijk is": "buurtnatuur",
+    "testing mapcomplete 0.0.0": "buurtnatuur",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
 }
 
@@ -414,7 +414,7 @@ def clean_input(contents):
         if theme in theme_remappings:
             theme = theme_remappings[theme]
         if theme.rfind('/') > 0:
-            theme = theme[theme.rfind('/') + 1 : ]
+            theme = theme[theme.rfind('/') + 1:]
         row[3] = theme
         row[4] = row[4].strip().strip("\"")[len("MapComplete "):]
         row[4] = re.findall("[0-9]*\.[0-9]*\.[0-9]*", row[4])[0]
@@ -424,23 +424,52 @@ def clean_input(contents):
         yield row
 
 
-def contributor_count(stats, index=1, item = "contributor"):
+# Merges changesets of the same theme and the samecontributos within the same hour, so that the stats are comparable
+def mergeChangesets(contents):
+    open_changesets = dict()  # {contributor --> {theme --> hour of last change}}
+    for row in contents:
+        theme = row[3]
+        contributor = row[1]
+        date = datetime.strptime(row[0], "%Y-%m-%dT%H:%M:%SZ")
+        if (contributor not in open_changesets):
+            open_changesets[contributor] = dict()
+        perTheme = open_changesets[contributor]
+        if (theme in perTheme):
+            lastChange = perTheme[theme]
+            diff = (date - lastChange).total_seconds()
+            if(diff > 60*60):
+                yield row
+        else:
+            yield row
+        perTheme[theme] = date
+        
+
+# Removes the time from the date component    
+def datesOnly(contents):
+    for row in contents:
+        row[0] = row[0].split("T")[0]
+
+
+def contributor_count(stats, index=1, item="contributor"):
     seen_contributors = set()
     for line in stats:
         contributor = line[index]
-        if(contributor in seen_contributors):
+        if (contributor in seen_contributors):
             continue
-        print("New " + item + " " + str(len(seen_contributors) + 1) + ": "+contributor)
+        print("New " + item + " " + str(len(seen_contributors) + 1) + ": " + contributor)
         seen_contributors.add(contributor)
         print(line)
+
 
 def main():
     print("Creating graphs...")
     with open('stats.csv', newline='') as csvfile:
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
+        stats = list(mergeChangesets(stats))
+        datesOnly(stats)
         print("Found " + str(len(stats)) + " changesets")
-        
-       #  contributor_count(stats, 3, "theme")
+
+        #  contributor_count(stats, 3, "theme")
         create_graphs(stats)
         create_per_theme_graphs(stats, 15)
         create_per_contributor_graphs(stats, 25)
