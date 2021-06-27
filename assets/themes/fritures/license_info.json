@@ -1,6 +1,16 @@
 [
   {
     "authors": [
+      "European Vegetarian Union"
+    ],
+    "path": "Vegetarian-mark.svg",
+    "license": "PD",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Vegetarian-mark.svg"
+    ]
+  },
+  {
+    "authors": [
       "Freepik"
     ],
     "path": "logo.svg",
