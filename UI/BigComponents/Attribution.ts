@@ -38,7 +38,7 @@ export default class Attribution extends Combine {
         let editWithJosm = new VariableUiElement(
             userDetails.map(userDetails => {
 
-                    if (userDetails.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked) {
+                    if (userDetails.csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
                         return undefined;
                     }
                     const bounds: any = leafletMap?.data?.getBounds();
@@ -53,7 +53,7 @@ export default class Attribution extends Combine {
                     const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
                     return new Link(Svg.josm_logo_ui().SetClass("small-image"), josmLink, true);
                 },
-                [location]
+                [location, leafletMap]
             )
         )
         super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary]);
