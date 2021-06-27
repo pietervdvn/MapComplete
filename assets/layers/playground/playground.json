@@ -393,7 +393,8 @@
           "then": {
             "nl": "Dag en nacht toegankelijk",
             "en": "Always accessible",
-            "fr": "Toujours accessible"
+            "fr": "Toujours accessible",
+            "ru": "Всегда доступен"
           }
         },
         {

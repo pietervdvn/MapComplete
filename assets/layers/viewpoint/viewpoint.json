@@ -27,7 +27,8 @@
         "en": "Viewpoint",
         "nl": "Uitzicht",
         "de": "Aussichtspunkt",
-        "fr": "Point de vue"
+        "fr": "Point de vue",
+        "ru": "Смотровая площадка"
       },
       "tags": [
         "tourism=viewpoint"
@@ -39,7 +40,8 @@
       "en": "Viewpoint",
       "nl": "Uitzicht",
       "de": "Aussichtspunkt",
-      "fr": "Point de vue"
+      "fr": "Point de vue",
+      "ru": "Смотровая площадка"
     }
   },
   "tagRenderings": [
