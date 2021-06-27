@@ -808,7 +808,7 @@
                         "then": "Enkel toegankelijk voor klanten"
                     },
                     "3": {
-                        "then": "Niet toegankelijk voor het publiek (bv. enkel voor personneel, de eigenaar, ...)"
+                        "then": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, ...)"
                     },
                     "4": {
                         "then": "Niet toegankelijk, mogelijk enkel voor professionals"
