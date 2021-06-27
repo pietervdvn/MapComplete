@@ -472,7 +472,7 @@ def main():
         #  contributor_count(stats, 3, "theme")
         create_graphs(stats)
         create_per_theme_graphs(stats, 15)
-        create_per_contributor_graphs(stats, 25)
+        # create_per_contributor_graphs(stats, 25)
     print("All done!")
 
 
