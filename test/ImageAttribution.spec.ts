@@ -3,22 +3,10 @@ import {Utils} from "../Utils";
 Utils.runningFromConsole = true;
 import {equal} from "assert";
 import T from "./TestHelper";
-import {FromJSON} from "../Customizations/JSON/FromJSON";
-import Locale from "../UI/i18n/Locale";
-import Translations from "../UI/i18n/Translations";
-import {UIEventSource} from "../Logic/UIEventSource";
-import TagRenderingConfig from "../Customizations/JSON/TagRenderingConfig";
-import EditableTagRendering from "../UI/Popup/EditableTagRendering";
 import {Translation} from "../UI/i18n/Translation";
-import {OH, OpeningHour} from "../UI/OpeningHours/OpeningHours";
-import PublicHolidayInput from "../UI/OpeningHours/PublicHolidayInput";
-import {SubstitutedTranslation} from "../UI/SubstitutedTranslation";
-import {Tag} from "../Logic/Tags/Tag";
-import {And} from "../Logic/Tags/And";
-import {ImageSearcher} from "../Logic/Actors/ImageSearcher";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
 import LayerConfig from "../Customizations/JSON/LayerConfig";
+import * as bike_repair_station from "../assets/layers/bike_repair_station/bike_repair_station.json"
 
 export default class ImageAttributionSpec extends T {
     constructor() {
@@ -27,7 +15,7 @@ export default class ImageAttributionSpec extends T {
                 [
                     "Should find all the images",
                     () => {
-                        const pumps: LayerConfig = AllKnownLayers.sharedLayers["bike_repair_station"]
+                        const pumps: LayerConfig = new LayerConfig(bike_repair_station )
                         const images = pumps.ExtractImages();
                         const expectedValues = ['./assets/layers/bike_repair_station/repair_station.svg',
                             './assets/layers/bike_repair_station/repair_station_pump.svg',

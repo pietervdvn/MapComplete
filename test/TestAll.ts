@@ -33,7 +33,6 @@ const allTests = [
     new GeoOperationsSpec(),
     new ImageSearcherSpec(),
     new ThemeSpec(),
-    new UtilsSpec(),
     new UtilsSpec()
 ]
 

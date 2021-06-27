@@ -15,9 +15,8 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import SourceConfig from "./SourceConfig";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
-import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 import BaseUIElement from "../../UI/BaseUIElement";
-import {Denomination, Unit} from "./Denomination";
+import {Unit} from "./Denomination";
 
 export default class LayerConfig {
 
@@ -58,10 +57,10 @@ export default class LayerConfig {
     tagRenderings: TagRenderingConfig [];
 
     constructor(json: LayerConfigJson,
-                units:Unit[],
+                units?:Unit[],
                 context?: string,
                 official: boolean = true,) {
-        this.units = units;
+        this.units = units ?? [];
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
@@ -167,7 +166,7 @@ export default class LayerConfig {
                 return [];
             }
 
-            return tagRenderings.map(
+            return Utils.NoNull(tagRenderings.map(
                 (renderingJson, i) => {
                     if (typeof renderingJson === "string") {
 
@@ -187,10 +186,14 @@ export default class LayerConfig {
                         
                         const keys = Array.from(SharedTagRenderings.SharedTagRendering.keys())
                         
+                        if(Utils.runningFromConsole){
+                            return undefined;
+                        }
+                        
                         throw `Predefined tagRendering ${renderingJson} not found in ${context}.\n    Try one of ${(keys.join(", "))}\n    If you intent to output this text literally, use {\"render\": <your text>} instead"}`;
                     }
                     return new TagRenderingConfig(renderingJson, self.source.osmTags, `${context}.tagrendering[${i}]`);
-                });
+                }));
         }
 
         this.tagRenderings = trs(json.tagRenderings, false);
