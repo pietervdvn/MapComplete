@@ -12,7 +12,7 @@ import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
-import AllKnownLayers from "../../Customizations/AllKnownLayers";
+import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -54,7 +54,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         }
 
         let questionBoxIsUsed = false;
-        const renderings : BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
+        const renderings: BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;
@@ -65,23 +65,38 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-      
+
         const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
-        if(!hasMinimap){
+        if (!hasMinimap) {
             renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
-        
-        if (State.state.osmConnection.userDetails.data.csCount >= Constants.userJourney.historyLinkVisible ||
-            State.state.featureSwitchIsDebugging.data == true ||
-            State.state.featureSwitchIsTesting.data == true) {
-            renderings.push(new TagRenderingAnswer( tags, SharedTagRenderings.SharedTagRendering.get("last_edit")))
-        }
-        
-     
-        if (State.state.featureSwitchIsDebugging.data) {
-            const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
-            renderings.push(new TagRenderingAnswer(tags, config))
-        }
+
+        renderings.push(
+            new VariableUiElement(
+                State.state.osmConnection.userDetails.map(userdetails => {
+                    if (userdetails.csCount <= Constants.userJourney.historyLinkVisible
+                        && State.state.featureSwitchIsDebugging.data == false
+                        && State.state.featureSwitchIsTesting.data === false) {
+                        return undefined
+                    }
+
+                    return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
+
+                }, [State.state.featureSwitchIsDebugging])
+            )
+        )
+
+
+        renderings.push(
+            new VariableUiElement(
+                State.state.featureSwitchIsDebugging.map(isDebugging => {
+                    if (isDebugging) {
+                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+                        return new TagRenderingAnswer(tags, config)
+                    }
+                })
+            )
+        )
 
         return new Combine(renderings).SetClass("block")
 
