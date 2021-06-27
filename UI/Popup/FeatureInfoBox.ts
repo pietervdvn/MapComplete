@@ -12,6 +12,7 @@ import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
+import AllKnownLayers from "../../Customizations/AllKnownLayers";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -64,13 +65,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (!questionBoxIsUsed) {
             renderings.push(questionBox);
         }
-
+      
+        const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
+        if(!hasMinimap){
+            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
+        }
+        
         if (State.state.osmConnection.userDetails.data.csCount >= Constants.userJourney.historyLinkVisible ||
             State.state.featureSwitchIsDebugging.data == true ||
             State.state.featureSwitchIsTesting.data == true) {
             renderings.push(new TagRenderingAnswer( tags, SharedTagRenderings.SharedTagRendering.get("last_edit")))
         }
-
+        
+     
         if (State.state.featureSwitchIsDebugging.data) {
             const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
             renderings.push(new TagRenderingAnswer(tags, config))

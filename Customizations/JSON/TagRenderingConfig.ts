@@ -7,6 +7,7 @@ import {Utils} from "../../Utils";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
+import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
 
 
 /***
@@ -67,14 +68,13 @@ export default class TagRenderingConfig {
         if (json.freeform) {
 
 
-
             this.freeform = {
                 key: json.freeform.key,
                 type: json.freeform.type ?? "string",
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
-              
-              
+
+
             }
             if (json.freeform["extraTags"] !== undefined) {
                 throw `Freeform.extraTags is defined. This should probably be 'freeform.addExtraTag' (at ${context})`
@@ -82,9 +82,8 @@ export default class TagRenderingConfig {
             if (this.freeform.key === undefined || this.freeform.key === "") {
                 throw `Freeform.key is undefined or the empty string - this is not allowed; either fill out something or remove the freeform block alltogether. Error in ${context}`
             }
-            
-            
-            
+
+
             if (ValidatedTextField.AllTypes[this.freeform.type] === undefined) {
                 const knownKeys = ValidatedTextField.tpList.map(tp => tp.name).join(", ");
                 throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
@@ -328,4 +327,25 @@ export default class TagRenderingConfig {
         return usedIcons;
     }
 
+    /**
+     * Returns true if this tag rendering has a minimap in some language.
+     * Note: this might be hidden by conditions
+     */
+    public hasMinimap(): boolean {
+        const translations : Translation[]= Utils.NoNull([this.render, ...(this.mappings ?? []).map(m => m.then)]);
+        for (const translation of translations) {
+            for (const key in translation.translations) {
+                if(!translation.translations.hasOwnProperty(key)){
+                    continue
+                }
+                const template = translation.translations[key]
+                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
+                const hasMiniMap = parts.filter(part =>part.special !== undefined ).some(special => special.special.func.funcName === "minimap")
+                if(hasMiniMap){
+                    return true;
+                }
+            }
+        }
+        return false;
+    } 
 }

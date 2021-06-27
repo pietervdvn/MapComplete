@@ -25,16 +25,18 @@ import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import BaseLayer from "../Models/BaseLayer";
 
+export interface SpecialVisualization{
+    funcName: string,
+    constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
+    docs: string,
+    example?: string,
+    args: { name: string, defaultValue?: string, doc: string }[]
+}
+
 export default class SpecialVisualizations {
 
 
-    public static specialVisualizations: {
-        funcName: string,
-        constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
-        docs: string,
-        example?: string,
-        args: { name: string, defaultValue?: string, doc: string }[]
-    }[] =
+    public static specialVisualizations: SpecialVisualization[] =
         [
             {
                 funcName: "all_tags",
@@ -93,7 +95,7 @@ export default class SpecialVisualizations {
                 docs: "A small map showing the selected feature. Note that no styling is applied, wrap this in a div",
                 args: [
                     {
-                        doc: "The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close",
+                        doc: "The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close",
                         name: "zoomlevel",
                         defaultValue: "18"
                     },
@@ -135,17 +137,26 @@ export default class SpecialVisualizations {
                             zoom = parsed;
                         }
                     }
+                    const locationSource =new UIEventSource<Loc>({
+                        lat: Number(properties._lat),
+                        lon: Number(properties._lon),
+                        zoom: zoom
+                    })
                     const minimap = SpecialVisualizations.constructMiniMap(
                         {
                             background: state.backgroundLayer,
-                            location: new UIEventSource<Loc>({
-                                lat: Number(properties._lat),
-                                lon: Number(properties._lon),
-                                zoom: zoom
-                            }),
+                            location: locationSource,
                             allowMoving: false
                         }
                     )
+                    
+                    locationSource.addCallback(loc => {
+                        if(loc.zoom > zoom){
+                            // We zoom back
+                            locationSource.data.zoom = zoom;
+                            locationSource.ping();
+                        }
+                    })
 
                     SpecialVisualizations.constructShowDataLayer(
                         featuresToShow,
@@ -362,6 +373,19 @@ export default class SpecialVisualizations {
             }
 
         ]
+    
+    private static byName() : Map<string, SpecialVisualization>{
+        const result = new Map<string, SpecialVisualization>();
+
+        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
+            result.set(specialVisualization.funcName, specialVisualization)
+        }
+        
+        return result;
+    }
+    
+    public static specialVisualisationsByName: Map<string, SpecialVisualization> = SpecialVisualizations.byName();
+    
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     static constructMiniMap: (options?: {
         background?: UIEventSource<BaseLayer>,
