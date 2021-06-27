@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import Toggle from "../Input/Toggle";
@@ -6,7 +5,6 @@ import Combine from "../Base/Combine";
 import State from "../../State";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
-import BaseUIElement from "../BaseUIElement";
 
 
 export default class DeleteImage extends Toggle {

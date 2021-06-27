@@ -3,7 +3,6 @@ import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
 import {InputElement} from "./InputElement";
 import {TextField} from "./TextField";
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
@@ -13,6 +12,7 @@ import ColorPicker from "./ColorPicker";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {Unit} from "../../Customizations/JSON/Denomination";
+import BaseUIElement from "../BaseUIElement";
 
 interface TextFieldDef {
     name: string,
@@ -223,7 +223,7 @@ export default class ValidatedTextField {
      */
     public static AllTypes = ValidatedTextField.allTypesDict();
     public static InputForType(type: string, options?: {
-        placeholder?: string | UIElement,
+        placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
         htmlType?: string,
         textArea?: boolean,
@@ -287,12 +287,8 @@ export default class ValidatedTextField {
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
-                (text, denom) => {
-                    console.log("text:", text, "denom:", denom, "canon: ", denom?.canonicalValue(text, true))
-                    return denom?.canonicalValue(text, true) ?? undefined;
-                },
+                (text, denom) => denom?.canonicalValue(text, true) ?? undefined,
                 (valueWithDenom: string) => {
-                    console.log("ToSplit: ", valueWithDenom, "becomes", unit.findDenomination(valueWithDenom))
                     const [text, denom] = unit.findDenomination(valueWithDenom) ?? [valueWithDenom, undefined];
                     if(text === undefined){
                         return [valueWithDenom, undefined]

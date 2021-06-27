@@ -1,27 +1,25 @@
 import * as L from "leaflet";
 import {UIEventSource} from "../UIEventSource";
-import {UIElement} from "../../UI/UIElement";
 import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
-import BaseUIElement from "../../UI/BaseUIElement";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
-export default class GeoLocationHandler extends UIElement {
+export default class GeoLocationHandler extends VariableUiElement {
 
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
      * @private
      */
-    private readonly _isActive: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    private readonly _isActive: UIEventSource<boolean>;
 
     /**
      * The callback over the permission API
      * @private
      */
-    private readonly _permission: UIEventSource<string> = new UIEventSource<string>("");
+    private readonly _permission: UIEventSource<string>;
     /***
      * The marker on the map, in order to update it
      * @private
@@ -51,21 +49,37 @@ export default class GeoLocationHandler extends UIElement {
      * If the user denies the geolocation this time, we unset this flag
      * @private
      */
-    private readonly _previousLocationGrant: UIEventSource<string> = LocalStorageSource.Get("geolocation-permissions");
+    private readonly _previousLocationGrant: UIEventSource<string>;
     private readonly _layoutToUse: UIEventSource<LayoutConfig>;
 
-
-    private readonly _element: BaseUIElement;
 
     constructor(currentGPSLocation: UIEventSource<{ latlng: any; accuracy: number }>,
                 leafletMap: UIEventSource<L.Map>,
                 layoutToUse: UIEventSource<LayoutConfig>) {
-        super();
+
+        const hasLocation = currentGPSLocation.map((location) => location !== undefined);
+        const previousLocationGrant = LocalStorageSource.Get("geolocation-permissions")
+        const isActive = new UIEventSource<boolean>(false);
+
+        super(
+            hasLocation.map(hasLocation => {
+
+                if (hasLocation) {
+                    return Svg.crosshair_blue_ui()
+                }
+                if (isActive.data) {
+                    return Svg.crosshair_blue_center_ui();
+                }
+                return Svg.crosshair_ui();
+            }, [isActive])
+        );
+        this._isActive = isActive;
+        this._permission = new UIEventSource<string>("")
+        this._previousLocationGrant = previousLocationGrant;
         this._currentGPSLocation = currentGPSLocation;
         this._leafletMap = leafletMap;
         this._layoutToUse = layoutToUse;
-        this._hasLocation = currentGPSLocation.map((location) => location !== undefined);
-
+        this._hasLocation = hasLocation;
         const self = this;
 
         const currentPointer = this._isActive.map(isActive => {
@@ -77,28 +91,11 @@ export default class GeoLocationHandler extends UIElement {
         currentPointer.addCallbackAndRun(pointerClass => {
             self.SetClass(pointerClass);
         })
-        this._element = new VariableUiElement(
-            this._hasLocation.map(hasLocation => {
 
-                if (hasLocation) {
-                    return Svg.crosshair_blue_ui()
-                }
-                if (self._isActive.data) {
-                    return Svg.crosshair_blue_center_ui();
-                }
-                return Svg.crosshair_ui();
-            }, [this._isActive])
-        );
 
         this.onClick(() => self.init(true))
+        this.init(false)
 
-        self.init(false)
-
-    }
-
-
-    protected InnerRender(): string | BaseUIElement {
-        return this._element
     }
 
     private init(askPermission: boolean) {

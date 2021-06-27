@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import EditableTagRendering from "./EditableTagRendering";
@@ -47,7 +46,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): BaseUIElement {
-        let questionBox: UIElement = undefined;
+        let questionBox: BaseUIElement = undefined;
 
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings, layerConfig.units);

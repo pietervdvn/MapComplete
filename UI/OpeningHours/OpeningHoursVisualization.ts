@@ -11,9 +11,8 @@ import Toggle from "../Input/Toggle";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Table from "../Base/Table";
 import {Translation} from "../i18n/Translation";
-import {UIElement} from "../UIElement";
 
-export default class OpeningHoursVisualization extends UIElement {
+export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
         Translations.t.general.weekdays.abbreviations.monday,
         Translations.t.general.weekdays.abbreviations.tuesday,
@@ -23,18 +22,8 @@ export default class OpeningHoursVisualization extends UIElement {
         Translations.t.general.weekdays.abbreviations.saturday,
         Translations.t.general.weekdays.abbreviations.sunday,
     ]
-    private readonly _tags: UIEventSource<any>;
-    private readonly _key: string;
 
     constructor(tags: UIEventSource<any>, key: string) {
-        super()
-        this._tags = tags;
-        this._key = key;
-    }
-    
-    InnerRender(): BaseUIElement {
-        const tags = this._tags;
-        const key = this._key;
         const tagsDirect = tags.data;
         const ohTable = new VariableUiElement(tags
             .map(tags => tags[key]) // This mapping will absorb all other changes to tags in order to prevent regeneration
@@ -47,7 +36,7 @@ export default class OpeningHoursVisualization extends UIElement {
                             address: {
                                 country_code: tagsDirect._country
                             }
-                        }, {tag_key: this._key});
+                        }, {tag_key: key});
 
                         return OpeningHoursVisualization.CreateFullVisualisation(oh)
                     } catch (e) {
@@ -64,7 +53,7 @@ export default class OpeningHoursVisualization extends UIElement {
                 }
             ))
 
-        return new Toggle(
+       super(
             ohTable,
             Translations.t.general.opening_hours.loadingCountry.Clone(),
             tags.map(tgs => tgs._country !== undefined)

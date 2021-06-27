@@ -1,14 +1,11 @@
-import {UIElement} from "../UIElement";
+import {FixedUiElement} from "./FixedUiElement";
 
-export default class Ornament extends UIElement {
+export default class Ornament extends FixedUiElement {
 
-    constructor(index = undefined) {
-        super();
+    constructor() {
+        super("");
         this.SetClass("pt-3 pb-3 flex justify-center box-border")
     }
 
-    InnerRender(): string {
-        return ""
-    }
 
 }

@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import BaseUIElement from "../BaseUIElement";
 import Translations from "../i18n/Translations";
 

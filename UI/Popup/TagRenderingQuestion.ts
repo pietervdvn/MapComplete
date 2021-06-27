@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
@@ -25,46 +24,31 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
 import {Unit} from "../../Customizations/JSON/Denomination";
-import CombinedInputElement from "../Input/CombinedInputElement";
 
 /**
  * Shows the question element.
  * Note that the value _migh_ already be known, e.g. when selected or when changing the value
  */
-export default class TagRenderingQuestion extends UIElement {
-    private readonly _tags: UIEventSource<any>;
-    private _configuration: TagRenderingConfig;
-
-    private _saveButton: BaseUIElement;
-
-    private _inputElement: InputElement<TagsFilter>;
-    private _cancelButton: BaseUIElement;
-    private _appliedTags: BaseUIElement;
-    private readonly _applicableUnit: Unit;
-    private _question: BaseUIElement;
-
+export default class TagRenderingQuestion extends Combine {
+    
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
                 units: Unit[],
                 afterSave?: () => void,
                 cancelButton?: BaseUIElement
     ) {
-        super(tags);
-        this._applicableUnit = (units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
-        this._tags = tags;
-        this._configuration = configuration;
-        this._cancelButton = cancelButton;
-        this._question = new SubstitutedTranslation(this._configuration.question, tags)
-            .SetClass("question-text");
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
         }
+        const applicableUnit = (units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
+        const question = new SubstitutedTranslation(configuration.question, tags)
+            .SetClass("question-text");
+       
 
 
-        this._inputElement = this.GenerateInputElement()
-        const self = this;
+        const inputElement = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
         const save = () => {
-            const selection = self._inputElement.GetValue().data;
+            const selection = inputElement.GetValue().data;
             console.log("Save button clicked, the tags are is", selection)
             if (selection) {
                 (State.state?.changes ?? new Changes())
@@ -77,66 +61,60 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
 
-        this._saveButton = new SaveButton(this._inputElement.GetValue(),
+        const saveButton = new SaveButton(inputElement.GetValue(),
             State.state?.osmConnection)
             .onClick(save)
 
 
-        this._appliedTags = new VariableUiElement(
-            self._inputElement.GetValue().map(
-                (tags: TagsFilter) => {
+      const  appliedTags = new VariableUiElement(
+            inputElement.GetValue().map(
+                (tagsFilter: TagsFilter) => {
                     const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
                     if (csCount < Constants.userJourney.tagsVisibleAt) {
                         return "";
                     }
-                    if (tags === undefined) {
-                        return Translations.t.general.noTagsSelected.SetClass("subtle");
+                    if (tagsFilter === undefined) {
+                        return Translations.t.general.noTagsSelected.Clone().SetClass("subtle");
                     }
                     if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                        const tagsStr = tags.asHumanString(false, true, self._tags.data);
+                        const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
                         return new FixedUiElement(tagsStr).SetClass("subtle");
                     }
-                    return tags.asHumanString(true, true, self._tags.data);
+                    return tagsFilter.asHumanString(true, true, tags.data);
                 }
             )
         ).SetClass("block break-all")
 
-
-    }
-
-    InnerRender() {
-        return new Combine([
-            this._question,
-            this._inputElement,
-            this._cancelButton,
-            this._saveButton,
-            this._appliedTags]
+       super ([
+            question,
+              inputElement,
+            cancelButton,
+            saveButton,
+            appliedTags]
         )
-            .SetClass("question")
+         this   .SetClass("question")
+
     }
 
-    private GenerateInputElement(): InputElement<TagsFilter> {
-        const self = this;
+    private static GenerateInputElement(configuration: TagRenderingConfig, applicableUnit: Unit, tagsSource: UIEventSource< any>): InputElement<TagsFilter> {
         let inputEls: InputElement<TagsFilter>[];
 
-        const mappings = (this._configuration.mappings ?? [])
+        const mappings = (configuration.mappings ?? [])
             .filter(mapping => {
                 if (mapping.hideInAnswer === true) {
                     return false;
                 }
-                if (typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(this._tags.data)) {
-                    return false;
-                }
-                return true;
+                return !(typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(tagsSource.data));
+                
             })
 
 
-        let allIfNots: TagsFilter[] = Utils.NoNull(this._configuration.mappings?.map(m => m.ifnot) ?? []);
-        const ff = this.GenerateFreeform();
+        let allIfNots: TagsFilter[] = Utils.NoNull(configuration.mappings?.map(m => m.ifnot) ?? []);
+        const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource.data);
         const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
 
-        if (mappings.length < 8 || this._configuration.multiAnswer || hasImages) {
-            inputEls = (mappings ?? []).map(mapping => self.GenerateMappingElement(mapping, allIfNots));
+        if (mappings.length < 8 || configuration.multiAnswer || hasImages) {
+            inputEls = (mappings ?? []).map(mapping => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNots));
             inputEls = Utils.NoNull(inputEls);
         } else {
             const dropdown: InputElement<TagsFilter> = new DropDown("",
@@ -164,15 +142,17 @@ export default class TagRenderingQuestion extends UIElement {
             inputEls.push(ff);
         }
 
-        if (this._configuration.multiAnswer) {
-            return this.GenerateMultiAnswer(inputEls, ff, this._configuration.mappings.map(mp => mp.ifnot))
+        if (configuration.multiAnswer) {
+            return TagRenderingQuestion.GenerateMultiAnswer(configuration, inputEls, ff, configuration.mappings.map(mp => mp.ifnot))
         } else {
             return new RadioButton(inputEls, false)
         }
 
     }
 
-    private GenerateMultiAnswer(elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
+    private static GenerateMultiAnswer(
+        configuration: TagRenderingConfig,
+        elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
         const checkBoxes = new CheckBoxes(elements);
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
@@ -206,8 +186,8 @@ export default class TagRenderingQuestion extends UIElement {
                 const indices: number[] = []
                 // We also collect the values that have to be added to the freeform field
                 let freeformExtras: string[] = []
-                if (this._configuration.freeform?.key) {
-                    freeformExtras = [...(presentTags[this._configuration.freeform.key] ?? [])]
+                if (configuration.freeform?.key) {
+                    freeformExtras = [...(presentTags[configuration.freeform.key] ?? [])]
                 }
 
                 for (let j = 0; j < elements.length; j++) {
@@ -222,7 +202,7 @@ export default class TagRenderingQuestion extends UIElement {
                     if (TagUtils.AllKeysAreContained(presentTags, neededTags)) {
                         indices.push(j);
                         if (freeformExtras.length > 0) {
-                            const freeformsToRemove: string[] = (neededTags[this._configuration.freeform.key] ?? []);
+                            const freeformsToRemove: string[] = (neededTags[configuration.freeform.key] ?? []);
                             for (const toRm of freeformsToRemove) {
                                 const i = freeformExtras.indexOf(toRm);
                                 if (i >= 0) {
@@ -235,7 +215,7 @@ export default class TagRenderingQuestion extends UIElement {
                 }
                 if (freeformField) {
                     if (freeformExtras.length > 0) {
-                        freeformField.GetValue().setData(new Tag(this._configuration.freeform.key, freeformExtras.join(";")));
+                        freeformField.GetValue().setData(new Tag(configuration.freeform.key, freeformExtras.join(";")));
                         indices.push(elements.indexOf(freeformField))
                     } else {
                         freeformField.GetValue().setData(undefined);
@@ -272,7 +252,9 @@ export default class TagRenderingQuestion extends UIElement {
         return inputEl;
     }
 
-    private GenerateMappingElement(mapping: {
+    private static GenerateMappingElement(
+        tagsSource: UIEventSource<any>,
+        mapping: {
         if: TagsFilter,
         then: Translation,
         hideInAnswer: boolean | TagsFilter
@@ -284,13 +266,13 @@ export default class TagRenderingQuestion extends UIElement {
         }
 
         return new FixedInputElement(
-            new SubstitutedTranslation(mapping.then, this._tags),
+            new SubstitutedTranslation(mapping.then, tagsSource),
             tagging,
             (t0, t1) => t1.isEquivalent(t0));
     }
 
-    private GenerateFreeform(): InputElement<TagsFilter> {
-        const freeform = this._configuration.freeform;
+    private static GenerateFreeform(configuration: TagRenderingConfig, applicableUnit: Unit, tagsData: any): InputElement<TagsFilter> {
+        const freeform = configuration.freeform;
         if (freeform === undefined) {
             return undefined;
         }
@@ -328,15 +310,15 @@ export default class TagRenderingQuestion extends UIElement {
             return undefined;
         }
 
-        let input: InputElement<string> = ValidatedTextField.InputForType(this._configuration.freeform.type, {
+        let input: InputElement<string> = ValidatedTextField.InputForType(configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
-            country: () => this._tags.data._country,
-            location: [this._tags.data._lat, this._tags.data._lon],
+            country: () => tagsData._country,
+            location: [tagsData._lat, tagsData._lon],
             mapBackgroundLayer: State.state.backgroundLayer,
-            unit: this._applicableUnit
+            unit: applicableUnit
         });
 
-        input.GetValue().setData(this._tags.data[this._configuration.freeform.key]);
+        input.GetValue().setData(tagsData[configuration.freeform.key]);
 
         return new InputElementMap(
             input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),

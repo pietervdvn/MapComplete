@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -7,15 +6,13 @@ import Translations from "../i18n/Translations";
 /**
  * Shows that 'images are uploading', 'all images are uploaded' as relevant...
  */
-export default class UploadFlowStateUI extends UIElement{
+export default class UploadFlowStateUI extends VariableUiElement{
     
-    private readonly _element: BaseUIElement
     
     constructor(queue: UIEventSource<string[]>, failed: UIEventSource<string[]>, success: UIEventSource<string[]>) {
-        super();
         const t = Translations.t.image;
 
-        this._element = new VariableUiElement(
+        super(
             
           queue.map(queue => {
               const failedReasons = failed.data
@@ -48,7 +45,4 @@ export default class UploadFlowStateUI extends UIElement{
         
     }
 
-    protected InnerRender(): string | BaseUIElement {
-        return this._element
-    }
 }

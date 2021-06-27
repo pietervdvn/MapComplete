@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import Locale from "./Locale";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
@@ -95,7 +94,7 @@ export class Translation extends BaseUIElement {
                 }
                 const combined: (string)[] = [];
                 const parts = template.split("{" + k + "}");
-                const el: string | UIElement = text[k];
+                const el: string | BaseUIElement = text[k];
                 if (el === undefined) {
                     continue;
                 }
