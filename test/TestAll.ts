@@ -1,5 +1,4 @@
-import {Utils} from "../Utils";
-Utils.runningFromConsole = true;
+import {Utils} from "../Utils";Utils.runningFromConsole = true;
 import TagSpec from "./Tag.spec";
 import ImageAttributionSpec from "./ImageAttribution.spec";
 import GeoOperationsSpec from "./GeoOperations.spec";
@@ -10,6 +9,10 @@ import OsmConnectionSpec from "./OsmConnection.spec";
 import T from "./TestHelper";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import Combine from "../UI/Base/Combine";
+import OsmObjectSpec from "./OsmObject.spec";
+import ScriptUtils from "../scripts/ScriptUtils";
+
+
 
 export default class TestAll {
     private needsBrowserTests: T[] = [new OsmConnectionSpec()]
@@ -26,8 +29,9 @@ export default class TestAll {
         }
     }
 }
-
+ScriptUtils.fixUtils()
 const allTests = [
+    new OsmObjectSpec(),
     new TagSpec(),
     new ImageAttributionSpec(),
     new GeoOperationsSpec(),
@@ -39,6 +43,6 @@ const allTests = [
 
 for (const test of allTests) {
     if (test.failures.length > 0) {
-        throw "Some test failed"
+        throw "Some test failed: "+test.failures.join(", ")
     }
 }

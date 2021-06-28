@@ -1,4 +1,8 @@
-import ValidatedTextField from "./UI/Input/ValidatedTextField";
+import {OsmObject} from "./Logic/Osm/OsmObject";
+import DeleteButton from "./UI/Popup/DeleteButton";
+import Combine from "./UI/Base/Combine";
+import State from "./State";
+/*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
@@ -69,75 +73,77 @@ function TestAllInputMethods() {
     })).AttachTo("maindiv")
 }
 
+function TestMiniMap() {
 
-const location = new UIEventSource<Loc>({
-    lon: 4.84771728515625,
-    lat: 51.17920846421931,
-    zoom: 14
-})
-const map0 = new Minimap({
-    location: location,
-    allowMoving: true,
-    background: new AvailableBaseLayers(location).availableEditorLayers.map(layers => layers[2])
-})
-map0.SetStyle("width: 500px; height: 250px; overflow: hidden; border: 2px solid red")
-    .AttachTo("maindiv")
-
-const layout = AllKnownLayouts.layoutsList[1]
-State.state = new State(layout)
-console.log("LAYOUT is", layout.id)
-
-const feature = {
-        "type": "Feature",
-        _matching_layer_id: "bike_repair_station",
-        "properties": {
-            id: "node/-1",
-            "amenity": "bicycle_repair_station"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [
-                4.84771728515625,
-                51.17920846421931
-            ]
-        }
-    }
-
-;
-
-State.state.allElements.addOrGetElement(feature)
-
-const featureSource = new UIEventSource([{
-    freshness: new Date(),
-    feature: feature
-}])
-
-new ShowDataLayer(
-    featureSource,
-    map0.leafletMap,
-    new UIEventSource<LayoutConfig>(layout)
-)
-
-const map1 = new Minimap({
+    const location = new UIEventSource<Loc>({
+        lon: 4.84771728515625,
+        lat: 51.17920846421931,
+        zoom: 14
+    })
+    const map0 = new Minimap({
         location: location,
         allowMoving: true,
-        background: new AvailableBaseLayers(location).availableEditorLayers.map(layers => layers[5])
-    },
-)
+        background: new AvailableBaseLayers(location).availableEditorLayers.map(layers => layers[2])
+    })
+    map0.SetStyle("width: 500px; height: 250px; overflow: hidden; border: 2px solid red")
+        .AttachTo("maindiv")
 
-map1.SetStyle("width: 500px; height: 250px; overflow: hidden; border : 2px solid black")
-    .AttachTo("extradiv")
+    const layout = AllKnownLayouts.layoutsList[1]
+    State.state = new State(layout)
+    console.log("LAYOUT is", layout.id)
+
+    const feature = {
+            "type": "Feature",
+            _matching_layer_id: "bike_repair_station",
+            "properties": {
+                id: "node/-1",
+                "amenity": "bicycle_repair_station"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.84771728515625,
+                    51.17920846421931
+                ]
+            }
+        }
+
+    ;
+
+    State.state.allElements.addOrGetElement(feature)
+
+    const featureSource = new UIEventSource([{
+        freshness: new Date(),
+        feature: feature
+    }])
+
+    new ShowDataLayer(
+        featureSource,
+        map0.leafletMap,
+        new UIEventSource<LayoutConfig>(layout)
+    )
+
+    const map1 = new Minimap({
+            location: location,
+            allowMoving: true,
+            background: new AvailableBaseLayers(location).availableEditorLayers.map(layers => layers[5])
+        },
+    )
+
+    map1.SetStyle("width: 500px; height: 250px; overflow: hidden; border : 2px solid black")
+        .AttachTo("extradiv")
 
 
+    new ShowDataLayer(
+        featureSource,
+        map1.leafletMap,
+        new UIEventSource<LayoutConfig>(layout)
+    )
 
-
-
-new ShowDataLayer(
-    featureSource,
-    map1.leafletMap,
-    new UIEventSource<LayoutConfig>(layout)
-)
-
-featureSource.ping()
-
-// */
+    featureSource.ping()
+}
+//*/
+State.state= new State(undefined)
+new Combine([
+    new DeleteButton("node/8598664388"),
+]).AttachTo("maindiv")

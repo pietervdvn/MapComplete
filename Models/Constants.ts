@@ -7,11 +7,13 @@ export default class Constants {
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
-        personalLayoutUnlock: 15,
-        historyLinkVisible: 20,
+        personalLayoutUnlock: 5,
+        historyLinkVisible: 10,
+        deletePointsOfOthersUnlock: 15,
         tagsVisibleAt: 25,
-        mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
+        
+        mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,

@@ -43,11 +43,47 @@ export abstract class OsmObject {
         }
     }
 
-    public static DownloadHistory(id: string, continuation: (versions: OsmObject[]) => void): void {
+    /**
+     * Downloads the ways that are using this node.
+     * Beware: their geometry will be incomplete!
+     * @param id
+     * @param continuation
+     * @constructor
+     */
+    public static DownloadReferencingWays(id: string, continuation: (referencingWays: OsmWay[]) => void){
+        Utils.downloadJson(`https://www.openStreetMap.org/api/0.6/${id}/ways`)
+            .then(data => {
+               const ways = data.elements.map(wayInfo => {
+                    const way = new OsmWay(wayInfo.id)
+                    way.LoadData(wayInfo)
+                    return way
+                })
+                continuation(ways)
+            })
+    }
+    /**
+     * Downloads the relations that are using this feature.
+     * Beware: their geometry will be incomplete!
+     * @param id
+     * @param continuation
+     * @constructor
+     */
+    public static DownloadReferencingRelations(id: string, continuation: (referencingRelations: OsmRelation[]) => void){
+        Utils.downloadJson(`https://www.openStreetMap.org/api/0.6/${id}/relations`)
+            .then(data => {
+                const rels = data.elements.map(wayInfo => {
+                    const rel = new OsmRelation(wayInfo.id)
+                    rel.LoadData(wayInfo)
+                    return rel
+                })
+                continuation(rels)
+            })
+    }
+    public static DownloadHistory(id: string, continuation: (versions: OsmObject[]) => void): void{
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
-        $.getJSON("https://openStreetMap.org/api/0.6/" + type + "/" + idN + "/history", data => {
+        $.getJSON("https://www.openStreetMap.org/api/0.6/" + type + "/" + idN + "/history", data => {
             const elements: any[] = data.elements;
             const osmObjects: OsmObject[] = []
             for (const element of elements) {

@@ -343,6 +343,7 @@ export class Utils {
                         }
                     };
                     xhr.open('GET', url);
+                    xhr.setRequestHeader("accept","application/json")
                     xhr.send();
                 }catch(e){
                     reject(e)

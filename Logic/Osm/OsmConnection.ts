@@ -13,6 +13,7 @@ export default class UserDetails {
 
     public loggedIn = false;
     public name = "Not logged in";
+    public uid: number;
     public csCount = 0;
     public img: string;
     public unreadMessages = 0;
@@ -167,6 +168,7 @@ export class OsmConnection {
             data.loggedIn = true;
             console.log("Login completed, userinfo is ", userInfo);
             data.name = userInfo.getAttribute('display_name');
+            data.uid= Number(userInfo.getAttribute("id"))
             data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
 
             data.img = undefined;

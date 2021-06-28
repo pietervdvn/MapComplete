@@ -27,6 +27,15 @@
     "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.",
     "pickTheme": "Pick a theme below to get started."
   },
+  "deleteButton": {
+    "delete": "Delete",
+    "loginToDelete": "You must be logged in to delete a point",
+    "checkingDeletability": "Inspecting properties to check if this feature can be deleted",
+    "isntAPoint": "Only points can be deleted",
+    "onlyEditedByLoggedInUser": "This point has only be edited by yourself, you can safely delete it",
+    "notEnoughExperience": "You don't have enough experience to delete points made by other people. Make more edits to improve your skills",
+    "partOfOthers": "This point is part of some way or relation, so you can not delete it"
+  },
   "general": {
     "loginWithOpenStreetMap": "Login with OpenStreetMap",
     "welcomeBack": "You are logged in, welcome back!",
