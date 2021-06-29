@@ -8,6 +8,16 @@
         "pleaseLogin": "Faça login para adicionar uma imagem",
         "uploadingMultiple": "Fazendo upload de {count} imagens…",
         "uploadingPicture": "Enviando sua imagem…",
-        "addPicture": "Adicionar imagem"
+        "addPicture": "Adicionar imagem",
+        "isDeleted": "Excluída",
+        "doDelete": "Remover imagem",
+        "dontDelete": "Cancelar",
+        "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
+        "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los."
+    },
+    "centerMessage": {
+        "ready": "Concluído!",
+        "zoomIn": "Amplie para ver ou editar os dados",
+        "loadingData": "Carregando dados…"
     }
 }
