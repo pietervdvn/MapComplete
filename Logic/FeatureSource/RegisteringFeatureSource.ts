@@ -9,8 +9,8 @@ export default class RegisteringFeatureSource implements FeatureSource {
     constructor(source: FeatureSource) {
         this.features = source.features;
         this.name = "RegisteringSource of " + source.name;
-        this.features.addCallbackAndRun(features => {
-            for (const feature of features ?? []) {
+        this.features.addCallbackAndRunD(features => {
+            for (const feature of features) {
                 State.state.allElements.addOrGetElement(feature.feature)
             }
         })

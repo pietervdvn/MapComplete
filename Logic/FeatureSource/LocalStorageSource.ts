@@ -11,8 +11,6 @@ export default class LocalStorageSource implements FeatureSource {
         this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
         const key = LocalStorageSaver.storageKey + layout.data.id
         layout.addCallbackAndRun(_ => {
-
-
             try {
                 const fromStorage = localStorage.getItem(key);
                 if (fromStorage == null) {
