@@ -41,7 +41,8 @@ export default class SimpleAddUI extends Toggle {
     constructor(isShown: UIEventSource<boolean>) {
 
 
-        const loginButton = Translations.t.general.add.pleaseLogin.Clone().onClick(State.state.osmConnection.AttemptLogin);
+        const loginButton = new SubtleButton(Svg.osm_logo_ui(), Translations.t.general.add.pleaseLogin.Clone())
+            .onClick(() => State.state.osmConnection.AttemptLogin());
         const readYourMessages = new Combine([
             Translations.t.general.readYourMessages.Clone().SetClass("alert"),
             new SubtleButton(Svg.envelope_ui(),
