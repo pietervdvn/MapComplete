@@ -61,7 +61,7 @@ export default class TitleHandler {
     constructor(layoutToUse: UIEventSource<LayoutConfig>,
                 selectedFeature: UIEventSource<any>,
                 allElementsStorage: ElementStorage) {
-        new TitleElement(layoutToUse, selectedFeature, allElementsStorage).addCallbackAndRun(title => {
+        new TitleElement(layoutToUse, selectedFeature, allElementsStorage).addCallbackAndRunD(title => {
             document.title = title
         })
     }
