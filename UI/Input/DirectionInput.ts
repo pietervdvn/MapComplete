@@ -59,7 +59,7 @@ export default class DirectionInput extends InputElement<string> {
             .ConstructElement()
 
 
-        this.value.addCallbackAndRun(rotation => {
+        this.value.addCallbackAndRunD(rotation => {
             const cone = element.getElementsByClassName("direction-svg")[0] as HTMLElement
             cone.style.transform = `rotate(${rotation}deg)`;
 
