@@ -62,6 +62,9 @@ export default class ShowDataLayer {
             const allFeats = features.data.map(ff => ff.feature);
             geoLayer = self.CreateGeojsonLayer();
             for (const feat of allFeats) {
+                if(feat === undefined){
+                    continue
+                }
                 // @ts-ignore
                 geoLayer.addData(feat);
             }
@@ -76,7 +79,13 @@ export default class ShowDataLayer {
             }
 
             if (zoomToFeatures) {
+                try{
+                    
                 mp.fitBounds(geoLayer.getBounds())
+
+                }catch(e){
+                    console.error(e)
+                }
             }
 
 
@@ -169,8 +178,8 @@ export default class ShowDataLayer {
             infobox.Activate();
         });
         const self = this;
-        State.state.selectedElement.addCallbackAndRun(selected => {
-            if (selected === undefined || self._leafletMap.data === undefined) {
+        State.state.selectedElement.addCallbackAndRunD(selected => {
+            if ( self._leafletMap.data === undefined) {
                 return;
             }
             if (leafletLayer.getPopup().isOpen()) {

@@ -69,7 +69,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (!hasMinimap) {
             renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
-
+        
         renderings.push(
             new VariableUiElement(
                 State.state.osmConnection.userDetails.map(userdetails => {

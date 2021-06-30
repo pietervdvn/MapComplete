@@ -35,7 +35,7 @@ export default class TagRenderingQuestion extends Combine {
                 configuration: TagRenderingConfig,
                 units: Unit[],
                 afterSave?: () => void,
-                cancelButton?: BaseUIElement
+                cancelButton?: BaseUIElement,
     ) {
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"

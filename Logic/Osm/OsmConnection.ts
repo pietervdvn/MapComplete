@@ -8,6 +8,7 @@ import Svg from "../../Svg";
 import LayoutConfig from "../../Customizations/JSON/LayoutConfig";
 import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
+import {OsmObject} from "./OsmObject";
 
 export default class UserDetails {
 
@@ -20,6 +21,11 @@ export default class UserDetails {
     public totalMessages = 0;
     public dryRun: boolean;
     home: { lon: number; lat: number };
+    public backend: string;
+    
+    constructor(backend: string) {
+        this.backend = backend;
+    }
 }
 
 export class OsmConnection {
@@ -62,9 +68,10 @@ export class OsmConnection {
         this._singlePage = singlePage;
         this._oauth_config = OsmConnection._oauth_configs[osmConfiguration] ?? OsmConnection._oauth_configs.osm;
         console.debug("Using backend", this._oauth_config.url)
+        OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
-        this.userDetails = new UIEventSource<UserDetails>(new UserDetails(), "userDetails");
+        this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
         this.userDetails.data.dryRun = dryRun;
         const self =this;
         this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
@@ -103,10 +110,8 @@ export class OsmConnection {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        continuation: () => void = () => {
-        }) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, continuation);
+        generateChangeXML: (csid: string) => string) {
+        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

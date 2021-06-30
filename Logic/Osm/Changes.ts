@@ -228,9 +228,9 @@ export class Changes implements FeatureSource{
         }
 
         neededIds = Utils.Dedup(neededIds);
-        OsmObject.DownloadAll(neededIds, {}, (knownElements) => {
+        OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
             self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
-        });
+        })
     }
 
 }

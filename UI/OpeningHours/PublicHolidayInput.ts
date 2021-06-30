@@ -17,7 +17,7 @@ export default class PublicHolidayInput extends InputElement<string> {
         this._value = value;
     }
 
-   
+
     GetValue(): UIEventSource<string> {
         return this._value;
     }
@@ -25,18 +25,56 @@ export default class PublicHolidayInput extends InputElement<string> {
     IsValid(t: string): boolean {
         return true;
     }
-    
+
+    protected InnerConstructElement(): HTMLElement {
+        const dropdown = new DropDown(
+            Translations.t.general.opening_hours.open_during_ph.Clone(),
+            [
+                {shown: Translations.t.general.opening_hours.ph_not_known.Clone(), value: ""},
+                {shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off"},
+                {shown: Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open"},
+                {shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " "},
+            ]
+        ).SetClass("inline-block");
+        /*
+        * Either "" (unknown), " " (opened) or "off" (closed)
+        * */
+        const mode = dropdown.GetValue();
+
+
+        const start = new TextField({
+            placeholder: "starthour",
+            htmlType: "time"
+        }).SetClass("inline-block");
+        const end = new TextField({
+            placeholder: "starthour",
+            htmlType: "time"
+        }).SetClass("inline-block");
+
+        const askHours = new Toggle(
+            new Combine([
+                Translations.t.general.opening_hours.opensAt.Clone(),
+                start,
+                Translations.t.general.opening_hours.openTill.Clone(),
+                end
+            ]),
+            undefined,
+            mode.map(mode => mode === " ")
+        )
+
+        this.SetupDataSync(mode, start.GetValue(), end.GetValue())
+
+        return new Combine([
+            dropdown,
+            askHours
+        ]).ConstructElement()
+    }
+
     private SetupDataSync(mode: UIEventSource<string>, startTime: UIEventSource<string>, endTime: UIEventSource<string>) {
 
         const value = this._value;
-        value.addCallbackAndRun(ph => {
-            if (ph === undefined) {
-                return;
-            }
-            const parsed = OH.ParsePHRule(ph);
-            if (parsed === null) {
-                return;
-            }
+        value.map(ph => OH.ParsePHRule(ph))
+            .addCallbackAndRunD(parsed => {
             mode.setData(parsed.mode)
             startTime.setData(parsed.start)
             endTime.setData(parsed.end)
@@ -71,51 +109,6 @@ export default class PublicHolidayInput extends InputElement<string> {
 
             }, [startTime, endTime]
         )
-    }
-    
-    
-    protected InnerConstructElement(): HTMLElement {
-        const dropdown = new DropDown(
-            Translations.t.general.opening_hours.open_during_ph.Clone(),
-            [
-                {shown: Translations.t.general.opening_hours.ph_not_known.Clone(), value: ""},
-                {shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off"},
-                {shown:Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open"},
-                {shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " "},
-            ]
-        ).SetClass("inline-block");
-        /*
-        * Either "" (unknown), " " (opened) or "off" (closed)
-        * */
-        const mode = dropdown.GetValue();
-
-
-        const start = new TextField({
-            placeholder: "starthour",
-            htmlType: "time"
-        }).SetClass("inline-block");
-        const end = new TextField({
-            placeholder: "starthour",
-            htmlType: "time"
-        }).SetClass("inline-block");
-        
-        const askHours = new Toggle(
-            new Combine([
-                Translations.t.general.opening_hours.opensAt.Clone(),
-                start,
-                Translations.t.general.opening_hours.openTill.Clone(),
-                end
-            ]),
-            undefined,
-            mode.map(mode => mode === " ")
-        )
-
-        this.SetupDataSync(mode, start.GetValue(), end.GetValue())
-        
-        return new Combine([
-            dropdown,
-            askHours
-        ]).ConstructElement()
     }
 
 }

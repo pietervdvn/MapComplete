@@ -56,7 +56,7 @@ export default class UserBadge extends Toggle {
                 let messageSpan =
                     new Link(
                         new Combine([Svg.envelope, "" + user.totalMessages]).SetClass(linkStyle),
-                        'https://www.openstreetmap.org/messages/inbox',
+                        `${user.backend}/messages/inbox`,
                         true
                     )
 
@@ -64,14 +64,14 @@ export default class UserBadge extends Toggle {
                 const csCount =
                     new Link(
                         new Combine([Svg.star, "" + user.csCount]).SetClass(linkStyle),
-                        `https://www.openstreetmap.org/user/${user.name}/history`,
+                        `${user.backend}/user/${user.name}/history`,
                         true);
 
 
                 if (user.unreadMessages > 0) {
                     messageSpan = new Link(
                         new Combine([Svg.envelope, "" + user.unreadMessages]),
-                        'https://www.openstreetmap.org/messages/inbox',
+                        '${user.backend}/messages/inbox',
                         true
                     ).SetClass("alert")
                 }
@@ -83,22 +83,22 @@ export default class UserBadge extends Toggle {
 
                 const settings =
                     new Link(Svg.gear_svg(),
-                        `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`,
+                        `${user.backend}/user/${encodeURIComponent(user.name)}/account`,
                         true)
 
 
                 const userIcon = new Link(
-                    new Img(user.img)
+                    user.img === undefined ? Svg.osm_logo_ui() : new Img(user.img)
                         .SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 h16 float-left")
                     ,
-                    `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}`,
+                    `${user.backend}/user/${encodeURIComponent(user.name)}`,
                     true
                 );
 
 
                 const userName = new Link(
                     new FixedUiElement(user.name),
-                    `https://www.openstreetmap.org/user/${user.name}`,
+                    `${user.backend}/user/${user.name}`,
                     true);
 
 

@@ -1,72 +1,72 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {OsmObject} from "../../Logic/Osm/OsmObject";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {Translation} from "../i18n/Translation";
 import State from "../../State";
 import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
-import Loading from "../Base/Loading";
-import UserDetails from "../../Logic/Osm/OsmConnection";
-import Constants from "../../Models/Constants";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
-import {Utils} from "../../Utils";
+import DeleteAction from "../../Logic/Osm/DeleteAction";
+import {Tag} from "../../Logic/Tags/Tag";
+import CheckBoxes from "../Input/Checkboxes";
+import {RadioButton} from "../Input/RadioButton";
+import {FixedInputElement} from "../Input/FixedInputElement";
+import {TextField} from "../Input/TextField";
 
 
-export default class DeleteButton extends Toggle {
-    constructor(id: string) {
+export default class DeleteWizard extends Toggle {
+    /**
+     * The UI-element which triggers 'deletion' (either soft or hard).
+     * 
+     * - A 'hard deletion' is if the point is actually deleted from the OSM database
+     * - A 'soft deletion' is if the point is not deleted, but the tagging is modified which will result in the point not being picked up by the filters anymore.
+     *    Apart having needing theme-specific tags added (which must be supplied by the theme creator), fixme='marked for deletion' will be added too 
+     * 
+     * A deletion is only possible if the user is logged in.
+     * A soft deletion is only possible if tags are provided
+     * A hard deletion is only possible if the user has sufficient rigts
+     * 
+     * If no deletion is possible at all, the delete button will not be shown - but a reason will be shown instead.
+     * 
+     * @param id: The id of the element to remove
+     * @param softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted 
+     */
+    constructor(id: string, softDeletionTags? : Tag[]) {
+        const t = Translations.t.delete
 
-        const hasRelations: UIEventSource<boolean> = new UIEventSource<boolean>(null)
-        OsmObject.DownloadReferencingRelations(id, (rels) => {
-            hasRelations.setData(rels.length > 0)
-        })
+        const deleteAction = new DeleteAction(id);
+        
+        const deleteReasons = new RadioButton<string>(
+            [new FixedInputElement(
+                t.reasons.test, "test"
+            ),
+            new FixedInputElement(t.reasons.disused, "disused"),
+            new FixedInputElement(t.reasons.notFound, "not found"),
+            new TextField()]
+            
+        )
 
-        const hasWays: UIEventSource<boolean> = new UIEventSource<boolean>(null)
-        OsmObject.DownloadReferencingWays(id, (ways) => {
-            hasWays.setData(ways.length > 0)
-        })
+        const deleteButton = new SubtleButton(
+            Svg.delete_icon_svg(),
+            t.delete.Clone()
+        ).onClick(() => deleteAction.DoDelete(deleteReasons.GetValue().data))
 
-        const previousEditors = new UIEventSource<number[]>(null)
-        OsmObject.DownloadHistory(id, versions => {
-            const uids = versions.map(version => version.tags["_last_edit:contributor:uid"])
-            previousEditors.setData(uids)
-        })
-        const allByMyself = previousEditors.map(previous => {
-            if (previous === null) {
-                return null;
-            }
-            const userId = State.state.osmConnection.userDetails.data.uid;
-            return !previous.some(editor => editor !== userId)
-        }, [State.state.osmConnection.userDetails])
-
-        const t = Translations.t.deleteButton
-
+        
+        
+        
         super(
+            
+            
+            
             new Toggle(
-                new VariableUiElement(
-                    hasRelations.map(hasRelations => {
-                        if (hasRelations === null || hasWays.data === null) {
-                            return new Loading()
-                        }
-                        if (hasWays.data || hasRelations) {
-                            return t.partOfOthers.Clone()
-                        }
+                deleteButton,
+                new VariableUiElement(deleteAction.canBeDeleted.map(cbd => cbd.reason.Clone())),
+                deleteAction.canBeDeleted.map(cbd => cbd.canBeDeleted)
+            ),
+            
+            
+            
+            t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
+            State.state.osmConnection.isLoggedIn
+        )
 
-                        return new Toggle(
-                            new SubtleButton(Svg.delete_icon_svg(), t.delete.Clone()),
-                            t.notEnoughExperience.Clone(),
-                            State.state.osmConnection.userDetails.map(userinfo =>
-                                allByMyself.data ||
-                                userinfo.csCount >= Constants.userJourney.deletePointsOfOthersUnlock,
-                                [allByMyself])
-                        )
-
-                    }, [hasWays])
-                ),
-                t.onlyEditedByLoggedInUser.Clone().onClick(State.state.osmConnection.AttemptLogin),
-                State.state.osmConnection.isLoggedIn),
-            t.isntAPoint,
-            new UIEventSource<boolean>(id.startsWith("node"))
-        );
     }
 }

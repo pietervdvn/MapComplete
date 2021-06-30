@@ -1,19 +1,23 @@
 import * as $ from "jquery"
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
+import {UIEventSource} from "../UIEventSource";
 
 
 export abstract class OsmObject {
 
+    protected static backendURL = "https://www.openstreetmap.org/"
+    private static polygonFeatures = OsmObject.constructPolygonFeatures()
+    private static objectCache = new Map<string, UIEventSource<OsmObject>>();
+    private static referencingWaysCache = new Map<string, UIEventSource<OsmWay[]>>();
+    private static referencingRelationsCache = new Map<string, UIEventSource<OsmRelation[]>>();
+    private static historyCache = new Map<string, UIEventSource<OsmObject[]>>();
     type: string;
     id: number;
     tags: {} = {};
     version: number;
     public changed: boolean = false;
     timestamp: Date;
-
-
-    private static polygonFeatures = OsmObject.constructPolygonFeatures()
 
     protected constructor(type: string, id: number) {
         this.id = id;
@@ -23,67 +27,99 @@ export abstract class OsmObject {
         }
     }
 
-    static DownloadObject(id, continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
+    public static SetBackendUrl(url: string) {
+        if (!url.endsWith("/")) {
+            throw "Backend URL must end with a '/'"
+        }
+        if (!url.startsWith("http")) {
+            throw "Backend URL must begin with http"
+        }
+        this.backendURL = url;
+    }
+
+    static DownloadObject(id): UIEventSource<OsmObject> {
+        if (OsmObject.objectCache.has(id)) {
+            return OsmObject.objectCache.get(id)
+        }
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
 
-        const newContinuation = (element: OsmObject, meta: OsmObjectMeta) => {
-            continuation(element, meta);
+        const src = new UIEventSource<OsmObject>(undefined)
+        OsmObject.objectCache.set(id, src);
+        const newContinuation = (element: OsmObject) => {
+            src.setData(element)
         }
 
         switch (type) {
             case("node"):
-                return new OsmNode(idN).Download(newContinuation);
+                new OsmNode(idN).Download(newContinuation);
+                break;
             case("way"):
-                return new OsmWay(idN).Download(newContinuation);
+                new OsmWay(idN).Download(newContinuation);
+                break;
             case("relation"):
-                return new OsmRelation(idN).Download(newContinuation);
+                new OsmRelation(idN).Download(newContinuation);
+                break;
 
         }
+        return src;
     }
 
     /**
      * Downloads the ways that are using this node.
      * Beware: their geometry will be incomplete!
-     * @param id
-     * @param continuation
-     * @constructor
      */
-    public static DownloadReferencingWays(id: string, continuation: (referencingWays: OsmWay[]) => void){
-        Utils.downloadJson(`https://www.openStreetMap.org/api/0.6/${id}/ways`)
+    public static DownloadReferencingWays(id: string): UIEventSource<OsmWay[]> {
+        if (OsmObject.referencingWaysCache.has(id)) {
+            return OsmObject.referencingWaysCache.get(id);
+        }
+        const waysSrc = new UIEventSource<OsmWay[]>([])
+        OsmObject.referencingWaysCache.set(id, waysSrc);
+        Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/ways`)
             .then(data => {
-               const ways = data.elements.map(wayInfo => {
+                const ways = data.elements.map(wayInfo => {
                     const way = new OsmWay(wayInfo.id)
                     way.LoadData(wayInfo)
                     return way
                 })
-                continuation(ways)
+                waysSrc.setData(ways)
             })
+        return waysSrc;
     }
+
     /**
      * Downloads the relations that are using this feature.
      * Beware: their geometry will be incomplete!
-     * @param id
-     * @param continuation
-     * @constructor
      */
-    public static DownloadReferencingRelations(id: string, continuation: (referencingRelations: OsmRelation[]) => void){
-        Utils.downloadJson(`https://www.openStreetMap.org/api/0.6/${id}/relations`)
+    public static DownloadReferencingRelations(id: string): UIEventSource<OsmRelation[]> {
+        if (OsmObject.referencingRelationsCache.has(id)) {
+            return OsmObject.referencingRelationsCache.get(id);
+        }
+        const relsSrc = new UIEventSource<OsmRelation[]>([])
+        OsmObject.referencingRelationsCache.set(id, relsSrc);
+        Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/relations`)
             .then(data => {
                 const rels = data.elements.map(wayInfo => {
                     const rel = new OsmRelation(wayInfo.id)
                     rel.LoadData(wayInfo)
                     return rel
                 })
-                continuation(rels)
+                relsSrc.setData(rels)
             })
+        return relsSrc;
     }
-    public static DownloadHistory(id: string, continuation: (versions: OsmObject[]) => void): void{
+
+    public static DownloadHistory(id: string): UIEventSource<OsmObject []> {
+        if (OsmObject.historyCache.has(id)) {
+            return OsmObject.historyCache.get(id)
+        }
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
-        $.getJSON("https://www.openStreetMap.org/api/0.6/" + type + "/" + idN + "/history", data => {
+        const src = new UIEventSource<OsmObject[]>([]);
+        OsmObject.historyCache.set(id, src);
+        Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${type}/${idN}/history`).then(data => {
             const elements: any[] = data.elements;
             const osmObjects: OsmObject[] = []
             for (const element of elements) {
@@ -103,29 +139,41 @@ export abstract class OsmObject {
                 osmObject?.SaveExtraData(element, []);
                 osmObjects.push(osmObject)
             }
-            continuation(osmObjects)
+            src.setData(osmObjects)
+        })
+        return src;
+    }
+
+    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
+    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
+        const minlon = bounds[0][1]
+        const maxlon = bounds[1][1]
+        const minlat = bounds[1][0]
+        const maxlat = bounds[0][0];
+        const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
+        $.getJSON(url, data => {
+            const elements: any[] = data.elements;
+            const objects = OsmObject.ParseObjects(elements)
+            callback(objects);
+
         })
     }
 
-    private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
-        const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
+    public static DownloadAll(neededIds): UIEventSource<OsmObject[]> {
+        // local function which downloads all the objects one by one
+        // this is one big loop, running one download, then rerunning the entire function
 
-        for (const polygonFeature of polygon_features) {
-            const key = polygonFeature.key;
-
-            if (polygonFeature.polygon === "all") {
-                result.set(key, {values: null, blacklist: false})
-                continue
+        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id))
+        const allCompleted = new UIEventSource(undefined).map(_ => {
+            return !allSources.some(uiEventSource => uiEventSource.data === undefined)
+        }, allSources)
+        return allCompleted.map(completed => {
+            if (completed) {
+                return allSources.map(src => src.data)
             }
-
-            const blacklist = polygonFeature.polygon === "blacklist"
-            result.set(key, {values: new Set<string>(polygonFeature.values), blacklist: blacklist})
-
-        }
-
-        return result;
+            return []
+        });
     }
-
 
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {
@@ -145,43 +193,23 @@ export abstract class OsmObject {
         }
     }
 
-    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
-    public static LoadArea(bounds: [[number, number], [number, number]], callback: (objects: OsmObject[]) => void) {
-        const minlon = bounds[0][1]
-        const maxlon = bounds[1][1]
-        const minlat = bounds[1][0]
-        const maxlat = bounds[0][0];
-        const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        $.getJSON(url, data => {
-            const elements: any[] = data.elements;
-            const objects = OsmObject.ParseObjects(elements)
-            callback(objects);
+    private static constructPolygonFeatures(): Map<string, { values: Set<string>, blacklist: boolean }> {
+        const result = new Map<string, { values: Set<string>, blacklist: boolean }>();
 
-        })
-    }
+        for (const polygonFeature of polygon_features) {
+            const key = polygonFeature.key;
 
-    //Loads an area from the OSM-api.
-
-    public static DownloadAll(neededIds, knownElements: any = {}, continuation: ((knownObjects: any) => void)) {
-        // local function which downloads all the objects one by one
-        // this is one big loop, running one download, then rerunning the entire function
-        if (neededIds.length == 0) {
-            continuation(knownElements);
-            return;
-        }
-        const neededId = neededIds.pop();
-
-        if (neededId in knownElements) {
-            OsmObject.DownloadAll(neededIds, knownElements, continuation);
-            return;
-        }
-
-        OsmObject.DownloadObject(neededId,
-            function (element) {
-                knownElements[neededId] = element; // assign the element for later, continue downloading the next element
-                OsmObject.DownloadAll(neededIds, knownElements, continuation);
+            if (polygonFeature.polygon === "all") {
+                result.set(key, {values: null, blacklist: false})
+                continue
             }
-        );
+
+            const blacklist = polygonFeature.polygon === "blacklist"
+            result.set(key, {values: new Set<string>(polygonFeature.values), blacklist: blacklist})
+
+        }
+
+        return result;
     }
 
     private static ParseObjects(elements: any[]): OsmObject[] {
@@ -245,7 +273,7 @@ export abstract class OsmObject {
     Download(continuation: ((element: OsmObject, meta: OsmObjectMeta) => void)) {
         const self = this;
         const full = this.type !== "way" ? "" : "/full";
-        const url = "https://www.openstreetmap.org/api/0.6/" + this.type + "/" + this.id + full;
+        const url = `${OsmObject.backendURL}api/0.6/${this.type}/${this.id}${full}`;
         $.getJSON(url, function (data) {
 
                 const element = data.elements.pop();
