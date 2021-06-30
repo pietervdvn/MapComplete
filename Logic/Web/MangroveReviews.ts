@@ -10,8 +10,8 @@ export class MangroveIdentity {
     constructor(mangroveIdentity: UIEventSource<string>) {
         const self = this;
         this._mangroveIdentity = mangroveIdentity;
-        mangroveIdentity.addCallbackAndRun(str => {
-            if (str === undefined || str === "") {
+        mangroveIdentity.addCallbackAndRunD(str => {
+            if (str === "") {
                 return;
             }
             mangrove.jwkToKeypair(JSON.parse(str)).then(keypair => {
