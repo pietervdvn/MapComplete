@@ -1,7 +1,12 @@
 import {OsmObject} from "./Logic/Osm/OsmObject";
-import DeleteButton from "./UI/Popup/DeleteButton";
+import DeleteButton from "./UI/Popup/DeleteWizard";
 import Combine from "./UI/Base/Combine";
 import State from "./State";
+import DeleteWizard from "./UI/Popup/DeleteWizard";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {Tag} from "./Logic/Tags/Tag";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
+import {Translation} from "./UI/i18n/Translation";
 /*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -143,7 +148,19 @@ function TestMiniMap() {
     featureSource.ping()
 }
 //*/
+QueryParameters.GetQueryParameter("test", "true").setData("true")
 State.state= new State(undefined)
+const id = "node/5414688303"
+State.state.allElements.addElementById(id, new UIEventSource<any>({id: id}))
 new Combine([
-    new DeleteButton("node/8598664388"),
+    new DeleteWizard(id, {
+        noDeleteOptions: [
+            {
+                if:[ new Tag("access","private")],
+                then: new Translation({
+                    en: "Very private! Delete now or me send lawfull lawyer"
+                })
+            }
+        ]
+    }),
 ]).AttachTo("maindiv")

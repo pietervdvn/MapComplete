@@ -29,17 +29,26 @@
   },
   "delete": {
     "delete": "Delete",
+    "cancel": "Cancel",
+    "isDeleted": "This feature is deleted",
     "loginToDelete": "You must be logged in to delete a point",
-    "safeDelete": "This point can be safely deleted",
-    "isntAPoint": "Only points can be deleted",
-    "onlyEditedByLoggedInUser": "This point has only be edited by yourself, you can safely delete it",
-    "notEnoughExperience": "You don't have enough experience to delete points made by other people. Make more edits to improve your skills",
-    "partOfOthers": "This point is part of some way or relation, so you can not delete it",
-    "loading": "Inspecting properties to check if this feature can be deleted",
+    "safeDelete": "This point can be safely deleted.",
+    "isntAPoint": "Only points can be deleted, the selected feature is a way, area or relation.",
+    "onlyEditedByLoggedInUser": "This point has only be edited by yourself, you can safely delete it.",
+    "notEnoughExperience": "This point was made by someone else.",
+    "useSomethingElse": "Use another OpenStreetMap-editor to delete it instead",
+    "partOfOthers": "This point is part of some way or relation and can not be deleted directly.",
+    "loading": "Inspecting properties to check if this feature can be deleted.",
+    "whyDelete": "Why should this point be deleted?",
     "reasons": {
       "test": "This was a testing point - the feature was never actually there",
       "disused": "This feature is disused or removed",
       "notFound": "This feature couldn't be found"
+    },
+    "explanations": {
+      "selectReason": "Please, select why this feature should be deleted",
+      "hardDelete": "This point will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
+      "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
     }
   },
   "general": {

@@ -30,6 +30,9 @@ export default class Translations {
             console.error(msg, t);
             throw msg
         }
+        if(t instanceof Translation){
+            return t;
+        }
         return new Translation(t, context);
     }
 

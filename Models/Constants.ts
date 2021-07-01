@@ -9,7 +9,7 @@ export default class Constants {
         moreScreenUnlock: 1,
         personalLayoutUnlock: 5,
         historyLinkVisible: 10,
-        deletePointsOfOthersUnlock: 15,
+        deletePointsOfOthersUnlock: 20,
         tagsVisibleAt: 25,
         tagsVisibleAndWikiLinked: 30,
         

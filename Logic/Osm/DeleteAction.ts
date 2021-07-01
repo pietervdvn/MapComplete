@@ -8,44 +8,56 @@ import Constants from "../../Models/Constants";
 export default class DeleteAction {
 
     public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean, reason: Translation }>;
+    public readonly isDeleted = new UIEventSource<boolean>(false);
     private readonly _id: string;
+
 
     constructor(id: string) {
         this._id = id;
 
-        this.canBeDeleted = new UIEventSource<{canBeDeleted?: boolean; reason: Translation}>({
-            canBeDeleted : false,
+        this.canBeDeleted = new UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>({
+            canBeDeleted: undefined,
             reason: Translations.t.delete.loading
         })
-        
-        this.CheckDeleteability()
+
+        this.CheckDeleteability(false)
     }
 
 
-    public DoDelete(reason: string): UIEventSource<boolean> {
-        const isDeleted = new UIEventSource<boolean>(false)
-
+    /**
+     * Does actually delete the feature; returns the event source 'this.isDeleted'
+     * If deletion is not allowed, triggers the callback instead
+     */
+    public DoDelete(reason: string, onNotAllowed : () => void): UIEventSource<boolean> {
+        const isDeleted = this.isDeleted
         const self = this;
         let deletionStarted = false;
         this.canBeDeleted.addCallbackAndRun(
             canBeDeleted => {
+                if (isDeleted.data || deletionStarted) {
+                    // Already deleted...
+                    return;
+                }
+                
+                if(canBeDeleted.canBeDeleted === false){
+                    // We aren't allowed to delete
+                    deletionStarted = true;
+                    onNotAllowed();
+                    isDeleted.setData(true);
+                    return;
+                }
+                
                 if (!canBeDeleted) {
                     // We are not allowed to delete (yet), this might change in the future though
                     return;
                 }
 
-                if (isDeleted.data) {
-                    // Already deleted...
-                    return;
-                }
+              
 
-                if (deletionStarted) {
-                    // Deletion is already running...
-                    return;
-                }
+              
                 deletionStarted = true;
                 OsmObject.DownloadObject(self._id).addCallbackAndRun(obj => {
-                    if(obj === undefined){
+                    if (obj === undefined) {
                         return;
                     }
                     State.state.osmConnection.changesetHandler.DeleteElement(
@@ -58,7 +70,7 @@ export default class DeleteAction {
                         }
                     )
                 })
-              
+
             }
         )
 
@@ -71,7 +83,7 @@ export default class DeleteAction {
      * @constructor
      * @private
      */
-    private CheckDeleteability(): void {
+    public CheckDeleteability(useTheInternet: boolean): void {
         const t = Translations.t.delete;
         const id = this._id;
         const state = this.canBeDeleted
@@ -89,7 +101,7 @@ export default class DeleteAction {
             if (ud === undefined) {
                 return undefined;
             }
-            if(!ud.loggedIn){
+            if (!ud.loggedIn) {
                 return false;
             }
             return ud.csCount >= Constants.userJourney.deletePointsOfOthersUnlock;
@@ -120,7 +132,7 @@ export default class DeleteAction {
             // At this point, the logged in user is not allowed to delete points created/edited by _others_
             // however, we query OSM and if it turns out the current point has only be edited by the current user, deletion is allowed after all!
 
-            if (allByMyself.data === null) {
+            if (allByMyself.data === null && useTheInternet) {
                 // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
                 OsmObject.DownloadHistory(id).map(versions => versions.map(version => version.tags["_last_edit:contributor:uid"])).syncWith(previousEditors)
             }
@@ -142,7 +154,7 @@ export default class DeleteAction {
         const hasRelations: UIEventSource<boolean> = new UIEventSource<boolean>(null)
         const hasWays: UIEventSource<boolean> = new UIEventSource<boolean>(null)
         deletetionAllowed.addCallbackAndRunD(deletetionAllowed => {
-            
+
             if (deletetionAllowed === false) {
                 // Nope, we are not allowed to delete
                 state.setData({
@@ -152,6 +164,9 @@ export default class DeleteAction {
                 return;
             }
 
+            if (!useTheInternet) {
+                return;
+            }
 
             // All right! We have arrived at a point that we should query OSM again to check that the point isn't a part of ways or relations
             OsmObject.DownloadReferencingRelations(id).addCallbackAndRunD(rels => {
@@ -171,6 +186,9 @@ export default class DeleteAction {
             if (hasWays.data === true) {
                 return true;
             }
+            if (hasWays.data === null || hasRelationsData === null) {
+                return null;
+            }
             if (hasWays.data === false && hasRelationsData === false) {
                 return false;
             }
@@ -189,13 +207,15 @@ export default class DeleteAction {
                         canBeDeleted: false,
                         reason: t.partOfOthers
                     })
+                }else{
+                    // alright, this point can be safely deleted!
+                    state.setData({
+                        canBeDeleted: true,
+                        reason: allByMyself.data === true ? t.onlyEditedByLoggedInUser : t.safeDelete
+                    })
                 }
 
-                // alright, this point can be safely deleted!
-                state.setData({
-                    canBeDeleted: true,
-                    reason: allByMyself.data === true ? t.onlyEditedByLoggedInUser : t.safeDelete
-                })
+              
 
             }
         )
