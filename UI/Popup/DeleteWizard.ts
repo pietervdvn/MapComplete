@@ -41,11 +41,12 @@ export default class DeleteWizard extends Toggle {
     constructor(id: string,
                 options?: {
                     noDeleteOptions?: { if: Tag[], then: Translation }[]
-                    softDeletionTags?: Tag[]
+                    softDeletionTags?: Tag[],
+                    neededChangesets?: number
                 }) {
 
         options = options ?? {}
-        const deleteAction = new DeleteAction(id);
+        const deleteAction = new DeleteAction(id, options.neededChangesets);
         const tagsSource = State.state.allElements.getEventSourceById(id)
 
         let softDeletionTags = options.softDeletionTags ?? []

@@ -10,10 +10,12 @@ export default class DeleteAction {
     public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean, reason: Translation }>;
     public readonly isDeleted = new UIEventSource<boolean>(false);
     private readonly _id: string;
+    private readonly _allowDeletionAtChangesetCount: number;
 
 
-    constructor(id: string) {
+    constructor(id: string, allowDeletionAtChangesetCount?: number) {
         this._id = id;
+        this._allowDeletionAtChangesetCount = allowDeletionAtChangesetCount ?? Number.MAX_VALUE;
 
         this.canBeDeleted = new UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>({
             canBeDeleted: undefined,
@@ -104,7 +106,7 @@ export default class DeleteAction {
             if (!ud.loggedIn) {
                 return false;
             }
-            return ud.csCount >= Constants.userJourney.deletePointsOfOthersUnlock;
+            return ud.csCount >= Math.min(Constants.userJourney.deletePointsOfOthersUnlock, this._allowDeletionAtChangesetCount);
         })
 
         const previousEditors = new UIEventSource<number[]>(undefined)
