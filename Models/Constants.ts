@@ -22,7 +22,7 @@ export default class Constants {
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
      */
-    static updateTimeoutSec: number = 30;
+    static updateTimeoutSec: number = 180;
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {
