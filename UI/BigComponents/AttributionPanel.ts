@@ -105,7 +105,7 @@ export default class AttributionPanel extends Combine {
         const sources = Utils.NoNull(Utils.NoEmpty(license.sources))
 
         return new Combine([
-            `<img src='${iconPath}' style="width: 50px; height: 50px; margin-right: 0.5em;">`,
+            `<img src='${iconPath}' style="width: 50px; height: 50px; min-width: 50px; min-height: 50px;  margin-right: 0.5em;">`,
             new Combine([
                 new FixedUiElement(license.authors.join("; ")).SetClass("font-bold"),
                 new Combine([license.license,
@@ -122,7 +122,7 @@ export default class AttributionPanel extends Combine {
                     ]
                 ).SetClass("block")
             ]).SetClass("flex flex-col")
-        ]).SetClass("flex")
+        ]).SetClass("flex flex-wrap")
     }
 
     private static GenerateLicenses() {
