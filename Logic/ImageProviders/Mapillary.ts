@@ -4,6 +4,7 @@ import ImageAttributionSource from "./ImageAttributionSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
+import {Utils} from "../../Utils";
 
 export class Mapillary extends ImageAttributionSource {
 
@@ -43,7 +44,7 @@ export class Mapillary extends ImageAttributionSource {
         const key = Mapillary.ExtractKeyFromURL(url)
         const metadataURL = `https://a.mapillary.com/v3/images/${key}?client_id=TXhLaWthQ1d4RUg0czVxaTVoRjFJZzowNDczNjUzNmIyNTQyYzI2`
         const source = new UIEventSource<LicenseInfo>(undefined)
-        $.getJSON(metadataURL, function (data) {
+        Utils.downloadJson(metadataURL).then(data => {
             const license = new LicenseInfo();
             license.artist = data.properties?.username;
             license.licenseShortName = "CC BY-SA 4.0";

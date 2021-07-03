@@ -9,11 +9,9 @@ export class Utils {
      */
     public static runningFromConsole = false;
     public static readonly assets_path = "./assets/svg/";
-
-
+    public static externalDownloadFunction: (url: string) => Promise<any>;
     private static knownKeys = ["addExtraTags", "and", "calculatedTags", "changesetmessage", "clustering", "color", "condition", "customCss", "dashArray", "defaultBackgroundId", "description", "descriptionTail", "doNotDownload", "enableAddNewPoints", "enableBackgroundLayerSelection", "enableGeolocation", "enableLayers", "enableMoreQuests", "enableSearch", "enableShareScreen", "enableUserBadge", "freeform", "hideFromOverview", "hideInAnswer", "icon", "iconOverlays", "iconSize", "id", "if", "ifnot", "isShown", "key", "language", "layers", "lockLocation", "maintainer", "mappings", "maxzoom", "maxZoom", "minNeededElements", "minzoom", "multiAnswer", "name", "or", "osmTags", "passAllFeatures", "presets", "question", "render", "roaming", "roamingRenderings", "rotation", "shortDescription", "socialImage", "source", "startLat", "startLon", "startZoom", "tagRenderings", "tags", "then", "title", "titleIcons", "type", "version", "wayHandling", "widenFactor", "width"]
     private static extraKeys = ["nl", "en", "fr", "de", "pt", "es", "name", "phone", "email", "amenity", "leisure", "highway", "building", "yes", "no", "true", "false"]
-
 
     static EncodeXmlValue(str) {
         if (typeof str !== "string") {
@@ -72,10 +70,10 @@ export class Utils {
         return res;
     }
 
-    public static TimesT<T>(count : number, f: ((i: number) => T)): T[] {
-        let res : T[] = [];
+    public static TimesT<T>(count: number, f: ((i: number) => T)): T[] {
+        let res: T[] = [];
         for (let i = 0; i < count; i++) {
-            res .push(f(i));
+            res.push(f(i));
         }
         return res;
     }
@@ -158,7 +156,7 @@ export class Utils {
 
     public static SubstituteKeys(txt: string, tags: any) {
         for (const key in tags) {
-            if(!tags.hasOwnProperty(key)) {
+            if (!tags.hasOwnProperty(key)) {
                 continue
             }
             txt = txt.replace(new RegExp("{" + key + "}", "g"), tags[key])
@@ -292,10 +290,10 @@ export class Utils {
 
     public static UnMinify(minified: string): string {
 
-        if(minified === undefined || minified === null){
+        if (minified === undefined || minified === null) {
             return undefined;
         }
-        
+
         const parts = minified.split("|");
         let result = parts.shift();
         const keys = Utils.knownKeys.concat(Utils.extraKeys);
@@ -323,34 +321,36 @@ export class Utils {
         }
         return result;
     }
-    
-    public static externalDownloadFunction: (url: string) => Promise<any>;
-    
-    public static downloadJson(url: string): Promise<any>{
-        if(this.externalDownloadFunction !== undefined){
+
+    public static downloadJson(url: string): Promise<any> {
+        if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url)
         }
 
         return new Promise(
             (resolve, reject) => {
-                try{
+                try {
                     const xhr = new XMLHttpRequest();
                     xhr.onload = () => {
                         if (xhr.status == 200) {
-                            resolve(JSON.parse(xhr.response))
+                            try {
+                                resolve(JSON.parse(xhr.response))
+                            } catch (e) {
+                                reject("Not a valid json: " + xhr.response)
+                            }
                         } else {
                             reject(xhr.statusText)
                         }
                     };
                     xhr.open('GET', url);
-                    xhr.setRequestHeader("accept","application/json")
+                    xhr.setRequestHeader("accept", "application/json")
                     xhr.send();
-                }catch(e){
+                } catch (e) {
                     reject(e)
                 }
             }
         )
-        
+
     }
 
     /**

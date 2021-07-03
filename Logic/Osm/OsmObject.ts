@@ -1,4 +1,3 @@
-import * as $ from "jquery"
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
 import {UIEventSource} from "../UIEventSource";
@@ -151,7 +150,7 @@ export abstract class OsmObject {
         const minlat = bounds[1][0]
         const maxlat = bounds[0][0];
         const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        $.getJSON(url, data => {
+        Utils.downloadJson(url).then( data => {
             const elements: any[] = data.elements;
             const objects = OsmObject.ParseObjects(elements)
             callback(objects);
@@ -274,7 +273,7 @@ export abstract class OsmObject {
         const self = this;
         const full = this.type !== "way" ? "" : "/full";
         const url = `${OsmObject.backendURL}api/0.6/${this.type}/${this.id}${full}`;
-        $.getJSON(url, function (data) {
+        Utils.downloadJson(url).then(data => {
 
                 const element = data.elements.pop();
 
