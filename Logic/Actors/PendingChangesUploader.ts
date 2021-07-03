@@ -21,6 +21,38 @@ export default class PendingChangesUploader{
         });
         
         
+        selectedFeature
+            .stabilized(10000)
+            .addCallback(feature => {
+            if(feature === undefined){
+                // The popup got closed - we flush
+                changes.flushChanges("Flushing changes due to popup closed");
+            }
+        });
+
+        document.addEventListener('mouseout', e => {
+            // @ts-ignore
+            if (!e.toElement && !e.relatedTarget) {
+                changes.flushChanges("Flushing changes due to focus lost");
+            }
+        });
+        
+        document.onfocus = () => {
+            changes.flushChanges("OnFocus")
+        }
+
+        document.onblur = () => {
+            changes.flushChanges("OnFocus")
+        }
+        try{
+            document.addEventListener("visibilitychange", () => {
+                changes.flushChanges("Visibility change")
+            }, false);
+        }catch(e){
+            console.warn("Could not register visibility change listener", e)
+        }
+
+
         window.onbeforeunload = function(e){ 
             
             if(changes.pending.data.length == 0){
