@@ -2,33 +2,33 @@ import {Changes} from "../Osm/Changes";
 import Constants from "../../Models/Constants";
 import {UIEventSource} from "../UIEventSource";
 
-export default class PendingChangesUploader{
-    
-    private lastChange : Date;
-    
+export default class PendingChangesUploader {
+
+    private lastChange: Date;
+
     constructor(changes: Changes, selectedFeature: UIEventSource<any>) {
         const self = this;
         this.lastChange = new Date();
         changes.pending.addCallback(() => {
             self.lastChange = new Date();
-            
+
             window.setTimeout(() => {
                 const diff = (new Date().getTime() - self.lastChange.getTime()) / 1000;
-                if(Constants.updateTimeoutSec >= diff - 1){
+                if (Constants.updateTimeoutSec >= diff - 1) {
                     changes.flushChanges("Flushing changes due to timeout");
                 }
             }, Constants.updateTimeoutSec * 1000);
         });
-        
-        
+
+
         selectedFeature
             .stabilized(10000)
             .addCallback(feature => {
-            if(feature === undefined){
-                // The popup got closed - we flush
-                changes.flushChanges("Flushing changes due to popup closed");
-            }
-        });
+                if (feature === undefined) {
+                    // The popup got closed - we flush
+                    changes.flushChanges("Flushing changes due to popup closed");
+                }
+            });
 
         document.addEventListener('mouseout', e => {
             // @ts-ignore
@@ -36,7 +36,7 @@ export default class PendingChangesUploader{
                 changes.flushChanges("Flushing changes due to focus lost");
             }
         });
-        
+
         document.onfocus = () => {
             changes.flushChanges("OnFocus")
         }
@@ -44,18 +44,17 @@ export default class PendingChangesUploader{
         document.onblur = () => {
             changes.flushChanges("OnFocus")
         }
-        try{
+        try {
             document.addEventListener("visibilitychange", () => {
                 changes.flushChanges("Visibility change")
             }, false);
-        }catch(e){
+        } catch (e) {
             console.warn("Could not register visibility change listener", e)
         }
 
 
-        window.onbeforeunload = function(e){ 
-            
-            if(changes.pending.data.length == 0){
+        function onunload(e) {
+            if (changes.pending.data.length == 0) {
                 return;
             }
             changes.flushChanges("onbeforeunload - probably closing or something similar");
@@ -63,8 +62,11 @@ export default class PendingChangesUploader{
             return "Saving your last changes..."
         }
 
+        window.onbeforeunload = onunload
+        // https://stackoverflow.com/questions/3239834/window-onbeforeunload-not-working-on-the-ipad#4824156
+        window.addEventListener("pagehide", onunload)
+
     }
-    
-    
-    
+
+
 }
