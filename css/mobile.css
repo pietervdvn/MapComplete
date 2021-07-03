@@ -15,15 +15,6 @@ Contains tweaks for small screens
         display: none !important;
     }
 
-    #help-button-mobile div {
-        box-shadow: 0 0 10px #0006;
-        margin-bottom: 10px;
-    }
-
-    #geolocate-button {
-        display: block;
-    }
-
     #centermessage {
         top: 30%;
         left: 15%;
@@ -57,21 +48,5 @@ Contains tweaks for small screens
 }
 
 
-@media only screen and (max-width: 600px) {
-    /* Portrait */
-    #userbadge-and-search {
-        display: inline-block;
-        width: auto;
-        max-width: 100vw;
-    }
-
-    .userbadge-login {
-        min-width: unset;
-    }
-
-    #userbadge {
-        margin-bottom: 0.3em;
-    }
-}
 
 
