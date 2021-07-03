@@ -95,7 +95,7 @@
             "gl": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
             "de": "Fahrradbügel <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>",
             "hu": "\"U\" <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
-            "it": "Ad arco <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
+            "it": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>",
             "zh_Hant": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
           }
         },
@@ -108,7 +108,7 @@
             "gl": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "de": "Metallgestänge <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "hu": "Kengyeles <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
-            "it": "Ferma-ruota <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
+            "it": "Scolapiatti <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>",
             "zh_Hant": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
           }
         },
@@ -132,7 +132,8 @@
             "fr": "Râtelier <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
             "gl": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
             "de": "Gestell <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
-            "zh_Hant": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+            "zh_Hant": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>",
+            "it": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
           }
         },
         {
@@ -144,7 +145,8 @@
             "gl": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
             "de": "Zweistufig <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
             "hu": "Kétszintű <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
-            "zh_Hant": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+            "zh_Hant": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>",
+            "it": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
           }
         },
         {
@@ -156,7 +158,8 @@
             "gl": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
             "de": "Schuppen <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
             "hu": "Fészer <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
-            "zh_Hant": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+            "zh_Hant": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>",
+            "it": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
           }
         },
         {

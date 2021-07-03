@@ -114,7 +114,8 @@
         "nl": "De ondergrond is <b>{surface}</b>",
         "en": "The surface is <b>{surface}</b>",
         "ru": "Поверхность - <b>{surface}</b>",
-        "fr": "La surface en <b>{surface}</b>"
+        "fr": "La surface en <b>{surface}</b>",
+        "it": "La superficie è <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -126,7 +127,8 @@
             "nl": "De ondergrond is <b>gras</b>",
             "en": "The surface is <b>grass</b>",
             "ru": "Поверхность - <b>трава</b>",
-            "fr": "La surface est en <b>herbe</b>"
+            "fr": "La surface est en <b>herbe</b>",
+            "it": "La superficie è <b>erba</b>"
           }
         },
         {
@@ -135,7 +137,8 @@
             "nl": "De ondergrond is <b>aarde</b>",
             "en": "The surface is <b>ground</b>",
             "ru": "Поверхность - <b>земля</b>",
-            "fr": "La surface est en <b>terre</b>"
+            "fr": "La surface est en <b>terre</b>",
+            "it": "La superficie è <b>terreno</b>"
           }
         },
         {
@@ -143,7 +146,8 @@
           "then": {
             "nl": "De ondergrond is <b>onverhard</b>",
             "en": "The surface is <b>unpaved</b>",
-            "fr": "La surface est <b>non pavée</b>"
+            "fr": "La surface est <b>non pavée</b>",
+            "it": "La superficie è <b>non pavimentata</b>"
           },
           "hideInAnswer": true
         },
@@ -153,7 +157,8 @@
             "nl": "De ondergrond is <b>zand</b>",
             "en": "The surface is <b>sand</b>",
             "ru": "Поверхность - <b>песок</b>",
-            "fr": "La surface est en <b>sable</b>"
+            "fr": "La surface est en <b>sable</b>",
+            "it": "La superficie è <b>sabbia</b>"
           }
         },
         {
@@ -161,7 +166,8 @@
           "then": {
             "nl": "De ondergrond bestaat uit <b>stoeptegels</b>",
             "en": "The surface is <b>paving stones</b>",
-            "ru": "Поверхность - <b>брусчатка</b>"
+            "ru": "Поверхность - <b>брусчатка</b>",
+            "it": "La superficie è <b>pietre irregolari</b>"
           }
         },
         {
@@ -169,7 +175,8 @@
           "then": {
             "nl": "De ondergrond is <b>asfalt</b>",
             "en": "The surface is <b>asphalt</b>",
-            "ru": "Поверхность - <b>асфальт</b>"
+            "ru": "Поверхность - <b>асфальт</b>",
+            "it": "La superficie è <b>asfalto</b>"
           }
         },
         {
@@ -178,7 +185,8 @@
             "nl": "De ondergrond is <b>beton</b>",
             "en": "The surface is <b>concrete</b>",
             "ru": "Поверхность - <b>бетон</b>",
-            "fr": "La surface est en <b>béton</b>"
+            "fr": "La surface est en <b>béton</b>",
+            "it": "La superficie è <b>calcestruzzo</b>"
           }
         },
         {
@@ -186,7 +194,8 @@
           "then": {
             "nl": "De ondergrond is <b>verhard</b>",
             "en": "The surface is <b>paved</b>",
-            "fr": "La surface est <b>pavée</b>"
+            "fr": "La surface est <b>pavée</b>",
+            "it": "La superficie è <b>pavimentata</b>"
           },
           "hideInAnswer": true
         }

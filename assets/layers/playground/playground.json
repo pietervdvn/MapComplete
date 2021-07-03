@@ -4,7 +4,8 @@
     "nl": "Speeltuinen",
     "en": "Playgrounds",
     "ru": "Детские площадки",
-    "de": "Spielplätze"
+    "de": "Spielplätze",
+    "it": "Campi da gioco"
   },
   "minzoom": 13,
   "source": {
@@ -315,7 +316,8 @@
       "question": {
         "nl": "Wie kan men bellen indien er problemen zijn met de speeltuin?",
         "en": "What is the phone number of the playground maintainer?",
-        "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?"
+        "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
+        "it": "Qual è il numero di telefono del gestore del campetto?"
       },
       "render": {
         "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",
@@ -324,7 +326,8 @@
         "de": "<a href='tel:{phone}'>{phone}</a>",
         "fr": "<a href='tel:{phone}'>{phone}</a>",
         "ru": "<a href='tel:{phone}'>{phone}</a>",
-        "id": "<a href='tel:{phone}'>{phone}</a>"
+        "id": "<a href='tel:{phone}'>{phone}</a>",
+        "it": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -336,7 +339,8 @@
         "nl": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?",
         "en": "Is this playground accessible to wheelchair users?",
         "fr": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?",
-        "de": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?"
+        "de": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?",
+        "it": "Il campetto è accessibile a persone in sedia a rotelle?"
       },
       "mappings": [
         {
@@ -345,7 +349,8 @@
             "nl": "Geheel toegankelijk voor rolstoelgebruikers",
             "en": "Completely accessible for wheelchair users",
             "fr": "Entièrement accessible aux personnes en fauteuil roulant",
-            "de": "Vollständig zugänglich für Rollstuhlfahrer"
+            "de": "Vollständig zugänglich für Rollstuhlfahrer",
+            "it": "Completamente accessibile in sedia a rotelle"
           }
         },
         {
@@ -354,7 +359,8 @@
             "nl": "Beperkt toegankelijk voor rolstoelgebruikers",
             "en": "Limited accessibility for wheelchair users",
             "fr": "Accessibilité limitée pour les personnes en fauteuil roulant",
-            "de": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer"
+            "de": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer",
+            "it": "Accesso limitato in sedia a rotelle"
           }
         },
         {
@@ -363,7 +369,8 @@
             "nl": "Niet toegankelijk voor rolstoelgebruikers",
             "en": "Not accessible for wheelchair users",
             "fr": "Non accessible aux personnes en fauteuil roulant",
-            "de": "Nicht zugänglich für Rollstuhlfahrer"
+            "de": "Nicht zugänglich für Rollstuhlfahrer",
+            "it": "Non accessibile in sedia a rotelle"
           }
         }
       ]
@@ -377,7 +384,8 @@
       "question": {
         "nl": "Op welke uren is deze speeltuin toegankelijk?",
         "en": "When is this playground accessible?",
-        "fr": "Quand ce terrain de jeux est-il accessible ?"
+        "fr": "Quand ce terrain de jeux est-il accessible ?",
+        "it": "Quando si può accedere a questo campetto?"
       },
       "mappings": [
         {
@@ -385,7 +393,8 @@
           "then": {
             "nl": "Van zonsopgang tot zonsondergang",
             "en": "Accessible from sunrise till sunset",
-            "fr": "Accessible du lever au coucher du soleil"
+            "fr": "Accessible du lever au coucher du soleil",
+            "it": "Si può accedere dall'alba al tramonto"
           }
         },
         {
@@ -394,7 +403,8 @@
             "nl": "Dag en nacht toegankelijk",
             "en": "Always accessible",
             "fr": "Toujours accessible",
-            "ru": "Всегда доступен"
+            "ru": "Всегда доступен",
+            "it": "Si può sempre accedere"
           }
         },
         {
@@ -403,7 +413,8 @@
             "nl": "Dag en nacht toegankelijk",
             "en": "Always accessible",
             "ru": "Всегда доступен",
-            "fr": "Toujours accessible"
+            "fr": "Toujours accessible",
+            "it": "Si può sempre accedere"
           },
           "hideInAnswer": true
         }
@@ -466,7 +477,8 @@
         "nl": "Speeltuin",
         "en": "Playground",
         "ru": "Детская площадка",
-        "fr": "Terrain de jeux"
+        "fr": "Terrain de jeux",
+        "it": "Campetto"
       }
     }
   ],
