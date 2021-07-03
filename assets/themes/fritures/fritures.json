@@ -15,6 +15,7 @@
     "ca",
     "id",
     "ru",
+    "it",
     "nb_NO"
   ],
   "maintainer": "",
@@ -97,13 +98,15 @@
             "fr": "<a href='{website}'>{website}</a>",
             "id": "<a href='{website}'>{website}</a>",
             "ru": "<a href='{website}'>{website}</a>",
-            "ja": "<a href='{website}'>{website}</a>"
+            "ja": "<a href='{website}'>{website}</a>",
+            "it": "<a href='{website}'>{website}</a>"
           },
           "question": {
             "en": "What is the website of this shop?",
             "nl": "Wat is de website van deze frituur?",
             "fr": "Quel est le site web de cette  friterie?",
-            "ja": "このお店のホームページは何ですか?"
+            "ja": "このお店のホームページは何ですか?",
+            "it": "Qual è il sito web di questo negozio?"
           },
           "freeform": {
             "key": "website",
@@ -120,7 +123,8 @@
             "nl": "Wat is het telefoonnummer van deze frituur?",
             "fr": "Quel est le numéro de téléphone de cette friterie?",
             "ja": "電話番号は何番ですか?",
-            "nb_NO": "Hva er telefonnummeret?"
+            "nb_NO": "Hva er telefonnummeret?",
+            "it": "Qual è il numero di telefono?"
           },
           "freeform": {
             "key": "phone",

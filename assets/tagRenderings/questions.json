@@ -17,7 +17,8 @@
       "nb_NO": "Hva er telefonnummeret til {name}?",
       "ru": "Какой номер телефона у {name}?",
       "sv": "Vad är telefonnumret till {name}?",
-      "zh_Hant": "{name} 的電話號碼是什麼？"
+      "zh_Hant": "{name} 的電話號碼是什麼？",
+      "it": "Qual è il numero di telefono di {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -47,7 +48,8 @@
       "nb_NO": "Hva er e-postadressen til {name}?",
       "ru": "Какой адрес электронной почты у {name}?",
       "id": "Apa alamat surel dari {name}?",
-      "zh_Hant": "{name} 的電子郵件地址是什麼？"
+      "zh_Hant": "{name} 的電子郵件地址是什麼？",
+      "it": "Qual è l'indirizzo email di {name}?"
     },
     "freeform": {
       "key": "email",
@@ -63,7 +65,8 @@
       "nb_NO": "Hva er nettsiden til {name}?",
       "ru": "Какой сайт у {name}?",
       "id": "Apa situs web dari {name}?",
-      "zh_Hant": "{name} 網址是什麼？"
+      "zh_Hant": "{name} 網址是什麼？",
+      "it": "Qual è il sito web di {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -78,7 +81,8 @@
       "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
       "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
       "ru": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
-      "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
+      "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>",
+      "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -93,7 +97,8 @@
       "nl": "Wat zijn de openingsuren van {name}?",
       "nb_NO": "Hva er åpningstidene for {name})",
       "ru": "Какое время работы у {name}?",
-      "zh_Hant": "{name} 的開放時間是什麼？"
+      "zh_Hant": "{name} 的開放時間是什麼？",
+      "it": "Quali sono gli orari di apertura di {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -102,7 +107,8 @@
       "nl": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}",
       "nb_NO": "<h3>Åpningstider</h3>{opening_hours_table(opening_hours)}",
       "ru": "<h3>Часы работы</h3>{opening_hours_table(opening_hours)}",
-      "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
+      "zh_Hant": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+      "it": "<h3>Orari di apertura</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",

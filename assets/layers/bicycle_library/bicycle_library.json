@@ -208,7 +208,8 @@
         "en": "Fietsbibliotheek",
         "nl": "Bicycle library",
         "ru": "Велосипедная библиотека",
-        "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)"
+        "zh_Hant": "自行車圖書館 ( Fietsbibliotheek)",
+        "it": "Bici in prestito"
       },
       "tags": [
         "amenity=bicycle_library"

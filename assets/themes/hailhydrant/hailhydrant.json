@@ -21,6 +21,7 @@
     "zh_Hant",
     "nb_NO",
     "ru",
+    "it",
     "id"
   ],
   "maintainer": "Erwin Olario",
@@ -109,7 +110,8 @@
               },
               "then": {
                 "en": "The hydrant color is red.",
-                "ja": "消火栓の色は赤です。"
+                "ja": "消火栓の色は赤です。",
+                "it": "L'idrante è rosso."
               }
             }
           ]
@@ -117,7 +119,8 @@
         {
           "question": {
             "en": "What type of hydrant is it?",
-            "ja": "どんな消火栓なんですか?"
+            "ja": "どんな消火栓なんですか?",
+            "it": "Di che tipo è questo idrante?"
           },
           "freeform": {
             "key": "fire_hydrant:type"
@@ -125,7 +128,8 @@
           "render": {
             "en": " Hydrant type: {fire_hydrant:type}",
             "ru": " Тип гидранта: {fire_hydrant:type}",
-            "ja": " 消火栓のタイプ:{fire_hydrant:type}"
+            "ja": " 消火栓のタイプ:{fire_hydrant:type}",
+            "it": " Tipo di idrante: {fire_hydrant:type}"
           },
           "mappings": [
             {
@@ -136,7 +140,8 @@
               },
               "then": {
                 "en": "The hydrant type is unknown.",
-                "ja": "消火栓の種類は不明です。"
+                "ja": "消火栓の種類は不明です。",
+                "it": "Il tipo di idrante è sconosciuto."
               },
               "hideInAnswer": true
             },
@@ -377,7 +382,8 @@
       "name": {
         "en": "Map of fire stations",
         "ja": "消防署の地図",
-        "nb_NO": "Kart over brannstasjoner"
+        "nb_NO": "Kart over brannstasjoner",
+        "it": "Mappa delle caserme dei vigili del fuoco"
       },
       "minzoom": 12,
       "source": {
@@ -393,12 +399,14 @@
           "en": "Fire Station",
           "ja": "消防署",
           "ru": "Пожарная часть",
-          "nb_NO": "Brannstasjon"
+          "nb_NO": "Brannstasjon",
+          "it": "Caserma dei vigili del fuoco"
         }
       },
       "description": {
         "en": "Map layer to show fire stations.",
-        "ja": "消防署を表示するためのマップレイヤ。"
+        "ja": "消防署を表示するためのマップレイヤ。",
+        "it": "Livello che mostra le caserme dei vigili del fuoco."
       },
       "tagRenderings": [
         {
@@ -408,11 +416,13 @@
           "question": {
             "en": "What is the name of this fire station?",
             "ja": "この消防署の名前は何ですか?",
-            "ru": "Как называется пожарная часть?"
+            "ru": "Как называется пожарная часть?",
+            "it": "Come si chiama questa caserma dei vigili del fuoco?"
           },
           "render": {
             "en": "This station is called {name}.",
-            "ja": "このステーションの名前は{name}です。"
+            "ja": "このステーションの名前は{name}です。",
+            "it": "Questa caserma si chiama {name}."
           }
         },
         {
@@ -421,7 +431,8 @@
           },
           "question": {
             "en": " What is the street name where the station located?",
-            "ja": " 救急ステーションの所在地はどこですか?"
+            "ja": " 救急ステーションの所在地はどこですか?",
+            "it": " Qual è il nome della via in cui si trova la caserma?"
           },
           "render": {
             "en": "This station is along a highway called {addr:street}.",

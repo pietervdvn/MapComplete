@@ -7,7 +7,8 @@
     "ru": "Открытая карта скалолазания",
     "ja": "登山地図を開く",
     "zh_Hant": "開放攀爬地圖",
-    "nb_NO": "Åpent klatrekart"
+    "nb_NO": "Åpent klatrekart",
+    "it": "Mappa aperta per le arrampicate"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -33,6 +34,7 @@
     "ja",
     "zh_Hant",
     "nb_NO",
+    "it",
     "ca",
     "fr",
     "id"
@@ -315,7 +317,8 @@
           "en": "Climbing route",
           "nl": "Klimroute",
           "ja": "登坂ルート",
-          "nb_NO": "Klatrerute"
+          "nb_NO": "Klatrerute",
+          "it": "Via di arrampicata"
         },
         "mappings": [
           {
@@ -324,7 +327,8 @@
               "de": "Kleterroute <strong>{name}</strong>",
               "en": "Climbing route <strong>{name}</strong>",
               "nl": "Klimroute <strong>{name}</strong>",
-              "ja": "登坂ルート<strong>{name}</strong>"
+              "ja": "登坂ルート<strong>{name}</strong>",
+              "it": "Via di arrampicata <strong>{name}</strong>"
             }
           }
         ]
@@ -345,13 +349,15 @@
             "fr": "<strong>{name}</strong>",
             "id": "<strong>{name}</strong>",
             "ru": "<strong>{name}</strong>",
-            "ja": "<strong>{name}</strong>"
+            "ja": "<strong>{name}</strong>",
+            "it": "<strong>{name}</strong>"
           },
           "question": {
             "en": "What is the name of this climbing route?",
             "de": "Wie heißt diese Kletterroute?",
             "nl": "Hoe heet deze klimroute?",
-            "ja": "この登坂ルートの名前は何ですか?"
+            "ja": "この登坂ルートの名前は何ですか?",
+            "it": "Come si chiama questa via di arrampicata?"
           },
           "freeform": {
             "key": "name"
@@ -368,7 +374,8 @@
                 "en": "This climbing route doesn't have a name",
                 "de": "Diese Kletterroute hat keinen Namen",
                 "nl": "Deze klimroute heeft geen naam",
-                "ja": "この登坂ルートには名前がありません"
+                "ja": "この登坂ルートには名前がありません",
+                "it": "Questa via di arrampicata non ha un nome"
               }
             }
           ]
@@ -377,14 +384,16 @@
           "#": "Length",
           "question": {
             "en": "How long is this climbing route (in meters)?",
-            "nl": "Hoe lang is deze klimroute (in meters)?"
+            "nl": "Hoe lang is deze klimroute (in meters)?",
+            "it": "Quanto è lunga questa via di arrampicata (in metri)?"
           },
           "render": {
             "de": "Diese Route ist {canonical(climbing:length)} lang",
             "en": "This route is {canonical(climbing:length)} long",
             "nl": "Deze klimroute is {canonical(climbing:length)} lang",
             "ja": "このルート長は、 {canonical(climbing:length)} メーターです",
-            "nb_NO": "Denne ruten er {canonical(climbing:length)} lang"
+            "nb_NO": "Denne ruten er {canonical(climbing:length)} lang",
+            "it": "Questo percorso è lungo {canonical(climbing:length)}"
           },
           "freeform": {
             "key": "climbing:length",
@@ -395,13 +404,15 @@
           "#": "Difficulty",
           "question": {
             "en": "What is the difficulty of this climbing route according to the french/belgian system?",
-            "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?"
+            "nl": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
+            "it": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?"
           },
           "render": {
             "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
             "en": "The difficulty is {climbing:grade:french} according to the french/belgian system",
             "nl": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem",
-            "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です"
+            "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
+            "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
           },
           "freeform": {
             "key": "climbing:grade:french"

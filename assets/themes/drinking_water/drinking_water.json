@@ -6,14 +6,16 @@
     "fr": "Eau potable",
     "ru": "Питьевая вода",
     "ja": "飲料水",
-    "zh_Hant": "飲用水"
+    "zh_Hant": "飲用水",
+    "it": "Acqua potabile"
   },
   "description": {
     "en": "On this map, publicly accessible drinking water spots are shown and can be easily added",
     "nl": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
     "fr": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
     "ja": "この地図には、一般にアクセス可能な飲料水スポットが示されており、簡単に追加することができる",
-    "zh_Hant": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加"
+    "zh_Hant": "在這份地圖上，公共可及的飲水點可以顯示出來，也能輕易的增加",
+    "it": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi"
   },
   "language": [
     "en",
@@ -21,7 +23,8 @@
     "fr",
     "ru",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "it"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/drinking_water/logo.svg",

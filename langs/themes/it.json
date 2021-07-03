@@ -96,6 +96,10 @@
         "shortDescription": "Stazioni di monitoraggio bici con dati in tempo reale forniti da Bruxelles Mobility",
         "description": "Questo tema mostra le stazioni di monitoraggio bici con dati dal vivo"
     },
+    "bookcases": {
+        "title": "Mappa libera delle microbiblioteche",
+        "description": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre."
+    },
     "campersite": {
         "title": "Aree camper",
         "shortDescription": "Trova aree dove passare la notte con il tuo camper",
@@ -188,22 +192,22 @@
                         "question": "Questo luogo ha un sito web?"
                     },
                     "10": {
+                        "question": "Questo luogo offre spazi per il noleggio a lungo termine?",
                         "mappings": {
+                            "0": {
+                                "then": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
+                            },
                             "1": {
                                 "then": "No, non ci sono ospiti a lungo termine qui"
                             },
                             "2": {
                                 "then": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)"
-                            },
-                            "0": {
-                                "then": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
                             }
-                        },
-                        "question": "Questo luogo offre spazi per il noleggio a lungo termine?"
+                        }
                     },
                     "11": {
-                        "question": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
-                        "render": "Maggiori dettagli su questo luogo: {description}"
+                        "render": "Maggiori dettagli su questo luogo: {description}",
+                        "question": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)"
                     }
                 },
                 "presets": {
@@ -214,151 +218,143 @@
                 }
             },
             "1": {
-                "presets": {
-                    "0": {
-                        "description": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
-                        "title": "luogo di sversamento delle acque reflue"
-                    }
-                },
                 "name": "Luoghi di sversamento delle acque reflue",
-                "description": "Luoghi di sversamento delle acque reflue",
-                "tagRenderings": {
-                    "7": {
-                        "question": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
-                        "render": "Questo luogo è parte della rete {network}"
-                    },
-                    "6": {
-                        "mappings": {
-                            "3": {
-                                "then": "Chiunque può farne uso"
-                            },
-                            "2": {
-                                "then": "Chiunque può farne uso"
-                            },
-                            "1": {
-                                "then": "È obbligatorio essere un cliente di questo campeggio o di questa area camper"
-                            },
-                            "0": {
-                                "then": "Servono una chiave o un codice di accesso"
-                            }
-                        },
-                        "question": "Chi può utilizzare questo luogo di sversamento?"
-                    },
-                    "5": {
-                        "mappings": {
-                            "1": {
-                                "then": "Non è possibile smaltire le acque del WC chimico qui"
-                            },
-                            "0": {
-                                "then": "È possibile smaltire le acque del WC chimico qui"
-                            }
-                        },
-                        "question": "È possibile smaltire le acque del WC chimico qui?"
-                    },
-                    "4": {
-                        "mappings": {
-                            "1": {
-                                "then": "Non si possono smaltire le acque grigie qui"
-                            },
-                            "0": {
-                                "then": "Si possono smaltire le acque grigie qui"
-                            }
-                        },
-                        "question": "Si possono smaltire le acque grigie qui?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "1": {
-                                "then": "Questo luogo non ha un punto per l'approvvigionamento di acqua"
-                            },
-                            "0": {
-                                "then": "Questo luogo ha un punto per l'approvvigionamento di acqua"
-                            }
-                        },
-                        "question": "Questo luogo ha un punto per l'approvvigionamento di acqua?"
-                    },
-                    "2": {
-                        "question": "Qual è la tariffa di questo luogo?",
-                        "render": "Ha una tariffa di {charge}"
-                    },
-                    "1": {
-                        "mappings": {
-                            "1": {
-                                "then": "È gratuito"
-                            },
-                            "0": {
-                                "then": "A pagamento"
-                            }
-                        },
-                        "question": "Questo luogo è a pagamento?"
-                    }
-                },
                 "title": {
+                    "render": "Luogo di sversamento {name}",
                     "mappings": {
                         "0": {
                             "then": "Luogo di sversamento"
                         }
+                    }
+                },
+                "description": "Luoghi di sversamento delle acque reflue",
+                "tagRenderings": {
+                    "1": {
+                        "question": "Questo luogo è a pagamento?",
+                        "mappings": {
+                            "0": {
+                                "then": "A pagamento"
+                            },
+                            "1": {
+                                "then": "È gratuito"
+                            }
+                        }
                     },
-                    "render": "Luogo di sversamento {name}"
+                    "2": {
+                        "render": "Ha una tariffa di {charge}",
+                        "question": "Qual è la tariffa di questo luogo?"
+                    },
+                    "3": {
+                        "question": "Questo luogo ha un punto per l'approvvigionamento di acqua?",
+                        "mappings": {
+                            "0": {
+                                "then": "Questo luogo ha un punto per l'approvvigionamento di acqua"
+                            },
+                            "1": {
+                                "then": "Questo luogo non ha un punto per l'approvvigionamento di acqua"
+                            }
+                        }
+                    },
+                    "4": {
+                        "question": "Si possono smaltire le acque grigie qui?",
+                        "mappings": {
+                            "0": {
+                                "then": "Si possono smaltire le acque grigie qui"
+                            },
+                            "1": {
+                                "then": "Non si possono smaltire le acque grigie qui"
+                            }
+                        }
+                    },
+                    "5": {
+                        "question": "È possibile smaltire le acque del WC chimico qui?",
+                        "mappings": {
+                            "0": {
+                                "then": "È possibile smaltire le acque del WC chimico qui"
+                            },
+                            "1": {
+                                "then": "Non è possibile smaltire le acque del WC chimico qui"
+                            }
+                        }
+                    },
+                    "6": {
+                        "question": "Chi può utilizzare questo luogo di sversamento?",
+                        "mappings": {
+                            "0": {
+                                "then": "Servono una chiave o un codice di accesso"
+                            },
+                            "1": {
+                                "then": "È obbligatorio essere un cliente di questo campeggio o di questa area camper"
+                            },
+                            "2": {
+                                "then": "Chiunque può farne uso"
+                            },
+                            "3": {
+                                "then": "Chiunque può farne uso"
+                            }
+                        }
+                    },
+                    "7": {
+                        "render": "Questo luogo è parte della rete {network}",
+                        "question": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "luogo di sversamento delle acque reflue",
+                        "description": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità."
+                    }
                 }
             }
         },
         "roamingRenderings": {
+            "0": {
+                "render": "Questo luogo è gestito da {operator}",
+                "question": "Chi gestisce questo luogo?"
+            },
             "1": {
+                "question": "Questo luogo fornisce corrente elettrica?",
                 "mappings": {
-                    "1": {
-                        "then": "Questo luogo non fornisce corrente elettrica"
-                    },
                     "0": {
                         "then": "Questo luogo fornisce corrente elettrica"
+                    },
+                    "1": {
+                        "then": "Questo luogo non fornisce corrente elettrica"
                     }
-                },
-                "question": "Questo luogo fornisce corrente elettrica?"
-            },
-            "0": {
-                "question": "Chi gestisce questo luogo?",
-                "render": "Questo luogo è gestito da {operator}"
+                }
             }
         }
     },
-    "trees": {
-        "title": "Alberi",
-        "shortDescription": "Mappa tutti gli alberi",
-        "description": "Mappa tutti gli alberi!"
-    },
-    "hailhydrant": {
+    "charging_stations": {
+        "title": "Stazioni di ricarica",
+        "shortDescription": "Una mappa mondiale delle stazioni di ricarica",
+        "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
         "layers": {
-            "2": {
-                "tagRenderings": {
-                    "1": {
-                        "question": " Qual è il nome della via in cui si trova la caserma?"
-                    },
-                    "0": {
-                        "render": "Questa caserma si chiama {name}.",
-                        "question": "Come si chiama questa caserma dei vigili del fuoco?"
-                    }
-                },
-                "description": "Livello che mostra le caserme dei vigili del fuoco.",
-                "title": {
-                    "render": "Caserma dei vigili del fuoco"
-                },
-                "name": "Mappa delle caserme dei vigili del fuoco"
-            },
             "0": {
+                "name": "Stazioni di ricarica",
+                "title": {
+                    "render": "Stazione di ricarica"
+                },
+                "description": "Una stazione di ricarica",
                 "tagRenderings": {
-                    "1": {
+                    "5": {
+                        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
+                    },
+                    "6": {
+                        "render": "{network}",
+                        "question": "A quale rete appartiene questa stazione di ricarica?",
                         "mappings": {
                             "0": {
-                                "then": "Il tipo di idrante è sconosciuto."
-                            }
-                        },
-                        "render": " Tipo di idrante: {fire_hydrant:type}",
-                        "question": "Di che tipo è questo idrante?"
-                    },
-                    "0": {
-                        "mappings": {
+                                "then": "Non appartiene a una rete"
+                            },
+                            "1": {
+                                "then": "AeroVironment"
+                            },
                             "2": {
-                                "then": "L'idrante è rosso."
+                                "then": "Blink"
+                            },
+                            "3": {
+                                "then": "eVgo"
                             }
                         }
                     }
@@ -367,217 +363,221 @@
         }
     },
     "climbing": {
+        "title": "Mappa aperta per le arrampicate",
         "layers": {
             "2": {
-                "tagRenderings": {
-                    "5": {
-                        "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
-                        "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?"
-                    },
-                    "4": {
-                        "render": "Questo percorso è lungo {canonical(climbing:length)}",
-                        "question": "Quanto è lunga questa via di arrampicata (in metri)?"
-                    },
-                    "3": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questa via di arrampicata non ha un nome"
-                            }
-                        },
-                        "question": "Come si chiama questa via di arrampicata?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
                 "title": {
+                    "render": "Via di arrampicata",
                     "mappings": {
                         "0": {
                             "then": "Via di arrampicata <strong>{name}</strong>"
                         }
-                    },
-                    "render": "Via di arrampicata"
-                }
-            }
-        },
-        "title": "Mappa aperta per le arrampicate"
-    },
-    "charging_stations": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "6": {
-                        "mappings": {
-                            "3": {
-                                "then": "eVgo"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "0": {
-                                "then": "Non appartiene a una rete"
-                            }
-                        },
-                        "question": "A quale rete appartiene questa stazione di ricarica?",
-                        "render": "{network}"
-                    },
-                    "5": {
-                        "question": "Quali sono gli orari di apertura di questa stazione di ricarica?"
                     }
                 },
-                "description": "Una stazione di ricarica",
-                "title": {
-                    "render": "Stazione di ricarica"
-                },
-                "name": "Stazioni di ricarica"
-            }
-        },
-        "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
-        "shortDescription": "Una mappa mondiale delle stazioni di ricarica",
-        "title": "Stazioni di ricarica"
-    },
-    "bookcases": {
-        "title": "Mappa libera delle microbiblioteche",
-        "description": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre."
-    },
-    "fritures": {
-        "layers": {
-            "0": {
                 "tagRenderings": {
-                    "4": {
-                        "question": "Qual è il numero di telefono?"
-                    },
                     "3": {
-                        "question": "Qual è il sito web di questo negozio?",
-                        "render": "<a href='{website}'>{website}</a>"
+                        "render": "<strong>{name}</strong>",
+                        "question": "Come si chiama questa via di arrampicata?",
+                        "mappings": {
+                            "0": {
+                                "then": "Questa via di arrampicata non ha un nome"
+                            }
+                        }
+                    },
+                    "4": {
+                        "question": "Quanto è lunga questa via di arrampicata (in metri)?",
+                        "render": "Questo percorso è lungo {canonical(climbing:length)}"
+                    },
+                    "5": {
+                        "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
+                        "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
                     }
                 }
             }
         }
     },
-    "facadegardens": {
-        "layers": {
-            "0": {
-                "presets": {
-                    "0": {
-                        "description": "Aggiungi un giardino verticale",
-                        "title": "giardino verticale"
-                    }
-                },
-                "tagRenderings": {
-                    "7": {
-                        "question": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
-                        "render": "Maggiori dettagli: {description}"
-                    },
-                    "6": {
-                        "mappings": {
-                            "3": {
-                                "then": "Ci sono piante tappezzanti"
-                            },
-                            "2": {
-                                "then": "Ci sono arbusti"
-                            },
-                            "1": {
-                                "then": "Ci sono piante da fiore"
-                            },
-                            "0": {
-                                "then": "Ci sono viti"
-                            }
-                        },
-                        "question": "Che tipi di piante sono presenti qui?"
-                    },
-                    "5": {
-                        "question": "Ci sono piante commestibili?",
-                        "mappings": {
-                            "1": {
-                                "then": "Non ci sono piante commestibili"
-                            },
-                            "0": {
-                                "then": "Ci sono piante commestibili"
-                            }
-                        }
-                    },
-                    "4": {
-                        "question": "Quando è stato realizzato il giardino? (è sufficiente l'anno)",
-                        "render": "Data di realizzazione del giardino: {start_date}"
-                    },
-                    "3": {
-                        "mappings": {
-                            "1": {
-                                "then": "Non c'è un contenitore per raccogliere la pioggia"
-                            },
-                            "0": {
-                                "then": "C'è un contenitore per raccogliere la pioggia"
-                            }
-                        }
-                    },
-                    "2": {
-                        "question": "Il giardino è al sole o in ombra?",
-                        "mappings": {
-                            "2": {
-                                "then": "Il giardino è in ombra"
-                            },
-                            "1": {
-                                "then": "Il giardino è parzialmente in ombra"
-                            },
-                            "0": {
-                                "then": "Il giardino è completamente illuminato dal sole"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
-        "title": "Giardini verticali"
-    },
     "fietsstraten": {
-        "layers": {
-            "2": {
-                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
-                "title": {
-                    "render": "Strada"
-                },
-                "name": "Tutte le strade"
-            },
-            "1": {
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name} diventerà presto una strada ciclabile"
-                        }
-                    },
-                    "render": "Futura strada ciclabile"
-                },
-                "description": "Questa strada diventerà presto una strada ciclabile",
-                "name": "Futura strada ciclabile"
-            },
-            "0": {
-                "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta",
-                "name": "Strade ciclabili"
-            }
-        },
         "roamingRenderings": {
-            "1": {
-                "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}",
-                "question": "Questa strada diventerà una strada ciclabile quando?"
-            },
             "0": {
                 "mappings": {
                     "3": {
                         "then": "Questa strada non è una strada ciclabile"
                     }
                 }
+            },
+            "1": {
+                "question": "Questa strada diventerà una strada ciclabile quando?",
+                "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
+            }
+        },
+        "layers": {
+            "0": {
+                "name": "Strade ciclabili",
+                "description": "Una strada ciclabile è una strada in cui i veicoli a motore non possono sorpassare le persone in bicicletta"
+            },
+            "1": {
+                "name": "Futura strada ciclabile",
+                "description": "Questa strada diventerà presto una strada ciclabile",
+                "title": {
+                    "render": "Futura strada ciclabile",
+                    "mappings": {
+                        "0": {
+                            "then": "{name} diventerà presto una strada ciclabile"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "name": "Tutte le strade",
+                "description": "Livello per contrassegnare tutte le strade come strade ciclabili",
+                "title": {
+                    "render": "Strada"
+                }
             }
         }
     },
-    "drinking_water": {
-        "description": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi",
-        "title": "Acqua potabile"
-    },
     "cyclofix": {
-        "description": "Questa mappa offre a chi va in bici una soluzione semplice per trovare tutte le infrastrutture di cui ha bisogno.<br><br>Puoi tracciare la tua posizione esatta (solo su mobile) e selezionare i livelli che ti interessano nell'angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare punti di interesse alla mappa e aggiungere nuove informazioni rispendendo alle domande.<br><br>Tutte le modifiche che apporterai saranno automaticamente salvate nel database mondiale di OpenStreetMap e potranno essere liberamente riutilizzate da tutti e tutte.<br><br>Per maggiori informazioni sul progetto ciclofix, visita <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - una mappa libera per chi va in bici"
+        "title": "Cyclofix - una mappa libera per chi va in bici",
+        "description": "Questa mappa offre a chi va in bici una soluzione semplice per trovare tutte le infrastrutture di cui ha bisogno.<br><br>Puoi tracciare la tua posizione esatta (solo su mobile) e selezionare i livelli che ti interessano nell'angolo in basso a sinistra. Puoi anche usare questo strumento per aggiungere o modificare punti di interesse alla mappa e aggiungere nuove informazioni rispendendo alle domande.<br><br>Tutte le modifiche che apporterai saranno automaticamente salvate nel database mondiale di OpenStreetMap e potranno essere liberamente riutilizzate da tutti e tutte.<br><br>Per maggiori informazioni sul progetto ciclofix, visita <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
+    },
+    "drinking_water": {
+        "title": "Acqua potabile",
+        "description": "Questa mappa mostra tutti i luoghi in cui è disponibile acqua potabile ed è possibile aggiungerne di nuovi"
+    },
+    "facadegardens": {
+        "title": "Giardini verticali",
+        "shortDescription": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "2": {
+                        "mappings": {
+                            "0": {
+                                "then": "Il giardino è completamente illuminato dal sole"
+                            },
+                            "1": {
+                                "then": "Il giardino è parzialmente in ombra"
+                            },
+                            "2": {
+                                "then": "Il giardino è in ombra"
+                            }
+                        },
+                        "question": "Il giardino è al sole o in ombra?"
+                    },
+                    "3": {
+                        "mappings": {
+                            "0": {
+                                "then": "C'è un contenitore per raccogliere la pioggia"
+                            },
+                            "1": {
+                                "then": "Non c'è un contenitore per raccogliere la pioggia"
+                            }
+                        }
+                    },
+                    "4": {
+                        "render": "Data di realizzazione del giardino: {start_date}",
+                        "question": "Quando è stato realizzato il giardino? (è sufficiente l'anno)"
+                    },
+                    "5": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ci sono piante commestibili"
+                            },
+                            "1": {
+                                "then": "Non ci sono piante commestibili"
+                            }
+                        },
+                        "question": "Ci sono piante commestibili?"
+                    },
+                    "6": {
+                        "question": "Che tipi di piante sono presenti qui?",
+                        "mappings": {
+                            "0": {
+                                "then": "Ci sono viti"
+                            },
+                            "1": {
+                                "then": "Ci sono piante da fiore"
+                            },
+                            "2": {
+                                "then": "Ci sono arbusti"
+                            },
+                            "3": {
+                                "then": "Ci sono piante tappezzanti"
+                            }
+                        }
+                    },
+                    "7": {
+                        "render": "Maggiori dettagli: {description}",
+                        "question": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "giardino verticale",
+                        "description": "Aggiungi un giardino verticale"
+                    }
+                }
+            }
+        }
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "3": {
+                        "render": "<a href='{website}'>{website}</a>",
+                        "question": "Qual è il sito web di questo negozio?"
+                    },
+                    "4": {
+                        "question": "Qual è il numero di telefono?"
+                    }
+                }
+            }
+        }
+    },
+    "hailhydrant": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "0": {
+                        "mappings": {
+                            "2": {
+                                "then": "L'idrante è rosso."
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "Di che tipo è questo idrante?",
+                        "render": " Tipo di idrante: {fire_hydrant:type}",
+                        "mappings": {
+                            "0": {
+                                "then": "Il tipo di idrante è sconosciuto."
+                            }
+                        }
+                    }
+                }
+            },
+            "2": {
+                "name": "Mappa delle caserme dei vigili del fuoco",
+                "title": {
+                    "render": "Caserma dei vigili del fuoco"
+                },
+                "description": "Livello che mostra le caserme dei vigili del fuoco.",
+                "tagRenderings": {
+                    "0": {
+                        "question": "Come si chiama questa caserma dei vigili del fuoco?",
+                        "render": "Questa caserma si chiama {name}."
+                    },
+                    "1": {
+                        "question": " Qual è il nome della via in cui si trova la caserma?"
+                    }
+                }
+            }
+        }
+    },
+    "trees": {
+        "title": "Alberi",
+        "shortDescription": "Mappa tutti gli alberi",
+        "description": "Mappa tutti gli alberi!"
     }
 }

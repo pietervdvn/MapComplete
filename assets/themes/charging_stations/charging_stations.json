@@ -5,19 +5,22 @@
     "id": "Stasiun pengisian daya",
     "ru": "Зарядные станции",
     "ja": "充電ステーション",
-    "zh_Hant": "充電站"
+    "zh_Hant": "充電站",
+    "it": "Stazioni di ricarica"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
     "ru": "Карта зарядных станций по всему миру",
     "ja": "充電ステーションの世界地図",
-    "zh_Hant": "全世界的充電站地圖"
+    "zh_Hant": "全世界的充電站地圖",
+    "it": "Una mappa mondiale delle stazioni di ricarica"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
     "ru": "На этой карте вы можно найти и отметить информацию о зарядных станциях",
     "ja": "このオープンマップでは充電ステーションに関する情報を見つけてマークすることができます",
-    "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊"
+    "zh_Hant": "在這份開放地圖上，你可以尋找與標示充電站的資訊",
+    "it": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni"
   },
   "language": [
     "en",
@@ -25,6 +28,7 @@
     "ru",
     "ja",
     "zh_Hant",
+    "it",
     "nb_NO"
   ],
   "maintainer": "",
@@ -43,7 +47,8 @@
         "ru": "Зарядные станции",
         "ja": "充電ステーション",
         "zh_Hant": "充電站",
-        "nb_NO": "Ladestasjoner"
+        "nb_NO": "Ladestasjoner",
+        "it": "Stazioni di ricarica"
       },
       "minzoom": 10,
       "source": {
@@ -59,7 +64,8 @@
           "ru": "Зарядная станция",
           "ja": "充電ステーション",
           "zh_Hant": "充電站",
-          "nb_NO": "Ladestasjon"
+          "nb_NO": "Ladestasjon",
+          "it": "Stazione di ricarica"
         }
       },
       "description": {
@@ -67,7 +73,8 @@
         "ru": "Зарядная станция",
         "ja": "充電ステーション",
         "zh_Hant": "充電站",
-        "nb_NO": "En ladestasjon"
+        "nb_NO": "En ladestasjon",
+        "it": "Una stazione di ricarica"
       },
       "tagRenderings": [
         "images",
@@ -199,7 +206,8 @@
             "ru": "В какое время работает эта зарядная станция?",
             "ja": "この充電ステーションはいつオープンしますか?",
             "zh_Hant": "何時是充電站開放使用的時間？",
-            "nb_NO": "Når åpnet denne ladestasjonen?"
+            "nb_NO": "Når åpnet denne ladestasjonen?",
+            "it": "Quali sono gli orari di apertura di questa stazione di ricarica?"
           },
           "mappings": [
             {
@@ -215,13 +223,15 @@
             "ru": "{network}",
             "ja": "{network}",
             "zh_Hant": "{network}",
-            "nb_NO": "{network}"
+            "nb_NO": "{network}",
+            "it": "{network}"
           },
           "question": {
             "en": "What network of this charging station under?",
             "ru": "К какой сети относится эта станция?",
             "ja": "この充電ステーションの運営チェーンはどこですか?",
-            "zh_Hant": "充電站所屬的網路是？"
+            "zh_Hant": "充電站所屬的網路是？",
+            "it": "A quale rete appartiene questa stazione di ricarica?"
           },
           "freeform": {
             "key": "network"
@@ -237,7 +247,8 @@
                 "en": "Not part of a bigger network",
                 "ru": "Не является частью более крупной сети",
                 "ja": "大規模な運営チェーンの一部ではない",
-                "zh_Hant": "不屬於大型網路"
+                "zh_Hant": "不屬於大型網路",
+                "it": "Non appartiene a una rete"
               }
             },
             {
@@ -250,7 +261,8 @@
                 "en": "AeroVironment",
                 "ru": "AeroVironment",
                 "ja": "AeroVironment",
-                "zh_Hant": "AeroVironment"
+                "zh_Hant": "AeroVironment",
+                "it": "AeroVironment"
               }
             },
             {
@@ -263,7 +275,8 @@
                 "en": "Blink",
                 "ru": "Blink",
                 "ja": "Blink",
-                "zh_Hant": "Blink"
+                "zh_Hant": "Blink",
+                "it": "Blink"
               }
             },
             {
@@ -276,7 +289,8 @@
                 "en": "eVgo",
                 "ru": "eVgo",
                 "ja": "eVgo",
-                "zh_Hant": "eVgo"
+                "zh_Hant": "eVgo",
+                "it": "eVgo"
               }
             }
           ]
