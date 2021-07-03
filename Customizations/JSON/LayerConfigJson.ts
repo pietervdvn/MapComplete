@@ -1,5 +1,6 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
+import {DeleteConfigJson} from "./DeleteConfigJson";
 
 /**
  * Configuration for a single layer
@@ -14,7 +15,7 @@ export interface LayerConfigJson {
     /**
      * The name of this layer
      * Used in the layer control panel and the 'Personal theme'.
-     * 
+     *
      * If not given, will be hidden (and thus not toggable) in the layer control
      */
     name?: string | any
@@ -31,28 +32,28 @@ export interface LayerConfigJson {
      * There are some options:
      *
      * # Query OSM directly
-     * source: {osmTags: "key=value"} 
+     * source: {osmTags: "key=value"}
      *  will fetch all objects with given tags from OSM.
      *  Currently, this will create a query to overpass and fetch the data - in the future this might fetch from the OSM API
-     * 
+     *
      * # Query OSM Via the overpass API with a custom script
      * source: {overpassScript: "<custom overpass tags>"} when you want to do special things. _This should be really rare_.
      *      This means that the data will be pulled from overpass with this script, and will ignore the osmTags for the query
      *      However, for the rest of the pipeline, the OsmTags will _still_ be used. This is important to enable layers etc...
      *
      *
-     * # A single geojson-file 
-     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"} 
+     * # A single geojson-file
+     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
      *  fetches a geojson from a third party source
-     *  
+     *
      * # A tiled geojson source
-     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14} 
+     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
      *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
      *
-     * 
-     * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too 
-     * 
-     * 
+     *
+     * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too
+     *
+     *
      * NOTE: the previous format was 'overpassTags: AndOrTagCOnfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
@@ -123,7 +124,7 @@ export interface LayerConfigJson {
      * As a result, on could use a generic pin, then overlay it with a specific icon.
      * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
      * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
-     * 
+     *
      */
     icon?: string | TagRenderingConfigJson;
 
@@ -148,14 +149,14 @@ export interface LayerConfigJson {
      */
     rotation?: string | TagRenderingConfigJson;
     /**
-     * A HTML-fragment that is shown below the icon, for example: 
+     * A HTML-fragment that is shown below the icon, for example:
      * <div style="background: white; display: block">{name}</div>
-     * 
+     *
      * If the icon is undefined, then the label is shown in the center of the feature.
      * Note that, if the wayhandling hides the icon then no label is shown as well.
      */
-    label?: string | TagRenderingConfigJson ;
-    
+    label?: string | TagRenderingConfigJson;
+
     /**
      * The color for way-elements and SVG-elements.
      * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead
@@ -230,7 +231,54 @@ export interface LayerConfigJson {
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
      *
      */
-    tagRenderings?: (string | TagRenderingConfigJson) []
+    tagRenderings?: (string | TagRenderingConfigJson) [],
 
+    /**
+     * This block defines under what circumstances the delete dialog is shown for objects of this layer.
+     * If set, a dialog is shown to the user to (soft) delete the point.
+     * The dialog is built to be user friendly and to prevent mistakes.
+     * If deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.
+     *
+     * To configure, the following values are possible:
+     *
+     * - false: never ever show the delete button
+     * - true: show the default delete button
+     * - undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future
+     * - or: a hash with options (see below)
+     *
+     *  The delete dialog
+     *  =================
+     *
+     *
+     *
+     #### Hard deletion if enough experience
+
+     A feature can only be deleted from OpenStreetMap by mapcomplete if:
+
+     - It is a node
+     - No ways or relations use the node
+     - The logged-in user has enough experience OR the user is the only one to have edited the point previously
+     - The logged-in user has no unread messages (or has a ton of experience)
+     - The user did not select one of the 'non-delete-options' (see below)
+
+     In all other cases, a 'soft deletion' is used.
+
+     #### Soft deletion
+
+     A 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.
+     This makes it look like it was deleted, without doing damage. A fixme will be added to the point.
+
+     Note that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme
+
+     #### No-delete options
+
+     In some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed "because the path is on their private property").
+     However, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice "hey, there is a path missing here! Let me redraw it in OSM!)
+
+     The correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.
+     A no-delete option is offered as 'reason to delete it', but secretly retags.
+
+     */
+    deletion?: boolean | DeleteConfigJson
 
 }

@@ -1,5 +1,6 @@
-import $ from "jquery"
 import State from "../../State";
+import {Utils} from "../../Utils";
+
 export class Geocoding {
 
     private static readonly host = "https://nominatim.openstreetmap.org/search?";
@@ -9,17 +10,12 @@ export class Geocoding {
                   osm_type: string, osm_id: string}[]) => void),
                   onFail: (() => void)) {
         const b = State.state.leafletMap.data.getBounds();
-        console.log(b);
-        $.getJSON(
-            Geocoding.host + "format=json&limit=1&viewbox=" + 
+        const url = Geocoding.host + "format=json&limit=1&viewbox=" +
             `${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}`+
-            "&accept-language=nl&q=" + query,
-            function (data) {
-                handleResult(data);
-            }).fail(() => {
-            onFail();
-        });
+            "&accept-language=nl&q=" + query;
+        Utils.downloadJson(
+            url)
+            .then(handleResult)
+            .catch(onFail);
     }
-
-
 }

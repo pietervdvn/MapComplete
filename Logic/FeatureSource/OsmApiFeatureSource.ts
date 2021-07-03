@@ -3,7 +3,6 @@ import {UIEventSource} from "../UIEventSource";
 import {OsmObject} from "../Osm/OsmObject";
 import State from "../../State";
 import {Utils} from "../../Utils";
-import Loc from "../../Models/Loc";
 
 
 export default class OsmApiFeatureSource implements FeatureSource {
@@ -21,10 +20,10 @@ export default class OsmApiFeatureSource implements FeatureSource {
             return;
         }
         console.debug("Downloading", id, "from the OSM-API")
-        OsmObject.DownloadObject(id, (element, meta) => {
+        OsmObject.DownloadObject(id).addCallbackAndRunD(element => {
             const geojson = element.asGeoJson();
             geojson.id = geojson.properties.id;
-            this.features.setData([{feature: geojson, freshness: meta["_last_edit:timestamp"]}])
+            this.features.setData([{feature: geojson, freshness: element.timestamp}])
         })
     }
 

@@ -1,8 +1,8 @@
-import * as $ from "jquery"
 import * as OsmToGeoJson from "osmtogeojson";
 import Bounds from "../../Models/Bounds";
 import {TagsFilter} from "../Tags/TagsFilter";
 import ExtractRelations from "./ExtractRelations";
+import {Utils} from "../../Utils";
 
 /**
  * Interfaces overpass to get all the latest data
@@ -27,14 +27,8 @@ export class Overpass {
             console.log("Using testing URL")
             query = Overpass.testUrl;
         }
-        $.getJSON(query,
-            function (json, status) {
-                if (status !== "success") {
-                    console.log("Query failed")
-                    onFail(status);
-                    return;
-                }
-
+        Utils.downloadJson(query)
+            .then(json => {
                 if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
                     console.log("Timeout or other runtime error");
                     onFail("Runtime error (timeout)")
@@ -47,8 +41,7 @@ export class Overpass {
                 const osmTime = new Date(json.osm3s.timestamp_osm_base);
 
                 continuation(geojson, osmTime);
-
-            }).fail(onFail)
+            }).catch(onFail)
     }
 
     buildQuery(bbox: string): string {

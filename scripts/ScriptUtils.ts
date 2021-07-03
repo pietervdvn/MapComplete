@@ -1,5 +1,6 @@
 import {lstatSync, readdirSync, readFileSync} from "fs";
 import {Utils} from "../Utils";
+
 Utils.runningFromConsole = true
 import * as https from "https";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
@@ -52,8 +53,15 @@ export default class ScriptUtils {
         return new Promise((resolve, reject) => {
             try {
 
-
-                https.get(url, (res) => {
+                const urlObj = new URL(url)
+                https.get({
+                    host: urlObj.host,
+                    path: urlObj.pathname,
+                    port: urlObj.port,
+                    headers: {
+                        "accept": "application/json"
+                    }
+                }, (res) => {
                     const parts: string[] = []
                     res.setEncoding('utf8');
                     res.on('data', function (chunk) {

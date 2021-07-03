@@ -30,23 +30,27 @@ import {Unit} from "../../Customizations/JSON/Denomination";
  * Note that the value _migh_ already be known, e.g. when selected or when changing the value
  */
 export default class TagRenderingQuestion extends Combine {
-    
+
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
-                units: Unit[],
-                afterSave?: () => void,
-                cancelButton?: BaseUIElement
+                options?: {
+                    units?: Unit[],
+                    afterSave?: () => void,
+                    cancelButton?: BaseUIElement,
+                    saveButtonConstr?: (src: UIEventSource<TagsFilter>) => BaseUIElement,
+                    bottomText?: (src: UIEventSource<TagsFilter>) => BaseUIElement
+                }
     ) {
         if (configuration === undefined) {
             throw "A question is needed for a question visualization"
         }
-        const applicableUnit = (units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
+        options = options ?? {}
+        const applicableUnit = (options.units ?? []).filter(unit => unit.isApplicableToKey(configuration.freeform?.key))[0];
         const question = new SubstitutedTranslation(configuration.question, tags)
             .SetClass("question-text");
-       
 
 
-        const inputElement = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
+        const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
         const save = () => {
             const selection = inputElement.GetValue().data;
             console.log("Save button clicked, the tags are is", selection)
@@ -55,48 +59,54 @@ export default class TagRenderingQuestion extends Combine {
                     .addTag(tags.data.id, selection, tags);
             }
 
-            if (afterSave) {
-                afterSave();
+            if (options.afterSave) {
+                options.afterSave();
             }
         }
 
+        if (options.saveButtonConstr === undefined) {
+            options.saveButtonConstr = v => new SaveButton(v,
+                State.state?.osmConnection)
+                .onClick(save)
+        }
 
-        const saveButton = new SaveButton(inputElement.GetValue(),
-            State.state?.osmConnection)
-            .onClick(save)
+        const saveButton = options.saveButtonConstr(inputElement.GetValue())
 
-
-      const  appliedTags = new VariableUiElement(
-            inputElement.GetValue().map(
-                (tagsFilter: TagsFilter) => {
-                    const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
-                    if (csCount < Constants.userJourney.tagsVisibleAt) {
-                        return "";
+        let bottomTags: BaseUIElement;
+        if (options.bottomText !== undefined) {
+            bottomTags = options.bottomText(inputElement.GetValue())
+        } else {
+            bottomTags = new VariableUiElement(
+                inputElement.GetValue().map(
+                    (tagsFilter: TagsFilter) => {
+                        const csCount = State.state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
+                        if (csCount < Constants.userJourney.tagsVisibleAt) {
+                            return "";
+                        }
+                        if (tagsFilter === undefined) {
+                            return Translations.t.general.noTagsSelected.Clone().SetClass("subtle");
+                        }
+                        if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
+                            const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
+                            return new FixedUiElement(tagsStr).SetClass("subtle");
+                        }
+                        return tagsFilter.asHumanString(true, true, tags.data);
                     }
-                    if (tagsFilter === undefined) {
-                        return Translations.t.general.noTagsSelected.Clone().SetClass("subtle");
-                    }
-                    if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                        const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
-                        return new FixedUiElement(tagsStr).SetClass("subtle");
-                    }
-                    return tagsFilter.asHumanString(true, true, tags.data);
-                }
-            )
-        ).SetClass("block break-all")
-
-       super ([
+                )
+            ).SetClass("block break-all")
+        }
+        super([
             question,
-              inputElement,
-            cancelButton,
+            inputElement,
+            options.cancelButton,
             saveButton,
-            appliedTags]
+            bottomTags]
         )
-         this   .SetClass("question")
+        this.SetClass("question")
 
     }
 
-    private static GenerateInputElement(configuration: TagRenderingConfig, applicableUnit: Unit, tagsSource: UIEventSource< any>): InputElement<TagsFilter> {
+    private static GenerateInputElement(configuration: TagRenderingConfig, applicableUnit: Unit, tagsSource: UIEventSource<any>): InputElement<TagsFilter> {
         let inputEls: InputElement<TagsFilter>[];
 
         const mappings = (configuration.mappings ?? [])
@@ -105,7 +115,7 @@ export default class TagRenderingQuestion extends Combine {
                     return false;
                 }
                 return !(typeof (mapping.hideInAnswer) !== "boolean" && mapping.hideInAnswer.matchesProperties(tagsSource.data));
-                
+
             })
 
 
@@ -255,10 +265,10 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateMappingElement(
         tagsSource: UIEventSource<any>,
         mapping: {
-        if: TagsFilter,
-        then: Translation,
-        hideInAnswer: boolean | TagsFilter
-    }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
+            if: TagsFilter,
+            then: Translation,
+            hideInAnswer: boolean | TagsFilter
+        }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging = mapping.if;
         if (ifNot.length > 0) {

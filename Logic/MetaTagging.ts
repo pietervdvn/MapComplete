@@ -51,7 +51,7 @@ export default class MetaTagging {
             layerFuncs.set(layer.id, this.createRetaggingFunc(layer));
         }
 
-        allKnownFeatures.addCallbackAndRun(newFeatures => {
+        allKnownFeatures.addCallbackAndRunD(newFeatures => {
 
             const featuresPerLayer = new Map<string, any[]>();
             const allFeatures = Array.from(new Set(features.concat(newFeatures)))

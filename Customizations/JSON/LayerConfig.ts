@@ -17,6 +17,7 @@ import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {Unit} from "./Denomination";
+import DeleteConfig from "./DeleteConfig";
 
 export default class LayerConfig {
 
@@ -47,6 +48,7 @@ export default class LayerConfig {
     dashArray: TagRenderingConfig;
     wayHandling: number;
     public readonly units: Unit[];
+    public readonly deletion: DeleteConfig | null
 
     presets: {
         title: Translation,
@@ -240,6 +242,15 @@ export default class LayerConfig {
         this.width = tr("width", "7");
         this.rotation = tr("rotation", "0");
         this.dashArray = tr("dashArray", "");
+        
+        this.deletion = null;
+        if(json.deletion === true){
+            json.deletion = {
+            }
+        }
+        if(json.deletion !== undefined && json.deletion !== false){
+            this.deletion = new DeleteConfig(json.deletion, `${context}.deletion`)
+        }
 
 
         if (json["showIf"] !== undefined) {

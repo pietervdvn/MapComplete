@@ -45,7 +45,8 @@ if (location.href.indexOf("buurtnatuur.be") >= 0) {
 
 
 let testing: UIEventSource<string>;
-if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+if (QueryParameters.GetQueryParameter("backend", undefined).data !== "osm-test" &&
+    (location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
     testing = QueryParameters.GetQueryParameter("test", "true");
     // Set to true if testing and changes should NOT be saved
     testing.setData(testing.data ?? "true")

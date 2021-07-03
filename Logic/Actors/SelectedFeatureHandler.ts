@@ -61,7 +61,7 @@ export default class SelectedFeatureHandler {
             return; // No valid feature selected
         }
         // We should have a valid osm-ID and zoom to it
-        OsmObject.DownloadObject(hash, (element: OsmObject, meta: OsmObjectMeta) => {
+        OsmObject.DownloadObject(hash).addCallbackAndRunD(element => {
             const centerpoint = element.centerpoint();
             console.log("Zooming to location for select point: ", centerpoint)
             location.data.lat = centerpoint[0]

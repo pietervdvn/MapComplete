@@ -154,10 +154,7 @@ export class InitUiElements {
         }
 
         State.state.osmConnection.userDetails.map((userDetails: UserDetails) => userDetails?.home)
-            .addCallbackAndRun(home => {
-                if (home === undefined) {
-                    return;
-                }
+            .addCallbackAndRunD(home => {
                 const color = getComputedStyle(document.body).getPropertyValue("--subtle-detail-color")
                 const icon = L.icon({
                     iconUrl: Img.AsData(Svg.home_white_bg.replace(/#ffffff/g, color)),
@@ -286,10 +283,8 @@ export class InitUiElements {
             isOpened.setData(false);
         })
 
-        State.state.selectedElement.addCallbackAndRun(selected => {
-            if (selected !== undefined) {
+        State.state.selectedElement.addCallbackAndRunD(_ => {
                 isOpened.setData(false);
-            }
         })
         isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "" || Hash.hash.data == "welcome")
     }
@@ -337,11 +332,9 @@ export class InitUiElements {
                 copyrightButton.isEnabled.setData(false);
             });
 
-        State.state.selectedElement.addCallbackAndRun(feature => {
-            if (feature !== undefined) {
+        State.state.selectedElement.addCallbackAndRunD(_ => {
                 layerControlButton.isEnabled.setData(false);
                 copyrightButton.isEnabled.setData(false);
-            }
         })
 
     }

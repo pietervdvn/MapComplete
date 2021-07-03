@@ -1,7 +1,6 @@
 import TagRenderingConfig from "./JSON/TagRenderingConfig";
 import * as questions from "../assets/tagRenderings/questions.json";
 import * as icons from "../assets/tagRenderings/icons.json";
-import {Utils} from "../Utils";
 
 export default class SharedTagRenderings {
 
@@ -12,9 +11,6 @@ export default class SharedTagRenderings {
         const dict = new Map<string, TagRenderingConfig>();
 
         function add(key, store) {
-            if(Utils.runningFromConsole){
-                return;
-            }
             try {
                 dict.set(key, new TagRenderingConfig(store[key], undefined, `SharedTagRenderings.${key}`))
             } catch (e) {

@@ -23,10 +23,7 @@ export default class SimpleDatePicker extends InputElement<string> {
         }
 
 
-        this.value.addCallbackAndRun(v => {
-            if(v === undefined){
-                return;
-            }
+        this.value.addCallbackAndRunD(v => {
             el.value = v;
         });
 

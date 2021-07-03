@@ -1,8 +1,7 @@
 import LayoutConfig from "./JSON/LayoutConfig";
 import AllKnownLayers from "./AllKnownLayers";
 import * as known_themes from "../assets/generated/known_layers_and_themes.json"
-import {LayoutConfigJson} from "./JSON/LayoutConfigJson";
-import * as all_layouts from "../assets/generated/known_layers_and_themes.json"
+
 export class AllKnownLayouts {
 
 

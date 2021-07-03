@@ -25,7 +25,7 @@ import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import BaseLayer from "../Models/BaseLayer";
 
-export interface SpecialVisualization{
+export interface SpecialVisualization {
     funcName: string,
     constr: ((state: State, tagSource: UIEventSource<any>, argument: string[]) => BaseUIElement),
     docs: string,
@@ -36,6 +36,12 @@ export interface SpecialVisualization{
 export default class SpecialVisualizations {
 
 
+    static constructMiniMap: (options?: {
+        background?: UIEventSource<BaseLayer>,
+        location?: UIEventSource<Loc>,
+        allowMoving?: boolean
+    }) => BaseUIElement;
+    static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
     public static specialVisualizations: SpecialVisualization[] =
         [
             {
@@ -137,7 +143,7 @@ export default class SpecialVisualizations {
                             zoom = parsed;
                         }
                     }
-                    const locationSource =new UIEventSource<Loc>({
+                    const locationSource = new UIEventSource<Loc>({
                         lat: Number(properties._lat),
                         lon: Number(properties._lon),
                         zoom: zoom
@@ -149,9 +155,9 @@ export default class SpecialVisualizations {
                             allowMoving: false
                         }
                     )
-                    
+
                     locationSource.addCallback(loc => {
-                        if(loc.zoom > zoom){
+                        if (loc.zoom > zoom) {
                             // We zoom back
                             locationSource.data.zoom = zoom;
                             locationSource.ping();
@@ -373,27 +379,7 @@ export default class SpecialVisualizations {
             }
 
         ]
-    
-    private static byName() : Map<string, SpecialVisualization>{
-        const result = new Map<string, SpecialVisualization>();
-
-        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
-            result.set(specialVisualization.funcName, specialVisualization)
-        }
-        
-        return result;
-    }
-    
-    public static specialVisualisationsByName: Map<string, SpecialVisualization> = SpecialVisualizations.byName();
-    
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
-    static constructMiniMap: (options?: {
-        background?: UIEventSource<BaseLayer>,
-        location?: UIEventSource<Loc>,
-        allowMoving?: boolean
-    }) => BaseUIElement;
-    static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
-
     private static GenHelpMessage() {
 
         const helpTexts =

@@ -64,6 +64,7 @@ export class Changes implements FeatureSource{
             if (elementTags[change.k] !== change.v) {
                 elementTags[change.k] = change.v;
                 console.log("Applied ", change.k, "=", change.v)
+                // We use 'elementTags.id' here, as we might have retrieved with the id 'node/-1' as new point, but should use the rewritten id
                 this.pending.data.push({elementId: elementTags.id, key: change.k, value: change.v});
             }
         }
@@ -228,9 +229,9 @@ export class Changes implements FeatureSource{
         }
 
         neededIds = Utils.Dedup(neededIds);
-        OsmObject.DownloadAll(neededIds, {}, (knownElements) => {
+        OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
             self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
-        });
+        })
     }
 
 }

@@ -93,6 +93,18 @@ a {
     color: var(--foreground-color);
 }
 
+.h-min {
+    height: min-content;
+}
+
+.w-min {
+    width: min-content;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
 .link-underline a {
     text-decoration: underline 1px #0078a855;; 
     color: #0078A8;

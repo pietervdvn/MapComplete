@@ -66,7 +66,7 @@ export class ImageSearcher extends UIEventSource<{ key: string, url: string }[]>
         });
 
         if (loadSpecial) {
-            tags.addCallbackAndRun(tags => {
+            tags.addCallbackAndRunD(tags => {
 
                 const wdItem = tags.wikidata;
                 if (wdItem !== undefined) {

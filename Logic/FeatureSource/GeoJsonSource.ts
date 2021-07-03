@@ -1,6 +1,5 @@
 import FeatureSource from "./FeatureSource";
 import {UIEventSource} from "../UIEventSource";
-import * as $ from "jquery";
 import Loc from "../../Models/Loc";
 import State from "../../State";
 import {Utils} from "../../Utils";
@@ -152,12 +151,8 @@ export default class GeoJsonSource implements FeatureSource {
     private LoadJSONFrom(url: string) {
         const eventSource = this.features;
         const self = this;
-        $.getJSON(url, function (json, status) {
-            if (status !== "success") {
-                self.onFail(status, url);
-                return;
-            }
-
+        Utils.downloadJson(url)
+            .then(json => {
             if (json.elements === [] && json.remarks.indexOf("runtime error") > 0) {
                 self.onFail("Runtime error (timeout)", url)
                 return;
@@ -193,7 +188,7 @@ export default class GeoJsonSource implements FeatureSource {
 
             eventSource.setData(eventSource.data.concat(newFeatures))
 
-        }).fail(msg => self.onFail(msg, url))
+        }).catch(msg => self.onFail(msg, url))
     }
 
 }

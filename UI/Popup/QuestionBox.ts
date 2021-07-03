@@ -27,17 +27,20 @@ export default class QuestionBox extends VariableUiElement {
                 }
 
                 const tagRenderingQuestions = tagRenderings
-                    .map((tagRendering, i) => new TagRenderingQuestion(tagsSource, tagRendering, units,
-                        () => {
-                            // We save
-                            skippedQuestions.ping();
-                        },
-                        Translations.t.general.skip.Clone()
-                            .SetClass("btn btn-secondary mr-3")
-                            .onClick(() => {
-                                skippedQuestions.data.push(i);
+                    .map((tagRendering, i) => new TagRenderingQuestion(tagsSource, tagRendering,
+                        {
+                            units: units,
+                            afterSave: () => {
+                                // We save
                                 skippedQuestions.ping();
-                            })
+                            },
+                            cancelButton: Translations.t.general.skip.Clone()
+                                .SetClass("btn btn-secondary mr-3")
+                                .onClick(() => {
+                                    skippedQuestions.data.push(i);
+                                    skippedQuestions.ping();
+                                })
+                        }
                     ));
 
                 const skippedQuestionsButton = Translations.t.general.skippedQuestions.Clone()

@@ -162,7 +162,7 @@ export default class SimpleMetaTagger {
             }
 
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
-            tagsSource.addCallbackAndRun(tags => {
+            tagsSource.addCallbackAndRunD(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;
                 }

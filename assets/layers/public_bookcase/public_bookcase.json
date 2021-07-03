@@ -374,5 +374,12 @@
         "type": "url"
       }
     }
-  ]
+  ],
+  "deletion": {
+    "softDeletionTags": {"and":[
+      "disused:amenity=public_bookcase",
+      "amenity="
+    ]},
+    "neededChangesets": 5
+  }
 }

@@ -42,7 +42,7 @@ image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 whe
 
 name | default | description
 ------ | --------- | -------------
-zoomlevel | 18 | The zoomlevel: the higher, the more zoomed in with 1 being the entire world and 19 being really close
+zoomlevel | 18 | The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close
 idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.
  
 #### Example usage 
