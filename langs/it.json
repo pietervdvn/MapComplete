@@ -6,7 +6,7 @@
         "saved": "<span class=\"thanks\">Recensione salvata. Grazie per averla condivisa!</span>",
         "saving_review": "Salvataggio…",
         "affiliated_reviewer_warning": "(Recensione di un affiliato)",
-        "i_am_affiliated": "<span>Sono associato con questo oggetto</span><br><span class=\"subtle\">Spunta se sei il proprietario, creatore, dipendente, etc.</span>",
+        "i_am_affiliated": "<span>Sono associato con questo oggetto</span><br><span class=\"subtle\">Seleziona se sei il proprietario, creatore, dipendente, ...</span>",
         "posting_as": "Pubblica come",
         "no_rating": "Nessun voto ricevuto",
         "write_a_comment": "Lascia una recensione…",
@@ -16,7 +16,7 @@
         "title": "{count} recensioni"
     },
     "general": {
-        "aboutMapcomplete": "<h3>Informazioni su MapComplete</h3><p>Con MapComplete puoi arricchire OpenStreetMap con informazioni su un <b>singolo argomento</b>. Rispondi a poche domande e in pochi minuti i tuoi contributi saranno disponibili a tutto il mondo! L’utente <b>gestore del tema</b> definisce gli elementi, le domande e le lingue per quel tema.</p><h3>Scopri altro</h3><p>MapComplete <b>fornisce sempre un passo ulteriore</b> per imparare dell’altro su OpenStreetMap.</p><ul><li>Quando viene incorporato in un sito web, il collegamento dell’iframe punta a MapComplete a tutto schermo</li><li>La versione a tutto schermo fornisce informazioni su OpenStreetMap</li><li>La visualizzazione non necessita di alcun accesso ma per modificare occorre aver effettuato l’accesso su OSM.</li><li>Se non hai effettuato l’accesso, ti verrà richiesto di farlo</li><li>Dopo aver risposto ad una sola domanda potrai aggiungere dei nuovi punti alla mappa</li><li>Dopo qualche momento verranno mostrate le etichette effettive, in seguito i collegamenti alla wiki</li></ul><p></p><br><p>Hai trovato un <b>errore</b>? Vuoi richiedere <b>nuove funzionalità</b>? Vuoi aiutare con la <b>traduzione</b>? Dai un’occhiata al <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">codice sorgente</a> oppure al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">tracker degli errori.</a></p><p>Vuoi vedere i <b>tuoi progressi</b>?Segui il contatore delle modifiche su <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Informazioni su MapComplete</h3><p>Con MapComplete puoi arricchire OpenStreetMap con informazioni su un <b>singolo argomento</b>. Rispondi a poche domande e in pochi minuti i tuoi contributi saranno disponibili a tutto il mondo! L’utente <b>gestore del tema</b> definisce gli elementi, le domande e le lingue per quel tema.</p><h3>Scopri altro</h3><p>MapComplete <b>propone sempre un passo in più</b> per imparare qualcosa di nuovo su OpenStreetMap.</p><ul><li>Quando viene incorporato in un sito web, il collegamento dell’iframe punta a MapComplete a tutto schermo</li><li>La versione a tutto schermo fornisce informazioni su OpenStreetMap</li><li>La visualizzazione non necessita di alcun accesso ma per modificare occorre aver effettuato l’accesso su OSM.</li><li>Se non hai effettuato l’accesso, ti verrà richiesto di farlo</li><li>Dopo aver risposto ad una sola domanda potrai aggiungere dei nuovi punti alla mappa</li><li>Dopo qualche momento verranno mostrate le etichette effettive, in seguito i collegamenti alla wiki</li></ul><p></p><br><p>Hai trovato un <b>errore</b>? Vuoi richiedere <b>nuove funzionalità</b>? Vuoi aiutare con la <b>traduzione</b>? Dai un’occhiata al <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">codice sorgente</a> oppure al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">tracker degli errori.</a></p><p>Vuoi vedere i <b>tuoi progressi</b>?Segui il contatore delle modifiche su <a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>",
         "morescreen": {
             "requestATheme": "Se hai bisogno di una mappa tematica personalizzata, puoi chiederla <a class=\"underline hover:text-blue-800\" href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">qua</a>.",
             "createYourOwnTheme": "Crea il tuo tema di MapComplete personalizzato da zero",
@@ -24,7 +24,7 @@
             "intro": "<h3>Altre mappe tematiche?</h3>Ti diverti a raccogliere dati geografici?<br>Sono disponibili altri temi."
         },
         "sharescreen": {
-            "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Siamo lieti se vorrai includere questa cartina nel tuo sito web.<br>Ti incoraggiamo a farlo (non devi neanche chieder il permesso).<br>È gratuito e lo sarà per sempre.Più persone lo useranno e più valore acquisirà.",
+            "embedIntro": "<h3>Incorpora nel tuo sito web</h3>Per favore, incorpora questa mappa nel tuo sito web.<br>Ti incoraggiamo a farlo (non devi neanche chiederci il permesso!).<br> È gratis e lo sarà per sempre. Più persone lo useranno e più valore acquisirà.",
             "addToHomeScreen": "<h3>Aggiungi alla tua schermata Home</h3>Puoi aggiungere facilmente questo sito web alla schermata Home del tuo smartphone. Per farlo, clicca sul pulsante ‘Aggiungi a schermata Home’ nella barra degli indirizzi.",
             "fsIncludeCurrentLocation": "Includi la posizione attuale",
             "fsIncludeCurrentBackgroundMap": "Includi lo sfondo attualmente selezionato <b>{name}</b>",
@@ -162,7 +162,7 @@
         "dontDelete": "Annulla",
         "uploadDone": "<span class=\"thanks\">La tua foto è stata aggiunta! Grazie mille!</span>",
         "respectPrivacy": "Non fotografare persone o targhe dei veicoli. Non caricare da Google Maps, Google Streetview o da altre fonti coperte da copyright.",
-        "uploadFailed": "Impossibile caricare la tua foto. La connessione internet è attiva e le API di terze parti sono abilitate? Il browser Brave o UMatrix potrebbero bloccarle.",
+        "uploadFailed": "Impossibile caricare la tua foto. La connessione internet è attiva e le API di terze parti sono abilitate? Il browser Brave o il plugin uMatrix potrebbero bloccarle.",
         "ccb": "con licenza CC-BY",
         "ccbs": "con licenza CC-BY-SA",
         "cco": "nel pubblico dominio",
