@@ -12,6 +12,7 @@ import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import DeleteWizard from "./DeleteWizard";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -21,7 +22,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     ) {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
-            tags.data.id);
+            undefined);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
@@ -69,19 +70,31 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (!hasMinimap) {
             renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
-        
+
+        if (layerConfig.deletion) {
+            renderings.push(
+                new VariableUiElement(tags.map(tags => tags.id).map(id =>
+                    new DeleteWizard(
+                        id,
+                        layerConfig.deletion
+                    ))
+                ))
+        }
+
         renderings.push(
             new VariableUiElement(
-                State.state.osmConnection.userDetails.map(userdetails => {
-                    if (userdetails.csCount <= Constants.userJourney.historyLinkVisible
-                        && State.state.featureSwitchIsDebugging.data == false
-                        && State.state.featureSwitchIsTesting.data === false) {
-                        return undefined
-                    }
+                State.state.osmConnection.userDetails
+                    .map(ud => ud.csCount)
+                    .map(csCount => {
+                        if (csCount <= Constants.userJourney.historyLinkVisible
+                            && State.state.featureSwitchIsDebugging.data == false
+                            && State.state.featureSwitchIsTesting.data === false) {
+                            return undefined
+                        }
 
-                    return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
+                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
 
-                }, [State.state.featureSwitchIsDebugging])
+                    }, [State.state.featureSwitchIsDebugging, State.state.featureSwitchIsTesting])
             )
         )
 

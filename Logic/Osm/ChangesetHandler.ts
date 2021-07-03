@@ -32,6 +32,14 @@ export class ChangesetHandler {
         // @ts-ignore
         for (const node of nodes) {
             const oldId = parseInt(node.attributes.old_id.value);
+            if (node.attributes.new_id === undefined) {
+                // We just removed this point!
+                const element = allElements.getEventSourceById("node/" + oldId);
+                element.data._deleted = "yes"
+                element.ping();
+                continue;
+            }
+
             const newId = parseInt(node.attributes.new_id.value);
             if (oldId !== undefined && newId !== undefined &&
                 !isNaN(oldId) && !isNaN(newId)) {
@@ -138,7 +146,7 @@ export class ChangesetHandler {
             changes +=
                 `<delete><${object.type} id="${object.id}" version="${object.version}" changeset="${csId}" lat="${lat}" lon="${lon}" /></delete>`;
             changes += "</osmChange>";
-
+            continuation()
             return changes;
 
         }
@@ -152,10 +160,10 @@ export class ChangesetHandler {
 
         const self = this;
         this.OpenChangeset(layout, (csId: string) => {
-            
+
             // The cs is open - let us actually upload!
             const changes = generateChangeXML(csId)
-            
+
             self.AddChange(csId, changes, allElements, (csId) => {
                 console.log("Successfully deleted ", object.id)
                 self.CloseChangeset(csId, continuation)
@@ -203,8 +211,8 @@ export class ChangesetHandler {
         let comment = `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`
         if (isDeletionCS) {
             comment = `Deleting a point with #MapComplete for theme #${layout.id}${commentExtra}`
-            if(deletionReason){
-                comment += ": "+deletionReason;
+            if (deletionReason) {
+                comment += ": " + deletionReason;
             }
         }
 

@@ -17,7 +17,8 @@ import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
 import BaseUIElement from "../BaseUIElement";
 import {Changes} from "../../Logic/Osm/Changes";
 import {And} from "../../Logic/Tags/And";
-
+import Constants from "../../Models/Constants";
+import DeleteConfig from "../../Customizations/JSON/DeleteConfig";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -39,18 +40,12 @@ export default class DeleteWizard extends Toggle {
      * @param options softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted
      */
     constructor(id: string,
-                options?: {
-                    noDeleteOptions?: { if: Tag[], then: Translation }[]
-                    softDeletionTags?: Tag[],
-                    neededChangesets?: number
-                }) {
+                options: DeleteConfig) {
 
-        options = options ?? {}
         const deleteAction = new DeleteAction(id, options.neededChangesets);
         const tagsSource = State.state.allElements.getEventSourceById(id)
 
-        let softDeletionTags = options.softDeletionTags ?? []
-        const allowSoftDeletion = softDeletionTags.length > 0
+        const allowSoftDeletion = !!options.softDeletionTags
 
         const confirm = new UIEventSource<boolean>(false)
 
@@ -80,7 +75,7 @@ export default class DeleteWizard extends Toggle {
                 });
                 return
             } else {
-                // This is an injected tagging
+                // This is a 'non-delete'-option that was selected
                 softDelete(undefined, tgs)
             }
 
@@ -89,46 +84,60 @@ export default class DeleteWizard extends Toggle {
 
         const t = Translations.t.delete
         const cancelButton = t.cancel.Clone().SetClass("block btn btn-secondary").onClick(() => confirm.setData(false));
-        const config = DeleteWizard.generateDeleteTagRenderingConfig(softDeletionTags, options.noDeleteOptions)
-        const question = new TagRenderingQuestion(
-            tagsSource,
-            config,
-            {
-                cancelButton: cancelButton,
-                /*Using a custom save button constructor erases all logic to actually save, so we have to listen for the click!*/
-                saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
-                    doDelete(v.data)
-                }),
-                bottomText: (v) => DeleteWizard.constructExplanation(v, deleteAction)
-            }
-        )
+        const question = new VariableUiElement(tagsSource.map(currentTags => {
+            const config = DeleteWizard.generateDeleteTagRenderingConfig(options.softDeletionTags, options.nonDeleteMappings, options.extraDeleteReasons, currentTags)
+            return new TagRenderingQuestion(
+                tagsSource,
+                config,
+                {
+                    cancelButton: cancelButton,
+                    /*Using a custom save button constructor erases all logic to actually save, so we have to listen for the click!*/
+                    saveButtonConstr: (v) => DeleteWizard.constructConfirmButton(v).onClick(() => {
+                        doDelete(v.data)
+                    }),
+                    bottomText: (v) => DeleteWizard.constructExplanation(v, deleteAction)
+                }
+            )
+        }))
+
 
         /**
          * The button which is shown first. Opening it will trigger the check for deletions
          */
-        const deleteButton = new SubtleButton(Svg.delete_icon_svg(), t.delete).onClick(
+        const deleteButton = new SubtleButton(
+            Svg.delete_icon_ui().SetStyle("width: 2rem; height: 2rem;"), t.delete.Clone()).onClick(
             () => {
                 deleteAction.CheckDeleteability(true)
                 confirm.setData(true);
             }
-        );
+        ).SetClass("w-1/2 float-right");
 
+        const isShown = new UIEventSource<boolean>(id.indexOf("-")< 0)
+        
         super(
+            new Toggle(
             new Combine([Svg.delete_icon_svg().SetClass("h-16 w-16 p-2 m-2 block bg-gray-300 rounded-full"),
                 t.isDeleted.Clone()]).SetClass("flex m-2 rounded-full"),
             new Toggle(
                 new Toggle(
                     new Toggle(
-                        question,
+                        new Toggle(
+                            question,
+                            new SubtleButton(Svg.envelope_ui(), t.readMessages.Clone()),
+                            State.state.osmConnection.userDetails.map(ud => ud.csCount > Constants.userJourney.addNewPointWithUnreadMessagesUnlock || ud.unreadMessages == 0)
+                        ),
 
                         deleteButton,
                         confirm),
-                    new VariableUiElement(deleteAction.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse]))),
+                    new VariableUiElement(deleteAction.canBeDeleted.map(cbd => new Combine([cbd.reason.Clone(), t.useSomethingElse.Clone()]))),
                     deleteAction.canBeDeleted.map(cbd => allowSoftDeletion || cbd.canBeDeleted !== false)),
+
                 t.loginToDelete.Clone().onClick(State.state.osmConnection.AttemptLogin),
                 State.state.osmConnection.isLoggedIn
             ),
-            deleteAction.isDeleted)
+            deleteAction.isDeleted),
+            undefined,
+            isShown)
 
     }
 
@@ -163,7 +172,7 @@ export default class DeleteWizard extends Toggle {
                 if (currentTags === undefined) {
                     return t.explanations.selectReason.Clone().SetClass("subtle");
                 }
-                
+
                 const hasDeletionTag = currentTags.asChange(currentTags).some(kv => kv.k === "_delete_reason")
 
                 if (cbd.canBeDeleted && hasDeletionTag) {
@@ -179,23 +188,32 @@ export default class DeleteWizard extends Toggle {
         )).SetClass("block")
     }
 
-    private static generateDeleteTagRenderingConfig(softDeletionTags: Tag[], nonDeleteOptions: {
-        if: Tag[],
-        then: Translation
-    }[]) {
+    private static generateDeleteTagRenderingConfig(softDeletionTags: TagsFilter,
+                                                    nonDeleteOptions: { if: TagsFilter; then: Translation }[],
+                                                    extraDeleteReasons: { explanation: Translation; changesetMessage: string }[],
+                                                    currentTags: any) {
         const t = Translations.t.delete
         nonDeleteOptions = nonDeleteOptions ?? []
-        const softDeletionTagsStr = (softDeletionTags ?? []).map(t => t.asHumanString(false, false))
-        const nonDeleteOptionsStr: { if: AndOrTagConfigJson, then: any }[] = []
+        let softDeletionTagsStr = []
+        if (softDeletionTags !== undefined) {
+            softDeletionTags.asChange(currentTags)
+        }
+        const extraOptionsStr: { if: AndOrTagConfigJson, then: any }[] = []
         for (const nonDeleteOption of nonDeleteOptions) {
-            const newIf: string[] = nonDeleteOption.if.map(tag => tag.asHumanString())
+            const newIf: string[] = nonDeleteOption.if.asChange({}).map(kv => kv.k + "=" + kv.v)
 
-            nonDeleteOptionsStr.push({
+            extraOptionsStr.push({
                 if: {and: newIf},
                 then: nonDeleteOption.then
             })
         }
 
+        for (const extraDeleteReason of (extraDeleteReasons ?? [])) {
+            extraOptionsStr.push({
+                if: {and: ["_delete_reason=" + extraDeleteReason.changesetMessage]},
+                then: extraDeleteReason.explanation
+            })
+        }
         return new TagRenderingConfig(
             {
                 question: t.whyDelete,
@@ -206,7 +224,7 @@ export default class DeleteWizard extends Toggle {
                 },
                 mappings: [
 
-                    ...nonDeleteOptionsStr,
+                    ...extraOptionsStr,
 
                     {
                         if: {

@@ -49,7 +49,8 @@
       "selectReason": "Please, select why this feature should be deleted",
       "hardDelete": "This point will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
       "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
-    }
+    },
+    "readMessages": "You have unread messages. Read these before deleting a point - someone might have feedback"
   },
   "general": {
     "loginWithOpenStreetMap": "Login with OpenStreetMap",

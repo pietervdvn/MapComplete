@@ -24,8 +24,6 @@ import Histogram from "./BigComponents/Histogram";
 import Loc from "../Models/Loc";
 import {Utils} from "../Utils";
 import BaseLayer from "../Models/BaseLayer";
-import DeleteWizard from "./Popup/DeleteWizard";
-import Constants from "../Models/Constants";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -38,8 +36,6 @@ export interface SpecialVisualization {
 export default class SpecialVisualizations {
 
 
-    public static specialVisualisationsByName: Map<string, SpecialVisualization> = SpecialVisualizations.byName();
-    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     static constructMiniMap: (options?: {
         background?: UIEventSource<BaseLayer>,
         location?: UIEventSource<Loc>,
@@ -380,57 +376,10 @@ export default class SpecialVisualizations {
                             [state.layoutToUse])
                     )
                 }
-            },
-            {
-                funcName: "delete",
-                docs: `Offers a dialog to (soft) delete the point. The dialog is built to be user friendly and to prevent mistakes. If deletion is not possible, the dialog will hide itself.            
-
-#### Hard deletion if enough experience
-
-A feature can only be deleted by mapcomplete if:
-
-- It is a node
-- No ways or relations use the node
-- The logged-in user has enough experience (at least ${Constants.userJourney.deletePointsOfOthersUnlock} changesets) OR the user is the only one to have edited the point previously
-- The user did not select one of the 'non-delete-options' (see below)
-
-In all other cases, a 'soft deletion' is used.
-
-#### Soft deletion
-
-A 'soft deletion' is when the point isn't deleted from OSM but retagged so that it'll won't how up in the mapcomplete theme anymore.
-This makes it look like it was deleted, without doing damage. A fixme will be added to the point.
-
-Note that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme
-
-#### No-delete options
-
-In some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed "because the path is on their private property").
-However, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice "hey, there is a path missing here! Let me redraw it in OSM!)
-
-The correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.
-A no-delete option is offered as 'reason to delete it', but secretly retags.
-
-`,
-                args: [],
-                constr: (state, tagSource, args) => {
-                    return new VariableUiElement(tagSource.map(tags => tags.id).map(id =>
-                        new DeleteWizard(id)))
-                }
             }
 
         ]
-
-    private static byName(): Map<string, SpecialVisualization> {
-        const result = new Map<string, SpecialVisualization>();
-
-        for (const specialVisualization of SpecialVisualizations.specialVisualizations) {
-            result.set(specialVisualization.funcName, specialVisualization)
-        }
-
-        return result;
-    }
-
+    static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     private static GenHelpMessage() {
 
         const helpTexts =

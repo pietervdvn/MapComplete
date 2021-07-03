@@ -9,8 +9,11 @@ import SubstitutingTag from "../../Logic/Tags/SubstitutingTag";
 
 export class FromJSON {
 
-    public static SimpleTag(json: string): Tag {
+    public static SimpleTag(json: string, context?: string): Tag {
         const tag = Utils.SplitFirst(json, "=");
+        if(tag.length !== 2){
+            throw `Invalid tag: no (or too much) '=' found (in ${context ?? "unkown context"})`
+        }
         return new Tag(tag[0], tag[1]);
     }
 
