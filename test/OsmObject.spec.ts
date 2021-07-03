@@ -9,7 +9,7 @@ export default class OsmObjectSpec extends T {
                 "Download referencing ways",
                 () => {
                     let downloaded = false;
-                    OsmObject.DownloadReferencingWays("node/1124134958", ways => {
+                    OsmObject.DownloadReferencingWays("node/1124134958").addCallbackAndRunD(ways => {
                         downloaded = true;
                         console.log(ways)
                     })
