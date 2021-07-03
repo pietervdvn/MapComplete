@@ -153,7 +153,8 @@
         },
         "presets": {
             "0": {
-                "description": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate"
+                "description": "Una ciclo-teca o «bici in prestito» ha una collezione di bici che possno essere prestate",
+                "title": "Bici in prestito"
             }
         }
     },
@@ -271,13 +272,13 @@
     "bike_monitoring_station": {
         "name": "Stazioni di monitoraggio",
         "title": {
-            "render": "Stazione conta-biciclette",
+            "render": "Contabiciclette",
             "mappings": {
                 "0": {
-                    "then": "Stazione conta-biciclette {name}"
+                    "then": "Contabiciclette {name}"
                 },
                 "1": {
-                    "then": "Stazione conta-bicicletta {ref}"
+                    "then": "Contabiciclette {ref}"
                 }
             }
         }
@@ -298,10 +299,10 @@
                 "render": "È un parcheggio bici del tipo: {bicycle_parking}",
                 "mappings": {
                     "0": {
-                        "then": "Ad arco <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "Archetti <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
                     },
                     "1": {
-                        "then": "Ferma-ruota <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Scolapiatti <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
                     },
                     "2": {
                         "then": "Blocca manubrio <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
@@ -311,6 +312,15 @@
                     },
                     "7": {
                         "then": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+                    },
+                    "5": {
+                        "then": "Rimessa <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    },
+                    "4": {
+                        "then": "A due piani <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                    },
+                    "3": {
+                        "then": "Rastrelliera <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
                     }
                 }
             },
@@ -522,6 +532,9 @@
             "2": {
                 "title": "Stazione di riparazione bici senza pompa"
             }
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
         }
     },
     "bike_shop": {
@@ -810,6 +823,13 @@
             "15": {
                 "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}",
                 "question": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)"
+            }
+        },
+        "icon": {
+            "mappings": {
+                "0": {
+                    "then": "./assets/layers/defibrillator/aed_checked.svg"
+                }
             }
         }
     },
@@ -1105,8 +1125,46 @@
             "7": {
                 "question": "Qual è l’indirizzo email del gestore di questo parco giochi?",
                 "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "10": {
+                "mappings": {
+                    "2": {
+                        "then": "Si può sempre accedere"
+                    },
+                    "1": {
+                        "then": "Si può sempre accedere"
+                    },
+                    "0": {
+                        "then": "Si può accedere dall'alba al tramonto"
+                    }
+                },
+                "question": "Quando si può accedere a questo campetto?"
+            },
+            "9": {
+                "mappings": {
+                    "2": {
+                        "then": "Non accessibile in sedia a rotelle"
+                    },
+                    "1": {
+                        "then": "Accesso limitato in sedia a rotelle"
+                    },
+                    "0": {
+                        "then": "Completamente accessibile in sedia a rotelle"
+                    }
+                },
+                "question": "Il campetto è accessibile a persone in sedia a rotelle?"
+            },
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>",
+                "question": "Qual è il numero di telefono del gestore del campetto?"
             }
-        }
+        },
+        "presets": {
+            "0": {
+                "title": "Campetto"
+            }
+        },
+        "name": "Campi da gioco"
     },
     "tree_node": {
         "name": "Albero",
@@ -1233,5 +1291,483 @@
                 "description": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia."
             }
         }
+    },
+    "viewpoint": {
+        "tagRenderings": {
+            "1": {
+                "question": "Vuoi aggiungere una descrizione?"
+            }
+        },
+        "title": {
+            "render": "Punto panoramico"
+        },
+        "name": "Punto panoramico",
+        "presets": {
+            "0": {
+                "title": "Punto panoramico"
+            }
+        },
+        "description": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata"
+    },
+    "toilet": {
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "3": {
+                        "then": "Il fasciatoio è in una stanza dedicata. "
+                    },
+                    "2": {
+                        "then": "Il fasciatoio è nei servizi igienici per persone in sedia a rotelle. "
+                    },
+                    "1": {
+                        "then": "Il fasciatoio è nei servizi igienici maschili. "
+                    },
+                    "0": {
+                        "then": "Il fasciatoio è nei servizi igienici femminili. "
+                    }
+                },
+                "render": "Il fasciatoio si trova presso {changing_table:location}",
+                "question": "Dove si trova il fasciatoio?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "Non è disponibile un fasciatoio"
+                    },
+                    "0": {
+                        "then": "È disponibile un fasciatoio"
+                    }
+                },
+                "question": "È disponibile un fasciatoio (per cambiare i pannolini)?"
+            },
+            "5": {
+                "mappings": {
+                    "3": {
+                        "then": "Ci sono sia sedili, sia urinali"
+                    },
+                    "2": {
+                        "then": "Ci sono solo turche"
+                    },
+                    "1": {
+                        "then": "Ci sono solo urinali"
+                    },
+                    "0": {
+                        "then": "Ci sono solo WC con sedile"
+                    }
+                },
+                "question": "Di che tipo di servizi igienici si tratta?"
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": "Non accessibile in sedia a rotelle"
+                    },
+                    "0": {
+                        "then": "C'è un WC riservato alle persone in sedia a rotelle"
+                    }
+                },
+                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+            },
+            "3": {
+                "render": "La tariffa è {charge}",
+                "question": "Quanto costa l'accesso a questi servizi igienici?"
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": "Gratis"
+                    },
+                    "0": {
+                        "then": "Questi servizi igienici sono a pagamento"
+                    }
+                },
+                "question": "Questi servizi igienici sono gratuiti?"
+            },
+            "1": {
+                "mappings": {
+                    "3": {
+                        "then": "Accessibile, ma occorre chiedere una chiave per accedere"
+                    },
+                    "2": {
+                        "then": "Non accessibile"
+                    },
+                    "1": {
+                        "then": "Accesso riservato ai clienti e alle clienti"
+                    },
+                    "0": {
+                        "then": "Accesso pubblico"
+                    }
+                },
+                "render": "L'accesso è {access}",
+                "question": "Questi servizi igienici sono aperti al pubblico?"
+            }
+        },
+        "presets": {
+            "1": {
+                "description": "Servizi igienici che hanno almeno una toilette accessibile a persone in sedia a rotelle",
+                "title": "Servizi igienici accessibili per persone in sedia a rotelle"
+            },
+            "0": {
+                "description": "Servizi igienici aperti al pubblico",
+                "title": "Servizi igienici"
+            }
+        },
+        "title": {
+            "render": "Servizi igienici"
+        },
+        "name": "Servizi igienici"
+    },
+    "surveillance_camera": {
+        "tagRenderings": {
+            "8": {
+                "mappings": {
+                    "2": {
+                        "then": "Questa telecamera è posizionata sul soffitto"
+                    },
+                    "1": {
+                        "then": "Questa telecamera è posizionata su un palo"
+                    },
+                    "0": {
+                        "then": "Questa telecamera è posizionata contro un muro"
+                    }
+                },
+                "render": "Metodo di montaggio: {mount}",
+                "question": "Com'è posizionata questa telecamera?"
+            },
+            "7": {
+                "mappings": {
+                    "5": {
+                        "then": "Sorveglia un negozio"
+                    },
+                    "4": {
+                        "then": "Sorveglia una pensilina del trasporto pubblico"
+                    },
+                    "3": {
+                        "then": "Sorveglia un corridoio"
+                    },
+                    "2": {
+                        "then": "Sorveglia un ingresso"
+                    },
+                    "1": {
+                        "then": "Sorveglia il traffico"
+                    },
+                    "0": {
+                        "then": "Sorveglia un parcheggio"
+                    }
+                },
+                "render": " Sorveglia una {surveillance:zone}",
+                "question": "Che cosa è sorvegliato qui?"
+            },
+            "6": {
+                "render": "Si trova al piano {level}",
+                "question": "A che piano si trova questa videocamera?"
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": "Questa videocamera si trova probabilmente all'esterno"
+                    },
+                    "1": {
+                        "then": "Questa videocamera si trova all'aperto"
+                    },
+                    "0": {
+                        "then": "Questa videocamera si trova al chiuso"
+                    }
+                },
+                "question": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
+            },
+            "4": {
+                "mappings": {
+                    "2": {
+                        "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
+                    },
+                    "1": {
+                        "then": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)"
+                    },
+                    "0": {
+                        "then": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ..."
+                    }
+                },
+                "question": "Che cosa sorveglia questa videocamera"
+            },
+            "3": {
+                "render": "È gestita da {operator}",
+                "question": "Chi gestisce questa videocamera a circuito chiuso?"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Punta in direzione {direction}"
+                    }
+                },
+                "render": "Punta in direzione {camera:direction}",
+                "question": "In quale direzione geografica punta questa videocamera?"
+            },
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": "Una videocamera panoramica"
+                    },
+                    "1": {
+                        "then": "Una videocamera a cupola (che può ruotare)"
+                    },
+                    "0": {
+                        "then": "Una videocamera fissa (non semovente)"
+                    }
+                },
+                "question": "Di che tipo di videocamera si tratta?"
+            }
+        },
+        "title": {
+            "render": "Videocamera di sorveglianza"
+        },
+        "name": "Videocamere di sorveglianza"
+    },
+    "sport_pitch": {
+        "description": "Un campo sportivo",
+        "title": {
+            "render": "Campo sportivo"
+        },
+        "name": "Campi sportivi",
+        "presets": {
+            "1": {
+                "title": "Campo sportivo"
+            },
+            "0": {
+                "title": "Tavolo da tennistavolo"
+            }
+        },
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "1": {
+                        "then": "Sempre aperto"
+                    }
+                },
+                "question": "Quando è aperto questo campo sportivo?"
+            },
+            "6": {
+                "question": "Qual è l'indirizzo email del gestore?"
+            },
+            "5": {
+                "question": "Qual è il numero di telefono del gestore?"
+            },
+            "4": {
+                "mappings": {
+                    "3": {
+                        "then": "Non è possibile prenotare"
+                    },
+                    "2": {
+                        "then": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo"
+                    },
+                    "1": {
+                        "then": "La prenotazione è consigliata per usare questo campo sportivo"
+                    },
+                    "0": {
+                        "then": "La prenotazione è obbligatoria per usare questo campo sportivo"
+                    }
+                },
+                "question": "È necessario prenotarsi per usare questo campo sportivo?"
+            },
+            "3": {
+                "mappings": {
+                    "3": {
+                        "then": "Privato - non aperto al pubblico"
+                    },
+                    "2": {
+                        "then": "Accesso limitato ai membri dell'associazione"
+                    },
+                    "1": {
+                        "then": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)"
+                    },
+                    "0": {
+                        "then": "Aperto al pubblico"
+                    }
+                },
+                "question": "Questo campo sportivo è aperto al pubblico?"
+            },
+            "2": {
+                "mappings": {
+                    "4": {
+                        "then": "La superficie è <b>calcestruzzo</b>"
+                    },
+                    "3": {
+                        "then": "La superficie è <b>asfalto</b>"
+                    },
+                    "2": {
+                        "then": "La superficie è <b>pietre irregolari</b>"
+                    },
+                    "1": {
+                        "then": "La superficie è <b>sabbia</b>"
+                    },
+                    "0": {
+                        "then": "La superficie è <b>erba</b>"
+                    }
+                },
+                "render": "La superficie è <b>{surface}</b>",
+                "question": "Qual è la superficie di questo campo sportivo?"
+            },
+            "1": {
+                "mappings": {
+                    "5": {
+                        "then": "Qui si gioca a basket"
+                    },
+                    "4": {
+                        "then": "Qui si gioca a korfball"
+                    },
+                    "3": {
+                        "then": "Qui si gioca a tennis"
+                    },
+                    "2": {
+                        "then": "Questo è un tavolo da ping pong"
+                    },
+                    "1": {
+                        "then": "Qui si gioca a calcio"
+                    },
+                    "0": {
+                        "then": "Qui si gioca a basket"
+                    }
+                },
+                "question": "Quale sport si gioca qui?",
+                "render": "Qui si gioca a {sport}"
+            }
+        }
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "7": {
+                        "then": "La superficie è <b>pavimentata</b>"
+                    },
+                    "6": {
+                        "then": "La superficie è <b>calcestruzzo</b>"
+                    },
+                    "5": {
+                        "then": "La superficie è <b>asfalto</b>"
+                    },
+                    "4": {
+                        "then": "La superficie è <b>pietre irregolari</b>"
+                    },
+                    "3": {
+                        "then": "La superficie è <b>sabbia</b>"
+                    },
+                    "2": {
+                        "then": "La superficie è <b>non pavimentata</b>"
+                    },
+                    "1": {
+                        "then": "La superficie è <b>terreno</b>"
+                    },
+                    "0": {
+                        "then": "La superficie è <b>erba</b>"
+                    }
+                },
+                "render": "La superficie è <b>{surface}</b>"
+            }
+        }
+    },
+    "public_bookcase": {
+        "tagRenderings": {
+            "11": {
+                "question": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
+                "render": "Maggiori informazioni sul <a href='{website}' target='_blank'>sito web</a>"
+            },
+            "10": {
+                "render": "È stata inaugurata il {start_date}",
+                "question": "Quando è stata inaugurata questa microbiblioteca?"
+            },
+            "9": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa microbiblioteca non fa parte di una rete"
+                    }
+                },
+                "render": "Il numero identificativo di questa microbiblioteca nella rete {brand} è {ref}",
+                "question": "Qual è il numero identificativo di questa microbiblioteca?"
+            },
+            "8": {
+                "question": "Questa microbiblioteca fa parte di una rete?",
+                "render": "Questa microbiblioteca fa parte di {brand}",
+                "mappings": {
+                    "1": {
+                        "then": "Questa microbiblioteca non fa parte di una rete"
+                    },
+                    "0": {
+                        "then": "Fa parte della rete 'Little Free Library'"
+                    }
+                }
+            },
+            "7": {
+                "render": "È gestita da {operator}",
+                "question": "Chi mantiene questa microbiblioteca?"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "L'accesso è riservato ai clienti"
+                    },
+                    "0": {
+                        "then": "È ad accesso libero"
+                    }
+                },
+                "question": "Questa microbiblioteca è ad accesso libero?"
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": "Questa microbiblioteca si trova all'aperto"
+                    },
+                    "1": {
+                        "then": "Questa microbiblioteca si trova all'aperto"
+                    },
+                    "0": {
+                        "then": "Questa microbiblioteca si trova al chiuso"
+                    }
+                },
+                "question": "Questa microbiblioteca si trova all'aperto?"
+            },
+            "4": {
+                "mappings": {
+                    "2": {
+                        "then": "Sia libri per l'infanzia, sia per l'età adulta"
+                    },
+                    "1": {
+                        "then": "Principalmente libri per persone in età adulta"
+                    },
+                    "0": {
+                        "then": "Principalmente libri per l'infanzia"
+                    }
+                },
+                "question": "Che tipo di libri si possono trovare in questa microbiblioteca?"
+            },
+            "3": {
+                "question": "Quanti libri può contenere questa microbiblioteca?",
+                "render": "Questa microbiblioteca può contenere fino a {capacity} libri"
+            },
+            "2": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa microbiblioteca non ha un nome proprio"
+                    }
+                },
+                "question": "Come si chiama questa microbiblioteca pubblica?",
+                "render": "Questa microbiblioteca si chiama {name}"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Microbiblioteca"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Microbiblioteca pubblica <i>{name}</i>"
+                }
+            },
+            "render": "Microbiblioteca"
+        },
+        "description": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
+        "name": "Microbiblioteche"
     }
 }
