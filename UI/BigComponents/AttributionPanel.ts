@@ -65,8 +65,8 @@ export default class AttributionPanel extends Combine {
             ...Utils.NoNull(Array.from(layoutToUse.data.ExtractImages()))
                 .map(AttributionPanel.IconAttribution)
         ]);
-        this.SetClass("flex flex-col link-underline")
-        this.SetStyle("max-width: calc(100vw - 5em); width: 40em;")
+        this.SetClass("flex flex-col link-underline overflow-hidden")
+        this.SetStyle("max-width: calc(100vw - 5em); width: 40rem;")
     }
 
     private static CodeContributors(): BaseUIElement {
@@ -120,9 +120,10 @@ export default class AttributionPanel extends Combine {
                             return new Link(sourceLinkContent, lnk, true);
                         })
                     ]
-                ).SetClass("block")
-            ]).SetClass("flex flex-col")
-        ]).SetClass("flex flex-wrap")
+                ).SetClass("block m-2")
+                    
+            ]).SetClass("flex flex-col").SetStyle("width: calc(100% - 50px - 0.5em); min-width: 12rem;")
+        ]).SetClass("flex flex-wrap border-b border-gray-300 m-2 border-box")
     }
 
     private static GenerateLicenses() {
