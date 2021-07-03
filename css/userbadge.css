@@ -1,16 +1,4 @@
-#userbadge {
-    display: inline-block;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    margin: 0;
-    margin-bottom: 0.5em;
-    width: 100%;
-    min-width: 20em;
-    pointer-events: all;
-    border-radius: 999em;
-    max-width: 100vw;
-    overflow-x: hidden;
-}
+
 
 .userstats {
     display: flex;
@@ -45,28 +33,6 @@
     display: block;
 }
 
-.usertext {
-    display: block;
-    width: max-content;
-    margin: 0;
-
-    padding: 0.9em;
-    padding-left: 4.7em; /* Should be half of profile-pic's width + actual padding (same as padding-right)*/
-    padding-right: 1.5em;
-    border-radius: 2em; /*Half border radius width/height*/
-    height: 2.2em; /*SHould equal profile-pic height - padding*/
-    z-index: 5000;
-    text-align: left;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    background-size: 100%;
-
-    line-height: 0.75em;
-}
-
-
-
-
 .userbadge-login {
     font-weight: bold;
     font-size: large;
@@ -80,11 +46,4 @@
 
     min-width: 20em;
     pointer-events: all;
-}
-
-#userbadge-and-search {
-    display: inline-block;
-    width: min-content;
-    overflow-x: hidden;
-    max-width: 100vw;
 }
