@@ -19,7 +19,7 @@ export class SaveButton extends Toggle {
 
         const text = Translations.t.general.save
         const saveEnabled = text.Clone().SetClass(`btn`);
-        const saveDisabled = text.SetClass(`btn btn-disabled`);
+        const saveDisabled = text.Clone().SetClass(`btn btn-disabled`);
         const save = new Toggle(
             saveEnabled,
             saveDisabled,

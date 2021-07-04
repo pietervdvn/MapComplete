@@ -287,13 +287,21 @@ export default class ValidatedTextField {
             input = new CombinedInputElement(
                 input,
                 unitDropDown,
-                (text, denom) => denom?.canonicalValue(text, true) ?? undefined,
+                // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
+                (text, denom) => denom?.canonicalValue(text, true) ?? undefined, 
                 (valueWithDenom: string) => {
-                    const [text, denom] = unit.findDenomination(valueWithDenom) ?? [valueWithDenom, undefined];
-                    if(text === undefined){
-                        return [valueWithDenom, undefined]
+                    // Take the value from OSM and feed it into the textfield and the dropdown
+                    const withDenom = unit.findDenomination(valueWithDenom);
+                    if(withDenom === undefined)
+                    {
+                        // Not a valid value at all - we give it undefined and leave the details up to the other elements
+                        return [undefined, undefined]
                     }
-                    return [text, denom]
+                    const [strippedText, denom] = withDenom
+                    if(strippedText === undefined){
+                        return [undefined, undefined]
+                    }
+                    return [strippedText, denom]
                 }
             ).SetClass("flex")
         }

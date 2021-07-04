@@ -11,6 +11,7 @@ import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import Combine from "../UI/Base/Combine";
 import OsmObjectSpec from "./OsmObject.spec";
 import ScriptUtils from "../scripts/ScriptUtils";
+import UnitsSpec from "./Units.spec";
 
 
 
@@ -37,7 +38,8 @@ const allTests = [
     new GeoOperationsSpec(),
     new ImageSearcherSpec(),
     new ThemeSpec(),
-    new UtilsSpec()
+    new UtilsSpec(),
+    new UnitsSpec()
 ]
 
 

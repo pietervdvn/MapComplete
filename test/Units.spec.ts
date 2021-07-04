@@ -1,5 +1,5 @@
 import T from "./TestHelper";
-import {Denomination} from "../Customizations/JSON/Denomination";
+import {Denomination, Unit} from "../Customizations/JSON/Denomination";
 import {equal} from "assert";
 
 export default class UnitsSpec extends T {
@@ -17,13 +17,33 @@ export default class UnitsSpec extends T {
                     }
                 }, "test")
 
-                equal(unit.canonicalValue("42m"), "42m")
-                equal(unit.canonicalValue("42"), "42m")
-                equal(unit.canonicalValue("42 m"), "42m")
-                equal(unit.canonicalValue("42 meter"), "42m")
+                equal(unit.canonicalValue("42m"), "42 m")
+                equal(unit.canonicalValue("42"), "42 m")
+                equal(unit.canonicalValue("42 m"), "42 m")
+                equal(unit.canonicalValue("42 meter"), "42 m")
 
 
-            }]
+            }],
+            ["Advanced canonicalize and back", () => {
+
+                const unit = new Denomination({
+                    "canonicalDenomination": "MW",
+                    "alternativeDenomination": ["megawatts", "megawatt"],
+                    "human": {
+                        "en": " megawatts",
+                        "nl": " megawatt"
+                    },
+                    "default": true
+                }, "test");
+
+                const canonical = unit.canonicalValue("5")
+                equal(canonical, "5 MW")
+                const units = new Unit(["key"], [unit], false)
+                const [detected, detectedDenom] = units.findDenomination("5 MW")
+                equal(detected, "5")
+                equal(detectedDenom, unit)
+            }
+            ]
 
 
         ]);

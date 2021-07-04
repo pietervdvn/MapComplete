@@ -37,6 +37,7 @@ export class Unit {
         
         const possiblePostFixes = new Set<string>()
         function addPostfixesOf(str){
+            str = str.toLowerCase()
             for (let i = 0; i < str.length + 1; i++) {
                 const substr = str.substring(0,i)
                 possiblePostFixes.add(substr)
@@ -178,11 +179,11 @@ export class Denomination {
                 }
             }
         } else {
-            if (value.endsWith(this.canonical) && this.canonical !== "") {
+            if (value.endsWith(this.canonical.toLowerCase()) && this.canonical !== "") {
                 return value.substring(0, value.length - this.canonical.length).trim();
             }
             for (const alternativeValue of this.alternativeDenominations) {
-                if (value.endsWith(alternativeValue)) {
+                if (value.endsWith(alternativeValue.toLowerCase())) {
                     return value.substring(0, value.length - alternativeValue.length).trim();
                 }
             }
