@@ -53,7 +53,6 @@ export default class TagRenderingQuestion extends Combine {
         const inputElement: InputElement<TagsFilter> = TagRenderingQuestion.GenerateInputElement(configuration, applicableUnit, tags)
         const save = () => {
             const selection = inputElement.GetValue().data;
-            console.log("Save button clicked, the tags are is", selection)
             if (selection) {
                 (State.state?.changes ?? new Changes())
                     .addTag(tags.data.id, selection, tags);
@@ -119,18 +118,27 @@ export default class TagRenderingQuestion extends Combine {
             })
 
 
-        let allIfNots: TagsFilter[] = Utils.NoNull(configuration.mappings?.map(m => m.ifnot) ?? []);
+        function allIfNotsExcept(excludeIndex: number) : TagsFilter[]{
+            if(configuration.mappings === undefined){
+                return []
+            }
+            if(configuration.multiAnswer){
+                // The multianswer will do the ifnot configuration themself
+                return []
+            }
+            return Utils.NoNull(configuration.mappings?.map((m,i) => excludeIndex === i ? undefined:  m.ifnot))
+        }
         const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource.data);
         const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
 
         if (mappings.length < 8 || configuration.multiAnswer || hasImages) {
-            inputEls = (mappings ?? []).map(mapping => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNots));
+            inputEls = (mappings ?? []).map((mapping,i) => TagRenderingQuestion.GenerateMappingElement(tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
         } else {
             const dropdown: InputElement<TagsFilter> = new DropDown("",
-                mappings.map(mapping => {
+                mappings.map((mapping, i) => {
                     return {
-                        value: new And([mapping.if, ...allIfNots]),
+                        value: new And([mapping.if, ...allIfNotsExcept(i)]),
                         shown: Translations.WT(mapping.then).Clone()
                     }
                 })
