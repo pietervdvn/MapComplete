@@ -8,6 +8,7 @@ assets/generated/*
 /*.webmanifest
 /*.html
 !/index.html
+!/customGenerator.html
 .parcel-cache
 Docs/Tools/stats.*.json
 Docs/Tools/stats.csv
