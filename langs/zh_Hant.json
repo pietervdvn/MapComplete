@@ -1,0 +1,175 @@
+{
+    "reviews": {
+        "plz_login": "登入來留下審核",
+        "attribution": "評審系統由<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a>提供技術支援，採用<a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>授權條款。",
+        "tos": "如果你創建審核，你同意<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS 與 Mangrove.reviews 的隱私權政策</a>",
+        "saved": "<span class=\"thanks\">已儲存審核，謝謝你的分享！</span>",
+        "saving_review": "儲存中…",
+        "affiliated_reviewer_warning": "(關係者審核)",
+        "i_am_affiliated": "<span>我是這物件的相關關係者</span><br><span class=\"subtle\">確認你是否是擁有者、創造者、員工等等</span>",
+        "posting_as": "以貼文",
+        "no_rating": "還沒有評分",
+        "write_a_comment": "留下審核…",
+        "no_reviews_yet": "還沒有審核，當第一個撰寫者來幫助開放資料與商家吧！",
+        "name_required": "需要有名稱才能顯示和創造審核",
+        "title_singular": "一次審核",
+        "title": "{count} 審核次數"
+    },
+    "favourite": {
+        "reload": "重新載入資料",
+        "loginNeeded": "<h3>登入</h3>只有開放街圖使用者才有個人化樣式",
+        "panelIntro": "<h3>你的個人主題</h3>從所有官方主題啟用你喜愛的圖層"
+    },
+    "general": {
+        "opening_hours": {
+            "ph_closed": "無營業",
+            "ph_open": "有營業",
+            "ph_not_known": " ",
+            "open_24_7": "24小時營業",
+            "closed_permanently": "不清楚關閉多久了",
+            "closed_until": "{date} 起關閉",
+            "not_all_rules_parsed": "這間店的開放時間相當複雜，在輸入元素時忽略接下來的規則：",
+            "openTill": "結束時間",
+            "opensAt": "開始時間",
+            "open_during_ph": "國定假日的時候，這個場所是",
+            "error_loading": "錯誤：無法視覺化開放時間。"
+        },
+        "weekdays": {
+            "sunday": "星期日",
+            "saturday": "星期六",
+            "friday": "星期五",
+            "thursday": "星期四",
+            "wednesday": "星期三",
+            "tuesday": "星期二",
+            "monday": "星期一",
+            "abbreviations": {
+                "sunday": "星期日",
+                "saturday": "星期六",
+                "friday": "星期五",
+                "thursday": "星期四",
+                "wednesday": "星期三",
+                "tuesday": "星期二",
+                "monday": "星期一"
+            }
+        },
+        "layerSelection": {
+            "title": "選擇圖層",
+            "zoomInToSeeThisLayer": "放大來看這個圖層"
+        },
+        "backgroundMap": "背景地圖",
+        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>豐富開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需登入 OSM。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
+        "customThemeIntro": "<h3>客製化主題</h3>觀看這些先前使用者創造的主題。",
+        "noTagsSelected": "沒有選取標籤",
+        "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
+        "getStartedLogin": "登入開放街圖帳號來開始",
+        "goToInbox": "開啟訊息框",
+        "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
+        "readYourMessages": "請先閱讀開放街圖訊息之前再來新增新節點。",
+        "morescreen": {
+            "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
+            "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。",
+            "requestATheme": "如果你有客製化要求，請到問題追踪器那邊提出要求",
+            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。"
+        },
+        "sharescreen": {
+            "fsIncludeCurrentLocation": "包含目前位置",
+            "fsIncludeCurrentLayers": "包含目前選擇圖層",
+            "fsIncludeCurrentBackgroundMap": "包含目前背景選擇<b>{name}</b>",
+            "fsGeolocation": "啟用'地理定位自身'按鈕 (只有行動版本)",
+            "fsAddNew": "啟用'新增新的興趣點'按鈕",
+            "fsLayerControlToggle": "開始時擴展圖層控制",
+            "fsLayers": "啟用圖層控制",
+            "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
+            "fsSearch": "啟用搜尋列",
+            "fsUserbadge": "啟用登入按鈕",
+            "editThemeDescription": "新增或改變這個地圖的問題",
+            "editThisTheme": "編輯這個主題",
+            "thanksForSharing": "感謝分享！",
+            "copiedToClipboard": "複製連結到簡貼簿",
+            "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
+            "addToHomeScreen": "<h3>新增到你主頁畫面</h3>你可以輕易將這網站加到你智慧型手機的主頁畫面，在網址列點選 '新增到主頁按鈕'來做這件事情。",
+            "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖："
+        },
+        "attribution": {
+            "codeContributionsBy": "MapComplete 是由 {contributors} 和其他 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 位貢獻者</a>構建而成",
+            "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
+            "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
+            "iconAttribution": {
+                "title": "使用的圖示"
+            },
+            "themeBy": "由 {author} 維護主題",
+            "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
+            "attributionTitle": "署名通知"
+        },
+        "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能自由使用與編輯，單一的地圖能夠儲存所有地理相關資訊？這樣不就很酷嗎？接著，所有的網站使用不同的、範圍小的，不相容的地圖 (通常也都過時了)，也就不再需要了。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>就是這樣的地圖，人人都能免費這些圖資 (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。只要遵循這些，任何人都能自由新增新資料與修正錯誤，這些網站也都使用開放街圖，資料也都來自開放街圖，你的答案與修正也會加到開放街圖上面。</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。如果你在開放街圖上變動資料，也會同時影響這些應用 - 在他們下次更新資料之後！</p>",
+        "questions": {
+            "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
+            "emailOf": "{category} 的電子郵件地址是？",
+            "websiteIs": "網站：<a href=\"{website}\" target=\"_blank\">{website}</a>",
+            "websiteOf": "{category} 的網站網址是？",
+            "phoneNumberIs": "此 {category} 的電話號碼為 <a target=\"_blank\">{phone}</a>",
+            "phoneNumberOf": "{category} 的電話號碼是？"
+        },
+        "noNameCategory": "{category} 沒有名稱",
+        "nameInlineQuestion": "這個 {category} 的名稱是 $$$",
+        "about": "相當容易編輯，而且能為開放街圖新增特定主題",
+        "pickLanguage": "選擇語言： ",
+        "add": {
+            "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
+            "openLayerControl": "開啟圖層控制框",
+            "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
+            "confirmIntro": "<h3>在這裡新增 {title} ？</h3>你在這裡新增的節點<b>所有人都看得到</b>。請只有在確定有物件存在的情形下才新增上去，許多應用程式都使用這份資料。",
+            "stillLoading": "目前仍在載入資料，請稍後再來新增節點。",
+            "zoomInFurther": "放大來新增新的節點。",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">請先登入來新增節點</a>",
+            "intro": "您點擊處目前未有已知的資料。<br>",
+            "title": "新增新的節點？",
+            "addNew": "在這裡新增新的 {category}"
+        },
+        "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來檢視這物件",
+        "number": "號碼",
+        "skippedQuestions": "有些問題已經跳過了",
+        "oneSkippedQuestion": "跳過一個問題",
+        "skip": "跳過這問題",
+        "cancel": "取消",
+        "save": "儲存",
+        "returnToTheMap": "回到地圖",
+        "search": {
+            "error": "有狀況發生了…",
+            "nothing": "沒有找到…",
+            "searching": "搜尋中…",
+            "search": "搜尋地點"
+        },
+        "loginToStart": "登入之後來回答這問題",
+        "welcomeBack": "你已經登入了，歡迎回來！",
+        "loginWithOpenStreetMap": "用開放街圖帳號登入"
+    },
+    "index": {
+        "pickTheme": "請挑選主題來開始。",
+        "intro": "MapComplete 是開放街圖能夠顯示特定主題的檢視器與編輯器。",
+        "title": "歡迎使用 MapComplete",
+        "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示"
+    },
+    "centerMessage": {
+        "retrying": "無法讀取資料，請在 {count} 秒後再試一次…",
+        "ready": "完成！",
+        "zoomIn": "放大來檢視或編輯資料",
+        "loadingData": "正在讀取資料…"
+    },
+    "image": {
+        "isDeleted": "已移除",
+        "doDelete": "移除圖片",
+        "dontDelete": "取消",
+        "uploadDone": "<span class=\"thanks\">已經新增你的照片，謝謝你的協助！</span>",
+        "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
+        "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。",
+        "ccb": "以 CC-BY 授權條款",
+        "ccbs": "以 CC-BY-SA 授權條款",
+        "cco": "公有領域",
+        "willBePublished": "你的圖片將依以下授權釋出： ",
+        "pleaseLogin": "請登入以新增圖片",
+        "uploadingMultiple": "正在上傳 {count} 張圖片…",
+        "uploadingPicture": "正在上傳你的圖片…",
+        "addPicture": "新增圖片"
+    }
+}

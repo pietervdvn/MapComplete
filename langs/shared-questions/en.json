@@ -1,0 +1,20 @@
+{
+    "undefined": {
+        "phone": {
+            "question": "What is the phone number of {name}?"
+        },
+        "email": {
+            "question": "What is the email address of {name}?"
+        },
+        "website": {
+            "question": "What is the website of {name}?"
+        },
+        "description": {
+            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
+        },
+        "opening_hours": {
+            "question": "What are the opening hours of {name}?",
+            "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+        }
+    }
+}

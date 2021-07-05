@@ -58,7 +58,7 @@
       "question": {
         "en": "What is the type of this bicycle parking?",
         "nl": "Van welk type is deze fietsparking?",
-        "fr": "Quelle type de parking s'agit il?",
+        "fr": "Quel type de parking à vélos est-ce ?",
         "gl": "Que tipo de aparcadoiro de bicicletas é?",
         "de": "Was ist die Art dieses Fahrrad-Parkplatzes?",
         "hu": "Milyen típusú ez a kerékpáros parkoló?",
@@ -153,7 +153,8 @@
             "en": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
             "nl": "Paal met ring <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
             "fr": "Bollard <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
-            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+            "it": "Colonnina <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>",
+            "de": "Poller <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
           }
         },
         {
@@ -162,7 +163,8 @@
             "en": "An area on the floor which is  marked for bicycle parking",
             "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
             "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
-            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici"
+            "it": "Una zona del pavimento che è marcata per il parcheggio delle bici",
+            "de": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
           }
         }
       ]
@@ -183,7 +185,8 @@
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
             "it": "Parcheggio sotterraneo",
-            "ru": "Подземная парковка"
+            "ru": "Подземная парковка",
+            "de": "Tiefgarage"
           }
         },
         {
@@ -193,7 +196,8 @@
             "nl": "Ondergrondse parking",
             "fr": "Parking souterrain",
             "it": "Parcheggio sotterraneo",
-            "ru": "Подземная парковка"
+            "ru": "Подземная парковка",
+            "de": "Tiefgarage"
           }
         },
         {
@@ -203,7 +207,8 @@
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
             "hu": "Felszíni parkoló",
-            "it": "Parcheggio in superficie"
+            "it": "Parcheggio in superficie",
+            "de": "Ebenerdiges Parken"
           }
         },
         {
@@ -213,7 +218,8 @@
             "nl": "Parking op de begane grond",
             "fr": "Parking en surface",
             "hu": "Felszíni parkoló",
-            "it": "Parcheggio in superficie"
+            "it": "Parcheggio in superficie",
+            "de": "Ebenerdiges Parken"
           },
           "hideInAnwser": true
         },
@@ -266,7 +272,7 @@
             "en": "This parking is not covered",
             "nl": "Deze parking is niet overdekt",
             "gl": "Este aparcadoiro non está cuberto",
-            "de": "Dieser Parkplatz ist nicht überdacht.",
+            "de": "Dieser Parkplatz ist nicht überdacht",
             "fr": "Ce parking n'est pas couvert",
             "hu": "A parkoló nem fedett",
             "it": "Non è un parcheggio coperto"
@@ -303,7 +309,8 @@
         "en": "Who can use this bicycle parking?",
         "nl": "Wie mag er deze fietsenstalling gebruiken?",
         "fr": "Qui peut utiliser ce parking à vélo ?",
-        "it": "Chi può usare questo parcheggio bici?"
+        "it": "Chi può usare questo parcheggio bici?",
+        "de": "Wer kann diesen Fahrradparplatz nutzen?"
       },
       "render": {
         "en": "{access}",
@@ -311,7 +318,8 @@
         "fr": "{access}",
         "nl": "{access}",
         "it": "{access}",
-        "ru": "{access}"
+        "ru": "{access}",
+        "id": "{access}"
       },
       "freeform": {
         "key": "access",
@@ -326,7 +334,8 @@
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijke fietsenstalling",
             "fr": "Accessible publiquement",
-            "it": "Accessibile pubblicamente"
+            "it": "Accessibile pubblicamente",
+            "de": "Öffentlich zugänglich"
           }
         },
         {
@@ -408,7 +417,7 @@
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
         "nl": "Deze parking heeft plaats voor {capacity:cargo_bike} fietsen",
-        "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport.",
+        "fr": "Ce parking a de la place pour {capacity:cargo_bike} vélos de transport",
         "gl": "Neste aparcadoiro caben {capacity:cargo_bike} bicicletas de carga",
         "de": "Auf diesen Parkplatz passen {capacity:cargo_bike} Lastenfahrräder",
         "it": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"

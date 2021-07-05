@@ -3,12 +3,14 @@
   "name": {
     "en": "Viewpoint",
     "nl": "Uitzicht",
-    "de": "Aussichtspunkt"
+    "de": "Aussichtspunkt",
+    "fr": "Point de vue"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
     "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
-    "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt"
+    "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
+    "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient"
   },
   "source": {
     "osmTags": "tourism=viewpoint"
@@ -24,7 +26,8 @@
       "title": {
         "en": "Viewpoint",
         "nl": "Uitzicht",
-        "de": "Aussichtspunkt"
+        "de": "Aussichtspunkt",
+        "fr": "Point de vue"
       },
       "tags": [
         "tourism=viewpoint"
@@ -35,7 +38,8 @@
     "render": {
       "en": "Viewpoint",
       "nl": "Uitzicht",
-      "de": "Aussichtspunkt"
+      "de": "Aussichtspunkt",
+      "fr": "Point de vue"
     }
   },
   "tagRenderings": [
@@ -45,7 +49,8 @@
         "en": "Do you want to add a description?",
         "nl": "Zijn er bijzonderheden die je wilt toevoegen?",
         "de": "Möchten Sie eine Beschreibung hinzufügen?",
-        "ru": "Вы хотите добавить описание?"
+        "ru": "Вы хотите добавить описание?",
+        "fr": "Voulez-vous ajouter une description ?"
       },
       "render": "{description}",
       "freeform": {

@@ -77,14 +77,15 @@
         "en": "The name of this bookcase is {name}",
         "nl": "De naam van dit boekenruilkastje is {name}",
         "de": "Der Name dieses Bücherschrank lautet {name}",
-        "fr": "Le nom de cette microbibliothèque est {name}"
+        "fr": "Le nom de cette microbibliothèque est {name}",
+        "ru": "Название книжного шкафа — {name}"
       },
       "question": {
         "en": "What is the name of this public bookcase?",
         "nl": "Wat is de naam van dit boekenuilkastje?",
         "de": "Wie heißt dieser öffentliche Bücherschrank?",
         "fr": "Quel est le nom de cette microbibliothèque ?",
-        "ru": "Как называется этот общественный книжный шкаф?"
+        "ru": "Как называется общественный книжный шкаф?"
       },
       "freeform": {
         "key": "name"
@@ -112,13 +113,13 @@
         "en": "{capacity} books fit in this bookcase",
         "nl": "Er passen {capacity} boeken",
         "de": "{capacity} Bücher passen in diesen Bücherschrank",
-        "fr": "{capacity} livres rentrent dans cette microbibliothèque"
+        "fr": "{capacity} livres peuvent entrer dans cette microbibliothèque"
       },
       "question": {
         "en": "How many books fit into this public bookcase?",
         "nl": "Hoeveel boeken passen er in dit boekenruilkastje?",
         "de": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?",
-        "fr": "Combien de livre rentrent dans cette microbibliothèque ?",
+        "fr": "Combien de livres peuvent entrer dans cette microbibliothèque ?",
         "ru": "Сколько книг помещается в этом общественном книжном шкафу?"
       },
       "freeform": {
@@ -131,7 +132,7 @@
         "en": "What kind of books can be found in this public bookcase?",
         "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
         "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
-        "fr": "Quel type de livres peuvent être trouvés dans cette microbibliothèque ?"
+        "fr": "Quel type de livres peut-on dans cette microbibliothèque ?"
       },
       "mappings": [
         {
@@ -237,7 +238,7 @@
         "en": "Who maintains this public bookcase?",
         "nl": "Wie is verantwoordelijk voor dit boekenruilkastje?",
         "de": "Wer unterhält diesen öffentlichen Bücherschrank?",
-        "fr": "Qui entretien cette microbibliothèque"
+        "fr": "Qui entretien cette microbibliothèque ?"
       },
       "render": {
         "en": "Operated by {operator}",
@@ -273,7 +274,7 @@
             "en": "Part of the network 'Little Free Library'",
             "nl": "Deel van het netwerk 'Little Free Library'",
             "de": "Teil des Netzwerks 'Little Free Library'",
-            "fr": "Fait partie du réseau 'Little Free Library'"
+            "fr": "Fait partie du réseau Little Free Library"
           },
           "if": {
             "and": [
@@ -356,14 +357,14 @@
         "en": "More info on <a href='{website}' target='_blank'>the website</a>",
         "nl": "Meer info op <a href='{website}' target='_blank'>de website</a>",
         "de": "Weitere Informationen auf <a href='{website}' target='_blank'>der Webseite</a>",
-        "fr": "Plus d'info sur <a href='{website} target='_blank'>le site web</a>",
+        "fr": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>",
         "ru": "Более подробная информация <a href='{website}' target='_blank'>на сайте</a>"
       },
       "question": {
         "en": "Is there a website with more information about this public bookcase?",
         "nl": "Is er een website over dit boekenruilkastje?",
-        "de": "Gibt es eine Webseite mit weiteren Informationen über diesen öffentlichen Bücherschrank?",
-        "fr": "Existe-t-il un site web avec plus d'information sur cette microbibliothèque ?"
+        "de": "Gibt es eine Website mit weiteren Informationen über diesen öffentlichen Bücherschrank?",
+        "fr": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?"
       },
       "freeform": {
         "key": "website",

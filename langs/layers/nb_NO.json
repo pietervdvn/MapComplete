@@ -1,0 +1,107 @@
+{
+    "bench": {
+        "name": "Benker",
+        "title": {
+            "render": "Benk"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Rygglene",
+                "mappings": {
+                    "0": {
+                        "then": "Rygglene: Ja"
+                    },
+                    "1": {
+                        "then": "Rygglene: Nei"
+                    }
+                },
+                "question": "Har denne beken et rygglene?"
+            },
+            "2": {
+                "render": "{seats} seter",
+                "question": "Hvor mange sitteplasser har denne benken?"
+            },
+            "3": {
+                "render": "Materiale: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Materiale: tre"
+                    },
+                    "1": {
+                        "then": "Materiale: metall"
+                    },
+                    "2": {
+                        "then": "Materiale: stein"
+                    },
+                    "3": {
+                        "then": "Materiale: betong"
+                    },
+                    "4": {
+                        "then": "Materiale: plastikk"
+                    },
+                    "5": {
+                        "then": "Materiale: stål"
+                    }
+                }
+            },
+            "5": {
+                "render": "Farge: {colour}",
+                "mappings": {
+                    "0": {
+                        "then": "Farge: brun"
+                    },
+                    "1": {
+                        "then": "Farge: grønn"
+                    },
+                    "2": {
+                        "then": "Farge: grå"
+                    },
+                    "3": {
+                        "then": "Farge: hvit"
+                    },
+                    "4": {
+                        "then": "Farge: rød"
+                    },
+                    "5": {
+                        "then": "Farge: svart"
+                    },
+                    "6": {
+                        "then": "Farge: blå"
+                    },
+                    "7": {
+                        "then": "Farge: gul"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Benk",
+                "description": "Legg til en ny benk"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "name": "Benker",
+        "title": {
+            "render": "Benk"
+        }
+    },
+    "bicycle_library": {
+        "tagRenderings": {
+            "1": {
+                "question": "Hva heter dette sykkelbiblioteket?",
+                "render": "Dette sykkelbiblioteket heter {name}"
+            },
+            "6": {
+                "question": "Hvor mye koster det å leie en sykkel?",
+                "render": "Sykkelleie koster {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "Det er gratis å leie en sykkel"
+                    }
+                }
+            }
+        }
+    }
+}

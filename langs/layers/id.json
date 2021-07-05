@@ -30,54 +30,13 @@
             }
         }
     },
-    "ghost_bike": {
-        "tagRenderings": {
-            "3": {
-                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
-            },
-            "4": {
-                "render": "<i>{inscription}</i>"
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "3": {
-                "question": "URL {name} apa?"
-            }
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            }
-        }
-    },
-    "tree_node": {
-        "tagRenderings": {
-            "5": {
-                "render": "Nama: {name}"
-            }
-        },
+    "bench_at_pt": {
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
-        }
-    },
-    "playground": {
+            "render": "Bangku"
+        },
         "tagRenderings": {
-            "8": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "7": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
+            "1": {
+                "render": "{name}"
             }
         }
     },
@@ -88,14 +47,55 @@
             }
         }
     },
-    "bench_at_pt": {
+    "bike_shop": {
         "tagRenderings": {
-            "1": {
-                "render": "{name}"
+            "3": {
+                "question": "URL {name} apa?"
+            }
+        }
+    },
+    "ghost_bike": {
+        "tagRenderings": {
+            "3": {
+                "render": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+            },
+            "4": {
+                "render": "<i>{inscription}</i>"
+            }
+        }
+    },
+    "nature_reserve": {
+        "tagRenderings": {
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "7": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "8": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            }
+        }
+    },
+    "tree_node": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
             }
         },
-        "title": {
-            "render": "Bangku"
+        "tagRenderings": {
+            "5": {
+                "render": "Nama: {name}"
+            }
         }
     }
 }

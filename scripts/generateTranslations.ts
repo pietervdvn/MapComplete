@@ -232,8 +232,8 @@ function MergeTranslation(source: any, target: any, language: string, context: s
 
             targetV[language] = sourceV;
             let was = ""
-            if(targetV[language] !== undefined && targetV[language] !== sourceV){
-                was = " (overwritten "+targetV[language]+")"
+            if (targetV[language] !== undefined && targetV[language] !== sourceV) {
+                was = " (overwritten " + targetV[language] + ")"
             }
             console.log("   + ", context + "." + language, "-->", sourceV, was)
             continue
@@ -307,17 +307,25 @@ function mergeThemeTranslations() {
 
 
 const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
-
-if(!themeOverwritesWeblate) {
+const questionsPath = "assets/tagRenderings/questions.json"
+const questionsParsed = JSON.parse(readFileSync(questionsPath, 'utf8'))
+if (!themeOverwritesWeblate) {
     mergeLayerTranslations();
     mergeThemeTranslations();
-}else{
+
+    mergeLayerTranslation(questionsParsed, questionsPath, loadTranslationFilesFrom("shared-questions"))
+    writeFileSync(questionsPath, JSON.stringify(questionsParsed, null, "  "))
+
+} else {
     console.log("Ignore weblate")
 }
 generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
 generateTranslationsObjectFrom(ScriptUtils.getThemeFiles(), "themes")
 
-if(!themeOverwritesWeblate) {
+
+generateTranslationsObjectFrom([{path: questionsPath, parsed: questionsParsed}], "shared-questions")
+
+if (!themeOverwritesWeblate) {
 // Generates the core translations
     compileTranslationsFromWeblate();
 }

@@ -4,7 +4,9 @@
     "en": "Maps",
     "nl": "Kaarten",
     "it": "Mappe",
-    "ru": "Карты"
+    "ru": "Карты",
+    "fr": "Cartes",
+    "de": "Karten"
   },
   "minzoom": 12,
   "source": {
@@ -20,13 +22,16 @@
       "en": "Map",
       "nl": "Kaart",
       "it": "Mappa",
-      "ru": "Карта"
+      "ru": "Карта",
+      "fr": "Carte",
+      "de": "Karte"
     }
   },
   "description": {
     "en": "A map, meant for tourists which is permanently installed in the public space",
     "nl": "Een permantent geinstalleerde kaart",
-    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico"
+    "it": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
+    "fr": "Une carte, destinée aux touristes, installée en permanence dans l'espace public"
   },
   "tagRenderings": [
     "images",
@@ -34,7 +39,9 @@
       "question": {
         "en": "On which data is this map based?",
         "nl": "Op welke data is deze kaart gebaseerd?",
-        "it": "Su quali dati si basa questa mappa?"
+        "it": "Su quali dati si basa questa mappa?",
+        "fr": "Sur quelles données cette carte est-elle basée ?",
+        "de": "Auf welchen Daten basiert diese Karte?"
       },
       "mappings": [
         {
@@ -48,7 +55,9 @@
             "en": "This map is based on OpenStreetMap",
             "nl": "Deze kaart is gebaseerd op OpenStreetMap",
             "it": "Questa mappa si basa su OpenStreetMap",
-            "ru": "Эта карта основана на OpenStreetMap"
+            "ru": "Эта карта основана на OpenStreetMap",
+            "fr": "Cette carte est basée sur OpenStreetMap",
+            "de": "Diese Karte basiert auf OpenStreetMap"
           }
         }
       ],
@@ -59,14 +68,17 @@
         "en": "This map is based on {map_source}",
         "nl": "Deze kaart is gebaseerd op {map_source}",
         "it": "Questa mappa si basa su {map_source}",
-        "ru": "Эта карта основана на {map_source}"
+        "ru": "Эта карта основана на {map_source}",
+        "fr": "Cette carte est basée sur {map_source}",
+        "de": "Diese Karte basiert auf {map_source}"
       }
     },
     {
       "question": {
         "en": "Is the OpenStreetMap-attribution given?",
         "nl": "Is de attributie voor OpenStreetMap aanwezig?",
-        "it": "L’attribuzione a OpenStreetMap è presente?"
+        "it": "L’attribuzione a OpenStreetMap è presente?",
+        "de": "Ist die OpenStreetMap-Attribution vorhanden?"
       },
       "mappings": [
         {
@@ -78,7 +90,8 @@
           "then": {
             "en": "OpenStreetMap is clearly attributed, including the ODBL-license",
             "nl": "De OpenStreetMap-attributie is duidelijk aangegeven, zelf met vermelding van \"ODBL\" ",
-            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL"
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata, inclusa la licenza ODBL",
+            "de": "OpenStreetMap ist eindeutig attributiert, einschließlich der ODBL-Lizenz"
           }
         },
         {
@@ -90,7 +103,8 @@
           "then": {
             "en": "OpenStreetMap is clearly attributed, but the license is not mentioned",
             "nl": "OpenStreetMap is duidelijk aangegeven, maar de licentievermelding ontbreekt",
-            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare"
+            "it": "L’attribuzione a OpenStreetMap è chiaramente specificata ma la licenza non compare",
+            "de": "OpenStreetMap ist eindeutig attributiert, aber die Lizenz wird nicht erwähnt"
           }
         },
         {
@@ -102,7 +116,8 @@
           "then": {
             "en": "OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it",
             "nl": "OpenStreetMap was oorspronkelijk niet aangeduid, maar iemand plaatste er een sticker",
-            "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap"
+            "it": "Non era presente alcun cenno a OpenStreetMap ma qualcuno vi ha attaccato un adesivo di OpenStreetMap",
+            "de": "OpenStreetMap wurde nicht erwähnt, aber jemand hat einen OpenStreetMap-Aufkleber darauf geklebt"
           }
         },
         {
@@ -114,7 +129,9 @@
           "then": {
             "en": "There is no attribution at all",
             "nl": "Er is geen attributie",
-            "it": "Non c’è alcuna attribuzione"
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution",
+            "de": "Es gibt überhaupt keine Namensnennung"
           }
         },
         {
@@ -126,7 +143,9 @@
           "then": {
             "nl": "Er is geen attributie",
             "en": "There is no attribution at all",
-            "it": "Non c’è alcuna attribuzione"
+            "it": "Non c’è alcuna attribuzione",
+            "fr": "Il n'y a aucune attribution",
+            "de": "Es gibt überhaupt keine Namensnennung"
           },
           "hideInAnswer": true
         }
@@ -190,12 +209,16 @@
         "en": "Map",
         "nl": "Kaart",
         "it": "Mappa",
-        "ru": "Карта"
+        "ru": "Карта",
+        "fr": "Carte",
+        "de": "Karte"
       },
       "description": {
         "en": "Add a missing map",
         "nl": "Voeg een ontbrekende kaart toe",
-        "it": "Aggiungi una mappa mancante"
+        "it": "Aggiungi una mappa mancante",
+        "fr": "Ajouter une carte manquante",
+        "de": "Fehlende Karte hinzufügen"
       }
     }
   ],

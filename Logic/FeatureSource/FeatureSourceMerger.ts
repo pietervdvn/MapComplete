@@ -27,7 +27,7 @@ export default class FeatureSourceMerger implements FeatureSource {
         // We seed the dictionary with the previously loaded features
         const oldValues = this.features.data ?? [];
         for (const oldValue of oldValues) {
-            all.set(oldValue.feature.id, oldValue)
+            all.set(oldValue.feature.id + oldValue.feature._matching_layer_id, oldValue)
         }
 
         for (const source of this._sources) {
@@ -35,7 +35,7 @@ export default class FeatureSourceMerger implements FeatureSource {
                 continue;
             }
             for (const f of source.features.data) {
-                const id = f.feature.properties.id;
+                const id = f.feature.properties.id + f.feature._matching_layer_id;
                 if (!all.has(id)) {
                     // This is a new feature
                     somethingChanged = true;

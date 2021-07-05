@@ -117,6 +117,7 @@ def cumulative_users(stats):
 
 
 def pyplot_init():
+    pyplot.close('all')
     pyplot.figure(figsize=(14, 8), dpi=200)
     pyplot.xticks(rotation='vertical')
     pyplot.grid()
@@ -258,7 +259,7 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
             edits_per_day_cumul = themes.map(lambda themes_for_date: len([x for x in themes_for_date if theme == x]))
 
         if (not cumulative) or (running_totals is None):
-            running_totals = edits_per_day_cumul
+             running_totals = edits_per_day_cumul
         else:
             running_totals = list(map(lambda ab: ab[0] + ab[1], zip(running_totals, edits_per_day_cumul)))
 
@@ -289,7 +290,7 @@ def cumulative_changes_per(contents, index, subject, filenameextra="", cutoff=5,
         if cumulative:
             pyplot.fill_between(keys, kv[1], label=msg)
         else:
-            pyplot.plot(keys, kv[1], label=msg)
+            pyplot.bar(keys, kv[1], label=msg)
 
     if cumulative:
         cumulative_txt = "Cumulative changesets"
@@ -396,6 +397,7 @@ theme_remappings = {
     "arbres":"arbres_llefia",
     "aed_brugge": "aed",
      "https://llefia.org/arbres/mapcomplete.json":"arbres_llefia",
+     "https://llefia.org/arbres/mapcomplete1.json":"arbres_llefia",
     "toevoegen of dit natuurreservaat toegangkelijk is":"buurtnatuur",
     "testing mapcomplete 0.0.0":"buurtnatuur",
     "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
@@ -411,6 +413,8 @@ def clean_input(contents):
             theme = row[7][i + 1:-1].lower()
         if theme in theme_remappings:
             theme = theme_remappings[theme]
+        if theme.rfind('/') > 0:
+            theme = theme[theme.rfind('/') + 1 : ]
         row[3] = theme
         row[4] = row[4].strip().strip("\"")[len("MapComplete "):]
         row[4] = re.findall("[0-9]*\.[0-9]*\.[0-9]*", row[4])[0]
@@ -436,10 +440,10 @@ def main():
         stats = list(clean_input(csv.reader(csvfile, delimiter=',', quotechar='"')))
         print("Found " + str(len(stats)) + " changesets")
         
-        # contributor_count(stats)
+        contributor_count(stats)
         create_graphs(stats)
-        # create_per_theme_graphs(stats, 15)
-        # create_per_contributor_graphs(stats, 25)
+        create_per_theme_graphs(stats, 15)
+        create_per_contributor_graphs(stats, 25)
     print("All done!")
 
 

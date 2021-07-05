@@ -4,7 +4,9 @@
     "en": "Picnic tables",
     "nl": "Picnictafels",
     "it": "Tavoli da picnic",
-    "ru": "Столы для пикника"
+    "ru": "Столы для пикника",
+    "fr": "Tables de pique-nique",
+    "de": "Picknick-Tische"
   },
   "minzoom": 12,
   "source": {
@@ -15,25 +17,30 @@
       "en": "Picnic table",
       "nl": "Picnictafel",
       "it": "Tavolo da picnic",
-      "ru": "Стол для пикника"
+      "ru": "Стол для пикника",
+      "fr": "Table de pique-nique",
+      "de": "Picknick-Tisch"
     }
   },
   "description": {
     "en": "The layer showing picnic tables",
     "nl": "Deze laag toont picnictafels",
-    "it": "Il livello che mostra i tavoli da picnic"
+    "it": "Il livello che mostra i tavoli da picnic",
+    "fr": "La couche montrant les tables de pique-nique"
   },
   "tagRenderings": [
     {
       "question": {
         "en": "What material is this picnic table made of?",
         "nl": "Van welk materiaal is deze picnictafel gemaakt?",
-        "it": "Di che materiale è fatto questo tavolo da picnic?"
+        "it": "Di che materiale è fatto questo tavolo da picnic?",
+        "de": "Aus welchem Material besteht dieser Picknicktisch?"
       },
       "render": {
         "en": "This picnic table is made of {material}",
         "nl": "Deze picnictafel is gemaakt van {material}",
-        "it": "Questo tavolo da picnic è fatto di {material}"
+        "it": "Questo tavolo da picnic è fatto di {material}",
+        "de": "Dieser Picknicktisch besteht aus {material}"
       },
       "freeform": {
         "key": "material"
@@ -45,7 +52,8 @@
             "en": "This is a wooden picnic table",
             "nl": "Deze picnictafel is gemaakt uit hout",
             "it": "È un tavolo da picnic in legno",
-            "ru": "Это деревянный стол для пикника"
+            "ru": "Это деревянный стол для пикника",
+            "de": "Dies ist ein Picknicktisch aus Holz"
           }
         },
         {
@@ -54,7 +62,8 @@
             "en": "This is a concrete picnic table",
             "nl": "Deze picnictafel is gemaakt uit beton",
             "it": "È un tavolo da picnic in cemento",
-            "ru": "Это бетонный стол для пикника"
+            "ru": "Это бетонный стол для пикника",
+            "de": "Dies ist ein Picknicktisch aus Beton"
           }
         }
       ]
@@ -82,7 +91,8 @@
         "en": "Picnic table",
         "nl": "Picnic-tafel",
         "it": "Tavolo da picnic",
-        "ru": "Стол для пикника"
+        "ru": "Стол для пикника",
+        "de": "Picknicktisch"
       }
     }
   ],

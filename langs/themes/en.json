@@ -71,7 +71,7 @@
                         "render": "Created by {artist_name}"
                     },
                     "3": {
-                        "question": "On which website is more information about this artwork?",
+                        "question": "Is there a website with more information about this artwork?",
                         "render": "More information on <a href='{website}' target='_blank'>this website</a>"
                     },
                     "4": {
@@ -342,7 +342,7 @@
                     },
                     "6": {
                         "render": "{network}",
-                        "question": "Which is the network of this charging stationg?",
+                        "question": "What network of this charging station under?",
                         "mappings": {
                             "0": {
                                 "then": "Not part of a bigger network"
@@ -589,7 +589,7 @@
                 "question": "Is this street a cyclestreet?",
                 "mappings": {
                     "0": {
-                        "then": "This street is a cyclestreet (and has a maxspeeld of 30km/h)"
+                        "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
                     },
                     "1": {
                         "then": "This street is a cyclestreet"
@@ -626,7 +626,7 @@
             },
             "2": {
                 "name": "All streets",
-                "description": "Layer to mark any street as cycle street",
+                "description": "Layer to mark any street as cyclestreet",
                 "title": {
                     "render": "Street"
                 }
@@ -921,7 +921,7 @@
                 "title": {
                     "render": "Ambulance Station"
                 },
-                "description": "An  ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
+                "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
                 "tagRenderings": {
                     "0": {
                         "question": "What is the name of this ambulance station?",

@@ -3,20 +3,30 @@
   "version": "2020-08-30",
   "title": {
     "nl": "Fietsstraten",
-    "en": "Cyclestreets"
+    "en": "Cyclestreets",
+    "ja": "Cyclestreets",
+    "zh_Hant": "單車街道"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
-    "en": "A map of cyclestreets"
+    "en": "A map of cyclestreets",
+    "ja": "cyclestreetsの地図",
+    "zh_Hant": "單車街道的地圖",
+    "nb_NO": "Et kart over sykkelveier"
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
-    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. "
+    "en": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",
+    "ja": "cyclestreetとは、<b>自動車がサイクリストを追い越すことができない</b>道です。専用の道路標識で表示されます。Cyclestreetsはオランダやベルギーにもありますが、ドイツやフランスにもあります。 ",
+    "zh_Hant": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 "
   },
   "icon": "./assets/themes/cyclestreets/F111.svg",
   "language": [
     "nl",
-    "en"
+    "en",
+    "ja",
+    "zh_Hant",
+    "nb_NO"
   ],
   "startLat": 51.2095,
   "startZoom": 14,
@@ -27,7 +37,9 @@
     {
       "question": {
         "nl": "Is deze straat een fietsstraat?",
-        "en": "Is this street a cyclestreet?"
+        "en": "Is this street a cyclestreet?",
+        "ja": "この通りはcyclestreetですか?",
+        "nb_NO": "Er denne gaten en sykkelvei?"
       },
       "mappings": [
         {
@@ -41,7 +53,9 @@
           },
           "then": {
             "nl": "Deze straat is een fietsstraat (en dus zone 30)",
-            "en": "This street is a cyclestreet (and has a maxspeeld of 30km/h)"
+            "en": "This street is a cyclestreet (and has a speed limit of 30 km/h)",
+            "ja": "cyclestreet(最高速度は30km/h)",
+            "nb_NO": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
           }
         },
         {
@@ -53,7 +67,9 @@
           },
           "then": {
             "nl": "Deze straat is een fietsstraat",
-            "en": "This street is a cyclestreet"
+            "en": "This street is a cyclestreet",
+            "ja": "この通りはcyclestreetだ",
+            "nb_NO": "Denne gaten er en sykkelvei"
           },
           "hideInAnswer": true
         },
@@ -66,7 +82,9 @@
           },
           "then": {
             "nl": "Deze straat wordt binnenkort een fietsstraat",
-            "en": "This street will become a cyclstreet soon"
+            "en": "This street will become a cyclstreet soon",
+            "ja": "この通りはまもなくcyclstreetになるだろう",
+            "nb_NO": "Denne gaten vil bli sykkelvei ganske snart"
           }
         },
         {
@@ -79,7 +97,9 @@
           },
           "then": {
             "nl": "Deze straat is geen fietsstraat",
-            "en": "This street is not a cyclestreet"
+            "en": "This street is not a cyclestreet",
+            "ja": "この通りはcyclestreetではない",
+            "nb_NO": "Denne gaten er ikke en sykkelvei"
           }
         }
       ]
@@ -87,11 +107,13 @@
     {
       "question": {
         "nl": "Wanneer wordt deze straat een fietsstraat?",
-        "en": "When will this street become a cyclestreet?"
+        "en": "When will this street become a cyclestreet?",
+        "ja": "この通りはいつcyclestreetになるんですか?"
       },
       "render": {
         "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
-        "en": "This street will become a cyclestreet at {cyclestreet:start_date}"
+        "en": "This street will become a cyclestreet at {cyclestreet:start_date}",
+        "ja": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
       },
       "condition": "proposed:cyclestreet=yes",
       "freeform": {
@@ -105,7 +127,9 @@
       "id": "fietsstraat",
       "name": {
         "nl": "Fietsstraten",
-        "en": "Cyclestreets"
+        "en": "Cyclestreets",
+        "ja": "Cyclestreets",
+        "zh_Hant": "單車街道"
       },
       "minzoom": 7,
       "source": {
@@ -126,7 +150,8 @@
       },
       "description": {
         "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen.",
-        "en": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist"
+        "en": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",
+        "ja": "cyclestreetとは、自動車による交通がサイクリストを追い越すことができない道路です"
       },
       "title": "{name}",
       "icon": "./assets/themes/cyclestreets/F111.svg",
@@ -140,11 +165,15 @@
       "id": "toekomstige_fietsstraat",
       "name": {
         "nl": "Toekomstige fietsstraat",
-        "en": "Future cyclestreet"
+        "en": "Future cyclestreet",
+        "ja": "将来のcyclestreet",
+        "zh_Hant": "將來的單車街道",
+        "nb_NO": "Fremtidig sykkelvei"
       },
       "description": {
         "nl": "Deze straat wordt binnenkort een fietsstraat",
-        "en": "This street will become a cyclestreet soon"
+        "en": "This street will become a cyclestreet soon",
+        "ja": "この通りはまもなくcyclestreetになります"
       },
       "minzoom": 9,
       "wayHandling": 0,
@@ -154,13 +183,16 @@
       "title": {
         "render": {
           "nl": "Toekomstige fietsstraat",
-          "en": "Future cyclestreet"
+          "en": "Future cyclestreet",
+          "ja": "将来のcyclestreet",
+          "nb_NO": "Fremtidig sykkelvei"
         },
         "mappings": [
           {
             "then": {
               "nl": "{name} wordt fietsstraat",
-              "en": "{name} will become a cyclestreet soon"
+              "en": "{name} will become a cyclestreet soon",
+              "ja": "{name}は、もうすぐcyclestreetになる"
             },
             "if": "name~*"
           }
@@ -177,11 +209,15 @@
       "id": "all_streets",
       "name": {
         "nl": "Alle straten",
-        "en": "All streets"
+        "en": "All streets",
+        "ja": "すべての道路",
+        "nb_NO": "Alle gater"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
-        "en": "Layer to mark any street as cycle street"
+        "en": "Layer to mark any street as cyclestreet",
+        "ja": "任意の道路をCycle Streetとしてマークするレイヤ",
+        "nb_NO": "Lag for å markere hvilken som helst gate som sykkelvei"
       },
       "source": {
         "osmTags": {
@@ -197,7 +233,8 @@
       "title": {
         "render": {
           "nl": "Straat",
-          "en": "Street"
+          "en": "Street",
+          "ja": "ストリート"
         },
         "mappings": [
           {

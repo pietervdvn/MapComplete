@@ -4,7 +4,8 @@
     "nl": "Boom",
     "en": "Tree",
     "it": "Albero",
-    "ru": "Дерево"
+    "ru": "Дерево",
+    "fr": "Arbre"
   },
   "minzoom": 14,
   "source": {
@@ -19,7 +20,8 @@
       "nl": "Boom",
       "en": "Tree",
       "it": "Albero",
-      "ru": "Дерево"
+      "ru": "Дерево",
+      "fr": "Arbre"
     },
     "mappings": [
       {
@@ -31,7 +33,8 @@
           "de": "<i>{name}</i>",
           "fr": "<i>{name}</i>",
           "it": "<i>{name}</i>",
-          "ru": "<i>{name}</i>"
+          "ru": "<i>{name}</i>",
+          "id": "<i>{name}</i>"
         }
       }
     ]
@@ -43,7 +46,8 @@
         "nl": "Hoogte: {height}",
         "en": "Height: {height}",
         "it": "Altezza: {height}",
-        "ru": "Высота: {height}"
+        "ru": "Высота: {height}",
+        "fr": "Hauteur : {height}"
       },
       "condition": {
         "and": [
@@ -61,7 +65,8 @@
             "nl": "Hoogte: {height}&nbsp;m",
             "en": "Height: {height}&nbsp;m",
             "it": "Altezza: {height}&nbsp;m",
-            "ru": "Высота: {height}&nbsp;м"
+            "ru": "Высота: {height}&nbsp;м",
+            "fr": "Hauteur&nbsp;: {height}&nbsp;m"
           }
         }
       ]
@@ -116,7 +121,8 @@
       "question": {
         "nl": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is.",
         "en": "How significant is this tree? Choose the first answer that applies.",
-        "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde."
+        "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde.",
+        "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique."
       },
       "mappings": [
         {
@@ -128,7 +134,8 @@
           "then": {
             "nl": "De boom valt op door zijn grootte of prominente locatie. Hij is nuttig voor navigatie.",
             "en": "The tree is remarkable due to its size or prominent location. It is useful for navigation.",
-            "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione."
+            "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione.",
+            "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation."
           }
         },
         {
@@ -188,7 +195,8 @@
           "then": {
             "nl": "Dit is een laanboom.",
             "en": "This is a tree along an avenue.",
-            "it": "Fa parte di un viale alberato."
+            "it": "Fa parte di un viale alberato.",
+            "fr": "C'est un arbre le long d'une avenue."
           }
         },
         {
@@ -200,7 +208,8 @@
           "then": {
             "nl": "De boom staat in een woonkern.",
             "en": "The tree is an urban area.",
-            "it": "L’albero si trova in un’area urbana."
+            "it": "L’albero si trova in un’area urbana.",
+            "fr": "L'arbre est une zone urbaine."
           }
         },
         {
@@ -245,7 +254,8 @@
           "then": {
             "nl": "Groenblijvend.",
             "en": "Evergreen.",
-            "it": "Sempreverde."
+            "it": "Sempreverde.",
+            "fr": "À feuilles persistantes."
           }
         }
       ],
@@ -260,12 +270,15 @@
         "nl": "Naam: {name}",
         "en": "Name: {name}",
         "it": "Nome: {name}",
-        "ru": "Название: {name}"
+        "ru": "Название: {name}",
+        "fr": "Nom : {name}",
+        "id": "Nama: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
         "en": "Does the tree have a name?",
-        "it": "L’albero ha un nome?"
+        "it": "L’albero ha un nome?",
+        "fr": "L'arbre a-t-il un nom ?"
       },
       "freeform": {
         "key": "name",
@@ -284,7 +297,8 @@
           "then": {
             "nl": "De boom heeft geen naam.",
             "en": "The tree does not have a name.",
-            "it": "L’albero non ha un nome."
+            "it": "L’albero non ha un nome.",
+            "fr": "L'arbre n'a pas de nom."
           }
         }
       ],
@@ -300,7 +314,8 @@
       "question": {
         "nl": "Is deze boom erkend als erfgoed?",
         "en": "Is this tree registered heritage?",
-        "it": "Quest’albero è registrato come patrimonio?"
+        "it": "Quest’albero è registrato come patrimonio?",
+        "fr": "Cet arbre est-il inscrit au patrimoine ?"
       },
       "mappings": [
         {
@@ -326,7 +341,8 @@
           "then": {
             "nl": "Erkend als natuurlijk erfgoed door Directie Cultureel Erfgoed Brussel",
             "en": "Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels",
-            "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles"
+            "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
+            "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
           }
         },
         {
@@ -339,7 +355,8 @@
           "then": {
             "nl": "Erkend als erfgoed door een andere organisatie",
             "en": "Registered as heritage by a different organisation",
-            "it": "Registrato come patrimonio da un’organizzazione differente"
+            "it": "Registrato come patrimonio da un’organizzazione differente",
+            "fr": "Enregistré comme patrimoine par une autre organisation"
           }
         },
         {
@@ -352,7 +369,8 @@
           "then": {
             "nl": "Niet erkend als erfgoed",
             "en": "Not registered as heritage",
-            "it": "Non è registrato come patrimonio"
+            "it": "Non è registrato come patrimonio",
+            "fr": "Non enregistré comme patrimoine"
           }
         },
         {
@@ -364,7 +382,8 @@
           "then": {
             "nl": "Erkend als erfgoed door een andere organisatie",
             "en": "Registered as heritage by a different organisation",
-            "it": "Registrato come patrimonio da un’organizzazione differente"
+            "it": "Registrato come patrimonio da un’organizzazione differente",
+            "fr": "Enregistré comme patrimoine par une autre organisation"
           },
           "hideInAnswer": true
         }
@@ -407,7 +426,8 @@
       "question": {
         "nl": "Wat is het Wikidata-ID van deze boom?",
         "en": "What is the Wikidata ID for this tree?",
-        "it": "Qual è l’ID Wikidata per questo albero?"
+        "it": "Qual è l’ID Wikidata per questo albero?",
+        "fr": "Quel est l'identifiant Wikidata de cet arbre ?"
       },
       "freeform": {
         "key": "wikidata",
@@ -463,12 +483,14 @@
       "title": {
         "nl": "Loofboom",
         "en": "Broadleaved tree",
-        "it": "Albero latifoglia"
+        "it": "Albero latifoglia",
+        "fr": "Arbre feuillu"
       },
       "description": {
         "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
         "en": "A tree of a species with leaves, such as oak or populus.",
-        "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo."
+        "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
+        "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier."
       }
     },
     {
@@ -495,12 +517,14 @@
         "nl": "Boom",
         "en": "Tree",
         "it": "Albero",
-        "ru": "Дерево"
+        "ru": "Дерево",
+        "fr": "Arbre"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
         "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
-        "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia."
+        "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
+        "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles."
       }
     }
   ]

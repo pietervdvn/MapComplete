@@ -2,19 +2,27 @@
   "id": "facadegardens",
   "title": {
     "nl": "Straatgeveltuintjes",
-    "en": "Facade gardens"
+    "en": "Facade gardens",
+    "ja": "ファサード庭園",
+    "zh_Hant": "立面花園"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
-    "en": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types."
+    "en": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
+    "ja": "このマップには、ファサード庭園が図とともに表示され、方向、日照、植物のタイプに関する有用な情報が示されます。",
+    "zh_Hant": "這地圖顯示立面花園的照片以及其他像是方向、日照以及植栽種類等實用訊息。"
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "en": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+    "en": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "ja": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>ファサード庭園</a>、都市の緑のファサードと樹木は、平和と静けさをもたらすだけでなく、より美しい都市、より大きな生物多様性、冷却効果、より良い大気質をもたらす。<br/>KlimaanのVZWとMechelenのKlimaatneutraalは、自分で庭を作りたい人や自然を愛する都市の歩行者のために、既存のファサード庭園と新しいファサード庭園のマッピングしたいと考えています。<br/>このプロジェクトに関する詳細情報は<a href='https://klimaan.be/' target=_blank>klimaan</a>にあります。"
   },
   "language": [
     "nl",
     "en",
+    "ja",
+    "zh_Hant",
+    "nb_NO",
     "ru"
   ],
   "maintainer": "joost schouppe; stla",
@@ -30,7 +38,9 @@
       "id": "facadegardens",
       "name": {
         "nl": "Geveltuintjes",
-        "en": "Facade gardens"
+        "en": "Facade gardens",
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園"
       },
       "minzoom": 12,
       "source": {
@@ -44,12 +54,16 @@
       "title": {
         "render": {
           "nl": "Geveltuintje",
-          "en": "Facade garden"
+          "en": "Facade garden",
+          "ja": "ファサード庭園",
+          "zh_Hant": "立面花園"
         }
       },
       "description": {
         "nl": "Geveltuintjes",
-        "en": "Facade gardens"
+        "en": "Facade gardens",
+        "ja": "ファサード庭園",
+        "zh_Hant": "立面花園"
       },
       "iconOverlays": [
         {
@@ -88,11 +102,13 @@
         {
           "render": {
             "nl": "Oriëntatie: {direction} (waarbij 0=N en 90=O)",
-            "en": "Orientation: {direction} (where 0=N and 90=O)"
+            "en": "Orientation: {direction} (where 0=N and 90=O)",
+            "ja": "方向: {direction} (0=N で 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
-            "en": "What is the orientation of the garden?"
+            "en": "What is the orientation of the garden?",
+            "ja": "庭の向きはどうなっていますか?"
           },
           "freeform": {
             "type": "direction",
@@ -109,7 +125,8 @@
               },
               "then": {
                 "nl": "Het is een volle zon tuintje",
-                "en": "The garden is in full sun"
+                "en": "The garden is in full sun",
+                "ja": "庭は日があたっている"
               }
             },
             {
@@ -120,7 +137,9 @@
               },
               "then": {
                 "nl": "Het is een halfschaduw tuintje",
-                "en": "The garden is in partial shade"
+                "en": "The garden is in partial shade",
+                "ja": "庭は部分的に日陰である",
+                "nb_NO": "Denne hagen er i delvis skygge"
               }
             },
             {
@@ -131,19 +150,22 @@
               },
               "then": {
                 "nl": "Het is een schaduw tuintje",
-                "en": "The sun is in the shade"
+                "en": "The sun is in the shade",
+                "ja": "庭は日陰である"
               }
             }
           ],
           "question": {
             "nl": "Ligt de tuin in zon/half schaduw of schaduw?",
-            "en": "Is the garden shaded or sunny?"
+            "en": "Is the garden shaded or sunny?",
+            "ja": "庭は日陰ですか、日当たりがいいですか?"
           }
         },
         {
           "question": {
             "nl": "Is er een regenton voorzien bij het tuintje?",
-            "en": "Is there a water barrel installed for the garden?"
+            "en": "Is there a water barrel installed for the garden?",
+            "ja": "庭に水桶が設置されているのですか?"
           },
           "mappings": [
             {
@@ -154,7 +176,8 @@
               },
               "then": {
                 "nl": "Er is een regenton",
-                "en": "There is a rain barrel"
+                "en": "There is a rain barrel",
+                "ja": "雨樽がある"
               }
             },
             {
@@ -165,7 +188,8 @@
               },
               "then": {
                 "nl": "Er is geen regenton",
-                "en": "There is no rain barrel"
+                "en": "There is no rain barrel",
+                "ja": "雨樽はありません"
               }
             }
           ]
@@ -174,11 +198,13 @@
           "render": {
             "nl": "Aanlegdatum van de tuin: {start_date}",
             "en": "Construction date of the garden: {start_date}",
-            "ru": "Дата строительства сада: {start_date}"
+            "ru": "Дата строительства сада: {start_date}",
+            "ja": "庭園の建設日: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
-            "en": "When was the garden constructed? (a year is sufficient)"
+            "en": "When was the garden constructed? (a year is sufficient)",
+            "ja": "その庭園はいつ造られたのですか?(建設年で十分です)"
           },
           "freeform": {
             "key": "start_date",
@@ -195,7 +221,8 @@
               },
               "then": {
                 "nl": "Er staan eetbare planten",
-                "en": "There are edible plants"
+                "en": "There are edible plants",
+                "ja": "食用の植物がある"
               }
             },
             {
@@ -206,47 +233,54 @@
               },
               "then": {
                 "nl": "Er staan geen eetbare planten",
-                "en": "There are no edible plants"
+                "en": "There are no edible plants",
+                "ja": "食用植物は存在しない"
               }
             }
           ],
           "question": {
             "nl": "Staan er eetbare planten?",
-            "en": "Are there any edible plants?"
+            "en": "Are there any edible plants?",
+            "ja": "食用の植物はありますか?"
           }
         },
         {
           "question": {
             "nl": "Wat voor planten staan hier?",
-            "en": "What kinds of plants grow here?"
+            "en": "What kinds of plants grow here?",
+            "ja": "ここではどんな植物が育つんですか?"
           },
           "mappings": [
             {
               "if": "plant=vine",
               "then": {
                 "nl": "Er staat een klimplant",
-                "en": "There are vines"
+                "en": "There are vines",
+                "ja": "つるがある"
               }
             },
             {
               "if": "plant=flower",
               "then": {
                 "nl": "Er staan bloeiende planten",
-                "en": "There are flowering plants"
+                "en": "There are flowering plants",
+                "ja": "花を咲かせる植物がある"
               }
             },
             {
               "if": "plant=shrub",
               "then": {
                 "nl": "Er staan struiken",
-                "en": "There are shrubs"
+                "en": "There are shrubs",
+                "ja": "低木がある"
               }
             },
             {
               "if": "plant=groundcover",
               "then": {
                 "nl": "Er staan bodembedekkers",
-                "en": "There are groundcovering plants"
+                "en": "There are groundcovering plants",
+                "ja": "地をはう植物がある"
               }
             }
           ],
@@ -255,11 +289,13 @@
         {
           "render": {
             "nl": "Meer details: {description}",
-            "en": "More details: {description}"
+            "en": "More details: {description}",
+            "ja": "詳細情報: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
-            "en": "Extra describing info about the garden (if needed and not yet described above)"
+            "en": "Extra describing info about the garden (if needed and not yet described above)",
+            "ja": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)"
           },
           "freeform": {
             "key": "description",
@@ -314,11 +350,13 @@
           ],
           "title": {
             "nl": "geveltuintje",
-            "en": "facade garden"
+            "en": "facade garden",
+            "ja": "ファサード庭園"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
-            "en": "Add a facade garden"
+            "en": "Add a facade garden",
+            "ja": "ファサード庭園を追加する"
           }
         }
       ],

@@ -1,0 +1,20 @@
+{
+    "undefined": {
+        "opening_hours": {
+            "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}",
+            "question": "{name} 的開放時間是什麼？"
+        },
+        "description": {
+            "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
+        },
+        "website": {
+            "question": "{name} 網址是什麼？"
+        },
+        "email": {
+            "question": "{name} 的電子郵件地址是什麼？"
+        },
+        "phone": {
+            "question": "{name} 的電話號碼是什麼？"
+        }
+    }
+}

@@ -1,0 +1,390 @@
+{
+    "bench": {
+        "name": "長椅",
+        "title": {
+            "render": "長椅"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "靠背",
+                "mappings": {
+                    "0": {
+                        "then": "靠背：有"
+                    },
+                    "1": {
+                        "then": "靠背：無"
+                    }
+                },
+                "question": "這個長椅是否有靠背？"
+            },
+            "2": {
+                "render": "{seats} 座位數",
+                "question": "這個長椅有幾個位子？"
+            },
+            "3": {
+                "render": "材質：{material}",
+                "question": "這個長椅 (座位) 是什麼做的？",
+                "mappings": {
+                    "5": {
+                        "then": "材質：鋼鐵"
+                    },
+                    "4": {
+                        "then": "材質：塑膠"
+                    },
+                    "3": {
+                        "then": "材質：水泥"
+                    },
+                    "2": {
+                        "then": "材質：石頭"
+                    },
+                    "1": {
+                        "then": "材質：金屬"
+                    },
+                    "0": {
+                        "then": "材質：木頭"
+                    }
+                }
+            },
+            "5": {
+                "render": "顏色：{colour}",
+                "question": "這個長椅是什麼顏色的？",
+                "mappings": {
+                    "0": {
+                        "then": "顏色：棕色"
+                    },
+                    "1": {
+                        "then": "顏色：綠色"
+                    },
+                    "2": {
+                        "then": "顏色：灰色"
+                    },
+                    "3": {
+                        "then": "顏色：白色"
+                    },
+                    "4": {
+                        "then": "顏色：紅色"
+                    },
+                    "5": {
+                        "then": "顏色：黑色"
+                    },
+                    "6": {
+                        "then": "顏色：藍色"
+                    },
+                    "7": {
+                        "then": "顏色：黃色"
+                    }
+                }
+            },
+            "6": {
+                "question": "上一次探察長椅是什麼時候？",
+                "render": "這個長椅最後是在 {survey:date} 探查的"
+            },
+            "4": {
+                "render": "當坐在長椅時，那個人朝向 {direction}°。",
+                "question": "坐在長椅時是面對那個方向？"
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "新增長椅",
+                "title": "長椅"
+            }
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "2": {
+                "mappings": {
+                    "4": {
+                        "then": "屋頂停車場"
+                    },
+                    "3": {
+                        "then": "地面層停車場"
+                    },
+                    "2": {
+                        "then": "地面停車場"
+                    },
+                    "1": {
+                        "then": "地下停車場"
+                    },
+                    "0": {
+                        "then": "地下停車場"
+                    }
+                },
+                "question": "這個單車停車場的相對位置是？"
+            },
+            "1": {
+                "mappings": {
+                    "7": {
+                        "then": "樓層當中標示為單車停車場的區域"
+                    },
+                    "6": {
+                        "then": "柱子 <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                    },
+                    "5": {
+                        "then": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                    },
+                    "4": {
+                        "then": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                    },
+                    "3": {
+                        "then": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                    },
+                    "2": {
+                        "then": "車把架 <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                    },
+                    "1": {
+                        "then": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                    },
+                    "0": {
+                        "then": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                    }
+                },
+                "render": "這個單車停車場的類型是：{bicycle_parking}",
+                "question": "這是那種類型的單車停車場？"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "這停車場有設計 (官方) 空間給裝箱的單車。"
+                    },
+                    "0": {
+                        "then": "這個停車場有地方可以放裝箱單車"
+                    }
+                },
+                "question": "這個單車停車場有地方放裝箱的單車嗎？"
+            },
+            "5": {
+                "mappings": {
+                    "2": {
+                        "then": "通行性僅限學校、公司或組織的成員"
+                    },
+                    "1": {
+                        "then": "通行性主要是為了企業的顧客"
+                    },
+                    "0": {
+                        "then": "公開可用"
+                    }
+                },
+                "render": "{access}",
+                "question": "誰可以使用這個單車停車場？"
+            },
+            "4": {
+                "render": "{capacity} 單車的地方",
+                "question": "這個單車停車場能放幾台單車 (包括裝箱單車)？"
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "這個停車場沒有遮蔽"
+                    },
+                    "0": {
+                        "then": "這個停車場有遮蔽 (有屋頂)"
+                    }
+                },
+                "question": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。"
+            }
+        },
+        "title": {
+            "render": "單車停車場"
+        },
+        "presets": {
+            "0": {
+                "title": "單車停車場"
+            }
+        },
+        "name": "單車停車場"
+    },
+    "bike_monitoring_station": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "單車計數站 {ref}"
+                },
+                "0": {
+                    "then": "單車計數站 {name}"
+                }
+            },
+            "render": "單車計數站"
+        },
+        "name": "監視站"
+    },
+    "bike_cleaning": {
+        "presets": {
+            "0": {
+                "title": "單車清理服務"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "單車清理服務 <i>{name}</i>"
+                }
+            },
+            "render": "單車清理服務"
+        },
+        "name": "單車清理服務"
+    },
+    "bike_cafe": {
+        "presets": {
+            "0": {
+                "title": "單車咖啡廳"
+            }
+        },
+        "tagRenderings": {
+            "8": {
+                "question": "何時這個單車咖啡廳營運？"
+            },
+            "7": {
+                "question": "{name} 的電子郵件地址是？"
+            },
+            "6": {
+                "question": "{name} 的電話號碼是？"
+            },
+            "5": {
+                "question": "{name} 的網站是？"
+            },
+            "4": {
+                "mappings": {
+                    "1": {
+                        "then": "這個單車咖啡廳並不修理單車"
+                    },
+                    "0": {
+                        "then": "這個單車咖啡廳修理單車"
+                    }
+                },
+                "question": "這個單車咖啡廳是否能修理單車？"
+            },
+            "3": {
+                "mappings": {
+                    "1": {
+                        "then": "這個單車咖啡廳並沒有提供工具讓你修理"
+                    },
+                    "0": {
+                        "then": "這個單車咖啡廳提供工具讓你修理"
+                    }
+                },
+                "question": "這裡是否有工具修理你的單車嗎？"
+            },
+            "2": {
+                "mappings": {
+                    "1": {
+                        "then": "這個單車咖啡廳並沒有為所有人提供單車打氣甬"
+                    },
+                    "0": {
+                        "then": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬"
+                    }
+                },
+                "question": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？"
+            },
+            "1": {
+                "render": "這個單車咖啡廳叫做 {name}",
+                "question": "這個單車咖啡廳的名稱是？"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "單車咖啡廳<i>{name}</i>"
+                }
+            },
+            "render": "單車咖啡廳"
+        },
+        "name": "單車咖啡廳"
+    },
+    "bicycle_tube_vending_machine": {
+        "tagRenderings": {
+            "1": {
+                "mappings": {
+                    "2": {
+                        "then": "這個自動販賣機已經關閉了"
+                    },
+                    "1": {
+                        "then": "這個自動販賣機沒有運作了"
+                    },
+                    "0": {
+                        "then": "這個自動販賣機仍運作"
+                    }
+                },
+                "render": "運作狀態是 <i>{operational_status</i>",
+                "question": "這個自動販賣機仍有運作嗎？"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "自行車內胎自動售貨機"
+            }
+        },
+        "title": {
+            "render": "自行車內胎自動售貨機"
+        },
+        "name": "自行車內胎自動售貨機"
+    },
+    "bicycle_library": {
+        "presets": {
+            "0": {
+                "description": "單車圖書館有一大批單車供人租借",
+                "title": "自行車圖書館 ( Fietsbibliotheek)"
+            }
+        },
+        "tagRenderings": {
+            "7": {
+                "mappings": {
+                    "2": {
+                        "then": "有提供行動不便人士的單車"
+                    },
+                    "1": {
+                        "then": "有提供成人單車"
+                    },
+                    "0": {
+                        "then": "提供兒童單車"
+                    }
+                },
+                "question": "誰可以在這裡租單車？"
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": "租借單車價錢 €20/year 與 €20 保證金"
+                    },
+                    "0": {
+                        "then": "租借單車免費"
+                    }
+                },
+                "render": "租借單車需要 {charge}",
+                "question": "租用單車的費用多少？"
+            },
+            "1": {
+                "render": "這個單車圖書館叫做 {name}",
+                "question": "這個單車圖書館的名稱是？"
+            }
+        },
+        "title": {
+            "render": "單車圖書館"
+        },
+        "name": "單車圖書館",
+        "description": "能夠長期租用單車的設施"
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "2": {
+                "render": "站立長椅"
+            },
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "涼亭內的長椅"
+                },
+                "0": {
+                    "then": "大眾運輸站點的長椅"
+                }
+            },
+            "render": "長椅"
+        },
+        "name": "大眾運輸站點的長椅"
+    }
+}

@@ -1,3 +1,4 @@
 import ValidatedTextField from "./UI/Input/ValidatedTextField";
+import TestAll from "./test/TestAll";
 
-ValidatedTextField.InputForType("phone").AttachTo("maindiv")
+new TestAll().testAll();

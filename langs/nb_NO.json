@@ -1,0 +1,29 @@
+{
+    "general": {
+        "skip": "Hopp over dette spørsmålet",
+        "cancel": "Avbryt",
+        "save": "Lagre",
+        "search": {
+            "searching": "Søker …"
+        },
+        "welcomeBack": "Du er innlogget. Velkommen tilbake."
+    },
+    "index": {
+        "pickTheme": "Begynn ved å velge en av draktene nedenfor.",
+        "title": "Velkommen til MapComplete"
+    },
+    "centerMessage": {
+        "ready": "Ferdig",
+        "zoomIn": "Forstørr for å vise eller redigere data",
+        "loadingData": "Laster inn data …"
+    },
+    "image": {
+        "isDeleted": "Slettet",
+        "doDelete": "Fjern bilde",
+        "dontDelete": "Avbryt",
+        "uploadingMultiple": "Laster opp {count} bilder …",
+        "uploadingPicture": "Laster opp bildet ditt …",
+        "addPicture": "Legg til bilde",
+        "pleaseLogin": "Logg inn for å legge til et bilde"
+    }
+}

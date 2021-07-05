@@ -6,7 +6,10 @@
     "fr": "Bancs",
     "nl": "Zitbanken",
     "it": "Panchine",
-    "ru": "Скамейки"
+    "ru": "Скамейки",
+    "ja": "ベンチ",
+    "zh_Hant": "長椅",
+    "nb_NO": "Benker"
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -14,7 +17,10 @@
     "fr": "Carte des bancs",
     "nl": "Een kaart met zitbanken",
     "it": "Una mappa delle panchine",
-    "ru": "Карта скамеек"
+    "ru": "Карта скамеек",
+    "ja": "ベンチの地図",
+    "zh_Hant": "長椅的地圖",
+    "nb_NO": "Et benkekart"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
@@ -22,7 +28,8 @@
     "fr": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
     "nl": "Deze kaart toont alle zitbanken die in OpenStreetMap gekend zijn: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account can je informatie verbeteren en nieuwe zitbanken in toevoegen.",
     "it": "Questa mappa mostra tutte le panchine che sono state aggiunte su OpenStreetMap: panchine individuali e quelle alle fermate del trasporto pubblico o nei ripari. Se disponi di un account OpenStreetMap puoi mappare delle nuove panchine o modificare i dettagli di quelle esistenti.",
-    "ru": "На этой карте показаны все скамейки, записанные в OpenStreetMap: отдельные скамейки, а также скамейки, относящиеся к остановкам общественного транспорта или навесам. Имея учетную запись OpenStreetMap, вы можете наносить на карту новые скамейки или редактировать информацию о существующих скамейках."
+    "ru": "На этой карте показаны все скамейки, записанные в OpenStreetMap: отдельные скамейки, а также скамейки, относящиеся к остановкам общественного транспорта или навесам. Имея учетную запись OpenStreetMap, вы можете наносить на карту новые скамейки или редактировать информацию о существующих скамейках.",
+    "ja": "このマップには、OpenStreetMapに記録されているすべてのベンチが表示されます。個々のベンチ、および公共交通機関の停留所または避難場所に属するベンチです。OpenStreetMapアカウントを使用すると、新しいベンチをマップしたり、既存のベンチの詳細を編集したりできます。"
   },
   "language": [
     "en",
@@ -30,7 +37,10 @@
     "fr",
     "nl",
     "it",
-    "ru"
+    "ru",
+    "ja",
+    "zh_Hant",
+    "nb_NO"
   ],
   "maintainer": "Florian Edelmann",
   "icon": "./assets/themes/benches/bench_poi.svg",
