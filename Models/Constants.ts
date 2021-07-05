@@ -13,8 +13,8 @@ export default class Constants {
         tagsVisibleAt: 25,
         mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
-        themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 1,
+        themeGeneratorReadOnlyUnlock: 1,
+        themeGeneratorFullUnlock: 50,
         addNewPointWithUnreadMessagesUnlock: 500,
         minZoomLevelToAddNewPoints: (Constants.isRetina() ? 18 : 19),
        
