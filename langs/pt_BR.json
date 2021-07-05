@@ -18,6 +18,51 @@
     "centerMessage": {
         "ready": "Concluído!",
         "zoomIn": "Amplie para ver ou editar os dados",
-        "loadingData": "Carregando dados…"
+        "loadingData": "Carregando dados…",
+        "retrying": "Falha ao carregar dados. Tentando novamente em {count} segundos…"
+    },
+    "general": {
+        "questions": {
+            "phoneNumberOf": "Qual é o número de telefone de {category}?"
+        },
+        "noNameCategory": "{category} sem nome",
+        "nameInlineQuestion": "O nome desta {category} é $$$",
+        "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
+        "pickLanguage": "Escolha um idioma: ",
+        "add": {
+            "addNew": "Adicione uma nova {category} aqui",
+            "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
+            "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
+            "openLayerControl": "Abra a caixa de controle da camada",
+            "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
+            "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
+            "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
+            "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, faça o login para adicionar um novo ponto</a>",
+            "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
+            "title": "Adicionar um novo ponto?"
+        },
+        "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
+        "number": "número",
+        "skippedQuestions": "Algumas perguntas foram puladas",
+        "skip": "Pule esta pergunta",
+        "oneSkippedQuestion": "Uma pergunta foi pulada",
+        "cancel": "Cancelar",
+        "save": "Salvar",
+        "returnToTheMap": "Voltar ao mapa",
+        "search": {
+            "error": "Algo deu errado…",
+            "nothing": "Nada encontrado…",
+            "searching": "Procurando…",
+            "search": "Pesquise um local"
+        },
+        "loginToStart": "Faça login para responder a esta pergunta",
+        "welcomeBack": "Você está logado, seja bem-vindo de volta!",
+        "loginWithOpenStreetMap": "Entrar com OpenStreetMap"
+    },
+    "index": {
+        "pickTheme": "Escolha um tema abaixo para começar.",
+        "intro": "MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
+        "title": "Bem-vindo(a) ao MapComplete",
+        "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado"
     }
 }
