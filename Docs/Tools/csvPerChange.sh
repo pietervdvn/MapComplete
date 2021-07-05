@@ -17,6 +17,6 @@ do
     echo "" >> tmp.csv
 done
 
-sed "/^$/d" tmp.csv | sed "s/^  //" | sed "s/  / /g" | sed "s/\"\(....-..-..\)T........./\"\1/" | sort > stats-latest.csv
-cat stats2020.csv stats-latest.csv > stats.csv
+sed "/^$/d" tmp.csv | sed "s/^  //" | sed "s/  / /g" | sort > stats-latest.csv
+cat stats2020.csv stats2021Q1.csv stats-latest.csv > stats.csv
 rm tmp.csv stats-latest.csv

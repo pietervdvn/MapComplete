@@ -16,11 +16,7 @@ export default class LocalStorageSaver implements FeatureSource {
     constructor(source: FeatureSource, layout: UIEventSource<LayoutConfig>) {
         this.features = source.features;
 
-        this.features.addCallbackAndRun(features => {
-            if (features === undefined) {
-                return;
-            }
-            
+        this.features.addCallbackAndRunD(features => {
             const now = new Date().getTime()
             features = features.filter(f => layout.data.cacheTimeout > Math.abs(now - f.freshness.getTime())/1000) 
             

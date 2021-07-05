@@ -1,4 +1,3 @@
-import * as $ from "jquery"
 import ImageAttributionSource from "./ImageAttributionSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Svg from "../../Svg";
@@ -43,7 +42,7 @@ export class Wikimedia extends ImageAttributionSource {
         }
         const self = this;
         console.log("Loading a wikimedia category: ", url)
-        $.getJSON(url, (response) => {
+        Utils.downloadJson(url).then((response) => {
             let imageOverview = new ImagesInCategory();
             let members = response.query?.categorymembers;
             if (members === undefined) {
@@ -78,7 +77,7 @@ export class Wikimedia extends ImageAttributionSource {
 
     static GetWikiData(id: number, handleWikidata: ((Wikidata) => void)) {
         const url = "https://www.wikidata.org/wiki/Special:EntityData/Q" + id + ".json";
-        $.getJSON(url, (response) => {
+        Utils.downloadJson(url).then (response => {
             const entity = response.entities["Q" + id];
             const commons = entity.sitelinks.commonswiki;
             const wd = new Wikidata();

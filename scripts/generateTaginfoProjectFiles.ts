@@ -47,8 +47,9 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any [] {
 
     for (const tr of layer.tagRenderings) {
         {
-            const usesImageCarousel = (tr.render?.txt?.indexOf("image_carousel()") ?? -2) > 0
-            const usesImageUpload = (tr.render?.txt?.indexOf("image_upload()") ?? -2) > 0
+            const usesImageCarousel = (tr.render?.txt?.indexOf("image_carousel") ?? -2) > 0
+            const usesImageUpload = (tr.render?.txt?.indexOf("image_upload") ?? -2) > 0
+
             if (usesImageCarousel || usesImageUpload) {
 
                 const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary`;

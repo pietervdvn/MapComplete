@@ -159,4 +159,11 @@ export class UIEventSource<T> {
         return newSource;
     }
 
+    addCallbackAndRunD(callback: (data :T ) => void) {
+        this.addCallbackAndRun(data => {
+            if(data !== undefined && data !== null){
+                callback(data)
+            }
+        })
+    }
 }

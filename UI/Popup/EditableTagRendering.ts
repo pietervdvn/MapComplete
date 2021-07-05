@@ -43,11 +43,14 @@ export default class EditableTagRendering extends Toggle {
                         editMode.setData(false)
                     });
 
-            const question = new TagRenderingQuestion(tags, configuration,units,
-                () => {
-                    editMode.setData(false)
-                },
-                cancelbutton)
+            const question = new TagRenderingQuestion(tags, configuration,
+                {
+                    units: units,
+                    cancelButton: cancelbutton,
+                    afterSave:   () => {
+                        editMode.setData(false)
+                    }
+                })
 
 
             rendering = new Toggle(

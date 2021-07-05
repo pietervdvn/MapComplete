@@ -1,6 +1,3 @@
-/**
- * Handles and updates the user badge
- */
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Svg from "../../Svg";
 import State from "../../State";
@@ -21,7 +18,7 @@ export default class UserBadge extends Toggle {
 
         const loginButton = Translations.t.general.loginWithOpenStreetMap
             .Clone()
-            .SetClass("userbadge-login pt-3 w-full")
+            .SetClass("userbadge-login pt-3 w-full h-full")
             .onClick(() => State.state.osmConnection.AttemptLogin());
 
 
@@ -32,7 +29,7 @@ export default class UserBadge extends Toggle {
                 });
 
 
-        const userBadge = userDetails.map(user => {
+        const userBadge = new VariableUiElement(userDetails.map(user => {
             {
                 const homeButton = new VariableUiElement(
                     userDetails.map((userinfo) => {
@@ -56,7 +53,7 @@ export default class UserBadge extends Toggle {
                 let messageSpan =
                     new Link(
                         new Combine([Svg.envelope, "" + user.totalMessages]).SetClass(linkStyle),
-                        'https://www.openstreetmap.org/messages/inbox',
+                        `${user.backend}/messages/inbox`,
                         true
                     )
 
@@ -64,41 +61,32 @@ export default class UserBadge extends Toggle {
                 const csCount =
                     new Link(
                         new Combine([Svg.star, "" + user.csCount]).SetClass(linkStyle),
-                        `https://www.openstreetmap.org/user/${user.name}/history`,
+                        `${user.backend}/user/${user.name}/history`,
                         true);
 
 
                 if (user.unreadMessages > 0) {
                     messageSpan = new Link(
                         new Combine([Svg.envelope, "" + user.unreadMessages]),
-                        'https://www.openstreetmap.org/messages/inbox',
+                        '${user.backend}/messages/inbox',
                         true
                     ).SetClass("alert")
                 }
 
                 let dryrun = new FixedUiElement("");
                 if (user.dryRun) {
-                    dryrun = new FixedUiElement("TESTING").SetClass("alert");
+                    dryrun = new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4");
                 }
 
                 const settings =
                     new Link(Svg.gear_svg(),
-                        `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}/account`,
+                        `${user.backend}/user/${encodeURIComponent(user.name)}/account`,
                         true)
-
-
-                const userIcon = new Link(
-                    new Img(user.img)
-                        .SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 h16 float-left")
-                    ,
-                    `https://www.openstreetmap.org/user/${encodeURIComponent(user.name)}`,
-                    true
-                );
 
 
                 const userName = new Link(
                     new FixedUiElement(user.name),
-                    `https://www.openstreetmap.org/user/${user.name}`,
+                    `${user.backend}/user/${user.name}`,
                     true);
 
 
@@ -113,24 +101,40 @@ export default class UserBadge extends Toggle {
                     .SetClass("userstats")
 
                 const usertext = new Combine([
-                    userName,
-                    dryrun,
+                    new Combine([userName, dryrun]).SetClass("flex justify-end w-full"),
                     userStats
-                ]).SetClass("usertext")
+                ]).SetClass("flex flex-col sm:w-auto sm:pl-2 overflow-hidden w-0")
+                const userIcon =
+                    (user.img === undefined ? Svg.osm_logo_ui() :   new Img(user.img)).SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 min-width-16 h16 float-left")
+                        .onClick(() => {
+                            if(usertext.HasClass("w-0")){
+                                usertext.RemoveClass("w-0")
+                                usertext.SetClass("w-min pl-2")
+                            }else{
+                                usertext.RemoveClass("w-min")
+                                usertext.RemoveClass("pl-2")
+                                usertext.SetClass("w-0")
+                            }
+                        })
 
                 return new Combine([
-                    userIcon,
                     usertext,
-                ]).SetClass("h-16")
+                    userIcon,
+                ]).SetClass("h-16 flex bg-white")
+                
             }
-        });
+        }));
 
+        userBadge.SetClass("inline-block m-0 w-full").SetStyle("pointer-events: all")
         super(
-            new VariableUiElement(userBadge),
+            userBadge,
             loginButton,
             State.state.osmConnection.isLoggedIn
         )
 
+        
+       this.SetClass("shadow rounded-full h-min overflow-hidden block w-max")
+        
     }
 
 

@@ -17,16 +17,16 @@ export class SaveButton extends Toggle {
 
         const isSaveable = value.map(v => v !== false && (v ?? "") !== "")
 
-
-        const saveEnabled = Translations.t.general.save.Clone().SetClass(`btn`);
-        const saveDisabled = Translations.t.general.save.Clone().SetClass(`btn btn-disabled`);
+        const text = Translations.t.general.save
+        const saveEnabled = text.Clone().SetClass(`btn`);
+        const saveDisabled = text.Clone().SetClass(`btn btn-disabled`);
         const save = new Toggle(
             saveEnabled,
             saveDisabled,
             isSaveable
         )
         super(
-            save, 
+            save,
             pleaseLogin,
             osmConnection?.isLoggedIn ?? new UIEventSource<any>(false)
         )

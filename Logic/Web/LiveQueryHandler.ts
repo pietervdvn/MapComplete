@@ -1,6 +1,6 @@
-
 import {UIEventSource} from "../UIEventSource";
-import * as $ from "jquery"
+import {Utils} from "../../Utils";
+
 /**
  * Fetches data from random data sources, used in the metatagging
  */
@@ -25,7 +25,7 @@ export default class LiveQueryHandler {
             LiveQueryHandler[url] = source;
 
                 console.log("Fetching live data from a third-party (unknown) API:",url)
-            $.getJSON(url, function (data) {
+            Utils.downloadJson(url).then(data => {
                 for (const shorthandDescription of shorthandsSet) {
 
                     const descr = shorthandDescription.trim().split(":");

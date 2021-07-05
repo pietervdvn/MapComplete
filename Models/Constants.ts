@@ -2,16 +2,18 @@ import { Utils } from "../Utils";
 
 export default class Constants {
     
-    public static vNumber = "0.8.1";
+    public static vNumber = "0.8.3-rc2";
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
-        personalLayoutUnlock: 15,
-        historyLinkVisible: 20,
+        personalLayoutUnlock: 5,
+        historyLinkVisible: 10,
+        deletePointsOfOthersUnlock: 20,
         tagsVisibleAt: 25,
-        mapCompleteHelpUnlock: 50,
         tagsVisibleAndWikiLinked: 30,
+        
+        mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,

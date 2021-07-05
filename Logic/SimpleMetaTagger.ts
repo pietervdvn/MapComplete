@@ -94,7 +94,7 @@ export default class SimpleMetaTagger {
                     }
                     const value = feature.properties[key]
                     const [, denomination] = unit.findDenomination(value)
-                    let canonical = denomination.canonicalValue(value) ?? undefined;
+                    let canonical = denomination?.canonicalValue(value) ?? undefined;
                     console.log("Rewritten ", key, " from", value, "into", canonical)
                     if(canonical === undefined && !unit.eraseInvalid) {
                         break;
@@ -162,7 +162,7 @@ export default class SimpleMetaTagger {
             }
 
             const tagsSource = State.state.allElements.getEventSourceById(feature.properties.id);
-            tagsSource.addCallbackAndRun(tags => {
+            tagsSource.addCallbackAndRunD(tags => {
                 if (tags.opening_hours === undefined || tags._country === undefined) {
                     return;
                 }

@@ -60,6 +60,18 @@
           }
         ]
       },
+      "titleIcons": [
+        {
+          "condition": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegan=yes"
+            ]
+          },
+          "render": "<img src='./assets/themes/fritures/Vegetarian-mark.svg'/>"
+        },
+        "defaults"
+      ],
       "tagRenderings": [
         "images",
         {
@@ -282,6 +294,25 @@
       "icon": {
         "render": "./assets/themes/fritures/fries.svg"
       },
+      "iconOverlays": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen",
+          "badge": true
+        },
+        {
+          "if": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegan=yes"
+            ]
+          },
+          "then": {
+            "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
+          },
+          "badge": true
+        }
+      ],
       "width": {
         "render": "8"
       },

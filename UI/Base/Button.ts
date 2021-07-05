@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 
@@ -6,7 +5,7 @@ export class Button extends BaseUIElement {
     private _text: BaseUIElement;
     private _onclick: () => void;
 
-    constructor(text: string | UIElement, onclick: (() => void)) {
+    constructor(text: string | BaseUIElement, onclick: (() => void)) {
         super();
         this._text = Translations.W(text);
         this._onclick = onclick;

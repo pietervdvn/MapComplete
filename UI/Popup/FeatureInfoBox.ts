@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import EditableTagRendering from "./EditableTagRendering";
@@ -12,6 +11,8 @@ import {Tag} from "../../Logic/Tags/Tag";
 import Constants from "../../Models/Constants";
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import DeleteWizard from "./DeleteWizard";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -21,7 +22,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     ) {
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig),
-            tags.data.id);
+            undefined);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
@@ -46,14 +47,14 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     private static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig): BaseUIElement {
-        let questionBox: UIElement = undefined;
+        let questionBox: BaseUIElement = undefined;
 
         if (State.state.featureSwitchUserbadge.data) {
             questionBox = new QuestionBox(tags, layerConfig.tagRenderings, layerConfig.units);
         }
 
         let questionBoxIsUsed = false;
-        const renderings : BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
+        const renderings: BaseUIElement[] = layerConfig.tagRenderings.map(tr => {
             if (tr.question === null) {
                 // This is the question box!
                 questionBoxIsUsed = true;
@@ -65,16 +66,49 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             renderings.push(questionBox);
         }
 
-        if (State.state.osmConnection.userDetails.data.csCount >= Constants.userJourney.historyLinkVisible ||
-            State.state.featureSwitchIsDebugging.data == true ||
-            State.state.featureSwitchIsTesting.data == true) {
-            renderings.push(new TagRenderingAnswer( tags, SharedTagRenderings.SharedTagRendering.get("last_edit")))
+        const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
+        if (!hasMinimap) {
+            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
 
-        if (State.state.featureSwitchIsDebugging.data) {
-            const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
-            renderings.push(new TagRenderingAnswer(tags, config))
+        if (layerConfig.deletion) {
+            renderings.push(
+                new VariableUiElement(tags.map(tags => tags.id).map(id =>
+                    new DeleteWizard(
+                        id,
+                        layerConfig.deletion
+                    ))
+                ))
         }
+
+        renderings.push(
+            new VariableUiElement(
+                State.state.osmConnection.userDetails
+                    .map(ud => ud.csCount)
+                    .map(csCount => {
+                        if (csCount <= Constants.userJourney.historyLinkVisible
+                            && State.state.featureSwitchIsDebugging.data == false
+                            && State.state.featureSwitchIsTesting.data === false) {
+                            return undefined
+                        }
+
+                        return new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("last_edit"));
+
+                    }, [State.state.featureSwitchIsDebugging, State.state.featureSwitchIsTesting])
+            )
+        )
+
+
+        renderings.push(
+            new VariableUiElement(
+                State.state.featureSwitchIsDebugging.map(isDebugging => {
+                    if (isDebugging) {
+                        const config: TagRenderingConfig = new TagRenderingConfig({render: "{all_tags()}"}, new Tag("id", ""), "");
+                        return new TagRenderingAnswer(tags, config)
+                    }
+                })
+            )
+        )
 
         return new Combine(renderings).SetClass("block")
 

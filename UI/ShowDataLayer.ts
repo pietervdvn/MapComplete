@@ -62,6 +62,9 @@ export default class ShowDataLayer {
             const allFeats = features.data.map(ff => ff.feature);
             geoLayer = self.CreateGeojsonLayer();
             for (const feat of allFeats) {
+                if (feat === undefined) {
+                    continue
+                }
                 // @ts-ignore
                 geoLayer.addData(feat);
             }
@@ -76,7 +79,13 @@ export default class ShowDataLayer {
             }
 
             if (zoomToFeatures) {
-                mp.fitBounds(geoLayer.getBounds())
+                try {
+
+                    mp.fitBounds(geoLayer.getBounds())
+
+                } catch (e) {
+                    console.error(e)
+                }
             }
 
 
@@ -124,7 +133,6 @@ export default class ShowDataLayer {
             })
         });
     }
-
     private postProcessFeature(feature, leafletLayer: L.Layer) {
         const layer: LayerConfig = this._layerDict[feature._matching_layer_id];
         if (layer === undefined) {
@@ -152,6 +160,7 @@ export default class ShowDataLayer {
 
         leafletLayer.on("popupopen", () => {
             State.state.selectedElement.setData(feature)
+           
             if (infobox === undefined) {
                 const tags = State.state.allElements.getEventSourceById(feature.properties.id);
                 infobox = new FeatureInfoBox(tags, layer);
@@ -166,11 +175,11 @@ export default class ShowDataLayer {
 
 
             infobox.AttachTo(id)
-            infobox.Activate();
+            infobox.Activate(); 
         });
         const self = this;
-        State.state.selectedElement.addCallbackAndRun(selected => {
-            if (selected === undefined || self._leafletMap.data === undefined) {
+        State.state.selectedElement.addCallbackAndRunD(selected => {
+            if (self._leafletMap.data === undefined) {
                 return;
             }
             if (leafletLayer.getPopup().isOpen()) {
@@ -178,8 +187,10 @@ export default class ShowDataLayer {
             }
             if (selected.properties.id === feature.properties.id) {
                 // A small sanity check to prevent infinite loops:
-                // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-                if (selected.geometry.type === feature.geometry.type) {
+                if (selected.geometry.type === feature.geometry.type  // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
+
+                    &&                     feature.id === feature.properties.id // the feature might have as id 'node/-1' and as 'feature.properties.id' = 'the newly assigned id'. That is no good too
+                     ) {
                     leafletLayer.openPopup()
                 }
 

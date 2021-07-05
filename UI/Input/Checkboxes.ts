@@ -57,10 +57,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             wrapper.appendChild(label)
             el.appendChild(wrapper)
             
-            value.addCallbackAndRun(selectedValues => {
-                if (selectedValues === undefined) {
-                    return;
-                }
+            value.addCallbackAndRunD(selectedValues => {
                 if (selectedValues.indexOf(i) >= 0) {
                     input.checked = true;
                 }

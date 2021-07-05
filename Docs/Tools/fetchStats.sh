@@ -6,7 +6,7 @@ then
     COUNTER="$1"
 fi
 
-NEXT_URL=$(echo "https://osmcha.org/api/v1/changesets/?date__gte=2021-01-01&date__lte=$DATE&editor=mapcomplete&page=$COUNTER&page_size=1000")
+NEXT_URL=$(echo "https://osmcha.org/api/v1/changesets/?date__gte=2021-07-01&date__lte=$DATE&editor=mapcomplete&page=$COUNTER&page_size=1000")
 rm stats.*.json
 while [[ "$NEXT_URL" != "null" ]]
 do

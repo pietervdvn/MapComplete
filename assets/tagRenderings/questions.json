@@ -6,7 +6,7 @@
     "render": "{reviews()}"
   },
   "minimap": {
-    "render": "{minimap(19, id): width:100%; height:6rem; border-radius:999rem; overflow: hidden; pointer-events: none;}"
+    "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
   },
   "phone": {
     "question": {

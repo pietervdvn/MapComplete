@@ -1,4 +1,3 @@
-import {UIElement} from "../UIElement";
 import {Review} from "../../Logic/Web/Review";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -7,33 +6,14 @@ import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
 
-export default class SingleReview extends UIElement{
-    private _review: Review;
+export default class SingleReview extends Combine {
+    
     constructor(review: Review) {
-        super(review.made_by_user);
-        this._review = review;
-      
-    }
-    public static GenStars(rating: number): BaseUIElement {
-        if (rating === undefined) {
-            return Translations.t.reviews.no_rating;
-        }
-        if (rating < 10) {
-            rating = 10;
-        }
-        const scoreTen = Math.round(rating / 10);
-        return new Combine([
-                ...Utils.TimesT(scoreTen / 2, _  => new Img('./assets/svg/star.svg').SetClass("'h-8 w-8 md:h-12")),
-            scoreTen % 2 == 1 ? new Img('./assets/svg/star_half.svg').SetClass('h-8 w-8 md:h-12') : undefined
-        ]).SetClass("flex w-max")
-    }
-    InnerRender(): BaseUIElement {
-        const d = this._review.date;
-        let review = this._review;
-        const el=  new Combine(
+        const d = review.date;
+        super(
             [
                 new Combine([
-                  SingleReview.GenStars(review.rating)                    
+                    SingleReview.GenStars(review.rating)
                 ]),
                 new FixedUiElement(review.comment),
                 new Combine([
@@ -48,11 +28,24 @@ export default class SingleReview extends UIElement{
 
             ]
         );
-        el.SetClass("block p-2 m-4 rounded-xl subtle-background review-element");
-        if(review.made_by_user.data){
-            el.SetClass("border-attention-catch")
+        this.SetClass("block p-2 m-4 rounded-xl subtle-background review-element");
+        if (review.made_by_user.data) {
+            this.SetClass("border-attention-catch")
         }
-        return el;
     }
-    
+
+    public static GenStars(rating: number): BaseUIElement {
+        if (rating === undefined) {
+            return Translations.t.reviews.no_rating;
+        }
+        if (rating < 10) {
+            rating = 10;
+        }
+        const scoreTen = Math.round(rating / 10);
+        return new Combine([
+            ...Utils.TimesT(scoreTen / 2, _ => new Img('./assets/svg/star.svg').SetClass("'h-8 w-8 md:h-12")),
+            scoreTen % 2 == 1 ? new Img('./assets/svg/star_half.svg').SetClass('h-8 w-8 md:h-12') : undefined
+        ]).SetClass("flex w-max")
+    }
+
 }

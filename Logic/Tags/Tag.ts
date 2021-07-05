@@ -51,7 +51,7 @@ export class Tag extends TagsFilter {
         return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean) {
+    asHumanString(linkToWiki?: boolean, shorten?: boolean) {
         let v = this.value;
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);

@@ -3,7 +3,6 @@ import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
 import {InputElement} from "./InputElement";
 import {TextField} from "./TextField";
-import {UIElement} from "../UIElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
@@ -12,6 +11,8 @@ import DirectionInput from "./DirectionInput";
 import ColorPicker from "./ColorPicker";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
+import {Unit} from "../../Customizations/JSON/Denomination";
+import BaseUIElement from "../BaseUIElement";
 
 interface TextFieldDef {
     name: string,
@@ -222,7 +223,7 @@ export default class ValidatedTextField {
      */
     public static AllTypes = ValidatedTextField.allTypesDict();
     public static InputForType(type: string, options?: {
-        placeholder?: string | UIElement,
+        placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
         htmlType?: string,
         textArea?: boolean,
@@ -231,7 +232,8 @@ export default class ValidatedTextField {
         isValid?: ((s: string, country: () => string) => boolean),
         country?: () => string,
         location?: [number /*lat*/, number /*lon*/],
-        mapBackgroundLayer?: UIEventSource<any>
+        mapBackgroundLayer?: UIEventSource<any>,
+        unit?: Unit
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
@@ -244,6 +246,9 @@ export default class ValidatedTextField {
             isValid = (str, country) => {
                 if (str === undefined) {
                     return false;
+                }
+                if(options.unit) {
+                    str = options.unit.stripUnitParts(str)
                 }
                 return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
             }
@@ -263,6 +268,43 @@ export default class ValidatedTextField {
             })
         }
 
+        if(options.unit) {
+            // We need to apply a unit.
+            // This implies:
+            // We have to create a dropdown with applicable denominations, and fuse those values
+            const unit = options.unit
+            const unitDropDown = new DropDown("",
+                unit.denominations.map(denom => {
+                    return {
+                        shown: denom.human,
+                        value: denom
+                    }
+                })
+            )
+            unitDropDown.GetValue().setData(unit.defaultDenom)
+            unitDropDown.SetStyle("width: min-content")
+
+            input = new CombinedInputElement(
+                input,
+                unitDropDown,
+                // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
+                (text, denom) => denom?.canonicalValue(text, true) ?? undefined, 
+                (valueWithDenom: string) => {
+                    // Take the value from OSM and feed it into the textfield and the dropdown
+                    const withDenom = unit.findDenomination(valueWithDenom);
+                    if(withDenom === undefined)
+                    {
+                        // Not a valid value at all - we give it undefined and leave the details up to the other elements
+                        return [undefined, undefined]
+                    }
+                    const [strippedText, denom] = withDenom
+                    if(strippedText === undefined){
+                        return [undefined, undefined]
+                    }
+                    return [strippedText, denom]
+                }
+            ).SetClass("flex")
+        }
         if (tp.inputHelper) {
             const helper =  tp.inputHelper(input.GetValue(), {
                 location: options.location,
