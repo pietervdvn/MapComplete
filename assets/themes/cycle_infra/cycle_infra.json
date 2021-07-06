@@ -1,16 +1,19 @@
 {
   "id": "cycle_infra",
   "title": {
-    "en": "Bicycle infrastructure"
+    "en": "Bicycle infrastructure",
+    "nl": "Fietsinfrastructuur"
   },
   "shortDescription": {
-    "en": "A map where you can view and edit things related to the bicycle infrastructure."
+    "en": "A map where you can view and edit things related to the bicycle infrastructure.",
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken."
   },
   "description": {
-    "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21."
+    "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken gemaakt tijdens osoc21."
   },
   "language": [
-    "en"
+    "en", "nl"
   ],
   "maintainer": "",
   "icon": "./assets/svg/cycle-infra.svg",
@@ -24,7 +27,8 @@
     {
       "id": "cycleways",
       "name": {
-        "en": "Cycleways"
+        "en": "Cycleways",
+        "nl": "Fietspaden"
       },
       "minzoom": 12,
       "source": {
@@ -36,7 +40,8 @@
       },
       "title": {
         "render": {
-          "en": "Cycleways"
+          "en": "Cycleways",
+          "nl": "Fietspaden"
         }
       },
       "description": {},
@@ -59,7 +64,8 @@
     {
       "id": "shared_lanes",
       "name": {
-        "en": "Shared lanes"
+        "en": "Shared lanes",
+        "nl": "Gedeelde straten"
       },
       "minzoom": 12,
       "source": {
@@ -71,11 +77,13 @@
       },
       "title": {
         "render": {
-          "en": "Shared Lane"
+          "en": "Shared Lane",
+          "nl": "Gedeelde straat"
         }
       },
       "description": {
-        "en": "Cyclepaths where you have to share your lane with other cyclists."
+        "en": "Cyclepaths where you have to share your lane with other cyclists.",
+        "nl": "Fietspaden waar fietsers de weg moeten delen met andere weggebruikers."
       },
       "tagRenderings": [
         {
@@ -141,7 +149,8 @@
     {
       "id": "lanes",
       "name": {
-        "en": "Lanes"
+        "en": "Lanes",
+        "nl": "Fietsstroken naast de weg"
       },
       "minzoom": 12,
       "source": {
@@ -153,16 +162,19 @@
       },
       "title": {
         "render": {
-          "en": "Cycleway next to road"
+          "en": "Cycleway next to road",
+          "nl": "Fietsstrook naast de weg"
         }
       },
       "description": {
-        "en": "Cycleways immediately next to the road."
+        "en": "Cycleways immediately next to the road.",
+        "nl": "Fietspaden direct naast de weg."
       },
       "tagRenderings": [
         {
           "render": {
-            "en": "The maximum speed on this road is {speed}"
+            "en": "The maximum speed on this road is {speed} km/h",
+            "nl": "De maximumsnelheid op deze weg is {speed} km/u"
           },
           "freeform": {
             "key": "maxspeed",
@@ -172,36 +184,42 @@
             {
               "if": "maxspeed=20",
               "then": {
-                "en": "The maximum speed is 20 km/h"
+                "en": "The maximum speed is 20 km/h",
+                "nl": "De maximumsnelheid is 20 km/u"
               }
             },
             {
               "if": "maxspeed=30",
               "then": {
-                "en": "The maximum speed is 30 km/h"
+                "en": "The maximum speed is 30 km/h",
+                "nl": "De maximumsnelheid is 30 km/u"
               }
             },
             {
               "if": "maxspeed=50",
               "then": {
-                "en": "The maximum speed is 50 km/h"
+                "en": "The maximum speed is 50 km/h",
+                "nl": "De maximumsnelheid is 50 km/u"
               }
             },
             {
               "if": "maxspeed=70",
               "then": {
-                "en": "The maximum speed is 70 km/h"
+                "en": "The maximum speed is 70 km/h",
+                "nl": "De maximumsnelheid is 70 km/u"
               }
             },
             {
               "if": "maxspeed=90",
               "then": {
-                "en": "The maximum speed is 90 km/h"
+                "en": "The maximum speed is 90 km/h",
+                "nl": "De maximumsnelheid is 90 km/u"
               }
             }
           ],
           "question": {
-            "en": "What is the maximum speed in this street?"
+            "en": "What is the maximum speed in this street?",
+            "nl": "Wat is de maximumsnelheid in deze straat?"
           }
         }
       ],
@@ -225,7 +243,8 @@
     "+tagRenderings": [
       {
         "render": {
-          "en": "This road is made of {surface}"
+          "en": "This road is made of {surface}",
+          "nl": "Deze weg is gemaakt van {surface}"
         },
         "freeform": {
           "key": "surface",
@@ -235,36 +254,42 @@
           {
             "if": "surface=wood",
             "then": {
-              "en": "The street is made of wood"
+              "en": "This street is made of wood",
+              "nl": "Deze weg is gemaakt van hout"
             }
           },
           {
             "if": "surface=concrete",
             "then": {
-              "en": "This street is made of concrete"
+              "en": "This street is made of concrete",
+              "nl": "Deze straat is gemaakt van beton"
             }
           },
           {
             "if": "surface=cobblestone",
             "then": {
-              "en": "This street is made of concrete"
+              "en": "This street is made of cobblestone",
+              "nl": "Deze straat is gemaakt van kasseien"
             }
           },
           {
             "if": "surface=asphalt",
             "then": {
-              "en": "This street is made of asphalt"
+              "en": "This street is made of asphalt",
+              "nl": "Deze straat is gemaakt van asfalt"
             }
           },
           {
             "if": "surface=paved",
             "then": {
-              "en": "This street is paved"
+              "en": "This street is paved",
+              "nl": "Deze straat is geplaveid"
             }
           }
         ],
         "question": {
-          "en": "What is the surface of the street made from?"
+          "en": "What is the surface of the street made from?",
+          "nl": "Waaruit is het oppervlak van de straat gemaakt?"
         }
       }
     ]
