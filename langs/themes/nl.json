@@ -854,6 +854,11 @@
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
     },
+    "natuurpunt": {
+        "title": "Natuurgebieden",
+        "shortDescription": "Deze kaart toont de natuurgebieden van Natuurpunt",
+        "description": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt"
+    },
     "personal": {
         "title": "Persoonlijk thema",
         "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas"

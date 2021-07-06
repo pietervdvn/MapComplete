@@ -1084,6 +1084,11 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap."
     },
+    "natuurpunt": {
+        "title": "Nature Reserves",
+        "shortDescription": "This map shows the nature reserves of Natuurpunt",
+        "description": "On this map you can find all the nature reserves that Natuurpunt offers "
+    },
     "personal": {
         "title": "Personal theme",
         "description": "Create a personal theme based on all the available layers of all themes"

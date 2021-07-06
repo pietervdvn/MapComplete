@@ -410,10 +410,12 @@
     }
   ],
   "deletion": {
-    "softDeletionTags": {"and":[
-      "disused:amenity=public_bookcase",
-      "amenity="
-    ]},
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=public_bookcase",
+        "amenity="
+      ]
+    },
     "neededChangesets": 5
   }
 }
