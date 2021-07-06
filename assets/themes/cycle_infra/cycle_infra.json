@@ -1,0 +1,135 @@
+{
+  "id": "cycle_infra",
+  "title": {
+    "en": "Bicycle infrastructure"
+  },
+  "shortDescription": {
+    "en": "A map where you can view and edit things related to the bicycle infrastructure."
+  },
+  "description": {
+    "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21."
+  },
+  "language": [
+    "en"
+  ],
+  "maintainer": "",
+  "icon": "./assets/svg/cycle-infra.svg",
+  "version": "0",
+  "startLat": 51,
+  "startLon": 3.75,
+  "startZoom": 11,
+  "widenFactor": 0.05,
+  "socialImage": "",
+  "layers": [
+    {
+      "id": "cycleways",
+      "name": {
+        "en": "Cycleways"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "highway=cycleway"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Cycleways"
+        }
+      },
+      "description": {},
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#0f0"
+      },
+      "presets": []
+    },
+    {
+      "id": "shared_lanes",
+      "name": {
+        "en": "Shared lanes"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "cycleway=shared_lane"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Shared Lane"
+        }
+      },
+      "description": {
+        "en": "Cyclepaths where you have to share your lane with other cyclists."
+      },
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#f00"
+      },
+      "presets": []
+    },
+    {
+      "id": "lanes",
+      "name": {
+        "en": "Lanes"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "cycleway=lane"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Cycleway next to road"
+        }
+      },
+      "description": {
+        "en": "Cycleways immediately next to the road."
+      },
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#f90"
+      },
+      "presets": []
+    }
+  ],
+  "roamingRenderings": []
+}
