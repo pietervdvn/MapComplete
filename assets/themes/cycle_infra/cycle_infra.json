@@ -237,6 +237,46 @@
         "render": "#f90"
       },
       "presets": []
+    },
+    {
+      "id": "cyclestreets",
+      "name": {
+        "en": "Cyclestreets",
+        "nl": "Fietsstraten"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "cyclestreet=yes"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Dedicated cyclestreet",
+          "nl": "Fietsstraten"
+        }
+      },
+      "description": {
+        "en": "Bicycles have priority and overtaking isn't allowed, the maximum speed is 30 km/h",
+        "nl": "Fietsen hebben prioriteit en inhalen is niet toegestaan, de maximumsnelheid is 30 km/h"
+      },
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": []
     }
   ],
   "overrideAll": {
