@@ -77,7 +77,52 @@
       "description": {
         "en": "Cyclepaths where you have to share your lane with other cyclists."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "The maximum speed on this road is {speed}"
+          },
+          "freeform": {
+            "key": "maxspeed",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": "maxspeed=20",
+              "then": {
+                "en": "The maximum speed is 20 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=30",
+              "then": {
+                "en": "The maximum speed is 30 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=50",
+              "then": {
+                "en": "The maximum speed is 50 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=70",
+              "then": {
+                "en": "The maximum speed is 70 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=90",
+              "then": {
+                "en": "The maximum speed is 90 km/h"
+              }
+            }
+          ],
+          "question": {
+            "en": "What is the maximum speed in this street?"
+          }
+        }
+      ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/svg/bug.svg"
@@ -114,7 +159,52 @@
       "description": {
         "en": "Cycleways immediately next to the road."
       },
-      "tagRenderings": [],
+      "tagRenderings": [
+        {
+          "render": {
+            "en": "The maximum speed on this road is {speed}"
+          },
+          "freeform": {
+            "key": "maxspeed",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": "maxspeed=20",
+              "then": {
+                "en": "The maximum speed is 20 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=30",
+              "then": {
+                "en": "The maximum speed is 30 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=50",
+              "then": {
+                "en": "The maximum speed is 50 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=70",
+              "then": {
+                "en": "The maximum speed is 70 km/h"
+              }
+            },
+            {
+              "if": "maxspeed=90",
+              "then": {
+                "en": "The maximum speed is 90 km/h"
+              }
+            }
+          ],
+          "question": {
+            "en": "What is the maximum speed in this street?"
+          }
+        }
+      ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/svg/bug.svg"
