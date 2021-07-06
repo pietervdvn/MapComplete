@@ -120,7 +120,7 @@ export interface LayoutConfigJson {
      *
      * E.g.: if there are two layers defined:
      * ```
-     * "layers"[
+     * "layers":[
      *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ...}},
      *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ...}}
      * ]
@@ -132,13 +132,19 @@ export interface LayoutConfigJson {
      *     "osmSource":{"geoJsonSource":"xyz"}
      * }
      * then the result will be that all the layers will have these properties applied and result in:
-     * "layers"[
+     * "layers":[
      *  {"title": ..., "tagRenderings": [...], "osmSource":{"tags": ..., "geoJsonSource":"xyz"}},
      *  {"title", ..., "tagRenderings", [...], "osmSource":{"tags" ..., "geoJsonSource":"xyz"}}
      * ]
      * ```
      *
-     * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list)
+     * If the overrideAll contains a list where the keys starts with a plus, the values will be appended (instead of discarding the old list), for example
+     *
+     * "overrideAll": {
+     *   "+tagRenderings": [ { ... some tagrendering ... }]
+     * }
+     * 
+     * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
      */
     overrideAll?: any;
 
