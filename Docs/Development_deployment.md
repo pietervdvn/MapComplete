@@ -18,7 +18,7 @@
  Development
  -----------
  
- **Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make the switch ;) )
+ **Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make the switch ;) ). If you are using Visual Studio, open everything in a 'new WSL Window'.
  
  To develop and build MapComplete, yo
  
