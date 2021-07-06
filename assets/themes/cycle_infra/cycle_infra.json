@@ -131,5 +131,52 @@
       "presets": []
     }
   ],
-  "roamingRenderings": []
+  "overrideAll": {
+    "+tagRenderings": [
+      {
+        "render": {
+          "en": "This road is made of {surface}"
+        },
+        "freeform": {
+          "key": "surface",
+          "addExtraTags": []
+        },
+        "mappings": [
+          {
+            "if": "surface=wood",
+            "then": {
+              "en": "The street is made of wood"
+            }
+          },
+          {
+            "if": "surface=concrete",
+            "then": {
+              "en": "This street is made of concrete"
+            }
+          },
+          {
+            "if": "surface=cobblestone",
+            "then": {
+              "en": "This street is made of concrete"
+            }
+          },
+          {
+            "if": "surface=asphalt",
+            "then": {
+              "en": "This street is made of asphalt"
+            }
+          },
+          {
+            "if": "surface=paved",
+            "then": {
+              "en": "This street is paved"
+            }
+          }
+        ],
+        "question": {
+          "en": "What is the surface of the street made from?"
+        }
+      }
+    ]
+  }
 }
