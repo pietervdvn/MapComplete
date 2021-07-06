@@ -25,7 +25,7 @@
 0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
 0. Make a fork and clone the repository.
 1. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install nodeJS: https://nodejs.org/en/download/
-2. Run `npm install` to install the package dependencies
+2. Run `npm ci` to install the package dependencies
 3. Run `npm run init` and generate some additional dependencies and generated files
 4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
 5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename` or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
