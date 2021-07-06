@@ -1,5 +1,6 @@
 // We HAVE to mark this while importing
 import {Utils} from "../Utils";
+
 Utils.runningFromConsole = true;
 
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
@@ -10,6 +11,7 @@ import {Translation} from "../UI/i18n/Translation";
 import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
+
 const sharp = require('sharp');
 
 
@@ -57,7 +59,7 @@ async function createManifest(layout: LayoutConfig) {
 
     Translation.forcedLanguage = "en"
     const icons = [];
-    
+
 
     let icon = layout.icon;
     if (icon.endsWith(".svg") || icon.startsWith("<svg") || icon.startsWith("<?xml")) {
@@ -81,6 +83,12 @@ async function createManifest(layout: LayoutConfig) {
         }
         icons.push({
             src: path,
+            sizes: "513x513",
+            type: "image/svg"
+        })
+    } else if (icon.endsWith(".png")) {
+        icons.push({
+            src: icon,
             sizes: "513x513",
             type: "image/svg"
         })
@@ -135,15 +143,15 @@ async function createLandingPage(layout: LayoutConfig, manifest) {
         icon = `./assets/generated/${layout.id}_icon.svg`
         writeFileSync(icon, layout.icon);
     }
-    
+
     const apple_icons = []
     for (const icon of manifest.icons) {
-        if(icon.type !== "image/png"){
+        if (icon.type !== "image/png") {
             continue;
         }
         apple_icons.push(`<link rel="apple-touch-icon" sizes="${icon.sizes}" href="${icon.src}">`)
     }
-    
+
     let themeSpecific = [
         `<title>${ogTitle}</title>`,
         `<link rel="manifest" href="${enc(layout.id)}.webmanifest">`,
@@ -176,9 +184,9 @@ if (!existsSync(generatedDir)) {
 
 const blacklist = ["", "test", ".", "..", "manifest", "index", "land", "preferences", "account", "openstreetmap", "custom"]
 // @ts-ignore
-const all : LayoutConfigJson[] = all_known_layouts.themes;
+const all: LayoutConfigJson[] = all_known_layouts.themes;
 for (const i in all) {
-    const layoutConfigJson : LayoutConfigJson = all[i]
+    const layoutConfigJson: LayoutConfigJson = all[i]
     const layout = new LayoutConfig(layoutConfigJson, true, "generating layouts")
     const layoutName = layout.id
     if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
@@ -194,13 +202,13 @@ for (const i in all) {
         const manif = JSON.stringify(manifObj, undefined, 2);
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest";
         writeFile(manifestLocation, manif, err);
-        
+
         // Create a landing page for the given theme
         createLandingPage(layout, manifObj).then(landing => {
             writeFile(enc(layout.id) + ".html", landing, err)
         });
-    })
-   
+    }).catch(e => console.log("Could not generate the manifest: ", e))
+
 }
 
 createManifest(new LayoutConfig({
@@ -212,9 +220,9 @@ createManifest(new LayoutConfig({
     startLat: 0,
     startLon: 0,
     startZoom: 0,
-    title: {en:"MapComplete"},
+    title: {en: "MapComplete"},
     version: Constants.vNumber,
-    description: {en:"A thematic map viewer and editor based on OpenStreetMap"}
+    description: {en: "A thematic map viewer and editor based on OpenStreetMap"}
 })).then(manifObj => {
     const manif = JSON.stringify(manifObj, undefined, 2);
     writeFileSync("index.manifest", manif)
