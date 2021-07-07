@@ -102,7 +102,12 @@ export default class ScriptUtils {
             .filter(path => path.indexOf("license_info.json") < 0)
             .map(path => {
                 try {
-                    const parsed = JSON.parse(readFileSync(path, "UTF8"));
+                    const contents = readFileSync(path, "UTF8")
+                    if(contents === ""){
+                        throw "The file "+path+" is empty, did you properly save?"
+                    }
+                    
+                    const parsed = JSON.parse(contents);
                     return {parsed: parsed, path: path}
                 } catch (e) {
                     console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
@@ -116,7 +121,11 @@ export default class ScriptUtils {
             .filter(path => path.indexOf("license_info.json") < 0)
             .map(path => {
                 try {
-                    const parsed = JSON.parse(readFileSync(path, "UTF8"));
+                    const contents = readFileSync(path, "UTF8");
+                    if(contents === ""){
+                        throw "The file "+path+" is empty, did you properly save?"
+                    }
+                    const parsed = JSON.parse(contents);
                     return {parsed: parsed, path: path}
                 } catch (e) {
                     console.error("Could not read file ", path, "due to ", e)
