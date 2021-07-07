@@ -321,13 +321,20 @@
         }
       },
       {
+        "condition": {
+          "or": [
+            "cycleway=shared_lane",
+            "cycleway="
+          ]
+        },
         "render": {
           "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
           "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
         },
         "freeform": {
           "key": "width:carriageway",
-          "addExtraTags": []
+          "addExtraTags": [],
+          "type": "pfloat"
         },
         "question": {
           "en": "What is the carriage width of this road (in meters)?",
