@@ -12,7 +12,10 @@
     "nl": "Op deze kaart vind je alle natuurgebieden die Natuurpunt ter beschikking stelt",
     "en": "On this map you can find all the nature reserves that Natuurpunt offers "
   },
-  "language": ["nl", "en"],
+  "language": [
+    "nl",
+    "en"
+  ],
   "maintainer": "",
   "icon": "./assets/themes/natuurpunt/natuurpunt.png",
   "version": "0",
@@ -46,7 +49,14 @@
           }
         }
       }
-    }
+    },
+    "drinking_water",
+    "bench",
+    "bench_at_pt",
+    "picnic_table",
+    "birdhide",
+    "toilet",
+    "visitor_information_centre"
   ],
   "roamingRenderings": []
 }
