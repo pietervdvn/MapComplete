@@ -41,7 +41,9 @@
     "bench",
     "bench_at_pt",
     "picnic_table",
-    "birdhide"
+    "birdhide",
+    "toilet",
+    "visitor_information_centre"
   ],
   "roamingRenderings": []
 }
