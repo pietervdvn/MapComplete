@@ -94,7 +94,7 @@ export default class LayoutConfig {
             }
         );
         this.defaultBackgroundId = json.defaultBackgroundId;
-        this.layers = LayoutConfig.ExtractLayers(json, context, this.units, official);
+        this.layers = LayoutConfig.ExtractLayers(json, this.units, official);
 
         // ALl the layers are constructed, let them share tags in now!
         const roaming: { r, source: LayerConfig }[] = []
@@ -158,7 +158,7 @@ export default class LayoutConfig {
 
     }
 
-    private static ExtractLayers(json: LayoutConfigJson, context: string, units: Unit[], official: boolean): LayerConfig[] {
+    private static ExtractLayers(json: LayoutConfigJson, units: Unit[], official: boolean): LayerConfig[] {
         const result: LayerConfig[] = []
 
         json.layers.forEach((layer, i) => {
@@ -168,16 +168,16 @@ export default class LayoutConfig {
                         let lyr = JSON.parse(JSON.stringify(AllKnownLayers.sharedLayersJson[layer]));
                         const newLayer = new LayerConfig(Utils.Merge(json.overrideAll, lyr), units, `${json.id}+overrideAll.layers[${i}]`, official)
                         result.push(newLayer)
-                        return 
+                        return
                     } else {
                         result.push(AllKnownLayers.sharedLayers[layer])
-                        return 
+                        return
                     }
                 } else {
                     throw "Unknown fixed layer " + layer;
                 }
             }
-            
+
             if (layer["builtin"] === undefined) {
                 if (json.overrideAll !== undefined) {
                     layer = Utils.Merge(json.overrideAll, layer);
@@ -185,7 +185,7 @@ export default class LayoutConfig {
                 // @ts-ignore
                 const newLayer = new LayerConfig(layer, units, `${json.id}.layers[${i}]`, official)
                 result.push(newLayer)
-                return 
+                return
             }
             // @ts-ignore
             let names = layer.builtin;
@@ -194,19 +194,19 @@ export default class LayoutConfig {
             }
             names.forEach(name => {
                 const shared = AllKnownLayers.sharedLayersJson[name];
-            if (shared === undefined) {
-                throw "Unknown fixed layer " + name;
-            }
-            // @ts-ignore
-            let newLayer: LayerConfigJson = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
-            if (json.overrideAll !== undefined) {
-                newLayer = Utils.Merge(json.overrideAll, newLayer);
-            }
-            // @ts-ignore
-            const layerConfig = new LayerConfig(newLayer, units, `${json.id}.layers[${i}]`, official)
-            result.push(layerConfig)
-            return 
-        })
+                if (shared === undefined) {
+                    throw "Unknown fixed layer " + name;
+                }
+                // @ts-ignore
+                let newLayer: LayerConfigJson = Utils.Merge(layer.override, JSON.parse(JSON.stringify(shared))); // We make a deep copy of the shared layer, in order to protect it from changes
+                if (json.overrideAll !== undefined) {
+                    newLayer = Utils.Merge(json.overrideAll, newLayer);
+                }
+                // @ts-ignore
+                const layerConfig = new LayerConfig(newLayer, units, `${json.id}.layers[${i}]`, official)
+                result.push(layerConfig)
+                return
+            })
 
         });
 

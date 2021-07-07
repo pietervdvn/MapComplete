@@ -143,7 +143,7 @@ export interface LayoutConfigJson {
      * "overrideAll": {
      *   "+tagRenderings": [ { ... some tagrendering ... }]
      * }
-     * 
+     *
      * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
      */
     overrideAll?: any;
@@ -188,9 +188,13 @@ export interface LayoutConfigJson {
      * *layers can also remove 'leftover'-features if the leftovers overlap with a feature in the layer itself
      *
      * Note that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: "layername", override: ...}
+     *
      * The 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer
-     * ex: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:
-     * layer: {
+     *
+     * For example: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:
+     *
+     * ```
+     * "layer": {
      *  "builtin": "nature_reserve",
      *  "override": {"source": 
      *  {"osmTags": {
@@ -198,13 +202,17 @@ export interface LayoutConfigJson {
      *    }
      *   }
      *  }
-     * };
-     *It's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start the zoomlevel at 12, you would use the following:
-     layer: {
+     * }
+     * ```
+     *
+     * It's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start at the zoomlevel at 12, you would use the following:
+     * 
+     * ```
+     * "layer": {
      *  "builtin": ["benches", "drinking_water"],
      *  "override": {"minzoom": 12}
      * }
-     *
+     *```
      */
     layers: (LayerConfigJson | string | { builtin: string | string[], override: any })[],
 
@@ -262,7 +270,7 @@ export interface LayoutConfigJson {
      * Also, if a freeform text field is used, an extra dropdown with applicable denominations will be given
      *
      */
-    
+
     units?: {
 
         /**
