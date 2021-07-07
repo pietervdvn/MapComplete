@@ -338,6 +338,20 @@
           "en": "What is the surface of the street made from?",
           "nl": "Waaruit is het oppervlak van de straat gemaakt?"
         }
+      },
+      {
+        "render": {
+          "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+          "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+        },
+        "freeform": {
+          "key": "width:carriageway",
+          "addExtraTags": []
+        },
+        "question": {
+          "en": "What is the carriage width of this road (in meters)?",
+          "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
+        }
       }
     ]
   }
