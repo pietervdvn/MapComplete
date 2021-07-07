@@ -88,7 +88,8 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The maximum speed on this road is {speed}"
+            "en": "The maximum speed on this road is {maxspeed} km/h",
+            "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
           },
           "freeform": {
             "key": "maxspeed",
@@ -98,36 +99,42 @@
             {
               "if": "maxspeed=20",
               "then": {
-                "en": "The maximum speed is 20 km/h"
+                "en": "The maximum speed is 20 km/h",
+                "nl": "De maximumsnelheid is 20 km/u"
               }
             },
             {
               "if": "maxspeed=30",
               "then": {
-                "en": "The maximum speed is 30 km/h"
+                "en": "The maximum speed is 30 km/h",
+                "nl": "De maximumsnelheid is 30 km/u"
               }
             },
             {
               "if": "maxspeed=50",
               "then": {
-                "en": "The maximum speed is 50 km/h"
+                "en": "The maximum speed is 50 km/h",
+                "nl": "De maximumsnelheid is 50 km/u"
               }
             },
             {
               "if": "maxspeed=70",
               "then": {
-                "en": "The maximum speed is 70 km/h"
+                "en": "The maximum speed is 70 km/h",
+                "nl": "De maximumsnelheid is 70 km/u"
               }
             },
             {
               "if": "maxspeed=90",
               "then": {
-                "en": "The maximum speed is 90 km/h"
+                "en": "The maximum speed is 90 km/h",
+                "nl": "De maximumsnelheid is 90 km/u"
               }
             }
           ],
           "question": {
-            "en": "What is the maximum speed in this street?"
+            "en": "What is the maximum speed in this street?",
+            "nl": "Wat is de maximumsnelheid in deze straat?"
           }
         }
       ],
@@ -173,8 +180,8 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The maximum speed on this road is {speed} km/h",
-            "nl": "De maximumsnelheid op deze weg is {speed} km/u"
+            "en": "The maximum speed on this road is {maxspeed} km/h",
+            "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
           },
           "freeform": {
             "key": "maxspeed",
@@ -280,6 +287,46 @@
         "mappings": []
       },
       "tagRenderings": []
+    },
+    {
+      "id": "cyclestreets",
+      "name": {
+        "en": "Cyclestreets",
+        "nl": "Fietsstraten"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "cyclestreet=yes"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Dedicated cyclestreet",
+          "nl": "Fietsstraten"
+        }
+      },
+      "description": {
+        "en": "Bicycles have priority and overtaking isn't allowed, the maximum speed is 30 km/h",
+        "nl": "Fietsen hebben prioriteit en inhalen is niet toegestaan, de maximumsnelheid is 30 km/h"
+      },
+      "tagRenderings": [],
+      "hideUnderlayingFeaturesMinPercentage": 0,
+      "icon": {
+        "render": "./assets/svg/bug.svg"
+      },
+      "width": {
+        "render": "8"
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "color": {
+        "render": "#00f"
+      },
+      "presets": []
     }
   ],
   "overrideAll": {
@@ -386,6 +433,20 @@
         "question": {
           "en": "What is the surface of the street made from?",
           "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+        }
+      },
+      {
+        "render": {
+          "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+          "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+        },
+        "freeform": {
+          "key": "width:carriageway",
+          "addExtraTags": []
+        },
+        "question": {
+          "en": "What is the carriage width of this road (in meters)?",
+          "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
         }
       }
     ]
