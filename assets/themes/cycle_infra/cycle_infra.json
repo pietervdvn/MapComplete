@@ -88,7 +88,8 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The maximum speed on this road is {speed}"
+            "en": "The maximum speed on this road is {maxspeed} km/h",
+            "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
           },
           "freeform": {
             "key": "maxspeed",
@@ -98,36 +99,42 @@
             {
               "if": "maxspeed=20",
               "then": {
-                "en": "The maximum speed is 20 km/h"
+                "en": "The maximum speed is 20 km/h",
+                "nl": "De maximumsnelheid is 20 km/u"
               }
             },
             {
               "if": "maxspeed=30",
               "then": {
-                "en": "The maximum speed is 30 km/h"
+                "en": "The maximum speed is 30 km/h",
+                "nl": "De maximumsnelheid is 30 km/u"
               }
             },
             {
               "if": "maxspeed=50",
               "then": {
-                "en": "The maximum speed is 50 km/h"
+                "en": "The maximum speed is 50 km/h",
+                "nl": "De maximumsnelheid is 50 km/u"
               }
             },
             {
               "if": "maxspeed=70",
               "then": {
-                "en": "The maximum speed is 70 km/h"
+                "en": "The maximum speed is 70 km/h",
+                "nl": "De maximumsnelheid is 70 km/u"
               }
             },
             {
               "if": "maxspeed=90",
               "then": {
-                "en": "The maximum speed is 90 km/h"
+                "en": "The maximum speed is 90 km/h",
+                "nl": "De maximumsnelheid is 90 km/u"
               }
             }
           ],
           "question": {
-            "en": "What is the maximum speed in this street?"
+            "en": "What is the maximum speed in this street?",
+            "nl": "Wat is de maximumsnelheid in deze straat?"
           }
         }
       ],
@@ -173,8 +180,8 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The maximum speed on this road is {speed} km/h",
-            "nl": "De maximumsnelheid op deze weg is {speed} km/u"
+            "en": "The maximum speed on this road is {maxspeed} km/h",
+            "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
           },
           "freeform": {
             "key": "maxspeed",
