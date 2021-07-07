@@ -48,7 +48,8 @@
     "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
     "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
     "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
-    "zh_Hant": "能夠長期租用單車的設施"
+    "zh_Hant": "能夠長期租用單車的設施",
+    "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos"
   },
   "tagRenderings": [
     "images",
@@ -89,7 +90,8 @@
         "ru": "Сколько стоит прокат велосипеда?",
         "de": "Wie viel kostet das Ausleihen eines Fahrrads?",
         "nb_NO": "Hvor mye koster det å leie en sykkel?",
-        "zh_Hant": "租用單車的費用多少？"
+        "zh_Hant": "租用單車的費用多少？",
+        "pt_BR": "Quanto custa um empréstimo de bicicleta?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -100,7 +102,8 @@
         "ru": "Стоимость аренды велосипеда {charge}",
         "de": "Das Ausleihen eines Fahrrads kostet {charge}",
         "nb_NO": "Sykkelleie koster {charge}",
-        "zh_Hant": "租借單車需要 {charge}"
+        "zh_Hant": "租借單車需要 {charge}",
+        "pt_BR": "Custos de empréstimo de bicicleta {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -125,7 +128,8 @@
             "de": "Das Ausleihen eines Fahrrads ist kostenlos",
             "ru": "Прокат велосипедов бесплатен",
             "nb_NO": "Det er gratis å leie en sykkel",
-            "zh_Hant": "租借單車免費"
+            "zh_Hant": "租借單車免費",
+            "pt_BR": "Emprestar uma bicicleta é grátis"
           }
         },
         {
@@ -156,7 +160,8 @@
         "zh_Hans": "谁可以从这里借自行车？",
         "de": "Wer kann hier Fahrräder ausleihen?",
         "ru": "Кто здесь может арендовать велосипед?",
-        "zh_Hant": "誰可以在這裡租單車？"
+        "zh_Hant": "誰可以在這裡租單車？",
+        "pt_BR": "Quem pode emprestar bicicletas aqui?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -170,7 +175,8 @@
             "it": "Sono disponibili biciclette per bambini",
             "de": "Fahrräder für Kinder verfügbar",
             "ru": "Доступны детские велосипеды",
-            "zh_Hant": "提供兒童單車"
+            "zh_Hant": "提供兒童單車",
+            "pt_BR": "Bicicletas para crianças disponíveis"
           }
         },
         {
@@ -182,7 +188,8 @@
             "it": "Sono disponibili biciclette per adulti",
             "de": "Fahrräder für Erwachsene verfügbar",
             "ru": "Доступны велосипеды для взрослых",
-            "zh_Hant": "有提供成人單車"
+            "zh_Hant": "有提供成人單車",
+            "pt_BR": "Bicicletas para adulto disponíveis"
           }
         },
         {
@@ -194,7 +201,8 @@
             "it": "Sono disponibili biciclette per disabili",
             "de": "Fahrräder für Behinderte verfügbar",
             "ru": "Доступны велосипеды для людей с ограниченными возможностями",
-            "zh_Hant": "有提供行動不便人士的單車"
+            "zh_Hant": "有提供行動不便人士的單車",
+            "pt_BR": "Bicicletas para deficientes físicos disponíveis"
           }
         }
       ]
