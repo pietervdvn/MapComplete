@@ -189,9 +189,24 @@ export interface LayoutConfigJson {
      *
      * Note that builtin layers can be reused. Either put in the name of the layer to reuse, or use {builtin: "layername", override: ...}
      * The 'override'-object will be copied over the original values of the layer, which allows to change certain aspects of the layer
+     * ex: If you would like to use layer nature reserves, but only from a specific operator (eg. Natuurpunt) you would use the following in your theme:
+     * layer: {
+     *  "builtin": "nature_reserve",
+     *  "override": {"source": 
+     *  {"osmTags": {
+     *  "+and":["operator=Natuurpunt"]
+     *    }
+     *   }
+     *  }
+     * };
+     *It's also possible to load multiple layers at once, for example, if you would like for both drinking water and benches to start the zoomlevel at 12, you would use the following:
+     layer: {
+     *  "builtin": ["benches", "drinking_water"],
+     *  "override": {"minzoom": 12}
+     * }
      *
      */
-    layers: (LayerConfigJson | string | { builtin: string, override: any })[],
+    layers: (LayerConfigJson | string | { builtin: string | string[], override: any })[],
 
     /**
      * In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)
