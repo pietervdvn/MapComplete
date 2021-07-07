@@ -17,7 +17,7 @@
       "nl"
     ],
     "maintainer": "",
-    "icon": "./assets/svg/waste_basket.svg",
+    "icon": "./assets/themes/waste_basket/waste_basket.svg",
     "version": "7/7/2021",
     "startLat": 0,
     "startLon": 0,
@@ -63,7 +63,7 @@
         "tagRenderings": [],
         "hideUnderlayingFeaturesMinPercentage": 0,
         "icon": {
-          "render": "./assets/svg/waste_basket.svg",
+          "render": "./assets/themes/waste_basket/waste_basket.svg",
           "mappings": [
             {
               "if": {
