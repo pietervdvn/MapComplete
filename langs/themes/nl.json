@@ -240,7 +240,13 @@
     },
     "campersite": {
         "title": "Kampeersite",
-        "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome"
+        "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
+        "layers": {
+            "0": {
+                "name": "Camperplaatsen"
+            }
+        },
+        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslaan en is dus altijd gratis te hergebruiken, ook door andere applicaties."
     },
     "climbing": {
         "title": "Open Klimkaart",
