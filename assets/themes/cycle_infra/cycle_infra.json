@@ -237,10 +237,106 @@
         "render": "#f90"
       },
       "presets": []
+    },
+    {
+      "id": "all_streets",
+      "name": {
+        "nl": "Alle straten",
+        "en": "All streets"
+      },
+      "description": {
+        "nl": "Laag waar je nieuwe fietspaden kan aanduiden",
+        "en": "Layer to mark new cycleways"
+      },
+      "source": {
+        "osmTags": {
+          "or": [
+            "highway=residential",
+            "highway=tertiary",
+            "highway=unclassified",
+            "highway=primary",
+            "highway=secondary"
+          ]
+        }
+      },
+      "minzoom": 18,
+      "wayHandling": 0,
+      "title": {
+        "render": {
+          "nl": "Straat",
+          "en": "Street"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "icon": "./assets/svg/bug.svg",
+      "width": "5",
+      "color": {
+        "render": "#aaaaaa",
+        "mappings": []
+      },
+      "tagRenderings": []
     }
   ],
   "overrideAll": {
     "+tagRenderings": [
+        {
+          "freeform": {
+            "key": "cycleway",
+            "addExtraTags": []
+          },
+          "question": {
+            "en": "Is there a cycleway?",
+            "nl": "Is er een fietspad?"
+          },
+          "condition": "highway!=cycleway",
+          "mappings": [
+            {
+              "if": "cycleway=",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "cycleway=shared_lane",
+              "then": {
+                "en": "There is a shared lane",
+                "nl": "Er is een fietssugestiestrook"
+              }
+            },
+            {
+              "if": "cycleway=lane",
+              "then": {
+                "en": "There is a lane next to the road (seperated with paint)",
+                "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
+              }
+            },
+            {
+              "if": "cycleway=track",
+              "then": {
+                "en": "There is a track, but no cycleway drawn seperately from this road on the map.",
+                "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
+              }
+            },
+            {
+              "if": "cycleway=seperate",
+              "then": {
+                "en": "There is a seperately drawn cycleway",
+                "nl": "Er is een apart getekend fietspad."
+              }
+            }
+          ],
+          "render": {
+            "en": "Unknown cycleway situation",
+            "nl": "Onbekende fietspad situatie"
+          }
+        },
       {
         "render": {
           "en": "This road is made of {surface}",
