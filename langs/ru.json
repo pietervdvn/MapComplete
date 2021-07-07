@@ -40,7 +40,7 @@
         },
         "loginToStart": "Войдите, чтобы ответить на этот вопрос",
         "welcomeBack": "Вы вошли, с возвращением!",
-        "loginWithOpenStreetMap": "Войти с OpenStreetMap",
+        "loginWithOpenStreetMap": "Войти с помощью OpenStreetMap",
         "opening_hours": {
             "ph_not_known": " ",
             "ph_open": "открыта",
@@ -81,7 +81,7 @@
         "customThemeIntro": "<h3>Пользовательские темы</h3>Это ранее просмотренные темы, созданные пользователями.",
         "noTagsSelected": "Теги не выбраны",
         "getStartedNewAccount": " или <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">создать новую учетную запись</a>",
-        "getStartedLogin": "Войти с OpenStreetMap, чтобы начать работу",
+        "getStartedLogin": "Войти с помощью OpenStreetMap, чтобы начать работу",
         "goToInbox": "Открыть входящие сообщения",
         "fewChangesBefore": "Пожалуйста, ответьте на несколько вопросов о существующих точках, прежде чем добавить новую точку.",
         "readYourMessages": "Пожалуйста, прочитайте все ваши сообщения на сайте OpenStreetMap перед тем как добавлять новую точку.",

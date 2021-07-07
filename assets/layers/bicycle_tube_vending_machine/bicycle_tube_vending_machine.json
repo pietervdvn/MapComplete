@@ -7,7 +7,8 @@
     "it": "Distributore automatico di camere d’aria per bici",
     "de": "Fahrradschlauch-Automat",
     "ru": "Торговый автомат для велосипедистов",
-    "zh_Hant": "自行車內胎自動售貨機"
+    "zh_Hant": "自行車內胎自動售貨機",
+    "pt_BR": "Máquina de venda automática de tubos de bicicleta"
   },
   "title": {
     "render": {
@@ -17,7 +18,8 @@
       "it": "Distributore automatico di camere d’aria per bici",
       "de": "Fahrradschlauch-Automat",
       "ru": "Торговый автомат для велосипедистов",
-      "zh_Hant": "自行車內胎自動售貨機"
+      "zh_Hant": "自行車內胎自動售貨機",
+      "pt_BR": "Máquina de venda automática de tubos de bicicleta"
     },
     "mappings": [
       {
@@ -68,7 +70,8 @@
         "it": "Distributore automatico di camere d’aria per bici",
         "de": "Fahrradschlauch-Automat",
         "ru": "Торговый автомат для велосипедистов",
-        "zh_Hant": "自行車內胎自動售貨機"
+        "zh_Hant": "自行車內胎自動售貨機",
+        "pt_BR": "Máquina de venda automática de tubos de bicicleta"
       },
       "tags": [
         "amenity=vending_machine",
@@ -89,7 +92,8 @@
         "it": "Questo distributore automatico funziona ancora?",
         "ru": "Этот торговый автомат все еще работает?",
         "de": "Ist dieser Automat noch in Betrieb?",
-        "zh_Hant": "這個自動販賣機仍有運作嗎？"
+        "zh_Hant": "這個自動販賣機仍有運作嗎？",
+        "pt_BR": "Esta máquina de venda automática ainda está operacional?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status</i>",
@@ -115,7 +119,8 @@
             "ru": "Этот торговый автомат работает",
             "zh_Hans": "这个借还机正常工作",
             "de": "Dieser Automat funktioniert",
-            "zh_Hant": "這個自動販賣機仍運作"
+            "zh_Hant": "這個自動販賣機仍運作",
+            "pt_BR": "Esta máquina de venda automática funciona"
           }
         },
         {
@@ -129,7 +134,8 @@
             "ru": "Этот торговый автомат сломан",
             "zh_Hans": "这个借还机已经损坏",
             "de": "Dieser Automat ist kaputt",
-            "zh_Hant": "這個自動販賣機沒有運作了"
+            "zh_Hant": "這個自動販賣機沒有運作了",
+            "pt_BR": "Esta máquina de venda automática está quebrada"
           }
         },
         {
@@ -143,7 +149,8 @@
             "ru": "Этот торговый автомат закрыт",
             "zh_Hans": "这个借还机被关闭了",
             "de": "Dieser Automat ist geschlossen",
-            "zh_Hant": "這個自動販賣機已經關閉了"
+            "zh_Hant": "這個自動販賣機已經關閉了",
+            "pt_BR": "Esta máquina de venda automática está fechada"
           }
         }
       ]
