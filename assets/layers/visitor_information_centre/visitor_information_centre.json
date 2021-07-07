@@ -1,0 +1,39 @@
+{
+  "id": "visitor_information_centre",
+  "name": {
+    "en": "Visitor Information Centre",
+    "nl": "Bezoekerscentrum"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "or": ["information=visitor_centre", "information=office"]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "{key}",
+      "nl": "{key}"
+    }
+  },
+  "description": {
+    "en": "A visitor center offers information about a specific attraction or place of interest where it is located.",
+    "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
+  },
+  "tagRenderings": [],
+  "hideUnderlayingFeaturesMinPercentage": 0,
+  "icon": {
+    "render": "./assets/layers/information_board/board.svg"
+  },
+  "width": {
+    "render": "8"
+  },
+  "iconSize": {
+    "render": "40,40,center"
+  },
+  "color": {
+    "render": "#00f"
+  },
+  "presets": [],
+  "wayHandling": 1
+}
