@@ -33,8 +33,11 @@
       "minzoom": 12,
       "source": {
         "osmTags": {
-          "and": [
-            "highway=cycleway"
+          "or": [
+            "highway=cycleway",
+            "cycleway=shared_lane",
+            "cycleway=lane",
+            "cyclestreet=yes"
           ]
         }
       },
@@ -42,49 +45,39 @@
         "render": {
           "en": "Cycleways",
           "nl": "Fietspaden"
-        }
+        },
+        "mappings": [
+          {
+            "if": "highway=cycleway",
+            "then": {
+              "nl": "Fietsweg",
+              "en": "Bike road"
+            }
+          },
+          {
+            "if": "cycleway=shared_lane",
+            "then": {
+              "nl": "Fietssuggestiestrook",
+              "en": "Shared lane"
+            }
+          },
+          {
+            "if": "cycleway=lane",
+            "then": {
+              "nl": "Fietsweg naast de weg",
+              "en": "Bike lane"
+            }
+          },
+          {
+            "if": "cyclestreet=yes",
+            "then": {
+              "nl": "Fietsstraat",
+              "en": "Cyclestreet"
+            }
+          }
+        ]
       },
       "description": {},
-      "tagRenderings": [],
-      "hideUnderlayingFeaturesMinPercentage": 0,
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#0f0"
-      },
-      "presets": []
-    },
-    {
-      "id": "shared_lanes",
-      "name": {
-        "en": "Shared lanes",
-        "nl": "Gedeelde straten"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "and": [
-            "cycleway=shared_lane"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "en": "Shared Lane",
-          "nl": "Gedeelde straat"
-        }
-      },
-      "description": {
-        "en": "Cyclepaths where you have to share your lane with other cyclists.",
-        "nl": "Fietspaden waar fietsers de weg moeten delen met andere weggebruikers."
-      },
       "tagRenderings": [
         {
           "render": {
@@ -94,6 +87,12 @@
           "freeform": {
             "key": "maxspeed",
             "addExtraTags": []
+          },
+          "condition": {
+            "or": [
+              "cycleway=shared_lane",
+              "cycleway=lane"
+            ]
           },
           "mappings": [
             {
@@ -149,139 +148,25 @@
         "render": "40,40,center"
       },
       "color": {
-        "render": "#f00"
-      },
-      "presets": []
-    },
-    {
-      "id": "lanes",
-      "name": {
-        "en": "Lanes",
-        "nl": "Fietsstroken naast de weg"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "and": [
-            "cycleway=lane"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "en": "Cycleway next to road",
-          "nl": "Fietsstrook naast de weg"
-        }
-      },
-      "description": {
-        "en": "Cycleways immediately next to the road.",
-        "nl": "Fietspaden direct naast de weg."
-      },
-      "tagRenderings": [
-        {
-          "render": {
-            "en": "The maximum speed on this road is {maxspeed} km/h",
-            "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
+        "render": "#aaaaaa",
+        "mappings": [
+          {
+            "if": "highway=cycleway",
+            "then": "#00ff00"
           },
-          "freeform": {
-            "key": "maxspeed",
-            "addExtraTags": []
+          {
+            "if": "cycleway=shared_lane",
+            "then": "#ff0000"
           },
-          "mappings": [
-            {
-              "if": "maxspeed=20",
-              "then": {
-                "en": "The maximum speed is 20 km/h",
-                "nl": "De maximumsnelheid is 20 km/u"
-              }
-            },
-            {
-              "if": "maxspeed=30",
-              "then": {
-                "en": "The maximum speed is 30 km/h",
-                "nl": "De maximumsnelheid is 30 km/u"
-              }
-            },
-            {
-              "if": "maxspeed=50",
-              "then": {
-                "en": "The maximum speed is 50 km/h",
-                "nl": "De maximumsnelheid is 50 km/u"
-              }
-            },
-            {
-              "if": "maxspeed=70",
-              "then": {
-                "en": "The maximum speed is 70 km/h",
-                "nl": "De maximumsnelheid is 70 km/u"
-              }
-            },
-            {
-              "if": "maxspeed=90",
-              "then": {
-                "en": "The maximum speed is 90 km/h",
-                "nl": "De maximumsnelheid is 90 km/u"
-              }
-            }
-          ],
-          "question": {
-            "en": "What is the maximum speed in this street?",
-            "nl": "Wat is de maximumsnelheid in deze straat?"
+          {
+            "if": "cycleway=lane",
+            "then": "#ff9900"
+          },
+          {
+            "if": "cyclestreet=yes",
+            "then": "#0000ff"
           }
-        }
-      ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#f90"
-      },
-      "presets": []
-    },
-    {
-      "id": "cyclestreets",
-      "name": {
-        "en": "Cyclestreets",
-        "nl": "Fietsstraten"
-      },
-      "minzoom": 12,
-      "source": {
-        "osmTags": {
-          "and": [
-            "cyclestreet=yes"
-          ]
-        }
-      },
-      "title": {
-        "render": {
-          "en": "Dedicated cyclestreet",
-          "nl": "Fietsstraten"
-        }
-      },
-      "description": {
-        "en": "Bicycles have priority and overtaking isn't allowed, the maximum speed is 30 km/h",
-        "nl": "Fietsen hebben prioriteit en inhalen is niet toegestaan, de maximumsnelheid is 30 km/h"
-      },
-      "tagRenderings": [],
-      "hideUnderlayingFeaturesMinPercentage": 0,
-      "icon": {
-        "render": "./assets/svg/bug.svg"
-      },
-      "width": {
-        "render": "8"
-      },
-      "iconSize": {
-        "render": "40,40,center"
-      },
-      "color": {
-        "render": "#00f"
+        ]
       },
       "presets": []
     },
