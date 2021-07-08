@@ -136,7 +136,15 @@ export class Changes implements FeatureSource{
     }
 
     private uploadChangesWithLatestVersions(
-        knownElements, newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
+        knownElements: OsmObject[], newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
+        const knownById = new Map<string, OsmObject>();
+        
+        knownElements.forEach(knownElement => {
+            console.log("Setting ",knownElement.type + knownElement.id, knownElement)
+            knownById.set(knownElement.type + "/" + knownElement.id, knownElement)
+        })
+        
+         
         // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements', which maps the ids onto the elements
         // We apply the changes on them
         for (const change of pending) {
@@ -147,9 +155,10 @@ export class Changes implements FeatureSource{
                         newElement.addTag(change.key, change.value);
                     }
                 }
-
             } else {
-                knownElements[change.elementId].addTag(change.key, change.value);
+                console.log(knownById, change.elementId)
+
+                knownById.get(change.elementId).addTag(change.key, change.value);
             }
         }
 
@@ -230,6 +239,7 @@ export class Changes implements FeatureSource{
 
         neededIds = Utils.Dedup(neededIds);
         OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
+            console.log("KnownElements:", knownElements)
             self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
         })
     }
