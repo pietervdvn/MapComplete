@@ -6,9 +6,13 @@
   "minzoom": 12,
   "source": {
     "osmTags": {
-      "or": [
-        "leisure=nature_reserve",
-        "boundary=protected_area"
+      "and": [
+        {
+          "or": [
+            "leisure=nature_reserve",
+            "boundary=protected_area"
+          ]
+        }
       ]
     }
   },

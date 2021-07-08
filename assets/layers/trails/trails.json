@@ -1,0 +1,217 @@
+{
+  "id": "trails",
+  "name": {
+    "nl": "paden"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "and": [
+        "route=hiking"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "nl": "Paden"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name:nl~*"
+          ]
+        },
+        "then": {
+          "nl": "{name:nl}"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "{name}"
+        }
+      }
+    ]
+  },
+  "description": {
+    "nl": "Paden waarlangs kan gewandeld worden"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "#": "Access tag",
+      "render": {
+        "nl": "De toegankelijkheid van dit gebied is: {access:description}"
+      },
+      "question": {
+        "nl": "Is dit gebied toegankelijk?"
+      },
+      "freeform": {
+        "key": "access:description"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Vrij toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=no",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet toegankelijk"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=private",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Niet toegankelijk, want privégebied"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=permissive",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk, ondanks dat het privegebied is"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=guided",
+              "fee="
+            ]
+          },
+          "then": {
+            "nl": "Enkel toegankelijk met een gids of tijdens een activiteit"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=yes",
+              "fee=yes"
+            ]
+          },
+          "then": {
+            "nl": "Toegankelijk mits betaling"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Operator tag",
+      "render": {
+        "nl": "Beheer door {operator}"
+      },
+      "question": {
+        "nl": "Wie beheert dit pad?"
+      },
+      "freeform": {
+        "key": "operator"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "operator=Natuurpunt"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "operator~(n|N)atuurpunt.*"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "operator=Agentschap Natuur en Bos"
+            ]
+          },
+          "then": {
+            "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+          }
+        }
+      ]
+    },
+    {
+      "#": "Name:nl-tag",
+      "render": {
+        "nl": "Dit gebied heet {name:nl}"
+      },
+      "question": {
+        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
+      },
+      "freeform": {
+        "key": "name:nl"
+      },
+      "condition": {
+        "and": [
+          "name:nl~*"
+        ]
+      }
+    }
+  ],
+  "hideUnderlayingFeaturesMinPercentage": 10,
+  "wayHandling": 2,
+  "icon": {
+    "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
+  },
+  "width": {
+    "render": "5"
+  },
+  "iconSize": {
+    "render": "50,50,center"
+  },
+  "color": {
+    "render": "#3c3"
+  },
+  "presets": [
+    {
+      "tags": [
+        "leisure=nature_reserve",
+        "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
+      ],
+      "title": {
+        "nl": "Paden"
+      },
+      "description": {
+        "nl": "Voeg een ontbrekend, erkend pad toe."
+      }
+    }
+  ]
+}
