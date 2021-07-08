@@ -10,7 +10,7 @@ export default class T {
                 test();
             } catch (e) {
                 this.failures.push(name);
-                console.warn("Failed test: ", name, "because", e);
+                console.warn(`>>> Failed test in ${this.name}: ${name}because${e}`);
             }
         }
         if (this.failures.length == 0) {
