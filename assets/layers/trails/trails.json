@@ -155,42 +155,12 @@
             "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
           },
           "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
-              "operator=Agentschap Natuur en Bos"
-            ]
-          },
-          "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-          }
         }
       ]
-    },
-    {
-      "#": "Name:nl-tag",
-      "render": {
-        "nl": "Dit gebied heet {name:nl}"
-      },
-      "question": {
-        "nl": "Wat is de Nederlandstalige naam van dit gebied?"
-      },
-      "freeform": {
-        "key": "name:nl"
-      },
-      "condition": {
-        "and": [
-          "name:nl~*"
-        ]
-      }
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 10,
   "wayHandling": 2,
-  "icon": {
-    "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
-  },
   "width": {
     "render": "5"
   },
@@ -198,12 +168,12 @@
     "render": "50,50,center"
   },
   "color": {
-    "render": "#3c3"
+    "render": "#335D9F"
   },
   "presets": [
     {
       "tags": [
-        "leisure=nature_reserve",
+        "route=hiking",
         "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
       ],
       "title": {
