@@ -1999,5 +1999,12 @@
                 }
             }
         }
+    },
+    "visitor_information_centre": {
+        "name": "Bezoekerscentrum",
+        "title": {
+            "render": "{name}"
+        },
+        "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
     }
 }

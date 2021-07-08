@@ -1769,5 +1769,12 @@
                 "question": "Do you want to add a description?"
             }
         }
+    },
+    "visitor_information_centre": {
+        "name": "Visitor Information Centre",
+        "title": {
+            "render": "{name}"
+        },
+        "description": "A visitor center offers information about a specific attraction or place of interest where it is located."
     }
 }
