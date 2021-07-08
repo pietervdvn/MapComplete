@@ -32,11 +32,11 @@
           "nl": "Vuilnisbak"
         },
         "minzoom": 12,
-        "overpassTags": {
+        "source": {"osmTags": {
           "and": [
             "amenity=waste_basket"
           ]
-        },
+        }},
         "title": {
           "render": {
             "en": "Waste Basket",
@@ -63,7 +63,7 @@
         "tagRenderings": [],
         "hideUnderlayingFeaturesMinPercentage": 0,
         "icon": {
-          "render": "./assets/themes/waste_basket/waste_basket.svg",
+          "render": "./assets/layers/toilet/urinal.svg",
           "mappings": [
             {
               "if": {
