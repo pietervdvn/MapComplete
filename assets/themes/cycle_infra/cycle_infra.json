@@ -228,14 +228,6 @@
           "condition": "highway!=cycleway",
           "mappings": [
             {
-              "if": "cycleway=",
-              "then": {
-                "en": "There is no cycleway",
-                "nl": "Er is geen fietspad"
-              },
-              "hideInAnswer": true
-            },
-            {
               "if": "cycleway=shared_lane",
               "then": {
                 "en": "There is a shared lane",
@@ -262,6 +254,21 @@
                 "en": "There is a seperately drawn cycleway",
                 "nl": "Er is een apart getekend fietspad."
               }
+            },
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "nl": "Dit is een fietsstraat.",
+                "en": "This is a cyclestreet."
+              }
+            },
+            {
+              "if": "cycleway=",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad"
+              },
+              "hideInAnswer": true
             }
           ],
           "render": {
