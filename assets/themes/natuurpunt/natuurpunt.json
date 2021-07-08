@@ -62,7 +62,7 @@
         "source": {
           "osmTags": {
             "+and": [
-             "operator=Natuurpunt"         
+              "operator~.*[nN]atuurpunt.*"
             ]
           }
         }
