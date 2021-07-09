@@ -55,12 +55,9 @@ The preferred way to add your theme is via a Pull Request. A Pull Request is les
     - If an SVG version is available, use the SVG version
     - Make sure all the links in `yourtheme.json` are updated. You can use `./assets/themes/yourtheme/yourimage.svg` instead of the HTML link
     - Create a file `license_info.json` in the theme directory, which contains metadata on every artwork source 
- 5) Add your theme to the code base:
-    - Open [AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/master/Customizations/AllKnownLayouts.ts)
-    - Add an import statement, e.g. `import * as yourtheme from "../assets/themes/yourtheme/yourthemes.json";`
-    - Add your theme to the `LayoutsList`, by adding a line `new LayoutConfig(yourtheme)`
+ 5) Add your theme to the code base: add it into "assets/themes" and make sure all the images are there too. Running 'ts-node scripts/fixTheme <path to your theme>' will help downloading the images and attempts to get the licenses if on wikimedia.
  6) Add some finishing touches, such as a social image. See [this blog post](https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit) for some hints
- 7) Test your theme: run the project as described [above](../README.md#Dev)
+ 7) Test your theme: run the project as described in [development_deployment](Development_deployment.md)
  8) Happy with your theme? Time to open a Pull Request!
  9) Thanks a lot for improving MapComplete!
  
