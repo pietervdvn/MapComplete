@@ -1,1 +1,103 @@
-{}
+{
+    "bike_repair_station": {
+        "presets": {
+            "0": {
+                "title": "Pyöräpumppu"
+            }
+        },
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "5": {
+                "render": "{access}"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "render": "Penkki"
+        }
+    },
+    "bench": {
+        "presets": {
+            "0": {
+                "description": "Lisää uusi penkki",
+                "title": "Penkki"
+            }
+        },
+        "tagRenderings": {
+            "5": {
+                "mappings": {
+                    "7": {
+                        "then": "Väri: keltainen"
+                    },
+                    "6": {
+                        "then": "Väri: sininen"
+                    },
+                    "5": {
+                        "then": "Väri: musta"
+                    },
+                    "4": {
+                        "then": "Väri: punainen"
+                    },
+                    "3": {
+                        "then": "Väri: valkoinen"
+                    },
+                    "2": {
+                        "then": "Väri: harmaa"
+                    },
+                    "1": {
+                        "then": "Väri: vihreä"
+                    },
+                    "0": {
+                        "then": "Väri: ruskea"
+                    }
+                },
+                "render": "Väri: {colour}"
+            },
+            "3": {
+                "mappings": {
+                    "5": {
+                        "then": "Materiaali: teräs"
+                    },
+                    "4": {
+                        "then": "Materiaali: muovi"
+                    },
+                    "3": {
+                        "then": "Materiaali: betoni"
+                    },
+                    "2": {
+                        "then": "Materiaali: kivi"
+                    },
+                    "0": {
+                        "then": "Materiaali: puu"
+                    }
+                },
+                "render": "Materiaali: {material}"
+            },
+            "1": {
+                "mappings": {
+                    "1": {
+                        "then": "Selkänoja: ei"
+                    },
+                    "0": {
+                        "then": "Selkänoja: kyllä"
+                    }
+                },
+                "render": "Selkänoja"
+            }
+        },
+        "title": {
+            "render": "Penkki"
+        },
+        "name": "Penkit"
+    }
+}
