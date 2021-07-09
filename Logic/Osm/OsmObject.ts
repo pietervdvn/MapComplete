@@ -36,15 +36,22 @@ export abstract class OsmObject {
         this.backendURL = url;
     }
 
-    static DownloadObject(id): UIEventSource<OsmObject> {
+    static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
+        let src : UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
-            return OsmObject.objectCache.get(id)
+            src = OsmObject.objectCache.get(id)
+            if(forceRefresh){
+                src.setData(undefined)
+            }else{
+                return src;
+            }
+        }else{
+            src = new UIEventSource<OsmObject>(undefined)
         }
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = splitted[1];
 
-        const src = new UIEventSource<OsmObject>(undefined)
         OsmObject.objectCache.set(id, src);
         const newContinuation = (element: OsmObject) => {
             src.setData(element)
@@ -158,11 +165,11 @@ export abstract class OsmObject {
         })
     }
 
-    public static DownloadAll(neededIds): UIEventSource<OsmObject[]> {
+    public static DownloadAll(neededIds, forceRefresh = true): UIEventSource<OsmObject[]> {
         // local function which downloads all the objects one by one
         // this is one big loop, running one download, then rerunning the entire function
 
-        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id))
+        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id, forceRefresh))
         const allCompleted = new UIEventSource(undefined).map(_ => {
             return !allSources.some(uiEventSource => uiEventSource.data === undefined)
         }, allSources)
