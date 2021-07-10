@@ -152,7 +152,7 @@ export class Denomination {
         if (stripped === null) {
             return null;
         }
-        return stripped + " " + this.canonical.trim()
+        return (stripped + " " + this.canonical.trim()).trim();
     }
 
     /**
