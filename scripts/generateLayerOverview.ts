@@ -4,7 +4,6 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import * as licenses from "../assets/generated/license_info.json"
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
-import {Translation} from "../UI/i18n/Translation";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
 
@@ -108,10 +107,6 @@ class LayerOverviewUtils {
                 if (typeof layer === "string") {
                     if (!knownLayerIds.has(layer)) {
                         themeErrorCount.push(`Unknown layer id: ${layer} in theme ${themeFile.id}`)
-                    } else {
-                        const layerConfig = knownLayerIds.get(layer);
-                        missingTranslations.push(...this.validateTranslationCompletenessOfObject(layerConfig, themeFile.language, "Layer " + layer))
-
                     }
                 } else {
                     if (layer.builtin !== undefined) {
@@ -129,7 +124,6 @@ class LayerOverviewUtils {
                 .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
                 .filter(l => l.builtin === undefined)
 
-            missingTranslations.push(...this.validateTranslationCompletenessOfObject(themeFile, themeFile.language, "Theme " + themeFile.id))
 
             try {
                 const theme = new LayoutConfig(themeFile, true, "test")
