@@ -7,6 +7,7 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import {TagsFilter} from "../Tags/TagsFilter";
 import {Tag} from "../Tags/Tag";
 import {OsmConnection} from "./OsmConnection";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 /**
  * Handles all changes made to OSM.
@@ -24,8 +25,13 @@ export class Changes implements FeatureSource {
     /**
      * All the pending changes
      */
-    public readonly pending: UIEventSource<{ elementId: string, key: string, value: string }[]> =
-        new UIEventSource<{ elementId: string; key: string; value: string }[]>([]);
+    public readonly pending: UIEventSource<{ elementId: string, key: string, value: string }[]> = LocalStorageSource.GetParsed("pending-changes", [])
+
+    /**
+     * All the pending new objects to upload
+     * @private
+     */
+    private readonly newObjects: UIEventSource<{ id: number, lat: number, lon: number }[]> = LocalStorageSource.GetParsed("newObjects", [])
 
     /**
      * Adds a change to the pending changes
@@ -82,8 +88,7 @@ export class Changes implements FeatureSource {
         if (flushreason !== undefined) {
             console.log(flushreason)
         }
-        this.uploadAll([], this.pending.data);
-        this.pending.setData([]);
+        this.uploadAll();
     }
 
     /**
@@ -93,12 +98,12 @@ export class Changes implements FeatureSource {
      */
     public createElement(basicTags: Tag[], lat: number, lon: number) {
         console.log("Creating a new element with ", basicTags)
-        const osmNode = new OsmNode(Changes._nextId);
+        const newId = Changes._nextId;
         Changes._nextId--;
 
-        const id = "node/" + osmNode.id;
-        osmNode.lat = lat;
-        osmNode.lon = lon;
+        const id = "node/" + newId;
+
+
         const properties = {id: id};
 
         const geojson = {
@@ -135,22 +140,32 @@ export class Changes implements FeatureSource {
             properties["_backend"] = State.state.osmConnection.userDetails.data.backend
         }
 
-        // this.uploadAll([osmNode], changes);
+
+        this.newObjects.data.push({id: newId, lat: lat, lon: lon})
+        this.pending.data.push(...changes)
+        this.pending.ping();
+        this.newObjects.ping();
         return geojson;
     }
 
     private uploadChangesWithLatestVersions(
-        knownElements: OsmObject[], newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
+        knownElements: OsmObject[]) {
         const knownById = new Map<string, OsmObject>();
-
         knownElements.forEach(knownElement => {
             knownById.set(knownElement.type + "/" + knownElement.id, knownElement)
+        })
+
+        const newElements: OsmNode [] = this.newObjects.data.map(spec => {
+            const newElement = new OsmNode(spec.id);
+            newElement.lat = spec.lat;
+            newElement.lon = spec.lon;
+            return newElement
         })
 
 
         // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements', which maps the ids onto the elements
         // We apply the changes on them
-        for (const change of pending) {
+        for (const change of this.pending.data) {
             if (parseInt(change.elementId.split("/")[1]) < 0) {
                 // This is a new element - we should apply this on one of the new elements
                 for (const newElement of newElements) {
@@ -217,17 +232,19 @@ export class Changes implements FeatureSource {
                 changes += "</osmChange>";
 
                 return changes;
+            },
+            () => {
+                console.log("Upload successfull!")
+                this.newObjects.setData([])
+                this.pending.setData([]);
             });
     };
 
 
-    private uploadAll(
-        newElements: OsmObject[],
-        pending: { elementId: string; key: string; value: string }[]
-    ) {
+    private uploadAll() {
         const self = this;
 
-
+        const pending = this.pending.data;
         let neededIds: string[] = [];
         for (const change of pending) {
             const id = change.elementId;
@@ -240,8 +257,7 @@ export class Changes implements FeatureSource {
 
         neededIds = Utils.Dedup(neededIds);
         OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
-            console.log("KnownElements:", knownElements)
-            self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
+            self.uploadChangesWithLatestVersions(knownElements)
         })
     }
 

@@ -27,7 +27,7 @@ export class ChangesetHandler {
         }
     }
 
-    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) {
+    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) : void{
         const nodes = response.getElementsByTagName("node");
         // @ts-ignore
         for (const node of nodes) {
@@ -69,7 +69,8 @@ export class ChangesetHandler {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string) {
+        generateChangeXML: (csid: string) => string,
+        whenDone : (csId: string) => void) {
 
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
@@ -80,6 +81,7 @@ export class ChangesetHandler {
         if (this._dryRun) {
             const changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
+            whenDone("123456")
             return;
         }
 
@@ -93,8 +95,7 @@ export class ChangesetHandler {
                 console.log(changeset);
                 self.AddChange(csId, changeset,
                     allElements,
-                    () => {
-                    },
+                    whenDone,
                     (e) => {
                         console.error("UPLOADING FAILED!", e)
                     }
@@ -107,14 +108,13 @@ export class ChangesetHandler {
                 csId,
                 generateChangeXML(csId),
                 allElements,
-                () => {
-                },
+                whenDone,
                 (e) => {
                     console.warn("Could not upload, changeset is probably closed: ", e);
                     // Mark the CS as closed...
                     this.currentChangeset.setData("");
                     // ... and try again. As the cs is closed, no recursive loop can exist  
-                    self.UploadChangeset(layout, allElements, generateChangeXML);
+                    self.UploadChangeset(layout, allElements, generateChangeXML, whenDone);
 
                 }
             )
@@ -244,7 +244,6 @@ export class ChangesetHandler {
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);
-                alert("Could not upload change (opening failed). Please file a bug report")
                 return;
             } else {
                 continuation(response);
@@ -265,7 +264,7 @@ export class ChangesetHandler {
     private AddChange(changesetId: string,
                       changesetXML: string,
                       allElements: ElementStorage,
-                      continuation: ((changesetId: string, idMapping: any) => void),
+                      continuation: ((changesetId: string) => void),
                       onFail: ((changesetId: string, reason: string) => void) = undefined) {
         this.auth.xhr({
             method: 'POST',
@@ -280,9 +279,9 @@ export class ChangesetHandler {
                 }
                 return;
             }
-            const mapping = ChangesetHandler.parseUploadChangesetResponse(response, allElements);
+            ChangesetHandler.parseUploadChangesetResponse(response, allElements);
             console.log("Uploaded changeset ", changesetId);
-            continuation(changesetId, mapping);
+            continuation(changesetId);
         });
     }
 
