@@ -82,6 +82,10 @@ html, body {
     box-sizing: initial !important;
 }
 
+.leaflet-control-attribution {
+    display: block ruby;
+}
+
 svg, img {
     box-sizing: content-box;
     width: 100%;
