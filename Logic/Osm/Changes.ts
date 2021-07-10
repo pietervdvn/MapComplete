@@ -140,7 +140,6 @@ export class Changes implements FeatureSource{
         const knownById = new Map<string, OsmObject>();
         
         knownElements.forEach(knownElement => {
-            console.log("Setting ",knownElement.type + knownElement.id, knownElement)
             knownById.set(knownElement.type + "/" + knownElement.id, knownElement)
         })
         
@@ -156,8 +155,6 @@ export class Changes implements FeatureSource{
                     }
                 }
             } else {
-                console.log(knownById, change.elementId)
-
                 knownById.get(change.elementId).addTag(change.key, change.value);
             }
         }

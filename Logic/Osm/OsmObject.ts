@@ -177,7 +177,7 @@ export abstract class OsmObject {
             if (completed) {
                 return allSources.map(src => src.data)
             }
-            return []
+            return undefined
         });
     }
 
