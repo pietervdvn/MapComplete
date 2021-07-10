@@ -5,5 +5,4 @@ export interface TileRange {
     yend: number,
     total: number,
     zoomlevel: number
-
 }
