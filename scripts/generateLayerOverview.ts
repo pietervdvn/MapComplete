@@ -77,63 +77,6 @@ class LayerOverviewUtils {
         return errorCount
     }
 
-    validateTranslationCompletenessOfObject(object: any, expectedLanguages: string[], context: string) {
-        const missingTranlations = []
-        const translations: { tr: Translation, context: string }[] = [];
-        const queue: { object: any, context: string }[] = [{object: object, context: context}]
-
-        while (queue.length > 0) {
-            const item = queue.pop();
-            const o = item.object
-            for (const key in o) {
-                const v = o[key];
-                if (v === undefined) {
-                    continue;
-                }
-                if (v instanceof Translation || v?.translations !== undefined) {
-                    translations.push({tr: v, context: item.context});
-                } else if (
-                    ["string", "function", "boolean", "number"].indexOf(typeof (v)) < 0) {
-                    queue.push({object: v, context: item.context + "." + key})
-                }
-            }
-        }
-
-        const missing = {}
-        const present = {}
-        for (const ln of expectedLanguages) {
-            missing[ln] = 0;
-            present[ln] = 0;
-            for (const translation of translations) {
-                if (translation.tr.translations["*"] !== undefined) {
-                    continue;
-                }
-                const txt = translation.tr.translations[ln];
-                const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
-                if (isMissing) {
-                    missingTranlations.push(`${translation.context},${ln},${translation.tr.txt}`)
-                    missing[ln]++
-                } else {
-                    present[ln]++;
-                }
-            }
-        }
-
-        let message = `Translation completeness for ${context}`
-        let isComplete = true;
-        for (const ln of expectedLanguages) {
-            const amiss = missing[ln];
-            const ok = present[ln];
-            const total = amiss + ok;
-            message += ` ${ln}: ${ok}/${total}`
-            if (ok !== total) {
-                isComplete = false;
-            }
-        }
-        return missingTranlations
-
-    }
-
     main(args: string[]) {
 
         const lt = this.loadThemesAndLayers();
@@ -196,11 +139,6 @@ class LayerOverviewUtils {
             } catch (e) {
                 themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
             }
-        }
-
-        if (missingTranslations.length > 0) {
-            console.log(missingTranslations.length, "missing translations")
-            writeFileSync("missing_translations.txt", missingTranslations.join("\n"))
         }
 
         if (layerErrorCount.length + themeErrorCount.length == 0) {
