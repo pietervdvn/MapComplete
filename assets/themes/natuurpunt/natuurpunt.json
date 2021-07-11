@@ -44,7 +44,18 @@
     "picnic_table",
     "birdhide",
     "toilet",
-    "visitor_information_centre"
+    {
+      "builtin": "visitor_information_centre",
+      "override": {
+        "source": {
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          }
+        }
+      }
+    }
   ],
   "roamingRenderings": []
 }
