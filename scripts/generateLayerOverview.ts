@@ -171,10 +171,17 @@ class LayerOverviewUtils {
 
                     }
                 } else {
-                    if (layer.builtin !== undefined) {
-                        if (!knownLayerIds.has(layer.builtin)) {
-                            themeErrorCount.push("Unknown layer id: " + layer.builtin + "(which uses inheritance)")
+                    let names = layer.builtin;
+                    if (names !== undefined) {
+                        if (typeof names === "string") {
+                            names = [names]
                         }
+                        names.forEach(name => {
+                            if (!knownLayerIds.has(name)) {
+                                themeErrorCount.push("Unknown layer id: " + name + "(which uses inheritance)")
+                            }
+                            return
+                        })
                     } else {
                         // layer.builtin contains layer overrides - we can skip those
                         layerErrorCount.push(...this.validateLayer(layer, undefined, knownPaths, themeFile.id))
