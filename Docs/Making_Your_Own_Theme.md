@@ -14,6 +14,7 @@ Before you start, you should have the following qualifications:
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to help testing
 
 If you do not have those qualifications, reach out to the MapComplete community channel on [Telegram](https://t.me/joinchat/HiMUavahRG--SCvC)
+or [Matrix](https://app.element.io/#/room/#MapComplete:matrix.org).
 
 The custom theme generator
 --------------------------
