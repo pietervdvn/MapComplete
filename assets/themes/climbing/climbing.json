@@ -547,7 +547,12 @@
             }
           },
           {
-            "if": "climbing=site",
+            "if": {
+              "or": [
+                "climbing=site",
+                "climbing=area"
+              ]
+            },
             "then": {
               "en": "Climbing site",
               "nl": "Klimsite"
