@@ -27,19 +27,7 @@
 
   "layers": [
     {
-      "builtin": "nature_reserve",
-      "override": {
-        "source": {
-          "osmTags": {
-            "+and": [
-              "operator~.*[nN]atuurpunt.*"
-            ]
-          }
-        }
-      }
-    },
-    {
-      "builtin": "trails",
+      "builtin": ["nature_reserve", "trails"],
       "override": {
         "source": {
           "osmTags": {
