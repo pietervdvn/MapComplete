@@ -379,6 +379,7 @@ export default class SpecialVisualizations {
             }
 
         ]
+    
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     private static GenHelpMessage() {
 

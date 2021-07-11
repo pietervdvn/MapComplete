@@ -105,6 +105,10 @@ a {
     width: min-content;
 }
 
+.w-16-imp {
+    width: 4rem !important;
+}
+
 .space-between{
     justify-content: space-between;
 }

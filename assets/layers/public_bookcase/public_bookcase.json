@@ -137,7 +137,8 @@
       },
       "freeform": {
         "key": "capacity",
-        "type": "nat"
+        "type": "nat",
+        "inline": true
       }
     },
     {
