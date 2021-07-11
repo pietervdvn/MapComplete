@@ -81,12 +81,18 @@
         "en": "nodes"
       },
       "source": {
-        "osmTags": "rcn_ref~*"
+        "osmTags": {
+          "or": [
+            "network:type=node_network",
+            "rcn_ref~*"
+          ]
+        }
       },
       "minzoom": 12,
       "title": {
         "render": {
-          "en": "cycle node <strong>{rcn_ref}</strong>"
+          "en": "cycle node <strong>{rcn_ref}</strong>",
+          "de": "Knotenpunkt"
         }
       },
       "label": {
@@ -94,9 +100,32 @@
           {
             "if": "rcn_ref~*",
             "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>{rcn_ref}</div>"
+          },
+          {
+            "if": "rcn_ref=",
+            "then": "<div style='position: absolute; top: 10px; right: 10px; color: white; background-color: #00a703; width: 20px; height: 20px; border-radius: 100%'>?</div>"
           }
         ]
       },
+      "presets": [
+        {
+          "title": {
+            "de": "Knotenpunkt"
+          },
+          "tags": [
+            "network:type=node_network"
+          ]
+        },
+        {
+          "title": {
+            "de": "Knotenpunkt im Netzwerk Spree-Neiße"
+          },
+          "tags": [
+            "network:type=node_network",
+            "cycle_network=Knotenpunktwegweisung Spree-Neiße"
+          ]
+        }
+      ],
       "tagRenderings": [
         {
           "question": {
