@@ -5,7 +5,7 @@ import {UIEventSource} from "../UIEventSource";
  */
 export class LocalStorageSource {
     
-    static GetParsed(key: string, defaultValue : any){
+    static GetParsed<T>(key: string, defaultValue : T) : UIEventSource<T>{
         return LocalStorageSource.Get(key).map(
             str => {
                 if(str === undefined){

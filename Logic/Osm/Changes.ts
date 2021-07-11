@@ -25,13 +25,13 @@ export class Changes implements FeatureSource {
     /**
      * All the pending changes
      */
-    public readonly pending: UIEventSource<{ elementId: string, key: string, value: string }[]> = LocalStorageSource.GetParsed("pending-changes", [])
+    public readonly pending = LocalStorageSource.GetParsed<{ elementId: string, key: string, value: string }[]>("pending-changes", [])
 
     /**
      * All the pending new objects to upload
      * @private
      */
-    private readonly newObjects: UIEventSource<{ id: number, lat: number, lon: number }[]> = LocalStorageSource.GetParsed("newObjects", [])
+    private readonly newObjects = LocalStorageSource.GetParsed<{ id: number, lat: number, lon: number }[]>("newObjects", [])
 
     /**
      * Adds a change to the pending changes
