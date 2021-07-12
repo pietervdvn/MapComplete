@@ -248,8 +248,8 @@
             }
           ],
           "question": {
-            "en": "What is the cyclewaycycleway:smoothness of the street made from?",
-            "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+            "en": "What is the smoothness of this cycleway?",
+            "nl": "Wat is de kwaliteit van dit fietspad?"
           }
         },
         {
@@ -473,8 +473,8 @@
           }
         ],
         "question": {
-          "en": "What is the cyclewaysmoothness of the street made from?",
-          "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+          "en": "What is the smoothness of this street?",
+          "nl": "Wat is de kwaliteit van deze straat?"
         }
       },
       {
