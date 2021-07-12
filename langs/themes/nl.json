@@ -278,6 +278,18 @@
             }
         }
     },
+    "charging_stations": {
+        "title": "Oplaadpunten",
+        "layers": {
+            "0": {
+                "name": "Oplaadpunten",
+                "title": {
+                    "render": "Oplaadpunt"
+                },
+                "description": "Een oplaadpunt"
+            }
+        }
+    },
     "climbing": {
         "title": "Open Klimkaart",
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -924,6 +936,50 @@
         "shortDescription": "Een kaart met speeltuinen",
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen"
     },
+    "shops": {
+        "layers": {
+            "0": {
+                "name": "Winkel",
+                "title": {
+                    "render": "Winkel"
+                },
+                "description": "Een winkel",
+                "tagRenderings": {
+                    "1": {
+                        "question": "Wat is de naam van deze winkel?"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Supermarkt"
+                            },
+                            "3": {
+                                "then": "Kapper"
+                            },
+                            "4": {
+                                "then": "Bakkerij"
+                            }
+                        }
+                    },
+                    "3": {
+                        "question": "Wat is het telefoonnummer?"
+                    },
+                    "4": {
+                        "question": "Wat is de website van deze winkel?"
+                    },
+                    "6": {
+                        "question": "Wat zijn de openingsuren van deze winkel?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Winkel",
+                        "description": "Voeg een nieuwe winkel toe"
+                    }
+                }
+            }
+        }
+    },
     "speelplekken": {
         "title": "Welkom bij de groendoener!",
         "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
@@ -1038,62 +1094,6 @@
                         "0": {
                             "then": "Naamloos segmet"
                         }
-                    }
-                }
-            }
-        }
-    },
-    "charging_stations": {
-        "layers": {
-            "0": {
-                "description": "Een oplaadpunt",
-                "title": {
-                    "render": "Oplaadpunt"
-                },
-                "name": "Oplaadpunten"
-            }
-        },
-        "title": "Oplaadpunten"
-    },
-    "shops": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "4": {
-                        "question": "Wat is de website van deze winkel?"
-                    },
-                    "3": {
-                        "question": "Wat is het telefoonnummer?"
-                    },
-                    "2": {
-                        "mappings": {
-                            "4": {
-                                "then": "Bakkerij"
-                            },
-                            "3": {
-                                "then": "Kapper"
-                            },
-                            "1": {
-                                "then": "Supermarkt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "question": "Wat is de naam van deze winkel?"
-                    },
-                    "6": {
-                        "question": "Wat zijn de openingsuren van deze winkel?"
-                    }
-                },
-                "description": "Een winkel",
-                "title": {
-                    "render": "Winkel"
-                },
-                "name": "Winkel",
-                "presets": {
-                    "0": {
-                        "title": "Winkel",
-                        "description": "Voeg een nieuwe winkel toe"
                     }
                 }
             }

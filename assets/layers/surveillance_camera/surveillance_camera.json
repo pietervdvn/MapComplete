@@ -39,7 +39,8 @@
         "en": "What kind of camera is this?",
         "nl": "Wat voor soort camera is dit?",
         "fr": "Quel genre de caméra est-ce ?",
-        "it": "Di che tipo di videocamera si tratta?"
+        "it": "Di che tipo di videocamera si tratta?",
+        "ru": "Какая это камера?"
       },
       "mappings": [
         {
@@ -65,7 +66,8 @@
             "en": "A dome camera (which can turn)",
             "nl": "Een dome (bolvormige camera die kan draaien)",
             "fr": "Une caméra dôme (qui peut tourner)",
-            "it": "Una videocamera a cupola (che può ruotare)"
+            "it": "Una videocamera a cupola (che può ruotare)",
+            "ru": "Камера с поворотным механизмом"
           }
         },
         {
@@ -230,7 +232,8 @@
             "en": "This camera is located outdoors",
             "nl": "Deze camera bevindt zich buiten",
             "fr": "Cette caméra est située à l'extérieur",
-            "it": "Questa videocamera si trova all'aperto"
+            "it": "Questa videocamera si trova all'aperto",
+            "ru": "Эта камера расположена снаружи"
           }
         },
         {
@@ -239,7 +242,8 @@
             "en": "This camera is probably located outdoors",
             "nl": "Deze camera bevindt zich waarschijnlijk buiten",
             "fr": "Cette caméra est probablement située à l'extérieur",
-            "it": "Questa videocamera si trova probabilmente all'esterno"
+            "it": "Questa videocamera si trova probabilmente all'esterno",
+            "ru": "Возможно, эта камера расположена снаружи"
           },
           "hideInAnswer": true
         }
@@ -374,7 +378,8 @@
         "en": "How is this camera placed?",
         "nl": "Hoe is deze camera geplaatst?",
         "fr": "Comment cette caméra est-elle placée ?",
-        "it": "Com'è posizionata questa telecamera?"
+        "it": "Com'è posizionata questa telecamera?",
+        "ru": "Как расположена эта камера?"
       },
       "render": {
         "en": "Mounting method: {mount}",
