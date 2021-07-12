@@ -98,7 +98,6 @@ class LayerOverviewUtils {
         }
 
         let themeErrorCount = []
-        let missingTranslations = []
         for (const themeFile of themeFiles) {
             if (typeof themeFile.language === "string") {
                 themeErrorCount.push("The theme " + themeFile.id + " has a string as language. Please use a list of strings")
