@@ -329,7 +329,8 @@
                         "render": "<strong>{name}</strong>",
                         "question": "Wat is de naam van dit Klimzaal?"
                     }
-                }
+                },
+                "description": "Een klimzaal"
             },
             "2": {
                 "name": "Klimroute",
@@ -358,6 +359,11 @@
                     "5": {
                         "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
                         "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Klimroute"
                     }
                 }
             },
@@ -422,6 +428,9 @@
                                 "then": "Klimmen is hier niet toegelaten"
                             }
                         }
+                    },
+                    "1": {
+                        "render": "<strong>{name}</strong>"
                     }
                 }
             }
@@ -1033,10 +1042,30 @@
                 "title": {
                     "render": "Oplaadpunt"
                 },
-                "name": "Oplaadpunten"
+                "name": "Oplaadpunten",
+                "tagRenderings": {
+                    "6": {
+                        "mappings": {
+                            "3": {
+                                "then": "eVgo"
+                            },
+                            "2": {
+                                "then": "Blink"
+                            },
+                            "1": {
+                                "then": "AeroVironment"
+                            },
+                            "0": {
+                                "then": "Maakt geen deel uit van een netwerk"
+                            }
+                        },
+                        "render": "{network}"
+                    }
+                }
             }
         },
-        "title": "Oplaadpunten"
+        "title": "Oplaadpunten",
+        "shortDescription": "Een wereldwijde kaart van oplaadpunten"
     },
     "shops": {
         "layers": {
