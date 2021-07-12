@@ -140,6 +140,7 @@ class LayerOverviewUtils {
         const layerFiles = lt.layers;
         const themeFiles = lt.themes;
 
+
         console.log("   ---------- VALIDATING ---------")
         const licensePaths = []
         for (const i in licenses) {
@@ -151,6 +152,9 @@ class LayerOverviewUtils {
         const knownLayerIds = new Map<string, LayerConfig>();
         for (const layerFile of layerFiles) {
 
+            if (knownLayerIds.has(layerFile.parsed.id)) {
+                throw "Duplicate identifier: " + layerFile.parsed.id + " in file " + layerFile.path
+            }
             layerErrorCount.push(...this.validateLayer(layerFile.parsed, layerFile.path, knownPaths))
             knownLayerIds.set(layerFile.parsed.id, new LayerConfig(layerFile.parsed, AllKnownLayers.sharedUnits))
         }
@@ -170,21 +174,21 @@ class LayerOverviewUtils {
                         missingTranslations.push(...this.validateTranslationCompletenessOfObject(layerConfig, themeFile.language, "Layer " + layer))
 
                     }
-                } else {
+                } else if (layer.builtin !== undefined) {
                     let names = layer.builtin;
-                    if (names !== undefined) {
-                        if (typeof names === "string") {
-                            names = [names]
+                    if (typeof names === "string") {
+                        names = [names]
+                    }
+                    names.forEach(name => {
+                        if (!knownLayerIds.has(name)) {
+                            themeErrorCount.push("Unknown layer id: " + name + "(which uses inheritance)")
                         }
-                        names.forEach(name => {
-                            if (!knownLayerIds.has(name)) {
-                                themeErrorCount.push("Unknown layer id: " + name + "(which uses inheritance)")
-                            }
-                            return
-                        })
-                    } else {
-                        // layer.builtin contains layer overrides - we can skip those
-                        layerErrorCount.push(...this.validateLayer(layer, undefined, knownPaths, themeFile.id))
+                        return
+                    })
+                } else {
+                    layerErrorCount.push(...this.validateLayer(layer, undefined, knownPaths, themeFile.id))
+                    if (knownLayerIds.has(layer.id)) {
+                        throw `The theme ${themeFile.id} defines a layer with id ${layer.id}, which is the same as an already existing layer`
                     }
                 }
             }

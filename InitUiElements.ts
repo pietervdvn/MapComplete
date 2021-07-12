@@ -56,7 +56,6 @@ export class InitUiElements {
 
         console.log("Using layout: ", layoutToUse.id, "LayoutFromBase64 is ", layoutFromBase64);
 
-
         State.state = new State(layoutToUse);
 
         // This 'leaks' the global state via the window object, useful for debugging
@@ -212,7 +211,7 @@ export class InitUiElements {
 
     }
 
-    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): [LayoutConfig, string]{
+    static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): [LayoutConfig, string] {
         try {
             let hash = location.hash.substr(1);
             const layoutFromBase64 = userLayoutParam.data;
@@ -284,7 +283,7 @@ export class InitUiElements {
         })
 
         State.state.selectedElement.addCallbackAndRunD(_ => {
-                isOpened.setData(false);
+            isOpened.setData(false);
         })
         isOpened.setData(Hash.hash.data === undefined || Hash.hash.data === "" || Hash.hash.data == "welcome")
     }
@@ -333,8 +332,8 @@ export class InitUiElements {
             });
 
         State.state.selectedElement.addCallbackAndRunD(_ => {
-                layerControlButton.isEnabled.setData(false);
-                copyrightButton.isEnabled.setData(false);
+            layerControlButton.isEnabled.setData(false);
+            copyrightButton.isEnabled.setData(false);
         })
 
     }
@@ -345,11 +344,11 @@ export class InitUiElements {
 
         State.state.backgroundLayer = State.state.backgroundLayerId
             .map((selectedId: string) => {
-                if(selectedId === undefined){
+                if (selectedId === undefined) {
                     return AvailableBaseLayers.osmCarto
                 }
-                
-                
+
+
                 const available = State.state.availableBackgroundLayers.data;
                 for (const layer of available) {
                     if (layer.id === selectedId) {
@@ -358,7 +357,7 @@ export class InitUiElements {
                 }
                 return AvailableBaseLayers.osmCarto;
             }, [State.state.availableBackgroundLayers], layer => layer.id);
-        
+
         new LayerResetter(
             State.state.backgroundLayer, State.state.locationControl,
             State.state.availableBackgroundLayers, State.state.layoutToUse.map((layout: LayoutConfig) => layout.defaultBackgroundId));

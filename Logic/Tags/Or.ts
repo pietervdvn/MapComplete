@@ -8,7 +8,7 @@ export class Or extends TagsFilter {
         super();
         this.or = or;
     }
-    
+
     matchesProperties(properties: any): boolean {
         for (const tagsFilter of this.or) {
             if (tagsFilter.matchesProperties(properties)) {
@@ -23,9 +23,7 @@ export class Or extends TagsFilter {
         const choices = [];
         for (const tagsFilter of this.or) {
             const subChoices = tagsFilter.asOverpass();
-            for (const subChoice of subChoices) {
-                choices.push(subChoice)
-            }
+            choices.push(...subChoices)
         }
         return choices;
     }
