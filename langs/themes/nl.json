@@ -263,6 +263,9 @@
                     "1": {
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
+                    },
+                    "9": {
+                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
                     }
                 },
                 "description": "camperplaatsen",
