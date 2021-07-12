@@ -111,8 +111,9 @@ export class OsmConnection {
         layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone);
+        whenDone: (csId: string) => void,
+        onFail: () => {}) {
+        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

@@ -27,7 +27,7 @@ export class ChangesetHandler {
         }
     }
 
-    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) : void{
+    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage): void {
         const nodes = response.getElementsByTagName("node");
         // @ts-ignore
         for (const node of nodes) {
@@ -70,7 +70,8 @@ export class ChangesetHandler {
         layout: LayoutConfig,
         allElements: ElementStorage,
         generateChangeXML: (csid: string) => string,
-        whenDone : (csId: string) => void) {
+        whenDone: (csId: string) => void,
+        onFail: () => void) {
 
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
@@ -98,8 +99,11 @@ export class ChangesetHandler {
                     whenDone,
                     (e) => {
                         console.error("UPLOADING FAILED!", e)
+                        onFail()
                     }
                 )
+            }, {
+                onFail: onFail
             })
         } else {
             // There still exists an open changeset (or at least we hope so)
@@ -114,8 +118,7 @@ export class ChangesetHandler {
                     // Mark the CS as closed...
                     this.currentChangeset.setData("");
                     // ... and try again. As the cs is closed, no recursive loop can exist  
-                    self.UploadChangeset(layout, allElements, generateChangeXML, whenDone);
-
+                    self.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
                 }
             )
 
@@ -161,18 +164,22 @@ export class ChangesetHandler {
         const self = this;
         this.OpenChangeset(layout, (csId: string) => {
 
-            // The cs is open - let us actually upload!
-            const changes = generateChangeXML(csId)
+                // The cs is open - let us actually upload!
+                const changes = generateChangeXML(csId)
 
-            self.AddChange(csId, changes, allElements, (csId) => {
-                console.log("Successfully deleted ", object.id)
-                self.CloseChangeset(csId, continuation)
-            }, (csId) => {
-                alert("Deletion failed... Should not happend")
-                // FAILED
-                self.CloseChangeset(csId, continuation)
-            })
-        }, true, reason)
+                self.AddChange(csId, changes, allElements, (csId) => {
+                    console.log("Successfully deleted ", object.id)
+                    self.CloseChangeset(csId, continuation)
+                }, (csId) => {
+                    alert("Deletion failed... Should not happend")
+                    // FAILED
+                    self.CloseChangeset(csId, continuation)
+                })
+            }, {
+                isDeletionCS: true,
+                deletionReason: reason
+            }
+        )
     }
 
     private CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
@@ -204,15 +211,20 @@ export class ChangesetHandler {
     private OpenChangeset(
         layout: LayoutConfig,
         continuation: (changesetId: string) => void,
-        isDeletionCS: boolean = false,
-        deletionReason: string = undefined) {
-
+        options?: {
+            isDeletionCS?: boolean,
+            deletionReason?: string,
+            onFail?: () => void
+        }
+    ) {
+        options = options ?? {}
+        options.isDeletionCS = options.isDeletionCS ?? false
         const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
         let comment = `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`
-        if (isDeletionCS) {
+        if (options.isDeletionCS) {
             comment = `Deleting a point with #MapComplete for theme #${layout.id}${commentExtra}`
-            if (deletionReason) {
-                comment += ": " + deletionReason;
+            if (options.deletionReason) {
+                comment += ": " + options.deletionReason;
             }
         }
 
@@ -221,7 +233,7 @@ export class ChangesetHandler {
         const metadata = [
             ["created_by", `MapComplete ${Constants.vNumber}`],
             ["comment", comment],
-            ["deletion", isDeletionCS ? "yes" : undefined],
+            ["deletion", options.isDeletionCS ? "yes" : undefined],
             ["theme", layout.id],
             ["language", Locale.language.data],
             ["host", window.location.host],
@@ -244,6 +256,9 @@ export class ChangesetHandler {
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);
+                if(options.onFail){
+                    options.onFail()
+                }
                 return;
             } else {
                 continuation(response);
