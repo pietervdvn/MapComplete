@@ -78,7 +78,7 @@ export default class GeoLocationHandler extends VariableUiElement {
       hasLocation.map(
         (hasLocationData) => {
           if (isLocked.data) {
-            return Svg.up_ui();
+            return Svg.crosshair_locked_ui();
           } else if (hasLocationData) {
             return Svg.crosshair_blue_ui();
           } else if (isActive.data) {
@@ -114,10 +114,10 @@ export default class GeoLocationHandler extends VariableUiElement {
     });
 
     this.onClick(() => {
-      self.init(true);
       if (self._isActive.data) {
         self._isLocked.setData(!self._isLocked.data);
       }
+      self.init(true);
     });
     this.init(false);
 
