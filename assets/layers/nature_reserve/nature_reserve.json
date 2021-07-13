@@ -12,8 +12,8 @@
             "leisure=nature_reserve",
             {
               "and": [
-                "boundary=protected_area",
-                "protect_class!=98"
+                "protect_class!=98",
+                "boundary=protected_area"
               ]
             }
           ]

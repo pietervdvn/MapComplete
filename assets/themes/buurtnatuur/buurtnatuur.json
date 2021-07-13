@@ -29,7 +29,7 @@
   "socialImage": "./assets/themes/buurtnatuur/social_image.jpg",
   "layers": [
     {
-      "id": "nature_reserve",
+      "id": "nature_reserve_buurtnatuur",
       "name": {
         "nl": "Natuurgebied"
       },
@@ -141,7 +141,7 @@
         }
       },
       "calculatedTags": [
-        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve').map(o => o.overlap))/feat.area",
+        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' :'no'"
       ],
       "isShown": {
@@ -240,7 +240,7 @@
         }
       },
       "calculatedTags": [
-        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve').map(o => o.overlap))/feat.area",
+        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' : 'no'"
       ],
       "isShown": {
