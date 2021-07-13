@@ -4,7 +4,7 @@
     "en": "Visitor Information Centre",
     "nl": "Bezoekerscentrum"
   },
-  "minzoom": 8,
+  "minzoom": 12,
   "source": {
     "osmTags": {
       "and": [
@@ -19,8 +19,8 @@
   },
   "title": {
     "render": {
-      "nl": "Bezoekerscentrum",
-      "en": "Visitor Centre"
+      "nl": "{name}",
+      "en": "{name}"
     },
     "mappings": [
       {

@@ -1192,5 +1192,32 @@
         "title": "Trees",
         "shortDescription": "Map all the trees",
         "description": "Map all the trees!"
+    },
+    "waste_basket": {
+        "title": "Waste Basket",
+        "shortDescription": "Throw away waste",
+        "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+        "layers": {
+            "0": {
+                "name": "Waste Basket",
+                "title": {
+                    "render": "Waste Basket"
+                },
+                "description": "This is a public waste basket, thrash can, where you can throw away your thrash.",
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Waste Basket"
+                        }
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Waste Basket",
+                        "description": "Throw away waste"
+                    }
+                }
+            }
+        }
     }
 }

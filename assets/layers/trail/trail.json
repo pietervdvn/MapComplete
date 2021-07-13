@@ -1,5 +1,5 @@
 {
-  "id": "trails",
+  "id": "trail",
   "name": {
     "nl": "paden"
   },
@@ -7,7 +7,11 @@
   "source": {
     "osmTags": {
       "and": [
-        "route=hiking"
+        {"or": [
+          "route=hiking",
+          "route=bycicle",
+          "route=horse"
+          ]}
       ]
     }
   },
@@ -37,6 +41,9 @@
         }
       }
     ]
+  },
+  "icon": {
+    "render": "./assets/layers/trail/trail.svg"
   },
   "description": {
     "nl": "Paden waarlangs kan gewandeld worden"

@@ -1175,6 +1175,119 @@
             }
         }
     },
+    "nature_reserves": {
+        "name": "Natuurgebied",
+        "title": {
+            "render": "Natuurgebied",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+        "tagRenderings": {
+            "1": {
+                "render": "De toegankelijkheid van dit gebied is: {access:description}",
+                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Vrij toegankelijk"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, want privégebied"
+                    },
+                    "3": {
+                        "then": "Toegankelijk, ondanks dat het privegebied is"
+                    },
+                    "4": {
+                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    },
+                    "5": {
+                        "then": "Toegankelijk mits betaling"
+                    }
+                }
+            },
+            "2": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert dit gebied?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    },
+                    "2": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+                    }
+                }
+            },
+            "3": {
+                "render": "Dit gebied heet {name:nl}",
+                "question": "Wat is de Nederlandstalige naam van dit gebied?"
+            },
+            "4": {
+                "render": "Dit gebied heet {name}",
+                "question": "Wat is de naam van dit gebied?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit gebied heeft geen naam"
+                    }
+                }
+            },
+            "5": {
+                "question": "Zijn honden toegelaten in dit gebied?",
+                "mappings": {
+                    "0": {
+                        "then": "Honden moeten aan de leiband"
+                    },
+                    "1": {
+                        "then": "Honden zijn niet toegestaan"
+                    },
+                    "2": {
+                        "then": "Honden zijn welkom en mogen vrij rondlopen"
+                    }
+                }
+            },
+            "6": {
+                "question": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?"
+            },
+            "7": {
+                "question": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+                "render": "{curator} is de beheerder van dit gebied"
+            },
+            "8": {
+                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "10": {
+                "render": "Extra info: <i>{description}</i>"
+            },
+            "11": {
+                "render": "Extra info: <i>{description:0}</i>"
+            },
+            "12": {
+                "render": "Totale oppervlakte: {_surface:ha}Ha"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Natuurreservaat",
+                "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+            }
+        }
+    },
     "picnic_table": {
         "name": "Picnictafels",
         "title": {
@@ -1846,6 +1959,65 @@
             }
         }
     },
+    "trails": {
+        "name": "paden",
+        "title": {
+            "render": "Paden",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "description": "Paden waarlangs kan gewandeld worden",
+        "tagRenderings": {
+            "1": {
+                "render": "De toegankelijkheid van dit gebied is: {access:description}",
+                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Vrij toegankelijk"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, want privégebied"
+                    },
+                    "3": {
+                        "then": "Toegankelijk, ondanks dat het privegebied is"
+                    },
+                    "4": {
+                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    },
+                    "5": {
+                        "then": "Toegankelijk mits betaling"
+                    }
+                }
+            },
+            "2": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert dit pad?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Paden",
+                "description": "Voeg een ontbrekend, erkend pad toe."
+            }
+        }
+    },
     "tree_node": {
         "name": "Boom",
         "title": {
@@ -2003,7 +2175,15 @@
     "visitor_information_centre": {
         "name": "Bezoekerscentrum",
         "title": {
-            "render": "{name}"
+            "render": "{name}",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
         },
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
     }

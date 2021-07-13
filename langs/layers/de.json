@@ -930,6 +930,33 @@
             }
         }
     },
+    "nature_reserves": {
+        "tagRenderings": {
+            "5": {
+                "question": "Sind Hunde in diesem Naturschutzgebiet erlaubt?",
+                "mappings": {
+                    "0": {
+                        "then": "Hunde müssen angeleint sein"
+                    },
+                    "1": {
+                        "then": "Hunde sind nicht erlaubt"
+                    },
+                    "2": {
+                        "then": "Hunde dürfen frei herumlaufen"
+                    }
+                }
+            },
+            "6": {
+                "question": "Auf welcher Webseite kann man mehr Informationen über dieses Naturschutzgebiet finden?"
+            },
+            "8": {
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            }
+        }
+    },
     "picnic_table": {
         "name": "Picknick-Tische",
         "title": {

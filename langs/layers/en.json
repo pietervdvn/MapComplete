@@ -1012,6 +1012,42 @@
             }
         }
     },
+    "nature_reserves": {
+        "tagRenderings": {
+            "5": {
+                "question": "Are dogs allowed in this nature reserve?",
+                "mappings": {
+                    "0": {
+                        "then": "Dogs have to be leashed"
+                    },
+                    "1": {
+                        "then": "No dogs allowed"
+                    },
+                    "2": {
+                        "then": "Dogs are allowed to roam freely"
+                    }
+                }
+            },
+            "6": {
+                "question": "On which webpage can one find more information about this nature reserve?"
+            },
+            "7": {
+                "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
+                "render": "{curator} is the curator of this nature reserve"
+            },
+            "8": {
+                "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
+                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "9": {
+                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
+                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
+            },
+            "12": {
+                "render": "Surface area: {_surface:ha}Ha"
+            }
+        }
+    },
     "picnic_table": {
         "name": "Picnic tables",
         "title": {
@@ -1773,7 +1809,12 @@
     "visitor_information_centre": {
         "name": "Visitor Information Centre",
         "title": {
-            "render": "{name}"
+            "render": "{name}",
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            }
         },
         "description": "A visitor center offers information about a specific attraction or place of interest where it is located."
     }

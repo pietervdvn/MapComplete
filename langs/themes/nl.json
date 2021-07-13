@@ -974,6 +974,33 @@
         "shortDescription": "Breng bomen in kaart",
         "description": "Breng bomen in kaart!"
     },
+    "waste_basket": {
+        "title": "Vuilnisbak",
+        "shortDescription": "Afval weggooien",
+        "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+        "layers": {
+            "0": {
+                "name": "Vuilnisbak",
+                "title": {
+                    "render": "Vuilnisbak"
+                },
+                "description": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Vuilnisbak"
+                        }
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Vuilnisbak",
+                        "description": "Afval weggooien"
+                    }
+                }
+            }
+        }
+    },
     "width": {
         "title": "Straatbreedtes",
         "shortDescription": "Is de straat breed genoeg?",

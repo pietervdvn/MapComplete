@@ -24,10 +24,13 @@
   "startZoom": 12,
   "widenFactor": 0.05,
   "socialImage": "",
-
   "layers": [
     {
-      "builtin": ["nature_reserve", "trails"],
+      "builtin": [
+        "nature_reserve",
+        "trail", 
+        "visitor_information_centre"
+      ],
       "override": {
         "source": {
           "osmTags": {
@@ -40,22 +43,12 @@
     },
     "drinking_water",
     "bench",
-    "bench_at_pt",
     "picnic_table",
     "birdhide",
     "toilet",
-    {
-      "builtin": "visitor_information_centre",
-      "override": {
-        "source": {
-          "osmTags": {
-            "+and": [
-              "operator~.*[nN]atuurpunt.*"
-            ]
-          }
-        }
-      }
-    }
+    "watermill",
+    "information_board",
+    "parking"
   ],
   "roamingRenderings": []
 }
