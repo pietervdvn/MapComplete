@@ -188,7 +188,9 @@ export class Changes implements FeatureSource {
             }
         }
         if (changedElements.length == 0 && newElements.length == 0) {
-            console.log("No changes in any object");
+            console.log("No changes in any object - clearing");
+            this.pending.setData([])
+            this.newObjects.setData([])
             return;
         }
         const self = this;
