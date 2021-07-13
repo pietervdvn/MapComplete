@@ -71,7 +71,7 @@
                         "render": "Erstellt von {artist_name}"
                     },
                     "3": {
-                        "question": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",
+                        "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
                         "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
                     },
                     "4": {
@@ -327,5 +327,8 @@
     "toilets": {
         "title": "Offene Toilette Karte",
         "description": "Eine Karte der öffentlichen Toiletten"
+    },
+    "bicyclelib": {
+        "title": "Fahrradbibliothek"
     }
 }
