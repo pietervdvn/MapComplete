@@ -84,6 +84,7 @@ export default class SimpleMetaTagger {
         },
         (feature => {
             const units = State.state.layoutToUse.data.units ?? [];
+            let rewritten = false;
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
                     continue;
@@ -104,9 +105,13 @@ export default class SimpleMetaTagger {
                     }
                     
                     feature.properties[key] = canonical;
+                    rewritten = true;
                     break;
                 }
 
+            }
+            if(rewritten){
+                State.state.allElements.getEventSourceById(feature.id).ping();
             }
         })
     )

@@ -225,6 +225,10 @@ export interface LayoutConfigJson {
      *
      * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
      * This is handled by defining units.
+     * 
+     * # Rendering
+     * 
+     * To render a value with long (human) denomination, use {canonical(key)}
      *
      * # Usage
      *

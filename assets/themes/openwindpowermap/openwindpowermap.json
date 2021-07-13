@@ -56,7 +56,7 @@
       "tagRenderings": [
         {
           "render": {
-            "en": "The power output of this wind turbine is {generator:output:electricity}."
+            "en": "The power output of this wind turbine is {canonical(generator:output:electricity)}."
           },
           "question": {
             "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)"
@@ -79,7 +79,7 @@
         },
         {
           "render": {
-            "en": "The total height (including rotor radius) of this wind turbine is {height} metres."
+            "en": "The total height (including rotor radius) of this wind turbine is {canonical(height)}."
           },
           "question": {
             "en": "What is the total height of this wind turbine (including rotor radius), in metres?"
@@ -91,7 +91,7 @@
         },
         {
           "render": {
-            "en": "The rotor diameter of this wind turbine is {rotor:diameter} metres."
+            "en": "The rotor diameter of this wind turbine is {canonical(rotor:diameter)}."
           },
           "question": {
             "en": "What is the rotor diameter of this wind turbine, in metres?"

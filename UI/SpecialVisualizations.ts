@@ -369,7 +369,6 @@ export default class SpecialVisualizations {
                                 if (unit === undefined) {
                                     return value;
                                 }
-
                                 return unit.asHumanLongValue(value);
 
                             },
