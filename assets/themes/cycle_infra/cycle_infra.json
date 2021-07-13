@@ -610,7 +610,87 @@
       },
       "icon": "./assets/svg/barrier.svg",
       "width": "5",
-      "tagRenderings": []
+      "tagRenderings": [
+        {
+          "question": {
+            "en": "Can a bicycle go past this barrier?",
+            "nl": "Kan een fietser langs deze barrière?"
+          },
+          "mappings": [
+            {
+              "if": "bicycle=yes",
+              "then": {
+                "en": "A cyclist can go past this.",
+                "nl": "Een fietser kan hier langs."
+              }
+            },
+            {
+              "if": "bicycle=no",
+              "then": {
+                "en": "A cyclist can not go past this.",
+                "nl": "Een fietser kan hier niet langs."
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "en": "Maximum width: {maxwidth} m",
+            "nl": "Maximumbreedte: {maxwidth} m"
+          },
+          "question": {
+            "en": "How wide is the gap left over besides the barrier?",
+            "nl": "Hoe breed is de ruimte naast de barrière?"
+          },
+          "freeform": {
+            "key": "maxwidth",
+            "type": "pfloat"
+          }
+        },
+        {
+          "question": {
+            "en": "What kind of bollard is this?",
+            "nl": "Wat voor soort paal is dit?"
+          },
+          "mappings": [
+            {
+              "if": "bollard=removable",
+              "then": {
+                "en": "Removable bollard",
+                "nl": "Verwijderbare paal"
+              }
+            },
+            {
+              "if": "bollard=fixed",
+              "then": {
+                "en": "Fixed bollard",
+                "nl": "Vaste paal"
+              }
+            },
+            {
+              "if": "bollard=foldable",
+              "then": {
+                "en": "Bollard that can be folded down",
+                "nl": "Paal die platgevouwen kan worden"
+              }
+            },
+            {
+              "if": "bollard=flexible",
+              "then": {
+                "en": "Flexible bollard, usually plastic",
+                "nl": "Flexibele paal, meestal plastic"
+              }
+            },
+            {
+              "if": "bollard=rising",
+              "then": {
+                "en": "Rising bollard",
+                "nl": "Verzonken poller"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
