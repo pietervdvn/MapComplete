@@ -72,23 +72,26 @@ export default class GeoLocationHandler extends VariableUiElement {
       "geolocation-permissions"
     );
     const isActive = new UIEventSource<boolean>(false);
+    const isLocked = new UIEventSource<boolean>(false);
 
     super(
       hasLocation.map(
-        (hasLocation) => {
-          if (hasLocation) {
+        (hasLocationData) => {
+          if (isLocked.data) {
+            return Svg.up_ui();
+          } else if (hasLocationData) {
             return Svg.crosshair_blue_ui();
-          }
-          if (isActive.data) {
+          } else if (isActive.data) {
             return Svg.crosshair_blue_center_ui();
+          } else {
+            return Svg.crosshair_ui();
           }
-          return Svg.crosshair_ui();
         },
-        [isActive]
+        [isActive, isLocked]
       )
     );
     this._isActive = isActive;
-    this._isLocked = new UIEventSource<boolean>(false);
+    this._isLocked = isLocked;
     this._permission = new UIEventSource<string>("");
     this._previousLocationGrant = previousLocationGrant;
     this._currentGPSLocation = currentGPSLocation;
@@ -110,7 +113,12 @@ export default class GeoLocationHandler extends VariableUiElement {
       self.SetClass(pointerClass);
     });
 
-    this.onClick(() => self.init(true));
+    this.onClick(() => {
+      self.init(true);
+      if (self._isActive.data) {
+        self._isLocked.setData(!self._isLocked.data);
+      }
+    });
     this.init(false);
 
     this._currentGPSLocation.addCallback((location) => {
@@ -139,7 +147,6 @@ export default class GeoLocationHandler extends VariableUiElement {
       });
 
       const map = self._leafletMap.data;
-      console.log("check for map", map);
 
       const newMarker = L.marker(location.latlng, { icon: icon });
       newMarker.addTo(map);
