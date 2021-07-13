@@ -27,6 +27,12 @@
     "intro": "MapComplete is an OpenStreetMap-viewer and editor, which shows you information about a specific theme.",
     "pickTheme": "Pick a theme below to get started."
   },
+  "split": {
+    "split": "Split",
+    "cancel": "Cancel",
+    "loginToSplit": "You must be logged in to split a road",
+    "splitTitle": "Choose on the map where to split this road"
+  },
   "delete": {
     "delete": "Delete",
     "cancel": "Cancel",

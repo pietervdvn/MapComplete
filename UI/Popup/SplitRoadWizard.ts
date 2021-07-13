@@ -1,19 +1,16 @@
-import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
-import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import TagRenderingConfig from "../../Customizations/JSON/TagRenderingConfig";
-import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
-import {AndOrTagConfigJson} from "../../Customizations/JSON/TagConfigJson";
-import BaseUIElement from "../BaseUIElement";
-import SplitRoadAction from "../../Logic/Osm/SplitRoadAction";
 import Minimap from "../Base/Minimap";
 import State from "../../State";
+import ShowDataLayer from "../ShowDataLayer";
+import {GeoOperations} from "../../Logic/GeoOperations";
+import {LeafletMouseEvent} from "leaflet";
+import LayerConfig from "../../Customizations/JSON/LayerConfig";
+import Combine from "../Base/Combine";
+import {Button} from "../Base/Button";
+import Translations from "../i18n/Translations";
 
 export default class SplitRoadWizard extends Toggle {
     /**
@@ -23,9 +20,59 @@ export default class SplitRoadWizard extends Toggle {
      */
     constructor(id: string) {
 
+        const t = Translations.t.split;
 
-        const splitClicked = new UIEventSource<boolean>(false);
+        // Contains the points on the road that are selected to split on
+        const splitPositions = new UIEventSource([]);
 
+        // Toggle variable between show split button and map
+        const splitClicked = new UIEventSource<boolean>(true); // todo: -> false
+
+        // Minimap on which you can select the points to be splitted
+        const miniMap = new Minimap({background: State.state.backgroundLayer});
+        miniMap.SetStyle("width: 100%; height: 50rem;");
+
+        // Define how a cut is displayed on the map
+        const layoutConfigJson = {id: "splitpositions", source: {osmTags: "_cutposition=yes"}, icon: "./assets/svg/plus.svg"}
+        State.state.layoutToUse.data.layers.push(new LayerConfig(layoutConfigJson,undefined,"Split Road Wizard"))
+
+        // Load the road with given id on the minimap
+        const roadElement = State.state.allElements.ContainingFeatures.get(id)
+        const roadEventSource = new UIEventSource([{feature: roadElement, freshness: new Date()}]);
+        // Datalayer displaying the road and the cut points (if any)
+        const dataLayer = new ShowDataLayer(roadEventSource, miniMap.leafletMap, State.state.layoutToUse, false, true);
+
+        /**
+         * Handles a click on the overleaf map.
+         * Finds the closest intersection with the road and adds a point there, ready to confirm the cut.
+         * @param coordinates Clicked location, [lon, lat]
+         */
+        function onMapClick(coordinates) {
+            // Get nearest point on the road
+            const pointOnRoad = GeoOperations.nearestPoint(roadElement, coordinates); // pointOnRoad is a geojson
+
+            // Update point properties to let it match the layer
+            pointOnRoad.properties._cutposition = "yes";
+            pointOnRoad._matching_layer_id = "splitpositions";
+
+            // Add it to the list of all points and notify observers
+            splitPositions.data.push(pointOnRoad);
+            splitPositions.ping();
+
+            // let the state remember the point, to be able to retrieve it later by id
+            State.state.allElements.addOrGetElement(pointOnRoad);
+
+            roadEventSource.data.push({feature: pointOnRoad, freshness: new Date()}); // show the point on the data layer
+            roadEventSource.ping(); // not updated using .setData, so manually ping observers
+        }
+
+        // When clicked, pass clicked location coordinates to onMapClick function
+        miniMap.leafletMap.addCallbackAndRunD(
+            (leafletMap) => leafletMap.on("click", (mouseEvent: LeafletMouseEvent) => {
+                onMapClick([mouseEvent.latlng.lng, mouseEvent.latlng.lat])
+            }))
+
+        // Toggle between splitmap
         const splitButton = new SubtleButton(Svg.scissors_ui(), "Split road");
         splitButton.onClick(
             () => {
@@ -33,131 +80,33 @@ export default class SplitRoadWizard extends Toggle {
             }
         )
 
-        // const isShown = new UIEventSource<boolean>(id.indexOf("-") < 0)
+        // Only show the splitButton if logged in, else show login prompt
+        const splitToggle = new Toggle(
+            splitButton,
+            t.loginToSplit.Clone().onClick(State.state.osmConnection.AttemptLogin),
+            State.state.osmConnection.isLoggedIn)
 
-        const miniMap = new Minimap({background: State.state.backgroundLayer});
+        // Save button
+        const saveButton =  new Button("Split here", () => window.alert("Splitting..."));
+        saveButton.SetClass("block btn btn-primary");
+        const disabledSaveButton = new Button("Split here", undefined);
+        disabledSaveButton.SetClass("block btn btn-disabled");
+        // Only show the save button if there are split points defined
+        const saveToggle = new Toggle(disabledSaveButton, saveButton, splitPositions.map((data) => data.length === 0))
 
-        super(miniMap, splitButton, splitClicked);
+        const cancelButton = new Button("Cancel", () => {
+            splitClicked.setData(false);
+
+            splitPositions.setData([]);
+            roadEventSource.setData([roadEventSource.data[0]])
+        });
+
+        cancelButton.SetClass("block btn btn-secondary");
+
+        const splitTitle = t.splitTitle;
+
+        const mapView = new Combine([splitTitle, miniMap, cancelButton, saveToggle]);
+        super(mapView, splitToggle, splitClicked);
 
     }
-
-
-    private static constructConfirmButton(deleteReasons: UIEventSource<TagsFilter>): BaseUIElement {
-        const t = Translations.t.delete;
-        const btn = new Combine([
-            Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
-            t.delete.Clone()
-        ]).SetClass("flex btn bg-red-500")
-
-
-        const btnNonActive = new Combine([
-            Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
-            t.delete.Clone()
-        ]).SetClass("flex btn btn-disabled bg-red-200")
-
-        return new Toggle(
-            btn,
-            btnNonActive,
-            deleteReasons.map(reason => reason !== undefined)
-        )
-
-    }
-
-
-    private static constructExplanation(tags: UIEventSource<TagsFilter>, deleteAction: SplitRoadAction) {
-        const t = Translations.t.delete;
-        return new VariableUiElement(tags.map(
-            currentTags => {
-                const cbd = deleteAction.canBeDeleted.data;
-                if (currentTags === undefined) {
-                    return t.explanations.selectReason.Clone().SetClass("subtle");
-                }
-
-                const hasDeletionTag = currentTags.asChange(currentTags).some(kv => kv.k === "_delete_reason")
-
-                if (cbd.canBeDeleted && hasDeletionTag) {
-                    return t.explanations.hardDelete.Clone()
-                }
-                return new Combine([t.explanations.softDelete.Subs({reason: cbd.reason}),
-                    new FixedUiElement(currentTags.asHumanString(false, true, currentTags)).SetClass("subtle")
-                ]).SetClass("flex flex-col")
-
-
-            }
-            , [deleteAction.canBeDeleted]
-        )).SetClass("block")
-    }
-
-    private static generateDeleteTagRenderingConfig(softDeletionTags: TagsFilter,
-                                                    nonDeleteOptions: { if: TagsFilter; then: Translation }[],
-                                                    extraDeleteReasons: { explanation: Translation; changesetMessage: string }[],
-                                                    currentTags: any) {
-        const t = Translations.t.delete
-        nonDeleteOptions = nonDeleteOptions ?? []
-        const softDeletionTagsStr = []
-        if (softDeletionTags !== undefined) {
-            softDeletionTags.asChange(currentTags)
-        }
-        const extraOptionsStr: { if: AndOrTagConfigJson, then: any }[] = []
-        for (const nonDeleteOption of nonDeleteOptions) {
-            const newIf: string[] = nonDeleteOption.if.asChange({}).map(kv => kv.k + "=" + kv.v)
-
-            extraOptionsStr.push({
-                if: {and: newIf},
-                then: nonDeleteOption.then
-            })
-        }
-
-        for (const extraDeleteReason of (extraDeleteReasons ?? [])) {
-            extraOptionsStr.push({
-                if: {and: ["_delete_reason=" + extraDeleteReason.changesetMessage]},
-                then: extraDeleteReason.explanation
-            })
-        }
-        return new TagRenderingConfig(
-            {
-                question: t.whyDelete,
-                render: "Deleted because {_delete_reason}",
-                freeform: {
-                    key: "_delete_reason",
-                    addExtraTags: softDeletionTagsStr
-                },
-                mappings: [
-
-                    ...extraOptionsStr,
-
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=testing point",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.test
-                    },
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=disused",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.disused
-                    },
-                    {
-                        if: {
-                            and: [
-                                "_delete_reason=not found",
-                                ...softDeletionTagsStr
-                            ]
-                        },
-                        then: t.reasons.notFound
-                    }
-                ]
-
-
-            }, undefined, "Delete wizard"
-        )
-    }
-
 }
