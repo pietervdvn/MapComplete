@@ -129,24 +129,7 @@
     }
   ],
   "units": [
-    {
-      "appliesToKey": [
-        "height","rotor:diameter"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": " meter",
-            "nl": " meter"
-          }
-        }
-      ]
-    },
-    {
+     {
       "appliesToKey": [
         "generator:output:electricity"
       ],
@@ -197,6 +180,23 @@
         }
       ],
       "eraseInvalidValues": true
+    },
+    {
+      "appliesToKey": [
+        "height","rotor:diameter"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": " meter",
+            "nl": " meter"
+          }
+        }
+      ]
     }
   ],
   "defaultBackgroundId": "CartoDB.Voyager"
