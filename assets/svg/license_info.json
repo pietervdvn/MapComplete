@@ -81,6 +81,16 @@
   },
   {
     "authors": [
+      "westnordost"
+    ],
+    "path": "barrier.svg",
+    "license": "GPL-3.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/barrier.svg"
+    ]
+  },
+  {
+    "authors": [
       "Github"
     ],
     "path": "bug.svg",

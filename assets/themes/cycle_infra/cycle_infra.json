@@ -28,7 +28,7 @@
         "en": "Cycleways",
         "nl": "Fietspaden"
       },
-      "minzoom": 12,
+      "minzoom": 14,
       "source": {
         "osmTags": {
           "or": [
@@ -77,6 +77,66 @@
       },
       "description": {},
       "tagRenderings": [
+        {
+          "freeform": {
+            "key": "cycleway",
+            "addExtraTags": []
+          },
+          "question": {
+            "en": "What kind of cycleway is there?",
+            "nl": "Wat voor fietspad is hier?"
+          },
+          "condition": "highway!=cycleway",
+          "mappings": [
+            {
+              "if": "cycleway=shared_lane",
+              "then": {
+                "en": "There is a shared lane",
+                "nl": "Er is een fietssugestiestrook"
+              }
+            },
+            {
+              "if": "cycleway=lane",
+              "then": {
+                "en": "There is a lane next to the road (seperated with paint)",
+                "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
+              }
+            },
+            {
+              "if": "cycleway=track",
+              "then": {
+                "en": "There is a track, but no cycleway drawn seperately from this road on the map.",
+                "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
+              }
+            },
+            {
+              "if": "cycleway=seperate",
+              "then": {
+                "en": "There is a seperately drawn cycleway",
+                "nl": "Er is een apart getekend fietspad."
+              }
+            },
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "nl": "Dit is een fietsstraat.",
+                "en": "This is a cyclestreet."
+              }
+            },
+            {
+              "if": "cycleway=",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "render": {
+            "en": "Unknown cycleway situation",
+            "nl": "Onbekende fietspad situatie"
+          }
+        },
         {
           "render": {
             "en": "The maximum speed on this road is {maxspeed} km/h",
@@ -269,6 +329,124 @@
             "en": "What is the carriage width of this road (in meters)?",
             "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
           }
+        },
+        {
+          "render": {
+            "en": "This road has the smoothness {smoothness}",
+            "nl": "Deze weg heeft de kwaliteit {smoothness}"
+          },
+          "freeform": {
+            "key": "smoothness",
+            "addExtraTags": []
+          },
+          "condition": {
+            "or": ["cycleway=no", "highway=cycleway"]
+          },
+          "mappings": [
+            {
+              "if": "smoothness=excellent",
+              "then": {
+                "en": "Thin Rollers: rollerblade, skateboard"
+              }
+            },
+            {
+              "if": "smoothness=good",
+              "then": {
+                "en": "Thin Wheels: racing bike"
+              }
+            },
+            {
+              "if": "smoothness=intermediate",
+              "then": {
+                "en": "Wheels: city bike, wheelchair, scooter"
+              }
+            },
+            {
+              "if": "smoothness=bad",
+              "then": {
+                "en": "Robust Wheels: trekking bike, car, rickshaw"
+              }
+            },
+            {
+              "if": "smoothness=very_bad",
+              "then": {
+                "en": "High Clearance: light duty off-road vehicle"
+              }
+            },
+            {
+              "if": "smoothness=horrible",
+              "then": {
+                "en": "Off-Road: heavy duty off-road vehicle"
+              }
+            },
+            {
+              "if": "smoothness=very_horrible",
+              "then": {
+                "en": "Specialized off-road: tractor, ATV"
+              }
+            },
+            {
+              "if": "smoothness=impassable",
+              "then": {
+                "en": "Impassable / No wheeled vehicle"
+              }
+            }
+          ],
+          "question": {
+            "en": "What is the smoothness of this street?",
+            "nl": "Wat is de kwaliteit van deze straat?"
+          }
+        },
+        {
+          "render": {
+            "en": "This road is made of {surface}",
+            "nl": "Deze weg is gemaakt van {surface}"
+          },
+          "freeform": {
+            "key": "surface",
+            "addExtraTags": []
+          },
+          "mappings": [
+            {
+              "if": "surface=wood",
+              "then": {
+                "en": "This street is made of wood",
+                "nl": "Deze weg is gemaakt van hout"
+              }
+            },
+            {
+              "if": "surface=concrete",
+              "then": {
+                "en": "This street is made of concrete",
+                "nl": "Deze straat is gemaakt van beton"
+              }
+            },
+            {
+              "if": "surface=cobblestone",
+              "then": {
+                "en": "This street is made of cobblestone",
+                "nl": "Deze straat is gemaakt van kasseien"
+              }
+            },
+            {
+              "if": "surface=asphalt",
+              "then": {
+                "en": "This street is made of asphalt",
+                "nl": "Deze straat is gemaakt van asfalt"
+              }
+            },
+            {
+              "if": "surface=paved",
+              "then": {
+                "en": "This street is paved",
+                "nl": "Deze straat is geplaveid"
+              }
+            }
+          ],
+          "question": {
+            "en": "What is the surface of the street made from?",
+            "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+          }
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
@@ -325,7 +503,7 @@
           ]
         }
       },
-      "minzoom": 18,
+      "minzoom": 19,
       "wayHandling": 0,
       "title": {
         "render": {
@@ -345,189 +523,94 @@
         "render": "#aaaaaa",
         "mappings": []
       },
+      "tagRenderings": [
+        {
+          "freeform": {
+            "key": "cycleway",
+            "addExtraTags": []
+          },
+          "question": {
+            "en": "Is there a cycleway?",
+            "nl": "Is er een fietspad?"
+          },
+          "condition": "highway!=cycleway",
+          "mappings": [
+            {
+              "if": "cycleway=shared_lane",
+              "then": {
+                "en": "There is a shared lane",
+                "nl": "Er is een fietssugestiestrook"
+              }
+            },
+            {
+              "if": "cycleway=lane",
+              "then": {
+                "en": "There is a lane next to the road (seperated with paint)",
+                "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
+              }
+            },
+            {
+              "if": "cycleway=track",
+              "then": {
+                "en": "There is a track, but no cycleway drawn seperately from this road on the map.",
+                "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
+              }
+            },
+            {
+              "if": "cycleway=seperate",
+              "then": {
+                "en": "There is a seperately drawn cycleway",
+                "nl": "Er is een apart getekend fietspad."
+              }
+            },
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "nl": "Dit is een fietsstraat.",
+                "en": "This is a cyclestreet."
+              }
+            },
+            {
+              "if": "cycleway=",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad"
+              },
+              "hideInAnswer": true
+            }
+          ],
+          "render": {
+            "en": "Unknown cycleway situation",
+            "nl": "Onbekende fietspad situatie"
+          }
+        }
+      ]
+    },
+    {
+      "id": "barriers",
+      "name": {
+        "en": "Barriers",
+        "nl": "Barrières"
+      },
+      "description": {
+        "en": "Obstacles while cycling, such as bollards and cycle barriers",
+        "nl": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes"
+      },
+      "source": {
+        "osmTags": {
+          "or": ["barrier=bollard", "barrier=cycle_barrier"]
+        }
+      },
+      "minzoom": 14,
+      "title": {
+        "render": {
+          "en": "Barrier",
+          "nl": "Barrière"
+        }
+      },
+      "icon": "./assets/svg/barrier.svg",
+      "width": "5",
       "tagRenderings": []
     }
-  ],
-  "overrideAll": {
-    "+tagRenderings": [
-      {
-        "freeform": {
-          "key": "cycleway",
-          "addExtraTags": []
-        },
-        "question": {
-          "en": "Is there a cycleway?",
-          "nl": "Is er een fietspad?"
-        },
-        "condition": "highway!=cycleway",
-        "mappings": [
-          {
-            "if": "cycleway=shared_lane",
-            "then": {
-              "en": "There is a shared lane",
-              "nl": "Er is een fietssugestiestrook"
-            }
-          },
-          {
-            "if": "cycleway=lane",
-            "then": {
-              "en": "There is a lane next to the road (seperated with paint)",
-              "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
-            }
-          },
-          {
-            "if": "cycleway=track",
-            "then": {
-              "en": "There is a track, but no cycleway drawn seperately from this road on the map.",
-              "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg."
-            }
-          },
-          {
-            "if": "cycleway=seperate",
-            "then": {
-              "en": "There is a seperately drawn cycleway",
-              "nl": "Er is een apart getekend fietspad."
-            }
-          },
-          {
-            "if": "cyclestreet=yes",
-            "then": {
-              "nl": "Dit is een fietsstraat.",
-              "en": "This is a cyclestreet."
-            }
-          },
-          {
-            "if": "cycleway=",
-            "then": {
-              "en": "There is no cycleway",
-              "nl": "Er is geen fietspad"
-            },
-            "hideInAnswer": true
-          }
-        ],
-        "render": {
-          "en": "Unknown cycleway situation",
-          "nl": "Onbekende fietspad situatie"
-        }
-      },
-      {
-        "render": {
-          "en": "This road has the smoothness {smoothness}",
-          "nl": "Deze weg heeft de kwaliteit {smoothness}"
-        },
-        "freeform": {
-          "key": "smoothness",
-          "addExtraTags": []
-        },
-        "condition": {
-          "or": ["cycleway=no", "highway=cycleway"]
-        },
-        "mappings": [
-          {
-            "if": "smoothness=excellent",
-            "then": {
-              "en": "Thin Rollers: rollerblade, skateboard"
-            }
-          },
-          {
-            "if": "smoothness=good",
-            "then": {
-              "en": "Thin Wheels: racing bike"
-            }
-          },
-          {
-            "if": "smoothness=intermediate",
-            "then": {
-              "en": "Wheels: city bike, wheelchair, scooter"
-            }
-          },
-          {
-            "if": "smoothness=bad",
-            "then": {
-              "en": "Robust Wheels: trekking bike, car, rickshaw"
-            }
-          },
-          {
-            "if": "smoothness=very_bad",
-            "then": {
-              "en": "High Clearance: light duty off-road vehicle"
-            }
-          },
-          {
-            "if": "smoothness=horrible",
-            "then": {
-              "en": "Off-Road: heavy duty off-road vehicle"
-            }
-          },
-          {
-            "if": "smoothness=very_horrible",
-            "then": {
-              "en": "Specialized off-road: tractor, ATV"
-            }
-          },
-          {
-            "if": "smoothness=impassable",
-            "then": {
-              "en": "Impassable / No wheeled vehicle"
-            }
-          }
-        ],
-        "question": {
-          "en": "What is the smoothness of this street?",
-          "nl": "Wat is de kwaliteit van deze straat?"
-        }
-      },
-      {
-        "render": {
-          "en": "This road is made of {surface}",
-          "nl": "Deze weg is gemaakt van {surface}"
-        },
-        "freeform": {
-          "key": "surface",
-          "addExtraTags": []
-        },
-        "mappings": [
-          {
-            "if": "surface=wood",
-            "then": {
-              "en": "This street is made of wood",
-              "nl": "Deze weg is gemaakt van hout"
-            }
-          },
-          {
-            "if": "surface=concrete",
-            "then": {
-              "en": "This street is made of concrete",
-              "nl": "Deze straat is gemaakt van beton"
-            }
-          },
-          {
-            "if": "surface=cobblestone",
-            "then": {
-              "en": "This street is made of cobblestone",
-              "nl": "Deze straat is gemaakt van kasseien"
-            }
-          },
-          {
-            "if": "surface=asphalt",
-            "then": {
-              "en": "This street is made of asphalt",
-              "nl": "Deze straat is gemaakt van asfalt"
-            }
-          },
-          {
-            "if": "surface=paved",
-            "then": {
-              "en": "This street is paved",
-              "nl": "Deze straat is geplaveid"
-            }
-          }
-        ],
-        "question": {
-          "en": "What is the surface of the street made from?",
-          "nl": "Waaruit is het oppervlak van de straat gemaakt?"
-        }
-      }
-    ]
-  }
+  ]
 }
