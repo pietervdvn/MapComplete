@@ -1,0 +1,22 @@
+[
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "pedestrian_crossing.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/pedestrian_crossing.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "traffic_lights.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/traffic_lights.svg"
+    ]
+  }
+]

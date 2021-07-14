@@ -37,13 +37,13 @@
     ]
   },
   "icon": {
-    "render": "./assets/svg/pedestrian_crossing.svg",
+    "render": "./assets/layers/crossings/pedestrian_crossing.svg",
     "mappings": [
       {
         "if": {
           "or": ["highway=traffic_signals", "crossing=traffic_signals"]
         },
-        "then": "./assets/svg/traffic_lights.svg"
+        "then": "./assets/layers/crossings/traffic_lights.svg"
       }
     ]
   },
@@ -93,6 +93,85 @@
             "nl": "Een fietser kan niet deze oversteekplaats gebruiken"
           }
         }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this crossing have an island in the middle?",
+        "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "crossing:island=yes",
+          "then": {
+            "en": "This crossing has an island in the middle",
+            "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden"
+          }
+        },
+        {
+          "if": "crossing:island=no",
+          "then": {
+            "en": "This crossing does not have an island in the middle",
+            "nl": "Deze oversteekplaats heeft niet een verkeerseiland in het midden"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this crossing have tactile paving?",
+        "nl": "Heeft deze oversteekplaats een geleidelijn?"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This crossing has tactile paving",
+            "nl": "Deze oversteekplaats heeft een geleidelijn"
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This crossing does not have tactile paving",
+            "nl": "Deze oversteekplaats heeft niet een geleidelijn"
+          }
+        },
+        {
+          "if": "tactile_paving=incorrect",
+          "then": {
+            "en": "This crossing has tactile paving, but is not correct",
+            "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is."
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Does this traffic light have a button to request green light?",
+        "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
+      },
+      "condition": {
+        "or": ["highway=traffic_signals", "crossing=traffic_signals"]
+      },
+      "mappings": [
+        {
+            "if": "button_operated=yes",
+            "then": {
+              "en": "This traffic light has a button to request green light",
+              "nl": "Dit verkeerslicht heeft een knop voor groen licht"
+            }
+          },
+          {
+            "if": "button_operated=no",
+            "then": {
+              "en": "This traffic light does not have a button to request green light",
+              "nl": "Dit verkeerlicht heeft niet een knop voor groen licht"
+            }
+          }
       ]
     }
   ]
