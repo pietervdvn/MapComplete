@@ -635,15 +635,15 @@
         },
         {
           "render": {
-            "en": "Maximum width: {maxwidth} m",
-            "nl": "Maximumbreedte: {maxwidth} m"
+            "en": "Maximum width: {maxwidth:physical} m",
+            "nl": "Maximumbreedte: {maxwidth:physical} m"
           },
           "question": {
             "en": "How wide is the gap left over besides the barrier?",
             "nl": "Hoe breed is de ruimte naast de barrière?"
           },
           "freeform": {
-            "key": "maxwidth",
+            "key": "maxwidth:physical",
             "type": "pfloat"
           }
         },
@@ -652,6 +652,7 @@
             "en": "What kind of bollard is this?",
             "nl": "Wat voor soort paal is dit?"
           },
+          "condition": "barrier=bollard",
           "mappings": [
             {
               "if": "bollard=removable",
@@ -691,6 +692,7 @@
           ]
         }
       ]
-    }
+    },
+    "crossings"
   ]
 }

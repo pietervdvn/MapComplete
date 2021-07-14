@@ -1,0 +1,99 @@
+{
+  "id": "crossings",
+  "name": {
+    "en": "Crossings",
+    "nl": "Oversteekplaatsen"
+  },
+  "description": {
+    "en": "Crossings for pedestrians and cyclists",
+    "nl": "Oversteekplaatsen voor voetgangers en fietsers"
+  },
+  "source": {
+    "osmTags": {
+      "or": ["highway=traffic_signals", "highway=crossing"]
+    }
+  },
+  "minzoom": 14,
+  "title": {
+    "render": {
+      "en": "Crossing",
+      "nl": "Oversteekplaats"
+    },
+    "mappings": [
+      {
+        "if": "highway=traffic_signals",
+        "then": {
+          "en": "Traffic signal",
+          "nl": "Verkeerslicht"
+        }
+      },
+      {
+        "if": "crossing=traffic_signals",
+        "then": {
+          "en": "Crossing with traffic signals",
+          "nl": "Oversteektplaats met verkeerslichten"
+        }
+      }
+    ]
+  },
+  "icon": {
+    "render": "./assets/svg/pedestrian_crossing.svg",
+    "mappings": [
+      {
+        "if": {
+          "or": ["highway=traffic_signals", "crossing=traffic_signals"]
+        },
+        "then": "./assets/svg/traffic_lights.svg"
+      }
+    ]
+  },
+  "width": "5",
+  "tagRenderings": [
+    {
+      "question": {
+        "en": "What kind of crossing is this?",
+        "nl": "Wat voor oversteekplaats is dit?"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "crossing=uncontrolled",
+          "then": {
+            "en": "Crossing, without traffic lights",
+            "nl": "Oversteekplaats, zonder verkeerslichten"
+          }
+        },
+        {
+          "if": "crossing=traffic_signals",
+          "then": {
+            "en": "Crossing with traffic signals",
+            "nl": "Oversteekplaats met verkeerslichten"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Is this crossing also for bicycles?",
+        "nl": "Is deze oversteekplaats ook voor fietsers"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "bicycle=yes",
+          "then": {
+            "en": "A cyclist can use this crossing",
+            "nl": "Een fietser kan deze oversteekplaats gebruiken"
+          }
+        },
+        {
+          "if": "bicycle=no",
+          "then": {
+            "en": "A cyclist can not use this crossing",
+            "nl": "Een fietser kan niet deze oversteekplaats gebruiken"
+          }
+        }
+      ]
+    }
+  ]
+}
