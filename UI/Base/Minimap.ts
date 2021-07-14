@@ -52,7 +52,7 @@ export default class Minimap extends BaseUIElement {
         return wrapper;
 
     }
-
+    
     private InitMap() {
         if (this._constructedHtmlElement === undefined) {
             // This element isn't initialized yet

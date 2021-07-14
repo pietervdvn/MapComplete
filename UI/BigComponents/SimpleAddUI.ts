@@ -19,6 +19,7 @@ import {Translation} from "../i18n/Translation";
 import LocationInput from "../Input/LocationInput";
 import {InputElement} from "../Input/InputElement";
 import Loc from "../../Models/Loc";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -115,14 +116,21 @@ export default class SimpleAddUI extends Toggle {
         let location = State.state.LastClickLocation;
         let preciseInput: InputElement<Loc> = undefined
         if (preset.preciseInput !== undefined) {
+            const locationSrc = new UIEventSource({
+                lat: location.data.lat,
+                lon: location.data.lon,
+                zoom: 19
+            });
+            
+            let backgroundLayer = undefined;
+            if(preset.preciseInput.preferredBackground){
+               backgroundLayer= AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
+            }
+            
             preciseInput = new LocationInput({
-                preferCategory: preset.preciseInput.preferredBackground ?? State.state.backgroundLayer,
-                centerLocation:
-                    new UIEventSource({
-                        lat: location.data.lat,
-                        lon: location.data.lon,
-                        zoom: 19
-                    })
+                mapBackground: backgroundLayer,
+                centerLocation:locationSrc
+                    
             })
             preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
         }

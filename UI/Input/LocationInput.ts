@@ -2,30 +2,27 @@ import {InputElement} from "./InputElement";
 import Loc from "../../Models/Loc";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Minimap from "../Base/Minimap";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import BaseLayer from "../../Models/BaseLayer";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
+import State from "../../State";
 
 export default class LocationInput extends InputElement<Loc> {
 
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     private _centerLocation: UIEventSource<Loc>;
-    private readonly preferCategory;
+    private readonly mapBackground : UIEventSource<BaseLayer>;
 
     constructor(options?: {
+        mapBackground?: UIEventSource<BaseLayer>,
         centerLocation?: UIEventSource<Loc>,
-        preferCategory?: string | UIEventSource<string>,
     }) {
         super();
         options = options ?? {}
         options.centerLocation = options.centerLocation ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
         this._centerLocation = options.centerLocation;
 
-        if(typeof options.preferCategory === "string"){
-            options.preferCategory = new UIEventSource<string>(options.preferCategory);
-        }
-        this.preferCategory = options.preferCategory ?? new UIEventSource<string>(undefined)
+        this.mapBackground = options.mapBackground ?? State.state.backgroundLayer
         this.SetClass("block h-full")
     }
 
@@ -38,43 +35,10 @@ export default class LocationInput extends InputElement<Loc> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        const layer: UIEventSource<BaseLayer> = new AvailableBaseLayers(this._centerLocation).availableEditorLayers.map(allLayers => {
-                // First float all 'best layers' to the top
-                allLayers.sort((a, b) => {
-                        if (a.isBest && b.isBest) {
-                            return 0;
-                        }
-                        if (!a.isBest) {
-                            return 1
-                        }
-
-                        return -1;
-                    }
-                )
-                if (this.preferCategory) {
-                    const self = this;
-                    //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
-                    allLayers.sort((a, b) => {
-                            const preferred = self.preferCategory.data
-                            if (a.category === preferred && b.category === preferred) {
-                                return 0;
-                            }
-                            if (a.category !== preferred) {
-                                return 1
-                            }
-
-                            return -1;
-                        }
-                    )
-                }
-                return allLayers[0]
-            }, [this.preferCategory]
-        )
-        layer.addCallbackAndRunD(layer => console.log(layer))
         const map = new Minimap(
             {
                 location: this._centerLocation,
-                background: layer
+                background: this.mapBackground
             }
         )
         map.leafletMap.addCallbackAndRunD(leaflet => {
