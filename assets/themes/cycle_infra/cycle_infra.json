@@ -606,7 +606,23 @@
         "render": {
           "en": "Barrier",
           "nl": "Barrière"
-        }
+        },
+        "mappings": [
+          {
+            "if": "barrier=bollard",
+            "then": {
+              "en": "Bollard",
+              "nl": "Paaltje"
+            }
+          },
+          {
+            "if": "barrier=cycle_barrier",
+            "then": {
+              "en": "Cycling Barrier",
+              "nl": "Fietshekjes"
+            }
+          }
+        ]
       },
       "icon": "./assets/svg/barrier.svg",
       "width": "5",
@@ -632,20 +648,6 @@
               }
             }
           ]
-        },
-        {
-          "render": {
-            "en": "Maximum width: {maxwidth:physical} m",
-            "nl": "Maximumbreedte: {maxwidth:physical} m"
-          },
-          "question": {
-            "en": "How wide is the gap left over besides the barrier?",
-            "nl": "Hoe breed is de ruimte naast de barrière?"
-          },
-          "freeform": {
-            "key": "maxwidth:physical",
-            "type": "pfloat"
-          }
         },
         {
           "question": {
@@ -690,6 +692,20 @@
               }
             }
           ]
+        },
+        {
+          "render": {
+            "en": "Maximum width: {maxwidth:physical} m",
+            "nl": "Maximumbreedte: {maxwidth:physical} m"
+          },
+          "question": {
+            "en": "How wide is the gap left over besides the barrier?",
+            "nl": "Hoe breed is de ruimte naast de barrière?"
+          },
+          "freeform": {
+            "key": "maxwidth:physical",
+            "type": "pfloat"
+          }
         }
       ]
     },
