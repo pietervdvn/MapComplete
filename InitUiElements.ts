@@ -341,7 +341,7 @@ export class InitUiElements {
 
     private static InitBaseMap() {
 
-        State.state.availableBackgroundLayers = new AvailableBaseLayers(State.state.locationControl).availableEditorLayers;
+        State.state.availableBackgroundLayers = AvailableBaseLayers.AvailableLayersAt(State.state.locationControl);
 
         State.state.backgroundLayer = State.state.backgroundLayerId
             .map((selectedId: string) => {

@@ -5,7 +5,8 @@ import {UIEventSource} from "../UIEventSource";
 
 export abstract class OsmObject {
 
-    protected static backendURL = "https://www.openstreetmap.org/"
+    private static defaultBackend = "https://www.openstreetmap.org/"
+    protected static backendURL = OsmObject.defaultBackend;
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
     private static objectCache = new Map<string, UIEventSource<OsmObject>>();
     private static referencingWaysCache = new Map<string, UIEventSource<OsmWay[]>>();
@@ -36,15 +37,22 @@ export abstract class OsmObject {
         this.backendURL = url;
     }
 
-    static DownloadObject(id): UIEventSource<OsmObject> {
+    static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
+        let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
-            return OsmObject.objectCache.get(id)
+            src = OsmObject.objectCache.get(id)
+            if (forceRefresh) {
+                src.setData(undefined)
+            } else {
+                return src;
+            }
+        } else {
+            src = new UIEventSource<OsmObject>(undefined)
         }
         const splitted = id.split("/");
         const type = splitted[0];
-        const idN = splitted[1];
+        const idN = Number(splitted[1]);
 
-        const src = new UIEventSource<OsmObject>(undefined)
         OsmObject.objectCache.set(id, src);
         const newContinuation = (element: OsmObject) => {
             src.setData(element)
@@ -160,11 +168,11 @@ export abstract class OsmObject {
         })
     }
 
-    public static DownloadAll(neededIds): UIEventSource<OsmObject[]> {
+    public static DownloadAll(neededIds, forceRefresh = true): UIEventSource<OsmObject[]> {
         // local function which downloads all the objects one by one
         // this is one big loop, running one download, then rerunning the entire function
 
-        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id))
+        const allSources: UIEventSource<OsmObject> [] = neededIds.map(id => OsmObject.DownloadObject(id, forceRefresh))
         const allCompleted = new UIEventSource(undefined).map(_ => {
             return !allSources.some(uiEventSource => uiEventSource.data === undefined)
         }, allSources)
@@ -172,7 +180,7 @@ export abstract class OsmObject {
             if (completed) {
                 return allSources.map(src => src.data)
             }
-            return []
+            return undefined
         });
     }
 
@@ -286,12 +294,18 @@ export abstract class OsmObject {
 
                 self.LoadData(element)
                 self.SaveExtraData(element, nodes);
+
                 const meta = {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
                     "_last_edit:changeset": element.changeset,
                     "_last_edit:timestamp": new Date(element.timestamp),
                     "_version_number": element.version
+                }
+
+                if (OsmObject.backendURL !== OsmObject.defaultBackend) {
+                    self.tags["_backend"] = OsmObject.backendURL
+                    meta["_backend"] = OsmObject.backendURL;
                 }
 
                 continuation(self, meta);
@@ -348,7 +362,7 @@ export class OsmNode extends OsmObject {
     lat: number;
     lon: number;
 
-    constructor(id) {
+    constructor(id: number) {
         super("node", id);
 
     }
@@ -401,7 +415,7 @@ export class OsmWay extends OsmObject {
     lat: number;
     lon: number;
 
-    constructor(id) {
+    constructor(id: number) {
         super("way", id);
     }
 
@@ -467,11 +481,10 @@ export class OsmWay extends OsmObject {
 
 export class OsmRelation extends OsmObject {
 
-    members;
+    public members;
 
-    constructor(id) {
+    constructor(id: number) {
         super("relation", id);
-
     }
 
     centerpoint(): [number, number] {

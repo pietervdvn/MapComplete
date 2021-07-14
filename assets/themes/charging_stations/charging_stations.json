@@ -6,7 +6,8 @@
     "ru": "Зарядные станции",
     "ja": "充電ステーション",
     "zh_Hant": "充電站",
-    "it": "Stazioni di ricarica"
+    "it": "Stazioni di ricarica",
+    "nl": "Oplaadpunten"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -29,6 +30,7 @@
     "ja",
     "zh_Hant",
     "it",
+    "nl",
     "nb_NO"
   ],
   "maintainer": "",
@@ -48,7 +50,8 @@
         "ja": "充電ステーション",
         "zh_Hant": "充電站",
         "nb_NO": "Ladestasjoner",
-        "it": "Stazioni di ricarica"
+        "it": "Stazioni di ricarica",
+        "nl": "Oplaadpunten"
       },
       "minzoom": 10,
       "source": {
@@ -65,7 +68,8 @@
           "ja": "充電ステーション",
           "zh_Hant": "充電站",
           "nb_NO": "Ladestasjon",
-          "it": "Stazione di ricarica"
+          "it": "Stazione di ricarica",
+          "nl": "Oplaadpunt"
         }
       },
       "description": {
@@ -74,7 +78,8 @@
         "ja": "充電ステーション",
         "zh_Hant": "充電站",
         "nb_NO": "En ladestasjon",
-        "it": "Una stazione di ricarica"
+        "it": "Una stazione di ricarica",
+        "nl": "Een oplaadpunt"
       },
       "tagRenderings": [
         "images",

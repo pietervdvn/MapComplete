@@ -1,15 +1,15 @@
 {
   "wikipedialink": {
     "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
-    "condition": "wikipedia~*",
+    "condition": {
+      "or": [
+        "wikipedia~*",
+        "wikidata~*"
+      ]
+    },
     "mappings": [
       {
-        "if": {
-          "and": [
-            "wikipedia=",
-            "wikidata~*"
-          ]
-        },
+        "if": "wikipedia=",
         "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
       }
     ]
@@ -59,8 +59,12 @@
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
     "mappings": [
       {
-        "if": "id~=-",
-        "then": "<span class='alert'>Uploading...</alert>"
+        "if": "id~.*/-.*",
+        "then": ""
+      },
+      {
+        "if": "_backend~*",
+        "then": "<a href='{_backend}/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
       }
     ],
     "condition": "id~(node|way|relation)/[0-9]*"

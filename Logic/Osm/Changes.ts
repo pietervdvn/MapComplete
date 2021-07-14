@@ -6,31 +6,38 @@ import Constants from "../../Models/Constants";
 import FeatureSource from "../FeatureSource/FeatureSource";
 import {TagsFilter} from "../Tags/TagsFilter";
 import {Tag} from "../Tags/Tag";
+import {OsmConnection} from "./OsmConnection";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 /**
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
-export class Changes implements FeatureSource{
+export class Changes implements FeatureSource {
 
-    
+
+    private static _nextId = -1; // Newly assigned ID's are negative
     public readonly name = "Newly added features"
     /**
      * The newly created points, as a FeatureSource
      */
-    public features = new UIEventSource<{feature: any, freshness: Date}[]>([]);
-    
-    private static _nextId = -1; // Newly assigned ID's are negative
+    public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
     /**
      * All the pending changes
      */
-    public readonly pending: UIEventSource<{ elementId: string, key: string, value: string }[]> = 
-        new UIEventSource<{elementId: string; key: string; value: string}[]>([]);
+    public readonly pending = LocalStorageSource.GetParsed<{ elementId: string, key: string, value: string }[]>("pending-changes", [])
+
+    /**
+     * All the pending new objects to upload
+     */
+    private readonly newObjects = LocalStorageSource.GetParsed<{ id: number, lat: number, lon: number }[]>("newObjects", [])
+
+    private readonly isUploading = new UIEventSource(false);
 
     /**
      * Adds a change to the pending changes
      */
-    private static checkChange(kv: {k: string, v: string}): { k: string, v: string } {
+    private static checkChange(kv: { k: string, v: string }): { k: string, v: string } {
         const key = kv.k;
         const value = kv.v;
         if (key === undefined || key === null) {
@@ -49,8 +56,7 @@ export class Changes implements FeatureSource{
         return {k: key.trim(), v: value.trim()};
     }
 
-    
-    
+
     addTag(elementId: string, tagsFilter: TagsFilter,
            tags?: UIEventSource<any>) {
         const eventSource = tags ?? State.state?.allElements.getEventSourceById(elementId);
@@ -59,7 +65,7 @@ export class Changes implements FeatureSource{
         if (changes.length == 0) {
             return;
         }
-      
+
         for (const change of changes) {
             if (elementTags[change.k] !== change.v) {
                 elementTags[change.k] = change.v;
@@ -76,15 +82,14 @@ export class Changes implements FeatureSource{
      * Uploads all the pending changes in one go.
      * Triggered by the 'PendingChangeUploader'-actor in Actors
      */
-    public flushChanges(flushreason: string = undefined){
-        if(this.pending.data.length === 0){
+    public flushChanges(flushreason: string = undefined) {
+        if (this.pending.data.length === 0) {
             return;
         }
-        if(flushreason !== undefined){
+        if (flushreason !== undefined) {
             console.log(flushreason)
         }
-        this.uploadAll([], this.pending.data);
-        this.pending.setData([]);
+        this.uploadAll();
     }
 
     /**
@@ -101,17 +106,13 @@ export class Changes implements FeatureSource{
      */
     public createElement(basicTags: Tag[], lat: number, lon: number) {
         console.log("Creating a new element with ", basicTags)
+
         const osmNode = new OsmNode(this.getNewID());
-
-        const id = "node/" + osmNode.id;
-        osmNode.lat = lat;
-        osmNode.lon = lon;
-        const properties = {id: id};
-
+        const properties = {id: osmNode.id};
         const geojson = {
             "type": "Feature",
             "properties": properties,
-            "id": id,
+            "id": properties.id,
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -121,46 +122,54 @@ export class Changes implements FeatureSource{
             }
         }
 
-        const changes = Changes.createTagChangeList(basicTags, properties, id);
-       
+        // The basictags are COPIED, the id is included in the properties
+        // The tags are not yet written into the OsmObject, but this is applied onto a 
+        const changes = [];
+        for (const kv of basicTags) {
+            if (typeof kv.value !== "string") {
+                throw "Invalid value: don't use a regex in a preset"
+            }
+            properties[kv.key] = kv.value;
+            changes.push({elementId:properties.id, key: kv.key, value: kv.value})
+        }
+
         console.log("New feature added and pinged")
-        this.features.data.push({feature:geojson, freshness: new Date()});
+        this.features.data.push({feature: geojson, freshness: new Date()});
         this.features.ping();
-        
+
         State.state.allElements.addOrGetElement(geojson).ping();
 
-        this.uploadAll([osmNode], changes);
+        if (State.state.osmConnection.userDetails.data.backend !== OsmConnection.oauth_configs.osm.url) {
+            properties["_backend"] = State.state.osmConnection.userDetails.data.backend
+        }
+
+
+        this.newObjects.data.push({id: osmNode.id, lat: lat, lon: lon})
+        this.pending.data.push(...changes)
+        this.pending.ping();
+        this.newObjects.ping();
         return geojson;
     }
 
 
-    private static createTagChangeList(basicTags: Tag[], properties: { id: string }, id: string) {
-        // The basictags are COPIED, the id is included in the properties
-        // The tags are not yet written into the OsmObject, but this is applied onto a
-        const changes = [];
-        for (const kv of basicTags) {
-            properties[kv.key] = kv.value;
-            if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use a regex in a preset"
-            }
-            changes.push({elementId: id, key: kv.key, value: kv.value})
-        }
-        return changes;
-    }
-
     private uploadChangesWithLatestVersions(
-        knownElements: OsmObject[], newElements: OsmObject[], pending: { elementId: string; key: string; value: string }[]) {
+        knownElements: OsmObject[]) {
         const knownById = new Map<string, OsmObject>();
-        
         knownElements.forEach(knownElement => {
-            console.log("Setting ",knownElement.type + knownElement.id, knownElement)
             knownById.set(knownElement.type + "/" + knownElement.id, knownElement)
         })
-        
-         
+
+        const newElements: OsmNode [] = this.newObjects.data.map(spec => {
+            const newElement = new OsmNode(spec.id);
+            newElement.lat = spec.lat;
+            newElement.lon = spec.lon;
+            return newElement
+        })
+
+
         // Here, inside the continuation, we know that all 'neededIds' are loaded in 'knownElements', which maps the ids onto the elements
         // We apply the changes on them
-        for (const change of pending) {
+        for (const change of this.pending.data) {
             if (parseInt(change.elementId.split("/")[1]) < 0) {
                 // This is a new element - we should apply this on one of the new elements
                 for (const newElement of newElements) {
@@ -169,8 +178,6 @@ export class Changes implements FeatureSource{
                     }
                 }
             } else {
-                console.log(knownById, change.elementId)
-
                 knownById.get(change.elementId).addTag(change.key, change.value);
             }
         }
@@ -184,17 +191,35 @@ export class Changes implements FeatureSource{
             }
         }
         if (changedElements.length == 0 && newElements.length == 0) {
-            console.log("No changes in any object");
+            console.log("No changes in any object - clearing");
+            this.pending.setData([])
+            this.newObjects.setData([])
             return;
         }
 
+        if (this.isUploading.data) {
+            return;
+        }
+        this.isUploading.setData(true)
+
         console.log("Beginning upload...");
         // At last, we build the changeset and upload
+        const self = this;
         State.state.osmConnection.UploadChangeset(
             State.state.layoutToUse.data,
             State.state.allElements,
-            (csId) =>   Changes.createChangesetFor(csId,changedElements, newElements )
+            (csId) =>   Changes.createChangesetFor(csId,changedElements, newElements ),
+            () => {
+                // When done
+                console.log("Upload successfull!")
+                self.newObjects.setData([])
+                self.pending.setData([]);
+                self.isUploading.setData(false)
+            },
+            () => self.isUploading.setData(false) // Failed - mark to try again
             );
+
+     
     };
 
 
@@ -220,26 +245,21 @@ export class Changes implements FeatureSource{
                 creations +
                 "</create>";
         }
-
         if (modifications.length > 0) {
             changes +=
                 "\n<modify>\n" +
                 modifications +
                 "\n</modify>";
         }
-
+        
         changes += "</osmChange>";
-
         return changes;
     }
 
-    private uploadAll(
-        newElements: OsmObject[],
-        pending: { elementId: string; key: string; value: string }[]
-    ) {
+    private uploadAll() {
         const self = this;
 
-
+        const pending = this.pending.data;
         let neededIds: string[] = [];
         for (const change of pending) {
             const id = change.elementId;
@@ -252,8 +272,7 @@ export class Changes implements FeatureSource{
 
         neededIds = Utils.Dedup(neededIds);
         OsmObject.DownloadAll(neededIds).addCallbackAndRunD(knownElements => {
-            console.log("KnownElements:", knownElements)
-            self.uploadChangesWithLatestVersions(knownElements, newElements, pending)
+            self.uploadChangesWithLatestVersions(knownElements)
         })
     }
 
