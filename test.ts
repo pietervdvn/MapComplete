@@ -10,6 +10,7 @@ import {Translation} from "./UI/i18n/Translation";
 import LocationInput from "./UI/Input/LocationInput";
 import Loc from "./Models/Loc";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import LengthInput from "./UI/Input/LengthInput";
 /*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -152,13 +153,7 @@ function TestMiniMap() {
 }
 //*/
 
-const li = new LocationInput({
-    preferCategory:"photo",
-    centerLocation:
-        new UIEventSource<Loc>({
-            lat: 51.21576, lon: 3.22001, zoom: 19
-        })
-})
+const li = new LengthInput()
     li.SetStyle("height: 20rem")
         .AttachTo("maindiv")
 
