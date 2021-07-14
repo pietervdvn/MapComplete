@@ -1,4 +1,4 @@
-import {OsmNode, OsmObject} from "./OsmObject";
+import {OsmNode, OsmObject, OsmWay} from "./OsmObject";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
@@ -86,6 +86,14 @@ export class Changes implements FeatureSource{
         this.uploadAll([], this.pending.data);
         this.pending.setData([]);
     }
+
+    /**
+     * Returns a new ID and updates the value for the next ID
+     */
+    public getNewID(){
+        return Changes._nextId--;
+    }
+
     /**
      * Create a new node element at the given lat/long.
      * An internal OsmObject is created to upload later on, a geojson represention is returned.
@@ -93,8 +101,7 @@ export class Changes implements FeatureSource{
      */
     public createElement(basicTags: Tag[], lat: number, lon: number) {
         console.log("Creating a new element with ", basicTags)
-        const osmNode = new OsmNode(Changes._nextId);
-        Changes._nextId--;
+        const osmNode = new OsmNode(this.getNewID());
 
         const id = "node/" + osmNode.id;
         osmNode.lat = lat;
@@ -114,16 +121,7 @@ export class Changes implements FeatureSource{
             }
         }
 
-        // The basictags are COPIED, the id is included in the properties
-        // The tags are not yet written into the OsmObject, but this is applied onto a 
-        const changes = [];
-        for (const kv of basicTags) {
-            properties[kv.key] = kv.value;
-            if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use a regex in a preset"
-            }
-            changes.push({elementId: id, key: kv.key, value: kv.value})
-        }
+        const changes = this.createTagChangeList(basicTags, properties, id);
        
         console.log("New feature added and pinged")
         this.features.data.push({feature:geojson, freshness: new Date()});
@@ -133,6 +131,57 @@ export class Changes implements FeatureSource{
 
         this.uploadAll([osmNode], changes);
         return geojson;
+    }
+
+    /**
+     * Creates a new road with given tags that consist of the points corresponding to given nodeIDs
+     * @param basicTags The tags to add to the road
+     * @param nodeIDs IDs of nodes of which the road consists. Those nodes must already exist in osm or already be added to the changeset.
+     * @param coordinates The coordinates correspoinding to the nodeID at the same index. Each coordinate is a [lon, lat] point
+     * @return geojson A geojson representation of the created road
+     */
+    public createRoad(basicTags: Tag[], nodeIDs, coordinates) {
+        const osmWay = new OsmWay(this.getNewID());
+
+        const id = "way/" + osmWay.id;
+        osmWay.nodes = nodeIDs;
+        const properties = {id: id};
+
+        const geojson = {
+            "type": "Feature",
+            "properties": properties,
+            "id": id,
+            "geometry": {
+                "type": "LineString",
+                "coordinates": coordinates
+            }
+        }
+
+        const changes = this.createTagChangeList(basicTags, properties, id);
+
+        console.log("New feature added and pinged")
+        this.features.data.push({feature:geojson, freshness: new Date()});
+        this.features.ping();
+
+        State.state.allElements.addOrGetElement(geojson).ping();
+
+        this.uploadAll([osmWay], changes);
+        return geojson;
+    }
+
+
+    private createTagChangeList(basicTags: Tag[], properties: { id: string }, id: string) {
+        // The basictags are COPIED, the id is included in the properties
+        // The tags are not yet written into the OsmObject, but this is applied onto a
+        const changes = [];
+        for (const kv of basicTags) {
+            properties[kv.key] = kv.value;
+            if (typeof kv.value !== "string") {
+                throw "Invalid value: don't use a regex in a preset"
+            }
+            changes.push({elementId: id, key: kv.key, value: kv.value})
+        }
+        return changes;
     }
 
     private uploadChangesWithLatestVersions(
@@ -244,4 +293,13 @@ export class Changes implements FeatureSource{
         })
     }
 
+
+    /**
+     * Changes the nodes of road with given id to the given nodes
+     * @param roadID The ID of the road to update
+     * @param newNodes The node id's the road consists of (should already be added to the changeset or in osm)
+     */
+    public updateRoadCoordinates(roadID: string, newNodes: number[]) {
+        // TODO
+    }
 }

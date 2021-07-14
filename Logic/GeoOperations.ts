@@ -280,7 +280,7 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(way, point: [number, number]){
-        return turf.nearestPointOnLine(way, point);
+        return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 }
 

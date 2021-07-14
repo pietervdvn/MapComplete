@@ -444,7 +444,7 @@ export class OsmWay extends OsmObject {
         this.nodes = element.nodes;
     }
 
-    asGeoJson() {
+    public asGeoJson() {
         return {
             "type": "Feature",
             "properties": this.tags,

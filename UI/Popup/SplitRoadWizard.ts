@@ -11,6 +11,7 @@ import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import Combine from "../Base/Combine";
 import {Button} from "../Base/Button";
 import Translations from "../i18n/Translations";
+import {splitRoad} from "../../Logic/Osm/SplitAction";
 
 export default class SplitRoadWizard extends Toggle {
     /**
@@ -87,7 +88,7 @@ export default class SplitRoadWizard extends Toggle {
             State.state.osmConnection.isLoggedIn)
 
         // Save button
-        const saveButton =  new Button("Split here", () => window.alert("Splitting..."));
+        const saveButton =  new Button("Split here", () => splitRoad(id, splitPositions.data));
         saveButton.SetClass("block btn btn-primary");
         const disabledSaveButton = new Button("Split here", undefined);
         disabledSaveButton.SetClass("block btn btn-disabled");
@@ -98,6 +99,7 @@ export default class SplitRoadWizard extends Toggle {
             splitClicked.setData(false);
 
             splitPositions.setData([]);
+            // Only keep showing the road, the cutpoints must be removed from the map
             roadEventSource.setData([roadEventSource.data[0]])
         });
 
