@@ -246,13 +246,9 @@
           }
         },
         {
-          "render": {
-            "en": "This cyleway has the smoothness {cycleway:smoothness}",
-            "nl": "Dit fietspad heeft de kwaliteit {cycleway:smoothness}"
-          },
-          "freeform": {
-            "key": "cycleway:smoothness",
-            "addExtraTags": []
+          "question": {
+            "en": "What is the smoothness of this cycleway?",
+            "nl": "Wat is de kwaliteit van dit fietspad?"
           },
           "condition": {
             "or": ["cycleway=shared_lane", "cycleway=lane", "cycleway=track"]
@@ -261,43 +257,43 @@
             {
               "if": "cycleway:smoothness=excellent",
               "then": {
-                "en": "Thin Rollers: rollerblade, skateboard"
+                "en": "Usable for thin rollers: rollerblade, skateboard"
               }
             },
             {
               "if": "cycleway:smoothness=good",
               "then": {
-                "en": "Thin Wheels: racing bike"
+                "en": "Usable for thin wheels: racing bike"
               }
             },
             {
               "if": "cycleway:smoothness=intermediate",
               "then": {
-                "en": "Wheels: city bike, wheelchair, scooter"
+                "en": "Usable for normal wheels: city bike, wheelchair, scooter"
               }
             },
             {
               "if": "cycleway:smoothness=bad",
               "then": {
-                "en": "Robust Wheels: trekking bike, car, rickshaw"
+                "en": "Usable for robust wheels: trekking bike, car, rickshaw"
               }
             },
             {
               "if": "cycleway:smoothness=very_bad",
               "then": {
-                "en": "High Clearance: light duty off-road vehicle"
+                "en": "Usable for vehicles with high clearance: light duty off-road vehicle"
               }
             },
             {
               "if": "cycleway:smoothness=horrible",
               "then": {
-                "en": "Off-Road: heavy duty off-road vehicle"
+                "en": "Usable for off-road vehicles: heavy duty off-road vehicle"
               }
             },
             {
               "if": "cycleway:smoothness=very_horrible",
               "then": {
-                "en": "Specialized off-road: tractor, ATV"
+                "en": "Usable for specialized off-road vehicles: tractor, ATV"
               }
             },
             {
@@ -306,11 +302,7 @@
                 "en": "Impassable / No wheeled vehicle"
               }
             }
-          ],
-          "question": {
-            "en": "What is the smoothness of this cycleway?",
-            "nl": "Wat is de kwaliteit van dit fietspad?"
-          }
+          ]
         },
         {
           "condition": {
@@ -331,13 +323,9 @@
           }
         },
         {
-          "render": {
-            "en": "This road has the smoothness {smoothness}",
-            "nl": "Deze weg heeft de kwaliteit {smoothness}"
-          },
-          "freeform": {
-            "key": "smoothness",
-            "addExtraTags": []
+          "question": {
+            "en": "What is the smoothness of this street?",
+            "nl": "Wat is de kwaliteit van deze straat?"
           },
           "condition": {
             "or": ["cycleway=no", "highway=cycleway"]
@@ -346,43 +334,43 @@
             {
               "if": "smoothness=excellent",
               "then": {
-                "en": "Thin Rollers: rollerblade, skateboard"
+                "en": "Usable for thin rollers: rollerblade, skateboard"
               }
             },
             {
               "if": "smoothness=good",
               "then": {
-                "en": "Thin Wheels: racing bike"
+                "en": "Usable for thin wheels: racing bike"
               }
             },
             {
               "if": "smoothness=intermediate",
               "then": {
-                "en": "Wheels: city bike, wheelchair, scooter"
+                "en": "Usable for normal wheels: city bike, wheelchair, scooter"
               }
             },
             {
               "if": "smoothness=bad",
               "then": {
-                "en": "Robust Wheels: trekking bike, car, rickshaw"
+                "en": "Usable for robust wheels: trekking bike, car, rickshaw"
               }
             },
             {
               "if": "smoothness=very_bad",
               "then": {
-                "en": "High Clearance: light duty off-road vehicle"
+                "en": "Usable for vehicles with high clearance: light duty off-road vehicle"
               }
             },
             {
               "if": "smoothness=horrible",
               "then": {
-                "en": "Off-Road: heavy duty off-road vehicle"
+                "en": "Usable for off-road vehicles: heavy duty off-road vehicle"
               }
             },
             {
               "if": "smoothness=very_horrible",
               "then": {
-                "en": "Specialized off-road: tractor, ATV"
+                "en": "Usable for specialized off-road vehicles: tractor, ATV"
               }
             },
             {
@@ -391,11 +379,7 @@
                 "en": "Impassable / No wheeled vehicle"
               }
             }
-          ],
-          "question": {
-            "en": "What is the smoothness of this street?",
-            "nl": "Wat is de kwaliteit van deze straat?"
-          }
+          ]
         },
         {
           "render": {
