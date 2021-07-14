@@ -225,7 +225,7 @@ export interface LayerConfigJson {
          * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
          */
         preciseInput?: true | {
-            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map"
+            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string
         }
     }[],
 

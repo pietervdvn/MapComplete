@@ -114,7 +114,7 @@ export default class GeoLocationHandler extends VariableUiElement {
     });
 
     this.onClick(() => {
-      if (self._isActive.data) {
+      if (self._hasLocation.data) {
         self._isLocked.setData(!self._isLocked.data);
       }
       self.init(true);
