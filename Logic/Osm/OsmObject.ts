@@ -60,6 +60,8 @@ export abstract class OsmObject {
             case("relation"):
                 new OsmRelation(idN).Download(newContinuation);
                 break;
+            default:
+                throw "Invalid road type:" + type;
 
         }
         return src;
@@ -150,7 +152,7 @@ export abstract class OsmObject {
         const minlat = bounds[1][0]
         const maxlat = bounds[0][0];
         const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        Utils.downloadJson(url).then( data => {
+        Utils.downloadJson(url).then(data => {
             const elements: any[] = data.elements;
             const objects = OsmObject.ParseObjects(elements)
             callback(objects);
@@ -354,9 +356,9 @@ export class OsmNode extends OsmObject {
     ChangesetXML(changesetId: string): string {
         let tags = this.TagsXML();
 
-        return '        <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
+        return '    <node id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + ' lat="' + this.lat + '" lon="' + this.lon + '">\n' +
             tags +
-            '        </node>\n';
+            '    </node>\n';
     }
 
     SaveExtraData(element) {
@@ -401,7 +403,6 @@ export class OsmWay extends OsmObject {
 
     constructor(id) {
         super("way", id);
-
     }
 
     centerpoint(): [number, number] {
@@ -418,7 +419,7 @@ export class OsmWay extends OsmObject {
         return '    <way id="' + this.id + '" changeset="' + changesetId + '" ' + this.VersionXML() + '>\n' +
             nds +
             tags +
-            '        </way>\n';
+            '    </way>\n';
     }
 
     SaveExtraData(element, allNodes: OsmNode[]) {

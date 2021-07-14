@@ -1,4 +1,4 @@
-import {OsmNode, OsmObject, OsmWay} from "./OsmObject";
+import {OsmNode, OsmObject} from "./OsmObject";
 import State from "../../State";
 import {Utils} from "../../Utils";
 import {UIEventSource} from "../UIEventSource";
@@ -121,7 +121,7 @@ export class Changes implements FeatureSource{
             }
         }
 
-        const changes = this.createTagChangeList(basicTags, properties, id);
+        const changes = Changes.createTagChangeList(basicTags, properties, id);
        
         console.log("New feature added and pinged")
         this.features.data.push({feature:geojson, freshness: new Date()});
@@ -133,44 +133,8 @@ export class Changes implements FeatureSource{
         return geojson;
     }
 
-    /**
-     * Creates a new road with given tags that consist of the points corresponding to given nodeIDs
-     * @param basicTags The tags to add to the road
-     * @param nodeIDs IDs of nodes of which the road consists. Those nodes must already exist in osm or already be added to the changeset.
-     * @param coordinates The coordinates correspoinding to the nodeID at the same index. Each coordinate is a [lon, lat] point
-     * @return geojson A geojson representation of the created road
-     */
-    public createRoad(basicTags: Tag[], nodeIDs, coordinates) {
-        const osmWay = new OsmWay(this.getNewID());
 
-        const id = "way/" + osmWay.id;
-        osmWay.nodes = nodeIDs;
-        const properties = {id: id};
-
-        const geojson = {
-            "type": "Feature",
-            "properties": properties,
-            "id": id,
-            "geometry": {
-                "type": "LineString",
-                "coordinates": coordinates
-            }
-        }
-
-        const changes = this.createTagChangeList(basicTags, properties, id);
-
-        console.log("New feature added and pinged")
-        this.features.data.push({feature:geojson, freshness: new Date()});
-        this.features.ping();
-
-        State.state.allElements.addOrGetElement(geojson).ping();
-
-        this.uploadAll([osmWay], changes);
-        return geojson;
-    }
-
-
-    private createTagChangeList(basicTags: Tag[], properties: { id: string }, id: string) {
+    private static createTagChangeList(basicTags: Tag[], properties: { id: string }, id: string) {
         // The basictags are COPIED, the id is included in the properties
         // The tags are not yet written into the OsmObject, but this is applied onto a
         const changes = [];
@@ -229,45 +193,45 @@ export class Changes implements FeatureSource{
         State.state.osmConnection.UploadChangeset(
             State.state.layoutToUse.data,
             State.state.allElements,
-            function (csId) {
-
-                let modifications = "";
-                for (const element of changedElements) {
-                    if (!element.changed) {
-                        continue;
-                    }
-                    modifications += element.ChangesetXML(csId) + "\n";
-                }
-
-
-                let creations = "";
-                for (const newElement of newElements) {
-                    creations += newElement.ChangesetXML(csId);
-                }
-
-
-                let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
-
-                if (creations.length > 0) {
-                    changes +=
-                        "<create>" +
-                        creations +
-                        "</create>";
-                }
-
-                if (modifications.length > 0) {
-                    changes +=
-                        "<modify>\n" +
-                        modifications +
-                        "\n</modify>";
-                }
-
-                changes += "</osmChange>";
-
-                return changes;
-            });
+            (csId) =>   Changes.createChangesetFor(csId,changedElements, newElements )
+            );
     };
 
+
+    public static createChangesetFor(csId: string, changedElements: OsmObject[], newElements: OsmObject[]): string {
+
+        let modifications = "";
+        for (const element of changedElements) {
+            modifications += element.ChangesetXML(csId) + "\n";
+        }
+
+
+        let creations = "";
+        for (const newElement of newElements) {
+            creations += newElement.ChangesetXML(csId);
+        }
+
+
+        let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
+
+        if (creations.length > 0) {
+            changes +=
+                "\n<create>\n" +
+                creations +
+                "</create>";
+        }
+
+        if (modifications.length > 0) {
+            changes +=
+                "\n<modify>\n" +
+                modifications +
+                "\n</modify>";
+        }
+
+        changes += "</osmChange>";
+
+        return changes;
+    }
 
     private uploadAll(
         newElements: OsmObject[],
@@ -293,13 +257,4 @@ export class Changes implements FeatureSource{
         })
     }
 
-
-    /**
-     * Changes the nodes of road with given id to the given nodes
-     * @param roadID The ID of the road to update
-     * @param newNodes The node id's the road consists of (should already be added to the changeset or in osm)
-     */
-    public updateRoadCoordinates(roadID: string, newNodes: number[]) {
-        // TODO
-    }
 }
