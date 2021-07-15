@@ -33,9 +33,7 @@
         "osmTags": {
           "or": [
             "highway=cycleway",
-            "cycleway=shared_lane",
-            "cycleway=lane",
-            "cycleway=track",
+            "cycleway=^(?!no).*",
             "cyclestreet=yes",
             {
               "and": ["highway=path", "bicycle=designated"]
