@@ -35,7 +35,11 @@
             "highway=cycleway",
             "cycleway=shared_lane",
             "cycleway=lane",
-            "cyclestreet=yes"
+            "cycleway=track",
+            "cyclestreet=yes",
+            {
+              "and": ["highway=path", "bicycle=designated"]
+            }
           ]
         }
       },
@@ -46,7 +50,9 @@
         },
         "mappings": [
           {
-            "if": "highway=cycleway",
+            "if": {
+              "or": ["highway=cycleway", "highway=path"]
+            },
             "then": {
               "nl": "Fietsweg",
               "en": "Bike road"
@@ -62,8 +68,15 @@
           {
             "if": "cycleway=lane",
             "then": {
-              "nl": "Fietsweg naast de weg",
+              "nl": "Fietsstrook",
               "en": "Bike lane"
+            }
+          },
+          {
+            "if": "cycleway=track",
+            "then": {
+              "en": "Bike road next to the road",
+              "nl": "Fietsweg naast de weg"
             }
           },
           {
@@ -447,8 +460,14 @@
         "render": "#aaaaaa",
         "mappings": [
           {
-            "if": "highway=cycleway",
+            "if": {
+              "or": ["highway=cycleway", "highway=path"]
+            },
             "then": "#00ff00"
+          },
+          {
+            "if": "cycleway=track",
+            "then": "#45c445"
           },
           {
             "if": "cycleway=shared_lane",
