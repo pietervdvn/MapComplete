@@ -1,5 +1,5 @@
-import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
-import {Utils} from "../Utils";
+import FeaturePipeline from "./FeaturePipeline";
+import {Utils} from "../../Utils";
 
 /**
  * Exports given featurePipeline as a geojson FeatureLists (downloads as a json)
