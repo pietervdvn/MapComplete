@@ -151,6 +151,43 @@
           }
         },
         {
+          "question": {
+            "en": "Is this street lit?",
+            "nl": "Is deze weg verlicht?"
+          },
+          "mappings": [
+            {
+              "if": "lit=yes",
+              "then": {
+                "en": "This street is lit",
+                "nl": "Deze weg is verlicht"
+              }
+            },
+            {
+              "if": "lit=no",
+              "then": {
+                "en": "This road is not lit",
+                "nl": "Deze weg is niet verlicht"
+              }
+            },
+            {
+              "if": "lit=sunset-sunrise",
+              "then": {
+                "en": "This road is lit at night",
+                "nl": "Deze weg is 's nachts verlicht"
+              },
+              "hideInAnswer": true
+            },
+            {
+              "if": "lit=24/7",
+              "then": {
+                "en": "This road is lit 24/7",
+                "nl": "Deze weg is 24/7 verlicht"
+              }
+            }
+          ]
+        },
+        {
           "render": {
             "en": "The maximum speed on this road is {maxspeed} km/h",
             "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u"
@@ -318,21 +355,54 @@
           ]
         },
         {
-          "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=no", "cycleway="]
-          },
           "render": {
-            "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
-            "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+            "en": "This road is made of {surface}",
+            "nl": "Deze weg is gemaakt van {surface}"
           },
           "freeform": {
-            "key": "width:carriageway",
-            "addExtraTags": [],
-            "type": "pfloat"
+            "key": "surface",
+            "addExtraTags": []
           },
+          "mappings": [
+            {
+              "if": "surface=wood",
+              "then": {
+                "en": "This street is made of wood",
+                "nl": "Deze weg is gemaakt van hout"
+              }
+            },
+            {
+              "if": "surface=concrete",
+              "then": {
+                "en": "This street is made of concrete",
+                "nl": "Deze straat is gemaakt van beton"
+              }
+            },
+            {
+              "if": "surface=cobblestone",
+              "then": {
+                "en": "This street is made of cobblestone",
+                "nl": "Deze straat is gemaakt van kasseien"
+              }
+            },
+            {
+              "if": "surface=asphalt",
+              "then": {
+                "en": "This street is made of asphalt",
+                "nl": "Deze straat is gemaakt van asfalt"
+              }
+            },
+            {
+              "if": "surface=paved",
+              "then": {
+                "en": "This street is paved",
+                "nl": "Deze straat is geplaveid"
+              }
+            }
+          ],
           "question": {
-            "en": "What is the carriage width of this road (in meters)?",
-            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
+            "en": "What is the surface of the street made from?",
+            "nl": "Waaruit is het oppervlak van de straat gemaakt?"
           }
         },
         {
@@ -395,54 +465,21 @@
           ]
         },
         {
+          "condition": {
+            "or": ["cycleway=shared_lane", "cycleway=no", "cycleway="]
+          },
           "render": {
-            "en": "This road is made of {surface}",
-            "nl": "Deze weg is gemaakt van {surface}"
+            "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+            "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
           },
           "freeform": {
-            "key": "surface",
-            "addExtraTags": []
+            "key": "width:carriageway",
+            "addExtraTags": [],
+            "type": "pfloat"
           },
-          "mappings": [
-            {
-              "if": "surface=wood",
-              "then": {
-                "en": "This street is made of wood",
-                "nl": "Deze weg is gemaakt van hout"
-              }
-            },
-            {
-              "if": "surface=concrete",
-              "then": {
-                "en": "This street is made of concrete",
-                "nl": "Deze straat is gemaakt van beton"
-              }
-            },
-            {
-              "if": "surface=cobblestone",
-              "then": {
-                "en": "This street is made of cobblestone",
-                "nl": "Deze straat is gemaakt van kasseien"
-              }
-            },
-            {
-              "if": "surface=asphalt",
-              "then": {
-                "en": "This street is made of asphalt",
-                "nl": "Deze straat is gemaakt van asfalt"
-              }
-            },
-            {
-              "if": "surface=paved",
-              "then": {
-                "en": "This street is paved",
-                "nl": "Deze straat is geplaveid"
-              }
-            }
-          ],
           "question": {
-            "en": "What is the surface of the street made from?",
-            "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+            "en": "What is the carriage width of this road (in meters)?",
+            "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
           }
         }
       ],
