@@ -7,7 +7,6 @@ import {UIEventSource} from "../UIEventSource";
 import {GeoOperations} from "../GeoOperations";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
-import {isBoolean} from "util";
 
 /**
  * Calculates which layers are available at the current location
@@ -31,42 +30,82 @@ export default class AvailableBaseLayers {
             category: "osmbasedmap"
         }
 
-
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
-    public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
-    constructor(location: UIEventSource<Loc>) {
-        const self = this;
-        this.availableEditorLayers =
-            location.map(
-                (currentLocation) => {
+    public static AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
+        const source = location.map(
+            (currentLocation) => {
 
-                    if (currentLocation === undefined) {
-                        return AvailableBaseLayers.layerOverview;
-                    }
+                if (currentLocation === undefined) {
+                    return AvailableBaseLayers.layerOverview;
+                }
 
-                    const currentLayers = self.availableEditorLayers?.data;
-                    const newLayers = AvailableBaseLayers.AvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
+                const currentLayers = source?.data; // A bit unorthodox - I know
+                const newLayers = AvailableBaseLayers.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
 
-                    if (currentLayers === undefined) {
+                if (currentLayers === undefined) {
+                    return newLayers;
+                }
+                if (newLayers.length !== currentLayers.length) {
+                    return newLayers;
+                }
+                for (let i = 0; i < newLayers.length; i++) {
+                    if (newLayers[i].name !== currentLayers[i].name) {
                         return newLayers;
                     }
-                    if (newLayers.length !== currentLayers.length) {
-                        return newLayers;
-                    }
-                    for (let i = 0; i < newLayers.length; i++) {
-                        if (newLayers[i].name !== currentLayers[i].name) {
-                            return newLayers;
-                        }
-                    }
+                }
 
-                    return currentLayers;
-                });
-
-
+                return currentLayers;
+            });
+        return source;
     }
 
-    private static AvailableLayersAt(lon: number, lat: number): BaseLayer[] {
+    public static SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
+        return AvailableBaseLayers.AvailableLayersAt(location).map(available => {
+            // First float all 'best layers' to the top
+            available.sort((a, b) => {
+                    if (a.isBest && b.isBest) {
+                        return 0;
+                    }
+                    if (!a.isBest) {
+                        return 1
+                    }
+
+                    return -1;
+                }
+            )
+
+            if (preferedCategory.data === undefined) {
+                return available[0]
+            }
+
+            let prefered: string []
+            if (typeof preferedCategory.data === "string") {
+                prefered = [preferedCategory.data]
+            } else {
+                prefered = preferedCategory.data;
+            }
+
+            prefered.reverse();
+            for (const category of prefered) {
+                //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
+                available.sort((a, b) => {
+                        if (a.category === category && b.category === category) {
+                            return 0;
+                        }
+                        if (a.category !== category) {
+                            return 1
+                        }
+
+                        return -1;
+                    }
+                )
+            }
+            return available[0]
+        })
+    }
+
+    private static CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [AvailableBaseLayers.osmCarto]
         const globalLayers = [];
         for (const layerOverviewItem of AvailableBaseLayers.layerOverview) {
@@ -146,7 +185,7 @@ export default class AvailableBaseLayers {
                 layer: leafletLayer,
                 feature: layer,
                 isBest: props.best ?? false,
-                category: props.category 
+                category: props.category
             });
         }
         return layers;

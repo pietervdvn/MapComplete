@@ -10,7 +10,8 @@
     "ja",
     "fr",
     "zh_Hant",
-    "nb_NO"
+    "nb_NO",
+    "de"
   ],
   "title": {
     "en": "Bicycle libraries",
@@ -20,7 +21,8 @@
     "ja": "自転車ライブラリ",
     "fr": "Vélothèques",
     "zh_Hant": "單車圖書館",
-    "nb_NO": "Sykkelbibliotek"
+    "nb_NO": "Sykkelbibliotek",
+    "de": "Fahrradbibliothek"
   },
   "description": {
     "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",

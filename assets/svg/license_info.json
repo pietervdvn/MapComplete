@@ -163,6 +163,18 @@
     "sources": []
   },
   {
+    "authors": [],
+    "path": "crosshair-empty.svg",
+    "license": "CC0; trivial",
+    "sources": []
+  },
+  {
+    "authors": [],
+    "path": "crosshair-locked.svg",
+    "license": "CC0; trivial",
+    "sources": []
+  },
+  {
     "authors": [
       "Dave Gandy"
     ],
@@ -204,7 +216,7 @@
     "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Media-floppy.svg",
-      " http://tango.freedesktop.org/Tango_Desktop_Project"
+      "http://tango.freedesktop.org/Tango_Desktop_Project"
     ]
   },
   {
