@@ -15,6 +15,7 @@ import UnitConfigJson from "./UnitConfigJson";
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
+   
     /**
      * The id of this layout.
      *
@@ -335,4 +336,5 @@ export interface LayoutConfigJson {
     enableGeolocation?: boolean;
     enableBackgroundLayerSelection?: boolean;
     enableShowAllQuestions?: boolean;
+    enableExportButton?: boolean;
 }
