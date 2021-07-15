@@ -22,7 +22,8 @@ export default class ShowDataLayer {
                 leafletMap: UIEventSource<L.Map>,
                 layoutToUse: UIEventSource<LayoutConfig>,
                 enablePopups = true,
-                zoomToFeatures = false) {
+                zoomToFeatures = false,
+                name?:string) {
         this._leafletMap = leafletMap;
         this._enablePopups = enablePopups;
         this._features = features;
@@ -60,6 +61,7 @@ export default class ShowDataLayer {
             }
 
             const allFeats = features.data.map(ff => ff.feature);
+            console.log("Rendering ",allFeats, "features at layer ", name)
             geoLayer = self.CreateGeojsonLayer();
             for (const feat of allFeats) {
                 if (feat === undefined) {
@@ -85,9 +87,6 @@ export default class ShowDataLayer {
                     console.error(e)
                 }
             }
-
-
-            State.state.selectedElement.ping();
         }
 
         features.addCallback(() => update());

@@ -39,6 +39,7 @@ export default class Minimap extends BaseUIElement {
         div.style.width = "100%"
         div.style.minWidth = "40px"
         div.style.minHeight = "40px"
+        div.style.position = "relative"
         const wrapper = document.createElement("div")
         wrapper.appendChild(div)
         const self = this;

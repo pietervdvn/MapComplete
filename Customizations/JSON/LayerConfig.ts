@@ -49,6 +49,7 @@ export default class LayerConfig {
     wayHandling: number;
     public readonly units: Unit[];
     public readonly deletion: DeleteConfig | null
+    public readonly allowSplit: boolean
 
     presets: {
         title: Translation,
@@ -67,6 +68,7 @@ export default class LayerConfig {
         context = context + "." + json.id;
         const self = this;
         this.id = json.id;
+        this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, context + ".name");
         
         if(json.description !== undefined){

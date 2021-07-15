@@ -25,6 +25,7 @@ import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
 import {Unit} from "../../Customizations/JSON/Denomination";
 import InputElementWrapper from "../Input/InputElementWrapper";
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
 
 /**
  * Shows the question element.
@@ -56,7 +57,9 @@ export default class TagRenderingQuestion extends Combine {
             const selection = inputElement.GetValue().data;
             if (selection) {
                 (State.state?.changes ?? new Changes())
-                    .addTag(tags.data.id, selection, tags);
+                    .applyAction(new ChangeTagAction(
+                        tags.data.id, selection, tags.data
+                    ))
             }
 
             if (options.afterSave) {

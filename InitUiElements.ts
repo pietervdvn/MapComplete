@@ -420,10 +420,10 @@ export class InitUiElements {
 
 
         const source = new FeaturePipeline(state.filteredLayers,
+            State.state.changes,
             updater,
             state.osmApiFeatureSource,
             state.layoutToUse,
-            state.changes,
             state.locationControl,
             state.selectedElement);
 

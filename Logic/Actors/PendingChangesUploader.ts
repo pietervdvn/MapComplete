@@ -9,7 +9,7 @@ export default class PendingChangesUploader {
     constructor(changes: Changes, selectedFeature: UIEventSource<any>) {
         const self = this;
         this.lastChange = new Date();
-        changes.pending.addCallback(() => {
+        changes.pendingChanges.addCallback(() => {
             self.lastChange = new Date();
 
             window.setTimeout(() => {
@@ -54,7 +54,7 @@ export default class PendingChangesUploader {
 
 
         function onunload(e) {
-            if (changes.pending.data.length == 0) {
+            if(changes.pendingChanges.data.length == 0){
                 return;
             }
             changes.flushChanges("onbeforeunload - probably closing or something similar");

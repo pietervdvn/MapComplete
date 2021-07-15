@@ -273,7 +273,8 @@
       },
       "tagRenderings": [
         "images"
-      ]
+      ],
+      "allowSplit": true
     }
   ]
 }

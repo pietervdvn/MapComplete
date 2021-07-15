@@ -20,6 +20,7 @@ import LocationInput from "../Input/LocationInput";
 import {InputElement} from "../Input/InputElement";
 import Loc from "../../Models/Loc";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -61,11 +62,6 @@ export default class SimpleAddUI extends Toggle {
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
 
-        function createNewPoint(tags: any[], location: { lat: number, lon: number }) {
-            let feature = State.state.changes.createElement(tags, location.lat, location.lon);
-            State.state.selectedElement.setData(feature);
-        }
-
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
         const addUi = new VariableUiElement(
@@ -75,7 +71,9 @@ export default class SimpleAddUI extends Toggle {
                     }
                     return SimpleAddUI.CreateConfirmButton(preset,
                         (tags, location) => {
-                            createNewPoint(tags, location)
+                            let changes =
+                                State.state.changes.applyAction(new CreateNewNodeAction(tags, location.lat, location.lon))
+                            State.state.selectedElement.setData(changes.newFeatures[0]);
                             selectedPreset.setData(undefined)
                         }, () => {
                             selectedPreset.setData(undefined)

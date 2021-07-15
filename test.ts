@@ -1,4 +1,4 @@
-import SplitAction from "./Logic/Osm/SplitAction";
+import SplitAction from "./Logic/Osm/Actions/SplitAction";
 import {GeoOperations} from "./Logic/GeoOperations";
 
 const way = {

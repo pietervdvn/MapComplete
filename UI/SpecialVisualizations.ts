@@ -126,6 +126,7 @@ export default class SpecialVisualizations {
                                 // This is a list of values
                                 idList = JSON.parse(value)
                             }
+                            
                             for (const id of idList) {
                                 features.push({
                                     freshness: new Date(),

@@ -13,6 +13,7 @@ import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import DeleteWizard from "./DeleteWizard";
+import SplitRoadWizard from "./SplitRoadWizard";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
 
@@ -66,10 +67,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             renderings.push(questionBox);
         }
 
-        const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
-        if (!hasMinimap) {
-            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
-        }
 
         if (layerConfig.deletion) {
             renderings.push(
@@ -79,6 +76,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         layerConfig.deletion
                     ))
                 ))
+        }
+
+        if (layerConfig.allowSplit) {
+            renderings.push(
+                new VariableUiElement(tags.map(tags => tags.id).map(id =>
+                    new SplitRoadWizard(id))
+                ))
+        }
+
+
+        const hasMinimap = layerConfig.tagRenderings.some(tr => tr.hasMinimap())
+        if (!hasMinimap) {
+            renderings.push(new TagRenderingAnswer(tags, SharedTagRenderings.SharedTagRendering.get("minimap")))
         }
 
         renderings.push(

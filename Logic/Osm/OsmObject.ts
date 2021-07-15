@@ -125,7 +125,7 @@ export abstract class OsmObject {
         }
         const splitted = id.split("/");
         const type = splitted[0];
-        const idN = splitted[1];
+        const idN = Number(splitted[1]);
         const src = new UIEventSource<OsmObject[]>([]);
         OsmObject.historyCache.set(id, src);
         Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${type}/${idN}/history`).then(data => {
@@ -314,20 +314,6 @@ export abstract class OsmObject {
         return this;
     }
 
-    public addTag(k: string, v: string): void {
-        if (k in this.tags) {
-            const oldV = this.tags[k];
-            if (oldV == v) {
-                return;
-            }
-            console.log("Overwriting ", oldV, " with ", v, " for key ", k)
-        }
-        this.tags[k] = v;
-        if (v === undefined || v === "") {
-            delete this.tags[k];
-        }
-        this.changed = true;
-    }
 
     abstract ChangesetXML(changesetId: string): string;
 
@@ -481,7 +467,11 @@ export class OsmWay extends OsmObject {
 
 export class OsmRelation extends OsmObject {
 
-    public members;
+    public members: {
+        type: "node" | "way" | "relation",
+        ref: number,
+        role: string
+    }[];
 
     constructor(id: number) {
         super("relation", id);

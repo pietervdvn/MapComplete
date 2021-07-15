@@ -19,6 +19,7 @@ import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
+import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -244,6 +245,9 @@ export default class State {
 
         this.allElements = new ElementStorage();
         this.changes = new Changes();
+        
+        new ChangeToElementsActor(this.changes, this.allElements)
+        
         this.osmApiFeatureSource = new OsmApiFeatureSource()
         
         new PendingChangesUploader(this.changes, this.selectedElement);

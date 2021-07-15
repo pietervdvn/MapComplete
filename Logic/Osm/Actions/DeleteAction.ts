@@ -1,9 +1,9 @@
-import {UIEventSource} from "../UIEventSource";
-import {Translation} from "../../UI/i18n/Translation";
-import Translations from "../../UI/i18n/Translations";
-import {OsmObject} from "./OsmObject";
-import State from "../../State";
-import Constants from "../../Models/Constants";
+import {UIEventSource} from "../../UIEventSource";
+import {Translation} from "../../../UI/i18n/Translation";
+import State from "../../../State";
+import {OsmObject} from "../OsmObject";
+import Translations from "../../../UI/i18n/Translations";
+import Constants from "../../../Models/Constants";
 
 export default class DeleteAction {
 
@@ -30,7 +30,7 @@ export default class DeleteAction {
      * Does actually delete the feature; returns the event source 'this.isDeleted'
      * If deletion is not allowed, triggers the callback instead
      */
-    public DoDelete(reason: string, onNotAllowed : () => void): UIEventSource<boolean> {
+    public DoDelete(reason: string, onNotAllowed : () => void): void {
         const isDeleted = this.isDeleted
         const self = this;
         let deletionStarted = false;
@@ -75,8 +75,6 @@ export default class DeleteAction {
 
             }
         )
-
-        return isDeleted;
     }
 
     /**

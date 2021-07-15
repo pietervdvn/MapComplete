@@ -30,8 +30,10 @@
   "split": {
     "split": "Split",
     "cancel": "Cancel",
+    "inviteToSplit": "Split this road",
     "loginToSplit": "You must be logged in to split a road",
-    "splitTitle": "Choose on the map where to split this road"
+    "splitTitle": "Choose on the map where to split this road",
+    "hasBeenSplit": "This way has been split"
   },
   "delete": {
     "delete": "Delete",
