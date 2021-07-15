@@ -99,7 +99,9 @@
             "en": "What kind of cycleway is there?",
             "nl": "Wat voor fietspad is hier?"
           },
-          "condition": "highway!=cycleway",
+          "condition": {
+            "and": ["highway!=cycleway", "highway!=path"]
+          },
           "mappings": [
             {
               "if": "cycleway=shared_lane",
@@ -536,7 +538,9 @@
             "en": "Is there a cycleway?",
             "nl": "Is er een fietspad?"
           },
-          "condition": "highway!=cycleway",
+          "condition": {
+            "and": ["highway!=cycleway", "highway!=path"]
+          },
           "mappings": [
             {
               "if": "cycleway=shared_lane",
