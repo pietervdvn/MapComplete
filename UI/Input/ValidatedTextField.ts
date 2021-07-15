@@ -282,7 +282,7 @@ export default class ValidatedTextField {
                 })
             )
             unitDropDown.GetValue().setData(unit.defaultDenom)
-            unitDropDown.SetStyle("width: min-content")
+            unitDropDown.SetClass("w-min")
 
             input = new CombinedInputElement(
                 input,

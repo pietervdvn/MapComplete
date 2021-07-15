@@ -1,11 +1,13 @@
 import * as editorlayerindex from "../../assets/editor-layer-index.json"
 import BaseLayer from "../../Models/BaseLayer";
 import * as L from "leaflet";
+import {TileLayer} from "leaflet";
 import * as X from "leaflet-providers";
 import {UIEventSource} from "../UIEventSource";
 import {GeoOperations} from "../GeoOperations";
-import {TileLayer} from "leaflet";
 import {Utils} from "../../Utils";
+import Loc from "../../Models/Loc";
+import {isBoolean} from "util";
 
 /**
  * Calculates which layers are available at the current location
@@ -24,14 +26,16 @@ export default class AvailableBaseLayers {
                 false, false),
             feature: null,
             max_zoom: 19,
-            min_zoom: 0
+            min_zoom: 0,
+            isBest: false, // This is a lie! Of course OSM is the best map! (But not in this context)
+            category: "osmbasedmap"
         }
 
 
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
     public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
-    constructor(location: UIEventSource<{ lat: number, lon: number, zoom: number }>) {
+    constructor(location: UIEventSource<Loc>) {
         const self = this;
         this.availableEditorLayers =
             location.map(
@@ -140,7 +144,9 @@ export default class AvailableBaseLayers {
                 min_zoom: props.min_zoom ?? 1,
                 name: props.name,
                 layer: leafletLayer,
-                feature: layer
+                feature: layer,
+                isBest: props.best ?? false,
+                category: props.category 
             });
         }
         return layers;
@@ -152,15 +158,16 @@ export default class AvailableBaseLayers {
         function l(id: string, name: string): BaseLayer {
             try {
                 const layer: any = () => L.tileLayer.provider(id, undefined);
-                const baseLayer: BaseLayer = {
+                return {
                     feature: null,
                     id: id,
                     name: name,
                     layer: layer,
                     min_zoom: layer.minzoom,
-                    max_zoom: layer.maxzoom
+                    max_zoom: layer.maxzoom,
+                    category: "osmbasedmap",
+                    isBest: false
                 }
-                return baseLayer
             } catch (e) {
                 console.error("Could not find provided layer", name, e);
                 return null;

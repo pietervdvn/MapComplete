@@ -7,19 +7,43 @@ import SpecialVisualizations, {SpecialVisualization} from "./SpecialVisualizatio
 import {Utils} from "../Utils";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import Combine from "./Base/Combine";
+import BaseUIElement from "./BaseUIElement";
 
 export class SubstitutedTranslation extends VariableUiElement {
 
     public constructor(
         translation: Translation,
-        tagsSource: UIEventSource<any>) {
+        tagsSource: UIEventSource<any>,
+        mapping: Map<string, BaseUIElement> = undefined) {
+
+        const extraMappings: SpecialVisualization[] = [];
+
+        mapping?.forEach((value, key) => {
+            console.log("KV:", key, value)
+            extraMappings.push(
+                {
+                    funcName: key,
+                    constr: (() => {
+                        return value
+                    }),
+                    docs: "Dynamically injected input element",
+                    args: [],
+                    example: ""
+                }
+            )
+        })
+
         super(
             Locale.language.map(language => {
-                const txt = translation.textFor(language)
+                let txt = translation.textFor(language);
                 if (txt === undefined) {
                     return undefined
                 }
-                return new Combine(SubstitutedTranslation.ExtractSpecialComponents(txt).map(
+                mapping?.forEach((_, key) => {
+                    txt = txt.replace(new RegExp(`{${key}}`, "g"), `{${key}()}`)
+                })
+
+                return new Combine(SubstitutedTranslation.ExtractSpecialComponents(txt, extraMappings).map(
                     proto => {
                         if (proto.fixed !== undefined) {
                             return new VariableUiElement(tagsSource.map(tags => Utils.SubstituteKeys(proto.fixed, tags)));
@@ -36,30 +60,35 @@ export class SubstitutedTranslation extends VariableUiElement {
             })
         )
 
-
         this.SetClass("w-full")
     }
 
 
-    public static ExtractSpecialComponents(template: string): {
-        fixed?: string, special?: {
+    public static ExtractSpecialComponents(template: string, extraMappings: SpecialVisualization[] = []): {
+        fixed?: string,
+        special?: {
             func: SpecialVisualization,
             args: string[],
             style: string
         }
     }[] {
 
-        for (const knownSpecial of SpecialVisualizations.specialVisualizations) {
+        if (extraMappings.length > 0) {
+
+            console.log("Extra mappings are", extraMappings)
+        }
+
+        for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
 
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`);
             if (matched != null) {
 
                 // We found a special component that should be brought to live
-                const partBefore = SubstitutedTranslation.ExtractSpecialComponents(matched[1]);
+                const partBefore = SubstitutedTranslation.ExtractSpecialComponents(matched[1], extraMappings);
                 const argument = matched[2].trim();
                 const style = matched[3]?.substring(1) ?? ""
-                const partAfter = SubstitutedTranslation.ExtractSpecialComponents(matched[4]);
+                const partAfter = SubstitutedTranslation.ExtractSpecialComponents(matched[4], extraMappings);
                 const args = knownSpecial.args.map(arg => arg.defaultValue ?? "");
                 if (argument.length > 0) {
                     const realArgs = argument.split(",").map(str => str.trim());
@@ -73,11 +102,13 @@ export class SubstitutedTranslation extends VariableUiElement {
                 }
 
                 let element;
-                element =  {special:{
-                    args: args,
-                    style: style,
-                    func: knownSpecial
-                }}
+                element = {
+                    special: {
+                        args: args,
+                        style: style,
+                        func: knownSpecial
+                    }
+                }
                 return [...partBefore, element, ...partAfter]
             }
         }

@@ -1084,6 +1084,68 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap."
     },
+    "openwindpowermap": {
+        "title": "OpenWindPowerMap",
+        "description": "A map for showing and editing wind turbines.",
+        "layers": {
+            "0": {
+                "name": "wind turbine",
+                "title": {
+                    "render": "wind turbine",
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "0": {
+                        "render": "The power output of this wind turbine is {generator:output:electricity}.",
+                        "question": "What is the power output of this wind turbine? (e.g. 2.3 MW)"
+                    },
+                    "1": {
+                        "render": "This wind turbine is operated by {operator}.",
+                        "question": "Who operates this wind turbine?"
+                    },
+                    "2": {
+                        "render": "The total height (including rotor radius) of this wind turbine is {height} metres.",
+                        "question": "What is the total height of this wind turbine (including rotor radius), in metres?"
+                    },
+                    "3": {
+                        "render": "The rotor diameter of this wind turbine is {rotor:diameter} metres.",
+                        "question": "What is the rotor diameter of this wind turbine, in metres?"
+                    },
+                    "4": {
+                        "render": "This wind turbine went into operation on/in {start_date}.",
+                        "question": "When did this wind turbine go into operation?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "wind turbine"
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatts"
+                    },
+                    "1": {
+                        "human": " kilowatts"
+                    },
+                    "2": {
+                        "human": " watts"
+                    },
+                    "3": {
+                        "human": " gigawatts"
+                    }
+                }
+            }
+        }
+    },
     "personal": {
         "title": "Personal theme",
         "description": "Create a personal theme based on all the available layers of all themes"

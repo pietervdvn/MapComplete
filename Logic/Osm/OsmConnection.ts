@@ -30,7 +30,7 @@ export default class UserDetails {
 
 export class OsmConnection {
 
-    public static readonly _oauth_configs = {
+    public static readonly oauth_configs = {
         "osm": {
             oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
             oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
@@ -66,7 +66,7 @@ export class OsmConnection {
                 osmConfiguration: "osm" | "osm-test" = 'osm'
     ) {
         this._singlePage = singlePage;
-        this._oauth_config = OsmConnection._oauth_configs[osmConfiguration] ?? OsmConnection._oauth_configs.osm;
+        this._oauth_config = OsmConnection.oauth_configs[osmConfiguration] ?? OsmConnection.oauth_configs.osm;
         console.debug("Using backend", this._oauth_config.url)
         OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
@@ -110,8 +110,10 @@ export class OsmConnection {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML);
+        generateChangeXML: (csid: string) => string,
+        whenDone: (csId: string) => void,
+        onFail: () => {}) {
+        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

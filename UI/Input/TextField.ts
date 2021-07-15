@@ -36,11 +36,11 @@ export class TextField extends InputElement<string> {
         this.SetClass("form-text-field")
         let inputEl: HTMLElement
         if (options.htmlType === "area") {
+            this.SetClass("w-full box-border max-w-full")
             const el = document.createElement("textarea")
             el.placeholder = placeholder
             el.rows = options.textAreaRows
             el.cols = 50
-            el.style.cssText = "max-width: 100%; width: 100%; box-sizing: border-box"
             inputEl = el;
         } else {
             const el = document.createElement("input")

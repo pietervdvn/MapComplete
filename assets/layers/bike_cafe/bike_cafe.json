@@ -117,7 +117,8 @@
             "de": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann",
             "it": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡为每个人提供打气筒",
-            "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬"
+            "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬",
+            "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования"
           }
         },
         {
@@ -130,7 +131,8 @@
             "de": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann",
             "it": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡不为每个人提供打气筒",
-            "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬"
+            "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬",
+            "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования"
           }
         }
       ]
@@ -144,7 +146,8 @@
         "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
         "it": "Ci sono degli strumenti per riparare la propria bicicletta?",
         "zh_Hans": "这里有供你修车用的工具吗？",
-        "zh_Hant": "這裡是否有工具修理你的單車嗎？"
+        "zh_Hant": "這裡是否有工具修理你的單車嗎？",
+        "ru": "Есть ли здесь инструменты для починки вашего велосипеда?"
       },
       "mappings": [
         {
@@ -157,7 +160,8 @@
             "de": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an",
             "it": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te",
             "zh_Hans": "这家自行车咖啡为DIY修理者提供工具",
-            "zh_Hant": "這個單車咖啡廳提供工具讓你修理"
+            "zh_Hant": "這個單車咖啡廳提供工具讓你修理",
+            "ru": "В этом велосипедном кафе есть инструменты для починки своего велосипеда"
           }
         },
         {
@@ -170,7 +174,8 @@
             "de": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an",
             "it": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te",
             "zh_Hans": "这家自行车咖啡不为DIY修理者提供工具",
-            "zh_Hant": "這個單車咖啡廳並沒有提供工具讓你修理"
+            "zh_Hant": "這個單車咖啡廳並沒有提供工具讓你修理",
+            "ru": "В этом велосипедном кафе нет инструментов для починки своего велосипеда"
           }
         }
       ]
@@ -184,7 +189,8 @@
         "de": "Repariert dieses Fahrrad-Café Fahrräder?",
         "it": "Questo caffè in bici ripara le bici?",
         "zh_Hans": "这家自行车咖啡t提供修车服务吗？",
-        "zh_Hant": "這個單車咖啡廳是否能修理單車？"
+        "zh_Hant": "這個單車咖啡廳是否能修理單車？",
+        "ru": "Есть ли услуги ремонта велосипедов в этом велосипедном кафе?"
       },
       "mappings": [
         {
@@ -197,7 +203,8 @@
             "de": "Dieses Fahrrad-Café repariert Fahrräder",
             "it": "Questo caffè in bici ripara le bici",
             "zh_Hans": "这家自行车咖啡可以修车",
-            "zh_Hant": "這個單車咖啡廳修理單車"
+            "zh_Hant": "這個單車咖啡廳修理單車",
+            "ru": "В этом велосипедном кафе есть услуги ремонта велосипедов"
           }
         },
         {
@@ -210,7 +217,8 @@
             "de": "Dieses Fahrrad-Café repariert keine Fahrräder",
             "it": "Questo caffè in bici non ripara le bici",
             "zh_Hans": "这家自行车咖啡不能修车",
-            "zh_Hant": "這個單車咖啡廳並不修理單車"
+            "zh_Hant": "這個單車咖啡廳並不修理單車",
+            "ru": "В этом велосипедном кафе нет услуг ремонта велосипедов"
           }
         }
       ]
@@ -275,7 +283,8 @@
         "fr": "Quand ce Café vélo est-t-il ouvert ?",
         "it": "Quando è aperto questo caffè in bici?",
         "zh_Hans": "这家自行车咖啡什么时候开门营业？",
-        "zh_Hant": "何時這個單車咖啡廳營運？"
+        "zh_Hant": "何時這個單車咖啡廳營運？",
+        "ru": "Каков режим работы этого велосипедного кафе?"
       },
       "render": "{opening_hours_table(opening_hours)}",
       "freeform": {

@@ -46,7 +46,19 @@ export interface TagRenderingConfigJson {
          **/
         addExtraTags?: string[];
 
-        
+        /**
+         * When set, influences the way a question is asked.
+         * Instead of showing a full-widht text field, the text field will be shown within the rendering of the question.
+         * 
+         * This combines badly with special input elements, as it'll distort the layout.
+         */
+        inline?: boolean
+
+        /**
+         * default value to enter if no previous tagging is present.
+         * Normally undefined (aka do not enter anything)
+         */
+        default?: string
     },
 
     /**

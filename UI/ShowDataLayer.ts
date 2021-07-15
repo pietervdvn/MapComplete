@@ -80,9 +80,7 @@ export default class ShowDataLayer {
 
             if (zoomToFeatures) {
                 try {
-
-                    mp.fitBounds(geoLayer.getBounds())
-
+                    mp.fitBounds(geoLayer.getBounds(), {animate: false})
                 } catch (e) {
                     console.error(e)
                 }

@@ -369,7 +369,6 @@ export default class SpecialVisualizations {
                                 if (unit === undefined) {
                                     return value;
                                 }
-
                                 return unit.asHumanLongValue(value);
 
                             },
@@ -379,6 +378,7 @@ export default class SpecialVisualizations {
             }
 
         ]
+    
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     private static GenHelpMessage() {
 

@@ -44,7 +44,6 @@ export default class Minimap extends BaseUIElement {
         const self = this;
         // @ts-ignore
         const resizeObserver = new ResizeObserver(_ => {
-            console.log("Change in size detected!")
             self.InitMap();
             self.leafletMap?.data?.invalidateSize()
         });
@@ -82,7 +81,9 @@ export default class Minimap extends BaseUIElement {
             scrollWheelZoom: this._allowMoving,
             doubleClickZoom: this._allowMoving,
             keyboard: this._allowMoving,
-            touchZoom: this._allowMoving
+            touchZoom: this._allowMoving,
+            zoomAnimation: this._allowMoving,
+            fadeAnimation: this._allowMoving
         });
 
         map.setMaxBounds(
