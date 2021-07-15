@@ -7,6 +7,8 @@ import Translations from "../i18n/Translations";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
 import BaseUIElement from "../BaseUIElement";
 import {Translation} from "../i18n/Translation";
+import {SubtleButton} from "../Base/SubtleButton";
+import {exportAsGeoJson} from "../GeoJsonExport";
 
 /**
  * Shows the panel with all layers and a toggle for each of them
@@ -74,6 +76,9 @@ export default class LayerSelection extends Combine {
             );
         }
 
+        const downloadButton = new SubtleButton("./assets/svg/floppy.svg", "Download visible data as geojson")
+        downloadButton.onClick(() => exportAsGeoJson(State.state.featurePipeline)) // TODO: Define this
+        checkboxes.push(downloadButton)
 
         super(checkboxes)
         this.SetStyle("display:flex;flex-direction:column;")

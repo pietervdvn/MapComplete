@@ -447,6 +447,14 @@ export class Utils {
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+
+    public static setDefaults(options, defaults){
+        let result = {};
+        for (let key of defaults){
+            result[key] = key in options ? options[key] : defaults[key];
+        }
+        return result;
+    }
 }
 
 export interface TileRange {
