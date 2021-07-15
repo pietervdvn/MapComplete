@@ -69,6 +69,14 @@
             "en": "Crossing with traffic signals",
             "nl": "Oversteekplaats met verkeerslichten"
           }
+        },
+        {
+          "if": "crossing=zebra",
+          "then": {
+            "en": "Zebra crossing",
+            "nl": "Zebrapad"
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -159,19 +167,19 @@
       },
       "mappings": [
         {
-            "if": "button_operated=yes",
-            "then": {
-              "en": "This traffic light has a button to request green light",
-              "nl": "Dit verkeerslicht heeft een knop voor groen licht"
-            }
-          },
-          {
-            "if": "button_operated=no",
-            "then": {
-              "en": "This traffic light does not have a button to request green light",
-              "nl": "Dit verkeerlicht heeft niet een knop voor groen licht"
-            }
+          "if": "button_operated=yes",
+          "then": {
+            "en": "This traffic light has a button to request green light",
+            "nl": "Dit verkeerslicht heeft een knop voor groen licht"
           }
+        },
+        {
+          "if": "button_operated=no",
+          "then": {
+            "en": "This traffic light does not have a button to request green light",
+            "nl": "Dit verkeerlicht heeft niet een knop voor groen licht"
+          }
+        }
       ]
     }
   ]
