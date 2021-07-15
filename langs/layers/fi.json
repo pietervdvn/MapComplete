@@ -1,0 +1,103 @@
+{
+    "bench": {
+        "name": "Penkit",
+        "title": {
+            "render": "Penkki"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Selkänoja",
+                "mappings": {
+                    "0": {
+                        "then": "Selkänoja: kyllä"
+                    },
+                    "1": {
+                        "then": "Selkänoja: ei"
+                    }
+                }
+            },
+            "3": {
+                "render": "Materiaali: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Materiaali: puu"
+                    },
+                    "2": {
+                        "then": "Materiaali: kivi"
+                    },
+                    "3": {
+                        "then": "Materiaali: betoni"
+                    },
+                    "4": {
+                        "then": "Materiaali: muovi"
+                    },
+                    "5": {
+                        "then": "Materiaali: teräs"
+                    }
+                }
+            },
+            "5": {
+                "render": "Väri: {colour}",
+                "mappings": {
+                    "0": {
+                        "then": "Väri: ruskea"
+                    },
+                    "1": {
+                        "then": "Väri: vihreä"
+                    },
+                    "2": {
+                        "then": "Väri: harmaa"
+                    },
+                    "3": {
+                        "then": "Väri: valkoinen"
+                    },
+                    "4": {
+                        "then": "Väri: punainen"
+                    },
+                    "5": {
+                        "then": "Väri: musta"
+                    },
+                    "6": {
+                        "then": "Väri: sininen"
+                    },
+                    "7": {
+                        "then": "Väri: keltainen"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Penkki",
+                "description": "Lisää uusi penkki"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "title": {
+            "render": "Penkki"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "5": {
+                "render": "{access}"
+            }
+        }
+    },
+    "bike_repair_station": {
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        },
+        "presets": {
+            "0": {
+                "title": "Pyöräpumppu"
+            }
+        }
+    }
+}

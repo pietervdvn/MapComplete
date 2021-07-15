@@ -4,6 +4,22 @@ import {UIEventSource} from "../UIEventSource";
  * UIEventsource-wrapper around localStorage
  */
 export class LocalStorageSource {
+    
+    static GetParsed<T>(key: string, defaultValue : T) : UIEventSource<T>{
+        return LocalStorageSource.Get(key).map(
+            str => {
+                if(str === undefined){
+                    return defaultValue
+                }
+                try{
+                    return JSON.parse(str)
+                }catch{
+                    return defaultValue
+                }
+            }, [], 
+            value => JSON.stringify(value)
+        )
+    }
 
     static Get(key: string, defaultValue: string = undefined): UIEventSource<string> {
         try {

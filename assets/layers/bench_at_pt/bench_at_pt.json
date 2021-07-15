@@ -37,7 +37,8 @@
       "zh_Hans": "长椅",
       "nb_NO": "Benk",
       "zh_Hant": "長椅",
-      "pt_BR": "Banco"
+      "pt_BR": "Banco",
+      "fi": "Penkki"
     },
     "mappings": [
       {
@@ -96,7 +97,8 @@
         "id": "{name}",
         "zh_Hans": "{name}",
         "zh_Hant": "{name}",
-        "pt_BR": "{name}"
+        "pt_BR": "{name}",
+        "fi": "{name}"
       },
       "freeform": {
         "key": "name"

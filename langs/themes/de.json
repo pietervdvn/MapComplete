@@ -71,7 +71,7 @@
                         "render": "Erstellt von {artist_name}"
                     },
                     "3": {
-                        "question": "Auf welcher Website gibt es mehr Informationen über dieses Kunstwerk?",
+                        "question": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
                         "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
                     },
                     "4": {
@@ -86,6 +86,9 @@
         "title": "Sitzbänke",
         "shortDescription": "Eine Karte aller Sitzbänke",
         "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
+    },
+    "bicyclelib": {
+        "title": "Fahrradbibliothek"
     },
     "bookcases": {
         "title": "Öffentliche Bücherschränke Karte",

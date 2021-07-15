@@ -7,6 +7,9 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {Tag} from "./Logic/Tags/Tag";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {Translation} from "./UI/i18n/Translation";
+import LocationInput from "./UI/Input/LocationInput";
+import Loc from "./Models/Loc";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
 /*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -148,19 +151,15 @@ function TestMiniMap() {
     featureSource.ping()
 }
 //*/
-QueryParameters.GetQueryParameter("test", "true").setData("true")
-State.state= new State(undefined)
-const id = "node/5414688303"
-State.state.allElements.addElementById(id, new UIEventSource<any>({id: id}))
-new Combine([
-    new DeleteWizard(id, {
-        noDeleteOptions: [
-            {
-                if:[ new Tag("access","private")],
-                then: new Translation({
-                    en: "Very private! Delete now or me send lawfull lawyer"
-                })
-            }
-        ]
-    }),
-]).AttachTo("maindiv")
+
+const li = new LocationInput({
+    preferCategory:"photo",
+    centerLocation:
+        new UIEventSource<Loc>({
+            lat: 51.21576, lon: 3.22001, zoom: 19
+        })
+})
+    li.SetStyle("height: 20rem")
+        .AttachTo("maindiv")
+
+new VariableUiElement(li.GetValue().map(v => JSON.stringify(v, null, "  "))).AttachTo("extradiv")

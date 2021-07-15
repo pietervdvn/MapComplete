@@ -173,6 +173,18 @@
     "sources": []
   },
   {
+    "authors": [],
+    "path": "crosshair-empty.svg",
+    "license": "CC0; trivial",
+    "sources": []
+  },
+  {
+    "authors": [],
+    "path": "crosshair-locked.svg",
+    "license": "CC0; trivial",
+    "sources": []
+  },
+  {
     "authors": [
       "Dave Gandy"
     ],
@@ -214,7 +226,7 @@
     "license": "CC0",
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Media-floppy.svg",
-      " http://tango.freedesktop.org/Tango_Desktop_Project"
+      "http://tango.freedesktop.org/Tango_Desktop_Project"
     ]
   },
   {
@@ -591,6 +603,16 @@
     "license": "Logo; All rights reserved",
     "sources": [
       "https://www.mapillary.com/"
+    ]
+  },
+  {
+    "authors": [
+      "The Tango! Desktop Project"
+    ],
+    "path": "floppy.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Media-floppy.svg"
     ]
   }
 ]

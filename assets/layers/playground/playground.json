@@ -93,7 +93,8 @@
             "nl": "De ondergrond bestaat uit <b>houtsnippers</b>",
             "en": "The surface consist of <b>woodchips</b>",
             "it": "La superficie consiste di <b>trucioli di legno</b>",
-            "de": "Die Oberfläche besteht aus <b>Holzschnitzeln</b>"
+            "de": "Die Oberfläche besteht aus <b>Holzschnitzeln</b>",
+            "ru": "Покрытие из <b>щепы</b>"
           }
         },
         {
@@ -154,7 +155,8 @@
         "en": "Is this playground lit at night?",
         "it": "È illuminato di notte questo parco giochi?",
         "fr": "Ce terrain de jeux est-il éclairé la nuit ?",
-        "de": "Ist dieser Spielplatz nachts beleuchtet?"
+        "de": "Ist dieser Spielplatz nachts beleuchtet?",
+        "ru": "Эта игровая площадка освещается ночью?"
       },
       "mappings": [
         {
@@ -163,7 +165,8 @@
             "nl": "Deze speeltuin is 's nachts verlicht",
             "en": "This playground is lit at night",
             "it": "Questo parco giochi è illuminato di notte",
-            "de": "Dieser Spielplatz ist nachts beleuchtet"
+            "de": "Dieser Spielplatz ist nachts beleuchtet",
+            "ru": "Эта детская площадка освещается ночью"
           }
         },
         {
@@ -172,7 +175,8 @@
             "nl": "Deze speeltuin is 's nachts niet verlicht",
             "en": "This playground is not lit at night",
             "it": "Questo parco giochi non è illuminato di notte",
-            "de": "Dieser Spielplatz ist nachts nicht beleuchtet"
+            "de": "Dieser Spielplatz ist nachts nicht beleuchtet",
+            "ru": "Эта детская площадка не освещается ночью"
           }
         }
       ]
@@ -189,7 +193,8 @@
         "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
         "en": "What is the minimum age required to access this playground?",
         "it": "Qual è l’età minima per accedere a questo parco giochi?",
-        "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?"
+        "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
+        "ru": "С какого возраста доступна эта детская площадка?"
       },
       "freeform": {
         "key": "min_age",
@@ -201,7 +206,8 @@
         "nl": "Toegankelijk tot {max_age}",
         "en": "Accessible to kids of at most {max_age}",
         "it": "Accessibile ai bambini di età inferiore a {max_age}",
-        "fr": "Accessible aux enfants de {max_age} au maximum"
+        "fr": "Accessible aux enfants de {max_age} au maximum",
+        "ru": "Доступно детям до {max_age}"
       },
       "question": {
         "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -340,7 +346,8 @@
         "en": "Is this playground accessible to wheelchair users?",
         "fr": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?",
         "de": "Ist dieser Spielplatz für Rollstuhlfahrer zugänglich?",
-        "it": "Il campetto è accessibile a persone in sedia a rotelle?"
+        "it": "Il campetto è accessibile a persone in sedia a rotelle?",
+        "ru": "Доступна ли детская площадка пользователям кресел-колясок?"
       },
       "mappings": [
         {
@@ -350,7 +357,8 @@
             "en": "Completely accessible for wheelchair users",
             "fr": "Entièrement accessible aux personnes en fauteuil roulant",
             "de": "Vollständig zugänglich für Rollstuhlfahrer",
-            "it": "Completamente accessibile in sedia a rotelle"
+            "it": "Completamente accessibile in sedia a rotelle",
+            "ru": "Полностью доступна пользователям кресел-колясок"
           }
         },
         {
@@ -360,7 +368,8 @@
             "en": "Limited accessibility for wheelchair users",
             "fr": "Accessibilité limitée pour les personnes en fauteuil roulant",
             "de": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer",
-            "it": "Accesso limitato in sedia a rotelle"
+            "it": "Accesso limitato in sedia a rotelle",
+            "ru": "Частично доступна пользователям кресел-колясок"
           }
         },
         {
@@ -370,7 +379,8 @@
             "en": "Not accessible for wheelchair users",
             "fr": "Non accessible aux personnes en fauteuil roulant",
             "de": "Nicht zugänglich für Rollstuhlfahrer",
-            "it": "Non accessibile in sedia a rotelle"
+            "it": "Non accessibile in sedia a rotelle",
+            "ru": "Недоступна пользователям кресел-колясок"
           }
         }
       ]
@@ -385,7 +395,8 @@
         "nl": "Op welke uren is deze speeltuin toegankelijk?",
         "en": "When is this playground accessible?",
         "fr": "Quand ce terrain de jeux est-il accessible ?",
-        "it": "Quando si può accedere a questo campetto?"
+        "it": "Quando si può accedere a questo campetto?",
+        "ru": "Когда открыта эта игровая площадка?"
       },
       "mappings": [
         {
@@ -394,7 +405,8 @@
             "nl": "Van zonsopgang tot zonsondergang",
             "en": "Accessible from sunrise till sunset",
             "fr": "Accessible du lever au coucher du soleil",
-            "it": "Si può accedere dall'alba al tramonto"
+            "it": "Si può accedere dall'alba al tramonto",
+            "ru": "Открыто от рассвета до заката"
           }
         },
         {
