@@ -214,7 +214,7 @@
             "addExtraTags": []
           },
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=lane"]
+            "or": ["cycleway=shared_lane", "cycleway=lane", "cycleway=track"]
           },
           "mappings": [
             {
@@ -319,7 +319,7 @@
         },
         {
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway="]
+            "or": ["cycleway=shared_lane", "cycleway=no", "cycleway="]
           },
           "render": {
             "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
