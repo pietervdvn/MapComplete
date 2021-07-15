@@ -594,5 +594,15 @@
     "sources": [
       "https://www.mapillary.com/"
     ]
+  },
+  {
+    "authors": [
+      "The Tango! Desktop Project"
+    ],
+    "path": "floppy.svg",
+    "license": "CC0",
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Media-floppy.svg"
+    ]
   }
 ]

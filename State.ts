@@ -19,6 +19,7 @@ import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
+import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -95,6 +96,7 @@ export default class State {
     public readonly featureSwitchIsDebugging: UIEventSource<boolean>;
     public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>;
     public readonly featureSwitchApiURL: UIEventSource<string>;
+    public readonly featurePipeline: FeaturePipeline;
 
 
     /**

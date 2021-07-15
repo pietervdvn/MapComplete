@@ -147,7 +147,8 @@
     "loginOnlyNeededToEdit": "if you want to edit the map",
     "layerSelection": {
       "zoomInToSeeThisLayer": "Zoom in to see this layer",
-      "title": "Select layers"
+      "title": "Select layers",
+      "downloadGeojson": "Download layer features as geojson"
     },
     "weekdays": {
       "abbreviations": {
