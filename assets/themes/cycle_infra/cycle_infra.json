@@ -21,6 +21,7 @@
   "startZoom": 11,
   "widenFactor": 0.05,
   "socialImage": "",
+  "enableDownload": true,
   "layers": [
     {
       "id": "cycleways",
