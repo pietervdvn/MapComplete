@@ -77,7 +77,7 @@ export default class LayerSelection extends Combine {
         }
 
         const downloadButton = new SubtleButton("./assets/svg/floppy.svg", "Download visible data as geojson")
-        downloadButton.onClick(() => exportAsGeoJson(State.state.featurePipeline)) // TODO: Define this
+        downloadButton.onClick(() => exportAsGeoJson(State.state.featurePipeline))
         checkboxes.push(downloadButton)
 
         super(checkboxes)

@@ -449,11 +449,10 @@ export class Utils {
     }
 
     public static setDefaults(options, defaults){
-        let result = {};
-        for (let key of defaults){
-            result[key] = key in options ? options[key] : defaults[key];
+        for (let key in defaults){
+            if (!(key in options)) options[key] = defaults[key];
         }
-        return result;
+        return options;
     }
 }
 

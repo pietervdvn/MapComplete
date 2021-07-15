@@ -1,5 +1,5 @@
 {
-    "defaultSeverity": "error",
+    "defaultSeverity": "warn",
     "extends": [
         "tslint:recommended",
         "tslint-no-circular-imports"
