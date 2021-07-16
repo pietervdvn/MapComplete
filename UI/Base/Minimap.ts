@@ -82,7 +82,7 @@ export default class Minimap extends BaseUIElement {
             doubleClickZoom: this._allowMoving,
             keyboard: this._allowMoving,
             touchZoom: this._allowMoving,
-            zoomAnimation: this._allowMoving,
+          // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
             fadeAnimation: this._allowMoving
         });
 
