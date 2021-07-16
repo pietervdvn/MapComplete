@@ -427,6 +427,8 @@ export class InitUiElements {
             state.locationControl,
             state.selectedElement);
 
+        State.state.featurePipeline = source;
+
         new ShowDataLayer(source.features, State.state.leafletMap, State.state.layoutToUse);
 
         const selectedFeatureHandler = new SelectedFeatureHandler(Hash.hash, State.state.selectedElement, source, State.state.osmApiFeatureSource);
