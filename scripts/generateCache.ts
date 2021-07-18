@@ -88,13 +88,24 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
 
             await ScriptUtils.DownloadJSON(url)
                 .then(json => {
+                        if (json.elements.length === 0) {
+                            console.log("Got an empty response!")
+                            if ((<string>json.remark ?? "").startsWith("runtime error")) {
+                                console.error("Got a runtime error: ", json.remark)
+                                failed++;
+                                return
+                            }
+
+                        }
+
+
                         console.log("Got the response - writing to ", filename)
                         writeFileSync(filename, JSON.stringify(json, null, "  "));
                     }
                 )
                 .catch(err => {
                     console.log(url)
-                    console.log("Could not download - probably hit the rate limit; waiting a bit. ("+err+")")
+                    console.log("Could not download - probably hit the rate limit; waiting a bit. (" + err + ")")
                     failed++;
                     return ScriptUtils.sleep(60000).then(() => console.log("Waiting is done"))
                 })
@@ -143,7 +154,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig,
 
             // We read the raw OSM-file and convert it to a geojson
             const rawOsm = JSON.parse(readFileSync(filename, "UTF8"))
- 
+
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm);
             const osmTime = new Date(rawOsm.osm3s.timestamp_osm_base);
@@ -168,7 +179,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig,
             // Extract the relationship information
             const relations = ExtractRelations.BuildMembershipTable(ExtractRelations.GetRelationElements(rawOsm))
 
-            MetaTagging.addMetatags(featuresFreshness, new UIEventSource<{feature: any; freshness: Date}[]>(featuresFreshness) , relations, theme.layers, false);
+            MetaTagging.addMetatags(featuresFreshness, new UIEventSource<{ feature: any; freshness: Date }[]>(featuresFreshness), relations, theme.layers, false);
 
 
             for (const feature of geojson.features) {
@@ -192,7 +203,7 @@ async function postProcess(targetdir: string, r: TileRange, theme: LayoutConfig,
                 delete feature["bbox"]
             }
 
-            const targetPath = geoJsonName(targetdir+".unfiltered", x, y, r.zoomlevel)
+            const targetPath = geoJsonName(targetdir + ".unfiltered", x, y, r.zoomlevel)
             // This is the geojson file containing all features
             writeFileSync(targetPath, JSON.stringify(geojson, null, " "))
 
@@ -204,7 +215,7 @@ async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfi
     const z = r.zoomlevel;
     for (let x = r.xstart; x <= r.xend; x++) {
         for (let y = r.ystart; y <= r.yend; y++) {
-            const file = readFileSync(geoJsonName(targetdir+".unfiltered", x, y, z), "UTF8")
+            const file = readFileSync(geoJsonName(targetdir + ".unfiltered", x, y, z), "UTF8")
 
             for (const layer of theme.layers) {
                 if (!layer.source.isOsmCacheLayer) {
@@ -222,7 +233,7 @@ async function splitPerLayer(targetdir: string, r: TileRange, theme: LayoutConfi
                         return true;
                     })
                 const new_path = geoJsonName(targetdir + "_" + layer.id, x, y, z);
-                console.log(new_path, " has ", geojson.features.length, " features after filtering (dropped ", oldLength - geojson.features.length,")" )
+                console.log(new_path, " has ", geojson.features.length, " features after filtering (dropped ", oldLength - geojson.features.length, ")")
                 if (geojson.features.length == 0) {
                     console.log("Not writing geojson file as it is empty", new_path)
                     continue;
