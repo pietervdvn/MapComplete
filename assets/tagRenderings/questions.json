@@ -123,5 +123,41 @@
   "all_tags": {
     "#": "Prints all the tags",
     "render": "{all_tags()}"
+  },
+  "level": {
+    "question": {
+      "nl": "Op welke verdieping bevindt dit punt zich?",
+      "en": "On what level is this feature located?"
+    },
+    "render": {
+      "en": "Located on the {level}th floor",
+      "nl": "Bevindt zich op de {level}de verdieping"
+    },
+"freeform": {
+  "key": "level",
+  "type": "float"
+},
+    "mappings": [
+      {
+        "if": "location=underground",
+        "then": {
+          "en": "Located underground",
+          "nl": "Bevindt zich ondergrounds"
+        },
+        "hideInAnswer": true
+      },{
+        "if": "level=0",
+        "then": {
+          "en": "Located on the ground floor",
+          "nl": "Bevindt zich gelijkvloers"
+        }
+      },{
+        "if": "level=1",
+        "then": {
+          "en": "Located on the first floor",
+          "nl": "Bevindt zich op de eerste verdieping"
+        }
+      }
+    ]
   }
 }
