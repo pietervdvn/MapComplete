@@ -109,9 +109,9 @@ export class Translation extends BaseUIElement {
                     // @ts-ignore
                     const date: Date = el;
                     rtext = date.toLocaleString();
-                } else if (el.ConstructElement() === undefined) {
-                    console.error("InnerREnder is not defined", el);
-                    throw "Hmmm, el.InnerRender is not defined?"
+                } else if (el.ConstructElement === undefined) {
+                    console.error("ConstructElement is not defined", el);
+                    throw "ConstructElement is not defined, you are working with a "+(typeof el)+":"+(el.constructor.name)
                 } else {
                     Translation.forcedLanguage = lang; // This is a very dirty hack - it'll bite me one day
                     rtext = el.ConstructElement().innerHTML;

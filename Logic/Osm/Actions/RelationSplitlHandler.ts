@@ -12,7 +12,7 @@ export default class RelationSplitlHandler extends OsmChangeAction{
         super()
     }
 
-    Perform(changes: Changes): ChangeDescription[] {
+    CreateChangeDescriptions(changes: Changes): ChangeDescription[] {
         return [];
     }
 

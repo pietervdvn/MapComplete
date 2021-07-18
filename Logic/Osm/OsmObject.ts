@@ -23,7 +23,7 @@ export abstract class OsmObject {
         this.id = id;
         this.type = type;
         this.tags = {
-            id: id
+            id: `${this.type}/${id}`
         }
     }
 
@@ -52,6 +52,9 @@ export abstract class OsmObject {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
+        if(idN <0){
+            return;
+        }
 
         OsmObject.objectCache.set(id, src);
         const newContinuation = (element: OsmObject) => {
@@ -69,7 +72,7 @@ export abstract class OsmObject {
                 new OsmRelation(idN).Download(newContinuation);
                 break;
             default:
-                throw "Invalid road type:" + type;
+                throw "Invalid object type:" + type + id;
 
         }
         return src;
@@ -105,7 +108,7 @@ export abstract class OsmObject {
         if (OsmObject.referencingRelationsCache.has(id)) {
             return OsmObject.referencingRelationsCache.get(id);
         }
-        const relsSrc = new UIEventSource<OsmRelation[]>([])
+        const relsSrc = new UIEventSource<OsmRelation[]>(undefined)
         OsmObject.referencingRelationsCache.set(id, relsSrc);
         Utils.downloadJson(`${OsmObject.backendURL}api/0.6/${id}/relations`)
             .then(data => {

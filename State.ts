@@ -20,7 +20,7 @@ import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 import ChangeToElementsActor from "./Logic/Actors/ChangeToElementsActor";
-import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
+import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -32,7 +32,7 @@ export default class State {
     public static state: State;
 
 
-    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined);
+    public readonly layoutToUse = new UIEventSource<LayoutConfig>(undefined, "layoutToUse");
 
     /**
      The mapping from id -> UIEventSource<properties>
@@ -45,7 +45,7 @@ export default class State {
     /**
      The leaflet instance of the big basemap
      */
-    public leafletMap = new UIEventSource<L.Map>(undefined);
+    public leafletMap = new UIEventSource<L.Map>(undefined, "leafletmap");
     /**
      * Background layer id
      */
@@ -70,7 +70,7 @@ export default class State {
     }[]> = new UIEventSource<{
         readonly isDisplayed: UIEventSource<boolean>,
         readonly  layerDef: LayerConfig;
-    }[]>([])
+    }[]>([], "filteredLayers")
 
 
     /**
@@ -101,13 +101,13 @@ export default class State {
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
 
 
-    public readonly featurePipeline: FeaturePipeline;
+    public featurePipeline: FeatureSource;
 
 
     /**
      * The map location: currently centered lat, lon and zoom
      */
-    public readonly locationControl = new UIEventSource<Loc>(undefined);
+    public readonly locationControl = new UIEventSource<Loc>(undefined, "locationControl");
     public backgroundLayer;
     public readonly backgroundLayerId: UIEventSource<string>;
 
@@ -149,11 +149,13 @@ export default class State {
                 .syncWith(LocalStorageSource.Get("lon")));
 
 
-            this.locationControl = new UIEventSource<Loc>({
+            this.locationControl.setData({
                 zoom: Utils.asFloat(zoom.data),
                 lat: Utils.asFloat(lat.data),
                 lon: Utils.asFloat(lon.data),
-            }).addCallback((latlonz) => {
+            })
+            this.locationControl.addCallback((latlonz) => {
+                // Sync th location controls
                 zoom.setData(latlonz.zoom);
                 lat.setData(latlonz.lat);
                 lon.setData(latlonz.lon);

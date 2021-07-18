@@ -13,7 +13,7 @@ export default class SelectedFeatureHandler {
     private readonly _hash: UIEventSource<string>;
     private readonly _selectedFeature: UIEventSource<any>;
 
-    private static readonly _no_trigger_on = ["welcome","copyright","layers"]
+    private static readonly _no_trigger_on = ["welcome","copyright","layers","new"]
     private readonly _osmApiSource: OsmApiFeatureSource;
     
     constructor(hash: UIEventSource<string>, 
@@ -60,7 +60,9 @@ export default class SelectedFeatureHandler {
         if(hash === undefined || SelectedFeatureHandler._no_trigger_on.indexOf(hash) >= 0){
             return; // No valid feature selected
         }
-        // We should have a valid osm-ID and zoom to it
+        // We should have a valid osm-ID and zoom to it... But we wrap it in try-catch to be sure
+        try{
+            
         OsmObject.DownloadObject(hash).addCallbackAndRunD(element => {
             const centerpoint = element.centerpoint();
             console.log("Zooming to location for select point: ", centerpoint)
@@ -68,6 +70,9 @@ export default class SelectedFeatureHandler {
             location.data.lon = centerpoint[1]
             location.ping();
         })
+        }catch(e){
+            console.error("Could not download OSM-object with id", hash, " - probably a weird hash")
+        }
     }
     
     private downloadFeature(hash:  string){

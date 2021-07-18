@@ -4,7 +4,6 @@ import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import OsmChangeAction from "./Actions/OsmChangeAction";
 import {ChangeDescription} from "./Actions/ChangeDescription";
-import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
 
 /**
@@ -23,25 +22,23 @@ export class Changes {
 
     public readonly pendingChanges = new UIEventSource<ChangeDescription[]>([]) //  LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     private readonly isUploading = new UIEventSource(false);
+    
+    private readonly previouslyCreated : OsmObject[] = []
 
     constructor() {
-        this.isUploading.addCallbackAndRun(u => {
-            if (u) {
-                console.trace("Uploading set!")
-            }
-        })
+       
     }
 
-    public static createChangesetFor(csId: string,
+    private static createChangesetFor(csId: string,
                                      allChanges: {
-                                         modifiedObjects?: OsmObject[],
-                                         newElements?: OsmObject[],
-                                         deletedElements?: OsmObject[]
+                                         modifiedObjects: OsmObject[],
+                                         newObjects: OsmObject[],
+                                         deletedObjects: OsmObject[]
                                      }): string {
 
         const changedElements = allChanges.modifiedObjects ?? []
-        const newElements = allChanges.newElements ?? []
-        const deletedElements = allChanges.deletedElements ?? []
+        const newElements = allChanges.newObjects ?? []
+        const deletedElements = allChanges.deletedObjects ?? []
 
         let changes = `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'>`;
         if (newElements.length > 0) {
@@ -73,7 +70,7 @@ export class Changes {
             .map(c => c.type + "/" + c.id))
     }
 
-    private static CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
+    private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
         newObjects: OsmObject[],
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
@@ -87,12 +84,21 @@ export class Changes {
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
+        for (const o of this.previouslyCreated) {
+            objects.set(o.type + "/" + o.id, o) 
+            states.set(o.type + "/" + o.id, "unchanged")
+        }
+
         let changed = false;
         for (const change of changes) {
             const id = change.type + "/" + change.id
             if (!objects.has(id)) {
+                if(change.id >= 0){
+                    throw "Did not get an object that should be known: "+id
+                }
                 // This is a new object that should be created
                 states.set(id, "created")
+                console.log("Creating object for changeDescription", change)
                 let osmObj: OsmObject = undefined;
                 switch (change.type) {
                     case "node":
@@ -116,6 +122,7 @@ export class Changes {
                     throw "Hmm? This is a bug"
                 }
                 objects.set(id, osmObj)
+                this.previouslyCreated.push(osmObj)
             }
 
             const state = states.get(id)
@@ -195,8 +202,8 @@ export class Changes {
             newObjects: [],
             modifiedObjects: [],
             deletedObjects: []
-
         }
+        
         objects.forEach((v, id) => {
 
             const state = states.get(id)
@@ -228,20 +235,18 @@ export class Changes {
      */
     public flushChanges(flushreason: string = undefined) {
         if (this.pendingChanges.data.length === 0) {
-            console.log("No pending changes")
             return;
         }
-        if (flushreason !== undefined) {
-            console.log(flushreason)
-        }
-
+        
         if (this.isUploading.data) {
-            console.log("Is uploading... Abort")
+            console.log("Is already uploading... Abort")
             return;
         }
+        
+      
         this.isUploading.setData(true)
-
-        console.log("Beginning upload...");
+       
+        console.log("Beginning upload... "+flushreason ?? "");
         // At last, we build the changeset and upload
         const self = this;
         const pending = self.pendingChanges.data;
@@ -249,8 +254,12 @@ export class Changes {
         console.log("Needed ids", neededIds)
         OsmObject.DownloadAll(neededIds, true).addCallbackAndRunD(osmObjects => {
             console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-            const changes = Changes.CreateChangesetObjects(pending, osmObjects)
-            console.log("Changes", changes)
+            const changes: {
+                newObjects: OsmObject[],
+                modifiedObjects: OsmObject[]
+                deletedObjects: OsmObject[]
+
+            }  = self.CreateChangesetObjects(pending, osmObjects)
             if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
                 console.log("No changes to be made")
                 this.pendingChanges.setData([])
@@ -262,11 +271,8 @@ export class Changes {
             State.state.osmConnection.UploadChangeset(
                 State.state.layoutToUse.data,
                 State.state.allElements,
-                (csId) => {
-                    return Changes.createChangesetFor(csId, changes);
-                },
+                (csId) => Changes.createChangesetFor(csId, changes),
                 () => {
-                    // When done
                     console.log("Upload successfull!")
                     self.pendingChanges.setData([]);
                     self.isUploading.setData(false)

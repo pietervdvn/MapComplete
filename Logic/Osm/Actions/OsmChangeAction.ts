@@ -7,10 +7,17 @@ import {ChangeDescription} from "./ChangeDescription";
 
 export default abstract class OsmChangeAction {
 
+    private isUsed = false
+
+    public Perform(changes: Changes) {
+        if (this.isUsed) {
+            throw "This ChangeAction is already used: " + this.constructor.name
+        }
+        this.isUsed = true;
+        return this.CreateChangeDescriptions(changes)
+    }
+
+    protected abstract CreateChangeDescriptions(changes: Changes): ChangeDescription[]
 
 
-    public abstract Perform(changes: Changes): ChangeDescription[]
-    
-    
-    
 }

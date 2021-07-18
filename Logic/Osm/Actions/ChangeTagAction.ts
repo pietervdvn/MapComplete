@@ -37,7 +37,7 @@ export default class ChangeTagAction extends OsmChangeAction {
         return {k: key.trim(), v: value.trim()};
     }
 
-    Perform(changes: Changes): ChangeDescription [] {
+    CreateChangeDescriptions(changes: Changes): ChangeDescription [] {
         const changedTags: { k: string, v: string }[] = this._tagsFilter.asChange(this._currentTags).map(ChangeTagAction.checkChange)
         const typeId = this._elementId.split("/")
         const type = typeId[0]

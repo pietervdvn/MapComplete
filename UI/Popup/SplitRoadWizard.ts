@@ -92,18 +92,24 @@ export default class SplitRoadWizard extends Toggle {
         // Save button
         const saveButton = new Button(t.split.Clone(), () => {
             hasBeenSplit.setData(true)
-            OsmObject.DownloadObject(id).addCallbackAndRunD(way => {
-                    OsmObject.DownloadReferencingRelations(id).addCallbackAndRunD(
-                        partOf => {
-                            const splitAction = new SplitAction(
-                                <OsmWay>way, way.asGeoJson(), partOf, splitPoints.data.map(ff => ff.feature)
-                            )
-                            State.state.changes.applyAction(splitAction)
-                        }
-                    )
-
+            const way = OsmObject.DownloadObject(id)
+            const partOfSrc = OsmObject.DownloadReferencingRelations(id);
+            let hasRun = false
+            way.map(way => {
+                const partOf = partOfSrc.data
+                if(way === undefined || partOf === undefined){
+                    return;
                 }
-            )
+                if(hasRun){
+                    return
+                }
+                hasRun = true
+                const splitAction = new SplitAction(
+                    <OsmWay>way, way.asGeoJson(), partOf, splitPoints.data.map(ff => ff.feature)
+                )
+                State.state.changes.applyAction(splitAction)
+                
+            }, [partOfSrc])
 
 
         });
@@ -123,7 +129,7 @@ export default class SplitRoadWizard extends Toggle {
 
         const splitTitle = new Title(t.splitTitle);
 
-        const mapView = new Combine([splitTitle, miniMap, new Combine([cancelButton, saveToggle])]);
+        const mapView = new Combine([splitTitle, miniMap, new Combine([cancelButton, saveToggle]).SetClass("flex flex-row")]);
         mapView.SetClass("question")
         const confirm = new Toggle(mapView, splitToggle, splitClicked);
         super(t.hasBeenSplit.Clone(), confirm, hasBeenSplit)

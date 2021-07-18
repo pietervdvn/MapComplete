@@ -7,7 +7,7 @@ export default class ChangeToElementsActor {
             for (const change of changes) {
                 const id = change.type + "/" + change.id;
                 if (!allElements.has(id)) {
-continue; // Will be picked up later on
+                    continue; // Ignored as the geometryFixer will introduce this
                 }
                 const src = allElements.getEventSourceById(id)
 

@@ -42,7 +42,7 @@ export default class SplitAction extends OsmChangeAction {
         return wayParts.filter(wp => wp.length > 0)
     }
 
-    Perform(changes: Changes): ChangeDescription[] {
+    CreateChangeDescriptions(changes: Changes): ChangeDescription[] {
         const splitPoints = this._splitPoints
         // We mark the new split points with a new id
         console.log(splitPoints)
@@ -72,7 +72,6 @@ export default class SplitAction extends OsmChangeAction {
 
         // Next up is creating actual parts from this
         const wayParts: SplitInfo[][] = SplitAction.SegmentSplitInfo(splitInfo);
-console.log("WayParts", wayParts, "by", splitInfo)
         // Allright! At this point, we have our new ways!
         // Which one is the longest of them (and can keep the id)?
 
@@ -144,7 +143,7 @@ console.log("WayParts", wayParts, "by", splitInfo)
 
         // At last, we still have to check that we aren't part of a relation...
         // At least, the order of the ways is identical, so we can keep the same roles
-        changeDescription.push(...new RelationSplitlHandler(partOf, newWayIds, originalNodes).Perform(changes))
+        changeDescription.push(...new RelationSplitlHandler(partOf, newWayIds, originalNodes).CreateChangeDescriptions(changes))
 
         // And we have our objects!
         // Time to upload

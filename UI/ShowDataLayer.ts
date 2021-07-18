@@ -61,7 +61,6 @@ export default class ShowDataLayer {
             }
 
             const allFeats = features.data.map(ff => ff.feature);
-            console.log("Rendering ",allFeats, "features at layer ", name)
             geoLayer = self.CreateGeojsonLayer();
             for (const feat of allFeats) {
                 if (feat === undefined) {
@@ -87,6 +86,7 @@ export default class ShowDataLayer {
                     console.error(e)
                 }
             }
+            State.state.selectedElement.ping()
         }
 
         features.addCallback(() => update());

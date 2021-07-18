@@ -5,6 +5,7 @@ import {ChangeDescription} from "../Osm/Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {OsmNode, OsmRelation, OsmWay} from "../Osm/OsmObject";
 
+
 /**
  * Applies changes from 'Changes' onto a featureSource
  */
@@ -16,25 +17,41 @@ export default class ChangeApplicator implements FeatureSource {
 
         this.name = "ChangesApplied(" + source.name + ")"
         this.features = source.features
-
+        const seenChanges = new Set<ChangeDescription>();
+        const self = this;
+        let runningUpdate = false;
         source.features.addCallbackAndRunD(features => {
+            if(runningUpdate){
+                return; // No need to ping again
+            }
             ChangeApplicator.ApplyChanges(features, changes.pendingChanges.data)
+            seenChanges.clear()
         })
 
         changes.pendingChanges.addCallbackAndRunD(changes => {
-            ChangeApplicator.ApplyChanges(source.features.data, changes)
+            runningUpdate = true;
+            changes = changes.filter(ch => !seenChanges.has(ch))
+            changes.forEach(c => seenChanges.add(c))
+            console.log("Called back", changes)
+            ChangeApplicator.ApplyChanges(self.features.data, changes)
             source.features.ping()
+            runningUpdate = false;
         })
 
 
     }
 
 
-    private static ApplyChanges(features: { feature: any, freshness: Date }[], cs: ChangeDescription[]) {
-        if (cs.length === 0 || features === undefined) {
-            return features;
+    /**
+     * Returns true if the geometry is changed and the source should be pinged
+     */
+    private static ApplyChanges(features: {feature: any, freshness: Date}[], cs: ChangeDescription[]): boolean {
+        if (cs.length === 0 || features === undefined   ) {
+            return ;
         }
 
+        console.log("Applying changes ", this.name, cs)
+        let geometryChanged = false;
         const changesPerId: Map<string, ChangeDescription[]> = new Map<string, ChangeDescription[]>()
         for (const c of cs) {
             const id = c.type + "/" + c.id
@@ -52,6 +69,8 @@ export default class ChangeApplicator implements FeatureSource {
                 feature: feature,
                 freshness: now
             })
+            console.log("Added a new feature: ", feature)
+            geometryChanged = true;
         }
 
         // First, create the new features - they have a negative ID
@@ -61,7 +80,11 @@ export default class ChangeApplicator implements FeatureSource {
                 if (change.id >= 0) {
                     return; // Nothing to do here, already created
                 }
-
+                
+                if(change.changes === undefined){
+                    // An update to the object - not the actual created
+                    return;
+                }
 
                 try {
 
@@ -93,8 +116,8 @@ export default class ChangeApplicator implements FeatureSource {
 
 
         for (const feature of features) {
-            const id = feature.feature.properties.id;
             const f = feature.feature;
+            const id = f.properties.id;
             if (!changesPerId.has(id)) {
                 continue;
             }
@@ -118,11 +141,12 @@ export default class ChangeApplicator implements FeatureSource {
 
                 // Apply other changes to the object
                 if (change.changes !== undefined) {
+                    geometryChanged = true;
                     switch (change.type) {
                         case "node":
                             // @ts-ignore
                             const coor: { lat, lon } = change.changes;
-                            f.geometry.coordinates = [[coor.lon, coor.lat]]
+                            f.geometry.coordinates = [coor.lon, coor.lat]
                             break;
                         case "way":
                             f.geometry.coordinates = change.changes["locations"]
@@ -134,5 +158,6 @@ export default class ChangeApplicator implements FeatureSource {
                 }
             }
         }
+        return geometryChanged
     }
 }
