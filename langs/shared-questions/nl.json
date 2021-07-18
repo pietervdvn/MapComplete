@@ -15,6 +15,21 @@
         "opening_hours": {
             "question": "Wat zijn de openingsuren van {name}?",
             "render": "<h3>Openingsuren</h3>{opening_hours_table(opening_hours)}"
+        },
+        "level": {
+            "question": "Op welke verdieping bevindt dit punt zich?",
+            "render": "Bevindt zich op de {level}de verdieping",
+            "mappings": {
+                "0": {
+                    "then": "Bevindt zich ondergronds"
+                },
+                "1": {
+                    "then": "Bevindt zich gelijkvloers"
+                },
+                "2": {
+                    "then": "Bevindt zich op de eerste verdieping"
+                }
+            }
         }
     }
 }

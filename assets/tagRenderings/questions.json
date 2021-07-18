@@ -133,25 +133,27 @@
       "en": "Located on the {level}th floor",
       "nl": "Bevindt zich op de {level}de verdieping"
     },
-"freeform": {
-  "key": "level",
-  "type": "float"
-},
+    "freeform": {
+      "key": "level",
+      "type": "float"
+    },
     "mappings": [
       {
         "if": "location=underground",
         "then": {
           "en": "Located underground",
-          "nl": "Bevindt zich ondergrounds"
+          "nl": "Bevindt zich ondergronds"
         },
         "hideInAnswer": true
-      },{
+      },
+      {
         "if": "level=0",
         "then": {
           "en": "Located on the ground floor",
           "nl": "Bevindt zich gelijkvloers"
         }
-      },{
+      },
+      {
         "if": "level=1",
         "then": {
           "en": "Located on the first floor",

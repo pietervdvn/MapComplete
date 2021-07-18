@@ -3,12 +3,14 @@
   "title": {
     "en": "Hydrants, Extinguishers, Fire stations, and Ambulance stations.",
     "ja": "消火栓、消火器、消防署、救急ステーションです。",
-    "zh_Hant": "消防栓、滅火器、消防隊、以及急救站。"
+    "zh_Hant": "消防栓、滅火器、消防隊、以及急救站。",
+    "ru": "Пожарные гидранты, огнетушители, пожарные станции и станции скорой помощи."
   },
   "shortDescription": {
     "en": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
     "ja": "消火栓、消火器、消防署消火栓、消火器、消防署、および救急ステーションを表示します。",
-    "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。"
+    "zh_Hant": "顯示消防栓、滅火器、消防隊與急救站的地圖。",
+    "ru": "Карта пожарных гидрантов, огнетушителей, пожарных станций и станций скорой помощи."
   },
   "description": {
     "en": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.  \n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details  by answering  available questions.  \n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
@@ -39,7 +41,8 @@
         "en": "Map of hydrants",
         "ja": "消火栓の地図",
         "zh_Hant": "消防栓地圖",
-        "nb_NO": "Kart over brannhydranter"
+        "nb_NO": "Kart over brannhydranter",
+        "ru": "Карта пожарных гидрантов"
       },
       "minzoom": 14,
       "source": {
@@ -61,19 +64,22 @@
         "en": "Map layer to show fire hydrants.",
         "ja": "消火栓を表示するマップレイヤ。",
         "zh_Hant": "顯示消防栓的地圖圖層。",
-        "nb_NO": "Kartlag for å vise brannhydranter."
+        "nb_NO": "Kartlag for å vise brannhydranter.",
+        "ru": "Слой карты, отображающий пожарные гидранты."
       },
       "tagRenderings": [
         {
           "question": {
             "en": "What color is the hydrant?",
             "ja": "消火栓の色は何色ですか?",
-            "nb_NO": "Hvilken farge har brannhydranten?"
+            "nb_NO": "Hvilken farge har brannhydranten?",
+            "ru": "Какого цвета гидрант?"
           },
           "render": {
             "en": "The hydrant color is {colour}",
             "ja": "消火栓の色は{color}です",
-            "nb_NO": "Brannhydranter er {colour}"
+            "nb_NO": "Brannhydranter er {colour}",
+            "ru": "Цвет гидранта {colour}"
           },
           "freeform": {
             "key": "colour"
@@ -87,7 +93,8 @@
               },
               "then": {
                 "en": "The hydrant color is unknown.",
-                "ja": "消火栓の色は不明です。"
+                "ja": "消火栓の色は不明です。",
+                "ru": "Цвет гидранта не определён."
               },
               "hideInAnswer": true
             },
@@ -99,7 +106,8 @@
               },
               "then": {
                 "en": "The hydrant color is yellow.",
-                "ja": "消火栓の色は黄色です。"
+                "ja": "消火栓の色は黄色です。",
+                "ru": "Гидрант жёлтого цвета."
               }
             },
             {
@@ -111,7 +119,8 @@
               "then": {
                 "en": "The hydrant color is red.",
                 "ja": "消火栓の色は赤です。",
-                "it": "L'idrante è rosso."
+                "it": "L'idrante è rosso.",
+                "ru": "Гидрант красного цвета."
               }
             }
           ]
@@ -120,7 +129,8 @@
           "question": {
             "en": "What type of hydrant is it?",
             "ja": "どんな消火栓なんですか?",
-            "it": "Di che tipo è questo idrante?"
+            "it": "Di che tipo è questo idrante?",
+            "ru": "К какому типу относится этот гидрант?"
           },
           "freeform": {
             "key": "fire_hydrant:type"
@@ -141,7 +151,8 @@
               "then": {
                 "en": "The hydrant type is unknown.",
                 "ja": "消火栓の種類は不明です。",
-                "it": "Il tipo di idrante è sconosciuto."
+                "it": "Il tipo di idrante è sconosciuto.",
+                "ru": "Тип гидранта не определён."
               },
               "hideInAnswer": true
             },
@@ -214,7 +225,8 @@
               },
               "then": {
                 "en": "The hydrant is (fully or partially) working.",
-                "ja": "消火栓は(完全にまたは部分的に)機能しています。"
+                "ja": "消火栓は(完全にまたは部分的に)機能しています。",
+                "ru": "Гидрант (полностью или частично) в рабочем состоянии."
               }
             },
             {
@@ -238,7 +250,8 @@
               },
               "then": {
                 "en": "The hydrant has been removed.",
-                "ja": "消火栓が撤去されました。"
+                "ja": "消火栓が撤去されました。",
+                "ru": "Гидрант демонтирован."
               }
             }
           ]
@@ -282,7 +295,8 @@
       "name": {
         "en": "Map of fire extinguishers.",
         "ja": "消火器の地図です。",
-        "nb_NO": "Kart over brannhydranter"
+        "nb_NO": "Kart over brannhydranter",
+        "ru": "Карта огнетушителей."
       },
       "minzoom": 14,
       "source": {
@@ -304,17 +318,20 @@
         "en": "Map layer to show fire hydrants.",
         "ja": "消火栓を表示するマップレイヤ。",
         "zh_Hant": "顯示消防栓的地圖圖層。",
-        "nb_NO": "Kartlag for å vise brannslokkere."
+        "nb_NO": "Kartlag for å vise brannslokkere.",
+        "ru": "Слой карты, отображающий огнетушители."
       },
       "tagRenderings": [
         {
           "render": {
             "en": "Location: {location}",
-            "ja": "場所:{location}"
+            "ja": "場所:{location}",
+            "ru": "Местоположение: {location}"
           },
           "question": {
             "en": "Where is it positioned?",
-            "ja": "どこにあるんですか?"
+            "ja": "どこにあるんですか?",
+            "ru": "Где это расположено?"
           },
           "mappings": [
             {
@@ -325,7 +342,8 @@
               },
               "then": {
                 "en": "Found indoors.",
-                "ja": "屋内にある。"
+                "ja": "屋内にある。",
+                "ru": "Внутри."
               }
             },
             {
@@ -336,7 +354,8 @@
               },
               "then": {
                 "en": "Found outdoors.",
-                "ja": "屋外にある。"
+                "ja": "屋外にある。",
+                "ru": "Снаружи."
               }
             }
           ],
@@ -367,11 +386,13 @@
           "title": {
             "en": "Fire extinguisher",
             "ja": "消火器",
-            "nb_NO": "Brannslukker"
+            "nb_NO": "Brannslukker",
+            "ru": "Огнетушитель"
           },
           "description": {
             "en": "A fire extinguisher is a small, portable device used to stop a fire",
-            "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である"
+            "ja": "消火器は、火災を止めるために使用される小型で携帯可能な装置である",
+            "ru": "Огнетушитель - небольшое переносное устройство для тушения огня"
           }
         }
       ],
@@ -383,7 +404,8 @@
         "en": "Map of fire stations",
         "ja": "消防署の地図",
         "nb_NO": "Kart over brannstasjoner",
-        "it": "Mappa delle caserme dei vigili del fuoco"
+        "it": "Mappa delle caserme dei vigili del fuoco",
+        "ru": "Карта пожарных частей"
       },
       "minzoom": 12,
       "source": {
@@ -406,7 +428,8 @@
       "description": {
         "en": "Map layer to show fire stations.",
         "ja": "消防署を表示するためのマップレイヤ。",
-        "it": "Livello che mostra le caserme dei vigili del fuoco."
+        "it": "Livello che mostra le caserme dei vigili del fuoco.",
+        "ru": "Слой карты, отображающий пожарные части."
       },
       "tagRenderings": [
         {
@@ -416,13 +439,14 @@
           "question": {
             "en": "What is the name of this fire station?",
             "ja": "この消防署の名前は何ですか?",
-            "ru": "Как называется пожарная часть?",
+            "ru": "Как называется эта пожарная часть?",
             "it": "Come si chiama questa caserma dei vigili del fuoco?"
           },
           "render": {
             "en": "This station is called {name}.",
             "ja": "このステーションの名前は{name}です。",
-            "it": "Questa caserma si chiama {name}."
+            "it": "Questa caserma si chiama {name}.",
+            "ru": "Эта часть называется {name}."
           }
         },
         {
@@ -432,24 +456,28 @@
           "question": {
             "en": " What is the street name where the station located?",
             "ja": " 救急ステーションの所在地はどこですか?",
-            "it": " Qual è il nome della via in cui si trova la caserma?"
+            "it": " Qual è il nome della via in cui si trova la caserma?",
+            "ru": " По какому адресу расположена эта часть?"
           },
           "render": {
             "en": "This station is along a highway called {addr:street}.",
-            "ja": "{addr:street} 沿いにあります。"
+            "ja": "{addr:street} 沿いにあります。",
+            "ru": "Часть расположена вдоль шоссе {addr:street}."
           }
         },
         {
           "question": {
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-            "ja": "このステーションの住所は?(例: 地区、村、または町の名称)"
+            "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+            "ru": "Где расположена часть? (напр., название населённого пункта)"
           },
           "freeform": {
             "key": "addr:place"
           },
           "render": {
             "en": "This station is found within {addr:place}.",
-            "ja": "このステーションは{addr:place}にあります。"
+            "ja": "このステーションは{addr:place}にあります。",
+            "ru": "Эта часть расположена в {addr:place}."
           }
         },
         {
@@ -560,7 +588,8 @@
           ],
           "title": {
             "en": "Fire station",
-            "ja": "消防署"
+            "ja": "消防署",
+            "ru": "Пожарная часть"
           },
           "description": {
             "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
@@ -573,7 +602,8 @@
       "id": "ambulancestation",
       "name": {
         "en": "Map of ambulance stations",
-        "ja": "救急ステーションの地図"
+        "ja": "救急ステーションの地図",
+        "ru": "Карта станций скорой помощи"
       },
       "minzoom": 12,
       "source": {
@@ -602,11 +632,12 @@
           "question": {
             "en": "What is the name of this ambulance station?",
             "ja": "この救急ステーションの名前は何ですか?",
-            "ru": "Как называется станция скорой помощи?"
+            "ru": "Как называется эта станция скорой помощи?"
           },
           "render": {
             "en": "This station is called {name}.",
-            "ja": "このステーションの名前は{name}です。"
+            "ja": "このステーションの名前は{name}です。",
+            "ru": "Эта станция называется {name}."
           }
         },
         {
@@ -615,17 +646,20 @@
           },
           "question": {
             "en": " What is the street name where the station located?",
-            "ja": " 救急ステーションの所在地はどこですか?"
+            "ja": " 救急ステーションの所在地はどこですか?",
+            "ru": " По какому адресу расположена эта станция?"
           },
           "render": {
             "en": "This station is along a highway called {addr:street}.",
-            "ja": "{addr:street} 沿いにあります。"
+            "ja": "{addr:street} 沿いにあります。",
+            "ru": "Эта станция расположена вдоль шоссе {addr:street}."
           }
         },
         {
           "question": {
             "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
-            "ja": "このステーションの住所は?(例: 地区、村、または町の名称)"
+            "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
+            "ru": "Где расположена станция? (напр., название населённого пункта)"
           },
           "freeform": {
             "key": "addr:place"
@@ -735,7 +769,8 @@
           },
           "description": {
             "en": "Add an ambulance station to the map",
-            "ja": "救急ステーション(消防署)をマップに追加する"
+            "ja": "救急ステーション(消防署)をマップに追加する",
+            "ru": "Добавить станцию скорой помощи на карту"
           }
         }
       ],

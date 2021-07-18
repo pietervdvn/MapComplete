@@ -15,7 +15,8 @@
     "fr": "Carte des arbres",
     "it": "Mappa tutti gli alberi",
     "ja": "すべての樹木をマッピングする",
-    "zh_Hant": "所有樹木的地圖"
+    "zh_Hant": "所有樹木的地圖",
+    "ru": "Карта деревьев"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -23,7 +24,8 @@
     "fr": "Cartographions tous les arbres !",
     "it": "Mappa tutti gli alberi!",
     "ja": "すべての樹木をマッピングします!",
-    "zh_Hant": "繪製所有樹木！"
+    "zh_Hant": "繪製所有樹木！",
+    "ru": "Нанесите все деревья на карту!"
   },
   "language": [
     "nl",

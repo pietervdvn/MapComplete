@@ -251,7 +251,6 @@
         }
       ]
     },
-    "level",
     {
       "question": {
         "en": "Does this bike repair station have a special tool to repair your bike chain?",
@@ -509,7 +508,8 @@
           }
         }
       ]
-    }
+    },
+    "level"
   ],
   "icon": {
     "render": {
