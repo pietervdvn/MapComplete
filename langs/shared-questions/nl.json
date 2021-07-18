@@ -21,7 +21,7 @@
             "render": "Bevindt zich op de {level}de verdieping",
             "mappings": {
                 "0": {
-                    "then": "Bevindt zich ondergrounds"
+                    "then": "Bevindt zich ondergronds"
                 },
                 "1": {
                     "then": "Bevindt zich gelijkvloers"
