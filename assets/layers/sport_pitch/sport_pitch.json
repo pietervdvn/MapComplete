@@ -32,7 +32,8 @@
     "nl": "Een sportterrein",
     "fr": "Un terrain de sport",
     "en": "A sport pitch",
-    "it": "Un campo sportivo"
+    "it": "Un campo sportivo",
+    "ru": "Спортивная площадка"
   },
   "tagRenderings": [
     "images",
@@ -64,7 +65,8 @@
             "nl": "Hier kan men basketbal spelen",
             "fr": "Ici, on joue au basketball",
             "en": "Basketball is played here",
-            "it": "Qui si gioca a basket"
+            "it": "Qui si gioca a basket",
+            "ru": "Здесь можно играть в баскетбол"
           }
         },
         {
@@ -77,7 +79,8 @@
             "nl": "Hier kan men voetbal spelen",
             "fr": "Ici, on joue au football",
             "en": "Soccer is played here",
-            "it": "Qui si gioca a calcio"
+            "it": "Qui si gioca a calcio",
+            "ru": "Здесь можно играть в футбол"
           }
         },
         {
@@ -104,7 +107,8 @@
             "nl": "Hier kan men tennis spelen",
             "fr": "Ici, on joue au tennis",
             "en": "Tennis is played here",
-            "it": "Qui si gioca a tennis"
+            "it": "Qui si gioca a tennis",
+            "ru": "Здесь можно играть в теннис"
           }
         },
         {
@@ -117,7 +121,8 @@
             "nl": "Hier kan men korfbal spelen",
             "fr": "Ici, on joue au korfball",
             "en": "Korfball is played here",
-            "it": "Qui si gioca a korfball"
+            "it": "Qui si gioca a korfball",
+            "ru": "Здесь можно играть в корфбол"
           }
         },
         {
@@ -130,7 +135,8 @@
             "nl": "Hier kan men basketbal beoefenen",
             "fr": "Ici, on joue au basketball",
             "en": "Basketball is played here",
-            "it": "Qui si gioca a basket"
+            "it": "Qui si gioca a basket",
+            "ru": "Здесь можно играть в баскетбол"
           },
           "hideInAnswer": true
         }
@@ -141,7 +147,8 @@
         "nl": "Wat is de ondergrond van dit sportveld?",
         "fr": "De quelle surface est fait ce terrain de sport ?",
         "en": "Which is the surface of this sport pitch?",
-        "it": "Qual è la superficie di questo campo sportivo?"
+        "it": "Qual è la superficie di questo campo sportivo?",
+        "ru": "Какое покрытие на этой спортивной площадке?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -211,7 +218,8 @@
         "nl": "Is dit sportterrein publiek toegankelijk?",
         "fr": "Est-ce que ce terrain de sport est accessible au public ?",
         "en": "Is this sport pitch publicly accessible?",
-        "it": "Questo campo sportivo è aperto al pubblico?"
+        "it": "Questo campo sportivo è aperto al pubblico?",
+        "ru": "Есть ли свободный доступ к этой спортивной площадке?"
       },
       "mappings": [
         {
@@ -220,7 +228,8 @@
             "nl": "Publiek toegankelijk",
             "fr": "Accessible au public",
             "en": "Public access",
-            "it": "Aperto al pubblico"
+            "it": "Aperto al pubblico",
+            "ru": "Свободный доступ"
           }
         },
         {
@@ -229,7 +238,8 @@
             "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)",
             "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
             "en": "Limited access (e.g. only with an appointment, during certain hours, ...)",
-            "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)"
+            "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",
+            "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)"
           }
         },
         {
@@ -238,7 +248,8 @@
             "nl": "Enkel toegankelijk voor leden van de bijhorende sportclub",
             "fr": "Accessible uniquement aux membres du club",
             "en": "Only accessible for members of the club",
-            "it": "Accesso limitato ai membri dell'associazione"
+            "it": "Accesso limitato ai membri dell'associazione",
+            "ru": "Доступ только членам клуба"
           }
         },
         {
@@ -257,7 +268,8 @@
         "nl": "Moet men reserveren om gebruik te maken van dit sportveld?",
         "fr": "Doit-on réserver pour utiliser ce terrain de sport ?",
         "en": "Does one have to make an appointment to use this sport pitch?",
-        "it": "È necessario prenotarsi per usare questo campo sportivo?"
+        "it": "È necessario prenotarsi per usare questo campo sportivo?",
+        "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?"
       },
       "condition": {
         "and": [
@@ -282,7 +294,8 @@
             "nl": "Reserveren is sterk aangeraden om gebruik te maken van dit sportterrein",
             "fr": "Il est recommendé de réserver pour utiliser ce terrain de sport",
             "en": "Making an appointment is recommended when using this sport pitch",
-            "it": "La prenotazione è consigliata per usare questo campo sportivo"
+            "it": "La prenotazione è consigliata per usare questo campo sportivo",
+            "ru": "Желательна предварительная запись для доступа на эту спортивную площадку"
           }
         },
         {
@@ -291,7 +304,8 @@
             "nl": "Reserveren is mogelijk, maar geen voorwaarde",
             "fr": "Il est possible de réserver, mais ce n'est pas nécéssaire pour utiliser ce terrain de sport",
             "en": "Making an appointment is possible, but not necessary to use this sport pitch",
-            "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo"
+            "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo",
+            "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна"
           }
         },
         {
@@ -300,7 +314,8 @@
             "nl": "Reserveren is niet mogelijk",
             "fr": "On ne peut pas réserver",
             "en": "Making an appointment is not possible",
-            "it": "Non è possibile prenotare"
+            "it": "Non è possibile prenotare",
+            "ru": "Невозможна предварительная запись"
           }
         }
       ]
@@ -336,7 +351,8 @@
         "nl": "Wanneer is dit sportveld toegankelijk?",
         "fr": "Quand ce terrain est-il accessible ?",
         "en": "When is this pitch accessible?",
-        "it": "Quando è aperto questo campo sportivo?"
+        "it": "Quando è aperto questo campo sportivo?",
+        "ru": "В какое время доступна эта площадка?"
       },
       "render": "Openingsuren: {opening_hours_table()}",
       "freeform": {
@@ -446,7 +462,8 @@
         "nl": "Ping-pong tafel",
         "fr": "Table de ping-pong",
         "en": "Tabletennis table",
-        "it": "Tavolo da tennistavolo"
+        "it": "Tavolo da tennistavolo",
+        "ru": "Стол для настольного тенниса"
       },
       "tags": [
         "leisure=pitch",

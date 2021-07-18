@@ -87,6 +87,9 @@
         "shortDescription": "Eine Karte aller Sitzbänke",
         "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Einzeln stehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Account können Sie neue Bänke eintragen oder Detailinformationen existierender Bänke bearbeiten."
     },
+    "bicyclelib": {
+        "title": "Fahrradbibliothek"
+    },
     "bookcases": {
         "title": "Öffentliche Bücherschränke Karte",
         "description": "Ein öffentlicher Bücherschrank ist ein kleiner Bücherschrank am Straßenrand, ein Kasten, eine alte Telefonzelle oder andere Gegenstände, in denen Bücher aufbewahrt werden. Jeder kann ein Buch hinstellen oder mitnehmen. Diese Karte zielt darauf ab, all diese Bücherschränke zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Account schnell Ihre Lieblingsbücherschränke hinzufügen."
@@ -327,8 +330,5 @@
     "toilets": {
         "title": "Offene Toilette Karte",
         "description": "Eine Karte der öffentlichen Toiletten"
-    },
-    "bicyclelib": {
-        "title": "Fahrradbibliothek"
     }
 }

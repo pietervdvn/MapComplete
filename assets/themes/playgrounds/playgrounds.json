@@ -5,28 +5,32 @@
     "en": "Playgrounds",
     "fr": "Aires de jeux",
     "ja": "遊び場",
-    "zh_Hant": "遊樂場"
+    "zh_Hant": "遊樂場",
+    "ru": "Игровые площадки"
   },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
     "en": "A map with playgrounds",
     "fr": "Une carte des aires de jeux",
     "ja": "遊び場のある地図",
-    "zh_Hant": "遊樂場的地圖"
+    "zh_Hant": "遊樂場的地圖",
+    "ru": "Карта игровых площадок"
   },
   "description": {
     "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
     "en": "On this map, you find playgrounds and can add more information",
     "fr": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
     "ja": "この地図では遊び場を見つけ情報を追加することができます",
-    "zh_Hant": "在這份地圖上，你可以尋找遊樂場以及其相關資訊"
+    "zh_Hant": "在這份地圖上，你可以尋找遊樂場以及其相關資訊",
+    "ru": "На этой карте можно найти игровые площадки и добавить дополнительную информацию"
   },
   "language": [
     "nl",
     "en",
     "fr",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",

@@ -77,7 +77,8 @@
         "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}",
         "hu": "Ez egy {bicycle_parking} típusú kerékpáros parkoló",
         "it": "È un parcheggio bici del tipo: {bicycle_parking}",
-        "zh_Hant": "這個單車停車場的類型是：{bicycle_parking}"
+        "zh_Hant": "這個單車停車場的類型是：{bicycle_parking}",
+        "ru": "Это велопарковка типа {bicycle_parking}"
       },
       "freeform": {
         "key": "bicycle_parking",
@@ -288,7 +289,8 @@
             "fr": "Ce parking est couvert (il a un toit)",
             "hu": "A parkoló fedett",
             "it": "È un parcheggio coperto (ha un tetto)",
-            "zh_Hant": "這個停車場有遮蔽 (有屋頂)"
+            "zh_Hant": "這個停車場有遮蔽 (有屋頂)",
+            "ru": "Это крытая парковка (есть крыша/навес)"
           }
         },
         {
@@ -301,7 +303,8 @@
             "fr": "Ce parking n'est pas couvert",
             "hu": "A parkoló nem fedett",
             "it": "Non è un parcheggio coperto",
-            "zh_Hant": "這個停車場沒有遮蔽"
+            "zh_Hant": "這個停車場沒有遮蔽",
+            "ru": "Это открытая парковка"
           }
         }
       ]
@@ -324,7 +327,8 @@
         "gl": "Lugar para {capacity} bicicletas",
         "de": "Platz für {capacity} Fahrräder",
         "it": "Posti per {capacity} bici",
-        "zh_Hant": "{capacity} 單車的地方"
+        "zh_Hant": "{capacity} 單車的地方",
+        "ru": "Место для {capacity} велосипеда(ов)"
       },
       "freeform": {
         "key": "capacity",
@@ -339,7 +343,8 @@
         "fr": "Qui peut utiliser ce parking à vélo ?",
         "it": "Chi può usare questo parcheggio bici?",
         "de": "Wer kann diesen Fahrradparplatz nutzen?",
-        "zh_Hant": "誰可以使用這個單車停車場？"
+        "zh_Hant": "誰可以使用這個單車停車場？",
+        "ru": "Кто может пользоваться этой велопарковкой?"
       },
       "render": {
         "en": "{access}",
@@ -349,7 +354,8 @@
         "it": "{access}",
         "ru": "{access}",
         "id": "{access}",
-        "zh_Hant": "{access}"
+        "zh_Hant": "{access}",
+        "fi": "{access}"
       },
       "freeform": {
         "key": "access",

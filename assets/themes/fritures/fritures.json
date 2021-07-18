@@ -118,7 +118,8 @@
             "nl": "Wat is de website van deze frituur?",
             "fr": "Quel est le site web de cette  friterie?",
             "ja": "このお店のホームページは何ですか?",
-            "it": "Qual è il sito web di questo negozio?"
+            "it": "Qual è il sito web di questo negozio?",
+            "ru": "Какой веб-сайт у этого магазина?"
           },
           "freeform": {
             "key": "website",
@@ -136,7 +137,8 @@
             "fr": "Quel est le numéro de téléphone de cette friterie?",
             "ja": "電話番号は何番ですか?",
             "nb_NO": "Hva er telefonnummeret?",
-            "it": "Qual è il numero di telefono?"
+            "it": "Qual è il numero di telefono?",
+            "ru": "Какой телефон?"
           },
           "freeform": {
             "key": "phone",
@@ -275,7 +277,8 @@
               "then": {
                 "nl": "Je mag <b>geen</b> eigen containers meenemen om je bestelling in mee te nemen",
                 "en": "Bringing your own container is <b>not allowed</b>",
-                "ja": "独自の容器を持参することは<b>できません</b>"
+                "ja": "独自の容器を持参することは<b>できません</b>",
+                "ru": "Приносить свою тару <b>не разрешено</b>"
               }
             },
             {

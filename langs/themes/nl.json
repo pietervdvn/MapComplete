@@ -241,45 +241,77 @@
     "campersite": {
         "title": "Kampeersite",
         "shortDescription": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
+        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslaan en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
         "layers": {
             "0": {
                 "name": "Camperplaatsen",
-                "tagRenderings": {
-                    "3": {
-                        "question": "Hoeveel kost deze plaats?",
-                        "render": "Deze plaats vraagt {charge}"
-                    },
-                    "2": {
-                        "mappings": {
-                            "1": {
-                                "then": "Kan gratis gebruikt worden"
-                            },
-                            "0": {
-                                "then": "Gebruik is betalend"
-                            }
-                        },
-                        "question": "Moet men betalen om deze camperplaats te gebruiken?"
-                    },
-                    "1": {
-                        "question": "Wat is de naam van deze plaats?",
-                        "render": "Deze plaats heet {name}"
-                    },
-                    "9": {
-                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
-                    }
-                },
-                "description": "camperplaatsen",
                 "title": {
+                    "render": "Camperplaats {name}",
                     "mappings": {
                         "0": {
                             "then": "Camper site"
                         }
+                    }
+                },
+                "description": "camperplaatsen",
+                "tagRenderings": {
+                    "1": {
+                        "render": "Deze plaats heet {name}",
+                        "question": "Wat is de naam van deze plaats?"
                     },
-                    "render": "Camperplaats {name}"
+                    "2": {
+                        "question": "Moet men betalen om deze camperplaats te gebruiken?",
+                        "mappings": {
+                            "0": {
+                                "then": "Gebruik is betalend"
+                            },
+                            "1": {
+                                "then": "Kan gratis gebruikt worden"
+                            }
+                        }
+                    },
+                    "3": {
+                        "render": "Deze plaats vraagt {charge}",
+                        "question": "Hoeveel kost deze plaats?"
+                    },
+                    "9": {
+                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
+                    }
                 }
             }
-        },
-        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslaan en is dus altijd gratis te hergebruiken, ook door andere applicaties."
+        }
+    },
+    "charging_stations": {
+        "title": "Oplaadpunten",
+        "shortDescription": "Een wereldwijde kaart van oplaadpunten",
+        "layers": {
+            "0": {
+                "name": "Oplaadpunten",
+                "title": {
+                    "render": "Oplaadpunt"
+                },
+                "description": "Een oplaadpunt",
+                "tagRenderings": {
+                    "6": {
+                        "render": "{network}",
+                        "mappings": {
+                            "0": {
+                                "then": "Maakt geen deel uit van een netwerk"
+                            },
+                            "1": {
+                                "then": "AeroVironment"
+                            },
+                            "2": {
+                                "then": "Blink"
+                            },
+                            "3": {
+                                "then": "eVgo"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "climbing": {
         "title": "Open Klimkaart",
@@ -324,13 +356,13 @@
                         }
                     }
                 },
+                "description": "Een klimzaal",
                 "tagRenderings": {
                     "3": {
                         "render": "<strong>{name}</strong>",
                         "question": "Wat is de naam van dit Klimzaal?"
                     }
-                },
-                "description": "Een klimzaal"
+                }
             },
             "2": {
                 "name": "Klimroute",
@@ -416,6 +448,9 @@
                 },
                 "description": "Een klimgelegenheid?",
                 "tagRenderings": {
+                    "1": {
+                        "render": "<strong>{name}</strong>"
+                    },
                     "2": {
                         "mappings": {
                             "0": {
@@ -428,9 +463,6 @@
                                 "then": "Klimmen is hier niet toegelaten"
                             }
                         }
-                    },
-                    "1": {
-                        "render": "<strong>{name}</strong>"
                     }
                 }
             }
@@ -902,6 +934,26 @@
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ..."
     },
+    "openwindpowermap": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatt"
+                    },
+                    "1": {
+                        "human": " kilowatt"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            }
+        }
+    },
     "personal": {
         "title": "Persoonlijk thema",
         "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas"
@@ -915,6 +967,50 @@
         "title": "Speelplekken",
         "shortDescription": "Een kaart met speeltuinen",
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen"
+    },
+    "shops": {
+        "layers": {
+            "0": {
+                "name": "Winkel",
+                "title": {
+                    "render": "Winkel"
+                },
+                "description": "Een winkel",
+                "tagRenderings": {
+                    "1": {
+                        "question": "Wat is de naam van deze winkel?"
+                    },
+                    "2": {
+                        "mappings": {
+                            "1": {
+                                "then": "Supermarkt"
+                            },
+                            "3": {
+                                "then": "Kapper"
+                            },
+                            "4": {
+                                "then": "Bakkerij"
+                            }
+                        }
+                    },
+                    "3": {
+                        "question": "Wat is het telefoonnummer?"
+                    },
+                    "4": {
+                        "question": "Wat is de website van deze winkel?"
+                    },
+                    "6": {
+                        "question": "Wat zijn de openingsuren van deze winkel?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Winkel",
+                        "description": "Voeg een nieuwe winkel toe"
+                    }
+                }
+            }
+        }
     },
     "speelplekken": {
         "title": "Welkom bij de groendoener!",
@@ -1030,82 +1126,6 @@
                         "0": {
                             "then": "Naamloos segmet"
                         }
-                    }
-                }
-            }
-        }
-    },
-    "charging_stations": {
-        "layers": {
-            "0": {
-                "description": "Een oplaadpunt",
-                "title": {
-                    "render": "Oplaadpunt"
-                },
-                "name": "Oplaadpunten",
-                "tagRenderings": {
-                    "6": {
-                        "mappings": {
-                            "3": {
-                                "then": "eVgo"
-                            },
-                            "2": {
-                                "then": "Blink"
-                            },
-                            "1": {
-                                "then": "AeroVironment"
-                            },
-                            "0": {
-                                "then": "Maakt geen deel uit van een netwerk"
-                            }
-                        },
-                        "render": "{network}"
-                    }
-                }
-            }
-        },
-        "title": "Oplaadpunten",
-        "shortDescription": "Een wereldwijde kaart van oplaadpunten"
-    },
-    "shops": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "4": {
-                        "question": "Wat is de website van deze winkel?"
-                    },
-                    "3": {
-                        "question": "Wat is het telefoonnummer?"
-                    },
-                    "2": {
-                        "mappings": {
-                            "4": {
-                                "then": "Bakkerij"
-                            },
-                            "3": {
-                                "then": "Kapper"
-                            },
-                            "1": {
-                                "then": "Supermarkt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "question": "Wat is de naam van deze winkel?"
-                    },
-                    "6": {
-                        "question": "Wat zijn de openingsuren van deze winkel?"
-                    }
-                },
-                "description": "Een winkel",
-                "title": {
-                    "render": "Winkel"
-                },
-                "name": "Winkel",
-                "presets": {
-                    "0": {
-                        "title": "Winkel",
-                        "description": "Voeg een nieuwe winkel toe"
                     }
                 }
             }

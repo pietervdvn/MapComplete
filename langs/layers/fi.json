@@ -1,12 +1,86 @@
 {
-    "bike_repair_station": {
-        "presets": {
-            "0": {
-                "title": "Pyöräpumppu"
+    "bench": {
+        "name": "Penkit",
+        "title": {
+            "render": "Penkki"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "Selkänoja",
+                "mappings": {
+                    "0": {
+                        "then": "Selkänoja: kyllä"
+                    },
+                    "1": {
+                        "then": "Selkänoja: ei"
+                    }
+                }
+            },
+            "3": {
+                "render": "Materiaali: {material}",
+                "mappings": {
+                    "0": {
+                        "then": "Materiaali: puu"
+                    },
+                    "2": {
+                        "then": "Materiaali: kivi"
+                    },
+                    "3": {
+                        "then": "Materiaali: betoni"
+                    },
+                    "4": {
+                        "then": "Materiaali: muovi"
+                    },
+                    "5": {
+                        "then": "Materiaali: teräs"
+                    }
+                }
+            },
+            "5": {
+                "render": "Väri: {colour}",
+                "mappings": {
+                    "0": {
+                        "then": "Väri: ruskea"
+                    },
+                    "1": {
+                        "then": "Väri: vihreä"
+                    },
+                    "2": {
+                        "then": "Väri: harmaa"
+                    },
+                    "3": {
+                        "then": "Väri: valkoinen"
+                    },
+                    "4": {
+                        "then": "Väri: punainen"
+                    },
+                    "5": {
+                        "then": "Väri: musta"
+                    },
+                    "6": {
+                        "then": "Väri: sininen"
+                    },
+                    "7": {
+                        "then": "Väri: keltainen"
+                    }
+                }
             }
         },
-        "icon": {
-            "render": "./assets/layers/bike_repair_station/repair_station.svg"
+        "presets": {
+            "0": {
+                "title": "Penkki",
+                "description": "Lisää uusi penkki"
+            }
+        }
+    },
+    "bench_at_pt": {
+        "title": {
+            "render": "Penkki"
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "{name}"
+            }
         }
     },
     "bike_parking": {
@@ -16,88 +90,14 @@
             }
         }
     },
-    "bench_at_pt": {
-        "tagRenderings": {
-            "1": {
-                "render": "{name}"
-            }
+    "bike_repair_station": {
+        "icon": {
+            "render": "./assets/layers/bike_repair_station/repair_station.svg"
         },
-        "title": {
-            "render": "Penkki"
-        }
-    },
-    "bench": {
         "presets": {
             "0": {
-                "description": "Lisää uusi penkki",
-                "title": "Penkki"
+                "title": "Pyöräpumppu"
             }
-        },
-        "tagRenderings": {
-            "5": {
-                "mappings": {
-                    "7": {
-                        "then": "Väri: keltainen"
-                    },
-                    "6": {
-                        "then": "Väri: sininen"
-                    },
-                    "5": {
-                        "then": "Väri: musta"
-                    },
-                    "4": {
-                        "then": "Väri: punainen"
-                    },
-                    "3": {
-                        "then": "Väri: valkoinen"
-                    },
-                    "2": {
-                        "then": "Väri: harmaa"
-                    },
-                    "1": {
-                        "then": "Väri: vihreä"
-                    },
-                    "0": {
-                        "then": "Väri: ruskea"
-                    }
-                },
-                "render": "Väri: {colour}"
-            },
-            "3": {
-                "mappings": {
-                    "5": {
-                        "then": "Materiaali: teräs"
-                    },
-                    "4": {
-                        "then": "Materiaali: muovi"
-                    },
-                    "3": {
-                        "then": "Materiaali: betoni"
-                    },
-                    "2": {
-                        "then": "Materiaali: kivi"
-                    },
-                    "0": {
-                        "then": "Materiaali: puu"
-                    }
-                },
-                "render": "Materiaali: {material}"
-            },
-            "1": {
-                "mappings": {
-                    "1": {
-                        "then": "Selkänoja: ei"
-                    },
-                    "0": {
-                        "then": "Selkänoja: kyllä"
-                    }
-                },
-                "render": "Selkänoja"
-            }
-        },
-        "title": {
-            "render": "Penkki"
-        },
-        "name": "Penkit"
+        }
     }
 }

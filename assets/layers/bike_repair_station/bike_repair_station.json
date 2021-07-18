@@ -218,7 +218,8 @@
         "en": "When is this bicycle repair point open?",
         "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
         "it": "Quando è aperto questo punto riparazione bici?",
-        "de": "Wann ist diese Fahrradreparaturstelle geöffnet?"
+        "de": "Wann ist diese Fahrradreparaturstelle geöffnet?",
+        "ru": "Когда работает эта точка обслуживания велосипедов?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -233,7 +234,8 @@
             "en": "Always open",
             "fr": "Ouvert en permanence",
             "it": "Sempre aperto",
-            "de": "Immer geöffnet"
+            "de": "Immer geöffnet",
+            "ru": "Всегда открыто"
           }
         },
         {
@@ -249,7 +251,6 @@
         }
       ]
     },
-    "level",
     {
       "question": {
         "en": "Does this bike repair station have a special tool to repair your bike chain?",
@@ -507,13 +508,15 @@
           }
         }
       ]
-    }
+    },
+    "level"
   ],
   "icon": {
     "render": {
       "en": "./assets/layers/bike_repair_station/repair_station.svg",
       "ru": "./assets/layers/bike_repair_station/repair_station.svg",
-      "it": "./assets/layers/bike_repair_station/repair_station.svg"
+      "it": "./assets/layers/bike_repair_station/repair_station.svg",
+      "fi": "./assets/layers/bike_repair_station/repair_station.svg"
     },
     "mappings": [
       {
@@ -585,7 +588,8 @@
         "gl": "Bomba de ar",
         "de": "Fahrradpumpe",
         "it": "Pompa per bici",
-        "ru": "Велосипедный насос"
+        "ru": "Велосипедный насос",
+        "fi": "Pyöräpumppu"
       },
       "tags": [
         "amenity=bicycle_repair_station",

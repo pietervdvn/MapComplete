@@ -4,7 +4,8 @@
     "en": "Open Shop Map",
     "fr": "Carte des magasins",
     "ja": "オープン ショップ マップ",
-    "zh_Hant": "開放商店地圖"
+    "zh_Hant": "開放商店地圖",
+    "ru": "Открыть карту магазинов"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
@@ -23,6 +24,7 @@
     "ja",
     "zh_Hant",
     "ru",
+    "nl",
     "ca",
     "id"
   ],
@@ -41,7 +43,8 @@
         "en": "Shop",
         "fr": "Magasin",
         "ru": "Магазин",
-        "ja": "店"
+        "ja": "店",
+        "nl": "Winkel"
       },
       "minzoom": 16,
       "source": {
@@ -56,7 +59,8 @@
           "en": "Shop",
           "fr": "Magasin",
           "ru": "Магазин",
-          "ja": "店"
+          "ja": "店",
+          "nl": "Winkel"
         },
         "mappings": [
           {
@@ -90,7 +94,9 @@
       "description": {
         "en": "A shop",
         "fr": "Un magasin",
-        "ja": "ショップ"
+        "ja": "ショップ",
+        "nl": "Een winkel",
+        "ru": "Магазин"
       },
       "tagRenderings": [
         "images",
@@ -98,8 +104,9 @@
           "question": {
             "en": "What is the name of this shop?",
             "fr": "Qu'est-ce que le nom de ce magasin?",
-            "ru": "Как называется магазин?",
-            "ja": "このお店の名前は何ですか?"
+            "ru": "Как называется этот магазин?",
+            "ja": "このお店の名前は何ですか?",
+            "nl": "Wat is de naam van deze winkel?"
           },
           "render": "This shop is called <i>{name}</i>",
           "freeform": {
@@ -115,7 +122,8 @@
           "question": {
             "en": "What does this shop sell?",
             "fr": "Que vends ce magasin ?",
-            "ja": "このお店では何を売っていますか?"
+            "ja": "このお店では何を売っていますか?",
+            "ru": "Что продаётся в этом магазине?"
           },
           "freeform": {
             "key": "shop"
@@ -143,7 +151,8 @@
                 "en": "Supermarket",
                 "fr": "Supermarché",
                 "ru": "Супермаркет",
-                "ja": "スーパーマーケット"
+                "ja": "スーパーマーケット",
+                "nl": "Supermarkt"
               }
             },
             {
@@ -169,7 +178,8 @@
                 "en": "Hairdresser",
                 "fr": "Coiffeur",
                 "ru": "Парикмахерская",
-                "ja": "理容師"
+                "ja": "理容師",
+                "nl": "Kapper"
               }
             },
             {
@@ -181,7 +191,8 @@
               "then": {
                 "en": "Bakery",
                 "fr": "Boulangerie",
-                "ja": "ベーカリー"
+                "ja": "ベーカリー",
+                "nl": "Bakkerij"
               }
             },
             {
@@ -223,7 +234,9 @@
           "question": {
             "en": "What is the phone number?",
             "fr": "Quel est le numéro de téléphone ?",
-            "ja": "電話番号は何番ですか?"
+            "ja": "電話番号は何番ですか?",
+            "nl": "Wat is het telefoonnummer?",
+            "ru": "Какой телефон?"
           },
           "freeform": {
             "key": "phone",
@@ -242,7 +255,9 @@
           "question": {
             "en": "What is the website of this shop?",
             "fr": "Quel est le site internet de ce magasin ?",
-            "ja": "このお店のホームページは何ですか?"
+            "ja": "このお店のホームページは何ですか?",
+            "nl": "Wat is de website van deze winkel?",
+            "ru": "Какой веб-сайт у этого магазина?"
           },
           "freeform": {
             "key": "website",
@@ -260,7 +275,8 @@
           "question": {
             "en": "What is the email address of this shop?",
             "fr": "Quelle est l'adresse électronique de ce magasin ?",
-            "ja": "このお店のメールアドレスは何ですか?"
+            "ja": "このお店のメールアドレスは何ですか?",
+            "ru": "Каков адрес электронной почты этого магазина?"
           },
           "freeform": {
             "key": "email",
@@ -277,7 +293,9 @@
           "question": {
             "en": "What are the opening hours of this shop?",
             "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
-            "ja": "この店の営業時間は何時から何時までですか?"
+            "ja": "この店の営業時間は何時から何時までですか?",
+            "nl": "Wat zijn de openingsuren van deze winkel?",
+            "ru": "Каковы часы работы этого магазина?"
           },
           "freeform": {
             "key": "opening_hours",
@@ -316,13 +334,15 @@
             "en": "Shop",
             "fr": "Magasin",
             "ru": "Магазин",
-            "ja": "店"
+            "ja": "店",
+            "nl": "Winkel"
           },
           "description": {
             "en": "Add a new shop",
             "fr": "Ajouter un nouveau magasin",
             "ru": "Добавить новый магазин",
-            "ja": "新しい店を追加する"
+            "ja": "新しい店を追加する",
+            "nl": "Voeg een nieuwe winkel toe"
           }
         }
       ],
