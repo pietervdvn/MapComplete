@@ -13,7 +13,9 @@ export default class ChangeApplicator implements FeatureSource {
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
     public readonly name: string;
 
-    constructor(source: FeatureSource, changes: Changes) {
+    constructor(source: FeatureSource, changes: Changes, mode?: {
+        generateNewGeometries: boolean
+    }) {
 
         this.name = "ChangesApplied(" + source.name + ")"
         this.features = source.features
@@ -21,10 +23,10 @@ export default class ChangeApplicator implements FeatureSource {
         const self = this;
         let runningUpdate = false;
         source.features.addCallbackAndRunD(features => {
-            if(runningUpdate){
+            if (runningUpdate) {
                 return; // No need to ping again
             }
-            ChangeApplicator.ApplyChanges(features, changes.pendingChanges.data)
+            ChangeApplicator.ApplyChanges(features, changes.pendingChanges.data, mode)
             seenChanges.clear()
         })
 
@@ -33,7 +35,7 @@ export default class ChangeApplicator implements FeatureSource {
             changes = changes.filter(ch => !seenChanges.has(ch))
             changes.forEach(c => seenChanges.add(c))
             console.log("Called back", changes)
-            ChangeApplicator.ApplyChanges(self.features.data, changes)
+            ChangeApplicator.ApplyChanges(self.features.data, changes, mode)
             source.features.ping()
             runningUpdate = false;
         })
@@ -45,9 +47,9 @@ export default class ChangeApplicator implements FeatureSource {
     /**
      * Returns true if the geometry is changed and the source should be pinged
      */
-    private static ApplyChanges(features: {feature: any, freshness: Date}[], cs: ChangeDescription[]): boolean {
-        if (cs.length === 0 || features === undefined   ) {
-            return ;
+    private static ApplyChanges(features: { feature: any; freshness: Date }[], cs: ChangeDescription[], mode: { generateNewGeometries: boolean }): boolean {
+        if (cs.length === 0 || features === undefined) {
+            return;
         }
 
         console.log("Applying changes ", this.name, cs)
@@ -75,45 +77,47 @@ export default class ChangeApplicator implements FeatureSource {
 
         // First, create the new features - they have a negative ID
         // We don't set the properties yet though
-        changesPerId.forEach(cs => {
-            cs.forEach(change => {
-                if (change.id >= 0) {
-                    return; // Nothing to do here, already created
-                }
-                
-                if(change.changes === undefined){
-                    // An update to the object - not the actual created
-                    return;
-                }
+        if (mode?.generateNewGeometries) {
+            changesPerId.forEach(cs => {
+                cs
+                    .forEach(change => {
+                        if (change.id >= 0) {
+                            return; // Nothing to do here, already created
+                        }
 
-                try {
+                        if (change.changes === undefined) {
+                            // An update to the object - not the actual created
+                            return;
+                        }
 
-                    switch (change.type) {
-                        case "node":
-                            const n = new OsmNode(change.id)
-                            n.lat = change.changes["lat"]
-                            n.lon = change.changes["lon"]
-                            const geojson = n.asGeoJson()
-                            add(geojson)
-                            break;
-                        case "way":
-                            const w = new OsmWay(change.id)
-                            w.nodes = change.changes["nodes"]
-                            add(w.asGeoJson())
-                            break;
-                        case "relation":
-                            const r = new OsmRelation(change.id)
-                            r.members = change.changes["members"]
-                            add(r.asGeoJson())
-                            break;
-                    }
+                        try {
 
-                } catch (e) {
-                    console.error(e)
-                }
+                            switch (change.type) {
+                                case "node":
+                                    const n = new OsmNode(change.id)
+                                    n.lat = change.changes["lat"]
+                                    n.lon = change.changes["lon"]
+                                    const geojson = n.asGeoJson()
+                                    add(geojson)
+                                    break;
+                                case "way":
+                                    const w = new OsmWay(change.id)
+                                    w.nodes = change.changes["nodes"]
+                                    add(w.asGeoJson())
+                                    break;
+                                case "relation":
+                                    const r = new OsmRelation(change.id)
+                                    r.members = change.changes["members"]
+                                    add(r.asGeoJson())
+                                    break;
+                            }
+
+                        } catch (e) {
+                            console.error(e)
+                        }
+                    })
             })
-        })
-
+        }
 
         for (const feature of features) {
             const f = feature.feature;
@@ -133,9 +137,6 @@ export default class ChangeApplicator implements FeatureSource {
                     // Apply tag changes and ping the consumers
                     const k = kv.k
                     let v = kv.v
-                    if (v === "") {
-                        v = undefined;
-                    }
                     f.properties[k] = v;
                 }
 

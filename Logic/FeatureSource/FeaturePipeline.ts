@@ -43,7 +43,7 @@ export default class FeaturePipeline implements FeatureSource {
                         new FeatureDuplicatorPerLayer(flayers,
                             new RegisteringFeatureSource(
                                 new ChangeApplicator(
-                                    updater, changes
+                                    updater, changes, {generateNewGeometries: true}
                                 ))
                         )), layout));
 
