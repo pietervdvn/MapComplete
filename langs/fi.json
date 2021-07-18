@@ -1,0 +1,43 @@
+{
+    "general": {
+        "opening_hours": {
+            "ph_open": "avattu",
+            "ph_closed": "suljettu",
+            "ph_not_known": " "
+        },
+        "weekdays": {
+            "sunday": "Sunnuntai",
+            "saturday": "Lauantai",
+            "friday": "Perjantai",
+            "thursday": "Torstai",
+            "wednesday": "Keskiviikko",
+            "tuesday": "Tiistai",
+            "monday": "Maanantai",
+            "abbreviations": {
+                "sunday": "Su",
+                "saturday": "La",
+                "friday": "Pe",
+                "thursday": "To",
+                "wednesday": "Ke",
+                "tuesday": "Ti",
+                "monday": "Ma"
+            }
+        },
+        "backgroundMap": "Taustakartta",
+        "pickLanguage": "Valitse kieli: ",
+        "number": "numero",
+        "cancel": "Peruuta",
+        "save": "Tallenna",
+        "search": {
+            "searching": "Etsitään…"
+        }
+    },
+    "centerMessage": {
+        "ready": "Valmis!"
+    },
+    "image": {
+        "doDelete": "Poista kuva",
+        "dontDelete": "Peruuta",
+        "addPicture": "Lisää kuva"
+    }
+}

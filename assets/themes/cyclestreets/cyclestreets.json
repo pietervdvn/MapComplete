@@ -27,7 +27,8 @@
     "ja",
     "zh_Hant",
     "nb_NO",
-    "it"
+    "it",
+    "ru"
   ],
   "startLat": 51.2095,
   "startZoom": 14,
@@ -222,7 +223,8 @@
         "en": "All streets",
         "ja": "すべての道路",
         "nb_NO": "Alle gater",
-        "it": "Tutte le strade"
+        "it": "Tutte le strade",
+        "ru": "Все улицы"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -247,7 +249,8 @@
           "nl": "Straat",
           "en": "Street",
           "ja": "ストリート",
-          "it": "Strada"
+          "it": "Strada",
+          "ru": "Улица"
         },
         "mappings": [
           {

@@ -57,7 +57,8 @@
         "de": "Eine öffentlich zugängliche Toilette",
         "fr": "Des toilettes",
         "nl": "Een publieke toilet",
-        "it": "Servizi igienici aperti al pubblico"
+        "it": "Servizi igienici aperti al pubblico",
+        "ru": "Туалет или комната отдыха со свободным доступом"
       }
     },
     {
@@ -66,7 +67,8 @@
         "de": "Toiletten mit rollstuhlgerechter Toilette",
         "fr": "Toilettes accessible aux personnes à mobilité réduite",
         "nl": "Een rolstoeltoegankelijke toilet",
-        "it": "Servizi igienici accessibili per persone in sedia a rotelle"
+        "it": "Servizi igienici accessibili per persone in sedia a rotelle",
+        "ru": "Туалет с доступом для пользователей кресел-колясок"
       },
       "tags": [
         "amenity=toilets",
@@ -89,7 +91,8 @@
         "de": "Sind diese Toiletten öffentlich zugänglich?",
         "fr": "Ces toilettes sont-elles accessibles au public ?",
         "nl": "Zijn deze toiletten publiek toegankelijk?",
-        "it": "Questi servizi igienici sono aperti al pubblico?"
+        "it": "Questi servizi igienici sono aperti al pubblico?",
+        "ru": "Есть ли свободный доступ к этим туалетам?"
       },
       "render": {
         "en": "Access is {access}",
@@ -112,7 +115,8 @@
             "de": "Öffentlicher Zugang",
             "fr": "Accès publique",
             "nl": "Publiek toegankelijk",
-            "it": "Accesso pubblico"
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ"
           }
         },
         {
@@ -186,14 +190,16 @@
         "de": "Wie viel muss man für diese Toiletten bezahlen?",
         "fr": "Quel est le prix d'accès de ces toilettes ?",
         "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
-        "it": "Quanto costa l'accesso a questi servizi igienici?"
+        "it": "Quanto costa l'accesso a questi servizi igienici?",
+        "ru": "Сколько стоит посещение туалета?"
       },
       "render": {
         "en": "The fee is {charge}",
         "de": "Die Gebühr beträgt {charge}",
         "fr": "Le prix est {charge}",
         "nl": "De toiletten gebruiken kost {charge}",
-        "it": "La tariffa è {charge}"
+        "it": "La tariffa è {charge}",
+        "ru": "Стоимость {charge}"
       },
       "condition": "fee=yes",
       "freeform": {
@@ -227,7 +233,8 @@
             "de": "Kein Zugang für Rollstuhlfahrer",
             "fr": "Non accessible aux personnes à mobilité réduite",
             "nl": "Niet toegankelijk voor rolstoelgebruikers",
-            "it": "Non accessibile in sedia a rotelle"
+            "it": "Non accessibile in sedia a rotelle",
+            "ru": "Недоступно пользователям кресел-колясок"
           }
         }
       ]
@@ -238,7 +245,8 @@
         "de": "Welche Art von Toiletten sind das?",
         "fr": "De quel type sont ces toilettes ?",
         "nl": "Welke toiletten zijn dit?",
-        "it": "Di che tipo di servizi igienici si tratta?"
+        "it": "Di che tipo di servizi igienici si tratta?",
+        "ru": "Какие это туалеты?"
       },
       "mappings": [
         {

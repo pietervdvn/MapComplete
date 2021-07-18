@@ -13,7 +13,8 @@
     "nl": "Een straatkastje met boeken voor iedereen",
     "de": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
     "fr": "Une armoire ou une boite contenant des livres en libre accès",
-    "it": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico"
+    "it": "Una vetrinetta ai bordi della strada contenente libri, aperta al pubblico",
+    "ru": "Уличный шкаф с книгами, доступными для всех"
   },
   "source": {
     "osmTags": "amenity=public_bookcase"
@@ -94,7 +95,7 @@
         "nl": "Wat is de naam van dit boekenuilkastje?",
         "de": "Wie heißt dieser öffentliche Bücherschrank?",
         "fr": "Quel est le nom de cette microbibliothèque ?",
-        "ru": "Как называется общественный книжный шкаф?",
+        "ru": "Как называется этот общественный книжный шкаф?",
         "it": "Come si chiama questa microbiblioteca pubblica?"
       },
       "freeform": {
@@ -125,7 +126,8 @@
         "nl": "Er passen {capacity} boeken",
         "de": "{capacity} Bücher passen in diesen Bücherschrank",
         "fr": "{capacity} livres peuvent entrer dans cette microbibliothèque",
-        "it": "Questa microbiblioteca può contenere fino a {capacity} libri"
+        "it": "Questa microbiblioteca può contenere fino a {capacity} libri",
+        "ru": "{capacity} книг помещается в этот книжный шкаф"
       },
       "question": {
         "en": "How many books fit into this public bookcase?",
@@ -146,7 +148,8 @@
         "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
         "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
         "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
-        "it": "Che tipo di libri si possono trovare in questa microbiblioteca?"
+        "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
+        "ru": "Какие книги можно найти в этом общественном книжном шкафу?"
       },
       "mappings": [
         {
@@ -178,7 +181,8 @@
             "nl": "Boeken voor zowel kinderen als volwassenen",
             "de": "Sowohl Bücher für Kinder als auch für Erwachsene",
             "fr": "Livres pour enfants et adultes également",
-            "it": "Sia libri per l'infanzia, sia per l'età adulta"
+            "it": "Sia libri per l'infanzia, sia per l'età adulta",
+            "ru": "Книги и для детей, и для взрослых"
           }
         }
       ]
@@ -231,7 +235,8 @@
         "nl": "Is dit boekenruilkastje publiek toegankelijk?",
         "de": "Ist dieser öffentliche Bücherschrank frei zugänglich?",
         "fr": "Cette microbibliothèque est-elle librement accèssible ?",
-        "it": "Questa microbiblioteca è ad accesso libero?"
+        "it": "Questa microbiblioteca è ad accesso libero?",
+        "ru": "Имеется ли свободный доступ к этому общественному книжному шкафу?"
       },
       "condition": "indoor=yes",
       "mappings": [
@@ -241,7 +246,8 @@
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
             "fr": "Accèssible au public",
-            "it": "È ad accesso libero"
+            "it": "È ad accesso libero",
+            "ru": "Свободный доступ"
           },
           "if": "access=yes"
         },
@@ -373,14 +379,16 @@
         "nl": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
         "de": "Wann wurde dieser öffentliche Bücherschrank installiert?",
         "fr": "Quand a été installée cette microbibliothèque ?",
-        "it": "Quando è stata inaugurata questa microbiblioteca?"
+        "it": "Quando è stata inaugurata questa microbiblioteca?",
+        "ru": "Когда был установлен этот общественный книжный шкаф?"
       },
       "render": {
         "en": "Installed on {start_date}",
         "nl": "Geplaatst op {start_date}",
         "de": "Installiert am {start_date}",
         "fr": "Installée le {start_date}",
-        "it": "È stata inaugurata il {start_date}"
+        "it": "È stata inaugurata il {start_date}",
+        "ru": "Установлен {start_date}"
       },
       "freeform": {
         "key": "start_date",
@@ -401,7 +409,8 @@
         "nl": "Is er een website over dit boekenruilkastje?",
         "de": "Gibt es eine Website mit weiteren Informationen über diesen öffentlichen Bücherschrank?",
         "fr": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
-        "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?"
+        "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
+        "ru": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?"
       },
       "freeform": {
         "key": "website",

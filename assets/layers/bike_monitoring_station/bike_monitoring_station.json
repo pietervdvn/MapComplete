@@ -5,7 +5,8 @@
     "nl": "Telstation",
     "fr": "Stations de contrôle",
     "it": "Stazioni di monitoraggio",
-    "zh_Hant": "監視站"
+    "zh_Hant": "監視站",
+    "ru": "Станции мониторинга"
   },
   "minzoom": 12,
   "source": {

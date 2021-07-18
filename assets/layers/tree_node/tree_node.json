@@ -230,7 +230,8 @@
       "question": {
         "nl": "Is deze boom groenblijvend of bladverliezend?",
         "en": "Is this tree evergreen or deciduous?",
-        "it": "È un sempreverde o caduco?"
+        "it": "È un sempreverde o caduco?",
+        "ru": "Это дерево вечнозелёное или листопадное?"
       },
       "mappings": [
         {
@@ -242,7 +243,8 @@
           "then": {
             "nl": "Bladverliezend: de boom is een periode van het jaar kaal.",
             "en": "Deciduous: the tree loses its leaves for some time of the year.",
-            "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno."
+            "it": "Caduco: l’albero perde le sue foglie per un periodo dell’anno.",
+            "ru": "Листопадное: у дерева опадают листья в определённое время года."
           }
         },
         {
@@ -255,7 +257,8 @@
             "nl": "Groenblijvend.",
             "en": "Evergreen.",
             "it": "Sempreverde.",
-            "fr": "À feuilles persistantes."
+            "fr": "À feuilles persistantes.",
+            "ru": "Вечнозелёное."
           }
         }
       ],
@@ -278,7 +281,8 @@
         "nl": "Heeft de boom een naam?",
         "en": "Does the tree have a name?",
         "it": "L’albero ha un nome?",
-        "fr": "L'arbre a-t-il un nom ?"
+        "fr": "L'arbre a-t-il un nom ?",
+        "ru": "Есть ли у этого дерева название?"
       },
       "freeform": {
         "key": "name",
@@ -298,7 +302,8 @@
             "nl": "De boom heeft geen naam.",
             "en": "The tree does not have a name.",
             "it": "L’albero non ha un nome.",
-            "fr": "L'arbre n'a pas de nom."
+            "fr": "L'arbre n'a pas de nom.",
+            "ru": "У этого дерева нет названия."
           }
         }
       ],
@@ -399,7 +404,8 @@
       "render": {
         "nl": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed-ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "en": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
@@ -421,7 +427,8 @@
       "render": {
         "nl": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "en": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-        "it": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+        "it": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+        "ru": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
       },
       "question": {
         "nl": "Wat is het Wikidata-ID van deze boom?",
@@ -484,7 +491,8 @@
         "nl": "Loofboom",
         "en": "Broadleaved tree",
         "it": "Albero latifoglia",
-        "fr": "Arbre feuillu"
+        "fr": "Arbre feuillu",
+        "ru": "Лиственное дерево"
       },
       "description": {
         "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
@@ -501,12 +509,14 @@
       "title": {
         "nl": "Naaldboom",
         "en": "Needleleaved tree",
-        "it": "Albero aghifoglia"
+        "it": "Albero aghifoglia",
+        "ru": "Хвойное дерево"
       },
       "description": {
         "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
         "en": "A tree of a species with needles, such as pine or spruce.",
-        "it": "Un albero di una specie con aghi come il pino o l’abete."
+        "it": "Un albero di una specie con aghi come il pino o l’abete.",
+        "ru": "Дерево с хвоей (иглами), например, сосна или ель."
       }
     },
     {
@@ -524,7 +534,8 @@
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
         "en": "If you're not sure whether it's a broadleaved or needleleaved tree.",
         "it": "Qualora non si sia sicuri se si tratta di un albero latifoglia o aghifoglia.",
-        "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles."
+        "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
+        "ru": "Если вы не уверены в том, лиственное это дерево или хвойное."
       }
     }
   ]

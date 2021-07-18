@@ -5,7 +5,8 @@
     "nl": "Een kaart met Kaarten",
     "fr": "Carte des cartes",
     "ja": "マップのマップ",
-    "zh_Hant": "地圖的地圖"
+    "zh_Hant": "地圖的地圖",
+    "ru": "Карта карт"
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
@@ -26,7 +27,8 @@
     "nl",
     "fr",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "ru"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/themes/maps/logo.svg",

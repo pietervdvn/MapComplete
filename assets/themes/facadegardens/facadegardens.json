@@ -165,7 +165,8 @@
             "nl": "Ligt de tuin in zon/half schaduw of schaduw?",
             "en": "Is the garden shaded or sunny?",
             "ja": "庭は日陰ですか、日当たりがいいですか?",
-            "it": "Il giardino è al sole o in ombra?"
+            "it": "Il giardino è al sole o in ombra?",
+            "ru": "Сад расположен на солнечной стороне или в тени?"
           }
         },
         {
@@ -185,7 +186,8 @@
                 "nl": "Er is een regenton",
                 "en": "There is a rain barrel",
                 "ja": "雨樽がある",
-                "it": "C'è un contenitore per raccogliere la pioggia"
+                "it": "C'è un contenitore per raccogliere la pioggia",
+                "ru": "Есть бочка с дождевой водой"
               }
             },
             {
@@ -198,7 +200,8 @@
                 "nl": "Er is geen regenton",
                 "en": "There is no rain barrel",
                 "ja": "雨樽はありません",
-                "it": "Non c'è un contenitore per raccogliere la pioggia"
+                "it": "Non c'è un contenitore per raccogliere la pioggia",
+                "ru": "Нет бочки с дождевой водой"
               }
             }
           ]
@@ -263,7 +266,8 @@
             "nl": "Wat voor planten staan hier?",
             "en": "What kinds of plants grow here?",
             "ja": "ここではどんな植物が育つんですか?",
-            "it": "Che tipi di piante sono presenti qui?"
+            "it": "Che tipi di piante sono presenti qui?",
+            "ru": "Какие виды растений обитают здесь?"
           },
           "mappings": [
             {
@@ -310,13 +314,15 @@
             "nl": "Meer details: {description}",
             "en": "More details: {description}",
             "ja": "詳細情報: {description}",
-            "it": "Maggiori dettagli: {description}"
+            "it": "Maggiori dettagli: {description}",
+            "ru": "Подробнее: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
             "en": "Extra describing info about the garden (if needed and not yet described above)",
             "ja": "庭園に関する追加の説明情報(必要な場合でまだ上記に記載されていない場合)",
-            "it": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)"
+            "it": "Altre informazioni per descrivere il giardino (se necessarie e non riportate qui sopra)",
+            "ru": "Дополнительная информация о саде (если требуется или еще не указана выше)"
           },
           "freeform": {
             "key": "description",

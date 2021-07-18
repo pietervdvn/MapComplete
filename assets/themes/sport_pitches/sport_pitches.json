@@ -5,14 +5,16 @@
     "fr": "Terrains de sport",
     "en": "Sport pitches",
     "ja": "スポーツ競技場",
-    "zh_Hant": "運動場地"
+    "zh_Hant": "運動場地",
+    "ru": "Спортивные площадки"
   },
   "shortDescription": {
     "nl": "Deze kaart toont sportvelden",
     "fr": "Une carte montrant les terrains de sport",
     "en": "A map showing sport pitches",
     "ja": "スポーツ競技場を示す地図",
-    "zh_Hant": "顯示運動場地的地圖"
+    "zh_Hant": "顯示運動場地的地圖",
+    "ru": "Карта, отображающая спортивные площадки"
   },
   "description": {
     "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -26,7 +28,8 @@
     "fr",
     "en",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "ru"
   ],
   "maintainer": "",
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",

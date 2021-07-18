@@ -23,7 +23,8 @@
     "it": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
     "ru": "На этом сайте собраны все официальные места остановки кемперов и места, где можно сбросить серую и черную воду. Вы можете добавить подробную информацию о предоставляемых услугах и их стоимости. Добавлять фотографии и отзывы. Это веб-сайт и веб-приложение. Данные хранятся в OpenStreetMap, поэтому они будут бесплатными всегда и могут быть повторно использованы любым приложением.",
     "ja": "このWebサイトでは、すべてのキャンピングカーの公式停車場所と、汚水を捨てることができる場所を収集します。提供されるサービスとコストに関する詳細を追加できます。写真とレビューを追加します。これはウェブサイトとウェブアプリです。データはOpenStreetMapに保存されるので、永遠に無料で、どんなアプリからでも再利用できます。",
-    "zh_Hant": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。"
+    "zh_Hant": "這個網站收集所有官方露營地點，以及那邊能排放廢水。你可以加上詳細的服務項目與價格，加上圖片以及評價。這是網站與網路 app，資料則是存在開放街圖，因此會永遠免費，而且可以被所有 app 再利用。",
+    "nl": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslaan en is dus altijd gratis te hergebruiken, ook door andere applicaties."
   },
   "language": [
     "en",
@@ -53,7 +54,8 @@
         "ru": "Площадки для кемпинга",
         "ja": "キャンプサイト",
         "fr": "Campings",
-        "zh_Hant": "露營地"
+        "zh_Hant": "露營地",
+        "nl": "Camperplaatsen"
       },
       "minzoom": 10,
       "source": {
@@ -71,7 +73,8 @@
           "ru": "Место для кемпинга {name}",
           "ja": "キャンプサイト {name}",
           "fr": "Camping {name}",
-          "zh_Hant": "露營地 {name}"
+          "zh_Hant": "露營地 {name}",
+          "nl": "Camperplaats {name}"
         },
         "mappings": [
           {
@@ -86,7 +89,8 @@
               "ru": "Место для кемпинга без названия",
               "ja": "無名のキャンプサイト",
               "fr": "Camping sans nom",
-              "zh_Hant": "沒有名稱的露營地"
+              "zh_Hant": "沒有名稱的露營地",
+              "nl": "Camper site"
             }
           }
         ]
@@ -97,7 +101,8 @@
         "ru": "площадки для кемпинга",
         "ja": "キャンプサイト",
         "fr": "campings",
-        "zh_Hant": "露營地"
+        "zh_Hant": "露營地",
+        "nl": "camperplaatsen"
       },
       "tagRenderings": [
         "images",
@@ -108,7 +113,8 @@
             "ru": "Это место называется {name}",
             "ja": "この場所は {name} と呼ばれています",
             "fr": "Cet endroit s'appelle {nom}",
-            "zh_Hant": "這個地方叫做 {name}"
+            "zh_Hant": "這個地方叫做 {name}",
+            "nl": "Deze plaats heet {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -117,7 +123,8 @@
             "it": "Come viene chiamato questo luogo?",
             "ja": "ここは何というところですか?",
             "fr": "Comment s'appelle cet endroit ?",
-            "zh_Hant": "這個地方叫做什麼？"
+            "zh_Hant": "這個地方叫做什麼？",
+            "nl": "Wat is de naam van deze plaats?"
           },
           "freeform": {
             "key": "name"
@@ -130,7 +137,8 @@
             "ru": "Взимается ли в этом месте плата?",
             "ja": "ここは有料ですか?",
             "fr": "Cet endroit est-il payant ?",
-            "zh_Hant": "這個地方收費嗎？"
+            "zh_Hant": "這個地方收費嗎？",
+            "nl": "Moet men betalen om deze camperplaats te gebruiken?"
           },
           "mappings": [
             {
@@ -144,7 +152,8 @@
                 "it": "Devi pagare per usarlo",
                 "ru": "За использование нужно платить",
                 "ja": "使用料を支払う必要がある",
-                "zh_Hant": "你要付費才能使用"
+                "zh_Hant": "你要付費才能使用",
+                "nl": "Gebruik is betalend"
               }
             },
             {
@@ -162,7 +171,8 @@
                 "ja": "無料で使用可能",
                 "fr": "Peut être utilisé gratuitement",
                 "nb_NO": "Kan brukes gratis",
-                "zh_Hant": "可以免費使用"
+                "zh_Hant": "可以免費使用",
+                "nl": "Kan gratis gebruikt worden"
               }
             },
             {
@@ -179,7 +189,8 @@
             "ru": "Это место взимает {charge}",
             "ja": "この場所は{charge} が必要",
             "nb_NO": "Dette stedet tar {charge}",
-            "zh_Hant": "這個地方收費 {charge}"
+            "zh_Hant": "這個地方收費 {charge}",
+            "nl": "Deze plaats vraagt {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -188,7 +199,8 @@
             "ja": "ここはいくらかかりますか？",
             "fr": "Combien coûte cet endroit ?",
             "nb_NO": "pø",
-            "zh_Hant": "這個地方收多少費用？"
+            "zh_Hant": "這個地方收多少費用？",
+            "nl": "Hoeveel kost deze plaats?"
           },
           "freeform": {
             "key": "charge"
@@ -415,7 +427,8 @@
             "it": "Sito web ufficiale: <a href='{website}'>{website}</a>",
             "ja": "公式Webサイト: <a href='{website}'>{website}</a>",
             "nb_NO": "Offisiell nettside: <a href='{website}'>{website}</a>",
-            "zh_Hant": "官方網站：<a href='{website}'>{website}</a>"
+            "zh_Hant": "官方網站：<a href='{website}'>{website}</a>",
+            "nl": "Officiële website: : <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -774,7 +787,8 @@
           "question": {
             "en": "Who can use this dump station?",
             "ja": "このゴミ捨て場は誰が使えるんですか?",
-            "it": "Chi può utilizzare questo luogo di sversamento?"
+            "it": "Chi può utilizzare questo luogo di sversamento?",
+            "ru": "Кто может использовать эту станцию утилизации?"
           },
           "mappings": [
             {
@@ -810,7 +824,8 @@
               "then": {
                 "en": "Anyone can use this dump station",
                 "ja": "誰でもこのゴミ捨て場を使用できます",
-                "it": "Chiunque può farne uso"
+                "it": "Chiunque può farne uso",
+                "ru": "Любой может воспользоваться этой станцией утилизации"
               },
               "hideInAnswer": true
             },
@@ -823,7 +838,8 @@
               "then": {
                 "en": "Anyone can use this dump station",
                 "ja": "誰でもこのゴミ捨て場を使用できます",
-                "it": "Chiunque può farne uso"
+                "it": "Chiunque può farne uso",
+                "ru": "Любой может воспользоваться этой станцией утилизации"
               }
             }
           ]
@@ -832,12 +848,14 @@
           "render": {
             "en": "This station is part of network {network}",
             "ja": "このステーションはネットワーク{network}の一部です",
-            "it": "Questo luogo è parte della rete {network}"
+            "it": "Questo luogo è parte della rete {network}",
+            "ru": "Эта станция - часть сети {network}"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
             "ja": "ここは何のネットワークの一部ですか?(なければスキップ)",
-            "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)"
+            "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
+            "ru": "К какой сети относится эта станция? (пропустите, если неприменимо)"
           },
           "freeform": {
             "key": "network"
