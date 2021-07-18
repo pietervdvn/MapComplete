@@ -93,7 +93,8 @@ async function downloadRaw(targetdir: string, r: TileRange, overpass: Overpass)/
                     }
                 )
                 .catch(err => {
-                    console.log("Could not download - probably hit the rate limit; waiting a bit")
+                    console.log(url)
+                    console.log("Could not download - probably hit the rate limit; waiting a bit. ("+err+")")
                     failed++;
                     return ScriptUtils.sleep(60000).then(() => console.log("Waiting is done"))
                 })
