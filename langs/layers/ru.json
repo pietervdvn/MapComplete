@@ -481,7 +481,15 @@
                 }
             },
             "7": {
-                "question": ""
+                "question": "",
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                }
             },
             "9": {
                 "render": ""
@@ -490,6 +498,17 @@
                 "question": ""
             },
             "3": {
+                "question": ""
+            },
+            "6": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    },
+                    "0": {
+                        "then": ""
+                    }
+                },
                 "question": ""
             }
         },
