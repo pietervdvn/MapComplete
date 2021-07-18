@@ -196,6 +196,12 @@ export default class State {
                 "Disables/Enables the layer control");
             this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
                 "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
+            this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
+                if (!userbadge) {
+                    this.featureSwitchAddNew.setData(false)
+                }
+            })
+
             this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true,
                 "Disables/enables the help menu or welcome message");
             this.featureSwitchIframe = featSw("fs-iframe", () => false,
