@@ -142,7 +142,7 @@
         "if": "location=underground",
         "then": {
           "en": "Located underground",
-          "nl": "Bevindt zich ondergrounds"
+          "nl": "Bevindt zich ondergronds"
         },
         "hideInAnswer": true
       },

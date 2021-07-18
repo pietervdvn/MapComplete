@@ -105,24 +105,26 @@
     {
       "builtin": "slow_roads",
       "override": {
-        "+tagRenderings": {
-          "question": "Is dit een publiek toegankelijk pad?",
-          "mappings": [
-            {
-              "if": "access=private",
-              "then": "Dit is een privaat pad"
-            },
-            {
-              "if": "access=no",
-              "then": "Dit is een privaat pad",
-              "hideInAnswer": true
-            },
-            {
-              "if": "access=permissive",
-              "then": "Dit pad is duidelijk in private eigendom, maar er hangen geen verbodsborden dus mag men erover"
-            }
-          ]
-        },
+        "+tagRenderings": [
+          {
+            "question": "Is dit een publiek toegankelijk pad?",
+            "mappings": [
+              {
+                "if": "access=private",
+                "then": "Dit is een privaat pad"
+              },
+              {
+                "if": "access=no",
+                "then": "Dit is een privaat pad",
+                "hideInAnswer": true
+              },
+              {
+                "if": "access=permissive",
+                "then": "Dit pad is duidelijk in private eigendom, maar er hangen geen verbodsborden dus mag men erover"
+              }
+            ]
+          }
+        ],
         "calculatedTags": [
           "_part_of_walking_routes=Array.from(new Set(feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\"))).join(', ')",
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
