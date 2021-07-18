@@ -75,6 +75,7 @@ export default class ScriptUtils {
                         try {
                             resolve(JSON.parse(result))
                         } catch (e) {
+                            console.error("Could not parse the following as JSON:", result)
                             reject(e)
                         }
                     });
