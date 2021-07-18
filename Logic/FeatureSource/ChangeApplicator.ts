@@ -34,7 +34,6 @@ export default class ChangeApplicator implements FeatureSource {
             runningUpdate = true;
             changes = changes.filter(ch => !seenChanges.has(ch))
             changes.forEach(c => seenChanges.add(c))
-            console.log("Called back", changes)
             ChangeApplicator.ApplyChanges(self.features.data, changes, mode)
             source.features.ping()
             runningUpdate = false;
@@ -67,6 +66,7 @@ export default class ChangeApplicator implements FeatureSource {
         const now = new Date()
 
         function add(feature) {
+            feature.id = feature.properties.id
             features.push({
                 feature: feature,
                 freshness: now
@@ -135,9 +135,7 @@ export default class ChangeApplicator implements FeatureSource {
             for (const change of changesPerId.get(id)) {
                 for (const kv of change.tags ?? []) {
                     // Apply tag changes and ping the consumers
-                    const k = kv.k
-                    let v = kv.v
-                    f.properties[k] = v;
+                    f.properties[kv.k] = kv.v;
                 }
 
                 // Apply other changes to the object

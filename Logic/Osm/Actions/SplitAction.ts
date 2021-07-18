@@ -95,8 +95,8 @@ export default class SplitAction extends OsmChangeAction {
             changeDescription.push({
                 type: "node",
                 id: element.originalIndex,
-                changes:{
-                    lon:  element.lngLat[0],
+                changes: {
+                    lon: element.lngLat[0],
                     lat: element.lngLat[1]
                 }
             })
@@ -110,31 +110,34 @@ export default class SplitAction extends OsmChangeAction {
             if (isOriginal) {
                 // We change the actual element!
                 changeDescription.push({
-                    type:"way",
+                    type: "way",
                     id: originalElement.id,
-                    changes:{
+                    changes: {
                         locations: wayPart.map(p => p.lngLat),
-                        nodes:  wayPart.map(p => p.originalIndex)
+                        nodes: wayPart.map(p => p.originalIndex)
                     }
                 })
             } else {
                 let id = changes.getNewID();
                 newWayIds.push(id)
-                
+
                 const kv = []
                 for (const k in originalElement.tags) {
-                    if(!originalElement.tags.hasOwnProperty(k)){
+                    if (!originalElement.tags.hasOwnProperty(k)) {
                         continue
                     }
-                    kv .push({k: k, v: originalElement.tags[k]})
+                    if (k.startsWith("_") || k === "id") {
+                        continue;
+                    }
+                    kv.push({k: k, v: originalElement.tags[k]})
                 }
                 changeDescription.push({
-                    type:"way",
-                    id:id,
+                    type: "way",
+                    id: id,
                     tags: kv,
-                    changes:{
+                    changes: {
                         locations: wayPart.map(p => p.lngLat),
-                        nodes:  wayPart.map(p => p.originalIndex)
+                        nodes: wayPart.map(p => p.originalIndex)
                     }
                 })
             }
@@ -148,7 +151,7 @@ export default class SplitAction extends OsmChangeAction {
         // And we have our objects!
         // Time to upload
 
-      return changeDescription
+        return changeDescription
     }
 
     /**
@@ -176,40 +179,40 @@ export default class SplitAction extends OsmChangeAction {
 
         // When this is done, we check that no now point is too close to an already existing point and no very small segments get created
 
-     /*   for (let i = allPoints.length - 1; i > 0; i--) {
-
-            const point = allPoints[i];
-            if (point.properties._original_index !== undefined) {
-                // This point is already in OSM - we have to keep it!
-                continue;
-            }
-
-            if (i != allPoints.length - 1) {
-                const prevPoint = allPoints[i + 1]
-                const diff = Math.abs(point.properties.location - prevPoint.properties.location) * 1000
-                if (diff <= toleranceInM) {
-                    // To close to the previous point! We delete this point...
-                    allPoints.splice(i, 1)
-                    // ... and mark the previous point as a split point
-                    prevPoint.properties._is_split_point = true
-                    continue;
-                }
-            }
-
-            if (i > 0) {
-                const nextPoint = allPoints[i - 1]
-                const diff = Math.abs(point.properties.location - nextPoint.properties.location) * 1000
-                if (diff <= toleranceInM) {
-                    // To close to the next point! We delete this point...
-                    allPoints.splice(i, 1)
-                    // ... and mark the next point as a split point
-                    nextPoint.properties._is_split_point = true
-                    // noinspection UnnecessaryContinueJS
-                    continue;
-                }
-            }
-            // We don't have to remove this point...
-        }*/
+        /*   for (let i = allPoints.length - 1; i > 0; i--) {
+   
+               const point = allPoints[i];
+               if (point.properties._original_index !== undefined) {
+                   // This point is already in OSM - we have to keep it!
+                   continue;
+               }
+   
+               if (i != allPoints.length - 1) {
+                   const prevPoint = allPoints[i + 1]
+                   const diff = Math.abs(point.properties.location - prevPoint.properties.location) * 1000
+                   if (diff <= toleranceInM) {
+                       // To close to the previous point! We delete this point...
+                       allPoints.splice(i, 1)
+                       // ... and mark the previous point as a split point
+                       prevPoint.properties._is_split_point = true
+                       continue;
+                   }
+               }
+   
+               if (i > 0) {
+                   const nextPoint = allPoints[i - 1]
+                   const diff = Math.abs(point.properties.location - nextPoint.properties.location) * 1000
+                   if (diff <= toleranceInM) {
+                       // To close to the next point! We delete this point...
+                       allPoints.splice(i, 1)
+                       // ... and mark the next point as a split point
+                       nextPoint.properties._is_split_point = true
+                       // noinspection UnnecessaryContinueJS
+                       continue;
+                   }
+               }
+               // We don't have to remove this point...
+           }*/
 
         const splitInfo: SplitInfo[] = []
         let nextId = -1

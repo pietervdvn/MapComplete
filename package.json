@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "increase-memory": "export NODE_OPTIONS=--max_old_space_size=4096",
-    "start": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory && parcel *.html UI/** Logic/** assets/*.json assets/generated/* assets/layers/*/*.svg assets/tagRendering/*.json assets/themes/*/*.svg assets/themes/*/*.png vendor/* vendor/*/*",
+    "start": "ts-node scripts/generateLayerOverview.ts --no-fail && npm run increase-memory && parcel *.html UI/** Logic/** assets/*.json assets/svg/* assets/generated/* assets/layers/*/*.svg assets/tagRendering/*.json assets/themes/*/*.svg assets/themes/*/*.png vendor/* vendor/*/*",
     "test": "ts-node test/TestAll.ts",
     "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",
     "add-weblate-upstream": "git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layer-translations/ ; git remote update weblate-layers",

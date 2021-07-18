@@ -55,9 +55,12 @@ export default class SpecialVisualizations {
                             if (!tags.hasOwnProperty(key)) {
                                 continue;
                             }
-                            parts.push(key + "=" + tags[key]);
+                            parts.push([key , tags[key] ?? "<b>undefined</b>" ]);
                         }
-                        return parts.join("<br/>")
+                        return new Table(
+                            ["key","value"],
+                            parts
+                        )
                     })).SetStyle("border: 1px solid black; border-radius: 1em;padding:1em;display:block;")
                 })
             },

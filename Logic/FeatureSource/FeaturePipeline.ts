@@ -43,7 +43,7 @@ export default class FeaturePipeline implements FeatureSource {
                         new FeatureDuplicatorPerLayer(flayers,
                             new RegisteringFeatureSource(
                                 new ChangeApplicator(
-                                    updater, changes, {generateNewGeometries: true}
+                                    updater, changes
                                 ))
                         )), layout));
 
@@ -65,7 +65,12 @@ export default class FeaturePipeline implements FeatureSource {
         const amendedOsmApiSource = new RememberingSource(
             new MetaTaggingFeatureSource(allLoadedFeatures,
                 new FeatureDuplicatorPerLayer(flayers,
-                    new RegisteringFeatureSource(new ChangeApplicator(fromOsmApi, changes)))));
+                    new RegisteringFeatureSource(new ChangeApplicator(fromOsmApi, changes,
+                        {
+                            // We lump in the new points here
+                            generateNewGeometries: true 
+                        }
+                        )))));
 
         const merged =
             new FeatureSourceMerger([

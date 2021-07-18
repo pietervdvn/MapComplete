@@ -76,7 +76,12 @@ export default class SimpleAddUI extends Toggle {
                             State.state.changes.applyAction(newElementAction)
                             selectedPreset.setData(undefined)
                             isShown.setData(false)
-                            Hash.hash.setData(newElementAction.newElementId)
+                            State.state.selectedElement.setData(State.state.allElements.ContainingFeatures.get(
+                                newElementAction.newElementId
+                            ))
+                            console.log("Did set selected element to",State.state.allElements.ContainingFeatures.get(
+                                newElementAction.newElementId
+                            ))
                         }, () => {
                             selectedPreset.setData(undefined)
                         })

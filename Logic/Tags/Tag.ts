@@ -25,12 +25,19 @@ export class Tag extends TagsFilter {
 
     matchesProperties(properties: any): boolean {
         for (const propertiesKey in properties) {
+            if(!properties.hasOwnProperty(propertiesKey)){
+                continue
+            }
             if (this.key === propertiesKey) {
                 const value = properties[propertiesKey];
+                if(value === undefined){
+                    continue
+                }
                 return value === this.value;
             }
         }
         // The tag was not found
+        
         if (this.value === "") {
             // and it shouldn't be found!
             return true;
