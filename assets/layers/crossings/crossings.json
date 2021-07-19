@@ -218,6 +218,29 @@
           }
         }
       ]
+    },
+    {
+      "question": {
+        "en": "Can a cyclist turn right when the light is red?",
+        "nl": "Mag een fietser rechtsaf slaan als het licht rood is?"
+      },
+      "condition": "highway=traffic_signals",
+      "mappings": [
+        {
+          "if": "red_turn:right:bicycle=yes",
+          "then": {
+            "en": "A cyclist can turn right if the light is red",
+            "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is"
+          }
+        },
+        {
+          "if": "red_turn:right:bicycle=no",
+          "then": {
+            "en": "A cyclist can not turn right if the light is red",
+            "nl": "Een fietser mag rechtsaf slaan als het licht rood is"
+          }
+        }
+      ]
     }
   ]
 }

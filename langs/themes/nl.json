@@ -785,13 +785,13 @@
                         "question": "Wat voor fietshekjes zijn dit?",
                         "mappings": {
                             "0": {
-                                "then": "Enkelvoudig, slechts twee hekjes met ruimte ertussen"
+                                "then": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
                             },
                             "1": {
-                                "then": "Dubbel, twee hekjes achter elkaar"
+                                "then": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
                             },
                             "2": {
-                                "then": "Drievoudig, drie hekjes achter elkaar"
+                                "then": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
                             }
                         }
                     },

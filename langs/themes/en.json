@@ -981,13 +981,16 @@
                         "question": "What kind of cycling barrier is this?",
                         "mappings": {
                             "0": {
-                                "then": "Single, just two barriers with a space inbetween"
+                                "then": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
                             },
                             "1": {
-                                "then": "Double, two barriers behind each other"
+                                "then": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
                             },
                             "2": {
-                                "then": "Triple, three barier behind each other"
+                                "then": "Triple, three barier behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                            },
+                            "3": {
+                                "then": "Squeeze gate, gap is smaller at top, then at bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                             }
                         }
                     },

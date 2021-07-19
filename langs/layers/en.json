@@ -775,6 +775,17 @@
                         "then": "This traffic light does not have a button to request green light"
                     }
                 }
+            },
+            "5": {
+                "question": "Can a cyclist turn right when the light is red?",
+                "mappings": {
+                    "0": {
+                        "then": "A cyclist can turn right if the light is red"
+                    },
+                    "1": {
+                        "then": "A cyclist can not turn right if the light is red"
+                    }
+                }
             }
         }
     },

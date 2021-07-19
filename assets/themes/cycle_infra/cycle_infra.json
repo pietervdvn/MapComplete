@@ -813,22 +813,28 @@
             {
               "if": "cycle_barrier:type=single",
               "then": {
-                "en": "Single, just two barriers with a space inbetween",
-                "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen"
+                "en": "Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>",
+                "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>"
               }
             },
             {
               "if": "cycle_barrier:type=double",
               "then": {
-                "en": "Double, two barriers behind each other",
-                "nl": "Dubbel, twee hekjes achter elkaar"
+                "en": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>",
+                "nl": "Dubbel, twee hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
               }
             },
             {
               "if": "cycle_barrier:type=triple",
               "then": {
-                "en": "Triple, three barier behind each other",
-                "nl": "Drievoudig, drie hekjes achter elkaar"
+                "en": "Triple, three barier behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+                "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+              }
+            },
+            {
+              "if": "cycle_barrier:type=squeeze",
+              "then": {
+                "en": "Squeeze gate, gap is smaller at top, then at bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
               }
             }
           ]
