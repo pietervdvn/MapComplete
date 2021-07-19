@@ -330,12 +330,15 @@ export default class TagRenderingQuestion extends Combine {
         }
 
         const tagsData = tags.data;
+        const feature = State.state.allElements.ContainingFeatures.get(tagsData.id)
         const input: InputElement<string> = ValidatedTextField.InputForType(configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
             country: () => tagsData._country,
             location: [tagsData._lat, tagsData._lon],
             mapBackgroundLayer: State.state.backgroundLayer,
-            unit: applicableUnit
+            unit: applicableUnit,
+            args: configuration.freeform.helperArgs,
+            feature: feature
         });
 
         input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);

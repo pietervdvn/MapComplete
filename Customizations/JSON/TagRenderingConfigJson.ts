@@ -30,6 +30,7 @@ export interface TagRenderingConfigJson {
      * Allow freeform text input from the user
      */
     freeform?: {
+    
         /**
          * If this key is present, then 'render' is used to display the value.
          * If this is undefined, the rendering is _always_ shown
@@ -40,6 +41,11 @@ export interface TagRenderingConfigJson {
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
          */
         type?: string,
+        /**
+         * Extra parameters to initialize the input helper arguments.
+         * For semantics, see the 'SpecialInputElements.md'
+         */
+        helperArgs?: (string | number | boolean)[];
         /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'

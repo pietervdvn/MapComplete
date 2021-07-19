@@ -27,7 +27,8 @@ export default class TagRenderingConfig {
         readonly type: string,
         readonly addExtraTags: TagsFilter[];
         readonly inline: boolean,
-        readonly default?: string
+        readonly default?: string,
+        readonly helperArgs?: (string | number | boolean)[]
     };
 
     readonly multiAnswer: boolean;
@@ -76,8 +77,8 @@ export default class TagRenderingConfig {
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
                     FromJSON.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
                 inline: json.freeform.inline ?? false,
-                default: json.freeform.default
-
+                default: json.freeform.default,
+                helperArgs: json.freeform.helperArgs
 
             }
             if (json.freeform["extraTags"] !== undefined) {
@@ -336,20 +337,20 @@ export default class TagRenderingConfig {
      * Note: this might be hidden by conditions
      */
     public hasMinimap(): boolean {
-        const translations : Translation[]= Utils.NoNull([this.render, ...(this.mappings ?? []).map(m => m.then)]);
+        const translations: Translation[] = Utils.NoNull([this.render, ...(this.mappings ?? []).map(m => m.then)]);
         for (const translation of translations) {
             for (const key in translation.translations) {
-                if(!translation.translations.hasOwnProperty(key)){
+                if (!translation.translations.hasOwnProperty(key)) {
                     continue
                 }
                 const template = translation.translations[key]
                 const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts.filter(part =>part.special !== undefined ).some(special => special.special.func.funcName === "minimap")
-                if(hasMiniMap){
+                const hasMiniMap = parts.filter(part => part.special !== undefined).some(special => special.special.func.funcName === "minimap")
+                if (hasMiniMap) {
                     return true;
                 }
             }
         }
         return false;
-    } 
+    }
 }

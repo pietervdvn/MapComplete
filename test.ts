@@ -11,6 +11,7 @@ import LocationInput from "./UI/Input/LocationInput";
 import Loc from "./Models/Loc";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import LengthInput from "./UI/Input/LengthInput";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 /*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -153,8 +154,16 @@ function TestMiniMap() {
 }
 //*/
 
-const li = new LengthInput()
-    li.SetStyle("height: 20rem")
+const loc = new UIEventSource<Loc>({
+    zoom: 24,
+    lat: 51.21043,
+    lon: 3.21389
+})
+const li = new LengthInput(
+    AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource<string | string[]>("map","photo")),
+    loc
+)
+    li.SetStyle("height: 30rem; background: aliceblue;")
         .AttachTo("maindiv")
 
 new VariableUiElement(li.GetValue().map(v => JSON.stringify(v, null, "  "))).AttachTo("extradiv")

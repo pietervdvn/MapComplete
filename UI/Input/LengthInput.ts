@@ -2,11 +2,12 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
-import BaseUIElement from "../BaseUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
-import Minimap from "../Base/Minimap";
+import {GeoOperations} from "../../Logic/GeoOperations";
+import DirectionInput from "./DirectionInput";
+import {RadioButton} from "./RadioButton";
+import {FixedInputElement} from "./FixedInputElement";
 
 
 /**
@@ -19,13 +20,15 @@ export default class LengthInput extends InputElement<string> {
     private readonly value: UIEventSource<string>;
     private background;
 
-    constructor(mapBackground: UIEventSource<any>, 
+    constructor(mapBackground: UIEventSource<any>,
                 location: UIEventSource<Loc>,
                 value?: UIEventSource<string>) {
         super();
         this._location = location;
         this.value = value ?? new UIEventSource<string>(undefined);
         this.background = mapBackground;
+        this.SetClass("block")
+
     }
 
     GetValue(): UIEventSource<string> {
@@ -33,83 +36,150 @@ export default class LengthInput extends InputElement<string> {
     }
 
     IsValid(str: string): boolean {
-        const t = Number(str);
+        const t = Number(str)
         return !isNaN(t) && t >= 0 && t <= 360;
     }
 
     protected InnerConstructElement(): HTMLElement {
-
-        let map: BaseUIElement = new FixedUiElement("")
+        const modeElement = new RadioButton([
+            new FixedInputElement("Measure", "measure"),
+            new FixedInputElement("Move", "move")
+        ])
+        // @ts-ignore
+        let map = undefined
         if (!Utils.runningFromConsole) {
-            map = new Minimap({
+            map = DirectionInput.constructMinimap({
                 background: this.background,
-                allowMoving: true,
-                location: this._location
+                allowMoving: false,
+                location: this._location,
+                leafletOptions: {
+                    tap: true
+                }
             })
         }
-
         const element = new Combine([
-             Svg.direction_stroke_svg().SetStyle(
-                `position: absolute;top: 0;left: 0;width: 100%;height: 100%;transform:rotate(${this.value.data ?? 0}deg);`)
-                .SetClass("direction-svg relative")
-                 .SetStyle("z-index: 1000"),
-            map.SetClass("w-full h-full absolute top-0 left-O rounded-full overflow-hidden"),
+            new Combine([Svg.length_crosshair_ui().SetStyle(
+                `visibility: hidden; position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`)
+            ])
+                .SetClass("block length-crosshair-svg relative")
+                .SetStyle("z-index: 1000"),
+            map?.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
-            .SetStyle("position:relative;display:block;width: min(100%, 25em); height: min(100% , 25em); background:white; border: 1px solid black; border-radius: 999em")
+            .SetClass("relative block bg-white border border-black rounded-3xl overflow-hidden")
             .ConstructElement()
 
 
-        this.value.addCallbackAndRunD(rotation => {
-            const cone = element.getElementsByClassName("direction-svg")[0] as HTMLElement
-            cone.style.transform = `rotate(${rotation}deg)`;
-
-        })
-
-        this.RegisterTriggers(element)
+        this.RegisterTriggers(element, map?.leafletMap)
         element.style.overflow = "hidden"
-
-        return element;
+        element.style.display = "block"
+        
+      return element
     }
 
-    private RegisterTriggers(htmlElement: HTMLElement) {
-        const self = this;
+    private RegisterTriggers(htmlElement: HTMLElement, leafletMap: UIEventSource<L.Map>) {
 
-        function onPosChange(x: number, y: number) {
+        let firstClickXY: [number, number] = undefined
+        let lastClickXY: [number, number] = undefined
+        const self = this;
+        
+
+        function onPosChange(x: number, y: number, isDown: boolean, isUp?: boolean) {
+            if (x === undefined || y === undefined) {
+                // Touch end
+                firstClickXY = undefined;
+                lastClickXY = undefined;
+                return;
+            }
+
             const rect = htmlElement.getBoundingClientRect();
-            const dx = -(rect.left + rect.right) / 2 + x;
-            const dy = (rect.top + rect.bottom) / 2 - y;
-            const angle = 180 * Math.atan2(dy, dx) / Math.PI;
-            const angleGeo = Math.floor((450 - angle) % 360);
-            self.value.setData("" + angleGeo)
+            // From the central part of location
+            const dx = x - rect.left;
+            const dy = y - rect.top;
+            if (isDown) {
+                if (lastClickXY === undefined && firstClickXY === undefined) {
+                    firstClickXY = [dx, dy];
+                } else if (firstClickXY !== undefined && lastClickXY === undefined) {
+                    lastClickXY = [dx, dy]
+                } else if (firstClickXY !== undefined && lastClickXY !== undefined) {
+                    // we measure again
+                    firstClickXY = [dx, dy]
+                    lastClickXY = undefined;
+                }
+            }
+            if (isUp) {
+                const distance = Math.sqrt((dy - firstClickXY[1]) * (dy - firstClickXY[1]) + (dx - firstClickXY[0]) * (dx - firstClickXY[0]))
+                if (distance > 15) {
+                    lastClickXY = [dx, dy]
+                }
+
+
+            } else if (lastClickXY !== undefined) {
+                return;
+            }
+
+
+            const measurementCrosshair = htmlElement.getElementsByClassName("length-crosshair-svg")[0] as HTMLElement
+            const measurementCrosshairInner: HTMLElement = <HTMLElement>measurementCrosshair.firstChild
+            if (firstClickXY === undefined) {
+                measurementCrosshair.style.visibility = "hidden"
+            } else {
+                measurementCrosshair.style.visibility = "unset"
+                measurementCrosshair.style.left = firstClickXY[0] + "px";
+                measurementCrosshair.style.top = firstClickXY[1] + "px"
+
+                const angle = 180 * Math.atan2(firstClickXY[1] - dy, firstClickXY[0] - dx) / Math.PI;
+                const angleGeo = (angle + 270) % 360
+                measurementCrosshairInner.style.transform = `rotate(${angleGeo}deg)`;
+
+                const distance = Math.sqrt((dy - firstClickXY[1]) * (dy - firstClickXY[1]) + (dx - firstClickXY[0]) * (dx - firstClickXY[0]))
+                measurementCrosshairInner.style.width = (distance * 2) + "px"
+                measurementCrosshairInner.style.marginLeft = -distance + "px"
+                measurementCrosshairInner.style.marginTop = -distance + "px"
+
+
+                const leaflet = leafletMap?.data
+                if (leaflet) {
+                    console.log(firstClickXY, [dx, dy], "pixel origin", leaflet.getPixelOrigin())
+                    const first = leaflet.layerPointToLatLng(firstClickXY)
+                    const last = leaflet.layerPointToLatLng([dx, dy])
+                    console.log(first, last)
+                    const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 100000) / 100
+                    console.log("First", first, "last", last, "d", geoDist)
+                    self.value.setData("" + geoDist)
+                }
+
+            }
+
         }
 
 
-        htmlElement.ontouchmove = (ev: TouchEvent) => {
-            onPosChange(ev.touches[0].clientX, ev.touches[0].clientY);
+        htmlElement.ontouchstart = (ev: TouchEvent) => {
+            onPosChange(ev.touches[0].clientX, ev.touches[0].clientY, true);
             ev.preventDefault();
         }
 
-        htmlElement.ontouchstart = (ev: TouchEvent) => {
-            onPosChange(ev.touches[0].clientX, ev.touches[0].clientY);
+        htmlElement.ontouchmove = (ev: TouchEvent) => {
+            onPosChange(ev.touches[0].clientX, ev.touches[0].clientY, false);
+            ev.preventDefault();
         }
 
-        let isDown = false;
+        htmlElement.ontouchend = (ev: TouchEvent) => {
+            onPosChange(undefined, undefined, false, true);
+            ev.preventDefault();
+        }
 
         htmlElement.onmousedown = (ev: MouseEvent) => {
-            isDown = true;
-            onPosChange(ev.clientX, ev.clientY);
+            onPosChange(ev.clientX, ev.clientY, true);
             ev.preventDefault();
         }
 
         htmlElement.onmouseup = (ev) => {
-            isDown = false;
+            onPosChange(ev.clientX, ev.clientY, false, true);
             ev.preventDefault();
         }
 
         htmlElement.onmousemove = (ev: MouseEvent) => {
-            if (isDown) {
-                onPosChange(ev.clientX, ev.clientY);
-            }
+            onPosChange(ev.clientX, ev.clientY, false);
             ev.preventDefault();
         }
     }

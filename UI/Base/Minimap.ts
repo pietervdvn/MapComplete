@@ -5,6 +5,7 @@ import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 import {Map} from "leaflet";
+import {Utils} from "../../Utils";
 
 export default class Minimap extends BaseUIElement {
 
@@ -15,11 +16,13 @@ export default class Minimap extends BaseUIElement {
     private readonly _location: UIEventSource<Loc>;
     private _isInited = false;
     private _allowMoving: boolean;
+    private readonly _leafletoptions: any;
 
     constructor(options?: {
                     background?: UIEventSource<BaseLayer>,
                     location?: UIEventSource<Loc>,
-                    allowMoving?: boolean
+                    allowMoving?: boolean,
+                    leafletOptions?: any
                 }
     ) {
         super()
@@ -28,10 +31,11 @@ export default class Minimap extends BaseUIElement {
         this._location = options?.location ?? new UIEventSource<Loc>(undefined)
         this._id = "minimap" + Minimap._nextId;
         this._allowMoving = options.allowMoving ?? true;
+        this._leafletoptions = options.leafletOptions ?? {}
         Minimap._nextId++
 
     }
-    
+
     protected InnerConstructElement(): HTMLElement {
         const div = document.createElement("div")
         div.id = this._id;
@@ -52,7 +56,7 @@ export default class Minimap extends BaseUIElement {
         return wrapper;
 
     }
-    
+
     private InitMap() {
         if (this._constructedHtmlElement === undefined) {
             // This element isn't initialized yet
@@ -71,8 +75,8 @@ export default class Minimap extends BaseUIElement {
         const location = this._location;
 
         let currentLayer = this._background.data.layer()
-        const map = L.map(this._id, {
-            center: [location.data?.lat ?? 0, location.data?.lon ?? 0],
+        const options = {
+            center: <[number, number]> [location.data?.lat ?? 0, location.data?.lon ?? 0],
             zoom: location.data?.zoom ?? 2,
             layers: [currentLayer],
             zoomControl: false,
@@ -82,9 +86,13 @@ export default class Minimap extends BaseUIElement {
             doubleClickZoom: this._allowMoving,
             keyboard: this._allowMoving,
             touchZoom: this._allowMoving,
-          // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
+            // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
             fadeAnimation: this._allowMoving
-        });
+        }
+        
+        Utils.Merge(this._leafletoptions, options)
+        
+        const map = L.map(this._id, options);
 
         map.setMaxBounds(
             [[-100, -200], [100, 200]]
