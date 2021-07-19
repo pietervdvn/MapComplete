@@ -68,7 +68,7 @@ export default class UserBadge extends Toggle {
                 if (user.unreadMessages > 0) {
                     messageSpan = new Link(
                         new Combine([Svg.envelope, "" + user.unreadMessages]),
-                        '${user.backend}/messages/inbox',
+                        `${user.backend}/messages/inbox`,
                         true
                     ).SetClass("alert")
                 }

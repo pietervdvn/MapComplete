@@ -56,7 +56,8 @@ export default class ScriptUtils {
                 const urlObj = new URL(url)
                 https.get({
                     host: urlObj.host,
-                    path: urlObj.pathname,
+                    path: urlObj.pathname + urlObj.search,
+                    
                     port: urlObj.port,
                     headers: {
                         "accept": "application/json"
@@ -74,6 +75,7 @@ export default class ScriptUtils {
                         try {
                             resolve(JSON.parse(result))
                         } catch (e) {
+                            console.error("Could not parse the following as JSON:", result)
                             reject(e)
                         }
                     });

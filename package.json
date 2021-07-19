@@ -20,6 +20,7 @@
     "generate:layouts": "ts-node scripts/generateLayouts.ts",
     "generate:docs": "ts-node scripts/generateDocs.ts && ts-node scripts/generateTaginfoProjectFiles.ts",
     "generate:cache:speelplekken": "npm run generate:layeroverview && ts-node scripts/generateCache.ts speelplekken 14 ../pietervdvn.github.io/speelplekken_cache/ 51.20 4.35 51.09 4.56",
+    "generate:cache:natuurpunt": "npm run generate:layeroverview && ts-node scripts/generateCache.ts natuurpunt 12 ../pietervdvn.github.io/natuurpunt_cache/ 50.40 2.1 51.54 6.4",
     "generate:layeroverview": "npm run generate:licenses && echo {\\\"layers\\\":[], \\\"themes\\\":[]} > ./assets/generated/known_layers_and_themes.json && ts-node scripts/generateLayerOverview.ts --no-fail",
     "generate:licenses": "ts-node scripts/generateLicenseInfo.ts --no-fail",
     "generate:report": "cd Docs/Tools && ./compileStats.sh && git commit . -m 'New statistics ands graphs' && git push",

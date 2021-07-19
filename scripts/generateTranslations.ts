@@ -212,6 +212,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 }
 
 function MergeTranslation(source: any, target: any, language: string, context: string = "") {
+   
     for (const key in source) {
         if (!source.hasOwnProperty(key)) {
             continue
@@ -220,6 +221,9 @@ function MergeTranslation(source: any, target: any, language: string, context: s
         const targetV = target[key]
         if (typeof sourceV === "string") {
             if(targetV === undefined){
+                if(typeof target === "string"){
+                    throw "Trying to merge a translation into a fixed string at "+context+" for key "+key;
+                }
                 target[key] = source[key];
                 continue;
             }

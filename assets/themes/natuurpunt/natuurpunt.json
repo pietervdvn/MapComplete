@@ -37,7 +37,10 @@
             "+and": [
               "operator~.*[nN]atuurpunt.*"
             ]
-          }
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 8,
+          "isOsmCache": true
         }
       }
     },

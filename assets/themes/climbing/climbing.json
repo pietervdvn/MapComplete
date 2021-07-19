@@ -171,14 +171,16 @@
             "en": "Climbing club",
             "nl": "Klimclub",
             "ja": "クライミングクラブ",
-            "nb_NO": "Klatreklubb"
+            "nb_NO": "Klatreklubb",
+            "ru": "Клуб скалолазания"
           },
           "description": {
             "de": "Ein Kletterverein",
             "nl": "Een klimclub",
             "en": "A climbing club",
             "ja": "クライミングクラブ",
-            "nb_NO": "En klatreklubb"
+            "nb_NO": "En klatreklubb",
+            "ru": "Клуб скалолазания"
           }
         },
         {
@@ -241,7 +243,8 @@
       "description": {
         "de": "Eine Kletterhalle",
         "en": "A climbing gym",
-        "ja": "クライミングジム"
+        "ja": "クライミングジム",
+        "nl": "Een klimzaal"
       },
       "tagRenderings": [
         "images",
@@ -484,7 +487,8 @@
       "presets": [
         {
           "title": {
-            "en": "Climbing route"
+            "en": "Climbing route",
+            "nl": "Klimroute"
           },
           "tags": [
             "sport=climbing",
@@ -547,7 +551,12 @@
             }
           },
           {
-            "if": "climbing=site",
+            "if": {
+              "or": [
+                "climbing=site",
+                "climbing=area"
+              ]
+            },
             "then": {
               "en": "Climbing site",
               "nl": "Klimsite"
@@ -785,7 +794,8 @@
             "fr": "<strong>{name}</strong>",
             "id": "<strong>{name}</strong>",
             "ru": "<strong>{name}</strong>",
-            "ja": "<strong>{name}</strong>"
+            "ja": "<strong>{name}</strong>",
+            "nl": "<strong>{name}</strong>"
           },
           "condition": "name~*"
         },
@@ -892,7 +902,8 @@
         "en": "Is there a (unofficial) website with more informations (e.g. topos)?",
         "de": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?",
         "ja": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?",
-        "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
+        "nl": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?",
+        "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?"
       },
       "condition": {
         "and": [
@@ -971,7 +982,8 @@
         {
           "if": "access=members",
           "then": {
-            "en": "Only club members"
+            "en": "Only club members",
+            "ru": "Только членам клуба"
           }
         },
         {

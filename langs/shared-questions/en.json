@@ -15,6 +15,21 @@
         "opening_hours": {
             "question": "What are the opening hours of {name}?",
             "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
+        },
+        "level": {
+            "question": "On what level is this feature located?",
+            "render": "Located on the {level}th floor",
+            "mappings": {
+                "0": {
+                    "then": "Located underground"
+                },
+                "1": {
+                    "then": "Located on the ground floor"
+                },
+                "2": {
+                    "then": "Located on the first floor"
+                }
+            }
         }
     }
 }

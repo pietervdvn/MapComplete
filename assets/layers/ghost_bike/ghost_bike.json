@@ -76,7 +76,8 @@
         "nl": "Ter nagedachtenis van {name}",
         "de": "Im Gedenken an {name}",
         "it": "In ricordo di {name}",
-        "fr": "En souvenir de {name}"
+        "fr": "En souvenir de {name}",
+        "ru": "В знак памяти о {name}"
       },
       "freeform": {
         "key": "name"
@@ -149,7 +150,8 @@
         "nl": "Geplaatst op {start_date}",
         "en": "Placed on {start_date}",
         "it": "Piazzata in data {start_date}",
-        "fr": "Placé le {start_date}"
+        "fr": "Placé le {start_date}",
+        "ru": "Установлен {start_date}"
       },
       "freeform": {
         "key": "start_date",
