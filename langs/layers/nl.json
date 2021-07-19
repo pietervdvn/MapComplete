@@ -1175,10 +1175,10 @@
             }
         }
     },
-    "nature_reserves": {
-        "name": "Natuurgebied",
+    "parking": {
+        "name": "parking",
         "title": {
-            "render": "Natuurgebied",
+            "render": "Parking",
             "mappings": {
                 "0": {
                     "then": "{name:nl}"
@@ -1188,7 +1188,7 @@
                 }
             }
         },
-        "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
+        "description": "Parking",
         "tagRenderings": {
             "1": {
                 "render": "De toegankelijkheid van dit gebied is: {access:description}",
@@ -1216,75 +1216,21 @@
             },
             "2": {
                 "render": "Beheer door {operator}",
-                "question": "Wie beheert dit gebied?",
+                "question": "Wie beheert dit pad?",
                 "mappings": {
                     "0": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
                     },
                     "1": {
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
-                    },
-                    "2": {
-                        "then": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
                     }
                 }
-            },
-            "3": {
-                "render": "Dit gebied heet {name:nl}",
-                "question": "Wat is de Nederlandstalige naam van dit gebied?"
-            },
-            "4": {
-                "render": "Dit gebied heet {name}",
-                "question": "Wat is de naam van dit gebied?",
-                "mappings": {
-                    "0": {
-                        "then": "Dit gebied heeft geen naam"
-                    }
-                }
-            },
-            "5": {
-                "question": "Zijn honden toegelaten in dit gebied?",
-                "mappings": {
-                    "0": {
-                        "then": "Honden moeten aan de leiband"
-                    },
-                    "1": {
-                        "then": "Honden zijn niet toegestaan"
-                    },
-                    "2": {
-                        "then": "Honden zijn welkom en mogen vrij rondlopen"
-                    }
-                }
-            },
-            "6": {
-                "question": "Op welke webpagina kan men meer informatie vinden over dit natuurgebied?"
-            },
-            "7": {
-                "question": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
-                "render": "{curator} is de beheerder van dit gebied"
-            },
-            "8": {
-                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "10": {
-                "render": "Extra info: <i>{description}</i>"
-            },
-            "11": {
-                "render": "Extra info: <i>{description:0}</i>"
-            },
-            "12": {
-                "render": "Totale oppervlakte: {_surface:ha}Ha"
             }
         },
         "presets": {
             "0": {
-                "title": "Natuurreservaat",
-                "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
+                "title": "Paden",
+                "description": "Voeg een ontbrekend, erkend pad toe."
             }
         }
     },
@@ -1959,20 +1905,11 @@
             }
         }
     },
-    "trails": {
-        "name": "paden",
+    "trail": {
+        "name": "Paden",
         "title": {
-            "render": "Paden",
-            "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
-                "1": {
-                    "then": "{name}"
-                }
-            }
+            "render": "Paden"
         },
-        "description": "Paden waarlangs kan gewandeld worden",
         "tagRenderings": {
             "1": {
                 "render": "De toegankelijkheid van dit gebied is: {access:description}",
@@ -2009,8 +1946,112 @@
                         "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
                     }
                 }
+            },
+            "3": {
+                "question": "Is dit pad toegankelijk met de rolstoel?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit pad is toegankelijk met de rolstoel"
+                    },
+                    "1": {
+                        "then": "Dit pad is niet toegankelijk met de rolstoel"
+                    }
+                }
+            },
+            "4": {
+                "question": "Is dit pad toegankelijk met de buggy?",
+                "mappings": {
+                    "0": {
+                        "then": "Dit pad is toegankelijk met de buggy"
+                    },
+                    "1": {
+                        "then": "Dit pad is niet toegankelijk met de buggy"
+                    }
+                }
+            },
+            "5": {
+                "render": "Ondergrond bestaat uit {surface}",
+                "mappings": {
+                    "0": {
+                        "then": "Het pad is aangelegd"
+                    },
+                    "1": {
+                        "then": "Ondergrond bestaat uit asfalt"
+                    },
+                    "2": {
+                        "then": "Ondergrond bestaat uit cement"
+                    },
+                    "3": {
+                        "then": "Ondergrond bestaat uit plavei"
+                    },
+                    "4": {
+                        "then": "Ondergrond bestaat uit kasseien"
+                    },
+                    "5": {
+                        "then": "Ondergrond bestaat uit stenen pad"
+                    },
+                    "6": {
+                        "then": "Dit pad is niet aangelegd"
+                    },
+                    "7": {
+                        "then": "Ondergrond bestaat uit grind"
+                    },
+                    "8": {
+                        "then": "Ondergrond bestaat uit gesteente"
+                    },
+                    "9": {
+                        "then": "Ondergrond bestaat uit kiezels"
+                    },
+                    "10": {
+                        "then": "Ondergrond bestaat uit aarde"
+                    },
+                    "11": {
+                        "then": "Ondergrond bestaat uit gras"
+                    },
+                    "12": {
+                        "then": "Ondergrond bestaat uit modder"
+                    },
+                    "13": {
+                        "then": "Ondergrond bestaat uit zand"
+                    }
+                },
+                "question": "Waaruit bestaat de ondergrond van het pad?"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Het pad is plat"
+                    },
+                    "1": {
+                        "then": "Het pad is zo goed als plat"
+                    },
+                    "2": {
+                        "then": "Het pad stijgt en/of daalt "
+                    },
+                    "3": {
+                        "then": "Het pad is lichtjes steil"
+                    },
+                    "4": {
+                        "then": "Het pad is steil"
+                    },
+                    "5": {
+                        "then": "Het pad is zeer steil"
+                    },
+                    "6": {
+                        "then": "Het pad is extreem steil"
+                    }
+                },
+                "question": "Hoe hard stijgt en/of daalt het pad?"
+            },
+            "7": {
+                "render": "De lengte van het pad bedraagt {distance}km"
+            },
+            "8": {
+                "render": "De breedte van het pad bedraagt {width}m",
+                "question": "Hoe breed is het pad (m)?"
             }
         },
+        "description": "Paden waarlangs kan gewandeld worden",
         "presets": {
             "0": {
                 "title": "Paden",
@@ -2186,5 +2227,64 @@
             }
         },
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
+    },
+    "watermill": {
+        "name": "watermolens",
+        "title": {
+            "render": "Watermolens",
+            "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
+                "1": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "description": "Watermolens",
+        "tagRenderings": {
+            "1": {
+                "render": "De toegankelijkheid van dit gebied is: {access:description}",
+                "question": "Is dit gebied toegankelijk?",
+                "mappings": {
+                    "0": {
+                        "then": "Vrij toegankelijk"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, want privégebied"
+                    },
+                    "3": {
+                        "then": "Toegankelijk, ondanks dat het privegebied is"
+                    },
+                    "4": {
+                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
+                    },
+                    "5": {
+                        "then": "Toegankelijk mits betaling"
+                    }
+                }
+            },
+            "2": {
+                "render": "Beheer door {operator}",
+                "question": "Wie beheert dit pad?",
+                "mappings": {
+                    "0": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+                    },
+                    "1": {
+                        "then": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "Paden",
+                "description": "Voeg een ontbrekend, erkend pad toe."
+            }
+        }
     }
 }

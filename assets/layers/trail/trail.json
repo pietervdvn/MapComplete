@@ -8,11 +8,13 @@
   "source": {
     "osmTags": {
       "and": [
-        {"or": [
-          "route=hiking",
-          "route=bycicle",
-          "route=horse"
-          ]}
+        {
+          "or": [
+            "route=hiking",
+            "route=bycicle",
+            "route=horse"
+          ]
+        }
       ]
     }
   },
@@ -149,7 +151,7 @@
             "nl": "Dit pad is toegankelijk met de rolstoel"
           },
           "if": "wheelchair=yes"
-        }, 
+        },
         {
           "then": {
             "nl": "Dit pad is niet toegankelijk met de rolstoel"
@@ -168,7 +170,7 @@
             "nl": "Dit pad is toegankelijk met de buggy"
           },
           "if": "pushchair=yes"
-        }, 
+        },
         {
           "then": {
             "nl": "Dit pad is niet toegankelijk met de buggy"
@@ -285,94 +287,93 @@
             "nl": "Ondergrond bestaat uit zand"
           }
         }
-        
       ],
       "question": {
         "en": "What type of surface does the trail have?",
         "nl": "Waaruit bestaat de ondergrond van het pad?"
-    }
-  },
-  {
-    "mappings": [
-      {
-        "if": "incline=very_easy",
-        "then": {
-          "en": "The trail is flat",
-          "nl": "Het pad is plat"
-        }
-      },
-      {
-        "if": "incline=easy",
-        "then": {
-          "en": "The trail is slightly elevated",
-          "nl": "Het pad is zo goed als plat"
-        }
-      },
-      {
-        "if": "incline=moderate",
-        "then": {
-          "en": "The trail is elevated",
-          "nl": "Het pad stijgt en/of daalt "
-        }
-      },
-      {
-        "if": "incline=somewhat_hard",
-        "then": {
-          "en": "The trail is slightly steep",
-          "nl": "Het pad is lichtjes steil"
-        }
-      },
-      {
-        "if": "incline=hard",
-        "then": {
-          "en": "The trail is steep",
-          "nl": "Het pad is steil"
-        }
-      },
-      {
-        "if": "incline=very_hard",
-        "then": {
-          "en": "The trail is very steep",
-          "nl": "Het pad is zeer steil"
-        }
-      },
-      {
-        "if": "incline=extreme",
-        "then": {
-          "en": "The trail is extremely steep",
-          "nl": "Het pad is extreem steil"
-        }
       }
-    ],
-    "question": {
-      "en": "What's the incline of the trail?",
-      "nl": "Hoe hard stijgt en/of daalt het pad?"
-  }
-},
-  {
-    "render": {
-      "en": "The trail is {distance}km long",
-      "nl": "De lengte van het pad bedraagt {distance}km"
     },
-    "freeform": {
-      "key": "distance",
-      "type": "float"
+    {
+      "mappings": [
+        {
+          "if": "incline=very_easy",
+          "then": {
+            "en": "The trail is flat",
+            "nl": "Het pad is plat"
+          }
+        },
+        {
+          "if": "incline=easy",
+          "then": {
+            "en": "The trail is slightly elevated",
+            "nl": "Het pad is zo goed als plat"
+          }
+        },
+        {
+          "if": "incline=moderate",
+          "then": {
+            "en": "The trail is elevated",
+            "nl": "Het pad stijgt en/of daalt "
+          }
+        },
+        {
+          "if": "incline=somewhat_hard",
+          "then": {
+            "en": "The trail is slightly steep",
+            "nl": "Het pad is lichtjes steil"
+          }
+        },
+        {
+          "if": "incline=hard",
+          "then": {
+            "en": "The trail is steep",
+            "nl": "Het pad is steil"
+          }
+        },
+        {
+          "if": "incline=very_hard",
+          "then": {
+            "en": "The trail is very steep",
+            "nl": "Het pad is zeer steil"
+          }
+        },
+        {
+          "if": "incline=extreme",
+          "then": {
+            "en": "The trail is extremely steep",
+            "nl": "Het pad is extreem steil"
+          }
+        }
+      ],
+      "question": {
+        "en": "What's the incline of the trail?",
+        "nl": "Hoe hard stijgt en/of daalt het pad?"
+      }
+    },
+    {
+      "render": {
+        "en": "The trail is {distance}km long",
+        "nl": "De lengte van het pad bedraagt {distance}km"
+      },
+      "freeform": {
+        "key": "distance",
+        "type": "float"
+      }
+    },
+    {
+      "render": {
+        "en": "The trail is {width}m wide",
+        "nl": "De breedte van het pad bedraagt {width}m"
+      },
+      "freeform": {
+        "key": "width",
+        "type": "nat"
+      },
+      "question": {
+        "en": "How wide is the trail (m)?",
+        "nl": "Hoe breed is het pad (m)?"
+      }
     }
-  },
-  {
-    "render": {
-      "en": "The trail is {width}m wide",
-      "nl": "De breedte van het pad bedraagt {width}m"
-    },
-    "freeform": {
-      "key": "width",
-      "type": "nat"
-    },
-    "question": {
-      "en": "How wide is the trail (m)?",
-      "nl": "Hoe breed is het pad (m)?"
-    }
-  }
   ],
   "icon": {
     "render": "./assets/layers/trail/trail.svg",

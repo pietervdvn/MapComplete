@@ -71,16 +71,6 @@
             }
         }
     },
-    "nature_reserves": {
-        "tagRenderings": {
-            "8": {
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            }
-        }
-    },
     "playground": {
         "tagRenderings": {
             "7": {

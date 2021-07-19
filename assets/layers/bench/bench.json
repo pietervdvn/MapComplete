@@ -155,7 +155,8 @@
         "zh_Hanå¨s": "材质: {material}",
         "zh_Hant": "材質：{material}",
         "nb_NO": "Materiale: {material}",
-        "fi": "Materiaali: {material}"
+        "fi": "Materiaali: {material}",
+        "zh_Hans": "材质: {material}"
       },
       "freeform": {
         "key": "material",

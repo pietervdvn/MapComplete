@@ -984,38 +984,6 @@
             }
         }
     },
-    "nature_reserves": {
-        "tagRenderings": {
-            "5": {
-                "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?",
-                "mappings": {
-                    "0": {
-                        "then": "Les chiens doivent être tenus en laisse"
-                    },
-                    "1": {
-                        "then": "Chiens interdits"
-                    },
-                    "2": {
-                        "then": "Les chiens sont autorisés à se promener librement"
-                    }
-                }
-            },
-            "6": {
-                "question": "Sur quelle page web peut-on trouver plus d'informations sur cette réserve naturelle ?"
-            },
-            "8": {
-                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "12": {
-                "render": "Superficie : {_surface:ha}&nbsp;ha"
-            }
-        }
-    },
     "picnic_table": {
         "name": "Tables de pique-nique",
         "title": {

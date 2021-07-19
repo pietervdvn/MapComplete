@@ -1012,42 +1012,6 @@
             }
         }
     },
-    "nature_reserves": {
-        "tagRenderings": {
-            "5": {
-                "question": "Are dogs allowed in this nature reserve?",
-                "mappings": {
-                    "0": {
-                        "then": "Dogs have to be leashed"
-                    },
-                    "1": {
-                        "then": "No dogs allowed"
-                    },
-                    "2": {
-                        "then": "Dogs are allowed to roam freely"
-                    }
-                }
-            },
-            "6": {
-                "question": "On which webpage can one find more information about this nature reserve?"
-            },
-            "7": {
-                "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
-                "render": "{curator} is the curator of this nature reserve"
-            },
-            "8": {
-                "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "12": {
-                "render": "Surface area: {_surface:ha}Ha"
-            }
-        }
-    },
     "picnic_table": {
         "name": "Picnic tables",
         "title": {
@@ -1660,6 +1624,95 @@
                         "then": "The changing table is in a dedicated room. "
                     }
                 }
+            }
+        }
+    },
+    "trail": {
+        "name": "Trails",
+        "title": {
+            "render": "Trails"
+        },
+        "tagRenderings": {
+            "5": {
+                "render": "Surface: {surface}",
+                "mappings": {
+                    "0": {
+                        "then": "Surface: paved"
+                    },
+                    "1": {
+                        "then": "Surface: asphalt"
+                    },
+                    "2": {
+                        "then": "Surface: concrete"
+                    },
+                    "3": {
+                        "then": "Surface: paving stones"
+                    },
+                    "4": {
+                        "then": "Surface: cobblestone"
+                    },
+                    "5": {
+                        "then": "Surface: stepping stones"
+                    },
+                    "6": {
+                        "then": "Surface: unpaved"
+                    },
+                    "7": {
+                        "then": "Surface: gravel"
+                    },
+                    "8": {
+                        "then": "Surface: rock"
+                    },
+                    "9": {
+                        "then": "Surface: pebblestone"
+                    },
+                    "10": {
+                        "then": "Surface: earth"
+                    },
+                    "11": {
+                        "then": "Surface: grass"
+                    },
+                    "12": {
+                        "then": "Surface: mud"
+                    },
+                    "13": {
+                        "then": "Surface: sand"
+                    }
+                },
+                "question": "What type of surface does the trail have?"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "The trail is flat"
+                    },
+                    "1": {
+                        "then": "The trail is slightly elevated"
+                    },
+                    "2": {
+                        "then": "The trail is elevated"
+                    },
+                    "3": {
+                        "then": "The trail is slightly steep"
+                    },
+                    "4": {
+                        "then": "The trail is steep"
+                    },
+                    "5": {
+                        "then": "The trail is very steep"
+                    },
+                    "6": {
+                        "then": "The trail is extremely steep"
+                    }
+                },
+                "question": "What's the incline of the trail?"
+            },
+            "7": {
+                "render": "The trail is {distance}km long"
+            },
+            "8": {
+                "render": "The trail is {width}m wide",
+                "question": "How wide is the trail (m)?"
             }
         }
     },

@@ -7,10 +7,11 @@
   "source": {
     "osmTags": {
       "and": [
-        {"or": [
-          "amenity=parking",
-          "amenity=motorcycle_parking"
-        ]
+        {
+          "or": [
+            "amenity=parking",
+            "amenity=motorcycle_parking"
+          ]
         }
       ]
     }

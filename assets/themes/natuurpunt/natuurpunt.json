@@ -28,7 +28,7 @@
     {
       "builtin": [
         "nature_reserve",
-        "walking_routes", 
+        "trail",
         "visitor_information_centre"
       ],
       "override": {
@@ -52,7 +52,7 @@
         "picnic_table"
       ],
       "override": {
-          "minzoom": "14"
+        "minzoom": "14"
       }
     },
     {
@@ -63,7 +63,7 @@
         "information_board"
       ],
       "override": {
-          "minzoom": "17"
+        "minzoom": "17"
       }
     }
   ],

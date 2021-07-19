@@ -1012,42 +1012,6 @@
             }
         }
     },
-    "nature_reserves": {
-        "tagRenderings": {
-            "5": {
-                "question": "I cani sono ammessi in questa riserva naturale?",
-                "mappings": {
-                    "0": {
-                        "then": "I cani devono essere tenuti al guinzaglio"
-                    },
-                    "1": {
-                        "then": "I cani non sono ammessi"
-                    },
-                    "2": {
-                        "then": "I cani sono liberi di girare liberi"
-                    }
-                }
-            },
-            "6": {
-                "question": "In quale pagina web si possono trovare altre informazioni riguardanti questa riserva naturale?"
-            },
-            "7": {
-                "question": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
-                "render": "{curator} è il curatore di questa riserva naturale"
-            },
-            "8": {
-                "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "9": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
-            },
-            "12": {
-                "render": "Area: {_surface:ha} ha"
-            }
-        }
-    },
     "picnic_table": {
         "name": "Tavoli da picnic",
         "title": {

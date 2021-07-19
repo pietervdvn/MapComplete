@@ -28,7 +28,7 @@
       "builtin": "play_forest",
       "override": {
         "source": {
-          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+          "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{z}_{x}_{y}.geojson",
           "geoJsonZoomLevel": 14,
           "isOsmCache": true
         },
@@ -105,26 +105,6 @@
     {
       "builtin": "slow_roads",
       "override": {
-        "+tagRenderings": [
-          {
-            "question": "Is dit een publiek toegankelijk pad?",
-            "mappings": [
-              {
-                "if": "access=private",
-                "then": "Dit is een privaat pad"
-              },
-              {
-                "if": "access=no",
-                "then": "Dit is een privaat pad",
-                "hideInAnswer": true
-              },
-              {
-                "if": "access=permissive",
-                "then": "Dit pad is duidelijk in private eigendom, maar er hangen geen verbodsborden dus mag men erover"
-              }
-            ]
-          }
-        ],
         "calculatedTags": [
           "_part_of_walking_routes=Array.from(new Set(feat.memberships().map(r => \"<a href='#relation/\"+r.relation.id+\"'>\" + r.relation.tags.name + \"</a>\"))).join(', ')",
           "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
@@ -139,17 +119,115 @@
       }
     },
     {
-      "builtin": [
-        "walking_routes"
-      ],
-      "override": {
-        "source": {
-          "osmTags": {
-            "+and": [
-              "operator~[pP]rovincie Antwerpen"
-            ]
+      "id": "walking_routes",
+      "name": {
+        "nl": "Wandelroutes van provincie Antwerpen"
+      },
+      "description": "Walking routes by 'provincie Antwerpen'",
+      "source": {
+        "osmTags": {
+          "and": [
+            "type=route",
+            "route=foot",
+            "operator~[pP]rovincie Antwerpen"
+          ]
+        },
+        "geoJson": "https://pietervdvn.github.io/speelplekken_cache/speelplekken_{layer}_{z}_{x}_{y}.geojson",
+        "geoJsonZoomLevel": 14,
+        "isOsmCache": true
+      },
+      "title": {
+        "render": "Wandeling <i>{name}</i>",
+        "mappings": [
+          {
+            "if": "name~.*wandeling.*",
+            "then": "{name}"
           }
-        }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "render": {
+            "nl": "Deze wandeling is <b>{_length:km}km</b> lang"
+          }
+        },
+        {
+          "mappings": [
+            {
+              "if": "route=iwn",
+              "then": {
+                "nl": "Dit is een internationale wandelroute"
+              }
+            },
+            {
+              "if": "route=nwn",
+              "then": {
+                "nl": "Dit is een nationale wandelroute"
+              }
+            },
+            {
+              "if": "route=rwn",
+              "then": {
+                "nl": "Dit is een regionale wandelroute"
+              }
+            },
+            {
+              "if": "route=lwn",
+              "then": {
+                "nl": "Dit is een lokale wandelroute"
+              }
+            }
+          ]
+        },
+        {
+          "render": {
+            "nl": "<h3>Korte beschrijving:</h3>{description}"
+          },
+          "question": "Geef een korte beschrijving van de wandeling (max 255 tekens)",
+          "freeform": {
+            "key": "description",
+            "type": "text"
+          }
+        },
+        {
+          "question": {
+            "nl": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
+          },
+          "render": "Signalisatie geplaatst door {operator}",
+          "freeform": {
+            "key": "operator"
+          }
+        },
+        {
+          "question": {
+            "nl": "Naar wie kan men emailen bij problemen rond signalisatie?"
+          },
+          "render": {
+            "nl": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+          },
+          "freeform": {
+            "key": "operator:email",
+            "type": "email"
+          }
+        },
+        "questions",
+        "reviews"
+      ],
+      "color": {
+        "render": "#6d6",
+        "mappings": [
+          {
+            "if": "color~*",
+            "then": "{color}"
+          },
+          {
+            "if": "colour~*",
+            "then": "{colour}"
+          }
+        ]
+      },
+      "width": {
+        "render": "9"
       }
     }
   ],
@@ -157,21 +235,21 @@
     "maxZoom": 16,
     "minNeededElements": 100
   },
-  "overrideAll": {
-    "+tagRenderings": [
-      {
-        "render": "Maakt deel uit van {_part_of_walking_routes}",
-        "condition": "_part_of_walking_routes~*"
+  "roamingRenderings": [
+    {
+      "render": "Maakt deel uit van {_part_of_walking_routes}",
+      "condition": "_part_of_walking_routes~*"
+    },
+    {
+      "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
+      "freeform": {
+        "key": "video",
+        "type": "url"
       },
-      {
-        "render": "<a href='{video}' target='blank'>Een kinder-reportage vinden jullie hier<a/>",
-        "freeform": {
-          "key": "video",
-          "type": "url"
-        },
-        "question": "Wat is de link naar de video-reportage?"
-      }
-    ],
+      "question": "Wat is de link naar de video-reportage?"
+    }
+  ],
+  "overrideAll": {
     "isShown": {
       "render": "yes",
       "mappings": [
