@@ -58,11 +58,11 @@ export default class LengthInput extends InputElement<string> {
             })
         }
         const element = new Combine([
-            new Combine([Svg.length_crosshair_ui().SetStyle(
-                `visibility: hidden; position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`)
+            new Combine([Svg.length_crosshair_svg().SetStyle(
+                `position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`)
             ])
                 .SetClass("block length-crosshair-svg relative")
-                .SetStyle("z-index: 1000"),
+                .SetStyle("z-index: 1000; visibility: hidden"),
             map?.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
             .SetClass("relative block bg-white border border-black rounded-3xl overflow-hidden")
@@ -119,6 +119,7 @@ export default class LengthInput extends InputElement<string> {
 
 
             const measurementCrosshair = htmlElement.getElementsByClassName("length-crosshair-svg")[0] as HTMLElement
+            
             const measurementCrosshairInner: HTMLElement = <HTMLElement>measurementCrosshair.firstChild
             if (firstClickXY === undefined) {
                 measurementCrosshair.style.visibility = "hidden"
@@ -139,12 +140,9 @@ export default class LengthInput extends InputElement<string> {
 
                 const leaflet = leafletMap?.data
                 if (leaflet) {
-                    console.log(firstClickXY, [dx, dy], "pixel origin", leaflet.getPixelOrigin())
                     const first = leaflet.layerPointToLatLng(firstClickXY)
                     const last = leaflet.layerPointToLatLng([dx, dy])
-                    console.log(first, last)
                     const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 100000) / 100
-                    console.log("First", first, "last", last, "d", geoDist)
                     self.value.setData("" + geoDist)
                 }
 

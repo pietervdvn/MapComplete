@@ -121,6 +121,10 @@ export default class ValidatedTextField {
                 
                 // Bit of a hack: we project the centerpoint to the closes point on the road - if available
                 if(options.feature){
+                    const lonlat: [number, number] = [...options.location]
+                    lonlat.reverse()
+                    options.location = <[number,number]> GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+                    options.location.reverse()
                 }
                 options.feature
                 

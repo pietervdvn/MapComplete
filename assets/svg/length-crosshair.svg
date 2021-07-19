@@ -33,8 +33,8 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="0.5"
-     inkscape:cx="108.3764"
-     inkscape:cy="623.05359"
+     inkscape:cx="307.56567"
+     inkscape:cy="-35.669379"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -53,21 +53,26 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
   </cc:Work>
 </rdf:RDF>
 </metadata>
-  <ellipse
-     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.99999994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path816"
-     cx="-429.2377"
-     cy="429.76804"
-     rx="428.34982"
-     ry="427.81949"
-     transform="rotate(-90)" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.99999994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:71.99999853,71.99999853;stroke-dashoffset:0;stroke-opacity:1"
+     id="path816"
+     transform="rotate(-89.47199)"
+     sodipodi:type="arc"
+     sodipodi:cx="-425.24921"
+     sodipodi:cy="433.71375"
+     sodipodi:rx="428.34982"
+     sodipodi:ry="427.81949"
+     sodipodi:start="0"
+     sodipodi:end="4.7117019"
+     sodipodi:open="true"
+     d="M 3.1006165,433.71375 A 428.34982,427.81949 0 0 1 -425.1511,861.53322 428.34982,427.81949 0 0 1 -853.59898,433.90971 428.34982,427.81949 0 0 1 -425.54352,5.8943576" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:4.49999991;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 429.76804,430.08754 0,-429.19968"
      id="path820"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:none;stroke:#000000;stroke-width:1.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:8.99999982,8.99999982;stroke-dashoffset:0"
+     style="fill:none;stroke:#000000;stroke-width:1.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:35.99999926,35.99999926;stroke-dashoffset:0"
      d="m 857.58749,429.23771 -855.6389371,0 v 0"
      id="path822"
      inkscape:connector-curvature="0" />
@@ -75,15 +80,36 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
      inkscape:connector-curvature="0"
      id="path814"
      d="M 429.76804,857.30628 V 428.78674"
-     style="fill:none;stroke:#000000;stroke-width:1.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:11.99999975,11.99999975;stroke-dashoffset:0" />
+     style="fill:none;stroke:#000000;stroke-width:1.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:35.99999926,35.99999926;stroke-dashoffset:0" />
   <path
      inkscape:connector-curvature="0"
      id="path826"
-     d="M 857.58749,0.23771855 H 1.9485529 v 0"
-     style="fill:none;stroke:#000000;stroke-width:2.99999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:17.99999963,17.99999963;stroke-dashoffset:0;stroke-opacity:1" />
+     d="M 857.32232,1.0332137 H 1.6833879 v 0"
+     style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:17.99999963, 17.99999963;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
      id="path828"
      d="M 857.58749,858.2377 H 1.9485529 v 0"
      style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:8.99999982, 8.99999982;stroke-dashoffset:0;stroke-opacity:1" />
+  <path
+     cx="-429.2377"
+     cy="429.76804"
+     rx="428.34982"
+     ry="427.81949"
+     transform="rotate(-90)"
+     id="path825"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:11.99999975;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     d="M -5.3639221,-424.71887 A 428.34982,427.81949 0 0 1 -429.83855,3.0831087 428.34982,427.81949 0 0 1 -861.99345,-416.97839"
+     sodipodi:open="true"
+     sodipodi:end="3.1234988"
+     sodipodi:start="0"
+     sodipodi:ry="427.81949"
+     sodipodi:rx="428.34982"
+     sodipodi:cy="-424.71887"
+     sodipodi:cx="-433.71375"
+     sodipodi:type="arc"
+     transform="rotate(-179.47199)"
+     id="path827"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>
