@@ -73,16 +73,16 @@ export default class GeoLocationHandler extends VariableUiElement {
         (hasLocation) => {
           if (hasLocation) {
             return new CenterFlexedElement(
-              Img.AsImageElement(Svg.location, "", "width:1.5rem;height:1.5rem")
+              Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
             ); // crosshair_blue_ui()
           }
           if (isActive.data) {
             return new CenterFlexedElement(
-              Img.AsImageElement(Svg.location, "", "width:1.5rem;height:1.5rem")
+              Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
             ); // crosshair_blue_center_ui
           }
           return new CenterFlexedElement(
-            Img.AsImageElement(Svg.location, "", "width:1.5rem;height:1.5rem")
+            Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
           ); //crosshair_ui
         },
         [isActive]

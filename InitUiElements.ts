@@ -202,7 +202,7 @@ export class InitUiElements {
 
     const plus = new MapControlButton(
       new CenterFlexedElement(
-        Img.AsImageElement(Svg.plus_zoom, "", "width:1.5rem;height:1.5rem")
+        Img.AsImageElement(Svg.plus_zoom, "", "width:1.25rem;height:1.25rem")
       )
     ).onClick(() => {
       State.state.locationControl.data.zoom++;  
@@ -211,7 +211,7 @@ export class InitUiElements {
 
     const min = new MapControlButton(
       new CenterFlexedElement(
-        Img.AsImageElement(Svg.min_zoom, "", "width:1.5rem;height:1.5rem")
+        Img.AsImageElement(Svg.min_zoom, "", "width:1.25rem;height:1.25rem")
       )
     ).onClick(() => {
       State.state.locationControl.data.zoom--;
