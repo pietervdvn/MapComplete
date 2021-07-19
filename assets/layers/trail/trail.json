@@ -1,7 +1,8 @@
 {
   "id": "trail",
   "name": {
-    "nl": "paden"
+    "en": "Trails",
+    "nl": "Paden"
   },
   "minzoom": 12,
   "source": {
@@ -17,36 +18,9 @@
   },
   "title": {
     "render": {
+      "en": "Trails",
       "nl": "Paden"
-    },
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "name:nl~*"
-          ]
-        },
-        "then": {
-          "nl": "{name:nl}"
-        }
-      },
-      {
-        "if": {
-          "and": [
-            "name~*"
-          ]
-        },
-        "then": {
-          "nl": "{name}"
-        }
-      }
-    ]
-  },
-  "icon": {
-    "render": "./assets/layers/trail/trail.svg"
-  },
-  "description": {
-    "nl": "Paden waarlangs kan gewandeld worden"
+    }
   },
   "tagRenderings": [
     "images",
@@ -164,15 +138,264 @@
           "hideInAnswer": true
         }
       ]
+    },
+    {
+      "question": {
+        "nl": "Is dit pad toegankelijk met de rolstoel?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "nl": "Dit pad is toegankelijk met de rolstoel"
+          },
+          "if": "wheelchair=yes"
+        }, 
+        {
+          "then": {
+            "nl": "Dit pad is niet toegankelijk met de rolstoel"
+          },
+          "if": "wheelchair=no"
+        }
+      ]
+    },
+    {
+      "question": {
+        "nl": "Is dit pad toegankelijk met de buggy?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "nl": "Dit pad is toegankelijk met de buggy"
+          },
+          "if": "pushchair=yes"
+        }, 
+        {
+          "then": {
+            "nl": "Dit pad is niet toegankelijk met de buggy"
+          },
+          "if": "pushchair=no"
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "Surface: {surface}",
+        "nl": "Ondergrond bestaat uit {surface}"
+      },
+      "freeform": {
+        "key": "surface",
+        "addExtraTags": []
+      },
+      "mappings": [
+        {
+          "if": "surface=paved",
+          "then": {
+            "en": "Surface: paved",
+            "nl": "Het pad is aangelegd"
+          }
+        },
+        {
+          "if": "surface=asphalt",
+          "then": {
+            "en": "Surface: asphalt",
+            "nl": "Ondergrond bestaat uit asfalt"
+          }
+        },
+        {
+          "if": "surface=concrete",
+          "then": {
+            "en": "Surface: concrete",
+            "nl": "Ondergrond bestaat uit cement"
+          }
+        },
+        {
+          "if": "surface=paving_stones",
+          "then": {
+            "en": "Surface: paving stones",
+            "nl": "Ondergrond bestaat uit plavei"
+          }
+        },
+        {
+          "if": "surface=cobblestone",
+          "then": {
+            "en": "Surface: cobblestone",
+            "nl": "Ondergrond bestaat uit kasseien"
+          }
+        },
+        {
+          "if": "surface=stepping_stones",
+          "then": {
+            "en": "Surface: stepping stones",
+            "nl": "Ondergrond bestaat uit stenen pad"
+          }
+        },
+        {
+          "if": "surface=unpaved",
+          "then": {
+            "en": "Surface: unpaved",
+            "nl": "Dit pad is niet aangelegd"
+          }
+        },
+        {
+          "if": "surface=gravel",
+          "then": {
+            "en": "Surface: gravel",
+            "nl": "Ondergrond bestaat uit grind"
+          }
+        },
+        {
+          "if": "surface=rock",
+          "then": {
+            "en": "Surface: rock",
+            "nl": "Ondergrond bestaat uit gesteente"
+          }
+        },
+        {
+          "if": "surface=pebblestone",
+          "then": {
+            "en": "Surface: pebblestone",
+            "nl": "Ondergrond bestaat uit kiezels"
+          }
+        },
+        {
+          "if": "surface=earth",
+          "then": {
+            "en": "Surface: earth",
+            "nl": "Ondergrond bestaat uit aarde"
+          }
+        },
+        {
+          "if": "surface=grass",
+          "then": {
+            "en": "Surface: grass",
+            "nl": "Ondergrond bestaat uit gras"
+          }
+        },
+        {
+          "if": "surface=mud",
+          "then": {
+            "en": "Surface: mud",
+            "nl": "Ondergrond bestaat uit modder"
+          }
+        },
+        {
+          "if": "surface=sand",
+          "then": {
+            "en": "Surface: sand",
+            "nl": "Ondergrond bestaat uit zand"
+          }
+        }
+        
+      ],
+      "question": {
+        "en": "What type of surface does the trail have?",
+        "nl": "Waaruit bestaat de ondergrond van het pad?"
     }
+  },
+  {
+    "mappings": [
+      {
+        "if": "incline=very_easy",
+        "then": {
+          "en": "The trail is flat",
+          "nl": "Het pad is plat"
+        }
+      },
+      {
+        "if": "incline=easy",
+        "then": {
+          "en": "The trail is slightly elevated",
+          "nl": "Het pad is zo goed als plat"
+        }
+      },
+      {
+        "if": "incline=moderate",
+        "then": {
+          "en": "The trail is elevated",
+          "nl": "Het pad stijgt en/of daalt "
+        }
+      },
+      {
+        "if": "incline=somewhat_hard",
+        "then": {
+          "en": "The trail is slightly steep",
+          "nl": "Het pad is lichtjes steil"
+        }
+      },
+      {
+        "if": "incline=hard",
+        "then": {
+          "en": "The trail is steep",
+          "nl": "Het pad is steil"
+        }
+      },
+      {
+        "if": "incline=very_hard",
+        "then": {
+          "en": "The trail is very steep",
+          "nl": "Het pad is zeer steil"
+        }
+      },
+      {
+        "if": "incline=extreme",
+        "then": {
+          "en": "The trail is extremely steep",
+          "nl": "Het pad is extreem steil"
+        }
+      }
+    ],
+    "question": {
+      "en": "What's the incline of the trail?",
+      "nl": "Hoe hard stijgt en/of daalt het pad?"
+  }
+},
+  {
+    "render": {
+      "en": "The trail is {distance}km long",
+      "nl": "De lengte van het pad bedraagt {distance}km"
+    },
+    "freeform": {
+      "key": "distance",
+      "type": "float"
+    }
+  },
+  {
+    "render": {
+      "en": "The trail is {width}m wide",
+      "nl": "De breedte van het pad bedraagt {width}m"
+    },
+    "freeform": {
+      "key": "width",
+      "type": "nat"
+    },
+    "question": {
+      "en": "How wide is the trail (m)?",
+      "nl": "Hoe breed is het pad (m)?"
+    }
+  }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 10,
+  "icon": {
+    "render": "./assets/layers/trail/trail.svg",
+    "mappings": [
+      {
+        "if": "wheelchair=yes",
+        "then": "./assets/layers/trail/wheelchair.svg"
+      },
+      {
+        "if": "pushchair=yes",
+        "then": "./assets/layers/trail/pushchair.svg"
+      }
+    ]
+  },
+  "description": {
+    "nl": "Paden waarlangs kan gewandeld worden"
+  },
   "wayHandling": 2,
   "width": {
     "render": "5"
   },
   "iconSize": {
-    "render": "50,50,center"
+    "render": "35,35,center"
   },
   "color": {
     "render": "#335D9F"

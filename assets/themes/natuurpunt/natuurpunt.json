@@ -28,7 +28,7 @@
     {
       "builtin": [
         "nature_reserve",
-        "trail", 
+        "walking_routes", 
         "visitor_information_centre"
       ],
       "override": {
@@ -41,14 +41,28 @@
         }
       }
     },
-    "drinking_water",
-    "bench",
-    "picnic_table",
-    "birdhide",
-    "toilet",
-    "watermill",
-    "information_board",
-    "parking"
+    {
+      "builtin": [
+        "birdhide",
+        "toilet",
+        "drinking_water",
+        "picnic_table"
+      ],
+      "override": {
+          "minzoom": "14"
+      }
+    },
+    {
+      "builtin": [
+        "bench",
+        "watermill",
+        "parking"
+      ],
+      "override": {
+          "minzoom": "17"
+      }
+    },
+    "information_board"
   ],
   "roamingRenderings": []
 }

@@ -398,7 +398,7 @@
     "render": "./assets/themes/buurtnatuur/nature_reserve.svg"
   },
   "width": {
-    "render": "5"
+    "render": "1"
   },
   "iconSize": {
     "render": "50,50,center"
