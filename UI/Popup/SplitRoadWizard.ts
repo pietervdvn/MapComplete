@@ -84,10 +84,10 @@ export default class SplitRoadWizard extends Toggle {
         )
 
         // Only show the splitButton if logged in, else show login prompt
-        const splitToggle = new Toggle(
-            splitButton,
-            t.loginToSplit.Clone().onClick(() => State.state.osmConnection.AttemptLogin()),
-            State.state.osmConnection.isLoggedIn)
+        const loginBtn = t.loginToSplit.Clone()
+            .onClick(() => State.state.osmConnection.AttemptLogin())
+            .SetClass("login-button-friendly");
+        const splitToggle = new Toggle(splitButton, loginBtn, State.state.osmConnection.isLoggedIn)
 
         // Save button
         const saveButton = new Button(t.split.Clone(), () => {
@@ -113,19 +113,20 @@ export default class SplitRoadWizard extends Toggle {
 
 
         });
-        saveButton.SetClass("block btn btn-primary");
-        const disabledSaveButton = new Button("Split here", undefined);
-        disabledSaveButton.SetClass("block btn btn-disabled");
+        saveButton.SetClass("btn btn-primary mr-3");
+        const disabledSaveButton = new Button("Split", undefined);
+        disabledSaveButton.SetClass("btn btn-disabled mr-3");
         // Only show the save button if there are split points defined
         const saveToggle = new Toggle(disabledSaveButton, saveButton, splitPoints.map((data) => data.length === 0))
 
-        const cancelButton = new Button(Translations.t.general.cancel.Clone(), () => {
-            splitClicked.setData(false);
-            splitPoints.setData([]);
-            splitClicked.setData(false)
-        });
+        const cancelButton = Translations.t.general.cancel.Clone() // Not using Button() element to prevent full width button
+            .SetClass("btn btn-secondary mr-3")
+            .onClick(() => {
+                splitPoints.setData([]);
+                splitClicked.setData(false);
+            });
 
-        cancelButton.SetClass("block btn btn-secondary");
+        cancelButton.SetClass("btn btn-secondary block");
 
         const splitTitle = new Title(t.splitTitle);
 
