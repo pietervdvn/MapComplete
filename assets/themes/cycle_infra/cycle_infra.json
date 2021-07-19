@@ -12,7 +12,10 @@
     "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken gemaakt tijdens osoc21."
   },
-  "language": ["en", "nl"],
+  "language": [
+    "en",
+    "nl"
+  ],
   "maintainer": "",
   "icon": "./assets/svg/cycle-infra.svg",
   "version": "0",
@@ -37,7 +40,10 @@
             "cycleway=^(?!no).*",
             "cyclestreet=yes",
             {
-              "and": ["highway=path", "bicycle=designated"]
+              "and": [
+                "highway=path",
+                "bicycle=designated"
+              ]
             }
           ]
         }
@@ -50,7 +56,10 @@
         "mappings": [
           {
             "if": {
-              "or": ["highway=cycleway", "highway=path"]
+              "or": [
+                "highway=cycleway",
+                "highway=path"
+              ]
             },
             "then": {
               "nl": "Fietsweg",
@@ -99,7 +108,10 @@
             "nl": "Wat voor fietspad is hier?"
           },
           "condition": {
-            "and": ["highway!=cycleway", "highway!=path"]
+            "and": [
+              "highway!=cycleway",
+              "highway!=path"
+            ]
           },
           "mappings": [
             {
@@ -198,7 +210,10 @@
             "addExtraTags": []
           },
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=lane"]
+            "or": [
+              "cycleway=shared_lane",
+              "cycleway=lane"
+            ]
           },
           "mappings": [
             {
@@ -252,7 +267,11 @@
             "addExtraTags": []
           },
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=lane", "cycleway=track"]
+            "or": [
+              "cycleway=shared_lane",
+              "cycleway=lane",
+              "cycleway=track"
+            ]
           },
           "mappings": [
             {
@@ -302,7 +321,11 @@
             "nl": "Wat is de kwaliteit van dit fietspad?"
           },
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=lane", "cycleway=track"]
+            "or": [
+              "cycleway=shared_lane",
+              "cycleway=lane",
+              "cycleway=track"
+            ]
           },
           "mappings": [
             {
@@ -412,7 +435,10 @@
             "nl": "Wat is de kwaliteit van deze straat?"
           },
           "condition": {
-            "or": ["cycleway=no", "highway=cycleway"]
+            "or": [
+              "cycleway=no",
+              "highway=cycleway"
+            ]
           },
           "mappings": [
             {
@@ -467,7 +493,11 @@
         },
         {
           "condition": {
-            "or": ["cycleway=shared_lane", "cycleway=no", "cycleway="]
+            "or": [
+              "cycleway=shared_lane",
+              "cycleway=no",
+              "cycleway="
+            ]
           },
           "render": {
             "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
@@ -499,7 +529,10 @@
         "mappings": [
           {
             "if": {
-              "or": ["highway=cycleway", "highway=path"]
+              "or": [
+                "highway=cycleway",
+                "highway=path"
+              ]
             },
             "then": "#00ff00"
           },
@@ -575,7 +608,10 @@
             "nl": "Is er een fietspad?"
           },
           "condition": {
-            "and": ["highway!=cycleway", "highway!=path"]
+            "and": [
+              "highway!=cycleway",
+              "highway!=path"
+            ]
           },
           "mappings": [
             {
@@ -641,7 +677,10 @@
       },
       "source": {
         "osmTags": {
-          "or": ["barrier=bollard", "barrier=cycle_barrier"]
+          "or": [
+            "barrier=bollard",
+            "barrier=cycle_barrier"
+          ]
         }
       },
       "minzoom": 14,

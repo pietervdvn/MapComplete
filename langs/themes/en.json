@@ -692,6 +692,289 @@
             }
         }
     },
+    "cycle_infra": {
+        "title": "Bicycle infrastructure",
+        "shortDescription": "A map where you can view and edit things related to the bicycle infrastructure.",
+        "description": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
+        "layers": {
+            "0": {
+                "name": "Cycleways",
+                "title": {
+                    "render": "Cycleways",
+                    "mappings": {
+                        "0": {
+                            "then": "Bike road"
+                        },
+                        "1": {
+                            "then": "Shared lane"
+                        },
+                        "2": {
+                            "then": "Bike lane"
+                        },
+                        "3": {
+                            "then": "Bike road next to the road"
+                        },
+                        "4": {
+                            "then": "Cyclestreet"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "0": {
+                        "question": "What kind of cycleway is there?",
+                        "mappings": {
+                            "0": {
+                                "then": "There is a shared lane"
+                            },
+                            "1": {
+                                "then": "There is a lane next to the road (seperated with paint)"
+                            },
+                            "2": {
+                                "then": "There is a track, but no cycleway drawn seperately from this road on the map."
+                            },
+                            "3": {
+                                "then": "There is a seperately drawn cycleway"
+                            },
+                            "4": {
+                                "then": "This is a cyclestreet."
+                            },
+                            "5": {
+                                "then": "There is no cycleway"
+                            }
+                        },
+                        "render": "Unknown cycleway situation"
+                    },
+                    "1": {
+                        "question": "Is this street lit?",
+                        "mappings": {
+                            "0": {
+                                "then": "This street is lit"
+                            },
+                            "1": {
+                                "then": "This road is not lit"
+                            },
+                            "2": {
+                                "then": "This road is lit at night"
+                            },
+                            "3": {
+                                "then": "This road is lit 24/7"
+                            }
+                        }
+                    },
+                    "2": {
+                        "render": "The maximum speed on this road is {maxspeed} km/h",
+                        "mappings": {
+                            "0": {
+                                "then": "The maximum speed is 20 km/h"
+                            },
+                            "1": {
+                                "then": "The maximum speed is 30 km/h"
+                            },
+                            "2": {
+                                "then": "The maximum speed is 50 km/h"
+                            },
+                            "3": {
+                                "then": "The maximum speed is 70 km/h"
+                            },
+                            "4": {
+                                "then": "The maximum speed is 90 km/h"
+                            }
+                        },
+                        "question": "What is the maximum speed in this street?"
+                    },
+                    "3": {
+                        "render": "This cyleway is made of {cycleway:surface}",
+                        "mappings": {
+                            "0": {
+                                "then": "This street is made of wood"
+                            },
+                            "1": {
+                                "then": "This street is made of concrete"
+                            },
+                            "2": {
+                                "then": "This street is made of cobblestone"
+                            },
+                            "3": {
+                                "then": "This street is made of asphalt"
+                            },
+                            "4": {
+                                "then": "This street is paved"
+                            }
+                        },
+                        "question": "What is the cycleway:surface of the street made from?"
+                    },
+                    "4": {
+                        "question": "What is the smoothness of this cycleway?",
+                        "mappings": {
+                            "0": {
+                                "then": "Usable for thin rollers: rollerblade, skateboard"
+                            },
+                            "1": {
+                                "then": "Usable for thin wheels: racing bike"
+                            },
+                            "2": {
+                                "then": "Usable for normal wheels: city bike, wheelchair, scooter"
+                            },
+                            "3": {
+                                "then": "Usable for robust wheels: trekking bike, car, rickshaw"
+                            },
+                            "4": {
+                                "then": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                            },
+                            "5": {
+                                "then": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                            },
+                            "6": {
+                                "then": "Usable for specialized off-road vehicles: tractor, ATV"
+                            },
+                            "7": {
+                                "then": "Impassable / No wheeled vehicle"
+                            }
+                        }
+                    },
+                    "5": {
+                        "render": "This road is made of {surface}",
+                        "mappings": {
+                            "0": {
+                                "then": "This street is made of wood"
+                            },
+                            "1": {
+                                "then": "This street is made of concrete"
+                            },
+                            "2": {
+                                "then": "This street is made of cobblestone"
+                            },
+                            "3": {
+                                "then": "This street is made of asphalt"
+                            },
+                            "4": {
+                                "then": "This street is paved"
+                            }
+                        },
+                        "question": "What is the surface of the street made from?"
+                    },
+                    "6": {
+                        "question": "What is the smoothness of this street?",
+                        "mappings": {
+                            "0": {
+                                "then": "Usable for thin rollers: rollerblade, skateboard"
+                            },
+                            "1": {
+                                "then": "Usable for thin wheels: racing bike"
+                            },
+                            "2": {
+                                "then": "Usable for normal wheels: city bike, wheelchair, scooter"
+                            },
+                            "3": {
+                                "then": "Usable for robust wheels: trekking bike, car, rickshaw"
+                            },
+                            "4": {
+                                "then": "Usable for vehicles with high clearance: light duty off-road vehicle"
+                            },
+                            "5": {
+                                "then": "Usable for off-road vehicles: heavy duty off-road vehicle"
+                            },
+                            "6": {
+                                "then": "Usable for specialized off-road vehicles: tractor, ATV"
+                            },
+                            "7": {
+                                "then": "Impassable / No wheeled vehicle"
+                            }
+                        }
+                    },
+                    "7": {
+                        "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
+                        "question": "What is the carriage width of this road (in meters)?"
+                    }
+                }
+            },
+            "1": {
+                "name": "All streets",
+                "description": "Layer to mark new cycleways",
+                "title": {
+                    "render": "Street"
+                },
+                "tagRenderings": {
+                    "0": {
+                        "question": "Is there a cycleway?",
+                        "mappings": {
+                            "0": {
+                                "then": "There is a shared lane"
+                            },
+                            "1": {
+                                "then": "There is a lane next to the road (seperated with paint)"
+                            },
+                            "2": {
+                                "then": "There is a track, but no cycleway drawn seperately from this road on the map."
+                            },
+                            "3": {
+                                "then": "There is a seperately drawn cycleway"
+                            },
+                            "4": {
+                                "then": "This is a cyclestreet."
+                            },
+                            "5": {
+                                "then": "There is no cycleway"
+                            }
+                        },
+                        "render": "Unknown cycleway situation"
+                    }
+                }
+            },
+            "2": {
+                "name": "Barriers",
+                "description": "Obstacles while cycling, such as bollards and cycle barriers",
+                "title": {
+                    "render": "Barrier",
+                    "mappings": {
+                        "0": {
+                            "then": "Bollard"
+                        },
+                        "1": {
+                            "then": "Cycling Barrier"
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "0": {
+                        "question": "Can a bicycle go past this barrier?",
+                        "mappings": {
+                            "0": {
+                                "then": "A cyclist can go past this."
+                            },
+                            "1": {
+                                "then": "A cyclist can not go past this."
+                            }
+                        }
+                    },
+                    "1": {
+                        "question": "What kind of bollard is this?",
+                        "mappings": {
+                            "0": {
+                                "then": "Removable bollard"
+                            },
+                            "1": {
+                                "then": "Fixed bollard"
+                            },
+                            "2": {
+                                "then": "Bollard that can be folded down"
+                            },
+                            "3": {
+                                "then": "Flexible bollard, usually plastic"
+                            },
+                            "4": {
+                                "then": "Rising bollard"
+                            }
+                        }
+                    },
+                    "2": {
+                        "render": "Maximum width: {maxwidth:physical} m",
+                        "question": "How wide is the gap left over besides the barrier?"
+                    }
+                }
+            }
+        }
+    },
     "fietsstraten": {
         "title": "Cyclestreets",
         "shortDescription": "A map of cyclestreets",

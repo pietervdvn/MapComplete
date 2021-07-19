@@ -10,7 +10,10 @@
   },
   "source": {
     "osmTags": {
-      "or": ["highway=traffic_signals", "highway=crossing"]
+      "or": [
+        "highway=traffic_signals",
+        "highway=crossing"
+      ]
     }
   },
   "minzoom": 14,
@@ -41,13 +44,44 @@
     "mappings": [
       {
         "if": {
-          "or": ["highway=traffic_signals", "crossing=traffic_signals"]
+          "or": [
+            "highway=traffic_signals",
+            "crossing=traffic_signals"
+          ]
         },
         "then": "./assets/layers/crossings/traffic_lights.svg"
       }
     ]
   },
   "width": "5",
+  "presets": [
+    {
+      "title": {
+        "en": "Crossing",
+        "nl": "Oversteekplaats"
+      },
+      "tags": [
+        "highway=crossing"
+      ],
+      "description": {
+        "en": "Crossing for pedestrians and/or cyclists",
+        "nl": "Oversteekplaats voor voetgangers en/of fietsers"
+      }
+    },
+    {
+      "title": {
+        "en": "Traffic signal",
+        "nl": "Verkeerslicht"
+      },
+      "tags": [
+        "highway=traffic_signals"
+      ],
+      "description": {
+        "en": "Traffic signal on a road",
+        "nl": "Verkeerslicht op een weg"
+      }
+    }
+  ],
   "tagRenderings": [
     {
       "question": {
@@ -163,7 +197,10 @@
         "nl": "Heeft dit verkeerslicht een knop voor groen licht?"
       },
       "condition": {
-        "or": ["highway=traffic_signals", "crossing=traffic_signals"]
+        "or": [
+          "highway=traffic_signals",
+          "crossing=traffic_signals"
+        ]
       },
       "mappings": [
         {
