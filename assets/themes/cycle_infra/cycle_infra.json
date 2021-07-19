@@ -858,6 +858,60 @@
             "key": "maxwidth:physical",
             "type": "pfloat"
           }
+        },
+        {
+          "render": {
+            "en": "Space between barriers (along the length of the road): {width:seperation} m"
+          },
+          "question": {
+            "en": "How much space is there between the barriers (along the length of the road)?"
+          },
+          "condition": {
+            "or": [
+              "cycle_barrier:type=double",
+              "cycle_barrier:type=triple"
+            ]
+          },
+          "freeform": {
+            "key": "width:seperation",
+            "type": "pfloat"
+          }
+        },
+        {
+          "render": {
+            "en": "Width of opening: {width:opening} m"
+          },
+          "question": {
+            "en": "How wide is the smallest opening next to the barriers?"
+          },
+          "condition": {
+            "or": [
+              "cycle_barrier:type=double",
+              "cycle_barrier:type=triple"
+            ]
+          },
+          "freeform": {
+            "key": "width:opening",
+            "type": "pfloat"
+          }
+        },
+        {
+          "render": {
+            "en": "Overlap: {overlap} m"
+          },
+          "question": {
+            "en": "How much overlap do the barriers have?"
+          },
+          "condition": {
+            "or": [
+              "cycle_barrier:type=double",
+              "cycle_barrier:type=triple"
+            ]
+          },
+          "freeform": {
+            "key": "overlap",
+            "type": "pfloat"
+          }
         }
       ]
     },

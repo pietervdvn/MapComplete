@@ -997,6 +997,18 @@
                     "3": {
                         "render": "Maximum width: {maxwidth:physical} m",
                         "question": "How wide is the gap left over besides the barrier?"
+                    },
+                    "4": {
+                        "render": "Space between barriers (along the length of the road): {width:seperation} m",
+                        "question": "How much space is there between the barriers (along the length of the road)?"
+                    },
+                    "5": {
+                        "render": "Width of opening: {width:opening} m",
+                        "question": "How wide is the smallest opening next to the barriers?"
+                    },
+                    "6": {
+                        "render": "Overlap: {overlap} m",
+                        "question": "How much overlap do the barriers have?"
                     }
                 }
             }
