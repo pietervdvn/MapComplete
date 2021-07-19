@@ -146,7 +146,9 @@ export default class ShowDataLayer {
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
-            closeButton: false
+            closeButton: false,
+            autoPanPaddingTopLeft: [15,15],
+            
         }, leafletLayer);
 
         leafletLayer.bindPopup(popup);

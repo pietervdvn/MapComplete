@@ -448,5 +448,12 @@ export class Utils {
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+
+    public static setDefaults(options, defaults){
+        for (let key in defaults){
+            if (!(key in options)) options[key] = defaults[key];
+        }
+        return options;
+    }
 }
 

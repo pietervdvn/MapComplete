@@ -273,6 +273,9 @@
                     "3": {
                         "render": "Deze plaats vraagt {charge}",
                         "question": "Hoeveel kost deze plaats?"
+                    },
+                    "9": {
+                        "render": "Officiële website: : <a href='{website}'>{website}</a>"
                     }
                 }
             }
@@ -280,13 +283,33 @@
     },
     "charging_stations": {
         "title": "Oplaadpunten",
+        "shortDescription": "Een wereldwijde kaart van oplaadpunten",
         "layers": {
             "0": {
                 "name": "Oplaadpunten",
                 "title": {
                     "render": "Oplaadpunt"
                 },
-                "description": "Een oplaadpunt"
+                "description": "Een oplaadpunt",
+                "tagRenderings": {
+                    "6": {
+                        "render": "{network}",
+                        "mappings": {
+                            "0": {
+                                "then": "Maakt geen deel uit van een netwerk"
+                            },
+                            "1": {
+                                "then": "AeroVironment"
+                            },
+                            "2": {
+                                "then": "Blink"
+                            },
+                            "3": {
+                                "then": "eVgo"
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -333,6 +356,7 @@
                         }
                     }
                 },
+                "description": "Een klimzaal",
                 "tagRenderings": {
                     "3": {
                         "render": "<strong>{name}</strong>",
@@ -367,6 +391,11 @@
                     "5": {
                         "question": "Hoe moeilijk is deze klimroute volgens het Franse/Belgische systeem?",
                         "render": "De klimmoeilijkheid is {climbing:grade:french} volgens het Franse/Belgische systeem"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "title": "Klimroute"
                     }
                 }
             },
@@ -419,6 +448,9 @@
                 },
                 "description": "Een klimgelegenheid?",
                 "tagRenderings": {
+                    "1": {
+                        "render": "<strong>{name}</strong>"
+                    },
                     "2": {
                         "mappings": {
                             "0": {
@@ -917,6 +949,13 @@
                     },
                     "3": {
                         "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
                     }
                 }
             }

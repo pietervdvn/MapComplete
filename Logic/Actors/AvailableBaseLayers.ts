@@ -90,10 +90,10 @@ export default class AvailableBaseLayers {
             for (const category of prefered) {
                 //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
                 available.sort((a, b) => {
-                        if (a.category === preferedCategory && b.category === preferedCategory) {
+                        if (a.category === category && b.category === category) {
                             return 0;
                         }
-                        if (a.category !== preferedCategory) {
+                        if (a.category !== category) {
                             return 1
                         }
 

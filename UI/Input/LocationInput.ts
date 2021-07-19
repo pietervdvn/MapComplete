@@ -48,7 +48,7 @@ export default class LocationInput extends InputElement<Loc> {
             )
         })
 
-        layer.map(layer => {
+        this.mapBackground.map(layer => {
 
             const leaflet = map.leafletMap.data
             if (leaflet === undefined || layer === undefined) {

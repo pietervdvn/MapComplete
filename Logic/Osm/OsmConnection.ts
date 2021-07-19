@@ -47,6 +47,7 @@ export class OsmConnection {
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     public isLoggedIn: UIEventSource<boolean>
+    private fakeUser: boolean;
     _dryRun: boolean;
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
@@ -59,12 +60,15 @@ export class OsmConnection {
         url: string
     };
 
-    constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
+    constructor(dryRun: boolean, 
+                fakeUser: boolean,
+                oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
                 singlePage: boolean = true,
                 osmConfiguration: "osm" | "osm-test" = 'osm'
     ) {
+        this.fakeUser = fakeUser;
         this._singlePage = singlePage;
         this._oauth_config = OsmConnection.oauth_configs[osmConfiguration] ?? OsmConnection.oauth_configs.osm;
         console.debug("Using backend", this._oauth_config.url)
@@ -72,7 +76,15 @@ export class OsmConnection {
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
-        this.userDetails.data.dryRun = dryRun;
+        this.userDetails.data.dryRun = dryRun || fakeUser;
+        if(fakeUser){
+            const ud = this.userDetails.data;
+            ud.csCount = 5678
+            ud.loggedIn= true;
+            ud.unreadMessages = 0
+            ud.name = "Fake user"
+            ud.totalMessages = 42;
+        }
         const self =this;
         this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
             if(self.userDetails.data.loggedIn == false && isLoggedIn == true){
@@ -138,6 +150,10 @@ export class OsmConnection {
     }
 
     public AttemptLogin() {
+        if(this.fakeUser){
+            console.log("AttemptLogin called, but ignored as fakeUser is set")
+            return;
+        }
         const self = this;
         console.log("Trying to log in...");
         this.updateAuthObject();

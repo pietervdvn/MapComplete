@@ -427,7 +427,8 @@
             "it": "Sito web ufficiale: <a href='{website}'>{website}</a>",
             "ja": "公式Webサイト: <a href='{website}'>{website}</a>",
             "nb_NO": "Offisiell nettside: <a href='{website}'>{website}</a>",
-            "zh_Hant": "官方網站：<a href='{website}'>{website}</a>"
+            "zh_Hant": "官方網站：<a href='{website}'>{website}</a>",
+            "nl": "Officiële website: : <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -823,7 +824,8 @@
               "then": {
                 "en": "Anyone can use this dump station",
                 "ja": "誰でもこのゴミ捨て場を使用できます",
-                "it": "Chiunque può farne uso"
+                "it": "Chiunque può farne uso",
+                "ru": "Любой может воспользоваться этой станцией утилизации"
               },
               "hideInAnswer": true
             },
@@ -836,7 +838,8 @@
               "then": {
                 "en": "Anyone can use this dump station",
                 "ja": "誰でもこのゴミ捨て場を使用できます",
-                "it": "Chiunque può farne uso"
+                "it": "Chiunque può farne uso",
+                "ru": "Любой может воспользоваться этой станцией утилизации"
               }
             }
           ]
@@ -845,12 +848,14 @@
           "render": {
             "en": "This station is part of network {network}",
             "ja": "このステーションはネットワーク{network}の一部です",
-            "it": "Questo luogo è parte della rete {network}"
+            "it": "Questo luogo è parte della rete {network}",
+            "ru": "Эта станция - часть сети {network}"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
             "ja": "ここは何のネットワークの一部ですか?(なければスキップ)",
-            "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)"
+            "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
+            "ru": "К какой сети относится эта станция? (пропустите, если неприменимо)"
           },
           "freeform": {
             "key": "network"
