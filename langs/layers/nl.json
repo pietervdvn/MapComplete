@@ -857,17 +857,6 @@
                         "then": "Dit verkeerlicht heeft niet een knop voor groen licht"
                     }
                 }
-            },
-            "5": {
-                "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
-                "mappings": {
-                    "0": {
-                        "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
-                    },
-                    "1": {
-                        "then": "Een fietser mag rechtsaf slaan als het licht rood is"
-                    }
-                }
             }
         }
     },
