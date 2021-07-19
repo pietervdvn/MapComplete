@@ -739,6 +739,16 @@
                         }
                     }
                 },
+                "presets": {
+                    "0": {
+                        "title": "Paaltje",
+                        "description": "Een paaltje in de weg"
+                    },
+                    "1": {
+                        "title": "Fietshekjes",
+                        "description": "Fietshekjes, voor het afremmen van fietsers"
+                    }
+                },
                 "tagRenderings": {
                     "0": {
                         "question": "Kan een fietser langs deze barrière?",
@@ -772,6 +782,20 @@
                         }
                     },
                     "2": {
+                        "question": "Wat voor fietshekjes zijn dit?",
+                        "mappings": {
+                            "0": {
+                                "then": "Enkelvoudig, slechts twee hekjes met ruimte ertussen"
+                            },
+                            "1": {
+                                "then": "Dubbel, twee hekjes achter elkaar"
+                            },
+                            "2": {
+                                "then": "Drievoudig, drie hekjes achter elkaar"
+                            }
+                        }
+                    },
+                    "3": {
                         "render": "Maximumbreedte: {maxwidth:physical} m",
                         "question": "Hoe breed is de ruimte naast de barrière?"
                     }

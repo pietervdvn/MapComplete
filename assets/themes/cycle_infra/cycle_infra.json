@@ -708,6 +708,34 @@
       },
       "icon": "./assets/svg/barrier.svg",
       "width": "5",
+      "presets": [
+        {
+          "title": {
+            "en": "Bollard",
+            "nl": "Paaltje"
+          },
+          "tags": [
+            "barrier=bollard"
+          ],
+          "description": {
+            "en": "A bollard in the road",
+            "nl": "Een paaltje in de weg"
+          }
+        },
+        {
+          "title": {
+            "en": "Cycle barrier",
+            "nl": "Fietshekjes"
+          },
+          "tags": [
+            "barrier=bollard"
+          ],
+          "description": {
+            "en": "Cycle barrier, slowing down cyclists",
+            "nl": "Fietshekjes, voor het afremmen van fietsers"
+          }
+        }
+      ],
       "tagRenderings": [
         {
           "question": {
@@ -776,6 +804,36 @@
           ]
         },
         {
+          "question": {
+            "en": "What kind of cycling barrier is this?",
+            "nl": "Wat voor fietshekjes zijn dit?"
+          },
+          "condition": "barrier=cycle_barrier",
+          "mappings": [
+            {
+              "if": "cycle_barrier:type=single",
+              "then": {
+                "en": "Single, just two barriers with a space inbetween",
+                "nl": "Enkelvoudig, slechts twee hekjes met ruimte ertussen"
+              }
+            },
+            {
+              "if": "cycle_barrier:type=double",
+              "then": {
+                "en": "Double, two barriers behind each other",
+                "nl": "Dubbel, twee hekjes achter elkaar"
+              }
+            },
+            {
+              "if": "cycle_barrier:type=triple",
+              "then": {
+                "en": "Triple, three barier behind each other",
+                "nl": "Drievoudig, drie hekjes achter elkaar"
+              }
+            }
+          ]
+        },
+        {
           "render": {
             "en": "Maximum width: {maxwidth:physical} m",
             "nl": "Maximumbreedte: {maxwidth:physical} m"
@@ -783,6 +841,12 @@
           "question": {
             "en": "How wide is the gap left over besides the barrier?",
             "nl": "Hoe breed is de ruimte naast de barrière?"
+          },
+          "condition": {
+            "and": [
+              "cycle_barrier:type!=double",
+              "cycle_barrier:type!=triple"
+            ]
           },
           "freeform": {
             "key": "maxwidth:physical",

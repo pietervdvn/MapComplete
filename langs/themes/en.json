@@ -935,6 +935,16 @@
                         }
                     }
                 },
+                "presets": {
+                    "0": {
+                        "title": "Bollard",
+                        "description": "A bollard in the road"
+                    },
+                    "1": {
+                        "title": "Cycle barrier",
+                        "description": "Cycle barrier, slowing down cyclists"
+                    }
+                },
                 "tagRenderings": {
                     "0": {
                         "question": "Can a bicycle go past this barrier?",
@@ -968,6 +978,20 @@
                         }
                     },
                     "2": {
+                        "question": "What kind of cycling barrier is this?",
+                        "mappings": {
+                            "0": {
+                                "then": "Single, just two barriers with a space inbetween"
+                            },
+                            "1": {
+                                "then": "Double, two barriers behind each other"
+                            },
+                            "2": {
+                                "then": "Triple, three barier behind each other"
+                            }
+                        }
+                    },
+                    "3": {
                         "render": "Maximum width: {maxwidth:physical} m",
                         "question": "How wide is the gap left over besides the barrier?"
                     }
