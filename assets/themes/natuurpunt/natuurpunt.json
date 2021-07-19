@@ -59,13 +59,13 @@
       "builtin": [
         "bench",
         "watermill",
-        "parking"
+        "parking",
+        "information_board"
       ],
       "override": {
           "minzoom": "17"
       }
-    },
-    "information_board"
+    }
   ],
   "roamingRenderings": []
 }
