@@ -167,13 +167,9 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 10,
-  "wayHandling": 2,
-  "width": {
-    "render": "5"
-  },
+  "wayHandling": 1,
   "iconSize": {
-    "render": "50,50,center"
+    "render": "30,30,center"
   },
   "color": {
     "render": "#E1AD01"

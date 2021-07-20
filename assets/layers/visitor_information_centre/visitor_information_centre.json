@@ -51,12 +51,8 @@
     "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd."
   },
   "tagRenderings": [],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/visitor_information_centre/information.svg"
-  },
-  "width": {
-    "render": "8"
   },
   "iconSize": {
     "render": "40,40,center"

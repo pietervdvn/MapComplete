@@ -160,9 +160,9 @@
     }
   ],
   "hideUnderlayingFeaturesMinPercentage": 10,
-  "wayHandling": 2,
-  "width": {
-    "render": "10"
+  "wayHandling": 1,
+  "icon": {
+    "render": "./assets/layers/watermill/watermill.svg"
   },
   "iconSize": {
     "render": "50,50,center"

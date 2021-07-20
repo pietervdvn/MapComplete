@@ -393,13 +393,16 @@
   },
   "wayHandling": 2,
   "width": {
-    "render": "5"
+    "render": "3"
   },
   "iconSize": {
     "render": "35,35,center"
   },
   "color": {
     "render": "#335D9F"
+  },
+  "dashArray": {
+    "render": "5 5"
   },
   "presets": [
     {
