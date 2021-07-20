@@ -101,10 +101,6 @@
       "description": {},
       "tagRenderings": [
         {
-          "freeform": {
-            "key": "cycleway",
-            "addExtraTags": []
-          },
           "question": {
             "en": "What kind of cycleway is there?",
             "nl": "Wat voor fietspad is hier?"
@@ -145,18 +141,23 @@
               }
             },
             {
-              "if": "cycleway=",
+              "if": "cycleway=no",
               "then": {
                 "en": "There is no cycleway",
-                "nl": "Er is geen fietspad"
+                "nl": "Er is geen fietspad aanwezig"
               },
-              "hideInAnswer": true
+              "hideInAnswer": "cycleway=opposite"
+            },
+            {
+              "if": "cycleway=no",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad aanwezig"
+              },
+              "hideInAnswer": "cycleway!=opposite",
+              "addExtraTags": ["oneway:bicycle=no", "fixme=Changed from cycleway=opposite"]
             }
-          ],
-          "render": {
-            "en": "Unknown cycleway situation",
-            "nl": "Onbekende fietspad situatie"
-          }
+          ]
         },
         {
           "question": {
@@ -210,9 +211,27 @@
             {
               "if": "cyclestreet=yes",
               "then": {
-                "en": "This is a cyclestreet.",
+                "en": "This is a cyclestreet, and a 30km/h zone.",
+                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+              },
+              "addExtraTags": ["overtaking:motor_vehicle=no", "maxspeed=30"],
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "en": "This is a cyclestreet",
                 "nl": "Dit is een fietstraat"
-              }
+              },
+              "hideInAnswer": "_country=be"
+            },
+            {
+              "if": "cyclestreet=",
+              "then": {
+                "en": "This is not a cyclestreet.",
+                "nl": "Dit is niet een fietstraat"
+              },
+              "addExtraTags": ["overtaking:motor_vehicle="]
             }
           ]
         },
@@ -223,7 +242,7 @@
           },
           "freeform": {
             "key": "maxspeed",
-            "addExtraTags": []
+            "type": "nat"
           },
           "condition": {
             "or": [
@@ -552,8 +571,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D9",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -563,8 +582,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D10",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -729,10 +748,27 @@
             {
               "if": "cycleway=",
               "then": {
-                "en": "There is no cycleway",
-                "nl": "Er is geen fietspad"
+                "en": "There is no cycleway known here",
+                "nl": "Er is geen fietspad bekend hier"
               },
               "hideInAnswer": true
+            },
+            {
+              "if": "cycleway=no",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad aanwezig"
+              },
+              "hideInAnswer": "cycleway=opposite"
+            },
+            {
+              "if": "cycleway=no",
+              "then": {
+                "en": "There is no cycleway",
+                "nl": "Er is geen fietspad aanwezig"
+              },
+              "hideInAnswer": "cycleway!=opposite",
+              "addExtraTags": ["oneway:bicycle=no", "fixme=Changed from cycleway=opposite"]
             }
           ],
           "render": {
