@@ -606,5 +606,11 @@
     "path": "plus-zoom.svg",
     "license": "CC0",
     "sources": []
+  },
+  {
+    "authors": ["Hannah Declerck"],
+    "path": "filter.svg",
+    "license": "CC0",
+    "sources": []
   }
 ]
