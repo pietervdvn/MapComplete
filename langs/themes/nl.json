@@ -592,9 +592,6 @@
                                 "then": "Er is een apart getekend fietspad."
                             },
                             "4": {
-                                "then": "Dit is een fietsstraat."
-                            },
-                            "5": {
                                 "then": "Er is geen fietspad"
                             }
                         },
@@ -618,6 +615,14 @@
                         }
                     },
                     "2": {
+                        "question": "Is dit een fietsstraat?",
+                        "mappings": {
+                            "0": {
+                                "then": "Dit is een fietstraat"
+                            }
+                        }
+                    },
+                    "3": {
                         "render": "De maximumsnelheid op deze weg is {maxspeed} km/u",
                         "mappings": {
                             "0": {
@@ -638,35 +643,35 @@
                         },
                         "question": "Wat is de maximumsnelheid in deze straat?"
                     },
-                    "3": {
+                    "4": {
                         "render": "Dit fietspad is gemaakt van {cycleway:surface}",
                         "mappings": {
                             "0": {
-                                "then": "Deze weg is gemaakt van hout"
+                                "then": "Dit fietspad is gemaakt van hout"
                             },
                             "1": {
-                                "then": "Deze straat is gemaakt van beton"
+                                "then": "Dit fietspad is gemaakt van beton"
                             },
                             "2": {
-                                "then": "Deze straat is gemaakt van kasseien"
+                                "then": "Dit fietspad is gemaakt van kasseien"
                             },
                             "3": {
-                                "then": "Deze straat is gemaakt van asfalt"
+                                "then": "Dit fietspad is gemaakt van asfalt"
                             },
                             "4": {
-                                "then": "Deze straat is geplaveid"
+                                "then": "Dit fietspad is geplaveid"
                             }
                         },
-                        "question": "Waaruit is het oppervlak van de straat gemaakt?"
-                    },
-                    "4": {
-                        "question": "Wat is de kwaliteit van dit fietspad?"
+                        "question": "Waaruit is het oppervlak van het fietspad van gemaakt?"
                     },
                     "5": {
+                        "question": "Wat is de kwaliteit van dit fietspad?"
+                    },
+                    "6": {
                         "render": "Deze weg is gemaakt van {surface}",
                         "mappings": {
                             "0": {
-                                "then": "Deze weg is gemaakt van hout"
+                                "then": "Deze straat is gemaakt van hout"
                             },
                             "1": {
                                 "then": "Deze straat is gemaakt van beton"
@@ -683,12 +688,26 @@
                         },
                         "question": "Waaruit is het oppervlak van de straat gemaakt?"
                     },
-                    "6": {
+                    "7": {
                         "question": "Wat is de kwaliteit van deze straat?"
                     },
-                    "7": {
+                    "8": {
                         "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
                         "question": "Hoe breed is de rijbaan in deze straat (in meters)?"
+                    },
+                    "9": {
+                        "question": "Welk verkeersbord heeft dit fietspad?",
+                        "mappings": {
+                            "0": {
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                            },
+                            "1": {
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+                            },
+                            "2": {
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+                            }
+                        }
                     }
                 }
             },

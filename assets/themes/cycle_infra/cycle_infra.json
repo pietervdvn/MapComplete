@@ -556,7 +556,9 @@
                 "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
               },
               "hideInAnswer": "_country!=be",
-              "addExtraTags": ["segregated=yes"]
+              "addExtraTags": [
+                "segregated=yes"
+              ]
             },
             {
               "if": "cycleway:traffic_sign=BE:D10",
@@ -565,7 +567,9 @@
                 "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
               },
               "hideInAnswer": "_country!=be",
-              "addExtraTags": ["segregated=no"]
+              "addExtraTags": [
+                "segregated=no"
+              ]
             }
           ]
         }

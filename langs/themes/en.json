@@ -736,9 +736,6 @@
                                 "then": "There is a seperately drawn cycleway"
                             },
                             "4": {
-                                "then": "This is a cyclestreet."
-                            },
-                            "5": {
                                 "then": "There is no cycleway"
                             }
                         },
@@ -762,6 +759,14 @@
                         }
                     },
                     "2": {
+                        "question": "Is this a cyclestreet?",
+                        "mappings": {
+                            "0": {
+                                "then": "This is a cyclestreet."
+                            }
+                        }
+                    },
+                    "3": {
                         "render": "The maximum speed on this road is {maxspeed} km/h",
                         "mappings": {
                             "0": {
@@ -782,28 +787,28 @@
                         },
                         "question": "What is the maximum speed in this street?"
                     },
-                    "3": {
+                    "4": {
                         "render": "This cyleway is made of {cycleway:surface}",
                         "mappings": {
                             "0": {
-                                "then": "This street is made of wood"
+                                "then": "This cycleway is made of wood"
                             },
                             "1": {
-                                "then": "This street is made of concrete"
+                                "then": "This cycleway is made of concrete"
                             },
                             "2": {
-                                "then": "This street is made of cobblestone"
+                                "then": "This cycleway is made of cobblestone"
                             },
                             "3": {
-                                "then": "This street is made of asphalt"
+                                "then": "This cycleway is made of asphalt"
                             },
                             "4": {
-                                "then": "This street is paved"
+                                "then": "This cycleway is paved"
                             }
                         },
-                        "question": "What is the cycleway:surface of the street made from?"
+                        "question": "What is the surface of the cycleway made from?"
                     },
-                    "4": {
+                    "5": {
                         "question": "What is the smoothness of this cycleway?",
                         "mappings": {
                             "0": {
@@ -832,7 +837,7 @@
                             }
                         }
                     },
-                    "5": {
+                    "6": {
                         "render": "This road is made of {surface}",
                         "mappings": {
                             "0": {
@@ -853,7 +858,7 @@
                         },
                         "question": "What is the surface of the street made from?"
                     },
-                    "6": {
+                    "7": {
                         "question": "What is the smoothness of this street?",
                         "mappings": {
                             "0": {
@@ -882,9 +887,23 @@
                             }
                         }
                     },
-                    "7": {
+                    "8": {
                         "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
                         "question": "What is the carriage width of this road (in meters)?"
+                    },
+                    "9": {
+                        "question": "What traffic sign does this cycleway have?",
+                        "mappings": {
+                            "0": {
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                            },
+                            "1": {
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+                            },
+                            "2": {
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+                            }
+                        }
                     }
                 }
             },
