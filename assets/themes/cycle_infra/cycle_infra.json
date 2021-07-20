@@ -37,7 +37,9 @@
         "osmTags": {
           "or": [
             "highway=cycleway",
-            "cycleway=^(?!no).*",
+            "cycleway=lane",
+            "cycleway=shared_lane",
+            "cycleway=track",
             "cyclestreet=yes",
             {
               "and": [
@@ -143,13 +145,6 @@
               }
             },
             {
-              "if": "cyclestreet=yes",
-              "then": {
-                "nl": "Dit is een fietsstraat.",
-                "en": "This is a cyclestreet."
-              }
-            },
-            {
               "if": "cycleway=",
               "then": {
                 "en": "There is no cycleway",
@@ -196,6 +191,27 @@
               "then": {
                 "en": "This road is lit 24/7",
                 "nl": "Deze weg is 24/7 verlicht"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "Is this a cyclestreet?",
+            "nl": "Is dit een fietsstraat?"
+          },
+          "condition": {
+            "and": [
+              "highway!=cycleway",
+              "highway!=path"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "en": "This is a cyclestreet.",
+                "nl": "Dit is een fietstraat"
               }
             }
           ]
@@ -277,42 +293,42 @@
             {
               "if": "cycleway:surface=wood",
               "then": {
-                "en": "This street is made of wood",
-                "nl": "Deze weg is gemaakt van hout"
+                "en": "This cycleway is made of wood",
+                "nl": "Dit fietspad is gemaakt van hout"
               }
             },
             {
               "if": "cycleway:surface=concrete",
               "then": {
-                "en": "This street is made of concrete",
-                "nl": "Deze straat is gemaakt van beton"
+                "en": "This cycleway is made of concrete",
+                "nl": "Dit fietspad is gemaakt van beton"
               }
             },
             {
               "if": "cycleway:surface=cobblestone",
               "then": {
-                "en": "This street is made of cobblestone",
-                "nl": "Deze straat is gemaakt van kasseien"
+                "en": "This cycleway is made of cobblestone",
+                "nl": "Dit fietspad is gemaakt van kasseien"
               }
             },
             {
               "if": "cycleway:surface=asphalt",
               "then": {
-                "en": "This street is made of asphalt",
-                "nl": "Deze straat is gemaakt van asfalt"
+                "en": "This cycleway is made of asphalt",
+                "nl": "Dit fietspad is gemaakt van asfalt"
               }
             },
             {
               "if": "cycleway:surface=paved",
               "then": {
-                "en": "This street is paved",
-                "nl": "Deze straat is geplaveid"
+                "en": "This cycleway is paved",
+                "nl": "Dit fietspad is geplaveid"
               }
             }
           ],
           "question": {
-            "en": "What is the cycleway:surface of the street made from?",
-            "nl": "Waaruit is het oppervlak van de straat gemaakt?"
+            "en": "What is the surface of the cycleway made from?",
+            "nl": "Waaruit is het oppervlak van het fietspad van gemaakt?"
           }
         },
         {
@@ -392,7 +408,7 @@
               "if": "surface=wood",
               "then": {
                 "en": "This street is made of wood",
-                "nl": "Deze weg is gemaakt van hout"
+                "nl": "Deze straat is gemaakt van hout"
               }
             },
             {
@@ -512,6 +528,46 @@
             "en": "What is the carriage width of this road (in meters)?",
             "nl": "Hoe breed is de rijbaan in deze straat (in meters)?"
           }
+        },
+        {
+          "question": {
+            "en": "What traffic sign does this cycleway have?",
+            "nl": "Welk verkeersbord heeft dit fietspad?"
+          },
+          "condition": {
+            "or": [
+              "cycleway=lane",
+              "cycleway=track"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "cycleway:traffic_sign=BE:D7",
+              "then": {
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "cycleway:traffic_sign=BE:D9",
+              "then": {
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+              },
+              "hideInAnswer": "_country!=be",
+              "addExtraTags": ["segregated=yes"]
+            },
+            {
+              "if": "cycleway:traffic_sign=BE:D10",
+              "then": {
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+              },
+              "hideInAnswer": "_country!=be",
+              "addExtraTags": ["segregated=no"]
+            }
+          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
