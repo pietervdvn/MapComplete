@@ -614,5 +614,29 @@
     "path": "filter.svg",
     "license": "CC0",
     "sources": []
+  },
+  {
+    "authors": [
+      "Hannah Declerck"
+    ],
+    "path": "checkbox-empty.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Hannah Declerck"
+    ],
+    "path": "checkbox-filled.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Hannah Declerck"
+    ],
+    "path": "arrow-left-thin.svg",
+    "license": "CC0",
+    "sources": []
   }
 ]
