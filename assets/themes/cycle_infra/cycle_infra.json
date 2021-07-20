@@ -572,6 +572,23 @@
               ]
             }
           ]
+        },
+        {
+          "render": {
+            "en": "The buffer besides this cycleway is {cycleway:buffer} m",
+            "nl": "De schrikafstand van dit fietspad is {cycleway:buffer} m"
+          },
+          "question": {
+            "en": "How wide is the gap between the cycleway and the road?",
+            "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?"
+          },
+          "condition": {
+            "or": ["cycleway=track", "cycleway=lane", "highway=cycleway", "highway=path"]
+          },
+          "freeform": {
+            "key": "cycleway:buffer",
+            "type": "pfloat"
+          }
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
