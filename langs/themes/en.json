@@ -737,9 +737,11 @@
                             },
                             "4": {
                                 "then": "There is no cycleway"
+                            },
+                            "5": {
+                                "then": "There is no cycleway"
                             }
-                        },
-                        "render": "Unknown cycleway situation"
+                        }
                     },
                     "1": {
                         "question": "Is this street lit?",
@@ -762,7 +764,13 @@
                         "question": "Is this a cyclestreet?",
                         "mappings": {
                             "0": {
-                                "then": "This is a cyclestreet."
+                                "then": "This is a cyclestreet, and a 30km/h zone."
+                            },
+                            "1": {
+                                "then": "This is a cyclestreet"
+                            },
+                            "2": {
+                                "then": "This is not a cyclestreet."
                             }
                         }
                     },
@@ -898,12 +906,16 @@
                                 "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
                             }
                         }
+                    },
+                    "10": {
+                        "render": "The buffer besides this cycleway is {cycleway:buffer} m",
+                        "question": "How wide is the gap between the cycleway and the road?"
                     }
                 }
             },
@@ -933,6 +945,12 @@
                                 "then": "This is a cyclestreet."
                             },
                             "5": {
+                                "then": "There is no cycleway known here"
+                            },
+                            "6": {
+                                "then": "There is no cycleway"
+                            },
+                            "7": {
                                 "then": "There is no cycleway"
                             }
                         },

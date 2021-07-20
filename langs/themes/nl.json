@@ -592,10 +592,12 @@
                                 "then": "Er is een apart getekend fietspad."
                             },
                             "4": {
-                                "then": "Er is geen fietspad"
+                                "then": "Er is geen fietspad aanwezig"
+                            },
+                            "5": {
+                                "then": "Er is geen fietspad aanwezig"
                             }
-                        },
-                        "render": "Onbekende fietspad situatie"
+                        }
                     },
                     "1": {
                         "question": "Is deze weg verlicht?",
@@ -618,7 +620,13 @@
                         "question": "Is dit een fietsstraat?",
                         "mappings": {
                             "0": {
+                                "then": "Dit is een fietstraat, en dus een 30km/h zone"
+                            },
+                            "1": {
                                 "then": "Dit is een fietstraat"
+                            },
+                            "2": {
+                                "then": "Dit is niet een fietstraat"
                             }
                         }
                     },
@@ -702,12 +710,16 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>'"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
                             }
                         }
+                    },
+                    "10": {
+                        "render": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
+                        "question": "Hoe breed is de ruimte tussen het fietspad en de weg?"
                     }
                 }
             },
@@ -737,7 +749,13 @@
                                 "then": "Dit is een fietsstraat."
                             },
                             "5": {
-                                "then": "Er is geen fietspad"
+                                "then": "Er is geen fietspad bekend hier"
+                            },
+                            "6": {
+                                "then": "Er is geen fietspad aanwezig"
+                            },
+                            "7": {
+                                "then": "Er is geen fietspad aanwezig"
                             }
                         },
                         "render": "Onbekende fietspad situatie"

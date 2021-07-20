@@ -155,7 +155,10 @@
                 "nl": "Er is geen fietspad aanwezig"
               },
               "hideInAnswer": "cycleway!=opposite",
-              "addExtraTags": ["oneway:bicycle=no", "fixme=Changed from cycleway=opposite"]
+              "addExtraTags": [
+                "oneway:bicycle=no",
+                "fixme=Changed from cycleway=opposite"
+              ]
             }
           ]
         },
@@ -214,7 +217,10 @@
                 "en": "This is a cyclestreet, and a 30km/h zone.",
                 "nl": "Dit is een fietstraat, en dus een 30km/h zone"
               },
-              "addExtraTags": ["overtaking:motor_vehicle=no", "maxspeed=30"],
+              "addExtraTags": [
+                "overtaking:motor_vehicle=no",
+                "maxspeed=30"
+              ],
               "hideInAnswer": "_country!=be"
             },
             {
@@ -231,7 +237,9 @@
                 "en": "This is not a cyclestreet.",
                 "nl": "Dit is niet een fietstraat"
               },
-              "addExtraTags": ["overtaking:motor_vehicle="]
+              "addExtraTags": [
+                "overtaking:motor_vehicle="
+              ]
             }
           ]
         },
@@ -602,7 +610,12 @@
             "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?"
           },
           "condition": {
-            "or": ["cycleway=track", "cycleway=lane", "highway=cycleway", "highway=path"]
+            "or": [
+              "cycleway=track",
+              "cycleway=lane",
+              "highway=cycleway",
+              "highway=path"
+            ]
           },
           "freeform": {
             "key": "cycleway:buffer",
@@ -768,7 +781,10 @@
                 "nl": "Er is geen fietspad aanwezig"
               },
               "hideInAnswer": "cycleway!=opposite",
-              "addExtraTags": ["oneway:bicycle=no", "fixme=Changed from cycleway=opposite"]
+              "addExtraTags": [
+                "oneway:bicycle=no",
+                "fixme=Changed from cycleway=opposite"
+              ]
             }
           ],
           "render": {
