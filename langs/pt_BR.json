@@ -122,8 +122,10 @@
             "thanksForSharing": "Obrigado por compartilhar!",
             "copiedToClipboard": "Link copiado para a área de transferência",
             "addToHomeScreen": "<h3>Adicionar à sua tela inicial</h3>Você pode adicionar facilmente este site à tela inicial do smartphone para uma sensação nativa. Clique no botão 'adicionar à tela inicial' na barra de URL para fazer isso.",
-            "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:"
-        }
+            "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
+            "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará."
+        },
+        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Com o MapComplete, você pode enriquecer o OpenStreetMap com informações sobre um<b>único tema.</b>Responda a algumas perguntas e, em minutos, suas contribuições estarão disponíveis em todo o mundo! O<b>mantenedor do tema</b>define elementos, questões e linguagens para o tema.</p><h3>Saiba mais</h3><p>MapComplete sempre<b>oferece a próxima etapa</b>para saber mais sobre o OpenStreetMap.</p><ul><li>Quando incorporado em um site, o iframe vincula-se a um MapComplete em tela inteira</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap</li><li>A visualização funciona sem login, mas a edição requer um login do OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma única pergunta, você pode adicionar novos aponta para o mapa </li><li> Depois de um tempo, as tags OSM reais são mostradas, posteriormente vinculadas ao wiki </li></ul><p></p><br><p>Você percebeu<b>um problema</b>? Você tem uma<b>solicitação de recurso </b>? Quer<b>ajudar a traduzir</b>? Acesse <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">o código-fonte</a>ou <a href=\"https: //github.com/pietervdvn/MapComplete / issues \" target=\" _ blank \">rastreador de problemas.</a></p><p>Quer ver<b>seu progresso</b>? Siga a contagem de edição em<a href=\"https://osmcha.org/?filters=%7B%22date__gte%22%3A%5B%7B%22label%22%3A%222021-01-01%22%2C%22value%22%3A%222021-01-01%22%7D%5D%2C%22editor%22%3A%5B%7B%22label%22%3A%22mapcomplete%22%2C%22value%22%3A%22mapcomplete%22%7D%5D%7D\" target=\"_blank\">OsmCha</a>.</p>"
     },
     "index": {
         "pickTheme": "Escolha um tema abaixo para começar.",
@@ -142,10 +144,13 @@
         "no_reviews_yet": "Não há comentários ainda. Seja o primeiro a escrever um e ajude a abrir os dados e os negócios!",
         "name_required": "É necessário um nome para exibir e criar comentários",
         "title_singular": "Um comentário",
-        "title": "{count} comentários"
+        "title": "{count} comentários",
+        "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
+        "affiliated_reviewer_warning": "(Revisão de afiliados)"
     },
     "favourite": {
         "reload": "Recarregar dados",
-        "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais"
+        "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
+        "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap"
     }
 }
