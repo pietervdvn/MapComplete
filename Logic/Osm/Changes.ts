@@ -5,6 +5,7 @@ import Constants from "../../Models/Constants";
 import OsmChangeAction from "./Actions/OsmChangeAction";
 import {ChangeDescription} from "./Actions/ChangeDescription";
 import {Utils} from "../../Utils";
+import {LocalStorageSource} from "../Web/LocalStorageSource";
 
 /**
  * Handles all changes made to OSM.
@@ -20,7 +21,7 @@ export class Changes {
      */
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
 
-    public readonly pendingChanges = new UIEventSource<ChangeDescription[]>([]) //  LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+    public readonly pendingChanges = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     private readonly isUploading = new UIEventSource(false);
     
     private readonly previouslyCreated : OsmObject[] = []
