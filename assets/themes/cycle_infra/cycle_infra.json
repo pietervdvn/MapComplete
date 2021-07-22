@@ -836,11 +836,9 @@
             "if": "cyclestreet=yes",
             "then": ""
           }
-
         ]
       },
-      "presets": [
-      ]
+      "presets": []
     },
     {
       "id": "all_streets",
