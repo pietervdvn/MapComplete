@@ -358,9 +358,12 @@ export class Utils {
      * @param contents
      * @param fileName
      */
-    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt") {
         const element = document.createElement("a");
-        const file = new Blob([contents], {type: 'text/plain'});
+        let file;
+        if(typeof(contents) === "string"){
+            file = new Blob([contents], {type: 'text/plain'});
+        }else {file = contents;}
         element.href = URL.createObjectURL(file);
         element.download = fileName;
         document.body.appendChild(element); // Required for this to work in FireFox
