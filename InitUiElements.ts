@@ -238,10 +238,11 @@ export class InitUiElements {
       let doc = new jsPDF();
       screenshotter.takeScreen('image').then(image => { 
         // TO DO: scale image on pdf to its original size
-        doc.addImage(image, 'PNG', 15, 40, 100, 160);
+        doc.addImage(image, 'PNG', 0, 0, screen.width/10, screen.height/10);
         doc.setDisplayMode('fullheight');
         doc.save("Screenshot");
       });
+      //screenshotter.remove();
       // The line below is for downloading the png
       //screenshotter.takeScreen().then(blob => Utils.offerContentsAsDownloadableFile(blob, "Screenshot.png"));
     });
