@@ -72,12 +72,8 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "circle:#e6cf39;./assets/layers/picnic_table/picnic_table.svg"
-  },
-  "width": {
-    "render": "8"
   },
   "iconSize": {
     "render": "35,35,center"

@@ -38,7 +38,7 @@
   "color": {
     "render": "#0000ff"
   },
-  "wayHandling": 2,
+  "wayHandling": 1,
   "presets": [
     {
       "title": {

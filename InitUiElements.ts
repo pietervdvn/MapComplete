@@ -43,6 +43,7 @@ import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 import { SimpleMapScreenshoter } from "leaflet-simple-map-screenshoter";
 import jsPDF from "jspdf";
+import FilterView from "./UI/BigComponents/FilterView";
 
 export class InitUiElements {
   static InitAll(
@@ -207,7 +208,7 @@ export class InitUiElements {
         Img.AsImageElement(Svg.plus_zoom, "", "width:1.25rem;height:1.25rem")
       )
     ).onClick(() => {
-      State.state.locationControl.data.zoom++;  
+      State.state.locationControl.data.zoom++;
       State.state.locationControl.ping();
     });
 
@@ -380,6 +381,7 @@ export class InitUiElements {
     const layerControlPanel = new LayerControlPanel(
       State.state.layerControlIsOpened
     ).SetClass("block p-1 rounded-full");
+
     const layerControlButton = new Toggle(
       layerControlPanel,
       new MapControlButton(Svg.layers_svg()),
@@ -392,7 +394,31 @@ export class InitUiElements {
       State.state.featureSwitchLayers
     );
 
-    new Combine([copyrightButton, layerControl]).AttachTo("bottom-left");
+    const filterView = new FilterView(State.state.FilterIsOpened).SetClass(
+      "block p-1 rounded-full"
+    );
+
+    const filterMapControlButton = new MapControlButton(
+      new CenterFlexedElement(
+        Img.AsImageElement(Svg.filter, "", "width:1.25rem;height:1.25rem")
+      )
+    );
+
+    const filterButton = new Toggle(
+      filterView,
+      filterMapControlButton,
+      State.state.FilterIsOpened
+    ).ToggleOnClick();
+
+    const filterControl = new Toggle(
+      filterButton,
+      "",
+      State.state.featureSwitchFilter
+    );
+
+    new Combine([copyrightButton, layerControl, filterControl]).AttachTo(
+      "bottom-left"
+    );
 
     State.state.locationControl.addCallback(() => {
       // Close the layer selection when the map is moved

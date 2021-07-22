@@ -21,14 +21,34 @@
   "version": "0",
   "startLat": 51.20875,
   "startLon": 3.22435,
-  "startZoom": 12,
+  "startZoom": 15,
   "widenFactor": 0.05,
   "socialImage": "",
+  "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
       "builtin": [
-        "nature_reserve",
-        "trail",
+        "nature_reserve"
+      ],
+      "override": {
+        "source": {
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "minzoom": "10",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
         "visitor_information_centre"
       ],
       "override": {
@@ -39,31 +59,195 @@
             ]
           },
           "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 8,
+          "geoJsonZoomLevel": 12,
           "isOsmCache": true
+        },
+        "minzoom": "10",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information.svg"
         }
       }
     },
     {
       "builtin": [
-        "birdhide",
-        "toilet",
-        "drinking_water",
-        "picnic_table"
+        "trail"
       ],
       "override": {
-        "minzoom": "14"
+        "source": {
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "minzoom": "13",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/trail.svg",
+          "mappings": [
+            {
+              "if": "wheelchair=yes",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/walk_wheelchair.svg"
+            },
+            {
+              "if": "pushchair=yes",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/pushchair.svg"
+            }
+          ]
+        }
       }
     },
     {
       "builtin": [
-        "bench",
-        "watermill",
-        "parking",
+        "toilet"
+      ],
+      "override": {
+        "minzoom": "15",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/toilets.svg",
+          "mappings": [
+            {
+              "if": "wheelchair=yes",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/wheelchair.svg"
+            },
+            {
+              "if": "toilets:position=urinals",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/urinal.svg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "builtin": [
+        "birdhide"
+      ],
+      "override": {
+        "minzoom": "15",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
+        "picnic_table"
+      ],
+      "override": {
+        "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/picnic_table.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
+        "drinking_water"
+      ],
+      "override": {
+        "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/drips.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
+        "parking"
+      ],
+      "override": {
+        "minzoom": "16",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/parking.svg",
+          "mappings": [
+            {
+              "if": "amenity=bicycle_parking",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/parkingbike.svg"
+            }
+          ]
+        },
+        "iconOverlays": [
+          {
+            "if": "amenity=motorcycle_parking",
+            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingmotor.svg",
+            "badge": true
+          },
+          {
+            "if": "capacity:disabled=yes",
+            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingwheels.svg",
+            "badge": true
+          }
+        ]
+      }
+    },
+    {
+      "builtin": [
         "information_board"
       ],
       "override": {
-        "minzoom": "17"
+        "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
+        "bench"
+      ],
+      "override": {
+        "minzoom": "18",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/bench.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
+        "watermill"
+      ],
+      "override": {
+        "minzoom": "18",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
+        }
       }
     }
   ],

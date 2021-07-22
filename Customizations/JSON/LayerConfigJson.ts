@@ -1,6 +1,7 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
+import FilterConfigJson from "./FilterConfigJson";
 
 /**
  * Configuration for a single layer
@@ -232,6 +233,12 @@ export interface LayerConfigJson {
      *
      */
     tagRenderings?: (string | TagRenderingConfigJson) [],
+
+
+    /**
+     * All the extra questions for filtering
+     */
+    filter?: (FilterConfigJson) [],
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.
