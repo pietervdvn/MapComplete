@@ -39,11 +39,11 @@ export default class FilterView extends ScrollableFullScreen {
       const checkboxes: BaseUIElement[] = [];
 
       for (const layer of activeLayers.data) {
-        const icon = new Combine([Svg.checkbox_filled]).SetStyle(
-          "width:1.5rem;height:1.5rem"
-        );
+        const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem";
+
+        const icon = new Combine([Svg.checkbox_filled]).SetStyle(iconStyle);
         const iconUnselected = new Combine([Svg.checkbox_empty]).SetStyle(
-          "width:1.5rem;height:1.5rem"
+          iconStyle
         );
 
         if (layer.layerDef.name === undefined) {
@@ -53,13 +53,22 @@ export default class FilterView extends ScrollableFullScreen {
         const style = "display:flex;align-items:center;color:#007759";
 
         const name: Translation = Translations.WT(layer.layerDef.name)?.Clone();
-        name.SetStyle("font-size:large;");
 
-        const layerChecked = new Combine([icon, name.Clone()]).SetStyle(style);
+        const styledNameChecked = name
+          .Clone()
+          .SetStyle("font-size:large;padding-left:1.25rem");
+
+        const styledNameUnChecked = name
+          .Clone()
+          .SetStyle("font-size:large;padding-left:1.25rem");
+
+        const layerChecked = new Combine([icon, styledNameChecked]).SetStyle(
+          style
+        );
 
         const layerNotChecked = new Combine([
           iconUnselected,
-          name.Clone(),
+          styledNameUnChecked,
         ]).SetStyle(style);
 
         checkboxes.push(
