@@ -752,13 +752,6 @@
               }
             },
             {
-              "if": "cyclestreet=yes",
-              "then": {
-                "nl": "Dit is een fietsstraat.",
-                "en": "This is a cyclestreet."
-              }
-            },
-            {
               "if": "cycleway=",
               "then": {
                 "en": "There is no cycleway known here",
@@ -791,6 +784,50 @@
             "en": "Unknown cycleway situation",
             "nl": "Onbekende fietspad situatie"
           }
+        },
+        {
+          "question": {
+            "en": "Is this a cyclestreet?",
+            "nl": "Is dit een fietsstraat?"
+          },
+          "condition": {
+            "and": [
+              "highway!=cycleway",
+              "highway!=path"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "en": "This is a cyclestreet, and a 30km/h zone.",
+                "nl": "Dit is een fietstraat, en dus een 30km/h zone"
+              },
+              "addExtraTags": [
+                "overtaking:motor_vehicle=no",
+                "maxspeed=30"
+              ],
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "cyclestreet=yes",
+              "then": {
+                "en": "This is a cyclestreet",
+                "nl": "Dit is een fietstraat"
+              },
+              "hideInAnswer": "_country=be"
+            },
+            {
+              "if": "cyclestreet=",
+              "then": {
+                "en": "This is not a cyclestreet.",
+                "nl": "Dit is niet een fietstraat"
+              },
+              "addExtraTags": [
+                "overtaking:motor_vehicle="
+              ]
+            }
+          ]
         }
       ]
     },

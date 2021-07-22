@@ -942,19 +942,30 @@
                                 "then": "There is a seperately drawn cycleway"
                             },
                             "4": {
-                                "then": "This is a cyclestreet."
-                            },
-                            "5": {
                                 "then": "There is no cycleway known here"
                             },
-                            "6": {
+                            "5": {
                                 "then": "There is no cycleway"
                             },
-                            "7": {
+                            "6": {
                                 "then": "There is no cycleway"
                             }
                         },
                         "render": "Unknown cycleway situation"
+                    },
+                    "1": {
+                        "question": "Is this a cyclestreet?",
+                        "mappings": {
+                            "0": {
+                                "then": "This is a cyclestreet, and a 30km/h zone."
+                            },
+                            "1": {
+                                "then": "This is a cyclestreet"
+                            },
+                            "2": {
+                                "then": "This is not a cyclestreet."
+                            }
+                        }
                     }
                 }
             },
