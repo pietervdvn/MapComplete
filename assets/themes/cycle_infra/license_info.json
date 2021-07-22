@@ -78,5 +78,25 @@
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Cycle_barrier_squeeze.png"
     ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "street.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/street.svg"
+    ]
+  },
+  {
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "path": "bicycleway.svg",
+    "license": "CC-BY-SA 4.0",
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest%20icons/bicycleway.svg"
+    ]
   }
 ]

@@ -766,7 +766,7 @@
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
-        "render": "./assets/svg/bug.svg"
+        "render": "./assets/themes/cycle_infra/bicycleway.svg"
       },
       "width": {
         "render": "8"
@@ -875,7 +875,7 @@
           }
         ]
       },
-      "icon": "./assets/svg/bug.svg",
+      "icon": "./assets/themes/cycle_infra/street.svg",
       "width": "5",
       "color": {
         "render": "#aaaaaa",
