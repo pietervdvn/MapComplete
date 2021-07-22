@@ -1,7 +1,7 @@
 {
   "id": "parking",
   "name": {
-    "nl": "parking"
+    "nl": "Parking"
   },
   "minzoom": 12,
   "source": {
@@ -10,7 +10,8 @@
         {
           "or": [
             "amenity=parking",
-            "amenity=motorcycle_parking"
+            "amenity=motorcycle_parking",
+            "amenity=bicycle_parking"
           ]
         }
       ]
@@ -22,23 +23,21 @@
     },
     "mappings": [
       {
-        "if": {
-          "and": [
-            "name:nl~*"
-          ]
-        },
+        "if": "amenity=parking",
         "then": {
-          "nl": "{name:nl}"
+          "nl": "Auto Parking"
         }
       },
       {
-        "if": {
-          "and": [
-            "name~*"
-          ]
-        },
+        "if": "amenity=motorcycle_parking",
         "then": {
-          "nl": "{name}"
+          "nl": "Motorfiets Parking"
+        }
+      },
+      {
+        "if": "amenity=bicycle_parking",
+        "then": {
+          "nl": "Fietsenstalling"
         }
       }
     ]
@@ -169,7 +168,7 @@
   ],
   "wayHandling": 1,
   "iconSize": {
-    "render": "30,30,center"
+    "render": "36,36,center"
   },
   "color": {
     "render": "#E1AD01"
@@ -179,6 +178,7 @@
       "tags": [
         "amenity=parking",
         "amenity=motorcycle_parking",
+        "amenity=bicycle_parking",
         "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
       ],
       "title": {

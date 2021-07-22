@@ -21,7 +21,7 @@
   "version": "0",
   "startLat": 51.20875,
   "startLon": 3.22435,
-  "startZoom": 12,
+  "startZoom": 15,
   "widenFactor": 0.05,
   "socialImage": "",
   "layers": [
@@ -37,7 +37,7 @@
             ]
           }
         },
-        "minzoom": "8",
+        "minzoom": "10",
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }
@@ -55,7 +55,7 @@
             ]
           }
         },
-        "minzoom": "8",
+        "minzoom": "10",
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/information.svg"
         }
@@ -145,6 +145,46 @@
     },
     {
       "builtin": [
+        "parking"
+      ],
+      "override": {
+        "minzoom": "16",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/parking.svg",
+          "mappings": [
+            {
+              "if": "amenity=bicycle_parking",
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/parkingbike.svg"
+            }
+          ]
+        },
+        "iconOverlays": [
+          {
+            "if": "amenity=motorcycle_parking",
+            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingmotor.svg",
+            "badge": true
+          },
+          {
+            "if": "capacity:disabled=yes",
+            "then": "circle:#335D9F;./assets/themes/natuurpunt/parkingwheels.svg",
+            "badge": true
+          }
+        ]
+      }
+    },
+    {
+      "builtin": [
+        "information_board"
+      ],
+      "override": {
+        "minzoom": "16",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
+        }
+      }
+    },
+    {
+      "builtin": [
         "bench"
       ],
       "override": {
@@ -162,28 +202,6 @@
         "minzoom": "18",
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
-        }
-      }
-    },
-    {
-      "builtin": [
-        "parking"
-      ],
-      "override": {
-        "minzoom": "18",
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/parking.svg"
-        }
-      }
-    },
-    {
-      "builtin": [
-        "information_board"
-      ],
-      "override": {
-        "minzoom": "18",
-        "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
         }
       }
     }
