@@ -710,16 +710,70 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "3": {
+                                "then": "Geen verkeersbord aanwezig"
                             }
                         }
                     },
                     "10": {
+                        "question": "Welk verkeersbord heeft dit fietspad?",
+                        "mappings": {
+                            "0": {
+                                "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                            },
+                            "1": {
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                            },
+                            "2": {
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "3": {
+                                "then": "Geen verkeersbord aanwezig"
+                            }
+                        }
+                    },
+                    "11": {
                         "render": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
                         "question": "Hoe breed is de ruimte tussen het fietspad en de weg?"
+                    },
+                    "12": {
+                        "question": "Hoe is dit fietspad gescheiden van de weg?",
+                        "mappings": {
+                            "0": {
+                                "then": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+                            },
+                            "1": {
+                                "then": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+                            },
+                            "2": {
+                                "then": "Dit fietspad is gescheiden van de weg met parkeervakken"
+                            },
+                            "3": {
+                                "then": "Dit fietspad is gescheiden van de weg met een stoeprand"
+                            }
+                        }
+                    },
+                    "13": {
+                        "question": "Hoe is dit fietspad gescheiden van de weg?",
+                        "mappings": {
+                            "0": {
+                                "then": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+                            },
+                            "1": {
+                                "then": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+                            },
+                            "2": {
+                                "then": "Dit fietspad is gescheiden van de weg met parkeervakken"
+                            },
+                            "3": {
+                                "then": "Dit fietspad is gescheiden van de weg met een stoeprand"
+                            }
+                        }
                     }
                 }
             },

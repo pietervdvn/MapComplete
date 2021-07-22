@@ -906,16 +906,70 @@
                                 "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "3": {
+                                "then": "No traffic sign present"
                             }
                         }
                     },
                     "10": {
+                        "question": "What traffic sign does this cycleway have?",
+                        "mappings": {
+                            "0": {
+                                "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+                            },
+                            "1": {
+                                "then": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                            },
+                            "2": {
+                                "then": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "3": {
+                                "then": "No traffic sign present"
+                            }
+                        }
+                    },
+                    "11": {
                         "render": "The buffer besides this cycleway is {cycleway:buffer} m",
                         "question": "How wide is the gap between the cycleway and the road?"
+                    },
+                    "12": {
+                        "question": "How is this cycleway seperated from the road?",
+                        "mappings": {
+                            "0": {
+                                "then": "This cycleway is seperated by a dashed line"
+                            },
+                            "1": {
+                                "then": "This cycleway is seperated by a solid line"
+                            },
+                            "2": {
+                                "then": "This cycleway is seperated by a parking lane"
+                            },
+                            "3": {
+                                "then": "This cycleway is seperated by a kerb"
+                            }
+                        }
+                    },
+                    "13": {
+                        "question": "How is this cycleway seperated from the road?",
+                        "mappings": {
+                            "0": {
+                                "then": "This cycleway is seperated by a dashed line"
+                            },
+                            "1": {
+                                "then": "This cycleway is seperated by a solid line"
+                            },
+                            "2": {
+                                "then": "This cycleway is seperated by a parking lane"
+                            },
+                            "3": {
+                                "then": "This cycleway is seperated by a kerb"
+                            }
+                        }
                     }
                 }
             },

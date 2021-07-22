@@ -579,8 +579,8 @@
             {
               "if": "cycleway:traffic_sign=BE:D9",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
+                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
@@ -590,13 +590,71 @@
             {
               "if": "cycleway:traffic_sign=BE:D10",
               "then": {
-                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
-                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
+                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
               },
               "hideInAnswer": "_country!=be",
               "addExtraTags": [
                 "segregated=no"
               ]
+            },
+            {
+              "if": "cycleway:traffic_sign=none",
+              "then": {
+                "en": "No traffic sign present",
+                "nl": "Geen verkeersbord aanwezig"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "What traffic sign does this cycleway have?",
+            "nl": "Welk verkeersbord heeft dit fietspad?"
+          },
+          "condition": {
+            "or": [
+              "highway=cycleway",
+              "highway=path"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "traffic_sign=BE:D7",
+              "then": {
+                "en": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>",
+                "nl": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": "_country!=be"
+            },
+            {
+              "if": "traffic_sign=BE:D9",
+              "then": {
+                "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
+                "nl": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": "_country!=be",
+              "addExtraTags": [
+                "segregated=yes"
+              ]
+            },
+            {
+              "if": "traffic_sign=BE:D10",
+              "then": {
+                "en": "Unsegregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>",
+                "nl": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": "_country!=be",
+              "addExtraTags": [
+                "segregated=no"
+              ]
+            },
+            {
+              "if": "cycleway:traffic_sign=none",
+              "then": {
+                "en": "No traffic sign present",
+                "nl": "Geen verkeersbord aanwezig"
+              }
             }
           ]
         },
@@ -612,15 +670,97 @@
           "condition": {
             "or": [
               "cycleway=track",
-              "cycleway=lane",
-              "highway=cycleway",
-              "highway=path"
+              "cycleway=lane"
             ]
           },
           "freeform": {
             "key": "cycleway:buffer",
             "type": "pfloat"
           }
+        },
+        {
+          "question": {
+            "en": "How is this cycleway seperated from the road?",
+            "nl": "Hoe is dit fietspad gescheiden van de weg?"
+          },
+          "condition": {
+            "or": [
+              "cycleway=track",
+              "cycleway=lane"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "cycleway:seperation=dashed_line",
+              "then": {
+                "en": "This cycleway is seperated by a dashed line",
+                "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+              }
+            },
+            {
+              "if": "cycleway:seperation=solid_line",
+              "then": {
+                "en": "This cycleway is seperated by a solid line",
+                "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+              }
+            },
+            {
+              "if": "cycleway:seperation=parking_lane",
+              "then": {
+                "en": "This cycleway is seperated by a parking lane",
+                "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
+              }
+            },
+            {
+              "if": "cycleway:seperation=kerb",
+              "then": {
+                "en": "This cycleway is seperated by a kerb",
+                "nl": "Dit fietspad is gescheiden van de weg met een stoeprand"
+              }
+            }
+          ]
+        },
+        {
+          "question": {
+            "en": "How is this cycleway seperated from the road?",
+            "nl": "Hoe is dit fietspad gescheiden van de weg?"
+          },
+          "condition": {
+            "or": [
+              "highway=cycleway",
+              "highway=path"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "seperation=dashed_line",
+              "then": {
+                "en": "This cycleway is seperated by a dashed line",
+                "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep"
+              }
+            },
+            {
+              "if": "seperation=solid_line",
+              "then": {
+                "en": "This cycleway is seperated by a solid line",
+                "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep"
+              }
+            },
+            {
+              "if": "seperation=parking_lane",
+              "then": {
+                "en": "This cycleway is seperated by a parking lane",
+                "nl": "Dit fietspad is gescheiden van de weg met parkeervakken"
+              }
+            },
+            {
+              "if": "seperation=kerb",
+              "then": {
+                "en": "This cycleway is seperated by a kerb",
+                "nl": "Dit fietspad is gescheiden van de weg met een stoeprand"
+              }
+            }
+          ]
         }
       ],
       "hideUnderlayingFeaturesMinPercentage": 0,
