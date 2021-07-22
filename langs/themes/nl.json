@@ -708,6 +708,10 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
                             }
                         }
+                    },
+                    "10": {
+                        "render": "De schrikafstand van dit fietspad is {cycleway:buffer} m",
+                        "question": "Hoe breed is de ruimte tussen het fietspad en de weg?"
                     }
                 }
             },

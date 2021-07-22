@@ -904,6 +904,10 @@
                                 "then": "Compulsory cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>'"
                             }
                         }
+                    },
+                    "10": {
+                        "render": "The buffer besides this cycleway is {cycleway:buffer} m",
+                        "question": "How wide is the gap between the cycleway and the road?"
                     }
                 }
             },

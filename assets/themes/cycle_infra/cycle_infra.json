@@ -9,21 +9,22 @@
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken."
   },
   "description": {
-    "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
-    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken gemaakt tijdens osoc21."
+    "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21."
   },
   "language": [
     "en",
     "nl"
   ],
   "maintainer": "",
+  "defaultBackgroundId": "CartoDB.Positron",
   "icon": "./assets/svg/cycle-infra.svg",
   "version": "0",
   "startLat": 51,
   "startLon": 3.75,
   "startZoom": 11,
   "widenFactor": 0.05,
-  "socialImage": "",
+  "socialImage": "./assets/svg/cycle-infra.svg",
   "enableDownload": true,
   "layers": [
     {
@@ -120,7 +121,7 @@
               "if": "cycleway=shared_lane",
               "then": {
                 "en": "There is a shared lane",
-                "nl": "Er is een fietssugestiestrook"
+                "nl": "Er is een fietssuggestiestrook"
               }
             },
             {
@@ -583,7 +584,12 @@
             "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?"
           },
           "condition": {
-            "or": ["cycleway=track", "cycleway=lane", "highway=cycleway", "highway=path"]
+            "or": [
+              "cycleway=track",
+              "cycleway=lane",
+              "highway=cycleway",
+              "highway=path"
+            ]
           },
           "freeform": {
             "key": "cycleway:buffer",
@@ -631,7 +637,21 @@
           }
         ]
       },
-      "presets": []
+      "dashArray": {
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "highway=cycleway",
+                "highway=path"
+              ]
+            },
+            "then": "25 15"
+          }
+        ]
+      },
+      "presets": [
+      ]
     },
     {
       "id": "all_streets",
@@ -904,14 +924,14 @@
             {
               "if": "cycle_barrier:type=triple",
               "then": {
-                "en": "Triple, three barier behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+                "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
                 "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
               }
             },
             {
               "if": "cycle_barrier:type=squeeze",
               "then": {
-                "en": "Squeeze gate, gap is smaller at top, then at bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
               }
             }
           ]
