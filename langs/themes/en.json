@@ -695,7 +695,7 @@
     "cycle_infra": {
         "title": "Bicycle infrastructure",
         "shortDescription": "A map where you can view and edit things related to the bicycle infrastructure.",
-        "description": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
+        "description": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
         "layers": {
             "0": {
                 "name": "Cycleways",
@@ -1089,10 +1089,10 @@
                                 "then": "Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.png' style='width:8em'>"
                             },
                             "2": {
-                                "then": "Triple, three barier behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
+                                "then": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
                             },
                             "3": {
-                                "then": "Squeeze gate, gap is smaller at top, then at bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                                "then": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
                             }
                         }
                     },

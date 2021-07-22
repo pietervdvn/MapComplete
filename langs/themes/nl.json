@@ -551,7 +551,7 @@
     "cycle_infra": {
         "title": "Fietsinfrastructuur",
         "shortDescription": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken.",
-        "description": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken gemaakt tijdens osoc21.",
+        "description": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21.",
         "layers": {
             "0": {
                 "name": "Fietspaden",
@@ -580,7 +580,7 @@
                         "question": "Wat voor fietspad is hier?",
                         "mappings": {
                             "0": {
-                                "then": "Er is een fietssugestiestrook"
+                                "then": "Er is een fietssuggestiestrook"
                             },
                             "1": {
                                 "then": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)"
