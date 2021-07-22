@@ -608,7 +608,9 @@
     "sources": []
   },
   {
-    "authors": ["Hannah Declerck"],
+    "authors": [
+      "Hannah Declerck"
+    ],
     "path": "filter.svg",
     "license": "CC0",
     "sources": []
