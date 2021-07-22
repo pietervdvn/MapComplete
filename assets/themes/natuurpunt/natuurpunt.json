@@ -24,6 +24,7 @@
   "startZoom": 15,
   "widenFactor": 0.05,
   "socialImage": "",
+  "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
       "builtin": [
@@ -35,7 +36,10 @@
             "+and": [
               "operator~.*[nN]atuurpunt.*"
             ]
-          }
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
         },
         "minzoom": "10",
         "icon": {
@@ -53,7 +57,10 @@
             "+and": [
               "operator~.*[nN]atuurpunt.*"
             ]
-          }
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
         },
         "minzoom": "10",
         "icon": {
@@ -71,7 +78,10 @@
             "+and": [
               "operator~.*[nN]atuurpunt.*"
             ]
-          }
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
         },
         "minzoom": "13",
         "icon": {
@@ -95,6 +105,11 @@
       ],
       "override": {
         "minzoom": "15",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/toilets.svg",
           "mappings": [
@@ -116,6 +131,11 @@
       ],
       "override": {
         "minzoom": "15",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg"
         }
@@ -127,6 +147,11 @@
       ],
       "override": {
         "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/picnic_table.svg"
         }
@@ -138,6 +163,11 @@
       ],
       "override": {
         "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/drips.svg"
         }
@@ -178,6 +208,11 @@
       ],
       "override": {
         "minzoom": "16",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/information_board.svg"
         }
@@ -189,6 +224,11 @@
       ],
       "override": {
         "minzoom": "18",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/bench.svg"
         }
@@ -200,6 +240,11 @@
       ],
       "override": {
         "minzoom": "18",
+        "source": {
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
+          "geoJsonZoomLevel": 12,
+          "isOsmCache": true
+        },
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
         }
