@@ -17,7 +17,7 @@
     "nl"
   ],
   "maintainer": "",
-  "defaultBackgroundId": "CartoDB.Positron",
+  "defaultBackgroundId": "CartoDB.Voyager",
   "icon": "./assets/svg/cycle-infra.svg",
   "version": "0",
   "startLat": 51,
