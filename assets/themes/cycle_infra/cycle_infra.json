@@ -9,8 +9,8 @@
     "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken."
   },
   "description": {
-    "en": "A map where you can view and edit things related to the bicycle infrastructure made during osoc21.",
-    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken gemaakt tijdens osoc21."
+    "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
+    "nl": "Een kaart waar je info over de fietsinfrastructuur kan bekijken en bewerken. Gemaakt tijdens #osoc21."
   },
   "language": [
     "en",
@@ -117,7 +117,7 @@
               "if": "cycleway=shared_lane",
               "then": {
                 "en": "There is a shared lane",
-                "nl": "Er is een fietssugestiestrook"
+                "nl": "Er is een fietssuggestiestrook"
               }
             },
             {
@@ -836,9 +836,11 @@
             "if": "cyclestreet=yes",
             "then": ""
           }
+
         ]
       },
-      "presets": []
+      "presets": [
+      ]
     },
     {
       "id": "all_streets",
@@ -1168,14 +1170,14 @@
             {
               "if": "cycle_barrier:type=triple",
               "then": {
-                "en": "Triple, three barier behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
+                "en": "Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>",
                 "nl": "Drievoudig, drie hekjes achter elkaar <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>"
               }
             },
             {
               "if": "cycle_barrier:type=squeeze",
               "then": {
-                "en": "Squeeze gate, gap is smaller at top, then at bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
+                "en": "Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>"
               }
             }
           ]

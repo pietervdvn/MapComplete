@@ -54,7 +54,7 @@ export interface LayerConfigJson {
      * Note that both geojson-options might set a flag 'isOsmCache' indicating that the data originally comes from OSM too
      *
      *
-     * NOTE: the previous format was 'overpassTags: AndOrTagCOnfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
+     * NOTE: the previous format was 'overpassTags: AndOrTagConfigJson | string', which is interpreted as a shorthand for source: {osmTags: "key=value"}
      *  While still supported, this is considered deprecated
      */
     source: { osmTags: AndOrTagConfigJson | string } |
@@ -81,7 +81,7 @@ export interface LayerConfigJson {
     doNotDownload?: boolean;
 
     /**
-     * This tagrendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
+     * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
      * This is useful to hide certain features from view. Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
      * This implies that it is not possible to hide a feature after a tagging change
      *
@@ -91,13 +91,13 @@ export interface LayerConfigJson {
 
 
     /**
-     * The zoomlevel at which point the data is shown and loaded.
+     * The zoom level at which point the data is shown and loaded.
      * Default: 0
      */
     minzoom?: number;
 
     /**
-     * The zoomlevel at which point the data is hidden again
+     * The zoom level at which point the data is hidden again
      * Default: 100 (thus: always visible
      */
     maxzoom?: number;
@@ -120,9 +120,9 @@ export interface LayerConfigJson {
      * Note that this also doubles as the icon for this layer (rendered with the overpass-tags) ánd the icon in the presets.
      *
      * The result of the icon is rendered as follows:
-     * the resulting string is interpreted as a _list_ of items, seperated by ";". The bottommost layer is the first layer.
+     * the resulting string is interpreted as a _list_ of items, separated by ";". The bottommost layer is the first layer.
      * As a result, on could use a generic pin, then overlay it with a specific icon.
-     * To make things even more practical, one can use all svgs from the folder "assets/svg" and _substitute the color_ in it.
+     * To make things even more practical, one can use all SVG's from the folder "assets/svg" and _substitute the color_ in it.
      * E.g. to draw a red pin, use "pin:#f00", to have a green circle with your icon on top, use `circle:#0f0;<path to my icon.svg>`
      *
      */
@@ -220,7 +220,7 @@ export interface LayerConfigJson {
 
         /**
          * If set, the user will prompted to confirm the location before actually adding the data.
-         * THis will be with a 'drag crosshair'-method.
+         * This will be with a 'drag crosshair'-method.
          * 
          * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
          */
@@ -235,7 +235,7 @@ export interface LayerConfigJson {
      *
      * Refer to the class `TagRenderingConfigJson` to see the possibilities.
      *
-     * Note that we can also use a string here - where the string refers to a tagrenering defined in `assets/questions/questions.json`,
+     * Note that we can also use a string here - where the string refers to a tag rendering defined in `assets/questions/questions.json`,
      * where a few very general questions are defined e.g. website, phone number, ...
      *
      * A special value is 'questions', which indicates the location of the questions box. If not specified, it'll be appended to the bottom of the featureInfobox.
