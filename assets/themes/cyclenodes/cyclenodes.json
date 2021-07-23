@@ -20,6 +20,10 @@
   "startZoom": 11,
   "widenFactor": 0.05,
   "roamingRenderings": [],
+    "clustering":{
+    "maxZoom": 11,
+    "minNeededElements": 1000000
+  },
   "layers": [
     {
       "id": "node2node",
