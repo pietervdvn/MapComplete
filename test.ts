@@ -7,6 +7,11 @@ import {UIEventSource} from "./Logic/UIEventSource";
 import {Tag} from "./Logic/Tags/Tag";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
 import {Translation} from "./UI/i18n/Translation";
+import LocationInput from "./UI/Input/LocationInput";
+import Loc from "./Models/Loc";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import LengthInput from "./UI/Input/LengthInput";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 /*import ValidatedTextField from "./UI/Input/ValidatedTextField";
 import Combine from "./UI/Base/Combine";
 import {VariableUiElement} from "./UI/Base/VariableUIElement";
@@ -148,19 +153,17 @@ function TestMiniMap() {
     featureSource.ping()
 }
 //*/
-QueryParameters.GetQueryParameter("test", "true").setData("true")
-State.state= new State(undefined)
-const id = "node/5414688303"
-State.state.allElements.addElementById(id, new UIEventSource<any>({id: id}))
-new Combine([
-    new DeleteWizard(id, {
-        noDeleteOptions: [
-            {
-                if:[ new Tag("access","private")],
-                then: new Translation({
-                    en: "Very private! Delete now or me send lawfull lawyer"
-                })
-            }
-        ]
-    }),
-]).AttachTo("maindiv")
+
+const loc = new UIEventSource<Loc>({
+    zoom: 24,
+    lat: 51.21043,
+    lon: 3.21389
+})
+const li = new LengthInput(
+    AvailableBaseLayers.SelectBestLayerAccordingTo(loc, new UIEventSource<string | string[]>("map","photo")),
+    loc
+)
+    li.SetStyle("height: 30rem; background: aliceblue;")
+        .AttachTo("maindiv")
+
+new VariableUiElement(li.GetValue().map(v => JSON.stringify(v, null, "  "))).AttachTo("extradiv")
