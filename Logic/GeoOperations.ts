@@ -6,11 +6,14 @@ export class GeoOperations {
         return turf.area(feature);
     }
 
+    /**
+     * Converts a GeoJSon feature to a point feature
+     * @param feature
+     */
     static centerpoint(feature: any) {
         const newFeature = turf.center(feature);
         newFeature.properties = feature.properties;
         newFeature.id = feature.id;
-
         return newFeature;
     }
 

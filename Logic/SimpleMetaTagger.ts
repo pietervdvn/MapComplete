@@ -83,7 +83,7 @@ export default class SimpleMetaTagger {
 
         },
         (feature => {
-            const units = State.state.layoutToUse.data.units ?? [];
+            const units = State.state?.layoutToUse?.data?.units ?? [];
             for (const key in feature.properties) {
                 if (!feature.properties.hasOwnProperty(key)) {
                     continue;
