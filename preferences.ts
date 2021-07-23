@@ -12,7 +12,7 @@ import BaseUIElement from "./UI/BaseUIElement";
 import Table from "./UI/Base/Table";
 
 
-const connection = new OsmConnection(false, new UIEventSource<string>(undefined), "");
+const connection = new OsmConnection(false, false, new UIEventSource<string>(undefined), "");
 
 let rendered = false;
 

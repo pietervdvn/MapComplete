@@ -20,7 +20,8 @@
     "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
     "de": "Erstellen Sie ein persönliches Thema auf der Grundlage aller verfügbaren Ebenen aller Themen",
     "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する",
-    "zh_Hant": "從所有可用的主題圖層創建個人化主題"
+    "zh_Hant": "從所有可用的主題圖層創建個人化主題",
+    "ru": "Создать персональную тему на основе доступных слоёв тем"
   },
   "language": [
     "en",
@@ -31,7 +32,8 @@
     "fr",
     "de",
     "ja",
-    "zh_Hant"
+    "zh_Hant",
+    "ru"
   ],
   "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",

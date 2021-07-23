@@ -59,8 +59,8 @@ export default class State {
     public favouriteLayers: UIEventSource<string[]>;
 
     public layerUpdater: OverpassFeatureSource;
-    
-    public osmApiFeatureSource : OsmApiFeatureSource ;
+
+    public osmApiFeatureSource: OsmApiFeatureSource;
 
 
     public filteredLayers: UIEventSource<{
@@ -81,7 +81,7 @@ export default class State {
      * Keeps track of relations: which way is part of which other way?
      * Set by the overpass-updater; used in the metatagging
      */
-    public readonly knownRelations = new UIEventSource<Map<string, {role: string, relation: Relation}[]>>(undefined, "Relation memberships")
+    public readonly knownRelations = new UIEventSource<Map<string, { role: string, relation: Relation }[]>>(undefined, "Relation memberships")
 
     public readonly featureSwitchUserbadge: UIEventSource<boolean>;
     public readonly featureSwitchSearch: UIEventSource<boolean>;
@@ -96,8 +96,8 @@ export default class State {
     public readonly featureSwitchIsDebugging: UIEventSource<boolean>;
     public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>;
     public readonly featureSwitchApiURL: UIEventSource<string>;
-   public readonly featureSwitchEnableExport: UIEventSource<boolean>;
-
+    public readonly featureSwitchEnableExport: UIEventSource<boolean>;
+    public readonly featureSwitchFakeUser: UIEventSource<boolean>;
 
 
     public readonly featurePipeline: FeaturePipeline;
@@ -131,7 +131,7 @@ export default class State {
     public welcomeMessageOpenedTab = QueryParameters.GetQueryParameter("tab", "0", `The tab that is shown in the welcome-message. 0 = the explanation of the theme,1 = OSM-credits, 2 = sharescreen, 3 = more themes, 4 = about mapcomplete (user must be logged in and have >${Constants.userJourney.mapCompleteHelpUnlock} changesets)`).map<number>(
         str => isNaN(Number(str)) ? 0 : Number(str), [], n => "" + n
     );
-   
+
     constructor(layoutToUse: LayoutConfig) {
         const self = this;
 
@@ -193,6 +193,12 @@ export default class State {
                 "Disables/Enables the layer control");
             this.featureSwitchAddNew = featSw("fs-add-new", (layoutToUse) => layoutToUse?.enableAddNewPoints ?? true,
                 "Disables/Enables the 'add new feature'-popup. (A theme without presets might not have it in the first place)");
+            this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
+                if (!userbadge) {
+                    this.featureSwitchAddNew.setData(false)
+                }
+            })
+
             this.featureSwitchWelcomeMessage = featSw("fs-welcome-message", () => true,
                 "Disables/enables the help menu or welcome message");
             this.featureSwitchIframe = featSw("fs-iframe", () => false,
@@ -205,20 +211,24 @@ export default class State {
                 "Disables/Enables the geolocation button");
             this.featureSwitchShowAllQuestions = featSw("fs-all-questions", (layoutToUse) => layoutToUse?.enableShowAllQuestions ?? false,
                 "Always show all questions");
-            this.featureSwitchEnableExport = featSw("fs-export",(layoutToUse) => layoutToUse?.enableExportButton ?? false,
+            this.featureSwitchEnableExport = featSw("fs-export", (layoutToUse) => layoutToUse?.enableExportButton ?? false,
                 "If set, enables the 'download'-button to download everything as geojson")
 
             this.featureSwitchIsTesting = QueryParameters.GetQueryParameter("test", "false",
                 "If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org")
                 .map(str => str === "true", [], b => "" + b);
-            
-            this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter("debug","false",
+
+            this.featureSwitchFakeUser = QueryParameters.GetQueryParameter("fake-user", "false",
+                "If true, 'dryrun' mode is activated and a fake user account is loaded")
+                .map(str => str === "true", [], b => "" + b);
+
+            this.featureSwitchIsDebugging = QueryParameters.GetQueryParameter("debug", "false",
                 "If true, shows some extra debugging help such as all the available tags on every object")
                 .map(str => str === "true", [], b => "" + b)
 
-            this.featureSwitchApiURL = QueryParameters.GetQueryParameter("backend","osm",
+            this.featureSwitchApiURL = QueryParameters.GetQueryParameter("backend", "osm",
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'")
-        
+
         }
         {
             // Some other feature switches
@@ -229,18 +239,19 @@ export default class State {
 
 
             this.backgroundLayerId = QueryParameters.GetQueryParameter("background",
-            layoutToUse?.defaultBackgroundId ?? "osm",
-            "The id of the background layer to start with")
+                layoutToUse?.defaultBackgroundId ?? "osm",
+                "The id of the background layer to start with")
 
         }
-        
-        
-        if(Utils.runningFromConsole){
+
+
+        if (Utils.runningFromConsole) {
             return;
         }
 
         this.osmConnection = new OsmConnection(
             this.featureSwitchIsTesting.data,
+            this.featureSwitchFakeUser.data,
             QueryParameters.GetQueryParameter("oauth_token", undefined,
                 "Used to complete the login"),
             layoutToUse?.id,
@@ -253,7 +264,7 @@ export default class State {
         this.allElements = new ElementStorage();
         this.changes = new Changes();
         this.osmApiFeatureSource = new OsmApiFeatureSource()
-        
+
         new PendingChangesUploader(this.changes, this.selectedElement);
 
         this.mangroveIdentity = new MangroveIdentity(

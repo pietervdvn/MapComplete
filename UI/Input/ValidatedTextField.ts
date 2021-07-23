@@ -13,6 +13,8 @@ import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {Unit} from "../../Customizations/JSON/Denomination";
 import BaseUIElement from "../BaseUIElement";
+import LengthInput from "./LengthInput";
+import {GeoOperations} from "../../Logic/GeoOperations";
 
 interface TextFieldDef {
     name: string,
@@ -21,14 +23,16 @@ interface TextFieldDef {
     reformat?: ((s: string, country?: () => string) => string),
     inputHelper?: (value: UIEventSource<string>, options?: {
         location: [number, number],
-        mapBackgroundLayer?: UIEventSource<any>
+        mapBackgroundLayer?: UIEventSource<any>,
+        args: (string | number | boolean)[]
+        feature?: any
     }) => InputElement<string>,
-
     inputmode?: string
 }
 
 export default class ValidatedTextField {
 
+    public static bestLayerAt: (location: UIEventSource<Loc>, preferences: UIEventSource<string[]>) => any
 
     public static tpList: TextFieldDef[] = [
         ValidatedTextField.tp(
@@ -63,6 +67,83 @@ export default class ValidatedTextField {
                 return [year, month, day].join('-');
             },
             (value) => new SimpleDatePicker(value)),
+        ValidatedTextField.tp(
+            "direction",
+            "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
+            (str) => {
+                str = "" + str;
+                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
+            }, str => str,
+            (value, options) => {
+                const args = options.args ?? []
+                let zoom = 19
+                if (args[0]) {
+                    zoom = Number(args[0])
+                    if (isNaN(zoom)) {
+                        throw "Invalid zoom level for argument at 'length'-input"
+                    }
+                }
+                const location = new UIEventSource<Loc>({
+                    lat: options.location[0],
+                    lon: options.location[1],
+                    zoom: zoom
+                })
+                if (args[1]) {
+                    // We have a prefered map!
+                    options.mapBackgroundLayer = ValidatedTextField.bestLayerAt(
+                        location, new UIEventSource<string[]>(args[1].split(","))
+                    )
+                }
+                const di = new DirectionInput(options.mapBackgroundLayer, location, value)
+                di.SetStyle("height: 20rem;");
+
+                return di;
+            },
+            "numeric"
+        ),
+        ValidatedTextField.tp(
+            "length",
+            "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma seperated) ], e.g. `[\"21\", \"map,photo\"]",
+            (str) => {
+                const t = Number(str)
+                return !isNaN(t)
+            },
+            str => str,
+            (value, options) => {
+                const args = options.args ?? []
+                let zoom = 19
+                if (args[0]) {
+                    zoom = Number(args[0])
+                    if (isNaN(zoom)) {
+                        throw "Invalid zoom level for argument at 'length'-input"
+                    }
+                }
+                
+                // Bit of a hack: we project the centerpoint to the closes point on the road - if available
+                if(options.feature){
+                    const lonlat: [number, number] = [...options.location]
+                    lonlat.reverse()
+                    options.location = <[number,number]> GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+                    options.location.reverse()
+                }
+                options.feature
+                
+                const location = new UIEventSource<Loc>({
+                    lat: options.location[0],
+                    lon: options.location[1],
+                    zoom: zoom
+                })
+                if (args[1]) {
+                    // We have a prefered map!
+                    options.mapBackgroundLayer = ValidatedTextField.bestLayerAt(
+                        location, new UIEventSource<string[]>(args[1].split(","))
+                    )
+                }
+                const li = new LengthInput(options.mapBackgroundLayer, location, value)
+                li.SetStyle("height: 20rem;")
+                return li;
+            }
+        ),
         ValidatedTextField.tp(
             "wikidata",
             "A wikidata identifier, e.g. Q42",
@@ -113,22 +194,6 @@ export default class ValidatedTextField {
             undefined,
             undefined,
             "numeric"),
-        ValidatedTextField.tp(
-            "direction",
-            "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)",
-            (str) => {
-                str = "" + str;
-                return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0 && Number(str) <= 360
-            }, str => str,
-            (value, options) => {
-                return new DirectionInput(options.mapBackgroundLayer , new UIEventSource<Loc>({
-                    lat: options.location[0],
-                    lon: options.location[1],
-                    zoom: 19
-                }),value);
-            },
-            "numeric"
-        ),
         ValidatedTextField.tp(
             "float",
             "A decimal",
@@ -222,6 +287,7 @@ export default class ValidatedTextField {
      * {string (typename) --> TextFieldDef}
      */
     public static AllTypes = ValidatedTextField.allTypesDict();
+
     public static InputForType(type: string, options?: {
         placeholder?: string | BaseUIElement,
         value?: UIEventSource<string>,
@@ -233,7 +299,9 @@ export default class ValidatedTextField {
         country?: () => string,
         location?: [number /*lat*/, number /*lon*/],
         mapBackgroundLayer?: UIEventSource<any>,
-        unit?: Unit
+        unit?: Unit,
+        args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
+        feature?: any
     }): InputElement<string> {
         options = options ?? {};
         options.placeholder = options.placeholder ?? type;
@@ -247,7 +315,7 @@ export default class ValidatedTextField {
                 if (str === undefined) {
                     return false;
                 }
-                if(options.unit) {
+                if (options.unit) {
                     str = options.unit.stripUnitParts(str)
                 }
                 return isValidTp(str, country ?? options.country) && optValid(str, country ?? options.country);
@@ -268,7 +336,7 @@ export default class ValidatedTextField {
             })
         }
 
-        if(options.unit) {
+        if (options.unit) {
             // We need to apply a unit.
             // This implies:
             // We have to create a dropdown with applicable denominations, and fuse those values
@@ -288,17 +356,16 @@ export default class ValidatedTextField {
                 input,
                 unitDropDown,
                 // combine the value from the textfield and the dropdown into the resulting value that should go into OSM
-                (text, denom) => denom?.canonicalValue(text, true) ?? undefined, 
+                (text, denom) => denom?.canonicalValue(text, true) ?? undefined,
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown
                     const withDenom = unit.findDenomination(valueWithDenom);
-                    if(withDenom === undefined)
-                    {
+                    if (withDenom === undefined) {
                         // Not a valid value at all - we give it undefined and leave the details up to the other elements
                         return [undefined, undefined]
                     }
                     const [strippedText, denom] = withDenom
-                    if(strippedText === undefined){
+                    if (strippedText === undefined) {
                         return [undefined, undefined]
                     }
                     return [strippedText, denom]
@@ -306,18 +373,20 @@ export default class ValidatedTextField {
             ).SetClass("flex")
         }
         if (tp.inputHelper) {
-            const helper =  tp.inputHelper(input.GetValue(), {
+            const helper = tp.inputHelper(input.GetValue(), {
                 location: options.location,
-                mapBackgroundLayer: options.mapBackgroundLayer
-
+                mapBackgroundLayer: options.mapBackgroundLayer,
+                args: options.args,
+                feature: options.feature
             })
             input = new CombinedInputElement(input, helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
                 a => [a, a]
-                );
+            );
         }
         return input;
     }
+
     public static HelpText(): string {
         const explanations = ValidatedTextField.tpList.map(type => ["## " + type.name, "", type.explanation].join("\n")).join("\n\n")
         return "# Available types for text fields\n\nThe listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them\n\n" + explanations
@@ -329,7 +398,9 @@ export default class ValidatedTextField {
                       reformat?: ((s: string, country?: () => string) => string),
                       inputHelper?: (value: UIEventSource<string>, options?: {
                           location: [number, number],
-                          mapBackgroundLayer: UIEventSource<any>
+                          mapBackgroundLayer: UIEventSource<any>,
+                          args: string[],
+                          feature: any
                       }) => InputElement<string>,
                       inputmode?: string): TextFieldDef {
 
