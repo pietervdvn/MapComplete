@@ -27,6 +27,7 @@
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
+      "#": "Nature reserve with geometry, z>=13",
       "builtin": "nature_reserve",
       "override": {
         "source": {
@@ -39,7 +40,25 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": "10",
+        "minzoom": "13",
+        "icon": {
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
+        }
+      }
+    },
+    {
+      "#": "Nature reserve overview from cache, points only, z < 13",
+      "builtin": "nature_reserve",
+      "override": {
+        "source": {
+          "osmTags": {
+            "+and": [
+              "operator~.*[nN]atuurpunt.*"
+            ]
+          },
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson"
+        },
+        "minzoom": "0",
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }

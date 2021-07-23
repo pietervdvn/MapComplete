@@ -274,6 +274,9 @@ async function createOverview(targetdir: string, r: TileRange, z: number, layern
             }
             const features = JSON.parse(fs.readFileSync(read_path, "UTF-8")).features
             const pointsOnly = features.map(f => {
+                
+                f.properties["_last_edit:timestamp"] = "1970-01-01"
+                
                 if (f.geometry.type === "Point") {
                     return f
                 } else {
