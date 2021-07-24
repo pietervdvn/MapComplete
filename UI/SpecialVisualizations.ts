@@ -39,7 +39,8 @@ export default class SpecialVisualizations {
     static constructMiniMap: (options?: {
         background?: UIEventSource<BaseLayer>,
         location?: UIEventSource<Loc>,
-        allowMoving?: boolean
+        allowMoving?: boolean,
+        leafletOptions?: any
     }) => BaseUIElement;
     static constructShowDataLayer: (features: UIEventSource<{ feature: any; freshness: Date }[]>, leafletMap: UIEventSource<any>, layoutToUse: UIEventSource<any>, enablePopups?: boolean, zoomToFeatures?: boolean) => any;
     public static specialVisualizations: SpecialVisualization[] =
@@ -369,7 +370,6 @@ export default class SpecialVisualizations {
                                 if (unit === undefined) {
                                     return value;
                                 }
-
                                 return unit.asHumanLongValue(value);
 
                             },
@@ -379,6 +379,7 @@ export default class SpecialVisualizations {
             }
 
         ]
+    
     static HelpMessage: BaseUIElement = SpecialVisualizations.GenHelpMessage();
     private static GenHelpMessage() {
 

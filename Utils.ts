@@ -1,4 +1,5 @@
 import * as colors from "./assets/colors.json"
+import {TileRange} from "./Models/TileRange";
 
 export class Utils {
 
@@ -134,7 +135,7 @@ export class Utils {
         }
         return newArr;
     }
-
+    
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -450,14 +451,12 @@ export class Utils {
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+
+    public static setDefaults(options, defaults){
+        for (let key in defaults){
+            if (!(key in options)) options[key] = defaults[key];
+        }
+        return options;
+    }
 }
 
-export interface TileRange {
-    xstart: number,
-    ystart: number,
-    xend: number,
-    yend: number,
-    total: number,
-    zoomlevel: number
-
-}

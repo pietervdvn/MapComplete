@@ -50,9 +50,10 @@ export default class LayerConfig {
     public readonly deletion: DeleteConfig | null;
 
     presets: {
-        title: Translation;
-        tags: Tag[];
-        description?: Translation;
+        title: Translation,
+        tags: Tag[],
+        description?: Translation,
+        preciseInput?: { preferredBackground?: string }
     }[];
 
     tagRenderings: TagRenderingConfig[];
@@ -144,14 +145,19 @@ export default class LayerConfig {
         this.minzoom = json.minzoom ?? 0;
         this.maxzoom = json.maxzoom ?? 1000;
         this.wayHandling = json.wayHandling ?? 0;
-        this.presets = (json.presets ?? []).map((pr, i) => ({
-            title: Translations.T(pr.title, `${context}.presets[${i}].title`),
-            tags: pr.tags.map((t) => FromJSON.SimpleTag(t)),
-            description: Translations.T(
-                pr.description,
-                `${context}.presets[${i}].description`
-            ),
-        }));
+        this.presets = (json.presets ?? []).map((pr, i) => {
+            if (pr.preciseInput === true) {
+                pr.preciseInput = {
+                    preferredBackground: undefined
+                }
+            }
+            return {
+                title: Translations.T(pr.title, `${context}.presets[${i}].title`),
+                tags: pr.tags.map((t) => FromJSON.SimpleTag(t)),
+                description: Translations.T(pr.description, `${context}.presets[${i}].description`),
+                preciseInput: pr.preciseInput
+            }
+        });
 
         /** Given a key, gets the corresponding property from the json (or the default if not found
          *

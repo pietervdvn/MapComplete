@@ -19,6 +19,7 @@ import TitleHandler from "./Logic/Actors/TitleHandler";
 import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
+import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -95,6 +96,12 @@ export default class State {
     public readonly featureSwitchShowAllQuestions: UIEventSource<boolean>;
     public readonly featureSwitchApiURL: UIEventSource<string>;
     public readonly featureSwitchFilter: UIEventSource<boolean>;
+    public readonly featureSwitchEnableExport: UIEventSource<boolean>;
+    public readonly featureSwitchFakeUser: UIEventSource<boolean>;
+
+
+    public featurePipeline: FeaturePipeline;
+
 
     /**
      * The map location: currently centered lat, lon and zoom
@@ -311,11 +318,24 @@ export default class State {
                 (b) => "" + b
             );
 
+            this.featureSwitchFakeUser = QueryParameters.GetQueryParameter("fake-user", "false",
+                "If true, 'dryrun' mode is activated and a fake user account is loaded")
+                .map(str => str === "true", [], b => "" + b);
+
+
             this.featureSwitchApiURL = QueryParameters.GetQueryParameter(
                 "backend",
                 "osm",
                 "The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test'"
             );
+
+
+
+            this.featureSwitchUserbadge.addCallbackAndRun(userbadge => {
+                if (!userbadge) {
+                    this.featureSwitchAddNew.setData(false)
+                }
+            })
         }
         {
             // Some other feature switches
@@ -341,6 +361,7 @@ export default class State {
 
         this.osmConnection = new OsmConnection(
             this.featureSwitchIsTesting.data,
+            this.featureSwitchFakeUser.data,
             QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,

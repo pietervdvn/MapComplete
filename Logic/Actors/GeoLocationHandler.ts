@@ -1,6 +1,5 @@
 import * as L from "leaflet";
 import {UIEventSource} from "../UIEventSource";
-import {Utils} from "../../Utils";
 import Svg from "../../Svg";
 import Img from "../../UI/Base/Img";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
@@ -15,11 +14,19 @@ export default class GeoLocationHandler extends VariableUiElement {
      */
     private readonly _isActive: UIEventSource<boolean>;
 
+
+    /**
+     * Wether or not the geolocation is locked, aka the user requested the current location and wants the crosshair to follow the user
+     * @private
+     */
+    private readonly _isLocked: UIEventSource<boolean>;
+
     /**
      * The callback over the permission API
      * @private
      */
     private readonly _permission: UIEventSource<string>;
+
     /***
      * The marker on the map, in order to update it
      * @private
@@ -39,11 +46,15 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _leafletMap: UIEventSource<L.Map>;
+
+
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
      * @private
      */
     private _lastUserRequest: Date;
+
+
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
      * On firefox, the permissions api is broken (probably fingerprint resistiance) and "granted + don't ask again" doesn't stick between sessions.
@@ -67,28 +78,32 @@ export default class GeoLocationHandler extends VariableUiElement {
             "geolocation-permissions"
         );
         const isActive = new UIEventSource<boolean>(false);
-
+        const isLocked = new UIEventSource<boolean>(false);
         super(
             hasLocation.map(
-                (hasLocation) => {
-                    if (hasLocation) {
-                        return new CenterFlexedElement(
-                            Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
-                        ); // crosshair_blue_ui()
+                (hasLocationData) => {
+                    let icon: string;
+
+                    if (isLocked.data) {
+                        icon = Svg.crosshair_locked;
+                    } else if (hasLocationData) {
+                        icon = Svg.crosshair_blue;
+                    } else if (isActive.data) {
+                        icon = Svg.crosshair_blue_center;
+                    } else {
+                        icon = Svg.crosshair;
                     }
-                    if (isActive.data) {
-                        return new CenterFlexedElement(
-                            Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
-                        ); // crosshair_blue_center_ui
-                    }
+
                     return new CenterFlexedElement(
-                        Img.AsImageElement(Svg.location, "", "width:1.25rem;height:1.25rem")
-                    ); //crosshair_ui
+                        Img.AsImageElement(icon, "", "width:1.25rem;height:1.25rem")
+                    );
+
                 },
-                [isActive]
+                [isActive, isLocked]
             )
         );
         this._isActive = isActive;
+        this._isLocked = isLocked;
         this._permission = new UIEventSource<string>("");
         this._previousLocationGrant = previousLocationGrant;
         this._currentGPSLocation = currentGPSLocation;
@@ -110,13 +125,14 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.SetClass(pointerClass);
         });
 
-        this.onClick(() => self.init(true));
+        this.onClick(() => {
+            if (self._hasLocation.data) {
+                self._isLocked.setData(!self._isLocked.data);
+            }
+            self.init(true);
+        });
         this.init(false);
-    }
 
-    private init(askPermission: boolean) {
-        const self = this;
-        const map = this._leafletMap.data;
 
         this._currentGPSLocation.addCallback((location) => {
             self._previousLocationGrant.setData("granted");
@@ -125,6 +141,8 @@ export default class GeoLocationHandler extends VariableUiElement {
                 (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
             if (timeSinceRequest < 30) {
                 self.MoveToCurrentLoction(16);
+            } else if (self._isLocked.data) {
+                self.MoveToCurrentLoction();
             }
 
             let color = "#1111cc";
@@ -141,6 +159,8 @@ export default class GeoLocationHandler extends VariableUiElement {
                 iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
             });
 
+            const map = self._leafletMap.data;
+
             const newMarker = L.marker(location.latlng, {icon: icon});
             newMarker.addTo(map);
 
@@ -149,7 +169,14 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
             self._marker = newMarker;
         });
+    }
 
+    private init(askPermission: boolean) {
+        const self = this;
+        if (self._isActive.data) {
+            self.MoveToCurrentLoction(16);
+            return;
+        }
         try {
             navigator?.permissions
                 ?.query({name: "geolocation"})
@@ -171,31 +198,6 @@ export default class GeoLocationHandler extends VariableUiElement {
         } else if (this._previousLocationGrant.data === "granted") {
             this._previousLocationGrant.setData("");
             self.StartGeolocating(false);
-        }
-    }
-
-    private locate() {
-        const self = this;
-        const map: any = this._leafletMap.data;
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    self._currentGPSLocation.setData({
-                        latlng: [position.coords.latitude, position.coords.longitude],
-                        accuracy: position.coords.accuracy,
-                    });
-                },
-                function () {
-                    console.warn("Could not get location with navigator.geolocation");
-                }
-            );
-            return;
-        } else {
-            map.findAccuratePosition({
-                maxWait: 10000, // defaults to 10000
-                desiredAccuracy: 50, // defaults to 20
-            });
         }
     }
 
@@ -249,17 +251,21 @@ export default class GeoLocationHandler extends VariableUiElement {
         }
 
         console.log("Searching location using GPS");
-        this.locate();
 
-        if (!self._isActive.data) {
-            self._isActive.setData(true);
-            Utils.DoEvery(60000, () => {
-                if (document.visibilityState !== "visible") {
-                    console.log("Not starting gps: document not visible");
-                    return;
-                }
-                this.locate();
-            });
+        if (self._isActive.data) {
+            return;
         }
+        self._isActive.setData(true);
+        navigator.geolocation.watchPosition(
+            function (position) {
+                self._currentGPSLocation.setData({
+                    latlng: [position.coords.latitude, position.coords.longitude],
+                    accuracy: position.coords.accuracy,
+                });
+            },
+            function () {
+                console.warn("Could not get location with navigator.geolocation");
+            }
+        );
     }
 }

@@ -1,7 +1,7 @@
 /**
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
-import {TileRange, Utils} from "../Utils";
+import {Utils} from "../Utils";
 
 Utils.runningFromConsole = true
 import {Overpass} from "../Logic/Osm/Overpass";
@@ -18,6 +18,7 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import {GeoOperations} from "../Logic/GeoOperations";
 import {UIEventSource} from "../Logic/UIEventSource";
 import * as fs from "fs";
+import {TileRange} from "../Models/TileRange";
 
 
 function createOverpassObject(theme: LayoutConfig) {

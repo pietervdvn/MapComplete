@@ -24,6 +24,7 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
 import {Unit} from "../../Customizations/JSON/Denomination";
+import InputElementWrapper from "../Input/InputElementWrapper";
 
 /**
  * Shows the question element.
@@ -128,7 +129,7 @@ export default class TagRenderingQuestion extends Combine {
             }
             return Utils.NoNull(configuration.mappings?.map((m,i) => excludeIndex === i ? undefined:  m.ifnot))
         }
-        const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource.data);
+        const ff = TagRenderingQuestion.GenerateFreeform(configuration, applicableUnit, tagsSource);
         const hasImages = mappings.filter(mapping => mapping.then.ExtractImages().length > 0).length > 0
 
         if (mappings.length < 8 || configuration.multiAnswer || hasImages) {
@@ -289,7 +290,7 @@ export default class TagRenderingQuestion extends Combine {
             (t0, t1) => t1.isEquivalent(t0));
     }
 
-    private static GenerateFreeform(configuration: TagRenderingConfig, applicableUnit: Unit, tagsData: any): InputElement<TagsFilter> {
+    private static GenerateFreeform(configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>): InputElement<TagsFilter> {
         const freeform = configuration.freeform;
         if (freeform === undefined) {
             return undefined;
@@ -328,20 +329,34 @@ export default class TagRenderingQuestion extends Combine {
             return undefined;
         }
 
-        let input: InputElement<string> = ValidatedTextField.InputForType(configuration.freeform.type, {
+        const tagsData = tags.data;
+        const feature = State.state.allElements.ContainingFeatures.get(tagsData.id)
+        const input: InputElement<string> = ValidatedTextField.InputForType(configuration.freeform.type, {
             isValid: (str) => (str.length <= 255),
             country: () => tagsData._country,
             location: [tagsData._lat, tagsData._lon],
             mapBackgroundLayer: State.state.backgroundLayer,
-            unit: applicableUnit
+            unit: applicableUnit,
+            args: configuration.freeform.helperArgs,
+            feature: feature
         });
 
-        input.GetValue().setData(tagsData[configuration.freeform.key]);
+        input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
 
-        return new InputElementMap(
+        let inputTagsFilter : InputElement<TagsFilter> = new InputElementMap(
             input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
             pickString, toString
         );
+        
+        if(freeform.inline){
+            
+            inputTagsFilter.SetClass("w-16-imp")
+            inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags)
+            inputTagsFilter.SetClass("block")
+            
+        }
+        
+        return inputTagsFilter;
 
     }
 

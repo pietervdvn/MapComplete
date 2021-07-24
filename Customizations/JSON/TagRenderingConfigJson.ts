@@ -30,6 +30,7 @@ export interface TagRenderingConfigJson {
      * Allow freeform text input from the user
      */
     freeform?: {
+    
         /**
          * If this key is present, then 'render' is used to display the value.
          * If this is undefined, the rendering is _always_ shown
@@ -41,12 +42,29 @@ export interface TagRenderingConfigJson {
          */
         type?: string,
         /**
+         * Extra parameters to initialize the input helper arguments.
+         * For semantics, see the 'SpecialInputElements.md'
+         */
+        helperArgs?: (string | number | boolean)[];
+        /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'
          **/
         addExtraTags?: string[];
 
-        
+        /**
+         * When set, influences the way a question is asked.
+         * Instead of showing a full-widht text field, the text field will be shown within the rendering of the question.
+         * 
+         * This combines badly with special input elements, as it'll distort the layout.
+         */
+        inline?: boolean
+
+        /**
+         * default value to enter if no previous tagging is present.
+         * Normally undefined (aka do not enter anything)
+         */
+        default?: string
     },
 
     /**
