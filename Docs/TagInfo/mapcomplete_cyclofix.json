@@ -589,6 +589,25 @@
    "value": "broken"
   },
   {
+   "key": "level",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+  },
+  {
+   "key": "location",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+   "value": "underground"
+  },
+  {
+   "key": "level",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+   "value": "0"
+  },
+  {
+   "key": "level",
+   "description": "Layer 'Bike stations (repair, pump or both)' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+   "value": "1"
+  },
+  {
    "key": "service:bicycle:cleaning:charge",
    "description": "Layer 'Bike stations (repair, pump or both)' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
   },
