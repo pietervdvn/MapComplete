@@ -862,10 +862,10 @@
                 "question": "Mag een fietser rechtsaf slaan als het licht rood is?",
                 "mappings": {
                     "0": {
-                        "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
+                        "then": "Een fietser mag wel rechtsaf slaan als het licht rood is"
                     },
                     "1": {
-                        "then": "Een fietser mag rechtsaf slaan als het licht rood is"
+                        "then": "Een fietser mag niet rechtsaf slaan als het licht rood is"
                     }
                 }
             }
