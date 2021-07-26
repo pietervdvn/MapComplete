@@ -193,7 +193,7 @@ export default class ShowDataLayer {
                     leafletLayer.openPopup()
                 }
                 if(feature.id !== feature.properties.id){
-                    console.log("Not opening the popup for", feature)
+                    console.trace("Not opening the popup for", feature)
                 }
 
             }

@@ -54,7 +54,6 @@ export class ChangesetHandler {
 
             }
 
-            const newVersion = parseInt(node.attributes.new_id.value);
 
         }
     }

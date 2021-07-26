@@ -263,8 +263,8 @@ export class Changes {
             }  = self.CreateChangesetObjects(pending, osmObjects)
             if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
                 console.log("No changes to be made")
-                this.pendingChanges.setData([])
-                this.isUploading.setData(false)
+                self.pendingChanges.setData([])
+                self.isUploading.setData(false)
                 return true; // Unregister the callback
             }
 
@@ -278,7 +278,10 @@ export class Changes {
                     self.pendingChanges.setData([]);
                     self.isUploading.setData(false)
                 },
-                () => self.isUploading.setData(false) // Failed - mark to try again
+                () => {
+                    console.log("Upload failed - trying again later")
+                    return self.isUploading.setData(false);
+                } // Failed - mark to try again
             )
             return true;
 
