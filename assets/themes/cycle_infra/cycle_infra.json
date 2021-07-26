@@ -18,13 +18,13 @@
   ],
   "maintainer": "",
   "defaultBackgroundId": "CartoDB.Voyager",
-  "icon": "./assets/svg/cycle-infra.svg",
+  "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
   "version": "0",
   "startLat": 51,
   "startLon": 3.75,
   "startZoom": 11,
   "widenFactor": 0.05,
-  "socialImage": "./assets/svg/cycle-infra.svg",
+  "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
   "enableDownload": true,
   "layers": [
     {
@@ -961,7 +961,7 @@
         "render": "40,40,center"
       },
       "color": {
-        "render": "#aaaaaa",
+        "render": "rgba(170, 170, 170, 0.7)",
         "mappings": [
           {
             "if": "highway=cycleway",
@@ -1008,7 +1008,7 @@
           },
           {
             "if": "cycleway=track",
-            "then": "30 15"
+            "then": ""
           },
           {
             "if": "cycleway=shared_lane",

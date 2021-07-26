@@ -69,7 +69,10 @@
           "freeform": {
             "key": "width:carriageway",
             "type": "length",
-            "helperArgs": [21, "map"]
+            "helperArgs": [
+              21,
+              "map"
+            ]
           }
         },
         {

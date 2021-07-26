@@ -18,7 +18,8 @@
       "ru": "Какой номер телефона у {name}?",
       "sv": "Vad är telefonnumret till {name}?",
       "zh_Hant": "{name} 的電話號碼是什麼？",
-      "it": "Qual è il numero di telefono di {name}?"
+      "it": "Qual è il numero di telefono di {name}?",
+      "pt_BR": "Qual o número de telefone de {name}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "freeform": {
@@ -49,7 +50,9 @@
       "ru": "Какой адрес электронной почты у {name}?",
       "id": "Apa alamat surel dari {name}?",
       "zh_Hant": "{name} 的電子郵件地址是什麼？",
-      "it": "Qual è l'indirizzo email di {name}?"
+      "it": "Qual è l'indirizzo email di {name}?",
+      "de": "Was ist die Mail-Adresse von {name}?",
+      "pt_BR": "Qual o endereço de e-mail de {name}?"
     },
     "freeform": {
       "key": "email",
@@ -66,7 +69,9 @@
       "ru": "Какой сайт у {name}?",
       "id": "Apa situs web dari {name}?",
       "zh_Hant": "{name} 網址是什麼？",
-      "it": "Qual è il sito web di {name}?"
+      "it": "Qual è il sito web di {name}?",
+      "de": "Was ist die Website von {name}?",
+      "pt_BR": "Qual o site de {name}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -82,7 +87,8 @@
       "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
       "ru": "Есть ли еще что-то важное, о чем вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
       "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>",
-      "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>"
+      "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>",
+      "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -98,7 +104,8 @@
       "nb_NO": "Hva er åpningstidene for {name})",
       "ru": "Какое время работы у {name}?",
       "zh_Hant": "{name} 的開放時間是什麼？",
-      "it": "Quali sono gli orari di apertura di {name}?"
+      "it": "Quali sono gli orari di apertura di {name}?",
+      "pt_BR": "Qual o horário de funcionamento de {name}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -127,11 +134,15 @@
   "level": {
     "question": {
       "nl": "Op welke verdieping bevindt dit punt zich?",
-      "en": "On what level is this feature located?"
+      "en": "On what level is this feature located?",
+      "de": "In welchem Stockwerk befindet sich dieses Objekt?"
     },
     "render": {
       "en": "Located on the {level}th floor",
-      "nl": "Bevindt zich op de {level}de verdieping"
+      "nl": "Bevindt zich op de {level}de verdieping",
+      "de": "Befindet sich im {level}ten Stock",
+      "pt_BR": "Localizado no {level}o andar",
+      "ru": "Расположено на {level}ом этаже"
     },
     "freeform": {
       "key": "level",
@@ -142,7 +153,9 @@
         "if": "location=underground",
         "then": {
           "en": "Located underground",
-          "nl": "Bevindt zich ondergronds"
+          "nl": "Bevindt zich ondergronds",
+          "pt_BR": "Localizado no subsolo",
+          "ru": "Расположено под землей"
         },
         "hideInAnswer": true
       },
@@ -150,14 +163,20 @@
         "if": "level=0",
         "then": {
           "en": "Located on the ground floor",
-          "nl": "Bevindt zich gelijkvloers"
+          "nl": "Bevindt zich gelijkvloers",
+          "de": "Ist im Erdgeschoss",
+          "pt_BR": "Localizado no térreo",
+          "ru": "Расположено на первом этаже"
         }
       },
       {
         "if": "level=1",
         "then": {
           "en": "Located on the first floor",
-          "nl": "Bevindt zich op de eerste verdieping"
+          "nl": "Bevindt zich op de eerste verdieping",
+          "de": "Ist im ersten Stock",
+          "pt_BR": "Localizado no primeiro andar",
+          "ru": "Расположено на первом этаже"
         }
       }
     ]

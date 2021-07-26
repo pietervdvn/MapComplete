@@ -3,30 +3,30 @@
         "phone": {
             "question": "Was ist die Telefonnummer von {name}?"
         },
+        "email": {
+            "question": "Was ist die Mail-Adresse von {name}?"
+        },
+        "website": {
+            "question": "Was ist die Website von {name}?"
+        },
+        "description": {
+            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
+        },
         "opening_hours": {
             "question": "Was sind die Öffnungszeiten von {name}?",
             "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
         },
         "level": {
+            "question": "In welchem Stockwerk befindet sich dieses Objekt?",
+            "render": "Befindet sich im {level}ten Stock",
             "mappings": {
-                "2": {
-                    "then": "Ist im ersten Stock"
-                },
                 "1": {
                     "then": "Ist im Erdgeschoss"
+                },
+                "2": {
+                    "then": "Ist im ersten Stock"
                 }
-            },
-            "render": "Befindet sich im {level}ten Stock",
-            "question": "In welchem Stockwerk befindet sich dieses Objekt?"
-        },
-        "description": {
-            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
-        },
-        "website": {
-            "question": "Was ist die Website von {name}?"
-        },
-        "email": {
-            "question": "Was ist die Mail-Adresse von {name}?"
+            }
         }
     }
 }
