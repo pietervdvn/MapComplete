@@ -4,45 +4,56 @@ import LayerSelection from "./LayerSelection";
 import Combine from "../Base/Combine";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import { UIEventSource } from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
-import {ExportDataButton} from "./ExportDataButton";
+import { ExportDataButton } from "./ExportDataButton";
+import FilterView from "./FilterView";
 
 export default class LayerControlPanel extends ScrollableFullScreen {
+  constructor(isShown: UIEventSource<boolean>) {
+    super(
+      LayerControlPanel.GenTitle,
+      LayerControlPanel.GeneratePanel,
+      "layers",
+      isShown
+    );
+  }
 
-    constructor(isShown: UIEventSource<boolean>) {
-        super(LayerControlPanel.GenTitle, LayerControlPanel.GeneratePanel, "layers", isShown);
+  private static GenTitle(): BaseUIElement {
+    return Translations.t.general.layerSelection.title
+      .Clone()
+      .SetClass("text-2xl break-words font-bold p-2");
+  }
+
+  private static GeneratePanel(): BaseUIElement {
+    const elements: BaseUIElement[] = [];
+
+    if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
+      const backgroundSelector = new BackgroundSelector();
+      backgroundSelector.SetStyle("margin:1em");
+      backgroundSelector.onClick(() => {});
+      elements.push(backgroundSelector);
     }
 
-    private static GenTitle(): BaseUIElement {
-        return Translations.t.general.layerSelection.title.Clone().SetClass("text-2xl break-words font-bold p-2")
-    }
+    elements.push(
+      new Toggle(
+        new FilterView(State.state.filteredLayers),
+        undefined,
+        State.state.filteredLayers.map(
+          (layers) => layers.length > 1 || layers[0].layerDef.filters.length > 0
+        )
+      )
+    );
 
-    private static GeneratePanel(): BaseUIElement {
-        const elements: BaseUIElement[] = []
+    elements.push(
+      new Toggle(
+        new ExportDataButton(),
+        undefined,
+        State.state.featureSwitchEnableExport
+      )
+    );
 
-        if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
-            const backgroundSelector = new BackgroundSelector();
-            backgroundSelector.SetStyle("margin:1em");
-            backgroundSelector.onClick(() => {
-            });
-            elements.push(backgroundSelector)
-        }
-
-        elements.push(new Toggle(
-            new LayerSelection(State.state.filteredLayers),
-            undefined,
-            State.state.filteredLayers.map(layers => layers.length > 1)
-        ))
-
-        elements.push(new Toggle(
-            new ExportDataButton(),
-            undefined,
-            State.state.featureSwitchEnableExport
-        ))
-
-        return new Combine(elements).SetClass("flex flex-col")
-    }
-
+    return new Combine(elements).SetClass("flex flex-col");
+  }
 }

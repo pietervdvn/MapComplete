@@ -20,6 +20,7 @@ import PendingChangesUploader from "./Logic/Actors/PendingChangesUploader";
 import {Relation} from "./Logic/Osm/ExtractRelations";
 import OsmApiFeatureSource from "./Logic/FeatureSource/OsmApiFeatureSource";
 import FeaturePipeline from "./Logic/FeatureSource/FeaturePipeline";
+import { TagsFilter } from "./Logic/Tags/TagsFilter";
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -62,9 +63,11 @@ export default class State {
 
     public filteredLayers: UIEventSource<{
         readonly isDisplayed: UIEventSource<boolean>;
+        readonly appliedFilters: UIEventSource<TagsFilter>;
         readonly layerDef: LayerConfig;
     }[]> = new UIEventSource<{
         readonly isDisplayed: UIEventSource<boolean>;
+        readonly appliedFilters: UIEventSource<TagsFilter>;
         readonly layerDef: LayerConfig;
     }[]>([]);
 
