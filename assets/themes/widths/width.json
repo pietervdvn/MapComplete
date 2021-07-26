@@ -144,7 +144,6 @@
           "render": "<span style='border: 1px solid black; border-radius: 0.5em; padding: 0.25em;'><b>{_width:needed}m</b> nodig in het totaal</span>"
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/widths/icon.svg"
       },

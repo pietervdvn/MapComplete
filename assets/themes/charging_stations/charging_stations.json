@@ -307,7 +307,6 @@
           ]
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "pin:#fff;./assets/themes/charging_stations/plug.svg",
         "mappings": [

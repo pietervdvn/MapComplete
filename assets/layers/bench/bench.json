@@ -517,7 +517,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/themes/benches/bench_poi.svg",
     "mappings": []

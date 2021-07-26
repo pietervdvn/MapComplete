@@ -56,6 +56,10 @@ class LayerOverviewUtils {
             if (path != undefined && path.indexOf(expected) < 0) {
                 errorCount.push("Layer is in an incorrect place. The path is " + path + ", but expected " + expected)
             }
+            if(layerJson["hideUnderlayingFeaturesMinPercentage"] !== undefined){
+                errorCount.push("Layer "+layer.id+" contains an old 'hideUnderlayingFeaturesMinPercentage'")
+            }            
+            
 
             for (const image of images) {
                 if (image.indexOf("{") >= 0) {

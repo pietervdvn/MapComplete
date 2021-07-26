@@ -305,7 +305,6 @@
         "questions",
         "reviews"
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/shops/shop.svg"
       },
