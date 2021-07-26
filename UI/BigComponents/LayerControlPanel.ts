@@ -7,7 +7,7 @@ import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
-import {ExportDataButton} from "./ExportDataButton";
+import {DownloadPanel} from "./DownloadPanel";
 
 export default class LayerControlPanel extends ScrollableFullScreen {
 
@@ -37,7 +37,7 @@ export default class LayerControlPanel extends ScrollableFullScreen {
         ))
 
         elements.push(new Toggle(
-            new ExportDataButton(),
+            new DownloadPanel(),
             undefined,
             State.state.featureSwitchEnableExport
         ))
