@@ -137,7 +137,19 @@
           "isOsmCache": true
         },
         "icon": {
-          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg"
+          "render": "circle:#FE6F32;./assets/themes/natuurpunt/birdhide.svg",
+          "mappings": [
+            {
+              "if": {
+                "or": [
+                  "building=yes",
+                  "shelter=yes",
+                  "amenity=shelter"
+                ]
+              },
+              "then": "circle:#FE6F32;./assets/themes/natuurpunt/birdshelter.svg"
+            }
+          ]
         }
       }
     },
