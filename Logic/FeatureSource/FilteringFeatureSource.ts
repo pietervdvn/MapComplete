@@ -74,7 +74,6 @@ export default class FilteringFeatureSource implements FeatureSource {
 
           if (FilteringFeatureSource.showLayer(layer, location)) {
             const tagsFilter = layer.appliedFilters.data;
-
             if (tagsFilter) {
               const properties = f.feature.properties;
               if (!tagsFilter.matchesProperties(properties)) {

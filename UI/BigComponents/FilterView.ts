@@ -1,18 +1,12 @@
 import { Utils } from "./../../Utils";
 import { FixedInputElement } from "./../Input/FixedInputElement";
 import { RadioButton } from "./../Input/RadioButton";
-import { FixedUiElement } from "./../Base/FixedUiElement";
-import { LayerConfigJson } from "./../../Customizations/JSON/LayerConfigJson";
-import { UIEventSource } from "../../Logic/UIEventSource";
 import { VariableUiElement } from "../Base/VariableUIElement";
-import State from "../../State";
 import Toggle from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import LayerConfig from "../../Customizations/JSON/LayerConfig";
-import BaseUIElement from "../BaseUIElement";
 import { Translation } from "../i18n/Translation";
-import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Svg from "../../Svg";
 import FilterConfig from "../../Customizations/JSON/FilterConfig";
 import CheckBoxes from "../Input/Checkboxes";
@@ -20,6 +14,7 @@ import { InputElement } from "../Input/InputElement";
 import { TagsFilter } from "../../Logic/Tags/TagsFilter";
 import InputElementMap from "../Input/InputElementMap";
 import { And } from "../../Logic/Tags/And";
+import { UIEventSource } from "../../Logic/UIEventSource";
 
 /**
  * Shows the filter
@@ -47,7 +42,8 @@ export default class FilterView extends VariableUiElement {
       return;
     }
 
-    const style = "display:flex;align-items:center;color:#007759";
+    const style =
+      "display:flex;align-items:center;color:#007759;padding:0.5rem 0;";
 
     const name: Translation = Translations.WT(
       filteredLayer.layerDef.name
@@ -61,23 +57,24 @@ export default class FilterView extends VariableUiElement {
       .Clone()
       .SetStyle("font-size:large;padding-left:1.25rem");
 
-    const layerChecked = new Combine([icon, styledNameChecked]).SetStyle(style);
+    const layerChecked = new Combine([icon, styledNameChecked])
+      .SetStyle(style)
+      .onClick(() => filteredLayer.isDisplayed.setData(false));
 
-    const layerNotChecked = new Combine([
-      iconUnselected,
-      styledNameUnChecked,
-    ]).SetStyle(style);
+    const layerNotChecked = new Combine([iconUnselected, styledNameUnChecked])
+      .SetStyle(style)
+      .onClick(() => filteredLayer.isDisplayed.setData(true));
 
     let listFilterElements: InputElement<TagsFilter>[] = layer.filters.map(
       FilterView.createFilter
     );
 
-    function update() {
+    const update = () => {
       let listTagsFilters = Utils.NoNull(
         listFilterElements.map((input) => input.GetValue().data)
       );
-      filteredLayer.appliedTags.setData(new And(listTagsFilters));
-    }
+      filteredLayer.appliedFilters.setData(new And(listTagsFilters));
+    };
 
     listFilterElements.forEach((inputElement) =>
       inputElement.GetValue().addCallback((_) => update())
@@ -87,15 +84,20 @@ export default class FilterView extends VariableUiElement {
       new Combine([layerChecked, ...listFilterElements]),
       layerNotChecked,
       filteredLayer.isDisplayed
-    )
-      .ToggleOnClick()
-      .SetStyle("margin:0.3em;");
+    ).SetStyle("margin:0.3em;");
   }
 
   static createFilter(filterConfig: FilterConfig): InputElement<TagsFilter> {
     if (filterConfig.options.length === 1) {
       let option = filterConfig.options[0];
-      let checkboxes = new CheckBoxes([option.question.Clone()]);
+      let checkboxes = new CheckBoxes(
+        [option.question.Clone()],
+        new UIEventSource<number[]>([]),
+        "background-color: #F1F1F1;padding:0.25rem 0.5rem;",
+        "border:none;padding-left:3rem;color:#007759;display:flex;margin:0;justify-content:center;align-items:center;flex-direction:row;flex-wrap:nowrap;",
+        "margin:0;padding:0;",
+        "margin:0;padding:0.25rem 0 0 0.25rem;"
+      );
 
       return new InputElementMap(
         checkboxes,
@@ -111,7 +113,11 @@ export default class FilterView extends VariableUiElement {
       options.map(
         (option) =>
           new FixedInputElement(option.question.Clone(), option.osmTags)
-      )
+      ),
+      true,
+      "background-color: #F1F1F1;padding:0.25rem 0.5rem;",
+      "border:none;padding-left:3rem;color:#007759;display:flex;margin:0;justify-content:center;align-items:center;flex-direction:row;flex-wrap:nowrap;",
+      "margin:0;padding:0;"
     );
   }
 }
