@@ -6,7 +6,7 @@ import {Utils} from "../Utils";
 import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
-
+import * as AR from "aspected-routing"
 export class ExtraFunction {
 
 
@@ -38,8 +38,8 @@ export class ExtraFunction {
         ]),
         "Some advanced functions are available on **feat** as well:"
     ]).SetClass("flex-col").AsMarkdown();
-       
-    
+
+
     private static readonly OverlapFunc = new ExtraFunction(
         "overlapWith",
         "Gives a list of features from the specified layer which this feature (partly) overlaps with. If the current feature is a point, all features that embed the point are given. The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point",
@@ -149,7 +149,24 @@ export class ExtraFunction {
         }
     )
 
-    private static readonly allFuncs: ExtraFunction[] = [ExtraFunction.DistanceToFunc, ExtraFunction.OverlapFunc, ExtraFunction.ClosestObjectFunc, ExtraFunction.Memberships];
+    private static readonly AspectedRouting = new ExtraFunction(
+        "score",
+        "Given the path of an aspected routing json file, will calculate the score" +
+        "\n\n" +
+        "For example: `_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')`",
+        [],
+        (params, _) => {
+            return () => params.relations ?? [];
+        }
+    )
+
+    private static readonly allFuncs: ExtraFunction[] = [
+        ExtraFunction.DistanceToFunc, 
+        ExtraFunction.OverlapFunc,
+        ExtraFunction.ClosestObjectFunc,
+        ExtraFunction.Memberships,
+        ExtraFunction.AspectedRouting
+    ];
     private readonly _name: string;
     private readonly _args: string[];
     private readonly _doc: string;
@@ -160,7 +177,7 @@ export class ExtraFunction {
         this._doc = doc;
         this._args = args;
         this._f = f;
-
+console.dir(AR)
     }
 
     public static FullPatchFeature(featuresPerLayer: Map<string, any[]>, relations: { role: string, relation: Relation }[], feature) {
