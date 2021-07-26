@@ -14,6 +14,14 @@ A string, but allows input of longer strings more comfortably (a text area)
 
 A date
 
+## direction
+
+A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
+
+## length
+
+A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma seperated) ], e.g. `["21", "map,photo"]
+
 ## wikidata
 
 A wikidata identifier, e.g. Q42
@@ -29,10 +37,6 @@ A positive number or zero
 ## pnat
 
 A strict positive number
-
-## direction
-
-A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
 
 ## float
 

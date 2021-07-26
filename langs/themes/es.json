@@ -3,7 +3,7 @@
         "title": "Mapa abierto de desfibriladores (DEA)",
         "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos"
     },
-    "artworks": {
+    "artwork": {
         "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
         "layers": {
             "0": {

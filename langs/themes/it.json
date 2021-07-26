@@ -3,7 +3,7 @@
         "title": "Mappa dei defibrillatori (DAE)",
         "description": "Su questa mappa puoi trovare e segnalare i defibrillatori nelle vicinanze"
     },
-    "artworks": {
+    "artwork": {
         "title": "Mappa libera delle opere d'arte",
         "description": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
         "layers": {
@@ -396,7 +396,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "roamingRenderings": {
             "0": {
                 "mappings": {

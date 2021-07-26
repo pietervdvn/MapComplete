@@ -87,7 +87,6 @@
       "render": "{reviews(name, play_forest)}"
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "hideFromOverview": false,
   "icon": {
     "render": "./assets/layers/play_forest/icon.svg"

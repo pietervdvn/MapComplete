@@ -3,7 +3,7 @@
         "title": "Carte des défibrillateurs (DAE)",
         "description": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs"
     },
-    "artworks": {
+    "artwork": {
         "title": "Carte ouverte des œuvres d'art",
         "description": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
         "layers": {

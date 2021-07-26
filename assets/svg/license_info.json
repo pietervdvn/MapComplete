@@ -3,6 +3,14 @@
     "authors": [
       "Pieter Vander Vennet"
     ],
+    "path": "length-crosshair.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "path": "direction_masked.svg",
     "license": "CC0",
     "sources": []

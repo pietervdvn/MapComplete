@@ -421,7 +421,6 @@
       ]
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/themes/surveillance_cameras/logo.svg",
     "mappings": [

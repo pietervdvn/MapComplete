@@ -126,7 +126,6 @@
       }
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/themes/benches/bench_public_transport.svg"
   },

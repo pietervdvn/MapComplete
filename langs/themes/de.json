@@ -3,7 +3,7 @@
         "title": "AED-Karte öffnen",
         "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren"
     },
-    "artworks": {
+    "artwork": {
         "title": "Freie Kunstwerk-Karte",
         "description": "Willkommen bei der Freien Kunstwerk-Karte, einer Karte von Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
         "layers": {

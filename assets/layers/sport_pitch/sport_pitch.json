@@ -383,7 +383,6 @@
       "render": "{reviews(name, sportpitch)}"
     }
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "circle:white;./assets/layers/sport_pitch/sport_pitch.svg",
     "mappings": [

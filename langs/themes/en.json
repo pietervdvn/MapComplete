@@ -3,7 +3,7 @@
         "title": "Open AED Map",
         "description": "On this map, one can find and mark nearby defibrillators"
     },
-    "artworks": {
+    "artwork": {
         "title": "Open Artwork Map",
         "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
         "layers": {
@@ -1174,7 +1174,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "title": "Cyclestreets",
         "shortDescription": "A map of cyclestreets",
         "description": "A cyclestreet is is a street where <b>motorized traffic is not allowed to overtake cyclists</b>. They are signposted by a special traffic sign. Cyclestreets can be found in the Netherlands and Belgium, but also in Germany and France. ",

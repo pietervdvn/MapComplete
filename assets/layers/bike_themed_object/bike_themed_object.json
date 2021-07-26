@@ -56,7 +56,6 @@
     "phone",
     "opening_hours"
   ],
-  "hideUnderlayingFeaturesMinPercentage": 0,
   "icon": {
     "render": "./assets/layers/bike_themed_object/other_services.svg"
   },
