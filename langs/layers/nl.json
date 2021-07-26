@@ -1185,9 +1185,6 @@
                 },
                 "1": {
                     "then": "{name}"
-                },
-                "2": {
-                    "then": "Fietsenstalling"
                 }
             }
         },

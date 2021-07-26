@@ -1,1 +1,30 @@
-{}
+{
+    "undefined": {
+        "level": {
+            "render": "Localizado no {level}o andar",
+            "mappings": {
+                "2": {
+                    "then": "Localizado no primeiro andar"
+                },
+                "1": {
+                    "then": "Localizado no térreo"
+                },
+                "0": {
+                    "then": "Localizado no subsolo"
+                }
+            }
+        },
+        "opening_hours": {
+            "question": "Qual o horário de funcionamento de {name}?"
+        },
+        "website": {
+            "question": "Qual o site de {name}?"
+        },
+        "email": {
+            "question": "Qual o endereço de e-mail de {name}?"
+        },
+        "phone": {
+            "question": "Qual o número de telefone de {name}?"
+        }
+    }
+}

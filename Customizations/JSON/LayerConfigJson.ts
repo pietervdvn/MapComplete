@@ -1,6 +1,7 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import {AndOrTagConfigJson} from "./TagConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
+import FilterConfigJson from "./FilterConfigJson";
 
 /**
  * Configuration for a single layer
@@ -217,6 +218,16 @@ export interface LayerConfigJson {
          * (The first sentence is until the first '.'-character in the description)
          */
         description?: string | any,
+
+        /**
+         * If set, the user will prompted to confirm the location before actually adding the data.
+         * THis will be with a 'drag crosshair'-method.
+         * 
+         * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
+         */
+        preciseInput?: true | {
+            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string
+        }
     }[],
 
     /**
@@ -232,6 +243,12 @@ export interface LayerConfigJson {
      *
      */
     tagRenderings?: (string | TagRenderingConfigJson) [],
+
+
+    /**
+     * All the extra questions for filtering
+     */
+    filter?: (FilterConfigJson) [],
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

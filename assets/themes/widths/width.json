@@ -64,7 +64,13 @@
       },
       "tagRenderings": [
         {
-          "render": "Deze straat is <b>{width:carriageway}m</b> breed"
+          "render": "Deze straat is <b>{width:carriageway}m</b> breed",
+          "question": "Hoe breed is deze straat?",
+          "freeform": {
+            "key": "width:carriageway",
+            "type": "length",
+            "helperArgs": [21, "map"]
+          }
         },
         {
           "render": "Deze straat heeft <span class='alert'>{_width:difference}m</span> te weinig:",

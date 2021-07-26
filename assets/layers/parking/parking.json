@@ -1,7 +1,7 @@
 {
   "id": "parking",
   "name": {
-    "nl": "parking"
+    "nl": "Parking"
   },
   "minzoom": 12,
   "source": {
@@ -25,13 +25,13 @@
       {
         "if": "amenity=parking",
         "then": {
-          "nl": "{name:nl}"
+          "nl": "Auto Parking"
         }
       },
       {
         "if": "amenity=motorcycle_parking",
         "then": {
-          "nl": "{name}"
+          "nl": "Motorfiets Parking"
         }
       },
       {

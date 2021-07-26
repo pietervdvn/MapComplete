@@ -73,7 +73,10 @@
       },
       "tags": [
         "amenity=public_bookcase"
-      ]
+      ],
+      "preciseInput": {
+        "preferredBackground": "photo"
+      }
     }
   ],
   "tagRenderings": [
@@ -139,7 +142,8 @@
       },
       "freeform": {
         "key": "capacity",
-        "type": "nat"
+        "type": "nat",
+        "inline": true
       }
     },
     {

@@ -103,7 +103,7 @@ export class RadioButton<T> extends InputElement<T> {
             const block = document.createElement("div")
             block.appendChild(input)
             block.appendChild(label)
-            block.classList.add("flex","w-full","border", "rounded-full", "border-gray-400","m-1")
+            block.classList.add("flex","w-full","border", "rounded-3xl", "border-gray-400","m-1")
             wrappers.push(block)
 
             form.appendChild(block)

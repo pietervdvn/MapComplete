@@ -2,11 +2,12 @@ import State from "../../State";
 import BackgroundSelector from "./BackgroundSelector";
 import LayerSelection from "./LayerSelection";
 import Combine from "../Base/Combine";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Translations from "../i18n/Translations";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
+import Toggle from "../Input/Toggle";
+import {ExportDataButton} from "./ExportDataButton";
 
 export default class LayerControlPanel extends ScrollableFullScreen {
 
@@ -14,27 +15,34 @@ export default class LayerControlPanel extends ScrollableFullScreen {
         super(LayerControlPanel.GenTitle, LayerControlPanel.GeneratePanel, "layers", isShown);
     }
 
-    private static GenTitle():BaseUIElement {
+    private static GenTitle(): BaseUIElement {
         return Translations.t.general.layerSelection.title.Clone().SetClass("text-2xl break-words font-bold p-2")
     }
 
-    private static GeneratePanel() : BaseUIElement {
-        let layerControlPanel: BaseUIElement = new FixedUiElement("");
+    private static GeneratePanel(): BaseUIElement {
+        const elements: BaseUIElement[] = []
+
         if (State.state.layoutToUse.data.enableBackgroundLayerSelection) {
-            layerControlPanel = new BackgroundSelector();
-            layerControlPanel.SetStyle("margin:1em");
-            layerControlPanel.onClick(() => {
+            const backgroundSelector = new BackgroundSelector();
+            backgroundSelector.SetStyle("margin:1em");
+            backgroundSelector.onClick(() => {
             });
+            elements.push(backgroundSelector)
         }
 
-        if (State.state.filteredLayers.data.length > 1) {
-            const layerSelection = new LayerSelection(State.state.filteredLayers);
-            layerSelection.onClick(() => {
-            });
-            layerControlPanel = new Combine([layerSelection, "<br/>", layerControlPanel]);
-        }
+        elements.push(new Toggle(
+            new LayerSelection(State.state.filteredLayers),
+            undefined,
+            State.state.filteredLayers.map(layers => layers.length > 1)
+        ))
 
-        return layerControlPanel;
+        elements.push(new Toggle(
+            new ExportDataButton(),
+            undefined,
+            State.state.featureSwitchEnableExport
+        ))
+
+        return new Combine(elements).SetClass("flex flex-col")
     }
 
 }

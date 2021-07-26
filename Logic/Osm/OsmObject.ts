@@ -5,7 +5,8 @@ import {UIEventSource} from "../UIEventSource";
 
 export abstract class OsmObject {
 
-    protected static backendURL = "https://www.openstreetmap.org/"
+    private static defaultBackend = "https://www.openstreetmap.org/"
+    protected static backendURL = OsmObject.defaultBackend;
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
     private static objectCache = new Map<string, UIEventSource<OsmObject>>();
     private static referencingWaysCache = new Map<string, UIEventSource<OsmWay[]>>();
@@ -37,15 +38,15 @@ export abstract class OsmObject {
     }
 
     static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
-        let src : UIEventSource<OsmObject>;
+        let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
             src = OsmObject.objectCache.get(id)
-            if(forceRefresh){
+            if (forceRefresh) {
                 src.setData(undefined)
-            }else{
+            } else {
                 return src;
             }
-        }else{
+        } else {
             src = new UIEventSource<OsmObject>(undefined)
         }
         const splitted = id.split("/");
@@ -157,7 +158,7 @@ export abstract class OsmObject {
         const minlat = bounds[1][0]
         const maxlat = bounds[0][0];
         const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${minlon},${minlat},${maxlon},${maxlat}`
-        Utils.downloadJson(url).then( data => {
+        Utils.downloadJson(url).then(data => {
             const elements: any[] = data.elements;
             const objects = OsmObject.ParseObjects(elements)
             callback(objects);
@@ -291,12 +292,18 @@ export abstract class OsmObject {
 
                 self.LoadData(element)
                 self.SaveExtraData(element, nodes);
+
                 const meta = {
                     "_last_edit:contributor": element.user,
                     "_last_edit:contributor:uid": element.uid,
                     "_last_edit:changeset": element.changeset,
                     "_last_edit:timestamp": new Date(element.timestamp),
                     "_version_number": element.version
+                }
+
+                if (OsmObject.backendURL !== OsmObject.defaultBackend) {
+                    self.tags["_backend"] = OsmObject.backendURL
+                    meta["_backend"] = OsmObject.backendURL;
                 }
 
                 continuation(self, meta);

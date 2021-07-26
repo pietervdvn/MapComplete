@@ -4,7 +4,6 @@ import LayerConfig from "../Customizations/JSON/LayerConfig";
 import * as licenses from "../assets/generated/license_info.json"
 import LayoutConfig from "../Customizations/JSON/LayoutConfig";
 import {LayerConfigJson} from "../Customizations/JSON/LayerConfigJson";
-import {Translation} from "../UI/i18n/Translation";
 import {LayoutConfigJson} from "../Customizations/JSON/LayoutConfigJson";
 import AllKnownLayers from "../Customizations/AllKnownLayers";
 
@@ -77,63 +76,6 @@ class LayerOverviewUtils {
         return errorCount
     }
 
-    validateTranslationCompletenessOfObject(object: any, expectedLanguages: string[], context: string) {
-        const missingTranlations = []
-        const translations: { tr: Translation, context: string }[] = [];
-        const queue: { object: any, context: string }[] = [{object: object, context: context}]
-
-        while (queue.length > 0) {
-            const item = queue.pop();
-            const o = item.object
-            for (const key in o) {
-                const v = o[key];
-                if (v === undefined) {
-                    continue;
-                }
-                if (v instanceof Translation || v?.translations !== undefined) {
-                    translations.push({tr: v, context: item.context});
-                } else if (
-                    ["string", "function", "boolean", "number"].indexOf(typeof (v)) < 0) {
-                    queue.push({object: v, context: item.context + "." + key})
-                }
-            }
-        }
-
-        const missing = {}
-        const present = {}
-        for (const ln of expectedLanguages) {
-            missing[ln] = 0;
-            present[ln] = 0;
-            for (const translation of translations) {
-                if (translation.tr.translations["*"] !== undefined) {
-                    continue;
-                }
-                const txt = translation.tr.translations[ln];
-                const isMissing = txt === undefined || txt === "" || txt.toLowerCase().indexOf("todo") >= 0;
-                if (isMissing) {
-                    missingTranlations.push(`${translation.context},${ln},${translation.tr.txt}`)
-                    missing[ln]++
-                } else {
-                    present[ln]++;
-                }
-            }
-        }
-
-        let message = `Translation completeness for ${context}`
-        let isComplete = true;
-        for (const ln of expectedLanguages) {
-            const amiss = missing[ln];
-            const ok = present[ln];
-            const total = amiss + ok;
-            message += ` ${ln}: ${ok}/${total}`
-            if (ok !== total) {
-                isComplete = false;
-            }
-        }
-        return missingTranlations
-
-    }
-
     main(args: string[]) {
 
         const lt = this.loadThemesAndLayers();
@@ -160,7 +102,6 @@ class LayerOverviewUtils {
         }
 
         let themeErrorCount = []
-        let missingTranslations = []
         for (const themeFile of themeFiles) {
             if (typeof themeFile.language === "string") {
                 themeErrorCount.push("The theme " + themeFile.id + " has a string as language. Please use a list of strings")
@@ -169,10 +110,6 @@ class LayerOverviewUtils {
                 if (typeof layer === "string") {
                     if (!knownLayerIds.has(layer)) {
                         themeErrorCount.push(`Unknown layer id: ${layer} in theme ${themeFile.id}`)
-                    } else {
-                        const layerConfig = knownLayerIds.get(layer);
-                        missingTranslations.push(...this.validateTranslationCompletenessOfObject(layerConfig, themeFile.language, "Layer " + layer))
-
                     }
                 } else if (layer.builtin !== undefined) {
                     let names = layer.builtin;
@@ -197,7 +134,6 @@ class LayerOverviewUtils {
                 .filter(l => typeof l != "string") // We remove all the builtin layer references as they don't work with ts-node for some weird reason
                 .filter(l => l.builtin === undefined)
 
-            missingTranslations.push(...this.validateTranslationCompletenessOfObject(themeFile, themeFile.language, "Theme " + themeFile.id))
 
             try {
                 const theme = new LayoutConfig(themeFile, true, "test")
@@ -207,11 +143,6 @@ class LayerOverviewUtils {
             } catch (e) {
                 themeErrorCount.push("Could not parse theme " + themeFile["id"] + "due to", e)
             }
-        }
-
-        if (missingTranslations.length > 0) {
-            console.log(missingTranslations.length, "missing translations")
-            writeFileSync("missing_translations.txt", missingTranslations.join("\n"))
         }
 
         if (layerErrorCount.length + themeErrorCount.length == 0) {

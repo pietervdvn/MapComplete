@@ -1,4 +1,5 @@
 import * as colors from "./assets/colors.json"
+import {TileRange} from "./Models/TileRange";
 
 export class Utils {
 
@@ -134,7 +135,7 @@ export class Utils {
         }
         return newArr;
     }
-
+    
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -358,9 +359,12 @@ export class Utils {
      * @param contents
      * @param fileName
      */
-    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string | Blob, fileName: string = "download.txt") {
         const element = document.createElement("a");
-        const file = new Blob([contents], {type: 'text/plain'});
+        let file;
+        if(typeof(contents) === "string"){
+            file = new Blob([contents], {type: 'text/plain'});
+        }else {file = contents;}
         element.href = URL.createObjectURL(file);
         element.download = fileName;
         document.body.appendChild(element); // Required for this to work in FireFox
@@ -447,14 +451,12 @@ export class Utils {
             b: parseInt(hex.substr(5, 2), 16),
         }
     }
+
+    public static setDefaults(options, defaults){
+        for (let key in defaults){
+            if (!(key in options)) options[key] = defaults[key];
+        }
+        return options;
+    }
 }
 
-export interface TileRange {
-    xstart: number,
-    ystart: number,
-    xend: number,
-    yend: number,
-    total: number,
-    zoomlevel: number
-
-}

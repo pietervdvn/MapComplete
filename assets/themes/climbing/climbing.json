@@ -736,7 +736,7 @@
         "_contained_climbing_route_ids=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p.id)",
         "_difficulty_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:grade:french'])",
         "_length_hist=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').map(p => p['climbing:length'])",
-        "_contained_climbing_routes_count=JSON.parse(_contained_climbing_routes).length"
+        "_contained_climbing_routes_count=JSON.parse(feat.properties._contained_climbing_routes_properties ?? '[]').length"
       ]
     },
     {
@@ -1412,8 +1412,8 @@
       "_embedding_feature_properties=feat.overlapWith('climbing').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
       "_embedding_features_with_access=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.access !== undefined)[0]",
       "_embedding_feature_with_rock=JSON.parse(feat.properties._embedding_feature_properties ?? '[]').filter(p => p.rock !== undefined)[0] ?? '{}'",
-      "_embedding_features_with_rock:rock=JSON.parse(_embedding_feature_with_rock)?.rock",
-      "_embedding_features_with_rock:id=JSON.parse(_embedding_feature_with_rock)?.id",
+      "_embedding_features_with_rock:rock=JSON.parse(feat.properties._embedding_feature_with_rock ?? '{}')?.rock",
+      "_embedding_features_with_rock:id=JSON.parse(feat.properties._embedding_feature_with_rock ?? '{}')?.id",
       "_embedding_feature:access=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').access",
       "_embedding_feature:access:description=JSON.parse(feat.properties._embedding_features_with_access ?? '{}')['access:description']",
       "_embedding_feature:id=JSON.parse(feat.properties._embedding_features_with_access ?? '{}').id"

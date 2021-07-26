@@ -3,6 +3,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import BaseUIElement from "../BaseUIElement";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export class Basemap {
 
@@ -35,9 +36,8 @@ export class Basemap {
         );
 
         this.map.attributionControl.setPrefix(
-            "<span id='leaflet-attribution'></span> | <a href='https://osm.org'>OpenStreetMap</a>");
+            "<span id='leaflet-attribution'>A</span>");
 
-        extraAttribution.AttachTo('leaflet-attribution')
         const self = this;
 
         currentLayer.addCallbackAndRun(layer => {
@@ -77,6 +77,7 @@ export class Basemap {
             lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng});
         });
 
+        extraAttribution.AttachTo('leaflet-attribution')
 
     }
 
