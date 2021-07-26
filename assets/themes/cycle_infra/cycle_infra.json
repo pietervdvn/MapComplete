@@ -976,7 +976,6 @@
           ]
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/cycle_infra/bicycleway.svg"
       },
