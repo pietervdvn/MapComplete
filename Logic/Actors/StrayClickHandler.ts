@@ -47,7 +47,12 @@ export default class StrayClickHandler {
                     popupAnchor: [0, -45]
                 })
             });
-            const popup = L.popup().setContent("<div id='strayclick'></div>");
+            const popup = L.popup({
+                autoPan: true,
+                autoPanPaddingTopLeft: [15,15],
+                closeOnEscapeKey: true,
+                autoClose: true
+            }).setContent("<div id='strayclick' style='height: 65vh'></div>");
             self._lastMarker.addTo(leafletMap.data);
             self._lastMarker.bindPopup(popup);
 

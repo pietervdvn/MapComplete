@@ -1148,6 +1148,13 @@
                         "human": " gigawatts"
                     }
                 }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
             }
         }
     },

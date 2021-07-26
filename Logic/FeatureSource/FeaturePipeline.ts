@@ -16,7 +16,7 @@ import RegisteringFeatureSource from "./RegisteringFeatureSource";
 
 export default class FeaturePipeline implements FeatureSource {
 
-    public features: UIEventSource<{ feature: any; freshness: Date }[]> ;
+    public features: UIEventSource<{ feature: any; freshness: Date }[]>;
 
     public readonly name = "FeaturePipeline"
 
@@ -29,7 +29,7 @@ export default class FeaturePipeline implements FeatureSource {
                 selectedElement: UIEventSource<any>) {
 
         const allLoadedFeatures = new UIEventSource<{ feature: any; freshness: Date }[]>([])
-        
+
         // first we metatag, then we save to get the metatags into storage too
         // Note that we need to register before we do metatagging (as it expects the event sources)
 
@@ -46,8 +46,11 @@ export default class FeaturePipeline implements FeatureSource {
         const geojsonSources: FeatureSource [] = GeoJsonSource
             .ConstructMultiSource(flayers.data, locationControl)
             .map(geojsonSource => {
-                let source = new RegisteringFeatureSource(new FeatureDuplicatorPerLayer(flayers, geojsonSource));
-                if(!geojsonSource.isOsmCache){
+                let source = new RegisteringFeatureSource(
+                    new FeatureDuplicatorPerLayer(flayers,
+                            geojsonSource
+                    ));
+                if (!geojsonSource.isOsmCache) {
                     source = new MetaTaggingFeatureSource(allLoadedFeatures, source, updater.features);
                 }
                 return source

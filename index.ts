@@ -19,10 +19,13 @@ import DirectionInput from "./UI/Input/DirectionInput";
 import SpecialVisualizations from "./UI/SpecialVisualizations";
 import ShowDataLayer from "./UI/ShowDataLayer";
 import * as L from "leaflet";
+import ValidatedTextField from "./UI/Input/ValidatedTextField";
+import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts
 SimpleMetaTagger.coder = new CountryCoder("https://pietervdvn.github.io/latlon2country/");
 DirectionInput.constructMinimap = options =>  new Minimap(options)
+ValidatedTextField.bestLayerAt = (location, layerPref) => AvailableBaseLayers.SelectBestLayerAccordingTo(location, layerPref) 
 SpecialVisualizations.constructMiniMap = options => new Minimap(options)
 SpecialVisualizations.constructShowDataLayer = (features: UIEventSource<{ feature: any, freshness: Date }[]>,
                                                  leafletMap: UIEventSource<L.Map>,
