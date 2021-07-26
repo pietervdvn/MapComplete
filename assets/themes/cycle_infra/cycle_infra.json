@@ -25,7 +25,7 @@
   "startZoom": 11,
   "widenFactor": 0.05,
   "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
-  "enableDownload": true,
+  "enableExportButton": true,
   "layers": [
     {
       "id": "cycleways",
