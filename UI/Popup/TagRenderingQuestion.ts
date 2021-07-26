@@ -198,9 +198,7 @@ export default class TagRenderingQuestion extends Combine {
                     oppositeTags.push(notSelected);
                 }
                 tags.push(TagUtils.FlattenMultiAnswer(oppositeTags));
-                const actualTags = TagUtils.FlattenMultiAnswer(tags);
-                console.log("Converted ", indices.join(","), "into", actualTags.asHumanString(false, false, {}), "with elems", elements)
-                return actualTags;
+                return TagUtils.FlattenMultiAnswer(tags);
             },
             (tags: TagsFilter) => {
                 // {key --> values[]}
