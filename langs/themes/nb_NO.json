@@ -2,7 +2,7 @@
     "aed": {
         "title": "Åpne AED-kart"
     },
-    "artworks": {
+    "artwork": {
         "layers": {
             "0": {
                 "name": "Kunstverk",
@@ -213,7 +213,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "shortDescription": "Et kart over sykkelveier",
         "roamingRenderings": {
             "0": {

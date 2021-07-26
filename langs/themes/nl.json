@@ -7,7 +7,7 @@
         "title": "Open AED-kaart - Brugge edition",
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren"
     },
-    "artworks": {
+    "artwork": {
         "title": "Kunstwerkenkaart",
         "description": "Welkom op de Open Kunstwerken Kaart",
         "layers": {
@@ -580,7 +580,7 @@
             }
         }
     },
-    "fietsstraten": {
+    "cyclestreets": {
         "title": "Fietsstraten",
         "shortDescription": "Een kaart met alle gekende fietsstraten",
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voortuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau.",
@@ -592,7 +592,7 @@
                         "then": "Deze straat is een fietsstraat (en dus zone 30)"
                     },
                     "1": {
-                        "then": "Deze straat is een fietsstraat"
+                        "then": "Deze straat i een fietsstraat"
                     },
                     "2": {
                         "then": "Deze straat wordt binnenkort een fietsstraat"
@@ -820,7 +820,7 @@
             }
         }
     },
-    "boomgaarden": {
+    "fruit_trees": {
         "title": "Open Boomgaardenkaart",
         "shortDescription": "Boomgaarden en fruitbomen",
         "description": "Op deze kaart vindt je boomgaarden en fruitbomen",
