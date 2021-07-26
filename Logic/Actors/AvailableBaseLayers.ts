@@ -1,12 +1,11 @@
 import * as editorlayerindex from "../../assets/editor-layer-index.json"
 import BaseLayer from "../../Models/BaseLayer";
 import * as L from "leaflet";
-import {TileLayer} from "leaflet";
 import * as X from "leaflet-providers";
 import {UIEventSource} from "../UIEventSource";
 import {GeoOperations} from "../GeoOperations";
+import {TileLayer} from "leaflet";
 import {Utils} from "../../Utils";
-import Loc from "../../Models/Loc";
 
 /**
  * Calculates which layers are available at the current location
@@ -25,87 +24,45 @@ export default class AvailableBaseLayers {
                 false, false),
             feature: null,
             max_zoom: 19,
-            min_zoom: 0,
-            isBest: false, // This is a lie! Of course OSM is the best map! (But not in this context)
-            category: "osmbasedmap"
+            min_zoom: 0
         }
 
+
     public static layerOverview = AvailableBaseLayers.LoadRasterIndex().concat(AvailableBaseLayers.LoadProviderIndex());
+    public availableEditorLayers: UIEventSource<BaseLayer[]>;
 
-    public static AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        const source = location.map(
-            (currentLocation) => {
+    constructor(location: UIEventSource<{ lat: number, lon: number, zoom: number }>) {
+        const self = this;
+        this.availableEditorLayers =
+            location.map(
+                (currentLocation) => {
 
-                if (currentLocation === undefined) {
-                    return AvailableBaseLayers.layerOverview;
-                }
+                    if (currentLocation === undefined) {
+                        return AvailableBaseLayers.layerOverview;
+                    }
 
-                const currentLayers = source?.data; // A bit unorthodox - I know
-                const newLayers = AvailableBaseLayers.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
+                    const currentLayers = self.availableEditorLayers?.data;
+                    const newLayers = AvailableBaseLayers.AvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
 
-                if (currentLayers === undefined) {
-                    return newLayers;
-                }
-                if (newLayers.length !== currentLayers.length) {
-                    return newLayers;
-                }
-                for (let i = 0; i < newLayers.length; i++) {
-                    if (newLayers[i].name !== currentLayers[i].name) {
+                    if (currentLayers === undefined) {
                         return newLayers;
                     }
-                }
+                    if (newLayers.length !== currentLayers.length) {
+                        return newLayers;
+                    }
+                    for (let i = 0; i < newLayers.length; i++) {
+                        if (newLayers[i].name !== currentLayers[i].name) {
+                            return newLayers;
+                        }
+                    }
 
-                return currentLayers;
-            });
-        return source;
+                    return currentLayers;
+                });
+
+
     }
 
-    public static SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
-        return AvailableBaseLayers.AvailableLayersAt(location).map(available => {
-            // First float all 'best layers' to the top
-            available.sort((a, b) => {
-                    if (a.isBest && b.isBest) {
-                        return 0;
-                    }
-                    if (!a.isBest) {
-                        return 1
-                    }
-
-                    return -1;
-                }
-            )
-
-            if (preferedCategory.data === undefined) {
-                return available[0]
-            }
-
-            let prefered: string []
-            if (typeof preferedCategory.data === "string") {
-                prefered = [preferedCategory.data]
-            } else {
-                prefered = preferedCategory.data;
-            }
-
-            prefered.reverse();
-            for (const category of prefered) {
-                //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
-                available.sort((a, b) => {
-                        if (a.category === category && b.category === category) {
-                            return 0;
-                        }
-                        if (a.category !== category) {
-                            return 1
-                        }
-
-                        return -1;
-                    }
-                )
-            }
-            return available[0]
-        })
-    }
-
-    private static CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
+    private static AvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [AvailableBaseLayers.osmCarto]
         const globalLayers = [];
         for (const layerOverviewItem of AvailableBaseLayers.layerOverview) {
@@ -183,9 +140,7 @@ export default class AvailableBaseLayers {
                 min_zoom: props.min_zoom ?? 1,
                 name: props.name,
                 layer: leafletLayer,
-                feature: layer,
-                isBest: props.best ?? false,
-                category: props.category
+                feature: layer
             });
         }
         return layers;
@@ -197,16 +152,15 @@ export default class AvailableBaseLayers {
         function l(id: string, name: string): BaseLayer {
             try {
                 const layer: any = () => L.tileLayer.provider(id, undefined);
-                return {
+                const baseLayer: BaseLayer = {
                     feature: null,
                     id: id,
                     name: name,
                     layer: layer,
                     min_zoom: layer.minzoom,
-                    max_zoom: layer.maxzoom,
-                    category: "osmbasedmap",
-                    isBest: false
+                    max_zoom: layer.maxzoom
                 }
+                return baseLayer
             } catch (e) {
                 console.error("Could not find provided layer", name, e);
                 return null;

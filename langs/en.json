@@ -149,10 +149,6 @@
       "zoomInToSeeThisLayer": "Zoom in to see this layer",
       "title": "Select layers"
     },
-    "download": {
-      "downloadGeojson": "Download visible data as geojson",
-      "licenseInfo": "<h3>Copyright notice</h3>The provided is available under ODbL. Reusing this data is free for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b></li><li>Any change to this data must be republished under the same license</li></ul>. Please see the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details"
-    },
     "weekdays": {
       "abbreviations": {
         "monday": "Mon",

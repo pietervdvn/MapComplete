@@ -18,9 +18,9 @@
  Development
  -----------
  
- **Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make the switch ;) ). If you are using Visual Studio Code you can use a [WSL Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) window, or use the Devcontainer (see more details later).
+ **Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make the switch ;) ). If you are using Visual Studio, open everything in a 'new WSL Window'.
  
- To develop and build MapComplete, you
+ To develop and build MapComplete, yo
  
 0. Make sure you have a recent version of nodejs - at least 12.0, preferably 15
 0. Make a fork and clone the repository.
@@ -28,30 +28,6 @@
 3. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the dependencies too
 4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
 5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename` or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
-
- Development using Windows
- ------------------------
-
- For Windows you can use the devcontainer, or the WSL subsystem.
-
- To use the devcontainer in Visual Studio Code:
-
-0. Make sure you have installed the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension and it's dependencies.
-1. Make a fork and clone the repository.
-2. After cloning, Visual Studio Code will ask you if you want to use the devcontainer.
-3. Then you can either clone it again in a volume (for better performance), or open the current folder in a container.
-4. By now, you should be able to run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename` or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
-
- To use the WSL in Visual Studio Code:
-
-0. Make sure you have installed the [Remote - WSL]() extension and it's dependencies.
-1. Open a remote WSL window using the button in the bottom left.
-2. Make a fork and clone the repository.
-3. Install `npm` using `sudo apt install npm`.
-4. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the dependencies too
-5. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename` or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
 
  Automatic deployment

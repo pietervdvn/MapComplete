@@ -62,8 +62,7 @@
             "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)"
           },
           "freeform": {
-            "key": "generator:output:electricity",
-            "type": "pfloat"
+            "key": "generator:output:electricity"
           }
         },
         {
@@ -86,7 +85,7 @@
           },
           "freeform": {
             "key": "height",
-            "type": "pfloat"
+            "type": "float"
           }
         },
         {
@@ -180,24 +179,6 @@
         }
       ],
       "eraseInvalidValues": true
-    },
-    {
-      "appliesToKey": [
-        "height",
-        "rotor:diameter"
-      ],
-      "applicableUnits": [
-        {
-          "canonicalDenomination": "m",
-          "alternativeDenomination": [
-            "meter"
-          ],
-          "human": {
-            "en": " meter",
-            "nl": " meter"
-          }
-        }
-      ]
     }
   ],
   "defaultBackgroundId": "CartoDB.Voyager"

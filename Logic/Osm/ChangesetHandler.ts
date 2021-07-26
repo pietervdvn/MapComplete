@@ -27,7 +27,7 @@ export class ChangesetHandler {
         }
     }
 
-    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage): void {
+    private static parseUploadChangesetResponse(response: XMLDocument, allElements: ElementStorage) {
         const nodes = response.getElementsByTagName("node");
         // @ts-ignore
         for (const node of nodes) {
@@ -69,9 +69,7 @@ export class ChangesetHandler {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void,
-        onFail: () => void) {
+        generateChangeXML: (csid: string) => string) {
 
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
@@ -82,7 +80,6 @@ export class ChangesetHandler {
         if (this._dryRun) {
             const changesetXML = generateChangeXML("123456");
             console.log(changesetXML);
-            whenDone("123456")
             return;
         }
 
@@ -96,14 +93,12 @@ export class ChangesetHandler {
                 console.log(changeset);
                 self.AddChange(csId, changeset,
                     allElements,
-                    whenDone,
+                    () => {
+                    },
                     (e) => {
                         console.error("UPLOADING FAILED!", e)
-                        onFail()
                     }
                 )
-            }, {
-                onFail: onFail
             })
         } else {
             // There still exists an open changeset (or at least we hope so)
@@ -112,13 +107,15 @@ export class ChangesetHandler {
                 csId,
                 generateChangeXML(csId),
                 allElements,
-                whenDone,
+                () => {
+                },
                 (e) => {
                     console.warn("Could not upload, changeset is probably closed: ", e);
                     // Mark the CS as closed...
                     this.currentChangeset.setData("");
                     // ... and try again. As the cs is closed, no recursive loop can exist  
-                    self.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
+                    self.UploadChangeset(layout, allElements, generateChangeXML);
+
                 }
             )
 
@@ -164,22 +161,18 @@ export class ChangesetHandler {
         const self = this;
         this.OpenChangeset(layout, (csId: string) => {
 
-                // The cs is open - let us actually upload!
-                const changes = generateChangeXML(csId)
+            // The cs is open - let us actually upload!
+            const changes = generateChangeXML(csId)
 
-                self.AddChange(csId, changes, allElements, (csId) => {
-                    console.log("Successfully deleted ", object.id)
-                    self.CloseChangeset(csId, continuation)
-                }, (csId) => {
-                    alert("Deletion failed... Should not happend")
-                    // FAILED
-                    self.CloseChangeset(csId, continuation)
-                })
-            }, {
-                isDeletionCS: true,
-                deletionReason: reason
-            }
-        )
+            self.AddChange(csId, changes, allElements, (csId) => {
+                console.log("Successfully deleted ", object.id)
+                self.CloseChangeset(csId, continuation)
+            }, (csId) => {
+                alert("Deletion failed... Should not happend")
+                // FAILED
+                self.CloseChangeset(csId, continuation)
+            })
+        }, true, reason)
     }
 
     private CloseChangeset(changesetId: string = undefined, continuation: (() => void) = () => {
@@ -211,20 +204,15 @@ export class ChangesetHandler {
     private OpenChangeset(
         layout: LayoutConfig,
         continuation: (changesetId: string) => void,
-        options?: {
-            isDeletionCS?: boolean,
-            deletionReason?: string,
-            onFail?: () => void
-        }
-    ) {
-        options = options ?? {}
-        options.isDeletionCS = options.isDeletionCS ?? false
+        isDeletionCS: boolean = false,
+        deletionReason: string = undefined) {
+
         const commentExtra = layout.changesetmessage !== undefined ? " - " + layout.changesetmessage : "";
         let comment = `Adding data with #MapComplete for theme #${layout.id}${commentExtra}`
-        if (options.isDeletionCS) {
+        if (isDeletionCS) {
             comment = `Deleting a point with #MapComplete for theme #${layout.id}${commentExtra}`
-            if (options.deletionReason) {
-                comment += ": " + options.deletionReason;
+            if (deletionReason) {
+                comment += ": " + deletionReason;
             }
         }
 
@@ -233,7 +221,7 @@ export class ChangesetHandler {
         const metadata = [
             ["created_by", `MapComplete ${Constants.vNumber}`],
             ["comment", comment],
-            ["deletion", options.isDeletionCS ? "yes" : undefined],
+            ["deletion", isDeletionCS ? "yes" : undefined],
             ["theme", layout.id],
             ["language", Locale.language.data],
             ["host", window.location.host],
@@ -256,9 +244,7 @@ export class ChangesetHandler {
         }, function (err, response) {
             if (response === undefined) {
                 console.log("err", err);
-                if(options.onFail){
-                    options.onFail()
-                }
+                alert("Could not upload change (opening failed). Please file a bug report")
                 return;
             } else {
                 continuation(response);
@@ -279,7 +265,7 @@ export class ChangesetHandler {
     private AddChange(changesetId: string,
                       changesetXML: string,
                       allElements: ElementStorage,
-                      continuation: ((changesetId: string) => void),
+                      continuation: ((changesetId: string, idMapping: any) => void),
                       onFail: ((changesetId: string, reason: string) => void) = undefined) {
         this.auth.xhr({
             method: 'POST',
@@ -294,9 +280,9 @@ export class ChangesetHandler {
                 }
                 return;
             }
-            ChangesetHandler.parseUploadChangesetResponse(response, allElements);
+            const mapping = ChangesetHandler.parseUploadChangesetResponse(response, allElements);
             console.log("Uploaded changeset ", changesetId);
-            continuation(changesetId);
+            continuation(changesetId, mapping);
         });
     }
 

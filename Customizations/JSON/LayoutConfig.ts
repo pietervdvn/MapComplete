@@ -42,7 +42,6 @@ export default class LayoutConfig {
     public readonly enableGeolocation: boolean;
     public readonly enableBackgroundLayerSelection: boolean;
     public readonly enableShowAllQuestions: boolean;
-    public readonly enableExportButton: boolean;
     public readonly customCss?: string;
     /*
     How long is the cache valid, in seconds?
@@ -153,7 +152,6 @@ export default class LayoutConfig {
         this.enableAddNewPoints = json.enableAddNewPoints ?? true;
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true;
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false;
-        this.enableExportButton = json.enableExportButton ?? false;
         this.customCss = json.customCss;
         this.cacheTimeout = json.cacheTimout ?? (60 * 24 * 60 * 60)
 

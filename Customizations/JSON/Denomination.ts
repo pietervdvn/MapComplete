@@ -3,7 +3,6 @@ import UnitConfigJson from "./UnitConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import BaseUIElement from "../../UI/BaseUIElement";
 import Combine from "../../UI/Base/Combine";
-import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 export class Unit {
     public readonly appliesToKeys: Set<string>;
@@ -82,10 +81,7 @@ export class Unit {
             return undefined;
         }
         const [stripped, denom] = this.findDenomination(value)
-        const human = denom?.human
-        if(human === undefined){
-            return new FixedUiElement(stripped ?? value);
-        }
+        const human = denom.human
 
         const elems = denom.prefix ? [human, stripped] : [stripped, human];
         return new Combine(elems)
@@ -156,7 +152,7 @@ export class Denomination {
         if (stripped === null) {
             return null;
         }
-        return (stripped + " " + this.canonical.trim()).trim();
+        return stripped + " " + this.canonical.trim()
     }
 
     /**

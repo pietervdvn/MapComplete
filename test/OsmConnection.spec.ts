@@ -15,7 +15,7 @@ export default class OsmConnectionSpec extends T {
         super("OsmConnectionSpec-test", [
             ["login on dev",
                 () => {
-                   const osmConn = new OsmConnection(false,false,
+                   const osmConn = new OsmConnection(false,
                         new UIEventSource<string>(undefined),
                         "Unit test",
                         true,

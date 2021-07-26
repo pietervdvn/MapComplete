@@ -6,14 +6,11 @@ export class GeoOperations {
         return turf.area(feature);
     }
 
-    /**
-     * Converts a GeoJSon feature to a point feature
-     * @param feature
-     */
     static centerpoint(feature: any) {
         const newFeature = turf.center(feature);
         newFeature.properties = feature.properties;
         newFeature.id = feature.id;
+
         return newFeature;
     }
 
@@ -275,14 +272,6 @@ export class GeoOperations {
             return undefined
         }
         return undefined;
-    }
-    /**
-     * Generates the closest point on a way from a given point
-     * @param way The road on which you want to find a point
-     * @param point Point defined as [lon, lat]
-     */
-    public static nearestPoint(way, point: [number, number]){
-        return turf.nearestPointOnLine(way, point, {units: "kilometers"});
     }
 }
 

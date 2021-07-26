@@ -66,7 +66,6 @@ export default class DirectionInput extends InputElement<string> {
         })
 
         this.RegisterTriggers(element)
-        element.style.overflow = "hidden"
 
         return element;
     }

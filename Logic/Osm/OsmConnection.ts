@@ -30,7 +30,7 @@ export default class UserDetails {
 
 export class OsmConnection {
 
-    public static readonly oauth_configs = {
+    public static readonly _oauth_configs = {
         "osm": {
             oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
             oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
@@ -47,7 +47,6 @@ export class OsmConnection {
     public auth;
     public userDetails: UIEventSource<UserDetails>;
     public isLoggedIn: UIEventSource<boolean>
-    private fakeUser: boolean;
     _dryRun: boolean;
     public preferencesHandler: OsmPreferences;
     public changesetHandler: ChangesetHandler;
@@ -60,31 +59,20 @@ export class OsmConnection {
         url: string
     };
 
-    constructor(dryRun: boolean, 
-                fakeUser: boolean,
-                oauth_token: UIEventSource<string>,
+    constructor(dryRun: boolean, oauth_token: UIEventSource<string>,
                 // Used to keep multiple changesets open and to write to the correct changeset
                 layoutName: string,
                 singlePage: boolean = true,
                 osmConfiguration: "osm" | "osm-test" = 'osm'
     ) {
-        this.fakeUser = fakeUser;
         this._singlePage = singlePage;
-        this._oauth_config = OsmConnection.oauth_configs[osmConfiguration] ?? OsmConnection.oauth_configs.osm;
+        this._oauth_config = OsmConnection._oauth_configs[osmConfiguration] ?? OsmConnection._oauth_configs.osm;
         console.debug("Using backend", this._oauth_config.url)
         OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
 
         this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
-        this.userDetails.data.dryRun = dryRun || fakeUser;
-        if(fakeUser){
-            const ud = this.userDetails.data;
-            ud.csCount = 5678
-            ud.loggedIn= true;
-            ud.unreadMessages = 0
-            ud.name = "Fake user"
-            ud.totalMessages = 42;
-        }
+        this.userDetails.data.dryRun = dryRun;
         const self =this;
         this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
             if(self.userDetails.data.loggedIn == false && isLoggedIn == true){
@@ -122,10 +110,8 @@ export class OsmConnection {
     public UploadChangeset(
         layout: LayoutConfig,
         allElements: ElementStorage,
-        generateChangeXML: (csid: string) => string,
-        whenDone: (csId: string) => void,
-        onFail: () => {}) {
-        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML, whenDone, onFail);
+        generateChangeXML: (csid: string) => string) {
+        this.changesetHandler.UploadChangeset(layout, allElements, generateChangeXML);
     }
 
     public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
@@ -150,10 +136,6 @@ export class OsmConnection {
     }
 
     public AttemptLogin() {
-        if(this.fakeUser){
-            console.log("AttemptLogin called, but ignored as fakeUser is set")
-            return;
-        }
         const self = this;
         console.log("Trying to log in...");
         this.updateAuthObject();

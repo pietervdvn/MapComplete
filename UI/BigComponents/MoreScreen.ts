@@ -62,10 +62,6 @@ export default class MoreScreen extends Combine {
         let officialThemes = AllKnownLayouts.layoutsList
 
         let buttons = officialThemes.map((layout) => {
-            if(layout === undefined){
-                console.trace("Layout is undefined")
-                return undefined
-            }
             const button = MoreScreen.createLinkButton(layout)?.SetClass(buttonClass);
             if(layout.id === personal.id){
                 return new VariableUiElement(

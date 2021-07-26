@@ -16,10 +16,6 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import Toggle from "../Input/Toggle";
 import UserDetails from "../../Logic/Osm/OsmConnection";
 import {Translation} from "../i18n/Translation";
-import LocationInput from "../Input/LocationInput";
-import {InputElement} from "../Input/InputElement";
-import Loc from "../../Models/Loc";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -29,18 +25,14 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 * - A 'read your unread messages before adding a point'
  */
 
-/*private*/
 interface PresetInfo {
     description: string | Translation,
     name: string | BaseUIElement,
-    icon: () => BaseUIElement,
+    icon: BaseUIElement,
     tags: Tag[],
     layerToAddTo: {
         layerDef: LayerConfig,
         isDisplayed: UIEventSource<boolean>
-    },
-    preciseInput?: {
-        preferredBackground?: string
     }
 }
 
@@ -56,16 +48,18 @@ export default class SimpleAddUI extends Toggle {
             new SubtleButton(Svg.envelope_ui(),
                 Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false})
         ]);
-
-
+        
+        
+        
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
-
-        function createNewPoint(tags: any[], location: { lat: number, lon: number }) {
-            let feature = State.state.changes.createElement(tags, location.lat, location.lon);
+        
+        function createNewPoint(tags: any[]){
+           const loc = State.state.LastClickLocation.data;
+            let feature = State.state.changes.createElement(tags, loc.lat, loc.lon);
             State.state.selectedElement.setData(feature);
         }
-
+        
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset)
 
         const addUi = new VariableUiElement(
@@ -74,8 +68,8 @@ export default class SimpleAddUI extends Toggle {
                         return presetsOverview
                     }
                     return SimpleAddUI.CreateConfirmButton(preset,
-                        (tags, location) => {
-                            createNewPoint(tags, location)
+                        tags => {
+                            createNewPoint(tags)
                             selectedPreset.setData(undefined)
                         }, () => {
                             selectedPreset.setData(undefined)
@@ -92,7 +86,7 @@ export default class SimpleAddUI extends Toggle {
                         addUi,
                         State.state.layerUpdater.runningQuery
                     ),
-                    Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
+                    Translations.t.general.add.zoomInFurther.Clone().SetClass("alert")                    ,
                     State.state.locationControl.map(loc => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints)
                 ),
                 readYourMessages,
@@ -109,48 +103,22 @@ export default class SimpleAddUI extends Toggle {
     }
 
 
+
     private static CreateConfirmButton(preset: PresetInfo,
-                                       confirm: (tags: any[], location: { lat: number, lon: number }) => void,
+                                       confirm: (tags: any[]) => void, 
                                        cancel: () => void): BaseUIElement {
 
-        let location = State.state.LastClickLocation;
-        let preciseInput: InputElement<Loc> = undefined
-        if (preset.preciseInput !== undefined) {
-            const locationSrc = new UIEventSource({
-                lat: location.data.lat,
-                lon: location.data.lon,
-                zoom: 19
-            });
-            
-            let backgroundLayer = undefined;
-            if(preset.preciseInput.preferredBackground){
-               backgroundLayer= AvailableBaseLayers.SelectBestLayerAccordingTo(locationSrc, new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground))
-            }
-            
-            preciseInput = new LocationInput({
-                mapBackground: backgroundLayer,
-                centerLocation:locationSrc
-                    
-            })
-            preciseInput.SetClass("h-32 rounded-xl overflow-hidden border border-gray").SetStyle("height: 12rem;")
-        }
 
-
-        let confirmButton: BaseUIElement = new SubtleButton(preset.icon(),
+        const confirmButton = new SubtleButton(preset.icon,
             new Combine([
                 Translations.t.general.add.addNew.Subs({category: preset.name}),
                 Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert")
             ]).SetClass("flex flex-col")
         ).SetClass("font-bold break-words")
-            .onClick(() => {
-                confirm(preset.tags, (preciseInput?.GetValue() ?? location).data);
-            });
-        
-        if (preciseInput !== undefined) {
-            confirmButton = new Combine([preciseInput, confirmButton])
-        }
+            .onClick(() => confirm(preset.tags));
 
-        const openLayerControl =
+
+        const openLayerControl =  
             new SubtleButton(
                 Svg.layers_ui(),
                 new Combine([
@@ -160,9 +128,9 @@ export default class SimpleAddUI extends Toggle {
                     Translations.t.general.add.openLayerControl
                 ])
             )
-
-                .onClick(() => State.state.layerControlIsOpened.setData(true))
-
+           
+            .onClick(() => State.state.layerControlIsOpened.setData(true))
+        
         const openLayerOrConfirm = new Toggle(
             confirmButton,
             openLayerControl,
@@ -172,12 +140,12 @@ export default class SimpleAddUI extends Toggle {
 
         const cancelButton = new SubtleButton(Svg.close_ui(),
             Translations.t.general.cancel
-        ).onClick(cancel)
+        ).onClick(cancel        )
 
         return new Combine([
             Translations.t.general.add.confirmIntro.Subs({title: preset.name}),
-            State.state.osmConnection.userDetails.data.dryRun ?
-                Translations.t.general.testing.Clone().SetClass("alert") : undefined,
+            State.state.osmConnection.userDetails.data.dryRun ? 
+                Translations.t.general.testing.Clone().SetClass("alert") : undefined           , 
             openLayerOrConfirm,
             cancelButton,
             preset.description,
@@ -212,11 +180,11 @@ export default class SimpleAddUI extends Toggle {
 
     }
 
-    private static CreatePresetSelectButton(preset: PresetInfo) {
+    private static CreatePresetSelectButton(preset: PresetInfo){
 
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, false);
+        const tagInfo =SimpleAddUI.CreateTagInfoFor(preset, false);
         return new SubtleButton(
-            preset.icon(),
+            preset.icon,
             new Combine([
                 Translations.t.general.add.addNew.Subs({
                     category: preset.name
@@ -226,30 +194,29 @@ export default class SimpleAddUI extends Toggle {
             ]).SetClass("flex flex-col")
         )
     }
-
-    /*
-    * Generates the list with all the buttons.*/
+ 
+/*
+* Generates the list with all the buttons.*/
     private static CreatePresetButtons(selectedPreset: UIEventSource<PresetInfo>): BaseUIElement {
         const allButtons = [];
         for (const layer of State.state.filteredLayers.data) {
-
-            if (layer.isDisplayed.data === false && State.state.featureSwitchLayers) {
+            
+            if(layer.isDisplayed.data === false && State.state.featureSwitchLayers){
                 continue;
             }
-
+            
             const presets = layer.layerDef.presets;
             for (const preset of presets) {
 
                 const tags = TagUtils.KVtoProperties(preset.tags ?? []);
-                let icon:() => BaseUIElement = () => layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
+                let icon: BaseUIElement = layer.layerDef.GenerateLeafletStyle(new UIEventSource<any>(tags), false).icon.html
                     .SetClass("w-12 h-12 block relative");
                 const presetInfo: PresetInfo = {
                     tags: preset.tags,
                     layerToAddTo: layer,
                     name: preset.title,
                     description: preset.description,
-                    icon: icon,
-                    preciseInput: preset.preciseInput
+                    icon: icon
                 }
 
                 const button = SimpleAddUI.CreatePresetSelectButton(presetInfo);

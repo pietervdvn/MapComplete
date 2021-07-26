@@ -15,7 +15,6 @@ import UnitConfigJson from "./UnitConfigJson";
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
-   
     /**
      * The id of this layout.
      *
@@ -226,10 +225,6 @@ export interface LayoutConfigJson {
      *
      * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
      * This is handled by defining units.
-     * 
-     * # Rendering
-     * 
-     * To render a value with long (human) denomination, use {canonical(key)}
      *
      * # Usage
      *
@@ -336,5 +331,4 @@ export interface LayoutConfigJson {
     enableGeolocation?: boolean;
     enableBackgroundLayerSelection?: boolean;
     enableShowAllQuestions?: boolean;
-    enableExportButton?: boolean;
 }

@@ -175,7 +175,7 @@ export default class GeoJsonSource implements FeatureSource {
 
                 let freshness: Date = time;
                 if (feature.properties["_last_edit:timestamp"] !== undefined) {
-                    freshness = new Date(feature.properties["_last_edit:timestamp"])
+                    freshness = new Date(feature["_last_edit:timestamp"])
                 }
 
                 newFeatures.push({feature: feature, freshness: freshness})

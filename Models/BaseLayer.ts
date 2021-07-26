@@ -7,6 +7,4 @@ export default interface BaseLayer {
     max_zoom: number,
     min_zoom: number;
     feature: any,
-    isBest?: boolean,
-    category?: "map" | "osmbasedmap" | "photo"  | "historicphoto" | string
 }

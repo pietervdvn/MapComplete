@@ -74,6 +74,7 @@ export default class LayerSelection extends Combine {
             );
         }
 
+
         super(checkboxes)
         this.SetStyle("display:flex;flex-direction:column;")
 

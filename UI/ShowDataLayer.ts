@@ -80,7 +80,9 @@ export default class ShowDataLayer {
 
             if (zoomToFeatures) {
                 try {
-                    mp.fitBounds(geoLayer.getBounds(), {animate: false})
+
+                    mp.fitBounds(geoLayer.getBounds())
+
                 } catch (e) {
                     console.error(e)
                 }
@@ -146,9 +148,7 @@ export default class ShowDataLayer {
         const popup = L.popup({
             autoPan: true,
             closeOnEscapeKey: true,
-            closeButton: false,
-            autoPanPaddingTopLeft: [15,15],
-            
+            closeButton: false
         }, leafletLayer);
 
         leafletLayer.bindPopup(popup);
