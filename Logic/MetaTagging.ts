@@ -27,8 +27,8 @@ export default class MetaTagging {
                        relations: Map<string, { role: string, relation: Relation }[]>,
                        layers: LayerConfig[],
                        includeDates = true) {
-        
-        if(features === undefined || features.length === 0){
+
+        if (features === undefined || features.length === 0) {
             return;
         }
 
@@ -79,14 +79,10 @@ export default class MetaTagging {
                 }
 
             }
-            
-            
-            
-            
-            
-            
+
+
         })
-        
+
 
     }
 
@@ -115,6 +111,17 @@ export default class MetaTagging {
                 const f = (featuresPerLayer, feature: any) => {
                     try {
                         let result = func(feature);
+                        if(result instanceof UIEventSource){
+                            result.addCallbackAndRunD(d => {
+                                if (typeof d !== "string") {
+                                    // Make sure it is a string!
+                                    d = JSON.stringify(d);
+                                }
+                                feature.properties[key] = d;
+                            })
+                            result = result.data
+                        }
+                        
                         if (result === undefined || result === "") {
                             return;
                         }
@@ -124,11 +131,11 @@ export default class MetaTagging {
                         }
                         feature.properties[key] = result;
                     } catch (e) {
-                        if(MetaTagging. errorPrintCount < MetaTagging.stopErrorOutputAt){
+                        if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
                             console.warn("Could not calculate a calculated tag defined by " + code + " due to " + e + ". This is code defined in the theme. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features", e)
-                            MetaTagging.   errorPrintCount ++;
-                            if(MetaTagging. errorPrintCount == MetaTagging.stopErrorOutputAt){
-                                console.error("Got ",MetaTagging.stopErrorOutputAt," errors calculating this metatagging - stopping output now")
+                            MetaTagging.errorPrintCount++;
+                            if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
+                                console.error("Got ", MetaTagging.stopErrorOutputAt, " errors calculating this metatagging - stopping output now")
                             }
                         }
                     }

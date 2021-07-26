@@ -15,7 +15,7 @@ import {LocalStorageSource} from "./Logic/Web/LocalStorageSource";
 import {Utils} from "./Utils";
 import Svg from "./Svg";
 import Link from "./UI/Base/Link";
-import * as personal from "./assets/themes/personalLayout/personalLayout.json"
+import * as personal from "./assets/themes/personal/personal.json"
 import LayoutConfig from "./Customizations/JSON/LayoutConfig";
 import * as L from "leaflet";
 import Img from "./UI/Base/Img";

@@ -1,6 +1,6 @@
 import State from "../../State";
 import ThemeIntroductionPanel from "./ThemeIntroductionPanel";
-import * as personal from "../../assets/themes/personalLayout/personalLayout.json";
+import * as personal from "../../assets/themes/personal/personal.json";
 import PersonalLayersPanel from "./PersonalLayersPanel";
 import Svg from "../../Svg";
 import Translations from "../i18n/Translations";

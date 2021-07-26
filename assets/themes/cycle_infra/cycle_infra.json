@@ -51,6 +51,9 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
+      ],
       "title": {
         "render": {
           "en": "Cycleways",
@@ -1072,6 +1075,9 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
+      ],
       "minzoom": 14,
       "wayHandling": 0,
       "title": {

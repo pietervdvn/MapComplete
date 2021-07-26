@@ -100,7 +100,7 @@ export default class State {
     public readonly featureSwitchFakeUser: UIEventSource<boolean>;
 
 
-    public readonly featurePipeline: FeaturePipeline;
+    public featurePipeline: FeaturePipeline;
 
 
     /**
