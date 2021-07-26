@@ -53,6 +53,9 @@ export class ChangesetHandler {
                 element.ping();
 
             }
+
+            const newVersion = parseInt(node.attributes.new_id.value);
+
         }
     }
 

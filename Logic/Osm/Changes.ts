@@ -265,7 +265,7 @@ export class Changes {
                 console.log("No changes to be made")
                 this.pendingChanges.setData([])
                 this.isUploading.setData(false)
-                return;
+                return true; // Unregister the callback
             }
 
 
@@ -280,6 +280,7 @@ export class Changes {
                 },
                 () => self.isUploading.setData(false) // Failed - mark to try again
             )
+            return true;
 
         });
 

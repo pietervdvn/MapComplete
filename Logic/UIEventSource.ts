@@ -184,7 +184,7 @@ export class UIEventSource<T> {
     addCallbackAndRunD(callback: (data: T) => void) {
         this.addCallbackAndRun(data => {
             if (data !== undefined && data !== null) {
-                callback(data)
+              return  callback(data)
             }
         })
     }
