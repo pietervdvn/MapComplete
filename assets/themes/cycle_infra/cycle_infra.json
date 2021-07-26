@@ -578,6 +578,14 @@
               "hideInAnswer": "_country!=be"
             },
             {
+              "if": "cycleway:traffic_sign~BE:D7;.*",
+              "then": {
+                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": true
+            },
+            {
               "if": "cycleway:traffic_sign=BE:D9",
               "then": {
                 "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
@@ -637,6 +645,14 @@
               ]
             },
             {
+              "if": "traffic_sign~BE:D7;.*",
+              "then": {
+                "en": "Compulsory cycleway (with supplementary sign)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'> ",
+                "nl": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
+              },
+              "hideInAnswer": true
+            },
+            {
               "if": "traffic_sign=BE:D9",
               "then": {
                 "en": "Segregated foot/cycleway <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>",
@@ -682,7 +698,12 @@
             "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) have a supplementary sign?",
             "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?"
           },
-          "condition": "cycleway:traffic_sign=BE:D7",
+          "condition": {
+            "or": [
+              "cycleway:traffic_sign=BE:D7",
+              "cycleway:traffic_sign~BE:D7;.*"
+            ]
+          },
           "mappings": [
             {
               "if": "cycleway:traffic_sign=BE:D7;BE:M6",
@@ -766,7 +787,12 @@
             "en": "Does the traffic sign D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) have a supplementary sign?",
             "nl": "Heeft het verkeersbord D7 (<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 1.5em'>) een onderbord?"
           },
-          "condition": "traffic_sign=BE:D7",
+          "condition": {
+            "or": [
+              "traffic_sign=BE:D7",
+              "traffic_sign~BE:D7;.*"
+            ]
+          },
           "mappings": [
             {
               "if": "traffic_sign=BE:D7;BE:M6",

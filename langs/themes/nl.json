@@ -742,12 +742,15 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "3": {
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "4": {
                                 "then": "Geen verkeersbord aanwezig"
                             }
                         }
@@ -759,12 +762,15 @@
                                 "then": "Verplicht fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "1": {
-                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
+                                "then": "Verplicht fietspad (met onderbord)<img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='height: 3em'>"
                             },
                             "2": {
-                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                                "then": "Afgescheiden voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='height: 3em'>"
                             },
                             "3": {
+                                "then": "Gedeeld voet-/fietspad <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='height: 3em'>"
+                            },
+                            "4": {
                                 "then": "Geen verkeersbord aanwezig"
                             }
                         }
