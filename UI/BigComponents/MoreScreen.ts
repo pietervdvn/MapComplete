@@ -6,7 +6,7 @@ import State from "../../State";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
 import Translations from "../i18n/Translations";
-import * as personal from "../../assets/themes/personalLayout/personalLayout.json"
+import * as personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants";
 import LanguagePicker from "../LanguagePicker";
 import IndexText from "./IndexText";

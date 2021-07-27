@@ -25,7 +25,7 @@
   "startZoom": 11,
   "widenFactor": 0.05,
   "socialImage": "./assets/themes/cycle_infra/cycle-infra.svg",
-  "enableDownload": true,
+  "enableExportButton": true,
   "layers": [
     {
       "id": "cycleways",
@@ -51,6 +51,9 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
+      ],
       "title": {
         "render": {
           "en": "Cycleways",
@@ -1025,7 +1028,6 @@
           ]
         }
       ],
-      "hideUnderlayingFeaturesMinPercentage": 0,
       "icon": {
         "render": "./assets/themes/cycle_infra/bicycleway.svg"
       },
@@ -1122,6 +1124,9 @@
           ]
         }
       },
+      "calculatedTags": [
+        "_comfort_score=feat.score('https://raw.githubusercontent.com/pietervdvn/AspectedRouting/master/Examples/bicycle/aspects/bicycle.comfort.json')"
+      ],
       "minzoom": 14,
       "wayHandling": 0,
       "title": {

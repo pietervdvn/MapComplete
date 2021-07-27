@@ -167,3 +167,20 @@ export class UIEventSource<T> {
         })
     }
 }
+
+export class UIEventSourceTools {
+
+    private static readonly _download_cache = new Map<string, UIEventSource<any>>()
+
+    public static downloadJsonCached(url: string): UIEventSource<any>{
+        const cached = UIEventSourceTools._download_cache.get(url)
+        if(cached !== undefined){
+            return cached;
+        }
+        const src = new UIEventSource<any>(undefined)
+        UIEventSourceTools._download_cache.set(url, src)
+        Utils.downloadJson(url).then(r => src.setData(r))
+        return src;
+    }
+
+}

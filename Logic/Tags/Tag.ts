@@ -1,7 +1,6 @@
 import {Utils} from "../../Utils";
 import {RegexTag} from "./RegexTag";
 import {TagsFilter} from "./TagsFilter";
-import {TagUtils} from "./TagUtils";
 
 export class Tag extends TagsFilter {
     public key: string
@@ -46,11 +45,6 @@ export class Tag extends TagsFilter {
         }
         return [`["${this.key}"="${this.value}"]`];
     }
-
-    substituteValues(tags: any) {
-        return new Tag(this.key, TagUtils.ApplyTemplate(this.value as string, tags));
-    }
-
     asHumanString(linkToWiki?: boolean, shorten?: boolean) {
         let v = this.value;
         if (shorten) {

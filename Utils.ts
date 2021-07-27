@@ -135,7 +135,7 @@ export class Utils {
         }
         return newArr;
     }
-    
+
     public static MergeTags(a: any, b: any) {
         const t = {};
         for (const k in a) {
@@ -356,12 +356,12 @@ export class Utils {
 
     /**
      * Triggers a 'download file' popup which will download the contents
-     * @param contents
-     * @param fileName
      */
-    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt") {
+    public static offerContentsAsDownloadableFile(contents: string, fileName: string = "download.txt", options?: {
+        mimetype: string
+    }) {
         const element = document.createElement("a");
-        const file = new Blob([contents], {type: 'text/plain'});
+        const file = new Blob([contents], {type: options?.mimetype ?? 'text/plain'});
         element.href = URL.createObjectURL(file);
         element.download = fileName;
         document.body.appendChild(element); // Required for this to work in FireFox
@@ -449,8 +449,8 @@ export class Utils {
         }
     }
 
-    public static setDefaults(options, defaults){
-        for (let key in defaults){
+    public static setDefaults(options, defaults) {
+        for (let key in defaults) {
             if (!(key in options)) options[key] = defaults[key];
         }
         return options;
