@@ -40,7 +40,7 @@
           "geoJsonZoomLevel": 12,
           "isOsmCache": true
         },
-        "minzoom": "13",
+        "minzoom": 13,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }
@@ -56,9 +56,10 @@
               "operator~.*[nN]atuurpunt.*"
             ]
           },
-          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson"
+          "geoJson": "https://pietervdvn.github.io/natuurpunt_cache/natuurpunt_nature_reserve_points.geojson",
+          "isOsmCache": "duplicate"
         },
-        "minzoom": "0",
+        "maxzoom": 13,
         "icon": {
           "render": "circle:#FE6F32;./assets/themes/natuurpunt/nature_reserve.svg"
         }
