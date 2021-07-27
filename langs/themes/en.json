@@ -812,6 +812,27 @@
                             },
                             "4": {
                                 "then": "This cycleway is paved"
+                            },
+                            "5": {
+                                "then": "This cycleway is paved with stones with a flat top"
+                            },
+                            "6": {
+                                "then": "This cycleway is made of gravel"
+                            },
+                            "7": {
+                                "then": "This cycleway is unhardened"
+                            },
+                            "8": {
+                                "then": "This cycleway is made of gravel"
+                            },
+                            "9": {
+                                "then": "This cycleway is made of fine gravel"
+                            },
+                            "10": {
+                                "then": "This cycleway is made of pebblestone"
+                            },
+                            "11": {
+                                "then": "This cycleway is made from raw ground"
                             }
                         },
                         "question": "What is the surface of the cycleway made from?"

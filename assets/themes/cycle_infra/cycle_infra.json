@@ -340,17 +340,66 @@
               }
             },
             {
-              "if": "cycleway:surface=asphalt",
+              "if": "cycleway:surface=unhewn_cobblestone",
               "then": {
                 "en": "This cycleway is made of asphalt",
                 "nl": "Dit fietspad is gemaakt van asfalt"
               }
             },
             {
-              "if": "cycleway:surface=paved",
+              "if": "cycleway:surface=sett",
               "then": {
                 "en": "This cycleway is paved",
                 "nl": "Dit fietspad is geplaveid"
+              }
+            },
+            {
+              "if": "cycleway:surface=asphalt",
+              "then": {
+                "en": "This cycleway is paved with stones with a flat top",
+                "nl": "Dit fietspad is geplaveid met stenen"
+              }
+            },
+            {
+              "if": "cycleway:surface=paved",
+              "then": {
+                "en": "This cycleway is made of gravel",
+                "nl": "Dit fietspad is gemaakt van grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=paving_stones",
+              "then": {
+                "en": "This cycleway is unhardened",
+                "nl": "Dit fietspad is onverhard"
+              }
+            },
+            {
+              "if": "cycleway:surface=gravel",
+              "then": {
+                "en": "This cycleway is made of gravel",
+                "nl": "Dit fietspad is gemaakt van grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=fine_gravel",
+              "then": {
+                "en": "This cycleway is made of fine gravel",
+                "nl": "Dit fietspad is gemaakt van fijn grind"
+              }
+            },
+            {
+              "if": "cycleway:surface=pebblestone",
+              "then": {
+                "en": "This cycleway is made of pebblestone",
+                "nl": "Dit fietspad is gemaakt van kiezelsteentjes"
+              }
+            },
+            {
+              "if": "cycleway:surface=ground",
+              "then": {
+                "en": "This cycleway is made from raw ground",
+                "nl": "Dit fietspad is gemaakt van aarde"
               }
             }
           ],
@@ -447,7 +496,7 @@
               }
             },
             {
-              "if": "surface=cobblestone",
+              "if": "surface=sett",
               "then": {
                 "en": "This street is made of cobblestone",
                 "nl": "Deze straat is gemaakt van kasseien"

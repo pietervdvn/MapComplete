@@ -700,6 +700,27 @@
                             },
                             "4": {
                                 "then": "Dit fietspad is geplaveid"
+                            },
+                            "5": {
+                                "then": "Dit fietspad is geplaveid met stenen"
+                            },
+                            "6": {
+                                "then": "Dit fietspad is gemaakt van grind"
+                            },
+                            "7": {
+                                "then": "Dit fietspad is onverhard"
+                            },
+                            "8": {
+                                "then": "Dit fietspad is gemaakt van grind"
+                            },
+                            "9": {
+                                "then": "Dit fietspad is gemaakt van fijn grind"
+                            },
+                            "10": {
+                                "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                            },
+                            "11": {
+                                "then": "Dit fietspad is gemaakt van aarde"
                             }
                         },
                         "question": "Waaruit is het oppervlak van het fietspad van gemaakt?"
