@@ -498,6 +498,18 @@
     "sources": []
   },
   {
+    "authors": ["Pol Labaut"],
+    "path": "location-circle.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
+    "authors": ["Pol Labaut"],
+    "path": "location-empty.svg",
+    "license": "CC0",
+    "sources": []
+  },
+  {
     "authors": ["Hannah Declerck"],
     "path": "min-zoom.svg",
     "license": "CC0",

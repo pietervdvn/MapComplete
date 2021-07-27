@@ -84,11 +84,11 @@ export default class GeoLocationHandler extends VariableUiElement {
           if (isLocked.data) {
             icon = Svg.location;
           } else if (hasLocationData) {
-            icon = Svg.crosshair_blue;
+            icon = Svg.location_empty;
           } else if (isActive.data) {
-            icon = Svg.crosshair_blue_center;
+            icon = Svg.location_empty;
           } else {
-            icon = Svg.crosshair;
+            icon = Svg.location_circle;
           }
 
           return new CenterFlexedElement(
