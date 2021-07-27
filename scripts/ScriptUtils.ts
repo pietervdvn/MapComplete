@@ -86,6 +86,10 @@ export default class ScriptUtils {
         })
 
     }
+    
+    public static erasableLog(...text) {
+        process.stdout.write("\r "+text.join(" ")+"                \r")
+    }
 
     public static sleep(ms) {
         if (ms <= 0) {
