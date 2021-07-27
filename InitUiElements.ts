@@ -40,6 +40,7 @@ import FeatureSource from "./Logic/FeatureSource/FeatureSource";
 import AllKnownLayers from "./Customizations/AllKnownLayers";
 import LayerConfig from "./Customizations/JSON/LayerConfig";
 import AvailableBaseLayers from "./Logic/Actors/AvailableBaseLayers";
+import ExportPDF from "./Logic/Actors/ExportPDF";
 
 export class InitUiElements {
 
@@ -189,7 +190,15 @@ export class InitUiElements {
             State.state.locationControl.ping();
         })
 
-        new Combine([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
+        const screenshot = new MapControlButton(
+            new FixedUiElement(
+                Img.AsImageElement(Svg.bug, "", "width:1.25rem;height:1.25rem")
+            )
+        ).onClick(() => {
+            let createdPDF = new ExportPDF("Screenshot", "natuurpunt");
+        })
+
+        new Combine([plus, min, geolocationButton, screenshot].map(el => el.SetClass("m-0.5 md:m-1")))
             .SetClass("flex flex-col")
             .AttachTo("bottom-right");
 
