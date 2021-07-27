@@ -374,7 +374,7 @@ export class InitUiElements {
                     new FilterView(State.state.filteredLayers).SetClass(
                         "block p-1 rounded-full"
                     ),
-                "filter",
+                undefined,
                 State.state.filterIsOpened
             );
             
